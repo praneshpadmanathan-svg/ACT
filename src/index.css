@@ -1,0 +1,315 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   ACT Command — design system
+
+   Two deliberate registers:
+
+   1. ARCADE  — pixel type, hard 2px borders, offset shadows, saturated
+      accents. Used for chrome: nav, world map, HUD, rank + XP, buttons,
+      landing. This is the game.
+
+   2. STUDY   — warm paper surfaces, real type scale, generous measure and
+      line-height. Used wherever someone has to actually *read*: note pages,
+      passages, question stems, explanations.
+
+   The two share one palette and one spacing rhythm, so switching between
+   them reads as the same product rather than two bolted-together apps.
+   ========================================================================== */
+
+@layer base {
+  :root {
+    --scanline-opacity: 0.06;
+    --shell-max: 1180px;
+  }
+
+  html {
+    background: theme('colors.ink.950');
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ink-900 text-[#e8ecff] font-sans antialiased;
+    /* faint grid — reads as "graph paper", ties the arcade and study
+       surfaces together without competing with either */
+    background-image:
+      linear-gradient(rgba(90, 120, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(90, 120, 255, 0.035) 1px, transparent 1px);
+    background-size: 36px 36px;
+    background-attachment: fixed;
+  }
+
+  /* Pixel art must never be smoothed. */
+  .pixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    shape-rendering: crispEdges;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.gold');
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: theme('colors.gold');
+    color: #1c1a24;
+  }
+
+  /* Scrollbars — themed, but only where a scroll region exists. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.ink.600') transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: theme('colors.ink.600');
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.ink.500');
+    background-clip: content-box;
+  }
+}
+
+@layer components {
+  /* ---------------------------------------------------------------- arcade */
+
+  .pixel-panel {
+    @apply relative rounded-lg border-2 border-edge bg-ink-850 shadow-pixel;
+  }
+
+  .pixel-panel-raised {
+    @apply pixel-panel bg-ink-800;
+  }
+
+  /* Chunky arcade button. Presses down on :active — the 4px offset shadow
+     collapses, which is what sells the tactility. */
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-lg
+           border-2 px-4 py-2.5 font-screen text-[13px] uppercase tracking-wide
+           transition-[transform,box-shadow,background-color,border-color]
+           duration-75 disabled:pointer-events-none disabled:opacity-40;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.5);
+  }
+  .btn:active:not(:disabled) {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .btn-primary {
+    @apply border-[#c2761f] bg-ember text-[#2a1000];
+  }
+  .btn-primary:hover:not(:disabled) {
+    @apply bg-[#ffb078];
+  }
+
+  .btn-gold {
+    @apply border-[#c29a17] bg-gold text-[#2a2000];
+  }
+  .btn-gold:hover:not(:disabled) {
+    @apply bg-[#ffe073];
+  }
+
+  .btn-ghost {
+    @apply border-edge bg-ink-800 text-[#cdd4f0];
+  }
+  .btn-ghost:hover:not(:disabled) {
+    @apply border-edge-bright bg-ink-750 text-white;
+  }
+
+  .btn-danger {
+    @apply border-[#a83048] bg-crimson text-[#2a0008];
+  }
+  .btn-danger:hover:not(:disabled) {
+    @apply bg-[#ff8098];
+  }
+
+  .btn-lg {
+    @apply px-6 py-3.5 text-[15px];
+  }
+  .btn-sm {
+    @apply px-3 py-1.5 text-[11px];
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-md border-2 border-edge
+           bg-ink-800 px-2.5 py-1 font-screen text-[11px] uppercase
+           tracking-wide text-[#a89ac6];
+  }
+
+  /* Numerals get the arcade LCD face everywhere — XP, timers, scores. */
+  .num {
+    @apply font-digit tabular-nums;
+    font-size: 1.15em;
+    letter-spacing: 0.02em;
+  }
+
+  .heading-pixel {
+    @apply font-pixel uppercase leading-[1.5];
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.6);
+  }
+
+  /* CRT scanlines. Deliberately *not* applied to study surfaces — banding
+     over body text is what made the old build painful to read. */
+  .crt::after {
+    content: '';
+    @apply pointer-events-none absolute inset-0 z-30;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0 2px,
+      rgba(0, 0, 0, var(--scanline-opacity)) 2px 3px
+    );
+  }
+
+  .vignette::before {
+    content: '';
+    @apply pointer-events-none absolute inset-0 z-20;
+    background: radial-gradient(ellipse at 50% 42%, transparent 55%, rgba(0, 0, 8, 0.5) 100%);
+  }
+
+  /* ----------------------------------------------------------------- study */
+
+  /* The reading surface. Warm paper, dark ink, real measure. Everything
+     inside is sized for sustained reading, not for looking retro. */
+  .study-sheet {
+    @apply rounded-xl border-2 border-paper-edge bg-paper text-paper-ink;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.45);
+  }
+
+  .prose-study {
+    @apply font-read text-[1.0625rem] leading-[1.75] text-paper-ink;
+  }
+  .prose-study p + p {
+    @apply mt-4;
+  }
+  .prose-study strong {
+    @apply font-semibold text-[#12101a];
+    background: linear-gradient(transparent 62%, rgba(255, 210, 62, 0.42) 62%);
+  }
+  .prose-study em {
+    @apply italic text-[#33304a];
+  }
+  .prose-study code {
+    @apply rounded bg-[#e7e2d6] px-1.5 py-0.5 font-mono text-[0.9em] text-[#3a2a5c];
+  }
+
+  /* Long-form passages get a slightly larger, looser setting and a hard
+     max measure — ~66 characters, which is the readable range. */
+  .prose-passage {
+    @apply prose-study text-[1.125rem] leading-[1.8];
+    max-width: 66ch;
+  }
+
+  .study-label {
+    @apply font-screen text-[11px] uppercase tracking-[0.14em] text-paper-soft;
+  }
+
+  /* Content block variants inside a note page. Each is a coloured rail on
+     the left rather than a filled box — keeps the page calm at length. */
+  .block-rule {
+    @apply rounded-lg border-l-4 border-cyan bg-[#eef4f8] px-5 py-4;
+  }
+  .block-example {
+    @apply rounded-lg border-l-4 border-mint bg-[#eef7f1] px-5 py-4;
+  }
+  .block-trap {
+    @apply rounded-lg border-l-4 border-crimson bg-[#fbeef0] px-5 py-4;
+  }
+  .block-check {
+    @apply rounded-lg border-2 border-dashed border-[#c9b06a] bg-[#fbf6e6] px-5 py-4;
+  }
+
+  .study-table {
+    @apply w-full border-collapse overflow-hidden rounded-lg text-[0.95rem];
+  }
+  .study-table th {
+    @apply border-b-2 border-paper-edge bg-[#ece7db] px-3 py-2 text-left
+           font-sans text-[0.8rem] font-bold uppercase tracking-wide text-paper-soft;
+  }
+  .study-table td {
+    @apply border-b border-paper-edge px-3 py-2 font-read;
+  }
+  .study-table tr:last-child td {
+    @apply border-b-0;
+  }
+
+  /* Answer choice — used by drills, tests and zone quizzes alike so the
+     interaction feels identical everywhere. */
+  .choice {
+    @apply flex w-full items-start gap-3 rounded-lg border-2 border-paper-edge
+           bg-white/70 px-4 py-3 text-left font-read text-[1.03rem]
+           leading-relaxed text-paper-ink transition-colors duration-100;
+  }
+  .choice:hover:not(:disabled):not(.choice-locked) {
+    @apply border-[#8d7fc0] bg-white;
+  }
+  .choice-key {
+    @apply mt-px flex h-6 w-6 flex-none items-center justify-center rounded
+           border-2 border-paper-edge bg-[#ece7db] font-screen text-[12px]
+           text-paper-soft;
+  }
+  .choice-correct {
+    @apply border-[#2f9e63] bg-[#e8f7ee];
+  }
+  .choice-correct .choice-key {
+    @apply border-[#2f9e63] bg-[#2f9e63] text-white;
+  }
+  .choice-wrong {
+    @apply border-[#d34a63] bg-[#fbeaed];
+  }
+  .choice-wrong .choice-key {
+    @apply border-[#d34a63] bg-[#d34a63] text-white;
+  }
+  .choice-selected {
+    @apply border-[#6a4ff0] bg-[#efecff];
+  }
+  .choice-selected .choice-key {
+    @apply border-[#6a4ff0] bg-[#6a4ff0] text-white;
+  }
+
+  /* ---------------------------------------------------------------- layout */
+
+  .shell {
+    @apply mx-auto w-full px-4 sm:px-6;
+    max-width: var(--shell-max);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Respect the OS setting. The arcade layer leans on motion, so this matters. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .crt::after {
+    display: none;
+  }
+}

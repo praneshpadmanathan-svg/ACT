@@ -1,0 +1,2882 @@
+[
+  {
+    "id": "m001",
+    "section": "math",
+    "topic": "fractions & percents",
+    "difficulty": "easy",
+    "context": "A jacket originally priced at $85 is on sale for 40% off. What is the sale price?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "$34"
+      },
+      {
+        "id": "B",
+        "text": "$45"
+      },
+      {
+        "id": "C",
+        "text": "$51"
+      },
+      {
+        "id": "D",
+        "text": "$59.50"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is the discount amount (0.40 × 85), not the price paid.",
+      "B": "Does not correspond to any correct step.",
+      "C": "Correct — 85 × 0.60 = $51.",
+      "D": "This would be a 30% discount."
+    }
+  },
+  {
+    "id": "m002",
+    "section": "math",
+    "topic": "linear equations",
+    "difficulty": "easy",
+    "context": "If 5x − 8 = 3x + 14, what is the value of x?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "8"
+      },
+      {
+        "id": "C",
+        "text": "11"
+      },
+      {
+        "id": "D",
+        "text": "22"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Comes from subtracting rather than adding 8 to both sides.",
+      "B": "Results from dividing 22 by an incorrect coefficient.",
+      "C": "Correct — 2x = 22, so x = 11.",
+      "D": "This is 2x, not x."
+    }
+  },
+  {
+    "id": "m003",
+    "section": "math",
+    "topic": "number properties",
+    "difficulty": "easy",
+    "context": "What is the greatest common factor of 54 and 90?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6"
+      },
+      {
+        "id": "B",
+        "text": "9"
+      },
+      {
+        "id": "C",
+        "text": "18"
+      },
+      {
+        "id": "D",
+        "text": "27"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "6 divides both but is not the greatest such factor.",
+      "B": "9 divides both but 18 also does.",
+      "C": "Correct — 54 = 2·3³, 90 = 2·3²·5, so GCF = 2·3² = 18.",
+      "D": "27 does not divide 90."
+    }
+  },
+  {
+    "id": "m004",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "easy",
+    "context": "Simplify: (4x³)(3x⁵)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "7x⁸"
+      },
+      {
+        "id": "B",
+        "text": "12x⁸"
+      },
+      {
+        "id": "C",
+        "text": "12x¹⁵"
+      },
+      {
+        "id": "D",
+        "text": "7x¹⁵"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Coefficients multiply, they do not add.",
+      "B": "Correct — 4·3 = 12 and x³·x⁵ = x⁸.",
+      "C": "Exponents add when multiplying like bases; they do not multiply.",
+      "D": "Both errors combined."
+    }
+  },
+  {
+    "id": "m005",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "easy",
+    "context": "The five numbers 12, 15, 15, 20, 28 form a data set. What is the difference between the mean and the median?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "3"
+      },
+      {
+        "id": "C",
+        "text": "5"
+      },
+      {
+        "id": "D",
+        "text": "0"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Miscomputes the sum of the values.",
+      "B": "Correct — mean = 90/5 = 18, median = 15, difference = 3.",
+      "C": "Uses the mode instead of the median incorrectly.",
+      "D": "The mean and median are not equal here."
+    }
+  },
+  {
+    "id": "m006",
+    "section": "math",
+    "topic": "triangles",
+    "difficulty": "easy",
+    "context": "In a right triangle, one leg measures 9 inches and the hypotenuse measures 15 inches. What is the length of the other leg?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6 in."
+      },
+      {
+        "id": "B",
+        "text": "12 in."
+      },
+      {
+        "id": "C",
+        "text": "√306 in."
+      },
+      {
+        "id": "D",
+        "text": "24 in."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Subtracts the given lengths instead of using the Pythagorean theorem.",
+      "B": "Correct — 15² − 9² = 225 − 81 = 144, so the leg is 12 (a 9-12-15 triangle).",
+      "C": "Adds the squares instead of subtracting them.",
+      "D": "Adds the two given lengths."
+    }
+  },
+  {
+    "id": "m007",
+    "section": "math",
+    "topic": "coordinate geometry",
+    "difficulty": "easy",
+    "context": "What is the slope of the line passing through (−2, 5) and (4, −7)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−2"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "−1/2"
+      },
+      {
+        "id": "D",
+        "text": "1/2"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — (−7 − 5)/(4 − (−2)) = −12/6 = −2.",
+      "B": "Sign error in the numerator.",
+      "C": "Inverts rise and run.",
+      "D": "Both errors combined."
+    }
+  },
+  {
+    "id": "m008",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "easy",
+    "context": "A standard six-sided die is rolled once. What is the probability of rolling a number greater than 4?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1/6"
+      },
+      {
+        "id": "B",
+        "text": "1/3"
+      },
+      {
+        "id": "C",
+        "text": "1/2"
+      },
+      {
+        "id": "D",
+        "text": "2/3"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Counts only one favorable outcome.",
+      "B": "Correct — 5 and 6 qualify, so 2/6 = 1/3.",
+      "C": "Would require three favorable outcomes.",
+      "D": "Counts outcomes greater than 2 instead."
+    }
+  },
+  {
+    "id": "m009",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "easy",
+    "context": "A rectangular room measures 14 feet by 9 feet. How many square feet of carpet are needed to cover the floor?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "23 sq ft"
+      },
+      {
+        "id": "B",
+        "text": "46 sq ft"
+      },
+      {
+        "id": "C",
+        "text": "126 sq ft"
+      },
+      {
+        "id": "D",
+        "text": "252 sq ft"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Adds the dimensions instead of multiplying.",
+      "B": "This is the perimeter.",
+      "C": "Correct — 14 × 9 = 126 square feet.",
+      "D": "Doubles the area unnecessarily."
+    }
+  },
+  {
+    "id": "m010",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "easy",
+    "context": "A car travels 234 miles in 4.5 hours. At this rate, how far will it travel in 7 hours?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "312 miles"
+      },
+      {
+        "id": "B",
+        "text": "364 miles"
+      },
+      {
+        "id": "C",
+        "text": "378 miles"
+      },
+      {
+        "id": "D",
+        "text": "409.5 miles"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Uses 6 hours instead of 7.",
+      "B": "Correct — rate = 52 mph, and 52 × 7 = 364 miles.",
+      "C": "Uses a rate of 54 mph.",
+      "D": "Multiplies 234 by 1.75 rather than scaling the rate."
+    }
+  },
+  {
+    "id": "m011",
+    "section": "math",
+    "topic": "functions",
+    "difficulty": "easy",
+    "context": "If f(x) = 3x² − 4x + 1, what is f(−2)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−3"
+      },
+      {
+        "id": "B",
+        "text": "5"
+      },
+      {
+        "id": "C",
+        "text": "21"
+      },
+      {
+        "id": "D",
+        "text": "17"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Sign error in the squared term.",
+      "B": "Treats (−2)² as −4.",
+      "C": "Correct — 3(4) − 4(−2) + 1 = 12 + 8 + 1 = 21.",
+      "D": "Subtracts 8 instead of adding it."
+    }
+  },
+  {
+    "id": "m012",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "easy",
+    "context": "Two angles are complementary. If one measures 37°, what does the other measure?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "53°"
+      },
+      {
+        "id": "B",
+        "text": "63°"
+      },
+      {
+        "id": "C",
+        "text": "143°"
+      },
+      {
+        "id": "D",
+        "text": "323°"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — complementary angles sum to 90°, so 90 − 37 = 53°.",
+      "B": "Subtracts from 100.",
+      "C": "Uses supplementary (180°) instead of complementary.",
+      "D": "Subtracts from 360°."
+    }
+  },
+  {
+    "id": "m013",
+    "section": "math",
+    "topic": "sequences",
+    "difficulty": "easy",
+    "context": "In the arithmetic sequence 4, 11, 18, 25, …, what is the 12th term?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "81"
+      },
+      {
+        "id": "B",
+        "text": "88"
+      },
+      {
+        "id": "C",
+        "text": "77"
+      },
+      {
+        "id": "D",
+        "text": "95"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a₁₂ = 4 + 11(7) = 4 + 77 = 81.",
+      "B": "Uses 12d instead of 11d.",
+      "C": "Forgets to add the first term.",
+      "D": "Uses 13 terms."
+    }
+  },
+  {
+    "id": "m014",
+    "section": "math",
+    "topic": "fractions & percents",
+    "difficulty": "easy",
+    "context": "What is 3/8 expressed as a percent?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "26.7%"
+      },
+      {
+        "id": "B",
+        "text": "37.5%"
+      },
+      {
+        "id": "C",
+        "text": "38%"
+      },
+      {
+        "id": "D",
+        "text": "62.5%"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This is 8/30 as a percent.",
+      "B": "Correct — 3 ÷ 8 = 0.375 = 37.5%.",
+      "C": "A rounding of the numerator and denominator rather than the quotient.",
+      "D": "This is 5/8, the complement."
+    }
+  },
+  {
+    "id": "m015",
+    "section": "math",
+    "topic": "circles",
+    "difficulty": "easy",
+    "context": "A circle has a diameter of 14 cm. What is its area, in square centimeters?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "14π"
+      },
+      {
+        "id": "B",
+        "text": "28π"
+      },
+      {
+        "id": "C",
+        "text": "49π"
+      },
+      {
+        "id": "D",
+        "text": "196π"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is the circumference.",
+      "B": "Uses the diameter as the radius in the circumference formula.",
+      "C": "Correct — r = 7, so A = π(7²) = 49π.",
+      "D": "Uses the diameter as the radius in the area formula."
+    }
+  },
+  {
+    "id": "m016",
+    "section": "math",
+    "topic": "linear equations",
+    "difficulty": "medium",
+    "context": "Solve for x: 3(2x − 5) = 4(x + 1) − 3",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4"
+      },
+      {
+        "id": "B",
+        "text": "8"
+      },
+      {
+        "id": "C",
+        "text": "−8"
+      },
+      {
+        "id": "D",
+        "text": "2"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Results from dropping the −3 on the right side.",
+      "B": "Correct — 6x − 15 = 4x + 1, so 2x = 16 and x = 8.",
+      "C": "Sign error when isolating x.",
+      "D": "Arises from distributing 3 only to the first term."
+    }
+  },
+  {
+    "id": "m017",
+    "section": "math",
+    "topic": "systems",
+    "difficulty": "medium",
+    "context": "If 4x + 3y = 27 and 2x − 3y = 9, what is the value of y?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "3"
+      },
+      {
+        "id": "C",
+        "text": "6"
+      },
+      {
+        "id": "D",
+        "text": "−1"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — adding the equations gives 6x = 36, so x = 6; then 24 + 3y = 27 and y = 1.",
+      "B": "Comes from dividing 27 by 9 rather than solving the system.",
+      "C": "This is the value of x, not y.",
+      "D": "Sign error when isolating y."
+    }
+  },
+  {
+    "id": "m018",
+    "section": "math",
+    "topic": "quadratics",
+    "difficulty": "medium",
+    "context": "What are the solutions to x² − 3x − 28 = 0?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "x = 7 or x = −4"
+      },
+      {
+        "id": "B",
+        "text": "x = −7 or x = 4"
+      },
+      {
+        "id": "C",
+        "text": "x = 14 or x = −2"
+      },
+      {
+        "id": "D",
+        "text": "x = 28 or x = −1"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — factors to (x − 7)(x + 4) = 0.",
+      "B": "Signs reversed — substituting x = 4 gives 16 − 12 − 28 = −24, not 0.",
+      "C": "Product is −28 but the sum is 12, not −3.",
+      "D": "Product is −28 but the sum is 27."
+    }
+  },
+  {
+    "id": "m019",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "medium",
+    "context": "Simplify: √50 + √18",
+    "choices": [
+      {
+        "id": "A",
+        "text": "√68"
+      },
+      {
+        "id": "B",
+        "text": "8√2"
+      },
+      {
+        "id": "C",
+        "text": "2√17"
+      },
+      {
+        "id": "D",
+        "text": "15√2"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Radicals do not add under a single radical sign.",
+      "B": "Correct — 5√2 + 3√2 = 8√2.",
+      "C": "Comes from incorrectly combining radicands.",
+      "D": "Multiplies the coefficients instead of adding."
+    }
+  },
+  {
+    "id": "m020",
+    "section": "math",
+    "topic": "coordinate geometry",
+    "difficulty": "medium",
+    "context": "What is the equation of the line that passes through (3, −2) and is parallel to y = −4x + 9?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "y = −4x + 10"
+      },
+      {
+        "id": "B",
+        "text": "y = −4x − 14"
+      },
+      {
+        "id": "C",
+        "text": "y = (1/4)x − 2.75"
+      },
+      {
+        "id": "D",
+        "text": "y = 4x − 14"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — parallel means slope −4; −2 = −4(3) + b gives b = 10.",
+      "B": "Sign error solving for b.",
+      "C": "Uses the perpendicular slope.",
+      "D": "Uses the wrong sign on the slope."
+    }
+  },
+  {
+    "id": "m021",
+    "section": "math",
+    "topic": "triangles",
+    "difficulty": "medium",
+    "context": "In a 30°-60°-90° triangle, the side opposite the 30° angle measures 6. What is the length of the hypotenuse?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6√3"
+      },
+      {
+        "id": "B",
+        "text": "12"
+      },
+      {
+        "id": "C",
+        "text": "6√2"
+      },
+      {
+        "id": "D",
+        "text": "3√3"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This is the longer leg, opposite the 60° angle.",
+      "B": "Correct — the hypotenuse is twice the short leg: 2(6) = 12.",
+      "C": "Uses the 45-45-90 ratio.",
+      "D": "Halves rather than doubles."
+    }
+  },
+  {
+    "id": "m022",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "medium",
+    "context": "A bag contains 5 green and 7 yellow marbles. Two marbles are drawn without replacement. What is the probability that both are yellow?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "49/144"
+      },
+      {
+        "id": "B",
+        "text": "7/22"
+      },
+      {
+        "id": "C",
+        "text": "7/12"
+      },
+      {
+        "id": "D",
+        "text": "1/2"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Treats the draws as being with replacement.",
+      "B": "Correct — (7/12)(6/11) = 42/132 = 7/22.",
+      "C": "This is the probability of a single yellow draw.",
+      "D": "Not supported by any calculation."
+    }
+  },
+  {
+    "id": "m023",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "medium",
+    "context": "A student has test scores of 78, 85, and 91. What score on a fourth test would give an average of exactly 86?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "88"
+      },
+      {
+        "id": "B",
+        "text": "90"
+      },
+      {
+        "id": "C",
+        "text": "92"
+      },
+      {
+        "id": "D",
+        "text": "94"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Does not produce the required total.",
+      "B": "Correct — 86 × 4 = 344, and 344 − 254 = 90.",
+      "C": "Would produce an average of 86.5.",
+      "D": "Would produce an average of 87."
+    }
+  },
+  {
+    "id": "m024",
+    "section": "math",
+    "topic": "trigonometry",
+    "difficulty": "medium",
+    "context": "In right triangle ABC, angle C is the right angle, AC = 8, and BC = 6. What is sin A?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6/10"
+      },
+      {
+        "id": "B",
+        "text": "8/10"
+      },
+      {
+        "id": "C",
+        "text": "6/8"
+      },
+      {
+        "id": "D",
+        "text": "8/6"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — AB = 10, and the side opposite angle A is BC = 6, so sin A = 6/10.",
+      "B": "This is cos A.",
+      "C": "This is tan A.",
+      "D": "This is the reciprocal of tan A."
+    }
+  },
+  {
+    "id": "m025",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "medium",
+    "context": "A cylindrical can has a radius of 4 cm and a height of 10 cm. What is its volume, in cubic centimeters?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "40π"
+      },
+      {
+        "id": "B",
+        "text": "80π"
+      },
+      {
+        "id": "C",
+        "text": "160π"
+      },
+      {
+        "id": "D",
+        "text": "400π"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Multiplies radius by height without squaring.",
+      "B": "Uses 2r instead of r².",
+      "C": "Correct — V = πr²h = π(16)(10) = 160π.",
+      "D": "Squares the height instead of the radius."
+    }
+  },
+  {
+    "id": "m026",
+    "section": "math",
+    "topic": "functions",
+    "difficulty": "medium",
+    "context": "If f(x) = 2x + 1 and g(x) = x² − 3, what is f(g(2))?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "5"
+      },
+      {
+        "id": "C",
+        "text": "22"
+      },
+      {
+        "id": "D",
+        "text": "11"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — g(2) = 1, then f(1) = 3.",
+      "B": "Computes g(f(2)) incorrectly.",
+      "C": "This is g(f(2)) = g(5) = 22.",
+      "D": "Adds the two function outputs."
+    }
+  },
+  {
+    "id": "m027",
+    "section": "math",
+    "topic": "fractions & percents",
+    "difficulty": "medium",
+    "context": "A population increases by 25% one year and then decreases by 20% the next. What is the net percent change over the two years?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5% increase"
+      },
+      {
+        "id": "B",
+        "text": "0% (no change)"
+      },
+      {
+        "id": "C",
+        "text": "5% decrease"
+      },
+      {
+        "id": "D",
+        "text": "45% increase"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Adds the percentages instead of multiplying the factors.",
+      "B": "Correct — 1.25 × 0.80 = 1.00, exactly the original value.",
+      "C": "Subtracts in the wrong direction.",
+      "D": "Adds the two percentages together."
+    }
+  },
+  {
+    "id": "m028",
+    "section": "math",
+    "topic": "logarithms",
+    "difficulty": "medium",
+    "context": "If log₂(x) = 5, what is x?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "10"
+      },
+      {
+        "id": "B",
+        "text": "25"
+      },
+      {
+        "id": "C",
+        "text": "32"
+      },
+      {
+        "id": "D",
+        "text": "64"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Multiplies base and exponent.",
+      "B": "Computes 5².",
+      "C": "Correct — 2⁵ = 32.",
+      "D": "Computes 2⁶."
+    }
+  },
+  {
+    "id": "m029",
+    "section": "math",
+    "topic": "matrices",
+    "difficulty": "medium",
+    "context": "What is the determinant of the matrix [[6, 2], [5, 4]]?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "14"
+      },
+      {
+        "id": "B",
+        "text": "34"
+      },
+      {
+        "id": "C",
+        "text": "−14"
+      },
+      {
+        "id": "D",
+        "text": "24"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — (6)(4) − (2)(5) = 24 − 10 = 14.",
+      "B": "Adds the products instead of subtracting.",
+      "C": "Reverses the order of subtraction.",
+      "D": "Uses only the main diagonal product."
+    }
+  },
+  {
+    "id": "m030",
+    "section": "math",
+    "topic": "complex numbers",
+    "difficulty": "medium",
+    "context": "What is (4 + 3i)(2 − i)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "8 − 3i"
+      },
+      {
+        "id": "B",
+        "text": "11 + 2i"
+      },
+      {
+        "id": "C",
+        "text": "5 + 2i"
+      },
+      {
+        "id": "D",
+        "text": "8 + 2i"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Multiplies only the real and imaginary parts separately.",
+      "B": "Correct — 8 − 4i + 6i − 3i² = 8 + 2i + 3 = 11 + 2i.",
+      "C": "Treats i² as +1 with a sign error.",
+      "D": "Forgets to convert −3i² into +3."
+    }
+  },
+  {
+    "id": "m031",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "medium",
+    "context": "A rectangle’s length is 3 more than twice its width. If the perimeter is 42 cm, what is the width?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6 cm"
+      },
+      {
+        "id": "B",
+        "text": "8 cm"
+      },
+      {
+        "id": "C",
+        "text": "12 cm"
+      },
+      {
+        "id": "D",
+        "text": "15 cm"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 2(2w + 3) + 2w = 42 → 6w + 6 = 42 → w = 6.",
+      "B": "Would give a perimeter of 54.",
+      "C": "This is close to the length (15), not the width.",
+      "D": "This is the length, not the width."
+    }
+  },
+  {
+    "id": "m032",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "medium",
+    "context": "Each interior angle of a regular polygon measures 150°. How many sides does the polygon have?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "10"
+      },
+      {
+        "id": "B",
+        "text": "12"
+      },
+      {
+        "id": "C",
+        "text": "15"
+      },
+      {
+        "id": "D",
+        "text": "18"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Would give interior angles of 144°.",
+      "B": "Correct — exterior angle = 30°, and 360/30 = 12.",
+      "C": "Would give interior angles of 156°.",
+      "D": "Would give interior angles of 160°."
+    }
+  },
+  {
+    "id": "m033",
+    "section": "math",
+    "topic": "circles",
+    "difficulty": "medium",
+    "context": "A circle has center (−3, 4) and radius 6. Which equation represents this circle?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "(x + 3)² + (y − 4)² = 36"
+      },
+      {
+        "id": "B",
+        "text": "(x − 3)² + (y + 4)² = 36"
+      },
+      {
+        "id": "C",
+        "text": "(x + 3)² + (y − 4)² = 6"
+      },
+      {
+        "id": "D",
+        "text": "(x − 3)² + (y − 4)² = 6"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the signs invert inside the parentheses and the radius is squared.",
+      "B": "Reverses both signs, giving center (3, −4).",
+      "C": "Fails to square the radius.",
+      "D": "Both errors combined."
+    }
+  },
+  {
+    "id": "m034",
+    "section": "math",
+    "topic": "sequences",
+    "difficulty": "medium",
+    "context": "The first term of a geometric sequence is 5 and the common ratio is 3. What is the 5th term?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "135"
+      },
+      {
+        "id": "B",
+        "text": "405"
+      },
+      {
+        "id": "C",
+        "text": "243"
+      },
+      {
+        "id": "D",
+        "text": "1215"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This is the 4th term.",
+      "B": "Correct — a₅ = 5 · 3⁴ = 5 · 81 = 405.",
+      "C": "This is 3⁵, omitting the first term.",
+      "D": "This is the 6th term."
+    }
+  },
+  {
+    "id": "m035",
+    "section": "math",
+    "topic": "number properties",
+    "difficulty": "medium",
+    "context": "Two buses leave a terminal at the same time. One returns every 18 minutes and the other every 24 minutes. After how many minutes will they next be at the terminal together?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6"
+      },
+      {
+        "id": "B",
+        "text": "42"
+      },
+      {
+        "id": "C",
+        "text": "72"
+      },
+      {
+        "id": "D",
+        "text": "432"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is the GCF, which answers a different kind of question.",
+      "B": "Adds the two intervals.",
+      "C": "Correct — LCM of 18 and 24 is 72.",
+      "D": "Multiplies the intervals without reducing by the GCF."
+    }
+  },
+  {
+    "id": "m036",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "medium",
+    "context": "Class A has 15 students averaging 82 on a test. Class B has 25 students averaging 90. What is the average for all 40 students?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "86"
+      },
+      {
+        "id": "B",
+        "text": "87"
+      },
+      {
+        "id": "C",
+        "text": "88"
+      },
+      {
+        "id": "D",
+        "text": "85"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Averages the two averages, ignoring class sizes.",
+      "B": "Correct — (15·82 + 25·90)/40 = (1230 + 2250)/40 = 3480/40 = 87.",
+      "C": "Overweights the larger class.",
+      "D": "Underweights the larger class."
+    }
+  },
+  {
+    "id": "m037",
+    "section": "math",
+    "topic": "quadratics",
+    "difficulty": "medium",
+    "context": "What is the vertex of the parabola y = x² − 6x + 5?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "(3, −4)"
+      },
+      {
+        "id": "B",
+        "text": "(−3, 32)"
+      },
+      {
+        "id": "C",
+        "text": "(3, 4)"
+      },
+      {
+        "id": "D",
+        "text": "(6, 5)"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — x = −b/2a = 3, and y = 9 − 18 + 5 = −4.",
+      "B": "Uses the wrong sign for the vertex x-coordinate.",
+      "C": "Sign error computing the y-value.",
+      "D": "Reads coefficients directly as coordinates."
+    }
+  },
+  {
+    "id": "m038",
+    "section": "math",
+    "topic": "trigonometry",
+    "difficulty": "medium",
+    "context": "What is the period of the function y = 4 sin(2x)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2π"
+      },
+      {
+        "id": "B",
+        "text": "π"
+      },
+      {
+        "id": "C",
+        "text": "4π"
+      },
+      {
+        "id": "D",
+        "text": "π/2"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This is the period when b = 1.",
+      "B": "Correct — period = 2π/b = 2π/2 = π.",
+      "C": "Multiplies by b instead of dividing.",
+      "D": "Divides by 4 instead of by 2."
+    }
+  },
+  {
+    "id": "m039",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "medium",
+    "context": "A tank holds 60 liters of a solution that is 15% salt. How many liters of pure water must be added to dilute it to 10% salt?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "20 L"
+      },
+      {
+        "id": "B",
+        "text": "30 L"
+      },
+      {
+        "id": "C",
+        "text": "15 L"
+      },
+      {
+        "id": "D",
+        "text": "45 L"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Would yield roughly 11.25% salt.",
+      "B": "Correct — salt stays at 9 L; 9/(60 + w) = 0.10 gives 60 + w = 90, so w = 30.",
+      "C": "Would yield 12% salt.",
+      "D": "Would yield 8.6% salt."
+    }
+  },
+  {
+    "id": "m040",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "hard",
+    "context": "If 9^(2x) = 27^(x+1), what is x?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "3"
+      },
+      {
+        "id": "D",
+        "text": "1/2"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Substituting gives 81 ≠ 729.",
+      "B": "Substituting gives 6561 ≠ 19683.",
+      "C": "Correct — 3^(4x) = 3^(3x+3), so 4x = 3x + 3 and x = 3.",
+      "D": "Substituting gives 9 ≠ 27^1.5."
+    }
+  },
+  {
+    "id": "m041",
+    "section": "math",
+    "topic": "systems",
+    "difficulty": "hard",
+    "context": "For what value of k does the system 3x − 2y = 8 and 9x + ky = 15 have no solution?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−6"
+      },
+      {
+        "id": "B",
+        "text": "6"
+      },
+      {
+        "id": "C",
+        "text": "−2/3"
+      },
+      {
+        "id": "D",
+        "text": "24"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — parallel lines need matching slope ratios: 3/9 = −2/k gives k = −6, and 8/15 ≠ 1/3 so there is no solution.",
+      "B": "Produces intersecting lines with different slopes.",
+      "C": "Does not produce matching slopes.",
+      "D": "Does not satisfy the slope condition."
+    }
+  },
+  {
+    "id": "m042",
+    "section": "math",
+    "topic": "functions",
+    "difficulty": "hard",
+    "context": "What is the domain of f(x) = √(2x − 6) / (x − 5)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "x ≥ 3"
+      },
+      {
+        "id": "B",
+        "text": "x ≥ 3 and x ≠ 5"
+      },
+      {
+        "id": "C",
+        "text": "x > 3 and x ≠ 5"
+      },
+      {
+        "id": "D",
+        "text": "all real numbers except 5"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Ignores the zero in the denominator at x = 5.",
+      "B": "Correct — the radicand requires 2x − 6 ≥ 0 (x ≥ 3) and the denominator requires x ≠ 5.",
+      "C": "Wrongly excludes x = 3, where the radicand equals zero, which is permitted.",
+      "D": "Ignores the radical restriction entirely."
+    }
+  },
+  {
+    "id": "m043",
+    "section": "math",
+    "topic": "triangles",
+    "difficulty": "hard",
+    "context": "Two similar triangles have corresponding sides in the ratio 2:5. If the smaller triangle has an area of 12 square units, what is the area of the larger?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "30"
+      },
+      {
+        "id": "B",
+        "text": "60"
+      },
+      {
+        "id": "C",
+        "text": "75"
+      },
+      {
+        "id": "D",
+        "text": "150"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Applies the linear ratio to the area.",
+      "B": "Multiplies by 5 instead of by 25/4.",
+      "C": "Correct — area scales by the square of the ratio: 12 × (5/2)² = 12 × 6.25 = 75.",
+      "D": "Applies the cube of the ratio."
+    }
+  },
+  {
+    "id": "m044",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "hard",
+    "context": "A fair coin is flipped 5 times. What is the probability of getting at least one tail?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1/32"
+      },
+      {
+        "id": "B",
+        "text": "5/32"
+      },
+      {
+        "id": "C",
+        "text": "31/32"
+      },
+      {
+        "id": "D",
+        "text": "1/2"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is the probability of all heads.",
+      "B": "This is the probability of exactly one tail.",
+      "C": "Correct — 1 − P(all heads) = 1 − 1/32 = 31/32.",
+      "D": "The probability for a single flip, not five."
+    }
+  },
+  {
+    "id": "m045",
+    "section": "math",
+    "topic": "coordinate geometry",
+    "difficulty": "hard",
+    "context": "The endpoints of a diameter of a circle are (2, −1) and (10, 5). What is the radius?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5"
+      },
+      {
+        "id": "B",
+        "text": "10"
+      },
+      {
+        "id": "C",
+        "text": "√34"
+      },
+      {
+        "id": "D",
+        "text": "14"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the diameter is √(8² + 6²) = 10, so the radius is 5.",
+      "B": "This is the diameter, not the radius.",
+      "C": "Comes from halving the coordinate differences before applying the distance formula.",
+      "D": "Adds the coordinate differences."
+    }
+  },
+  {
+    "id": "m046",
+    "section": "math",
+    "topic": "trigonometry",
+    "difficulty": "hard",
+    "context": "In triangle ABC, a = 7, b = 9, and angle C = 60°. What is the length of side c?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "√67 ≈ 8.19"
+      },
+      {
+        "id": "B",
+        "text": "√193 ≈ 13.89"
+      },
+      {
+        "id": "C",
+        "text": "16"
+      },
+      {
+        "id": "D",
+        "text": "√130 ≈ 11.40"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Law of Cosines: c² = 49 + 81 − 2(7)(9)(0.5) = 130 − 63 = 67.",
+      "B": "Adds the 2ab·cos C term instead of subtracting it.",
+      "C": "Adds the two given sides.",
+      "D": "Omits the cosine term entirely (a right-angle assumption)."
+    }
+  },
+  {
+    "id": "m047",
+    "section": "math",
+    "topic": "quadratics",
+    "difficulty": "hard",
+    "context": "For what value(s) of k does x² + kx + 16 = 0 have exactly one real solution?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "k = 4 only"
+      },
+      {
+        "id": "B",
+        "text": "k = 8 only"
+      },
+      {
+        "id": "C",
+        "text": "k = 8 or k = −8"
+      },
+      {
+        "id": "D",
+        "text": "k = 16 or k = −16"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Would give a discriminant of 16 − 64 = −48, no real solutions.",
+      "B": "Correct value but omits the negative solution.",
+      "C": "Correct — discriminant k² − 64 = 0 gives k = ±8.",
+      "D": "Would give a discriminant of 192, two distinct solutions."
+    }
+  },
+  {
+    "id": "m048",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "hard",
+    "context": "A sphere and a cylinder have the same radius r. The cylinder’s height equals 2r. What is the ratio of the sphere’s volume to the cylinder’s volume?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1:2"
+      },
+      {
+        "id": "B",
+        "text": "2:3"
+      },
+      {
+        "id": "C",
+        "text": "3:4"
+      },
+      {
+        "id": "D",
+        "text": "4:3"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Does not follow from the two volume formulas.",
+      "B": "Correct — (4/3)πr³ ÷ (πr²·2r) = (4/3)/2 = 2/3.",
+      "C": "Inverts part of the computation.",
+      "D": "Reverses the ratio."
+    }
+  },
+  {
+    "id": "m049",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "hard",
+    "context": "Set P = {20, 20, 20, 20} and Set Q = {14, 18, 22, 26}. Both have a mean of 20. Which statement is true?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Set P has the greater standard deviation"
+      },
+      {
+        "id": "B",
+        "text": "Set Q has the greater standard deviation"
+      },
+      {
+        "id": "C",
+        "text": "The standard deviations are equal"
+      },
+      {
+        "id": "D",
+        "text": "Standard deviation cannot be compared without more data"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Set P has zero spread, the minimum possible standard deviation.",
+      "B": "Correct — Q’s values deviate from the mean while P’s do not, so Q has the larger standard deviation.",
+      "C": "P’s standard deviation is exactly 0; Q’s is not.",
+      "D": "The values given are sufficient to compare spread."
+    }
+  },
+  {
+    "id": "m050",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "hard",
+    "context": "Working alone, pump A fills a tank in 6 hours and pump B fills it in 4 hours. Working together, how long do they take?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2.4 hours"
+      },
+      {
+        "id": "B",
+        "text": "2.5 hours"
+      },
+      {
+        "id": "C",
+        "text": "5 hours"
+      },
+      {
+        "id": "D",
+        "text": "10 hours"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — combined rate = 1/6 + 1/4 = 5/12 tank per hour, so time = 12/5 = 2.4 hours.",
+      "B": "Averages the times rather than combining rates.",
+      "C": "Averages the two individual times.",
+      "D": "Adds the two times, which is never correct for combined work."
+    }
+  },
+  {
+    "id": "m051",
+    "section": "math",
+    "topic": "linear equations",
+    "difficulty": "easy",
+    "context": "If 7x + 4 = 39, what is x?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5"
+      },
+      {
+        "id": "B",
+        "text": "6"
+      },
+      {
+        "id": "C",
+        "text": "7"
+      },
+      {
+        "id": "D",
+        "text": "35"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 7x = 35, so x = 5.",
+      "B": "Would give 46.",
+      "C": "Would give 53.",
+      "D": "This is 7x, not x."
+    }
+  },
+  {
+    "id": "m052",
+    "section": "math",
+    "topic": "fractions & percents",
+    "difficulty": "easy",
+    "context": "What is 35% of 240?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "74"
+      },
+      {
+        "id": "B",
+        "text": "84"
+      },
+      {
+        "id": "C",
+        "text": "96"
+      },
+      {
+        "id": "D",
+        "text": "8.4"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Arithmetic slip.",
+      "B": "Correct — 0.35 × 240 = 84.",
+      "C": "This is 40% of 240.",
+      "D": "Decimal point misplaced."
+    }
+  },
+  {
+    "id": "m053",
+    "section": "math",
+    "topic": "number properties",
+    "difficulty": "easy",
+    "context": "Which of the following is a prime number?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "51"
+      },
+      {
+        "id": "B",
+        "text": "57"
+      },
+      {
+        "id": "C",
+        "text": "59"
+      },
+      {
+        "id": "D",
+        "text": "63"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "51 = 3 × 17.",
+      "B": "57 = 3 × 19.",
+      "C": "Correct — 59 has no factors other than 1 and itself.",
+      "D": "63 = 7 × 9."
+    }
+  },
+  {
+    "id": "m054",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "easy",
+    "context": "Simplify: (x⁶)³",
+    "choices": [
+      {
+        "id": "A",
+        "text": "x⁹"
+      },
+      {
+        "id": "B",
+        "text": "x¹⁸"
+      },
+      {
+        "id": "C",
+        "text": "x²"
+      },
+      {
+        "id": "D",
+        "text": "3x⁶"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Adds the exponents instead of multiplying.",
+      "B": "Correct — a power raised to a power multiplies exponents.",
+      "C": "Divides the exponents.",
+      "D": "Treats the outer exponent as a coefficient."
+    }
+  },
+  {
+    "id": "m055",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "easy",
+    "context": "What is the median of 3, 9, 4, 12, 7, 6?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6"
+      },
+      {
+        "id": "B",
+        "text": "6.5"
+      },
+      {
+        "id": "C",
+        "text": "7"
+      },
+      {
+        "id": "D",
+        "text": "6.83"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "One of the two middle values, not their average.",
+      "B": "Correct — sorted: 3,4,6,7,9,12; middle two are 6 and 7, averaging 6.5.",
+      "C": "The other middle value.",
+      "D": "This is the mean."
+    }
+  },
+  {
+    "id": "m056",
+    "section": "math",
+    "topic": "triangles",
+    "difficulty": "easy",
+    "context": "Two angles of a triangle measure 47° and 68°. What is the third angle?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "55°"
+      },
+      {
+        "id": "B",
+        "text": "65°"
+      },
+      {
+        "id": "C",
+        "text": "75°"
+      },
+      {
+        "id": "D",
+        "text": "115°"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Arithmetic error.",
+      "B": "Correct — 180 − 47 − 68 = 65°.",
+      "C": "Subtracts from 190.",
+      "D": "This is the sum of the two given angles."
+    }
+  },
+  {
+    "id": "m057",
+    "section": "math",
+    "topic": "coordinate geometry",
+    "difficulty": "easy",
+    "context": "What is the midpoint of the segment joining (−4, 3) and (8, −7)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "(2, −2)"
+      },
+      {
+        "id": "B",
+        "text": "(2, 2)"
+      },
+      {
+        "id": "C",
+        "text": "(6, −5)"
+      },
+      {
+        "id": "D",
+        "text": "(4, −4)"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — ((−4+8)/2, (3−7)/2) = (2, −2).",
+      "B": "Sign error in the y-coordinate.",
+      "C": "Uses differences rather than averages.",
+      "D": "Adds without dividing by 2."
+    }
+  },
+  {
+    "id": "m058",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "easy",
+    "context": "A jar has 6 red, 4 blue, and 10 white chips. What is the probability of drawing a blue chip?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1/5"
+      },
+      {
+        "id": "B",
+        "text": "1/4"
+      },
+      {
+        "id": "C",
+        "text": "2/5"
+      },
+      {
+        "id": "D",
+        "text": "1/10"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 4 of 20 chips are blue, so 4/20 = 1/5.",
+      "B": "Uses a total of 16.",
+      "C": "Doubles the numerator.",
+      "D": "Uses only the white chips as the total."
+    }
+  },
+  {
+    "id": "m059",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "easy",
+    "context": "A triangle has a base of 14 cm and a height of 9 cm. What is its area?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "23 cm²"
+      },
+      {
+        "id": "B",
+        "text": "46 cm²"
+      },
+      {
+        "id": "C",
+        "text": "63 cm²"
+      },
+      {
+        "id": "D",
+        "text": "126 cm²"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Adds the dimensions.",
+      "B": "Doubles the sum.",
+      "C": "Correct — ½(14)(9) = 63 cm².",
+      "D": "Forgets the factor of ½."
+    }
+  },
+  {
+    "id": "m060",
+    "section": "math",
+    "topic": "functions",
+    "difficulty": "easy",
+    "context": "If g(x) = 5 − 2x, what is g(−3)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−1"
+      },
+      {
+        "id": "B",
+        "text": "1"
+      },
+      {
+        "id": "C",
+        "text": "11"
+      },
+      {
+        "id": "D",
+        "text": "−11"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Subtracts instead of handling the double negative.",
+      "B": "Sign error.",
+      "C": "Correct — 5 − 2(−3) = 5 + 6 = 11.",
+      "D": "Sign error on the whole expression."
+    }
+  },
+  {
+    "id": "m061",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "easy",
+    "context": "A recipe needs 3/4 cup of sugar per batch. How much sugar is needed for 6 batches?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4 cups"
+      },
+      {
+        "id": "B",
+        "text": "4.5 cups"
+      },
+      {
+        "id": "C",
+        "text": "5 cups"
+      },
+      {
+        "id": "D",
+        "text": "8 cups"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Rounds down incorrectly.",
+      "B": "Correct — (3/4)(6) = 18/4 = 4.5 cups.",
+      "C": "Rounds up incorrectly.",
+      "D": "Divides 6 by 3/4 instead of multiplying."
+    }
+  },
+  {
+    "id": "m062",
+    "section": "math",
+    "topic": "sequences",
+    "difficulty": "easy",
+    "context": "What is the next term in the sequence 2, 6, 18, 54, …?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "108"
+      },
+      {
+        "id": "B",
+        "text": "162"
+      },
+      {
+        "id": "C",
+        "text": "90"
+      },
+      {
+        "id": "D",
+        "text": "216"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Doubles instead of tripling.",
+      "B": "Correct — each term is multiplied by 3, so 54 × 3 = 162.",
+      "C": "Adds 36, treating it as arithmetic.",
+      "D": "Multiplies by 4."
+    }
+  },
+  {
+    "id": "m063",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "easy",
+    "context": "Two parallel lines are cut by a transversal. If one angle is 118°, what is the measure of its same-side interior angle?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "118°"
+      },
+      {
+        "id": "B",
+        "text": "62°"
+      },
+      {
+        "id": "C",
+        "text": "42°"
+      },
+      {
+        "id": "D",
+        "text": "242°"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This is the corresponding or alternate angle.",
+      "B": "Correct — same-side interior angles are supplementary: 180 − 118 = 62°.",
+      "C": "Subtracts from 160.",
+      "D": "Adds instead of subtracting."
+    }
+  },
+  {
+    "id": "m064",
+    "section": "math",
+    "topic": "circles",
+    "difficulty": "easy",
+    "context": "What is the circumference of a circle with radius 9?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "9π"
+      },
+      {
+        "id": "B",
+        "text": "18π"
+      },
+      {
+        "id": "C",
+        "text": "81π"
+      },
+      {
+        "id": "D",
+        "text": "36π"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Uses r instead of 2r.",
+      "B": "Correct — C = 2πr = 18π.",
+      "C": "This is the area.",
+      "D": "Uses the diameter as the radius."
+    }
+  },
+  {
+    "id": "m065",
+    "section": "math",
+    "topic": "quadratics",
+    "difficulty": "medium",
+    "context": "What are the solutions to x² + 2x − 15 = 0?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "x = 5 or x = −3"
+      },
+      {
+        "id": "B",
+        "text": "x = −5 or x = 3"
+      },
+      {
+        "id": "C",
+        "text": "x = 15 or x = −1"
+      },
+      {
+        "id": "D",
+        "text": "x = −5 or x = −3"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Substituting 5 gives 25 + 10 − 15 = 20, not 0.",
+      "B": "Correct — (x + 5)(x − 3) = 0.",
+      "C": "Product is −15 but the sum is 14.",
+      "D": "Product would be +15."
+    }
+  },
+  {
+    "id": "m066",
+    "section": "math",
+    "topic": "systems",
+    "difficulty": "medium",
+    "context": "If x + y = 14 and x − y = 4, what is xy?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "40"
+      },
+      {
+        "id": "B",
+        "text": "45"
+      },
+      {
+        "id": "C",
+        "text": "56"
+      },
+      {
+        "id": "D",
+        "text": "36"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Uses an incorrect pair.",
+      "B": "Correct — adding gives 2x = 18 so x = 9, then y = 5, and 9 × 5 = 45.",
+      "C": "Multiplies the two given constants.",
+      "D": "Squares 6."
+    }
+  },
+  {
+    "id": "m067",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "medium",
+    "context": "Simplify: √(48x⁴)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4x²√3"
+      },
+      {
+        "id": "B",
+        "text": "4x√3"
+      },
+      {
+        "id": "C",
+        "text": "16x²√3"
+      },
+      {
+        "id": "D",
+        "text": "12x²"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 48 = 16 × 3, so √48 = 4√3, and √(x⁴) = x².",
+      "B": "Halves the exponent incorrectly.",
+      "C": "Fails to take the square root of 16.",
+      "D": "Drops the radical entirely."
+    }
+  },
+  {
+    "id": "m068",
+    "section": "math",
+    "topic": "fractions & percents",
+    "difficulty": "medium",
+    "context": "A store raises a $60 item by 15%, then offers 10% off the new price. What is the final price?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "$62.10"
+      },
+      {
+        "id": "B",
+        "text": "$63.00"
+      },
+      {
+        "id": "C",
+        "text": "$65.00"
+      },
+      {
+        "id": "D",
+        "text": "$60.00"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 60 × 1.15 = 69, then 69 × 0.90 = $62.10.",
+      "B": "Applies the 10% to the original price.",
+      "C": "Adds the percentages.",
+      "D": "Assumes the changes cancel exactly."
+    }
+  },
+  {
+    "id": "m069",
+    "section": "math",
+    "topic": "trigonometry",
+    "difficulty": "medium",
+    "context": "If cos θ = 8/17 and θ is acute, what is tan θ?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "15/17"
+      },
+      {
+        "id": "B",
+        "text": "8/15"
+      },
+      {
+        "id": "C",
+        "text": "15/8"
+      },
+      {
+        "id": "D",
+        "text": "17/8"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is sin θ.",
+      "B": "Inverts the ratio.",
+      "C": "Correct — the opposite side is √(289 − 64) = 15, so tan θ = 15/8.",
+      "D": "This is sec θ."
+    }
+  },
+  {
+    "id": "m070",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "medium",
+    "context": "The mean of five numbers is 24. Four of them are 18, 22, 27, and 31. What is the fifth?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "20"
+      },
+      {
+        "id": "B",
+        "text": "22"
+      },
+      {
+        "id": "C",
+        "text": "24"
+      },
+      {
+        "id": "D",
+        "text": "26"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Sum would be 118, giving a mean of 23.6.",
+      "B": "Correct — total must be 120, and 120 − 98 = 22.",
+      "C": "Assumes the missing value equals the mean.",
+      "D": "Sum would be 124."
+    }
+  },
+  {
+    "id": "m071",
+    "section": "math",
+    "topic": "coordinate geometry",
+    "difficulty": "medium",
+    "context": "Line k has equation 3x − 4y = 12. What is its slope?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3/4"
+      },
+      {
+        "id": "B",
+        "text": "−3/4"
+      },
+      {
+        "id": "C",
+        "text": "4/3"
+      },
+      {
+        "id": "D",
+        "text": "3"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — solving for y gives y = (3/4)x − 3.",
+      "B": "Sign error when dividing by −4.",
+      "C": "Inverts the slope.",
+      "D": "Reads the x-coefficient directly."
+    }
+  },
+  {
+    "id": "m072",
+    "section": "math",
+    "topic": "functions",
+    "difficulty": "medium",
+    "context": "If f(x) = x² and the graph is shifted 3 units left and 2 units up, what is the new equation?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "y = (x − 3)² + 2"
+      },
+      {
+        "id": "B",
+        "text": "y = (x + 3)² + 2"
+      },
+      {
+        "id": "C",
+        "text": "y = (x + 3)² − 2"
+      },
+      {
+        "id": "D",
+        "text": "y = (x − 3)² − 2"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "(x − 3) shifts right, not left.",
+      "B": "Correct — left shifts add inside the parentheses; up shifts add outside.",
+      "C": "The −2 shifts down.",
+      "D": "Both shifts are reversed."
+    }
+  },
+  {
+    "id": "m073",
+    "section": "math",
+    "topic": "triangles",
+    "difficulty": "medium",
+    "context": "A 45°-45°-90° triangle has legs of length 7. What is the hypotenuse?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "7√2"
+      },
+      {
+        "id": "B",
+        "text": "14"
+      },
+      {
+        "id": "C",
+        "text": "7√3"
+      },
+      {
+        "id": "D",
+        "text": "7/√2"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — in an isosceles right triangle the hypotenuse is leg × √2.",
+      "B": "Doubles the leg, which applies to 30-60-90.",
+      "C": "Uses the 30-60-90 ratio.",
+      "D": "Divides instead of multiplying."
+    }
+  },
+  {
+    "id": "m074",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "medium",
+    "context": "A rectangular box measures 5 × 4 × 3 inches. What is its surface area?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "60 in²"
+      },
+      {
+        "id": "B",
+        "text": "47 in²"
+      },
+      {
+        "id": "C",
+        "text": "94 in²"
+      },
+      {
+        "id": "D",
+        "text": "120 in²"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is the volume.",
+      "B": "Half of the correct answer.",
+      "C": "Correct — 2(20 + 15 + 12) = 2(47) = 94 in².",
+      "D": "Doubles the volume."
+    }
+  },
+  {
+    "id": "m075",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "medium",
+    "context": "Two fair six-sided dice are rolled. What is the probability the sum is 7?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1/6"
+      },
+      {
+        "id": "B",
+        "text": "1/12"
+      },
+      {
+        "id": "C",
+        "text": "7/36"
+      },
+      {
+        "id": "D",
+        "text": "1/9"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 6 of the 36 outcomes total 7, giving 6/36 = 1/6.",
+      "B": "Counts only 3 favorable outcomes.",
+      "C": "Confuses the target sum with the count.",
+      "D": "Counts 4 favorable outcomes."
+    }
+  },
+  {
+    "id": "m076",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "medium",
+    "context": "Tickets cost $12 for adults and $7 for students. If 40 tickets sold for $380, how many were student tickets?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "16"
+      },
+      {
+        "id": "B",
+        "text": "20"
+      },
+      {
+        "id": "C",
+        "text": "24"
+      },
+      {
+        "id": "D",
+        "text": "28"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Would total $404.",
+      "B": "Correct — 12a + 7s = 380 with a + s = 40 gives s = 20.",
+      "C": "Would total $360.",
+      "D": "Would total $340."
+    }
+  },
+  {
+    "id": "m077",
+    "section": "math",
+    "topic": "logarithms",
+    "difficulty": "medium",
+    "context": "What is log₃(81)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "4"
+      },
+      {
+        "id": "C",
+        "text": "27"
+      },
+      {
+        "id": "D",
+        "text": "9"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "3³ = 27, not 81.",
+      "B": "Correct — 3⁴ = 81.",
+      "C": "This is 81/3.",
+      "D": "This is √81."
+    }
+  },
+  {
+    "id": "m078",
+    "section": "math",
+    "topic": "number properties",
+    "difficulty": "medium",
+    "context": "What is the least common multiple of 15 and 20?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5"
+      },
+      {
+        "id": "B",
+        "text": "30"
+      },
+      {
+        "id": "C",
+        "text": "60"
+      },
+      {
+        "id": "D",
+        "text": "300"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is the GCF.",
+      "B": "Not divisible by 20.",
+      "C": "Correct — 15 = 3·5 and 20 = 2²·5, so LCM = 2²·3·5 = 60.",
+      "D": "The product, not reduced by the GCF."
+    }
+  },
+  {
+    "id": "m079",
+    "section": "math",
+    "topic": "complex numbers",
+    "difficulty": "medium",
+    "context": "What is i²⁶?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "i"
+      },
+      {
+        "id": "C",
+        "text": "−1"
+      },
+      {
+        "id": "D",
+        "text": "−i"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Corresponds to remainder 0.",
+      "B": "Corresponds to remainder 1.",
+      "C": "Correct — 26 ÷ 4 leaves remainder 2, and i² = −1.",
+      "D": "Corresponds to remainder 3."
+    }
+  },
+  {
+    "id": "m080",
+    "section": "math",
+    "topic": "matrices",
+    "difficulty": "medium",
+    "context": "If A = [[1, 3],[2, 0]], what is 4A?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "[[4, 12],[8, 0]]"
+      },
+      {
+        "id": "B",
+        "text": "[[4, 3],[2, 0]]"
+      },
+      {
+        "id": "C",
+        "text": "[[5, 7],[6, 4]]"
+      },
+      {
+        "id": "D",
+        "text": "[[4, 12],[8, 4]]"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — scalar multiplication multiplies every entry by 4.",
+      "B": "Multiplies only the first entry.",
+      "C": "Adds 4 to each entry.",
+      "D": "Incorrectly turns the zero entry into 4."
+    }
+  },
+  {
+    "id": "m081",
+    "section": "math",
+    "topic": "linear equations",
+    "difficulty": "medium",
+    "context": "Solve for x: (x/3) + (x/4) = 14",
+    "choices": [
+      {
+        "id": "A",
+        "text": "12"
+      },
+      {
+        "id": "B",
+        "text": "21"
+      },
+      {
+        "id": "C",
+        "text": "24"
+      },
+      {
+        "id": "D",
+        "text": "28"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Would give 7.",
+      "B": "Would give 12.25.",
+      "C": "Correct — combining gives 7x/12 = 14, so x = 24.",
+      "D": "Would give about 16.3."
+    }
+  },
+  {
+    "id": "m082",
+    "section": "math",
+    "topic": "sequences",
+    "difficulty": "medium",
+    "context": "The 3rd term of an arithmetic sequence is 11 and the 8th term is 31. What is the first term?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "4"
+      },
+      {
+        "id": "C",
+        "text": "5"
+      },
+      {
+        "id": "D",
+        "text": "7"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 5d = 20 so d = 4, and a₁ = 11 − 2(4) = 3.",
+      "B": "This is the common difference.",
+      "C": "Subtracts only one d.",
+      "D": "Subtracts d from 11 once."
+    }
+  },
+  {
+    "id": "m083",
+    "section": "math",
+    "topic": "circles",
+    "difficulty": "medium",
+    "context": "An arc has length 6π in a circle of radius 12. What is its central angle?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "45°"
+      },
+      {
+        "id": "B",
+        "text": "60°"
+      },
+      {
+        "id": "C",
+        "text": "90°"
+      },
+      {
+        "id": "D",
+        "text": "120°"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Would give an arc of 3π.",
+      "B": "Would give an arc of 4π.",
+      "C": "Correct — circumference is 24π, and 6π is one quarter of it, so 90°.",
+      "D": "Would give an arc of 8π."
+    }
+  },
+  {
+    "id": "m084",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "medium",
+    "context": "What is the sum of the interior angles of a decagon (10 sides)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1260°"
+      },
+      {
+        "id": "B",
+        "text": "1440°"
+      },
+      {
+        "id": "C",
+        "text": "1620°"
+      },
+      {
+        "id": "D",
+        "text": "1800°"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This is the nonagon value.",
+      "B": "Correct — (10 − 2) × 180° = 1440°.",
+      "C": "Uses n − 1.",
+      "D": "Uses n directly."
+    }
+  },
+  {
+    "id": "m085",
+    "section": "math",
+    "topic": "quadratics",
+    "difficulty": "hard",
+    "context": "The product of two consecutive positive even integers is 168. What is their sum?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "22"
+      },
+      {
+        "id": "B",
+        "text": "26"
+      },
+      {
+        "id": "C",
+        "text": "28"
+      },
+      {
+        "id": "D",
+        "text": "30"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "10 × 12 = 120, not 168.",
+      "B": "Correct — 12 × 14 = 168, and 12 + 14 = 26.",
+      "C": "Would require 14 × 14.",
+      "D": "14 × 16 = 224."
+    }
+  },
+  {
+    "id": "m086",
+    "section": "math",
+    "topic": "functions",
+    "difficulty": "hard",
+    "context": "If f(x) = 3x − 7, what is f⁻¹(x)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "(x + 7)/3"
+      },
+      {
+        "id": "B",
+        "text": "(x − 7)/3"
+      },
+      {
+        "id": "C",
+        "text": "3x + 7"
+      },
+      {
+        "id": "D",
+        "text": "1/(3x − 7)"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — swap and solve: x = 3y − 7 gives y = (x + 7)/3.",
+      "B": "Sign error when isolating y.",
+      "C": "Reverses operations without inverting them.",
+      "D": "This is the reciprocal, not the inverse."
+    }
+  },
+  {
+    "id": "m087",
+    "section": "math",
+    "topic": "trigonometry",
+    "difficulty": "hard",
+    "context": "What is the amplitude and midline of y = −4 sin(x) + 3?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Amplitude −4, midline y = 3"
+      },
+      {
+        "id": "B",
+        "text": "Amplitude 4, midline y = 3"
+      },
+      {
+        "id": "C",
+        "text": "Amplitude 4, midline y = −4"
+      },
+      {
+        "id": "D",
+        "text": "Amplitude 3, midline y = 4"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Amplitude is an absolute value and cannot be negative.",
+      "B": "Correct — |−4| = 4 and the vertical shift sets the midline at y = 3.",
+      "C": "Confuses the coefficient with the midline.",
+      "D": "Swaps the two values."
+    }
+  },
+  {
+    "id": "m088",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "hard",
+    "context": "A cone and a cylinder share the same radius and height. If the cylinder holds 48 cm³, how much does the cone hold?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "12 cm³"
+      },
+      {
+        "id": "B",
+        "text": "16 cm³"
+      },
+      {
+        "id": "C",
+        "text": "24 cm³"
+      },
+      {
+        "id": "D",
+        "text": "144 cm³"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Divides by 4.",
+      "B": "Correct — a cone is exactly one third of the matching cylinder: 48/3 = 16 cm³.",
+      "C": "Halves the volume.",
+      "D": "Multiplies by 3 instead of dividing."
+    }
+  },
+  {
+    "id": "m089",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "hard",
+    "context": "A committee of 3 is chosen from 4 seniors and 5 juniors. What is the probability all 3 are juniors?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5/42"
+      },
+      {
+        "id": "B",
+        "text": "10/84"
+      },
+      {
+        "id": "C",
+        "text": "5/84"
+      },
+      {
+        "id": "D",
+        "text": "1/9"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — C(5,3)/C(9,3) = 10/84 = 5/42.",
+      "B": "The unreduced form is 10/84, which equals 5/42, so this is not in lowest terms as the intended answer.",
+      "C": "Halves the numerator incorrectly.",
+      "D": "Does not follow from the counts."
+    }
+  },
+  {
+    "id": "m090",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "hard",
+    "context": "A car averages 40 mph going to a city and 60 mph returning by the same route. What is its average speed for the round trip?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "48 mph"
+      },
+      {
+        "id": "B",
+        "text": "50 mph"
+      },
+      {
+        "id": "C",
+        "text": "52 mph"
+      },
+      {
+        "id": "D",
+        "text": "55 mph"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — use total distance over total time: for distance d each way, time = d/40 + d/60 = d/24, so speed = 2d ÷ (d/24) = 48 mph.",
+      "B": "Averages the two speeds, which is invalid for equal distances.",
+      "C": "No calculation supports this.",
+      "D": "Overweights the faster leg."
+    }
+  }
+]

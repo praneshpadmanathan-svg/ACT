@@ -1,0 +1,2642 @@
+[
+  {
+    "id": "s001",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp1",
+    "context": "According to Table 1, catalase activity was greatest at which temperature?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5°C"
+      },
+      {
+        "id": "B",
+        "text": "25°C"
+      },
+      {
+        "id": "C",
+        "text": "37°C"
+      },
+      {
+        "id": "D",
+        "text": "65°C"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Produces only 1.2 mL/min, near the low end.",
+      "B": "8.1 mL/min, below the maximum.",
+      "C": "Correct — 14.6 mL/min is the highest value in the table.",
+      "D": "Activity is 0.0 mL/min at this temperature."
+    }
+  },
+  {
+    "id": "s002",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp1",
+    "context": "Based on Table 2, as pH increased from 3.0 to 7.0, catalase activity:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "increased only."
+      },
+      {
+        "id": "B",
+        "text": "decreased only."
+      },
+      {
+        "id": "C",
+        "text": "increased, then decreased."
+      },
+      {
+        "id": "D",
+        "text": "remained constant."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — values rise steadily from 0.4 to 14.6 across that range.",
+      "B": "The decline occurs only above pH 7.0.",
+      "C": "The reversal happens outside the stated range.",
+      "D": "The values change substantially."
+    }
+  },
+  {
+    "id": "s003",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp1",
+    "context": "Based on Table 1, catalase activity at 30°C would most likely be closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4 mL/min"
+      },
+      {
+        "id": "B",
+        "text": "11 mL/min"
+      },
+      {
+        "id": "C",
+        "text": "16 mL/min"
+      },
+      {
+        "id": "D",
+        "text": "20 mL/min"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Below the value already measured at 25°C (8.1).",
+      "B": "Correct — 30°C lies between 25°C (8.1) and 37°C (14.6), so the value must fall between them.",
+      "C": "Exceeds the maximum measured at the optimum.",
+      "D": "Far above any measured value."
+    }
+  },
+  {
+    "id": "s004",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp1",
+    "context": "Of the pH values tested in Study 2, which represents the most acidic condition?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "pH 3.0"
+      },
+      {
+        "id": "B",
+        "text": "pH 7.0"
+      },
+      {
+        "id": "C",
+        "text": "pH 9.0"
+      },
+      {
+        "id": "D",
+        "text": "pH 11.0"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — lower pH values indicate greater acidity.",
+      "B": "pH 7.0 is neutral.",
+      "C": "Basic.",
+      "D": "The most basic value tested."
+    }
+  },
+  {
+    "id": "s005",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp1",
+    "context": "A sample of catalase is heated to 70°C and then cooled to 37°C. Based on the passage, the activity at 37°C after cooling would most likely be:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "14.6 mL/min, the same as before heating."
+      },
+      {
+        "id": "B",
+        "text": "near 0 mL/min, because the enzyme was permanently altered."
+      },
+      {
+        "id": "C",
+        "text": "higher than 14.6 mL/min, because heating increases reaction rate."
+      },
+      {
+        "id": "D",
+        "text": "exactly half of 14.6 mL/min."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The note states the shape change does not reverse on cooling.",
+      "B": "Correct — above 60°C the enzyme permanently loses its shape and activity does not return.",
+      "C": "The passage shows activity falling, not rising, above the optimum.",
+      "D": "No data support a halving."
+    }
+  },
+  {
+    "id": "s006",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp1",
+    "context": "Which of the following pairs of conditions would be expected to produce the lowest catalase activity?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "37°C and pH 7.0"
+      },
+      {
+        "id": "B",
+        "text": "25°C and pH 6.0"
+      },
+      {
+        "id": "C",
+        "text": "65°C and pH 11.0"
+      },
+      {
+        "id": "D",
+        "text": "45°C and pH 8.0"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is the optimum for both variables.",
+      "B": "Both values are moderately favorable.",
+      "C": "Correct — both conditions are at the extremes where activity approaches zero in each study.",
+      "D": "Both values are somewhat past the optimum but still support meaningful activity."
+    }
+  },
+  {
+    "id": "s007",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "hard",
+    "passage": "sp1",
+    "context": "A student claims that catalase activity depends only on temperature. Do the data support this claim?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because activity peaked at 37°C."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because pH was held constant in Study 1."
+      },
+      {
+        "id": "C",
+        "text": "No, because Study 2 shows activity varying substantially at a single constant temperature."
+      },
+      {
+        "id": "D",
+        "text": "No, because Study 1 used only seven temperatures."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "A temperature optimum does not rule out other factors.",
+      "B": "Holding pH constant in one study says nothing about whether pH matters.",
+      "C": "Correct — at a fixed 37°C, activity ranged from 0.2 to 14.6 mL/min as pH changed.",
+      "D": "The number of temperatures tested is not the reason the claim fails."
+    }
+  },
+  {
+    "id": "s008",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp2",
+    "context": "According to Table 1, Species B germinated best at a soil moisture of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "10%"
+      },
+      {
+        "id": "B",
+        "text": "20%"
+      },
+      {
+        "id": "C",
+        "text": "30%"
+      },
+      {
+        "id": "D",
+        "text": "50%"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Only 48 seeds germinated.",
+      "B": "76 seeds, below the maximum.",
+      "C": "Correct — 88 seeds germinated, the highest value for Species B.",
+      "D": "Only 29 seeds, the lowest for that species above 10%."
+    }
+  },
+  {
+    "id": "s009",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp2",
+    "context": "Based on Table 1, as soil moisture increased from 30% to 50%, germination for Species C:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "increased."
+      },
+      {
+        "id": "B",
+        "text": "decreased."
+      },
+      {
+        "id": "C",
+        "text": "increased, then decreased."
+      },
+      {
+        "id": "D",
+        "text": "remained unchanged."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — values rise from 52 to 88 to 94.",
+      "B": "That describes Species B over the same range.",
+      "C": "No reversal occurs for Species C in this range.",
+      "D": "The values change by 42 seeds."
+    }
+  },
+  {
+    "id": "s010",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp2",
+    "context": "For Species A, the moisture level producing the greatest germination also produced:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the shortest average shoot height."
+      },
+      {
+        "id": "B",
+        "text": "the greatest average shoot height."
+      },
+      {
+        "id": "C",
+        "text": "a shoot height of 19 mm."
+      },
+      {
+        "id": "D",
+        "text": "no measurable shoot growth."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The shortest height (8 mm) occurs at 10% moisture.",
+      "B": "Correct — 40% moisture gives both the highest germination (93) and the tallest shoots (44 mm).",
+      "C": "19 mm corresponds to 20% moisture.",
+      "D": "Growth was measurable at every level."
+    }
+  },
+  {
+    "id": "s011",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp2",
+    "context": "A gardener has soil with 45% moisture and wants the species most likely to thrive. Based on both tables, the best choice is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Species A"
+      },
+      {
+        "id": "B",
+        "text": "Species B"
+      },
+      {
+        "id": "C",
+        "text": "Species C"
+      },
+      {
+        "id": "D",
+        "text": "All three would perform equally."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Species A peaks at 40% and declines by 50%, so it is past its optimum at 45%.",
+      "B": "Species B declines sharply above 30%, reaching only 29 germinations at 50%.",
+      "C": "Correct — Species C rises continuously through 50%, so at 45% it is near its best for both germination and height.",
+      "D": "The three species respond very differently to moisture."
+    }
+  },
+  {
+    "id": "s012",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp2",
+    "context": "At which moisture level did the three species differ most in number of seeds germinated?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "10%"
+      },
+      {
+        "id": "B",
+        "text": "20%"
+      },
+      {
+        "id": "C",
+        "text": "30%"
+      },
+      {
+        "id": "D",
+        "text": "50%"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Range is 48 − 5 = 43.",
+      "B": "Range is 76 − 19 = 57.",
+      "C": "Range is 88 − 52 = 36.",
+      "D": "Correct — range is 94 − 29 = 65, the largest spread."
+    }
+  },
+  {
+    "id": "s013",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp2",
+    "context": "To test whether light exposure affects germination in Species A, the researchers should conduct a trial in which:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "light is varied while moisture, species, and all other conditions are held constant."
+      },
+      {
+        "id": "B",
+        "text": "both light and moisture are varied for all three species."
+      },
+      {
+        "id": "C",
+        "text": "Species A is grown in darkness at a new temperature."
+      },
+      {
+        "id": "D",
+        "text": "Species B and C are grown under different light conditions."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — isolating one variable requires changing only that variable.",
+      "B": "Changing two variables makes the result uninterpretable.",
+      "C": "Changing temperature as well confounds the light effect.",
+      "D": "The question concerns Species A specifically."
+    }
+  },
+  {
+    "id": "s014",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp3",
+    "context": "In Experiment 1, which solution produced the greatest mass loss?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Distilled water"
+      },
+      {
+        "id": "B",
+        "text": "0.5 M NaCl"
+      },
+      {
+        "id": "C",
+        "text": "Boiled, sealed distilled water"
+      },
+      {
+        "id": "D",
+        "text": "Dry air"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "18 mg, well below the salt solution.",
+      "B": "Correct — 47 mg, the highest value in Experiment 1.",
+      "C": "Only 2 mg, since oxygen was removed.",
+      "D": "Only 1 mg, since water was absent."
+    }
+  },
+  {
+    "id": "s015",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp3",
+    "context": "Trials 3 and 4 were most likely included in order to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "test the effect of temperature on corrosion."
+      },
+      {
+        "id": "B",
+        "text": "confirm that both oxygen and water are required for corrosion."
+      },
+      {
+        "id": "C",
+        "text": "compare different coatings."
+      },
+      {
+        "id": "D",
+        "text": "measure the density of the solutions."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Temperature was constant at 20°C throughout Experiment 1.",
+      "B": "Correct — Trial 3 removes oxygen and Trial 4 removes water; both nearly eliminate mass loss.",
+      "C": "Coatings appear only in Experiment 2.",
+      "D": "Density was never measured."
+    }
+  },
+  {
+    "id": "s016",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp3",
+    "context": "Based on Experiment 2, which coating provided the greatest protection?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Oil"
+      },
+      {
+        "id": "B",
+        "text": "Zinc"
+      },
+      {
+        "id": "C",
+        "text": "Copper"
+      },
+      {
+        "id": "D",
+        "text": "None"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Reduced loss to 12 mg, but zinc did better.",
+      "B": "Correct — zinc reduced mass loss to 3 mg, the lowest value.",
+      "C": "Copper increased mass loss to 61 mg, worse than no coating.",
+      "D": "The uncoated control lost 47 mg."
+    }
+  },
+  {
+    "id": "s017",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp3",
+    "context": "The result for the copper-coated nail (Trial 8) is notable because it suggests that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "copper prevents water from reaching the iron."
+      },
+      {
+        "id": "B",
+        "text": "some coatings can accelerate rather than slow corrosion."
+      },
+      {
+        "id": "C",
+        "text": "copper is chemically identical to zinc."
+      },
+      {
+        "id": "D",
+        "text": "the experiment was performed at the wrong temperature."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "If it did, mass loss would have decreased, not increased.",
+      "B": "Correct — 61 mg exceeds the uncoated control’s 47 mg.",
+      "C": "The two coatings produced opposite effects.",
+      "D": "All Experiment 2 trials used the same 20°C."
+    }
+  },
+  {
+    "id": "s018",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp3",
+    "context": "Based on Experiment 3, mass lost at 45°C would most likely be closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "55 mg"
+      },
+      {
+        "id": "B",
+        "text": "70 mg"
+      },
+      {
+        "id": "C",
+        "text": "95 mg"
+      },
+      {
+        "id": "D",
+        "text": "130 mg"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Below the value already recorded at 35°C.",
+      "B": "Also below the 35°C value of 78 mg.",
+      "C": "Correct — 45°C lies between 35°C (78) and 50°C (112), so the value must fall between them.",
+      "D": "Exceeds the highest measured value."
+    }
+  },
+  {
+    "id": "s019",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp3",
+    "context": "To determine whether zinc coating remains protective in hot salt water, the next trial should use:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a zinc-coated nail in 0.5 M NaCl at 50°C."
+      },
+      {
+        "id": "B",
+        "text": "an oil-coated nail in distilled water at 50°C."
+      },
+      {
+        "id": "C",
+        "text": "a zinc-coated nail in distilled water at 20°C."
+      },
+      {
+        "id": "D",
+        "text": "an uncoated nail in 0.5 M NaCl at 50°C."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it holds the coating and solution from Trial 7 and changes only temperature, matching the Experiment 3 condition.",
+      "B": "Changes both coating and solution.",
+      "C": "Changes the solution rather than the temperature.",
+      "D": "Removes the zinc coating, which is the variable of interest."
+    }
+  },
+  {
+    "id": "s020",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp3",
+    "context": "Across all three experiments, which factor was held constant in Experiments 1 and 2 but varied in Experiment 3?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Solution composition"
+      },
+      {
+        "id": "B",
+        "text": "Coating"
+      },
+      {
+        "id": "C",
+        "text": "Temperature"
+      },
+      {
+        "id": "D",
+        "text": "Nail composition"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Solution varied in Experiment 1 and was constant in Experiment 3.",
+      "B": "Coating varied in Experiment 2.",
+      "C": "Correct — 20°C in Experiments 1 and 2; Experiment 3 tested 5, 20, 35, and 50°C.",
+      "D": "Identical iron nails were used throughout."
+    }
+  },
+  {
+    "id": "s021",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp4",
+    "context": "In Experiment 1, which light color produced the least dry mass, excluding the control?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Blue"
+      },
+      {
+        "id": "B",
+        "text": "Green"
+      },
+      {
+        "id": "C",
+        "text": "Red"
+      },
+      {
+        "id": "D",
+        "text": "White"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "1.84 g, well above green.",
+      "B": "Correct — 0.71 g, the lowest value among the illuminated groups.",
+      "C": "2.05 g.",
+      "D": "2.31 g, the highest."
+    }
+  },
+  {
+    "id": "s022",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp4",
+    "context": "Group 5 (darkness) was included in Experiment 1 primarily to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "test whether seedlings can survive without water."
+      },
+      {
+        "id": "B",
+        "text": "serve as a control establishing growth in the absence of light."
+      },
+      {
+        "id": "C",
+        "text": "measure leaf area more precisely."
+      },
+      {
+        "id": "D",
+        "text": "compare blue and red light directly."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Water was not a variable in this study.",
+      "B": "Correct — a group receiving none of the treatment provides a baseline for comparison.",
+      "C": "Leaf area was measured for all groups alike.",
+      "D": "That comparison uses Groups 1 and 3."
+    }
+  },
+  {
+    "id": "s023",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp4",
+    "context": "Based on Experiment 2, increasing red light intensity from 400 to 800 μmol/m²/s produced:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a large increase in dry mass."
+      },
+      {
+        "id": "B",
+        "text": "a small increase in dry mass."
+      },
+      {
+        "id": "C",
+        "text": "a large decrease in dry mass."
+      },
+      {
+        "id": "D",
+        "text": "no change at all."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The change from 2.44 to 2.49 g is only 0.05 g.",
+      "B": "Correct — dry mass rose slightly, indicating the response is leveling off.",
+      "C": "Mass increased rather than decreased.",
+      "D": "There was a small but nonzero change."
+    }
+  },
+  {
+    "id": "s024",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp4",
+    "context": "Which conclusion is best supported by comparing Experiments 1 and 3?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Blue light alone produces more growth than any combination."
+      },
+      {
+        "id": "B",
+        "text": "A mixture of blue and red light outperforms either color alone at the same intensity."
+      },
+      {
+        "id": "C",
+        "text": "Green light is essential for maximum growth."
+      },
+      {
+        "id": "D",
+        "text": "Light intensity has no effect on dry mass."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Blue alone gives 1.84 g, the lowest value in Experiment 3.",
+      "B": "Correct — the 25:75 mix produced 2.38 g, exceeding blue alone (1.84) and red alone (2.05).",
+      "C": "Green produced the least growth of any illuminated group.",
+      "D": "Experiment 2 shows a clear intensity effect."
+    }
+  },
+  {
+    "id": "s025",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp4",
+    "context": "In Experiment 1, dry mass and leaf area were related in what way?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Groups with greater dry mass generally had greater leaf area."
+      },
+      {
+        "id": "B",
+        "text": "Groups with greater dry mass generally had smaller leaf area."
+      },
+      {
+        "id": "C",
+        "text": "There was no consistent relationship."
+      },
+      {
+        "id": "D",
+        "text": "Leaf area was identical across all groups."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the ranking of dry mass (white > red > blue > green > dark) matches the ranking of leaf area exactly.",
+      "B": "The relationship is direct, not inverse.",
+      "C": "The two rankings align perfectly across all five groups.",
+      "D": "Leaf area ranged from 3 to 81 cm²."
+    }
+  },
+  {
+    "id": "s026",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp4",
+    "context": "The relatively poor growth under green light is best explained by the fact that chlorophyll:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "absorbs green light more strongly than blue or red light."
+      },
+      {
+        "id": "B",
+        "text": "reflects and transmits green light rather than absorbing it."
+      },
+      {
+        "id": "C",
+        "text": "is destroyed by green wavelengths."
+      },
+      {
+        "id": "D",
+        "text": "requires darkness to function."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The passage states absorption is strongest in blue and red.",
+      "B": "Correct — plants appear green precisely because chlorophyll reflects green light, so less energy is captured.",
+      "C": "No destruction is described or implied.",
+      "D": "The darkness control shows almost no growth."
+    }
+  },
+  {
+    "id": "s027",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp4",
+    "context": "A grower wants maximum dry mass while minimizing electricity use. Based on all three experiments, the best strategy is to use:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "800 μmol/m²/s of red light."
+      },
+      {
+        "id": "B",
+        "text": "200 μmol/m²/s of a 25:75 blue-to-red mixture."
+      },
+      {
+        "id": "C",
+        "text": "200 μmol/m²/s of green light."
+      },
+      {
+        "id": "D",
+        "text": "50 μmol/m²/s of red light."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Yields 2.49 g but at four times the intensity, and the gain over 400 is negligible.",
+      "B": "Correct — 2.38 g at only 200 μmol/m²/s, nearly matching the highest yields at a quarter of the energy.",
+      "C": "Green light produced the poorest illuminated growth.",
+      "D": "Yields only 0.88 g."
+    }
+  },
+  {
+    "id": "s028",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp5",
+    "context": "According to Scientist 1, the timing of the extinctions corresponds most closely to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "global temperature minima."
+      },
+      {
+        "id": "B",
+        "text": "the arrival of modern humans on each landmass."
+      },
+      {
+        "id": "C",
+        "text": "the fragmentation of the mammoth steppe."
+      },
+      {
+        "id": "D",
+        "text": "changes in pollen records."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Scientist 1 explicitly rejects a global climate event as the trigger.",
+      "B": "Correct — Scientist 1 cites Australia at 45,000 and North America at 13,000 years ago, each following human arrival.",
+      "C": "That is Scientist 2’s mechanism.",
+      "D": "Pollen evidence is offered by Scientist 2."
+    }
+  },
+  {
+    "id": "s029",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp5",
+    "context": "Scientist 2 cites the small number of confirmed kill sites in order to argue that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "humans arrived in North America later than previously believed."
+      },
+      {
+        "id": "B",
+        "text": "hunting was too limited in scale to explain continent-wide extinction."
+      },
+      {
+        "id": "C",
+        "text": "megafauna were already extinct before humans arrived."
+      },
+      {
+        "id": "D",
+        "text": "archaeological methods are unreliable."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Arrival timing is not disputed by Scientist 2.",
+      "B": "Correct — \"far too few to account for continent-wide extinction.\"",
+      "C": "Scientist 2 states several species survived alongside humans for millennia.",
+      "D": "Method reliability is never questioned."
+    }
+  },
+  {
+    "id": "s030",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp5",
+    "context": "Both scientists would most likely agree that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "human hunting was the primary cause of the extinctions."
+      },
+      {
+        "id": "B",
+        "text": "most large land mammals in several regions went extinct in the late Pleistocene."
+      },
+      {
+        "id": "C",
+        "text": "climate change had no role in the extinctions."
+      },
+      {
+        "id": "D",
+        "text": "Africa lost most of its megafauna."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Scientist 2 rejects this.",
+      "B": "Correct — the shared premise is stated in the introduction and accepted by both.",
+      "C": "Scientist 2 makes climate the central cause.",
+      "D": "Scientist 1 notes Africa retained most of its large mammals."
+    }
+  },
+  {
+    "id": "s031",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp5",
+    "context": "Which finding, if true, would most weaken Scientist 2’s hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Pollen records show vegetation change 2,000 years before the extinctions."
+      },
+      {
+        "id": "B",
+        "text": "Several megafauna species went extinct on islands where vegetation remained unchanged but humans had recently arrived."
+      },
+      {
+        "id": "C",
+        "text": "Mammoth steppe habitat declined sharply after 15,000 years ago."
+      },
+      {
+        "id": "D",
+        "text": "Fewer than 20 confirmed kill sites exist in North America."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This supports Scientist 2 by placing habitat change before the losses.",
+      "B": "Correct — extinction without habitat change breaks the causal link Scientist 2 proposes.",
+      "C": "This is precisely Scientist 2’s claim.",
+      "D": "This is evidence Scientist 2 already cites in support."
+    }
+  },
+  {
+    "id": "s032",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp5",
+    "context": "Scientist 1 uses the case of Africa to argue that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "African climate was more stable than elsewhere."
+      },
+      {
+        "id": "B",
+        "text": "prey species that coevolved with hominins were less vulnerable to human hunting."
+      },
+      {
+        "id": "C",
+        "text": "African megafauna were smaller and reproduced faster."
+      },
+      {
+        "id": "D",
+        "text": "humans never hunted large mammals in Africa."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Scientist 1 does not appeal to African climate.",
+      "B": "Correct — \"precisely what one would expect if naive prey animals were the vulnerable ones.\"",
+      "C": "Body size and reproduction in Africa are not discussed.",
+      "D": "Scientist 1 implies long coexistence, not an absence of hunting."
+    }
+  },
+  {
+    "id": "s033",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp5",
+    "context": "Scientist 1 argues that extinction could result from a modest hunting rate because large mammals:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "migrate over long distances."
+      },
+      {
+        "id": "B",
+        "text": "reproduce slowly, so small increases in mortality accumulate."
+      },
+      {
+        "id": "C",
+        "text": "depend entirely on grassland habitat."
+      },
+      {
+        "id": "D",
+        "text": "have no natural predators."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Migration is not part of the argument.",
+      "B": "Correct — \"Large, slow-reproducing species need only a small sustained increase in mortality to decline.\"",
+      "C": "Habitat dependence is Scientist 2’s emphasis.",
+      "D": "Predation by non-humans is never mentioned."
+    }
+  },
+  {
+    "id": "s034",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp5",
+    "context": "Evidence that megafauna in Eurasia declined gradually over 10,000 years of human coexistence would:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "support Scientist 1 and weaken Scientist 2."
+      },
+      {
+        "id": "B",
+        "text": "support Scientist 2, who cites prolonged coexistence as inconsistent with rapid hunting-driven collapse."
+      },
+      {
+        "id": "C",
+        "text": "support neither scientist."
+      },
+      {
+        "id": "D",
+        "text": "prove that climate change did not occur."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Scientist 1’s model emphasizes losses shortly after human arrival.",
+      "B": "Correct — Scientist 2 explicitly raises prolonged survival alongside humans as an objection to overkill.",
+      "C": "It bears directly on the dispute.",
+      "D": "It says nothing about whether climate changed."
+    }
+  },
+  {
+    "id": "s035",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp6",
+    "context": "According to Table 1, the solubility of KNO₃ at 60°C is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "37.3 g"
+      },
+      {
+        "id": "B",
+        "text": "64 g"
+      },
+      {
+        "id": "C",
+        "text": "110 g"
+      },
+      {
+        "id": "D",
+        "text": "169 g"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is the NaCl value at 60°C.",
+      "B": "This is the KNO₃ value at 40°C.",
+      "C": "Correct — read the KNO₃ column at the 60°C row.",
+      "D": "This is the KNO₃ value at 80°C."
+    }
+  },
+  {
+    "id": "s036",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp6",
+    "context": "Which salt shows solubility that decreases as temperature increases?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "KNO₃"
+      },
+      {
+        "id": "B",
+        "text": "NaCl"
+      },
+      {
+        "id": "C",
+        "text": "Ce₂(SO₄)₃"
+      },
+      {
+        "id": "D",
+        "text": "All three"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "KNO₃ rises steeply from 13 to 169 g.",
+      "B": "NaCl rises slightly from 35.7 to 38.4 g.",
+      "C": "Correct — Ce₂(SO₄)₃ falls from 21.4 g at 0°C to 3.0 g at 80°C.",
+      "D": "Only one salt shows the decreasing pattern."
+    }
+  },
+  {
+    "id": "s037",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp6",
+    "context": "At which temperature do KNO₃ and NaCl have the most similar solubility?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0°C"
+      },
+      {
+        "id": "B",
+        "text": "20°C"
+      },
+      {
+        "id": "C",
+        "text": "40°C"
+      },
+      {
+        "id": "D",
+        "text": "80°C"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "13 vs. 35.7 g — a difference of 22.7 g.",
+      "B": "Correct — 32 vs. 36.0 g is a difference of only 4.0 g, the smallest gap in the table.",
+      "C": "64 vs. 36.6 g — a difference of 27.4 g.",
+      "D": "169 vs. 38.4 g — a difference of 130.6 g."
+    }
+  },
+  {
+    "id": "s038",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "hard",
+    "passage": "sp6",
+    "context": "A saturated KNO₃ solution at 80°C is cooled to 20°C. Approximately how many grams of KNO₃ per 100 g of water would be expected to come out of solution?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "32 g"
+      },
+      {
+        "id": "B",
+        "text": "59 g"
+      },
+      {
+        "id": "C",
+        "text": "105 g"
+      },
+      {
+        "id": "D",
+        "text": "137 g"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This is the amount that remains dissolved at 20°C.",
+      "B": "Does not correspond to any difference in the table.",
+      "C": "This would be the drop from 80°C to 60°C plus an error.",
+      "D": "Correct — 169 g dissolve at 80°C but only 32 g at 20°C, so about 137 g precipitate."
+    }
+  },
+  {
+    "id": "s039",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp6",
+    "context": "According to Table 2, which saturated solution is least dense at 20°C?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "KNO₃"
+      },
+      {
+        "id": "B",
+        "text": "NaCl"
+      },
+      {
+        "id": "C",
+        "text": "Ce₂(SO₄)₃"
+      },
+      {
+        "id": "D",
+        "text": "All are equally dense."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "1.16 g/mL.",
+      "B": "1.20 g/mL, the densest.",
+      "C": "Correct — 1.09 g/mL, the lowest value listed.",
+      "D": "The three densities differ."
+    }
+  },
+  {
+    "id": "s040",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "hard",
+    "passage": "sp6",
+    "context": "A student hypothesizes that the salt with the greatest solubility at 20°C forms the densest saturated solution. Do the data support this?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because NaCl has both the highest solubility at 20°C and the highest density."
+      },
+      {
+        "id": "B",
+        "text": "No, because KNO₃ has the highest solubility at 20°C but not the highest density."
+      },
+      {
+        "id": "C",
+        "text": "No, because Ce₂(SO₄)₃ has the highest density."
+      },
+      {
+        "id": "D",
+        "text": "No, because density cannot be predicted from any measured property."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — at 20°C NaCl dissolves at 36.0 g vs. KNO₃ at 32 g and Ce₂(SO₄)₃ at 9.8 g, and NaCl’s solution is densest at 1.20 g/mL.",
+      "B": "KNO₃ is second in solubility at 20°C, not first.",
+      "C": "Ce₂(SO₄)₃ has the lowest density.",
+      "D": "Density is a measured property in Table 2 and can be compared directly, so this reasoning is unfounded."
+    }
+  },
+  {
+    "id": "s041",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp7",
+    "context": "According to Table 1, survival was lowest at which pH?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "8.1"
+      },
+      {
+        "id": "B",
+        "text": "7.7"
+      },
+      {
+        "id": "C",
+        "text": "7.5"
+      },
+      {
+        "id": "D",
+        "text": "7.3"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "94%, the highest.",
+      "B": "82%.",
+      "C": "64%.",
+      "D": "Correct — 37%, the lowest value listed."
+    }
+  },
+  {
+    "id": "s042",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp7",
+    "context": "Based on Table 1, as pH decreased from 8.1 to 7.3, shell mass gain:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "increased only."
+      },
+      {
+        "id": "B",
+        "text": "decreased only."
+      },
+      {
+        "id": "C",
+        "text": "increased, then decreased."
+      },
+      {
+        "id": "D",
+        "text": "stayed the same."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Values fall, not rise.",
+      "B": "Correct — 142 → 118 → 76 → 41 → 18 mg.",
+      "C": "No reversal occurs.",
+      "D": "The values change by more than 120 mg."
+    }
+  },
+  {
+    "id": "s043",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp7",
+    "context": "Based on Table 2, shell mass gain at 20°C would most likely be closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "95 mg"
+      },
+      {
+        "id": "B",
+        "text": "128 mg"
+      },
+      {
+        "id": "C",
+        "text": "140 mg"
+      },
+      {
+        "id": "D",
+        "text": "70 mg"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Below both neighboring values.",
+      "B": "Correct — 20°C lies between 18°C (131) and 21°C (126), so the value must fall between them.",
+      "C": "Exceeds the measured maximum.",
+      "D": "Corresponds to a much higher temperature."
+    }
+  },
+  {
+    "id": "s044",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp7",
+    "context": "A pH of 7.3 compared with a pH of 8.1 indicates water that is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "more acidic"
+      },
+      {
+        "id": "B",
+        "text": "more basic"
+      },
+      {
+        "id": "C",
+        "text": "neutral"
+      },
+      {
+        "id": "D",
+        "text": "unchanged in acidity"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — lower pH values indicate greater acidity.",
+      "B": "Higher pH would be more basic.",
+      "C": "Neutral is pH 7.0 exactly.",
+      "D": "A change of 0.8 pH units is substantial on a logarithmic scale."
+    }
+  },
+  {
+    "id": "s045",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp7",
+    "context": "The note about calcium carbonate best explains why:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "shell growth declined as pH fell."
+      },
+      {
+        "id": "B",
+        "text": "survival was highest at 18°C."
+      },
+      {
+        "id": "C",
+        "text": "temperature affected growth."
+      },
+      {
+        "id": "D",
+        "text": "the study lasted 60 days."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — more acidic water dissolves the shell material faster, so less net mass accumulates.",
+      "B": "Survival by temperature was not measured.",
+      "C": "The note concerns acidity, not temperature.",
+      "D": "Study duration is unrelated to the note."
+    }
+  },
+  {
+    "id": "s046",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "hard",
+    "passage": "sp7",
+    "context": "Which combination would be expected to produce the greatest shell mass gain?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "pH 7.3 at 24°C"
+      },
+      {
+        "id": "B",
+        "text": "pH 8.1 at 18°C"
+      },
+      {
+        "id": "C",
+        "text": "pH 7.5 at 12°C"
+      },
+      {
+        "id": "D",
+        "text": "pH 7.7 at 24°C"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Both conditions are at the poor end of each series.",
+      "B": "Correct — pH 8.1 gave the highest growth in Table 1 and 18°C the highest in Table 2.",
+      "C": "Both values are well below their optima.",
+      "D": "Both conditions reduce growth."
+    }
+  },
+  {
+    "id": "s047",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp7",
+    "context": "In Table 2, temperature was varied while pH was held at 8.0. Holding pH constant served to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "increase the number of trials."
+      },
+      {
+        "id": "B",
+        "text": "isolate temperature as the only variable affecting growth."
+      },
+      {
+        "id": "C",
+        "text": "make the oysters grow faster."
+      },
+      {
+        "id": "D",
+        "text": "test whether pH affects survival."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Trial count is unrelated to holding a variable constant.",
+      "B": "Correct — controlling pH ensures any change in growth is attributable to temperature.",
+      "C": "A control does not itself improve growth.",
+      "D": "That was tested in Table 1, where pH varied."
+    }
+  },
+  {
+    "id": "s048",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp7",
+    "context": "Between which two pH values did shell mass gain drop the most?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "8.1 to 7.9"
+      },
+      {
+        "id": "B",
+        "text": "7.9 to 7.7"
+      },
+      {
+        "id": "C",
+        "text": "7.7 to 7.5"
+      },
+      {
+        "id": "D",
+        "text": "7.5 to 7.3"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A drop of 24 mg.",
+      "B": "Correct — 118 → 76 is a drop of 42 mg, the largest single step.",
+      "C": "A drop of 35 mg.",
+      "D": "A drop of 23 mg."
+    }
+  },
+  {
+    "id": "s049",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp8",
+    "context": "In Experiment 1, which material kept the water warmest?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "None (bare glass)"
+      },
+      {
+        "id": "B",
+        "text": "Paper wrap"
+      },
+      {
+        "id": "C",
+        "text": "Foam sleeve"
+      },
+      {
+        "id": "D",
+        "text": "Vacuum flask"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "44°C, the coldest.",
+      "B": "52°C.",
+      "C": "68°C.",
+      "D": "Correct — 81°C, the highest final temperature."
+    }
+  },
+  {
+    "id": "s050",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp8",
+    "context": "Trial 1 (bare glass) was most likely included to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "test a new insulating material."
+      },
+      {
+        "id": "B",
+        "text": "serve as a control showing cooling without insulation."
+      },
+      {
+        "id": "C",
+        "text": "measure the room temperature."
+      },
+      {
+        "id": "D",
+        "text": "check the accuracy of the thermometer."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Bare glass is the absence of insulation, not a material being tested.",
+      "B": "Correct — it establishes the baseline against which the insulators are compared.",
+      "C": "Room temperature was set at 20°C by design.",
+      "D": "No calibration procedure is described."
+    }
+  },
+  {
+    "id": "s051",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp8",
+    "context": "Based on Experiment 2, as volume increased, the final temperature:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "increased."
+      },
+      {
+        "id": "B",
+        "text": "decreased."
+      },
+      {
+        "id": "C",
+        "text": "increased, then decreased."
+      },
+      {
+        "id": "D",
+        "text": "showed no pattern."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 58 → 68 → 75 → 80°C as volume rose from 250 to 2000 mL.",
+      "B": "The trend runs the other way.",
+      "C": "No reversal appears.",
+      "D": "The trend is consistent across all four trials."
+    }
+  },
+  {
+    "id": "s052",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp8",
+    "context": "Based on Experiment 2, a 750 mL sample would most likely finish closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "62°C"
+      },
+      {
+        "id": "B",
+        "text": "72°C"
+      },
+      {
+        "id": "C",
+        "text": "78°C"
+      },
+      {
+        "id": "D",
+        "text": "84°C"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Below the 500 mL value of 68°C.",
+      "B": "Correct — 750 mL lies between 500 mL (68°C) and 1000 mL (75°C).",
+      "C": "Above the 1000 mL value.",
+      "D": "Exceeds the highest measured value."
+    }
+  },
+  {
+    "id": "s053",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp8",
+    "context": "To test whether the foam sleeve works better than paper at a room temperature of 30°C, the next trial should use:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "paper wrap, 500 mL, 30°C"
+      },
+      {
+        "id": "B",
+        "text": "foam sleeve, 250 mL, 30°C"
+      },
+      {
+        "id": "C",
+        "text": "paper wrap, 1000 mL, 20°C"
+      },
+      {
+        "id": "D",
+        "text": "vacuum flask, 500 mL, 30°C"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it matches Trial 11 (foam, 500 mL, 30°C) in every respect except the material being compared.",
+      "B": "Changes volume as well.",
+      "C": "Changes both volume and room temperature.",
+      "D": "Tests a third material rather than paper."
+    }
+  },
+  {
+    "id": "s054",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp8",
+    "context": "In Experiment 3, the final temperature rose as room temperature rose. This is best explained by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a smaller temperature difference driving slower heat loss."
+      },
+      {
+        "id": "B",
+        "text": "the foam sleeve becoming a better insulator when warm."
+      },
+      {
+        "id": "C",
+        "text": "the water absorbing heat from the room."
+      },
+      {
+        "id": "D",
+        "text": "the volume of water increasing."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — heat flows more slowly when the gap between the water and its surroundings is smaller.",
+      "B": "No data suggest the sleeve’s properties change.",
+      "C": "The water is far hotter than the room in every trial, so heat flows outward.",
+      "D": "Volume was fixed at 500 mL throughout Experiment 3."
+    }
+  },
+  {
+    "id": "s055",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp8",
+    "context": "A student claims insulation type matters more than room temperature. Do the data support this?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes — material produced a 37°C spread while room temperature produced only 15°C."
+      },
+      {
+        "id": "B",
+        "text": "No — room temperature produced the larger spread."
+      },
+      {
+        "id": "C",
+        "text": "Yes, because the vacuum flask was used in both experiments."
+      },
+      {
+        "id": "D",
+        "text": "No, because the two variables were never tested together."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Experiment 1 ranged 44–81°C (37°) while Experiment 3 ranged 59–74°C (15°).",
+      "B": "The material spread is more than twice as large.",
+      "C": "The flask appears only in Experiment 1.",
+      "D": "Comparing the spread of each variable is a valid inference from the data given."
+    }
+  },
+  {
+    "id": "s056",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp8",
+    "context": "Which trial had the smallest drop from the 90°C starting temperature?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Trial 4"
+      },
+      {
+        "id": "B",
+        "text": "Trial 8"
+      },
+      {
+        "id": "C",
+        "text": "Trial 11"
+      },
+      {
+        "id": "D",
+        "text": "Trial 1"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Trial 4 ended at 81°C, a drop of only 9°C.",
+      "B": "Ended at 80°C, a drop of 10°C.",
+      "C": "Ended at 74°C, a drop of 16°C.",
+      "D": "Ended at 44°C, the largest drop."
+    }
+  },
+  {
+    "id": "s057",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp9",
+    "context": "According to Table 1, which year had the least rainfall?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2016"
+      },
+      {
+        "id": "B",
+        "text": "2017"
+      },
+      {
+        "id": "C",
+        "text": "2019"
+      },
+      {
+        "id": "D",
+        "text": "2020"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "92 cm.",
+      "B": "61 cm.",
+      "C": "Correct — 38 cm, the lowest value.",
+      "D": "104 cm."
+    }
+  },
+  {
+    "id": "s058",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp9",
+    "context": "Which species’ ring width varied least across the five years?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Oak"
+      },
+      {
+        "id": "B",
+        "text": "Pine"
+      },
+      {
+        "id": "C",
+        "text": "Juniper"
+      },
+      {
+        "id": "D",
+        "text": "All varied equally."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Ranged 1.2–4.2 mm, a spread of 3.0.",
+      "B": "Ranged 1.9–3.1 mm, a spread of 1.2.",
+      "C": "Correct — ranged 1.4–1.7 mm, a spread of only 0.3 mm.",
+      "D": "The three spreads differ substantially."
+    }
+  },
+  {
+    "id": "s059",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp9",
+    "context": "Based on both tables, ring width appears most sensitive to rainfall in the species with:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the shallowest roots."
+      },
+      {
+        "id": "B",
+        "text": "the deepest roots."
+      },
+      {
+        "id": "C",
+        "text": "the highest drought tolerance."
+      },
+      {
+        "id": "D",
+        "text": "moderate drought tolerance."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — oak has the shallowest roots (1.8 m) and by far the largest year-to-year variation.",
+      "B": "Juniper has the deepest roots and the least variation.",
+      "C": "Juniper is rated highest in tolerance and varies least.",
+      "D": "Pine is intermediate in both."
+    }
+  },
+  {
+    "id": "s060",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "hard",
+    "passage": "sp9",
+    "context": "A researcher finds an oak ring 3.7 mm wide in an undated year at this site. Rainfall that year was most likely closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "38 cm"
+      },
+      {
+        "id": "B",
+        "text": "61 cm"
+      },
+      {
+        "id": "C",
+        "text": "100 cm"
+      },
+      {
+        "id": "D",
+        "text": "150 cm"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That year produced a 1.2 mm ring.",
+      "B": "That year produced a 2.1 mm ring.",
+      "C": "Correct — 3.7 mm falls between the 2020 (3.9 mm / 104 cm) and 2016 (3.4 mm / 92 cm) values.",
+      "D": "Exceeds any rainfall in the record."
+    }
+  },
+  {
+    "id": "s061",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp9",
+    "context": "Which species would be least useful for reconstructing past rainfall from ring widths?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Oak"
+      },
+      {
+        "id": "B",
+        "text": "Pine"
+      },
+      {
+        "id": "C",
+        "text": "Juniper"
+      },
+      {
+        "id": "D",
+        "text": "All would work equally well."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Oak responds strongly to rainfall, making it the most useful.",
+      "B": "Pine shows a moderate response.",
+      "C": "Correct — juniper’s rings barely change even when rainfall varies threefold, so they carry little rainfall signal.",
+      "D": "The three species respond very differently."
+    }
+  },
+  {
+    "id": "s062",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp9",
+    "context": "In which year did oak and pine ring widths differ the least?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2016"
+      },
+      {
+        "id": "B",
+        "text": "2017"
+      },
+      {
+        "id": "C",
+        "text": "2018"
+      },
+      {
+        "id": "D",
+        "text": "2019"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "3.4 vs. 2.8, a difference of 0.6 mm.",
+      "B": "Correct — 2.1 vs. 2.4 differ by only 0.3 mm.",
+      "C": "4.2 vs. 3.1, a difference of 1.1 mm.",
+      "D": "1.2 vs. 1.9, a difference of 0.7 mm."
+    }
+  },
+  {
+    "id": "s063",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp9",
+    "context": "Deeper roots most plausibly help a tree survive drought because they:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "reach water stored further underground."
+      },
+      {
+        "id": "B",
+        "text": "absorb more sunlight."
+      },
+      {
+        "id": "C",
+        "text": "reduce the tree’s need for carbon dioxide."
+      },
+      {
+        "id": "D",
+        "text": "increase the rate of photosynthesis directly."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — deep roots tap moisture that persists below the dry surface layer.",
+      "B": "Roots are underground and absorb no light.",
+      "C": "Root depth does not change CO₂ requirements.",
+      "D": "Photosynthesis occurs in leaves, not roots."
+    }
+  },
+  {
+    "id": "s064",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "hard",
+    "passage": "sp9",
+    "context": "A student concludes that rainfall is the only factor controlling oak ring width. The data:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "support this, since oak width rises and falls with rainfall."
+      },
+      {
+        "id": "B",
+        "text": "do not establish this, because no other factor was measured or controlled."
+      },
+      {
+        "id": "C",
+        "text": "refute this, because oak width is unrelated to rainfall."
+      },
+      {
+        "id": "D",
+        "text": "refute this, because juniper shows the same pattern."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Correlation across five years does not rule out other influences.",
+      "B": "Correct — temperature, soil, and disease were never recorded, so \"only factor\" is unsupported.",
+      "C": "Oak width clearly tracks rainfall.",
+      "D": "Juniper shows almost no response, not the same pattern."
+    }
+  },
+  {
+    "id": "s065",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp10",
+    "context": "According to Experiment 1, as string length increased, the period:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "increased."
+      },
+      {
+        "id": "B",
+        "text": "decreased."
+      },
+      {
+        "id": "C",
+        "text": "stayed constant."
+      },
+      {
+        "id": "D",
+        "text": "increased, then decreased."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 1.00 → 1.42 → 1.74 → 2.01 → 2.46 s.",
+      "B": "The values rise.",
+      "C": "They change by nearly 1.5 s.",
+      "D": "No reversal appears."
+    }
+  },
+  {
+    "id": "s066",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp10",
+    "context": "Experiment 2 shows that the period of a pendulum is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "strongly dependent on bob mass."
+      },
+      {
+        "id": "B",
+        "text": "essentially independent of bob mass."
+      },
+      {
+        "id": "C",
+        "text": "inversely proportional to bob mass."
+      },
+      {
+        "id": "D",
+        "text": "dependent on both mass and length equally."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A tenfold mass increase changed the period by at most 0.01 s.",
+      "B": "Correct — the period stayed at about 2.01 s across all masses.",
+      "C": "The period did not fall as mass rose.",
+      "D": "Length clearly matters; mass clearly does not."
+    }
+  },
+  {
+    "id": "s067",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp10",
+    "context": "Based on Experiment 1, a 125 cm string would give a period closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.85 s"
+      },
+      {
+        "id": "B",
+        "text": "2.25 s"
+      },
+      {
+        "id": "C",
+        "text": "2.60 s"
+      },
+      {
+        "id": "D",
+        "text": "3.00 s"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Below the 100 cm value of 2.01 s.",
+      "B": "Correct — 125 cm lies between 100 cm (2.01 s) and 150 cm (2.46 s).",
+      "C": "Above the 150 cm value.",
+      "D": "Far beyond any measured value."
+    }
+  },
+  {
+    "id": "s068",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp10",
+    "context": "Which variable was held constant in all three experiments?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "String length"
+      },
+      {
+        "id": "B",
+        "text": "Bob mass"
+      },
+      {
+        "id": "C",
+        "text": "Release angle"
+      },
+      {
+        "id": "D",
+        "text": "None of these"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Length varied in Experiment 1.",
+      "B": "Mass varied in Experiment 2.",
+      "C": "Angle varied in Experiment 3.",
+      "D": "Correct — each of the three was the independent variable in one experiment."
+    }
+  },
+  {
+    "id": "s069",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp10",
+    "context": "Experiment 3 suggests that release angle:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "has no effect on the period at any angle."
+      },
+      {
+        "id": "B",
+        "text": "has almost no effect at small angles but a measurable effect at large ones."
+      },
+      {
+        "id": "C",
+        "text": "has a large effect at every angle."
+      },
+      {
+        "id": "D",
+        "text": "decreases the period as angle increases."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The period rose from 2.00 to 2.18 s between 5° and 45°.",
+      "B": "Correct — 5° to 10° changed it by 0.01 s, while 20° to 45° changed it by 0.14 s.",
+      "C": "The effect is negligible below 20°.",
+      "D": "The period increased rather than decreased."
+    }
+  },
+  {
+    "id": "s070",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp10",
+    "context": "A student wants a pendulum with a period of exactly 1.00 s. Based on the data, they should use a string of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "25 cm, with any mass and a small release angle"
+      },
+      {
+        "id": "B",
+        "text": "50 cm, with a 500 g bob"
+      },
+      {
+        "id": "C",
+        "text": "100 cm, with a 50 g bob"
+      },
+      {
+        "id": "D",
+        "text": "25 cm, but only with a 100 g bob"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Trial 1 gives 1.00 s at 25 cm, and Experiment 2 shows mass is irrelevant.",
+      "B": "50 cm produces about 1.42 s.",
+      "C": "100 cm produces about 2.01 s.",
+      "D": "The mass restriction is unnecessary, since mass does not affect the period."
+    }
+  },
+  {
+    "id": "s071",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp10",
+    "context": "Quadrupling the string length from 25 cm to 100 cm changed the period by a factor closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "4"
+      },
+      {
+        "id": "D",
+        "text": "8"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The period clearly changed.",
+      "B": "Correct — 2.01 ÷ 1.00 ≈ 2, so quadrupling the length doubles the period.",
+      "C": "That would require a period of about 4 s.",
+      "D": "Far beyond the observed change."
+    }
+  },
+  {
+    "id": "s072",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp10",
+    "context": "Why did the students time 20 swings and then divide, rather than timing one swing?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "To reduce the effect of reaction-time error on each measurement."
+      },
+      {
+        "id": "B",
+        "text": "Because a single swing cannot be timed."
+      },
+      {
+        "id": "C",
+        "text": "To increase the pendulum’s period."
+      },
+      {
+        "id": "D",
+        "text": "To change the release angle."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — spreading a fixed timing error across 20 swings reduces its effect on the calculated period by a factor of 20.",
+      "B": "A single swing can be timed, just less precisely.",
+      "C": "The method does not alter the pendulum’s behavior.",
+      "D": "Angle was controlled separately."
+    }
+  },
+  {
+    "id": "s073",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp11",
+    "context": "According to Scientist 1, the cooling was triggered by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "soot from continental wildfires."
+      },
+      {
+        "id": "B",
+        "text": "fresh water weakening ocean circulation."
+      },
+      {
+        "id": "C",
+        "text": "an increase in volcanic activity."
+      },
+      {
+        "id": "D",
+        "text": "a change in Earth’s orbit."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is Scientist 2’s mechanism.",
+      "B": "Correct — meltwater lowered salinity and weakened the northward heat transport.",
+      "C": "Volcanism is never mentioned.",
+      "D": "Orbital change is not discussed by either scientist."
+    }
+  },
+  {
+    "id": "s074",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp11",
+    "context": "Scientist 2 cites platinum, microspherules, and nanodiamonds primarily to argue that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the cooling lasted 1,200 years."
+      },
+      {
+        "id": "B",
+        "text": "an extraterrestrial impact occurred at that time."
+      },
+      {
+        "id": "C",
+        "text": "ocean circulation weakened."
+      },
+      {
+        "id": "D",
+        "text": "glacial lakes drained rapidly."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Duration is stated in the introduction and is not what these materials show.",
+      "B": "Correct — Scientist 2 links these materials to impacts and notes lake drainage cannot produce them.",
+      "C": "That is Scientist 1’s mechanism.",
+      "D": "Scientist 2 argues against drainage as the cause."
+    }
+  },
+  {
+    "id": "s075",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp11",
+    "context": "Both scientists would most likely agree that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a comet fragmented over the ice sheet."
+      },
+      {
+        "id": "B",
+        "text": "the Northern Hemisphere cooled abruptly about 12,900 years ago."
+      },
+      {
+        "id": "C",
+        "text": "ocean circulation was unaffected."
+      },
+      {
+        "id": "D",
+        "text": "the cooling was gradual."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Only Scientist 2 makes this claim.",
+      "B": "Correct — the shared premise is stated in the introduction and accepted by both.",
+      "C": "Scientist 1 makes circulation central.",
+      "D": "Both describe an abrupt onset."
+    }
+  },
+  {
+    "id": "s076",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp11",
+    "context": "Which finding would most weaken Scientist 1’s hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Evidence that the Southern Hemisphere cooled just as much as the Northern."
+      },
+      {
+        "id": "B",
+        "text": "Evidence of elevated platinum in sediments."
+      },
+      {
+        "id": "C",
+        "text": "Evidence that the cooling began within decades."
+      },
+      {
+        "id": "D",
+        "text": "Evidence that a glacial lake existed in North America."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Scientist 1’s mechanism predicts an asymmetric, northern-focused cooling, so symmetric cooling contradicts it directly.",
+      "B": "This supports Scientist 2 without disproving a circulation change.",
+      "C": "Scientist 2 emphasizes abruptness, but a sudden lake drainage could also act quickly.",
+      "D": "This supports Scientist 1."
+    }
+  },
+  {
+    "id": "s077",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp11",
+    "context": "Scientist 1 cites St. Lawrence sediment cores in order to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "date the impact layer."
+      },
+      {
+        "id": "B",
+        "text": "provide physical evidence that a large discharge occurred at the right time."
+      },
+      {
+        "id": "C",
+        "text": "measure Southern Hemisphere temperatures."
+      },
+      {
+        "id": "D",
+        "text": "show that wildfires were widespread."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Scientist 1 rejects the impact explanation.",
+      "B": "Correct — the cores document the drainage event the hypothesis requires.",
+      "C": "The cores are from North America, not the Southern Hemisphere.",
+      "D": "Wildfires belong to Scientist 2’s account."
+    }
+  },
+  {
+    "id": "s078",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp11",
+    "context": "Scientist 2 argues the abruptness of the onset favors an impact because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "oceanographic changes are always slow."
+      },
+      {
+        "id": "B",
+        "text": "a sudden catastrophic trigger better matches a change occurring within decades."
+      },
+      {
+        "id": "C",
+        "text": "impacts always cause cooling."
+      },
+      {
+        "id": "D",
+        "text": "ice cores cannot resolve decades."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Scientist 2 says a catastrophic trigger fits better, not that ocean change is always slow.",
+      "B": "Correct — this is the stated reasoning about timescale.",
+      "C": "No such universal claim is made.",
+      "D": "Scientist 2 relies on decadal resolution rather than disputing it."
+    }
+  },
+  {
+    "id": "s079",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp11",
+    "context": "If the impact materials were later shown to occur at many different dates rather than only at 12,900 years ago, this would:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "strengthen Scientist 2’s hypothesis."
+      },
+      {
+        "id": "B",
+        "text": "weaken Scientist 2’s hypothesis by removing the link to this specific event."
+      },
+      {
+        "id": "C",
+        "text": "weaken Scientist 1’s hypothesis."
+      },
+      {
+        "id": "D",
+        "text": "have no bearing on either hypothesis."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The argument depends on the materials being confined to that layer.",
+      "B": "Correct — if the markers are common across many dates, they no longer single out the Younger Dryas onset.",
+      "C": "Scientist 1’s meltwater mechanism is untouched by this finding.",
+      "D": "It bears directly on Scientist 2’s central evidence."
+    }
+  },
+  {
+    "id": "s080",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp11",
+    "context": "The two hypotheses differ mainly in:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "whether the cooling occurred at all."
+      },
+      {
+        "id": "B",
+        "text": "the mechanism that initiated the cooling."
+      },
+      {
+        "id": "C",
+        "text": "how long the cooling lasted."
+      },
+      {
+        "id": "D",
+        "text": "which hemisphere was affected most."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Both accept the cooling as established.",
+      "B": "Correct — meltwater disrupting circulation versus an impact triggering wildfires and soot.",
+      "C": "Neither disputes the roughly 1,200-year duration.",
+      "D": "Only Scientist 1 raises hemispheric asymmetry, and Scientist 2 does not contest it."
+    }
+  }
+]

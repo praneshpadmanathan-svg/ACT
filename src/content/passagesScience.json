@@ -1,0 +1,900 @@
+[
+  {
+    "id": "sp1",
+    "type": "Data Representation",
+    "title": "Enzyme Activity",
+    "intro": "Catalase is an enzyme that breaks hydrogen peroxide (H₂O₂) into water and oxygen gas. Students measured catalase activity as the volume of O₂ produced per minute (mL/min) from identical H₂O₂ samples. In Study 1 they varied temperature at a constant pH of 7.0. In Study 2 they varied pH at a constant temperature of 37°C.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Study 1 — Catalase activity vs. temperature (pH 7.0)",
+        "type": "table",
+        "head": [
+          "Temperature (°C)",
+          "O₂ produced (mL/min)"
+        ],
+        "rows": [
+          [
+            "5",
+            "1.2"
+          ],
+          [
+            "15",
+            "3.8"
+          ],
+          [
+            "25",
+            "8.1"
+          ],
+          [
+            "37",
+            "14.6"
+          ],
+          [
+            "45",
+            "9.3"
+          ],
+          [
+            "55",
+            "2.1"
+          ],
+          [
+            "65",
+            "0.0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Study 2 — Catalase activity vs. pH (37°C)",
+        "type": "table",
+        "head": [
+          "pH",
+          "O₂ produced (mL/min)"
+        ],
+        "rows": [
+          [
+            "3.0",
+            "0.4"
+          ],
+          [
+            "5.0",
+            "5.7"
+          ],
+          [
+            "6.0",
+            "11.2"
+          ],
+          [
+            "7.0",
+            "14.6"
+          ],
+          [
+            "8.0",
+            "12.8"
+          ],
+          [
+            "9.0",
+            "6.1"
+          ],
+          [
+            "11.0",
+            "0.2"
+          ]
+        ]
+      },
+      {
+        "label": "Note",
+        "caption": "",
+        "type": "note",
+        "text": "Above 60°C, catalase permanently loses its three-dimensional shape. Once this occurs, activity does not return when the sample is cooled."
+      }
+    ]
+  },
+  {
+    "id": "sp2",
+    "type": "Data Representation",
+    "title": "Seed Germination and Soil Moisture",
+    "intro": "Researchers planted 100 seeds of each of three plant species in identical trays at five soil moisture levels (percent water by mass). After 14 days they recorded the number of seeds that germinated and the average shoot height of germinated seedlings.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Seeds germinated (out of 100) at each moisture level",
+        "type": "table",
+        "head": [
+          "Soil moisture (%)",
+          "Species A",
+          "Species B",
+          "Species C"
+        ],
+        "rows": [
+          [
+            "10",
+            "12",
+            "48",
+            "5"
+          ],
+          [
+            "20",
+            "44",
+            "76",
+            "19"
+          ],
+          [
+            "30",
+            "81",
+            "88",
+            "52"
+          ],
+          [
+            "40",
+            "93",
+            "61",
+            "88"
+          ],
+          [
+            "50",
+            "77",
+            "29",
+            "94"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Average shoot height (mm) after 14 days",
+        "type": "table",
+        "head": [
+          "Soil moisture (%)",
+          "Species A",
+          "Species B",
+          "Species C"
+        ],
+        "rows": [
+          [
+            "10",
+            "8",
+            "21",
+            "4"
+          ],
+          [
+            "20",
+            "19",
+            "34",
+            "11"
+          ],
+          [
+            "30",
+            "35",
+            "41",
+            "26"
+          ],
+          [
+            "40",
+            "44",
+            "30",
+            "43"
+          ],
+          [
+            "50",
+            "38",
+            "16",
+            "51"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp3",
+    "type": "Research Summaries",
+    "title": "Metal Corrosion",
+    "intro": "Corrosion of iron requires both oxygen and water. A researcher tested how coatings and solution chemistry affect the corrosion rate of identical iron nails, measured as mass lost (mg) after 30 days.",
+    "figures": [
+      {
+        "label": "Experiment 1",
+        "caption": "Uncoated nails placed in different solutions at 20°C",
+        "type": "table",
+        "head": [
+          "Trial",
+          "Solution",
+          "Mass lost (mg)"
+        ],
+        "rows": [
+          [
+            "1",
+            "Distilled water",
+            "18"
+          ],
+          [
+            "2",
+            "0.5 M NaCl (salt water)",
+            "47"
+          ],
+          [
+            "3",
+            "Boiled, sealed distilled water (O₂ removed)",
+            "2"
+          ],
+          [
+            "4",
+            "Dry air (no water)",
+            "1"
+          ]
+        ]
+      },
+      {
+        "label": "Experiment 2",
+        "caption": "Coated nails in 0.5 M NaCl at 20°C",
+        "type": "table",
+        "head": [
+          "Trial",
+          "Coating",
+          "Mass lost (mg)"
+        ],
+        "rows": [
+          [
+            "5",
+            "None",
+            "47"
+          ],
+          [
+            "6",
+            "Oil",
+            "12"
+          ],
+          [
+            "7",
+            "Zinc",
+            "3"
+          ],
+          [
+            "8",
+            "Copper",
+            "61"
+          ]
+        ]
+      },
+      {
+        "label": "Experiment 3",
+        "caption": "Uncoated nails in 0.5 M NaCl at different temperatures",
+        "type": "table",
+        "head": [
+          "Trial",
+          "Temperature (°C)",
+          "Mass lost (mg)"
+        ],
+        "rows": [
+          [
+            "9",
+            "5",
+            "21"
+          ],
+          [
+            "10",
+            "20",
+            "47"
+          ],
+          [
+            "11",
+            "35",
+            "78"
+          ],
+          [
+            "12",
+            "50",
+            "112"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp4",
+    "type": "Research Summaries",
+    "title": "Light Wavelength and Plant Growth",
+    "intro": "Chlorophyll absorbs light most strongly in the blue and red regions of the visible spectrum. Researchers grew identical seedlings of a single species under LED panels of different colors at equal light intensity (200 μmol/m²/s), then repeated the work at different intensities.",
+    "figures": [
+      {
+        "label": "Experiment 1",
+        "caption": "Growth under different wavelengths (200 μmol/m²/s, 21 days)",
+        "type": "table",
+        "head": [
+          "Group",
+          "Light color (peak wavelength)",
+          "Dry mass (g)",
+          "Leaf area (cm²)"
+        ],
+        "rows": [
+          [
+            "1",
+            "Blue (450 nm)",
+            "1.84",
+            "62"
+          ],
+          [
+            "2",
+            "Green (530 nm)",
+            "0.71",
+            "29"
+          ],
+          [
+            "3",
+            "Red (660 nm)",
+            "2.05",
+            "74"
+          ],
+          [
+            "4",
+            "White (broad)",
+            "2.31",
+            "81"
+          ],
+          [
+            "5",
+            "Darkness (control)",
+            "0.09",
+            "3"
+          ]
+        ]
+      },
+      {
+        "label": "Experiment 2",
+        "caption": "Growth under red light at varying intensity (21 days)",
+        "type": "table",
+        "head": [
+          "Group",
+          "Intensity (μmol/m²/s)",
+          "Dry mass (g)"
+        ],
+        "rows": [
+          [
+            "6",
+            "50",
+            "0.88"
+          ],
+          [
+            "7",
+            "100",
+            "1.47"
+          ],
+          [
+            "8",
+            "200",
+            "2.05"
+          ],
+          [
+            "9",
+            "400",
+            "2.44"
+          ],
+          [
+            "10",
+            "800",
+            "2.49"
+          ]
+        ]
+      },
+      {
+        "label": "Experiment 3",
+        "caption": "Growth under combined blue + red light (200 μmol/m²/s total, 21 days)",
+        "type": "table",
+        "head": [
+          "Group",
+          "Blue : Red ratio",
+          "Dry mass (g)"
+        ],
+        "rows": [
+          [
+            "11",
+            "100:0",
+            "1.84"
+          ],
+          [
+            "12",
+            "25:75",
+            "2.38"
+          ],
+          [
+            "13",
+            "50:50",
+            "2.27"
+          ],
+          [
+            "14",
+            "0:100",
+            "2.05"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp5",
+    "type": "Conflicting Viewpoints",
+    "title": "The Late Pleistocene Megafauna Extinction",
+    "intro": "Between roughly 50,000 and 10,000 years ago, most land mammal species weighing over 44 kg went extinct across Australia, Eurasia, and the Americas. Two scientists discuss the cause.",
+    "figures": [
+      {
+        "label": "Scientist 1",
+        "caption": "Overkill hypothesis",
+        "type": "note",
+        "text": "The extinctions were caused primarily by human hunting. The timing of the losses tracks the arrival of modern humans on each landmass rather than any global climate event: Australia lost its megafauna around 45,000 years ago, shortly after human arrival, while North America lost its megafauna about 13,000 years ago, again shortly after human arrival. Africa, where hominins and megafauna coevolved over millions of years, retained most of its large mammals — precisely what one would expect if naive prey animals were the vulnerable ones. Large, slow-reproducing species need only a small sustained increase in mortality to decline toward extinction; models show that a kill rate of a few animals per hunter per year is sufficient over centuries."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "Climate hypothesis",
+        "type": "note",
+        "text": "The extinctions were caused primarily by rapid climate change at the end of the last glacial period. Between 15,000 and 11,000 years ago, warming fragmented the cold, dry, productive \"mammoth steppe\" into forest and wetland, collapsing the habitat that supported grazing megafauna. Pollen records show vegetation turnover preceding or coinciding with the losses on multiple continents. Direct kill sites are rare: fewer than 20 North American sites show unambiguous evidence of humans butchering mammoths or mastodons, far too few to account for continent-wide extinction. Moreover, several species survived for millennia alongside humans before disappearing, which is inconsistent with rapid hunting-driven collapse."
+      }
+    ]
+  },
+  {
+    "id": "sp6",
+    "type": "Data Representation",
+    "title": "Solubility and Density",
+    "intro": "A chemist measured the solubility of three salts in water (grams of salt that dissolve in 100 g of water) at several temperatures, and separately measured the density of the resulting saturated solutions at 20°C.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Solubility (g per 100 g water)",
+        "type": "table",
+        "head": [
+          "Temperature (°C)",
+          "KNO₃",
+          "NaCl",
+          "Ce₂(SO₄)₃"
+        ],
+        "rows": [
+          [
+            "0",
+            "13",
+            "35.7",
+            "21.4"
+          ],
+          [
+            "20",
+            "32",
+            "36.0",
+            "9.8"
+          ],
+          [
+            "40",
+            "64",
+            "36.6",
+            "6.2"
+          ],
+          [
+            "60",
+            "110",
+            "37.3",
+            "4.1"
+          ],
+          [
+            "80",
+            "169",
+            "38.4",
+            "3.0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Density of saturated solutions at 20°C",
+        "type": "table",
+        "head": [
+          "Salt",
+          "Density (g/mL)"
+        ],
+        "rows": [
+          [
+            "KNO₃",
+            "1.16"
+          ],
+          [
+            "NaCl",
+            "1.20"
+          ],
+          [
+            "Ce₂(SO₄)₃",
+            "1.09"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp7",
+    "type": "Data Representation",
+    "title": "Ocean Acidification",
+    "intro": "Dissolved CO₂ lowers seawater pH. Researchers grew juvenile oysters for 60 days in tanks at four pH levels and measured shell mass and survival. A separate tank series tested water temperature at a fixed pH of 8.0.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Shell growth and survival by pH (18°C)",
+        "type": "table",
+        "head": [
+          "pH",
+          "Shell mass gain (mg)",
+          "Survival (%)"
+        ],
+        "rows": [
+          [
+            "8.1",
+            "142",
+            "94"
+          ],
+          [
+            "7.9",
+            "118",
+            "91"
+          ],
+          [
+            "7.7",
+            "76",
+            "82"
+          ],
+          [
+            "7.5",
+            "41",
+            "64"
+          ],
+          [
+            "7.3",
+            "18",
+            "37"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Shell mass gain by temperature (pH 8.0)",
+        "type": "table",
+        "head": [
+          "Temperature (°C)",
+          "Shell mass gain (mg)"
+        ],
+        "rows": [
+          [
+            "12",
+            "88"
+          ],
+          [
+            "15",
+            "114"
+          ],
+          [
+            "18",
+            "131"
+          ],
+          [
+            "21",
+            "126"
+          ],
+          [
+            "24",
+            "79"
+          ]
+        ]
+      },
+      {
+        "label": "Note",
+        "caption": "",
+        "type": "note",
+        "text": "Oyster shells are made of calcium carbonate, which dissolves more readily as water becomes more acidic."
+      }
+    ]
+  },
+  {
+    "id": "sp8",
+    "type": "Research Summaries",
+    "title": "Insulation and Heat Loss",
+    "intro": "A student tested how quickly hot water cools in containers with different insulation. Each container held 500 mL of water starting at 90°C in a 20°C room. Temperature was recorded after 30 minutes.",
+    "figures": [
+      {
+        "label": "Experiment 1",
+        "caption": "Insulating material (500 mL, 30 min)",
+        "type": "table",
+        "head": [
+          "Trial",
+          "Material",
+          "Final temp (°C)"
+        ],
+        "rows": [
+          [
+            "1",
+            "None (bare glass)",
+            "44"
+          ],
+          [
+            "2",
+            "Paper wrap",
+            "52"
+          ],
+          [
+            "3",
+            "Foam sleeve",
+            "68"
+          ],
+          [
+            "4",
+            "Vacuum flask",
+            "81"
+          ]
+        ]
+      },
+      {
+        "label": "Experiment 2",
+        "caption": "Foam sleeve, varying volume (30 min)",
+        "type": "table",
+        "head": [
+          "Trial",
+          "Volume (mL)",
+          "Final temp (°C)"
+        ],
+        "rows": [
+          [
+            "5",
+            "250",
+            "58"
+          ],
+          [
+            "6",
+            "500",
+            "68"
+          ],
+          [
+            "7",
+            "1000",
+            "75"
+          ],
+          [
+            "8",
+            "2000",
+            "80"
+          ]
+        ]
+      },
+      {
+        "label": "Experiment 3",
+        "caption": "Foam sleeve, varying room temperature (500 mL, 30 min)",
+        "type": "table",
+        "head": [
+          "Trial",
+          "Room temp (°C)",
+          "Final temp (°C)"
+        ],
+        "rows": [
+          [
+            "9",
+            "5",
+            "59"
+          ],
+          [
+            "10",
+            "20",
+            "68"
+          ],
+          [
+            "11",
+            "30",
+            "74"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp9",
+    "type": "Data Representation",
+    "title": "Tree Rings and Rainfall",
+    "intro": "Annual growth rings in trees vary in width with growing-season conditions. Researchers measured average ring width for three species at one site and compared them with recorded rainfall.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Average ring width (mm) by year",
+        "type": "table",
+        "head": [
+          "Year",
+          "Rainfall (cm)",
+          "Oak",
+          "Pine",
+          "Juniper"
+        ],
+        "rows": [
+          [
+            "2016",
+            "92",
+            "3.4",
+            "2.8",
+            "1.6"
+          ],
+          [
+            "2017",
+            "61",
+            "2.1",
+            "2.4",
+            "1.5"
+          ],
+          [
+            "2018",
+            "118",
+            "4.2",
+            "3.1",
+            "1.7"
+          ],
+          [
+            "2019",
+            "38",
+            "1.2",
+            "1.9",
+            "1.4"
+          ],
+          [
+            "2020",
+            "104",
+            "3.9",
+            "3.0",
+            "1.6"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Root depth and drought tolerance",
+        "type": "table",
+        "head": [
+          "Species",
+          "Typical root depth (m)",
+          "Drought tolerance rating"
+        ],
+        "rows": [
+          [
+            "Oak",
+            "1.8",
+            "Low"
+          ],
+          [
+            "Pine",
+            "3.2",
+            "Moderate"
+          ],
+          [
+            "Juniper",
+            "7.5",
+            "High"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp10",
+    "type": "Research Summaries",
+    "title": "Pendulum Period",
+    "intro": "A pendulum's period is the time for one complete swing. Students timed 20 swings and divided to find the period, varying one factor at a time.",
+    "figures": [
+      {
+        "label": "Experiment 1",
+        "caption": "Varying string length (mass 100 g, release angle 10°)",
+        "type": "table",
+        "head": [
+          "Trial",
+          "Length (cm)",
+          "Period (s)"
+        ],
+        "rows": [
+          [
+            "1",
+            "25",
+            "1.00"
+          ],
+          [
+            "2",
+            "50",
+            "1.42"
+          ],
+          [
+            "3",
+            "75",
+            "1.74"
+          ],
+          [
+            "4",
+            "100",
+            "2.01"
+          ],
+          [
+            "5",
+            "150",
+            "2.46"
+          ]
+        ]
+      },
+      {
+        "label": "Experiment 2",
+        "caption": "Varying bob mass (length 100 cm, angle 10°)",
+        "type": "table",
+        "head": [
+          "Trial",
+          "Mass (g)",
+          "Period (s)"
+        ],
+        "rows": [
+          [
+            "6",
+            "50",
+            "2.01"
+          ],
+          [
+            "7",
+            "100",
+            "2.01"
+          ],
+          [
+            "8",
+            "200",
+            "2.00"
+          ],
+          [
+            "9",
+            "500",
+            "2.01"
+          ]
+        ]
+      },
+      {
+        "label": "Experiment 3",
+        "caption": "Varying release angle (length 100 cm, mass 100 g)",
+        "type": "table",
+        "head": [
+          "Trial",
+          "Angle (°)",
+          "Period (s)"
+        ],
+        "rows": [
+          [
+            "10",
+            "5",
+            "2.00"
+          ],
+          [
+            "11",
+            "10",
+            "2.01"
+          ],
+          [
+            "12",
+            "20",
+            "2.04"
+          ],
+          [
+            "13",
+            "45",
+            "2.18"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp11",
+    "type": "Conflicting Viewpoints",
+    "title": "What Caused the Younger Dryas Cooling?",
+    "intro": "About 12,900 years ago, the Northern Hemisphere abruptly cooled by several degrees for roughly 1,200 years, reversing a warming trend. Two scientists discuss the cause.",
+    "figures": [
+      {
+        "label": "Scientist 1",
+        "caption": "Meltwater hypothesis",
+        "type": "note",
+        "text": "A vast glacial lake in North America drained suddenly into the North Atlantic. The influx of fresh water reduced surface salinity and density, weakening the ocean circulation that carries warm water northward. Weakening that circulation cools northern Europe and eastern North America while leaving the Southern Hemisphere little changed — exactly the asymmetric pattern the ice-core and pollen records show. Sediment cores from the St. Lawrence outlet record a discharge event at approximately the right time."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "Impact hypothesis",
+        "type": "note",
+        "text": "A comet or asteroid fragmented over the ice sheet, triggering continent-scale wildfires whose soot blocked sunlight and initiated cooling. A thin sediment layer dated to 12,900 years ago contains elevated platinum, magnetic microspherules, and nanodiamonds at dozens of sites across three continents — materials associated with extraterrestrial impacts and not produced by lake drainage. The abruptness of the onset, within decades, favors a sudden catastrophic trigger over a gradual oceanographic change."
+      }
+    ]
+  }
+]

@@ -1,0 +1,669 @@
+[
+  {
+    "id": "read-foundations",
+    "label": "Foundations",
+    "icon": "Compass",
+    "pages": [
+      {
+        "id": "read-overview",
+        "topic": "strategy",
+        "title": "The Reading Section, Decoded",
+        "summary": "36 questions, 40 minutes, 4 passages. Why this section is a search task, not a reading task.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "p",
+            "text": "The Enhanced ACT Reading section gives you **36 questions in 40 minutes** across **4 passages** — 9 questions each, **10 minutes per passage**. That is a meaningful improvement over the old format (40 questions in 35 minutes), and it means careful students can now finish without panic."
+          },
+          {
+            "type": "rule",
+            "title": "The central insight",
+            "text": "ACT Reading is **open-book**. Every answer is provable from the text in front of you. You are not being asked what the passage means to you, what a reasonable person might conclude, or what is true about the world. You are being asked what the passage **says** — and there is always a specific line that proves it."
+          },
+          {
+            "type": "p",
+            "text": "This changes how you should think about wrong answers. A wrong choice on ACT Reading is not \"less good.\" It is **unsupported** — something the passage never says, says about a different thing, or states with a different degree of certainty. Your job is prosecutorial: find the evidence."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Passage type",
+              "Order",
+              "What it feels like"
+            ],
+            "rows": [
+              [
+                "Literary Narrative / Prose Fiction",
+                "1st",
+                "A scene from a novel or short story. Character relationships, mood, subtle motivation."
+              ],
+              [
+                "Social Science",
+                "2nd",
+                "History, psychology, economics, anthropology. Argument-driven, fact-dense."
+              ],
+              [
+                "Humanities",
+                "3rd",
+                "Memoir, essay on art, music, literature. Personal voice, often reflective."
+              ],
+              [
+                "Natural Science",
+                "4th",
+                "Biology, geology, physics for a general audience. Process- and evidence-driven."
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "One passage set is paired",
+            "text": "One of the four passages will be split into **Passage A and Passage B** by different authors on a related topic. Questions come in three groups: about A alone, about B alone, and about both. **Answer them in that order** — never try to hold both passages in your head at once."
+          },
+          {
+            "type": "list",
+            "title": "The four habits of a high Reading scorer",
+            "items": [
+              "**Read for structure, not for detail.** You cannot memorize the passage. You can remember where things are.",
+              "**Return to the text for every single question.** Even ones you \"remember.\" Memory paraphrases; ACT punishes paraphrase.",
+              "**Eliminate rather than select.** Three choices contain a specific flaw. Find the flaw and cross it out.",
+              "**Never let a passage’s topic intimidate you.** A Natural Science passage about protein folding requires zero biology knowledge. The answers are in the paragraphs."
+            ]
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Using outside knowledge. If you know something about the topic that the passage does not state, it cannot be the answer.",
+              "Picking the choice that sounds smartest or most nuanced. Complexity is not correctness.",
+              "Answering from memory of the passage instead of returning to the line."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "You are certain from your own biology coursework that a claim in an answer choice is scientifically true, but the passage never mentions it. Should you pick it?",
+            "choices": [
+              "No — every correct answer must be supported by the passage text",
+              "Yes — true statements are always defensible",
+              "Only if no other choice is supported",
+              "Only on Natural Science passages"
+            ],
+            "answer": 0,
+            "explain": "ACT Reading tests comprehension of the given text, not subject knowledge. A factually true statement that the passage never supports is a wrong answer — and it is one of the most effective traps the test writers use on Natural Science passages."
+          }
+        ]
+      },
+      {
+        "id": "read-active",
+        "topic": "active reading",
+        "title": "Active Reading & Passage Mapping",
+        "summary": "How to read in 3 minutes so that all 9 questions take 7.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The 3-and-7 split",
+            "text": "Spend about **3 minutes reading** and **7 minutes answering**. Reading faster than 3 minutes means you will re-read constantly; reading slower than 4 means you are memorizing details you will never need."
+          },
+          {
+            "type": "rule",
+            "title": "What to actually do while reading",
+            "text": "After each paragraph, pause for two seconds and put its job into **three or four words** — mentally or in the margin. \"Author’s childhood.\" \"Critics object.\" \"Study design.\" \"Counterexample.\" You are building a table of contents, not a summary."
+          },
+          {
+            "type": "p",
+            "text": "This works because roughly two-thirds of ACT Reading questions are **locate-and-verify** questions. The bottleneck is not comprehension — it is finding the right ten lines fast. A four-word map per paragraph turns a 60-second hunt into a 10-second one."
+          },
+          {
+            "type": "list",
+            "title": "Mark these five things as you read",
+            "items": [
+              "**The main claim** — usually at the end of paragraph 1 or 2, or the start of the last paragraph.",
+              "**Contrast words** — *but, however, although, yet, instead, on the other hand*. ACT builds questions on the turns.",
+              "**Attitude words** — any place the author reveals judgment (*regrettably, remarkable, misguided, only recently*).",
+              "**Named people, studies, or dates** — you will be sent back for these.",
+              "**Anything that answers \"why\"** — causal chains are dense with questions."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "Paragraph: *\"For decades, geologists attributed the canyon’s terraces to gradual erosion. In 2011, however, sediment cores revealed a sequence of abrupt deposits — evidence of catastrophic flooding rather than slow wear. The finding has not been universally accepted.\"* What is your four-word map?",
+            "work": [
+              "Old view: gradual erosion.",
+              "Turn word \"however\" signals the shift.",
+              "New evidence: cores → catastrophic flooding.",
+              "Last line: dispute remains."
+            ],
+            "answer": "**\"Old view → 2011 flood evidence, disputed.\"** Notice you did not record what a sediment core is or what year the canyon formed. If a question needs those, you will come back. What you recorded is the paragraph’s **function**, which is what most questions actually ask about."
+          },
+          {
+            "type": "rule",
+            "title": "For Literary Narrative specifically",
+            "text": "Track **who wants what**, **who feels what about whom**, and **what changes** by the end. Fiction questions are overwhelmingly about relationships, motivation, and shifts in attitude — not plot events."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Highlighting or underlining heavily. It feels productive and slows you to a crawl. Two or three marks per paragraph is plenty.",
+              "Reading the questions first and then hunting. This works for a minority of students but usually causes you to read the passage three times in fragments.",
+              "Skipping the last paragraph because you are behind. It very often contains the main idea."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "You have finished reading a Social Science passage in 3 minutes but could not follow the third paragraph’s argument. What is the best move?",
+            "choices": [
+              "Re-read paragraph 3 carefully before starting the questions",
+              "Move to the questions — you will re-read paragraph 3 only if a question sends you there",
+              "Skip the passage and come back later",
+              "Re-read the whole passage more slowly"
+            ],
+            "answer": 1,
+            "explain": "Perhaps two of the nine questions will touch that paragraph, and those questions will tell you exactly which lines matter. Pre-emptively re-reading spends time on content you may never be asked about — the most common way students run out of time on this section."
+          }
+        ]
+      },
+      {
+        "id": "read-timing",
+        "topic": "timing",
+        "title": "Timing, Order & Triage",
+        "summary": "Passage order, the 10-minute clock, and what to sacrifice when behind.",
+        "minutes": 5,
+        "blocks": [
+          {
+            "type": "table",
+            "head": [
+              "Checkpoint",
+              "Clock remaining"
+            ],
+            "rows": [
+              [
+                "Start",
+                "40:00"
+              ],
+              [
+                "Finish passage 1",
+                "30:00"
+              ],
+              [
+                "Finish passage 2",
+                "20:00"
+              ],
+              [
+                "Finish passage 3",
+                "10:00"
+              ],
+              [
+                "Finish passage 4",
+                "0:00"
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "You may reorder the passages",
+            "text": "Nothing requires you to work in printed order. Many students score higher by doing **Natural Science and Social Science first** (concrete, fact-based, fast) and **Literary Narrative last** (inference-heavy, slower). If fiction is your strength, do the opposite. Decide before test day and never improvise."
+          },
+          {
+            "type": "rule",
+            "title": "Question triage within a passage",
+            "text": "Do the **line-reference and detail questions first** — they are fast and they deepen your knowledge of the passage. Save **main idea, tone, and \"the passage as a whole\"** questions for last, because by then you will have re-read half the text answering the others."
+          },
+          {
+            "type": "list",
+            "title": "When you are behind",
+            "items": [
+              "**Never abandon a passage entirely.** Even a rushed pass gets 4–5 of 9.",
+              "Cut the reading, not the answering. Skim the first and last sentence of each paragraph (60 seconds), then work the questions with heavy text-searching.",
+              "Answer every detail question with a line reference; guess on inference and main-idea questions.",
+              "With 60 seconds left overall, bubble every remaining blank before doing anything else."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "You have 12 minutes left and two passages remaining. What is the plan?",
+            "work": [
+              "Full treatment of both is impossible (that needs 20 minutes).",
+              "Option A: do one passage properly (10 min) and guess 9 questions. Expected ≈ 7 + 2 = 9.",
+              "Option B: skim-and-search both at 6 minutes each. Expected ≈ 5 + 5 = 10."
+            ],
+            "answer": "**Option B — split the time.** Two partial passages usually beat one perfect passage plus nine blind guesses, because ACT Reading questions within a passage vary in difficulty, and the easy ones in passage 4 are easier than the hard ones in passage 3."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Spending 90 seconds on one stubborn question. That is 9% of a passage’s entire budget for 11% of its points.",
+              "Not wearing a watch or ignoring the clock until the 5-minute warning.",
+              "Changing your passage order on test day because a passage \"looks boring.\""
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Which question type should you generally save for last within a passage?",
+            "choices": [
+              "A question with a specific line reference",
+              "A vocabulary-in-context question",
+              "A question about the main idea of the passage as a whole",
+              "A question about a named person in paragraph 2"
+            ],
+            "answer": 2,
+            "explain": "Main-idea questions get easier after you have answered the detail questions, because answering those forces you back through the text. The other three are fast, self-contained, and build the familiarity that makes the main-idea question nearly free."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "read-qtypes",
+    "label": "Question Types",
+    "icon": "ListChecks",
+    "pages": [
+      {
+        "id": "read-main-idea",
+        "topic": "main idea",
+        "title": "Main Idea & Big Picture",
+        "summary": "Scope is everything: too narrow and too broad are the two standard traps.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "What they look like",
+            "text": "*\"The main idea of the passage is...\"* / *\"The passage is best described as...\"* / *\"The primary purpose of the fourth paragraph is...\"* / *\"Which statement best summarizes...\"*"
+          },
+          {
+            "type": "rule",
+            "title": "The scope test",
+            "text": "The correct answer covers **the whole passage and nothing more**. Test each choice by asking two questions: **(1) Is every part of this supported?** and **(2) Does it account for the whole passage, or just one paragraph?** Wrong answers fail one or the other."
+          },
+          {
+            "type": "list",
+            "title": "The four wrong-answer species",
+            "items": [
+              "**Too narrow:** accurately describes one paragraph but not the passage. This is the most tempting wrong answer because it is *true*.",
+              "**Too broad:** describes a general topic the passage is a small part of (\"the history of medicine\" when the passage is about one 1847 hospital).",
+              "**Half right:** the first clause matches, the second clause introduces something never stated. Read to the end of every choice.",
+              "**Right idea, wrong attitude:** captures the content but flips the author’s stance from skeptical to enthusiastic, or vice versa."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "A passage describes how a 19th-century physician’s handwashing proposal was ridiculed, then largely forgotten, then vindicated decades later by germ theory. Which is the main idea?\nA. Germ theory revolutionized 19th-century medicine.\nB. A physician’s early insight about infection was rejected in his lifetime and confirmed only later.\nC. Handwashing reduces mortality in maternity wards.\nD. Nineteenth-century doctors were resistant to new ideas.",
+            "work": [
+              "A: too broad — germ theory is context, not the subject.",
+              "C: too narrow — a single finding inside the story.",
+              "D: too broad and shifts focus from the physician to a generalization about all doctors.",
+              "B: names the subject (the physician’s insight) and the arc (rejected, later confirmed)."
+            ],
+            "answer": "**B.** The correct main-idea answer usually mirrors the passage’s **structure**: subject + what happened to it. If a choice describes only the beginning or only the end, it is too narrow."
+          },
+          {
+            "type": "rule",
+            "title": "Author attitude",
+            "text": "Attitude answers on the ACT are almost always **moderate**. Choices with extreme words — *contempt, outrage, adulation, indifference* — are usually wrong, because published prose is rarely that intense. Look for *measured skepticism, qualified admiration, cautious optimism, mild frustration*."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Choosing the answer that repeats the most vocabulary from the passage. Word overlap is not evidence.",
+              "Answering a \"primary purpose\" question with a topic instead of a purpose. Purpose answers start with verbs: *to trace, to argue, to compare, to challenge*.",
+              "Forgetting that a passage can present two views without endorsing either — \"the author argues\" may simply be false."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Which is most likely the correct description of an author’s attitude on the ACT?",
+            "choices": [
+              "Unbridled enthusiasm",
+              "Complete indifference",
+              "Qualified appreciation",
+              "Bitter contempt"
+            ],
+            "answer": 2,
+            "explain": "ACT passages come from published nonfiction and literature, where authors are rarely absolute. Moderate, hedged attitudes (\"qualified,\" \"cautious,\" \"measured\") are correct far more often than extremes — a pattern you can use to eliminate before even returning to the text."
+          }
+        ]
+      },
+      {
+        "id": "read-detail",
+        "topic": "detail",
+        "title": "Detail & Line-Reference Questions",
+        "summary": "The most literal question type — and the most reliably scoreable.",
+        "minutes": 5,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "What they look like",
+            "text": "*\"According to the passage...\"* / *\"The passage states that...\"* / *\"As described in lines 34–38, the researchers...\"* / *\"The author mentions X in order to...\"*"
+          },
+          {
+            "type": "rule",
+            "title": "The window rule",
+            "text": "When a question gives a line reference, read **five lines above and five lines below** the cited lines — not just the cited lines themselves. The proof of a detail is usually adjacent to it, not inside it. This one habit fixes most detail-question errors."
+          },
+          {
+            "type": "example",
+            "prompt": "The question asks what the passage says about the 1962 survey, cited at lines 40–42. What do you read?",
+            "work": [
+              "Read lines 35–47 — the full context around the citation.",
+              "Find the sentence that makes a claim ABOUT the survey, not just mentions it.",
+              "Paraphrase that claim in your own words before looking at choices."
+            ],
+            "answer": "Read lines **35–47**, then **prephrase the answer before looking at the choices**. Prephrasing is the single highest-leverage habit on this question type: once you have your own answer in mind, the correct choice usually leaps out and the traps lose their pull."
+          },
+          {
+            "type": "rule",
+            "title": "When there is no line reference",
+            "text": "Search for the **most distinctive noun** in the question stem — a name, a number, a technical term — and scan the passage for it. Do not scan for common words like \"research\" or \"change,\" which appear everywhere."
+          },
+          {
+            "type": "list",
+            "title": "How detail answers go wrong",
+            "items": [
+              "**Right words, wrong relationship:** the passage says A caused B; the choice says B caused A.",
+              "**Extreme language:** the passage says \"often\"; the choice says \"always.\" Watch for *all, never, only, must, entirely, none*.",
+              "**True but elsewhere:** the statement appears in the passage but does not answer this question.",
+              "**Plausible but absent:** a reasonable inference the passage never actually makes."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "Passage: *\"Most of the colony’s members forage within 200 meters of the nest, though a small number range considerably farther.\"* Which choice is supported?\nA. All colony members forage within 200 meters.\nB. Colony members never travel beyond 200 meters.\nC. The majority of colony members forage relatively close to the nest.\nD. Foraging distance is unrelated to colony size.",
+            "work": [
+              "A says \"all\" — the passage says \"most.\" Extreme.",
+              "B says \"never\" — directly contradicted by \"a small number range considerably farther.\"",
+              "D introduces colony size, which the sentence never mentions.",
+              "C matches \"most\" with \"the majority\" and \"within 200 meters\" with \"relatively close.\""
+            ],
+            "answer": "**C.** Notice the correct answer is the **least assertive** one. On detail questions, hedged language (\"some,\" \"often,\" \"tends to,\" \"in many cases\") is a strong positive signal; absolute language is a strong negative one."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Trusting a choice because you remember reading those words. Words can appear in a different context entirely.",
+              "Reading only the cited lines when the answer sits in the sentence just before them.",
+              "Skipping the prephrase step and letting four choices shape your thinking."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A passage says a technique \"has shown promise in early trials.\" Which choice is supported?",
+            "choices": [
+              "The technique has been proven effective.",
+              "The technique produced encouraging preliminary results.",
+              "The technique will replace existing methods.",
+              "The technique failed in later trials."
+            ],
+            "answer": 1,
+            "explain": "\"Shown promise in early trials\" maps precisely onto \"encouraging preliminary results.\" A overstates (\"proven\"), C predicts something the passage never claims, and D contradicts it outright. Match the passage’s level of certainty exactly."
+          }
+        ]
+      },
+      {
+        "id": "read-inference",
+        "topic": "inference",
+        "title": "Inference Questions",
+        "summary": "The smallest possible logical step — never a leap.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "What they look like",
+            "text": "*\"It can be reasonably inferred that...\"* / *\"The passage suggests that...\"* / *\"The author would most likely agree that...\"* / *\"It can be concluded from the passage that...\"*"
+          },
+          {
+            "type": "rule",
+            "title": "The one-step rule",
+            "text": "An ACT inference is **one small step** from something explicitly stated — usually a restatement in different words, or a direct implication that cannot be false if the passage is true. If your reasoning takes more than one step, or requires an assumption, you have gone too far."
+          },
+          {
+            "type": "example",
+            "prompt": "Passage: *\"Ravi checked his watch for the third time in as many minutes and glanced again at the door.\"* It can be inferred that Ravi is:\nA. late for an appointment.\nB. anxiously awaiting someone.\nC. bored with the conversation.\nD. suspicious of the other guests.",
+            "work": [
+              "Repeated watch-checking + repeated glances at the door = waiting, impatiently.",
+              "A adds a fact (that he himself is late) the text does not support.",
+              "C and D invent internal states with no textual basis.",
+              "B restates the observable behavior as its most direct implication."
+            ],
+            "answer": "**B.** The correct inference **describes the evidence in slightly more abstract language**. Notice how conservative it is — it does not say who he is waiting for or why. That restraint is characteristic of every correct ACT inference."
+          },
+          {
+            "type": "rule",
+            "title": "The proof test",
+            "text": "Before selecting an inference, ask: **\"Which specific sentence lets me say this?\"** If you cannot point to one, it is not the answer. This test alone eliminates most attractive wrong choices, because attractive wrong choices are usually things that *might* be true rather than things that *must* be."
+          },
+          {
+            "type": "example",
+            "prompt": "Passage: *\"Although the treaty was signed in 1919, its economic provisions were not implemented until 1924, and even then only partially.\"* Which inference is supported?\nA. The treaty was widely considered a failure.\nB. There was a delay between the treaty’s signing and its economic effects.\nC. The signatories disagreed about the economic provisions.\nD. The provisions were fully implemented by 1930.",
+            "work": [
+              "B is a direct restatement of \"signed 1919 / implemented 1924.\"",
+              "A judges the treaty — no evaluation appears.",
+              "C explains WHY there was a delay — the passage gives no reason.",
+              "D extends beyond the passage’s timeframe entirely."
+            ],
+            "answer": "**B.** C is the seductive one: a delay *often* indicates disagreement, and a real historian might well conclude that. But \"often indicates\" is exactly the kind of second step ACT forbids. **Correct inferences feel almost too obvious.**"
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Answering with what a reasonable person would conclude rather than what the passage guarantees.",
+              "Supplying a cause for an effect the passage merely reports.",
+              "Assuming the author agrees with a view they are describing. Reporting is not endorsing."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A correct ACT inference is best described as:",
+            "choices": [
+              "A creative interpretation of the passage’s themes",
+              "A conclusion that must be true given what the passage states",
+              "The most likely explanation for the events described",
+              "Any conclusion a thoughtful reader might reach"
+            ],
+            "answer": 1,
+            "explain": "ACT inferences are logical necessities, not plausible readings. If a choice *could* be false while everything in the passage remains true, it is not the answer — this standard resolves nearly every hard inference question."
+          }
+        ]
+      },
+      {
+        "id": "read-vocab",
+        "topic": "vocabulary in context",
+        "title": "Vocabulary in Context",
+        "summary": "The common word with an uncommon meaning — cover, substitute, verify.",
+        "minutes": 5,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "What they look like",
+            "text": "*\"As it is used in line 22, the word 'charge' most nearly means...\"* Note the phrase **\"most nearly means\"** — these are always about meaning **in this specific sentence**, not the dictionary’s first definition."
+          },
+          {
+            "type": "rule",
+            "title": "The cover-and-predict method",
+            "text": "**(1)** Cover the word entirely. **(2)** Read the full sentence and predict a word that would fit the blank. **(3)** Uncover the choices and pick the closest match to your prediction. **(4)** Substitute it back and read the sentence aloud in your head. Skipping step 2 is why students miss these."
+          },
+          {
+            "type": "p",
+            "text": "The tested word is almost always a **common word being used in an uncommon sense**: *charge, address, cover, appreciate, reservation, novel, curious, arrest, execute, qualify, sound, entertain, bearing.* ACT chooses these precisely because your default meaning is a wrong answer."
+          },
+          {
+            "type": "example",
+            "prompt": "*\"The committee’s findings did little to **arrest** the spread of the rumor.\"* As used here, \"arrest\" most nearly means:\nA. detain\nB. capture\nC. halt\nD. charge",
+            "work": [
+              "Cover \"arrest\": \"did little to ___ the spread of the rumor.\"",
+              "Predict: stop, slow, check.",
+              "A and B are the law-enforcement senses — irrelevant to a rumor.",
+              "D is a different word entirely."
+            ],
+            "answer": "**C — halt.** Note that A and B are the *most common* meanings of \"arrest,\" which is exactly why they appear. **The everyday definition is a trap answer far more often than it is the answer.**"
+          },
+          {
+            "type": "example",
+            "prompt": "*\"Her account of the expedition was **novel**, drawing on letters no previous biographer had seen.\"* \"Novel\" most nearly means:\nA. fictional\nB. lengthy\nC. original\nD. published",
+            "work": [
+              "Cover it: \"Her account was ___, drawing on letters no one had seen.\"",
+              "The second half explains the first: new sources → a new kind of account.",
+              "Predict: new, fresh, unprecedented."
+            ],
+            "answer": "**C — original.** The clue was in the clause *after* the word. Vocabulary-in-context questions almost always plant the definition in the surrounding sentence — usually right after a comma, a dash, or a colon."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Choosing a word that is a synonym in general but does not fit this sentence’s grammar or tone.",
+              "Reading only the words immediately around the target instead of the full sentence.",
+              "Assuming a hard-looking word must be the answer. Correct answers are often the plainest choice."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "*\"The proposal has considerable **bearing** on next year’s budget.\"* \"Bearing\" most nearly means:",
+            "choices": [
+              "posture",
+              "direction",
+              "relevance",
+              "endurance"
+            ],
+            "answer": 2,
+            "explain": "Substituting: \"considerable relevance on next year’s budget\" fits the sentence’s meaning. \"Posture,\" \"direction,\" and \"endurance\" are all real senses of \"bearing\" — but none works in this context, which is the whole point of the question type."
+          }
+        ]
+      },
+      {
+        "id": "read-function",
+        "topic": "function",
+        "title": "Function & Purpose Questions",
+        "summary": "Not what a sentence says — what job it does in the argument.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "What they look like",
+            "text": "*\"The author mentions the 1957 flood primarily to...\"* / *\"The main function of the third paragraph is to...\"* / *\"The quotation in lines 18–20 serves to...\"* / *\"The reference to Antarctic ice cores serves to...\"*"
+          },
+          {
+            "type": "rule",
+            "title": "Zoom out one level",
+            "text": "Function questions never ask what a detail **is**. They ask **why the author put it there.** So read the sentence *before* the detail and the sentence *after* it. The detail almost always **illustrates**, **supports**, **contrasts with**, or **qualifies** the claim next to it."
+          },
+          {
+            "type": "list",
+            "title": "The standard function vocabulary",
+            "items": [
+              "**to illustrate / to exemplify** — a concrete case of a general claim just made",
+              "**to support / to provide evidence for** — data backing a claim",
+              "**to contrast / to complicate** — a counterexample after a \"but\" or \"however\"",
+              "**to qualify** — a limitation on a claim just made",
+              "**to introduce** — sets up what follows",
+              "**to anticipate an objection** — raises a counterargument in order to answer it",
+              "**to establish context** — background before the real argument begins"
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "Passage: *\"Coastal cities face rising costs from flooding. Miami alone spent $400 million on pump stations between 2015 and 2019.\"* The mention of Miami serves to:\nA. argue that Miami is unprepared for flooding.\nB. provide a specific example supporting the claim about rising costs.\nC. compare Miami’s spending to that of other cities.\nD. explain how pump stations function.",
+            "work": [
+              "Sentence 1 makes a general claim: coastal cities face rising costs.",
+              "Sentence 2 gives one city with a dollar figure.",
+              "That is the textbook relationship of general claim → specific instance.",
+              "C fails because no other city is mentioned; D fails because no mechanism is explained."
+            ],
+            "answer": "**B.** When a specific number, name, or anecdote directly follows a general statement, its function is almost always **to illustrate or support** it. Recognizing that pattern answers most function questions in under fifteen seconds."
+          },
+          {
+            "type": "example",
+            "prompt": "A paragraph opens: *\"Not every researcher accepts this account.\"* What is the paragraph’s likely function?",
+            "work": [
+              "The sentence signals disagreement with what came before.",
+              "So this paragraph will present an opposing view."
+            ],
+            "answer": "**To present a counterargument or complicate the preceding claim.** Paragraph-function questions are usually answerable from the **first sentence alone**, because that sentence declares the paragraph’s relationship to the previous one."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Answering with what the detail says instead of what it does. \"The passage mentions Miami spent $400 million\" is a summary, not a function.",
+              "Choosing a function the passage does not perform — \"to criticize,\" \"to refute\" — when the tone is neutral.",
+              "Ignoring the transition word that opens the sentence. It usually names the function outright."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A sentence begins with \"Admittedly,\" and concedes a weakness before the author returns to their argument. Its function is:",
+            "choices": [
+              "to abandon the author’s earlier claim",
+              "to acknowledge a limitation before reaffirming the argument",
+              "to introduce a new topic",
+              "to summarize the passage"
+            ],
+            "answer": 1,
+            "explain": "\"Admittedly\" signals concession — the author grants a point in order to strengthen credibility before continuing. Conceding is not abandoning, which is the distinction B captures and A misses."
+          }
+        ]
+      },
+      {
+        "id": "read-comparison",
+        "topic": "comparison",
+        "title": "Comparison & Paired-Passage Questions",
+        "summary": "Handling the Passage A / Passage B set and relationship questions.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The order of operations",
+            "text": "For a paired set: **read Passage A → answer all A-only questions → read Passage B → answer all B-only questions → answer the both-passages questions last.** Never read both passages before answering anything. You will blur them together, which is exactly the confusion the question writers are testing."
+          },
+          {
+            "type": "rule",
+            "title": "Define the relationship in one sentence",
+            "text": "After reading both, force yourself to state it: *\"B disagrees with A about the cause.\"* *\"B applies A’s idea to a new case.\"* *\"B is more optimistic than A about the same evidence.\"* Most both-passages questions are answered directly by that sentence."
+          },
+          {
+            "type": "list",
+            "title": "The relationships ACT uses",
+            "items": [
+              "**Direct disagreement** — same question, opposite answers.",
+              "**Different emphasis** — same conclusion, different reasons or priorities.",
+              "**Broader vs. narrower** — A theorizes, B gives a case study.",
+              "**Advocacy vs. caution** — A enthusiastic, B raising qualifications. This is the most common pairing on the ACT.",
+              "**Different domains** — same phenomenon, one scientific and one personal."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "Passage A argues that remote work increases productivity, citing output data. Passage B agrees output rose but argues the data ignores long-term erosion of mentorship. How would B’s author most likely respond to A?\nA. By rejecting A’s output data as inaccurate.\nB. By accepting A’s data but questioning what it leaves out.\nC. By arguing remote work reduces productivity.\nD. By agreeing fully with A’s conclusion.",
+            "work": [
+              "B explicitly agrees output rose — so A is out (\"rejecting the data\").",
+              "C overstates: B never claims productivity fell.",
+              "D ignores B’s objection entirely.",
+              "B: accepts the evidence, disputes its sufficiency."
+            ],
+            "answer": "**B.** The most common ACT relationship is **partial agreement with a scope objection** — \"yes, but that is not the whole picture.\" Total disagreement is rarer than students expect, so choices asserting flat contradiction are usually wrong."
+          },
+          {
+            "type": "rule",
+            "title": "Author-would-agree questions",
+            "text": "For *\"the author of Passage A would most likely regard the argument in Passage B as...\"*, find the specific claim in B and locate what A says about that exact issue. If A never addresses it, the answer will be hedged or the question will point elsewhere."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Attributing a view from Passage A to the author of Passage B. Track which passage each idea came from.",
+              "Assuming the two authors must fundamentally disagree. Often they mostly agree.",
+              "Answering a both-passages question from memory instead of returning to both texts."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "In what order should you tackle a paired passage set?",
+            "choices": [
+              "Read both passages, then answer all questions in order",
+              "Read A, answer A questions, read B, answer B questions, then answer both-passage questions",
+              "Read B first since it is usually shorter",
+              "Answer the both-passage questions first to get oriented"
+            ],
+            "answer": 1,
+            "explain": "Answering A’s questions while A is fresh maximizes accuracy and prevents the two passages from blending. The comparison questions come last, when you have the strongest grasp of both — and by then you have already re-read the key parts of each."
+          }
+        ]
+      }
+    ]
+  }
+]

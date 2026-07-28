@@ -1,0 +1,7148 @@
+{
+  "comma_castle": [
+    {
+      "q": "Choose the correct version:<br><i>“My brother a talented pianist won the regional contest.”</i>",
+      "opts": [
+        "My brother, a talented pianist, won",
+        "My brother a talented pianist, won",
+        "My brother, a talented pianist won",
+        "NO CHANGE"
+      ],
+      "a": 0,
+      "why": "An appositive (“a talented pianist”) is extra info — it needs a PAIR of commas, one on each side.",
+      "tag": "COMMA CASTLE",
+      "d": 1
+    },
+    {
+      "q": "Pick the correctly punctuated list:<br><i>“She packed apples pears and plums for the hike.”</i>",
+      "opts": [
+        "apples, pears, and plums",
+        "apples pears, and plums",
+        "apples, pears and, plums",
+        "apples: pears, and plums"
+      ],
+      "a": 0,
+      "why": "Items in a series take commas between them. The ACT accepts the Oxford comma — and it never hurts.",
+      "tag": "COMMA CASTLE",
+      "d": 1
+    },
+    {
+      "q": "Which fixes the comma splice?<br><i>“The test was long, I still finished early.”</i>",
+      "opts": [
+        "long; I still",
+        "long, I, still",
+        "long I still",
+        "NO CHANGE"
+      ],
+      "a": 0,
+      "why": "Two complete sentences can’t be glued with just a comma. A semicolon (or period, or comma + and) fixes it.",
+      "tag": "COMMA CASTLE",
+      "d": 3
+    },
+    {
+      "q": "Which is correctly punctuated?",
+      "opts": [
+        "We visited Paris, France, in May.",
+        "We visited Paris France in May.",
+        "We visited Paris, France in May.",
+        "We visited, Paris France, in May."
+      ],
+      "a": 0,
+      "why": "City, country needs commas around the country name (a paired appositive).",
+      "notes": [
+        "Correct.",
+        "Missing both commas around 'France'.",
+        "Missing the closing comma after 'France'.",
+        "Comma wrongly splits the verb from its object."
+      ],
+      "tag": "Commas",
+      "d": 2
+    }
+  ],
+  "equation_station": [
+    {
+      "q": "If 3x − 7 = 14, what is x?",
+      "opts": [
+        "7",
+        "3",
+        "21",
+        "−7/3"
+      ],
+      "a": 0,
+      "why": "Add 7 to both sides (3x = 21), divide by 3 → x = 7.",
+      "tag": "EQUATION STATION",
+      "d": 3
+    },
+    {
+      "q": "What is the slope of the line through (2, 3) and (6, 11)?",
+      "opts": [
+        "2",
+        "1/2",
+        "4",
+        "8"
+      ],
+      "a": 0,
+      "why": "Slope = rise/run = (11−3)/(6−2) = 8/4 = 2.",
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 2(x + 4) = 18, then x = ?",
+      "opts": [
+        "5",
+        "7",
+        "9",
+        "13"
+      ],
+      "a": 0,
+      "why": "Divide by 2 first: x + 4 = 9 → x = 5. Distributing works too — dividing is faster.",
+      "tag": "EQUATION STATION",
+      "d": 3
+    },
+    {
+      "q": "If 4x + 8 = 24, then x =",
+      "opts": [
+        "5",
+        "16",
+        "-4",
+        "4"
+      ],
+      "a": 3,
+      "why": "Move 8 to the other side, then divide by 4 → x = 4.",
+      "notes": [
+        "Off by one — recheck the division.",
+        "You stopped after moving 8; you still must divide by 4.",
+        "Sign flipped — watch the negative.",
+        "Correct."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 2x − 6 = 10, then x =",
+      "opts": [
+        "16",
+        "9",
+        "-8",
+        "8"
+      ],
+      "a": 3,
+      "why": "Move -6 to the other side, then divide by 2 → x = 8.",
+      "notes": [
+        "You stopped after moving -6; you still must divide by 2.",
+        "Off by one — recheck the division.",
+        "Sign flipped — watch the negative.",
+        "Correct."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 5x + 5 = -25, then x =",
+      "opts": [
+        "-5",
+        "-30",
+        "-6",
+        "6"
+      ],
+      "a": 2,
+      "why": "Move 5 to the other side, then divide by 5 → x = -6.",
+      "notes": [
+        "Off by one — recheck the division.",
+        "You stopped after moving 5; you still must divide by 5.",
+        "Correct.",
+        "Sign flipped — watch the negative."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 3
+    },
+    {
+      "q": "What is the slope of the line through (5, 4) and (8, -8)?",
+      "opts": [
+        "4",
+        "3",
+        "-4",
+        "-3"
+      ],
+      "a": 2,
+      "why": "slope = (-8−4)/(8−5) = -4.",
+      "notes": [
+        "Sign error — check rise vs. run direction.",
+        "That is the run, not the slope.",
+        "Correct.",
+        "Off by one — recompute rise/run."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 4x + 1 = 5, then x =",
+      "opts": [
+        "-1",
+        "1",
+        "4",
+        "2"
+      ],
+      "a": 1,
+      "why": "Move 1 to the other side, then divide by 4 → x = 1.",
+      "notes": [
+        "Sign flipped — watch the negative.",
+        "Correct.",
+        "You stopped after moving 1; you still must divide by 4.",
+        "Off by one — recheck the division."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "What is the slope of the line through (3, 4) and (4, 2)?",
+      "opts": [
+        "1",
+        "-2",
+        "-1",
+        "2"
+      ],
+      "a": 1,
+      "why": "slope = (2−4)/(4−3) = -2.",
+      "notes": [
+        "That is the run, not the slope.",
+        "Correct.",
+        "Off by one — recompute rise/run.",
+        "Sign error — check rise vs. run direction."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "What is the slope of the line through (-4, 3) and (-1, -9)?",
+      "opts": [
+        "-4",
+        "3",
+        "-3",
+        "4"
+      ],
+      "a": 0,
+      "why": "slope = (-9−3)/(-1−-4) = -4.",
+      "notes": [
+        "Correct.",
+        "That is the run, not the slope.",
+        "Off by one — recompute rise/run.",
+        "Sign error — check rise vs. run direction."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "What is the slope of the line through (2, 3) and (4, 13)?",
+      "opts": [
+        "-5",
+        "6",
+        "5",
+        "2"
+      ],
+      "a": 2,
+      "why": "slope = (13−3)/(4−2) = 5.",
+      "notes": [
+        "Sign error — check rise vs. run direction.",
+        "Off by one — recompute rise/run.",
+        "Correct.",
+        "That is the run, not the slope."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "What is the slope of the line through (-2, -5) and (1, 1)?",
+      "opts": [
+        "2",
+        "3",
+        "-2",
+        "4"
+      ],
+      "a": 0,
+      "why": "slope = (1−-5)/(1−-2) = 2.",
+      "notes": [
+        "Correct.",
+        "That is the run, not the slope.",
+        "Sign error — check rise vs. run direction.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 3
+    },
+    {
+      "q": "If 3x + 4 = -11, then x =",
+      "opts": [
+        "-15",
+        "-4",
+        "-5",
+        "5"
+      ],
+      "a": 2,
+      "why": "Move 4 to the other side, then divide by 3 → x = -5.",
+      "notes": [
+        "You stopped after moving 4; you still must divide by 3.",
+        "Off by one — recheck the division.",
+        "Correct.",
+        "Sign flipped — watch the negative."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 1
+    },
+    {
+      "q": "If 9x − 11 = 34, then x =",
+      "opts": [
+        "-5",
+        "6",
+        "45",
+        "5"
+      ],
+      "a": 3,
+      "why": "Move -11 to the other side, then divide by 9 → x = 5.",
+      "notes": [
+        "Sign flipped — watch the negative.",
+        "Off by one — recheck the division.",
+        "You stopped after moving -11; you still must divide by 9.",
+        "Correct."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 1
+    },
+    {
+      "q": "If 7x + 3 = 80, then x =",
+      "opts": [
+        "12",
+        "77",
+        "11",
+        "-11"
+      ],
+      "a": 2,
+      "why": "Move 3 to the other side, then divide by 7 → x = 11.",
+      "notes": [
+        "Off by one — recheck the division.",
+        "You stopped after moving 3; you still must divide by 7.",
+        "Correct.",
+        "Sign flipped — watch the negative."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "What is the slope of the line through (2, 5) and (3, 2)?",
+      "opts": [
+        "-3",
+        "3",
+        "-2",
+        "1"
+      ],
+      "a": 0,
+      "why": "slope = (2−5)/(3−2) = -3.",
+      "notes": [
+        "Correct.",
+        "Sign error — check rise vs. run direction.",
+        "Off by one — recompute rise/run.",
+        "That is the run, not the slope."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 8x − 12 = 12, then x =",
+      "opts": [
+        "24",
+        "3",
+        "4",
+        "-3"
+      ],
+      "a": 1,
+      "why": "Move -12 to the other side, then divide by 8 → x = 3.",
+      "notes": [
+        "You stopped after moving -12; you still must divide by 8.",
+        "Correct.",
+        "Off by one — recheck the division.",
+        "Sign flipped — watch the negative."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 1
+    },
+    {
+      "q": "What is the slope of the line through (2, -6) and (4, -8)?",
+      "opts": [
+        "0",
+        "-1",
+        "2",
+        "1"
+      ],
+      "a": 1,
+      "why": "slope = (-8−-6)/(4−2) = -1.",
+      "notes": [
+        "Off by one — recompute rise/run.",
+        "Correct.",
+        "That is the run, not the slope.",
+        "Sign error — check rise vs. run direction."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 9x − 7 = -61, then x =",
+      "opts": [
+        "-6",
+        "-54",
+        "-5",
+        "6"
+      ],
+      "a": 0,
+      "why": "Move -7 to the other side, then divide by 9 → x = -6.",
+      "notes": [
+        "Correct.",
+        "You stopped after moving -7; you still must divide by 9.",
+        "Off by one — recheck the division.",
+        "Sign flipped — watch the negative."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 3
+    },
+    {
+      "q": "What is the slope of the line through (1, 2) and (4, 8)?",
+      "opts": [
+        "2",
+        "3",
+        "-2",
+        "4"
+      ],
+      "a": 0,
+      "why": "slope = (8−2)/(4−1) = 2.",
+      "notes": [
+        "Correct.",
+        "That is the run, not the slope.",
+        "Sign error — check rise vs. run direction.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 1
+    },
+    {
+      "q": "What is the slope of the line through (-3, -5) and (-2, -7)?",
+      "opts": [
+        "-1",
+        "-2",
+        "1",
+        "2"
+      ],
+      "a": 1,
+      "why": "slope = (-7−-5)/(-2−-3) = -2.",
+      "notes": [
+        "Off by one — recompute rise/run.",
+        "Correct.",
+        "That is the run, not the slope.",
+        "Sign error — check rise vs. run direction."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 1
+    },
+    {
+      "q": "If 4x − 3 = -3, then x =",
+      "opts": [
+        "2",
+        "1",
+        "3",
+        "0"
+      ],
+      "a": 3,
+      "why": "Move -3 to the other side, then divide by 4 → x = 0.",
+      "notes": [
+        "A common miscalculation — recheck the steps.",
+        "Off by one — recheck the division.",
+        "A common miscalculation — recheck the steps.",
+        "Correct."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 1
+    },
+    {
+      "q": "What is the slope of the line through (4, 3) and (5, 6)?",
+      "opts": [
+        "4",
+        "1",
+        "-3",
+        "3"
+      ],
+      "a": 3,
+      "why": "slope = (6−3)/(5−4) = 3.",
+      "notes": [
+        "Off by one — recompute rise/run.",
+        "That is the run, not the slope.",
+        "Sign error — check rise vs. run direction.",
+        "Correct."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 8x + 3 = -37, then x =",
+      "opts": [
+        "-4",
+        "-40",
+        "-5",
+        "5"
+      ],
+      "a": 2,
+      "why": "Move 3 to the other side, then divide by 8 → x = -5.",
+      "notes": [
+        "Off by one — recheck the division.",
+        "You stopped after moving 3; you still must divide by 8.",
+        "Correct.",
+        "Sign flipped — watch the negative."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 5x − 7 = 23, then x =",
+      "opts": [
+        "30",
+        "-6",
+        "7",
+        "6"
+      ],
+      "a": 3,
+      "why": "Move -7 to the other side, then divide by 5 → x = 6.",
+      "notes": [
+        "You stopped after moving -7; you still must divide by 5.",
+        "Sign flipped — watch the negative.",
+        "Off by one — recheck the division.",
+        "Correct."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 4x − 9 = 27, then x =",
+      "opts": [
+        "10",
+        "9",
+        "-9",
+        "36"
+      ],
+      "a": 1,
+      "why": "Move -9 to the other side, then divide by 4 → x = 9.",
+      "notes": [
+        "Off by one — recheck the division.",
+        "Correct.",
+        "Sign flipped — watch the negative.",
+        "You stopped after moving -9; you still must divide by 4."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 3
+    },
+    {
+      "q": "If 5x + 0 = 55, then x =",
+      "opts": [
+        "11",
+        "-11",
+        "55",
+        "12"
+      ],
+      "a": 0,
+      "why": "Move 0 to the other side, then divide by 5 → x = 11.",
+      "notes": [
+        "Correct.",
+        "Sign flipped — watch the negative.",
+        "You stopped after moving 0; you still must divide by 5.",
+        "Off by one — recheck the division."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "What is the slope of the line through (4, -1) and (5, 4)?",
+      "opts": [
+        "6",
+        "1",
+        "-5",
+        "5"
+      ],
+      "a": 3,
+      "why": "slope = (4−-1)/(5−4) = 5.",
+      "notes": [
+        "Off by one — recompute rise/run.",
+        "That is the run, not the slope.",
+        "Sign error — check rise vs. run direction.",
+        "Correct."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 3
+    },
+    {
+      "q": "If 6x − 8 = -44, then x =",
+      "opts": [
+        "6",
+        "-5",
+        "-36",
+        "-6"
+      ],
+      "a": 3,
+      "why": "Move -8 to the other side, then divide by 6 → x = -6.",
+      "notes": [
+        "Sign flipped — watch the negative.",
+        "Off by one — recheck the division.",
+        "You stopped after moving -8; you still must divide by 6.",
+        "Correct."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "What is the slope of the line through (2, 5) and (5, -1)?",
+      "opts": [
+        "3",
+        "2",
+        "-1",
+        "-2"
+      ],
+      "a": 3,
+      "why": "slope = (-1−5)/(5−2) = -2.",
+      "notes": [
+        "That is the run, not the slope.",
+        "Sign error — check rise vs. run direction.",
+        "Off by one — recompute rise/run.",
+        "Correct."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 3
+    },
+    {
+      "q": "If 2x − 3 = 13, then x =",
+      "opts": [
+        "-8",
+        "9",
+        "16",
+        "8"
+      ],
+      "a": 3,
+      "why": "Move -3 to the other side, then divide by 2 → x = 8.",
+      "notes": [
+        "Sign flipped — watch the negative.",
+        "Off by one — recheck the division.",
+        "You stopped after moving -3; you still must divide by 2.",
+        "Correct."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "What is the slope of the line through (-3, -1) and (0, -4)?",
+      "opts": [
+        "1",
+        "-1",
+        "0",
+        "3"
+      ],
+      "a": 1,
+      "why": "slope = (-4−-1)/(0−-3) = -1.",
+      "notes": [
+        "Sign error — check rise vs. run direction.",
+        "Correct.",
+        "Off by one — recompute rise/run.",
+        "That is the run, not the slope."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "What is the slope of the line through (-2, 6) and (0, 4)?",
+      "opts": [
+        "2",
+        "0",
+        "-1",
+        "1"
+      ],
+      "a": 2,
+      "why": "slope = (4−6)/(0−-2) = -1.",
+      "notes": [
+        "That is the run, not the slope.",
+        "Off by one — recompute rise/run.",
+        "Correct.",
+        "Sign error — check rise vs. run direction."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 2x − 4 = -20, then x =",
+      "opts": [
+        "-16",
+        "-8",
+        "-7",
+        "8"
+      ],
+      "a": 1,
+      "why": "Move -4 to the other side, then divide by 2 → x = -8.",
+      "notes": [
+        "You stopped after moving -4; you still must divide by 2.",
+        "Correct.",
+        "Off by one — recheck the division.",
+        "Sign flipped — watch the negative."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 1
+    },
+    {
+      "q": "What is the slope of the line through (0, 1) and (2, 7)?",
+      "opts": [
+        "-3",
+        "2",
+        "4",
+        "3"
+      ],
+      "a": 3,
+      "why": "slope = (7−1)/(2−0) = 3.",
+      "notes": [
+        "Sign error — check rise vs. run direction.",
+        "That is the run, not the slope.",
+        "Off by one — recompute rise/run.",
+        "Correct."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 5x − 6 = 4, then x =",
+      "opts": [
+        "3",
+        "2",
+        "10",
+        "-2"
+      ],
+      "a": 1,
+      "why": "Move -6 to the other side, then divide by 5 → x = 2.",
+      "notes": [
+        "Off by one — recheck the division.",
+        "Correct.",
+        "You stopped after moving -6; you still must divide by 5.",
+        "Sign flipped — watch the negative."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 7x − 10 = 74, then x =",
+      "opts": [
+        "84",
+        "-12",
+        "13",
+        "12"
+      ],
+      "a": 3,
+      "why": "Move -10 to the other side, then divide by 7 → x = 12.",
+      "notes": [
+        "You stopped after moving -10; you still must divide by 7.",
+        "Sign flipped — watch the negative.",
+        "Off by one — recheck the division.",
+        "Correct."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 3
+    },
+    {
+      "q": "If 4x + 8 = 28, then x =",
+      "opts": [
+        "-5",
+        "6",
+        "5",
+        "20"
+      ],
+      "a": 2,
+      "why": "Move 8 to the other side, then divide by 4 → x = 5.",
+      "notes": [
+        "Sign flipped — watch the negative.",
+        "Off by one — recheck the division.",
+        "Correct.",
+        "You stopped after moving 8; you still must divide by 4."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 3x − 7 = -16, then x =",
+      "opts": [
+        "3",
+        "-9",
+        "-3",
+        "-2"
+      ],
+      "a": 2,
+      "why": "Move -7 to the other side, then divide by 3 → x = -3.",
+      "notes": [
+        "Sign flipped — watch the negative.",
+        "You stopped after moving -7; you still must divide by 3.",
+        "Correct.",
+        "Off by one — recheck the division."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 3
+    },
+    {
+      "q": "What is the slope of the line through (2, 6) and (5, 0)?",
+      "opts": [
+        "-2",
+        "2",
+        "3",
+        "-1"
+      ],
+      "a": 0,
+      "why": "slope = (0−6)/(5−2) = -2.",
+      "notes": [
+        "Correct.",
+        "Sign error — check rise vs. run direction.",
+        "That is the run, not the slope.",
+        "Off by one — recompute rise/run."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 4x − 12 = -44, then x =",
+      "opts": [
+        "-7",
+        "8",
+        "-32",
+        "-8"
+      ],
+      "a": 3,
+      "why": "Move -12 to the other side, then divide by 4 → x = -8.",
+      "notes": [
+        "Off by one — recheck the division.",
+        "Sign flipped — watch the negative.",
+        "You stopped after moving -12; you still must divide by 4.",
+        "Correct."
+      ],
+      "tag": "EQUATION STATION",
+      "d": 2
+    },
+    {
+      "q": "If 5(x + 4) = 15, then x =",
+      "opts": [
+        "0",
+        "11",
+        "-1",
+        "3"
+      ],
+      "a": 2,
+      "why": "Divide by 5 → x+4 = 3, then subtract 4 → x = -1.",
+      "notes": [
+        "Off by one — redo the steps.",
+        "Divide by 5 first, then subtract 4.",
+        "Correct.",
+        "You solved x+4 but forgot to subtract 4."
+      ],
+      "tag": "Linear equations",
+      "d": 2
+    },
+    {
+      "q": "If 2(x + 5) = 6, then x =",
+      "opts": [
+        "-1",
+        "1",
+        "3",
+        "-2"
+      ],
+      "a": 3,
+      "why": "Divide by 2 → x+5 = 3, then subtract 5 → x = -2.",
+      "notes": [
+        "Off by one — redo the steps.",
+        "Divide by 2 first, then subtract 5.",
+        "You solved x+5 but forgot to subtract 5.",
+        "Correct."
+      ],
+      "tag": "Linear equations",
+      "d": 2
+    },
+    {
+      "q": "If 2(x + 9) = 6, then x =",
+      "opts": [
+        "-6",
+        "-3",
+        "-5",
+        "3"
+      ],
+      "a": 0,
+      "why": "Divide by 2 → x+9 = 3, then subtract 9 → x = -6.",
+      "notes": [
+        "Correct.",
+        "Divide by 2 first, then subtract 9.",
+        "Off by one — redo the steps.",
+        "You solved x+9 but forgot to subtract 9."
+      ],
+      "tag": "Linear equations",
+      "d": 2
+    },
+    {
+      "q": "If 4(x + 2) = 44, then x =",
+      "opts": [
+        "11",
+        "9",
+        "10",
+        "42"
+      ],
+      "a": 1,
+      "why": "Divide by 4 → x+2 = 11, then subtract 2 → x = 9.",
+      "notes": [
+        "You solved x+2 but forgot to subtract 2.",
+        "Correct.",
+        "Off by one — redo the steps.",
+        "Divide by 4 first, then subtract 2."
+      ],
+      "tag": "Linear equations",
+      "d": 2
+    },
+    {
+      "q": "If 4(x + 2) = 20, then x =",
+      "opts": [
+        "5",
+        "3",
+        "4",
+        "18"
+      ],
+      "a": 1,
+      "why": "Divide by 4 → x+2 = 5, then subtract 2 → x = 3.",
+      "notes": [
+        "You solved x+2 but forgot to subtract 2.",
+        "Correct.",
+        "Off by one — redo the steps.",
+        "Divide by 4 first, then subtract 2."
+      ],
+      "tag": "Linear equations",
+      "d": 2
+    },
+    {
+      "q": "If 3(x + 6) = 30, then x =",
+      "opts": [
+        "24",
+        "5",
+        "10",
+        "4"
+      ],
+      "a": 3,
+      "why": "Divide by 3 → x+6 = 10, then subtract 6 → x = 4.",
+      "notes": [
+        "Divide by 3 first, then subtract 6.",
+        "Off by one — redo the steps.",
+        "You solved x+6 but forgot to subtract 6.",
+        "Correct."
+      ],
+      "tag": "Linear equations",
+      "d": 2
+    },
+    {
+      "q": "If 3(x + 8) = 18, then x =",
+      "opts": [
+        "-2",
+        "-1",
+        "6",
+        "10"
+      ],
+      "a": 0,
+      "why": "Divide by 3 → x+8 = 6, then subtract 8 → x = -2.",
+      "notes": [
+        "Correct.",
+        "Off by one — redo the steps.",
+        "You solved x+8 but forgot to subtract 8.",
+        "Divide by 3 first, then subtract 8."
+      ],
+      "tag": "Linear equations",
+      "d": 2
+    },
+    {
+      "q": "If 3(x + 8) = 12, then x =",
+      "opts": [
+        "-2",
+        "-4",
+        "-3",
+        "4"
+      ],
+      "a": 1,
+      "why": "Divide by 3 → x+8 = 4, then subtract 8 → x = -4.",
+      "notes": [
+        "A common miscalculation — recheck the steps.",
+        "Correct.",
+        "Off by one — redo the steps.",
+        "You solved x+8 but forgot to subtract 8."
+      ],
+      "tag": "Linear equations",
+      "d": 2
+    },
+    {
+      "q": "If 4(x + 4) = 52, then x =",
+      "opts": [
+        "9",
+        "48",
+        "10",
+        "13"
+      ],
+      "a": 0,
+      "why": "Divide by 4 → x+4 = 13, then subtract 4 → x = 9.",
+      "notes": [
+        "Correct.",
+        "Divide by 4 first, then subtract 4.",
+        "Off by one — redo the steps.",
+        "You solved x+4 but forgot to subtract 4."
+      ],
+      "tag": "Linear equations",
+      "d": 2
+    },
+    {
+      "q": "If 6(x + 9) = 60, then x =",
+      "opts": [
+        "2",
+        "51",
+        "1",
+        "10"
+      ],
+      "a": 2,
+      "why": "Divide by 6 → x+9 = 10, then subtract 9 → x = 1.",
+      "notes": [
+        "Off by one — redo the steps.",
+        "Divide by 6 first, then subtract 9.",
+        "Correct.",
+        "You solved x+9 but forgot to subtract 9."
+      ],
+      "tag": "Linear equations",
+      "d": 2
+    },
+    {
+      "q": "If 4(x + 9) = 52, then x =",
+      "opts": [
+        "43",
+        "4",
+        "5",
+        "13"
+      ],
+      "a": 1,
+      "why": "Divide by 4 → x+9 = 13, then subtract 9 → x = 4.",
+      "notes": [
+        "Divide by 4 first, then subtract 9.",
+        "Correct.",
+        "Off by one — redo the steps.",
+        "You solved x+9 but forgot to subtract 9."
+      ],
+      "tag": "Linear equations",
+      "d": 2
+    },
+    {
+      "q": "If 4(x + 2) = 32, then x =",
+      "opts": [
+        "6",
+        "30",
+        "8",
+        "7"
+      ],
+      "a": 0,
+      "why": "Divide by 4 → x+2 = 8, then subtract 2 → x = 6.",
+      "notes": [
+        "Correct.",
+        "Divide by 4 first, then subtract 2.",
+        "You solved x+2 but forgot to subtract 2.",
+        "Off by one — redo the steps."
+      ],
+      "tag": "Linear equations",
+      "d": 2
+    },
+    {
+      "q": "Simplify: 2x + 5x",
+      "opts": [
+        "7x²",
+        "7",
+        "10x",
+        "7x"
+      ],
+      "a": 3,
+      "why": "Combine like terms: (2+5)x = 7x.",
+      "notes": [
+        "Adding like terms keeps the same power (x, not x²).",
+        "Keep the variable x.",
+        "Add the coefficients, don't multiply.",
+        "Correct."
+      ],
+      "tag": "Combining like terms",
+      "d": 1
+    },
+    {
+      "q": "Simplify: 7x + 7x",
+      "opts": [
+        "49x",
+        "14x²",
+        "14x",
+        "14"
+      ],
+      "a": 2,
+      "why": "Combine like terms: (7+7)x = 14x.",
+      "notes": [
+        "Add the coefficients, don't multiply.",
+        "Adding like terms keeps the same power (x, not x²).",
+        "Correct.",
+        "Keep the variable x."
+      ],
+      "tag": "Combining like terms",
+      "d": 1
+    },
+    {
+      "q": "Simplify: 5x + 4x",
+      "opts": [
+        "9x²",
+        "9x",
+        "9",
+        "20x"
+      ],
+      "a": 1,
+      "why": "Combine like terms: (5+4)x = 9x.",
+      "notes": [
+        "Adding like terms keeps the same power (x, not x²).",
+        "Correct.",
+        "Keep the variable x.",
+        "Add the coefficients, don't multiply."
+      ],
+      "tag": "Combining like terms",
+      "d": 1
+    },
+    {
+      "q": "Simplify: 2x + 2x",
+      "opts": [
+        "4x",
+        "5x",
+        "4",
+        "4x²"
+      ],
+      "a": 0,
+      "why": "Combine like terms: (2+2)x = 4x.",
+      "notes": [
+        "Correct.",
+        "A common miscalculation — recheck the steps.",
+        "Keep the variable x.",
+        "Adding like terms keeps the same power (x, not x²)."
+      ],
+      "tag": "Combining like terms",
+      "d": 1
+    },
+    {
+      "q": "Simplify: 4x + 3x",
+      "opts": [
+        "12x",
+        "7x",
+        "7x²",
+        "7"
+      ],
+      "a": 1,
+      "why": "Combine like terms: (4+3)x = 7x.",
+      "notes": [
+        "Add the coefficients, don't multiply.",
+        "Correct.",
+        "Adding like terms keeps the same power (x, not x²).",
+        "Keep the variable x."
+      ],
+      "tag": "Combining like terms",
+      "d": 1
+    },
+    {
+      "q": "Simplify: 7x + 2x",
+      "opts": [
+        "9",
+        "9x",
+        "9x²",
+        "14x"
+      ],
+      "a": 1,
+      "why": "Combine like terms: (7+2)x = 9x.",
+      "notes": [
+        "Keep the variable x.",
+        "Correct.",
+        "Adding like terms keeps the same power (x, not x²).",
+        "Add the coefficients, don't multiply."
+      ],
+      "tag": "Combining like terms",
+      "d": 1
+    },
+    {
+      "q": "Simplify: 3x + 6x",
+      "opts": [
+        "18x",
+        "9x",
+        "9x²",
+        "9"
+      ],
+      "a": 1,
+      "why": "Combine like terms: (3+6)x = 9x.",
+      "notes": [
+        "Add the coefficients, don't multiply.",
+        "Correct.",
+        "Adding like terms keeps the same power (x, not x²).",
+        "Keep the variable x."
+      ],
+      "tag": "Combining like terms",
+      "d": 1
+    },
+    {
+      "q": "Simplify: 4x + 2x",
+      "opts": [
+        "6",
+        "6x²",
+        "8x",
+        "6x"
+      ],
+      "a": 3,
+      "why": "Combine like terms: (4+2)x = 6x.",
+      "notes": [
+        "Keep the variable x.",
+        "Adding like terms keeps the same power (x, not x²).",
+        "Add the coefficients, don't multiply.",
+        "Correct."
+      ],
+      "tag": "Combining like terms",
+      "d": 1
+    },
+    {
+      "q": "Simplify: 2x + 7x",
+      "opts": [
+        "9x²",
+        "9x",
+        "14x",
+        "9"
+      ],
+      "a": 1,
+      "why": "Combine like terms: (2+7)x = 9x.",
+      "notes": [
+        "Adding like terms keeps the same power (x, not x²).",
+        "Correct.",
+        "Add the coefficients, don't multiply.",
+        "Keep the variable x."
+      ],
+      "tag": "Combining like terms",
+      "d": 1
+    },
+    {
+      "q": "If x + y = 6 and x − y = 2, then x =",
+      "opts": [
+        "5",
+        "4",
+        "6",
+        "2"
+      ],
+      "a": 1,
+      "why": "Add the equations: 2x = 8 → x = 4.",
+      "notes": [
+        "Off by one — add the equations and halve.",
+        "Correct.",
+        "That is x+y, not x.",
+        "That solves for y, not x."
+      ],
+      "tag": "Systems of equations",
+      "d": 3
+    },
+    {
+      "q": "If x + y = 4 and x − y = -2, then x =",
+      "opts": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ],
+      "a": 3,
+      "why": "Add the equations: 2x = 2 → x = 1.",
+      "notes": [
+        "That is x+y, not x.",
+        "Off by one — add the equations and halve.",
+        "That solves for y, not x.",
+        "Correct."
+      ],
+      "tag": "Systems of equations",
+      "d": 3
+    },
+    {
+      "q": "If x + y = 7 and x − y = 5, then x =",
+      "opts": [
+        "8",
+        "7",
+        "6",
+        "1"
+      ],
+      "a": 2,
+      "why": "Add the equations: 2x = 12 → x = 6.",
+      "notes": [
+        "A common miscalculation — recheck the steps.",
+        "That is x+y, not x.",
+        "Correct.",
+        "That solves for y, not x."
+      ],
+      "tag": "Systems of equations",
+      "d": 3
+    },
+    {
+      "q": "If x + y = 3 and x − y = -1, then x =",
+      "opts": [
+        "3",
+        "2",
+        "4",
+        "1"
+      ],
+      "a": 3,
+      "why": "Add the equations: 2x = 2 → x = 1.",
+      "notes": [
+        "That is x+y, not x.",
+        "That solves for y, not x.",
+        "A common miscalculation — recheck the steps.",
+        "Correct."
+      ],
+      "tag": "Systems of equations",
+      "d": 3
+    },
+    {
+      "q": "If x + y = 12 and x − y = 0, then x =",
+      "opts": [
+        "7",
+        "8",
+        "12",
+        "6"
+      ],
+      "a": 3,
+      "why": "Add the equations: 2x = 12 → x = 6.",
+      "notes": [
+        "Off by one — add the equations and halve.",
+        "A common miscalculation — recheck the steps.",
+        "That is x+y, not x.",
+        "Correct."
+      ],
+      "tag": "Systems of equations",
+      "d": 3
+    },
+    {
+      "q": "If x + y = 8 and x − y = 6, then x =",
+      "opts": [
+        "1",
+        "9",
+        "8",
+        "7"
+      ],
+      "a": 3,
+      "why": "Add the equations: 2x = 14 → x = 7.",
+      "notes": [
+        "That solves for y, not x.",
+        "A common miscalculation — recheck the steps.",
+        "That is x+y, not x.",
+        "Correct."
+      ],
+      "tag": "Systems of equations",
+      "d": 3
+    },
+    {
+      "q": "If x + y = 9 and x − y = 3, then x =",
+      "opts": [
+        "9",
+        "3",
+        "7",
+        "6"
+      ],
+      "a": 3,
+      "why": "Add the equations: 2x = 12 → x = 6.",
+      "notes": [
+        "That is x+y, not x.",
+        "That solves for y, not x.",
+        "Off by one — add the equations and halve.",
+        "Correct."
+      ],
+      "tag": "Systems of equations",
+      "d": 3
+    },
+    {
+      "q": "If x + y = 8 and x − y = 0, then x =",
+      "opts": [
+        "4",
+        "5",
+        "6",
+        "8"
+      ],
+      "a": 0,
+      "why": "Add the equations: 2x = 8 → x = 4.",
+      "notes": [
+        "Correct.",
+        "Off by one — add the equations and halve.",
+        "A common miscalculation — recheck the steps.",
+        "That is x+y, not x."
+      ],
+      "tag": "Systems of equations",
+      "d": 3
+    },
+    {
+      "q": "If x + y = 6 and x − y = 4, then x =",
+      "opts": [
+        "1",
+        "5",
+        "6",
+        "7"
+      ],
+      "a": 1,
+      "why": "Add the equations: 2x = 10 → x = 5.",
+      "notes": [
+        "That solves for y, not x.",
+        "Correct.",
+        "That is x+y, not x.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "Systems of equations",
+      "d": 3
+    }
+  ],
+  "vocab_vault": [
+    {
+      "q": "<i>“Her approach was methodical: every trial logged, every variable controlled.”</i><br>As used here, <b>methodical</b> most nearly means:",
+      "opts": [
+        "systematic",
+        "slow",
+        "religious",
+        "hesitant"
+      ],
+      "a": 0,
+      "why": "The colon explains it: logged trials + controlled variables = organized and systematic. “Slow” is the trap — possible, but not supported.",
+      "tag": "VOCAB VAULT",
+      "d": 3
+    },
+    {
+      "q": "<i>“The engineers proposed a novel solution to the bridge problem.”</i><br><b>Novel</b> most nearly means:",
+      "opts": [
+        "original",
+        "fictional",
+        "lengthy",
+        "risky"
+      ],
+      "a": 0,
+      "why": "Context: a solution can’t be “fictional.” Novel = new/original. Always substitute-and-test.",
+      "tag": "VOCAB VAULT",
+      "d": 1
+    },
+    {
+      "q": "<i>“Asked about the delays, the director gave a candid response.”</i><br><b>Candid</b> most nearly means:",
+      "opts": [
+        "honest",
+        "secret",
+        "angry",
+        "rehearsed"
+      ],
+      "a": 0,
+      "why": "Candid = frank and honest — the opposite of rehearsed or evasive.",
+      "tag": "VOCAB VAULT",
+      "d": 3
+    },
+    {
+      "q": "“The critic's <b>scathing</b> review upset the author.” <b>Scathing</b> most nearly means:",
+      "opts": [
+        "harshly critical",
+        "mildly positive",
+        "confusing",
+        "brief"
+      ],
+      "a": 0,
+      "why": "It 'upset the author,' so scathing = harshly critical.",
+      "notes": [
+        "Correct.",
+        "The author was upset, so not positive.",
+        "Nothing suggests confusion.",
+        "Length isn't implied."
+      ],
+      "tag": "Vocabulary in context",
+      "d": 2
+    }
+  ],
+  "data_delta": [
+    {
+      "q": "<table class='ar-qt'><tr><th>Trial</th><th>Temp (°C)</th><th>Yield (g)</th></tr><tr><td>1</td><td>20</td><td>4.1</td></tr><tr><td>2</td><td>30</td><td>6.8</td></tr><tr><td>3</td><td>40</td><td>9.0</td></tr><tr><td>4</td><td>50</td><td>7.2</td></tr></table>What was the yield in Trial 3?",
+      "opts": [
+        "9.0 g",
+        "6.8 g",
+        "40 g",
+        "7.2 g"
+      ],
+      "a": 0,
+      "why": "Row-hunt: Trial 3 → yield column → 9.0 g. Axis/column first, always.",
+      "tag": "DATA DELTA",
+      "d": 1
+    },
+    {
+      "q": "Based on the table, as temperature increases from 20°C to 50°C, the yield:",
+      "opts": [
+        "increases, then decreases",
+        "always increases",
+        "always decreases",
+        "stays constant"
+      ],
+      "a": 0,
+      "why": "4.1 → 6.8 → 9.0 rises, then 7.2 falls. Peak behavior — the ACT’s favorite trend.",
+      "tag": "DATA DELTA",
+      "d": 2
+    },
+    {
+      "q": "The yield at 35°C would most likely be closest to:",
+      "opts": [
+        "7.9 g",
+        "4.5 g",
+        "9.8 g",
+        "2.0 g"
+      ],
+      "a": 0,
+      "why": "35°C sits between 30°C (6.8) and 40°C (9.0) — interpolate to ≈7.9. Never pick values outside the bracket.",
+      "tag": "DATA DELTA",
+      "d": 1
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Temp (°C)</th><th>Yield (g)</th></tr><tr><td>20</td><td>5.6</td></tr><tr><td>30</td><td>7.4</td></tr><tr><td>40</td><td>9.4</td></tr></table>The yield at 35 °C would most likely be closest to:",
+      "opts": [
+        "8.4 g",
+        "4.6 g",
+        "11.4 g",
+        "5.6 g"
+      ],
+      "a": 0,
+      "why": "35 °C is between 30 °C and 40 °C → interpolate to ≈ 8.4 g.",
+      "notes": [
+        "Correct.",
+        "Below the whole range.",
+        "That is above the 40 °C value — don't extrapolate.",
+        "That is the 20 °C value, far from 35 °C."
+      ],
+      "tag": "DATA DELTA",
+      "d": 1
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Temp (°C)</th><th>Yield (g)</th></tr><tr><td>20</td><td>5.1</td></tr><tr><td>30</td><td>7.3</td></tr><tr><td>40</td><td>8.5</td></tr></table>The yield at 35 °C would most likely be closest to:",
+      "opts": [
+        "7.9 g",
+        "5.1 g",
+        "10.5 g",
+        "4.1 g"
+      ],
+      "a": 0,
+      "why": "35 °C is between 30 °C and 40 °C → interpolate to ≈ 7.9 g.",
+      "notes": [
+        "Correct.",
+        "That is the 20 °C value, far from 35 °C.",
+        "That is above the 40 °C value — don't extrapolate.",
+        "Below the whole range."
+      ],
+      "tag": "DATA DELTA",
+      "d": 3
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Temp (°C)</th><th>Yield (g)</th></tr><tr><td>20</td><td>3.2</td></tr><tr><td>30</td><td>5.1</td></tr><tr><td>40</td><td>7.6</td></tr></table>The yield at 35 °C would most likely be closest to:",
+      "opts": [
+        "9.6 g",
+        "2.2 g",
+        "6.3 g",
+        "3.2 g"
+      ],
+      "a": 2,
+      "why": "35 °C is between 30 °C and 40 °C → interpolate to ≈ 6.3 g.",
+      "notes": [
+        "That is above the 40 °C value — don't extrapolate.",
+        "Below the whole range.",
+        "Correct.",
+        "That is the 20 °C value, far from 35 °C."
+      ],
+      "tag": "DATA DELTA",
+      "d": 1
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Temp (°C)</th><th>Yield (g)</th></tr><tr><td>20</td><td>4.7</td></tr><tr><td>30</td><td>7.3</td></tr><tr><td>40</td><td>8.6</td></tr></table>The yield at 35 °C would most likely be closest to:",
+      "opts": [
+        "4.7 g",
+        "10.6 g",
+        "3.7 g",
+        "7.9 g"
+      ],
+      "a": 3,
+      "why": "35 °C is between 30 °C and 40 °C → interpolate to ≈ 7.9 g.",
+      "notes": [
+        "That is the 20 °C value, far from 35 °C.",
+        "That is above the 40 °C value — don't extrapolate.",
+        "Below the whole range.",
+        "Correct."
+      ],
+      "tag": "DATA DELTA",
+      "d": 3
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Temp (°C)</th><th>Yield (g)</th></tr><tr><td>20</td><td>5.7</td></tr><tr><td>30</td><td>7.5</td></tr><tr><td>40</td><td>8.5</td></tr></table>The yield at 35 °C would most likely be closest to:",
+      "opts": [
+        "10.5 g",
+        "5.7 g",
+        "8.0 g",
+        "4.7 g"
+      ],
+      "a": 2,
+      "why": "35 °C is between 30 °C and 40 °C → interpolate to ≈ 8.0 g.",
+      "notes": [
+        "That is above the 40 °C value — don't extrapolate.",
+        "That is the 20 °C value, far from 35 °C.",
+        "Correct.",
+        "Below the whole range."
+      ],
+      "tag": "DATA DELTA",
+      "d": 1
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Temp (°C)</th><th>Yield (g)</th></tr><tr><td>20</td><td>3.7</td></tr><tr><td>30</td><td>6.6</td></tr><tr><td>40</td><td>7.9</td></tr></table>The yield at 35 °C would most likely be closest to:",
+      "opts": [
+        "2.7 g",
+        "3.7 g",
+        "9.9 g",
+        "7.2 g"
+      ],
+      "a": 3,
+      "why": "35 °C is between 30 °C and 40 °C → interpolate to ≈ 7.2 g.",
+      "notes": [
+        "Below the whole range.",
+        "That is the 20 °C value, far from 35 °C.",
+        "That is above the 40 °C value — don't extrapolate.",
+        "Correct."
+      ],
+      "tag": "DATA DELTA",
+      "d": 2
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Temp (°C)</th><th>Yield (g)</th></tr><tr><td>20</td><td>3.8</td></tr><tr><td>30</td><td>5.5</td></tr><tr><td>40</td><td>6.5</td></tr></table>The yield at 35 °C would most likely be closest to:",
+      "opts": [
+        "3.8 g",
+        "2.8 g",
+        "8.5 g",
+        "6.0 g"
+      ],
+      "a": 3,
+      "why": "35 °C is between 30 °C and 40 °C → interpolate to ≈ 6.0 g.",
+      "notes": [
+        "That is the 20 °C value, far from 35 °C.",
+        "Below the whole range.",
+        "That is above the 40 °C value — don't extrapolate.",
+        "Correct."
+      ],
+      "tag": "DATA DELTA",
+      "d": 3
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Temp (°C)</th><th>Yield (g)</th></tr><tr><td>20</td><td>3.6</td></tr><tr><td>30</td><td>6.3</td></tr><tr><td>40</td><td>7.5</td></tr></table>The yield at 35 °C would most likely be closest to:",
+      "opts": [
+        "2.6 g",
+        "3.6 g",
+        "6.9 g",
+        "9.5 g"
+      ],
+      "a": 2,
+      "why": "35 °C is between 30 °C and 40 °C → interpolate to ≈ 6.9 g.",
+      "notes": [
+        "Below the whole range.",
+        "That is the 20 °C value, far from 35 °C.",
+        "Correct.",
+        "That is above the 40 °C value — don't extrapolate."
+      ],
+      "tag": "DATA DELTA",
+      "d": 1
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Temp (°C)</th><th>Yield (g)</th></tr><tr><td>20</td><td>5.7</td></tr><tr><td>30</td><td>7.2</td></tr><tr><td>40</td><td>9.5</td></tr></table>The yield at 35 °C would most likely be closest to:",
+      "opts": [
+        "5.7 g",
+        "4.7 g",
+        "11.5 g",
+        "8.3 g"
+      ],
+      "a": 3,
+      "why": "35 °C is between 30 °C and 40 °C → interpolate to ≈ 8.3 g.",
+      "notes": [
+        "That is the 20 °C value, far from 35 °C.",
+        "Below the whole range.",
+        "That is above the 40 °C value — don't extrapolate.",
+        "Correct."
+      ],
+      "tag": "DATA DELTA",
+      "d": 1
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Temp (°C)</th><th>Yield (g)</th></tr><tr><td>20</td><td>5.1</td></tr><tr><td>30</td><td>7.6</td></tr><tr><td>40</td><td>9.5</td></tr></table>The yield at 35 °C would most likely be closest to:",
+      "opts": [
+        "11.5 g",
+        "8.6 g",
+        "5.1 g",
+        "4.1 g"
+      ],
+      "a": 1,
+      "why": "35 °C is between 30 °C and 40 °C → interpolate to ≈ 8.6 g.",
+      "notes": [
+        "That is above the 40 °C value — don't extrapolate.",
+        "Correct.",
+        "That is the 20 °C value, far from 35 °C.",
+        "Below the whole range."
+      ],
+      "tag": "DATA DELTA",
+      "d": 1
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Temp (°C)</th><th>Yield (g)</th></tr><tr><td>20</td><td>4.7</td></tr><tr><td>30</td><td>6.5</td></tr><tr><td>40</td><td>7.8</td></tr></table>The yield at 35 °C would most likely be closest to:",
+      "opts": [
+        "4.7 g",
+        "9.8 g",
+        "7.2 g",
+        "3.7 g"
+      ],
+      "a": 2,
+      "why": "35 °C is between 30 °C and 40 °C → interpolate to ≈ 7.2 g.",
+      "notes": [
+        "That is the 20 °C value, far from 35 °C.",
+        "That is above the 40 °C value — don't extrapolate.",
+        "Correct.",
+        "Below the whole range."
+      ],
+      "tag": "DATA DELTA",
+      "d": 1
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Temp (°C)</th><th>Yield (g)</th></tr><tr><td>20</td><td>5.1</td></tr><tr><td>30</td><td>7.7</td></tr><tr><td>40</td><td>9.7</td></tr></table>The yield at 35 °C would most likely be closest to:",
+      "opts": [
+        "5.1 g",
+        "4.1 g",
+        "11.7 g",
+        "8.7 g"
+      ],
+      "a": 3,
+      "why": "35 °C is between 30 °C and 40 °C → interpolate to ≈ 8.7 g.",
+      "notes": [
+        "That is the 20 °C value, far from 35 °C.",
+        "Below the whole range.",
+        "That is above the 40 °C value — don't extrapolate.",
+        "Correct."
+      ],
+      "tag": "DATA DELTA",
+      "d": 2
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Time (min)</th><th>Amount (g)</th></tr><tr><td>1</td><td>2.5</td></tr><tr><td>2</td><td>3.6</td></tr><tr><td>3</td><td>5.1</td></tr></table>As time increases, the amount:",
+      "opts": [
+        "increases",
+        "decreases",
+        "peaks then drops",
+        "stays the same"
+      ],
+      "a": 0,
+      "why": "2.5 → 3.6 → 5.1 all rise, so it increases.",
+      "notes": [
+        "Correct.",
+        "The values are going up, not down.",
+        "It only rises across the table.",
+        "The values change each minute."
+      ],
+      "tag": "Reading a trend",
+      "d": 2
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Time (min)</th><th>Amount (g)</th></tr><tr><td>1</td><td>4.2</td></tr><tr><td>2</td><td>6.2</td></tr><tr><td>3</td><td>7.5</td></tr></table>As time increases, the amount:",
+      "opts": [
+        "decreases",
+        "peaks then drops",
+        "increases",
+        "stays the same"
+      ],
+      "a": 2,
+      "why": "4.2 → 6.2 → 7.5 all rise, so it increases.",
+      "notes": [
+        "The values are going up, not down.",
+        "It only rises across the table.",
+        "Correct.",
+        "The values change each minute."
+      ],
+      "tag": "Reading a trend",
+      "d": 2
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Time (min)</th><th>Amount (g)</th></tr><tr><td>1</td><td>3.5</td></tr><tr><td>2</td><td>5.6</td></tr><tr><td>3</td><td>8.5</td></tr></table>As time increases, the amount:",
+      "opts": [
+        "increases",
+        "stays the same",
+        "peaks then drops",
+        "decreases"
+      ],
+      "a": 0,
+      "why": "3.5 → 5.6 → 8.5 all rise, so it increases.",
+      "notes": [
+        "Correct.",
+        "The values change each minute.",
+        "It only rises across the table.",
+        "The values are going up, not down."
+      ],
+      "tag": "Reading a trend",
+      "d": 2
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Time (min)</th><th>Amount (g)</th></tr><tr><td>1</td><td>4.0</td></tr><tr><td>2</td><td>6.3</td></tr><tr><td>3</td><td>7.8</td></tr></table>As time increases, the amount:",
+      "opts": [
+        "peaks then drops",
+        "decreases",
+        "stays the same",
+        "increases"
+      ],
+      "a": 3,
+      "why": "4.0 → 6.3 → 7.8 all rise, so it increases.",
+      "notes": [
+        "It only rises across the table.",
+        "The values are going up, not down.",
+        "The values change each minute.",
+        "Correct."
+      ],
+      "tag": "Reading a trend",
+      "d": 2
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Time (min)</th><th>Amount (g)</th></tr><tr><td>1</td><td>4.6</td></tr><tr><td>2</td><td>6.0</td></tr><tr><td>3</td><td>8.9</td></tr></table>As time increases, the amount:",
+      "opts": [
+        "increases",
+        "decreases",
+        "peaks then drops",
+        "stays the same"
+      ],
+      "a": 0,
+      "why": "4.6 → 6.0 → 8.9 all rise, so it increases.",
+      "notes": [
+        "Correct.",
+        "The values are going up, not down.",
+        "It only rises across the table.",
+        "The values change each minute."
+      ],
+      "tag": "Reading a trend",
+      "d": 2
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Time (min)</th><th>Amount (g)</th></tr><tr><td>1</td><td>3.7</td></tr><tr><td>2</td><td>4.9</td></tr><tr><td>3</td><td>7.4</td></tr></table>As time increases, the amount:",
+      "opts": [
+        "peaks then drops",
+        "increases",
+        "decreases",
+        "stays the same"
+      ],
+      "a": 1,
+      "why": "3.7 → 4.9 → 7.4 all rise, so it increases.",
+      "notes": [
+        "It only rises across the table.",
+        "Correct.",
+        "The values are going up, not down.",
+        "The values change each minute."
+      ],
+      "tag": "Reading a trend",
+      "d": 2
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Time (min)</th><th>Amount (g)</th></tr><tr><td>1</td><td>2.3</td></tr><tr><td>2</td><td>3.8</td></tr><tr><td>3</td><td>5.0</td></tr></table>As time increases, the amount:",
+      "opts": [
+        "increases",
+        "decreases",
+        "stays the same",
+        "peaks then drops"
+      ],
+      "a": 0,
+      "why": "2.3 → 3.8 → 5.0 all rise, so it increases.",
+      "notes": [
+        "Correct.",
+        "The values are going up, not down.",
+        "The values change each minute.",
+        "It only rises across the table."
+      ],
+      "tag": "Reading a trend",
+      "d": 2
+    },
+    {
+      "q": "<table class='ar-qt'><tr><th>Time (min)</th><th>Amount (g)</th></tr><tr><td>1</td><td>2.7</td></tr><tr><td>2</td><td>4.0</td></tr><tr><td>3</td><td>6.8</td></tr></table>As time increases, the amount:",
+      "opts": [
+        "stays the same",
+        "increases",
+        "peaks then drops",
+        "decreases"
+      ],
+      "a": 1,
+      "why": "2.7 → 4.0 → 6.8 all rise, so it increases.",
+      "notes": [
+        "The values change each minute.",
+        "Correct.",
+        "It only rises across the table.",
+        "The values are going up, not down."
+      ],
+      "tag": "Reading a trend",
+      "d": 2
+    },
+    {
+      "q": "To read a data table, you should first:",
+      "opts": [
+        "check each column's label and units",
+        "find the biggest number",
+        "read the last row",
+        "skip to the question"
+      ],
+      "a": 0,
+      "why": "Labels and units tell you what the numbers mean.",
+      "notes": [
+        "Correct.",
+        "Biggest number may be irrelevant.",
+        "One row isn't the whole table.",
+        "You need the labels to answer."
+      ],
+      "tag": "Data representation",
+      "d": 1
+    }
+  ],
+  "apostrophe_alley": [
+    {
+      "q": "Choose the correct sentence:",
+      "opts": [
+        "The team celebrated its victory.",
+        "The team celebrated it's victory.",
+        "The team celebrated its' victory.",
+        "The team celebrated its victory'."
+      ],
+      "a": 0,
+      "why": "its = belonging to the team. it's = 'it is.'",
+      "tag": "APOSTROPHE ALLEY",
+      "d": 3
+    },
+    {
+      "q": "Which is correct for a locker room shared by many players?",
+      "opts": [
+        "the players' locker room",
+        "the player's locker room",
+        "the players's locker room",
+        "the players locker's room"
+      ],
+      "a": 0,
+      "why": "A plural noun already ending in s takes just an apostrophe.",
+      "tag": "APOSTROPHE ALLEY",
+      "d": 1
+    },
+    {
+      "q": "Fill in: “___ going to love ___ new coach.”",
+      "opts": [
+        "They're / their",
+        "Their / they're",
+        "There / their",
+        "They're / there"
+      ],
+      "a": 0,
+      "why": "They're = they are; their = possessive.",
+      "tag": "APOSTROPHE ALLEY",
+      "d": 3
+    },
+    {
+      "q": "Choose the correct sentence:",
+      "opts": [
+        "The dogs chased their tails.",
+        "The dog's chased their tails.",
+        "The dogs chased they're tails.",
+        "The dogs chased there tails."
+      ],
+      "a": 0,
+      "why": "Plain plural 'dogs' (no apostrophe); 'their' shows possession.",
+      "notes": [
+        "Correct.",
+        "'dog's' is singular possessive, not a plural.",
+        "'they're' means 'they are'.",
+        "'there' refers to a place."
+      ],
+      "tag": "Apostrophes",
+      "d": 2
+    }
+  ],
+  "fragment_forest": [
+    {
+      "q": "Which is a COMPLETE sentence?",
+      "opts": [
+        "The storm knocked out the power.",
+        "Because the storm knocked out the power.",
+        "The storm, knocking out the power.",
+        "When the storm hit last night."
+      ],
+      "a": 0,
+      "why": "It has a subject (storm), a real verb (knocked), and a complete thought.",
+      "tag": "FRAGMENT FOREST",
+      "d": 3
+    },
+    {
+      "q": "Best fix: “The runners stretched. Before the race began.”",
+      "opts": [
+        "stretched before the race began.",
+        "stretched. Before, the race began.",
+        "stretched: before the race began.",
+        "NO CHANGE"
+      ],
+      "a": 0,
+      "why": "'Before the race began' is a fragment — attach it to the main clause.",
+      "tag": "FRAGMENT FOREST",
+      "d": 2
+    },
+    {
+      "q": "Which fixes the run-on? “I studied all night I still felt unready.”",
+      "opts": [
+        "night; I still",
+        "night I, still",
+        "night, I still",
+        "NO CHANGE"
+      ],
+      "a": 0,
+      "why": "Two full sentences need a semicolon, period, or comma + FANBOYS.",
+      "tag": "FRAGMENT FOREST",
+      "d": 3
+    }
+  ],
+  "dash_dungeon": [
+    {
+      "q": "Choose the correct punctuation: “Her goal ___ a perfect score ___ drove every session.”",
+      "opts": [
+        "— a perfect score —",
+        "— a perfect score,",
+        "( a perfect score —",
+        "- a perfect score"
+      ],
+      "a": 0,
+      "why": "Dashes setting off extra info must come as a matched pair.",
+      "tag": "DASH DUNGEON",
+      "d": 1
+    },
+    {
+      "q": "Which uses a colon correctly?",
+      "opts": [
+        "She had one rule: never quit.",
+        "She had: one rule never quit.",
+        "She had one: rule never quit.",
+        "She had one rule; never quit:"
+      ],
+      "a": 0,
+      "why": "A colon follows a complete sentence, then introduces the point.",
+      "tag": "DASH DUNGEON",
+      "d": 3
+    },
+    {
+      "q": "Pick the correct sentence:",
+      "opts": [
+        "The bus was late; we missed the opening.",
+        "The bus was late, we missed the opening.",
+        "The bus was late we missed the opening.",
+        "The bus was late: we missed—"
+      ],
+      "a": 0,
+      "why": "A semicolon joins two complete, related sentences.",
+      "tag": "DASH DUNGEON",
+      "d": 1
+    }
+  ],
+  "verb_valley": [
+    {
+      "q": "Choose the verb: “The box of old photographs ___ in the attic.”",
+      "opts": [
+        "is",
+        "are",
+        "were",
+        "have been"
+      ],
+      "a": 0,
+      "why": "Subject is 'box' (singular); ignore 'of old photographs.'",
+      "tag": "VERB VALLEY",
+      "d": 1
+    },
+    {
+      "q": "Keep tense consistent: “She opened the door and ___ inside.”",
+      "opts": [
+        "stepped",
+        "steps",
+        "will step",
+        "stepping"
+      ],
+      "a": 0,
+      "why": "Past 'opened' needs past 'stepped.'",
+      "tag": "VERB VALLEY",
+      "d": 1
+    },
+    {
+      "q": "Choose the verb: “Neither of the answers ___ correct.”",
+      "opts": [
+        "is",
+        "are",
+        "were",
+        "seem"
+      ],
+      "a": 0,
+      "why": "'Neither' is singular → 'is.'",
+      "tag": "VERB VALLEY",
+      "d": 1
+    },
+    {
+      "q": "Choose the verb: “The list of items ___ on the desk.”",
+      "opts": [
+        "is",
+        "are",
+        "were",
+        "have been"
+      ],
+      "a": 0,
+      "why": "Subject is 'list' (singular); ignore 'of items'.",
+      "notes": [
+        "Correct.",
+        "'list' is singular, not plural.",
+        "Wrong number and tense.",
+        "Plural verb for a singular subject."
+      ],
+      "tag": "Subject–verb agreement",
+      "d": 2
+    }
+  ],
+  "transition_tower": [
+    {
+      "q": "“The plan was expensive. ___, it worked flawlessly.”",
+      "opts": [
+        "However",
+        "Therefore",
+        "For example",
+        "Meanwhile"
+      ],
+      "a": 0,
+      "why": "Expensive vs. worked well is a contrast → 'However.'",
+      "tag": "TRANSITION TOWER",
+      "d": 1
+    },
+    {
+      "q": "“He trained for months. ___, he was ready.”",
+      "opts": [
+        "Therefore",
+        "However",
+        "Nevertheless",
+        "In contrast"
+      ],
+      "a": 0,
+      "why": "Training → ready is cause/effect → 'Therefore.'",
+      "tag": "TRANSITION TOWER",
+      "d": 3
+    },
+    {
+      "q": "Which is most concise? “The results were clear ___ obvious to everyone.”",
+      "opts": [
+        "and",
+        "but also and",
+        "; however, and",
+        "and also but"
+      ],
+      "a": 0,
+      "why": "The ACT rewards concision; extra linkers are redundant.",
+      "tag": "TRANSITION TOWER",
+      "d": 2
+    },
+    {
+      "q": "“It was raining hard. ___, the game continued.”",
+      "opts": [
+        "Nonetheless",
+        "Therefore",
+        "For instance",
+        "Similarly"
+      ],
+      "a": 0,
+      "why": "Rain vs. game continuing is a contrast → 'Nonetheless'.",
+      "notes": [
+        "Correct.",
+        "'Therefore' shows result, not contrast.",
+        "'For instance' introduces an example.",
+        "'Similarly' shows likeness, not contrast."
+      ],
+      "tag": "Transitions",
+      "d": 2
+    }
+  ],
+  "fraction_falls": [
+    {
+      "q": "A shirt goes from $40 to $50. The percent increase is:",
+      "opts": [
+        "25%",
+        "20%",
+        "10%",
+        "80%"
+      ],
+      "a": 0,
+      "why": "change/original = 10/40 = 25%.",
+      "tag": "FRACTION FALLS",
+      "d": 3
+    },
+    {
+      "q": "What is ⅔ of 90?",
+      "opts": [
+        "60",
+        "45",
+        "30",
+        "135"
+      ],
+      "a": 0,
+      "why": "(2/3) × 90 = 60.",
+      "tag": "FRACTION FALLS",
+      "d": 1
+    },
+    {
+      "q": "A price rises 20%, then falls 20%. Versus the start it is:",
+      "opts": [
+        "4% lower",
+        "the same",
+        "4% higher",
+        "20% lower"
+      ],
+      "a": 0,
+      "why": "1.20 × 0.80 = 0.96 → 4% below start.",
+      "tag": "FRACTION FALLS",
+      "d": 3
+    },
+    {
+      "q": "What is 1/3 of 15?",
+      "opts": [
+        "6",
+        "15",
+        "5",
+        "8"
+      ],
+      "a": 2,
+      "why": "(1/3)×15 = 5.",
+      "notes": [
+        "A common miscalculation — recheck the steps.",
+        "You multiplied but forgot to divide by 3.",
+        "Correct.",
+        "Close — recheck the arithmetic."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 3
+    },
+    {
+      "q": "What is 3/6 of 42?",
+      "opts": [
+        "7",
+        "126",
+        "21",
+        "27"
+      ],
+      "a": 2,
+      "why": "(3/6)×42 = 21.",
+      "notes": [
+        "That is 1/6 of it, not 3/6.",
+        "You multiplied but forgot to divide by 6.",
+        "Correct.",
+        "Close — recheck the arithmetic."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 1
+    },
+    {
+      "q": "Split 40 in the ratio 5:3. The larger part is:",
+      "opts": [
+        "15",
+        "25",
+        "20",
+        "30"
+      ],
+      "a": 1,
+      "why": "8 parts total → each = 5 → larger = 25.",
+      "notes": [
+        "That is the smaller part.",
+        "Correct.",
+        "The split is not even — use the ratio.",
+        "Off by one unit — recount parts."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 1
+    },
+    {
+      "q": "What is 1/6 of 60?",
+      "opts": [
+        "60",
+        "16",
+        "10",
+        "11"
+      ],
+      "a": 2,
+      "why": "(1/6)×60 = 10.",
+      "notes": [
+        "You multiplied but forgot to divide by 6.",
+        "Close — recheck the arithmetic.",
+        "Correct.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 3
+    },
+    {
+      "q": "Split 15 in the ratio 4:1. The larger part is:",
+      "opts": [
+        "7",
+        "12",
+        "15",
+        "3"
+      ],
+      "a": 1,
+      "why": "5 parts total → each = 3 → larger = 12.",
+      "notes": [
+        "The split is not even — use the ratio.",
+        "Correct.",
+        "Off by one unit — recount parts.",
+        "That is the smaller part."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "What is 3/4 of 48?",
+      "opts": [
+        "12",
+        "144",
+        "36",
+        "40"
+      ],
+      "a": 2,
+      "why": "(3/4)×48 = 36.",
+      "notes": [
+        "That is 1/4 of it, not 3/4.",
+        "You multiplied but forgot to divide by 4.",
+        "Correct.",
+        "Close — recheck the arithmetic."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 3
+    },
+    {
+      "q": "A value changes from 80 to 72. That is a:",
+      "opts": [
+        "10% increase",
+        "10% decrease",
+        "8% decrease",
+        "15% increase"
+      ],
+      "a": 1,
+      "why": "change/original = 8/80 = 10%.",
+      "notes": [
+        "Right size, wrong direction.",
+        "Correct.",
+        "That is the raw change, not the percent.",
+        "Recompute change ÷ original."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 1
+    },
+    {
+      "q": "Split 25 in the ratio 3:2. The larger part is:",
+      "opts": [
+        "10",
+        "15",
+        "20",
+        "12"
+      ],
+      "a": 1,
+      "why": "5 parts total → each = 5 → larger = 15.",
+      "notes": [
+        "That is the smaller part.",
+        "Correct.",
+        "Off by one unit — recount parts.",
+        "The split is not even — use the ratio."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 3
+    },
+    {
+      "q": "What is 4/5 of 50?",
+      "opts": [
+        "40",
+        "45",
+        "200",
+        "10"
+      ],
+      "a": 0,
+      "why": "(4/5)×50 = 40.",
+      "notes": [
+        "Correct.",
+        "Close — recheck the arithmetic.",
+        "You multiplied but forgot to divide by 5.",
+        "That is 1/5 of it, not 4/5."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "Split 40 in the ratio 4:1. The larger part is:",
+      "opts": [
+        "20",
+        "8",
+        "32",
+        "40"
+      ],
+      "a": 2,
+      "why": "5 parts total → each = 8 → larger = 32.",
+      "notes": [
+        "The split is not even — use the ratio.",
+        "That is the smaller part.",
+        "Correct.",
+        "Off by one unit — recount parts."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "A value changes from 120 to 150. That is a:",
+      "opts": [
+        "30% increase",
+        "25% increase",
+        "35% increase",
+        "25% decrease"
+      ],
+      "a": 1,
+      "why": "change/original = 30/120 = 25%.",
+      "notes": [
+        "That is the raw change, not the percent.",
+        "Correct.",
+        "A common miscalculation — recheck the steps.",
+        "Right size, wrong direction."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 1
+    },
+    {
+      "q": "A value changes from 80 to 112. That is a:",
+      "opts": [
+        "40% increase",
+        "45% increase",
+        "32% increase",
+        "40% decrease"
+      ],
+      "a": 0,
+      "why": "change/original = 32/80 = 40%.",
+      "notes": [
+        "Correct.",
+        "Recompute change ÷ original.",
+        "That is the raw change, not the percent.",
+        "Right size, wrong direction."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "A value changes from 40 to 60. That is a:",
+      "opts": [
+        "55% increase",
+        "20% increase",
+        "50% decrease",
+        "50% increase"
+      ],
+      "a": 3,
+      "why": "change/original = 20/40 = 50%.",
+      "notes": [
+        "Recompute change ÷ original.",
+        "That is the raw change, not the percent.",
+        "Right size, wrong direction.",
+        "Correct."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 1
+    },
+    {
+      "q": "A value changes from 50 to 40. That is a:",
+      "opts": [
+        "20% decrease",
+        "10% decrease",
+        "20% increase",
+        "25% increase"
+      ],
+      "a": 0,
+      "why": "change/original = 10/50 = 20%.",
+      "notes": [
+        "Correct.",
+        "That is the raw change, not the percent.",
+        "Right size, wrong direction.",
+        "Recompute change ÷ original."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "A value changes from 10 to 9. That is a:",
+      "opts": [
+        "15% increase",
+        "1% decrease",
+        "10% increase",
+        "10% decrease"
+      ],
+      "a": 3,
+      "why": "change/original = 1/10 = 10%.",
+      "notes": [
+        "Recompute change ÷ original.",
+        "That is the raw change, not the percent.",
+        "Right size, wrong direction.",
+        "Correct."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 1
+    },
+    {
+      "q": "What is 1/2 of 16?",
+      "opts": [
+        "16",
+        "8",
+        "9",
+        "10"
+      ],
+      "a": 1,
+      "why": "(1/2)×16 = 8.",
+      "notes": [
+        "You multiplied but forgot to divide by 2.",
+        "Correct.",
+        "A common miscalculation — recheck the steps.",
+        "Close — recheck the arithmetic."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "A value changes from 50 to 55. That is a:",
+      "opts": [
+        "10% decrease",
+        "15% increase",
+        "10% increase",
+        "5% increase"
+      ],
+      "a": 2,
+      "why": "change/original = 5/50 = 10%.",
+      "notes": [
+        "Right size, wrong direction.",
+        "Recompute change ÷ original.",
+        "Correct.",
+        "That is the raw change, not the percent."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "A value changes from 40 to 56. That is a:",
+      "opts": [
+        "45% increase",
+        "40% increase",
+        "40% decrease",
+        "16% increase"
+      ],
+      "a": 1,
+      "why": "change/original = 16/40 = 40%.",
+      "notes": [
+        "Recompute change ÷ original.",
+        "Correct.",
+        "Right size, wrong direction.",
+        "That is the raw change, not the percent."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 3
+    },
+    {
+      "q": "What is 4/6 of 66?",
+      "opts": [
+        "50",
+        "11",
+        "44",
+        "264"
+      ],
+      "a": 2,
+      "why": "(4/6)×66 = 44.",
+      "notes": [
+        "Close — recheck the arithmetic.",
+        "That is 1/6 of it, not 4/6.",
+        "Correct.",
+        "You multiplied but forgot to divide by 6."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "A value changes from 40 to 20. That is a:",
+      "opts": [
+        "50% increase",
+        "55% increase",
+        "50% decrease",
+        "20% decrease"
+      ],
+      "a": 2,
+      "why": "change/original = 20/40 = 50%.",
+      "notes": [
+        "Right size, wrong direction.",
+        "Recompute change ÷ original.",
+        "Correct.",
+        "That is the raw change, not the percent."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "Split 30 in the ratio 3:2. The larger part is:",
+      "opts": [
+        "15",
+        "24",
+        "18",
+        "12"
+      ],
+      "a": 2,
+      "why": "5 parts total → each = 6 → larger = 18.",
+      "notes": [
+        "The split is not even — use the ratio.",
+        "Off by one unit — recount parts.",
+        "Correct.",
+        "That is the smaller part."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "Split 10 in the ratio 2:3. The larger part is:",
+      "opts": [
+        "6",
+        "4",
+        "8",
+        "5"
+      ],
+      "a": 0,
+      "why": "5 parts total → each = 2 → larger = 6.",
+      "notes": [
+        "Correct.",
+        "That is the smaller part.",
+        "Off by one unit — recount parts.",
+        "The split is not even — use the ratio."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 1
+    },
+    {
+      "q": "Split 48 in the ratio 5:3. The larger part is:",
+      "opts": [
+        "36",
+        "24",
+        "30",
+        "18"
+      ],
+      "a": 2,
+      "why": "8 parts total → each = 6 → larger = 30.",
+      "notes": [
+        "Off by one unit — recount parts.",
+        "The split is not even — use the ratio.",
+        "Correct.",
+        "That is the smaller part."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "Split 20 in the ratio 4:1. The larger part is:",
+      "opts": [
+        "4",
+        "10",
+        "20",
+        "16"
+      ],
+      "a": 3,
+      "why": "5 parts total → each = 4 → larger = 16.",
+      "notes": [
+        "That is the smaller part.",
+        "The split is not even — use the ratio.",
+        "Off by one unit — recount parts.",
+        "Correct."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 3
+    },
+    {
+      "q": "Split 28 in the ratio 5:2. The larger part is:",
+      "opts": [
+        "20",
+        "14",
+        "24",
+        "8"
+      ],
+      "a": 0,
+      "why": "7 parts total → each = 4 → larger = 20.",
+      "notes": [
+        "Correct.",
+        "The split is not even — use the ratio.",
+        "Off by one unit — recount parts.",
+        "That is the smaller part."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "What is 2/3 of 18?",
+      "opts": [
+        "36",
+        "15",
+        "6",
+        "12"
+      ],
+      "a": 3,
+      "why": "(2/3)×18 = 12.",
+      "notes": [
+        "You multiplied but forgot to divide by 3.",
+        "Close — recheck the arithmetic.",
+        "That is 1/3 of it, not 2/3.",
+        "Correct."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 1
+    },
+    {
+      "q": "A value changes from 50 to 57. That is a:",
+      "opts": [
+        "7% increase",
+        "15% decrease",
+        "15% increase",
+        "20% increase"
+      ],
+      "a": 2,
+      "why": "change/original = 7/50 = 15%.",
+      "notes": [
+        "That is the raw change, not the percent.",
+        "Right size, wrong direction.",
+        "Correct.",
+        "Recompute change ÷ original."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "What is 5/6 of 48?",
+      "opts": [
+        "8",
+        "40",
+        "46",
+        "240"
+      ],
+      "a": 1,
+      "why": "(5/6)×48 = 40.",
+      "notes": [
+        "That is 1/6 of it, not 5/6.",
+        "Correct.",
+        "Close — recheck the arithmetic.",
+        "You multiplied but forgot to divide by 6."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "Split 24 in the ratio 5:3. The larger part is:",
+      "opts": [
+        "15",
+        "12",
+        "18",
+        "9"
+      ],
+      "a": 0,
+      "why": "8 parts total → each = 3 → larger = 15.",
+      "notes": [
+        "Correct.",
+        "The split is not even — use the ratio.",
+        "Off by one unit — recount parts.",
+        "That is the smaller part."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "Split 10 in the ratio 4:1. The larger part is:",
+      "opts": [
+        "10",
+        "2",
+        "5",
+        "8"
+      ],
+      "a": 3,
+      "why": "5 parts total → each = 2 → larger = 8.",
+      "notes": [
+        "Off by one unit — recount parts.",
+        "That is the smaller part.",
+        "The split is not even — use the ratio.",
+        "Correct."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 3
+    },
+    {
+      "q": "What is 1/2 of 6?",
+      "opts": [
+        "6",
+        "3",
+        "4",
+        "5"
+      ],
+      "a": 1,
+      "why": "(1/2)×6 = 3.",
+      "notes": [
+        "You multiplied but forgot to divide by 2.",
+        "Correct.",
+        "A common miscalculation — recheck the steps.",
+        "Close — recheck the arithmetic."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "What is 1/2 of 18?",
+      "opts": [
+        "9",
+        "11",
+        "10",
+        "18"
+      ],
+      "a": 0,
+      "why": "(1/2)×18 = 9.",
+      "notes": [
+        "Correct.",
+        "Close — recheck the arithmetic.",
+        "A common miscalculation — recheck the steps.",
+        "You multiplied but forgot to divide by 2."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 1
+    },
+    {
+      "q": "A value changes from 10 to 7. That is a:",
+      "opts": [
+        "25% increase",
+        "30% increase",
+        "25% decrease",
+        "3% decrease"
+      ],
+      "a": 2,
+      "why": "change/original = 3/10 = 25%.",
+      "notes": [
+        "Right size, wrong direction.",
+        "Recompute change ÷ original.",
+        "Correct.",
+        "That is the raw change, not the percent."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 1
+    },
+    {
+      "q": "A value changes from 25 to 37. That is a:",
+      "opts": [
+        "55% increase",
+        "12% increase",
+        "50% increase",
+        "50% decrease"
+      ],
+      "a": 2,
+      "why": "change/original = 12/25 = 50%.",
+      "notes": [
+        "Recompute change ÷ original.",
+        "That is the raw change, not the percent.",
+        "Correct.",
+        "Right size, wrong direction."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "A value changes from 25 to 30. That is a:",
+      "opts": [
+        "5% increase",
+        "25% increase",
+        "20% decrease",
+        "20% increase"
+      ],
+      "a": 3,
+      "why": "change/original = 5/25 = 20%.",
+      "notes": [
+        "That is the raw change, not the percent.",
+        "Recompute change ÷ original.",
+        "Right size, wrong direction.",
+        "Correct."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 2
+    },
+    {
+      "q": "A value changes from 50 to 45. That is a:",
+      "opts": [
+        "10% decrease",
+        "15% increase",
+        "5% decrease",
+        "10% increase"
+      ],
+      "a": 0,
+      "why": "change/original = 5/50 = 10%.",
+      "notes": [
+        "Correct.",
+        "Recompute change ÷ original.",
+        "That is the raw change, not the percent.",
+        "Right size, wrong direction."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 1
+    },
+    {
+      "q": "Split 35 in the ratio 5:2. The larger part is:",
+      "opts": [
+        "17",
+        "25",
+        "30",
+        "10"
+      ],
+      "a": 1,
+      "why": "7 parts total → each = 5 → larger = 25.",
+      "notes": [
+        "The split is not even — use the ratio.",
+        "Correct.",
+        "Off by one unit — recount parts.",
+        "That is the smaller part."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 1
+    },
+    {
+      "q": "A value changes from 60 to 42. That is a:",
+      "opts": [
+        "35% increase",
+        "30% decrease",
+        "18% decrease",
+        "30% increase"
+      ],
+      "a": 1,
+      "why": "change/original = 18/60 = 30%.",
+      "notes": [
+        "Recompute change ÷ original.",
+        "Correct.",
+        "That is the raw change, not the percent.",
+        "Right size, wrong direction."
+      ],
+      "tag": "FRACTION FALLS",
+      "d": 3
+    },
+    {
+      "q": "What is 5% of 60?",
+      "opts": [
+        "12",
+        "3",
+        "300",
+        "9"
+      ],
+      "a": 1,
+      "why": "5% = 5/100, so 60 × 5/100 = 3.",
+      "notes": [
+        "Wrong operation — multiply by 5/100.",
+        "Correct.",
+        "You forgot to divide by 100.",
+        "Recompute 5% of 60."
+      ],
+      "tag": "Percent of a number",
+      "d": 1
+    },
+    {
+      "q": "What is 40% of 20?",
+      "opts": [
+        "10",
+        "0",
+        "800",
+        "8"
+      ],
+      "a": 3,
+      "why": "40% = 40/100, so 20 × 40/100 = 8.",
+      "notes": [
+        "Recompute 40% of 20.",
+        "Wrong operation — multiply by 40/100.",
+        "You forgot to divide by 100.",
+        "Correct."
+      ],
+      "tag": "Percent of a number",
+      "d": 1
+    },
+    {
+      "q": "What is 15% of 50?",
+      "opts": [
+        "750",
+        "3",
+        "12",
+        "7"
+      ],
+      "a": 3,
+      "why": "15% = 15/100, so 50 × 15/100 = 7.",
+      "notes": [
+        "You forgot to divide by 100.",
+        "Wrong operation — multiply by 15/100.",
+        "Recompute 15% of 50.",
+        "Correct."
+      ],
+      "tag": "Percent of a number",
+      "d": 1
+    },
+    {
+      "q": "What is 40% of 120?",
+      "opts": [
+        "48",
+        "4800",
+        "3",
+        "60"
+      ],
+      "a": 0,
+      "why": "40% = 40/100, so 120 × 40/100 = 48.",
+      "notes": [
+        "Correct.",
+        "You forgot to divide by 100.",
+        "Wrong operation — multiply by 40/100.",
+        "Recompute 40% of 120."
+      ],
+      "tag": "Percent of a number",
+      "d": 1
+    },
+    {
+      "q": "What is 75% of 120?",
+      "opts": [
+        "90",
+        "1",
+        "102",
+        "9000"
+      ],
+      "a": 0,
+      "why": "75% = 75/100, so 120 × 75/100 = 90.",
+      "notes": [
+        "Correct.",
+        "Wrong operation — multiply by 75/100.",
+        "Recompute 75% of 120.",
+        "You forgot to divide by 100."
+      ],
+      "tag": "Percent of a number",
+      "d": 1
+    },
+    {
+      "q": "What is 40% of 100?",
+      "opts": [
+        "2",
+        "40",
+        "50",
+        "4000"
+      ],
+      "a": 1,
+      "why": "40% = 40/100, so 100 × 40/100 = 40.",
+      "notes": [
+        "Wrong operation — multiply by 40/100.",
+        "Correct.",
+        "Recompute 40% of 100.",
+        "You forgot to divide by 100."
+      ],
+      "tag": "Percent of a number",
+      "d": 1
+    },
+    {
+      "q": "What is 10% of 100?",
+      "opts": [
+        "11",
+        "1000",
+        "20",
+        "10"
+      ],
+      "a": 3,
+      "why": "10% = 10/100, so 100 × 10/100 = 10.",
+      "notes": [
+        "A common miscalculation — recheck the steps.",
+        "You forgot to divide by 100.",
+        "Recompute 10% of 100.",
+        "Correct."
+      ],
+      "tag": "Percent of a number",
+      "d": 1
+    },
+    {
+      "q": "What is 75% of 200?",
+      "opts": [
+        "15000",
+        "150",
+        "170",
+        "2"
+      ],
+      "a": 1,
+      "why": "75% = 75/100, so 200 × 75/100 = 150.",
+      "notes": [
+        "You forgot to divide by 100.",
+        "Correct.",
+        "Recompute 75% of 200.",
+        "Wrong operation — multiply by 75/100."
+      ],
+      "tag": "Percent of a number",
+      "d": 1
+    },
+    {
+      "q": "What is 75% of 20?",
+      "opts": [
+        "0",
+        "15",
+        "1500",
+        "17"
+      ],
+      "a": 1,
+      "why": "75% = 75/100, so 20 × 75/100 = 15.",
+      "notes": [
+        "Wrong operation — multiply by 75/100.",
+        "Correct.",
+        "You forgot to divide by 100.",
+        "Recompute 75% of 20."
+      ],
+      "tag": "Percent of a number",
+      "d": 1
+    },
+    {
+      "q": "What is 25% of 80?",
+      "opts": [
+        "28",
+        "20",
+        "3",
+        "2000"
+      ],
+      "a": 1,
+      "why": "25% = 25/100, so 80 × 25/100 = 20.",
+      "notes": [
+        "Recompute 25% of 80.",
+        "Correct.",
+        "Wrong operation — multiply by 25/100.",
+        "You forgot to divide by 100."
+      ],
+      "tag": "Percent of a number",
+      "d": 1
+    },
+    {
+      "q": "What is 15% of 60?",
+      "opts": [
+        "15",
+        "4",
+        "9",
+        "900"
+      ],
+      "a": 2,
+      "why": "15% = 15/100, so 60 × 15/100 = 9.",
+      "notes": [
+        "Recompute 15% of 60.",
+        "Wrong operation — multiply by 15/100.",
+        "Correct.",
+        "You forgot to divide by 100."
+      ],
+      "tag": "Percent of a number",
+      "d": 1
+    },
+    {
+      "q": "What is 20% of 20?",
+      "opts": [
+        "1",
+        "6",
+        "4",
+        "400"
+      ],
+      "a": 2,
+      "why": "20% = 20/100, so 20 × 20/100 = 4.",
+      "notes": [
+        "Wrong operation — multiply by 20/100.",
+        "Recompute 20% of 20.",
+        "Correct.",
+        "You forgot to divide by 100."
+      ],
+      "tag": "Percent of a number",
+      "d": 1
+    },
+    {
+      "q": "1/2 written as a percent is:",
+      "opts": [
+        "50%",
+        "100%",
+        "51%",
+        "5%"
+      ],
+      "a": 0,
+      "why": "1/2 = 50%.",
+      "notes": [
+        "Correct.",
+        "You doubled it.",
+        "A common miscalculation — recheck the steps.",
+        "Off by a factor of 10."
+      ],
+      "tag": "Fraction ↔ percent",
+      "d": 1
+    },
+    {
+      "q": "1/4 written as a percent is:",
+      "opts": [
+        "50%",
+        "75%",
+        "25%",
+        "2.5%"
+      ],
+      "a": 2,
+      "why": "1/4 = 25%.",
+      "notes": [
+        "You doubled it.",
+        "That is the complement.",
+        "Correct.",
+        "Off by a factor of 10."
+      ],
+      "tag": "Fraction ↔ percent",
+      "d": 1
+    },
+    {
+      "q": "1/8 written as a percent is:",
+      "opts": [
+        "25%",
+        "1.25%",
+        "87.5%",
+        "12.5%"
+      ],
+      "a": 3,
+      "why": "1/8 = 12.5%.",
+      "notes": [
+        "You doubled it.",
+        "Off by a factor of 10.",
+        "That is the complement.",
+        "Correct."
+      ],
+      "tag": "Fraction ↔ percent",
+      "d": 1
+    },
+    {
+      "q": "3/10 written as a percent is:",
+      "opts": [
+        "70%",
+        "30%",
+        "3%",
+        "60%"
+      ],
+      "a": 1,
+      "why": "3/10 = 30%.",
+      "notes": [
+        "That is the complement.",
+        "Correct.",
+        "Off by a factor of 10.",
+        "You doubled it."
+      ],
+      "tag": "Fraction ↔ percent",
+      "d": 1
+    },
+    {
+      "q": "3/5 written as a percent is:",
+      "opts": [
+        "6%",
+        "40%",
+        "120%",
+        "60%"
+      ],
+      "a": 3,
+      "why": "3/5 = 60%.",
+      "notes": [
+        "Off by a factor of 10.",
+        "That is the complement.",
+        "You doubled it.",
+        "Correct."
+      ],
+      "tag": "Fraction ↔ percent",
+      "d": 1
+    },
+    {
+      "q": "3/4 written as a percent is:",
+      "opts": [
+        "75%",
+        "25%",
+        "150%",
+        "7.5%"
+      ],
+      "a": 0,
+      "why": "3/4 = 75%.",
+      "notes": [
+        "Correct.",
+        "That is the complement.",
+        "You doubled it.",
+        "Off by a factor of 10."
+      ],
+      "tag": "Fraction ↔ percent",
+      "d": 1
+    },
+    {
+      "q": "2/5 written as a percent is:",
+      "opts": [
+        "80%",
+        "40%",
+        "60%",
+        "4%"
+      ],
+      "a": 1,
+      "why": "2/5 = 40%.",
+      "notes": [
+        "You doubled it.",
+        "Correct.",
+        "That is the complement.",
+        "Off by a factor of 10."
+      ],
+      "tag": "Fraction ↔ percent",
+      "d": 1
+    },
+    {
+      "q": "1/5 written as a percent is:",
+      "opts": [
+        "80%",
+        "40%",
+        "2%",
+        "20%"
+      ],
+      "a": 3,
+      "why": "1/5 = 20%.",
+      "notes": [
+        "That is the complement.",
+        "You doubled it.",
+        "Off by a factor of 10.",
+        "Correct."
+      ],
+      "tag": "Fraction ↔ percent",
+      "d": 1
+    },
+    {
+      "q": "1/10 written as a percent is:",
+      "opts": [
+        "1%",
+        "90%",
+        "20%",
+        "10%"
+      ],
+      "a": 3,
+      "why": "1/10 = 10%.",
+      "notes": [
+        "Off by a factor of 10.",
+        "That is the complement.",
+        "You doubled it.",
+        "Correct."
+      ],
+      "tag": "Fraction ↔ percent",
+      "d": 1
+    }
+  ],
+  "geometry_grotto": [
+    {
+      "q": "A circle has diameter 10. Its area is:",
+      "opts": [
+        "25π",
+        "100π",
+        "10π",
+        "5π"
+      ],
+      "a": 0,
+      "why": "r = 5, so area = πr² = 25π.",
+      "tag": "GEOMETRY GROTTO",
+      "d": 1
+    },
+    {
+      "q": "A triangle has base 8 and height 5. Its area is:",
+      "opts": [
+        "20",
+        "40",
+        "13",
+        "80"
+      ],
+      "a": 0,
+      "why": "½bh = ½(8)(5) = 20.",
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "Two angles of a triangle are 90° and 40°. The third is:",
+      "opts": [
+        "50°",
+        "40°",
+        "60°",
+        "130°"
+      ],
+      "a": 0,
+      "why": "Angles sum to 180° → 180 − 130 = 50°.",
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "A triangle has base 20 and height 9. Its area is:",
+      "opts": [
+        "180",
+        "29",
+        "93",
+        "90"
+      ],
+      "a": 3,
+      "why": "½bh = ½·20·9 = 90.",
+      "notes": [
+        "You forgot the ½ — that is base×height.",
+        "You added instead of using ½bh.",
+        "Recheck ½bh.",
+        "Correct."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 1
+    },
+    {
+      "q": "A circle has radius 7. Its area (in terms of π) is:",
+      "opts": [
+        "51π",
+        "49",
+        "14π",
+        "49π"
+      ],
+      "a": 3,
+      "why": "Area = πr² = 49π.",
+      "notes": [
+        "A common miscalculation — recheck the steps.",
+        "Missing the π.",
+        "That is circumference (2πr), not area.",
+        "Correct."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 1
+    },
+    {
+      "q": "A circle has diameter 24. Its area is:",
+      "opts": [
+        "576π",
+        "146π",
+        "24π",
+        "144π"
+      ],
+      "a": 3,
+      "why": "r = d/2 = 12, area = πr² = 144π.",
+      "notes": [
+        "You used the diameter as the radius.",
+        "A common miscalculation — recheck the steps.",
+        "That doubles r instead of squaring.",
+        "Correct."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 3
+    },
+    {
+      "q": "A circle has radius 2. Its circumference is:",
+      "opts": [
+        "2π",
+        "8π",
+        "4π",
+        "6π"
+      ],
+      "a": 2,
+      "why": "Circumference = 2πr = 4π.",
+      "notes": [
+        "Circumference is 2πr, not πr.",
+        "You used 4r instead of 2r.",
+        "Correct.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 3
+    },
+    {
+      "q": "A triangle has base 4 and height 17. Its area is:",
+      "opts": [
+        "37",
+        "68",
+        "34",
+        "21"
+      ],
+      "a": 2,
+      "why": "½bh = ½·4·17 = 34.",
+      "notes": [
+        "Recheck ½bh.",
+        "You forgot the ½ — that is base×height.",
+        "Correct.",
+        "You added instead of using ½bh."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "A circle has radius 5. Its area (in terms of π) is:",
+      "opts": [
+        "25π",
+        "27π",
+        "25",
+        "10π"
+      ],
+      "a": 0,
+      "why": "Area = πr² = 25π.",
+      "notes": [
+        "Correct.",
+        "A common miscalculation — recheck the steps.",
+        "Missing the π.",
+        "That is circumference (2πr), not area."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 1
+    },
+    {
+      "q": "A circle has radius 8. Its circumference is:",
+      "opts": [
+        "32π",
+        "8π",
+        "64π",
+        "16π"
+      ],
+      "a": 3,
+      "why": "Circumference = 2πr = 16π.",
+      "notes": [
+        "You used 4r instead of 2r.",
+        "Circumference is 2πr, not πr.",
+        "That is area (πr²), not circumference.",
+        "Correct."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "A triangle has base 8 and height 4. Its area is:",
+      "opts": [
+        "16",
+        "12",
+        "19",
+        "32"
+      ],
+      "a": 0,
+      "why": "½bh = ½·8·4 = 16.",
+      "notes": [
+        "Correct.",
+        "You added instead of using ½bh.",
+        "Recheck ½bh.",
+        "You forgot the ½ — that is base×height."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 1
+    },
+    {
+      "q": "A triangle has base 11 and height 20. Its area is:",
+      "opts": [
+        "31",
+        "113",
+        "110",
+        "220"
+      ],
+      "a": 2,
+      "why": "½bh = ½·11·20 = 110.",
+      "notes": [
+        "You added instead of using ½bh.",
+        "Recheck ½bh.",
+        "Correct.",
+        "You forgot the ½ — that is base×height."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "A circle has radius 6. Its area (in terms of π) is:",
+      "opts": [
+        "12π",
+        "38π",
+        "36",
+        "36π"
+      ],
+      "a": 3,
+      "why": "Area = πr² = 36π.",
+      "notes": [
+        "That is circumference (2πr), not area.",
+        "A common miscalculation — recheck the steps.",
+        "Missing the π.",
+        "Correct."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "A triangle has base 11 and height 18. Its area is:",
+      "opts": [
+        "99",
+        "102",
+        "198",
+        "29"
+      ],
+      "a": 0,
+      "why": "½bh = ½·11·18 = 99.",
+      "notes": [
+        "Correct.",
+        "Recheck ½bh.",
+        "You forgot the ½ — that is base×height.",
+        "You added instead of using ½bh."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 1
+    },
+    {
+      "q": "A circle has radius 3. Its circumference is:",
+      "opts": [
+        "3π",
+        "6π",
+        "12π",
+        "9π"
+      ],
+      "a": 1,
+      "why": "Circumference = 2πr = 6π.",
+      "notes": [
+        "Circumference is 2πr, not πr.",
+        "Correct.",
+        "You used 4r instead of 2r.",
+        "That is area (πr²), not circumference."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "Two angles of a triangle are 32° and 38°. The third is:",
+      "opts": [
+        "148°",
+        "120°",
+        "110°",
+        "70°"
+      ],
+      "a": 2,
+      "why": "180° − 70° = 110°.",
+      "notes": [
+        "You only subtracted one angle.",
+        "Angles must total exactly 180°.",
+        "Correct.",
+        "That is the sum of the given two."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "Two angles of a triangle are 79° and 33°. The third is:",
+      "opts": [
+        "112°",
+        "101°",
+        "68°",
+        "78°"
+      ],
+      "a": 2,
+      "why": "180° − 112° = 68°.",
+      "notes": [
+        "That is the sum of the given two.",
+        "You only subtracted one angle.",
+        "Correct.",
+        "Angles must total exactly 180°."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 1
+    },
+    {
+      "q": "A circle has radius 10. Its area (in terms of π) is:",
+      "opts": [
+        "102π",
+        "100π",
+        "20π",
+        "100"
+      ],
+      "a": 1,
+      "why": "Area = πr² = 100π.",
+      "notes": [
+        "A common miscalculation — recheck the steps.",
+        "Correct.",
+        "That is circumference (2πr), not area.",
+        "Missing the π."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 3
+    },
+    {
+      "q": "A circle has radius 9. Its area (in terms of π) is:",
+      "opts": [
+        "18π",
+        "81",
+        "81π",
+        "83π"
+      ],
+      "a": 2,
+      "why": "Area = πr² = 81π.",
+      "notes": [
+        "That is circumference (2πr), not area.",
+        "Missing the π.",
+        "Correct.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 3
+    },
+    {
+      "q": "A triangle has base 15 and height 13. Its area is:",
+      "opts": [
+        "28",
+        "97.5",
+        "195",
+        "97.5 "
+      ],
+      "a": 1,
+      "why": "½bh = ½·15·13 = 97.5.",
+      "notes": [
+        "You added instead of using ½bh.",
+        "Correct.",
+        "You forgot the ½ — that is base×height.",
+        "Recheck ½bh."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "A triangle has base 2 and height 12. Its area is:",
+      "opts": [
+        "15",
+        "12",
+        "24",
+        "14"
+      ],
+      "a": 1,
+      "why": "½bh = ½·2·12 = 12.",
+      "notes": [
+        "Recheck ½bh.",
+        "Correct.",
+        "You forgot the ½ — that is base×height.",
+        "You added instead of using ½bh."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "Two angles of a triangle are 55° and 65°. The third is:",
+      "opts": [
+        "120°",
+        "70°",
+        "125°",
+        "60°"
+      ],
+      "a": 3,
+      "why": "180° − 120° = 60°.",
+      "notes": [
+        "That is the sum of the given two.",
+        "Angles must total exactly 180°.",
+        "You only subtracted one angle.",
+        "Correct."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "A circle has radius 3. Its area (in terms of π) is:",
+      "opts": [
+        "9",
+        "9π",
+        "6π",
+        "11π"
+      ],
+      "a": 1,
+      "why": "Area = πr² = 9π.",
+      "notes": [
+        "Missing the π.",
+        "Correct.",
+        "That is circumference (2πr), not area.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 3
+    },
+    {
+      "q": "A circle has radius 12. Its area (in terms of π) is:",
+      "opts": [
+        "24π",
+        "144π",
+        "146π",
+        "144"
+      ],
+      "a": 1,
+      "why": "Area = πr² = 144π.",
+      "notes": [
+        "That is circumference (2πr), not area.",
+        "Correct.",
+        "A common miscalculation — recheck the steps.",
+        "Missing the π."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "Two angles of a triangle are 100° and 55°. The third is:",
+      "opts": [
+        "155°",
+        "25°",
+        "80°",
+        "35°"
+      ],
+      "a": 1,
+      "why": "180° − 155° = 25°.",
+      "notes": [
+        "That is the sum of the given two.",
+        "Correct.",
+        "You only subtracted one angle.",
+        "Angles must total exactly 180°."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 3
+    },
+    {
+      "q": "A circle has radius 8. Its area (in terms of π) is:",
+      "opts": [
+        "16π",
+        "64π",
+        "64",
+        "66π"
+      ],
+      "a": 1,
+      "why": "Area = πr² = 64π.",
+      "notes": [
+        "That is circumference (2πr), not area.",
+        "Correct.",
+        "Missing the π.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 1
+    },
+    {
+      "q": "A circle has diameter 12. Its area is:",
+      "opts": [
+        "144π",
+        "12π",
+        "36π",
+        "38π"
+      ],
+      "a": 2,
+      "why": "r = d/2 = 6, area = πr² = 36π.",
+      "notes": [
+        "You used the diameter as the radius.",
+        "That doubles r instead of squaring.",
+        "Correct.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "A circle has radius 10. Its circumference is:",
+      "opts": [
+        "100π",
+        "10π",
+        "20π",
+        "40π"
+      ],
+      "a": 2,
+      "why": "Circumference = 2πr = 20π.",
+      "notes": [
+        "That is area (πr²), not circumference.",
+        "Circumference is 2πr, not πr.",
+        "Correct.",
+        "You used 4r instead of 2r."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "A circle has diameter 6. Its area is:",
+      "opts": [
+        "9π",
+        "11π",
+        "6π",
+        "36π"
+      ],
+      "a": 0,
+      "why": "r = d/2 = 3, area = πr² = 9π.",
+      "notes": [
+        "Correct.",
+        "A common miscalculation — recheck the steps.",
+        "That doubles r instead of squaring.",
+        "You used the diameter as the radius."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 3
+    },
+    {
+      "q": "A circle has diameter 18. Its area is:",
+      "opts": [
+        "81π",
+        "83π",
+        "324π",
+        "18π"
+      ],
+      "a": 0,
+      "why": "r = d/2 = 9, area = πr² = 81π.",
+      "notes": [
+        "Correct.",
+        "A common miscalculation — recheck the steps.",
+        "You used the diameter as the radius.",
+        "That doubles r instead of squaring."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 3
+    },
+    {
+      "q": "A circle has radius 11. Its area (in terms of π) is:",
+      "opts": [
+        "121",
+        "123π",
+        "121π",
+        "22π"
+      ],
+      "a": 2,
+      "why": "Area = πr² = 121π.",
+      "notes": [
+        "Missing the π.",
+        "A common miscalculation — recheck the steps.",
+        "Correct.",
+        "That is circumference (2πr), not area."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 3
+    },
+    {
+      "q": "Two angles of a triangle are 79° and 45°. The third is:",
+      "opts": [
+        "56°",
+        "101°",
+        "66°",
+        "124°"
+      ],
+      "a": 0,
+      "why": "180° − 124° = 56°.",
+      "notes": [
+        "Correct.",
+        "You only subtracted one angle.",
+        "Angles must total exactly 180°.",
+        "That is the sum of the given two."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 3
+    },
+    {
+      "q": "A triangle has base 2 and height 6. Its area is:",
+      "opts": [
+        "9",
+        "8",
+        "12",
+        "6"
+      ],
+      "a": 3,
+      "why": "½bh = ½·2·6 = 6.",
+      "notes": [
+        "Recheck ½bh.",
+        "You added instead of using ½bh.",
+        "You forgot the ½ — that is base×height.",
+        "Correct."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 3
+    },
+    {
+      "q": "Two angles of a triangle are 92° and 20°. The third is:",
+      "opts": [
+        "112°",
+        "88°",
+        "78°",
+        "68°"
+      ],
+      "a": 3,
+      "why": "180° − 112° = 68°.",
+      "notes": [
+        "That is the sum of the given two.",
+        "You only subtracted one angle.",
+        "Angles must total exactly 180°.",
+        "Correct."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 1
+    },
+    {
+      "q": "Two angles of a triangle are 61° and 70°. The third is:",
+      "opts": [
+        "59°",
+        "119°",
+        "131°",
+        "49°"
+      ],
+      "a": 3,
+      "why": "180° − 131° = 49°.",
+      "notes": [
+        "Angles must total exactly 180°.",
+        "You only subtracted one angle.",
+        "That is the sum of the given two.",
+        "Correct."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 3
+    },
+    {
+      "q": "A circle has radius 2. Its area (in terms of π) is:",
+      "opts": [
+        "4",
+        "6π",
+        "4π -",
+        "4π"
+      ],
+      "a": 3,
+      "why": "Area = πr² = 4π.",
+      "notes": [
+        "Missing the π.",
+        "A common miscalculation — recheck the steps.",
+        "A common miscalculation — recheck the steps.",
+        "Correct."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "A circle has diameter 4. Its area is:",
+      "opts": [
+        "4π. ",
+        "16π",
+        "4π",
+        "6π"
+      ],
+      "a": 2,
+      "why": "r = d/2 = 2, area = πr² = 4π.",
+      "notes": [
+        "A common miscalculation — recheck the steps.",
+        "You used the diameter as the radius.",
+        "Correct.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "A circle has diameter 16. Its area is:",
+      "opts": [
+        "256π",
+        "16π",
+        "66π",
+        "64π"
+      ],
+      "a": 3,
+      "why": "r = d/2 = 8, area = πr² = 64π.",
+      "notes": [
+        "You used the diameter as the radius.",
+        "That doubles r instead of squaring.",
+        "A common miscalculation — recheck the steps.",
+        "Correct."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 1
+    },
+    {
+      "q": "A circle has radius 11. Its circumference is:",
+      "opts": [
+        "22π",
+        "11π",
+        "44π",
+        "121π"
+      ],
+      "a": 0,
+      "why": "Circumference = 2πr = 22π.",
+      "notes": [
+        "Correct.",
+        "Circumference is 2πr, not πr.",
+        "You used 4r instead of 2r.",
+        "That is area (πr²), not circumference."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 2
+    },
+    {
+      "q": "Two angles of a triangle are 65° and 40°. The third is:",
+      "opts": [
+        "115°",
+        "75°",
+        "105°",
+        "85°"
+      ],
+      "a": 1,
+      "why": "180° − 105° = 75°.",
+      "notes": [
+        "You only subtracted one angle.",
+        "Correct.",
+        "That is the sum of the given two.",
+        "Angles must total exactly 180°."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 1
+    },
+    {
+      "q": "A circle has radius 7. Its circumference is:",
+      "opts": [
+        "14π",
+        "7π",
+        "49π",
+        "28π"
+      ],
+      "a": 0,
+      "why": "Circumference = 2πr = 14π.",
+      "notes": [
+        "Correct.",
+        "Circumference is 2πr, not πr.",
+        "That is area (πr²), not circumference.",
+        "You used 4r instead of 2r."
+      ],
+      "tag": "GEOMETRY GROTTO",
+      "d": 3
+    },
+    {
+      "q": "A rectangle is 12 by 6. Its perimeter is:",
+      "opts": [
+        "18",
+        "36",
+        "38",
+        "72"
+      ],
+      "a": 1,
+      "why": "Perimeter = 2(l+w) = 2(12+6) = 36.",
+      "notes": [
+        "Perimeter adds all four sides: 2(l+w).",
+        "Correct.",
+        "Off by a little — recompute 2(l+w).",
+        "That is the area, not the perimeter."
+      ],
+      "tag": "Perimeter",
+      "d": 1
+    },
+    {
+      "q": "A rectangle is 6 by 6. Its perimeter is:",
+      "opts": [
+        "36",
+        "12",
+        "24",
+        "26"
+      ],
+      "a": 2,
+      "why": "Perimeter = 2(l+w) = 2(6+6) = 24.",
+      "notes": [
+        "That is the area, not the perimeter.",
+        "Perimeter adds all four sides: 2(l+w).",
+        "Correct.",
+        "Off by a little — recompute 2(l+w)."
+      ],
+      "tag": "Perimeter",
+      "d": 1
+    },
+    {
+      "q": "A rectangle is 14 by 10. Its perimeter is:",
+      "opts": [
+        "24",
+        "50",
+        "140",
+        "48"
+      ],
+      "a": 3,
+      "why": "Perimeter = 2(l+w) = 2(14+10) = 48.",
+      "notes": [
+        "Perimeter adds all four sides: 2(l+w).",
+        "Off by a little — recompute 2(l+w).",
+        "That is the area, not the perimeter.",
+        "Correct."
+      ],
+      "tag": "Perimeter",
+      "d": 1
+    },
+    {
+      "q": "A rectangle is 14 by 2. Its perimeter is:",
+      "opts": [
+        "32",
+        "16",
+        "34",
+        "28"
+      ],
+      "a": 0,
+      "why": "Perimeter = 2(l+w) = 2(14+2) = 32.",
+      "notes": [
+        "Correct.",
+        "Perimeter adds all four sides: 2(l+w).",
+        "Off by a little — recompute 2(l+w).",
+        "That is the area, not the perimeter."
+      ],
+      "tag": "Perimeter",
+      "d": 1
+    },
+    {
+      "q": "A rectangle is 5 by 10. Its perimeter is:",
+      "opts": [
+        "15",
+        "32",
+        "50",
+        "30"
+      ],
+      "a": 3,
+      "why": "Perimeter = 2(l+w) = 2(5+10) = 30.",
+      "notes": [
+        "Perimeter adds all four sides: 2(l+w).",
+        "Off by a little — recompute 2(l+w).",
+        "That is the area, not the perimeter.",
+        "Correct."
+      ],
+      "tag": "Perimeter",
+      "d": 1
+    },
+    {
+      "q": "A rectangle is 9 by 10. Its perimeter is:",
+      "opts": [
+        "90",
+        "38",
+        "40",
+        "19"
+      ],
+      "a": 1,
+      "why": "Perimeter = 2(l+w) = 2(9+10) = 38.",
+      "notes": [
+        "That is the area, not the perimeter.",
+        "Correct.",
+        "Off by a little — recompute 2(l+w).",
+        "Perimeter adds all four sides: 2(l+w)."
+      ],
+      "tag": "Perimeter",
+      "d": 1
+    },
+    {
+      "q": "A rectangle is 7 by 3. Its perimeter is:",
+      "opts": [
+        "10",
+        "22",
+        "20",
+        "21"
+      ],
+      "a": 2,
+      "why": "Perimeter = 2(l+w) = 2(7+3) = 20.",
+      "notes": [
+        "Perimeter adds all four sides: 2(l+w).",
+        "Off by a little — recompute 2(l+w).",
+        "Correct.",
+        "That is the area, not the perimeter."
+      ],
+      "tag": "Perimeter",
+      "d": 1
+    },
+    {
+      "q": "A rectangle is 15 by 6. Its perimeter is:",
+      "opts": [
+        "42",
+        "44",
+        "21",
+        "90"
+      ],
+      "a": 0,
+      "why": "Perimeter = 2(l+w) = 2(15+6) = 42.",
+      "notes": [
+        "Correct.",
+        "Off by a little — recompute 2(l+w).",
+        "Perimeter adds all four sides: 2(l+w).",
+        "That is the area, not the perimeter."
+      ],
+      "tag": "Perimeter",
+      "d": 1
+    },
+    {
+      "q": "A rectangle is 14 by 3. Its perimeter is:",
+      "opts": [
+        "17",
+        "34",
+        "36",
+        "42"
+      ],
+      "a": 1,
+      "why": "Perimeter = 2(l+w) = 2(14+3) = 34.",
+      "notes": [
+        "Perimeter adds all four sides: 2(l+w).",
+        "Correct.",
+        "Off by a little — recompute 2(l+w).",
+        "That is the area, not the perimeter."
+      ],
+      "tag": "Perimeter",
+      "d": 1
+    },
+    {
+      "q": "A box is 8 × 3 × 6. Its volume is:",
+      "opts": [
+        "17",
+        "180",
+        "144",
+        "24"
+      ],
+      "a": 2,
+      "why": "Volume = l·w·h = 8·3·6 = 144.",
+      "notes": [
+        "You added the edges.",
+        "That is the surface area.",
+        "Correct.",
+        "That is only one face's area."
+      ],
+      "tag": "Volume",
+      "d": 2
+    },
+    {
+      "q": "A box is 2 × 6 × 4. Its volume is:",
+      "opts": [
+        "48",
+        "88",
+        "12",
+        "49"
+      ],
+      "a": 0,
+      "why": "Volume = l·w·h = 2·6·4 = 48.",
+      "notes": [
+        "Correct.",
+        "That is the surface area.",
+        "You added the edges.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "Volume",
+      "d": 2
+    },
+    {
+      "q": "A box is 2 × 4 × 4. Its volume is:",
+      "opts": [
+        "32",
+        "64",
+        "10",
+        "8"
+      ],
+      "a": 0,
+      "why": "Volume = l·w·h = 2·4·4 = 32.",
+      "notes": [
+        "Correct.",
+        "That is the surface area.",
+        "You added the edges.",
+        "That is only one face's area."
+      ],
+      "tag": "Volume",
+      "d": 2
+    },
+    {
+      "q": "A box is 3 × 3 × 4. Its volume is:",
+      "opts": [
+        "66",
+        "9",
+        "10",
+        "36"
+      ],
+      "a": 3,
+      "why": "Volume = l·w·h = 3·3·4 = 36.",
+      "notes": [
+        "That is the surface area.",
+        "That is only one face's area.",
+        "You added the edges.",
+        "Correct."
+      ],
+      "tag": "Volume",
+      "d": 2
+    },
+    {
+      "q": "A box is 8 × 8 × 8. Its volume is:",
+      "opts": [
+        "384",
+        "64",
+        "512",
+        "24"
+      ],
+      "a": 2,
+      "why": "Volume = l·w·h = 8·8·8 = 512.",
+      "notes": [
+        "That is the surface area.",
+        "That is only one face's area.",
+        "Correct.",
+        "You added the edges."
+      ],
+      "tag": "Volume",
+      "d": 2
+    },
+    {
+      "q": "A box is 7 × 2 × 4. Its volume is:",
+      "opts": [
+        "13",
+        "14",
+        "100",
+        "56"
+      ],
+      "a": 3,
+      "why": "Volume = l·w·h = 7·2·4 = 56.",
+      "notes": [
+        "You added the edges.",
+        "That is only one face's area.",
+        "That is the surface area.",
+        "Correct."
+      ],
+      "tag": "Volume",
+      "d": 2
+    },
+    {
+      "q": "A box is 6 × 4 × 5. Its volume is:",
+      "opts": [
+        "148",
+        "120",
+        "24",
+        "15"
+      ],
+      "a": 1,
+      "why": "Volume = l·w·h = 6·4·5 = 120.",
+      "notes": [
+        "That is the surface area.",
+        "Correct.",
+        "That is only one face's area.",
+        "You added the edges."
+      ],
+      "tag": "Volume",
+      "d": 2
+    },
+    {
+      "q": "A box is 6 × 8 × 6. Its volume is:",
+      "opts": [
+        "48",
+        "20",
+        "288",
+        "264"
+      ],
+      "a": 2,
+      "why": "Volume = l·w·h = 6·8·6 = 288.",
+      "notes": [
+        "That is only one face's area.",
+        "You added the edges.",
+        "Correct.",
+        "That is the surface area."
+      ],
+      "tag": "Volume",
+      "d": 2
+    },
+    {
+      "q": "A box is 7 × 6 × 4. Its volume is:",
+      "opts": [
+        "168",
+        "17",
+        "42",
+        "188"
+      ],
+      "a": 0,
+      "why": "Volume = l·w·h = 7·6·4 = 168.",
+      "notes": [
+        "Correct.",
+        "You added the edges.",
+        "That is only one face's area.",
+        "That is the surface area."
+      ],
+      "tag": "Volume",
+      "d": 2
+    }
+  ],
+  "function_foundry": [
+    {
+      "q": "If f(x) = 3x − 2, then f(4) =",
+      "opts": [
+        "10",
+        "12",
+        "5",
+        "14"
+      ],
+      "a": 0,
+      "why": "3(4) − 2 = 10.",
+      "tag": "FUNCTION FOUNDRY",
+      "d": 1
+    },
+    {
+      "q": "If g(x) = x + 2 and f(x) = x², then f(g(3)) =",
+      "opts": [
+        "25",
+        "11",
+        "9",
+        "36"
+      ],
+      "a": 0,
+      "why": "g(3) = 5, then f(5) = 25.",
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    },
+    {
+      "q": "The graph of y = (x − 4)² is y = x² shifted:",
+      "opts": [
+        "right 4",
+        "left 4",
+        "up 4",
+        "down 4"
+      ],
+      "a": 0,
+      "why": "Inside the parentheses shifts horizontally, opposite the sign → right 4.",
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    },
+    {
+      "q": "If f(x) = 4x + 5, then f(4) =",
+      "opts": [
+        "25",
+        "16",
+        "13",
+        "21"
+      ],
+      "a": 3,
+      "why": "4·4 + 5 = 21.",
+      "notes": [
+        "Off by one input — plug in 4 exactly.",
+        "You forgot the +5 term.",
+        "You added a, k, b instead of 4·4.",
+        "Correct."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    },
+    {
+      "q": "If g(x) = x + 3 and f(x) = x², then f(g(2)) =",
+      "opts": [
+        "10",
+        "25",
+        "13",
+        "7"
+      ],
+      "a": 1,
+      "why": "g(2)=5, then f(5)=5²=25.",
+      "notes": [
+        "You doubled instead of squaring.",
+        "Correct.",
+        "You squared each piece separately.",
+        "You squared first, then added — do g first."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 1
+    },
+    {
+      "q": "If f(x) = 4x − 5, then f(5) =",
+      "opts": [
+        "20",
+        "15",
+        "19",
+        "4"
+      ],
+      "a": 1,
+      "why": "4·5 − 5 = 15.",
+      "notes": [
+        "You forgot the −5 term.",
+        "Correct.",
+        "Off by one input — plug in 5 exactly.",
+        "You added a, k, b instead of 4·5."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    },
+    {
+      "q": "If g(x) = x + 4 and f(x) = x², then f(g(4)) =",
+      "opts": [
+        "20",
+        "32",
+        "16",
+        "64"
+      ],
+      "a": 3,
+      "why": "g(4)=8, then f(8)=8²=64.",
+      "notes": [
+        "You squared first, then added — do g first.",
+        "You squared each piece separately.",
+        "You doubled instead of squaring.",
+        "Correct."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 3
+    },
+    {
+      "q": "If g(x) = x + 1 and f(x) = x², then f(g(2)) =",
+      "opts": [
+        "5",
+        "10",
+        "6",
+        "9"
+      ],
+      "a": 3,
+      "why": "g(2)=3, then f(3)=3²=9.",
+      "notes": [
+        "You squared first, then added — do g first.",
+        "A common miscalculation — recheck the steps.",
+        "You doubled instead of squaring.",
+        "Correct."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 1
+    },
+    {
+      "q": "If f(x) = 2x − 4, then f(2) =",
+      "opts": [
+        "0",
+        "4",
+        "2",
+        "1"
+      ],
+      "a": 0,
+      "why": "2·2 − 4 = 0.",
+      "notes": [
+        "Correct.",
+        "You forgot the −4 term.",
+        "Off by one input — plug in 2 exactly.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    },
+    {
+      "q": "If g(x) = x + 5 and f(x) = x², then f(g(4)) =",
+      "opts": [
+        "41",
+        "18",
+        "21",
+        "81"
+      ],
+      "a": 3,
+      "why": "g(4)=9, then f(9)=9²=81.",
+      "notes": [
+        "You squared each piece separately.",
+        "You doubled instead of squaring.",
+        "You squared first, then added — do g first.",
+        "Correct."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    },
+    {
+      "q": "If g(x) = x + 3 and f(x) = x², then f(g(4)) =",
+      "opts": [
+        "25",
+        "14",
+        "49",
+        "19"
+      ],
+      "a": 2,
+      "why": "g(4)=7, then f(7)=7²=49.",
+      "notes": [
+        "You squared each piece separately.",
+        "You doubled instead of squaring.",
+        "Correct.",
+        "You squared first, then added — do g first."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 1
+    },
+    {
+      "q": "If f(x) = 2x − 1, then f(2) =",
+      "opts": [
+        "4",
+        "6",
+        "5",
+        "3"
+      ],
+      "a": 3,
+      "why": "2·2 − 1 = 3.",
+      "notes": [
+        "You forgot the −1 term.",
+        "A common miscalculation — recheck the steps.",
+        "Off by one input — plug in 2 exactly.",
+        "Correct."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 1
+    },
+    {
+      "q": "If f(x) = 4x + 6, then f(2) =",
+      "opts": [
+        "18",
+        "8",
+        "12",
+        "14"
+      ],
+      "a": 3,
+      "why": "4·2 + 6 = 14.",
+      "notes": [
+        "Off by one input — plug in 2 exactly.",
+        "You forgot the +6 term.",
+        "You added a, k, b instead of 4·2.",
+        "Correct."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 1
+    },
+    {
+      "q": "If f(x) = 6x + 1, then f(-1) =",
+      "opts": [
+        "-5",
+        "6",
+        "-6",
+        "1"
+      ],
+      "a": 0,
+      "why": "6·-1 + 1 = -5.",
+      "notes": [
+        "Correct.",
+        "You added a, k, b instead of 6·-1.",
+        "You forgot the +1 term.",
+        "Off by one input — plug in -1 exactly."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 1
+    },
+    {
+      "q": "If f(x) = 5x − 3, then f(6) =",
+      "opts": [
+        "32",
+        "30",
+        "27",
+        "8"
+      ],
+      "a": 2,
+      "why": "5·6 − 3 = 27.",
+      "notes": [
+        "Off by one input — plug in 6 exactly.",
+        "You forgot the −3 term.",
+        "Correct.",
+        "You added a, k, b instead of 5·6."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 1
+    },
+    {
+      "q": "If f(x) = 2x + 6, then f(-4) =",
+      "opts": [
+        "-8",
+        "4",
+        "-2",
+        "0"
+      ],
+      "a": 2,
+      "why": "2·-4 + 6 = -2.",
+      "notes": [
+        "You forgot the +6 term.",
+        "You added a, k, b instead of 2·-4.",
+        "Correct.",
+        "Off by one input — plug in -4 exactly."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    },
+    {
+      "q": "If g(x) = x + 3 and f(x) = x², then f(g(3)) =",
+      "opts": [
+        "37",
+        "36",
+        "12",
+        "18"
+      ],
+      "a": 1,
+      "why": "g(3)=6, then f(6)=6²=36.",
+      "notes": [
+        "A common miscalculation — recheck the steps.",
+        "Correct.",
+        "You squared first, then added — do g first.",
+        "You squared each piece separately."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 3
+    },
+    {
+      "q": "If f(x) = 4x − 2, then f(0) =",
+      "opts": [
+        "0",
+        "-1",
+        "2",
+        "-2"
+      ],
+      "a": 3,
+      "why": "4·0 − 2 = -2.",
+      "notes": [
+        "You forgot the −2 term.",
+        "A common miscalculation — recheck the steps.",
+        "Off by one input — plug in 0 exactly.",
+        "Correct."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 1
+    },
+    {
+      "q": "If f(x) = 3x − 5, then f(3) =",
+      "opts": [
+        "4",
+        "7",
+        "9",
+        "1"
+      ],
+      "a": 0,
+      "why": "3·3 − 5 = 4.",
+      "notes": [
+        "Correct.",
+        "Off by one input — plug in 3 exactly.",
+        "You forgot the −5 term.",
+        "You added a, k, b instead of 3·3."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    },
+    {
+      "q": "If g(x) = x + 4 and f(x) = x², then f(g(2)) =",
+      "opts": [
+        "8",
+        "12",
+        "36",
+        "20"
+      ],
+      "a": 2,
+      "why": "g(2)=6, then f(6)=6²=36.",
+      "notes": [
+        "You squared first, then added — do g first.",
+        "You doubled instead of squaring.",
+        "Correct.",
+        "You squared each piece separately."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 1
+    },
+    {
+      "q": "If f(x) = 6x − 5, then f(4) =",
+      "opts": [
+        "25",
+        "19",
+        "5",
+        "24"
+      ],
+      "a": 1,
+      "why": "6·4 − 5 = 19.",
+      "notes": [
+        "Off by one input — plug in 4 exactly.",
+        "Correct.",
+        "You added a, k, b instead of 6·4.",
+        "You forgot the −5 term."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    },
+    {
+      "q": "If f(x) = 2x + 4, then f(-4) =",
+      "opts": [
+        "-4",
+        "-8",
+        "-2",
+        "2"
+      ],
+      "a": 0,
+      "why": "2·-4 + 4 = -4.",
+      "notes": [
+        "Correct.",
+        "You forgot the +4 term.",
+        "Off by one input — plug in -4 exactly.",
+        "You added a, k, b instead of 2·-4."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    },
+    {
+      "q": "If f(x) = 5x − 5, then f(-3) =",
+      "opts": [
+        "-15",
+        "-20",
+        "-19",
+        "-3"
+      ],
+      "a": 1,
+      "why": "5·-3 − 5 = -20.",
+      "notes": [
+        "You forgot the −5 term.",
+        "Correct.",
+        "A common miscalculation — recheck the steps.",
+        "You added a, k, b instead of 5·-3."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    },
+    {
+      "q": "If f(x) = 5x + 1, then f(7) =",
+      "opts": [
+        "35",
+        "41",
+        "36",
+        "13"
+      ],
+      "a": 2,
+      "why": "5·7 + 1 = 36.",
+      "notes": [
+        "You forgot the +1 term.",
+        "Off by one input — plug in 7 exactly.",
+        "Correct.",
+        "You added a, k, b instead of 5·7."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    },
+    {
+      "q": "If f(x) = 5x + 3, then f(6) =",
+      "opts": [
+        "14",
+        "33",
+        "38",
+        "30"
+      ],
+      "a": 1,
+      "why": "5·6 + 3 = 33.",
+      "notes": [
+        "You added a, k, b instead of 5·6.",
+        "Correct.",
+        "Off by one input — plug in 6 exactly.",
+        "You forgot the +3 term."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 1
+    },
+    {
+      "q": "If f(x) = 4x − 3, then f(3) =",
+      "opts": [
+        "4",
+        "13",
+        "9",
+        "12"
+      ],
+      "a": 2,
+      "why": "4·3 − 3 = 9.",
+      "notes": [
+        "You added a, k, b instead of 4·3.",
+        "Off by one input — plug in 3 exactly.",
+        "Correct.",
+        "You forgot the −3 term."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 1
+    },
+    {
+      "q": "If f(x) = 4x + 3, then f(-1) =",
+      "opts": [
+        "6",
+        "-4",
+        "-1",
+        "3"
+      ],
+      "a": 2,
+      "why": "4·-1 + 3 = -1.",
+      "notes": [
+        "You added a, k, b instead of 4·-1.",
+        "You forgot the +3 term.",
+        "Correct.",
+        "Off by one input — plug in -1 exactly."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 3
+    },
+    {
+      "q": "If f(x) = 3x + 2, then f(4) =",
+      "opts": [
+        "9",
+        "14",
+        "17",
+        "12"
+      ],
+      "a": 1,
+      "why": "3·4 + 2 = 14.",
+      "notes": [
+        "You added a, k, b instead of 3·4.",
+        "Correct.",
+        "Off by one input — plug in 4 exactly.",
+        "You forgot the +2 term."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    },
+    {
+      "q": "If g(x) = x + 1 and f(x) = x², then f(g(1)) =",
+      "opts": [
+        "5",
+        "6",
+        "2",
+        "4"
+      ],
+      "a": 3,
+      "why": "g(1)=2, then f(2)=2²=4.",
+      "notes": [
+        "A common miscalculation — recheck the steps.",
+        "A common miscalculation — recheck the steps.",
+        "You squared first, then added — do g first.",
+        "Correct."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    },
+    {
+      "q": "If g(x) = x + 3 and f(x) = x², then f(g(1)) =",
+      "opts": [
+        "4",
+        "10",
+        "16",
+        "8"
+      ],
+      "a": 2,
+      "why": "g(1)=4, then f(4)=4²=16.",
+      "notes": [
+        "You squared first, then added — do g first.",
+        "You squared each piece separately.",
+        "Correct.",
+        "You doubled instead of squaring."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 1
+    },
+    {
+      "q": "If f(x) = 6x + 3, then f(-1) =",
+      "opts": [
+        "3",
+        "8",
+        "-6",
+        "-3"
+      ],
+      "a": 3,
+      "why": "6·-1 + 3 = -3.",
+      "notes": [
+        "Off by one input — plug in -1 exactly.",
+        "You added a, k, b instead of 6·-1.",
+        "You forgot the +3 term.",
+        "Correct."
+      ],
+      "tag": "FUNCTION FOUNDRY",
+      "d": 2
+    }
+  ],
+  "trig_trench": [
+    {
+      "q": "Opposite side 6, hypotenuse 10. sinθ =",
+      "opts": [
+        "3/5",
+        "4/5",
+        "3/4",
+        "5/3"
+      ],
+      "a": 0,
+      "why": "sin = opp/hyp = 6/10 = 3/5.",
+      "tag": "TRIG TRENCH",
+      "d": 1
+    },
+    {
+      "q": "A right triangle has legs 5 and 12. The hypotenuse is:",
+      "opts": [
+        "13",
+        "17",
+        "60",
+        "11"
+      ],
+      "a": 0,
+      "why": "5-12-13 triple (√(25+144) = 13).",
+      "tag": "TRIG TRENCH",
+      "d": 3
+    },
+    {
+      "q": "180° equals how many radians?",
+      "opts": [
+        "π",
+        "2π",
+        "π/2",
+        "90"
+      ],
+      "a": 0,
+      "why": "180° = π radians.",
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "Right triangle: opposite 8, adjacent 15, hypotenuse 17. tanθ =",
+      "opts": [
+        "17/8",
+        "15/17",
+        "15/8",
+        "8/15"
+      ],
+      "a": 3,
+      "why": "tan = opp/adj (SOH-CAH-TOA).",
+      "notes": [
+        "You flipped the fraction.",
+        "That is a different ratio — match tan to its sides.",
+        "Wrong pair of sides for tan.",
+        "Correct."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 1
+    },
+    {
+      "q": "Right triangle: opposite 8, adjacent 15, hypotenuse 17. cosθ =",
+      "opts": [
+        "15/8",
+        "17/8",
+        "15/17",
+        "8/17"
+      ],
+      "a": 2,
+      "why": "cos = adj/hyp (SOH-CAH-TOA).",
+      "notes": [
+        "Wrong pair of sides for cos.",
+        "You flipped the fraction.",
+        "Correct.",
+        "That is a different ratio — match cos to its sides."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "30° equals how many radians?",
+      "opts": [
+        "2π",
+        "π/2",
+        "π/6",
+        "π"
+      ],
+      "a": 2,
+      "why": "Use 180° = π: 30° = π/6.",
+      "notes": [
+        "Only if the angle were 360°.",
+        "Only if the angle were 90°.",
+        "Correct.",
+        "Only if the angle were 180°."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "Right triangle: opposite 8, adjacent 15, hypotenuse 17. sinθ =",
+      "opts": [
+        "15/17",
+        "15/8",
+        "8/17",
+        "17/8"
+      ],
+      "a": 2,
+      "why": "sin = opp/hyp (SOH-CAH-TOA).",
+      "notes": [
+        "That is a different ratio — match sin to its sides.",
+        "Wrong pair of sides for sin.",
+        "Correct.",
+        "You flipped the fraction."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "Right triangle: opposite 7, adjacent 24, hypotenuse 25. tanθ =",
+      "opts": [
+        "25/7",
+        "24/25",
+        "7/24",
+        "24/7"
+      ],
+      "a": 2,
+      "why": "tan = opp/adj (SOH-CAH-TOA).",
+      "notes": [
+        "You flipped the fraction.",
+        "That is a different ratio — match tan to its sides.",
+        "Correct.",
+        "Wrong pair of sides for tan."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "A right triangle has legs 7 and 24. The hypotenuse is:",
+      "opts": [
+        "25",
+        "27",
+        "31",
+        "26"
+      ],
+      "a": 0,
+      "why": "It is a 7-24-25 right triangle.",
+      "notes": [
+        "Correct.",
+        "A common miscalculation — recheck the steps.",
+        "You added the legs — use a²+b²=c².",
+        "Off by one — recompute the square root."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 1
+    },
+    {
+      "q": "Right triangle: opposite 3, adjacent 4, hypotenuse 5. cosθ =",
+      "opts": [
+        "4/5",
+        "5/3",
+        "4/3",
+        "3/5"
+      ],
+      "a": 0,
+      "why": "cos = adj/hyp (SOH-CAH-TOA).",
+      "notes": [
+        "Correct.",
+        "You flipped the fraction.",
+        "Wrong pair of sides for cos.",
+        "That is a different ratio — match cos to its sides."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "Right triangle: opposite 3, adjacent 4, hypotenuse 5. tanθ =",
+      "opts": [
+        "3/4",
+        "4/3",
+        "5/3",
+        "4/5"
+      ],
+      "a": 0,
+      "why": "tan = opp/adj (SOH-CAH-TOA).",
+      "notes": [
+        "Correct.",
+        "Wrong pair of sides for tan.",
+        "You flipped the fraction.",
+        "That is a different ratio — match tan to its sides."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 1
+    },
+    {
+      "q": "Right triangle: opposite 6, adjacent 8, hypotenuse 10. cosθ =",
+      "opts": [
+        "10/6",
+        "8/6",
+        "8/10",
+        "6/10"
+      ],
+      "a": 2,
+      "why": "cos = adj/hyp (SOH-CAH-TOA).",
+      "notes": [
+        "You flipped the fraction.",
+        "Wrong pair of sides for cos.",
+        "Correct.",
+        "That is a different ratio — match cos to its sides."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 1
+    },
+    {
+      "q": "Right triangle: opposite 6, adjacent 8, hypotenuse 10. sinθ =",
+      "opts": [
+        "10/6",
+        "8/10",
+        "8/6",
+        "6/10"
+      ],
+      "a": 3,
+      "why": "sin = opp/hyp (SOH-CAH-TOA).",
+      "notes": [
+        "You flipped the fraction.",
+        "That is a different ratio — match sin to its sides.",
+        "Wrong pair of sides for sin.",
+        "Correct."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 1
+    },
+    {
+      "q": "Right triangle: opposite 5, adjacent 12, hypotenuse 13. cosθ =",
+      "opts": [
+        "13/5",
+        "12/5",
+        "12/13",
+        "5/13"
+      ],
+      "a": 2,
+      "why": "cos = adj/hyp (SOH-CAH-TOA).",
+      "notes": [
+        "You flipped the fraction.",
+        "Wrong pair of sides for cos.",
+        "Correct.",
+        "That is a different ratio — match cos to its sides."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 1
+    },
+    {
+      "q": "Right triangle: opposite 6, adjacent 8, hypotenuse 10. tanθ =",
+      "opts": [
+        "8/10",
+        "10/6",
+        "6/8",
+        "8/6"
+      ],
+      "a": 2,
+      "why": "tan = opp/adj (SOH-CAH-TOA).",
+      "notes": [
+        "That is a different ratio — match tan to its sides.",
+        "You flipped the fraction.",
+        "Correct.",
+        "Wrong pair of sides for tan."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "A right triangle has legs 5 and 12. The hypotenuse is:",
+      "opts": [
+        "17",
+        "13",
+        "14",
+        "15"
+      ],
+      "a": 1,
+      "why": "It is a 5-12-13 right triangle.",
+      "notes": [
+        "You added the legs — use a²+b²=c².",
+        "Correct.",
+        "Off by one — recompute the square root.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "45° equals how many radians?",
+      "opts": [
+        "2π",
+        "π/4",
+        "π",
+        "π/2"
+      ],
+      "a": 1,
+      "why": "Use 180° = π: 45° = π/4.",
+      "notes": [
+        "Only if the angle were 360°.",
+        "Correct.",
+        "Only if the angle were 180°.",
+        "Only if the angle were 90°."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "Right triangle: opposite 9, adjacent 12, hypotenuse 15. sinθ =",
+      "opts": [
+        "12/15",
+        "12/9",
+        "15/9",
+        "9/15"
+      ],
+      "a": 3,
+      "why": "sin = opp/hyp (SOH-CAH-TOA).",
+      "notes": [
+        "That is a different ratio — match sin to its sides.",
+        "Wrong pair of sides for sin.",
+        "You flipped the fraction.",
+        "Correct."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "A right triangle has legs 8 and 15. The hypotenuse is:",
+      "opts": [
+        "19",
+        "18",
+        "23",
+        "17"
+      ],
+      "a": 3,
+      "why": "It is a 8-15-17 right triangle.",
+      "notes": [
+        "A common miscalculation — recheck the steps.",
+        "Off by one — recompute the square root.",
+        "You added the legs — use a²+b²=c².",
+        "Correct."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "Right triangle: opposite 9, adjacent 12, hypotenuse 15. cosθ =",
+      "opts": [
+        "15/9",
+        "12/15",
+        "9/15",
+        "12/9"
+      ],
+      "a": 1,
+      "why": "cos = adj/hyp (SOH-CAH-TOA).",
+      "notes": [
+        "You flipped the fraction.",
+        "Correct.",
+        "That is a different ratio — match cos to its sides.",
+        "Wrong pair of sides for cos."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 1
+    },
+    {
+      "q": "A right triangle has legs 6 and 8. The hypotenuse is:",
+      "opts": [
+        "14",
+        "11",
+        "12",
+        "10"
+      ],
+      "a": 3,
+      "why": "It is a 6-8-10 right triangle.",
+      "notes": [
+        "You added the legs — use a²+b²=c².",
+        "Off by one — recompute the square root.",
+        "A common miscalculation — recheck the steps.",
+        "Correct."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "Right triangle: opposite 7, adjacent 24, hypotenuse 25. cosθ =",
+      "opts": [
+        "24/7",
+        "24/25",
+        "25/7",
+        "7/25"
+      ],
+      "a": 1,
+      "why": "cos = adj/hyp (SOH-CAH-TOA).",
+      "notes": [
+        "Wrong pair of sides for cos.",
+        "Correct.",
+        "You flipped the fraction.",
+        "That is a different ratio — match cos to its sides."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "60° equals how many radians?",
+      "opts": [
+        "2π",
+        "π",
+        "π/3",
+        "π/2"
+      ],
+      "a": 2,
+      "why": "Use 180° = π: 60° = π/3.",
+      "notes": [
+        "Only if the angle were 360°.",
+        "Only if the angle were 180°.",
+        "Correct.",
+        "Only if the angle were 90°."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 3
+    },
+    {
+      "q": "Right triangle: opposite 7, adjacent 24, hypotenuse 25. sinθ =",
+      "opts": [
+        "24/25",
+        "7/25",
+        "24/7",
+        "25/7"
+      ],
+      "a": 1,
+      "why": "sin = opp/hyp (SOH-CAH-TOA).",
+      "notes": [
+        "That is a different ratio — match sin to its sides.",
+        "Correct.",
+        "Wrong pair of sides for sin.",
+        "You flipped the fraction."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "Right triangle: opposite 3, adjacent 4, hypotenuse 5. sinθ =",
+      "opts": [
+        "5/3",
+        "3/5",
+        "4/3",
+        "4/5"
+      ],
+      "a": 1,
+      "why": "sin = opp/hyp (SOH-CAH-TOA).",
+      "notes": [
+        "You flipped the fraction.",
+        "Correct.",
+        "Wrong pair of sides for sin.",
+        "That is a different ratio — match sin to its sides."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 3
+    },
+    {
+      "q": "A right triangle has legs 9 and 12. The hypotenuse is:",
+      "opts": [
+        "21",
+        "16",
+        "14",
+        "15"
+      ],
+      "a": 3,
+      "why": "It is a 9-12-15 right triangle.",
+      "notes": [
+        "You added the legs — use a²+b²=c².",
+        "Off by one — recompute the square root.",
+        "Guess — apply the Pythagorean theorem.",
+        "Correct."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "Right triangle: opposite 5, adjacent 12, hypotenuse 13. tanθ =",
+      "opts": [
+        "13/5",
+        "5/12",
+        "12/5",
+        "12/13"
+      ],
+      "a": 1,
+      "why": "tan = opp/adj (SOH-CAH-TOA).",
+      "notes": [
+        "You flipped the fraction.",
+        "Correct.",
+        "Wrong pair of sides for tan.",
+        "That is a different ratio — match tan to its sides."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "Right triangle: opposite 5, adjacent 12, hypotenuse 13. sinθ =",
+      "opts": [
+        "12/13",
+        "13/5",
+        "12/5",
+        "5/13"
+      ],
+      "a": 3,
+      "why": "sin = opp/hyp (SOH-CAH-TOA).",
+      "notes": [
+        "That is a different ratio — match sin to its sides.",
+        "You flipped the fraction.",
+        "Wrong pair of sides for sin.",
+        "Correct."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "A right triangle has legs 3 and 4. The hypotenuse is:",
+      "opts": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "a": 0,
+      "why": "It is a 3-4-5 right triangle.",
+      "notes": [
+        "Correct.",
+        "Off by one — recompute the square root.",
+        "You added the legs — use a²+b²=c².",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 1
+    },
+    {
+      "q": "360° equals how many radians?",
+      "opts": [
+        "π/2",
+        "4π",
+        "2π",
+        "π"
+      ],
+      "a": 2,
+      "why": "Use 180° = π: 360° = 2π.",
+      "notes": [
+        "Only if the angle were 90°.",
+        "A common miscalculation — recheck the steps.",
+        "Correct.",
+        "Only if the angle were 180°."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 1
+    },
+    {
+      "q": "Right triangle: opposite 9, adjacent 12, hypotenuse 15. tanθ =",
+      "opts": [
+        "12/9",
+        "9/12",
+        "15/9",
+        "12/15"
+      ],
+      "a": 1,
+      "why": "tan = opp/adj (SOH-CAH-TOA).",
+      "notes": [
+        "Wrong pair of sides for tan.",
+        "Correct.",
+        "You flipped the fraction.",
+        "That is a different ratio — match tan to its sides."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 1
+    },
+    {
+      "q": "90° equals how many radians?",
+      "opts": [
+        "π",
+        "2π",
+        "π/2",
+        "π/2 "
+      ],
+      "a": 2,
+      "why": "Use 180° = π: 90° = π/2.",
+      "notes": [
+        "Only if the angle were 180°.",
+        "Only if the angle were 360°.",
+        "Correct.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 2
+    },
+    {
+      "q": "180° equals how many radians?",
+      "opts": [
+        "π ",
+        "π",
+        "2π",
+        "π/2"
+      ],
+      "a": 1,
+      "why": "Use 180° = π: 180° = π.",
+      "notes": [
+        "A common miscalculation — recheck the steps.",
+        "Correct.",
+        "Only if the angle were 360°.",
+        "Only if the angle were 90°."
+      ],
+      "tag": "TRIG TRENCH",
+      "d": 1
+    }
+  ],
+  "probability_peaks": [
+    {
+      "q": "Flip a fair coin twice. P(two heads) =",
+      "opts": [
+        "1/4",
+        "1/2",
+        "1/3",
+        "3/4"
+      ],
+      "a": 0,
+      "why": "½ × ½ = ¼ (AND → multiply).",
+      "tag": "PROBABILITY PEAKS",
+      "d": 1
+    },
+    {
+      "q": "A bag holds 3 red and 2 blue. P(red) =",
+      "opts": [
+        "3/5",
+        "2/5",
+        "1/2",
+        "3/2"
+      ],
+      "a": 0,
+      "why": "favorable/total = 3/5.",
+      "tag": "PROBABILITY PEAKS",
+      "d": 1
+    },
+    {
+      "q": "P(at least one head in two flips) =",
+      "opts": [
+        "3/4",
+        "1/4",
+        "1/2",
+        "1"
+      ],
+      "a": 0,
+      "why": "1 − P(no heads) = 1 − ¼ = ¾.",
+      "tag": "PROBABILITY PEAKS",
+      "d": 3
+    },
+    {
+      "q": "A bag has 2 red and 1 blue marbles. P(red) =",
+      "opts": [
+        "2/3",
+        "2/3 ",
+        "2/1",
+        "1/3"
+      ],
+      "a": 0,
+      "why": "favorable/total = 2/3.",
+      "notes": [
+        "Correct.",
+        "A common miscalculation — recheck the steps.",
+        "Use total, not just blue, on the bottom.",
+        "That is P(blue)."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 3
+    },
+    {
+      "q": "You flip a fair coin twice. P(two heads) =",
+      "opts": [
+        "3/4",
+        "1/4",
+        "1/2",
+        "1/3"
+      ],
+      "a": 1,
+      "why": "½ × ½ = ¼ (AND → multiply).",
+      "notes": [
+        "That is P(at least one head).",
+        "Correct.",
+        "That is one flip, not two.",
+        "There are 4 equally likely outcomes, not 3."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 2
+    },
+    {
+      "q": "A bag has 4 red and 3 blue marbles. P(red) =",
+      "opts": [
+        "1/7",
+        "4/3",
+        "3/7",
+        "4/7"
+      ],
+      "a": 3,
+      "why": "favorable/total = 4/7.",
+      "notes": [
+        "That is one marble, not all red ones.",
+        "Use total, not just blue, on the bottom.",
+        "That is P(blue).",
+        "Correct."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 1
+    },
+    {
+      "q": "P(at least one head in two coin flips) =",
+      "opts": [
+        "1/2",
+        "3/4",
+        "1",
+        "1/4"
+      ],
+      "a": 1,
+      "why": "1 − P(no heads) = 1 − ¼ = ¾.",
+      "notes": [
+        "Undercount — use 1 − P(no heads).",
+        "Correct.",
+        "Getting no heads is possible, so it is under 1.",
+        "That is P(two heads)."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 1
+    },
+    {
+      "q": "A bag has 5 red and 5 blue marbles. P(red) =",
+      "opts": [
+        "5/5",
+        "1/10",
+        "1/2 ",
+        "1/2"
+      ],
+      "a": 3,
+      "why": "favorable/total = 5/10.",
+      "notes": [
+        "Use total, not just blue, on the bottom.",
+        "That is one marble, not all red ones.",
+        "A common miscalculation — recheck the steps.",
+        "Correct."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 2
+    },
+    {
+      "q": "A bag has 5 red and 4 blue marbles. P(red) =",
+      "opts": [
+        "5/9",
+        "5/4",
+        "1/9",
+        "4/9"
+      ],
+      "a": 0,
+      "why": "favorable/total = 5/9.",
+      "notes": [
+        "Correct.",
+        "Use total, not just blue, on the bottom.",
+        "That is one marble, not all red ones.",
+        "That is P(blue)."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 3
+    },
+    {
+      "q": "A bag has 1 red and 3 blue marbles. P(red) =",
+      "opts": [
+        "1/3",
+        "1/4 ",
+        "1/4",
+        "3/4"
+      ],
+      "a": 2,
+      "why": "favorable/total = 1/4.",
+      "notes": [
+        "Use total, not just blue, on the bottom.",
+        "A common miscalculation — recheck the steps.",
+        "Correct.",
+        "That is P(blue)."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 2
+    },
+    {
+      "q": "A bag has 1 red and 1 blue marbles. P(red) =",
+      "opts": [
+        "1/2",
+        "1/1",
+        "1/2. ",
+        "1/2 "
+      ],
+      "a": 0,
+      "why": "favorable/total = 1/2.",
+      "notes": [
+        "Correct.",
+        "Use total, not just blue, on the bottom.",
+        "A common miscalculation — recheck the steps.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 2
+    },
+    {
+      "q": "A fair 2-sided die is rolled. P(a specific number) =",
+      "opts": [
+        "2/2",
+        "1/2",
+        "1/1",
+        "2"
+      ],
+      "a": 1,
+      "why": "One favorable of 2 equally likely → 1/2.",
+      "notes": [
+        "Only one face matches, not two.",
+        "Correct.",
+        "There are 2 sides, not 1.",
+        "Probability can't exceed 1."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 3
+    },
+    {
+      "q": "A fair 4-sided die is rolled. P(a specific number) =",
+      "opts": [
+        "2/4",
+        "1/4",
+        "4",
+        "1/3"
+      ],
+      "a": 1,
+      "why": "One favorable of 4 equally likely → 1/4.",
+      "notes": [
+        "Only one face matches, not two.",
+        "Correct.",
+        "Probability can't exceed 1.",
+        "There are 4 sides, not 3."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 2
+    },
+    {
+      "q": "A bag has 3 red and 3 blue marbles. P(red) =",
+      "opts": [
+        "3/3",
+        "1/2 ",
+        "1/6",
+        "1/2"
+      ],
+      "a": 3,
+      "why": "favorable/total = 3/6.",
+      "notes": [
+        "Use total, not just blue, on the bottom.",
+        "A common miscalculation — recheck the steps.",
+        "That is one marble, not all red ones.",
+        "Correct."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 2
+    },
+    {
+      "q": "A bag has 2 red and 3 blue marbles. P(red) =",
+      "opts": [
+        "2/3",
+        "3/5",
+        "1/5",
+        "2/5"
+      ],
+      "a": 3,
+      "why": "favorable/total = 2/5.",
+      "notes": [
+        "Use total, not just blue, on the bottom.",
+        "That is P(blue).",
+        "That is one marble, not all red ones.",
+        "Correct."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 2
+    },
+    {
+      "q": "A bag has 4 red and 4 blue marbles. P(red) =",
+      "opts": [
+        "1/8",
+        "1/2",
+        "1/2 ",
+        "4/4"
+      ],
+      "a": 1,
+      "why": "favorable/total = 4/8.",
+      "notes": [
+        "That is one marble, not all red ones.",
+        "Correct.",
+        "A common miscalculation — recheck the steps.",
+        "Use total, not just blue, on the bottom."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 1
+    },
+    {
+      "q": "A fair 5-sided die is rolled. P(a specific number) =",
+      "opts": [
+        "1/4",
+        "2/5",
+        "5",
+        "1/5"
+      ],
+      "a": 3,
+      "why": "One favorable of 5 equally likely → 1/5.",
+      "notes": [
+        "There are 5 sides, not 4.",
+        "Only one face matches, not two.",
+        "Probability can't exceed 1.",
+        "Correct."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 3
+    },
+    {
+      "q": "A bag has 1 red and 2 blue marbles. P(red) =",
+      "opts": [
+        "2/3",
+        "1/3",
+        "1/2",
+        "1/3 "
+      ],
+      "a": 1,
+      "why": "favorable/total = 1/3.",
+      "notes": [
+        "That is P(blue).",
+        "Correct.",
+        "Use total, not just blue, on the bottom.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 2
+    },
+    {
+      "q": "A bag has 5 red and 1 blue marbles. P(red) =",
+      "opts": [
+        "5/6",
+        "5/6 ",
+        "5/1",
+        "1/6"
+      ],
+      "a": 0,
+      "why": "favorable/total = 5/6.",
+      "notes": [
+        "Correct.",
+        "A common miscalculation — recheck the steps.",
+        "Use total, not just blue, on the bottom.",
+        "That is P(blue)."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 1
+    },
+    {
+      "q": "A bag has 3 red and 4 blue marbles. P(red) =",
+      "opts": [
+        "3/4",
+        "1/7",
+        "3/7",
+        "4/7"
+      ],
+      "a": 2,
+      "why": "favorable/total = 3/7.",
+      "notes": [
+        "Use total, not just blue, on the bottom.",
+        "That is one marble, not all red ones.",
+        "Correct.",
+        "That is P(blue)."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 1
+    },
+    {
+      "q": "A bag has 6 red and 1 blue marbles. P(red) =",
+      "opts": [
+        "6/7",
+        "1/7",
+        "6/1",
+        "6/7 "
+      ],
+      "a": 0,
+      "why": "favorable/total = 6/7.",
+      "notes": [
+        "Correct.",
+        "That is P(blue).",
+        "Use total, not just blue, on the bottom.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 3
+    },
+    {
+      "q": "A bag has 4 red and 1 blue marbles. P(red) =",
+      "opts": [
+        "4/1",
+        "1/5",
+        "4/5",
+        "4/5 "
+      ],
+      "a": 2,
+      "why": "favorable/total = 4/5.",
+      "notes": [
+        "Use total, not just blue, on the bottom.",
+        "That is P(blue).",
+        "Correct.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 2
+    },
+    {
+      "q": "A fair 6-sided die is rolled. P(a specific number) =",
+      "opts": [
+        "6",
+        "1/6",
+        "1/5",
+        "2/6"
+      ],
+      "a": 1,
+      "why": "One favorable of 6 equally likely → 1/6.",
+      "notes": [
+        "Probability can't exceed 1.",
+        "Correct.",
+        "There are 6 sides, not 5.",
+        "Only one face matches, not two."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 3
+    },
+    {
+      "q": "A bag has 5 red and 6 blue marbles. P(red) =",
+      "opts": [
+        "5/11",
+        "1/11",
+        "5/6",
+        "6/11"
+      ],
+      "a": 0,
+      "why": "favorable/total = 5/11.",
+      "notes": [
+        "Correct.",
+        "That is one marble, not all red ones.",
+        "Use total, not just blue, on the bottom.",
+        "That is P(blue)."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 3
+    },
+    {
+      "q": "A bag has 1 red and 6 blue marbles. P(red) =",
+      "opts": [
+        "6/7",
+        "1/7",
+        "1/6",
+        "1/7 "
+      ],
+      "a": 1,
+      "why": "favorable/total = 1/7.",
+      "notes": [
+        "That is P(blue).",
+        "Correct.",
+        "Use total, not just blue, on the bottom.",
+        "A common miscalculation — recheck the steps."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 2
+    },
+    {
+      "q": "A bag has 5 red and 3 blue marbles. P(red) =",
+      "opts": [
+        "5/3",
+        "3/8",
+        "1/8",
+        "5/8"
+      ],
+      "a": 3,
+      "why": "favorable/total = 5/8.",
+      "notes": [
+        "Use total, not just blue, on the bottom.",
+        "That is P(blue).",
+        "That is one marble, not all red ones.",
+        "Correct."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 1
+    },
+    {
+      "q": "A fair 3-sided die is rolled. P(a specific number) =",
+      "opts": [
+        "2/3",
+        "3",
+        "1/3",
+        "1/2"
+      ],
+      "a": 2,
+      "why": "One favorable of 3 equally likely → 1/3.",
+      "notes": [
+        "Only one face matches, not two.",
+        "Probability can't exceed 1.",
+        "Correct.",
+        "There are 3 sides, not 2."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 1
+    },
+    {
+      "q": "A bag has 2 red and 5 blue marbles. P(red) =",
+      "opts": [
+        "1/7",
+        "2/5",
+        "2/7",
+        "5/7"
+      ],
+      "a": 2,
+      "why": "favorable/total = 2/7.",
+      "notes": [
+        "That is one marble, not all red ones.",
+        "Use total, not just blue, on the bottom.",
+        "Correct.",
+        "That is P(blue)."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 2
+    },
+    {
+      "q": "A bag has 2 red and 6 blue marbles. P(red) =",
+      "opts": [
+        "1/8",
+        "3/4",
+        "1/4",
+        "2/6"
+      ],
+      "a": 2,
+      "why": "favorable/total = 2/8.",
+      "notes": [
+        "That is one marble, not all red ones.",
+        "That is P(blue).",
+        "Correct.",
+        "Use total, not just blue, on the bottom."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 1
+    },
+    {
+      "q": "A bag has 3 red and 2 blue marbles. P(red) =",
+      "opts": [
+        "3/5",
+        "3/2",
+        "1/5",
+        "2/5"
+      ],
+      "a": 0,
+      "why": "favorable/total = 3/5.",
+      "notes": [
+        "Correct.",
+        "Use total, not just blue, on the bottom.",
+        "That is one marble, not all red ones.",
+        "That is P(blue)."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 2
+    },
+    {
+      "q": "A bag has 4 red and 5 blue marbles. P(red) =",
+      "opts": [
+        "4/9",
+        "5/9",
+        "4/5",
+        "1/9"
+      ],
+      "a": 0,
+      "why": "favorable/total = 4/9.",
+      "notes": [
+        "Correct.",
+        "That is P(blue).",
+        "Use total, not just blue, on the bottom.",
+        "That is one marble, not all red ones."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 2
+    },
+    {
+      "q": "A bag has 6 red and 4 blue marbles. P(red) =",
+      "opts": [
+        "3/5",
+        "6/4",
+        "2/5",
+        "1/10"
+      ],
+      "a": 0,
+      "why": "favorable/total = 6/10.",
+      "notes": [
+        "Correct.",
+        "Use total, not just blue, on the bottom.",
+        "That is P(blue).",
+        "That is one marble, not all red ones."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 2
+    },
+    {
+      "q": "A bag has 1 red and 5 blue marbles. P(red) =",
+      "opts": [
+        "1/5",
+        "1/6 ",
+        "5/6",
+        "1/6"
+      ],
+      "a": 3,
+      "why": "favorable/total = 1/6.",
+      "notes": [
+        "Use total, not just blue, on the bottom.",
+        "A common miscalculation — recheck the steps.",
+        "That is P(blue).",
+        "Correct."
+      ],
+      "tag": "PROBABILITY PEAKS",
+      "d": 1
+    }
+  ],
+  "main_idea_meadow": [
+    {
+      "q": "The main idea of a passage is:",
+      "opts": [
+        "the point the whole passage makes",
+        "one striking detail from paragraph 2",
+        "every fact the author lists",
+        "the author's favorite example"
+      ],
+      "a": 0,
+      "why": "Main idea covers the whole passage, not one detail.",
+      "tag": "MAIN IDEA MEADOW",
+      "d": 2
+    },
+    {
+      "q": "Where does the main idea most often appear?",
+      "opts": [
+        "the first or last paragraph",
+        "only the middle",
+        "the footnotes",
+        "a random line"
+      ],
+      "a": 0,
+      "why": "Openers and conclusions usually state the point.",
+      "tag": "MAIN IDEA MEADOW",
+      "d": 3
+    },
+    {
+      "q": "A main-idea answer that mentions only one example is probably:",
+      "opts": [
+        "too narrow",
+        "too broad",
+        "perfect",
+        "off-topic"
+      ],
+      "a": 0,
+      "why": "One example is too narrow for the whole passage.",
+      "tag": "MAIN IDEA MEADOW",
+      "d": 3
+    },
+    {
+      "q": "The best statement of a passage's main idea is one that:",
+      "opts": [
+        "captures the whole passage",
+        "quotes one sentence",
+        "lists every detail",
+        "gives your opinion"
+      ],
+      "a": 0,
+      "why": "Main idea sums up the entire passage, not one detail.",
+      "notes": [
+        "Correct.",
+        "One sentence is too narrow.",
+        "Listing details isn't a main idea.",
+        "The passage's idea, not yours."
+      ],
+      "tag": "Main idea",
+      "d": 1
+    }
+  ],
+  "detail_desert": [
+    {
+      "q": "For a detail question about line 15, you should:",
+      "opts": [
+        "reread line 15 and nearby lines",
+        "answer from memory",
+        "pick the longest option",
+        "choose the most extreme wording"
+      ],
+      "a": 0,
+      "why": "Detail questions are open-book — go back to the text.",
+      "tag": "DETAIL DESERT",
+      "d": 2
+    },
+    {
+      "q": "The correct detail answer usually:",
+      "opts": [
+        "paraphrases the text in new words",
+        "copies the text word-for-word",
+        "adds new information",
+        "uses 'always' or 'never'"
+      ],
+      "a": 0,
+      "why": "Right answers restate; exact-word matches are often traps.",
+      "tag": "DETAIL DESERT",
+      "d": 1
+    },
+    {
+      "q": "An answer that changes 'often' to 'always' is wrong because:",
+      "opts": [
+        "it overstates the text",
+        "it's too vague",
+        "it's off-topic",
+        "it's ungrammatical"
+      ],
+      "a": 0,
+      "why": "Extreme words rarely match the text's precise claim.",
+      "tag": "DETAIL DESERT",
+      "d": 1
+    }
+  ],
+  "inference_icefield": [
+    {
+      "q": "The best inference is one that is:",
+      "opts": [
+        "barely beyond the text, strongly implied",
+        "a bold guess about the future",
+        "only loosely possible",
+        "stated word-for-word"
+      ],
+      "a": 0,
+      "why": "Take the smallest, best-supported leap.",
+      "tag": "INFERENCE ICEFIELD",
+      "d": 3
+    },
+    {
+      "q": "“She set down the letter and stared out the window.” Best inference:",
+      "opts": [
+        "the letter affected her",
+        "she never reads letters",
+        "she is leaving the country",
+        "she dislikes windows"
+      ],
+      "a": 0,
+      "why": "Smallest supported leap: the letter affected her.",
+      "tag": "INFERENCE ICEFIELD",
+      "d": 1
+    },
+    {
+      "q": "An inference you can't tie to any line is:",
+      "opts": [
+        "unsupported and likely wrong",
+        "the best choice",
+        "always correct",
+        "a paraphrase"
+      ],
+      "a": 0,
+      "why": "Every inference must be provable from the text.",
+      "tag": "INFERENCE ICEFIELD",
+      "d": 1
+    },
+    {
+      "q": "A strong ACT inference is:",
+      "opts": [
+        "directly supported by the text",
+        "a creative guess",
+        "the most dramatic option",
+        "stated word-for-word"
+      ],
+      "a": 0,
+      "why": "Inferences must be backed by a specific line.",
+      "notes": [
+        "Correct.",
+        "Guesses aren't supported.",
+        "Drama isn't evidence.",
+        "That would be a stated detail, not an inference."
+      ],
+      "tag": "Inference",
+      "d": 2
+    }
+  ],
+  "viewpoint_vista": [
+    {
+      "q": "Before comparing two passages, first:",
+      "opts": [
+        "note each author's claim and tone",
+        "memorize both fully",
+        "read only Passage B",
+        "skip to the questions"
+      ],
+      "a": 0,
+      "why": "Map each author so you can compare accurately.",
+      "tag": "VIEWPOINT VISTA",
+      "d": 3
+    },
+    {
+      "q": "A question asks where both authors AGREE. You should:",
+      "opts": [
+        "find a point supported by BOTH",
+        "use only Passage A",
+        "pick the strongest opinion",
+        "choose an extreme claim"
+      ],
+      "a": 0,
+      "why": "Agreement answers must hold for both passages.",
+      "tag": "VIEWPOINT VISTA",
+      "d": 2
+    },
+    {
+      "q": "The biggest risk in paired passages is:",
+      "opts": [
+        "blending the two authors' views",
+        "reading too carefully",
+        "using line numbers",
+        "noting the tone"
+      ],
+      "a": 0,
+      "why": "Keep each author's ideas separate.",
+      "tag": "VIEWPOINT VISTA",
+      "d": 3
+    }
+  ],
+  "graph_gorge": [
+    {
+      "q": "With several curves on one graph, you should:",
+      "opts": [
+        "use the legend and follow one labeled curve",
+        "average all the curves",
+        "read only the top curve",
+        "ignore the axes"
+      ],
+      "a": 0,
+      "why": "Track the specific labeled curve.",
+      "tag": "GRAPH GORGE",
+      "d": 2
+    },
+    {
+      "q": "Where two curves intersect, the quantities are:",
+      "opts": [
+        "equal at that x-value",
+        "both zero",
+        "at their maximum",
+        "unrelated"
+      ],
+      "a": 0,
+      "why": "An intersection means the values are equal there.",
+      "tag": "GRAPH GORGE",
+      "d": 2
+    },
+    {
+      "q": "The most common graph error is:",
+      "opts": [
+        "reading off the wrong axis",
+        "using the legend",
+        "checking units",
+        "following one curve"
+      ],
+      "a": 0,
+      "why": "Mixing up x and y is the classic mistake.",
+      "tag": "GRAPH GORGE",
+      "d": 2
+    }
+  ],
+  "experiment_expanse": [
+    {
+      "q": "The variable the researchers deliberately change is the:",
+      "opts": [
+        "independent variable",
+        "dependent variable",
+        "control",
+        "constant"
+      ],
+      "a": 0,
+      "why": "Independent = what's changed on purpose.",
+      "tag": "EXPERIMENT EXPANSE",
+      "d": 2
+    },
+    {
+      "q": "The purpose of a control group is to:",
+      "opts": [
+        "give a no-treatment baseline",
+        "speed up the experiment",
+        "add a second variable",
+        "confirm the hypothesis automatically"
+      ],
+      "a": 0,
+      "why": "The control isolates the treatment's effect.",
+      "tag": "EXPERIMENT EXPANSE",
+      "d": 3
+    },
+    {
+      "q": "If two variables change between trials, you:",
+      "opts": [
+        "can't tell which caused the result",
+        "get a stronger result",
+        "have a better control",
+        "prove both matter"
+      ],
+      "a": 0,
+      "why": "Only one variable should change to isolate a cause.",
+      "tag": "EXPERIMENT EXPANSE",
+      "d": 1
+    }
+  ],
+  "conflict_canyon": [
+    {
+      "q": "For conflicting-viewpoints questions, first:",
+      "opts": [
+        "summarize each scientist's claim",
+        "memorize every number",
+        "pick the longer theory",
+        "ignore the second scientist"
+      ],
+      "a": 0,
+      "why": "A one-line summary of each view guides every question.",
+      "tag": "CONFLICT CANYON",
+      "d": 3
+    },
+    {
+      "q": "Questions usually hinge on:",
+      "opts": [
+        "where the scientists disagree",
+        "what they both ignore",
+        "the title",
+        "the figure caption"
+      ],
+      "a": 0,
+      "why": "The disagreement is the crux.",
+      "tag": "CONFLICT CANYON",
+      "d": 3
+    },
+    {
+      "q": "New evidence supporting cause A most likely:",
+      "opts": [
+        "strengthens the scientist who argued A",
+        "weakens both",
+        "proves neither",
+        "is irrelevant"
+      ],
+      "a": 0,
+      "why": "Match evidence to the viewpoint it supports.",
+      "tag": "CONFLICT CANYON",
+      "d": 1
+    },
+    {
+      "q": "In a conflicting-viewpoints passage, the key is usually:",
+      "opts": [
+        "the point where the scientists disagree",
+        "the longest paragraph",
+        "the first sentence only",
+        "the figure caption"
+      ],
+      "a": 0,
+      "why": "Questions hinge on the disagreement between views.",
+      "notes": [
+        "Correct.",
+        "Length isn't the point.",
+        "One sentence misses the debate.",
+        "Captions rarely hold the core dispute."
+      ],
+      "tag": "Conflicting viewpoints",
+      "d": 2
+    }
+  ],
+  "outside_outpost": [
+    {
+      "q": "A solution with pH 3 is:",
+      "opts": [
+        "acidic",
+        "basic",
+        "neutral",
+        "salty"
+      ],
+      "a": 0,
+      "why": "pH below 7 is acidic.",
+      "tag": "OUTSIDE OUTPOST",
+      "d": 3
+    },
+    {
+      "q": "Photosynthesis takes in carbon dioxide and light and releases:",
+      "opts": [
+        "oxygen",
+        "nitrogen",
+        "hydrogen",
+        "carbon"
+      ],
+      "a": 0,
+      "why": "Plants release O₂.",
+      "tag": "OUTSIDE OUTPOST",
+      "d": 2
+    },
+    {
+      "q": "When a question is fully answerable from the graph, you should:",
+      "opts": [
+        "use the graph, not outside facts",
+        "guess from memory",
+        "ignore the data",
+        "always add outside knowledge"
+      ],
+      "a": 0,
+      "why": "The data wins unless outside knowledge is clearly required.",
+      "tag": "OUTSIDE OUTPOST",
+      "d": 1
+    },
+    {
+      "q": "Pure water at sea level boils at:",
+      "opts": [
+        "100 °C",
+        "0 °C",
+        "50 °C",
+        "212 °C"
+      ],
+      "a": 0,
+      "why": "Water boils at 100 °C (212 °F) at sea level.",
+      "notes": [
+        "Correct.",
+        "0 °C is the freezing point.",
+        "Not a standard water phase change.",
+        "212 is the Fahrenheit value, not Celsius."
+      ],
+      "tag": "Outside knowledge",
+      "d": 1
+    }
+  ],
+  "exponent_expanse": [
+    {
+      "q": "x³ · x⁴ =",
+      "opts": [
+        "x⁷",
+        "x¹²",
+        "x⁻¹",
+        "x¹"
+      ],
+      "a": 0,
+      "why": "Multiply → add exponents: 3+4 = 7."
+    },
+    {
+      "q": "(x²)³ =",
+      "opts": [
+        "x⁶",
+        "x⁵",
+        "x⁸",
+        "x²³"
+      ],
+      "a": 0,
+      "why": "Power of a power → multiply: 2·3 = 6."
+    },
+    {
+      "q": "2⁻² =",
+      "opts": [
+        "1/4",
+        "−4",
+        "−1/4",
+        "4"
+      ],
+      "a": 0,
+      "why": "Negative exponent → reciprocal: 1/2² = 1/4."
+    }
+  ],
+  "quadratic_quarry": [
+    {
+      "q": "Factor x² + 7x + 12:",
+      "opts": [
+        "(x+3)(x+4)",
+        "(x+2)(x+6)",
+        "(x+1)(x+12)",
+        "(x+5)(x+2)"
+      ],
+      "a": 0,
+      "why": "3·4 = 12 and 3+4 = 7."
+    },
+    {
+      "q": "Solve (x−5)(x+2) = 0:",
+      "opts": [
+        "x = 5 or x = −2",
+        "x = −5 or x = 2",
+        "x = 5 or x = 2",
+        "x = 10"
+      ],
+      "a": 0,
+      "why": "Zero-product: each factor = 0."
+    },
+    {
+      "q": "How many real solutions does x² = 16 have?",
+      "opts": [
+        "2",
+        "1",
+        "0",
+        "4"
+      ],
+      "a": 0,
+      "why": "x = 4 and x = −4."
+    }
+  ],
+  "statistics_summit": [
+    {
+      "q": "Mean of 3, 7, 8, 10, 2:",
+      "opts": [
+        "6",
+        "7",
+        "5",
+        "8"
+      ],
+      "a": 0,
+      "why": "30 / 5 = 6."
+    },
+    {
+      "q": "Median of 4, 1, 9, 2, 7:",
+      "opts": [
+        "4",
+        "7",
+        "2",
+        "9"
+      ],
+      "a": 0,
+      "why": "Sort → 1,2,4,7,9; middle is 4."
+    },
+    {
+      "q": "Mode of 5, 3, 5, 8, 3, 5:",
+      "opts": [
+        "5",
+        "3",
+        "8",
+        "4"
+      ],
+      "a": 0,
+      "why": "5 appears three times."
+    }
+  ],
+  "coordinate_cove": [
+    {
+      "q": "Distance between (0,0) and (6,8):",
+      "opts": [
+        "10",
+        "14",
+        "48",
+        "√14"
+      ],
+      "a": 0,
+      "why": "√(36+64) = √100 = 10."
+    },
+    {
+      "q": "Midpoint of (2,3) and (8,7):",
+      "opts": [
+        "(5,5)",
+        "(6,4)",
+        "(10,10)",
+        "(4,5)"
+      ],
+      "a": 0,
+      "why": "Average each coordinate → (5,5)."
+    },
+    {
+      "q": "A line falling as you move right has slope that is:",
+      "opts": [
+        "negative",
+        "positive",
+        "zero",
+        "undefined"
+      ],
+      "a": 0,
+      "why": "Downhill → negative slope."
+    }
+  ],
+  "units_uplands": [
+    {
+      "q": "3 kilograms equals how many grams?",
+      "opts": [
+        "3000",
+        "300",
+        "30",
+        "0.003"
+      ],
+      "a": 0,
+      "why": "kilo = 1000 → ×1000."
+    },
+    {
+      "q": "Which is the largest?",
+      "opts": [
+        "1 m",
+        "50 cm",
+        "900 mm",
+        "0.5 m"
+      ],
+      "a": 0,
+      "why": "1 m = 1000 mm, larger than 900 mm."
+    },
+    {
+      "q": "The same amount in a bigger unit gives a number that is:",
+      "opts": [
+        "smaller",
+        "larger",
+        "the same",
+        "negative"
+      ],
+      "a": 0,
+      "why": "Bigger unit → smaller count."
+    }
+  ],
+  "rates_ridge": [
+    {
+      "q": "A car goes 150 miles in 3 hours. Its speed is:",
+      "opts": [
+        "50 mph",
+        "45 mph",
+        "153 mph",
+        "30 mph"
+      ],
+      "a": 0,
+      "why": "150 / 3 = 50."
+    },
+    {
+      "q": "At 40 mph, how far in 2.5 hours?",
+      "opts": [
+        "100 miles",
+        "80 miles",
+        "42.5 miles",
+        "16 miles"
+      ],
+      "a": 0,
+      "why": "40 × 2.5 = 100."
+    },
+    {
+      "q": "A reaction makes 6 g in 3 min. The rate is:",
+      "opts": [
+        "2 g/min",
+        "3 g/min",
+        "18 g/min",
+        "0.5 g/min"
+      ],
+      "a": 0,
+      "why": "6 / 3 = 2 g per minute."
+    }
+  ],
+  "calc_canyon": [
+    {
+      "q": "Trial values 5, 8, 11 have an average of:",
+      "opts": [
+        "8",
+        "9",
+        "24",
+        "7"
+      ],
+      "a": 0,
+      "why": "24 / 3 = 8."
+    },
+    {
+      "q": "A value rises from 8 to 12. The percent increase is:",
+      "opts": [
+        "50%",
+        "4%",
+        "33%",
+        "150%"
+      ],
+      "a": 0,
+      "why": "4 / 8 = 50%."
+    },
+    {
+      "q": "The change from 20 to 14 is:",
+      "opts": [
+        "−6",
+        "6",
+        "−30%",
+        "34"
+      ],
+      "a": 0,
+      "why": "14 − 20 = −6 (a decrease of 6)."
+    }
+  ],
+  "pronoun_pass": [
+    {
+      "q": "“The coach gave the trophy to Sam and ___.”",
+      "opts": [
+        "me",
+        "I",
+        "myself",
+        "mine"
+      ],
+      "a": 0,
+      "why": "Object of 'to' → me. Remove 'Sam and' to test."
+    },
+    {
+      "q": "“Each of the players ___ responsible for ___ gear.”",
+      "opts": [
+        "is / his or her",
+        "are / their",
+        "is / their",
+        "are / his"
+      ],
+      "a": 0,
+      "why": "'Each' is singular → is / his or her."
+    },
+    {
+      "q": "“The student ___ won the prize is here.”",
+      "opts": [
+        "who",
+        "whom",
+        "which",
+        "whose"
+      ],
+      "a": 0,
+      "why": "Subject of 'won' → who."
+    }
+  ],
+  "modifier_marsh": [
+    {
+      "q": "Fix the dangler: “Walking home, the rain started.”",
+      "opts": [
+        "Walking home, I felt the rain start.",
+        "Walking home, the rain fell hard.",
+        "The rain started, walking home.",
+        "NO CHANGE"
+      ],
+      "a": 0,
+      "why": "The subject after the comma must be the walker."
+    },
+    {
+      "q": "Which means she finished nearly all? “She ate ___ the pizza.”",
+      "opts": [
+        "almost all of",
+        "all almost of",
+        "of almost all",
+        "almost the of"
+      ],
+      "a": 0,
+      "why": "'almost all of' = nearly the whole thing."
+    },
+    {
+      "q": "Which has NO dangling modifier?",
+      "opts": [
+        "Tired from practice, Jordan went to bed.",
+        "Tired from practice, bed sounded great.",
+        "Tired from practice, the game ended.",
+        "Tired from practice, it got late."
+      ],
+      "a": 0,
+      "why": "Jordan is the one who is tired."
+    }
+  ],
+  "parallel_pier": [
+    {
+      "q": "Choose the parallel version:",
+      "opts": [
+        "She likes reading, writing, and drawing.",
+        "She likes reading, to write, and drawing.",
+        "She likes to read, writing, and draws.",
+        "She likes read, write, drawing."
+      ],
+      "a": 0,
+      "why": "All three are -ing forms."
+    },
+    {
+      "q": "“The job requires focus, patience, and ___.”",
+      "opts": [
+        "dedication",
+        "to be dedicated",
+        "being dedicated",
+        "dedicated"
+      ],
+      "a": 0,
+      "why": "A noun list: focus, patience, dedication."
+    },
+    {
+      "q": "Parallel comparison: “Driving is safer than ___.”",
+      "opts": [
+        "flying",
+        "to fly",
+        "you fly",
+        "when flying"
+      ],
+      "a": 0,
+      "why": "Compare 'driving' to 'flying.'"
+    }
+  ],
+  "structure_span": [
+    {
+      "q": "A passage that states a problem then proposes fixes is organized as:",
+      "opts": [
+        "problem–solution",
+        "chronological",
+        "compare–contrast",
+        "cause–effect"
+      ],
+      "a": 0,
+      "why": "Problem stated, then solutions."
+    },
+    {
+      "q": "The phrase “for example” most likely signals:",
+      "opts": [
+        "supporting evidence",
+        "a contrast",
+        "a conclusion",
+        "a new topic"
+      ],
+      "a": 0,
+      "why": "It introduces support."
+    },
+    {
+      "q": "A “function of the paragraph” question asks:",
+      "opts": [
+        "why it is in the passage",
+        "its exact wording",
+        "the vocabulary",
+        "the author's name"
+      ],
+      "a": 0,
+      "why": "Function = its purpose/role."
+    }
+  ],
+  "tone_tundra": [
+    {
+      "q": "A word like “meddlesome” signals a tone that is:",
+      "opts": [
+        "disapproving",
+        "admiring",
+        "neutral",
+        "joyful"
+      ],
+      "a": 0,
+      "why": "Negative connotation → disapproval."
+    },
+    {
+      "q": "The BEST tone answers are usually:",
+      "opts": [
+        "moderate (e.g., skeptical)",
+        "extreme (e.g., furious)",
+        "contradictory",
+        "absent"
+      ],
+      "a": 0,
+      "why": "The ACT favors mild, supportable tone."
+    },
+    {
+      "q": "To judge tone, focus on:",
+      "opts": [
+        "overall word choice",
+        "one dramatic sentence",
+        "the title only",
+        "the line numbers"
+      ],
+      "a": 0,
+      "why": "Tone is the whole passage's attitude."
+    }
+  ],
+  "evidence_estuary": [
+    {
+      "q": "The best “evidence” line is one that:",
+      "opts": [
+        "directly supports the claim",
+        "mentions the topic vaguely",
+        "is the longest",
+        "uses hard words"
+      ],
+      "a": 0,
+      "why": "Direct support wins."
+    },
+    {
+      "q": "In a paired evidence question, the evidence must:",
+      "opts": [
+        "match your first answer",
+        "contradict it",
+        "be from another passage",
+        "be the title"
+      ],
+      "a": 0,
+      "why": "The two parts must align."
+    },
+    {
+      "q": "If no choice supports your answer, you should:",
+      "opts": [
+        "rethink your first answer",
+        "pick the longest line",
+        "guess randomly",
+        "skip both"
+      ],
+      "a": 0,
+      "why": "A mismatch signals a wrong part-1 pick."
+    }
+  ],
+  "figurative_falls": [
+    {
+      "q": "“Her words were a bridge between them” most nearly means her words:",
+      "opts": [
+        "connected them",
+        "divided them",
+        "confused them",
+        "ended the talk"
+      ],
+      "a": 0,
+      "why": "A bridge connects."
+    },
+    {
+      "q": "To interpret a metaphor, you should:",
+      "opts": [
+        "read the surrounding context",
+        "take it literally",
+        "ignore it",
+        "count the words"
+      ],
+      "a": 0,
+      "why": "Context reveals the meaning."
+    },
+    {
+      "q": "“A beacon of hope” uses an image that feels:",
+      "opts": [
+        "positive",
+        "negative",
+        "neutral",
+        "angry"
+      ],
+      "a": 0,
+      "why": "A beacon guides — positive."
+    }
+  ],
+  "hypothesis_hollow": [
+    {
+      "q": "A good hypothesis must be:",
+      "opts": [
+        "testable with data",
+        "impossible to check",
+        "an opinion",
+        "a definition"
+      ],
+      "a": 0,
+      "why": "It predicts a checkable result."
+    },
+    {
+      "q": "If results match the prediction, the data:",
+      "opts": [
+        "supports the hypothesis",
+        "disproves it",
+        "is irrelevant",
+        "is an error"
+      ],
+      "a": 0,
+      "why": "Matching data supports it."
+    },
+    {
+      "q": "A scientific model is best described as:",
+      "opts": [
+        "a useful approximation",
+        "an unchangeable fact",
+        "a random guess",
+        "a measuring tool"
+      ],
+      "a": 0,
+      "why": "Models approximate and can be revised."
+    }
+  ]
+}

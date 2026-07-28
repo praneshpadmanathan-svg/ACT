@@ -1,0 +1,1953 @@
+[
+  {
+    "id": "eng-strategy",
+    "label": "How English Works",
+    "icon": "Compass",
+    "pages": [
+      {
+        "id": "eng-overview",
+        "topic": "strategy",
+        "title": "The English Section, Decoded",
+        "summary": "50 questions, 35 minutes, 5 passages. What is actually being tested and how to pace it.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "p",
+            "text": "The Enhanced ACT English section gives you **50 questions in 35 minutes** spread across **5 passages**. That is about **42 seconds per question**, or roughly **7 minutes per passage**. English is the fastest-moving section on the test, but it is also the most learnable: unlike Reading, where the answer depends on interpretation, English questions have rules behind them. Learn the rules and the section becomes nearly mechanical."
+          },
+          {
+            "type": "rule",
+            "title": "Two question families",
+            "text": "Every English question is either a **Conventions of Standard English** question (grammar, punctuation, sentence structure — about 55% of the section) or a **Production of Writing / Knowledge of Language** question (transitions, adding and deleting, order, word choice, conciseness — about 45%). Conventions questions have one grammatically correct answer. Production questions have one answer that best serves the writer’s stated goal."
+          },
+          {
+            "type": "p",
+            "text": "You can tell them apart instantly. If the question is just a boxed number with four options and no question stem, it is a Conventions question — pick the grammatically correct, most concise option. If there is an actual question written above the choices (\"Which choice most effectively...?\", \"If the writer were to delete...\", \"The best placement for...\"), it is a Production question — the question stem is the instruction, and you must obey it literally."
+          },
+          {
+            "type": "list",
+            "title": "The five habits of a high English scorer",
+            "items": [
+              "**Read the whole sentence, not the underlined phrase.** The error is usually caused by something outside the underline — a mismatched subject, a dangling modifier, a verb tense established two clauses earlier.",
+              "**Shortest correct answer wins.** When two choices are both grammatically fine, ACT prefers the concise one. Roughly 15% of the section is decided by this alone.",
+              "**Read the choices vertically, not horizontally.** Scan down the four options and ask \"what is changing?\" The difference between them tells you which rule is being tested.",
+              "**\"OMIT the underlined portion\" and \"DELETE\" are correct more often than students expect** — around 40% of the time they appear. ACT loves cutting redundancy.",
+              "**Never pick an answer because it \"sounds fancy.\"** ACT English rewards clarity, not sophistication."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "The committee, which had been meeting since March, *they voted* to approve the budget.\nA. NO CHANGE\nB. they had voted\nC. voted\nD. voting",
+            "work": [
+              "Cover the modifier: \"The committee ... voted to approve the budget.\"",
+              "The subject \"committee\" already exists; \"they\" is a redundant second subject.",
+              "D (\"voting\") makes the sentence a fragment — no main verb."
+            ],
+            "answer": "**C.** Concise, no doubled subject, keeps a real main verb. This is the single most common ACT English pattern: an interrupting phrase makes you forget the sentence already had a subject."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Answering before finishing the sentence. The period is part of the question.",
+              "Choosing the longest choice because it \"gives more information.\" Extra information you were not asked for is a wrong answer, not a bonus.",
+              "Fixing an error that is not underlined. You can only change what is underlined."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Two answer choices are both fully grammatical. Choice B is 4 words; choice D is 11 words and adds a detail already stated earlier in the paragraph. What does ACT want?",
+            "choices": [
+              "B, because it is more concise and the detail is redundant",
+              "D, because more specific writing is stronger writing",
+              "Whichever one matches the sentence’s tone",
+              "It is impossible to tell without the passage"
+            ],
+            "answer": 0,
+            "explain": "Concision is an explicit ACT scoring value. When two choices are equally correct, the shorter one wins — and repeating information already given is redundancy, which is always an error on this test."
+          }
+        ]
+      },
+      {
+        "id": "eng-pacing",
+        "topic": "strategy",
+        "title": "Pacing & the 7-Minute Passage",
+        "summary": "A concrete clock plan, plus what to do when you fall behind.",
+        "minutes": 4,
+        "blocks": [
+          {
+            "type": "p",
+            "text": "English rewards rhythm more than raw speed. The goal is not to rush — it is to never stall. One question you refuse to let go of can cost you three easy questions at the end of the section."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Checkpoint",
+              "Clock remaining",
+              "You should be on"
+            ],
+            "rows": [
+              [
+                "After passage 1",
+                "28:00",
+                "Question 11"
+              ],
+              [
+                "After passage 2",
+                "21:00",
+                "Question 21"
+              ],
+              [
+                "After passage 3",
+                "14:00",
+                "Question 31"
+              ],
+              [
+                "After passage 4",
+                "7:00",
+                "Question 41"
+              ],
+              [
+                "After passage 5",
+                "0:00",
+                "Done"
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "The 20-second rule",
+            "text": "If you have not identified what is being tested within about 20 seconds, pick the shortest grammatically defensible choice, flag it, and move on. Come back only if time remains. A flagged guess costs you nothing; a stalled minute costs you two questions."
+          },
+          {
+            "type": "list",
+            "title": "Order of operations inside a passage",
+            "items": [
+              "Read from the beginning of the paragraph, not from the underline — you need context for tense and pronouns.",
+              "Answer inline questions as you reach them.",
+              "Save whole-passage questions (usually the last question, marked with a box or \"the essay as a whole\") for after you have read the entire passage.",
+              "Do not re-read the passage for the final question if you were reading actively the first time."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "You finish passage 3 with 11 minutes left instead of 14. What is the correct adjustment?",
+            "work": [
+              "You are 3 minutes behind with 20 questions left.",
+              "Do not try to make up 3 minutes evenly — that produces careless errors across all 20.",
+              "Instead: on passage 4, immediately guess-and-flag any question that requires re-reading a full paragraph (usually the transition and \"add a sentence\" questions), and keep every fast punctuation question."
+            ],
+            "answer": "Sacrifice the 2–3 slowest questions deliberately rather than degrading accuracy on all 20. Punctuation and agreement questions are worth the same point as the hardest rhetorical question, and take a third of the time."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Reading the entire passage first before answering anything — costs 2+ minutes per passage with no accuracy gain.",
+              "Leaving blanks. There is no wrong-answer penalty. Bubble every question, even the ones you never read.",
+              "Spending your last 90 seconds \"double-checking\" instead of finishing unanswered questions."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "With 40 seconds left you have 4 questions unanswered. Best move?",
+            "choices": [
+              "Bubble a letter for all 4 immediately, then read whichever you can",
+              "Carefully solve one and leave three blank",
+              "Read all four quickly, then bubble",
+              "Bubble only the ones you can read in time"
+            ],
+            "answer": 0,
+            "explain": "Guessing first guarantees you cannot run out of time with blanks. Four blind guesses average one point; one carefully solved question averages one point — but guessing first lets you also solve some. Always secure the bubbles first."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eng-punctuation",
+    "label": "Punctuation",
+    "icon": "Pilcrow",
+    "pages": [
+      {
+        "id": "eng-commas-jobs",
+        "topic": "commas",
+        "title": "Commas: The Only Four Jobs They Have",
+        "summary": "ACT tests exactly four legal comma uses. If a comma is not doing one of these, delete it.",
+        "minutes": 9,
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Students lose more English points to commas than to anything else, because they were taught to \"put a comma where you pause.\" ACT does not test pauses. It tests four specific structural jobs. **If a comma is not performing one of these four jobs, it is wrong.**"
+          },
+          {
+            "type": "rule",
+            "title": "Job 1 — Separate items in a list of three or more",
+            "text": "*I packed shorts, sunscreen, and a paperback.* ACT accepts (and prefers) the Oxford comma before \"and.\" With only two items, no comma: *I packed shorts and sunscreen.*"
+          },
+          {
+            "type": "rule",
+            "title": "Job 2 — Join two independent clauses with a FANBOYS conjunction",
+            "text": "Comma **+** For, And, Nor, But, Or, Yet, So. *The storm knocked out power, so the game was postponed.* Both sides must be complete sentences. If the second half is not a full sentence, no comma: *The storm knocked out power and delayed the game.*"
+          },
+          {
+            "type": "rule",
+            "title": "Job 3 — Set off nonessential information",
+            "text": "Information you could delete without changing what the sentence identifies gets commas on **both** sides. *My oldest brother, a paramedic in Tulsa, drove all night.* Delete \"a paramedic in Tulsa\" and the sentence still identifies who drove."
+          },
+          {
+            "type": "rule",
+            "title": "Job 4 — After an introductory element",
+            "text": "*After the recital, we drove to the diner.* / *Exhausted, she fell asleep in the car.* / *However, the data told a different story.* One comma, at the end of the intro, before the main clause begins."
+          },
+          {
+            "type": "p",
+            "text": "Now the part that actually earns points — **the four places a comma is always wrong**, no matter how much you want to pause there:"
+          },
+          {
+            "type": "list",
+            "title": "Never put a comma...",
+            "items": [
+              "**Between a subject and its verb.** ✗ *The runners in the third heat, finished early.* The comma severs the sentence’s spine.",
+              "**Between a verb and its object.** ✗ *She admitted, that she had forgotten.*",
+              "**Between a preposition and its object.** ✗ *We hiked to, the summit.*",
+              "**Between an adjective and the noun it modifies.** ✗ *a long, difficult, climb.* (The comma between \"long\" and \"difficult\" is fine; the one before \"climb\" is not.)"
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "The novelist *Zadie Smith, who grew up in northwest London,* set her first book there.\nA. NO CHANGE\nB. Zadie Smith who grew up in northwest London,\nC. Zadie Smith, who grew up in northwest London\nD. Zadie Smith who grew up in northwest London",
+            "work": [
+              "Test whether \"who grew up in northwest London\" is essential. The sentence already names her — \"the novelist Zadie Smith\" is fully identified.",
+              "So the clause is nonessential and needs commas on BOTH sides.",
+              "B has only a closing comma; C has only an opening comma; D has none."
+            ],
+            "answer": "**A.** Nonessential clauses take a matched pair of commas. One-sided commas around a nonessential element are the single most common comma error ACT plants."
+          },
+          {
+            "type": "example",
+            "prompt": "We reached the trailhead at dawn, *and hiked* until the light failed.\nA. NO CHANGE\nB. and we hiked\nC. , we hiked\nD. hiked",
+            "work": [
+              "Check what follows the comma: \"and hiked until the light failed\" is not an independent clause (no subject).",
+              "Job 2 requires a full sentence on both sides. So either delete the comma, or add a subject.",
+              "B adds \"we,\" making it a real independent clause — now comma + FANBOYS is legal.",
+              "C creates a comma splice. D leaves a stray comma between compound verbs."
+            ],
+            "answer": "**B.** Either *\"We reached the trailhead at dawn and hiked until the light failed\"* (no comma, compound verb) or *\"...at dawn, and we hiked...\"* (comma + FANBOYS + independent clause). B is the only listed option that is correct."
+          },
+          {
+            "type": "example",
+            "prompt": "The old, brick, warehouse on Delancey Street has been converted into apartments.",
+            "work": [
+              "Test 1: can you insert \"and\" between the adjectives? \"old and brick warehouse\" — sounds wrong.",
+              "Test 2: can you reverse them? \"brick old warehouse\" — sounds wrong.",
+              "Both tests fail, so these are cumulative adjectives and take no comma. And a comma never separates the final adjective from its noun."
+            ],
+            "answer": "**The old brick warehouse on Delancey Street...** — zero commas. Use the \"and / reversal\" test: if both work (*a cold, cutting wind* → *a cold and cutting wind* ✓, *a cutting, cold wind* ✓), use a comma. If either fails, drop it."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "A long subject makes the comma feel necessary. It is not. *Everyone who signed up for the early session before the deadline* **[no comma]** *received a refund.*",
+              "\"And\" alone never requires a comma. Only comma + FANBOYS joining two full sentences.",
+              "Trusting your ear. ACT deliberately writes sentences whose natural speaking rhythm has a pause exactly where a comma is illegal."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Which sentence is punctuated correctly?",
+            "choices": [
+              "The chemist adjusted the burner, and recorded the temperature.",
+              "The chemist, adjusted the burner and recorded the temperature.",
+              "The chemist adjusted the burner and recorded the temperature.",
+              "The chemist adjusted the burner and, recorded the temperature."
+            ],
+            "answer": 2,
+            "explain": "\"recorded the temperature\" has no subject, so it is a compound verb, not an independent clause — no comma before \"and.\" Choice A misuses Job 2, B splits subject from verb, D splits the conjunction from its verb."
+          }
+        ]
+      },
+      {
+        "id": "eng-commas-essential",
+        "topic": "commas",
+        "title": "Essential vs. Nonessential: The Deletion Test",
+        "summary": "The single highest-yield comma skill. Includes that/which and appositives.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Roughly one in six ACT English questions turns on whether a phrase is **essential** (needed to identify what you are talking about — no commas) or **nonessential** (bonus information — commas on both sides). There is one reliable procedure."
+          },
+          {
+            "type": "rule",
+            "title": "The Deletion Test",
+            "text": "Cover the phrase and read the sentence without it. Ask: **does the sentence still point to the same specific thing?** If yes → nonessential → commas. If the sentence becomes vague or identifies the wrong thing → essential → no commas."
+          },
+          {
+            "type": "example",
+            "prompt": "Compare these two:\n(1) *Students who miss the deadline will not be considered.*\n(2) *Students, who miss the deadline, will not be considered.*",
+            "work": [
+              "Delete the clause from (2): \"Students will not be considered.\" Now it says NO student is considered — a completely different claim.",
+              "So the clause is essential; it narrows \"students\" to a specific subgroup.",
+              "Version (1) — no commas — is correct."
+            ],
+            "answer": "**(1) is correct.** Punctuation here is not cosmetic; the commas literally change the meaning of the sentence. This is why ACT tests it so heavily."
+          },
+          {
+            "type": "rule",
+            "title": "That vs. which",
+            "text": "**That** introduces essential clauses and takes **no** comma: *The bike that I bought last spring already needs new brakes.* **Which** introduces nonessential clauses and takes **a comma**: *My bike, which I bought last spring, already needs new brakes.* On ACT, a comma before \"that\" is essentially always wrong."
+          },
+          {
+            "type": "rule",
+            "title": "Appositives",
+            "text": "An appositive renames the noun beside it. If the noun is already fully identified, the appositive is nonessential and takes commas: *Marie Curie, the first person to win two Nobel Prizes, worked in a converted shed.* If the noun is generic and the appositive does the identifying, no commas: *The physicist Marie Curie worked in a converted shed.*"
+          },
+          {
+            "type": "example",
+            "prompt": "Her sister *Priya, who lives in Austin,* is flying in for the wedding.",
+            "work": [
+              "How many sisters does she have? If she has several, \"Priya\" is doing essential identifying work — but \"Priya\" is not underlined; the question is about the clause after it.",
+              "\"who lives in Austin\" — delete it: \"Her sister Priya is flying in for the wedding.\" Still perfectly identified by name.",
+              "So the clause is nonessential and needs both commas."
+            ],
+            "answer": "**Correct as written.** A proper name almost always makes any following descriptive clause nonessential — because a name has already done all the identifying work the sentence needs."
+          },
+          {
+            "type": "example",
+            "prompt": "Choose the correct punctuation:\nA. The documentary, that won the audience award, screens again Friday.\nB. The documentary that won the audience award screens again Friday.\nC. The documentary that won the audience award, screens again Friday.\nD. The documentary, that won the audience award screens again Friday.",
+            "work": [
+              "\"that\" signals an essential clause — it tells us WHICH documentary out of many.",
+              "Essential clauses take no commas at all.",
+              "C and D also split subject from verb, an independent error."
+            ],
+            "answer": "**B.** No commas. Remember the shortcut: **comma + \"that\" = wrong**, on virtually every ACT."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "One-sided commas. If you open a nonessential phrase with a comma, you must close it — with a comma, a dash, or the end of the sentence.",
+              "Mixing punctuation marks: *Marie Curie, the first person to win two Nobel Prizes — worked in a shed.* You may use two commas or two dashes, but never one of each.",
+              "Assuming \"which\" always needs a comma even when it follows a preposition: *the shed in which she worked* takes no comma."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "*The recipe **that my grandmother taught me** uses no measuring cups.* Should this clause be set off by commas?",
+            "choices": [
+              "No — \"that\" signals an essential clause",
+              "Yes — all descriptive clauses take commas",
+              "Yes, but only a closing comma",
+              "Only if the grandmother is named"
+            ],
+            "answer": 0,
+            "explain": "\"that\" introduces essential information identifying which recipe. Deleting it leaves \"The recipe uses no measuring cups,\" which no longer specifies which recipe — proof it is essential, so no commas."
+          }
+        ]
+      },
+      {
+        "id": "eng-apostrophes",
+        "topic": "apostrophes",
+        "title": "Apostrophes: Possession vs. Plural vs. Contraction",
+        "summary": "Its/it’s, whose/who’s, plural possessives, and the words that never take apostrophes.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The core distinction",
+            "text": "An apostrophe does exactly two things: it shows **possession** (*the dog’s leash*) or it marks a **contraction** (*it’s = it is*). It **never** makes a word plural. *Three CDs*, *the 1990s*, *the Wilsons* — no apostrophes."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Form",
+              "Means",
+              "Example"
+            ],
+            "rows": [
+              [
+                "its",
+                "possessive of \"it\"",
+                "The theory has its critics."
+              ],
+              [
+                "it’s",
+                "\"it is\" or \"it has\"",
+                "It’s been raining since noon."
+              ],
+              [
+                "their",
+                "possessive of \"they\"",
+                "Their car broke down."
+              ],
+              [
+                "they’re",
+                "\"they are\"",
+                "They’re stuck on the shoulder."
+              ],
+              [
+                "there",
+                "a place / existence",
+                "There are two exits."
+              ],
+              [
+                "whose",
+                "possessive of \"who\"",
+                "The artist whose work we saw..."
+              ],
+              [
+                "who’s",
+                "\"who is\" or \"who has\"",
+                "Who’s presenting first?"
+              ],
+              [
+                "your",
+                "possessive of \"you\"",
+                "Your essay is due Friday."
+              ],
+              [
+                "you’re",
+                "\"you are\"",
+                "You’re going to need more time."
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Singular vs. plural possession",
+            "text": "Find the owner **first**, then add the apostrophe. One student → *the student’s locker*. Many students → *the students' lockers*. Irregular plurals that do not end in -s take **'s**: *children’s, women’s, men’s, people’s*."
+          },
+          {
+            "type": "example",
+            "prompt": "The *teachers lounge* was repainted over the summer.\nA. NO CHANGE\nB. teacher’s lounge\nC. teachers' lounge\nD. teachers’s lounge",
+            "work": [
+              "A lounge belongs to the teachers — this is possession, so an apostrophe is required. Eliminate A.",
+              "Is it one teacher or many? A shared lounge implies many teachers.",
+              "Plural owner already ending in -s → apostrophe after the s.",
+              "D is never a valid form for a regular plural."
+            ],
+            "answer": "**C — teachers' lounge.** Procedure: (1) Is there possession? (2) Who is the owner, singular or plural? (3) Place the apostrophe after the complete owner word."
+          },
+          {
+            "type": "example",
+            "prompt": "*Its* remarkable that the bridge survived the flood, given *it’s* age.",
+            "work": [
+              "First blank: expand to \"It is remarkable that...\" — works, so it needs the contraction: **It’s**.",
+              "Second blank: expand to \"given it is age\" — nonsense. So it needs the possessive: **its**."
+            ],
+            "answer": "**\"It’s remarkable... given its age.\"** The expansion test is 100% reliable: substitute \"it is.\" If the sentence still makes sense, use *it’s*. If not, use *its*."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "**Its'** is not a word in English. Ever. If you see it, eliminate it immediately.",
+              "Possessive pronouns never take apostrophes: *hers, his, its, ours, yours, theirs*.",
+              "Decades and acronyms are plural, not possessive: *the 1980s*, *two PhDs*.",
+              "Watch for a possessive placed on the wrong noun: *the sales team’s report* (one team) vs. *the sales teams' reports* (several teams)."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Which is correct?",
+            "choices": [
+              "The company lost it’s biggest client, whose contract expired in June.",
+              "The company lost its biggest client, whose contract expired in June.",
+              "The company lost its biggest client, who’s contract expired in June.",
+              "The company lost its' biggest client, whose contract expired in June."
+            ],
+            "answer": 1,
+            "explain": "\"its biggest client\" is possessive (not \"it is biggest client\"). \"whose contract\" is possessive (not \"who is contract\"). And \"its'\" is never a word."
+          }
+        ]
+      },
+      {
+        "id": "eng-semicolons",
+        "topic": "semicolons",
+        "title": "Semicolons: A Period in Disguise",
+        "summary": "One rule covers 95% of ACT semicolon questions, plus the list exception.",
+        "minutes": 5,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The rule",
+            "text": "A semicolon joins **two independent clauses** — two things that could each stand alone as a complete sentence. Functionally it is a period. If you can replace the semicolon with a period and both halves still work, the semicolon is correct."
+          },
+          {
+            "type": "p",
+            "text": "This gives you an enormously useful ACT shortcut: **a semicolon and a period are interchangeable.** So if the answer choices offer both a semicolon and a period as separate options, neither can be the answer — ACT never gives two correct choices. Eliminate both and look at the remaining two."
+          },
+          {
+            "type": "example",
+            "prompt": "The trail was flooded near the creek; *we took the ridge route instead.*\nIs the semicolon correct?",
+            "work": [
+              "Left side: \"The trail was flooded near the creek.\" Complete. ✓",
+              "Right side: \"We took the ridge route instead.\" Complete. ✓",
+              "Swap in a period — both halves still work."
+            ],
+            "answer": "**Correct.** Two independent clauses, properly joined. Note that a comma here instead would create a comma splice."
+          },
+          {
+            "type": "example",
+            "prompt": "The museum closed early; *because of the power outage.*\nA. NO CHANGE\nB. , because of the power outage.\nC. because of the power outage.\nD. ; the power outage.",
+            "work": [
+              "Right side: \"because of the power outage\" — a fragment, not a sentence. Semicolon fails.",
+              "D also fails: \"the power outage\" is a fragment.",
+              "Between B and C: \"because of the power outage\" is a short essential prepositional phrase attached to the main clause; no comma is needed."
+            ],
+            "answer": "**C.** *The museum closed early because of the power outage.* A semicolon cannot precede a fragment, no matter how logically connected the fragment feels."
+          },
+          {
+            "type": "rule",
+            "title": "Semicolons with conjunctive adverbs",
+            "text": "Words like *however, therefore, moreover, nevertheless, consequently, furthermore, instead, thus* are **not** conjunctions. They cannot join sentences with a comma. Correct: *The forecast called for rain; however, the sky stayed clear.* Wrong: *The forecast called for rain, however, the sky stayed clear.* (comma splice)"
+          },
+          {
+            "type": "rule",
+            "title": "The list exception",
+            "text": "Use semicolons to separate items in a list when the items themselves contain commas: *The tour stops in Lima, Peru; Quito, Ecuador; and Bogotá, Colombia.* This is the only time a semicolon may join things that are not full sentences."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Never use a semicolon before a FANBOYS conjunction: ✗ *She trained hard; but she missed the cut.* Use a comma there.",
+              "Never use a semicolon to introduce a list or an explanation — that is the colon’s job.",
+              "\"However\" at the start of a clause almost always needs a semicolon or period before it, not a comma."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "*The recipe calls for saffron; an expensive spice harvested by hand.* What is wrong?",
+            "choices": [
+              "Nothing — it is correct",
+              "The second half is a fragment, so it needs a colon or comma, not a semicolon",
+              "It needs a FANBOYS conjunction after the semicolon",
+              "\"an expensive spice\" should be plural"
+            ],
+            "answer": 1,
+            "explain": "\"an expensive spice harvested by hand\" is an appositive phrase, not an independent clause. Since it explains what saffron is, a colon (or a comma) is correct: *...calls for saffron, an expensive spice harvested by hand.*"
+          }
+        ]
+      },
+      {
+        "id": "eng-colons",
+        "topic": "colons",
+        "title": "Colons: The Announcement Mark",
+        "summary": "What must come before a colon, what may come after, and the classic ACT trap.",
+        "minutes": 5,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The rule",
+            "text": "A colon must be preceded by a **complete independent clause**. What follows may be a list, a single word, a phrase, or another full sentence — the colon is flexible on the right and strict on the left."
+          },
+          {
+            "type": "p",
+            "text": "Think of a colon as saying \"here it comes.\" It announces an example, a list, an explanation, or a definition. *She had exactly one requirement: silence.*"
+          },
+          {
+            "type": "example",
+            "prompt": "The kit contains: a compass, a whistle, and a mylar blanket.\nIs this correct?",
+            "work": [
+              "Read the left side alone: \"The kit contains.\" That is not a complete sentence — \"contains\" needs an object.",
+              "A colon cannot follow an incomplete clause."
+            ],
+            "answer": "**Incorrect.** Fix it either by deleting the colon (*The kit contains a compass, a whistle, and a mylar blanket*) or by completing the clause (*The kit contains three items: a compass, a whistle, and a mylar blanket*). This \"verb + colon + list\" pattern is the most common colon error on the ACT."
+          },
+          {
+            "type": "example",
+            "prompt": "After eight months of testing, the engineers reached a conclusion: *the alloy could not withstand repeated thermal cycling.*",
+            "work": [
+              "Left of colon: \"the engineers reached a conclusion\" — complete. ✓",
+              "Right of colon: a full sentence explaining the conclusion — permitted. ✓"
+            ],
+            "answer": "**Correct.** When a full sentence follows a colon, ACT accepts either a lowercase or capital first letter, so capitalization will never be the deciding difference between two choices."
+          },
+          {
+            "type": "rule",
+            "title": "Colon vs. semicolon vs. dash",
+            "text": "All three can follow a complete clause, but they mean different things. **Semicolon:** the two halves are equal and related. **Colon:** the second half explains, defines, or lists what the first half set up. **Dash:** the second half is an abrupt interruption, amplification, or reversal. When ACT offers all three, look at whether the second half *announces* something (colon) or merely *continues* (semicolon)."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "\"such as,\" \"including,\" and \"for example\" already introduce a list — adding a colon after them is redundant and wrong.",
+              "Never place a colon between a preposition and its object: ✗ *The team traveled to: Denver, Tulsa, and Reno.*",
+              "A colon after \"is\" is almost always wrong: ✗ *My favorite season is: autumn.*"
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Which sentence uses a colon correctly?",
+            "choices": [
+              "The syllabus lists three requirements: attendance, a midterm, and a portfolio.",
+              "The syllabus requires: attendance, a midterm, and a portfolio.",
+              "The syllabus includes several things such as: attendance and a midterm.",
+              "The requirements are: attendance, a midterm, and a portfolio."
+            ],
+            "answer": 0,
+            "explain": "Only A has a complete independent clause before the colon (\"The syllabus lists three requirements\"). B ends on a transitive verb needing an object, C doubles up \"such as\" with a colon, and D places a colon directly after a linking verb."
+          }
+        ]
+      },
+      {
+        "id": "eng-dashes",
+        "topic": "dashes",
+        "title": "Dashes: Flexible but Symmetrical",
+        "summary": "Dashes do three jobs, and the pairing rule that ACT tests every single time.",
+        "minutes": 5,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Job 1 — Replace a pair of commas",
+            "text": "A pair of dashes can set off nonessential information, usually for extra emphasis or when the interruption already contains commas: *Three of the finalists — Reyna, Devon, and Ify — had never competed before.* Using commas there would be confusing; dashes make the boundaries obvious."
+          },
+          {
+            "type": "rule",
+            "title": "Job 2 — Replace a colon",
+            "text": "A single dash after a complete clause can announce an explanation or a list: *She knew what the silence meant — the vote had failed.*"
+          },
+          {
+            "type": "rule",
+            "title": "Job 3 — Mark an abrupt break or reversal",
+            "text": "*He promised he would be on time — he was forty minutes late.*"
+          },
+          {
+            "type": "rule",
+            "title": "The pairing rule (tested constantly)",
+            "text": "If a nonessential element **opens** with a dash, it must **close** with a dash. You may use two commas or two dashes, but **never one comma and one dash**. ACT plants mismatched pairs in roughly every other punctuation set."
+          },
+          {
+            "type": "example",
+            "prompt": "The prototype—a squat, wheeled machine barely three feet tall, drew a crowd at the fair.\nA. NO CHANGE\nB. tall — drew\nC. tall, drew\nD. tall drew",
+            "work": [
+              "The interruption opens with a dash after \"prototype.\"",
+              "Therefore it must close with a dash, not a comma.",
+              "C would work only if the opening mark were also a comma — but the opening dash is not underlined, so we cannot change it."
+            ],
+            "answer": "**B.** Match the marks. Whenever you see a dash on one side of an interruption, check the other side first — that is where the error usually is."
+          },
+          {
+            "type": "example",
+            "prompt": "Only one thing could explain the readings, *a leak in the seal.*\nShould this be a comma or a dash?",
+            "work": [
+              "Left side is a complete clause; right side is a noun phrase that explains what \"one thing\" was.",
+              "Both a comma and a dash are grammatically acceptable here, so ACT would not offer both.",
+              "If both appear as choices, the deciding factor is elsewhere in the choices."
+            ],
+            "answer": "Either **a comma or a dash** is defensible; a dash adds emphasis. This illustrates a key test-taking point: **when two choices are equally correct, neither is the answer** — re-read the choices for a difference you overlooked."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "A dash cannot join two independent clauses in place of a comma + FANBOYS in formal edited English — but ACT does accept dash + independent clause as an abrupt break. Prefer the semicolon if it is offered and the halves are balanced.",
+              "Do not use a dash where the sentence needs no punctuation at all. Random dashes between subject and verb are wrong just like random commas.",
+              "Hyphens (-) are not dashes (—). ACT does not test hyphenation in compound words."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "*The three candidates, all of them first-time contenders — arrived early.* How should this be fixed?",
+            "choices": [
+              "Change the dash to a comma",
+              "Change the first comma to a dash",
+              "Either A or B — both create a matched pair",
+              "Delete both marks"
+            ],
+            "answer": 2,
+            "explain": "The error is the mismatch, not the choice of mark. Two commas or two dashes both correctly set off the nonessential phrase; mixing one of each is always wrong. On a real ACT only one of the two would be underlined, forcing a single answer."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eng-structure",
+    "label": "Sentence Structure",
+    "icon": "Blocks",
+    "pages": [
+      {
+        "id": "eng-fragments",
+        "topic": "fragments",
+        "title": "Sentence Fragments",
+        "summary": "How to spot a missing subject, missing verb, or stranded subordinate clause.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "A complete sentence needs three things",
+            "text": "(1) a **subject**, (2) a **conjugated verb**, and (3) the ability to **stand alone** — meaning it is not opened by a subordinating word. Miss any one and you have a fragment."
+          },
+          {
+            "type": "list",
+            "title": "The three fragment types ACT uses",
+            "items": [
+              "**Missing verb:** *The theory, widely accepted for a century and taught in every textbook.* — \"widely accepted\" and \"taught\" are participles, not conjugated verbs.",
+              "**Missing subject:** *Ran the entire distance without stopping.* — Who ran?",
+              "**Stranded subordinate clause:** *Because the ferry was delayed by fog.* — Complete subject and verb, but \"Because\" makes it dependent; it needs a main clause."
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "The -ING trap",
+            "text": "An **-ing** word by itself is never a main verb. *The engineers working through the night.* is a fragment. Add a helping verb (*The engineers **were** working through the night*) or change the form (*The engineers **worked** through the night*). ACT plants this constantly, because \"-ing\" reads fluently and hides the missing verb."
+          },
+          {
+            "type": "list",
+            "title": "Subordinating words that create dependent clauses",
+            "items": [
+              "**Time / condition:** after, before, when, whenever, while, until, since, once, unless, if, as soon as",
+              "**Cause / contrast:** because, although, though, even though, whereas, so that, in order that",
+              "**Relative pronouns:** who, whom, whose, which, that (when they open a clause)"
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "*The archivist spending three years cataloguing the collection.*\nA. NO CHANGE\nB. archivist, spending\nC. archivist spent\nD. archivist, who spent",
+            "work": [
+              "Locate a conjugated verb. \"spending\" is a participle. No main verb exists.",
+              "B just adds a comma — still no verb.",
+              "D turns it into a relative clause modifying \"archivist\" — still a fragment.",
+              "C supplies a real past-tense verb."
+            ],
+            "answer": "**C.** When a choice replaces an \"-ing\" word with a conjugated verb and the sentence had no other verb, that choice is almost always correct."
+          },
+          {
+            "type": "example",
+            "prompt": "*Although the vaccine trial showed promising early results.* Regulators demanded a larger sample.\nHow should the period be handled?",
+            "work": [
+              "The first \"sentence\" opens with \"Although\" — a subordinating conjunction — so it is dependent.",
+              "A dependent clause must attach to an independent one.",
+              "Replace the period with a comma to join them."
+            ],
+            "answer": "***Although the vaccine trial showed promising early results, regulators demanded a larger sample.*** Dependent clause first → comma → independent clause. (Reverse order needs no comma: *Regulators demanded a larger sample although the trial showed promising results.*)"
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Length is meaningless. A 30-word fragment is still a fragment; a two-word sentence (*She left.*) is complete.",
+              "A fragment can \"sound right\" because it follows a sentence that supplies the missing context. Read it in isolation.",
+              "Watch for choices that fix the fragment but introduce a comma splice instead — check the new sentence for both errors."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Which of the following is a complete sentence?",
+            "choices": [
+              "Which explains why the readings were inconsistent.",
+              "The readings inconsistent across all three trials.",
+              "Inconsistent readings across all three trials.",
+              "The readings were inconsistent across all three trials."
+            ],
+            "answer": 3,
+            "explain": "D has a subject (\"readings\"), a conjugated verb (\"were\"), and no subordinating opener. A is a relative clause, B lacks a verb, and C is a noun phrase with no verb at all."
+          }
+        ]
+      },
+      {
+        "id": "eng-runons",
+        "topic": "run-ons",
+        "title": "Run-Ons & Comma Splices",
+        "summary": "Two sentences jammed together — and the five legal ways to separate them.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Definitions",
+            "text": "A **run-on (fused sentence)** joins two independent clauses with no punctuation: *The lecture ran long we missed the bus.* A **comma splice** joins them with only a comma: *The lecture ran long, we missed the bus.* Both are always wrong on the ACT."
+          },
+          {
+            "type": "rule",
+            "title": "The five legal fixes",
+            "text": "Given two independent clauses A and B:\n1. **Period** — *A. B.*\n2. **Semicolon** — *A; B.*\n3. **Comma + FANBOYS** — *A, so B.*\n4. **Subordinate one clause** — *Because A, B.*\n5. **Colon or dash** (when B explains A) — *A: B.*"
+          },
+          {
+            "type": "p",
+            "text": "Notice that fixes 1 and 2 are functionally identical, and 5 overlaps with them. This is why ACT usually offers only one of the \"separate them\" options — the rest of the choices will be the wrong versions."
+          },
+          {
+            "type": "example",
+            "prompt": "The storm intensified overnight, *by morning the highway was closed.*\nA. NO CHANGE\nB. by morning, the highway was closed.\nC. and by morning the highway was closed.\nD. by morning the highway, was closed.",
+            "work": [
+              "\"The storm intensified overnight\" ✓ complete. \"by morning the highway was closed\" ✓ complete.",
+              "A and B are both comma splices (B just moves the comma).",
+              "D adds a subject-verb splitting comma.",
+              "C adds \"and\" after the existing comma → comma + FANBOYS. Legal."
+            ],
+            "answer": "**C.** When the underlined portion begins right after a comma and both halves are full sentences, the answer very often adds a FANBOYS conjunction."
+          },
+          {
+            "type": "example",
+            "prompt": "Marine biologists have tracked the pod for a decade, *however, its migration route has changed twice.*",
+            "work": [
+              "\"however\" is a conjunctive adverb, not a FANBOYS conjunction.",
+              "Comma + however = comma splice.",
+              "Fix with a semicolon or period before \"however.\""
+            ],
+            "answer": "***...for a decade; however, its migration route has changed twice.*** Memorize the six most-tested conjunctive adverbs — *however, therefore, moreover, nevertheless, consequently, thus* — and the fact that a comma alone can never precede them when joining two sentences."
+          },
+          {
+            "type": "rule",
+            "title": "The FANBOYS test",
+            "text": "Only seven words can join two independent clauses with a comma: **F**or, **A**nd, **N**or, **B**ut, **O**r, **Y**et, **S**o. Everything else — *however, then, also, plus, additionally, in fact, for example* — requires a semicolon or period."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "\"then\" is not a conjunction: ✗ *She finished the draft, then she deleted it.* Use a semicolon, a period, or \"and then.\"",
+              "Watch for splices hidden by long modifiers, where the second subject is 15 words downstream.",
+              "A choice that fixes the splice by creating a fragment is still wrong. Check both halves after your fix."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Which choice correctly fixes *\"The kiln reached temperature at noon, the glaze had not been applied\"*?",
+            "choices": [
+              "The kiln reached temperature at noon the glaze had not been applied.",
+              "The kiln reached temperature at noon, but the glaze had not been applied.",
+              "The kiln reached temperature at noon, however the glaze had not been applied.",
+              "The kiln reached temperature at noon, then the glaze had not been applied."
+            ],
+            "answer": 1,
+            "explain": "\"but\" is a FANBOYS conjunction, so comma + but legally joins two independent clauses — and it captures the contrast. A is a fused run-on; C and D use non-conjunctions after a comma, leaving the splice unfixed."
+          }
+        ]
+      },
+      {
+        "id": "eng-sva",
+        "topic": "subject-verb agreement",
+        "title": "Subject–Verb Agreement",
+        "summary": "Find the real subject by deleting everything between it and the verb.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The technique",
+            "text": "Singular subjects take singular verbs; plural subjects take plural verbs. The difficulty is never the rule — it is **locating the subject**. ACT buries the subject under prepositional phrases, clauses, and inverted word order. **Cross out every prepositional phrase**, then read subject and verb next to each other."
+          },
+          {
+            "type": "example",
+            "prompt": "The *stack of weathered field notebooks in the archive’s basement were* donated in 1974.",
+            "work": [
+              "Cross out prepositional phrases: ~~of weathered field notebooks~~ ~~in the archive’s basement~~",
+              "What remains: \"The stack ... were donated.\"",
+              "\"Stack\" is singular → \"was donated.\""
+            ],
+            "answer": "**was donated.** The subject is *stack*, not *notebooks*. A noun inside a prepositional phrase can never be the subject of the sentence — this single fact resolves most agreement questions."
+          },
+          {
+            "type": "rule",
+            "title": "Indefinite pronouns",
+            "text": "Always **singular**: *each, either, neither, everyone, everybody, everything, someone, somebody, anyone, anything, no one, nobody, nothing, one, much, little*. Always **plural**: *both, few, many, several*. Depends on the object of \"of\": *some, any, none, all, most* — *Most of the cake **is** gone* / *Most of the students **are** here*."
+          },
+          {
+            "type": "rule",
+            "title": "Compound and correlative subjects",
+            "text": "**And** makes a subject plural: *Rain and wind **were** forecast.* But with **or / nor / either...or / neither...nor**, the verb agrees with the **nearer** subject: *Neither the coaches nor the captain **was** available.* / *Neither the captain nor the coaches **were** available.*"
+          },
+          {
+            "type": "rule",
+            "title": "Inverted sentences",
+            "text": "In sentences beginning with **there is/are**, **here is/are**, or a question, the subject comes **after** the verb. *There **are** three reasons for the delay.* (subject = reasons) Flip it mentally: *Three reasons are there.*"
+          },
+          {
+            "type": "example",
+            "prompt": "*Neither of the proposed amendments address* the funding shortfall.\nA. NO CHANGE\nB. addresses\nC. have addressed\nD. are addressing",
+            "work": [
+              "Cross out \"of the proposed amendments.\"",
+              "Subject = \"Neither,\" which is always singular.",
+              "C and D are plural forms."
+            ],
+            "answer": "**B — addresses.** \"Neither\" and \"either\" are singular even when the phrase after them is plural. ACT uses this trap in nearly every English section."
+          },
+          {
+            "type": "example",
+            "prompt": "Buried in the sediment beneath the lakebed *lie* the remains of a Bronze Age settlement.",
+            "work": [
+              "The sentence is inverted — it opens with a modifier, then verb, then subject.",
+              "Un-invert: \"The remains of a Bronze Age settlement lie buried in the sediment...\"",
+              "Subject = \"remains,\" plural."
+            ],
+            "answer": "**Correct as written — \"lie.\"** When a sentence opens with a long prepositional or participial phrase, always find the subject *after* the verb before deciding."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Collective nouns (*team, jury, committee, audience, family, group*) are **singular** on the ACT: *The committee **has** decided.*",
+              "Titles, company names, and academic subjects ending in -s are singular: *Physics **is** hard.* / *Sanders & Co. **has** filed.*",
+              "Phrases like *along with, as well as, in addition to, together with, including* do **not** make a singular subject plural: *The director, along with the producers, **was** present.*",
+              "Units of measurement and amounts are singular: *Ten miles **is** a long walk.*"
+            ]
+          },
+          {
+            "type": "check",
+            "q": "*The list of approved contractors and subcontractors ____ posted online each quarter.*",
+            "choices": [
+              "are",
+              "is",
+              "were",
+              "have been"
+            ],
+            "answer": 1,
+            "explain": "Cross out \"of approved contractors and subcontractors.\" The subject is \"list\" — singular — so \"is posted.\" The plural nouns inside the prepositional phrase are decoys."
+          }
+        ]
+      },
+      {
+        "id": "eng-tense",
+        "topic": "verb tense",
+        "title": "Verb Tense & Form",
+        "summary": "Consistency, the perfect tenses, and irregular past participles.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Default to consistency",
+            "text": "The correct tense is almost always the one already established by the surrounding sentences. Look **outside** the underlined portion for a non-underlined verb and match it. Do not change tense unless the passage signals a genuine shift in time."
+          },
+          {
+            "type": "example",
+            "prompt": "Chen arrived at the site before sunrise. She unpacked her instruments, calibrated the sensors, and *begins* logging data.",
+            "work": [
+              "Non-underlined verbs: \"arrived,\" \"unpacked,\" \"calibrated\" — all simple past.",
+              "Nothing in the passage signals a shift to the present."
+            ],
+            "answer": "**began.** The most common ACT tense question is simply a lone verb that breaks an established pattern. Scan the sentence before and after; match them."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Tense",
+              "Use it when",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Simple past",
+                "A finished action at a definite past time",
+                "She submitted the form on Tuesday."
+              ],
+              [
+                "Present perfect (has/have + past participle)",
+                "Started in the past and continues, or happened at an unspecified time",
+                "She has submitted three drafts."
+              ],
+              [
+                "Past perfect (had + past participle)",
+                "An action completed BEFORE another past action",
+                "She had submitted the form before the office closed."
+              ],
+              [
+                "Future perfect (will have + past participle)",
+                "Will be complete before a future point",
+                "By June she will have submitted the final draft."
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "The past perfect trigger",
+            "text": "Use **had + past participle** only when the sentence contains **two** past events and you need to mark which came first. *By the time the inspectors arrived, the crew **had repaired** the valve.* If there is only one past action, \"had\" is wrong."
+          },
+          {
+            "type": "example",
+            "prompt": "The exhibit closed in March. By then, more than 400,000 visitors *saw* the collection.\nA. NO CHANGE\nB. had seen\nC. have seen\nD. were seeing",
+            "work": [
+              "Two past events: the closing (March) and the visiting.",
+              "The visiting was complete BEFORE the closing — \"By then\" signals sequence.",
+              "C (present perfect) implies visits continue, contradicting \"closed.\""
+            ],
+            "answer": "**B — had seen.** Trigger phrases for past perfect: *by then, by the time, before, previously, earlier, already, until then.*"
+          },
+          {
+            "type": "table",
+            "head": [
+              "Base",
+              "Simple past",
+              "Past participle (use with has/have/had)"
+            ],
+            "rows": [
+              [
+                "begin",
+                "began",
+                "begun"
+              ],
+              [
+                "drink",
+                "drank",
+                "drunk"
+              ],
+              [
+                "ring",
+                "rang",
+                "rung"
+              ],
+              [
+                "swim",
+                "swam",
+                "swum"
+              ],
+              [
+                "lie (recline)",
+                "lay",
+                "lain"
+              ],
+              [
+                "lay (place)",
+                "laid",
+                "laid"
+              ],
+              [
+                "rise",
+                "rose",
+                "risen"
+              ],
+              [
+                "raise",
+                "raised",
+                "raised"
+              ],
+              [
+                "lead",
+                "led",
+                "led"
+              ],
+              [
+                "choose",
+                "chose",
+                "chosen"
+              ]
+            ]
+          },
+          {
+            "type": "trap",
+            "items": [
+              "✗ *She had went.* / ✗ *The bell had rang.* A past participle, not a simple past, follows has/have/had.",
+              "\"would of,\" \"could of,\" \"should of\" — never correct. It is *would have*.",
+              "In hypotheticals, use the subjunctive: *If I **were** the coach...* not \"was.\"",
+              "Historical or literary present is legitimate: a passage discussing what an author \"argues\" in a book may stay present throughout. Match the passage, not your instinct."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "*The glacier ____ nearly a mile since researchers first surveyed it in 1912.*",
+            "choices": [
+              "retreated",
+              "has retreated",
+              "had retreated",
+              "was retreating"
+            ],
+            "answer": 1,
+            "explain": "\"since [past point]\" signals an action that began in the past and continues to now — present perfect. \"Had retreated\" would require a second, later past event to anchor it."
+          }
+        ]
+      },
+      {
+        "id": "eng-pronouns",
+        "topic": "pronouns",
+        "title": "Pronouns: Agreement, Case, and Ambiguity",
+        "summary": "Match the antecedent, pick the right case, and reject vague reference.",
+        "minutes": 8,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Agreement",
+            "text": "A pronoun must match its **antecedent** — the noun it replaces — in number. Singular noun → singular pronoun. This is where collective nouns and indefinite pronouns cause trouble."
+          },
+          {
+            "type": "example",
+            "prompt": "Every applicant must submit *their* transcript by Friday.",
+            "work": [
+              "Antecedent = \"Every applicant,\" which is singular.",
+              "\"their\" is plural → mismatch on the ACT.",
+              "Best fixes: make the noun plural (*All applicants must submit their transcripts*) or use \"his or her.\""
+            ],
+            "answer": "On the ACT, prefer ***All applicants must submit their transcripts.*** The test still treats singular \"they\" with a singular antecedent as an agreement error, and it will always offer a cleaner rewrite among the choices."
+          },
+          {
+            "type": "rule",
+            "title": "Case: subject vs. object",
+            "text": "Subject pronouns (**I, he, she, we, they, who**) perform the action. Object pronouns (**me, him, her, us, them, whom**) receive it. The reliable test with compounds: **delete the other person**."
+          },
+          {
+            "type": "example",
+            "prompt": "The grant was awarded to Dr. Ilori and *I*.",
+            "work": [
+              "Delete \"Dr. Ilori and\": \"The grant was awarded to I.\" Clearly wrong.",
+              "Test the alternative: \"The grant was awarded to me.\" ✓"
+            ],
+            "answer": "**me.** \"Between you and I\" and \"to X and I\" feel formal, which is exactly why they are wrong so often. The deletion test never fails."
+          },
+          {
+            "type": "rule",
+            "title": "Who vs. whom",
+            "text": "**Who** = he/she (subject). **Whom** = him/her (object). Substitute: *The scientist ____ won the prize...* → \"he won the prize\" → **who**. *The scientist ____ we interviewed...* → \"we interviewed him\" → **whom**. Shortcut: if the pronoun is immediately followed by a verb, it is usually *who*; if followed by a subject, usually *whom*."
+          },
+          {
+            "type": "rule",
+            "title": "Ambiguous reference",
+            "text": "If a pronoun could plausibly refer to more than one noun, the sentence is wrong — even if you can guess the meaning. *When Ravi met Tomas, **he** was nervous.* Who was nervous? ACT will offer a choice that names the person. **Pick the noun.**"
+          },
+          {
+            "type": "example",
+            "prompt": "The company revised its safety manual after the audit, but *it* was never distributed to staff.\nA. NO CHANGE\nB. they were\nC. the manual was\nD. this was",
+            "work": [
+              "\"it\" could refer to the manual, the audit, or the company.",
+              "B introduces a number mismatch.",
+              "D (\"this\") is even vaguer than \"it.\"",
+              "C names the noun explicitly."
+            ],
+            "answer": "**C.** When one choice replaces a pronoun with the actual noun and the pronoun had more than one possible antecedent, that choice is correct. Clarity beats concision here."
+          },
+          {
+            "type": "rule",
+            "title": "Vague \"this,\" \"that,\" \"which,\" \"it\"",
+            "text": "A pronoun cannot refer to an entire preceding idea on the ACT. ✗ *The bridge closed for repairs, which frustrated commuters.* Fix by naming it: *...a closure that frustrated commuters* or *...for repairs, a decision that frustrated commuters.*"
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Reflexives (*myself, himself, themselves*) are only correct when the subject and object are the same person. ✗ *Please contact myself with questions.*",
+              "\"Their\" for a company or team: a company is singular → *its*.",
+              "Consistency of person: do not shift from \"one\" to \"you\" to \"we\" mid-passage.",
+              "Comparisons hide the case: *She is taller than **I** [am].* — the implied verb makes the subject pronoun correct."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "*The senator, along with two aides ____ she had known for years, boarded the plane.*",
+            "choices": [
+              "who",
+              "whom",
+              "which",
+              "whose"
+            ],
+            "answer": 1,
+            "explain": "Substitute into the clause: \"she had known them for years\" — the pronoun is the object of \"known,\" so use *whom*. \"Which\" cannot refer to people."
+          }
+        ]
+      },
+      {
+        "id": "eng-modifiers",
+        "topic": "modifiers",
+        "title": "Modifiers: Dangling & Misplaced",
+        "summary": "A modifier must sit next to what it describes — no exceptions.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The proximity rule",
+            "text": "A descriptive phrase modifies **whatever noun is closest to it**. If the noun immediately after an opening modifier is not the thing being described, the modifier dangles — and the sentence is wrong, however sensible it seems."
+          },
+          {
+            "type": "example",
+            "prompt": "*Rusted through and missing two hinges, the contractor hauled the gate to the scrapyard.*",
+            "work": [
+              "The opening modifier describes something rusted and missing hinges.",
+              "The noun right after the comma is \"the contractor.\"",
+              "The sentence literally claims the contractor was rusted through.",
+              "Fix: put the gate right after the comma."
+            ],
+            "answer": "***Rusted through and missing two hinges, the gate was hauled to the scrapyard by the contractor.*** Or: *The contractor hauled the gate, which was rusted through and missing two hinges, to the scrapyard.*"
+          },
+          {
+            "type": "rule",
+            "title": "How to attack these fast",
+            "text": "1. Read the opening phrase and ask **\"who or what is this describing?\"** 2. Look at the first noun after the comma. 3. If they do not match, the answer must be a choice that puts the right noun there. Because opening modifiers are rarely underlined, **the answer is usually the choice that changes the subject of the main clause.**"
+          },
+          {
+            "type": "example",
+            "prompt": "Having trained for eighteen months, *the marathon felt almost easy to Deshawn.*\nA. NO CHANGE\nB. the marathon was almost easy for Deshawn.\nC. Deshawn found the marathon almost easy.\nD. it was almost easy for Deshawn to run the marathon.",
+            "work": [
+              "Who trained for eighteen months? Deshawn.",
+              "A and B put \"the marathon\" right after the comma — the marathon did not train.",
+              "D puts \"it,\" which is not the trainer either.",
+              "C puts \"Deshawn\" immediately after the comma."
+            ],
+            "answer": "**C.** With a dangling modifier, ignore style entirely and choose the option whose first word names the actor from the modifier."
+          },
+          {
+            "type": "rule",
+            "title": "Misplaced limiting words",
+            "text": "Words like **only, just, nearly, almost, even, hardly** change meaning depending on placement. *She **only** ate the salad* (did nothing but eat it) vs. *She ate **only** the salad* (nothing else). Place the limiter directly before what it limits."
+          },
+          {
+            "type": "example",
+            "prompt": "The volunteers handed out flyers to commuters *printed on recycled paper.*",
+            "work": [
+              "\"printed on recycled paper\" sits next to \"commuters.\"",
+              "Commuters are not printed. The flyers are.",
+              "Move the modifier beside \"flyers.\""
+            ],
+            "answer": "***The volunteers handed out flyers printed on recycled paper to commuters.*** Misplaced modifiers at the END of a sentence are just as common as dangling ones at the start — and easier to miss."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Passive voice hides the actor and creates dangling modifiers: *After reviewing the data, the conclusion was revised.* Who reviewed? Nobody named.",
+              "A modifier is not fixed by adding commas. It must be **moved**, or the main clause’s subject must change.",
+              "\"Based on\" is a modifier too: ✗ *Based on the survey, the committee’s decision was announced.* The decision was not based on the survey — well, arguably, but ACT wants the actor."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "*Sprinting for the closing doors, ____*",
+            "choices": [
+              "the subway train pulled away without her.",
+              "her backpack caught on the turnstile.",
+              "she caught the turnstile with her backpack.",
+              "the turnstile snagged her backpack."
+            ],
+            "answer": 2,
+            "explain": "Only C places a person — \"she\" — immediately after the modifier. A train, a backpack, and a turnstile cannot sprint."
+          }
+        ]
+      },
+      {
+        "id": "eng-parallelism",
+        "topic": "parallelism",
+        "title": "Parallel Structure",
+        "summary": "Items in a list, comparison, or correlative pair must share grammatical form.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The rule",
+            "text": "Elements joined by **and, or, but,** or a correlative pair must be in the **same grammatical form**: all nouns, all -ing words, all infinitives, all prepositional phrases, all clauses. Mixing forms is a parallelism error."
+          },
+          {
+            "type": "example",
+            "prompt": "The internship involves *drafting memos, client interviews, and to file case documents.*",
+            "work": [
+              "Item 1: \"drafting memos\" — gerund phrase.",
+              "Item 2: \"client interviews\" — noun phrase.",
+              "Item 3: \"to file case documents\" — infinitive phrase.",
+              "Three different forms. Pick one and apply it to all three."
+            ],
+            "answer": "***drafting memos, interviewing clients, and filing case documents.*** Line the items up vertically to see the mismatch — that visual check catches parallelism errors far faster than reading."
+          },
+          {
+            "type": "rule",
+            "title": "Correlative conjunctions",
+            "text": "These come in fixed pairs and demand identical structure after each half: **not only... but also**, **either... or**, **neither... nor**, **both... and**, **not... but**, **whether... or**. *She was not only the youngest applicant but also the most qualified.* (noun phrase / noun phrase ✓)"
+          },
+          {
+            "type": "example",
+            "prompt": "The policy *not only reduced emissions but it also lowered costs.*\nA. NO CHANGE\nB. not only reduced emissions but also lowered costs\nC. reduced not only emissions but it also lowered costs\nD. not only reduced emissions but lowered also costs",
+            "work": [
+              "After \"not only\" comes a verb phrase: \"reduced emissions.\"",
+              "So after \"but also\" we need a verb phrase too: \"lowered costs.\"",
+              "A inserts \"it,\" breaking the parallel by starting a new clause.",
+              "C misaligns the pair; D scrambles word order."
+            ],
+            "answer": "**B.** Test correlatives by covering the pair words: \"reduced emissions / lowered costs\" — both verb phrases. ✓"
+          },
+          {
+            "type": "rule",
+            "title": "Parallel comparisons",
+            "text": "You must compare like things. ✗ *The population of Lagos is larger than Nairobi.* (compares a population to a city) ✓ *The population of Lagos is larger than **that of** Nairobi.* Look for \"than\" and \"as\" and check both sides."
+          },
+          {
+            "type": "example",
+            "prompt": "Her paintings sold faster than *the other students in the program.*",
+            "work": [
+              "Left side of \"than\": her paintings.",
+              "Right side: the other students — people, not paintings.",
+              "Insert \"those of\" to compare paintings to paintings."
+            ],
+            "answer": "***...faster than those of the other students in the program.*** ACT tests illogical comparison in nearly every English section; scan every \"than\" and every \"compared to.\""
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Repeating a preposition: if the first item has one, all items should (*in the lab, in the field, and in the archive*) — or only the first should (*in the lab, field, and archive*). Do not mix.",
+              "Long items make mismatches hard to hear. Truncate each item to its first two words to compare forms.",
+              "Parallelism also applies across clauses in a sentence: *What she wanted was to travel, and what he wanted was stability* is fine; mixing an infinitive with a noun is the error to watch."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Which completes the sentence with correct parallelism? *The training emphasized speed, endurance, and ____.*",
+            "choices": [
+              "how to recover properly",
+              "proper recovery",
+              "recovering in a proper way",
+              "to recover properly"
+            ],
+            "answer": 1,
+            "explain": "\"speed\" and \"endurance\" are single nouns, so the third item must be a noun phrase: \"proper recovery.\" The other options shift to a clause, a gerund phrase, and an infinitive."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eng-usage",
+    "label": "Usage & Style",
+    "icon": "PenLine",
+    "pages": [
+      {
+        "id": "eng-idioms",
+        "topic": "idioms",
+        "title": "Idioms & Prepositions",
+        "summary": "The fixed word pairings ACT tests, plus the ones students miss most.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Idiom questions have no underlying rule — the correct preposition is simply the one English uses. ACT tests a predictable set. The good news: you already know most of them by ear, and the wrong choices usually sound audibly off when you isolate the phrase."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Correct",
+              "Not",
+              "Example"
+            ],
+            "rows": [
+              [
+                "different from",
+                "different than",
+                "Her method is different from his."
+              ],
+              [
+                "prefer X to Y",
+                "prefer X over/than Y",
+                "I prefer prose to poetry."
+              ],
+              [
+                "comply with",
+                "comply to",
+                "The lab must comply with new rules."
+              ],
+              [
+                "consist of",
+                "consist in/with",
+                "The kit consists of six tools."
+              ],
+              [
+                "capable of",
+                "capable to",
+                "The engine is capable of 400 hp."
+              ],
+              [
+                "insist on",
+                "insist to",
+                "She insisted on paying."
+              ],
+              [
+                "independent of",
+                "independent from",
+                "The finding is independent of sample size."
+              ],
+              [
+                "preoccupied with",
+                "preoccupied by",
+                "He was preoccupied with the deadline."
+              ],
+              [
+                "native to",
+                "native of (for species)",
+                "The species is native to Borneo."
+              ],
+              [
+                "in contrast to",
+                "in contrast of",
+                "In contrast to last year, sales rose."
+              ],
+              [
+                "agree with (a person)",
+                "agree to (a person)",
+                "I agree with Dr. Osei."
+              ],
+              [
+                "agree to (a plan)",
+                "agree with (a plan)",
+                "They agreed to the terms."
+              ],
+              [
+                "responsible for",
+                "responsible of",
+                "She is responsible for scheduling."
+              ],
+              [
+                "similar to",
+                "similar with",
+                "This case is similar to the first."
+              ],
+              [
+                "interested in",
+                "interested about",
+                "He is interested in geology."
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Verb + preposition changes meaning",
+            "text": "Some pairs are both real but mean different things — read for sense, not sound. *Wait **for** the bus* (await it) vs. *wait **on** a customer* (serve them). *Talk **to*** (one direction) vs. *talk **with*** (mutual). *Compare **to*** (assert likeness) vs. *compare **with*** (examine differences)."
+          },
+          {
+            "type": "example",
+            "prompt": "The revised protocol is not much *different than* the original.\nA. NO CHANGE\nB. different from\nC. differing than\nD. different to",
+            "work": [
+              "Isolate the phrase: \"different ___ the original.\"",
+              "Standard written English requires \"different from.\"",
+              "C changes the part of speech and breaks the sentence; D is British/informal usage."
+            ],
+            "answer": "**B — different from.** \"Different than\" is common in speech, which is exactly why ACT uses it as the tempting NO CHANGE."
+          },
+          {
+            "type": "rule",
+            "title": "Gerund vs. infinitive after a verb",
+            "text": "Certain verbs take **-ing**: *enjoy, avoid, consider, finish, deny, suggest, recommend, risk, practice*. Others take **to + verb**: *want, hope, decide, agree, plan, refuse, offer, promise, manage*. ✗ *She avoided to answer.* ✓ *She avoided answering.*"
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Do not \"fix\" an idiom that is already correct because a different preposition sounds more formal.",
+              "Watch for choices that change the preposition AND something else — check the whole choice, not just the preposition.",
+              "Regional usage is not tested. If a phrase is common where you live but not standard written English, ACT counts it wrong."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Which is standard written English?",
+            "choices": [
+              "The board complied to the auditor’s recommendations.",
+              "The board complied with the auditor’s recommendations.",
+              "The board complied for the auditor’s recommendations.",
+              "The board complied at the auditor’s recommendations."
+            ],
+            "answer": 1,
+            "explain": "\"Comply\" always takes \"with.\" A useful memory hook: you comply *with* a rule, the way you go *with* someone."
+          }
+        ]
+      },
+      {
+        "id": "eng-wordiness",
+        "topic": "wordiness",
+        "title": "Wordiness & Redundancy",
+        "summary": "The most reliable point-scoring pattern on the entire English section.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The default rule",
+            "text": "When two or more choices are grammatically correct and convey the same information, **the shortest one is the answer**. ACT states concision as a scoring criterion. This single heuristic resolves a large share of Conventions questions with no analysis at all."
+          },
+          {
+            "type": "list",
+            "title": "Redundancy — saying the same thing twice",
+            "items": [
+              "✗ *the reason is because* → ✓ *the reason is that* / *because*",
+              "✗ *return back, repeat again, revert back, refer back* → ✓ *return, repeat, revert, refer*",
+              "✗ *past history, future plans, end result, final outcome* → ✓ *history, plans, result, outcome*",
+              "✗ *each and every, first and foremost, various different, unexpected surprise* → pick one word",
+              "✗ *at 3 a.m. in the morning* → ✓ *at 3 a.m.*",
+              "✗ *a total of 40 different species in all* → ✓ *40 species*"
+            ]
+          },
+          {
+            "type": "list",
+            "title": "Wordiness — padding that adds nothing",
+            "items": [
+              "*due to the fact that* → **because**",
+              "*in spite of the fact that* → **although**",
+              "*at this point in time* → **now**",
+              "*in the event that* → **if**",
+              "*has the ability to* → **can**",
+              "*is in a position to* → **can**",
+              "*it is important to note that* → **[delete]**",
+              "*there is a possibility that* → **may / might**",
+              "*in order to* → **to**"
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "Because of the fact that the ferry was delayed, we *arrived at the island late, later than we had planned to arrive.*\nA. NO CHANGE\nB. arrived at the island later than planned.\nC. arrived late at the island, behind our planned arrival time.\nD. arrived at the island.",
+            "work": [
+              "A says \"late\" and \"later than we had planned\" — the same idea twice.",
+              "C repeats it too, just with different words.",
+              "D deletes meaningful information (that they were late), so it is not equivalent.",
+              "B keeps the full meaning in the fewest words."
+            ],
+            "answer": "**B.** Note that D is the shortest — but \"shortest wins\" only applies among choices that preserve the **same meaning**. Never delete real content to save words."
+          },
+          {
+            "type": "example",
+            "prompt": "The archaeologist, *who was a person that specialized in* Iron Age metallurgy, examined the hoard.\nA. NO CHANGE\nB. who specialized in\nC. specializing in\nD. a specialist in",
+            "work": [
+              "\"a person that\" is empty — \"archaeologist\" already tells us it is a person.",
+              "B, C, and D are all grammatical and equivalent in meaning.",
+              "Count words: B = 3, C = 2, D = 3."
+            ],
+            "answer": "**C — specializing in.** When several correct choices remain, count words. On a real ACT the shorter equivalents would not all appear; here C is the tightest phrasing that keeps the nonessential-modifier structure intact."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "\"Shortest wins\" applies only when the choices are otherwise equal. A short choice that creates a fragment or drops required information is wrong.",
+              "DELETE / OMIT is a real option and is correct more often than students expect — but only when the deleted words add nothing.",
+              "Beware \"fancy\" padding: *utilize* is not better than *use*; *in a rapid manner* is not better than *rapidly*."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Which is the best revision of *\"The committee met together in order to discuss the annual yearly budget\"*?",
+            "choices": [
+              "The committee met together to discuss the annual budget.",
+              "The committee met to discuss the annual budget.",
+              "The committee met in order to discuss the yearly annual budget.",
+              "The committee, meeting together, discussed the annual yearly budget."
+            ],
+            "answer": 1,
+            "explain": "\"met together\" is redundant (meeting implies together), \"in order to\" reduces to \"to,\" and \"annual yearly\" says the same thing twice. B removes all three redundancies without losing meaning."
+          }
+        ]
+      },
+      {
+        "id": "eng-diction",
+        "topic": "word choice",
+        "title": "Word Choice, Diction & Register",
+        "summary": "Commonly confused words and matching tone to the passage.",
+        "minutes": 5,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Register",
+            "text": "Match the passage’s formality. A scholarly passage about coral bleaching should not contain *\"the reefs got totally wrecked.\"* A first-person memoir should not suddenly turn bureaucratic. When a question asks which choice \"best maintains the tone of the passage,\" look at the vocabulary in the surrounding non-underlined sentences and match its level."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Word",
+              "Means",
+              "Confused with"
+            ],
+            "rows": [
+              [
+                "affect (v.)",
+                "to influence",
+                "effect (n.) = a result"
+              ],
+              [
+                "effect (v.)",
+                "to bring about",
+                "affect"
+              ],
+              [
+                "than",
+                "comparison",
+                "then = time/sequence"
+              ],
+              [
+                "fewer",
+                "countable items",
+                "less = uncountable amount"
+              ],
+              [
+                "number",
+                "countable",
+                "amount = uncountable"
+              ],
+              [
+                "between",
+                "two things",
+                "among = three or more"
+              ],
+              [
+                "accept",
+                "to receive",
+                "except = excluding"
+              ],
+              [
+                "principal",
+                "chief; a school leader",
+                "principle = a rule or belief"
+              ],
+              [
+                "complement",
+                "completes something",
+                "compliment = praise"
+              ],
+              [
+                "cite",
+                "to quote a source",
+                "site = a place / sight = vision"
+              ],
+              [
+                "lose",
+                "to misplace",
+                "loose = not tight"
+              ],
+              [
+                "imply",
+                "the speaker suggests",
+                "infer = the listener concludes"
+              ],
+              [
+                "precede",
+                "to come before",
+                "proceed = to continue"
+              ],
+              [
+                "elicit",
+                "to draw out",
+                "illicit = illegal"
+              ],
+              [
+                "adapt",
+                "to adjust",
+                "adopt = to take on"
+              ],
+              [
+                "ensure",
+                "to make certain",
+                "insure = to cover financially"
+              ]
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "The new filtration system had a noticeable *affect* on water clarity.",
+            "work": [
+              "Is the word acting as a noun or a verb? \"a noticeable ___\" — it follows an article and adjective, so it is a noun.",
+              "The noun form is \"effect.\""
+            ],
+            "answer": "**effect.** The 95% shortcut: **a**ffect = **a**ction (verb), **e**ffect = **e**nd result (noun). The rare exceptions (*affect* as a noun in psychology, *effect* as a verb meaning \"bring about\") are not what ACT is testing."
+          },
+          {
+            "type": "example",
+            "prompt": "There were *less* volunteers this year than last, though the *amount* of hours donated rose.",
+            "work": [
+              "Volunteers are countable → \"fewer.\"",
+              "Hours are countable → \"number of hours.\""
+            ],
+            "answer": "***Fewer volunteers... the number of hours.*** Countable nouns take *fewer* and *number*; mass nouns take *less* and *amount* (*less water*, *the amount of rain*)."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Do not choose a word because it is more impressive. If the simpler word is accurate, it wins.",
+              "Watch for choices that are near-synonyms but carry the wrong connotation: *stubborn* vs. *persistent*, *cheap* vs. *inexpensive*.",
+              "Tone questions are about the **passage**, not about what sounds good generally."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A passage written in formal academic prose describes a research setback. Which underlined replacement best fits?",
+            "choices": [
+              "The results were a total disaster.",
+              "The results were pretty bad, honestly.",
+              "The results fell well short of expectations.",
+              "The results were a bummer for everybody."
+            ],
+            "answer": 2,
+            "explain": "Only C maintains formal academic register. The others use colloquial or conversational phrasing that clashes with the surrounding prose — the exact error ACT tone questions test."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eng-rhetoric",
+    "label": "Rhetorical Skills",
+    "icon": "Lightbulb",
+    "pages": [
+      {
+        "id": "eng-transitions",
+        "topic": "transitions",
+        "title": "Transitions: Read Both Sides",
+        "summary": "Cover the transition, identify the logical relationship, then choose.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The method",
+            "text": "Never evaluate a transition by reading it. **Cover it up.** Read the sentence before and the sentence after, then decide what relationship connects them: same direction, opposite direction, cause, example, sequence, or emphasis. Only then look at the choices."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Relationship",
+              "Signal words"
+            ],
+            "rows": [
+              [
+                "Addition / same direction",
+                "also, moreover, furthermore, in addition, similarly, likewise"
+              ],
+              [
+                "Contrast / opposite direction",
+                "however, but, yet, nevertheless, nonetheless, on the other hand, conversely, still, instead, although"
+              ],
+              [
+                "Cause → effect",
+                "therefore, thus, consequently, as a result, hence, so, accordingly"
+              ],
+              [
+                "Effect ← cause",
+                "because, since, for"
+              ],
+              [
+                "Example",
+                "for example, for instance, specifically, in particular, notably"
+              ],
+              [
+                "Sequence / time",
+                "first, next, then, meanwhile, subsequently, finally, afterward"
+              ],
+              [
+                "Concession",
+                "admittedly, granted, of course, to be sure"
+              ],
+              [
+                "Emphasis / restatement",
+                "indeed, in fact, that is, in other words"
+              ]
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "Solar installation costs fell 70% between 2010 and 2020. *Therefore,* adoption in rural counties lagged well behind cities.\nA. NO CHANGE\nB. Consequently,\nC. Nevertheless,\nD. In addition,",
+            "work": [
+              "Cover the transition. Sentence 1: costs dropped sharply. Sentence 2: rural adoption still lagged.",
+              "Cheaper solar should have driven adoption up — the second sentence goes AGAINST that expectation.",
+              "So we need contrast.",
+              "A and B both signal cause-effect; D signals addition. Only C signals contrast."
+            ],
+            "answer": "**C — Nevertheless.** Note that A and B mean the same thing, so neither can be the answer. **Whenever two choices are synonyms, eliminate both immediately** — a powerful shortcut on transition questions."
+          },
+          {
+            "type": "example",
+            "prompt": "The vaccine required cold storage at −70°C. *For example,* distribution to remote clinics proved logistically difficult.\nChoose: A. NO CHANGE\nB. As a result,\nC. However,\nD. Similarly,",
+            "work": [
+              "Sentence 2 is not an example of cold storage — it is what cold storage caused.",
+              "The relationship is cause → effect."
+            ],
+            "answer": "**B — As a result.** Students often pick \"For example\" whenever the second sentence is more specific. Specificity is not exemplification; ask whether sentence 2 *illustrates* sentence 1 or *follows from* it."
+          },
+          {
+            "type": "rule",
+            "title": "DELETE is an option",
+            "text": "If the choices include deleting the transition, consider whether any connector is needed at all. If the sentences are simply sequential narration, a transition can be unnecessary padding — and ACT rewards removing it."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Do not pick a transition because it appeared earlier in the passage. Each one is judged locally.",
+              "\"However\" is not a general-purpose transition. Use it only for genuine contrast.",
+              "Watch for transitions at the start of a **paragraph** — those must connect to the previous paragraph’s main idea, not just its last sentence."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Sentence 1: *The mill closed in 1998, eliminating 400 jobs.* Sentence 2: *____ the town’s population fell by nearly a third over the next decade.* Best transition?",
+            "choices": [
+              "Nevertheless,",
+              "For instance,",
+              "Consequently,",
+              "On the other hand,"
+            ],
+            "answer": 2,
+            "explain": "Job losses causing population decline is a cause-effect relationship. \"Nevertheless\" and \"On the other hand\" signal contrast; \"For instance\" would require sentence 2 to be an example of the closure."
+          }
+        ]
+      },
+      {
+        "id": "eng-add-delete",
+        "topic": "adding/deleting",
+        "title": "Adding, Deleting & Revising Sentences",
+        "summary": "Relevance is the only criterion. Interesting is not relevant.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The controlling question",
+            "text": "For every add/delete question ask: **does this sentence serve the main idea of THIS paragraph?** Not the passage generally, not whether it is true, not whether it is interesting — whether it advances the specific point this paragraph is making."
+          },
+          {
+            "type": "p",
+            "text": "These questions come with a built-in answer structure: two choices say Yes with reasons, two say No with reasons. Decide **Yes or No first**, which halves the choices instantly. Then pick the reason that is factually accurate about the passage."
+          },
+          {
+            "type": "example",
+            "prompt": "A paragraph explains how the Dust Bowl drove farmers west. The writer is considering adding: *\"Oklahoma became the 46th state in 1907.\"* Should it be added?\nF. Yes, because it provides background on Oklahoma.\nG. Yes, because it explains why farmers left.\nH. No, because it interrupts the discussion of migration with an unrelated fact.\nJ. No, because the essay has already stated when Oklahoma became a state.",
+            "work": [
+              "Is statehood relevant to why farmers migrated? No.",
+              "Eliminate F and G.",
+              "Between H and J: J claims the essay already said this. That is a factual claim about the passage — if it did not, J is wrong.",
+              "H gives the accurate reason: irrelevance."
+            ],
+            "answer": "**H.** Wrong \"No\" answers usually give a *false* reason (\"the essay already stated...\"). Wrong \"Yes\" answers usually praise the detail as interesting or informative. The right answer names the actual relationship to the paragraph."
+          },
+          {
+            "type": "rule",
+            "title": "Deletion questions",
+            "text": "\"If the writer were to delete the underlined portion, the essay would primarily lose...\" — the answer describes **what specific function** the phrase performed: a detail that illustrates, a comparison that clarifies, a transition that links. If the phrase truly added nothing, the answer will say the essay would lose \"nothing of significance\" — and that is a real, correct answer sometimes."
+          },
+          {
+            "type": "example",
+            "prompt": "Underlined: *\"—roughly the weight of a paperclip—\"* in a sentence about a hummingbird’s egg. If deleted, the essay would primarily lose:\nA. a technical measurement that establishes the writer’s expertise.\nB. a comparison that helps readers grasp the egg’s size.\nC. an example of another animal’s egg.\nD. a transition to the next paragraph.",
+            "work": [
+              "What is the phrase doing? Converting an abstract measurement into a familiar object.",
+              "C is factually false — a paperclip is not an animal.",
+              "D is false — it does not transition.",
+              "A misdescribes the purpose: it is not about expertise."
+            ],
+            "answer": "**B.** Deletion questions test whether you can name a phrase’s **function**, not judge its quality. Answer choices that flatter the writer (\"establishes expertise,\" \"demonstrates knowledge\") are almost always wrong."
+          },
+          {
+            "type": "rule",
+            "title": "\"Which choice best...\" questions",
+            "text": "The stem is a literal instruction. If it says \"provides the most specific detail,\" the answer is the one with numbers, names, or concrete nouns. If it says \"most effectively emphasizes the danger,\" the answer must mention danger. **Underline the key word in the stem and check each choice against it — not against general quality.**"
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Choosing the most interesting or best-written sentence instead of the one that answers the stem.",
+              "Forgetting that \"Yes/No\" reasons must be **factually accurate about the passage**, not just plausible.",
+              "Adding information that is true but belongs in a different paragraph."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A question asks: \"Which choice most effectively emphasizes the scale of the restoration project?\" Which answer is likely correct?",
+            "choices": [
+              "The project was carefully planned by a dedicated team.",
+              "The project restored 12,000 acres across four counties.",
+              "The project was widely praised by local residents.",
+              "The project began in the spring of that year."
+            ],
+            "answer": 1,
+            "explain": "The stem asks for scale, so the answer must contain magnitude — acres and counties. The others describe planning, reception, and timing: all fine sentences, none responsive to the instruction."
+          }
+        ]
+      },
+      {
+        "id": "eng-order",
+        "topic": "sentence order",
+        "title": "Sentence & Paragraph Order",
+        "summary": "Follow the pronouns, the transitions, and the introduced-then-referenced chain.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The logic-chain method",
+            "text": "Correct order is determined by dependencies, not by style. A sentence containing **\"this,\" \"these,\" \"such,\" \"the [previously mentioned] X,\" \"he/she/it,\" \"another,\" \"also,\"** or **\"instead\"** must come *after* whatever it refers to. Find those pointer words and you can usually place every sentence."
+          },
+          {
+            "type": "example",
+            "prompt": "Order these:\n(1) *This shift transformed how the paper covered city hall.*\n(2) *In 1994, the Herald hired its first full-time investigative reporter.*\n(3) *Within two years, the paper had published three exposés on municipal contracts.*",
+            "work": [
+              "Sentence 1 opens with \"This shift\" — it must follow whatever the shift was.",
+              "Sentence 2 introduces the hiring — that is the shift. So 2 before 1.",
+              "Sentence 3 gives a consequence with a time marker (\"Within two years\") that depends on the 1994 anchor."
+            ],
+            "answer": "**2, 1, 3.** Rule of thumb: the sentence that can be understood with no prior context goes first. Every sentence containing a backward-pointing word goes after its referent."
+          },
+          {
+            "type": "rule",
+            "title": "Paragraph placement",
+            "text": "For \"the best placement for Paragraph X,\" check (a) what the paragraph’s **first sentence** refers back to, and (b) what its **last sentence** sets up. A paragraph opening with \"Despite these setbacks\" must follow a paragraph describing setbacks. A paragraph ending on a question must be followed by the answer."
+          },
+          {
+            "type": "example",
+            "prompt": "Paragraph 4 opens: *\"The second method proved far more reliable.\"* Where should it go?",
+            "work": [
+              "\"The second method\" requires a first method to have been described.",
+              "Find the paragraph that introduces method one.",
+              "Paragraph 4 goes immediately after it — and before any paragraph that compares both."
+            ],
+            "answer": "Immediately after the paragraph introducing the first method. **Ordinal language (\"the second,\" \"another,\" \"finally\") is the single most reliable placement clue on the ACT.**"
+          },
+          {
+            "type": "rule",
+            "title": "Sentence placement inside a paragraph",
+            "text": "When asked where a sentence \"would most logically be placed,\" insert it at each proposed point and read the two sentences around it. The correct spot is where **both** the preceding and following sentences flow. Students often check only the sentence before."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Do not reorder based on chronology alone — a passage may deliberately open with a later event.",
+              "\"Place before Sentence 1\" is a real option and is correct when the sentence provides framing or definition.",
+              "After choosing, quickly re-read the whole paragraph in the new order. A choice that fixes one seam often breaks another."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A sentence begins *\"Neither approach, however, addressed the underlying cost.\"* Where must it go?",
+            "choices": [
+              "First in the paragraph, as a topic sentence",
+              "After both approaches have been described",
+              "Before either approach is described, to preview them",
+              "Anywhere, since \"however\" works in any position"
+            ],
+            "answer": 1,
+            "explain": "\"Neither approach\" refers back to two things already introduced, and \"however\" signals a contrast with what preceded. Both pointers require prior context, so the sentence must follow the descriptions of both approaches."
+          }
+        ]
+      },
+      {
+        "id": "eng-purpose",
+        "topic": "writers purpose",
+        "title": "Writer’s Purpose & Whole-Essay Questions",
+        "summary": "The last question of a passage: did the essay accomplish a stated goal?",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The format",
+            "text": "Most passages end with a question like: *\"Suppose the writer’s goal had been to write a brief essay explaining how X influenced Y. Would this essay accomplish that goal?\"* Two choices say Yes, two say No. Decide **Yes or No first** by comparing the stated goal to the essay’s actual main idea, then verify the reason."
+          },
+          {
+            "type": "p",
+            "text": "The trick is that the goal in the stem is often **narrower or different** from what the essay actually did. An essay that describes a scientist’s career does not accomplish the goal of \"explaining the chemical mechanism she discovered,\" even though both concern the same person."
+          },
+          {
+            "type": "example",
+            "prompt": "Goal: *\"to describe the challenges of restoring a historic theater.\"* The essay narrated the theater’s history from 1921 to today, mentioning restoration only in the final paragraph. Would it accomplish the goal?\nA. Yes, because it discusses the theater in detail.\nB. Yes, because it mentions the restoration.\nC. No, because it focuses on the theater’s history rather than on restoration challenges.\nD. No, because it does not name the restoration architects.",
+            "work": [
+              "Does the essay’s MAIN focus match \"challenges of restoring\"? No — restoration is one paragraph out of several.",
+              "Eliminate A and B.",
+              "D gives a reason that is irrelevant — naming architects was never required."
+            ],
+            "answer": "**C.** The right \"No\" answer names the **mismatch between the essay’s actual focus and the stated goal**. Wrong \"No\" answers invent a missing detail that the goal never asked for."
+          },
+          {
+            "type": "rule",
+            "title": "How to answer these fast",
+            "text": "You do not need to re-read the passage. As you read each paragraph the first time, mentally tag it with two or three words (\"theater built 1921,\" \"vaudeville era,\" \"decline,\" \"restoration begins\"). At the final question, scan your tags against the stated goal. That takes ten seconds instead of two minutes."
+          },
+          {
+            "type": "example",
+            "prompt": "Goal: *\"to explain why a scientific consensus shifted.\"* The essay described the old view, the new evidence, and the debate that followed. Yes or No?",
+            "work": [
+              "Old view → new evidence → debate → shift. That is a causal explanation of a shift.",
+              "The essay’s structure directly matches the goal."
+            ],
+            "answer": "**Yes** — and the correct reason will describe the structure (\"because it traces the evidence that led researchers to revise their earlier position\"), not merely assert that the essay is well written or informative."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Reasons that are true about the essay but do not address the goal are wrong. Both halves must hold.",
+              "Reasons that praise the writing (\"because it is engaging and well organized\") are almost never correct.",
+              "Do not answer based on whether the essay is good. Answer based on whether it did the specific job named."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "An essay profiles a chef’s childhood and career. The goal stated is \"to explain the techniques behind a regional cuisine.\" The answer is most likely:",
+            "choices": [
+              "Yes, because the chef cooks that cuisine",
+              "Yes, because the essay is about food",
+              "No, because the essay focuses on the chef’s life rather than on culinary techniques",
+              "No, because the essay does not include recipes"
+            ],
+            "answer": 2,
+            "explain": "The essay’s focus (a biography) does not match the stated goal (explaining techniques). C names that mismatch. D invents a requirement — \"recipes\" were never part of the goal."
+          }
+        ]
+      }
+    ]
+  }
+]

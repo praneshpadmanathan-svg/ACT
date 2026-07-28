@@ -1,0 +1,483 @@
+[
+  {
+    "id": "sci-foundations",
+    "label": "Foundations",
+    "icon": "Compass",
+    "pages": [
+      {
+        "id": "sci-overview",
+        "topic": "strategy",
+        "title": "The Science Section, Decoded",
+        "summary": "40 questions, 40 minutes, optional section. Why this is a reading-graphs test.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "p",
+            "text": "On the Enhanced ACT, Science is **optional** — you choose whether to take it, and it does **not** count toward your composite score (the composite is the average of English, Math, and Reading). It produces its own 1–36 score, and some colleges and scholarship programs still look at it, especially for STEM applicants."
+          },
+          {
+            "type": "rule",
+            "title": "Should you take it?",
+            "text": "Take Science if you are applying to STEM programs, if any target school still asks for it, or if it is one of your stronger sections and you want another data point. Skip it if you are certain no school on your list uses it and the extra 40 minutes of fatigue would hurt nothing else. **Check each school’s policy** — this varies widely and changes year to year."
+          },
+          {
+            "type": "rule",
+            "title": "The central insight",
+            "text": "ACT Science is a **data interpretation** test wearing a lab coat. You need almost no outside science knowledge. What you need is the ability to read a graph fast, track a variable across two figures, and notice when an experiment changed exactly one thing."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Passage type",
+              "How many",
+              "Questions each",
+              "Feel"
+            ],
+            "rows": [
+              [
+                "Data Representation",
+                "2–3",
+                "5–6",
+                "Graphs and tables with a short intro. Fastest."
+              ],
+              [
+                "Research Summaries",
+                "2–3",
+                "6–7",
+                "Two or three related experiments. Design questions."
+              ],
+              [
+                "Conflicting Viewpoints",
+                "1",
+                "6–7",
+                "Two or more scientists disagree. Reading-heavy, slowest."
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Pacing: 40 questions, 40 minutes",
+            "text": "Roughly **5 minutes per passage** across 6–7 passages. **Do Conflicting Viewpoints last** — it takes 8–9 minutes and contains no figures, so it plays by different rules. Bank time on the Data Representation passages, which many students finish in 3.5 minutes."
+          },
+          {
+            "type": "list",
+            "title": "The four habits of a high Science scorer",
+            "items": [
+              "**Do not read the intro paragraph first.** Look at the figures, note the axes and units, then go straight to the questions. Return to the text only when a question requires it.",
+              "**Circle the variable and the units** in every question stem before searching the figure.",
+              "**Trends beat values.** Most questions ask \"as X increases, what happens to Y\" — you rarely need an exact number.",
+              "**When a question names a term you do not know, ignore the term.** It is a label; the data still answers the question."
+            ]
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Reading the passage like a Reading passage. That costs 3 minutes you do not have.",
+              "Misreading an axis — check whether a scale is linear or logarithmic, and whether it starts at zero.",
+              "Assuming a science fact you learned in class overrides what the data shows. The data always wins."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A question refers to \"the concentration of chlorophyll a\" and you have never studied photosynthesis. What should you do?",
+            "choices": [
+              "Skip the question — it requires outside knowledge",
+              "Treat \"chlorophyll a\" as a label and find that column or curve in the figure",
+              "Guess based on general biology intuition",
+              "Read the entire passage to learn what it means"
+            ],
+            "answer": 1,
+            "explain": "Unfamiliar terminology on ACT Science is almost always just a label on an axis, a column header, or a curve. Locate it in the figure and read the data. Fewer than 4 of the 40 questions require any real outside knowledge."
+          }
+        ]
+      },
+      {
+        "id": "sci-graphs",
+        "topic": "reading data",
+        "title": "Reading Graphs & Tables Fast",
+        "summary": "A repeatable 15-second procedure for any figure, plus trends and interpolation.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The 15-second figure scan",
+            "text": "For every figure, before reading any question: **(1)** What is on the **x-axis**, with units? **(2)** What is on the **y-axis**, with units? **(3)** What does each **line, bar, or column** represent (check the legend)? **(4)** What is the overall **direction** — rising, falling, peaking, flat? Write nothing; just answer those four silently."
+          },
+          {
+            "type": "rule",
+            "title": "Direct vs. inverse relationships",
+            "text": "**Direct:** as x increases, y increases (line slopes up). **Inverse:** as x increases, y decreases (line slopes down). Most trend questions are asking only for this. If a curve rises then falls, describe both halves separately — ACT loves the peak."
+          },
+          {
+            "type": "example",
+            "prompt": "A graph shows enzyme activity (y) vs. temperature (x). Activity rises from 10°C to 37°C, peaks at 37°C, then falls sharply through 60°C. A question asks: \"As temperature increased from 40°C to 55°C, enzyme activity:\"",
+            "work": [
+              "The question restricts you to the 40–55°C window.",
+              "That window is entirely past the 37°C peak.",
+              "In that region the curve is falling."
+            ],
+            "answer": "**Decreased.** The critical skill is **restricting your attention to the stated window**. A student who answers from the overall shape (\"it rises then falls\") gets tangled; a student who looks only at 40–55°C answers in three seconds."
+          },
+          {
+            "type": "rule",
+            "title": "Interpolation and extrapolation",
+            "text": "**Interpolate** = estimate a value *between* data points; the answer must lie between the neighboring values. **Extrapolate** = extend the trend *beyond* the data; continue the established direction. Both are common, and both are answerable without any calculation — just bracket the answer between known values."
+          },
+          {
+            "type": "example",
+            "prompt": "A table shows: at 20 g/L the reaction took 45 s; at 30 g/L it took 31 s. Approximately how long would the reaction take at 25 g/L?",
+            "work": [
+              "25 lies between 20 and 30, so the time must lie between 31 and 45 seconds.",
+              "Roughly midway → about 38 seconds.",
+              "Any choice outside 31–45 can be eliminated instantly."
+            ],
+            "answer": "**≈ 38 seconds.** You did not need the relationship to be linear — you only needed it to be **monotonic**, which the two data points establish. Bracketing eliminates most choices before any arithmetic."
+          },
+          {
+            "type": "list",
+            "title": "Figure features that trip students up",
+            "items": [
+              "**Two y-axes.** One on the left, one on the right, each for a different curve. Check which axis a curve belongs to before reading a value.",
+              "**Log scales.** Gridlines at 1, 10, 100, 1000. Equal spacing means multiplication, not addition.",
+              "**Axes that do not start at zero.** A dramatic-looking rise can be a 2% change.",
+              "**Inverted axes.** In geology and oceanography, depth often increases downward.",
+              "**Error bars.** If two bars' error ranges overlap, the difference may not be meaningful."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "A question asks: \"According to Figure 2, at which pH was solubility greatest?\" There are three curves for three compounds.",
+            "work": [
+              "Check whether the question names a compound. If not, it asks about the whole figure.",
+              "\"Greatest solubility\" = highest point on the y-axis.",
+              "Find the peak of the relevant curve, then read straight DOWN to the x-axis."
+            ],
+            "answer": "Read the **peak** vertically down to the x-axis. A common error is reading the peak’s y-value (the solubility) when the question asked for the x-value (the pH). **Circle whether the question wants the input or the output** before you look."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Reading the wrong curve when several are similar. Trace it with your finger or pencil tip.",
+              "Ignoring units: g vs. mg, s vs. min, °C vs. K. Answer choices exploit unit confusion.",
+              "Confusing \"increased the most\" (largest change) with \"was greatest\" (highest value)."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A graph’s y-axis runs from 98 to 102 and a bar rises from 99 to 101. What is the most accurate description?",
+            "choices": [
+              "The value roughly doubled",
+              "The value increased by about 2%",
+              "The value increased dramatically",
+              "The value increased by 2 units, about 2%"
+            ],
+            "answer": 3,
+            "explain": "A truncated axis exaggerates small changes visually. From 99 to 101 is 2 units, roughly a 2% increase — accurate on both counts. Choice B omits the absolute change and choice A misreads the axis entirely."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sci-passtypes",
+    "label": "Passage Types",
+    "icon": "FlaskConical",
+    "pages": [
+      {
+        "id": "sci-data-rep",
+        "topic": "data representation",
+        "title": "Data Representation Passages",
+        "summary": "The fastest points on the section — pure figure reading.",
+        "minutes": 5,
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Data Representation passages present **graphs, tables, or diagrams** with a brief introduction and 5–6 questions. There is no experiment to evaluate — just data to read. These should be your fastest passages, around **3.5–4 minutes each**, banking time for Conflicting Viewpoints."
+          },
+          {
+            "type": "list",
+            "title": "The question types, in rough frequency order",
+            "items": [
+              "**Point read:** \"According to Table 1, what was the mass at 40°C?\" Find the row, find the column, read the cell.",
+              "**Trend:** \"As pressure increased, volume...\" Read the direction of the curve.",
+              "**Comparison:** \"Which sample had the highest yield?\" Scan for the extreme.",
+              "**Interpolation/extrapolation:** \"At 25 units, the value would be closest to...\"",
+              "**Two-figure integration:** \"According to Figures 1 and 2, at the temperature where X peaked, Y was...\" Two lookups chained.",
+              "**Calculation:** a simple difference, ratio, or percent using values from the figure."
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Two-figure questions: the bridge value",
+            "text": "These look hard and are mechanical. **Step 1:** use Figure 1 to find the bridge value (usually an x-value). **Step 2:** carry that value to Figure 2 and read the answer. Write the bridge value down — losing it mid-lookup is the only way to miss these."
+          },
+          {
+            "type": "example",
+            "prompt": "Figure 1: absorbance vs. wavelength for Dye X, peaking at 520 nm. Figure 2: transmittance vs. wavelength for the same dye. Question: \"At the wavelength of maximum absorbance for Dye X, transmittance was approximately:\"",
+            "work": [
+              "Figure 1 → find the peak of the absorbance curve → 520 nm. That is the bridge value.",
+              "Write down \"520.\"",
+              "Figure 2 → locate 520 nm on the x-axis → read the transmittance value there.",
+              "Since high absorbance means light is absorbed rather than passing through, expect a LOW transmittance."
+            ],
+            "answer": "Read Figure 2 at **520 nm**; the answer will be near the curve’s minimum. The physical reasoning at the end is a free sanity check — if your lookup gave a high transmittance, you misread an axis."
+          },
+          {
+            "type": "rule",
+            "title": "Reading tables efficiently",
+            "text": "Put one finger on the row label and one on the column header and slide them together. It looks slow and it eliminates the single most common Science error: reading the adjacent row."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Answering from the wrong trial or wrong sample. Question stems name a specific one.",
+              "Missing a units row in a table header (e.g., \"Mass (× 10⁻³ g)\").",
+              "Rushing a calculation question. They are rare, so they are worth the extra 20 seconds."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A question asks about \"the trial with the greatest increase in yield.\" Where do you look?",
+            "choices": [
+              "The trial with the highest final yield",
+              "The trial with the largest change from start to end",
+              "The trial listed last in the table",
+              "The trial with the highest starting yield"
+            ],
+            "answer": 1,
+            "explain": "\"Greatest increase\" is about the size of the *change*, not the size of the final value. A trial going 10 → 40 (increase of 30) beats one going 60 → 70 (increase of 10) even though the second ends higher. This distinction appears on nearly every Science section."
+          }
+        ]
+      },
+      {
+        "id": "sci-research",
+        "topic": "research summaries",
+        "title": "Research Summaries & Experimental Design",
+        "summary": "Variables, controls, and the \"what would you do next\" question.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Research Summaries describe **two or three related experiments** and ask you to compare them, identify what was varied, and evaluate design. These questions require slightly more thought than Data Representation, but they follow a small, predictable set of patterns."
+          },
+          {
+            "type": "rule",
+            "title": "The vocabulary you must own",
+            "text": "**Independent variable** — what the experimenter deliberately changes. **Dependent variable** — what is measured in response. **Control** — a trial with no treatment, used as a baseline for comparison. **Constant (controlled variable)** — everything deliberately held the same so the comparison is fair."
+          },
+          {
+            "type": "rule",
+            "title": "The one-difference principle",
+            "text": "Well-designed experiments change **exactly one variable** between trials. So when a question asks *\"How did Experiment 2 differ from Experiment 1?\"* — find the single thing that changed. And when a question asks *\"Why did the researchers include Trial 4?\"* — the answer is almost always **to serve as a control** or **to isolate the effect of one variable**."
+          },
+          {
+            "type": "example",
+            "prompt": "Experiment 1: seedlings grown at 5 light intensities, all at 22°C, measuring growth. Experiment 2: same 5 light intensities, all at 30°C. Question: \"The experiments were designed to test the effect of:\"",
+            "work": [
+              "Within each experiment, light intensity varies → light is one independent variable.",
+              "Between the experiments, temperature changes (22 vs. 30) → temperature is the second.",
+              "Growth is measured in both → dependent variable."
+            ],
+            "answer": "**The effect of light intensity AND temperature on growth.** When a second experiment repeats the first with one condition altered, the design is testing whether that altered condition **changes the relationship** found in Experiment 1 — an interaction, not just a separate effect."
+          },
+          {
+            "type": "example",
+            "prompt": "An experiment tests a fertilizer at 4 concentrations. A fifth pot receives water only. What is the purpose of the fifth pot?",
+            "work": [
+              "It receives none of the treatment being tested.",
+              "It establishes what happens with no fertilizer at all.",
+              "Without it you cannot tell whether the fertilizer helped or the plants would have grown anyway."
+            ],
+            "answer": "**It is the control**, establishing a baseline. Any answer choice describing \"a trial with no treatment used for comparison\" is the control — and this is one of the most frequently asked Science questions."
+          },
+          {
+            "type": "rule",
+            "title": "\"What would you do next\" questions",
+            "text": "These ask which additional trial would best test a new question. The correct answer **changes only the variable in question and holds everything else constant**. Eliminate any choice that changes two things at once — it would make the result uninterpretable."
+          },
+          {
+            "type": "example",
+            "prompt": "Trials used copper wire at 20°C in lengths of 1, 2, and 3 m. To test whether the material matters, the next trial should use:\nA. aluminum wire, 2 m, 20°C\nB. aluminum wire, 5 m, 40°C\nC. copper wire, 2 m, 40°C\nD. copper wire, 4 m, 20°C",
+            "work": [
+              "We want to isolate MATERIAL, so material must change and everything else must match an existing trial.",
+              "A: material changes; length 2 m and temp 20°C match an existing copper trial. ✓",
+              "B changes three things. C changes temperature, not material. D changes only length."
+            ],
+            "answer": "**A.** The test is mechanical: **exactly one variable different from an existing trial, and it must be the variable named in the question.**"
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Confusing independent and dependent variables. The independent one is on the x-axis; the dependent one is measured.",
+              "Assuming a difference between trials is meaningful when the passage gives no comparison baseline.",
+              "Choosing a \"next experiment\" that is interesting but changes multiple variables."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Researchers test a drug at 3 doses plus a group receiving an inactive pill. The inactive-pill group is:",
+            "choices": [
+              "an independent variable",
+              "a control group",
+              "a dependent variable",
+              "a constant"
+            ],
+            "answer": 1,
+            "explain": "A group receiving no active treatment, used as a comparison baseline, is a control group. The dose is the independent variable, the measured outcome is the dependent variable, and constants are the conditions held identical across all groups."
+          }
+        ]
+      },
+      {
+        "id": "sci-conflicting",
+        "topic": "conflicting viewpoints",
+        "title": "Conflicting Viewpoints",
+        "summary": "The one reading-heavy passage. Track claims, not science.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Exactly **one** passage presents two or more scientists, students, or hypotheses **disagreeing** about the same phenomenon. There are usually no figures. This is the slowest passage on the section — budget **8–9 minutes** and do it **last**."
+          },
+          {
+            "type": "rule",
+            "title": "The method",
+            "text": "**(1)** Read the introduction carefully — it defines the phenomenon everyone is arguing about. **(2)** Read Viewpoint 1 and summarize its core claim in one sentence. **(3)** Read Viewpoint 2 and summarize it. **(4)** Explicitly name the **point of disagreement** — what single question do they answer differently? Almost every question flows from that."
+          },
+          {
+            "type": "rule",
+            "title": "Find the agreement too",
+            "text": "The scientists almost always **agree on the observed facts** and **disagree about the explanation**. A frequent question is *\"Both scientists would agree that...\"* — and the answer is the shared observation, usually stated in the introduction rather than in either viewpoint."
+          },
+          {
+            "type": "example",
+            "prompt": "Intro: a lake’s fish population dropped 60% between 1990 and 2010. Scientist 1: agricultural runoff caused algal blooms that depleted oxygen. Scientist 2: an introduced predator species is responsible. Question: \"Both scientists would most likely agree that:\"",
+            "work": [
+              "Their explanations conflict — runoff vs. predator.",
+              "But both accept the premise stated in the introduction.",
+              "The shared ground is the observation, not the cause."
+            ],
+            "answer": "**That the fish population declined substantially between 1990 and 2010.** For \"both would agree\" questions, look to the **introduction** first — the disputed explanations are in the viewpoints, but the agreed facts are usually in the setup."
+          },
+          {
+            "type": "list",
+            "title": "The five question types",
+            "items": [
+              "**Comprehension:** \"According to Scientist 1, what causes X?\" Pure retrieval from one viewpoint.",
+              "**Comparison:** \"Scientist 2 differs from Scientist 1 in that...\" Locate the disagreement.",
+              "**Agreement:** \"Both would agree that...\" Usually the shared observation.",
+              "**New evidence:** \"Which finding would most weaken Scientist 1?\" Find evidence contradicting that specific mechanism.",
+              "**Application:** \"Scientist 2 would predict that if Y happened, then...\" Apply their stated logic to a new case."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "Scientist 1 attributes the decline to oxygen depletion from algal blooms. Which finding would most weaken this view?\nA. Fish populations also declined in a nearby lake.\nB. Dissolved oxygen levels remained normal throughout the period.\nC. Agricultural activity increased after 1990.\nD. The introduced predator was first recorded in 1994.",
+            "work": [
+              "Scientist 1’s mechanism is: runoff → algae → LOW OXYGEN → fish die.",
+              "To weaken it, break a link in that specific chain.",
+              "B directly falsifies the oxygen step. ✓",
+              "C supports Scientist 1; D supports Scientist 2 without disproving Scientist 1; A is ambiguous."
+            ],
+            "answer": "**B.** \"Weaken\" questions target the **mechanism**, not the conclusion. Note that D — evidence *for* the rival — does not weaken Scientist 1, since both causes could operate at once. That distinction is the most commonly missed point on this passage type."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Deciding which scientist is right. You are never asked; you are asked what each one claims.",
+              "Attributing a claim to the wrong viewpoint. Label your margin V1 / V2 as you read.",
+              "Using outside knowledge to evaluate a hypothesis. Everything must come from the passage."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Evidence supporting Scientist 2’s hypothesis necessarily weakens Scientist 1’s hypothesis.",
+            "choices": [
+              "True — only one can be correct",
+              "False — both mechanisms could contribute simultaneously",
+              "True, but only for Conflicting Viewpoints passages",
+              "It depends on the field of science"
+            ],
+            "answer": 1,
+            "explain": "Unless the passage states the explanations are mutually exclusive, supporting one does not refute the other. To weaken a hypothesis you must contradict a step in its own reasoning — which is exactly what \"weaken\" questions test."
+          }
+        ]
+      },
+      {
+        "id": "sci-outside",
+        "topic": "outside knowledge",
+        "title": "The Outside Knowledge Exceptions",
+        "summary": "The short list of facts ACT actually assumes you know.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Roughly **2–4 questions** per Science section require knowledge not stated in the passage. Everything below fits on one page, and it covers nearly all of them. If you know this list, you have closed the outside-knowledge gap entirely."
+          },
+          {
+            "type": "list",
+            "title": "Chemistry",
+            "items": [
+              "**pH:** below 7 = acidic, 7 = neutral, above 7 = basic. Lower pH means MORE acidic and higher H⁺ concentration. The scale is logarithmic: pH 4 is ten times more acidic than pH 5.",
+              "**States of matter:** solid → liquid = melting; liquid → gas = boiling/evaporation; gas → liquid = condensation; solid → gas = sublimation.",
+              "**Water:** freezes at 0°C (32°F), boils at 100°C (212°F) at sea level. Density about 1 g/mL. Ice is less dense than liquid water, so it floats.",
+              "**Atoms:** protons (positive) and neutrons (neutral) in the nucleus; electrons (negative) outside. Atomic number = number of protons.",
+              "**Density = mass / volume.** Denser substances sink in less dense fluids.",
+              "**Solubility** generally increases with temperature for solids in liquids, and decreases for gases in liquids."
+            ]
+          },
+          {
+            "type": "list",
+            "title": "Biology",
+            "items": [
+              "**Photosynthesis:** plants use CO₂ + water + light → glucose + O₂. **Cellular respiration** is the reverse: glucose + O₂ → CO₂ + water + energy.",
+              "**DNA** carries genetic information; it is made of nucleotides pairing A–T and C–G. **RNA** uses U instead of T.",
+              "**Cells:** plant cells have cell walls and chloroplasts; animal cells do not. Mitochondria produce energy.",
+              "**Food chains:** producers → primary consumers → secondary consumers. Energy decreases at each level.",
+              "**Enzymes** are proteins that speed reactions and work best at a specific temperature and pH; extreme heat denatures them.",
+              "**Natural selection:** traits that improve survival and reproduction become more common over generations."
+            ]
+          },
+          {
+            "type": "list",
+            "title": "Physics & Earth science",
+            "items": [
+              "**Speed = distance / time.** **Density = mass / volume.**",
+              "**Gravity** accelerates falling objects; heavier objects do not fall faster in a vacuum.",
+              "**Energy is conserved** — it changes form rather than disappearing. Kinetic = motion; potential = stored.",
+              "**Waves:** higher frequency = shorter wavelength. Visible light runs red (long wavelength) to violet (short).",
+              "**Rock types:** igneous (cooled magma), sedimentary (compressed layers), metamorphic (heat and pressure).",
+              "**In undisturbed rock layers, deeper = older** (the law of superposition).",
+              "**Seasons** are caused by Earth’s axial tilt, not by distance from the Sun."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "A table lists four solutions with pH 2.1, 5.4, 7.0, and 9.8. A question asks which is most acidic. The passage never defines pH.",
+            "work": [
+              "Outside knowledge required: lower pH = more acidic.",
+              "Lowest value listed is 2.1."
+            ],
+            "answer": "**pH 2.1.** This is the single most common outside-knowledge question on the ACT. Also remember it is logarithmic, so pH 2.1 is roughly a thousand times more acidic than pH 5.4 — occasionally tested directly."
+          },
+          {
+            "type": "rule",
+            "title": "How to spot one",
+            "text": "An outside-knowledge question is usually **short**, has **no figure reference**, and uses a term the passage never defines. If you scan the figures and genuinely cannot find the variable anywhere, stop searching — it is testing a fact, and this list probably contains it."
+          },
+          {
+            "type": "check",
+            "q": "A solution changes from pH 6 to pH 3. This means it became:",
+            "choices": [
+              "3 times more acidic",
+              "1,000 times more acidic",
+              "3 times more basic",
+              "1,000 times more basic"
+            ],
+            "answer": 1,
+            "explain": "The pH scale is logarithmic, so each unit is a factor of 10. Dropping 3 units is 10³ = 1,000 times more acidic. Lower pH always means more acidic, which rules out both \"more basic\" choices."
+          }
+        ]
+      }
+    ]
+  }
+]

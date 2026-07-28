@@ -1,0 +1,386 @@
+[
+  {
+    "id": "english",
+    "name": "ENGLISH",
+    "color": "#ffd23e",
+    "section": "English",
+    "boss": {
+      "id": "grammar_gauntlet",
+      "name": "THE GRAMMAR GAUNTLET",
+      "sub": "Full English battle"
+    },
+    "nodes": [
+      {
+        "id": "comma_castle",
+        "name": "COMMA CASTLE",
+        "sub": "Four jobs. No more.",
+        "topic": "commas",
+        "learn": [
+          "The only 4 legal comma jobs",
+          "Spotting comma splices fast",
+          "Appositives need PAIRS"
+        ]
+      },
+      {
+        "id": "apostrophe_alley",
+        "name": "APOSTROPHE ALLEY",
+        "sub": "Possession vs. plural.",
+        "topic": "apostrophes",
+        "learn": [
+          "Its vs. it's in 2 seconds",
+          "Plural possessives",
+          "The s' trap"
+        ]
+      },
+      {
+        "id": "fragment_forest",
+        "name": "FRAGMENT FOREST",
+        "sub": "Complete every thought.",
+        "topic": "fragments",
+        "learn": [
+          "Find the missing verb",
+          "Subordinator traps",
+          "Run-on rescue moves"
+        ]
+      },
+      {
+        "id": "dash_dungeon",
+        "name": "DASH DUNGEON",
+        "sub": "Flexible but symmetrical.",
+        "topic": "dashes",
+        "learn": [
+          "Paired dashes = paired commas",
+          "Colon announcement rule",
+          "Semicolon = period"
+        ]
+      },
+      {
+        "id": "verb_valley",
+        "name": "VERB VALLEY",
+        "sub": "Tense and agreement.",
+        "topic": "verb tense",
+        "learn": [
+          "Prepositional-phrase decoys",
+          "Timeline consistency",
+          "Irregular past participles"
+        ]
+      },
+      {
+        "id": "transition_tower",
+        "name": "TRANSITION TOWER",
+        "sub": "Connect the logic.",
+        "topic": "transitions",
+        "learn": [
+          "Contrast vs. cause words",
+          "Reading the sentence BEFORE",
+          "Deleting redundant links"
+        ]
+      },
+      {
+        "id": "pronoun_pass",
+        "name": "PRONOUN PASS",
+        "sub": "Match every pronoun.",
+        "topic": "pronouns"
+      },
+      {
+        "id": "modifier_marsh",
+        "name": "MODIFIER MARSH",
+        "sub": "Keep describers close.",
+        "topic": "modifiers"
+      },
+      {
+        "id": "parallel_pier",
+        "name": "PARALLEL PIER",
+        "sub": "Match the forms.",
+        "topic": "parallel structure"
+      }
+    ]
+  },
+  {
+    "id": "math",
+    "name": "MATH",
+    "color": "#3ad6f0",
+    "section": "Math",
+    "boss": {
+      "id": "number_crusher",
+      "name": "THE NUMBER CRUSHER",
+      "sub": "Full Math battle"
+    },
+    "nodes": [
+      {
+        "id": "equation_station",
+        "name": "EQUATION STATION",
+        "sub": "Isolate and conquer.",
+        "topic": "linear equations",
+        "learn": [
+          "One-variable speed solves",
+          "Slope from two points",
+          "Systems shortcuts"
+        ]
+      },
+      {
+        "id": "fraction_falls",
+        "name": "FRACTION FALLS",
+        "sub": "Parts of the whole.",
+        "topic": "fractions",
+        "learn": [
+          "Percent change without panic",
+          "Fraction of a fraction",
+          "Ratio scaling"
+        ]
+      },
+      {
+        "id": "geometry_grotto",
+        "name": "GEOMETRY GROTTO",
+        "sub": "Shapes hold secrets.",
+        "topic": "area & volume",
+        "learn": [
+          "Area formulas that repeat",
+          "Circles: the 3 facts",
+          "Volume by decomposition"
+        ]
+      },
+      {
+        "id": "function_foundry",
+        "name": "FUNCTION FOUNDRY",
+        "sub": "f(x) forged here.",
+        "topic": "functions",
+        "learn": [
+          "Plug-and-chase evaluation",
+          "Composition order",
+          "Graph shifts"
+        ]
+      },
+      {
+        "id": "trig_trench",
+        "name": "TRIG TRENCH",
+        "sub": "SOH CAH TOA depths.",
+        "topic": "trigonometry",
+        "learn": [
+          "Right-triangle ratios",
+          "Unit circle anchors",
+          "When to use law of sines"
+        ]
+      },
+      {
+        "id": "probability_peaks",
+        "name": "PROBABILITY PEAKS",
+        "sub": "Count every path.",
+        "topic": "probability",
+        "learn": [
+          "And vs. Or counting",
+          "Complement trick",
+          "Expected value"
+        ]
+      },
+      {
+        "id": "exponent_expanse",
+        "name": "EXPONENT EXPANSE",
+        "sub": "Powers and roots.",
+        "topic": "exponents"
+      },
+      {
+        "id": "quadratic_quarry",
+        "name": "QUADRATIC QUARRY",
+        "sub": "Factor and solve.",
+        "topic": "quadratics"
+      },
+      {
+        "id": "statistics_summit",
+        "name": "STATISTICS SUMMIT",
+        "sub": "Mean, median, mode.",
+        "topic": "statistics"
+      },
+      {
+        "id": "coordinate_cove",
+        "name": "COORDINATE COVE",
+        "sub": "Distance & midpoint.",
+        "topic": "coordinate geometry"
+      }
+    ]
+  },
+  {
+    "id": "reading",
+    "name": "READING",
+    "color": "#ff8298",
+    "section": "Reading",
+    "boss": {
+      "id": "passage_titan",
+      "name": "THE PASSAGE TITAN",
+      "sub": "Full Reading battle"
+    },
+    "nodes": [
+      {
+        "id": "vocab_vault",
+        "name": "VOCAB VAULT",
+        "sub": "Words in the wild.",
+        "topic": "vocabulary in context",
+        "learn": [
+          "Context beats definitions",
+          "Substitute-and-test method",
+          "Tone-matching"
+        ]
+      },
+      {
+        "id": "main_idea_meadow",
+        "name": "MAIN IDEA MEADOW",
+        "sub": "See the whole field.",
+        "topic": "main idea",
+        "learn": [
+          "First/last paragraph anchors",
+          "Too-broad vs. too-narrow traps",
+          "Author purpose"
+        ]
+      },
+      {
+        "id": "detail_desert",
+        "name": "DETAIL DESERT",
+        "sub": "Find the exact line.",
+        "topic": "detail",
+        "learn": [
+          "Line-reference speed hunting",
+          "Paraphrase matching",
+          "Distractor near-misses"
+        ]
+      },
+      {
+        "id": "inference_icefield",
+        "name": "INFERENCE ICEFIELD",
+        "sub": "Read between lines.",
+        "topic": "inference",
+        "learn": [
+          "Smallest-leap rule",
+          "Evidence chaining",
+          "Extreme-word elimination"
+        ]
+      },
+      {
+        "id": "viewpoint_vista",
+        "name": "VIEWPOINT VISTA",
+        "sub": "Two authors, one truth.",
+        "topic": "comparison",
+        "learn": [
+          "Mapping both passages",
+          "Agree/disagree grids",
+          "Voice separation"
+        ]
+      },
+      {
+        "id": "structure_span",
+        "name": "STRUCTURE SPAN",
+        "sub": "How it's built.",
+        "topic": "text structure"
+      },
+      {
+        "id": "tone_tundra",
+        "name": "TONE TUNDRA",
+        "sub": "The author's attitude.",
+        "topic": "tone"
+      },
+      {
+        "id": "evidence_estuary",
+        "name": "EVIDENCE ESTUARY",
+        "sub": "Prove it with the text.",
+        "topic": "evidence"
+      },
+      {
+        "id": "figurative_falls",
+        "name": "FIGURATIVE FALLS",
+        "sub": "Beyond the literal.",
+        "topic": "figurative language"
+      }
+    ]
+  },
+  {
+    "id": "science",
+    "name": "SCIENCE",
+    "color": "#b79cff",
+    "section": "Science",
+    "boss": {
+      "id": "lab_leviathan",
+      "name": "THE LAB LEVIATHAN",
+      "sub": "Full Science battle"
+    },
+    "nodes": [
+      {
+        "id": "data_delta",
+        "name": "DATA DELTA",
+        "sub": "Tables tell tales.",
+        "topic": "data representation",
+        "learn": [
+          "Axis-first reading",
+          "Trend spotting",
+          "Interpolation"
+        ]
+      },
+      {
+        "id": "graph_gorge",
+        "name": "GRAPH GORGE",
+        "sub": "Curves and crossings.",
+        "topic": "reading data",
+        "learn": [
+          "Multi-curve tracking",
+          "Intersection meaning",
+          "Unit conversion flags"
+        ]
+      },
+      {
+        "id": "experiment_expanse",
+        "name": "EXPERIMENT EXPANSE",
+        "sub": "Method matters.",
+        "topic": "research summaries",
+        "learn": [
+          "Variable identification",
+          "Control group logic",
+          "Design-change predictions"
+        ]
+      },
+      {
+        "id": "conflict_canyon",
+        "name": "CONFLICT CANYON",
+        "sub": "Scientists disagree.",
+        "topic": "conflicting viewpoints",
+        "learn": [
+          "Position mapping",
+          "Shared assumptions",
+          "Who would say what"
+        ]
+      },
+      {
+        "id": "outside_outpost",
+        "name": "OUTSIDE OUTPOST",
+        "sub": "Facts you must bring.",
+        "topic": "outside knowledge",
+        "learn": [
+          "The ~8 memorized facts",
+          "Photosynthesis & pH anchors",
+          "When NOT to use the passage"
+        ]
+      },
+      {
+        "id": "units_uplands",
+        "name": "UNITS UPLANDS",
+        "sub": "Read the units right.",
+        "topic": "units"
+      },
+      {
+        "id": "rates_ridge",
+        "name": "RATES RIDGE",
+        "sub": "Per-something reasoning.",
+        "topic": "rates"
+      },
+      {
+        "id": "hypothesis_hollow",
+        "name": "HYPOTHESIS HOLLOW",
+        "sub": "Predictions & models.",
+        "topic": "hypotheses"
+      },
+      {
+        "id": "calc_canyon",
+        "name": "CALCULATION CANYON",
+        "sub": "Math from the table.",
+        "topic": "calculating from data"
+      }
+    ]
+  }
+]

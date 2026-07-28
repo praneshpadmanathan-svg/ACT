@@ -1,0 +1,779 @@
+{
+  "comma_castle": {
+    "intro": "Commas aren't about where you'd 'pause' — they do only a few legal jobs. Learn the jobs and delete the rest.",
+    "rules": [
+      [
+        "The four legal comma jobs",
+        "A comma may separate a list, set off an intro element, join two sentences WITH a FANBOYS conjunction, or surround non-essential info. If it isn't doing one of those, cut it.",
+        "List: <i>apples, pears, and plums.</i>  Intro: <i>After lunch, we left.</i>"
+      ],
+      [
+        "Appositives come in pairs",
+        "Extra info that renames a noun needs a comma on BOTH sides — or none at all. Never just one.",
+        "<i>My brother, a pianist, won.</i> (comma before AND after)"
+      ],
+      [
+        "Kill the comma splice",
+        "Two complete sentences can't be glued with a comma alone. Use a period, a semicolon, or a comma + FANBOYS.",
+        "Wrong: <i>It rained, we left.</i>  Right: <i>It rained, so we left.</i>"
+      ]
+    ],
+    "trap": "Never put a single comma between a subject and its verb. <i>The tall man, ran.</i> is wrong."
+  },
+  "apostrophe_alley": {
+    "intro": "Apostrophes show possession or a contraction — they NEVER make a word plural.",
+    "rules": [
+      [
+        "Its vs. it's",
+        "it's = it is / it has. its = belonging to it (no apostrophe). Expand to 'it is' to test.",
+        "<i>The dog wagged its tail.</i>  <i>It's raining.</i>"
+      ],
+      [
+        "Singular vs. plural possessive",
+        "One owner: add 's (the dog's bone). Plural owner already ending in s: add just an apostrophe (the dogs' bones).",
+        "One boss: <i>boss's office.</i>  Many: <i>bosses' offices.</i>"
+      ],
+      [
+        "Plurals take no apostrophe",
+        "To make an ordinary plural, add s with no apostrophe.",
+        "Wrong: <i>apple's 50¢.</i>  Right: <i>apples 50¢.</i>"
+      ]
+    ],
+    "trap": "whose = possessive; who's = who is. Same test as its/it's."
+  },
+  "fragment_forest": {
+    "intro": "A real sentence needs a subject, a true verb, and a complete thought. Miss one and it's a fragment.",
+    "rules": [
+      [
+        "Find the main verb",
+        "An -ing word by itself is NOT a main verb. If nothing is actually happening in a standalone way, it's a fragment.",
+        "Fragment: <i>The team, working hard.</i>  Fixed: <i>The team worked hard.</i>"
+      ],
+      [
+        "Subordinators create dependence",
+        "because, although, since, while, if make a clause unable to stand alone — it must attach to a full sentence.",
+        "<i>Although it rained</i> needs a main clause to finish the thought."
+      ],
+      [
+        "Fix run-ons",
+        "Two sentences fused with nothing, or only a comma, is a run-on/splice. Separate or add comma + FANBOYS.",
+        "Run-on: <i>I ran I was late.</i>  Fixed: <i>I ran; I was late.</i>"
+      ]
+    ],
+    "trap": "A long phrase can still be a fragment. Length ≠ completeness — hunt for the real verb."
+  },
+  "dash_dungeon": {
+    "intro": "Dashes, colons, and semicolons look fancy but follow strict rules.",
+    "rules": [
+      [
+        "Dashes travel in pairs",
+        "A pair of dashes sets off non-essential info mid-sentence — like a pair of commas. Open with a dash, close with a dash.",
+        "<i>The plan — bold and risky — worked.</i>"
+      ],
+      [
+        "Colon = announcement",
+        "A colon must follow a COMPLETE sentence, then introduces a list, example, or explanation.",
+        "<i>She packed three things: a map, water, and boots.</i>"
+      ],
+      [
+        "Semicolon = period",
+        "A semicolon joins two complete, related sentences. If a period fits there, a semicolon is legal.",
+        "<i>It rained; the game was cancelled.</i>"
+      ]
+    ],
+    "trap": "The words BEFORE a colon must stand alone. <i>She packed: a map…</i> is illegal."
+  },
+  "verb_valley": {
+    "intro": "Two things get tested: does the verb match its subject, and is the tense consistent.",
+    "rules": [
+      [
+        "Ignore words between subject and verb",
+        "Cross out prepositional phrases; match the verb to the true subject.",
+        "<i>The box of nails IS heavy.</i> (box is, not nails)"
+      ],
+      [
+        "Keep tense consistent",
+        "Don't switch tenses without a reason; follow the passage's timeline.",
+        "Wrong: <i>He runs and then jumped.</i>  Right: <i>He ran and then jumped.</i>"
+      ],
+      [
+        "Singular sneaky subjects",
+        "each, every, everyone, neither, and 'the team' are singular.",
+        "<i>Everyone has a ticket.</i>  <i>Neither answer is right.</i>"
+      ]
+    ],
+    "trap": "In 'There is/are,' the subject comes AFTER the verb: <i>There ARE many reasons.</i>"
+  },
+  "transition_tower": {
+    "intro": "The right transition depends on the relationship between the ideas around it — so read both.",
+    "rules": [
+      [
+        "Read the sentence before AND after",
+        "Match the transition to how the two ideas relate, not to the single sentence it sits in.",
+        "Contrast → <i>however</i>; result → <i>therefore</i>; addition → <i>moreover</i>."
+      ],
+      [
+        "Know the categories",
+        "Contrast: however, but, yet, nevertheless. Cause/effect: therefore, thus, so. Addition: also, furthermore.",
+        "<i>Cheap; however, effective.</i> (contrast)"
+      ],
+      [
+        "Shorter usually wins",
+        "If a transition is redundant, delete it. The ACT rewards concision.",
+        "Wrong: <i>But however.</i>  Right: <i>However.</i>"
+      ]
+    ],
+    "trap": "Don't pick a word because it 'sounds smart' — match the logic (contrast vs. cause)."
+  },
+  "equation_station": {
+    "intro": "Linear algebra on the ACT is fast if you isolate the variable and know slope.",
+    "rules": [
+      [
+        "Isolate the variable",
+        "Undo operations in reverse: add/subtract first, then multiply/divide.",
+        "<i>3x − 7 = 14</i> → +7 → 3x=21 → ÷3 → <b>x=7</b>."
+      ],
+      [
+        "Slope = rise over run",
+        "Between (x₁,y₁) and (x₂,y₂): (y₂−y₁)/(x₂−x₁). In y=mx+b, m is slope, b is the y-intercept.",
+        "(2,3)&(6,11): (11−3)/(6−2)=8/4=<b>2</b>."
+      ],
+      [
+        "Systems: substitute or eliminate",
+        "Solve one equation for a variable and plug in, or add/subtract equations to cancel one.",
+        "x+y=10, x−y=4 → add → 2x=14 → x=7, y=3."
+      ]
+    ],
+    "trap": "Distribute before combining: <i>2(x+4)=18</i> → 2x+8=18. (Dividing by 2 first is faster.)"
+  },
+  "fraction_falls": {
+    "intro": "Fractions, percents, and ratios are the same skill in different clothing.",
+    "rules": [
+      [
+        "Percent change",
+        "change ÷ original × 100. 'Of' means multiply; 'is' means equals.",
+        "40→50: (10/40)×100 = <b>25%</b> increase."
+      ],
+      [
+        "Fraction of a fraction = multiply",
+        "'Half of a third' = ½ × ⅓ = ⅙.",
+        "⅔ of 90 = (2/3)×90 = <b>60</b>."
+      ],
+      [
+        "Ratios scale together",
+        "Multiply every part by the same number. In a:b, part a is a/(a+b) of the whole.",
+        "3:2 of 20 → 5 parts → each part 4 → <b>12 and 8</b>."
+      ]
+    ],
+    "trap": "A 20% rise then a 20% fall does NOT return to start: 1.2 × 0.8 = 0.96 (4% lower)."
+  },
+  "geometry_grotto": {
+    "intro": "Most ACT geometry reuses a small set of formulas and angle facts.",
+    "rules": [
+      [
+        "Core area formulas",
+        "Rectangle l×w. Triangle ½bh. Circle πr². Circumference 2πr.",
+        "Circle r=3: area 9π, circumference 6π."
+      ],
+      [
+        "Volume = base area × height",
+        "Box lwh. Cylinder πr²h. Break odd shapes into known pieces.",
+        "Cylinder r=2, h=5: π(4)(5)=20π."
+      ],
+      [
+        "Angle facts",
+        "Straight line 180°, triangle 180°, circle 360°. Parallel lines cut by a transversal make equal or supplementary angles.",
+        "Triangle with 90° and 55° → third = 35°."
+      ]
+    ],
+    "trap": "Diameter = 2r. Given diameter 10, use r=5 before πr²."
+  },
+  "function_foundry": {
+    "intro": "f(x) is just a machine: put a number in, follow the rule, read the number out.",
+    "rules": [
+      [
+        "f(x) means plug in",
+        "Replace every x with the input and compute.",
+        "f(x)=2x+1 → f(3)=2(3)+1=<b>7</b>."
+      ],
+      [
+        "Composition is inside-out",
+        "For f(g(x)), evaluate g first, then feed that into f.",
+        "g(x)=x+1, f(x)=x² → f(g(2))=f(3)=<b>9</b>."
+      ],
+      [
+        "Graph shifts",
+        "f(x)+k moves up k. f(x−h) moves RIGHT h — inside the parentheses is horizontal and opposite the sign.",
+        "y=(x−2)² shifts the parabola right 2."
+      ]
+    ],
+    "trap": "f(x−3) shifts RIGHT by 3, not left. Inside-the-parentheses changes go opposite the sign."
+  },
+  "trig_trench": {
+    "intro": "Right-triangle trig is three ratios and a couple of special triangles.",
+    "rules": [
+      [
+        "SOH-CAH-TOA",
+        "sin = opp/hyp, cos = adj/hyp, tan = opp/adj — all relative to the angle you're asked about.",
+        "opp=3, hyp=5 → sinθ = 3/5."
+      ],
+      [
+        "Know the triples",
+        "3-4-5 and 5-12-13 are right triangles. 45-45-90 → sides 1:1:√2. 30-60-90 → 1:√3:2.",
+        "Legs 3 and 4 → hypotenuse 5."
+      ],
+      [
+        "Radians & unit circle",
+        "180° = π radians. On the unit circle, cos is the x-coordinate, sin is the y-coordinate.",
+        "90° = π/2; sin90°=1, cos90°=0."
+      ]
+    ],
+    "trap": "Opp and adj are defined relative to the specific angle in the question — re-check which angle."
+  },
+  "probability_peaks": {
+    "intro": "Probability is a count: what you want over everything that could happen.",
+    "rules": [
+      [
+        "Probability = favorable ÷ total",
+        "Count the outcomes you want over all equally likely outcomes.",
+        "One 6 on a die → 1/6."
+      ],
+      [
+        "AND multiply, OR add",
+        "Independent events together → multiply. Mutually exclusive either/or → add.",
+        "Two heads: ½ × ½ = ¼."
+      ],
+      [
+        "Complement trick",
+        "P(at least one) = 1 − P(none). Usually far faster than listing cases.",
+        "At least one head in 2 flips: 1 − ¼ = ¾."
+      ]
+    ],
+    "trap": "Without replacement, the total shrinks each draw: 5/10 then 4/9, not 5/10 twice."
+  },
+  "vocab_vault": {
+    "intro": "The ACT tests what a word means in THIS sentence — often a second, quieter meaning.",
+    "rules": [
+      [
+        "Context beats the dictionary",
+        "Read the whole sentence; the fancy dictionary definition is often the trap.",
+        "<i>a novel solution</i> → novel = new, not a book."
+      ],
+      [
+        "Substitute and test",
+        "Cover the word, predict your own plain word, then match the closest option.",
+        "<i>a candid response</i> → predict 'honest' → pick honest."
+      ],
+      [
+        "Match the tone",
+        "Positive context needs a positive word; negative needs negative. Cut mismatched tone.",
+        "Praise context → eliminate negative choices."
+      ]
+    ],
+    "trap": "The hardest-looking word is usually a decoy. Pick the one that fits, not the fanciest."
+  },
+  "main_idea_meadow": {
+    "intro": "The main idea is the point of the WHOLE passage — not one detail, not the universe.",
+    "rules": [
+      [
+        "Anchor on first & last paragraphs",
+        "The thesis usually sits in the opening or closing lines — read those closely.",
+        "Topic sentence + conclusion often state the point."
+      ],
+      [
+        "Too broad vs. too narrow",
+        "The right answer covers the entire passage: not a single example, not all of humanity.",
+        "One example = too narrow; 'life itself' = too broad."
+      ],
+      [
+        "Author's purpose",
+        "Ask why it was written: to inform, argue, describe, or persuade.",
+        "An op-ed argues; a nature piece describes."
+      ]
+    ],
+    "trap": "A true detail can still be the WRONG answer if it isn't the main point."
+  },
+  "detail_desert": {
+    "intro": "Detail questions are open-book. The answer is right there — go get it.",
+    "rules": [
+      [
+        "Go back to the text",
+        "Reread the referenced line and its neighbors; never answer from memory.",
+        "<i>According to line 20…</i> → read line 20."
+      ],
+      [
+        "Match paraphrase, not wording",
+        "The right answer restates the text in different words; exact-word matches are often traps.",
+        "Text 'reluctant' → answer 'unwilling'."
+      ],
+      [
+        "Beware near-misses",
+        "Wrong answers swap one word (all→some, always→often). Check every word.",
+        "'always' vs. 'often' can flip the answer."
+      ]
+    ],
+    "trap": "Extreme words — always, never, all, none — are usually wrong unless the text says exactly that."
+  },
+  "inference_icefield": {
+    "intro": "An inference is a tiny step past the text — strongly implied, never a wild guess.",
+    "rules": [
+      [
+        "Take the smallest leap",
+        "The right answer is barely beyond the words on the page.",
+        "<i>She sighed and closed the book.</i> → she's finished/tired, not 'she hates reading forever.'"
+      ],
+      [
+        "Support with a specific line",
+        "If you can't point to the sentence that forces it, it's wrong.",
+        "Find the line that makes the conclusion unavoidable."
+      ],
+      [
+        "Eliminate extremes",
+        "Cross out options that are too strong or reach beyond the passage.",
+        "'may suggest' beats 'proves' on the ACT."
+      ]
+    ],
+    "trap": "'Could be true' isn't enough — the answer must be BEST supported by the passage."
+  },
+  "viewpoint_vista": {
+    "intro": "Paired passages test whether you can keep two voices straight and compare them.",
+    "rules": [
+      [
+        "Map each author first",
+        "Before comparing, jot each author's main claim and tone in a word or two.",
+        "A: pro-technology. B: cautious."
+      ],
+      [
+        "Agree vs. disagree",
+        "Questions ask where they'd agree, clash, or how one would answer the other.",
+        "Both value X, but split on Y."
+      ],
+      [
+        "Keep the voices separate",
+        "Track which idea belongs to which passage; don't blend them.",
+        "Attribute every opinion to the right author."
+      ]
+    ],
+    "trap": "An answer true for Passage A may be false for B — check BOTH before choosing 'both authors.'"
+  },
+  "data_delta": {
+    "intro": "Data questions are a scavenger hunt. Read the labels, then find the number.",
+    "rules": [
+      [
+        "Read axes and columns first",
+        "Note what each axis or column measures and its units before anything else.",
+        "x = temperature (°C), y = yield (g)."
+      ],
+      [
+        "Name the trend",
+        "State the direction. The ACT loves 'increases, then decreases' (a peak).",
+        "4.1 → 6.8 → 9.0 → 7.2 = rises then falls."
+      ],
+      [
+        "Interpolate between points",
+        "For an in-between value, estimate between the two nearest results — never outside the range.",
+        "At 35°: between 30°(6.8) and 40°(9.0) ≈ 7.9."
+      ]
+    ],
+    "trap": "Don't bring outside science — the answer is in the table/graph unless told otherwise."
+  },
+  "graph_gorge": {
+    "intro": "Graphs add curves and crossings, but the reading skill is the same.",
+    "rules": [
+      [
+        "Track one curve at a time",
+        "Use the legend and follow the single labeled curve you need.",
+        "Find the 'Trial 2' line, then read its y at the given x."
+      ],
+      [
+        "Intersections mean 'equal'",
+        "Where two curves cross, the two quantities are equal at that x-value.",
+        "Curves cross at x=5 → both equal there."
+      ],
+      [
+        "Mind units and scale",
+        "Check axis units and whether the scale is even; watch for jumps.",
+        "If x goes 0, 10, 100, the scale isn't linear."
+      ]
+    ],
+    "trap": "Read the value off the CORRECT axis — swapping x and y is the classic error."
+  },
+  "experiment_expanse": {
+    "intro": "Every experiment question is really about variables and controls.",
+    "rules": [
+      [
+        "Name the variables",
+        "Independent = what they change. Dependent = what they measure. Control/constant = what stays the same.",
+        "Changing temp, measuring yield → temp is independent."
+      ],
+      [
+        "Why a control group?",
+        "The control is the no-treatment baseline that isolates the effect.",
+        "A no-drug group shows what happens without the drug."
+      ],
+      [
+        "Predict design changes",
+        "If one variable changes, use the existing trend to predict the result.",
+        "Higher temp raised yield → a hotter trial likely reads higher."
+      ]
+    ],
+    "trap": "Only ONE variable should change between trials. If two changed, you can't isolate a cause."
+  },
+  "conflict_canyon": {
+    "intro": "Conflicting-viewpoints passages are a debate. Know each side's claim.",
+    "rules": [
+      [
+        "Summarize each viewpoint",
+        "One line per scientist: what they think and why.",
+        "Sci 1: the cause is A. Sci 2: the cause is B."
+      ],
+      [
+        "Find the shared assumption",
+        "Note what both agree on — questions usually hinge on the disagreement.",
+        "Both agree it happened; they differ on the cause."
+      ],
+      [
+        "Who would say what",
+        "Match new evidence to the viewpoint it supports or weakens.",
+        "Evidence favoring A strengthens Scientist 1."
+      ]
+    ],
+    "trap": "Don't merge the theories — each answer must fit ONE scientist's specific view."
+  },
+  "outside_outpost": {
+    "intro": "A handful of science facts are fair game. Memorize the few, then trust the data.",
+    "rules": [
+      [
+        "The must-know facts",
+        "pH < 7 acidic, > 7 basic. Density = mass/volume. Photosynthesis: CO₂ + light → O₂.",
+        "pH 3 is acidic; pH 10 is basic."
+      ],
+      [
+        "Water & cell basics",
+        "Water freezes at 0°C, boils at 100°C. Mitochondria make energy; DNA stores information.",
+        "Ice → water at 0°C."
+      ],
+      [
+        "Use facts only when asked",
+        "Most questions live in the passage. Reach for outside knowledge only when the question needs it.",
+        "If the graph answers it, don't overthink."
+      ]
+    ],
+    "trap": "Don't override clear passage data with a half-remembered fact — the data wins."
+  },
+  "pronoun_pass": {
+    "intro": "A pronoun must clearly match its noun in number and use the right case.",
+    "rules": [
+      [
+        "Agree in number",
+        "Singular nouns need singular pronouns. each, everyone, a company are singular.",
+        "<i>Each student brought his or her book</i> (not 'their' on the ACT)."
+      ],
+      [
+        "Subject vs. object case",
+        "I/he/she/they are subjects; me/him/her/them are objects. Remove the other person to test.",
+        "<i>between you and me</i> — try 'between me,' not 'between I.'"
+      ],
+      [
+        "One clear antecedent",
+        "Every pronoun must point to ONE obvious noun; vague it/they/this is wrong.",
+        "<i>The car hit the pole, and it broke.</i> — which broke? Fix it."
+      ]
+    ],
+    "trap": "who = subject, whom = object. <i>To whom</i> — whom is the object of 'to.'"
+  },
+  "modifier_marsh": {
+    "intro": "A modifier must sit right next to the word it describes, or the sentence says something absurd.",
+    "rules": [
+      [
+        "Kill danglers",
+        "An opening phrase must describe the subject right after the comma.",
+        "Wrong: <i>Running late, the bus was missed.</i>  Right: <i>Running late, I missed the bus.</i>"
+      ],
+      [
+        "Place limiters carefully",
+        "only, almost, just change meaning by position — put them next to what they limit.",
+        "<i>I ate only one</i> vs. <i>I only ate one.</i>"
+      ],
+      [
+        "Keep describers close",
+        "Long phrases drift; move them beside the noun they modify.",
+        "<i>cookies for the kids on paper plates</i> — who's on plates?"
+      ]
+    ],
+    "trap": "After an intro phrase, the FIRST noun must be the thing doing the action."
+  },
+  "parallel_pier": {
+    "intro": "Items joined in a list or by and/or must share the same grammatical form.",
+    "rules": [
+      [
+        "Match verb forms",
+        "Keep a list all -ing, all 'to ___', or all plain.",
+        "<i>hiking, swimming, and biking</i> (not 'to bike')."
+      ],
+      [
+        "Match correlative pairs",
+        "not only…but also, either…or need parallel parts.",
+        "<i>not only fast but also cheap.</i>"
+      ],
+      [
+        "Compare like to like",
+        "Comparisons must be parallel.",
+        "<i>Her score is higher than his score.</i>"
+      ]
+    ],
+    "trap": "Check every item against the first — one mismatch breaks parallelism."
+  },
+  "exponent_expanse": {
+    "intro": "Exponent rules turn scary powers into quick arithmetic.",
+    "rules": [
+      [
+        "Multiply add, divide subtract",
+        "xᵃ·xᵇ = xᵃ⁺ᵇ; xᵃ/xᵇ = xᵃ⁻ᵇ.",
+        "x³·x² = x⁵."
+      ],
+      [
+        "Power of a power multiplies",
+        "(xᵃ)ᵇ = xᵃᵇ. Also x⁰ = 1 and x⁻ⁿ = 1/xⁿ.",
+        "(x²)³ = x⁶; 5⁰ = 1."
+      ],
+      [
+        "Roots are fractional powers",
+        "√x = x^(1/2); ∛x = x^(1/3).",
+        "√(x⁴) = x²."
+      ]
+    ],
+    "trap": "A negative exponent means reciprocal, NOT a negative number: 2⁻² = 1/4."
+  },
+  "quadratic_quarry": {
+    "intro": "Most ACT quadratics factor cleanly or fall to the formula.",
+    "rules": [
+      [
+        "Factor to find roots",
+        "Find two numbers that multiply to c and add to b.",
+        "x²+5x+6 = (x+2)(x+3) → x = −2, −3."
+      ],
+      [
+        "Zero-product rule",
+        "If (x−a)(x−b) = 0, then x = a or x = b.",
+        "(x−4)(x+1) = 0 → x = 4 or −1."
+      ],
+      [
+        "Formula backup",
+        "x = [−b ± √(b²−4ac)] / 2a when it won't factor.",
+        "The discriminant b²−4ac counts the real roots."
+      ]
+    ],
+    "trap": "Set the equation to 0 first. x² = 9 has TWO answers: x = 3 AND x = −3."
+  },
+  "statistics_summit": {
+    "intro": "Know the three averages and how an outlier moves them.",
+    "rules": [
+      [
+        "Mean = add ÷ count",
+        "Sum the values, divide by how many.",
+        "2, 4, 9 → 15/3 = 5."
+      ],
+      [
+        "Median = middle",
+        "Sort first, then take the middle (or average the two middles).",
+        "1, 3, 7, 9 → (3+7)/2 = 5."
+      ],
+      [
+        "Mode = most frequent",
+        "The value that shows up most.",
+        "2, 2, 5, 7 → mode 2."
+      ]
+    ],
+    "trap": "An outlier pulls the MEAN a lot but barely moves the MEDIAN."
+  },
+  "coordinate_cove": {
+    "intro": "The coordinate plane has two must-know formulas.",
+    "rules": [
+      [
+        "Distance = Pythagoras",
+        "d = √[(x₂−x₁)² + (y₂−y₁)²].",
+        "(0,0)&(3,4): √(9+16) = 5."
+      ],
+      [
+        "Midpoint = average",
+        "M = ((x₁+x₂)/2, (y₁+y₂)/2).",
+        "(2,4)&(6,8) → (4,6)."
+      ],
+      [
+        "Slope sign",
+        "Uphill left→right positive; downhill negative; flat 0; vertical undefined.",
+        "A line falling to the right has negative slope."
+      ]
+    ],
+    "trap": "Distance needs the SQUARE root at the end — don't forget it."
+  },
+  "structure_span": {
+    "intro": "Questions ask how a passage is organized or how a part functions.",
+    "rules": [
+      [
+        "Spot the pattern",
+        "problem→solution, cause→effect, compare/contrast, chronological.",
+        "A history piece is often chronological."
+      ],
+      [
+        "Role of a paragraph",
+        "Ask its job: introduce, support, counter, or conclude.",
+        "A middle paragraph often backs the thesis with an example."
+      ],
+      [
+        "Transitions map structure",
+        "however = shift; for example = support; finally = conclusion.",
+        "<i>In contrast</i> marks a compare/contrast move."
+      ]
+    ],
+    "trap": "A 'function' question asks WHY a line is there, not what it literally says."
+  },
+  "tone_tundra": {
+    "intro": "Tone is the author's attitude, shown through word choice.",
+    "rules": [
+      [
+        "Word choice reveals tone",
+        "Positive, negative, or neutral? Loaded words give it away.",
+        "<i>meddling</i> = negative; <i>devoted</i> = positive."
+      ],
+      [
+        "Match, don't exaggerate",
+        "Most ACT tone is mild: appreciative, skeptical — not furious.",
+        "Prefer 'critical' over 'enraged.'"
+      ],
+      [
+        "Judge the whole passage",
+        "Overall attitude beats one dramatic line.",
+        "One harsh word doesn't make the tone 'angry.'"
+      ]
+    ],
+    "trap": "Extreme tone words (hateful, overjoyed) are usually wrong — the ACT stays moderate."
+  },
+  "evidence_estuary": {
+    "intro": "Some questions ask which line best supports an answer.",
+    "rules": [
+      [
+        "Answer, then find proof",
+        "Decide your answer, then pick the line that most directly proves it.",
+        "The best evidence states the claim almost outright."
+      ],
+      [
+        "Direct beats vague",
+        "Choose the clearly supporting line, not one loosely related.",
+        "Skip lines that are merely 'about the topic.'"
+      ],
+      [
+        "Paired questions link",
+        "In 2-part questions, the evidence must match YOUR part-1 answer.",
+        "If it doesn't fit, reconsider part 1."
+      ]
+    ],
+    "trap": "If no line supports your part-1 answer, that answer is probably wrong."
+  },
+  "figurative_falls": {
+    "intro": "The ACT sometimes asks what an image or comparison means.",
+    "rules": [
+      [
+        "Metaphor & simile stand for ideas",
+        "Read what the comparison represents, not the literal words.",
+        "<i>a sea of troubles</i> = many troubles."
+      ],
+      [
+        "Use the surrounding lines",
+        "Context tells you what the figure means here.",
+        "A 'storm' might mean conflict, not weather."
+      ],
+      [
+        "Match the image's tone",
+        "A warm image implies a positive idea; a dark one, negative.",
+        "<i>a beacon</i> suggests hope or guidance."
+      ]
+    ],
+    "trap": "Don't take figurative language literally — pick the meaning, not the picture."
+  },
+  "units_uplands": {
+    "intro": "Half of science mistakes are really unit mistakes.",
+    "rules": [
+      [
+        "Always check the unit",
+        "Note the unit on each axis or column before comparing.",
+        "g vs. mg matters — 1 g = 1000 mg."
+      ],
+      [
+        "Convert with the right factor",
+        "Watch prefixes: kilo = ×1000, milli = ÷1000.",
+        "2 km = 2000 m."
+      ],
+      [
+        "Bigger unit, smaller number",
+        "The same amount is a smaller number in a bigger unit.",
+        "500 cm = 5 m."
+      ]
+    ],
+    "trap": "Never compare values in different units — convert to the same unit first."
+  },
+  "rates_ridge": {
+    "intro": "Rates compare two quantities: miles per hour, grams per trial.",
+    "rules": [
+      [
+        "Rate = amount ÷ time",
+        "Divide to find the 'per.'",
+        "120 miles in 2 h = 60 mph."
+      ],
+      [
+        "Predict by multiplying",
+        "Multiply the rate by the new amount.",
+        "At 60 mph, 3 h → 180 miles."
+      ],
+      [
+        "Mind the rate's units",
+        "'per hour' vs. 'per minute' changes everything.",
+        "60 mph = 1 mile per minute."
+      ]
+    ],
+    "trap": "Match units before multiplying — don't mix hours with minutes."
+  },
+  "hypothesis_hollow": {
+    "intro": "Science questions test whether results support a prediction.",
+    "rules": [
+      [
+        "A hypothesis is testable",
+        "It predicts a result you can check with data.",
+        "<i>More light → more growth</i> is testable."
+      ],
+      [
+        "Support vs. contradict",
+        "Compare the data to the prediction: match or not?",
+        "If growth rose with light, the data supports it."
+      ],
+      [
+        "Models simplify reality",
+        "A model is a useful approximation and can be updated.",
+        "New results can revise a model."
+      ]
+    ],
+    "trap": "Data that fits a prediction 'supports' it — it doesn't 'prove' it forever."
+  },
+  "calc_canyon": {
+    "intro": "Some data questions want a quick calculation, not just a lookup.",
+    "rules": [
+      [
+        "Find the values first",
+        "Locate the exact numbers in the table before computing.",
+        "Read Trial 2 and Trial 4 yields."
+      ],
+      [
+        "Difference and percent",
+        "Subtract for change; divide by the original for percent change.",
+        "6→9: change 3, percent 50%."
+      ],
+      [
+        "Average across trials",
+        "Add the values and divide by how many.",
+        "(4+6+8)/3 = 6."
+      ]
+    ],
+    "trap": "Use the exact rows asked about — don't average the whole table by accident."
+  }
+}

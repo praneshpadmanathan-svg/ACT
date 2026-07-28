@@ -1,0 +1,17 @@
+{
+  "name": "ACT Command",
+  "short_name": "ACT Command",
+  "description": "Gamified prep for the 2025+ Enhanced ACT.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0718",
+  "theme_color": "#0b0718",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

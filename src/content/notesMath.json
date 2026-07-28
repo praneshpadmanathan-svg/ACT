@@ -1,0 +1,2149 @@
+[
+  {
+    "id": "math-strategy",
+    "label": "Strategy",
+    "icon": "Compass",
+    "pages": [
+      {
+        "id": "math-overview",
+        "topic": "strategy",
+        "title": "The Math Section, Decoded",
+        "summary": "45 questions, 50 minutes, 4 choices each. What is tested and how to pace it.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "p",
+            "text": "The Enhanced ACT Math section is **45 questions in 50 minutes** — about **66 seconds per question**, the most generous per-question timing on the test. Questions have **4 answer choices** (down from 5 on the old ACT), which meaningfully improves the value of guessing and of elimination strategies. A calculator is permitted throughout."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Content area",
+              "Roughly how many questions"
+            ],
+            "rows": [
+              [
+                "Pre-algebra & number properties",
+                "7–9"
+              ],
+              [
+                "Elementary & intermediate algebra",
+                "10–13"
+              ],
+              [
+                "Functions",
+                "5–7"
+              ],
+              [
+                "Coordinate geometry",
+                "5–7"
+              ],
+              [
+                "Plane geometry",
+                "7–9"
+              ],
+              [
+                "Trigonometry",
+                "3–5"
+              ],
+              [
+                "Probability, statistics & counting",
+                "4–6"
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Difficulty ramps",
+            "text": "Questions get harder roughly in order. Questions 1–15 are mostly one-step; 16–30 require two or three steps; 31–45 include the multi-concept problems. **Budget your time backwards**: aim to finish question 15 by minute 12 and question 30 by minute 30, leaving 20 minutes for the last 15."
+          },
+          {
+            "type": "list",
+            "title": "The four moves that beat algebra",
+            "items": [
+              "**Backsolve.** When the choices are numbers and the question asks \"what is x,\" plug the choices into the problem. Start with the middle value — if it is too big or too small you eliminate half the choices at once.",
+              "**Plug in numbers.** When the choices contain variables, pick a simple value (avoid 0 and 1), compute the answer, then test which choice matches.",
+              "**Draw it.** Any geometry problem without a figure should get a sketch. Label everything given.",
+              "**Estimate.** Choices are often far apart. If a triangle’s side must be less than 10 and only one choice is, you are done."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "If (3x − 7)/2 + 4 = 12, what is x?\nA. 5\nB. 7\nC. 9\nD. 11",
+            "work": [
+              "Backsolve with C (x = 9): (27 − 7)/2 + 4 = 20/2 + 4 = 10 + 4 = 14. Too big.",
+              "So try a smaller value — B (x = 7): (21 − 7)/2 + 4 = 14/2 + 4 = 7 + 4 = 11. Still not 12, slightly small.",
+              "Between 7 and 9, but only integers offered... recheck: the answer must lie between B and C.",
+              "Solve directly: (3x − 7)/2 = 8 → 3x − 7 = 16 → 3x = 23 → x = 23/3 ≈ 7.67."
+            ],
+            "answer": "This illustrates when backsolving **fails**: if no choice works, you made an arithmetic error or the intended answer is not an integer. Backsolving is a checking tool as much as a solving tool — two tests told us the answer sits between 7 and 9, which would immediately flag a mis-transcribed problem on test day."
+          },
+          {
+            "type": "rule",
+            "title": "No wrong-answer penalty",
+            "text": "Never leave a Math question blank. With 4 choices, a blind guess is worth 25%; eliminating even one choice raises it to 33%. Bubble something for every question before time expires."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Solving for x when the question asks for 2x, x², or x + 3. Circle what is being asked before you start.",
+              "Ignoring units. If lengths are in feet and the answer is in inches, someone put ×12 in the wrong choice on purpose.",
+              "Trusting a figure \"not drawn to scale.\" When you see that phrase, redraw it accurately."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A question asks for the value of x² given that x satisfies an equation, and the choices are 4, 9, 16, 25. What should you do first?",
+            "choices": [
+              "Solve for x, then square it — and check that you answered x², not x",
+              "Backsolve by plugging 4, 9, 16, 25 in for x",
+              "Assume the answer is the largest choice",
+              "Take the square root of each choice and pick the smallest"
+            ],
+            "answer": 0,
+            "explain": "The choices are values of x², not x, so plugging them in as x is a category error. Solve normally, then perform the final operation the question actually asks for. This \"answered the wrong quantity\" trap costs students more points than any single content gap."
+          }
+        ]
+      },
+      {
+        "id": "math-word-problems",
+        "topic": "word problems",
+        "title": "Word Problem Translation",
+        "summary": "Turn English into equations with a fixed vocabulary, plus rate/work/mixture setups.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "table",
+            "head": [
+              "English",
+              "Math"
+            ],
+            "rows": [
+              [
+                "is, was, will be, equals",
+                "="
+              ],
+              [
+                "of (with a fraction or percent)",
+                "×"
+              ],
+              [
+                "more than, increased by, sum, total",
+                "+"
+              ],
+              [
+                "less than, decreased by, difference",
+                "− (watch the order!)"
+              ],
+              [
+                "per, for each, out of, ratio of",
+                "÷"
+              ],
+              [
+                "what, a number",
+                "x"
+              ],
+              [
+                "percent",
+                "/100"
+              ],
+              [
+                "twice, doubled",
+                "2x"
+              ],
+              [
+                "consecutive integers",
+                "n, n+1, n+2"
+              ],
+              [
+                "consecutive even/odd integers",
+                "n, n+2, n+4"
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "\"Less than\" reverses",
+            "text": "*7 less than x* is **x − 7**, not 7 − x. Same for *subtracted from*: *5 subtracted from y* is **y − 5**. This reversal is tested every single administration."
+          },
+          {
+            "type": "rule",
+            "title": "The three core formulas",
+            "text": "**Distance = rate × time.** **Work: total = rate × time**, and combined rates add (*1/a + 1/b = 1/t*). **Percent change = (new − old)/old × 100**."
+          },
+          {
+            "type": "example",
+            "prompt": "A train leaves at 60 mph. Two hours later a second train leaves the same station at 80 mph on the same track. How long after the second train departs do they meet?",
+            "work": [
+              "Head start: the first train has traveled 60 × 2 = 120 miles when train 2 leaves.",
+              "Let t = hours after train 2 departs.",
+              "Train 1 distance: 120 + 60t. Train 2 distance: 80t.",
+              "Set equal: 80t = 120 + 60t → 20t = 120 → t = 6."
+            ],
+            "answer": "**6 hours.** The general catch-up shortcut: *time = head start distance ÷ speed difference* = 120 ÷ 20 = 6. Memorize this — chase problems appear regularly."
+          },
+          {
+            "type": "example",
+            "prompt": "Ana can paint a room in 5 hours; Beto can paint the same room in 3 hours. Working together, how long does it take?",
+            "work": [
+              "Ana’s rate: 1/5 room per hour. Beto’s: 1/3 room per hour.",
+              "Combined: 1/5 + 1/3 = 3/15 + 5/15 = 8/15 room per hour.",
+              "Time = 1 ÷ (8/15) = 15/8 = 1.875 hours."
+            ],
+            "answer": "**15/8 hours = 1 hour 52.5 minutes.** Sanity check: the combined time must be **less than the faster worker alone** (3 hours). If your answer exceeds the fastest individual time, you added times instead of rates."
+          },
+          {
+            "type": "example",
+            "prompt": "A 40-liter solution is 25% acid. How many liters of pure acid must be added to make it 40% acid?",
+            "work": [
+              "Current acid: 0.25 × 40 = 10 L. Total volume 40 L.",
+              "Add x liters of pure acid: acid becomes 10 + x, total becomes 40 + x.",
+              "(10 + x)/(40 + x) = 0.40 → 10 + x = 16 + 0.4x → 0.6x = 6 → x = 10."
+            ],
+            "answer": "**10 liters.** Mixture template: *(amount of substance) / (total amount) = target percent*. Track the substance and the total separately — both change when you add."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Percent increase then decrease does not return to the start: 100 → +20% → 120 → −20% → 96.",
+              "\"Percent of\" vs. \"percent greater than\": 150 is 50% greater than 100 but is 150% of 100.",
+              "Average speed for a round trip is not the average of the two speeds. Use total distance ÷ total time."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A jacket is marked down 30%, then an additional 20% off the sale price. What is the total discount from the original price?",
+            "choices": [
+              "50%",
+              "44%",
+              "46%",
+              "56%"
+            ],
+            "answer": 1,
+            "explain": "Multiply the remaining fractions: 0.70 × 0.80 = 0.56, so 56% of the original price remains — a 44% total discount. Successive percentages multiply; they never add."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "math-prealgebra",
+    "label": "Pre-Algebra & Numbers",
+    "icon": "Hash",
+    "pages": [
+      {
+        "id": "math-number-properties",
+        "topic": "number properties",
+        "title": "Number Properties, Factors & Multiples",
+        "summary": "Integers, primes, GCF/LCM, divisibility, absolute value, order of operations.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "list",
+            "title": "Vocabulary that shows up in question stems",
+            "items": [
+              "**Integer:** whole numbers and their negatives (…−2, −1, 0, 1, 2…). Not fractions or decimals.",
+              "**Prime:** exactly two distinct factors, 1 and itself. **2 is the only even prime.** 1 is not prime.",
+              "**Composite:** more than two factors.",
+              "**Factor / divisor:** divides evenly into a number. **Multiple:** the result of multiplying by an integer.",
+              "**Absolute value:** distance from zero, always ≥ 0. |−7| = 7.",
+              "**Real / rational / irrational:** rationals can be written as a fraction of integers; √2 and π cannot."
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Order of operations — PEMDAS",
+            "text": "**P**arentheses, **E**xponents, **M**ultiplication and **D**ivision (left to right), **A**ddition and **S**ubtraction (left to right). Multiplication does not outrank division; whichever comes first, left to right, goes first."
+          },
+          {
+            "type": "example",
+            "prompt": "Evaluate 24 ÷ 4 × 3 − 2³ + |5 − 9|",
+            "work": [
+              "Exponent: 2³ = 8. Absolute value: |5 − 9| = |−4| = 4.",
+              "Left-to-right for ÷ and ×: 24 ÷ 4 = 6, then 6 × 3 = 18.",
+              "Now: 18 − 8 + 4 = 14."
+            ],
+            "answer": "**14.** The classic error is doing 4 × 3 first (getting 24 ÷ 12 = 2). Division and multiplication have equal precedence — go strictly left to right."
+          },
+          {
+            "type": "rule",
+            "title": "GCF and LCM via prime factorization",
+            "text": "Factor both numbers into primes. **GCF** = product of the primes they share, using the **lowest** exponent. **LCM** = product of all primes present, using the **highest** exponent. Useful check: **GCF × LCM = the product of the two numbers.**"
+          },
+          {
+            "type": "example",
+            "prompt": "Find the GCF and LCM of 48 and 180.",
+            "work": [
+              "48 = 2⁴ × 3. 180 = 2² × 3² × 5.",
+              "GCF: shared primes 2 and 3, lowest exponents → 2² × 3 = 12.",
+              "LCM: all primes, highest exponents → 2⁴ × 3² × 5 = 16 × 9 × 5 = 720.",
+              "Check: 12 × 720 = 8640 = 48 × 180. ✓"
+            ],
+            "answer": "**GCF = 12, LCM = 720.** Word-problem cue: \"when will both events happen again together\" → **LCM**. \"Largest equal groups you can make\" → **GCF**."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Divisible by",
+              "Test"
+            ],
+            "rows": [
+              [
+                "2",
+                "Last digit is even"
+              ],
+              [
+                "3",
+                "Digit sum divisible by 3"
+              ],
+              [
+                "4",
+                "Last two digits form a multiple of 4"
+              ],
+              [
+                "5",
+                "Ends in 0 or 5"
+              ],
+              [
+                "6",
+                "Passes both the 2 and 3 tests"
+              ],
+              [
+                "9",
+                "Digit sum divisible by 9"
+              ],
+              [
+                "10",
+                "Ends in 0"
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Sign and parity rules",
+            "text": "Negative × negative = positive. A negative raised to an **even** power is positive; to an **odd** power, negative. **odd × odd = odd**; any product involving an even number is even. **odd ± odd = even**."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "−3² = −9, but (−3)² = 9. The exponent binds tighter than the negative sign unless parentheses say otherwise.",
+              "0 is even, is an integer, is neither positive nor negative, and is a multiple of every number.",
+              "\"Consecutive integers\" includes negatives unless the problem restricts to positive."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Two lighthouses flash every 12 and 18 seconds respectively. If they flash together now, when do they next flash together?",
+            "choices": [
+              "6 seconds",
+              "30 seconds",
+              "36 seconds",
+              "216 seconds"
+            ],
+            "answer": 2,
+            "explain": "\"Both again at the same time\" means LCM. 12 = 2²×3, 18 = 2×3², LCM = 2²×3² = 36 seconds. 6 is the GCF and 216 is the product — both are planted distractors."
+          }
+        ]
+      },
+      {
+        "id": "math-fractions-percents",
+        "topic": "fractions & percents",
+        "title": "Fractions, Decimals, Percents & Ratios",
+        "summary": "Conversions, proportions, percent change, and ratio-to-total problems.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Percent translation",
+            "text": "**\"Percent\" means /100. \"Of\" means ×. \"Is\" means =.** So \"What is 15% of 80?\" becomes x = 0.15 × 80 = 12. And \"12 is what percent of 80?\" becomes 12 = (p/100) × 80 → p = 15."
+          },
+          {
+            "type": "example",
+            "prompt": "After a 20% raise, Maya earns $52,800. What was her salary before?",
+            "work": [
+              "New = old × 1.20. So 52,800 = 1.20 × old.",
+              "old = 52,800 ÷ 1.20 = 44,000."
+            ],
+            "answer": "**$44,000.** The trap answer is 52,800 × 0.80 = 42,240 — taking 20% off the new number. Percent change is always computed **relative to the original**, so reverse a percent increase by dividing, not by subtracting."
+          },
+          {
+            "type": "rule",
+            "title": "Percent change",
+            "text": "**Percent change = (new − old) ÷ old × 100.** The denominator is always the starting value. Increase by p% → multiply by (1 + p/100). Decrease by p% → multiply by (1 − p/100)."
+          },
+          {
+            "type": "rule",
+            "title": "Ratios: parts vs. total",
+            "text": "A ratio of 3:5 means **3 parts to 5 parts**, so the total is **8 parts**. To find actual amounts, divide the total by the number of parts to get one part’s value, then multiply."
+          },
+          {
+            "type": "example",
+            "prompt": "A bag of 96 marbles has red and blue marbles in a 5:7 ratio. How many are blue?",
+            "work": [
+              "Total parts: 5 + 7 = 12.",
+              "One part = 96 ÷ 12 = 8 marbles.",
+              "Blue = 7 parts = 7 × 8 = 56."
+            ],
+            "answer": "**56.** Check: red = 40, and 40 + 56 = 96 ✓, and 40:56 reduces to 5:7 ✓. Always verify by reducing back to the given ratio."
+          },
+          {
+            "type": "example",
+            "prompt": "If 3 machines produce 450 units in 5 hours, how many units will 7 machines produce in 8 hours?",
+            "work": [
+              "Rate per machine per hour: 450 ÷ (3 × 5) = 30 units.",
+              "7 machines × 8 hours × 30 = 1,680."
+            ],
+            "answer": "**1,680 units.** For all \"if X does Y in Z\" problems, reduce to the **unit rate** first (one machine, one hour). It converts every proportion problem into a single multiplication."
+          },
+          {
+            "type": "rule",
+            "title": "Direct vs. inverse variation",
+            "text": "**Direct:** y = kx — as one grows, the other grows; y/x is constant. **Inverse:** y = k/x — as one grows, the other shrinks; xy is constant. If 4 workers take 6 days, 8 workers take 3 days (inverse: 4×6 = 8×3 = 24)."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Averaging percentages of different-sized groups. Use weighted averages: total ÷ total.",
+              "\"Ratio of red to blue is 3:5\" does not mean 3/5 of the marbles are red — 3/8 are.",
+              "Comparing a fraction of one whole to a fraction of a different whole. Convert both to actual amounts first."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A shirt costs $40 after a 20% discount. What was the original price?",
+            "choices": [
+              "$48",
+              "$50",
+              "$52",
+              "$60"
+            ],
+            "answer": 1,
+            "explain": "40 = 0.80 × original, so original = 40 ÷ 0.80 = $50. Adding 20% to $40 gives $48 — the planted wrong answer that treats the discount as relative to the sale price."
+          }
+        ]
+      },
+      {
+        "id": "math-exponents",
+        "topic": "exponents & radicals",
+        "title": "Exponents & Radicals",
+        "summary": "Every exponent law, fractional and negative exponents, simplifying radicals.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "table",
+            "head": [
+              "Rule",
+              "Form",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Product",
+                "xᵃ · xᵇ = xᵃ⁺ᵇ",
+                "x³·x⁵ = x⁸"
+              ],
+              [
+                "Quotient",
+                "xᵃ / xᵇ = xᵃ⁻ᵇ",
+                "x⁷/x² = x⁵"
+              ],
+              [
+                "Power of a power",
+                "(xᵃ)ᵇ = xᵃᵇ",
+                "(x³)⁴ = x¹²"
+              ],
+              [
+                "Power of a product",
+                "(xy)ᵃ = xᵃyᵃ",
+                "(2x)³ = 8x³"
+              ],
+              [
+                "Zero exponent",
+                "x⁰ = 1 (x ≠ 0)",
+                "17⁰ = 1"
+              ],
+              [
+                "Negative exponent",
+                "x⁻ᵃ = 1/xᵃ",
+                "2⁻³ = 1/8"
+              ],
+              [
+                "Fractional exponent",
+                "x^(a/b) = ᵇ√(xᵃ)",
+                "8^(2/3) = (∛8)² = 4"
+              ],
+              [
+                "Radical product",
+                "√a · √b = √(ab)",
+                "√3·√12 = √36 = 6"
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "The rule students break most",
+            "text": "You can only add or subtract terms with **identical bases AND identical exponents**. x³ + x³ = 2x³, but x³ + x⁵ cannot be combined at all. And **(x + y)² ≠ x² + y²** — it equals x² + 2xy + y²."
+          },
+          {
+            "type": "example",
+            "prompt": "Simplify (3x²y³)³ ÷ (9x⁴y²)",
+            "work": [
+              "Numerator: (3x²y³)³ = 3³ · x⁶ · y⁹ = 27x⁶y⁹.",
+              "Divide: 27/9 = 3; x⁶/x⁴ = x²; y⁹/y² = y⁷."
+            ],
+            "answer": "**3x²y⁷.** Handle the coefficient, then each variable separately. Distributing the outer exponent to the coefficient (3³ = 27, not 3·3 = 9) is the most common slip."
+          },
+          {
+            "type": "example",
+            "prompt": "Simplify √72 + √50",
+            "work": [
+              "Pull out perfect squares: 72 = 36 × 2 → √72 = 6√2.",
+              "50 = 25 × 2 → √50 = 5√2.",
+              "Same radicand → add coefficients: 6√2 + 5√2 = 11√2."
+            ],
+            "answer": "**11√2.** Radicals combine like variables: only matching radicands add. √72 + √50 ≠ √122."
+          },
+          {
+            "type": "example",
+            "prompt": "If 4^(x+1) = 32, what is x?",
+            "work": [
+              "Rewrite both sides with base 2: 4 = 2², so 4^(x+1) = 2^(2x+2). And 32 = 2⁵.",
+              "Same base → set exponents equal: 2x + 2 = 5.",
+              "x = 3/2."
+            ],
+            "answer": "**x = 3/2.** Whenever an equation has variables in the exponent, **convert to a common base**. Powers of 2, 3, and 5 cover nearly every ACT instance."
+          },
+          {
+            "type": "rule",
+            "title": "Rationalizing a denominator",
+            "text": "Multiply top and bottom by the radical: 3/√5 = 3√5/5. With a binomial denominator, multiply by the conjugate: 2/(3 − √2) × (3 + √2)/(3 + √2) = (6 + 2√2)/7."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "√(x²) = |x|, not x, when x could be negative.",
+              "(−2)⁴ = 16 but −2⁴ = −16.",
+              "x⁻² is not negative — it is 1/x², a positive value for any nonzero x."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Simplify (2x³)⁴ · x⁻⁵",
+            "choices": [
+              "16x⁷",
+              "8x⁷",
+              "16x¹²",
+              "2x⁷"
+            ],
+            "answer": 0,
+            "explain": "(2x³)⁴ = 2⁴·x¹² = 16x¹². Then 16x¹² · x⁻⁵ = 16x⁷. Choice B forgets to raise the coefficient to the 4th power; choice C ignores the negative exponent entirely."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "math-algebra",
+    "label": "Algebra",
+    "icon": "Variable",
+    "pages": [
+      {
+        "id": "math-linear",
+        "topic": "linear equations",
+        "title": "Linear Equations & Inequalities",
+        "summary": "Solving, absolute value equations, and the inequality sign-flip rule.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Solving procedure",
+            "text": "Distribute → combine like terms on each side → move variables to one side and constants to the other → divide. Whatever you do to one side, do to the other."
+          },
+          {
+            "type": "example",
+            "prompt": "Solve 5(x − 3) − 2x = 4(x + 1) − 11",
+            "work": [
+              "Distribute: 5x − 15 − 2x = 4x + 4 − 11",
+              "Combine: 3x − 15 = 4x − 7",
+              "Subtract 3x: −15 = x − 7",
+              "Add 7: x = −8"
+            ],
+            "answer": "**x = −8.** Verify by substituting: left = 5(−11) − (−16) = −55 + 16 = −39; right = 4(−7) − 11 = −28 − 11 = −39 ✓. On the ACT, one 10-second substitution check is worth more than re-reading your algebra."
+          },
+          {
+            "type": "rule",
+            "title": "The inequality sign flip",
+            "text": "Multiplying or dividing an inequality by a **negative** number reverses the direction. −3x > 12 → x < −4. Adding or subtracting never flips the sign."
+          },
+          {
+            "type": "example",
+            "prompt": "Solve and graph: −2 ≤ 3x + 4 < 13",
+            "work": [
+              "Subtract 4 from all three parts: −6 ≤ 3x < 9",
+              "Divide all three by 3 (positive, no flip): −2 ≤ x < 3"
+            ],
+            "answer": "**−2 ≤ x < 3**, a closed circle at −2 and an open circle at 3. In compound inequalities, apply every operation to all three parts simultaneously."
+          },
+          {
+            "type": "rule",
+            "title": "Absolute value equations",
+            "text": "|expression| = k splits into **two** equations: expression = k and expression = −k. If k is negative, there is **no solution** (an absolute value can never be negative)."
+          },
+          {
+            "type": "example",
+            "prompt": "Solve |2x − 5| = 9",
+            "work": [
+              "Case 1: 2x − 5 = 9 → 2x = 14 → x = 7",
+              "Case 2: 2x − 5 = −9 → 2x = −4 → x = −2"
+            ],
+            "answer": "**x = 7 or x = −2.** Always produce both cases. ACT frequently asks for the *sum* or *product* of the solutions (here 5 and −14) precisely to catch students who found only one."
+          },
+          {
+            "type": "rule",
+            "title": "Absolute value inequalities",
+            "text": "**|x| < k** means −k < x < k (a single band — think \"less thAND\"). **|x| > k** means x < −k **or** x > k (two separate rays — think \"greatOR\")."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Distributing a negative: −(x − 4) = −x + 4, not −x − 4.",
+              "Dividing by a variable can lose solutions or divide by zero. Factor instead.",
+              "An equation like 3x + 5 = 3x + 9 has no solution; 3x + 5 = 3x + 5 has infinitely many. ACT tests both."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Solve −4x + 7 > 19",
+            "choices": [
+              "x > −3",
+              "x < −3",
+              "x > 3",
+              "x < 3"
+            ],
+            "answer": 1,
+            "explain": "−4x > 12, then divide by −4 and flip the inequality: x < −3. Forgetting the flip yields choice A, the most common error on this question type."
+          }
+        ]
+      },
+      {
+        "id": "math-systems",
+        "topic": "systems",
+        "title": "Systems of Equations",
+        "summary": "Substitution, elimination, and what parallel or identical lines mean.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Pick your method",
+            "text": "Use **substitution** when one variable is already isolated (or easy to isolate). Use **elimination** when coefficients line up or can be matched by multiplying one equation. Elimination is usually faster on the ACT."
+          },
+          {
+            "type": "example",
+            "prompt": "Solve: 3x + 2y = 16 and 5x − 2y = 8",
+            "work": [
+              "The y-coefficients are already opposites. Add the equations.",
+              "8x = 24 → x = 3",
+              "Substitute: 3(3) + 2y = 16 → 2y = 7 → y = 3.5"
+            ],
+            "answer": "**(3, 3.5).** When you see +2y and −2y, add immediately — no multiplication needed. Scan for matching or opposite coefficients before doing any work."
+          },
+          {
+            "type": "example",
+            "prompt": "Solve: 4x + 3y = 10 and 2x − y = 5",
+            "work": [
+              "Isolate y in the second equation: y = 2x − 5.",
+              "Substitute: 4x + 3(2x − 5) = 10 → 4x + 6x − 15 = 10 → 10x = 25 → x = 2.5",
+              "Then y = 2(2.5) − 5 = 0."
+            ],
+            "answer": "**(2.5, 0).** Alternatively, multiply the second equation by 3 to get 6x − 3y = 15, then add — also clean. Either route works; choose whichever requires fewer fractions."
+          },
+          {
+            "type": "rule",
+            "title": "Number of solutions",
+            "text": "**One solution:** the lines have different slopes and intersect once. **No solution:** same slope, different y-intercept (parallel). **Infinitely many:** the equations are multiples of each other (same line). Algebraically, if the variables cancel and you get a false statement (0 = 5) there is no solution; a true statement (0 = 0) means infinitely many."
+          },
+          {
+            "type": "example",
+            "prompt": "For what value of k does the system 2x + 3y = 7 and 6x + ky = 21 have infinitely many solutions?",
+            "work": [
+              "Multiply the first equation by 3: 6x + 9y = 21.",
+              "For the systems to be identical, the second must match: 6x + ky = 21.",
+              "So k = 9."
+            ],
+            "answer": "**k = 9.** For infinitely many solutions all three ratios must match: 2/6 = 3/k = 7/21. For **no** solution, the x and y ratios match but the constant does not — here k = 9 with a constant other than 21."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Answering with x when the question asks for y, or for x + y. Word problems often want the sum.",
+              "Sign errors when subtracting equations. Multiply by −1 and add instead — fewer mistakes.",
+              "Setting up a word problem with only one equation when two unknowns exist. Two unknowns need two equations."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "The system y = 3x + 2 and y = 3x − 5 has how many solutions?",
+            "choices": [
+              "Exactly one",
+              "Zero",
+              "Infinitely many",
+              "Exactly two"
+            ],
+            "answer": 1,
+            "explain": "Both lines have slope 3 but different y-intercepts, so they are parallel and never intersect. Substituting gives 3x + 2 = 3x − 5 → 2 = −5, a false statement confirming no solution."
+          }
+        ]
+      },
+      {
+        "id": "math-quadratics",
+        "topic": "quadratics",
+        "title": "Quadratics: Factoring, Formula & Vertex Form",
+        "summary": "Every method for solving, plus what the discriminant tells you.",
+        "minutes": 8,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Standard form and the zero-product property",
+            "text": "A quadratic is **ax² + bx + c = 0**. To solve by factoring, get everything on one side equal to zero, factor, then set each factor equal to zero. This only works because if AB = 0, then A = 0 or B = 0."
+          },
+          {
+            "type": "list",
+            "title": "Factoring patterns worth memorizing",
+            "items": [
+              "**Difference of squares:** a² − b² = (a + b)(a − b). Example: x² − 49 = (x + 7)(x − 7).",
+              "**Perfect square trinomials:** a² + 2ab + b² = (a + b)²; a² − 2ab + b² = (a − b)².",
+              "**Simple trinomial (a = 1):** find two numbers that multiply to c and add to b.",
+              "**Common factor first:** 3x² − 12 = 3(x² − 4) = 3(x + 2)(x − 2)."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "Solve x² − 5x = 14",
+            "work": [
+              "Set to zero: x² − 5x − 14 = 0",
+              "Two numbers multiplying to −14 and adding to −5: −7 and +2.",
+              "(x − 7)(x + 2) = 0",
+              "x = 7 or x = −2"
+            ],
+            "answer": "**x = 7 or x = −2.** Never solve by dividing both sides by x — you would lose a root. Always move everything to one side first."
+          },
+          {
+            "type": "rule",
+            "title": "The quadratic formula",
+            "text": "**x = [−b ± √(b² − 4ac)] / (2a)**. It works on every quadratic. Use it when factoring is not obvious — do not spend 90 seconds hunting for factors that do not exist."
+          },
+          {
+            "type": "rule",
+            "title": "The discriminant",
+            "text": "**D = b² − 4ac** tells you the number of real solutions without solving. **D > 0** → two distinct real solutions (the parabola crosses the x-axis twice). **D = 0** → exactly one real solution (vertex touches the axis). **D < 0** → no real solutions (two complex ones)."
+          },
+          {
+            "type": "example",
+            "prompt": "For what values of k does x² + kx + 9 = 0 have exactly one real solution?",
+            "work": [
+              "One solution → discriminant = 0.",
+              "k² − 4(1)(9) = 0 → k² = 36 → k = ±6."
+            ],
+            "answer": "**k = 6 or k = −6.** \"Exactly one solution,\" \"a double root,\" and \"the parabola is tangent to the x-axis\" all mean the same thing: discriminant equals zero."
+          },
+          {
+            "type": "rule",
+            "title": "Vertex form",
+            "text": "**y = a(x − h)² + k** has vertex **(h, k)** and axis of symmetry **x = h**. Note the sign flip: y = 2(x − 3)² + 5 has vertex (3, 5). From standard form, the vertex x-coordinate is **x = −b/(2a)**; plug it in to get y."
+          },
+          {
+            "type": "example",
+            "prompt": "Find the vertex and maximum value of y = −2x² + 12x − 7.",
+            "work": [
+              "x = −b/(2a) = −12/(2·−2) = 3.",
+              "y = −2(9) + 36 − 7 = −18 + 29 = 11.",
+              "Since a < 0, the parabola opens downward, so the vertex is a maximum."
+            ],
+            "answer": "**Vertex (3, 11); maximum value 11.** Sign of a determines direction: **a > 0 opens up (minimum), a < 0 opens down (maximum)**. Projectile and profit word problems almost always ask for this."
+          },
+          {
+            "type": "rule",
+            "title": "Sum and product of roots",
+            "text": "For ax² + bx + c = 0: **sum of roots = −b/a**, **product of roots = c/a**. This solves \"what is the sum of the solutions\" questions in five seconds without finding the roots at all."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Forgetting the ± in the quadratic formula — that loses one root.",
+              "(x + 3)² = x² + 6x + 9, not x² + 9.",
+              "A word problem may reject a negative root as physically impossible (time, length). Check whether both roots make sense."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "What is the sum of the solutions to 2x² − 10x + 3 = 0?",
+            "choices": [
+              "5",
+              "1.5",
+              "−5",
+              "10"
+            ],
+            "answer": 0,
+            "explain": "Sum of roots = −b/a = −(−10)/2 = 5. (Product would be c/a = 1.5, choice B — a deliberately planted near-miss.)"
+          }
+        ]
+      },
+      {
+        "id": "math-functions",
+        "topic": "functions",
+        "title": "Functions: Notation, Domain & Transformations",
+        "summary": "Evaluating, composing, inverses, domain/range, and graph shifts.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Function notation",
+            "text": "**f(x)** does not mean f times x. It means \"the output of function f when the input is x.\" To evaluate f(3), replace every x in the definition with 3."
+          },
+          {
+            "type": "example",
+            "prompt": "If f(x) = 2x² − 3x + 1, find f(−2) and f(a + 1).",
+            "work": [
+              "f(−2) = 2(−2)² − 3(−2) + 1 = 2(4) + 6 + 1 = 15.",
+              "f(a + 1) = 2(a + 1)² − 3(a + 1) + 1 = 2(a² + 2a + 1) − 3a − 3 + 1",
+              "= 2a² + 4a + 2 − 3a − 2 = 2a² + a."
+            ],
+            "answer": "**f(−2) = 15; f(a + 1) = 2a² + a.** Use parentheses around the entire substituted expression — that is where sign errors come from."
+          },
+          {
+            "type": "rule",
+            "title": "Composition",
+            "text": "**f(g(x))** means: run x through g first, then feed that result into f. Work from the **inside out**. Order matters: f(g(x)) rarely equals g(f(x))."
+          },
+          {
+            "type": "example",
+            "prompt": "f(x) = x + 4 and g(x) = x². Find f(g(3)) and g(f(3)).",
+            "work": [
+              "f(g(3)): g(3) = 9, then f(9) = 13.",
+              "g(f(3)): f(3) = 7, then g(7) = 49."
+            ],
+            "answer": "**f(g(3)) = 13; g(f(3)) = 49.** The dramatic difference is the point — ACT counts on students composing in the wrong order."
+          },
+          {
+            "type": "rule",
+            "title": "Domain restrictions",
+            "text": "Only three things restrict a domain on the ACT: (1) you cannot **divide by zero** — set the denominator ≠ 0; (2) you cannot take an **even root of a negative** — set the radicand ≥ 0; (3) you cannot take a **log of zero or a negative**."
+          },
+          {
+            "type": "example",
+            "prompt": "Find the domain of f(x) = √(x − 3) / (x − 7).",
+            "work": [
+              "Radicand ≥ 0: x − 3 ≥ 0 → x ≥ 3.",
+              "Denominator ≠ 0: x ≠ 7."
+            ],
+            "answer": "**x ≥ 3 and x ≠ 7**, i.e. [3, 7) ∪ (7, ∞). When two restrictions apply, both must hold simultaneously."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Transformation",
+              "Effect on graph"
+            ],
+            "rows": [
+              [
+                "f(x) + k",
+                "Shifts UP k units"
+              ],
+              [
+                "f(x) − k",
+                "Shifts DOWN k units"
+              ],
+              [
+                "f(x + k)",
+                "Shifts LEFT k units (opposite of intuition)"
+              ],
+              [
+                "f(x − k)",
+                "Shifts RIGHT k units"
+              ],
+              [
+                "−f(x)",
+                "Reflects across the x-axis"
+              ],
+              [
+                "f(−x)",
+                "Reflects across the y-axis"
+              ],
+              [
+                "a·f(x), a > 1",
+                "Vertical stretch"
+              ],
+              [
+                "a·f(x), 0 < a < 1",
+                "Vertical compression"
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Inverse functions",
+            "text": "To find f⁻¹(x): swap x and y, then solve for y. Graphically, the inverse is the reflection across the line y = x. And f(f⁻¹(x)) = x always."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Inside the parentheses, changes are horizontal and **backwards**. f(x + 3) moves LEFT.",
+              "f⁻¹(x) does not mean 1/f(x).",
+              "The vertical line test: a graph is a function only if no vertical line crosses it more than once."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "The graph of y = f(x) is shifted 2 units right and 5 units down. The new equation is:",
+            "choices": [
+              "y = f(x + 2) − 5",
+              "y = f(x − 2) − 5",
+              "y = f(x − 2) + 5",
+              "y = f(x + 2) + 5"
+            ],
+            "answer": 1,
+            "explain": "Right 2 requires x − 2 inside the function (horizontal shifts are counterintuitive), and down 5 requires − 5 outside. Choice A is the classic error of matching the sign to the direction."
+          }
+        ]
+      },
+      {
+        "id": "math-logs",
+        "topic": "logarithms",
+        "title": "Logarithms",
+        "summary": "The definition, the three laws, and change of base.",
+        "minutes": 5,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The definition is the whole game",
+            "text": "**log_b(x) = y means b^y = x.** A logarithm answers the question \"what exponent turns the base into this number?\" log₂(8) = 3 because 2³ = 8. Convert every log question to exponential form and it usually solves itself."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Law",
+              "Form"
+            ],
+            "rows": [
+              [
+                "Product",
+                "log(ab) = log a + log b"
+              ],
+              [
+                "Quotient",
+                "log(a/b) = log a − log b"
+              ],
+              [
+                "Power",
+                "log(aⁿ) = n · log a"
+              ],
+              [
+                "Change of base",
+                "log_b(x) = log(x) / log(b)"
+              ],
+              [
+                "Identities",
+                "log_b(1) = 0; log_b(b) = 1; b^(log_b x) = x"
+              ]
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "Solve log₃(x + 1) = 4",
+            "work": [
+              "Convert to exponential form: 3⁴ = x + 1",
+              "81 = x + 1 → x = 80"
+            ],
+            "answer": "**x = 80.** Always check that the argument is positive: 80 + 1 = 81 > 0 ✓. A solution that makes the log’s argument zero or negative must be discarded."
+          },
+          {
+            "type": "example",
+            "prompt": "If log 2 ≈ 0.301 and log 3 ≈ 0.477, find log 12.",
+            "work": [
+              "12 = 4 × 3 = 2² × 3.",
+              "log 12 = log(2²) + log 3 = 2 log 2 + log 3",
+              "= 2(0.301) + 0.477 = 0.602 + 0.477 = 1.079"
+            ],
+            "answer": "**≈ 1.079.** Factor the number into pieces whose logs you were given, then apply the product and power laws."
+          },
+          {
+            "type": "example",
+            "prompt": "Evaluate log₄(64) without a calculator.",
+            "work": [
+              "Ask: 4 to what power gives 64?",
+              "4¹ = 4, 4² = 16, 4³ = 64."
+            ],
+            "answer": "**3.** Or use change of base: log 64 / log 4 = 1.806/0.602 = 3. Both routes are fast; the exponent question is faster."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "log(a + b) is **not** log a + log b. Only products split into sums.",
+              "A log’s argument must be positive, so always check candidate solutions.",
+              "\"log\" with no base means base 10; \"ln\" means base e."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "If log₅(x) = 3, what is x?",
+            "choices": [
+              "15",
+              "125",
+              "243",
+              "8"
+            ],
+            "answer": 1,
+            "explain": "Convert: 5³ = x, so x = 125. Choice A multiplies 5 × 3; choice C is 3⁵, reversing base and exponent."
+          }
+        ]
+      },
+      {
+        "id": "math-matrices",
+        "topic": "matrices",
+        "title": "Matrices",
+        "summary": "Dimensions, addition, scalar and matrix multiplication, determinants.",
+        "minutes": 5,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Dimensions",
+            "text": "A matrix is described as **rows × columns**. A 2×3 matrix has 2 rows and 3 columns. Addition and subtraction require **identical dimensions** and are done entry by entry."
+          },
+          {
+            "type": "rule",
+            "title": "Scalar multiplication",
+            "text": "Multiply **every** entry by the scalar. 3 × [[1, 2],[0, −4]] = [[3, 6],[0, −12]]."
+          },
+          {
+            "type": "rule",
+            "title": "Matrix multiplication",
+            "text": "An (m×n) matrix times an (n×p) matrix gives an (m×p) matrix. **The inner dimensions must match.** Entry (i, j) of the product is the dot product of row i of the first matrix with column j of the second."
+          },
+          {
+            "type": "example",
+            "prompt": "Multiply [[2, 1],[0, 3]] × [[4],[5]]",
+            "work": [
+              "Dimensions: (2×2) × (2×1) → inner 2s match → result is 2×1.",
+              "Row 1 · column: 2(4) + 1(5) = 13.",
+              "Row 2 · column: 0(4) + 3(5) = 15."
+            ],
+            "answer": "**[[13],[15]].** Check dimensions first — many ACT matrix questions only ask whether a product is defined and what size it is."
+          },
+          {
+            "type": "rule",
+            "title": "Determinant of a 2×2",
+            "text": "For [[a, b],[c, d]], **det = ad − bc**. If det = 0 the matrix has no inverse. This appears on the ACT as a direct computation."
+          },
+          {
+            "type": "example",
+            "prompt": "Find the determinant of [[5, 3],[2, 4]].",
+            "work": [
+              "det = (5)(4) − (3)(2) = 20 − 6 = 14."
+            ],
+            "answer": "**14.** Multiply the main diagonal, subtract the anti-diagonal. Order matters: ad − bc, not bc − ad."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Matrix multiplication is **not commutative**: AB ≠ BA in general.",
+              "You cannot add matrices of different sizes, even if one \"fits inside\" the other.",
+              "Multiplying entry-by-entry is wrong — that is not how matrix products work."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "If A is 3×2 and B is 2×5, what are the dimensions of AB?",
+            "choices": [
+              "3×5",
+              "2×2",
+              "5×3",
+              "Undefined"
+            ],
+            "answer": 0,
+            "explain": "Inner dimensions (2 and 2) match, so the product is defined, and the result takes the outer dimensions: 3×5. Note BA would be undefined here, since 5 ≠ 3."
+          }
+        ]
+      },
+      {
+        "id": "math-complex",
+        "topic": "complex numbers",
+        "title": "Complex Numbers",
+        "summary": "i, powers of i, arithmetic, and conjugates.",
+        "minutes": 4,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The definition",
+            "text": "**i = √(−1)**, so **i² = −1**. A complex number has the form a + bi, where a is the real part and b is the imaginary part."
+          },
+          {
+            "type": "rule",
+            "title": "Powers of i cycle every four",
+            "text": "i¹ = i, i² = −1, i³ = −i, i⁴ = 1, then it repeats. To find iⁿ, divide n by 4 and use the remainder: remainder 0 → 1, 1 → i, 2 → −1, 3 → −i."
+          },
+          {
+            "type": "example",
+            "prompt": "Simplify i⁴⁷.",
+            "work": [
+              "47 ÷ 4 = 11 remainder 3.",
+              "Remainder 3 → i³ = −i."
+            ],
+            "answer": "**−i.** This remainder trick handles any exponent instantly."
+          },
+          {
+            "type": "example",
+            "prompt": "Multiply (3 + 2i)(4 − 5i).",
+            "work": [
+              "FOIL: 12 − 15i + 8i − 10i²",
+              "Replace i² with −1: −10i² = +10.",
+              "Combine: (12 + 10) + (−15i + 8i) = 22 − 7i."
+            ],
+            "answer": "**22 − 7i.** Multiply exactly like binomials, then substitute i² = −1 at the end. Forgetting that substitution is the only real difficulty here."
+          },
+          {
+            "type": "rule",
+            "title": "Conjugates and division",
+            "text": "The conjugate of a + bi is a − bi. Their product (a + bi)(a − bi) = a² + b², a **real** number. To divide, multiply numerator and denominator by the denominator’s conjugate."
+          },
+          {
+            "type": "check",
+            "q": "What is (2 + i)(2 − i)?",
+            "choices": [
+              "3",
+              "5",
+              "4 + i²",
+              "4 − i"
+            ],
+            "answer": 1,
+            "explain": "Conjugate pairs multiply to a² + b² = 4 + 1 = 5. Working it out: 4 − 2i + 2i − i² = 4 − (−1) = 5. Choice A comes from treating i² as +1."
+          }
+        ]
+      },
+      {
+        "id": "math-sequences",
+        "topic": "sequences",
+        "title": "Sequences & Series",
+        "summary": "Arithmetic and geometric formulas, plus how to spot which is which.",
+        "minutes": 5,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Arithmetic sequences",
+            "text": "Each term adds a constant **common difference d**. The nth term: **aₙ = a₁ + (n − 1)d**. The sum of the first n terms: **Sₙ = n(a₁ + aₙ)/2** — the average of the first and last term, times how many terms."
+          },
+          {
+            "type": "example",
+            "prompt": "In the sequence 7, 11, 15, 19, …, what is the 24th term, and what is the sum of the first 24 terms?",
+            "work": [
+              "d = 4, a₁ = 7.",
+              "a₂₄ = 7 + 23(4) = 7 + 92 = 99.",
+              "S₂₄ = 24(7 + 99)/2 = 24(106)/2 = 12 × 106 = 1272."
+            ],
+            "answer": "**a₂₄ = 99; S₂₄ = 1272.** The most common error is using n instead of (n − 1). Test it on term 1: a₁ = 7 + 0(4) = 7 ✓."
+          },
+          {
+            "type": "rule",
+            "title": "Geometric sequences",
+            "text": "Each term multiplies by a constant **common ratio r**. The nth term: **aₙ = a₁ · r^(n−1)**. Sum of the first n terms: **Sₙ = a₁(1 − rⁿ)/(1 − r)**. Infinite sum (only when |r| < 1): **S = a₁/(1 − r)**."
+          },
+          {
+            "type": "example",
+            "prompt": "Find the 7th term of 3, 6, 12, 24, …",
+            "work": [
+              "r = 6/3 = 2, a₁ = 3.",
+              "a₇ = 3 · 2⁶ = 3 · 64 = 192."
+            ],
+            "answer": "**192.** Identify type first: subtract consecutive terms (constant → arithmetic) or divide them (constant → geometric)."
+          },
+          {
+            "type": "example",
+            "prompt": "A ball is dropped from 20 feet and rebounds to 60% of its previous height each bounce. What total vertical distance does it travel before coming to rest?",
+            "work": [
+              "Initial drop: 20 ft.",
+              "Each subsequent bounce is up then down: 2 × the rebound height.",
+              "Rebound heights form a geometric series: 12, 7.2, 4.32, … with a₁ = 12, r = 0.6.",
+              "Sum of rebounds = 12/(1 − 0.6) = 12/0.4 = 30. Doubled for up-and-down: 60.",
+              "Total = 20 + 60 = 80."
+            ],
+            "answer": "**80 feet.** Infinite geometric series questions almost always involve bouncing balls, repeated fractions of a distance, or repeating decimals."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "A sequence that is neither arithmetic nor geometric (like 1, 4, 9, 16) follows a different pattern — check squares, cubes, and Fibonacci-style rules.",
+              "The infinite sum formula requires |r| < 1. If |r| ≥ 1 the series diverges.",
+              "Read whether the question wants the nth term or the sum of n terms."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "The first term of an arithmetic sequence is 5 and the 10th term is 41. What is the common difference?",
+            "choices": [
+              "3.6",
+              "4",
+              "4.1",
+              "36"
+            ],
+            "answer": 1,
+            "explain": "a₁₀ = a₁ + 9d → 41 = 5 + 9d → 9d = 36 → d = 4. Dividing 36 by 10 instead of 9 gives 3.6, the planted error."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "math-geometry",
+    "label": "Geometry",
+    "icon": "Triangle",
+    "pages": [
+      {
+        "id": "math-coord-geometry",
+        "topic": "coordinate geometry",
+        "title": "Coordinate Geometry",
+        "summary": "Slope, line equations, distance, midpoint, and circles in the plane.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "table",
+            "head": [
+              "Concept",
+              "Formula"
+            ],
+            "rows": [
+              [
+                "Slope",
+                "m = (y₂ − y₁)/(x₂ − x₁)"
+              ],
+              [
+                "Slope-intercept form",
+                "y = mx + b"
+              ],
+              [
+                "Point-slope form",
+                "y − y₁ = m(x − x₁)"
+              ],
+              [
+                "Standard form",
+                "Ax + By = C, slope = −A/B"
+              ],
+              [
+                "Distance",
+                "d = √[(x₂−x₁)² + (y₂−y₁)²]"
+              ],
+              [
+                "Midpoint",
+                "M = ((x₁+x₂)/2, (y₁+y₂)/2)"
+              ],
+              [
+                "Circle",
+                "(x − h)² + (y − k)² = r², center (h,k), radius r"
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Parallel and perpendicular",
+            "text": "**Parallel lines have equal slopes.** **Perpendicular lines have negative reciprocal slopes** — their product is −1. If m = 2/3, the perpendicular slope is −3/2. Horizontal (m = 0) and vertical (undefined slope) lines are perpendicular to each other."
+          },
+          {
+            "type": "example",
+            "prompt": "Find the equation of the line through (4, −1) that is perpendicular to y = 2x + 7.",
+            "work": [
+              "Given slope 2 → perpendicular slope = −1/2.",
+              "Point-slope: y − (−1) = −½(x − 4) → y + 1 = −½x + 2",
+              "y = −½x + 1"
+            ],
+            "answer": "**y = −½x + 1.** Point-slope form is almost always faster than solving for b, and it eliminates a step where sign errors happen."
+          },
+          {
+            "type": "example",
+            "prompt": "Find the distance between (−3, 2) and (5, −4).",
+            "work": [
+              "Δx = 5 − (−3) = 8; Δy = −4 − 2 = −6.",
+              "d = √(8² + (−6)²) = √(64 + 36) = √100 = 10."
+            ],
+            "answer": "**10.** The distance formula is just the Pythagorean theorem on the horizontal and vertical legs. If you forget it, sketch the right triangle."
+          },
+          {
+            "type": "rule",
+            "title": "Circles from standard form",
+            "text": "Given (x − h)² + (y − k)² = r², the center is **(h, k)** — note the sign flip — and the radius is **√(right side)**. (x + 3)² + (y − 5)² = 49 has center (−3, 5) and radius 7, not 49."
+          },
+          {
+            "type": "example",
+            "prompt": "The endpoints of a circle’s diameter are (1, 2) and (7, 10). Find the center and radius.",
+            "work": [
+              "Center = midpoint = ((1+7)/2, (2+10)/2) = (4, 6).",
+              "Diameter length = √(6² + 8²) = 10, so radius = 5."
+            ],
+            "answer": "**Center (4, 6), radius 5**, giving (x − 4)² + (y − 6)² = 25. \"Endpoints of a diameter\" always means midpoint for the center and half the distance for the radius."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Slope is rise over run. Reversing it to run over rise is the single most common coordinate-geometry error.",
+              "A negative slope falls left-to-right; a positive slope rises. Use this to sanity-check your answer against a sketch.",
+              "In the circle equation, the radius is the **square root** of the constant."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "What is the slope of a line perpendicular to the line through (2, 5) and (6, 13)?",
+            "choices": [
+              "2",
+              "−2",
+              "1/2",
+              "−1/2"
+            ],
+            "answer": 3,
+            "explain": "The given slope is (13 − 5)/(6 − 2) = 8/4 = 2. The negative reciprocal is −1/2. Choice B negates without reciprocating; choice C reciprocates without negating."
+          }
+        ]
+      },
+      {
+        "id": "math-lines-angles",
+        "topic": "lines & angles",
+        "title": "Lines, Angles & Polygons",
+        "summary": "Parallel-line angle rules and interior/exterior angle formulas.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "list",
+            "title": "Angle basics",
+            "items": [
+              "Angles on a straight line sum to **180°** (supplementary); angles forming a right angle sum to **90°** (complementary).",
+              "**Vertical angles** (opposite each other at an intersection) are **equal**.",
+              "Angles around a point sum to **360°**."
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Parallel lines cut by a transversal",
+            "text": "Eight angles form, but only **two distinct values**, and they are supplementary to each other. Corresponding, alternate interior, and alternate exterior angles are **equal**; same-side interior angles are **supplementary**. Practical shortcut: **every acute angle equals every other acute angle, and every obtuse angle equals every other obtuse angle** — and acute + obtuse = 180°."
+          },
+          {
+            "type": "example",
+            "prompt": "Two parallel lines are cut by a transversal. One angle measures 63°. What are all the other angle measures?",
+            "work": [
+              "Four angles equal 63°.",
+              "The other four are 180 − 63 = 117°."
+            ],
+            "answer": "**Four 63° angles and four 117° angles.** Rather than memorizing eight angle names, just identify whether each angle \"looks\" acute or obtuse in the figure and assign accordingly."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Polygon fact",
+              "Formula"
+            ],
+            "rows": [
+              [
+                "Sum of interior angles",
+                "(n − 2) × 180°"
+              ],
+              [
+                "Each interior angle (regular)",
+                "(n − 2) × 180° / n"
+              ],
+              [
+                "Sum of exterior angles",
+                "Always 360°, any polygon"
+              ],
+              [
+                "Each exterior angle (regular)",
+                "360° / n"
+              ],
+              [
+                "Number of diagonals",
+                "n(n − 3)/2"
+              ]
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "Each interior angle of a regular polygon measures 156°. How many sides does it have?",
+            "work": [
+              "Exterior angle = 180 − 156 = 24°.",
+              "n = 360 / 24 = 15."
+            ],
+            "answer": "**15 sides.** Going through the exterior angle is far faster than solving (n − 2)180/n = 156. Whenever a regular polygon’s angle is given, convert to the exterior angle first."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "The exterior angle sum is 360° for **every** polygon, regardless of the number of sides.",
+              "\"Regular\" means all sides AND all angles equal. Without it, you cannot divide the angle sum evenly.",
+              "Figures may be drawn misleadingly. Trust given measures over appearance."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "What is the sum of the interior angles of a heptagon (7 sides)?",
+            "choices": [
+              "900°",
+              "1080°",
+              "1260°",
+              "540°"
+            ],
+            "answer": 0,
+            "explain": "(7 − 2) × 180° = 5 × 180° = 900°. Choice B is the octagon value and choice D is the pentagon value — both come from an off-by-one in n."
+          }
+        ]
+      },
+      {
+        "id": "math-triangles",
+        "topic": "triangles",
+        "title": "Triangles",
+        "summary": "Pythagorean triples, special right triangles, similarity, and area.",
+        "minutes": 8,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Fundamentals",
+            "text": "Angles sum to **180°**. The **exterior angle** equals the sum of the two remote interior angles. The **triangle inequality**: any side must be less than the sum and greater than the difference of the other two. Area = **½ × base × height**, where the height is perpendicular to the base."
+          },
+          {
+            "type": "rule",
+            "title": "Pythagorean theorem and triples",
+            "text": "**a² + b² = c²** for right triangles, with c the hypotenuse. Memorize these triples and their multiples to skip the arithmetic: **3-4-5** (and 6-8-10, 9-12-15), **5-12-13**, **8-15-17**, **7-24-25**."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Special right triangle",
+              "Side ratio"
+            ],
+            "rows": [
+              [
+                "45°-45°-90° (isosceles right)",
+                "x : x : x√2"
+              ],
+              [
+                "30°-60°-90°",
+                "x : x√3 : 2x  (short leg : long leg : hypotenuse)"
+              ]
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "In a 30-60-90 triangle the hypotenuse is 14. Find both legs.",
+            "work": [
+              "Hypotenuse = 2x = 14 → x = 7.",
+              "Short leg (opposite 30°) = x = 7.",
+              "Long leg (opposite 60°) = x√3 = 7√3 ≈ 12.12."
+            ],
+            "answer": "**7 and 7√3.** The short leg is always opposite the 30° angle and is exactly half the hypotenuse. That single fact resolves most 30-60-90 questions."
+          },
+          {
+            "type": "example",
+            "prompt": "A ladder leans against a wall, reaching 12 feet up. Its base is 5 feet from the wall. How long is the ladder?",
+            "work": [
+              "Legs 5 and 12 → recognize the 5-12-13 triple.",
+              "Hypotenuse = 13."
+            ],
+            "answer": "**13 feet.** Recognizing triples saves 20 seconds per question and eliminates squaring errors. Check for them before reaching for the calculator."
+          },
+          {
+            "type": "rule",
+            "title": "Similar triangles",
+            "text": "Similar triangles have equal angles and **proportional** sides. Set up a proportion matching corresponding sides. If the scale factor of sides is k, then the **area** ratio is **k²** and the volume ratio is k³."
+          },
+          {
+            "type": "example",
+            "prompt": "Two similar triangles have corresponding sides of 6 and 9. If the smaller has area 24, what is the larger’s area?",
+            "work": [
+              "Side ratio k = 9/6 = 3/2.",
+              "Area ratio = k² = 9/4.",
+              "Larger area = 24 × 9/4 = 54."
+            ],
+            "answer": "**54.** The trap answer is 24 × 3/2 = 36, applying the side ratio to area. **Areas scale by the square of the side ratio** — this appears on nearly every ACT."
+          },
+          {
+            "type": "rule",
+            "title": "Isosceles and equilateral",
+            "text": "In an **isosceles** triangle, angles opposite equal sides are equal. An **equilateral** triangle has all 60° angles, and its area is **(s²√3)/4**. Its height splits it into two 30-60-90 triangles."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "The height for the area formula must be perpendicular to the chosen base — not a slanted side.",
+              "Not every triangle with a right angle uses a nice triple. Verify before assuming.",
+              "Triangle inequality questions: with sides 4 and 9, the third side must satisfy 5 < s < 13."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A right triangle has legs of 9 and 12. What is its hypotenuse?",
+            "choices": [
+              "13",
+              "15",
+              "21",
+              "√21"
+            ],
+            "answer": 1,
+            "explain": "9-12-15 is 3× the 3-4-5 triple. Verify: 81 + 144 = 225 = 15². Choice A is the 5-12-13 hypotenuse and choice C simply adds the legs."
+          }
+        ]
+      },
+      {
+        "id": "math-circles",
+        "topic": "circles",
+        "title": "Circles",
+        "summary": "Circumference, area, arcs, sectors, and inscribed angles.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "table",
+            "head": [
+              "Quantity",
+              "Formula"
+            ],
+            "rows": [
+              [
+                "Circumference",
+                "C = 2πr = πd"
+              ],
+              [
+                "Area",
+                "A = πr²"
+              ],
+              [
+                "Arc length",
+                "(θ/360) × 2πr"
+              ],
+              [
+                "Sector area",
+                "(θ/360) × πr²"
+              ],
+              [
+                "Central angle",
+                "Equals its intercepted arc"
+              ],
+              [
+                "Inscribed angle",
+                "Half its intercepted arc"
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "The fraction principle",
+            "text": "Every arc and sector question reduces to one idea: **the piece is the same fraction of the whole that its angle is of 360°.** A 90° sector is one quarter of the circle’s area; a 60° arc is one sixth of the circumference. You do not need the formulas if you hold onto the fraction."
+          },
+          {
+            "type": "example",
+            "prompt": "A circle has radius 6. Find the length of an arc with a central angle of 120° and the area of the corresponding sector.",
+            "work": [
+              "Fraction: 120/360 = 1/3.",
+              "Circumference = 2π(6) = 12π → arc = 12π/3 = 4π.",
+              "Area = π(36) = 36π → sector = 36π/3 = 12π."
+            ],
+            "answer": "**Arc = 4π, sector area = 12π.** Note that arc length uses circumference and sector area uses area — mixing them up is the most common error here."
+          },
+          {
+            "type": "rule",
+            "title": "Inscribed angles",
+            "text": "An inscribed angle is **half** the central angle subtending the same arc. A special case worth memorizing: **an angle inscribed in a semicircle is always 90°** — so any triangle with the diameter as one side and its third vertex on the circle is a right triangle."
+          },
+          {
+            "type": "example",
+            "prompt": "A circle’s area is 49π. What is its circumference?",
+            "work": [
+              "πr² = 49π → r² = 49 → r = 7.",
+              "C = 2π(7) = 14π."
+            ],
+            "answer": "**14π.** Every circle question funnels through the radius. If you are given area, circumference, or diameter, get the radius first, then compute what was asked."
+          },
+          {
+            "type": "rule",
+            "title": "Tangents",
+            "text": "A tangent line touches the circle at exactly one point and is **perpendicular to the radius** at that point. This almost always creates a right triangle you can solve with the Pythagorean theorem."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Confusing radius and diameter. If a problem gives d = 10, r = 5 — half of everything.",
+              "Leaving π out of an exact answer, or multiplying it in when choices are written in terms of π.",
+              "Area scales with r², so doubling the radius quadruples the area."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A sector has a central angle of 45° in a circle of radius 8. What is its area?",
+            "choices": [
+              "8π",
+              "4π",
+              "16π",
+              "2π"
+            ],
+            "answer": 0,
+            "explain": "45/360 = 1/8 of the circle. Total area = 64π, so the sector is 64π/8 = 8π. Choice B computes the arc length instead of the area."
+          }
+        ]
+      },
+      {
+        "id": "math-solids",
+        "topic": "area & volume",
+        "title": "Area, Perimeter, Volume & Surface Area",
+        "summary": "Every formula you need, plus composite-figure strategy.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "table",
+            "head": [
+              "Figure",
+              "Area",
+              "Perimeter / Circumference"
+            ],
+            "rows": [
+              [
+                "Rectangle",
+                "lw",
+                "2l + 2w"
+              ],
+              [
+                "Square",
+                "s²",
+                "4s"
+              ],
+              [
+                "Triangle",
+                "½bh",
+                "sum of sides"
+              ],
+              [
+                "Parallelogram",
+                "bh",
+                "2(a + b)"
+              ],
+              [
+                "Trapezoid",
+                "½(b₁ + b₂)h",
+                "sum of sides"
+              ],
+              [
+                "Circle",
+                "πr²",
+                "2πr"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "head": [
+              "Solid",
+              "Volume",
+              "Surface area"
+            ],
+            "rows": [
+              [
+                "Rectangular prism",
+                "lwh",
+                "2(lw + lh + wh)"
+              ],
+              [
+                "Cube",
+                "s³",
+                "6s²"
+              ],
+              [
+                "Cylinder",
+                "πr²h",
+                "2πr² + 2πrh"
+              ],
+              [
+                "Cone",
+                "⅓πr²h",
+                "πr² + πrl"
+              ],
+              [
+                "Sphere",
+                "(4/3)πr³",
+                "4πr²"
+              ],
+              [
+                "Any prism",
+                "base area × height",
+                "—"
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Composite figures",
+            "text": "Break the shape into rectangles, triangles, and circle pieces, or subtract a hole from a whole. **Shaded-region problems are almost always \"big shape minus small shape.\"**"
+          },
+          {
+            "type": "example",
+            "prompt": "A circular garden of radius 5 sits centered inside a 14 × 14 square patio. What is the paved area?",
+            "work": [
+              "Square area: 14² = 196.",
+              "Circle area: π(25) = 25π ≈ 78.54.",
+              "Paved = 196 − 25π ≈ 117.46."
+            ],
+            "answer": "**196 − 25π ≈ 117.5 square units.** Leave π symbolic until the end; ACT frequently lists the exact form as a choice."
+          },
+          {
+            "type": "example",
+            "prompt": "A cylindrical tank has radius 3 ft and height 10 ft. If water fills it to 6 ft, what volume of water is in the tank?",
+            "work": [
+              "Volume of water = πr²h where h is the water depth, not the tank height.",
+              "= π(9)(6) = 54π ≈ 169.6 ft³."
+            ],
+            "answer": "**54π ≈ 169.6 ft³.** Read carefully for which height applies. The tank’s full height (10) is a distractor placed in the problem on purpose."
+          },
+          {
+            "type": "rule",
+            "title": "Scaling",
+            "text": "If every linear dimension is multiplied by k, **area multiplies by k²** and **volume multiplies by k³**. Doubling a cube’s side makes its surface area 4× and its volume 8×."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Perimeter vs. area confusion in word problems: fencing = perimeter, sod = area, paint = surface area.",
+              "Units: volume in cubic units, area in square units. Converting feet to inches means ×12 for length, ×144 for area, ×1728 for volume.",
+              "A \"slant height\" (l) for a cone is not the same as its vertical height (h). They relate by l² = r² + h²."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "If a cube’s side length is tripled, its volume becomes:",
+            "choices": [
+              "3 times as large",
+              "9 times as large",
+              "27 times as large",
+              "6 times as large"
+            ],
+            "answer": 2,
+            "explain": "Volume scales by k³ = 3³ = 27. Choice B is the surface-area factor (k² = 9) — the most frequently chosen wrong answer on scaling questions."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "math-trig-stats",
+    "label": "Trig, Probability & Stats",
+    "icon": "Waves",
+    "pages": [
+      {
+        "id": "math-sohcahtoa",
+        "topic": "trigonometry",
+        "title": "Right-Triangle Trig: SOHCAHTOA",
+        "summary": "The six ratios, solving for sides and angles, and angle-of-elevation problems.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "SOHCAHTOA",
+            "text": "**S**in = **O**pposite / **H**ypotenuse. **C**os = **A**djacent / **H**ypotenuse. **T**an = **O**pposite / **A**djacent. \"Opposite\" and \"adjacent\" are always relative to the angle you are working with; the hypotenuse never changes."
+          },
+          {
+            "type": "rule",
+            "title": "Reciprocal ratios",
+            "text": "**csc θ = 1/sin θ**, **sec θ = 1/cos θ**, **cot θ = 1/tan θ**. Memory hook: each reciprocal starts with a *different* letter than its partner — cosecant pairs with sine, secant pairs with cosine."
+          },
+          {
+            "type": "example",
+            "prompt": "In right triangle ABC with the right angle at C, AB = 13 and BC = 5. Find sin A, cos A, and tan A.",
+            "work": [
+              "AB is the hypotenuse (opposite the right angle) = 13. BC = 5 is opposite angle A.",
+              "Third side AC = √(169 − 25) = 12 (a 5-12-13 triangle).",
+              "sin A = opposite/hyp = 5/13.",
+              "cos A = adjacent/hyp = 12/13.",
+              "tan A = opposite/adjacent = 5/12."
+            ],
+            "answer": "**sin A = 5/13, cos A = 12/13, tan A = 5/12.** Label the triangle from the perspective of the named angle before writing any ratio — mislabeling opposite and adjacent causes most errors here."
+          },
+          {
+            "type": "example",
+            "prompt": "From a point 80 feet from the base of a tower, the angle of elevation to the top is 32°. How tall is the tower?",
+            "work": [
+              "The 80 ft is adjacent to the 32° angle; the height is opposite.",
+              "Opposite/adjacent → tangent: tan 32° = h/80.",
+              "h = 80 · tan 32° ≈ 80(0.6249) ≈ 50.0 ft."
+            ],
+            "answer": "**≈ 50 feet.** Angle-of-elevation and depression problems almost always use **tangent**, because the given and requested quantities are the two legs. Angle of depression from the top equals angle of elevation from the bottom."
+          },
+          {
+            "type": "rule",
+            "title": "Inverse trig",
+            "text": "To find an **angle** from a ratio, use the inverse: θ = sin⁻¹(x), cos⁻¹(x), or tan⁻¹(x). If tan θ = 3/4, then θ = tan⁻¹(0.75) ≈ 36.87°."
+          },
+          {
+            "type": "rule",
+            "title": "Key identities",
+            "text": "**sin²θ + cos²θ = 1** (Pythagorean identity). **tan θ = sin θ / cos θ**. Also, sin θ = cos(90° − θ) — sine and cosine of complementary angles are equal."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Make sure your calculator is in **degree mode** unless the problem uses radians.",
+              "The hypotenuse is always the longest side and always opposite the right angle — never a leg.",
+              "A ratio like sin θ = 5/3 is impossible; sine and cosine outputs always lie between −1 and 1."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "In a right triangle, the side adjacent to angle θ is 8 and the hypotenuse is 17. What is sin θ?",
+            "choices": [
+              "8/17",
+              "15/17",
+              "8/15",
+              "15/8"
+            ],
+            "answer": 1,
+            "explain": "The missing side is √(289 − 64) = 15 (an 8-15-17 triple), and it is opposite θ. So sin θ = 15/17. Choice A is cos θ, the most tempting wrong answer."
+          }
+        ]
+      },
+      {
+        "id": "math-unit-circle",
+        "topic": "trigonometry",
+        "title": "Unit Circle, Radians & Trig Graphs",
+        "summary": "Converting angles, quadrant signs, and reading amplitude and period.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Radians",
+            "text": "**π radians = 180°.** To convert degrees → radians, multiply by π/180. Radians → degrees, multiply by 180/π. Common values: 30° = π/6, 45° = π/4, 60° = π/3, 90° = π/2, 180° = π, 360° = 2π."
+          },
+          {
+            "type": "rule",
+            "title": "The unit circle",
+            "text": "On a circle of radius 1, a point at angle θ has coordinates **(cos θ, sin θ)**. So cosine is the x-coordinate and sine is the y-coordinate — that fact alone gives you every sign and value."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Angle",
+              "sin",
+              "cos",
+              "tan"
+            ],
+            "rows": [
+              [
+                "0° (0)",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "30° (π/6)",
+                "1/2",
+                "√3/2",
+                "√3/3"
+              ],
+              [
+                "45° (π/4)",
+                "√2/2",
+                "√2/2",
+                "1"
+              ],
+              [
+                "60° (π/3)",
+                "√3/2",
+                "1/2",
+                "√3"
+              ],
+              [
+                "90° (π/2)",
+                "1",
+                "0",
+                "undefined"
+              ],
+              [
+                "180° (π)",
+                "0",
+                "−1",
+                "0"
+              ],
+              [
+                "270° (3π/2)",
+                "−1",
+                "0",
+                "undefined"
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Quadrant signs — \"All Students Take Calculus\"",
+            "text": "Quadrant I: **A**ll positive. Quadrant II: **S**ine positive. Quadrant III: **T**angent positive. Quadrant IV: **C**osine positive. Everything else in that quadrant is negative."
+          },
+          {
+            "type": "example",
+            "prompt": "If sin θ = 3/5 and θ is in Quadrant II, find cos θ.",
+            "work": [
+              "Use sin²θ + cos²θ = 1: 9/25 + cos²θ = 1 → cos²θ = 16/25 → cos θ = ±4/5.",
+              "In Quadrant II, only sine is positive, so cosine is negative."
+            ],
+            "answer": "**cos θ = −4/5.** Always compute the magnitude with the identity, then assign the sign from the quadrant. Skipping the sign step is the classic error."
+          },
+          {
+            "type": "rule",
+            "title": "Graphs of sine and cosine",
+            "text": "For **y = a·sin(bx) + d**: **amplitude = |a|** (half the distance from max to min), **period = 2π/b** (or 360°/b in degrees), and **d** shifts the midline vertically. Maximum = d + |a|; minimum = d − |a|."
+          },
+          {
+            "type": "example",
+            "prompt": "Find the amplitude and period of y = 3 sin(4x) − 1, and its maximum value.",
+            "work": [
+              "Amplitude = |3| = 3.",
+              "Period = 2π/4 = π/2.",
+              "Midline d = −1, so max = −1 + 3 = 2."
+            ],
+            "answer": "**Amplitude 3, period π/2, maximum 2.** Note that b **compresses** the graph: a larger b means a shorter period, which is counterintuitive and heavily tested."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Amplitude is |a|, never negative. A negative a flips the graph but the amplitude is still positive.",
+              "Period is 2π/b, not 2πb.",
+              "Tangent has period π (not 2π) and has vertical asymptotes where cosine = 0."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "What is the period of y = 2 cos(3x)?",
+            "choices": [
+              "2π",
+              "2π/3",
+              "6π",
+              "3"
+            ],
+            "answer": 1,
+            "explain": "Period = 2π/b = 2π/3. Choice A ignores b entirely; choice C multiplies by b instead of dividing."
+          }
+        ]
+      },
+      {
+        "id": "math-laws",
+        "topic": "trigonometry",
+        "title": "Law of Sines & Law of Cosines",
+        "summary": "Solving non-right triangles, and knowing which law to reach for.",
+        "minutes": 5,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Law of Sines",
+            "text": "**a/sin A = b/sin B = c/sin C.** Use it when you have an angle paired with its opposite side. Best for **AAS**, **ASA**, and **SSA** cases."
+          },
+          {
+            "type": "rule",
+            "title": "Law of Cosines",
+            "text": "**c² = a² + b² − 2ab·cos C**, where C is the angle **between** sides a and b. Use it for **SAS** (two sides and the included angle) and **SSS** (all three sides, solving for an angle). Notice that when C = 90°, cos C = 0 and the formula collapses to the Pythagorean theorem."
+          },
+          {
+            "type": "rule",
+            "title": "Which law do I use?",
+            "text": "Ask: **do I have a complete angle-side pair** (an angle and the side directly across from it)? If yes → Law of Sines. If no → Law of Cosines."
+          },
+          {
+            "type": "example",
+            "prompt": "In triangle ABC, a = 8, b = 11, and angle C = 40°. Find side c.",
+            "work": [
+              "Two sides and the included angle → Law of Cosines.",
+              "c² = 64 + 121 − 2(8)(11)cos 40°",
+              "= 185 − 176(0.766) = 185 − 134.8 = 50.2",
+              "c = √50.2 ≈ 7.09"
+            ],
+            "answer": "**c ≈ 7.1.** Sanity check: c should be shorter than both given sides because the 40° angle between them is small — and it is."
+          },
+          {
+            "type": "example",
+            "prompt": "In triangle ABC, angle A = 35°, angle B = 80°, and a = 12. Find b.",
+            "work": [
+              "A pairs with a → Law of Sines.",
+              "12/sin 35° = b/sin 80°",
+              "b = 12 · sin 80° / sin 35° = 12(0.985)/(0.574) ≈ 20.6"
+            ],
+            "answer": "**b ≈ 20.6.** Cross-multiply rather than solving proportions step by step — it is faster and eliminates a common inversion error."
+          },
+          {
+            "type": "rule",
+            "title": "Area of any triangle",
+            "text": "**Area = ½ab·sin C**, where C is the angle between sides a and b. This works even when you have no height."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "In the Law of Cosines, the angle must be the one **between** the two sides you square.",
+              "The SSA case can produce two valid triangles (the \"ambiguous case\"). ACT rarely pushes this, but if the answer seems non-unique, that is why.",
+              "Keep the calculator in degree mode."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "You know all three side lengths of a triangle and want to find an angle. Which law applies?",
+            "choices": [
+              "Law of Sines",
+              "Law of Cosines",
+              "Pythagorean theorem",
+              "Neither — more information is needed"
+            ],
+            "answer": 1,
+            "explain": "SSS requires the Law of Cosines, rearranged as cos C = (a² + b² − c²)/(2ab). The Law of Sines needs a known angle-side pair, which SSS does not give you."
+          }
+        ]
+      },
+      {
+        "id": "math-probability",
+        "topic": "probability",
+        "title": "Probability & Counting",
+        "summary": "Basic probability, and/or rules, and permutations vs. combinations.",
+        "minutes": 7,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Basic probability",
+            "text": "**P(event) = favorable outcomes / total outcomes.** Every probability lies between 0 and 1. **P(not A) = 1 − P(A)** — for \"at least one\" questions, computing the complement is almost always faster."
+          },
+          {
+            "type": "rule",
+            "title": "AND vs. OR",
+            "text": "**AND → multiply.** P(A and B) = P(A) × P(B) for independent events. **OR → add**, then subtract the overlap: P(A or B) = P(A) + P(B) − P(A and B). If the events cannot both happen (mutually exclusive), the overlap is zero."
+          },
+          {
+            "type": "example",
+            "prompt": "A bag has 4 red, 5 blue, and 3 green marbles. Two are drawn without replacement. What is P(both red)?",
+            "work": [
+              "Total = 12 marbles.",
+              "First red: 4/12 = 1/3.",
+              "Second red (one red gone, 11 left): 3/11.",
+              "Multiply: (1/3)(3/11) = 3/33 = 1/11."
+            ],
+            "answer": "**1/11.** \"Without replacement\" means **both** the numerator and denominator shrink for the second draw. \"With replacement\" would give (4/12)(4/12) = 1/9."
+          },
+          {
+            "type": "example",
+            "prompt": "A fair coin is flipped 4 times. What is the probability of getting at least one head?",
+            "work": [
+              "Complement: P(no heads) = P(all tails) = (1/2)⁴ = 1/16.",
+              "P(at least one head) = 1 − 1/16 = 15/16."
+            ],
+            "answer": "**15/16.** \"At least one\" almost always signals the complement rule. Counting the cases directly (1 head, 2 heads, 3 heads, 4 heads) takes five times as long."
+          },
+          {
+            "type": "rule",
+            "title": "Counting: the fundamental principle",
+            "text": "If one choice has m options and a second has n options, together there are **m × n** outcomes. Extend by multiplying for each additional stage."
+          },
+          {
+            "type": "rule",
+            "title": "Permutations vs. combinations",
+            "text": "**Order matters → permutation:** P(n, r) = n!/(n − r)!. **Order does not matter → combination:** C(n, r) = n!/[r!(n − r)!]. Keyword test: *arrangement, ranking, president/VP, seating order* → permutation. *Committee, team, group, selection, handshake* → combination."
+          },
+          {
+            "type": "example",
+            "prompt": "From 9 players, how many different 5-person teams can be formed? How many ways can a captain, co-captain, and treasurer be chosen from 9?",
+            "work": [
+              "A team has no ranking → combination: C(9,5) = 9!/(5!4!) = 126.",
+              "Three distinct roles → permutation: 9 × 8 × 7 = 504."
+            ],
+            "answer": "**126 teams; 504 role assignments.** For small permutations, just multiply down (9 × 8 × 7) instead of using factorials — it is faster and less error-prone."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Probabilities must be ≤ 1. If yours exceeds 1, you added when you should have multiplied.",
+              "\"Without replacement\" changes the denominator on every subsequent draw.",
+              "Geometric probability = favorable area / total area, not a count of points."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A spinner has 8 equal sections numbered 1–8. What is the probability of landing on a prime number?",
+            "choices": [
+              "1/2",
+              "3/8",
+              "5/8",
+              "1/4"
+            ],
+            "answer": 0,
+            "explain": "Primes from 1 to 8 are 2, 3, 5, 7 — four of them, so 4/8 = 1/2. Choice B comes from forgetting that 2 is prime; choice D from counting only odd primes."
+          }
+        ]
+      },
+      {
+        "id": "math-statistics",
+        "topic": "statistics",
+        "title": "Statistics: Mean, Median, Mode & Spread",
+        "summary": "Averages, weighted averages, and what standard deviation actually measures.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "The three centers",
+            "text": "**Mean** = sum ÷ count. **Median** = middle value when ordered (average the two middle values if the count is even). **Mode** = most frequent value. **Range** = max − min."
+          },
+          {
+            "type": "rule",
+            "title": "The sum trick",
+            "text": "Nearly every hard average question is solved by converting to sums: **sum = mean × count**. Once you have the total, you can add, remove, or change values freely."
+          },
+          {
+            "type": "example",
+            "prompt": "A student’s first 4 test scores average 82. What must she score on the 5th test to average 85 overall?",
+            "work": [
+              "Current sum: 82 × 4 = 328.",
+              "Required sum for five tests: 85 × 5 = 425.",
+              "Needed score: 425 − 328 = 97."
+            ],
+            "answer": "**97.** Sum-based reasoning turns every \"what score do I need\" problem into two multiplications and a subtraction."
+          },
+          {
+            "type": "rule",
+            "title": "Weighted averages",
+            "text": "When groups differ in size, you cannot average the averages. **Weighted mean = Σ(value × weight) / Σ(weights).** A class of 20 averaging 90 and a class of 10 averaging 75 has an overall mean of (20·90 + 10·75)/30 = 2550/30 = 85, not 82.5."
+          },
+          {
+            "type": "example",
+            "prompt": "Find the median and mode of: 4, 7, 7, 9, 12, 15, 15, 15, 20",
+            "work": [
+              "Already ordered; 9 values, so the median is the 5th value.",
+              "Median = 12.",
+              "15 appears three times, more than any other value → mode = 15."
+            ],
+            "answer": "**Median 12, mode 15.** Always sort before finding the median — ACT deliberately presents data out of order."
+          },
+          {
+            "type": "rule",
+            "title": "Standard deviation, conceptually",
+            "text": "Standard deviation measures **spread around the mean**. You will never compute it by hand on the ACT; you will be asked to compare data sets. **More clustered = smaller SD. More spread out = larger SD.** Adding a constant to every value shifts the mean but **does not change** the SD."
+          },
+          {
+            "type": "example",
+            "prompt": "Set A: {10, 10, 10, 10}. Set B: {4, 8, 12, 16}. Both have mean 10. Which has the larger standard deviation?",
+            "work": [
+              "Set A has zero spread — every value equals the mean.",
+              "Set B’s values sit 6, 2, 2, and 6 units from the mean."
+            ],
+            "answer": "**Set B.** Set A’s standard deviation is exactly 0, the minimum possible. Any set of identical values has SD = 0 — a fact ACT tests directly."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "The mean is pulled by outliers; the median is not. If a question mentions an extreme value skewing results, it wants the median.",
+              "A data set can have no mode, one mode, or several.",
+              "Averaging two averages is only valid when the groups are the same size."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "The mean of 6 numbers is 15. If one number, 9, is removed, what is the mean of the remaining 5?",
+            "choices": [
+              "15",
+              "16.2",
+              "14",
+              "16"
+            ],
+            "answer": 1,
+            "explain": "Total = 15 × 6 = 90. Remove 9 → 81. New mean = 81/5 = 16.2. Removing a below-average value must raise the mean, which immediately rules out choices A and C."
+          }
+        ]
+      }
+    ]
+  }
+]
