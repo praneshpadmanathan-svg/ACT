@@ -1,7 +1,7 @@
 /* The adventure map screen, and a per-region list view for when you want to
    scan a road as text rather than hunt for pins. */
 
-import { PATH_BY_ID, SECTION_BY_ID, SECTIONS } from '@/content';
+import { PATH_BY_ID, SECTION_BY_ID } from '@/content';
 import { useStore } from '@/lib/store';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { sfx } from '@/lib/sfx';
@@ -9,56 +9,19 @@ import { cx } from '@/lib/utils';
 import type { SectionId } from '@/types';
 import { BackLink, Page } from '@/components/Shell';
 import { Button, EmptyState, ProgressBar, SectionHeading } from '@/components/ui';
-import { AdventureMap, useMapProgress } from '@/game/AdventureMap';
+import { AdventureMap } from '@/game/AdventureMap';
 import { Wizzy } from '@/game/Wizzy';
 import { REGIONS } from '@/game/mapData';
 
+/* The map takes the whole viewport — no nav bar, no page heading, no chrome
+   except the floating controls. It is the one screen that should feel like a
+   game rather than an app. */
 export function MapScreen() {
-  const { cleared, total } = useMapProgress();
+  const navigate = useNavigate();
 
   return (
     <>
-      <Page wide>
-        <SectionHeading
-          eyebrow="The realm"
-          title="Adventure map"
-          detail="Every pin is one ACT skill. Clear a landmark to open the road ahead — and when all four regions are done, the citadel opens."
-        />
-
-        <AdventureMap />
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {SECTIONS.map((section) => {
-            const region = REGIONS[section.id];
-            const path = PATH_BY_ID[section.id];
-            return (
-              <a
-                key={section.id}
-                href={hrefFor({ name: 'path', section: section.id })}
-                onClick={() => sfx.select()}
-                className="panel-lit p-5 transition-all hover:-translate-y-0.5 hover:border-gold-deep"
-                style={{ borderTopColor: region.color, borderTopWidth: 3 }}
-              >
-                <h3 className="heading text-[16px]" style={{ color: region.color }}>
-                  {region.title}
-                </h3>
-                <p className="label-sm mt-0.5">{section.name}</p>
-                <p className="mt-3 font-read text-[14px] leading-relaxed text-parchment-dim">
-                  {section.blurb}
-                </p>
-                <p className="mt-3 font-script text-[12px] uppercase tracking-[0.14em] text-ink-faint">
-                  {path.nodes.length} landmarks
-                </p>
-              </a>
-            );
-          })}
-        </div>
-
-        <p className="mt-6 text-center font-read text-[14px] text-ink-faint">
-          {cleared} of {total} landmarks cleared across the realm.
-        </p>
-      </Page>
-
+      <AdventureMap onExit={() => navigate({ name: 'home' })} />
       <Wizzy />
     </>
   );

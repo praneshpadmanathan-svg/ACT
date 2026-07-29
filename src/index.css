@@ -268,15 +268,50 @@
 
   /* ------------------------------------------------------------- map atoms */
 
-  /* A landmark pin on the painted map. Scales with the viewport so it stays
-     proportional to the artwork instead of swamping it on a phone. */
+  /* A landmark pin. Sized in map-space pixels, because the whole world layer
+     is scaled by one transform — a viewport-relative size would fight it. */
   .pin {
     @apply absolute z-10 flex -translate-x-1/2 -translate-y-1/2 cursor-pointer
            items-center justify-center rounded-full border-2 transition-transform
            duration-150;
-    width: clamp(24px, calc(2.6vw + 14px), 34px);
-    height: clamp(24px, calc(2.6vw + 14px), 34px);
+    width: 34px;
+    height: 34px;
     box-shadow: theme('boxShadow.pin');
+  }
+
+  /* Hover card above a pin. */
+  .pin-card {
+    @apply pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 hidden w-max
+           max-w-[200px] -translate-x-1/2 rounded-lg border border-parchment-edge
+           bg-parchment px-3 py-2 text-left shadow-card;
+  }
+  .pin:hover .pin-card,
+  .pin:focus-visible .pin-card {
+    @apply block;
+  }
+
+  /* Map HUD furniture. */
+  .map-btn {
+    @apply inline-flex items-center gap-1.5 rounded-lg border border-leather-700
+           bg-leather-950/85 px-3.5 py-2 font-display text-[13px] font-semibold
+           text-parchment-dim shadow-card backdrop-blur transition-colors;
+  }
+  .map-btn:hover {
+    @apply border-gold-deep text-parchment;
+  }
+
+  .map-hud {
+    @apply flex items-center gap-1 rounded-lg border border-leather-700
+           bg-leather-950/85 px-3.5 py-2 shadow-card backdrop-blur;
+  }
+
+  .map-zoom {
+    @apply flex h-9 w-9 items-center justify-center rounded-lg border border-leather-700
+           bg-leather-950/85 font-display text-[18px] leading-none text-parchment-dim
+           shadow-card backdrop-blur transition-colors;
+  }
+  .map-zoom:hover {
+    @apply border-gold-deep text-gold;
   }
   .pin:hover,
   .pin:focus-visible {
@@ -299,6 +334,171 @@
   .pin-summit {
     @apply border-[#fff1bb];
     background: linear-gradient(180deg, #ffe89a, #e0a81c);
+  }
+
+  /* ------------------------------------------------------------- map fx
+     Everything below is scenery motion layered over the illustration. All of
+     it is positioned in map-percentage space and is pointer-transparent, so
+     it stays locked to its landmark through any pan or zoom. */
+
+  .mapfx {
+    @apply pointer-events-none absolute inset-0 overflow-hidden;
+  }
+  .mapfx > span {
+    @apply pointer-events-none absolute block;
+    transform: translate(-50%, -50%);
+  }
+
+  /* falling water */
+  .mapfx-fall {
+    border-radius: 999px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(226, 245, 255, 0.95) 45%, rgba(255, 255, 255, 0) 100%);
+    transform-origin: top center;
+    animation: fx-fall linear infinite;
+  }
+  @keyframes fx-fall {
+    0% { transform: translate(-50%, -110%) scaleY(0.5); opacity: 0; }
+    18% { opacity: 1; }
+    100% { transform: translate(-50%, 120%) scaleY(1.25); opacity: 0; }
+  }
+
+  .mapfx-spray {
+    width: 1.5%;
+    aspect-ratio: 1;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.65), transparent 68%);
+    animation: fx-spray 2.6s ease-out infinite;
+  }
+  @keyframes fx-spray {
+    0% { transform: translate(-50%, -50%) scale(0.35); opacity: 0; }
+    30% { opacity: 0.8; }
+    100% { transform: translate(-50%, -170%) scale(1.5); opacity: 0; }
+  }
+
+  /* specular drift over open water */
+  .mapfx-water {
+    border-radius: 40%;
+    background: linear-gradient(115deg, transparent 38%, rgba(216, 244, 255, 0.24) 50%, transparent 62%);
+    mix-blend-mode: screen;
+    animation: fx-water 11s ease-in-out infinite;
+  }
+  @keyframes fx-water {
+    0%, 100% { opacity: 0.18; transform: translate(-50%, -50%) translateX(-6%); }
+    50% { opacity: 0.55; transform: translate(-50%, -50%) translateX(6%); }
+  }
+
+  /* pulsing bio-luminescence */
+  .mapfx-glow {
+    aspect-ratio: 1;
+    border-radius: 999px;
+    mix-blend-mode: screen;
+    animation: fx-glow 3s ease-in-out infinite;
+  }
+  @keyframes fx-glow {
+    0%, 100% { opacity: 0.32; transform: translate(-50%, -50%) scale(0.82); }
+    50% { opacity: 0.95; transform: translate(-50%, -50%) scale(1.16); }
+  }
+
+  .mapfx-fly {
+    width: 0.42%;
+    aspect-ratio: 1;
+    border-radius: 999px;
+    background: #ffe9a0;
+    box-shadow: 0 0 6px 2px rgba(255, 224, 130, 0.85);
+    animation: fx-fly ease-in-out infinite;
+  }
+  @keyframes fx-fly {
+    0% { transform: translate(-50%, -50%) translate(0, 0); opacity: 0; }
+    12%, 78% { opacity: 0.95; }
+    50% { transform: translate(-50%, -50%) translate(var(--drift, 3%), -4%); }
+    100% { transform: translate(-50%, -50%) translate(calc(var(--drift, 3%) * 2), -8%); opacity: 0; }
+  }
+
+  /* crystal glints */
+  .mapfx-sparkle {
+    aspect-ratio: 1;
+    background:
+      radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, transparent 62%),
+      conic-gradient(from 0deg, transparent 0deg 78deg, rgba(255, 255, 255, 0.8) 90deg, transparent 102deg 168deg,
+        rgba(255, 255, 255, 0.8) 180deg, transparent 192deg 258deg, rgba(255, 255, 255, 0.8) 270deg, transparent 282deg 348deg);
+    mix-blend-mode: screen;
+    animation: fx-sparkle 5s ease-in-out infinite;
+  }
+  @keyframes fx-sparkle {
+    0%, 72%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.4) rotate(0deg); }
+    82% { opacity: 1; transform: translate(-50%, -50%) scale(1.15) rotate(45deg); }
+    92% { opacity: 0.25; transform: translate(-50%, -50%) scale(0.7) rotate(70deg); }
+  }
+
+  /* volcano */
+  .mapfx-heat {
+    width: 9%;
+    aspect-ratio: 1.4;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(255, 132, 46, 0.42) 0%, rgba(255, 90, 20, 0.14) 45%, transparent 72%);
+    mix-blend-mode: screen;
+    animation: fx-glow 2.4s ease-in-out infinite;
+  }
+  .mapfx-ember {
+    aspect-ratio: 1;
+    border-radius: 999px;
+    background: #ffb347;
+    box-shadow: 0 0 5px 1.5px rgba(255, 140, 50, 0.9);
+    animation: fx-ember ease-out infinite;
+  }
+  @keyframes fx-ember {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+    15% { opacity: 1; }
+    100% { transform: translate(-50%, -50%) translate(-1.5%, -13%) scale(0.25); opacity: 0; }
+  }
+
+  /* lighthouse sweep */
+  .mapfx-beam {
+    width: 22%;
+    aspect-ratio: 1;
+    border-radius: 999px;
+    background: conic-gradient(from 0deg, rgba(255, 240, 190, 0.34) 0deg 17deg, transparent 17deg 360deg);
+    mix-blend-mode: screen;
+    animation: fx-sweep 9s linear infinite;
+  }
+  @keyframes fx-sweep {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  /* the citadel's beacon */
+  .mapfx-citadel {
+    width: 15%;
+    aspect-ratio: 1;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(255, 226, 138, 0.5) 0%, rgba(255, 196, 74, 0.2) 38%, transparent 68%);
+    mix-blend-mode: screen;
+    animation: fx-glow 4.2s ease-in-out infinite;
+  }
+
+  /* moored boats rocking */
+  .mapfx-boat {
+    width: 3%;
+    aspect-ratio: 2;
+    background: transparent;
+    animation: fx-bob 4.6s ease-in-out infinite;
+  }
+  @keyframes fx-bob {
+    0%, 100% { transform: translate(-50%, -50%) rotate(-1.6deg) translateY(0); }
+    50% { transform: translate(-50%, -50%) rotate(1.6deg) translateY(-0.35%); }
+  }
+
+  /* distant birds crossing the sky */
+  .mapfx-bird {
+    left: -4%;
+    color: rgba(58, 44, 28, 0.5);
+    font-family: theme('fontFamily.display');
+    line-height: 1;
+    animation: fx-cross linear infinite;
+  }
+  @keyframes fx-cross {
+    0% { transform: translate(-50%, -50%) translateX(0); opacity: 0; }
+    8%, 92% { opacity: 0.7; }
+    100% { transform: translate(-50%, -50%) translateX(112vw); opacity: 0; }
   }
 
   .region-plaque {

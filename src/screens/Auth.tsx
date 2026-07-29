@@ -1,14 +1,17 @@
-/* Sign in / sign up.
+/* Sign in / create an account.
 
-   Reads clearly about what it can and cannot do: when Supabase is not
-   configured the cloud fields are hidden entirely and guest mode is offered
-   as the real path, rather than showing a form that silently fails. */
+   Two backends, picked automatically: Supabase when it's configured (real
+   cross-device sync), otherwise accounts stored on this device. The screen
+   says plainly which one is in play, and the local path warns not to reuse a
+   password — it is profile separation, not security. */
 
 import { useState, type FormEvent } from 'react';
 import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { cloudEnabled, signIn, signUp } from '@/lib/supabase';
+import { localSignIn, localSignUp } from '@/lib/localAuth';
 import { sfx } from '@/lib/sfx';
+import { cx } from '@/lib/utils';
 import { Button } from '@/components/ui';
 import { burstConfetti } from '@/components/Feedback';
 
@@ -16,7 +19,7 @@ type Mode = 'signin' | 'signup';
 
 export function Auth({ mode: initialMode }: { mode: Mode }) {
   const navigate = useNavigate();
-  const { continueAsGuest, refreshAuth, progress } = useStore();
+  const { continueAsGuest, refreshAuth, useLocalAccount, progress } = useStore();
 
   const [mode, setMode] = useState<Mode>(initialMode);
   const [name, setName] = useState('');
@@ -37,33 +40,48 @@ export function Auth({ mode: initialMode }: { mode: Mode }) {
       return;
     }
     if (password.length < 6) {
-      setError('Password must be at least 6 characters.');
+      setError('Use at least 6 characters.');
       return;
     }
     if (mode === 'signup' && !name.trim()) {
-      setError('Pick a name to go on the leaderboard.');
+      setError('Pick a name for your traveller.');
       return;
     }
 
     setBusy(true);
-    const result =
-      mode === 'signup' ? await signUp(name.trim(), email, password) : await signIn(email, password);
-    setBusy(false);
+    try {
+      if (cloudEnabled) {
+        const result =
+          mode === 'signup' ? await signUp(name.trim(), email, password) : await signIn(email, password);
+        if (!result.ok) {
+          setError(result.error ?? 'Something went wrong.');
+          sfx.wrong();
+          return;
+        }
+        if (result.needsConfirmation) {
+          setConfirmSent(true);
+          return;
+        }
+        await refreshAuth();
+      } else {
+        const result =
+          mode === 'signup'
+            ? await localSignUp(name.trim(), email, password)
+            : await localSignIn(email, password);
+        if (!result.ok || !result.account) {
+          setError(result.error ?? 'Something went wrong.');
+          sfx.wrong();
+          return;
+        }
+        useLocalAccount(result.account);
+      }
 
-    if (!result.ok) {
-      setError(result.error ?? 'Something went wrong.');
-      sfx.wrong();
-      return;
+      sfx.achieve();
+      burstConfetti(70);
+      goNext();
+    } finally {
+      setBusy(false);
     }
-    if (result.needsConfirmation) {
-      setConfirmSent(true);
-      return;
-    }
-
-    sfx.achieve();
-    burstConfetti(70);
-    await refreshAuth();
-    goNext();
   };
 
   const startGuest = () => {
@@ -73,20 +91,24 @@ export function Auth({ mode: initialMode }: { mode: Mode }) {
   };
 
   return (
-    <div className="relative isolate flex min-h-screen items-center justify-center overflow-hidden px-4 py-14 ">
-      <img src="/art/camp-bg.webp" alt="" className="absolute inset-0 h-full w-full select-none object-cover" draggable={false} />
-      <div className="absolute inset-0 bg-leather-950/82" />
+    <div className="relative isolate flex min-h-screen items-center justify-center overflow-hidden px-4 py-14">
+      <img
+        src="/art/camp-bg.webp"
+        alt=""
+        className="absolute inset-0 h-full w-full select-none object-cover"
+        draggable={false}
+      />
+      <div className="absolute inset-0 bg-leather-950/84" />
 
       <div className="panel-lit relative z-10 w-full max-w-md p-7 sm:p-9">
         {confirmSent ? (
           <div className="text-center">
-            <h1 className="heading mb-5 text-[20px] text-gold">Check your email</h1>
-            <p className="text-[15px] leading-relaxed text-parchment-dim">
-              We sent a confirmation link to{' '}
-              <b className="text-cliffs">{email}</b>. Open it, then come back and sign in.
+            <h1 className="heading mb-4 text-[22px] text-gold">Check your email</h1>
+            <p className="font-read text-[15px] leading-relaxed text-parchment-dim">
+              We sent a confirmation link to <b className="text-cliffs">{email}</b>. Open it, then come
+              back and sign in.
             </p>
             <Button
-              variant="ghost"
               className="mt-7 w-full"
               onClick={() => {
                 setConfirmSent(false);
@@ -98,94 +120,95 @@ export function Auth({ mode: initialMode }: { mode: Mode }) {
           </div>
         ) : (
           <>
-            <h1 className="heading mb-6 text-center text-[20px] text-parchment">
-              {mode === 'signup' ? 'Join the climb' : 'Welcome back'}
+            <h1 className="heading mb-1 text-center text-[24px] text-parchment">
+              {mode === 'signup' ? 'Begin your journey' : 'Welcome back'}
             </h1>
+            <p className="mb-6 text-center font-read text-[14px] text-ink-faint">
+              {cloudEnabled
+                ? 'Your progress follows you to any device.'
+                : 'Your progress is kept on this device.'}
+            </p>
 
-            {cloudEnabled ? (
-              <>
-                <div className="mb-6 grid grid-cols-2 gap-1 rounded-lg border-2 border-leather-700 bg-leather-900 p-1">
-                  {(['signup', 'signin'] as Mode[]).map((m) => (
-                    <button
-                      key={m}
-                      type="button"
-                      onClick={() => {
-                        sfx.select();
-                        setMode(m);
-                        setError(null);
-                      }}
-                      className={`rounded px-3 py-2 font-script text-[11px] uppercase tracking-wide transition-colors ${
-                        mode === m ? 'bg-leather-700 text-gold' : 'text-ink-faint hover:text-parchment'
-                      }`}
-                    >
-                      {m === 'signup' ? 'New player' : 'Returning'}
-                    </button>
-                  ))}
-                </div>
-
-                <form onSubmit={submit} className="space-y-4">
-                  {mode === 'signup' && (
-                    <Field
-                      label="Name"
-                      value={name}
-                      onChange={setName}
-                      placeholder="What should we call you?"
-                      maxLength={24}
-                      autoComplete="nickname"
-                    />
+            <div className="mb-6 grid grid-cols-2 gap-1 rounded-lg border border-leather-700 bg-leather-900 p-1">
+              {(['signup', 'signin'] as Mode[]).map((m) => (
+                <button
+                  key={m}
+                  type="button"
+                  onClick={() => {
+                    sfx.select();
+                    setMode(m);
+                    setError(null);
+                  }}
+                  className={cx(
+                    'rounded px-3 py-2 font-display text-[13px] font-semibold transition-colors',
+                    mode === m ? 'bg-leather-750 text-gold' : 'text-ink-faint hover:text-parchment',
                   )}
-                  <Field
-                    label="Email"
-                    type="email"
-                    value={email}
-                    onChange={setEmail}
-                    placeholder="you@example.com"
-                    autoComplete="email"
-                  />
-                  <Field
-                    label="Password"
-                    type="password"
-                    value={password}
-                    onChange={setPassword}
-                    placeholder={mode === 'signup' ? 'At least 6 characters' : '••••••'}
-                    autoComplete={mode === 'signup' ? 'new-password' : 'current-password'}
-                  />
+                >
+                  {m === 'signup' ? 'New traveller' : 'Returning'}
+                </button>
+              ))}
+            </div>
 
-                  {error && (
-                    <p className="rounded-lg border-2 border-blood/40 bg-blood/10 px-3 py-2 text-[13px] leading-snug text-[#e8a094]">
-                      {error}
-                    </p>
-                  )}
+            <form onSubmit={submit} className="space-y-4">
+              {mode === 'signup' && (
+                <Field
+                  label="Name"
+                  value={name}
+                  onChange={setName}
+                  placeholder="What shall we call you?"
+                  maxLength={24}
+                  autoComplete="nickname"
+                />
+              )}
+              <Field
+                label="Email"
+                type="email"
+                value={email}
+                onChange={setEmail}
+                placeholder="you@example.com"
+                autoComplete="email"
+              />
+              <Field
+                label="Password"
+                type="password"
+                value={password}
+                onChange={setPassword}
+                placeholder={mode === 'signup' ? 'At least 6 characters' : '••••••'}
+                autoComplete={mode === 'signup' ? 'new-password' : 'current-password'}
+              />
 
-                  <Button type="submit" variant="primary" size="lg" className="w-full" disabled={busy}>
-                    {busy ? 'Working…' : mode === 'signup' ? 'Create account' : 'Sign in'}
-                  </Button>
-                </form>
-
-                <p className="mt-5 text-center text-[13px] leading-relaxed text-ink-faint">
-                  An account syncs your progress across devices.
+              {error && (
+                <p className="rounded-lg border border-blood/50 bg-blood/10 px-3 py-2 font-read text-[13.5px] leading-snug text-[#e8a094]">
+                  {error}
                 </p>
-              </>
-            ) : (
-              <p className="mb-6 rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-3 text-[14px] leading-relaxed text-parchment-dim">
-                Accounts are not configured for this deployment, so progress saves to this device only.
-                See the README to switch on cloud sync.
+              )}
+
+              <Button type="submit" variant="primary" size="lg" className="w-full" disabled={busy}>
+                {busy ? 'Working…' : mode === 'signup' ? 'Create account' : 'Sign in'}
+              </Button>
+            </form>
+
+            {!cloudEnabled && mode === 'signup' && (
+              <p className="mt-4 rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[13px] leading-relaxed text-ink-faint">
+                This account lives in this browser only — it separates your progress from anyone else
+                using this computer. It is not secure storage, so please don't reuse an important
+                password.
               </p>
             )}
 
-            <div className="mt-7 border-t-2 border-leather-700 pt-6 text-center">
-              <Button variant="ghost" className="w-full" onClick={startGuest}>
-                Continue as guest
+            <div className="mt-7 border-t border-leather-700 pt-6 text-center">
+              <Button className="w-full" onClick={startGuest}>
+                Continue without an account
               </Button>
-              <p className="mt-3 text-[13px] text-ink-faint">
-                Everything is unlocked. Progress stays in this browser.
+              <p className="mt-3 font-read text-[13px] text-ink-faint">
+                Everything is unlocked either way.
               </p>
             </div>
 
             <button
               type="button"
               onClick={() => navigate({ name: 'landing' })}
-              className="mt-6 w-full font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+              className="mt-6 w-full font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
             >
               ← Back
             </button>
@@ -215,7 +238,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1.5 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+      <span className="mb-1.5 block font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint">
         {label}
       </span>
       <input
@@ -225,7 +248,7 @@ function Field({
         placeholder={placeholder}
         maxLength={maxLength}
         autoComplete={autoComplete}
-        className="w-full rounded-lg border-2 border-leather-700 bg-leather-900 px-3.5 py-2.5 text-[15px] text-white outline-none transition-colors placeholder:text-ink-faint focus:border-gold"
+        className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[15px] text-parchment outline-none transition-colors placeholder:text-[#6b5c44] focus:border-gold-deep"
       />
     </label>
   );

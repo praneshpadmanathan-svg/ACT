@@ -16,30 +16,33 @@ import { DrillRunner, DrillsScreen, ReviewScreen } from '@/screens/Drills';
 import { ReportScreen, TestRunner, TestsScreen } from '@/screens/Tests';
 import { ProfileScreen, StatsScreen } from '@/screens/Stats';
 
-/** Routes that render their own full-screen chrome. */
-const BARE_ROUTES = new Set(['landing', 'auth', 'onboarding']);
+/** Routes that render their own full-screen chrome and suppress the top bar.
+ *  The map is here because it is a full-viewport game view with its own
+ *  floating controls — a nav bar over it broke the immersion. */
+const BARE_ROUTES = new Set(['landing', 'auth', 'onboarding', 'map']);
 
 export default function App() {
   const route = useRoute();
   const navigate = useNavigate();
-  const { authReady, userId, isGuest, progress } = useStore();
+  const { authReady, userId, isGuest, identity, progress } = useStore();
 
-  const signedInSomehow = Boolean(userId) || isGuest || progress.xp > 0;
+  /* 'Started' means any of: a cloud account, a device account, guest mode, or
+     existing progress. Missing the local-account case sent anyone who made an
+     account on this device straight back to the front door. */
+  const hasStarted =
+    Boolean(userId) || identity.kind === 'local' || isGuest || progress.xp > 0;
 
-  /* Anyone who has not started yet gets sent to the landing page; anyone who
-     has gets bounced past it. Waits for auth so a signed-in user reloading on
-     /home does not flash the marketing page. */
+  /* The landing page is the front door and stays reachable: it greets you
+     every time you open the app, and shows 'Continue your quest' once there is
+     progress to continue. Only the inner screens require having started. */
   useEffect(() => {
     if (!authReady) return;
 
-    if (!signedInSomehow && !BARE_ROUTES.has(route.name)) {
+    if (!hasStarted && !BARE_ROUTES.has(route.name)) {
       navigate({ name: 'landing' }, { replace: true });
       return;
     }
-    if (signedInSomehow && route.name === 'landing') {
-      navigate({ name: progress.profile ? 'home' : 'onboarding' }, { replace: true });
-    }
-  }, [authReady, signedInSomehow, route.name, progress.profile, navigate]);
+  }, [authReady, hasStarted, route.name, progress.profile, navigate]);
 
   if (!authReady) {
     return (

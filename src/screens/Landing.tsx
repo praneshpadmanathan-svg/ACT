@@ -73,9 +73,15 @@ export function Landing() {
             <a href={hrefFor({ name: 'auth', mode: 'signin' })} onClick={() => sfx.select()}>
               <Button size="sm">Sign in</Button>
             </a>
-            <Button variant="primary" size="sm" onClick={begin}>
-              Begin
-            </Button>
+            {returning ? (
+              <Button variant="primary" size="sm" onClick={() => navigate({ name: 'home' })}>
+                Continue
+              </Button>
+            ) : (
+              <Button variant="primary" size="sm" onClick={begin}>
+                Begin
+              </Button>
+            )}
           </div>
         </div>
       </header>
@@ -104,13 +110,24 @@ export function Landing() {
           </p>
 
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <Button variant="primary" size="lg" onClick={begin}>
-              Enter the realm ▸
-            </Button>
-            {returning && (
-              <Button size="lg" onClick={() => navigate({ name: 'home' })}>
-                Continue your quest
-              </Button>
+            {returning ? (
+              <>
+                <Button variant="primary" size="lg" onClick={() => navigate({ name: 'home' })}>
+                  Continue your quest ▸
+                </Button>
+                <a href={hrefFor({ name: 'map' })} onClick={() => sfx.select()}>
+                  <Button size="lg">Open the map</Button>
+                </a>
+              </>
+            ) : (
+              <>
+                <Button variant="primary" size="lg" onClick={begin}>
+                  Enter the realm ▸
+                </Button>
+                <a href={hrefFor({ name: 'auth', mode: 'signin' })} onClick={() => sfx.select()}>
+                  <Button size="lg">I have an account</Button>
+                </a>
+              </>
             )}
           </div>
 

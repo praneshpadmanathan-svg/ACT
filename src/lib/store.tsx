@@ -30,6 +30,13 @@ import {
   type Rank,
 } from './progress';
 import { readRaw, removeRaw, STORAGE_KEYS, writeRaw } from './storage';
+import {
+  currentLocalAccount,
+  localSignOut,
+  progressKeyFor,
+  type Identity,
+  type LocalAccount,
+} from './localAuth';
 import { sfx } from './sfx';
 import {
   cloudEnabled,
@@ -92,6 +99,10 @@ interface StoreValue {
   finishTest: (result: TestResult) => void;
   updateProgress: (fn: (p: Progress) => Progress) => void;
 
+  /** Who the loaded progress belongs to. */
+  identity: Identity;
+  /** Adopt a just-created / just-verified local account. */
+  useLocalAccount: (account: LocalAccount) => void;
   continueAsGuest: () => void;
   refreshAuth: () => Promise<void>;
   signOut: () => Promise<void>;
@@ -110,14 +121,24 @@ export function useStore(): StoreValue {
 let nextId = 1;
 
 export function StoreProvider({ children }: { children: ReactNode }) {
-  const [progress, setProgress] = useState<Progress>(() => loadProgress());
+  /* Progress is stored per identity so two people sharing a browser cannot
+     overwrite each other, and signing out of an account does not expose it. */
+  const [identity, setIdentity] = useState<Identity>(() => {
+    const account = currentLocalAccount();
+    return account ? { kind: 'local', email: account.email } : { kind: 'guest' };
+  });
+  const [progress, setProgress] = useState<Progress>(() => {
+    const account = currentLocalAccount();
+    const key = progressKeyFor(account ? { kind: 'local', email: account.email } : { kind: 'guest' });
+    return loadProgress(key);
+  });
   const [toasts, setToasts] = useState<Toast[]>([]);
   const [xpPops, setXPPops] = useState<XPPop[]>([]);
   const [levelUpRank, setLevelUpRank] = useState<number | null>(null);
 
   const [authReady, setAuthReady] = useState(!cloudEnabled);
   const [userId, setUserId] = useState<string | null>(null);
-  const [playerName, setPlayerName] = useState('Guest');
+  const [playerName, setPlayerName] = useState(() => currentLocalAccount()?.name ?? 'Traveller');
   const [isGuest, setIsGuest] = useState(() => readRaw(STORAGE_KEYS.guest) === '1');
   const [syncing, setSyncing] = useState(false);
   const [lastSyncError, setLastSyncError] = useState<string | null>(null);
@@ -128,9 +149,11 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   /* ---------------------------------------------------------- persistence */
 
+  const storageKey = useMemo(() => progressKeyFor(identity), [identity]);
+
   useEffect(() => {
-    saveProgress(progress);
-  }, [progress]);
+    saveProgress(progress, storageKey);
+  }, [progress, storageKey]);
 
   /* --------------------------------------------------------------- toasts */
 
@@ -262,10 +285,12 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       setPlayerName(name);
       setIsGuest(false);
       removeRaw(STORAGE_KEYS.guest);
+      setIdentity({ kind: 'cloud', userId: user.id });
       await syncWithCloud(user.id, name);
     } else {
       setUserId(null);
-      setPlayerName('Guest');
+      const account = currentLocalAccount();
+      if (account) setPlayerName(account.name);
     }
     setAuthReady(true);
   }, [syncWithCloud]);
@@ -307,24 +332,46 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     return () => document.removeEventListener('visibilitychange', flush);
   }, [userId, playerName]);
 
+  const switchIdentity = useCallback((next: Identity) => {
+    const loaded = loadProgress(progressKeyFor(next));
+    setIdentity(next);
+    setProgress(loaded);
+    progressRef.current = loaded;
+  }, []);
+
+  const useLocalAccount = useCallback(
+    (account: LocalAccount) => {
+      setPlayerName(account.name);
+      setIsGuest(false);
+      removeRaw(STORAGE_KEYS.guest);
+      switchIdentity({ kind: 'local', email: account.email });
+    },
+    [switchIdentity],
+  );
+
   const continueAsGuest = useCallback(() => {
     writeRaw(STORAGE_KEYS.guest, '1');
     setIsGuest(true);
-  }, []);
+    setPlayerName('Traveller');
+    switchIdentity({ kind: 'guest' });
+  }, [switchIdentity]);
 
   const signOutFn = useCallback(async () => {
     await cloudSignOut();
+    localSignOut();
     setUserId(null);
-    setPlayerName('Guest');
+    setPlayerName('Traveller');
     setIsGuest(false);
     removeRaw(STORAGE_KEYS.guest);
-  }, []);
+    switchIdentity({ kind: 'guest' });
+  }, [switchIdentity]);
 
   const syncNow = useCallback(async () => {
     if (userId) await syncWithCloud(userId, playerName);
   }, [userId, playerName, syncWithCloud]);
 
   const resetEverything = useCallback(() => {
+    removeRaw(storageKey);
     removeRaw(STORAGE_KEYS.progress);
     removeRaw(STORAGE_KEYS.guest);
     removeRaw(STORAGE_KEYS.legacyProgress);
@@ -333,7 +380,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     removeRaw(STORAGE_KEYS.seenIntro);
     window.location.hash = '#/';
     window.location.reload();
-  }, []);
+  }, [storageKey]);
 
   const value = useMemo<StoreValue>(
     () => ({
@@ -342,7 +389,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       rankIndex: rankIndexFor(progress.xp),
       authReady,
       userId,
-      playerName: userId ? playerName : 'Guest',
+      playerName,
       isGuest,
       syncing,
       lastSyncError,
@@ -357,6 +404,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       clearZone,
       finishTest,
       updateProgress,
+      identity,
+      useLocalAccount,
       continueAsGuest,
       refreshAuth,
       signOut: signOutFn,
@@ -367,7 +416,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       progress, authReady, userId, playerName, isGuest, syncing, lastSyncError,
       toasts, xpPops, levelUpRank, dismissLevelUp, pushToast, dismissToast,
       answerQuestion, markNoteRead, clearZone, finishTest, updateProgress,
-      continueAsGuest, refreshAuth, signOutFn, syncNow, resetEverything,
+      identity, useLocalAccount, continueAsGuest, refreshAuth, signOutFn, syncNow,
+      resetEverything,
     ],
   );
 

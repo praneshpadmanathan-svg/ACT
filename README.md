@@ -42,12 +42,14 @@ Every question explains **all four choices**, not just the credited one.
 
 ### Features
 
-- **A painted world map** — every one of the 37 zones has a landmark pin on the illustration; they unlock in order along each region road, and the traveller stands wherever you have got to.
+- **A painted world map** — a full-viewport world you drag to pan and scroll or pinch to zoom, opening on wherever you got to. All 37 zones have a landmark pin, and the scenery is alive: falling water, drifting cloud shadows, glowing mushrooms, crystal glints, volcano embers, a sweeping lighthouse beam and fireflies in the trees.
 - **Landmarks** — a short lesson on parchment, then a quiz. 70% clears it and opens the road ahead.
 - **Adaptive drills** — mixed drills weight question selection toward topics you get wrong, so practice drifts to where it pays.
 - **Spaced review** — anything you miss enters a Leitner queue (1 → 3 → 7 → 16 → 35 days) and comes back until you own it.
 - **Timed tests** — real section pacing, no feedback until you finish, then a scored report with a topic breakdown. The timer runs off a wall-clock deadline, so backgrounding the tab doesn't buy extra minutes.
 - **Progression** — XP, seven ranks, day streaks, 15 achievements, and an estimated composite derived from your actual accuracy.
+- **Accounts** — Supabase when configured, otherwise salted-and-hashed accounts kept on the device. Progress is stored per profile, so two people can share a browser without overwriting each other. Guest mode needs no account at all.
+- **Sound** — every cue is synthesised at runtime in WebAudio (wooden latches, felt thuds, mallet-and-harp for a correct answer, a layered fanfare for a rank-up), routed through a generated room reverb. Zero bytes of audio ship.
 
 ---
 

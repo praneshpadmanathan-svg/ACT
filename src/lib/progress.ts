@@ -128,8 +128,8 @@ export function migrateLegacy(current: Progress): Progress {
 
 /* ------------------------------------------------------------------ loading */
 
-export function loadProgress(): Progress {
-  const stored = readJSON<Partial<Progress> | null>(STORAGE_KEYS.progress, null);
+export function loadProgress(key: string = STORAGE_KEYS.progress): Progress {
+  const stored = readJSON<Partial<Progress> | null>(key, null);
   const base = emptyProgress();
   const merged: Progress = stored ? { ...base, ...stored, version: 2 } : base;
   // Guard every collection — a half-written object should not crash a render.
@@ -142,8 +142,8 @@ export function loadProgress(): Progress {
   return stored ? merged : migrateLegacy(merged);
 }
 
-export function saveProgress(p: Progress): void {
-  writeJSON(STORAGE_KEYS.progress, p);
+export function saveProgress(p: Progress, key: string = STORAGE_KEYS.progress): void {
+  writeJSON(key, p);
 }
 
 /* ------------------------------------------------------------------ streaks */
