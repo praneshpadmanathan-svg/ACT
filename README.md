@@ -107,7 +107,8 @@ src/
     storage.ts          localStorage with quota/private-mode handling
     supabase.ts         auth + sync, with merge-not-clobber semantics
     normalize.ts        adapts both question shapes into one runner shape
-    sfx.ts              chiptune synth (no audio files)
+    sfx.ts              synthesised sound design (no audio files)
+    localAuth.ts        device accounts + per-profile progress keys
     utils.ts
 
   components/
@@ -123,6 +124,8 @@ src/
     AdventureMap.tsx    the painted map, pins, traveller
     Wizzy.tsx           the guide
     mapData.ts          pin coordinates for all 37 zones
+    MapFx.tsx           living scenery: water, embers, glow, fireflies
+    Sigils.tsx          drawn lock / cleared / mastered / crown marks
 
   screens/              one file per area of the app
 ```
