@@ -1,331 +1,218 @@
-/* Base camp — the dashboard.
+/* Camp — the dashboard.
 
-   Answers three questions above the fold: where am I, what should I do next,
-   and how close am I to the target. Everything else is one click away. */
+   Set inside the campaign tent from the artwork. Answers three questions
+   immediately: where am I, what do I do next, and how far from the target. */
 
-import { useMemo } from 'react';
 import { LIBRARY_STATS, PATH_BY_ID, SECTIONS } from '@/content';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
-import {
-  dueForReview,
-  estimatedComposite,
-  rankProgress,
-  sectionAccuracy,
-  weakestTopics,
-} from '@/lib/progress';
+import { dueForReview, estimatedComposite, rankProgress, weakestTopics } from '@/lib/progress';
 import { sfx } from '@/lib/sfx';
-import { cx, titleCase } from '@/lib/utils';
-import type { SectionId } from '@/types';
+import { titleCase } from '@/lib/utils';
 import { Page } from '@/components/Shell';
-import { PixelIcon, type IconName } from '@/components/PixelIcon';
-import { Button, ProgressBar, RankBadge } from '@/components/ui';
-import { HeroSprite } from '@/game/heroes';
+import { Button, ProgressBar, ProgressRing, RankBadge } from '@/components/ui';
+import { useMapProgress } from '@/game/AdventureMap';
+import { REGIONS } from '@/game/mapData';
 
 export function Home() {
   const { progress, rank, playerName, isGuest } = useStore();
   const navigate = useNavigate();
+  const { current, cleared, total, allCleared } = useMapProgress();
 
   const { pct, next } = rankProgress(progress.xp);
   const estimate = estimatedComposite(progress);
   const reviewDue = dueForReview(progress).length;
   const weak = weakestTopics(progress, 4);
 
-  /* "Do this next" — the single most useful action right now. Order matters:
-     an overdue review beats new material, and a brand-new player needs the
-     first zone of the section they said scared them. */
-  const nextAction = useMemo(() => {
-    if (reviewDue >= 5) {
-      return {
-        label: 'Clear your review queue',
-        detail: `${reviewDue} question${reviewDue === 1 ? '' : 's'} are due. These are the ones you missed before.`,
-        cta: 'Start review',
-        icon: 'refresh' as IconName,
-        color: '#3ad6f0',
-        go: () => navigate({ name: 'review' }),
-      };
-    }
-
-    const fear = progress.profile?.fear ?? 'english';
-    const path = PATH_BY_ID[fear];
-    const nextZone = path?.nodes.find((n) => progress.zonesCleared[n.id] === undefined);
-    if (nextZone) {
-      return {
-        label: nextZone.name,
-        detail: `${nextZone.sub} — a short lesson, then a quiz to clear the zone.`,
-        cta: 'Enter zone',
-        icon: 'map' as IconName,
-        color: path.color,
-        go: () => navigate({ name: 'zone', zone: nextZone.id }),
-      };
-    }
-
-    if (progress.testHistory.length === 0) {
-      return {
-        label: 'Take a full-length test',
-        detail: 'You have cleared the zones. Time to find out where you actually stand.',
-        cta: 'Open tests',
-        icon: 'clock' as IconName,
-        color: '#ff5d78',
-        go: () => navigate({ name: 'tests' }),
-      };
-    }
-
-    const worst = weak[0];
-    return {
-      label: worst ? `Drill ${titleCase(worst.topic)}` : 'Keep drilling',
-      detail: worst
-        ? `Your weakest topic at ${Math.round(worst.accuracy * 100)}% across ${worst.attempts} questions.`
-        : 'Mixed drills across every section.',
-      cta: 'Start drilling',
-      icon: 'sword' as IconName,
-      color: '#ff9d5c',
-      go: () =>
-        navigate(
-          worst && worst.section !== 'zone'
-            ? { name: 'drill', section: worst.section, topic: worst.topic }
-            : { name: 'drills' },
-        ),
-    };
-  }, [progress, reviewDue, weak, navigate]);
-
-  const zonesDone = Object.keys(progress.zonesCleared).length;
-
   return (
-    <Page>
-      {/* ------------------------------------------------------------ hero */}
-      <div className="mb-6 grid gap-4 lg:grid-cols-[1.35fr_1fr]">
-        <div className="pixel-panel flex flex-col justify-between gap-6 p-6 sm:p-7">
-          <div className="flex items-start gap-4">
-            <HeroSprite hero={progress.hero} unit={5} />
-            <div className="min-w-0">
-              <div className="font-screen text-[11px] uppercase tracking-[0.16em] text-[#8f86b5]">
-                {isGuest ? 'Playing as guest' : 'Welcome back'}
-              </div>
-              <h1 className="heading-pixel mt-1.5 truncate text-[clamp(14px,2.4vw,20px)] text-white">
-                {playerName}
-              </h1>
-              <div className="mt-3 flex flex-wrap items-center gap-2">
-                <span className="chip" style={{ color: rank.color, borderColor: `${rank.color}55` }}>
+    <div className="relative isolate min-h-screen">
+      {/* the tent */}
+      <img
+        src="/art/camp-bg.webp"
+        alt=""
+        className="pointer-events-none fixed inset-0 -z-10 h-full w-full select-none object-cover opacity-70"
+        draggable={false}
+      />
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-leather-950/80 via-leather-950/88 to-leather-950" />
+
+      <Page>
+        {/* ---------------------------------------------------------- greeting */}
+        <div className="mb-6 grid gap-4 lg:grid-cols-[1.25fr_1fr]">
+          <div className="panel-lit p-6 sm:p-7">
+            <div className="flex items-start gap-4">
+              <RankBadge rank={rank} size={64} />
+              <div className="min-w-0">
+                <div className="eyebrow">{isGuest ? 'Travelling as a guest' : 'Welcome back'}</div>
+                <h1 className="heading mt-1 truncate text-[clamp(1.4rem,3vw,1.9rem)]">
+                  {playerName}
+                </h1>
+                <p className="mt-1 font-script text-[14px] uppercase tracking-[0.14em]" style={{ color: rank.color }}>
                   {rank.name}
-                </span>
-                {progress.dayStreak > 0 && (
-                  <span className="chip text-ember" style={{ borderColor: '#ff9d5c55' }}>
-                    🔥 {progress.dayStreak} day streak
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <div className="mb-2 flex items-baseline justify-between">
+                <span className="num text-[24px] text-gold">{progress.xp.toLocaleString()} XP</span>
+                {next && (
+                  <span className="label-sm">
+                    {(next.xp - progress.xp).toLocaleString()} to {next.name}
                   </span>
                 )}
               </div>
-            </div>
-            <div className="ml-auto hidden flex-none sm:block">
-              <RankBadge rank={rank} size={62} />
+              <ProgressBar value={pct} label="Rank progress" />
             </div>
           </div>
 
-          <div>
-            <div className="mb-2 flex items-baseline justify-between">
-              <span className="num text-[26px] text-gold">{progress.xp.toLocaleString()} XP</span>
-              {next && (
-                <span className="font-screen text-[10px] uppercase tracking-wide text-[#8f86b5]">
-                  {(next.xp - progress.xp).toLocaleString()} to {next.name}
-                </span>
-              )}
-            </div>
-            <ProgressBar value={pct} color={rank.color} label="Rank progress" />
-          </div>
-        </div>
-
-        {/* do this next */}
-        <div
-          className="pixel-panel flex flex-col justify-between p-6 sm:p-7"
-          style={{ borderTopColor: nextAction.color, borderTopWidth: 4 }}
-        >
-          <div>
-            <div className="mb-4 flex items-center gap-2.5">
-              <PixelIcon name={nextAction.icon} unit={3} />
-              <span className="font-screen text-[11px] uppercase tracking-[0.16em] text-[#8f86b5]">
-                Do this next
-              </span>
-            </div>
-            <h2 className="heading-pixel text-[13px] leading-[1.6]" style={{ color: nextAction.color }}>
-              {nextAction.label}
+          {/* continue the quest */}
+          <button
+            type="button"
+            onClick={() => {
+              sfx.select();
+              if (current) navigate({ name: 'zone', zone: current.zone.id });
+              else navigate({ name: 'tests' });
+            }}
+            className="panel-lit group p-6 text-left transition-colors hover:border-gold-deep sm:p-7"
+          >
+            <div className="eyebrow mb-3">⚑ Continue your quest</div>
+            <h2 className="heading text-[clamp(1.15rem,2.4vw,1.5rem)] text-gold-light">
+              {current ? current.zone.name : 'The Final Summit'}
             </h2>
-            <p className="mt-3 text-[14px] leading-relaxed text-[#a89ac6]">{nextAction.detail}</p>
-          </div>
-          <Button variant="primary" className="mt-6 w-full" onClick={nextAction.go}>
-            {nextAction.cta} ▶
-          </Button>
+            <p className="mt-2 font-read text-[15px] leading-relaxed text-parchment-dim">
+              {current
+                ? `${current.zone.sub} — a short lesson, then a quiz to clear the landmark.`
+                : 'Every landmark cleared. Sail to the citadel and take your full mock test.'}
+            </p>
+            <span className="mt-5 inline-flex items-center gap-2 font-display text-[14px] font-semibold text-gold group-hover:text-gold-bright">
+              {current ? 'Begin the lesson' : 'Take the mock test'} ▸
+            </span>
+          </button>
         </div>
-      </div>
 
-      {/* ----------------------------------------------------------- stats */}
-      <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <StatTile
-          label="Estimated composite"
-          value={estimate !== null ? String(estimate) : '—'}
-          detail={estimate !== null ? `Target ${progress.targetScore}` : 'Answer more to unlock'}
-          color="#ffd23e"
-        />
-        <StatTile
-          label="Questions answered"
-          value={progress.attempts.length.toLocaleString()}
-          detail={`of ${LIBRARY_STATS.totalQuestions.toLocaleString()}`}
-          color="#ff9d5c"
-        />
-        <StatTile
-          label="Zones cleared"
-          value={`${zonesDone}`}
-          detail={`of ${LIBRARY_STATS.zones}`}
-          color="#3ad6f0"
-        />
-        <StatTile
-          label="Best streak"
-          value={String(progress.bestCorrectStreak)}
-          detail="correct in a row"
-          color="#b79cff"
-        />
-      </div>
+        {/* ------------------------------------------------------------ stats */}
+        <div className="mb-6 grid gap-4 lg:grid-cols-[1.25fr_1fr]">
+          <section className="panel p-6 sm:p-7">
+            <h3 className="heading mb-5 text-[17px]">Your progress</h3>
+            <div className="grid grid-cols-4 gap-2">
+              {SECTIONS.map((section) => {
+                const path = PATH_BY_ID[section.id];
+                const done = path.nodes.filter((n) => progress.zonesCleared[n.id] !== undefined).length;
+                return (
+                  <ProgressRing
+                    key={section.id}
+                    value={path.nodes.length ? done / path.nodes.length : 0}
+                    color={REGIONS[section.id].color}
+                    label={section.name}
+                  />
+                );
+              })}
+            </div>
 
-      {/* --------------------------------------------------------- sections */}
-      <h2 className="heading-pixel mb-4 text-[13px] text-white">Your paths</h2>
-      <div className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        {SECTIONS.map((section) => (
-          <PathCard key={section.id} sectionId={section.id} />
-        ))}
-      </div>
+            <dl className="mt-6 grid grid-cols-3 gap-3 border-t border-leather-700 pt-5">
+              <Stat label="Landmarks" value={`${cleared}/${total}`} />
+              <Stat label="Est. score" value={estimate !== null ? String(estimate) : '—'} />
+              <Stat label="Day streak" value={String(progress.dayStreak)} />
+            </dl>
 
-      {/* --------------------------------------------------------- weak spots */}
-      {weak.length > 0 && (
-        <>
-          <h2 className="heading-pixel mb-4 text-[13px] text-white">Worth fixing</h2>
-          <div className="mb-6 grid gap-2.5 sm:grid-cols-2">
-            {weak.map((t) => (
-              <button
-                key={`${t.section}-${t.topic}`}
-                type="button"
-                onClick={() => {
-                  sfx.select();
-                  if (t.section !== 'zone') navigate({ name: 'drill', section: t.section, topic: t.topic });
-                }}
-                className="flex items-center gap-4 rounded-lg border-2 border-edge bg-ink-850 px-4 py-3.5 text-left transition-colors hover:border-edge-bright"
-              >
-                <div className="min-w-0 flex-1">
-                  <div className="truncate font-screen text-[12px] uppercase tracking-wide text-white">
-                    {titleCase(t.topic)}
-                  </div>
-                  <div className="mt-1 text-[13px] text-[#8f86b5]">
-                    {t.correct}/{t.attempts} correct · {t.avgSeconds.toFixed(0)}s avg
-                  </div>
-                </div>
-                <div
-                  className="num text-[22px]"
-                  style={{ color: t.accuracy < 0.5 ? '#ff8298' : t.accuracy < 0.7 ? '#ffd23e' : '#5ee6a8' }}
+            <a href={hrefFor({ name: 'stats' })} onClick={() => sfx.select()}>
+              <Button className="mt-5 w-full">View full progress ▸</Button>
+            </a>
+          </section>
+
+          <section className="panel p-6 sm:p-7">
+            <h3 className="heading mb-5 text-[17px]">Today</h3>
+            <dl className="space-y-3">
+              <Row label="Target score" value={String(progress.targetScore)} />
+              <Row label="Questions answered" value={progress.attempts.length.toLocaleString()} />
+              <Row label="Lessons read" value={`${progress.notesRead.length}/${LIBRARY_STATS.notePages}`} />
+              <Row label="Due for review" value={String(reviewDue)} highlight={reviewDue > 0} />
+            </dl>
+
+            <a href={hrefFor({ name: reviewDue > 0 ? 'review' : 'drills' })} onClick={() => sfx.select()}>
+              <Button variant={reviewDue > 0 ? 'primary' : 'ghost'} className="mt-5 w-full">
+                {reviewDue > 0 ? `Review ${reviewDue} question${reviewDue === 1 ? '' : 's'} ▸` : 'Train a skill ▸'}
+              </Button>
+            </a>
+          </section>
+        </div>
+
+        {/* -------------------------------------------------------- weak spots */}
+        {weak.length > 0 && (
+          <>
+            <h2 className="heading mb-4 text-[17px]">Worth fixing</h2>
+            <div className="mb-6 grid gap-2.5 sm:grid-cols-2">
+              {weak.map((t) => (
+                <button
+                  key={`${t.section}-${t.topic}`}
+                  type="button"
+                  onClick={() => {
+                    sfx.select();
+                    if (t.section !== 'zone') navigate({ name: 'drill', section: t.section, topic: t.topic });
+                  }}
+                  className="panel flex items-center gap-4 px-5 py-4 text-left transition-colors hover:border-gold-deep"
                 >
-                  {Math.round(t.accuracy * 100)}%
-                </div>
-              </button>
-            ))}
-          </div>
-        </>
-      )}
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate font-display text-[15px] font-semibold text-parchment">
+                      {titleCase(t.topic)}
+                    </span>
+                    <span className="mt-0.5 block font-read text-[13.5px] text-ink-faint">
+                      {t.correct}/{t.attempts} correct · {t.avgSeconds.toFixed(0)}s average
+                    </span>
+                  </span>
+                  <span
+                    className="num text-[22px]"
+                    style={{ color: t.accuracy < 0.5 ? '#c8553d' : t.accuracy < 0.7 ? '#d4a017' : '#5fa86b' }}
+                  >
+                    {Math.round(t.accuracy * 100)}%
+                  </span>
+                </button>
+              ))}
+            </div>
+          </>
+        )}
 
-      {/* ----------------------------------------------------------- quick */}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <QuickAction icon="map" label="World map" detail="See the whole climb" to={{ name: 'map' }} />
-        <QuickAction icon="book" label="Notes" detail={`${LIBRARY_STATS.notePages} pages`} to={{ name: 'notes' }} />
-        <QuickAction
-          icon="refresh"
-          label="Review"
-          detail={reviewDue ? `${reviewDue} due now` : 'Nothing due'}
-          to={{ name: 'review' }}
-          highlight={reviewDue > 0}
-        />
-        <QuickAction icon="clock" label="Practice tests" detail="Full length, timed" to={{ name: 'tests' }} />
-      </div>
-    </Page>
-  );
-}
-
-function StatTile({
-  label,
-  value,
-  detail,
-  color,
-}: {
-  label: string;
-  value: string;
-  detail: string;
-  color: string;
-}) {
-  return (
-    <div className="rounded-lg border-2 border-edge bg-ink-850 px-4 py-4 shadow-pixel">
-      <div className="font-screen text-[10px] uppercase leading-tight tracking-[0.12em] text-[#8f86b5]">
-        {label}
-      </div>
-      <div className="num mt-2 text-[30px] leading-none" style={{ color }}>
-        {value}
-      </div>
-      <div className="mt-1.5 text-[12px] text-[#6f6496]">{detail}</div>
+        {/* ----------------------------------------------------------- routes */}
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <Quick label="Adventure map" detail={allCleared ? 'All cleared' : `${total - cleared} landmarks left`} to="map" />
+          <Quick label="The library" detail={`${LIBRARY_STATS.notePages} lessons`} to="notes" />
+          <Quick label="Training yard" detail={`${LIBRARY_STATS.drillQuestions} questions`} to="drills" />
+          <Quick label="The Summit" detail="Timed mock test" to="tests" />
+        </div>
+      </Page>
     </div>
   );
 }
 
-function PathCard({ sectionId }: { sectionId: SectionId }) {
-  const { progress } = useStore();
-  const path = PATH_BY_ID[sectionId];
-  const section = SECTIONS.find((s) => s.id === sectionId)!;
-  const done = path.nodes.filter((n) => progress.zonesCleared[n.id] !== undefined).length;
-  const { n, pct: accuracy } = sectionAccuracy(progress, sectionId);
-
+function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <a
-      href={hrefFor({ name: 'path', section: sectionId })}
-      onClick={() => sfx.select()}
-      className="block rounded-lg border-2 border-edge bg-ink-850 p-5 shadow-pixel transition-all hover:-translate-y-0.5 hover:border-edge-bright"
-      style={{ borderTopColor: section.color, borderTopWidth: 4 }}
-    >
-      <h3 className="heading-pixel text-[12px]" style={{ color: section.color }}>
-        {section.name}
-      </h3>
-      <div className="mt-3">
-        <ProgressBar value={path.nodes.length ? done / path.nodes.length : 0} color={section.color} height={8} />
-      </div>
-      <div className="mt-2.5 flex items-baseline justify-between font-screen text-[10px] uppercase tracking-wide text-[#8f86b5]">
-        <span>{done}/{path.nodes.length} zones</span>
-        <span className="num text-[15px]" style={{ color: n >= 5 ? section.color : '#5f5680' }}>
-          {n >= 5 ? `${Math.round(accuracy * 100)}%` : '—'}
-        </span>
-      </div>
-    </a>
+    <div>
+      <dt className="label-sm">{label}</dt>
+      <dd className="num mt-1 text-[22px] text-parchment">{value}</dd>
+    </div>
   );
 }
 
-function QuickAction({
-  icon,
-  label,
-  detail,
-  to,
-  highlight,
-}: {
-  icon: IconName;
-  label: string;
-  detail: string;
-  to: Parameters<typeof hrefFor>[0];
-  highlight?: boolean;
-}) {
+function Row({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
+  return (
+    <div className="flex items-center justify-between border-b border-leather-700/60 pb-2.5 last:border-0">
+      <dt className="font-read text-[14.5px] text-parchment-dim">{label}</dt>
+      <dd className="num text-[18px]" style={{ color: highlight ? '#d4a017' : '#e8d9ba' }}>
+        {value}
+      </dd>
+    </div>
+  );
+}
+
+function Quick({ label, detail, to }: { label: string; detail: string; to: 'map' | 'notes' | 'drills' | 'tests' }) {
   return (
     <a
-      href={hrefFor(to)}
+      href={hrefFor({ name: to })}
       onClick={() => sfx.select()}
-      className={cx(
-        'flex items-center gap-3.5 rounded-lg border-2 bg-ink-850 px-4 py-4 shadow-pixel transition-all hover:-translate-y-0.5',
-        highlight ? 'border-cyan' : 'border-edge hover:border-edge-bright',
-      )}
+      className="panel px-5 py-4 transition-all hover:-translate-y-0.5 hover:border-gold-deep"
     >
-      <PixelIcon name={icon} unit={3} />
-      <span>
-        <span className="block font-screen text-[12px] uppercase tracking-wide text-white">{label}</span>
-        <span className="mt-0.5 block text-[12px] text-[#8f86b5]">{detail}</span>
-      </span>
+      <span className="block font-display text-[15px] font-semibold text-parchment">{label}</span>
+      <span className="mt-0.5 block font-read text-[13.5px] text-ink-faint">{detail}</span>
     </a>
   );
 }

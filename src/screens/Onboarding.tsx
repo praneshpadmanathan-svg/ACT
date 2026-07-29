@@ -6,10 +6,7 @@ import { PATH_BY_ID, SECTION_BY_ID, SECTIONS } from '@/content';
 import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
-import { cx } from '@/lib/utils';
 import type { OnboardingProfile, SectionId } from '@/types';
-import { PixelScene } from '@/game/scene';
-import { HEROES, HeroSprite } from '@/game/heroes';
 import { Button, ProgressBar } from '@/components/ui';
 import { burstConfetti } from '@/components/Feedback';
 
@@ -66,12 +63,11 @@ const WEEKLY_GOAL: Record<string, number> = { soon: 2400, mid: 1800, far: 1200, 
 
 export function Onboarding() {
   const navigate = useNavigate();
-  const { updateProgress, progress } = useStore();
+  const { updateProgress } = useStore();
 
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string | number>>({});
-  const [phase, setPhase] = useState<'questions' | 'hero' | 'plan'>('questions');
-  const [hero, setHero] = useState(progress.hero || 'cadet');
+  const [phase, setPhase] = useState<'questions' | 'plan'>('questions');
 
   const choose = (value: string | number) => {
     sfx.select();
@@ -80,27 +76,28 @@ export function Onboarding() {
     if (step < STEPS.length - 1) {
       setStep(step + 1);
     } else {
-      setPhase('hero');
+      // Pass the completed set through explicitly — `answers` in this scope is
+      // still the pre-update value, so reading it here would silently drop
+      // whichever option was just clicked.
+      savePlan(next);
     }
   };
 
-  const confirmHero = (id: string) => {
+  const savePlan = (final: Record<string, string | number>) => {
     sfx.achieve();
-    setHero(id);
     burstConfetti(70);
 
     const profile: OnboardingProfile = {
-      when: (answers.when as OnboardingProfile['when']) ?? 'none',
-      before: (answers.before as OnboardingProfile['before']) ?? 'first',
-      target: (answers.target as number) ?? 30,
-      fear: (answers.fear as SectionId) ?? 'english',
+      when: (final.when as OnboardingProfile['when']) ?? 'none',
+      before: (final.before as OnboardingProfile['before']) ?? 'first',
+      target: (final.target as number) ?? 30,
+      fear: (final.fear as SectionId) ?? 'english',
       savedAt: Date.now(),
     };
 
     updateProgress((p) => ({
       ...p,
       profile,
-      hero: id,
       targetScore: profile.target,
       weeklyGoal: WEEKLY_GOAL[profile.when] ?? 1200,
     }));
@@ -112,25 +109,25 @@ export function Onboarding() {
   const firstZone = PATH_BY_ID[fear]?.nodes[0];
 
   return (
-    <div className="relative isolate flex min-h-screen items-center justify-center overflow-hidden px-4 py-14 crt vignette">
-      <PixelScene seed={29} className="absolute inset-0 h-full w-full" />
-      <div className="absolute inset-0 bg-ink-950/72" />
+    <div className="relative isolate flex min-h-screen items-center justify-center overflow-hidden px-4 py-14 ">
+      <img src="/art/camp-bg.webp" alt="" className="absolute inset-0 h-full w-full select-none object-cover" draggable={false} />
+      <div className="absolute inset-0 bg-leather-950/84" />
 
-      <div className="pixel-panel relative z-10 w-full max-w-lg p-7 sm:p-9">
+      <div className="panel-lit relative z-10 w-full max-w-lg p-7 sm:p-9">
         {phase === 'questions' && (
           <>
             <div className="mb-6">
-              <div className="mb-2 flex items-center justify-between font-screen text-[10px] uppercase tracking-[0.14em] text-[#8f86b5]">
+              <div className="mb-2 flex items-center justify-between font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
                 <span>Question {step + 1} of {STEPS.length}</span>
                 <span>{Math.round(((step + 1) / STEPS.length) * 100)}%</span>
               </div>
               <ProgressBar value={(step + 1) / STEPS.length} height={8} />
             </div>
 
-            <h1 className="heading-pixel mb-2.5 text-[14px] leading-[1.6] text-white">
+            <h1 className="heading mb-2.5 text-[22px] leading-snug text-parchment">
               {STEPS[step].question}
             </h1>
-            <p className="mb-7 text-[14px] leading-relaxed text-[#8f86b5]">{STEPS[step].detail}</p>
+            <p className="mb-7 text-[14px] leading-relaxed text-ink-faint">{STEPS[step].detail}</p>
 
             <div className="grid gap-2.5">
               {STEPS[step].options.map((opt) => (
@@ -138,7 +135,7 @@ export function Onboarding() {
                   key={String(opt.value)}
                   type="button"
                   onClick={() => choose(opt.value)}
-                  className="rounded-lg border-2 border-edge bg-ink-800 px-4 py-3.5 text-left text-[15px] text-[#e0e4f8] transition-colors hover:border-gold hover:bg-ink-750 hover:text-white"
+                  className="rounded-lg border-2 border-leather-700 bg-leather-800 px-4 py-3.5 text-left text-[15px] text-parchment transition-colors hover:border-gold hover:bg-leather-750 hover:text-parchment"
                 >
                   {opt.label}
                 </button>
@@ -149,7 +146,7 @@ export function Onboarding() {
               <button
                 type="button"
                 onClick={() => setStep(step - 1)}
-                className="mt-6 font-screen text-[11px] uppercase tracking-wide text-[#6f6496] transition-colors hover:text-white"
+                className="mt-6 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
               >
                 ← Back
               </button>
@@ -157,35 +154,11 @@ export function Onboarding() {
           </>
         )}
 
-        {phase === 'hero' && (
-          <>
-            <h1 className="heading-pixel mb-2.5 text-center text-[14px] text-white">Choose your character</h1>
-            <p className="mb-7 text-center text-[14px] text-[#8f86b5]">Purely cosmetic. Pick the one you like.</p>
-
-            <div className="grid grid-cols-2 gap-3">
-              {HEROES.map((h) => (
-                <button
-                  key={h.id}
-                  type="button"
-                  onClick={() => confirmHero(h.id)}
-                  className={cx(
-                    'rounded-lg border-2 bg-ink-800 px-4 py-5 text-center transition-all hover:-translate-y-1',
-                    hero === h.id ? 'border-gold' : 'border-edge hover:border-edge-bright',
-                  )}
-                >
-                  <HeroSprite hero={h} unit={6} className="mx-auto" />
-                  <div className="mt-4 font-pixel text-[10px] uppercase text-gold">{h.name}</div>
-                  <div className="mt-2 font-digit text-[15px] leading-tight text-[#a89ac6]">{h.desc}</div>
-                </button>
-              ))}
-            </div>
-          </>
-        )}
 
         {phase === 'plan' && (
           <div className="text-center">
-            <HeroSprite hero={hero} unit={6} className="mx-auto" />
-            <h1 className="heading-pixel mb-6 mt-6 text-[14px] text-gold">Your plan is ready</h1>
+            <img src="/art/hero-char.webp" alt="" className="mx-auto w-[110px] select-none" draggable={false} />
+            <h1 className="heading mb-6 mt-5 text-[22px] text-gold">Your plan is ready</h1>
 
             <dl className="space-y-2.5 text-left">
               <PlanRow label="Target score" value={String(answers.target ?? 30)} color="#ff9d5c" />
@@ -197,7 +170,7 @@ export function Onboarding() {
               <PlanRow label="Start with" value={recommended?.name ?? 'English'} color={recommended?.color} />
             </dl>
 
-            <p className="mt-6 text-[14px] leading-relaxed text-[#8f86b5]">
+            <p className="mt-6 text-[14px] leading-relaxed text-ink-faint">
               First stop: <b className="text-white">{firstZone?.name}</b>. Read the lesson, clear the quiz,
               then keep climbing.
             </p>
@@ -219,8 +192,8 @@ export function Onboarding() {
 
 function PlanRow({ label, value, color }: { label: string; value: string; color?: string }) {
   return (
-    <div className="flex items-center justify-between rounded-lg border-2 border-edge bg-ink-900 px-4 py-3">
-      <dt className="font-screen text-[11px] uppercase tracking-wide text-[#8f86b5]">{label}</dt>
+    <div className="flex items-center justify-between rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-3">
+      <dt className="font-script text-[11px] uppercase tracking-wide text-ink-faint">{label}</dt>
       <dd className="num text-[19px]" style={{ color: color ?? '#ffd23e' }}>
         {value}
       </dd>

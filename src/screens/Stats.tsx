@@ -15,9 +15,7 @@ import {
 import { cloudEnabled } from '@/lib/supabase';
 import { cx, formatRelative, titleCase } from '@/lib/utils';
 import { Page } from '@/components/Shell';
-import { PixelIcon } from '@/components/PixelIcon';
 import { Button, ProgressBar, RankBadge, SectionHeading, EmptyState } from '@/components/ui';
-import { HEROES, HeroSprite } from '@/game/heroes';
 
 /* ---------------------------------------------------------------- stats */
 
@@ -74,7 +72,7 @@ export function StatsScreen() {
       </div>
 
       {/* per section */}
-      <h2 className="heading-pixel mb-4 text-[13px] text-white">By section</h2>
+      <h2 className="heading mb-4 text-[13px] text-white">By section</h2>
       <div className="mb-6 grid gap-3 sm:grid-cols-2">
         {SECTIONS.map((section) => {
           const { n, ok, pct } = sectionAccuracy(progress, section.id);
@@ -82,9 +80,9 @@ export function StatsScreen() {
           const zones = path.nodes.filter((z) => progress.zonesCleared[z.id] !== undefined).length;
 
           return (
-            <div key={section.id} className="rounded-lg border-2 border-edge bg-ink-850 p-5 shadow-pixel">
+            <div key={section.id} className="rounded-lg border-2 border-leather-700 bg-leather-850 p-5 shadow-card">
               <div className="flex items-baseline justify-between">
-                <h3 className="heading-pixel text-[12px]" style={{ color: section.color }}>
+                <h3 className="heading text-[12px]" style={{ color: section.color }}>
                   {section.name}
                 </h3>
                 <span className="num text-[26px]" style={{ color: section.color }}>
@@ -94,7 +92,7 @@ export function StatsScreen() {
               <div className="mt-3">
                 <ProgressBar value={pct} color={section.color} height={8} />
               </div>
-              <div className="mt-2.5 flex justify-between font-screen text-[10px] uppercase tracking-wide text-[#6f6496]">
+              <div className="mt-2.5 flex justify-between font-script text-[10px] uppercase tracking-wide text-ink-faint">
                 <span>{ok}/{n} correct</span>
                 <span>{zones}/{path.nodes.length} zones</span>
               </div>
@@ -104,8 +102,8 @@ export function StatsScreen() {
       </div>
 
       {/* activity */}
-      <h2 className="heading-pixel mb-4 text-[13px] text-white">Last 12 weeks</h2>
-      <div className="mb-6 rounded-lg border-2 border-edge bg-ink-850 p-5 shadow-pixel">
+      <h2 className="heading mb-4 text-[13px] text-white">Last 12 weeks</h2>
+      <div className="mb-6 rounded-lg border-2 border-leather-700 bg-leather-850 p-5 shadow-card">
         <div className="flex items-end gap-[3px]" style={{ height: 90 }}>
           {activity.map((count, i) => (
             <div
@@ -119,25 +117,25 @@ export function StatsScreen() {
             />
           ))}
         </div>
-        <div className="mt-3 flex justify-between font-screen text-[10px] uppercase tracking-wide text-[#6f6496]">
+        <div className="mt-3 flex justify-between font-script text-[10px] uppercase tracking-wide text-ink-faint">
           <span>12 weeks ago</span>
           <span>Today</span>
         </div>
       </div>
 
       {/* topics */}
-      <h2 className="heading-pixel mb-4 text-[13px] text-white">Every topic you have tried</h2>
+      <h2 className="heading mb-4 text-[13px] text-white">Every topic you have tried</h2>
       <div className="space-y-2">
         {allTopics.map((t) => (
           <div
             key={`${t.section}-${t.topic}`}
-            className="flex items-center gap-4 rounded-lg border-2 border-edge bg-ink-850 px-4 py-3"
+            className="flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-4 py-3"
           >
             <span className="w-36 flex-none truncate font-sans text-[13px] font-semibold text-white sm:w-48">
               {titleCase(t.topic)}
             </span>
             <span
-              className="hidden w-16 flex-none font-screen text-[10px] uppercase tracking-wide sm:block"
+              className="hidden w-16 flex-none font-script text-[10px] uppercase tracking-wide sm:block"
               style={{ color: t.section === 'zone' ? '#8f86b5' : SECTION_BY_ID[t.section]?.color }}
             >
               {t.section === 'zone' ? 'Zone' : SECTION_BY_ID[t.section]?.name}
@@ -147,10 +145,10 @@ export function StatsScreen() {
               color={t.accuracy < 0.5 ? '#ff8298' : t.accuracy < 0.75 ? '#ffd23e' : '#5ee6a8'}
               height={8}
             />
-            <span className="num w-14 flex-none text-right text-[15px] text-[#a89ac6]">
+            <span className="num w-14 flex-none text-right text-[15px] text-parchment-dim">
               {t.correct}/{t.attempts}
             </span>
-            <span className="num hidden w-12 flex-none text-right text-[14px] text-[#6f6496] sm:block">
+            <span className="num hidden w-12 flex-none text-right text-[14px] text-ink-faint sm:block">
               {t.avgSeconds.toFixed(0)}s
             </span>
           </div>
@@ -162,8 +160,8 @@ export function StatsScreen() {
 
 function Tile({ label, value, color }: { label: string; value: string; color: string }) {
   return (
-    <div className="rounded-lg border-2 border-edge bg-ink-850 px-4 py-4 shadow-pixel">
-      <div className="font-screen text-[10px] uppercase leading-tight tracking-[0.12em] text-[#8f86b5]">
+    <div className="rounded-lg border-2 border-leather-700 bg-leather-850 px-4 py-4 shadow-card">
+      <div className="font-script text-[10px] uppercase leading-tight tracking-[0.12em] text-ink-faint">
         {label}
       </div>
       <div className="num mt-2 text-[32px] leading-none" style={{ color }}>
@@ -201,28 +199,28 @@ export function ProfileScreen() {
 
       {/* identity */}
       <div className="mb-6 grid gap-4 lg:grid-cols-[1fr_1.2fr]">
-        <div className="pixel-panel p-6 text-center sm:p-7">
+        <div className="panel p-6 text-center sm:p-7">
           <RankBadge rank={rank} size={82} />
-          <h2 className="heading-pixel mt-4 text-[14px] text-white">{playerName}</h2>
-          <p className="mt-2 font-screen text-[11px] uppercase tracking-wide" style={{ color: rank.color }}>
+          <h2 className="heading mt-4 text-[14px] text-white">{playerName}</h2>
+          <p className="mt-2 font-script text-[11px] uppercase tracking-wide" style={{ color: rank.color }}>
             {rank.name}
           </p>
-          <p className="mt-1 text-[13px] text-[#8f86b5]">{rank.tagline}</p>
+          <p className="mt-1 text-[13px] text-ink-faint">{rank.tagline}</p>
 
           <div className="mt-5">
             <ProgressBar value={pct} color={rank.color} />
-            <p className="mt-2 font-screen text-[10px] uppercase tracking-wide text-[#6f6496]">
+            <p className="mt-2 font-script text-[10px] uppercase tracking-wide text-ink-faint">
               {progress.xp.toLocaleString()} XP
               {next ? ` · ${(next.xp - progress.xp).toLocaleString()} to ${next.name}` : ' · max rank'}
             </p>
           </div>
         </div>
 
-        <div className="pixel-panel p-6 sm:p-7">
-          <h3 className="heading-pixel mb-5 text-[12px] text-white">Settings</h3>
+        <div className="panel p-6 sm:p-7">
+          <h3 className="heading mb-5 text-[12px] text-white">Settings</h3>
 
           <label className="mb-5 block">
-            <span className="mb-2 block font-screen text-[10px] uppercase tracking-[0.14em] text-[#8f86b5]">
+            <span className="mb-2 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
               Target score
             </span>
             <div className="flex flex-wrap gap-2">
@@ -235,7 +233,7 @@ export function ProfileScreen() {
                     'num rounded-lg border-2 px-4 py-2 text-[19px] transition-colors',
                     progress.targetScore === score
                       ? 'border-gold bg-gold text-[#2a2000]'
-                      : 'border-edge bg-ink-800 text-[#a89ac6] hover:border-edge-bright',
+                      : 'border-leather-700 bg-leather-800 text-parchment-dim hover:border-gold-deep',
                   )}
                 >
                   {score}
@@ -244,39 +242,15 @@ export function ProfileScreen() {
             </div>
           </label>
 
-          <div className="mb-5">
-            <span className="mb-2 block font-screen text-[10px] uppercase tracking-[0.14em] text-[#8f86b5]">
-              Character
-            </span>
-            <div className="flex flex-wrap gap-2">
-              {HEROES.map((h) => (
-                <button
-                  key={h.id}
-                  type="button"
-                  onClick={() => updateProgress((p) => ({ ...p, hero: h.id }))}
-                  className={cx(
-                    'rounded-lg border-2 px-4 py-3 transition-colors',
-                    progress.hero === h.id
-                      ? 'border-gold bg-ink-750'
-                      : 'border-edge bg-ink-800 hover:border-edge-bright',
-                  )}
-                  aria-label={h.name}
-                  title={h.name}
-                >
-                  <HeroSprite hero={h} unit={3} animate={false} />
-                </button>
-              ))}
-            </div>
-          </div>
 
-          <div className="border-t-2 border-edge pt-5">
-            <span className="mb-2.5 block font-screen text-[10px] uppercase tracking-[0.14em] text-[#8f86b5]">
+          <div className="border-t-2 border-leather-700 pt-5">
+            <span className="mb-2.5 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
               Account
             </span>
 
             {isGuest || !userId ? (
               <>
-                <p className="mb-3 text-[13px] leading-relaxed text-[#8f86b5]">
+                <p className="mb-3 text-[13px] leading-relaxed text-ink-faint">
                   {cloudEnabled
                     ? 'You are playing as a guest. Progress is saved in this browser only.'
                     : 'Cloud sync is not configured for this deployment, so progress saves to this browser only.'}
@@ -305,7 +279,7 @@ export function ProfileScreen() {
             )}
 
             {lastSyncError && (
-              <p className="mt-3 rounded-lg border-2 border-crimson/40 bg-crimson/10 px-3 py-2 text-[12px] leading-snug text-[#ffa3b5]">
+              <p className="mt-3 rounded-lg border-2 border-blood/40 bg-blood/10 px-3 py-2 text-[12px] leading-snug text-[#e8a094]">
                 {lastSyncError}
               </p>
             )}
@@ -314,29 +288,29 @@ export function ProfileScreen() {
       </div>
 
       {/* ranks */}
-      <h2 className="heading-pixel mb-4 text-[13px] text-white">Ranks</h2>
+      <h2 className="heading mb-4 text-[13px] text-white">Ranks</h2>
       <div className="mb-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
         {RANKS.map((r, i) => (
           <div
             key={r.name}
             className={cx(
               'flex items-center gap-3.5 rounded-lg border-2 px-4 py-3.5',
-              i <= rankIndex ? 'border-edge bg-ink-850' : 'border-edge/50 bg-ink-900 opacity-55',
+              i <= rankIndex ? 'border-leather-700 bg-leather-850' : 'border-leather-700/50 bg-leather-900 opacity-55',
             )}
           >
             <RankBadge rank={r} size={38} />
             <div className="min-w-0">
-              <div className="truncate font-screen text-[11px] uppercase tracking-wide" style={{ color: r.color }}>
+              <div className="truncate font-script text-[11px] uppercase tracking-wide" style={{ color: r.color }}>
                 {r.name}
               </div>
-              <div className="num text-[15px] text-[#6f6496]">{r.xp.toLocaleString()} XP</div>
+              <div className="num text-[15px] text-ink-faint">{r.xp.toLocaleString()} XP</div>
             </div>
           </div>
         ))}
       </div>
 
       {/* achievements */}
-      <h2 className="heading-pixel mb-4 text-[13px] text-white">
+      <h2 className="heading mb-4 text-[13px] text-white">
         Achievements ({unlocked.size}/{ACHIEVEMENTS.length})
       </h2>
       <div className="mb-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
@@ -347,13 +321,13 @@ export function ProfileScreen() {
               key={a.id}
               className={cx(
                 'flex items-start gap-3.5 rounded-lg border-2 px-4 py-3.5',
-                got ? 'border-gold/50 bg-ink-850' : 'border-edge/50 bg-ink-900 opacity-50',
+                got ? 'border-gold/50 bg-leather-850' : 'border-leather-700/50 bg-leather-900 opacity-50',
               )}
             >
-              <PixelIcon name={a.icon} unit={3} />
+              <span className="mt-0.5 flex-none text-[15px] text-gold" aria-hidden="true">✦</span>
               <div className="min-w-0">
-                <div className="font-screen text-[12px] uppercase tracking-wide text-white">{a.name}</div>
-                <div className="mt-0.5 text-[12px] leading-snug text-[#8f86b5]">{a.detail}</div>
+                <div className="font-script text-[12px] uppercase tracking-wide text-white">{a.name}</div>
+                <div className="mt-0.5 text-[12px] leading-snug text-ink-faint">{a.detail}</div>
               </div>
             </div>
           );
@@ -362,8 +336,8 @@ export function ProfileScreen() {
 
       {/* library + danger zone */}
       <div className="grid gap-4 lg:grid-cols-2">
-        <div className="pixel-panel p-6">
-          <h3 className="heading-pixel mb-4 text-[12px] text-white">Your library</h3>
+        <div className="panel p-6">
+          <h3 className="heading mb-4 text-[12px] text-white">Your library</h3>
           <dl className="space-y-2 text-[14px]">
             <Row label="Note pages read" value={`${progress.notesRead.length} / ${LIBRARY_STATS.notePages}`} />
             <Row
@@ -378,9 +352,9 @@ export function ProfileScreen() {
           </dl>
         </div>
 
-        <div className="rounded-lg border-2 border-crimson/40 bg-ink-850 p-6">
-          <h3 className="heading-pixel mb-3 text-[12px] text-crimson">Reset progress</h3>
-          <p className="mb-4 text-[13px] leading-relaxed text-[#8f86b5]">
+        <div className="rounded-lg border-2 border-blood/40 bg-leather-850 p-6">
+          <h3 className="heading mb-3 text-[12px] text-blood">Reset progress</h3>
+          <p className="mb-4 text-[13px] leading-relaxed text-ink-faint">
             Deletes all XP, attempts, cleared zones and test results from this browser. This cannot be
             undone.
           </p>
@@ -403,8 +377,8 @@ export function ProfileScreen() {
 
 function Row({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-center justify-between border-b border-edge/50 pb-2 last:border-0">
-      <dt className="text-[#8f86b5]">{label}</dt>
+    <div className="flex items-center justify-between border-b border-leather-700/50 pb-2 last:border-0">
+      <dt className="text-ink-faint">{label}</dt>
       <dd className="num text-[17px] text-white">{value}</dd>
     </div>
   );

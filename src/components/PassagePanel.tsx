@@ -18,19 +18,19 @@ export function PassagePanel({ passage }: { passage: Passage }) {
   const [openOnMobile, setOpenOnMobile] = useState(false);
 
   return (
-    <aside className="study-sheet overflow-hidden lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
-      <div className="border-b-2 border-paper-edge bg-[#efeae0] px-6 py-4">
+    <aside className="sheet overflow-hidden lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
+      <div className="border-b-2 border-parchment-edge bg-[#efeae0] px-6 py-4">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            {passage.type && <div className="study-label">{passage.type}</div>}
-            <h2 className="mt-1 font-read text-[1.15rem] font-semibold leading-snug text-paper-ink">
+            {passage.type && <div className="label-quill">{passage.type}</div>}
+            <h2 className="mt-1 font-read text-[1.15rem] font-semibold leading-snug text-ink">
               {passage.title}
             </h2>
           </div>
           <button
             type="button"
             onClick={() => setOpenOnMobile((v) => !v)}
-            className="flex-none rounded border-2 border-paper-edge bg-white px-2.5 py-1 font-screen text-[10px] uppercase tracking-wide text-paper-soft lg:hidden"
+            className="flex-none rounded border-2 border-parchment-edge bg-white px-2.5 py-1 font-script text-[10px] uppercase tracking-wide text-ink-soft lg:hidden"
             aria-expanded={openOnMobile}
           >
             {openOnMobile ? 'Hide' : 'Read'}
@@ -38,7 +38,7 @@ export function PassagePanel({ passage }: { passage: Passage }) {
         </div>
 
         {(passage.intro || passage.blurb) && (
-          <p className="mt-2 font-read text-[0.95rem] italic leading-relaxed text-paper-soft">
+          <p className="mt-2 font-read text-[0.95rem] italic leading-relaxed text-ink-soft">
             {passage.intro ?? passage.blurb}
           </p>
         )}
@@ -50,17 +50,17 @@ export function PassagePanel({ passage }: { passage: Passage }) {
         {passage.figures?.map((figure, index) => (
           <figure key={`${figure.label}-${index}`} className="mt-6 first:mt-0">
             <figcaption className="mb-2">
-              <span className="study-label">{figure.label}</span>
+              <span className="label-quill">{figure.label}</span>
               {figure.caption && (
-                <span className="mt-1 block font-read text-[0.95rem] leading-snug text-paper-soft">
+                <span className="mt-1 block font-read text-[0.95rem] leading-snug text-ink-soft">
                   {figure.caption}
                 </span>
               )}
             </figcaption>
 
             {figure.type === 'table' ? (
-              <div className="overflow-x-auto rounded-lg border-2 border-paper-edge">
-                <table className="study-table">
+              <div className="overflow-x-auto rounded-lg border-2 border-parchment-edge">
+                <table className="quill-table">
                   <thead>
                     <tr>
                       {figure.head.map((h, i) => (

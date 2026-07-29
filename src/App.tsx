@@ -44,7 +44,7 @@ export default function App() {
   if (!authReady) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <div className="animate-blink font-pixel text-[13px] uppercase text-gold">Loading…</div>
+        <div className="animate-shimmer font-display text-[13px] uppercase text-gold">Loading…</div>
       </div>
     );
   }

@@ -5,12 +5,13 @@
 import { useEffect, useRef } from 'react';
 import { useStore } from '@/lib/store';
 import { RANKS } from '@/lib/progress';
-import { PixelIcon } from './PixelIcon';
-import { Button } from './ui';
+import { Button, RankBadge } from './ui';
 
 /* --------------------------------------------------------------- confetti */
 
-const CONFETTI_COLORS = ['#ffd23e', '#ff9d5c', '#3ad6f0', '#ff5d78', '#b79cff', '#ffffff'];
+/* Gold leaf and lantern sparks — the palette has to survive being thrown
+   over the painted map. */
+const CONFETTI_COLORS = ['#f2cf5b', '#d4a017', '#e8c34a', '#c98b2e', '#f7e6ae', '#9c7410'];
 
 interface Particle {
   x: number; y: number; vx: number; vy: number;
@@ -111,7 +112,7 @@ export function XPPopups() {
       {xpPops.map((pop) => (
         <div
           key={pop.id}
-          className="animate-rise font-pixel text-[15px] text-gold"
+          className="animate-rise font-display text-[15px] text-gold"
           style={{ textShadow: '0 2px 0 #000, 0 0 12px rgba(255,210,62,.8)' }}
         >
           +{pop.amount} XP
@@ -132,13 +133,13 @@ export function Toasts() {
           key={t.id}
           type="button"
           onClick={() => dismissToast(t.id)}
-          className="pointer-events-auto flex animate-slidein items-center gap-3 rounded-lg border-2 border-edge-bright bg-ink-850/95 px-4 py-3 text-left shadow-pixel backdrop-blur"
+          className="pointer-events-auto flex animate-slidein items-center gap-3 rounded-lg border-2 border-gold-deep bg-leather-850/95 px-4 py-3 text-left shadow-card backdrop-blur"
           style={{ borderLeftWidth: 6, borderLeftColor: t.color ?? '#ffd23e' }}
         >
-          {t.icon && <PixelIcon name={t.icon} unit={2} />}
+          <span className="text-[17px] text-gold" aria-hidden="true">✦</span>
           <span className="min-w-0">
-            <span className="block font-screen text-[13px] uppercase tracking-wide text-white">{t.title}</span>
-            {t.detail && <span className="mt-0.5 block text-xs leading-snug text-[#a89ac6]">{t.detail}</span>}
+            <span className="block font-script text-[13px] uppercase tracking-wide text-white">{t.title}</span>
+            {t.detail && <span className="mt-0.5 block text-xs leading-snug text-parchment-dim">{t.detail}</span>}
           </span>
         </button>
       ))}
@@ -174,57 +175,47 @@ export function LevelUpOverlay() {
   return (
     <div
       className="fixed inset-0 z-[110] flex cursor-pointer items-center justify-center overflow-hidden"
-      style={{ background: 'radial-gradient(circle at 50% 44%, rgba(20,28,60,.94), rgba(3,5,12,.97))' }}
+      style={{ background: 'radial-gradient(circle at 50% 42%, rgba(46,37,26,.95), rgba(12,9,6,.97))' }}
       onClick={dismissLevelUp}
       role="dialog"
-      aria-label={`Rank up: ${rank.name}`}
+      aria-label={`A new rank: ${rank.name}`}
     >
+      {/* lantern rays sweeping the tent */}
       <div
         className="absolute rounded-full"
         style={{
-          width: '160vmax',
-          height: '160vmax',
-          background: `repeating-conic-gradient(from 0deg, ${rank.color}22 0deg 9deg, transparent 9deg 18deg)`,
-          animation: 'spin 16s linear infinite',
+          width: '170vmax',
+          height: '170vmax',
+          background: `repeating-conic-gradient(from 0deg, ${rank.color}1f 0deg 8deg, transparent 8deg 16deg)`,
+          animation: 'spin 26s linear infinite',
         }}
         aria-hidden="true"
       />
+
       <div className="relative px-6 text-center">
-        <div
-          className="font-pixel text-[clamp(28px,7vw,60px)] leading-[1.25] text-gold"
-          style={{ textShadow: '0 0 24px rgba(255,210,62,.75), 4px 4px 0 #7a2d00' }}
-        >
-          {[...'RANK UP!'].map((ch, i) => (
-            <span key={i} className="inline-block animate-pop" style={{ animationDelay: `${i * 55}ms` }}>
-              {ch === ' ' ? ' ' : ch}
-            </span>
-          ))}
+        <div className="mx-auto w-fit animate-popIn">
+          <RankBadge rank={rank} size={96} />
         </div>
 
-        <div className="mt-7">
-          <span
-            className="inline-block rounded-md px-4 py-2 font-pixel text-[12px] text-[#04060d] shadow-pixel"
-            style={{ background: rank.color }}
-          >
-            RANK {levelUpRank + 1}
-          </span>
-        </div>
+        <div className="eyebrow mt-6">A new rank</div>
 
-        <div
-          className="mt-3 font-pixel text-[clamp(15px,3.4vw,26px)] uppercase"
-          style={{ color: rank.color, textShadow: `0 0 22px ${rank.color}cc, 3px 3px 0 #000` }}
+        <h2
+          className="heading mt-2 text-[clamp(2rem,6vw,3.4rem)] leading-tight"
+          style={{ color: rank.color, textShadow: `0 0 28px ${rank.color}66` }}
         >
           {rank.name}
+        </h2>
+
+        <p className="mx-auto mt-4 max-w-md font-read text-[clamp(1.05rem,2.2vw,1.35rem)] italic leading-relaxed text-parchment-dim">
+          {rank.tagline}
+        </p>
+
+        <div className="mt-6 font-script text-[13px] uppercase tracking-[0.18em] text-ink-faint">
+          {next ? `Next — ${next.name} at ${next.xp.toLocaleString()} XP` : 'The highest rank there is'}
         </div>
 
-        <div className="mt-4 font-digit text-[clamp(19px,2.6vw,26px)] text-[#a89ac6]">{rank.tagline}</div>
-
-        <div className="mt-6 font-screen text-[12px] uppercase tracking-wide text-[#7a6a9e]">
-          {next ? `Next — ${next.name} at ${next.xp.toLocaleString()} XP` : 'Maximum rank reached'}
-        </div>
-
-        <Button variant="gold" className="mt-8" onClick={dismissLevelUp}>
-          Continue
+        <Button variant="primary" size="lg" className="mt-8" onClick={dismissLevelUp}>
+          Onward ▸
         </Button>
       </div>
     </div>

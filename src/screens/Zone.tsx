@@ -31,6 +31,9 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
   const [phase, setPhase] = useState<Phase>('lesson');
   const [results, setResults] = useState<AnswerRecord[] | null>(null);
   const [attemptSeed, setAttemptSeed] = useState(0);
+  /* The score to beat, captured as the quiz begins — reading it after the
+     result is written would always show the score you just got. */
+  const [priorBest, setPriorBest] = useState<number | null>(null);
 
   const questions = useMemo(() => {
     if (!entry) return [];
@@ -64,22 +67,22 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
       <Page>
         <BackLink to={{ name: 'path', section: path.id }} label={`${meta.name} path`} />
 
-        <div className="mb-6 rounded-xl border-2 border-edge bg-ink-850 p-6 shadow-pixel sm:p-7"
+        <div className="mb-6 rounded-xl border-2 border-leather-700 bg-leather-850 p-6 shadow-card sm:p-7"
              style={{ borderTopColor: path.color, borderTopWidth: 4 }}>
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <div className="font-screen text-[10px] uppercase tracking-[0.16em] text-[#8f86b5]">
+              <div className="font-script text-[10px] uppercase tracking-[0.16em] text-ink-faint">
                 {meta.name} · {zone.topic}
               </div>
-              <h1 className="heading-pixel mt-2 text-[clamp(14px,2.4vw,19px)]" style={{ color: path.color }}>
+              <h1 className="heading mt-2 text-[clamp(14px,2.4vw,19px)]" style={{ color: path.color }}>
                 {zone.name}
               </h1>
-              <p className="mt-2.5 font-digit text-[19px] text-[#c8bde8]">{zone.sub}</p>
+              <p className="mt-2.5 font-read text-[19px] text-parchment-dim">{zone.sub}</p>
             </div>
             {best !== null && (
               <div className="text-right">
-                <div className="font-screen text-[10px] uppercase tracking-wide text-[#8f86b5]">Your best</div>
-                <div className="num text-[30px] text-mint">{best}%</div>
+                <div className="font-script text-[10px] uppercase tracking-wide text-ink-faint">Your best</div>
+                <div className="num text-[30px] text-woods">{best}%</div>
               </div>
             )}
           </div>
@@ -89,7 +92,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
               {zone.learn.map((item) => (
                 <li
                   key={item}
-                  className="rounded-lg border-2 border-edge bg-ink-900 px-3.5 py-2.5 text-[13px] leading-snug text-[#c8bde8]"
+                  className="rounded-lg border-2 border-leather-700 bg-leather-900 px-3.5 py-2.5 text-[13px] leading-snug text-parchment-dim"
                 >
                   {item}
                 </li>
@@ -99,8 +102,8 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
         </div>
 
         {lesson ? (
-          <article className="study-sheet p-6 sm:p-9">
-            <p className="prose-study text-[1.15rem] leading-[1.7] text-paper-ink">
+          <article className="sheet p-6 sm:p-9">
+            <p className="prose-quill text-[1.15rem] leading-[1.7] text-ink">
               <RichText as="span">{lesson.intro}</RichText>
             </p>
 
@@ -110,12 +113,12 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                   <h2 className="mb-2 font-sans text-[0.95rem] font-bold uppercase tracking-wide text-[#1c4a5c]">
                     {title}
                   </h2>
-                  <RichText as="div" format="html" className="prose-study">
+                  <RichText as="div" format="html" className="prose-quill">
                     {body}
                   </RichText>
                   {example && (
                     <div className="mt-3 rounded border-l-4 border-[#2f9e63] bg-white/70 px-4 py-2.5">
-                      <div className="study-label mb-1">Example</div>
+                      <div className="label-quill mb-1">Example</div>
                       <RichText as="div" format="html" className="font-read leading-relaxed">
                         {example}
                       </RichText>
@@ -127,25 +130,26 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
 
             {lesson.trap && (
               <div className="block-trap mt-4">
-                <div className="study-label mb-1.5">The trap</div>
+                <div className="label-quill mb-1.5">The trap</div>
                 <RichText as="div" format="html" className="font-read leading-relaxed">
                   {lesson.trap}
                 </RichText>
               </div>
             )}
 
-            <div className="mt-8 flex flex-wrap gap-3 border-t-2 border-paper-edge pt-6">
+            <div className="mt-8 flex flex-wrap gap-3 border-t-2 border-parchment-edge pt-6">
               <Button
                 variant="primary"
                 size="lg"
                 onClick={() => {
                   sfx.select();
+                  setPriorBest(progress.zonesCleared[zoneId] ?? null);
                   setPhase('quiz');
                 }}
               >
                 Start the quiz ▶
               </Button>
-              <span className="self-center text-[13px] text-paper-soft">
+              <span className="self-center text-[13px] text-ink-soft">
                 {questions.length} questions · {Math.round(PASS_MARK * 100)}% to clear
               </span>
             </div>
@@ -214,14 +218,14 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
     <Page>
       <div className="mx-auto max-w-2xl">
         <div
-          className="rounded-xl border-2 p-7 text-center shadow-pixel-lg sm:p-9"
+          className="rounded-xl border-2 p-7 text-center shadow-card sm:p-9"
           style={{ borderColor: passed ? '#5ee6a8' : '#ff8298', background: '#16102e' }}
         >
-          <div className="font-screen text-[11px] uppercase tracking-[0.16em] text-[#8f86b5]">
+          <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
             {zone.name}
           </div>
           <h1
-            className="heading-pixel mt-3 text-[clamp(17px,3.4vw,26px)]"
+            className="heading mt-3 text-[clamp(17px,3.4vw,26px)]"
             style={{ color: passed ? '#5ee6a8' : '#ff8298' }}
           >
             {passed ? 'Zone cleared' : 'Not yet'}
@@ -230,7 +234,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
           <div className="num mt-6 text-[64px] leading-none" style={{ color: passed ? '#5ee6a8' : '#ff8298' }}>
             {percent}%
           </div>
-          <p className="mt-2 text-[15px] text-[#a89ac6]">
+          <p className="mt-2 text-[15px] text-parchment-dim">
             {correct} of {total} correct
           </p>
 
@@ -238,10 +242,10 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
             <ProgressBar value={percent / 100} color={passed ? '#5ee6a8' : '#ff8298'} />
           </div>
 
-          <p className="mt-6 text-[15px] leading-relaxed text-[#a89ac6]">
+          <p className="mt-6 text-[15px] leading-relaxed text-parchment-dim">
             {passed
-              ? best !== null && percent <= best
-                ? `Cleared again. Your best on this zone is still ${best}%.`
+              ? priorBest !== null && percent <= priorBest
+                ? `Cleared again — your best here is still ${priorBest}%.`
                 : 'Nice. The next zone on this path is open.'
               : `You need ${Math.round(PASS_MARK * 100)}% to clear this zone. Re-read the lesson and try again — you get a different set of questions.`}
           </p>
@@ -252,6 +256,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
               onClick={() => {
                 setAttemptSeed((s) => s + 1);
                 setResults(null);
+                setPriorBest(progress.zonesCleared[zoneId] ?? null);
                 setPhase('quiz');
               }}
             >
@@ -282,17 +287,17 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
         {/* what you missed */}
         {results && results.some((r) => !r.correct) && (
           <div className="mt-6">
-            <h2 className="heading-pixel mb-4 text-[13px] text-white">What you missed</h2>
+            <h2 className="heading mb-4 text-[13px] text-white">What you missed</h2>
             <div className="space-y-3">
               {results
                 .filter((r) => !r.correct)
                 .map((r, i) => (
-                  <div key={i} className="study-sheet p-5">
-                    <RichText as="div" format="html" className="prose-study mb-3 text-[1rem]">
+                  <div key={i} className="sheet p-5">
+                    <RichText as="div" format="html" className="prose-quill mb-3 text-[1rem]">
                       {r.question.prompt}
                     </RichText>
                     <div className="block-example">
-                      <div className="study-label mb-1">
+                      <div className="label-quill mb-1">
                         Correct answer — {r.question.correctKey}
                       </div>
                       <RichText as="div" format="html" className="font-read leading-relaxed">

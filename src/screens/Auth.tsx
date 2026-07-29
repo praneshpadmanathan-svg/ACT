@@ -9,7 +9,6 @@ import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { cloudEnabled, signIn, signUp } from '@/lib/supabase';
 import { sfx } from '@/lib/sfx';
-import { PixelScene } from '@/game/scene';
 import { Button } from '@/components/ui';
 import { burstConfetti } from '@/components/Feedback';
 
@@ -74,17 +73,17 @@ export function Auth({ mode: initialMode }: { mode: Mode }) {
   };
 
   return (
-    <div className="relative isolate flex min-h-screen items-center justify-center overflow-hidden px-4 py-14 crt vignette">
-      <PixelScene seed={13} className="absolute inset-0 h-full w-full" />
-      <div className="absolute inset-0 bg-ink-950/70" />
+    <div className="relative isolate flex min-h-screen items-center justify-center overflow-hidden px-4 py-14 ">
+      <img src="/art/camp-bg.webp" alt="" className="absolute inset-0 h-full w-full select-none object-cover" draggable={false} />
+      <div className="absolute inset-0 bg-leather-950/82" />
 
-      <div className="pixel-panel relative z-10 w-full max-w-md p-7 sm:p-9">
+      <div className="panel-lit relative z-10 w-full max-w-md p-7 sm:p-9">
         {confirmSent ? (
           <div className="text-center">
-            <h1 className="heading-pixel mb-5 text-[15px] text-gold">Check your email</h1>
-            <p className="text-[15px] leading-relaxed text-[#a89ac6]">
+            <h1 className="heading mb-5 text-[20px] text-gold">Check your email</h1>
+            <p className="text-[15px] leading-relaxed text-parchment-dim">
               We sent a confirmation link to{' '}
-              <b className="text-cyan">{email}</b>. Open it, then come back and sign in.
+              <b className="text-cliffs">{email}</b>. Open it, then come back and sign in.
             </p>
             <Button
               variant="ghost"
@@ -99,13 +98,13 @@ export function Auth({ mode: initialMode }: { mode: Mode }) {
           </div>
         ) : (
           <>
-            <h1 className="heading-pixel mb-6 text-center text-[15px] text-white">
+            <h1 className="heading mb-6 text-center text-[20px] text-parchment">
               {mode === 'signup' ? 'Join the climb' : 'Welcome back'}
             </h1>
 
             {cloudEnabled ? (
               <>
-                <div className="mb-6 grid grid-cols-2 gap-1 rounded-lg border-2 border-edge bg-ink-900 p-1">
+                <div className="mb-6 grid grid-cols-2 gap-1 rounded-lg border-2 border-leather-700 bg-leather-900 p-1">
                   {(['signup', 'signin'] as Mode[]).map((m) => (
                     <button
                       key={m}
@@ -115,8 +114,8 @@ export function Auth({ mode: initialMode }: { mode: Mode }) {
                         setMode(m);
                         setError(null);
                       }}
-                      className={`rounded px-3 py-2 font-screen text-[11px] uppercase tracking-wide transition-colors ${
-                        mode === m ? 'bg-ink-700 text-gold' : 'text-[#8f86b5] hover:text-white'
+                      className={`rounded px-3 py-2 font-script text-[11px] uppercase tracking-wide transition-colors ${
+                        mode === m ? 'bg-leather-700 text-gold' : 'text-ink-faint hover:text-parchment'
                       }`}
                     >
                       {m === 'signup' ? 'New player' : 'Returning'}
@@ -153,7 +152,7 @@ export function Auth({ mode: initialMode }: { mode: Mode }) {
                   />
 
                   {error && (
-                    <p className="rounded-lg border-2 border-crimson/40 bg-crimson/10 px-3 py-2 text-[13px] leading-snug text-[#ffa3b5]">
+                    <p className="rounded-lg border-2 border-blood/40 bg-blood/10 px-3 py-2 text-[13px] leading-snug text-[#e8a094]">
                       {error}
                     </p>
                   )}
@@ -163,22 +162,22 @@ export function Auth({ mode: initialMode }: { mode: Mode }) {
                   </Button>
                 </form>
 
-                <p className="mt-5 text-center text-[13px] leading-relaxed text-[#7a6a9e]">
+                <p className="mt-5 text-center text-[13px] leading-relaxed text-ink-faint">
                   An account syncs your progress across devices.
                 </p>
               </>
             ) : (
-              <p className="mb-6 rounded-lg border-2 border-edge bg-ink-900 px-4 py-3 text-[14px] leading-relaxed text-[#a89ac6]">
+              <p className="mb-6 rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-3 text-[14px] leading-relaxed text-parchment-dim">
                 Accounts are not configured for this deployment, so progress saves to this device only.
                 See the README to switch on cloud sync.
               </p>
             )}
 
-            <div className="mt-7 border-t-2 border-edge pt-6 text-center">
+            <div className="mt-7 border-t-2 border-leather-700 pt-6 text-center">
               <Button variant="ghost" className="w-full" onClick={startGuest}>
                 Continue as guest
               </Button>
-              <p className="mt-3 text-[13px] text-[#7a6a9e]">
+              <p className="mt-3 text-[13px] text-ink-faint">
                 Everything is unlocked. Progress stays in this browser.
               </p>
             </div>
@@ -186,7 +185,7 @@ export function Auth({ mode: initialMode }: { mode: Mode }) {
             <button
               type="button"
               onClick={() => navigate({ name: 'landing' })}
-              className="mt-6 w-full font-screen text-[11px] uppercase tracking-wide text-[#6f6496] transition-colors hover:text-white"
+              className="mt-6 w-full font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
             >
               ← Back
             </button>
@@ -216,7 +215,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1.5 block font-screen text-[10px] uppercase tracking-[0.14em] text-[#8f86b5]">
+      <span className="mb-1.5 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
         {label}
       </span>
       <input
@@ -226,7 +225,7 @@ function Field({
         placeholder={placeholder}
         maxLength={maxLength}
         autoComplete={autoComplete}
-        className="w-full rounded-lg border-2 border-edge bg-ink-900 px-3.5 py-2.5 text-[15px] text-white outline-none transition-colors placeholder:text-[#5f5680] focus:border-gold"
+        className="w-full rounded-lg border-2 border-leather-700 bg-leather-900 px-3.5 py-2.5 text-[15px] text-white outline-none transition-colors placeholder:text-ink-faint focus:border-gold"
       />
     </label>
   );

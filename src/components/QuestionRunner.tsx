@@ -171,18 +171,18 @@ export function QuestionRunner({
   return (
     <div>
       {/* ------------------------------------------------------------- HUD */}
-      <div className="mb-5 rounded-xl border-2 border-edge bg-ink-850 p-4 shadow-pixel sm:p-5">
+      <div className="mb-5 rounded-xl border-2 border-leather-700 bg-leather-850 p-4 shadow-card sm:p-5">
         <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2">
           <div className="min-w-0">
-            <h1 className="heading-pixel truncate text-[13px]" style={{ color: accent }}>
+            <h1 className="heading truncate text-[13px]" style={{ color: accent }}>
               {title}
             </h1>
-            {subtitle && <p className="mt-1 text-[13px] text-[#8f86b5]">{subtitle}</p>}
+            {subtitle && <p className="mt-1 text-[13px] text-ink-faint">{subtitle}</p>}
           </div>
 
           <div className="ml-auto flex items-center gap-3">
             {streak >= 2 && (
-              <span className="chip animate-pop text-ember" style={{ borderColor: '#ff9d5c66' }}>
+              <span className="chip animate-popIn text-desert" style={{ borderColor: '#ff9d5c66' }}>
                 🔥 {streak} in a row
               </span>
             )}
@@ -210,7 +210,7 @@ export function QuestionRunner({
         />
 
         {!deferFeedback && records.length > 0 && (
-          <p className="mt-2.5 font-screen text-[10px] uppercase tracking-wide text-[#8f86b5]">
+          <p className="mt-2.5 font-script text-[10px] uppercase tracking-wide text-ink-faint">
             {correctSoFar} correct of {records.length} answered
           </p>
         )}
@@ -220,11 +220,11 @@ export function QuestionRunner({
       <div className={cx('grid gap-5', question.passage && 'lg:grid-cols-2')}>
         {question.passage && <PassagePanel passage={question.passage} />}
 
-        <div className="study-sheet p-6 sm:p-8">
+        <div className="sheet p-6 sm:p-8">
           <div className="mb-5 flex flex-wrap items-center gap-2">
-            <span className="study-label">{question.topic}</span>
+            <span className="label-quill">{question.topic}</span>
             <span
-              className="rounded px-2 py-0.5 font-screen text-[10px] uppercase tracking-wide"
+              className="rounded px-2 py-0.5 font-script text-[10px] uppercase tracking-wide"
               style={{
                 color: DIFFICULTY_COLOR[question.difficulty],
                 background: `${DIFFICULTY_COLOR[question.difficulty]}22`,
@@ -240,7 +240,7 @@ export function QuestionRunner({
             </p>
           )}
 
-          <div className="prose-study mb-6">
+          <div className="prose-quill mb-6">
             <RichText as="div" format={question.promptFormat}>
               {question.prompt}
             </RichText>
@@ -281,17 +281,17 @@ export function QuestionRunner({
           </div>
 
           {!revealed && (
-            <p className="mt-5 text-[12px] text-paper-soft">
-              Tip: press <kbd className="rounded border border-paper-edge bg-[#ece7db] px-1.5 py-0.5 font-mono text-[11px]">A</kbd>–
-              <kbd className="rounded border border-paper-edge bg-[#ece7db] px-1.5 py-0.5 font-mono text-[11px]">D</kbd> to answer.
+            <p className="mt-5 text-[12px] text-ink-soft">
+              Tip: press <kbd className="rounded border border-parchment-edge bg-[#ece7db] px-1.5 py-0.5 font-mono text-[11px]">A</kbd>–
+              <kbd className="rounded border border-parchment-edge bg-[#ece7db] px-1.5 py-0.5 font-mono text-[11px]">D</kbd> to answer.
             </p>
           )}
 
           {/* ------------------------------------------------ explanation */}
           {revealed && !deferFeedback && (
-            <div className="mt-7 animate-fadein border-t-2 border-paper-edge pt-6">
+            <div className="mt-7 animate-fadein border-t-2 border-parchment-edge pt-6">
               <div
-                className="mb-4 font-screen text-[12px] uppercase tracking-wide"
+                className="mb-4 font-script text-[12px] uppercase tracking-wide"
                 style={{ color: chosen === question.correctKey ? '#2f9e63' : '#d34a63' }}
               >
                 {chosen === question.correctKey ? '✓ Correct' : '✕ Not quite'}
@@ -299,7 +299,7 @@ export function QuestionRunner({
 
               {chosen !== question.correctKey && explanationForChosen && (
                 <div className="block-trap mb-3">
-                  <div className="study-label mb-1.5">Why {chosen} is wrong</div>
+                  <div className="label-quill mb-1.5">Why {chosen} is wrong</div>
                   <RichText as="div" format="markdown" className="font-read leading-relaxed">
                     {explanationForChosen}
                   </RichText>
@@ -308,7 +308,7 @@ export function QuestionRunner({
 
               {explanationForCorrect && (
                 <div className="block-example">
-                  <div className="study-label mb-1.5">
+                  <div className="label-quill mb-1.5">
                     Why {question.correctKey} is right
                   </div>
                   <RichText as="div" format="markdown" className="font-read leading-relaxed">

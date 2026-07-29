@@ -62,8 +62,8 @@ export function DrillsScreen({ section }: { section?: string }) {
             href={hrefFor({ name: 'drills', section: s.id })}
             onClick={() => sfx.select()}
             className={cx(
-              'rounded-lg border-2 px-4 py-2 font-screen text-[12px] uppercase tracking-wide transition-colors',
-              s.id === active ? 'text-[#0d0620]' : 'border-edge bg-ink-850 text-[#a89ac6] hover:text-white',
+              'rounded-lg border-2 px-4 py-2 font-script text-[12px] uppercase tracking-wide transition-colors',
+              s.id === active ? 'text-[#0d0620]' : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-white',
             )}
             style={s.id === active ? { background: s.color, borderColor: s.color } : undefined}
           >
@@ -74,13 +74,13 @@ export function DrillsScreen({ section }: { section?: string }) {
 
       {/* mixed drill */}
       <div
-        className="mb-6 rounded-xl border-2 border-edge bg-ink-850 p-6 shadow-pixel sm:p-7"
+        className="mb-6 rounded-xl border-2 border-leather-700 bg-leather-850 p-6 shadow-card sm:p-7"
         style={{ borderTopColor: meta.color, borderTopWidth: 4 }}
       >
-        <h2 className="heading-pixel text-[13px]" style={{ color: meta.color }}>
+        <h2 className="heading text-[13px]" style={{ color: meta.color }}>
           Mixed {meta.name.toLowerCase()} drill
         </h2>
-        <p className="mt-2.5 text-[14px] leading-relaxed text-[#a89ac6]">
+        <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
           Questions weighted toward the topics you get wrong most.
         </p>
         <div className="mt-5 flex flex-wrap gap-2.5">
@@ -97,7 +97,7 @@ export function DrillsScreen({ section }: { section?: string }) {
       </div>
 
       {/* by topic */}
-      <h2 className="heading-pixel mb-4 text-[13px] text-white">By topic</h2>
+      <h2 className="heading mb-4 text-[13px] text-white">By topic</h2>
       <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         {topics.map((topic) => {
           const stat = stats.get(topic);
@@ -112,13 +112,13 @@ export function DrillsScreen({ section }: { section?: string }) {
                 sfx.select();
                 navigate({ name: 'drill', section: active, topic });
               }}
-              className="flex items-center gap-4 rounded-lg border-2 border-edge bg-ink-850 px-4 py-3.5 text-left shadow-pixel transition-all hover:-translate-y-0.5 hover:border-edge-bright"
+              className="flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-4 py-3.5 text-left shadow-card transition-all hover:-translate-y-0.5 hover:border-gold-deep"
             >
               <span className="min-w-0 flex-1">
                 <span className="block truncate font-sans text-[14px] font-semibold text-white">
                   {titleCase(topic)}
                 </span>
-                <span className="mt-0.5 block font-screen text-[10px] uppercase tracking-wide text-[#6f6496]">
+                <span className="mt-0.5 block font-script text-[10px] uppercase tracking-wide text-ink-faint">
                   {count} question{count === 1 ? '' : 's'}
                   {stat ? ` · ${stat.attempts} tried` : ''}
                 </span>
@@ -307,19 +307,19 @@ export function ReviewScreen() {
             action={<Button variant="primary" onClick={() => navigate({ name: 'drills' })}>Go to drills</Button>}
           />
         ) : (
-          <div className="pixel-panel p-7 text-center sm:p-9">
-            <div className="num text-[64px] leading-none text-cyan">{due.length}</div>
-            <p className="mt-2 font-screen text-[12px] uppercase tracking-wide text-[#8f86b5]">
+          <div className="panel p-7 text-center sm:p-9">
+            <div className="num text-[64px] leading-none text-cliffs">{due.length}</div>
+            <p className="mt-2 font-script text-[12px] uppercase tracking-wide text-ink-faint">
               question{due.length === 1 ? '' : 's'} due
             </p>
-            <p className="mx-auto mt-5 max-w-md text-[15px] leading-relaxed text-[#a89ac6]">
+            <p className="mx-auto mt-5 max-w-md text-[15px] leading-relaxed text-parchment-dim">
               Get one right and it moves further out. Get it wrong and it comes back tomorrow.
             </p>
             <Button variant="primary" size="lg" className="mt-7" onClick={() => setStarted(true)}>
               Start review ▶
             </Button>
             {upcoming > 0 && (
-              <p className="mt-4 text-[13px] text-[#6f6496]">{upcoming} more scheduled for later</p>
+              <p className="mt-4 text-[13px] text-ink-faint">{upcoming} more scheduled for later</p>
             )}
           </div>
         )}
@@ -372,14 +372,14 @@ export function DrillSummary({
   return (
     <Page>
       <div className="mx-auto max-w-3xl">
-        <div className="rounded-xl border-2 border-edge bg-ink-850 p-7 text-center shadow-pixel-lg sm:p-9">
-          <div className="font-screen text-[11px] uppercase tracking-[0.16em] text-[#8f86b5]">
+        <div className="rounded-xl border-2 border-leather-700 bg-leather-850 p-7 text-center shadow-card sm:p-9">
+          <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
             Session complete
           </div>
           <div className="num mt-4 text-[64px] leading-none" style={{ color: accent }}>
             {percent}%
           </div>
-          <p className="mt-2 text-[15px] text-[#a89ac6]">
+          <p className="mt-2 text-[15px] text-parchment-dim">
             {correct} of {results.length} correct · {(totalSeconds / results.length).toFixed(0)}s per question
           </p>
 
@@ -395,12 +395,12 @@ export function DrillSummary({
 
         {missed.length > 0 && (
           <div className="mt-6">
-            <h2 className="heading-pixel mb-4 text-[13px] text-white">
+            <h2 className="heading mb-4 text-[13px] text-white">
               What you missed ({missed.length})
             </h2>
             <div className="space-y-3">
               {missed.map((r, i) => (
-                <div key={i} className="study-sheet p-5 sm:p-6">
+                <div key={i} className="sheet p-5 sm:p-6">
                   {r.question.label && (
                     <p className="mb-3 border-l-4 border-[#c9b06a] bg-[#fbf6e6] px-4 py-2.5 font-read text-[0.98rem]">
                       <RichText as="span" format="html">{r.question.label}</RichText>
@@ -409,20 +409,20 @@ export function DrillSummary({
                   <RichText
                     as="div"
                     format={r.question.promptFormat}
-                    className="prose-study mb-4 text-[1rem]"
+                    className="prose-quill mb-4 text-[1rem]"
                   >
                     {r.question.prompt}
                   </RichText>
 
                   <div className="grid gap-2.5 sm:grid-cols-2">
                     <div className="block-trap">
-                      <div className="study-label mb-1">You chose {r.chosen}</div>
+                      <div className="label-quill mb-1">You chose {r.chosen}</div>
                       <RichText as="div" format="markdown" className="font-read text-[0.98rem] leading-relaxed">
                         {(r.chosen && r.question.why[r.chosen]) || 'Not the credited answer.'}
                       </RichText>
                     </div>
                     <div className="block-example">
-                      <div className="study-label mb-1">Answer: {r.question.correctKey}</div>
+                      <div className="label-quill mb-1">Answer: {r.question.correctKey}</div>
                       <RichText as="div" format="markdown" className="font-read text-[0.98rem] leading-relaxed">
                         {r.question.why[r.question.correctKey] ?? r.question.whyGeneral ?? ''}
                       </RichText>

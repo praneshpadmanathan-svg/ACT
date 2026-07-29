@@ -69,7 +69,7 @@ export function RichText({ children, format = 'markdown', as: Tag = 'p', classNa
 export function Prose({ text, className }: { text: string; className?: string }) {
   const paragraphs = useMemo(() => asText(text).split(/\n{2,}/).filter((p) => p.trim()), [text]);
   return (
-    <div className={cx('prose-study', className)}>
+    <div className={cx('prose-quill', className)}>
       {paragraphs.map((p, i) => (
         <RichText key={i}>{p}</RichText>
       ))}

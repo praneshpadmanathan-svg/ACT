@@ -29,14 +29,14 @@ export class ErrorBoundary extends Component<Props, State> {
 
     return (
       <div className="flex min-h-screen items-center justify-center px-4">
-        <div className="pixel-panel w-full max-w-lg p-7 text-center sm:p-9">
-          <h1 className="heading-pixel text-[15px] text-crimson">Something broke</h1>
-          <p className="mt-5 text-[15px] leading-relaxed text-[#a89ac6]">
+        <div className="panel w-full max-w-lg p-7 text-center sm:p-9">
+          <h1 className="heading text-[15px] text-blood">Something broke</h1>
+          <p className="mt-5 text-[15px] leading-relaxed text-parchment-dim">
             The screen failed to render. Your progress is saved — going back to the dashboard usually
             clears it.
           </p>
 
-          <pre className="mt-5 max-h-40 overflow-auto rounded-lg border-2 border-edge bg-ink-900 p-3 text-left font-mono text-[11px] leading-relaxed text-[#8f86b5]">
+          <pre className="mt-5 max-h-40 overflow-auto rounded-lg border-2 border-leather-700 bg-leather-900 p-3 text-left font-mono text-[11px] leading-relaxed text-ink-faint">
             {error.message}
           </pre>
 

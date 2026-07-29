@@ -1,19 +1,15 @@
-/* Shared primitives. Small on purpose — anything that only one screen uses
-   lives with that screen instead. */
+/* Shared primitives, in the leather-and-parchment register. */
 
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 import { cx } from '@/lib/utils';
 import { sfx } from '@/lib/sfx';
 
-/* ----------------------------------------------------------------- button */
-
-type Variant = 'primary' | 'gold' | 'ghost' | 'danger';
+type Variant = 'primary' | 'ghost' | 'danger' | 'quill';
 type Size = 'sm' | 'md' | 'lg';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
   size?: Size;
-  /** Play the arcade blip on click. On by default. */
   quiet?: boolean;
 }
 
@@ -32,9 +28,9 @@ export function Button({
       className={cx(
         'btn',
         variant === 'primary' && 'btn-primary',
-        variant === 'gold' && 'btn-gold',
         variant === 'ghost' && 'btn-ghost',
         variant === 'danger' && 'btn-danger',
+        variant === 'quill' && 'btn-quill',
         size === 'sm' && 'btn-sm',
         size === 'lg' && 'btn-lg',
         className,
@@ -50,21 +46,17 @@ export function Button({
   );
 }
 
-/* ------------------------------------------------------------------ panel */
-
 export function Panel({
   children,
   className,
-  raised,
+  lit,
 }: {
   children: ReactNode;
   className?: string;
-  raised?: boolean;
+  lit?: boolean;
 }) {
-  return <div className={cx(raised ? 'pixel-panel-raised' : 'pixel-panel', className)}>{children}</div>;
+  return <div className={cx(lit ? 'panel-lit' : 'panel', className)}>{children}</div>;
 }
-
-/* ------------------------------------------------------------------- chip */
 
 export function Chip({
   children,
@@ -76,25 +68,19 @@ export function Chip({
   className?: string;
 }) {
   return (
-    <span
-      className={cx('chip', className)}
-      style={color ? { color, borderColor: `${color}55` } : undefined}
-    >
+    <span className={cx('chip', className)} style={color ? { color, borderColor: `${color}66` } : undefined}>
       {children}
     </span>
   );
 }
 
-/* --------------------------------------------------------------- progress */
-
 export function ProgressBar({
   value,
-  color = '#ffd23e',
+  color = '#d4a017',
   className,
-  height = 10,
+  height = 9,
   label,
 }: {
-  /** 0-1 */
   value: number;
   color?: string;
   className?: string;
@@ -104,7 +90,7 @@ export function ProgressBar({
   const pctValue = Math.round(Math.min(1, Math.max(0, value)) * 100);
   return (
     <div
-      className={cx('w-full overflow-hidden rounded-full border-2 border-edge bg-ink-900', className)}
+      className={cx('w-full overflow-hidden rounded-full border border-leather-700 bg-leather-950', className)}
       style={{ height }}
       role="progressbar"
       aria-valuenow={pctValue}
@@ -113,15 +99,59 @@ export function ProgressBar({
       aria-label={label}
     >
       <div
-        className="h-full rounded-full transition-[width] duration-500 ease-out"
-        style={{ width: `${pctValue}%`, background: color, boxShadow: `0 0 12px ${color}88` }}
+        className="h-full rounded-full transition-[width] duration-700 ease-out"
+        style={{ width: `${pctValue}%`, background: color, boxShadow: `0 0 10px ${color}77` }}
       />
     </div>
   );
 }
 
-/* ------------------------------------------------------------- rank badge */
+/** A circular progress dial — used for per-region progress on the dashboard. */
+export function ProgressRing({
+  value,
+  color,
+  label,
+  size = 76,
+}: {
+  value: number;
+  color: string;
+  label: string;
+  size?: number;
+}) {
+  const r = 26;
+  const circumference = 2 * Math.PI * r;
+  const pctValue = Math.round(Math.min(1, Math.max(0, value)) * 100);
 
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <div className="relative" style={{ width: size, height: size }}>
+        <svg viewBox="0 0 64 64" className="h-full w-full -rotate-90">
+          <circle cx="32" cy="32" r={r} fill="none" stroke="rgba(0,0,0,.35)" strokeWidth="6" />
+          <circle
+            cx="32"
+            cy="32"
+            r={r}
+            fill="none"
+            stroke={color}
+            strokeWidth="6"
+            strokeLinecap="round"
+            strokeDasharray={circumference}
+            strokeDashoffset={circumference * (1 - pctValue / 100)}
+            style={{ transition: 'stroke-dashoffset .9s cubic-bezier(.22,1,.36,1)' }}
+          />
+        </svg>
+        <span className="num absolute inset-0 flex items-center justify-center text-[15px] text-parchment">
+          {pctValue}%
+        </span>
+      </div>
+      <span className="font-script text-[12px] uppercase tracking-[0.14em] text-parchment-dim">
+        {label}
+      </span>
+    </div>
+  );
+}
+
+/** Rank sigil — a shield rather than the old hex badge. */
 export function RankBadge({
   rank,
   size = 56,
@@ -138,17 +168,26 @@ export function RankBadge({
           <stop offset="1" stopColor={rank.c2} />
         </linearGradient>
       </defs>
-      <polygon points="32,3 58,17 58,45 32,60 6,45 6,17" fill={`url(#${id})`} stroke={rank.ring} strokeWidth="2.5" />
-      <polygon points="32,12 49,22 49,42 32,52 15,42 15,22" fill="none" stroke="rgba(0,0,0,.28)" strokeWidth="2" />
-      <polygon
-        points="32,19 35.6,28.4 45.6,29 38,35.4 40.4,45 32,39.6 23.6,45 26,35.4 18.4,29 28.4,28.4"
-        fill="rgba(255,255,255,.9)"
+      <path
+        d="M32 3 L57 12 V33 C57 47 45 57 32 61 C19 57 7 47 7 33 V12 Z"
+        fill={`url(#${id})`}
+        stroke={rank.ring}
+        strokeWidth="2.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M32 11 L50 17 V33 C50 43 41 51 32 54 C23 51 14 43 14 33 V17 Z"
+        fill="none"
+        stroke="rgba(0,0,0,.24)"
+        strokeWidth="2"
+      />
+      <path
+        d="M32 20 L35.4 28.6 L44.6 29.2 L37.5 35 L39.8 44 L32 39 L24.2 44 L26.5 35 L19.4 29.2 L28.6 28.6 Z"
+        fill="rgba(255,255,255,.92)"
       />
     </svg>
   );
 }
-
-/* ----------------------------------------------------------- empty states */
 
 export function EmptyState({
   title,
@@ -160,15 +199,13 @@ export function EmptyState({
   action?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center gap-3 rounded-xl border-2 border-dashed border-edge px-6 py-12 text-center">
-      <div className="font-screen text-[15px] uppercase tracking-wide text-[#cdd4f0]">{title}</div>
-      <p className="max-w-sm text-sm leading-relaxed text-[#8f86b5]">{detail}</p>
+    <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-leather-700 px-6 py-12 text-center">
+      <div className="heading text-[17px]">{title}</div>
+      <p className="max-w-sm font-read text-[15px] leading-relaxed text-parchment-dim">{detail}</p>
       {action}
     </div>
   );
 }
-
-/* --------------------------------------------------------------- sections */
 
 export function SectionHeading({
   eyebrow,
@@ -184,13 +221,13 @@ export function SectionHeading({
   return (
     <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
       <div>
-        {eyebrow && (
-          <div className="mb-2 font-screen text-[11px] uppercase tracking-[0.18em] text-[#8f86b5]">
-            {eyebrow}
-          </div>
+        {eyebrow && <div className="eyebrow mb-1.5">{eyebrow}</div>}
+        <h1 className="heading text-[clamp(1.5rem,3.4vw,2.15rem)] leading-tight">{title}</h1>
+        {detail && (
+          <p className="mt-2.5 max-w-2xl font-read text-[15.5px] leading-relaxed text-parchment-dim">
+            {detail}
+          </p>
         )}
-        <h1 className="heading-pixel text-[clamp(15px,2.6vw,22px)] text-white">{title}</h1>
-        {detail && <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#a89ac6]">{detail}</p>}
       </div>
       {right}
     </div>

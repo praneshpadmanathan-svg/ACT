@@ -60,8 +60,8 @@ export function NotesScreen({ section }: { section?: string }) {
             href={hrefFor({ name: 'notes', section: s.id })}
             onClick={() => sfx.select()}
             className={cx(
-              'rounded-lg border-2 px-4 py-2 font-screen text-[12px] uppercase tracking-wide transition-colors',
-              s.id === active ? 'text-[#0d0620]' : 'border-edge bg-ink-850 text-[#a89ac6] hover:text-white',
+              'rounded-lg border-2 px-4 py-2 font-script text-[12px] uppercase tracking-wide transition-colors',
+              s.id === active ? 'text-[#0d0620]' : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-white',
             )}
             style={s.id === active ? { background: s.color, borderColor: s.color } : undefined}
           >
@@ -76,7 +76,7 @@ export function NotesScreen({ section }: { section?: string }) {
           color={meta.color}
           height={8}
         />
-        <span className="flex-none font-screen text-[11px] uppercase tracking-wide text-[#8f86b5]">
+        <span className="flex-none font-script text-[11px] uppercase tracking-wide text-ink-faint">
           {readInSection}/{totalInSection}
         </span>
       </div>
@@ -84,7 +84,7 @@ export function NotesScreen({ section }: { section?: string }) {
       <div className="space-y-6">
         {units.map((unit) => (
           <section key={unit.id}>
-            <h2 className="heading-pixel mb-3 text-[12px]" style={{ color: meta.color }}>
+            <h2 className="heading mb-3 text-[12px]" style={{ color: meta.color }}>
               {unit.label}
             </h2>
             <div className="grid gap-2.5 md:grid-cols-2">
@@ -95,12 +95,12 @@ export function NotesScreen({ section }: { section?: string }) {
                     key={page.id}
                     href={hrefFor({ name: 'note', page: page.id })}
                     onClick={() => sfx.select()}
-                    className="group flex items-start gap-4 rounded-lg border-2 border-edge bg-ink-850 p-4 shadow-pixel transition-all hover:-translate-y-0.5 hover:border-edge-bright"
+                    className="group flex items-start gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 p-4 shadow-card transition-all hover:-translate-y-0.5 hover:border-gold-deep"
                   >
                     <span
                       className={cx(
                         'mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded border-2 text-[12px]',
-                        read ? 'border-mint bg-mint text-[#04200f]' : 'border-edge text-[#5f5680]',
+                        read ? 'border-woods bg-woods text-[#04200f]' : 'border-leather-700 text-ink-faint',
                       )}
                       aria-hidden="true"
                     >
@@ -110,10 +110,10 @@ export function NotesScreen({ section }: { section?: string }) {
                       <span className="block font-sans text-[15px] font-semibold leading-snug text-white">
                         {page.title}
                       </span>
-                      <span className="mt-1 block text-[13px] leading-relaxed text-[#8f86b5]">
+                      <span className="mt-1 block text-[13px] leading-relaxed text-ink-faint">
                         {page.summary}
                       </span>
-                      <span className="mt-2 block font-screen text-[10px] uppercase tracking-wide text-[#6f6496]">
+                      <span className="mt-2 block font-script text-[10px] uppercase tracking-wide text-ink-faint">
                         {page.minutes} min read
                       </span>
                     </span>
@@ -190,15 +190,15 @@ export function NoteReader({ pageId }: { pageId: string }) {
         <ProgressBar value={scrolled} color={meta.color} height={5} label="Reading progress" />
       </div>
 
-      <article ref={articleRef} className="study-sheet mx-auto max-w-3xl p-6 sm:p-10">
-        <header className="mb-8 border-b-2 border-paper-edge pb-6">
-          <div className="study-label">
+      <article ref={articleRef} className="sheet mx-auto max-w-3xl p-6 sm:p-10">
+        <header className="mb-8 border-b-2 border-parchment-edge pb-6">
+          <div className="label-quill">
             {meta.name} · {page.unitLabel} · {page.minutes} min
           </div>
-          <h1 className="mt-3 font-read text-[clamp(1.7rem,4vw,2.4rem)] font-semibold leading-tight text-paper-ink">
+          <h1 className="mt-3 font-read text-[clamp(1.7rem,4vw,2.4rem)] font-semibold leading-tight text-ink">
             {page.title}
           </h1>
-          <p className="mt-3 font-read text-[1.05rem] italic leading-relaxed text-paper-soft">
+          <p className="mt-3 font-read text-[1.05rem] italic leading-relaxed text-ink-soft">
             {page.summary}
           </p>
         </header>
@@ -209,9 +209,9 @@ export function NoteReader({ pageId }: { pageId: string }) {
           ))}
         </div>
 
-        <footer className="mt-10 border-t-2 border-paper-edge pt-7">
+        <footer className="mt-10 border-t-2 border-parchment-edge pt-7">
           {alreadyRead ? (
-            <p className="text-center font-screen text-[12px] uppercase tracking-wide text-[#2f9e63]">
+            <p className="text-center font-script text-[12px] uppercase tracking-wide text-[#2f9e63]">
               ✓ Page complete
             </p>
           ) : (
@@ -235,8 +235,8 @@ export function NoteReader({ pageId }: { pageId: string }) {
                 onClick={() => sfx.select()}
                 className="min-w-0 flex-1 text-left"
               >
-                <span className="study-label block">Previous</span>
-                <span className="mt-0.5 block truncate font-read text-[0.95rem] font-medium text-paper-ink">
+                <span className="label-quill block">Previous</span>
+                <span className="mt-0.5 block truncate font-read text-[0.95rem] font-medium text-ink">
                   {siblings.prev.title}
                 </span>
               </a>
@@ -249,8 +249,8 @@ export function NoteReader({ pageId }: { pageId: string }) {
                 onClick={() => sfx.select()}
                 className="min-w-0 flex-1 text-right"
               >
-                <span className="study-label block">Next</span>
-                <span className="mt-0.5 block truncate font-read text-[0.95rem] font-medium text-paper-ink">
+                <span className="label-quill block">Next</span>
+                <span className="mt-0.5 block truncate font-read text-[0.95rem] font-medium text-ink">
                   {siblings.next.title}
                 </span>
               </a>
@@ -267,7 +267,7 @@ export function NoteReader({ pageId }: { pageId: string }) {
 function NoteBlockView({ block }: { block: NoteBlock }) {
   switch (block.type) {
     case 'p':
-      return <RichText className="prose-study">{block.text}</RichText>;
+      return <RichText className="prose-quill">{block.text}</RichText>;
 
     case 'rule':
       return (
@@ -277,16 +277,16 @@ function NoteBlockView({ block }: { block: NoteBlock }) {
               {block.title}
             </h2>
           )}
-          <RichText as="div" className="prose-study">{block.text}</RichText>
+          <RichText as="div" className="prose-quill">{block.text}</RichText>
         </section>
       );
 
     case 'example':
       return (
         <section className="block-example">
-          <div className="study-label mb-2">Worked example</div>
+          <div className="label-quill mb-2">Worked example</div>
           {/* The prompt often carries A-D choices on their own lines. */}
-          <RichText as="div" className="prose-study whitespace-pre-line font-medium">
+          <RichText as="div" className="prose-quill whitespace-pre-line font-medium">
             {block.prompt}
           </RichText>
 
@@ -302,7 +302,7 @@ function NoteBlockView({ block }: { block: NoteBlock }) {
           </ol>
 
           <div className="mt-3 border-t border-[#c9dfd0] pt-2.5">
-            <span className="study-label">Answer</span>{' '}
+            <span className="label-quill">Answer</span>{' '}
             <RichText as="span" className="font-read font-semibold text-[#1d6b3f]">
               {block.answer}
             </RichText>
@@ -318,7 +318,7 @@ function NoteBlockView({ block }: { block: NoteBlock }) {
           </h2>
           <ul className="space-y-2">
             {block.items.map((item, i) => (
-              <li key={i} className="flex gap-3 font-read text-[1.02rem] leading-relaxed text-paper-ink">
+              <li key={i} className="flex gap-3 font-read text-[1.02rem] leading-relaxed text-ink">
                 <span className="mt-[0.45em] h-1.5 w-1.5 flex-none rounded-full bg-[#6a4ff0]" />
                 <RichText as="span">{item}</RichText>
               </li>
@@ -330,11 +330,11 @@ function NoteBlockView({ block }: { block: NoteBlock }) {
     case 'trap':
       return (
         <section className="block-trap">
-          <div className="study-label mb-2.5">Common traps</div>
+          <div className="label-quill mb-2.5">Common traps</div>
           <ul className="space-y-2">
             {block.items.map((item, i) => (
-              <li key={i} className="flex gap-3 font-read text-[1.02rem] leading-relaxed text-paper-ink">
-                <span className="flex-none font-bold text-crimson">✕</span>
+              <li key={i} className="flex gap-3 font-read text-[1.02rem] leading-relaxed text-ink">
+                <span className="flex-none font-bold text-blood">✕</span>
                 <RichText as="span">{item}</RichText>
               </li>
             ))}
@@ -344,8 +344,8 @@ function NoteBlockView({ block }: { block: NoteBlock }) {
 
     case 'table':
       return (
-        <div className="overflow-x-auto rounded-lg border-2 border-paper-edge">
-          <table className="study-table">
+        <div className="overflow-x-auto rounded-lg border-2 border-parchment-edge">
+          <table className="quill-table">
             <thead>
               <tr>
                 {block.head.map((h, i) => (
@@ -384,8 +384,8 @@ function CheckBlock({ block }: { block: Extract<NoteBlock, { type: 'check' }> })
 
   return (
     <section className="block-check">
-      <div className="study-label mb-2.5">Check yourself</div>
-      <RichText as="div" className="prose-study mb-4 font-medium">{block.q}</RichText>
+      <div className="label-quill mb-2.5">Check yourself</div>
+      <RichText as="div" className="prose-quill mb-4 font-medium">{block.q}</RichText>
 
       <div className="space-y-2">
         {block.choices.map((choice, i) => {
@@ -418,12 +418,12 @@ function CheckBlock({ block }: { block: Extract<NoteBlock, { type: 'check' }> })
       {revealed && (
         <div className="mt-4 animate-fadein rounded-lg bg-white/70 px-4 py-3">
           <div
-            className="mb-1.5 font-screen text-[11px] uppercase tracking-wide"
+            className="mb-1.5 font-script text-[11px] uppercase tracking-wide"
             style={{ color: chosen === block.answer ? '#2f9e63' : '#d34a63' }}
           >
             {chosen === block.answer ? '✓ Correct' : '✕ Not quite'}
           </div>
-          <RichText as="div" className="font-read leading-relaxed text-paper-ink">
+          <RichText as="div" className="font-read leading-relaxed text-ink">
             {block.explain}
           </RichText>
         </div>

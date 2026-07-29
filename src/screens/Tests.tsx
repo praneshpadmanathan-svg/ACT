@@ -47,14 +47,14 @@ export function TestsScreen() {
 
       <div className="mb-6 grid gap-3 lg:grid-cols-2">
         <div
-          className="rounded-xl border-2 border-crimson bg-ink-850 p-6 shadow-pixel sm:p-7"
+          className="rounded-xl border-2 border-blood bg-leather-850 p-6 shadow-card sm:p-7"
           style={{ borderTopWidth: 4 }}
         >
-          <h2 className="heading-pixel text-[13px] text-crimson">Full test</h2>
-          <p className="mt-2.5 text-[14px] leading-relaxed text-[#a89ac6]">
+          <h2 className="heading text-[13px] text-blood">Full test</h2>
+          <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
             All four sections back to back, with a break between each.
           </p>
-          <p className="mt-4 font-screen text-[10px] uppercase tracking-wide text-[#6f6496]">
+          <p className="mt-4 font-script text-[10px] uppercase tracking-wide text-ink-faint">
             {Object.values(TEST_PLAN).reduce((n, p) => n + p.questions, 0)} questions ·{' '}
             {Object.values(TEST_PLAN).reduce((n, p) => n + p.minutes, 0)} minutes
           </p>
@@ -68,9 +68,9 @@ export function TestsScreen() {
           </Button>
         </div>
 
-        <div className="rounded-xl border-2 border-edge bg-ink-850 p-6 shadow-pixel sm:p-7">
-          <h2 className="heading-pixel text-[13px] text-white">Single section</h2>
-          <p className="mt-2.5 text-[14px] leading-relaxed text-[#a89ac6]">
+        <div className="rounded-xl border-2 border-leather-700 bg-leather-850 p-6 shadow-card sm:p-7">
+          <h2 className="heading text-[13px] text-white">Single section</h2>
+          <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
             One section, properly timed. Good for building pace.
           </p>
           <div className="mt-5 grid grid-cols-2 gap-2.5">
@@ -81,14 +81,14 @@ export function TestsScreen() {
                 onClick={() => navigate({ name: 'test', config: s.id })}
               >
                 <span style={{ color: s.color }}>{s.name}</span>
-                <span className="text-[#6f6496]">{TEST_PLAN[s.id].minutes}m</span>
+                <span className="text-ink-faint">{TEST_PLAN[s.id].minutes}m</span>
               </Button>
             ))}
           </div>
         </div>
       </div>
 
-      <h2 className="heading-pixel mb-4 text-[13px] text-white">Your results</h2>
+      <h2 className="heading mb-4 text-[13px] text-white">Your results</h2>
       {history.length === 0 ? (
         <EmptyState
           title="No tests yet"
@@ -101,19 +101,19 @@ export function TestsScreen() {
               key={result.id}
               href={hrefFor({ name: 'report', id: result.id })}
               onClick={() => sfx.select()}
-              className="flex flex-wrap items-center gap-x-6 gap-y-3 rounded-lg border-2 border-edge bg-ink-850 px-5 py-4 shadow-pixel transition-colors hover:border-edge-bright"
+              className="flex flex-wrap items-center gap-x-6 gap-y-3 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-4 shadow-card transition-colors hover:border-gold-deep"
             >
               <div className="min-w-0">
-                <div className="font-screen text-[12px] uppercase tracking-wide text-white">
+                <div className="font-script text-[12px] uppercase tracking-wide text-white">
                   {result.sections.length === 4 ? 'Full test' : SECTION_BY_ID[result.sections[0]]?.name}
                 </div>
-                <div className="mt-0.5 text-[13px] text-[#6f6496]">{formatRelative(result.at)}</div>
+                <div className="mt-0.5 text-[13px] text-ink-faint">{formatRelative(result.at)}</div>
               </div>
 
               <div className="ml-auto flex items-center gap-5">
                 {result.sections.map((id) => (
                   <div key={id} className="text-center">
-                    <div className="font-screen text-[9px] uppercase tracking-wide text-[#6f6496]">
+                    <div className="font-script text-[9px] uppercase tracking-wide text-ink-faint">
                       {SECTION_BY_ID[id]?.name.slice(0, 3)}
                     </div>
                     <div className="num text-[19px]" style={{ color: SECTION_BY_ID[id]?.color }}>
@@ -121,8 +121,8 @@ export function TestsScreen() {
                     </div>
                   </div>
                 ))}
-                <div className="border-l-2 border-edge pl-5 text-center">
-                  <div className="font-screen text-[9px] uppercase tracking-wide text-[#6f6496]">Comp</div>
+                <div className="border-l-2 border-leather-700 pl-5 text-center">
+                  <div className="font-script text-[9px] uppercase tracking-wide text-ink-faint">Comp</div>
                   <div className="num text-[26px] text-gold">{result.composite}</div>
                 </div>
               </div>
@@ -196,8 +196,8 @@ export function TestRunner({ config }: { config: string }) {
     return (
       <Page>
         <div className="mx-auto max-w-lg">
-          <div className="pixel-panel p-7 text-center sm:p-9">
-            <h1 className="heading-pixel text-[15px] text-crimson">
+          <div className="panel p-7 text-center sm:p-9">
+            <h1 className="heading text-[15px] text-blood">
               {sectionIds.length === 4 ? 'Full practice test' : `${SECTION_BY_ID[sectionIds[0]].name} section`}
             </h1>
 
@@ -205,9 +205,9 @@ export function TestRunner({ config }: { config: string }) {
               {sectionIds.map((id) => (
                 <div
                   key={id}
-                  className="flex items-center justify-between rounded-lg border-2 border-edge bg-ink-900 px-4 py-3"
+                  className="flex items-center justify-between rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-3"
                 >
-                  <dt className="font-screen text-[11px] uppercase tracking-wide" style={{ color: SECTION_BY_ID[id].color }}>
+                  <dt className="font-script text-[11px] uppercase tracking-wide" style={{ color: SECTION_BY_ID[id].color }}>
                     {SECTION_BY_ID[id].name}
                   </dt>
                   <dd className="num text-[17px] text-white">
@@ -217,7 +217,7 @@ export function TestRunner({ config }: { config: string }) {
               ))}
             </dl>
 
-            <p className="mt-6 text-[14px] leading-relaxed text-[#a89ac6]">
+            <p className="mt-6 text-[14px] leading-relaxed text-parchment-dim">
               {totalQuestions} questions, {totalMinutes} minutes. No explanations until you finish — that is
               the point. Unanswered questions count as wrong, so guess rather than leave blanks.
             </p>
@@ -250,13 +250,13 @@ export function TestRunner({ config }: { config: string }) {
     return (
       <Page>
         <div className="mx-auto max-w-md">
-          <div className="pixel-panel p-7 text-center sm:p-9">
-            <h1 className="heading-pixel text-[15px] text-gold">Break</h1>
-            <p className="mt-5 text-[15px] leading-relaxed text-[#a89ac6]">
+          <div className="panel p-7 text-center sm:p-9">
+            <h1 className="heading text-[15px] text-gold">Break</h1>
+            <p className="mt-5 text-[15px] leading-relaxed text-parchment-dim">
               Next up: <b style={{ color: SECTION_BY_ID[nextId].color }}>{SECTION_BY_ID[nextId].name}</b> —{' '}
               {TEST_PLAN[nextId].questions} questions in {TEST_PLAN[nextId].minutes} minutes.
             </p>
-            <p className="mt-3 text-[14px] text-[#6f6496]">The clock starts when you continue.</p>
+            <p className="mt-3 text-[14px] text-ink-faint">The clock starts when you continue.</p>
             <Button
               variant="primary"
               size="lg"
@@ -396,16 +396,16 @@ function SectionTimer({
     <div
       className={cx(
         'sticky top-16 z-40 mb-4 flex items-center gap-4 rounded-lg border-2 px-5 py-3 backdrop-blur',
-        critical ? 'border-crimson bg-crimson/15' : urgent ? 'border-gold bg-ink-850/95' : 'border-edge bg-ink-850/95',
+        critical ? 'border-blood bg-blood/15' : urgent ? 'border-gold bg-leather-850/95' : 'border-leather-700 bg-leather-850/95',
       )}
       role="timer"
       aria-live="off"
     >
-      <span className="font-screen text-[10px] uppercase tracking-[0.16em] text-[#8f86b5]">
+      <span className="font-script text-[10px] uppercase tracking-[0.16em] text-ink-faint">
         Time remaining
       </span>
       <span
-        className={cx('num ml-auto text-[26px] leading-none', critical && 'animate-blink')}
+        className={cx('num ml-auto text-[26px] leading-none', critical && 'animate-shimmer')}
         style={{ color: critical ? '#ff5d78' : urgent ? '#ffd23e' : color }}
       >
         {formatClock(remaining)}
@@ -461,18 +461,18 @@ export function ScoreReport({
   return (
     <Page>
       <div className="mx-auto max-w-3xl">
-        <div className="rounded-xl border-2 border-gold bg-ink-850 p-7 text-center shadow-pixel-lg sm:p-9">
-          <div className="font-screen text-[11px] uppercase tracking-[0.16em] text-[#8f86b5]">
+        <div className="rounded-xl border-2 border-gold bg-leather-850 p-7 text-center shadow-card sm:p-9">
+          <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
             {result.sections.length === 4 ? 'Full test' : `${SECTION_BY_ID[result.sections[0]].name} section`} ·{' '}
             {formatRelative(result.at)}
           </div>
 
           <div className="num mt-5 text-[80px] leading-none text-gold">{result.composite}</div>
-          <p className="mt-1 font-screen text-[12px] uppercase tracking-wide text-[#8f86b5]">
+          <p className="mt-1 font-script text-[12px] uppercase tracking-wide text-ink-faint">
             Composite
           </p>
 
-          <p className="mx-auto mt-5 max-w-md text-[15px] leading-relaxed text-[#a89ac6]">
+          <p className="mx-auto mt-5 max-w-md text-[15px] leading-relaxed text-parchment-dim">
             {gap <= 0
               ? `You are at or above your ${target} target. Keep the streak going and lock it in.`
               : `${gap} point${gap === 1 ? '' : 's'} from your ${target} target. The topics below are where they are hiding.`}
@@ -483,12 +483,12 @@ export function ScoreReport({
               const meta = SECTION_BY_ID[id];
               const [correct, total] = result.raw[id] ?? [0, 0];
               return (
-                <div key={id} className="rounded-lg border-2 border-edge bg-ink-900 px-4 py-4">
-                  <div className="font-screen text-[10px] uppercase tracking-wide" style={{ color: meta.color }}>
+                <div key={id} className="rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-4">
+                  <div className="font-script text-[10px] uppercase tracking-wide" style={{ color: meta.color }}>
                     {meta.name}
                   </div>
                   <div className="num mt-2 text-[34px] leading-none text-white">{result.scores[id]}</div>
-                  <div className="mt-1.5 text-[12px] text-[#6f6496]">
+                  <div className="mt-1.5 text-[12px] text-ink-faint">
                     {correct}/{total} correct
                   </div>
                 </div>
@@ -499,12 +499,12 @@ export function ScoreReport({
 
         {byTopic.length > 0 && (
           <div className="mt-6">
-            <h2 className="heading-pixel mb-4 text-[13px] text-white">Where the points went</h2>
+            <h2 className="heading mb-4 text-[13px] text-white">Where the points went</h2>
             <div className="space-y-2.5">
               {byTopic.map((t) => (
                 <div
                   key={t.topic}
-                  className="flex items-center gap-4 rounded-lg border-2 border-edge bg-ink-850 px-5 py-3.5"
+                  className="flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-3.5"
                 >
                   <span className="w-40 flex-none truncate font-sans text-[14px] font-semibold text-white">
                     {titleCase(t.topic)}
@@ -514,7 +514,7 @@ export function ScoreReport({
                     color={t.accuracy < 0.5 ? '#ff8298' : t.accuracy < 0.75 ? '#ffd23e' : '#5ee6a8'}
                     height={8}
                   />
-                  <span className="num w-16 flex-none text-right text-[17px] text-[#a89ac6]">
+                  <span className="num w-16 flex-none text-right text-[17px] text-parchment-dim">
                     {t.ok}/{t.n}
                   </span>
                 </div>

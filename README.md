@@ -1,6 +1,6 @@
 # ACT Command
 
-Gamified prep for the 2025+ Enhanced ACT — study notes, adaptive drills, full-length timed tests, and a world-map progression system.
+A hand-drawn fantasy quest that happens to be complete ACT prep — lessons, adaptive drills, full-length timed tests, and a painted world map you climb one skill at a time.
 
 Built with Vite, React 18, TypeScript and Tailwind. No backend required: it runs fully offline-capable in guest mode, with optional Supabase accounts for cross-device sync.
 
@@ -42,8 +42,8 @@ Every question explains **all four choices**, not just the credited one.
 
 ### Features
 
-- **World map + trails** — four subject paths, each a serpentine trail of zones that unlock in order, guarded by a boss test at the summit.
-- **Zones** — a short lesson in a readable study layout, then a six-question quiz. 70% clears the zone.
+- **A painted world map** — every one of the 37 zones has a landmark pin on the illustration; they unlock in order along each region road, and the traveller stands wherever you have got to.
+- **Landmarks** — a short lesson on parchment, then a quiz. 70% clears it and opens the road ahead.
 - **Adaptive drills** — mixed drills weight question selection toward topics you get wrong, so practice drifts to where it pays.
 - **Spaced review** — anything you miss enters a Leitner queue (1 → 3 → 7 → 16 → 35 days) and comes back until you own it.
 - **Timed tests** — real section pacing, no feedback until you finish, then a scored report with a topic breakdown. The timer runs off a wall-clock deadline, so backgrounding the tab doesn't buy extra minutes.
@@ -53,15 +53,30 @@ Every question explains **all four choices**, not just the credited one.
 
 ## Design system
 
-The app deliberately runs **two visual registers**, because a single one can't serve both jobs well.
+The artwork sets the rules. The app ships five illustrations — a painted world
+map, a lantern-lit campaign tent, a pixel-art vista, and two ink-and-wash
+characters — and the interface is built from the same materials rather than
+fighting them.
 
-**Arcade** — pixel type (Press Start 2P / Silkscreen / VT323), hard 2px borders, offset shadows, saturated accents, CRT scanlines. Used for all chrome: landing, world map, HUD, nav, XP, ranks, rewards. This is the game.
+**Leather** — dark, warm chrome for nav, panels, HUD and map furniture. Cinzel
+for headings, IM Fell English SC for small caps.
 
-**Study** — warm paper surfaces, serif body text at a ~66-character measure, generous line height, content blocks as coloured rails rather than filled boxes. Used everywhere someone has to actually read: note pages, passages, question stems, explanations.
+**Parchment** — every reading surface: lessons, passages, question stems,
+explanations. Deliberately the same cream as the sheet the characters were
+drawn on, so a cutout dropped onto a panel has no visible seam. Newsreader at a
+~66-character measure.
 
-They share one palette and one spacing rhythm, so moving between them reads as one product. Scanlines and pixel fonts are never applied to body copy — that was the single biggest readability problem in the previous build.
+Region accents are keyed to the map itself: village gold, forest green, canyon
+rust, sea blue. Both registers live in [`src/index.css`](src/index.css) as
+component classes (`.panel`, `.sheet`, `.prose-quill`, `.choice`, `.pin`, …)
+and in the theme in [`tailwind.config.js`](tailwind.config.js).
 
-Both registers are defined in [`src/index.css`](src/index.css) as component classes (`.pixel-panel`, `.btn`, `.study-sheet`, `.prose-study`, `.choice`, …) and in the Tailwind theme in [`tailwind.config.js`](tailwind.config.js). Change a token in those two files and it propagates everywhere.
+### The artwork
+
+Source images totalled 11.6 MB of PNG. They are committed at **668 KB**:
+backgrounds converted to WebP, and the two characters cut off their parchment
+sheets with a border flood-fill so they can stand on the map with real
+transparency instead of a masked rectangle.
 
 ---
 
@@ -98,16 +113,14 @@ src/
     QuestionRunner.tsx  the shared answering experience
     PassagePanel.tsx    passages, incl. data tables and viewpoint notes
     RichText.tsx        content renderer with a tag allowlist
-    Feedback.tsx        XP pops, toasts, confetti, rank-up cinematic
-    PixelIcon.tsx       sprite icons
+    Feedback.tsx        XP pops, toasts, confetti, rank-up moment
     ui.tsx              buttons, panels, chips, progress, rank badge
     ErrorBoundary.tsx
 
   game/
-    scene.tsx           seeded pixel landscape generator
-    WorldMap.tsx        the four-region overview
-    TrailMap.tsx        a subject's zones as a climbing trail
-    heroes.tsx          player sprites
+    AdventureMap.tsx    the painted map, pins, traveller
+    Wizzy.tsx           the guide
+    mapData.ts          pin coordinates for all 37 zones
 
   screens/              one file per area of the app
 ```
