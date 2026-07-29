@@ -161,6 +161,8 @@ export function mergeProgress(local: Progress, remote: Progress): Progress {
     testHistory: [...tests.values()].sort((a, b) => a.at - b.at),
     notesRead: [...new Set([...remote.notesRead, ...local.notesRead])],
     achievements: [...new Set([...remote.achievements, ...local.achievements])],
+    storySeen: [...new Set([...(remote.storySeen ?? []), ...(local.storySeen ?? [])])],
+    oath: local.oath ?? remote.oath ?? null,
     zonesCleared,
     review,
     dayStreak: Math.max(local.dayStreak, remote.dayStreak),

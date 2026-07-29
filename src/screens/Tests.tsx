@@ -50,7 +50,7 @@ export function TestsScreen() {
           className="rounded-xl border-2 border-blood bg-leather-850 p-6 shadow-card sm:p-7"
           style={{ borderTopWidth: 4 }}
         >
-          <h2 className="heading text-[13px] text-blood">Full test</h2>
+          <h2 className="heading text-[13px] text-blood-text">Full test</h2>
           <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
             All four sections back to back, with a break between each.
           </p>
@@ -197,7 +197,7 @@ export function TestRunner({ config }: { config: string }) {
       <Page>
         <div className="mx-auto max-w-lg">
           <div className="panel p-7 text-center sm:p-9">
-            <h1 className="heading text-[15px] text-blood">
+            <h1 className="heading text-[15px] text-blood-text">
               {sectionIds.length === 4 ? 'Full practice test' : `${SECTION_BY_ID[sectionIds[0]].name} section`}
             </h1>
 

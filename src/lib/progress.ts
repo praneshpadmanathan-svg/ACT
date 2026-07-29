@@ -92,6 +92,8 @@ export function emptyProgress(): Progress {
     weeklyGoal: 1800,
     profile: null,
     hero: 'cadet',
+    storySeen: [],
+    oath: null,
     review: {},
   };
 }
@@ -139,6 +141,7 @@ export function loadProgress(key: string = STORAGE_KEYS.progress): Progress {
   merged.achievements = Array.isArray(merged.achievements) ? merged.achievements : [];
   merged.zonesCleared = merged.zonesCleared ?? {};
   merged.review = merged.review ?? {};
+  merged.storySeen = Array.isArray(merged.storySeen) ? merged.storySeen : [];
   return stored ? merged : migrateLegacy(merged);
 }
 

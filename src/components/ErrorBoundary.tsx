@@ -30,7 +30,7 @@ export class ErrorBoundary extends Component<Props, State> {
     return (
       <div className="flex min-h-screen items-center justify-center px-4">
         <div className="panel w-full max-w-lg p-7 text-center sm:p-9">
-          <h1 className="heading text-[15px] text-blood">Something broke</h1>
+          <h1 className="heading text-[15px] text-blood-text">Something broke</h1>
           <p className="mt-5 text-[15px] leading-relaxed text-parchment-dim">
             The screen failed to render. Your progress is saved — going back to the dashboard usually
             clears it.

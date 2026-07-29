@@ -5,6 +5,7 @@ import { useNavigate, useRoute } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { TopBar } from '@/components/Shell';
 import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
+import { StoryOverlay } from '@/game/StoryOverlay';
 import { Landing } from '@/screens/Landing';
 import { Auth } from '@/screens/Auth';
 import { Onboarding } from '@/screens/Onboarding';
@@ -58,6 +59,10 @@ export default function App() {
     <>
       {!bare && <TopBar />}
       {renderRoute(route)}
+
+      {/* Story runs above every screen so a chapter can fire wherever you
+          happen to be when you earn it. */}
+      {hasStarted && <StoryOverlay />}
 
       <ConfettiCanvas />
       <XPPopups />

@@ -58,10 +58,13 @@ interface Props {
 }
 
 const DIFFICULTY_LABEL: Record<Difficulty, string> = { easy: 'Easy', medium: 'Medium', hard: 'Hard' };
+/* These sit on parchment, so they are inks rather than the bright accents
+   used on the dark chrome — the previous neon set measured about 1:1 against
+   a cream background. */
 const DIFFICULTY_COLOR: Record<Difficulty, string> = {
-  easy: '#5ee6a8',
-  medium: '#ffd23e',
-  hard: '#ff8298',
+  easy: '#2f6b3a',
+  medium: '#8a5a12',
+  hard: '#9c3326',
 };
 
 export function QuestionRunner({

@@ -228,6 +228,10 @@ export interface Progress {
   weeklyGoal: number;
   profile: OnboardingProfile | null;
   hero: string;
+  /** Story chapter ids already played. */
+  storySeen: string[];
+  /** The answer given in the prologue; referenced by later beats. */
+  oath: string | null;
   /** Question ids flagged for review, and their spaced-repetition due dates. */
   review: Record<string, { due: number; box: number }>;
 }

@@ -47,6 +47,7 @@ Every question explains **all four choices**, not just the credited one.
 - **Adaptive drills** — mixed drills weight question selection toward topics you get wrong, so practice drifts to where it pays.
 - **Spaced review** — anything you miss enters a Leitner queue (1 → 3 → 7 → 16 → 35 days) and comes back until you own it.
 - **Timed tests** — real section pacing, no feedback until you finish, then a scored report with a topic breakdown. The timer runs off a wall-clock deadline, so backgrounding the tab doesn't buy extra minutes.
+- **A story that tracks your progress** — six chapters that fire when you earn them (setting out, the first landmark, a quarter, halfway, the Summit opening, after your first trial). Lines type themselves out, the prologue asks a question whose answer is remembered, and Wizzy calls back to it later. Skippable at any point.
 - **Progression** — XP, seven ranks, day streaks, 15 achievements, and an estimated composite derived from your actual accuracy.
 - **Accounts** — Supabase when configured, otherwise salted-and-hashed accounts kept on the device. Progress is stored per profile, so two people can share a browser without overwriting each other. Guest mode needs no account at all.
 - **Sound** — every cue is synthesised at runtime in WebAudio (wooden latches, felt thuds, mallet-and-harp for a correct answer, a layered fanfare for a rank-up), routed through a generated room reverb. Zero bytes of audio ship.
@@ -117,11 +118,14 @@ src/
     PassagePanel.tsx    passages, incl. data tables and viewpoint notes
     RichText.tsx        content renderer with a tag allowlist
     Feedback.tsx        XP pops, toasts, confetti, rank-up moment
+    NavGlyph.tsx        drawn nav icons (no emoji)
     ui.tsx              buttons, panels, chips, progress, rank badge
     ErrorBoundary.tsx
 
   game/
     AdventureMap.tsx    the painted map, pins, traveller
+    story.ts            chapter data + progress-gated triggers
+    StoryOverlay.tsx    typewriter scenes, choices, chapter cards
     Wizzy.tsx           the guide
     mapData.ts          pin coordinates for all 37 zones
     MapFx.tsx           living scenery: water, embers, glow, fireflies

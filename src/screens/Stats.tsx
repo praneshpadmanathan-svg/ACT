@@ -353,7 +353,7 @@ export function ProfileScreen() {
         </div>
 
         <div className="rounded-lg border-2 border-blood/40 bg-leather-850 p-6">
-          <h3 className="heading mb-3 text-[12px] text-blood">Reset progress</h3>
+          <h3 className="heading mb-3 text-[12px] text-blood-text">Reset progress</h3>
           <p className="mb-4 text-[13px] leading-relaxed text-ink-faint">
             Deletes all XP, attempts, cleared zones and test results from this browser. This cannot be
             undone.

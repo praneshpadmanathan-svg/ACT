@@ -45,6 +45,9 @@ export default {
         cliffs: '#4f9dc9',
         summit: '#e8c34a',
         blood: '#a8402f',
+        /* #a8402f is a fill colour — as text on leather it measures 2.73:1.
+           This is the text-safe variant. */
+        'blood-text': '#dd8571',
       },
       fontFamily: {
         display: ['Cinzel', 'Georgia', 'serif'],
@@ -80,6 +83,36 @@ export default {
         fadein: { from: { opacity: '0' }, to: { opacity: '1' } },
         slidein: { from: { transform: 'translateX(110%)', opacity: '0' }, to: { transform: 'translateX(0)', opacity: '1' } },
         shimmer: { '0%,100%': { opacity: '.55' }, '50%': { opacity: '1' } },
+
+        /* page + list entrances — small, fast, never in the way */
+        pageIn: {
+          from: { opacity: '0', transform: 'translateY(10px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        riseIn: {
+          from: { opacity: '0', transform: 'translateY(8px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideDown: {
+          from: { opacity: '0', transform: 'translateY(-8px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+
+        /* story */
+        storyIn: { from: { opacity: '0' }, to: { opacity: '1' } },
+        storyOut: { from: { opacity: '1' }, to: { opacity: '0' } },
+        storyTitle: {
+          from: { opacity: '0', transform: 'translateY(14px)', letterSpacing: '.3em' },
+          to: { opacity: '1', transform: 'translateY(0)', letterSpacing: 'normal' },
+        },
+        storyWizzy: {
+          from: { opacity: '0', transform: 'translateY(28px) scale(.94)' },
+          to: { opacity: '1', transform: 'translateY(0) scale(1)' },
+        },
+        storyChoice: {
+          from: { opacity: '0', transform: 'translateX(-10px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
       },
       animation: {
         float: 'float 3.6s ease-in-out infinite',
@@ -92,6 +125,14 @@ export default {
         fadein: 'fadein .4s ease-out',
         slidein: 'slidein .3s ease-out',
         shimmer: 'shimmer 2.6s ease-in-out infinite',
+        pageIn: 'pageIn .34s cubic-bezier(.22,1,.36,1)',
+        riseIn: 'riseIn .3s cubic-bezier(.22,1,.36,1) backwards',
+        slideDown: 'slideDown .22s cubic-bezier(.22,1,.36,1)',
+        storyIn: 'storyIn .34s ease-out',
+        storyOut: 'storyOut .34s ease-in forwards',
+        storyTitle: 'storyTitle .6s cubic-bezier(.22,1,.36,1) backwards',
+        storyWizzy: 'storyWizzy .5s cubic-bezier(.22,1.3,.36,1) .1s backwards',
+        storyChoice: 'storyChoice .3s cubic-bezier(.22,1,.36,1) backwards',
       },
     },
   },

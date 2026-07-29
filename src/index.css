@@ -69,10 +69,120 @@
 }
 
 @layer components {
+  /* ------------------------------------------------------------- nav rail
+     A lit rail rather than a row of tabs: drawn glyphs, a marker that slides
+     between destinations, and a lift on hover. */
+
+  .brand-sigil {
+    @apply flex h-8 w-8 flex-none items-center justify-center rounded-lg border
+           border-gold-deep/60 bg-leather-850 text-gold transition-all duration-200;
+    box-shadow: inset 0 1px 0 rgba(240, 207, 122, 0.16);
+  }
+  .group:hover > .brand-sigil {
+    @apply border-gold bg-leather-800;
+    box-shadow: inset 0 1px 0 rgba(240, 207, 122, 0.3), 0 0 14px rgba(212, 160, 23, 0.28);
+  }
+
+  .nav-item {
+    @apply relative flex items-center gap-2 rounded-lg px-3 py-2 font-display
+           text-[13.5px] font-semibold tracking-wide text-parchment-dim
+           transition-all duration-200;
+  }
+  .nav-item:hover {
+    @apply -translate-y-px bg-leather-850 text-parchment;
+  }
+  .nav-item-glyph {
+    @apply flex-none text-ink-faint transition-all duration-200;
+  }
+  .nav-item:hover .nav-item-glyph {
+    @apply -translate-y-px text-gold;
+  }
+  .nav-item-active {
+    @apply text-gold;
+  }
+  .nav-item-active .nav-item-glyph {
+    @apply text-gold;
+  }
+
+  /* The sliding underline. Positioned in JS, animated in CSS. */
+  .nav-marker {
+    @apply pointer-events-none absolute bottom-0 block h-[2px] rounded-full;
+    background: linear-gradient(90deg, transparent, theme('colors.gold.bright'), transparent);
+    box-shadow: 0 0 10px rgba(242, 207, 91, 0.55);
+  }
+
+  .nav-item-mobile {
+    @apply flex items-center gap-2.5 rounded-lg border border-leather-700 bg-leather-850
+           px-3.5 py-3 text-left font-display text-[14px] font-semibold
+           text-parchment-dim transition-all duration-150;
+  }
+  .nav-item-mobile:active {
+    @apply scale-[.98];
+  }
+  .nav-item-mobile-active {
+    @apply border-gold-deep bg-leather-750 text-gold;
+  }
+
+  /* Right-hand HUD block: rank sigil, name, XP. */
+  .hud-block {
+    @apply flex items-center gap-2.5 rounded-lg border border-leather-700 bg-leather-850
+           px-2.5 py-1.5 transition-all duration-200;
+  }
+  .hud-block:hover {
+    @apply -translate-y-px border-gold-deep;
+    box-shadow: 0 0 16px rgba(212, 160, 23, 0.18);
+  }
+  .hud-xp {
+    @apply block h-1 w-12 overflow-hidden rounded-full bg-leather-950;
+  }
+  .hud-xp > i {
+    @apply block h-full rounded-full transition-[width] duration-700 ease-out;
+    background: linear-gradient(90deg, theme('colors.gold.deep'), theme('colors.gold.bright'));
+  }
+
+  .hud-icon {
+    @apply flex h-9 w-9 flex-none items-center justify-center rounded-lg border
+           border-leather-700 bg-leather-850 text-parchment-dim transition-all duration-200;
+  }
+  .hud-icon:hover {
+    @apply -translate-y-px border-gold-deep text-gold;
+  }
+
+  /* ---------------------------------------------------------------- story */
+
+  .story-card {
+    @apply rounded-xl border border-leather-700 px-5 py-4 shadow-card backdrop-blur-md sm:px-7 sm:py-6;
+    background: linear-gradient(180deg, rgba(36, 29, 21, 0.96), rgba(20, 16, 11, 0.96));
+    border-top-color: rgba(212, 160, 23, 0.4);
+  }
+
+  .story-choice {
+    @apply w-full rounded-lg border border-leather-700 bg-leather-850/90 px-4 py-3
+           text-left font-read text-[15px] text-parchment-dim transition-all duration-150;
+  }
+  .story-choice:hover {
+    @apply -translate-y-px border-gold-deep bg-leather-800 text-parchment;
+    box-shadow: 0 0 18px rgba(212, 160, 23, 0.16);
+  }
+  .story-choice:active {
+    @apply translate-y-0;
+  }
+
   /* --------------------------------------------------------------- chrome */
 
   .panel {
-    @apply rounded-xl border border-leather-700 bg-leather-850/90 shadow-card backdrop-blur-sm;
+    @apply rounded-xl border border-leather-700 bg-leather-850/90 shadow-card
+           backdrop-blur-sm transition-all duration-200;
+  }
+  /* Only interactive panels lift — a static card that moves under the cursor
+     reads as a bug. */
+  a.panel:hover,
+  button.panel:hover,
+  a.panel-lit:hover,
+  button.panel-lit:hover {
+    @apply -translate-y-0.5 border-gold-deep;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35), 0 14px 30px rgba(0, 0, 0, 0.4),
+      0 0 22px rgba(212, 160, 23, 0.12);
   }
 
   /* A gold hairline along the top edge — reads as lantern light catching a
@@ -110,6 +220,15 @@
     @apply inline-flex select-none items-center justify-center gap-2 rounded-lg border
            px-4 py-2.5 font-display text-[14px] font-semibold tracking-wide
            transition-all duration-150 disabled:pointer-events-none disabled:opacity-45;
+  }
+  /* Lift on hover, press down on click. Small enough to feel physical
+     without turning every button into an animation. */
+  .btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+  .btn:active:not(:disabled) {
+    transform: translateY(1px);
+    transition-duration: 60ms;
   }
 
   .btn-primary {
@@ -233,7 +352,21 @@
            leading-relaxed text-ink transition-colors duration-100;
   }
   .choice:hover:not(:disabled):not(.choice-locked) {
-    @apply border-ink-faint bg-parchment-light;
+    @apply -translate-y-px border-ink-faint bg-parchment-light;
+    box-shadow: 0 3px 10px rgba(43, 35, 23, 0.14);
+  }
+  .choice:active:not(:disabled):not(.choice-locked) {
+    @apply translate-y-0;
+  }
+  /* The reveal after answering, so right/wrong lands rather than snapping. */
+  .choice-correct,
+  .choice-wrong {
+    animation: choiceSettle 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @keyframes choiceSettle {
+    0% { transform: scale(1); }
+    45% { transform: scale(1.014); }
+    100% { transform: scale(1); }
   }
   .choice-key {
     @apply mt-px flex h-6 w-6 flex-none items-center justify-center rounded-full

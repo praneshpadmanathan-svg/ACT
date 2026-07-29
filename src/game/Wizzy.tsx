@@ -9,6 +9,7 @@ import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
 import { readRaw, writeRaw } from '@/lib/storage';
 import { useMapProgress } from './AdventureMap';
+import { OATH_ECHO } from './story';
 
 const DISMISS_KEY = 'act-command:wizzy-hidden';
 
@@ -42,6 +43,14 @@ export function Wizzy() {
       'Miss a question and it returns in <b>Review</b> — tomorrow, then in three days, then a week — until it truly sticks.',
     );
 
+    // Call back to the prologue answer, so the guide remembers you.
+    const echo = progress.oath ? OATH_ECHO[progress.oath] : null;
+    if (echo && cleared > 0) {
+      list.push(
+        `When the road drags — and it will — remember ${echo}. That is what the climbing is for.`,
+      );
+    }
+
     if (progress.dayStreak >= 2) {
       list.push(
         `Your streak stands at <b>${progress.dayStreak} days</b>. Answer even one question today to keep it burning.`,
@@ -51,7 +60,7 @@ export function Wizzy() {
       'The citadel at the southern isle holds the timed mock test and your predicted score. That is where the climb is measured.',
     );
     return list;
-  }, [allCleared, cleared, current, progress.dayStreak]);
+  }, [allCleared, cleared, current, progress.dayStreak, progress.oath]);
 
   const dismiss = () => {
     writeRaw(DISMISS_KEY, '1');
