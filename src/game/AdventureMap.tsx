@@ -104,7 +104,6 @@ export function AdventureMap() {
   const { progress } = useStore();
   const navigate = useNavigate();
   const { pins, current, cleared, total } = useMapProgress();
-  const scrollRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
   // Bring the traveller into view on first paint — on a tall map the current
@@ -130,7 +129,6 @@ export function AdventureMap() {
   return (
     <div className="relative">
       <div
-        ref={scrollRef}
         className="relative mx-auto overflow-hidden rounded-2xl border border-leather-700 shadow-card"
         style={{ maxWidth: 1000 }}
       >

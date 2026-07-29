@@ -26,8 +26,11 @@ export default {
         },
         ink: {
           DEFAULT: '#2b2317',
+          /* On parchment. */
           soft: '#5a4c37',
-          faint: '#8a7856',
+          /* Muted text on the dark chrome. Light enough to clear 4.5:1 against
+             leather-850 — the earlier #8a7856 measured 3.89:1 and failed. */
+          faint: '#a3906c',
         },
         gold: {
           DEFAULT: '#d4a017',
