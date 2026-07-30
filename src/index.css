@@ -383,7 +383,36 @@
     max-width: 66ch;
   }
   .lesson > * + * {
-    margin-top: 1.75rem;
+    margin-top: 1.4rem;
+  }
+
+  /* Each named part sits on a plate.
+
+     Removing the five tinted boxes fixed the "white cards punched into the
+     page" problem but went too far the other way: with only labels separating
+     them, the parts ran together and the page read as one undifferentiated
+     column. The plate is warm and translucent — a shade lighter than the
+     parchment it sits on rather than a different colour — so it groups a part
+     without ever reading as a separate card. Only `section` is plated, so
+     ordinary prose paragraphs stay in the flow and nothing nests. */
+  .lesson > section {
+    @apply rounded-xl px-5 py-4 sm:px-6 sm:py-5;
+    background: rgba(255, 251, 240, 0.55);
+    border: 1px solid rgba(184, 158, 114, 0.32);
+    border-left: 3px solid var(--mark, rgba(184, 158, 114, 0.55));
+  }
+
+  /* Body copy in a lesson carries more weight than elsewhere in the app.
+     Newsreader at 400 is elegant but thin on cream at reading size; 500 holds
+     the page without turning it into a headline. */
+  .lesson .prose-quill,
+  .lesson-items > li,
+  .lesson-steps > li,
+  .lesson section > .font-read {
+    font-weight: 500;
+  }
+  .lesson .prose-quill {
+    @apply text-[1.1rem] leading-[1.75];
   }
 
   /* A part label: small caps in the part's ink, with a rule running out to the
@@ -445,18 +474,19 @@
     color: var(--mark);
   }
 
-  /* The trap is the part you should be stopped by, so it keeps a rule down its
-     left edge. A coloured margin, still no fill. */
+  /* The trap is the part you should actually be stopped by, so its plate is
+     tinted and its edge is heavier than the rest. */
   .lesson-trap {
-    @apply border-l-2 pl-5;
-    border-color: var(--mark);
+    background: rgba(252, 240, 234, 0.72) !important;
+    border-left-width: 5px !important;
   }
 
-  /* The self-check is an activity rather than prose, so it is fenced by
-     hairlines instead of tinted. */
+  /* The self-check is an activity rather than prose — a dashed edge marks it as
+     something to do rather than something to read. */
   .lesson-check {
-    @apply border-y py-6;
-    border-color: rgba(184, 158, 114, 0.55);
+    background: rgba(255, 249, 232, 0.7) !important;
+    border-style: dashed !important;
+    border-left-style: solid !important;
   }
 
   .quill-table {
@@ -936,6 +966,62 @@
      the woods plaque was genuinely hard to read. A ring of shadows puts a
      near-opaque light plate immediately around every glyph, which brings the
      effective backdrop to ~#e4dfc6 or lighter everywhere: 9.3:1 at worst. */
+  /* ------------------------------------------------------- exploration layer
+
+     A discovery you have not found is a glint: enough to catch the eye while
+     panning, not enough to look like a button demanding to be pressed. Finding
+     it should feel like noticing something. */
+
+  .discovery {
+    @apply absolute z-[8] flex -translate-x-1/2 -translate-y-1/2 cursor-pointer
+           items-center justify-center rounded-full transition-transform duration-150;
+    width: 26px;
+    height: 26px;
+  }
+  .discovery:hover,
+  .discovery:focus-visible {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+
+  .discovery-hidden .discovery-mark {
+    @apply block rounded-full;
+    width: 9px;
+    height: 9px;
+    background: radial-gradient(circle, rgba(255, 246, 214, 0.95) 0%, rgba(255, 226, 150, 0.5) 45%, transparent 72%);
+    box-shadow: 0 0 10px 3px rgba(255, 226, 150, 0.5);
+    animation: fx-glint 3.8s ease-in-out infinite;
+  }
+  @keyframes fx-glint {
+    0%, 62%, 100% { opacity: 0.25; transform: scale(0.75); }
+    78% { opacity: 1; transform: scale(1.25); }
+  }
+
+  .discovery-found .discovery-mark {
+    @apply flex h-[22px] w-[22px] items-center justify-center rounded-full border;
+    border-color: rgba(240, 207, 122, 0.75);
+    background: linear-gradient(180deg, rgba(46, 37, 26, 0.92), rgba(20, 16, 11, 0.92));
+    color: theme('colors.gold.light');
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+  }
+
+  /* Cloud over ground you have not walked. Sits above the artwork but below the
+     pins, so a landmark is always reachable even while its region is misted. */
+  .mapfx-mist {
+    @apply pointer-events-none absolute inset-x-0 z-[3];
+    background:
+      radial-gradient(ellipse at 20% 40%, rgba(226, 222, 210, 0.95), transparent 62%),
+      radial-gradient(ellipse at 62% 55%, rgba(214, 210, 198, 0.92), transparent 58%),
+      radial-gradient(ellipse at 88% 38%, rgba(232, 228, 216, 0.9), transparent 60%),
+      linear-gradient(180deg, rgba(222, 218, 206, 0.82), rgba(206, 202, 190, 0.86));
+    filter: blur(2px);
+    transition: opacity 900ms ease-out;
+    animation: fx-mist 26s ease-in-out infinite;
+  }
+  @keyframes fx-mist {
+    0%, 100% { background-position: 0% 0%, 0% 0%, 0% 0%, 0 0; }
+    50% { background-position: 6% 2%, -5% -2%, 4% 1%, 0 0; }
+  }
+
   .region-plaque {
     @apply pointer-events-none absolute z-[5] -translate-x-1/2 -translate-y-1/2
            whitespace-nowrap font-script text-[clamp(11px,1.35vw,17px)]

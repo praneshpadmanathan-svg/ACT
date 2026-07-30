@@ -2,7 +2,7 @@
    which section to start with — all of which the dashboard reads later. */
 
 import { useState } from 'react';
-import { PATH_BY_ID, SECTION_BY_ID, SECTIONS } from '@/content';
+import { SECTION_BY_ID, SECTIONS } from '@/content';
 import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
@@ -106,7 +106,6 @@ export function Onboarding() {
 
   const fear = (answers.fear as SectionId) ?? 'english';
   const recommended = SECTION_BY_ID[fear];
-  const firstZone = PATH_BY_ID[fear]?.nodes[0];
 
   return (
     <div className="relative isolate flex min-h-screen items-center justify-center overflow-hidden px-4 py-14 ">
@@ -171,17 +170,24 @@ export function Onboarding() {
             </dl>
 
             <p className="mt-6 text-[14px] leading-relaxed text-ink-faint">
-              First stop: <b className="text-white">{firstZone?.name}</b>. Read the lesson, clear the quiz,
-              then keep climbing.
+              Wizzy is waiting at the edge of the map. He will tell you what has happened to the
+              realm, and then you choose which road to walk first.
             </p>
 
+            {/* Straight to the map, not to camp.
+
+                The story plays on the map, so sending a brand-new player to the
+                camp dashboard meant they arrived to an empty screen with no
+                greeting at all — they had to know to click "Map" before
+                anything spoke to them. Finishing onboarding now opens the world
+                and Wizzy's prologue runs immediately. */}
             <Button
               variant="primary"
               size="lg"
               className="mt-7 w-full"
-              onClick={() => navigate({ name: 'home' }, { replace: true })}
+              onClick={() => navigate({ name: 'map' }, { replace: true })}
             >
-              Enter base camp ▶
+              Set out ▶
             </Button>
           </div>
         )}

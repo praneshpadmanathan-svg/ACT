@@ -13,6 +13,7 @@ import { Page } from '@/components/Shell';
 import { Button, ProgressBar, ProgressRing, RankBadge } from '@/components/ui';
 import { useMapProgress } from '@/game/AdventureMap';
 import { REGIONS } from '@/game/mapData';
+import { nextChapter } from '@/game/story';
 
 export function Home() {
   const { progress, rank, playerName, isGuest } = useStore();
@@ -23,6 +24,7 @@ export function Home() {
   const estimate = estimatedComposite(progress);
   const reviewDue = dueForReview(progress).length;
   const weak = weakestTopics(progress, 4);
+  const pendingChapter = nextChapter(progress, { cleared, total });
 
   return (
     <div className="relative isolate min-h-screen">
@@ -36,6 +38,37 @@ export function Home() {
       <div className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-leather-950/80 via-leather-950/88 to-leather-950" />
 
       <Page>
+        {/* Story beats play on the map, so a chapter you have earned but not
+            yet seen is invisible from camp. Say so, and offer the door. */}
+        {pendingChapter && (
+          <button
+            type="button"
+            onClick={() => {
+              sfx.select();
+              navigate({ name: 'map' });
+            }}
+            className="panel-lit mb-5 flex w-full items-center gap-4 p-4 text-left transition-all
+                       hover:-translate-y-0.5 hover:border-gold-deep sm:p-5"
+          >
+            <img
+              src="/art/wizzy.webp"
+              alt=""
+              className="animate-float w-[52px] flex-none select-none sm:w-[64px]"
+              draggable={false}
+            />
+            <span className="min-w-0 flex-1">
+              <span className="eyebrow block">✦ Wizzy has something to tell you</span>
+              <span className="mt-1 block font-display text-[15px] font-semibold text-gold-light">
+                {pendingChapter.title}
+              </span>
+              <span className="mt-0.5 block font-read text-[13.5px] text-parchment-dim">
+                He is waiting out on the map.
+              </span>
+            </span>
+            <span className="flex-none font-display text-[13px] font-semibold text-gold">Go ▸</span>
+          </button>
+        )}
+
         {/* ---------------------------------------------------------- greeting */}
         <div className="mb-6 grid gap-4 lg:grid-cols-[1.25fr_1fr]">
           <div className="panel-lit p-6 sm:p-7">

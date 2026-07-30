@@ -95,6 +95,7 @@ export function emptyProgress(): Progress {
     storySeen: [],
     oath: null,
     startRegion: null,
+    discovered: [],
     review: {},
   };
 }

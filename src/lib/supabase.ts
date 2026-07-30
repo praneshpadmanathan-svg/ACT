@@ -165,6 +165,8 @@ export function mergeProgress(local: Progress, remote: Progress): Progress {
     oath: local.oath ?? remote.oath ?? null,
     /* First choice made wins — a second device must not relocate the traveller. */
     startRegion: local.startRegion ?? remote.startRegion ?? null,
+    /* Unioned: finding something on one device cannot un-find it on another. */
+    discovered: [...new Set([...(remote.discovered ?? []), ...(local.discovered ?? [])])],
     zonesCleared,
     review,
     dayStreak: Math.max(local.dayStreak, remote.dayStreak),

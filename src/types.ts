@@ -236,6 +236,8 @@ export interface Progress {
    *  first landmark is open from the start regardless — this only decides where
    *  the traveller stands and which road the map opens on. */
   startRegion: SectionId | null;
+  /** Ids of map discoveries already found. */
+  discovered: string[];
   /** Question ids flagged for review, and their spaced-repetition due dates. */
   review: Record<string, { due: number; box: number }>;
 }

@@ -43,7 +43,8 @@ Every question explains **all four choices**, not just the credited one.
 ### Features
 
 - **A painted world map** — a full-viewport world you drag to pan and scroll or pinch to zoom, opening on wherever you got to. All 37 zones have a landmark pin, every zone is named after the terrain it actually stands on, and the scenery is alive: drifting cloud cover with shadows crossing the ground below it, falling water and spray, shore foam, chimney smoke, gusts over the fields, lamplight coming up in the cottages, leaves lifting off the canopy, glowing mushrooms, fireflies, crystal glints, volcano embers and heat haze, desert dust, a sweeping lighthouse beam, a ship under sail crossing the bay, birds, and the occasional shooting star.
-- **Landmarks** — a short lesson on parchment, then a quiz. 70% clears it and opens the road ahead. Lessons are a single unbroken column: nothing is boxed or tinted, each part is named by a coloured label instead.
+- **Landmarks** — a short lesson on parchment, then a quiz. 70% clears it and opens the road ahead. Each part of a lesson sits on a warm translucent plate with a coloured edge naming it, in one column at a reading measure.
+- **Discoveries** — fourteen places on the map that are not landmarks: the falling water, the crystal hollow, the stranded boat, the wreck on the rocks, the citadel gate. No quiz and no gate — they are found by exploring, and each gives a piece of the realm and a little XP. Regions you have not walked sit under mist that thins as you clear them, so the map visibly opens up as you work.
 - **Adaptive drills** — mixed drills weight question selection toward topics you get wrong, so practice drifts to where it pays.
 - **Spaced review** — anything you miss enters a Leitner queue (1 → 3 → 7 → 16 → 35 days) and comes back until you own it.
 - **Timed tests** — real section pacing, no feedback until you finish, then a scored report with a topic breakdown. The timer runs off a wall-clock deadline, so backgrounding the tab doesn't buy extra minutes.
@@ -131,6 +132,9 @@ src/
     StoryOverlay.tsx    typewriter scenes, choices, chapter cards, screen shake
     Wizzy.tsx           the guide
     mapData.ts          pin coordinates for all 37 zones
+    discoveries.ts      the 14 findable places and their lore
+    DiscoveryLayer.tsx  discovery markers, the reveal card, and regional mist
+    RoadChooser.tsx     pick which region to set out from
     MapFx.tsx           living scenery: water, embers, glow, fireflies
     Sigils.tsx          drawn lock / cleared / mastered / crown marks
     bosses.ts           the four region guardians

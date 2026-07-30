@@ -19,6 +19,8 @@ import { clamp, cx } from '@/lib/utils';
 import type { SectionId, Zone } from '@/types';
 import { REGIONS, REGION_ORDER, SUMMIT_AT } from './mapData';
 import { activeQuest } from './story';
+import { DISCOVERIES } from './discoveries';
+import { DiscoveryLayer } from './DiscoveryLayer';
 import { m, SPRING } from '@/lib/motion';
 import { MapFx } from './MapFx';
 import { ClearedSigil, CrownSigil, LockSigil, MasterSigil } from './Sigils';
@@ -128,6 +130,20 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
   const navigate = useNavigate();
   const { pins, current, cleared, total } = useMapProgress();
   const quest = useMemo(() => activeQuest(progress, { cleared, total }), [progress, cleared, total]);
+
+  /* How far each region has been walked, 0-1 — drives how much of its mist has
+     lifted and which discoveries have become reachable. */
+  const clearedByRegion = useMemo(() => {
+    const out = {} as Record<SectionId, number>;
+    for (const id of REGION_ORDER) {
+      const nodes = PATH_BY_ID[id]?.nodes ?? [];
+      const done = nodes.filter((n) => progress.zonesCleared[n.id] !== undefined).length;
+      out[id] = nodes.length ? done / nodes.length : 0;
+    }
+    return out;
+  }, [progress.zonesCleared]);
+
+  const foundCount = progress.discovered?.length ?? 0;
 
   const frameRef = useRef<HTMLDivElement>(null);
   /* The frame is `fixed inset-0`, so it is always exactly the viewport —
@@ -309,6 +325,9 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
         />
 
         <MapFx />
+
+        {/* Things to find, and cloud over ground not yet walked. */}
+        <DiscoveryLayer clearedByRegion={clearedByRegion} />
 
         {/* region plaques */}
         {REGION_ORDER.map((id) => {
@@ -506,6 +525,14 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
             <span className="num text-[15px] text-parchment-dim">{total}</span>
             <span className="ml-1 font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint">
               landmarks
+            </span>
+            <span className="ml-2 border-l border-leather-700 pl-2">
+              <span className="num text-[15px] text-gold-light">{foundCount}</span>
+              <span className="text-ink-faint">/</span>
+              <span className="num text-[15px] text-parchment-dim">{DISCOVERIES.length}</span>
+              <span className="ml-1 font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+                found
+              </span>
             </span>
             {progress.dayStreak > 0 && (
               <span className="ml-2 border-l border-leather-700 pl-2 font-script text-[11px] uppercase tracking-[0.14em] text-desert">
