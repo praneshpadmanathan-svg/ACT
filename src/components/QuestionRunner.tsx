@@ -276,8 +276,8 @@ export function QuestionRunner({
                   <RichText as="span" format={choice.format} className="min-w-0 flex-1">
                     {choice.text}
                   </RichText>
-                  {revealed && isCorrect && <span className="ml-auto text-[#2f9e63]">✓</span>}
-                  {revealed && isChosen && !isCorrect && <span className="ml-auto text-[#d34a63]">✕</span>}
+                  {revealed && isCorrect && <span className="ml-auto text-[#2f6b3a]">✓</span>}
+                  {revealed && isChosen && !isCorrect && <span className="ml-auto text-[#9c3326]">✕</span>}
                 </button>
               );
             })}
@@ -294,39 +294,55 @@ export function QuestionRunner({
           {revealed && !deferFeedback && (
             <div className="mt-7 animate-fadein border-t-2 border-parchment-edge pt-6">
               <div
-                className="mb-4 font-script text-[12px] uppercase tracking-wide"
-                style={{ color: chosen === question.correctKey ? '#2f9e63' : '#d34a63' }}
+                className="mb-4 font-script text-[12.5px] font-semibold uppercase tracking-[0.14em]"
+                style={{ color: chosen === question.correctKey ? '#2f6b3a' : '#9c3326' }}
               >
                 {chosen === question.correctKey ? '✓ Correct' : '✕ Not quite'}
               </div>
 
-              {chosen !== question.correctKey && explanationForChosen && (
-                <div className="block-trap mb-3">
-                  <div className="label-quill mb-1.5">Why {chosen} is wrong</div>
-                  <RichText as="div" format="markdown" className="font-read leading-relaxed">
-                    {explanationForChosen}
-                  </RichText>
-                </div>
-              )}
+              {/* Both explanations used to be tinted boxes. Unfilled and
+                  labelled reads faster, and stacking two of them no longer
+                  turns the page into a pile of cards. */}
+              <div className="lesson">
+                {chosen !== question.correctKey && explanationForChosen && (
+                  <section className="ink-trap lesson-trap">
+                    <div className="lesson-label">Why {chosen} is wrong</div>
+                    <RichText
+                      as="div"
+                      format="markdown"
+                      className="font-read text-[1.02rem] leading-[1.72] text-ink"
+                    >
+                      {explanationForChosen}
+                    </RichText>
+                  </section>
+                )}
 
-              {explanationForCorrect && (
-                <div className="block-example">
-                  <div className="label-quill mb-1.5">
-                    Why {question.correctKey} is right
-                  </div>
-                  <RichText as="div" format="markdown" className="font-read leading-relaxed">
-                    {explanationForCorrect}
-                  </RichText>
-                </div>
-              )}
+                {explanationForCorrect && (
+                  <section className="ink-example">
+                    <div className="lesson-label">Why {question.correctKey} is right</div>
+                    <RichText
+                      as="div"
+                      format="markdown"
+                      className="font-read text-[1.02rem] leading-[1.72] text-ink"
+                    >
+                      {explanationForCorrect}
+                    </RichText>
+                  </section>
+                )}
 
-              {!explanationForCorrect && question.whyGeneral && (
-                <div className="block-example">
-                  <RichText as="div" format="html" className="font-read leading-relaxed">
-                    {question.whyGeneral}
-                  </RichText>
-                </div>
-              )}
+                {!explanationForCorrect && question.whyGeneral && (
+                  <section className="ink-example">
+                    <div className="lesson-label">Why</div>
+                    <RichText
+                      as="div"
+                      format="html"
+                      className="font-read text-[1.02rem] leading-[1.72] text-ink"
+                    >
+                      {question.whyGeneral}
+                    </RichText>
+                  </section>
+                )}
+              </div>
 
               <Button
                 variant="primary"

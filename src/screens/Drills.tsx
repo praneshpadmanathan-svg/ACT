@@ -414,19 +414,21 @@ export function DrillSummary({
                     {r.question.prompt}
                   </RichText>
 
-                  <div className="grid gap-2.5 sm:grid-cols-2">
-                    <div className="block-trap">
-                      <div className="label-quill mb-1">You chose {r.chosen}</div>
-                      <RichText as="div" format="markdown" className="font-read text-[0.98rem] leading-relaxed">
+                  {/* Side by side, so the miss and the credited answer can be
+                      compared directly. Labelled rather than tinted. */}
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <section className="ink-trap lesson-trap">
+                      <div className="lesson-label">You chose {r.chosen}</div>
+                      <RichText as="div" format="markdown" className="font-read text-[0.99rem] leading-[1.7] text-ink">
                         {(r.chosen && r.question.why[r.chosen]) || 'Not the credited answer.'}
                       </RichText>
-                    </div>
-                    <div className="block-example">
-                      <div className="label-quill mb-1">Answer: {r.question.correctKey}</div>
-                      <RichText as="div" format="markdown" className="font-read text-[0.98rem] leading-relaxed">
+                    </section>
+                    <section className="ink-example">
+                      <div className="lesson-label">Answer: {r.question.correctKey}</div>
+                      <RichText as="div" format="markdown" className="font-read text-[0.99rem] leading-[1.7] text-ink">
                         {r.question.why[r.question.correctKey] ?? r.question.whyGeneral ?? ''}
                       </RichText>
-                    </div>
+                    </section>
                   </div>
                 </div>
               ))}

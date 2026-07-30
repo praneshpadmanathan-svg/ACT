@@ -367,22 +367,96 @@
     @apply font-script text-[12px] uppercase tracking-[0.18em] text-ink-soft;
   }
 
-  /* Content blocks — coloured rails, not filled boxes, so a long page stays
-     calm. Each maps to a region colour from the map. */
-  .block-rule {
-    @apply rounded-lg border-l-4 border-cliffs bg-[#eaf0f5] px-5 py-4;
+  /* ---------------------------------------------------------- lesson column
+
+     Lessons used to stack five differently tinted boxes on the parchment: a
+     cold blue rule, a green example, a violet list, a pink trap and a dashed
+     check — and, nested inside the rule box, a literal white card. Against a
+     warm cream sheet the cool tints all read as white cards punched into the
+     page, which is what made studying hard rather than easy.
+
+     Nothing is filled now. One column, one measure, and a coloured label
+     naming each part — the label ink carries the meaning the fill used to.
+     Every ink below clears 4.5:1 on parchment. */
+
+  .lesson {
+    max-width: 66ch;
   }
-  .block-example {
-    @apply rounded-lg border-l-4 border-woods bg-[#edf4ed] px-5 py-4;
+  .lesson > * + * {
+    margin-top: 1.75rem;
   }
-  .block-trap {
-    @apply rounded-lg border-l-4 border-blood bg-[#f8ece8] px-5 py-4;
+
+  /* A part label: small caps in the part's ink, with a rule running out to the
+     margin so the eye can find the next part while scrolling. */
+  .lesson-label {
+    @apply mb-2 flex items-center gap-2.5 font-script text-[12.5px] font-semibold
+           uppercase tracking-[0.16em];
   }
-  .block-list {
-    @apply rounded-lg border-l-4 border-village bg-[#f8f0dd] px-5 py-4;
+  .lesson-label::after {
+    content: '';
+    @apply block h-px flex-1;
+    background: linear-gradient(90deg, currentColor, transparent);
+    opacity: 0.34;
   }
-  .block-check {
-    @apply rounded-lg border-2 border-dashed border-parchment-deep bg-[#faf3e0] px-5 py-4;
+
+  /* Each part's ink. --mark rides along for bullets and numerals. */
+  .ink-rule    { color: #27505f; --mark: #27505f; }
+  .ink-example { color: #2f6b3a; --mark: #2f6b3a; }
+  .ink-list    { color: #4a3a8c; --mark: #4a3a8c; }
+  .ink-trap    { color: #9c3326; --mark: #9c3326; }
+  .ink-check   { color: #7a4f0c; --mark: #7a4f0c; }
+
+  /* Worked-example steps: numbered in the part ink, no filled pills. */
+  .lesson-steps {
+    @apply mt-3.5;
+    counter-reset: step;
+  }
+  .lesson-steps > li {
+    @apply relative pl-8 font-read text-[1.02rem] leading-[1.72] text-ink;
+    counter-increment: step;
+  }
+  .lesson-steps > li + li {
+    @apply mt-2;
+  }
+  .lesson-steps > li::before {
+    content: counter(step) '.';
+    @apply absolute left-0 font-display text-[0.95rem] font-semibold;
+    color: var(--mark, theme('colors.ink.soft'));
+  }
+
+  /* Bulleted items: a coloured mark in the margin, nothing behind the text. */
+  .lesson-items > li {
+    @apply relative pl-6 font-read text-[1.04rem] leading-[1.72] text-ink;
+  }
+  .lesson-items > li + li {
+    @apply mt-2.5;
+  }
+  .lesson-items > li::before {
+    content: '';
+    @apply absolute left-1 top-[0.72em] h-1.5 w-1.5 rounded-full;
+    background: var(--mark, theme('colors.ink.soft'));
+  }
+  /* Traps get a cross rather than a dot — it is the one list telling you what
+     not to do. */
+  .lesson-items-x > li::before {
+    content: '✕';
+    @apply left-0 top-0 h-auto w-auto rounded-none bg-transparent font-sans
+           text-[0.85em] font-bold;
+    color: var(--mark);
+  }
+
+  /* The trap is the part you should be stopped by, so it keeps a rule down its
+     left edge. A coloured margin, still no fill. */
+  .lesson-trap {
+    @apply border-l-2 pl-5;
+    border-color: var(--mark);
+  }
+
+  /* The self-check is an activity rather than prose, so it is fenced by
+     hairlines instead of tinted. */
+  .lesson-check {
+    @apply border-y py-6;
+    border-color: rgba(184, 158, 114, 0.55);
   }
 
   .quill-table {

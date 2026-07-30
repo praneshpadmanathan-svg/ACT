@@ -107,35 +107,43 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
               <RichText as="span">{lesson.intro}</RichText>
             </p>
 
-            <div className="mt-7 space-y-4">
+            <div className="lesson mt-8">
               {lesson.rules.map(([title, body, example], i) => (
-                <section key={i} className="block-rule">
-                  <h2 className="mb-2 font-sans text-[0.95rem] font-bold uppercase tracking-wide text-[#1c4a5c]">
-                    {title}
-                  </h2>
+                <section key={i} className="ink-rule">
+                  <h2 className="lesson-label">{title}</h2>
                   <RichText as="div" format="html" className="prose-quill">
                     {body}
                   </RichText>
+                  {/* The example used to be a white card nested inside the
+                      blue rule card — two boxes deep on a cream page. */}
                   {example && (
-                    <div className="mt-3 rounded border-l-4 border-[#2f9e63] bg-white/70 px-4 py-2.5">
-                      <div className="label-quill mb-1">Example</div>
-                      <RichText as="div" format="html" className="font-read leading-relaxed">
+                    <div className="ink-example mt-3.5">
+                      <div className="lesson-label">Example</div>
+                      <RichText
+                        as="div"
+                        format="html"
+                        className="font-read text-[1.02rem] leading-[1.72] text-ink"
+                      >
                         {example}
                       </RichText>
                     </div>
                   )}
                 </section>
               ))}
-            </div>
 
-            {lesson.trap && (
-              <div className="block-trap mt-4">
-                <div className="label-quill mb-1.5">The trap</div>
-                <RichText as="div" format="html" className="font-read leading-relaxed">
-                  {lesson.trap}
-                </RichText>
-              </div>
-            )}
+              {lesson.trap && (
+                <section className="ink-trap lesson-trap">
+                  <div className="lesson-label">The trap</div>
+                  <RichText
+                    as="div"
+                    format="html"
+                    className="font-read text-[1.02rem] leading-[1.72] text-ink"
+                  >
+                    {lesson.trap}
+                  </RichText>
+                </section>
+              )}
+            </div>
 
             <div className="mt-8 flex flex-wrap gap-3 border-t-2 border-parchment-edge pt-6">
               <Button
@@ -296,14 +304,14 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                     <RichText as="div" format="html" className="prose-quill mb-3 text-[1rem]">
                       {r.question.prompt}
                     </RichText>
-                    <div className="block-example">
-                      <div className="label-quill mb-1">
+                    <section className="ink-example">
+                      <div className="lesson-label">
                         Correct answer — {r.question.correctKey}
                       </div>
-                      <RichText as="div" format="html" className="font-read leading-relaxed">
+                      <RichText as="div" format="html" className="font-read text-[1.02rem] leading-[1.72] text-ink">
                         {r.question.why[r.question.correctKey] ?? r.question.whyGeneral ?? ''}
                       </RichText>
-                    </div>
+                    </section>
                   </div>
                 ))}
             </div>

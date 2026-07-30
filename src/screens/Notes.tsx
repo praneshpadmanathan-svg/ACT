@@ -1,8 +1,10 @@
 /* The notes library and the note reader.
 
    This is the longest-form reading in the app, so it commits fully to the
-   study register: warm paper, serif body at a 66-character measure, block
-   variants as coloured rails rather than filled boxes. The only arcade
+   study register: warm paper, serif body at a 66-character measure, and a
+   single unbroken column. Nothing on the page is filled — each part is named
+   by a coloured label instead, because five differently tinted boxes on cream
+   parchment read as white cards punched into the sheet. The only arcade
    elements are the progress chrome above the sheet and the reward on
    finishing a page. */
 
@@ -203,7 +205,9 @@ export function NoteReader({ pageId }: { pageId: string }) {
           </p>
         </header>
 
-        <div className="space-y-5">
+        {/* One column at a reading measure. The spacing between parts comes
+            from .lesson, so nothing needs a fill to look separated. */}
+        <div className="lesson">
           {page.blocks.map((block, i) => (
             <NoteBlockView key={i} block={block} />
           ))}
@@ -211,7 +215,7 @@ export function NoteReader({ pageId }: { pageId: string }) {
 
         <footer className="mt-10 border-t-2 border-parchment-edge pt-7">
           {alreadyRead ? (
-            <p className="text-center font-script text-[12px] uppercase tracking-wide text-[#2f9e63]">
+            <p className="text-center font-script text-[12px] uppercase tracking-wide text-[#2f6b3a]">
               ✓ Page complete
             </p>
           ) : (
@@ -271,55 +275,45 @@ function NoteBlockView({ block }: { block: NoteBlock }) {
 
     case 'rule':
       return (
-        <section className="block-rule">
-          {block.title && (
-            <h2 className="mb-2 font-sans text-[0.95rem] font-bold uppercase tracking-wide text-[#1c4a5c]">
-              {block.title}
-            </h2>
-          )}
+        <section className="ink-rule">
+          {block.title && <h2 className="lesson-label">{block.title}</h2>}
           <RichText as="div" className="prose-quill">{block.text}</RichText>
         </section>
       );
 
     case 'example':
       return (
-        <section className="block-example">
-          <div className="label-quill mb-2">Worked example</div>
+        <section className="ink-example">
+          <div className="lesson-label">Worked example</div>
           {/* The prompt often carries A-D choices on their own lines. */}
           <RichText as="div" className="prose-quill whitespace-pre-line font-medium">
             {block.prompt}
           </RichText>
 
-          <ol className="mt-3 space-y-1.5">
+          <ol className="lesson-steps">
             {block.work.map((step, i) => (
-              <li key={i} className="flex gap-3 font-read text-[0.98rem] leading-relaxed text-[#3d4a42]">
-                <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-[#d3e9dc] font-sans text-[11px] font-bold text-[#1d6b3f]">
-                  {i + 1}
-                </span>
+              <li key={i}>
                 <RichText as="span">{step}</RichText>
               </li>
             ))}
           </ol>
 
-          <div className="mt-3 border-t border-[#c9dfd0] pt-2.5">
+          <p className="mt-3.5 font-read text-[1.02rem] leading-relaxed text-ink">
             <span className="label-quill">Answer</span>{' '}
-            <RichText as="span" className="font-read font-semibold text-[#1d6b3f]">
+            <RichText as="span" className="font-semibold text-[#2f6b3a]">
               {block.answer}
             </RichText>
-          </div>
+          </p>
         </section>
       );
 
     case 'list':
       return (
-        <section className="rounded-lg border-l-4 border-[#6a4ff0] bg-[#f1eefb] px-5 py-4">
-          <h2 className="mb-2.5 font-sans text-[0.95rem] font-bold uppercase tracking-wide text-[#3d2a8c]">
-            {block.title}
-          </h2>
-          <ul className="space-y-2">
+        <section className="ink-list">
+          <h2 className="lesson-label">{block.title}</h2>
+          <ul className="lesson-items">
             {block.items.map((item, i) => (
-              <li key={i} className="flex gap-3 font-read text-[1.02rem] leading-relaxed text-ink">
-                <span className="mt-[0.45em] h-1.5 w-1.5 flex-none rounded-full bg-[#6a4ff0]" />
+              <li key={i}>
                 <RichText as="span">{item}</RichText>
               </li>
             ))}
@@ -329,12 +323,11 @@ function NoteBlockView({ block }: { block: NoteBlock }) {
 
     case 'trap':
       return (
-        <section className="block-trap">
-          <div className="label-quill mb-2.5">Common traps</div>
-          <ul className="space-y-2">
+        <section className="ink-trap lesson-trap">
+          <div className="lesson-label">Common traps</div>
+          <ul className="lesson-items lesson-items-x">
             {block.items.map((item, i) => (
-              <li key={i} className="flex gap-3 font-read text-[1.02rem] leading-relaxed text-ink">
-                <span className="flex-none font-bold text-blood">✕</span>
+              <li key={i}>
                 <RichText as="span">{item}</RichText>
               </li>
             ))}
@@ -383,8 +376,8 @@ function CheckBlock({ block }: { block: Extract<NoteBlock, { type: 'check' }> })
   const revealed = chosen !== null;
 
   return (
-    <section className="block-check">
-      <div className="label-quill mb-2.5">Check yourself</div>
+    <section className="ink-check lesson-check">
+      <div className="lesson-label">Check yourself</div>
       <RichText as="div" className="prose-quill mb-4 font-medium">{block.q}</RichText>
 
       <div className="space-y-2">
@@ -415,15 +408,17 @@ function CheckBlock({ block }: { block: Extract<NoteBlock, { type: 'check' }> })
         })}
       </div>
 
+      {/* The verdict used to sit on a white card, which on parchment looked
+          like a hole in the page. It is a coloured label now. */}
       {revealed && (
-        <div className="mt-4 animate-fadein rounded-lg bg-white/70 px-4 py-3">
+        <div className="mt-4 animate-fadein">
           <div
-            className="mb-1.5 font-script text-[11px] uppercase tracking-wide"
-            style={{ color: chosen === block.answer ? '#2f9e63' : '#d34a63' }}
+            className="mb-1.5 font-script text-[11.5px] font-semibold uppercase tracking-[0.14em]"
+            style={{ color: chosen === block.answer ? '#2f6b3a' : '#9c3326' }}
           >
             {chosen === block.answer ? '✓ Correct' : '✕ Not quite'}
           </div>
-          <RichText as="div" className="font-read leading-relaxed text-ink">
+          <RichText as="div" className="font-read text-[1.02rem] leading-[1.72] text-ink">
             {block.explain}
           </RichText>
         </div>
