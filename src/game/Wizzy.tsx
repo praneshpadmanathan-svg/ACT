@@ -9,30 +9,47 @@ import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
 import { readRaw, writeRaw } from '@/lib/storage';
 import { useMapProgress } from './AdventureMap';
-import { OATH_ECHO } from './story';
+import { activeQuest, OATH_ECHO } from './story';
 
 const DISMISS_KEY = 'act-command:wizzy-hidden';
 
 export function Wizzy() {
   const { progress } = useStore();
-  const { current, cleared, allCleared } = useMapProgress();
+  const { current, cleared, total, allCleared } = useMapProgress();
+  const quest = useMemo(() => activeQuest(progress, { cleared, total }), [progress, cleared, total]);
   const [hidden, setHidden] = useState(() => readRaw(DISMISS_KEY) === '1');
   const [tipIndex, setTipIndex] = useState(0);
 
   const tips = useMemo(() => {
     const list: string[] = [];
 
+    /* The current objective leads, so Wizzy on the map is talking about the
+       story rather than reciting generic advice beside it. */
+    if (quest) {
+      const left = Math.max(0, quest.need - quest.have);
+      list.push(
+        `<b>${quest.quest.name}.</b> ${quest.quest.objective} — ${quest.have} of ${quest.need}, ` +
+          `${left === 1 ? 'one to go' : `${left} to go`}.`,
+      );
+      const seals = progress.achievements.filter((a) => a.startsWith('boss-')).length;
+      if (seals > 0 && seals < 4) {
+        list.push(
+          `<b>${seals} of the four Seals</b> is broken. The guardians still standing know it, and they will not be careless.`,
+        );
+      }
+    }
+
     if (allCleared) {
       list.push(
-        'Every zone conquered, traveller. Sail to the golden citadel and take your full mock test.',
+        'Every landmark is lit, traveller. The Grey has nothing left to hold between here and the water — sail to the citadel and sit the trial.',
       );
     } else if (cleared === 0) {
       list.push(
-        `Greetings! I am Wizzy. Your journey begins at <b>${current?.zone.name ?? 'the first landmark'}</b> — tap the glowing pin where your traveller stands.`,
+        `Greetings! I am Wizzy. Your road begins at <b>${current?.zone.name ?? 'the first landmark'}</b> — tap the glowing pin where your traveller stands.`,
       );
     } else {
       list.push(
-        `Well met. Your next quest is <b>${current?.zone.name ?? 'the summit'}</b> — tap the glowing pin to continue.`,
+        `Your next ground is <b>${current?.zone.name ?? 'the summit'}</b>. Tap the glowing pin and take it.`,
       );
     }
 
@@ -57,10 +74,10 @@ export function Wizzy() {
       );
     }
     list.push(
-      'The citadel at the southern isle holds the timed mock test and your predicted score. That is where the climb is measured.',
+      'The citadel at the southern isle holds the timed trial and your predicted score. That is where the climb is measured.',
     );
     return list;
-  }, [allCleared, cleared, current, progress.dayStreak, progress.oath]);
+  }, [allCleared, cleared, current, quest, progress.achievements, progress.dayStreak, progress.oath]);
 
   const dismiss = () => {
     writeRaw(DISMISS_KEY, '1');

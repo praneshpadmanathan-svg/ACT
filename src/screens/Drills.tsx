@@ -125,15 +125,18 @@ export function DrillsScreen({ section }: { section?: string }) {
               </span>
               <span
                 className="num flex-none text-[19px]"
+                /* The old neon set survived here from the previous build:
+                   #5f5680 measured 2.48:1 on leather. These are the themed
+                   equivalents, all above 6:1. */
                 style={{
                   color:
                     accuracy === null
-                      ? '#5f5680'
+                      ? '#a3906c'
                       : accuracy < 0.5
-                        ? '#ff8298'
+                        ? '#dd8571'
                         : accuracy < 0.75
-                          ? '#ffd23e'
-                          : '#5ee6a8',
+                          ? '#e8c34a'
+                          : '#7cc98a',
                 }}
               >
                 {accuracy === null ? '—' : `${Math.round(accuracy * 100)}%`}

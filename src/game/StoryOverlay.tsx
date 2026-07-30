@@ -5,6 +5,14 @@
    scene until you answer, and the whole thing is framed as a chapter with a
    title card. It should feel like a game talking to you.
 
+   Beats can ask for the scene to rattle as they open — soft for a tremor, hard
+   for a Seal breaking, which also throws light through the shot. The shake is
+   keyed to the beat rather than the line, and clears itself, so the text is
+   never moving while you are trying to read it.
+
+   Dispatches (the short between-chapter updates) render compact: no title
+   card, a smaller Wizzy, and the eyebrow names the dispatch instead of him.
+
    Typing respects prefers-reduced-motion (lines appear whole), and every
    scene is skippable — a story you cannot skip becomes an obstacle on the
    second playthrough. */
@@ -132,9 +140,31 @@ export function StoryOverlay() {
   const line = reply ?? beat?.lines[lineIndex] ?? '';
   const typing = useTypewriter(line, !reduced && !showTitle);
 
-  // Dismiss the title card after a moment.
+  /* Shake the scene as a beat opens, when the beat asks for it. Keyed on the
+     beat so it fires once per beat rather than on every line, and cleared
+     afterwards so the text is never moving while you are reading it — the
+     global prefers-reduced-motion rule collapses these to nothing. */
+  const [shake, setShake] = useState<'soft' | 'hard' | null>(null);
+  useEffect(() => {
+    if (!chapter || showTitle) return;
+    const want = chapter.beats[beatIndex]?.shake ?? null;
+    if (!want) {
+      setShake(null);
+      return;
+    }
+    setShake(want);
+    if (want === 'hard') sfx.warn();
+    const id = window.setTimeout(() => setShake(null), want === 'hard' ? 1100 : 550);
+    return () => window.clearTimeout(id);
+  }, [chapter, beatIndex, showTitle]);
+
+  // Dismiss the title card after a moment. Dispatches have none.
   useEffect(() => {
     if (!chapter || !showTitle) return;
+    if (chapter.compact) {
+      setShowTitle(false);
+      return;
+    }
     const id = window.setTimeout(() => setShowTitle(false), 1500);
     return () => window.clearTimeout(id);
   }, [chapter, showTitle]);
@@ -272,20 +302,41 @@ export function StoryOverlay() {
         />
       )}
 
+      {/* A hard beat throws light through the scene as it lands. */}
+      {shake === 'hard' && (
+        <div
+          key={`flash-${beatIndex}`}
+          className="pointer-events-none absolute inset-0 z-[15] animate-sealFlash"
+          style={{ background: 'radial-gradient(ellipse at 50% 55%, rgba(255,236,178,.55), transparent 62%)' }}
+          aria-hidden="true"
+        />
+      )}
+
       {!showTitle && (
-        <div className="relative z-20 w-full max-w-2xl">
+        <div
+          className={cx(
+            'relative z-20 w-full max-w-2xl',
+            shake === 'hard' && 'animate-shakeHard',
+            shake === 'soft' && 'animate-shakeSoft',
+          )}
+        >
           <div className="flex flex-col items-center gap-0 sm:flex-row sm:items-end sm:gap-4">
             <img
               src="/art/wizzy.webp"
               alt=""
-              className="animate-storyWizzy w-[96px] flex-none select-none sm:w-[132px] lg:w-[150px]"
+              className={cx(
+                'animate-storyWizzy flex-none select-none',
+                chapter.compact
+                  ? 'w-[72px] sm:w-[92px]'
+                  : 'w-[96px] sm:w-[132px] lg:w-[150px]',
+              )}
               style={{ filter: 'drop-shadow(0 10px 16px rgba(0,0,0,.6))' }}
               draggable={false}
             />
 
             <div className="story-card min-w-0 flex-1">
               <div className="flex items-center justify-between gap-3">
-                <span className="eyebrow">✦ Wizzy the Guide</span>
+                <span className="eyebrow">✦ {chapter.compact ? chapter.eyebrow : 'Wizzy the Guide'}</span>
                 <button
                   type="button"
                   onClick={(e) => {

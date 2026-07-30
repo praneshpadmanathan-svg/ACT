@@ -18,6 +18,7 @@ import { sfx } from '@/lib/sfx';
 import { clamp, cx } from '@/lib/utils';
 import type { SectionId, Zone } from '@/types';
 import { REGIONS, REGION_ORDER, SUMMIT_AT } from './mapData';
+import { activeQuest } from './story';
 import { MapFx } from './MapFx';
 import { ClearedSigil, CrownSigil, LockSigil, MasterSigil } from './Sigils';
 
@@ -122,6 +123,7 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
   const { progress } = useStore();
   const navigate = useNavigate();
   const { pins, current, cleared, total } = useMapProgress();
+  const quest = useMemo(() => activeQuest(progress, { cleared, total }), [progress, cleared, total]);
 
   const frameRef = useRef<HTMLDivElement>(null);
   /* The frame is `fixed inset-0`, so it is always exactly the viewport —
@@ -454,6 +456,32 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
             )}
           </div>
         </div>
+
+        {/* The current objective, so the story has somewhere to live on the map
+            rather than only appearing in overlays. */}
+        {quest && (
+          <div className="pointer-events-none mx-auto mt-3 w-full max-w-sm">
+            <div className="quest-card">
+              <div className="flex items-baseline justify-between gap-3">
+                <span className="eyebrow text-[11.5px]">
+                  ✦ Quest {quest.step} of {quest.total}
+                </span>
+                <span className="num text-[12.5px] text-parchment-dim">
+                  {Math.min(quest.have, quest.need)}/{quest.need}
+                </span>
+              </div>
+              <p className="mt-1 font-display text-[14px] font-semibold leading-snug text-gold-light">
+                {quest.quest.name}
+              </p>
+              <p className="mt-0.5 font-read text-[13px] leading-snug text-parchment-dim">
+                {quest.quest.objective}
+              </p>
+              <span className="quest-bar mt-2">
+                <i style={{ width: `${Math.min(100, (quest.have / quest.need) * 100)}%` }} />
+              </span>
+            </div>
+          </div>
+        )}
 
         <div className="flex items-end justify-between gap-3">
           <button

@@ -14,6 +14,7 @@ import { Wizzy } from '@/game/Wizzy';
 import { REGIONS } from '@/game/mapData';
 import { bossFor } from '@/game/bosses';
 import { BossArt } from '@/game/BossArt';
+import { ClearedSigil, LockSigil } from '@/game/Sigils';
 
 /* The map takes the whole viewport — no nav bar, no page heading, no chrome
    except the floating controls. It is the one screen that should feel like a
@@ -97,15 +98,25 @@ export function PathScreen({ section }: { section: string }) {
                   locked ? 'cursor-not-allowed opacity-55' : 'hover:border-gold-deep',
                 )}
               >
+                {/* The drawn sigils, same as the map pins — this list used to
+                    show a 🔒 emoji, which rendered differently on every
+                    platform and did not match anything else. The old #8a7856
+                    numeral also measured 3.89:1 on leather. */}
                 <span
                   className="num flex h-10 w-10 flex-none items-center justify-center rounded-full border-2 text-[15px]"
                   style={{
                     borderColor: cleared ? region.color : '#4a3c2a',
                     background: cleared ? region.color : 'transparent',
-                    color: cleared ? '#1c1610' : '#8a7856',
+                    color: cleared ? '#1c1610' : '#a3906c',
                   }}
                 >
-                  {cleared ? '✓' : locked ? '🔒' : index + 1}
+                  {cleared ? (
+                    <ClearedSigil size={19} />
+                  ) : locked ? (
+                    <LockSigil size={18} />
+                  ) : (
+                    index + 1
+                  )}
                 </span>
 
                 <span className="min-w-0 flex-1">

@@ -567,6 +567,21 @@
            bg-leather-950/85 px-3.5 py-2 shadow-card backdrop-blur;
   }
 
+  /* The current objective, sitting on the map. The story needs somewhere to
+     live between overlays, or the quest chain is invisible while you work. */
+  .quest-card {
+    @apply rounded-xl border border-leather-700 bg-leather-950/90 px-4 py-3
+           shadow-card backdrop-blur;
+    border-top-color: rgba(212, 160, 23, 0.45);
+  }
+  .quest-bar {
+    @apply block h-1 overflow-hidden rounded-full bg-leather-900;
+  }
+  .quest-bar > i {
+    @apply block h-full rounded-full transition-[width] duration-700 ease-out;
+    background: linear-gradient(90deg, theme('colors.gold.deep'), theme('colors.gold.bright'));
+  }
+
   .map-zoom {
     @apply flex h-9 w-9 items-center justify-center rounded-lg border border-leather-700
            bg-leather-950/85 font-display text-[18px] leading-none text-parchment-dim
@@ -912,14 +927,29 @@
     100% { transform: translate(-50%, -50%) translate(112vw, 0) rotate(-2deg); opacity: 0; }
   }
 
+  /* Region names, engraved on the terrain they label.
+
+     The ink needs a light surround on every side, not just below. Sampling the
+     illustration under each plaque: the ink measures 3.7:1 over the village
+     fields, 3.6:1 over the sand — and 1.50:1 over the dark forest canopy. The
+     old single `0 1px 0` shadow only backed the bottom edge of each glyph, so
+     the woods plaque was genuinely hard to read. A ring of shadows puts a
+     near-opaque light plate immediately around every glyph, which brings the
+     effective backdrop to ~#e4dfc6 or lighter everywhere: 9.3:1 at worst. */
   .region-plaque {
     @apply pointer-events-none absolute z-[5] -translate-x-1/2 -translate-y-1/2
            whitespace-nowrap font-script text-[clamp(11px,1.35vw,17px)]
            uppercase tracking-[0.2em];
-    color: #40320f;
+    color: #3a2d0c;
     text-shadow:
-      0 1px 0 rgba(255, 248, 225, 0.85),
-      0 0 14px rgba(255, 245, 214, 0.7);
+      0 0 2px rgba(255, 250, 235, 0.98),
+      1px 1px 2px rgba(255, 250, 235, 0.95),
+      -1px 1px 2px rgba(255, 250, 235, 0.95),
+      1px -1px 2px rgba(255, 250, 235, 0.95),
+      -1px -1px 2px rgba(255, 250, 235, 0.95),
+      0 2px 3px rgba(255, 250, 235, 0.9),
+      0 -2px 3px rgba(255, 250, 235, 0.9),
+      0 0 18px rgba(255, 245, 214, 0.75);
   }
 }
 

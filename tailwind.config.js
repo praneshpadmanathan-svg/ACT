@@ -150,6 +150,39 @@ export default {
           '45%': { transform: 'translateX(6px)' },
           '70%': { transform: 'translateX(-3px)' },
         },
+
+        /* The scene rattling under a story beat. Two weights: soft for a
+           tremor, hard for a Seal breaking. Both decay to nothing so the text
+           is never moving while you are trying to read it. */
+        shakeSoft: {
+          '0%,100%': { transform: 'translate(0,0)' },
+          '15%': { transform: 'translate(-3px,1px)' },
+          '30%': { transform: 'translate(2px,-2px)' },
+          '45%': { transform: 'translate(-2px,-1px)' },
+          '60%': { transform: 'translate(2px,1px)' },
+          '80%': { transform: 'translate(-1px,0)' },
+        },
+        shakeHard: {
+          '0%,100%': { transform: 'translate(0,0) rotate(0deg)' },
+          '8%': { transform: 'translate(-9px,3px) rotate(-.5deg)' },
+          '18%': { transform: 'translate(8px,-5px) rotate(.5deg)' },
+          '28%': { transform: 'translate(-7px,-3px) rotate(-.4deg)' },
+          '38%': { transform: 'translate(6px,4px) rotate(.35deg)' },
+          '50%': { transform: 'translate(-5px,2px) rotate(-.25deg)' },
+          '64%': { transform: 'translate(4px,-2px)' },
+          '78%': { transform: 'translate(-2px,1px)' },
+          '90%': { transform: 'translate(1px,0)' },
+        },
+        /* A flash of light through the scene as something gives way. */
+        sealFlash: {
+          '0%': { opacity: '0' },
+          '12%': { opacity: '.85' },
+          '100%': { opacity: '0' },
+        },
+        questPulse: {
+          '0%,100%': { boxShadow: '0 0 0 0 rgba(212,160,23,.5)' },
+          '60%': { boxShadow: '0 0 0 9px rgba(212,160,23,0)' },
+        },
       },
       animation: {
         float: 'float 3.6s ease-in-out infinite',
@@ -176,6 +209,10 @@ export default {
         bossDown: 'bossDown .9s cubic-bezier(.22,1,.36,1) forwards',
         bossEnter: 'bossEnter .7s cubic-bezier(.22,1.2,.36,1) backwards',
         heroHurt: 'heroHurt .5s cubic-bezier(.36,.07,.19,.97)',
+        shakeSoft: 'shakeSoft .5s ease-out',
+        shakeHard: 'shakeHard 1.05s cubic-bezier(.36,.07,.19,.97)',
+        sealFlash: 'sealFlash .8s ease-out forwards',
+        questPulse: 'questPulse 2.4s ease-out infinite',
       },
     },
   },
