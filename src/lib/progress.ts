@@ -94,6 +94,7 @@ export function emptyProgress(): Progress {
     hero: 'cadet',
     storySeen: [],
     oath: null,
+    startRegion: null,
     review: {},
   };
 }

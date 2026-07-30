@@ -9,23 +9,31 @@ import { cx } from '@/lib/utils';
 import type { SectionId } from '@/types';
 import { BackLink, Page } from '@/components/Shell';
 import { Button, EmptyState, ProgressBar, SectionHeading } from '@/components/ui';
-import { AdventureMap } from '@/game/AdventureMap';
+import { AdventureMap, useMapProgress } from '@/game/AdventureMap';
 import { Wizzy } from '@/game/Wizzy';
+import { RoadChooser } from '@/game/RoadChooser';
 import { REGIONS } from '@/game/mapData';
 import { bossFor } from '@/game/bosses';
 import { BossArt } from '@/game/BossArt';
 import { ClearedSigil, LockSigil } from '@/game/Sigils';
+import { m, riseItem, staggerList } from '@/lib/motion';
 
 /* The map takes the whole viewport — no nav bar, no page heading, no chrome
    except the floating controls. It is the one screen that should feel like a
    game rather than an app. */
 export function MapScreen() {
   const navigate = useNavigate();
+  const { progress } = useStore();
+  const { cleared } = useMapProgress();
+
+  /* Asked once, before any ground has been taken. The story overlay sits above
+     this at z-[120], so the prologue plays first and then reveals the choice. */
+  const chooseRoad = cleared === 0 && !progress.startRegion;
 
   return (
     <>
       <AdventureMap onExit={() => navigate({ name: 'home' })} />
-      <Wizzy />
+      {chooseRoad ? <RoadChooser /> : <Wizzy />}
     </>
   );
 }
@@ -74,7 +82,9 @@ export function PathScreen({ section }: { section: string }) {
       {/* the guardian at the end of the road */}
       <BossCard section={sectionId} cleared={done} total={path.nodes.length} />
 
-      <ol className="space-y-2.5">
+      {/* Staggered so the road assembles itself down the page rather than
+          appearing all at once — the one place a list reads as a journey. */}
+      <m.ol className="space-y-2.5" variants={staggerList} initial="initial" animate="animate">
         {path.nodes.map((zone, index) => {
           const best = progress.zonesCleared[zone.id] ?? null;
           const cleared = best !== null;
@@ -85,7 +95,7 @@ export function PathScreen({ section }: { section: string }) {
           }
 
           return (
-            <li key={zone.id}>
+            <m.li key={zone.id} variants={riseItem}>
               <button
                 type="button"
                 disabled={locked}
@@ -134,10 +144,10 @@ export function PathScreen({ section }: { section: string }) {
                   </span>
                 )}
               </button>
-            </li>
+            </m.li>
           );
         })}
-      </ol>
+      </m.ol>
     </Page>
   );
 }

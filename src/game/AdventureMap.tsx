@@ -19,6 +19,7 @@ import { clamp, cx } from '@/lib/utils';
 import type { SectionId, Zone } from '@/types';
 import { REGIONS, REGION_ORDER, SUMMIT_AT } from './mapData';
 import { activeQuest } from './story';
+import { m, SPRING } from '@/lib/motion';
 import { MapFx } from './MapFx';
 import { ClearedSigil, CrownSigil, LockSigil, MasterSigil } from './Sigils';
 
@@ -49,7 +50,9 @@ export interface MapProgress {
 /** Shared by the map and the dashboard so both agree on "what's next". */
 export function useMapProgress(): MapProgress {
   const { progress } = useStore();
-  const preferred = progress.profile?.fear;
+  /* The road the player chose on the map wins; the onboarding answer is only a
+     fallback for anyone who set out before there was a choice to make. */
+  const preferred = progress.startRegion ?? progress.profile?.fear;
 
   return useMemo(() => {
     const pins: PlacedPin[] = [];
@@ -102,6 +105,7 @@ export function useMapProgress(): MapProgress {
     );
 
     return { pins, current, cleared, total, allCleared: cleared === total && total > 0 };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [progress.zonesCleared, preferred]);
 }
 
@@ -430,17 +434,60 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
 
       <div className="pointer-events-none absolute inset-0 flex flex-col justify-between p-3 sm:p-5">
         <div className="flex items-start justify-between gap-3">
-          <button
-            type="button"
-            onClick={() => {
-              sfx.select();
-              onExit?.();
-            }}
-            className="map-btn pointer-events-auto"
-            aria-label="Leave the map and return to camp"
-          >
-            <span aria-hidden="true">‹</span> Camp
-          </button>
+          {/* Top-left column: Camp, then the current objective beneath it. The
+              quest card used to be centred in the middle of the map, which put
+              it straight over the artwork. */}
+          <div className="flex min-w-0 flex-col items-start gap-2.5">
+            <button
+              type="button"
+              onClick={() => {
+                sfx.select();
+                onExit?.();
+              }}
+              className="map-btn pointer-events-auto"
+              aria-label="Leave the map and return to camp"
+            >
+              <span aria-hidden="true">‹</span> Camp
+            </button>
+
+            {/* Keyed on the quest id, so finishing one objective brings the
+                next card in rather than swapping the text underneath you.
+                Deliberately not wrapped in AnimatePresence: an exit that never
+                completes (hidden tab, no rAF) would leave a stale objective on
+                screen. Remounting can't get stuck. */}
+            {quest && (
+                <m.div
+                  key={quest.quest.id}
+                  className="quest-card pointer-events-none w-[min(19rem,calc(100vw-1.5rem))]"
+                  initial={{ opacity: 0, x: -18, scale: 0.97 }}
+                  animate={{ opacity: 1, x: 0, scale: 1, transition: SPRING }}
+                >
+                  <div className="flex items-baseline justify-between gap-3">
+                    <span className="eyebrow text-[11.5px]">
+                      ✦ Quest {quest.step} of {quest.total}
+                    </span>
+                    <span className="num text-[12.5px] text-parchment-dim">
+                      {Math.min(quest.have, quest.need)}/{quest.need}
+                    </span>
+                  </div>
+                  <p className="mt-1 font-display text-[14px] font-semibold leading-snug text-gold-light">
+                    {quest.quest.name}
+                  </p>
+                  <p className="mt-0.5 font-read text-[13px] leading-snug text-parchment-dim">
+                    {quest.quest.objective}
+                  </p>
+                  {/* The bar settles with weight instead of sliding linearly,
+                      so progress reads as something landing. */}
+                  <span className="quest-bar mt-2">
+                    <m.i
+                      initial={{ width: 0 }}
+                      animate={{ width: `${Math.min(100, (quest.have / quest.need) * 100)}%` }}
+                      transition={SPRING}
+                    />
+                  </span>
+                </m.div>
+              )}
+          </div>
 
           <div className="map-hud pointer-events-auto">
             <span className="num text-[15px] text-gold">{cleared}</span>
@@ -456,32 +503,6 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
             )}
           </div>
         </div>
-
-        {/* The current objective, so the story has somewhere to live on the map
-            rather than only appearing in overlays. */}
-        {quest && (
-          <div className="pointer-events-none mx-auto mt-3 w-full max-w-sm">
-            <div className="quest-card">
-              <div className="flex items-baseline justify-between gap-3">
-                <span className="eyebrow text-[11.5px]">
-                  ✦ Quest {quest.step} of {quest.total}
-                </span>
-                <span className="num text-[12.5px] text-parchment-dim">
-                  {Math.min(quest.have, quest.need)}/{quest.need}
-                </span>
-              </div>
-              <p className="mt-1 font-display text-[14px] font-semibold leading-snug text-gold-light">
-                {quest.quest.name}
-              </p>
-              <p className="mt-0.5 font-read text-[13px] leading-snug text-parchment-dim">
-                {quest.quest.objective}
-              </p>
-              <span className="quest-bar mt-2">
-                <i style={{ width: `${Math.min(100, (quest.have / quest.need) * 100)}%` }} />
-              </span>
-            </div>
-          </div>
-        )}
 
         <div className="flex items-end justify-between gap-3">
           <button

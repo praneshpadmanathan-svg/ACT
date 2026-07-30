@@ -230,11 +230,11 @@ export function Page({
   className?: string;
   wide?: boolean;
 }) {
+  /* The arrival animation moved to the route transition in App.tsx, which can
+     also animate the outgoing screen. Keeping `animate-pageIn` here as well
+     meant every page ran two entrances at once. */
   return (
-    <main
-      className={cx('shell animate-pageIn py-7 sm:py-9', className)}
-      style={wide ? { maxWidth: 1400 } : undefined}
-    >
+    <main className={cx('shell py-7 sm:py-9', className)} style={wide ? { maxWidth: 1400 } : undefined}>
       {children}
     </main>
   );

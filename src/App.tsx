@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { useNavigate, useRoute } from '@/lib/router';
 import { useStore } from '@/lib/store';
+import { m, MotionProvider, pageVariants } from '@/lib/motion';
 import { TopBar } from '@/components/Shell';
 import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
 import { StoryOverlay } from '@/game/StoryOverlay';
@@ -57,9 +58,32 @@ export default function App() {
   const bare = BARE_ROUTES.has(route.name);
 
   return (
-    <>
+    <MotionProvider>
       {!bare && <TopBar />}
-      {renderRoute(route)}
+
+      {/* Screens animate in, and nothing waits on an animation to do it.
+
+          This started as AnimatePresence with mode="wait" so the outgoing
+          screen could animate away first. That gates mounting the next screen
+          on the previous one's exit *completing* — and Motion is driven by
+          requestAnimationFrame, which browsers stop entirely in a hidden tab.
+          Navigate, switch tabs, come back, and the app is still showing the
+          old screen with no way forward. Verified: in a hidden tab rAF fires
+          zero frames per second and the exit never finishes.
+
+          So the key remounts the wrapper and it animates in, unconditionally.
+          The cost is losing a 160ms fade on the way out; the gain is that a
+          decorative animation can never hold the app hostage. The key is the
+          route identity rather than just its name, so paging between two note
+          pages re-animates too. The map is excluded: it owns the viewport and
+          brings its own artwork in. */}
+      {route.name === 'map' ? (
+        renderRoute(route)
+      ) : (
+        <m.div key={routeKey(route)} variants={pageVariants} initial="initial" animate="animate">
+          {renderRoute(route)}
+        </m.div>
+      )}
 
       {/* Story runs above every screen so a chapter can fire wherever you
           happen to be when you earn it. */}
@@ -69,8 +93,15 @@ export default function App() {
       <XPPopups />
       <Toasts />
       <LevelUpOverlay />
-    </>
+    </MotionProvider>
   );
+}
+
+/** Identity of the current screen, so a change of parameter transitions too. */
+function routeKey(route: ReturnType<typeof useRoute>): string {
+  const r = route as Record<string, unknown>;
+  const detail = r.section ?? r.zone ?? r.page ?? r.topic ?? r.id ?? r.mode ?? '';
+  return `${route.name}:${String(detail)}`;
 }
 
 function renderRoute(route: ReturnType<typeof useRoute>) {

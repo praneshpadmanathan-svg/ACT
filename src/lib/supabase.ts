@@ -163,6 +163,8 @@ export function mergeProgress(local: Progress, remote: Progress): Progress {
     achievements: [...new Set([...remote.achievements, ...local.achievements])],
     storySeen: [...new Set([...(remote.storySeen ?? []), ...(local.storySeen ?? [])])],
     oath: local.oath ?? remote.oath ?? null,
+    /* First choice made wins — a second device must not relocate the traveller. */
+    startRegion: local.startRegion ?? remote.startRegion ?? null,
     zonesCleared,
     review,
     dayStreak: Math.max(local.dayStreak, remote.dayStreak),

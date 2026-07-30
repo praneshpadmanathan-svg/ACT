@@ -74,10 +74,14 @@ function useTypewriter(text: string, enabled: boolean) {
   return { shown, done, finish };
 }
 
-/* Screens where a story chapter must never appear: the front door, the auth
-   form and the onboarding questions. The prologue should greet you once you
-   are actually inside the realm, not on top of a sign-in form. */
-const NO_STORY = new Set(['landing', 'auth', 'onboarding']);
+/* The story plays on the adventure map and nowhere else.
+
+   It used to be an exclusion list — everywhere except the landing, auth and
+   onboarding — which meant chapters opened over the camp dashboard. An
+   allowlist puts every beat over the world it is describing, and means a
+   landmark you clear banks its beat until you step back out onto the map,
+   which is where you were heading anyway. */
+const STORY_ROUTES = new Set(['map']);
 
 export function StoryOverlay() {
   const { progress, updateProgress } = useStore();
@@ -112,7 +116,7 @@ export function StoryOverlay() {
 
   useEffect(() => {
     if (chapter || pendingRef.current !== null) return;
-    if (NO_STORY.has(route.name)) return;
+    if (!STORY_ROUTES.has(route.name)) return;
     const found = nextChapter(progress, { cleared, total });
     if (!found) return;
 

@@ -24,6 +24,7 @@ import { burstConfetti } from '@/components/Feedback';
 import { BossArt, type BossState } from '@/game/BossArt';
 import { bossFor } from '@/game/bosses';
 import { REGIONS } from '@/game/mapData';
+import { m, SPRING_SNAP } from '@/lib/motion';
 
 type Phase = 'intro' | 'fight' | 'won' | 'lost';
 
@@ -393,18 +394,27 @@ function HealthPips({
       <div className="mb-1.5 truncate font-display text-[12.5px] font-semibold text-parchment">
         {label}
       </div>
+      {/* A pip going out gets a spring kick rather than a linear fade, so a hit
+          landing is legible in the health bar itself and not only in the
+          character's recoil. */}
       <div className="flex justify-center gap-1">
-        {Array.from({ length: max }, (_, i) => (
-          <span
-            key={i}
-            className={cx('h-2.5 flex-1 rounded-full transition-all duration-300', i >= value && 'opacity-25')}
-            style={{
-              background: i < value ? color : '#3a2f21',
-              boxShadow: i < value ? `0 0 8px ${color}88` : 'none',
-              maxWidth: 26,
-            }}
-          />
-        ))}
+        {Array.from({ length: max }, (_, i) => {
+          const lit = i < value;
+          return (
+            <m.span
+              key={i}
+              className="h-2.5 flex-1 rounded-full"
+              style={{ maxWidth: 26 }}
+              animate={{
+                background: lit ? color : '#3a2f21',
+                boxShadow: lit ? `0 0 8px ${color}88` : '0 0 0 rgba(0,0,0,0)',
+                opacity: lit ? 1 : 0.25,
+                scaleY: lit ? 1 : 0.55,
+              }}
+              transition={SPRING_SNAP}
+            />
+          );
+        })}
       </div>
     </div>
   );

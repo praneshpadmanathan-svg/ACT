@@ -232,6 +232,10 @@ export interface Progress {
   storySeen: string[];
   /** The answer given in the prologue; referenced by later beats. */
   oath: string | null;
+  /** The region the traveller set out from, chosen on the map. Every region's
+   *  first landmark is open from the start regardless — this only decides where
+   *  the traveller stands and which road the map opens on. */
+  startRegion: SectionId | null;
   /** Question ids flagged for review, and their spaced-repetition due dates. */
   review: Record<string, { due: number; box: number }>;
 }
