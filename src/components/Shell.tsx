@@ -25,7 +25,7 @@ interface NavItem {
 
 const NAV: NavItem[] = [
   { label: 'Camp', glyph: 'tent', route: { name: 'home' }, match: ['home'] },
-  { label: 'Map', glyph: 'map', route: { name: 'map' }, match: ['map', 'path', 'zone'] },
+  { label: 'Map', glyph: 'map', route: { name: 'map' }, match: ['map', 'path', 'zone', 'boss'] },
   { label: 'Library', glyph: 'book', route: { name: 'notes' }, match: ['notes', 'note'] },
   { label: 'Training', glyph: 'sword', route: { name: 'drills' }, match: ['drills', 'drill'] },
   { label: 'Review', glyph: 'hourglass', route: { name: 'review' }, match: ['review'] },

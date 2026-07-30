@@ -34,14 +34,15 @@ export const SUMMIT_AT: [number, number] = [47, 90.5];
    - Pins stay inside their region's terrain band. The earlier set put village
      pins in the river, forest pins on the crystal cave, and science pins out
      at sea.
-   - Plaques sit in the clear gap *above* each band, horizontally centred.
-     Edge-anchored labels were clipped on the left and right at every width. */
+   - Plaques sit *inside* the terrain they name. Placing them in the gap above
+     each band made every one caption the wrong region — "The Number Desert"
+     sat over the forest, "The Science Cliffs" over the sand. */
 
 export const REGIONS: Record<SectionId, RegionMeta> = {
   english: {
     id: 'english',
     title: 'The Grammar Village',
-    labelAt: [46, 5],
+    labelAt: [46, 8],
     color: '#d9a441',
     // Cottages, fields, the standing stone and the bridge across the farmland.
     pins: [
@@ -52,7 +53,7 @@ export const REGIONS: Record<SectionId, RegionMeta> = {
   reading: {
     id: 'reading',
     title: 'The Enchanted Woods',
-    labelAt: [46, 22.5],
+    labelAt: [46, 25],
     color: '#5fa86b',
     // The great tree and the glowing mushroom groves around it. Stops short of
     // the waterfall on the left and the crystal cave on the right.
@@ -64,7 +65,7 @@ export const REGIONS: Record<SectionId, RegionMeta> = {
   math: {
     id: 'math',
     title: 'The Number Desert',
-    labelAt: [48, 42.5],
+    labelAt: [44, 58],
     color: '#d2703a',
     // Mesas, the ruined colonnade, the great arch, and the volcano.
     pins: [
@@ -75,7 +76,7 @@ export const REGIONS: Record<SectionId, RegionMeta> = {
   science: {
     id: 'science',
     title: 'The Science Cliffs',
-    labelAt: [42, 59.5],
+    labelAt: [36, 77.5],
     color: '#4f9dc9',
     // The coast road, the cliffs above the harbour, and the stone observatory
     // city — all above the citadel's island.

@@ -113,6 +113,38 @@ export default {
           from: { opacity: '0', transform: 'translateX(-10px)' },
           to: { opacity: '1', transform: 'translateX(0)' },
         },
+
+        /* the duel */
+        bossIdle: {
+          '0%,100%': { transform: 'translateY(0) scale(1)' },
+          '50%': { transform: 'translateY(-5px) scale(1.012)' },
+        },
+        bossHurt: {
+          '0%': { transform: 'translateX(0)', filter: 'brightness(1)' },
+          '15%': { transform: 'translateX(11px) rotate(2deg)', filter: 'brightness(2.4) saturate(.4)' },
+          '35%': { transform: 'translateX(-7px) rotate(-1.5deg)' },
+          '55%': { transform: 'translateX(5px)' },
+          '100%': { transform: 'translateX(0)', filter: 'brightness(1)' },
+        },
+        bossLunge: {
+          '0%,100%': { transform: 'translateX(0) scale(1)' },
+          '35%': { transform: 'translateX(-26px) scale(1.07)' },
+          '60%': { transform: 'translateX(6px) scale(1.02)' },
+        },
+        bossDown: {
+          from: { transform: 'translateY(0) rotate(0deg)', opacity: '1' },
+          to: { transform: 'translateY(34px) rotate(9deg)', opacity: '.35' },
+        },
+        bossEnter: {
+          from: { opacity: '0', transform: 'translateY(-26px) scale(.88)' },
+          to: { opacity: '1', transform: 'translateY(0) scale(1)' },
+        },
+        heroHurt: {
+          '0%,100%': { transform: 'translateX(0)', filter: 'brightness(1)' },
+          '20%': { transform: 'translateX(-9px)', filter: 'brightness(1.9) saturate(.5)' },
+          '45%': { transform: 'translateX(6px)' },
+          '70%': { transform: 'translateX(-3px)' },
+        },
       },
       animation: {
         float: 'float 3.6s ease-in-out infinite',
@@ -133,6 +165,12 @@ export default {
         storyTitle: 'storyTitle .6s cubic-bezier(.22,1,.36,1) backwards',
         storyWizzy: 'storyWizzy .5s cubic-bezier(.22,1.3,.36,1) .1s backwards',
         storyChoice: 'storyChoice .3s cubic-bezier(.22,1,.36,1) backwards',
+        bossIdle: 'bossIdle 3.4s ease-in-out infinite',
+        bossHurt: 'bossHurt .6s cubic-bezier(.36,.07,.19,.97)',
+        bossLunge: 'bossLunge .6s cubic-bezier(.36,.07,.19,.97)',
+        bossDown: 'bossDown .9s cubic-bezier(.22,1,.36,1) forwards',
+        bossEnter: 'bossEnter .7s cubic-bezier(.22,1.2,.36,1) backwards',
+        heroHurt: 'heroHurt .5s cubic-bezier(.36,.07,.19,.97)',
       },
     },
   },

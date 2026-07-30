@@ -284,6 +284,119 @@ function Boats() {
   );
 }
 
+/* --------------------------------------------------------- village smoke */
+
+/** Chimney smoke curling off the cottages. */
+const CHIMNEYS: [number, number][] = [
+  [12, 15], [23, 11], [31, 13.5], [41, 10], [57, 11], [65, 14],
+];
+
+function Smoke() {
+  return (
+    <>
+      {CHIMNEYS.map(([left, top], i) =>
+        Array.from({ length: 3 }, (_, puff) => (
+          <span
+            key={`${i}-${puff}`}
+            className="mapfx-smoke"
+            style={{
+              left: `${left}%`,
+              top: `${top}%`,
+              animationDelay: `${(i * 1.3 + puff * 1.9) % 6}s`,
+              animationDuration: `${5.5 + (i % 3)}s`,
+            }}
+          />
+        )),
+      )}
+    </>
+  );
+}
+
+/* ------------------------------------------------------------------ waves */
+
+/** Foam breaking along the shoreline and the citadel island. */
+const SHORES: [number, number, number][] = [
+  [8, 55, 1], [10, 72, 1.2], [20, 84, 1], [33, 80, 0.9],
+  [40, 88, 1.3], [55, 86, 1], [64, 82, 1.1], [78, 84, 1],
+  [47, 95, 1.4], [88, 76, 0.9],
+];
+
+function Waves() {
+  return (
+    <>
+      {SHORES.map(([left, top, scale], i) => (
+        <span
+          key={i}
+          className="mapfx-wave"
+          style={{
+            left: `${left}%`,
+            top: `${top}%`,
+            width: `${5 * scale}%`,
+            animationDelay: `${(i * 0.83) % 5}s`,
+            animationDuration: `${4 + (i % 3) * 0.8}s`,
+          }}
+        />
+      ))}
+    </>
+  );
+}
+
+/* ------------------------------------------------------------------- wind */
+
+/** Leaves lifting off the canopy and drifting across the forest. */
+function Leaves() {
+  const rng = seeded(1201);
+  return (
+    <>
+      {Array.from({ length: 10 }, (_, i) => (
+        <span
+          key={i}
+          className="mapfx-leaf"
+          style={{
+            left: `${14 + rng() * 52}%`,
+            top: `${25 + rng() * 12}%`,
+            animationDelay: `${rng() * 14}s`,
+            animationDuration: `${9 + rng() * 7}s`,
+            ['--lift' as string]: `${-6 - rng() * 6}%`,
+            ['--sway' as string]: `${8 + rng() * 14}%`,
+          }}
+        />
+      ))}
+    </>
+  );
+}
+
+/* ------------------------------------------------------------------- dust */
+
+/** Dust devils drifting over the sand. */
+function Dust() {
+  const rng = seeded(877);
+  return (
+    <>
+      {Array.from({ length: 6 }, (_, i) => (
+        <span
+          key={i}
+          className="mapfx-dust"
+          style={{
+            left: `${20 + rng() * 60}%`,
+            top: `${46 + rng() * 12}%`,
+            width: `${3 + rng() * 3}%`,
+            animationDelay: `${rng() * 16}s`,
+            animationDuration: `${11 + rng() * 8}s`,
+          }}
+        />
+      ))}
+    </>
+  );
+}
+
+/* --------------------------------------------------------- shooting star */
+
+/** Rare, so it stays a small surprise rather than decoration. */
+function ShootingStar() {
+  return <span className="mapfx-shoot" style={{ left: '68%', top: '6%' }} />;
+}
+
 /* ------------------------------------------------------------------ birds */
 
 function Birds() {
@@ -316,14 +429,19 @@ export const MapFx = memo(function MapFx() {
   return (
     <div className="mapfx" aria-hidden="true">
       <Water />
+      <Waves />
       <Waterfall />
       <Mushrooms />
       <Fireflies />
+      <Leaves />
       <Crystals />
       <Volcano />
+      <Dust />
       <Beacons />
+      <Smoke />
       <Boats />
       <Birds />
+      <ShootingStar />
     </div>
   );
 });

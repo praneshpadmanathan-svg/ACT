@@ -12,6 +12,8 @@ import { Button, EmptyState, ProgressBar, SectionHeading } from '@/components/ui
 import { AdventureMap } from '@/game/AdventureMap';
 import { Wizzy } from '@/game/Wizzy';
 import { REGIONS } from '@/game/mapData';
+import { bossFor } from '@/game/bosses';
+import { BossArt } from '@/game/BossArt';
 
 /* The map takes the whole viewport — no nav bar, no page heading, no chrome
    except the floating controls. It is the one screen that should feel like a
@@ -68,6 +70,9 @@ export function PathScreen({ section }: { section: string }) {
         <ProgressBar value={path.nodes.length ? done / path.nodes.length : 0} color={region.color} />
       </div>
 
+      {/* the guardian at the end of the road */}
+      <BossCard section={sectionId} cleared={done} total={path.nodes.length} />
+
       <ol className="space-y-2.5">
         {path.nodes.map((zone, index) => {
           const best = progress.zonesCleared[zone.id] ?? null;
@@ -123,5 +128,54 @@ export function PathScreen({ section }: { section: string }) {
         })}
       </ol>
     </Page>
+  );
+}
+
+/* The guardian sits at the head of the region list — visible from the start
+   so you know what the road leads to, but sealed until it is earned. */
+function BossCard({ section, cleared, total }: { section: SectionId; cleared: number; total: number }) {
+  const navigate = useNavigate();
+  const { progress } = useStore();
+  const boss = bossFor(section);
+  if (!boss) return null;
+
+  const unlocked = cleared >= total;
+  const beaten = progress.achievements.includes(`boss-${boss.id}`);
+
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        sfx.select();
+        navigate({ name: 'boss', section });
+      }}
+      className={cx(
+        'panel-lit mb-5 flex w-full items-center gap-4 p-5 text-left transition-all sm:gap-6',
+        unlocked ? 'hover:-translate-y-0.5 hover:border-gold-deep' : 'opacity-70',
+      )}
+      style={{ borderTopColor: boss.color, borderTopWidth: 3 }}
+    >
+      <div className={cx('w-[64px] flex-none sm:w-[86px]', !unlocked && 'grayscale opacity-55')}>
+        <BossArt section={section} state={beaten ? 'defeated' : 'idle'} />
+      </div>
+
+      <div className="min-w-0 flex-1">
+        <div className="eyebrow">{boss.title}</div>
+        <h3 className="heading mt-1 text-[clamp(1.05rem,2.2vw,1.35rem)]" style={{ color: boss.color }}>
+          {boss.name}
+        </h3>
+        <p className="mt-1.5 font-read text-[14px] leading-relaxed text-parchment-dim">
+          {beaten
+            ? 'Defeated. Return whenever you want the practice.'
+            : unlocked
+              ? 'Every landmark is cleared. The guardian is awake and waiting.'
+              : `Sealed until all ${total} landmarks are cleared — ${cleared} so far.`}
+        </p>
+      </div>
+
+      <span className="flex-none font-display text-[13px] font-semibold text-gold">
+        {unlocked ? 'Fight ▸' : 'Sealed'}
+      </span>
+    </button>
   );
 }

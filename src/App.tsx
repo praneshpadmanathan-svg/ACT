@@ -12,6 +12,7 @@ import { Onboarding } from '@/screens/Onboarding';
 import { Home } from '@/screens/Home';
 import { MapScreen, PathScreen } from '@/screens/MapScreens';
 import { ZoneScreen } from '@/screens/Zone';
+import { BossScreen } from '@/screens/Boss';
 import { NoteReader, NotesScreen } from '@/screens/Notes';
 import { DrillRunner, DrillsScreen, ReviewScreen } from '@/screens/Drills';
 import { ReportScreen, TestRunner, TestsScreen } from '@/screens/Tests';
@@ -88,6 +89,8 @@ function renderRoute(route: ReturnType<typeof useRoute>) {
       return <PathScreen section={route.section} />;
     case 'zone':
       return <ZoneScreen zoneId={route.zone} />;
+    case 'boss':
+      return <BossScreen section={route.section} />;
     case 'notes':
       return <NotesScreen section={route.section} />;
     case 'note':

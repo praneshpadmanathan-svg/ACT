@@ -42,12 +42,13 @@ Every question explains **all four choices**, not just the credited one.
 
 ### Features
 
-- **A painted world map** — a full-viewport world you drag to pan and scroll or pinch to zoom, opening on wherever you got to. All 37 zones have a landmark pin, and the scenery is alive: falling water, drifting cloud shadows, glowing mushrooms, crystal glints, volcano embers, a sweeping lighthouse beam and fireflies in the trees.
+- **A painted world map** — a full-viewport world you drag to pan and scroll or pinch to zoom, opening on wherever you got to. All 37 zones have a landmark pin, region names are engraved on the terrain they name, and the scenery is alive: falling water and spray, shore foam, chimney smoke, leaves lifting off the canopy, glowing mushrooms, fireflies, crystal glints, volcano embers and heat haze, desert dust, a sweeping lighthouse beam, rocking boats, birds, and the occasional shooting star.
 - **Landmarks** — a short lesson on parchment, then a quiz. 70% clears it and opens the road ahead.
 - **Adaptive drills** — mixed drills weight question selection toward topics you get wrong, so practice drifts to where it pays.
 - **Spaced review** — anything you miss enters a Leitner queue (1 → 3 → 7 → 16 → 35 days) and comes back until you own it.
 - **Timed tests** — real section pacing, no feedback until you finish, then a scored report with a topic breakdown. The timer runs off a wall-clock deadline, so backgrounding the tab doesn't buy extra minutes.
-- **A story that tracks your progress** — six chapters that fire when you earn them (setting out, the first landmark, a quarter, halfway, the Summit opening, after your first trial). Lines type themselves out, the prologue asks a question whose answer is remembered, and Wizzy calls back to it later. Skippable at any point.
+- **Boss duels** — each region has a guardian that wakes once every landmark in it is cleared. You stand on the left, it stands on the right, and the questions are the weapons: a correct answer lands a hit, a wrong one lets it hit back. Ten hits to fell it, three to fall. Losing costs nothing but the attempt.
+- **A story that tracks your progress** — six chapters that fire when you earn them (setting out, the first landmark, a quarter, halfway, the Summit opening, after your first trial). It appears centred once you are inside the app, never over the sign-in. Lines type themselves out, the prologue asks a question whose answer is remembered, and Wizzy calls back to it later. Skippable at any point.
 - **Progression** — XP, seven ranks, day streaks, 15 achievements, and an estimated composite derived from your actual accuracy.
 - **Accounts** — Supabase when configured, otherwise salted-and-hashed accounts kept on the device. Progress is stored per profile, so two people can share a browser without overwriting each other. Guest mode needs no account at all.
 - **Sound** — every cue is synthesised at runtime in WebAudio (wooden latches, felt thuds, mallet-and-harp for a correct answer, a layered fanfare for a rank-up), routed through a generated room reverb. Zero bytes of audio ship.
@@ -130,8 +131,11 @@ src/
     mapData.ts          pin coordinates for all 37 zones
     MapFx.tsx           living scenery: water, embers, glow, fireflies
     Sigils.tsx          drawn lock / cleared / mastered / crown marks
+    bosses.ts           the four region guardians
+    BossArt.tsx         each boss drawn as SVG, with hit/lunge/defeat states
 
   screens/              one file per area of the app
+    Boss.tsx            the duel: you left, boss right, questions between
 ```
 
 ### Content is data, not code

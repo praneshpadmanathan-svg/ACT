@@ -12,6 +12,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { PATH_BY_ID } from '@/content';
 import { useStore } from '@/lib/store';
+import { useRoute } from '@/lib/router';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import { REGION_ORDER } from './mapData';
@@ -65,8 +66,14 @@ function useTypewriter(text: string, enabled: boolean) {
   return { shown, done, finish };
 }
 
+/* Screens where a story chapter must never appear: the front door, the auth
+   form and the onboarding questions. The prologue should greet you once you
+   are actually inside the realm, not on top of a sign-in form. */
+const NO_STORY = new Set(['landing', 'auth', 'onboarding']);
+
 export function StoryOverlay() {
   const { progress, updateProgress } = useStore();
+  const route = useRoute();
 
   /* Total landmarks is derived from content, so the chapter thresholds stay
      correct if zones are ever added. */
@@ -97,6 +104,7 @@ export function StoryOverlay() {
 
   useEffect(() => {
     if (chapter || pendingRef.current !== null) return;
+    if (NO_STORY.has(route.name)) return;
     const found = nextChapter(progress, { cleared, total });
     if (!found) return;
 
@@ -118,7 +126,7 @@ export function StoryOverlay() {
         pendingRef.current = null;
       }
     };
-  }, [chapter, progress, cleared, total]);
+  }, [chapter, progress, cleared, total, route.name]);
 
   const beat = chapter?.beats[beatIndex];
   const line = reply ?? beat?.lines[lineIndex] ?? '';
@@ -217,7 +225,7 @@ export function StoryOverlay() {
   return (
     <div
       className={cx(
-        'fixed inset-0 z-[120] flex items-end justify-center sm:items-center',
+        'fixed inset-0 z-[120] flex items-center justify-center p-4',
         closing ? 'animate-storyOut' : 'animate-storyIn',
       )}
       role="dialog"
@@ -265,12 +273,12 @@ export function StoryOverlay() {
       )}
 
       {!showTitle && (
-        <div className="relative z-20 w-full max-w-3xl px-4 pb-4 sm:px-6 sm:pb-0">
-          <div className="flex items-end gap-2 sm:gap-4">
+        <div className="relative z-20 w-full max-w-2xl">
+          <div className="flex flex-col items-center gap-0 sm:flex-row sm:items-end sm:gap-4">
             <img
               src="/art/wizzy.webp"
               alt=""
-              className="animate-storyWizzy hidden w-[120px] flex-none select-none sm:block lg:w-[160px]"
+              className="animate-storyWizzy w-[96px] flex-none select-none sm:w-[132px] lg:w-[150px]"
               style={{ filter: 'drop-shadow(0 10px 16px rgba(0,0,0,.6))' }}
               draggable={false}
             />

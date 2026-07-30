@@ -14,6 +14,7 @@ export type Route =
   | { name: 'map' }
   | { name: 'path'; section: string }
   | { name: 'zone'; zone: string }
+  | { name: 'boss'; section: string }
   | { name: 'notes'; section?: string }
   | { name: 'note'; page: string }
   | { name: 'drills'; section?: string }
@@ -52,6 +53,8 @@ export function parseRoute(hash: string = currentHash()): Route {
       return parts[1] ? { name: 'path', section: parts[1] } : { name: 'map' };
     case 'zone':
       return parts[1] ? { name: 'zone', zone: parts[1] } : { name: 'map' };
+    case 'boss':
+      return parts[1] ? { name: 'boss', section: parts[1] } : { name: 'map' };
     case 'notes':
       return { name: 'notes', section: parts[1] };
     case 'note':
@@ -89,6 +92,8 @@ export function hrefFor(route: Route): string {
       return `#/path/${route.section}`;
     case 'zone':
       return `#/zone/${route.zone}`;
+    case 'boss':
+      return `#/boss/${route.section}`;
     case 'notes':
       return route.section ? `#/notes/${route.section}` : '#/notes';
     case 'note':
