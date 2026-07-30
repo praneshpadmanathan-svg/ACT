@@ -401,11 +401,16 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
             className="pointer-events-none absolute z-[15]"
             style={{ left: `${current.x}%`, top: `${current.y}%`, transform: 'translate(-50%, -100%)' }}
           >
+            {/* 26px, not the 54px this used to be. Composited against the
+                village at four candidate widths: at 54 the traveller stood as
+                tall as the cottages behind him. A pin marks the same spot, and
+                "Find my traveller" recentres on it, so he does not need to be
+                large to be found. */}
             <img
               src="/art/hero-char.webp"
               alt=""
-              className="animate-bobHero w-[54px] select-none"
-              style={{ filter: 'drop-shadow(0 5px 7px rgba(0,0,0,.55))' }}
+              className="animate-bobHero w-[26px] select-none"
+              style={{ filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.55))' }}
               draggable={false}
             />
           </div>

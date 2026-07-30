@@ -18,6 +18,7 @@
 
 import { memo } from 'react';
 import { seeded } from '@/lib/utils';
+import { CLOUDS } from '@/game/mapData';
 
 /* -------------------------------------------------------------- waterfall */
 
@@ -397,27 +398,184 @@ function ShootingStar() {
   return <span className="mapfx-shoot" style={{ left: '68%', top: '6%' }} />;
 }
 
-/* ------------------------------------------------------------------ birds */
+/* ------------------------------------------------------------------ birds
+
+   These used to be the character U+1DBA set in the display face, which read as
+   literal letters drifting across the sky. They are drawn now. */
 
 function Birds() {
   const rng = seeded(613);
   return (
     <>
-      {Array.from({ length: 5 }, (_, i) => (
+      {Array.from({ length: 7 }, (_, i) => {
+        const size = 9 + rng() * 7;
+        const flap = 0.5 + rng() * 0.45;
+        return (
+          <span
+            key={i}
+            className="mapfx-bird"
+            style={{
+              top: `${5 + rng() * 18}%`,
+              animationDelay: `${i * 7 + rng() * 5}s`,
+              animationDuration: `${34 + rng() * 22}s`,
+            }}
+          >
+            {/* a wing pair, flapping on its own clock */}
+            <svg
+              width={size}
+              height={size * 0.5}
+              viewBox="0 0 20 10"
+              className="mapfx-wing"
+              style={{ animationDuration: `${flap}s` }}
+              aria-hidden="true"
+            >
+              <path
+                d="M1 7 Q5.5 1 10 6 Q14.5 1 19 7"
+                fill="none"
+                stroke="rgba(52,40,26,.62)"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+              />
+            </svg>
+          </span>
+        );
+      })}
+    </>
+  );
+}
+
+/* ----------------------------------------------------------------- clouds
+
+   CLOUDS has been sitting in mapData since the map was built and was never
+   imported, so the sky above the world never moved. Each cloud is a few soft
+   blobs in one drifting group, with a shadow that crosses the terrain under it
+   at the same rate. */
+
+function Clouds() {
+  const rng = seeded(2207);
+  return (
+    <>
+      {CLOUDS.map(([top, width, opacity, duration], i) => {
+        const puffs = Array.from({ length: 4 }, () => ({
+          x: rng() * 62,
+          y: rng() * 26,
+          r: 26 + rng() * 30,
+        }));
+        return (
+          <span
+            key={i}
+            className="mapfx-cloud"
+            style={{
+              top: `${top}%`,
+              width: `${width}px`,
+              opacity,
+              animationDuration: `${duration}s`,
+              animationDelay: `${-rng() * duration}s`,
+            }}
+          >
+            <svg viewBox="0 0 120 60" aria-hidden="true">
+              {puffs.map((p, j) => (
+                <circle key={j} cx={p.x + 28} cy={p.y + 22} r={p.r} fill="#fffaf0" />
+              ))}
+            </svg>
+          </span>
+        );
+      })}
+      {/* the shadows they cast, drifting in step but slightly behind */}
+      {CLOUDS.filter((_, i) => i % 2 === 0).map(([top, width, opacity, duration], i) => (
         <span
-          key={i}
-          className="mapfx-bird"
+          key={`shadow${i}`}
+          className="mapfx-cloud-shadow"
           style={{
-            top: `${6 + rng() * 16}%`,
-            animationDelay: `${i * 9 + rng() * 6}s`,
-            animationDuration: `${34 + rng() * 20}s`,
-            fontSize: `${0.7 + rng() * 0.5}rem`,
+            top: `${top + 3.5}%`,
+            width: `${width * 1.15}px`,
+            opacity: opacity * 0.5,
+            animationDuration: `${duration}s`,
+            animationDelay: `${-rng() * duration}s`,
           }}
-        >
-          ᶺ
-        </span>
+        />
       ))}
     </>
+  );
+}
+
+/* ------------------------------------------------------------------- wind
+
+   Gusts sweeping the open ground: the barley and tilled fields up in the
+   village, and the grass shelf above the science cliffs. */
+
+const GUSTS: { left: number; top: number; w: number; delay: number; dur: number }[] = [
+  { left: 22, top: 11, w: 9, delay: 0, dur: 6.5 },
+  { left: 63, top: 16, w: 11, delay: 2.2, dur: 7.4 },
+  { left: 42, top: 12.5, w: 8, delay: 4.1, dur: 6 },
+  { left: 50, top: 72, w: 7, delay: 1.4, dur: 8 },
+];
+
+function Wind() {
+  return (
+    <>
+      {GUSTS.map((g, i) => (
+        <span
+          key={i}
+          className="mapfx-gust"
+          style={{
+            left: `${g.left}%`,
+            top: `${g.top}%`,
+            width: `${g.w}%`,
+            animationDelay: `${g.delay}s`,
+            animationDuration: `${g.dur}s`,
+          }}
+        />
+      ))}
+    </>
+  );
+}
+
+/* ------------------------------------------------------------ lit windows
+
+   The cottages and the citadel come up warm, each on its own slow cycle, so
+   the settled parts of the world look inhabited. */
+
+const WINDOWS: [number, number][] = [
+  [11.4, 16.6], [12.2, 17.4], [16.6, 12.2], [42.4, 11.8], [56.4, 12.4],
+  [37.2, 72.8], [59.4, 65], [68.4, 70.4], [76.2, 63.4], [70.4, 25.4],
+];
+
+function Windows() {
+  const rng = seeded(88);
+  return (
+    <>
+      {WINDOWS.map(([left, top], i) => (
+        <span
+          key={i}
+          className="mapfx-window"
+          style={{
+            left: `${left}%`,
+            top: `${top}%`,
+            width: `${0.6 + rng() * 0.5}%`,
+            animationDelay: `${rng() * 5}s`,
+            animationDuration: `${3.4 + rng() * 3}s`,
+          }}
+        />
+      ))}
+    </>
+  );
+}
+
+/* ------------------------------------------------------------- sailing ship
+
+   The moored boats only rock in place. This one actually crosses the bay below
+   the science cliffs, so the sea has something travelling on it. */
+
+function Sail() {
+  return (
+    <span className="mapfx-sail" style={{ top: '78%' }}>
+      <svg viewBox="0 0 30 26" width="22" height="19" aria-hidden="true">
+        <path d="M15 2 L15 19" stroke="rgba(48,36,24,.6)" strokeWidth="1.4" />
+        <path d="M15 3 Q25 9 15 17 Z" fill="rgba(250,242,226,.7)" stroke="rgba(48,36,24,.5)" strokeWidth="1" />
+        <path d="M5 19 Q15 25 25 19 Z" fill="rgba(70,50,32,.6)" />
+      </svg>
+    </span>
   );
 }
 
@@ -440,7 +598,11 @@ export const MapFx = memo(function MapFx() {
       <Beacons />
       <Smoke />
       <Boats />
+      <Sail />
+      <Windows />
+      <Wind />
       <Birds />
+      <Clouds />
       <ShootingStar />
     </div>
   );
