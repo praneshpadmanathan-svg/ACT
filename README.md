@@ -42,13 +42,13 @@ Every question explains **all four choices**, not just the credited one.
 
 ### Features
 
-- **A painted world map** — a full-viewport world you drag to pan and scroll or pinch to zoom, opening on wherever you got to. All 37 zones have a landmark pin, region names are engraved on the terrain they name, and the scenery is alive: falling water and spray, shore foam, chimney smoke, leaves lifting off the canopy, glowing mushrooms, fireflies, crystal glints, volcano embers and heat haze, desert dust, a sweeping lighthouse beam, rocking boats, birds, and the occasional shooting star.
-- **Landmarks** — a short lesson on parchment, then a quiz. 70% clears it and opens the road ahead.
+- **A painted world map** — a full-viewport world you drag to pan and scroll or pinch to zoom, opening on wherever you got to. All 37 zones have a landmark pin, every zone is named after the terrain it actually stands on, and the scenery is alive: drifting cloud cover with shadows crossing the ground below it, falling water and spray, shore foam, chimney smoke, gusts over the fields, lamplight coming up in the cottages, leaves lifting off the canopy, glowing mushrooms, fireflies, crystal glints, volcano embers and heat haze, desert dust, a sweeping lighthouse beam, a ship under sail crossing the bay, birds, and the occasional shooting star.
+- **Landmarks** — a short lesson on parchment, then a quiz. 70% clears it and opens the road ahead. Lessons are a single unbroken column: nothing is boxed or tinted, each part is named by a coloured label instead.
 - **Adaptive drills** — mixed drills weight question selection toward topics you get wrong, so practice drifts to where it pays.
 - **Spaced review** — anything you miss enters a Leitner queue (1 → 3 → 7 → 16 → 35 days) and comes back until you own it.
 - **Timed tests** — real section pacing, no feedback until you finish, then a scored report with a topic breakdown. The timer runs off a wall-clock deadline, so backgrounding the tab doesn't buy extra minutes.
 - **Boss duels** — each region has a guardian that wakes once every landmark in it is cleared. You stand on the left, it stands on the right, and the questions are the weapons: a correct answer lands a hit, a wrong one lets it hit back. Ten hits to fell it, three to fall. Losing costs nothing but the attempt.
-- **A story that tracks your progress** — six chapters that fire when you earn them (setting out, the first landmark, a quarter, halfway, the Summit opening, after your first trial). It appears centred once you are inside the app, never over the sign-in. Lines type themselves out, the prologue asks a question whose answer is remembered, and Wizzy calls back to it later. Skippable at any point.
+- **A quest chain** — nine objectives ending at the full timed trial, so there is something to actually do to reach the end: take your first landmark, hold four, break a Seal, push to twelve, a second Seal, halfway, all four Seals, the whole map, the trial. The Seals are the region guardians, so the story and the boss duels point at the same thing. The current objective sits on the map with a progress bar and Wizzy leads with it. Beats shake the scene — softly for a tremor, hard for a Seal breaking — and nine dispatches keep the world moving between them. Nothing is ever locked behind the story: every objective is something you would do anyway.
 - **Progression** — XP, seven ranks, day streaks, 15 achievements, and an estimated composite derived from your actual accuracy.
 - **Accounts** — Supabase when configured, otherwise salted-and-hashed accounts kept on the device. Progress is stored per profile, so two people can share a browser without overwriting each other. Guest mode needs no account at all.
 - **Sound** — every cue is synthesised at runtime in WebAudio (wooden latches, felt thuds, mallet-and-harp for a correct answer, a layered fanfare for a rank-up), routed through a generated room reverb. Zero bytes of audio ship.
@@ -68,7 +68,9 @@ for headings, IM Fell English SC for small caps.
 **Parchment** — every reading surface: lessons, passages, question stems,
 explanations. Deliberately the same cream as the sheet the characters were
 drawn on, so a cutout dropped onto a panel has no visible seam. Newsreader at a
-~66-character measure.
+~66-character measure, in one unbroken column — no boxes, no tints. Each part of
+a lesson is named by a coloured label instead, because five differently tinted
+boxes on cream parchment read as white cards punched into the page.
 
 Region accents are keyed to the map itself: village gold, forest green, canyon
 rust, sea blue. Both registers live in [`src/index.css`](src/index.css) as
@@ -125,8 +127,8 @@ src/
 
   game/
     AdventureMap.tsx    the painted map, pins, traveller
-    story.ts            chapter data + progress-gated triggers
-    StoryOverlay.tsx    typewriter scenes, choices, chapter cards
+    story.ts            the nine-objective quest chain + dispatches
+    StoryOverlay.tsx    typewriter scenes, choices, chapter cards, screen shake
     Wizzy.tsx           the guide
     mapData.ts          pin coordinates for all 37 zones
     MapFx.tsx           living scenery: water, embers, glow, fireflies
