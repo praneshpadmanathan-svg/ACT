@@ -3,53 +3,197 @@
    Keeps the shape that worked — pixel-art hero, promise, features, steps,
    closing CTA — but rebuilt in the fantasy register with real typography and
    spacing, and with numbers pulled from the content library rather than
-   hardcoded copy that can drift out of date. */
+   hardcoded copy that can drift out of date.
 
-import { LIBRARY_STATS, SECTIONS } from '@/content';
+   Everything below the hero sits on a veil: a semi-transparent slab that lets
+   the page's warm texture through but gives the type a surface to sit on.
+   Before that, body copy floated directly on a dark expanse, and the sections
+   with no card at all — the feature list especially — were the hardest thing
+   on the page to read. */
+
+import type { ReactNode } from 'react';
+
+import { LIBRARY_STATS, PATH_BY_ID, SECTIONS } from '@/content';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
+import { cx } from '@/lib/utils';
 import { Button } from '@/components/ui';
+import { NavGlyph, type GlyphName } from '@/components/NavGlyph';
 import { REGIONS } from '@/game/mapData';
+import type { SectionId } from '@/types';
 
-const FEATURES: { title: string; detail: string }[] = [
+/* ------------------------------------------------------------- highlighting
+
+   Body copy stays calm parchment. Only the load-bearing word takes colour, and
+   the colour means something: region hues for the four roads, gold for what you
+   earn, red for what the test costs you. Every one of these is a text-safe
+   variant measured at 6:1 or better against the veil — the raw region fills are
+   mixed for the painted map and several fail as type. */
+
+type Tone = 'gold' | 'cream' | 'woods' | 'sea' | 'sand' | 'blood';
+
+const TONE: Record<Tone, string> = {
+  gold: 'text-gold-light',
+  cream: 'text-parchment-light',
+  woods: 'text-woods-text',
+  sea: 'text-cliffs-text',
+  sand: 'text-desert-text',
+  blood: 'text-blood-text',
+};
+
+function Hl({ tone = 'gold', children }: { tone?: Tone; children: ReactNode }) {
+  return <span className={cx('hl', TONE[tone])}>{children}</span>;
+}
+
+/* Region hues, lifted for type. The raw map colours are used for each card's
+   top edge — as *text* the canyon rust measured 4.60:1, which passes but is the
+   tightest thing on the page. These are the same hues one step brighter. */
+const REGION_TEXT: Record<SectionId, string> = {
+  english: '#e9bd63',
+  reading: '#7cc98a',
+  math: '#e89463',
+  science: '#79c0ea',
+};
+
+/* A rule broken by a diamond, under every section heading. */
+function Ornament() {
+  return (
+    <div className="orn my-6" aria-hidden="true">
+      <span className="text-[10px] leading-none text-gold">✦</span>
+    </div>
+  );
+}
+
+/* A heading, its ornament, and one line of intro on a thin veil. */
+function SectionIntro({ title, lead }: { title: ReactNode; lead: ReactNode }) {
+  return (
+    <div className="mb-11 text-center">
+      <h2 className="heading text-balance text-[clamp(1.5rem,3.2vw,2rem)] text-parchment-light">
+        {title}
+      </h2>
+      <Ornament />
+      <p
+        className="veil-thin mx-auto max-w-xl px-5 py-3 font-read text-[15.5px]
+                   leading-relaxed text-parchment-dim"
+      >
+        {lead}
+      </p>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------- content */
+
+const FEATURES: { id: string; glyph: GlyphName; title: ReactNode; detail: ReactNode }[] = [
   {
+    id: 'regions',
+    glyph: 'map',
     title: 'Four regions to cross',
-    detail:
-      'English, Reading, Math and Science, each a road of skill landmarks across a painted world. Nothing unlocks by accident.',
+    detail: (
+      <>
+        English, Reading, Math and Science, each a road of{' '}
+        <Hl tone="cream">skill landmarks</Hl> across a painted world.{' '}
+        <Hl tone="gold">Nothing unlocks by accident.</Hl>
+      </>
+    ),
   },
   {
-    title: `${LIBRARY_STATS.totalQuestions} questions, every choice explained`,
-    detail:
-      'Know why the right answer is right — and exactly why each of the other three is wrong.',
+    id: 'questions',
+    glyph: 'sword',
+    title: (
+      <>
+        <Hl>{LIBRARY_STATS.totalQuestions.toLocaleString()}</Hl> questions, every choice explained
+      </>
+    ),
+    detail: (
+      <>
+        Know why the right answer is <Hl tone="woods">right</Hl> — and exactly why each of the other
+        three is <Hl tone="blood">wrong</Hl>.
+      </>
+    ),
   },
   {
-    title: `${LIBRARY_STATS.notePages} lessons in the library`,
-    detail:
-      'Short pages that teach one idea at a time: the rule, a worked example, and the trap that costs people points.',
+    id: 'lessons',
+    glyph: 'book',
+    title: (
+      <>
+        <Hl>{LIBRARY_STATS.notePages}</Hl> lessons in the library
+      </>
+    ),
+    detail: (
+      <>
+        Short pages that teach <Hl tone="cream">one idea at a time</Hl>: the rule, a worked example,
+        and the <Hl tone="blood">trap</Hl> that costs people points.
+      </>
+    ),
   },
   {
+    id: 'guide',
+    glyph: 'star',
     title: 'A guide who knows the road',
-    detail:
-      'Wizzy points you at the next landmark, and tells you what it will teach before you commit.',
+    detail: (
+      <>
+        <Hl tone="sea">Wizzy</Hl> points you at the next landmark, and tells you what it will teach{' '}
+        <Hl tone="cream">before</Hl> you commit.
+      </>
+    ),
   },
   {
+    id: 'review',
+    glyph: 'hourglass',
     title: 'Misses come back',
-    detail:
-      'Anything you get wrong returns a day later, then three, then a week, until you genuinely own it.',
+    detail: (
+      <>
+        Anything you get wrong returns <Hl tone="sand">a day</Hl> later, then{' '}
+        <Hl tone="sand">three</Hl>, then <Hl tone="sand">a week</Hl>, until you genuinely own it.
+      </>
+    ),
   },
   {
+    id: 'summit',
+    glyph: 'crown',
     title: 'The Summit measures you',
-    detail:
-      'A full, properly timed mock test and a scored report that names the topics costing you points.',
+    detail: (
+      <>
+        A full, <Hl tone="cream">properly timed</Hl> mock test and a scored report that{' '}
+        <Hl>names the topics</Hl> costing you points.
+      </>
+    ),
   },
 ];
 
-const STEPS = [
-  { n: '1', title: 'Learn', detail: 'A short lesson teaches the skill at one landmark.' },
-  { n: '2', title: 'Prove it', detail: 'Clear the quiz at 70% to open the road ahead.' },
-  { n: '3', title: 'Climb', detail: 'Earn XP, rise through the ranks, and reach the Summit.' },
+const STEPS: { n: string; title: string; detail: ReactNode }[] = [
+  {
+    n: '1',
+    title: 'Learn',
+    detail: (
+      <>
+        A short lesson teaches <Hl tone="cream">one skill</Hl> at one landmark.
+      </>
+    ),
+  },
+  {
+    n: '2',
+    title: 'Prove it',
+    detail: (
+      <>
+        Clear the quiz at <Hl tone="woods">70%</Hl> to open the road ahead.
+      </>
+    ),
+  },
+  {
+    n: '3',
+    title: 'Climb',
+    detail: (
+      <>
+        Earn <Hl>XP</Hl>, rise through seven ranks, and reach the <Hl tone="cream">Summit</Hl>.
+      </>
+    ),
+  },
 ];
+
+/* ---------------------------------------------------------------------- page */
 
 export function Landing() {
   const navigate = useNavigate();
@@ -104,9 +248,12 @@ export function Landing() {
             <span className="mt-1 block text-gold-bright">starts here.</span>
           </h1>
 
+          {/* The hero keeps its open composition — no veil over the artwork.
+              Only the colour highlighting carries down from here. */}
           <p className="mx-auto mt-6 max-w-2xl font-read text-[clamp(1.05rem,2vw,1.3rem)] leading-relaxed text-parchment-dim">
-            Cross four regions, master every skill the test asks for, and work{' '}
-            {LIBRARY_STATS.totalQuestions} real questions where every answer is explained.
+            Cross <Hl tone="cream">four regions</Hl>, master every skill the test asks for, and work{' '}
+            <Hl>{LIBRARY_STATS.totalQuestions.toLocaleString()}</Hl> real questions where{' '}
+            <Hl tone="cream">every answer is explained</Hl>.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
@@ -148,28 +295,51 @@ export function Landing() {
 
       {/* --------------------------------------------------------- regions */}
       <section className="shell py-20">
-        <h2 className="heading mb-3 text-center text-[clamp(1.5rem,3.2vw,2rem)]">
-          Four regions, one road
-        </h2>
-        <p className="mx-auto mb-12 max-w-xl text-center font-read text-[15.5px] leading-relaxed text-parchment-dim">
-          Every landmark on the map is one ACT skill. Clear it to open the next.
-        </p>
+        <SectionIntro
+          title={
+            <>
+              Four regions, <span className="text-gold-bright">one road</span>
+            </>
+          }
+          lead={
+            <>
+              Every landmark on the map is <Hl tone="cream">one ACT skill</Hl>. Clear it to open the
+              next.
+            </>
+          }
+        />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {SECTIONS.map((section) => {
             const region = REGIONS[section.id];
+            const tint = REGION_TEXT[section.id];
+            const zones = PATH_BY_ID[section.id]?.nodes.length ?? 0;
             return (
               <div
                 key={section.id}
-                className="panel-lit p-6"
+                className="veil veil-lift flex flex-col p-6"
                 style={{ borderTopColor: region.color, borderTopWidth: 3 }}
               >
-                <h3 className="heading text-[17px]" style={{ color: region.color }}>
+                <h3 className="heading text-[17px]" style={{ color: tint }}>
                   {region.title}
                 </h3>
                 <p className="label-sm mt-1">{section.name}</p>
-                <p className="mt-3 font-read text-[14.5px] leading-relaxed text-parchment-dim">
+                <p className="mt-3 flex-1 font-read text-[14.5px] leading-relaxed text-parchment-dim">
                   {section.blurb}
+                </p>
+                <p className="mt-4 border-t border-leather-700/60 pt-3 font-read text-[13px] text-ink-faint">
+                  <b className="num text-[14px]" style={{ color: tint }}>
+                    {section.questionCount}
+                  </b>{' '}
+                  questions ·{' '}
+                  <b className="num text-[14px]" style={{ color: tint }}>
+                    {section.minutes}
+                  </b>{' '}
+                  min ·{' '}
+                  <b className="num text-[14px]" style={{ color: tint }}>
+                    {zones}
+                  </b>{' '}
+                  landmarks
                 </p>
               </div>
             );
@@ -180,16 +350,38 @@ export function Landing() {
       {/* -------------------------------------------------------- features */}
       <section className="border-y border-leather-700 bg-leather-950/50 py-20">
         <div className="shell">
-          <h2 className="heading mb-12 text-center text-[clamp(1.5rem,3.2vw,2rem)]">
-            Everything you need to hit your target
-          </h2>
-          <div className="grid gap-x-8 gap-y-9 md:grid-cols-2 lg:grid-cols-3">
+          <SectionIntro
+            title={
+              <>
+                Everything you need to hit{' '}
+                <span className="text-gold-bright">your target</span>
+              </>
+            }
+            lead={
+              <>
+                Six things that actually <Hl tone="cream">move a score</Hl> — and nothing that just
+                looks busy.
+              </>
+            }
+          />
+
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f) => (
-              <div key={f.title}>
-                <h3 className="heading text-[16px] text-gold-light">{f.title}</h3>
-                <p className="mt-2 font-read text-[14.5px] leading-relaxed text-parchment-dim">
-                  {f.detail}
-                </p>
+              <div key={f.id} className="veil veil-lift flex gap-4 p-6">
+                <span
+                  className="flex h-10 w-10 flex-none items-center justify-center rounded-lg
+                             border border-gold-deep/50 bg-leather-900/70 text-gold"
+                >
+                  <NavGlyph name={f.glyph} size={19} />
+                </span>
+                <div className="min-w-0">
+                  <h3 className="heading text-[16px] leading-snug text-parchment-light">
+                    {f.title}
+                  </h3>
+                  <p className="mt-2 font-read text-[15px] leading-[1.65] text-parchment-dim">
+                    {f.detail}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -198,18 +390,31 @@ export function Landing() {
 
       {/* ----------------------------------------------------------- steps */}
       <section className="shell py-20">
-        <h2 className="heading mb-12 text-center text-[clamp(1.5rem,3.2vw,2rem)]">How it works</h2>
-        <div className="grid gap-5 md:grid-cols-3">
+        <SectionIntro
+          title={
+            <>
+              How it <span className="text-gold-bright">works</span>
+            </>
+          }
+          lead={
+            <>
+              Three moves, repeated <Hl tone="cream">{LIBRARY_STATS.zones} times</Hl>, all the way to
+              the Summit.
+            </>
+          }
+        />
+
+        <div className="grid gap-4 md:grid-cols-3">
           {STEPS.map((step) => (
-            <div key={step.n} className="panel p-7 text-center">
+            <div key={step.n} className="veil veil-lift p-7 text-center">
               <div
                 className="num mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full
-                           border-2 border-gold-deep bg-leather-800 text-[19px] text-gold"
+                           border-2 border-gold-deep bg-leather-900/80 text-[19px] text-gold"
               >
                 {step.n}
               </div>
-              <h3 className="heading text-[17px] text-parchment">{step.title}</h3>
-              <p className="mt-2 font-read text-[14.5px] leading-relaxed text-parchment-dim">
+              <h3 className="heading text-[17px] text-parchment-light">{step.title}</h3>
+              <p className="mt-2 font-read text-[15px] leading-[1.65] text-parchment-dim">
                 {step.detail}
               </p>
             </div>
@@ -219,12 +424,13 @@ export function Landing() {
 
       {/* ------------------------------------------------------------- cta */}
       <section className="shell pb-24 text-center">
-        <div className="panel-lit mx-auto max-w-2xl px-8 py-14">
+        <div className="veil mx-auto max-w-2xl px-8 py-14">
           <h2 className="heading text-[clamp(1.5rem,3.2vw,2rem)] text-parchment-light">
-            Ready to set out?
+            Ready to <span className="text-gold-bright">set out?</span>
           </h2>
-          <p className="mx-auto mt-3 max-w-md font-read text-[15.5px] leading-relaxed text-parchment-dim">
-            Free, no downloads, and your progress saves as you go.
+          <Ornament />
+          <p className="mx-auto max-w-md font-read text-[15.5px] leading-relaxed text-parchment-dim">
+            <Hl tone="woods">Free</Hl>, no downloads, and your progress saves as you go.
           </p>
           <Button variant="primary" size="lg" className="mt-8" onClick={begin}>
             Begin your quest ▸

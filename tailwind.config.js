@@ -45,9 +45,14 @@ export default {
         cliffs: '#4f9dc9',
         summit: '#e8c34a',
         blood: '#a8402f',
-        /* #a8402f is a fill colour — as text on leather it measures 2.73:1.
-           This is the text-safe variant. */
+        /* The region colours above are fill colours, mixed to sit against the
+           painted map. As *text* on leather the darker ones fail: blood
+           measures 2.73:1. These are the text-safe variants, used for the
+           highlighted words in body copy — all measured at 6:1 or better. */
         'blood-text': '#dd8571',
+        'woods-text': '#7cc98a',
+        'cliffs-text': '#79c0ea',
+        'desert-text': '#e89463',
       },
       fontFamily: {
         display: ['Cinzel', 'Georgia', 'serif'],

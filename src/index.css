@@ -274,6 +274,61 @@
            tracking-[0.12em] text-parchment-dim;
   }
 
+  /* ----------------------------------------------------------------- veil
+     A semi-transparent slab for body copy. The page's warm texture reads
+     through it, but the words sit on a settled surface instead of floating
+     on a dark expanse — which is what made the landing page hard to read. */
+
+  .veil {
+    @apply relative rounded-xl border border-leather-700/70 backdrop-blur-md
+           transition-all duration-200;
+    background: linear-gradient(180deg, rgba(46, 37, 26, 0.55), rgba(20, 16, 11, 0.62));
+    box-shadow: inset 0 1px 0 rgba(240, 207, 122, 0.07), 0 10px 26px rgba(0, 0, 0, 0.3);
+  }
+  /* Lantern light catching the top edge. */
+  .veil::before {
+    content: '';
+    @apply pointer-events-none absolute inset-x-0 top-0 h-px rounded-t-xl;
+    background: linear-gradient(90deg, transparent, rgba(240, 207, 122, 0.42), transparent);
+  }
+  /* Only the ones you can act on lift. */
+  a.veil:hover,
+  button.veil:hover,
+  .veil-lift:hover {
+    @apply -translate-y-0.5 border-gold-deep/70;
+    box-shadow: inset 0 1px 0 rgba(240, 207, 122, 0.12), 0 16px 34px rgba(0, 0, 0, 0.38),
+      0 0 24px rgba(212, 160, 23, 0.1);
+  }
+
+  /* A lighter veil for a single line of copy under a heading, where a full
+     card would be too much furniture. */
+  .veil-thin {
+    @apply relative rounded-lg border border-leather-700/50 backdrop-blur-sm;
+    background: linear-gradient(180deg, rgba(46, 37, 26, 0.42), rgba(20, 16, 11, 0.48));
+  }
+
+  /* A load-bearing word inside body copy. Colour does the lifting; the hairline
+     underneath means it still reads as emphasis without seeing the hue. */
+  .hl {
+    @apply font-semibold;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, currentColor 32%, transparent);
+  }
+
+  /* Section ornament — a rule broken by a diamond. Replaces the bare gap
+     between a heading and the cards under it. */
+  .orn {
+    @apply mx-auto flex w-full max-w-[220px] items-center gap-3 text-gold-deep;
+  }
+  .orn::before,
+  .orn::after {
+    content: '';
+    @apply block h-px flex-1;
+    background: linear-gradient(90deg, transparent, rgba(212, 160, 23, 0.45), transparent);
+  }
+
   /* ------------------------------------------------------------- parchment */
 
   .sheet {
