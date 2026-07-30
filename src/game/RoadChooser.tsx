@@ -10,7 +10,10 @@
    opens on — the other three stay open, and you can walk any of them whenever
    you like. */
 
+import { useRef } from 'react';
+
 import { PATH_BY_ID, SECTION_BY_ID } from '@/content';
+import { useDialogFocus } from '@/lib/useDialogFocus';
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
@@ -28,6 +31,8 @@ const ROAD_NOTE: Record<SectionId, string> = {
 
 export function RoadChooser() {
   const { progress, updateProgress } = useStore();
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useDialogFocus(dialogRef, true);
 
   const choose = (section: SectionId) => {
     sfx.achieve();
@@ -36,8 +41,11 @@ export function RoadChooser() {
 
   return (
     <div
+      ref={dialogRef}
       className="fixed inset-0 z-[110] flex items-center justify-center overflow-y-auto p-4"
       role="dialog"
+      aria-modal="true"
+      tabIndex={-1}
       aria-label="Choose where to begin"
     >
       <div className="absolute inset-0 bg-leather-950/90 backdrop-blur-sm" />

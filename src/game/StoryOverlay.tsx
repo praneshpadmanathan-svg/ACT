@@ -23,6 +23,7 @@ import { useStore } from '@/lib/store';
 import { useRoute } from '@/lib/router';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
+import { useDialogFocus } from '@/lib/useDialogFocus';
 import { REGION_ORDER } from './mapData';
 import { nextChapter, type Chapter, type StoryChoice } from './story';
 
@@ -95,6 +96,7 @@ export function StoryOverlay() {
   );
   const cleared = Object.keys(progress.zonesCleared).length;
 
+  const dialogRef = useRef<HTMLDivElement>(null);
   const [chapter, setChapter] = useState<Chapter | null>(null);
   const [beatIndex, setBeatIndex] = useState(0);
   const [lineIndex, setLineIndex] = useState(0);
@@ -103,6 +105,9 @@ export function StoryOverlay() {
   const [showTitle, setShowTitle] = useState(true);
 
   const reduced = prefersReducedMotion();
+  /* Focus goes into the scene while it is open — otherwise Tab walks the map
+     behind it, 44 landmark pins deep, and nothing announces the dialog. */
+  useDialogFocus(dialogRef, Boolean(chapter));
 
   /* Pick up whichever chapter has just been earned.
 
@@ -258,11 +263,14 @@ export function StoryOverlay() {
 
   return (
     <div
+      ref={dialogRef}
       className={cx(
         'fixed inset-0 z-[120] flex items-center justify-center p-4',
         closing ? 'animate-storyOut' : 'animate-storyIn',
       )}
       role="dialog"
+      aria-modal="true"
+      tabIndex={-1}
       aria-label={`Story: ${chapter.title}`}
     >
       {/* backdrop */}

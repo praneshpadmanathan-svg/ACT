@@ -268,7 +268,11 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
     frame.w > 0 ? Math.max(frame.w / MAP_W, frame.h / MAP_H) * view.zoom : view.zoom;
 
   return (
-    <div
+    /* A landmark and a heading, because the map suppresses the top bar and so
+       had no <main>, no <nav> and no <h1> at all — a screen reader landed on 38
+       unlabelled-in-context buttons with no way to orient. The heading is
+       visually hidden; the map itself is the visual title. */
+    <main
       ref={frameRef}
       className={cx(
         'fixed inset-0 overflow-hidden bg-leather-950 touch-none select-none',
@@ -279,7 +283,10 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
       onPointerUp={endPointer}
       onPointerCancel={endPointer}
       onWheel={onWheel}
-      role="application"
+      /* Deliberately not role="application": that suppresses browse mode for
+         everything inside, so a screen reader user loses normal reading of the
+         38 landmark buttons and the HUD in exchange for drag gestures they
+         cannot perform anyway. Panning is mouse/touch only; zoom has buttons. */
       aria-label="Adventure map. Drag to pan, scroll to zoom."
     >
       {/* the world: one transformed layer holding art, motion and pins */}
@@ -425,6 +432,10 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
 
       {/* ------------------------------------------------------------ HUD */}
 
+      <h1 className="sr-only">
+        Adventure map — {cleared} of {total} landmarks cleared
+      </h1>
+
       {/* vignette so the controls always have something to sit against */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -523,6 +534,6 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
