@@ -78,6 +78,13 @@ rust, sea blue. Both registers live in [`src/index.css`](src/index.css) as
 component classes (`.panel`, `.sheet`, `.prose-quill`, `.choice`, `.pin`, …)
 and in the theme in [`tailwind.config.js`](tailwind.config.js).
 
+### Replacing the map
+
+Every pin, discovery, plaque and mist band is positioned as a percentage of
+`public/art/world-map.webp`. [docs/map-art-brief.md](docs/map-art-brief.md) has the
+image prompt, the hard constraints (768x1376, four bands at fixed vertical
+ranges) and the re-verification steps a new map needs.
+
 ### The artwork
 
 Source images totalled 11.6 MB of PNG. They are committed at **668 KB**:
