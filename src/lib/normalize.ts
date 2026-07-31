@@ -9,8 +9,68 @@
 import type { Question, ZoneQuestion } from '@/types';
 import type { RunnableQuestion } from '@/components/QuestionRunner';
 import { getPassage } from '@/content';
+import { seeded, shuffle } from '@/lib/utils';
 
 const KEYS = ['A', 'B', 'C', 'D'];
+
+/* ---------------------------------------------------------- answer shuffling
+
+   Both authored banks are badly skewed toward one position. Measured across the
+   shipped content: 44% of the 412 zone-quiz answers are the first option (chance
+   is 25%), and 203 of the 342 drill answers are "B". Either bank can be beaten
+   well above chance by a student who never reads the question — which quietly
+   teaches exactly the wrong habit and makes every accuracy number a lie.
+
+   So choices are shuffled at normalise time. Two properties matter:
+
+   - Deterministic per question. The order is derived from the question id, so
+     the same item looks the same every time you meet it. A question that
+     reshuffled between the drill and its review would make "I picked C" mean
+     nothing, and would fight the spaced-repetition history.
+   - "NO CHANGE" stays first. On the real ACT it is always the first option, so
+     pinning it is more faithful than randomising it — and it reads as an
+     instruction rather than an answer. (In this bank it currently sits last in
+     all five items that have it.)
+
+   Nothing in the bank is order-dependent — no "both of the above", no options
+   that reference other options by letter — so this is safe everywhere. */
+
+const isPinned = (text: string) => /^\s*NO CHANGE\s*$/i.test(text);
+
+/** Stable 32-bit hash of the question id, so the order never drifts. */
+function hashId(id: string): number {
+  let h = 2166136261;
+  for (let i = 0; i < id.length; i++) {
+    h ^= id.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return Math.abs(h) || 1;
+}
+
+/** Reorder the choices, then relabel them A-D and remap everything that
+ *  referred to the old letters. */
+function shuffleChoices(q: RunnableQuestion): RunnableQuestion {
+  if (q.choices.length < 2) return q;
+
+  const pinned = q.choices.filter((c) => isPinned(c.text));
+  const rest = q.choices.filter((c) => !isPinned(c.text));
+  const ordered = [...pinned, ...shuffle(rest, seeded(hashId(q.id)))];
+
+  /* old key -> new key, so `why` and `correctKey` follow their choice. */
+  const remap = new Map<string, string>();
+  const choices = ordered.map((choice, i) => {
+    const key = KEYS[i] ?? choice.key;
+    remap.set(choice.key, key);
+    return { ...choice, key };
+  });
+
+  const why: Record<string, string> = {};
+  for (const [oldKey, text] of Object.entries(q.why)) {
+    why[remap.get(oldKey) ?? oldKey] = text;
+  }
+
+  return { ...q, choices, correctKey: remap.get(q.correctKey) ?? q.correctKey, why };
+}
 
 export function fromDrillQuestion(q: Question): RunnableQuestion {
   const passage = getPassage(q.passage);
@@ -21,7 +81,7 @@ export function fromDrillQuestion(q: Question): RunnableQuestion {
   const guillemet = /«(.+?)»/s;
   const hasUnderline = guillemet.test(q.context);
 
-  return {
+  return shuffleChoices({
     id: q.id,
     prompt: hasUnderline
       ? 'Which choice best replaces the highlighted text?'
@@ -37,7 +97,7 @@ export function fromDrillQuestion(q: Question): RunnableQuestion {
     section: q.section,
     difficulty: q.difficulty,
     passage,
-  };
+  });
 }
 
 export function fromZoneQuestion(q: ZoneQuestion, zoneId: string, index: number): RunnableQuestion {
@@ -55,7 +115,7 @@ export function fromZoneQuestion(q: ZoneQuestion, zoneId: string, index: number)
   }
   why[correctKey] = q.why;
 
-  return {
+  return shuffleChoices({
     id: `${zoneId}-q${index}`,
     prompt: q.q,
     promptFormat: 'html',
@@ -66,5 +126,5 @@ export function fromZoneQuestion(q: ZoneQuestion, zoneId: string, index: number)
     topic: q.tag ?? zoneId,
     section: 'zone',
     difficulty: q.d === 3 ? 'hard' : q.d === 1 ? 'easy' : 'medium',
-  };
+  });
 }

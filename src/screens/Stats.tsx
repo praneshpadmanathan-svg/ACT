@@ -25,6 +25,13 @@ export function StatsScreen() {
   const estimate = estimatedComposite(progress);
   const allTopics = useMemo(() => topicStats(progress).filter((t) => t.attempts >= 2), [progress]);
 
+  /* Which sections do not yet carry the 8 answers a composite needs. Same
+     threshold as estimatedComposite — kept in step by reading it from there. */
+  const sectionsNeedingWork = useMemo(
+    () => SECTIONS.filter((s) => sectionAccuracy(progress, s.id).n < 8),
+    [progress],
+  );
+
   /* Activity over the last 12 weeks, bucketed by day. */
   const activity = useMemo(() => {
     const days = 84;
@@ -70,6 +77,25 @@ export function StatsScreen() {
         <Tile label="Questions answered" value={progress.attempts.length.toLocaleString()} color="#ff9d5c" />
         <Tile label="Day streak" value={String(progress.dayStreak)} color="#3ad6f0" />
       </div>
+
+      {/* A composite needs two sections with real data behind it. Saying so
+          beats a bare em-dash, which reads as "broken" rather than "not yet". */}
+      {estimate === null && (
+        <p className="mb-6 -mt-2 font-read text-[13.5px] leading-relaxed text-ink-faint">
+          A composite needs at least <b className="text-parchment-dim">two sections</b> with eight or
+          more answered questions each — it is an average, and averaging one section would flatter
+          or punish you for no reason.
+          {sectionsNeedingWork.length > 0 && (
+            <>
+              {' '}Still short in{' '}
+              <b className="text-parchment-dim">
+                {sectionsNeedingWork.map((s) => s.name).join(', ')}
+              </b>
+              .
+            </>
+          )}
+        </p>
+      )}
 
       {/* per section */}
       <h2 className="heading mb-4 text-[13px] text-white">By section</h2>
@@ -188,6 +214,7 @@ export function ProfileScreen() {
     syncNow,
     updateProgress,
     resetEverything,
+    identity,
   } = useStore();
 
   const { pct, next } = rankProgress(progress.xp);
@@ -248,7 +275,40 @@ export function ProfileScreen() {
               Account
             </span>
 
-            {isGuest || !userId ? (
+            {/* Branch on the identity, not on `userId`.
+
+                `userId` only exists for a cloud account, so someone signed in
+                with a device account fell into the guest branch: the app told
+                them "You are playing as a guest" while displaying their name
+                and XP, and offered no way out. The only exit was "Reset
+                everything", which destroys the progress rather than leaving the
+                account. Sign-out already handled local accounts — it was just
+                never reachable. */}
+            {identity.kind === 'local' ? (
+              <>
+                <p className="mb-3 text-[13px] leading-relaxed text-ink-faint">
+                  Signed in on this device as <b className="text-parchment">{identity.email}</b>.
+                  Progress is saved to this browser under your account, so others using it keep
+                  their own.
+                </p>
+                <div className="flex flex-wrap gap-2.5">
+                  <Button
+                    variant="ghost"
+                    onClick={() => {
+                      void signOut();
+                      navigate({ name: 'landing' });
+                    }}
+                  >
+                    Sign out
+                  </Button>
+                  {cloudEnabled && (
+                    <Button variant="primary" onClick={() => navigate({ name: 'auth', mode: 'signup' })}>
+                      Add cloud sync
+                    </Button>
+                  )}
+                </div>
+              </>
+            ) : isGuest || !userId ? (
               <>
                 <p className="mb-3 text-[13px] leading-relaxed text-ink-faint">
                   {cloudEnabled

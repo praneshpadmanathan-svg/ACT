@@ -89,8 +89,11 @@ export function DiscoveryLayer({ clearedByRegion, onFound }: Props) {
             style={{
               top: `${band.top}%`,
               height: `${band.height}%`,
-              // Fully opaque before you start, gone by the time you finish.
-              opacity: 0.88 - done * 0.88,
+              /* Thin enough to read the terrain through. It started at 0.88,
+                 which buried whole regions in grey — you could not see what you
+                 were being invited to explore, which defeats the point. The
+                 mist is a hint that ground is unvisited, not a blackout. */
+              opacity: 0.46 - done * 0.46,
             }}
           />
         );

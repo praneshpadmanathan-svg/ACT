@@ -9,7 +9,8 @@ import { useState, type FormEvent } from 'react';
 import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { cloudEnabled, signIn, signUp } from '@/lib/supabase';
-import { localSignIn, localSignUp } from '@/lib/localAuth';
+import { localSignIn, localSignUp, progressKeyFor, type Identity } from '@/lib/localAuth';
+import { readRaw } from '@/lib/storage';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import { Button } from '@/components/ui';
@@ -29,7 +30,29 @@ export function Auth({ mode: initialMode }: { mode: Mode }) {
   const [busy, setBusy] = useState(false);
   const [confirmSent, setConfirmSent] = useState(false);
 
-  const goNext = () => navigate({ name: progress.profile ? 'home' : 'onboarding' }, { replace: true });
+  /* Where to land after authenticating.
+
+     This used to read `progress.profile` from the store, which is the *previous*
+     identity's progress at this moment — switching accounts loads the new one
+     through a state update that has not landed yet. So signing back in to an
+     established account sent it through onboarding again, as if it were new,
+     and a second pass would overwrite the profile it already had.
+
+     Reading the target account's own saved progress avoids the race entirely:
+     the answer is on disk before we ever navigate. */
+  const goNext = (identity?: Identity) => {
+    let hasProfile = Boolean(progress.profile);
+    if (identity) {
+      try {
+        const saved = readRaw(progressKeyFor(identity));
+        hasProfile = saved ? Boolean(JSON.parse(saved)?.profile) : false;
+      } catch {
+        // Unreadable or corrupt: fall back to onboarding, which is recoverable.
+        hasProfile = false;
+      }
+    }
+    navigate({ name: hasProfile ? 'home' : 'onboarding' }, { replace: true });
+  };
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
@@ -49,6 +72,9 @@ export function Auth({ mode: initialMode }: { mode: Mode }) {
     }
 
     setBusy(true);
+    /* Set once we know which account we ended up in, so goNext can read that
+       account's own saved progress rather than the store's stale copy. */
+    let signedInAs: Identity | undefined;
     try {
       if (cloudEnabled) {
         const result =
@@ -74,11 +100,12 @@ export function Auth({ mode: initialMode }: { mode: Mode }) {
           return;
         }
         useLocalAccount(result.account);
+        signedInAs = { kind: 'local', email: result.account.email };
       }
 
       sfx.achieve();
       burstConfetti(70);
-      goNext();
+      goNext(signedInAs);
     } finally {
       setBusy(false);
     }
@@ -87,7 +114,7 @@ export function Auth({ mode: initialMode }: { mode: Mode }) {
   const startGuest = () => {
     sfx.achieve();
     continueAsGuest();
-    goNext();
+    goNext({ kind: 'guest' });
   };
 
   return (

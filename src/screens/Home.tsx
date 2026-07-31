@@ -195,7 +195,10 @@ export function Home() {
                   </span>
                   <span
                     className="num text-[22px]"
-                    style={{ color: t.accuracy < 0.5 ? '#c8553d' : t.accuracy < 0.7 ? '#d4a017' : '#5fa86b' }}
+                    /* #c8553d measured 3.82:1 on the panel — and this is the
+                       number telling you a topic is hurting you, so it is the
+                       last one that should be hard to read. */
+                    style={{ color: t.accuracy < 0.5 ? '#dd8571' : t.accuracy < 0.7 ? '#d4a017' : '#7cc98a' }}
                   >
                     {Math.round(t.accuracy * 100)}%
                   </span>
