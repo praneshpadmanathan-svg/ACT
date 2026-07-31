@@ -22,24 +22,60 @@ import { CLOUDS } from '@/game/mapData';
 
 /* -------------------------------------------------------------- waterfall */
 
+/* Geometry read off the artwork rather than guessed.
+
+   Sampling `world-map.webp`: the lip is the pale band at y 35.5-36.5, the water
+   column runs x 7.4-11.8, and there is painted foam in the plunge pool from
+   y 42 to y 46, spreading right to x 15. The previous streaks started at
+   y 32.5 — above the drop, still river — and ran to x 12.5, so half of them
+   fell down the bare rock beside the falls. */
+const FALL = {
+  left: 9.6, // centre of the column
+  width: 4.4, // 7.4 -> 11.8
+  lip: 36, // where the water turns over
+  base: 42.4, // where it lands
+  pool: 43.6, // the pool surface
+};
+
 function Waterfall() {
   const rng = seeded(41);
-  const streaks = Array.from({ length: 14 }, (_, i) => ({
-    key: i,
-    left: 8.3 + rng() * 4.2,
-    top: 32.5 + rng() * 1.5,
-    height: 5 + rng() * 4,
-    width: 0.22 + rng() * 0.3,
-    delay: rng() * 2.4,
-    duration: 1.5 + rng() * 1.3,
-    opacity: 0.3 + rng() * 0.45,
-  }));
+
+  /* More streaks than before, and narrower. A waterfall is not a dozen ropes
+     of water — it is a mass, and the mass reads better from many thin strands
+     at different speeds than from a few thick ones. */
+  const streaks = Array.from({ length: 26 }, () => {
+    const width = 0.16 + rng() * 0.26;
+    return {
+      left: FALL.left - FALL.width / 2 + rng() * FALL.width,
+      // Start just under the lip, with a little scatter so the edge is not a line.
+      top: FALL.lip + 0.2 + rng() * 0.8,
+      height: (FALL.base - FALL.lip) * (0.55 + rng() * 0.5),
+      width,
+      delay: rng() * 2.2,
+      /* Thin strands fall faster than wide ones, which is not physics but is
+         what makes the column look like it has depth. */
+      duration: 1.15 + rng() * 0.9 + width,
+      opacity: 0.28 + rng() * 0.5,
+    };
+  });
 
   return (
     <>
-      {streaks.map((s) => (
+      {/* the lip, catching the light as the river turns over */}
+      <span
+        className="mapfx-crest"
+        style={{
+          left: `${FALL.left}%`,
+          top: `${FALL.lip}%`,
+          width: `${FALL.width + 0.6}%`,
+          height: '0.75%',
+        }}
+      />
+
+      {/* the falling column */}
+      {streaks.map((s, i) => (
         <span
-          key={s.key}
+          key={i}
           className="mapfx-fall"
           style={{
             left: `${s.left}%`,
@@ -52,18 +88,99 @@ function Waterfall() {
           }}
         />
       ))}
-      {/* spray at the plunge pool */}
-      {Array.from({ length: 7 }, (_, i) => (
+
+      {/* two veils over the strands, so they read as one body of water */}
+      {[0, 1].map((i) => (
         <span
-          key={`spray${i}`}
-          className="mapfx-spray"
+          key={`veil${i}`}
+          className="mapfx-veil"
           style={{
-            left: `${9 + (i % 4) * 1.1}%`,
-            top: `${40.5 + (i % 3) * 0.6}%`,
-            animationDelay: `${i * 0.42}s`,
+            left: `${FALL.left + (i ? 0.5 : -0.5)}%`,
+            top: `${(FALL.lip + FALL.base) / 2}%`,
+            width: `${FALL.width - 0.4}%`,
+            height: `${FALL.base - FALL.lip}%`,
+            animationDelay: `${i * 1.3}s`,
+            animationDuration: `${2.4 + i * 0.7}s`,
           }}
         />
       ))}
+
+      {/* where it lands */}
+      <span
+        className="mapfx-impact"
+        style={{
+          left: `${FALL.left}%`,
+          top: `${FALL.base}%`,
+          width: `${FALL.width + 1.4}%`,
+          height: '2.4%',
+          animationDuration: '1.7s',
+        }}
+      />
+
+      {/* mist hanging over the pool, and the light through it */}
+      {[
+        { dx: -0.6, dy: -0.4, w: 6.5, h: 5, dur: 7.5, delay: 0 },
+        { dx: 1.8, dy: 0.6, w: 5, h: 3.8, dur: 9.5, delay: -3.2 },
+        { dx: 3.6, dy: 0.2, w: 4, h: 3, dur: 11, delay: -6 },
+      ].map((m, i) => (
+        <span
+          key={`mist${i}`}
+          className="mapfx-mistball"
+          style={{
+            left: `${FALL.left + m.dx}%`,
+            top: `${FALL.base + m.dy}%`,
+            width: `${m.w}%`,
+            height: `${m.h}%`,
+            animationDuration: `${m.dur}s`,
+            animationDelay: `${m.delay}s`,
+          }}
+        />
+      ))}
+
+      {/* the rainbow standing in the spray */}
+      <span
+        className="mapfx-bow"
+        style={{
+          left: `${FALL.left + 1.4}%`,
+          top: `${FALL.base + 0.6}%`,
+          width: '7.5%',
+          height: '3.2%',
+        }}
+      />
+
+      {/* rings spreading off the impact, across the painted foam */}
+      {[0, 1, 2].map((i) => (
+        <span
+          key={`ripple${i}`}
+          className="mapfx-ripple"
+          style={{
+            left: `${FALL.left + 0.8}%`,
+            top: `${FALL.pool}%`,
+            width: '7%',
+            height: '1.9%',
+            animationDuration: '4.2s',
+            animationDelay: `${i * 1.4}s`,
+          }}
+        />
+      ))}
+
+      {/* spray thrown up off the rocks, arcing out over the pool */}
+      {Array.from({ length: 16 }, (_, i) => {
+        const spread = (rng() - 0.5) * FALL.width * 1.9;
+        return (
+          <span
+            key={`spray${i}`}
+            className="mapfx-spray"
+            style={{
+              left: `${FALL.left + spread}%`,
+              top: `${FALL.base - 0.3 + rng() * 1.4}%`,
+              width: `${0.9 + rng() * 1.1}%`,
+              animationDelay: `${rng() * 2.6}s`,
+              animationDuration: `${1.9 + rng() * 1.4}s`,
+            }}
+          />
+        );
+      })}
     </>
   );
 }

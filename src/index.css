@@ -683,12 +683,116 @@
     transform: translate(-50%, -50%);
   }
 
-  /* falling water */
+  /* ------------------------------------------------------------- waterfall
+
+     Rebuilt against the artwork rather than by eye. Pixel-sampling the
+     illustration puts the lip at y 35.5-36.5, the water column at x 7.4-11.8,
+     and painted foam in the plunge pool from y 42 to 46 spreading right to
+     x 15. The old streaks ran x 8.3-12.5 starting at y 32.5 — which is still
+     river, above the drop — so half of them fell down bare rock beside the
+     falls and all of them started in mid-air above the lip.
+
+     Eight layers, because a waterfall is not one thing: the water goes over an
+     edge, accelerates, becomes a mass rather than lines, hits, throws spray
+     up, and hangs mist that catches the light. */
+
+  /* the lip — bright, where the river turns over the edge */
+  .mapfx-crest {
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, rgba(238, 250, 255, 0.9) 22%, rgba(255, 255, 255, 0.95) 50%, rgba(238, 250, 255, 0.9) 78%, transparent);
+    filter: blur(1.5px);
+    animation: fx-crest 4.5s ease-in-out infinite;
+  }
+  @keyframes fx-crest {
+    0%, 100% { transform: translate(-50%, -50%) scaleY(0.85); opacity: 0.55; }
+    50% { transform: translate(-50%, -50%) scaleY(1.15); opacity: 0.85; }
+  }
+
+  /* falling water.
+
+     `ease-in` because water accelerates — the old `linear` is why it read as
+     a texture scrolling past rather than as anything falling. Each streak also
+     stretches as it drops, which is what real falling water does and what sells
+     the acceleration more than the timing alone. */
   .mapfx-fall {
     border-radius: 999px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(226, 245, 255, 0.95) 45%, rgba(255, 255, 255, 0) 100%);
     transform-origin: top center;
-    animation: fx-fall linear infinite;
+    animation: fx-fall cubic-bezier(0.45, 0, 0.85, 0.4) infinite;
+  }
+
+  /* the veil — a soft sheet over the streaks so they read as one body of
+     water instead of separate lines. Scrolls slower than the streaks do. */
+  .mapfx-veil {
+    background: linear-gradient(to bottom, rgba(232, 246, 252, 0) 0%, rgba(232, 246, 252, 0.34) 30%, rgba(214, 238, 250, 0.28) 70%, rgba(232, 246, 252, 0) 100%);
+    filter: blur(2.5px);
+    animation: fx-veil 2.6s linear infinite;
+  }
+  @keyframes fx-veil {
+    0% { transform: translate(-50%, -50%) translateY(-8%); opacity: 0.5; }
+    50% { opacity: 0.75; }
+    100% { transform: translate(-50%, -50%) translateY(8%); opacity: 0.5; }
+  }
+
+  /* impact — the bright bloom where the column lands */
+  .mapfx-impact {
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.9) 0%, rgba(226, 245, 255, 0.45) 40%, transparent 72%);
+    filter: blur(3px);
+    animation: fx-impact ease-out infinite;
+  }
+  @keyframes fx-impact {
+    0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.35; }
+    45% { transform: translate(-50%, -50%) scale(1.25); opacity: 0.8; }
+  }
+
+  /* mist hanging over the pool, backlit */
+  .mapfx-mistball {
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(248, 253, 255, 0.55) 0%, rgba(226, 243, 252, 0.28) 45%, transparent 72%);
+    filter: blur(6px);
+    animation: fx-mistball ease-in-out infinite;
+  }
+  @keyframes fx-mistball {
+    0%, 100% { transform: translate(-50%, -50%) scale(0.9) translateY(0); opacity: 0.4; }
+    50% { transform: translate(-50%, -50%) scale(1.2) translateY(-8%); opacity: 0.7; }
+  }
+
+  /* ripple rings spreading across the pool from the impact */
+  .mapfx-ripple {
+    border-radius: 50%;
+    border: 1px solid rgba(236, 250, 255, 0.5);
+    animation: fx-ripple ease-out infinite;
+  }
+  @keyframes fx-ripple {
+    0% { transform: translate(-50%, -50%) scale(0.25); opacity: 0; }
+    18% { opacity: 0.65; }
+    100% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; }
+  }
+
+  /* the rainbow that stands in the spray when the light is right */
+  .mapfx-bow {
+    border-radius: 999px 999px 0 0;
+    background: conic-gradient(
+      from 270deg at 50% 100%,
+      transparent 0deg,
+      rgba(255, 138, 128, 0.34) 18deg,
+      rgba(255, 214, 120, 0.32) 30deg,
+      rgba(150, 240, 170, 0.3) 42deg,
+      rgba(130, 200, 255, 0.32) 54deg,
+      rgba(198, 158, 255, 0.3) 66deg,
+      transparent 84deg
+    );
+    mask-image: radial-gradient(ellipse 100% 100% at 50% 100%, transparent 58%, #000 62%, #000 76%, transparent 82%);
+    -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 100%, transparent 58%, #000 62%, #000 76%, transparent 82%);
+    filter: blur(1.2px);
+    animation: fx-bow 13s ease-in-out infinite;
+  }
+  @keyframes fx-bow {
+    0%, 100% { transform: translate(-50%, -50%) scale(0.94); opacity: 0; }
+    /* only present while the mist is thick enough to hold it */
+    38%, 62% { opacity: 0.75; }
+    50% { transform: translate(-50%, -50%) scale(1.06); }
   }
   @keyframes fx-fall {
     0% { transform: translate(-50%, -110%) scaleY(0.5); opacity: 0; }
