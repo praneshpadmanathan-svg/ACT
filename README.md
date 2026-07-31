@@ -48,7 +48,7 @@ Every question explains **all four choices**, not just the credited one.
 - **Adaptive drills** — mixed drills weight question selection toward topics you get wrong, so practice drifts to where it pays.
 - **Spaced review** — anything you miss enters a Leitner queue (1 → 3 → 7 → 16 → 35 days) and comes back until you own it.
 - **Timed tests** — real section pacing, no feedback until you finish, then a scored report with a topic breakdown. The timer runs off a wall-clock deadline, so backgrounding the tab doesn't buy extra minutes.
-- **Boss duels** — each region has a guardian that wakes once every landmark in it is cleared. You stand on the left, it stands on the right, and the questions are the weapons: a correct answer lands a hit, a wrong one lets it hit back. Ten hits to fell it, three to fall. Losing costs nothing but the attempt.
+- **Boss duels** — each region has a guardian standing at the end of its road, marked on the map itself: dormant while landmarks remain, awake once the region is cleared, felled once beaten. You stand on the left, it stands on the right, and the questions are the weapons: a correct answer lands a hit, a wrong one lets it hit back. Ten hits to fell it, three to fall. Losing costs nothing but the attempt.
 - **A quest chain** — nine objectives ending at the full timed trial, so there is something to actually do to reach the end: take your first landmark, hold four, break a Seal, push to twelve, a second Seal, halfway, all four Seals, the whole map, the trial. The Seals are the region guardians, so the story and the boss duels point at the same thing. The current objective sits on the map with a progress bar and Wizzy leads with it. Beats shake the scene — softly for a tremor, hard for a Seal breaking — and nine dispatches keep the world moving between them. Nothing is ever locked behind the story: every objective is something you would do anyway.
 - **Progression** — XP, seven ranks, day streaks, 15 achievements, and an estimated composite derived from your actual accuracy.
 - **Accounts** — Supabase when configured, otherwise salted-and-hashed accounts kept on the device. Progress is stored per profile, so two people can share a browser without overwriting each other. Guest mode needs no account at all.
@@ -143,6 +143,7 @@ src/
     DiscoveryLayer.tsx  discovery markers, the reveal card, and regional mist
     RoadChooser.tsx     pick which region to set out from
     MapFx.tsx           living scenery: water, embers, glow, fireflies
+    MapJournal.tsx      discovery list and the legend for the map’s marks
     Sigils.tsx          drawn lock / cleared / mastered / crown marks
     bosses.ts           the four region guardians
     BossArt.tsx         each boss drawn as SVG, with hit/lunge/defeat states

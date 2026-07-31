@@ -17,10 +17,13 @@ import { useNavigate } from '@/lib/router';
 import { sfx } from '@/lib/sfx';
 import { clamp, cx } from '@/lib/utils';
 import type { SectionId, Zone } from '@/types';
-import { REGIONS, REGION_ORDER, SUMMIT_AT } from './mapData';
+import { GUARDIAN_AT, REGIONS, REGION_ORDER, SUMMIT_AT } from './mapData';
+import { bossFor } from './bosses';
+import { BossArt } from './BossArt';
 import { activeQuest } from './story';
 import { DISCOVERIES } from './discoveries';
 import { DiscoveryLayer } from './DiscoveryLayer';
+import { MapJournal } from './MapJournal';
 import { m, SPRING } from '@/lib/motion';
 import { MapFx } from './MapFx';
 import { ClearedSigil, CrownSigil, LockSigil, MasterSigil } from './Sigils';
@@ -144,6 +147,7 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
   }, [progress.zonesCleared]);
 
   const foundCount = progress.discovered?.length ?? 0;
+  const [journalOpen, setJournalOpen] = useState(false);
 
   const frameRef = useRef<HTMLDivElement>(null);
   /* The frame is `fixed inset-0`, so it is always exactly the viewport —
@@ -210,6 +214,77 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
     return () => window.removeEventListener('resize', onResize);
   }, [clampView]);
 
+  /* Declared before the keyboard handler below, which depends on it. */
+  const zoomBy = useCallback(
+    (factor: number) => {
+      sfx.tick();
+      setView((v) => clampView({ ...v, zoom: v.zoom * factor }, frame));
+    },
+    [clampView, frame],
+  );
+
+  /* ------------------------------------------------------------ keyboard
+
+     The map had no keyboard handling at all: pan and zoom were pointer-only, so
+     someone navigating by keyboard could tab between landmark pins but could
+     not move the view to see where any of them were.
+
+     Arrows pan, +/- zoom, 0 recentres on the traveller. Typing keys are left
+     alone, and anything with a modifier is left to the browser. */
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const target = e.target as HTMLElement | null;
+      if (target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) return;
+      // A dialog is open over the map — it owns the keyboard.
+      if (document.querySelector('[role="dialog"][aria-modal="true"]')) return;
+
+      const STEP = 90;
+      switch (e.key) {
+        case 'ArrowLeft':
+        case 'ArrowRight':
+        case 'ArrowUp':
+        case 'ArrowDown': {
+          e.preventDefault();
+          const dx = e.key === 'ArrowLeft' ? STEP : e.key === 'ArrowRight' ? -STEP : 0;
+          const dy = e.key === 'ArrowUp' ? STEP : e.key === 'ArrowDown' ? -STEP : 0;
+          setView((v) => clampView({ ...v, x: v.x + dx, y: v.y + dy }, frame));
+          break;
+        }
+        case '+':
+        case '=':
+          e.preventDefault();
+          zoomBy(1.35);
+          break;
+        case '-':
+        case '_':
+          e.preventDefault();
+          zoomBy(1 / 1.35);
+          break;
+        case '0': {
+          e.preventDefault();
+          const t = current ?? { x: SUMMIT_AT[0], y: SUMMIT_AT[1] };
+          centreOn(t.x, t.y, 1.8);
+          break;
+        }
+        default:
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [clampView, frame, zoomBy, centreOn, current]);
+
+  /* Focusing a pin with the keyboard brings it into view — otherwise tabbing
+     moves an invisible focus ring around a map that never scrolls. */
+  const revealOnFocus = useCallback(
+    (x: number, y: number) => (e: React.FocusEvent) => {
+      // Only for keyboard focus; a click already put the pin under the cursor.
+      if (!e.target.matches(':focus-visible')) return;
+      centreOn(x, y, Math.max(view.zoom, 1.4));
+    },
+    [centreOn, view.zoom],
+  );
+
   /* ------------------------------------------------------------ gestures */
 
   const pointers = useRef(new Map<number, { x: number; y: number }>());
@@ -273,10 +348,6 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
     navigate({ name: 'zone', zone: pin.zone.id });
   };
 
-  const zoomBy = (factor: number) => {
-    sfx.tick();
-    setView((v) => clampView({ ...v, zoom: v.zoom * factor }, frame));
-  };
 
   /* Cover scale: the factor that makes the portrait map fill a landscape
      frame at zoom 1. Multiplied by the user's zoom for the final transform. */
@@ -351,6 +422,7 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
               key={pin.zone.id}
               type="button"
               onClick={() => openZone(pin)}
+              onFocus={revealOnFocus(pin.x, pin.y)}
               aria-disabled={pin.state === 'locked'}
               aria-label={
                 pin.state === 'locked'
@@ -398,6 +470,76 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
           );
         })}
 
+        {/* The four guardians.
+
+            The story calls these the Seals and the whole quest chain turns on
+            them, but they were only reachable from the region list — so the
+            spine of the game was invisible on the map itself. Dormant while
+            landmarks remain, awake once the region is clear, felled once
+            beaten. */}
+        {REGION_ORDER.map((id) => {
+          const boss = bossFor(id);
+          const spot = GUARDIAN_AT[id];
+          if (!boss || !spot) return null;
+          const done = clearedByRegion[id] ?? 0;
+          const awake = done >= 1;
+          const felled = progress.achievements.includes(`boss-${boss.id}`);
+
+          return (
+            <button
+              key={`guardian-${id}`}
+              type="button"
+              onClick={() => {
+                if (moved.current) return;
+                if (!awake) {
+                  sfx.locked();
+                  return;
+                }
+                sfx.select();
+                navigate({ name: 'boss', section: id });
+              }}
+              aria-disabled={!awake}
+              aria-label={
+                felled
+                  ? `${boss.name} — defeated. Fight again.`
+                  : awake
+                    ? `${boss.name} — awake and waiting`
+                    : `${boss.name} — sealed. Clear every landmark in ${REGIONS[id].title} first.`
+              }
+              className={cx(
+                'guardian group',
+                felled && 'guardian-felled',
+                !felled && awake && 'guardian-awake',
+                !awake && 'guardian-sealed',
+              )}
+              style={{ left: `${spot[0]}%`, top: `${spot[1]}%` }}
+            >
+              {awake && !felled && (
+                <span
+                  className="pointer-events-none absolute inset-0 animate-pulseRing rounded-full border-2"
+                  style={{ borderColor: boss.color }}
+                  aria-hidden="true"
+                />
+              )}
+              <span className="guardian-art" aria-hidden="true">
+                <BossArt section={id} state={felled ? 'defeated' : 'idle'} />
+              </span>
+              <span className="pin-card">
+                <span className="block font-display text-[13px] font-semibold leading-tight text-ink">
+                  {boss.name}
+                </span>
+                <span className="mt-0.5 block font-read text-[12.5px] leading-snug text-ink-soft">
+                  {felled
+                    ? 'Seal broken · fight again'
+                    : awake
+                      ? 'Awake — the Seal is yours to take'
+                      : `Sealed · ${Math.round(done * 100)}% of the road walked`}
+                </span>
+              </span>
+            </button>
+          );
+        })}
+
         {/* the summit */}
         <button
           type="button"
@@ -427,11 +569,19 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
           </span>
         </button>
 
-        {/* the traveller */}
+        {/* The traveller.
+
+            He used to jump to the new landmark the instant one was cleared.
+            Animating left/top means he actually walks the distance, so clearing
+            a zone visibly advances you across the world instead of teleporting
+            you. Percent-based, so it stays correct at any zoom. */}
         {current && (
-          <div
+          <m.div
             className="pointer-events-none absolute z-[15]"
-            style={{ left: `${current.x}%`, top: `${current.y}%`, transform: 'translate(-50%, -100%)' }}
+            style={{ transform: 'translate(-50%, -100%)' }}
+            initial={false}
+            animate={{ left: `${current.x}%`, top: `${current.y}%` }}
+            transition={{ type: 'spring', stiffness: 55, damping: 18, mass: 1.1 }}
           >
             {/* 26px, not the 54px this used to be. Composited against the
                 village at four candidate widths: at 54 the traveller stood as
@@ -445,7 +595,7 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
               style={{ filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.55))' }}
               draggable={false}
             />
-          </div>
+          </m.div>
         )}
       </div>
 
@@ -526,14 +676,24 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
             <span className="ml-1 font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint">
               landmarks
             </span>
-            <span className="ml-2 border-l border-leather-700 pl-2">
+            {/* Opens the journal: what there is to find, and what the marks on
+                the map mean. */}
+            <button
+              type="button"
+              onClick={() => {
+                sfx.page();
+                setJournalOpen(true);
+              }}
+              className="ml-2 border-l border-leather-700 pl-2 transition-colors hover:text-parchment"
+              aria-label={`Journal — ${foundCount} of ${DISCOVERIES.length} discoveries found`}
+            >
               <span className="num text-[15px] text-gold-light">{foundCount}</span>
               <span className="text-ink-faint">/</span>
               <span className="num text-[15px] text-parchment-dim">{DISCOVERIES.length}</span>
               <span className="ml-1 font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint">
                 found
               </span>
-            </span>
+            </button>
             {progress.dayStreak > 0 && (
               <span className="ml-2 border-l border-leather-700 pl-2 font-script text-[11px] uppercase tracking-[0.14em] text-desert">
                 {progress.dayStreak}d streak
@@ -561,6 +721,8 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
           </div>
         </div>
       </div>
+
+      {journalOpen && <MapJournal onClose={() => setJournalOpen(false)} />}
     </main>
   );
 }

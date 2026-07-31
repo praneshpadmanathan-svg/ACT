@@ -23,13 +23,19 @@ import type { SectionId } from '@/types';
 import { DISCOVERIES, type Discovery } from './discoveries';
 import { REGIONS, REGION_ORDER } from './mapData';
 
-/* Vertical band each region's mist covers, in map percent. Read off the same
-   terrain crops the landmark pins were placed from. */
+/* Vertical band each region's mist covers, in map percent, from the same
+   terrain crops the landmark pins were placed from.
+
+   The bands deliberately overrun their region and overlap their neighbours by
+   roughly 8%. Each band's edges are feathered to nothing in CSS, so butting
+   them together exactly would leave a transparent seam along every boundary —
+   a visible horizontal line across the map, which is the opposite of weather.
+   Overlapping means the feathers cross instead. */
 const MIST_BANDS: Record<SectionId, { top: number; height: number }> = {
-  english: { top: 0, height: 23 },
-  reading: { top: 23, height: 20 },
-  math: { top: 43, height: 20 },
-  science: { top: 59, height: 22 },
+  english: { top: -5, height: 32 },
+  reading: { top: 19, height: 28 },
+  math: { top: 39, height: 26 },
+  science: { top: 55, height: 32 },
 };
 
 interface Props {

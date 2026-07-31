@@ -103,6 +103,17 @@ export const REGIONS: Record<SectionId, RegionMeta> = {
 
 export const REGION_ORDER: SectionId[] = ['english', 'reading', 'math', 'science'];
 
+/* Where each region's guardian stands: just past its last landmark, so it reads
+   as the thing at the end of that road. Checked against the illustration with
+   every pin and discovery composited alongside — all four are on land and clear
+   of other markers. The Seals in the story are these four. */
+export const GUARDIAN_AT: Record<SectionId, [number, number]> = {
+  english: [79, 19],
+  reading: [82, 36],
+  math: [93, 50],
+  science: [84, 71],
+};
+
 /** Decorative drifting clouds: [topPercent, widthPx, opacity, durationSec]. */
 export const CLOUDS: [number, number, number, number][] = [
   [4, 150, 0.34, 132],

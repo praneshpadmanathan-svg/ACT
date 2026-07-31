@@ -966,6 +966,47 @@
      the woods plaque was genuinely hard to read. A ring of shadows puts a
      near-opaque light plate immediately around every glyph, which brings the
      effective backdrop to ~#e4dfc6 or lighter everywhere: 9.3:1 at worst. */
+  /* ------------------------------------------------------------- guardians
+
+     Bigger than a landmark pin, because a guardian is not a landmark — it is
+     the thing at the end of the road. Sits above the pins so it is never
+     buried by one. */
+
+  .guardian {
+    @apply absolute z-[12] flex -translate-x-1/2 -translate-y-1/2 cursor-pointer
+           items-center justify-center rounded-full border-2 transition-transform duration-150;
+    width: 54px;
+    height: 54px;
+    background: radial-gradient(circle at 50% 35%, rgba(46, 37, 26, 0.94), rgba(14, 11, 7, 0.96));
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.55);
+  }
+  .guardian:hover,
+  .guardian:focus-visible {
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+  .guardian-art {
+    @apply block w-[38px];
+  }
+
+  .guardian-awake {
+    border-color: theme('colors.gold.bright');
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.55), 0 0 20px rgba(242, 207, 91, 0.35);
+  }
+  .guardian-felled {
+    @apply border-leather-600;
+    filter: grayscale(0.7);
+    opacity: 0.75;
+  }
+  .guardian-sealed {
+    @apply cursor-not-allowed border-leather-700;
+    filter: grayscale(1) brightness(0.55);
+    opacity: 0.7;
+  }
+  .guardian:hover .pin-card,
+  .guardian:focus-visible .pin-card {
+    @apply block;
+  }
+
   /* ------------------------------------------------------- exploration layer
 
      A discovery you have not found is a glint: enough to catch the eye while
@@ -1005,21 +1046,31 @@
   }
 
   /* Cloud over ground you have not walked. Sits above the artwork but below the
-     pins, so a landmark is always reachable even while its region is misted. */
+     pins, so a landmark is always reachable even while its region is misted.
+
+     The bands are rectangles at fixed vertical ranges, which on their own read
+     as horizontal stripes rather than weather. The mask feathers the top and
+     bottom edges to nothing, so a band dissolves into its neighbours and into
+     cleared ground instead of ending on a line. The overlapping radial blobs
+     are what stop the remaining edges looking straight. */
   .mapfx-mist {
     @apply pointer-events-none absolute inset-x-0 z-[3];
     background:
-      radial-gradient(ellipse at 20% 40%, rgba(226, 222, 210, 0.95), transparent 62%),
-      radial-gradient(ellipse at 62% 55%, rgba(214, 210, 198, 0.92), transparent 58%),
-      radial-gradient(ellipse at 88% 38%, rgba(232, 228, 216, 0.9), transparent 60%),
-      linear-gradient(180deg, rgba(222, 218, 206, 0.82), rgba(206, 202, 190, 0.86));
-    filter: blur(2px);
+      radial-gradient(ellipse 42% 60% at 18% 38%, rgba(230, 226, 215, 0.96), transparent 70%),
+      radial-gradient(ellipse 50% 70% at 55% 62%, rgba(216, 212, 200, 0.94), transparent 68%),
+      radial-gradient(ellipse 40% 55% at 86% 34%, rgba(236, 232, 220, 0.92), transparent 70%),
+      radial-gradient(ellipse 55% 50% at 34% 82%, rgba(222, 218, 206, 0.9), transparent 72%),
+      linear-gradient(180deg, rgba(224, 220, 208, 0.86), rgba(208, 204, 192, 0.9));
+    filter: blur(7px);
     transition: opacity 900ms ease-out;
-    animation: fx-mist 26s ease-in-out infinite;
+    animation: fx-mist 30s ease-in-out infinite;
+    /* Feather both edges so the band never ends on a straight line. */
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
   }
   @keyframes fx-mist {
-    0%, 100% { background-position: 0% 0%, 0% 0%, 0% 0%, 0 0; }
-    50% { background-position: 6% 2%, -5% -2%, 4% 1%, 0 0; }
+    0%, 100% { background-position: 0 0, 0 0, 0 0, 0 0, 0 0; }
+    50% { background-position: 7% 3%, -6% -3%, 5% 2%, -4% 2%, 0 0; }
   }
 
   .region-plaque {
