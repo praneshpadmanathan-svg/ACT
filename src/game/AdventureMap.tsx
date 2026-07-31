@@ -24,7 +24,7 @@ import { activeQuest } from './story';
 import { DISCOVERIES } from './discoveries';
 import { DiscoveryLayer } from './DiscoveryLayer';
 import { MapJournal } from './MapJournal';
-import { m, SPRING } from '@/lib/motion';
+import { m, PIN_SPRING, SPRING, useReducedMotion } from '@/lib/motion';
 import { MapFx } from './MapFx';
 import { ClearedSigil, CrownSigil, LockSigil, MasterSigil } from './Sigils';
 
@@ -148,6 +148,7 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
 
   const foundCount = progress.discovered?.length ?? 0;
   const [journalOpen, setJournalOpen] = useState(false);
+  const reducedMotion = useReducedMotion();
 
   const frameRef = useRef<HTMLDivElement>(null);
   /* The frame is `fixed inset-0`, so it is always exactly the viewport —
@@ -418,24 +419,39 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
         {pins.map((pin, i) => {
           const mastered = pin.best === 100;
           return (
-            <button
+            <span
               key={pin.zone.id}
+              className="pin-anchor"
+              style={{ left: `${pin.x}%`, top: `${pin.y}%`, ['--pin-i' as string]: i }}
+            >
+            <m.button
               type="button"
               onClick={() => openZone(pin)}
               onFocus={revealOnFocus(pin.x, pin.y)}
               aria-disabled={pin.state === 'locked'}
-              aria-label={
-                pin.state === 'locked'
-                  ? `${pin.zone.name}, sealed — clear the landmark before it first`
-                  : `${pin.zone.name}: ${pin.zone.sub}${pin.best !== null ? `, best ${pin.best}%` : ''}`
-              }
+              /* A control should say it is a control before you press it, say
+                 it heard you within a frame, and settle rather than stop. The
+                 pins did none of the three — they were static discs that
+                 navigated, which is the most legible "web page, not game"
+                 signal there is.
+
+                 The release overshoot is free: damping below critical means
+                 letting go of 0.94 carries past 1 to about 1.06 before it
+                 settles. That is the follow-through, and it costs no second
+                 animation.
+
+                 Reduced motion swaps the channel rather than dropping the
+                 answer — silence would be worse than stillness. */
+              whileHover={reducedMotion ? { filter: 'brightness(1.18)' } : { scale: 1.09, y: -3 }}
+              whileTap={reducedMotion ? { filter: 'brightness(0.9)' } : { scale: 0.94, y: 0 }}
+              transition={reducedMotion ? { duration: 0.12 } : PIN_SPRING}
               className={cx(
                 'pin group animate-popIn',
                 pin.state === 'done' && 'pin-done',
                 pin.state === 'current' && 'pin-current',
                 pin.state === 'locked' && 'pin-locked',
               )}
-              style={{ left: `${pin.x}%`, top: `${pin.y}%`, animationDelay: `${i * 16}ms` }}
+              style={{ animationDelay: `${i * 16}ms` }}
             >
               {pin.state === 'current' && (
                 <span
@@ -466,7 +482,8 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
                       : pin.zone.sub}
                 </span>
               </span>
-            </button>
+            </m.button>
+            </span>
           );
         })}
 

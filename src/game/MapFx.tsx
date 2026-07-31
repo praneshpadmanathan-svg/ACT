@@ -322,32 +322,86 @@ function Crystals() {
 
 /* ---------------------------------------------------------------- volcano */
 
+/* The crater, found by sampling rather than by eye: the hottest pixels in the
+   desert band sit at x 81-82, y 41-43 — rgb(246,214,33) and rgb(240,116,45).
+   The heat shimmer used to sit at x 77.5, glowing over plain canyon rock four
+   percent away from the thing it was meant to be coming out of. */
+const CRATER = { x: 81.5, y: 42 };
+
 function Volcano() {
   const rng = seeded(233);
-  const embers = Array.from({ length: 12 }, (_, i) => ({
-    key: i,
-    left: 78.5 + rng() * 3.2,
-    delay: rng() * 4.5,
-    duration: 3 + rng() * 2.6,
-    size: 0.28 + rng() * 0.34,
-  }));
 
   return (
     <>
-      <span className="mapfx-heat" style={{ left: '77.5%', top: '40.5%' }} />
-      {embers.map((e) => (
+      {/* light spilling onto the rock, under everything else */}
+      <span
+        className="mapfx-craterlight"
+        style={{
+          left: `${CRATER.x}%`,
+          top: `${CRATER.y + 0.3}%`,
+          width: '11%',
+          height: '7%',
+          animationDuration: '5.5s',
+        }}
+      />
+
+      {/* the molten core */}
+      <span
+        className="mapfx-crater"
+        style={{
+          left: `${CRATER.x}%`,
+          top: `${CRATER.y}%`,
+          width: '3.2%',
+          height: '2%',
+          animationDuration: '4.2s',
+        }}
+      />
+
+      {/* heat shimmer, now actually above the crater */}
+      <span className="mapfx-heat" style={{ left: `${CRATER.x}%`, top: `${CRATER.y - 1.2}%` }} />
+
+      {/* the ash plume: several puffs on one long clock, leaning downwind */}
+      {Array.from({ length: 7 }, (_, i) => (
         <span
-          key={e.key}
-          className="mapfx-ember"
+          key={`plume${i}`}
+          className="mapfx-plume"
           style={{
-            left: `${e.left}%`,
-            top: '41.5%',
-            width: `${e.size}%`,
-            animationDelay: `${e.delay}s`,
-            animationDuration: `${e.duration}s`,
+            left: `${CRATER.x + (rng() - 0.5) * 1.4}%`,
+            top: `${CRATER.y - 0.6}%`,
+            width: `${2.2 + rng() * 1.8}%`,
+            height: `${1.6 + rng() * 1.2}%`,
+            animationDuration: `${9 + rng() * 6}s`,
+            animationDelay: `${-rng() * 12}s`,
           }}
         />
       ))}
+
+      {/* embers, rising from the crater rather than beside it */}
+      {Array.from({ length: 16 }, (_, i) => (
+        <span
+          key={`ember${i}`}
+          className="mapfx-ember"
+          style={{
+            left: `${CRATER.x + (rng() - 0.5) * 2.6}%`,
+            top: `${CRATER.y - 0.2}%`,
+            width: `${0.22 + rng() * 0.3}%`,
+            animationDelay: `${rng() * 5}s`,
+            animationDuration: `${2.6 + rng() * 2.8}s`,
+          }}
+        />
+      ))}
+
+      {/* and every twenty seconds or so, it throws */}
+      <span
+        className="mapfx-surge"
+        style={{
+          left: `${CRATER.x}%`,
+          top: `${CRATER.y - 0.4}%`,
+          width: '5%',
+          height: '3.2%',
+          animationDuration: '19s',
+        }}
+      />
     </>
   );
 }

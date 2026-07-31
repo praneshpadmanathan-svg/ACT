@@ -562,10 +562,20 @@
 
   /* A landmark pin. Sized in map-space pixels, because the whole world layer
      is scaled by one transform — a viewport-relative size would fight it. */
+  /* Position and transform, kept apart.
+
+     The pin used to carry both: `-translate-x-1/2 -translate-y-1/2` to sit on
+     its coordinate, and a CSS transition for its hover lift. That works until
+     something else wants to drive `transform` — Motion writes the whole
+     property, so a spring on `scale` would silently throw away the centring
+     and drop every pin half its width down and right. The anchor holds the
+     position; the button inside is free to be animated. */
+  .pin-anchor {
+    @apply absolute z-10;
+    transform: translate(-50%, -50%);
+  }
   .pin {
-    @apply absolute z-10 flex -translate-x-1/2 -translate-y-1/2 cursor-pointer
-           items-center justify-center rounded-full border-2 transition-transform
-           duration-150;
+    @apply relative flex cursor-pointer items-center justify-center rounded-full border-2;
     width: 34px;
     height: 34px;
     box-shadow: theme('boxShadow.pin');
@@ -681,6 +691,62 @@
   .mapfx > span {
     @apply pointer-events-none absolute block;
     transform: translate(-50%, -50%);
+  }
+
+  /* --------------------------------------------------------------- volcano
+
+     Same treatment as the waterfall, and the same discovery: the effects were
+     off the feature. Sampling for hot pixels (red high, blue low) puts the
+     crater at x 81.5, y 42 — the brightest are rgb(246,214,33) and
+     rgb(240,116,45) at x 81-82. The heat shimmer was at x 77.5, four percent
+     to the left, glowing over ordinary canyon rock. */
+
+  /* the molten core, breathing */
+  .mapfx-crater {
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 244, 190, 0.95) 0%, rgba(255, 176, 48, 0.75) 28%, rgba(226, 88, 30, 0.45) 55%, transparent 76%);
+    filter: blur(2px);
+    animation: fx-crater ease-in-out infinite;
+  }
+  @keyframes fx-crater {
+    0%, 100% { transform: translate(-50%, -50%) scale(0.88); opacity: 0.6; }
+    50% { transform: translate(-50%, -50%) scale(1.12); opacity: 0.95; }
+  }
+
+  /* light thrown onto the rock around the crater, so the glow lands on
+     something rather than floating */
+  .mapfx-craterlight {
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(255, 158, 62, 0.4) 0%, rgba(226, 88, 30, 0.16) 45%, transparent 72%);
+    filter: blur(7px);
+    mix-blend-mode: screen;
+    animation: fx-crater ease-in-out infinite;
+  }
+
+  /* an ash plume, leaning with the wind as it rises */
+  .mapfx-plume {
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(84, 72, 66, 0.5) 0%, rgba(104, 92, 84, 0.22) 50%, transparent 74%);
+    filter: blur(5px);
+    animation: fx-plume ease-out infinite;
+  }
+  @keyframes fx-plume {
+    0% { transform: translate(-50%, -50%) translate(0, 0) scale(0.35); opacity: 0; }
+    22% { opacity: 0.55; }
+    100% { transform: translate(-50%, -50%) translate(140%, -420%) scale(2.4); opacity: 0; }
+  }
+
+  /* the surge — every so often the crater flares and throws more up */
+  .mapfx-surge {
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 236, 170, 0.9) 0%, rgba(255, 150, 40, 0.5) 40%, transparent 70%);
+    filter: blur(4px);
+    animation: fx-surge ease-out infinite;
+  }
+  @keyframes fx-surge {
+    0%, 82%, 100% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+    88% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.85; }
+    94% { transform: translate(-50%, -50%) scale(1.9); opacity: 0.2; }
   }
 
   /* ------------------------------------------------------------- waterfall

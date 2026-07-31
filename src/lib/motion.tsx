@@ -36,7 +36,7 @@ const loadFeatures = () => import('./motionFeatures').then((mod) => mod.default)
 
    LazyMotion still keeps the heavy part out of the initial bundle, and `strict`
    below throws if a full `motion.*` component sneaks in. */
-export { AnimatePresence, m } from 'motion/react';
+export { AnimatePresence, m, useReducedMotion } from 'motion/react';
 
 export function MotionProvider({ children }: { children: ReactNode }) {
   return (
@@ -97,3 +97,13 @@ export const popItem = {
   initial: { opacity: 0, scale: 0.9 },
   animate: { opacity: 1, scale: 1, transition: SPRING_SNAP },
 } as const;
+
+/* Direct manipulation — a control answering a hand.
+
+   Stiff enough to reach its target in about 90ms, which is inside the window
+   where the response still feels like part of the press rather than a reaction
+   to it. Damping is deliberately below critical: releasing a pressed control
+   carries past its resting size by roughly 6% before settling, and that
+   overshoot is the follow-through. It falls out of the physics rather than
+   needing a second animation chained onto the first. */
+export const PIN_SPRING = { type: 'spring', stiffness: 380, damping: 18, mass: 0.8 } as const;
