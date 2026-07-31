@@ -71,7 +71,7 @@ export const REGIONS: Record<SectionId, RegionMeta> = {
     // cave on the right.
     pins: [
       [17, 30], [24, 35], [30, 26], [36, 32], [43, 36],
-      [52, 28], [58, 33], [70, 25], [76, 39.5],
+      [52, 28], [58, 33], [70, 25], [74, 38],
     ],
   },
   math: {
@@ -95,7 +95,7 @@ export const REGIONS: Record<SectionId, RegionMeta> = {
     // stone stair, and the citadel's observatory, telescope yard and clock
     // tower. Starts at x=19: anything further left is open sea, not cliff.
     pins: [
-      [19, 64], [21, 73], [33, 66], [37, 72.5], [42, 67],
+      [22, 64.5], [21, 73], [33, 66], [37, 72.5], [42, 67],
       [50, 72], [59, 64.5], [68, 70], [76, 63],
     ],
   },

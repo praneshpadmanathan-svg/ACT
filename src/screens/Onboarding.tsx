@@ -111,7 +111,7 @@ export function Onboarding() {
   const recommended = SECTION_BY_ID[fear];
 
   return (
-    <div className="relative isolate flex min-h-screen items-center justify-center overflow-hidden px-4 py-14 ">
+    <div className="relative isolate flex min-h-dvh items-center justify-center overflow-hidden px-4 py-14 ">
       <img src="/art/camp-bg.webp" alt="" className="absolute inset-0 h-full w-full select-none object-cover" draggable={false} />
       <div className="absolute inset-0 bg-leather-950/84" />
 

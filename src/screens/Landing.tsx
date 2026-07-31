@@ -208,7 +208,7 @@ export function Landing() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-dvh">
       <header className="absolute inset-x-0 top-0 z-30">
         <div className="shell flex h-16 items-center">
           <span className="flex items-center gap-2 font-display text-[16px] font-semibold tracking-wide text-parchment">
@@ -242,7 +242,7 @@ export function Landing() {
       </header>
 
       {/* ------------------------------------------------------------- hero */}
-      <section className="relative isolate flex min-h-[94vh] items-center overflow-hidden">
+      <section className="relative isolate flex min-h-[94dvh] items-center overflow-hidden">
         <img
           src="/art/landing-hero.webp"
           alt=""

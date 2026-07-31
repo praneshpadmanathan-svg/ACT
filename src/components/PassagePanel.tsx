@@ -18,7 +18,7 @@ export function PassagePanel({ passage }: { passage: Passage }) {
   const [openOnMobile, setOpenOnMobile] = useState(false);
 
   return (
-    <aside className="sheet overflow-hidden lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
+    <aside className="sheet overflow-hidden lg:sticky lg:top-20 lg:max-h-[calc(100dvh-6rem)] lg:overflow-y-auto">
       <div className="border-b-2 border-parchment-edge bg-[#efeae0] px-6 py-4">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">

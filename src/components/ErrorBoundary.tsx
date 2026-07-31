@@ -28,7 +28,7 @@ export class ErrorBoundary extends Component<Props, State> {
     if (!error) return this.props.children;
 
     return (
-      <div className="flex min-h-screen items-center justify-center px-4">
+      <div className="flex min-h-dvh items-center justify-center px-4">
         <div className="panel w-full max-w-lg p-7 text-center sm:p-9">
           <h1 className="heading text-[15px] text-blood-text">Something broke</h1>
           <p className="mt-5 text-[15px] leading-relaxed text-parchment-dim">

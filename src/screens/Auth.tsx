@@ -462,7 +462,7 @@ function Frame({
   children: ReactNode;
 }) {
   return (
-    <div className="relative isolate flex min-h-screen items-center justify-center overflow-hidden px-4 py-14">
+    <div className="relative isolate flex min-h-dvh items-center justify-center overflow-hidden px-4 py-14">
       <img
         src="/art/camp-bg.webp"
         alt=""

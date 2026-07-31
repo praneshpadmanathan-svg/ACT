@@ -51,7 +51,7 @@ export function MapJournal({ onClose }: { onClose: () => void }) {
       />
 
       <m.div
-        className="panel-lit relative z-10 flex max-h-[86vh] w-full max-w-2xl flex-col p-5 sm:p-6"
+        className="panel-lit relative z-10 flex max-h-[86dvh] w-full max-w-2xl flex-col p-5 sm:p-6"
         initial={{ opacity: 0, y: 20, scale: 0.97 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ type: 'spring', stiffness: 260, damping: 26 }}

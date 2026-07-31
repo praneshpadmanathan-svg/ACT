@@ -6,9 +6,10 @@
   "description": "Gamified prep for the 2025+ Enhanced ACT — study notes, adaptive drills, full-length tests and a world-map progression system.",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run check:anim && tsc -b && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc -b --noEmit"
+    "typecheck": "tsc -b --noEmit",
+    "check:anim": "node scripts/check-map-animations.mjs"
   },
   "dependencies": {
     "@fontsource-variable/newsreader": "^5.3.0",

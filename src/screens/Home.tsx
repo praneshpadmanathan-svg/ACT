@@ -42,7 +42,7 @@ export function Home() {
   const currentZone = current ? { id: current.zone.id, name: current.zone.name } : null;
 
   return (
-    <div className="relative isolate min-h-screen">
+    <div className="relative isolate min-h-dvh">
       {/* the tent */}
       <img
         src="/art/camp-bg.webp"

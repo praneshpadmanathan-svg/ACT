@@ -597,6 +597,33 @@
            bg-leather-950/85 px-3.5 py-2 shadow-card backdrop-blur;
   }
 
+  /* Keep the map's controls out from under the hardware.
+
+     index.html asks for `viewport-fit=cover` so the artwork can bleed into the
+     display cutout — which is right for the artwork and wrong for everything
+     drawn on top of it. Nothing here ever padded for the insets, so on a phone
+     with a Dynamic Island the exit button and the landmark counter sat under
+     it, and "find my traveller" sat under the home indicator. The map is the
+     screen this audience spends the most time on, and most of them are holding
+     a phone in portrait.
+
+     `max()` rather than a bare inset so the padding never collapses to nothing
+     on hardware that reports zero. */
+  .map-safe {
+    padding-top: max(0.75rem, env(safe-area-inset-top));
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+  }
+  @media (min-width: 640px) {
+    .map-safe {
+      padding-top: max(1.25rem, env(safe-area-inset-top));
+      padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+      padding-left: max(1.25rem, env(safe-area-inset-left));
+      padding-right: max(1.25rem, env(safe-area-inset-right));
+    }
+  }
+
   /* The current objective, sitting on the map. The story needs somewhere to
      live between overlays, or the quest chain is invisible while you work. */
   .quest-card {
@@ -731,8 +758,21 @@
     mix-blend-mode: screen;
     animation: fx-sparkle 5s ease-in-out infinite;
   }
+  /* Rests visible, not invisible.
+
+     `prefers-reduced-motion` collapses every animation to one near-zero
+     iteration, which parks an element on its 100% keyframe. This one ended at
+     `opacity: 0`, so all nine crystal sparkles vanished completely for
+     reduced-motion users and the crystal formations lost their only treatment.
+
+     Transient effects — a bird crossing, a leaf falling — are meant to end at
+     zero, and freezing one mid-flight would be worse. But a sparkle marks a
+     permanent feature, so it needs a resting state that survives stillness.
+     Checked the other 27: this was the only permanent feature drawn as a
+     transient. `fx-mist` sets no opacity at 100%, so the Grey — the one signal
+     that genuinely had to survive — persists at its base value already. */
   @keyframes fx-sparkle {
-    0%, 72%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.4) rotate(0deg); }
+    0%, 72%, 100% { opacity: 0.22; transform: translate(-50%, -50%) scale(0.8) rotate(0deg); }
     82% { opacity: 1; transform: translate(-50%, -50%) scale(1.15) rotate(45deg); }
     92% { opacity: 0.25; transform: translate(-50%, -50%) scale(0.7) rotate(70deg); }
   }
@@ -1153,13 +1193,22 @@
   }
 
   /* the banner over the citadel gate */
+  /* The banner had two faults stacked, and the first hid the second.
+
+     Its `animation` shorthand carried no <time>, so the computed duration was
+     0s and it had never once moved. Underneath that, the keyframes set
+     `transform` without re-including the `translate(-50%, -50%)` that
+     `.mapfx > span` applies for centring — so the moment anyone supplied the
+     missing duration, the banner would have jumped half its own size down and
+     right and stayed there. A dead animation concealing a trap for whoever
+     revived it. Both fixed together, which is the only safe order. */
   .mapfx-banner {
     transform-origin: 0% 50%;
-    animation: fx-banner ease-in-out infinite;
+    animation: fx-banner 3.4s ease-in-out infinite;
   }
   @keyframes fx-banner {
-    0%, 100% { transform: skewY(-4deg) scaleX(0.94); }
-    50% { transform: skewY(5deg) scaleX(1); }
+    0%, 100% { transform: translate(-50%, -50%) skewY(-4deg) scaleX(0.94); }
+    50% { transform: translate(-50%, -50%) skewY(5deg) scaleX(1); }
   }
 
   /* ------------------------------------------------- the Grey, made menacing
@@ -1178,12 +1227,27 @@
     opacity: 0;
     animation: fx-grey-flash ease-out infinite;
   }
+  /* One stab per cycle, not two.
+
+     It used to double — a rise to .75, a trough at .15, a second rise to .55 —
+     because real sheet lightning doubles. Both transitions clear the 10%
+     relative-luminance bar, so both count as flashes under WCAG 2.3.1, which
+     caps them at three in any one second.
+
+     Each element passed on its own: two flashes ~0.7s apart is 2/sec. But the
+     three banks run on independent 17s / 23s / 29s clocks, so their bursts
+     drift through one another, and roughly once every four minutes two bursts
+     overlapped and put four flashes inside a second. Over an hour on the map
+     that is about fifteen violations, for an audience of 13-to-17-year-olds.
+
+     One stab each caps the worst case at three simultaneous — at the limit
+     rather than over it — with no scheduler and no JavaScript. The doubling
+     was a nice touch that was not worth a seizure risk, and a single brighter
+     stab reads better anyway. */
   @keyframes fx-grey-flash {
     0%, 88%, 100% { opacity: 0; }
-    /* Two stabs close together, the way real sheet lightning doubles. */
-    90% { opacity: 0.75; }
-    92% { opacity: 0.15; }
-    94% { opacity: 0.55; }
+    91% { opacity: 0.8; }
+    95% { opacity: 0.1; }
   }
 
   .mapfx-grey-tendril {

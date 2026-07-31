@@ -612,7 +612,7 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
         aria-hidden="true"
       />
 
-      <div className="pointer-events-none absolute inset-0 flex flex-col justify-between p-3 sm:p-5">
+      <div className="map-safe pointer-events-none absolute inset-0 flex flex-col justify-between">
         <div className="flex items-start justify-between gap-3">
           {/* Top-left column: Camp, then the current objective beneath it. The
               quest card used to be centred in the middle of the map, which put

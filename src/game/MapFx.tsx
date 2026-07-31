@@ -77,7 +77,11 @@ const WATER_PATCHES: { left: number; top: number; w: number; h: number; delay: n
   { left: 4, top: 80, w: 26, h: 16, delay: 1.2 },
   { left: 55, top: 84, w: 40, h: 15, delay: 3.1 },
   { left: 72, top: 74, w: 24, h: 10, delay: 4.3 },
-  { left: 66, top: 8, w: 26, h: 9, delay: 1.8 },
+  /* Was { left: 66, top: 8, w: 26 }, which spans x 53-79 — pixel-sampling the
+     artwork there returns rgb(136,151,100), farmland. A specular water shimmer
+     was playing over a hillside. The river in this band actually runs x 76-88
+     at y 10.5-13.5, so the patch now sits on it. */
+  { left: 82, top: 12, w: 14, h: 6, delay: 1.8 },
 ];
 
 function Water() {
@@ -511,7 +515,7 @@ const GUSTS: { left: number; top: number; w: number; delay: number; dur: number 
   { left: 22, top: 11, w: 9, delay: 0, dur: 6.5 },
   { left: 63, top: 16, w: 11, delay: 2.2, dur: 7.4 },
   { left: 42, top: 12.5, w: 8, delay: 4.1, dur: 6 },
-  { left: 50, top: 72, w: 7, delay: 1.4, dur: 8 },
+  { left: 35, top: 13.5, w: 7, delay: 1.4, dur: 8 },  // was 50,72 — the lighthouse causeway, not open ground
 ];
 
 function Wind() {

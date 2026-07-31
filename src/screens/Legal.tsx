@@ -30,7 +30,7 @@ export function LegalScreen({ page }: { page: 'privacy' | 'terms' }) {
   const navigate = useNavigate();
 
   return (
-    <div className="relative isolate min-h-screen">
+    <div className="relative isolate min-h-dvh">
       <img
         src="/art/camp-bg.webp"
         alt=""

@@ -232,8 +232,19 @@ export function loadProgress(key: string = STORAGE_KEYS.progress): Progress {
   merged.storySeen = Array.isArray(merged.storySeen) ? merged.storySeen : [];
 
   /* Backfill the totals for anyone whose progress predates them. Without this
-     an established player would open the app to a lifetime count of zero. */
-  merged.tally = isTally(merged.tally) ? merged.tally : tallyFromAttempts(merged.attempts);
+     an established player would open the app to a lifetime count of zero.
+
+     Ask the *stored* record, not the merged one. `merged` is the stored record
+     spread over `emptyProgress()`, which always supplies a well-formed empty
+     tally — so testing `merged.tally` was asking "did the default I just
+     applied work?", which is always yes, and the backfill it guards never ran
+     once. The bug was invisible in testing because a new account looks
+     identical either way; it only showed on a record written before tallies
+     existed, which is every returning player.
+
+     General shape worth remembering: after spreading defaults, you can no
+     longer ask whether a field was present. Ask the input. */
+  merged.tally = isTally(stored?.tally) ? merged.tally : tallyFromAttempts(merged.attempts);
 
   /* Fold together topics that were the same skill under different spellings.
      Anyone who played before the two question banks agreed on a vocabulary has
