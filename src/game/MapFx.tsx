@@ -413,11 +413,12 @@ function Birds() {
         return (
           <span
             key={i}
-            className="mapfx-bird"
+            className="mapfx-crossing"
             style={{
               top: `${5 + rng() * 18}%`,
               animationDelay: `${i * 7 + rng() * 5}s`,
               animationDuration: `${34 + rng() * 22}s`,
+              ['--peak' as string]: 0.75,
             }}
           >
             {/* a wing pair, flapping on its own clock */}
@@ -464,20 +465,21 @@ function Clouds() {
         return (
           <span
             key={i}
-            className="mapfx-cloud"
+            className="mapfx-crossing"
             style={{
               top: `${top}%`,
-              width: `${width}px`,
-              opacity,
               animationDuration: `${duration}s`,
               animationDelay: `${-rng() * duration}s`,
+              ['--peak' as string]: opacity,
             }}
           >
-            <svg viewBox="0 0 120 60" aria-hidden="true">
-              {puffs.map((p, j) => (
-                <circle key={j} cx={p.x + 28} cy={p.y + 22} r={p.r} fill="#fffaf0" />
-              ))}
-            </svg>
+            <span className="mapfx-cloud-body" style={{ width: `${width}px` }}>
+              <svg viewBox="0 0 120 60" aria-hidden="true">
+                {puffs.map((p, j) => (
+                  <circle key={j} cx={p.x + 28} cy={p.y + 22} r={p.r} fill="#fffaf0" />
+                ))}
+              </svg>
+            </span>
           </span>
         );
       })}
@@ -485,15 +487,16 @@ function Clouds() {
       {CLOUDS.filter((_, i) => i % 2 === 0).map(([top, width, opacity, duration], i) => (
         <span
           key={`shadow${i}`}
-          className="mapfx-cloud-shadow"
+          className="mapfx-crossing"
           style={{
             top: `${top + 3.5}%`,
-            width: `${width * 1.15}px`,
-            opacity: opacity * 0.5,
             animationDuration: `${duration}s`,
             animationDelay: `${-rng() * duration}s`,
+            ['--peak' as string]: opacity * 0.5,
           }}
-        />
+        >
+          <span className="mapfx-cloud-shadow" style={{ width: `${width * 1.15}px` }} />
+        </span>
       ))}
     </>
   );
@@ -569,11 +572,145 @@ function Windows() {
 
 function Sail() {
   return (
-    <span className="mapfx-sail" style={{ top: '78%' }}>
+    <span className="mapfx-sail" style={{ top: '79.5%' }}>
       <svg viewBox="0 0 30 26" width="22" height="19" aria-hidden="true">
         <path d="M15 2 L15 19" stroke="rgba(48,36,24,.6)" strokeWidth="1.4" />
         <path d="M15 3 Q25 9 15 17 Z" fill="rgba(250,242,226,.7)" stroke="rgba(48,36,24,.5)" strokeWidth="1" />
         <path d="M5 19 Q15 25 25 19 Z" fill="rgba(70,50,32,.6)" />
+      </svg>
+    </span>
+  );
+}
+
+/* ------------------------------------------------------------ new weather */
+
+/** Rain squalls dragging across the open water, on a crossing track. */
+function Squalls() {
+  const rng = seeded(9041);
+  return (
+    <>
+      {[
+        { top: 70, w: 26, h: 13, dur: 74 },
+        { top: 84, w: 34, h: 15, dur: 96 },
+      ].map((s, i) => (
+        <span
+          key={i}
+          className="mapfx-crossing"
+          style={{
+            top: `${s.top}%`,
+            animationDuration: `${s.dur}s`,
+            animationDelay: `${-rng() * s.dur}s`,
+            ['--peak' as string]: 0.5,
+          }}
+        >
+          <span
+            className="mapfx-squall"
+            style={{ display: 'block', width: `${s.w}%`, height: `${s.h}vh` }}
+          />
+        </span>
+      ))}
+    </>
+  );
+}
+
+/** The aurora over the northern sky. Slow enough to notice only on the second
+ *  look, which is the right speed for something that is meant to be scenery. */
+function Aurora() {
+  return (
+    <>
+      {[
+        { left: 32, top: 6, w: 54, h: 13, dur: 42, delay: 0 },
+        { left: 66, top: 4, w: 44, h: 10, dur: 55, delay: -18 },
+      ].map((a, i) => (
+        <span
+          key={i}
+          className="mapfx-aurora"
+          style={{
+            left: `${a.left}%`,
+            top: `${a.top}%`,
+            width: `${a.w}%`,
+            height: `${a.h}%`,
+            animationDuration: `${a.dur}s`,
+            animationDelay: `${a.delay}s`,
+          }}
+        />
+      ))}
+    </>
+  );
+}
+
+/** Butterflies over the forest clearings, wandering rather than crossing. */
+function Butterflies() {
+  const rng = seeded(4477);
+  return (
+    <>
+      {Array.from({ length: 5 }, (_, i) => {
+        const dur = 16 + rng() * 10;
+        return (
+          <span
+            key={i}
+            className="mapfx-flutter"
+            style={{
+              left: `${18 + rng() * 20}%`,
+              top: `${26 + rng() * 12}%`,
+              animationDuration: `${dur}s`,
+              animationDelay: `${-rng() * dur}s`,
+            }}
+          >
+            <svg width="9" height="8" viewBox="0 0 12 10" aria-hidden="true">
+              <path
+                d="M6 5 Q1 0 1.5 4.5 Q2 8.5 6 5 Q10 8.5 10.5 4.5 Q11 0 6 5Z"
+                fill={i % 2 ? 'rgba(255,214,120,.85)' : 'rgba(198,166,255,.8)'}
+              />
+            </svg>
+          </span>
+        );
+      })}
+    </>
+  );
+}
+
+/** Tumbleweed along the desert floor. Rides a crossing track so the roll
+ *  covers the desert and stops there rather than rolling into the sea. */
+function Tumbleweed() {
+  const rng = seeded(3312);
+  return (
+    <>
+      {[
+        { top: 52, size: 11, dur: 46 },
+        { top: 58.5, size: 8, dur: 61 },
+      ].map((t, i) => (
+        <span
+          key={i}
+          className="mapfx-tumble"
+          style={{
+            left: '38%',
+            top: `${t.top}%`,
+            width: '30%',
+            height: 0,
+            transform: 'none',
+            animationDuration: `${t.dur}s`,
+            animationDelay: `${-rng() * t.dur}s`,
+          }}
+        >
+          <svg width={t.size} height={t.size} viewBox="0 0 14 14" aria-hidden="true">
+            <g fill="none" stroke="rgba(122,92,52,.7)" strokeWidth="1.1" strokeLinecap="round">
+              <circle cx="7" cy="7" r="5.4" />
+              <path d="M2 5 L12 9 M2 9 L12 5 M7 1.6 L7 12.4" />
+            </g>
+          </svg>
+        </span>
+      ))}
+    </>
+  );
+}
+
+/** The banner over the citadel gate, at the Summit. */
+function Banner() {
+  return (
+    <span className="mapfx-banner" style={{ left: '88.5%', top: '92%' }}>
+      <svg width="16" height="12" viewBox="0 0 16 12" aria-hidden="true">
+        <path d="M0 0 H15 L11.5 6 L15 12 H0 Z" fill="rgba(232,195,74,.75)" />
       </svg>
     </span>
   );
@@ -602,7 +739,12 @@ export const MapFx = memo(function MapFx() {
       <Windows />
       <Wind />
       <Birds />
+      <Butterflies />
+      <Tumbleweed />
+      <Banner />
       <Clouds />
+      <Squalls />
+      <Aurora />
       <ShootingStar />
     </div>
   );

@@ -868,17 +868,31 @@
     100% { opacity: 0; }
   }
 
-  /* distant birds crossing the sky. The shape is drawn in MapFx — this used to
-     be a text glyph, which read as letters drifting past. */
-  .mapfx-bird {
-    left: -4%;
+  /* Anything that crosses the whole map, travelling in the map's own units.
+
+     These used to move by `112vw` / `128vw`. Viewport width has no relationship
+     to map width inside a layer that the map pans and zooms with a CSS
+     transform, so every crossing thing covered an arbitrary distance: birds and
+     clouds stopped short or shot far past the coast, and it changed every time
+     you zoomed or resized. Percentages of the *viewport* describing motion
+     across the *map* was the bug, in three places.
+
+     A track fixes it by construction. The animated element is a strip 124% of
+     the map wide with its artwork pinned to the left edge, so `translateX(100%)`
+     — 100% of its own width, which is defined in map units — is exactly one
+     crossing, at every zoom, on every screen. */
+  .mapfx-crossing {
+    left: -12%;
+    width: 124%;
+    height: 0;
     line-height: 0;
-    animation: fx-cross linear infinite;
+    transform: none;
+    animation: fx-crossing linear infinite;
   }
-  @keyframes fx-cross {
-    0% { transform: translate(-50%, -50%) translateX(0); opacity: 0; }
-    8%, 92% { opacity: 0.75; }
-    100% { transform: translate(-50%, -50%) translateX(112vw); opacity: 0; }
+  @keyframes fx-crossing {
+    0% { transform: translateX(0); opacity: 0; }
+    8%, 92% { opacity: var(--peak, 0.75); }
+    100% { transform: translateX(100%); opacity: 0; }
   }
   /* the wing beat, on its own clock so the flock is not in lockstep */
   .mapfx-wing {
@@ -891,30 +905,24 @@
     50% { transform: scaleY(0.34); }
   }
 
-  /* drifting cloud cover */
-  .mapfx-cloud {
-    left: -12%;
+  /* drifting cloud cover — the body rides a crossing track */
+  .mapfx-cloud-body {
+    display: block;
     aspect-ratio: 2;
     filter: blur(5px);
-    animation: fx-drift linear infinite;
   }
-  .mapfx-cloud > svg {
+  .mapfx-cloud-body > svg {
     width: 100%;
     height: 100%;
     display: block;
   }
   /* the shadow it throws on the terrain below */
   .mapfx-cloud-shadow {
-    left: -12%;
+    display: block;
     aspect-ratio: 2.4;
     border-radius: 50%;
     background: radial-gradient(ellipse, rgba(24, 18, 10, 0.5) 0%, transparent 70%);
     filter: blur(9px);
-    animation: fx-drift linear infinite;
-  }
-  @keyframes fx-drift {
-    0% { transform: translate(-50%, -50%) translateX(0); }
-    100% { transform: translate(-50%, -50%) translateX(128vw); }
   }
 
   /* a gust crossing open ground */
@@ -944,17 +952,42 @@
     50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.1); }
   }
 
-  /* a ship under sail, crossing the bay */
+  /* A ship under sail, crossing the bay — and only the bay.
+
+     It used to travel `112vw`: viewport units, inside a layer that the map pans
+     and zooms with a CSS transform. Viewport width has nothing to do with map
+     width, so the distance was arbitrary — the ship set off from the river
+     mouth at the far left and sailed straight over the village, the woods and
+     the desert before leaving on the right. A ship crossing dry land is exactly
+     as odd as it sounds, and at any zoom but 1 it was odder.
+
+     Measured in the map's own units now. The element is a *track* as wide as
+     the open water (44% of the map, starting at 52%), the hull sits at its left
+     edge, and `translateX(100%)` means 100% of that track — so the crossing
+     ends on the far shore at every zoom. The rocking is a separate animation on
+     the hull, because rotating a track this wide would swing the ship through
+     the sky. */
   .mapfx-sail {
-    left: -3%;
+    left: 52%;
+    width: 44%;
+    height: 0;
     line-height: 0;
-    animation: fx-sail 96s linear infinite;
+    transform: none;
+    animation: fx-sail 84s linear infinite;
+  }
+  .mapfx-sail > svg {
+    display: block;
+    transform-origin: 50% 90%;
+    animation: fx-sail-rock 6.5s ease-in-out infinite;
   }
   @keyframes fx-sail {
-    0% { transform: translate(-50%, -50%) translate(0, 0) rotate(-2deg); opacity: 0; }
-    6%, 88% { opacity: 0.85; }
-    50% { transform: translate(-50%, -50%) translate(56vw, -1.2%) rotate(2deg); }
-    100% { transform: translate(-50%, -50%) translate(112vw, 0) rotate(-2deg); opacity: 0; }
+    0% { transform: translateX(0); opacity: 0; }
+    7%, 90% { opacity: 0.85; }
+    100% { transform: translateX(100%); opacity: 0; }
+  }
+  @keyframes fx-sail-rock {
+    0%, 100% { transform: rotate(-3.5deg) translateY(0); }
+    50% { transform: rotate(3.5deg) translateY(-1.5px); }
   }
 
   /* Region names, engraved on the terrain they label.
@@ -1053,6 +1086,120 @@
      bottom edges to nothing, so a band dissolves into its neighbours and into
      cleared ground instead of ending on a line. The overlapping radial blobs
      are what stop the remaining edges looking straight. */
+  /* ------------------------------------------------------------ more weather
+
+     All of these animate transform and opacity only, so they stay on the
+     compositor and off the main thread — the whole map can be moving without
+     any of it costing a layout. */
+
+  /* a rain squall dragging across the open water */
+  .mapfx-squall {
+    background: repeating-linear-gradient(
+      74deg,
+      rgba(206, 224, 238, 0.34) 0 1px,
+      transparent 1px 7px
+    );
+    border-radius: 40%;
+    filter: blur(2px);
+    mask-image: radial-gradient(ellipse 60% 70% at 50% 50%, #000 30%, transparent 78%);
+    -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 50%, #000 30%, transparent 78%);
+  }
+  /* the aurora that hangs over the northern sky on cold nights */
+  .mapfx-aurora {
+    background: linear-gradient(
+      100deg,
+      transparent 0%,
+      rgba(122, 232, 200, 0.3) 22%,
+      rgba(150, 200, 255, 0.26) 48%,
+      rgba(196, 158, 255, 0.24) 70%,
+      transparent 100%
+    );
+    filter: blur(16px);
+    mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
+    animation: fx-aurora ease-in-out infinite;
+  }
+  @keyframes fx-aurora {
+    0%, 100% { transform: translate(-50%, -50%) skewX(-8deg) scaleY(0.9); opacity: 0.28; }
+    50% { transform: translate(-50%, -50%) skewX(9deg) scaleY(1.15); opacity: 0.62; }
+  }
+
+  /* butterflies over the forest clearings */
+  .mapfx-flutter {
+    line-height: 0;
+    animation: fx-flutter ease-in-out infinite;
+  }
+  @keyframes fx-flutter {
+    0% { transform: translate(-50%, -50%) translate(0, 0) rotate(-6deg); opacity: 0; }
+    12%, 84% { opacity: 0.9; }
+    30% { transform: translate(-50%, -50%) translate(180%, -140%) rotate(8deg); }
+    58% { transform: translate(-50%, -50%) translate(340%, 60%) rotate(-9deg); }
+    100% { transform: translate(-50%, -50%) translate(520%, -90%) rotate(5deg); opacity: 0; }
+  }
+
+  /* tumbleweed bouncing along the desert floor */
+  .mapfx-tumble {
+    line-height: 0;
+    animation: fx-tumble linear infinite;
+  }
+  @keyframes fx-tumble {
+    0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 0; }
+    6%, 90% { opacity: 0.7; }
+    /* the little hops, riding the same clock as the roll */
+    25% { transform: translateX(25%) translateY(-9px) rotate(340deg); }
+    50% { transform: translateX(50%) translateY(0) rotate(700deg); }
+    75% { transform: translateX(75%) translateY(-6px) rotate(1040deg); }
+    100% { transform: translateX(100%) translateY(0) rotate(1400deg); opacity: 0; }
+  }
+
+  /* the banner over the citadel gate */
+  .mapfx-banner {
+    transform-origin: 0% 50%;
+    animation: fx-banner ease-in-out infinite;
+  }
+  @keyframes fx-banner {
+    0%, 100% { transform: skewY(-4deg) scaleX(0.94); }
+    50% { transform: skewY(5deg) scaleX(1); }
+  }
+
+  /* ------------------------------------------------- the Grey, made menacing
+
+     Wizzy calls it a plague that settles over land until nobody remembers what
+     was underneath. Until now it was a still grey wash, which reads as haze —
+     weather, not a threat. These give it something going on inside it: a dull
+     storm light that never quite becomes lightning, and tendrils that reach
+     out of the bank and get pulled back. Both fade with the mist itself, so a
+     region you have cleared goes quiet as well as clear. */
+  .mapfx-grey-flash {
+    @apply pointer-events-none absolute z-[4];
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 252, 244, 0.85) 0%, rgba(214, 210, 198, 0.35) 40%, transparent 70%);
+    filter: blur(14px);
+    opacity: 0;
+    animation: fx-grey-flash ease-out infinite;
+  }
+  @keyframes fx-grey-flash {
+    0%, 88%, 100% { opacity: 0; }
+    /* Two stabs close together, the way real sheet lightning doubles. */
+    90% { opacity: 0.75; }
+    92% { opacity: 0.15; }
+    94% { opacity: 0.55; }
+  }
+
+  .mapfx-grey-tendril {
+    @apply pointer-events-none absolute z-[4];
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(232, 229, 219, 0.72), transparent 85%);
+    filter: blur(5px);
+    transform-origin: 50% 0%;
+    animation: fx-grey-tendril ease-in-out infinite;
+  }
+  @keyframes fx-grey-tendril {
+    0%, 100% { transform: scaleY(0.35) translateY(0); opacity: 0; }
+    40% { opacity: 0.6; }
+    60% { transform: scaleY(1.15) translateY(6%); opacity: 0.5; }
+  }
+
   .mapfx-mist {
     @apply pointer-events-none absolute inset-x-0 z-[3];
     background:

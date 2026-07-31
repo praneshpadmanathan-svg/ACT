@@ -16,6 +16,7 @@ import type { ReactNode } from 'react';
 import { LIBRARY_STATS, PATH_BY_ID, SECTIONS } from '@/content';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
+import { cloudEnabled } from '@/lib/supabase';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import { Button } from '@/components/ui';
@@ -214,9 +215,19 @@ export function Landing() {
             <span className="text-gold" aria-hidden="true">✦</span> ACT Command
           </span>
           <div className="ml-auto flex items-center gap-2">
-            <a href={hrefFor({ name: 'auth', mode: 'signin' })} onClick={() => sfx.select()}>
-              <Button size="sm">Sign in</Button>
-            </a>
+            {/* Only offer a door that opens.
+
+                When no account server is configured — which is every local run
+                and any deploy missing its env vars — this used to still say
+                "Sign in", and clicking it landed on a screen explaining that
+                there is no sign-in. Offering the option and then withdrawing it
+                one click later is worse than never offering it: the app looks
+                broken when it is working exactly as designed. */}
+            {cloudEnabled && (
+              <a href={hrefFor({ name: 'auth', mode: 'signin' })} onClick={() => sfx.select()}>
+                <Button size="sm">Sign in</Button>
+              </a>
+            )}
             {returning ? (
               <Button variant="primary" size="sm" onClick={() => navigate({ name: 'home' })}>
                 Continue
@@ -271,9 +282,11 @@ export function Landing() {
                 <Button variant="primary" size="lg" onClick={begin}>
                   Enter the realm ▸
                 </Button>
-                <a href={hrefFor({ name: 'auth', mode: 'signin' })} onClick={() => sfx.select()}>
-                  <Button size="lg">I have an account</Button>
-                </a>
+                {cloudEnabled && (
+                  <a href={hrefFor({ name: 'auth', mode: 'signin' })} onClick={() => sfx.select()}>
+                    <Button size="lg">I have an account</Button>
+                  </a>
+                )}
               </>
             )}
           </div>
@@ -436,15 +449,21 @@ export function Landing() {
             Begin your quest ▸
           </Button>
           <p className="mt-5 font-read text-[14px] text-ink-faint">
-            Or{' '}
-            <a
-              href={hrefFor({ name: 'auth', mode: 'signup' })}
-              onClick={() => sfx.select()}
-              className="text-gold underline underline-offset-4 hover:text-gold-bright"
-            >
-              create an account
-            </a>{' '}
-            to carry your progress between devices.
+            {cloudEnabled ? (
+              <>
+                Or{' '}
+                <a
+                  href={hrefFor({ name: 'auth', mode: 'signup' })}
+                  onClick={() => sfx.select()}
+                  className="text-gold underline underline-offset-4 hover:text-gold-bright"
+                >
+                  create an account
+                </a>{' '}
+                to carry your progress between devices.
+              </>
+            ) : (
+              'No account, no email, nothing to sign up for.'
+            )}
           </p>
         </div>
       </section>

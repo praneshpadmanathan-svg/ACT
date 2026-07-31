@@ -12,6 +12,7 @@ import { Button, EmptyState, ProgressBar, SectionHeading } from '@/components/ui
 import { AdventureMap, useMapProgress } from '@/game/AdventureMap';
 import { Wizzy } from '@/game/Wizzy';
 import { RoadChooser } from '@/game/RoadChooser';
+import { PROLOGUE_ID } from '@/game/story';
 import { REGIONS } from '@/game/mapData';
 import { bossFor } from '@/game/bosses';
 import { BossArt } from '@/game/BossArt';
@@ -26,14 +27,28 @@ export function MapScreen() {
   const { progress } = useStore();
   const { cleared } = useMapProgress();
 
-  /* Asked once, before any ground has been taken. The story overlay sits above
-     this at z-[120], so the prologue plays first and then reveals the choice. */
-  const chooseRoad = cleared === 0 && !progress.startRegion;
+  /* Asked once, before any ground has been taken — but not until Wizzy has
+     explained what the Grey is and what breaking the four Seals does.
 
+     Sitting the chooser above the story on z-index was not enough: both
+     mounted at once, so a first-time player met a panel demanding they pick a
+     road stacked behind a wizard mid-sentence about why any of it matters.
+     Waiting on the prologue makes it a sequence — here is the world, here is
+     what is eating it, now choose where you start. */
+  const heardPrologue = (progress.storySeen ?? []).includes(PROLOGUE_ID);
+  const chooseRoad = cleared === 0 && !progress.startRegion && heardPrologue;
+
+  /* One Wizzy at a time.
+
+     His standing tip bubble is also labelled "Wizzy the Guide", so during the
+     prologue he was on screen twice at once — a card giving counsel about the
+     current quest, and, over the top of it, the same wizard introducing
+     himself for the first time. Hold the bubble until he has finished
+     speaking. */
   return (
     <>
       <AdventureMap onExit={() => navigate({ name: 'home' })} />
-      {chooseRoad ? <RoadChooser /> : <Wizzy />}
+      {chooseRoad ? <RoadChooser /> : heardPrologue ? <Wizzy /> : null}
     </>
   );
 }

@@ -113,15 +113,32 @@ export const QUESTS: Quest[] = [
         {
           lines: [
             'It is dimmer than it was. Every season it dims further, and every season fewer travellers reach it.',
-            'The road there is bound by <b>four Seals</b>, and something is eating the map behind them. We call it the <b>Grey</b>. It does not attack. It simply arrives wherever nobody is walking, and then that place stops being anywhere at all.',
+            'Now look at the rest. That grey lying over the land like wet ash — that is the <b>Grey</b>, and it is why I am still standing at this camp instead of somewhere warm.',
           ],
           shake: 'soft',
         },
         {
           lines: [
-            'The regions still standing have names nobody enjoys saying aloud: <b>the Grammar Village</b>, <b>the Enchanted Woods</b>, <b>the Number Desert</b>, <b>the Science Cliffs</b>.',
-            'Thirty-seven landmarks between here and the Summit. Each one holds a single skill, and each one you clear is ground the Grey cannot take back.',
+            'It is a plague, of a sort. It does not burn anything or knock anything down. It simply <b>settles</b> — over a field, a wood, a stretch of coast — and after a while nobody can remember what was underneath.',
+            'Not destroyed. <b>Forgotten.</b> Which is worse, because there is nothing left to bury.',
+            'It spreads wherever nobody walks. That is the whole of its cunning, and it is enough.',
           ],
+          shake: 'soft',
+        },
+        {
+          lines: [
+            'Four regions are still standing: <b>the Grammar Village</b>, <b>the Enchanted Woods</b>, <b>the Number Desert</b>, <b>the Science Cliffs</b>.',
+            'Each one is held shut by a <b>Seal</b>, and at each Seal something is waiting that will not let you pass for asking nicely.',
+          ],
+        },
+        {
+          lines: [
+            'So here is what it takes, and I will not dress it up.',
+            '<b>Break all four Seals, and the Grey lifts.</b> Not one. Not three. Every region cleared to its last landmark, every guardian put down — and the plague has nowhere left to sit.',
+            'Thirty-seven landmarks between here and that. Each holds a single skill, and each one you take is ground the Grey cannot come back to.',
+            'Clear the four, and the road to the Summit opens behind them.',
+          ],
+          shake: 'hard',
         },
         {
           lines: ['One question before you set out, traveller. I ask everyone.'],
@@ -572,6 +589,9 @@ export const CHAPTERS: Chapter[] = [
     };
   }),
 ];
+
+/** The opening chapter's id, so the map can wait for it before asking anything. */
+export const PROLOGUE_ID = 'q-oath-intro';
 
 /** The next chapter that has been earned and not yet seen. */
 export function nextChapter(progress: Progress, ctx: StoryContext): Chapter | null {

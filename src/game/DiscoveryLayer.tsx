@@ -38,6 +38,23 @@ const MIST_BANDS: Record<SectionId, { top: number; height: number }> = {
   science: { top: 55, height: 32 },
 };
 
+/* Where the storm light sits inside a band, as a fraction of its height, and
+   how often it fires. The long, uneven durations keep the four regions from
+   flashing in chorus — a storm on a metronome reads as a broken light. */
+const STORM_AT = [
+  { left: 22, at: 0.32, size: 16, dur: 17, delay: 0 },
+  { left: 58, at: 0.55, size: 21, dur: 23, delay: -6 },
+  { left: 81, at: 0.28, size: 14, dur: 29, delay: -14 },
+];
+
+/** Wisps reaching down out of the underside of a mist bank. */
+const TENDRIL_AT = [
+  { left: 14, w: 2.6, h: 7, dur: 11, delay: 0 },
+  { left: 37, w: 3.4, h: 9, dur: 14, delay: -4 },
+  { left: 63, w: 2.2, h: 6, dur: 9.5, delay: -7 },
+  { left: 88, w: 3, h: 8, dur: 13, delay: -2 },
+];
+
 interface Props {
   /** Fraction of each region cleared, 0-1, for how far the mist has lifted. */
   clearedByRegion: Record<SectionId, number>;
@@ -96,6 +113,57 @@ export function DiscoveryLayer({ clearedByRegion, onFound }: Props) {
               opacity: 0.46 - done * 0.46,
             }}
           />
+        );
+      })}
+
+      {/* ------------------------------------------------------- the storm
+
+          Wizzy calls the Grey a plague that settles until nobody remembers
+          what was underneath, and until now it sat there as a flat wash —
+          which reads as haze, not as a thing to be afraid of. Dull storm
+          light that never quite resolves into lightning, and tendrils that
+          reach out of the bank and get drawn back in.
+
+          Both are keyed to the same fraction as the mist, so a region you
+          have cleared falls quiet at the same rate it clears. */}
+      {REGION_ORDER.map((id) => {
+        const band = MIST_BANDS[id];
+        const done = clearedByRegion[id] ?? 0;
+        if (done >= 1) return null;
+        const alive = 1 - done;
+        return (
+          <div key={`storm-${id}`} aria-hidden="true">
+            {STORM_AT.map((s, i) => (
+              <span
+                key={`flash-${i}`}
+                className="mapfx-grey-flash"
+                style={{
+                  left: `${s.left}%`,
+                  top: `${band.top + band.height * s.at}%`,
+                  width: `${s.size}%`,
+                  height: `${s.size * 0.6}%`,
+                  animationDuration: `${s.dur}s`,
+                  animationDelay: `${s.delay}s`,
+                  opacity: alive,
+                }}
+              />
+            ))}
+            {TENDRIL_AT.map((t, i) => (
+              <span
+                key={`tendril-${i}`}
+                className="mapfx-grey-tendril"
+                style={{
+                  left: `${t.left}%`,
+                  top: `${band.top + band.height * 0.82}%`,
+                  width: `${t.w}%`,
+                  height: `${t.h}%`,
+                  animationDuration: `${t.dur}s`,
+                  animationDelay: `${t.delay}s`,
+                  opacity: alive,
+                }}
+              />
+            ))}
+          </div>
         );
       })}
 
