@@ -60,25 +60,64 @@ export interface AuthResult {
   error?: string;
 }
 
+/* Turn a provider error into something a 15-year-old can act on.
+ *
+ * The default case is deliberately generic. It used to return the provider's
+ * own message, which puts text we do not control and have not read onto the
+ * screen — internal identifiers, policy names, whatever a future Supabase
+ * release decides to say. Anything worth telling someone is matched
+ * explicitly; everything else is a bug for us to find in the console, not a
+ * riddle for them to solve. */
 function friendlyError(message: string): string {
   const m = message.toLowerCase();
   if (m.includes('invalid login')) return 'That email and password combination did not match.';
-  if (m.includes('already registered')) return 'That email already has an account — try signing in.';
   if (m.includes('weak') || m.includes('pwned') || m.includes('compromised')) {
-    return 'That password has appeared in a known data breach. Please pick a different one.';
+    return 'That password has turned up in a known data breach. Please pick a different one.';
   }
-  if (m.includes('password')) return 'Password must be at least 8 characters.';
-  if (m.includes('rate limit') || m.includes('too many')) {
+  if (m.includes('should be at least') || m.includes('password')) {
+    return 'Password must be at least 8 characters.';
+  }
+  if (m.includes('rate limit') || m.includes('too many') || m.includes('429')) {
     return 'Too many attempts. Wait a minute and try again.';
   }
   if (m.includes('expired') || m.includes('invalid token') || m.includes('otp')) {
-    return 'That code has expired. Ask for a new one.';
+    return 'That code has expired or was mistyped. Ask for a new one.';
+  }
+  if (m.includes('session') && m.includes('missing')) {
+    return 'This link has expired. Ask for a new one and open it straight away.';
+  }
+  if (m.includes('email') && m.includes('confirm')) {
+    return 'Confirm your email first — check your inbox for the link we sent.';
   }
   if (m.includes('fetch') || m.includes('network') || m.includes('failed to fetch')) {
     return 'Could not reach the server. Check your connection and try again.';
   }
-  return message;
+  console.warn('[auth] unmapped provider error:', message);
+  return 'Something went wrong at our end. Please try again in a moment.';
 }
+
+/* Whether a given email already has an account here is not something a
+   stranger gets to find out.
+ *
+ * The password form is already careful — a wrong address and a wrong password
+ * produce the same sentence. These two paths quietly undid that: sign-up
+ * answered "that email already has an account", and the emailed-code path,
+ * which passes `shouldCreateUser: false`, errored for any address without one.
+ * Either would let someone check a list of addresses against this site, and
+ * this site's users are children.
+ *
+ * So both now give the identical answer either way, and the email does the
+ * disambiguating — it arrives only for the person who owns the address. */
+const enumerationSafe = (message: string): boolean => {
+  const m = message.toLowerCase();
+  return (
+    m.includes('already registered') ||
+    m.includes('already been registered') ||
+    m.includes('user already exists') ||
+    m.includes('signups not allowed') ||
+    m.includes('not found')
+  );
+};
 
 /** Where Supabase sends people back to, carrying why they left. */
 function redirectTo(flow: 'confirm' | 'reset'): string {
@@ -94,7 +133,13 @@ export async function signUp(name: string, email: string, password: string): Pro
     password,
     options: { data: { display_name: name }, emailRedirectTo: redirectTo('confirm') },
   });
-  if (error) return { ok: false, error: friendlyError(error.message) };
+  if (error) {
+    /* "That address is taken" is the same sentence as "that address has an
+       account here", so it goes to the check-your-email screen instead. The
+       person who owns the inbox finds out; nobody else does. */
+    if (enumerationSafe(error.message)) return { ok: true, needsConfirmation: true };
+    return { ok: false, error: friendlyError(error.message) };
+  }
   // No session back means the project requires email confirmation.
   return { ok: true, needsConfirmation: !data.session };
 }
@@ -113,7 +158,11 @@ export async function sendLoginCode(email: string): Promise<AuthResult> {
     email,
     options: { shouldCreateUser: false, emailRedirectTo: redirectTo('confirm') },
   });
-  if (error) return { ok: false, error: friendlyError(error.message) };
+  if (error) {
+    // Same answer whether or not the address has an account — see above.
+    if (enumerationSafe(error.message)) return { ok: true };
+    return { ok: false, error: friendlyError(error.message) };
+  }
   return { ok: true };
 }
 
@@ -230,11 +279,22 @@ export function expandFromCloud(row: CloudProgress): Progress {
   return { ...emptyProgress(), ...row, attempts: [] };
 }
 
-/** Pull the saved row. Returns null when the user has never synced. */
-export async function pullProgress(
-  userId: string,
-): Promise<{ data: Progress; updatedAt: number } | null> {
-  if (!supabase) return null;
+/* Three outcomes, not two.
+ *
+ * This used to return `null` for both "this account has never synced" and "the
+ * query failed", which are opposite facts and the caller has to act on them
+ * differently. Conflating them meant a network blip on sign-in looked exactly
+ * like a brand-new account — so the client would treat an empty local profile
+ * as authoritative and push it over a year of real progress. That is the
+ * fire-and-forget clobber this module was rewritten to prevent, arriving
+ * through the back door. */
+export type PullResult =
+  | { status: 'ok'; data: Progress; updatedAt: number }
+  | { status: 'empty' }
+  | { status: 'error'; message: string };
+
+export async function pullProgress(userId: string): Promise<PullResult> {
+  if (!supabase) return { status: 'error', message: 'Accounts are not configured.' };
   const { data, error } = await supabase
     .from('progress')
     .select('data, updated_at')
@@ -243,10 +303,14 @@ export async function pullProgress(
 
   if (error) {
     console.warn('[sync] pull failed', error.message);
-    return null;
+    return { status: 'error', message: error.message };
   }
-  if (!data?.data) return null;
-  return { data: expandFromCloud(data.data), updatedAt: new Date(data.updated_at).getTime() };
+  if (!data?.data) return { status: 'empty' };
+  return {
+    status: 'ok',
+    data: expandFromCloud(data.data),
+    updatedAt: new Date(data.updated_at).getTime(),
+  };
 }
 
 export async function pushProgress(

@@ -19,22 +19,42 @@
 
 import { createClient } from 'jsr:@supabase/supabase-js@2';
 
-const ALLOWED_ORIGIN = Deno.env.get('SITE_URL') ?? '*';
+/* Which origins may call this.
+ *
+ * `SITE_URL` is a comma-separated allowlist. It used to fall back to `*`, which
+ * is the wrong default for the one endpoint in the system that permanently
+ * destroys an account: any page on the internet could then invoke it, and while
+ * it still takes a valid token to do damage, a wildcard turns a stolen or
+ * leaked token into a one-request account deletion from anywhere.
+ *
+ * With nothing configured it now falls back to localhost only, so a
+ * misconfigured deployment fails closed and loudly instead of open and quietly.
+ */
+const ALLOWED = (Deno.env.get('SITE_URL') ?? 'http://localhost:5173')
+  .split(',')
+  .map((o) => o.trim().replace(/\/$/, ''))
+  .filter(Boolean);
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-};
-
-const json = (body: unknown, status: number) =>
-  new Response(JSON.stringify(body), {
-    status,
-    headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-  });
+function corsFor(req: Request): Record<string, string> {
+  const origin = (req.headers.get('Origin') ?? '').replace(/\/$/, '');
+  return {
+    'Access-Control-Allow-Origin': ALLOWED.includes(origin) ? origin : ALLOWED[0],
+    'Vary': 'Origin',
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Max-Age': '3600',
+  };
+}
 
 Deno.serve(async (req: Request) => {
-  if (req.method === 'OPTIONS') return new Response('ok', { headers: corsHeaders });
+  const cors = corsFor(req);
+  const json = (body: unknown, status: number) =>
+    new Response(JSON.stringify(body), {
+      status,
+      headers: { ...cors, 'Content-Type': 'application/json' },
+    });
+
+  if (req.method === 'OPTIONS') return new Response('ok', { headers: cors });
   if (req.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
 
   const authHeader = req.headers.get('Authorization');

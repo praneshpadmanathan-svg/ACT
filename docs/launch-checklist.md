@@ -59,7 +59,7 @@ Dashboard → Authentication.
 
 - [ ] **Confirm email** — ON. Without it anyone can sign up as anyone.
 - [ ] **Minimum password length** — 8. (The client enforces 8; make the server agree.)
-- [ ] **Leaked password protection** — ON. Rejects passwords found in known breaches, which is the single highest-value switch on this page for an audience that reuses passwords.
+- [ ] **Leaked password protection** — ON. Rejects passwords found in known breaches: the single highest-value switch on this page for an audience that reuses passwords. The client refuses the obvious shapes (runs, repeats, the site's name, the user's own email) but it cannot know what is in a breach corpus, so this is the half that actually matters.
 - [ ] **Bot protection (Cloudflare Turnstile)** — ON for sign-up. Bot registrations burn the 50,000-user allowance and fill the database, and neither is recoverable on the free plan.
 - [ ] **Site URL** — the real domain, exactly.
 - [ ] **Redirect URLs** — the real domain, plus `http://localhost:5173` for development. **No wildcards.** A permissive redirect list is an open redirect, and an open redirect on an auth callback hands attackers a token-theft path.
@@ -86,11 +86,17 @@ browser bundle. It lives in an Edge Function instead:
 supabase functions deploy delete-account
 ```
 
-Then set the origin it will accept:
+Then set the origins it will accept — **required**, not optional:
 
 ```bash
-supabase secrets set SITE_URL=https://your-domain
+supabase secrets set SITE_URL=https://your-domain,http://localhost:5173
 ```
+
+Comma-separated, no trailing slashes. If this is unset the function falls back to
+localhost only and your deployed site cannot call it, which is the intended
+failure: this is the one endpoint that permanently destroys an account, and a
+wildcard origin on it would let any page on the internet invoke it with a token
+it happened to get hold of. Better it breaks visibly than opens quietly.
 
 `SUPABASE_URL`, `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` are injected
 by the platform — do not set them yourself, and do not put the service role key

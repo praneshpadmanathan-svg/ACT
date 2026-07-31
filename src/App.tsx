@@ -63,10 +63,21 @@ export default function App() {
     }
   }, [authReady, hasStarted, route.name, progress.profile, navigate]);
 
+  /* Confirming your email has to *arrive* somewhere.
+
+     The link comes back to `/?flow=confirm`, which carries no hash, so the
+     router read it as the landing route — and landing is reachable without
+     having started, so nothing moved you on. You clicked the link in your
+     inbox, got signed in, and were shown the marketing page with a "Begin"
+     button, as though the last two minutes had not happened. Now the session
+     that link created is used: straight into the app. */
   useEffect(() => {
-    // A confirmation link has nothing left to do once the session exists.
-    if (authRedirect?.flow === 'confirm' && authRedirect.ok) clearAuthRedirect();
-  }, [authRedirect, clearAuthRedirect]);
+    if (authRedirect?.flow !== 'confirm' || !authRedirect.ok) return;
+    clearAuthRedirect();
+    if (route.name === 'landing' || route.name === 'auth') {
+      navigate({ name: progress.profile ? 'home' : 'onboarding' }, { replace: true });
+    }
+  }, [authRedirect, clearAuthRedirect, route.name, progress.profile, navigate]);
 
   if (!authReady) {
     return (

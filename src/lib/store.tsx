@@ -115,6 +115,8 @@ interface StoreValue {
   continueAsGuest: () => void;
   /** Called at sign-up: carry this guest's world into the account being made. */
   claimGuestProgress: () => void;
+  /** Called if that sign-up then fails, so the claim cannot outlive it. */
+  releaseGuestClaim: () => void;
   refreshAuth: () => Promise<void>;
   signOut: () => Promise<void>;
   syncNow: () => Promise<void>;
@@ -279,23 +281,51 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   /* ----------------------------------------------------------------- auth */
 
-  /** Push a known-good starting point up, and take down anything newer. */
-  const syncWithCloud = useCallback(async (uid: string, name: string, base: Progress) => {
-    setSyncing(true);
-    setLastSyncError(null);
-    try {
-      const remote = await pullProgress(uid);
-      const merged = remote ? mergeProgress(base, remote.data) : base;
-      setProgress(merged);
-      progressRef.current = merged;
-      const ok = await pushProgress(uid, name, merged);
-      if (!ok) setLastSyncError('Progress is saved on this device but could not reach the cloud.');
-    } catch (err) {
-      setLastSyncError(err instanceof Error ? err.message : 'Sync failed.');
-    } finally {
-      setSyncing(false);
-    }
-  }, []);
+  /**
+   * Reconcile this device against the cloud.
+   *
+   * `claimGuest` folds in the world built before signing up, and is honoured
+   * **only when the account provably has no saved row**. Anything else — an
+   * existing account, or a pull that simply failed — and the guest history
+   * stays where it is. The difference matters: someone who played on a shared
+   * laptop and then signed in must not absorb the previous person's work, and
+   * a dropped connection must never be mistaken for a new account.
+   */
+  const syncWithCloud = useCallback(
+    async (uid: string, name: string, base: Progress, claimGuest = false) => {
+      setSyncing(true);
+      setLastSyncError(null);
+      try {
+        const remote = await pullProgress(uid);
+
+        if (remote.status === 'error') {
+          /* Do not push. Local might be an empty profile on a fresh device and
+             the row we could not read might be a year of work — writing over it
+             is the one unrecoverable mistake available here. Try again later. */
+          setLastSyncError('Could not reach the cloud. Your progress is safe on this device.');
+          return;
+        }
+
+        let merged = base;
+        if (remote.status === 'ok') {
+          merged = mergeProgress(base, remote.data);
+        } else if (claimGuest) {
+          merged = mergeProgress(loadProgress(progressKeyFor({ kind: 'guest' })), base);
+        }
+
+        setProgress(merged);
+        progressRef.current = merged;
+        const ok = await pushProgress(uid, name, merged);
+        if (!ok) setLastSyncError('Progress is saved on this device but could not reach the cloud.');
+      } catch (err) {
+        console.warn('[sync] failed', err);
+        setLastSyncError('Could not reach the cloud. Your progress is safe on this device.');
+      } finally {
+        setSyncing(false);
+      }
+    },
+    [],
+  );
 
   const refreshAuth = useCallback(async () => {
     if (!cloudEnabled) {
@@ -315,12 +345,13 @@ export function StoreProvider({ children }: { children: ReactNode }) {
          The one time that folding is wanted is the account's first moments,
          when the player has just built a world as a guest and is claiming it.
          That is opt-in, set at sign-up, and survives the round trip through the
-         confirmation email because it is written to disk. */
-      let base = loadProgress(progressKeyFor(next));
-      if (readRaw(CLAIM_GUEST_KEY) === '1') {
-        base = mergeProgress(loadProgress(progressKeyFor({ kind: 'guest' })), base);
-        removeRaw(CLAIM_GUEST_KEY);
-      }
+         confirmation email because it is written to disk. The claim is handed
+         to the sync rather than applied here, because only the sync can see
+         whether this account already has a row — and if it does, the claim is
+         wrong and gets dropped. */
+      const base = loadProgress(progressKeyFor(next));
+      const claimGuest = readRaw(CLAIM_GUEST_KEY) === '1';
+      removeRaw(CLAIM_GUEST_KEY);
 
       setUserId(user.id);
       setPlayerName(name);
@@ -330,7 +361,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       writeRaw(STORAGE_KEYS.guest, '1');
       setHasStarted(true);
 
-      await syncWithCloud(user.id, name, base);
+      await syncWithCloud(user.id, name, base, claimGuest);
     } else {
       setUserId(null);
       setPlayerName('Traveller');
@@ -399,6 +430,10 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   const claimGuestProgress = useCallback(() => {
     writeRaw(CLAIM_GUEST_KEY, '1');
+  }, []);
+
+  const releaseGuestClaim = useCallback(() => {
+    removeRaw(CLAIM_GUEST_KEY);
   }, []);
 
   const clearAuthRedirect = useCallback(() => setAuthRedirect(null), []);
@@ -473,6 +508,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       identity,
       continueAsGuest,
       claimGuestProgress,
+      releaseGuestClaim,
       refreshAuth,
       signOut: signOutFn,
       syncNow,
@@ -483,7 +519,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       progress, authReady, userId, playerName, isGuest, hasStarted, syncing, lastSyncError,
       authRedirect, clearAuthRedirect, toasts, xpPops, levelUpRank, dismissLevelUp,
       pushToast, dismissToast, answerQuestion, markNoteRead, clearZone, finishTest,
-      updateProgress, identity, continueAsGuest, claimGuestProgress, refreshAuth,
+      updateProgress, identity, continueAsGuest, claimGuestProgress, releaseGuestClaim, refreshAuth,
       signOutFn, syncNow, resetEverything, deleteAccountFn,
     ],
   );

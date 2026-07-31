@@ -27,6 +27,7 @@ import {
   verdictFor,
   type DateParts,
 } from '@/lib/ageGate';
+import { checkPassword } from '@/lib/password';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import { Button } from '@/components/ui';
@@ -34,8 +35,14 @@ import { burstConfetti } from '@/components/Feedback';
 
 export function Auth({ mode: initialMode }: { mode: AuthMode }) {
   const navigate = useNavigate();
-  const { continueAsGuest, claimGuestProgress, refreshAuth, authRedirect, clearAuthRedirect } =
-    useStore();
+  const {
+    continueAsGuest,
+    claimGuestProgress,
+    releaseGuestClaim,
+    refreshAuth,
+    authRedirect,
+    clearAuthRedirect,
+  } = useStore();
 
   const [mode, setMode] = useState<AuthMode>(initialMode);
   const [name, setName] = useState('');
@@ -73,9 +80,13 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
       setError('Enter a valid email address.');
       return;
     }
-    if ((mode === 'signup' || mode === 'reset') && password.length < 8) {
-      setError('Use at least 8 characters.');
-      return;
+    if (mode === 'signup' || mode === 'reset') {
+      const verdict = checkPassword(password, email);
+      if (!verdict.ok) {
+        setError(verdict.reason ?? 'Please choose a stronger password.');
+        sfx.wrong();
+        return;
+      }
     }
     if (mode === 'signup' && !name.trim()) {
       setError('Pick a name for your traveller.');
@@ -87,10 +98,18 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
       if (mode === 'signup') {
         /* Set before the request, not after: confirmation takes the player out
            of the app entirely, and they may never come back to this component
-           to have it set for them. */
+           to have it set for them.
+
+           Cleared again if the request fails. Leaving it set was a real hole:
+           a guest whose sign-up bounced could switch to "Returning", sign in to
+           an account they already had, and silently drag the guest world into
+           it — the exact contamination this flag exists to keep out. */
         claimGuestProgress();
         const result = await signUp(name.trim(), email, password);
-        if (!result.ok) return fail(result.error);
+        if (!result.ok) {
+          releaseGuestClaim();
+          return fail(result.error);
+        }
         if (result.needsConfirmation) return setSent('confirm');
         await refreshAuth();
         return succeed();
@@ -117,6 +136,7 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         return succeed();
       }
     } catch {
+      if (mode === 'signup') releaseGuestClaim();
       fail('Could not reach the server. Check your connection and try again.');
     } finally {
       setBusy(false);
@@ -223,13 +243,17 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
   }
 
   if (sent) {
+    /* All three say "if". None of them confirms whether that address has an
+       account here — that answer belongs to whoever owns the inbox, not to
+       whoever can type an address into a form. */
     const copy = {
       confirm: {
         title: 'Check your email',
         body: (
           <>
-            We sent a confirmation link to <b className="text-cliffs">{email}</b>. Open it and
-            you will land back here, signed in, with your progress intact.
+            We have sent a message to <b className="text-cliffs">{email}</b>. Open the link in
+            it and you will land back here, signed in, with your progress intact. If that
+            address already has an account, the message will say so instead.
           </>
         ),
       },
@@ -237,8 +261,8 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         title: 'Check your email',
         body: (
           <>
-            We sent a sign-in code to <b className="text-cliffs">{email}</b>. Enter it below —
-            or just click the link in the email.
+            If <b className="text-cliffs">{email}</b> has an account, a sign-in code is on its
+            way. Enter it below — or just open the link in the same email.
           </>
         ),
       },
@@ -298,10 +322,18 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
 
   return (
     <Frame title={title} subtitle={subtitle}>
-      {authRedirect && !authRedirect.ok && mode === 'reset' && (
-        <ErrorNote>
-          {authRedirect.error ?? 'That link has expired.'} Ask for a new one below.
-        </ErrorNote>
+      {/* Reset only works while the link's session is live. Landing here any
+          other way — a bookmark, a back button, an expired link — needs saying
+          plainly, with the way forward, rather than failing on submit. */}
+      {mode === 'reset' && (!authRedirect || !authRedirect.ok) && (
+        <div className="mb-5">
+          <ErrorNote>
+            {authRedirect?.error ?? 'This page needs the link from your reset email.'}
+          </ErrorNote>
+          <Button className="mt-3 w-full" onClick={() => go('forgot')}>
+            Email me a new link
+          </Button>
+        </div>
       )}
 
       {(mode === 'signup' || mode === 'signin') && (
