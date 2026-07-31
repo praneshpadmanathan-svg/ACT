@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { SECTION_BY_ID, SECTIONS } from '@/content';
 import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
+import { goalForTiming } from '@/lib/plan';
 import { sfx } from '@/lib/sfx';
 import type { OnboardingProfile, SectionId } from '@/types';
 import { Button, ProgressBar } from '@/components/ui';
@@ -59,15 +60,14 @@ const STEPS: Step[] = [
   },
 ];
 
-const WEEKLY_GOAL: Record<string, number> = { soon: 2400, mid: 1800, far: 1200, none: 900 };
-
 export function Onboarding() {
   const navigate = useNavigate();
   const { updateProgress } = useStore();
 
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string | number>>({});
-  const [phase, setPhase] = useState<'questions' | 'plan'>('questions');
+  const [testDate, setTestDate] = useState('');
+  const [phase, setPhase] = useState<'questions' | 'date' | 'plan'>('questions');
 
   const choose = (value: string | number) => {
     sfx.select();
@@ -76,14 +76,16 @@ export function Onboarding() {
     if (step < STEPS.length - 1) {
       setStep(step + 1);
     } else {
-      // Pass the completed set through explicitly — `answers` in this scope is
-      // still the pre-update value, so reading it here would silently drop
-      // whichever option was just clicked.
-      savePlan(next);
+      /* One more question, and only for people who have a date to give. If the
+         test is not booked there is nothing to count down to, and asking would
+         just be a field they have to dismiss. */
+      const when = next.when as OnboardingProfile['when'];
+      if (when === 'none') savePlan(next, null);
+      else setPhase('date');
     }
   };
 
-  const savePlan = (final: Record<string, string | number>) => {
+  const savePlan = (final: Record<string, string | number>, date: string | null) => {
     sfx.achieve();
     burstConfetti(70);
 
@@ -92,6 +94,7 @@ export function Onboarding() {
       before: (final.before as OnboardingProfile['before']) ?? 'first',
       target: (final.target as number) ?? 30,
       fear: (final.fear as SectionId) ?? 'english',
+      testDate: date,
       savedAt: Date.now(),
     };
 
@@ -99,7 +102,7 @@ export function Onboarding() {
       ...p,
       profile,
       targetScore: profile.target,
-      weeklyGoal: WEEKLY_GOAL[profile.when] ?? 1200,
+      weeklyGoal: goalForTiming(profile.when),
     }));
     setPhase('plan');
   };
@@ -154,6 +157,47 @@ export function Onboarding() {
         )}
 
 
+        {phase === 'date' && (
+          <>
+            <h1 className="heading mb-2.5 text-[22px] leading-snug text-parchment">
+              What day do you sit it?
+            </h1>
+            <p className="mb-7 text-[14px] leading-relaxed text-ink-faint">
+              We will count down and size your week to fit. You can change or clear it later.
+            </p>
+
+            <label className="block">
+              <span className="mb-2 block font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint">
+                Test date
+              </span>
+              <input
+                type="date"
+                value={testDate}
+                min={new Date().toISOString().slice(0, 10)}
+                onChange={(e) => setTestDate(e.target.value)}
+                className="w-full rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-3 font-read text-[15px] text-parchment outline-none transition-colors focus:border-gold-deep"
+              />
+            </label>
+
+            <Button
+              variant="primary"
+              size="lg"
+              className="mt-7 w-full"
+              onClick={() => savePlan(answers, testDate || null)}
+            >
+              {testDate ? 'Build my plan ▶' : 'Skip for now ▶'}
+            </Button>
+
+            <button
+              type="button"
+              onClick={() => setPhase('questions')}
+              className="mt-6 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+            >
+              ← Back
+            </button>
+          </>
+        )}
+
         {phase === 'plan' && (
           <div className="text-center">
             <img src="/art/hero-char.webp" alt="" className="mx-auto w-[110px] select-none" draggable={false} />
@@ -162,10 +206,26 @@ export function Onboarding() {
             <dl className="space-y-2.5 text-left">
               <PlanRow label="Target score" value={String(answers.target ?? 30)} color="#ff9d5c" />
               <PlanRow
-                label="Weekly XP goal"
-                value={(WEEKLY_GOAL[answers.when as string] ?? 1200).toLocaleString()}
+                label="Questions a week"
+                value={String(goalForTiming((answers.when as OnboardingProfile['when']) ?? 'none'))}
                 color="#3ad6f0"
               />
+              {testDate && (
+                <PlanRow
+                  label="Days to go"
+                  value={String(
+                    Math.max(
+                      0,
+                      Math.round(
+                        (new Date(`${testDate}T00:00:00`).getTime() -
+                          new Date().setHours(0, 0, 0, 0)) /
+                          86_400_000,
+                      ),
+                    ),
+                  )}
+                  color="#ffd23e"
+                />
+              )}
               <PlanRow label="Start with" value={recommended?.name ?? 'English'} color={recommended?.color} />
             </dl>
 

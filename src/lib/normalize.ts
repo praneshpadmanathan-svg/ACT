@@ -8,8 +8,8 @@
 
 import type { Question, ZoneQuestion } from '@/types';
 import type { RunnableQuestion } from '@/components/QuestionRunner';
-import { getPassage } from '@/content';
-import { seeded, shuffle } from '@/lib/utils';
+import { getPassage, TOPIC_BY_ZONE_ALIAS } from '@/content';
+import { canonicalTopic, isZoneLabel, seeded, shuffle } from '@/lib/utils';
 
 const KEYS = ['A', 'B', 'C', 'D'];
 
@@ -93,14 +93,35 @@ export function fromDrillQuestion(q: Question): RunnableQuestion {
     choices: q.choices.map((c) => ({ key: c.id, text: c.text, format: 'markdown' as const })),
     correctKey: q.answer,
     why: q.why,
-    topic: q.topic,
+    topic: canonicalTopic(q.topic),
     section: q.section,
     difficulty: q.difficulty,
     passage,
   });
 }
 
-export function fromZoneQuestion(q: ZoneQuestion, zoneId: string, index: number): RunnableQuestion {
+/* Which topic a zone question is really about.
+
+   `q.tag` is trusted only when it names a topic. Twenty-two of the forty
+   distinct tags are the zone's old all-caps label — `COMMA CASTLE` — which is
+   a place rather than a skill, and names a place that no longer exists since
+   the landmarks were renamed after their terrain. Those fall through to the
+   topic the path itself declares (`commas`), which is the right answer and was
+   sitting unused in paths.json the whole time. */
+function topicFor(q: ZoneQuestion, zoneId: string, zoneTopic?: string): string {
+  if (q.tag && !isZoneLabel(q.tag)) return canonicalTopic(q.tag);
+  if (zoneTopic) return canonicalTopic(zoneTopic);
+  // No declared topic either: translate the id, or keep it as a last resort.
+  const alias = canonicalTopic(zoneId);
+  return TOPIC_BY_ZONE_ALIAS[alias] ?? alias;
+}
+
+export function fromZoneQuestion(
+  q: ZoneQuestion,
+  zoneId: string,
+  index: number,
+  zoneTopic?: string,
+): RunnableQuestion {
   const correctKey = KEYS[q.a] ?? 'A';
 
   /* `notes` gives per-choice feedback when the author wrote it, but the note
@@ -123,7 +144,7 @@ export function fromZoneQuestion(q: ZoneQuestion, zoneId: string, index: number)
     correctKey,
     why,
     whyGeneral: q.why,
-    topic: q.tag ?? zoneId,
+    topic: topicFor(q, zoneId, zoneTopic),
     section: 'zone',
     difficulty: q.d === 3 ? 'hard' : q.d === 1 ? 'easy' : 'medium',
   });

@@ -1,18 +1,20 @@
 /* Progress analytics and the profile / settings screen. */
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { LIBRARY_STATS, PATH_BY_ID, SECTIONS, SECTION_BY_ID } from '@/content';
 import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import {
   ACHIEVEMENTS,
   RANKS,
+  dailyActivity,
   estimatedComposite,
   rankProgress,
   sectionAccuracy,
   topicStats,
 } from '@/lib/progress';
 import { cloudEnabled } from '@/lib/supabase';
+import { downloadProgress } from '@/lib/exportData';
 import { cx, formatRelative, titleCase } from '@/lib/utils';
 import { Page } from '@/components/Shell';
 import { Button, ProgressBar, RankBadge, SectionHeading, EmptyState } from '@/components/ui';
@@ -32,25 +34,15 @@ export function StatsScreen() {
     [progress],
   );
 
-  /* Activity over the last 12 weeks, bucketed by day. */
-  const activity = useMemo(() => {
-    const days = 84;
-    const buckets = new Array(days).fill(0);
-    const startOfToday = new Date();
-    startOfToday.setHours(0, 0, 0, 0);
-
-    for (const a of progress.attempts) {
-      const daysAgo = Math.floor((startOfToday.getTime() - a.at) / 86_400_000);
-      if (daysAgo >= 0 && daysAgo < days) buckets[days - 1 - daysAgo] += 1;
-    }
-    return buckets;
-  }, [progress.attempts]);
+  /* Activity over the last 12 weeks. Read from the daily counts rather than
+     re-bucketing the raw log, which no longer goes back far enough to ask. */
+  const activity = useMemo(() => dailyActivity(progress, 84), [progress]);
 
   const maxActivity = Math.max(1, ...activity);
-  const totalCorrect = progress.attempts.filter((a) => a.correct).length;
-  const overallAccuracy = progress.attempts.length ? totalCorrect / progress.attempts.length : 0;
+  const { answered, correct: totalCorrect } = progress.tally;
+  const overallAccuracy = answered ? totalCorrect / answered : 0;
 
-  if (progress.attempts.length === 0) {
+  if (answered === 0) {
     return (
       <Page>
         <SectionHeading eyebrow="Progress" title="Statistics" />
@@ -74,7 +66,7 @@ export function StatsScreen() {
       <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
         <Tile label="Estimated composite" value={estimate !== null ? String(estimate) : '—'} color="#ffd23e" />
         <Tile label="Overall accuracy" value={`${Math.round(overallAccuracy * 100)}%`} color="#5ee6a8" />
-        <Tile label="Questions answered" value={progress.attempts.length.toLocaleString()} color="#ff9d5c" />
+        <Tile label="Questions answered" value={answered.toLocaleString()} color="#ff9d5c" />
         <Tile label="Day streak" value={String(progress.dayStreak)} color="#3ad6f0" />
       </div>
 
@@ -207,18 +199,19 @@ export function ProfileScreen() {
     rankIndex,
     playerName,
     isGuest,
-    userId,
     syncing,
     lastSyncError,
     signOut,
     syncNow,
     updateProgress,
     resetEverything,
-    identity,
+    deleteAccount,
   } = useStore();
 
   const { pct, next } = rankProgress(progress.xp);
   const unlocked = new Set(progress.achievements);
+  const [erasing, setErasing] = useState(false);
+  const [eraseError, setEraseError] = useState<string | null>(null);
 
   return (
     <Page>
@@ -270,28 +263,71 @@ export function ProfileScreen() {
           </label>
 
 
+          {/* Onboarding promises this can be changed later, so it has to be
+              changeable later. Clearing it stops the countdown rather than
+              leaving a date that has quietly gone by. */}
+          <label className="mb-5 block">
+            <span className="mb-2 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+              Test date
+            </span>
+            <div className="flex flex-wrap items-center gap-2.5">
+              <input
+                type="date"
+                value={progress.profile?.testDate ?? ''}
+                onChange={(e) =>
+                  updateProgress((p) => ({
+                    ...p,
+                    profile: p.profile
+                      ? { ...p.profile, testDate: e.target.value || null }
+                      : p.profile,
+                  }))
+                }
+                className="rounded-lg border-2 border-leather-700 bg-leather-900 px-3.5 py-2 font-read text-[14px] text-parchment outline-none transition-colors focus:border-gold-deep"
+              />
+              {progress.profile?.testDate && (
+                <Button
+                  variant="ghost"
+                  onClick={() =>
+                    updateProgress((p) => ({
+                      ...p,
+                      profile: p.profile ? { ...p.profile, testDate: null } : p.profile,
+                    }))
+                  }
+                >
+                  Clear
+                </Button>
+              )}
+            </div>
+          </label>
+
           <div className="border-t-2 border-leather-700 pt-5">
             <span className="mb-2.5 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
               Account
             </span>
 
-            {/* Branch on the identity, not on `userId`.
-
-                `userId` only exists for a cloud account, so someone signed in
-                with a device account fell into the guest branch: the app told
-                them "You are playing as a guest" while displaying their name
-                and XP, and offered no way out. The only exit was "Reset
-                everything", which destroys the progress rather than leaving the
-                account. Sign-out already handled local accounts — it was just
-                never reachable. */}
-            {identity.kind === 'local' ? (
+            {isGuest ? (
               <>
                 <p className="mb-3 text-[13px] leading-relaxed text-ink-faint">
-                  Signed in on this device as <b className="text-parchment">{identity.email}</b>.
-                  Progress is saved to this browser under your account, so others using it keep
-                  their own.
+                  {cloudEnabled
+                    ? 'You are playing without an account, so progress lives in this browser only — clearing your browser data would end the journey. An account carries it to your phone.'
+                    : 'This deployment has no account server, so progress saves to this browser only.'}
+                </p>
+                {cloudEnabled && (
+                  <Button variant="primary" onClick={() => navigate({ name: 'auth', mode: 'signup' })}>
+                    Save my progress
+                  </Button>
+                )}
+              </>
+            ) : (
+              <>
+                <p className="mb-3 text-[13px] leading-relaxed text-ink-faint">
+                  Signed in as <b className="text-parchment">{playerName}</b>. Your progress syncs
+                  to every device you sign in on.
                 </p>
                 <div className="flex flex-wrap gap-2.5">
+                  <Button variant="ghost" onClick={() => void syncNow()} disabled={syncing}>
+                    {syncing ? 'Syncing…' : 'Sync now'}
+                  </Button>
                   <Button
                     variant="ghost"
                     onClick={() => {
@@ -301,42 +337,28 @@ export function ProfileScreen() {
                   >
                     Sign out
                   </Button>
-                  {cloudEnabled && (
-                    <Button variant="primary" onClick={() => navigate({ name: 'auth', mode: 'signup' })}>
-                      Add cloud sync
-                    </Button>
-                  )}
                 </div>
               </>
-            ) : isGuest || !userId ? (
-              <>
-                <p className="mb-3 text-[13px] leading-relaxed text-ink-faint">
-                  {cloudEnabled
-                    ? 'You are playing as a guest. Progress is saved in this browser only.'
-                    : 'Cloud sync is not configured for this deployment, so progress saves to this browser only.'}
-                </p>
-                {cloudEnabled && (
-                  <Button variant="primary" onClick={() => navigate({ name: 'auth', mode: 'signup' })}>
-                    Create an account
-                  </Button>
-                )}
-              </>
-            ) : (
-              <div className="flex flex-wrap gap-2.5">
-                <Button variant="ghost" onClick={() => void syncNow()} disabled={syncing}>
-                  {syncing ? 'Syncing…' : 'Sync now'}
-                </Button>
-                <Button
-                  variant="ghost"
-                  onClick={() => {
-                    void signOut();
-                    navigate({ name: 'landing' });
-                  }}
-                >
-                  Sign out
-                </Button>
-              </div>
             )}
+
+            {/* Your data, on your terms — and export sits next to delete on
+                purpose, so erasing everything is never the only way out. */}
+            <div className="mt-5 border-t-2 border-leather-700 pt-5">
+              <span className="mb-2.5 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+                Your data
+              </span>
+              <Button
+                variant="ghost"
+                onClick={() =>
+                  downloadProgress(progress, isGuest ? undefined : { name: playerName })
+                }
+              >
+                Download everything ▾
+              </Button>
+              <p className="mt-2.5 text-[12px] leading-relaxed text-ink-faint">
+                A file with all of it — XP, accuracy by topic, test results, achievements.
+              </p>
+            </div>
 
             {lastSyncError && (
               <p className="mt-3 rounded-lg border-2 border-blood/40 bg-blood/10 px-3 py-2 text-[12px] leading-snug text-[#e8a094]">
@@ -413,22 +435,63 @@ export function ProfileScreen() {
         </div>
 
         <div className="rounded-lg border-2 border-blood/40 bg-leather-850 p-6">
-          <h3 className="heading mb-3 text-[12px] text-blood-text">Reset progress</h3>
+          <h3 className="heading mb-3 text-[12px] text-blood-text">Danger zone</h3>
           <p className="mb-4 text-[13px] leading-relaxed text-ink-faint">
-            Deletes all XP, attempts, cleared zones and test results from this browser. This cannot be
-            undone.
+            Deletes all XP, answers, cleared zones and test results
+            {isGuest ? ' from this browser' : ', on every device and in the cloud'}. This cannot be
+            undone — download your data first if you want to keep a copy.
           </p>
-          <Button
-            variant="danger"
-            onClick={() => {
-              const ok = window.confirm(
-                'Delete all progress on this device? This cannot be undone.',
-              );
-              if (ok) resetEverything();
-            }}
-          >
-            Reset everything
-          </Button>
+          <div className="flex flex-wrap gap-2.5">
+            <Button
+              variant="danger"
+              disabled={erasing}
+              onClick={() => {
+                const ok = window.confirm(
+                  isGuest
+                    ? 'Delete all progress on this device? This cannot be undone.'
+                    : 'Delete all progress everywhere, including the cloud copy? Your account stays. This cannot be undone.',
+                );
+                if (ok) void resetEverything();
+              }}
+            >
+              Reset progress
+            </Button>
+
+            {!isGuest && (
+              <Button
+                variant="danger"
+                disabled={erasing}
+                onClick={() => {
+                  /* Two prompts, because this one takes the account with it and
+                     there is no undo, no grace period and no copy kept. */
+                  if (!window.confirm('Delete your account and all of your progress?')) return;
+                  if (
+                    !window.confirm(
+                      'Last check — this is permanent. Your account, your email and every bit of progress will be erased and cannot be recovered.',
+                    )
+                  ) {
+                    return;
+                  }
+                  setEraseError(null);
+                  setErasing(true);
+                  void deleteAccount().then((result) => {
+                    if (!result.ok) {
+                      setEraseError(result.error ?? 'Could not delete the account.');
+                      setErasing(false);
+                    }
+                  });
+                }}
+              >
+                {erasing ? 'Deleting…' : 'Delete my account'}
+              </Button>
+            )}
+          </div>
+
+          {eraseError && (
+            <p className="mt-3 rounded-lg border-2 border-blood/40 bg-blood/10 px-3 py-2 text-[12px] leading-snug text-[#e8a094]">
+              {eraseError}
+            </p>
+          )}
         </div>
       </div>
     </Page>

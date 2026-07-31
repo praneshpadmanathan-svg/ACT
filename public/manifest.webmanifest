@@ -1,17 +1,35 @@
 {
   "name": "ACT Command",
   "short_name": "ACT Command",
-  "description": "Gamified prep for the 2025+ Enhanced ACT.",
+  "description": "Free prep for the Enhanced ACT: 754 practice questions with every choice explained, 60 lessons and timed tests, wrapped in a hand-drawn quest.",
+  "id": "/",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#0b0718",
   "theme_color": "#0b0718",
+  "categories": [
+    "education"
+  ],
   "icons": [
     {
-      "src": "/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

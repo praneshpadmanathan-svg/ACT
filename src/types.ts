@@ -189,6 +189,30 @@ export interface Attempt {
   at: number;
 }
 
+/** Running totals for one topic. */
+export interface TopicTally {
+  section: SectionId | 'zone';
+  /** answered */
+  n: number;
+  /** answered correctly */
+  ok: number;
+  /** total milliseconds spent */
+  ms: number;
+}
+
+/** Everything the app reports about answering, in a form that stays small
+ *  forever. See the note on `Progress.attempts` for why this exists. */
+export interface Tally {
+  /** Lifetime questions answered. */
+  answered: number;
+  /** Lifetime answered correctly. */
+  correct: number;
+  /** `${section}::${topic}` -> running totals. */
+  topics: Record<string, TopicTally>;
+  /** `yyyy-mm-dd` -> answers that day. Trimmed to the last 120 days. */
+  daily: Record<string, number>;
+}
+
 export interface TestResult {
   id: string;
   at: number;
@@ -206,12 +230,29 @@ export interface OnboardingProfile {
   before: 'first' | 'b20' | 'b27' | 'b28';
   target: number;
   fear: SectionId;
+  /** `yyyy-mm-dd`, or null if they have not booked a date yet. Drives the
+   *  countdown and the weekly goal. Optional so older saves still parse. */
+  testDate?: string | null;
   savedAt: number;
 }
 
 export interface Progress {
   version: 2;
   xp: number;
+  /** The durable record of answering. Never trimmed, always synced. */
+  tally: Tally;
+  /* The raw answer log, kept **on this device only** and capped hard.
+
+     It used to be the record of what you had answered, and the whole of it was
+     pushed to the cloud on every sync — up to 4,000 entries at ~110 bytes, so
+     roughly 440 KB per player. Supabase's free tier allows 500 MB of database
+     against 50,000 monthly users, which meant the *database* filled at around a
+     thousand people while 49,000 seats sat unused.
+
+     Nothing ever needed an individual attempt: every screen wanted a count, an
+     average, or a per-day bucket. Those all live in `tally` now, which is a few
+     kilobytes and syncs happily. This array stays because a recent log is
+     genuinely useful locally, and it costs nothing when it never leaves. */
   attempts: Attempt[];
   /** note page ids that have been read through */
   notesRead: string[];

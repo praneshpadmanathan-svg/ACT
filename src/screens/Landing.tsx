@@ -449,8 +449,33 @@ export function Landing() {
         </div>
       </section>
 
-      <footer className="border-t border-leather-700 py-8 text-center font-script text-[12px] uppercase tracking-[0.2em] text-ink-faint">
-        ACT Command · Built for the Enhanced ACT
+      <footer className="border-t border-leather-700 py-10 text-center">
+        <p className="font-script text-[12px] uppercase tracking-[0.2em] text-ink-faint">
+          ACT Command · Built for the Enhanced ACT
+        </p>
+        <nav className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+          <a
+            href={hrefFor({ name: 'privacy' })}
+            onClick={() => sfx.select()}
+            className="font-read text-[13.5px] text-parchment-dim underline-offset-4 transition-colors hover:text-parchment hover:underline"
+          >
+            Privacy
+          </a>
+          <a
+            href={hrefFor({ name: 'terms' })}
+            onClick={() => sfx.select()}
+            className="font-read text-[13.5px] text-parchment-dim underline-offset-4 transition-colors hover:text-parchment hover:underline"
+          >
+            Terms
+          </a>
+        </nav>
+        {/* Said plainly and in public, not buried in the terms. Using the name
+            to describe what the material covers is fine; letting anyone think
+            this is theirs is not. */}
+        <p className="mx-auto mt-4 max-w-md px-6 font-read text-[12.5px] leading-relaxed text-ink-faint">
+          Not affiliated with, endorsed by, or connected to ACT, Inc. "ACT" is their registered
+          trademark. Every question here was written for this app.
+        </p>
       </footer>
     </div>
   );

@@ -14,6 +14,8 @@ import type {
   ZoneQuestion,
 } from '@/types';
 
+import { canonicalTopic } from '@/lib/utils';
+
 import notesEnglish from './notesEnglish.json';
 import notesMath from './notesMath.json';
 import notesReading from './notesReading.json';
@@ -163,6 +165,24 @@ PATHS.forEach((path) => {
 
 export const getZone = (id: string) => ZONE_INDEX.get(id);
 export const ALL_ZONES = [...ZONE_INDEX.values()];
+
+/* --------------------------------------------------- zone name -> its topic
+
+   The zone quizzes were tagged with the landmark's old shouting name —
+   `COMMA CASTLE` — rather than the skill being tested, and questions with no
+   tag at all fell back to the raw id, `comma_castle`. Both canonicalise to the
+   same string, and this maps that string to the topic the path declares.
+
+   It exists so progress recorded under a *place* can be folded into the skill
+   it was really about, rather than stranding a student's comma history under
+   the name of a landmark that was renamed two releases ago. */
+export const TOPIC_BY_ZONE_ALIAS: Record<string, string> = {};
+for (const { zone } of ALL_ZONES) {
+  if (!zone.topic) continue;
+  const topic = canonicalTopic(zone.topic);
+  TOPIC_BY_ZONE_ALIAS[canonicalTopic(zone.id)] = topic;
+  TOPIC_BY_ZONE_ALIAS[canonicalTopic(zone.name)] = topic;
+}
 
 /* ------------------------------------------------------------------ totals */
 

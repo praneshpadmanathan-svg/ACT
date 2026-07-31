@@ -1,14 +1,16 @@
 /* Route table and app shell composition. */
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useRoute } from '@/lib/router';
 import { useStore } from '@/lib/store';
+import { onUpdateReady } from '@/lib/pwa';
 import { m, MotionProvider, pageVariants } from '@/lib/motion';
 import { TopBar } from '@/components/Shell';
 import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
 import { StoryOverlay } from '@/game/StoryOverlay';
 import { Landing } from '@/screens/Landing';
 import { Auth } from '@/screens/Auth';
+import { LegalScreen } from '@/screens/Legal';
 import { Onboarding } from '@/screens/Onboarding';
 import { Home } from '@/screens/Home';
 import { MapScreen, PathScreen } from '@/screens/MapScreens';
@@ -22,30 +24,49 @@ import { ProfileScreen, StatsScreen } from '@/screens/Stats';
 /** Routes that render their own full-screen chrome and suppress the top bar.
  *  The map is here because it is a full-viewport game view with its own
  *  floating controls — a nav bar over it broke the immersion. */
-const BARE_ROUTES = new Set(['landing', 'auth', 'onboarding', 'map']);
+const BARE_ROUTES = new Set(['landing', 'auth', 'onboarding', 'map', 'privacy', 'terms']);
+
+/** Reachable without having started: the front door and everything legal. */
+const OPEN_ROUTES = new Set(['landing', 'auth', 'privacy', 'terms', 'onboarding']);
 
 export default function App() {
   const route = useRoute();
   const navigate = useNavigate();
-  const { authReady, userId, isGuest, identity, progress } = useStore();
+  const { authReady, hasStarted, progress, authRedirect, clearAuthRedirect } = useStore();
 
-  /* 'Started' means any of: a cloud account, a device account, guest mode, or
-     existing progress. Missing the local-account case sent anyone who made an
-     account on this device straight back to the front door. */
-  const hasStarted =
-    Boolean(userId) || identity.kind === 'local' || isGuest || progress.xp > 0;
+  /* A reset link puts a live session in place and then has to be *used*, so it
+     jumps the queue: whatever the URL said, the next thing on screen is the
+     form for choosing a new password. */
+  useEffect(() => {
+    if (authRedirect?.flow !== 'reset') return;
+    if (route.name === 'auth' && route.mode === 'reset') return;
+    navigate({ name: 'auth', mode: 'reset' }, { replace: true });
+  }, [authRedirect, route, navigate]);
 
   /* The landing page is the front door and stays reachable: it greets you
      every time you open the app, and shows 'Continue your quest' once there is
-     progress to continue. Only the inner screens require having started. */
+     progress to continue. Only the inner screens require having started.
+
+     Onboarding is decided here rather than at the end of signing in, because
+     the progress belonging to a just-adopted identity arrives through a state
+     update that has not landed while the auth screen is still deciding where to
+     go. One place, one rule, no race. */
   useEffect(() => {
     if (!authReady) return;
 
-    if (!hasStarted && !BARE_ROUTES.has(route.name)) {
+    if (!hasStarted && !OPEN_ROUTES.has(route.name)) {
       navigate({ name: 'landing' }, { replace: true });
       return;
     }
+    if (hasStarted && !progress.profile && !OPEN_ROUTES.has(route.name)) {
+      navigate({ name: 'onboarding' }, { replace: true });
+    }
   }, [authReady, hasStarted, route.name, progress.profile, navigate]);
+
+  useEffect(() => {
+    // A confirmation link has nothing left to do once the session exists.
+    if (authRedirect?.flow === 'confirm' && authRedirect.ok) clearAuthRedirect();
+  }, [authRedirect, clearAuthRedirect]);
 
   if (!authReady) {
     return (
@@ -89,11 +110,49 @@ export default function App() {
           happen to be when you earn it. */}
       {hasStarted && <StoryOverlay />}
 
+      <UpdatePrompt />
       <ConfettiCanvas />
       <XPPopups />
       <Toasts />
       <LevelUpOverlay />
     </MotionProvider>
+  );
+}
+
+/* A newer build is installed and waiting.
+
+   Offered rather than applied. Reloading on its own would be fine on the map
+   and unforgivable eleven minutes into a timed section, and the service worker
+   cannot tell the difference — so the person does. */
+function UpdatePrompt() {
+  const [apply, setApply] = useState<(() => void) | null>(null);
+
+  useEffect(() => onUpdateReady((run) => setApply(() => run)), []);
+
+  if (!apply) return null;
+
+  return (
+    <div className="fixed inset-x-0 bottom-0 z-[130] flex justify-center p-4">
+      <div className="panel-lit flex flex-wrap items-center gap-3 px-4 py-3 shadow-lg">
+        <span className="font-read text-[14px] text-parchment-dim">
+          A new version is ready.
+        </span>
+        <button
+          type="button"
+          onClick={apply}
+          className="font-display text-[13px] font-semibold text-gold transition-colors hover:text-gold-bright"
+        >
+          Reload now
+        </button>
+        <button
+          type="button"
+          onClick={() => setApply(null)}
+          className="font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+        >
+          Later
+        </button>
+      </div>
+    </div>
   );
 }
 
@@ -110,6 +169,10 @@ function renderRoute(route: ReturnType<typeof useRoute>) {
       return <Landing />;
     case 'auth':
       return <Auth mode={route.mode} />;
+    case 'privacy':
+      return <LegalScreen page="privacy" />;
+    case 'terms':
+      return <LegalScreen page="terms" />;
     case 'onboarding':
       return <Onboarding />;
     case 'home':

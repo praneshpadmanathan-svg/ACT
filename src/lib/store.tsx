@@ -20,6 +20,7 @@ import {
   awardXP as awardXPPure,
   checkAchievements,
   loadProgress,
+  mergeProgress,
   rankFor,
   rankIndexFor,
   recordAttempt as recordAttemptPure,
@@ -30,23 +31,20 @@ import {
   type Rank,
 } from './progress';
 import { readRaw, removeRaw, STORAGE_KEYS, writeRaw } from './storage';
-import {
-  currentLocalAccount,
-  localSignOut,
-  progressKeyFor,
-  type Identity,
-  type LocalAccount,
-} from './localAuth';
+import { progressKeyFor, retireDeviceAccounts, type Identity } from './identity';
 import { sfx } from './sfx';
 import {
   cloudEnabled,
+  consumeAuthRedirect,
   currentUser,
+  deleteAccount as cloudDeleteAccount,
+  deleteRemoteProgress,
   displayNameOf,
-  mergeProgress,
   pullProgress,
   pushProgress,
   signOut as cloudSignOut,
   supabase,
+  type AuthRedirect,
 } from './supabase';
 
 /* ------------------------------------------------------------------ toasts */
@@ -66,6 +64,11 @@ export interface XPPop {
   amount: number;
 }
 
+/** Set at sign-up so the guest world the player just built follows them into
+ *  the new account. Lives in localStorage because email confirmation takes them
+ *  out of the app and back in through a fresh page load. */
+const CLAIM_GUEST_KEY = 'act-command:claim-guest';
+
 interface StoreValue {
   progress: Progress;
   rank: Rank;
@@ -76,8 +79,15 @@ interface StoreValue {
   userId: string | null;
   playerName: string;
   isGuest: boolean;
+  /** Whether they have begun at all — the landing page is the door until they
+   *  have. Distinct from `isGuest`, which is now true for everyone without an
+   *  account, including a first-time visitor who has not clicked anything. */
+  hasStarted: boolean;
   syncing: boolean;
   lastSyncError: string | null;
+  /** Why we are back from an email link, for the screen that has to react. */
+  authRedirect: AuthRedirect | null;
+  clearAuthRedirect: () => void;
 
   toasts: Toast[];
   xpPops: XPPop[];
@@ -101,13 +111,15 @@ interface StoreValue {
 
   /** Who the loaded progress belongs to. */
   identity: Identity;
-  /** Adopt a just-created / just-verified local account. */
-  useLocalAccount: (account: LocalAccount) => void;
+  /** Begin playing without an account. */
   continueAsGuest: () => void;
+  /** Called at sign-up: carry this guest's world into the account being made. */
+  claimGuestProgress: () => void;
   refreshAuth: () => Promise<void>;
   signOut: () => Promise<void>;
   syncNow: () => Promise<void>;
-  resetEverything: () => void;
+  resetEverything: () => Promise<void>;
+  deleteAccount: () => Promise<{ ok: boolean; error?: string }>;
 }
 
 const StoreContext = createContext<StoreValue | null>(null);
@@ -120,28 +132,32 @@ export function useStore(): StoreValue {
 
 let nextId = 1;
 
+/* Retire the old on-device credential store before anything reads progress.
+   Module scope so it happens exactly once per load, not once per mount. */
+const retired = typeof window === 'undefined' ? null : retireDeviceAccounts();
+
 export function StoreProvider({ children }: { children: ReactNode }) {
   /* Progress is stored per identity so two people sharing a browser cannot
-     overwrite each other, and signing out of an account does not expose it. */
-  const [identity, setIdentity] = useState<Identity>(() => {
-    const account = currentLocalAccount();
-    return account ? { kind: 'local', email: account.email } : { kind: 'guest' };
-  });
-  const [progress, setProgress] = useState<Progress>(() => {
-    const account = currentLocalAccount();
-    const key = progressKeyFor(account ? { kind: 'local', email: account.email } : { kind: 'guest' });
-    return loadProgress(key);
-  });
+     overwrite each other, and signing out of an account does not expose it.
+     Boot always starts as a guest: a cloud session is confirmed asynchronously
+     by refreshAuth, and guessing before then would flash the wrong world. */
+  const [identity, setIdentity] = useState<Identity>({ kind: 'guest' });
+  const [progress, setProgress] = useState<Progress>(() =>
+    loadProgress(progressKeyFor({ kind: 'guest' })),
+  );
   const [toasts, setToasts] = useState<Toast[]>([]);
   const [xpPops, setXPPops] = useState<XPPop[]>([]);
   const [levelUpRank, setLevelUpRank] = useState<number | null>(null);
 
   const [authReady, setAuthReady] = useState(!cloudEnabled);
   const [userId, setUserId] = useState<string | null>(null);
-  const [playerName, setPlayerName] = useState(() => currentLocalAccount()?.name ?? 'Traveller');
-  const [isGuest, setIsGuest] = useState(() => readRaw(STORAGE_KEYS.guest) === '1');
+  const [playerName, setPlayerName] = useState('Traveller');
   const [syncing, setSyncing] = useState(false);
   const [lastSyncError, setLastSyncError] = useState<string | null>(null);
+  const [authRedirect, setAuthRedirect] = useState<AuthRedirect | null>(null);
+  const [hasStarted, setHasStarted] = useState(() => readRaw(STORAGE_KEYS.guest) === '1');
+
+  const isGuest = identity.kind === 'guest';
 
   // Latest progress, readable from callbacks without re-subscribing.
   const progressRef = useRef(progress);
@@ -173,6 +189,17 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     setXPPops((prev) => [...prev, { id, amount }]);
     window.setTimeout(() => setXPPops((prev) => prev.filter((x) => x.id !== id)), 1250);
   }, []);
+
+  /* Tell anyone whose device account was retired where their world went, once. */
+  useEffect(() => {
+    if (!retired) return;
+    pushToast({
+      title: 'Welcome back',
+      detail: `Accounts moved to the cloud — ${retired.migratedName}'s progress is here.`,
+      color: '#ffd23e',
+      icon: 'star',
+    });
+  }, [pushToast]);
 
   /* ------------------------------------------------------ reward pipeline */
 
@@ -252,26 +279,23 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   /* ----------------------------------------------------------------- auth */
 
-  const syncWithCloud = useCallback(
-    async (uid: string, name: string) => {
-      setSyncing(true);
-      setLastSyncError(null);
-      try {
-        const remote = await pullProgress(uid);
-        const local = progressRef.current;
-        const merged = remote ? mergeProgress(local, remote.data) : local;
-        setProgress(merged);
-        progressRef.current = merged;
-        const ok = await pushProgress(uid, name, merged);
-        if (!ok) setLastSyncError('Progress is saved on this device but could not reach the cloud.');
-      } catch (err) {
-        setLastSyncError(err instanceof Error ? err.message : 'Sync failed.');
-      } finally {
-        setSyncing(false);
-      }
-    },
-    [],
-  );
+  /** Push a known-good starting point up, and take down anything newer. */
+  const syncWithCloud = useCallback(async (uid: string, name: string, base: Progress) => {
+    setSyncing(true);
+    setLastSyncError(null);
+    try {
+      const remote = await pullProgress(uid);
+      const merged = remote ? mergeProgress(base, remote.data) : base;
+      setProgress(merged);
+      progressRef.current = merged;
+      const ok = await pushProgress(uid, name, merged);
+      if (!ok) setLastSyncError('Progress is saved on this device but could not reach the cloud.');
+    } catch (err) {
+      setLastSyncError(err instanceof Error ? err.message : 'Sync failed.');
+    } finally {
+      setSyncing(false);
+    }
+  }, []);
 
   const refreshAuth = useCallback(async () => {
     if (!cloudEnabled) {
@@ -280,23 +304,50 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     }
     const user = await currentUser();
     if (user) {
+      const next: Identity = { kind: 'cloud', userId: user.id };
       const name = displayNameOf(user);
+
+      /* Start from *this account's* own saved progress, not from whatever
+         happens to be loaded. Reading progressRef here would fold a guest
+         session into whichever account signed in next — so someone who played
+         on a friend's laptop and then signed in would absorb the friend's work.
+
+         The one time that folding is wanted is the account's first moments,
+         when the player has just built a world as a guest and is claiming it.
+         That is opt-in, set at sign-up, and survives the round trip through the
+         confirmation email because it is written to disk. */
+      let base = loadProgress(progressKeyFor(next));
+      if (readRaw(CLAIM_GUEST_KEY) === '1') {
+        base = mergeProgress(loadProgress(progressKeyFor({ kind: 'guest' })), base);
+        removeRaw(CLAIM_GUEST_KEY);
+      }
+
       setUserId(user.id);
       setPlayerName(name);
-      setIsGuest(false);
-      removeRaw(STORAGE_KEYS.guest);
-      setIdentity({ kind: 'cloud', userId: user.id });
-      await syncWithCloud(user.id, name);
+      setIdentity(next);
+      setProgress(base);
+      progressRef.current = base;
+      writeRaw(STORAGE_KEYS.guest, '1');
+      setHasStarted(true);
+
+      await syncWithCloud(user.id, name, base);
     } else {
       setUserId(null);
-      const account = currentLocalAccount();
-      if (account) setPlayerName(account.name);
+      setPlayerName('Traveller');
+      setIdentity({ kind: 'guest' });
     }
     setAuthReady(true);
   }, [syncWithCloud]);
 
   useEffect(() => {
-    void refreshAuth();
+    /* Settle any link clicked in an email before asking who is signed in — the
+       exchange is what creates the session a password reset then depends on. */
+    void (async () => {
+      const redirect = await consumeAuthRedirect();
+      if (redirect) setAuthRedirect(redirect);
+      await refreshAuth();
+    })();
+
     if (!supabase) return;
     const { data } = supabase.auth.onAuthStateChange((event) => {
       if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'USER_UPDATED') {
@@ -339,38 +390,38 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     progressRef.current = loaded;
   }, []);
 
-  const useLocalAccount = useCallback(
-    (account: LocalAccount) => {
-      setPlayerName(account.name);
-      setIsGuest(false);
-      removeRaw(STORAGE_KEYS.guest);
-      switchIdentity({ kind: 'local', email: account.email });
-    },
-    [switchIdentity],
-  );
-
   const continueAsGuest = useCallback(() => {
     writeRaw(STORAGE_KEYS.guest, '1');
-    setIsGuest(true);
+    setHasStarted(true);
     setPlayerName('Traveller');
     switchIdentity({ kind: 'guest' });
   }, [switchIdentity]);
 
+  const claimGuestProgress = useCallback(() => {
+    writeRaw(CLAIM_GUEST_KEY, '1');
+  }, []);
+
+  const clearAuthRedirect = useCallback(() => setAuthRedirect(null), []);
+
   const signOutFn = useCallback(async () => {
     await cloudSignOut();
-    localSignOut();
     setUserId(null);
     setPlayerName('Traveller');
-    setIsGuest(false);
-    removeRaw(STORAGE_KEYS.guest);
     switchIdentity({ kind: 'guest' });
   }, [switchIdentity]);
 
   const syncNow = useCallback(async () => {
-    if (userId) await syncWithCloud(userId, playerName);
+    if (userId) await syncWithCloud(userId, playerName, progressRef.current);
   }, [userId, playerName, syncWithCloud]);
 
-  const resetEverything = useCallback(() => {
+  /* Wipe progress without touching the account.
+
+     The remote row has to go first. This used to clear localStorage and
+     reload — whereupon refreshAuth pulled the cloud copy straight back down and
+     merged it into the empty local one, so everything the player had just asked
+     to delete reappeared. Deleting locally only is not deleting. */
+  const resetEverything = useCallback(async () => {
+    if (userId) await deleteRemoteProgress(userId);
     removeRaw(storageKey);
     removeRaw(STORAGE_KEYS.progress);
     removeRaw(STORAGE_KEYS.guest);
@@ -380,6 +431,18 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     removeRaw(STORAGE_KEYS.seenIntro);
     window.location.hash = '#/';
     window.location.reload();
+  }, [storageKey, userId]);
+
+  /** Delete the account itself, and every trace of it on this device. */
+  const deleteAccountFn = useCallback(async () => {
+    const result = await cloudDeleteAccount();
+    if (!result.ok) return result;
+    removeRaw(storageKey);
+    removeRaw(STORAGE_KEYS.guest);
+    removeRaw(CLAIM_GUEST_KEY);
+    window.location.hash = '#/';
+    window.location.reload();
+    return { ok: true };
   }, [storageKey]);
 
   const value = useMemo<StoreValue>(
@@ -391,8 +454,11 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       userId,
       playerName,
       isGuest,
+      hasStarted,
       syncing,
       lastSyncError,
+      authRedirect,
+      clearAuthRedirect,
       toasts,
       xpPops,
       levelUpRank,
@@ -405,19 +471,20 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       finishTest,
       updateProgress,
       identity,
-      useLocalAccount,
       continueAsGuest,
+      claimGuestProgress,
       refreshAuth,
       signOut: signOutFn,
       syncNow,
       resetEverything,
+      deleteAccount: deleteAccountFn,
     }),
     [
-      progress, authReady, userId, playerName, isGuest, syncing, lastSyncError,
-      toasts, xpPops, levelUpRank, dismissLevelUp, pushToast, dismissToast,
-      answerQuestion, markNoteRead, clearZone, finishTest, updateProgress,
-      identity, useLocalAccount, continueAsGuest, refreshAuth, signOutFn, syncNow,
-      resetEverything,
+      progress, authReady, userId, playerName, isGuest, hasStarted, syncing, lastSyncError,
+      authRedirect, clearAuthRedirect, toasts, xpPops, levelUpRank, dismissLevelUp,
+      pushToast, dismissToast, answerQuestion, markNoteRead, clearZone, finishTest,
+      updateProgress, identity, continueAsGuest, claimGuestProgress, refreshAuth,
+      signOutFn, syncNow, resetEverything, deleteAccountFn,
     ],
   );
 

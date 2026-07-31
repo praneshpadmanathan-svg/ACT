@@ -51,7 +51,9 @@ Every question explains **all four choices**, not just the credited one.
 - **Boss duels** — each region has a guardian standing at the end of its road, marked on the map itself: dormant while landmarks remain, awake once the region is cleared, felled once beaten. You stand on the left, it stands on the right, and the questions are the weapons: a correct answer lands a hit, a wrong one lets it hit back. Ten hits to fell it, three to fall. Losing costs nothing but the attempt.
 - **A quest chain** — nine objectives ending at the full timed trial, so there is something to actually do to reach the end: take your first landmark, hold four, break a Seal, push to twelve, a second Seal, halfway, all four Seals, the whole map, the trial. The Seals are the region guardians, so the story and the boss duels point at the same thing. The current objective sits on the map with a progress bar and Wizzy leads with it. Beats shake the scene — softly for a tremor, hard for a Seal breaking — and nine dispatches keep the world moving between them. Nothing is ever locked behind the story: every objective is something you would do anyway.
 - **Progression** — XP, seven ranks, day streaks, 15 achievements, and an estimated composite derived from your actual accuracy.
-- **Accounts** — Supabase when configured, otherwise salted-and-hashed accounts kept on the device. Progress is stored per profile, so two people can share a browser without overwriting each other. Guest mode needs no account at all.
+- **Accounts, or none at all** — everything works without one, and the front door starts you playing rather than signing up. When you do make an account it is real: Supabase handles it, the password is hashed server-side and never touches the browser, and there is password reset, a six-digit email code as an alternative, one-click data export and one-click permanent deletion. Progress is stored per identity, so two people sharing a browser never overwrite each other, and the world you built as a guest follows you into the account you make.
+- **Built for 13–17** — a neutral date-of-birth gate sits in front of account creation only, because playing collects nothing. Under-13s get the entire app in local-only mode rather than a locked door: no email, no name, nothing transmitted, which is how COPPA is avoided rather than violated. The birthday itself is used once in memory and never stored. No ads, no analytics, no trackers, no messaging, no public profiles.
+- **Works offline** — a hand-written service worker precaches the whole app, all 754 questions and the artwork (2.2 MB), so it runs on a bus with no signal and installs to a phone home screen.
 - **Sound** — every cue is synthesised at runtime in WebAudio (wooden latches, felt thuds, mallet-and-harp for a correct answer, a layered fanfare for a rank-up), routed through a generated room reverb. Zero bytes of audio ship.
 
 ---
@@ -112,15 +114,21 @@ src/
     lessons.json        per-zone lessons
     miniquizzes.json    412 zone questions
 
+  sw.ts                 service worker: precache, offline, update handshake
+
   lib/
     store.tsx           single source of truth: progress, auth, rewards
-    progress.ts         XP, ranks, streaks, spaced repetition, scoring
+    progress.ts         XP, ranks, streaks, spaced repetition, scoring, merge
+    plan.ts             countdown, weekly goal, what to do today
     router.ts           hash router
     storage.ts          localStorage with quota/private-mode handling
-    supabase.ts         auth + sync, with merge-not-clobber semantics
+    supabase.ts         auth + sync, compaction, account deletion
+    identity.ts         who progress belongs to + per-profile keys
+    ageGate.ts          date-of-birth check; stores the verdict, never the date
+    exportData.ts       download everything we hold
+    pwa.ts              worker registration and the update prompt
     normalize.ts        adapts both question shapes into one runner shape
     sfx.ts              synthesised sound design (no audio files)
-    localAuth.ts        device accounts + per-profile progress keys
     utils.ts
 
   components/
@@ -158,45 +166,36 @@ Everything in `src/content/*.json` is plain data with types in `src/types.ts`. T
 
 ---
 
-## Cloud sync (optional)
+## Accounts and sync (optional)
 
-Without configuration the app is local-only and fully functional. To add accounts:
+Without configuration the app is local-only and fully functional — that is also
+the mode under-13s stay in permanently. To turn on accounts:
 
 1. Create a project at [supabase.com](https://supabase.com).
-2. Copy `.env.example` to `.env` and fill in both values from **Settings → API**:
+2. Copy `.env.example` to `.env` and fill in both values from **Settings → API**.
+3. Run [`supabase/schema.sql`](supabase/schema.sql) in the SQL editor.
+4. Deploy the account-deletion function: `supabase functions deploy delete-account`.
+5. Work through [`docs/launch-checklist.md`](docs/launch-checklist.md) — email confirmation, leaked-password protection, CAPTCHA and the redirect allowlist are all dashboard settings that are invisible from the repo and fail quietly when wrong.
 
-   ```
-   VITE_SUPABASE_URL=https://yourproject.supabase.co
-   VITE_SUPABASE_ANON_KEY=your-anon-publishable-key
-   ```
-
-3. Create the progress table and its row-level security policies:
-
-   ```sql
-   create table public.progress (
-     user_id      uuid primary key references auth.users on delete cascade,
-     display_name text,
-     data         jsonb not null default '{}'::jsonb,
-     updated_at   timestamptz not null default now()
-   );
-
-   alter table public.progress enable row level security;
-
-   create policy "read own progress"   on public.progress
-     for select using (auth.uid() = user_id);
-   create policy "insert own progress" on public.progress
-     for insert with check (auth.uid() = user_id);
-   create policy "update own progress" on public.progress
-     for update using (auth.uid() = user_id);
-   ```
-
-The anon key is a publishable key meant to ship in browser bundles; RLS is what actually protects the data, which is why the policies above matter. Never put a `service_role` key in `.env`.
+The anon key is publishable and meant to ship in browser bundles; **row-level
+security is what actually protects the data**, which is why every policy in the
+schema matters. The `service_role` key must never appear in `.env` — deleting an
+auth user needs it, which is exactly why that runs in an Edge Function instead.
 
 ### How sync behaves
 
-Local and remote progress are **merged**, never overwritten. XP, streaks and best scores take the maximum; attempts, tests, read pages and achievements are unioned; review schedules keep whichever is further along. Opening the app on a second device can only move you forward — it can't wipe a session.
+Local and remote progress are **merged**, never overwritten: counters take the
+maximum, sets are unioned, review schedules keep whichever is further along.
+Opening the app on a second device can only move you forward — it can't wipe a
+session. Pushes are debounced 4 seconds and flushed when the tab is hidden.
 
-Pushes are debounced 4 seconds and flushed when the tab is hidden.
+**What gets synced is a summary, not a log.** The raw answer history stays on the
+device. Every screen that reports on answering wants a count or an average, never
+an individual attempt, so the cloud row carries per-topic totals and per-day
+counts instead — 54 KB for a heavy account rather than 302 KB. On Supabase's free
+tier that is the difference between the 500 MB database filling at around 1,700
+players and it outlasting the 50,000-monthly-user auth allowance. Don't undo it by
+syncing `attempts`; see `CloudProgress` in [`src/lib/supabase.ts`](src/lib/supabase.ts).
 
 ---
 
@@ -225,6 +224,13 @@ Routing is hash-based (`#/home`, `#/note/eng-commas-jobs`), so no rewrite rules 
 - Progress from the previous single-file build is migrated automatically on first load.
 
 ---
+
+## Not affiliated with ACT, Inc.
+
+This is an independent study tool. "ACT" is a registered trademark of ACT, Inc.;
+it is used here only to describe what the material covers. Every question,
+lesson and passage was written for this app — none of it is real exam material,
+and the estimated composite is a study aid rather than a prediction.
 
 ## License
 

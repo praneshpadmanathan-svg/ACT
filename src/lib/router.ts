@@ -6,9 +6,16 @@
 
 import { useCallback, useEffect, useSyncExternalStore } from 'react';
 
+/** `forgot` asks for the reset email; `reset` is where the link lands. */
+export type AuthMode = 'signin' | 'signup' | 'forgot' | 'reset';
+
+const AUTH_MODES: AuthMode[] = ['signin', 'signup', 'forgot', 'reset'];
+
 export type Route =
   | { name: 'landing' }
-  | { name: 'auth'; mode: 'signin' | 'signup' }
+  | { name: 'auth'; mode: AuthMode }
+  | { name: 'privacy' }
+  | { name: 'terms' }
   | { name: 'onboarding' }
   | { name: 'home' }
   | { name: 'map' }
@@ -41,8 +48,14 @@ export function parseRoute(hash: string = currentHash()): Route {
     case undefined:
     case '':
       return { name: 'landing' };
-    case 'auth':
-      return { name: 'auth', mode: parts[1] === 'signin' ? 'signin' : 'signup' };
+    case 'auth': {
+      const mode = AUTH_MODES.find((m) => m === parts[1]) ?? 'signup';
+      return { name: 'auth', mode };
+    }
+    case 'privacy':
+      return { name: 'privacy' };
+    case 'terms':
+      return { name: 'terms' };
     case 'onboarding':
       return { name: 'onboarding' };
     case 'home':

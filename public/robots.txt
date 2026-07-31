@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Nothing here is behind a login, and there are no per-user pages to keep out of
+# an index: every route is either the app shell or static study material, and
+# the router is hash-based so crawlers only ever see one document anyway.

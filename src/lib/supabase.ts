@@ -1,11 +1,16 @@
 /* Supabase auth + progress sync.
 
-   Config comes from env vars. With none set the app still runs completely —
-   it just stays local-only, which is what `cloudEnabled` gates on. That keeps
-   `git clone && npm install && npm run dev` working for anyone. */
+   This is the only account system now. The device-password path it used to
+   share the job with is gone — see the note at the top of identity.ts.
+
+   Config comes from env vars. With none set the app still runs completely,
+   local-only, which is what `cloudEnabled` gates on. That keeps
+   `git clone && npm install && npm run dev` working for anyone, and it is also
+   the mode under-13s stay in. */
 
 import { createClient, type SupabaseClient, type User } from '@supabase/supabase-js';
 import type { Progress } from '@/types';
+import { emptyProgress } from './progress';
 
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined;
 const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
@@ -17,16 +22,34 @@ export const supabase: SupabaseClient | null = cloudEnabled
       auth: {
         persistSession: true,
         autoRefreshToken: true,
-        detectSessionInUrl: true,
+        /* PKCE, and the redirect handled by hand.
+
+           Two reasons, both about this app's hash router.
+
+           The implicit flow returns tokens in the URL *fragment*
+           (`#access_token=...`), which is the same place `#/map` lives. The
+           router would parse the token as a route and the app would land
+           somewhere arbitrary with the credential sitting in the address bar.
+           PKCE returns `?code=` in the query string instead, which the hash
+           router ignores completely.
+
+           And `detectSessionInUrl` races that same router: it consumes the code
+           asynchronously on client construction, while the app is already
+           deciding what to render. Doing the exchange ourselves in
+           `consumeAuthRedirect` means the answer is known before the first
+           paint, and the reason we are back on the site — confirmation, reset,
+           magic link — survives the round trip. */
+        flowType: 'pkce',
+        detectSessionInUrl: false,
       },
     })
   : null;
 
-/** Row shape of the `progress` table. See README for the schema. */
+/** Row shape of the `progress` table. See supabase/schema.sql. */
 interface ProgressRow {
   user_id: string;
   display_name: string | null;
-  data: Progress;
+  data: CloudProgress;
   updated_at: string;
 }
 
@@ -41,18 +64,35 @@ function friendlyError(message: string): string {
   const m = message.toLowerCase();
   if (m.includes('invalid login')) return 'That email and password combination did not match.';
   if (m.includes('already registered')) return 'That email already has an account — try signing in.';
-  if (m.includes('password')) return 'Password must be at least 6 characters.';
-  if (m.includes('rate limit')) return 'Too many attempts. Wait a minute and try again.';
-  if (m.includes('fetch') || m.includes('network')) return 'Could not reach the server. Check your connection.';
+  if (m.includes('weak') || m.includes('pwned') || m.includes('compromised')) {
+    return 'That password has appeared in a known data breach. Please pick a different one.';
+  }
+  if (m.includes('password')) return 'Password must be at least 8 characters.';
+  if (m.includes('rate limit') || m.includes('too many')) {
+    return 'Too many attempts. Wait a minute and try again.';
+  }
+  if (m.includes('expired') || m.includes('invalid token') || m.includes('otp')) {
+    return 'That code has expired. Ask for a new one.';
+  }
+  if (m.includes('fetch') || m.includes('network') || m.includes('failed to fetch')) {
+    return 'Could not reach the server. Check your connection and try again.';
+  }
   return message;
 }
 
+/** Where Supabase sends people back to, carrying why they left. */
+function redirectTo(flow: 'confirm' | 'reset'): string {
+  return `${window.location.origin}/?flow=${flow}`;
+}
+
+/* ------------------------------------------------------------------- auth */
+
 export async function signUp(name: string, email: string, password: string): Promise<AuthResult> {
-  if (!supabase) return { ok: false, error: 'Cloud sync is not configured.' };
+  if (!supabase) return { ok: false, error: 'Accounts are not configured for this deployment.' };
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
-    options: { data: { display_name: name } },
+    options: { data: { display_name: name }, emailRedirectTo: redirectTo('confirm') },
   });
   if (error) return { ok: false, error: friendlyError(error.message) };
   // No session back means the project requires email confirmation.
@@ -60,8 +100,42 @@ export async function signUp(name: string, email: string, password: string): Pro
 }
 
 export async function signIn(email: string, password: string): Promise<AuthResult> {
-  if (!supabase) return { ok: false, error: 'Cloud sync is not configured.' };
+  if (!supabase) return { ok: false, error: 'Accounts are not configured for this deployment.' };
   const { error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) return { ok: false, error: friendlyError(error.message) };
+  return { ok: true };
+}
+
+/** Email a one-time code (and a link, which also works) to an existing account. */
+export async function sendLoginCode(email: string): Promise<AuthResult> {
+  if (!supabase) return { ok: false, error: 'Accounts are not configured for this deployment.' };
+  const { error } = await supabase.auth.signInWithOtp({
+    email,
+    options: { shouldCreateUser: false, emailRedirectTo: redirectTo('confirm') },
+  });
+  if (error) return { ok: false, error: friendlyError(error.message) };
+  return { ok: true };
+}
+
+export async function verifyLoginCode(email: string, token: string): Promise<AuthResult> {
+  if (!supabase) return { ok: false, error: 'Accounts are not configured for this deployment.' };
+  const { error } = await supabase.auth.verifyOtp({ email, token: token.trim(), type: 'email' });
+  if (error) return { ok: false, error: friendlyError(error.message) };
+  return { ok: true };
+}
+
+export async function requestPasswordReset(email: string): Promise<AuthResult> {
+  if (!supabase) return { ok: false, error: 'Accounts are not configured for this deployment.' };
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: redirectTo('reset'),
+  });
+  if (error) return { ok: false, error: friendlyError(error.message) };
+  return { ok: true };
+}
+
+export async function setNewPassword(password: string): Promise<AuthResult> {
+  if (!supabase) return { ok: false, error: 'Accounts are not configured for this deployment.' };
+  const { error } = await supabase.auth.updateUser({ password });
   if (error) return { ok: false, error: friendlyError(error.message) };
   return { ok: true };
 }
@@ -77,15 +151,89 @@ export async function currentUser(): Promise<User | null> {
 }
 
 export function displayNameOf(user: User | null): string {
-  if (!user) return 'Guest';
+  if (!user) return 'Traveller';
   const meta = user.user_metadata as { display_name?: string } | undefined;
-  return meta?.display_name || user.email?.split('@')[0] || 'Player';
+  return meta?.display_name || user.email?.split('@')[0] || 'Traveller';
+}
+
+/* --------------------------------------------------------- the return trip */
+
+export type AuthRedirect = { flow: 'confirm' | 'reset'; ok: boolean; error?: string };
+
+/**
+ * Handle a link clicked in an email: exchange the code for a session, then
+ * scrub it out of the address bar.
+ *
+ * Called once on boot, before the app decides what to render, so a password
+ * reset can land on the right screen with the session already live. Removing
+ * the code from the URL afterwards matters — a single-use credential in the
+ * address bar ends up in browser history and in whatever the student pastes
+ * into a group chat.
+ */
+export async function consumeAuthRedirect(): Promise<AuthRedirect | null> {
+  if (!supabase) return null;
+
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
+  const flow = params.get('flow') === 'reset' ? 'reset' : 'confirm';
+  const errorDescription = params.get('error_description');
+
+  if (!code && !errorDescription) return null;
+
+  const clean = () => {
+    const keep = new URLSearchParams(window.location.search);
+    for (const k of ['code', 'flow', 'error', 'error_description', 'error_code']) keep.delete(k);
+    const query = keep.toString();
+    window.history.replaceState(
+      null,
+      '',
+      `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`,
+    );
+  };
+
+  if (errorDescription) {
+    clean();
+    return { flow, ok: false, error: friendlyError(errorDescription) };
+  }
+
+  const { error } = await supabase.auth.exchangeCodeForSession(code!);
+  clean();
+  return error ? { flow, ok: false, error: friendlyError(error.message) } : { flow, ok: true };
 }
 
 /* ------------------------------------------------------------------- sync */
 
+/* What actually goes in the row.
+
+   `attempts` is dropped entirely. It was the whole raw answer log — up to
+   4,000 entries, roughly 440 KB — and nothing on any screen ever read an
+   individual attempt; they all wanted counts and averages, which now live in
+   `tally` at a few kilobytes. On Supabase's free tier that is the difference
+   between the 500 MB database filling at around a thousand players and it
+   comfortably outlasting the 50,000-monthly-user auth allowance.
+
+   `testHistory` is capped too. It was the only other collection with no bound
+   at all, and a full result is ~300 bytes. Fifty full-length tests is far more
+   than anyone will sit, and keeping the most recent is the right fifty. */
+export type CloudProgress = Omit<Progress, 'attempts'>;
+
+const MAX_TEST_HISTORY = 50;
+
+export function compactForCloud(p: Progress): CloudProgress {
+  const { attempts: _local, ...rest } = p;
+  return { ...rest, testHistory: p.testHistory.slice(-MAX_TEST_HISTORY) };
+}
+
+/** Rebuild a full Progress from a row. The attempt log starts empty, which is
+ *  correct: it is a local recent-history convenience, not shared state. */
+export function expandFromCloud(row: CloudProgress): Progress {
+  return { ...emptyProgress(), ...row, attempts: [] };
+}
+
 /** Pull the saved row. Returns null when the user has never synced. */
-export async function pullProgress(userId: string): Promise<{ data: Progress; updatedAt: number } | null> {
+export async function pullProgress(
+  userId: string,
+): Promise<{ data: Progress; updatedAt: number } | null> {
   if (!supabase) return null;
   const { data, error } = await supabase
     .from('progress')
@@ -97,8 +245,8 @@ export async function pullProgress(userId: string): Promise<{ data: Progress; up
     console.warn('[sync] pull failed', error.message);
     return null;
   }
-  if (!data) return null;
-  return { data: data.data, updatedAt: new Date(data.updated_at).getTime() };
+  if (!data?.data) return null;
+  return { data: expandFromCloud(data.data), updatedAt: new Date(data.updated_at).getTime() };
 }
 
 export async function pushProgress(
@@ -111,7 +259,7 @@ export async function pushProgress(
     {
       user_id: userId,
       display_name: displayName,
-      data: progress,
+      data: compactForCloud(progress),
       updated_at: new Date().toISOString(),
     },
     { onConflict: 'user_id' },
@@ -123,54 +271,28 @@ export async function pushProgress(
   return true;
 }
 
-/* Merge remote and local progress rather than letting one silently win.
+/** Drop the saved row without touching the account. Used by "reset progress",
+ *  which otherwise reloads and pulls everything straight back down. */
+export async function deleteRemoteProgress(userId: string): Promise<void> {
+  if (!supabase) return;
+  const { error } = await supabase.from('progress').delete().eq('user_id', userId);
+  if (error) console.warn('[sync] remote reset failed', error.message);
+}
 
-   The old build did a fire-and-forget push, so opening the app on a second
-   device could overwrite good progress with an empty profile. Merging on the
-   monotonic fields (XP, streaks, attempts, cleared zones) makes that
-   impossible: you can only ever move forward. */
-export function mergeProgress(local: Progress, remote: Progress): Progress {
-  const attemptKey = (a: { qid: string; at: number }) => `${a.qid}@${a.at}`;
-  const attempts = new Map<string, Progress['attempts'][number]>();
-  for (const a of [...remote.attempts, ...local.attempts]) attempts.set(attemptKey(a), a);
+/* ----------------------------------------------------------------- erasure */
 
-  const testKey = (t: { id: string; at: number }) => `${t.id}@${t.at}`;
-  const tests = new Map<string, Progress['testHistory'][number]>();
-  for (const t of [...remote.testHistory, ...local.testHistory]) tests.set(testKey(t), t);
-
-  const zonesCleared: Record<string, number> = { ...remote.zonesCleared };
-  for (const [id, pct] of Object.entries(local.zonesCleared)) {
-    zonesCleared[id] = Math.max(zonesCleared[id] ?? 0, pct);
-  }
-
-  // Keep whichever review schedule is further along per question.
-  const review: Progress['review'] = { ...remote.review };
-  for (const [qid, entry] of Object.entries(local.review)) {
-    const existing = review[qid];
-    review[qid] = !existing || entry.box > existing.box ? entry : existing;
-  }
-
-  const newer = (local.lastActiveDay ?? '') >= (remote.lastActiveDay ?? '') ? local : remote;
-
-  return {
-    ...remote,
-    ...newer,
-    version: 2,
-    xp: Math.max(local.xp, remote.xp),
-    attempts: [...attempts.values()].sort((a, b) => a.at - b.at).slice(-4000),
-    testHistory: [...tests.values()].sort((a, b) => a.at - b.at),
-    notesRead: [...new Set([...remote.notesRead, ...local.notesRead])],
-    achievements: [...new Set([...remote.achievements, ...local.achievements])],
-    storySeen: [...new Set([...(remote.storySeen ?? []), ...(local.storySeen ?? [])])],
-    oath: local.oath ?? remote.oath ?? null,
-    /* First choice made wins — a second device must not relocate the traveller. */
-    startRegion: local.startRegion ?? remote.startRegion ?? null,
-    /* Unioned: finding something on one device cannot un-find it on another. */
-    discovered: [...new Set([...(remote.discovered ?? []), ...(local.discovered ?? [])])],
-    zonesCleared,
-    review,
-    dayStreak: Math.max(local.dayStreak, remote.dayStreak),
-    bestCorrectStreak: Math.max(local.bestCorrectStreak, remote.bestCorrectStreak),
-    profile: newer.profile ?? local.profile ?? remote.profile,
-  };
+/**
+ * Delete the account and everything attached to it.
+ *
+ * Removing an auth user needs the `service_role` key, which must never reach a
+ * browser bundle — so this calls an Edge Function that holds the key server
+ * side, verifies the caller's JWT, and deletes only that caller. See
+ * supabase/functions/delete-account.
+ */
+export async function deleteAccount(): Promise<AuthResult> {
+  if (!supabase) return { ok: false, error: 'Accounts are not configured for this deployment.' };
+  const { error } = await supabase.functions.invoke('delete-account', { method: 'POST' });
+  if (error) return { ok: false, error: friendlyError(error.message) };
+  await supabase.auth.signOut();
+  return { ok: true };
 }

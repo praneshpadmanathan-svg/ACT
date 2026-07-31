@@ -40,7 +40,11 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
     const pool = ZONE_QUIZZES[zoneId] ?? [];
     // A fresh sample each attempt, so a retry is not the same six questions.
     void attemptSeed;
-    return sample(pool, Math.min(QUIZ_LENGTH, pool.length)).map((q, i) => fromZoneQuestion(q, zoneId, i));
+    /* The zone's own declared topic is the fallback for questions tagged with
+       the zone's old label instead of a skill — see `topicFor` in normalize. */
+    return sample(pool, Math.min(QUIZ_LENGTH, pool.length)).map((q, i) =>
+      fromZoneQuestion(q, zoneId, i, entry.zone.topic),
+    );
   }, [entry, zoneId, attemptSeed]);
 
   if (!entry) {

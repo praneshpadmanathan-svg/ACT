@@ -65,3 +65,34 @@ export const pct = (n: number) => `${Math.round(n * 100)}%`;
 export function titleCase(s: string): string {
   return s.replace(/\b[a-z]/g, (c) => c.toUpperCase());
 }
+
+/* One spelling per topic.
+
+   The two question banks were authored at different times and name the same
+   things differently. Drills use tidy lowercase — `commas`, `subject-verb
+   agreement`. Zone quizzes carry a `tag` that is sometimes a proper topic
+   (`Commas`, or `Subject–verb agreement` with an en-dash) and sometimes the
+   zone's old shouting name (`COMMA CASTLE`), left over from before the
+   landmarks were renamed after the terrain they stand on.
+
+   Untreated, a student's weak-topic list splits commas across four rows —
+   `commas`, `Commas`, `COMMA CASTLE`, and the raw `comma_castle` id when a
+   question carries no tag at all. That fragments the single number they are
+   relying on to decide what to study next. Canonicalising here gives both
+   banks one shared vocabulary. */
+export function canonicalTopic(raw: string): string {
+  return raw
+    .trim()
+    // en and em dashes are meant as hyphens here; underscores as spaces
+    .replace(/[–—]/g, '-')
+    .replace(/_/g, ' ')
+    .replace(/\s+/g, ' ')
+    .toLowerCase();
+}
+
+/** True for a zone's own label rather than a topic — `COMMA CASTLE` and the
+ *  twenty-one others the zone quizzes were tagged with. */
+export function isZoneLabel(raw: string): boolean {
+  const t = raw.trim();
+  return t.length > 0 && t === t.toUpperCase() && /[A-Z]/.test(t);
+}
