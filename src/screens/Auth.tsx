@@ -193,12 +193,31 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
 
   // Accounts switched off for this deployment: say so rather than showing a
   // form that cannot work.
+  /* Accounts are switched off for this deployment.
+   *
+   * `cloudEnabled` is false whenever VITE_SUPABASE_URL and
+   * VITE_SUPABASE_ANON_KEY are unset — every local run, and any deploy missing
+   * its environment variables. There is no sign-in to show, so this says which
+   * of the two it is instead of pretending otherwise.
+   *
+   * I briefly hid the sign-in buttons entirely in this state, on the grounds
+   * that offering a door and withdrawing it one click later is worse than not
+   * offering it. That was the wrong trade: it made a missing configuration look
+   * like a missing feature, and the app read as having no accounts at all. The
+   * buttons stay; this screen carries the explanation. */
   if (!cloudEnabled) {
     return (
-      <Frame title="Play on">
-        <p className="mb-6 font-read text-[15px] leading-relaxed text-parchment-dim">
-          This deployment has no account server configured, so everything saves to this
-          browser instead. All 754 questions, every lesson and every test still work.
+      <Frame title="Accounts aren’t switched on yet">
+        <p className="mb-4 font-read text-[15px] leading-relaxed text-parchment-dim">
+          This copy of ACT Command has no account server connected, so there is nothing to
+          sign in to right now. Everything saves to this browser instead — all 754 questions,
+          every lesson, the guardians and the timed trial work exactly the same.
+        </p>
+        <p className="mb-6 rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[13px] leading-relaxed text-ink-faint">
+          Running this yourself? Accounts turn on the moment{' '}
+          <b className="text-parchment-dim">VITE_SUPABASE_URL</b> and{' '}
+          <b className="text-parchment-dim">VITE_SUPABASE_ANON_KEY</b> are set — see
+          docs/launch-checklist.md.
         </p>
         <Button variant="primary" size="lg" className="w-full" onClick={startPlaying}>
           Start the journey ▶
