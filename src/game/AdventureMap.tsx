@@ -177,6 +177,56 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
     return { zoom, x: clamp(next.x, -maxX, maxX), y: clamp(next.y, -maxY, maxY) };
   }, []);
 
+  /* The same clamp, but the edge pushes back instead of refusing.
+   *
+   * A hard stop at the boundary reads as a bug — the map simply stops
+   * responding to a hand that is still moving. Letting it past with rising
+   * resistance, then springing it home on release, is what makes an edge feel
+   * like a physical limit rather than a broken control. Resistance rises to a
+   * ceiling of 85% so a determined drag can never tear the map off screen. */
+  const softClamp = useCallback((next: View, box: Size): View => {
+    const zoom = clamp(next.zoom, MIN_ZOOM, MAX_ZOOM);
+    const scale = Math.max(box.w / MAP_W, box.h / MAP_H) * zoom;
+    const maxX = Math.max(0, (MAP_W * scale - box.w) / 2);
+    const maxY = Math.max(0, (MAP_H * scale - box.h) / 2);
+
+    const soften = (raw: number, limit: number, span: number) => {
+      const hard = clamp(raw, -limit, limit);
+      const over = raw - hard;
+      if (!over) return hard;
+      const give = 1 - Math.min(Math.abs(over) / (0.35 * span), 0.85);
+      return hard + over * give;
+    };
+
+    return {
+      zoom,
+      x: soften(next.x, maxX, box.w),
+      y: soften(next.y, maxY, box.h),
+    };
+  }, []);
+
+  /* Zoom toward a point rather than the middle of the screen.
+   *
+   * Every zoom path used to keep x and y untouched, which anchors the scale to
+   * the viewport centre. On a wheel that is merely unhelpful; on a pinch it is
+   * plainly wrong, because the gesture names its own anchor — the point between
+   * your fingers — and watching that point slide away is the single most
+   * "this is a web page" moment the map had.
+   *
+   * `cx`/`cy` are offsets from the frame centre. Keeping the map point under
+   * them fixed means the pan has to move by the same proportion the scale did. */
+  const zoomAt = useCallback(
+    (factor: number, cx = 0, cy = 0) => {
+      setView((v) => {
+        const zoom = clamp(v.zoom * factor, MIN_ZOOM, MAX_ZOOM);
+        const k = zoom / v.zoom;
+        if (k === 1) return v;
+        return clampView({ zoom, x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k }, frame);
+      });
+    },
+    [clampView, frame],
+  );
+
   /** Centre the view on a point given in map percentages. */
   const centreOn = useCallback(
     (px: number, py: number, zoom?: number) => {
@@ -216,12 +266,15 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
   }, [clampView]);
 
   /* Declared before the keyboard handler below, which depends on it. */
+  /* The +/- buttons and the keyboard have no cursor to anchor to, so these
+     stay centred — which is correct for them, and is exactly what was wrong
+     for the wheel and the pinch. */
   const zoomBy = useCallback(
     (factor: number) => {
       sfx.tick();
-      setView((v) => clampView({ ...v, zoom: v.zoom * factor }, frame));
+      zoomAt(factor);
     },
-    [clampView, frame],
+    [zoomAt],
   );
 
   /* ------------------------------------------------------------ keyboard
@@ -292,7 +345,61 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
   const pinchStart = useRef<{ dist: number; zoom: number } | null>(null);
   const moved = useRef(false);
 
+  /* --------------------------------------------------------- momentum
+
+     The map used to stop dead the instant you lifted your finger. On a phone
+     that reads as broken rather than precise: every other surface a student
+     touches carries a flick, so a map that refuses to feels like one that did
+     not hear them.
+
+     Velocity is averaged over the last ~80ms of movement rather than taken from
+     the final two events, because the last sample before a lift is usually
+     noise — fingers decelerate as they leave the glass, and reading only that
+     would kill most flicks before they started. */
+  const drift = useRef<{ vx: number; vy: number; at: number }[]>([]);
+  const glide = useRef<number | null>(null);
+
+  const stopGlide = useCallback(() => {
+    if (glide.current !== null) {
+      cancelAnimationFrame(glide.current);
+      glide.current = null;
+    }
+  }, []);
+
+  /** Settle back inside the boundary after a rubber-band overshoot. */
+  const settle = useCallback(() => {
+    setView((v) => clampView(v, frame));
+  }, [clampView, frame]);
+
+  const startGlide = useCallback(() => {
+    const recent = drift.current.filter((s) => performance.now() - s.at < 90);
+    if (!recent.length) return settle();
+    let vx = recent.reduce((n, s) => n + s.vx, 0) / recent.length;
+    let vy = recent.reduce((n, s) => n + s.vy, 0) / recent.length;
+    if (Math.hypot(vx, vy) < 1.4) return settle();
+
+    const step = () => {
+      // 0.94 per frame is ~0.9s of glide from a firm flick.
+      vx *= 0.94;
+      vy *= 0.94;
+      setView((v) => clampView({ ...v, x: v.x + vx, y: v.y + vy }, frame));
+      if (Math.hypot(vx, vy) > 0.3) {
+        glide.current = requestAnimationFrame(step);
+      } else {
+        glide.current = null;
+      }
+    };
+    glide.current = requestAnimationFrame(step);
+  }, [clampView, frame, settle]);
+
+  // Never leave a rAF loop running behind an unmounted map.
+  useEffect(() => stopGlide, [stopGlide]);
+
   const onPointerDown = (e: React.PointerEvent) => {
+    /* Touching the map takes it back. An animation you cannot interrupt reads
+       as a cutscene, not as a control. */
+    stopGlide();
+    drift.current = [];
     (e.target as Element).setPointerCapture?.(e.pointerId);
     pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
     moved.current = false;
@@ -313,7 +420,15 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
         pinchStart.current = { dist, zoom: view.zoom };
       } else {
         const ratio = dist / pinchStart.current.dist;
-        setView((v) => clampView({ ...v, zoom: pinchStart.current!.zoom * ratio }, frame));
+        /* Anchored on the centroid between the fingers — the point the gesture
+           is actually about — expressed as an offset from the frame centre. */
+        const cx = (points[0].x + points[1].x) / 2 - frame.w / 2;
+        const cy = (points[0].y + points[1].y) / 2 - frame.h / 2;
+        setView((v) => {
+          const zoom = clamp(pinchStart.current!.zoom * ratio, MIN_ZOOM, MAX_ZOOM);
+          const k = zoom / v.zoom;
+          return clampView({ zoom, x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k }, frame);
+        });
       }
       moved.current = true;
       return;
@@ -322,18 +437,24 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
     const dx = e.clientX - prev.x;
     const dy = e.clientY - prev.y;
     if (Math.abs(dx) + Math.abs(dy) > 2) moved.current = true;
-    setView((v) => clampView({ ...v, x: v.x + dx, y: v.y + dy }, frame));
+    drift.current.push({ vx: dx, vy: dy, at: performance.now() });
+    if (drift.current.length > 12) drift.current.shift();
+    // Soft while the hand is down, so the edge gives rather than refuses.
+    setView((v) => softClamp({ ...v, x: v.x + dx, y: v.y + dy }, frame));
   };
 
   const endPointer = (e: React.PointerEvent) => {
     pointers.current.delete(e.pointerId);
     if (pointers.current.size < 2) pinchStart.current = null;
-    if (pointers.current.size === 0) setDragging(false);
+    if (pointers.current.size === 0) {
+      setDragging(false);
+      startGlide();
+    }
   };
 
   const onWheel = (e: React.WheelEvent) => {
     const factor = Math.exp(-e.deltaY * 0.0016);
-    setView((v) => clampView({ ...v, zoom: v.zoom * factor }, frame));
+    zoomAt(factor, e.clientX - frame.w / 2, e.clientY - frame.h / 2);
   };
 
   /* --------------------------------------------------------------- pins */
