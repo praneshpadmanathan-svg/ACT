@@ -8,7 +8,7 @@
    re-locked. A boss that could set you back would just teach people to avoid
    it, which is the opposite of what it is for. */
 
-import { useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { PATH_BY_ID, QUESTIONS, SECTION_BY_ID } from '@/content';
 import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
@@ -46,8 +46,32 @@ export function BossScreen({ section }: { section: string }) {
   const [revealed, setRevealed] = useState(false);
   const [bossState, setBossState] = useState<BossState>('idle');
   const [heroHurt, setHeroHurt] = useState(false);
+  const [hitStop, setHitStop] = useState(false);
   const [attempt, setAttempt] = useState(0);
   const [startedAt, setStartedAt] = useState(() => Date.now());
+
+  /* Hit-stop.
+
+     When a blow lands, everything in the arena stops dead for a few frames.
+     It is the oldest trick in fighting games and it is almost free: no new
+     artwork, no particles, just the absence of motion at the one moment the
+     eye is already looking. A hit that plays through at a constant speed
+     reads as an animation; a hit that freezes reads as an impact.
+
+     The freeze starts ~45ms in rather than immediately, so the recoil has
+     visibly begun before it is caught — pausing on frame zero would just
+     delay the animation. */
+  const stopTimers = useRef<number[]>([]);
+  const freeze = useCallback(() => {
+    stopTimers.current.push(
+      window.setTimeout(() => setHitStop(true), 45),
+      window.setTimeout(() => setHitStop(false), 115),
+    );
+  }, []);
+  useEffect(() => {
+    const timers = stopTimers.current;
+    return () => timers.forEach(window.clearTimeout);
+  }, []);
 
   /* Hard questions first, then medium — the boss should feel like the exam
      for the region, not another warm-up. */
@@ -231,6 +255,7 @@ export function BossScreen({ section }: { section: string }) {
     if (correct) {
       sfx.correct();
       setBossState('hurt');
+      freeze();
       const nextHp = bossHp - 1;
       setBossHp(nextHp);
       if (nextHp <= 0) {
@@ -253,6 +278,7 @@ export function BossScreen({ section }: { section: string }) {
       sfx.wrong();
       setBossState('attacking');
       setHeroHurt(true);
+      freeze();
       window.setTimeout(() => setHeroHurt(false), 500);
       const nextHp = playerHp - 1;
       setPlayerHp(nextHp);
@@ -275,7 +301,12 @@ export function BossScreen({ section }: { section: string }) {
   return (
     <Page wide className="pb-10">
       {/* -------------------------------------------------------- arena */}
-      <div className="mb-5 grid grid-cols-[1fr_auto_1fr] items-end gap-3 sm:gap-6">
+      <div
+        className={cx(
+          'mb-5 grid grid-cols-[1fr_auto_1fr] items-end gap-3 sm:gap-6',
+          hitStop && 'hitstop',
+        )}
+      >
         {/* you */}
         <div className="flex flex-col items-center">
           <img

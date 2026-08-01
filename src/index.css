@@ -217,18 +217,15 @@
   /* ---------------------------------------------------------------- button */
 
   .btn {
-    @apply inline-flex select-none items-center justify-center gap-2 rounded-lg border
-           px-4 py-2.5 font-display text-[14px] font-semibold tracking-wide
-           transition-all duration-150 disabled:pointer-events-none disabled:opacity-45;
-  }
-  /* Lift on hover, press down on click. Small enough to feel physical
-     without turning every button into an animation. */
-  .btn:hover:not(:disabled) {
-    transform: translateY(-1px);
-  }
-  .btn:active:not(:disabled) {
-    transform: translateY(1px);
-    transition-duration: 60ms;
+    @apply relative isolate inline-flex select-none items-center justify-center gap-2
+           overflow-hidden rounded-lg border px-4 py-2.5 font-display text-[14px]
+           font-semibold tracking-wide disabled:pointer-events-none disabled:opacity-45;
+    /* Colour still transitions in CSS. Transform deliberately does not: the
+       button's lift and press are springs driven by Motion as inline styles,
+       and a CSS transition on `transform` would smooth every frame of that
+       spring into a lagging second animation. `isolate` gives the ink a
+       stacking context to sit inside, `overflow-hidden` keeps it in bounds. */
+    transition: color 150ms, background-color 150ms, border-color 150ms, box-shadow 150ms, opacity 150ms;
   }
 
   .btn-primary {
@@ -237,6 +234,21 @@
   }
   .btn-primary:hover:not(:disabled) {
     @apply from-[#f7dc7d] to-[#e0ae1e];
+  }
+  /* A lantern passing over gold leaf. Parked off the left edge and swept
+     across on hover — the transition is only declared on the hover state, so
+     it snaps back invisibly instead of sweeping backwards on mouse-out. */
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.55) 50%, transparent 62%);
+    transform: translateX(-130%);
+  }
+  .btn-primary:hover:not(:disabled)::after {
+    transform: translateX(130%);
+    transition: transform 640ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .btn-ghost {
@@ -272,6 +284,36 @@
     @apply inline-flex items-center gap-1.5 rounded-full border border-leather-700
            bg-leather-800/70 px-3 py-1 font-script text-[12px] uppercase
            tracking-[0.12em] text-parchment-dim;
+  }
+
+  /* Tier 3 of the answer streak — six right in a row and the chip is alight.
+     The heat lives on a pseudo-element cycling opacity rather than on an
+     animated box-shadow, so the loop stays on the compositor. The chip itself
+     is scaled by a spring, which is why nothing here touches transform. */
+  .chip-ablaze {
+    @apply relative isolate;
+    border-color: #ff7a2e;
+  }
+  .chip-ablaze::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    z-index: -1;
+    border-radius: 9999px;
+    background: radial-gradient(ellipse at center, rgba(255, 122, 46, 0.5), transparent 68%);
+    animation: emberPulse 1.5s ease-in-out infinite;
+  }
+  @keyframes emberPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.95; }
+  }
+
+  /* Hit-stop — see the note in Boss.tsx. Scoped to the arena rather than the
+     document so the freeze costs one small subtree's style recalculation and
+     cannot strand anything outside the duel. */
+  .hitstop,
+  .hitstop * {
+    animation-play-state: paused !important;
   }
 
   /* ----------------------------------------------------------------- veil
@@ -510,22 +552,14 @@
            bg-parchment-light/70 px-4 py-3 text-left font-read text-[1.04rem]
            leading-relaxed text-ink transition-colors duration-100;
   }
+  /* Colour and shadow only. The nudge on hover, the give on press and the
+     whole reveal — the shake, the lift, the settle — are springs on the
+     element's inline transform now, and a CSS rule here would either be
+     overridden by it or, in the case of a keyframe animation, silently win
+     and cancel it. Transform belongs to exactly one owner per element. */
   .choice:hover:not(:disabled):not(.choice-locked) {
-    @apply -translate-y-px border-ink-faint bg-parchment-light;
+    @apply border-ink-faint bg-parchment-light;
     box-shadow: 0 3px 10px rgba(43, 35, 23, 0.14);
-  }
-  .choice:active:not(:disabled):not(.choice-locked) {
-    @apply translate-y-0;
-  }
-  /* The reveal after answering, so right/wrong lands rather than snapping. */
-  .choice-correct,
-  .choice-wrong {
-    animation: choiceSettle 0.32s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  @keyframes choiceSettle {
-    0% { transform: scale(1); }
-    45% { transform: scale(1.014); }
-    100% { transform: scale(1); }
   }
   .choice-key {
     @apply mt-px flex h-6 w-6 flex-none items-center justify-center rounded-full

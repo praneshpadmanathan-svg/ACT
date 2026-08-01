@@ -1,29 +1,70 @@
 /* Shared primitives, in the leather-and-parchment register. */
 
-import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import { useCallback, useRef, useState, type ButtonHTMLAttributes, type ReactNode } from 'react';
 import { cx } from '@/lib/utils';
 import { sfx } from '@/lib/sfx';
+import { AnimatePresence, m, useReducedMotion, PIN_SPRING } from '@/lib/motion';
 
 type Variant = 'primary' | 'ghost' | 'danger' | 'quill';
 type Size = 'sm' | 'md' | 'lg';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+/* Motion's button takes its own `onDrag`/`onAnimationStart` with different
+   signatures to React's DOM ones, so those names are dropped rather than
+   spread through. Nothing in the app uses them on a button. */
+type NativeButtonProps = Omit<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  | 'onAnimationStart' | 'onAnimationEnd' | 'onAnimationIteration'
+  | 'onDrag' | 'onDragStart' | 'onDragEnd' | 'onDragEnter'
+  | 'onDragExit' | 'onDragLeave' | 'onDragOver' | 'onDrop'
+  | 'onTransitionEnd' | 'style'
+>;
+
+interface ButtonProps extends NativeButtonProps {
   variant?: Variant;
   size?: Size;
   quiet?: boolean;
 }
 
+interface Ink { id: number; x: number; y: number }
+
+/* Press physics, and the ink under them.
+
+   The lift and the press used to be CSS `:hover` / `:active` transforms. Those
+   arrive on a 150ms linear ramp and stop dead — a button that moves but does
+   not respond. A spring reaches its target in about the same time and then
+   overshoots by a few percent on release, which is the part a hand reads as
+   weight. It also interrupts correctly: pressing mid-lift continues from
+   wherever the button actually is rather than restarting.
+
+   The ink spreads from the real click coordinates, not the centre, so the
+   button acknowledges *where* it was pressed. On parchment that reads as ink
+   soaking outward; it is the one flourish in the register that is not a glow. */
 export function Button({
   variant = 'ghost',
   size = 'md',
   quiet = false,
   className,
   onClick,
+  onPointerDown,
   children,
   ...rest
 }: ButtonProps) {
+  const [inks, setInks] = useState<Ink[]>([]);
+  const nextInk = useRef(0);
+  const stillMotion = useReducedMotion();
+
+  const spread = useCallback(
+    (e: React.PointerEvent<HTMLButtonElement>) => {
+      if (stillMotion) return;
+      const box = e.currentTarget.getBoundingClientRect();
+      const id = nextInk.current++;
+      setInks((prev) => [...prev.slice(-2), { id, x: e.clientX - box.left, y: e.clientY - box.top }]);
+    },
+    [stillMotion],
+  );
+
   return (
-    <button
+    <m.button
       type="button"
       className={cx(
         'btn',
@@ -35,14 +76,42 @@ export function Button({
         size === 'lg' && 'btn-lg',
         className,
       )}
+      whileHover={rest.disabled ? undefined : { y: -1.5 }}
+      whileTap={rest.disabled ? undefined : { y: 1, scale: 0.975 }}
+      transition={PIN_SPRING}
+      onPointerDown={(e) => {
+        spread(e);
+        onPointerDown?.(e);
+      }}
       onClick={(e) => {
         if (!quiet) sfx.select();
         onClick?.(e);
       }}
       {...rest}
     >
+      <AnimatePresence>
+        {inks.map((ink) => (
+          <m.span
+            key={ink.id}
+            aria-hidden="true"
+            className="pointer-events-none absolute rounded-full"
+            /* A negative z-index inside the button's own stacking context
+               paints above its background and below the label — so the ink
+               spreads under the text rather than over it. */
+            style={{
+              left: ink.x, top: ink.y, width: 12, height: 12, marginLeft: -6, marginTop: -6, zIndex: -1,
+              background: 'radial-gradient(circle, currentColor 0%, transparent 70%)',
+            }}
+            initial={{ scale: 0, opacity: 0.34 }}
+            animate={{ scale: 16, opacity: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            onAnimationComplete={() => setInks((prev) => prev.filter((i) => i.id !== ink.id))}
+          />
+        ))}
+      </AnimatePresence>
       {children}
-    </button>
+    </m.button>
   );
 }
 
