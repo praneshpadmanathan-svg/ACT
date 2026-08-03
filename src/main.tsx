@@ -28,6 +28,17 @@ import '@fontsource-variable/newsreader/opsz.css';
 
 import './index.css';
 
+/* A promise rejecting with nothing awaiting it is invisible everywhere except
+   this event — no React error boundary sees it (boundaries only catch render
+   errors), and without this listener it vanishes the moment devtools closes.
+   `store.tsx`'s auth bootstrap used to be exactly this: an unguarded network
+   call whose failure left the app stuck on "Loading…" forever with nothing
+   surfaced. That call is now guarded, but this stays as the backstop for
+   whatever the next unguarded await turns out to be. */
+window.addEventListener('unhandledrejection', (event) => {
+  console.error('[unhandled rejection]', event.reason);
+});
+
 const container = document.getElementById('root');
 if (!container) throw new Error('Root element #root is missing from index.html');
 

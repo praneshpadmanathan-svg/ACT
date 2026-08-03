@@ -332,7 +332,22 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       setAuthReady(true);
       return;
     }
-    const user = await currentUser();
+    /* `currentUser()` throws on a raw network failure (DNS, CORS, an offline
+       first load) rather than returning the Supabase `{error}` shape the rest
+       of this file is written to expect — every other call in this module
+       goes through the tri-state ok/empty/error results in supabase.ts, but
+       this one call to auth.getUser() does not. Uncaught here, that throw
+       used to leave the app on "Loading…" forever: the function returns
+       without reaching `setAuthReady(true)` below, and nothing render-side
+       can recover from a promise that never settles. Fall back to a signed-out
+       guest rather than hang — a login attempt right afterward will surface
+       the same network error somewhere the person can actually see it. */
+    let user: Awaited<ReturnType<typeof currentUser>> = null;
+    try {
+      user = await currentUser();
+    } catch (err) {
+      console.warn('[auth] could not resolve session', err);
+    }
     if (user) {
       const next: Identity = { kind: 'cloud', userId: user.id };
       const name = displayNameOf(user);
@@ -372,9 +387,20 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     /* Settle any link clicked in an email before asking who is signed in — the
-       exchange is what creates the session a password reset then depends on. */
+       exchange is what creates the session a password reset then depends on.
+       `consumeAuthRedirect` can throw the same way `currentUser` could (see
+       the comment in `refreshAuth`) — a broken or already-used confirmation
+       link is a plausible way to hit a raw network/provider error here, not
+       just the well-typed one the function is written to return. Guarded for
+       the same reason: `refreshAuth()` below is what resolves `authReady`,
+       and it must still run even if the redirect never settles. */
     void (async () => {
-      const redirect = await consumeAuthRedirect();
+      let redirect: Awaited<ReturnType<typeof consumeAuthRedirect>> = null;
+      try {
+        redirect = await consumeAuthRedirect();
+      } catch (err) {
+        console.warn('[auth] could not settle the redirect', err);
+      }
       if (redirect) setAuthRedirect(redirect);
       await refreshAuth();
     })();
