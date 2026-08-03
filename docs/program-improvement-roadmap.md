@@ -61,13 +61,13 @@ Measured, not guessed:
 
 ## 1. Testing infrastructure (from zero)
 
-1. Add Vitest (pairs natively with Vite 8, near-zero config) + `@testing-library/react`; add a `test` script and gate it in `build` alongside `check:anim`.
-2. Pin `tallyFromAttempts` and the `loadProgress` backfill (`src/lib/progress.ts:157-267`) with regression tests — this exact path already shipped the tally-backfill bug once.
-3. Pin `mergeProgress`/`mergeTally` (`progress.ts:527-597`) — the cross-device merge is deliberately asymmetric (max-of-counters, union-of-sets, tally under-counts by design) and none of those invariants are currently protected from an accidental "simplification."
-4. Pin `scheduleReview`/`dueForReview` (`progress.ts:328-352`) — an off-by-one in the Leitner box math wouldn't surface for days.
-5. Pin `scaleScore` (`progress.ts:454-469`), the percent→ACT-score curve, against known table values.
-6. Pin XP/`rankIndexFor`/`rankProgress` (`progress.ts:33-76`) — boundary values at a rank threshold are the classic off-by-one spot.
-7. Component-level tests for `QuestionRunner.tsx` (answer selection, reveal state, scoring callback) — the single most-used interactive surface in the app, currently zero coverage.
+1. ~~Add Vitest~~ — **done**. `vitest` + `jsdom` (needed because `storage.ts` reads `window.localStorage`), a separate `vitest.config.ts` (kept apart from `vite.config.ts`, which resolves Supabase env vars and runs a second build pass for the service worker — neither belongs in a test run), `test`/`test:run` scripts, gated into `build` alongside `check:anim`/`check:content`. `@testing-library/react` not added yet — no component tests in this pass, see item 7.
+2. ~~Pin `tallyFromAttempts` and the `loadProgress` backfill~~ — **done**, `src/lib/progress.test.ts`. Verified the regression test actually catches the historical bug: reintroduced the exact `merged.tally` (should be `stored?.tally`) defect and confirmed the test fails with the same symptom (`answered: 0` instead of `2`), then confirmed clean again after reverting.
+3. ~~Pin `mergeProgress`/`mergeTally`~~ — **done**. Verified by sabotage: swapped `mergeTally(local.tally, remote.tally)` for `local.tally` — every original test still passed, which was itself a finding, so a dedicated test asserting the merged `.tally` field was added and confirmed to catch it.
+4. ~~Pin `scheduleReview`/`dueForReview`~~ — **done**, covers box-advance, hard-reset-on-wrong, graduation/drop at the top box, and due-date filtering/sort order.
+5. ~~Pin `scaleScore`~~ — **done**, covers both endpoints, known interior table values, monotonicity across the full range, and interpolation between table points.
+6. ~~Pin XP/`rankIndexFor`/`rankProgress`~~ — **done**, covers the exactly-at-threshold boundary case explicitly (the classic off-by-one spot), rank-up detection in `awardXP`, and the fixed 2-XP-for-wrong-answer rule.
+7. Component-level tests for `QuestionRunner.tsx` (answer selection, reveal state, scoring callback) — the single most-used interactive surface in the app, currently zero coverage. Needs `@testing-library/react`, not added yet.
 8. Add a lightweight Supabase-client mock (or `msw`) to test `pullProgress`/`pushProgress`/`deleteAccount` (`src/lib/supabase.ts:296-360`) tri-state (ok/empty/error) contracts without a live project.
 9. Snapshot/contract test for `todaysPlan()` (`src/lib/plan.ts`) covering each priority branch (due reviews, mid-zone, zone cleared, weak topic found/absent).
 10. A minimal smoke test asserting `App.tsx` renders past "Loading…" — would have caught the unhandled-rejection freeze in item 19 immediately. **(19 fixed — see below; this test would pin it.)**
@@ -178,6 +178,7 @@ plainly: "get it wrong and it comes back tomorrow" (`Drills.tsx:319`).
 74. Treat Reading (72Q/6 topics) and Science (80Q/5 topics) as lower priority for raw count — their broader, skill-integrated structure already matches how the real ACT tests those sections; the urgency is specifically English/Math's narrow topics.
 75. Sequence new content authoring through the validation script (§39-44) from day one.
 76. If content authoring is LLM-assisted (a reasonable way to close §72-73 at volume), treat the validation script as a hard gate on any batch-generated content — batch generation is exactly the scenario most likely to introduce duplicate IDs or malformed answer references.
+76a. **Discovered by §39-44's own rule 4**: 8 zones teach a skill with no drill-bank topic of its own — `structure_span`/`tone_tundra`/`evidence_estuary`/`figurative_falls` (Reading) and `units_uplands`/`rates_ridge`/`hypothesis_hollow`/`calc_canyon` (Science), currently listed in `scripts/check-content.mjs`'s `NO_DRILL_TOPIC` exemption set with the coarse topic each folds into. A student clearing these landmarks today gets zone-quiz questions (`miniquizzes.json`) but no matching drill-bank practice, and their zone performance isn't attributed to any drill topic `weakestTopics()` can see. Closing this means either adding drill questions tagged with these finer topics, or deliberately widening the drill-bank taxonomy to match — a product decision, not a mechanical fix, which is why it's exempted rather than guessed at in the checker itself.
 
 ## 13. Re-engagement & notifications
 
@@ -237,8 +238,8 @@ plainly: "get it wrong and it comes back tomorrow" (`Drills.tsx:319`).
 3. **§51-56 — the spaced-repetition upgrade.** Highest-leverage pedagogical change available, buildable as a layer on the existing box-based data shape rather than a rewrite.
 4. **§58-62 — a real diagnostic/placement test before `todaysPlan()` starts.** No diagnostic exists today; the one self-report signal collected (`before`) is never even read.
 5. **§11 — `noUncheckedIndexedAccess` in tsconfig.json.** One config flag surfacing every unguarded `Record` index access across a codebase that leans on that pattern constantly.
-6. **§39-44 — a `check-content.mjs` mirroring `check-map-animations.mjs`, wired into `npm run build`.** Content is clean today and completely unenforced going forward, with the exact right precedent already sitting in the repo to copy.
-7. **§1-9 — stand up Vitest and pin `progress.ts`'s riskiest functions.** This code already shipped one silent bug that a test would have caught in seconds.
+6. ~~§39-44 — a `check-content.mjs` mirroring `check-map-animations.mjs`, wired into `npm run build`.~~ **Shipped.** Also surfaced a real, previously-undiscovered gap in the process: 3 zone-topic naming bugs (fixed) and 8 zones whose taught skill has no drill-bank topic at all (exempted and documented — see §12 item 76a, a product decision, not a mechanical fix).
+7. ~~§1-9 — stand up Vitest and pin `progress.ts`'s riskiest functions.~~ **Shipped**, `src/lib/progress.test.ts`, 37 tests. Each pinned invariant verified by deliberately reintroducing the bug it guards against and confirming the test catches it — including one gap in the tests themselves, found by sabotaging `mergeProgress`'s tally-merge call and discovering the original suite didn't notice.
 8. **§86 — a CI workflow gating PRs on typecheck/lint/test/content-check.** Nothing runs before merge today; only the Vercel build gates deploys.
 9. **§98-99 — Vercel Deployment Protection + separated preview/prod Supabase config.** Minors' data, a guessable preview URL, live production database — a fast fix with outsized risk reduction for this audience.
 10. **§29-32 — route-level code splitting + vendor chunk separation.** Every screen ships in one 436KB chunk today regardless of landing route — a real first-paint win for teens on phone data.
