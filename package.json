@@ -11,11 +11,13 @@
     "typecheck": "tsc -b --noEmit",
     "check:anim": "node scripts/check-map-animations.mjs",
     "check:content": "node scripts/check-content.mjs",
+    "build:art": "node scripts/build-art.mjs",
     "test": "vitest",
     "test:run": "vitest run"
   },
   "dependencies": {
     "@fontsource-variable/newsreader": "^5.3.0",
+    "@fontsource/atkinson-hyperlegible": "^5.3.0",
     "@fontsource/cinzel": "^5.3.0",
     "@fontsource/im-fell-english-sc": "^5.3.0",
     "@fontsource/inter": "^5.3.0",
@@ -32,7 +34,7 @@
     "autoprefixer": "^10.4.20",
     "jsdom": "^30.0.1",
     "postcss": "^8.4.47",
-    "sharp": "^0.35.3",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.6.2",
     "vite": "^8.2.0",

@@ -83,6 +83,19 @@ export function TopBar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-leather-700 bg-leather-950/94 backdrop-blur-md">
+      {/* Skip to content.
+          Nine navigation items sit between the top of the document and the
+          question a keyboard user came here to answer, on every screen. This
+          is invisible until focused and is the first thing Tab reaches. */}
+      <a
+        href="#main"
+        className="sr-only rounded-lg border-2 border-gold bg-leather-900 px-4 py-2 font-script
+                   text-[12px] uppercase tracking-[0.14em] text-gold
+                   focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[100]"
+      >
+        Skip to content
+      </a>
+
       {/* a hairline of lantern light along the top edge */}
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px"
@@ -234,7 +247,16 @@ export function Page({
      also animate the outgoing screen. Keeping `animate-pageIn` here as well
      meant every page ran two entrances at once. */
   return (
-    <main className={cx('shell py-7 sm:py-9', className)} style={wide ? { maxWidth: 1400 } : undefined}>
+    /* `tabIndex={-1}` so the skip link in `TopBar` can actually move focus
+       here: without it the browser scrolls to the anchor and leaves focus on
+       the link, and the next Tab goes back into the navigation the user just
+       asked to skip. */
+    <main
+      id="main"
+      tabIndex={-1}
+      className={cx('shell py-7 outline-none sm:py-9', className)}
+      style={wide ? { maxWidth: 1400 } : undefined}
+    >
       {children}
     </main>
   );

@@ -268,7 +268,22 @@ export interface Progress {
   targetScore: number;
   weeklyGoal: number;
   profile: OnboardingProfile | null;
+  /** Which traveller the player picked. See `src/game/heroes.ts` — this used
+   *  to be written once as `'cadet'` and read by nothing at all. */
   hero: string;
+  /** Question ids saved to come back to. Optional so older saves parse. */
+  bookmarks: string[];
+  /* Missed days this streak is allowed to survive.
+   *
+   * One is granted per completed week and at most two are ever held. The
+   * point is narrow: a streak that ends the first time somebody has a busy
+   * Tuesday stops being a reason to come back on Wednesday, which is the
+   * only day the number was ever for. */
+  streakShields: number;
+  /** `yyyy-mm-dd` of the last day the daily challenge was completed. */
+  dailyDoneOn: string | null;
+  /** The diagnostic's per-section scaled estimate, if one has been taken. */
+  diagnostic: DiagnosticResult | null;
   /** Story chapter ids already played. */
   storySeen: string[];
   /** The answer given in the prologue; referenced by later beats. */
@@ -279,6 +294,35 @@ export interface Progress {
   startRegion: SectionId | null;
   /** Ids of map discoveries already found. */
   discovered: string[];
-  /** Question ids flagged for review, and their spaced-repetition due dates. */
-  review: Record<string, { due: number; box: number }>;
+  /** Question ids flagged for review, and their spaced-repetition state. */
+  review: Record<string, ReviewEntry>;
+}
+
+/** One question's place in the review ladder. */
+export interface ReviewEntry {
+  due: number;
+  box: number;
+  /* How many times this specific question has been missed, ever.
+   *
+   * The box index alone cannot tell the difference between a question you
+   * have never seen and one you have got wrong nine times, because both sit
+   * at box 0. This is what makes a chronically-missed item sort to the front
+   * of a review session and what stops a fast wrong answer being forgiven
+   * indefinitely. Optional: saves written before it existed have no count. */
+  misses?: number;
+}
+
+/* --------------------------------------------------------------- diagnostic */
+
+/** What a placement test concluded, per section. */
+export interface DiagnosticResult {
+  at: number;
+  /** Section id -> [correct, asked] */
+  raw: Partial<Record<SectionId, [number, number]>>;
+  /** Section id -> rough scaled estimate. Clearly labelled as rough. */
+  scores: Partial<Record<SectionId, number>>;
+  /** Topics the diagnostic found weakest, canonical names, weakest first. */
+  weakTopics: string[];
+  /** How many questions were asked in total. */
+  asked: number;
 }

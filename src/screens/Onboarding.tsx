@@ -10,6 +10,7 @@ import { sfx } from '@/lib/sfx';
 import type { OnboardingProfile, SectionId } from '@/types';
 import { Button, ProgressBar } from '@/components/ui';
 import { burstConfetti } from '@/components/Feedback';
+import { Art } from '@/components/Art';
 
 interface Step {
   key: keyof Omit<OnboardingProfile, 'savedAt'>;
@@ -112,7 +113,7 @@ export function Onboarding() {
 
   return (
     <div className="relative isolate flex min-h-dvh items-center justify-center overflow-hidden px-4 py-14 ">
-      <img src="/art/camp-bg.webp" alt="" className="absolute inset-0 h-full w-full select-none object-cover" draggable={false} />
+      <Art name="camp-bg" priority className="absolute inset-0 h-full w-full select-none object-cover" />
       <div className="absolute inset-0 bg-leather-950/84" />
 
       <div className="panel-lit relative z-10 w-full max-w-lg p-7 sm:p-9">
@@ -200,7 +201,7 @@ export function Onboarding() {
 
         {phase === 'plan' && (
           <div className="text-center">
-            <img src="/art/hero-char.webp" alt="" className="mx-auto w-[110px] select-none" draggable={false} />
+            <Art name="hero-char" sizes="110px" className="mx-auto w-[110px] select-none" />
             <h1 className="heading mb-6 mt-5 text-[22px] text-gold">Your plan is ready</h1>
 
             <dl className="space-y-2.5 text-left">

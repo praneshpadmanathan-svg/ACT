@@ -1,64 +1,96 @@
+/* Every colour is a CSS variable holding a space-separated RGB triple, wrapped
+   here so Tailwind's `/50` opacity modifiers keep working.
+
+   The literals used to live in this file, which meant the palette was frozen
+   at build time and a light mode was impossible without rewriting the class
+   name on every element in the app. The values now live in `:root` and are
+   overridden wholesale by `[data-theme='light']` in index.css, so the same
+   `bg-leather-850 text-parchment` markup renders dark leather or warm paper
+   depending on one attribute.
+
+   Read the token names as *roles*, not as literal materials: `leather` is
+   "chrome surface", `parchment` is "text on chrome", `ink` is "text on a
+   reading sheet". In light mode leather is pale and parchment is dark, and
+   every component follows without touching a single class. */
+const tone = (name) => `rgb(var(--c-${name}) / <alpha-value>)`;
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
+  darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     extend: {
       colors: {
         /* Leather and lantern-light — the UI chrome sits in the same world as
            the camp-tent and map illustrations. */
         leather: {
-          950: '#14100b',
-          900: '#1c1610',
-          850: '#241d15',
-          800: '#2e251a',
-          750: '#3a2f21',
-          700: '#4a3c2a',
-          600: '#5d4b34',
+          950: tone('leather-950'),
+          900: tone('leather-900'),
+          850: tone('leather-850'),
+          800: tone('leather-800'),
+          750: tone('leather-750'),
+          700: tone('leather-700'),
+          600: tone('leather-600'),
         },
         /* Parchment — every reading surface. Matches the sheet the character
            illustrations were drawn on, so cutouts sit on it seamlessly. */
         parchment: {
-          DEFAULT: '#f4e8cf',
-          light: '#faf2e2',
-          dim: '#e8d9ba',
-          edge: '#cbb68f',
-          deep: '#b89e72',
+          DEFAULT: tone('parchment'),
+          light: tone('parchment-light'),
+          dim: tone('parchment-dim'),
+          edge: tone('parchment-edge'),
+          deep: tone('parchment-deep'),
         },
         ink: {
-          DEFAULT: '#2b2317',
+          DEFAULT: tone('ink'),
           /* On parchment. */
-          soft: '#5a4c37',
+          soft: tone('ink-soft'),
           /* Muted text on the dark chrome. Light enough to clear 4.5:1 against
              leather-850 — the earlier #8a7856 measured 3.89:1 and failed. */
-          faint: '#a3906c',
+          faint: tone('ink-faint'),
         },
         gold: {
-          DEFAULT: '#d4a017',
-          light: '#f0cf7a',
-          bright: '#f2cf5b',
-          deep: '#9c7410',
+          DEFAULT: tone('gold'),
+          light: tone('gold-light'),
+          bright: tone('gold-bright'),
+          deep: tone('gold-deep'),
         },
-        /* Region accents, keyed to the painted map. */
-        village: '#d9a441',
-        woods: '#5fa86b',
-        desert: '#d2703a',
-        cliffs: '#4f9dc9',
-        summit: '#e8c34a',
-        blood: '#a8402f',
+        /* Region accents, keyed to the painted map. Identical in both themes —
+           they are mid-tones lifted off the artwork and read on either. */
+        village: tone('village'),
+        woods: tone('woods'),
+        desert: tone('desert'),
+        cliffs: tone('cliffs'),
+        summit: tone('summit'),
+        blood: tone('blood'),
         /* The region colours above are fill colours, mixed to sit against the
            painted map. As *text* on leather the darker ones fail: blood
            measures 2.73:1. These are the text-safe variants, used for the
-           highlighted words in body copy — all measured at 6:1 or better. */
-        'blood-text': '#dd8571',
-        'woods-text': '#7cc98a',
-        'cliffs-text': '#79c0ea',
-        'desert-text': '#e89463',
+           highlighted words in body copy — all measured at 6:1 or better.
+           Light mode swaps them for dark equivalents against pale paper. */
+        'blood-text': tone('blood-text'),
+        'woods-text': tone('woods-text'),
+        'cliffs-text': tone('cliffs-text'),
+        'desert-text': tone('desert-text'),
       },
       fontFamily: {
+        /* Three families, not four.
+
+           IM Fell English SC used to hold the `script` role — small-caps
+           eyebrows and labels. It is a second serif display face doing a job
+           Cinzel already does, and shipping both meant a visitor downloaded two
+           near-identical voices to render about forty words. Cinzel takes the
+           role; the class name stays so nothing had to be renamed, and the
+           tracking in `.eyebrow`/`.label-sm` was already carrying most of the
+           small-caps character anyway.
+
+           `--font-read` is a variable rather than a literal because the
+           high-legibility toggle swaps Newsreader for Atkinson Hyperlegible on
+           every reading surface at once. */
         display: ['Cinzel', 'Georgia', 'serif'],
-        script: ['"IM Fell English SC"', 'Georgia', 'serif'],
-        read: ['Newsreader', 'Georgia', 'serif'],
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        script: ['Cinzel', 'Georgia', 'serif'],
+        read: ['var(--font-read)', 'Newsreader', 'Georgia', 'serif'],
+        sans: ['var(--font-sans)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         card: '0 2px 0 rgba(0,0,0,.35), 0 10px 26px rgba(0,0,0,.35)',

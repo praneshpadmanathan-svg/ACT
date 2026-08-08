@@ -32,6 +32,7 @@ import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import { Button } from '@/components/ui';
 import { burstConfetti } from '@/components/Feedback';
+import { Art } from '@/components/Art';
 
 export function Auth({ mode: initialMode }: { mode: AuthMode }) {
   const navigate = useNavigate();
@@ -482,12 +483,7 @@ function Frame({
 }) {
   return (
     <div className="relative isolate flex min-h-dvh items-center justify-center overflow-hidden px-4 py-14">
-      <img
-        src="/art/camp-bg.webp"
-        alt=""
-        className="absolute inset-0 h-full w-full select-none object-cover"
-        draggable={false}
-      />
+      <Art name="camp-bg" priority className="absolute inset-0 h-full w-full select-none object-cover" />
       <div className="absolute inset-0 bg-leather-950/84" />
 
       <div className="panel-lit relative z-10 w-full max-w-md p-7 sm:p-9">

@@ -16,6 +16,7 @@ import { hrefFor, useNavigate } from '@/lib/router';
 import { cloudEnabled } from '@/lib/supabase';
 import { sfx } from '@/lib/sfx';
 import { Button } from '@/components/ui';
+import { Art } from '@/components/Art';
 
 /* Where people write when they want their data out, or have a complaint.
 
@@ -31,11 +32,9 @@ export function LegalScreen({ page }: { page: 'privacy' | 'terms' }) {
 
   return (
     <div className="relative isolate min-h-dvh">
-      <img
-        src="/art/camp-bg.webp"
-        alt=""
+      <Art
+        name="camp-bg"
         className="pointer-events-none fixed inset-0 -z-10 h-full w-full select-none object-cover opacity-60"
-        draggable={false}
       />
       <div className="pointer-events-none fixed inset-0 -z-10 bg-leather-950/90" />
 

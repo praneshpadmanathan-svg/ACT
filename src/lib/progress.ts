@@ -2,8 +2,9 @@
    estimation. Pure functions over a single serialisable `Progress` object,
    so it can be persisted locally and synced to Supabase without ceremony. */
 
-import type { Attempt, Difficulty, Progress, SectionId, Tally, TestResult } from '@/types';
+import type { Attempt, Difficulty, Progress, ReviewEntry, SectionId, Tally, TestResult } from '@/types';
 import { TOPIC_BY_ZONE_ALIAS } from '@/content';
+import { DEFAULT_HERO_ID, isHeroId } from '@/game/heroes';
 import { readJSON, STORAGE_KEYS, writeJSON } from './storage';
 import { canonicalTopic } from './utils';
 
@@ -99,7 +100,11 @@ export function emptyProgress(): Progress {
     /** Questions per week, not XP — see the migration in `loadProgress`. */
     weeklyGoal: 75,
     profile: null,
-    hero: 'cadet',
+    hero: DEFAULT_HERO_ID,
+    bookmarks: [],
+    streakShields: 0,
+    dailyDoneOn: null,
+    diagnostic: null,
     storySeen: [],
     oath: null,
     startRegion: null,
@@ -230,6 +235,15 @@ export function loadProgress(key: string = STORAGE_KEYS.progress): Progress {
   merged.zonesCleared = merged.zonesCleared ?? {};
   merged.review = merged.review ?? {};
   merged.storySeen = Array.isArray(merged.storySeen) ? merged.storySeen : [];
+  merged.bookmarks = Array.isArray(merged.bookmarks) ? merged.bookmarks : [];
+  merged.streakShields = typeof merged.streakShields === 'number' ? merged.streakShields : 0;
+  merged.dailyDoneOn = typeof merged.dailyDoneOn === 'string' ? merged.dailyDoneOn : null;
+  merged.diagnostic = merged.diagnostic ?? null;
+
+  /* `hero` was written once as the string `'cadet'` and read by nothing, so
+     every save in existence holds a value that is not a real hero id. Coerce
+     it rather than trusting it: an unknown id would render an empty avatar. */
+  if (!isHeroId(merged.hero)) merged.hero = DEFAULT_HERO_ID;
 
   /* Backfill the totals for anyone whose progress predates them. Without this
      an established player would open the app to a lifetime count of zero.
@@ -312,43 +326,186 @@ export function saveProgress(p: Progress, key: string = STORAGE_KEYS.progress): 
 export const dayKey = (d: Date = new Date()) =>
   `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 
-/** Bump the day streak if this is the first activity today. */
-export function touchDayStreak(p: Progress): Progress {
-  const today = dayKey();
-  if (p.lastActiveDay === today) return p;
+/** How many days a shield can bridge, and how many can be held at once. */
+const MAX_SHIELDS = 2;
+/** A completed week earns one. */
+const SHIELD_EVERY = 7;
 
-  const yesterday = dayKey(new Date(Date.now() - 86_400_000));
-  const dayStreak = p.lastActiveDay === yesterday ? p.dayStreak + 1 : 1;
-  return { ...p, dayStreak, lastActiveDay: today };
+/**
+ * Bump the day streak if this is the first activity today.
+ *
+ * The rule used to be absolute: miss one day and the count goes back to 1.
+ * The student's review said what that does — *"the streak breaks and that's
+ * it. No grace, no freeze, no way back. After one missed day I stop caring
+ * about the number."* A counter whose only function is to bring somebody back
+ * tomorrow should not be destroyed by the first Tuesday they have homework.
+ *
+ * So a missed day can be spent against a shield, earned one per completed
+ * week and capped at two. The important properties:
+ *
+ *  - it is earned, not given, so the streak still means something;
+ *  - it is capped, so a long absence cannot be bridged and the number never
+ *    claims a run that did not happen;
+ *  - it is spent automatically, because asking somebody to remember to burn a
+ *    streak freeze is the same trap in a nicer coat;
+ *  - it bridges *gaps*, not the whole absence — two shields cover a two-day
+ *    gap and nothing longer.
+ *
+ * Returns the number of shields spent alongside the progress, so the caller
+ * can say so. A shield spent silently is a feature nobody knows they have.
+ */
+export function touchDayStreak(p: Progress): Progress {
+  return applyDayStreak(p).progress;
+}
+
+export function applyDayStreak(p: Progress): { progress: Progress; shieldsSpent: number } {
+  const today = dayKey();
+  if (p.lastActiveDay === today) return { progress: p, shieldsSpent: 0 };
+
+  /* Whole days between the last active day and today. 1 is "yesterday", which
+     continues the streak for free; 2 means one day was missed; and so on. */
+  const gap = p.lastActiveDay ? daysBetween(p.lastActiveDay, today) : Infinity;
+  const missed = Number.isFinite(gap) ? Math.max(0, gap - 1) : Infinity;
+
+  let dayStreak: number;
+  let shieldsSpent = 0;
+  let streakShields = p.streakShields;
+
+  if (missed === 0) {
+    dayStreak = p.dayStreak + 1;
+  } else if (missed <= streakShields) {
+    // Bridge the gap: the streak counts the missed days as attended.
+    shieldsSpent = missed;
+    streakShields -= missed;
+    dayStreak = p.dayStreak + missed + 1;
+  } else {
+    dayStreak = 1;
+  }
+
+  /* Earn on the way past each week boundary, so a 14-day streak has granted
+     two and a 15-day streak has not granted a third it would only lose. */
+  if (dayStreak > 0 && dayStreak % SHIELD_EVERY === 0) {
+    streakShields = Math.min(MAX_SHIELDS, streakShields + 1);
+  }
+
+  return {
+    progress: { ...p, dayStreak, lastActiveDay: today, streakShields },
+    shieldsSpent,
+  };
+}
+
+/** Whole days from one `yyyy-mm-dd` to another. Parsed as local noon so a
+ *  daylight-saving shift cannot turn 24 hours into 23 and lose a day. */
+export function daysBetween(from: string, to: string): number {
+  const at = (key: string) => {
+    const [y, m, d] = key.split('-').map(Number);
+    return new Date(y ?? 1970, (m ?? 1) - 1, d ?? 1, 12).getTime();
+  };
+  return Math.round((at(to) - at(from)) / 86_400_000);
 }
 
 /* ------------------------------------------------- spaced repetition (review) */
 
-/** Leitner boxes, in days. A missed question resets to box 0. */
+/** Leitner boxes, in days. */
 const BOX_INTERVALS = [0, 1, 3, 7, 16, 35];
+const TOP_BOX = BOX_INTERVALS.length - 1;
 
+/* Under this, an answer was fast enough that the person knew it rather than
+   worked it out. Over the second, they were reasoning from scratch. Both are
+   deliberately generous: a Reading question with a passage attached is slow
+   for everyone, and the cost of misreading one answer is small because the
+   next one corrects it. */
+const FAST_MS = 25_000;
+const SLOW_MS = 75_000;
+
+/** A question missed this many times is no longer given the benefit of the
+ *  doubt on a fast wrong answer — see the note in `scheduleReview`. */
+const CHRONIC_MISSES = 3;
+
+/**
+ * Move a question along the review ladder.
+ *
+ * The old rule was a plain Leitner box: right advances one, wrong resets to
+ * zero, no matter how the answer was given. That treats *"I knew this
+ * instantly"* and *"I worked at it for ninety seconds and just got there"* as
+ * the same event, and it treats a mis-click the same as a misconception. The
+ * review's own words were "it doesn't seem to know the difference between 'I
+ * guessed' and 'I nearly had it'."
+ *
+ * Rather than replace the boxes with SM-2 or FSRS — which need a per-item
+ * ease factor, a different stored shape and a migration for every question
+ * already in flight — the transition *rule* changes and `BOX_INTERVALS` does
+ * not. The signal is the response time, which the app has been recording into
+ * `Tally.topics[].ms` since the beginning and has never once read back.
+ *
+ *   fast + correct    → advance two boxes. Recall this quick is genuine.
+ *   correct           → advance one, as before.
+ *   fast + incorrect  → drop one box, not to zero. A wrong answer given in
+ *                       four seconds is usually a slip.
+ *   slow + incorrect  → straight to zero. This one is not known.
+ *
+ * The obvious hole in "fast wrong is a slip" is a confidently-held
+ * misconception, which is *also* answered fast and is the more dangerous of
+ * the two. That is what `misses` is for: once a question has been got wrong
+ * three times, speed stops earning leniency and every miss is a full reset.
+ * The count is the thing that can tell the two apart, and the box index
+ * cannot — a slip and a misconception both sit at box 0.
+ */
 export function scheduleReview(
   review: Progress['review'],
   qid: string,
   correct: boolean,
+  ms = SLOW_MS,
 ): Progress['review'] {
   const existing = review[qid];
-  const box = correct ? Math.min((existing?.box ?? 0) + 1, BOX_INTERVALS.length - 1) : 0;
+  const currentBox = existing?.box ?? 0;
+  const misses = existing?.misses ?? 0;
+  const fast = ms > 0 && ms < FAST_MS;
+
+  let box: number;
+  if (correct) {
+    box = Math.min(currentBox + (fast ? 2 : 1), TOP_BOX);
+  } else if (fast && misses < CHRONIC_MISSES) {
+    box = Math.max(0, currentBox - 1);
+  } else {
+    box = 0;
+  }
 
   // Once a question graduates the last box it leaves the review queue.
-  if (correct && box === BOX_INTERVALS.length - 1 && existing) {
+  if (correct && box === TOP_BOX && existing) {
     const { [qid]: _drop, ...rest } = review;
     return rest;
   }
-  return { ...review, [qid]: { box, due: Date.now() + BOX_INTERVALS[box] * 86_400_000 } };
+
+  const next: ReviewEntry = {
+    box,
+    due: Date.now() + BOX_INTERVALS[box]! * 86_400_000,
+    misses: misses + (correct ? 0 : 1),
+  };
+  return { ...review, [qid]: next };
 }
 
+/**
+ * Everything due, hardest-earned first.
+ *
+ * Sorted by miss count before due date. A session is capped at twenty
+ * questions, so when more than twenty are due the order decides what actually
+ * gets practised — and the right answer there is the question that has beaten
+ * you four times, not the one that happened to come due at 3am. Due date
+ * breaks the tie, so within a miss count it is still oldest-first.
+ */
 export function dueForReview(p: Progress): string[] {
   const now = Date.now();
   return Object.entries(p.review)
     .filter(([, v]) => v.due <= now)
-    .sort((a, b) => a[1].due - b[1].due)
+    .sort((a, b) => (b[1].misses ?? 0) - (a[1].misses ?? 0) || a[1].due - b[1].due)
     .map(([qid]) => qid);
+}
+
+/** How many questions come due in the next `days` days, for the nudge copy. */
+export function comingDue(p: Progress, days: number): number {
+  const horizon = Date.now() + days * 86_400_000;
+  return Object.values(p.review).filter((v) => v.due > Date.now() && v.due <= horizon).length;
 }
 
 /* ------------------------------------------------------------ recording work */
@@ -358,6 +515,8 @@ export interface RecordResult {
   xpGained: number;
   rankedUp: boolean;
   newRankIndex: number;
+  /** Missed days a streak shield just covered, so the UI can say so. */
+  shieldsSpent?: number;
 }
 
 /** How much of the raw answer log to keep on the device. Nothing reads an
@@ -372,7 +531,7 @@ export function recordAttempt(
   const beforeRank = rankIndexFor(p.xp);
   const currentCorrectStreak = attempt.correct ? p.currentCorrectStreak + 1 : 0;
 
-  let next: Progress = {
+  const staged: Progress = {
     ...p,
     xp: p.xp + xpGained,
     tally: tallyAnswer(p.tally, attempt),
@@ -380,9 +539,12 @@ export function recordAttempt(
     attempts: [...p.attempts, { ...attempt, at: Date.now() }].slice(-RECENT_ATTEMPTS),
     currentCorrectStreak,
     bestCorrectStreak: Math.max(p.bestCorrectStreak, currentCorrectStreak),
-    review: scheduleReview(p.review, attempt.qid, attempt.correct),
+    /* The response time is handed to the scheduler rather than dropped. It is
+       the only signal the app has for how *confidently* an answer was given,
+       and it has been recorded and unused since the first build. */
+    review: scheduleReview(p.review, attempt.qid, attempt.correct, attempt.ms),
   };
-  next = touchDayStreak(next);
+  const { progress: next, shieldsSpent } = applyDayStreak(staged);
 
   const afterRank = rankIndexFor(next.xp);
   return {
@@ -390,14 +552,21 @@ export function recordAttempt(
     xpGained,
     rankedUp: afterRank > beforeRank,
     newRankIndex: afterRank,
+    shieldsSpent,
   };
 }
 
 export function awardXP(p: Progress, amount: number): RecordResult {
   const beforeRank = rankIndexFor(p.xp);
-  const next = touchDayStreak({ ...p, xp: p.xp + amount });
+  const { progress: next, shieldsSpent } = applyDayStreak({ ...p, xp: p.xp + amount });
   const afterRank = rankIndexFor(next.xp);
-  return { progress: next, xpGained: amount, rankedUp: afterRank > beforeRank, newRankIndex: afterRank };
+  return {
+    progress: next,
+    xpGained: amount,
+    rankedUp: afterRank > beforeRank,
+    newRankIndex: afterRank,
+    shieldsSpent,
+  };
 }
 
 /* ---------------------------------------------------------------- analytics */
@@ -468,6 +637,46 @@ export function scaleScore(pct: number): number {
   return 1;
 }
 
+/* -------------------------------------------------------------- percentile
+
+   *"A composite of 28 means nothing to me without knowing what percentage of
+   people I just beat."* — and the app had no percentile anywhere.
+
+   These are ACT's published national ranks for recent graduating cohorts,
+   rounded to whole percents. They are the *composite* ranks, which is the
+   number a student actually wants; section-level ranks differ by a few points
+   either way and are not worth four more tables for a figure that is labelled
+   approximate anyway.
+
+   Two honesty constraints, both enforced in the UI that renders this:
+     - it is always shown as "about", never as a precise figure;
+     - it is never shown for the drill-derived estimate, only for a completed
+       test, because a percentile on twelve English questions is a fiction
+       with a decimal point.  */
+const PERCENTILE_BY_COMPOSITE: Record<number, number> = {
+  36: 100, 35: 99, 34: 99, 33: 98, 32: 96, 31: 95, 30: 93, 29: 91,
+  28: 89, 27: 86, 26: 82, 25: 78, 24: 74, 23: 69, 22: 64, 21: 58,
+  20: 52, 19: 46, 18: 40, 17: 34, 16: 27, 15: 20, 14: 13, 13: 7,
+  12: 4, 11: 2, 10: 1, 9: 1, 8: 1, 7: 1, 6: 1, 5: 1, 4: 1, 3: 1, 2: 1, 1: 1,
+};
+
+/** Roughly what share of test-takers score at or below this composite. */
+export function percentileFor(composite: number): number | null {
+  const key = Math.round(composite);
+  return PERCENTILE_BY_COMPOSITE[key] ?? null;
+}
+
+/** "Better than about 4 in 5" — a percentile a fifteen-year-old can picture.
+ *  A bare 82nd percentile is a number; "4 in 5" is a room. */
+export function percentileInWords(percentile: number): string {
+  if (percentile >= 99) return 'top 1% of test-takers';
+  if (percentile >= 95) return 'top 1 in 20';
+  if (percentile >= 90) return 'top 1 in 10';
+  if (percentile >= 75) return 'top quarter';
+  if (percentile >= 50) return 'top half';
+  return `about ${percentile} in 100 score at or below this`;
+}
+
 export function compositeOf(scores: Partial<Record<SectionId, number>>): number {
   const values = Object.values(scores).filter((v): v is number => typeof v === 'number');
   if (!values.length) return 0;
@@ -490,16 +699,157 @@ export function estimatedComposite(p: Progress): number | null {
   return compositeOf(scores);
 }
 
+/* --------------------------------------------------------- am I on track?
+
+   *"Nothing tells me if I'm on track for the score I said I wanted."* The app
+   collected a target on the first screen of onboarding and then never once
+   mentioned it again.
+
+   This is deliberately a *trend*, not a prediction. It compares the estimate
+   now against the oldest completed test inside a sixty-day window and says
+   which way it is going and whether that direction reaches the target before
+   the test date. Sixty days rather than a fortnight because two weeks is
+   frequently zero tests, and a trend drawn from one point is not a trend.
+
+   Anything more confident than this would be dressing up a hand-fit curve over
+   drill accuracy as a forecast, which is exactly the thing a competitor would
+   and should attack. */
+
+export type TrackVerdict = 'ahead' | 'onTrack' | 'behind' | 'unknown';
+
+export interface TrackStatus {
+  verdict: TrackVerdict;
+  current: number | null;
+  target: number;
+  /** Scaled points gained over the window, positive or negative. */
+  change: number | null;
+  /** Points still needed. */
+  gap: number | null;
+  /** Days to the test, when a date is set. */
+  daysLeft: number | null;
+}
+
+/** Points per week a student typically moves with steady work. Used only to
+ *  decide whether the remaining time is plausibly enough, never displayed. */
+const POINTS_PER_WEEK = 0.4;
+
+export function trackStatus(p: Progress): TrackStatus {
+  const current = estimatedComposite(p);
+  const target = p.targetScore;
+  const testDate = p.profile?.testDate ?? null;
+  const daysLeft = testDate ? Math.max(0, daysBetween(dayKey(), testDate)) : null;
+
+  if (current === null) {
+    return { verdict: 'unknown', current: null, target, change: null, gap: null, daysLeft };
+  }
+
+  const gap = target - current;
+
+  /* The most recent completed test is a much better anchor than the drill
+     estimate, so when one exists inside the window it is used for the trend. */
+  const recent = p.testHistory.filter((t) => Date.now() - t.at < 60 * 86_400_000);
+  const change = recent.length >= 2
+    ? current - recent[0]!.composite
+    : null;
+
+  if (gap <= 0) return { verdict: 'ahead', current, target, change, gap, daysLeft };
+
+  if (daysLeft === null) {
+    // No date, so "on track" has no meaning — report the gap and stop.
+    return { verdict: gap <= 2 ? 'onTrack' : 'behind', current, target, change, gap, daysLeft };
+  }
+
+  const reachable = (daysLeft / 7) * POINTS_PER_WEEK;
+  return {
+    verdict: reachable >= gap ? 'onTrack' : 'behind',
+    current,
+    target,
+    change,
+    gap,
+    daysLeft,
+  };
+}
+
+/* --------------------------------------------------------------- pacing
+
+   Per-question timing has been captured into `Tally.topics[].ms` since the
+   first build and surfaced nowhere. A student's third complaint was "I don't
+   find out I'm too slow until the timer runs out", which is a reporting
+   failure rather than a missing measurement. */
+
+export interface Pacing {
+  /** Seconds per question the section's real timing allows. */
+  budget: number;
+  /** Seconds per question actually taken. */
+  actual: number;
+  /** Positive means over budget. */
+  overBy: number;
+  verdict: 'comfortable' | 'tight' | 'over';
+}
+
+/* Real ACT seconds per question, from the published timings:
+   English 50Q/35min, Math 45Q/50min, Reading 36Q/40min, Science 40Q/40min.
+   Deliberately the *real* budget, not this app's scaled-down section length —
+   pacing practice against a shortened section teaches the wrong tempo. */
+export const SECONDS_PER_QUESTION: Record<SectionId, number> = {
+  english: (35 * 60) / 50,
+  math: (50 * 60) / 45,
+  reading: (40 * 60) / 36,
+  science: (40 * 60) / 40,
+};
+
+export function pacingFor(section: SectionId, seconds: number, questions: number): Pacing | null {
+  if (questions <= 0) return null;
+  const budget = SECONDS_PER_QUESTION[section];
+  const actual = seconds / questions;
+  const overBy = actual - budget;
+  return {
+    budget,
+    actual,
+    overBy,
+    verdict: overBy <= -2 ? 'comfortable' : overBy <= 4 ? 'tight' : 'over',
+  };
+}
+
+/* ---------------------------------------------------------- daily challenge
+
+   `XP.dailyChallenge` was defined in this file and referenced nowhere — one of
+   three fields the engineer's review flagged as looking like a half-shipped
+   feature. Either build it or delete it; a constant that names a feature the
+   app does not have is worse than both. Built.
+
+   The design constraint came from the student: *"nothing to do in 90 seconds.
+   No daily question, no quick hit — the smallest unit of engagement is a whole
+   drill."* So: five questions, drawn from whatever is due for review first and
+   topped up from the weakest topics, once a day. */
+
+export const DAILY_SIZE = 5;
+
+export const dailyDone = (p: Progress): boolean => p.dailyDoneOn === dayKey();
+
+export function completeDaily(p: Progress): RecordResult {
+  if (dailyDone(p)) {
+    return { progress: p, xpGained: 0, rankedUp: false, newRankIndex: rankIndexFor(p.xp) };
+  }
+  return awardXP({ ...p, dailyDoneOn: dayKey() }, XP.dailyChallenge);
+}
+
 export function recordTest(p: Progress, result: TestResult): RecordResult {
   const beforeRank = rankIndexFor(p.xp);
   const gain = result.sections.length === 4 ? XP.fullTest : XP.testSection * result.sections.length;
-  const next = touchDayStreak({
+  const { progress: next, shieldsSpent } = applyDayStreak({
     ...p,
     xp: p.xp + gain,
     testHistory: [...p.testHistory, result],
   });
   const afterRank = rankIndexFor(next.xp);
-  return { progress: next, xpGained: gain, rankedUp: afterRank > beforeRank, newRankIndex: afterRank };
+  return {
+    progress: next,
+    xpGained: gain,
+    rankedUp: afterRank > beforeRank,
+    newRankIndex: afterRank,
+    shieldsSpent,
+  };
 }
 
 /* -------------------------------------------------------------------- merge */
@@ -534,11 +884,17 @@ export function mergeProgress(local: Progress, remote: Progress): Progress {
     zonesCleared[id] = Math.max(zonesCleared[id] ?? 0, pct);
   }
 
-  // Keep whichever review schedule is further along per question.
+  /* Keep whichever review schedule is further along per question — but take
+     the *higher* miss count either way. Forgetting a miss because the other
+     device happens to sit in a higher box is the one direction that quietly
+     makes a chronically-missed question look mastered, and the miss count is
+     precisely what stops a fast wrong answer being forgiven forever. */
   const review: Progress['review'] = { ...remote.review };
   for (const [qid, entry] of Object.entries(local.review)) {
     const existing = review[qid];
-    review[qid] = !existing || entry.box > existing.box ? entry : existing;
+    const misses = Math.max(entry.misses ?? 0, existing?.misses ?? 0);
+    const ahead = !existing || entry.box > existing.box ? entry : existing;
+    review[qid] = misses ? { ...ahead, misses } : ahead;
   }
 
   const newer = (local.lastActiveDay ?? '') >= (remote.lastActiveDay ?? '') ? local : remote;
@@ -561,10 +917,35 @@ export function mergeProgress(local: Progress, remote: Progress): Progress {
     startRegion: local.startRegion ?? remote.startRegion ?? null,
     /* Unioned: finding something on one device cannot un-find it on another. */
     discovered: [...new Set([...(remote.discovered ?? []), ...(local.discovered ?? [])])],
+    /* Same rule — bookmarking on the laptop must survive opening the phone.
+       Un-bookmarking does not propagate, which is the deliberate trade: the
+       cost of a stale bookmark is one extra tap, and the cost of losing a
+       saved question is that the feature cannot be trusted. */
+    bookmarks: [...new Set([...(remote.bookmarks ?? []), ...(local.bookmarks ?? [])])],
     zonesCleared,
     review,
     dayStreak: Math.max(local.dayStreak, remote.dayStreak),
     bestCorrectStreak: Math.max(local.bestCorrectStreak, remote.bestCorrectStreak),
+    /* Counters take the max like everything else, so a shield spent on one
+       device is not silently refunded by the other. */
+    streakShields: Math.max(local.streakShields ?? 0, remote.streakShields ?? 0),
+    /* Latest wins: doing the daily on your phone must count on your laptop. */
+    dailyDoneOn:
+      (local.dailyDoneOn ?? '') >= (remote.dailyDoneOn ?? '')
+        ? local.dailyDoneOn
+        : remote.dailyDoneOn,
+    /* Taken once; whichever side has one is the one that has it. */
+    diagnostic: local.diagnostic ?? remote.diagnostic ?? null,
+    /* The traveller you picked is a choice, not a counter — `newer` already
+       carries it, and this only guards the case where the newer side is a
+       fresh install that has never chosen.
+
+       Every candidate is validated, not just the first. Saves written before
+       the hero set existed all carry the string `'cadet'`, which is not a
+       hero; falling through to an unchecked `local.hero ?? remote.hero` would
+       hand that dead value straight back and leave the chooser with nothing
+       selected on both devices. */
+    hero: [newer.hero, local.hero, remote.hero].find(isHeroId) ?? DEFAULT_HERO_ID,
     profile: newer.profile ?? local.profile ?? remote.profile,
   };
 }

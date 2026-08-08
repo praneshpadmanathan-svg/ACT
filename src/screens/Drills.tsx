@@ -63,7 +63,7 @@ export function DrillsScreen({ section }: { section?: string }) {
             onClick={() => sfx.select()}
             className={cx(
               'rounded-lg border-2 px-4 py-2 font-script text-[12px] uppercase tracking-wide transition-colors',
-              s.id === active ? 'text-[#0d0620]' : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-white',
+              s.id === active ? 'text-[#0d0620]' : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-parchment',
             )}
             style={s.id === active ? { background: s.color, borderColor: s.color } : undefined}
           >
@@ -97,7 +97,7 @@ export function DrillsScreen({ section }: { section?: string }) {
       </div>
 
       {/* by topic */}
-      <h2 className="heading mb-4 text-[13px] text-white">By topic</h2>
+      <h2 className="heading mb-4 text-[13px] text-parchment">By topic</h2>
       <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         {topics.map((topic) => {
           const stat = stats.get(topic);
@@ -115,7 +115,7 @@ export function DrillsScreen({ section }: { section?: string }) {
               className="flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-4 py-3.5 text-left shadow-card transition-all hover:-translate-y-0.5 hover:border-gold-deep"
             >
               <span className="min-w-0 flex-1">
-                <span className="block truncate font-sans text-[14px] font-semibold text-white">
+                <span className="block truncate font-sans text-[14px] font-semibold text-parchment">
                   {titleCase(topic)}
                 </span>
                 <span className="mt-0.5 block font-script text-[10px] uppercase tracking-wide text-ink-faint">
@@ -398,7 +398,7 @@ export function DrillSummary({
 
         {missed.length > 0 && (
           <div className="mt-6">
-            <h2 className="heading mb-4 text-[13px] text-white">
+            <h2 className="heading mb-4 text-[13px] text-parchment">
               What you missed ({missed.length})
             </h2>
             <div className="space-y-3">

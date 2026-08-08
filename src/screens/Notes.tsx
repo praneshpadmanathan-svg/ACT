@@ -63,7 +63,7 @@ export function NotesScreen({ section }: { section?: string }) {
             onClick={() => sfx.select()}
             className={cx(
               'rounded-lg border-2 px-4 py-2 font-script text-[12px] uppercase tracking-wide transition-colors',
-              s.id === active ? 'text-[#0d0620]' : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-white',
+              s.id === active ? 'text-[#0d0620]' : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-parchment',
             )}
             style={s.id === active ? { background: s.color, borderColor: s.color } : undefined}
           >
@@ -109,7 +109,7 @@ export function NotesScreen({ section }: { section?: string }) {
                       {read ? '✓' : ''}
                     </span>
                     <span className="min-w-0">
-                      <span className="block font-sans text-[15px] font-semibold leading-snug text-white">
+                      <span className="block font-sans text-[15px] font-semibold leading-snug text-parchment">
                         {page.title}
                       </span>
                       <span className="mt-1 block text-[13px] leading-relaxed text-ink-faint">

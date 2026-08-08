@@ -26,6 +26,7 @@ import { cx } from '@/lib/utils';
 import { useDialogFocus } from '@/lib/useDialogFocus';
 import { REGION_ORDER } from './mapData';
 import { nextChapter, type Chapter, type StoryChoice } from './story';
+import { Art } from '@/components/Art';
 
 const TYPE_MS = 16;
 
@@ -275,11 +276,9 @@ export function StoryOverlay() {
     >
       {/* backdrop */}
       <div className="absolute inset-0 bg-leather-950/88 backdrop-blur-sm" />
-      <img
-        src="/art/camp-bg.webp"
-        alt=""
+      <Art
+        name="camp-bg"
         className="absolute inset-0 h-full w-full select-none object-cover opacity-25"
-        draggable={false}
       />
       <div
         className="pointer-events-none absolute inset-0"
@@ -333,9 +332,9 @@ export function StoryOverlay() {
           )}
         >
           <div className="flex flex-col items-center gap-0 sm:flex-row sm:items-end sm:gap-4">
-            <img
-              src="/art/wizzy.webp"
-              alt=""
+            <Art
+              name="wizzy"
+              sizes={chapter.compact ? '92px' : '150px'}
               className={cx(
                 'animate-storyWizzy flex-none select-none',
                 chapter.compact
@@ -343,7 +342,6 @@ export function StoryOverlay() {
                   : 'w-[96px] sm:w-[132px] lg:w-[150px]',
               )}
               style={{ filter: 'drop-shadow(0 10px 16px rgba(0,0,0,.6))' }}
-              draggable={false}
             />
 
             <div className="story-card min-w-0 flex-1">

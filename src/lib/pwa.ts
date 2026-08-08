@@ -5,6 +5,8 @@
    code out from under someone halfway through a timed section, and the one
    thing a test timer must not do is surprise you. */
 
+import { reportWarn } from './report';
+
 const UPDATE_EVENT = 'act-command:update-ready';
 
 export function registerServiceWorker(): void {
@@ -31,7 +33,7 @@ export function registerServiceWorker(): void {
           });
         });
       })
-      .catch((err) => console.warn('[pwa] registration failed', err));
+      .catch((err) => reportWarn('pwa.register', err));
 
     let reloading = false;
     navigator.serviceWorker.addEventListener('controllerchange', () => {

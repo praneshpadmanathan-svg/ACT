@@ -299,7 +299,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
         {/* what you missed */}
         {results && results.some((r) => !r.correct) && (
           <div className="mt-6">
-            <h2 className="heading mb-4 text-[13px] text-white">What you missed</h2>
+            <h2 className="heading mb-4 text-[13px] text-parchment">What you missed</h2>
             <div className="space-y-3">
               {results
                 .filter((r) => !r.correct)

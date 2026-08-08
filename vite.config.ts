@@ -121,7 +121,15 @@ function serviceWorker(): Plugin {
       const deadWeight = (name: string) =>
         name.endsWith('.map') ||
         name.endsWith('.woff') ||
-        name.includes('-vietnamese-');
+        name.includes('-vietnamese-') ||
+        /* The responsive art variants under `/art/gen/`. There are twenty-two
+           of them and any one device requests about five — the browser picks
+           by viewport and pixel ratio, so precaching the set would cost around
+           1.2 MB of everyone's storage quota to hold twenty files they will
+           never ask for. The five originals stay precached, and `sw.ts` falls
+           back to the matching original when a variant is wanted offline and
+           has never been fetched. */
+        name.startsWith('/art/gen/');
 
       const emitted = Object.values(bundle)
         .map((chunk) => `/${chunk.fileName}`)

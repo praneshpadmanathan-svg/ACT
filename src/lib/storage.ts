@@ -2,7 +2,16 @@
 
    Safari in private mode throws on setItem, and a corrupted value should not
    take the whole app down — the old build wrapped everything in bare
-   try/catch and silently returned undefined, which made bugs invisible. */
+   try/catch and silently returned undefined, which made bugs invisible.
+
+   The three `console.warn` sites below are the only ones left in the app that
+   do *not* go through `lib/report.ts`, and that is deliberate rather than an
+   oversight. The reporter persists its ring buffer by calling `writeJSON`,
+   which is this file — so a quota-exceeded warning reported through it would
+   write, fail, warn, report, write, and recurse until the stack gave out. The
+   failure this module has to survive is precisely the one that would make
+   reporting it impossible. The events are still visible in the console, and a
+   storage failure announces itself loudly enough elsewhere: nothing saves. */
 
 const memoryFallback = new Map<string, string>();
 let storageWorks: boolean | null = null;

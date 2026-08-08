@@ -27,6 +27,7 @@ import { MapJournal } from './MapJournal';
 import { m, PIN_SPRING, SPRING, useReducedMotion } from '@/lib/motion';
 import { MapFx } from './MapFx';
 import { ClearedSigil, CrownSigil, LockSigil, MasterSigil } from './Sigils';
+import { Art } from '@/components/Art';
 
 const MAP_W = 768;
 const MAP_H = 1376;
@@ -510,11 +511,17 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
           opacity: ready ? 1 : 0,
         }}
       >
-        <img
-          src="/art/world-map.webp"
+        {/* Marked essential: this is the screen, not decoration for it.
+            Reduced-data mode drops the other four paintings and keeps this
+            one, because a map you cannot see is thirty-seven invisible
+            buttons. */}
+        <Art
+          name="world-map"
+          essential
+          priority
+          sizes="(min-width: 1024px) 900px, 100vw"
           alt="A painted map of the realm: farmland and a village in the north, an enchanted forest, a desert of canyons and ruins, cliffs above a harbour, and a golden citadel on an island to the south."
           className="absolute inset-0 h-full w-full select-none"
-          draggable={false}
         />
 
         <MapFx />
@@ -726,12 +733,11 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
                 tall as the cottages behind him. A pin marks the same spot, and
                 "Find my traveller" recentres on it, so he does not need to be
                 large to be found. */}
-            <img
-              src="/art/hero-char.webp"
-              alt=""
+            <Art
+              name="hero-char"
+              sizes="26px"
               className="animate-bobHero w-[26px] select-none"
               style={{ filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.55))' }}
-              draggable={false}
             />
           </m.div>
         )}

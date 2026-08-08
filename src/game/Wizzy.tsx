@@ -10,6 +10,7 @@ import { sfx } from '@/lib/sfx';
 import { readRaw, writeRaw } from '@/lib/storage';
 import { useMapProgress } from './AdventureMap';
 import { activeQuest, OATH_ECHO } from './story';
+import { Art } from '@/components/Art';
 
 const DISMISS_KEY = 'act-command:wizzy-hidden';
 
@@ -110,12 +111,11 @@ export function Wizzy() {
       className="fixed bottom-4 right-4 z-40 flex w-[min(370px,calc(100vw-2rem))] items-end gap-1"
       aria-label="Wizzy the guide"
     >
-      <img
-        src="/art/wizzy.webp"
-        alt=""
+      <Art
+        name="wizzy"
+        sizes="(min-width: 640px) 92px, 74px"
         className="animate-float w-[74px] flex-none select-none sm:w-[92px]"
         style={{ filter: 'drop-shadow(0 6px 10px rgba(0,0,0,.55))' }}
-        draggable={false}
       />
 
       <div className="panel-lit relative mb-3 flex-1 px-4 py-3.5">

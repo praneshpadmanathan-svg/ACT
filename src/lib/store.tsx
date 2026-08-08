@@ -31,6 +31,7 @@ import {
   type Rank,
 } from './progress';
 import { readRaw, removeRaw, STORAGE_KEYS, writeRaw } from './storage';
+import { reportWarn } from './report';
 import { progressKeyFor, retireDeviceAccounts, type Identity } from './identity';
 import { sfx } from './sfx';
 import {
@@ -318,7 +319,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         const ok = await pushProgress(uid, name, merged);
         if (!ok) setLastSyncError('Progress is saved on this device but could not reach the cloud.');
       } catch (err) {
-        console.warn('[sync] failed', err);
+        reportWarn('sync.cycle', err);
         setLastSyncError('Could not reach the cloud. Your progress is safe on this device.');
       } finally {
         setSyncing(false);
@@ -346,7 +347,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     try {
       user = await currentUser();
     } catch (err) {
-      console.warn('[auth] could not resolve session', err);
+      reportWarn('auth.bootstrap', err);
     }
     if (user) {
       const next: Identity = { kind: 'cloud', userId: user.id };
@@ -399,7 +400,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       try {
         redirect = await consumeAuthRedirect();
       } catch (err) {
-        console.warn('[auth] could not settle the redirect', err);
+        reportWarn('auth.redirect', err);
       }
       if (redirect) setAuthRedirect(redirect);
       await refreshAuth();

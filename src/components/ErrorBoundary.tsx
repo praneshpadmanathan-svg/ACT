@@ -3,6 +3,7 @@
    took the whole page down. */
 
 import { Component, type ErrorInfo, type ReactNode } from 'react';
+import { reportError } from '@/lib/report';
 
 interface Props {
   children: ReactNode;
@@ -20,7 +21,8 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error('[ACT Command] render error', error, info.componentStack);
+    reportError('render', `${error.message}
+${info.componentStack ?? ''}`.trim());
   }
 
   render() {

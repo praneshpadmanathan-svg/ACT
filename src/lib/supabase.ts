@@ -11,6 +11,7 @@
 import { createClient, type SupabaseClient, type User } from '@supabase/supabase-js';
 import type { Progress } from '@/types';
 import { emptyProgress } from './progress';
+import { reportWarn } from './report';
 
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined;
 const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
@@ -92,7 +93,7 @@ function friendlyError(message: string): string {
   if (m.includes('fetch') || m.includes('network') || m.includes('failed to fetch')) {
     return 'Could not reach the server. Check your connection and try again.';
   }
-  console.warn('[auth] unmapped provider error:', message);
+  reportWarn('auth.unmapped', message);
   return 'Something went wrong at our end. Please try again in a moment.';
 }
 
@@ -302,7 +303,7 @@ export async function pullProgress(userId: string): Promise<PullResult> {
     .maybeSingle<Pick<ProgressRow, 'data' | 'updated_at'>>();
 
   if (error) {
-    console.warn('[sync] pull failed', error.message);
+    reportWarn('sync.pull', error.message);
     return { status: 'error', message: error.message };
   }
   if (!data?.data) return { status: 'empty' };
@@ -329,7 +330,7 @@ export async function pushProgress(
     { onConflict: 'user_id' },
   );
   if (error) {
-    console.warn('[sync] push failed', error.message);
+    reportWarn('sync.push', error.message);
     return false;
   }
   return true;
@@ -340,7 +341,7 @@ export async function pushProgress(
 export async function deleteRemoteProgress(userId: string): Promise<void> {
   if (!supabase) return;
   const { error } = await supabase.from('progress').delete().eq('user_id', userId);
-  if (error) console.warn('[sync] remote reset failed', error.message);
+  if (error) reportWarn('sync.reset', error.message);
 }
 
 /* ----------------------------------------------------------------- erasure */

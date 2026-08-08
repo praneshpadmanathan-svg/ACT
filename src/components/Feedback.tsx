@@ -138,7 +138,7 @@ export function Toasts() {
         >
           <span className="text-[17px] text-gold" aria-hidden="true">✦</span>
           <span className="min-w-0">
-            <span className="block font-script text-[13px] uppercase tracking-wide text-white">{t.title}</span>
+            <span className="block font-script text-[13px] uppercase tracking-wide text-parchment">{t.title}</span>
             {t.detail && <span className="mt-0.5 block text-xs leading-snug text-parchment-dim">{t.detail}</span>}
           </span>
         </button>

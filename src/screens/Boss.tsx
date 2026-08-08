@@ -25,6 +25,7 @@ import { BossArt, type BossState } from '@/game/BossArt';
 import { bossFor } from '@/game/bosses';
 import { REGIONS } from '@/game/mapData';
 import { m, SPRING_SNAP } from '@/lib/motion';
+import { Art } from '@/components/Art';
 
 type Phase = 'intro' | 'fight' | 'won' | 'lost';
 
@@ -309,15 +310,14 @@ export function BossScreen({ section }: { section: string }) {
       >
         {/* you */}
         <div className="flex flex-col items-center">
-          <img
-            src="/art/hero-char.webp"
-            alt=""
+          <Art
+            name="hero-char"
+            sizes="(min-width: 1024px) 140px, (min-width: 640px) 120px, 84px"
             className={cx(
               'w-[84px] select-none sm:w-[120px] lg:w-[140px]',
               heroHurt ? 'animate-heroHurt' : 'animate-bobHero',
             )}
             style={{ filter: 'drop-shadow(0 8px 12px rgba(0,0,0,.55))' }}
-            draggable={false}
           />
           <HealthPips label="You" value={playerHp} max={boss.playerHealth} color="#5fa86b" />
         </div>

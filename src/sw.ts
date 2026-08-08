@@ -131,14 +131,33 @@ self.addEventListener('fetch', (event) => {
     (async () => {
       const cached = await caches.match(request, MATCH);
       if (cached) return cached;
-      const fresh = await fetch(request);
-      if (fresh.ok) {
-        const cache = await caches.open(CACHE);
-        cache.put(request, fresh.clone());
+      try {
+        const fresh = await fetch(request);
+        if (fresh.ok) {
+          const cache = await caches.open(CACHE);
+          cache.put(request, fresh.clone());
+        }
+        return fresh;
+      } catch (error) {
+        /* Offline, and this exact file was never fetched. For the responsive
+           art variants that is expected rather than exceptional: the precache
+           deliberately holds only the five originals (see the note in
+           vite.config.ts), and which of the twenty-two variants a device asks
+           for depends on its viewport. Serve the original instead of letting
+           the picture break. */
+        const original = originalFor(url.pathname);
+        const fallback = original ? await caches.match(original, MATCH) : undefined;
+        if (fallback) return fallback;
+        throw error;
       }
-      return fresh;
     })(),
   );
 });
+
+/** `/art/gen/camp-bg-640.avif` → `/art/camp-bg.webp`. Null for anything else. */
+function originalFor(pathname: string): string | null {
+  const match = /^\/art\/gen\/(.+)-\d+\.(?:avif|webp)$/.exec(pathname);
+  return match ? `/art/${match[1]}.webp` : null;
+}
 
 export {};

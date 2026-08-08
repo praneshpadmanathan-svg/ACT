@@ -9,6 +9,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { QUESTIONS, SECTIONS, SECTION_BY_ID } from '@/content';
 import { hrefFor, useConfirmExit, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
+import { usePrefs } from '@/lib/prefs';
 import { fromDrillQuestion } from '@/lib/normalize';
 import { compositeOf, scaleScore } from '@/lib/progress';
 import { sfx } from '@/lib/sfx';
@@ -30,11 +31,26 @@ const TEST_PLAN: Record<SectionId, { questions: number; minutes: number }> = {
   science: { questions: 20, minutes: 20 },
 };
 
+/* Extended time.
+ *
+ * ACT grants 50% and 100% extra time as documented accommodations, and a
+ * student who will sit the real exam with time and a half has to practise with
+ * time and a half — practising at standard timing trains a pace they will not
+ * use and teaches them to rush for no reason. It is a display setting rather
+ * than something asked about here, because nobody should have to re-declare a
+ * disability every time they open a test.
+ *
+ * Rounded up to the whole minute. 18 × 1.5 is 27 exactly, but 25 × 1.5 is
+ * 37.5, and the half-minute belongs to the student. */
+const withAllowance = (minutes: number, allowance: number) => Math.ceil(minutes * allowance);
+
 /* ---------------------------------------------------------------- setup */
 
 export function TestsScreen() {
   const navigate = useNavigate();
   const { progress } = useStore();
+  const { prefs } = usePrefs();
+  const allowance = prefs.timeAllowance;
   const history = [...progress.testHistory].reverse();
 
   return (
@@ -56,7 +72,8 @@ export function TestsScreen() {
           </p>
           <p className="mt-4 font-script text-[10px] uppercase tracking-wide text-ink-faint">
             {Object.values(TEST_PLAN).reduce((n, p) => n + p.questions, 0)} questions ·{' '}
-            {Object.values(TEST_PLAN).reduce((n, p) => n + p.minutes, 0)} minutes
+            {Object.values(TEST_PLAN).reduce((n, p) => n + withAllowance(p.minutes, allowance), 0)}{' '}
+            minutes
           </p>
           <Button
             variant="danger"
@@ -69,7 +86,7 @@ export function TestsScreen() {
         </div>
 
         <div className="rounded-xl border-2 border-leather-700 bg-leather-850 p-6 shadow-card sm:p-7">
-          <h2 className="heading text-[13px] text-white">Single section</h2>
+          <h2 className="heading text-[13px] text-parchment">Single section</h2>
           <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
             One section, properly timed. Good for building pace.
           </p>
@@ -81,14 +98,14 @@ export function TestsScreen() {
                 onClick={() => navigate({ name: 'test', config: s.id })}
               >
                 <span style={{ color: s.color }}>{s.name}</span>
-                <span className="text-ink-faint">{TEST_PLAN[s.id].minutes}m</span>
+                <span className="text-ink-faint">{withAllowance(TEST_PLAN[s.id].minutes, allowance)}m</span>
               </Button>
             ))}
           </div>
         </div>
       </div>
 
-      <h2 className="heading mb-4 text-[13px] text-white">Your results</h2>
+      <h2 className="heading mb-4 text-[13px] text-parchment">Your results</h2>
       {history.length === 0 ? (
         <EmptyState
           title="No tests yet"
@@ -104,7 +121,7 @@ export function TestsScreen() {
               className="flex flex-wrap items-center gap-x-6 gap-y-3 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-4 shadow-card transition-colors hover:border-gold-deep"
             >
               <div className="min-w-0">
-                <div className="font-script text-[12px] uppercase tracking-wide text-white">
+                <div className="font-script text-[12px] uppercase tracking-wide text-parchment">
                   {result.sections.length === 4 ? 'Full test' : SECTION_BY_ID[result.sections[0]]?.name}
                 </div>
                 <div className="mt-0.5 text-[13px] text-ink-faint">{formatRelative(result.at)}</div>
@@ -145,6 +162,7 @@ type Stage =
 export function TestRunner({ config }: { config: string }) {
   const navigate = useNavigate();
   const { finishTest } = useStore();
+  const { prefs } = usePrefs();
 
   const sectionIds = useMemo<SectionId[]>(
     () =>
@@ -172,6 +190,12 @@ export function TestRunner({ config }: { config: string }) {
     return out;
   }, [sectionIds]);
 
+  /* One number, read once, applied to every minute figure on this screen —
+     the brief, the per-section rows, the break card and the clock itself.
+     Quoting standard timing in the brief and then running a longer clock
+     would be worse than not offering the accommodation at all. */
+  const allowance = prefs.timeAllowance;
+
   const inProgress = stage.kind === 'section' || stage.kind === 'break';
   useConfirmExit(inProgress, 'Your test is still running. Leaving will lose your progress.');
 
@@ -191,7 +215,10 @@ export function TestRunner({ config }: { config: string }) {
 
   if (stage.kind === 'brief') {
     const totalQuestions = sectionIds.reduce((n, id) => n + TEST_PLAN[id].questions, 0);
-    const totalMinutes = sectionIds.reduce((n, id) => n + TEST_PLAN[id].minutes, 0);
+    const totalMinutes = sectionIds.reduce(
+      (n, id) => n + withAllowance(TEST_PLAN[id].minutes, allowance),
+      0,
+    );
 
     return (
       <Page>
@@ -210,8 +237,8 @@ export function TestRunner({ config }: { config: string }) {
                   <dt className="font-script text-[11px] uppercase tracking-wide" style={{ color: SECTION_BY_ID[id].color }}>
                     {SECTION_BY_ID[id].name}
                   </dt>
-                  <dd className="num text-[17px] text-white">
-                    {TEST_PLAN[id].questions} q · {TEST_PLAN[id].minutes} min
+                  <dd className="num text-[17px] text-parchment">
+                    {TEST_PLAN[id].questions} q · {withAllowance(TEST_PLAN[id].minutes, allowance)} min
                   </dd>
                 </div>
               ))}
@@ -221,6 +248,13 @@ export function TestRunner({ config }: { config: string }) {
               {totalQuestions} questions, {totalMinutes} minutes. No explanations until you finish — that is
               the point. Unanswered questions count as wrong, so guess rather than leave blanks.
             </p>
+
+            {allowance > 1 && (
+              <p className="mt-3 text-[13px] leading-relaxed text-ink-faint">
+                Running at {allowance === 1.5 ? 'time and a half' : 'double time'}, from your display
+                settings. Turn it off there if you want to practise at standard timing.
+              </p>
+            )}
 
             <Button
               variant="danger"
@@ -254,7 +288,8 @@ export function TestRunner({ config }: { config: string }) {
             <h1 className="heading text-[15px] text-gold">Break</h1>
             <p className="mt-5 text-[15px] leading-relaxed text-parchment-dim">
               Next up: <b style={{ color: SECTION_BY_ID[nextId].color }}>{SECTION_BY_ID[nextId].name}</b> —{' '}
-              {TEST_PLAN[nextId].questions} questions in {TEST_PLAN[nextId].minutes} minutes.
+              {TEST_PLAN[nextId].questions} questions in{' '}
+              {withAllowance(TEST_PLAN[nextId].minutes, allowance)} minutes.
             </p>
             <p className="mt-3 text-[14px] text-ink-faint">The clock starts when you continue.</p>
             <Button
@@ -329,7 +364,7 @@ export function TestRunner({ config }: { config: string }) {
       {/* Both remount per section, so their keys must differ from each other. */}
       <SectionTimer
         key={`timer-${sectionId}`}
-        minutes={plan.minutes}
+        minutes={withAllowance(plan.minutes, allowance)}
         color={SECTION_BY_ID[sectionId].color}
         onExpire={() => {
           sfx.warn();
@@ -487,7 +522,7 @@ export function ScoreReport({
                   <div className="font-script text-[10px] uppercase tracking-wide" style={{ color: meta.color }}>
                     {meta.name}
                   </div>
-                  <div className="num mt-2 text-[34px] leading-none text-white">{result.scores[id]}</div>
+                  <div className="num mt-2 text-[34px] leading-none text-parchment">{result.scores[id]}</div>
                   <div className="mt-1.5 text-[12px] text-ink-faint">
                     {correct}/{total} correct
                   </div>
@@ -499,14 +534,14 @@ export function ScoreReport({
 
         {byTopic.length > 0 && (
           <div className="mt-6">
-            <h2 className="heading mb-4 text-[13px] text-white">Where the points went</h2>
+            <h2 className="heading mb-4 text-[13px] text-parchment">Where the points went</h2>
             <div className="space-y-2.5">
               {byTopic.map((t) => (
                 <div
                   key={t.topic}
                   className="flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-3.5"
                 >
-                  <span className="w-40 flex-none truncate font-sans text-[14px] font-semibold text-white">
+                  <span className="w-40 flex-none truncate font-sans text-[14px] font-semibold text-parchment">
                     {titleCase(t.topic)}
                   </span>
                   <ProgressBar

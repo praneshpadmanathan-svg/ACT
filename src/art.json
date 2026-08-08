@@ -1,0 +1,140 @@
+{
+  "camp-bg": {
+    "width": 1376,
+    "height": 768,
+    "fallback": "/art/camp-bg.webp",
+    "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAwCdASoUAAsAPu1mq04ppaQiMAgBMB2JYwCsACHf/Z70D+THEAAA/unzgxO1y1LGxihosgMY1e2bfkakr0lQKAA=",
+    "avif": [
+      {
+        "w": 640,
+        "src": "/art/gen/camp-bg-640.avif"
+      },
+      {
+        "w": 1024,
+        "src": "/art/gen/camp-bg-1024.avif"
+      },
+      {
+        "w": 1376,
+        "src": "/art/gen/camp-bg-1376.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 640,
+        "src": "/art/gen/camp-bg-640.webp"
+      },
+      {
+        "w": 1024,
+        "src": "/art/gen/camp-bg-1024.webp"
+      },
+      {
+        "w": 1376,
+        "src": "/art/gen/camp-bg-1376.webp"
+      }
+    ]
+  },
+  "hero-char": {
+    "width": 346,
+    "height": 640,
+    "fallback": "/art/hero-char.webp",
+    "lqip": null,
+    "avif": [
+      {
+        "w": 173,
+        "src": "/art/gen/hero-char-173.avif"
+      },
+      {
+        "w": 346,
+        "src": "/art/gen/hero-char-346.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 173,
+        "src": "/art/gen/hero-char-173.webp"
+      },
+      {
+        "w": 346,
+        "src": "/art/gen/hero-char-346.webp"
+      }
+    ]
+  },
+  "landing-hero": {
+    "width": 1024,
+    "height": 559,
+    "fallback": "/art/landing-hero.webp",
+    "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoUAAsAPu1iqU2ppaQiMAgBMB2JQBOiP/wG2I82xb0nQDgwAP6o3Nr008p60wyeJk84oY22ZL56WI5Jekqw31ay59DFonyUezjwphOigAA=",
+    "avif": [
+      {
+        "w": 512,
+        "src": "/art/gen/landing-hero-512.avif"
+      },
+      {
+        "w": 768,
+        "src": "/art/gen/landing-hero-768.avif"
+      },
+      {
+        "w": 1024,
+        "src": "/art/gen/landing-hero-1024.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 512,
+        "src": "/art/gen/landing-hero-512.webp"
+      },
+      {
+        "w": 768,
+        "src": "/art/gen/landing-hero-768.webp"
+      },
+      {
+        "w": 1024,
+        "src": "/art/gen/landing-hero-1024.webp"
+      }
+    ]
+  },
+  "wizzy": {
+    "width": 470,
+    "height": 640,
+    "fallback": "/art/wizzy.webp",
+    "lqip": null,
+    "avif": [
+      {
+        "w": 235,
+        "src": "/art/gen/wizzy-235.avif"
+      },
+      {
+        "w": 470,
+        "src": "/art/gen/wizzy-470.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 235,
+        "src": "/art/gen/wizzy-235.webp"
+      },
+      {
+        "w": 470,
+        "src": "/art/gen/wizzy-470.webp"
+      }
+    ]
+  },
+  "world-map": {
+    "width": 768,
+    "height": 1376,
+    "fallback": "/art/world-map.webp",
+    "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAACwBQCdASoUACQAPtlUo02oJKMiOrmYAQAbCUAX6w9gX7Q0Y+Vozo4sdbWUqF+9AKJFJezyWjAA/HD2HvFbCAvoVMgz2pvb1wwBLfs+Is5+oijZ58axTNSC/2or9OXZAB12TQzqtjrclpWeCrnr0PKTVhHIEzTFuYW0UAO7VyxRXMSpgAAAAA==",
+    "avif": [
+      {
+        "w": 768,
+        "src": "/art/gen/world-map-768.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 768,
+        "src": "/art/gen/world-map-768.webp"
+      }
+    ]
+  }
+}

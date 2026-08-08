@@ -19,6 +19,7 @@ import { Button, ProgressBar, ProgressRing, RankBadge } from '@/components/ui';
 import { useMapProgress } from '@/game/AdventureMap';
 import { REGIONS } from '@/game/mapData';
 import { nextChapter } from '@/game/story';
+import { Art } from '@/components/Art';
 
 /** Dismissal of the "make an account" nudge, so it asks once and takes no for
  *  an answer. Nagging a teenager for an email address is how you lose them. */
@@ -44,11 +45,10 @@ export function Home() {
   return (
     <div className="relative isolate min-h-dvh">
       {/* the tent */}
-      <img
-        src="/art/camp-bg.webp"
-        alt=""
+      <Art
+        name="camp-bg"
+        priority
         className="pointer-events-none fixed inset-0 -z-10 h-full w-full select-none object-cover opacity-70"
-        draggable={false}
       />
       <div className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-leather-950/80 via-leather-950/88 to-leather-950" />
 
@@ -65,11 +65,10 @@ export function Home() {
             className="panel-lit mb-5 flex w-full items-center gap-4 p-4 text-left transition-all
                        hover:-translate-y-0.5 hover:border-gold-deep sm:p-5"
           >
-            <img
-              src="/art/wizzy.webp"
-              alt=""
+            <Art
+              name="wizzy"
+              sizes="(min-width: 640px) 64px, 52px"
               className="animate-float w-[52px] flex-none select-none sm:w-[64px]"
-              draggable={false}
             />
             <span className="min-w-0 flex-1">
               <span className="eyebrow block">✦ Wizzy has something to tell you</span>

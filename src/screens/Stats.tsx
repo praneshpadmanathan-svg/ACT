@@ -18,6 +18,9 @@ import { downloadProgress } from '@/lib/exportData';
 import { cx, formatRelative, titleCase } from '@/lib/utils';
 import { Page } from '@/components/Shell';
 import { Button, ProgressBar, RankBadge, SectionHeading, EmptyState } from '@/components/ui';
+import { DiagnosticsPanel, DisplaySettings } from '@/components/Settings';
+import { HeroChooser } from '@/game/HeroChooser';
+import { HeroAvatar } from '@/game/HeroAvatar';
 
 /* ---------------------------------------------------------------- stats */
 
@@ -90,7 +93,7 @@ export function StatsScreen() {
       )}
 
       {/* per section */}
-      <h2 className="heading mb-4 text-[13px] text-white">By section</h2>
+      <h2 className="heading mb-4 text-[13px] text-parchment">By section</h2>
       <div className="mb-6 grid gap-3 sm:grid-cols-2">
         {SECTIONS.map((section) => {
           const { n, ok, pct } = sectionAccuracy(progress, section.id);
@@ -120,7 +123,7 @@ export function StatsScreen() {
       </div>
 
       {/* activity */}
-      <h2 className="heading mb-4 text-[13px] text-white">Last 12 weeks</h2>
+      <h2 className="heading mb-4 text-[13px] text-parchment">Last 12 weeks</h2>
       <div className="mb-6 rounded-lg border-2 border-leather-700 bg-leather-850 p-5 shadow-card">
         <div className="flex items-end gap-[3px]" style={{ height: 90 }}>
           {activity.map((count, i) => (
@@ -142,14 +145,14 @@ export function StatsScreen() {
       </div>
 
       {/* topics */}
-      <h2 className="heading mb-4 text-[13px] text-white">Every topic you have tried</h2>
+      <h2 className="heading mb-4 text-[13px] text-parchment">Every topic you have tried</h2>
       <div className="space-y-2">
         {allTopics.map((t) => (
           <div
             key={`${t.section}-${t.topic}`}
             className="flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-4 py-3"
           >
-            <span className="w-36 flex-none truncate font-sans text-[13px] font-semibold text-white sm:w-48">
+            <span className="w-36 flex-none truncate font-sans text-[13px] font-semibold text-parchment sm:w-48">
               {titleCase(t.topic)}
             </span>
             <span
@@ -220,8 +223,16 @@ export function ProfileScreen() {
       {/* identity */}
       <div className="mb-6 grid gap-4 lg:grid-cols-[1fr_1.2fr]">
         <div className="panel p-6 text-center sm:p-7">
-          <RankBadge rank={rank} size={82} />
-          <h2 className="heading mt-4 text-[14px] text-white">{playerName}</h2>
+          {/* The traveller and the rank together. Previously this was the
+              badge alone, which meant the one picture of "you" in the whole
+              app was a heraldic device rather than a person. */}
+          <div className="flex items-end justify-center gap-1">
+            <HeroAvatar hero={progress.hero} size={92} />
+            <div className="-ml-6 mb-1">
+              <RankBadge rank={rank} size={54} />
+            </div>
+          </div>
+          <h2 className="heading mt-3 text-[14px] text-parchment">{playerName}</h2>
           <p className="mt-2 font-script text-[11px] uppercase tracking-wide" style={{ color: rank.color }}>
             {rank.name}
           </p>
@@ -237,7 +248,7 @@ export function ProfileScreen() {
         </div>
 
         <div className="panel p-6 sm:p-7">
-          <h3 className="heading mb-5 text-[12px] text-white">Settings</h3>
+          <h3 className="heading mb-5 text-[12px] text-parchment">Settings</h3>
 
           <label className="mb-5 block">
             <span className="mb-2 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
@@ -369,8 +380,21 @@ export function ProfileScreen() {
         </div>
       </div>
 
+      {/* traveller */}
+      <div className="panel mb-6 p-6 sm:p-7">
+        <h3 className="heading mb-1.5 text-[12px] text-parchment">Your traveller</h3>
+        <p className="mb-5 text-[13px] leading-relaxed text-ink-faint">
+          Nothing here is locked and nothing has to be earned. Pick whoever you want to be on the
+          road; you can change it whenever you like.
+        </p>
+        <HeroChooser />
+      </div>
+
+      {/* display and accessibility */}
+      <DisplaySettings />
+
       {/* ranks */}
-      <h2 className="heading mb-4 text-[13px] text-white">Ranks</h2>
+      <h2 className="heading mb-4 text-[13px] text-parchment">Ranks</h2>
       <div className="mb-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
         {RANKS.map((r, i) => (
           <div
@@ -392,7 +416,7 @@ export function ProfileScreen() {
       </div>
 
       {/* achievements */}
-      <h2 className="heading mb-4 text-[13px] text-white">
+      <h2 className="heading mb-4 text-[13px] text-parchment">
         Achievements ({unlocked.size}/{ACHIEVEMENTS.length})
       </h2>
       <div className="mb-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
@@ -408,7 +432,7 @@ export function ProfileScreen() {
             >
               <span className="mt-0.5 flex-none text-[15px] text-gold" aria-hidden="true">✦</span>
               <div className="min-w-0">
-                <div className="font-script text-[12px] uppercase tracking-wide text-white">{a.name}</div>
+                <div className="font-script text-[12px] uppercase tracking-wide text-parchment">{a.name}</div>
                 <div className="mt-0.5 text-[12px] leading-snug text-ink-faint">{a.detail}</div>
               </div>
             </div>
@@ -419,7 +443,7 @@ export function ProfileScreen() {
       {/* library + danger zone */}
       <div className="grid gap-4 lg:grid-cols-2">
         <div className="panel p-6">
-          <h3 className="heading mb-4 text-[12px] text-white">Your library</h3>
+          <h3 className="heading mb-4 text-[12px] text-parchment">Your library</h3>
           <dl className="space-y-2 text-[14px]">
             <Row label="Note pages read" value={`${progress.notesRead.length} / ${LIBRARY_STATS.notePages}`} />
             <Row
@@ -494,6 +518,11 @@ export function ProfileScreen() {
           )}
         </div>
       </div>
+
+      {/* Last on the page on purpose: nobody goes looking for this until
+          something has already gone wrong, and it is the only block here that
+          is addressed to us rather than to the student. */}
+      <DiagnosticsPanel />
     </Page>
   );
 }
@@ -502,7 +531,7 @@ function Row({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-center justify-between border-b border-leather-700/50 pb-2 last:border-0">
       <dt className="text-ink-faint">{label}</dt>
-      <dd className="num text-[17px] text-white">{value}</dd>
+      <dd className="num text-[17px] text-parchment">{value}</dd>
     </div>
   );
 }

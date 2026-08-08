@@ -6,7 +6,7 @@
    where a question came from. The reading surface is the study register —
    warm paper, real type — while the surrounding HUD stays arcade. */
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import type { Difficulty, Passage, SectionId } from '@/types';
 import { sfx } from '@/lib/sfx';
 import { cx, formatClock } from '@/lib/utils';
@@ -15,6 +15,9 @@ import { burstConfetti } from './Feedback';
 import { RichText } from './RichText';
 import { PassagePanel } from './PassagePanel';
 import { Button, ProgressBar } from './ui';
+import { Glyph } from './Icon';
+import { QuestionActions } from './QuestionActions';
+import { ToolDock } from './Tools';
 
 export interface RunnableChoice {
   key: string;
@@ -102,6 +105,21 @@ const DIFFICULTY_COLOR: Record<Difficulty, string> = {
   hard: '#9c3326',
 };
 
+/** Strip markup and assemble the question as one spoken passage.
+ *
+ *  The choices are announced by letter because four sentences read back to
+ *  back with nothing between them is unusable — you cannot answer "B" if you
+ *  never heard which one B was. */
+function spokenForm(question: RunnableQuestion): string {
+  const plain = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  const parts = [
+    question.label ? plain(question.label) : '',
+    plain(question.prompt),
+    ...question.choices.map((c, i) => `Option ${'ABCD'[i] ?? c.key}. ${plain(c.text)}`),
+  ];
+  return parts.filter(Boolean).join('. ');
+}
+
 export function QuestionRunner({
   questions,
   onAnswer,
@@ -130,6 +148,7 @@ export function QuestionRunner({
 
   const question = questions[index];
   const isLast = index === questions.length - 1;
+  const promptId = useId();
 
   useEffect(() => () => { if (litTimer.current) window.clearTimeout(litTimer.current); }, []);
 
@@ -267,15 +286,16 @@ export function QuestionRunner({
                   exit={{ opacity: 0, y: 20, scale: 0.7, rotate: -12 }}
                   transition={SPRING_SNAP}
                 >
-                  🔥 {streak} in a row
+                  <Glyph name="flame" size={13} className="mr-1 inline-block align-[-2px]" />
+                  {streak} in a row
                 </m.span>
               )}
             </AnimatePresence>
             <span className="chip">
-              <span className="num text-[15px] text-white">{formatClock(elapsed)}</span>
+              <span className="num text-[15px] text-parchment">{formatClock(elapsed)}</span>
             </span>
             <span className="chip">
-              <span className="num text-[15px] text-white">
+              <span className="num text-[15px] text-parchment">
                 {index + 1}/{questions.length}
               </span>
             </span>
@@ -331,6 +351,20 @@ export function QuestionRunner({
             >
               {DIFFICULTY_LABEL[question.difficulty]}
             </span>
+
+            {/* Read aloud, bookmark, report — secondary to answering, so they
+                sit on the metadata line rather than near the choices. Hidden
+                in test mode: none of the three exists on a real exam, and a
+                bookmark you cannot revisit until the test ends is a
+                distraction dressed as a feature. */}
+            {!deferFeedback && (
+              <QuestionActions
+                questionId={question.id}
+                spokenText={spokenForm(question)}
+                prompt={question.prompt}
+                topic={question.topic}
+              />
+            )}
           </div>
 
           {question.label && (
@@ -339,13 +373,27 @@ export function QuestionRunner({
             </p>
           )}
 
-          <div className="prose-quill mb-6">
+          <div className="prose-quill mb-6" id={promptId}>
             <RichText as="div" format={question.promptFormat}>
               {question.prompt}
             </RichText>
           </div>
 
-          <div className="space-y-2.5" role="group" aria-label="Answer choices">
+          {/* `radiogroup`, not `group`.
+
+              These are four mutually exclusive options where picking one is
+              the answer, which is exactly what a radio group is. Under `group`
+              a screen reader announced four unrelated buttons and never said
+              how many there were or which was chosen; under `radiogroup` it
+              says "radio group, A, 1 of 4" and reads the selection back.
+              `aria-pressed` came off at the same time — a control cannot be
+              both a toggle button and a radio.
+
+              The group is labelled by the stem rather than by the words
+              "Answer choices": on entering the group a screen reader reads its
+              label, and hearing the question again there is worth more than
+              hearing a category name. */}
+          <div className="space-y-2.5" role="radiogroup" aria-labelledby={promptId}>
             {question.choices.map((choice, i) => {
               const isCorrect = choice.key === question.correctKey;
               const isChosen = choice.key === chosen;
@@ -372,7 +420,24 @@ export function QuestionRunner({
                   onClick={() => commit(choice.key)}
                   disabled={revealed}
                   className={cx('choice', state, revealed && 'choice-locked cursor-default')}
-                  aria-pressed={isChosen}
+                  role="radio"
+                  aria-checked={isChosen}
+                  /* Roving tabindex: the group is one stop, and once an answer
+                     is on screen the arrow keys move between options the way
+                     they do in every other radio group. Before anything is
+                     chosen the first option holds the stop, which is the
+                     pattern's own rule. */
+                  tabIndex={revealed ? -1 : (chosen ? isChosen : i === 0) ? 0 : -1}
+                  onKeyDown={(e: React.KeyboardEvent) => {
+                    const step = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1
+                      : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1
+                        : 0;
+                    if (!step || revealed) return;
+                    e.preventDefault();
+                    const n = question.choices.length;
+                    const next = question.choices[(i + step + n) % n];
+                    choiceEls.current[next.key]?.focus();
+                  }}
                   initial={{ opacity: 0, y: 14 }}
                   animate={
                     !revealed
@@ -402,8 +467,15 @@ export function QuestionRunner({
                   <RichText as="span" format={choice.format} className="min-w-0 flex-1">
                     {choice.text}
                   </RichText>
-                  {lit && <span className="ml-auto text-[#2f6b3a]">✓</span>}
-                  {wrongPick && <span className="ml-auto text-[#9c3326]">✕</span>}
+                  {/* Decorative. The verdict reaches a screen reader through
+                      the live region below, on its own timing, rather than as
+                      a stray tick character inside a button label. */}
+                  {lit && (
+                    <Glyph name="check" size={17} className="ml-auto flex-none text-[#2f6b3a]" />
+                  )}
+                  {wrongPick && (
+                    <Glyph name="cross" size={16} className="ml-auto flex-none text-[#9c3326]" />
+                  )}
                 </m.button>
               );
             })}
@@ -428,14 +500,27 @@ export function QuestionRunner({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
+              {/* The one thing that must be spoken. `role="status"` is polite,
+                  so it waits for the reader to finish the choice it just moved
+                  through instead of cutting it off, and it names the right
+                  answer — "Not quite" alone tells a blind student nothing they
+                  could not already tell. */}
               <m.div
-                className="mb-4 font-script text-[12.5px] font-semibold uppercase tracking-[0.14em]"
+                className="mb-4 flex items-center gap-1.5 font-script text-[12.5px] font-semibold uppercase tracking-[0.14em]"
                 style={{ color: chosen === question.correctKey ? '#2f6b3a' : '#9c3326' }}
+                role="status"
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.26, delay: 0.06 }}
               >
-                {chosen === question.correctKey ? '✓ Correct' : '✕ Not quite'}
+                <Glyph
+                  name={chosen === question.correctKey ? 'check' : 'cross'}
+                  size={15}
+                  className="flex-none"
+                />
+                {chosen === question.correctKey
+                  ? 'Correct'
+                  : `Not quite — the answer is ${question.correctKey}`}
               </m.div>
 
               {/* Both explanations used to be tinted boxes. Unfilled and
@@ -549,6 +634,12 @@ export function QuestionRunner({
           />
         )}
       </AnimatePresence>
+
+      {/* Calculator and scratch paper, corner-docked.
+          The real exam permits both. The calculator gets a first-visit nudge
+          on Math and nowhere else, because that is the only section where not
+          knowing it exists changes how you would have worked the problem. */}
+      <ToolDock mathHint={question.section === 'math'} />
     </div>
   );
 }

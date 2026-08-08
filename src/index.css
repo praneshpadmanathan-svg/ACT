@@ -25,6 +25,130 @@
   :root {
     --shell-max: 1200px;
     --rule: rgba(203, 182, 143, 0.28);
+
+    /* Reading typeface, swapped by the high-legibility setting. */
+    --font-read: 'Newsreader';
+    --font-sans: 'Inter';
+
+    /* How much bigger every piece of text runs. Set by the type-size setting;
+       consumed by the `postcss-text-scale` plugin, which wraps every
+       `font-size` in the compiled stylesheet in `calc(… * var(--text-scale))`.
+       Scaling text without scaling the boxes around it is the point: the
+       layout keeps its proportions and the words get larger inside it. */
+    --text-scale: 1;
+
+    /* Grain, once, as a data URI. Two fractal-noise tiles — one fine for
+       parchment fibre, one coarse for leather. See the note on `.sheet`. */
+    --grain-fine: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
+    --grain-coarse: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.35 0.62' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    /* Baked at a low opacity because a background layer's alpha cannot be set
+       from CSS — only the tile itself can carry it. */
+    --grain-paper: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' fill='%23fff'/%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.14'/%3E%3C/svg%3E");
+  }
+
+  /* ------------------------------------------------------------- the palette
+
+     Both themes, as RGB triples so Tailwind's `/50` opacity modifiers work.
+     Nothing else in the app knows a hex value; see the note in
+     tailwind.config.js for why the token names are roles rather than colours.
+
+     `:root` carries dark because dark is the app's identity and the one a
+     first-time visitor with no stored preference should get — the alternative,
+     defaulting to `prefers-color-scheme`, would hand most phones a light
+     rendering of a game whose artwork is lit by lanterns. */
+  :root,
+  [data-theme='dark'] {
+    color-scheme: dark;
+
+    --c-leather-950: 20 16 11;
+    --c-leather-900: 28 22 16;
+    --c-leather-850: 36 29 21;
+    --c-leather-800: 46 37 26;
+    --c-leather-750: 58 47 33;
+    --c-leather-700: 74 60 42;
+    --c-leather-600: 93 75 52;
+
+    --c-parchment: 244 232 207;
+    --c-parchment-light: 250 242 226;
+    --c-parchment-dim: 232 217 186;
+    --c-parchment-edge: 203 182 143;
+    --c-parchment-deep: 184 158 114;
+
+    --c-ink: 43 35 23;
+    --c-ink-soft: 90 76 55;
+    --c-ink-faint: 163 144 108;
+
+    --c-gold: 212 160 23;
+    --c-gold-light: 240 207 122;
+    --c-gold-bright: 242 207 91;
+    --c-gold-deep: 156 116 16;
+
+    --c-village: 217 164 65;
+    --c-woods: 95 168 107;
+    --c-desert: 210 112 58;
+    --c-cliffs: 79 157 201;
+    --c-summit: 232 195 74;
+    --c-blood: 168 64 47;
+
+    --c-blood-text: 221 133 113;
+    --c-woods-text: 124 201 138;
+    --c-cliffs-text: 121 192 234;
+    --c-desert-text: 232 148 99;
+
+    --c-body: 230 220 198;
+
+    /* The chrome, as a translucent slab. Overridden in light. */
+    --veil-top: 46 37 26;
+    --veil-bottom: 20 16 11;
+    --veil-alpha: 0.55;
+    --grain-strength: 0.05;
+  }
+
+  /* Warm paper rather than a cold white. The reading sheets barely move —
+     they were already cream — so switching themes changes the furniture
+     around the words, not the words themselves, which is the whole reason a
+     student reading in bed asks for this.
+
+     Every text pairing below was checked against its own surface:
+     parchment-dim (78 65 45) on leather-850 (253 248 236) is 8.1:1;
+     ink-faint (108 92 64) on the same is 5.3:1; gold (138 101 14) is 4.9:1. */
+  [data-theme='light'] {
+    color-scheme: light;
+
+    --c-leather-950: 227 215 190;
+    --c-leather-900: 240 231 212;
+    --c-leather-850: 253 248 236;
+    --c-leather-800: 248 241 224;
+    --c-leather-750: 238 228 205;
+    --c-leather-700: 203 185 150;
+    --c-leather-600: 182 161 122;
+
+    --c-parchment: 40 32 20;
+    --c-parchment-light: 24 18 9;
+    --c-parchment-dim: 78 65 45;
+    --c-parchment-edge: 110 94 68;
+    --c-parchment-deep: 132 113 82;
+
+    --c-ink: 43 35 23;
+    --c-ink-soft: 90 76 55;
+    --c-ink-faint: 108 92 64;
+
+    --c-gold: 138 101 14;
+    --c-gold-light: 122 88 10;
+    --c-gold-bright: 160 116 12;
+    --c-gold-deep: 178 148 82;
+
+    --c-blood-text: 143 47 32;
+    --c-woods-text: 44 102 57;
+    --c-cliffs-text: 25 93 133;
+    --c-desert-text: 145 68 26;
+
+    --c-body: 40 32 20;
+
+    --veil-top: 255 251 242;
+    --veil-bottom: 236 226 204;
+    --veil-alpha: 0.78;
+    --grain-strength: 0.035;
   }
 
   html {
@@ -33,12 +157,60 @@
   }
 
   body {
-    @apply bg-leather-900 font-sans text-[#e6dcc6] antialiased;
+    @apply bg-leather-900 font-sans antialiased;
+    color: rgb(var(--c-body));
     /* A faint woven texture so large dark areas are not flat. */
     background-image:
       radial-gradient(ellipse at 22% 12%, rgba(212, 160, 23, 0.05), transparent 55%),
       radial-gradient(ellipse at 82% 78%, rgba(120, 90, 40, 0.07), transparent 60%);
     background-attachment: fixed;
+  }
+
+  /* Leather grain on the page itself.
+
+     "No texture on the leather chrome" was a real finding: large dark areas
+     were flat fills with two soft radial gradients over them. This is one
+     tiling SVG noise field at very low opacity, fixed to the viewport so it
+     does not swim when the page scrolls, and `pointer-events: none` so it is
+     invisible to every interaction. It costs one data URI and no requests. */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: var(--grain-coarse);
+    opacity: var(--grain-strength);
+    mix-blend-mode: overlay;
+  }
+  body > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Reduced-data mode: the map, the camp and the character cutouts are the
+     heavy part of this app on a metered connection. The setting swaps every
+     one of them for a painted-in gradient in the same key, so the layout and
+     the colour story survive and the bytes do not. See `prefs.tsx`. */
+  [data-data='reduced'] .art-heavy {
+    display: none !important;
+  }
+
+  /* High-legibility mode. Atkinson Hyperlegible was drawn by the Braille
+     Institute to maximise the distance between letterforms that are easy to
+     confuse — the b/d/p/q and I/l/1 pairs that cost a dyslexic reader the
+     most. It is loaded only when the setting is on (a dynamic import in
+     `prefs.tsx`), so nobody pays for a font they are not using. The extra
+     letter- and word-spacing is part of the accommodation, not decoration. */
+  [data-font='legible'] {
+    --font-read: 'Atkinson Hyperlegible';
+    --font-sans: 'Atkinson Hyperlegible';
+  }
+  [data-font='legible'] body,
+  [data-font='legible'] .prose-quill,
+  [data-font='legible'] .prose-passage {
+    letter-spacing: 0.012em;
+    word-spacing: 0.06em;
   }
 
   :focus-visible {
@@ -324,7 +496,11 @@
   .veil {
     @apply relative rounded-xl border border-leather-700/70 backdrop-blur-md
            transition-all duration-200;
-    background: linear-gradient(180deg, rgba(46, 37, 26, 0.55), rgba(20, 16, 11, 0.62));
+    background: linear-gradient(
+      180deg,
+      rgb(var(--veil-top) / var(--veil-alpha)),
+      rgb(var(--veil-bottom) / calc(var(--veil-alpha) + 0.07))
+    );
     box-shadow: inset 0 1px 0 rgba(240, 207, 122, 0.07), 0 10px 26px rgba(0, 0, 0, 0.3);
   }
   /* Lantern light catching the top edge. */
@@ -346,7 +522,11 @@
      card would be too much furniture. */
   .veil-thin {
     @apply relative rounded-lg border border-leather-700/50 backdrop-blur-sm;
-    background: linear-gradient(180deg, rgba(46, 37, 26, 0.42), rgba(20, 16, 11, 0.48));
+    background: linear-gradient(
+      180deg,
+      rgb(var(--veil-top) / calc(var(--veil-alpha) - 0.13)),
+      rgb(var(--veil-bottom) / calc(var(--veil-alpha) - 0.07))
+    );
   }
 
   /* A load-bearing word inside body copy. Colour does the lifting; the hairline
@@ -373,13 +553,32 @@
 
   /* ------------------------------------------------------------- parchment */
 
+  /* Real paper, not a cream rectangle.
+
+     `#f4e8cf` was called parchment and rendered as a flat fill with two soft
+     radial gradients — which reads as a beige box, not as a sheet. Three
+     layers now: a fractal-noise tile for fibre, a repeating hairline for the
+     laid lines a paper mould leaves, and the two existing gradients for the
+     uneven wash. All three are generated, so the whole thing costs one data
+     URI and zero network requests, and it tiles at any size.
+
+     The noise multiplies rather than overlays: multiply darkens the cream in
+     the grain's dark pixels and leaves the light ones alone, which is what
+     fibre does to ink-receptive paper. Overlay would have lifted the
+     highlights and made it look like plastic. */
   .sheet {
     @apply rounded-xl text-ink shadow-sheet;
     background-color: theme('colors.parchment.DEFAULT');
-    /* Subtle fibre so the sheet is not a flat cream rectangle. */
     background-image:
+      var(--grain-paper),
+      repeating-linear-gradient(
+        90deg,
+        rgba(184, 158, 114, 0.055) 0 1px,
+        transparent 1px 4px
+      ),
       radial-gradient(circle at 18% 22%, rgba(184, 158, 114, 0.14), transparent 45%),
       radial-gradient(circle at 78% 74%, rgba(184, 158, 114, 0.12), transparent 42%);
+    background-blend-mode: multiply, normal, normal, normal;
     border: 1px solid theme('colors.parchment.edge');
   }
 

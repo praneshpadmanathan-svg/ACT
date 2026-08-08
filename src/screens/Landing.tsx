@@ -22,6 +22,7 @@ import { Button } from '@/components/ui';
 import { NavGlyph, type GlyphName } from '@/components/NavGlyph';
 import { REGIONS } from '@/game/mapData';
 import type { SectionId } from '@/types';
+import { Art } from '@/components/Art';
 
 /* ------------------------------------------------------------- highlighting
 
@@ -232,11 +233,10 @@ export function Landing() {
 
       {/* ------------------------------------------------------------- hero */}
       <section className="relative isolate flex min-h-[94dvh] items-center overflow-hidden">
-        <img
-          src="/art/landing-hero.webp"
-          alt=""
+        <Art
+          name="landing-hero"
+          priority
           className="absolute inset-0 h-full w-full select-none object-cover"
-          draggable={false}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-leather-950/72 via-leather-950/45 to-leather-950" />
 
