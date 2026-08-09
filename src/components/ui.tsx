@@ -4,6 +4,8 @@ import { useCallback, useRef, useState, type ButtonHTMLAttributes, type ReactNod
 import { cx } from '@/lib/utils';
 import { sfx } from '@/lib/sfx';
 import { AnimatePresence, m, useReducedMotion, PIN_SPRING } from '@/lib/motion';
+import { RankSigil, type SigilColors } from './RankSigil';
+import { Vignette, type VignetteName } from './Vignette';
 
 type Variant = 'primary' | 'ghost' | 'danger' | 'quill';
 type Size = 'sm' | 'md' | 'lg';
@@ -220,55 +222,41 @@ export function ProgressRing({
   );
 }
 
-/** Rank sigil — a shield rather than the old hex badge. */
-export function RankBadge({
-  rank,
-  size = 56,
-}: {
-  rank: { name: string; c1: string; c2: string; ring: string };
-  size?: number;
-}) {
-  const id = `rank-${rank.name.replace(/\s+/g, '-').toLowerCase()}`;
-  return (
-    <svg width={size} height={size} viewBox="0 0 64 64" aria-label={`${rank.name} rank`} role="img">
-      <defs>
-        <linearGradient id={id} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor={rank.c1} />
-          <stop offset="1" stopColor={rank.c2} />
-        </linearGradient>
-      </defs>
-      <path
-        d="M32 3 L57 12 V33 C57 47 45 57 32 61 C19 57 7 47 7 33 V12 Z"
-        fill={`url(#${id})`}
-        stroke={rank.ring}
-        strokeWidth="2.5"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M32 11 L50 17 V33 C50 43 41 51 32 54 C23 51 14 43 14 33 V17 Z"
-        fill="none"
-        stroke="rgba(0,0,0,.24)"
-        strokeWidth="2"
-      />
-      <path
-        d="M32 20 L35.4 28.6 L44.6 29.2 L37.5 35 L39.8 44 L32 39 L24.2 44 L26.5 35 L19.4 29.2 L28.6 28.6 Z"
-        fill="rgba(255,255,255,.92)"
-      />
-    </svg>
-  );
+/**
+ * Rank sigil.
+ *
+ * Kept as `RankBadge` because eleven call sites use that name; the drawing
+ * moved to `RankSigil.tsx`, where each of the seven ranks now has its own
+ * silhouette rather than sharing one recoloured shield.
+ */
+export function RankBadge(props: { rank: SigilColors; size?: number }) {
+  return <RankSigil {...props} />;
 }
 
+/**
+ * The nothing-here state.
+ *
+ * It was a dashed rectangle with two lines of text in it, which is the visual
+ * language of a missing element rather than of an empty one. Now it has a
+ * drawn scene: a lantern for "nothing found yet", a chest for "nothing earned
+ * yet", a scroll for "nothing written yet", a banked fire for "come back
+ * tomorrow". Callers pick the one that matches what is absent; `lantern` is
+ * the default because looking-and-finding-nothing is the common case.
+ */
 export function EmptyState({
   title,
   detail,
   action,
+  art = 'lantern',
 }: {
   title: string;
   detail: string;
   action?: ReactNode;
+  art?: VignetteName;
 }) {
   return (
-    <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-leather-700 px-6 py-12 text-center">
+    <div className="flex flex-col items-center gap-3 rounded-xl border-2 border-leather-700/70 bg-leather-900/40 px-6 py-10 text-center">
+      <Vignette name={art} size={116} className="mb-1 opacity-90" />
       <div className="heading text-[17px]">{title}</div>
       <p className="max-w-sm font-read text-[15px] leading-relaxed text-parchment-dim">{detail}</p>
       {action}

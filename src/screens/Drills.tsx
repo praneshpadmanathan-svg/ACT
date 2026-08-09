@@ -213,6 +213,7 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
     return (
       <Page>
         <EmptyState
+          art="scroll"
           title="No questions here"
           detail="That topic has no questions yet. Try a mixed drill instead."
           action={<Button variant="primary" onClick={() => navigate({ name: 'drills', section })}>Back to drills</Button>}
@@ -301,7 +302,8 @@ export function ReviewScreen() {
 
         {due.length === 0 ? (
           <EmptyState
-            title="Nothing due right now"
+            art="campfire"
+          title="Nothing due right now"
             detail={
               upcoming > 0
                 ? `${upcoming} question${upcoming === 1 ? '' : 's'} are scheduled for later. Drill some new material in the meantime.`

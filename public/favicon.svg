@@ -1,13 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
-  <rect width="32" height="32" rx="6" fill="#0b0718"/>
-  <rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#33265f" stroke-width="2"/>
-  <!-- pixel summit -->
-  <rect x="6" y="22" width="20" height="4" fill="#251c52"/>
-  <rect x="9" y="18" width="14" height="4" fill="#33265f"/>
-  <rect x="12" y="14" width="8" height="4" fill="#453278"/>
-  <rect x="14" y="10" width="4" height="4" fill="#553f96"/>
-  <!-- flag -->
-  <rect x="16" y="5" width="2" height="6" fill="#e8ecff"/>
-  <rect x="18" y="5" width="7" height="5" fill="#ffd23e"/>
-  <rect x="6" y="26" width="20" height="2" fill="#ff9d5c"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="ACT Command">
+  <!-- A compass rose on tooled leather.
+
+       What was here before was a purple pixel-art mountain with a yellow
+       flag — the mark from an earlier identity, left behind when the app
+       became parchment and leather. It was the only purple pixel left in the
+       product, and it was on the browser tab, the home screen, and the
+       install prompt: the three places a person sees the app before they see
+       the app.
+
+       A compass because the product is a map you travel; it is also the
+       shape that survives 16px best in the whole visual language — one
+       silhouette, high contrast, no interior detail to lose. The star is
+       split light/dark down its axis so it still reads as struck metal at
+       tab size, where a flat gold star would be a blob. -->
+  <defs>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a3c2a"/>
+      <stop offset="1" stop-color="#2e251a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="32" height="32" rx="7" fill="#1c1610"/>
+  <rect x="1.25" y="1.25" width="29.5" height="29.5" rx="6" fill="none" stroke="url(#ring)" stroke-width="2.5"/>
+  <circle cx="16" cy="16" r="12.25" fill="none" stroke="#4a3c2a" stroke-width="1.5"/>
+
+  <!-- Minor points, sunk into the leather so the major star stays dominant. -->
+  <path d="M16 16 8.3 8.3 16 16 23.7 8.3 16 16 23.7 23.7 16 16 8.3 23.7Z"
+        fill="none" stroke="#6b5638" stroke-width="1.6" stroke-linejoin="round"/>
+
+  <!-- Major star. Left half lit, right half in shadow — the app's light
+       always comes from the upper left. It runs past the ring on purpose:
+       overshooting the circle is what stops the whole thing collapsing into
+       "a dark circle" at 16px. -->
+  <path d="M16 4 19 13 28 16 19 19 16 28 13 19 4 16 13 13Z" fill="#9c7410"/>
+  <path d="M16 4 19 13 28 16 16 16Z" fill="#f2cf5b"/>
+  <path d="M16 4 13 13 4 16 16 16Z" fill="#f0cf7a"/>
+  <path d="M16 28 13 19 4 16 16 16Z" fill="#a8801c"/>
+
+  <circle cx="16" cy="16" r="2.1" fill="#1c1610"/>
+  <circle cx="16" cy="16" r="1" fill="#f2cf5b"/>
 </svg>

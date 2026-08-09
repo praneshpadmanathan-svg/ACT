@@ -29,7 +29,11 @@ export type IconName =
   // navigation
   | 'arrowLeft' | 'arrowRight' | 'chevronDown' | 'plus' | 'minus'
   // content
-  | 'quill' | 'scroll' | 'lantern' | 'shield' | 'eye' | 'question';
+  | 'quill' | 'scroll' | 'lantern' | 'shield' | 'eye' | 'question'
+  /* Named by the fifteen achievements in `progress.ts`. That field used to be
+     a loose `string` referencing icons nobody had drawn, so all fifteen
+     rendered the same ✦; it is `IconName` now, and a typo is a build error. */
+  | 'star' | 'sword' | 'book' | 'map' | 'calendar';
 
 interface Props {
   name: IconName;
@@ -352,6 +356,50 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
           <circle cx="12" cy="12" r="8.8" />
           <path d="M9.5 9.4a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.2-2.5 3.9" />
           <circle cx="12" cy="17.2" r=".9" fill="currentColor" stroke="none" />
+        </svg>
+      );
+
+    /* ------------------------------------------------------ achievements */
+
+    case 'star':
+      return (
+        <svg {...common}>
+          <path d="M12 3.2l2.6 6.1 6.6.5-5 4.3 1.5 6.5L12 17.2 6.3 20.6l1.5-6.5-5-4.3 6.6-.5L12 3.2Z" />
+        </svg>
+      );
+
+    case 'sword':
+      return (
+        <svg {...common}>
+          <path d="M19.4 3.2h1.4v1.4L11.6 13.8 10.2 12.4 19.4 3.2Z" />
+          <path d="M9.4 13.2 10.8 14.6 6.6 18.8 5.2 17.4 9.4 13.2Z" />
+          <path d="m4.4 16.8 2.8 2.8M3.2 19.6l1.2 1.2" />
+        </svg>
+      );
+
+    case 'book':
+      return (
+        <svg {...common}>
+          <path d="M12 6.4C10 4.9 7.4 4.3 4.4 4.6v12.6c3-.3 5.6.3 7.6 1.8" />
+          <path d="M12 6.4c2-1.5 4.6-2.1 7.6-1.8v12.6c-3-.3-5.6.3-7.6 1.8" />
+          <path d="M12 6.4V19" />
+        </svg>
+      );
+
+    /* A folded map, which is what the world screen actually is. */
+    case 'map':
+      return (
+        <svg {...common}>
+          <path d="M9 3.6 3.4 5.8v14.6L9 18.2l6 2.2 5.6-2.2V3.6L15 5.8 9 3.6Z" />
+          <path d="M9 3.6v14.6M15 5.8v14.6" />
+        </svg>
+      );
+
+    case 'calendar':
+      return (
+        <svg {...common}>
+          <rect x="3.4" y="5.4" width="17.2" height="15.2" rx="2.4" />
+          <path d="M3.4 10.2h17.2M8.2 3.4v4M15.8 3.4v4" />
         </svg>
       );
 

@@ -3,6 +3,7 @@
    so it can be persisted locally and synced to Supabase without ceremony. */
 
 import type { Attempt, Difficulty, Progress, ReviewEntry, SectionId, Tally, TestResult } from '@/types';
+import type { IconName } from '@/components/Icon';
 import { TOPIC_BY_ZONE_ALIAS } from '@/content';
 import { DEFAULT_HERO_ID, isHeroId } from '@/game/heroes';
 import { readJSON, STORAGE_KEYS, writeJSON } from './storage';
@@ -983,26 +984,31 @@ export interface Achievement {
   id: string;
   name: string;
   detail: string;
-  icon: string;
+  /* Typed against the real icon set rather than left as `string`. All fifteen
+     of these named an icon; none of the icons existed, so every achievement
+     rendered the same ✦ and the field was decoration on a data structure. */
+  icon: IconName;
+  /** Which tier the badge is struck in — see `AchievementBadge`. */
+  tier: 'bronze' | 'silver' | 'gold';
   test: (p: Progress) => boolean;
 }
 
 export const ACHIEVEMENTS: Achievement[] = [
-  { id: 'first-blood', name: 'First Contact', detail: 'Answer your first question.', icon: 'star', test: (p) => p.tally.answered >= 1 },
-  { id: 'ten-q', name: 'Warmed Up', detail: 'Answer 10 questions.', icon: 'bolt', test: (p) => p.tally.answered >= 10 },
-  { id: 'hundred-q', name: 'Century', detail: 'Answer 100 questions.', icon: 'sword', test: (p) => p.tally.answered >= 100 },
-  { id: 'five-hundred-q', name: 'Grinder', detail: 'Answer 500 questions.', icon: 'flame', test: (p) => p.tally.answered >= 500 },
-  { id: 'streak-10', name: 'On Fire', detail: 'Get 10 correct in a row.', icon: 'flame', test: (p) => p.bestCorrectStreak >= 10 },
-  { id: 'streak-25', name: 'Untouchable', detail: 'Get 25 correct in a row.', icon: 'flame', test: (p) => p.bestCorrectStreak >= 25 },
-  { id: 'reader-10', name: 'Well Read', detail: 'Finish 10 note pages.', icon: 'book', test: (p) => p.notesRead.length >= 10 },
-  { id: 'reader-all', name: 'The Archive', detail: 'Finish every note page.', icon: 'book', test: (p) => p.notesRead.length >= 60 },
-  { id: 'zone-5', name: 'Trailblazer', detail: 'Clear 5 zones.', icon: 'map', test: (p) => Object.keys(p.zonesCleared).length >= 5 },
-  { id: 'zone-all', name: 'Cartographer', detail: 'Clear every zone.', icon: 'map', test: (p) => Object.keys(p.zonesCleared).length >= 37 },
-  { id: 'first-test', name: 'Boss Slain', detail: 'Finish a full-length test.', icon: 'trophy', test: (p) => p.testHistory.length >= 1 },
-  { id: 'day-7', name: 'Week Streak', detail: 'Study 7 days in a row.', icon: 'calendar', test: (p) => p.dayStreak >= 7 },
-  { id: 'day-30', name: 'Unbreakable', detail: 'Study 30 days in a row.', icon: 'calendar', test: (p) => p.dayStreak >= 30 },
-  { id: 'rank-honors', name: 'Honors', detail: 'Reach the Honors rank.', icon: 'trophy', test: (p) => p.xp >= 2400 },
-  { id: 'rank-elite', name: 'Elite', detail: 'Reach the Elite rank.', icon: 'trophy', test: (p) => p.xp >= 13500 },
+  { id: 'first-blood', name: 'First Contact', detail: 'Answer your first question.', icon: 'star', tier: 'bronze', test: (p) => p.tally.answered >= 1 },
+  { id: 'ten-q', name: 'Warmed Up', detail: 'Answer 10 questions.', icon: 'bolt', tier: 'bronze', test: (p) => p.tally.answered >= 10 },
+  { id: 'hundred-q', name: 'Century', detail: 'Answer 100 questions.', icon: 'sword', tier: 'silver', test: (p) => p.tally.answered >= 100 },
+  { id: 'five-hundred-q', name: 'Grinder', detail: 'Answer 500 questions.', icon: 'flame', tier: 'gold', test: (p) => p.tally.answered >= 500 },
+  { id: 'streak-10', name: 'On Fire', detail: 'Get 10 correct in a row.', icon: 'flame', tier: 'bronze', test: (p) => p.bestCorrectStreak >= 10 },
+  { id: 'streak-25', name: 'Untouchable', detail: 'Get 25 correct in a row.', icon: 'flame', tier: 'silver', test: (p) => p.bestCorrectStreak >= 25 },
+  { id: 'reader-10', name: 'Well Read', detail: 'Finish 10 note pages.', icon: 'book', tier: 'bronze', test: (p) => p.notesRead.length >= 10 },
+  { id: 'reader-all', name: 'The Archive', detail: 'Finish every note page.', icon: 'book', tier: 'gold', test: (p) => p.notesRead.length >= 60 },
+  { id: 'zone-5', name: 'Trailblazer', detail: 'Clear 5 zones.', icon: 'map', tier: 'bronze', test: (p) => Object.keys(p.zonesCleared).length >= 5 },
+  { id: 'zone-all', name: 'Cartographer', detail: 'Clear every zone.', icon: 'map', tier: 'gold', test: (p) => Object.keys(p.zonesCleared).length >= 37 },
+  { id: 'first-test', name: 'Boss Slain', detail: 'Finish a full-length test.', icon: 'trophy', tier: 'silver', test: (p) => p.testHistory.length >= 1 },
+  { id: 'day-7', name: 'Week Streak', detail: 'Study 7 days in a row.', icon: 'calendar', tier: 'bronze', test: (p) => p.dayStreak >= 7 },
+  { id: 'day-30', name: 'Unbreakable', detail: 'Study 30 days in a row.', icon: 'calendar', tier: 'gold', test: (p) => p.dayStreak >= 30 },
+  { id: 'rank-honors', name: 'Honors', detail: 'Reach the Honors rank.', icon: 'trophy', tier: 'silver', test: (p) => p.xp >= 2400 },
+  { id: 'rank-elite', name: 'Elite', detail: 'Reach the Elite rank.', icon: 'trophy', tier: 'gold', test: (p) => p.xp >= 13500 },
 ];
 
 /** Returns any achievements newly satisfied by this state. */

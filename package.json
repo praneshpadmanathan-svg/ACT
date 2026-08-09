@@ -13,7 +13,9 @@
     "check:content": "node scripts/check-content.mjs",
     "build:art": "node scripts/build-art.mjs",
     "test": "vitest",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "build:icons": "node scripts/build-icons.mjs",
+    "build:og": "node scripts/build-og.mjs"
   },
   "dependencies": {
     "@fontsource-variable/newsreader": "^5.3.0",

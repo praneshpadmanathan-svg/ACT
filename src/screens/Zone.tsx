@@ -168,6 +168,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
           </article>
         ) : (
           <EmptyState
+            art="scroll"
             title="No lesson for this zone"
             detail="Jump straight to the quiz — the explanations after each question teach the same material."
             action={<Button variant="primary" onClick={() => setPhase('quiz')}>Start the quiz</Button>}

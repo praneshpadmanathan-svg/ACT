@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#0b0718" />
+    <meta name="theme-color" content="#1c1610" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -27,17 +27,38 @@
     <link rel="preload" as="image" href="/art/world-map.webp" />
 
     <!-- How the link looks when a student sends it to a friend, which is
-         realistically the only distribution this app has. -->
+         realistically the only distribution this app has.
+
+         This used to point at `/art/landing-hero.webp`: a wordless 1024×559
+         painting, at a relative URL, in a format several crawlers still
+         refuse. So the preview was a picture of some hills, cropped wrong,
+         and often no picture at all. `/og.png` is drawn for the job by
+         `scripts/build-og.mjs` — 1200×630, the app's own artwork and
+         typeface, and the three facts that decide whether anyone taps.
+
+         Absolute URLs, because the Open Graph spec requires them and
+         Facebook, LinkedIn and Slack all enforce it even where Twitter
+         does not. The width/height pair lets a crawler reserve the space
+         before it has finished fetching the image. -->
+    <link rel="canonical" href="https://act-red.vercel.app/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ACT Command" />
+    <meta property="og:url" content="https://act-red.vercel.app/" />
     <meta property="og:title" content="ACT Command — Free Enhanced ACT Prep" />
     <meta
       property="og:description"
       content="754 practice questions with every choice explained, 60 lessons and timed tests, wrapped in a hand-drawn quest. Free, and no account needed."
     />
-    <meta property="og:image" content="/art/landing-hero.webp" />
-    <meta property="og:image:alt" content="A painted world map of the four ACT regions." />
+    <meta property="og:image" content="https://act-red.vercel.app/og.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="ACT Command — free prep for the Enhanced ACT, over a painted map of a valley with a village, forest and river."
+    />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://act-red.vercel.app/og.png" />
   </head>
   <body>
     <div id="root"></div>

@@ -129,14 +129,25 @@ function serviceWorker(): Plugin {
            never ask for. The five originals stay precached, and `sw.ts` falls
            back to the matching original when a variant is wanted offline and
            has never been fetched. */
-        name.startsWith('/art/gen/');
+        name.startsWith('/art/gen/') ||
+        /* The share card. A quarter of a megabyte that only ever gets fetched
+           by Facebook's and Slack's crawlers — the app itself never renders
+           it, and no student is offline inside a link preview. */
+        name === '/og.png';
 
       const emitted = Object.values(bundle)
         .map((chunk) => `/${chunk.fileName}`)
         // The worker precaches its dependencies, never itself.
         .filter((name) => !name.endsWith('/sw.js') && !deadWeight(name));
 
-      const precache = [...new Set(['/index.html', ...emitted, ...publicAssets()])];
+      /* `deadWeight` has to run over the public files too, not just the
+         emitted chunks. It did not, which quietly undid most of what it was
+         written for: every one of the twenty-two responsive art variants
+         lives in `public/`, so the exclusion that exists to keep them out was
+         filtering a list they were never in. Verified against `dist/sw.js`
+         after this change — the precache drops from 53 entries to 30, and
+         the five original paintings the fallback needs are all still in it. */
+      const precache = [...new Set(['/index.html', ...emitted, ...publicAssets().filter((n) => !deadWeight(n))])];
 
       const { build } = await import('vite');
       await build({

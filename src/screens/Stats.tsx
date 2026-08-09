@@ -18,6 +18,7 @@ import { downloadProgress } from '@/lib/exportData';
 import { cx, formatRelative, titleCase } from '@/lib/utils';
 import { Page } from '@/components/Shell';
 import { Button, ProgressBar, RankBadge, SectionHeading, EmptyState } from '@/components/ui';
+import { AchievementBadge } from '@/components/RankSigil';
 import { DiagnosticsPanel, DisplaySettings } from '@/components/Settings';
 import { HeroChooser } from '@/game/HeroChooser';
 import { HeroAvatar } from '@/game/HeroAvatar';
@@ -50,6 +51,7 @@ export function StatsScreen() {
       <Page>
         <SectionHeading eyebrow="Progress" title="Statistics" />
         <EmptyState
+          art="scroll"
           title="Nothing to show yet"
           detail="Answer some questions and this fills up with accuracy by topic, an estimated composite, and your activity history."
         />
@@ -427,12 +429,27 @@ export function ProfileScreen() {
               key={a.id}
               className={cx(
                 'flex items-start gap-3.5 rounded-lg border-2 px-4 py-3.5',
-                got ? 'border-gold/50 bg-leather-850' : 'border-leather-700/50 bg-leather-900 opacity-50',
+                got ? 'border-gold/50 bg-leather-850' : 'border-leather-700/50 bg-leather-900',
               )}
             >
-              <span className="mt-0.5 flex-none text-[15px] text-gold" aria-hidden="true">✦</span>
+              {/* The medal carries earned-vs-locked itself now — struck metal
+                  against a dark blank — so the card no longer dims to 50%.
+                  Halving the contrast of the *text* to say "not yet" made the
+                  locked half of the wall hard to read, and that is exactly the
+                  half a student reads to find out what to go and do. */}
+              <AchievementBadge icon={a.icon} tier={a.tier} earned={got} size={40} />
               <div className="min-w-0">
-                <div className="font-script text-[12px] uppercase tracking-wide text-parchment">{a.name}</div>
+                <div
+                  className={cx(
+                    'font-script text-[12px] uppercase tracking-wide',
+                    got ? 'text-parchment' : 'text-parchment-dim',
+                  )}
+                >
+                  {a.name}
+                  {/* Metal and dimming are invisible to a screen reader, and
+                      the wall means nothing without the earned state. */}
+                  <span className="sr-only">{got ? ' — earned' : ' — locked'}</span>
+                </div>
                 <div className="mt-0.5 text-[12px] leading-snug text-ink-faint">{a.detail}</div>
               </div>
             </div>

@@ -20,6 +20,7 @@ import { NoteReader, NotesScreen } from '@/screens/Notes';
 import { DrillRunner, DrillsScreen, ReviewScreen } from '@/screens/Drills';
 import { ReportScreen, TestRunner, TestsScreen } from '@/screens/Tests';
 import { ProfileScreen, StatsScreen } from '@/screens/Stats';
+import { Vignette } from '@/components/Vignette';
 
 /** Routes that render their own full-screen chrome and suppress the top bar.
  *  The map is here because it is a full-viewport game view with its own
@@ -80,9 +81,19 @@ export default function App() {
   }, [authRedirect, clearAuthRedirect, route.name, progress.profile, navigate]);
 
   if (!authReady) {
+    /* The cold-start screen. It was the word "Loading…" on a dark field —
+       the one screen every single visitor sees, and the only one with no art
+       on it at all. A compass whose needle is actually turning says the same
+       thing, in the world's own voice, and tells you the app has not hung.
+
+       `role="status"` because a sighted user gets the spinning needle and a
+       screen-reader user was getting nothing. */
     return (
-      <div className="flex min-h-dvh items-center justify-center">
-        <div className="animate-shimmer font-display text-[13px] uppercase text-gold">Loading…</div>
+      <div className="flex min-h-dvh flex-col items-center justify-center gap-4" role="status">
+        <Vignette name="compass" size={120} />
+        <div className="animate-shimmer font-script text-[11px] uppercase tracking-[0.18em] text-gold">
+          Finding your place
+        </div>
       </div>
     );
   }

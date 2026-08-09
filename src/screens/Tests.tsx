@@ -108,6 +108,7 @@ export function TestsScreen() {
       <h2 className="heading mb-4 text-[13px] text-parchment">Your results</h2>
       {history.length === 0 ? (
         <EmptyState
+          art="chest"
           title="No tests yet"
           detail="A full-length test is the only honest way to know where you stand. Take one when you have cleared a few zones."
         />
