@@ -1,0 +1,12 @@
+# Generated or vendored — nothing here is written by hand.
+dist
+coverage
+node_modules
+public/art/gen
+public/icons
+src/art.json
+package-lock.json
+
+# The question bank. Machine-shaped already, 342 items across four files, and
+# reflowing it would turn every future content diff into a formatting diff.
+src/content/*.json

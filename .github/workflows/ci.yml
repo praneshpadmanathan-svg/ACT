@@ -1,0 +1,70 @@
+# What runs before a change is allowed to be true.
+#
+# Until now the only thing that ever checked this repo was Vercel's production
+# build, which runs *after* merge. A pull request could sit for a week with a
+# failing test and a type error and nothing anywhere would say so; the first
+# signal was a red deploy on `main`.
+#
+# The jobs below are the same commands `npm run build` runs, split apart so a
+# failure names itself. One combined step that says "build failed" makes you go
+# read the log to find out whether it was the linter, a test, or the compiler.
+#
+# No secrets. Every `VITE_*` variable this app reads is optional and falls back
+# (`cloudEnabled` is simply false without Supabase credentials), so CI builds
+# the real bundle without any project configuration — which also means a fork's
+# pull request gets the same checks as a branch on this repo.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# A second push to the same branch cancels the first run. There is no value in
+# finishing a check against a commit that has already been replaced.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          # Vite 8 requires 20.19+ or 22.12+. Pinned to a major rather than
+          # `lts/*` so a new LTS cannot change what CI means overnight.
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      # Cheapest first, so the common failure reports in seconds.
+      - name: Map animations
+        run: npm run check:anim
+
+      - name: Content library
+        run: npm run check:content
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Formatting
+        run: npm run format:check
+
+      - name: Tests
+        run: npm run test:run
+
+      - name: Types
+        run: npm run typecheck
+
+      # Last, and the only step that needs the others to have passed to mean
+      # anything: proof the thing actually assembles.
+      - name: Build
+        run: npx vite build

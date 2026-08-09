@@ -70,7 +70,10 @@ for (const m of css.matchAll(/\.(mapfx-[a-z-]+)\s*\{([^}]*)\}/gs)) {
   if (animation) usesKeyframe.set(m[1], animation[1]);
 }
 
-for (const m of css.matchAll(/@keyframes\s+(fx-[a-z0-9-]+)\s*\{([\s\S]*?)\n  \}/g)) {
+/* `\n {2}\}` rather than a literal two spaces: this depends on the closing
+   brace of a keyframe block sitting at exactly one indent level, and two
+   spaces you have to count are two spaces somebody eventually miscounts. */
+for (const m of css.matchAll(/@keyframes\s+(fx-[a-z0-9-]+)\s*\{([\s\S]*?)\n {2}\}/g)) {
   const [, name, body] = m;
 
   const drivers = [...usesKeyframe.entries()]

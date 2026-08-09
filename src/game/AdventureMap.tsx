@@ -111,7 +111,10 @@ export function useMapProgress(): MapProgress {
     );
 
     return { pins, current, cleared, total, allCleared: cleared === total && total > 0 };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    /* This carried an `eslint-disable-next-line react-hooks/exhaustive-deps`
+       for as long as it existed, and the linter that could have judged it was
+       never installed. Now that one is: the list below is complete, the
+       suppression was protecting nothing, and it is gone. */
   }, [progress.zonesCleared, preferred]);
 }
 

@@ -93,7 +93,11 @@ export function Art({
         width={entry.width}
         height={entry.height}
         loading={priority ? 'eager' : 'lazy'}
-        // eslint-disable-next-line react/no-unknown-property
+        /* React 18's DOM typings know `fetchPriority`, so nothing here needs
+           suppressing. The line that used to sit above this disabled
+           `react/no-unknown-property` — a rule from `eslint-plugin-react`,
+           which was never installed, so for as long as it existed it was a
+           comment addressed to nobody. */
         fetchPriority={priority ? 'high' : 'auto'}
         decoding="async"
         draggable={draggable}

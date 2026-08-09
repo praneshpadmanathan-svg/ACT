@@ -1,0 +1,29 @@
+# Nothing here is stale yet. That is exactly why this is going in now: there is
+# no mechanism keeping it that way, and dependency rot is only ever noticed the
+# month you need to ship something urgent.
+#
+# Monthly, not weekly — this is one person's project, and a Monday morning of
+# eleven dependency pull requests gets ignored, which is worse than no bot at
+# all. Grouped by ecosystem for the same reason: one PR to review, not eleven.
+
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    groups:
+      # Anything that only affects the build. Safe to take in a batch, and CI
+      # tells you if it is not.
+      dev-dependencies:
+        dependency-type: development
+      # React, Supabase and Motion ship in the bundle a student downloads.
+      # Separate PR, read the changelog.
+      runtime:
+        dependency-type: production
+
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: monthly

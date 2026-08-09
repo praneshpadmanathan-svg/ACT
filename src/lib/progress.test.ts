@@ -173,7 +173,7 @@ describe('scheduleReview', () => {
 
   it('sets a later due date the further along the box', () => {
     const box1 = scheduleReview({}, 'q', true);
-    let box2 = scheduleReview(box1, 'q', true);
+    const box2 = scheduleReview(box1, 'q', true);
     expect(box2.q.due).toBeGreaterThan(box1.q.due);
   });
 });
