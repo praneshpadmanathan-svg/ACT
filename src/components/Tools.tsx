@@ -16,7 +16,6 @@
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useDialogFocus } from '@/lib/useDialogFocus';
 import { readRaw, writeRaw } from '@/lib/storage';
 import { cx } from '@/lib/utils';
 import { Glyph } from './Icon';
@@ -254,16 +253,38 @@ type Tool = 'calculator' | 'scratch';
 export function ToolDock({ mathHint = false }: { mathHint?: boolean }) {
   const [open, setOpen] = useState<Tool | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const openerRef = useRef<HTMLElement | null>(null);
 
-  useDialogFocus(panelRef, open !== null);
-
+  /* Deliberately **not** `useDialogFocus`.
+   *
+   * That hook marks every sibling inert and traps Tab, which is right for the
+   * story overlay and wrong here in a way that defeats the whole tool: a
+   * calculator exists to be used *while reading the question*, and inerting
+   * the page hides the question from a screen reader and puts it out of tab
+   * reach the moment the calculator opens. `aria-modal="false"` on the panel
+   * says as much; a trap would have made that attribute a lie.
+   *
+   * So: move focus in on open so a keyboard user is not left behind, put it
+   * back on close, and leave the rest of the page entirely alone. Tab walks
+   * out of the panel and into the choices, which is the correct behaviour for
+   * a non-modal tool. */
   useEffect(() => {
     if (!open) return;
+    openerRef.current = document.activeElement as HTMLElement | null;
+    const focusIn = () => panelRef.current?.focus({ preventScroll: true });
+    const raf = window.requestAnimationFrame(focusIn);
+    const fallback = window.setTimeout(focusIn, 120);
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setOpen(null);
     };
     window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    return () => {
+      window.cancelAnimationFrame(raf);
+      window.clearTimeout(fallback);
+      window.removeEventListener('keydown', onKey);
+      openerRef.current?.focus?.({ preventScroll: true });
+    };
   }, [open]);
 
   return (

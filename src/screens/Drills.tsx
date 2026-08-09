@@ -18,6 +18,7 @@ import { Page } from '@/components/Shell';
 import { Button, EmptyState, ProgressBar, SectionHeading } from '@/components/ui';
 import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
 import { RichText } from '@/components/RichText';
+import { Glyph } from '@/components/Icon';
 
 const LENGTHS = [5, 10, 20];
 
@@ -96,6 +97,28 @@ export function DrillsScreen({ section }: { section?: string }) {
           ))}
         </div>
       </div>
+
+      {/* Saved questions. Only offered once there is something in there —
+          an empty shelf advertised on every visit is a chore, not a feature. */}
+      {progress.bookmarks.length > 0 && (
+        <a
+          href={hrefFor({ name: 'bookmarks' })}
+          onClick={() => sfx.select()}
+          className="mb-6 flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-4 transition-colors hover:border-gold-deep"
+        >
+          <Glyph name="bookmarkFilled" size={17} className="flex-none text-gold" />
+          <span className="min-w-0 flex-1">
+            <span className="block font-display text-[14.5px] font-semibold text-parchment">
+              {progress.bookmarks.length} saved question
+              {progress.bookmarks.length === 1 ? '' : 's'}
+            </span>
+            <span className="mt-0.5 block text-[13px] text-ink-faint">
+              The ones you set aside to come back to.
+            </span>
+          </span>
+          <span className="flex-none font-display text-[13px] font-semibold text-gold">Open ▸</span>
+        </a>
+      )}
 
       {/* by topic */}
       <h2 className="heading mb-4 text-[13px] text-parchment">By topic</h2>
@@ -353,6 +376,153 @@ export function ReviewScreen() {
         }
         onFinish={setResults}
       />
+    </Page>
+  );
+}
+
+/* ----------------------------------------------------------- bookmarks */
+
+/* The other half of the bookmark button.
+ *
+ * `Progress.bookmarks` was written, merged across devices with a deliberate
+ * union rule, and read by exactly one thing: the button that decides whether
+ * to draw a filled or an outlined icon. A student could save fifty questions
+ * and had no way on earth to see one of them again — which makes the save
+ * button a lie, and a lie that costs them the questions they thought they had
+ * put somewhere safe.
+ *
+ * Saved questions are not a review queue and this screen does not pretend to
+ * be one. Newest first, drop one at a time, or run the lot as a drill. */
+export function BookmarksScreen() {
+  const navigate = useNavigate();
+  const { progress, updateProgress, answerQuestion } = useStore();
+  const [results, setResults] = useState<AnswerRecord[] | null>(null);
+  const [started, setStarted] = useState(false);
+
+  /* Newest first: a bookmark is a note to self, and the most recent one is
+     almost always the one being looked for. Ids whose question has since left
+     the bank are dropped rather than rendered as a gap. */
+  const saved = useMemo(
+    () =>
+      [...progress.bookmarks]
+        .reverse()
+        .map(getQuestion)
+        .filter((q): q is Question => Boolean(q)),
+    [progress.bookmarks],
+  );
+
+  const drop = (id: string) =>
+    updateProgress((p) => ({ ...p, bookmarks: p.bookmarks.filter((b) => b !== id) }));
+
+  if (results) {
+    return (
+      <DrillSummary
+        results={results}
+        accent="#d4a017"
+        onRetry={() => {
+          setResults(null);
+          setStarted(false);
+        }}
+        onDone={() => navigate({ name: 'drills' })}
+      />
+    );
+  }
+
+  if (started && saved.length > 0) {
+    return (
+      <Page>
+        <QuestionRunner
+          questions={saved.map(fromDrillQuestion)}
+          title="Saved questions"
+          subtitle={`${saved.length} you set aside`}
+          accent="#d4a017"
+          onQuit={() => setStarted(false)}
+          onAnswer={(record) =>
+            answerQuestion({
+              qid: record.question.id,
+              section: record.question.section,
+              topic: record.question.topic,
+              correct: record.correct,
+              ms: record.ms,
+              xp: XP.question(record.question.difficulty, record.correct, 0),
+            })
+          }
+          onFinish={setResults}
+        />
+      </Page>
+    );
+  }
+
+  return (
+    <Page>
+      <SectionHeading
+        eyebrow="Set aside"
+        title="Saved questions"
+        detail="Anything you bookmarked, newest first. They stay here until you remove them, and they follow you to your other devices."
+      />
+
+      {saved.length === 0 ? (
+        <EmptyState
+          art="scroll"
+          title="Nothing saved yet"
+          detail="Tap the bookmark on any question to keep it here — useful for the one you nearly had, or the one you want to ask someone about."
+          action={
+            <Button variant="primary" onClick={() => navigate({ name: 'drills' })}>
+              Go to drills
+            </Button>
+          }
+        />
+      ) : (
+        <>
+          <div className="mb-5 flex flex-wrap items-center gap-3">
+            <Button variant="primary" onClick={() => setStarted(true)}>
+              Run all {saved.length} as a drill ▶
+            </Button>
+            <span className="text-[13px] text-ink-faint">
+              Answering them here counts the same as any other practice.
+            </span>
+          </div>
+
+          <ul className="space-y-2.5">
+            {saved.map((q) => (
+              <li
+                key={q.id}
+                className="flex items-start gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-4"
+              >
+                <span className="min-w-0 flex-1">
+                  <span className="flex flex-wrap items-center gap-2">
+                    <span
+                      className="font-script text-[10px] uppercase tracking-wide"
+                      style={{ color: SECTION_BY_ID[q.section]?.color }}
+                    >
+                      {SECTION_BY_ID[q.section]?.name}
+                    </span>
+                    <span className="font-script text-[10px] uppercase tracking-wide text-ink-faint">
+                      {titleCase(q.topic)}
+                    </span>
+                  </span>
+                  {/* The stem, plain and clipped. Enough to recognise the
+                      question by without giving the answer away at a glance. */}
+                  <span className="mt-1.5 block line-clamp-2 font-read text-[14px] leading-relaxed text-parchment-dim">
+                    {q.context.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()}
+                  </span>
+                </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    sfx.select();
+                    drop(q.id);
+                  }}
+                  aria-label={`Remove this ${SECTION_BY_ID[q.section]?.name} question from saved`}
+                  className="flex-none font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint transition-colors hover:text-blood-text"
+                >
+                  Remove
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </Page>
   );
 }
