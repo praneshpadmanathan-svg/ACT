@@ -27,6 +27,7 @@ import { Page } from '@/components/Shell';
 import { Button, EmptyState, ProgressBar, SectionHeading } from '@/components/ui';
 import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
 import { burstConfetti } from '@/components/Feedback';
+import { ScoreCaveat } from '@/components/ScoreCaveat';
 import { DrillSummary } from './Drills';
 
 /* Section lengths, scaled to what the bank can actually supply. The real ACT
@@ -619,6 +620,7 @@ export function ScoreReport({
           <p className="mt-1 font-script text-[12px] uppercase tracking-wide text-ink-faint">
             Composite
           </p>
+          <ScoreCaveat kind="test" className="mx-auto mt-2.5 max-w-sm" />
 
           {percentile !== null && (
             <p className="mx-auto mt-3 max-w-sm text-[13px] leading-relaxed text-parchment-dim">

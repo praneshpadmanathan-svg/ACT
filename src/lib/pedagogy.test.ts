@@ -25,6 +25,7 @@ import {
 } from './diagnostic';
 import { coldStartTopic, todaysPlan } from './plan';
 import { DEFAULT_HERO_ID, HEROES, heroFor } from '@/game/heroes';
+import { pickSample } from '@/components/TryQuestion';
 import {
   DAILY_SIZE,
   SECONDS_PER_QUESTION,
@@ -753,6 +754,23 @@ describe('mergeProgress — fields added by this pass', () => {
     };
     expect(mergeProgress(progress({ diagnostic }), progress()).diagnostic).toEqual(diagnostic);
     expect(mergeProgress(progress(), progress({ diagnostic })).diagnostic).toEqual(diagnostic);
+  });
+});
+
+/* ------------------------------------------------------ the landing sample */
+
+describe('the question shown on the landing page', () => {
+  it('exists, stands alone, and explains every choice', () => {
+    /* This one question is the entire product demo. If a content edit drops
+       its id, orphans a `why`, or gives it a passage that the landing page
+       does not render, the first thing a stranger sees is broken — and no
+       screen in the app would reveal that, because nothing else uses it. */
+    const q = pickSample();
+    expect(q).toBeDefined();
+    expect(q!.passage).toBeUndefined();
+    expect(q!.choices.length).toBeGreaterThanOrEqual(4);
+    for (const c of q!.choices) expect(q!.why[c.id]?.trim()).toBeTruthy();
+    expect(q!.choices.some((c) => c.id === q!.answer)).toBe(true);
   });
 });
 

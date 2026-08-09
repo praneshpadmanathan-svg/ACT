@@ -23,6 +23,7 @@ import { NavGlyph, type GlyphName } from '@/components/NavGlyph';
 import { REGIONS } from '@/game/mapData';
 import type { SectionId } from '@/types';
 import { Art } from '@/components/Art';
+import { TryQuestion } from '@/components/TryQuestion';
 
 /* ------------------------------------------------------------- highlighting
 
@@ -215,6 +216,13 @@ export function Landing() {
             <span className="text-gold" aria-hidden="true">✦</span> ACT Command
           </span>
           <div className="ml-auto flex items-center gap-2">
+            <a
+              href={hrefFor({ name: 'faq' })}
+              onClick={() => sfx.select()}
+              className="mr-1 hidden font-read text-[13.5px] text-parchment-dim underline-offset-4 transition-colors hover:text-parchment hover:underline sm:inline"
+            >
+              What is this?
+            </a>
             <a href={hrefFor({ name: 'auth', mode: 'signin' })} onClick={() => sfx.select()}>
               <Button size="sm">Sign in</Button>
             </a>
@@ -291,6 +299,83 @@ export function Landing() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* ------------------------------------------------------ orientation
+
+          Straight after the hero, because a page whose first heading is "Your
+          climb to 36" has assumed you know what 36 is out of, what the ACT
+          is, and whether any of it applies to you. Enough of the answer to
+          keep reading; the rest is on the FAQ. */}
+      <section className="border-y border-leather-700 bg-leather-950/40 py-14">
+        <div className="shell grid gap-5 md:grid-cols-3">
+          {[
+            {
+              t: 'New to this?',
+              d: (
+                <>
+                  The ACT is a US university admissions test: four sections, each scored{' '}
+                  <Hl tone="cream">1 to 36</Hl>. Your composite is the average of the four —
+                  which is the 36 the headline means.
+                </>
+              ),
+            },
+            {
+              t: 'Who it is for',
+              d: (
+                <>
+                  Students <Hl tone="cream">13 and over</Hl> sitting the ACT. Most are 15 to 17
+                  and somewhere between three months and a week out from test day.
+                </>
+              ),
+            },
+            {
+              t: 'What it costs you',
+              d: (
+                <>
+                  <Hl tone="cream">Fifteen to twenty minutes a day.</Hl> No money, no account
+                  needed, no app to install. Two to three months at a steady pace covers the
+                  whole map.
+                </>
+              ),
+            },
+          ].map((c) => (
+            <div key={c.t} className="veil p-6">
+              <h3 className="heading text-[16px] text-parchment-light">{c.t}</h3>
+              <p className="mt-2 font-read text-[15px] leading-[1.65] text-parchment-dim">{c.d}</p>
+            </div>
+          ))}
+        </div>
+        <p className="shell mt-6 text-center font-read text-[14.5px] text-parchment-dim">
+          Longer answers — including whether this actually works, and why it is free —{' '}
+          <a
+            href={hrefFor({ name: 'faq' })}
+            onClick={() => sfx.select()}
+            className="text-gold underline underline-offset-4 hover:text-gold-bright"
+          >
+            are on the FAQ
+          </a>
+          .
+        </p>
+      </section>
+
+      {/* ---------------------------------------------------- try one now */}
+      <section className="shell py-20">
+        <SectionIntro
+          title={
+            <>
+              Try <span className="text-gold-bright">one question</span>
+            </>
+          }
+          lead={
+            <>
+              This is the actual product — a real question from the library, and the reason{' '}
+              <Hl tone="cream">every</Hl> wrong answer is wrong. Nothing is saved and nothing is
+              asked of you.
+            </>
+          }
+        />
+        <TryQuestion onFinish={begin} />
       </section>
 
       {/* --------------------------------------------------------- regions */}
@@ -432,6 +517,22 @@ export function Landing() {
           <p className="mx-auto max-w-md font-read text-[15.5px] leading-relaxed text-parchment-dim">
             <Hl tone="woods">Free</Hl>, no downloads, and your progress saves as you go.
           </p>
+          {/* "100% free" with nothing after it reads as a catch, and for a
+              product used by minors it reads as the worst kind of catch. The
+              reason is unglamorous and fits in a sentence, so it goes here
+              rather than only in the FAQ. */}
+          <p className="mx-auto mt-3 max-w-md font-read text-[14px] leading-relaxed text-ink-faint">
+            Free because it is small and cheap to run — no ads, nothing sold, and no paid tier
+            behind this one.{' '}
+            <a
+              href={hrefFor({ name: 'faq' })}
+              onClick={() => sfx.select()}
+              className="text-parchment-dim underline underline-offset-4 hover:text-parchment"
+            >
+              The longer answer
+            </a>
+            .
+          </p>
           <Button variant="primary" size="lg" className="mt-8" onClick={begin}>
             Begin your quest ▸
           </Button>
@@ -454,6 +555,13 @@ export function Landing() {
           ACT Command · Built for the Enhanced ACT
         </p>
         <nav className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+          <a
+            href={hrefFor({ name: 'faq' })}
+            onClick={() => sfx.select()}
+            className="font-read text-[13.5px] text-parchment-dim underline-offset-4 transition-colors hover:text-parchment hover:underline"
+          >
+            FAQ
+          </a>
           <a
             href={hrefFor({ name: 'privacy' })}
             onClick={() => sfx.select()}

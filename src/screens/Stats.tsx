@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { LIBRARY_STATS, PATH_BY_ID, SECTIONS, SECTION_BY_ID } from '@/content';
-import { useNavigate } from '@/lib/router';
+import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import {
   ACHIEVEMENTS,
@@ -19,6 +19,7 @@ import { cx, formatRelative, titleCase } from '@/lib/utils';
 import { Page } from '@/components/Shell';
 import { Button, ProgressBar, RankBadge, SectionHeading, EmptyState } from '@/components/ui';
 import { AchievementBadge } from '@/components/RankSigil';
+import { ScoreCaveat } from '@/components/ScoreCaveat';
 import { DiagnosticsPanel, DisplaySettings } from '@/components/Settings';
 import { HeroChooser } from '@/game/HeroChooser';
 import { HeroAvatar } from '@/game/HeroAvatar';
@@ -74,6 +75,8 @@ export function StatsScreen() {
         <Tile label="Questions answered" value={answered.toLocaleString()} color="#ff9d5c" />
         <Tile label="Day streak" value={String(progress.dayStreak)} color="#3ad6f0" />
       </div>
+
+      {estimate !== null && <ScoreCaveat kind="estimate" className="mb-6 -mt-2 max-w-xl" />}
 
       {/* A composite needs two sections with real data behind it. Saying so
           beats a bare em-dash, which reads as "broken" rather than "not yet". */}
@@ -380,6 +383,34 @@ export function ProfileScreen() {
             )}
           </div>
         </div>
+      </div>
+
+      {/* The explainer was reachable from the landing page and nowhere else,
+          which means the moment you actually have the question — mid-way
+          through, looking at a number you do not trust — you are on a screen
+          with no way to it. */}
+      <div className="panel mb-6 flex flex-wrap items-center gap-x-5 gap-y-2 p-5">
+        <span className="font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+          Questions about the app
+        </span>
+        <a
+          href={hrefFor({ name: 'faq' })}
+          className="font-read text-[13.5px] text-parchment-dim underline underline-offset-4 transition-colors hover:text-parchment"
+        >
+          What the ACT is, how accurate the score is, why it's free
+        </a>
+        <a
+          href={hrefFor({ name: 'privacy' })}
+          className="font-read text-[13.5px] text-parchment-dim underline underline-offset-4 transition-colors hover:text-parchment"
+        >
+          Privacy
+        </a>
+        <a
+          href={hrefFor({ name: 'terms' })}
+          className="font-read text-[13.5px] text-parchment-dim underline underline-offset-4 transition-colors hover:text-parchment"
+        >
+          Terms
+        </a>
       </div>
 
       {/* traveller */}

@@ -11,6 +11,7 @@ import { StoryOverlay } from '@/game/StoryOverlay';
 import { Landing } from '@/screens/Landing';
 import { Auth } from '@/screens/Auth';
 import { LegalScreen } from '@/screens/Legal';
+import { ExplainScreen } from '@/screens/Explain';
 import { Onboarding } from '@/screens/Onboarding';
 import { Home } from '@/screens/Home';
 import { MapScreen, PathScreen } from '@/screens/MapScreens';
@@ -32,10 +33,12 @@ import { Vignette } from '@/components/Vignette';
 /** Routes that render their own full-screen chrome and suppress the top bar.
  *  The map is here because it is a full-viewport game view with its own
  *  floating controls — a nav bar over it broke the immersion. */
-const BARE_ROUTES = new Set(['landing', 'auth', 'onboarding', 'map', 'privacy', 'terms']);
+const BARE_ROUTES = new Set(['landing', 'auth', 'onboarding', 'map', 'privacy', 'terms', 'faq']);
 
-/** Reachable without having started: the front door and everything legal. */
-const OPEN_ROUTES = new Set(['landing', 'auth', 'privacy', 'terms', 'onboarding']);
+/** Reachable without having started: the front door, everything legal, and the
+ *  page that explains what the ACT is — which is no use at all behind a flow
+ *  you have to enter before you can read it. */
+const OPEN_ROUTES = new Set(['landing', 'auth', 'privacy', 'terms', 'faq', 'onboarding']);
 
 export default function App() {
   const route = useRoute();
@@ -202,6 +205,8 @@ function renderRoute(route: ReturnType<typeof useRoute>) {
       return <LegalScreen page="privacy" />;
     case 'terms':
       return <LegalScreen page="terms" />;
+    case 'faq':
+      return <ExplainScreen />;
     case 'onboarding':
       return <Onboarding />;
     case 'home':
