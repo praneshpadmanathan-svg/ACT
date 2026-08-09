@@ -27,6 +27,8 @@ export type Route =
   | { name: 'drills'; section?: string }
   | { name: 'drill'; section: string; topic?: string }
   | { name: 'review' }
+  | { name: 'daily' }
+  | { name: 'diagnostic' }
   | { name: 'tests' }
   | { name: 'test'; config: string }
   | { name: 'report'; id: string }
@@ -80,6 +82,10 @@ export function parseRoute(hash: string = currentHash()): Route {
         : { name: 'drills' };
     case 'review':
       return { name: 'review' };
+    case 'daily':
+      return { name: 'daily' };
+    case 'diagnostic':
+      return { name: 'diagnostic' };
     case 'tests':
       return { name: 'tests' };
     case 'test':

@@ -14,7 +14,16 @@
  */
 
 import { beforeEach, describe, expect, it } from 'vitest';
-import type { Progress, TestResult } from '@/types';
+import type { Progress, SectionId, TestResult } from '@/types';
+import { ALL_QUESTIONS, SECTIONS, getQuestion } from '@/content';
+import { dailyBlurb, pickDaily } from './daily';
+import {
+  diagnosticLength,
+  pickDiagnostic,
+  placementShape,
+  scoreDiagnostic,
+} from './diagnostic';
+import { coldStartTopic, todaysPlan } from './plan';
 import {
   DAILY_SIZE,
   SECONDS_PER_QUESTION,
@@ -27,6 +36,7 @@ import {
   dueForReview,
   emptyProgress,
   mergeProgress,
+  paceHint,
   pacingFor,
   percentileFor,
   percentileInWords,
@@ -257,13 +267,23 @@ describe('percentileFor', () => {
 describe('percentileInWords', () => {
   it('describes the top of the range as a room rather than a number', () => {
     expect(percentileInWords(99)).toContain('top 1%');
-    expect(percentileInWords(96)).toBe('top 1 in 20');
-    expect(percentileInWords(82)).toBe('top quarter');
-    expect(percentileInWords(52)).toBe('top half');
+    expect(percentileInWords(96)).toBe('the top 1 in 20');
+    expect(percentileInWords(82)).toBe('the top quarter');
+    expect(percentileInWords(52)).toBe('the top half');
   });
 
   it('falls back to a plain figure below the median, without flattery', () => {
-    expect(percentileInWords(30)).toBe('about 30 in 100 score at or below this');
+    expect(percentileInWords(30)).toBe('ahead of 30 in 100 test-takers');
+  });
+
+  /* The score report renders this as "That is about {phrase}", so a branch that
+     does not read correctly after "about" is a shipped grammar bug. */
+  it('reads correctly after the word "about" across the whole range', () => {
+    for (let p = 0; p <= 100; p++) {
+      const s = `about ${percentileInWords(p)}`;
+      expect(s).not.toContain('about about');
+      expect(s).not.toContain('about the about');
+    }
   });
 });
 
@@ -294,6 +314,52 @@ describe('pacingFor', () => {
   it('returns null rather than dividing by zero on an empty section', () => {
     expect(pacingFor('math', 0, 0)).toBeNull();
   });
+
+  /* An accommodated student sits the real exam with the same 1.5x they get
+     here. Judging them against the standard clock would report "over" for a
+     pace that is, for them, exactly on time. */
+  it('scales the budget by the extended-time allowance', () => {
+    expect(pacingFor('science', 10 * 75, 10, 1)!.verdict).toBe('over');
+    expect(pacingFor('science', 10 * 75, 10, 1.5)!.budget).toBe(90);
+    expect(pacingFor('science', 10 * 75, 10, 1.5)!.overBy).toBe(-15);
+    expect(pacingFor('science', 10 * 75, 10, 1.5)!.verdict).toBe('comfortable');
+  });
+
+  it('defaults to standard timing, so existing callers are unaffected', () => {
+    expect(pacingFor('english', 10 * 43, 10)).toEqual(pacingFor('english', 10 * 43, 10, 1));
+  });
+});
+
+describe('paceHint', () => {
+  it('stays quiet through the opening fifth, where everyone is slow', () => {
+    expect(paceHint(0, 20, 0.19)).toBeNull();
+    expect(paceHint(0, 20, 0)).toBeNull();
+  });
+
+  it('stays quiet for a student who is on pace or only one behind', () => {
+    // Half the clock gone, half the questions done.
+    expect(paceHint(10, 20, 0.5)).toBeNull();
+    expect(paceHint(9, 20, 0.5)).toBeNull();
+    expect(paceHint(30, 20, 0.5)).toBeNull(); // ahead
+  });
+
+  it('names the question to aim for once two or more behind', () => {
+    expect(paceHint(7, 20, 0.5)).toBe('Pace: aim to be on question 11');
+    expect(paceHint(2, 25, 0.4)).toBe('Pace: aim to be on question 11');
+  });
+
+  it('never points past the last question', () => {
+    expect(paceHint(0, 20, 0.99)).toBe('Pace: aim to be on question 20');
+  });
+
+  it('says nothing once the clock is spent — the report handles that', () => {
+    expect(paceHint(0, 20, 1)).toBeNull();
+    expect(paceHint(0, 20, 1.4)).toBeNull();
+  });
+
+  it('returns null rather than dividing an empty section', () => {
+    expect(paceHint(0, 0, 0.5)).toBeNull();
+  });
 });
 
 /* ----------------------------------------------------- daily challenge */
@@ -315,6 +381,223 @@ describe('the daily challenge', () => {
 
   it('is available again the next day', () => {
     expect(dailyDone(progress({ dailyDoneOn: daysAgo(1) }))).toBe(false);
+  });
+});
+
+describe('pickDaily — which five', () => {
+  /** A review entry that is due now, with `misses` deciding its rank. */
+  const due = (misses: number) => ({ due: Date.now() - DAY, box: 0, misses });
+
+  it('gives a brand-new student five real questions', () => {
+    const five = pickDaily(progress(), '2026-08-09');
+    expect(five).toHaveLength(DAILY_SIZE);
+    for (const q of five) expect(getQuestion(q.id)).toBeDefined();
+  });
+
+  it('never repeats a question inside one day', () => {
+    const ids = pickDaily(progress(), '2026-08-09').map((q) => q.id);
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+
+  it('is stable across calls on the same day, and changes on the next', () => {
+    const p = progress();
+    const a = pickDaily(p, '2026-08-09').map((q) => q.id);
+    const b = pickDaily(p, '2026-08-09').map((q) => q.id);
+    expect(b).toEqual(a);
+
+    // Different day, different five. (A collision on all five is possible in
+    // principle and vanishingly unlikely over 754 questions.)
+    const tomorrow = pickDaily(p, '2026-08-10').map((q) => q.id);
+    expect(tomorrow).not.toEqual(a);
+  });
+
+  it('leads with what is due for review, hardest-earned first', () => {
+    const [q1, q2] = ALL_QUESTIONS;
+    const p = progress({ review: { [q1!.id]: due(1), [q2!.id]: due(4) } });
+
+    const ids = pickDaily(p, '2026-08-09').map((q) => q.id);
+    // Four misses outrank one, and both come before any filler.
+    expect(ids.slice(0, 2)).toEqual([q2!.id, q1!.id]);
+    expect(ids).toHaveLength(DAILY_SIZE);
+  });
+
+  it('is entirely review questions when five or more are due', () => {
+    const scheduled = ALL_QUESTIONS.slice(0, 8);
+    const review: Progress['review'] = {};
+    scheduled.forEach((q, i) => { review[q.id] = due(i); });
+
+    const ids = new Set(pickDaily(progress({ review }), '2026-08-09').map((q) => q.id));
+    for (const id of ids) expect(scheduled.some((q) => q.id === id)).toBe(true);
+  });
+
+  /* The one way this feature could make the app worse: pulling a question
+     forward out of the review ladder resets a date the student cannot see. */
+  it('never uses a scheduled-but-not-due question as filler', () => {
+    const weakTopic = ALL_QUESTIONS[0]!.topic;
+    const inTopic = ALL_QUESTIONS.filter((q) => q.topic === weakTopic);
+    const review: Progress['review'] = {};
+    // Every question in the weak topic is scheduled for a week from now.
+    for (const q of inTopic) review[q.id] = { due: Date.now() + 7 * DAY, box: 2 };
+
+    const p = progress({
+      review,
+      tally: {
+        answered: 10,
+        correct: 2,
+        topics: { [`english::${weakTopic}`]: { section: 'english', n: 10, ok: 2, ms: 100_000 } },
+        daily: {},
+      },
+    });
+
+    const ids = pickDaily(p, '2026-08-09').map((q) => q.id);
+    expect(ids).toHaveLength(DAILY_SIZE);
+    for (const id of ids) expect(id in review).toBe(false);
+  });
+
+  it('explains itself differently depending on where the five came from', () => {
+    const fresh = dailyBlurb(progress());
+    const review: Progress['review'] = {};
+    for (const q of ALL_QUESTIONS.slice(0, 6)) review[q.id] = due(1);
+    const missed = dailyBlurb(progress({ review }));
+
+    expect(missed).not.toBe(fresh);
+    expect(missed.toLowerCase()).toContain('missed');
+  });
+});
+
+/* --------------------------------------------------- the placement test */
+
+describe('pickDiagnostic', () => {
+  const withProfile = (before: 'first' | 'b20' | 'b27' | 'b28') =>
+    progress({ profile: { before } as Progress['profile'] });
+
+  it('samples every section, and the same number from each', () => {
+    const qs = pickDiagnostic(withProfile('first'));
+    const counts = SECTIONS.map((s) => qs.filter((q) => q.section === s.id).length);
+    expect(counts).toEqual([7, 7, 7, 7]);
+    expect(qs).toHaveLength(diagnosticLength(withProfile('first')));
+  });
+
+  /* The one thing `OnboardingProfile.before` was collected for, four screens
+     into onboarding, and then never read by anything. */
+  it('is shorter for somebody who has already sat the real ACT', () => {
+    expect(diagnosticLength(withProfile('b27'))).toBeLessThan(diagnosticLength(withProfile('first')));
+    expect(pickDiagnostic(withProfile('b27'))).toHaveLength(diagnosticLength(withProfile('b27')));
+  });
+
+  it('never asks the same question twice', () => {
+    const ids = pickDiagnostic(withProfile('first')).map((q) => q.id);
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+
+  /* An all-easy sample places everybody near the top of the scale and an
+     all-hard one buries them, so the spread is the placement's accuracy. */
+  it('spreads across difficulties rather than sampling one band', () => {
+    const qs = pickDiagnostic(withProfile('first'));
+    expect(new Set(qs.map((q) => q.difficulty)).size).toBeGreaterThan(1);
+  });
+
+  it('spreads across topics inside each section', () => {
+    const qs = pickDiagnostic(withProfile('first'));
+    for (const s of SECTIONS) {
+      const topics = new Set(qs.filter((q) => q.section === s.id).map((q) => q.topic));
+      // Reading has only six topics and we ask seven questions, so five is the
+      // bar: it must not be drilling one topic seven times.
+      expect(topics.size).toBeGreaterThanOrEqual(5);
+    }
+  });
+
+  it('is stable — the same student gets the same test', () => {
+    const p = withProfile('first');
+    expect(pickDiagnostic(p).map((q) => q.id)).toEqual(pickDiagnostic(p).map((q) => q.id));
+  });
+});
+
+describe('scoreDiagnostic', () => {
+  const answers = (section: SectionId, topic: string, ok: number, wrong: number) => [
+    ...Array.from({ length: ok }, () => ({ section, topic, correct: true })),
+    ...Array.from({ length: wrong }, () => ({ section, topic, correct: false })),
+  ];
+
+  it('scores each answered section and leaves unanswered ones out', () => {
+    const d = scoreDiagnostic([...answers('english', 'commas', 4, 2)]);
+    expect(d.raw.english).toEqual([4, 6]);
+    expect(d.scores.english).toBeGreaterThan(0);
+    expect(d.scores.math).toBeUndefined();
+    expect(d.asked).toBe(6);
+  });
+
+  /* One wrong out of two is a coin flip. The plan trusts this list on day one
+     with no other evidence, so it may only contain topics where the student
+     got *nothing* right. */
+  it('names only topics with no correct answer at all', () => {
+    const d = scoreDiagnostic([
+      ...answers('english', 'commas', 0, 2),
+      ...answers('english', 'pronouns', 1, 1),
+      ...answers('math', 'circles', 0, 1),
+    ]);
+    expect(d.weakTopics).toContain('commas');
+    expect(d.weakTopics).toContain('circles');
+    expect(d.weakTopics).not.toContain('pronouns');
+  });
+
+  it('orders the weak topics by how much evidence there is', () => {
+    const d = scoreDiagnostic([
+      ...answers('math', 'circles', 0, 1),
+      ...answers('english', 'commas', 0, 3),
+    ]);
+    expect(d.weakTopics[0]).toBe('commas');
+  });
+
+  it('ranks the sections against each other, which is what it can support', () => {
+    const d = scoreDiagnostic([
+      ...answers('english', 'commas', 6, 0),
+      ...answers('math', 'circles', 1, 5),
+    ]);
+    expect(placementShape(d)).toEqual({ strongest: 'english', weakest: 'math' });
+  });
+
+  it('has no shape to report from a single section', () => {
+    expect(placementShape(scoreDiagnostic(answers('english', 'commas', 3, 3)))).toBeNull();
+  });
+});
+
+describe('coldStartTopic — the plan on day one', () => {
+  const diagnostic = (weakTopics: string[]) => ({
+    at: Date.now(), raw: {}, scores: {}, weakTopics, asked: 28,
+  });
+
+  it('says nothing without a placement test', () => {
+    expect(coldStartTopic(progress())).toBeNull();
+  });
+
+  it('resolves a topic name back to its section', () => {
+    expect(coldStartTopic(progress({ diagnostic: diagnostic(['commas']) })))
+      .toEqual({ section: 'english', topic: 'commas' });
+  });
+
+  it('skips a name no section claims, rather than returning nothing', () => {
+    expect(coldStartTopic(progress({ diagnostic: diagnostic(['not a topic', 'circles']) })))
+      .toEqual({ section: 'math', topic: 'circles' });
+  });
+
+  /* Once there is real evidence, the diagnostic's one-question verdict has
+     been superseded and holding on to it points at a topic already fixed. */
+  it('drops a topic the student has since answered three times', () => {
+    const p = progress({
+      diagnostic: diagnostic(['commas', 'circles']),
+      tally: {
+        answered: 3, correct: 3, daily: {},
+        topics: { 'english::commas': { section: 'english', n: 3, ok: 3, ms: 30_000 } },
+      },
+    });
+    expect(coldStartTopic(p)).toEqual({ section: 'math', topic: 'circles' });
+  });
+
+  it('leads todaysPlan with the placement topic while there is nothing better', () => {
+    const p = progress({ diagnostic: diagnostic(['commas']) });
+    const drill = todaysPlan(p, null).steps.find((s) => s.kind === 'drill');
+    expect(drill?.to).toEqual({ name: 'drill', section: 'english', topic: 'commas' });
   });
 });
 
@@ -388,8 +671,40 @@ describe('trackStatus', () => {
       targetScore: 30,
       testHistory: [test(Date.now() - 30 * DAY, 20), test(Date.now() - 2 * DAY, 24)],
     });
-    // Measured against the *oldest* test in the window, so improvement is positive.
-    expect(trackStatus(two).change!).toBeGreaterThan(0);
+    // Newest test against the oldest in the window: 24 - 20.
+    expect(trackStatus(two).change).toBe(4);
+  });
+
+  /* The drill estimate and a scored test measure the same thing with different
+     instruments. Differencing across them reports the instruments' offset as
+     if it were progress, which is why the trend uses tests at both ends. */
+  it('draws the trend from tests alone, never from the drill estimate', () => {
+    const test = (at: number, composite: number): TestResult => ({
+      id: `t${at}`, at, scores: {}, composite, raw: {}, durationSec: 100, sections: ['english'],
+    });
+    const history = [test(Date.now() - 30 * DAY, 22), test(Date.now() - 2 * DAY, 22)];
+
+    // Two very different drill estimates, identical test history.
+    const low = trackStatus(withEstimate(0.45, { targetScore: 30, testHistory: history }));
+    const high = trackStatus(withEstimate(0.95, { targetScore: 30, testHistory: history }));
+
+    expect(low.current).not.toBe(high.current);
+    expect(low.change).toBe(0);
+    expect(high.change).toBe(0);
+  });
+
+  it('ignores tests that fell out of the sixty-day window', () => {
+    const test = (at: number, composite: number): TestResult => ({
+      id: `t${at}`, at, scores: {}, composite, raw: {}, durationSec: 100, sections: ['english'],
+    });
+    const status = trackStatus(
+      withEstimate(0.8, {
+        targetScore: 30,
+        testHistory: [test(Date.now() - 400 * DAY, 12), test(Date.now() - 2 * DAY, 24)],
+      }),
+    );
+    // Only one test survives the filter, so there is no line to draw.
+    expect(status.change).toBeNull();
   });
 });
 

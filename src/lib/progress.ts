@@ -667,15 +667,20 @@ export function percentileFor(composite: number): number | null {
   return PERCENTILE_BY_COMPOSITE[key] ?? null;
 }
 
-/** "Better than about 4 in 5" — a percentile a fifteen-year-old can picture.
- *  A bare 82nd percentile is a number; "4 in 5" is a room. */
+/** "The top 1 in 10" — a percentile a fifteen-year-old can picture. A bare
+ *  90th percentile is a number; "1 in 10" is a room.
+ *
+ *  Every branch returns a phrase that reads correctly after the word "about",
+ *  because the one place this is rendered is legally and pedagogically obliged
+ *  to hedge it, and a sentence that only parses for the flattering half of the
+ *  range is how "about the about 30 in 100" ships. */
 export function percentileInWords(percentile: number): string {
-  if (percentile >= 99) return 'top 1% of test-takers';
-  if (percentile >= 95) return 'top 1 in 20';
-  if (percentile >= 90) return 'top 1 in 10';
-  if (percentile >= 75) return 'top quarter';
-  if (percentile >= 50) return 'top half';
-  return `about ${percentile} in 100 score at or below this`;
+  if (percentile >= 99) return 'the top 1% of test-takers';
+  if (percentile >= 95) return 'the top 1 in 20';
+  if (percentile >= 90) return 'the top 1 in 10';
+  if (percentile >= 75) return 'the top quarter';
+  if (percentile >= 50) return 'the top half';
+  return `ahead of ${percentile} in 100 test-takers`;
 }
 
 export function compositeOf(scores: Partial<Record<SectionId, number>>): number {
@@ -746,11 +751,17 @@ export function trackStatus(p: Progress): TrackStatus {
 
   const gap = target - current;
 
-  /* The most recent completed test is a much better anchor than the drill
-     estimate, so when one exists inside the window it is used for the trend. */
+  /* The trend is drawn from completed tests only, newest against oldest inside
+     the window.
+
+     It is tempting to use the drill estimate as the near end of the line —
+     it is always available, where a second test may not be — but the estimate
+     and a scored test are two different instruments, and the difference
+     between them is a systematic offset, not progress. Subtracting one from
+     the other reports the offset as movement. Two tests, or no number. */
   const recent = p.testHistory.filter((t) => Date.now() - t.at < 60 * 86_400_000);
   const change = recent.length >= 2
-    ? current - recent[0]!.composite
+    ? recent[recent.length - 1]!.composite - recent[0]!.composite
     : null;
 
   if (gap <= 0) return { verdict: 'ahead', current, target, change, gap, daysLeft };
@@ -799,9 +810,18 @@ export const SECONDS_PER_QUESTION: Record<SectionId, number> = {
   science: (40 * 60) / 40,
 };
 
-export function pacingFor(section: SectionId, seconds: number, questions: number): Pacing | null {
+/** `allowance` is the extended-time multiplier the student actually sat the
+ *  section under. Judging an accommodated student against the standard clock
+ *  would tell them they are slow when they are not; they get the same 1.5x or
+ *  2x on test day that they get here. */
+export function pacingFor(
+  section: SectionId,
+  seconds: number,
+  questions: number,
+  allowance = 1,
+): Pacing | null {
   if (questions <= 0) return null;
-  const budget = SECONDS_PER_QUESTION[section];
+  const budget = SECONDS_PER_QUESTION[section] * (allowance > 0 ? allowance : 1);
   const actual = seconds / questions;
   const overBy = actual - budget;
   return {
@@ -810,6 +830,28 @@ export function pacingFor(section: SectionId, seconds: number, questions: number
     overBy,
     verdict: overBy <= -2 ? 'comfortable' : overBy <= 4 ? 'tight' : 'over',
   };
+}
+
+/* Where the student should be by now, given how much of the clock has gone.
+ *
+ * The complaint — *"I don't find out I'm too slow until the timer runs out"* —
+ * is only answered by something that speaks up *during* the section, and such
+ * a thing is only tolerable if it is quiet. Three rules:
+ *
+ *   - silent before a fifth of the section has gone, because the first two
+ *     questions are always slow and a warning there is noise;
+ *   - silent until the student is a clear two questions behind, so a normal
+ *     wobble does not trigger it;
+ *   - it names the question they should be on rather than saying "hurry up".
+ *     A pace is actionable; an instruction to panic is not.
+ *
+ * `elapsedFrac` is fraction of the section's clock spent — the clock the
+ * student was actually given, so extended time needs no special case here. */
+export function paceHint(answered: number, questions: number, elapsedFrac: number): string | null {
+  if (questions <= 0 || elapsedFrac < 0.2 || elapsedFrac >= 1) return null;
+  const expected = Math.floor(questions * elapsedFrac);
+  if (answered >= expected - 1) return null;
+  return `Pace: aim to be on question ${Math.min(questions, expected + 1)}`;
 }
 
 /* ---------------------------------------------------------- daily challenge

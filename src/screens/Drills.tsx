@@ -9,7 +9,8 @@ import { QUESTIONS, SECTIONS, SECTION_BY_ID, TOPICS_BY_SECTION, getQuestion } fr
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { fromDrillQuestion } from '@/lib/normalize';
-import { dueForReview, topicStats, XP } from '@/lib/progress';
+import { dailyDone, dueForReview, topicStats, XP } from '@/lib/progress';
+import { dailyBlurb, pickDaily } from '@/lib/daily';
 import { sfx } from '@/lib/sfx';
 import { cx, shuffle, titleCase } from '@/lib/utils';
 import type { Question, SectionId } from '@/types';
@@ -351,6 +352,105 @@ export function ReviewScreen() {
           })
         }
         onFinish={setResults}
+      />
+    </Page>
+  );
+}
+
+/* --------------------------------------------------------------- daily */
+
+/* Five questions, once a day.
+ *
+ * The whole point is that it is small. It has no setup screen, no length
+ * picker and no section chooser: you open it and you are answering. Anything
+ * that stands between the tap and the first question defeats the ninety
+ * seconds this exists to fill. */
+export function DailyScreen() {
+  const navigate = useNavigate();
+  const { progress, answerQuestion, finishDaily } = useStore();
+  const [results, setResults] = useState<AnswerRecord[] | null>(null);
+
+  const done = dailyDone(progress);
+
+  /* Chosen once, from the state as it was on arrival. Not reactive to
+     `progress`: answering question two must not re-pick questions three
+     through five underneath the player. */
+  const [questions] = useState(() => pickDaily(progress).map(fromDrillQuestion));
+  const [blurb] = useState(() => dailyBlurb(progress));
+
+  if (results) {
+    return (
+      <DrillSummary
+        results={results}
+        accent="#ffd23e"
+        onRetry={() => navigate({ name: 'drills' })}
+        onDone={() => navigate({ name: 'home' })}
+      />
+    );
+  }
+
+  /* Already claimed today. The five questions are still there to answer for
+     ordinary XP — refusing to show them would be punishing somebody for
+     wanting to do more work — but the bonus is spent and the screen says so
+     rather than paying twice or pretending. */
+  if (done) {
+    return (
+      <Page>
+        <EmptyState
+          art="campfire"
+          title="Today's challenge is done"
+          detail="Come back tomorrow for five more. In the meantime, a drill or your review queue both count."
+          action={
+            <Button variant="primary" onClick={() => navigate({ name: 'drills' })}>
+              Go to drills
+            </Button>
+          }
+        />
+      </Page>
+    );
+  }
+
+  if (questions.length === 0) {
+    return (
+      <Page>
+        <EmptyState
+          art="scroll"
+          title="Nothing to serve up"
+          detail="The question bank came back empty, which should not happen. Try a drill instead."
+          action={
+            <Button variant="primary" onClick={() => navigate({ name: 'drills' })}>
+              Go to drills
+            </Button>
+          }
+        />
+      </Page>
+    );
+  }
+
+  return (
+    <Page>
+      <QuestionRunner
+        questions={questions}
+        title="Daily challenge"
+        subtitle={blurb}
+        accent="#ffd23e"
+        onQuit={() => navigate({ name: 'home' })}
+        onAnswer={(record) =>
+          answerQuestion({
+            qid: record.question.id,
+            section: record.question.section,
+            topic: record.question.topic,
+            correct: record.correct,
+            ms: record.ms,
+            xp: XP.question(record.question.difficulty, record.correct, 0),
+          })
+        }
+        onFinish={(records) => {
+          /* Paid for finishing, not for scoring well. A bonus that only lands
+             on a good day is a reason to stop opening the app on bad ones. */
+          finishDaily();
+          setResults(records);
+        }}
       />
     </Page>
   );

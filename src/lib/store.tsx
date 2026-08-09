@@ -15,10 +15,12 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import type { Attempt, Progress, SectionId, TestResult } from '@/types';
+import type { Attempt, DiagnosticResult, Progress, SectionId, TestResult } from '@/types';
 import {
   awardXP as awardXPPure,
   checkAchievements,
+  completeDaily as completeDailyPure,
+  dailyDone,
   loadProgress,
   mergeProgress,
   rankFor,
@@ -29,6 +31,7 @@ import {
   XP,
   type Achievement,
   type Rank,
+  type RecordResult,
 } from './progress';
 import { readRaw, removeRaw, STORAGE_KEYS, writeRaw } from './storage';
 import { reportWarn } from './report';
@@ -108,6 +111,10 @@ interface StoreValue {
   markNoteRead: (pageId: string) => void;
   clearZone: (zoneId: string, percent: number) => void;
   finishTest: (result: TestResult) => void;
+  /** Mark today's daily challenge done and pay for it. Idempotent per day. */
+  finishDaily: () => void;
+  /** Save a completed placement test, replacing any earlier one. */
+  finishDiagnostic: (result: DiagnosticResult) => void;
   updateProgress: (fn: (p: Progress) => Progress) => void;
 
   /** Who the loaded progress belongs to. */
@@ -208,7 +215,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   /** Applies a progress change and fires whatever feedback it earned. */
   const applyResult = useCallback(
-    (result: { progress: Progress; xpGained: number; rankedUp: boolean; newRankIndex: number }) => {
+    (result: RecordResult) => {
       const unlocked: Achievement[] = checkAchievements(result.progress);
       const next: Progress = unlocked.length
         ? { ...result.progress, achievements: [...result.progress.achievements, ...unlocked.map((a) => a.id)] }
@@ -220,6 +227,21 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       if (result.rankedUp) {
         setLevelUpRank(result.newRankIndex);
         sfx.fanfare();
+      }
+
+      /* A streak shield is only worth having if the student finds out it was
+         spent — silently absorbing a missed day looks identical to the app
+         having failed to notice, and next time they will assume the streak is
+         safe when it is not. Said plainly, and said before the achievement
+         toasts, because it is about the day they missed rather than today. */
+      if (result.shieldsSpent) {
+        const n = result.shieldsSpent;
+        pushToast({
+          title: n === 1 ? 'Streak freeze used' : `${n} streak freezes used`,
+          detail: `${n === 1 ? 'A missed day' : `${n} missed days`} covered — your ${result.progress.dayStreak}-day streak is intact.`,
+          color: '#3ad6f0',
+          icon: 'shield',
+        });
       }
 
       unlocked.forEach((a, i) => {
@@ -273,6 +295,30 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     },
     [applyResult],
   );
+
+  /* The five answers have already been recorded one at a time through
+     `answerQuestion`, exactly as a drill would; this only pays the bonus and
+     stamps the day. `completeDailyPure` is a no-op on a day already claimed,
+     so a double-submit or a re-mounted summary cannot pay twice. */
+  const finishDaily = useCallback(() => {
+    const p = progressRef.current;
+    if (dailyDone(p)) return;
+    applyResult(completeDailyPure(p));
+    pushToast({
+      title: 'Daily challenge done',
+      detail: `+${XP.dailyChallenge} XP — back tomorrow`,
+      color: '#ffd23e',
+      icon: 'flame',
+    });
+  }, [applyResult, pushToast]);
+
+  /* The individual answers have already been recorded through
+     `answerQuestion`; this stores the placement they add up to. No XP of its
+     own — the questions paid for themselves, and putting a bounty on the
+     diagnostic would give a student a reason to retake it for the money. */
+  const finishDiagnostic = useCallback((result: DiagnosticResult) => {
+    setProgress((prev) => ({ ...prev, diagnostic: result }));
+  }, []);
 
   const updateProgress = useCallback((fn: (p: Progress) => Progress) => {
     setProgress((prev) => fn(prev));
@@ -531,6 +577,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       markNoteRead,
       clearZone,
       finishTest,
+      finishDaily,
+      finishDiagnostic,
       updateProgress,
       identity,
       continueAsGuest,
@@ -545,7 +593,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     [
       progress, authReady, userId, playerName, isGuest, hasStarted, syncing, lastSyncError,
       authRedirect, clearAuthRedirect, toasts, xpPops, levelUpRank, dismissLevelUp,
-      pushToast, dismissToast, answerQuestion, markNoteRead, clearZone, finishTest,
+      pushToast, dismissToast, answerQuestion, markNoteRead, clearZone, finishTest, finishDaily, finishDiagnostic,
       updateProgress, identity, continueAsGuest, claimGuestProgress, releaseGuestClaim, refreshAuth,
       signOutFn, syncNow, resetEverything, deleteAccountFn,
     ],

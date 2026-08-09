@@ -7,8 +7,10 @@
    Three questions, in the order a student actually asks them: how long have I
    got, am I doing enough this week, and what should I do right now. */
 
+import { TOPICS_BY_SECTION } from '@/content';
 import type { Progress, SectionId } from '@/types';
 import { dayKey, dueForReview, weakestTopics } from './progress';
+import { canonicalTopic } from './utils';
 
 /* ------------------------------------------------------------- the calendar */
 
@@ -87,6 +89,36 @@ export interface PlanStep {
 /** Roughly how long a question takes, averaged across sections. */
 const MINUTES_PER_QUESTION = 0.75;
 
+/**
+ * The first topic from the placement test that is still worth drilling.
+ *
+ * `DiagnosticResult.weakTopics` is a list of names with no section attached,
+ * so the section is recovered from the content library. Anything the student
+ * has since answered three times is dropped: once there is real evidence the
+ * diagnostic's one-question verdict has been superseded, and holding on to it
+ * would keep pointing at a topic they have already fixed.
+ */
+export function coldStartTopic(p: Progress): { section: SectionId; topic: string } | null {
+  const weakTopics = p.diagnostic?.weakTopics;
+  if (!weakTopics?.length) return null;
+
+  for (const raw of weakTopics) {
+    const topic = canonicalTopic(raw);
+    const section = topicSection(topic);
+    if (!section) continue;
+    const answered = p.tally.topics[`${section}::${topic}`]?.n ?? 0;
+    if (answered < 3) return { section, topic };
+  }
+  return null;
+}
+
+function topicSection(topic: string): SectionId | null {
+  for (const [section, topics] of Object.entries(TOPICS_BY_SECTION)) {
+    if (topics.some((t) => canonicalTopic(t) === topic)) return section as SectionId;
+  }
+  return null;
+}
+
 export interface TodaysPlan {
   steps: PlanStep[];
   minutes: number;
@@ -149,6 +181,24 @@ export function todaysPlan(
       minutes: 8,
       to: { name: 'drill', section: weak.section, topic: weak.topic },
     });
+  } else {
+    /* Cold start.
+     *
+     * `weakestTopics` needs three attempts in a topic before it will name it,
+     * which is correct — two answers is a coin flip — but it means the plan is
+     * silent for the first week, which is exactly when a student most needs to
+     * be told where to go. The diagnostic exists to fill that gap and its
+     * `weakTopics` list is deliberately strict enough to trust here. */
+    const cold = coldStartTopic(p);
+    if (cold) {
+      steps.push({
+        kind: 'drill',
+        title: `Drill ${cold.topic}`,
+        detail: 'From your placement test — you did not get one of these right yet.',
+        minutes: 8,
+        to: { name: 'drill', section: cold.section, topic: cold.topic },
+      });
+    }
   }
 
   const { goal } = weekProgress(p, today);

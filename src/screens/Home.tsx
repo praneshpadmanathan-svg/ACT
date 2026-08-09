@@ -8,7 +8,17 @@ import { useState } from 'react';
 import { LIBRARY_STATS, PATH_BY_ID, SECTIONS } from '@/content';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
-import { dueForReview, estimatedComposite, rankProgress, weakestTopics } from '@/lib/progress';
+import {
+  DAILY_SIZE,
+  dailyDone,
+  dueForReview,
+  estimatedComposite,
+  rankProgress,
+  trackStatus,
+  weakestTopics,
+  type TrackVerdict,
+} from '@/lib/progress';
+import { dailyBlurb } from '@/lib/daily';
 import { daysUntilTest, testUrgency, todaysPlan, weekProgress } from '@/lib/plan';
 import { readRaw, writeRaw } from '@/lib/storage';
 import { cloudEnabled } from '@/lib/supabase';
@@ -179,6 +189,15 @@ export function Home() {
           </div>
         )}
 
+        {/* ------------------------------------------------------- placement */}
+        <PlacementPrompt />
+
+        {/* ------------------------------------------------------------ daily */}
+        <DailyCard />
+
+        {/* ---------------------------------------------------------- on track */}
+        <TrackCard />
+
         {/* ------------------------------------------------------------ today */}
         <TodayPanel currentZone={currentZone} />
 
@@ -203,7 +222,18 @@ export function Home() {
             <dl className="mt-6 grid grid-cols-3 gap-3 border-t border-leather-700 pt-5">
               <Stat label="Landmarks" value={`${cleared}/${total}`} />
               <Stat label="Est. score" value={estimate !== null ? String(estimate) : '—'} />
-              <Stat label="Day streak" value={String(progress.dayStreak)} />
+              {/* The shields were granted, spent and merged across devices
+                  without ever being mentioned on screen. A safety net nobody
+                  knows about does not make anyone braver. */}
+              <Stat
+                label="Day streak"
+                value={String(progress.dayStreak)}
+                note={
+                  progress.streakShields > 0
+                    ? `${progress.streakShields} freeze${progress.streakShields === 1 ? '' : 's'} in hand`
+                    : undefined
+                }
+              />
             </dl>
 
             <a href={hrefFor({ name: 'stats' })} onClick={() => sfx.select()}>
@@ -275,6 +305,188 @@ export function Home() {
         </div>
       </Page>
     </div>
+  );
+}
+
+/* Offer the placement test, once, and take no for an answer.
+ *
+ * It appears only while the app genuinely cannot see the student yet — no
+ * placement taken and fewer than three answers in any topic, which is the
+ * threshold `weakestTopics` uses before it will name one. The moment there is
+ * real evidence the prompt is pointless, so it leaves rather than sitting
+ * there as a chore. Dismissal is remembered in the same browser-local way as
+ * the save-progress nudge, for the same reason. */
+const PLACEMENT_PROMPT_KEY = 'act-command:placement-prompt-dismissed';
+
+function PlacementPrompt() {
+  const { progress } = useStore();
+  const navigate = useNavigate();
+  const [hidden, setHidden] = useState(() => readRaw(PLACEMENT_PROMPT_KEY) === '1');
+
+  const hasEvidence = Object.values(progress.tally.topics).some((t) => t.n >= 3);
+  if (hidden || progress.diagnostic || hasEvidence) return null;
+
+  return (
+    <div className="panel-lit mb-6 flex flex-wrap items-center gap-4 p-5 sm:p-6">
+      <span className="min-w-0 flex-1">
+        <span className="eyebrow block">✦ Where do you stand?</span>
+        <span className="mt-1 block font-display text-[15px] font-semibold text-gold-light">
+          Take the placement test
+        </span>
+        <span className="mt-0.5 block font-read text-[13.5px] leading-relaxed text-parchment-dim">
+          A short spread across all four sections, untimed. It tells the plan where to point
+          you instead of it guessing for a fortnight.
+        </span>
+      </span>
+      <span className="flex flex-none gap-2">
+        <Button
+          variant="primary"
+          onClick={() => {
+            sfx.select();
+            navigate({ name: 'diagnostic' });
+          }}
+        >
+          Start
+        </Button>
+        <Button
+          onClick={() => {
+            sfx.select();
+            writeRaw(PLACEMENT_PROMPT_KEY, '1');
+            setHidden(true);
+          }}
+        >
+          Not now
+        </Button>
+      </span>
+    </div>
+  );
+}
+
+/* The ninety-second door.
+ *
+ * *"There is nothing to do in 90 seconds."* Every other entry point on this
+ * screen is a session — a lesson, a ten-question drill, a timed test. This one
+ * is five questions and a streak, and it sits above them all because on a bad
+ * day it is the only thing a student will actually tap. */
+function DailyCard() {
+  const { progress } = useStore();
+  const navigate = useNavigate();
+  const done = dailyDone(progress);
+
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        sfx.select();
+        navigate({ name: 'daily' });
+      }}
+      className={`mb-6 flex w-full items-center gap-4 rounded-lg border-2 p-5 text-left transition-all
+                  hover:-translate-y-0.5 sm:p-6 ${
+                    done
+                      ? 'border-leather-700 bg-leather-900 hover:border-leather-600'
+                      : 'panel-lit hover:border-gold-deep'
+                  }`}
+    >
+      <span
+        className="num flex-none rounded-lg border-2 px-4 py-2 text-[26px] leading-none"
+        style={{
+          color: done ? '#7cc98a' : '#d4a017',
+          borderColor: done ? '#3f6b4a' : '#8a6a1c',
+        }}
+      >
+        {done ? '✓' : DAILY_SIZE}
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="eyebrow block">{done ? '✓ Daily challenge done' : '☀ Daily challenge'}</span>
+        <span className="mt-1 block font-display text-[15px] font-semibold text-gold-light">
+          {done
+            ? `Back tomorrow — ${progress.dayStreak} day streak`
+            : `${DAILY_SIZE} questions, about ninety seconds`}
+        </span>
+        <span className="mt-0.5 block font-read text-[13.5px] text-parchment-dim">
+          {done ? 'Anything else you do today is ahead of schedule.' : dailyBlurb(progress)}
+        </span>
+      </span>
+      {!done && <span className="flex-none font-display text-[13px] font-semibold text-gold">Start ▸</span>}
+    </button>
+  );
+}
+
+/* Am I on track for the score I said I wanted?
+ *
+ * Onboarding asks for a target on its very first screen and, until now, the
+ * number appeared exactly once afterwards — as a row of grey text in "All
+ * time" — and was never compared against anything. `trackStatus` has done the
+ * arithmetic for a while; this is the first thing to render it.
+ *
+ * The card is deliberately absent rather than empty when the estimate is not
+ * yet earned (fewer than eight attempts in two sections). A verdict of
+ * "unknown" printed in a box is worse than no box: it teaches a student that
+ * this part of the screen has nothing to say. */
+
+const TRACK_FACE: Record<
+  Exclude<TrackVerdict, 'unknown'>,
+  { eyebrow: string; color: string; border: string }
+> = {
+  ahead: { eyebrow: '✦ Ahead of your target', color: '#7cc98a', border: 'border-[#3f6b4a]' },
+  onTrack: { eyebrow: '⚑ On track', color: '#d4a017', border: 'border-gold-deep' },
+  behind: { eyebrow: '⚠ Behind your target', color: '#dd8571', border: 'border-[#7a4038]' },
+};
+
+function TrackCard() {
+  const { progress } = useStore();
+  const status = trackStatus(progress);
+
+  if (status.verdict === 'unknown' || status.current === null) return null;
+  const face = TRACK_FACE[status.verdict];
+
+  /* Every sentence below is a statement about what has happened, never a
+     prediction about test day. The estimate is drill accuracy run through a
+     hand-fit curve, and dressing that up as a forecast is the single most
+     dishonest thing a study app can do. */
+  const line = (() => {
+    if (status.verdict === 'ahead') {
+      return `Your estimate is at or above the ${status.target} you set. Hold it there — a target met in April is not a target met in June.`;
+    }
+    const gap = `${status.gap} point${status.gap === 1 ? '' : 's'} to go`;
+    if (status.daysLeft === null) {
+      return `${gap}. Set a test date in your profile and this can tell you whether the time adds up.`;
+    }
+    if (status.verdict === 'onTrack') {
+      return `${gap}, with ${status.daysLeft} day${status.daysLeft === 1 ? '' : 's'} left. At a steady pace that adds up.`;
+    }
+    return `${gap}, with ${status.daysLeft} day${status.daysLeft === 1 ? '' : 's'} left. That is a stretch at a steady pace — more days on than off is what closes it.`;
+  })();
+
+  return (
+    <section className={`panel mb-6 border-2 ${face.border} p-6 sm:p-7`}>
+      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+        <span className="eyebrow" style={{ color: face.color }}>
+          {face.eyebrow}
+        </span>
+        {status.change !== null && status.change !== 0 && (
+          <span className="ml-auto font-display text-[13px] font-semibold text-parchment-dim">
+            {status.change > 0 ? '▲' : '▼'} {Math.abs(status.change)} point
+            {Math.abs(status.change) === 1 ? '' : 's'} in the last 60 days
+          </span>
+        )}
+      </div>
+
+      <div className="mt-3 flex items-end gap-3">
+        <span className="num text-[38px] leading-none" style={{ color: face.color }}>
+          {status.current}
+        </span>
+        <span className="pb-1 font-read text-[14px] text-ink-faint">
+          estimated now · {status.target} target
+        </span>
+      </div>
+
+      <p className="mt-3 font-read text-[14px] leading-relaxed text-parchment-dim">{line}</p>
+      <p className="mt-2 font-read text-[12.5px] text-ink-faint">
+        Estimated from your practice accuracy, not a scored test. Take a full test for the
+        closer number.
+      </p>
+    </section>
   );
 }
 
@@ -384,11 +596,12 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
+function Stat({ label, value, note }: { label: string; value: string; note?: string }) {
   return (
     <div>
       <dt className="label-sm">{label}</dt>
       <dd className="num mt-1 text-[22px] text-parchment">{value}</dd>
+      {note && <dd className="mt-0.5 font-read text-[11.5px] leading-tight text-cliffs">{note}</dd>}
     </div>
   );
 }

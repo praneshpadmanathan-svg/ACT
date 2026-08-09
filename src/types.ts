@@ -223,6 +223,13 @@ export interface TestResult {
   raw: Partial<Record<SectionId, [number, number]>>;
   durationSec: number;
   sections: SectionId[];
+  /** Seconds spent in each section, for the pacing breakdown. Optional
+   *  because tests taken before pacing existed recorded only a total, and a
+   *  four-section total cannot be split back apart. */
+  sectionSec?: Partial<Record<SectionId, number>>;
+  /** The extended-time multiplier this test ran at, so pacing is judged
+   *  against the clock the student actually had rather than a stranger's. */
+  allowance?: number;
 }
 
 export interface OnboardingProfile {

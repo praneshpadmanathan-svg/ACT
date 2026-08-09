@@ -17,7 +17,8 @@ import { MapScreen, PathScreen } from '@/screens/MapScreens';
 import { ZoneScreen } from '@/screens/Zone';
 import { BossScreen } from '@/screens/Boss';
 import { NoteReader, NotesScreen } from '@/screens/Notes';
-import { DrillRunner, DrillsScreen, ReviewScreen } from '@/screens/Drills';
+import { DailyScreen, DrillRunner, DrillsScreen, ReviewScreen } from '@/screens/Drills';
+import { DiagnosticScreen } from '@/screens/Diagnostic';
 import { ReportScreen, TestRunner, TestsScreen } from '@/screens/Tests';
 import { ProfileScreen, StatsScreen } from '@/screens/Stats';
 import { Vignette } from '@/components/Vignette';
@@ -217,6 +218,10 @@ function renderRoute(route: ReturnType<typeof useRoute>) {
       return <DrillRunner section={route.section} topic={route.topic} />;
     case 'review':
       return <ReviewScreen />;
+    case 'daily':
+      return <DailyScreen />;
+    case 'diagnostic':
+      return <DiagnosticScreen />;
     case 'tests':
       return <TestsScreen />;
     case 'test':

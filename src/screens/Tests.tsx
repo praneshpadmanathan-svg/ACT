@@ -11,7 +11,15 @@ import { hrefFor, useConfirmExit, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { usePrefs } from '@/lib/prefs';
 import { fromDrillQuestion } from '@/lib/normalize';
-import { compositeOf, scaleScore } from '@/lib/progress';
+import {
+  compositeOf,
+  paceHint,
+  pacingFor,
+  percentileFor,
+  percentileInWords,
+  scaleScore,
+  type Pacing,
+} from '@/lib/progress';
 import { sfx } from '@/lib/sfx';
 import { cx, formatClock, formatRelative, shuffle, titleCase } from '@/lib/utils';
 import type { SectionId, TestResult } from '@/types';
@@ -105,6 +113,26 @@ export function TestsScreen() {
         </div>
       </div>
 
+      {/* The placement test's permanent home. The dashboard offers it once and
+          then gets out of the way, so without this it would be reachable only
+          by typing the URL — which is not a feature, it is a bug with a
+          keyboard shortcut. */}
+      <div className="mb-6 flex flex-wrap items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-4">
+        <span className="min-w-0 flex-1">
+          <span className="font-display text-[14.5px] font-semibold text-parchment">
+            Placement test
+          </span>
+          <span className="mt-0.5 block text-[13px] leading-relaxed text-ink-faint">
+            {progress.diagnostic
+              ? `Taken ${formatRelative(progress.diagnostic.at)} — ${progress.diagnostic.asked} questions. Not a score; it just tells the plan where to point you.`
+              : 'Untimed, all four sections, no score at the end — it just tells the plan where to point you.'}
+          </span>
+        </span>
+        <Button variant="ghost" onClick={() => navigate({ name: 'diagnostic' })}>
+          {progress.diagnostic ? 'Take it again' : 'Take it'}
+        </Button>
+      </div>
+
       <h2 className="heading mb-4 text-[13px] text-parchment">Your results</h2>
       {history.length === 0 ? (
         <EmptyState
@@ -179,6 +207,18 @@ export function TestRunner({ config }: { config: string }) {
   const [answersBySection, setAnswersBySection] = useState<Partial<Record<SectionId, AnswerRecord[]>>>({});
   const [result, setResult] = useState<TestResult | null>(null);
   const startedAtRef = useRef<number>(Date.now());
+
+  /* Per-section wall clock, for the pacing breakdown on the report.
+     Refs rather than state: nothing renders from these until the test is
+     over, so putting them in state would re-render at every section boundary
+     to no visible effect. The break between sections is deliberately not
+     counted — it is not time spent answering. */
+  const sectionStartRef = useRef<number>(Date.now());
+  const sectionSecRef = useRef<Partial<Record<SectionId, number>>>({});
+
+  /* This one *is* state, because the pacing checkpoint renders from it. Reset
+     at every section boundary alongside `sectionStartRef`. */
+  const [answeredCount, setAnsweredCount] = useState(0);
 
   // Questions are drawn once, up front, so a re-render never reshuffles a
   // test that is already in progress.
@@ -263,6 +303,8 @@ export function TestRunner({ config }: { config: string }) {
               className="mt-7 w-full"
               onClick={() => {
                 startedAtRef.current = Date.now();
+                sectionStartRef.current = Date.now();
+                setAnsweredCount(0);
                 sfx.warn();
                 setStage({ kind: 'section', index: 0 });
               }}
@@ -297,7 +339,11 @@ export function TestRunner({ config }: { config: string }) {
               variant="primary"
               size="lg"
               className="mt-7 w-full"
-              onClick={() => setStage({ kind: 'section', index: stage.nextIndex })}
+              onClick={() => {
+                sectionStartRef.current = Date.now();
+                setAnsweredCount(0);
+                setStage({ kind: 'section', index: stage.nextIndex });
+              }}
             >
               Continue ▶
             </Button>
@@ -325,6 +371,7 @@ export function TestRunner({ config }: { config: string }) {
   const completeSection = (records: AnswerRecord[]) => {
     const nextAnswers = { ...answersBySection, [sectionId]: records };
     setAnswersBySection(nextAnswers);
+    sectionSecRef.current[sectionId] = Math.round((Date.now() - sectionStartRef.current) / 1000);
 
     const isLastSection = stageIndex === sectionIds.length - 1;
     if (!isLastSection) {
@@ -351,6 +398,8 @@ export function TestRunner({ config }: { config: string }) {
       raw,
       durationSec: Math.round((Date.now() - startedAtRef.current) / 1000),
       sections: sectionIds,
+      sectionSec: { ...sectionSecRef.current },
+      allowance,
     };
 
     finishTest(testResult);
@@ -367,6 +416,8 @@ export function TestRunner({ config }: { config: string }) {
         key={`timer-${sectionId}`}
         minutes={withAllowance(plan.minutes, allowance)}
         color={SECTION_BY_ID[sectionId].color}
+        answered={answeredCount}
+        totalQuestions={questions.length}
         onExpire={() => {
           sfx.warn();
           completeSection(answersBySection[sectionId] ?? []);
@@ -381,7 +432,9 @@ export function TestRunner({ config }: { config: string }) {
         deferFeedback
         onAnswer={() => {
           /* Test answers are scored at the end, not recorded as drill
-             attempts — otherwise a test would skew topic accuracy twice. */
+             attempts — otherwise a test would skew topic accuracy twice. The
+             count is all the pacing checkpoint needs. */
+          setAnsweredCount((n) => n + 1);
         }}
         onFinish={completeSection}
       />
@@ -395,10 +448,15 @@ function SectionTimer({
   minutes,
   color,
   onExpire,
+  answered,
+  totalQuestions,
 }: {
   minutes: number;
   color: string;
   onExpire: () => void;
+  /** Questions answered so far, for the mid-section pacing checkpoint. */
+  answered: number;
+  totalQuestions: number;
 }) {
   // Deadline, not a countdown — a suspended tab cannot gain time.
   const deadlineRef = useRef(Date.now() + minutes * 60_000);
@@ -428,29 +486,57 @@ function SectionTimer({
   const urgent = remaining <= 300;
   const critical = remaining <= 60;
 
+  const total = minutes * 60;
+  const hint = paceHint(answered, total > 0 ? totalQuestions : 0, (total - remaining) / total);
+
   return (
     <div
       className={cx(
-        'sticky top-16 z-40 mb-4 flex items-center gap-4 rounded-lg border-2 px-5 py-3 backdrop-blur',
+        'sticky top-16 z-40 mb-4 rounded-lg border-2 px-5 py-3 backdrop-blur',
         critical ? 'border-blood bg-blood/15' : urgent ? 'border-gold bg-leather-850/95' : 'border-leather-700 bg-leather-850/95',
       )}
       role="timer"
       aria-live="off"
     >
-      <span className="font-script text-[10px] uppercase tracking-[0.16em] text-ink-faint">
-        Time remaining
-      </span>
-      <span
-        className={cx('num ml-auto text-[26px] leading-none', critical && 'animate-shimmer')}
-        style={{ color: critical ? '#ff5d78' : urgent ? '#ffd23e' : color }}
-      >
-        {formatClock(remaining)}
-      </span>
+      <div className="flex items-center gap-4">
+        <span className="font-script text-[10px] uppercase tracking-[0.16em] text-ink-faint">
+          Time remaining
+        </span>
+        <span
+          className={cx('num ml-auto text-[26px] leading-none', critical && 'animate-shimmer')}
+          style={{ color: critical ? '#ff5d78' : urgent ? '#ffd23e' : color }}
+        >
+          {formatClock(remaining)}
+        </span>
+      </div>
+      {/* Polite, not assertive: this must never cut across the reveal a
+          screen reader is already announcing. */}
+      <div aria-live="polite" className="sr-only">{hint ?? ''}</div>
+      {hint && (
+        <div aria-hidden className="mt-1.5 border-t border-leather-700/70 pt-1.5 text-right text-[12px] text-gold/80">
+          {hint}
+        </div>
+      )}
     </div>
   );
 }
 
 /* --------------------------------------------------------------- report */
+
+const PACE_TINT: Record<Pacing['verdict'], string> = {
+  comfortable: '#5ee6a8',
+  tight: '#ffd23e',
+  over: '#ff8298',
+};
+
+/* Deliberately phrased as time, not as a grade. "Over" tells a student they
+   failed; "12s over per question" tells them what to change. */
+function paceLabel(p: Pacing): string {
+  const d = Math.round(Math.abs(p.overBy));
+  if (p.verdict === 'comfortable') return `${d}s per question in hand`;
+  if (p.verdict === 'tight') return d === 0 ? 'right on the budget' : `${d}s ${p.overBy > 0 ? 'over' : 'under'}, about right`;
+  return `${d}s over per question`;
+}
 
 export function ScoreReport({
   result,
@@ -483,6 +569,32 @@ export function ScoreReport({
   const target = progress.targetScore;
   const gap = target - result.composite;
 
+  /* Percentile, on a full test only.
+   *
+   * `progress.ts` sets the rule and this is the code that has to keep it: a
+   * composite drawn from one section is not a composite, and hanging a
+   * national rank off twenty English questions would be the most confident
+   * lie the app tells. Four sections or nothing. */
+  const percentile = result.sections.length === 4 ? percentileFor(result.composite) : null;
+
+  /* Pacing, per section, against the real ACT clock rather than this app's
+   * shortened one — see SECONDS_PER_QUESTION. Only tests recorded after
+   * per-section timing existed have `sectionSec`; older ones have a single
+   * total that cannot be split back apart, so they simply show nothing. */
+  const pacing = useMemo(() => {
+    const secs = result.sectionSec;
+    if (!secs) return [];
+    const rows: { id: SectionId; seconds: number; questions: number; p: Pacing }[] = [];
+    for (const id of result.sections) {
+      const seconds = secs[id];
+      const questions = result.raw[id]?.[1] ?? 0;
+      if (typeof seconds !== 'number' || questions <= 0) continue;
+      const p = pacingFor(id, seconds, questions, result.allowance ?? 1);
+      if (p) rows.push({ id, seconds, questions, p });
+    }
+    return rows;
+  }, [result]);
+
   if (showMissed && missed.length > 0) {
     return (
       <DrillSummary
@@ -508,6 +620,16 @@ export function ScoreReport({
             Composite
           </p>
 
+          {percentile !== null && (
+            <p className="mx-auto mt-3 max-w-sm text-[13px] leading-relaxed text-parchment-dim">
+              That is <span className="text-gold">about the {percentileInWords(percentile)}</span>
+              <span className="text-ink-faint"> — roughly {percentile} out of 100 test-takers score at or below {result.composite}.</span>
+              <span className="mt-1 block text-[11px] text-ink-faint">
+                Approximate, from ACT's published national ranks. A practice test is not the real thing.
+              </span>
+            </p>
+          )}
+
           <p className="mx-auto mt-5 max-w-md text-[15px] leading-relaxed text-parchment-dim">
             {gap <= 0
               ? `You are at or above your ${target} target. Keep the streak going and lock it in.`
@@ -532,6 +654,38 @@ export function ScoreReport({
             })}
           </div>
         </div>
+
+        {pacing.length > 0 && (
+          <div className="mt-6">
+            <h2 className="heading mb-1.5 text-[13px] text-parchment">How your clock ran</h2>
+            <p className="mb-4 text-[12px] leading-relaxed text-ink-faint">
+              Seconds per question, against the real ACT&rsquo;s budget for that section
+              {(result.allowance ?? 1) > 1 && ` at ${result.allowance === 1.5 ? 'time and a half' : 'double time'}`}.
+              Sections here are shorter than the real thing, so the pace is what matters, not the total.
+            </p>
+            <div className="space-y-2.5">
+              {pacing.map(({ id, p }) => {
+                const meta = SECTION_BY_ID[id];
+                const tint = PACE_TINT[p.verdict];
+                return (
+                  <div
+                    key={id}
+                    className="flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-3.5"
+                  >
+                    <span className="w-24 flex-none font-sans text-[14px] font-semibold" style={{ color: meta.color }}>
+                      {meta.name}
+                    </span>
+                    <span className="num flex-none text-[17px] text-parchment">{Math.round(p.actual)}s</span>
+                    <span className="flex-none text-[12px] text-ink-faint">of {Math.round(p.budget)}s</span>
+                    <span className="ml-auto flex-none text-right text-[13px] font-semibold" style={{ color: tint }}>
+                      {paceLabel(p)}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         {byTopic.length > 0 && (
           <div className="mt-6">
