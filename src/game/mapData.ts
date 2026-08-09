@@ -26,6 +26,11 @@ export interface RegionMeta {
   pins: [number, number][];
 }
 
+/** Intrinsic size of `world-map.webp`. Exported because any layer drawing in
+ *  percentage space needs the aspect ratio to keep round things round. */
+export const MAP_W = 768;
+export const MAP_H = 1376;
+
 export const SUMMIT_AT: [number, number] = [47, 90.5];
 
 /* Placements were checked by compositing the pins onto the illustration and
@@ -112,6 +117,25 @@ export const GUARDIAN_AT: Record<SectionId, [number, number]> = {
   reading: [82, 36],
   math: [93, 50],
   science: [84, 71],
+};
+
+/* The vertical band of the map each region occupies, in map percent, read off
+   the same terrain crops the landmark pins were placed from.
+
+   The bands deliberately overrun their region and overlap their neighbours by
+   roughly 8%. Every layer that uses them feathers its edges to nothing, so
+   butting them together exactly would leave a transparent seam along each
+   boundary — a visible horizontal line across the map, which is the opposite
+   of weather. Overlapping means the feathers cross instead.
+
+   This lived inside `DiscoveryLayer` as the mist geometry until the plague
+   layer needed the same numbers. Two copies of "where is the desert" is the
+   kind of thing that stays in sync right up until someone nudges one. */
+export const REGION_BANDS: Record<SectionId, { top: number; height: number }> = {
+  english: { top: -5, height: 32 },
+  reading: { top: 19, height: 28 },
+  math: { top: 39, height: 26 },
+  science: { top: 55, height: 32 },
 };
 
 /** Decorative drifting clouds: [topPercent, widthPx, opacity, durationSec]. */

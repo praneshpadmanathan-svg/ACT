@@ -17,7 +17,7 @@ import { useNavigate } from '@/lib/router';
 import { sfx } from '@/lib/sfx';
 import { clamp, cx } from '@/lib/utils';
 import type { SectionId, Zone } from '@/types';
-import { GUARDIAN_AT, REGIONS, REGION_ORDER, SUMMIT_AT } from './mapData';
+import { GUARDIAN_AT, MAP_H, MAP_W, REGIONS, REGION_ORDER, SUMMIT_AT } from './mapData';
 import { bossFor } from './bosses';
 import { BossArt } from './BossArt';
 import { activeQuest } from './story';
@@ -26,11 +26,10 @@ import { DiscoveryLayer } from './DiscoveryLayer';
 import { MapJournal } from './MapJournal';
 import { m, PIN_SPRING, SPRING, useReducedMotion } from '@/lib/motion';
 import { MapFx } from './MapFx';
+import { PlagueLayer, TrailLayer } from './MapLayers';
 import { ClearedSigil, CrownSigil, LockSigil, MasterSigil } from './Sigils';
 import { Art } from '@/components/Art';
 
-const MAP_W = 768;
-const MAP_H = 1376;
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 3.4;
 
@@ -524,7 +523,17 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
           className="absolute inset-0 h-full w-full select-none"
         />
 
+        {/* The plague sits directly on the painting and nothing else, because
+            it works by blending with what is beneath it — put the road or the
+            mist underneath and it would drain those too. */}
+        <PlagueLayer cleared={clearedByRegion} />
+
         <MapFx />
+
+        {/* The road goes over the weather but under the pins: you should be
+            able to see where it leads through thin mist, and a pin should
+            never be behind it. */}
+        <TrailLayer cleared={clearedByRegion} />
 
         {/* Things to find, and cloud over ground not yet walked. */}
         <DiscoveryLayer clearedByRegion={clearedByRegion} />
@@ -749,10 +758,28 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
         Adventure map — {cleared} of {total} landmarks cleared
       </h1>
 
-      {/* vignette so the controls always have something to sit against */}
+      {/* Space for the chrome (finding 27: "nothing in the map's composition
+          accounts for the HUD — overlay chrome sits on top of painted detail
+          rather than in space left for it").
+
+          The composition cannot be changed; the painting is the painting. So
+          the space is made here instead, and the shape of it matters. A radial
+          vignette darkens the *edges* evenly, which is not where the HUD is —
+          the HUD is in two horizontal bars, and the middle of the left edge,
+          which the radial darkened hardest, holds nothing at all.
+
+          Two linear scrims along the top and bottom instead, deepest where the
+          buttons are and gone by a third of the way in, with the radial kept
+          underneath at half strength for the corners. Camp, the quest card,
+          the zoom controls and the legend all now sit on their own ground. */}
       <div
         className="pointer-events-none absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse at 50% 45%, transparent 52%, rgba(12,9,6,.62) 100%)' }}
+        style={{
+          background:
+            'linear-gradient(to bottom, rgba(12,9,6,.72) 0%, rgba(12,9,6,.34) 12%, transparent 30%),' +
+            'linear-gradient(to top, rgba(12,9,6,.76) 0%, rgba(12,9,6,.36) 13%, transparent 32%),' +
+            'radial-gradient(ellipse at 50% 45%, transparent 58%, rgba(12,9,6,.42) 100%)',
+        }}
         aria-hidden="true"
       />
 

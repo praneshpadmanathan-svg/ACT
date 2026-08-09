@@ -21,22 +21,9 @@ import { cx } from '@/lib/utils';
 import { m, SPRING } from '@/lib/motion';
 import type { SectionId } from '@/types';
 import { DISCOVERIES, type Discovery } from './discoveries';
-import { REGIONS, REGION_ORDER } from './mapData';
-
-/* Vertical band each region's mist covers, in map percent, from the same
-   terrain crops the landmark pins were placed from.
-
-   The bands deliberately overrun their region and overlap their neighbours by
-   roughly 8%. Each band's edges are feathered to nothing in CSS, so butting
-   them together exactly would leave a transparent seam along every boundary —
-   a visible horizontal line across the map, which is the opposite of weather.
-   Overlapping means the feathers cross instead. */
-const MIST_BANDS: Record<SectionId, { top: number; height: number }> = {
-  english: { top: -5, height: 32 },
-  reading: { top: 19, height: 28 },
-  math: { top: 39, height: 26 },
-  science: { top: 55, height: 32 },
-};
+/* The mist bands are the region bands — see `mapData.ts` for why they overlap
+   their neighbours rather than butting together. */
+import { REGIONS, REGION_ORDER, REGION_BANDS as MIST_BANDS } from './mapData';
 
 /* Where the storm light sits inside a band, as a fraction of its height, and
    how often it fires. The long, uneven durations keep the four regions from
