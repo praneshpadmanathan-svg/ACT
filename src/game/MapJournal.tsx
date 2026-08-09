@@ -96,7 +96,12 @@ export function MapJournal({ onClose }: { onClose: () => void }) {
 
         <div className="mt-4 min-h-0 flex-1 overflow-y-auto pr-1">
           {tab === 'found' ? (
-            <m.ul className="space-y-2.5" variants={staggerList} initial="initial" animate="animate">
+            <m.ul
+              className="space-y-2.5"
+              variants={staggerList}
+              initial="initial"
+              animate="animate"
+            >
               {REGION_ORDER.concat('summit' as SectionId).map((region) => {
                 const items = DISCOVERIES.filter((d) => d.region === region);
                 if (!items.length) return null;
@@ -173,7 +178,9 @@ export function MapJournal({ onClose }: { onClose: () => void }) {
                 detail="Clear the landmark before it on the same road to open this one."
               />
               <LegendRow
-                mark={<span className="guardian !static !h-9 !w-9 !translate-x-0 !translate-y-0 guardian-awake" />}
+                mark={
+                  <span className="guardian !static !h-9 !w-9 !translate-x-0 !translate-y-0 guardian-awake" />
+                }
                 title="Guardian"
                 detail="One of the four Seals. Wakes when every landmark in its region is cleared. Losing to it costs nothing."
               />
@@ -195,7 +202,8 @@ export function MapJournal({ onClose }: { onClose: () => void }) {
                 <div className="label-sm mb-1.5">Moving around</div>
                 <p className="font-read text-[13.5px] leading-relaxed text-parchment-dim">
                   Drag to pan and scroll or pinch to zoom. By keyboard: arrow keys pan,
-                  <b className="text-parchment"> + </b> and <b className="text-parchment">−</b> zoom,
+                  <b className="text-parchment"> + </b> and <b className="text-parchment">−</b>{' '}
+                  zoom,
                   <b className="text-parchment"> 0 </b> recentres on your traveller, and Tab steps
                   between landmarks.
                 </p>

@@ -113,7 +113,7 @@ export const DISCOVERIES: Discovery[] = [
     name: 'The Lighthouse Lamp',
     at: [33, 63],
     region: 'science',
-    lore: 'The lamp has not gone out in living memory. It is not lit by anyone — the keeper\'s job is to record it, not to feed it. Her logbook goes back nine generations and every entry says the same three words: still burning, steady.',
+    lore: "The lamp has not gone out in living memory. It is not lit by anyone — the keeper's job is to record it, not to feed it. Her logbook goes back nine generations and every entry says the same three words: still burning, steady.",
     xp: 50,
   },
   {

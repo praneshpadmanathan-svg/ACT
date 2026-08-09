@@ -94,9 +94,8 @@ const FEATURES: { id: string; glyph: GlyphName; title: ReactNode; detail: ReactN
     title: 'Four regions to cross',
     detail: (
       <>
-        English, Reading, Math and Science, each a road of{' '}
-        <Hl tone="cream">skill landmarks</Hl> across a painted world.{' '}
-        <Hl tone="gold">Nothing unlocks by accident.</Hl>
+        English, Reading, Math and Science, each a road of <Hl tone="cream">skill landmarks</Hl>{' '}
+        across a painted world. <Hl tone="gold">Nothing unlocks by accident.</Hl>
       </>
     ),
   },
@@ -213,7 +212,10 @@ export function Landing() {
       <header className="absolute inset-x-0 top-0 z-30">
         <div className="shell flex h-16 items-center">
           <span className="flex items-center gap-2 font-display text-[16px] font-semibold tracking-wide text-parchment">
-            <span className="text-gold" aria-hidden="true">✦</span> ACT Command
+            <span className="text-gold" aria-hidden="true">
+              ✦
+            </span>{' '}
+            ACT Command
           </span>
           <div className="ml-auto flex items-center gap-2">
             <a
@@ -315,8 +317,8 @@ export function Landing() {
               d: (
                 <>
                   The ACT is a US university admissions test: four sections, each scored{' '}
-                  <Hl tone="cream">1 to 36</Hl>. Your composite is the average of the four —
-                  which is the 36 the headline means.
+                  <Hl tone="cream">1 to 36</Hl>. Your composite is the average of the four — which
+                  is the 36 the headline means.
                 </>
               ),
             },
@@ -324,8 +326,8 @@ export function Landing() {
               t: 'Who it is for',
               d: (
                 <>
-                  Students <Hl tone="cream">13 and over</Hl> sitting the ACT. Most are 15 to 17
-                  and somewhere between three months and a week out from test day.
+                  Students <Hl tone="cream">13 and over</Hl> sitting the ACT. Most are 15 to 17 and
+                  somewhere between three months and a week out from test day.
                 </>
               ),
             },
@@ -334,8 +336,8 @@ export function Landing() {
               d: (
                 <>
                   <Hl tone="cream">Fifteen to twenty minutes a day.</Hl> No money, no account
-                  needed, no app to install. Two to three months at a steady pace covers the
-                  whole map.
+                  needed, no app to install. Two to three months at a steady pace covers the whole
+                  map.
                 </>
               ),
             },
@@ -438,8 +440,7 @@ export function Landing() {
           <SectionIntro
             title={
               <>
-                Everything you need to hit{' '}
-                <span className="text-gold-bright">your target</span>
+                Everything you need to hit <span className="text-gold-bright">your target</span>
               </>
             }
             lead={
@@ -483,8 +484,8 @@ export function Landing() {
           }
           lead={
             <>
-              Three moves, repeated <Hl tone="cream">{LIBRARY_STATS.zones} times</Hl>, all the way to
-              the Summit.
+              Three moves, repeated <Hl tone="cream">{LIBRARY_STATS.zones} times</Hl>, all the way
+              to the Summit.
             </>
           }
         />

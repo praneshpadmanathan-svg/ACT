@@ -52,7 +52,14 @@ function ActionButton({
     );
   }
   return (
-    <button type="button" onClick={onClick} title={label} aria-label={label} aria-pressed={active} className={className}>
+    <button
+      type="button"
+      onClick={onClick}
+      title={label}
+      aria-label={label}
+      aria-pressed={active}
+      className={className}
+    >
       {children}
     </button>
   );

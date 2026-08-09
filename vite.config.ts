@@ -147,7 +147,9 @@ function serviceWorker(): Plugin {
          filtering a list they were never in. Verified against `dist/sw.js`
          after this change — the precache drops from 53 entries to 30, and
          the five original paintings the fallback needs are all still in it. */
-      const precache = [...new Set(['/index.html', ...emitted, ...publicAssets().filter((n) => !deadWeight(n))])];
+      const precache = [
+        ...new Set(['/index.html', ...emitted, ...publicAssets().filter((n) => !deadWeight(n))]),
+      ];
 
       const { build } = await import('vite');
       await build({
@@ -184,37 +186,37 @@ export default defineConfig(({ mode }) => {
   const supabase = resolveSupabase(mode);
 
   return {
-  plugins: [react(), serviceWorker()],
-  /* The app reads `import.meta.env.VITE_SUPABASE_*`. These are substituted at
+    plugins: [react(), serviceWorker()],
+    /* The app reads `import.meta.env.VITE_SUPABASE_*`. These are substituted at
      build time from whichever publishable name the host actually provided, so
      the same source works with a hand-written .env or with the Vercel
      integration's Next.js-shaped variables. */
-  define: {
-    'import.meta.env.VITE_SUPABASE_URL': JSON.stringify(supabase.url),
-    'import.meta.env.VITE_SUPABASE_ANON_KEY': JSON.stringify(supabase.key),
-  },
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    define: {
+      'import.meta.env.VITE_SUPABASE_URL': JSON.stringify(supabase.url),
+      'import.meta.env.VITE_SUPABASE_ANON_KEY': JSON.stringify(supabase.key),
     },
-  },
-  build: {
-    // The content chunk is ~600 kB of static JSON by design (754 questions,
-    // 60 note pages, 27 passages). It is split out so the app shell paints
-    // first and the browser caches the library separately across deploys.
-    chunkSizeWarningLimit: 700,
-    rollupOptions: {
-      output: {
-        /* The function form rather than the object map: Rollup 4 narrowed the
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+      },
+    },
+    build: {
+      // The content chunk is ~600 kB of static JSON by design (754 questions,
+      // 60 note pages, 27 passages). It is split out so the app shell paints
+      // first and the browser caches the library separately across deploys.
+      chunkSizeWarningLimit: 700,
+      rollupOptions: {
+        output: {
+          /* The function form rather than the object map: Rollup 4 narrowed the
            object overload out of the type, and matching on the directory is
            more accurate anyway — it catches every JSON file in the library, not
            just whatever `index.ts` happens to re-export. */
-        manualChunks(id) {
-          if (id.includes('/src/content/') || id.includes('\\src\\content\\')) return 'content';
-          return undefined;
+          manualChunks(id) {
+            if (id.includes('/src/content/') || id.includes('\\src\\content\\')) return 'content';
+            return undefined;
+          },
         },
       },
     },
-  },
   };
 });

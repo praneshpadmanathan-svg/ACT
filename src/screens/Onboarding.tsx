@@ -114,7 +114,11 @@ export function Onboarding() {
 
   return (
     <div className="relative isolate flex min-h-dvh items-center justify-center overflow-hidden px-4 py-14 ">
-      <Art name="camp-bg" priority className="absolute inset-0 h-full w-full select-none object-cover" />
+      <Art
+        name="camp-bg"
+        priority
+        className="absolute inset-0 h-full w-full select-none object-cover"
+      />
       <div className="absolute inset-0 bg-leather-950/84" />
 
       <div className="panel-lit relative z-10 w-full max-w-lg p-7 sm:p-9">
@@ -122,7 +126,9 @@ export function Onboarding() {
           <>
             <div className="mb-6">
               <div className="mb-2 flex items-center justify-between font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
-                <span>Question {step + 1} of {STEPS.length}</span>
+                <span>
+                  Question {step + 1} of {STEPS.length}
+                </span>
                 <span>{Math.round(((step + 1) / STEPS.length) * 100)}%</span>
               </div>
               <ProgressBar value={(step + 1) / STEPS.length} height={8} />
@@ -157,7 +163,6 @@ export function Onboarding() {
             )}
           </>
         )}
-
 
         {phase === 'date' && (
           <>
@@ -238,7 +243,12 @@ export function Onboarding() {
 
         {phase === 'plan' && (
           <div className="text-center">
-            <HeroAvatar hero={progress.hero} size={110} expression="pleased" className="mx-auto select-none" />
+            <HeroAvatar
+              hero={progress.hero}
+              size={110}
+              expression="pleased"
+              className="mx-auto select-none"
+            />
             <h1 className="heading mb-6 mt-5 text-[22px] text-gold">Your plan is ready</h1>
 
             <dl className="space-y-2.5 text-left">
@@ -264,7 +274,11 @@ export function Onboarding() {
                   color="#ffd23e"
                 />
               )}
-              <PlanRow label="Start with" value={recommended?.name ?? 'English'} color={recommended?.color} />
+              <PlanRow
+                label="Start with"
+                value={recommended?.name ?? 'English'}
+                color={recommended?.color}
+              />
             </dl>
 
             <p className="mt-6 text-[14px] leading-relaxed text-ink-faint">

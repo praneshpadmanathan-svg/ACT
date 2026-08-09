@@ -41,7 +41,14 @@ export function DrillsScreen({ section }: { section?: string }) {
         <EmptyState
           title="Section not found"
           detail="Pick one of the four ACT sections."
-          action={<Button variant="primary" onClick={() => navigate({ name: 'drills', section: 'english' })}>English drills</Button>}
+          action={
+            <Button
+              variant="primary"
+              onClick={() => navigate({ name: 'drills', section: 'english' })}
+            >
+              English drills
+            </Button>
+          }
         />
       </Page>
     );
@@ -65,7 +72,9 @@ export function DrillsScreen({ section }: { section?: string }) {
             onClick={() => sfx.select()}
             className={cx(
               'rounded-lg border-2 px-4 py-2 font-script text-[12px] uppercase tracking-wide transition-colors',
-              s.id === active ? 'text-[#0d0620]' : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-parchment',
+              s.id === active
+                ? 'text-[#0d0620]'
+                : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-parchment',
             )}
             style={s.id === active ? { background: s.color, borderColor: s.color } : undefined}
           >
@@ -178,7 +187,11 @@ export function DrillsScreen({ section }: { section?: string }) {
 /** Weight each question by how much the player struggles with its topic, so
  *  a mixed drill naturally drifts toward weak spots without ever locking out
  *  the topics they already know. */
-function pickAdaptive(pool: Question[], count: number, accuracyByTopic: Map<string, number>): Question[] {
+function pickAdaptive(
+  pool: Question[],
+  count: number,
+  accuracyByTopic: Map<string, number>,
+): Question[] {
   const weighted = pool.map((q) => {
     const accuracy = accuracyByTopic.get(q.topic);
     // Unseen topics sit in the middle; weak topics get up to 3x the weight.
@@ -203,7 +216,9 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
 
   const { questions, title, subtitle } = useMemo(() => {
     const pool = QUESTIONS[sectionId] ?? [];
-    const accuracyByTopic = new Map(topicStats(progress, sectionId).map((t) => [t.topic, t.accuracy]));
+    const accuracyByTopic = new Map(
+      topicStats(progress, sectionId).map((t) => [t.topic, t.accuracy]),
+    );
 
     if (topic?.startsWith('mixed:')) {
       const count = Number(topic.split(':')[1]) || 10;
@@ -240,7 +255,11 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
           art="scroll"
           title="No questions here"
           detail="That topic has no questions yet. Try a mixed drill instead."
-          action={<Button variant="primary" onClick={() => navigate({ name: 'drills', section })}>Back to drills</Button>}
+          action={
+            <Button variant="primary" onClick={() => navigate({ name: 'drills', section })}>
+              Back to drills
+            </Button>
+          }
         />
       </Page>
     );
@@ -327,13 +346,17 @@ export function ReviewScreen() {
         {due.length === 0 ? (
           <EmptyState
             art="campfire"
-          title="Nothing due right now"
+            title="Nothing due right now"
             detail={
               upcoming > 0
                 ? `${upcoming} question${upcoming === 1 ? '' : 's'} are scheduled for later. Drill some new material in the meantime.`
                 : 'Answer some drill questions first — anything you miss lands here automatically.'
             }
-            action={<Button variant="primary" onClick={() => navigate({ name: 'drills' })}>Go to drills</Button>}
+            action={
+              <Button variant="primary" onClick={() => navigate({ name: 'drills' })}>
+                Go to drills
+              </Button>
+            }
           />
         ) : (
           <div className="panel p-7 text-center sm:p-9">
@@ -504,7 +527,10 @@ export function BookmarksScreen() {
                   {/* The stem, plain and clipped. Enough to recognise the
                       question by without giving the answer away at a glance. */}
                   <span className="mt-1.5 block line-clamp-2 font-read text-[14px] leading-relaxed text-parchment-dim">
-                    {q.context.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()}
+                    {q.context
+                      .replace(/<[^>]+>/g, ' ')
+                      .replace(/\s+/g, ' ')
+                      .trim()}
                   </span>
                 </span>
                 <button
@@ -655,7 +681,8 @@ export function DrillSummary({
             {percent}%
           </div>
           <p className="mt-2 text-[15px] text-parchment-dim">
-            {correct} of {results.length} correct · {(totalSeconds / results.length).toFixed(0)}s per question
+            {correct} of {results.length} correct · {(totalSeconds / results.length).toFixed(0)}s
+            per question
           </p>
 
           <div className="mx-auto mt-6 max-w-sm">
@@ -663,8 +690,12 @@ export function DrillSummary({
           </div>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button variant="ghost" onClick={onRetry}>Another set</Button>
-            <Button variant="primary" onClick={onDone}>Done</Button>
+            <Button variant="ghost" onClick={onRetry}>
+              Another set
+            </Button>
+            <Button variant="primary" onClick={onDone}>
+              Done
+            </Button>
           </div>
         </div>
 
@@ -678,7 +709,9 @@ export function DrillSummary({
                 <div key={i} className="sheet p-5 sm:p-6">
                   {r.question.label && (
                     <p className="mb-3 border-l-4 border-[#c9b06a] bg-[#fbf6e6] px-4 py-2.5 font-read text-[0.98rem]">
-                      <RichText as="span" format="html">{r.question.label}</RichText>
+                      <RichText as="span" format="html">
+                        {r.question.label}
+                      </RichText>
                     </p>
                   )}
                   <RichText
@@ -694,13 +727,21 @@ export function DrillSummary({
                   <div className="grid gap-5 sm:grid-cols-2">
                     <section className="ink-trap lesson-trap">
                       <div className="lesson-label">You chose {r.chosen}</div>
-                      <RichText as="div" format="markdown" className="font-read text-[0.99rem] leading-[1.7] text-ink">
+                      <RichText
+                        as="div"
+                        format="markdown"
+                        className="font-read text-[0.99rem] leading-[1.7] text-ink"
+                      >
                         {(r.chosen && r.question.why[r.chosen]) || 'Not the credited answer.'}
                       </RichText>
                     </section>
                     <section className="ink-example">
                       <div className="lesson-label">Answer: {r.question.correctKey}</div>
-                      <RichText as="div" format="markdown" className="font-read text-[0.99rem] leading-[1.7] text-ink">
+                      <RichText
+                        as="div"
+                        format="markdown"
+                        className="font-read text-[0.99rem] leading-[1.7] text-ink"
+                      >
                         {r.question.why[r.question.correctKey] ?? r.question.whyGeneral ?? ''}
                       </RichText>
                     </section>

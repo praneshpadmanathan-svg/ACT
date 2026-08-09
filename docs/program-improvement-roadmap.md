@@ -10,7 +10,7 @@ returned 107 concrete, file-referenced findings, organized below into a buildabl
 ACT Command finished two intensive passes: a launch-readiness pass (real Supabase accounts,
 an age gate, delete-account/export-data, PWA offline support, security headers, a compacted
 sync payload for the free tier) and an animation pass. The app is live at
-`act-red.vercel.app` and functionally sound as a *game*.
+`act-red.vercel.app` and functionally sound as a _game_.
 
 What those two passes didn't touch: whether the app can tell you it's broken, whether its
 core learning algorithm is any good, and whether a change to `progress.ts` next month
@@ -21,7 +21,7 @@ regresses silently the way the tally-backfill bug already did once.
 - **Automated tests: zero. CI: zero. Monitoring: zero.** The codebase is unusually
   well-commented in the specific places that already burned someone (the sync merge logic,
   the service worker, the focus trap, the CSP) — but testing, linting, and content
-  validation as *categories of tooling* are entirely absent. The one bug the code's own
+  validation as _categories of tooling_ are entirely absent. The one bug the code's own
   comments document (`progress.ts`'s tally-backfill check testing `merged.tally` instead
   of `stored?.tally`) is exactly what a two-line unit test would have caught, and nothing
   stops an equivalent regression next time `mergeProgress` or `scheduleReview` is touched.
@@ -32,7 +32,7 @@ regresses silently the way the tally-backfill bug already did once.
 - **The spaced-repetition system is a naive fixed-interval Leitner box, not SM-2/FSRS**,
   and no diagnostic/placement test exists anywhere — onboarding only self-reports a score
   bucket, and even that self-report (`OnboardingProfile.before`) is captured and never
-  read again. These are the two highest-leverage *pedagogical* gaps, and both are
+  read again. These are the two highest-leverage _pedagogical_ gaps, and both are
   addressable without a rewrite: the box-based data shape in `progress.ts` is reusable,
   and a diagnostic can be built as a new selection mode over existing content.
 
@@ -46,16 +46,16 @@ requiring a move off Vite/Supabase/Vercel.
 
 Measured, not guessed:
 
-| Fact | Number |
-| --- | --- |
-| Automated tests | **0** |
-| `console.error`/`console.warn` sites, all silently swallowed | **11** |
-| Lines in `src/lib/store.tsx` (one context, ~30 exposed fields) | **528** |
-| Lines in `src/lib/progress.ts` (untested sync/scoring core) | **630** |
-| CI workflows (`.github/workflows/`) | **0** |
-| Monitoring/analytics integrations | **0** |
-| Content-validation scripts (vs. the animation equivalent that exists) | **0** |
-| ESLint/Prettier config | does not exist |
+| Fact                                                                  | Number         |
+| --------------------------------------------------------------------- | -------------- |
+| Automated tests                                                       | **0**          |
+| `console.error`/`console.warn` sites, all silently swallowed          | **11**         |
+| Lines in `src/lib/store.tsx` (one context, ~30 exposed fields)        | **528**        |
+| Lines in `src/lib/progress.ts` (untested sync/scoring core)           | **630**        |
+| CI workflows (`.github/workflows/`)                                   | **0**          |
+| Monitoring/analytics integrations                                     | **0**          |
+| Content-validation scripts (vs. the animation equivalent that exists) | **0**          |
+| ESLint/Prettier config                                                | does not exist |
 
 ---
 
@@ -127,17 +127,17 @@ Measured, not guessed:
 
 ## 8. Monitoring & observability
 
-*Second-highest-leverage item in this document.*
+_Second-highest-leverage item in this document._
 
 46. Add error reporting (Sentry's free tier is the natural fit for a small Vercel+Supabase app, or a privacy-respecting self-hosted alternative) so the 11 currently-swallowed `console.error`/`console.warn` sites become visible to an operator instead of only the browser console of whichever student hit them.
-47. Reconcile this with the privacy policy's "no analytics" promise (`Legal.tsx:135`) — error reporting isn't usage analytics, but the policy doesn't currently distinguish them (see §106); this needs a policy note *before* shipping, not after.
+47. Reconcile this with the privacy policy's "no analytics" promise (`Legal.tsx:135`) — error reporting isn't usage analytics, but the policy doesn't currently distinguish them (see §106); this needs a policy note _before_ shipping, not after.
 48. Add minimal, privacy-conscious health signals distinct from full analytics: sync-failure counts, service-worker precache-miss counts, auth-bootstrap failures (ties directly to §19, now that §19 is fixed this becomes "confirm the fallback path stays rare," not "find out it's silently hanging").
 49. Add a status/health check the operator can glance at — even a simple scheduled Supabase query or a lightweight Vercel cron endpoint. Currently there's no status page and no uptime monitoring of any kind.
 50. Alert specifically on the delete-account partial-failure case (§93) — the one failure mode in the app where silence is actively harmful (an orphaned auth user with no data, indistinguishable from a fresh account).
 
 ## 9. Core study-plan & spaced-repetition upgrade
 
-*Highest-leverage pedagogical item in this document.* The current system
+_Highest-leverage pedagogical item in this document._ The current system
 (`progress.ts:325-352`) is a fixed-interval Leitner box: `BOX_INTERVALS = [0,1,3,7,16,35]`
 days, correct advances a box, incorrect hard-resets to box 0, no per-item ease factor, no
 distinction between "missed by a little" and "confidently wrong." The review UI says so
@@ -148,7 +148,7 @@ plainly: "get it wrong and it comes back tomorrow" (`Drills.tsx:319`).
 53. Make the box-advance/reset rule response-time- and confidence-aware: a fast, confident correct answer advances two boxes; a slow or "guessed" correct answer advances one; an incorrect answer resets fewer boxes if the response was fast (a slip, not a knowledge gap) versus a full reset for a slow incorrect answer. `BOX_INTERVALS` stays unchanged — only the transition logic in `scheduleReview` (`progress.ts:328-352`) changes.
 54. Weight review-session selection (currently sorted only by due-date ascending, capped at 20 questions) toward chronically-missed items — track a simple miss-count per question alongside the box index.
 55. Update the review UI copy (`Drills.tsx:319`) to match the new framing once §53 ships — the current "wrong = tomorrow" language is honest about today's system but would mislead once response-time/confidence-aware resets are live.
-56. Pin all of the above with the regression tests from §1 *before* the change ships — `scheduleReview` behavior changing silently is exactly the "surfaces days later" bug class the original research flagged.
+56. Pin all of the above with the regression tests from §1 _before_ the change ships — `scheduleReview` behavior changing silently is exactly the "surfaces days later" bug class the original research flagged.
 57. Stretch: retire items after N consecutive successful graduations at long intervals (a light-touch analog to FSRS's "stability" concept), so mastered questions stop reappearing indefinitely — still reusable against existing box data, adding only a terminal "graduated" state past the current top box.
 
 ## 10. Diagnostic / placement testing
@@ -178,7 +178,7 @@ plainly: "get it wrong and it comes back tomorrow" (`Drills.tsx:319`).
 74. Treat Reading (72Q/6 topics) and Science (80Q/5 topics) as lower priority for raw count — their broader, skill-integrated structure already matches how the real ACT tests those sections; the urgency is specifically English/Math's narrow topics.
 75. Sequence new content authoring through the validation script (§39-44) from day one.
 76. If content authoring is LLM-assisted (a reasonable way to close §72-73 at volume), treat the validation script as a hard gate on any batch-generated content — batch generation is exactly the scenario most likely to introduce duplicate IDs or malformed answer references.
-76a. **Discovered by §39-44's own rule 4**: 8 zones teach a skill with no drill-bank topic of its own — `structure_span`/`tone_tundra`/`evidence_estuary`/`figurative_falls` (Reading) and `units_uplands`/`rates_ridge`/`hypothesis_hollow`/`calc_canyon` (Science), currently listed in `scripts/check-content.mjs`'s `NO_DRILL_TOPIC` exemption set with the coarse topic each folds into. A student clearing these landmarks today gets zone-quiz questions (`miniquizzes.json`) but no matching drill-bank practice, and their zone performance isn't attributed to any drill topic `weakestTopics()` can see. Closing this means either adding drill questions tagged with these finer topics, or deliberately widening the drill-bank taxonomy to match — a product decision, not a mechanical fix, which is why it's exempted rather than guessed at in the checker itself.
+    76a. **Discovered by §39-44's own rule 4**: 8 zones teach a skill with no drill-bank topic of its own — `structure_span`/`tone_tundra`/`evidence_estuary`/`figurative_falls` (Reading) and `units_uplands`/`rates_ridge`/`hypothesis_hollow`/`calc_canyon` (Science), currently listed in `scripts/check-content.mjs`'s `NO_DRILL_TOPIC` exemption set with the coarse topic each folds into. A student clearing these landmarks today gets zone-quiz questions (`miniquizzes.json`) but no matching drill-bank practice, and their zone performance isn't attributed to any drill topic `weakestTopics()` can see. Closing this means either adding drill questions tagged with these finer topics, or deliberately widening the drill-bank taxonomy to match — a product decision, not a mechanical fix, which is why it's exempted rather than guessed at in the checker itself.
 
 ## 13. Re-engagement & notifications
 
@@ -206,7 +206,7 @@ plainly: "get it wrong and it comes back tomorrow" (`Drills.tsx:319`).
 
 90. Add optimistic-concurrency protection to `pushProgress` (`supabase.ts:316-336`) — currently a plain upsert with no compare-against-`updated_at` check, so there's no server-side guard against a stale merged payload overwriting a newer one written between a pull and a push.
 91. Document (and consider tightening) the tie-break behavior in `mergeProgress` (`progress.ts:544/548/568`): fields spread via `...newer` are close to last-write-wins for anything not explicitly merged, and the tie-break always favors local — a real, currently-undocumented edge case.
-92. Explicitly document the accepted tradeoff already self-noted in `progress.ts:517-526` — per-topic tally counts take `Math.max`, not true dedup, so advancing the *same* topic on two devices between syncs silently loses the smaller side's progress. Surface this in user-facing docs or a pointed code comment so it isn't "rediscovered" as a bug report.
+92. Explicitly document the accepted tradeoff already self-noted in `progress.ts:517-526` — per-topic tally counts take `Math.max`, not true dedup, so advancing the _same_ topic on two devices between syncs silently loses the smaller side's progress. Surface this in user-facing docs or a pointed code comment so it isn't "rediscovered" as a bug report.
 93. **Make the delete-account edge function transactional or add compensating cleanup**: it deletes the `progress` row, then calls `admin.deleteUser()` as two sequential independent calls with no rollback. If `deleteUser()` fails after the row-delete succeeds, the auth user survives with no data and no alerting — could look like a fresh account or silently repopulate from a stale local copy.
 94. Confirm the explicit progress-row delete (redundant with `schema.sql`'s `ON DELETE CASCADE`, kept only to surface delete errors per the existing code comment) stays intentional as the function evolves — doesn't change §93's risk, just worth reconfirming.
 95. Add a documented backup strategy — Supabase's free tier has no point-in-time recovery; nothing today flags this or proposes a mitigation (e.g. a scheduled `pg_dump` via a GitHub Actions cron to a private bucket).
@@ -217,16 +217,16 @@ plainly: "get it wrong and it comes back tomorrow" (`Drills.tsx:319`).
 
 98. **Enable Vercel Deployment Protection** (password-protect preview URLs) — `docs/launch-checklist.md` already warns preview builds share the same Supabase project/env vars as production if not configured per-environment, meaning an unprotected, publicly-guessable preview URL currently exposes a surface tested against live data. Given the audience is minors, treat this as higher priority than its "ops hygiene" framing suggests.
 99. Separate preview/staging Supabase project (or at minimum environment-scoped env vars in Vercel) from production — pairs naturally with §98.
-100. Change `CONTACT_EMAIL` (`Legal.tsx:25`) off a personal Gmail before wide distribution — already flagged in `docs/launch-checklist.md`, restated here as a fast, low-risk fix that fits this section.
-101. Add a status page or a documented outage-communication plan — if Supabase auto-pauses after 7 days of inactivity or has an outage, students currently see only generic in-app error toasts with no explanation or external status page.
-102. Split the single mailto support channel if volume ever grows — lower priority given no messaging/social surface exists at all; worth a trigger ("if support volume exceeds X/month, split the channel") rather than an immediate change.
-103. Add an auto-apply timeout fallback for pending service-worker updates in `sw.ts` — the current update strategy requires the UI to call `apply()` via an update-toast; if dismissed or never mounted, a student can be stuck on an old cached build indefinitely.
-104. Surface individual precache-item fetch failures (currently caught and `console.warn`'d only) through the new monitoring pipeline (§46-48) — a direct application of §21 to this specific site.
-105. Confirm cache-naming/versioning (`CACHE = act-command-${buildId}`, swept on activate) continues to hold as deploy frequency increases — no bug found, but flag the "every deploy produces a unique buildId" assumption with a comment or build-time assertion rather than leaving it implicit.
+100.  Change `CONTACT_EMAIL` (`Legal.tsx:25`) off a personal Gmail before wide distribution — already flagged in `docs/launch-checklist.md`, restated here as a fast, low-risk fix that fits this section.
+101.  Add a status page or a documented outage-communication plan — if Supabase auto-pauses after 7 days of inactivity or has an outage, students currently see only generic in-app error toasts with no explanation or external status page.
+102.  Split the single mailto support channel if volume ever grows — lower priority given no messaging/social surface exists at all; worth a trigger ("if support volume exceeds X/month, split the channel") rather than an immediate change.
+103.  Add an auto-apply timeout fallback for pending service-worker updates in `sw.ts` — the current update strategy requires the UI to call `apply()` via an update-toast; if dismissed or never mounted, a student can be stuck on an old cached build indefinitely.
+104.  Surface individual precache-item fetch failures (currently caught and `console.warn`'d only) through the new monitoring pipeline (§46-48) — a direct application of §21 to this specific site.
+105.  Confirm cache-naming/versioning (`CACHE = act-command-${buildId}`, swept on activate) continues to hold as deploy frequency increases — no bug found, but flag the "every deploy produces a unique buildId" assumption with a comment or build-time assertion rather than leaving it implicit.
 
 ## 18. Legal/compliance follow-through
 
-106. Rewrite the privacy policy's cookie/tracking language (`Legal.tsx`, currently "no cookies/no tracking") to distinguish first-party operational telemetry (error reporting, §46) from third-party tracking/analytics — do this *before* §46 ships, not after.
+106. Rewrite the privacy policy's cookie/tracking language (`Legal.tsx`, currently "no cookies/no tracking") to distinguish first-party operational telemetry (error reporting, §46) from third-party tracking/analytics — do this _before_ §46 ships, not after.
 107. Confirm the age-gate and account-creation flows stay consistent as new student-data types get stored (diagnostic results, §58-62; percentile estimates, §65) — no gap found today, just a checkpoint to carry forward.
 
 ---

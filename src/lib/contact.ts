@@ -33,8 +33,14 @@ const read = (value: unknown): string | null => {
 
 export const CONTACT = {
   support: read(import.meta.env.VITE_CONTACT_SUPPORT) ?? FALLBACK,
-  privacy: read(import.meta.env.VITE_CONTACT_PRIVACY) ?? read(import.meta.env.VITE_CONTACT_SUPPORT) ?? FALLBACK,
-  security: read(import.meta.env.VITE_CONTACT_SECURITY) ?? read(import.meta.env.VITE_CONTACT_SUPPORT) ?? FALLBACK,
+  privacy:
+    read(import.meta.env.VITE_CONTACT_PRIVACY) ??
+    read(import.meta.env.VITE_CONTACT_SUPPORT) ??
+    FALLBACK,
+  security:
+    read(import.meta.env.VITE_CONTACT_SECURITY) ??
+    read(import.meta.env.VITE_CONTACT_SUPPORT) ??
+    FALLBACK,
 } as const;
 
 /** True while the deployment is still using the hard-coded personal address.
@@ -42,10 +48,7 @@ export const CONTACT = {
 export const CONTACT_IS_PLACEHOLDER = CONTACT.support === FALLBACK;
 
 /** Build a `mailto:` with the subject and body pre-filled and escaped. */
-export function mailto(
-  to: string,
-  { subject, body }: { subject: string; body?: string },
-): string {
+export function mailto(to: string, { subject, body }: { subject: string; body?: string }): string {
   const params = new URLSearchParams({ subject });
   if (body) params.set('body', body);
   // URLSearchParams encodes spaces as `+`, which mail clients show literally.

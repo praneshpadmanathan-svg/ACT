@@ -15,10 +15,19 @@ type Size = 'sm' | 'md' | 'lg';
    spread through. Nothing in the app uses them on a button. */
 type NativeButtonProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,
-  | 'onAnimationStart' | 'onAnimationEnd' | 'onAnimationIteration'
-  | 'onDrag' | 'onDragStart' | 'onDragEnd' | 'onDragEnter'
-  | 'onDragExit' | 'onDragLeave' | 'onDragOver' | 'onDrop'
-  | 'onTransitionEnd' | 'style'
+  | 'onAnimationStart'
+  | 'onAnimationEnd'
+  | 'onAnimationIteration'
+  | 'onDrag'
+  | 'onDragStart'
+  | 'onDragEnd'
+  | 'onDragEnter'
+  | 'onDragExit'
+  | 'onDragLeave'
+  | 'onDragOver'
+  | 'onDrop'
+  | 'onTransitionEnd'
+  | 'style'
 >;
 
 interface ButtonProps extends NativeButtonProps {
@@ -27,7 +36,11 @@ interface ButtonProps extends NativeButtonProps {
   quiet?: boolean;
 }
 
-interface Ink { id: number; x: number; y: number }
+interface Ink {
+  id: number;
+  x: number;
+  y: number;
+}
 
 /* Press physics, and the ink under them.
 
@@ -60,7 +73,10 @@ export function Button({
       if (stillMotion) return;
       const box = e.currentTarget.getBoundingClientRect();
       const id = nextInk.current++;
-      setInks((prev) => [...prev.slice(-2), { id, x: e.clientX - box.left, y: e.clientY - box.top }]);
+      setInks((prev) => [
+        ...prev.slice(-2),
+        { id, x: e.clientX - box.left, y: e.clientY - box.top },
+      ]);
     },
     [stillMotion],
   );
@@ -101,7 +117,13 @@ export function Button({
                paints above its background and below the label — so the ink
                spreads under the text rather than over it. */
             style={{
-              left: ink.x, top: ink.y, width: 12, height: 12, marginLeft: -6, marginTop: -6, zIndex: -1,
+              left: ink.x,
+              top: ink.y,
+              width: 12,
+              height: 12,
+              marginLeft: -6,
+              marginTop: -6,
+              zIndex: -1,
               background: 'radial-gradient(circle, currentColor 0%, transparent 70%)',
             }}
             initial={{ scale: 0, opacity: 0.34 }}
@@ -139,7 +161,10 @@ export function Chip({
   className?: string;
 }) {
   return (
-    <span className={cx('chip', className)} style={color ? { color, borderColor: `${color}66` } : undefined}>
+    <span
+      className={cx('chip', className)}
+      style={color ? { color, borderColor: `${color}66` } : undefined}
+    >
       {children}
     </span>
   );
@@ -161,7 +186,10 @@ export function ProgressBar({
   const pctValue = Math.round(Math.min(1, Math.max(0, value)) * 100);
   return (
     <div
-      className={cx('w-full overflow-hidden rounded-full border border-leather-700 bg-leather-950', className)}
+      className={cx(
+        'w-full overflow-hidden rounded-full border border-leather-700 bg-leather-950',
+        className,
+      )}
       style={{ height }}
       role="progressbar"
       aria-valuenow={pctValue}

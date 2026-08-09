@@ -25,9 +25,21 @@
 
 /** Values that are not lengths and must be left alone. */
 const KEYWORDS = new Set([
-  'inherit', 'initial', 'unset', 'revert', 'revert-layer',
-  'xx-small', 'x-small', 'small', 'medium', 'large', 'x-large', 'xx-large',
-  'xxx-large', 'smaller', 'larger',
+  'inherit',
+  'initial',
+  'unset',
+  'revert',
+  'revert-layer',
+  'xx-small',
+  'x-small',
+  'small',
+  'medium',
+  'large',
+  'x-large',
+  'xx-large',
+  'xxx-large',
+  'smaller',
+  'larger',
 ]);
 
 /** @returns {import('postcss').Plugin} */

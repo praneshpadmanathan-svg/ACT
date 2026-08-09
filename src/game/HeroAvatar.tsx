@@ -33,7 +33,10 @@ function Hair({ h, ink }: { h: Hero; ink: string }) {
       return (
         <path
           d="M30 40c0-11 8-19 18-19s18 8 18 19c0-6-6-9-18-9s-18 3-18 9Z"
-          fill={hair} stroke={ink} strokeWidth="2.6" strokeLinejoin="round"
+          fill={hair}
+          stroke={ink}
+          strokeWidth="2.6"
+          strokeLinejoin="round"
         />
       );
 
@@ -61,7 +64,10 @@ function Hair({ h, ink }: { h: Hero; ink: string }) {
       return (
         <path
           d="M29 43c0-13 9-22 19-22s19 9 19 22c-2-4-5-7-9-6-3-3-7-4-11-3-4-1-8 0-11 3-3-1-6 2-7 6Z"
-          fill={hair} stroke={ink} strokeWidth="2.6" strokeLinejoin="round"
+          fill={hair}
+          stroke={ink}
+          strokeWidth="2.6"
+          strokeLinejoin="round"
         />
       );
 
@@ -151,7 +157,13 @@ export function HeroAvatar({
       <circle cx="48" cy="92" r="4" fill={h.cloakShade} stroke={INK} strokeWidth="2.4" />
 
       {/* neck */}
-      <path d="M41 74h14v12h-14Z" fill={h.skinShade} stroke={INK} strokeWidth="2.6" strokeLinejoin="round" />
+      <path
+        d="M41 74h14v12h-14Z"
+        fill={h.skinShade}
+        stroke={INK}
+        strokeWidth="2.6"
+        strokeLinejoin="round"
+      />
 
       {/* head */}
       <path
@@ -162,7 +174,12 @@ export function HeroAvatar({
         strokeLinejoin="round"
       />
       {/* ears */}
-      <path d="M30 52a4 4 0 0 0 0 8M66 52a4 4 0 0 1 0 8" fill={h.skin} stroke={INK} strokeWidth="2.4" />
+      <path
+        d="M30 52a4 4 0 0 0 0 8M66 52a4 4 0 0 1 0 8"
+        fill={h.skin}
+        stroke={INK}
+        strokeWidth="2.4"
+      />
 
       <Hair h={h} ink={INK} />
 
@@ -288,7 +305,13 @@ export function TravellerMark({
     <path d={d} fill={cloth} stroke={INK} strokeWidth=".6" strokeLinejoin="round" />
   );
   const past = (d: string) => (
-    <path d={d} fill={h.hairStyle === 'wrap' ? h.cloakShade : h.hair} stroke={INK} strokeWidth="1" strokeLinejoin="round" />
+    <path
+      d={d}
+      fill={h.hairStyle === 'wrap' ? h.cloakShade : h.hair}
+      stroke={INK}
+      strokeWidth="1"
+      strokeLinejoin="round"
+    />
   );
 
   return (

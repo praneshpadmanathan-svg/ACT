@@ -148,17 +148,20 @@ export const QUESTS: Quest[] = [
               {
                 label: 'A score opens a door I want',
                 value: 'door',
-                reply: 'A door, then. Doors open for those who keep walking at them — that is the whole trick, and it is duller than people hope.',
+                reply:
+                  'A door, then. Doors open for those who keep walking at them — that is the whole trick, and it is duller than people hope.',
               },
               {
                 label: 'I want to prove I can',
                 value: 'proof',
-                reply: 'To prove it to yourself. The best reason there is, and the only one still standing at midnight.',
+                reply:
+                  'To prove it to yourself. The best reason there is, and the only one still standing at midnight.',
               },
               {
                 label: 'Someone is counting on me',
                 value: 'someone',
-                reply: 'For them, then. Carry that quietly — it will get you up the hard slopes when nothing else will.',
+                reply:
+                  'For them, then. Carry that quietly — it will get you up the hard slopes when nothing else will.',
               },
               {
                 label: 'I just want to be good at it',
@@ -527,15 +530,42 @@ export const QUESTS: Quest[] = [
    no title card, roughly every fourth landmark. */
 
 const DISPATCH_LINES: [number, string][] = [
-  [3, 'A rider came through the camp while you were out. Two more villages on the eastern road have gone <b>Grey</b> — but the stretch you cleared is holding. Holding, and lit.'],
-  [7, 'The cottages you walked past have their lamps on again. Someone put them there. That happens where the map is solid, and it does not happen anywhere else.'],
-  [11, 'The guardians have stopped pretending not to see you. I would not walk into a region you have not finished, if I were you.'],
-  [15, 'The Grey has changed how it moves. It used to spread. Now it <i>waits</i> — out past the edges, where nobody has been for a while. Waiting is worse.'],
-  [19, 'Travellers are following your road south. Actual travellers, behind you, on ground you made safe. I thought you should know that.'],
-  [23, 'The citadel light held steady all last night. Not brighter. Steady. It has not been steady in years.'],
-  [27, 'Something came to the camp fence in the dark and looked at the map on my table for a long while. Then it left. I do not think it liked what it saw.'],
-  [31, 'Six landmarks left, and the Grey has stopped taking ground anywhere on this continent. It is only holding what it has. You did that by walking.'],
-  [35, 'Two left. Two. Sit down a moment, traveller — I have watched this road for forty years and I have never once seen it look like this.'],
+  [
+    3,
+    'A rider came through the camp while you were out. Two more villages on the eastern road have gone <b>Grey</b> — but the stretch you cleared is holding. Holding, and lit.',
+  ],
+  [
+    7,
+    'The cottages you walked past have their lamps on again. Someone put them there. That happens where the map is solid, and it does not happen anywhere else.',
+  ],
+  [
+    11,
+    'The guardians have stopped pretending not to see you. I would not walk into a region you have not finished, if I were you.',
+  ],
+  [
+    15,
+    'The Grey has changed how it moves. It used to spread. Now it <i>waits</i> — out past the edges, where nobody has been for a while. Waiting is worse.',
+  ],
+  [
+    19,
+    'Travellers are following your road south. Actual travellers, behind you, on ground you made safe. I thought you should know that.',
+  ],
+  [
+    23,
+    'The citadel light held steady all last night. Not brighter. Steady. It has not been steady in years.',
+  ],
+  [
+    27,
+    'Something came to the camp fence in the dark and looked at the map on my table for a long while. Then it left. I do not think it liked what it saw.',
+  ],
+  [
+    31,
+    'Six landmarks left, and the Grey has stopped taking ground anywhere on this continent. It is only holding what it has. You did that by walking.',
+  ],
+  [
+    35,
+    'Two left. Two. Sit down a moment, traveller — I have watched this road for forty years and I have never once seen it look like this.',
+  ],
 ];
 
 /* ------------------------------------------------------------------ chapters

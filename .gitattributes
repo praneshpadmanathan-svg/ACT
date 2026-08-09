@@ -1,0 +1,17 @@
+# LF in the repository and LF in the working copy, on every platform.
+#
+# Without this, a Windows clone with the default `core.autocrlf=true` checks
+# every source file out with CRLF endings, and `npm run format:check` fails on
+# a clean clone before anyone has typed a character — Prettier normalises to LF
+# and would report all 78 files as needing formatting. Which trains people to
+# ignore the check, on their own machine, forever.
+* text=auto eol=lf
+
+# Never touched, whatever the extension heuristics think.
+*.png binary
+*.jpg binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.woff binary
+*.woff2 binary

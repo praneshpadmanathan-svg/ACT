@@ -50,9 +50,14 @@ const failures = [];
    correct and must not be flagged. */
 const EXEMPT = new Set([
   // nested children of a crossing track
-  'mapfx-wing', 'mapfx-cloud-body', 'mapfx-cloud-shadow', 'mapfx-squall',
+  'mapfx-wing',
+  'mapfx-cloud-body',
+  'mapfx-cloud-shadow',
+  'mapfx-squall',
   // rendered by DiscoveryLayer, outside the .mapfx layer
-  'mapfx-grey-flash', 'mapfx-grey-tendril', 'mapfx-mist',
+  'mapfx-grey-flash',
+  'mapfx-grey-tendril',
+  'mapfx-mist',
 ]);
 
 /** Classes anchoring to their left edge — `transform: none` in CSS or inline. */

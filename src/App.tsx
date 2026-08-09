@@ -166,9 +166,7 @@ function UpdatePrompt() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-[130] flex justify-center p-4">
       <div className="panel-lit flex flex-wrap items-center gap-3 px-4 py-3 shadow-lg">
-        <span className="font-read text-[14px] text-parchment-dim">
-          A new version is ready.
-        </span>
+        <span className="font-read text-[14px] text-parchment-dim">A new version is ready.</span>
         <button
           type="button"
           onClick={apply}

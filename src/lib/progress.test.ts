@@ -97,7 +97,10 @@ describe('loadProgress backfill', () => {
   it('backfills the tally from attempts when a stored record predates tallies', () => {
     const legacyRecord = {
       ...emptyProgress(),
-      attempts: [attempt({ topic: 'commas', correct: true }), attempt({ topic: 'commas', correct: false })],
+      attempts: [
+        attempt({ topic: 'commas', correct: true }),
+        attempt({ topic: 'commas', correct: false }),
+      ],
       // No `tally` field at all — the exact shape of a pre-tally save.
       tally: undefined,
     };
@@ -324,10 +327,20 @@ describe('mergeProgress', () => {
     // plain `local.tally` still type-checks and still passes every other
     // test here — this is the one that catches it.
     const local = progress({
-      tally: { answered: 5, correct: 4, topics: { 'english::commas': { section: 'english', n: 5, ok: 4, ms: 0 } }, daily: {} },
+      tally: {
+        answered: 5,
+        correct: 4,
+        topics: { 'english::commas': { section: 'english', n: 5, ok: 4, ms: 0 } },
+        daily: {},
+      },
     });
     const remote = progress({
-      tally: { answered: 3, correct: 3, topics: { 'math::functions': { section: 'math', n: 3, ok: 3, ms: 0 } }, daily: {} },
+      tally: {
+        answered: 3,
+        correct: 3,
+        topics: { 'math::functions': { section: 'math', n: 3, ok: 3, ms: 0 } },
+        daily: {},
+      },
     });
     const merged = mergeProgress(local, remote);
     expect(merged.tally.answered).toBe(8);
@@ -374,8 +387,18 @@ describe('mergeProgress', () => {
 
 describe('mergeTally', () => {
   it('takes the max per topic rather than summing, per the documented under-count tradeoff', () => {
-    const local = { answered: 5, correct: 4, topics: { 'english::commas': { section: 'english' as const, n: 5, ok: 4, ms: 5000 } }, daily: {} };
-    const remote = { answered: 3, correct: 2, topics: { 'english::commas': { section: 'english' as const, n: 3, ok: 2, ms: 3000 } }, daily: {} };
+    const local = {
+      answered: 5,
+      correct: 4,
+      topics: { 'english::commas': { section: 'english' as const, n: 5, ok: 4, ms: 5000 } },
+      daily: {},
+    };
+    const remote = {
+      answered: 3,
+      correct: 2,
+      topics: { 'english::commas': { section: 'english' as const, n: 3, ok: 2, ms: 3000 } },
+      daily: {},
+    };
     const merged = mergeTally(local, remote);
     // Max(5,3)=5, not 5+3=8 — this is the deliberate under-count, not a bug.
     expect(merged.topics['english::commas'].n).toBe(5);
@@ -383,8 +406,18 @@ describe('mergeTally', () => {
   });
 
   it('sums correctly across genuinely different topics', () => {
-    const local = { answered: 5, correct: 4, topics: { 'english::commas': { section: 'english' as const, n: 5, ok: 4, ms: 5000 } }, daily: {} };
-    const remote = { answered: 3, correct: 3, topics: { 'math::functions': { section: 'math' as const, n: 3, ok: 3, ms: 3000 } }, daily: {} };
+    const local = {
+      answered: 5,
+      correct: 4,
+      topics: { 'english::commas': { section: 'english' as const, n: 5, ok: 4, ms: 5000 } },
+      daily: {},
+    };
+    const remote = {
+      answered: 3,
+      correct: 3,
+      topics: { 'math::functions': { section: 'math' as const, n: 3, ok: 3, ms: 3000 } },
+      daily: {},
+    };
     const merged = mergeTally(local, remote);
     expect(merged.answered).toBe(8);
     expect(merged.correct).toBe(7);
@@ -396,7 +429,12 @@ describe('mergeTally', () => {
 describe('recordTest', () => {
   it('awards the full-test bonus only when all four sections are present', () => {
     const fullResult: TestResult = {
-      id: 't1', at: Date.now(), scores: {}, composite: 25, raw: {}, durationSec: 100,
+      id: 't1',
+      at: Date.now(),
+      scores: {},
+      composite: 25,
+      raw: {},
+      durationSec: 100,
       sections: ['english', 'math', 'reading', 'science'],
     };
     const partialResult: TestResult = { ...fullResult, id: 't2', sections: ['english'] };

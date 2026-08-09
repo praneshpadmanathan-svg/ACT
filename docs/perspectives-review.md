@@ -6,7 +6,7 @@ turns up things the art can't fix.
 
 Companion documents: `docs/animation-inventory.md` (278 motion items),
 `docs/program-improvement-roadmap.md` (107 engineering/product items). This one is
-about how the thing *looks and lands* on the people who encounter it.
+about how the thing _looks and lands_ on the people who encounter it.
 
 ---
 
@@ -14,13 +14,13 @@ about how the thing *looks and lands* on the people who encounter it.
 
 Every visual asset in the product, measured:
 
-| File | Native size | Alpha | Used on | Style |
-| --- | --- | --- | --- | --- |
-| `world-map.webp` | 768 × 1376 | no | the map (the centrepiece) | painted ink-wash |
-| `camp-bg.webp` | 1376 × 768 | no | **5 screens** | painted ink-wash |
-| `landing-hero.webp` | 1024 × 559 | no | landing | **16-bit pixel art** |
-| `wizzy.webp` | 470 × 640 | yes | guide, story | inked cartoon |
-| `hero-char.webp` | 346 × 640 | yes | player, duel | inked cartoon |
+| File                | Native size | Alpha | Used on                   | Style                |
+| ------------------- | ----------- | ----- | ------------------------- | -------------------- |
+| `world-map.webp`    | 768 × 1376  | no    | the map (the centrepiece) | painted ink-wash     |
+| `camp-bg.webp`      | 1376 × 768  | no    | **5 screens**             | painted ink-wash     |
+| `landing-hero.webp` | 1024 × 559  | no    | landing                   | **16-bit pixel art** |
+| `wizzy.webp`        | 470 × 640   | yes   | guide, story              | inked cartoon        |
+| `hero-char.webp`    | 346 × 640   | yes   | player, duel              | inked cartoon        |
 
 **That is the entire art library. Five images, ~684 KB.** Plus roughly 430 lines of
 hand-written SVG covering four bosses, the rank sigils, and the nav glyphs.
@@ -41,7 +41,7 @@ Three numbers that matter more than any opinion below:
 
 ## 1. The art director
 
-*Main concern. This section is the answer to "the graphics could be 100× better."*
+_Main concern. This section is the answer to "the graphics could be 100× better."_
 
 ### 1a — Style coherence: the single biggest problem
 
@@ -55,7 +55,7 @@ the end of the region is a **flat vector shape with three dots for eyes**. Nothi
    strongest and most distinctive of the four — it should win, and the other three should
    be redrawn into it.
 2. **Kill the pixel-art landing hero** (`landing-hero.webp`, `Landing.tsx:236`). It is the
-   *first* thing anyone sees and it promises a retro platformer the app never delivers.
+   _first_ thing anyone sees and it promises a retro platformer the app never delivers.
    Replace with a painted vista in the map's register.
 3. **Redraw the four bosses** (`src/game/BossArt.tsx`, ~45 lines of flat SVG each). They
    are the climax of a region and currently look cheaper than the overworld — a
@@ -125,7 +125,7 @@ The map is the product's identity. It deserves its own list.
     visibly heals that part of the world. Currently clearing a region changes a pin's state
     and nothing about the world.
 26. **The portrait aspect (0.56) fights every landscape screen.** Consider a landscape or
-    square recomposition for desktop, or accept the crop and compose the art *knowing* only
+    square recomposition for desktop, or accept the crop and compose the art _knowing_ only
     a 31% window is ever visible.
 27. **Nothing in the map's composition accounts for the HUD.** Overlay chrome sits on top of
     painted detail rather than in space left for it.
@@ -139,7 +139,7 @@ The map is the product's identity. It deserves its own list.
 ### 1e — Characters
 
 31. **The hero is one fixed character: a white boy with brown hair.** For an app aimed at
-    every 13–17-year-old in the country, the avatar meant to represent *you* is a specific
+    every 13–17-year-old in the country, the avatar meant to represent _you_ is a specific
     someone else. This is both an inclusion problem and a motivation problem.
 32. **`hero: 'cadet'` is a dead field.** Typed in `types.ts:271`, written once in
     `progress.ts:102`, and read by nothing anywhere in the codebase. Character selection was
@@ -166,7 +166,7 @@ The map is the product's identity. It deserves its own list.
 40. **No custom icon set.** `NavGlyph.tsx` is 136 lines covering the seven nav items;
     everything else falls back to text or emoji.
 41. **The rank sigil is one shield shape recoloured seven times** (`RankBadge` in `ui.tsx`).
-    Seven ranks should look like seven *achievements*, not one badge with a palette swap.
+    Seven ranks should look like seven _achievements_, not one badge with a palette swap.
 42. **No texture on the "parchment" surfaces** — it's a flat cream fill (`#f4e8cf`) called
     parchment. Real paper grain would cost one tiling texture and lift every reading screen.
 43. **No texture on the leather chrome** either, for the same reason.
@@ -275,22 +275,22 @@ Ranked by visible impact per unit of effort:
     (Roadmap §8.)
 98. **No funnel instrumentation**, so the play-first redesign's effect is unmeasurable.
 99. **No cohort retention**, the single number that decides whether an edtech product works.
-100. **Single-founder key-person risk**, with a personal Gmail as the contact of record.
-101. **No CAC/growth mechanism.** No referral loop, no sharing, no SEO content strategy,
-     no viral surface at all.
-102. **TAM is capped by design** — US-only, ACT-only, one test per student per lifetime,
-     with a hard churn event (they take the test and leave forever).
-103. **No SAT.** The adjacent market is larger and the platform would mostly transfer.
-104. **No ACT Writing** section at all, so it can't claim complete coverage.
-105. **Free tier ceilings are load-bearing.** Supabase free is 50k MAU / 500 MB; growth past
-     that is a cost event nobody has modelled.
-106. **The project pauses itself after 7 days of inactivity** on Supabase free — a launch
-     that goes quiet for a week comes back broken.
-107. **No trademark clearance** evident for a product built adjacent to "ACT."
-108. **Content liability**: if a question is wrong and a student is scored on it, whose
-     problem is that?
-109. **The art is the differentiator and it's inconsistent** — for a consumer product aimed
-     at teenagers, the four-style problem is a *commercial* problem, not just an aesthetic one.
+100.  **Single-founder key-person risk**, with a personal Gmail as the contact of record.
+101.  **No CAC/growth mechanism.** No referral loop, no sharing, no SEO content strategy,
+      no viral surface at all.
+102.  **TAM is capped by design** — US-only, ACT-only, one test per student per lifetime,
+      with a hard churn event (they take the test and leave forever).
+103.  **No SAT.** The adjacent market is larger and the platform would mostly transfer.
+104.  **No ACT Writing** section at all, so it can't claim complete coverage.
+105.  **Free tier ceilings are load-bearing.** Supabase free is 50k MAU / 500 MB; growth past
+      that is a cost event nobody has modelled.
+106.  **The project pauses itself after 7 days of inactivity** on Supabase free — a launch
+      that goes quiet for a week comes back broken.
+107.  **No trademark clearance** evident for a product built adjacent to "ACT."
+108.  **Content liability**: if a question is wrong and a student is scored on it, whose
+      problem is that?
+109.  **The art is the differentiator and it's inconsistent** — for a consumer product aimed
+      at teenagers, the four-style problem is a _commercial_ problem, not just an aesthetic one.
 
 ## 6. The average person — clicked a link, no context
 
@@ -366,7 +366,7 @@ Ranked by visible impact per unit of effort:
 152. **`noUncheckedIndexedAccess` is off** in a codebase built on `Record` lookups.
 153. **Three vestigial fields** — `XP.dailyChallenge`, `OnboardingProfile.before`,
      `Progress.hero` — all written, none read. Each looks like a half-built feature.
-154. **The `.tsx` game layer is genuinely well-commented**; the comments explaining *why*
+154. **The `.tsx` game layer is genuinely well-commented**; the comments explaining _why_
      (the sync merge, the service worker, the focus trap) are better than most production
      code. Worth preserving as the standard.
 
@@ -381,7 +381,7 @@ Ranked by visible impact per unit of effort:
 159. **Account deletion is irreversible with no grace period** — correct per the policy, but
      one fat-finger and a year of work is gone with no restore path.
 160. **The policy promises "no analytics"**, which forecloses even first-party error
-     reporting without a rewrite. Fix the wording *before* adding monitoring, not after.
+     reporting without a rewrite. Fix the wording _before_ adding monitoring, not after.
 161. **No security contact or vulnerability disclosure path.**
 162. **No status page** — when Supabase pauses, students just see a generic error.
 163. **No rate limiting** on sync endpoints beyond a cooperative client-side debounce.

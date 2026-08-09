@@ -55,7 +55,10 @@ const DISPLAY = {
 };
 const SCRIPT = {
   family: 'IM FELL English SC',
-  file: sfnt('@fontsource/im-fell-english-sc/files/im-fell-english-sc-latin-400-normal.woff', 'IMFellSC.ttf'),
+  file: sfnt(
+    '@fontsource/im-fell-english-sc/files/im-fell-english-sc-latin-400-normal.woff',
+    'IMFellSC.ttf',
+  ),
 };
 const SANS = {
   family: 'Inter Medium',
@@ -149,9 +152,19 @@ const decor = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}
 /* ------------------------------------------------------------------ build */
 
 const title = await line('ACT COMMAND', { font: DISPLAY, px: 76, color: GOLD, tracking: 2 });
-const tag = await line('Free prep for the Enhanced ACT', { font: SCRIPT, px: 36, color: PARCHMENT });
-const sub = await line('A world map you climb one skill at a time.', { font: SANS, px: 25, color: MUTED });
-const bullets = await Promise.all(BULLETS.map((t) => line(t, { font: SANS, px: 24, color: PARCHMENT })));
+const tag = await line('Free prep for the Enhanced ACT', {
+  font: SCRIPT,
+  px: 36,
+  color: PARCHMENT,
+});
+const sub = await line('A world map you climb one skill at a time.', {
+  font: SANS,
+  px: 25,
+  color: MUTED,
+});
+const bullets = await Promise.all(
+  BULLETS.map((t) => line(t, { font: SANS, px: 24, color: PARCHMENT })),
+);
 
 const layers = [
   { input: Buffer.from(decor), left: 0, top: 0 },

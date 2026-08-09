@@ -6,13 +6,13 @@ A complete pass over the app, surface by surface. Every item is one buildable ch
 
 Measured, not guessed:
 
-| Fact | Number |
-| --- | --- |
-| `@keyframes` in `index.css` | 38 |
-| …that are map scenery (`fx-*`) | **37** |
-| Files using Motion | 7 (4 of them map/game) |
-| `QuestionRunner.tsx` — animation mentions / lines | **2 / 362** |
-| `Zone.tsx`, `PassagePanel.tsx` | **0** |
+| Fact                                              | Number                 |
+| ------------------------------------------------- | ---------------------- |
+| `@keyframes` in `index.css`                       | 38                     |
+| …that are map scenery (`fx-*`)                    | **37**                 |
+| Files using Motion                                | 7 (4 of them map/game) |
+| `QuestionRunner.tsx` — animation mentions / lines | **2 / 362**            |
+| `Zone.tsx`, `PassagePanel.tsx`                    | **0**                  |
 
 The map is a painted, living world. The rest of the app is a document. A student
 spends maybe 8% of their session on the map and 90% inside `QuestionRunner`,
@@ -106,7 +106,7 @@ The most-seen component in the app, and currently the least animated.
     stamps in with an overshoot, the row lifts 2px.
 55. **Wrong reveal:** the chosen row shakes horizontally (small, 3 cycles), then
     desaturates; the correct row illuminates a beat later — order matters, it
-    reads as "not that … *this*".
+    reads as "not that … _this_".
 56. Unselected rows fade to 55% on reveal so the eye goes to the two that matter.
 57. Explanation panel: height auto-animates open rather than appearing.
 58. Within the explanation, "why wrong" and "why right" stagger 80ms apart.
@@ -164,10 +164,10 @@ The most-seen component in the app, and currently the least animated.
 97. Table of contents highlights the active section as you scroll.
 98. Section jump scrolls smoothly with easing, not `scrollIntoView` instant.
 99. Search: results reorder with layout animation instead of re-rendering.
-100. Search with no results: the empty state fades in with a small shrug.
-101. "Read" checkmark draws on when a note is finished.
-102. Reading progress bar across the top of the note.
-103. Related-notes footer slides up when you reach the bottom.
+100.  Search with no results: the empty state fades in with a small shrug.
+101.  "Read" checkmark draws on when a note is finished.
+102.  Reading progress bar across the top of the note.
+103.  Related-notes footer slides up when you reach the bottom.
 
 ## 9. Training / Drills
 
@@ -372,7 +372,7 @@ looks identical, so nothing accumulates.
 243. Perfect-run detection with a distinct end-of-session celebration.
 244. Personal best beaten: a marker on the progress bar is passed and flares.
 245. Cool-down — after a wrong answer the escalation resets visibly, so the
-     player *sees* what they lost.
+     player _sees_ what they lost.
 
 ## 21. Landmark transition (cowork §2.5, still open)
 

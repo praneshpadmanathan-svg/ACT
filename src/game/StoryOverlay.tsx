@@ -31,7 +31,9 @@ import { Art } from '@/components/Art';
 const TYPE_MS = 16;
 
 function prefersReducedMotion(): boolean {
-  return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  return (
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
 }
 
 /** Types a string out character by character. */
@@ -282,7 +284,9 @@ export function StoryOverlay() {
       />
       <div
         className="pointer-events-none absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse at 50% 60%, transparent 40%, rgba(12,9,6,.85) 100%)' }}
+        style={{
+          background: 'radial-gradient(ellipse at 50% 60%, transparent 40%, rgba(12,9,6,.85) 100%)',
+        }}
       />
 
       {/* chapter title card */}
@@ -318,7 +322,10 @@ export function StoryOverlay() {
         <div
           key={`flash-${beatIndex}`}
           className="pointer-events-none absolute inset-0 z-[15] animate-sealFlash"
-          style={{ background: 'radial-gradient(ellipse at 50% 55%, rgba(255,236,178,.55), transparent 62%)' }}
+          style={{
+            background:
+              'radial-gradient(ellipse at 50% 55%, rgba(255,236,178,.55), transparent 62%)',
+          }}
           aria-hidden="true"
         />
       )}
@@ -337,16 +344,16 @@ export function StoryOverlay() {
               sizes={chapter.compact ? '92px' : '150px'}
               className={cx(
                 'animate-storyWizzy flex-none select-none',
-                chapter.compact
-                  ? 'w-[72px] sm:w-[92px]'
-                  : 'w-[96px] sm:w-[132px] lg:w-[150px]',
+                chapter.compact ? 'w-[72px] sm:w-[92px]' : 'w-[96px] sm:w-[132px] lg:w-[150px]',
               )}
               style={{ filter: 'drop-shadow(0 10px 16px rgba(0,0,0,.6))' }}
             />
 
             <div className="story-card min-w-0 flex-1">
               <div className="flex items-center justify-between gap-3">
-                <span className="eyebrow">✦ {chapter.compact ? chapter.eyebrow : 'Wizzy the Guide'}</span>
+                <span className="eyebrow">
+                  ✦ {chapter.compact ? chapter.eyebrow : 'Wizzy the Guide'}
+                </span>
                 <button
                   type="button"
                   onClick={(e) => {

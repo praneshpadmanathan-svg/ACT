@@ -174,7 +174,16 @@ export function DiscoveryLayer({ clearedByRegion, onFound }: Props) {
           >
             <span className="discovery-mark" aria-hidden="true">
               {isFound ? (
-                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="13"
+                  height="13"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.9"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M12 3.5 14 9l5.5.4-4.2 3.6 1.3 5.4L12 15.5 7.4 18.4l1.3-5.4L4.5 9.4 10 9l2-5.5Z" />
                 </svg>
               ) : null}
@@ -191,8 +200,7 @@ export function DiscoveryLayer({ clearedByRegion, onFound }: Props) {
 
 /* The reveal. Sits outside the world layer so it is never scaled or panned. */
 function DiscoveryCard({ discovery, onClose }: { discovery: Discovery; onClose: () => void }) {
-  const region =
-    discovery.region === 'summit' ? null : REGIONS[discovery.region as SectionId];
+  const region = discovery.region === 'summit' ? null : REGIONS[discovery.region as SectionId];
 
   return (
     <div
@@ -222,12 +230,7 @@ function DiscoveryCard({ discovery, onClose }: { discovery: Discovery; onClose: 
         </p>
         <div className="mt-5 flex items-center justify-between gap-3 border-t border-parchment-edge pt-4">
           <span className="label-quill">+{discovery.xp} XP</span>
-          <button
-            type="button"
-            onClick={onClose}
-            className="btn btn-quill"
-            autoFocus
-          >
+          <button type="button" onClick={onClose} className="btn btn-quill" autoFocus>
             Back to the map
           </button>
         </div>

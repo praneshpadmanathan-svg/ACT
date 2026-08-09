@@ -218,7 +218,10 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     (result: RecordResult) => {
       const unlocked: Achievement[] = checkAchievements(result.progress);
       const next: Progress = unlocked.length
-        ? { ...result.progress, achievements: [...result.progress.achievements, ...unlocked.map((a) => a.id)] }
+        ? {
+            ...result.progress,
+            achievements: [...result.progress.achievements, ...unlocked.map((a) => a.id)],
+          }
         : result.progress;
 
       setProgress(next);
@@ -245,10 +248,13 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       }
 
       unlocked.forEach((a, i) => {
-        window.setTimeout(() => {
-          pushToast({ title: a.name, detail: a.detail, color: '#ffd23e', icon: a.icon });
-          sfx.achieve();
-        }, result.rankedUp ? 1400 + i * 400 : i * 400);
+        window.setTimeout(
+          () => {
+            pushToast({ title: a.name, detail: a.detail, color: '#ffd23e', icon: a.icon });
+            sfx.achieve();
+          },
+          result.rankedUp ? 1400 + i * 400 : i * 400,
+        );
       });
     },
     [popXP, pushToast],
@@ -268,7 +274,12 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       if (p.notesRead.includes(pageId)) return;
       const withNote = { ...p, notesRead: [...p.notesRead, pageId] };
       applyResult(awardXPPure(withNote, XP.notePage));
-      pushToast({ title: 'Page complete', detail: `+${XP.notePage} XP`, color: '#3ad6f0', icon: 'book' });
+      pushToast({
+        title: 'Page complete',
+        detail: `+${XP.notePage} XP`,
+        color: '#3ad6f0',
+        icon: 'book',
+      });
     },
     [applyResult, pushToast],
   );
@@ -283,7 +294,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         : p;
 
       // Clearing pays once; beating your own best pays a smaller bonus.
-      const gain = previous < 0 ? XP.zoneCleared + (percent === 100 ? XP.zonePerfect : 0) : improved ? 40 : 0;
+      const gain =
+        previous < 0 ? XP.zoneCleared + (percent === 100 ? XP.zonePerfect : 0) : improved ? 40 : 0;
       applyResult(awardXPPure(withZone, gain));
     },
     [applyResult],
@@ -363,7 +375,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         setProgress(merged);
         progressRef.current = merged;
         const ok = await pushProgress(uid, name, merged);
-        if (!ok) setLastSyncError('Progress is saved on this device but could not reach the cloud.');
+        if (!ok)
+          setLastSyncError('Progress is saved on this device but could not reach the cloud.');
       } catch (err) {
         reportWarn('sync.cycle', err);
         setLastSyncError('Could not reach the cloud. Your progress is safe on this device.');
@@ -591,11 +604,38 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       deleteAccount: deleteAccountFn,
     }),
     [
-      progress, authReady, userId, playerName, isGuest, hasStarted, syncing, lastSyncError,
-      authRedirect, clearAuthRedirect, toasts, xpPops, levelUpRank, dismissLevelUp,
-      pushToast, dismissToast, answerQuestion, markNoteRead, clearZone, finishTest, finishDaily, finishDiagnostic,
-      updateProgress, identity, continueAsGuest, claimGuestProgress, releaseGuestClaim, refreshAuth,
-      signOutFn, syncNow, resetEverything, deleteAccountFn,
+      progress,
+      authReady,
+      userId,
+      playerName,
+      isGuest,
+      hasStarted,
+      syncing,
+      lastSyncError,
+      authRedirect,
+      clearAuthRedirect,
+      toasts,
+      xpPops,
+      levelUpRank,
+      dismissLevelUp,
+      pushToast,
+      dismissToast,
+      answerQuestion,
+      markNoteRead,
+      clearZone,
+      finishTest,
+      finishDaily,
+      finishDiagnostic,
+      updateProgress,
+      identity,
+      continueAsGuest,
+      claimGuestProgress,
+      releaseGuestClaim,
+      refreshAuth,
+      signOutFn,
+      syncNow,
+      resetEverything,
+      deleteAccountFn,
     ],
   );
 

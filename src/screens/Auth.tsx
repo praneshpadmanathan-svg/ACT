@@ -210,9 +210,9 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
     return (
       <Frame title="Accounts aren’t switched on yet">
         <p className="mb-4 font-read text-[15px] leading-relaxed text-parchment-dim">
-          This copy of ACT Command has no account server connected, so there is nothing to
-          sign in to right now. Everything saves to this browser instead — all 754 questions,
-          every lesson, the guardians and the timed trial work exactly the same.
+          This copy of ACT Command has no account server connected, so there is nothing to sign in
+          to right now. Everything saves to this browser instead — all 754 questions, every lesson,
+          the guardians and the timed trial work exactly the same.
         </p>
         <p className="mb-6 rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[13px] leading-relaxed text-ink-faint">
           Running this yourself? Accounts turn on the moment{' '}
@@ -232,13 +232,13 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
     return (
       <Frame title="Come on in">
         <p className="font-read text-[15px] leading-relaxed text-parchment-dim">
-          We only make accounts for people <b className="text-parchment">13 and over</b>, so
-          this one is on the house — nothing to sign up for and no email needed.
+          We only make accounts for people <b className="text-parchment">13 and over</b>, so this
+          one is on the house — nothing to sign up for and no email needed.
         </p>
         <p className="mt-3 font-read text-[15px] leading-relaxed text-parchment-dim">
-          Everything is unlocked: all four roads, every lesson, the guardians, the timed
-          trial. Your progress saves on this device, so come back to the same browser and
-          your world is where you left it.
+          Everything is unlocked: all four roads, every lesson, the guardians, the timed trial. Your
+          progress saves on this device, so come back to the same browser and your world is where
+          you left it.
         </p>
         <Button variant="primary" size="lg" className="mt-7 w-full" onClick={startPlaying}>
           Start the journey ▶
@@ -271,9 +271,9 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         title: 'Check your email',
         body: (
           <>
-            We have sent a message to <b className="text-cliffs">{email}</b>. Open the link in
-            it and you will land back here, signed in, with your progress intact. If that
-            address already has an account, the message will say so instead.
+            We have sent a message to <b className="text-cliffs">{email}</b>. Open the link in it
+            and you will land back here, signed in, with your progress intact. If that address
+            already has an account, the message will say so instead.
           </>
         ),
       },
@@ -281,8 +281,8 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         title: 'Check your email',
         body: (
           <>
-            If <b className="text-cliffs">{email}</b> has an account, a sign-in code is on its
-            way. Enter it below — or just open the link in the same email.
+            If <b className="text-cliffs">{email}</b> has an account, a sign-in code is on its way.
+            Enter it below — or just open the link in the same email.
           </>
         ),
       },
@@ -290,8 +290,8 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         title: 'Check your email',
         body: (
           <>
-            If <b className="text-cliffs">{email}</b> has an account, a reset link is on its
-            way. Open it and you can choose a new password.
+            If <b className="text-cliffs">{email}</b> has an account, a reset link is on its way.
+            Open it and you can choose a new password.
           </>
         ),
       },
@@ -413,7 +413,12 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         <Button type="submit" variant="primary" size="lg" className="w-full" disabled={busy}>
           {busy
             ? 'Working…'
-            : { signup: 'Create account', signin: 'Sign in', forgot: 'Email me a link', reset: 'Save password' }[mode]}
+            : {
+                signup: 'Create account',
+                signin: 'Sign in',
+                forgot: 'Email me a link',
+                reset: 'Save password',
+              }[mode]}
         </Button>
       </form>
 
@@ -447,8 +452,8 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
           <a href={hrefFor({ name: 'privacy' })} className="text-cliffs-text hover:underline">
             privacy policy
           </a>
-          . We ask for an email so your progress can follow you between devices — nothing
-          else, and never for advertising.
+          . We ask for an email so your progress can follow you between devices — nothing else, and
+          never for advertising.
         </p>
       )}
 
@@ -483,7 +488,11 @@ function Frame({
 }) {
   return (
     <div className="relative isolate flex min-h-dvh items-center justify-center overflow-hidden px-4 py-14">
-      <Art name="camp-bg" priority className="absolute inset-0 h-full w-full select-none object-cover" />
+      <Art
+        name="camp-bg"
+        priority
+        className="absolute inset-0 h-full w-full select-none object-cover"
+      />
       <div className="absolute inset-0 bg-leather-950/84" />
 
       <div className="panel-lit relative z-10 w-full max-w-md p-7 sm:p-9">
@@ -503,13 +512,7 @@ function Frame({
    than a number: "03/04" is the 4th of March or the 3rd of April depending on
    where the student grew up, and guessing wrong could put them on the wrong
    side of the line. Nothing on this screen mentions what the threshold is. */
-function AgeGate({
-  onAnswer,
-  onBack,
-}: {
-  onAnswer: (dob: DateParts) => void;
-  onBack: () => void;
-}) {
+function AgeGate({ onAnswer, onBack }: { onAnswer: (dob: DateParts) => void; onBack: () => void }) {
   const [month, setMonth] = useState('');
   const [day, setDay] = useState('');
   const [year, setYear] = useState('');
@@ -580,9 +583,8 @@ function AgeGate({
       </form>
 
       <p className="mt-4 font-read text-[12.5px] leading-relaxed text-ink-faint">
-        We use this once, to work out which parts of the site we are allowed to offer you.
-        Your date of birth is <b className="text-parchment-dim">not saved</b> and never
-        leaves this device.
+        We use this once, to work out which parts of the site we are allowed to offer you. Your date
+        of birth is <b className="text-parchment-dim">not saved</b> and never leaves this device.
       </p>
 
       <BackLink onClick={onBack} />

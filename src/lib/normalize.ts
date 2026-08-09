@@ -83,13 +83,9 @@ export function fromDrillQuestion(q: Question): RunnableQuestion {
 
   return shuffleChoices({
     id: q.id,
-    prompt: hasUnderline
-      ? 'Which choice best replaces the highlighted text?'
-      : q.context,
+    prompt: hasUnderline ? 'Which choice best replaces the highlighted text?' : q.context,
     promptFormat: 'markdown',
-    label: hasUnderline
-      ? q.context.replace(guillemet, '<u><b>$1</b></u>')
-      : undefined,
+    label: hasUnderline ? q.context.replace(guillemet, '<u><b>$1</b></u>') : undefined,
     choices: q.choices.map((c) => ({ key: c.id, text: c.text, format: 'markdown' as const })),
     correctKey: q.answer,
     why: q.why,

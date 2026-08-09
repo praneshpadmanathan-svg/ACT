@@ -162,7 +162,10 @@ function Frame({
 
       {/* Grain last, over everything, clipped to the figure's own box. */}
       <rect
-        x="10" y="10" width="180" height="196"
+        x="10"
+        y="10"
+        width="180"
+        height="196"
         filter={ids.grain}
         style={{ mixBlendMode: 'multiply' }}
         pointerEvents="none"
@@ -176,8 +179,18 @@ function Frame({
    inboard — where a pupil actually sits when something is looking at you —
    and a single specular dot is what turns a circle into a wet eye. */
 function Eye({
-  cx: x, cy: y, r, glow, pupil = 0.42,
-}: { cx: number; cy: number; r: number; glow: string; pupil?: number }) {
+  cx: x,
+  cy: y,
+  r,
+  glow,
+  pupil = 0.42,
+}: {
+  cx: number;
+  cy: number;
+  r: number;
+  glow: string;
+  pupil?: number;
+}) {
   return (
     <g>
       <ellipse cx={x} cy={y} rx={r} ry={r * 1.12} fill={glow} stroke={INK} strokeWidth="2.6" />
@@ -202,7 +215,10 @@ function GrammarGauntlet({ state }: { state: BossState }) {
               robe and a brown triangle. */}
           <path
             d="M84 106 Q80 154 78 198M100 112 Q100 156 100 200M116 106 Q120 154 122 198"
-            fill="none" stroke={INK} strokeWidth="2" opacity=".28"
+            fill="none"
+            stroke={INK}
+            strokeWidth="2"
+            opacity=".28"
           />
           {/* the chest opening, lit */}
           <path d="M78 96 L100 118 L122 96 Z" fill={ids.alt} />
@@ -225,12 +241,23 @@ function GrammarGauntlet({ state }: { state: BossState }) {
           </g>
 
           {/* head */}
-          <path d="M76 66 Q76 40 100 40 Q124 40 124 66 Q124 90 100 92 Q76 90 76 66 Z" fill="#d9c39a" />
+          <path
+            d="M76 66 Q76 40 100 40 Q124 40 124 66 Q124 90 100 92 Q76 90 76 66 Z"
+            fill="#d9c39a"
+          />
           {/* The hood casts onto the face. Without this the head is a pale
               oval floating inside a brown horseshoe. */}
-          <path d="M76 62 Q76 40 100 40 Q124 40 124 62 Q100 56 76 62 Z" fill={INK} opacity=".3" stroke="none" />
+          <path
+            d="M76 62 Q76 40 100 40 Q124 40 124 62 Q100 56 76 62 Z"
+            fill={INK}
+            opacity=".3"
+            stroke="none"
+          />
           {/* hood */}
-          <path d="M70 68 Q68 30 100 26 Q132 30 130 68 L118 60 Q116 44 100 42 Q84 44 82 60 Z" fill={ids.base} />
+          <path
+            d="M70 68 Q68 30 100 26 Q132 30 130 68 L118 60 Q116 44 100 42 Q84 44 82 60 Z"
+            fill={ids.base}
+          />
           <path d="M72 60 Q72 32 100 28" fill="none" stroke={RIM} strokeWidth="2" opacity=".45" />
 
           <Eye cx={88} cy={66} r={5.4} glow={ids.glow} />
@@ -261,7 +288,10 @@ function PassageTitan({ state }: { state: BossState }) {
           {/* the roots themselves, rather than one smooth trunk */}
           <path
             d="M74 118 Q70 158 66 198M88 126 Q86 162 84 200M112 126 Q114 162 116 200M126 118 Q130 158 134 198"
-            fill="none" stroke={INK} strokeWidth="2.2" opacity=".32"
+            fill="none"
+            stroke={INK}
+            strokeWidth="2.2"
+            opacity=".32"
           />
           <path d="M72 104 Q100 128 128 104" fill="none" strokeWidth="2.4" opacity=".5" />
 
@@ -309,7 +339,12 @@ function NumberCrusher({ state }: { state: BossState }) {
           <rect x="60" y="86" width="80" height="60" rx="8" fill={ids.alt} />
           {/* the block's own shading: a lit top-left bevel and a dark base */}
           <path d="M64 90 L136 90" fill="none" stroke={RIM} strokeWidth="2.4" opacity=".38" />
-          <path d="M60 130 h80 v8 a8 8 0 0 1 -8 8 h-64 a8 8 0 0 1 -8 -8 Z" fill={INK} opacity=".22" stroke="none" />
+          <path
+            d="M60 130 h80 v8 a8 8 0 0 1 -8 8 h-64 a8 8 0 0 1 -8 -8 Z"
+            fill={INK}
+            opacity=".22"
+            stroke="none"
+          />
 
           {/* arms */}
           <path d="M60 96 L26 116 L26 152 L48 152 L52 124 Z" fill={ids.base} />
@@ -365,19 +400,32 @@ function LabLeviathan({ state }: { state: BossState }) {
           </g>
           {/* suckers */}
           <g fill={INK} opacity=".26" stroke="none">
-            <circle cx="46" cy="184" r="2.6" /><circle cx="36" cy="194" r="2.2" />
-            <circle cx="70" cy="192" r="2.6" /><circle cx="62" cy="202" r="2.2" />
-            <circle cx="130" cy="192" r="2.6" /><circle cx="138" cy="202" r="2.2" />
-            <circle cx="154" cy="184" r="2.6" /><circle cx="164" cy="194" r="2.2" />
+            <circle cx="46" cy="184" r="2.6" />
+            <circle cx="36" cy="194" r="2.2" />
+            <circle cx="70" cy="192" r="2.6" />
+            <circle cx="62" cy="202" r="2.2" />
+            <circle cx="130" cy="192" r="2.6" />
+            <circle cx="138" cy="202" r="2.2" />
+            <circle cx="154" cy="184" r="2.6" />
+            <circle cx="164" cy="194" r="2.2" />
           </g>
 
           {/* mantle */}
           <path d="M56 150 Q48 74 100 56 Q152 74 144 150 Q100 176 56 150 Z" fill={ids.base} />
           <path d="M62 130 Q56 82 96 62" fill="none" stroke={RIM} strokeWidth="2.6" opacity=".38" />
-          <path d="M56 150 Q100 176 144 150 Q100 164 56 150 Z" fill={INK} opacity=".3" stroke="none" />
+          <path
+            d="M56 150 Q100 176 144 150 Q100 164 56 150 Z"
+            fill={INK}
+            opacity=".3"
+            stroke="none"
+          />
 
           {/* the vessel: glass over a lit fluid, with a highlight down one side */}
-          <path d="M84 52 L84 30 L116 30 L116 52 Q126 62 100 68 Q74 62 84 52 Z" fill={ids.alt} opacity=".9" />
+          <path
+            d="M84 52 L84 30 L116 30 L116 52 Q126 62 100 68 Q74 62 84 52 Z"
+            fill={ids.alt}
+            opacity=".9"
+          />
           <path d="M88 50 L88 32" fill="none" stroke="#ffffff" strokeWidth="2.4" opacity=".7" />
           <rect x="80" y="24" width="40" height="8" rx="3" fill="#cbb68f" />
           <circle cx="96" cy="52" r="4" fill="#7de0c0" />

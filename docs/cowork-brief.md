@@ -13,8 +13,8 @@ design. Two jobs, in this order:
    the ones that survive a casual look — the kind that only show up at a
    different zoom, a different screen size, on a second visit, or after an hour
    of use.
-2. **Design animation.** The bar: *a stranger who lands on this should assume
-   it is a game, not a study app.* Right now it is close. I want a concrete,
+2. **Design animation.** The bar: _a stranger who lands on this should assume
+   it is a game, not a study app._ Right now it is close. I want a concrete,
    prioritised, implementable list that closes the gap.
 
 Be specific and be concrete. "Add more particle effects" is useless to me.
@@ -38,12 +38,12 @@ map is the Grey; it thins as you clear the region under it.
 
 The four regions, stacked vertically on one image:
 
-| Region | Subject | Vertical band (% of map) |
-| --- | --- | --- |
-| The Grammar Village — farmland, cottages, river | English | ~0–27% |
-| The Enchanted Woods — dense canopy, mushrooms | Reading | ~19–47% |
-| The Number Desert — canyon, dunes, volcano | Math | ~39–65% |
-| The Science Cliffs — coast, bay, lighthouse, citadel | Science | ~55–87% |
+| Region                                               | Subject | Vertical band (% of map) |
+| ---------------------------------------------------- | ------- | ------------------------ |
+| The Grammar Village — farmland, cottages, river      | English | ~0–27%                   |
+| The Enchanted Woods — dense canopy, mushrooms        | Reading | ~19–47%                  |
+| The Number Desert — canyon, dunes, volcano           | Math    | ~39–65%                  |
+| The Science Cliffs — coast, bay, lighthouse, citadel | Science | ~55–87%                  |
 
 ---
 
@@ -69,7 +69,7 @@ percentage (the `.mapfx-crossing` track pattern). Flag every instance you find.
 Any `@keyframes` that sets `transform` without re-including that translate makes
 the element jump by half its own size the moment the animation starts. Check
 every keyframe against the base rule of the element it targets. Note that a
-child of a `.mapfx > span` does *not* inherit the centring, so bare `scale()` on
+child of a `.mapfx > span` does _not_ inherit the centring, so bare `scale()` on
 a child is correct — don't report those as bugs.
 
 **3 — Compositor-only properties.** Animate `transform` and `opacity`. `filter`
@@ -105,7 +105,7 @@ are a non-starter for a free app.
 that. Prefer inline SVG and CSS over image files.
 
 **9 — The map is one flat image.** `public/art/world-map.webp`, 768×1376.
-Nothing can currently move *behind* or *between* terrain, because there is no
+Nothing can currently move _behind_ or _between_ terrain, because there is no
 behind. If your best ideas need layer separation, say so explicitly and specify
 exactly what layers you'd need — I can commission them.
 
@@ -237,6 +237,7 @@ there motion that should be sound-coupled, and vice versa?
 A single prioritised document. For every item:
 
 **Bugs:**
+
 - File and line
 - What is wrong, in one sentence
 - How to reproduce, exactly — including zoom level, viewport size and route
@@ -244,6 +245,7 @@ A single prioritised document. For every item:
 - The fix, concretely
 
 **Animation proposals:**
+
 - What it is and where it goes (map coordinates as % where relevant)
 - Why it earns its place — what it tells the player
 - Implementation: CSS keyframes or Motion, actual property values, duration,

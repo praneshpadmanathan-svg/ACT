@@ -68,8 +68,8 @@ export function DiagnosticScreen() {
               <li>· No timer. Take as long as you need on each one.</li>
               <li>· Explanations come at the end, not as you go.</li>
               <li>
-                · A guess is fine and useful — getting one wrong here is how the app learns
-                what to show you.
+                · A guess is fine and useful — getting one wrong here is how the app learns what to
+                show you.
               </li>
             </ul>
 
@@ -90,7 +90,11 @@ export function DiagnosticScreen() {
             >
               {already ? 'Take it again ▶' : 'Start ▶'}
             </Button>
-            <Button variant="ghost" className="mt-3 w-full" onClick={() => navigate({ name: 'home' })}>
+            <Button
+              variant="ghost"
+              className="mt-3 w-full"
+              onClick={() => navigate({ name: 'home' })}
+            >
               Skip — I would rather just play
             </Button>
           </div>
@@ -171,9 +175,9 @@ export function DiagnosticSummary({ result }: { result: DiagnosticResult }) {
           </h1>
 
           <p className="mx-auto mt-4 max-w-md text-center text-[14px] leading-relaxed text-parchment-dim">
-            These are rough placements, not scores. A handful of questions per section is
-            enough to rank them against each other and nothing more — the real number comes
-            from a full timed test.
+            These are rough placements, not scores. A handful of questions per section is enough to
+            rank them against each other and nothing more — the real number comes from a full timed
+            test.
           </p>
 
           <div className="mt-8 space-y-3">
@@ -207,8 +211,8 @@ export function DiagnosticSummary({ result }: { result: DiagnosticResult }) {
           <div className="mt-6">
             <h2 className="heading mb-2 text-[13px] text-parchment">Start with these</h2>
             <p className="mb-4 text-[13px] leading-relaxed text-ink-faint">
-              Topics you got nothing right in. Your plan will lead with them until you have
-              answered enough elsewhere for it to know better.
+              Topics you got nothing right in. Your plan will lead with them until you have answered
+              enough elsewhere for it to know better.
             </p>
             <div className="flex flex-wrap gap-2">
               {result.weakTopics.map((topic) => (

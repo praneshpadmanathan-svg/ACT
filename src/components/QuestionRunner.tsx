@@ -95,7 +95,11 @@ const FLARE_FLOOR_MS = 340;
    coloured rows"; sequenced reads as "not that — this". */
 const REVEAL_LAG = 0.3;
 
-const DIFFICULTY_LABEL: Record<Difficulty, string> = { easy: 'Easy', medium: 'Medium', hard: 'Hard' };
+const DIFFICULTY_LABEL: Record<Difficulty, string> = {
+  easy: 'Easy',
+  medium: 'Medium',
+  hard: 'Hard',
+};
 /* These sit on parchment, so they are inks rather than the bright accents
    used on the dark chrome — the previous neon set measured about 1:1 against
    a cream background. */
@@ -111,7 +115,11 @@ const DIFFICULTY_COLOR: Record<Difficulty, string> = {
  *  back with nothing between them is unusable — you cannot answer "B" if you
  *  never heard which one B was. */
 function spokenForm(question: RunnableQuestion): string {
-  const plain = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  const plain = (html: string) =>
+    html
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
   const parts = [
     question.label ? plain(question.label) : '',
     plain(question.prompt),
@@ -150,7 +158,12 @@ export function QuestionRunner({
   const isLast = index === questions.length - 1;
   const promptId = useId();
 
-  useEffect(() => () => { if (litTimer.current) window.clearTimeout(litTimer.current); }, []);
+  useEffect(
+    () => () => {
+      if (litTimer.current) window.clearTimeout(litTimer.current);
+    },
+    [],
+  );
 
   // Session clock, for the summary.
   useEffect(() => {
@@ -369,7 +382,9 @@ export function QuestionRunner({
 
           {question.label && (
             <p className="mb-4 border-l-4 border-[#c9b06a] bg-[#fbf6e6] px-4 py-3 font-read text-[1.02rem] leading-relaxed">
-              <RichText as="span" format="html">{question.label}</RichText>
+              <RichText as="span" format="html">
+                {question.label}
+              </RichText>
             </p>
           )}
 
@@ -415,7 +430,9 @@ export function QuestionRunner({
               return (
                 <m.button
                   key={choice.key}
-                  ref={(el: HTMLButtonElement | null) => { choiceEls.current[choice.key] = el; }}
+                  ref={(el: HTMLButtonElement | null) => {
+                    choiceEls.current[choice.key] = el;
+                  }}
                   type="button"
                   onClick={() => commit(choice.key)}
                   disabled={revealed}
@@ -429,9 +446,12 @@ export function QuestionRunner({
                      pattern's own rule. */
                   tabIndex={revealed ? -1 : (chosen ? isChosen : i === 0) ? 0 : -1}
                   onKeyDown={(e: React.KeyboardEvent) => {
-                    const step = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1
-                      : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1
-                        : 0;
+                    const step =
+                      e.key === 'ArrowDown' || e.key === 'ArrowRight'
+                        ? 1
+                        : e.key === 'ArrowUp' || e.key === 'ArrowLeft'
+                          ? -1
+                          : 0;
                     if (!step || revealed) return;
                     e.preventDefault();
                     const n = question.choices.length;
@@ -483,8 +503,15 @@ export function QuestionRunner({
 
           {!revealed && (
             <p className="mt-5 text-[12px] text-ink-soft">
-              Tip: press <kbd className="rounded border border-parchment-edge bg-[#ece7db] px-1.5 py-0.5 font-mono text-[11px]">A</kbd>–
-              <kbd className="rounded border border-parchment-edge bg-[#ece7db] px-1.5 py-0.5 font-mono text-[11px]">D</kbd> to answer.
+              Tip: press{' '}
+              <kbd className="rounded border border-parchment-edge bg-[#ece7db] px-1.5 py-0.5 font-mono text-[11px]">
+                A
+              </kbd>
+              –
+              <kbd className="rounded border border-parchment-edge bg-[#ece7db] px-1.5 py-0.5 font-mono text-[11px]">
+                D
+              </kbd>{' '}
+              to answer.
             </p>
           )}
 
@@ -553,7 +580,10 @@ export function QuestionRunner({
                     className="ink-example"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: chosen === question.correctKey ? 0.1 : 0.19 }}
+                    transition={{
+                      duration: 0.3,
+                      delay: chosen === question.correctKey ? 0.1 : 0.19,
+                    }}
                   >
                     <div className="lesson-label">Why {question.correctKey} is right</div>
                     <RichText

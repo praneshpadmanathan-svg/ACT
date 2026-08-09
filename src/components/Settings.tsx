@@ -14,12 +14,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import {
-  usePrefs,
-  type TextScale,
-  type ThemeChoice,
-  type TimeAllowance,
-} from '@/lib/prefs';
+import { usePrefs, type TextScale, type ThemeChoice, type TimeAllowance } from '@/lib/prefs';
 import { speechSupported } from '@/lib/speech';
 import { clearDiagnostics, diagnosticsText, onDiagnostics, type ReportEvent } from '@/lib/report';
 import { cx } from '@/lib/utils';
@@ -45,7 +40,9 @@ function Field({
         </span>
       </div>
       {children}
-      {hint && <p className="mt-2 font-read text-[12.5px] leading-relaxed text-ink-faint">{hint}</p>}
+      {hint && (
+        <p className="mt-2 font-read text-[12.5px] leading-relaxed text-ink-faint">{hint}</p>
+      )}
     </div>
   );
 }

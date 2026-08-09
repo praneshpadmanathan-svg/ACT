@@ -55,7 +55,10 @@ function framed(inset) {
 }
 
 const png = (svg, size) =>
-  sharp(Buffer.from(svg), { density: 512 }).resize(size, size).png({ compressionLevel: 9 }).toBuffer();
+  sharp(Buffer.from(svg), { density: 512 })
+    .resize(size, size)
+    .png({ compressionLevel: 9 })
+    .toBuffer();
 
 const rounded = readFileSync(pub('favicon.svg'));
 

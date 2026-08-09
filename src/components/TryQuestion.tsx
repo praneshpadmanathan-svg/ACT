@@ -39,7 +39,8 @@ export function pickSample(): Question | undefined {
   return (
     getQuestion(SAMPLE_ID) ??
     ALL_QUESTIONS.find(
-      (q) => !q.passage && q.difficulty === 'medium' && Object.keys(q.why).length === q.choices.length,
+      (q) =>
+        !q.passage && q.difficulty === 'medium' && Object.keys(q.why).length === q.choices.length,
     ) ??
     ALL_QUESTIONS[0]
   );
@@ -85,13 +86,19 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
         aria-label="Sample question answers"
         className="mt-5 grid gap-2.5"
         onKeyDown={(e) => {
-          const step = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1
-            : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1
-              : 0;
+          const step =
+            e.key === 'ArrowDown' || e.key === 'ArrowRight'
+              ? 1
+              : e.key === 'ArrowUp' || e.key === 'ArrowLeft'
+                ? -1
+                : 0;
           if (step === 0 || revealed) return;
           e.preventDefault();
           const at = question.choices.findIndex((c) => c.id === chosen);
-          const to = question.choices[(((at < 0 ? 0 : at) + step) + question.choices.length) % question.choices.length]!;
+          const to =
+            question.choices[
+              ((at < 0 ? 0 : at) + step + question.choices.length) % question.choices.length
+            ]!;
           answer(to.id);
         }}
       >
@@ -117,7 +124,10 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
                 !revealed && 'border-leather-700 bg-leather-900/70 hover:border-gold-deep',
                 revealed && isAnswer && 'border-woods-text bg-woods-text/12',
                 revealed && picked && !isAnswer && 'border-blood-text bg-blood-text/12',
-                revealed && !isAnswer && !picked && 'border-leather-700/60 bg-leather-900/40 opacity-70',
+                revealed &&
+                  !isAnswer &&
+                  !picked &&
+                  'border-leather-700/60 bg-leather-900/40 opacity-70',
               )}
             >
               <span className="flex gap-3">
@@ -149,9 +159,9 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
             <b className={correct ? 'text-woods-text' : 'text-blood-text'}>
               {correct ? 'Correct.' : 'Not this time.'}
             </b>{' '}
-            Every question in the app explains all four choices like this — including the ones
-            you did not pick, because the wrong answer you were tempted by is the useful thing
-            to know about.
+            Every question in the app explains all four choices like this — including the ones you
+            did not pick, because the wrong answer you were tempted by is the useful thing to know
+            about.
             {onFinish && (
               <>
                 {' '}

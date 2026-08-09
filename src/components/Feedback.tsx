@@ -14,8 +14,15 @@ import { Button, RankBadge } from './ui';
 const CONFETTI_COLORS = ['#f2cf5b', '#d4a017', '#e8c34a', '#c98b2e', '#f7e6ae', '#9c7410'];
 
 interface Particle {
-  x: number; y: number; vx: number; vy: number;
-  size: number; color: string; rot: number; vrot: number; life: number;
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  size: number;
+  color: string;
+  rot: number;
+  vrot: number;
+  life: number;
 }
 
 let burstFn: ((count: number, x: number, y: number, spread?: number) => void) | null = null;
@@ -80,7 +87,8 @@ export function ConfettiCanvas() {
       const particles = particlesRef.current;
       for (let i = 0; i < count; i++) {
         particles.push({
-          x, y,
+          x,
+          y,
           vx: (Math.random() - 0.5) * spread,
           vy: -Math.random() * 13 - 3,
           size: 4 + Math.random() * 5,
@@ -100,7 +108,13 @@ export function ConfettiCanvas() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="pointer-events-none fixed inset-0 z-[105]" aria-hidden="true" />;
+  return (
+    <canvas
+      ref={canvasRef}
+      className="pointer-events-none fixed inset-0 z-[105]"
+      aria-hidden="true"
+    />
+  );
 }
 
 /* ------------------------------------------------------------- xp popups */
@@ -108,7 +122,10 @@ export function ConfettiCanvas() {
 export function XPPopups() {
   const { xpPops } = useStore();
   return (
-    <div className="pointer-events-none fixed right-6 top-24 z-[80] flex flex-col items-end gap-1" aria-hidden="true">
+    <div
+      className="pointer-events-none fixed right-6 top-24 z-[80] flex flex-col items-end gap-1"
+      aria-hidden="true"
+    >
       {xpPops.map((pop) => (
         <div
           key={pop.id}
@@ -136,10 +153,18 @@ export function Toasts() {
           className="pointer-events-auto flex animate-slidein items-center gap-3 rounded-lg border-2 border-gold-deep bg-leather-850/95 px-4 py-3 text-left shadow-card backdrop-blur"
           style={{ borderLeftWidth: 6, borderLeftColor: t.color ?? '#ffd23e' }}
         >
-          <span className="text-[17px] text-gold" aria-hidden="true">✦</span>
+          <span className="text-[17px] text-gold" aria-hidden="true">
+            ✦
+          </span>
           <span className="min-w-0">
-            <span className="block font-script text-[13px] uppercase tracking-wide text-parchment">{t.title}</span>
-            {t.detail && <span className="mt-0.5 block text-xs leading-snug text-parchment-dim">{t.detail}</span>}
+            <span className="block font-script text-[13px] uppercase tracking-wide text-parchment">
+              {t.title}
+            </span>
+            {t.detail && (
+              <span className="mt-0.5 block text-xs leading-snug text-parchment-dim">
+                {t.detail}
+              </span>
+            )}
           </span>
         </button>
       ))}
@@ -155,8 +180,14 @@ export function LevelUpOverlay() {
   useEffect(() => {
     if (levelUpRank === null) return;
     burstConfetti(110, window.innerWidth / 2, window.innerHeight / 2, 22);
-    const t1 = window.setTimeout(() => burstConfetti(60, window.innerWidth / 2 - 220, window.innerHeight / 2 - 60, 16), 350);
-    const t2 = window.setTimeout(() => burstConfetti(60, window.innerWidth / 2 + 220, window.innerHeight / 2 - 60, 16), 500);
+    const t1 = window.setTimeout(
+      () => burstConfetti(60, window.innerWidth / 2 - 220, window.innerHeight / 2 - 60, 16),
+      350,
+    );
+    const t2 = window.setTimeout(
+      () => burstConfetti(60, window.innerWidth / 2 + 220, window.innerHeight / 2 - 60, 16),
+      500,
+    );
     const escape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') dismissLevelUp();
     };
@@ -175,7 +206,9 @@ export function LevelUpOverlay() {
   return (
     <div
       className="fixed inset-0 z-[110] flex cursor-pointer items-center justify-center overflow-hidden"
-      style={{ background: 'radial-gradient(circle at 50% 42%, rgba(46,37,26,.95), rgba(12,9,6,.97))' }}
+      style={{
+        background: 'radial-gradient(circle at 50% 42%, rgba(46,37,26,.95), rgba(12,9,6,.97))',
+      }}
       onClick={dismissLevelUp}
       role="dialog"
       aria-label={`A new rank: ${rank.name}`}
@@ -211,7 +244,9 @@ export function LevelUpOverlay() {
         </p>
 
         <div className="mt-6 font-script text-[13px] uppercase tracking-[0.18em] text-ink-faint">
-          {next ? `Next — ${next.name} at ${next.xp.toLocaleString()} XP` : 'The highest rank there is'}
+          {next
+            ? `Next — ${next.name} at ${next.xp.toLocaleString()} XP`
+            : 'The highest rank there is'}
         </div>
 
         <Button variant="primary" size="lg" className="mt-8" onClick={dismissLevelUp}>

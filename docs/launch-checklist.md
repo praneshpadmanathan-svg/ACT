@@ -10,13 +10,13 @@ typecheck, and getting it wrong fails quietly. Work top to bottom.
 
 Free tier, and the limits are worth knowing before you pick a region:
 
-| | Free plan |
-| --- | --- |
-| Monthly active users | 50,000 |
-| Database | 500 MB |
-| Egress | 5 GB |
-| Projects | 2 active |
-| Inactivity | **Paused after 7 days with no requests** |
+|                      | Free plan                                |
+| -------------------- | ---------------------------------------- |
+| Monthly active users | 50,000                                   |
+| Database             | 500 MB                                   |
+| Egress               | 5 GB                                     |
+| Projects             | 2 active                                 |
+| Inactivity           | **Paused after 7 days with no requests** |
 
 That last row matters in the quiet week between deploying and telling anyone —
 a paused project has to be restored by hand from the dashboard. Once real people
@@ -26,10 +26,10 @@ are using it, it never triggers.
 deliberately heavy account — 2,000 answers, all 37 zones cleared, 86 topics
 touched, 754 questions in the review queue, 60 tests sat:
 
-| | Row size | Gzipped | Users per 500 MB |
-| --- | --- | --- | --- |
-| Syncing the raw answer log (old) | 302 KB | 25 KB | ~1,700 |
-| Syncing the summary (now) | **54 KB** | **7 KB** | **~9,400** |
+|                                  | Row size  | Gzipped  | Users per 500 MB |
+| -------------------------------- | --------- | -------- | ---------------- |
+| Syncing the raw answer log (old) | 302 KB    | 25 KB    | ~1,700           |
+| Syncing the summary (now)        | **54 KB** | **7 KB** | **~9,400**       |
 
 Uncompressed, ~9,400 heavy users fill the free database. Postgres TOAST-compresses
 large `jsonb` and this data is extremely repetitive, so the practical number is

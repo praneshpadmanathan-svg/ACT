@@ -62,8 +62,15 @@ export const REGIONS: Record<SectionId, RegionMeta> = {
     // Cottages, the old oak, the barley field, the standing stone, the
     // farmhouse, the crossroads, the tilled field and the river bridge.
     pins: [
-      [11, 16], [16, 18.5], [22, 11], [31, 19.5], [42, 11.5],
-      [47, 17], [56, 12], [63, 16], [72, 17.5],
+      [11, 16],
+      [16, 18.5],
+      [22, 11],
+      [31, 19.5],
+      [42, 11.5],
+      [47, 17],
+      [56, 12],
+      [63, 16],
+      [72, 17.5],
     ],
   },
   reading: {
@@ -75,8 +82,15 @@ export const REGIONS: Record<SectionId, RegionMeta> = {
     // ruined tower. Stops short of the waterfall on the left and the crystal
     // cave on the right.
     pins: [
-      [17, 30], [24, 35], [30, 26], [36, 32], [43, 36],
-      [52, 28], [58, 33], [70, 25], [74, 38],
+      [17, 30],
+      [24, 35],
+      [30, 26],
+      [36, 32],
+      [43, 36],
+      [52, 28],
+      [58, 33],
+      [70, 25],
+      [74, 38],
     ],
   },
   math: {
@@ -87,8 +101,16 @@ export const REGIONS: Record<SectionId, RegionMeta> = {
     // The mesas and cave mouth, the broken aqueduct, the colonnade, the great
     // arch, the watchtower, the volcano and the signal fire on its spire.
     pins: [
-      [19, 47], [27.5, 51.5], [34, 48], [37, 56], [49, 47],
-      [53, 53], [61, 47], [66, 44.5], [79, 45], [88, 52.5],
+      [19, 47],
+      [27.5, 51.5],
+      [34, 48],
+      [37, 56],
+      [49, 47],
+      [53, 53],
+      [61, 47],
+      [66, 44.5],
+      [79, 45],
+      [88, 52.5],
     ],
   },
   science: {
@@ -100,8 +122,15 @@ export const REGIONS: Record<SectionId, RegionMeta> = {
     // stone stair, and the citadel's observatory, telescope yard and clock
     // tower. Starts at x=19: anything further left is open sea, not cliff.
     pins: [
-      [22, 64.5], [21, 73], [33, 66], [37, 72.5], [42, 67],
-      [50, 72], [59, 64.5], [68, 70], [76, 63],
+      [22, 64.5],
+      [21, 73],
+      [33, 66],
+      [37, 72.5],
+      [42, 67],
+      [50, 72],
+      [59, 64.5],
+      [68, 70],
+      [76, 63],
     ],
   },
 };

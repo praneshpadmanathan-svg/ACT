@@ -37,13 +37,16 @@ export function HeroChooser({ compact = false }: { compact?: boolean }) {
      reader would announce "radio, one of eight" for a control the keyboard
      then refuses to behave like. */
   const onKeyDown = (e: React.KeyboardEvent) => {
-    const step = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1
-      : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1
-        : 0;
+    const step =
+      e.key === 'ArrowRight' || e.key === 'ArrowDown'
+        ? 1
+        : e.key === 'ArrowLeft' || e.key === 'ArrowUp'
+          ? -1
+          : 0;
     if (step === 0) return;
     e.preventDefault();
     const at = HEROES.findIndex((h) => h.id === current);
-    const to = HEROES[(((at < 0 ? 0 : at) + step) + HEROES.length) % HEROES.length]!;
+    const to = HEROES[((at < 0 ? 0 : at) + step + HEROES.length) % HEROES.length]!;
     pick(to.id);
     groupRef.current?.querySelector<HTMLButtonElement>(`[data-hero="${to.id}"]`)?.focus();
   };
@@ -54,10 +57,7 @@ export function HeroChooser({ compact = false }: { compact?: boolean }) {
       role="radiogroup"
       aria-label="Choose your traveller"
       onKeyDown={onKeyDown}
-      className={cx(
-        'grid gap-2.5',
-        compact ? 'grid-cols-4' : 'grid-cols-2 sm:grid-cols-4',
-      )}
+      className={cx('grid gap-2.5', compact ? 'grid-cols-4' : 'grid-cols-2 sm:grid-cols-4')}
     >
       {HEROES.map((hero, i) => {
         const chosen = hero.id === current;
@@ -82,7 +82,11 @@ export function HeroChooser({ compact = false }: { compact?: boolean }) {
           >
             {/* The portrait reacts, so the grid is not eight blank stares:
                 whoever is currently chosen is pleased about it. */}
-            <HeroAvatar hero={hero} size={compact ? 54 : 68} expression={chosen ? 'pleased' : 'calm'} />
+            <HeroAvatar
+              hero={hero}
+              size={compact ? 54 : 68}
+              expression={chosen ? 'pleased' : 'calm'}
+            />
             <span
               className={cx(
                 'mt-1.5 font-script text-[11px] uppercase tracking-[0.12em]',

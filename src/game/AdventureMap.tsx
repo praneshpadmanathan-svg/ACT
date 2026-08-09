@@ -98,8 +98,14 @@ export function useMapProgress(): MapProgress {
         }
 
         const pin: PlacedPin = {
-          zone, section, color: region.color,
-          x: spot[0], y: spot[1], state, best, index,
+          zone,
+          section,
+          color: region.color,
+          x: spot[0],
+          y: spot[1],
+          state,
+          best,
+          index,
         };
         pins.push(pin);
         if (state === 'current' && !current) current = pin;
@@ -107,7 +113,8 @@ export function useMapProgress(): MapProgress {
     }
 
     pins.sort(
-      (a, b) => REGION_ORDER.indexOf(a.section) - REGION_ORDER.indexOf(b.section) || a.index - b.index,
+      (a, b) =>
+        REGION_ORDER.indexOf(a.section) - REGION_ORDER.indexOf(b.section) || a.index - b.index,
     );
 
     return { pins, current, cleared, total, allCleared: cleared === total && total > 0 };
@@ -136,7 +143,10 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
   const { progress } = useStore();
   const navigate = useNavigate();
   const { pins, current, cleared, total } = useMapProgress();
-  const quest = useMemo(() => activeQuest(progress, { cleared, total }), [progress, cleared, total]);
+  const quest = useMemo(
+    () => activeQuest(progress, { cleared, total }),
+    [progress, cleared, total],
+  );
 
   /* How far each region has been walked, 0-1 — drives how much of its mist has
      lifted and which discoveries have become reachable. */
@@ -239,8 +249,8 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
         const scale = Math.max(frame.w / MAP_W, frame.h / MAP_H) * z;
         // Offset from the map's centre, in scaled pixels, negated to bring
         // that point to the middle of the frame.
-        const dx = (50 - px) / 100 * MAP_W * scale;
-        const dy = (50 - py) / 100 * MAP_H * scale;
+        const dx = ((50 - px) / 100) * MAP_W * scale;
+        const dy = ((50 - py) / 100) * MAP_H * scale;
         return clampView({ zoom: z, x: dx, y: dy }, frame);
       });
     },
@@ -474,7 +484,6 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
     navigate({ name: 'zone', zone: pin.zone.id });
   };
 
-
   /* Cover scale: the factor that makes the portrait map fill a landscape
      frame at zoom 1. Multiplied by the user's zoom for the final transform. */
   const coverScale =
@@ -565,12 +574,12 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
               className="pin-anchor"
               style={{ left: `${pin.x}%`, top: `${pin.y}%`, ['--pin-i' as string]: i }}
             >
-            <m.button
-              type="button"
-              onClick={() => openZone(pin)}
-              onFocus={revealOnFocus(pin.x, pin.y)}
-              aria-disabled={pin.state === 'locked'}
-              /* A control should say it is a control before you press it, say
+              <m.button
+                type="button"
+                onClick={() => openZone(pin)}
+                onFocus={revealOnFocus(pin.x, pin.y)}
+                aria-disabled={pin.state === 'locked'}
+                /* A control should say it is a control before you press it, say
                  it heard you within a frame, and settle rather than stop. The
                  pins did none of the three — they were static discs that
                  navigated, which is the most legible "web page, not game"
@@ -583,47 +592,49 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
 
                  Reduced motion swaps the channel rather than dropping the
                  answer — silence would be worse than stillness. */
-              whileHover={reducedMotion ? { filter: 'brightness(1.18)' } : { scale: 1.09, y: -3 }}
-              whileTap={reducedMotion ? { filter: 'brightness(0.9)' } : { scale: 0.94, y: 0 }}
-              transition={reducedMotion ? { duration: 0.12 } : PIN_SPRING}
-              className={cx(
-                'pin group animate-popIn',
-                pin.state === 'done' && 'pin-done',
-                pin.state === 'current' && 'pin-current',
-                pin.state === 'locked' && 'pin-locked',
-              )}
-              style={{ animationDelay: `${i * 16}ms` }}
-            >
-              {pin.state === 'current' && (
-                <span
-                  className="pointer-events-none absolute inset-0 animate-pulseRing rounded-full border-2 border-gold-bright"
-                  aria-hidden="true"
-                />
-              )}
+                whileHover={reducedMotion ? { filter: 'brightness(1.18)' } : { scale: 1.09, y: -3 }}
+                whileTap={reducedMotion ? { filter: 'brightness(0.9)' } : { scale: 0.94, y: 0 }}
+                transition={reducedMotion ? { duration: 0.12 } : PIN_SPRING}
+                className={cx(
+                  'pin group animate-popIn',
+                  pin.state === 'done' && 'pin-done',
+                  pin.state === 'current' && 'pin-current',
+                  pin.state === 'locked' && 'pin-locked',
+                )}
+                style={{ animationDelay: `${i * 16}ms` }}
+              >
+                {pin.state === 'current' && (
+                  <span
+                    className="pointer-events-none absolute inset-0 animate-pulseRing rounded-full border-2 border-gold-bright"
+                    aria-hidden="true"
+                  />
+                )}
 
-              {pin.state === 'locked' ? (
-                <LockSigil size={17} />
-              ) : mastered ? (
-                <MasterSigil size={17} />
-              ) : pin.state === 'done' ? (
-                <ClearedSigil size={17} />
-              ) : (
-                <span className="num text-[14px] font-semibold leading-none">{pin.index + 1}</span>
-              )}
+                {pin.state === 'locked' ? (
+                  <LockSigil size={17} />
+                ) : mastered ? (
+                  <MasterSigil size={17} />
+                ) : pin.state === 'done' ? (
+                  <ClearedSigil size={17} />
+                ) : (
+                  <span className="num text-[14px] font-semibold leading-none">
+                    {pin.index + 1}
+                  </span>
+                )}
 
-              <span className="pin-card">
-                <span className="block font-display text-[13px] font-semibold leading-tight text-ink">
-                  {pin.zone.name}
+                <span className="pin-card">
+                  <span className="block font-display text-[13px] font-semibold leading-tight text-ink">
+                    {pin.zone.name}
+                  </span>
+                  <span className="mt-0.5 block font-read text-[12.5px] leading-snug text-ink-soft">
+                    {pin.state === 'locked'
+                      ? 'Sealed'
+                      : pin.best !== null
+                        ? `Cleared · best ${pin.best}%`
+                        : pin.zone.sub}
+                  </span>
                 </span>
-                <span className="mt-0.5 block font-read text-[12.5px] leading-snug text-ink-soft">
-                  {pin.state === 'locked'
-                    ? 'Sealed'
-                    : pin.best !== null
-                      ? `Cleared · best ${pin.best}%`
-                      : pin.zone.sub}
-                </span>
-              </span>
-            </m.button>
+              </m.button>
             </span>
           );
         })}
@@ -816,37 +827,37 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
                 completes (hidden tab, no rAF) would leave a stale objective on
                 screen. Remounting can't get stuck. */}
             {quest && (
-                <m.div
-                  key={quest.quest.id}
-                  className="quest-card pointer-events-none w-[min(19rem,calc(100vw-1.5rem))]"
-                  initial={{ opacity: 0, x: -18, scale: 0.97 }}
-                  animate={{ opacity: 1, x: 0, scale: 1, transition: SPRING }}
-                >
-                  <div className="flex items-baseline justify-between gap-3">
-                    <span className="eyebrow text-[11.5px]">
-                      ✦ Quest {quest.step} of {quest.total}
-                    </span>
-                    <span className="num text-[12.5px] text-parchment-dim">
-                      {Math.min(quest.have, quest.need)}/{quest.need}
-                    </span>
-                  </div>
-                  <p className="mt-1 font-display text-[14px] font-semibold leading-snug text-gold-light">
-                    {quest.quest.name}
-                  </p>
-                  <p className="mt-0.5 font-read text-[13px] leading-snug text-parchment-dim">
-                    {quest.quest.objective}
-                  </p>
-                  {/* The bar settles with weight instead of sliding linearly,
-                      so progress reads as something landing. */}
-                  <span className="quest-bar mt-2">
-                    <m.i
-                      initial={{ width: 0 }}
-                      animate={{ width: `${Math.min(100, (quest.have / quest.need) * 100)}%` }}
-                      transition={SPRING}
-                    />
+              <m.div
+                key={quest.quest.id}
+                className="quest-card pointer-events-none w-[min(19rem,calc(100vw-1.5rem))]"
+                initial={{ opacity: 0, x: -18, scale: 0.97 }}
+                animate={{ opacity: 1, x: 0, scale: 1, transition: SPRING }}
+              >
+                <div className="flex items-baseline justify-between gap-3">
+                  <span className="eyebrow text-[11.5px]">
+                    ✦ Quest {quest.step} of {quest.total}
                   </span>
-                </m.div>
-              )}
+                  <span className="num text-[12.5px] text-parchment-dim">
+                    {Math.min(quest.have, quest.need)}/{quest.need}
+                  </span>
+                </div>
+                <p className="mt-1 font-display text-[14px] font-semibold leading-snug text-gold-light">
+                  {quest.quest.name}
+                </p>
+                <p className="mt-0.5 font-read text-[13px] leading-snug text-parchment-dim">
+                  {quest.quest.objective}
+                </p>
+                {/* The bar settles with weight instead of sliding linearly,
+                      so progress reads as something landing. */}
+                <span className="quest-bar mt-2">
+                  <m.i
+                    initial={{ width: 0 }}
+                    animate={{ width: `${Math.min(100, (quest.have / quest.need) * 100)}%` }}
+                    transition={SPRING}
+                  />
+                </span>
+              </m.div>
+            )}
           </div>
 
           <div className="map-hud pointer-events-auto">
@@ -896,8 +907,22 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
           </button>
 
           <div className="pointer-events-auto flex flex-col gap-1.5">
-            <button type="button" onClick={() => zoomBy(1.35)} className="map-zoom" aria-label="Zoom in">+</button>
-            <button type="button" onClick={() => zoomBy(1 / 1.35)} className="map-zoom" aria-label="Zoom out">−</button>
+            <button
+              type="button"
+              onClick={() => zoomBy(1.35)}
+              className="map-zoom"
+              aria-label="Zoom in"
+            >
+              +
+            </button>
+            <button
+              type="button"
+              onClick={() => zoomBy(1 / 1.35)}
+              className="map-zoom"
+              aria-label="Zoom out"
+            >
+              −
+            </button>
           </div>
         </div>
       </div>

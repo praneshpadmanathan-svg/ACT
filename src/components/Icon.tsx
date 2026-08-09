@@ -20,20 +20,53 @@
 
 export type IconName =
   // state
-  | 'check' | 'cross' | 'alert' | 'info' | 'lock' | 'unlock'
+  | 'check'
+  | 'cross'
+  | 'alert'
+  | 'info'
+  | 'lock'
+  | 'unlock'
   // reward and progress
-  | 'flame' | 'bolt' | 'trophy' | 'medal' | 'target' | 'spark'
+  | 'flame'
+  | 'bolt'
+  | 'trophy'
+  | 'medal'
+  | 'target'
+  | 'spark'
   // tools
-  | 'calculator' | 'pencil' | 'speaker' | 'stop' | 'bookmark' | 'bookmarkFilled'
-  | 'flag' | 'copy' | 'settings' | 'compass' | 'clock' | 'refresh'
+  | 'calculator'
+  | 'pencil'
+  | 'speaker'
+  | 'stop'
+  | 'bookmark'
+  | 'bookmarkFilled'
+  | 'flag'
+  | 'copy'
+  | 'settings'
+  | 'compass'
+  | 'clock'
+  | 'refresh'
   // navigation
-  | 'arrowLeft' | 'arrowRight' | 'chevronDown' | 'plus' | 'minus'
+  | 'arrowLeft'
+  | 'arrowRight'
+  | 'chevronDown'
+  | 'plus'
+  | 'minus'
   // content
-  | 'quill' | 'scroll' | 'lantern' | 'shield' | 'eye' | 'question'
+  | 'quill'
+  | 'scroll'
+  | 'lantern'
+  | 'shield'
+  | 'eye'
+  | 'question'
   /* Named by the fifteen achievements in `progress.ts`. That field used to be
      a loose `string` referencing icons nobody had drawn, so all fifteen
      rendered the same ✦; it is `IconName` now, and a typo is a build error. */
-  | 'star' | 'sword' | 'book' | 'map' | 'calendar';
+  | 'star'
+  | 'sword'
+  | 'book'
+  | 'map'
+  | 'calendar';
 
 interface Props {
   name: IconName;
@@ -56,9 +89,7 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
     strokeLinejoin: 'round' as const,
     className,
     focusable: 'false' as const,
-    ...(title
-      ? { role: 'img' as const, 'aria-label': title }
-      : { 'aria-hidden': true as const }),
+    ...(title ? { role: 'img' as const, 'aria-label': title } : { 'aria-hidden': true as const }),
   };
 
   switch (name) {
@@ -124,7 +155,12 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
       return (
         <svg {...common}>
           <path d="M12 2.6c.6 3.4-1.4 4.6-3 6.4a6.9 6.9 0 0 0-1.9 4.7 4.9 4.9 0 0 0 9.8 0c0-1.9-.9-3-1.8-4.2-.5 1-1.2 1.6-2 1.9.5-3.2-.3-6-1.1-8.8Z" />
-          <path d="M12 20.7a2.6 2.6 0 0 1-2.6-2.6c0-1.5 1.3-2.3 2.6-4 1.3 1.7 2.6 2.5 2.6 4a2.6 2.6 0 0 1-2.6 2.6Z" fill="currentColor" stroke="none" opacity=".55" />
+          <path
+            d="M12 20.7a2.6 2.6 0 0 1-2.6-2.6c0-1.5 1.3-2.3 2.6-4 1.3 1.7 2.6 2.5 2.6 4a2.6 2.6 0 0 1-2.6 2.6Z"
+            fill="currentColor"
+            stroke="none"
+            opacity=".55"
+          />
         </svg>
       );
 
@@ -149,7 +185,11 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
         <svg {...common}>
           <path d="m8.4 3 2.2 5.6M15.6 3l-2.2 5.6" />
           <circle cx="12" cy="15" r="6" />
-          <path d="m12 11.9 1.1 2.3 2.5.2-1.9 1.6.6 2.4-2.3-1.3-2.3 1.3.6-2.4-1.9-1.6 2.5-.2L12 11.9Z" fill="currentColor" stroke="none" />
+          <path
+            d="m12 11.9 1.1 2.3 2.5.2-1.9 1.6.6 2.4-2.3-1.3-2.3 1.3.6-2.4-1.9-1.6 2.5-.2L12 11.9Z"
+            fill="currentColor"
+            stroke="none"
+          />
         </svg>
       );
 
@@ -167,7 +207,11 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
     case 'spark':
       return (
         <svg {...common} strokeWidth={1.3}>
-          <path d="M12 2.6c.9 5.1 3.4 7.6 8.5 8.5-5.1.9-7.6 3.4-8.5 8.5-.9-5.1-3.4-7.6-8.5-8.5 5.1-.9 7.6-3.4 8.5-8.5Z" fill="currentColor" stroke="none" />
+          <path
+            d="M12 2.6c.9 5.1 3.4 7.6 8.5 8.5-5.1.9-7.6 3.4-8.5 8.5-.9-5.1-3.4-7.6-8.5-8.5 5.1-.9 7.6-3.4 8.5-8.5Z"
+            fill="currentColor"
+            stroke="none"
+          />
         </svg>
       );
 
@@ -178,7 +222,10 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
         <svg {...common}>
           <rect x="4.8" y="2.8" width="14.4" height="18.4" rx="2.2" />
           <rect x="7.6" y="5.8" width="8.8" height="3.4" rx="1" />
-          <path d="M8.2 13h.01M12 13h.01M15.8 13h.01M8.2 17h.01M12 17h.01M15.8 17h.01" strokeWidth="2.4" />
+          <path
+            d="M8.2 13h.01M12 13h.01M15.8 13h.01M8.2 17h.01M12 17h.01M15.8 17h.01"
+            strokeWidth="2.4"
+          />
         </svg>
       );
 

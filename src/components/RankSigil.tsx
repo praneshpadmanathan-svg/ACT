@@ -122,7 +122,10 @@ const elite = {
   device: (device: string) => (
     <g fill={device}>
       <path d="M32 17 L35 29 L47 32 L35 35 L32 47 L29 35 L17 32 L29 29 Z" />
-      <path d="M32 24 L33.6 30.4 L40 32 L33.6 33.6 L32 40 L30.4 33.6 L24 32 L30.4 30.4 Z" fill="rgba(40,26,10,.3)" />
+      <path
+        d="M32 24 L33.6 30.4 L40 32 L33.6 33.6 L32 40 L30.4 33.6 L24 32 L30.4 30.4 Z"
+        fill="rgba(40,26,10,.3)"
+      />
     </g>
   ),
 };
@@ -211,7 +214,13 @@ export function RankSigil({ rank, size = 56 }: { rank: SigilColors; size?: numbe
         strokeLinejoin="round"
       />
       {sigil.inner && (
-        <path d={sigil.inner} fill="none" stroke="rgba(0,0,0,.26)" strokeWidth="2" strokeLinejoin="round" />
+        <path
+          d={sigil.inner}
+          fill="none"
+          stroke="rgba(0,0,0,.26)"
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
       )}
       {sigil.device(DEVICE)}
       {/* Sheen over the device too, so the highlight sits on the object rather

@@ -43,10 +43,14 @@ type Op = '+' | '−' | '×' | '÷';
 
 function applyOp(a: number, b: number, op: Op): number {
   switch (op) {
-    case '+': return a + b;
-    case '−': return a - b;
-    case '×': return a * b;
-    case '÷': return b === 0 ? NaN : a / b;
+    case '+':
+      return a + b;
+    case '−':
+      return a - b;
+    case '×':
+      return a * b;
+    case '÷':
+      return b === 0 ? NaN : a / b;
   }
 }
 
@@ -66,29 +70,35 @@ function Calculator() {
   const [settled, setSettled] = useState(true);
   const [pending, setPending] = useState<{ value: number; op: Op } | null>(null);
 
-  const pushDigit = useCallback((digit: string) => {
-    setEntry((prev) => {
-      if (settled) return digit === '.' ? '0.' : digit;
-      if (digit === '.' && prev.includes('.')) return prev;
-      if (prev === '0' && digit !== '.') return digit;
-      // A calculator that lets you type forever is a calculator you can break.
-      return prev.length >= 14 ? prev : prev + digit;
-    });
-    setSettled(false);
-  }, [settled]);
+  const pushDigit = useCallback(
+    (digit: string) => {
+      setEntry((prev) => {
+        if (settled) return digit === '.' ? '0.' : digit;
+        if (digit === '.' && prev.includes('.')) return prev;
+        if (prev === '0' && digit !== '.') return digit;
+        // A calculator that lets you type forever is a calculator you can break.
+        return prev.length >= 14 ? prev : prev + digit;
+      });
+      setSettled(false);
+    },
+    [settled],
+  );
 
-  const chooseOp = useCallback((op: Op) => {
-    const current = Number(entry);
-    setPending((prev) => {
-      if (prev && !settled) {
-        const result = applyOp(prev.value, current, prev.op);
-        setEntry(display(result));
-        return { value: result, op };
-      }
-      return { value: current, op };
-    });
-    setSettled(true);
-  }, [entry, settled]);
+  const chooseOp = useCallback(
+    (op: Op) => {
+      const current = Number(entry);
+      setPending((prev) => {
+        if (prev && !settled) {
+          const result = applyOp(prev.value, current, prev.op);
+          setEntry(display(result));
+          return { value: result, op };
+        }
+        return { value: current, op };
+      });
+      setSettled(true);
+    },
+    [entry, settled],
+  );
 
   const equals = useCallback(() => {
     if (!pending) return;
@@ -115,13 +125,41 @@ function Calculator() {
   const onKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
       const k = e.key;
-      if (/^[0-9.]$/.test(k)) { e.preventDefault(); pushDigit(k); return; }
-      if (k === '+') { e.preventDefault(); chooseOp('+'); return; }
-      if (k === '-') { e.preventDefault(); chooseOp('−'); return; }
-      if (k === '*' || k === 'x') { e.preventDefault(); chooseOp('×'); return; }
-      if (k === '/') { e.preventDefault(); chooseOp('÷'); return; }
-      if (k === 'Enter' || k === '=') { e.preventDefault(); equals(); return; }
-      if (k === 'Escape' || k === 'c') { e.preventDefault(); clear(); return; }
+      if (/^[0-9.]$/.test(k)) {
+        e.preventDefault();
+        pushDigit(k);
+        return;
+      }
+      if (k === '+') {
+        e.preventDefault();
+        chooseOp('+');
+        return;
+      }
+      if (k === '-') {
+        e.preventDefault();
+        chooseOp('−');
+        return;
+      }
+      if (k === '*' || k === 'x') {
+        e.preventDefault();
+        chooseOp('×');
+        return;
+      }
+      if (k === '/') {
+        e.preventDefault();
+        chooseOp('÷');
+        return;
+      }
+      if (k === 'Enter' || k === '=') {
+        e.preventDefault();
+        equals();
+        return;
+      }
+      if (k === 'Escape' || k === 'c') {
+        e.preventDefault();
+        clear();
+        return;
+      }
       if (k === 'Backspace') {
         e.preventDefault();
         setEntry((prev) => (settled || prev.length <= 1 ? '0' : prev.slice(0, -1)));
@@ -140,7 +178,8 @@ function Calculator() {
         'rounded-lg border-2 py-2.5 font-display text-[15px] font-semibold transition-colors',
         variant === 'op' && 'border-gold-deep bg-leather-800 text-gold hover:bg-leather-750',
         variant === 'accent' && 'border-gold bg-gold text-[#2a2000] hover:brightness-110',
-        variant === 'wide' && 'col-span-2 border-leather-700 bg-leather-800 text-parchment-dim hover:border-gold-deep',
+        variant === 'wide' &&
+          'col-span-2 border-leather-700 bg-leather-800 text-parchment-dim hover:border-gold-deep',
         !variant && 'border-leather-700 bg-leather-850 text-parchment hover:border-gold-deep',
       )}
     >
@@ -288,8 +327,10 @@ export function ToolDock({ mathHint = false }: { mathHint?: boolean }) {
   }, [open]);
 
   return (
-    <div className="pointer-events-none fixed bottom-0 right-0 z-[80] flex flex-col items-end gap-2 p-4"
-         style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}>
+    <div
+      className="pointer-events-none fixed bottom-0 right-0 z-[80] flex flex-col items-end gap-2 p-4"
+      style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
+    >
       {open && (
         <div
           ref={panelRef}

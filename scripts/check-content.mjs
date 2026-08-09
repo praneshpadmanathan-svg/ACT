@@ -45,12 +45,7 @@ const contentDir = join(root, 'src/content');
 const readJSON = (name) => JSON.parse(readFileSync(join(contentDir, name), 'utf8'));
 
 const canonicalTopic = (raw) =>
-  raw
-    .trim()
-    .replace(/[–—]/g, '-')
-    .replace(/_/g, ' ')
-    .replace(/\s+/g, ' ')
-    .toLowerCase();
+  raw.trim().replace(/[–—]/g, '-').replace(/_/g, ' ').replace(/\s+/g, ' ').toLowerCase();
 
 const QUESTION_FILES = {
   english: 'questionsEnglish.json',

@@ -81,7 +81,8 @@ export function BossScreen({ section }: { section: string }) {
     if (!boss) return [];
     void attempt;
     const pool = QUESTIONS[sectionId] ?? [];
-    const byRank = (q: Question) => (q.difficulty === 'hard' ? 0 : q.difficulty === 'medium' ? 1 : 2);
+    const byRank = (q: Question) =>
+      q.difficulty === 'hard' ? 0 : q.difficulty === 'medium' ? 1 : 2;
     return shuffle(pool)
       .sort((a, b) => byRank(a) - byRank(b))
       .slice(0, 20)
@@ -94,13 +95,19 @@ export function BossScreen({ section }: { section: string }) {
         <EmptyState
           title="No boss here"
           detail="That region does not have a guardian. Head back to the map."
-          action={<Button variant="primary" onClick={() => navigate({ name: 'map' })}>Back to the map</Button>}
+          action={
+            <Button variant="primary" onClick={() => navigate({ name: 'map' })}>
+              Back to the map
+            </Button>
+          }
         />
       </Page>
     );
   }
 
-  const clearedInRegion = path.nodes.filter((n) => progress.zonesCleared[n.id] !== undefined).length;
+  const clearedInRegion = path.nodes.filter(
+    (n) => progress.zonesCleared[n.id] !== undefined,
+  ).length;
   const unlocked = clearedInRegion >= path.nodes.length;
   const alreadyBeaten = progress.achievements.includes(`boss-${boss.id}`);
 
@@ -122,7 +129,10 @@ export function BossScreen({ section }: { section: string }) {
           </p>
           <p className="mx-auto mt-5 max-w-md font-read text-[15.5px] leading-relaxed text-parchment-dim">
             The guardian will not stir until every landmark in {region.title} is cleared. You have{' '}
-            <b className="text-parchment">{clearedInRegion} of {path.nodes.length}</b>.
+            <b className="text-parchment">
+              {clearedInRegion} of {path.nodes.length}
+            </b>
+            .
           </p>
           <Button
             variant="primary"
@@ -150,7 +160,10 @@ export function BossScreen({ section }: { section: string }) {
           </div>
 
           <p className="eyebrow mt-6">{boss.title}</p>
-          <h1 className="heading mt-2 text-[clamp(1.7rem,4vw,2.6rem)]" style={{ color: boss.color }}>
+          <h1
+            className="heading mt-2 text-[clamp(1.7rem,4vw,2.6rem)]"
+            style={{ color: boss.color }}
+          >
             {boss.name}
           </h1>
 
@@ -337,7 +350,11 @@ export function BossScreen({ section }: { section: string }) {
 
         {/* the boss */}
         <div className="flex flex-col items-center">
-          <BossArt section={sectionId} state={bossState} className="w-[110px] sm:w-[150px] lg:w-[180px]" />
+          <BossArt
+            section={sectionId}
+            state={bossState}
+            className="w-[110px] sm:w-[150px] lg:w-[180px]"
+          />
           <HealthPips label={boss.name} value={bossHp} max={boss.health} color={boss.color} />
         </div>
       </div>
@@ -361,12 +378,16 @@ export function BossScreen({ section }: { section: string }) {
           <div className="sheet p-5 sm:p-7">
             {question.label && (
               <p className="mb-4 border-l-4 border-[#c9b06a] bg-[#faf3e0] px-4 py-3 font-read text-[1.02rem] leading-relaxed">
-                <RichText as="span" format="html">{question.label}</RichText>
+                <RichText as="span" format="html">
+                  {question.label}
+                </RichText>
               </p>
             )}
 
             <div className="prose-quill mb-5">
-              <RichText as="div" format={question.promptFormat}>{question.prompt}</RichText>
+              <RichText as="div" format={question.promptFormat}>
+                {question.prompt}
+              </RichText>
             </div>
 
             <div className="space-y-2.5">
@@ -406,7 +427,13 @@ export function BossScreen({ section }: { section: string }) {
                 <RichText as="div" format="markdown" className="font-read leading-relaxed">
                   {question.why[question.correctKey] ?? question.whyGeneral ?? ''}
                 </RichText>
-                <Button variant="primary" size="lg" className="mt-5 w-full" onClick={next} autoFocus>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  className="mt-5 w-full"
+                  onClick={next}
+                  autoFocus
+                >
                   Press the attack ▸
                 </Button>
               </div>

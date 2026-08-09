@@ -99,7 +99,9 @@ export function TopBar() {
       {/* a hairline of lantern light along the top edge */}
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px"
-        style={{ background: 'linear-gradient(90deg,transparent,rgba(240,207,122,.5),transparent)' }}
+        style={{
+          background: 'linear-gradient(90deg,transparent,rgba(240,207,122,.5),transparent)',
+        }}
         aria-hidden="true"
       />
 
@@ -118,7 +120,11 @@ export function TopBar() {
         </a>
 
         {/* desktop nav */}
-        <nav ref={navRef} className="relative ml-2 hidden items-center gap-0.5 lg:flex" aria-label="Main">
+        <nav
+          ref={navRef}
+          className="relative ml-2 hidden items-center gap-0.5 lg:flex"
+          aria-label="Main"
+        >
           {NAV.map((item) => {
             const active = item.match.includes(route.name);
             return (
@@ -142,7 +148,9 @@ export function TopBar() {
               left: marker.left,
               width: marker.width,
               opacity: marker.width ? 1 : 0,
-              transition: marker.ready ? 'left .28s cubic-bezier(.22,1,.36,1), width .28s cubic-bezier(.22,1,.36,1), opacity .2s' : 'none',
+              transition: marker.ready
+                ? 'left .28s cubic-bezier(.22,1,.36,1), width .28s cubic-bezier(.22,1,.36,1), opacity .2s'
+                : 'none',
             }}
             aria-hidden="true"
           />
@@ -201,13 +209,18 @@ export function TopBar() {
             background: 'linear-gradient(90deg,#9c7410,#f2cf5b)',
             boxShadow: '0 0 10px rgba(242,207,91,.45)',
           }}
-          title={next ? `${(next.xp - progress.xp).toLocaleString()} XP to ${next.name}` : 'Highest rank'}
+          title={
+            next ? `${(next.xp - progress.xp).toLocaleString()} XP to ${next.name}` : 'Highest rank'
+          }
         />
       </div>
 
       {/* mobile nav */}
       {menuOpen && (
-        <nav className="animate-slideDown border-t border-leather-700 bg-leather-900 lg:hidden" aria-label="Main">
+        <nav
+          className="animate-slideDown border-t border-leather-700 bg-leather-900 lg:hidden"
+          aria-label="Main"
+        >
           <div className="shell grid grid-cols-2 gap-2 py-3 sm:grid-cols-3">
             {NAV.map((item, i) => {
               const active = item.match.includes(route.name);
@@ -219,7 +232,10 @@ export function TopBar() {
                     sfx.select();
                     navigate(item.route);
                   }}
-                  className={cx('nav-item-mobile animate-riseIn', active && 'nav-item-mobile-active')}
+                  className={cx(
+                    'nav-item-mobile animate-riseIn',
+                    active && 'nav-item-mobile-active',
+                  )}
                   style={{ animationDelay: `${i * 28}ms` }}
                 >
                   <NavGlyph name={item.glyph} size={17} />
@@ -270,7 +286,9 @@ export function BackLink({ to, label }: { to: Route; label: string }) {
       className="group mb-5 inline-flex items-center gap-2 font-script text-[13px] uppercase
                  tracking-[0.16em] text-ink-faint transition-colors hover:text-gold"
     >
-      <span className="inline-block transition-transform duration-200 group-hover:-translate-x-1">←</span>
+      <span className="inline-block transition-transform duration-200 group-hover:-translate-x-1">
+        ←
+      </span>
       {label}
     </a>
   );

@@ -252,7 +252,9 @@
   }
   .group:hover > .brand-sigil {
     @apply border-gold bg-leather-800;
-    box-shadow: inset 0 1px 0 rgba(240, 207, 122, 0.3), 0 0 14px rgba(212, 160, 23, 0.28);
+    box-shadow:
+      inset 0 1px 0 rgba(240, 207, 122, 0.3),
+      0 0 14px rgba(212, 160, 23, 0.28);
   }
 
   .nav-item {
@@ -353,7 +355,9 @@
   a.panel-lit:hover,
   button.panel-lit:hover {
     @apply -translate-y-0.5 border-gold-deep;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35), 0 14px 30px rgba(0, 0, 0, 0.4),
+    box-shadow:
+      0 2px 0 rgba(0, 0, 0, 0.35),
+      0 14px 30px rgba(0, 0, 0, 0.4),
       0 0 22px rgba(212, 160, 23, 0.12);
   }
 
@@ -397,12 +401,19 @@
        and a CSS transition on `transform` would smooth every frame of that
        spring into a lagging second animation. `isolate` gives the ink a
        stacking context to sit inside, `overflow-hidden` keeps it in bounds. */
-    transition: color 150ms, background-color 150ms, border-color 150ms, box-shadow 150ms, opacity 150ms;
+    transition:
+      color 150ms,
+      background-color 150ms,
+      border-color 150ms,
+      box-shadow 150ms,
+      opacity 150ms;
   }
 
   .btn-primary {
     @apply border-gold-deep bg-gradient-to-b from-gold-bright to-gold text-[#2a2008];
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35) inset, 0 6px 16px rgba(212, 160, 23, 0.25);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.35) inset,
+      0 6px 16px rgba(212, 160, 23, 0.25);
   }
   .btn-primary:hover:not(:disabled) {
     @apply from-[#f7dc7d] to-[#e0ae1e];
@@ -415,7 +426,12 @@
     position: absolute;
     inset: -1px;
     z-index: -1;
-    background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.55) 50%, transparent 62%);
+    background: linear-gradient(
+      105deg,
+      transparent 38%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 62%
+    );
     transform: translateX(-130%);
   }
   .btn-primary:hover:not(:disabled)::after {
@@ -476,8 +492,13 @@
     animation: emberPulse 1.5s ease-in-out infinite;
   }
   @keyframes emberPulse {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.95; }
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.95;
+    }
   }
 
   /* Hit-stop — see the note in Boss.tsx. Scoped to the arena rather than the
@@ -501,7 +522,9 @@
       rgb(var(--veil-top) / var(--veil-alpha)),
       rgb(var(--veil-bottom) / calc(var(--veil-alpha) + 0.07))
     );
-    box-shadow: inset 0 1px 0 rgba(240, 207, 122, 0.07), 0 10px 26px rgba(0, 0, 0, 0.3);
+    box-shadow:
+      inset 0 1px 0 rgba(240, 207, 122, 0.07),
+      0 10px 26px rgba(0, 0, 0, 0.3);
   }
   /* Lantern light catching the top edge. */
   .veil::before {
@@ -514,7 +537,9 @@
   button.veil:hover,
   .veil-lift:hover {
     @apply -translate-y-0.5 border-gold-deep/70;
-    box-shadow: inset 0 1px 0 rgba(240, 207, 122, 0.12), 0 16px 34px rgba(0, 0, 0, 0.38),
+    box-shadow:
+      inset 0 1px 0 rgba(240, 207, 122, 0.12),
+      0 16px 34px rgba(0, 0, 0, 0.38),
       0 0 24px rgba(212, 160, 23, 0.1);
   }
 
@@ -571,11 +596,7 @@
     background-color: theme('colors.parchment.DEFAULT');
     background-image:
       var(--grain-paper),
-      repeating-linear-gradient(
-        90deg,
-        rgba(184, 158, 114, 0.055) 0 1px,
-        transparent 1px 4px
-      ),
+      repeating-linear-gradient(90deg, rgba(184, 158, 114, 0.055) 0 1px, transparent 1px 4px),
       radial-gradient(circle at 18% 22%, rgba(184, 158, 114, 0.14), transparent 45%),
       radial-gradient(circle at 78% 74%, rgba(184, 158, 114, 0.12), transparent 42%);
     background-blend-mode: multiply, normal, normal, normal;
@@ -670,11 +691,26 @@
   }
 
   /* Each part's ink. --mark rides along for bullets and numerals. */
-  .ink-rule    { color: #27505f; --mark: #27505f; }
-  .ink-example { color: #2f6b3a; --mark: #2f6b3a; }
-  .ink-list    { color: #4a3a8c; --mark: #4a3a8c; }
-  .ink-trap    { color: #9c3326; --mark: #9c3326; }
-  .ink-check   { color: #7a4f0c; --mark: #7a4f0c; }
+  .ink-rule {
+    color: #27505f;
+    --mark: #27505f;
+  }
+  .ink-example {
+    color: #2f6b3a;
+    --mark: #2f6b3a;
+  }
+  .ink-list {
+    color: #4a3a8c;
+    --mark: #4a3a8c;
+  }
+  .ink-trap {
+    color: #9c3326;
+    --mark: #9c3326;
+  }
+  .ink-check {
+    color: #7a4f0c;
+    --mark: #7a4f0c;
+  }
 
   /* Worked-example steps: numbered in the part ink, no filled pills. */
   .lesson-steps {
@@ -937,20 +973,38 @@
   /* the molten core, breathing */
   .mapfx-crater {
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 244, 190, 0.95) 0%, rgba(255, 176, 48, 0.75) 28%, rgba(226, 88, 30, 0.45) 55%, transparent 76%);
+    background: radial-gradient(
+      circle,
+      rgba(255, 244, 190, 0.95) 0%,
+      rgba(255, 176, 48, 0.75) 28%,
+      rgba(226, 88, 30, 0.45) 55%,
+      transparent 76%
+    );
     filter: blur(2px);
     animation: fx-crater ease-in-out infinite;
   }
   @keyframes fx-crater {
-    0%, 100% { transform: translate(-50%, -50%) scale(0.88); opacity: 0.6; }
-    50% { transform: translate(-50%, -50%) scale(1.12); opacity: 0.95; }
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(0.88);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.12);
+      opacity: 0.95;
+    }
   }
 
   /* light thrown onto the rock around the crater, so the glow lands on
      something rather than floating */
   .mapfx-craterlight {
     border-radius: 50%;
-    background: radial-gradient(ellipse, rgba(255, 158, 62, 0.4) 0%, rgba(226, 88, 30, 0.16) 45%, transparent 72%);
+    background: radial-gradient(
+      ellipse,
+      rgba(255, 158, 62, 0.4) 0%,
+      rgba(226, 88, 30, 0.16) 45%,
+      transparent 72%
+    );
     filter: blur(7px);
     mix-blend-mode: screen;
     animation: fx-crater ease-in-out infinite;
@@ -959,27 +1013,56 @@
   /* an ash plume, leaning with the wind as it rises */
   .mapfx-plume {
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(84, 72, 66, 0.5) 0%, rgba(104, 92, 84, 0.22) 50%, transparent 74%);
+    background: radial-gradient(
+      circle,
+      rgba(84, 72, 66, 0.5) 0%,
+      rgba(104, 92, 84, 0.22) 50%,
+      transparent 74%
+    );
     filter: blur(5px);
     animation: fx-plume ease-out infinite;
   }
   @keyframes fx-plume {
-    0% { transform: translate(-50%, -50%) translate(0, 0) scale(0.35); opacity: 0; }
-    22% { opacity: 0.55; }
-    100% { transform: translate(-50%, -50%) translate(140%, -420%) scale(2.4); opacity: 0; }
+    0% {
+      transform: translate(-50%, -50%) translate(0, 0) scale(0.35);
+      opacity: 0;
+    }
+    22% {
+      opacity: 0.55;
+    }
+    100% {
+      transform: translate(-50%, -50%) translate(140%, -420%) scale(2.4);
+      opacity: 0;
+    }
   }
 
   /* the surge — every so often the crater flares and throws more up */
   .mapfx-surge {
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 236, 170, 0.9) 0%, rgba(255, 150, 40, 0.5) 40%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      rgba(255, 236, 170, 0.9) 0%,
+      rgba(255, 150, 40, 0.5) 40%,
+      transparent 70%
+    );
     filter: blur(4px);
     animation: fx-surge ease-out infinite;
   }
   @keyframes fx-surge {
-    0%, 82%, 100% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
-    88% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.85; }
-    94% { transform: translate(-50%, -50%) scale(1.9); opacity: 0.2; }
+    0%,
+    82%,
+    100% {
+      transform: translate(-50%, -50%) scale(0.5);
+      opacity: 0;
+    }
+    88% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0.85;
+    }
+    94% {
+      transform: translate(-50%, -50%) scale(1.9);
+      opacity: 0.2;
+    }
   }
 
   /* ------------------------------------------------------------- waterfall
@@ -998,13 +1081,27 @@
   /* the lip — bright, where the river turns over the edge */
   .mapfx-crest {
     border-radius: 999px;
-    background: linear-gradient(90deg, transparent, rgba(238, 250, 255, 0.9) 22%, rgba(255, 255, 255, 0.95) 50%, rgba(238, 250, 255, 0.9) 78%, transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(238, 250, 255, 0.9) 22%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(238, 250, 255, 0.9) 78%,
+      transparent
+    );
     filter: blur(1.5px);
     animation: fx-crest 4.5s ease-in-out infinite;
   }
   @keyframes fx-crest {
-    0%, 100% { transform: translate(-50%, -50%) scaleY(0.85); opacity: 0.55; }
-    50% { transform: translate(-50%, -50%) scaleY(1.15); opacity: 0.85; }
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scaleY(0.85);
+      opacity: 0.55;
+    }
+    50% {
+      transform: translate(-50%, -50%) scaleY(1.15);
+      opacity: 0.85;
+    }
   }
 
   /* falling water.
@@ -1015,7 +1112,12 @@
      the acceleration more than the timing alone. */
   .mapfx-fall {
     border-radius: 999px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(226, 245, 255, 0.95) 45%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(226, 245, 255, 0.95) 45%,
+      rgba(255, 255, 255, 0) 100%
+    );
     transform-origin: top center;
     animation: fx-fall cubic-bezier(0.45, 0, 0.85, 0.4) infinite;
   }
@@ -1023,38 +1125,76 @@
   /* the veil — a soft sheet over the streaks so they read as one body of
      water instead of separate lines. Scrolls slower than the streaks do. */
   .mapfx-veil {
-    background: linear-gradient(to bottom, rgba(232, 246, 252, 0) 0%, rgba(232, 246, 252, 0.34) 30%, rgba(214, 238, 250, 0.28) 70%, rgba(232, 246, 252, 0) 100%);
+    background: linear-gradient(
+      to bottom,
+      rgba(232, 246, 252, 0) 0%,
+      rgba(232, 246, 252, 0.34) 30%,
+      rgba(214, 238, 250, 0.28) 70%,
+      rgba(232, 246, 252, 0) 100%
+    );
     filter: blur(2.5px);
     animation: fx-veil 2.6s linear infinite;
   }
   @keyframes fx-veil {
-    0% { transform: translate(-50%, -50%) translateY(-8%); opacity: 0.5; }
-    50% { opacity: 0.75; }
-    100% { transform: translate(-50%, -50%) translateY(8%); opacity: 0.5; }
+    0% {
+      transform: translate(-50%, -50%) translateY(-8%);
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.75;
+    }
+    100% {
+      transform: translate(-50%, -50%) translateY(8%);
+      opacity: 0.5;
+    }
   }
 
   /* impact — the bright bloom where the column lands */
   .mapfx-impact {
     border-radius: 50%;
-    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.9) 0%, rgba(226, 245, 255, 0.45) 40%, transparent 72%);
+    background: radial-gradient(
+      ellipse,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(226, 245, 255, 0.45) 40%,
+      transparent 72%
+    );
     filter: blur(3px);
     animation: fx-impact ease-out infinite;
   }
   @keyframes fx-impact {
-    0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.35; }
-    45% { transform: translate(-50%, -50%) scale(1.25); opacity: 0.8; }
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0.35;
+    }
+    45% {
+      transform: translate(-50%, -50%) scale(1.25);
+      opacity: 0.8;
+    }
   }
 
   /* mist hanging over the pool, backlit */
   .mapfx-mistball {
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(248, 253, 255, 0.55) 0%, rgba(226, 243, 252, 0.28) 45%, transparent 72%);
+    background: radial-gradient(
+      circle,
+      rgba(248, 253, 255, 0.55) 0%,
+      rgba(226, 243, 252, 0.28) 45%,
+      transparent 72%
+    );
     filter: blur(6px);
     animation: fx-mistball ease-in-out infinite;
   }
   @keyframes fx-mistball {
-    0%, 100% { transform: translate(-50%, -50%) scale(0.9) translateY(0); opacity: 0.4; }
-    50% { transform: translate(-50%, -50%) scale(1.2) translateY(-8%); opacity: 0.7; }
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(0.9) translateY(0);
+      opacity: 0.4;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.2) translateY(-8%);
+      opacity: 0.7;
+    }
   }
 
   /* ripple rings spreading across the pool from the impact */
@@ -1064,9 +1204,17 @@
     animation: fx-ripple ease-out infinite;
   }
   @keyframes fx-ripple {
-    0% { transform: translate(-50%, -50%) scale(0.25); opacity: 0; }
-    18% { opacity: 0.65; }
-    100% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; }
+    0% {
+      transform: translate(-50%, -50%) scale(0.25);
+      opacity: 0;
+    }
+    18% {
+      opacity: 0.65;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.6);
+      opacity: 0;
+    }
   }
 
   /* the rainbow that stands in the spray when the light is right */
@@ -1082,21 +1230,50 @@
       rgba(198, 158, 255, 0.3) 66deg,
       transparent 84deg
     );
-    mask-image: radial-gradient(ellipse 100% 100% at 50% 100%, transparent 58%, #000 62%, #000 76%, transparent 82%);
-    -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 100%, transparent 58%, #000 62%, #000 76%, transparent 82%);
+    mask-image: radial-gradient(
+      ellipse 100% 100% at 50% 100%,
+      transparent 58%,
+      #000 62%,
+      #000 76%,
+      transparent 82%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 100% 100% at 50% 100%,
+      transparent 58%,
+      #000 62%,
+      #000 76%,
+      transparent 82%
+    );
     filter: blur(1.2px);
     animation: fx-bow 13s ease-in-out infinite;
   }
   @keyframes fx-bow {
-    0%, 100% { transform: translate(-50%, -50%) scale(0.94); opacity: 0; }
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(0.94);
+      opacity: 0;
+    }
     /* only present while the mist is thick enough to hold it */
-    38%, 62% { opacity: 0.75; }
-    50% { transform: translate(-50%, -50%) scale(1.06); }
+    38%,
+    62% {
+      opacity: 0.75;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.06);
+    }
   }
   @keyframes fx-fall {
-    0% { transform: translate(-50%, -110%) scaleY(0.5); opacity: 0; }
-    18% { opacity: 1; }
-    100% { transform: translate(-50%, 120%) scaleY(1.25); opacity: 0; }
+    0% {
+      transform: translate(-50%, -110%) scaleY(0.5);
+      opacity: 0;
+    }
+    18% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, 120%) scaleY(1.25);
+      opacity: 0;
+    }
   }
 
   .mapfx-spray {
@@ -1107,21 +1284,41 @@
     animation: fx-spray 2.6s ease-out infinite;
   }
   @keyframes fx-spray {
-    0% { transform: translate(-50%, -50%) scale(0.35); opacity: 0; }
-    30% { opacity: 0.8; }
-    100% { transform: translate(-50%, -170%) scale(1.5); opacity: 0; }
+    0% {
+      transform: translate(-50%, -50%) scale(0.35);
+      opacity: 0;
+    }
+    30% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translate(-50%, -170%) scale(1.5);
+      opacity: 0;
+    }
   }
 
   /* specular drift over open water */
   .mapfx-water {
     border-radius: 40%;
-    background: linear-gradient(115deg, transparent 38%, rgba(216, 244, 255, 0.24) 50%, transparent 62%);
+    background: linear-gradient(
+      115deg,
+      transparent 38%,
+      rgba(216, 244, 255, 0.24) 50%,
+      transparent 62%
+    );
     mix-blend-mode: screen;
     animation: fx-water 11s ease-in-out infinite;
   }
   @keyframes fx-water {
-    0%, 100% { opacity: 0.18; transform: translate(-50%, -50%) translateX(-6%); }
-    50% { opacity: 0.55; transform: translate(-50%, -50%) translateX(6%); }
+    0%,
+    100% {
+      opacity: 0.18;
+      transform: translate(-50%, -50%) translateX(-6%);
+    }
+    50% {
+      opacity: 0.55;
+      transform: translate(-50%, -50%) translateX(6%);
+    }
   }
 
   /* pulsing bio-luminescence */
@@ -1132,8 +1329,15 @@
     animation: fx-glow 3s ease-in-out infinite;
   }
   @keyframes fx-glow {
-    0%, 100% { opacity: 0.32; transform: translate(-50%, -50%) scale(0.82); }
-    50% { opacity: 0.95; transform: translate(-50%, -50%) scale(1.16); }
+    0%,
+    100% {
+      opacity: 0.32;
+      transform: translate(-50%, -50%) scale(0.82);
+    }
+    50% {
+      opacity: 0.95;
+      transform: translate(-50%, -50%) scale(1.16);
+    }
   }
 
   .mapfx-fly {
@@ -1145,10 +1349,21 @@
     animation: fx-fly ease-in-out infinite;
   }
   @keyframes fx-fly {
-    0% { transform: translate(-50%, -50%) translate(0, 0); opacity: 0; }
-    12%, 78% { opacity: 0.95; }
-    50% { transform: translate(-50%, -50%) translate(var(--drift, 3%), -4%); }
-    100% { transform: translate(-50%, -50%) translate(calc(var(--drift, 3%) * 2), -8%); opacity: 0; }
+    0% {
+      transform: translate(-50%, -50%) translate(0, 0);
+      opacity: 0;
+    }
+    12%,
+    78% {
+      opacity: 0.95;
+    }
+    50% {
+      transform: translate(-50%, -50%) translate(var(--drift, 3%), -4%);
+    }
+    100% {
+      transform: translate(-50%, -50%) translate(calc(var(--drift, 3%) * 2), -8%);
+      opacity: 0;
+    }
   }
 
   /* crystal glints */
@@ -1156,8 +1371,16 @@
     aspect-ratio: 1;
     background:
       radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, transparent 62%),
-      conic-gradient(from 0deg, transparent 0deg 78deg, rgba(255, 255, 255, 0.8) 90deg, transparent 102deg 168deg,
-        rgba(255, 255, 255, 0.8) 180deg, transparent 192deg 258deg, rgba(255, 255, 255, 0.8) 270deg, transparent 282deg 348deg);
+      conic-gradient(
+        from 0deg,
+        transparent 0deg 78deg,
+        rgba(255, 255, 255, 0.8) 90deg,
+        transparent 102deg 168deg,
+        rgba(255, 255, 255, 0.8) 180deg,
+        transparent 192deg 258deg,
+        rgba(255, 255, 255, 0.8) 270deg,
+        transparent 282deg 348deg
+      );
     mix-blend-mode: screen;
     animation: fx-sparkle 5s ease-in-out infinite;
   }
@@ -1175,9 +1398,20 @@
      transient. `fx-mist` sets no opacity at 100%, so the Grey — the one signal
      that genuinely had to survive — persists at its base value already. */
   @keyframes fx-sparkle {
-    0%, 72%, 100% { opacity: 0.22; transform: translate(-50%, -50%) scale(0.8) rotate(0deg); }
-    82% { opacity: 1; transform: translate(-50%, -50%) scale(1.15) rotate(45deg); }
-    92% { opacity: 0.25; transform: translate(-50%, -50%) scale(0.7) rotate(70deg); }
+    0%,
+    72%,
+    100% {
+      opacity: 0.22;
+      transform: translate(-50%, -50%) scale(0.8) rotate(0deg);
+    }
+    82% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.15) rotate(45deg);
+    }
+    92% {
+      opacity: 0.25;
+      transform: translate(-50%, -50%) scale(0.7) rotate(70deg);
+    }
   }
 
   /* volcano */
@@ -1185,7 +1419,12 @@
     width: 9%;
     aspect-ratio: 1.4;
     border-radius: 50%;
-    background: radial-gradient(ellipse, rgba(255, 132, 46, 0.42) 0%, rgba(255, 90, 20, 0.14) 45%, transparent 72%);
+    background: radial-gradient(
+      ellipse,
+      rgba(255, 132, 46, 0.42) 0%,
+      rgba(255, 90, 20, 0.14) 45%,
+      transparent 72%
+    );
     mix-blend-mode: screen;
     animation: fx-glow 2.4s ease-in-out infinite;
   }
@@ -1197,9 +1436,17 @@
     animation: fx-ember ease-out infinite;
   }
   @keyframes fx-ember {
-    0% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
-    15% { opacity: 1; }
-    100% { transform: translate(-50%, -50%) translate(-1.5%, -13%) scale(0.25); opacity: 0; }
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
+    }
+    15% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) translate(-1.5%, -13%) scale(0.25);
+      opacity: 0;
+    }
   }
 
   /* lighthouse sweep */
@@ -1207,12 +1454,18 @@
     width: 22%;
     aspect-ratio: 1;
     border-radius: 999px;
-    background: conic-gradient(from 0deg, rgba(255, 240, 190, 0.34) 0deg 17deg, transparent 17deg 360deg);
+    background: conic-gradient(
+      from 0deg,
+      rgba(255, 240, 190, 0.34) 0deg 17deg,
+      transparent 17deg 360deg
+    );
     mix-blend-mode: screen;
     animation: fx-sweep 9s linear infinite;
   }
   @keyframes fx-sweep {
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
   }
 
   /* the citadel's beacon */
@@ -1220,7 +1473,12 @@
     width: 15%;
     aspect-ratio: 1;
     border-radius: 999px;
-    background: radial-gradient(circle, rgba(255, 226, 138, 0.5) 0%, rgba(255, 196, 74, 0.2) 38%, transparent 68%);
+    background: radial-gradient(
+      circle,
+      rgba(255, 226, 138, 0.5) 0%,
+      rgba(255, 196, 74, 0.2) 38%,
+      transparent 68%
+    );
     mix-blend-mode: screen;
     animation: fx-glow 4.2s ease-in-out infinite;
   }
@@ -1233,8 +1491,13 @@
     animation: fx-bob 4.6s ease-in-out infinite;
   }
   @keyframes fx-bob {
-    0%, 100% { transform: translate(-50%, -50%) rotate(-1.6deg) translateY(0); }
-    50% { transform: translate(-50%, -50%) rotate(1.6deg) translateY(-0.35%); }
+    0%,
+    100% {
+      transform: translate(-50%, -50%) rotate(-1.6deg) translateY(0);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(1.6deg) translateY(-0.35%);
+    }
   }
 
   /* chimney smoke */
@@ -1246,9 +1509,17 @@
     animation: fx-smoke ease-out infinite;
   }
   @keyframes fx-smoke {
-    0% { transform: translate(-50%, -50%) scale(0.4); opacity: 0; }
-    20% { opacity: 0.55; }
-    100% { transform: translate(-50%, -50%) translate(1.6%, -7%) scale(1.9); opacity: 0; }
+    0% {
+      transform: translate(-50%, -50%) scale(0.4);
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.55;
+    }
+    100% {
+      transform: translate(-50%, -50%) translate(1.6%, -7%) scale(1.9);
+      opacity: 0;
+    }
   }
 
   /* shore foam */
@@ -1260,8 +1531,15 @@
     animation: fx-wave ease-in-out infinite;
   }
   @keyframes fx-wave {
-    0%, 100% { opacity: 0.12; transform: translate(-50%, -50%) scaleX(0.75); }
-    50% { opacity: 0.6; transform: translate(-50%, -50%) scaleX(1.15); }
+    0%,
+    100% {
+      opacity: 0.12;
+      transform: translate(-50%, -50%) scaleX(0.75);
+    }
+    50% {
+      opacity: 0.6;
+      transform: translate(-50%, -50%) scaleX(1.15);
+    }
   }
 
   /* leaves lifting off the canopy */
@@ -1274,8 +1552,14 @@
     animation: fx-leaf ease-in-out infinite;
   }
   @keyframes fx-leaf {
-    0% { transform: translate(-50%, -50%) rotate(0deg); opacity: 0; }
-    12%, 80% { opacity: 0.85; }
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+      opacity: 0;
+    }
+    12%,
+    80% {
+      opacity: 0.85;
+    }
     100% {
       transform: translate(-50%, -50%) translate(var(--sway, 10%), var(--lift, -8%)) rotate(320deg);
       opacity: 0;
@@ -1290,9 +1574,18 @@
     animation: fx-dust ease-in-out infinite;
   }
   @keyframes fx-dust {
-    0% { transform: translate(-50%, -50%) scale(0.6); opacity: 0; }
-    25%, 70% { opacity: 0.5; }
-    100% { transform: translate(-50%, -50%) translateX(14%) scale(1.3); opacity: 0; }
+    0% {
+      transform: translate(-50%, -50%) scale(0.6);
+      opacity: 0;
+    }
+    25%,
+    70% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translate(-50%, -50%) translateX(14%) scale(1.3);
+      opacity: 0;
+    }
   }
 
   /* a rare shooting star */
@@ -1305,10 +1598,21 @@
     animation: fx-shoot 23s linear infinite;
   }
   @keyframes fx-shoot {
-    0%, 92% { opacity: 0; transform: translate(-50%, -50%) translate(0, 0) rotate(18deg); }
-    94% { opacity: 1; }
-    99% { opacity: 0; transform: translate(-50%, -50%) translate(22%, 9%) rotate(18deg); }
-    100% { opacity: 0; }
+    0%,
+    92% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translate(0, 0) rotate(18deg);
+    }
+    94% {
+      opacity: 1;
+    }
+    99% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translate(22%, 9%) rotate(18deg);
+    }
+    100% {
+      opacity: 0;
+    }
   }
 
   /* Anything that crosses the whole map, travelling in the map's own units.
@@ -1333,9 +1637,18 @@
     animation: fx-crossing linear infinite;
   }
   @keyframes fx-crossing {
-    0% { transform: translateX(0); opacity: 0; }
-    8%, 92% { opacity: var(--peak, 0.75); }
-    100% { transform: translateX(100%); opacity: 0; }
+    0% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    8%,
+    92% {
+      opacity: var(--peak, 0.75);
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
   }
   /* the wing beat, on its own clock so the flock is not in lockstep */
   .mapfx-wing {
@@ -1344,8 +1657,13 @@
     animation: fx-flap ease-in-out infinite;
   }
   @keyframes fx-flap {
-    0%, 100% { transform: scaleY(1); }
-    50% { transform: scaleY(0.34); }
+    0%,
+    100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(0.34);
+    }
   }
 
   /* drifting cloud cover — the body rides a crossing track */
@@ -1377,22 +1695,43 @@
     animation: fx-gust ease-in-out infinite;
   }
   @keyframes fx-gust {
-    0% { transform: translate(-50%, -50%) translateX(-40%) scaleX(0.6); opacity: 0; }
-    35%, 60% { opacity: 0.85; }
-    100% { transform: translate(-50%, -50%) translateX(45%) scaleX(1.25); opacity: 0; }
+    0% {
+      transform: translate(-50%, -50%) translateX(-40%) scaleX(0.6);
+      opacity: 0;
+    }
+    35%,
+    60% {
+      opacity: 0.85;
+    }
+    100% {
+      transform: translate(-50%, -50%) translateX(45%) scaleX(1.25);
+      opacity: 0;
+    }
   }
 
   /* lamplight in a window */
   .mapfx-window {
     aspect-ratio: 1;
     border-radius: 999px;
-    background: radial-gradient(circle, rgba(255, 224, 150, 0.95) 0%, rgba(255, 196, 80, 0.35) 40%, transparent 72%);
+    background: radial-gradient(
+      circle,
+      rgba(255, 224, 150, 0.95) 0%,
+      rgba(255, 196, 80, 0.35) 40%,
+      transparent 72%
+    );
     mix-blend-mode: screen;
     animation: fx-lamp ease-in-out infinite;
   }
   @keyframes fx-lamp {
-    0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.9); }
-    50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.1); }
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    50% {
+      opacity: 0.9;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
   }
 
   /* A ship under sail, crossing the bay — and only the bay.
@@ -1424,13 +1763,27 @@
     animation: fx-sail-rock 6.5s ease-in-out infinite;
   }
   @keyframes fx-sail {
-    0% { transform: translateX(0); opacity: 0; }
-    7%, 90% { opacity: 0.85; }
-    100% { transform: translateX(100%); opacity: 0; }
+    0% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    7%,
+    90% {
+      opacity: 0.85;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
   }
   @keyframes fx-sail-rock {
-    0%, 100% { transform: rotate(-3.5deg) translateY(0); }
-    50% { transform: rotate(3.5deg) translateY(-1.5px); }
+    0%,
+    100% {
+      transform: rotate(-3.5deg) translateY(0);
+    }
+    50% {
+      transform: rotate(3.5deg) translateY(-1.5px);
+    }
   }
 
   /* Region names, engraved on the terrain they label.
@@ -1466,7 +1819,9 @@
 
   .guardian-awake {
     border-color: theme('colors.gold.bright');
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.55), 0 0 20px rgba(242, 207, 91, 0.35);
+    box-shadow:
+      0 4px 14px rgba(0, 0, 0, 0.55),
+      0 0 20px rgba(242, 207, 91, 0.35);
   }
   .guardian-felled {
     @apply border-leather-600;
@@ -1504,13 +1859,26 @@
     @apply block rounded-full;
     width: 9px;
     height: 9px;
-    background: radial-gradient(circle, rgba(255, 246, 214, 0.95) 0%, rgba(255, 226, 150, 0.5) 45%, transparent 72%);
+    background: radial-gradient(
+      circle,
+      rgba(255, 246, 214, 0.95) 0%,
+      rgba(255, 226, 150, 0.5) 45%,
+      transparent 72%
+    );
     box-shadow: 0 0 10px 3px rgba(255, 226, 150, 0.5);
     animation: fx-glint 3.8s ease-in-out infinite;
   }
   @keyframes fx-glint {
-    0%, 62%, 100% { opacity: 0.25; transform: scale(0.75); }
-    78% { opacity: 1; transform: scale(1.25); }
+    0%,
+    62%,
+    100% {
+      opacity: 0.25;
+      transform: scale(0.75);
+    }
+    78% {
+      opacity: 1;
+      transform: scale(1.25);
+    }
   }
 
   .discovery-found .discovery-mark {
@@ -1563,8 +1931,15 @@
     animation: fx-aurora ease-in-out infinite;
   }
   @keyframes fx-aurora {
-    0%, 100% { transform: translate(-50%, -50%) skewX(-8deg) scaleY(0.9); opacity: 0.28; }
-    50% { transform: translate(-50%, -50%) skewX(9deg) scaleY(1.15); opacity: 0.62; }
+    0%,
+    100% {
+      transform: translate(-50%, -50%) skewX(-8deg) scaleY(0.9);
+      opacity: 0.28;
+    }
+    50% {
+      transform: translate(-50%, -50%) skewX(9deg) scaleY(1.15);
+      opacity: 0.62;
+    }
   }
 
   /* butterflies over the forest clearings */
@@ -1573,11 +1948,24 @@
     animation: fx-flutter ease-in-out infinite;
   }
   @keyframes fx-flutter {
-    0% { transform: translate(-50%, -50%) translate(0, 0) rotate(-6deg); opacity: 0; }
-    12%, 84% { opacity: 0.9; }
-    30% { transform: translate(-50%, -50%) translate(180%, -140%) rotate(8deg); }
-    58% { transform: translate(-50%, -50%) translate(340%, 60%) rotate(-9deg); }
-    100% { transform: translate(-50%, -50%) translate(520%, -90%) rotate(5deg); opacity: 0; }
+    0% {
+      transform: translate(-50%, -50%) translate(0, 0) rotate(-6deg);
+      opacity: 0;
+    }
+    12%,
+    84% {
+      opacity: 0.9;
+    }
+    30% {
+      transform: translate(-50%, -50%) translate(180%, -140%) rotate(8deg);
+    }
+    58% {
+      transform: translate(-50%, -50%) translate(340%, 60%) rotate(-9deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) translate(520%, -90%) rotate(5deg);
+      opacity: 0;
+    }
   }
 
   /* tumbleweed bouncing along the desert floor */
@@ -1586,13 +1974,28 @@
     animation: fx-tumble linear infinite;
   }
   @keyframes fx-tumble {
-    0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 0; }
-    6%, 90% { opacity: 0.7; }
+    0% {
+      transform: translateX(0) translateY(0) rotate(0deg);
+      opacity: 0;
+    }
+    6%,
+    90% {
+      opacity: 0.7;
+    }
     /* the little hops, riding the same clock as the roll */
-    25% { transform: translateX(25%) translateY(-9px) rotate(340deg); }
-    50% { transform: translateX(50%) translateY(0) rotate(700deg); }
-    75% { transform: translateX(75%) translateY(-6px) rotate(1040deg); }
-    100% { transform: translateX(100%) translateY(0) rotate(1400deg); opacity: 0; }
+    25% {
+      transform: translateX(25%) translateY(-9px) rotate(340deg);
+    }
+    50% {
+      transform: translateX(50%) translateY(0) rotate(700deg);
+    }
+    75% {
+      transform: translateX(75%) translateY(-6px) rotate(1040deg);
+    }
+    100% {
+      transform: translateX(100%) translateY(0) rotate(1400deg);
+      opacity: 0;
+    }
   }
 
   /* the banner over the citadel gate */
@@ -1610,8 +2013,13 @@
     animation: fx-banner 3.4s ease-in-out infinite;
   }
   @keyframes fx-banner {
-    0%, 100% { transform: translate(-50%, -50%) skewY(-4deg) scaleX(0.94); }
-    50% { transform: translate(-50%, -50%) skewY(5deg) scaleX(1); }
+    0%,
+    100% {
+      transform: translate(-50%, -50%) skewY(-4deg) scaleX(0.94);
+    }
+    50% {
+      transform: translate(-50%, -50%) skewY(5deg) scaleX(1);
+    }
   }
 
   /* ------------------------------------------------- the Grey, made menacing
@@ -1625,7 +2033,12 @@
   .mapfx-grey-flash {
     @apply pointer-events-none absolute z-[4];
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 252, 244, 0.85) 0%, rgba(214, 210, 198, 0.35) 40%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      rgba(255, 252, 244, 0.85) 0%,
+      rgba(214, 210, 198, 0.35) 40%,
+      transparent 70%
+    );
     filter: blur(14px);
     opacity: 0;
     animation: fx-grey-flash ease-out infinite;
@@ -1648,9 +2061,17 @@
      was a nice touch that was not worth a seizure risk, and a single brighter
      stab reads better anyway. */
   @keyframes fx-grey-flash {
-    0%, 88%, 100% { opacity: 0; }
-    91% { opacity: 0.8; }
-    95% { opacity: 0.1; }
+    0%,
+    88%,
+    100% {
+      opacity: 0;
+    }
+    91% {
+      opacity: 0.8;
+    }
+    95% {
+      opacity: 0.1;
+    }
   }
 
   .mapfx-grey-tendril {
@@ -1662,9 +2083,18 @@
     animation: fx-grey-tendril ease-in-out infinite;
   }
   @keyframes fx-grey-tendril {
-    0%, 100% { transform: scaleY(0.35) translateY(0); opacity: 0; }
-    40% { opacity: 0.6; }
-    60% { transform: scaleY(1.15) translateY(6%); opacity: 0.5; }
+    0%,
+    100% {
+      transform: scaleY(0.35) translateY(0);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    60% {
+      transform: scaleY(1.15) translateY(6%);
+      opacity: 0.5;
+    }
   }
 
   .mapfx-mist {
@@ -1679,12 +2109,33 @@
     transition: opacity 900ms ease-out;
     animation: fx-mist 30s ease-in-out infinite;
     /* Feather both edges so the band never ends on a straight line. */
-    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      #000 16%,
+      #000 84%,
+      transparent 100%
+    );
     mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
   }
   @keyframes fx-mist {
-    0%, 100% { background-position: 0 0, 0 0, 0 0, 0 0, 0 0; }
-    50% { background-position: 7% 3%, -6% -3%, 5% 2%, -4% 2%, 0 0; }
+    0%,
+    100% {
+      background-position:
+        0 0,
+        0 0,
+        0 0,
+        0 0,
+        0 0;
+    }
+    50% {
+      background-position:
+        7% 3%,
+        -6% -3%,
+        5% 2%,
+        -4% 2%,
+        0 0;
+    }
   }
 
   .region-plaque {

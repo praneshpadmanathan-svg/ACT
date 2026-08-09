@@ -146,7 +146,10 @@ function Compass({ url }: { url: U }) {
         <path d="M60 20v8M60 92v8M20 60h8M92 60h8" />
       </g>
       {/* the needle: red half north, pale half south, spinning via CSS */}
-      <g className="origin-center animate-[spin_2.6s_linear_infinite]" style={{ transformOrigin: '60px 60px' }}>
+      <g
+        className="origin-center animate-[spin_2.6s_linear_infinite]"
+        style={{ transformOrigin: '60px 60px' }}
+      >
         <path d="M60 28 L68 60 L60 92 L52 60 Z" fill="#f3e7cb" strokeWidth="2.6" />
         <path d="M60 28 L68 60 L52 60 Z" fill="#b5432f" strokeWidth="2.6" />
       </g>

@@ -23,10 +23,13 @@ import { m, popItem, SPRING_SNAP } from '@/lib/motion';
 
 /* What each road actually asks of you, in the language of the map. */
 const ROAD_NOTE: Record<SectionId, string> = {
-  english: 'The rules are in plain sight here. Learn them once and the village becomes almost mechanical — the fastest ground to make on the whole map.',
-  reading: 'Every answer is already written in the text. The woods only ask you to find the line that proves it.',
+  english:
+    'The rules are in plain sight here. Learn them once and the village becomes almost mechanical — the fastest ground to make on the whole map.',
+  reading:
+    'Every answer is already written in the text. The woods only ask you to find the line that proves it.',
   math: 'Long and dry, but every dune has a shortcut if you know where to step. The most ground to cover, and the most to gain.',
-  science: 'Read what is genuinely in front of you. Most travellers fail on the cliffs by bringing answers from home.',
+  science:
+    'Read what is genuinely in front of you. Most travellers fail on the cliffs by bringing answers from home.',
 };
 
 export function RoadChooser() {
@@ -63,8 +66,8 @@ export function RoadChooser() {
             className="mx-auto mt-3 max-w-lg animate-storyTitle font-read text-[15px] leading-relaxed text-parchment-dim"
             style={{ animationDelay: '170ms' }}
           >
-            All four roads are open from the first step — this only decides where your
-            traveller starts. You can walk any of them whenever you like.
+            All four roads are open from the first step — this only decides where your traveller
+            starts. You can walk any of them whenever you like.
           </p>
         </div>
 
@@ -72,7 +75,10 @@ export function RoadChooser() {
             rather than all appearing at once. */}
         <m.div
           className="mt-8 grid gap-3 sm:grid-cols-2"
-          variants={{ initial: {}, animate: { transition: { staggerChildren: 0.08, delayChildren: 0.28 } } }}
+          variants={{
+            initial: {},
+            animate: { transition: { staggerChildren: 0.08, delayChildren: 0.28 } },
+          }}
           initial="initial"
           animate="animate"
         >

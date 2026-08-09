@@ -18,10 +18,30 @@ const MIN_LENGTH = 8;
 
 /** Passwords that need no leak to guess. */
 const OBVIOUS = [
-  'password', 'passw0rd', 'letmein', 'welcome', 'iloveyou', 'princess',
-  'qwerty', 'asdfgh', 'zxcvbn', 'abc123', 'monkey', 'dragon', 'football',
-  'baseball', 'superman', 'trustno1', 'sunshine', 'starwars', 'whatever',
-  'actcommand', 'act command', 'command', 'changeme', 'secret',
+  'password',
+  'passw0rd',
+  'letmein',
+  'welcome',
+  'iloveyou',
+  'princess',
+  'qwerty',
+  'asdfgh',
+  'zxcvbn',
+  'abc123',
+  'monkey',
+  'dragon',
+  'football',
+  'baseball',
+  'superman',
+  'trustno1',
+  'sunshine',
+  'starwars',
+  'whatever',
+  'actcommand',
+  'act command',
+  'command',
+  'changeme',
+  'secret',
 ];
 
 /** Straight runs, forwards or backwards: 123456, abcdef, 987654. */
@@ -47,7 +67,10 @@ export function checkPassword(password: string, email = ''): PasswordVerdict {
   const value = password.trim();
 
   if (value.length < MIN_LENGTH) {
-    return { ok: false, reason: `Use at least ${MIN_LENGTH} characters — longer is the single thing that helps most.` };
+    return {
+      ok: false,
+      reason: `Use at least ${MIN_LENGTH} characters — longer is the single thing that helps most.`,
+    };
   }
   if (value.length > 72) {
     // bcrypt silently ignores everything past 72 bytes, so say so rather than
@@ -62,13 +85,23 @@ export function checkPassword(password: string, email = ''): PasswordVerdict {
     return { ok: false, reason: 'That is the same character over and over — mix it up a little.' };
   }
   if (isRun(lower)) {
-    return { ok: false, reason: 'That is a straight run off the keyboard. Try something less predictable.' };
+    return {
+      ok: false,
+      reason: 'That is a straight run off the keyboard. Try something less predictable.',
+    };
   }
   if (OBVIOUS.some((bad) => stripped.includes(bad.replace(/[^a-z0-9]/g, '')))) {
-    return { ok: false, reason: 'That is one of the first passwords anyone guesses. Please pick another.' };
+    return {
+      ok: false,
+      reason: 'That is one of the first passwords anyone guesses. Please pick another.',
+    };
   }
 
-  const localPart = email.split('@')[0]?.toLowerCase().replace(/[^a-z0-9]/g, '') ?? '';
+  const localPart =
+    email
+      .split('@')[0]
+      ?.toLowerCase()
+      .replace(/[^a-z0-9]/g, '') ?? '';
   if (localPart.length >= 4 && stripped.includes(localPart)) {
     return { ok: false, reason: 'Your password should not contain your email address.' };
   }

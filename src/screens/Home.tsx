@@ -46,9 +46,7 @@ export function Home() {
   const weak = weakestTopics(progress, 4);
   const pendingChapter = nextChapter(progress, { cleared, total });
 
-  const [savePromptHidden, setSavePromptHidden] = useState(
-    () => readRaw(SAVE_PROMPT_KEY) === '1',
-  );
+  const [savePromptHidden, setSavePromptHidden] = useState(() => readRaw(SAVE_PROMPT_KEY) === '1');
 
   const currentZone = current ? { id: current.zone.id, name: current.zone.name } : null;
 
@@ -103,7 +101,10 @@ export function Home() {
                 <h1 className="heading mt-1 truncate text-[clamp(1.4rem,3vw,1.9rem)]">
                   {playerName}
                 </h1>
-                <p className="mt-1 font-script text-[14px] uppercase tracking-[0.14em]" style={{ color: rank.color }}>
+                <p
+                  className="mt-1 font-script text-[14px] uppercase tracking-[0.14em]"
+                  style={{ color: rank.color }}
+                >
                   {rank.name}
                 </p>
               </div>
@@ -207,7 +208,9 @@ export function Home() {
             <div className="grid grid-cols-4 gap-2">
               {SECTIONS.map((section) => {
                 const path = PATH_BY_ID[section.id];
-                const done = path.nodes.filter((n) => progress.zonesCleared[n.id] !== undefined).length;
+                const done = path.nodes.filter(
+                  (n) => progress.zonesCleared[n.id] !== undefined,
+                ).length;
                 return (
                   <ProgressRing
                     key={section.id}
@@ -246,13 +249,21 @@ export function Home() {
             <dl className="space-y-3">
               <Row label="Target score" value={String(progress.targetScore)} />
               <Row label="Questions answered" value={progress.tally.answered.toLocaleString()} />
-              <Row label="Lessons read" value={`${progress.notesRead.length}/${LIBRARY_STATS.notePages}`} />
+              <Row
+                label="Lessons read"
+                value={`${progress.notesRead.length}/${LIBRARY_STATS.notePages}`}
+              />
               <Row label="Due for review" value={String(reviewDue)} highlight={reviewDue > 0} />
             </dl>
 
-            <a href={hrefFor({ name: reviewDue > 0 ? 'review' : 'drills' })} onClick={() => sfx.select()}>
+            <a
+              href={hrefFor({ name: reviewDue > 0 ? 'review' : 'drills' })}
+              onClick={() => sfx.select()}
+            >
               <Button variant={reviewDue > 0 ? 'primary' : 'ghost'} className="mt-5 w-full">
-                {reviewDue > 0 ? `Review ${reviewDue} question${reviewDue === 1 ? '' : 's'} ▸` : 'Train a skill ▸'}
+                {reviewDue > 0
+                  ? `Review ${reviewDue} question${reviewDue === 1 ? '' : 's'} ▸`
+                  : 'Train a skill ▸'}
               </Button>
             </a>
           </section>
@@ -269,7 +280,8 @@ export function Home() {
                   type="button"
                   onClick={() => {
                     sfx.select();
-                    if (t.section !== 'zone') navigate({ name: 'drill', section: t.section, topic: t.topic });
+                    if (t.section !== 'zone')
+                      navigate({ name: 'drill', section: t.section, topic: t.topic });
                   }}
                   className="panel flex items-center gap-4 px-5 py-4 text-left transition-colors hover:border-gold-deep"
                 >
@@ -286,7 +298,10 @@ export function Home() {
                     /* #c8553d measured 3.82:1 on the panel — and this is the
                        number telling you a topic is hurting you, so it is the
                        last one that should be hard to read. */
-                    style={{ color: t.accuracy < 0.5 ? '#dd8571' : t.accuracy < 0.7 ? '#d4a017' : '#7cc98a' }}
+                    style={{
+                      color:
+                        t.accuracy < 0.5 ? '#dd8571' : t.accuracy < 0.7 ? '#d4a017' : '#7cc98a',
+                    }}
                   >
                     {Math.round(t.accuracy * 100)}%
                   </span>
@@ -298,9 +313,17 @@ export function Home() {
 
         {/* ----------------------------------------------------------- routes */}
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <Quick label="Adventure map" detail={allCleared ? 'All cleared' : `${total - cleared} landmarks left`} to="map" />
+          <Quick
+            label="Adventure map"
+            detail={allCleared ? 'All cleared' : `${total - cleared} landmarks left`}
+            to="map"
+          />
           <Quick label="The library" detail={`${LIBRARY_STATS.notePages} lessons`} to="notes" />
-          <Quick label="Training yard" detail={`${LIBRARY_STATS.drillQuestions} questions`} to="drills" />
+          <Quick
+            label="Training yard"
+            detail={`${LIBRARY_STATS.drillQuestions} questions`}
+            to="drills"
+          />
           <Quick label="The Summit" detail="Timed mock test" to="tests" />
         </div>
       </Page>
@@ -334,8 +357,8 @@ function PlacementPrompt() {
           Take the placement test
         </span>
         <span className="mt-0.5 block font-read text-[13.5px] leading-relaxed text-parchment-dim">
-          A short spread across all four sections, untimed. It tells the plan where to point
-          you instead of it guessing for a fortnight.
+          A short spread across all four sections, untimed. It tells the plan where to point you
+          instead of it guessing for a fortnight.
         </span>
       </span>
       <span className="flex flex-none gap-2">
@@ -397,7 +420,9 @@ function DailyCard() {
         {done ? '✓' : DAILY_SIZE}
       </span>
       <span className="min-w-0 flex-1">
-        <span className="eyebrow block">{done ? '✓ Daily challenge done' : '☀ Daily challenge'}</span>
+        <span className="eyebrow block">
+          {done ? '✓ Daily challenge done' : '☀ Daily challenge'}
+        </span>
         <span className="mt-1 block font-display text-[15px] font-semibold text-gold-light">
           {done
             ? `Back tomorrow — ${progress.dayStreak} day streak`
@@ -407,7 +432,9 @@ function DailyCard() {
           {done ? 'Anything else you do today is ahead of schedule.' : dailyBlurb(progress)}
         </span>
       </span>
-      {!done && <span className="flex-none font-display text-[13px] font-semibold text-gold">Start ▸</span>}
+      {!done && (
+        <span className="flex-none font-display text-[13px] font-semibold text-gold">Start ▸</span>
+      )}
     </button>
   );
 }
@@ -483,8 +510,8 @@ function TrackCard() {
 
       <p className="mt-3 font-read text-[14px] leading-relaxed text-parchment-dim">{line}</p>
       <p className="mt-2 font-read text-[12.5px] text-ink-faint">
-        Estimated from your practice accuracy, not a scored test. Take a full test for the
-        closer number.
+        Estimated from your practice accuracy, not a scored test. Take a full test for the closer
+        number.
       </p>
     </section>
   );
@@ -506,8 +533,7 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
   const plan = todaysPlan(progress, currentZone);
   const lead = plan.steps[0];
 
-  const countdown =
-    urgency === 'close' ? '#dd8571' : urgency === 'soon' ? '#d4a017' : '#7cc98a';
+  const countdown = urgency === 'close' ? '#dd8571' : urgency === 'soon' ? '#d4a017' : '#7cc98a';
 
   return (
     <section className="panel-lit mb-6 p-6 sm:p-7">
@@ -617,7 +643,15 @@ function Row({ label, value, highlight }: { label: string; value: string; highli
   );
 }
 
-function Quick({ label, detail, to }: { label: string; detail: string; to: 'map' | 'notes' | 'drills' | 'tests' }) {
+function Quick({
+  label,
+  detail,
+  to,
+}: {
+  label: string;
+  detail: string;
+  to: 'map' | 'notes' | 'drills' | 'tests';
+}) {
   return (
     <a
       href={hrefFor({ name: to })}

@@ -33,7 +33,14 @@ export function NotesScreen({ section }: { section?: string }) {
         <EmptyState
           title="Section not found"
           detail="Pick one of the four ACT sections."
-          action={<Button variant="primary" onClick={() => navigate({ name: 'notes', section: 'english' })}>English notes</Button>}
+          action={
+            <Button
+              variant="primary"
+              onClick={() => navigate({ name: 'notes', section: 'english' })}
+            >
+              English notes
+            </Button>
+          }
         />
       </Page>
     );
@@ -63,7 +70,9 @@ export function NotesScreen({ section }: { section?: string }) {
             onClick={() => sfx.select()}
             className={cx(
               'rounded-lg border-2 px-4 py-2 font-script text-[12px] uppercase tracking-wide transition-colors',
-              s.id === active ? 'text-[#0d0620]' : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-parchment',
+              s.id === active
+                ? 'text-[#0d0620]'
+                : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-parchment',
             )}
             style={s.id === active ? { background: s.color, borderColor: s.color } : undefined}
           >
@@ -102,7 +111,9 @@ export function NotesScreen({ section }: { section?: string }) {
                     <span
                       className={cx(
                         'mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded border-2 text-[12px]',
-                        read ? 'border-woods bg-woods text-[#04200f]' : 'border-leather-700 text-ink-faint',
+                        read
+                          ? 'border-woods bg-woods text-[#04200f]'
+                          : 'border-leather-700 text-ink-faint',
                       )}
                       aria-hidden="true"
                     >
@@ -174,7 +185,11 @@ export function NoteReader({ pageId }: { pageId: string }) {
         <EmptyState
           title="Page not found"
           detail="That note page does not exist any more."
-          action={<Button variant="primary" onClick={() => navigate({ name: 'notes' })}>All notes</Button>}
+          action={
+            <Button variant="primary" onClick={() => navigate({ name: 'notes' })}>
+              All notes
+            </Button>
+          }
         />
       </Page>
     );
@@ -277,7 +292,9 @@ function NoteBlockView({ block }: { block: NoteBlock }) {
       return (
         <section className="ink-rule">
           {block.title && <h2 className="lesson-label">{block.title}</h2>}
-          <RichText as="div" className="prose-quill">{block.text}</RichText>
+          <RichText as="div" className="prose-quill">
+            {block.text}
+          </RichText>
         </section>
       );
 
@@ -378,7 +395,9 @@ function CheckBlock({ block }: { block: Extract<NoteBlock, { type: 'check' }> })
   return (
     <section className="ink-check lesson-check">
       <div className="lesson-label">Check yourself</div>
-      <RichText as="div" className="prose-quill mb-4 font-medium">{block.q}</RichText>
+      <RichText as="div" className="prose-quill mb-4 font-medium">
+        {block.q}
+      </RichText>
 
       <div className="space-y-2">
         {block.choices.map((choice, i) => {
@@ -402,7 +421,9 @@ function CheckBlock({ block }: { block: Extract<NoteBlock, { type: 'check' }> })
               )}
             >
               <span className="choice-key">{'ABCD'[i]}</span>
-              <RichText as="span" className="min-w-0 flex-1">{choice}</RichText>
+              <RichText as="span" className="min-w-0 flex-1">
+                {choice}
+              </RichText>
             </button>
           );
         })}

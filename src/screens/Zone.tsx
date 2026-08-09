@@ -53,7 +53,11 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
         <EmptyState
           title="Zone not found"
           detail="That zone does not exist. Head back to the map and pick one from a path."
-          action={<Button variant="primary" onClick={() => navigate({ name: 'map' })}>Back to map</Button>}
+          action={
+            <Button variant="primary" onClick={() => navigate({ name: 'map' })}>
+              Back to map
+            </Button>
+          }
         />
       </Page>
     );
@@ -71,21 +75,28 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
       <Page>
         <BackLink to={{ name: 'path', section: path.id }} label={`${meta.name} path`} />
 
-        <div className="mb-6 rounded-xl border-2 border-leather-700 bg-leather-850 p-6 shadow-card sm:p-7"
-             style={{ borderTopColor: path.color, borderTopWidth: 4 }}>
+        <div
+          className="mb-6 rounded-xl border-2 border-leather-700 bg-leather-850 p-6 shadow-card sm:p-7"
+          style={{ borderTopColor: path.color, borderTopWidth: 4 }}
+        >
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
               <div className="font-script text-[10px] uppercase tracking-[0.16em] text-ink-faint">
                 {meta.name} · {zone.topic}
               </div>
-              <h1 className="heading mt-2 text-[clamp(14px,2.4vw,19px)]" style={{ color: path.color }}>
+              <h1
+                className="heading mt-2 text-[clamp(14px,2.4vw,19px)]"
+                style={{ color: path.color }}
+              >
                 {zone.name}
               </h1>
               <p className="mt-2.5 font-read text-[19px] text-parchment-dim">{zone.sub}</p>
             </div>
             {best !== null && (
               <div className="text-right">
-                <div className="font-script text-[10px] uppercase tracking-wide text-ink-faint">Your best</div>
+                <div className="font-script text-[10px] uppercase tracking-wide text-ink-faint">
+                  Your best
+                </div>
                 <div className="num text-[30px] text-woods">{best}%</div>
               </div>
             )}
@@ -171,7 +182,11 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
             art="scroll"
             title="No lesson for this zone"
             detail="Jump straight to the quiz — the explanations after each question teach the same material."
-            action={<Button variant="primary" onClick={() => setPhase('quiz')}>Start the quiz</Button>}
+            action={
+              <Button variant="primary" onClick={() => setPhase('quiz')}>
+                Start the quiz
+              </Button>
+            }
           />
         )}
       </Page>
@@ -197,7 +212,11 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
               correct: record.correct,
               ms: record.ms,
               xp: XP.zoneQuestion(
-                record.question.difficulty === 'hard' ? 3 : record.question.difficulty === 'easy' ? 1 : 2,
+                record.question.difficulty === 'hard'
+                  ? 3
+                  : record.question.difficulty === 'easy'
+                    ? 1
+                    : 2,
                 record.correct,
                 0,
               ),
@@ -244,7 +263,10 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
             {passed ? 'Zone cleared' : 'Not yet'}
           </h1>
 
-          <div className="num mt-6 text-[64px] leading-none" style={{ color: passed ? '#5ee6a8' : '#ff8298' }}>
+          <div
+            className="num mt-6 text-[64px] leading-none"
+            style={{ color: passed ? '#5ee6a8' : '#ff8298' }}
+          >
             {percent}%
           </div>
           <p className="mt-2 text-[15px] text-parchment-dim">
@@ -290,7 +312,10 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                 Next zone ▶
               </Button>
             ) : (
-              <Button variant="primary" onClick={() => navigate({ name: 'path', section: path.id })}>
+              <Button
+                variant="primary"
+                onClick={() => navigate({ name: 'path', section: path.id })}
+              >
                 Back to path
               </Button>
             )}
@@ -310,10 +335,12 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                       {r.question.prompt}
                     </RichText>
                     <section className="ink-example">
-                      <div className="lesson-label">
-                        Correct answer — {r.question.correctKey}
-                      </div>
-                      <RichText as="div" format="html" className="font-read text-[1.02rem] leading-[1.72] text-ink">
+                      <div className="lesson-label">Correct answer — {r.question.correctKey}</div>
+                      <RichText
+                        as="div"
+                        format="html"
+                        className="font-read text-[1.02rem] leading-[1.72] text-ink"
+                      >
                         {r.question.why[r.question.correctKey] ?? r.question.whyGeneral ?? ''}
                       </RichText>
                     </section>

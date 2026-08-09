@@ -38,7 +38,15 @@
 import { memo, useId } from 'react';
 
 import type { SectionId } from '@/types';
-import { GUARDIAN_AT, MAP_H, MAP_W, REGION_BANDS, REGION_ORDER, REGIONS, SUMMIT_AT } from './mapData';
+import {
+  GUARDIAN_AT,
+  MAP_H,
+  MAP_W,
+  REGION_BANDS,
+  REGION_ORDER,
+  REGIONS,
+  SUMMIT_AT,
+} from './mapData';
 
 type Cleared = Record<SectionId, number>;
 
@@ -236,8 +244,18 @@ function splineLength(points: [number, number][]): number {
       const t2 = t * t;
       const t3 = t2 * t;
       // Catmull-Rom, the same curve the béziers above describe.
-      const x = 0.5 * (2 * x1 + (-x0 + x2) * t + (2 * x0 - 5 * x1 + 4 * x2 - x3) * t2 + (-x0 + 3 * x1 - 3 * x2 + x3) * t3);
-      const y = 0.5 * (2 * y1 + (-y0 + y2) * t + (2 * y0 - 5 * y1 + 4 * y2 - y3) * t2 + (-y0 + 3 * y1 - 3 * y2 + y3) * t3);
+      const x =
+        0.5 *
+        (2 * x1 +
+          (-x0 + x2) * t +
+          (2 * x0 - 5 * x1 + 4 * x2 - x3) * t2 +
+          (-x0 + 3 * x1 - 3 * x2 + x3) * t3);
+      const y =
+        0.5 *
+        (2 * y1 +
+          (-y0 + y2) * t +
+          (2 * y0 - 5 * y1 + 4 * y2 - y3) * t2 +
+          (-y0 + 3 * y1 - 3 * y2 + y3) * t3);
       total += Math.hypot(x - px, y - py);
       px = x;
       py = y;

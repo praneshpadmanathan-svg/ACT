@@ -70,8 +70,16 @@ export function StatsScreen() {
 
       {/* headline numbers */}
       <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <Tile label="Estimated composite" value={estimate !== null ? String(estimate) : '—'} color="#ffd23e" />
-        <Tile label="Overall accuracy" value={`${Math.round(overallAccuracy * 100)}%`} color="#5ee6a8" />
+        <Tile
+          label="Estimated composite"
+          value={estimate !== null ? String(estimate) : '—'}
+          color="#ffd23e"
+        />
+        <Tile
+          label="Overall accuracy"
+          value={`${Math.round(overallAccuracy * 100)}%`}
+          color="#5ee6a8"
+        />
         <Tile label="Questions answered" value={answered.toLocaleString()} color="#ff9d5c" />
         <Tile label="Day streak" value={String(progress.dayStreak)} color="#3ad6f0" />
       </div>
@@ -82,12 +90,13 @@ export function StatsScreen() {
           beats a bare em-dash, which reads as "broken" rather than "not yet". */}
       {estimate === null && (
         <p className="mb-6 -mt-2 font-read text-[13.5px] leading-relaxed text-ink-faint">
-          A composite needs at least <b className="text-parchment-dim">two sections</b> with eight or
-          more answered questions each — it is an average, and averaging one section would flatter
-          or punish you for no reason.
+          A composite needs at least <b className="text-parchment-dim">two sections</b> with eight
+          or more answered questions each — it is an average, and averaging one section would
+          flatter or punish you for no reason.
           {sectionsNeedingWork.length > 0 && (
             <>
-              {' '}Still short in{' '}
+              {' '}
+              Still short in{' '}
               <b className="text-parchment-dim">
                 {sectionsNeedingWork.map((s) => s.name).join(', ')}
               </b>
@@ -106,7 +115,10 @@ export function StatsScreen() {
           const zones = path.nodes.filter((z) => progress.zonesCleared[z.id] !== undefined).length;
 
           return (
-            <div key={section.id} className="rounded-lg border-2 border-leather-700 bg-leather-850 p-5 shadow-card">
+            <div
+              key={section.id}
+              className="rounded-lg border-2 border-leather-700 bg-leather-850 p-5 shadow-card"
+            >
               <div className="flex items-baseline justify-between">
                 <h3 className="heading text-[12px]" style={{ color: section.color }}>
                   {section.name}
@@ -119,8 +131,12 @@ export function StatsScreen() {
                 <ProgressBar value={pct} color={section.color} height={8} />
               </div>
               <div className="mt-2.5 flex justify-between font-script text-[10px] uppercase tracking-wide text-ink-faint">
-                <span>{ok}/{n} correct</span>
-                <span>{zones}/{path.nodes.length} zones</span>
+                <span>
+                  {ok}/{n} correct
+                </span>
+                <span>
+                  {zones}/{path.nodes.length} zones
+                </span>
               </div>
             </div>
           );
@@ -137,7 +153,8 @@ export function StatsScreen() {
               className="flex-1 rounded-sm transition-all"
               style={{
                 height: `${Math.max(3, (count / maxActivity) * 100)}%`,
-                background: count === 0 ? '#1d1640' : count > maxActivity * 0.6 ? '#ffd23e' : '#6a4ff0',
+                background:
+                  count === 0 ? '#1d1640' : count > maxActivity * 0.6 ? '#ffd23e' : '#6a4ff0',
               }}
               title={`${count} question${count === 1 ? '' : 's'}`}
             />
@@ -238,7 +255,10 @@ export function ProfileScreen() {
             </div>
           </div>
           <h2 className="heading mt-3 text-[14px] text-parchment">{playerName}</h2>
-          <p className="mt-2 font-script text-[11px] uppercase tracking-wide" style={{ color: rank.color }}>
+          <p
+            className="mt-2 font-script text-[11px] uppercase tracking-wide"
+            style={{ color: rank.color }}
+          >
             {rank.name}
           </p>
           <p className="mt-1 text-[13px] text-ink-faint">{rank.tagline}</p>
@@ -247,7 +267,9 @@ export function ProfileScreen() {
             <ProgressBar value={pct} color={rank.color} />
             <p className="mt-2 font-script text-[10px] uppercase tracking-wide text-ink-faint">
               {progress.xp.toLocaleString()} XP
-              {next ? ` · ${(next.xp - progress.xp).toLocaleString()} to ${next.name}` : ' · max rank'}
+              {next
+                ? ` · ${(next.xp - progress.xp).toLocaleString()} to ${next.name}`
+                : ' · max rank'}
             </p>
           </div>
         </div>
@@ -277,7 +299,6 @@ export function ProfileScreen() {
               ))}
             </div>
           </label>
-
 
           {/* Onboarding promises this can be changed later, so it has to be
               changeable later. Clearing it stops the countdown rather than
@@ -329,7 +350,10 @@ export function ProfileScreen() {
                     : 'This deployment has no account server, so progress saves to this browser only.'}
                 </p>
                 {cloudEnabled && (
-                  <Button variant="primary" onClick={() => navigate({ name: 'auth', mode: 'signup' })}>
+                  <Button
+                    variant="primary"
+                    onClick={() => navigate({ name: 'auth', mode: 'signup' })}
+                  >
                     Save my progress
                   </Button>
                 )}
@@ -434,12 +458,17 @@ export function ProfileScreen() {
             key={r.name}
             className={cx(
               'flex items-center gap-3.5 rounded-lg border-2 px-4 py-3.5',
-              i <= rankIndex ? 'border-leather-700 bg-leather-850' : 'border-leather-700/50 bg-leather-900 opacity-55',
+              i <= rankIndex
+                ? 'border-leather-700 bg-leather-850'
+                : 'border-leather-700/50 bg-leather-900 opacity-55',
             )}
           >
             <RankBadge rank={r} size={38} />
             <div className="min-w-0">
-              <div className="truncate font-script text-[11px] uppercase tracking-wide" style={{ color: r.color }}>
+              <div
+                className="truncate font-script text-[11px] uppercase tracking-wide"
+                style={{ color: r.color }}
+              >
                 {r.name}
               </div>
               <div className="num text-[15px] text-ink-faint">{r.xp.toLocaleString()} XP</div>
@@ -493,7 +522,10 @@ export function ProfileScreen() {
         <div className="panel p-6">
           <h3 className="heading mb-4 text-[12px] text-parchment">Your library</h3>
           <dl className="space-y-2 text-[14px]">
-            <Row label="Note pages read" value={`${progress.notesRead.length} / ${LIBRARY_STATS.notePages}`} />
+            <Row
+              label="Note pages read"
+              value={`${progress.notesRead.length} / ${LIBRARY_STATS.notePages}`}
+            />
             <Row
               label="Zones cleared"
               value={`${Object.keys(progress.zonesCleared).length} / ${LIBRARY_STATS.zones}`}

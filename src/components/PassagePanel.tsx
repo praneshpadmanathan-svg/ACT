@@ -65,7 +65,9 @@ export function PassagePanel({ passage }: { passage: Passage }) {
                     <tr>
                       {figure.head.map((h, i) => (
                         <th key={i} scope="col">
-                          <RichText as="span" format="html">{h}</RichText>
+                          <RichText as="span" format="html">
+                            {h}
+                          </RichText>
                         </th>
                       ))}
                     </tr>
@@ -75,7 +77,9 @@ export function PassagePanel({ passage }: { passage: Passage }) {
                       <tr key={i}>
                         {row.map((cell, j) => (
                           <td key={j} className={j === 0 ? 'font-semibold' : undefined}>
-                            <RichText as="span" format="html">{cell}</RichText>
+                            <RichText as="span" format="html">
+                              {cell}
+                            </RichText>
                           </td>
                         ))}
                       </tr>

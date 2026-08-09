@@ -84,6 +84,16 @@ export function rememberedVerdict(): AgeVerdict | null {
  *  typing 03/04 means March 4th or April 3rd depending on where they live, and
  *  guessing wrong could put them on the wrong side of the line. */
 export const MONTHS = [
-  'January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December',
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ] as const;

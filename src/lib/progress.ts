@@ -2,7 +2,15 @@
    estimation. Pure functions over a single serialisable `Progress` object,
    so it can be persisted locally and synced to Supabase without ceremony. */
 
-import type { Attempt, Difficulty, Progress, ReviewEntry, SectionId, Tally, TestResult } from '@/types';
+import type {
+  Attempt,
+  Difficulty,
+  Progress,
+  ReviewEntry,
+  SectionId,
+  Tally,
+  TestResult,
+} from '@/types';
 import type { IconName } from '@/components/Icon';
 import { TOPIC_BY_ZONE_ALIAS } from '@/content';
 import { DEFAULT_HERO_ID, isHeroId } from '@/game/heroes';
@@ -23,13 +31,69 @@ export interface Rank {
 }
 
 export const RANKS: Rank[] = [
-  { name: 'Recruit', xp: 0, c1: '#e58a4e', c2: '#a4551f', ring: '#ffb877', color: '#e58a4e', tagline: 'Every 36 starts here.' },
-  { name: 'Scholar', xp: 900, c1: '#eef3fb', c2: '#9fb2cc', ring: '#ffffff', color: '#cdd9ec', tagline: 'The habit is forming.' },
-  { name: 'Honors', xp: 2400, c1: '#ffe07a', c2: '#dfa018', ring: '#fff3b0', color: '#ffd23e', tagline: 'Consistency is your edge.' },
-  { name: 'Distinction', xp: 4800, c1: '#63f0e0', c2: '#1c94ab', ring: '#b6fff5', color: '#43e0e0', tagline: 'Precision under pressure.' },
-  { name: 'Vanguard', xp: 8400, c1: '#c8aaff', c2: '#7a4fd0', ring: '#e6d8ff', color: '#c6a8ff', tagline: 'Few make it this far.' },
-  { name: 'Elite', xp: 13500, c1: '#ff8ec2', c2: '#d43f8c', ring: '#ffc9e5', color: '#ff8ec2', tagline: 'Top-decile territory.' },
-  { name: 'Perfect 36', xp: 21000, c1: '#ffe36e', c2: '#ff8c3b', ring: '#fff3b0', color: '#ffe36e', tagline: 'Nothing left to miss.' },
+  {
+    name: 'Recruit',
+    xp: 0,
+    c1: '#e58a4e',
+    c2: '#a4551f',
+    ring: '#ffb877',
+    color: '#e58a4e',
+    tagline: 'Every 36 starts here.',
+  },
+  {
+    name: 'Scholar',
+    xp: 900,
+    c1: '#eef3fb',
+    c2: '#9fb2cc',
+    ring: '#ffffff',
+    color: '#cdd9ec',
+    tagline: 'The habit is forming.',
+  },
+  {
+    name: 'Honors',
+    xp: 2400,
+    c1: '#ffe07a',
+    c2: '#dfa018',
+    ring: '#fff3b0',
+    color: '#ffd23e',
+    tagline: 'Consistency is your edge.',
+  },
+  {
+    name: 'Distinction',
+    xp: 4800,
+    c1: '#63f0e0',
+    c2: '#1c94ab',
+    ring: '#b6fff5',
+    color: '#43e0e0',
+    tagline: 'Precision under pressure.',
+  },
+  {
+    name: 'Vanguard',
+    xp: 8400,
+    c1: '#c8aaff',
+    c2: '#7a4fd0',
+    ring: '#e6d8ff',
+    color: '#c6a8ff',
+    tagline: 'Few make it this far.',
+  },
+  {
+    name: 'Elite',
+    xp: 13500,
+    c1: '#ff8ec2',
+    c2: '#d43f8c',
+    ring: '#ffc9e5',
+    color: '#ff8ec2',
+    tagline: 'Top-decile territory.',
+  },
+  {
+    name: 'Perfect 36',
+    xp: 21000,
+    c1: '#ffe36e',
+    c2: '#ff8c3b',
+    ring: '#fff3b0',
+    color: '#ffe36e',
+    tagline: 'Nothing left to miss.',
+  },
 ];
 
 export function rankIndexFor(xp: number): number {
@@ -43,7 +107,12 @@ export function rankFor(xp: number): Rank {
 }
 
 /** Progress through the current rank, 0-1. Maxes out at the top rank. */
-export function rankProgress(xp: number): { pct: number; into: number; span: number; next: Rank | null } {
+export function rankProgress(xp: number): {
+  pct: number;
+  into: number;
+  span: number;
+  next: Rank | null;
+} {
   const i = rankIndexFor(xp);
   const next = RANKS[i + 1] ?? null;
   if (!next) return { pct: 1, into: 0, span: 0, next: null };
@@ -198,7 +267,10 @@ export function dailyActivity(p: Progress, days: number): number[] {
  *  users don't lose their XP. Runs once; safe to call repeatedly. */
 export function migrateLegacy(current: Progress): Progress {
   const legacy = readJSON<Record<string, unknown> | null>(STORAGE_KEYS.legacyProgress, null);
-  const legacyJourney = readJSON<{ done?: Record<string, boolean> }>(STORAGE_KEYS.legacyJourney, {});
+  const legacyJourney = readJSON<{ done?: Record<string, boolean> }>(
+    STORAGE_KEYS.legacyJourney,
+    {},
+  );
   const legacyProfile = readJSON<Progress['profile']>(STORAGE_KEYS.legacyProfile, null);
 
   if (!legacy && !legacyProfile && !legacyJourney.done) return current;
@@ -213,7 +285,8 @@ export function migrateLegacy(current: Progress): Progress {
     if (typeof legacy.dayStreak === 'number') next.dayStreak = legacy.dayStreak;
     if (typeof legacy.targetScore === 'number') next.targetScore = legacy.targetScore;
     if (typeof legacy.weeklyGoal === 'number') next.weeklyGoal = legacy.weeklyGoal;
-    if (typeof legacy.bestCorrectStreak === 'number') next.bestCorrectStreak = legacy.bestCorrectStreak;
+    if (typeof legacy.bestCorrectStreak === 'number')
+      next.bestCorrectStreak = legacy.bestCorrectStreak;
   }
   if (legacyProfile) next.profile = legacyProfile;
   if (legacyJourney.done) {
@@ -599,7 +672,10 @@ export function topicStats(p: Progress, section?: SectionId): TopicStat[] {
     .sort((a, b) => a.accuracy - b.accuracy);
 }
 
-export function sectionAccuracy(p: Progress, section: SectionId): { n: number; ok: number; pct: number } {
+export function sectionAccuracy(
+  p: Progress,
+  section: SectionId,
+): { n: number; ok: number; pct: number } {
   let n = 0;
   let ok = 0;
   for (const t of Object.values(p.tally.topics)) {
@@ -623,8 +699,19 @@ export function weakestTopics(p: Progress, limit = 5): TopicStat[] {
  *  it is a study aid, not an official concordance. */
 export function scaleScore(pct: number): number {
   const table: [number, number][] = [
-    [0, 1], [0.1, 8], [0.2, 12], [0.3, 15], [0.4, 18], [0.5, 21],
-    [0.6, 23], [0.7, 26], [0.8, 29], [0.88, 32], [0.94, 34], [0.98, 35], [1, 36],
+    [0, 1],
+    [0.1, 8],
+    [0.2, 12],
+    [0.3, 15],
+    [0.4, 18],
+    [0.5, 21],
+    [0.6, 23],
+    [0.7, 26],
+    [0.8, 29],
+    [0.88, 32],
+    [0.94, 34],
+    [0.98, 35],
+    [1, 36],
   ];
   for (let i = table.length - 1; i >= 0; i--) {
     if (pct >= table[i][0]) {
@@ -655,10 +742,42 @@ export function scaleScore(pct: number): number {
        test, because a percentile on twelve English questions is a fiction
        with a decimal point.  */
 const PERCENTILE_BY_COMPOSITE: Record<number, number> = {
-  36: 100, 35: 99, 34: 99, 33: 98, 32: 96, 31: 95, 30: 93, 29: 91,
-  28: 89, 27: 86, 26: 82, 25: 78, 24: 74, 23: 69, 22: 64, 21: 58,
-  20: 52, 19: 46, 18: 40, 17: 34, 16: 27, 15: 20, 14: 13, 13: 7,
-  12: 4, 11: 2, 10: 1, 9: 1, 8: 1, 7: 1, 6: 1, 5: 1, 4: 1, 3: 1, 2: 1, 1: 1,
+  36: 100,
+  35: 99,
+  34: 99,
+  33: 98,
+  32: 96,
+  31: 95,
+  30: 93,
+  29: 91,
+  28: 89,
+  27: 86,
+  26: 82,
+  25: 78,
+  24: 74,
+  23: 69,
+  22: 64,
+  21: 58,
+  20: 52,
+  19: 46,
+  18: 40,
+  17: 34,
+  16: 27,
+  15: 20,
+  14: 13,
+  13: 7,
+  12: 4,
+  11: 2,
+  10: 1,
+  9: 1,
+  8: 1,
+  7: 1,
+  6: 1,
+  5: 1,
+  4: 1,
+  3: 1,
+  2: 1,
+  1: 1,
 };
 
 /** Roughly what share of test-takers score at or below this composite. */
@@ -760,9 +879,8 @@ export function trackStatus(p: Progress): TrackStatus {
      between them is a systematic offset, not progress. Subtracting one from
      the other reports the offset as movement. Two tests, or no number. */
   const recent = p.testHistory.filter((t) => Date.now() - t.at < 60 * 86_400_000);
-  const change = recent.length >= 2
-    ? recent[recent.length - 1]!.composite - recent[0]!.composite
-    : null;
+  const change =
+    recent.length >= 2 ? recent[recent.length - 1]!.composite - recent[0]!.composite : null;
 
   if (gap <= 0) return { verdict: 'ahead', current, target, change, gap, daysLeft };
 
@@ -998,7 +1116,12 @@ export function mergeTally(local: Tally, remote: Tally): Tally {
   for (const [key, t] of Object.entries(local.topics)) {
     const other = topics[key];
     topics[key] = other
-      ? { section: t.section, n: Math.max(t.n, other.n), ok: Math.max(t.ok, other.ok), ms: Math.max(t.ms, other.ms) }
+      ? {
+          section: t.section,
+          n: Math.max(t.n, other.n),
+          ok: Math.max(t.ok, other.ok),
+          ms: Math.max(t.ms, other.ms),
+        }
       : t;
   }
 
@@ -1036,21 +1159,126 @@ export interface Achievement {
 }
 
 export const ACHIEVEMENTS: Achievement[] = [
-  { id: 'first-blood', name: 'First Contact', detail: 'Answer your first question.', icon: 'star', tier: 'bronze', test: (p) => p.tally.answered >= 1 },
-  { id: 'ten-q', name: 'Warmed Up', detail: 'Answer 10 questions.', icon: 'bolt', tier: 'bronze', test: (p) => p.tally.answered >= 10 },
-  { id: 'hundred-q', name: 'Century', detail: 'Answer 100 questions.', icon: 'sword', tier: 'silver', test: (p) => p.tally.answered >= 100 },
-  { id: 'five-hundred-q', name: 'Grinder', detail: 'Answer 500 questions.', icon: 'flame', tier: 'gold', test: (p) => p.tally.answered >= 500 },
-  { id: 'streak-10', name: 'On Fire', detail: 'Get 10 correct in a row.', icon: 'flame', tier: 'bronze', test: (p) => p.bestCorrectStreak >= 10 },
-  { id: 'streak-25', name: 'Untouchable', detail: 'Get 25 correct in a row.', icon: 'flame', tier: 'silver', test: (p) => p.bestCorrectStreak >= 25 },
-  { id: 'reader-10', name: 'Well Read', detail: 'Finish 10 note pages.', icon: 'book', tier: 'bronze', test: (p) => p.notesRead.length >= 10 },
-  { id: 'reader-all', name: 'The Archive', detail: 'Finish every note page.', icon: 'book', tier: 'gold', test: (p) => p.notesRead.length >= 60 },
-  { id: 'zone-5', name: 'Trailblazer', detail: 'Clear 5 zones.', icon: 'map', tier: 'bronze', test: (p) => Object.keys(p.zonesCleared).length >= 5 },
-  { id: 'zone-all', name: 'Cartographer', detail: 'Clear every zone.', icon: 'map', tier: 'gold', test: (p) => Object.keys(p.zonesCleared).length >= 37 },
-  { id: 'first-test', name: 'Boss Slain', detail: 'Finish a full-length test.', icon: 'trophy', tier: 'silver', test: (p) => p.testHistory.length >= 1 },
-  { id: 'day-7', name: 'Week Streak', detail: 'Study 7 days in a row.', icon: 'calendar', tier: 'bronze', test: (p) => p.dayStreak >= 7 },
-  { id: 'day-30', name: 'Unbreakable', detail: 'Study 30 days in a row.', icon: 'calendar', tier: 'gold', test: (p) => p.dayStreak >= 30 },
-  { id: 'rank-honors', name: 'Honors', detail: 'Reach the Honors rank.', icon: 'trophy', tier: 'silver', test: (p) => p.xp >= 2400 },
-  { id: 'rank-elite', name: 'Elite', detail: 'Reach the Elite rank.', icon: 'trophy', tier: 'gold', test: (p) => p.xp >= 13500 },
+  {
+    id: 'first-blood',
+    name: 'First Contact',
+    detail: 'Answer your first question.',
+    icon: 'star',
+    tier: 'bronze',
+    test: (p) => p.tally.answered >= 1,
+  },
+  {
+    id: 'ten-q',
+    name: 'Warmed Up',
+    detail: 'Answer 10 questions.',
+    icon: 'bolt',
+    tier: 'bronze',
+    test: (p) => p.tally.answered >= 10,
+  },
+  {
+    id: 'hundred-q',
+    name: 'Century',
+    detail: 'Answer 100 questions.',
+    icon: 'sword',
+    tier: 'silver',
+    test: (p) => p.tally.answered >= 100,
+  },
+  {
+    id: 'five-hundred-q',
+    name: 'Grinder',
+    detail: 'Answer 500 questions.',
+    icon: 'flame',
+    tier: 'gold',
+    test: (p) => p.tally.answered >= 500,
+  },
+  {
+    id: 'streak-10',
+    name: 'On Fire',
+    detail: 'Get 10 correct in a row.',
+    icon: 'flame',
+    tier: 'bronze',
+    test: (p) => p.bestCorrectStreak >= 10,
+  },
+  {
+    id: 'streak-25',
+    name: 'Untouchable',
+    detail: 'Get 25 correct in a row.',
+    icon: 'flame',
+    tier: 'silver',
+    test: (p) => p.bestCorrectStreak >= 25,
+  },
+  {
+    id: 'reader-10',
+    name: 'Well Read',
+    detail: 'Finish 10 note pages.',
+    icon: 'book',
+    tier: 'bronze',
+    test: (p) => p.notesRead.length >= 10,
+  },
+  {
+    id: 'reader-all',
+    name: 'The Archive',
+    detail: 'Finish every note page.',
+    icon: 'book',
+    tier: 'gold',
+    test: (p) => p.notesRead.length >= 60,
+  },
+  {
+    id: 'zone-5',
+    name: 'Trailblazer',
+    detail: 'Clear 5 zones.',
+    icon: 'map',
+    tier: 'bronze',
+    test: (p) => Object.keys(p.zonesCleared).length >= 5,
+  },
+  {
+    id: 'zone-all',
+    name: 'Cartographer',
+    detail: 'Clear every zone.',
+    icon: 'map',
+    tier: 'gold',
+    test: (p) => Object.keys(p.zonesCleared).length >= 37,
+  },
+  {
+    id: 'first-test',
+    name: 'Boss Slain',
+    detail: 'Finish a full-length test.',
+    icon: 'trophy',
+    tier: 'silver',
+    test: (p) => p.testHistory.length >= 1,
+  },
+  {
+    id: 'day-7',
+    name: 'Week Streak',
+    detail: 'Study 7 days in a row.',
+    icon: 'calendar',
+    tier: 'bronze',
+    test: (p) => p.dayStreak >= 7,
+  },
+  {
+    id: 'day-30',
+    name: 'Unbreakable',
+    detail: 'Study 30 days in a row.',
+    icon: 'calendar',
+    tier: 'gold',
+    test: (p) => p.dayStreak >= 30,
+  },
+  {
+    id: 'rank-honors',
+    name: 'Honors',
+    detail: 'Reach the Honors rank.',
+    icon: 'trophy',
+    tier: 'silver',
+    test: (p) => p.xp >= 2400,
+  },
+  {
+    id: 'rank-elite',
+    name: 'Elite',
+    detail: 'Reach the Elite rank.',
+    icon: 'trophy',
+    tier: 'gold',
+    test: (p) => p.xp >= 13500,
+  },
 ];
 
 /** Returns any achievements newly satisfied by this state. */

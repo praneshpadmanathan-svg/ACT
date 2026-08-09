@@ -90,7 +90,11 @@ export function pickDaily(p: Progress, day: string = dayKey()): Question[] {
   // 2. Weakest topics.
   const weak = new Set(weakestTopics(p, 6).map((t) => t.topic));
   if (weak.size > 0) {
-    for (const q of shuffleSeeded(unscheduled.filter((q) => weak.has(q.topic)), next)) take(q);
+    for (const q of shuffleSeeded(
+      unscheduled.filter((q) => weak.has(q.topic)),
+      next,
+    ))
+      take(q);
     if (picked.length >= DAILY_SIZE) return picked;
   }
 

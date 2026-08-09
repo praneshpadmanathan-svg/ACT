@@ -67,7 +67,11 @@ export function PathScreen({ section }: { section: string }) {
         <EmptyState
           title="No such region"
           detail="That road is not on the map. Head back and pick one of the four regions."
-          action={<Button variant="primary" onClick={() => navigate({ name: 'map' })}>Back to the map</Button>}
+          action={
+            <Button variant="primary" onClick={() => navigate({ name: 'map' })}>
+              Back to the map
+            </Button>
+          }
         />
       </Page>
     );
@@ -91,7 +95,10 @@ export function PathScreen({ section }: { section: string }) {
       />
 
       <div className="mb-7">
-        <ProgressBar value={path.nodes.length ? done / path.nodes.length : 0} color={region.color} />
+        <ProgressBar
+          value={path.nodes.length ? done / path.nodes.length : 0}
+          color={region.color}
+        />
       </div>
 
       {/* the guardian at the end of the road */}
@@ -169,7 +176,15 @@ export function PathScreen({ section }: { section: string }) {
 
 /* The guardian sits at the head of the region list — visible from the start
    so you know what the road leads to, but sealed until it is earned. */
-function BossCard({ section, cleared, total }: { section: SectionId; cleared: number; total: number }) {
+function BossCard({
+  section,
+  cleared,
+  total,
+}: {
+  section: SectionId;
+  cleared: number;
+  total: number;
+}) {
   const navigate = useNavigate();
   const { progress } = useStore();
   const boss = bossFor(section);
@@ -197,7 +212,10 @@ function BossCard({ section, cleared, total }: { section: SectionId; cleared: nu
 
       <div className="min-w-0 flex-1">
         <div className="eyebrow">{boss.title}</div>
-        <h3 className="heading mt-1 text-[clamp(1.05rem,2.2vw,1.35rem)]" style={{ color: boss.color }}>
+        <h3
+          className="heading mt-1 text-[clamp(1.05rem,2.2vw,1.35rem)]"
+          style={{ color: boss.color }}
+        >
           {boss.name}
         </h3>
         <p className="mt-1.5 font-read text-[14px] leading-relaxed text-parchment-dim">

@@ -213,7 +213,16 @@ function mallet(freq: number, at = 0, gain = 0.22, wet = 0.4): void {
 /** Plucked string, for shimmer runs. */
 function pluck(freq: number, at = 0, gain = 0.14): void {
   voice({ freq, decay: 0.7, gain, at, type: 'triangle', cutoff: 3600, wet: 0.5 });
-  voice({ freq: freq * 1.005, decay: 0.7, gain: gain * 0.6, at, type: 'triangle', cutoff: 3200, wet: 0.5, detune: 6 });
+  voice({
+    freq: freq * 1.005,
+    decay: 0.7,
+    gain: gain * 0.6,
+    at,
+    type: 'triangle',
+    cutoff: 3200,
+    wet: 0.5,
+    detune: 6,
+  });
 }
 
 /* --------------------------------------------------------------- the cues */
@@ -260,12 +269,36 @@ export const sfx = {
   /** Rank up — layered brass-ish swell with a chord. */
   fanfare: () => {
     [0, 0.13, 0.26].forEach((at, i) => {
-      voice({ freq: PENTA[i] , decay: 0.55, gain: 0.16, type: 'sawtooth', cutoff: 2400, at, wet: 0.5 });
-      voice({ freq: PENTA[i] / 2, decay: 0.6, gain: 0.1, type: 'triangle', cutoff: 1400, at, wet: 0.4 });
+      voice({
+        freq: PENTA[i],
+        decay: 0.55,
+        gain: 0.16,
+        type: 'sawtooth',
+        cutoff: 2400,
+        at,
+        wet: 0.5,
+      });
+      voice({
+        freq: PENTA[i] / 2,
+        decay: 0.6,
+        gain: 0.1,
+        type: 'triangle',
+        cutoff: 1400,
+        at,
+        wet: 0.4,
+      });
     });
     // final chord
     [PENTA[2], PENTA[4], PENTA[5], PENTA[5] * 1.5].forEach((f, i) =>
-      voice({ freq: f, decay: 1.5, gain: 0.12, type: 'triangle', cutoff: 4200, at: 0.42 + i * 0.015, wet: 0.65 }),
+      voice({
+        freq: f,
+        decay: 1.5,
+        gain: 0.12,
+        type: 'triangle',
+        cutoff: 4200,
+        at: 0.42 + i * 0.015,
+        wet: 0.65,
+      }),
     );
     mallet(PENTA[5] * 2, 0.46, 0.12, 0.7);
   },
@@ -288,7 +321,15 @@ export const sfx = {
     mallet(PENTA[2], 0, 0.19, 0.5);
     mallet(PENTA[4], 0.1, 0.17, 0.55);
     [PENTA[2], PENTA[4], PENTA[5]].forEach((f, i) =>
-      voice({ freq: f, decay: 1.1, gain: 0.1, type: 'triangle', cutoff: 3800, at: 0.2 + i * 0.02, wet: 0.6 }),
+      voice({
+        freq: f,
+        decay: 1.1,
+        gain: 0.1,
+        type: 'triangle',
+        cutoff: 3800,
+        at: 0.2 + i * 0.02,
+        wet: 0.6,
+      }),
     );
   },
 

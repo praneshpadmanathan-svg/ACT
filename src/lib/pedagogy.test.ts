@@ -17,12 +17,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import type { Progress, SectionId, TestResult } from '@/types';
 import { ALL_QUESTIONS, SECTIONS, getQuestion } from '@/content';
 import { dailyBlurb, pickDaily } from './daily';
-import {
-  diagnosticLength,
-  pickDiagnostic,
-  placementShape,
-  scoreDiagnostic,
-} from './diagnostic';
+import { diagnosticLength, pickDiagnostic, placementShape, scoreDiagnostic } from './diagnostic';
 import { coldStartTopic, todaysPlan } from './plan';
 import { DEFAULT_HERO_ID, HEROES, heroFor } from '@/game/heroes';
 import { pickSample } from '@/components/TryQuestion';
@@ -129,7 +124,7 @@ describe('dueForReview — the hardest questions come first', () => {
   it('sorts by miss count before due date', () => {
     const p = progress({
       review: {
-        easy: { box: 0, due: 1, misses: 0 },       // oldest due
+        easy: { box: 0, due: 1, misses: 0 }, // oldest due
         hard: { box: 0, due: 2_000, misses: 4 },
         medium: { box: 0, due: 1_500, misses: 1 },
       },
@@ -292,7 +287,7 @@ describe('percentileInWords', () => {
 /* -------------------------------------------------------------- pacing */
 
 describe('pacingFor', () => {
-  it('uses the real ACT per-question budget, not this app\'s shortened sections', () => {
+  it("uses the real ACT per-question budget, not this app's shortened sections", () => {
     // English: 50 questions in 35 minutes.
     expect(SECONDS_PER_QUESTION.english).toBeCloseTo(42, 5);
     expect(SECONDS_PER_QUESTION.math).toBeCloseTo(66.67, 1);
@@ -426,7 +421,9 @@ describe('pickDaily — which five', () => {
   it('is entirely review questions when five or more are due', () => {
     const scheduled = ALL_QUESTIONS.slice(0, 8);
     const review: Progress['review'] = {};
-    scheduled.forEach((q, i) => { review[q.id] = due(i); });
+    scheduled.forEach((q, i) => {
+      review[q.id] = due(i);
+    });
 
     const ids = new Set(pickDaily(progress({ review }), '2026-08-09').map((q) => q.id));
     for (const id of ids) expect(scheduled.some((q) => q.id === id)).toBe(true);
@@ -483,7 +480,9 @@ describe('pickDiagnostic', () => {
   /* The one thing `OnboardingProfile.before` was collected for, four screens
      into onboarding, and then never read by anything. */
   it('is shorter for somebody who has already sat the real ACT', () => {
-    expect(diagnosticLength(withProfile('b27'))).toBeLessThan(diagnosticLength(withProfile('first')));
+    expect(diagnosticLength(withProfile('b27'))).toBeLessThan(
+      diagnosticLength(withProfile('first')),
+    );
     expect(pickDiagnostic(withProfile('b27'))).toHaveLength(diagnosticLength(withProfile('b27')));
   });
 
@@ -566,7 +565,11 @@ describe('scoreDiagnostic', () => {
 
 describe('coldStartTopic — the plan on day one', () => {
   const diagnostic = (weakTopics: string[]) => ({
-    at: Date.now(), raw: {}, scores: {}, weakTopics, asked: 28,
+    at: Date.now(),
+    raw: {},
+    scores: {},
+    weakTopics,
+    asked: 28,
   });
 
   it('says nothing without a placement test', () => {
@@ -574,13 +577,16 @@ describe('coldStartTopic — the plan on day one', () => {
   });
 
   it('resolves a topic name back to its section', () => {
-    expect(coldStartTopic(progress({ diagnostic: diagnostic(['commas']) })))
-      .toEqual({ section: 'english', topic: 'commas' });
+    expect(coldStartTopic(progress({ diagnostic: diagnostic(['commas']) }))).toEqual({
+      section: 'english',
+      topic: 'commas',
+    });
   });
 
   it('skips a name no section claims, rather than returning nothing', () => {
-    expect(coldStartTopic(progress({ diagnostic: diagnostic(['not a topic', 'circles']) })))
-      .toEqual({ section: 'math', topic: 'circles' });
+    expect(
+      coldStartTopic(progress({ diagnostic: diagnostic(['not a topic', 'circles']) })),
+    ).toEqual({ section: 'math', topic: 'circles' });
   });
 
   /* Once there is real evidence, the diagnostic's one-question verdict has
@@ -589,7 +595,9 @@ describe('coldStartTopic — the plan on day one', () => {
     const p = progress({
       diagnostic: diagnostic(['commas', 'circles']),
       tally: {
-        answered: 3, correct: 3, daily: {},
+        answered: 3,
+        correct: 3,
+        daily: {},
         topics: { 'english::commas': { section: 'english', n: 3, ok: 3, ms: 30_000 } },
       },
     });
@@ -664,9 +672,18 @@ describe('trackStatus', () => {
 
   it('reports a change only once two tests anchor it', () => {
     const test = (at: number, composite: number): TestResult => ({
-      id: `t${at}`, at, scores: {}, composite, raw: {}, durationSec: 100, sections: ['english'],
+      id: `t${at}`,
+      at,
+      scores: {},
+      composite,
+      raw: {},
+      durationSec: 100,
+      sections: ['english'],
     });
-    const one = withEstimate(0.8, { targetScore: 30, testHistory: [test(Date.now() - 10 * DAY, 20)] });
+    const one = withEstimate(0.8, {
+      targetScore: 30,
+      testHistory: [test(Date.now() - 10 * DAY, 20)],
+    });
     expect(trackStatus(one).change).toBeNull();
 
     const two = withEstimate(0.8, {
@@ -682,7 +699,13 @@ describe('trackStatus', () => {
      if it were progress, which is why the trend uses tests at both ends. */
   it('draws the trend from tests alone, never from the drill estimate', () => {
     const test = (at: number, composite: number): TestResult => ({
-      id: `t${at}`, at, scores: {}, composite, raw: {}, durationSec: 100, sections: ['english'],
+      id: `t${at}`,
+      at,
+      scores: {},
+      composite,
+      raw: {},
+      durationSec: 100,
+      sections: ['english'],
     });
     const history = [test(Date.now() - 30 * DAY, 22), test(Date.now() - 2 * DAY, 22)];
 
@@ -697,7 +720,13 @@ describe('trackStatus', () => {
 
   it('ignores tests that fell out of the sixty-day window', () => {
     const test = (at: number, composite: number): TestResult => ({
-      id: `t${at}`, at, scores: {}, composite, raw: {}, durationSec: 100, sections: ['english'],
+      id: `t${at}`,
+      at,
+      scores: {},
+      composite,
+      raw: {},
+      durationSec: 100,
+      sections: ['english'],
     });
     const status = trackStatus(
       withEstimate(0.8, {
@@ -720,8 +749,12 @@ describe('mergeProgress — fields added by this pass', () => {
   });
 
   it('takes the higher shield count, so a sync cannot spend one twice', () => {
-    expect(mergeProgress(progress({ streakShields: 1 }), progress({ streakShields: 3 })).streakShields).toBe(3);
-    expect(mergeProgress(progress({ streakShields: 3 }), progress({ streakShields: 1 })).streakShields).toBe(3);
+    expect(
+      mergeProgress(progress({ streakShields: 1 }), progress({ streakShields: 3 })).streakShields,
+    ).toBe(3);
+    expect(
+      mergeProgress(progress({ streakShields: 3 }), progress({ streakShields: 1 })).streakShields,
+    ).toBe(3);
   });
 
   it('keeps the later daily completion, so the phone cannot re-open it on the laptop', () => {
@@ -750,7 +783,11 @@ describe('mergeProgress — fields added by this pass', () => {
 
   it('keeps a locally-taken diagnostic when the remote has none', () => {
     const diagnostic = {
-      at: Date.now(), raw: {}, scores: {}, weakTopics: ['english::commas'], asked: 12,
+      at: Date.now(),
+      raw: {},
+      scores: {},
+      weakTopics: ['english::commas'],
+      asked: 12,
     };
     expect(mergeProgress(progress({ diagnostic }), progress()).diagnostic).toEqual(diagnostic);
     expect(mergeProgress(progress(), progress({ diagnostic })).diagnostic).toEqual(diagnostic);
@@ -783,7 +820,14 @@ describe('who the traveller is', () => {
        everyone who chose it, so this list failing is the point — it makes a
        rename something you have to mean. */
     expect(HEROES.map((h) => h.id)).toEqual([
-      'ash', 'wren', 'juniper', 'kesh', 'noor', 'sable', 'linden', 'io',
+      'ash',
+      'wren',
+      'juniper',
+      'kesh',
+      'noor',
+      'sable',
+      'linden',
+      'io',
     ]);
     expect(new Set(HEROES.map((h) => h.id)).size).toBe(HEROES.length);
   });

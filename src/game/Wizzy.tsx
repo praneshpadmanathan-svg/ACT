@@ -17,7 +17,10 @@ const DISMISS_KEY = 'act-command:wizzy-hidden';
 export function Wizzy() {
   const { progress } = useStore();
   const { current, cleared, total, allCleared } = useMapProgress();
-  const quest = useMemo(() => activeQuest(progress, { cleared, total }), [progress, cleared, total]);
+  const quest = useMemo(
+    () => activeQuest(progress, { cleared, total }),
+    [progress, cleared, total],
+  );
   const [hidden, setHidden] = useState(() => readRaw(DISMISS_KEY) === '1');
   const [tipIndex, setTipIndex] = useState(0);
 
@@ -78,7 +81,15 @@ export function Wizzy() {
       'The citadel at the southern isle holds the timed trial and your predicted score. That is where the climb is measured.',
     );
     return list;
-  }, [allCleared, cleared, current, quest, progress.achievements, progress.dayStreak, progress.oath]);
+  }, [
+    allCleared,
+    cleared,
+    current,
+    quest,
+    progress.achievements,
+    progress.dayStreak,
+    progress.oath,
+  ]);
 
   const dismiss = () => {
     writeRaw(DISMISS_KEY, '1');

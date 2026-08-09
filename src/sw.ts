@@ -73,7 +73,9 @@ self.addEventListener('activate', (event) => {
     (async () => {
       const names = await caches.keys();
       await Promise.all(
-        names.filter((n) => n.startsWith('act-command-') && n !== CACHE).map((n) => caches.delete(n)),
+        names
+          .filter((n) => n.startsWith('act-command-') && n !== CACHE)
+          .map((n) => caches.delete(n)),
       );
       await self.clients.claim();
     })(),

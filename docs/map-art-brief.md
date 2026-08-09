@@ -2,7 +2,7 @@
 
 The map is the one asset the whole game is built on: 37 landmark pins, 14
 discoveries, 4 region plaques and the mist bands are all positioned as
-percentages of this single image. A replacement has to keep the same *layout*
+percentages of this single image. A replacement has to keep the same _layout_
 or every one of those coordinates has to be re-derived by hand.
 
 Read this before generating anything.
@@ -11,26 +11,26 @@ Read this before generating anything.
 
 ## Hard constraints
 
-| Thing | Value | Why |
-| --- | --- | --- |
-| Aspect ratio | **768 × 1376** (portrait, ~1:1.79) | `MAP_W`/`MAP_H` in `AdventureMap.tsx`. A different ratio stretches every pin. |
-| Format | WebP, under ~350 KB | The current map is 297 KB. |
-| Orientation | North at top, four horizontal bands | Regions are stacked top to bottom. |
-| Region order | village → forest → desert → cliffs → citadel | Top to bottom. Pins assume this. |
-| Edges | Land, not vignette | Pins sit as close as x=7% and x=92%. |
+| Thing        | Value                                        | Why                                                                           |
+| ------------ | -------------------------------------------- | ----------------------------------------------------------------------------- |
+| Aspect ratio | **768 × 1376** (portrait, ~1:1.79)           | `MAP_W`/`MAP_H` in `AdventureMap.tsx`. A different ratio stretches every pin. |
+| Format       | WebP, under ~350 KB                          | The current map is 297 KB.                                                    |
+| Orientation  | North at top, four horizontal bands          | Regions are stacked top to bottom.                                            |
+| Region order | village → forest → desert → cliffs → citadel | Top to bottom. Pins assume this.                                              |
+| Edges        | Land, not vignette                           | Pins sit as close as x=7% and x=92%.                                          |
 
 ### The four bands, by vertical percentage
 
 These are the bands the mist covers (`MIST_BANDS` in `DiscoveryLayer.tsx`) and
 where the pins live (`REGIONS` in `mapData.ts`):
 
-| Band | y range | Must contain |
-| --- | --- | --- |
-| Grammar Village | **0–23%** | Cottages, ploughed and golden fields, a great oak, a standing stone, a crossroads where two tracks fork, a tilled field, a stone bridge over a river, a watchtower, a well, a woodcutter's tent |
-| Enchanted Woods | **23–43%** | One enormous tree with exposed roots, glowing mushroom groves, a shrine in a clearing, a ruined stone tower, a still pool with a jetty, a waterfall at the far left, a crystal cave at the far right |
-| Number Desert | **43–59%** | Mesas with a cave mouth, a broken aqueduct, a ruined colonnade, one great ornate arch, a watchtower, an erupting volcano, a lit signal fire on a spire, a stranded river boat at the left |
-| Science Cliffs | **59–81%** | A tall ship at sea, a lone sea stack, a lighthouse, two cliff cottages, a stone stair climbing, a citadel with a copper observatory dome, a telescope yard, a clock tower, a rainbow crystal cave at the right |
-| The Summit | **81–100%** | A golden citadel on an island, gate facing north, water all around |
+| Band            | y range     | Must contain                                                                                                                                                                                                   |
+| --------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Grammar Village | **0–23%**   | Cottages, ploughed and golden fields, a great oak, a standing stone, a crossroads where two tracks fork, a tilled field, a stone bridge over a river, a watchtower, a well, a woodcutter's tent                |
+| Enchanted Woods | **23–43%**  | One enormous tree with exposed roots, glowing mushroom groves, a shrine in a clearing, a ruined stone tower, a still pool with a jetty, a waterfall at the far left, a crystal cave at the far right           |
+| Number Desert   | **43–59%**  | Mesas with a cave mouth, a broken aqueduct, a ruined colonnade, one great ornate arch, a watchtower, an erupting volcano, a lit signal fire on a spire, a stranded river boat at the left                      |
+| Science Cliffs  | **59–81%**  | A tall ship at sea, a lone sea stack, a lighthouse, two cliff cottages, a stone stair climbing, a citadel with a copper observatory dome, a telescope yard, a clock tower, a rainbow crystal cave at the right |
+| The Summit      | **81–100%** | A golden citadel on an island, gate facing north, water all around                                                                                                                                             |
 
 ---
 
@@ -106,7 +106,7 @@ Any of these will work; all need the aspect ratio forced:
 - **DALL·E 3 / ChatGPT** — ask for portrait 1024×1792, then downscale
 - **Stable Diffusion / Flux** — 768×1376 directly, CFG ~6, an illustration or
   storybook LoRA helps a lot
-- **Ideogram** — good at *not* adding text, which is the usual failure here
+- **Ideogram** — good at _not_ adding text, which is the usual failure here
 
 The most common failure is a compass rose or a decorative border creeping in.
 The second most common is the bands drifting out of their percentage ranges —

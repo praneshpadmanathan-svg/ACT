@@ -6,8 +6,18 @@
    hourglass, a crown. */
 
 export type GlyphName =
-  | 'tent' | 'map' | 'book' | 'sword' | 'hourglass' | 'crown' | 'chart'
-  | 'star' | 'sound' | 'soundOff' | 'menu' | 'close';
+  | 'tent'
+  | 'map'
+  | 'book'
+  | 'sword'
+  | 'hourglass'
+  | 'crown'
+  | 'chart'
+  | 'star'
+  | 'sound'
+  | 'soundOff'
+  | 'menu'
+  | 'close';
 
 interface Props {
   name: GlyphName;
@@ -96,7 +106,10 @@ export function NavGlyph({ name, size = 18, className }: Props) {
     case 'star':
       return (
         <svg {...common} strokeWidth={1.4}>
-          <path d="M12 3.2 14.4 9l6.4.5-4.8 4.2 1.4 6.2L12 16.6l-5.4 3.3L8 13.7 3.2 9.5 9.6 9 12 3.2Z" fill="currentColor" />
+          <path
+            d="M12 3.2 14.4 9l6.4.5-4.8 4.2 1.4 6.2L12 16.6l-5.4 3.3L8 13.7 3.2 9.5 9.6 9 12 3.2Z"
+            fill="currentColor"
+          />
         </svg>
       );
 

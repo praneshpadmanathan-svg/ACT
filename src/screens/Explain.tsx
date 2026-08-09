@@ -58,19 +58,17 @@ const ENTRIES: Entry[] = [
     a: (
       <>
         <P>
-          It is one of the two admissions tests American universities accept. You sit it in a
-          room with a proctor and a clock, usually in your last two years of school, and the
-          score goes on your application alongside your grades.
+          It is one of the two admissions tests American universities accept. You sit it in a room
+          with a proctor and a clock, usually in your last two years of school, and the score goes
+          on your application alongside your grades.
         </P>
         <P>
           It has four sections — English, Math, Reading and Science — and each is scored from{' '}
-          <B>1 to 36</B>. Your <B>composite</B> is the average of the four, rounded, so that is
-          out of 36 too. A 36 is a perfect score and very few people get one. The middle of the
-          country sits somewhere around 19 or 20.
+          <B>1 to 36</B>. Your <B>composite</B> is the average of the four, rounded, so that is out
+          of 36 too. A 36 is a perfect score and very few people get one. The middle of the country
+          sits somewhere around 19 or 20.
         </P>
-        <P>
-          There is also an optional Writing essay. This app does not cover it — see below.
-        </P>
+        <P>There is also an optional Writing essay. This app does not cover it — see below.</P>
       </>
     ),
   },
@@ -79,8 +77,8 @@ const ENTRIES: Entry[] = [
     q: '"Your climb to 36" — 36 out of what?',
     a: (
       <P>
-        Out of 36. That is the top of the ACT's scale, and it is where the phrase comes from.
-        Not a percentage and not a mark out of a hundred.
+        Out of 36. That is the top of the ACT's scale, and it is where the phrase comes from. Not a
+        percentage and not a mark out of a hundred.
       </P>
     ),
   },
@@ -90,19 +88,19 @@ const ENTRIES: Entry[] = [
     a: (
       <>
         <P>
-          Students <B>13 and over</B> who are going to sit the ACT and want to practise for it.
-          That is the whole audience. Most people using it are 15 to 17 and somewhere between
-          three months and a week out from test day.
+          Students <B>13 and over</B> who are going to sit the ACT and want to practise for it. That
+          is the whole audience. Most people using it are 15 to 17 and somewhere between three
+          months and a week out from test day.
         </P>
         <P>It is probably not for you if:</P>
         <UL>
           <LI>
-            You are sitting the SAT instead. The two tests overlap but they are not the same,
-            and nothing here is written for the SAT.
+            You are sitting the SAT instead. The two tests overlap but they are not the same, and
+            nothing here is written for the SAT.
           </LI>
           <LI>
-            You want a tutor, a class, or somebody to mark your essays. This is a practice tool
-            you use on your own.
+            You want a tutor, a class, or somebody to mark your essays. This is a practice tool you
+            use on your own.
           </LI>
           <LI>
             You are aiming for a 35 or 36 and already scoring 33. The hardest questions here are
@@ -118,9 +116,8 @@ const ENTRIES: Entry[] = [
     a: (
       <>
         <P>
-          <B>About fifteen to twenty minutes a day</B> is the shape it is built around. Opening
-          it up and doing one landmark — a short lesson and the quiz that follows it — is
-          roughly that.
+          <B>About fifteen to twenty minutes a day</B> is the shape it is built around. Opening it
+          up and doing one landmark — a short lesson and the quiz that follows it — is roughly that.
         </P>
         <P>
           Onboarding asks when your test is and sets a weekly target of questions from that:{' '}
@@ -129,8 +126,8 @@ const ENTRIES: Entry[] = [
           <B>{LIBRARY_STATS.zones}</B> landmarks takes something like two to three months.
         </P>
         <P>
-          None of that is enforced. There is no lockout, no daily minimum and nothing that
-          punishes you for missing a day beyond a streak counter you can ignore.
+          None of that is enforced. There is no lockout, no daily minimum and nothing that punishes
+          you for missing a day beyond a streak counter you can ignore.
         </P>
       </>
     ),
@@ -143,27 +140,26 @@ const ENTRIES: Entry[] = [
         <P>
           <B>We don't know, and anyone who tells you a number is guessing.</B> Nobody has run a
           study on this app. There is no "our students gain 4 points" here because we have not
-          measured it, and putting a figure on the page that we could not defend would be the
-          first dishonest thing on it.
+          measured it, and putting a figure on the page that we could not defend would be the first
+          dishonest thing on it.
         </P>
         <P>What is actually known, from research on studying in general, is narrower:</P>
         <UL>
           <LI>
-            Answering practice questions beats re-reading notes, by a wide margin and
-            consistently.
+            Answering practice questions beats re-reading notes, by a wide margin and consistently.
           </LI>
           <LI>
             Spacing that practice out over weeks beats cramming the same total hours into a few
             days.
           </LI>
           <LI>
-            Finding out immediately <em>why</em> a wrong answer was wrong beats finding out that
-            it was wrong.
+            Finding out immediately <em>why</em> a wrong answer was wrong beats finding out that it
+            was wrong.
           </LI>
         </UL>
         <P>
-          This app is built out of those three things and nothing more clever than that. Whether
-          it moves <em>your</em> score depends on how much of it you do.
+          This app is built out of those three things and nothing more clever than that. Whether it
+          moves <em>your</em> score depends on how much of it you do.
         </P>
       </>
     ),
@@ -174,29 +170,29 @@ const ENTRIES: Entry[] = [
     a: (
       <>
         <P>
-          There is no catch, and the honest reason is unglamorous: it is small, and small is
-          cheap. It is a static website with a database attached. Hosting sits inside free
-          tiers, the running cost is a few dollars a month, and the questions and lessons were
-          written rather than licensed.
+          There is no catch, and the honest reason is unglamorous: it is small, and small is cheap.
+          It is a static website with a database attached. Hosting sits inside free tiers, the
+          running cost is a few dollars a month, and the questions and lessons were written rather
+          than licensed.
         </P>
         <P>Which means, specifically:</P>
         <UL>
           <LI>
-            <B>No ads.</B> None, anywhere, and no ad network is loaded — so nothing is watching
-            you on behalf of one.
+            <B>No ads.</B> None, anywhere, and no ad network is loaded — so nothing is watching you
+            on behalf of one.
           </LI>
           <LI>
-            <B>Nothing is sold.</B> Not your email, not your scores, not aggregate anything. See
-            the <A href={hrefFor({ name: 'privacy' })}>privacy policy</A>, which describes what
-            the code does rather than what a lawyer thought sounded safe.
+            <B>Nothing is sold.</B> Not your email, not your scores, not aggregate anything. See the{' '}
+            <A href={hrefFor({ name: 'privacy' })}>privacy policy</A>, which describes what the code
+            does rather than what a lawyer thought sounded safe.
           </LI>
           <LI>
-            <B>No free tier with a paywall behind it.</B> There is no paid version. Every
-            question, lesson and mock test is in front of you now.
+            <B>No free tier with a paywall behind it.</B> There is no paid version. Every question,
+            lesson and mock test is in front of you now.
           </LI>
           <LI>
-            <B>You can leave with everything.</B> Export-my-data and delete-my-account are both
-            real buttons in your profile, and delete means the row is gone.
+            <B>You can leave with everything.</B> Export-my-data and delete-my-account are both real
+            buttons in your profile, and delete means the row is gone.
           </LI>
         </UL>
         <P>
@@ -211,9 +207,9 @@ const ENTRIES: Entry[] = [
     q: 'Do I need an account?',
     a: (
       <P>
-        No. You can start straight from the landing page and everything saves on your device.
-        An account exists for exactly one reason — carrying your progress to your phone — and if
-        you make one later, the work you already did comes with you.
+        No. You can start straight from the landing page and everything saves on your device. An
+        account exists for exactly one reason — carrying your progress to your phone — and if you
+        make one later, the work you already did comes with you.
       </P>
     ),
   },
@@ -222,20 +218,18 @@ const ENTRIES: Entry[] = [
     q: 'Why is there a wizard on a test-prep site?',
     a: (
       <>
+        <P>Because the alternative is a progress bar, and a progress bar is very easy to close.</P>
         <P>
-          Because the alternative is a progress bar, and a progress bar is very easy to close.
-        </P>
-        <P>
-          The map is a real structure, not decoration: each of the{' '}
-          <B>{LIBRARY_STATS.zones}</B> landmarks is one ACT skill, they are ordered so that the
-          things later questions assume come first, and the road opens as you clear them. The
-          fantasy is a way of making that shape visible and giving the next step a place to be.
-          Wizzy tells you what a landmark teaches before you commit to it.
+          The map is a real structure, not decoration: each of the <B>{LIBRARY_STATS.zones}</B>{' '}
+          landmarks is one ACT skill, they are ordered so that the things later questions assume
+          come first, and the road opens as you clear them. The fantasy is a way of making that
+          shape visible and giving the next step a place to be. Wizzy tells you what a landmark
+          teaches before you commit to it.
         </P>
         <P>
           The questions themselves are straight. No dragons in the algebra — a Math question here
-          looks exactly like a Math question on the test, because a question that does not look
-          like the test is not practice for it.
+          looks exactly like a Math question on the test, because a question that does not look like
+          the test is not practice for it.
         </P>
       </>
     ),
@@ -247,10 +241,10 @@ const ENTRIES: Entry[] = [
       <>
         <P>
           <B>Treat it as a rough band, not a prediction.</B> The app converts your percentage
-          correct into a 1–36 score using a curve built to sit close to published ACT scale
-          tables. It is <B>not an official concordance</B>, ACT has not seen it, and the real
-          test rescales every sitting to keep it fair — so the same raw performance is not always
-          the same scaled score even there.
+          correct into a 1–36 score using a curve built to sit close to published ACT scale tables.
+          It is <B>not an official concordance</B>, ACT has not seen it, and the real test rescales
+          every sitting to keep it fair — so the same raw performance is not always the same scaled
+          score even there.
         </P>
         <P>
           Two more reasons to hold it loosely. The mock sections here are shorter than the real
@@ -286,14 +280,14 @@ const ENTRIES: Entry[] = [
           </table>
         </div>
         <P>
-          The per-question pace is deliberately the same, so pacing practice transfers. Stamina
-          does not — sitting a real ACT is closer to three hours, and there is no substitute for
-          having done that once before you do it for real.
+          The per-question pace is deliberately the same, so pacing practice transfers. Stamina does
+          not — sitting a real ACT is closer to three hours, and there is no substitute for having
+          done that once before you do it for real.
         </P>
         <P>
           The percentile the score report shows is from published ACT tables and is always
-          approximate. It is only shown after a full four-section test, never for an estimate
-          drawn from drilling.
+          approximate. It is only shown after a full four-section test, never for an estimate drawn
+          from drilling.
         </P>
       </>
     ),
@@ -304,9 +298,9 @@ const ENTRIES: Entry[] = [
     a: (
       <P>
         Not covered. The ACT Writing test is optional, most universities do not require it, and
-        marking essays well needs a human. Rather than ship a worse version of it, it is left
-        out — said here so you know it is a decision and not an oversight. If you are sitting
-        Writing, you will need something else for that part.
+        marking essays well needs a human. Rather than ship a worse version of it, it is left out —
+        said here so you know it is a decision and not an oversight. If you are sitting Writing, you
+        will need something else for that part.
       </P>
     ),
   },
@@ -321,8 +315,8 @@ const ENTRIES: Entry[] = [
             practise as many times as you like.
           </LI>
           <LI>
-            <B>{LIBRARY_STATS.zoneQuestions}</B> more in the landmark quizzes — the gates you
-            clear to open the road.
+            <B>{LIBRARY_STATS.zoneQuestions}</B> more in the landmark quizzes — the gates you clear
+            to open the road.
           </LI>
           <LI>
             <B>{LIBRARY_STATS.notePages}</B> lesson pages and <B>{LIBRARY_STATS.passages}</B>{' '}
@@ -330,10 +324,10 @@ const ENTRIES: Entry[] = [
           </LI>
         </UL>
         <P>
-          Being straight about the limit: that is real practice but it is not endless. A few of
-          the narrower topics — dashes, logarithms, matrices — have only two or three questions
-          each, so you will exhaust those quickly and drilling them again is a memory test rather
-          than a skills test. The broad topics are much deeper.
+          Being straight about the limit: that is real practice but it is not endless. A few of the
+          narrower topics — dashes, logarithms, matrices — have only two or three questions each, so
+          you will exhaust those quickly and drilling them again is a memory test rather than a
+          skills test. The broad topics are much deeper.
         </P>
       </>
     ),
@@ -344,19 +338,18 @@ const ENTRIES: Entry[] = [
     a: (
       <>
         <P>
-          This is aimed at teenagers, so it is worth saying: <B>more is not better here.</B>{' '}
-          Twenty focused minutes a day for two months beats a six-hour weekend, and that is not
+          This is aimed at teenagers, so it is worth saying: <B>more is not better here.</B> Twenty
+          focused minutes a day for two months beats a six-hour weekend, and that is not
           encouragement to go easy — spacing genuinely produces more retained than cramming does.
         </P>
         <P>
-          Nothing in the app is designed to keep you in it. There are no notifications, no
-          infinite feed, no timed events that expire, and no reward for playing at 2am. The
-          streak counter can be broken and picked back up, and missing a day costs you nothing
-          real.
+          Nothing in the app is designed to keep you in it. There are no notifications, no infinite
+          feed, no timed events that expire, and no reward for playing at 2am. The streak counter
+          can be broken and picked back up, and missing a day costs you nothing real.
         </P>
         <P>
-          If you are practising to the point of dreading it, stop for the evening. The research
-          on spacing is on your side.
+          If you are practising to the point of dreading it, stop for the evening. The research on
+          spacing is on your side.
         </P>
       </>
     ),
@@ -366,9 +359,9 @@ const ENTRIES: Entry[] = [
     q: 'Is this made by ACT?',
     a: (
       <P>
-        No. ACT Command is not affiliated with, endorsed by, or connected to ACT, Inc. in any
-        way. "ACT" is their registered trademark and is used here only to say which test this
-        material is for. Every question and lesson was written for this app.
+        No. ACT Command is not affiliated with, endorsed by, or connected to ACT, Inc. in any way.
+        "ACT" is their registered trademark and is used here only to say which test this material is
+        for. Every question and lesson was written for this app.
       </P>
     ),
   },
@@ -467,7 +460,10 @@ function UL({ children }: { children: ReactNode }) {
 function LI({ children }: { children: ReactNode }) {
   return (
     <li className="flex gap-3 font-read text-[1.05rem] font-medium leading-[1.72] text-ink">
-      <span aria-hidden="true" className="mt-[0.55em] h-[5px] w-[5px] flex-none rounded-full bg-ink-soft" />
+      <span
+        aria-hidden="true"
+        className="mt-[0.55em] h-[5px] w-[5px] flex-none rounded-full bg-ink-soft"
+      />
       <span>{children}</span>
     </li>
   );
@@ -499,4 +495,3 @@ function Th({ children }: { children: ReactNode }) {
 function Td({ children }: { children: ReactNode }) {
   return <td className="py-2 pr-4 font-medium">{children}</td>;
 }
-

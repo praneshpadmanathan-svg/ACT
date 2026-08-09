@@ -98,8 +98,14 @@ export default {
         pin: '0 3px 8px rgba(0,0,0,.5)',
       },
       keyframes: {
-        float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-7px)' } },
-        bobHero: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-4px)' } },
+        float: {
+          '0%,100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-7px)' },
+        },
+        bobHero: {
+          '0%,100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-4px)' },
+        },
         pulseRing: {
           '0%': { transform: 'scale(.85)', opacity: '.75' },
           '70%': { transform: 'scale(1.5)', opacity: '0' },
@@ -116,9 +122,15 @@ export default {
           '30%': { opacity: '.8' },
           '100%': { transform: 'translateY(-46px) scale(1)', opacity: '0' },
         },
-        rise: { '0%': { transform: 'translateY(0)', opacity: '1' }, '100%': { transform: 'translateY(-80px)', opacity: '0' } },
+        rise: {
+          '0%': { transform: 'translateY(0)', opacity: '1' },
+          '100%': { transform: 'translateY(-80px)', opacity: '0' },
+        },
         fadein: { from: { opacity: '0' }, to: { opacity: '1' } },
-        slidein: { from: { transform: 'translateX(110%)', opacity: '0' }, to: { transform: 'translateX(0)', opacity: '1' } },
+        slidein: {
+          from: { transform: 'translateX(110%)', opacity: '0' },
+          to: { transform: 'translateX(0)', opacity: '1' },
+        },
         shimmer: { '0%,100%': { opacity: '.55' }, '50%': { opacity: '1' } },
 
         /* page + list entrances — small, fast, never in the way */
@@ -158,7 +170,10 @@ export default {
         },
         bossHurt: {
           '0%': { transform: 'translateX(0)', filter: 'brightness(1)' },
-          '15%': { transform: 'translateX(11px) rotate(2deg)', filter: 'brightness(2.4) saturate(.4)' },
+          '15%': {
+            transform: 'translateX(11px) rotate(2deg)',
+            filter: 'brightness(2.4) saturate(.4)',
+          },
           '35%': { transform: 'translateX(-7px) rotate(-1.5deg)' },
           '55%': { transform: 'translateX(5px)' },
           '100%': { transform: 'translateX(0)', filter: 'brightness(1)' },

@@ -34,7 +34,9 @@ let speaking = false;
 let runId = 0;
 
 export const speechSupported =
-  typeof window !== 'undefined' && 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+  typeof window !== 'undefined' &&
+  'speechSynthesis' in window &&
+  'SpeechSynthesisUtterance' in window;
 
 function setSpeaking(value: boolean): void {
   if (speaking === value) return;

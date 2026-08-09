@@ -55,7 +55,9 @@ export function LegalScreen({ page }: { page: 'privacy' | 'terms' }) {
 
           <div className="mt-10 flex flex-wrap gap-3 border-t border-parchment-edge pt-6">
             <a href={hrefFor({ name: page === 'privacy' ? 'terms' : 'privacy' })}>
-              <Button>{page === 'privacy' ? 'Read the terms ▸' : 'Read the privacy policy ▸'}</Button>
+              <Button>
+                {page === 'privacy' ? 'Read the terms ▸' : 'Read the privacy policy ▸'}
+              </Button>
             </a>
           </div>
         </div>
@@ -73,21 +75,21 @@ function Privacy() {
       <Updated />
 
       <Lead>
-        The short version: if you play without an account, nothing about you leaves your
-        device. If you make an account, we keep your email, the name you chose, and your
-        study progress — so it can follow you to your phone. That is the whole list. We do
-        not run ads, we do not use trackers, and we do not sell anything to anyone.
+        The short version: if you play without an account, nothing about you leaves your device. If
+        you make an account, we keep your email, the name you chose, and your study progress — so it
+        can follow you to your phone. That is the whole list. We do not run ads, we do not use
+        trackers, and we do not sell anything to anyone.
       </Lead>
 
       <H>Playing without an account</H>
       <P>
-        You can use every part of ACT Command without telling us anything. All 754 questions,
-        every lesson, the map, the guardians and the timed trial work with no account at all.
+        You can use every part of ACT Command without telling us anything. All 754 questions, every
+        lesson, the map, the guardians and the timed trial work with no account at all.
       </P>
       <P>
         In that mode your progress is stored by your own browser, on your own device, using
-        something called local storage. It never reaches us. If you clear your browser data
-        it is gone, and we cannot get it back for you, because we never had it.
+        something called local storage. It never reaches us. If you clear your browser data it is
+        gone, and we cannot get it back for you, because we never had it.
       </P>
 
       {cloudEnabled && (
@@ -96,36 +98,36 @@ function Privacy() {
           <P>We store three things:</P>
           <UL>
             <LI>
-              <B>Your email address</B> — so you can sign in, and so we can send you a link if
-              you forget your password. We do not send newsletters or marketing.
+              <B>Your email address</B> — so you can sign in, and so we can send you a link if you
+              forget your password. We do not send newsletters or marketing.
             </LI>
             <LI>
-              <B>The name you chose</B> — shown to you at the top of the screen. It is not
-              shown to anyone else, because there is nobody else to show it to.
+              <B>The name you chose</B> — shown to you at the top of the screen. It is not shown to
+              anyone else, because there is nobody else to show it to.
             </LI>
             <LI>
-              <B>Your study progress</B> — your XP, which topics you have answered and how many
-              you got right, which lessons you have read, your test scores, your achievements
-              and where you are in the story.
+              <B>Your study progress</B> — your XP, which topics you have answered and how many you
+              got right, which lessons you have read, your test scores, your achievements and where
+              you are in the story.
             </LI>
           </UL>
           <P>
-            That progress is a summary rather than a recording. We keep totals per topic and a
-            count of how many questions you answered each day. We do not keep a list of every
-            individual question you have ever attempted.
+            That progress is a summary rather than a recording. We keep totals per topic and a count
+            of how many questions you answered each day. We do not keep a list of every individual
+            question you have ever attempted.
           </P>
         </>
       )}
 
       <H>Your date of birth</H>
       <P>
-        If you go to create an account we ask when you were born, because we are only allowed
-        to make accounts for people aged 13 and over.
+        If you go to create an account we ask when you were born, because we are only allowed to
+        make accounts for people aged 13 and over.
       </P>
       <P>
-        We use it once, on your device, to work out whether you are old enough — and then we
-        throw it away. Your date of birth is <B>never saved and never sent to us</B>. All that
-        is kept is a single yes-or-no answer, in your own browser.
+        We use it once, on your device, to work out whether you are old enough — and then we throw
+        it away. Your date of birth is <B>never saved and never sent to us</B>. All that is kept is
+        a single yes-or-no answer, in your own browser.
       </P>
 
       <H>What we never do</H>
@@ -141,13 +143,13 @@ function Privacy() {
         <>
           <H>Companies that help run the site</H>
           <P>
-            Two services keep this thing online, and both see ordinary technical information
-            like your IP address as a normal part of delivering a web page:
+            Two services keep this thing online, and both see ordinary technical information like
+            your IP address as a normal part of delivering a web page:
           </P>
           <UL>
             <LI>
-              <B>Supabase</B> stores accounts and progress, and handles passwords. Your password
-              is hashed on their servers and is never visible to us or stored on your device.
+              <B>Supabase</B> stores accounts and progress, and handles passwords. Your password is
+              hashed on their servers and is never visible to us or stored on your device.
             </LI>
             <LI>
               <B>Vercel</B> serves the site itself.
@@ -156,16 +158,14 @@ function Privacy() {
           <P>Neither is given your information for their own purposes.</P>
 
           <H>Getting your data out, or getting rid of it</H>
-          <P>
-            Both live on your profile page, and neither requires emailing anyone or waiting:
-          </P>
+          <P>Both live on your profile page, and neither requires emailing anyone or waiting:</P>
           <UL>
             <LI>
               <B>Export</B> downloads everything we hold about you as a file you can keep.
             </LI>
             <LI>
-              <B>Delete my account</B> removes your account and your progress. It is immediate
-              and permanent — we do not keep a copy, so please export first if you want one.
+              <B>Delete my account</B> removes your account and your progress. It is immediate and
+              permanent — we do not keep a copy, so please export first if you want one.
             </LI>
           </UL>
           <P>
@@ -176,13 +176,13 @@ function Privacy() {
 
           <H>If you are under 13</H>
           <P>
-            You are welcome to use the site — just not to make an account, because the law
-            (COPPA in the United States) sets rules about collecting personal information from
-            children under 13 that we are not set up to meet. So we do not collect any.
+            You are welcome to use the site — just not to make an account, because the law (COPPA in
+            the United States) sets rules about collecting personal information from children under
+            13 that we are not set up to meet. So we do not collect any.
           </P>
           <P>
-            If you are a parent and believe a child under 13 has somehow made an account, write
-            to <A href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</A> and we will delete it.
+            If you are a parent and believe a child under 13 has somehow made an account, write to{' '}
+            <A href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</A> and we will delete it.
           </P>
         </>
       )}
@@ -197,9 +197,8 @@ function Privacy() {
 
       <H>Changes</H>
       <P>
-        If this policy changes, the date at the top changes with it. If a change actually
-        affects what we collect, we will say so in the app rather than hoping you re-read this
-        page.
+        If this policy changes, the date at the top changes with it. If a change actually affects
+        what we collect, we will say so in the app rather than hoping you re-read this page.
       </P>
     </article>
   );
@@ -220,21 +219,22 @@ function Terms() {
 
       <H>Not affiliated with ACT, Inc.</H>
       <P>
-        This is an independent study tool. It is <B>not made by, endorsed by, or connected to
-        ACT, Inc.</B>, the organisation that writes and administers the ACT test. "ACT" is
-        their registered trademark and is used here only to describe what the material covers.
+        This is an independent study tool. It is{' '}
+        <B>not made by, endorsed by, or connected to ACT, Inc.</B>, the organisation that writes and
+        administers the ACT test. "ACT" is their registered trademark and is used here only to
+        describe what the material covers.
       </P>
       <P>
-        Every question, lesson and passage in this app was written for it. None of it is real
-        exam material.
+        Every question, lesson and passage in this app was written for it. None of it is real exam
+        material.
       </P>
 
       <H>About the scores</H>
       <P>
         The estimated composite is worked out from your accuracy on practice questions using an
         approximation of the published scoring curves. It is a way of seeing whether you are
-        improving. It is <B>not a prediction of your real score</B>, it is not official, and no
-        one should make a decision based on it that they would not make on a hunch.
+        improving. It is <B>not a prediction of your real score</B>, it is not official, and no one
+        should make a decision based on it that they would not make on a hunch.
       </P>
 
       <H>Using it</H>
@@ -246,8 +246,8 @@ function Terms() {
         <LI>Give a real email address if you make an account, so you can get back in.</LI>
       </UL>
       <P>
-        Studying is personal, so there is nothing here to moderate: no messaging, no comments,
-        no public profiles, no way to send anything to another user.
+        Studying is personal, so there is nothing here to moderate: no messaging, no comments, no
+        public profiles, no way to send anything to another user.
       </P>
 
       {cloudEnabled && (
@@ -259,19 +259,18 @@ function Terms() {
             every site, this one included.
           </P>
           <P>
-            You can delete your account whenever you like, from your profile page. We may close
-            an account that is being used to attack the service, which in practice means almost
-            never.
+            You can delete your account whenever you like, from your profile page. We may close an
+            account that is being used to attack the service, which in practice means almost never.
           </P>
         </>
       )}
 
       <H>No warranty</H>
       <P>
-        This is provided as it is, for free, with no guarantee that it will always be available
-        or always be correct. We try hard to make the explanations right, but if you find a
-        question with a bad answer, tell us at{' '}
-        <A href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</A> and it will be fixed.
+        This is provided as it is, for free, with no guarantee that it will always be available or
+        always be correct. We try hard to make the explanations right, but if you find a question
+        with a bad answer, tell us at <A href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</A> and it
+        will be fixed.
       </P>
       <P>
         To the extent the law allows, we are not liable for losses arising from using the site —
@@ -280,8 +279,8 @@ function Terms() {
 
       <H>Changes</H>
       <P>
-        These terms can change, and the date at the top will say when they last did. Continuing
-        to use the site after a change means you are alright with it.
+        These terms can change, and the date at the top will say when they last did. Continuing to
+        use the site after a change means you are alright with it.
       </P>
     </article>
   );
@@ -311,7 +310,9 @@ function Lead({ children }: { children: ReactNode }) {
 
 function H({ children }: { children: ReactNode }) {
   return (
-    <h2 className="mt-8 font-read text-[1.22rem] font-semibold leading-snug text-ink">{children}</h2>
+    <h2 className="mt-8 font-read text-[1.22rem] font-semibold leading-snug text-ink">
+      {children}
+    </h2>
   );
 }
 
@@ -328,7 +329,10 @@ function UL({ children }: { children: ReactNode }) {
 function LI({ children }: { children: ReactNode }) {
   return (
     <li className="flex gap-3 font-read text-[1.05rem] font-medium leading-[1.72] text-ink">
-      <span aria-hidden="true" className="mt-[0.55em] h-[5px] w-[5px] flex-none rounded-full bg-ink-soft" />
+      <span
+        aria-hidden="true"
+        className="mt-[0.55em] h-[5px] w-[5px] flex-none rounded-full bg-ink-soft"
+      />
       <span>{children}</span>
     </li>
   );
@@ -340,7 +344,10 @@ function B({ children }: { children: ReactNode }) {
 
 function A({ href, children }: { href: string; children: ReactNode }) {
   return (
-    <a href={href} className="text-ink underline decoration-parchment-edge underline-offset-2 hover:decoration-ink">
+    <a
+      href={href}
+      className="text-ink underline decoration-parchment-edge underline-offset-2 hover:decoration-ink"
+    >
       {children}
     </a>
   );

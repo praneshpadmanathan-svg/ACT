@@ -297,8 +297,15 @@ function Fireflies() {
 
 /** The two crystal seams — upper right cave and lower right geode. */
 const CRYSTALS: [number, number, number][] = [
-  [90, 25.5, 0.9], [93.5, 28, 1.1], [88.5, 30.5, 0.8], [95, 32, 1],
-  [91, 63, 1.2], [94.5, 66, 0.9], [89, 68.5, 1.05], [96, 70.5, 0.85], [92, 72.5, 1],
+  [90, 25.5, 0.9],
+  [93.5, 28, 1.1],
+  [88.5, 30.5, 0.8],
+  [95, 32, 1],
+  [91, 63, 1.2],
+  [94.5, 66, 0.9],
+  [89, 68.5, 1.05],
+  [96, 70.5, 0.85],
+  [92, 72.5, 1],
 ];
 
 function Crystals() {
@@ -442,8 +449,12 @@ function Beacons() {
 }
 
 const BOATS: [number, number, number][] = [
-  [6.5, 47.5, 0], [11.5, 64, 1.4], [16.5, 88.5, 0.7],
-  [31, 78, 2.1], [69, 80.5, 1.1], [79, 78, 2.6],
+  [6.5, 47.5, 0],
+  [11.5, 64, 1.4],
+  [16.5, 88.5, 0.7],
+  [31, 78, 2.1],
+  [69, 80.5, 1.1],
+  [79, 78, 2.6],
 ];
 
 function Boats() {
@@ -464,7 +475,12 @@ function Boats() {
 
 /** Chimney smoke curling off the cottages. */
 const CHIMNEYS: [number, number][] = [
-  [12, 15], [23, 11], [31, 13.5], [41, 10], [57, 11], [65, 14],
+  [12, 15],
+  [23, 11],
+  [31, 13.5],
+  [41, 10],
+  [57, 11],
+  [65, 14],
 ];
 
 function Smoke() {
@@ -492,9 +508,16 @@ function Smoke() {
 
 /** Foam breaking along the shoreline and the citadel island. */
 const SHORES: [number, number, number][] = [
-  [8, 55, 1], [10, 72, 1.2], [20, 84, 1], [33, 80, 0.9],
-  [40, 88, 1.3], [55, 86, 1], [64, 82, 1.1], [78, 84, 1],
-  [47, 95, 1.4], [88, 76, 0.9],
+  [8, 55, 1],
+  [10, 72, 1.2],
+  [20, 84, 1],
+  [33, 80, 0.9],
+  [40, 88, 1.3],
+  [55, 86, 1],
+  [64, 82, 1.1],
+  [78, 84, 1],
+  [47, 95, 1.4],
+  [88, 76, 0.9],
 ];
 
 function Waves() {
@@ -686,7 +709,7 @@ const GUSTS: { left: number; top: number; w: number; delay: number; dur: number 
   { left: 22, top: 11, w: 9, delay: 0, dur: 6.5 },
   { left: 63, top: 16, w: 11, delay: 2.2, dur: 7.4 },
   { left: 42, top: 12.5, w: 8, delay: 4.1, dur: 6 },
-  { left: 35, top: 13.5, w: 7, delay: 1.4, dur: 8 },  // was 50,72 — the lighthouse causeway, not open ground
+  { left: 35, top: 13.5, w: 7, delay: 1.4, dur: 8 }, // was 50,72 — the lighthouse causeway, not open ground
 ];
 
 function Wind() {
@@ -715,8 +738,16 @@ function Wind() {
    the settled parts of the world look inhabited. */
 
 const WINDOWS: [number, number][] = [
-  [11.4, 16.6], [12.2, 17.4], [16.6, 12.2], [42.4, 11.8], [56.4, 12.4],
-  [37.2, 72.8], [59.4, 65], [68.4, 70.4], [76.2, 63.4], [70.4, 25.4],
+  [11.4, 16.6],
+  [12.2, 17.4],
+  [16.6, 12.2],
+  [42.4, 11.8],
+  [56.4, 12.4],
+  [37.2, 72.8],
+  [59.4, 65],
+  [68.4, 70.4],
+  [76.2, 63.4],
+  [70.4, 25.4],
 ];
 
 function Windows() {
@@ -750,7 +781,12 @@ function Sail() {
     <span className="mapfx-sail" style={{ top: '79.5%' }}>
       <svg viewBox="0 0 30 26" width="22" height="19" aria-hidden="true">
         <path d="M15 2 L15 19" stroke="rgba(48,36,24,.6)" strokeWidth="1.4" />
-        <path d="M15 3 Q25 9 15 17 Z" fill="rgba(250,242,226,.7)" stroke="rgba(48,36,24,.5)" strokeWidth="1" />
+        <path
+          d="M15 3 Q25 9 15 17 Z"
+          fill="rgba(250,242,226,.7)"
+          stroke="rgba(48,36,24,.5)"
+          strokeWidth="1"
+        />
         <path d="M5 19 Q15 25 25 19 Z" fill="rgba(70,50,32,.6)" />
       </svg>
     </span>

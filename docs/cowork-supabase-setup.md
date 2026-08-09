@@ -56,7 +56,7 @@ Then in Vercel → Project → Settings → Environment Variables, add both for
 preview deploys silently fall back to local-only mode and you will end up
 testing the wrong thing and concluding it is broken.
 
-The anon key is *designed* to ship in a browser bundle and is not a secret.
+The anon key is _designed_ to ship in a browser bundle and is not a secret.
 Row-level security is what protects the data, which is why the next step is not
 optional.
 
@@ -143,13 +143,13 @@ anything that looked odd:
 
 1. **Sign up** with a real address you control. Confirm you land on
    "check your email".
-2. **Open the confirmation link.** You should arrive back *inside the app,
-   signed in* — at the camp or at onboarding, **not** on the marketing landing
+2. **Open the confirmation link.** You should arrive back _inside the app,
+   signed in_ — at the camp or at onboarding, **not** on the marketing landing
    page. Landing on the marketing page means the redirect handling has
    regressed; report it rather than working around it.
 3. **Guest progress carries over.** Before signing up, play as a guest and clear
    one landmark. After confirming, that progress must be in the new account.
-4. **Sign out, sign in again** with the password. Confirm you are *not* sent
+4. **Sign out, sign in again** with the password. Confirm you are _not_ sent
    through onboarding a second time.
 5. **Email me a code instead** — check a six-digit code arrives and works.
    (Only if you did step 4 of the setup.)

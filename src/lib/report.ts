@@ -134,7 +134,8 @@ export function report(level: ReportLevel, scope: string, message: unknown): voi
 }
 
 export const reportWarn = (scope: string, message: unknown): void => report('warn', scope, message);
-export const reportError = (scope: string, message: unknown): void => report('error', scope, message);
+export const reportError = (scope: string, message: unknown): void =>
+  report('error', scope, message);
 
 export function diagnostics(): ReportEvent[] {
   load();
@@ -161,7 +162,10 @@ export function diagnosticsText(): string {
   if (!ring.length) return 'No problems recorded on this device.';
   const header = `ACT Command diagnostics — ${ring.length} event(s)\n${navigator.userAgent}\n`;
   const body = ring
-    .map((e) => `${new Date(e.at).toISOString()}  ${e.level.toUpperCase()}  ${e.scope}  @${e.route}\n    ${e.message}`)
+    .map(
+      (e) =>
+        `${new Date(e.at).toISOString()}  ${e.level.toUpperCase()}  ${e.scope}  @${e.route}\n    ${e.message}`,
+    )
     .join('\n');
   return `${header}\n${body}`;
 }

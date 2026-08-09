@@ -12,8 +12,26 @@ import { useMemo } from 'react';
 import { cx } from '@/lib/utils';
 
 const ALLOWED_TAGS = new Set([
-  'b', 'strong', 'i', 'em', 'u', 'br', 'sub', 'sup', 'code', 'span',
-  'table', 'thead', 'tbody', 'tr', 'td', 'th', 'ul', 'ol', 'li', 'p',
+  'b',
+  'strong',
+  'i',
+  'em',
+  'u',
+  'br',
+  'sub',
+  'sup',
+  'code',
+  'span',
+  'table',
+  'thead',
+  'tbody',
+  'tr',
+  'td',
+  'th',
+  'ul',
+  'ol',
+  'li',
+  'p',
 ]);
 
 /* Content is hand-authored JSON, so a field can turn out to be an array of
@@ -39,10 +57,7 @@ function sanitize(input: string): string {
 /** `**bold**` and `*italic*` -> real tags. Escapes everything else first. */
 function markish(input: string): string {
   const source = asText(input);
-  const escaped = source
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
+  const escaped = source.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   return escaped
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/(^|[\s(])\*(?!\s)(.+?)(?<!\s)\*/g, '$1<em>$2</em>')
@@ -67,7 +82,13 @@ export function RichText({ children, format = 'markdown', as: Tag = 'p', classNa
 
 /** Multi-paragraph prose: blank lines become separate paragraphs. */
 export function Prose({ text, className }: { text: string; className?: string }) {
-  const paragraphs = useMemo(() => asText(text).split(/\n{2,}/).filter((p) => p.trim()), [text]);
+  const paragraphs = useMemo(
+    () =>
+      asText(text)
+        .split(/\n{2,}/)
+        .filter((p) => p.trim()),
+    [text],
+  );
   return (
     <div className={cx('prose-quill', className)}>
       {paragraphs.map((p, i) => (

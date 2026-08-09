@@ -81,13 +81,15 @@ export function titleCase(s: string): string {
    relying on to decide what to study next. Canonicalising here gives both
    banks one shared vocabulary. */
 export function canonicalTopic(raw: string): string {
-  return raw
-    .trim()
-    // en and em dashes are meant as hyphens here; underscores as spaces
-    .replace(/[–—]/g, '-')
-    .replace(/_/g, ' ')
-    .replace(/\s+/g, ' ')
-    .toLowerCase();
+  return (
+    raw
+      .trim()
+      // en and em dashes are meant as hyphens here; underscores as spaces
+      .replace(/[–—]/g, '-')
+      .replace(/_/g, ' ')
+      .replace(/\s+/g, ' ')
+      .toLowerCase()
+  );
 }
 
 /** True for a zone's own label rather than a topic — `COMMA CASTLE` and the

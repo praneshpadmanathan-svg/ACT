@@ -24,7 +24,8 @@ const LINE: Record<ScoreKind, string> = {
   test: 'A practice score on our own scale — close to ACT’s published tables, but not an official concordance, and these sections are shorter than the real ones.',
   /* Not a test at all: drill accuracy, untimed, on questions you may have
      seen before and can retry. Further from test day than the above. */
-  estimate: 'Worked out from your practice accuracy, not a scored test — untimed, on questions you can retry. Treat it as a rough band.',
+  estimate:
+    'Worked out from your practice accuracy, not a scored test — untimed, on questions you can retry. Treat it as a rough band.',
 };
 
 export function ScoreCaveat({ kind, className }: { kind: ScoreKind; className?: string }) {

@@ -107,7 +107,9 @@ export function TestsScreen() {
                 onClick={() => navigate({ name: 'test', config: s.id })}
               >
                 <span style={{ color: s.color }}>{s.name}</span>
-                <span className="text-ink-faint">{withAllowance(TEST_PLAN[s.id].minutes, allowance)}m</span>
+                <span className="text-ink-faint">
+                  {withAllowance(TEST_PLAN[s.id].minutes, allowance)}m
+                </span>
               </Button>
             ))}
           </div>
@@ -152,7 +154,9 @@ export function TestsScreen() {
             >
               <div className="min-w-0">
                 <div className="font-script text-[12px] uppercase tracking-wide text-parchment">
-                  {result.sections.length === 4 ? 'Full test' : SECTION_BY_ID[result.sections[0]]?.name}
+                  {result.sections.length === 4
+                    ? 'Full test'
+                    : SECTION_BY_ID[result.sections[0]]?.name}
                 </div>
                 <div className="mt-0.5 text-[13px] text-ink-faint">{formatRelative(result.at)}</div>
               </div>
@@ -169,7 +173,9 @@ export function TestsScreen() {
                   </div>
                 ))}
                 <div className="border-l-2 border-leather-700 pl-5 text-center">
-                  <div className="font-script text-[9px] uppercase tracking-wide text-ink-faint">Comp</div>
+                  <div className="font-script text-[9px] uppercase tracking-wide text-ink-faint">
+                    Comp
+                  </div>
                   <div className="num text-[26px] text-gold">{result.composite}</div>
                 </div>
               </div>
@@ -205,7 +211,9 @@ export function TestRunner({ config }: { config: string }) {
   );
 
   const [stage, setStage] = useState<Stage>({ kind: 'brief' });
-  const [answersBySection, setAnswersBySection] = useState<Partial<Record<SectionId, AnswerRecord[]>>>({});
+  const [answersBySection, setAnswersBySection] = useState<
+    Partial<Record<SectionId, AnswerRecord[]>>
+  >({});
   const [result, setResult] = useState<TestResult | null>(null);
   const startedAtRef = useRef<number>(Date.now());
 
@@ -247,7 +255,11 @@ export function TestRunner({ config }: { config: string }) {
         <EmptyState
           title="Unknown test"
           detail="Pick a test from the list."
-          action={<Button variant="primary" onClick={() => navigate({ name: 'tests' })}>Back to tests</Button>}
+          action={
+            <Button variant="primary" onClick={() => navigate({ name: 'tests' })}>
+              Back to tests
+            </Button>
+          }
         />
       </Page>
     );
@@ -267,7 +279,9 @@ export function TestRunner({ config }: { config: string }) {
         <div className="mx-auto max-w-lg">
           <div className="panel p-7 text-center sm:p-9">
             <h1 className="heading text-[15px] text-blood-text">
-              {sectionIds.length === 4 ? 'Full practice test' : `${SECTION_BY_ID[sectionIds[0]].name} section`}
+              {sectionIds.length === 4
+                ? 'Full practice test'
+                : `${SECTION_BY_ID[sectionIds[0]].name} section`}
             </h1>
 
             <dl className="mt-7 space-y-2.5 text-left">
@@ -276,25 +290,30 @@ export function TestRunner({ config }: { config: string }) {
                   key={id}
                   className="flex items-center justify-between rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-3"
                 >
-                  <dt className="font-script text-[11px] uppercase tracking-wide" style={{ color: SECTION_BY_ID[id].color }}>
+                  <dt
+                    className="font-script text-[11px] uppercase tracking-wide"
+                    style={{ color: SECTION_BY_ID[id].color }}
+                  >
                     {SECTION_BY_ID[id].name}
                   </dt>
                   <dd className="num text-[17px] text-parchment">
-                    {TEST_PLAN[id].questions} q · {withAllowance(TEST_PLAN[id].minutes, allowance)} min
+                    {TEST_PLAN[id].questions} q · {withAllowance(TEST_PLAN[id].minutes, allowance)}{' '}
+                    min
                   </dd>
                 </div>
               ))}
             </dl>
 
             <p className="mt-6 text-[14px] leading-relaxed text-parchment-dim">
-              {totalQuestions} questions, {totalMinutes} minutes. No explanations until you finish — that is
-              the point. Unanswered questions count as wrong, so guess rather than leave blanks.
+              {totalQuestions} questions, {totalMinutes} minutes. No explanations until you finish —
+              that is the point. Unanswered questions count as wrong, so guess rather than leave
+              blanks.
             </p>
 
             {allowance > 1 && (
               <p className="mt-3 text-[13px] leading-relaxed text-ink-faint">
-                Running at {allowance === 1.5 ? 'time and a half' : 'double time'}, from your display
-                settings. Turn it off there if you want to practise at standard timing.
+                Running at {allowance === 1.5 ? 'time and a half' : 'double time'}, from your
+                display settings. Turn it off there if you want to practise at standard timing.
               </p>
             )}
 
@@ -312,7 +331,11 @@ export function TestRunner({ config }: { config: string }) {
             >
               Start — the clock runs ▶
             </Button>
-            <Button variant="ghost" className="mt-3 w-full" onClick={() => navigate({ name: 'tests' })}>
+            <Button
+              variant="ghost"
+              className="mt-3 w-full"
+              onClick={() => navigate({ name: 'tests' })}
+            >
               Not now
             </Button>
           </div>
@@ -331,7 +354,8 @@ export function TestRunner({ config }: { config: string }) {
           <div className="panel p-7 text-center sm:p-9">
             <h1 className="heading text-[15px] text-gold">Break</h1>
             <p className="mt-5 text-[15px] leading-relaxed text-parchment-dim">
-              Next up: <b style={{ color: SECTION_BY_ID[nextId].color }}>{SECTION_BY_ID[nextId].name}</b> —{' '}
+              Next up:{' '}
+              <b style={{ color: SECTION_BY_ID[nextId].color }}>{SECTION_BY_ID[nextId].name}</b> —{' '}
               {TEST_PLAN[nextId].questions} questions in{' '}
               {withAllowance(TEST_PLAN[nextId].minutes, allowance)} minutes.
             </p>
@@ -494,7 +518,11 @@ function SectionTimer({
     <div
       className={cx(
         'sticky top-16 z-40 mb-4 rounded-lg border-2 px-5 py-3 backdrop-blur',
-        critical ? 'border-blood bg-blood/15' : urgent ? 'border-gold bg-leather-850/95' : 'border-leather-700 bg-leather-850/95',
+        critical
+          ? 'border-blood bg-blood/15'
+          : urgent
+            ? 'border-gold bg-leather-850/95'
+            : 'border-leather-700 bg-leather-850/95',
       )}
       role="timer"
       aria-live="off"
@@ -512,9 +540,14 @@ function SectionTimer({
       </div>
       {/* Polite, not assertive: this must never cut across the reveal a
           screen reader is already announcing. */}
-      <div aria-live="polite" className="sr-only">{hint ?? ''}</div>
+      <div aria-live="polite" className="sr-only">
+        {hint ?? ''}
+      </div>
       {hint && (
-        <div aria-hidden className="mt-1.5 border-t border-leather-700/70 pt-1.5 text-right text-[12px] text-gold/80">
+        <div
+          aria-hidden
+          className="mt-1.5 border-t border-leather-700/70 pt-1.5 text-right text-[12px] text-gold/80"
+        >
           {hint}
         </div>
       )}
@@ -535,17 +568,14 @@ const PACE_TINT: Record<Pacing['verdict'], string> = {
 function paceLabel(p: Pacing): string {
   const d = Math.round(Math.abs(p.overBy));
   if (p.verdict === 'comfortable') return `${d}s per question in hand`;
-  if (p.verdict === 'tight') return d === 0 ? 'right on the budget' : `${d}s ${p.overBy > 0 ? 'over' : 'under'}, about right`;
+  if (p.verdict === 'tight')
+    return d === 0
+      ? 'right on the budget'
+      : `${d}s ${p.overBy > 0 ? 'over' : 'under'}, about right`;
   return `${d}s over per question`;
 }
 
-export function ScoreReport({
-  result,
-  records,
-}: {
-  result: TestResult;
-  records?: AnswerRecord[];
-}) {
+export function ScoreReport({ result, records }: { result: TestResult; records?: AnswerRecord[] }) {
   const navigate = useNavigate();
   const { progress } = useStore();
   const [showMissed, setShowMissed] = useState(false);
@@ -612,8 +642,10 @@ export function ScoreReport({
       <div className="mx-auto max-w-3xl">
         <div className="rounded-xl border-2 border-gold bg-leather-850 p-7 text-center shadow-card sm:p-9">
           <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
-            {result.sections.length === 4 ? 'Full test' : `${SECTION_BY_ID[result.sections[0]].name} section`} ·{' '}
-            {formatRelative(result.at)}
+            {result.sections.length === 4
+              ? 'Full test'
+              : `${SECTION_BY_ID[result.sections[0]].name} section`}{' '}
+            · {formatRelative(result.at)}
           </div>
 
           <div className="num mt-5 text-[80px] leading-none text-gold">{result.composite}</div>
@@ -625,9 +657,13 @@ export function ScoreReport({
           {percentile !== null && (
             <p className="mx-auto mt-3 max-w-sm text-[13px] leading-relaxed text-parchment-dim">
               That is <span className="text-gold">about the {percentileInWords(percentile)}</span>
-              <span className="text-ink-faint"> — roughly {percentile} out of 100 test-takers score at or below {result.composite}.</span>
+              <span className="text-ink-faint">
+                {' '}
+                — roughly {percentile} out of 100 test-takers score at or below {result.composite}.
+              </span>
               <span className="mt-1 block text-[11px] text-ink-faint">
-                Approximate, from ACT's published national ranks. A practice test is not the real thing.
+                Approximate, from ACT's published national ranks. A practice test is not the real
+                thing.
               </span>
             </p>
           )}
@@ -643,11 +679,19 @@ export function ScoreReport({
               const meta = SECTION_BY_ID[id];
               const [correct, total] = result.raw[id] ?? [0, 0];
               return (
-                <div key={id} className="rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-4">
-                  <div className="font-script text-[10px] uppercase tracking-wide" style={{ color: meta.color }}>
+                <div
+                  key={id}
+                  className="rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-4"
+                >
+                  <div
+                    className="font-script text-[10px] uppercase tracking-wide"
+                    style={{ color: meta.color }}
+                  >
                     {meta.name}
                   </div>
-                  <div className="num mt-2 text-[34px] leading-none text-parchment">{result.scores[id]}</div>
+                  <div className="num mt-2 text-[34px] leading-none text-parchment">
+                    {result.scores[id]}
+                  </div>
                   <div className="mt-1.5 text-[12px] text-ink-faint">
                     {correct}/{total} correct
                   </div>
@@ -662,8 +706,10 @@ export function ScoreReport({
             <h2 className="heading mb-1.5 text-[13px] text-parchment">How your clock ran</h2>
             <p className="mb-4 text-[12px] leading-relaxed text-ink-faint">
               Seconds per question, against the real ACT&rsquo;s budget for that section
-              {(result.allowance ?? 1) > 1 && ` at ${result.allowance === 1.5 ? 'time and a half' : 'double time'}`}.
-              Sections here are shorter than the real thing, so the pace is what matters, not the total.
+              {(result.allowance ?? 1) > 1 &&
+                ` at ${result.allowance === 1.5 ? 'time and a half' : 'double time'}`}
+              . Sections here are shorter than the real thing, so the pace is what matters, not the
+              total.
             </p>
             <div className="space-y-2.5">
               {pacing.map(({ id, p }) => {
@@ -674,12 +720,22 @@ export function ScoreReport({
                     key={id}
                     className="flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-3.5"
                   >
-                    <span className="w-24 flex-none font-sans text-[14px] font-semibold" style={{ color: meta.color }}>
+                    <span
+                      className="w-24 flex-none font-sans text-[14px] font-semibold"
+                      style={{ color: meta.color }}
+                    >
                       {meta.name}
                     </span>
-                    <span className="num flex-none text-[17px] text-parchment">{Math.round(p.actual)}s</span>
-                    <span className="flex-none text-[12px] text-ink-faint">of {Math.round(p.budget)}s</span>
-                    <span className="ml-auto flex-none text-right text-[13px] font-semibold" style={{ color: tint }}>
+                    <span className="num flex-none text-[17px] text-parchment">
+                      {Math.round(p.actual)}s
+                    </span>
+                    <span className="flex-none text-[12px] text-ink-faint">
+                      of {Math.round(p.budget)}s
+                    </span>
+                    <span
+                      className="ml-auto flex-none text-right text-[13px] font-semibold"
+                      style={{ color: tint }}
+                    >
                       {paceLabel(p)}
                     </span>
                   </div>
@@ -745,7 +801,11 @@ export function ReportScreen({ id }: { id: string }) {
         <EmptyState
           title="Report not found"
           detail="That test result is not saved on this device."
-          action={<Button variant="primary" onClick={() => navigate({ name: 'tests' })}>Back to tests</Button>}
+          action={
+            <Button variant="primary" onClick={() => navigate({ name: 'tests' })}>
+              Back to tests
+            </Button>
+          }
         />
       </Page>
     );
