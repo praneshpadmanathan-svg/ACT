@@ -22,10 +22,10 @@ import { Button, EmptyState } from '@/components/ui';
 import { RichText } from '@/components/RichText';
 import { burstConfetti } from '@/components/Feedback';
 import { BossArt, type BossState } from '@/game/BossArt';
+import { HeroAvatar } from '@/game/HeroAvatar';
 import { bossFor } from '@/game/bosses';
 import { REGIONS } from '@/game/mapData';
 import { m, SPRING_SNAP } from '@/lib/motion';
-import { Art } from '@/components/Art';
 
 type Phase = 'intro' | 'fight' | 'won' | 'lost';
 
@@ -47,6 +47,7 @@ export function BossScreen({ section }: { section: string }) {
   const [revealed, setRevealed] = useState(false);
   const [bossState, setBossState] = useState<BossState>('idle');
   const [heroHurt, setHeroHurt] = useState(false);
+  const [heroPleased, setHeroPleased] = useState(false);
   const [hitStop, setHitStop] = useState(false);
   const [attempt, setAttempt] = useState(0);
   const [startedAt, setStartedAt] = useState(() => Date.now());
@@ -256,6 +257,8 @@ export function BossScreen({ section }: { section: string }) {
     if (correct) {
       sfx.correct();
       setBossState('hurt');
+      setHeroPleased(true);
+      window.setTimeout(() => setHeroPleased(false), 900);
       freeze();
       const nextHp = bossHp - 1;
       setBossHp(nextHp);
@@ -310,11 +313,17 @@ export function BossScreen({ section }: { section: string }) {
       >
         {/* you */}
         <div className="flex flex-col items-center">
-          <Art
-            name="hero-char"
-            sizes="(min-width: 1024px) 140px, (min-width: 640px) 120px, 84px"
+          {/* The duel is the one screen where the traveller has a face worth
+              drawing, and until now it drew somebody else's: the painted
+              `hero-char` cutout, ignoring the avatar the student picked. The
+              expression states existed on `HeroAvatar` from the start and had
+              nothing wired to them — a hero who takes a hit and doesn't
+              flinch is the whole reason finding 35 was raised. */}
+          <HeroAvatar
+            hero={progress.hero}
+            expression={heroHurt ? 'hurt' : heroPleased ? 'pleased' : 'calm'}
             className={cx(
-              'w-[84px] select-none sm:w-[120px] lg:w-[140px]',
+              'h-auto w-[84px] select-none sm:w-[120px] lg:w-[140px]',
               heroHurt ? 'animate-heroHurt' : 'animate-bobHero',
             )}
             style={{ filter: 'drop-shadow(0 8px 12px rgba(0,0,0,.55))' }}

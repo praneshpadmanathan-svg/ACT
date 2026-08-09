@@ -19,6 +19,7 @@
  *     question about themselves first.
  */
 
+import { useRef } from 'react';
 import { useStore } from '@/lib/store';
 import { cx } from '@/lib/utils';
 import { HEROES } from './heroes';
@@ -27,25 +28,51 @@ import { HeroAvatar } from './HeroAvatar';
 export function HeroChooser({ compact = false }: { compact?: boolean }) {
   const { progress, updateProgress } = useStore();
   const current = progress.hero;
+  const groupRef = useRef<HTMLDivElement>(null);
+
+  const pick = (id: string) => updateProgress((p) => ({ ...p, hero: id }));
+
+  /* A radiogroup is one tab stop, and the arrows move within it. Eight
+     separate tab stops would be a listbox wearing radio roles, and a screen
+     reader would announce "radio, one of eight" for a control the keyboard
+     then refuses to behave like. */
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    const step = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1
+      : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1
+        : 0;
+    if (step === 0) return;
+    e.preventDefault();
+    const at = HEROES.findIndex((h) => h.id === current);
+    const to = HEROES[(((at < 0 ? 0 : at) + step) + HEROES.length) % HEROES.length]!;
+    pick(to.id);
+    groupRef.current?.querySelector<HTMLButtonElement>(`[data-hero="${to.id}"]`)?.focus();
+  };
 
   return (
     <div
+      ref={groupRef}
       role="radiogroup"
       aria-label="Choose your traveller"
+      onKeyDown={onKeyDown}
       className={cx(
         'grid gap-2.5',
         compact ? 'grid-cols-4' : 'grid-cols-2 sm:grid-cols-4',
       )}
     >
-      {HEROES.map((hero) => {
+      {HEROES.map((hero, i) => {
         const chosen = hero.id === current;
+        /* Nothing chosen yet still needs exactly one tab stop, or the group
+           becomes unreachable by keyboard entirely. */
+        const roving = chosen || (i === 0 && !HEROES.some((h) => h.id === current));
         return (
           <button
             key={hero.id}
             type="button"
             role="radio"
+            data-hero={hero.id}
             aria-checked={chosen}
-            onClick={() => updateProgress((p) => ({ ...p, hero: hero.id }))}
+            tabIndex={roving ? 0 : -1}
+            onClick={() => pick(hero.id)}
             className={cx(
               'flex flex-col items-center rounded-xl border-2 px-2 pb-3 pt-2 transition-colors',
               chosen

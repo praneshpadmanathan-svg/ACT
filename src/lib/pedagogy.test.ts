@@ -24,6 +24,7 @@ import {
   scoreDiagnostic,
 } from './diagnostic';
 import { coldStartTopic, todaysPlan } from './plan';
+import { DEFAULT_HERO_ID, HEROES, heroFor } from '@/game/heroes';
 import {
   DAILY_SIZE,
   SECONDS_PER_QUESTION,
@@ -752,5 +753,59 @@ describe('mergeProgress — fields added by this pass', () => {
     };
     expect(mergeProgress(progress({ diagnostic }), progress()).diagnostic).toEqual(diagnostic);
     expect(mergeProgress(progress(), progress({ diagnostic })).diagnostic).toEqual(diagnostic);
+  });
+});
+
+/* ---------------------------------------------------------- the traveller */
+
+describe('who the traveller is', () => {
+  it('has stable, unique ids', () => {
+    /* Written out rather than derived. A hero id is stored in every save and
+       synced to the server; renaming one silently resets the avatar of
+       everyone who chose it, so this list failing is the point — it makes a
+       rename something you have to mean. */
+    expect(HEROES.map((h) => h.id)).toEqual([
+      'ash', 'wren', 'juniper', 'kesh', 'noor', 'sable', 'linden', 'io',
+    ]);
+    expect(new Set(HEROES.map((h) => h.id)).size).toBe(HEROES.length);
+  });
+
+  it('always resolves to a hero, whatever is stored', () => {
+    for (const h of HEROES) expect(heroFor(h.id).id).toBe(h.id);
+    for (const junk of ['cadet', '', 'ASH', null, undefined]) {
+      expect(heroFor(junk).id).toBe(DEFAULT_HERO_ID);
+    }
+  });
+
+  it('gives every traveller their own cloak colour', () => {
+    /* On the map the figure is twenty-six pixels tall. Face detail is
+       sub-pixel and the hair is three or four pixels, so the cloak is doing
+       nearly all of the telling-apart. Two heroes in the same colour would be
+       two students who cannot find themselves on their own map. */
+    expect(new Set(HEROES.map((h) => h.cloak)).size).toBe(HEROES.length);
+  });
+
+  it('covers every hair silhouette the map marker can draw', () => {
+    /* The marker collapses six styles onto three shapes: a cap, a cap plus a
+       fall past the jaw, and curls that break the outline. A style nobody has
+       is a branch nobody has looked at. */
+    const styles = new Set(HEROES.map((h) => h.hairStyle));
+    for (const style of ['crop', 'locs', 'braid', 'wave', 'wrap', 'curls']) {
+      expect(styles.has(style as (typeof HEROES)[number]['hairStyle'])).toBe(true);
+    }
+  });
+
+  it('spans the range of skin tones rather than clustering', () => {
+    /* Eight avatars that are all light is the bug this set was written to
+       fix. Crude luminance is enough to catch a regression that quietly
+       lightens the set. */
+    const lum = (hex: string) => {
+      const n = parseInt(hex.slice(1), 16);
+      return (0.2126 * ((n >> 16) & 255) + 0.7152 * ((n >> 8) & 255) + 0.0722 * (n & 255)) / 255;
+    };
+    const tones = HEROES.map((h) => lum(h.skin)).sort((a, b) => a - b);
+    expect(tones[0]!).toBeLessThan(0.3);
+    expect(tones[tones.length - 1]!).toBeGreaterThan(0.8);
+    expect(tones.filter((t) => t < 0.5).length).toBeGreaterThanOrEqual(3);
   });
 });

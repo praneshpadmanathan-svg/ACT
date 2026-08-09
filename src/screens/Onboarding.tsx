@@ -11,6 +11,8 @@ import type { OnboardingProfile, SectionId } from '@/types';
 import { Button, ProgressBar } from '@/components/ui';
 import { burstConfetti } from '@/components/Feedback';
 import { Art } from '@/components/Art';
+import { HeroAvatar } from '@/game/HeroAvatar';
+import { HeroChooser } from '@/game/HeroChooser';
 
 interface Step {
   key: keyof Omit<OnboardingProfile, 'savedAt'>;
@@ -63,12 +65,12 @@ const STEPS: Step[] = [
 
 export function Onboarding() {
   const navigate = useNavigate();
-  const { updateProgress } = useStore();
+  const { progress, updateProgress } = useStore();
 
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string | number>>({});
   const [testDate, setTestDate] = useState('');
-  const [phase, setPhase] = useState<'questions' | 'date' | 'plan'>('questions');
+  const [phase, setPhase] = useState<'questions' | 'date' | 'hero' | 'plan'>('questions');
 
   const choose = (value: string | number) => {
     sfx.select();
@@ -81,8 +83,7 @@ export function Onboarding() {
          test is not booked there is nothing to count down to, and asking would
          just be a field they have to dismiss. */
       const when = next.when as OnboardingProfile['when'];
-      if (when === 'none') savePlan(next, null);
-      else setPhase('date');
+      setPhase(when === 'none' ? 'hero' : 'date');
     }
   };
 
@@ -184,9 +185,9 @@ export function Onboarding() {
               variant="primary"
               size="lg"
               className="mt-7 w-full"
-              onClick={() => savePlan(answers, testDate || null)}
+              onClick={() => setPhase('hero')}
             >
-              {testDate ? 'Build my plan ▶' : 'Skip for now ▶'}
+              {testDate ? 'Next ▶' : 'Skip for now ▶'}
             </Button>
 
             <button
@@ -199,9 +200,45 @@ export function Onboarding() {
           </>
         )}
 
+        {/* Asked here rather than left to be discovered in the profile screen.
+            A student who never opens Stats never learns the traveller is
+            theirs to pick, and by then they have already spent an hour
+            watching somebody else walk the map. It is skippable — Ash is a
+            fine default and nobody should be made to answer a question about
+            what they look like before they can start. */}
+        {phase === 'hero' && (
+          <>
+            <h1 className="heading mb-2.5 text-[22px] leading-snug text-parchment">
+              Who is walking the map?
+            </h1>
+            <p className="mb-7 text-[14px] leading-relaxed text-ink-faint">
+              This is you, on the map and in every duel. Change it whenever you like.
+            </p>
+
+            <HeroChooser />
+
+            <Button
+              variant="primary"
+              size="lg"
+              className="mt-7 w-full"
+              onClick={() => savePlan(answers, testDate || null)}
+            >
+              Build my plan ▶
+            </Button>
+
+            <button
+              type="button"
+              onClick={() => setPhase(answers.when === 'none' ? 'questions' : 'date')}
+              className="mt-6 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+            >
+              ← Back
+            </button>
+          </>
+        )}
+
         {phase === 'plan' && (
           <div className="text-center">
-            <Art name="hero-char" sizes="110px" className="mx-auto w-[110px] select-none" />
+            <HeroAvatar hero={progress.hero} size={110} expression="pleased" className="mx-auto select-none" />
             <h1 className="heading mb-6 mt-5 text-[22px] text-gold">Your plan is ready</h1>
 
             <dl className="space-y-2.5 text-left">

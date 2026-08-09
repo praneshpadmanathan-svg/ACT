@@ -107,7 +107,10 @@ export const HEROES: Hero[] = [
     tagline: 'First up the ridge.',
     skin: '#a06a45', skinShade: '#7d4e2f',
     hair: '#4a2410', hairStyle: 'crop',
-    cloak: '#4a3c2a', cloakShade: '#2e251a',
+    /* Muted, but not so muted it disappears. At #4a3c2a this cloak was darker
+       than the leather chrome behind it in the duel and darker than the pine
+       forest on the map, and Io was a silhouette-shaped hole in both. */
+    cloak: '#7a6242', cloakShade: '#4e3c26',
     build: 'even',
   },
 ];

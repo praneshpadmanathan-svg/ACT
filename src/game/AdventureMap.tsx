@@ -28,6 +28,7 @@ import { m, PIN_SPRING, SPRING, useReducedMotion } from '@/lib/motion';
 import { MapFx } from './MapFx';
 import { PlagueLayer, TrailLayer } from './MapLayers';
 import { ClearedSigil, CrownSigil, LockSigil, MasterSigil } from './Sigils';
+import { TravellerMark } from './HeroAvatar';
 import { Art } from '@/components/Art';
 
 const MIN_ZOOM = 1;
@@ -740,12 +741,17 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
             {/* 26px, not the 54px this used to be. Composited against the
                 village at four candidate widths: at 54 the traveller stood as
                 tall as the cottages behind him. A pin marks the same spot, and
-                "Find my traveller" recentres on it, so he does not need to be
-                large to be found. */}
-            <Art
-              name="hero-char"
-              sizes="26px"
-              className="animate-bobHero w-[26px] select-none"
+                "Find my traveller" recentres on it, so they do not need to be
+                large to be found.
+
+                Drawn rather than the painted `hero-char` cutout, so the
+                traveller on the map is the one the student chose. The painted
+                cutout is one white boy with brown hair; leaving it here meant
+                the avatar chooser changed a picture on the profile screen and
+                nothing in the world. */}
+            <TravellerMark
+              hero={progress.hero}
+              className="animate-bobHero select-none"
               style={{ filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.55))' }}
             />
           </m.div>

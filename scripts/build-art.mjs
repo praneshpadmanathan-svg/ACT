@@ -47,7 +47,6 @@ const WIDTHS = {
   'world-map': [768, 1152, 1536],
   'camp-bg': [640, 1024, 1376],
   'landing-hero': [512, 768, 1024],
-  'hero-char': [173, 346],
   wizzy: [235, 470],
 };
 

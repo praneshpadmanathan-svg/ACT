@@ -33,32 +33,6 @@
       }
     ]
   },
-  "hero-char": {
-    "width": 346,
-    "height": 640,
-    "fallback": "/art/hero-char.webp",
-    "lqip": null,
-    "avif": [
-      {
-        "w": 173,
-        "src": "/art/gen/hero-char-173.avif"
-      },
-      {
-        "w": 346,
-        "src": "/art/gen/hero-char-346.avif"
-      }
-    ],
-    "webp": [
-      {
-        "w": 173,
-        "src": "/art/gen/hero-char-173.webp"
-      },
-      {
-        "w": 346,
-        "src": "/art/gen/hero-char-346.webp"
-      }
-    ]
-  },
   "landing-hero": {
     "width": 1024,
     "height": 559,
