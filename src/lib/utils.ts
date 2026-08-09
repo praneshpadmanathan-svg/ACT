@@ -19,8 +19,10 @@ export function seeded(seed: number): () => number {
 export function shuffle<T>(items: T[], rng: () => number = Math.random): T[] {
   const out = items.slice();
   for (let i = out.length - 1; i > 0; i--) {
+    // `j` is drawn from [0, i] and `i` walks down from the last index, so
+    // both slots are in range — the swap cannot introduce a hole.
     const j = Math.floor(rng() * (i + 1));
-    [out[i], out[j]] = [out[j], out[i]];
+    [out[i], out[j]] = [out[j]!, out[i]!];
   }
   return out;
 }

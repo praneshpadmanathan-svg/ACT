@@ -427,17 +427,18 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
     pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
     const points = [...pointers.current.values()];
 
-    if (points.length >= 2) {
+    const [a, b] = points;
+    if (a && b) {
       // Pinch: track the distance between the first two contacts.
-      const dist = Math.hypot(points[0].x - points[1].x, points[0].y - points[1].y);
+      const dist = Math.hypot(a.x - b.x, a.y - b.y);
       if (!pinchStart.current) {
         pinchStart.current = { dist, zoom: view.zoom };
       } else {
         const ratio = dist / pinchStart.current.dist;
         /* Anchored on the centroid between the fingers — the point the gesture
            is actually about — expressed as an offset from the frame centre. */
-        const cx = (points[0].x + points[1].x) / 2 - frame.w / 2;
-        const cy = (points[0].y + points[1].y) / 2 - frame.h / 2;
+        const cx = (a.x + b.x) / 2 - frame.w / 2;
+        const cy = (a.y + b.y) / 2 - frame.h / 2;
         setView((v) => {
           const zoom = clamp(pinchStart.current!.zoom * ratio, MIN_ZOOM, MAX_ZOOM);
           const k = zoom / v.zoom;

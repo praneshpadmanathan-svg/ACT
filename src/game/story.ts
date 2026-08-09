@@ -650,8 +650,7 @@ export interface QuestState {
 
 /** The objective you are currently working on, or null once the chain is done. */
 export function activeQuest(progress: Progress, ctx: StoryContext): QuestState | null {
-  for (let i = 0; i < QUESTS.length; i++) {
-    const quest = QUESTS[i];
+  for (const [i, quest] of QUESTS.entries()) {
     const have = quest.count(progress, ctx);
     if (have < quest.need) {
       return { quest, have, need: quest.need, step: i + 1, total: QUESTS.length };

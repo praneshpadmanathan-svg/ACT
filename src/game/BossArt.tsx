@@ -65,6 +65,18 @@ interface Palette {
   glow: string;
 }
 
+/* The five `url(#…)` references `Frame` hands to its child. Named rather than
+   `Record<string, string>` so a typo is a compile error and so each one is a
+   `string` — an indexed read off a Record is `string | undefined`, and a
+   `fill` of undefined is a shape that renders black. */
+interface PaintIds {
+  base: string;
+  alt: string;
+  glow: string;
+  grain: string;
+  soft: string;
+}
+
 /**
  * Everything shared: the gradients, the grain, the soft ground shadow and the
  * two-pass ink.
@@ -82,7 +94,7 @@ function Frame({
 }: {
   state: BossState;
   palette: Palette;
-  children: (ids: Record<string, string>) => React.ReactNode;
+  children: (ids: PaintIds) => React.ReactNode;
   className?: string;
 }) {
   const uid = useId().replace(/:/g, '');

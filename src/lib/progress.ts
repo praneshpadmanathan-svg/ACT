@@ -98,12 +98,16 @@ export const RANKS: Rank[] = [
 
 export function rankIndexFor(xp: number): number {
   let idx = 0;
-  for (let i = 0; i < RANKS.length; i++) if (xp >= RANKS[i].xp) idx = i;
+  RANKS.forEach((rank, i) => {
+    if (xp >= rank.xp) idx = i;
+  });
   return idx;
 }
 
 export function rankFor(xp: number): Rank {
-  return RANKS[rankIndexFor(xp)];
+  // `rankIndexFor` only ever returns an index it walked, and RANKS is a
+  // non-empty literal, so index 0 is the floor.
+  return RANKS[rankIndexFor(xp)]!;
 }
 
 /** Progress through the current rank, 0-1. Maxes out at the top rank. */
@@ -113,11 +117,11 @@ export function rankProgress(xp: number): {
   span: number;
   next: Rank | null;
 } {
-  const i = rankIndexFor(xp);
-  const next = RANKS[i + 1] ?? null;
+  const here = rankFor(xp);
+  const next = RANKS[rankIndexFor(xp) + 1] ?? null;
   if (!next) return { pct: 1, into: 0, span: 0, next: null };
-  const span = next.xp - RANKS[i].xp;
-  const into = xp - RANKS[i].xp;
+  const span = next.xp - here.xp;
+  const into = xp - here.xp;
   return { pct: Math.min(1, into / span), into, span, next };
 }
 
@@ -196,7 +200,7 @@ function trimDaily(daily: Record<string, number>): Record<string, number> {
   if (keys.length <= DAILY_DAYS) return daily;
   const kept = keys.sort().slice(-DAILY_DAYS);
   const out: Record<string, number> = {};
-  for (const k of kept) out[k] = daily[k];
+  for (const k of kept) out[k] = daily[k] ?? 0;
   return out;
 }
 
@@ -714,8 +718,10 @@ export function scaleScore(pct: number): number {
     [1, 36],
   ];
   for (let i = table.length - 1; i >= 0; i--) {
-    if (pct >= table[i][0]) {
-      const [lowPct, lowScore] = table[i];
+    const row = table[i];
+    if (!row) continue;
+    if (pct >= row[0]) {
+      const [lowPct, lowScore] = row;
       const upper = table[i + 1];
       if (!upper) return lowScore;
       const t = (pct - lowPct) / (upper[0] - lowPct);

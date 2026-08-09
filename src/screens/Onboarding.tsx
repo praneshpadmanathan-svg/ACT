@@ -72,9 +72,13 @@ export function Onboarding() {
   const [testDate, setTestDate] = useState('');
   const [phase, setPhase] = useState<'questions' | 'date' | 'hero' | 'plan'>('questions');
 
+  /* `step` only ever moves within STEPS, but the index type cannot know that
+     and the four reads below would each have to say so separately. */
+  const current = STEPS[step] ?? STEPS[0]!;
+
   const choose = (value: string | number) => {
     sfx.select();
-    const next = { ...answers, [STEPS[step].key]: value };
+    const next = { ...answers, [current.key]: value };
     setAnswers(next);
     if (step < STEPS.length - 1) {
       setStep(step + 1);
@@ -135,12 +139,12 @@ export function Onboarding() {
             </div>
 
             <h1 className="heading mb-2.5 text-[22px] leading-snug text-parchment">
-              {STEPS[step].question}
+              {current.question}
             </h1>
-            <p className="mb-7 text-[14px] leading-relaxed text-ink-faint">{STEPS[step].detail}</p>
+            <p className="mb-7 text-[14px] leading-relaxed text-ink-faint">{current.detail}</p>
 
             <div className="grid gap-2.5">
-              {STEPS[step].options.map((opt) => (
+              {current.options.map((opt) => (
                 <button
                   key={String(opt.value)}
                   type="button"

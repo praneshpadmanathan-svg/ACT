@@ -44,7 +44,9 @@ function currentHash(): string {
 }
 
 export function parseRoute(hash: string = currentHash()): Route {
-  const [path, query] = hash.split('?');
+  // `split` on a non-empty separator always yields at least one element, but
+  // the type does not say so.
+  const [path = '', query] = hash.split('?');
   const parts = path.split('/').filter(Boolean).map(decodeURIComponent);
   const params = new URLSearchParams(query ?? '');
 

@@ -1,0 +1,11 @@
+# Commits that changed only whitespace. `git blame` should look straight
+# through them to whoever actually wrote the line.
+#
+# Not automatic — git needs to be told once per clone:
+#
+#   git config blame.ignoreRevsFile .git-blame-ignore-revs
+#
+# (GitHub's blame view reads this file without any configuration.)
+
+# Run Prettier over everything, once — 79 files, no behaviour change.
+3c08c3d9f1177884fc03b5ad723ffac04fc8ca75

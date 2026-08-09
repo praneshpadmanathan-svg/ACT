@@ -13,6 +13,12 @@ import { canonicalTopic, isZoneLabel, seeded, shuffle } from '@/lib/utils';
 
 const KEYS = ['A', 'B', 'C', 'D'];
 
+/* Zone content is hand-authored JSON, so a question with five options is a
+   thing that can be written, and `KEYS[4]` is undefined. A choice with no key
+   is a choice the runner cannot record an answer against: it renders, you can
+   click it, and nothing happens. Continue the alphabet instead. */
+const keyAt = (i: number) => KEYS[i] ?? String.fromCharCode(65 + i);
+
 /* ---------------------------------------------------------- answer shuffling
 
    Both authored banks are badly skewed toward one position. Measured across the
@@ -127,7 +133,7 @@ export function fromZoneQuestion(
   const why: Record<string, string> = {};
   if (q.notes?.length) {
     q.notes.forEach((note, i) => {
-      if (KEYS[i]) why[KEYS[i]] = note;
+      why[keyAt(i)] = note;
     });
   }
   why[correctKey] = q.why;
@@ -136,7 +142,7 @@ export function fromZoneQuestion(
     id: `${zoneId}-q${index}`,
     prompt: q.q,
     promptFormat: 'html',
-    choices: q.opts.map((text, i) => ({ key: KEYS[i], text, format: 'html' as const })),
+    choices: q.opts.map((text, i) => ({ key: keyAt(i), text, format: 'html' as const })),
     correctKey,
     why,
     whyGeneral: q.why,

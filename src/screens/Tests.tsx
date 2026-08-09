@@ -53,6 +53,18 @@ const TEST_PLAN: Record<SectionId, { questions: number; minutes: number }> = {
  * 37.5, and the half-minute belongs to the student. */
 const withAllowance = (minutes: number, allowance: number) => Math.ceil(minutes * allowance);
 
+/* What to call a single-section result.
+ *
+ * A `TestResult` arrives from local storage and from the sync payload, which
+ * means an empty or unrecognised `sections` list is reachable however sound
+ * the writing path is. Two screens read `sections[0]` and both used to hand it
+ * straight to `SECTION_BY_ID`; a stored result with no sections took the whole
+ * history list down with it. */
+function soleSectionName(sections: SectionId[]): string {
+  const first = sections[0];
+  return (first && SECTION_BY_ID[first]?.name) || 'Practice';
+}
+
 /* ---------------------------------------------------------------- setup */
 
 export function TestsScreen() {
@@ -154,9 +166,7 @@ export function TestsScreen() {
             >
               <div className="min-w-0">
                 <div className="font-script text-[12px] uppercase tracking-wide text-parchment">
-                  {result.sections.length === 4
-                    ? 'Full test'
-                    : SECTION_BY_ID[result.sections[0]]?.name}
+                  {result.sections.length === 4 ? 'Full test' : soleSectionName(result.sections)}
                 </div>
                 <div className="mt-0.5 text-[13px] text-ink-faint">{formatRelative(result.at)}</div>
               </div>
@@ -265,6 +275,12 @@ export function TestRunner({ config }: { config: string }) {
     );
   }
 
+  /* Past the bail above the list is non-empty, and every index below is one
+     this component set itself — but the index type cannot know either, and
+     `SECTION_BY_ID[undefined]` is a crash reading `.name`, not a blank. One
+     helper rather than eight assertions. */
+  const sectionAt = (i: number): SectionId => sectionIds[i] ?? sectionIds[0]!;
+
   /* ------------------------------------------------------------- brief */
 
   if (stage.kind === 'brief') {
@@ -281,7 +297,7 @@ export function TestRunner({ config }: { config: string }) {
             <h1 className="heading text-[15px] text-blood-text">
               {sectionIds.length === 4
                 ? 'Full practice test'
-                : `${SECTION_BY_ID[sectionIds[0]].name} section`}
+                : `${SECTION_BY_ID[sectionAt(0)].name} section`}
             </h1>
 
             <dl className="mt-7 space-y-2.5 text-left">
@@ -347,7 +363,7 @@ export function TestRunner({ config }: { config: string }) {
   /* ------------------------------------------------------------- break */
 
   if (stage.kind === 'break') {
-    const nextId = sectionIds[stage.nextIndex];
+    const nextId = sectionAt(stage.nextIndex);
     return (
       <Page>
         <div className="mx-auto max-w-md">
@@ -389,7 +405,7 @@ export function TestRunner({ config }: { config: string }) {
   /* ------------------------------------------------------------ section */
 
   const stageIndex = stage.index;
-  const sectionId = sectionIds[stageIndex];
+  const sectionId = sectionAt(stageIndex);
   const plan = TEST_PLAN[sectionId];
   const questions = questionsBySection[sectionId] ?? [];
 
@@ -644,7 +660,7 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
           <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
             {result.sections.length === 4
               ? 'Full test'
-              : `${SECTION_BY_ID[result.sections[0]].name} section`}{' '}
+              : `${soleSectionName(result.sections)} section`}{' '}
             · {formatRelative(result.at)}
           </div>
 

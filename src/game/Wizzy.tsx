@@ -143,7 +143,7 @@ export function Wizzy() {
         <div className="eyebrow mb-1.5">✦ Wizzy the Guide</div>
         <p
           className="font-read text-[14.5px] leading-relaxed text-parchment-dim"
-          dangerouslySetInnerHTML={{ __html: tips[tipIndex % tips.length] }}
+          dangerouslySetInnerHTML={{ __html: tips[tipIndex % tips.length] ?? '' }}
         />
 
         {tips.length > 1 && (

@@ -245,9 +245,10 @@ export function QuestionRunner({
         const letterIndex = 'abcd'.indexOf(e.key.toLowerCase());
         const numberIndex = '1234'.indexOf(e.key);
         const idx = letterIndex >= 0 ? letterIndex : numberIndex;
+        // Bounds-checked on the line above.
         if (idx >= 0 && idx < question.choices.length) {
           e.preventDefault();
-          commit(question.choices[idx].key);
+          commit(question.choices[idx]!.key);
         }
         return;
       }
@@ -454,8 +455,9 @@ export function QuestionRunner({
                           : 0;
                     if (!step || revealed) return;
                     e.preventDefault();
+                    // `i` is this choice's own index, so the wrap lands in range.
                     const n = question.choices.length;
-                    const next = question.choices[(i + step + n) % n];
+                    const next = question.choices[(i + step + n) % n]!;
                     choiceEls.current[next.key]?.focus();
                   }}
                   initial={{ opacity: 0, y: 14 }}

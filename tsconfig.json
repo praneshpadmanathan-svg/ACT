@@ -19,6 +19,14 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
+    /* `arr[i]` and `map[key]` are `T | undefined`, because they are.
+       This codebase indexes into `Record<string, X>` constantly — `tally.topics[key]`,
+       `review[qid]`, `SECTION_BY_ID[id]` — and without this flag every one of
+       those reads was typed as definitely present. It found 108 places. Most
+       were genuinely safe and now say so; a handful were real crashes waiting
+       for a content id to change. */
+    "noUncheckedIndexedAccess": true,
+
     "baseUrl": ".",
     "paths": { "@/*": ["./src/*"] }
   },

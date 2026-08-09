@@ -72,8 +72,9 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active: boole
         node.focus({ preventScroll: true });
         return;
       }
-      const first = items[0];
-      const last = items[items.length - 1];
+      // The empty case returned above, so both ends exist.
+      const first = items[0]!;
+      const last = items[items.length - 1]!;
       const current = document.activeElement as HTMLElement | null;
       if (!node.contains(current)) {
         e.preventDefault();

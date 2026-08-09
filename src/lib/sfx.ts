@@ -227,8 +227,11 @@ function pluck(freq: number, at = 0, gain = 0.14): void {
 
 /* --------------------------------------------------------------- the cues */
 
-// A pentatonic set, so overlapping cues never clash.
-const PENTA = [523.25, 587.33, 698.46, 783.99, 932.33, 1046.5];
+/* A pentatonic set, so overlapping cues never clash.
+   `as const` makes it a six-long tuple rather than `number[]`, which is what
+   lets every `PENTA[2]` below stay a number under `noUncheckedIndexedAccess`
+   instead of needing a non-null assertion at each of the twenty call sites. */
+const PENTA = [523.25, 587.33, 698.46, 783.99, 932.33, 1046.5] as const;
 
 export const sfx = {
   /** Wooden latch — navigation, buttons, pin taps. */
@@ -255,7 +258,7 @@ export const sfx = {
 
   /** Rising run as a streak builds. */
   combo: (n: number) => {
-    const step = PENTA[Math.min(n - 1, PENTA.length - 1)] ?? PENTA[PENTA.length - 1];
+    const step = PENTA[Math.min(n - 1, PENTA.length - 1)] ?? PENTA[0];
     pluck(step, 0, 0.11);
     pluck(step * 2, 0.05, 0.05);
   },
@@ -268,9 +271,16 @@ export const sfx = {
 
   /** Rank up — layered brass-ish swell with a chord. */
   fanfare: () => {
-    [0, 0.13, 0.26].forEach((at, i) => {
+    // Note and entry time together, rather than two arrays kept in step.
+    (
+      [
+        [PENTA[0], 0],
+        [PENTA[1], 0.13],
+        [PENTA[2], 0.26],
+      ] as const
+    ).forEach(([note, at]) => {
       voice({
-        freq: PENTA[i],
+        freq: note,
         decay: 0.55,
         gain: 0.16,
         type: 'sawtooth',
@@ -279,7 +289,7 @@ export const sfx = {
         wet: 0.5,
       });
       voice({
-        freq: PENTA[i] / 2,
+        freq: note / 2,
         decay: 0.6,
         gain: 0.1,
         type: 'triangle',

@@ -150,20 +150,23 @@ describe('loadProgress backfill', () => {
 describe('scheduleReview', () => {
   it('starts a new question at box 1 on a correct answer', () => {
     const review = scheduleReview({}, 'e001', true);
-    expect(review.e001.box).toBe(1);
+    /* `?.` rather than `!` throughout this file: if the entry is missing the
+       assertion reports "expected undefined to be 1", which names the actual
+       failure. A non-null assertion turns the same bug into a TypeError. */
+    expect(review.e001?.box).toBe(1);
   });
 
   it('resets to box 0 on an incorrect answer, regardless of prior progress', () => {
     const advanced = { e001: { box: 3, due: Date.now() } };
     const review = scheduleReview(advanced, 'e001', false);
-    expect(review.e001.box).toBe(0);
+    expect(review.e001?.box).toBe(0);
   });
 
   it('advances one box at a time on repeated correct answers', () => {
     let review = scheduleReview({}, 'e001', true); // box 1
     review = scheduleReview(review, 'e001', true); // box 2
     review = scheduleReview(review, 'e001', true); // box 3
-    expect(review.e001.box).toBe(3);
+    expect(review.e001?.box).toBe(3);
   });
 
   it('drops the question from the queue once it graduates the last box', () => {
@@ -177,7 +180,7 @@ describe('scheduleReview', () => {
   it('sets a later due date the further along the box', () => {
     const box1 = scheduleReview({}, 'q', true);
     const box2 = scheduleReview(box1, 'q', true);
-    expect(box2.q.due).toBeGreaterThan(box1.q.due);
+    expect(box2.q?.due).toBeGreaterThan(box1.q!.due);
   });
 });
 
@@ -257,15 +260,15 @@ describe('rankIndexFor / rankProgress', () => {
   });
 
   it('caps at the top rank and reports full progress with no next rank', () => {
-    const top = RANKS[RANKS.length - 1];
+    const top = RANKS[RANKS.length - 1]!;
     const result = rankProgress(top.xp + 999_999);
     expect(result.pct).toBe(1);
     expect(result.next).toBeNull();
   });
 
   it('reports fractional progress toward the next rank', () => {
-    const recruit = RANKS[0];
-    const scholar = RANKS[1];
+    const recruit = RANKS[0]!;
+    const scholar = RANKS[1]!;
     const midpoint = recruit.xp + (scholar.xp - recruit.xp) / 2;
     const result = rankProgress(midpoint);
     expect(result.pct).toBeCloseTo(0.5, 5);
@@ -351,7 +354,7 @@ describe('mergeProgress', () => {
     const local = progress({ review: { q1: { box: 4, due: 1 } } });
     const remote = progress({ review: { q1: { box: 1, due: 999_999 } } });
     // local is further along despite an *earlier* due timestamp — box wins, not recency.
-    expect(mergeProgress(local, remote).review.q1.box).toBe(4);
+    expect(mergeProgress(local, remote).review.q1?.box).toBe(4);
   });
 
   it('never merges the raw attempt log — keeps whichever side is running', () => {
@@ -401,7 +404,7 @@ describe('mergeTally', () => {
     };
     const merged = mergeTally(local, remote);
     // Max(5,3)=5, not 5+3=8 — this is the deliberate under-count, not a bug.
-    expect(merged.topics['english::commas'].n).toBe(5);
+    expect(merged.topics['english::commas']?.n).toBe(5);
     expect(merged.answered).toBe(5);
   });
 

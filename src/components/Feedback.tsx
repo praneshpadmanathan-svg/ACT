@@ -59,7 +59,8 @@ export function ConfettiCanvas() {
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
       const particles = particlesRef.current;
       for (let i = particles.length - 1; i >= 0; i--) {
-        const p = particles[i];
+        // Walking its own length backwards, and the only splice is below.
+        const p = particles[i]!;
         p.x += p.vx;
         p.y += p.vy;
         p.vy += 0.32;
@@ -92,7 +93,7 @@ export function ConfettiCanvas() {
           vx: (Math.random() - 0.5) * spread,
           vy: -Math.random() * 13 - 3,
           size: 4 + Math.random() * 5,
-          color: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)],
+          color: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)]!,
           rot: Math.random() * Math.PI,
           vrot: (Math.random() - 0.5) * 0.3,
           life: 90 + Math.random() * 50,
@@ -200,7 +201,7 @@ export function LevelUpOverlay() {
   }, [levelUpRank, dismissLevelUp]);
 
   if (levelUpRank === null) return null;
-  const rank = RANKS[levelUpRank] ?? RANKS[RANKS.length - 1];
+  const rank = RANKS[levelUpRank] ?? RANKS[RANKS.length - 1]!;
   const next = RANKS[levelUpRank + 1];
 
   return (
