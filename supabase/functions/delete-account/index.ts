@@ -84,17 +84,45 @@ Deno.serve(async (req: Request) => {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
-  /* Delete the progress row first. `on delete cascade` would take it anyway,
-     but doing it explicitly means a failure here is reported rather than
-     leaving a stranded row if the cascade is ever changed. */
-  const { error: rowError } = await admin.from('progress').delete().eq('user_id', user.id);
-  if (rowError) {
-    return json({ error: `Could not delete your progress: ${rowError.message}` }, 500);
-  }
-
+  /* Order matters, and it used to be the other way round.
+   *
+   * This deleted the progress row first and then the auth user, as two
+   * independent calls with no transaction across them and no rollback. If the
+   * second failed, the first had already succeeded: the account survived with
+   * every trace of its data gone. That state is worse than either outcome on
+   * its own — the student is told deletion failed, signs back in, and finds an
+   * account that looks brand new. Their work is gone and their account is not,
+   * which is precisely backwards from what they asked for, and nothing
+   * anywhere reports it.
+   *
+   * Deleting the user first makes the failure safe. `on delete cascade` on
+   * `progress.user_id` takes the row as part of the same statement, so success
+   * removes both and failure removes neither. There is no in-between for a
+   * partial failure to land in.
+   */
   const { error: deleteError } = await admin.auth.admin.deleteUser(user.id);
   if (deleteError) {
+    /* Nothing has been destroyed. The account and the data are both intact and
+       the student can try again. */
     return json({ error: `Could not delete your account: ${deleteError.message}` }, 500);
+  }
+
+  /* Compensating cleanup for the one case the cascade cannot cover: if the
+     foreign key is ever altered or dropped, the row outlives its owner and
+     becomes unreachable — no auth user can authenticate as that id, so RLS
+     hides it from every client, and it sits in the table forever holding a
+     deleted student's answer history.
+
+     Best effort by design: the account is already gone and the deletion
+     genuinely succeeded, so this must not turn into a 500 that tells the
+     student otherwise. It is reported instead, because an operator needs to
+     know the cascade has stopped working. */
+  const { error: rowError } = await admin.from('progress').delete().eq('user_id', user.id);
+  if (rowError) {
+    console.error(
+      `delete-account: account ${user.id} was deleted but its progress row could not be ` +
+        `removed (${rowError.message}). The ON DELETE CASCADE may no longer be in place.`,
+    );
   }
 
   return json({ ok: true }, 200);

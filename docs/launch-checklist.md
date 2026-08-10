@@ -45,9 +45,16 @@ Don't undo this by syncing `attempts` — see the note on `CloudProgress` in
 row at 256 KB, about five times the realistic worst case, so a bug cannot quietly
 fill the database for everyone else.
 
-## 2. Run the schema
+## 2. Run the migrations
 
-Paste [`supabase/schema.sql`](../supabase/schema.sql) into the SQL editor and run it.
+Paste each file in [`supabase/migrations/`](../supabase/migrations/) into the SQL
+editor and run them **in filename order**. There are two: `0001` creates the table
+and its policies, `0002` adds the compare-and-set write that stops one device
+silently overwriting another's work.
+
+They are written to be re-runnable, so a project that already has the table can
+adopt the migration history without dropping anything. Order still matters —
+`0002` defines a function against the table `0001` creates.
 
 Then **confirm RLS is actually on**: Table editor → `progress` → the shield should
 read "RLS enabled". The anon key is public by design, so these policies are the

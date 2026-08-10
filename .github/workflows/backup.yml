@@ -1,0 +1,132 @@
+# A nightly copy of the database, because the free tier does not keep one.
+#
+# Supabase's free plan has no point-in-time recovery. There is no "restore to
+# yesterday" button, and there is no daily snapshot sitting somewhere waiting to
+# be asked for. If the `progress` table is dropped, corrupted by a bad
+# migration, or emptied by a mistake in a SQL editor, the students' history is
+# simply gone — and it is the only copy of anything they did not also do on a
+# device they still have.
+#
+# So: a scheduled `pg_dump` into this repository's own artifact storage. Not
+# elegant, but it is a real, restorable copy, it costs nothing, and it needs no
+# third-party bucket.
+#
+# ── Setting it up ────────────────────────────────────────────────────────────
+#
+# One repository secret, `SUPABASE_DB_URL`. Supabase dashboard → Project
+# Settings → Database → Connection string → URI, then substitute the database
+# password. Use the **session pooler** (port 5432) URI: the transaction pooler
+# on 6543 does not support the statements `pg_dump` issues.
+#
+#   gh secret set SUPABASE_DB_URL
+#
+# ── What this dump contains ──────────────────────────────────────────────────
+#
+# The `public` schema only: the `progress` rows, the RLS policies and the
+# `push_progress` function. Deliberately **not** `auth.users` — dumping the auth
+# schema would put every student's email address and password hash into a CI
+# artifact, which is a worse breach than the outage it protects against. A
+# restore therefore brings back the study data and the accounts have to be
+# re-created; that is the right trade for a free study app, and it is the reason
+# `progress.user_id` being a foreign key into `auth.users` matters at restore
+# time (see the runbook in docs/launch-checklist.md).
+#
+# The artifact is private to this repository and expires. It still contains real
+# student progress, so treat downloading one as handling personal data.
+
+name: Backup
+
+on:
+  schedule:
+    # 03:20 UTC. Off the hour on purpose — GitHub's scheduler queues heavily at
+    # exact hours and a cron at :00 can be delayed by tens of minutes.
+    - cron: '20 3 * * *'
+  # So the first run does not have to wait a day, and so a restore drill can be
+  # done on demand.
+  workflow_dispatch:
+
+concurrency:
+  group: backup
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    # Without the secret this would fail every night and train everyone to
+    # ignore a red Actions tab. Skip cleanly instead.
+    if: github.repository_owner != ''
+    steps:
+      - name: Check the connection string is configured
+        id: guard
+        env:
+          DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          if [ -z "$DB_URL" ]; then
+            echo "SUPABASE_DB_URL is not set — see the header of this workflow." >&2
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # The runner's bundled client is older than Supabase's server, and
+      # pg_dump refuses to dump a server newer than itself.
+      - name: Install PostgreSQL 17 client
+        if: steps.guard.outputs.configured == 'true'
+        run: |
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc \
+            --fail --silent --show-error \
+            https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] \
+            https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" \
+            | sudo tee /etc/apt/sources.list.d/pgdg.list > /dev/null
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client-17
+
+      - name: Dump the public schema
+        if: steps.guard.outputs.configured == 'true'
+        env:
+          # Passed through the environment, never as an argv the process list
+          # would show.
+          PGSSLMODE: require
+          DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          set -euo pipefail
+          mkdir -p backup
+          pg_dump "$DB_URL" \
+            --schema=public \
+            --no-owner \
+            --no-privileges \
+            --format=custom \
+            --file="backup/progress-$(date -u +%Y-%m-%d).dump"
+          ls -lh backup/
+
+      # A dump that has never been opened is a hope, not a backup. This proves
+      # the file is a readable archive containing the table that matters,
+      # without needing a database to restore into.
+      - name: Verify the dump is restorable
+        if: steps.guard.outputs.configured == 'true'
+        run: |
+          set -euo pipefail
+          dump=$(ls backup/*.dump)
+          pg_restore --list "$dump" > backup/contents.txt
+          if ! grep -q "TABLE DATA public progress" backup/contents.txt; then
+            echo "The dump does not contain progress table data. Refusing to call this a backup." >&2
+            cat backup/contents.txt >&2
+            exit 1
+          fi
+          echo "OK — $(wc -l < backup/contents.txt) objects, progress data present."
+
+      - name: Upload
+        if: steps.guard.outputs.configured == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: db-backup-${{ github.run_id }}
+          path: backup/
+          # Long enough to notice a slow-burning corruption, short enough that
+          # student data is not accumulating in CI storage indefinitely.
+          retention-days: 30
+          if-no-files-found: error

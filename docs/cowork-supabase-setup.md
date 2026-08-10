@@ -60,9 +60,10 @@ The anon key is _designed_ to ship in a browser bundle and is not a secret.
 Row-level security is what protects the data, which is why the next step is not
 optional.
 
-### 2. Run the schema
+### 2. Run the migrations
 
-Paste [`supabase/schema.sql`](../supabase/schema.sql) into the SQL editor and run it.
+Paste each file in [`supabase/migrations/`](../supabase/migrations/) into the SQL
+editor and run them in filename order (`0001`, then `0002`).
 
 Then verify RLS is actually on, because a table with it off is readable in full
 by anyone who views source and copies the anon key:

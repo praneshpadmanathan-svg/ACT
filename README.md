@@ -176,7 +176,7 @@ the mode under-13s stay in permanently. To turn on accounts:
 
 1. Create a project at [supabase.com](https://supabase.com).
 2. Copy `.env.example` to `.env` and fill in both values from **Settings → API**.
-3. Run [`supabase/schema.sql`](supabase/schema.sql) in the SQL editor.
+3. Run every file in [`supabase/migrations/`](supabase/migrations/) in the SQL editor, in filename order.
 4. Deploy the account-deletion function: `supabase functions deploy delete-account`.
 5. Work through [`docs/launch-checklist.md`](docs/launch-checklist.md) — email confirmation, leaked-password protection, CAPTCHA and the redirect allowlist are all dashboard settings that are invisible from the repo and fail quietly when wrong.
 

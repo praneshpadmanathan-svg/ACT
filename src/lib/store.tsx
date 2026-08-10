@@ -49,7 +49,13 @@ import {
   signOut as cloudSignOut,
   supabase,
   type AuthRedirect,
+  type PushResult,
 } from './supabase';
+
+/* What a write attempt came to. `deferred` is neither success nor failure: the
+   write was correctly refused twice and the next debounce tick will carry it,
+   so the student is told nothing and no error state is set. */
+type SyncOutcome = 'ok' | 'deferred' | 'error';
 
 /* ------------------------------------------------------------------ toasts */
 
@@ -172,6 +178,13 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   // Latest progress, readable from callbacks without re-subscribing.
   const progressRef = useRef(progress);
   progressRef.current = progress;
+
+  /* The `updated_at` this device last saw on its own row, and the basis of
+     every write: `pushProgress` refuses to overwrite anything newer. Null means
+     "no row" — either never synced, or just deleted — which the database treats
+     as a distinct expectation rather than as "don't care". Reset on identity
+     change, because one account's timestamp says nothing about another's. */
+  const remoteUpdatedAtRef = useRef<number | null>(null);
 
   /* ---------------------------------------------------------- persistence */
 
@@ -350,6 +363,57 @@ export function StoreProvider({ children }: { children: ReactNode }) {
    * laptop and then signed in must not absorb the previous person's work, and
    * a dropped connection must never be mistaken for a new account.
    */
+  /**
+   * Write the current progress, and deal with losing the race.
+   *
+   * A `conflict` means another device wrote between our last look and this
+   * write, so this one was refused rather than allowed to clobber it. The
+   * answer is the same thing the sign-in path does — pull, merge, write again —
+   * which is why the merge is a pure function on two progresses rather than
+   * something only the auth flow knows how to do.
+   *
+   * Exactly one retry. If the second write also conflicts, two devices are
+   * writing faster than they can reconcile, and looping would be a spin: the
+   * work is already safe on this device and the next debounce tick will carry
+   * it up with a fresher timestamp.
+   */
+  const pushSynced = useCallback(async (uid: string, name: string): Promise<SyncOutcome> => {
+    const attempt = async (): Promise<PushResult> =>
+      pushProgress(name, progressRef.current, remoteUpdatedAtRef.current);
+
+    let result = await attempt();
+
+    if (result.status === 'conflict') {
+      const remote = await pullProgress(uid);
+      if (remote.status === 'error') return 'error';
+
+      if (remote.status === 'ok') {
+        const merged = mergeProgress(progressRef.current, remote.data);
+        progressRef.current = merged;
+        setProgress(merged);
+        remoteUpdatedAtRef.current = remote.updatedAt;
+      } else {
+        /* The row went away between the refusal and the re-read — a delete on
+           another device, or an account reset. Expect nothing and insert. */
+        remoteUpdatedAtRef.current = null;
+      }
+      result = await attempt();
+    }
+
+    if (result.status === 'ok') {
+      remoteUpdatedAtRef.current = result.updatedAt;
+      return 'ok';
+    }
+    /* A second conflict is not an error to show anyone — nothing was lost and
+       nothing is wrong. It is reported so an operator can see if it is
+       happening constantly, which would mean the debounce is too slow. */
+    if (result.status === 'conflict') {
+      reportWarn('sync.push', 'conflicted twice; deferring to the next push');
+      return 'deferred';
+    }
+    return 'error';
+  }, []);
+
   const syncWithCloud = useCallback(
     async (uid: string, name: string, base: Progress, claimGuest = false) => {
       setSyncing(true);
@@ -368,14 +432,19 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         let merged = base;
         if (remote.status === 'ok') {
           merged = mergeProgress(base, remote.data);
-        } else if (claimGuest) {
-          merged = mergeProgress(loadProgress(progressKeyFor({ kind: 'guest' })), base);
+          remoteUpdatedAtRef.current = remote.updatedAt;
+        } else {
+          // `empty` is a fact, not a failure: this account has no row yet.
+          remoteUpdatedAtRef.current = null;
+          if (claimGuest) {
+            merged = mergeProgress(loadProgress(progressKeyFor({ kind: 'guest' })), base);
+          }
         }
 
         setProgress(merged);
         progressRef.current = merged;
-        const ok = await pushProgress(uid, name, merged);
-        if (!ok)
+        const result = await pushSynced(uid, name);
+        if (result === 'error')
           setLastSyncError('Progress is saved on this device but could not reach the cloud.');
       } catch (err) {
         reportWarn('sync.cycle', err);
@@ -384,7 +453,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         setSyncing(false);
       }
     },
-    [],
+    [pushSynced],
   );
 
   const refreshAuth = useCallback(async () => {
@@ -481,30 +550,34 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     if (!userId || !cloudEnabled) return;
     if (pushTimer.current) window.clearTimeout(pushTimer.current);
     pushTimer.current = window.setTimeout(() => {
-      void pushProgress(userId, playerName, progressRef.current);
+      void pushSynced(userId, playerName);
     }, 4000);
     return () => {
       if (pushTimer.current) window.clearTimeout(pushTimer.current);
     };
-  }, [progress, userId, playerName]);
+  }, [progress, userId, playerName, pushSynced]);
 
   // Last-chance flush when the tab goes away.
   useEffect(() => {
     if (!userId) return;
     const flush = () => {
       if (document.visibilityState === 'hidden') {
-        void pushProgress(userId, playerName, progressRef.current);
+        void pushSynced(userId, playerName);
       }
     };
     document.addEventListener('visibilitychange', flush);
     return () => document.removeEventListener('visibilitychange', flush);
-  }, [userId, playerName]);
+  }, [userId, playerName, pushSynced]);
 
   const switchIdentity = useCallback((next: Identity) => {
     const loaded = loadProgress(progressKeyFor(next));
     setIdentity(next);
     setProgress(loaded);
     progressRef.current = loaded;
+    /* A different account's row has a different history. Carrying the previous
+       one's timestamp over would make the first write for this identity claim
+       to have seen a row it never read. */
+    remoteUpdatedAtRef.current = null;
   }, []);
 
   const continueAsGuest = useCallback(() => {

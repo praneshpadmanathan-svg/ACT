@@ -133,7 +133,12 @@ function serviceWorker(): Plugin {
         /* The share card. A quarter of a megabyte that only ever gets fetched
            by Facebook's and Slack's crawlers — the app itself never renders
            it, and no student is offline inside a link preview. */
-        name === '/og.png';
+        name === '/og.png' ||
+        /* Same reasoning, different audience: `security.txt` and `robots.txt`
+           are addressed to researchers and crawlers, are never requested by
+           the app, and nobody reads either one on a train with no signal. */
+        name === '/.well-known/security.txt' ||
+        name === '/robots.txt';
 
       const emitted = Object.values(bundle)
         .map((chunk) => `/${chunk.fileName}`)

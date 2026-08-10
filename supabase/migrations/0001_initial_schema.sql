@@ -1,6 +1,9 @@
--- ACT Command — database schema.
+-- 0001 — the progress table and its row-level security.
 --
--- Run this once in the Supabase SQL editor for a new project.
+-- This is the baseline: everything that existed as the flat `supabase/schema.sql`
+-- before migrations. It is written to be safely re-runnable against a project
+-- that already has the table, so an existing deployment can adopt the migration
+-- history without dropping anything.
 --
 -- The anon key ships in the browser bundle. That is what it is for, and it is
 -- not a secret — but it means row-level security is the *only* thing standing

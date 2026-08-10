@@ -46,7 +46,7 @@ export const supabase: SupabaseClient | null = cloudEnabled
     })
   : null;
 
-/** Row shape of the `progress` table. See supabase/schema.sql. */
+/** Row shape of the `progress` table. See supabase/migrations/. */
 interface ProgressRow {
   user_id: string;
   display_name: string | null;
@@ -314,26 +314,54 @@ export async function pullProgress(userId: string): Promise<PullResult> {
   };
 }
 
+/* Three outcomes here too, and for the same reason as `PullResult`.
+ *
+ * `conflict` is not an error: it means the row changed under us and the write
+ * was correctly refused. The caller's job is to pull, merge and try again — not
+ * to tell the student anything, because nothing has gone wrong. Reporting it as
+ * a failure would put a scary toast in front of the one case the system is
+ * handling properly. */
+export type PushResult =
+  | { status: 'ok'; updatedAt: number }
+  | { status: 'conflict' }
+  | { status: 'error'; message: string };
+
+/**
+ * Write the caller's progress, but only over the row it last saw.
+ *
+ * `expectedUpdatedAt` is the `updated_at` from the last successful pull or
+ * push, or `null` for "there was no row." The database compares it and refuses
+ * the write if anything has changed since — see
+ * supabase/migrations/0002_push_progress_concurrency.sql for why a plain upsert
+ * was losing a second device's work in the several-second gap between pull and
+ * a debounced push.
+ *
+ * The user id is not sent. The function reads it from the verified JWT, so
+ * there is no parameter here that could name someone else's row.
+ */
 export async function pushProgress(
-  userId: string,
   displayName: string,
   progress: Progress,
-): Promise<boolean> {
-  if (!supabase) return false;
-  const { error } = await supabase.from('progress').upsert(
-    {
-      user_id: userId,
-      display_name: displayName,
-      data: compactForCloud(progress),
-      updated_at: new Date().toISOString(),
-    },
-    { onConflict: 'user_id' },
-  );
+  expectedUpdatedAt: number | null,
+): Promise<PushResult> {
+  if (!supabase) return { status: 'error', message: 'Accounts are not configured.' };
+
+  const { data, error } = await supabase.rpc('push_progress', {
+    p_display_name: displayName,
+    p_data: compactForCloud(progress),
+    p_expected: expectedUpdatedAt === null ? null : new Date(expectedUpdatedAt).toISOString(),
+  });
+
   if (error) {
     reportWarn('sync.push', error.message);
-    return false;
+    return { status: 'error', message: error.message };
   }
-  return true;
+  /* A null return is the function's way of saying "someone else wrote first".
+     Distinguishing it from a thrown error is the whole point of the tri-state:
+     one means retry, the other means stop. */
+  if (data === null) return { status: 'conflict' };
+
+  return { status: 'ok', updatedAt: new Date(data as string).getTime() };
 }
 
 /** Drop the saved row without touching the account. Used by "reset progress",
