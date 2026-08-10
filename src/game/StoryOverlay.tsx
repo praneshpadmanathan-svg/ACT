@@ -18,7 +18,8 @@
    second playthrough. */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { PATH_BY_ID } from '@/content';
+// Narrow import: the overlay renders above every screen, so it loads eagerly.
+import { PATH_BY_ID } from '@/content/zones';
 import { useStore } from '@/lib/store';
 import { useRoute } from '@/lib/router';
 import { sfx } from '@/lib/sfx';

@@ -1,20 +1,24 @@
 /* Single entry point for the content library.
    Everything here is static JSON authored for the 2025+ Enhanced ACT.
    Nothing in this module touches the DOM or app state — it is pure data
-   plus a few lookup helpers built once at module load. */
+   plus a few lookup helpers built once at module load.
 
-import type {
-  Lesson,
-  NoteUnit,
-  Passage,
-  Path,
-  Question,
-  SectionId,
-  Zone,
-  ZoneQuestion,
-} from '@/types';
+   Three things are deliberately *not* here, and are re-exported from their own
+   files instead: `sections.ts`, `zones.ts` and `stats.ts`. Importing this
+   barrel pulls all 738 kB of JSON, and those three carry between 0 and 10 kB —
+   so anything on the app's eager path (the store, the story overlay, the
+   landing page) imports from the narrow file and the question bank stays off
+   the first paint. Everything is re-exported below, so `from '@/content'`
+   remains correct everywhere it already appears. */
 
-import { canonicalTopic } from '@/lib/utils';
+import type { Lesson, NoteUnit, Passage, Question, SectionId, ZoneQuestion } from '@/types';
+
+import { SECTIONS } from './sections';
+
+export type { SectionMeta } from './sections';
+export { SECTIONS, SECTION_BY_ID } from './sections';
+export { ALL_ZONES, getZone, PATH_BY_ID, PATHS, TOPIC_BY_ZONE_ALIAS } from './zones';
+export { LIBRARY_STATS } from './stats';
 
 import notesEnglish from './notesEnglish.json';
 import notesMath from './notesMath.json';
@@ -30,71 +34,8 @@ import passagesEnglish from './passagesEnglish.json';
 import passagesReading from './passagesReading.json';
 import passagesScience from './passagesScience.json';
 
-import pathsJson from './paths.json';
 import lessonsJson from './lessons.json';
 import miniquizzesJson from './miniquizzes.json';
-
-/* ---------------------------------------------------------------- sections */
-
-export interface SectionMeta {
-  id: SectionId;
-  name: string;
-  /** How the section is labelled on the real test. */
-  label: string;
-  color: string;
-  /** Tailwind-friendly accent used for rails and rings. */
-  accent: string;
-  questionCount: number;
-  minutes: number;
-  blurb: string;
-}
-
-export const SECTIONS: SectionMeta[] = [
-  {
-    id: 'english',
-    name: 'English',
-    label: 'English',
-    color: '#ffd23e',
-    accent: 'gold',
-    questionCount: 50,
-    minutes: 35,
-    blurb: 'Grammar, punctuation and rhetoric. The most learnable section on the test.',
-  },
-  {
-    id: 'math',
-    name: 'Math',
-    label: 'Mathematics',
-    color: '#3ad6f0',
-    accent: 'cyan',
-    questionCount: 45,
-    minutes: 50,
-    blurb: 'Pre-algebra through trig. Every question has a shortcut worth knowing.',
-  },
-  {
-    id: 'reading',
-    name: 'Reading',
-    label: 'Reading',
-    color: '#ff8298',
-    accent: 'rose',
-    questionCount: 36,
-    minutes: 40,
-    blurb: 'Four passages, one skill: finding the line that proves the answer.',
-  },
-  {
-    id: 'science',
-    name: 'Science',
-    label: 'Science',
-    color: '#b79cff',
-    accent: 'violet',
-    questionCount: 40,
-    minutes: 40,
-    blurb: 'Reading graphs under time pressure. Barely a science test at all.',
-  },
-];
-
-export const SECTION_BY_ID: Record<SectionId, SectionMeta> = Object.fromEntries(
-  SECTIONS.map((s) => [s.id, s]),
-) as Record<SectionId, SectionMeta>;
 
 /* ------------------------------------------------------------------- notes */
 
@@ -148,51 +89,7 @@ export const getPassage = (id: string | undefined) => (id ? PASSAGE_BY_ID.get(id
 
 /* ------------------------------------------------------------------- zones */
 
-export const PATHS = pathsJson as Path[];
 // JSON widens the fixed-length rule tuples to string[], so these go through
 // `unknown` rather than loosening the types the rest of the app relies on.
 export const LESSONS = lessonsJson as unknown as Record<string, Lesson>;
 export const ZONE_QUIZZES = miniquizzesJson as unknown as Record<string, ZoneQuestion[]>;
-
-export const PATH_BY_ID: Record<SectionId, Path> = Object.fromEntries(
-  PATHS.map((p) => [p.id, p]),
-) as Record<SectionId, Path>;
-
-const ZONE_INDEX = new Map<string, { zone: Zone; path: Path; index: number }>();
-PATHS.forEach((path) => {
-  path.nodes.forEach((zone, index) => ZONE_INDEX.set(zone.id, { zone, path, index }));
-});
-
-export const getZone = (id: string) => ZONE_INDEX.get(id);
-export const ALL_ZONES = [...ZONE_INDEX.values()];
-
-/* --------------------------------------------------- zone name -> its topic
-
-   The zone quizzes were tagged with the landmark's old shouting name —
-   `COMMA CASTLE` — rather than the skill being tested, and questions with no
-   tag at all fell back to the raw id, `comma_castle`. Both canonicalise to the
-   same string, and this maps that string to the topic the path declares.
-
-   It exists so progress recorded under a *place* can be folded into the skill
-   it was really about, rather than stranding a student's comma history under
-   the name of a landmark that was renamed two releases ago. */
-export const TOPIC_BY_ZONE_ALIAS: Record<string, string> = {};
-for (const { zone } of ALL_ZONES) {
-  if (!zone.topic) continue;
-  const topic = canonicalTopic(zone.topic);
-  TOPIC_BY_ZONE_ALIAS[canonicalTopic(zone.id)] = topic;
-  TOPIC_BY_ZONE_ALIAS[canonicalTopic(zone.name)] = topic;
-}
-
-/* ------------------------------------------------------------------ totals */
-
-export const LIBRARY_STATS = {
-  drillQuestions: ALL_QUESTIONS.length,
-  zoneQuestions: Object.values(ZONE_QUIZZES).reduce((n, a) => n + a.length, 0),
-  notePages: ALL_NOTE_PAGES.length,
-  passages: PASSAGES.length,
-  zones: ALL_ZONES.length,
-  get totalQuestions() {
-    return this.drillQuestions + this.zoneQuestions;
-  },
-};

@@ -12,7 +12,11 @@ import type {
   TestResult,
 } from '@/types';
 import type { IconName } from '@/components/Icon';
-import { TOPIC_BY_ZONE_ALIAS } from '@/content';
+/* `@/content/zones`, not `@/content`. This module is reached from the store,
+   which is reached from `main.tsx`, so whatever it imports is in the first
+   paint — and the barrel is 738 kB of question bank to obtain one lookup
+   table built from a 10 kB file. */
+import { TOPIC_BY_ZONE_ALIAS } from '@/content/zones';
 import { DEFAULT_HERO_ID, isHeroId } from '@/game/heroes';
 import { readJSON, STORAGE_KEYS, writeJSON } from './storage';
 import { canonicalTopic } from './utils';

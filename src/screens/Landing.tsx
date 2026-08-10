@@ -11,9 +11,16 @@
    with no card at all — the feature list especially — were the hardest thing
    on the page to read. */
 
-import type { ReactNode } from 'react';
+import { lazy, Suspense, type ReactNode } from 'react';
 
-import { LIBRARY_STATS, PATH_BY_ID, SECTIONS } from '@/content';
+/* Three narrow imports rather than one from `@/content`. This is the only
+   screen the app does not load lazily — it is the front door — so anything it
+   touches is in the first paint, and it quotes the library's totals in prose.
+   Reading those totals off the barrel meant downloading 738 kB of question
+   bank to render a sentence about how many questions there are. */
+import { SECTIONS } from '@/content/sections';
+import { PATH_BY_ID } from '@/content/zones';
+import { LIBRARY_STATS } from '@/content/stats';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
@@ -23,7 +30,14 @@ import { NavGlyph, type GlyphName } from '@/components/NavGlyph';
 import { REGIONS } from '@/game/mapData';
 import type { SectionId } from '@/types';
 import { Art } from '@/components/Art';
-import { TryQuestion } from '@/components/TryQuestion';
+import { NearViewport } from '@/components/NearViewport';
+/* The one thing on this page that genuinely needs the question bank, and the
+   only reason the bank would be on the critical path. It sits four screens
+   down, so it is fetched separately — and, per `NearViewport`, not until
+   someone is on their way to it. */
+const TryQuestion = lazy(() =>
+  import('@/components/TryQuestion').then((m) => ({ default: m.TryQuestion })),
+);
 
 /* ------------------------------------------------------------- highlighting
 
@@ -377,7 +391,16 @@ export function Landing() {
             </>
           }
         />
-        <TryQuestion onFinish={begin} />
+        {/* A fixed-height placeholder, not a spinner: the section already has
+            a heading and a lead paragraph above it, and a box that grows when
+            the chunk lands would shove them up the page mid-read. The same
+            height is reserved before the mount, so the reserved space and the
+            Suspense fallback are the same box and the page never jumps. */}
+        <NearViewport minHeight="420px">
+          <Suspense fallback={<div className="veil mx-auto min-h-[420px] max-w-2xl" />}>
+            <TryQuestion onFinish={begin} />
+          </Suspense>
+        </NearViewport>
       </section>
 
       {/* --------------------------------------------------------- regions */}

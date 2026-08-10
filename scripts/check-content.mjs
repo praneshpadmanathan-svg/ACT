@@ -33,10 +33,18 @@
      (src/lib/progress.ts) never sees any drill data for — it becomes
      statistically invisible.
 
+   Rule 5 — src/content/stats.json matches what the library actually holds.
+     The landing page and the FAQ quote the library's totals. Counting them at
+     runtime meant loading all 738 kB of JSON to render one sentence, so they
+     are a committed build artifact now — which is only trustworthy if
+     something recomputes it. This does, on every build. Run with `--write` to
+     update the file after a content change.
+
    Run: node scripts/check-content.mjs   (also runs in `npm run build`)
+        node scripts/check-content.mjs --write   (to refresh stats.json)
 */
 
-import { readFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const root = new URL('..', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
@@ -142,6 +150,57 @@ for (const path of paths) {
           `question uses. Progress recorded at this landmark will fold into a topic ` +
           `with zero drill data, and weakestTopics() will never see it.`,
       );
+    }
+  }
+}
+
+/* ------------------------------------------------- rule 5: the totals file
+
+   Counted here rather than in the app so `src/content/stats.ts` can hand the
+   landing page five numbers without the landing page importing the library
+   they describe. The count has to match how `index.ts` builds each collection,
+   or the page would quote a total nothing in the app agrees with. */
+
+const countPages = (units) => units.reduce((n, unit) => n + unit.pages.length, 0);
+
+const actual = {
+  drillQuestions: allQuestions.length,
+  zoneQuestions: Object.values(readJSON('miniquizzes.json')).reduce((n, a) => n + a.length, 0),
+  notePages: ['notesEnglish', 'notesMath', 'notesReading', 'notesScience'].reduce(
+    (n, f) => n + countPages(readJSON(`${f}.json`)),
+    0,
+  ),
+  passages: ['passagesEnglish', 'passagesReading', 'passagesScience'].reduce(
+    (n, f) => n + readJSON(`${f}.json`).length,
+    0,
+  ),
+  zones: paths.reduce((n, p) => n + p.nodes.length, 0),
+};
+
+const statsPath = join(contentDir, 'stats.json');
+const serialised = `${JSON.stringify(actual, null, 2)}\n`;
+
+if (process.argv.includes('--write')) {
+  writeFileSync(statsPath, serialised);
+  console.log(`  content check: wrote stats.json — ${JSON.stringify(actual)}`);
+} else {
+  let stored = null;
+  try {
+    stored = readJSON('stats.json');
+  } catch {
+    failures.push(
+      'src/content/stats.json is missing or unreadable. Run `npm run check:content -- --write`.',
+    );
+  }
+  if (stored) {
+    for (const [key, value] of Object.entries(actual)) {
+      if (stored[key] !== value) {
+        failures.push(
+          `stats.json says ${key} is ${stored[key]}, the library holds ${value}. ` +
+            'The landing page and the FAQ quote these numbers. ' +
+            'Run `npm run check:content -- --write`.',
+        );
+      }
     }
   }
 }

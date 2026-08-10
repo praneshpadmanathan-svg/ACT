@@ -1,6 +1,6 @@
 /* Route table and app shell composition. */
 
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { useNavigate, useRoute } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { onUpdateReady } from '@/lib/pwa';
@@ -8,27 +8,72 @@ import { m, MotionProvider, pageVariants } from '@/lib/motion';
 import { TopBar } from '@/components/Shell';
 import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
 import { StoryOverlay } from '@/game/StoryOverlay';
-import { Landing } from '@/screens/Landing';
-import { Auth } from '@/screens/Auth';
-import { LegalScreen } from '@/screens/Legal';
-import { ExplainScreen } from '@/screens/Explain';
-import { Onboarding } from '@/screens/Onboarding';
-import { Home } from '@/screens/Home';
-import { MapScreen, PathScreen } from '@/screens/MapScreens';
-import { ZoneScreen } from '@/screens/Zone';
-import { BossScreen } from '@/screens/Boss';
-import { NoteReader, NotesScreen } from '@/screens/Notes';
-import {
-  BookmarksScreen,
-  DailyScreen,
-  DrillRunner,
-  DrillsScreen,
-  ReviewScreen,
-} from '@/screens/Drills';
-import { DiagnosticScreen } from '@/screens/Diagnostic';
-import { ReportScreen, TestRunner, TestsScreen } from '@/screens/Tests';
-import { ProfileScreen, StatsScreen } from '@/screens/Stats';
 import { Vignette } from '@/components/Vignette';
+
+/* The front door, and only the front door.
+ *
+ * Everything below this line is fetched when it is first needed. Landing is
+ * not, because it is what a stranger sees before they have decided anything:
+ * putting a spinner in front of the page that has to persuade them is a worse
+ * trade than any number of kilobytes. */
+import { Landing } from '@/screens/Landing';
+
+/* ------------------------------------------------------- the other screens
+ *
+ * Every screen in the app used to be a static import, which meant one 543 kB
+ * chunk containing the map, the duel, the score report and the privacy policy
+ * — downloaded in full by someone who came to read the FAQ and left.
+ *
+ * The loaders are named so `prefetch` below can call the same function the
+ * lazy component will call. A module is only ever fetched once; the second
+ * call resolves out of the module cache, so warming a screen during idle time
+ * makes the navigation that follows instant rather than duplicating work.
+ *
+ * `.then(m => ({ default: … }))` on each because these are named exports and
+ * `lazy` wants a default. Written out one per line rather than through a
+ * generic helper: the explicit form keeps each screen's real props type, and a
+ * helper returning `ComponentType<any>` would quietly stop checking the eleven
+ * screens that take parameters off the route. */
+const load = {
+  auth: () => import('@/screens/Auth'),
+  legal: () => import('@/screens/Legal'),
+  explain: () => import('@/screens/Explain'),
+  onboarding: () => import('@/screens/Onboarding'),
+  home: () => import('@/screens/Home'),
+  mapScreens: () => import('@/screens/MapScreens'),
+  zone: () => import('@/screens/Zone'),
+  boss: () => import('@/screens/Boss'),
+  notes: () => import('@/screens/Notes'),
+  drills: () => import('@/screens/Drills'),
+  diagnostic: () => import('@/screens/Diagnostic'),
+  tests: () => import('@/screens/Tests'),
+  stats: () => import('@/screens/Stats'),
+};
+
+const Auth = lazy(() => load.auth().then((m) => ({ default: m.Auth })));
+const LegalScreen = lazy(() => load.legal().then((m) => ({ default: m.LegalScreen })));
+const ExplainScreen = lazy(() => load.explain().then((m) => ({ default: m.ExplainScreen })));
+const Onboarding = lazy(() => load.onboarding().then((m) => ({ default: m.Onboarding })));
+const Home = lazy(() => load.home().then((m) => ({ default: m.Home })));
+const MapScreen = lazy(() => load.mapScreens().then((m) => ({ default: m.MapScreen })));
+const PathScreen = lazy(() => load.mapScreens().then((m) => ({ default: m.PathScreen })));
+const ZoneScreen = lazy(() => load.zone().then((m) => ({ default: m.ZoneScreen })));
+const BossScreen = lazy(() => load.boss().then((m) => ({ default: m.BossScreen })));
+const NotesScreen = lazy(() => load.notes().then((m) => ({ default: m.NotesScreen })));
+const NoteReader = lazy(() => load.notes().then((m) => ({ default: m.NoteReader })));
+const DrillsScreen = lazy(() => load.drills().then((m) => ({ default: m.DrillsScreen })));
+const DrillRunner = lazy(() => load.drills().then((m) => ({ default: m.DrillRunner })));
+const ReviewScreen = lazy(() => load.drills().then((m) => ({ default: m.ReviewScreen })));
+const BookmarksScreen = lazy(() => load.drills().then((m) => ({ default: m.BookmarksScreen })));
+const DailyScreen = lazy(() => load.drills().then((m) => ({ default: m.DailyScreen })));
+const DiagnosticScreen = lazy(() =>
+  load.diagnostic().then((m) => ({ default: m.DiagnosticScreen })),
+);
+const TestsScreen = lazy(() => load.tests().then((m) => ({ default: m.TestsScreen })));
+const TestRunner = lazy(() => load.tests().then((m) => ({ default: m.TestRunner })));
+const ReportScreen = lazy(() => load.tests().then((m) => ({ default: m.ReportScreen })));
+const StatsScreen = lazy(() => load.stats().then((m) => ({ default: m.StatsScreen })));
+const ProfileScreen = lazy(() => load.stats().then((m) => ({ default: m.ProfileScreen })));
 
 /** Routes that render their own full-screen chrome and suppress the top bar.
  *  The map is here because it is a full-viewport game view with its own
@@ -40,10 +85,59 @@ const BARE_ROUTES = new Set(['landing', 'auth', 'onboarding', 'map', 'privacy', 
  *  you have to enter before you can read it. */
 const OPEN_ROUTES = new Set(['landing', 'auth', 'privacy', 'terms', 'faq', 'onboarding']);
 
+/* Warm the everyday screens once the browser has nothing better to do.
+ *
+ * Splitting without this trades one slow first paint for a stall on every
+ * navigation, which is not obviously a better deal. The chunks below are the
+ * ones the top bar links to, so they are wanted within a click or two of
+ * arriving; fetching them during idle time means the click finds them already
+ * in the module cache.
+ *
+ * Gated on having started, because a stranger reading the FAQ should not have
+ * the whole game pulled down behind them. `requestIdleCallback` where it
+ * exists (not Safari), a timeout where it does not — either way this must
+ * never compete with the screen the person is actually looking at. */
+function prefetchEverydayScreens() {
+  const warm = () => {
+    void load.home();
+    void load.mapScreens();
+    void load.drills();
+    void load.notes();
+  };
+  const idle = (window as Window & { requestIdleCallback?: (cb: () => void) => number })
+    .requestIdleCallback;
+  if (idle) idle(warm);
+  else window.setTimeout(warm, 2000);
+}
+
+/* What a screen looks like while its chunk is in flight.
+ *
+ * Deliberately quiet and deliberately tall. A short fallback collapses the
+ * page to nothing and then pushes it back, which reads as a glitch even when
+ * the chunk arrives in 40ms; holding roughly a screen's height means the swap
+ * is a fade rather than a jump. On a warm cache — which is every visit after
+ * the first, and every visit at all once the service worker has precached the
+ * build — this is on screen for a single frame or not at all. */
+function ScreenFallback() {
+  return (
+    <div
+      className="flex min-h-[60vh] flex-col items-center justify-center gap-4"
+      role="status"
+      aria-label="Loading"
+    >
+      <Vignette name="compass" size={84} />
+    </div>
+  );
+}
+
 export default function App() {
   const route = useRoute();
   const navigate = useNavigate();
   const { authReady, hasStarted, progress, authRedirect, clearAuthRedirect } = useStore();
+
+  useEffect(() => {
+    if (hasStarted) prefetchEverydayScreens();
+  }, [hasStarted]);
 
   /* A reset link puts a live session in place and then has to be *used*, so it
      jumps the queue: whatever the URL said, the next thing on screen is the
@@ -130,11 +224,17 @@ export default function App() {
           route identity rather than just its name, so paging between two note
           pages re-animates too. The map is excluded: it owns the viewport and
           brings its own artwork in. */}
+      {/* One boundary around the route, keyed with it. Keying matters: without
+          it React keeps the boundary mounted across a navigation and reuses
+          the previous screen as the fallback's sibling, so moving from a long
+          page to a lazy one leaves the old page on screen until the new chunk
+          lands. Keyed, the fallback shows immediately and the transition is
+          honest about what is happening. */}
       {route.name === 'map' ? (
-        renderRoute(route)
+        <Suspense fallback={<ScreenFallback />}>{renderRoute(route)}</Suspense>
       ) : (
         <m.div key={routeKey(route)} variants={pageVariants} initial="initial" animate="animate">
-          {renderRoute(route)}
+          <Suspense fallback={<ScreenFallback />}>{renderRoute(route)}</Suspense>
         </m.div>
       )}
 

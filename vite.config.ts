@@ -207,13 +207,77 @@ export default defineConfig(({ mode }) => {
       chunkSizeWarningLimit: 700,
       rollupOptions: {
         output: {
-          /* The function form rather than the object map: Rollup 4 narrowed the
-           object overload out of the type, and matching on the directory is
-           more accurate anyway — it catches every JSON file in the library, not
-           just whatever `index.ts` happens to re-export. */
-          manualChunks(id) {
-            if (id.includes('/src/content/') || id.includes('\\src\\content\\')) return 'content';
-            return undefined;
+          /* `codeSplitting`, not `manualChunks`.
+           *
+           * The old `manualChunks(id)` form still runs under Vite 8's rolldown
+           * bundler, and it lies. Returning a distinct name for the five small
+           * files under `src/content/` was verified doing nothing at all: the
+           * name came back, and rolldown merged the group into the 631 kB
+           * `content` chunk anyway, because a manual-chunk *name* is advisory
+           * and its own chunk-merging pass folds a small group into a larger
+           * one it travels with. The symptom was the landing page continuing
+           * to preload the whole question bank while the config said it
+           * should not — grep the built output for a section blurb, find it in
+           * the 631 kB chunk. `codeSplitting` groups are honoured, and
+           * `minSize: 0` says so out loud. (`advancedChunks` is the same thing
+           * under the name rolldown deprecated.)
+           *
+           * Order matters: the first matching group wins, so the small-files
+           * rule has to come before the directory rule it carves out of. */
+          codeSplitting: {
+            groups: [
+              {
+                /* The part of the library the eager path needs: section
+                   metadata (no JSON at all), the 10 kB map of landmarks, and
+                   five precomputed totals. Kept out of `content` so the store,
+                   the story overlay and the landing page can read them without
+                   pulling 631 kB of questions into the first paint. */
+                name: 'content-meta',
+                test: /[\\/]src[\\/]content[\\/](sections\.ts|zones\.ts|stats\.ts|paths\.json|stats\.json)$/,
+                minSize: 0,
+                priority: 20,
+              },
+              {
+                /* The library proper: 342 drill questions, 412 zone questions,
+                   60 note pages, 27 passages. Split out so the app shell paints
+                   first and the browser keeps the library cached across
+                   deploys, since it changes far less often than the code. */
+                name: 'content',
+                test: /[\\/]src[\\/]content[\\/]/,
+                minSize: 0,
+                priority: 10,
+              },
+
+              /* Three dependencies, three chunks, for one reason: they change
+                 on a completely different clock from the app. React and
+                 Supabase move a few times a year and this app's own code moves
+                 several times a week. Left in the shell chunk, every copy-edit
+                 to the landing page invalidates the content hash on a file that
+                 also contains all of React, and a returning student
+                 re-downloads 150 kB to read a changed sentence.
+
+                 Anchored on the path separators either side of the package name
+                 so `react` cannot also match `react-is` or a nested copy under
+                 some unrelated package's own node_modules. */
+              {
+                name: 'react',
+                test: /[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/,
+                minSize: 0,
+                priority: 5,
+              },
+              {
+                name: 'supabase',
+                test: /[\\/]node_modules[\\/]@supabase[\\/]/,
+                minSize: 0,
+                priority: 5,
+              },
+              {
+                name: 'motion',
+                test: /[\\/]node_modules[\\/](motion|framer-motion|motion-dom|motion-utils)[\\/]/,
+                minSize: 0,
+                priority: 5,
+              },
+            ],
           },
         },
       },
