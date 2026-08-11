@@ -22,6 +22,7 @@ import { bossFor } from './bosses';
 import { BossArt } from './BossArt';
 import { activeQuest } from './story';
 import { DISCOVERIES } from './discoveries';
+import { courierFor, mapEchoes } from './mapEvents';
 import { DiscoveryLayer } from './DiscoveryLayer';
 import { MapJournal } from './MapJournal';
 import { m, PIN_SPRING, SPRING, useReducedMotion } from '@/lib/motion';
@@ -159,6 +160,45 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
     }
     return out;
   }, [progress.zonesCleared]);
+
+  /* What is calling you back, and where. Keyed on the review ladder rather than
+     on the whole progress object: an XP change should not re-sort the echoes. */
+  const echoes = useMemo(() => mapEchoes(progress), [progress]);
+
+  /* The courier stands on ground already walked. Cleared landmarks, plus the
+     one the traveller is at — anything further on is still under mist, and
+     sending someone to a place they cannot open is a worse invitation than
+     none. */
+  const courier = useMemo(() => {
+    const reachable = pins
+      .filter((p) => p.state === 'done' || p.state === 'current')
+      .map((p) => p.zone.id);
+    return courierFor(progress, reachable);
+  }, [pins, progress]);
+
+  const courierPin = useMemo(
+    () => (courier ? (pins.find((p) => p.zone.id === courier.zoneId) ?? null) : null),
+    [courier, pins],
+  );
+
+  /* Everything due in a region: its landmarks' own questions *plus* the drills
+     filed under its topics.
+
+     The rail showed only the drill count at first, which made it contradict the
+     map beside it — the Grammar Village read "2 due" while four of its cottages
+     were visibly glowing. A summary that disagrees with the thing it summarises
+     is worse than no summary. */
+  const dueByRegion = useMemo(() => {
+    const out = {} as Record<SectionId, number>;
+    for (const id of REGION_ORDER) {
+      const zoneDue = (PATH_BY_ID[id]?.nodes ?? []).reduce(
+        (n, node) => n + (echoes.byZone[node.id] ?? 0),
+        0,
+      );
+      out[id] = zoneDue + (echoes.bySection[id] ?? 0);
+    }
+    return out;
+  }, [echoes]);
 
   const foundCount = progress.discovered?.length ?? 0;
   const [journalOpen, setJournalOpen] = useState(false);
@@ -569,6 +609,10 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
         {/* zone pins */}
         {pins.map((pin, i) => {
           const mastered = pin.best === 100;
+          /* Questions from this landmark have come due. Only ever on cleared
+             ground — you cannot be called back to somewhere you have not been,
+             and the review ladder has no entries for a zone you never opened. */
+          const echo = echoes.byZone[pin.zone.id] ?? 0;
           return (
             <span
               key={pin.zone.id}
@@ -611,6 +655,23 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
                   />
                 )}
 
+                {/* The echo: this landmark has questions due again.
+
+                    Deliberately a different shape from the current-landmark
+                    ring — a slow halo rather than a pulse — because they mean
+                    opposite things. Gold says "go here next"; this says "you
+                    have been here, and it is fading." Two identical rings
+                    meaning two different instructions would be worse than not
+                    marking it at all. */}
+                {echo > 0 && (
+                  <>
+                    <span className="echo-halo" aria-hidden="true" />
+                    <span className="echo-count num" aria-hidden="true">
+                      {echo}
+                    </span>
+                  </>
+                )}
+
                 {pin.state === 'locked' ? (
                   <LockSigil size={17} />
                 ) : mastered ? (
@@ -634,6 +695,11 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
                         ? `Cleared · best ${pin.best}%`
                         : pin.zone.sub}
                   </span>
+                  {echo > 0 && (
+                    <span className="mt-1 block font-script text-[11.5px] uppercase tracking-[0.12em] text-woods-text">
+                      {echo === 1 ? '1 question' : `${echo} questions`} calling you back
+                    </span>
+                  )}
                 </span>
               </m.button>
             </span>
@@ -709,6 +775,64 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
             </button>
           );
         })}
+
+        {/* The courier.
+
+            The daily challenge existed and lived at `#/daily`, reachable from
+            a dashboard tile. Nothing about it was in the world — the map is
+            where this game happens, and the one thing designed to be done every
+            single day was the only thing not on it.
+
+            So she stands at a landmark, a different one each day, chosen only
+            from ground already walked. That is the whole mechanic: a reason to
+            open the map on a day you were not going to, and somewhere to go
+            when it is open. See `courierFor`. */}
+        {courier && courierPin && (
+          <m.button
+            type="button"
+            onClick={() => {
+              if (moved.current) return;
+              sfx.select();
+              navigate({ name: 'daily' });
+            }}
+            className={cx('courier group', courier.done && 'courier-done')}
+            style={{ left: `${courierPin.x}%`, top: `${courierPin.y}%` }}
+            /* The position is keyed so that a courier who has moved overnight
+               arrives rather than blinks into place — the same reasoning as the
+               traveller walking between landmarks. */
+            key={courier.zoneId}
+            initial={reducedMotion ? false : { scale: 0, y: -12, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            transition={PIN_SPRING}
+            whileHover={reducedMotion ? { filter: 'brightness(1.18)' } : { scale: 1.1, y: -3 }}
+            whileTap={reducedMotion ? { filter: 'brightness(0.9)' } : { scale: 0.94 }}
+            aria-label={
+              courier.done
+                ? `The courier at ${courierPin.zone.name} — today's challenge is done`
+                : `The courier is waiting at ${courierPin.zone.name} — today's five questions`
+            }
+          >
+            {!courier.done && (
+              <span
+                className="pointer-events-none absolute inset-0 animate-pulseRing rounded-full border-2 border-desert-text"
+                aria-hidden="true"
+              />
+            )}
+            <span className="courier-mark" aria-hidden="true">
+              ✦
+            </span>
+            <span className="pin-card">
+              <span className="block font-display text-[13px] font-semibold leading-tight text-ink">
+                The Courier
+              </span>
+              <span className="mt-0.5 block font-read text-[12.5px] leading-snug text-ink-soft">
+                {courier.done
+                  ? 'Her round is done. She rides on at midnight.'
+                  : `Five questions, waiting at ${courierPin.zone.name}.`}
+              </span>
+            </span>
+          </m.button>
+        )}
 
         {/* the summit */}
         <button
@@ -886,6 +1010,26 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
                 found
               </span>
             </button>
+            {/* Everything due, including the drill questions that belong to a
+                topic rather than to any one landmark and so cannot be drawn on
+                the map at all. Without this the HUD would quietly under-report
+                the backlog whenever most of it came from drills. */}
+            {echoes.total > 0 && (
+              <button
+                type="button"
+                onClick={() => {
+                  sfx.select();
+                  navigate({ name: 'review' });
+                }}
+                className="ml-2 border-l border-leather-700 pl-2 transition-colors hover:text-parchment"
+                aria-label={`${echoes.total} questions due for review — open the review session`}
+              >
+                <span className="num text-[15px] text-woods-text">{echoes.total}</span>
+                <span className="ml-1 font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+                  due
+                </span>
+              </button>
+            )}
             {progress.dayStreak > 0 && (
               <span className="ml-2 border-l border-leather-700 pl-2 font-script text-[11px] uppercase tracking-[0.14em] text-desert">
                 {progress.dayStreak}d streak
@@ -895,17 +1039,68 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
         </div>
 
         <div className="flex items-end justify-between gap-3">
-          <button
-            type="button"
-            onClick={() => {
-              const t = current ?? { x: SUMMIT_AT[0], y: SUMMIT_AT[1] };
-              sfx.tick();
-              centreOn(t.x, t.y, 1.8);
-            }}
-            className="map-btn pointer-events-auto"
-          >
-            Find my traveller
-          </button>
+          <div className="flex min-w-0 flex-col items-start gap-2">
+            {/* Fast travel.
+
+                Thirty-seven landmarks across a portrait map on a landscape
+                screen means the Science Cliffs are four drags from the Grammar
+                Village, and the only way to know how a region was doing was to
+                go and look at it. Four buttons: jump the camera, and read the
+                count without going.
+
+                A rail rather than a compass rose — a rose implies eight
+                directions and there are four places, and the counts have to be
+                legible, which a ring of glyphs cannot do. */}
+            <div className="pointer-events-auto flex flex-wrap gap-1.5">
+              {REGION_ORDER.map((id) => {
+                const region = REGIONS[id];
+                const nodes = PATH_BY_ID[id]?.nodes ?? [];
+                const done = nodes.filter((n) => progress.zonesCleared[n.id] !== undefined).length;
+                const dueHere = dueByRegion[id] ?? 0;
+
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    onClick={() => {
+                      sfx.tick();
+                      /* The centre of the region's own landmarks, not the
+                         plaque: the plaque is placed for legibility against the
+                         painting and sits off to one side of several bands. */
+                      const spots = region.pins;
+                      const cx0 = spots.reduce((n, p) => n + p[0], 0) / spots.length;
+                      const cy0 = spots.reduce((n, p) => n + p[1], 0) / spots.length;
+                      centreOn(cx0, cy0, 1.5);
+                    }}
+                    className="region-jump"
+                    style={{ ['--region' as string]: region.color }}
+                    aria-label={`${region.title} — ${done} of ${nodes.length} cleared${
+                      dueHere ? `, ${dueHere} due for review` : ''
+                    }. Jump there.`}
+                  >
+                    <span className="region-jump-dot" aria-hidden="true" />
+                    <span className="num text-[12px] leading-none">
+                      {done}
+                      <span className="text-ink-faint">/{nodes.length}</span>
+                    </span>
+                    {dueHere > 0 && <span className="region-jump-due" aria-hidden="true" />}
+                  </button>
+                );
+              })}
+            </div>
+
+            <button
+              type="button"
+              onClick={() => {
+                const t = current ?? { x: SUMMIT_AT[0], y: SUMMIT_AT[1] };
+                sfx.tick();
+                centreOn(t.x, t.y, 1.8);
+              }}
+              className="map-btn pointer-events-auto"
+            >
+              Find my traveller
+            </button>
+          </div>
 
           <div className="pointer-events-auto flex flex-col gap-1.5">
             <button

@@ -1838,6 +1838,139 @@
     @apply block;
   }
 
+  /* ------------------------------------------------------------- the echo
+
+     A landmark whose questions have come due again.
+
+     Deliberately not another pulse ring. The current landmark already pulses in
+     gold and means "go here next"; this means "you have been here, and it is
+     fading." Two rings with the same motion and different instructions is worse
+     than not marking it — so this is a slow breathing halo in the woods green
+     the review surfaces already use, sitting *behind* the pin rather than on
+     its edge, and it never fully disappears the way a pulse does.
+
+     18 seconds is deliberate. Fast enough to read as alive when you look at it,
+     slow enough that four of them across a region do not turn the map into a
+     set of blinking alarms. Nothing here is urgent; that is the point. */
+
+  .echo-halo {
+    @apply pointer-events-none absolute rounded-full;
+    inset: -9px;
+    z-index: -1;
+    background: radial-gradient(
+      circle,
+      rgba(95, 168, 107, 0.42) 0%,
+      rgba(95, 168, 107, 0.16) 55%,
+      transparent 72%
+    );
+    animation: echoBreathe 18s ease-in-out infinite;
+  }
+
+  /* How many, in the corner of the pin. A halo says "something"; a student
+     deciding whether to spend four minutes here needs "two" or "nine". */
+  .echo-count {
+    @apply pointer-events-none absolute flex items-center justify-center rounded-full
+           border font-semibold leading-none;
+    right: -7px;
+    bottom: -7px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    font-size: 10.5px;
+    border-color: rgba(159, 214, 166, 0.75);
+    background: linear-gradient(180deg, #4f8f57, #2f6438);
+    color: #eaf7ea;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Bright at 0% and 100%, dim in the middle — not the other way round.
+     `prefers-reduced-motion` collapses this to one near-zero iteration and
+     parks the element on its 100% keyframe, so whichever state ends the cycle
+     is the one a reduced-motion student looks at forever. Ending dim would
+     leave the halo almost invisible for exactly the people least likely to have
+     noticed the motion that was supposed to draw their eye. Same trap as
+     `fx-sparkle` above. */
+  @keyframes echoBreathe {
+    0%,
+    100% {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
+    50% {
+      opacity: 0.34;
+      transform: scale(0.95);
+    }
+  }
+
+  /* ----------------------------------------------------------- the courier
+
+     Today's daily challenge, standing at a landmark instead of sitting in a
+     dashboard tile. Sized between a pin and a guardian: she is more than a
+     landmark and less than a Seal. Offset up and right of the pin she shares a
+     spot with, so neither hides the other. */
+
+  .courier {
+    @apply absolute z-[13] flex cursor-pointer items-center justify-center rounded-full border-2;
+    width: 30px;
+    height: 30px;
+    /* Not centred on the pin — beside it. The pin still has to be readable and
+       clickable underneath. */
+    transform: translate(28%, -128%);
+    border-color: #f0c987;
+    background: radial-gradient(circle at 50% 32%, #6b4a24, #2b1c0d);
+    box-shadow:
+      0 3px 10px rgba(0, 0, 0, 0.55),
+      0 0 16px rgba(224, 168, 28, 0.3);
+  }
+  .courier-mark {
+    @apply block font-display leading-none;
+    font-size: 15px;
+    color: #ffd98a;
+  }
+  .courier-done {
+    @apply border-leather-600;
+    filter: grayscale(0.75);
+    opacity: 0.6;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+  }
+  .courier:hover .pin-card,
+  .courier:focus-visible .pin-card {
+    @apply block;
+  }
+
+  /* --------------------------------------------------------- fast travel
+
+     Four buttons, one per region: jump the camera there, and read how that road
+     is doing without going. The dot carries the region's own colour, which is
+     the same colour its pins, plaque and road already use — so the rail is
+     legible without a single word of label. */
+
+  .region-jump {
+    @apply relative flex items-center gap-1.5 rounded-lg border border-leather-700
+           bg-leather-950/85 px-2 py-1.5 text-parchment-dim shadow-card
+           backdrop-blur transition-colors;
+  }
+  .region-jump:hover,
+  .region-jump:focus-visible {
+    @apply border-gold-deep text-parchment;
+  }
+  .region-jump-dot {
+    @apply block h-2.5 w-2.5 shrink-0 rounded-full;
+    background: var(--region);
+    box-shadow: 0 0 6px var(--region);
+  }
+  /* A region with work waiting carries the same green as the echoes on its
+     landmarks, so the rail and the map agree without explaining themselves. */
+  .region-jump-due {
+    @apply absolute block rounded-full;
+    top: -3px;
+    right: -3px;
+    width: 7px;
+    height: 7px;
+    background: #7cc487;
+    box-shadow: 0 0 6px rgba(124, 196, 135, 0.9);
+  }
+
   /* ------------------------------------------------------- exploration layer
 
      A discovery you have not found is a glint: enough to catch the eye while
