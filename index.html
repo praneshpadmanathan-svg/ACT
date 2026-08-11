@@ -24,7 +24,18 @@
          from Google over two preconnects and a stylesheet, which meant every
          visitor's IP reached a third party before the page painted. -->
 
-    <link rel="preload" as="image" href="/art/world-map.webp" />
+    <!-- There used to be a `<link rel="preload" as="image">` for
+         /art/world-map.webp here. It never saved a byte, because it preloaded
+         a file nothing loads: `Art` resolves the map through a <picture> whose
+         sources are /art/gen/world-map-768.avif (200 KB) and its webp sibling,
+         and the 297 KB original is only the last-resort <img src> fallback. So
+         every visitor to every screen downloaded 297 KB and then fetched the
+         real image anyway. The browser said so, and "preloaded but not used"
+         was the only warning in this app's console.
+
+         Not re-pointed at the AVIF: the map is a lazy route, and warming its
+         artwork while somebody is still reading the landing page spends a
+         phone's data on a screen they may never open. -->
 
     <!-- How the link looks when a student sends it to a friend, which is
          realistically the only distribution this app has.

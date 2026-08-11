@@ -261,6 +261,18 @@ const SIDE_FALL = 'M17.1 12.2c1.6 3.5 2 7.2 1.2 10.8l-2.6-.7c.7-3.1.4-6.3-.7-9.2
  *  outright without it. */
 const RIM = '#f7edd8';
 
+/* One set of travelling gear, shared by all eight.
+ *
+ * The heroes parameterise the things a student picks themselves — skin, hair,
+ * cloak, build. Trousers, boots, staff and satchel are the world's, not the
+ * character's, and eight palettes for them would only make the map noisier
+ * without making anybody more recognisable. */
+const WOOD = '#8a6a43';
+const WOOD_DARK = '#5d452a';
+const LEATHER = '#8a6a45';
+const TROUSER = '#7d6446';
+const BOOT = '#4a3524';
+
 /**
  * The traveller as they appear walking the world — full length, ~26px wide.
  *
@@ -269,13 +281,25 @@ const RIM = '#f7edd8';
  * The map is where the traveller *is*; a character choice invisible there is
  * a character choice in name only.
  *
- * This is not the portrait scaled down. At twenty-six pixels a head-and-
- * shoulders bust reads as a floating head, and the face detail that carries
- * the portrait — brows, eyes, mouth — is sub-pixel and turns to mud. What
- * survives at this size is silhouette and two colours, so that is all this
- * draws: the cloak, the hair, a skin-toned face with no features, and a hood
- * line to tell the head from the body. The identity is carried by exactly the
- * parameters that still resolve.
+ * This is not the portrait scaled down — a head-and-shoulders bust at this
+ * size reads as a floating head. But the first version of this mark cut too
+ * far the other way. Reasoning that face detail goes sub-pixel at 26px, it
+ * drew only a cloak, hair, and a blank skin-toned oval: a green cone with an
+ * egg on top. It was not a traveller, it was a chess pawn, and it replaced a
+ * painted character who had a face, a pack, boots and a walking staff.
+ *
+ * Two things were wrong with that reasoning. The mark is inside the map's
+ * transformed layer, so it is never actually 26 CSS pixels on screen — it is
+ * 43 at the default zoom and up to 88 zoomed in, which is ample for eyes. And
+ * "what survives at small size" is silhouette, which is an argument *for* the
+ * staff and the boots, not against them: the staff is the one shape that
+ * breaks the outline and says at a glance that this figure is walking
+ * somewhere.
+ *
+ * So it draws a person: staff, tunic, legs, boots, satchel, and two eyes. The
+ * eight heroes still differ only in the parameters a student chose — skin,
+ * hair, cloak, build — and everything else is shared gear. Checked by
+ * rendering all eight at 26, 44 and 88 pixels before it shipped.
  */
 export function TravellerMark({
   hero,
@@ -291,7 +315,47 @@ export function TravellerMark({
   const h = typeof hero === 'string' ? heroFor(hero) : hero;
   const hem = HEM[h.build];
   const id = `mark-${h.id}`;
-  const cloak = `M${13 - hem} 37.4c-.3-8 1.4-14.5 4.2-18.6h${(hem - 4.2) * 2 + 0.4}c2.8 4.1 4.5 10.6 4.2 18.6Z`;
+
+  /* Tunic, not a floor-length cloak: it ends at 28.5 so there are legs below
+     it. The hem bows downward at the end of the path — a flat closing line
+     reads as the base of a cone, which is the shape this was trying to stop
+     being. */
+  const tunic = `M${13 - hem} 28.5c-.25-6 1.1-10.1 3.2-11.7h${(hem - 3.2) * 2 + 0.4}c2.1 1.6 3.45 5.7 3.2 11.7q${-hem} 1.3 ${-2 * hem} 0Z`;
+
+  /* The staff. Drawn as a dark stroke with a lighter one on top rather than as
+     an outlined shape, because a 1-unit-wide path with a 1-unit outline has no
+     inside left. */
+  const STAFF = 'M20.1 7.6 19 36.8';
+
+  /* `dir` pushes the boot away from the centre line. Two identical boots side
+     by side merge into one dark bar at map size; the gap between them and the
+     outward offset are what make them read as a pair of feet. */
+  const leg = (cx: number, dir: number) => (
+    <>
+      <path
+        d={`M${cx - 1.2} 26.4h2.4v7.4h-2.4z`}
+        fill={TROUSER}
+        stroke={INK}
+        strokeWidth=".85"
+        strokeLinejoin="round"
+      />
+      <rect
+        x={cx - 1.5 + 0.3 * dir}
+        y="33.5"
+        width="3"
+        height="3.4"
+        rx=".8"
+        fill={BOOT}
+        stroke={INK}
+        strokeWidth=".85"
+        strokeLinejoin="round"
+      />
+    </>
+  );
+
+  /* The headwrap comes further down the brow than hair does, so eyes at the
+     hairline sit *under* it — Noor was drawn blindfolded for one render. */
+  const eyeY = h.hairStyle === 'wrap' ? 15.3 : 14.1;
 
   /* The cap sits inside the head's own outline, so it takes half an ink line.
      A full one eats a five-unit shape down to two and turns blonde into a
@@ -334,34 +398,98 @@ export function TravellerMark({
       {/* Contact shadow. Without it the figure floats above the terrain
           instead of standing on it, which at this size is the difference
           between a character and a sticker. */}
-      <ellipse cx="13" cy="37.6" rx={hem * 0.8} ry="1.7" fill="rgba(20,14,8,.42)" />
+      <ellipse cx="13" cy="37.1" rx={hem * 0.85} ry="1.6" fill="rgba(20,14,8,.42)" />
 
       {/* Parchment halo. The map is painted, and half of it is dark forest. */}
-      <g fill="none" stroke={RIM} strokeWidth="3" strokeLinejoin="round" opacity=".5">
-        <path d={cloak} />
+      <g fill="none" stroke={RIM} strokeWidth="2.8" strokeLinejoin="round" opacity=".5">
+        <path d={tunic} />
         <circle cx="13" cy="12.6" r="5" />
+        <rect x="10.1" y="26.8" width="3" height="10" rx=".7" />
+        <rect x="14.2" y="26.8" width="3" height="10" rx=".7" />
+        <path d={STAFF} />
       </g>
 
-      {/* The cloak, hem to shoulder, with the sway of somebody mid-stride. */}
+      {/* The staff, behind the hand that holds it. */}
+      <path d={STAFF} stroke={INK} strokeWidth="1.8" strokeLinecap="round" fill="none" />
+      <path d={STAFF} stroke={WOOD} strokeWidth="1.05" strokeLinecap="round" fill="none" />
+      <circle cx="20.2" cy="7.1" r="1.15" fill={WOOD} stroke={INK} strokeWidth=".85" />
       <path
-        d={cloak}
+        d="M19.75 6.75a1.1 1.1 0 0 1 .85-.1"
+        stroke={WOOD_DARK}
+        strokeWidth=".45"
+        fill="none"
+        strokeLinecap="round"
+      />
+
+      {/* Legs first, then the tunic over the top of them. */}
+      {leg(11.6, -1)}
+      {leg(15.4, 1)}
+
+      <path
+        d={tunic}
         fill={`url(#${id}-cloak)`}
         stroke={INK}
         strokeWidth="1.3"
         strokeLinejoin="round"
       />
-      {/* One fold, on the shaded side, so the cloak is not a flat wedge. */}
+      {/* One fold, on the shaded side, so the tunic is not a flat wedge. */}
       <path
-        d={`M14.6 20.4c1.4 4.6 2 10.4 1.8 16.6`}
+        d="M14.3 19.6c1.05 3.1 1.45 6 1.25 8.4"
         fill="none"
         stroke={h.cloakShade}
-        strokeWidth="1.1"
+        strokeWidth=".95"
         strokeLinecap="round"
-        opacity=".8"
+        opacity=".75"
       />
 
-      {/* Face. No features on purpose — see the note above. */}
+      {/* The satchel from the painting, at the far hip. Small: a bag drawn to
+          the scale it has in the portrait would be a second body here. */}
+      <rect
+        x={13 - hem - 0.55}
+        y="22.4"
+        width="2.7"
+        height="2.3"
+        rx=".55"
+        fill={LEATHER}
+        stroke={INK}
+        strokeWidth=".85"
+        strokeLinejoin="round"
+      />
+      <path
+        d={`M${13 - hem - 0.55} 23.3h2.7`}
+        stroke={INK}
+        strokeWidth=".5"
+        opacity=".55"
+        fill="none"
+      />
+
+      {/* The near arm, reaching the staff. This is the line that says walking
+          rather than standing. */}
+      <path
+        d="M16.1 19.9c1.6.7 2.7 1.8 3.2 3.5"
+        fill="none"
+        stroke={INK}
+        strokeWidth="2.3"
+        strokeLinecap="round"
+      />
+      <path
+        d="M16.1 19.9c1.6.7 2.7 1.8 3.2 3.5"
+        fill="none"
+        stroke={h.cloak}
+        strokeWidth="1.45"
+        strokeLinecap="round"
+      />
+      <circle cx="19.4" cy="23.7" r="1.05" fill={h.skin} stroke={INK} strokeWidth=".8" />
+
+      {/* Face. */}
       <circle cx="13" cy="12.6" r="5" fill={h.skin} stroke={INK} strokeWidth="1.3" />
+      <path
+        d="M9.1 15.6c.9 1.5 2.3 2.3 3.9 2.3s3-.8 3.9-2.3"
+        fill="none"
+        stroke={h.skinShade}
+        strokeWidth=".8"
+        opacity=".7"
+      />
 
       {/* Hair — see the note by CAP. */}
       {h.hairStyle === 'wrap' ? (
@@ -387,7 +515,15 @@ export function TravellerMark({
         cap(CAP)
       )}
 
-      {/* The hood line, which is what separates head from body at 26px. */}
+      {/* Eyes, drawn after the hair so a deep fringe cannot bury them. Two
+          dots and nothing else — a mouth at this scale is a smudge, and a
+          smudge under two eyes reads as a frown. */}
+      <g fill={INK}>
+        <circle cx="11.4" cy={eyeY} r=".62" />
+        <circle cx="14.6" cy={eyeY} r=".62" />
+      </g>
+
+      {/* The collar line, which is what separates head from body at 26px. */}
       <path
         d={`M8.6 17.2c1.3 1.2 2.8 1.8 4.4 1.8s3.1-.6 4.4-1.8`}
         fill="none"
