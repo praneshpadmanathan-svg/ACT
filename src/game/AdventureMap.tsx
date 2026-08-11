@@ -12,6 +12,8 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { PATH_BY_ID } from '@/content';
+import { RankSigil } from '@/components/RankSigil';
+import { rankProgress } from '@/lib/progress';
 import { useStore } from '@/lib/store';
 import { useNavigate } from '@/lib/router';
 import { sfx } from '@/lib/sfx';
@@ -141,9 +143,10 @@ interface View {
 }
 
 export function AdventureMap({ onExit }: { onExit?: () => void }) {
-  const { progress } = useStore();
+  const { progress, rank } = useStore();
   const navigate = useNavigate();
   const { pins, current, cleared, total } = useMapProgress();
+  const rankPct = useMemo(() => rankProgress(progress.xp), [progress.xp]);
   const quest = useMemo(
     () => activeQuest(progress, { cleared, total }),
     [progress, cleared, total],
@@ -929,113 +932,183 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
       />
 
       <div className="map-safe pointer-events-none absolute inset-0 flex flex-col justify-between">
-        <div className="flex items-start justify-between gap-3">
-          {/* Top-left column: Camp, then the current objective beneath it. The
-              quest card used to be centred in the middle of the map, which put
-              it straight over the artwork. */}
-          <div className="flex min-w-0 flex-col items-start gap-2.5">
+        {/* The top band: Camp and the tallies share a row, and the objective
+            drops beneath both.
+
+            It used to be two columns side by side — Camp with the quest card
+            under it on the left, the tallies on the right. On a phone that
+            does not fit: the quest card is capped at `100vw - 1.5rem`, so the
+            left column alone takes the whole width and the tallies were pushed
+            426px wide off the right edge and across the Camp button. The
+            counters were unreadable and Camp was unclickable on exactly the
+            device most of this audience is holding.
+
+            Putting the objective on its own line costs one row of height and
+            makes the two things that must always be reachable — leave, and
+            read your progress — fit at any width. */}
+        <div className="flex flex-col items-start gap-2.5">
+          <div className="flex w-full items-start justify-between gap-2">
             <button
               type="button"
               onClick={() => {
                 sfx.select();
                 onExit?.();
               }}
-              className="map-btn pointer-events-auto"
+              className="map-btn pointer-events-auto shrink-0"
               aria-label="Leave the map and return to camp"
             >
               <span aria-hidden="true">‹</span> Camp
             </button>
 
-            {/* Keyed on the quest id, so finishing one objective brings the
-                next card in rather than swapping the text underneath you.
-                Deliberately not wrapped in AnimatePresence: an exit that never
-                completes (hidden tab, no rAF) would leave a stale objective on
-                screen. Remounting can't get stuck. */}
-            {quest && (
-              <m.div
-                key={quest.quest.id}
-                className="quest-card pointer-events-none w-[min(19rem,calc(100vw-1.5rem))]"
-                initial={{ opacity: 0, x: -18, scale: 0.97 }}
-                animate={{ opacity: 1, x: 0, scale: 1, transition: SPRING }}
-              >
-                <div className="flex items-baseline justify-between gap-3">
-                  <span className="eyebrow text-[11.5px]">
-                    ✦ Quest {quest.step} of {quest.total}
+            {/* What has been counted, then who is counting. The rank sits under
+                the tallies rather than inside them because it is not another
+                number — it is the only thing on this screen that says who you
+                have become, and a fifth item in that bar would have read as
+                one. */}
+            <div className="flex min-w-0 flex-col items-end gap-2">
+              <div className="map-hud pointer-events-auto">
+                {/* One flex child, not four. The bar wraps on a narrow screen, and
+                loose spans would have let "5", "/" and "37" drift apart — or
+                break across two lines mid-tally. */}
+                <span className="whitespace-nowrap">
+                  <span className="num text-[15px] text-gold">{cleared}</span>
+                  <span className="text-ink-faint">/</span>
+                  <span className="num text-[15px] text-parchment-dim">{total}</span>
+                  <span className="ml-1 font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+                    landmarks
                   </span>
-                  <span className="num text-[12.5px] text-parchment-dim">
-                    {Math.min(quest.have, quest.need)}/{quest.need}
-                  </span>
-                </div>
-                <p className="mt-1 font-display text-[14px] font-semibold leading-snug text-gold-light">
-                  {quest.quest.name}
-                </p>
-                <p className="mt-0.5 font-read text-[13px] leading-snug text-parchment-dim">
-                  {quest.quest.objective}
-                </p>
-                {/* The bar settles with weight instead of sliding linearly,
-                      so progress reads as something landing. */}
-                <span className="quest-bar mt-2">
-                  <m.i
-                    initial={{ width: 0 }}
-                    animate={{ width: `${Math.min(100, (quest.have / quest.need) * 100)}%` }}
-                    transition={SPRING}
-                  />
                 </span>
-              </m.div>
-            )}
-          </div>
-
-          <div className="map-hud pointer-events-auto">
-            <span className="num text-[15px] text-gold">{cleared}</span>
-            <span className="text-ink-faint">/</span>
-            <span className="num text-[15px] text-parchment-dim">{total}</span>
-            <span className="ml-1 font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint">
-              landmarks
-            </span>
-            {/* Opens the journal: what there is to find, and what the marks on
+                {/* Opens the journal: what there is to find, and what the marks on
                 the map mean. */}
-            <button
-              type="button"
-              onClick={() => {
-                sfx.page();
-                setJournalOpen(true);
-              }}
-              className="ml-2 border-l border-leather-700 pl-2 transition-colors hover:text-parchment"
-              aria-label={`Journal — ${foundCount} of ${DISCOVERIES.length} discoveries found`}
-            >
-              <span className="num text-[15px] text-gold-light">{foundCount}</span>
-              <span className="text-ink-faint">/</span>
-              <span className="num text-[15px] text-parchment-dim">{DISCOVERIES.length}</span>
-              <span className="ml-1 font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint">
-                found
-              </span>
-            </button>
-            {/* Everything due, including the drill questions that belong to a
+                <button
+                  type="button"
+                  onClick={() => {
+                    sfx.page();
+                    setJournalOpen(true);
+                  }}
+                  className="map-hud-sep whitespace-nowrap transition-colors hover:text-parchment"
+                  aria-label={`Journal — ${foundCount} of ${DISCOVERIES.length} discoveries found`}
+                >
+                  <span className="num text-[15px] text-gold-light">{foundCount}</span>
+                  <span className="text-ink-faint">/</span>
+                  <span className="num text-[15px] text-parchment-dim">{DISCOVERIES.length}</span>
+                  <span className="ml-1 font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+                    found
+                  </span>
+                </button>
+                {/* Everything due, including the drill questions that belong to a
                 topic rather than to any one landmark and so cannot be drawn on
                 the map at all. Without this the HUD would quietly under-report
                 the backlog whenever most of it came from drills. */}
-            {echoes.total > 0 && (
+                {echoes.total > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      sfx.select();
+                      navigate({ name: 'review' });
+                    }}
+                    className="map-hud-sep whitespace-nowrap transition-colors hover:text-parchment"
+                    aria-label={`${echoes.total} questions due for review — open the review session`}
+                  >
+                    <span className="num text-[15px] text-woods-text">{echoes.total}</span>
+                    <span className="ml-1 font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+                      due
+                    </span>
+                  </button>
+                )}
+                {progress.dayStreak > 0 && (
+                  <span className="map-hud-sep font-script text-[11px] uppercase tracking-[0.14em] text-desert">
+                    {progress.dayStreak}d streak
+                  </span>
+                )}
+              </div>
+
+              {/* Rank.
+                Every other screen carries the rank sigil and the bar to the
+                next one; the map, where a student spends most of their time,
+                carried neither. So the one axis that runs the whole length of
+                the game was invisible on the screen built to show a journey.
+
+                It opens Stats rather than doing nothing, because the obvious
+                question a bar four-fifths full provokes is "of what?", and the
+                rank ladder that answers it already exists there. */}
               <button
                 type="button"
                 onClick={() => {
                   sfx.select();
-                  navigate({ name: 'review' });
+                  navigate({ name: 'stats' });
                 }}
-                className="ml-2 border-l border-leather-700 pl-2 transition-colors hover:text-parchment"
-                aria-label={`${echoes.total} questions due for review — open the review session`}
+                className="rank-cartouche pointer-events-auto"
+                aria-label={
+                  rankPct.next
+                    ? `${rank.name} — ${rankPct.span - rankPct.into} XP to ${rankPct.next.name}. Open your stats.`
+                    : `${rank.name}, the highest rank. Open your stats.`
+                }
               >
-                <span className="num text-[15px] text-woods-text">{echoes.total}</span>
-                <span className="ml-1 font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint">
-                  due
+                <RankSigil rank={rank} size={26} />
+                <span className="flex flex-col items-start gap-1">
+                  <span className="font-script text-[11px] uppercase leading-none tracking-[0.14em] text-parchment-dim">
+                    {rank.name}
+                  </span>
+                  {/* At the top rank there is no "next", and a bar pinned full
+                    forever reads as a broken bar. The XP total is the honest
+                    thing to show once there is nothing left to fill. */}
+                  {rankPct.next ? (
+                    <span className="rank-cartouche-bar" aria-hidden="true">
+                      <i
+                        style={{
+                          width: `${Math.round(rankPct.pct * 100)}%`,
+                          background: rank.color,
+                        }}
+                      />
+                    </span>
+                  ) : (
+                    <span className="num text-[11px] leading-none text-gold-light">
+                      {progress.xp} xp
+                    </span>
+                  )}
                 </span>
               </button>
-            )}
-            {progress.dayStreak > 0 && (
-              <span className="ml-2 border-l border-leather-700 pl-2 font-script text-[11px] uppercase tracking-[0.14em] text-desert">
-                {progress.dayStreak}d streak
-              </span>
-            )}
+            </div>
           </div>
+
+          {/* Keyed on the quest id, so finishing one objective brings the
+              next card in rather than swapping the text underneath you.
+              Deliberately not wrapped in AnimatePresence: an exit that never
+              completes (hidden tab, no rAF) would leave a stale objective on
+              screen. Remounting can't get stuck. */}
+          {quest && (
+            <m.div
+              key={quest.quest.id}
+              className="quest-card pointer-events-none w-[min(19rem,calc(100vw-1.5rem))]"
+              initial={{ opacity: 0, x: -18, scale: 0.97 }}
+              animate={{ opacity: 1, x: 0, scale: 1, transition: SPRING }}
+            >
+              <div className="flex items-baseline justify-between gap-3">
+                <span className="eyebrow text-[11.5px]">
+                  ✦ Quest {quest.step} of {quest.total}
+                </span>
+                <span className="num text-[12.5px] text-parchment-dim">
+                  {Math.min(quest.have, quest.need)}/{quest.need}
+                </span>
+              </div>
+              <p className="mt-1 font-display text-[14px] font-semibold leading-snug text-gold-light">
+                {quest.quest.name}
+              </p>
+              <p className="mt-0.5 font-read text-[13px] leading-snug text-parchment-dim">
+                {quest.quest.objective}
+              </p>
+              {/* The bar settles with weight instead of sliding linearly,
+                    so progress reads as something landing. */}
+              <span className="quest-bar mt-2">
+                <m.i
+                  initial={{ width: 0 }}
+                  animate={{ width: `${Math.min(100, (quest.have / quest.need) * 100)}%` }}
+                  transition={SPRING}
+                />
+              </span>
+            </m.div>
+          )}
         </div>
 
         <div className="flex items-end justify-between gap-3">

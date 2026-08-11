@@ -871,9 +871,51 @@
     @apply border-gold-deep text-parchment;
   }
 
+  /* Wraps rather than overflows. Four tallies at full width come to 426px,
+     which is wider than the phone most of this audience reads it on — it used
+     to run off the right edge and back across the Camp button. Wrapping costs
+     a second line on a narrow screen and keeps every number on it. */
   .map-hud {
-    @apply flex items-center gap-1 rounded-lg border border-leather-700
-           bg-leather-950/85 px-3.5 py-2 shadow-card backdrop-blur;
+    @apply flex flex-wrap items-center justify-end gap-x-2.5 gap-y-1
+           rounded-lg border border-leather-700 bg-leather-950/85 px-3.5 py-2
+           shadow-card backdrop-blur sm:gap-x-1;
+  }
+  /* The dividing rules only exist at widths where the bar fits on one line.
+     CSS cannot tell which item started a new row, so a `border-l` that
+     survived the wrap would draw a stray tick in the left margin of row two.
+     Below `sm` the gap does the separating instead. */
+  .map-hud-sep {
+    @apply sm:ml-2 sm:border-l sm:border-leather-700 sm:pl-2;
+  }
+
+  /* The rank cartouche, under the tallies. Narrower than `.map-hud` and
+     right-aligned to it, so the two read as one stack rather than as two
+     unrelated boxes that happen to share a corner. */
+  .rank-cartouche {
+    @apply flex items-center gap-2 rounded-lg border border-leather-700
+           bg-leather-950/85 py-1.5 pl-2 pr-3 shadow-card backdrop-blur
+           transition-colors;
+  }
+  .rank-cartouche:hover {
+    @apply border-gold-deep;
+  }
+  .rank-cartouche-bar {
+    display: block;
+    width: 72px;
+    height: 3px;
+    border-radius: 999px;
+    background: rgba(255, 251, 240, 0.13);
+    overflow: hidden;
+  }
+  .rank-cartouche-bar > i {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    /* Width only. Animating the fill would mean it starts empty every time the
+       map mounts, so a student who opened the map twice would watch their rank
+       progress "earn itself" again — and under reduced motion it would park at
+       whichever keyframe was last, which is not necessarily the true value. */
+    transition: width 420ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   /* Keep the map's controls out from under the hardware.
