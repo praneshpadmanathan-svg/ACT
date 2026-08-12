@@ -106,6 +106,41 @@ export default {
           '0%,100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-4px)' },
         },
+        /* A walk cycle, expressed as a transform rather than as frames.
+         *
+         * Baking a stride into the sprite itself was the first idea and it
+         * cannot work: the map draws a 176px sprite at about 32, so a four
+         * pixel stride in the source survives as half a screen pixel. The
+         * body is the only thing at that size big enough to carry motion,
+         * so the walk is the body — rise on the passing pose, fall and lean
+         * onto the planted foot at each contact.
+         *
+         * Percentages, not pixels, so the same cycle reads correctly at 32
+         * on the map and at 140 in the duel. `transform-origin` sits at the
+         * feet, or the lean swings the whole figure sideways instead of
+         * pivoting on the leg holding it up. */
+        walkHero: {
+          '0%,100%': { transform: 'translateY(0) rotate(-2.6deg)' },
+          '25%,75%': { transform: 'translateY(-8%) rotate(0deg)' },
+          '50%': { transform: 'translateY(0) rotate(2.6deg)' },
+        },
+        /* The rank-up banner arriving. Overshoots wide and settles, with the
+           letter-spacing closing at the same time — the word is spread out
+           and blurred at the moment it lands, so it reads as being stamped
+           onto the screen rather than fading up on it. */
+        stamp: {
+          '0%': { opacity: '0', transform: 'scale(2.1)', filter: 'blur(14px)', letterSpacing: '.6em' },
+          '55%': { opacity: '1', transform: 'scale(.94)', filter: 'blur(0)', letterSpacing: '.16em' },
+          '75%': { transform: 'scale(1.03)' },
+          '100%': { opacity: '1', transform: 'scale(1)', letterSpacing: '.2em' },
+        },
+        /* The white flash under the stamp. Brief enough to read as impact and
+           capped well short of full white, which at this size is a headache
+           rather than a reward. */
+        flashOut: {
+          '0%': { opacity: '.55' },
+          '100%': { opacity: '0' },
+        },
         pulseRing: {
           '0%': { transform: 'scale(.85)', opacity: '.75' },
           '70%': { transform: 'scale(1.5)', opacity: '0' },
@@ -234,8 +269,14 @@ export default {
       animation: {
         float: 'float 3.6s ease-in-out infinite',
         bobHero: 'bobHero 1.9s ease-in-out infinite',
+        /* 0.62s a cycle is two steps at 310ms each — a walking pace, and the
+           interval the footstep cue is fired on. Keep the two in step: the
+           number lives in `AdventureMap` as `STEP_MS`. */
+        walkHero: 'walkHero .62s ease-in-out infinite',
         pulseRing: 'pulseRing 2.4s ease-out infinite',
         popIn: 'popIn .42s cubic-bezier(.22,1.4,.36,1) backwards',
+        stamp: 'stamp .72s cubic-bezier(.2,.9,.25,1) backwards',
+        flashOut: 'flashOut .5s ease-out forwards',
         drift: 'drift 90s linear infinite',
         mote: 'mote var(--md,8s) ease-out var(--dl,0s) infinite',
         rise: 'rise 1.15s ease-out forwards',

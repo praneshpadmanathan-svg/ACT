@@ -5,6 +5,7 @@
 import { useEffect, useRef } from 'react';
 import { useStore } from '@/lib/store';
 import { RANKS } from '@/lib/progress';
+import { useDialogFocus } from '@/lib/useDialogFocus';
 import { Button, RankBadge } from './ui';
 
 /* --------------------------------------------------------------- confetti */
@@ -177,6 +178,13 @@ export function Toasts() {
 
 export function LevelUpOverlay() {
   const { levelUpRank, dismissLevelUp } = useStore();
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  /* This covers the whole viewport but left the page behind it in the tab
+     order — the same gap the story overlay and the road chooser already had
+     fixed. A student who ranks up mid-drill could tab straight back into the
+     question they cannot see. */
+  useDialogFocus(dialogRef, levelUpRank !== null);
 
   useEffect(() => {
     if (levelUpRank === null) return;
@@ -206,13 +214,15 @@ export function LevelUpOverlay() {
 
   return (
     <div
+      ref={dialogRef}
       className="fixed inset-0 z-[110] flex cursor-pointer items-center justify-center overflow-hidden"
       style={{
         background: 'radial-gradient(circle at 50% 42%, rgba(46,37,26,.95), rgba(12,9,6,.97))',
       }}
       onClick={dismissLevelUp}
       role="dialog"
-      aria-label={`A new rank: ${rank.name}`}
+      aria-modal="true"
+      aria-label={`Rank up — ${rank.name}`}
     >
       {/* lantern rays sweeping the tent */}
       <div
@@ -226,31 +236,81 @@ export function LevelUpOverlay() {
         aria-hidden="true"
       />
 
-      <div className="relative px-6 text-center">
-        <div className="mx-auto w-fit animate-popIn">
-          <RankBadge rank={rank} size={96} />
+      {/* The impact. One flash, tinted to the rank rather than white, gone in
+          half a second — it exists to make the stamp land, and anything longer
+          becomes a strobe on a screen a teenager is holding at arm's length. */}
+      <div
+        className="pointer-events-none absolute inset-0 animate-flashOut"
+        /* `opacity: 0` is the base state, not the animation's business. The
+           keyframe opens at .55 and holds 0 at the end, so it overrides this
+           for exactly as long as it runs — and if it ever fails to apply, the
+           failure is a flash that never happens rather than a solid sheet of
+           rank colour parked over the whole screen forever. */
+        style={{ background: rank.color, opacity: 0 }}
+        aria-hidden="true"
+      />
+
+      {/* Scrollable, and sized off the shorter axis.
+
+          A phone held sideways is 380px tall. The old cinematic stacked badge,
+          eyebrow, name, tagline, next-rank line and button down the middle of
+          it, and the result — measured, at 740x380 — was the heading starting
+          16px above the top of the screen and "Onward" sitting 16px below the
+          bottom, inside a container with `overflow-hidden`. The only way out
+          was a stray tap on the backdrop, and nothing said so.
+
+          Type now scales off whichever axis is scarcer, and if it still does
+          not fit, the column scrolls rather than hiding its own exit. */}
+      <div className="relative max-h-full overflow-y-auto px-6 py-8 text-center [@media(max-height:520px)]:py-4">
+        {/* RANK UP, at the top and the largest thing on the screen.
+            The old version opened with a small "A new rank" eyebrow over the
+            rank's name, which is the same information delivered in a whisper:
+            you had to already know the seven rank names to understand that
+            something had been earned. The event now announces itself, and the
+            name of the rank is what you read second. */}
+        <div
+          className="heading animate-stamp text-[clamp(2.2rem,min(11vw,15vh),5.5rem)] font-black uppercase leading-none"
+          style={{
+            color: rank.color,
+            WebkitTextStroke: '2px rgba(0,0,0,.55)',
+            textShadow: `0 4px 0 rgba(0,0,0,.5), 0 0 46px ${rank.color}aa, 0 0 90px ${rank.color}55`,
+          }}
+        >
+          Rank up
         </div>
 
-        <div className="eyebrow mt-6">A new rank</div>
+        <div
+          className="mx-auto my-4 h-px w-40 sm:my-6 [@media(max-height:520px)]:my-2 animate-fadein"
+          style={{ background: `linear-gradient(90deg, transparent, ${rank.color}, transparent)` }}
+          aria-hidden="true"
+        />
 
-        <h2
-          className="heading mt-2 text-[clamp(2rem,6vw,3.4rem)] leading-tight"
-          style={{ color: rank.color, textShadow: `0 0 28px ${rank.color}66` }}
-        >
-          {rank.name}
-        </h2>
+        {/* Badge and name on one line from `sm` up. Stacked, the sequence ran
+            past the fold on a phone in landscape and the "Onward" button — the
+            only way out other than a stray tap — went with it. */}
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6 [@media(max-height:520px)]:gap-2">
+          <div className="w-fit animate-popIn [animation-delay:.34s]">
+            <RankBadge rank={rank} size={104} />
+          </div>
+          <h2
+            className="heading animate-popIn text-[clamp(1.6rem,min(5.5vw,8vh),3.2rem)] leading-tight [animation-delay:.44s]"
+            style={{ color: rank.color, textShadow: `0 0 28px ${rank.color}66` }}
+          >
+            {rank.name}
+          </h2>
+        </div>
 
-        <p className="mx-auto mt-4 max-w-md font-read text-[clamp(1.05rem,2.2vw,1.35rem)] italic leading-relaxed text-parchment-dim">
+        <p className="mx-auto mt-4 max-w-md sm:mt-5 [@media(max-height:520px)]:mt-2 font-read text-[clamp(1.05rem,2.2vw,1.35rem)] italic leading-relaxed text-parchment-dim">
           {rank.tagline}
         </p>
 
-        <div className="mt-6 font-script text-[13px] uppercase tracking-[0.18em] text-ink-faint">
+        <div className="mt-6 font-script text-[13px] [@media(max-height:520px)]:mt-3 uppercase tracking-[0.18em] text-ink-faint">
           {next
             ? `Next — ${next.name} at ${next.xp.toLocaleString()} XP`
             : 'The highest rank there is'}
         </div>
 
-        <Button variant="primary" size="lg" className="mt-8" onClick={dismissLevelUp}>
+        <Button variant="primary" size="lg" className="mt-6 sm:mt-8 [@media(max-height:520px)]:mt-4" onClick={dismissLevelUp}>
           Onward ▸
         </Button>
       </div>

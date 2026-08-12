@@ -34,6 +34,30 @@ import { ClearedSigil, CrownSigil, LockSigil, MasterSigil } from './Sigils';
 import { HeroSprite } from './HeroSprite';
 import { Art } from '@/components/Art';
 
+/** One footfall. Half of `walkHero`'s 0.62s cycle in `tailwind.config.js` —
+ *  the two are a pair, and changing one without the other puts the sound off
+ *  the step. */
+const STEP_MS = 310;
+
+/* Where the map last drew the traveller.
+ *
+ * The map has always animated `left`/`top` so that clearing a landmark walks
+ * him to the next one rather than teleporting him. It has also always had
+ * `initial={false}`, and between those two the walk never once happened: you
+ * clear a landmark on the *zone* screen, which unmounts the map, and by the
+ * time you come back the new position is simply where he starts. Measured, not
+ * guessed — sampling the traveller every 160ms across a return from a cleared
+ * zone showed the idle bob and a zero lean the entire time.
+ *
+ * So the map remembers where you last saw him, and a mount that finds him
+ * somewhere else plays the journey you earned.
+ *
+ * Module scope on purpose. Not React state, which dies with the map on every
+ * route change — the exact thing that has to survive. Not storage either: on a
+ * fresh page load this resets to null and no walk plays, which is right,
+ * because a walk is a thing you watch and you were not there. */
+let lastSeenAt: { x: number; y: number } | null = null;
+
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 3.4;
 
@@ -233,6 +257,55 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
     const maxY = Math.max(0, (h - box.h) / 2);
     return { zoom, x: clamp(next.x, -maxX, maxX), y: clamp(next.y, -maxY, maxY) };
   }, []);
+
+  /* --------------------------------------------------- the traveller walking
+   *
+   * The figure crosses the map on a spring whenever `current` moves, which is
+   * a journey of a second or two. Three things hang off knowing a journey is
+   * under way: the walk cycle, the footsteps, and which way he is facing.
+   *
+   * Motion reports when the spring starts and when it settles, so none of this
+   * is timed against a guess about how long the trip takes. */
+  /* Captured once, in the initialiser, before the effect below overwrites the
+     module-level record with where he is now. */
+  const [walkedFrom] = useState(() => lastSeenAt);
+  const journey =
+    walkedFrom && current && (walkedFrom.x !== current.x || walkedFrom.y !== current.y)
+      ? walkedFrom
+      : null;
+
+  const [walking, setWalking] = useState(false);
+  const [facing, setFacing] = useState(() => (journey && current && current.x < journey.x ? -1 : 1));
+  const lastX = useRef<number | null>(journey?.x ?? null);
+
+  useEffect(() => {
+    if (!current) return;
+    lastSeenAt = { x: current.x, y: current.y };
+    const from = lastX.current;
+    /* A tenth of a percent of map width. Under that the journey is essentially
+       vertical, and flipping on rounding noise would make him twitch. */
+    if (from !== null && Math.abs(current.x - from) > 0.1) setFacing(current.x > from ? 1 : -1);
+    lastX.current = current.x;
+  }, [current]);
+
+  useEffect(() => {
+    if (!walking) return;
+    /* One cue per contact pose — twice per `walkHero` cycle. An interval
+       rather than an animation event, because a CSS animation does not report
+       its own midpoint. Fired once up front so the sound lands on the first
+       footfall instead of 310ms into the walk.
+
+       Not gated on `reducedMotion`, deliberately. That preference is about
+       movement, and silencing audio because someone asked for less movement
+       is answering a question they did not ask — the mute button in the HUD
+       is the control for sound. (No mute check here either: every generator
+       in `sfx` already returns early when muted, and testing it here would
+       freeze the decision for the length of the walk instead of following
+       the toggle.) */
+    sfx.step();
+    const id = window.setInterval(() => sfx.step(), STEP_MS);
+    return () => window.clearInterval(id);
+  }, [walking]);
 
   /* The same clamp, but the edge pushes back instead of refusing.
    *
@@ -874,17 +947,20 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
 
         {/* The traveller.
 
-            He used to jump to the new landmark the instant one was cleared.
-            Animating left/top means he actually walks the distance, so clearing
-            a zone visibly advances you across the world instead of teleporting
-            you. Percent-based, so it stays correct at any zoom. */}
+            He walks the distance rather than jumping it, so clearing a zone
+            visibly advances you across the world. Percent-based, so it stays
+            correct at any zoom. `initial` is the landmark you last saw him
+            standing at — see `lastSeenAt`, and note that without it this
+            animation has never actually run. */}
         {current && (
           <m.div
             className="pointer-events-none absolute z-[15]"
             style={{ transform: 'translate(-50%, -100%)' }}
-            initial={false}
+            initial={journey ? { left: `${journey.x}%`, top: `${journey.y}%` } : false}
             animate={{ left: `${current.x}%`, top: `${current.y}%` }}
             transition={{ type: 'spring', stiffness: 55, damping: 18, mass: 1.1 }}
+            onAnimationStart={() => setWalking(true)}
+            onAnimationComplete={() => setWalking(false)}
           >
             {/* A pixel sprite, not a drawn mark. Three passes at drawing this
                 figure in vectors all lost the same thing: a face small enough
@@ -892,22 +968,49 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
                 is drawn *for* this size.
 
                 It is still keyed to the chosen hero, which is the point — the
-                painted `hero-char` cutout this replaced years-ago was one boy
-                with brown hair, so the chooser changed a picture on the profile
-                screen and nothing in the world.
+                painted `hero-char` cutout this replaced was one boy with brown
+                hair, so the chooser changed a picture on the profile screen
+                and nothing in the world.
 
                 46, against 34-unit landmark pins. A person should be a little
                 taller than a signpost, and on a phone the cover scale runs
                 under 1, so anything smaller lands near 30 screen pixels. The
                 sprite's own 176px never gets upscaled: even at MAX_ZOOM this
                 works out around 149, so the browser is always sampling down
-                and the edges stay clean. */}
-            <HeroSprite
-              hero={progress.hero}
-              height={46}
-              className="animate-bobHero select-none"
-              style={{ filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.55))' }}
-            />
+                and the edges stay clean.
+
+                Direction of travel is a lean, not a mirror. Mirroring is the
+                usual trick and it is wrong for this sprite: he is drawn facing
+                the viewer, so flipping him does not turn him to face anywhere
+                — it moves the staff to the other hand, which at this size
+                reads as a glitch rather than as turning. A front-facing figure
+                can still lean into the direction he is going, and that is the
+                cue that survives at 32 pixels.
+
+                Two elements, because a keyframe assigns `transform` outright:
+                a lean written on the same element as the walk cycle is simply
+                overwritten the instant the animation starts. Outer holds the
+                lean, inner does the walking, and the two compose. */}
+            <div
+              className="transition-transform duration-500 ease-out"
+              style={{
+                transform: `rotate(${walking ? facing * 3 : 0}deg)`,
+                transformOrigin: 'bottom center',
+              }}
+            >
+              <HeroSprite
+                hero={progress.hero}
+                height={46}
+                className={cx(
+                  'select-none',
+                  walking && !reducedMotion ? 'animate-walkHero' : 'animate-bobHero',
+                )}
+                style={{
+                  transformOrigin: 'bottom center',
+                  filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.55))',
+                }}
+              />
+            </div>
           </m.div>
         )}
       </div>

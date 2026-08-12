@@ -93,12 +93,19 @@ export function Art({
         width={entry.width}
         height={entry.height}
         loading={priority ? 'eager' : 'lazy'}
-        /* React 18's DOM typings know `fetchPriority`, so nothing here needs
-           suppressing. The line that used to sit above this disabled
-           `react/no-unknown-property` — a rule from `eslint-plugin-react`,
-           which was never installed, so for as long as it existed it was a
-           comment addressed to nobody. */
-        fetchPriority={priority ? 'high' : 'auto'}
+        /* Lowercase, and spread so TypeScript will take it.
+           React 18's *typings* know `fetchPriority`; its DOM renderer does
+           not, and camelCase props it does not recognise get a console warning
+           on every single image on every render — the app's noisiest warning
+           by a distance, and loud enough to bury a real one. React 19 adds
+           proper support, and this becomes `fetchPriority=` again then.
+           Lowercase passes through as a plain attribute, which is exactly the
+           HTML we wanted, and browsers read it identically.
+
+           (The line that used to sit here disabled `react/no-unknown-property`
+           — a rule from `eslint-plugin-react`, which was never installed, so
+           for as long as it existed it was a comment addressed to nobody.) */
+        {...{ fetchpriority: priority ? 'high' : 'auto' }}
         decoding="async"
         draggable={draggable}
         className={cx(!essential && 'art-heavy', className)}

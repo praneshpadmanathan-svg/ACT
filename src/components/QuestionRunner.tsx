@@ -225,13 +225,21 @@ export function QuestionRunner({
         return;
       }
       if (litTimer.current) window.clearTimeout(litTimer.current);
-      setIndex((i) => i + 1);
+      /* Clamped. `advance` refuses to step past the last question, but it
+         reads `isLast` from the render that queued it — so two advances
+         queued before either commits both pass the guard and walk the index
+         off the end. `question` is then undefined, and the early return
+         thirty lines down renders *nothing*: a blank screen with no controls
+         and no way back, which is the worst possible shape for an otherwise
+         harmless race. Landing on the last question instead leaves "See
+         results" sitting under the finger that caused it. */
+      setIndex((i) => Math.min(i + 1, questions.length - 1));
       setChosen(null);
       setRevealed(false);
       setLitCorrect(false);
       setStartedAt(Date.now());
     },
-    [isLast, onFinish],
+    [isLast, onFinish, questions.length],
   );
 
   /* Keyboard: A-D (or 1-4) to answer, Enter/Space to continue. */

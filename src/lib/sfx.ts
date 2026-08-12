@@ -313,6 +313,21 @@ export const sfx = {
     mallet(PENTA[5] * 2, 0.46, 0.12, 0.7);
   },
 
+  /** A footfall on a dirt road. Fired twice a second while the traveller is
+   *  crossing the map, so it has to be quiet enough to live under everything
+   *  else and varied enough not to become a metronome — three layers, all
+   *  jittered together off one factor so the pitch of the thud and the grit
+   *  move as one boot rather than three unrelated sounds.
+   *
+   *  Almost no reverb send. A step happens at your feet; the long tail the
+   *  bells and the fanfare use would put it across the room. */
+  step: () => {
+    const j = 0.86 + Math.random() * 0.28;
+    noise({ decay: 0.055 * j, gain: 0.05, type: 'lowpass', freq: 430 * j, wet: 0.08 });
+    noise({ decay: 0.028, gain: 0.02, type: 'bandpass', freq: 2600 * j, q: 1.6, wet: 0.06 });
+    voice({ freq: 96 * j, decay: 0.07, gain: 0.04, type: 'sine', cutoff: 300, wet: 0.08 });
+  },
+
   /** Page turn — used when a lesson or passage opens. */
   page: () => {
     noise({ decay: 0.16, gain: 0.075, type: 'highpass', freq: 1600, wet: 0.18 });
