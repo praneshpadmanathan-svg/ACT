@@ -27,7 +27,7 @@ import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import { Button } from '@/components/ui';
 import { NavGlyph, type GlyphName } from '@/components/NavGlyph';
-import { REGIONS } from '@/game/mapData';
+import { REGIONS, REGION_ORDER } from '@/game/mapData';
 import type { SectionId } from '@/types';
 import { Art } from '@/components/Art';
 import { NearViewport } from '@/components/NearViewport';
@@ -212,8 +212,30 @@ const STEPS: { n: string; title: string; detail: ReactNode }[] = [
 
 export function Landing() {
   const navigate = useNavigate();
-  const { continueAsGuest, progress } = useStore();
-  const returning = progress.xp > 0;
+  const { continueAsGuest, progress, hasStarted, playerName } = useStore();
+
+  /* "Have you been here before", not "have you scored any points".
+
+     This used to be `progress.xp > 0`, which is a different question and gets
+     the worst case wrong. Someone who has finished onboarding, picked a hero,
+     had the realm explained to them and set out — but has not yet answered a
+     question — has no XP. They came back the next day and the front door
+     greeted them as a total stranger: the sales pitch, "Enter the realm", "I
+     have an account". Their own account. Their own world, one click away,
+     behind a button that offered to start them a new one.
+
+     Having started and having a profile is what actually distinguishes a
+     returning player from a visitor, and neither of them can be true by
+     accident. */
+  const returning = hasStarted && Boolean(progress.profile);
+
+  /* Counted from the same content the map counts, so the greeting cannot
+     claim a total the world does not have. */
+  const cleared = Object.keys(progress.zonesCleared).length;
+  const totalLandmarks = REGION_ORDER.reduce(
+    (n, id) => n + (PATH_BY_ID[id]?.nodes.length ?? 0),
+    0,
+  );
 
   const begin = () => {
     sfx.achieve();
@@ -265,19 +287,48 @@ export function Landing() {
         <div className="absolute inset-0 bg-gradient-to-b from-leather-950/72 via-leather-950/45 to-leather-950" />
 
         <div className="shell relative z-10 pb-20 pt-28 text-center">
-          <div className="eyebrow mb-5">✦ The 2025+ Enhanced ACT</div>
+          {/* Two different people arrive at this door.
+
+              One has never heard of the app and needs to be told what it is.
+              The other has a world in progress and needs one thing: back in.
+              They were being handed the same pitch — a returning player read
+              an advert for a thing they already own, every single visit. The
+              artwork, the layout and everything below the fold are shared;
+              only the three lines that speak to you directly change. */}
+          <div className="eyebrow mb-5">
+            {returning ? '✦ The road is where you left it' : '✦ The 2025+ Enhanced ACT'}
+          </div>
 
           <h1 className="heading text-[clamp(2.4rem,7vw,4.4rem)] leading-[1.1] text-parchment-light">
-            Your climb to 36
-            <span className="mt-1 block text-gold-bright">starts here.</span>
+            {returning ? (
+              <>
+                Welcome back,
+                <span className="mt-1 block text-gold-bright">{playerName}.</span>
+              </>
+            ) : (
+              <>
+                Your climb to 36
+                <span className="mt-1 block text-gold-bright">starts here.</span>
+              </>
+            )}
           </h1>
 
           {/* The hero keeps its open composition — no veil over the artwork.
               Only the colour highlighting carries down from here. */}
           <p className="mx-auto mt-6 max-w-2xl font-read text-[clamp(1.05rem,2vw,1.3rem)] leading-relaxed text-parchment-dim">
-            Cross <Hl tone="cream">four regions</Hl>, master every skill the test asks for, and work{' '}
-            <Hl>{LIBRARY_STATS.totalQuestions.toLocaleString()}</Hl> real questions where{' '}
-            <Hl tone="cream">every answer is explained</Hl>.
+            {returning ? (
+              <>
+                <Hl>{cleared}</Hl> of <Hl tone="cream">{totalLandmarks}</Hl> landmarks taken, and{' '}
+                <Hl tone="cream">the Grey has not moved since you left</Hl>. Pick up where you
+                stopped.
+              </>
+            ) : (
+              <>
+                Cross <Hl tone="cream">four regions</Hl>, master every skill the test asks for, and
+                work <Hl>{LIBRARY_STATS.totalQuestions.toLocaleString()}</Hl> real questions where{' '}
+                <Hl tone="cream">every answer is explained</Hl>.
+              </>
+            )}
           </p>
 
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">

@@ -565,6 +565,12 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
           transformOrigin: 'center center',
           transition: dragging ? 'none' : 'transform .5s cubic-bezier(.22,1,.36,1)',
           opacity: ready ? 1 : 0,
+          /* Published so the hover cards can divide it back out. Everything in
+             this layer is a thing in the world and should grow when the world
+             does — except the labels, which are writing *about* the world and
+             have to stay the size type is meant to be read at. See `.pin-card`
+             in index.css. */
+          ['--map-scale' as string]: coverScale,
         }}
       >
         {/* Marked essential: this is the screen, not decoration for it.
@@ -891,8 +897,18 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
                 cutout is one white boy with brown hair; leaving it here meant
                 the avatar chooser changed a picture on the profile screen and
                 nothing in the world. */}
+            {/* Sized to the pins, not under them.
+
+                The default 26 left the traveller narrower than the 34-unit
+                landmark pins — the player was the smallest figure on their own
+                map, and on a phone, where the cover scale runs under 1, the
+                whole character came out around 21 screen pixels. A face cannot
+                survive that. Matching the pins costs nothing and puts the
+                person and the places they are walking between on the same
+                footing. */}
             <TravellerMark
               hero={progress.hero}
+              size={34}
               className="animate-bobHero select-none"
               style={{ filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.55))' }}
             />
