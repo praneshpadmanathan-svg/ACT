@@ -21,6 +21,7 @@ import {
   loadProgress,
   mergeProgress,
   mergeTally,
+  rankById,
   rankFor,
   rankProgress,
   recordAttempt,
@@ -254,9 +255,10 @@ describe('compositeOf', () => {
 describe('rankIndexFor / rankProgress', () => {
   it('places exactly-at-threshold XP in the rank it just reached, not the one before', () => {
     // A boundary value is the classic off-by-one spot.
-    const honorsThreshold = RANKS.find((r) => r.name === 'Honors')!.xp;
-    expect(rankFor(honorsThreshold).name).toBe('Honors');
-    expect(rankFor(honorsThreshold - 1).name).toBe('Scholar');
+    // Keyed by id, not name: the names are copy and have been rewritten once.
+    const lampbearer = rankById('lampbearer');
+    expect(rankFor(lampbearer.xp).id).toBe('lampbearer');
+    expect(rankFor(lampbearer.xp - 1).id).toBe('wayfinder');
   });
 
   it('caps at the top rank and reports full progress with no next rank', () => {
@@ -267,22 +269,22 @@ describe('rankIndexFor / rankProgress', () => {
   });
 
   it('reports fractional progress toward the next rank', () => {
-    const recruit = RANKS[0]!;
-    const scholar = RANKS[1]!;
-    const midpoint = recruit.xp + (scholar.xp - recruit.xp) / 2;
+    const first = RANKS[0]!;
+    const second = RANKS[1]!;
+    const midpoint = first.xp + (second.xp - first.xp) / 2;
     const result = rankProgress(midpoint);
     expect(result.pct).toBeCloseTo(0.5, 5);
-    expect(result.next?.name).toBe('Scholar');
+    expect(result.next?.id).toBe(second.id);
   });
 });
 
 describe('awardXP / recordAttempt rank-up detection', () => {
   it('reports rankedUp only when XP crosses into a new rank', () => {
-    const scholarThreshold = RANKS.find((r) => r.name === 'Scholar')!.xp;
-    const justBelow = progress({ xp: scholarThreshold - 5 });
+    const secondThreshold = RANKS[1]!.xp;
+    const justBelow = progress({ xp: secondThreshold - 5 });
 
-    const stillRecruit = awardXP(justBelow, 3);
-    expect(stillRecruit.rankedUp).toBe(false);
+    const stillFirstRank = awardXP(justBelow, 3);
+    expect(stillFirstRank.rankedUp).toBe(false);
 
     const crossedOver = awardXP(justBelow, 10);
     expect(crossedOver.rankedUp).toBe(true);

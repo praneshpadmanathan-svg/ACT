@@ -24,6 +24,11 @@ import { canonicalTopic } from './utils';
 /* ------------------------------------------------------------------- ranks */
 
 export interface Rank {
+  /* Stable, and separate from `name` on purpose. The sigils used to be keyed
+     by display name, which quietly made the name a piece of API: renaming a
+     rank silently dropped it to the fallback badge. Names are copy and copy
+     gets rewritten — this set has been rewritten once already. */
+  id: string;
   name: string;
   xp: number;
   color: string;
@@ -34,9 +39,27 @@ export interface Rank {
   tagline: string;
 }
 
+/* Seven ranks, named for the road.
+ *
+ * They used to be Recruit, Scholar, Honors, Distinction, Vanguard, Elite and
+ * Perfect 36 — an American honour roll dropped into a world with a plague, a
+ * mist, four sealed guardians and a summit. Every other noun the student meets
+ * belongs to the fiction; the one thing measuring them did not, and it read
+ * like a report card taped to the side of a game.
+ *
+ * The ladder now tracks what you are doing to the Grey. You start walking with
+ * no road, you learn the road, you carry your own light, you keep the road
+ * open behind you, you break what was sealed, the Grey learns your name, and
+ * then it is morning. Thresholds are untouched — nobody loses a rank over a
+ * rewrite — and the colours run night-to-sunrise across the top three.
+ *
+ * The taglines still have a job beyond flavour: rank six and seven say plainly
+ * where a student actually stands, because "Greybane" on its own does not tell
+ * anyone they are into the top tenth. */
 export const RANKS: Rank[] = [
   {
-    name: 'Recruit',
+    id: 'wanderer',
+    name: 'Wanderer',
     xp: 0,
     c1: '#e58a4e',
     c2: '#a4551f',
@@ -45,52 +68,62 @@ export const RANKS: Rank[] = [
     tagline: 'Every 36 starts here.',
   },
   {
-    name: 'Scholar',
+    id: 'wayfinder',
+    name: 'Wayfinder',
     xp: 900,
     c1: '#eef3fb',
     c2: '#9fb2cc',
     ring: '#ffffff',
     color: '#cdd9ec',
-    tagline: 'The habit is forming.',
+    tagline: 'You have stopped guessing which way. The habit is forming.',
   },
   {
-    name: 'Honors',
+    id: 'lampbearer',
+    name: 'Lampbearer',
     xp: 2400,
     c1: '#ffe07a',
     c2: '#dfa018',
     ring: '#fff3b0',
     color: '#ffd23e',
-    tagline: 'Consistency is your edge.',
+    tagline: 'Enough light to walk by, and it is your own.',
   },
   {
-    name: 'Distinction',
+    id: 'pathwarden',
+    name: 'Pathwarden',
     xp: 4800,
     c1: '#63f0e0',
     c2: '#1c94ab',
     ring: '#b6fff5',
     color: '#43e0e0',
-    tagline: 'Precision under pressure.',
+    tagline: 'The road behind you stays open. Precision under pressure.',
   },
   {
-    name: 'Vanguard',
+    id: 'gatebreaker',
+    name: 'Gatebreaker',
     xp: 8400,
     c1: '#c8aaff',
     c2: '#7a4fd0',
     ring: '#e6d8ff',
     color: '#c6a8ff',
-    tagline: 'Few make it this far.',
+    tagline: 'Sealed does not mean shut. Not to you.',
   },
   {
-    name: 'Elite',
+    id: 'greybane',
+    /* Was rose. Rose is a lovely colour and it does not say *bane* — this one
+       is the ember at the end of a long night, and it has to sit next to the
+       violet above it and the sunrise below without turning into the red the
+       app already uses for a wrong answer. */
+    name: 'Greybane',
     xp: 13500,
-    c1: '#ff8ec2',
-    c2: '#d43f8c',
-    ring: '#ffc9e5',
-    color: '#ff8ec2',
-    tagline: 'Top-decile territory.',
+    c1: '#ff8a6b',
+    c2: '#c9341f',
+    ring: '#ffc4ae',
+    color: '#ff8a6b',
+    tagline: 'The Grey has learned your name. Top-decile territory.',
   },
   {
-    name: 'Perfect 36',
+    id: 'daybreak',
+    name: 'Daybreak',
     xp: 21000,
     c1: '#ffe36e',
     c2: '#ff8c3b',
@@ -99,6 +132,15 @@ export const RANKS: Rank[] = [
     tagline: 'Nothing left to miss.',
   },
 ];
+
+/** Look a rank up by its stable id. Throws on an unknown one, deliberately —
+ *  every caller is a literal in this file, so a miss is a typo, not a runtime
+ *  condition, and a silent fallback would hide it. */
+export function rankById(id: string): Rank {
+  const rank = RANKS.find((r) => r.id === id);
+  if (!rank) throw new Error(`unknown rank id: ${id}`);
+  return rank;
+}
 
 export function rankIndexFor(xp: number): number {
   let idx = 0;
@@ -1273,21 +1315,27 @@ export const ACHIEVEMENTS: Achievement[] = [
     tier: 'gold',
     test: (p) => p.dayStreak >= 30,
   },
+  /* The two rank achievements. Their `id`s stay as they are: an id is what a
+     saved profile already holds, and renaming one would hand every existing
+     student a fresh "achievement unlocked" for something they earned months
+     ago. The names and thresholds read off RANKS instead of repeating it —
+     they were hardcoded 2400 and 13500, which is two more places for a
+     threshold change to be half-applied. */
   {
     id: 'rank-honors',
-    name: 'Honors',
-    detail: 'Reach the Honors rank.',
+    name: rankById('lampbearer').name,
+    detail: `Reach the ${rankById('lampbearer').name} rank.`,
     icon: 'trophy',
     tier: 'silver',
-    test: (p) => p.xp >= 2400,
+    test: (p) => p.xp >= rankById('lampbearer').xp,
   },
   {
     id: 'rank-elite',
-    name: 'Elite',
-    detail: 'Reach the Elite rank.',
+    name: rankById('greybane').name,
+    detail: `Reach the ${rankById('greybane').name} rank.`,
     icon: 'trophy',
     tier: 'gold',
-    test: (p) => p.xp >= 13500,
+    test: (p) => p.xp >= rankById('greybane').xp,
   },
 ];
 
