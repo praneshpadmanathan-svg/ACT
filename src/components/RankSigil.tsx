@@ -14,7 +14,7 @@
  * All seven share the construction so they read as one set:
  *
  *   - 64×64 viewBox, same optical weight, same 2.5 ink ring
- *   - light from the upper left, matching `BossArt` and `HeroAvatar`
+ *   - light from the upper left, matching `BossArt`
  *   - the rank's own `c1`/`c2` as the body gradient and `ring` as the metal
  *   - a device in near-white on top, because at 38px the device is the thing
  *     that actually differentiates them

@@ -31,7 +31,7 @@ import { m, PIN_SPRING, SPRING, useReducedMotion } from '@/lib/motion';
 import { MapFx } from './MapFx';
 import { PlagueLayer, TrailLayer } from './MapLayers';
 import { ClearedSigil, CrownSigil, LockSigil, MasterSigil } from './Sigils';
-import { TravellerMark } from './HeroAvatar';
+import { HeroSprite } from './HeroSprite';
 import { Art } from '@/components/Art';
 
 const MIN_ZOOM = 1;
@@ -886,29 +886,25 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
             animate={{ left: `${current.x}%`, top: `${current.y}%` }}
             transition={{ type: 'spring', stiffness: 55, damping: 18, mass: 1.1 }}
           >
-            {/* 26px, not the 54px this used to be. Composited against the
-                village at four candidate widths: at 54 the traveller stood as
-                tall as the cottages behind him. A pin marks the same spot, and
-                "Find my traveller" recentres on it, so they do not need to be
-                large to be found.
+            {/* A pixel sprite, not a drawn mark. Three passes at drawing this
+                figure in vectors all lost the same thing: a face small enough
+                to fit on the map is a face too small to be anyone. Pixel art
+                is drawn *for* this size.
 
-                Drawn rather than the painted `hero-char` cutout, so the
-                traveller on the map is the one the student chose. The painted
-                cutout is one white boy with brown hair; leaving it here meant
-                the avatar chooser changed a picture on the profile screen and
-                nothing in the world. */}
-            {/* Sized to the pins, not under them.
+                It is still keyed to the chosen hero, which is the point — the
+                painted `hero-char` cutout this replaced years-ago was one boy
+                with brown hair, so the chooser changed a picture on the profile
+                screen and nothing in the world.
 
-                The default 26 left the traveller narrower than the 34-unit
-                landmark pins — the player was the smallest figure on their own
-                map, and on a phone, where the cover scale runs under 1, the
-                whole character came out around 21 screen pixels. A face cannot
-                survive that. Matching the pins costs nothing and puts the
-                person and the places they are walking between on the same
-                footing. */}
-            <TravellerMark
+                46, against 34-unit landmark pins. A person should be a little
+                taller than a signpost, and on a phone the cover scale runs
+                under 1, so anything smaller lands near 30 screen pixels. The
+                sprite's own 176px never gets upscaled: even at MAX_ZOOM this
+                works out around 149, so the browser is always sampling down
+                and the edges stay clean. */}
+            <HeroSprite
               hero={progress.hero}
-              size={34}
+              height={46}
               className="animate-bobHero select-none"
               style={{ filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.55))' }}
             />

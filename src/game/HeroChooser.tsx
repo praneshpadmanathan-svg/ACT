@@ -23,7 +23,7 @@ import { useRef } from 'react';
 import { useStore } from '@/lib/store';
 import { cx } from '@/lib/utils';
 import { HEROES } from './heroes';
-import { HeroAvatar } from './HeroAvatar';
+import { HeroSprite } from './HeroSprite';
 
 export function HeroChooser({ compact = false }: { compact?: boolean }) {
   const { progress, updateProgress } = useStore();
@@ -80,12 +80,15 @@ export function HeroChooser({ compact = false }: { compact?: boolean }) {
                 : 'border-leather-700 bg-leather-900 hover:border-gold-deep',
             )}
           >
-            {/* The portrait reacts, so the grid is not eight blank stares:
-                whoever is currently chosen is pleased about it. */}
-            <HeroAvatar
+            {/* The same sprite that walks the map, so the choice is a preview
+                of the world rather than a portrait of somebody who then turns
+                out to look different once you are playing. The reaction that
+                used to be a pleased face is now the bob — one figure in a grid
+                of eight moving is more legible at 54px than a changed mouth. */}
+            <HeroSprite
               hero={hero}
-              size={compact ? 54 : 68}
-              expression={chosen ? 'pleased' : 'calm'}
+              height={compact ? 62 : 78}
+              className={cx('select-none', chosen && 'animate-bobHero')}
             />
             <span
               className={cx(

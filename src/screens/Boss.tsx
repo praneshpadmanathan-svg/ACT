@@ -22,7 +22,7 @@ import { Button, EmptyState } from '@/components/ui';
 import { RichText } from '@/components/RichText';
 import { burstConfetti } from '@/components/Feedback';
 import { BossArt, type BossState } from '@/game/BossArt';
-import { HeroAvatar } from '@/game/HeroAvatar';
+import { HeroSprite } from '@/game/HeroSprite';
 import { bossFor } from '@/game/bosses';
 import { REGIONS } from '@/game/mapData';
 import { m, SPRING_SNAP } from '@/lib/motion';
@@ -326,20 +326,31 @@ export function BossScreen({ section }: { section: string }) {
       >
         {/* you */}
         <div className="flex flex-col items-center">
-          {/* The duel is the one screen where the traveller has a face worth
-              drawing, and until now it drew somebody else's: the painted
-              `hero-char` cutout, ignoring the avatar the student picked. The
-              expression states existed on `HeroAvatar` from the start and had
-              nothing wired to them — a hero who takes a hit and doesn't
-              flinch is the whole reason finding 35 was raised. */}
-          <HeroAvatar
+          {/* The duel is the biggest the traveller ever gets, and it used to
+              draw somebody else entirely: the painted `hero-char` cutout,
+              ignoring the avatar the student picked.
+
+              The drawn avatar that replaced it had three expression states
+              wired to the fight. The sprite has one face, so those states move
+              into light and motion instead. `animate-heroHurt` was always
+              carrying most of the hurt read — at 84px on a phone, a changed
+              mouth is not what anyone is looking at; the flinch is. A red
+              bloom carries the rest, and a warm one marks a landed hit. */}
+          <HeroSprite
             hero={progress.hero}
-            expression={heroHurt ? 'hurt' : heroPleased ? 'pleased' : 'calm'}
+            height={140}
             className={cx(
               'h-auto w-[84px] select-none sm:w-[120px] lg:w-[140px]',
               heroHurt ? 'animate-heroHurt' : 'animate-bobHero',
             )}
-            style={{ filter: 'drop-shadow(0 8px 12px rgba(0,0,0,.55))' }}
+            style={{
+              filter: heroHurt
+                ? 'drop-shadow(0 8px 12px rgba(0,0,0,.55)) drop-shadow(0 0 9px rgba(198,58,44,.95))'
+                : heroPleased
+                  ? 'drop-shadow(0 8px 12px rgba(0,0,0,.55)) drop-shadow(0 0 9px rgba(217,168,56,.8))'
+                  : 'drop-shadow(0 8px 12px rgba(0,0,0,.55))',
+              transition: 'filter 180ms ease-out',
+            }}
           />
           <HealthPips label="You" value={playerHp} max={boss.playerHealth} color="#5fa86b" />
         </div>

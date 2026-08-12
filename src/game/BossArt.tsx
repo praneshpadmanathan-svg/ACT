@@ -15,7 +15,7 @@
  *   the hero cutout all disagreed about where the sun was. Every gradient in
  *   this file runs from upper-left to lower-right, and every rim light is on
  *   the upper-left edge, so these agree with the map they stand on and with
- *   `HeroAvatar.tsx`, which was drawn to the same rule.
+ *   `Sigils.tsx`, which is drawn to the same rule.
  *
  *   **Ink bleed.** Finding 7 asked for one outline treatment. A single uniform
  *   3px stroke is what makes vector art look like vector art: real ink soaks

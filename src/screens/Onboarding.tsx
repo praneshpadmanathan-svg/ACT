@@ -11,7 +11,7 @@ import type { OnboardingProfile, SectionId } from '@/types';
 import { Button, ProgressBar } from '@/components/ui';
 import { burstConfetti } from '@/components/Feedback';
 import { Art } from '@/components/Art';
-import { HeroAvatar } from '@/game/HeroAvatar';
+import { HeroSprite } from '@/game/HeroSprite';
 import { HeroChooser } from '@/game/HeroChooser';
 
 interface Step {
@@ -247,11 +247,10 @@ export function Onboarding() {
 
         {phase === 'plan' && (
           <div className="text-center">
-            <HeroAvatar
+            <HeroSprite
               hero={progress.hero}
-              size={110}
-              expression="pleased"
-              className="mx-auto select-none"
+              height={132}
+              className="mx-auto select-none animate-bobHero"
             />
             <h1 className="heading mb-6 mt-5 text-[22px] text-gold">Your plan is ready</h1>
 

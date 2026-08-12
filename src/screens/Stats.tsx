@@ -22,7 +22,7 @@ import { AchievementBadge } from '@/components/RankSigil';
 import { ScoreCaveat } from '@/components/ScoreCaveat';
 import { DiagnosticsPanel, DisplaySettings } from '@/components/Settings';
 import { HeroChooser } from '@/game/HeroChooser';
-import { HeroAvatar } from '@/game/HeroAvatar';
+import { HeroSprite } from '@/game/HeroSprite';
 
 /* ---------------------------------------------------------------- stats */
 
@@ -249,8 +249,11 @@ export function ProfileScreen() {
               badge alone, which meant the one picture of "you" in the whole
               app was a heraldic device rather than a person. */}
           <div className="flex items-end justify-center gap-1">
-            <HeroAvatar hero={progress.hero} size={92} />
-            <div className="-ml-6 mb-1">
+            <HeroSprite hero={progress.hero} height={104} />
+            {/* -6 when this sat beside a drawn avatar, which carried empty
+                padding either side. The sprite is cut to its own silhouette,
+                so the same pull put the badge on top of the staff arm. */}
+            <div className="-ml-2 mb-1">
               <RankBadge rank={rank} size={54} />
             </div>
           </div>
