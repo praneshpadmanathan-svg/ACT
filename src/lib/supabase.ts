@@ -18,8 +18,42 @@ const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
 
 export const cloudEnabled = Boolean(url && anonKey);
 
+/* Every request to Supabase gets a deadline.
+
+   None of them had one. `fetch` has no default timeout, so a request that is
+   accepted and then never answered — a paused free-tier project waking up, a
+   captive-portal wifi that swallows TLS, a phone that changed networks
+   mid-flight — leaves a promise that never settles. Every caller in this file
+   is written to handle a *failure*; not one of them can handle silence. The
+   symptom is the whole app frozen on its loading screen with nothing to tap.
+
+   20 seconds is well past a slow-but-working request on a phone, and well
+   short of a person's patience. A timeout surfaces as an `AbortError`, which
+   is a network failure like any other and already lands in the tri-state
+   error paths below. */
+export const REQUEST_TIMEOUT_MS = 20_000;
+
+/** Wrap a fetch so no request can outlive `ms`. Exported for its test. */
+export function withTimeout(base: typeof fetch, ms = REQUEST_TIMEOUT_MS): typeof fetch {
+  return (input, init) => {
+    const outer = init?.signal;
+    if (outer?.aborted) return base(input, init);
+    const ctrl = new AbortController();
+    const timer = setTimeout(
+      () => ctrl.abort(new DOMException('Request timed out', 'TimeoutError')),
+      ms,
+    );
+    // A caller's own abort (a React unmount, a retry) still has to win.
+    outer?.addEventListener('abort', () => ctrl.abort(outer.reason), { once: true });
+    return base(input, { ...init, signal: ctrl.signal }).finally(() => clearTimeout(timer));
+  };
+}
+
+const timedFetch: typeof fetch = (input, init) => withTimeout(fetch)(input, init);
+
 export const supabase: SupabaseClient | null = cloudEnabled
   ? createClient(url!, anonKey!, {
+      global: { fetch: timedFetch },
       auth: {
         persistSession: true,
         autoRefreshToken: true,

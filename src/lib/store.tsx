@@ -505,12 +505,29 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       writeRaw(STORAGE_KEYS.guest, '1');
       setHasStarted(true);
 
-      await syncWithCloud(user.id, name, base, claimGuest);
-    } else {
-      setUserId(null);
-      setPlayerName('Traveller');
-      setIdentity({ kind: 'guest' });
+      /* Let the app in *now*, and sync behind it.
+
+         `authReady` used to be set after this await, which quietly redefined
+         it from "we know who you are" — all of which is already decided above,
+         from disk — into "the cloud has finished talking to us". So a signed-in
+         student on a slow train, or against a Supabase project that had gone to
+         sleep, sat on the boot screen watching a compass spin for as long as
+         the network felt like taking, with no way past and nothing to read.
+         Their whole world was on the device the entire time.
+
+         Nothing downstream needs the sync to have landed: `progress` is already
+         this account's saved progress, the merge writes state again when it
+         returns, and the two things the sync can report — `syncing` and
+         `lastSyncError` — are both surfaced in the UI where a person can see
+         them. Not awaited, so a hung request costs a stale number on a badge
+         instead of the entire app. */
+      setAuthReady(true);
+      void syncWithCloud(user.id, name, base, claimGuest);
+      return;
     }
+    setUserId(null);
+    setPlayerName('Traveller');
+    setIdentity({ kind: 'guest' });
     setAuthReady(true);
   }, [syncWithCloud]);
 
@@ -523,6 +540,26 @@ export function StoreProvider({ children }: { children: ReactNode }) {
        just the well-typed one the function is written to return. Guarded for
        the same reason: `refreshAuth()` below is what resolves `authReady`,
        and it must still run even if the redirect never settles. */
+    /* A deadline on the boot screen itself.
+
+       Requests now carry their own timeout (supabase.ts), and the sync no
+       longer blocks this path — but `authReady` gates the only thing a first
+       visitor can see, and "the app shows nothing at all" is too expensive a
+       failure to leave resting on every call downstream continuing to behave.
+       If the answer is not back in eight seconds, open the app as a guest and
+       let `refreshAuth` upgrade the session whenever it finally arrives.
+
+       Guest is the safe side to fail to: it is what an unconfigured build and
+       an under-13 both run as, every screen works in it, and nothing is
+       written over — progress is per identity, so the signed-in world is still
+       on disk untouched when the session lands. */
+    const openAnyway = setTimeout(() => {
+      setAuthReady((ready) => {
+        if (!ready) reportWarn('auth.bootstrap', 'timed out; opening as guest');
+        return true;
+      });
+    }, 8_000);
+
     void (async () => {
       let redirect: Awaited<ReturnType<typeof consumeAuthRedirect>> = null;
       try {
@@ -532,6 +569,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       }
       if (redirect) setAuthRedirect(redirect);
       await refreshAuth();
+      clearTimeout(openAnyway);
     })();
 
     if (!supabase) return;
