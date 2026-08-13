@@ -9,7 +9,7 @@
  * So each rank gets its own silhouette, and the silhouettes escalate: a
  * notched wooden token, a book plaque, a laurelled shield, a cut gem, a
  * winged spearhead, a starburst, and finally a crowned sun. You can tell
- * Gatebreaker from Greybane across a room, in greyscale, with the colours
+ * Proofbreaker from Doubtbane across a room, in greyscale, with the colours
  * gone.
  *
  * All seven share the construction so they read as one set:
@@ -44,7 +44,7 @@ type Draw = (device: string) => React.ReactNode;
 
 /* ------------------------------------------------------------- the shapes */
 
-/** Drifter — a wooden token with one notch cut out of the rim. Deliberately
+/** Inkling — a wooden token with one notch cut out of the rim. Deliberately
  *  the plainest thing in the set: rank one should look like the start. */
 const recruit: { body: string; inner?: string; device: Draw } = {
   body: 'M32 4a28 28 0 1 1 0 56 28 28 0 0 1 0-56Z',
@@ -57,7 +57,7 @@ const recruit: { body: string; inner?: string; device: Draw } = {
   ),
 };
 
-/** Pathfinder — a squared plaque holding an open book. */
+/** Pagewalker — a squared plaque holding an open book. */
 const scholar = {
   body: 'M10 8h44a2 2 0 0 1 2 2v38l-24 12L8 48V10a2 2 0 0 1 2-2Z',
   inner: 'M15 14h34v31L32 54 15 45Z',
@@ -70,7 +70,7 @@ const scholar = {
   ),
 };
 
-/** Torchbearer — the classic shield, but now with laurels, so it is the *third*
+/** Quillbearer — the classic shield, but now with laurels, so it is the *third*
  *  thing in a sequence rather than the only idea in the set. */
 const honors = {
   body: 'M32 4 L54 12 V32 C54 45 44 55 32 60 C20 55 10 45 10 32 V12 Z',
@@ -87,7 +87,7 @@ const honors = {
   ),
 };
 
-/** Roadwarden — a cut gem. Facets rather than a flat field, which is the
+/** Lorewarden — a cut gem. Facets rather than a flat field, which is the
  *  first badge in the set that catches light on its own. */
 const distinction = {
   body: 'M32 3 L58 22 L48 56 H16 L6 22 Z',
@@ -103,7 +103,7 @@ const distinction = {
   ),
 };
 
-/** Gatebreaker — a winged spearhead. First one in the set that points. */
+/** Proofbreaker — a winged spearhead. First one in the set that points. */
 const vanguard = {
   body: 'M32 3 L52 16 L54 40 L32 61 L10 40 L12 16 Z',
   inner: 'M32 11 L46 20 L47.5 38 L32 53 L16.5 38 L18 20 Z',
@@ -116,7 +116,7 @@ const vanguard = {
   ),
 };
 
-/** Greybane — an eight-pointed burst inside a ring. Radial where everything
+/** Doubtbane — an eight-pointed burst inside a ring. Radial where everything
  *  before it was axial. */
 const elite = {
   body:
@@ -134,7 +134,7 @@ const elite = {
   ),
 };
 
-/** Stormcrown — a crowned sun. The only one with rays outside the ring, so
+/** Sagecrown — a crowned sun. The only one with rays outside the ring, so
  *  the last rank is the only badge that does not fit in the same circle. */
 const perfect = {
   body: 'M32 6a26 26 0 1 1 0 52 26 26 0 0 1 0-52Z',
@@ -176,16 +176,17 @@ const perfect = {
    These are the original SVG shapes and they are placeholders now: the names
    have moved somewhere harder than the drawings have. A generated pixel-art
    sheet is specced in `art-src/PROMPTS.md` to replace them — a warhammer
-   through a portcullis for Gatebreaker, a storm-wreathed crown for
-   Stormcrown — and until it lands the gem and the sun hold those slots. */
+   through a stone tablet of equations for Proofbreaker, a crown of stacked
+   tomes for Sagecrown — and until it lands the gem and the sun hold those
+   slots. */
 const SIGILS: Record<string, typeof scholar> = {
-  drifter: recruit as typeof scholar,
-  pathfinder: scholar,
-  torchbearer: honors,
-  roadwarden: distinction,
-  gatebreaker: vanguard,
-  greybane: elite,
-  stormcrown: perfect,
+  inkling: recruit as typeof scholar,
+  pagewalker: scholar,
+  quillbearer: honors,
+  lorewarden: distinction,
+  proofbreaker: vanguard,
+  doubtbane: elite,
+  sagecrown: perfect,
 };
 
 export function RankSigil({ rank, size = 56 }: { rank: SigilColors; size?: number }) {

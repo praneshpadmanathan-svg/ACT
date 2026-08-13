@@ -39,33 +39,42 @@ export interface Rank {
   tagline: string;
 }
 
-/* Seven ranks, named for what you are doing to the Grey.
+/* Seven ranks, named for what studying is turning you into.
+ *
+ * Three passes to get here, and each one was wrong in a way worth writing down
+ * so nobody re-proposes it.
  *
  * They started as Recruit, Scholar, Honors, Distinction, Vanguard, Elite and
  * Perfect 36 — an American honour roll dropped into a world with a plague, a
- * mist, four sealed guardians and a summit. Every other noun the student meets
- * belongs to the fiction; the one thing measuring them did not, and it read
- * like a report card taped to the side of a game.
+ * mist, four sealed guardians and a summit. Academic, yes, but as a *report
+ * card taped to the side of a game*: it named the grading system rather than
+ * the student, and "Perfect 36" put a number at the top of the wall that most
+ * of the people reading it will not reach.
  *
- * The first rewrite fixed the setting and undershot the register: Wanderer and
- * Lampbearer and Daybreak are the vocabulary of a quiet novel, and this is a
- * rank ladder a fifteen-year-old is meant to want to climb. A rank should hit
- * like a rank. So they are compounds now, each one a verb aimed at the Grey —
- * you drift, you find the road, you carry fire, you hold the road, you break
- * what was shut, you become the thing the Grey loses to, and then you are
- * crowned. Hard consonants, no abstractions, and the top of the ladder is a
- * title rather than a time of day.
+ * Pass two ran to the far end — Wanderer, Lampbearer, Daybreak — which fixed
+ * the setting and lost the subject. Pass three hardened the register into game
+ * compounds (Drifter, Gatebreaker, Stormcrown) and they hit properly, but by
+ * then nothing on the ladder had anything to do with sitting down with a book.
+ * A student climbing it was being told they were becoming a warrior.
  *
- * Thresholds and colours are untouched across both rewrites — nobody loses a
- * rank, and nobody's badge changes hue, over a copy change.
+ * So: the game skeleton from pass three, kept exactly — the same escalating
+ * suffixes in the same order, -walker, -bearer, -warden, -breaker, -bane,
+ * -crown — with a scholar's noun bolted to the front of each. Inkling,
+ * Pagewalker, Quillbearer, Lorewarden, Proofbreaker, Doubtbane, Sagecrown. It
+ * still reads as a rank ladder out loud, and every rank on it is a thing you
+ * become by reading, not by fighting. Doubt is the enemy at rank six because
+ * doubt is the actual enemy in a timed test.
+ *
+ * Thresholds and colours are untouched across all three rewrites — nobody
+ * loses a rank, and nobody's badge changes hue, over a copy change.
  *
  * The taglines still have a job beyond flavour: rank six and seven say plainly
- * where a student actually stands, because "Greybane" on its own does not tell
- * anyone they are into the top tenth. */
+ * where a student actually stands, because "Doubtbane" on its own does not
+ * tell anyone they are into the top tenth. */
 export const RANKS: Rank[] = [
   {
-    id: 'drifter',
-    name: 'Drifter',
+    id: 'inkling',
+    name: 'Inkling',
     xp: 0,
     c1: '#e58a4e',
     c2: '#a4551f',
@@ -74,38 +83,38 @@ export const RANKS: Rank[] = [
     tagline: 'Every 36 starts here.',
   },
   {
-    id: 'pathfinder',
-    name: 'Pathfinder',
+    id: 'pagewalker',
+    name: 'Pagewalker',
     xp: 900,
     c1: '#eef3fb',
     c2: '#9fb2cc',
     ring: '#ffffff',
     color: '#cdd9ec',
-    tagline: 'You do not guess the road any more. The habit is forming.',
+    tagline: 'You do not guess any more. The habit is forming.',
   },
   {
-    id: 'torchbearer',
-    name: 'Torchbearer',
+    id: 'quillbearer',
+    name: 'Quillbearer',
     xp: 2400,
     c1: '#ffe07a',
     c2: '#dfa018',
     ring: '#fff3b0',
     color: '#ffd23e',
-    tagline: 'You carry your own fire now.',
+    tagline: 'You have stopped needing the answer key.',
   },
   {
-    id: 'roadwarden',
-    name: 'Roadwarden',
+    id: 'lorewarden',
+    name: 'Lorewarden',
     xp: 4800,
     c1: '#63f0e0',
     c2: '#1c94ab',
     ring: '#b6fff5',
     color: '#43e0e0',
-    tagline: 'The road behind you stays open. Precision under pressure.',
+    tagline: 'Nothing you have learned slips back. Precision under pressure.',
   },
   {
-    id: 'gatebreaker',
-    name: 'Gatebreaker',
+    id: 'proofbreaker',
+    name: 'Proofbreaker',
     xp: 8400,
     c1: '#c8aaff',
     c2: '#7a4fd0',
@@ -114,24 +123,26 @@ export const RANKS: Rank[] = [
     tagline: 'Sealed does not mean shut. Not to you.',
   },
   {
-    id: 'greybane',
+    id: 'doubtbane',
     /* Was rose. Rose is a lovely colour and it does not say *bane* — this one
        is the ember at the end of a long night, and it has to sit next to the
        violet above it and the sunrise below without turning into the red the
        app already uses for a wrong answer. */
-    name: 'Greybane',
+    name: 'Doubtbane',
     xp: 13500,
     c1: '#ff8a6b',
     c2: '#c9341f',
     ring: '#ffc4ae',
     color: '#ff8a6b',
-    tagline: 'The Grey has learned your name. Top-decile territory.',
+    tagline: 'Doubt does not survive contact with you. Top-decile territory.',
   },
   {
-    id: 'stormcrown',
-    /* Was Daybreak. A sunrise is a thing that happens to you; a crown is a
-       thing you take. Same gold — the colour was never the problem. */
-    name: 'Stormcrown',
+    id: 'sagecrown',
+    /* Was Daybreak, then Stormcrown. A sunrise is a thing that happens to you
+       and a storm is a thing that happens to everyone else; this is the one
+       you are handed for knowing. Same gold throughout — the colour was never
+       the problem. */
+    name: 'Sagecrown',
     xp: 21000,
     c1: '#ffe36e',
     c2: '#ff8c3b',
@@ -1331,19 +1342,19 @@ export const ACHIEVEMENTS: Achievement[] = [
      threshold change to be half-applied. */
   {
     id: 'rank-honors',
-    name: rankById('torchbearer').name,
-    detail: `Reach the ${rankById('torchbearer').name} rank.`,
+    name: rankById('quillbearer').name,
+    detail: `Reach the ${rankById('quillbearer').name} rank.`,
     icon: 'trophy',
     tier: 'silver',
-    test: (p) => p.xp >= rankById('torchbearer').xp,
+    test: (p) => p.xp >= rankById('quillbearer').xp,
   },
   {
     id: 'rank-elite',
-    name: rankById('greybane').name,
-    detail: `Reach the ${rankById('greybane').name} rank.`,
+    name: rankById('doubtbane').name,
+    detail: `Reach the ${rankById('doubtbane').name} rank.`,
     icon: 'trophy',
     tier: 'gold',
-    test: (p) => p.xp >= rankById('greybane').xp,
+    test: (p) => p.xp >= rankById('doubtbane').xp,
   },
 ];
 

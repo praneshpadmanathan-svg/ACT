@@ -44,52 +44,65 @@ re-checking the key.
 Not yet generated. This is the prompt to use, and the notes below are the
 constraints it has to satisfy for a slicing script to be worth writing.
 
-The ranks and their colours are in `src/lib/progress.ts` (`RANKS`). The badges
-are currently drawn as SVG in `src/components/RankSigil.tsx`, and those shapes
-are a *softer* set than this — a book plaque, a laurel wreath, a crowned sun.
-They came from the first, more literary version of the ladder. This prompt is
-deliberately not a transcription of them: the names got harder, so the art has
-to. Only the colours carry over unchanged, because a badge that changes hue
-makes a returning student think they lost something.
+The ranks and their colours are in `src/lib/progress.ts` (`RANKS`); the reasoning
+behind the names is in the comment above them. The badges are currently drawn as
+SVG in `src/components/RankSigil.tsx` and those shapes are placeholders — they
+were drawn for an earlier, softer ladder.
+
+The brief this prompt is written against: **heavy game-UI metal, scholar's
+objects**. Every emblem is a piece of study equipment — ink, pages, a quill, a
+tome, a slate — rendered as ranked-ladder loot rather than as stationery. That
+is the whole trick, and it is what keeps the set from sliding back into either
+of the two failure modes the names went through: a report card, or a warrior's
+kit that has nothing to do with reading.
+
+Only the seven colour pairs carry over unchanged, because a badge that changes
+hue makes a returning student think they lost something.
 
 > A sprite sheet of seven pixel-art rank emblems for a fantasy video game, in a
 > single horizontal row, evenly spaced, each emblem centred in its own square
 > cell with clear space around it, on a flat solid magenta background (#FF00FF)
 > with no checkerboard and no shadows. Chunky game-UI badges — heavy dark metal
-> frames, riveted edges, weapons and beast-parts, the look of a ranked ladder in
-> a dungeon crawler. Left to right the seven emblems are:
+> frames, riveted edges, the look of a ranked ladder in a dungeon crawler — but
+> every emblem is built around a scholar's object: ink, pages, a quill, a tome,
+> a slate. Left to right the seven emblems are:
 >
-> 1. **Drifter** — a chipped, dented iron ring hung on a scrap of leather cord,
->    empty in the middle except for a single worn boot-print stamped into it.
->    Weathered orange-brown metal (#e58a4e into #a4551f). Deliberately the
->    poorest, plainest object in the row: no frame, no ornament, cheap metal.
-> 2. **Pathfinder** — an arrowhead-shaped iron badge, point up, with a compass
->    needle set into it and a broken-off trail marker crossed behind. Cold
->    silver-white steel (#eef3fb into #9fb2cc).
-> 3. **Torchbearer** — a squat iron shield gripping a burning torch, the flame
->    breaking up over the top edge of the shield in chunky pixel tongues. Warm
->    gold and fire (#ffe07a into #dfa018).
-> 4. **Roadwarden** — a heavy tower shield with two spears crossed behind it and
->    a faceted crystal bolted into its centre, teal (#63f0e0 into #1c94ab).
-> 5. **Gatebreaker** — a two-handed warhammer smashing through a portcullis, the
->    bars bent and snapped outward around the head, chunks of iron flying.
->    Violet (#c8aaff into #7a4fd0).
-> 6. **Greybane** — a cracked grey horned skull with a sword driven down through
->    it, set inside an eight-pointed spiked burst. Ember orange-red (#ff8a6b
->    into #c9341f).
-> 7. **Stormcrown** — a jagged iron crown, spikes uneven and battle-notched,
->    with forked lightning cracking out of it to left and right past the edges
->    of the emblem. Bright gold (#ffe36e into #ff8c3b). No sun, no sunburst, no
->    halo, no rays — lightning only.
+> 1. **Inkling** — a chipped clay ink pot, cracked down one side, with a single
+>    fat ink blot spilling over its lip. Weathered orange-brown (#e58a4e into
+>    #a4551f). Deliberately the poorest, plainest object in the row: no frame,
+>    no metal, no ornament.
+> 2. **Pagewalker** — an arrowhead-shaped steel badge, point up, made of a
+>    folded page with a boot-print pressed into it and a ribbon bookmark
+>    trailing from the bottom point. Cold silver-white steel (#eef3fb into
+>    #9fb2cc).
+> 3. **Quillbearer** — a squat iron shield gripping an upright quill whose
+>    feathered tip is on fire, the flame breaking up over the top edge of the
+>    shield in chunky pixel tongues. Warm gold and fire (#ffe07a into #dfa018).
+> 4. **Lorewarden** — a heavy tower shield with a thick chained tome bolted to
+>    its face and two long pens crossed behind it like spears. A faceted teal
+>    crystal set as the tome's clasp. Teal (#63f0e0 into #1c94ab).
+> 5. **Proofbreaker** — a two-handed warhammer smashing down through a stone
+>    slate covered in carved geometry lines, the slate split and shards flying
+>    outward around the hammer head. Violet (#c8aaff into #7a4fd0).
+> 6. **Doubtbane** — a heavy sword driven straight down through a cracked stone
+>    question-mark carving, splitting it, the whole thing set inside an
+>    eight-pointed spiked burst. Ember orange-red (#ff8a6b into #c9341f).
+> 7. **Sagecrown** — a crown built out of stacked closed books, their spines
+>    forming the band and their fore-edges the uneven points, one open book set
+>    at the front of it, with forked lightning cracking out to left and right
+>    past the edges of the emblem. Bright gold (#ffe36e into #ff8c3b). No sun,
+>    no sunburst, no halo, no rays — lightning only.
 >
 > All seven share one construction so they read as one set: the same optical
 > weight and the same square footprint, a dark ink outline of the same thickness
 > around every emblem, a brighter rim highlight along the upper left where the
-> light falls, and the metal in each rank's own two colours. Escalating menace
-> and ornament from left to right — emblem one is a piece of junk and emblem
-> seven is a trophy — but never escalating size. Chunky readable pixels, no
-> anti-aliasing, no dithering, no gradients, no glow. No text, no numbers, no
-> roman numerals, no ribbons or banners, no laurel wreaths, no books.
+> light falls, and the metal in each rank's own two colours. Escalating weight
+> and ornament from left to right — emblem one is a cracked pot and emblem seven
+> is a trophy — but never escalating size. Chunky readable pixels, no
+> anti-aliasing, no dithering, no gradients, no glow. No lettering, no numbers,
+> no roman numerals, no ribbons or banners, no laurel wreaths, no owls, no
+> graduation caps, no scrolls of text. The carved question mark on emblem six is
+> the only glyph anywhere in the sheet.
 
 **Why one row and not a grid.** Seven does not divide into a rectangle, so any
 grid leaves a ragged cell and the slicer has to know where the hole is. Cutting
@@ -98,10 +111,17 @@ a script to find.
 
 **Why magenta and not "transparent".** Asking for a transparent background gets
 a painted checkerboard, as it did for the travellers. That was keyable there
-only because no traveller pixel was light and neutral — and half of these badges
-are metal, so silver, near-white devices and pale rim highlights are exactly the
-pixels a neutral-and-light key would eat. `#FF00FF` appears nowhere in the rank
-palette, so keying on it cannot take a badge with it.
+only because no traveller pixel was light and neutral — and these badges are
+steel, stone and paper, so silver plate, pale slate and near-white pages are
+exactly the pixels a neutral-and-light key would eat. `#FF00FF` appears nowhere
+in the rank palette, so keying on it cannot take a badge with it.
+
+**Why the "no lettering" line is worth keeping even though emblem six has a
+question mark.** Books, slates and pages are the four things an image model is
+most likely to cover in scribbled fake text, and fake text at 38px is noise that
+survives every downscale. The question mark is called out as the single
+exception so the instruction stays absolute everywhere else rather than becoming
+a suggestion.
 
 **Target size.** About 200px per cell, ~1400x200 for the row; the badges render
 at 38px in the rank list and 104px in the rank-up cinematic, so 200 leaves room
