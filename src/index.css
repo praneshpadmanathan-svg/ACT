@@ -1603,14 +1603,22 @@
     }
   }
 
-  /* leaves lifting off the canopy */
+  /* Leaves lifting off the canopy.
+
+     This rule used to *be* the leaf: a lozenge cut with
+     `border-radius: 40% 60% 40% 60%` and filled with one flat green. At four
+     screen pixels that is most of the way there, and it was still the one thing
+     on a hand-painted map that read as geometry. It is a real sprite now — see
+     `Leaves` in `MapFx.tsx` — so this keeps the motion and lets the art be art.
+     Width arrives inline, per leaf, since they are no longer all one size. */
   .mapfx-leaf {
-    width: 0.5%;
-    aspect-ratio: 1.6;
-    border-radius: 40% 60% 40% 60%;
-    background: #6d9a4e;
     opacity: 0;
     animation: fx-leaf ease-in-out infinite;
+  }
+  .mapfx-leaf img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
   @keyframes fx-leaf {
     0% {

@@ -19,6 +19,9 @@
 import { memo } from 'react';
 import { seeded } from '@/lib/utils';
 import { CLOUDS } from '@/game/mapData';
+import particleArt from '@/particleArt.json';
+
+const PARTICLES = particleArt as Record<string, { width: number; height: number; src: string }>;
 
 /* -------------------------------------------------------------- waterfall */
 
@@ -542,25 +545,84 @@ function Waves() {
 
 /* ------------------------------------------------------------------- wind */
 
-/** Leaves lifting off the canopy and drifting across the forest. */
+/* Leaves lifting off the canopy and drifting across the forest.
+ *
+ * These were ten identical green lozenges made of `border-radius`. They are now
+ * drawn sprites, cut from `art-src/foliage-sheet.png` by
+ * `scripts/build-foliage.mjs`.
+ *
+ * The mix is not random across the six available leaves. It is mostly the two
+ * broadleaf greens, because a canopy shedding is mostly one kind of tree, and
+ * because the flat and edge-on views of the *same* leaf are what sell a leaf
+ * turning over as it falls. The curled one, the dry one and the blossom petal
+ * are seasoning at roughly one in five. The seed-fluff appears once, and earns
+ * its place by falling unlike everything else — the eye goes to the one that
+ * does not match.
+ *
+ * Eighteen rather than ten: they are smaller and more varied now, so the same
+ * count read as sparse. */
+const LEAF_MIX = [
+  'leaf-flat',
+  'leaf-edge',
+  'leaf-flat',
+  'leaf-curl',
+  'leaf-edge',
+  'leaf-flat',
+  'leaf-dry',
+  'leaf-edge',
+  'leaf-flat',
+  'petal',
+  'leaf-curl',
+  'leaf-flat',
+  'leaf-edge',
+  'leaf-dry',
+  'leaf-flat',
+  'seed-fluff',
+  'leaf-edge',
+  'leaf-curl',
+];
+
 function Leaves() {
   const rng = seeded(1201);
   return (
     <>
-      {Array.from({ length: 10 }, (_, i) => (
-        <span
-          key={i}
-          className="mapfx-leaf"
-          style={{
-            left: `${14 + rng() * 52}%`,
-            top: `${25 + rng() * 12}%`,
-            animationDelay: `${rng() * 14}s`,
-            animationDuration: `${9 + rng() * 7}s`,
-            ['--lift' as string]: `${-6 - rng() * 6}%`,
-            ['--sway' as string]: `${8 + rng() * 14}%`,
-          }}
-        />
-      ))}
+      {LEAF_MIX.map((id, i) => {
+        const art = PARTICLES[id];
+        if (!art) return null;
+
+        /* Sized by *longest side*, not by width.
+           Normalising on width makes the edge-on leaf — 9 across against 40
+           tall — come out a fifth the size of the others and read as a hair
+           rather than as a leaf seen side-on. Giving every sprite the same
+           longest side and letting width follow its own aspect keeps them all
+           the same leaf, turning.
+
+           Kept out of the `style` block below on purpose: `check:anim` looks
+           for an inline `animationDuration` within 400 characters of the
+           class name, and a comment this long in between hides it and fails
+           the build. That check is load-bearing — this exact class declares
+           `animation: fx-leaf ease-in-out infinite` with no time in it, so
+           without an inline duration it computes to 0s and never runs. */
+        const width = (1.0 + rng() * 0.9) * (art.width / Math.max(art.width, art.height));
+
+        return (
+          <span
+            key={i}
+            className="mapfx-leaf"
+            style={{
+              left: `${14 + rng() * 52}%`,
+              top: `${25 + rng() * 12}%`,
+              width: `${width}%`,
+              animationDelay: `${rng() * 14}s`,
+              animationDuration: `${9 + rng() * 7}s`,
+              ['--lift' as string]: `${-6 - rng() * 6}%`,
+              ['--sway' as string]: `${8 + rng() * 14}%`,
+            }}
+          >
+            <img src={art.src} alt="" decoding="async" draggable={false} />
+          </span>
+        );
+      })}
     </>
   );
 }

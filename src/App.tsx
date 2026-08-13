@@ -9,6 +9,7 @@ import { TopBar } from '@/components/Shell';
 import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
 import { StoryOverlay } from '@/game/StoryOverlay';
 import { Vignette } from '@/components/Vignette';
+import loadingScene from '@/sceneArt.json';
 
 /* The front door, and only the front door.
  *
@@ -185,19 +186,36 @@ export default function App() {
   }, [authRedirect, clearAuthRedirect, route.name, progress.profile, navigate]);
 
   if (!authReady) {
-    /* The cold-start screen. It was the word "Loading…" on a dark field —
-       the one screen every single visitor sees, and the only one with no art
-       on it at all. A compass whose needle is actually turning says the same
-       thing, in the world's own voice, and tells you the app has not hung.
+    /* The cold-start screen — the one screen every single visitor sees.
 
-       `role="status"` because a sighted user gets the spinning needle and a
-       screen-reader user was getting nothing. */
+       It has been three things. First the word "Loading…" on a dark field.
+       Then a drawn compass with "Finding your place" under it, which was
+       better and still had the problem that sank it: a caption explaining a
+       loading screen is a caption nobody wants to read twice, and this one
+       greets you before you have done anything at all.
+
+       Now it is one painted object and no words. A lit lantern beside an open
+       compass says *waiting, in this world* without asking to be read, and the
+       breathing animation carries the "not hung" signal the turning needle used
+       to carry.
+
+       The copy is gone from the screen, not from the accessibility tree.
+       `role="status"` with nothing in it announces nothing, so a screen-reader
+       user would have been handed silence — which is precisely the failure the
+       caption was added to fix. It moves to `sr-only` instead. */
     return (
-      <div className="flex min-h-dvh flex-col items-center justify-center gap-4" role="status">
-        <Vignette name="compass" size={120} />
-        <div className="animate-shimmer font-script text-[11px] uppercase tracking-[0.18em] text-gold">
-          Finding your place
-        </div>
+      <div className="flex min-h-dvh flex-col items-center justify-center" role="status">
+        <img
+          src={loadingScene.loading.src}
+          width={loadingScene.loading.width}
+          height={loadingScene.loading.height}
+          alt=""
+          decoding="async"
+          draggable={false}
+          className="animate-float w-[min(58vw,260px)] select-none"
+          style={{ filter: 'drop-shadow(0 8px 18px rgba(0,0,0,.55))' }}
+        />
+        <span className="sr-only">Loading</span>
       </div>
     );
   }
