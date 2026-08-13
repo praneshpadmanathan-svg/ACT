@@ -39,27 +39,33 @@ export interface Rank {
   tagline: string;
 }
 
-/* Seven ranks, named for the road.
+/* Seven ranks, named for what you are doing to the Grey.
  *
- * They used to be Recruit, Scholar, Honors, Distinction, Vanguard, Elite and
+ * They started as Recruit, Scholar, Honors, Distinction, Vanguard, Elite and
  * Perfect 36 — an American honour roll dropped into a world with a plague, a
  * mist, four sealed guardians and a summit. Every other noun the student meets
  * belongs to the fiction; the one thing measuring them did not, and it read
  * like a report card taped to the side of a game.
  *
- * The ladder now tracks what you are doing to the Grey. You start walking with
- * no road, you learn the road, you carry your own light, you keep the road
- * open behind you, you break what was sealed, the Grey learns your name, and
- * then it is morning. Thresholds are untouched — nobody loses a rank over a
- * rewrite — and the colours run night-to-sunrise across the top three.
+ * The first rewrite fixed the setting and undershot the register: Wanderer and
+ * Lampbearer and Daybreak are the vocabulary of a quiet novel, and this is a
+ * rank ladder a fifteen-year-old is meant to want to climb. A rank should hit
+ * like a rank. So they are compounds now, each one a verb aimed at the Grey —
+ * you drift, you find the road, you carry fire, you hold the road, you break
+ * what was shut, you become the thing the Grey loses to, and then you are
+ * crowned. Hard consonants, no abstractions, and the top of the ladder is a
+ * title rather than a time of day.
+ *
+ * Thresholds and colours are untouched across both rewrites — nobody loses a
+ * rank, and nobody's badge changes hue, over a copy change.
  *
  * The taglines still have a job beyond flavour: rank six and seven say plainly
  * where a student actually stands, because "Greybane" on its own does not tell
  * anyone they are into the top tenth. */
 export const RANKS: Rank[] = [
   {
-    id: 'wanderer',
-    name: 'Wanderer',
+    id: 'drifter',
+    name: 'Drifter',
     xp: 0,
     c1: '#e58a4e',
     c2: '#a4551f',
@@ -68,28 +74,28 @@ export const RANKS: Rank[] = [
     tagline: 'Every 36 starts here.',
   },
   {
-    id: 'wayfinder',
-    name: 'Wayfinder',
+    id: 'pathfinder',
+    name: 'Pathfinder',
     xp: 900,
     c1: '#eef3fb',
     c2: '#9fb2cc',
     ring: '#ffffff',
     color: '#cdd9ec',
-    tagline: 'You have stopped guessing which way. The habit is forming.',
+    tagline: 'You do not guess the road any more. The habit is forming.',
   },
   {
-    id: 'lampbearer',
-    name: 'Lampbearer',
+    id: 'torchbearer',
+    name: 'Torchbearer',
     xp: 2400,
     c1: '#ffe07a',
     c2: '#dfa018',
     ring: '#fff3b0',
     color: '#ffd23e',
-    tagline: 'Enough light to walk by, and it is your own.',
+    tagline: 'You carry your own fire now.',
   },
   {
-    id: 'pathwarden',
-    name: 'Pathwarden',
+    id: 'roadwarden',
+    name: 'Roadwarden',
     xp: 4800,
     c1: '#63f0e0',
     c2: '#1c94ab',
@@ -122,8 +128,10 @@ export const RANKS: Rank[] = [
     tagline: 'The Grey has learned your name. Top-decile territory.',
   },
   {
-    id: 'daybreak',
-    name: 'Daybreak',
+    id: 'stormcrown',
+    /* Was Daybreak. A sunrise is a thing that happens to you; a crown is a
+       thing you take. Same gold — the colour was never the problem. */
+    name: 'Stormcrown',
     xp: 21000,
     c1: '#ffe36e',
     c2: '#ff8c3b',
@@ -1323,11 +1331,11 @@ export const ACHIEVEMENTS: Achievement[] = [
      threshold change to be half-applied. */
   {
     id: 'rank-honors',
-    name: rankById('lampbearer').name,
-    detail: `Reach the ${rankById('lampbearer').name} rank.`,
+    name: rankById('torchbearer').name,
+    detail: `Reach the ${rankById('torchbearer').name} rank.`,
     icon: 'trophy',
     tier: 'silver',
-    test: (p) => p.xp >= rankById('lampbearer').xp,
+    test: (p) => p.xp >= rankById('torchbearer').xp,
   },
   {
     id: 'rank-elite',

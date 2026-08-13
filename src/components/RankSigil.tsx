@@ -44,7 +44,7 @@ type Draw = (device: string) => React.ReactNode;
 
 /* ------------------------------------------------------------- the shapes */
 
-/** Wanderer — a wooden token with one notch cut out of the rim. Deliberately
+/** Drifter — a wooden token with one notch cut out of the rim. Deliberately
  *  the plainest thing in the set: rank one should look like the start. */
 const recruit: { body: string; inner?: string; device: Draw } = {
   body: 'M32 4a28 28 0 1 1 0 56 28 28 0 0 1 0-56Z',
@@ -57,7 +57,7 @@ const recruit: { body: string; inner?: string; device: Draw } = {
   ),
 };
 
-/** Wayfinder — a squared plaque holding an open book. */
+/** Pathfinder — a squared plaque holding an open book. */
 const scholar = {
   body: 'M10 8h44a2 2 0 0 1 2 2v38l-24 12L8 48V10a2 2 0 0 1 2-2Z',
   inner: 'M15 14h34v31L32 54 15 45Z',
@@ -70,7 +70,7 @@ const scholar = {
   ),
 };
 
-/** Lampbearer — the classic shield, but now with laurels, so it is the *third*
+/** Torchbearer — the classic shield, but now with laurels, so it is the *third*
  *  thing in a sequence rather than the only idea in the set. */
 const honors = {
   body: 'M32 4 L54 12 V32 C54 45 44 55 32 60 C20 55 10 45 10 32 V12 Z',
@@ -87,7 +87,7 @@ const honors = {
   ),
 };
 
-/** Pathwarden — a cut gem. Facets rather than a flat field, which is the
+/** Roadwarden — a cut gem. Facets rather than a flat field, which is the
  *  first badge in the set that catches light on its own. */
 const distinction = {
   body: 'M32 3 L58 22 L48 56 H16 L6 22 Z',
@@ -134,7 +134,7 @@ const elite = {
   ),
 };
 
-/** Daybreak — a crowned sun. The only one with rays outside the ring, so
+/** Stormcrown — a crowned sun. The only one with rays outside the ring, so
  *  the last rank is the only badge that does not fit in the same circle. */
 const perfect = {
   body: 'M32 6a26 26 0 1 1 0 52 26 26 0 0 1 0-52Z',
@@ -169,20 +169,23 @@ const perfect = {
   ),
 };
 
-/* Keyed by `Rank.id`, not by display name. The shapes are still the ones drawn
-   for the old ladder and they survive the rename better than they have any
-   right to: a plain token for someone just walking, a plaque for someone
-   learning the road, a laurelled shield for the one carrying light, a cut gem
-   for the warden, a winged spearhead for the gatebreaker, a starburst for the
-   Grey's undoing, a crowned sun for the morning. */
+/* Keyed by `Rank.id`, not by display name — which is the whole reason the
+   ladder could be renamed twice without any of these silently falling through
+   to the fallback shield.
+
+   These are the original SVG shapes and they are placeholders now: the names
+   have moved somewhere harder than the drawings have. A generated pixel-art
+   sheet is specced in `art-src/PROMPTS.md` to replace them — a warhammer
+   through a portcullis for Gatebreaker, a storm-wreathed crown for
+   Stormcrown — and until it lands the gem and the sun hold those slots. */
 const SIGILS: Record<string, typeof scholar> = {
-  wanderer: recruit as typeof scholar,
-  wayfinder: scholar,
-  lampbearer: honors,
-  pathwarden: distinction,
+  drifter: recruit as typeof scholar,
+  pathfinder: scholar,
+  torchbearer: honors,
+  roadwarden: distinction,
   gatebreaker: vanguard,
   greybane: elite,
-  daybreak: perfect,
+  stormcrown: perfect,
 };
 
 export function RankSigil({ rank, size = 56 }: { rank: SigilColors; size?: number }) {

@@ -256,9 +256,9 @@ describe('rankIndexFor / rankProgress', () => {
   it('places exactly-at-threshold XP in the rank it just reached, not the one before', () => {
     // A boundary value is the classic off-by-one spot.
     // Keyed by id, not name: the names are copy and have been rewritten once.
-    const lampbearer = rankById('lampbearer');
-    expect(rankFor(lampbearer.xp).id).toBe('lampbearer');
-    expect(rankFor(lampbearer.xp - 1).id).toBe('wayfinder');
+    const torchbearer = rankById('torchbearer');
+    expect(rankFor(torchbearer.xp).id).toBe('torchbearer');
+    expect(rankFor(torchbearer.xp - 1).id).toBe('pathfinder');
   });
 
   it('caps at the top rank and reports full progress with no next rank', () => {

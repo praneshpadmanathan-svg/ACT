@@ -44,38 +44,52 @@ re-checking the key.
 Not yet generated. This is the prompt to use, and the notes below are the
 constraints it has to satisfy for a slicing script to be worth writing.
 
-The ranks and their colours are in `src/lib/progress.ts` (`RANKS`); the badges
-are currently drawn as SVG in `src/components/RankSigil.tsx`, and the shapes
-described below are those same seven silhouettes, so a generated sheet is a
-drop-in replacement rather than a redesign.
+The ranks and their colours are in `src/lib/progress.ts` (`RANKS`). The badges
+are currently drawn as SVG in `src/components/RankSigil.tsx`, and those shapes
+are a *softer* set than this — a book plaque, a laurel wreath, a crowned sun.
+They came from the first, more literary version of the ladder. This prompt is
+deliberately not a transcription of them: the names got harder, so the art has
+to. Only the colours carry over unchanged, because a badge that changes hue
+makes a returning student think they lost something.
 
-> A sprite sheet of seven pixel-art fantasy rank badges in a single horizontal
-> row, evenly spaced, each badge centred in its own square cell with clear space
-> around it, on a flat solid magenta background (#FF00FF) with no checkerboard
-> and no shadows. Left to right the seven badges are:
+> A sprite sheet of seven pixel-art rank emblems for a fantasy video game, in a
+> single horizontal row, evenly spaced, each emblem centred in its own square
+> cell with clear space around it, on a flat solid magenta background (#FF00FF)
+> with no checkerboard and no shadows. Chunky game-UI badges — heavy dark metal
+> frames, riveted edges, weapons and beast-parts, the look of a ranked ladder in
+> a dungeon crawler. Left to right the seven emblems are:
 >
-> 1. a plain round wooden token with one notch cut out of its rim, weathered
->    orange-brown metal (#e58a4e into #a4551f), a small pale arrow-and-dot
->    device in the middle;
-> 2. a squared plaque with a rounded base holding an open book, cold silver-white
->    metal (#eef3fb into #9fb2cc);
-> 3. a laurelled shield with a five-pointed star on it, warm gold (#ffe07a into
->    #dfa018);
-> 4. a cut gem with visible facet lines, teal (#63f0e0 into #1c94ab);
-> 5. a winged spearhead pointing up, violet (#c8aaff into #7a4fd0);
-> 6. an eight-pointed starburst inside a ring, ember orange-red (#ff8a6b into
->    #c9341f);
-> 7. a crowned sun with rays radiating past its rim, bright gold (#ffe36e into
->    #ff8c3b).
+> 1. **Drifter** — a chipped, dented iron ring hung on a scrap of leather cord,
+>    empty in the middle except for a single worn boot-print stamped into it.
+>    Weathered orange-brown metal (#e58a4e into #a4551f). Deliberately the
+>    poorest, plainest object in the row: no frame, no ornament, cheap metal.
+> 2. **Pathfinder** — an arrowhead-shaped iron badge, point up, with a compass
+>    needle set into it and a broken-off trail marker crossed behind. Cold
+>    silver-white steel (#eef3fb into #9fb2cc).
+> 3. **Torchbearer** — a squat iron shield gripping a burning torch, the flame
+>    breaking up over the top edge of the shield in chunky pixel tongues. Warm
+>    gold and fire (#ffe07a into #dfa018).
+> 4. **Roadwarden** — a heavy tower shield with two spears crossed behind it and
+>    a faceted crystal bolted into its centre, teal (#63f0e0 into #1c94ab).
+> 5. **Gatebreaker** — a two-handed warhammer smashing through a portcullis, the
+>    bars bent and snapped outward around the head, chunks of iron flying.
+>    Violet (#c8aaff into #7a4fd0).
+> 6. **Greybane** — a cracked grey horned skull with a sword driven down through
+>    it, set inside an eight-pointed spiked burst. Ember orange-red (#ff8a6b
+>    into #c9341f).
+> 7. **Stormcrown** — a jagged iron crown, spikes uneven and battle-notched,
+>    with forked lightning cracking out of it to left and right past the edges
+>    of the emblem. Bright gold (#ffe36e into #ff8c3b). No sun, no sunburst, no
+>    halo, no rays — lightning only.
 >
 > All seven share one construction so they read as one set: the same optical
 > weight and the same square footprint, a dark ink outline of the same thickness
-> around every badge, a brighter rim highlight along the upper left where the
-> light falls, and the central device in warm near-white. Escalating ornament
-> from left to right — badge one is deliberately the plainest thing in the row
-> and badge seven the most elaborate — but never escalating size. Chunky readable
-> pixels, no anti-aliasing, no dithering, no gradients, no glow. No text, no
-> numbers, no roman numerals, no ribbons or banners.
+> around every emblem, a brighter rim highlight along the upper left where the
+> light falls, and the metal in each rank's own two colours. Escalating menace
+> and ornament from left to right — emblem one is a piece of junk and emblem
+> seven is a trophy — but never escalating size. Chunky readable pixels, no
+> anti-aliasing, no dithering, no gradients, no glow. No text, no numbers, no
+> roman numerals, no ribbons or banners, no laurel wreaths, no books.
 
 **Why one row and not a grid.** Seven does not divide into a rectangle, so any
 grid leaves a ragged cell and the slicer has to know where the hole is. Cutting
