@@ -20,6 +20,16 @@ import { heroFor, type Hero } from './heroes';
 type HeroArtEntry = { width: number; height: number; src: string };
 const ART = heroArt as Record<string, HeroArtEntry>;
 
+/** The width the sprite will occupy at `height`, from the same manifest the
+ *  component uses. Exported so a caller can work out the traveller's footprint
+ *  without waiting for him to be in the DOM and measuring him — the map needs
+ *  it while he is mid-walk, when a measured rect is a frame behind the truth. */
+export function heroSpriteWidth(hero: Hero | string, height: number): number {
+  const h = typeof hero === 'string' ? heroFor(hero) : hero;
+  const art = ART[h.id] ?? ART.ash!;
+  return Math.round((art.width / art.height) * height);
+}
+
 export function HeroSprite({
   hero,
   height,
@@ -37,7 +47,7 @@ export function HeroSprite({
 }) {
   const h = typeof hero === 'string' ? heroFor(hero) : hero;
   const art = ART[h.id] ?? ART.ash!;
-  const width = Math.round((art.width / art.height) * height);
+  const width = heroSpriteWidth(h, height);
 
   return (
     <img

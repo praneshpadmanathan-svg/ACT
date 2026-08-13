@@ -10,7 +10,7 @@
    so one transform moves the whole world and nothing can drift out of
    register. */
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { PATH_BY_ID } from '@/content';
 import { RankSigil } from '@/components/RankSigil';
 import { rankProgress } from '@/lib/progress';
@@ -31,7 +31,7 @@ import { m, PIN_SPRING, SPRING, useReducedMotion } from '@/lib/motion';
 import { MapFx } from './MapFx';
 import { PlagueLayer, TrailLayer } from './MapLayers';
 import { ClearedSigil, CrownSigil, LockSigil, MasterSigil } from './Sigils';
-import { HeroSprite } from './HeroSprite';
+import { HeroSprite, heroSpriteWidth } from './HeroSprite';
 import { Art } from '@/components/Art';
 
 /** One footfall. Half of `walkHero`'s 0.62s cycle in `tailwind.config.js` —
@@ -60,6 +60,33 @@ let lastSeenAt: { x: number; y: number } | null = null;
 
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 3.4;
+
+/** The traveller's drawn height, in map units — see the sprite below for why
+ *  46. Named because the HUD has to know his footprint to keep clear of it. */
+const HERO_H = 46;
+/** Clear air left between the traveller and a HUD panel that has moved for
+ *  him. Small enough that the dodge reads as making room rather than fleeing. */
+const DODGE_GAP = 10;
+
+/** An element's position in the viewport *before* transforms.
+ *
+ *  `getBoundingClientRect` is the obvious call and it is the wrong one here:
+ *  the panel this measures is itself being translated by the dodge, so a
+ *  measured rect feeds the dodge back into its own input and the card walks
+ *  down the screen a step per frame. `offsetTop`/`offsetLeft` are layout, not
+ *  paint — a transform never touches them — so the base position stays fixed
+ *  no matter where the card has been moved to. */
+function layoutBox(el: HTMLElement) {
+  let top = 0;
+  let left = 0;
+  let n: HTMLElement | null = el;
+  while (n) {
+    top += n.offsetTop;
+    left += n.offsetLeft;
+    n = n.offsetParent as HTMLElement | null;
+  }
+  return { top, left, right: left + el.offsetWidth, bottom: top + el.offsetHeight };
+}
 
 interface PlacedPin {
   zone: Zone;
@@ -606,6 +633,54 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
   const coverScale =
     frame.w > 0 ? Math.max(frame.w / MAP_W, frame.h / MAP_H) * view.zoom : view.zoom;
 
+  /* --------------------------------------------- keeping the HUD off the man
+   *
+   * The traveller lives in the world layer and the quest card lives in the
+   * HUD, and neither knows the other exists. Both are near the top left at the
+   * start of the game, so the very first thing a new player sees is the card
+   * printed over their own figure — this is not an edge case that needs an
+   * unlucky pan to reach, it is the default first frame.
+   *
+   * Raising him above the card only trades which one is unreadable, and the
+   * camera cannot solve it either: the opening landmark is close enough to the
+   * map's corner that the pan is already clamped and he *cannot* be brought to
+   * the middle. So the card moves. It slides down just far enough to clear
+   * him, and slides back the moment he leaves.
+   *
+   * His box is computed from the same numbers that position him rather than
+   * measured off the DOM, because during a walk a measured rect is a frame
+   * behind and the card would chase him. Taken from `current`, this reads his
+   * destination — so the card is already out of the way by the time he
+   * arrives, which is also the better-looking answer. */
+  const heroBox = useMemo(() => {
+    if (!current || !frame.w) return null;
+    const w = heroSpriteWidth(progress.hero, HERO_H) * coverScale;
+    const h = HERO_H * coverScale;
+    // Anchored bottom-centre — see the sprite's `translate(-50%, -100%)`.
+    const cx = frame.w / 2 + view.x + ((current.x / 100) * MAP_W - MAP_W / 2) * coverScale;
+    const cy = frame.h / 2 + view.y + ((current.y / 100) * MAP_H - MAP_H / 2) * coverScale;
+    return { left: cx - w / 2, right: cx + w / 2, top: cy - h, bottom: cy };
+  }, [current, frame.w, frame.h, view.x, view.y, coverScale, progress.hero]);
+
+  const questRef = useRef<HTMLDivElement>(null);
+  const [questDodge, setQuestDodge] = useState(0);
+
+  useLayoutEffect(() => {
+    const el = questRef.current;
+    if (!el || !heroBox) {
+      setQuestDodge(0);
+      return;
+    }
+    const card = layoutBox(el);
+    const overX = Math.min(card.right, heroBox.right) - Math.max(card.left, heroBox.left);
+    const overY = Math.min(card.bottom, heroBox.bottom) - Math.max(card.top, heroBox.top);
+    /* Down, always. The card is already sitting at the top of the safe area,
+       so up is not a direction it has. */
+    setQuestDodge(
+      overX > 0 && overY > 0 ? Math.round(heroBox.bottom + DODGE_GAP - card.top) : 0,
+    );
+  }, [heroBox, quest]);
+
   return (
     /* A landmark and a heading, because the map suppresses the top bar and so
        had no <main>, no <nav> and no <h1> at all — a screen reader landed on 38
@@ -955,7 +1030,13 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
         {current && (
           <m.div
             className="pointer-events-none absolute z-[15]"
-            style={{ transform: 'translate(-50%, -100%)' }}
+            /* Bottom-centre on the landmark, lifted 12 map units clear of it.
+               Without the lift his feet land in the middle of the pin he is
+               standing at and eclipse its number — he is drawn over the pin,
+               so the digit simply disappears under his boots. Twelve is enough
+               to clear the numeral at every zoom, since the lift is inside the
+               scaled layer and so keeps its proportion to the pin. */
+            style={{ transform: 'translate(-50%, calc(-100% - 12px))' }}
             initial={journey ? { left: `${journey.x}%`, top: `${journey.y}%` } : false}
             animate={{ left: `${current.x}%`, top: `${current.y}%` }}
             transition={{ type: 'spring', stiffness: 55, damping: 18, mass: 1.1 }}
@@ -1000,7 +1081,7 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
             >
               <HeroSprite
                 hero={progress.hero}
-                height={46}
+                height={HERO_H}
                 className={cx(
                   'select-none',
                   walking && !reducedMotion ? 'animate-walkHero' : 'animate-bobHero',
@@ -1194,10 +1275,13 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
               screen. Remounting can't get stuck. */}
           {quest && (
             <m.div
+              ref={questRef}
               key={quest.quest.id}
               className="quest-card pointer-events-none w-[min(19rem,calc(100vw-1.5rem))]"
               initial={{ opacity: 0, x: -18, scale: 0.97 }}
-              animate={{ opacity: 1, x: 0, scale: 1, transition: SPRING }}
+              /* `y` is the dodge — normally 0, and only non-zero while the
+                 traveller is standing where this card wants to be. */
+              animate={{ opacity: 1, x: 0, scale: 1, y: questDodge, transition: SPRING }}
             >
               <div className="flex items-baseline justify-between gap-3">
                 <span className="eyebrow text-[11.5px]">
