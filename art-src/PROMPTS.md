@@ -337,3 +337,119 @@ place" at `src/App.tsx:199`.
 
 Three separate bans on text there, on purpose: a compass and a map are the two
 objects an image model is most determined to cover in fake writing.
+
+---
+
+## Sheet 6 — The loading screen, properly
+
+Sheet 5 gave us one object and the object was never the problem. A cutout
+centred on an empty dark field is a sticker on nothing, whatever is drawn on the
+sticker. The screen already ships with the landing hero behind it under the
+landing screen's own scrim, which fixes the register — this sheet gives that
+background some variety, and gives the object some competition.
+
+**Two sets, and they follow opposite rules.** Read this before generating.
+
+| | Set A — backgrounds | Set B — objects |
+| --- | --- | --- |
+| Background colour | **the art itself, edge to edge** | flat magenta `#FF00FF` |
+| Keyed out? | **never** | yes, by the slicer |
+| Items per image | one full-bleed scene | 8 in a grid |
+| Aspect | square, 1:1 | anything |
+
+Set A is the first art in this project that must **not** have a magenta
+background, and asking for one would be actively wrong — the whole image is
+kept. Every other prompt in this file says the opposite, so it is worth saying
+loudly once.
+
+### Set A — full-bleed loading backgrounds (four separate images)
+
+Generate each as its own image. They are alternatives *and* a rotation: the
+screen can pick one per cold start, so more of them is better, not wasteful.
+
+**The composition rule, which matters more than the subject.** These get
+`object-cover`, so a phone shows roughly the middle half of the width and a
+desktop shows roughly the middle half of the height. Anything in the outer
+quarter of any edge will be cropped away on some device. Keep the horizon near
+the vertical centre and everything that matters inside the middle third both
+ways; let the edges run to open sky, haze and ground.
+
+**And they sit under a dark scrim**, so generate them bright and saturated. A
+moody, low-key painting turns to mud under a 72%-black overlay; a bright one
+turns moody, which is what we want.
+
+> **A1 — the ridge at sunset.** A painterly pixel-art landscape, square, filling
+> the whole image edge to edge with no border and no background colour showing.
+> A high grassy ridge in the near foreground, a river valley falling away behind
+> it, and a low sun sitting on the horizon in the centre of the frame. Sky
+> banded from deep blue at the top through violet and rose to hot orange at the
+> horizon. Layered purple mountain ranges receding into haze. A few tiny warm
+> lit windows in a distant valley village. Warm limited palette, chunky readable
+> pixels, dark brown ink outlines rather than black, soft painted clouds. No
+> people, no characters, no text, no lettering, no numerals, no signage, no
+> frame, no vignette, no watermark, no magenta.
+>
+> **A2 — the river road at dusk.** A painterly pixel-art landscape, square,
+> filling the whole image edge to edge with no border and no background colour
+> showing. A wide slow river winding from the bottom centre of the frame toward
+> a low sun on the horizon, a dirt road running beside it, reeds and scattered
+> broadleaf trees along both banks. Sky banded from deep indigo at the top
+> through plum and coral to gold at the horizon, the whole sky reflected in the
+> water. Distant hills in flat purple silhouette. Warm limited palette, chunky
+> readable pixels, dark brown ink outlines rather than black. No people, no
+> characters, no text, no lettering, no numerals, no signage, no frame, no
+> vignette, no watermark, no magenta.
+>
+> **A3 — the mountain pass at first light.** A painterly pixel-art landscape,
+> square, filling the whole image edge to edge with no border and no background
+> colour showing. A stone pass cutting between two tall peaks in the centre of
+> the frame, a narrow switchback trail climbing through it, drifts of low cloud
+> caught between the ridges, and pale gold dawn light spilling through the gap
+> toward the viewer. Sky banded from cold blue-grey at the top to warm cream and
+> apricot at the gap. Pine trees in dark silhouette on the lower slopes. Warm
+> limited palette, chunky readable pixels, dark brown ink outlines rather than
+> black. No people, no characters, no text, no lettering, no numerals, no
+> signage, no frame, no vignette, no watermark, no magenta.
+>
+> **A4 — the harbour town at golden hour.** A painterly pixel-art landscape,
+> square, filling the whole image edge to edge with no border and no background
+> colour showing. A small harbour seen from a low hill: tiled rooftops and a
+> clock tower stepping down toward the water, fishing boats with furled sails at
+> a stone quay, a lighthouse on the far headland, open sea and a low sun beyond.
+> Sky banded from deep teal-blue at the top through peach to burning orange at
+> the waterline, with long warm reflections across the harbour. Warm limited
+> palette, chunky readable pixels, dark brown ink outlines rather than black. No
+> people, no characters, no text, no lettering, no numerals, no signage, no
+> clock hands or clock numerals, no frame, no vignette, no watermark, no
+> magenta.
+
+### Set B — eight loading objects on one sheet
+
+Eight, because that is under the nine-item ceiling where the model starts losing
+count. These are cutouts and follow all three sheet rules — magenta, clear
+space, no lettering.
+
+> A sprite sheet of eight pixel-art traveller's objects in a 4x2 grid on a flat
+> solid magenta background (#FF00FF), evenly spaced, each object centred in its
+> own cell with clear magenta space all around it and nothing touching or
+> overlapping. Reading order, left to right along the top row then the bottom
+> row: (1) an open brass compass lying flat, lid raised, needle catching the
+> light; (2) a lit storm lantern, glass glowing warm; (3) an hourglass in a
+> wooden frame with sand mid-fall; (4) a rolled map tied with a red ribbon,
+> resting on its side; (5) a stone inkwell with a feather quill standing in it;
+> (6) a brass spyglass lying across a folded map; (7) a short stack of worn
+> leather-bound journals with a ribbon bookmark trailing out; (8) a small
+> canvas travelling pack with a bedroll strapped on top. All eight share one
+> world: warm limited palette, aged brass, worn leather, dark brown ink outlines
+> rather than black, lit from the upper left, chunky readable pixels, no
+> anti-aliasing, no dithering, no gradients. No text, no lettering, no numerals,
+> no compass-rose letters, no readable markings on the maps or the book covers,
+> no borders, no drop shadows, no cast shadows, no ground plane, no scenery.
+
+**Expect the text bans to be tested.** A compass, a map and a book cover are the
+three things an image model is most determined to write on; that is why the ban
+is repeated four ways rather than once.
+
+**Expect the count to be wrong.** It usually is. Cut whatever comes back and map
+cell to id through the table in the slicer, exactly as the foliage sheet's
+thirteen-cells-for-twelve-particles was handled.
