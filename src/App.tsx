@@ -9,8 +9,7 @@ import { TopBar } from '@/components/Shell';
 import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
 import { StoryOverlay } from '@/game/StoryOverlay';
 import { Vignette } from '@/components/Vignette';
-import loadingScene from '@/sceneArt.json';
-import { Art } from '@/components/Art';
+import { LoadingScreen } from '@/components/LoadingScreen';
 
 /* The front door, and only the front door.
  *
@@ -186,69 +185,9 @@ export default function App() {
     }
   }, [authRedirect, clearAuthRedirect, route.name, progress.profile, navigate]);
 
-  if (!authReady) {
-    /* The cold-start screen — the one screen every single visitor sees.
-
-       It has been three things. First the word "Loading…" on a dark field.
-       Then a drawn compass with "Finding your place" under it, which was
-       better and still had the problem that sank it: a caption explaining a
-       loading screen is a caption nobody wants to read twice, and this one
-       greets you before you have done anything at all.
-
-       Then one painted object and no words — better again, and still wrong,
-       for a reason the object could not fix: a small flat cutout centred on an
-       empty dark field is a sticker on nothing. The landing screen this hands
-       over to is a full-bleed painted sunset, so the first two seconds of the
-       app were in a completely different register from the third.
-
-       So the field is not empty any more. It is the landing hero itself, under
-       the same scrim the landing screen puts over it, which makes the cold
-       start and the page it becomes one continuous image instead of a cut.
-       Nothing is downloaded twice either — the same file is the next screen's
-       hero, so this is a prefetch of art that was about to be needed anyway.
-
-       Under all of it, a plain gradient in that painting's own colours. The
-       hero is 109KB and this screen exists precisely because things have not
-       arrived yet, so the one frame where it has not decoded must not be a
-       bare black rectangle. CSS costs nothing and paints immediately.
-
-       The copy is gone from the screen, not from the accessibility tree.
-       `role="status"` with nothing in it announces nothing, so a screen-reader
-       user would have been handed silence — which is precisely the failure the
-       caption was added to fix. It moves to `sr-only` instead. */
-    return (
-      <div
-        className="relative isolate flex min-h-dvh items-center justify-center overflow-hidden"
-        role="status"
-      >
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(to bottom, #1b2547 0%, #43356a 26%, #a84f86 48%, #e0713d 66%, #eda04c 78%, #2a1d12 100%)',
-          }}
-        />
-        <Art
-          name="landing-hero"
-          priority
-          className="absolute inset-0 h-full w-full select-none object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-leather-950/72 via-leather-950/45 to-leather-950" />
-
-        <img
-          src={loadingScene.loading.src}
-          width={loadingScene.loading.width}
-          height={loadingScene.loading.height}
-          alt=""
-          decoding="async"
-          draggable={false}
-          className="animate-float relative z-10 w-[min(52vw,230px)] select-none"
-          style={{ filter: 'drop-shadow(0 10px 22px rgba(0,0,0,.7))' }}
-        />
-        <span className="sr-only">Loading</span>
-      </div>
-    );
-  }
+  /* The cold-start screen, in its own file — see components/LoadingScreen
+     for what it does and why it looks the way it does. */
+  if (!authReady) return <LoadingScreen />;
 
   const bare = BARE_ROUTES.has(route.name);
 

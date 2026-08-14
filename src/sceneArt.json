@@ -1,7 +1,41 @@
 {
-  "loading": {
-    "width": 384,
-    "height": 314,
-    "src": "/art/scenes/loading.png"
-  }
+  "box": 384,
+  "objects": [
+    {
+      "id": "compass",
+      "src": "/art/scenes/loading-compass.png"
+    },
+    {
+      "id": "lantern",
+      "src": "/art/scenes/loading-lantern.png"
+    },
+    {
+      "id": "hourglass",
+      "src": "/art/scenes/loading-hourglass.png"
+    },
+    {
+      "id": "scroll",
+      "src": "/art/scenes/loading-scroll.png"
+    },
+    {
+      "id": "inkwell",
+      "src": "/art/scenes/loading-inkwell.png"
+    },
+    {
+      "id": "spyglass",
+      "src": "/art/scenes/loading-spyglass.png"
+    },
+    {
+      "id": "journals",
+      "src": "/art/scenes/loading-journals.png"
+    },
+    {
+      "id": "pack",
+      "src": "/art/scenes/loading-pack.png"
+    },
+    {
+      "id": "desk",
+      "src": "/art/scenes/loading-desk.png"
+    }
+  ]
 }

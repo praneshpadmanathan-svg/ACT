@@ -67,6 +67,142 @@
       }
     ]
   },
+  "scene-harbour": {
+    "width": 928,
+    "height": 928,
+    "fallback": "/art/scene-harbour.webp",
+    "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABQBACdASoUABQAPu1mrFAppSQjMBgIATAdiUAWnQIdmUvHkCfrO3sZ6GjgAP4hY6MsoCffXQ0pYUeFpjmKpwja44inO18UaUcEeGWFkptPvYZMvnEv7PRDZJYBC7bni0PiAAAA",
+    "avif": [
+      {
+        "w": 512,
+        "src": "/art/gen/scene-harbour-512.avif"
+      },
+      {
+        "w": 768,
+        "src": "/art/gen/scene-harbour-768.avif"
+      },
+      {
+        "w": 928,
+        "src": "/art/gen/scene-harbour-928.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 512,
+        "src": "/art/gen/scene-harbour-512.webp"
+      },
+      {
+        "w": 768,
+        "src": "/art/gen/scene-harbour-768.webp"
+      },
+      {
+        "w": 928,
+        "src": "/art/gen/scene-harbour-928.webp"
+      }
+    ]
+  },
+  "scene-pass": {
+    "width": 928,
+    "height": 928,
+    "fallback": "/art/scene-pass.webp",
+    "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADwBACdASoUABQAPu1iqE2ppaOiMBgMATAdiWUAsR+TgYF/ewv2KYWNMfNLL7kT2OgA/R4YJLs9jdfqH9MlrkF32vbDBIZRmFXIGdRyv+799D+zTH/vgeMOtoGTt81UNCSO1UQB2zDAAA==",
+    "avif": [
+      {
+        "w": 512,
+        "src": "/art/gen/scene-pass-512.avif"
+      },
+      {
+        "w": 768,
+        "src": "/art/gen/scene-pass-768.avif"
+      },
+      {
+        "w": 928,
+        "src": "/art/gen/scene-pass-928.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 512,
+        "src": "/art/gen/scene-pass-512.webp"
+      },
+      {
+        "w": 768,
+        "src": "/art/gen/scene-pass-768.webp"
+      },
+      {
+        "w": 928,
+        "src": "/art/gen/scene-pass-928.webp"
+      }
+    ]
+  },
+  "scene-ridge": {
+    "width": 928,
+    "height": 928,
+    "fallback": "/art/scene-ridge.webp",
+    "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAwBACdASoUABQAPu1oq02ppiQiMAgBMB2JQBWGbIBpuLWMLGtyTCiykAAA/qMwpjVCjRuPNTsCHVIfVs/4HsBZYcubXgPPRlSa0OdGt37sWb71F8IiciCRuIAAAA==",
+    "avif": [
+      {
+        "w": 512,
+        "src": "/art/gen/scene-ridge-512.avif"
+      },
+      {
+        "w": 768,
+        "src": "/art/gen/scene-ridge-768.avif"
+      },
+      {
+        "w": 928,
+        "src": "/art/gen/scene-ridge-928.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 512,
+        "src": "/art/gen/scene-ridge-512.webp"
+      },
+      {
+        "w": 768,
+        "src": "/art/gen/scene-ridge-768.webp"
+      },
+      {
+        "w": 928,
+        "src": "/art/gen/scene-ridge-928.webp"
+      }
+    ]
+  },
+  "scene-river": {
+    "width": 928,
+    "height": 928,
+    "fallback": "/art/scene-river.webp",
+    "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADQBACdASoUABQAPu1mqk+ppaOiKA1RMB2JZACxHxgBqYh8f2EZAzVxApSIwDz7AAD+vHEma6w+duGw+Sphyf1QHg9jETb7jPDdNaFFp9jmWqgjEfclArpaE+AQFQcwrvr6cRJ1kAAAAA==",
+    "avif": [
+      {
+        "w": 512,
+        "src": "/art/gen/scene-river-512.avif"
+      },
+      {
+        "w": 768,
+        "src": "/art/gen/scene-river-768.avif"
+      },
+      {
+        "w": 928,
+        "src": "/art/gen/scene-river-928.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 512,
+        "src": "/art/gen/scene-river-512.webp"
+      },
+      {
+        "w": 768,
+        "src": "/art/gen/scene-river-768.webp"
+      },
+      {
+        "w": 928,
+        "src": "/art/gen/scene-river-928.webp"
+      }
+    ]
+  },
   "wizzy": {
     "width": 470,
     "height": 640,

@@ -48,6 +48,15 @@ const WIDTHS = {
   'camp-bg': [640, 1024, 1376],
   'landing-hero': [512, 768, 1024],
   wizzy: [235, 470],
+  /* The four loading backdrops. 928 is the whole source after
+     `build-scenes.mjs` trims the generator's mark, and they are square art
+     shown full-bleed, so `object-cover` throws away roughly half of one axis
+     whatever the device — a phone never needs the top width and a desktop
+     never sees the full height of it. */
+  'scene-ridge': [512, 768, 928],
+  'scene-river': [512, 768, 928],
+  'scene-pass': [512, 768, 928],
+  'scene-harbour': [512, 768, 928],
 };
 
 const AVIF = { quality: 52, effort: 6, chromaSubsampling: '4:2:0' };
