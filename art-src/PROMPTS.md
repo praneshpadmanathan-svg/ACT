@@ -303,23 +303,69 @@ than no extension at all. The way this works is to put the join where a break is
 _expected_: a coastline, a cliff face, a river, or a bank of the Grey's own
 mist. Then the seam is a feature of the world rather than a defect in the art.
 
-Generate these **one per image**, at the same aspect as the edge they attach to.
+Generate these **one per image**, and note which edge carries the coast: it is
+always the edge that **faces the existing map**, because that is the edge that
+has to join. North sits above, so its coast runs along its bottom; south sits
+below, so its coast runs along its top; east and west are mirror images of each
+other.
 
-> A pixel-art fantasy world-map panel, top-down three-quarter view, painted in a
-> warm limited parchment-map palette: ochre plains, deep green woodland,
-> grey-brown rock, muted teal water. The **left** edge of the image is entirely
-> open sea meeting a long north-south coastline, so the panel can butt against
-> another map along that coast. The rest of the panel is [TERRAIN]. Chunky
-> readable pixels, dark ink outlines, lit from the upper left, no anti-aliasing,
-> no gradients, no lettering, no labels, no compass rose, no map border or
-> frame, no grid.
+Orientation follows from the same fact. North and south span the map's width and
+add height, so they are **landscape (16:9)**. East and west span its height and
+add width, so they are **portrait (9:16)**. `panel-north.png` came back 1408×768,
+which is the shape to match.
 
-Change `[TERRAIN]` and which edge carries the coast:
+No magenta on these — like the loading backdrops, the whole image is the asset.
 
-- **North** — snowfields and black pine forest rising to a broken mountain wall
-- **South** — salt marsh and mangrove giving way to pale dunes
-- **East** — high plateau cut by deep canyons and dry riverbeds
-- **West** — drowned ruins in shallow water, causeways between islands
+**North** — already generated, kept here for the set.
+
+> A pixel-art fantasy world-map panel, landscape, top-down three-quarter view,
+> painted in a warm limited parchment-map palette: ochre plains, deep green
+> woodland, grey-brown rock, muted teal water. The **bottom** edge of the image
+> is entirely open sea meeting a long east-west coastline, so the panel can butt
+> against another map along that coast. The rest of the panel is snowfields and
+> black pine forest rising to a broken mountain wall. Chunky readable pixels,
+> dark ink outlines, lit from the upper left, no anti-aliasing, no gradients, no
+> lettering, no labels, no compass rose, no map border or frame, no grid.
+
+**South**
+
+> A pixel-art fantasy world-map panel, landscape, top-down three-quarter view,
+> painted in a warm limited parchment-map palette: ochre plains, deep green
+> woodland, grey-brown rock, muted teal water. The **top** edge of the image is
+> entirely open sea meeting a long east-west coastline, so the panel can butt
+> against another map along that coast. The rest of the panel is salt marsh and
+> mangrove giving way to pale dunes. Chunky readable pixels, dark ink outlines,
+> lit from the upper left, no anti-aliasing, no gradients, no lettering, no
+> labels, no compass rose, no map border or frame, no grid.
+
+**East**
+
+> A pixel-art fantasy world-map panel, portrait, top-down three-quarter view,
+> painted in a warm limited parchment-map palette: ochre plains, deep green
+> woodland, grey-brown rock, muted teal water. The **left** edge of the image is
+> entirely open sea meeting a long north-south coastline, so the panel can butt
+> against another map along that coast. The rest of the panel is high plateau cut
+> by deep canyons and dry riverbeds. Chunky readable pixels, dark ink outlines,
+> lit from the upper left, no anti-aliasing, no gradients, no lettering, no
+> labels, no compass rose, no map border or frame, no grid.
+
+**West**
+
+> A pixel-art fantasy world-map panel, portrait, top-down three-quarter view,
+> painted in a warm limited parchment-map palette: ochre plains, deep green
+> woodland, grey-brown rock, muted teal water. The **right** edge of the image is
+> entirely open sea meeting a long north-south coastline, so the panel can butt
+> against another map along that coast. The rest of the panel is drowned ruins in
+> shallow water, causeways between islands. Chunky readable pixels, dark ink
+> outlines, lit from the upper left, no anti-aliasing, no gradients, no lettering,
+> no labels, no compass rose, no map border or frame, no grid.
+
+**The generator's sparkle lands in the bottom-right corner, 33 px in.** On a
+cutout sheet that is harmless — `findCells` drops it by size. On a full-bleed
+panel it is inside the terrain and has to be cropped off, which means losing
+about 96 px of one edge. Never the joining edge: crop the **right** on north,
+and the **bottom** on the other three. Each of the four has a safe choice, so
+this costs nothing but has to be done deliberately.
 
 ---
 
