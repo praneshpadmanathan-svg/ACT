@@ -10,6 +10,7 @@ import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/F
 import { StoryOverlay } from '@/game/StoryOverlay';
 import { Vignette } from '@/components/Vignette';
 import loadingScene from '@/sceneArt.json';
+import { Art } from '@/components/Art';
 
 /* The front door, and only the front door.
  *
@@ -194,17 +195,46 @@ export default function App() {
        loading screen is a caption nobody wants to read twice, and this one
        greets you before you have done anything at all.
 
-       Now it is one painted object and no words. A lit lantern beside an open
-       compass says *waiting, in this world* without asking to be read, and the
-       breathing animation carries the "not hung" signal the turning needle used
-       to carry.
+       Then one painted object and no words — better again, and still wrong,
+       for a reason the object could not fix: a small flat cutout centred on an
+       empty dark field is a sticker on nothing. The landing screen this hands
+       over to is a full-bleed painted sunset, so the first two seconds of the
+       app were in a completely different register from the third.
+
+       So the field is not empty any more. It is the landing hero itself, under
+       the same scrim the landing screen puts over it, which makes the cold
+       start and the page it becomes one continuous image instead of a cut.
+       Nothing is downloaded twice either — the same file is the next screen's
+       hero, so this is a prefetch of art that was about to be needed anyway.
+
+       Under all of it, a plain gradient in that painting's own colours. The
+       hero is 109KB and this screen exists precisely because things have not
+       arrived yet, so the one frame where it has not decoded must not be a
+       bare black rectangle. CSS costs nothing and paints immediately.
 
        The copy is gone from the screen, not from the accessibility tree.
        `role="status"` with nothing in it announces nothing, so a screen-reader
        user would have been handed silence — which is precisely the failure the
        caption was added to fix. It moves to `sr-only` instead. */
     return (
-      <div className="flex min-h-dvh flex-col items-center justify-center" role="status">
+      <div
+        className="relative isolate flex min-h-dvh items-center justify-center overflow-hidden"
+        role="status"
+      >
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to bottom, #1b2547 0%, #43356a 26%, #a84f86 48%, #e0713d 66%, #eda04c 78%, #2a1d12 100%)',
+          }}
+        />
+        <Art
+          name="landing-hero"
+          priority
+          className="absolute inset-0 h-full w-full select-none object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-leather-950/72 via-leather-950/45 to-leather-950" />
+
         <img
           src={loadingScene.loading.src}
           width={loadingScene.loading.width}
@@ -212,8 +242,8 @@ export default function App() {
           alt=""
           decoding="async"
           draggable={false}
-          className="animate-float w-[min(58vw,260px)] select-none"
-          style={{ filter: 'drop-shadow(0 8px 18px rgba(0,0,0,.55))' }}
+          className="animate-float relative z-10 w-[min(52vw,230px)] select-none"
+          style={{ filter: 'drop-shadow(0 10px 22px rgba(0,0,0,.7))' }}
         />
         <span className="sr-only">Loading</span>
       </div>
