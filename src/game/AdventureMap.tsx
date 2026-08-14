@@ -302,7 +302,9 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
       : null;
 
   const [walking, setWalking] = useState(false);
-  const [facing, setFacing] = useState(() => (journey && current && current.x < journey.x ? -1 : 1));
+  const [facing, setFacing] = useState(() =>
+    journey && current && current.x < journey.x ? -1 : 1,
+  );
   const lastX = useRef<number | null>(journey?.x ?? null);
 
   useEffect(() => {
@@ -676,9 +678,7 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
     const overY = Math.min(card.bottom, heroBox.bottom) - Math.max(card.top, heroBox.top);
     /* Down, always. The card is already sitting at the top of the safe area,
        so up is not a direction it has. */
-    setQuestDodge(
-      overX > 0 && overY > 0 ? Math.round(heroBox.bottom + DODGE_GAP - card.top) : 0,
-    );
+    setQuestDodge(overX > 0 && overY > 0 ? Math.round(heroBox.bottom + DODGE_GAP - card.top) : 0);
   }, [heroBox, quest]);
 
   return (

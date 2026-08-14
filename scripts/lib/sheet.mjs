@@ -130,7 +130,10 @@ export function keyBackground(data, W, H, C, { fringe = 3, slack = 34, interior 
 /** Read a sheet, key it, and hand back both the raw pixels and a PNG buffer to
  *  cut from. */
 export async function loadSheet(file) {
-  const { data, info } = await sharp(file).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  const { data, info } = await sharp(file)
+    .ensureAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
   const { width: W, height: H, channels: C } = info;
   keyBackground(data, W, H, C);
   const keyed = await sharp(Buffer.from(data), { raw: { width: W, height: H, channels: C } })

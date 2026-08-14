@@ -232,10 +232,7 @@ export function Landing() {
   /* Counted from the same content the map counts, so the greeting cannot
      claim a total the world does not have. */
   const cleared = Object.keys(progress.zonesCleared).length;
-  const totalLandmarks = REGION_ORDER.reduce(
-    (n, id) => n + (PATH_BY_ID[id]?.nodes.length ?? 0),
-    0,
-  );
+  const totalLandmarks = REGION_ORDER.reduce((n, id) => n + (PATH_BY_ID[id]?.nodes.length ?? 0), 0);
 
   const begin = () => {
     sfx.achieve();

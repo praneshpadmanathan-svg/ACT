@@ -3,7 +3,7 @@
 The generated art in this project comes from image models, and the prompt is the
 source file — the PNG in this directory is a build output that happens to be
 committed. Losing the prompt means the next sheet cannot be made to match the
-last one, which for a *set* of sprites is the whole game. So they live here.
+last one, which for a _set_ of sprites is the whole game. So they live here.
 
 Each prompt is followed by the notes that came out of actually slicing the
 result, because the next sheet has to be sliceable by the same script.
@@ -28,12 +28,12 @@ ash, wren, juniper, kesh, noor, sable, linden, io.
 > no borders, no drop shadows, no background scenery — transparent background.
 
 **What actually came back, and what to expect again.** The transparency is
-*painted on*: the sheet arrives with the familiar grey checkerboard drawn into
+_painted on_: the sheet arrives with the familiar grey checkerboard drawn into
 the pixels and alpha 255 everywhere. `build-heroes.mjs` keys it out by flood
 filling from the border on "near-neutral and light" rather than on sampled
 colours, because the two checker greys are 29 apart and a faint vignette moves
-both of them across the sheet. That works here only because *nothing in the
-traveller palette is neutral* — the outlines are brown, the leather is warm, the
+both of them across the sheet. That works here only because _nothing in the
+traveller palette is neutral_ — the outlines are brown, the leather is warm, the
 cloaks are saturated. Do not add a grey or white element to a traveller without
 re-checking the key.
 
@@ -151,7 +151,7 @@ without waiting on the others. They are listed in the order they are worth
 doing.
 
 Three rules are shared, and they are not stylistic preferences. They are what
-makes a sheet *sliceable*:
+makes a sheet _sliceable_:
 
 1. **Flat magenta `#FF00FF` background.** Never "transparent" — that returns a
    painted checkerboard with alpha 255 everywhere, which has to be keyed out
@@ -175,8 +175,8 @@ not come from the art at all.
 sheet of one tree in four positions of a sway cycle. It fails twice: an image
 model will not hold a tree identical across four frames (branches move, trunk
 width changes, palette drifts), and even if it did, a four-frame loop reads as a
-loop within two cycles. The map already has trees. What it needs is *things
-coming off them* — and a leaf is one small object that a particle engine can
+loop within two cycles. The map already has trees. What it needs is _things
+coming off them_ — and a leaf is one small object that a particle engine can
 throw a hundred different ways, from a hundred heights, at a hundred rotations,
 from a single sprite.
 
@@ -300,7 +300,7 @@ off its edges.
 **Seamless tiles are the wrong ask.** An image model cannot match an existing
 painted edge pixel for pixel, and a visible seam across open ground looks worse
 than no extension at all. The way this works is to put the join where a break is
-*expected*: a coastline, a cliff face, a river, or a bank of the Grey's own
+_expected_: a coastline, a cliff face, a river, or a bank of the Grey's own
 mist. Then the seam is a feature of the world rather than a defect in the art.
 
 Generate these **one per image**, at the same aspect as the edge they attach to.
@@ -350,12 +350,12 @@ background some variety, and gives the object some competition.
 
 **Two sets, and they follow opposite rules.** Read this before generating.
 
-| | Set A — backgrounds | Set B — objects |
-| --- | --- | --- |
+|                   | Set A — backgrounds              | Set B — objects        |
+| ----------------- | -------------------------------- | ---------------------- |
 | Background colour | **the art itself, edge to edge** | flat magenta `#FF00FF` |
-| Keyed out? | **never** | yes, by the slicer |
-| Items per image | one full-bleed scene | 8 in a grid |
-| Aspect | square, 1:1 | anything |
+| Keyed out?        | **never**                        | yes, by the slicer     |
+| Items per image   | one full-bleed scene             | 8 in a grid            |
+| Aspect            | square, 1:1                      | anything               |
 
 Set A is the first art in this project that must **not** have a magenta
 background, and asking for one would be actively wrong — the whole image is
@@ -364,7 +364,7 @@ loudly once.
 
 ### Set A — full-bleed loading backgrounds (four separate images)
 
-Generate each as its own image. They are alternatives *and* a rotation: the
+Generate each as its own image. They are alternatives _and_ a rotation: the
 screen can pick one per cold start, so more of them is better, not wasteful.
 
 **The composition rule, which matters more than the subject.** These get

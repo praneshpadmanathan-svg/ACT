@@ -204,7 +204,10 @@ const runs = (arr, minLen) => {
 async function main() {
   await mkdir(OUT, { recursive: true });
 
-  const { data, info } = await sharp(SHEET).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  const { data, info } = await sharp(SHEET)
+    .ensureAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
   const { width: W, height: H, channels: C } = info;
   console.log(`sheet ${W}×${H}`);
 

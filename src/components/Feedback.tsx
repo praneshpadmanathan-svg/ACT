@@ -310,7 +310,12 @@ export function LevelUpOverlay() {
             : 'The highest rank there is'}
         </div>
 
-        <Button variant="primary" size="lg" className="mt-6 sm:mt-8 [@media(max-height:520px)]:mt-4" onClick={dismissLevelUp}>
+        <Button
+          variant="primary"
+          size="lg"
+          className="mt-6 sm:mt-8 [@media(max-height:520px)]:mt-4"
+          onClick={dismissLevelUp}
+        >
           Onward ▸
         </Button>
       </div>

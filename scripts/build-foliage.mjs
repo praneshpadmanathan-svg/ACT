@@ -118,7 +118,9 @@ async function main() {
 
     await writeFile(path.join(OUT, `${id}.png`), buf);
     manifest[id] = { width, height, src: `/art/particles/${id}.png` };
-    console.log(`  ${id.padEnd(11)} ${w}×${h} → ${width}×${height}  ${(buf.length / 1024).toFixed(1)} KB`);
+    console.log(
+      `  ${id.padEnd(11)} ${w}×${h} → ${width}×${height}  ${(buf.length / 1024).toFixed(1)} KB`,
+    );
   }
 
   await writeFile(MANIFEST, `${JSON.stringify(manifest, null, 2)}\n`);

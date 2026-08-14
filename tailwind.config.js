@@ -129,8 +129,18 @@ export default {
            and blurred at the moment it lands, so it reads as being stamped
            onto the screen rather than fading up on it. */
         stamp: {
-          '0%': { opacity: '0', transform: 'scale(2.1)', filter: 'blur(14px)', letterSpacing: '.6em' },
-          '55%': { opacity: '1', transform: 'scale(.94)', filter: 'blur(0)', letterSpacing: '.16em' },
+          '0%': {
+            opacity: '0',
+            transform: 'scale(2.1)',
+            filter: 'blur(14px)',
+            letterSpacing: '.6em',
+          },
+          '55%': {
+            opacity: '1',
+            transform: 'scale(.94)',
+            filter: 'blur(0)',
+            letterSpacing: '.16em',
+          },
           '75%': { transform: 'scale(1.03)' },
           '100%': { opacity: '1', transform: 'scale(1)', letterSpacing: '.2em' },
         },
