@@ -8,6 +8,7 @@ import { m, MotionProvider, pageVariants } from '@/lib/motion';
 import { TopBar } from '@/components/Shell';
 import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
 import { StoryOverlay } from '@/game/StoryOverlay';
+import { RegionBackdrop } from '@/game/RegionBackdrop';
 import { Vignette } from '@/components/Vignette';
 import { LoadingScreen } from '@/components/LoadingScreen';
 
@@ -194,6 +195,16 @@ export default function App() {
   return (
     <MotionProvider>
       {!bare && <TopBar />}
+
+      {/* The region's painted plate, behind the whole viewport.
+
+          Here rather than inside `PathScreen` because of the wrapper below:
+          it animates `y: 12 → 0`, and a transform on an ancestor becomes the
+          containing block for `position: fixed`, which would pin the backdrop
+          to the page and scroll it away down a ten-landmark road. As a
+          sibling it has no transformed ancestor. See `game/RegionBackdrop`
+          for the rest of it. */}
+      {route.name === 'path' && <RegionBackdrop section={route.section} />}
 
       {/* Screens animate in, and nothing waits on an animation to do it.
 

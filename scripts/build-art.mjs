@@ -57,6 +57,21 @@ const WIDTHS = {
   'scene-river': [512, 768, 928],
   'scene-pass': [512, 768, 928],
   'scene-harbour': [512, 768, 928],
+  /* The four path-screen backdrops, and the top rung of each is the whole
+     source — `build-regions.mjs` already capped the long side at 1024, for the
+     reasons written down there.
+
+     Four ladders rather than one because two of the panels came back portrait
+     and two landscape, and the two portrait ones then lost a fifth of their
+     width to open sea. That leaves them about 520 px wide, which a wide desktop
+     will upscale two and a half times: unavoidable, since that is how much
+     painting there is, and acceptable on a plate that the scrim has already
+     taken three quarters of the light out of. It would not be acceptable on
+     anything a student had to read. */
+  'region-reading': [512, 768, 1024],
+  'region-english': [512, 768, 1024],
+  'region-math': [352, 514],
+  'region-science': [384, 567],
 };
 
 const AVIF = { quality: 52, effort: 6, chromaSubsampling: '4:2:0' };

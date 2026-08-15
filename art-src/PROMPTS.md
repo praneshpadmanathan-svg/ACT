@@ -248,8 +248,18 @@ colonnade, standing pillars, tents and a watchtower, and the forest is
 wall-to-wall canopy. Composited at real map scale the props sit convincingly —
 the style holds, which was the real risk — but there is nowhere to put them
 that is not already occupied, and adding to a full frame is clutter rather than
-depth. They are cut, committed and waiting for terrain that is actually sparse:
-the extension panels, once those exist in the right style.
+depth.
+
+**Where they did end up: foreground, not scenery.** The region backdrops (Sheet 4) turned out to have the same problem for the same reason — those paintings
+already contain thousands of trees, and one more tree in a forest is noise. The
+job they can actually do is depth. Three per region, large, hard against the
+bottom edge of the viewport with their bases cut off by it, darkened to
+silhouette and passed under the same scrim as the plate. A prop that close to
+the camera does not need ground under it, so it cannot land somewhere wrong at
+any window size — which matters, because the plate is `object-cover` and the
+props are positioned against the viewport. The first attempt scattered them
+across the picture instead and the test composite put a dead tree in open sea.
+All nine are used; see `src/game/RegionBackdrop.tsx`.
 
 ---
 
@@ -372,6 +382,37 @@ panel it is inside the terrain and has to be cropped off, which means losing
 about 96 px of one edge. Never the joining edge: crop the **right** on north,
 and the **bottom** on the other three. Each of the four has a safe choice, so
 this costs nothing but has to be done deliberately.
+
+### What these became instead: the four region backdrops
+
+The repainted panels are right in every way the first set was wrong — same
+parchment, same ink, same palette as `world-map.webp` — and they still cannot
+extend the map, for a reason no prompt could have fixed. **They are drawn at
+roughly four times fewer metres per pixel.** The map draws a village, a great
+tree and a castle; the panels draw whole mountain ranges. Assembled at real
+scale the original ends up eighteen percent of a 2584×2234 whole, in a plus
+shape with four blank corners, and the village reads as the size of a range.
+Matching the cartography would mean shrinking each panel to about a 768×110
+strip — a border, not an extension.
+
+So they are full-bleed plates behind the four path screens instead: one region
+each, under a scrim, `scripts/build-regions.mjs` and
+`src/game/RegionBackdrop.tsx`. Nothing is next to anything, so there is no scale
+left to disagree with, and each region finally shows the terrain it is named
+for. Two things had to be trimmed beyond the sparkle. The east panel came back
+inside a painted parchment frame it was told not to have (found by walking in
+from each edge while the rows stay pale and unsaturated, so it costs nothing on
+the three that do not have one). And the joining edge — the open sea that made
+each panel a coastline — is dead weight once there is nothing to join: a fifth
+of the east plate is empty water, which under a scrim is a black band down one
+side of the screen. Cut on east and west.
+
+**If the map is ever extended for real, the ask is different from the one
+above.** Not "paint what is off the edges" but "paint what is off the edges _at
+this scale_", with the map itself supplied as reference and a named feature —
+the village, say — given as the unit: _"the settlement in the reference image is
+about a fifth of the width of this plate."_ Scale is the thing to specify, and
+it is the thing both attempts left to the model.
 
 ---
 

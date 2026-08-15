@@ -67,6 +67,126 @@
       }
     ]
   },
+  "region-english": {
+    "width": 1024,
+    "height": 538,
+    "fallback": "/art/region-english.webp",
+    "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAwBACdASoUAAsAPu1iqk2ppaQiMAgBMB2JYwC7MoADAXw79bX0FHCVfkAA4Ct4xbuB4bFmOQgrbaRf+pSYPjIaxIyvrTR3WTFAAA==",
+    "avif": [
+      {
+        "w": 512,
+        "src": "/art/gen/region-english-512.avif"
+      },
+      {
+        "w": 768,
+        "src": "/art/gen/region-english-768.avif"
+      },
+      {
+        "w": 1024,
+        "src": "/art/gen/region-english-1024.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 512,
+        "src": "/art/gen/region-english-512.webp"
+      },
+      {
+        "w": 768,
+        "src": "/art/gen/region-english-768.webp"
+      },
+      {
+        "w": 1024,
+        "src": "/art/gen/region-english-1024.webp"
+      }
+    ]
+  },
+  "region-math": {
+    "width": 514,
+    "height": 1024,
+    "fallback": "/art/region-math.webp",
+    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAQBgCdASoUACgAPu1gqU2ppSQiMBVdUTAdiWMAvnvpAOAMCPNtngN6Vid01vhOpFCwY/iACcRGfzgA4BUjXTkSbxyO9pLp9oM1whq1vfLoHli91+hZhet4Ny6Hxe3n+YaLCXzMpc4m4yB17TSvBtrDwCukN5brNtRtQFv2LHLKn/q7eMQMamFGLCsTRiLgAAA=",
+    "avif": [
+      {
+        "w": 352,
+        "src": "/art/gen/region-math-352.avif"
+      },
+      {
+        "w": 514,
+        "src": "/art/gen/region-math-514.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 352,
+        "src": "/art/gen/region-math-352.webp"
+      },
+      {
+        "w": 514,
+        "src": "/art/gen/region-math-514.webp"
+      }
+    ]
+  },
+  "region-reading": {
+    "width": 1024,
+    "height": 538,
+    "fallback": "/art/region-reading.webp",
+    "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACQAwCdASoUAAsAPu1iqk2ppaQiMAgBMB2JQBOgA7M+ybPiT/GAAP7V2k//YfbPMACj2950uh4em/nOyOBPZVjJwbL4U2v1c5ggQTCGh3jU0AAA",
+    "avif": [
+      {
+        "w": 512,
+        "src": "/art/gen/region-reading-512.avif"
+      },
+      {
+        "w": 768,
+        "src": "/art/gen/region-reading-768.avif"
+      },
+      {
+        "w": 1024,
+        "src": "/art/gen/region-reading-1024.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 512,
+        "src": "/art/gen/region-reading-512.webp"
+      },
+      {
+        "w": 768,
+        "src": "/art/gen/region-reading-768.webp"
+      },
+      {
+        "w": 1024,
+        "src": "/art/gen/region-reading-1024.webp"
+      }
+    ]
+  },
+  "region-science": {
+    "width": 567,
+    "height": 1024,
+    "fallback": "/art/region-science.webp",
+    "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABQBQCdASoUACQAPu1wrlKppiQipWmZMB2JZQDDcAf+qGocYK0EqJx6npl5JLcpSJK4gEIA/tRmPJBvLFZJ5TikVHMHyiGt716r+mo9p0Z2AI1S2KslkfA9iRudTG7hSzjOcb/F2+myqayqUCYxDjdZVV4drtd4JRWyq0jtNQNSTzmt+XqUDKLx3oIUzrapxmmKAA==",
+    "avif": [
+      {
+        "w": 384,
+        "src": "/art/gen/region-science-384.avif"
+      },
+      {
+        "w": 567,
+        "src": "/art/gen/region-science-567.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 384,
+        "src": "/art/gen/region-science-384.webp"
+      },
+      {
+        "w": 567,
+        "src": "/art/gen/region-science-567.webp"
+      }
+    ]
+  },
   "scene-harbour": {
     "width": 928,
     "height": 928,
