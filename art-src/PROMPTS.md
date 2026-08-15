@@ -234,6 +234,23 @@ standing on it rather than being one flat painting.
 
 Nine items — at the ceiling, deliberately.
 
+**What came back, and where it can and cannot go.** Nine clean cells for nine
+slots, sliced by `scripts/build-props.mjs`. Six of them arrived with a cast
+shadow painted underneath in a darker magenta; those key out with the
+background, which is the outcome we want — a shadow baked into a sprite is lit
+from one fixed direction and painted onto whatever ground the prop lands on.
+
+**Not scattered on the world map, though.** The brief above says the map needs
+props "so the terrain has objects standing on it rather than being one flat
+painting", and that describes a map this project does not have.
+`world-map.webp` is already dense: the desert alone carries an arch, a ruined
+colonnade, standing pillars, tents and a watchtower, and the forest is
+wall-to-wall canopy. Composited at real map scale the props sit convincingly —
+the style holds, which was the real risk — but there is nowhere to put them
+that is not already occupied, and adding to a full frame is clutter rather than
+depth. They are cut, committed and waiting for terrain that is actually sparse:
+the extension panels, once those exist in the right style.
+
 ---
 
 ## Sheet 3 — The four guardians
@@ -303,6 +320,23 @@ than no extension at all. The way this works is to put the join where a break is
 _expected_: a coastline, a cliff face, a river, or a bank of the Grey's own
 mist. Then the seam is a feature of the world rather than a defect in the art.
 
+> **The first four came back in the wrong style, and the prompt is why.** It
+> asked for "chunky readable pixels, dark ink outlines, no anti-aliasing, no
+> gradients" — which is this project's _sprite_ style, correctly copied from
+> every other prompt in this file, and completely wrong here.
+> `public/art/world-map.webp` is not pixel art. It is a painted, hand-inked
+> illustration on parchment: soft shading, painted clouds overlapping the
+> edges, saturated forest greens against terracotta rock, visible paper grain.
+> Butting a flat top-down tilemap against it does not read as more map, it
+> reads as a screenshot of another game pasted underneath — checked by
+> compositing `panel-south.png` under the real map at real scale before
+> writing any code for it.
+>
+> The four panels below are rewritten to match the map they attach to.
+> `art-src/panel-{north,south,east,west}.png` are the pixel-art versions, kept
+> because they are good art in their own right and may yet be useful somewhere
+> that is not this map.
+
 Generate these **one per image**, and note which edge carries the coast: it is
 always the edge that **faces the existing map**, because that is the edge that
 has to join. North sits above, so its coast runs along its bottom; south sits
@@ -316,49 +350,21 @@ which is the shape to match.
 
 No magenta on these — like the loading backdrops, the whole image is the asset.
 
-**North** — already generated, kept here for the set.
+**North**
 
-> A pixel-art fantasy world-map panel, landscape, top-down three-quarter view,
-> painted in a warm limited parchment-map palette: ochre plains, deep green
-> woodland, grey-brown rock, muted teal water. The **bottom** edge of the image
-> is entirely open sea meeting a long east-west coastline, so the panel can butt
-> against another map along that coast. The rest of the panel is snowfields and
-> black pine forest rising to a broken mountain wall. Chunky readable pixels,
-> dark ink outlines, lit from the upper left, no anti-aliasing, no gradients, no
-> lettering, no labels, no compass rose, no map border or frame, no grid.
+> A landscape, painted illustrated fantasy map in the style of a hand-inked atlas plate on aged parchment: soft brush shading rather than flat fill, warm brown ink linework, saturated colour — deep forest greens, terracotta and rust rock, cream sand, deep blue-teal sea with fine drawn wave lines — a faint paper grain over everything, and soft painted white clouds drifting across the outer edges of the plate. Top-down three-quarter view. No pixel-art, no hard pixel edges, no flat vector fill. The **bottom** edge of the plate is entirely open sea meeting a long east-west coastline, so the panel can butt against another map along that coast. The rest of the plate is snowfields and black pine forest rising to a broken mountain wall, with a frozen river cutting down through it. Painted texture throughout, lit from the upper left. No lettering, no labels, no place names, no compass rose, no map border or frame, no grid, no scale bar.
 
 **South**
 
-> A pixel-art fantasy world-map panel, landscape, top-down three-quarter view,
-> painted in a warm limited parchment-map palette: ochre plains, deep green
-> woodland, grey-brown rock, muted teal water. The **top** edge of the image is
-> entirely open sea meeting a long east-west coastline, so the panel can butt
-> against another map along that coast. The rest of the panel is salt marsh and
-> mangrove giving way to pale dunes. Chunky readable pixels, dark ink outlines,
-> lit from the upper left, no anti-aliasing, no gradients, no lettering, no
-> labels, no compass rose, no map border or frame, no grid.
+> A landscape, painted illustrated fantasy map in the style of a hand-inked atlas plate on aged parchment: soft brush shading rather than flat fill, warm brown ink linework, saturated colour — deep forest greens, terracotta and rust rock, cream sand, deep blue-teal sea with fine drawn wave lines — a faint paper grain over everything, and soft painted white clouds drifting across the outer edges of the plate. Top-down three-quarter view. No pixel-art, no hard pixel edges, no flat vector fill. The **top** edge of the plate is entirely open sea meeting a long east-west coastline, so the panel can butt against another map along that coast. The rest of the plate is salt marsh and mangrove giving way to pale wind-carved dunes, with tidal channels threading through the reeds. Painted texture throughout, lit from the upper left. No lettering, no labels, no place names, no compass rose, no map border or frame, no grid, no scale bar.
 
 **East**
 
-> A pixel-art fantasy world-map panel, portrait, top-down three-quarter view,
-> painted in a warm limited parchment-map palette: ochre plains, deep green
-> woodland, grey-brown rock, muted teal water. The **left** edge of the image is
-> entirely open sea meeting a long north-south coastline, so the panel can butt
-> against another map along that coast. The rest of the panel is high plateau cut
-> by deep canyons and dry riverbeds. Chunky readable pixels, dark ink outlines,
-> lit from the upper left, no anti-aliasing, no gradients, no lettering, no
-> labels, no compass rose, no map border or frame, no grid.
+> A portrait, painted illustrated fantasy map in the style of a hand-inked atlas plate on aged parchment: soft brush shading rather than flat fill, warm brown ink linework, saturated colour — deep forest greens, terracotta and rust rock, cream sand, deep blue-teal sea with fine drawn wave lines — a faint paper grain over everything, and soft painted white clouds drifting across the outer edges of the plate. Top-down three-quarter view. No pixel-art, no hard pixel edges, no flat vector fill. The **left** edge of the plate is entirely open sea meeting a long north-south coastline, so the panel can butt against another map along that coast. The rest of the plate is high plateau cut by deep red canyons and dry riverbeds, with a few wind-bent trees on the rim. Painted texture throughout, lit from the upper left. No lettering, no labels, no place names, no compass rose, no map border or frame, no grid, no scale bar.
 
 **West**
 
-> A pixel-art fantasy world-map panel, portrait, top-down three-quarter view,
-> painted in a warm limited parchment-map palette: ochre plains, deep green
-> woodland, grey-brown rock, muted teal water. The **right** edge of the image is
-> entirely open sea meeting a long north-south coastline, so the panel can butt
-> against another map along that coast. The rest of the panel is drowned ruins in
-> shallow water, causeways between islands. Chunky readable pixels, dark ink
-> outlines, lit from the upper left, no anti-aliasing, no gradients, no lettering,
-> no labels, no compass rose, no map border or frame, no grid.
+> A portrait, painted illustrated fantasy map in the style of a hand-inked atlas plate on aged parchment: soft brush shading rather than flat fill, warm brown ink linework, saturated colour — deep forest greens, terracotta and rust rock, cream sand, deep blue-teal sea with fine drawn wave lines — a faint paper grain over everything, and soft painted white clouds drifting across the outer edges of the plate. Top-down three-quarter view. No pixel-art, no hard pixel edges, no flat vector fill. The **right** edge of the plate is entirely open sea meeting a long north-south coastline, so the panel can butt against another map along that coast. The rest of the plate is drowned ruins standing in shallow water, stone causeways running between small wooded islands. Painted texture throughout, lit from the upper left. No lettering, no labels, no place names, no compass rose, no map border or frame, no grid, no scale bar.
 
 **The generator's sparkle lands in the bottom-right corner, 33 px in.** On a
 cutout sheet that is harmless — `findCells` drops it by size. On a full-bleed

@@ -25,7 +25,8 @@
     "build:foliage": "node scripts/build-foliage.mjs",
     "build:bosses": "node scripts/build-bosses.mjs",
     "build:loading": "node scripts/build-loading.mjs",
-    "build:scenes": "node scripts/build-scenes.mjs"
+    "build:scenes": "node scripts/build-scenes.mjs",
+    "build:props": "node scripts/build-props.mjs"
   },
   "dependencies": {
     "@fontsource-variable/newsreader": "^5.3.0",
