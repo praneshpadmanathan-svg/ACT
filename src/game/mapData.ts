@@ -50,8 +50,12 @@ export const SUMMIT_AT: [number, number] = [47, 90.5];
      and the name have to be changed together. Read them off the enlarged crops
      before moving anything.
 
-   Within a region the x values only ever increase, so the road reads as a walk
-   across the terrain rather than a scribble. */
+   Within a region the x values never decrease, so the road reads as a walk
+   across the terrain rather than a scribble. `mapData.test.ts` enforces this —
+   it is easy to break by nudging one pin onto a feature and not looking at what
+   that does to the two either side of it, which is exactly what happened to the
+   Science Cliffs' sea stack. Equal x is allowed: two landmarks stacked on the
+   same headland are a walk down a coast, not a scribble. */
 
 export const REGIONS: Record<SectionId, RegionMeta> = {
   english: {
@@ -123,7 +127,10 @@ export const REGIONS: Record<SectionId, RegionMeta> = {
     // tower. Starts at x=19: anything further left is open sea, not cliff.
     pins: [
       [22, 64.5],
-      [21, 73],
+      // Was [21, 73], which walked the road backwards and sat on the sea
+      // stack's left flank rather than the rock. Read off the enlarged crop:
+      // the stack spans x 20.6-23.0, y 71.9-73.5, so this is its centre.
+      [22, 72.7],
       [33, 66],
       [37, 72.5],
       [42, 67],

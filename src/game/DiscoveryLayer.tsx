@@ -13,11 +13,12 @@
    between a map you look at and a map you explore. Discoveries under mist stay
    hidden, so there is always somewhere left to go. */
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
+import { useDialogFocus } from '@/lib/useDialogFocus';
 import { m, SPRING } from '@/lib/motion';
 import type { SectionId } from '@/types';
 import { DISCOVERIES, type Discovery } from './discoveries';
@@ -198,23 +199,33 @@ export function DiscoveryLayer({ clearedByRegion, onFound }: Props) {
   );
 }
 
-/* The reveal. Sits outside the world layer so it is never scaled or panned. */
+/* The reveal. Sits outside the world layer so it is never scaled or panned.
+
+   This claimed `aria-modal="true"` for a long time while doing none of the work
+   that claim promises: measured on a fully-explored map there were 69 focusable
+   elements still live behind it, so Tab walked straight out of the card and off
+   into the pins underneath it. The other four dialogs in the app all call
+   `useDialogFocus`; this was the only one that did not. */
 function DiscoveryCard({ discovery, onClose }: { discovery: Discovery; onClose: () => void }) {
   const region = discovery.region === 'summit' ? null : REGIONS[discovery.region as SectionId];
+  const ref = useRef<HTMLDivElement>(null);
+  useDialogFocus(ref, true, onClose);
 
   return (
     <div
+      ref={ref}
       className="fixed inset-0 z-[115] flex items-center justify-center p-4"
       role="dialog"
       aria-modal="true"
+      tabIndex={-1}
       aria-label={discovery.name}
     >
-      <button
-        type="button"
-        onClick={onClose}
-        className="absolute inset-0 cursor-default bg-leather-950/80 backdrop-blur-sm"
-        aria-label="Close"
-      />
+      {/* The scrim is after the card in source order, not before it. The trap
+          focuses the first focusable in the dialog, and with the scrim first
+          that was this invisible full-screen button rather than "Back to the
+          map" — which is what the card's `autoFocus` used to ask for, before
+          the trap started overriding it. `z-10` on the card keeps the paint
+          order the same either way. */}
       <m.div
         className="sheet relative z-10 w-full max-w-md p-6 sm:p-7"
         initial={{ opacity: 0, y: 18, scale: 0.96 }}
@@ -230,11 +241,17 @@ function DiscoveryCard({ discovery, onClose }: { discovery: Discovery; onClose: 
         </p>
         <div className="mt-5 flex items-center justify-between gap-3 border-t border-parchment-edge pt-4">
           <span className="label-quill">+{discovery.xp} XP</span>
-          <button type="button" onClick={onClose} className="btn btn-quill" autoFocus>
+          <button type="button" onClick={onClose} className="btn btn-quill">
             Back to the map
           </button>
         </div>
       </m.div>
+      <button
+        type="button"
+        onClick={onClose}
+        className="absolute inset-0 cursor-default bg-leather-950/80 backdrop-blur-sm"
+        aria-label="Close"
+      />
     </div>
   );
 }

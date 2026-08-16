@@ -7,9 +7,14 @@
    never told a dialog had opened at all.
 
    So: move focus in on open, keep Tab inside while it is open, mark the rest of
-   the page inert, and put focus back where it came from on close. */
+   the page inert, and put focus back where it came from on close.
 
-import { useEffect, type RefObject } from 'react';
+   `onEscape` is optional on purpose. Escape should close anything you opened to
+   look at, but the road chooser is a forced choice with no default — dismissing
+   it would leave the map in a state the player never picked — so it passes
+   nothing and stays non-dismissible. */
+
+import { useEffect, useRef, type RefObject } from 'react';
 
 const FOCUSABLE = [
   'a[href]',
@@ -20,7 +25,22 @@ const FOCUSABLE = [
   '[tabindex]:not([tabindex="-1"])',
 ].join(',');
 
-export function useDialogFocus(ref: RefObject<HTMLElement | null>, active: boolean) {
+export function useDialogFocus(
+  ref: RefObject<HTMLElement | null>,
+  active: boolean,
+  onEscape?: () => void,
+) {
+  /* Held in a ref so an inline arrow at the call site does not re-run the
+     effect: that would tear the inert attributes off and re-focus the first
+     control on every render of the dialog's parent. */
+  const escape = useRef(onEscape);
+  /* Deliberately has no dependency array: it re-points the ref after every
+     render, and the keydown handler below only ever reads it from a real
+     keypress, long after this has flushed. */
+  useEffect(() => {
+    escape.current = onEscape;
+  });
+
   useEffect(() => {
     const node = ref.current;
     if (!active || !node) return;
@@ -63,6 +83,12 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active: boole
     /* Keep Tab inside. The story overlay's lines arrive one at a time, so the
        focusable set is re-read on every keypress rather than cached. */
     const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && escape.current) {
+        e.preventDefault();
+        e.stopPropagation();
+        escape.current();
+        return;
+      }
       if (e.key !== 'Tab') return;
       const items = [...node.querySelectorAll<HTMLElement>(FOCUSABLE)].filter(
         (el) => el.offsetParent !== null || el === document.activeElement,

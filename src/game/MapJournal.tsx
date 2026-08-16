@@ -30,7 +30,7 @@ export function MapJournal({ onClose }: { onClose: () => void }) {
   const { progress } = useStore();
   const ref = useRef<HTMLDivElement>(null);
   const [tab, setTab] = useState<'found' | 'legend'>('found');
-  useDialogFocus(ref, true);
+  useDialogFocus(ref, true, onClose);
 
   const found = new Set(progress.discovered ?? []);
 

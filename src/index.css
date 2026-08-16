@@ -2057,6 +2057,42 @@
     transform: translate(-50%, -50%) scale(1.25);
   }
 
+  /* ------------------------------------------------ marker hit targets
+   *
+   * Every mark in the world layer is authored in map pixels and then scaled
+   * by `--map-scale`, so its size on the glass is whatever the frame and the
+   * zoom happen to make it — and at the bottom of the zoom range on a phone
+   * that is far too small to hit. Measured at 375x812: cover scale is
+   * `max(375/768, 812/1376)` = 0.59, so at `MIN_ZOOM` the 34px landmark pin
+   * lands at 20px, the 26px discovery glint at 15px and the 30px courier at
+   * 18px — all under the 24px floor in WCAG 2.2 target size (minimum).
+   *
+   * Two ways to fix that, and the obvious one is wrong. Counter-scaling the
+   * marks themselves would hold them at a constant size on the glass, which
+   * breaks the thing the scale is *for*: a landmark is a place, and places
+   * get bigger as you lean in. So the drawn mark keeps scaling, and an
+   * invisible box takes the floor instead.
+   *
+   * `max()` against the element's own 100% means this only ever grows the
+   * target — zoomed in, where the mark is already comfortably over 24px, the
+   * pseudo-element is exactly the size of the mark and changes nothing.
+   *
+   * 24px rather than the more familiar 44px is deliberate: the pins are only
+   * 3-5 map percent apart, which at min zoom is around 30px on the glass, so
+   * 44px targets would overlap each other and steal each other's taps. */
+  .pin::before,
+  .guardian::before,
+  .courier::before,
+  .discovery::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: max(100%, calc(24px / var(--map-scale, 1)));
+    height: max(100%, calc(24px / var(--map-scale, 1)));
+    transform: translate(-50%, -50%);
+  }
+
   .discovery-hidden .discovery-mark {
     @apply block rounded-full;
     width: 9px;
