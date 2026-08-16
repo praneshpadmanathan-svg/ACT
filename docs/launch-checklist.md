@@ -60,6 +60,28 @@ Then **confirm RLS is actually on**: Table editor → `progress` → the shield 
 read "RLS enabled". The anon key is public by design, so these policies are the
 only thing separating one student's progress from another's.
 
+### Then check it, rather than believing it
+
+```bash
+npm run supabase:doctor
+```
+
+Every other line on this page is a box you tick by hand, and a ticked box is a
+claim. This one asks the live project. It reads `.env`, uses nothing but the anon
+key, writes nothing, and reports on the things that have actually gone wrong here
+before — the table missing, `push_progress` missing, RLS not filtering, email
+confirmation quietly off, the delete-account function never deployed. Each failure
+comes with its fix.
+
+It earns its keep because the alternative already happened: the project ran live
+with neither migration applied, so every sync write failed server-side and nothing
+in the repo could say so. Run it after any dashboard change and after any
+migration.
+
+Three things it cannot see, because they need the Management API and a personal
+access token rather than the anon key: the redirect allowlist, the `SITE_URL`
+function secret, and the email templates. Those stay hand-checked below.
+
 ## 3. Auth settings
 
 Dashboard → Authentication.

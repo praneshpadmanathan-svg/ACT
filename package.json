@@ -15,6 +15,7 @@
     "format:check": "prettier --check .",
     "check:anim": "node scripts/check-map-animations.mjs",
     "check:content": "node scripts/check-content.mjs",
+    "supabase:doctor": "node scripts/supabase-doctor.mjs",
     "build:art": "node scripts/build-art.mjs",
     "test": "vitest",
     "test:run": "vitest run",

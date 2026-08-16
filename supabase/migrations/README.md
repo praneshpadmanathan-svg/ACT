@@ -11,6 +11,18 @@ a project with one table, and pasting two files into the SQL editor is honest
 about the scale. What matters is that each file is numbered, immutable once
 applied, and describes one change.
 
+What that honesty costs is any record of whether a migration was ever actually
+run — and this project has already sat live with neither of them applied, every
+sync write failing server-side, invisibly. So afterwards, ask the database rather
+than your memory:
+
+```bash
+npm run supabase:doctor
+```
+
+It reports the table, the function, whether RLS is really filtering, and the auth
+settings, using nothing but the anon key and writing nothing.
+
 | File                                 | What it does                                                                                        |
 | ------------------------------------ | --------------------------------------------------------------------------------------------------- |
 | `0001_initial_schema.sql`            | The `progress` table, its four RLS policies, the 256 KB row cap and the `updated_at` index.         |

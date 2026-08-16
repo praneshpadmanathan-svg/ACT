@@ -1,0 +1,86 @@
+# Touch the database so the free tier does not pause the project.
+#
+# Supabase pauses a free project after 7 days with no API request, no database
+# query and no Edge Function call. A paused project does not degrade — it stops:
+# the REST endpoint goes away, every sign-in fails, and the app falls back to
+# guest mode for everyone at once. Restoring it is a manual click in a dashboard
+# nobody is watching over a weekend.
+#
+# Once there are real students this workflow is redundant — 500 people using the
+# app is thousands of requests a week and the timer never gets near seven days.
+# It matters in exactly the window this project is in now: built, deployed, and
+# not yet in front of anyone. Leaving it running afterwards costs one HTTP
+# request a week, which is cheaper than remembering to put it back.
+#
+# ── Setting it up ────────────────────────────────────────────────────────────
+#
+# Two repository secrets, the same two values the browser bundle already ships:
+#
+#   gh secret set SUPABASE_URL       # https://<ref>.supabase.co
+#   gh secret set SUPABASE_ANON_KEY  # the anon/publishable key
+#
+# They are secrets only because repository variables are noisier to manage, not
+# because they are sensitive — the anon key is designed to be public and row
+# level security is what protects the data. Never put the service_role key here.
+
+name: Keepalive
+
+on:
+  schedule:
+    # Twice a week rather than weekly, and not on the hour. A single weekly ping
+    # has no margin: one skipped run — GitHub drops scheduled jobs under load,
+    # and disables them entirely after 60 days of repository inactivity — and
+    # the 7-day timer runs out before the next one.
+    - cron: '40 6 * * 1,4'
+  workflow_dispatch:
+
+concurrency:
+  group: keepalive
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping the REST endpoint
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${SUPABASE_URL:-}" ] || [ -z "${SUPABASE_ANON_KEY:-}" ]; then
+            echo "SUPABASE_URL / SUPABASE_ANON_KEY are not set — see the header of this workflow." >&2
+            echo "Skipping rather than failing, so the Actions tab does not go red every week." >&2
+            exit 0
+          fi
+
+          # A real query against a real table, not a ping at the root. What
+          # resets the inactivity timer is database activity, and `select` with
+          # `limit=0` reads no rows while still being a query Postgres executes.
+          # RLS means an anon caller could not read a student's row even if the
+          # limit were removed.
+          code=$(curl -sS -o /tmp/body -w '%{http_code}' \
+            -H "apikey: ${SUPABASE_ANON_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" \
+            "${SUPABASE_URL%/}/rest/v1/progress?select=user_id&limit=0")
+
+          echo "HTTP ${code}"
+
+          # Fail loudly on anything but success. A keepalive that silently stops
+          # working is worse than no keepalive: it is a promise the project is
+          # awake, and the first sign otherwise would be students unable to sign
+          # in. 404 in particular means the migrations have not been applied —
+          # see `npm run supabase:doctor`.
+          if [ "$code" != "200" ]; then
+            echo "Keepalive failed. Body:" >&2
+            cat /tmp/body >&2
+            echo "" >&2
+            echo "Run 'npm run supabase:doctor' locally for a full diagnosis." >&2
+            exit 1
+          fi
+
+          echo "Project is awake."
