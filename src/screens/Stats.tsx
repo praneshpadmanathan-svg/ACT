@@ -169,33 +169,46 @@ export function StatsScreen() {
       {/* topics */}
       <h2 className="heading mb-4 text-[13px] text-parchment">Every topic you have tried</h2>
       <div className="space-y-2">
-        {allTopics.map((t) => (
-          <div
-            key={`${t.section}-${t.topic}`}
-            className="flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-4 py-3"
-          >
-            <span className="w-36 flex-none truncate font-sans text-[13px] font-semibold text-parchment sm:w-48">
-              {titleCase(t.topic)}
-            </span>
-            <span
-              className="hidden w-16 flex-none font-script text-[10px] uppercase tracking-wide sm:block"
-              style={{ color: t.section === 'zone' ? '#8f86b5' : SECTION_BY_ID[t.section]?.color }}
+        {allTopics.map((t) => {
+          /* There is no "Zone" label any more. It was never a section — it
+             was the bug, standing as a fifth column beside the four real
+             ones and taking every landmark topic with it. A topic you met at
+             a landmark is an English topic, and English is the only honest
+             thing to call it.
+
+             `'zone'` can still arrive here, from a save whose zone answers
+             have aged out of the answer log before the migration in
+             `progress.ts` could place them. Those render with no section
+             rather than with an invented one. */
+          const meta = t.section === 'zone' ? undefined : SECTION_BY_ID[t.section];
+          return (
+            <div
+              key={`${t.section}-${t.topic}`}
+              className="flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-4 py-3"
             >
-              {t.section === 'zone' ? 'Zone' : SECTION_BY_ID[t.section]?.name}
-            </span>
-            <ProgressBar
-              value={t.accuracy}
-              color={t.accuracy < 0.5 ? '#ff8298' : t.accuracy < 0.75 ? '#ffd23e' : '#5ee6a8'}
-              height={8}
-            />
-            <span className="num w-14 flex-none text-right text-[15px] text-parchment-dim">
-              {t.correct}/{t.attempts}
-            </span>
-            <span className="num hidden w-12 flex-none text-right text-[14px] text-ink-faint sm:block">
-              {t.avgSeconds.toFixed(0)}s
-            </span>
-          </div>
-        ))}
+              <span className="w-36 flex-none truncate font-sans text-[13px] font-semibold text-parchment sm:w-48">
+                {titleCase(t.topic)}
+              </span>
+              <span
+                className="hidden w-16 flex-none font-script text-[10px] uppercase tracking-wide sm:block"
+                style={{ color: meta?.color }}
+              >
+                {meta?.name}
+              </span>
+              <ProgressBar
+                value={t.accuracy}
+                color={t.accuracy < 0.5 ? '#ff8298' : t.accuracy < 0.75 ? '#ffd23e' : '#5ee6a8'}
+                height={8}
+              />
+              <span className="num w-14 flex-none text-right text-[15px] text-parchment-dim">
+                {t.correct}/{t.attempts}
+              </span>
+              <span className="num hidden w-12 flex-none text-right text-[14px] text-ink-faint sm:block">
+                {t.avgSeconds.toFixed(0)}s
+              </span>
+            </div>
+          );
+        })}
       </div>
     </Page>
   );

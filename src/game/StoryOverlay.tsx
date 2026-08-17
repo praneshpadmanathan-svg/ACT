@@ -332,7 +332,20 @@ export function StoryOverlay() {
       )}
 
       {!showTitle && (
+        /* The advance handler is here as well as on the full-screen button
+           above, and it has to be: this wrapper is a *sibling* of that button
+           at a higher z-index, not a child of it, so every tap that lands on
+           the scene stops here and never reaches it. The card prints "Tap to
+           continue" in the middle of itself, which put the prompt inside the
+           one region of the screen that was inert — tap the words, nothing
+           happens; tap the empty strip above or below them, the story moves.
+
+           The two `stopPropagation` calls further down, on Skip and on the
+           choice buttons, are what make this safe. They already existed,
+           which suggests the card was inside the click surface once and this
+           broke when it was lifted out for the shake animation. */
         <div
+          onClick={advance}
           className={cx(
             'relative z-20 w-full max-w-2xl',
             shake === 'hard' && 'animate-shakeHard',

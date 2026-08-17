@@ -28,7 +28,7 @@ import {
 import { XP } from '@/lib/progress';
 import { sfx } from '@/lib/sfx';
 import { titleCase } from '@/lib/utils';
-import type { DiagnosticResult, SectionId } from '@/types';
+import type { DiagnosticResult } from '@/types';
 import { Page } from '@/components/Shell';
 import { Button, ProgressBar, SectionHeading } from '@/components/ui';
 import { QuestionRunner } from '@/components/QuestionRunner';
@@ -129,13 +129,14 @@ export function DiagnosticScreen() {
           })
         }
         onFinish={(records) => {
-          const answers: DiagnosticAnswer[] = records
-            .filter((r) => r.question.section !== 'zone')
-            .map((r) => ({
-              section: r.question.section as SectionId,
-              topic: r.question.topic,
-              correct: r.correct,
-            }));
+          /* This used to filter out `'zone'` and then cast, to satisfy a type
+             that admitted a fifth section. A question carries one of the four
+             now, so both the filter and the cast are gone. */
+          const answers: DiagnosticAnswer[] = records.map((r) => ({
+            section: r.question.section,
+            topic: r.question.topic,
+            correct: r.correct,
+          }));
           const scored = scoreDiagnostic(answers);
           finishDiagnostic(scored);
           setResult(scored);

@@ -6,9 +6,9 @@
    optional `notes` array. Normalising here means the runner never has to
    know which library a question came from. */
 
-import type { Question, ZoneQuestion } from '@/types';
+import type { Question, SectionId, ZoneQuestion } from '@/types';
 import type { RunnableQuestion } from '@/components/QuestionRunner';
-import { getPassage, TOPIC_BY_ZONE_ALIAS } from '@/content';
+import { getPassage, getQuestion, getZone, TOPIC_BY_ZONE_ALIAS, ZONE_QUIZZES } from '@/content';
 import { canonicalTopic, isZoneLabel, seeded, shuffle } from '@/lib/utils';
 
 const KEYS = ['A', 'B', 'C', 'D'];
@@ -118,10 +118,49 @@ function topicFor(q: ZoneQuestion, zoneId: string, zoneTopic?: string): string {
   return TOPIC_BY_ZONE_ALIAS[alias] ?? alias;
 }
 
+/* A zone question's permanent id.
+ *
+ * It was `${zoneId}-q${index}`, where `index` was the question's place in a
+ * freshly shuffled six-question sample — so `comma_castle-q0` named a
+ * different question on every visit. Spaced repetition files a miss under that
+ * id and brings it back days later, which meant it was bringing back whichever
+ * question happened to land in slot 0 that day. Every miss on the map went
+ * into the review ladder as noise, and none of it could be looked up again
+ * anyway: the id matched nothing in any bank.
+ *
+ * Hashed from the prompt rather than counted from a position, so inserting a
+ * question into a zone's pool renumbers nothing. A positional id would hand
+ * one student's review history to a different question the next time anybody
+ * edited the JSON. Editing a question's text does retire its entry, which is
+ * right — it is not the same question any more.
+ *
+ * The `h` is a format marker. Load-time pruning uses it to recognise the
+ * positional ids that can never resolve, so keep it.
+ *
+ * The stem alone is not enough to identify a question: three pairs in the
+ * bank share one — `Choose the correct sentence:` in the apostrophe zone is
+ * asked twice, about two different sentences. So the fingerprint covers the
+ * choices too, sorted, because the runner reshuffles them at display time
+ * and the order they were typed in therefore means nothing. An id that
+ * changed when somebody rearranged four lines of JSON would be the same
+ * mistake as the positional one, just rarer.
+ */
+export function zoneQuestionId(zoneId: string, q: ZoneQuestion): string {
+  const fingerprint = [q.q, ...[...q.opts].sort(), q.opts[q.a] ?? ''].join('\u0000');
+  return `${zoneId}-h${hashId(fingerprint).toString(36)}`;
+}
+
+/* `section` is the road the landmark sits on, and the caller always knows it —
+   it is the path the zone was reached through. It used to be recorded as the
+   literal `'zone'` instead, which read as a fifth section that does not exist:
+   every zone answer was excluded from its section's accuracy, from the study
+   plan's weakest-topic search, and from anything else that filters by section,
+   and it stood in Stats under a "Zone" heading beside the four real ones. Four
+   hundred and twelve questions' worth of work that counted for nothing. */
 export function fromZoneQuestion(
   q: ZoneQuestion,
   zoneId: string,
-  index: number,
+  section: SectionId,
   zoneTopic?: string,
 ): RunnableQuestion {
   const correctKey = KEYS[q.a] ?? 'A';
@@ -139,7 +178,7 @@ export function fromZoneQuestion(
   why[correctKey] = q.why;
 
   return shuffleChoices({
-    id: `${zoneId}-q${index}`,
+    id: zoneQuestionId(zoneId, q),
     prompt: q.q,
     promptFormat: 'html',
     choices: q.opts.map((text, i) => ({ key: keyAt(i), text, format: 'html' as const })),
@@ -147,7 +186,39 @@ export function fromZoneQuestion(
     why,
     whyGeneral: q.why,
     topic: topicFor(q, zoneId, zoneTopic),
-    section: 'zone',
+    section,
     difficulty: q.d === 3 ? 'hard' : q.d === 1 ? 'easy' : 'medium',
   });
+}
+
+/* ------------------------------------------------------------ id -> question
+
+   The review queue stores nothing but ids, and both things that read it — the
+   review session and the daily challenge — resolved them with `getQuestion`,
+   which is built from the drill bank alone. Zone questions live in a separate
+   file and are not in it, so a landmark question could be scheduled for review
+   and then never found again: the queue took them in and nothing could get
+   them out. Together with the positional ids above, the map's entire share of
+   spaced repetition was inert — it counted toward the "N due" figure on the
+   home screen and then quietly failed to appear in the session.
+
+   One resolver over both banks, so there is one place that knows how an id
+   becomes a question. */
+
+const ZONE_BY_QID = new Map<string, { zoneId: string; q: ZoneQuestion }>();
+for (const [zoneId, questions] of Object.entries(ZONE_QUIZZES)) {
+  for (const q of questions) ZONE_BY_QID.set(zoneQuestionId(zoneId, q), { zoneId, q });
+}
+
+/** The question an id names, from either bank, ready for the runner.
+ *  `undefined` when it names nothing — a question retired by a content edit,
+ *  which the caller should skip rather than treat as an error. */
+export function runnableById(qid: string): RunnableQuestion | undefined {
+  const drill = getQuestion(qid);
+  if (drill) return fromDrillQuestion(drill);
+
+  const found = ZONE_BY_QID.get(qid);
+  const entry = found && getZone(found.zoneId);
+  if (!found || !entry) return undefined;
+  return fromZoneQuestion(found.q, found.zoneId, entry.path.id, entry.zone.topic);
 }

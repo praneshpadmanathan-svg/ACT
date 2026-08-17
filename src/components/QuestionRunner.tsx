@@ -35,7 +35,10 @@ export interface RunnableQuestion {
   why: Record<string, string>;
   whyGeneral?: string;
   topic: string;
-  section: SectionId | 'zone';
+  /* One of the four real sections, always. There is no fifth. A zone question
+     is an English (or math, or …) question that happens to be reached through
+     a landmark, and it used to say `'zone'` here — see `fromZoneQuestion`. */
+  section: SectionId;
   difficulty: Difficulty;
   passage?: Passage;
   /** Shown above the stem, e.g. the underlined sentence for English. */

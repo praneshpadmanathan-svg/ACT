@@ -21,6 +21,24 @@ import { burstConfetti } from '@/components/Feedback';
 const QUIZ_LENGTH = 6;
 const PASS_MARK = 0.7;
 
+/* The bar to clear a landmark, counted in questions rather than quoted as a
+   percentage.
+
+   `PASS_MARK` is a fraction and the screen printed it as one — "70% to clear".
+   That is not what 70% means to a student sitting in front of three questions.
+   It means all three, because two out of three is 67. The same sentence in
+   front of six questions means five, and one miss is survivable. One rule was
+   being read, two rules were being enforced, and the student had no way to
+   tell which one they were under until they failed.
+
+   The arithmetic is unchanged: `ceil(n × PASS_MARK)` clears exactly what the
+   percentage comparison cleared, at every pool size this quiz can produce. The
+   sentence changes, from a ratio to the number they have to hit. Loosening the
+   standard silently would be a different decision than making it legible, and
+   this is only the second one — the real fix for a three-question landmark is
+   more questions in it. */
+const passNeeded = (n: number) => Math.ceil(n * PASS_MARK);
+
 type Phase = 'lesson' | 'quiz' | 'result';
 
 export function ZoneScreen({ zoneId }: { zoneId: string }) {
@@ -35,15 +53,22 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
      result is written would always show the score you just got. */
   const [priorBest, setPriorBest] = useState<number | null>(null);
 
+  /* Whether this landmark actually has more questions than one quiz uses.
+     Thirty of the thirty-seven do not, and the retry copy below has to know
+     which kind it is standing in front of. */
+  const deepPool = (ZONE_QUIZZES[zoneId]?.length ?? 0) > QUIZ_LENGTH;
+
   const questions = useMemo(() => {
     if (!entry) return [];
     const pool = ZONE_QUIZZES[zoneId] ?? [];
-    // A fresh sample each attempt, so a retry is not the same six questions.
+    /* A fresh sample each attempt — but only where there is a pool to sample
+       from. Where there is not, `sample` returns the lot and the retry is the
+       same questions reordered. See `deepPool`. */
     void attemptSeed;
     /* The zone's own declared topic is the fallback for questions tagged with
        the zone's old label instead of a skill — see `topicFor` in normalize. */
-    return sample(pool, Math.min(QUIZ_LENGTH, pool.length)).map((q, i) =>
-      fromZoneQuestion(q, zoneId, i, entry.zone.topic),
+    return sample(pool, Math.min(QUIZ_LENGTH, pool.length)).map((q) =>
+      fromZoneQuestion(q, zoneId, entry.path.id, entry.zone.topic),
     );
   }, [entry, zoneId, attemptSeed]);
 
@@ -173,7 +198,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                 Start the quiz ▶
               </Button>
               <span className="self-center text-[13px] text-ink-soft">
-                {questions.length} questions · {Math.round(PASS_MARK * 100)}% to clear
+                {questions.length} questions · {passNeeded(questions.length)} right to clear
               </span>
             </div>
           </article>
@@ -203,11 +228,20 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
           title={zone.name}
           subtitle={zone.sub}
           accent={path.color}
-          onQuit={() => navigate({ name: 'path', section: path.id })}
+          /* Out to the map, which is where you came in from. Quitting used to
+             land on the flat path list instead — a different screen from the
+             one you left, so backing out of a quiz felt like being moved
+             rather than returning. */
+          onQuit={() => navigate({ name: 'map' })}
           onAnswer={(record) => {
             answerQuestion({
               qid: record.question.id,
-              section: 'zone',
+              /* Read off the question rather than reaching for `path.id`
+                 again. The two are the same value and the point is to keep
+                 them that way: the question is where a section is decided,
+                 and a second place deciding it independently is how this
+                 drifted to the literal `'zone'` in the first place. */
+              section: record.question.section,
               topic: record.question.topic,
               correct: record.correct,
               ms: record.ms,
@@ -227,7 +261,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
             const percent = Math.round((correct / records.length) * 100);
             setResults(records);
             setPhase('result');
-            if (percent >= PASS_MARK * 100) {
+            if (correct >= passNeeded(records.length)) {
               clearZone(zoneId, percent);
               burstConfetti(110);
               sfx.fanfare();
@@ -243,7 +277,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
   const correct = results?.filter((r) => r.correct).length ?? 0;
   const total = results?.length ?? 0;
   const percent = total ? Math.round((correct / total) * 100) : 0;
-  const passed = percent >= PASS_MARK * 100;
+  const passed = total > 0 && correct >= passNeeded(total);
   const nextZone = path.nodes[entry.index + 1];
 
   return (
@@ -282,7 +316,18 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
               ? priorBest !== null && percent <= priorBest
                 ? `Cleared again — your best here is still ${priorBest}%.`
                 : 'Nice. The next zone on this path is open.'
-              : `You need ${Math.round(PASS_MARK * 100)}% to clear this zone. Re-read the lesson and try again — you get a different set of questions.`}
+              : /* The old copy promised "a different set of questions" on a
+                   retry. That is true of seven landmarks and false of the
+                   other thirty, whose whole pool is smaller than a quiz —
+                   `sample` hands back everything it has, so the retry is the
+                   same questions in a different order. A student who notices
+                   stops believing the rest of the screen, so say which one
+                   this is. */
+                `${passNeeded(total)} of ${total} clears this zone — you got ${correct}. ${
+                  deepPool
+                    ? 'Re-read the lesson and try again; you get a fresh set of questions.'
+                    : 'Re-read the lesson and try again — this landmark has only these questions, so read the explanations below first.'
+                }`}
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -312,11 +357,14 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                 Next zone ▶
               </Button>
             ) : (
-              <Button
-                variant="primary"
-                onClick={() => navigate({ name: 'path', section: path.id })}
-              >
-                Back to path
+              /* The map, not the path list. Clearing a landmark moves the
+                 traveller and lights the next pin, and the map opens centred
+                 on the traveller — so this is the one screen where the thing
+                 you just earned is visible. Sending the student to a list of
+                 zone names instead threw the reward away at the exact moment
+                 it was paid. */
+              <Button variant="primary" onClick={() => navigate({ name: 'map' })}>
+                Back to the map
               </Button>
             )}
           </div>

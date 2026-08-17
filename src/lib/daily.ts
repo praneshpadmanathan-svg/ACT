@@ -24,9 +24,11 @@
  * needs nothing stored.
  */
 
-import { ALL_QUESTIONS, getQuestion } from '@/content';
+import { ALL_QUESTIONS } from '@/content';
 import { DAILY_SIZE, dayKey, dueForReview, weakestTopics } from './progress';
-import type { Progress, Question } from '@/types';
+import { fromDrillQuestion, runnableById } from './normalize';
+import type { RunnableQuestion } from '@/components/QuestionRunner';
+import type { Progress } from '@/types';
 
 /** A small deterministic hash, so a day key becomes a shuffle seed. */
 function seedFrom(text: string): number {
@@ -64,18 +66,23 @@ function shuffleSeeded<T>(items: readonly T[], next: () => number): T[] {
  *
  * `day` is injectable for the tests; nothing in the app passes it.
  */
-export function pickDaily(p: Progress, day: string = dayKey()): Question[] {
-  const picked: Question[] = [];
+export function pickDaily(p: Progress, day: string = dayKey()): RunnableQuestion[] {
+  const picked: RunnableQuestion[] = [];
   const seen = new Set<string>();
 
-  const take = (q: Question | undefined) => {
+  const take = (q: RunnableQuestion | undefined) => {
     if (!q || seen.has(q.id) || picked.length >= DAILY_SIZE) return;
     seen.add(q.id);
     picked.push(q);
   };
 
-  // 1. Due reviews, in the order the review queue already ranks them.
-  for (const qid of dueForReview(p)) take(getQuestion(qid));
+  /* 1. Due reviews, in the order the review queue already ranks them.
+
+     Through `runnableById` rather than `getQuestion`, so a landmark question
+     the student missed can actually turn up here. `getQuestion` reads the
+     drill bank only, which meant every zone review silently evaporated at
+     this line while still being counted in the "N due" the blurb prints. */
+  for (const qid of dueForReview(p)) take(runnableById(qid));
   if (picked.length >= DAILY_SIZE) return picked;
 
   const next = rng(seedFrom(day));
@@ -94,12 +101,16 @@ export function pickDaily(p: Progress, day: string = dayKey()): Question[] {
       unscheduled.filter((q) => weak.has(q.topic)),
       next,
     ))
-      take(q);
+      take(fromDrillQuestion(q));
     if (picked.length >= DAILY_SIZE) return picked;
   }
 
-  // 3. Day one: no misses, no weak topics, so anything unseen will do.
-  for (const q of shuffleSeeded(unscheduled, next)) take(q);
+  /* 3. Day one: no misses, no weak topics, so anything unseen will do.
+
+     Steps 2 and 3 stay on the drill bank. A landmark question belongs to a
+     landmark you walk to, and handing one out here would let a student answer
+     it away from the map without the zone ever registering it. */
+  for (const q of shuffleSeeded(unscheduled, next)) take(fromDrillQuestion(q));
   if (picked.length >= DAILY_SIZE) return picked;
 
   /* 4. Only reachable by a student who has every question in the bank on a

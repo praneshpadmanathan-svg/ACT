@@ -17,7 +17,14 @@ import { SECTIONS } from './sections';
 
 export type { SectionMeta } from './sections';
 export { SECTIONS, SECTION_BY_ID } from './sections';
-export { ALL_ZONES, getZone, PATH_BY_ID, PATHS, TOPIC_BY_ZONE_ALIAS } from './zones';
+export {
+  ALL_ZONES,
+  getZone,
+  PATH_BY_ID,
+  PATHS,
+  SECTION_BY_ZONE_TOPIC,
+  TOPIC_BY_ZONE_ALIAS,
+} from './zones';
 export { LIBRARY_STATS } from './stats';
 
 import notesEnglish from './notesEnglish.json';

@@ -43,3 +43,21 @@ for (const { zone } of ALL_ZONES) {
   TOPIC_BY_ZONE_ALIAS[canonicalTopic(zone.id)] = topic;
   TOPIC_BY_ZONE_ALIAS[canonicalTopic(zone.name)] = topic;
 }
+
+/* ------------------------------------------------------ zone topic -> road
+
+   Which of the four sections a zone topic belongs to. Every landmark sits on
+   exactly one road, so this is unambiguous by construction — checked against
+   the content: all thirty-seven zone topics resolve to one section and no
+   topic appears on two roads.
+
+   Used to repair progress recorded before zone answers carried their real
+   section. It cannot cover everything on its own: a zone question may be
+   tagged with a skill finer than the landmark it sits in — `perimeter` inside
+   the area landmark — and that skill has no landmark of its own. Those are
+   recovered from the player's own answer log instead, in `progress.ts`. */
+export const SECTION_BY_ZONE_TOPIC: Record<string, SectionId> = {};
+for (const { zone, path } of ALL_ZONES) {
+  if (!zone.topic) continue;
+  SECTION_BY_ZONE_TOPIC[canonicalTopic(zone.topic)] = path.id;
+}

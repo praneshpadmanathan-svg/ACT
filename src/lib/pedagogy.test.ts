@@ -15,8 +15,9 @@
 
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { Progress, SectionId, TestResult } from '@/types';
-import { ALL_QUESTIONS, SECTIONS, getQuestion } from '@/content';
+import { ALL_QUESTIONS, SECTIONS, ZONE_QUIZZES, getQuestion } from '@/content';
 import { dailyBlurb, pickDaily } from './daily';
+import { runnableById, zoneQuestionId } from './normalize';
 import { diagnosticLength, pickDiagnostic, placementShape, scoreDiagnostic } from './diagnostic';
 import { coldStartTopic, todaysPlan } from './plan';
 import { DEFAULT_HERO_ID, HEROES, heroFor } from '@/game/heroes';
@@ -378,6 +379,63 @@ describe('the daily challenge', () => {
 
   it('is available again the next day', () => {
     expect(dailyDone(progress({ dailyDoneOn: daysAgo(1) }))).toBe(false);
+  });
+});
+
+/* ------------------------------------------------- zone questions in review
+
+   Landmark questions were scheduled under `${zoneId}-q${index}`, an index into
+   a freshly shuffled sample — so the id named a slot, not a question — and the
+   two things that read the review queue resolved ids with `getQuestion`, which
+   knows the drill bank only. Both halves had to be wrong for the symptom to be
+   silence rather than a crash, and both were. These pin the round trip: a
+   landmark question can be identified, stored, and fetched back. */
+
+describe('zone questions can round-trip through the review queue', () => {
+  const zoneEntries = Object.entries(ZONE_QUIZZES);
+
+  it('gives every question in the bank a distinct permanent id', () => {
+    const ids = new Set<string>();
+    let count = 0;
+    for (const [zoneId, questions] of zoneEntries) {
+      for (const q of questions) {
+        ids.add(zoneQuestionId(zoneId, q));
+        count++;
+      }
+    }
+    // Two questions sharing an id would share a review schedule, and only one
+    // of them could ever be fetched back.
+    expect(ids.size).toBe(count);
+  });
+
+  it('fetches the same question back out of the id', () => {
+    for (const [zoneId, questions] of zoneEntries.slice(0, 6)) {
+      for (const q of questions) {
+        const back = runnableById(zoneQuestionId(zoneId, q));
+        expect(back?.prompt).toBe(q.q);
+      }
+    }
+  });
+
+  it('resolves drill ids through the same door', () => {
+    const q = ALL_QUESTIONS[0]!;
+    expect(runnableById(q.id)?.id).toBe(q.id);
+  });
+
+  it('returns nothing for an id that names no question, rather than throwing', () => {
+    expect(runnableById('comma_castle-q0')).toBeUndefined();
+    expect(runnableById('nonsense')).toBeUndefined();
+  });
+
+  it('puts a due landmark question into the daily challenge', () => {
+    const [zoneId, questions] = zoneEntries[0]!;
+    const qid = zoneQuestionId(zoneId, questions[0]!);
+    const p = progress({ review: { [qid]: { due: Date.now() - DAY, box: 0, misses: 3 } } });
+
+    // It used to evaporate here: `getQuestion` could not find it, the blurb
+    // counted it anyway, and the student was promised a question they were
+    // never shown.
+    expect(pickDaily(p, '2026-08-09').map((q) => q.id)).toContain(qid);
   });
 });
 

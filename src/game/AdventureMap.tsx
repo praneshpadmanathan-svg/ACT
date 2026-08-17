@@ -99,6 +99,44 @@ interface PlacedPin {
   index: number;
 }
 
+/* What a landmark is called, for anything that cannot see it.
+ *
+ * The same four facts the `.pin-card` prints — name, region, state, and
+ * whether questions have come due — assembled as a sentence. It exists because
+ * the card cannot do this job for two of the three ways people use this map:
+ * it is `display: none` until `:hover`/`:focus-visible`, so it is out of the
+ * accessibility tree entirely, and `:hover` never fires on a thumb. Measured on
+ * the live map at 375x812: 33 of the 38 markers had no accessible name at all,
+ * four were announced as a bare numeral, and only the summit was labelled.
+ * Every *other* marker on this map — guardian, courier, discovery, summit —
+ * already carries an explicit `aria-label`; the pins were the gap.
+ *
+ * The region is in here because the pins render as one flat run of 37 with the
+ * plaques emitted before all of them as decorative spans, so there is otherwise
+ * nothing to tell a screen-reader user which road they are walking.
+ *
+ * `best !== null` is exactly `state === 'done'` (see the walk above), so the
+ * state alone decides which sentence applies — no combination can fall through.
+ */
+function pinLabel(pin: PlacedPin, echo: number): string {
+  const region = REGIONS[pin.section].title;
+
+  let state: string;
+  if (pin.state === 'locked') {
+    // Matches the path list's wording rather than the card's bare "Sealed".
+    state = 'Sealed. Clear the landmark before this one first.';
+  } else if (pin.state === 'done') {
+    state = `Cleared, best ${pin.best}%.`;
+  } else {
+    state = `${pin.zone.sub}. Next on your road.`;
+  }
+
+  const calls =
+    echo > 0 ? ` ${echo === 1 ? '1 question' : `${echo} questions`} calling you back.` : '';
+
+  return `${pin.zone.name}, ${region}. ${state}${calls}`;
+}
+
 export interface MapProgress {
   pins: PlacedPin[];
   current: PlacedPin | null;
@@ -781,6 +819,10 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
                 onClick={() => openZone(pin)}
                 onFocus={revealOnFocus(pin.x, pin.y)}
                 aria-disabled={pin.state === 'locked'}
+                /* Not computed from the contents: the sigils are all
+                   `aria-hidden` and the card is `display: none`, so without
+                   this the button has no name at all. See `pinLabel`. */
+                aria-label={pinLabel(pin, echo)}
                 /* A control should say it is a control before you press it, say
                  it heard you within a frame, and settle rather than stop. The
                  pins did none of the three — they were static discs that

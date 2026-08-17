@@ -16,7 +16,7 @@ import type { IconName } from '@/components/Icon';
    which is reached from `main.tsx`, so whatever it imports is in the first
    paint — and the barrel is 738 kB of question bank to obtain one lookup
    table built from a 10 kB file. */
-import { TOPIC_BY_ZONE_ALIAS } from '@/content/zones';
+import { getZone, SECTION_BY_ZONE_TOPIC, TOPIC_BY_ZONE_ALIAS } from '@/content/zones';
 import { DEFAULT_HERO_ID, isHeroId } from '@/game/heroes';
 import { readJSON, STORAGE_KEYS, writeJSON } from './storage';
 import { canonicalTopic } from './utils';
@@ -369,14 +369,17 @@ export function migrateLegacy(current: Progress): Progress {
 export function loadProgress(key: string = STORAGE_KEYS.progress): Progress {
   const stored = readJSON<Partial<Progress> | null>(key, null);
   const base = emptyProgress();
-  const merged: Progress = stored ? { ...base, ...stored, version: 2 } : base;
+  /* `let`, because one of the migrations below rebuilds the whole record
+     rather than patching a field. Everything up to that point is a field
+     assignment and is carried across by the spread inside it. */
+  let merged: Progress = stored ? { ...base, ...stored, version: 2 } : base;
   // Guard every collection — a half-written object should not crash a render.
   merged.attempts = Array.isArray(merged.attempts) ? merged.attempts : [];
   merged.notesRead = Array.isArray(merged.notesRead) ? merged.notesRead : [];
   merged.testHistory = Array.isArray(merged.testHistory) ? merged.testHistory : [];
   merged.achievements = Array.isArray(merged.achievements) ? merged.achievements : [];
   merged.zonesCleared = merged.zonesCleared ?? {};
-  merged.review = merged.review ?? {};
+  merged.review = pruneUnresolvableReviews(merged.review ?? {});
   merged.storySeen = Array.isArray(merged.storySeen) ? merged.storySeen : [];
   merged.bookmarks = Array.isArray(merged.bookmarks) ? merged.bookmarks : [];
   merged.streakShields = typeof merged.streakShields === 'number' ? merged.streakShields : 0;
@@ -410,6 +413,10 @@ export function loadProgress(key: string = STORAGE_KEYS.progress): Progress {
      to them. See `canonicalTopic`. */
   merged.tally = canonicaliseTally(merged.tally);
 
+  /* And put the zone answers back under their real section. Must follow the
+     canonicalisation above, not precede it — see `migrateZoneSections`. */
+  merged = migrateZoneSections(merged);
+
   /* The weekly goal changed units, from XP to questions answered.
 
      XP is a currency this app invented; nobody has a feel for whether 1,800 of
@@ -432,6 +439,14 @@ function isTally(value: unknown): value is Tally {
   return Boolean(t && typeof t.answered === 'number' && t.topics && t.daily);
 }
 
+/** The one spelling of a topic name. The tally, the answer log and both
+ *  migrations below route through this, so they cannot disagree about what a
+ *  topic is called — which is the failure mode a second migration invites. */
+function canonicalTopicName(raw: string): string {
+  const t = canonicalTopic(raw);
+  return TOPIC_BY_ZONE_ALIAS[t] ?? t;
+}
+
 /* Rewrite every topic key to its canonical spelling, summing any that collide.
  *
  * Merges the case and punctuation variants — `Commas` with `commas`,
@@ -447,8 +462,7 @@ function canonicaliseTally(tally: Tally): Tally {
   for (const [key, t] of Object.entries(tally.topics)) {
     const sep = key.indexOf('::');
     const section = sep < 0 ? String(t.section) : key.slice(0, sep);
-    const raw = canonicalTopic(sep < 0 ? key : key.slice(sep + 2));
-    const next = `${section}::${TOPIC_BY_ZONE_ALIAS[raw] ?? raw}`;
+    const next = `${section}::${canonicalTopicName(sep < 0 ? key : key.slice(sep + 2))}`;
     if (next !== key) changed = true;
 
     const existing = topics[next];
@@ -458,6 +472,112 @@ function canonicaliseTally(tally: Tally): Tally {
   }
 
   return changed ? { ...tally, topics } : tally;
+}
+
+/* Drop review entries whose id can never name a question again.
+ *
+ * Landmark questions were scheduled under `${zoneId}-q${index}`, where the
+ * index was a slot in a freshly shuffled sample rather than anything about
+ * the question — see `zoneQuestionId` in `normalize.ts`. Those ids match
+ * nothing in either bank, so they sat in the queue permanently: counted in
+ * the "N due for review" on the home screen, and then absent from the session
+ * that opened, because there was no question to fetch. A student could be
+ * told they had twelve questions waiting and be shown three.
+ *
+ * Recognised structurally rather than by looking them up, because this module
+ * is on the first-paint path and deliberately holds no question bank — see
+ * the note on the `@/content/zones` import. A zone id followed by anything
+ * that is not the `h` format marker is the old shape, and there is nothing to
+ * recover from it: the index never identified a question in the first place.
+ */
+function pruneUnresolvableReviews(review: Progress['review']): Progress['review'] {
+  const out: Progress['review'] = {};
+  let dropped = false;
+
+  for (const [qid, entry] of Object.entries(review)) {
+    const cut = qid.lastIndexOf('-');
+    const stale = cut > 0 && Boolean(getZone(qid.slice(0, cut))) && qid[cut + 1] !== 'h';
+    if (stale) dropped = true;
+    else out[qid] = entry;
+  }
+
+  return dropped ? out : review;
+}
+
+/** The road a zone answer was given on, recovered from its question id.
+ *
+ *  Zone ids are `${zoneId}-q3` and become `${zoneId}-<hash>`, so this cuts at
+ *  the last hyphen rather than matching either shape. Zone ids use
+ *  underscores, so today the last hyphen is also the only one; cutting at the
+ *  last keeps working if one ever gains a hyphen of its own. */
+function sectionForZoneQid(qid: string): SectionId | null {
+  const cut = qid.lastIndexOf('-');
+  if (cut < 0) return null;
+  return getZone(qid.slice(0, cut))?.path.id ?? null;
+}
+
+/* Put zone answers back under the section they were always part of.
+ *
+ * A landmark question is an English question — or a math one, or a reading
+ * one. It was recorded under the literal section `'zone'`, which reads as a
+ * fifth section that does not exist, and everything that filters by section
+ * therefore stepped over it: section accuracy, the weakest-topic search that
+ * drives the study plan, the score estimate. Four hundred and twelve
+ * questions' worth of work that counted for nothing but XP.
+ *
+ * Two sources, because neither is enough alone:
+ *
+ *  - `SECTION_BY_ZONE_TOPIC` knows the road for each of the thirty-seven
+ *    landmark topics. It cannot know the finer ones: a question inside the
+ *    area landmark may be tagged `perimeter`, and there is no perimeter
+ *    landmark. Fifteen of the forty-five topics zone questions actually
+ *    produce are of that kind — a third of them, too many to strand.
+ *  - The player's own answer log knows exactly, because a zone question id
+ *    carries the landmark it came from. It covers only what is still in the
+ *    log, which is capped, so it is the supplement and not the base.
+ *
+ * Where they overlap the log wins: it records where the answer was really
+ * given, which is the truth about this player's history even if the content
+ * has been re-tagged since.
+ *
+ * Runs after `canonicaliseTally` and depends on it — by then every topic is
+ * spelled one way, so a name from the log and a key from the tally match.
+ */
+function migrateZoneSections(p: Progress): Progress {
+  const stale =
+    p.attempts.some((a) => a.section === 'zone') ||
+    Object.values(p.tally.topics).some((t) => t.section === 'zone');
+  if (!stale) return p;
+
+  const sectionByTopic = new Map<string, SectionId>(Object.entries(SECTION_BY_ZONE_TOPIC));
+
+  const attempts = p.attempts.map((a) => {
+    if (a.section !== 'zone') return a;
+    const section = sectionForZoneQid(a.qid);
+    if (!section) return a;
+    sectionByTopic.set(canonicalTopicName(a.topic), section);
+    return { ...a, section };
+  });
+
+  const topics: Tally['topics'] = {};
+  for (const [key, t] of Object.entries(p.tally.topics)) {
+    const sep = key.indexOf('::');
+    const topic = sep < 0 ? canonicalTopicName(key) : key.slice(sep + 2);
+    /* Both halves have to agree it is stale before it moves. A resolved
+       section is required too: a topic neither source can place stays where
+       it is rather than being guessed into the wrong section, which would be
+       worse than the bug — wrong data reads as true. */
+    const zoneish = t.section === 'zone' || (sep >= 0 && key.slice(0, sep) === 'zone');
+    const section = (zoneish ? sectionByTopic.get(topic) : null) ?? t.section;
+    const next = `${section}::${topic}`;
+
+    const existing = topics[next];
+    topics[next] = existing
+      ? { section, n: existing.n + t.n, ok: existing.ok + t.ok, ms: existing.ms + t.ms }
+      : { ...t, section };
+  }
+
+  return { ...p, attempts, tally: { ...p.tally, topics } };
 }
 
 export function saveProgress(p: Progress, key: string = STORAGE_KEYS.progress): void {

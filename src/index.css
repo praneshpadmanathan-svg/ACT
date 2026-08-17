@@ -880,6 +880,25 @@
     @apply block;
   }
 
+  /* On a touch screen the card above can never open: neither `:hover` nor
+     `:focus-visible` fires for a thumb, and a tap navigates straight into the
+     zone. So on those devices every string this map carries about its own
+     contents is unreachable — the landmark's name, what it teaches, the best
+     score, how many questions have come due. What is left is a numbered disc,
+     which is a poor thing to hand a phone-first audience.
+
+     Only the *current* pin gets it, and only where hover is unavailable.
+     Showing all 37 would bury the map they are drawn on, and one card per
+     region says the same "go here next" the gold ring already means — it just
+     names the place. `hover: none` rather than `pointer: coarse`: a laptop
+     with a touchscreen reports coarse but can still hover, and should keep the
+     hover behaviour rather than growing four permanent cards. */
+  @media (hover: none) {
+    .pin-current .pin-card {
+      @apply block;
+    }
+  }
+
   /* Map HUD furniture. */
   .map-btn {
     @apply inline-flex items-center gap-1.5 rounded-lg border border-leather-700

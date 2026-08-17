@@ -108,7 +108,10 @@ interface StoreValue {
 
   answerQuestion: (input: {
     qid: string;
-    section: SectionId | 'zone';
+    /* Narrower than what `Attempt` stores, deliberately: old saves hold the
+       legacy `'zone'` and the loader has to be able to read it, but nothing
+       may write it again. */
+    section: SectionId;
     topic: string;
     correct: boolean;
     ms: number;

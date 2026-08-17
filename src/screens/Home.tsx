@@ -19,7 +19,7 @@ import {
   type TrackVerdict,
 } from '@/lib/progress';
 import { dailyBlurb } from '@/lib/daily';
-import { daysUntilTest, testUrgency, todaysPlan, weekProgress } from '@/lib/plan';
+import { daysUntilTest, drillable, testUrgency, todaysPlan, weekProgress } from '@/lib/plan';
 import { readRaw, writeRaw } from '@/lib/storage';
 import { cloudEnabled } from '@/lib/supabase';
 import { sfx } from '@/lib/sfx';
@@ -43,7 +43,10 @@ export function Home() {
   const { pct, next } = rankProgress(progress.xp);
   const estimate = estimatedComposite(progress);
   const reviewDue = dueForReview(progress).length;
-  const weak = weakestTopics(progress, 4);
+  /* Only topics with a drill behind them, since the card's whole job is to
+     open one — see `drillable`. Over-fetched and then cut to four, so a topic
+     with no drill costs a slot in the list rather than the list itself. */
+  const weak = weakestTopics(progress, 12).filter(drillable).slice(0, 4);
   const pendingChapter = nextChapter(progress, { cleared, total });
 
   const [savePromptHidden, setSavePromptHidden] = useState(() => readRaw(SAVE_PROMPT_KEY) === '1');
@@ -280,8 +283,7 @@ export function Home() {
                   type="button"
                   onClick={() => {
                     sfx.select();
-                    if (t.section !== 'zone')
-                      navigate({ name: 'drill', section: t.section, topic: t.topic });
+                    navigate({ name: 'drill', section: t.section, topic: t.topic });
                   }}
                   className="panel flex items-center gap-4 px-5 py-4 text-left transition-colors hover:border-gold-deep"
                 >

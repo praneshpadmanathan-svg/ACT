@@ -154,7 +154,69 @@ for (const path of paths) {
   }
 }
 
-/* ------------------------------------------------- rule 5: the totals file
+/* ------------------------------------------ rule 5: zone question identity
+
+   A zone question's permanent id is a hash of the question itself — stem plus
+   sorted choices plus the credited answer. `zoneQuestionId` in
+   `src/lib/normalize.ts` builds it and this must stay in step with it.
+
+   Two questions in one zone that fingerprint the same would share an id, and
+   spaced repetition would treat them as one: answering either would move the
+   other's review date, and only one of them could ever be fetched back. The
+   stem alone was not enough — three pairs in the bank share one, `Choose the
+   correct sentence:` among them — which is exactly why the fingerprint is
+   wider than it first looks, and exactly why this rule exists to keep it
+   wide enough.
+
+   The parts are joined on U+0000 rather than a space because question text is
+   full of spaces: joined on one, `["a b", "c"]` and `["a", "b c"]` produce the
+   same fingerprint, and two genuinely different questions would be handed the
+   same id. NUL cannot occur in the authored JSON, so it can only ever mean
+   "field boundary". It has to match `normalize.ts` exactly — a different
+   separator here computes ids the app never generates, which would make the
+   collision check below compare against nothing real. */
+
+const fnv1a = (text) => {
+  let h = 2166136261;
+  for (let i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return Math.abs(h) || 1;
+};
+
+const zoneQuestionId = (zoneId, q) =>
+  `${zoneId}-h${fnv1a([q.q, ...[...q.opts].sort(), q.opts[q.a] ?? ''].join('\u0000')).toString(36)}`;
+
+const miniquizzes = readJSON('miniquizzes.json');
+const zoneIds = new Map(); // id -> the stem it was first seen on
+
+for (const [zoneId, questions] of Object.entries(miniquizzes)) {
+  for (const q of questions) {
+    const id = zoneQuestionId(zoneId, q);
+    if (zoneIds.has(id)) {
+      failures.push(
+        `${zoneId}: two questions share the id "${id}". First: "${zoneIds.get(id)}". ` +
+          `Second: "${q.q}". They are indistinguishable to spaced repetition — one ` +
+          `can never be reviewed, and answering either moves the other's due date.`,
+      );
+    } else {
+      zoneIds.set(id, q.q);
+    }
+  }
+
+  // The drill bank owns the same id space; `runnableById` checks it first.
+  for (const id of zoneIds.keys()) {
+    if (seenIds.has(id)) {
+      failures.push(
+        `zone question id "${id}" collides with a drill question of the same id. ` +
+          `runnableById() resolves drills first, so the zone question is unreachable.`,
+      );
+    }
+  }
+}
+
+/* ------------------------------------------------- rule 6: the totals file
 
    Counted here rather than in the app so `src/content/stats.ts` can hand the
    landing page five numbers without the landing page importing the library
@@ -214,6 +276,7 @@ if (failures.length) {
 }
 
 console.log(
-  `  content check: ${allQuestions.length} questions, no duplicate ids, every answer and ` +
-    'explanation present, every zone topic matches real question data',
+  `  content check: ${allQuestions.length} drill questions and ${zoneIds.size} zone questions, ` +
+    'no duplicate or colliding ids, every answer and explanation present, every zone topic ' +
+    'matches real question data',
 );

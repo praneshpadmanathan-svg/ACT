@@ -119,6 +119,29 @@ function topicSection(topic: string): SectionId | null {
   return null;
 }
 
+/* Whether a topic can actually be drilled — whether the drill bank holds
+   questions for it.
+ *
+ * This replaced a `section !== 'zone'` check, which was never really asking
+ * about sections. Landmark answers used to be filed under a fifth section
+ * called `'zone'`, so excluding that section excluded every landmark topic,
+ * and the reason to exclude them was that a landmark topic might have no
+ * drill behind it. Now that a landmark answer is filed as English, the
+ * question has to be asked directly: fifteen of the forty-five topics the
+ * landmarks test are tagged finer than the drill bank is — `perimeter`, sat
+ * inside the area landmark — and offering one of those sends the student to
+ * "No questions here."
+ *
+ * A stray `'zone'` still fails this, which is right: a topic the section
+ * migration could not place has no drill either. */
+export function drillable<T extends { section: SectionId | 'zone'; topic: string }>(
+  t: T,
+): t is T & { section: SectionId } {
+  if (t.section === 'zone') return false;
+  const topic = canonicalTopic(t.topic);
+  return TOPICS_BY_SECTION[t.section].some((x) => canonicalTopic(x) === topic);
+}
+
 export interface TodaysPlan {
   steps: PlanStep[];
   minutes: number;
@@ -172,8 +195,13 @@ export function todaysPlan(
     });
   }
 
-  const weak = weakestTopics(p, 1)[0];
-  if (weak && weak.section !== 'zone') {
+  /* The weakest topic that can actually be drilled, rather than the weakest
+     one full stop. Taking `[0]` and testing it would drop the whole step
+     whenever the single worst topic happens to be one the drill bank has no
+     questions for, and send a student who has plenty to work on to the
+     cold-start branch instead. */
+  const weak = weakestTopics(p, 8).find(drillable);
+  if (weak) {
     steps.push({
       kind: 'drill',
       title: `Drill ${weak.topic}`,

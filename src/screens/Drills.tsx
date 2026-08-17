@@ -8,7 +8,7 @@ import { useMemo, useState } from 'react';
 import { QUESTIONS, SECTIONS, SECTION_BY_ID, TOPICS_BY_SECTION, getQuestion } from '@/content';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
-import { fromDrillQuestion } from '@/lib/normalize';
+import { fromDrillQuestion, runnableById } from '@/lib/normalize';
 import { dailyDone, dueForReview, topicStats, XP } from '@/lib/progress';
 import { dailyBlurb, pickDaily } from '@/lib/daily';
 import { sfx } from '@/lib/sfx';
@@ -16,7 +16,11 @@ import { cx, shuffle, titleCase } from '@/lib/utils';
 import type { Question, SectionId } from '@/types';
 import { Page } from '@/components/Shell';
 import { Button, EmptyState, ProgressBar, SectionHeading } from '@/components/ui';
-import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
+import {
+  QuestionRunner,
+  type AnswerRecord,
+  type RunnableQuestion,
+} from '@/components/QuestionRunner';
 import { RichText } from '@/components/RichText';
 import { Glyph } from '@/components/Icon';
 
@@ -312,9 +316,12 @@ export function ReviewScreen() {
   const [started, setStarted] = useState(false);
 
   const due = useMemo(() => {
+    /* `runnableById`, not `getQuestion`: the latter reads the drill bank
+       alone, so every landmark question in the queue was dropped here and the
+       session ran shorter than the count the screen had just promised. */
     return dueForReview(progress)
-      .map(getQuestion)
-      .filter((q): q is Question => Boolean(q))
+      .map(runnableById)
+      .filter((q): q is RunnableQuestion => Boolean(q))
       .slice(0, 20);
   }, [progress]);
 
@@ -382,7 +389,7 @@ export function ReviewScreen() {
   return (
     <Page>
       <QuestionRunner
-        questions={due.map(fromDrillQuestion)}
+        questions={due}
         title="Review session"
         subtitle="Questions you have missed before"
         accent="#3ad6f0"
@@ -571,7 +578,7 @@ export function DailyScreen() {
   /* Chosen once, from the state as it was on arrival. Not reactive to
      `progress`: answering question two must not re-pick questions three
      through five underneath the player. */
-  const [questions] = useState(() => pickDaily(progress).map(fromDrillQuestion));
+  const [questions] = useState(() => pickDaily(progress));
   const [blurb] = useState(() => dailyBlurb(progress));
 
   if (results) {

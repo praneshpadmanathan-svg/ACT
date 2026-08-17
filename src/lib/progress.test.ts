@@ -29,6 +29,7 @@ import {
   saveProgress,
   scaleScore,
   scheduleReview,
+  sectionAccuracy,
   tallyFromAttempts,
 } from './progress';
 import { STORAGE_KEYS, readJSON, writeJSON } from './storage';
@@ -140,6 +141,177 @@ describe('loadProgress backfill', () => {
     const reloaded = loadProgress();
     expect(reloaded.xp).toBe(p.xp);
     expect(reloaded.tally).toEqual(p.tally);
+  });
+});
+
+/* ------------------------------------------------ stale review-id pruning
+
+   Landmark misses were filed under `${zoneId}-q${index}`, which named a slot
+   in a shuffled sample rather than a question. Those ids match nothing in any
+   bank, so they sat in the queue for good: counted in the "N due for review"
+   the home screen prints, and then missing from the session that opened. A
+   student could be told twelve were waiting and be shown three. */
+
+describe('loadProgress stale review pruning', () => {
+  const entry = { box: 1, due: Date.now(), misses: 1 };
+
+  it('drops positional zone ids, which can never name a question again', () => {
+    writeJSON(
+      STORAGE_KEYS.progress,
+      progress({ review: { 'comma_castle-q0': entry, 'comma_castle-q4': entry } }),
+    );
+    expect(loadProgress().review).toEqual({});
+  });
+
+  it('keeps the hashed zone ids that replaced them', () => {
+    // Shape only — `pedagogy.test.ts` pins that a real one resolves.
+    const review = { 'comma_castle-hx57op6': entry };
+    writeJSON(STORAGE_KEYS.progress, progress({ review }));
+    expect(loadProgress().review).toEqual(review);
+  });
+
+  it('leaves drill ids alone, including any that contain a hyphen', () => {
+    const review = { e001: entry, 'm-042': entry };
+    writeJSON(STORAGE_KEYS.progress, progress({ review }));
+    expect(loadProgress().review).toEqual(review);
+  });
+});
+
+/* ------------------------------------------------- zone-section migration
+
+   Landmark answers were filed under a literal section `'zone'` — a fifth
+   section that does not exist. Everything that filters by section stepped
+   over them: section accuracy, the weakest-topic search behind the study
+   plan, the score estimate. The write side is fixed, and these pin the
+   repair for saves already carrying the old shape.
+
+   Two sources have to be exercised separately, because they cover different
+   topics and only one of them is static: the landmark-topic table places
+   `commas`, and only the player's own answer log can place `perimeter` —
+   there is no perimeter landmark, it is a tag inside the area one. */
+
+describe('loadProgress zone-section migration', () => {
+  it('re-files a landmark topic under its road, from the static table alone', () => {
+    writeJSON(
+      STORAGE_KEYS.progress,
+      progress({
+        tally: {
+          answered: 4,
+          correct: 3,
+          topics: { 'zone::commas': { section: 'zone', n: 4, ok: 3, ms: 16000 } },
+          daily: {},
+        },
+      }),
+    );
+
+    const loaded = loadProgress();
+    expect(loaded.tally.topics['zone::commas']).toBeUndefined();
+    expect(loaded.tally.topics['english::commas']).toEqual({
+      section: 'english',
+      n: 4,
+      ok: 3,
+      ms: 16000,
+    });
+  });
+
+  it("places a topic finer than any landmark from the player's own answer log", () => {
+    writeJSON(
+      STORAGE_KEYS.progress,
+      progress({
+        // `perimeter` is a tag inside the area landmark, so the static table
+        // cannot place it. The id carries the landmark, so the log can.
+        attempts: [attempt({ qid: 'geometry_grotto-q2', section: 'zone', topic: 'Perimeter' })],
+        tally: {
+          answered: 5,
+          correct: 2,
+          topics: { 'zone::perimeter': { section: 'zone', n: 5, ok: 2, ms: 30000 } },
+          daily: {},
+        },
+      }),
+    );
+
+    const loaded = loadProgress();
+    expect(loaded.tally.topics['math::perimeter']).toMatchObject({ section: 'math', n: 5, ok: 2 });
+    // The log itself is repaired too, not just read.
+    expect(loaded.attempts[0]?.section).toBe('math');
+  });
+
+  it('sums a zone bucket into the real one it collides with rather than dropping either', () => {
+    writeJSON(
+      STORAGE_KEYS.progress,
+      progress({
+        tally: {
+          answered: 10,
+          correct: 7,
+          topics: {
+            'zone::commas': { section: 'zone', n: 4, ok: 2, ms: 16000 },
+            'english::commas': { section: 'english', n: 6, ok: 5, ms: 24000 },
+          },
+          daily: {},
+        },
+      }),
+    );
+
+    const loaded = loadProgress();
+    expect(Object.keys(loaded.tally.topics)).toEqual(['english::commas']);
+    expect(loaded.tally.topics['english::commas']).toEqual({
+      section: 'english',
+      n: 10,
+      ok: 7,
+      ms: 40000,
+    });
+  });
+
+  it('leaves a topic neither source can place alone rather than guessing a section', () => {
+    // Same fine topic as above, but the answers that would have placed it have
+    // aged out of the capped log. Wrong data reads as true, so it stays put.
+    writeJSON(
+      STORAGE_KEYS.progress,
+      progress({
+        tally: {
+          answered: 5,
+          correct: 2,
+          topics: { 'zone::perimeter': { section: 'zone', n: 5, ok: 2, ms: 30000 } },
+          daily: {},
+        },
+      }),
+    );
+
+    const loaded = loadProgress();
+    expect(loaded.tally.topics['zone::perimeter']).toMatchObject({ section: 'zone', n: 5 });
+  });
+
+  it('counts migrated landmark work toward the section it belongs to', () => {
+    // The point of the whole exercise: a student who has only played the map
+    // used to read 0% on English because none of it was English.
+    writeJSON(
+      STORAGE_KEYS.progress,
+      progress({
+        tally: {
+          answered: 8,
+          correct: 6,
+          topics: { 'zone::commas': { section: 'zone', n: 8, ok: 6, ms: 32000 } },
+          daily: {},
+        },
+      }),
+    );
+
+    const english = sectionAccuracy(loadProgress(), 'english');
+    expect(english).toEqual({ n: 8, ok: 6, pct: 0.75 });
+  });
+
+  it('leaves a save with no zone-tagged history untouched', () => {
+    const clean = progress({
+      tally: {
+        answered: 3,
+        correct: 2,
+        topics: { 'math::slope': { section: 'math', n: 3, ok: 2, ms: 9000 } },
+        daily: {},
+      },
+    });
+    writeJSON(STORAGE_KEYS.progress, clean);
+
+    expect(loadProgress().tally).toEqual(clean.tally);
   });
 });
 
