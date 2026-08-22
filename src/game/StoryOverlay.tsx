@@ -31,6 +31,38 @@ import { Art } from '@/components/Art';
 
 const TYPE_MS = 16;
 
+/* Storm across the whole frame, for a beat whose mood is `grey`.
+
+   Built exactly like the map's banks — see `SHEETS` in DiscoveryLayer.tsx and
+   `.mapfx-grey-churn` in index.css — and for the same reason: rasterised at
+   48% and scaled up, so a screen of weather costs about two viewports of
+   surface and nothing repaints while it moves. Two sheets here rather than
+   three; this one is behind a card and only has to read as churn in the
+   margins, not carry a region on its own. */
+const STORY_CHURN = [
+  {
+    dur: 37,
+    cx: 22,
+    cy: 15,
+    scale: 3,
+    blur: 3,
+    opacity: 0.5,
+    background:
+      'radial-gradient(ellipse 46% 58% at 26% 34%, rgba(226, 231, 240, 0.9), transparent 66%),' +
+      'radial-gradient(ellipse 48% 54% at 74% 64%, rgba(74, 80, 96, 0.6), transparent 64%)',
+  },
+  {
+    dur: 53,
+    cx: -18,
+    cy: -20,
+    scale: 3.5,
+    blur: 4.5,
+    opacity: 0.42,
+    background:
+      'radial-gradient(ellipse 56% 66% at 52% 48%, rgba(198, 205, 219, 0.78), transparent 70%)',
+  },
+];
+
 function prefersReducedMotion(): boolean {
   return (
     typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -107,6 +139,9 @@ export function StoryOverlay() {
   const [reply, setReply] = useState<string | null>(null);
   const [closing, setClosing] = useState(false);
   const [showTitle, setShowTitle] = useState(true);
+  /* Separate from `showTitle` so the card can still be on screen, on its way
+     out, while the scene underneath is already coming in. */
+  const [titleGone, setTitleGone] = useState(false);
 
   const reduced = prefersReducedMotion();
   /* Focus goes into the scene while it is open — otherwise Tab walks the map
@@ -137,6 +172,7 @@ export function StoryOverlay() {
       setLineIndex(0);
       setReply(null);
       setShowTitle(true);
+      setTitleGone(false);
       setClosing(false);
       sfx.page();
     }, 700);
@@ -170,6 +206,45 @@ export function StoryOverlay() {
     const id = window.setTimeout(() => setShake(null), want === 'hard' ? 1100 : 550);
     return () => window.clearTimeout(id);
   }, [chapter, beatIndex, showTitle]);
+
+  /* What the world is doing, published for everything that should react.
+
+     One attribute on <html> rather than props, because the things that have to
+     move are in three different trees: this overlay, the map underneath it and
+     the Grey's own banks inside that. Prop-drilling a mood from a story beat
+     into DiscoveryLayer would have meant threading it through the map, which
+     has nothing to do with the story and should not learn about it. Everything
+     it drives is in index.css under [data-story-mood].
+
+     Cleared on unmount as well as on change: leaving the document drained
+     because a chapter closed on a grey beat would be a bug you would never
+     trace back to here.
+
+     Held back until the title card has gone, which also keeps it clear of the
+     340ms storyIn fade. That fade puts opacity below 1 on the root, and an
+     element with opacity below 1 is an isolated group — .story-drain blends
+     with its backdrop, so while the fade is running it would desaturate only
+     the overlay's own contents and not the map underneath. Titled chapters
+     dismiss at 1500ms so they are never near it. Dispatches skip the title and
+     would be, but they are generated from DISPATCH_LINES and carry no mood; if
+     that ever changes, this needs to wait out the fade too. */
+  const mood = (!showTitle && beat?.mood) || null;
+  useEffect(() => {
+    const root = document.documentElement;
+    if (mood) root.dataset.storyMood = mood;
+    else delete root.dataset.storyMood;
+    return () => {
+      delete root.dataset.storyMood;
+    };
+  }, [mood]);
+
+  /* Take the title card out of the tree once it has finished leaving. Matches
+     `storyTitleOut` in tailwind.config.js. */
+  useEffect(() => {
+    if (showTitle || titleGone) return;
+    const id = window.setTimeout(() => setTitleGone(true), 420);
+    return () => window.clearTimeout(id);
+  }, [showTitle, titleGone]);
 
   // Dismiss the title card after a moment. Dispatches have none.
   useEffect(() => {
@@ -277,22 +352,59 @@ export function StoryOverlay() {
       tabIndex={-1}
       aria-label={`Story: ${chapter.title}`}
     >
-      {/* backdrop */}
-      <div className="absolute inset-0 bg-leather-950/88 backdrop-blur-sm" />
-      <Art
-        name="camp-bg"
-        className="absolute inset-0 h-full w-full select-none object-cover opacity-25"
-      />
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 60%, transparent 40%, rgba(12,9,6,.85) 100%)',
-        }}
-      />
+      {/* The world, not a curtain.
 
-      {/* chapter title card */}
-      {showTitle && (
-        <div className="relative z-10 px-6 text-center">
+          This used to be an 88%-opaque scrim with a painting of the camp over
+          it, which meant every chapter was played against the same closed set
+          — including the ones describing the land the player is looking at.
+          The map is right there behind this, still moving, and the card
+          carries its own 96%-opaque background, so nothing here is holding the
+          text up and it can afford to be thin.
+
+          Four layers rather than one because a mood needs to be able to drain
+          the colour, change the light and bring weather in independently; all
+          four cross-fade on the same 900ms so it reads as one movement. See
+          [data-story-mood] in index.css. */}
+      <div className="story-layer story-scrim" />
+      <div className="story-layer story-drain" />
+      <div className="story-layer story-wash" />
+
+      <div className="story-weather" aria-hidden="true">
+        {STORY_CHURN.map((sheet, i) => (
+          <span
+            key={i}
+            className="story-churn"
+            style={{
+              background: sheet.background,
+              filter: `blur(${sheet.blur}px)`,
+              opacity: sheet.opacity,
+              animationDuration: `${sheet.dur}s`,
+              animationDelay: `-${sheet.dur * 0.31 * (i + 1)}s`,
+              ['--cx' as string]: `${sheet.cx}%`,
+              ['--cy' as string]: `${sheet.cy}%`,
+              ['--churn-scale' as string]: sheet.scale,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="story-layer story-vignette" />
+
+      {/* chapter title card
+
+          On its way out it goes absolute. It and the scene are both flex items
+          of the centring wrapper, and they are on screen together for 420ms —
+          left in flow, the departing title would shove the scene sideways for
+          exactly as long as the two are meant to be blending. Out of flow it
+          stays where it was and lifts away over the top of the scene, which is
+          the whole point of overlapping them. */}
+      {!titleGone && (
+        <div
+          className={cx(
+            'relative z-10 px-6 text-center',
+            !showTitle && 'pointer-events-none absolute inset-x-0 animate-storyTitleOut',
+          )}
+        >
           <div className="eyebrow animate-storyTitle">{chapter.eyebrow}</div>
           <h2
             className="heading mt-3 animate-storyTitle text-[clamp(1.9rem,5.5vw,3.2rem)] text-gold-light"

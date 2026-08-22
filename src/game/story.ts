@@ -31,6 +31,27 @@ export interface StoryChoice {
   reply: string;
 }
 
+/** What the world is doing while a beat is spoken.
+
+    The story used to play on a curtain: an 88%-opaque scrim and a picture of
+    the camp, drawn over the top of the map regardless of what was being said.
+    So Wizzy could describe the Grey lying over the land like wet ash while the
+    land it was lying on was hidden behind him, and the most atmospheric writing
+    in the app was delivered to a closed set.
+
+    A mood is the beat telling the world to react. It is published as a single
+    attribute on the document, so the overlay, the map underneath and the
+    weather all read one signal and move together rather than being wired to
+    each other. Everything it drives is in `index.css` under `[data-story-mood]`.
+
+      grey    the plague. Colour drains out of the world, the light goes cold,
+              and the fog closes over the whole screen rather than staying in
+              its bands.
+      summit  the citadel, and anything that is still standing. Warm, low, from
+              the south.
+      seal    a Seal breaking, or the promise of it. Hard gold. */
+export type BeatMood = 'grey' | 'summit' | 'seal';
+
 export interface StoryBeat {
   /** Revealed one at a time, each on its own tap. */
   lines: string[];
@@ -40,6 +61,8 @@ export interface StoryBeat {
   };
   /** Rattle the scene as this beat opens. For the moments that deserve it. */
   shake?: 'soft' | 'hard';
+  /** What the world does while this beat is on screen. */
+  mood?: BeatMood;
 }
 
 export interface StoryContext {
@@ -109,6 +132,7 @@ export const QUESTS: Quest[] = [
             'I am <b>Wizzy</b>. I have watched a great many travellers set out from this camp, and I will not pretend this is a good year to be setting out.',
             'Look south. That glow on the horizon, over the water — that is the citadel at the <b>Summit</b>.',
           ],
+          mood: 'summit',
         },
         {
           lines: [
@@ -116,6 +140,7 @@ export const QUESTS: Quest[] = [
             'Now look at the rest. That grey lying over the land like wet ash — that is the <b>Grey</b>, and it is why I am still standing at this camp instead of somewhere warm.',
           ],
           shake: 'soft',
+          mood: 'grey',
         },
         {
           lines: [
@@ -124,6 +149,7 @@ export const QUESTS: Quest[] = [
             'It spreads wherever nobody walks. That is the whole of its cunning, and it is enough.',
           ],
           shake: 'soft',
+          mood: 'grey',
         },
         {
           lines: [
@@ -139,6 +165,7 @@ export const QUESTS: Quest[] = [
             'Clear the four, and the road to the Summit opens behind them.',
           ],
           shake: 'hard',
+          mood: 'seal',
         },
         {
           lines: ['One question before you set out, traveller. I ask everyone.'],
@@ -217,6 +244,7 @@ export const QUESTS: Quest[] = [
             'Give me <b>four</b>. Four landmarks in a line is not a point any more — it is a road, and roads are much harder to erase.',
             'Watch your <b>Review</b> queue while you walk. Everything you missed is in there, and those questions are the only ones with anything left to teach you.',
           ],
+          mood: 'grey',
         },
       ],
     },
@@ -236,6 +264,7 @@ export const QUESTS: Quest[] = [
             'That is what ground looks like when someone is standing on it. The Grey has lost this stretch, and it will not get it back while you keep coming this way.',
             'Now. Something is going to notice you.',
           ],
+          mood: 'summit',
           shake: 'soft',
         },
       ],
@@ -305,6 +334,7 @@ export const QUESTS: Quest[] = [
             'Now the unglamorous stretch. <b>Twelve landmarks.</b>',
             'This is where travellers turn back, and not from difficulty — from boredom. The Grey does not need to beat you. It only needs you to stop finding this interesting.',
           ],
+          mood: 'grey',
         },
         {
           lines: [
@@ -437,6 +467,7 @@ export const QUESTS: Quest[] = [
             'The Grey has nothing left to hold on to between here and the water. Every region is lit and standing.',
             'Finish the map. Then we sail.',
           ],
+          mood: 'summit',
           shake: 'soft',
         },
       ],
@@ -458,6 +489,7 @@ export const QUESTS: Quest[] = [
             'Every landmark, before we sail. All thirty-seven.',
             'Not for the story — for you. Any skill you skip on this map is a question you will meet in the citadel with nothing prepared. The Grey is patient about gaps.',
           ],
+          mood: 'grey',
         },
       ],
     },

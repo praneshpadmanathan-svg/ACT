@@ -57,7 +57,8 @@ const EXEMPT = new Set([
   // rendered by DiscoveryLayer, outside the .mapfx layer
   'mapfx-grey-flash',
   'mapfx-grey-tendril',
-  'mapfx-mist',
+  'mapfx-grey-churn',
+  'mapfx-grey-surge',
 ]);
 
 /** Classes anchoring to their left edge — `transform: none` in CSS or inline. */

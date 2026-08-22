@@ -98,6 +98,10 @@ export default {
         pin: '0 3px 8px rgba(0,0,0,.5)',
       },
       keyframes: {
+        storyTitleOut: {
+          '0%': { opacity: '1', transform: 'translateY(0) scale(1)', filter: 'blur(0px)' },
+          '100%': { opacity: '0', transform: 'translateY(-26px) scale(1.04)', filter: 'blur(6px)' },
+        },
         float: {
           '0%,100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-7px)' },
@@ -299,6 +303,10 @@ export default {
         storyIn: 'storyIn .34s ease-out',
         storyOut: 'storyOut .34s ease-in forwards',
         storyTitle: 'storyTitle .6s cubic-bezier(.22,1,.36,1) backwards',
+        /* The title does not vanish so the scene can start; it lifts away
+           while the scene is already rising. Both are on screen for about
+           400ms, which is what turns two animations into one movement. */
+        storyTitleOut: 'storyTitleOut .42s cubic-bezier(.4,0,.7,.2) forwards',
         storyWizzy: 'storyWizzy .5s cubic-bezier(.22,1.3,.36,1) .1s backwards',
         storyChoice: 'storyChoice .3s cubic-bezier(.22,1,.36,1) backwards',
         bossIdle: 'bossIdle 3.4s ease-in-out infinite',

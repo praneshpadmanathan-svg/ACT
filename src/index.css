@@ -342,6 +342,151 @@
     @apply translate-y-0;
   }
 
+  /* ------------------------------------------------ the world during a story
+
+     A story beat can say what the world is doing while it is spoken, and this
+     is what does it. See `BeatMood` in story.ts for the reasoning; the short
+     version is that the scene used to be played on a curtain — an 88% scrim
+     and a picture of the camp, drawn over the map whatever was being said — so
+     Wizzy described the Grey lying over the land with the land hidden behind
+     him.
+
+     Everything here keys off one attribute on <html>, which is why the map
+     underneath reacts without the overlay and the map knowing about each
+     other. Every layer transitions rather than cuts, and they all share the
+     same duration, so a mood change is one movement of the whole screen
+     instead of four things starting at once.
+
+     900ms is slow for a UI transition and right for this: it is the difference
+     between the world changing and the world being switched. */
+
+  .story-layer {
+    @apply pointer-events-none absolute inset-0;
+    transition:
+      opacity 900ms ease,
+      background 900ms ease;
+  }
+
+  /* The base scrim. Thin, because the whole point is that the map stays
+     visible — the card carries its own 96%-opaque background, so nothing here
+     is holding the text up. */
+  .story-scrim {
+    background: rgba(12, 9, 6, 0.58);
+    backdrop-filter: blur(2px);
+  }
+
+  /* Colour drained out of everything beneath, by the same trick PlagueLayer
+     uses on the map: `saturation` takes this layer's saturation and the hue
+     and lightness of what is under it, so a flat grey pulls the life out of
+     the map, the pins, Wizzy and the card in one pass without any of them
+     knowing. A filter on the map root would have cost a re-raster of every
+     layer in it and would not have touched the overlay at all. */
+  .story-drain {
+    background: #808080;
+    mix-blend-mode: saturation;
+    opacity: 0;
+  }
+
+  /* The tint. Sits above the drain so a mood can put colour back in after
+     taking it out — cold light on a grey world is not the same as a grey
+     world. */
+  .story-wash {
+    opacity: 0;
+  }
+
+  .story-vignette {
+    background: radial-gradient(ellipse at 50% 58%, transparent 38%, rgba(12, 9, 6, 0.86) 100%);
+  }
+
+  /* Weather across the whole frame, not in its band. Same construction as the
+     map's banks — rasterised small, scaled up, moved only by transform — so a
+     screen of storm costs about two viewports of surface and no repaints. */
+  .story-weather {
+    @apply pointer-events-none absolute inset-0 overflow-hidden;
+    opacity: 0;
+    transition: opacity 900ms ease;
+  }
+  .story-churn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 48%;
+    height: 48%;
+    transform-origin: 50% 50%;
+    /* A duration here as well as inline: this class is outside the map, so
+       `check-map-animations` does not police it, and an animation that
+       computes to 0s fails silently. */
+    animation: fx-grey-churn 40s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  /* ----------------------------------------------------------- the moods */
+
+  [data-story-mood='grey'] .story-drain {
+    opacity: 0.92;
+  }
+  [data-story-mood='grey'] .story-scrim {
+    background: rgba(14, 16, 22, 0.62);
+  }
+  [data-story-mood='grey'] .story-wash {
+    background: linear-gradient(180deg, rgba(150, 160, 178, 0.22), rgba(28, 32, 42, 0.5));
+    opacity: 1;
+  }
+  [data-story-mood='grey'] .story-vignette {
+    background: radial-gradient(ellipse at 50% 58%, transparent 26%, rgba(10, 12, 17, 0.94) 100%);
+  }
+  [data-story-mood='grey'] .story-weather {
+    opacity: 1;
+  }
+
+  [data-story-mood='summit'] .story-scrim {
+    background: rgba(18, 12, 6, 0.5);
+  }
+  [data-story-mood='summit'] .story-wash {
+    /* Low and from the south, because that is where the citadel is. */
+    background: radial-gradient(
+      ellipse 90% 60% at 50% 108%,
+      rgba(255, 206, 106, 0.42),
+      transparent 68%
+    );
+    opacity: 1;
+  }
+  [data-story-mood='summit'] .story-vignette {
+    background: radial-gradient(ellipse at 50% 62%, transparent 44%, rgba(20, 12, 4, 0.8) 100%);
+  }
+
+  [data-story-mood='seal'] .story-scrim {
+    background: rgba(20, 13, 5, 0.55);
+  }
+  [data-story-mood='seal'] .story-wash {
+    background: radial-gradient(
+      ellipse 70% 60% at 50% 52%,
+      rgba(255, 226, 150, 0.34),
+      transparent 66%
+    );
+    opacity: 1;
+  }
+
+  /* The map itself, underneath. The Grey's own banks lean into a grey beat and
+     fall back afterwards, so the weather Wizzy is describing is the weather on
+     the map behind him rather than a separate effect drawn on top of it. */
+  [data-story-mood='grey'] .mapfx-grey-bank {
+    /* The transition lives on the base class, so this eases in *and* back out
+       when the mood clears. */
+    opacity: 0.86 !important;
+  }
+  /* The wisps lash harder. Deliberately not the storm light: fx-grey-flash
+     clears the 10% relative-luminance bar, so every stab counts as a flash
+     under WCAG 2.3.1, which allows three in any one second. Six flash elements
+     are mounted at a time and their clocks are independent — at the shipped
+     17/23/29s periods they can only rarely coincide, but shortened to a common
+     few seconds they would align regularly and put six inside a second. The
+     audience is 13-to-17-year-olds. The fog surging is what makes a grey beat
+     violent; more lightning is not worth a seizure risk. */
+  [data-story-mood='grey'] .mapfx-grey-tendril {
+    animation-duration: 5s !important;
+  }
+
   /* --------------------------------------------------------------- chrome */
 
   .panel {
@@ -2279,28 +2424,154 @@
     }
   }
 
-  /* ------------------------------------------------- the Grey, made menacing
+  /* ------------------------------------------------------------- the Grey
 
      Wizzy calls it a plague that settles over land until nobody remembers what
-     was underneath. Until now it was a still grey wash, which reads as haze —
-     weather, not a threat. These give it something going on inside it: a dull
-     storm light that never quite becomes lightning, and tendrils that reach
-     out of the bank and get pulled back. Both fade with the mist itself, so a
-     region you have cleared goes quiet as well as clear. */
-  .mapfx-grey-flash {
-    @apply pointer-events-none absolute z-[4];
-    border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(255, 252, 244, 0.85) 0%,
-      rgba(214, 210, 198, 0.35) 40%,
-      transparent 70%
+     was underneath. It used to be a pale wash that slid 7% sideways over
+     thirty seconds, which reads as haze on a still morning — the least
+     threatening weather there is.
+
+     Two things were wrong with it, and they turn out to be the same thing.
+
+     It was built as one flat sheet whose `background-position` animated, and
+     `background-position` is a paint property: every frame, the browser
+     re-rasterised a 1728x991 element carrying five stacked radial gradients
+     under a 7px blur, four of them at once, whether or not you were looking at
+     that region. Nine viewports of blurred pixels, repainted continuously, is
+     most of why the map answered a drag late. And a sheet that can only slide
+     cannot do anything but slide — the cheapest possible motion was also the
+     only motion available to it.
+
+     So it is built out of turning sheets now. Each bank is a clipping box that
+     holds the opacity and the feathered edges, and everything inside it is
+     oversized and rotates. Rotation is a transform: the blur rasterises once
+     into a surface the compositor then turns, so the churn is free where the
+     slide was not. Three sheets per bank at different rates and opposing
+     directions, and the interference between them is what reads as boiling
+     rather than drifting — no single layer does anything complicated.
+
+     Violence is mostly contrast. The old palette ran 226-242 across every
+     stop, which is fog lit evenly, and evenly lit means nothing inside it has
+     shape. These carry a dark slate core against a cold white edge, so the
+     bank has weight in it and you can see it turn.
+
+     Culled to the visible band by `mapView.tsx`, so what follows costs one
+     region rather than four. */
+
+  .mapfx-grey-bank {
+    @apply pointer-events-none absolute inset-x-0 z-[3] overflow-hidden;
+    transition: opacity 900ms ease-out;
+    /* Feather both edges so a bank never ends on a straight line. */
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      #000 15%,
+      #000 85%,
+      transparent 100%
     );
-    filter: blur(14px);
-    opacity: 0;
-    animation: fx-grey-flash ease-out infinite;
+    mask-image: linear-gradient(180deg, transparent 0%, #000 15%, #000 85%, transparent 100%);
   }
-  /* One stab per cycle, not two.
+
+  /* One drifting sheet.
+
+     Three things had to be true at once, and each of the first two attempts
+     got one of them and paid for it somewhere else.
+
+     They translate and swell; they do not rotate. Rotation was the obvious way
+     to get churn and it is the wrong primitive for a band this shape: a sheet
+     that turns a full circle must stay covered at every angle, so it needs a
+     radius of half its own diagonal, and for a band 1728 wide by 990 tall that
+     is a square about 2000 on a side. Nine of those measured 208x the viewport
+     in blurred surface against 11.7x for the flat sheet they replaced.
+
+     Translating needs only enough overhang to cover the longest offset, which
+     brought it to 39x — better, still four times worse than what it replaced,
+     because three sheets at 1.44x the band in both dimensions is 6x the area
+     of one sheet at 1x however cheaply each one moves.
+
+     So they are rasterised small and scaled up. The sheet is laid out at 48%
+     of the bank and blown up 3x, which covers the same 144% while rasterising
+     23% of the pixels — a ninth of the surface for an identical picture,
+     because the picture is four soft gradients under a blur and there is no
+     detail in it to lose. The blur radius is divided by the same 3, since the
+     filter is applied before the scale.
+
+     What matters per frame is that none of this repaints. `background-position`
+     — the original — invalidates paint every frame, so the browser re-blurred
+     six megapixels of gradient continuously. A transform on a filtered element
+     rasterises once into a surface the compositor then moves. */
+  .mapfx-grey-churn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 48%;
+    height: 48%;
+    transform-origin: 50% 50%;
+    animation: fx-grey-churn ease-in-out infinite;
+    /* Promotes the blurred sheet to its own surface once, rather than letting
+       the browser decide each frame. Only ever three of these are mounted. */
+    will-change: transform;
+  }
+  /* Percentages in `translate` resolve against the element's own border box —
+     48% of the bank — so `--cx: 20%` moves it 9.6% of the bank, against 22% of
+     overhang on that side. The mask's straight edge stays outside the box at
+     every point in the cycle. */
+  @keyframes fx-grey-churn {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(var(--churn-scale, 3));
+    }
+    25% {
+      transform: translate(-50%, -50%) translate(var(--cx, 20%), calc(var(--cy, 14%) * -1))
+        scale(calc(var(--churn-scale, 3) * 1.07));
+    }
+    50% {
+      transform: translate(-50%, -50%) translate(calc(var(--cx, 20%) * -0.55), var(--cy, 14%))
+        scale(var(--churn-scale, 3));
+    }
+    75% {
+      transform: translate(-50%, -50%)
+        translate(calc(var(--cx, 20%) * -1), calc(var(--cy, 14%) * -0.45))
+        scale(calc(var(--churn-scale, 3) * 1.1));
+    }
+  }
+
+  /* The bank breathing in and out — a swell that carries the whole mass
+     forward and lets it fall back. Scale rather than opacity does the work,
+     because fog that only brightens reads as a light coming on; fog that grows
+     reads as fog arriving. */
+  .mapfx-grey-surge {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 44%;
+    height: 44%;
+    transform-origin: 50% 50%;
+    animation: fx-grey-surge ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+  /* Rasterised small and scaled, for the reason given above the churn. 2.8x
+     from 44% covers 123% of the bank, which is all a swell needs — it grows
+     from the middle and never has to reach a corner. */
+  @keyframes fx-grey-surge {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(2.8);
+      opacity: 0.42;
+    }
+    38% {
+      transform: translate(-50%, -50%) translateY(-3%) scale(3.42);
+      opacity: 0.9;
+    }
+    64% {
+      transform: translate(-50%, -50%) translateY(1%) scale(2.97);
+      opacity: 0.58;
+    }
+  }
+
+  /* Storm light inside the bank.
+
+     One stab per cycle, not two.
 
      It used to double — a rise to .75, a trough at .15, a second rise to .55 —
      because real sheet lightning doubles. Both transitions clear the 10%
@@ -2308,15 +2579,30 @@
      caps them at three in any one second.
 
      Each element passed on its own: two flashes ~0.7s apart is 2/sec. But the
-     three banks run on independent 17s / 23s / 29s clocks, so their bursts
-     drift through one another, and roughly once every four minutes two bursts
-     overlapped and put four flashes inside a second. Over an hour on the map
-     that is about fifteen violations, for an audience of 13-to-17-year-olds.
+     banks run on independent clocks, so their bursts drift through one another,
+     and roughly once every four minutes two bursts overlapped and put four
+     flashes inside a second. Over an hour on the map that is about fifteen
+     violations, for an audience of 13-to-17-year-olds.
 
      One stab each caps the worst case at three simultaneous — at the limit
-     rather than over it — with no scheduler and no JavaScript. The doubling
-     was a nice touch that was not worth a seizure risk, and a single brighter
-     stab reads better anyway. */
+     rather than over it — with no scheduler and no JavaScript. Culling helps
+     here too and is not relied on: banks are only mounted near the frame now,
+     so in practice fewer clocks are running at once, but the cap has to hold
+     without that. The doubling was a nice touch that was not worth a seizure
+     risk, and a single harder stab reads better anyway. */
+  .mapfx-grey-flash {
+    @apply pointer-events-none absolute z-[4];
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(244, 248, 255, 0.92) 0%,
+      rgba(186, 196, 214, 0.4) 38%,
+      transparent 70%
+    );
+    filter: blur(12px);
+    opacity: 0;
+    animation: fx-grey-flash ease-out infinite;
+  }
   @keyframes fx-grey-flash {
     0%,
     88%,
@@ -2324,74 +2610,44 @@
       opacity: 0;
     }
     91% {
-      opacity: 0.8;
+      opacity: 0.85;
     }
     95% {
-      opacity: 0.1;
+      opacity: 0.12;
     }
   }
 
+  /* Wisps out of the underside of a bank.
+
+     They used to rise and fade on a symmetrical ease, which is a plant growing.
+     A lash needs the fast part at the start and the recovery slow, so the
+     stretch happens in a fifth of the cycle and the rest is the wisp being
+     drawn back up into the mass. The sideways skew is what stops four of them
+     reading as four identical fingers. */
   .mapfx-grey-tendril {
     @apply pointer-events-none absolute z-[4];
     border-radius: 999px;
-    background: linear-gradient(180deg, rgba(232, 229, 219, 0.72), transparent 85%);
-    filter: blur(5px);
+    background: linear-gradient(180deg, rgba(236, 240, 248, 0.8), transparent 82%);
+    filter: blur(4px);
     transform-origin: 50% 0%;
-    animation: fx-grey-tendril ease-in-out infinite;
+    animation: fx-grey-tendril cubic-bezier(0.16, 0.9, 0.3, 1) infinite;
   }
   @keyframes fx-grey-tendril {
     0%,
     100% {
-      transform: scaleY(0.35) translateY(0);
+      transform: scaleY(0.28) skewX(0deg);
       opacity: 0;
     }
-    40% {
-      opacity: 0.6;
+    12% {
+      opacity: 0.72;
     }
-    60% {
-      transform: scaleY(1.15) translateY(6%);
-      opacity: 0.5;
+    22% {
+      transform: scaleY(1.45) skewX(var(--lash, 7deg));
+      opacity: 0.68;
     }
-  }
-
-  .mapfx-mist {
-    @apply pointer-events-none absolute inset-x-0 z-[3];
-    background:
-      radial-gradient(ellipse 42% 60% at 18% 38%, rgba(238, 235, 226, 0.82), transparent 72%),
-      radial-gradient(ellipse 50% 70% at 55% 62%, rgba(228, 225, 215, 0.78), transparent 70%),
-      radial-gradient(ellipse 40% 55% at 86% 34%, rgba(242, 239, 230, 0.76), transparent 72%),
-      radial-gradient(ellipse 55% 50% at 34% 82%, rgba(234, 231, 221, 0.74), transparent 74%),
-      linear-gradient(180deg, rgba(236, 233, 223, 0.5), rgba(224, 221, 211, 0.56));
-    filter: blur(7px);
-    transition: opacity 900ms ease-out;
-    animation: fx-mist 30s ease-in-out infinite;
-    /* Feather both edges so the band never ends on a straight line. */
-    -webkit-mask-image: linear-gradient(
-      180deg,
-      transparent 0%,
-      #000 16%,
-      #000 84%,
-      transparent 100%
-    );
-    mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
-  }
-  @keyframes fx-mist {
-    0%,
-    100% {
-      background-position:
-        0 0,
-        0 0,
-        0 0,
-        0 0,
-        0 0;
-    }
-    50% {
-      background-position:
-        7% 3%,
-        -6% -3%,
-        5% 2%,
-        -4% 2%,
-        0 0;
+    70% {
+      transform: scaleY(0.62) skewX(calc(var(--lash, 7deg) * -0.4));
+      opacity: 0.24;
     }
   }
 

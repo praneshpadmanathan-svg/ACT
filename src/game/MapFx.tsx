@@ -20,6 +20,7 @@ import { memo } from 'react';
 import { seeded } from '@/lib/utils';
 import { CLOUDS } from '@/game/mapData';
 import particleArt from '@/particleArt.json';
+import { Band } from './mapView';
 
 const PARTICLES = particleArt as Record<string, { width: number; height: number; src: string }>;
 
@@ -993,32 +994,107 @@ function Banner() {
 
 /** All scenery motion. Memoised — none of it depends on app state, so it
  *  should never re-render when progress changes. */
+/* Where each effect actually lives, in map-percent, so the ones you are not
+   looking at can stay out of the document.
+
+   Measured off the live map rather than read off the coordinate tables — some
+   effects place themselves with a seeded rng, and several of the tables give a
+   centre while the thing drawn from it is much taller. Each band is the union
+   of every element the effect rendered, rounded outwards by a percent or so.
+
+   The five that are missing are missing on purpose. Water, Boats, Windows,
+   Clouds and Crystals each scatter a handful of items across the whole map —
+   the sky covers everything, by definition, and the crystals sit in two
+   clusters forty percent apart — so a band around them would span the map and
+   cull nothing. They are also the cheap ones: no blur between them except the
+   clouds, which are the sky and have to be everywhere. Banding is for the
+   dense local clusters, which is where the elements actually are: the
+   waterfall alone is fifty-four of them inside twelve percent of the map. */
+const FX_BANDS = {
+  aurora: { top: -2, height: 14 },
+  shootingStar: { top: 4, height: 4 },
+  smoke: { top: 9, height: 8 },
+  wind: { top: 10, height: 8 },
+  birds: { top: 4, height: 21 },
+  leaves: { top: 24, height: 14 },
+  fireflies: { top: 24, height: 17 },
+  mushrooms: { top: 25, height: 12 },
+  butterflies: { top: 29, height: 10 },
+  waterfall: { top: 32, height: 14 },
+  volcano: { top: 29, height: 18 },
+  tumbleweed: { top: 46, height: 15 },
+  dust: { top: 48, height: 8 },
+  waves: { top: 54, height: 43 },
+  beacons: { top: 68, height: 26 },
+  squalls: { top: 69, height: 24 },
+  sail: { top: 77, height: 5 },
+  banner: { top: 90, height: 4 },
+} as const;
+
 export const MapFx = memo(function MapFx() {
   return (
     <div className="mapfx" aria-hidden="true">
+      {/* Everywhere by nature — see FX_BANDS. */}
       <Water />
-      <Waves />
-      <Waterfall />
-      <Mushrooms />
-      <Fireflies />
-      <Leaves />
       <Crystals />
-      <Volcano />
-      <Dust />
-      <Beacons />
-      <Smoke />
       <Boats />
-      <Sail />
       <Windows />
-      <Wind />
-      <Birds />
-      <Butterflies />
-      <Tumbleweed />
-      <Banner />
       <Clouds />
-      <Squalls />
-      <Aurora />
-      <ShootingStar />
+
+      <Band {...FX_BANDS.waves}>
+        <Waves />
+      </Band>
+      <Band {...FX_BANDS.waterfall}>
+        <Waterfall />
+      </Band>
+      <Band {...FX_BANDS.mushrooms}>
+        <Mushrooms />
+      </Band>
+      <Band {...FX_BANDS.fireflies}>
+        <Fireflies />
+      </Band>
+      <Band {...FX_BANDS.leaves}>
+        <Leaves />
+      </Band>
+      <Band {...FX_BANDS.volcano}>
+        <Volcano />
+      </Band>
+      <Band {...FX_BANDS.dust}>
+        <Dust />
+      </Band>
+      <Band {...FX_BANDS.beacons}>
+        <Beacons />
+      </Band>
+      <Band {...FX_BANDS.smoke}>
+        <Smoke />
+      </Band>
+      <Band {...FX_BANDS.sail}>
+        <Sail />
+      </Band>
+      <Band {...FX_BANDS.wind}>
+        <Wind />
+      </Band>
+      <Band {...FX_BANDS.birds}>
+        <Birds />
+      </Band>
+      <Band {...FX_BANDS.butterflies}>
+        <Butterflies />
+      </Band>
+      <Band {...FX_BANDS.tumbleweed}>
+        <Tumbleweed />
+      </Band>
+      <Band {...FX_BANDS.banner}>
+        <Banner />
+      </Band>
+      <Band {...FX_BANDS.squalls}>
+        <Squalls />
+      </Band>
+      <Band {...FX_BANDS.aurora}>
+        <Aurora />
+      </Band>
+      <Band {...FX_BANDS.shootingStar}>
+        <ShootingStar />
+      </Band>
     </div>
   );
 });

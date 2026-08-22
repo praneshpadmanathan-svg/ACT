@@ -30,6 +30,7 @@ import { MapJournal } from './MapJournal';
 import { m, PIN_SPRING, SPRING, useReducedMotion } from '@/lib/motion';
 import { MapFx } from './MapFx';
 import { PlagueLayer, TrailLayer } from './MapLayers';
+import { MapSpanContext, spanFromView } from './mapView';
 import { ClearedSigil, CrownSigil, LockSigil, MasterSigil } from './Sigils';
 import { HeroSprite, heroSpriteWidth } from './HeroSprite';
 import { Art } from '@/components/Art';
@@ -309,6 +310,26 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
   }));
   const [view, setView] = useState<View>({ zoom: 1.35, x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
+
+  /* Is the camera being driven continuously right now?
+
+     The world layer eases its transform over half a second, which is right for
+     a camera move you did not ask for — centring on a landmark, a zoom button
+     — and badly wrong for anything that arrives as a stream. A wheel gesture
+     fires every few milliseconds and the momentum glide below fires every
+     frame; each one set a new target that the browser then began easing
+     towards over 500ms, and the next one arrived long before it got there. So
+     the map never reached the position it had been given, kept moving for half
+     a second after the input stopped, and answered a flick by sliding away
+     under its own inertia at a fraction of the speed you threw it. That is
+     most of what "the map feels slow" was.
+
+     The transition goes off while input is arriving and comes back once it
+     stops. `dragging` is separate because it is a real gesture state with its
+     own start and end; this is the debounced tail for the two drivers that
+     have no end event of their own. */
+  const [cameraLive, setCameraLive] = useState(false);
+  const cameraIdle = useRef<number | null>(null);
   const [ready, setReady] = useState(false);
 
   /* The map is sized to cover the viewport at zoom 1, so panning is only ever
@@ -556,6 +577,27 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
   const drift = useRef<{ vx: number; vy: number; at: number }[]>([]);
   const glide = useRef<number | null>(null);
 
+  /* Hold the transition off, and start the clock that turns it back on. 140ms
+     is longer than the gap between two wheel notches and shorter than anyone
+     notices, so a continuous gesture never lets it expire and a finished one
+     restores the easing before the next deliberate move. */
+  const markCameraLive = useCallback(() => {
+    setCameraLive(true);
+    if (cameraIdle.current !== null) window.clearTimeout(cameraIdle.current);
+    cameraIdle.current = window.setTimeout(() => {
+      cameraIdle.current = null;
+      setCameraLive(false);
+    }, 140);
+  }, []);
+
+  // Never leave the timer running behind an unmounted map.
+  useEffect(
+    () => () => {
+      if (cameraIdle.current !== null) window.clearTimeout(cameraIdle.current);
+    },
+    [],
+  );
+
   const stopGlide = useCallback(() => {
     if (glide.current !== null) {
       cancelAnimationFrame(glide.current);
@@ -579,6 +621,7 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
       // 0.94 per frame is ~0.9s of glide from a firm flick.
       vx *= 0.94;
       vy *= 0.94;
+      markCameraLive();
       setView((v) => clampView({ ...v, x: v.x + vx, y: v.y + vy }, frame));
       if (Math.hypot(vx, vy) > 0.3) {
         glide.current = requestAnimationFrame(step);
@@ -587,7 +630,7 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
       }
     };
     glide.current = requestAnimationFrame(step);
-  }, [clampView, frame, settle]);
+  }, [clampView, frame, settle, markCameraLive]);
 
   // Never leave a rAF loop running behind an unmounted map.
   useEffect(() => stopGlide, [stopGlide]);
@@ -652,6 +695,7 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
 
   const onWheel = (e: React.WheelEvent) => {
     const factor = Math.exp(-e.deltaY * 0.0016);
+    markCameraLive();
     zoomAt(factor, e.clientX - frame.w / 2, e.clientY - frame.h / 2);
   };
 
@@ -672,6 +716,16 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
      frame at zoom 1. Multiplied by the user's zoom for the final transform. */
   const coverScale =
     frame.w > 0 ? Math.max(frame.w / MAP_W, frame.h / MAP_H) * view.zoom : view.zoom;
+
+  /* Which slice of the world the scenery should bother animating.
+
+     `spanFromView` quantises to whole map-percent, and the memo keys on those
+     two numbers rather than on the object, so this identity changes only when
+     the camera has actually moved somewhere new. Panning fires pointermove at
+     screen rate; re-rendering the scenery tree on each of those would cost
+     more than the culling saves. */
+  const { top: spanTop, bottom: spanBottom } = spanFromView(frame.h, view.y, coverScale);
+  const span = useMemo(() => ({ top: spanTop, bottom: spanBottom }), [spanTop, spanBottom]);
 
   /* --------------------------------------------- keeping the HUD off the man
    *
@@ -749,7 +803,10 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
           height: MAP_H,
           transform: `translate(-50%, -50%) translate(${view.x}px, ${view.y}px) scale(${coverScale})`,
           transformOrigin: 'center center',
-          transition: dragging ? 'none' : 'transform .5s cubic-bezier(.22,1,.36,1)',
+          /* 340ms rather than 500: a camera move should read as deliberate,
+             not as something you wait for. See `cameraLive` for why a stream
+             of input turns it off entirely. */
+          transition: dragging || cameraLive ? 'none' : 'transform .34s cubic-bezier(.22,1,.36,1)',
           opacity: ready ? 1 : 0,
           /* Published so the hover cards can divide it back out. Everything in
              this layer is a thing in the world and should grow when the world
@@ -777,15 +834,17 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
             mist underneath and it would drain those too. */}
         <PlagueLayer cleared={clearedByRegion} />
 
-        <MapFx />
+        <MapSpanContext.Provider value={span}>
+          <MapFx />
 
-        {/* The road goes over the weather but under the pins: you should be
-            able to see where it leads through thin mist, and a pin should
-            never be behind it. */}
-        <TrailLayer cleared={clearedByRegion} />
+          {/* The road goes over the weather but under the pins: you should be
+              able to see where it leads through thin mist, and a pin should
+              never be behind it. */}
+          <TrailLayer cleared={clearedByRegion} />
 
-        {/* Things to find, and cloud over ground not yet walked. */}
-        <DiscoveryLayer clearedByRegion={clearedByRegion} />
+          {/* Things to find, and cloud over ground not yet walked. */}
+          <DiscoveryLayer clearedByRegion={clearedByRegion} />
+        </MapSpanContext.Provider>
 
         {/* region plaques */}
         {REGION_ORDER.map((id) => {
