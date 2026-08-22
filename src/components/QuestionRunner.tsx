@@ -8,7 +8,7 @@
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import type { Difficulty, Passage, SectionId } from '@/types';
-import { sfx } from '@/lib/sfx';
+import { juice } from '@/lib/juice';
 import { cx, formatClock } from '@/lib/utils';
 import { AnimatePresence, m, SPRING, SPRING_SNAP } from '@/lib/motion';
 import { burstConfetti } from './Feedback';
@@ -189,8 +189,13 @@ export function QuestionRunner({
       onAnswer(record);
 
       if (correct) {
-        sfx.correct();
-        if (streak >= 1) sfx.combo(streak + 1);
+        /* One call rather than a sound here and visuals scattered below: the
+           bus fires the sound at contact, holds a beat, then kicks the stage
+           and washes the screen. `visuals` is off in test mode for the same
+           reason the flare and the sparks are — a timed test does not tell you
+           how you did until the end. */
+        juice.correct({ visuals: !deferFeedback });
+        if (streak >= 1) juice.combo(streak + 1, { visuals: !deferFeedback });
 
         /* Right first time, so there is nothing to disambiguate: light it now. */
         setLitCorrect(true);
@@ -208,7 +213,7 @@ export function QuestionRunner({
           if (box) burstConfetti(18, box.right - 34, box.top + box.height / 2, 9);
         }
       } else {
-        sfx.wrong();
+        juice.wrong({ visuals: !deferFeedback });
         litTimer.current = window.setTimeout(() => setLitCorrect(true), REVEAL_LAG * 1000);
       }
 

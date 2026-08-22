@@ -5,6 +5,7 @@ import { useNavigate, useRoute } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { onUpdateReady } from '@/lib/pwa';
 import { m, MotionProvider, pageVariants } from '@/lib/motion';
+import { registerStage } from '@/lib/juice';
 import { TopBar } from '@/components/Shell';
 import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
 import { StoryOverlay } from '@/game/StoryOverlay';
@@ -194,19 +195,35 @@ export default function App() {
 
   return (
     <MotionProvider>
-      {!bare && <TopBar />}
-
       {/* The region's painted plate, behind the whole viewport.
 
-          Here rather than inside `PathScreen` because of the wrapper below:
-          it animates `y: 12 → 0`, and a transform on an ancestor becomes the
-          containing block for `position: fixed`, which would pin the backdrop
-          to the page and scroll it away down a ten-landmark road. As a
-          sibling it has no transformed ancestor. See `game/RegionBackdrop`
-          for the rest of it. */}
+          Here rather than inside `PathScreen` because of the wrappers below:
+          the page wrapper animates `y: 12 → 0` and the stage wrapper takes a
+          transform whenever something shakes it. A transform on an ancestor
+          becomes the containing block for `position: fixed`, which would pin
+          the backdrop to the page and scroll it away down a ten-landmark
+          road. As a sibling of both it has no transformed ancestor. It sits at
+          `-z-10`, so coming first in the DOM costs it nothing. See
+          `game/RegionBackdrop` for the rest of it. */}
       {route.name === 'path' && <RegionBackdrop section={route.section} />}
 
-      {/* Screens animate in, and nothing waits on an animation to do it.
+      {/* The stage: what a screen shake moves.
+
+          Everything a hit should carry with it goes inside — the header and the
+          route — and everything that must stay nailed to the viewport stays
+          out. That is the same rule the backdrop above follows and it is the
+          same reason: while the stage is transformed it is the containing block
+          for any `position: fixed` descendant, so a toast or the story overlay
+          rendered in here would drop by the scroll offset for the length of a
+          shake. An intermittent bug that only appears while the screen is
+          moving is not one anybody would enjoy finding.
+
+          `lib/juice.ts` removes the transform when a shake ends rather than
+          zeroing it, so this is a plain static div the rest of the time. */}
+      <div ref={registerStage}>
+        {!bare && <TopBar />}
+
+        {/* Screens animate in, and nothing waits on an animation to do it.
 
           This started as AnimatePresence with mode="wait" so the outgoing
           screen could animate away first. That gates mounting the next screen
@@ -222,19 +239,20 @@ export default function App() {
           route identity rather than just its name, so paging between two note
           pages re-animates too. The map is excluded: it owns the viewport and
           brings its own artwork in. */}
-      {/* One boundary around the route, keyed with it. Keying matters: without
+        {/* One boundary around the route, keyed with it. Keying matters: without
           it React keeps the boundary mounted across a navigation and reuses
           the previous screen as the fallback's sibling, so moving from a long
           page to a lazy one leaves the old page on screen until the new chunk
           lands. Keyed, the fallback shows immediately and the transition is
           honest about what is happening. */}
-      {route.name === 'map' ? (
-        <Suspense fallback={<ScreenFallback />}>{renderRoute(route)}</Suspense>
-      ) : (
-        <m.div key={routeKey(route)} variants={pageVariants} initial="initial" animate="animate">
+        {route.name === 'map' ? (
           <Suspense fallback={<ScreenFallback />}>{renderRoute(route)}</Suspense>
-        </m.div>
-      )}
+        ) : (
+          <m.div key={routeKey(route)} variants={pageVariants} initial="initial" animate="animate">
+            <Suspense fallback={<ScreenFallback />}>{renderRoute(route)}</Suspense>
+          </m.div>
+        )}
+      </div>
 
       {/* Story runs above every screen so a chapter can fire wherever you
           happen to be when you earn it. */}

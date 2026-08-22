@@ -487,6 +487,33 @@
     animation-duration: 5s !important;
   }
 
+  /* ----------------------------------------------------------- the juice bus
+
+     The wash that lands on a hit. Driven entirely from lib/juice.ts, which
+     animates opacity through the Web Animations API and sets --juice-tone; the
+     element itself is created once and reused.
+
+     Transparent through the middle. A full-screen flash is a camera going off
+     in the reader's face, and this fires on every correct answer — hundreds of
+     times a session, on text someone is trying to read. Coming in from the
+     edges puts the colour where nothing is being read and leaves the answer
+     itself untouched.
+
+     0.55 at the rim against a peak opacity of 0.14 in the bus means the corners
+     reach about 8% over a near-black ground, comfortably under the 10% relative
+     luminance that WCAG 2.3.1 counts as a flash. The three-per-second budget in
+     the bus is a second line of defence, not the only one. */
+  .juice-flash {
+    @apply pointer-events-none fixed inset-0;
+    z-index: 200;
+    opacity: 0;
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      transparent 30%,
+      rgba(var(--juice-tone, 242, 207, 91), 0.55) 100%
+    );
+  }
+
   /* --------------------------------------------------------------- chrome */
 
   .panel {
