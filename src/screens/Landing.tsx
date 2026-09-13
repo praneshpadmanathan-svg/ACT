@@ -11,7 +11,7 @@
    with no card at all — the feature list especially — were the hardest thing
    on the page to read. */
 
-import { lazy, Suspense, type ReactNode } from 'react';
+import { lazy, Suspense, useEffect, useRef, type ReactNode } from 'react';
 
 /* Three narrow imports rather than one from `@/content`. This is the only
    screen the app does not load lazily — it is the front door — so anything it
@@ -25,7 +25,8 @@ import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
-import { Button, Eyebrow } from '@/components/ui';
+import { Button, Eyebrow, Tally } from '@/components/ui';
+import { useInView } from '@/lib/useInView';
 import { Glyph } from '@/components/Icon';
 import { NavGlyph, type GlyphName } from '@/components/NavGlyph';
 import { REGIONS, REGION_ORDER } from '@/content/regionFlavor';
@@ -39,6 +40,64 @@ import { NearViewport } from '@/components/NearViewport';
 const TryQuestion = lazy(() =>
   import('@/components/TryQuestion').then((m) => ({ default: m.TryQuestion })),
 );
+
+/* --------------------------------------------------------------- hero depth
+
+   Pointer parallax on the hero and nowhere else on the page.
+
+   Two numbers on a CSS variable; `.hero-plate` in the stylesheet does the rest.
+   Deliberately not React state: a state update per `pointermove` would
+   re-render the entire landing page sixty times a second in order to move one
+   painting fourteen pixels. Deliberately not a spring either — the long
+   transition on the class is what makes the plate feel heavy rather than
+   stuck to the cursor.
+
+   The reduced-motion check is `matchMedia` rather than the app's
+   `useReducedMotion`, which lives in `@/lib/motion`. This screen is the only
+   one the app does not load lazily, so an import here is an import in the
+   first paint, and one boolean is not worth putting the motion library on the
+   critical path for. */
+function usePointerDepth<T extends HTMLElement>() {
+  const ref = useRef<T | null>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    /* A coarse pointer has no hover position to read, and a touch drag would
+       snap the plate to wherever the finger landed rather than drift. */
+    if (
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      !window.matchMedia('(pointer: fine)').matches
+    ) {
+      return;
+    }
+
+    let frame = 0;
+    const move = (e: PointerEvent) => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+        el.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+      });
+    };
+    const rest = () => {
+      el.style.setProperty('--px', '0');
+      el.style.setProperty('--py', '0');
+    };
+
+    el.addEventListener('pointermove', move);
+    el.addEventListener('pointerleave', rest);
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      el.removeEventListener('pointermove', move);
+      el.removeEventListener('pointerleave', rest);
+    };
+  }, []);
+
+  return ref;
+}
 
 /* ------------------------------------------------------------- highlighting
 
@@ -88,10 +147,17 @@ function Ornament() {
   );
 }
 
-/* A heading, its ornament, and one line of intro on a thin veil. */
+/* A heading, its ornament, and one line of intro on a thin veil.
+
+   Carries `act-rise` for every section on the page, which is where the scroll
+   score actually lives: each act announces itself as it comes up. It belongs
+   here rather than on the `<section>` for the reason given in the stylesheet —
+   a `view()` range is measured against the animated element's own height, so
+   putting it on a tall section would stretch a 200 ms arrival across half a
+   screen of scrolling. */
 function SectionIntro({ title, lead }: { title: ReactNode; lead: ReactNode }) {
   return (
-    <div className="mb-11 text-center">
+    <div className="act-rise mb-11 text-center">
       <h2 className="heading text-balance text-[clamp(1.5rem,3.2vw,2rem)] text-parchment-light">
         {title}
       </h2>
@@ -241,10 +307,26 @@ export function Landing() {
   const cleared = Object.keys(progress.zonesCleared).length;
   const totalLandmarks = REGION_ORDER.reduce((n, id) => n + (PATH_BY_ID[id]?.nodes.length ?? 0), 0);
 
+  const heroRef = usePointerDepth<HTMLElement>();
+  const [claimRef, claimSeen] = useInView<HTMLDivElement>();
+
   const begin = () => {
     sfx.achieve();
     continueAsGuest();
     navigate({ name: progress.profile ? 'home' : 'onboarding' });
+  };
+
+  /* Fetch the screen you are about to land on while you are still deciding to
+     land on it. Both destinations are lazy chunks, so without this the first
+     thing anyone sees after "Enter the realm" is the loading screen — the one
+     moment on the whole site where the app should look instant. A hover or a
+     focus is several hundred milliseconds of warning and the chunk is 7 kB.
+
+     Deliberately fire-and-forget: it is a cache warm, and a failed prefetch
+     must not become a visible error on a button that has not been pressed. */
+  const warm = () => {
+    if (progress.profile) void import('@/screens/Home');
+    else void import('@/screens/Onboarding');
   };
 
   return (
@@ -279,16 +361,25 @@ export function Landing() {
         </div>
       </header>
 
-      {/* ------------------------------------------------------------- hero */}
-      <section className="relative isolate flex min-h-[94dvh] items-center overflow-hidden">
-        <Art
-          name="landing-hero"
-          priority
-          className="absolute inset-0 h-full w-full select-none object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-leather-950/72 via-leather-950/45 to-leather-950" />
+      {/* ------------------------------------------------------- act I — arrival
 
-        <div className="shell relative z-10 pb-20 pt-28 text-center">
+          The ridge, the title, one thing to do. The claim that used to be
+          crammed under the buttons is now its own act, because a hero carrying
+          a headline, a paragraph, two buttons, a display-size number, three
+          sub-stats and a ticket line is not a hero — it is the whole page,
+          stacked. */}
+      <section
+        ref={heroRef}
+        className="relative isolate flex min-h-[94dvh] items-center overflow-hidden"
+      >
+        <div className="hero-plate">
+          <div className="hero-plate-in">
+            <Art name="landing-hero" priority className="h-full w-full select-none object-cover" />
+          </div>
+        </div>
+        <div className="hero-scrim" />
+
+        <div className="hero-type-block shell relative z-10 pb-20 pt-28 text-center">
           {/* Two different people arrive at this door.
 
               One has never heard of the app and needs to be told what it is.
@@ -297,11 +388,17 @@ export function Landing() {
               an advert for a thing they already own, every single visit. The
               artwork, the layout and everything below the fold are shared;
               only the three lines that speak to you directly change. */}
-          <Eyebrow className="mb-5">
+          {/* Parchment, not the eyebrow's usual gold. Thirteen-point gold letter-
+              forms land on the brightest band of the sunset — gold on orange is
+              a hue clash before it is a contrast one, and no amount of shadow
+              fixes a pair of colours that are the same colour. Gold on this page
+              means the thing you press and the number you earned; a dateline is
+              neither, so it gives the colour up and becomes legible. */}
+          <Eyebrow className="hero-type mb-5 text-parchment-light">
             {returning ? 'The road is where you left it' : 'The 2025+ Enhanced ACT'}
           </Eyebrow>
 
-          <h1 className="heading text-[clamp(2.4rem,7vw,4.4rem)] leading-[1.1] text-parchment-light">
+          <h1 className="heading hero-type text-[clamp(2.4rem,7vw,4.4rem)] leading-[1.1] text-parchment-light">
             {returning ? (
               <>
                 Welcome back,
@@ -315,9 +412,12 @@ export function Landing() {
             )}
           </h1>
 
-          {/* The hero keeps its open composition — no veil over the artwork.
-              Only the colour highlighting carries down from here. */}
-          <p className="mx-auto mt-6 max-w-2xl font-read text-[clamp(1.05rem,2vw,1.3rem)] leading-relaxed text-parchment-dim">
+          {/* Still no veil over the artwork — the open composition was always
+              the right instinct. What it was missing is that an open
+              composition still owes its type a ground: `.hero-scrim`'s
+              bottom-anchored radial and `.hero-type`'s shadow ladder put one
+              under the words without laying a slab across the painting. */}
+          <p className="hero-type mx-auto mt-6 max-w-2xl font-read text-[clamp(1.05rem,2vw,1.3rem)] leading-relaxed text-parchment-dim">
             {returning ? (
               <>
                 <Hl>{cleared}</Hl> of <Hl tone="cream">{totalLandmarks}</Hl> landmarks taken, and{' '}
@@ -350,7 +450,14 @@ export function Landing() {
               </>
             ) : (
               <>
-                <Button variant="primary" size="lg" trailing onClick={begin}>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  trailing
+                  onClick={begin}
+                  onPointerEnter={warm}
+                  onFocus={warm}
+                >
                   Enter the realm
                 </Button>
                 <a href={hrefFor({ name: 'auth', mode: 'signin' })} onClick={() => sfx.select()}>
@@ -360,51 +467,57 @@ export function Landing() {
             )}
           </div>
 
-          {/* The bank is the reason to use this, so it is sized like it.
-              A row of four identical chips gave "1,248 questions" exactly the
-              same weight as "100% free" — the headline number read as one
-              badge among badges. It now leads at display size with the
-              supporting numbers set small and quiet beside it, so the
-              hierarchy on the page matches the hierarchy of the claim. */}
-          <div className="mt-11">
+          <p className="hero-type mt-9 font-script text-[12px] uppercase tracking-[0.2em] text-ink-faint">
+            Every answer explained · Free · No account needed
+          </p>
+        </div>
+      </section>
+
+      {/* --------------------------------------------------- act II — the claim
+
+          One number, the size of the claim it is making.
+
+          It used to be a chip in a row of chips at the bottom of the hero,
+          which gave "1,407 questions" exactly the same weight as "100% free".
+          The bank is the reason to use this app; nothing else on the page has
+          to carry that much, so nothing else gets set this big. */}
+      <section className="relative border-y border-leather-700/70 bg-leather-950/55 py-16 sm:py-20">
+        <div className="shell">
+          <div ref={claimRef} className="text-center">
+            <p className="label-sm">Written for this app — not collected from anywhere</p>
+            {/* Counts once, when it is looked at. `value` swings from zero to
+                the real total the moment the section is seen, which is what
+                `Tally` animates on; `from={0}` only keeps it from showing the
+                answer for one frame before it starts. `useInView` guarantees
+                the swing happens whether or not the observer ever fires. */}
             <div
-              className="mx-auto flex max-w-2xl flex-wrap items-center justify-center gap-x-7
-                         gap-y-5 rounded-xl border border-gold-deep/45 bg-leather-950/72 px-6
-                         py-5 backdrop-blur"
+              className="num mt-3 font-bold leading-[0.92] text-gold-bright"
+              style={{
+                fontSize: 'clamp(3.4rem, 12vw, 6rem)',
+                textShadow: '0 0 52px oklch(var(--c-gold) / 0.22)',
+              }}
             >
-              <div className="text-center">
-                <div
-                  className="num text-[clamp(2.5rem,7.5vw,3.75rem)] font-bold leading-[0.95]
-                             text-gold-bright"
-                  style={{ textShadow: '0 0 28px rgba(242, 207, 91, 0.26)' }}
-                >
-                  {LIBRARY_STATS.totalQuestions.toLocaleString()}
-                </div>
-                <div className="label-sm mt-2 text-gold">questions written</div>
-              </div>
-
-              <span className="hidden h-12 w-px bg-gold-deep/35 sm:block" aria-hidden="true" />
-
-              <dl className="grid grid-cols-3 gap-x-6 gap-y-2 text-center">
-                {[
-                  [LIBRARY_STATS.notePages.toLocaleString(), 'lessons'],
-                  [LIBRARY_STATS.passages.toLocaleString(), 'passages'],
-                  ['4', 'regions'],
-                ].map(([value, label]) => (
-                  <div key={label}>
-                    <dt className="num text-[19px] font-semibold leading-none text-parchment-light">
-                      {value}
-                    </dt>
-                    <dd className="label-sm mt-1.5">{label}</dd>
-                  </div>
-                ))}
-              </dl>
+              <Tally value={claimSeen ? LIBRARY_STATS.totalQuestions : 0} from={0} />
             </div>
-
-            <p className="mt-3.5 font-script text-[12px] uppercase tracking-[0.2em] text-ink-faint">
-              Every answer explained · Free · No account needed
+            <p className="heading mt-5 text-balance text-[clamp(1.2rem,3vw,1.75rem)] text-parchment-light">
+              questions. <span className="text-gold-bright">Every answer explained.</span>
             </p>
           </div>
+
+          <dl className="act-stagger mx-auto mt-11 grid max-w-2xl grid-cols-3 gap-4">
+            {[
+              [LIBRARY_STATS.notePages.toLocaleString(), 'lessons'],
+              [LIBRARY_STATS.passages.toLocaleString(), 'passages'],
+              ['4', 'regions'],
+            ].map(([value, label]) => (
+              <div key={label} className="veil px-4 py-5 text-center">
+                <dt className="num text-[clamp(1.3rem,3.4vw,1.7rem)] font-semibold leading-none text-parchment-light">
+                  {value}
+                </dt>
+                <dd className="label-sm mt-2">{label}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
@@ -414,8 +527,8 @@ export function Landing() {
           climb to 36" has assumed you know what 36 is out of, what the ACT
           is, and whether any of it applies to you. Enough of the answer to
           keep reading; the rest is on the FAQ. */}
-      <section className="border-y border-leather-700 bg-leather-950/40 py-14">
-        <div className="shell grid gap-5 md:grid-cols-3">
+      <section className="border-b border-leather-700 bg-leather-950/40 py-14">
+        <div className="act-stagger shell grid gap-5 md:grid-cols-3">
           {[
             {
               t: 'New to this?',
@@ -487,11 +600,13 @@ export function Landing() {
             the chunk lands would shove them up the page mid-read. The same
             height is reserved before the mount, so the reserved space and the
             Suspense fallback are the same box and the page never jumps. */}
-        <NearViewport minHeight="420px">
-          <Suspense fallback={<div className="veil mx-auto min-h-[420px] max-w-2xl" />}>
-            <TryQuestion onFinish={begin} />
-          </Suspense>
-        </NearViewport>
+        <div className="act-rise">
+          <NearViewport minHeight="420px">
+            <Suspense fallback={<div className="proof-sheet mx-auto min-h-[420px] max-w-3xl" />}>
+              <TryQuestion onFinish={begin} />
+            </Suspense>
+          </NearViewport>
+        </div>
       </section>
 
       {/* --------------------------------------------------------- regions */}
@@ -510,41 +625,70 @@ export function Landing() {
           }
         />
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {SECTIONS.map((section) => {
-            const region = REGIONS[section.id];
-            const tint = REGION_TEXT[section.id];
-            const zones = PATH_BY_ID[section.id]?.nodes.length ?? 0;
-            return (
-              <div
-                key={section.id}
-                className="veil veil-lift flex flex-col p-6"
-                style={{ borderTopColor: region.color, borderTopWidth: 3 }}
-              >
-                <h3 className="heading text-[17px]" style={{ color: tint }}>
-                  {region.title}
-                </h3>
-                <p className="label-sm mt-1">{section.name}</p>
-                <p className="mt-3 flex-1 font-read text-[14.5px] leading-relaxed text-parchment-dim">
-                  {section.blurb}
-                </p>
-                <p className="mt-4 border-t border-leather-700/60 pt-3 font-read text-[13px] text-ink-faint">
-                  <b className="num text-[14px]" style={{ color: tint }}>
-                    {section.questionCount}
-                  </b>{' '}
-                  questions ·{' '}
-                  <b className="num text-[14px]" style={{ color: tint }}>
-                    {section.minutes}
-                  </b>{' '}
-                  min ·{' '}
-                  <b className="num text-[14px]" style={{ color: tint }}>
-                    {zones}
-                  </b>{' '}
-                  landmarks
-                </p>
-              </div>
-            );
-          })}
+        {/* A track rather than a grid. The four painted region plates have only
+            ever been seen as backdrops behind the path screens, under a scrim
+            at low opacity; this is the one place on the site where they can be
+            looked at. It also does something a grid cannot — it puts the roads
+            in an order and makes you travel them.
+
+            `tabIndex` and the label are not decoration: a scroll container that
+            only a wheel can reach is a region of the page a keyboard user
+            cannot read at all. */}
+        <div className="band-scope act-rise">
+          <div
+            className="plate-band"
+            role="region"
+            aria-label="The four regions — scroll to see each"
+            tabIndex={0}
+          >
+            {SECTIONS.map((section) => {
+              const region = REGIONS[section.id];
+              const tint = REGION_TEXT[section.id];
+              const zones = PATH_BY_ID[section.id]?.nodes.length ?? 0;
+              return (
+                <article
+                  key={section.id}
+                  className="plate-card"
+                  style={{ borderTopColor: region.color, borderTopWidth: 3 }}
+                >
+                  <Art
+                    name={`region-${section.id}` as const}
+                    className="plate-card-art"
+                    sizes="(max-width: 640px) 80vw, 330px"
+                  />
+                  <div className="plate-card-veil" />
+                  <div className="relative flex h-full min-h-[300px] flex-col p-6">
+                    <h3 className="heading text-[18px]" style={{ color: tint }}>
+                      {region.title}
+                    </h3>
+                    <p className="label-sm mt-1">{section.name}</p>
+                    <p className="mt-3 flex-1 font-read text-[14.5px] leading-relaxed text-parchment-dim">
+                      {section.blurb}
+                    </p>
+                    <p className="mt-4 border-t border-leather-700/60 pt-3 font-read text-[13px] text-ink-faint">
+                      <b className="num text-[14px]" style={{ color: tint }}>
+                        {section.questionCount}
+                      </b>{' '}
+                      questions ·{' '}
+                      <b className="num text-[14px]" style={{ color: tint }}>
+                        {section.minutes}
+                      </b>{' '}
+                      min ·{' '}
+                      <b className="num text-[14px]" style={{ color: tint }}>
+                        {zones}
+                      </b>{' '}
+                      landmarks
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+          {/* The scrollbar the band hides, restated. Driven by the band's own
+              scroll position through a named scroll timeline — see the gate in
+              `index.css`; where that is unsupported it is a static gilt stub,
+              which still reads as "there is more to the right". */}
+          <div className="band-rule" aria-hidden="true" />
         </div>
       </section>
 
@@ -565,7 +709,7 @@ export function Landing() {
             }
           />
 
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="act-stagger grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f) => (
               <div key={f.id} className="veil veil-lift flex gap-4 p-6">
                 <span
@@ -604,7 +748,7 @@ export function Landing() {
           }
         />
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="act-stagger grid gap-4 md:grid-cols-3">
           {STEPS.map((step) => (
             <div key={step.n} className="veil veil-lift p-7 text-center">
               <div
@@ -622,9 +766,15 @@ export function Landing() {
         </div>
       </section>
 
-      {/* ------------------------------------------------------------- cta */}
+      {/* ----------------------------------------------------- act V — the ask
+
+          Quiet on purpose. Deep leather, one gilt CTA, and the trademark line
+          set as a line of the page rather than as six-point small print under
+          the footer nav — it is the single most important thing a stranger can
+          be told about who made this, and burying it was the wrong instinct
+          even though nothing required it to be anywhere else. */}
       <section className="shell pb-24 text-center">
-        <div className="veil mx-auto max-w-2xl px-8 py-14">
+        <div className="act-ask act-rise mx-auto max-w-2xl px-8 py-14">
           <h2 className="heading text-[clamp(1.5rem,3.2vw,2rem)] text-parchment-light">
             Ready to <span className="text-gold-bright">set out?</span>
           </h2>
@@ -648,7 +798,15 @@ export function Landing() {
             </a>
             .
           </p>
-          <Button variant="primary" size="lg" trailing className="mt-8" onClick={begin}>
+          <Button
+            variant="primary"
+            size="lg"
+            trailing
+            className="mt-8"
+            onClick={begin}
+            onPointerEnter={warm}
+            onFocus={warm}
+          >
             Begin your quest
           </Button>
           <p className="mt-5 font-read text-[14px] text-ink-faint">
@@ -661,6 +819,11 @@ export function Landing() {
               create an account
             </a>{' '}
             to carry your progress between devices.
+          </p>
+
+          <p className="mx-auto mt-10 max-w-md border-t border-leather-700/60 pt-6 font-read text-[13px] leading-relaxed text-parchment-dim">
+            Not affiliated with, endorsed by, or connected to ACT, Inc. “ACT” is their registered
+            trademark. <Hl tone="cream">Every question here was written for this app.</Hl>
           </p>
         </div>
       </section>
@@ -692,12 +855,13 @@ export function Landing() {
             Terms
           </a>
         </nav>
-        {/* Said plainly and in public, not buried in the terms. Using the name
-            to describe what the material covers is fine; letting anyone think
-            this is theirs is not. */}
+        {/* The disclaimer itself now closes act V, where it is legible and
+            load-bearing rather than set at twelve point under the nav. It is
+            repeated here because this is where a reader looks for it, and a
+            page can say true things about itself twice. */}
         <p className="mx-auto mt-4 max-w-md px-6 font-read text-[12.5px] leading-relaxed text-ink-faint">
-          Not affiliated with, endorsed by, or connected to ACT, Inc. "ACT" is their registered
-          trademark. Every question here was written for this app.
+          Not affiliated with, endorsed by, or connected to ACT, Inc. “ACT” is their registered
+          trademark.
         </p>
       </footer>
     </div>

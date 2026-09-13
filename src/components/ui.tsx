@@ -256,19 +256,29 @@ export function Chip({
  *  exposed beside it, so a screen reader is never handed a number mid-count. */
 export function Tally({
   value,
+  from,
   className,
   format = (n: number) => n.toLocaleString(),
 }: {
   value: number;
+  /** Where the digits start on mount. Omitted — the default everywhere in the
+   *  app — they start at `value`, so a tally that mounts showing a number and
+   *  never changes never animates; it is a readout, not a performance.
+   *
+   *  The landing page is the exception the option exists for. There the number
+   *  *is* the claim, nothing precedes it, and counting up to it from zero is
+   *  the whole point of putting it on the page. */
+  from?: number;
   className?: string;
   format?: (n: number) => string;
 }) {
   const reduced = useReducedMotion();
-  const [shown, setShown] = useState(value);
+  const start = from ?? value;
+  const [shown, setShown] = useState(start);
   /* The displayed value as a ref as well as state: a second change arriving
      mid-count has to ease from where the digits actually are, not from where
      the last run started. */
-  const shownRef = useRef(value);
+  const shownRef = useRef(start);
 
   useEffect(() => {
     if (reduced || shownRef.current === value) {
@@ -276,12 +286,12 @@ export function Tally({
       setShown(value);
       return;
     }
-    const from = shownRef.current;
-    const start = performance.now();
+    const at = shownRef.current;
+    const began = performance.now();
     let raf = requestAnimationFrame(function tick(now) {
-      const p = Math.min(1, (now - start) / 620); // DUR.cinematic
+      const p = Math.min(1, (now - began) / 620); // DUR.cinematic
       const eased = 1 - (1 - p) ** 3; // EASE.out, near enough in one line
-      const next = Math.round(from + (value - from) * eased);
+      const next = Math.round(at + (value - at) * eased);
       shownRef.current = next;
       setShown(next);
       if (p < 1) raf = requestAnimationFrame(tick);

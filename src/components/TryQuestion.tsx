@@ -80,7 +80,7 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
   };
 
   return (
-    <div className="veil mx-auto max-w-2xl p-6 sm:p-8">
+    <div className="proof-sheet mx-auto max-w-3xl p-6 sm:p-9">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
         <span className="font-script text-[11px] uppercase tracking-[0.16em] text-gold">
           {section?.name ?? 'Sample'}
