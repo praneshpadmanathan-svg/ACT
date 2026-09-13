@@ -90,6 +90,9 @@ export const STORAGE_KEYS = {
   guest: 'act-command:guest',
   muted: 'act-command:muted',
   seenIntro: 'act-command:seen-intro',
+  /** Prefix. The account id is appended — see entitlements.ts, which will not
+   *  read a cache written under a different sign-in. */
+  entitlement: 'act-command:entitlement:v1',
   /** Progress written by the previous single-file build, migrated on boot. */
   legacyProgress: 'act-command:v1',
   legacyJourney: 'arcade:journey',

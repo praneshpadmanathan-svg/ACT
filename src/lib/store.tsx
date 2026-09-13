@@ -36,6 +36,14 @@ import {
 import { readRaw, removeRaw, STORAGE_KEYS, writeRaw } from './storage';
 import { reportWarn } from './report';
 import { progressKeyFor, retireDeviceAccounts, type Identity } from './identity';
+import {
+  cacheEntitlement,
+  cachedEntitlement,
+  clearCachedEntitlement,
+  fetchEntitlement,
+  proUnlocked,
+  type Entitlement,
+} from './entitlements';
 import { sfx } from './sfx';
 import {
   cloudEnabled,
@@ -95,6 +103,17 @@ interface StoreValue {
   hasStarted: boolean;
   syncing: boolean;
   lastSyncError: string | null;
+
+  /** The server's answer about what this account has paid for, or null for a
+   *  guest, a signed-out visitor, or an account whose row has not arrived. */
+  entitlement: Entitlement | null;
+  /** The only thing screens should ask. Already accounts for the trial, the
+   *  paid-through window, and the unconfigured-build case where there is no
+   *  account system to bill against — see entitlements.ts. */
+  isPro: boolean;
+  /** Re-read the entitlement now: after redeeming a code, or returning from
+   *  checkout. */
+  refreshEntitlement: () => Promise<void>;
   /** Why we are back from an email link, for the screen that has to react. */
   authRedirect: AuthRedirect | null;
   clearAuthRedirect: () => void;
@@ -175,6 +194,14 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const [lastSyncError, setLastSyncError] = useState<string | null>(null);
   const [authRedirect, setAuthRedirect] = useState<AuthRedirect | null>(null);
   const [hasStarted, setHasStarted] = useState(() => readRaw(STORAGE_KEYS.guest) === '1');
+  const [entitlement, setEntitlement] = useState<Entitlement | null>(null);
+  /* Derived rather than computed at read time, because it changes on a clock
+     nothing else in the app is watching: a trial ends at an instant, not on a
+     navigation. The effect below re-derives it exactly once, when that instant
+     arrives. Seeded from `proUnlocked(null)` so an unconfigured build — no
+     Supabase env vars, therefore no accounts and nobody to bill — starts open
+     rather than flashing a paywall at `npm run dev`. */
+  const [isPro, setIsPro] = useState(() => proUnlocked(null));
 
   const isGuest = identity.kind === 'guest';
 
@@ -222,7 +249,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     pushToast({
       title: 'Welcome back',
       detail: `Accounts moved to the cloud — ${retired.migratedName}'s progress is here.`,
-      color: '#ffd23e',
+      color: 'oklch(var(--c-gold))',
       icon: 'star',
     });
   }, [pushToast]);
@@ -258,7 +285,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         pushToast({
           title: n === 1 ? 'Streak freeze used' : `${n} streak freezes used`,
           detail: `${n === 1 ? 'A missed day' : `${n} missed days`} covered — your ${result.progress.dayStreak}-day streak is intact.`,
-          color: '#3ad6f0',
+          color: 'oklch(var(--c-cliffs-text))',
           icon: 'shield',
         });
       }
@@ -266,7 +293,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       unlocked.forEach((a, i) => {
         window.setTimeout(
           () => {
-            pushToast({ title: a.name, detail: a.detail, color: '#ffd23e', icon: a.icon });
+            pushToast({ title: a.name, detail: a.detail, color: 'oklch(var(--c-gold))', icon: a.icon });
             sfx.achieve();
           },
           result.rankedUp ? 1400 + i * 400 : i * 400,
@@ -293,7 +320,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       pushToast({
         title: 'Page complete',
         detail: `+${XP.notePage} XP`,
-        color: '#3ad6f0',
+        color: 'oklch(var(--c-cliffs-text))',
         icon: 'book',
       });
     },
@@ -335,7 +362,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     pushToast({
       title: 'Daily challenge done',
       detail: `+${XP.dailyChallenge} XP — back tomorrow`,
-      color: '#ffd23e',
+      color: 'oklch(var(--c-gold))',
       icon: 'flame',
     });
   }, [applyResult, pushToast]);
@@ -584,6 +611,57 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     return () => data.subscription.unsubscribe();
   }, [refreshAuth]);
 
+  /* ---------------------------------------------------------- entitlement */
+
+  const refreshEntitlement = useCallback(async () => {
+    if (!userId || !cloudEnabled) {
+      setEntitlement(null);
+      return;
+    }
+    const res = await fetchEntitlement();
+    if (res.status === 'ok') {
+      setEntitlement(res.entitlement);
+      cacheEntitlement(userId, res.entitlement);
+      return;
+    }
+    if (res.status === 'none') {
+      setEntitlement(null);
+      clearCachedEntitlement(userId);
+      return;
+    }
+    /* An error is silence, and silence must not downgrade a subscriber: a
+       flaky train tunnel is not evidence that someone stopped paying. Keep
+       whatever the cache last knew and let its own expiry decide — the window
+       is bounded in entitlements.ts. */
+  }, [userId]);
+
+  useEffect(() => {
+    if (!userId || !cloudEnabled) {
+      setEntitlement(null);
+      return;
+    }
+    /* Paint the cached answer first. Without this a paying subscriber opens
+       the app to a free-tier flash while the round trip completes, which reads
+       as having lost what they bought. */
+    setEntitlement(cachedEntitlement(userId));
+    void refreshEntitlement();
+  }, [userId, refreshEntitlement]);
+
+  useEffect(() => {
+    const apply = () => setIsPro(proUnlocked(entitlement));
+    apply();
+    if (!entitlement || entitlement.status !== 'trialing' || entitlement.trialEndsAt === null) {
+      return;
+    }
+    const ms = entitlement.trialEndsAt - Date.now();
+    if (ms <= 0) return;
+    /* One timer, at the boundary. `setTimeout` saturates past about 24.8 days
+       and fires immediately instead of never; a 7-day trial is nowhere near
+       that, but a bad row should not be able to turn this into a busy loop. */
+    const t = window.setTimeout(apply, Math.min(ms + 1000, 2_147_000_000));
+    return () => window.clearTimeout(t);
+  }, [entitlement]);
+
   /* Push on a debounce while signed in, so a session's work survives a
      closed tab without hammering the API on every answer. */
   const pushTimer = useRef<number | null>(null);
@@ -692,6 +770,9 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       hasStarted,
       syncing,
       lastSyncError,
+      entitlement,
+      isPro,
+      refreshEntitlement,
       authRedirect,
       clearAuthRedirect,
       toasts,
@@ -726,6 +807,9 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       hasStarted,
       syncing,
       lastSyncError,
+      entitlement,
+      isPro,
+      refreshEntitlement,
       authRedirect,
       clearAuthRedirect,
       toasts,

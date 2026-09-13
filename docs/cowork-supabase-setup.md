@@ -63,7 +63,7 @@ optional.
 ### 2. Run the migrations
 
 Paste each file in [`supabase/migrations/`](../supabase/migrations/) into the SQL
-editor and run them in filename order (`0001`, then `0002`).
+editor and run them in filename order, `0001` through `0004`.
 
 Then verify RLS is actually on, because a table with it off is readable in full
 by anyone who views source and copies the anon key:
@@ -133,6 +133,56 @@ account, so it fails closed rather than open.
 
 `SUPABASE_URL`, `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` are injected
 by the platform. Do not set them, and do not put the service role key in `.env`.
+
+### 6. Deploy the redeem-code function, and mint the master code
+
+`redeem-code` is what turns an unlock code into Pro on an account. It needs the
+same treatment as `delete-account` and for the same reason — it writes the one
+table row that decides what a person has paid for, so it runs with the
+`service_role` key server-side and never in the browser.
+
+```bash
+supabase functions deploy redeem-code
+```
+
+It reads the same `SITE_URL` allowlist you set above; there is nothing new to
+set if `delete-account` is already deployed.
+
+Then mint yourself a code. Run this **locally**, not in the dashboard:
+
+```bash
+node scripts/make-code.mjs --label master
+```
+
+It prints two things: the code itself, once, and a SQL `INSERT` containing only
+its hash. Put the code in your password manager before you close the terminal —
+nothing stores it and the script cannot print it again. Then paste the `INSERT`
+into the SQL editor.
+
+The split is the point. The Supabase SQL editor keeps a query history, so a
+plaintext code pasted there survives in the dashboard of anyone who can open the
+project. Hashing on your own machine means the plaintext exists only in your
+terminal and your password manager.
+
+Other shapes, if you want them later:
+
+```bash
+node scripts/make-code.mjs --label "launch promo" --max-uses 100 --expires 2026-12-31
+```
+
+To check it worked, sign in on the deployed site, open **Profile → Your plan →
+I have an unlock code**, and paste it. The panel should switch to Pro and stay
+that way after a reload — a redeemed code writes `current_period_end = null`,
+which is how "does not expire" is spelled.
+
+Two things that are meant to happen and are not bugs:
+
+- **Redeeming the same code again on another device succeeds.** It does not
+  consume a second use; the account already holds it.
+- **Every wrong code gives the same message**, whether it does not exist or is
+  used up. Telling someone their guess was a real-but-exhausted code confirms
+  the guess.
+
 
 ## Then prove it, on the deployed domain
 

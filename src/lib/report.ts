@@ -98,6 +98,30 @@ function forward(event: ReportEvent): void {
  * operator would want to know about. It still logs to the console, so local
  * debugging is unchanged.
  */
+/*
+ * Listeners hear about a report on a microtask, never synchronously.
+ *
+ * `report()` is callable from anywhere, and "anywhere" includes the render
+ * phase — a warning raised while a component renders, or the boundary
+ * reporting a crash it just caught. Notifying inline then calls `setState` on
+ * the diagnostics panel in the middle of another component's render, which
+ * React refuses with "Cannot update a component while rendering a different
+ * component". Deferring costs nothing here and also coalesces a burst of
+ * failures — a sync that fails on ten records — into one re-render.
+ *
+ * The ring is read at flush time rather than captured, so a listener always
+ * sees the newest state regardless of how many reports coalesced into it.
+ */
+let flushQueued = false;
+function notify(): void {
+  if (flushQueued) return;
+  flushQueued = true;
+  queueMicrotask(() => {
+    flushQueued = false;
+    for (const listener of listeners) listener(ring);
+  });
+}
+
 export function report(level: ReportLevel, scope: string, message: unknown): void {
   load();
 
@@ -130,7 +154,7 @@ export function report(level: ReportLevel, scope: string, message: unknown): voi
   if (level === 'error') console.error(line);
   else console.warn(line);
 
-  for (const listener of listeners) listener(ring);
+  notify();
 }
 
 export const reportWarn = (scope: string, message: unknown): void => report('warn', scope, message);
@@ -146,7 +170,7 @@ export function clearDiagnostics(): void {
   ring = [];
   loaded = true;
   writeJSON(STORE_KEY, ring);
-  for (const listener of listeners) listener(ring);
+  notify();
 }
 
 export function onDiagnostics(listener: Listener): () => void {

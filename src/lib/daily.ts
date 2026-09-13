@@ -28,7 +28,7 @@ import { ALL_QUESTIONS } from '@/content';
 import { DAILY_SIZE, dayKey, dueForReview, weakestTopics } from './progress';
 import { fromDrillQuestion, runnableById } from './normalize';
 import type { RunnableQuestion } from '@/components/QuestionRunner';
-import type { Progress } from '@/types';
+import type { Progress, SectionId } from '@/types';
 
 /** A small deterministic hash, so a day key becomes a shuffle seed. */
 function seedFrom(text: string): number {
@@ -64,14 +64,29 @@ function shuffleSeeded<T>(items: readonly T[], next: () => number): T[] {
  * The five questions for today. Deterministic for a given progress state and
  * calendar day, so a refresh mid-challenge does not hand out a new set.
  *
+ * `allowed` narrows the pool to a set of subjects. It exists because the
+ * daily is the one screen that reaches across every section at once, which
+ * made it a side door: on the free tier, step 3 would happily serve Math
+ * questions from a road the student cannot open. Passing the list in keeps
+ * this module free of any notion of entitlement — it is told which subjects
+ * count, not asked to work it out. Omit it and nothing is filtered, which is
+ * both the old behaviour and what a Pro student gets.
+ *
  * `day` is injectable for the tests; nothing in the app passes it.
  */
-export function pickDaily(p: Progress, day: string = dayKey()): RunnableQuestion[] {
+export function pickDaily(
+  p: Progress,
+  day: string = dayKey(),
+  allowed?: readonly SectionId[],
+): RunnableQuestion[] {
   const picked: RunnableQuestion[] = [];
   const seen = new Set<string>();
 
+  const permitted = (section: string) => !allowed || allowed.includes(section as SectionId);
+
   const take = (q: RunnableQuestion | undefined) => {
     if (!q || seen.has(q.id) || picked.length >= DAILY_SIZE) return;
+    if (!permitted(q.section)) return;
     seen.add(q.id);
     picked.push(q);
   };
@@ -92,7 +107,7 @@ export function pickDaily(p: Progress, day: string = dayKey()): RunnableQuestion
      moves a date the student cannot see — pulling a question forward out of
      its own schedule is the one way this feature could quietly make the app
      worse at its job. Due questions are exempt, obviously: step 1 wants them. */
-  const unscheduled = ALL_QUESTIONS.filter((q) => !(q.id in p.review));
+  const unscheduled = ALL_QUESTIONS.filter((q) => !(q.id in p.review) && permitted(q.section));
 
   // 2. Weakest topics.
   const weak = new Set(weakestTopics(p, 6).map((t) => t.topic));
@@ -109,7 +124,7 @@ export function pickDaily(p: Progress, day: string = dayKey()): RunnableQuestion
 
      Steps 2 and 3 stay on the drill bank. A landmark question belongs to a
      landmark you walk to, and handing one out here would let a student answer
-     it away from the map without the zone ever registering it. */
+     it away from the Study tab without the zone ever registering it. */
   for (const q of shuffleSeeded(unscheduled, next)) take(fromDrillQuestion(q));
   if (picked.length >= DAILY_SIZE) return picked;
 
@@ -121,8 +136,12 @@ export function pickDaily(p: Progress, day: string = dayKey()): RunnableQuestion
 }
 
 /** Why today's five look the way they do — one line, shown above the set. */
-export function dailyBlurb(p: Progress): string {
-  const due = dueForReview(p).length;
+export function dailyBlurb(p: Progress, allowed?: readonly SectionId[]): string {
+  /* Counted the same way `pickDaily` picks, or the line above the set
+     describes a different five questions than the ones below it. */
+  const due = dueForReview(p)
+    .map(runnableById)
+    .filter((q) => q && (!allowed || allowed.includes(q.section as SectionId))).length;
   if (due >= DAILY_SIZE) return 'Five questions you have missed before.';
   if (due > 0) return `${due} you have missed before, plus a few from your weak spots.`;
   if (weakestTopics(p, 6).length > 0) return 'Five from the topics costing you the most.';
