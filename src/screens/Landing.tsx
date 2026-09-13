@@ -25,9 +25,10 @@ import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
-import { Button } from '@/components/ui';
+import { Button, Eyebrow } from '@/components/ui';
+import { Glyph } from '@/components/Icon';
 import { NavGlyph, type GlyphName } from '@/components/NavGlyph';
-import { REGIONS, REGION_ORDER } from '@/game/mapData';
+import { REGIONS, REGION_ORDER } from '@/content/regionFlavor';
 import type { SectionId } from '@/types';
 import { Art } from '@/components/Art';
 import { NearViewport } from '@/components/NearViewport';
@@ -64,19 +65,25 @@ function Hl({ tone = 'gold', children }: { tone?: Tone; children: ReactNode }) {
 
 /* Region hues, lifted for type. The raw map colours are used for each card's
    top edge — as *text* the canyon rust measured 4.60:1, which passes but is the
-   tightest thing on the page. These are the same hues one step brighter. */
+   tightest thing on the page. These are the same hues one step brighter.
+
+   They used to be written out as hex here, which meant they stayed at their
+   dark-theme values on the light theme and bottomed out at 1.37:1. Three of
+   the four were byte-identical to `--c-*-text` tokens that already invert;
+   the fourth had no token, which is presumably why the set was hand-written
+   in the first place. `--c-village-text` now exists for it. */
 const REGION_TEXT: Record<SectionId, string> = {
-  english: '#e9bd63',
-  reading: '#7cc98a',
-  math: '#e89463',
-  science: '#79c0ea',
+  english: 'oklch(var(--c-village-text))',
+  reading: 'oklch(var(--c-woods-text))',
+  math: 'oklch(var(--c-desert-text))',
+  science: 'oklch(var(--c-cliffs-text))',
 };
 
 /* A rule broken by a diamond, under every section heading. */
 function Ornament() {
   return (
     <div className="orn my-6" aria-hidden="true">
-      <span className="text-[10px] leading-none text-gold">✦</span>
+      <Glyph name="spark" size={11} className="text-gold" />
     </div>
   );
 }
@@ -245,9 +252,7 @@ export function Landing() {
       <header className="absolute inset-x-0 top-0 z-30">
         <div className="shell flex h-16 items-center">
           <span className="flex items-center gap-2 font-display text-[16px] font-semibold tracking-wide text-parchment">
-            <span className="text-gold" aria-hidden="true">
-              ✦
-            </span>{' '}
+            <Glyph name="spark" size={15} className="text-gold" />
             ACT Command
           </span>
           <div className="ml-auto flex items-center gap-2">
@@ -292,9 +297,9 @@ export function Landing() {
               an advert for a thing they already own, every single visit. The
               artwork, the layout and everything below the fold are shared;
               only the three lines that speak to you directly change. */}
-          <div className="eyebrow mb-5">
-            {returning ? '✦ The road is where you left it' : '✦ The 2025+ Enhanced ACT'}
-          </div>
+          <Eyebrow className="mb-5">
+            {returning ? 'The road is where you left it' : 'The 2025+ Enhanced ACT'}
+          </Eyebrow>
 
           <h1 className="heading text-[clamp(2.4rem,7vw,4.4rem)] leading-[1.1] text-parchment-light">
             {returning ? (
@@ -331,17 +336,22 @@ export function Landing() {
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
             {returning ? (
               <>
-                <Button variant="primary" size="lg" onClick={() => navigate({ name: 'home' })}>
-                  Continue your quest ▸
+                <Button
+                  variant="primary"
+                  size="lg"
+                  trailing
+                  onClick={() => navigate({ name: 'home' })}
+                >
+                  Continue your quest
                 </Button>
-                <a href={hrefFor({ name: 'map' })} onClick={() => sfx.select()}>
-                  <Button size="lg">Open the map</Button>
+                <a href={hrefFor({ name: 'path' })} onClick={() => sfx.select()}>
+                  <Button size="lg">Back to the road</Button>
                 </a>
               </>
             ) : (
               <>
-                <Button variant="primary" size="lg" onClick={begin}>
-                  Enter the realm ▸
+                <Button variant="primary" size="lg" trailing onClick={begin}>
+                  Enter the realm
                 </Button>
                 <a href={hrefFor({ name: 'auth', mode: 'signin' })} onClick={() => sfx.select()}>
                   <Button size="lg">I have an account</Button>
@@ -350,17 +360,50 @@ export function Landing() {
             )}
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-2.5">
-            {[
-              [LIBRARY_STATS.totalQuestions.toLocaleString(), 'questions'],
-              ['4', 'regions'],
-              [String(LIBRARY_STATS.zones), 'skill zones'],
-              ['100%', 'free'],
-            ].map(([value, label]) => (
-              <span key={label} className="chip bg-leather-900/70 backdrop-blur">
-                <b className="num text-[15px] text-gold">{value}</b> {label}
-              </span>
-            ))}
+          {/* The bank is the reason to use this, so it is sized like it.
+              A row of four identical chips gave "1,248 questions" exactly the
+              same weight as "100% free" — the headline number read as one
+              badge among badges. It now leads at display size with the
+              supporting numbers set small and quiet beside it, so the
+              hierarchy on the page matches the hierarchy of the claim. */}
+          <div className="mt-11">
+            <div
+              className="mx-auto flex max-w-2xl flex-wrap items-center justify-center gap-x-7
+                         gap-y-5 rounded-xl border border-gold-deep/45 bg-leather-950/72 px-6
+                         py-5 backdrop-blur"
+            >
+              <div className="text-center">
+                <div
+                  className="num text-[clamp(2.5rem,7.5vw,3.75rem)] font-bold leading-[0.95]
+                             text-gold-bright"
+                  style={{ textShadow: '0 0 28px rgba(242, 207, 91, 0.26)' }}
+                >
+                  {LIBRARY_STATS.totalQuestions.toLocaleString()}
+                </div>
+                <div className="label-sm mt-2 text-gold">questions written</div>
+              </div>
+
+              <span className="hidden h-12 w-px bg-gold-deep/35 sm:block" aria-hidden="true" />
+
+              <dl className="grid grid-cols-3 gap-x-6 gap-y-2 text-center">
+                {[
+                  [LIBRARY_STATS.notePages.toLocaleString(), 'lessons'],
+                  [LIBRARY_STATS.passages.toLocaleString(), 'passages'],
+                  ['4', 'regions'],
+                ].map(([value, label]) => (
+                  <div key={label}>
+                    <dt className="num text-[19px] font-semibold leading-none text-parchment-light">
+                      {value}
+                    </dt>
+                    <dd className="label-sm mt-1.5">{label}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <p className="mt-3.5 font-script text-[12px] uppercase tracking-[0.2em] text-ink-faint">
+              Every answer explained · Free · No account needed
+            </p>
           </div>
         </div>
       </section>
@@ -398,8 +441,8 @@ export function Landing() {
               d: (
                 <>
                   <Hl tone="cream">Fifteen to twenty minutes a day.</Hl> No money, no account
-                  needed, no app to install. Two to three months at a steady pace covers the whole
-                  map.
+                  needed, no app to install. Two to three months at a steady pace covers all four
+                  roads.
                 </>
               ),
             },
@@ -433,9 +476,9 @@ export function Landing() {
           }
           lead={
             <>
-              This is the actual product — a real question from the library, and the reason{' '}
-              <Hl tone="cream">every</Hl> wrong answer is wrong. Nothing is saved and nothing is
-              asked of you.
+              One of <Hl>{LIBRARY_STATS.totalQuestions.toLocaleString()}</Hl>, drawn at random — and
+              the reason <Hl tone="cream">every</Hl> wrong answer is wrong. Nothing is saved and
+              nothing is asked of you.
             </>
           }
         />
@@ -461,7 +504,7 @@ export function Landing() {
           }
           lead={
             <>
-              Every landmark on the map is <Hl tone="cream">one ACT skill</Hl>. Clear it to open the
+              Every landmark on a road is <Hl tone="cream">one ACT skill</Hl>. Clear it to open the
               next.
             </>
           }
@@ -555,8 +598,8 @@ export function Landing() {
           }
           lead={
             <>
-              Three moves, repeated <Hl tone="cream">{LIBRARY_STATS.zones} times</Hl>, all the way
-              to the Summit.
+              Three moves, repeated at <Hl tone="cream">every landmark</Hl>, all the way to the
+              Summit.
             </>
           }
         />
@@ -605,8 +648,8 @@ export function Landing() {
             </a>
             .
           </p>
-          <Button variant="primary" size="lg" className="mt-8" onClick={begin}>
-            Begin your quest ▸
+          <Button variant="primary" size="lg" trailing className="mt-8" onClick={begin}>
+            Begin your quest
           </Button>
           <p className="mt-5 font-read text-[14px] text-ink-faint">
             Or{' '}

@@ -12,7 +12,37 @@
    "chrome surface", `parchment` is "text on chrome", `ink` is "text on a
    reading sheet". In light mode leather is pale and parchment is dark, and
    every component follows without touching a single class. */
-const tone = (name) => `rgb(var(--c-${name}) / <alpha-value>)`;
+const tone = (name) => `oklch(var(--c-${name}) / <alpha-value>)`;
+
+/* ---------------------------------------------------------------- motion
+
+   Five durations and four curves, shared between the `duration-*`/`ease-*`
+   utilities and the keyframe animations below — the four bezier strings were
+   being retyped at a dozen call sites, so the house curve could not be
+   adjusted in one place.
+
+   The ladder covers *interface* motion: a menu opening, a page arriving, a
+   panel lifting. The combat and character animations further down keep their
+   hand-tuned durations, because those are timed against sprite work and sound
+   cues rather than against each other — a boss lunge is 600ms because that is
+   when the hit lands, not because 600ms is a step on a scale. */
+const DUR = {
+  instant: '90ms',
+  quick: '160ms',
+  base: '240ms',
+  screen: '320ms',
+  cinematic: '620ms',
+};
+
+const EASE = {
+  /* Decelerating: things arriving. The overwhelming default. */
+  out: 'cubic-bezier(0.22, 1, 0.36, 1)',
+  /* Accelerating: things leaving, which should get out of the way quickly. */
+  in: 'cubic-bezier(0.4, 0, 0.7, 0.2)',
+  inout: 'cubic-bezier(0.65, 0, 0.35, 1)',
+  /* Past the target and back. Only for things that should feel sprung. */
+  overshoot: 'cubic-bezier(0.22, 1.4, 0.36, 1)',
+};
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -32,14 +62,30 @@ export default {
           700: tone('leather-700'),
           600: tone('leather-600'),
         },
-        /* Parchment — every reading surface. Matches the sheet the character
-           illustrations were drawn on, so cutouts sit on it seamlessly. */
+        /* Parchment — *text on the chrome*, not a surface. Cream on dark
+           leather; inverts to dark on pale leather in light mode. Only ever
+           correct as `text-parchment*`; for a background or a border on a
+           reading sheet reach for `paper` below.
+
+           (This block used to be commented "every reading surface", which is
+           what `paper` is. Both roles shared these tokens, and the light
+           theme could only satisfy one of them at a time.) */
         parchment: {
           DEFAULT: tone('parchment'),
           light: tone('parchment-light'),
           dim: tone('parchment-dim'),
           edge: tone('parchment-edge'),
           deep: tone('parchment-deep'),
+        },
+        /* Paper — every reading surface. Matches the sheet the character
+           illustrations were drawn on, so cutouts sit on it seamlessly.
+           Identical in both themes; see the note in index.css. */
+        paper: {
+          DEFAULT: tone('paper'),
+          light: tone('paper-light'),
+          dim: tone('paper-dim'),
+          edge: tone('paper-edge'),
+          deep: tone('paper-deep'),
         },
         ink: {
           DEFAULT: tone('ink'),
@@ -54,6 +100,13 @@ export default {
           light: tone('gold-light'),
           bright: tone('gold-bright'),
           deep: tone('gold-deep'),
+        },
+        /* Gold as a background, fixed in both themes. Use it wherever the
+           lettering on top is a fixed dark literal; `gold` is the text role
+           and darkens in light mode. See index.css. */
+        gilt: {
+          DEFAULT: tone('gilt'),
+          bright: tone('gilt-bright'),
         },
         /* Region accents, keyed to the painted map. Identical in both themes —
            they are mid-tones lifted off the artwork and read on either. */
@@ -72,6 +125,7 @@ export default {
         'woods-text': tone('woods-text'),
         'cliffs-text': tone('cliffs-text'),
         'desert-text': tone('desert-text'),
+        'village-text': tone('village-text'),
       },
       fontFamily: {
         /* Three families, not four.
@@ -92,11 +146,70 @@ export default {
         read: ['var(--font-read)', 'Newsreader', 'Georgia', 'serif'],
         sans: ['var(--font-sans)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
+      /* The elevation ladder. The values live in index.css because they have
+         to change between themes — a shadow tuned for near-black leather
+         reads as a smudge on cream paper — and only the *names* belong here.
+
+         Named for the job, not the number, so `shadow-lifted` means the same
+         rank in both themes and a component never has to know which theme it
+         is in. See the long note on the ladder in index.css for the rules. */
       boxShadow: {
-        card: '0 2px 0 rgba(0,0,0,.35), 0 10px 26px rgba(0,0,0,.35)',
-        sheet: '0 1px 0 rgba(255,255,255,.5) inset, 0 12px 30px rgba(0,0,0,.35)',
-        pin: '0 3px 8px rgba(0,0,0,.5)',
+        flush: 'var(--e-flush)',
+        resting: 'var(--e-resting)',
+        raised: 'var(--e-raised)',
+        lifted: 'var(--e-lifted)',
+        floating: 'var(--e-floating)',
+        overlay: 'var(--e-overlay)',
+
+        /* The old three. `card` and `sheet` are aliases onto the ladder rather
+           than their old literals, so the ~22 call sites still carrying them
+           picked up the theme-aware shadows without being touched. `pin` is
+           gone outright: grep found zero uses. */
+        card: 'var(--e-raised)',
+        sheet: 'var(--lamp-edge-paper), var(--e-raised)',
       },
+
+      /* ---------------------------------------------------------- type scale
+
+         One fluid ratio, so the app stops picking a pixel size per component.
+         Body sizes step by a minor third; display sizes open to a fourth, so
+         a headline can get dramatic on a wide screen without dragging the
+         reading sizes up with it.
+
+         These are `clamp()` rather than breakpoint jumps because the reading
+         column is already fluid, and text that resizes in steps against a
+         container that resizes continuously is what produces the odd short
+         line at 900px that nobody can ever reproduce.
+
+         `--text-scale` is *not* applied here; the postcss-text-scale plugin
+         wraps every emitted font-size, including these, so the accessibility
+         setting still multiplies the whole scale. */
+      fontSize: {
+        'display-xl': ['clamp(2.75rem, 1.6rem + 5.2vw, 6rem)', { lineHeight: '1.02', letterSpacing: '-0.015em' }],
+        'display-l': ['clamp(2rem, 1.4rem + 2.6vw, 3.25rem)', { lineHeight: '1.08', letterSpacing: '-0.01em' }],
+        'display-m': ['clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem)', { lineHeight: '1.15' }],
+        title: ['clamp(1.15rem, 1.05rem + 0.5vw, 1.5rem)', { lineHeight: '1.25' }],
+        'body-read': ['clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem)', { lineHeight: '1.65' }],
+        'body-ui': ['0.9375rem', { lineHeight: '1.5' }],
+        label: ['0.6875rem', { lineHeight: '1.3', letterSpacing: '0.18em' }],
+      },
+
+      /* ------------------------------------------------------- motion tokens
+
+         Thirty-odd hand-picked cubic-béziers used to live in the animation map
+         below, one per effect, which meant no two things in the app moved
+         alike and movement carried no meaning at all.
+
+         Durations: under 100ms reads as instant, 100-300ms is the transition
+         band, over 500ms reads as slow. `base` at 240ms is the default for
+         anything entering or leaving; `screen` at 320ms for a whole view.
+
+         Easings: out for entering, in for leaving, in-out for an element
+         changing state in place. Springs are not here — they come from
+         `motion` at the call site, because a spring responds to the velocity
+         of the gesture that caused it and a CSS curve cannot. */
+      transitionDuration: DUR,
+      transitionTimingFunction: EASE,
       keyframes: {
         storyTitleOut: {
           '0%': { opacity: '1', transform: 'translateY(0) scale(1)', filter: 'blur(0px)' },
@@ -180,7 +293,16 @@ export default {
           from: { transform: 'translateX(110%)', opacity: '0' },
           to: { transform: 'translateX(0)', opacity: '1' },
         },
-        shimmer: { '0%,100%': { opacity: '.55' }, '50%': { opacity: '1' } },
+        /* The floor is a contrast limit, not a taste call. `animate-shimmer`
+           is only ever used on small gold text — the story overlay's "Tap to
+           continue", the Codex hint, the Tests hint — and gold on the dark
+           panel is 7:1 at full strength but only 3.07:1 at .55, so the text
+           spent half of every cycle below the 4.5:1 needed at that size.
+           The light theme's panel is a touch lighter (44,37,28 against the
+           dark theme's 36,29,21), so it is the binding case: .78 clears dark
+           at 4.8:1 but leaves light at 4.46:1. .82 clears both — 5.16:1 dark,
+           4.77:1 light — and the pulse still reads. */
+        shimmer: { '0%,100%': { opacity: '.82' }, '50%': { opacity: '1' } },
 
         /* page + list entrances — small, fast, never in the way */
         pageIn: {
@@ -288,7 +410,7 @@ export default {
            number lives in `AdventureMap` as `STEP_MS`. */
         walkHero: 'walkHero .62s ease-in-out infinite',
         pulseRing: 'pulseRing 2.4s ease-out infinite',
-        popIn: 'popIn .42s cubic-bezier(.22,1.4,.36,1) backwards',
+        popIn: `popIn .42s ${EASE.overshoot} backwards`,
         stamp: 'stamp .72s cubic-bezier(.2,.9,.25,1) backwards',
         flashOut: 'flashOut .5s ease-out forwards',
         drift: 'drift 90s linear infinite',
@@ -297,22 +419,23 @@ export default {
         fadein: 'fadein .4s ease-out',
         slidein: 'slidein .3s ease-out',
         shimmer: 'shimmer 2.6s ease-in-out infinite',
-        pageIn: 'pageIn .34s cubic-bezier(.22,1,.36,1)',
-        riseIn: 'riseIn .3s cubic-bezier(.22,1,.36,1) backwards',
-        slideDown: 'slideDown .22s cubic-bezier(.22,1,.36,1)',
-        storyIn: 'storyIn .34s ease-out',
-        storyOut: 'storyOut .34s ease-in forwards',
-        storyTitle: 'storyTitle .6s cubic-bezier(.22,1,.36,1) backwards',
+        /* Interface motion, on the ladder. */
+        pageIn: `pageIn ${DUR.screen} ${EASE.out}`,
+        riseIn: `riseIn ${DUR.screen} ${EASE.out} backwards`,
+        slideDown: `slideDown ${DUR.base} ${EASE.out}`,
+        storyIn: `storyIn ${DUR.screen} ${EASE.out}`,
+        storyOut: `storyOut ${DUR.screen} ${EASE.in} forwards`,
+        storyTitle: `storyTitle ${DUR.cinematic} ${EASE.out} backwards`,
         /* The title does not vanish so the scene can start; it lifts away
            while the scene is already rising. Both are on screen for about
            400ms, which is what turns two animations into one movement. */
-        storyTitleOut: 'storyTitleOut .42s cubic-bezier(.4,0,.7,.2) forwards',
+        storyTitleOut: `storyTitleOut .42s ${EASE.in} forwards`,
         storyWizzy: 'storyWizzy .5s cubic-bezier(.22,1.3,.36,1) .1s backwards',
-        storyChoice: 'storyChoice .3s cubic-bezier(.22,1,.36,1) backwards',
+        storyChoice: `storyChoice ${DUR.base} ${EASE.out} backwards`,
         bossIdle: 'bossIdle 3.4s ease-in-out infinite',
         bossHurt: 'bossHurt .6s cubic-bezier(.36,.07,.19,.97)',
         bossLunge: 'bossLunge .6s cubic-bezier(.36,.07,.19,.97)',
-        bossDown: 'bossDown .9s cubic-bezier(.22,1,.36,1) forwards',
+        bossDown: `bossDown .9s ${EASE.out} forwards`,
         bossEnter: 'bossEnter .7s cubic-bezier(.22,1.2,.36,1) backwards',
         heroHurt: 'heroHurt .5s cubic-bezier(.36,.07,.19,.97)',
         shakeSoft: 'shakeSoft .5s ease-out',

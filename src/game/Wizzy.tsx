@@ -8,15 +8,17 @@ import { useMemo, useState } from 'react';
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
 import { readRaw, writeRaw } from '@/lib/storage';
-import { useMapProgress } from './AdventureMap';
+import { useZoneProgress } from '@/lib/zoneProgress';
 import { activeQuest, OATH_ECHO } from './story';
 import { Art } from '@/components/Art';
+import { Glyph } from '@/components/Icon';
+import { Eyebrow } from '@/components/ui';
 
 const DISMISS_KEY = 'act-command:wizzy-hidden';
 
 export function Wizzy() {
   const { progress } = useStore();
-  const { current, cleared, total, allCleared } = useMapProgress();
+  const { current, cleared, total, allCleared } = useZoneProgress();
   const quest = useMemo(
     () => activeQuest(progress, { cleared, total }),
     [progress, cleared, total],
@@ -27,58 +29,56 @@ export function Wizzy() {
   const tips = useMemo(() => {
     const list: string[] = [];
 
-    /* The current objective leads, so Wizzy on the map is talking about the
-       story rather than reciting generic advice beside it. */
+    /* The current objective leads, so Wizzy is talking about the story
+       rather than reciting generic advice beside it. */
     if (quest) {
-      const left = Math.max(0, quest.need - quest.have);
       list.push(
-        `<b>${quest.quest.name}.</b> ${quest.quest.objective} — ${quest.have} of ${quest.need}, ` +
-          `${left === 1 ? 'one to go' : `${left} to go`}.`,
+        `<b>${quest.quest.name}.</b> ${quest.quest.objective} — ${quest.have} of ${quest.need}.`,
       );
       const seals = progress.achievements.filter((a) => a.startsWith('boss-')).length;
       if (seals > 0 && seals < 4) {
         list.push(
-          `<b>${seals} of the four Seals</b> is broken. The guardians still standing know it, and they will not be careless.`,
+          `<b>${seals} of the four Seals</b> broken. The rest know it.`,
         );
       }
     }
 
     if (allCleared) {
       list.push(
-        'Every landmark is lit, traveller. The Grey has nothing left to hold between here and the water — sail to the citadel and sit the trial.',
+        'Every landmark is lit. Sail to the citadel and sit the trial.',
       );
     } else if (cleared === 0) {
       list.push(
-        `Greetings! I am Wizzy. Your road begins at <b>${current?.zone.name ?? 'the first landmark'}</b> — tap the glowing pin where your traveller stands.`,
+        `I am Wizzy. Your road begins at <b>${current?.zone.name ?? 'the first landmark'}</b>, already open to you.`,
       );
     } else {
       list.push(
-        `Your next ground is <b>${current?.zone.name ?? 'the summit'}</b>. Tap the glowing pin and take it.`,
+        `Next: <b>${current?.zone.name ?? 'the summit'}</b>, the first landmark still unlit.`,
       );
     }
 
     list.push(
-      'Each pin is one skill. Read the short lesson, then clear the quiz at 70% or better to open the next pin along the road.',
+      'One landmark, one skill. Read the lesson, clear the quiz at 70%, and the next opens.',
     );
     list.push(
-      'Miss a question and it returns in <b>Review</b> — tomorrow, then in three days, then a week — until it truly sticks.',
+      'Miss a question and it returns in <b>Review</b> — tomorrow, then three days, then a week.',
     );
 
     // Call back to the prologue answer, so the guide remembers you.
     const echo = progress.oath ? OATH_ECHO[progress.oath] : null;
     if (echo && cleared > 0) {
       list.push(
-        `When the road drags — and it will — remember ${echo}. That is what the climbing is for.`,
+        `When the road drags, remember ${echo}.`,
       );
     }
 
     if (progress.dayStreak >= 2) {
       list.push(
-        `Your streak stands at <b>${progress.dayStreak} days</b>. Answer even one question today to keep it burning.`,
+        `<b>${progress.dayStreak}-day streak.</b> One question today keeps it burning.`,
       );
     }
     list.push(
-      'The citadel at the southern isle holds the timed trial and your predicted score. That is where the climb is measured.',
+      'The citadel holds the timed trial and your predicted score. That is where the climb is measured.',
     );
     return list;
   }, [
@@ -112,7 +112,8 @@ export function Wizzy() {
                    font-semibold text-gold shadow-card backdrop-blur transition-colors
                    hover:bg-leather-800"
       >
-        <span aria-hidden="true">✦</span> Ask Wizzy
+        <Glyph name="spark" size={13} />
+        Ask Wizzy
       </button>
     );
   }
@@ -137,10 +138,10 @@ export function Wizzy() {
                      text-ink-faint transition-colors hover:text-parchment"
           aria-label="Hide Wizzy"
         >
-          ✕
+          <Glyph name="cross" size={13} strokeWidth={2} />
         </button>
 
-        <div className="eyebrow mb-1.5">✦ Wizzy the Guide</div>
+        <Eyebrow className="mb-1.5">Wizzy the Guide</Eyebrow>
         <p
           className="font-read text-[14.5px] leading-relaxed text-parchment-dim"
           dangerouslySetInnerHTML={{ __html: tips[tipIndex % tips.length] ?? '' }}
@@ -153,10 +154,11 @@ export function Wizzy() {
               sfx.select();
               setTipIndex((i) => i + 1);
             }}
-            className="mt-2.5 font-script text-[12px] uppercase tracking-[0.16em] text-gold
-                       transition-colors hover:text-gold-bright"
+            className="mt-2.5 inline-flex items-center gap-1 font-script text-[12px] uppercase
+                       tracking-[0.16em] text-gold transition-colors hover:text-gold-bright"
           >
-            More counsel ▸
+            More counsel
+            <Glyph name="chevronRight" size={12} strokeWidth={2} />
           </button>
         )}
       </div>

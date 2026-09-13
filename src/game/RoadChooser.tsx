@@ -2,13 +2,12 @@
 
    Every region's first landmark has always been open — the unlock gate resets
    per region, so all four roads were walkable from the first minute. Nothing
-   said so. The map picked a starting region out of the onboarding answer and
+   said so. The app picked a starting region out of the onboarding answer and
    stood the traveller on it, which reads as being told where to go.
 
-   So this asks. It appears once, on the map, before anything is cleared, and
-   the answer only decides where the traveller stands and which road the map
-   opens on — the other three stay open, and you can walk any of them whenever
-   you like. */
+   So this asks. It appears once, on the Study tab, before anything is cleared,
+   and the answer only decides which road Study opens on — the other three stay
+   open, and you can walk any of them whenever you like. */
 
 import { useRef } from 'react';
 
@@ -18,13 +17,15 @@ import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import type { SectionId } from '@/types';
-import { REGIONS, REGION_ORDER } from './mapData';
+import { REGIONS, REGION_ORDER } from '@/content/regionFlavor';
 import { m, popItem, SPRING_SNAP } from '@/lib/motion';
+import { Glyph } from '@/components/Icon';
+import { Eyebrow, LEADING_ICON } from '@/components/ui';
 
-/* What each road actually asks of you, in the language of the map. */
+/* What each road actually asks of you, in the language of the realm. */
 const ROAD_NOTE: Record<SectionId, string> = {
   english:
-    'The rules are in plain sight here. Learn them once and the village becomes almost mechanical — the fastest ground to make on the whole map.',
+    'The rules are in plain sight here. Learn them once and the village becomes almost mechanical — the fastest ground to make on any of the four roads.',
   reading:
     'Every answer is already written in the text. The woods only ask you to find the line that proves it.',
   math: 'Long and dry, but every dune has a shortcut if you know where to step. The most ground to cover, and the most to gain.',
@@ -55,7 +56,7 @@ export function RoadChooser() {
 
       <div className="relative z-10 my-auto w-full max-w-4xl">
         <div className="text-center">
-          <div className="eyebrow animate-storyTitle">✦ Four roads, one Summit</div>
+          <Eyebrow className="animate-storyTitle">Four roads, one Summit</Eyebrow>
           <h2
             className="heading mt-2.5 animate-storyTitle text-[clamp(1.5rem,4vw,2.4rem)] text-gold-light"
             style={{ animationDelay: '90ms' }}
@@ -120,8 +121,9 @@ export function RoadChooser() {
                       {first?.name ?? meta.name}
                     </span>
                   </span>
-                  <span className="flex-none font-display text-[13px] font-semibold text-gold">
-                    Set out ▸
+                  <span className="flex flex-none items-center gap-1 font-display text-[13px] font-semibold text-gold">
+                    Set out
+                    <Glyph name="chevronRight" size={13} strokeWidth={2} />
                   </span>
                 </div>
 
@@ -129,7 +131,8 @@ export function RoadChooser() {
                     decision made on the player's behalf. */}
                 {feared && (
                   <p className="mt-2.5 font-script text-[11.5px] uppercase tracking-[0.14em] text-desert-text">
-                    ✦ The one you said worried you most
+                    <Glyph name="spark" size={11} className={LEADING_ICON} />
+                    The one you said worried you most
                   </p>
                 )}
               </m.button>

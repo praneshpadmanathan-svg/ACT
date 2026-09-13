@@ -103,13 +103,20 @@ const DIFFICULTY_LABEL: Record<Difficulty, string> = {
   medium: 'Medium',
   hard: 'Hard',
 };
-/* These sit on parchment, so they are inks rather than the bright accents
-   used on the dark chrome — the previous neon set measured about 1:1 against
-   a cream background. */
+/* These sit on paper, so they are inks rather than the bright accents used on
+   the dark chrome — the previous neon set measured about 1:1 against a cream
+   background.
+
+   Each is measured against the pill's *own* background, not against bare
+   paper: the pill tints itself with the same ink at `22` alpha, which lifts
+   the surface toward the text and costs roughly a third of a point. At the
+   earlier values easy read 4.40 and medium 4.10 against their own tint —
+   below AA while looking fine on paper alone. These clear 5.0 there and 6.0
+   on bare paper, so the tint can change without dropping under the line. */
 const DIFFICULTY_COLOR: Record<Difficulty, string> = {
-  easy: '#2f6b3a',
-  medium: '#8a5a12',
-  hard: '#9c3326',
+  easy: '#2a6034',
+  medium: '#774d0f',
+  hard: '#973125',
 };
 
 /** Strip markup and assemble the question as one spoken passage.
@@ -138,7 +145,7 @@ export function QuestionRunner({
   onQuit,
   title,
   subtitle,
-  accent = '#ffd23e',
+  accent = 'oklch(var(--c-gold))',
   deferFeedback = false,
 }: Props) {
   const [index, setIndex] = useState(0);
@@ -306,7 +313,7 @@ export function QuestionRunner({
               {streak >= 2 && (
                 <m.span
                   key="streak"
-                  className={cx('chip', tier === 3 ? 'chip-ablaze text-[#ffb066]' : 'text-desert')}
+                  className={cx('chip', tier === 3 ? 'chip-ablaze text-desert-text' : 'text-desert-text')}
                   style={{
                     borderColor: tier === 3 ? '#ff7a2e' : tier === 2 ? '#ffb066aa' : '#ff9d5c66',
                     transformOrigin: 'center',
@@ -522,11 +529,11 @@ export function QuestionRunner({
           {!revealed && (
             <p className="mt-5 text-[12px] text-ink-soft">
               Tip: press{' '}
-              <kbd className="rounded border border-parchment-edge bg-[#ece7db] px-1.5 py-0.5 font-mono text-[11px]">
+              <kbd className="rounded border border-paper-edge bg-[#ece7db] px-1.5 py-0.5 font-mono text-[11px]">
                 A
               </kbd>
               –
-              <kbd className="rounded border border-parchment-edge bg-[#ece7db] px-1.5 py-0.5 font-mono text-[11px]">
+              <kbd className="rounded border border-paper-edge bg-[#ece7db] px-1.5 py-0.5 font-mono text-[11px]">
                 D
               </kbd>{' '}
               to answer.
@@ -540,7 +547,7 @@ export function QuestionRunner({
               "Not quite" before the shake has finished spoils its own reveal. */}
           {revealed && litCorrect && !deferFeedback && (
             <m.div
-              className="mt-7 border-t-2 border-parchment-edge pt-6"
+              className="mt-7 border-t-2 border-paper-edge pt-6"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
@@ -645,11 +652,12 @@ export function QuestionRunner({
                 <Button
                   variant="primary"
                   size="lg"
+                  trailing
                   className="mt-6 w-full"
                   onClick={() => advance(records)}
                   autoFocus
                 >
-                  {isLast ? 'See results' : 'Next question'} ▶
+                  {isLast ? 'See results' : 'Next question'}
                 </Button>
               </m.div>
             </m.div>

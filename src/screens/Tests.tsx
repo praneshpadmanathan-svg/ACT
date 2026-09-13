@@ -29,6 +29,7 @@ import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
 import { burstConfetti } from '@/components/Feedback';
 import { ScoreCaveat } from '@/components/ScoreCaveat';
 import { DrillSummary } from './Drills';
+import { ProGate } from '@/components/ProGate';
 
 /* Section lengths, scaled to what the bank can actually supply. The real ACT
    is longer; these keep the pacing pressure honest without inventing
@@ -67,7 +68,19 @@ function soleSectionName(sections: SectionId[]): string {
 
 /* ---------------------------------------------------------------- setup */
 
+/* The Summit is Pro whole. Note that `ReportScreen` below is deliberately
+   *not* gated: a score report is a record of a test the person already sat,
+   and taking away someone's own results when a trial lapses is a different
+   thing from not selling them a new test. */
 export function TestsScreen() {
+  return (
+    <ProGate feature="tests" page>
+      <TestsBoard />
+    </ProGate>
+  );
+}
+
+function TestsBoard() {
   const navigate = useNavigate();
   const { progress } = useStore();
   const { prefs } = usePrefs();
@@ -99,10 +112,11 @@ export function TestsScreen() {
           <Button
             variant="danger"
             size="lg"
+            trailing
             className="mt-5 w-full"
             onClick={() => navigate({ name: 'test', config: 'full' })}
           >
-            Begin full test ▶
+            Begin full test
           </Button>
         </div>
 
@@ -206,6 +220,14 @@ type Stage =
   | { kind: 'done' };
 
 export function TestRunner({ config }: { config: string }) {
+  return (
+    <ProGate feature="tests" page>
+      <TestSession config={config} />
+    </ProGate>
+  );
+}
+
+function TestSession({ config }: { config: string }) {
   const navigate = useNavigate();
   const { finishTest } = useStore();
   const { prefs } = usePrefs();
@@ -345,7 +367,7 @@ export function TestRunner({ config }: { config: string }) {
                 setStage({ kind: 'section', index: 0 });
               }}
             >
-              Start — the clock runs ▶
+              Start — the clock runs
             </Button>
             <Button
               variant="ghost"
@@ -386,7 +408,7 @@ export function TestRunner({ config }: { config: string }) {
                 setStage({ kind: 'section', index: stage.nextIndex });
               }}
             >
-              Continue ▶
+              Continue
             </Button>
           </div>
         </div>
@@ -549,7 +571,7 @@ function SectionTimer({
         </span>
         <span
           className={cx('num ml-auto text-[26px] leading-none', critical && 'animate-shimmer')}
-          style={{ color: critical ? '#ff5d78' : urgent ? '#ffd23e' : color }}
+          style={{ color: critical ? 'oklch(var(--c-blood-text))' : urgent ? 'oklch(var(--c-gold))' : color }}
         >
           {formatClock(remaining)}
         </span>
@@ -574,9 +596,9 @@ function SectionTimer({
 /* --------------------------------------------------------------- report */
 
 const PACE_TINT: Record<Pacing['verdict'], string> = {
-  comfortable: '#5ee6a8',
-  tight: '#ffd23e',
-  over: '#ff8298',
+  comfortable: 'oklch(var(--c-woods-text))',
+  tight: 'oklch(var(--c-gold))',
+  over: 'oklch(var(--c-blood-text))',
 };
 
 /* Deliberately phrased as time, not as a grade. "Over" tells a student they
@@ -646,7 +668,7 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
     return (
       <DrillSummary
         results={missed}
-        accent="#ff5d78"
+        accent="oklch(var(--c-blood-text))"
         onRetry={() => setShowMissed(false)}
         onDone={() => navigate({ name: 'tests' })}
       />
@@ -775,7 +797,7 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
                   </span>
                   <ProgressBar
                     value={t.accuracy}
-                    color={t.accuracy < 0.5 ? '#ff8298' : t.accuracy < 0.75 ? '#ffd23e' : '#5ee6a8'}
+                    color={t.accuracy < 0.5 ? 'oklch(var(--c-blood-text))' : t.accuracy < 0.75 ? 'oklch(var(--c-gold))' : 'oklch(var(--c-woods-text))'}
                     height={8}
                   />
                   <span className="num w-16 flex-none text-right text-[17px] text-parchment-dim">

@@ -16,6 +16,7 @@ import { hrefFor, useNavigate } from '@/lib/router';
 import { cloudEnabled } from '@/lib/supabase';
 import { sfx } from '@/lib/sfx';
 import { Button } from '@/components/ui';
+import { Glyph } from '@/components/Icon';
 import { Art } from '@/components/Art';
 
 /* Where people write when they want their data out, or have a complaint.
@@ -45,18 +46,19 @@ export function LegalScreen({ page }: { page: 'privacy' | 'terms' }) {
             sfx.select();
             navigate({ name: 'landing' });
           }}
-          className="mb-8 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
+          className="mb-8 inline-flex items-center gap-1.5 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
         >
-          ← Back
+          <Glyph name="arrowLeft" size={13} strokeWidth={2} />
+          Back
         </button>
 
         <div className="sheet p-6 sm:p-10">
           {page === 'privacy' ? <Privacy /> : <Terms />}
 
-          <div className="mt-10 flex flex-wrap gap-3 border-t border-parchment-edge pt-6">
+          <div className="mt-10 flex flex-wrap gap-3 border-t border-paper-edge pt-6">
             <a href={hrefFor({ name: page === 'privacy' ? 'terms' : 'privacy' })}>
-              <Button>
-                {page === 'privacy' ? 'Read the terms ▸' : 'Read the privacy policy ▸'}
+              <Button trailing>
+                {page === 'privacy' ? 'Read the terms' : 'Read the privacy policy'}
               </Button>
             </a>
           </div>
@@ -84,7 +86,7 @@ function Privacy() {
       <H>Playing without an account</H>
       <P>
         You can use every part of ACT Command without telling us anything. All 754 questions, every
-        lesson, the map, the guardians and the timed trial work with no account at all.
+        lesson, every landmark, the guardians and the timed trial work with no account at all.
       </P>
       <P>
         In that mode your progress is stored by your own browser, on your own device, using
@@ -302,7 +304,7 @@ function Updated() {
 
 function Lead({ children }: { children: ReactNode }) {
   return (
-    <p className="mt-5 border-l-2 border-parchment-edge pl-4 font-read text-[1.08rem] font-medium leading-[1.75] text-ink">
+    <p className="mt-5 border-l-2 border-paper-edge pl-4 font-read text-[1.08rem] font-medium leading-[1.75] text-ink">
       {children}
     </p>
   );
@@ -346,7 +348,7 @@ function A({ href, children }: { href: string; children: ReactNode }) {
   return (
     <a
       href={href}
-      className="text-ink underline decoration-parchment-edge underline-offset-2 hover:decoration-ink"
+      className="text-ink underline decoration-paper-edge underline-offset-2 hover:decoration-ink"
     >
       {children}
     </a>

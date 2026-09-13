@@ -18,8 +18,11 @@ import { downloadProgress } from '@/lib/exportData';
 import { cx, formatRelative, titleCase } from '@/lib/utils';
 import { Page } from '@/components/Shell';
 import { Button, ProgressBar, RankBadge, SectionHeading, EmptyState } from '@/components/ui';
+import { Glyph } from '@/components/Icon';
+import { DateField } from '@/components/fields';
 import { AchievementBadge } from '@/components/RankSigil';
 import { ScoreCaveat } from '@/components/ScoreCaveat';
+import { PlanPanel, ProGate } from '@/components/ProGate';
 import { DiagnosticsPanel, DisplaySettings } from '@/components/Settings';
 import { HeroChooser } from '@/game/HeroChooser';
 import { HeroSprite } from '@/game/HeroSprite';
@@ -73,15 +76,23 @@ export function StatsScreen() {
         <Tile
           label="Estimated composite"
           value={estimate !== null ? String(estimate) : '—'}
-          color="#ffd23e"
+          color="oklch(var(--c-gold))"
         />
         <Tile
           label="Overall accuracy"
           value={`${Math.round(overallAccuracy * 100)}%`}
-          color="#5ee6a8"
+          color="oklch(var(--c-woods-text))"
         />
-        <Tile label="Questions answered" value={answered.toLocaleString()} color="#ff9d5c" />
-        <Tile label="Day streak" value={String(progress.dayStreak)} color="#3ad6f0" />
+        <Tile
+          label="Questions answered"
+          value={answered.toLocaleString()}
+          color="oklch(var(--c-desert-text))"
+        />
+        <Tile
+          label="Day streak"
+          value={String(progress.dayStreak)}
+          color="oklch(var(--c-cliffs-text))"
+        />
       </div>
 
       {estimate !== null && <ScoreCaveat kind="estimate" className="mb-6 -mt-2 max-w-xl" />}
@@ -106,6 +117,17 @@ export function StatsScreen() {
         </p>
       )}
 
+      {/* The four tiles above stay free on purpose. Accuracy, questions
+          answered and a day streak are a record of the person's own work, and
+          a streak counter you can only see by paying is a worse advert for Pro
+          than no streak counter at all. What Pro buys is the *breakdown* — the
+          part that tells you what to do next, which is the part that takes the
+          section model, the history and the topic table to compute. */}
+      <ProGate
+        feature="analytics"
+        title="The full breakdown"
+        detail="Where the time went, which topics are costing you points, and twelve weeks of history. Your headline numbers above stay free."
+      >
       {/* per section */}
       <h2 className="heading mb-4 text-[13px] text-parchment">By section</h2>
       <div className="mb-6 grid gap-3 sm:grid-cols-2">
@@ -154,7 +176,11 @@ export function StatsScreen() {
               style={{
                 height: `${Math.max(3, (count / maxActivity) * 100)}%`,
                 background:
-                  count === 0 ? '#1d1640' : count > maxActivity * 0.6 ? '#ffd23e' : '#6a4ff0',
+                  count === 0
+                    ? 'oklch(var(--c-leather-800))'
+                    : count > maxActivity * 0.6
+                      ? 'oklch(var(--c-gold))'
+                      : 'oklch(var(--c-gold-deep))',
               }}
               title={`${count} question${count === 1 ? '' : 's'}`}
             />
@@ -197,7 +223,13 @@ export function StatsScreen() {
               </span>
               <ProgressBar
                 value={t.accuracy}
-                color={t.accuracy < 0.5 ? '#ff8298' : t.accuracy < 0.75 ? '#ffd23e' : '#5ee6a8'}
+                color={
+                  t.accuracy < 0.5
+                    ? 'oklch(var(--c-blood-text))'
+                    : t.accuracy < 0.75
+                      ? 'oklch(var(--c-gold))'
+                      : 'oklch(var(--c-woods-text))'
+                }
                 height={8}
               />
               <span className="num w-14 flex-none text-right text-[15px] text-parchment-dim">
@@ -210,6 +242,7 @@ export function StatsScreen() {
           );
         })}
       </div>
+      </ProGate>
     </Page>
   );
 }
@@ -230,6 +263,7 @@ function Tile({ label, value, color }: { label: string; value: string; color: st
 /* -------------------------------------------------------------- profile */
 
 export function ProfileScreen() {
+  const thisYear = new Date().getFullYear();
   const navigate = useNavigate();
   const {
     progress,
@@ -255,6 +289,11 @@ export function ProfileScreen() {
     <Page>
       <SectionHeading eyebrow="Your account" title="Profile" />
 
+      {/* First panel on the screen, above the account block, because every
+          upsell in the app links here and landing below the fold on the thing
+          you were sent to read is its own small insult. */}
+      <PlanPanel />
+
       {/* identity */}
       <div className="mb-6 grid gap-4 lg:grid-cols-[1fr_1.2fr]">
         <div className="panel p-6 text-center sm:p-7">
@@ -273,14 +312,19 @@ export function ProfileScreen() {
           <h2 className="heading mt-3 text-[14px] text-parchment">{playerName}</h2>
           <p
             className="mt-2 font-script text-[11px] uppercase tracking-wide"
-            style={{ color: rank.color }}
+            style={{
+              color: `color-mix(in oklab, ${rank.color} var(--rank-tint), oklch(var(--c-parchment)))`,
+            }}
           >
             {rank.name}
           </p>
           <p className="mt-1 text-[13px] text-ink-faint">{rank.tagline}</p>
 
           <div className="mt-5">
-            <ProgressBar value={pct} color={rank.color} />
+            <ProgressBar
+              value={pct}
+              color={`color-mix(in oklab, ${rank.color} var(--rank-tint), oklch(var(--c-parchment)))`}
+            />
             <p className="mt-2 font-script text-[10px] uppercase tracking-wide text-ink-faint">
               {progress.xp.toLocaleString()} XP
               {next
@@ -306,7 +350,7 @@ export function ProfileScreen() {
                   className={cx(
                     'num rounded-lg border-2 px-4 py-2 text-[19px] transition-colors',
                     progress.targetScore === score
-                      ? 'border-gold bg-gold text-[#2a2000]'
+                      ? 'border-gilt bg-gilt text-[#2a2000]'
                       : 'border-leather-700 bg-leather-800 text-parchment-dim hover:border-gold-deep',
                   )}
                 >
@@ -324,19 +368,20 @@ export function ProfileScreen() {
               Test date
             </span>
             <div className="flex flex-wrap items-center gap-2.5">
-              <input
-                type="date"
-                value={progress.profile?.testDate ?? ''}
-                onChange={(e) =>
-                  updateProgress((p) => ({
-                    ...p,
-                    profile: p.profile
-                      ? { ...p.profile, testDate: e.target.value || null }
-                      : p.profile,
-                  }))
-                }
-                className="rounded-lg border-2 border-leather-700 bg-leather-900 px-3.5 py-2 font-read text-[14px] text-parchment outline-none transition-colors focus:border-gold-deep"
-              />
+              <div className="min-w-[15rem] flex-1">
+                <DateField
+                  value={progress.profile?.testDate ?? ''}
+                  onChange={(iso) =>
+                    updateProgress((p) => ({
+                      ...p,
+                      profile: p.profile ? { ...p.profile, testDate: iso || null } : p.profile,
+                    }))
+                  }
+                  fromYear={thisYear}
+                  toYear={thisYear + 2}
+                  ariaPrefix="Test date"
+                />
+              </div>
               {progress.profile?.testDate && (
                 <Button
                   variant="ghost"
@@ -409,7 +454,8 @@ export function ProfileScreen() {
                   downloadProgress(progress, isGuest ? undefined : { name: playerName })
                 }
               >
-                Download everything ▾
+                Download everything
+                <Glyph name="chevronDown" size={14} strokeWidth={2} className="-mr-1" />
               </Button>
               <p className="mt-2.5 text-[12px] leading-relaxed text-ink-faint">
                 A file with all of it — XP, accuracy by topic, test results, achievements.
@@ -483,7 +529,9 @@ export function ProfileScreen() {
             <div className="min-w-0">
               <div
                 className="truncate font-script text-[11px] uppercase tracking-wide"
-                style={{ color: r.color }}
+                style={{
+                  color: `color-mix(in oklab, ${r.color} var(--rank-tint), oklch(var(--c-parchment)))`,
+                }}
               >
                 {r.name}
               </div>

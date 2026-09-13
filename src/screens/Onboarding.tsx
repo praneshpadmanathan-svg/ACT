@@ -9,7 +9,9 @@ import { goalForTiming } from '@/lib/plan';
 import { sfx } from '@/lib/sfx';
 import type { OnboardingProfile, SectionId } from '@/types';
 import { Button, ProgressBar } from '@/components/ui';
+import { Glyph } from '@/components/Icon';
 import { burstConfetti } from '@/components/Feedback';
+import { DateField } from '@/components/fields';
 import { Art } from '@/components/Art';
 import { HeroSprite } from '@/game/HeroSprite';
 import { HeroChooser } from '@/game/HeroChooser';
@@ -75,6 +77,8 @@ export function Onboarding() {
   /* `step` only ever moves within STEPS, but the index type cannot know that
      and the four reads below would each have to say so separately. */
   const current = STEPS[step] ?? STEPS[0]!;
+
+  const thisYear = new Date().getFullYear();
 
   const choose = (value: string | number) => {
     sfx.select();
@@ -160,9 +164,10 @@ export function Onboarding() {
               <button
                 type="button"
                 onClick={() => setStep(step - 1)}
-                className="mt-6 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+                className="mt-6 inline-flex items-center gap-1.5 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
               >
-                ← Back
+                <Glyph name="arrowLeft" size={13} strokeWidth={2} />
+                Back
               </button>
             )}
           </>
@@ -177,34 +182,41 @@ export function Onboarding() {
               We will count down and size your week to fit. You can change or clear it later.
             </p>
 
-            <label className="block">
+            <div className="block">
               <span className="mb-2 block font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint">
                 Test date
               </span>
-              <input
-                type="date"
+              {/* The native date input's `min` is gone with it, so the year
+                  list starts at the current year instead — a test date in the
+                  past is the only thing that needed excluding, and a shorter
+                  list of plausible years does it without a validation
+                  message. */}
+              <DateField
                 value={testDate}
-                min={new Date().toISOString().slice(0, 10)}
-                onChange={(e) => setTestDate(e.target.value)}
-                className="w-full rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-3 font-read text-[15px] text-parchment outline-none transition-colors focus:border-gold-deep"
+                onChange={setTestDate}
+                fromYear={thisYear}
+                toYear={thisYear + 2}
+                ariaPrefix="Test date"
               />
-            </label>
+            </div>
 
             <Button
               variant="primary"
               size="lg"
+              trailing
               className="mt-7 w-full"
               onClick={() => setPhase('hero')}
             >
-              {testDate ? 'Next ▶' : 'Skip for now ▶'}
+              {testDate ? 'Next' : 'Skip for now'}
             </Button>
 
             <button
               type="button"
               onClick={() => setPhase('questions')}
-              className="mt-6 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+              className="mt-6 inline-flex items-center gap-1.5 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
             >
-              ← Back
+              <Glyph name="arrowLeft" size={12} strokeWidth={2} />
+              Back
             </button>
           </>
         )}
@@ -218,10 +230,10 @@ export function Onboarding() {
         {phase === 'hero' && (
           <>
             <h1 className="heading mb-2.5 text-[22px] leading-snug text-parchment">
-              Who is walking the map?
+              Who is walking the roads?
             </h1>
             <p className="mb-7 text-[14px] leading-relaxed text-ink-faint">
-              This is you, on the map and in every duel. Change it whenever you like.
+              This is you, on every road and in every duel. Change it whenever you like.
             </p>
 
             <HeroChooser />
@@ -229,18 +241,20 @@ export function Onboarding() {
             <Button
               variant="primary"
               size="lg"
+              trailing
               className="mt-7 w-full"
               onClick={() => savePlan(answers, testDate || null)}
             >
-              Build my plan ▶
+              Build my plan
             </Button>
 
             <button
               type="button"
               onClick={() => setPhase(answers.when === 'none' ? 'questions' : 'date')}
-              className="mt-6 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+              className="mt-6 inline-flex items-center gap-1.5 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
             >
-              ← Back
+              <Glyph name="arrowLeft" size={12} strokeWidth={2} />
+              Back
             </button>
           </>
         )}
@@ -255,11 +269,11 @@ export function Onboarding() {
             <h1 className="heading mb-6 mt-5 text-[22px] text-gold">Your plan is ready</h1>
 
             <dl className="space-y-2.5 text-left">
-              <PlanRow label="Target score" value={String(answers.target ?? 30)} color="#ff9d5c" />
+              <PlanRow label="Target score" value={String(answers.target ?? 30)} color="oklch(var(--c-desert-text))" />
               <PlanRow
                 label="Questions a week"
                 value={String(goalForTiming((answers.when as OnboardingProfile['when']) ?? 'none'))}
-                color="#3ad6f0"
+                color="oklch(var(--c-cliffs-text))"
               />
               {testDate && (
                 <PlanRow
@@ -274,7 +288,7 @@ export function Onboarding() {
                       ),
                     ),
                   )}
-                  color="#ffd23e"
+                  color="oklch(var(--c-gold))"
                 />
               )}
               <PlanRow
@@ -285,24 +299,25 @@ export function Onboarding() {
             </dl>
 
             <p className="mt-6 text-[14px] leading-relaxed text-ink-faint">
-              Wizzy is waiting at the edge of the map. He will tell you what has happened to the
+              Wizzy is waiting at the first waystone. He will tell you what has happened to the
               realm, and then you choose which road to walk first.
             </p>
 
-            {/* Straight to the map, not to camp.
+            {/* Straight to the road, not to camp.
 
-                The story plays on the map, so sending a brand-new player to the
-                camp dashboard meant they arrived to an empty screen with no
-                greeting at all — they had to know to click "Map" before
-                anything spoke to them. Finishing onboarding now opens the world
-                and Wizzy's prologue runs immediately. */}
+                The story plays where the landmarks are, so sending a brand-new
+                player to the camp dashboard meant they arrived to an empty
+                screen with no greeting at all — they had to know to click
+                "Study" before anything spoke to them. Finishing onboarding now
+                opens the world and Wizzy's prologue runs immediately. */}
             <Button
               variant="primary"
               size="lg"
+              trailing
               className="mt-7 w-full"
-              onClick={() => navigate({ name: 'map' }, { replace: true })}
+              onClick={() => navigate({ name: 'path' }, { replace: true })}
             >
-              Set out ▶
+              Set out
             </Button>
           </div>
         )}
@@ -315,7 +330,7 @@ function PlanRow({ label, value, color }: { label: string; value: string; color?
   return (
     <div className="flex items-center justify-between rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-3">
       <dt className="font-script text-[11px] uppercase tracking-wide text-ink-faint">{label}</dt>
-      <dd className="num text-[19px]" style={{ color: color ?? '#ffd23e' }}>
+      <dd className="num text-[19px]" style={{ color: color ?? 'oklch(var(--c-gold))' }}>
         {value}
       </dd>
     </div>

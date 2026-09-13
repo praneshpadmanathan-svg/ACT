@@ -17,6 +17,8 @@ import { Button, EmptyState, ProgressBar } from '@/components/ui';
 import { RichText } from '@/components/RichText';
 import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
 import { burstConfetti } from '@/components/Feedback';
+import { ProUpsell } from '@/components/ProGate';
+import { sectionIsFree } from '@/lib/features';
 
 const QUIZ_LENGTH = 6;
 const PASS_MARK = 0.7;
@@ -44,7 +46,7 @@ type Phase = 'lesson' | 'quiz' | 'result';
 export function ZoneScreen({ zoneId }: { zoneId: string }) {
   const entry = getZone(zoneId);
   const navigate = useNavigate();
-  const { progress, answerQuestion, clearZone } = useStore();
+  const { progress, answerQuestion, clearZone, isPro } = useStore();
 
   const [phase, setPhase] = useState<Phase>('lesson');
   const [results, setResults] = useState<AnswerRecord[] | null>(null);
@@ -76,11 +78,11 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
     return (
       <Page>
         <EmptyState
-          title="Zone not found"
-          detail="That zone does not exist. Head back to the map and pick one from a path."
+          title="Landmark not found"
+          detail="That landmark does not exist. Head back and pick one off a road."
           action={
-            <Button variant="primary" onClick={() => navigate({ name: 'map' })}>
-              Back to map
+            <Button variant="primary" onClick={() => navigate({ name: 'path' })}>
+              Back to the roads
             </Button>
           }
         />
@@ -90,6 +92,22 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
 
   const { zone, path } = entry;
   const meta = SECTION_BY_ID[path.id];
+
+  /* A landmark is its own URL, and the one most likely to be held: it is what
+     "Continue your quest" points at and what the browser restores on reopen.
+     Gating only the road that lists it would leave the lesson and its quiz
+     wide open to anyone who had ever been here during their trial. */
+  if (!isPro && !sectionIsFree(path.id)) {
+    return (
+      <Page>
+        <ProUpsell
+          title={`${zone.name} is on a Pro road`}
+          detail={`This landmark belongs to ${meta?.name ?? 'another subject'}. English stays open in full; Pro reopens this road and the other two, along with the Summit, review and the guardians.`}
+        />
+      </Page>
+    );
+  }
+
   const lesson = LESSONS[zoneId];
   const best = progress.zonesCleared[zoneId] ?? null;
 
@@ -102,7 +120,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
 
         <div
           className="mb-6 rounded-xl border-2 border-leather-700 bg-leather-850 p-6 shadow-card sm:p-7"
-          style={{ borderTopColor: path.color, borderTopWidth: 4 }}
+          style={{ borderTopColor: meta.fill, borderTopWidth: 4 }}
         >
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
@@ -111,7 +129,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
               </div>
               <h1
                 className="heading mt-2 text-[clamp(14px,2.4vw,19px)]"
-                style={{ color: path.color }}
+                style={{ color: meta.color }}
               >
                 {zone.name}
               </h1>
@@ -122,7 +140,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                 <div className="font-script text-[10px] uppercase tracking-wide text-ink-faint">
                   Your best
                 </div>
-                <div className="num text-[30px] text-woods">{best}%</div>
+                <div className="num text-[30px] text-woods-text">{best}%</div>
               </div>
             )}
           </div>
@@ -185,7 +203,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
               )}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3 border-t-2 border-parchment-edge pt-6">
+            <div className="mt-8 flex flex-wrap gap-3 border-t-2 border-paper-edge pt-6">
               <Button
                 variant="primary"
                 size="lg"
@@ -195,7 +213,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                   setPhase('quiz');
                 }}
               >
-                Start the quiz ▶
+                Start the quiz
               </Button>
               <span className="self-center text-[13px] text-ink-soft">
                 {questions.length} questions · {passNeeded(questions.length)} right to clear
@@ -227,12 +245,12 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
           questions={questions}
           title={zone.name}
           subtitle={zone.sub}
-          accent={path.color}
-          /* Out to the map, which is where you came in from. Quitting used to
-             land on the flat path list instead — a different screen from the
-             one you left, so backing out of a quiz felt like being moved
-             rather than returning. */
-          onQuit={() => navigate({ name: 'map' })}
+          accent={meta.color}
+          /* Back to this subject's road, which is where you came in from.
+             Quitting has to land on the screen you left — anywhere else and
+             backing out of a quiz feels like being moved rather than
+             returning. */
+          onQuit={() => navigate({ name: 'path', section: path.id })}
           onAnswer={(record) => {
             answerQuestion({
               qid: record.question.id,
@@ -285,21 +303,21 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
       <div className="mx-auto max-w-2xl">
         <div
           className="rounded-xl border-2 p-7 text-center shadow-card sm:p-9"
-          style={{ borderColor: passed ? '#5ee6a8' : '#ff8298', background: '#16102e' }}
+          style={{ borderColor: passed ? 'oklch(var(--c-woods-text))' : 'oklch(var(--c-blood-text))', background: 'oklch(var(--c-leather-900))' }}
         >
           <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
             {zone.name}
           </div>
           <h1
             className="heading mt-3 text-[clamp(17px,3.4vw,26px)]"
-            style={{ color: passed ? '#5ee6a8' : '#ff8298' }}
+            style={{ color: passed ? 'oklch(var(--c-woods-text))' : 'oklch(var(--c-blood-text))' }}
           >
             {passed ? 'Zone cleared' : 'Not yet'}
           </h1>
 
           <div
             className="num mt-6 text-[64px] leading-none"
-            style={{ color: passed ? '#5ee6a8' : '#ff8298' }}
+            style={{ color: passed ? 'oklch(var(--c-woods-text))' : 'oklch(var(--c-blood-text))' }}
           >
             {percent}%
           </div>
@@ -308,7 +326,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
           </p>
 
           <div className="mx-auto mt-6 max-w-sm">
-            <ProgressBar value={percent / 100} color={passed ? '#5ee6a8' : '#ff8298'} />
+            <ProgressBar value={percent / 100} color={passed ? 'oklch(var(--c-woods-text))' : 'oklch(var(--c-blood-text))'} />
           </div>
 
           <p className="mt-6 text-[15px] leading-relaxed text-parchment-dim">
@@ -348,23 +366,25 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
             {passed && nextZone ? (
               <Button
                 variant="primary"
+                trailing
                 onClick={() => {
                   setResults(null);
                   setPhase('lesson');
                   navigate({ name: 'zone', zone: nextZone.id });
                 }}
               >
-                Next zone ▶
+                Next zone
               </Button>
             ) : (
-              /* The map, not the path list. Clearing a landmark moves the
-                 traveller and lights the next pin, and the map opens centred
-                 on the traveller — so this is the one screen where the thing
-                 you just earned is visible. Sending the student to a list of
-                 zone names instead threw the reward away at the exact moment
-                 it was paid. */
-              <Button variant="primary" onClick={() => navigate({ name: 'map' })}>
-                Back to the map
+              /* Back to the road you were on, not to camp. Clearing a landmark
+                 lights the next one along, and the road is where that shows —
+                 sending the student somewhere the change is invisible throws
+                 the reward away at the exact moment it is paid. */
+              <Button
+                variant="primary"
+                onClick={() => navigate({ name: 'path', section: path.id })}
+              >
+                Back to the road
               </Button>
             )}
           </div>

@@ -26,6 +26,7 @@ import { LIBRARY_STATS, SECTIONS } from '@/content';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { sfx } from '@/lib/sfx';
 import { Button } from '@/components/ui';
+import { Glyph } from '@/components/Icon';
 import { Art } from '@/components/Art';
 
 /* Real ACT section lengths, for the honest comparison against ours. Public
@@ -220,11 +221,11 @@ const ENTRIES: Entry[] = [
       <>
         <P>Because the alternative is a progress bar, and a progress bar is very easy to close.</P>
         <P>
-          The map is a real structure, not decoration: each of the <B>{LIBRARY_STATS.zones}</B>{' '}
-          landmarks is one ACT skill, they are ordered so that the things later questions assume
-          come first, and the road opens as you clear them. The fantasy is a way of making that
-          shape visible and giving the next step a place to be. Wizzy tells you what a landmark
-          teaches before you commit to it.
+          The four roads are a real structure, not decoration: each of the{' '}
+          <B>{LIBRARY_STATS.zones}</B> landmarks is one ACT skill, they are ordered so that the
+          things later questions assume come first, and each road opens as you clear it. The fantasy
+          is a way of making that shape visible and giving the next step a place to be. Wizzy tells
+          you what a landmark teaches before you commit to it.
         </P>
         <P>
           The questions themselves are straight. No dragons in the algebra — a Math question here
@@ -254,7 +255,7 @@ const ENTRIES: Entry[] = [
         <div className="mt-4 overflow-x-auto">
           <table className="w-full border-collapse font-read text-[0.98rem] text-ink">
             <thead>
-              <tr className="border-b border-parchment-edge text-left">
+              <tr className="border-b border-paper-edge text-left">
                 <Th>Section</Th>
                 <Th>Here</Th>
                 <Th>Real ACT</Th>
@@ -265,7 +266,7 @@ const ENTRIES: Entry[] = [
                 const ours = OUR_TEST[s.id]!;
                 const real = REAL_TEST[s.id]!;
                 return (
-                  <tr key={s.id} className="border-b border-parchment-edge/60">
+                  <tr key={s.id} className="border-b border-paper-edge/60">
                     <Td>{s.name}</Td>
                     <Td>
                       {ours.questions} Q in {ours.minutes} min
@@ -385,23 +386,24 @@ export function ExplainScreen() {
             sfx.select();
             navigate({ name: 'landing' });
           }}
-          className="mb-8 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
+          className="mb-8 inline-flex items-center gap-1.5 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
         >
-          ← Back
+          <Glyph name="arrowLeft" size={13} strokeWidth={2} />
+          Back
         </button>
 
         <div className="sheet p-6 sm:p-10">
           <h1 className="font-read text-[clamp(1.6rem,4vw,2.1rem)] font-semibold leading-tight text-ink">
             Questions, answered honestly
           </h1>
-          <p className="mt-5 border-l-2 border-parchment-edge pl-4 font-read text-[1.08rem] font-medium leading-[1.75] text-ink">
+          <p className="mt-5 border-l-2 border-paper-edge pl-4 font-read text-[1.08rem] font-medium leading-[1.75] text-ink">
             Everything below describes what the app actually does. Where the honest answer is "we
             don't know", that is what it says.
           </p>
 
           {/* A jump list, because this page is long by design and the question
               somebody arrived with is usually one specific one. */}
-          <nav aria-label="Jump to a question" className="mt-8 border-t border-parchment-edge pt-6">
+          <nav aria-label="Jump to a question" className="mt-8 border-t border-paper-edge pt-6">
             <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
               {ENTRIES.map((e) => (
                 <li key={e.id}>
@@ -413,7 +415,7 @@ export function ExplainScreen() {
                       ev.preventDefault();
                       document.getElementById(e.id)?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="font-read text-[0.98rem] leading-snug text-ink underline decoration-parchment-edge underline-offset-2 hover:decoration-ink"
+                    className="font-read text-[0.98rem] leading-snug text-ink underline decoration-paper-edge underline-offset-2 hover:decoration-ink"
                   >
                     {e.q}
                   </a>
@@ -431,12 +433,12 @@ export function ExplainScreen() {
             </section>
           ))}
 
-          <div className="mt-10 flex flex-wrap gap-3 border-t border-parchment-edge pt-6">
+          <div className="mt-10 flex flex-wrap gap-3 border-t border-paper-edge pt-6">
             <a href={hrefFor({ name: 'privacy' })}>
-              <Button>Privacy policy ▸</Button>
+              <Button trailing>Privacy policy</Button>
             </a>
             <a href={hrefFor({ name: 'terms' })}>
-              <Button>Terms ▸</Button>
+              <Button trailing>Terms</Button>
             </a>
           </div>
         </div>
@@ -477,7 +479,7 @@ function A({ href, children }: { href: string; children: ReactNode }) {
   return (
     <a
       href={href}
-      className="text-ink underline decoration-parchment-edge underline-offset-2 hover:decoration-ink"
+      className="text-ink underline decoration-paper-edge underline-offset-2 hover:decoration-ink"
     >
       {children}
     </a>

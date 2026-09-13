@@ -7,11 +7,12 @@ import { useStore } from '@/lib/store';
 import { RANKS } from '@/lib/progress';
 import { useDialogFocus } from '@/lib/useDialogFocus';
 import { Button, RankBadge } from './ui';
+import { Glyph } from './Icon';
 
 /* --------------------------------------------------------------- confetti */
 
 /* Gold leaf and lantern sparks — the palette has to survive being thrown
-   over the painted map. */
+   over a painted region backdrop. */
 const CONFETTI_COLORS = ['#f2cf5b', '#d4a017', '#e8c34a', '#c98b2e', '#f7e6ae', '#9c7410'];
 
 interface Particle {
@@ -153,11 +154,9 @@ export function Toasts() {
           type="button"
           onClick={() => dismissToast(t.id)}
           className="pointer-events-auto flex animate-slidein items-center gap-3 rounded-lg border-2 border-gold-deep bg-leather-850/95 px-4 py-3 text-left shadow-card backdrop-blur"
-          style={{ borderLeftWidth: 6, borderLeftColor: t.color ?? '#ffd23e' }}
+          style={{ borderLeftWidth: 6, borderLeftColor: t.color ?? 'oklch(var(--c-gold))' }}
         >
-          <span className="text-[17px] text-gold" aria-hidden="true">
-            ✦
-          </span>
+          <Glyph name="spark" size={17} className="flex-none text-gold" />
           <span className="min-w-0">
             <span className="block font-script text-[13px] uppercase tracking-wide text-parchment">
               {t.title}
@@ -313,10 +312,11 @@ export function LevelUpOverlay() {
         <Button
           variant="primary"
           size="lg"
+          trailing
           className="mt-6 sm:mt-8 [@media(max-height:520px)]:mt-4"
           onClick={dismissLevelUp}
         >
-          Onward ▸
+          Onward
         </Button>
       </div>
     </div>

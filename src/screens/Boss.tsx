@@ -18,18 +18,28 @@ import { sfx } from '@/lib/sfx';
 import { cx, shuffle } from '@/lib/utils';
 import type { Question, SectionId } from '@/types';
 import { BackLink, Page } from '@/components/Shell';
-import { Button, EmptyState } from '@/components/ui';
+import { Button, EmptyState, LEADING_ICON } from '@/components/ui';
+import { Glyph } from '@/components/Icon';
 import { RichText } from '@/components/RichText';
 import { burstConfetti } from '@/components/Feedback';
 import { BossArt, type BossState } from '@/game/BossArt';
 import { HeroSprite } from '@/game/HeroSprite';
 import { bossFor } from '@/game/bosses';
-import { REGIONS } from '@/game/mapData';
+import { REGIONS } from '@/content/regionFlavor';
 import { m, SPRING_SNAP } from '@/lib/motion';
+import { ProGate } from '@/components/ProGate';
 
 type Phase = 'intro' | 'fight' | 'won' | 'lost';
 
 export function BossScreen({ section }: { section: string }) {
+  return (
+    <ProGate feature="duels" page>
+      <BossDuel section={section} />
+    </ProGate>
+  );
+}
+
+function BossDuel({ section }: { section: string }) {
   const navigate = useNavigate();
   const { progress, answerQuestion, updateProgress } = useStore();
 
@@ -94,10 +104,10 @@ export function BossScreen({ section }: { section: string }) {
       <Page>
         <EmptyState
           title="No boss here"
-          detail="That region does not have a guardian. Head back to the map."
+          detail="That region does not have a guardian. Head back and pick one of the four."
           action={
-            <Button variant="primary" onClick={() => navigate({ name: 'map' })}>
-              Back to the map
+            <Button variant="primary" onClick={() => navigate({ name: 'duels' })}>
+              The four guardians
             </Button>
           }
         />
@@ -136,10 +146,11 @@ export function BossScreen({ section }: { section: string }) {
           </p>
           <Button
             variant="primary"
+            trailing
             className="mt-7"
             onClick={() => navigate({ name: 'path', section: sectionId })}
           >
-            Back to the road ▸
+            Back to the road
           </Button>
         </div>
       </Page>
@@ -178,14 +189,16 @@ export function BossScreen({ section }: { section: string }) {
           </div>
 
           {alreadyBeaten && (
-            <p className="mt-5 font-script text-[12px] uppercase tracking-[0.16em] text-woods">
-              ✦ Already defeated — fight again for the practice
+            <p className="mt-5 font-script text-[12px] uppercase tracking-[0.16em] text-woods-text">
+              <Glyph name="spark" size={12} className={LEADING_ICON} />
+              Already defeated — fight again for the practice
             </p>
           )}
 
           <Button
             variant="primary"
             size="lg"
+            trailing
             className="mt-8"
             onClick={() => {
               sfx.warn();
@@ -193,7 +206,7 @@ export function BossScreen({ section }: { section: string }) {
               setPhase('fight');
             }}
           >
-            Draw your blade ▸
+            Draw your blade
           </Button>
           <p className="mt-4 font-read text-[13.5px] text-ink-faint">
             Losing costs you nothing but the attempt.
@@ -216,7 +229,7 @@ export function BossScreen({ section }: { section: string }) {
 
           <h1
             className="heading mt-7 text-[clamp(1.7rem,4vw,2.6rem)]"
-            style={{ color: won ? boss.color : '#dd8571' }}
+            style={{ color: won ? boss.color : 'oklch(var(--c-blood-text))' }}
           >
             {won ? `${boss.name} falls` : 'You retreat'}
           </h1>
@@ -240,8 +253,8 @@ export function BossScreen({ section }: { section: string }) {
             >
               Fight again
             </Button>
-            <Button variant="primary" onClick={() => navigate({ name: 'map' })}>
-              Back to the map ▸
+            <Button variant="primary" trailing onClick={() => navigate({ name: 'duels' })}>
+              The other guardians
             </Button>
           </div>
         </div>
@@ -381,7 +394,7 @@ export function BossScreen({ section }: { section: string }) {
             onClick={() => navigate({ name: 'path', section: sectionId })}
             className="font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
           >
-            Flee ▸
+            Flee
           </button>
         </div>
 
@@ -428,12 +441,17 @@ export function BossScreen({ section }: { section: string }) {
             </div>
 
             {revealed && (
-              <div className="mt-6 animate-fadein border-t-2 border-parchment-edge pt-5">
+              <div className="mt-6 animate-fadein border-t-2 border-paper-edge pt-5">
                 <div
                   className="mb-2 font-script text-[13px] uppercase tracking-[0.16em]"
                   style={{ color: chosen === question.correctKey ? '#2f6b3a' : '#9c3326' }}
                 >
-                  {chosen === question.correctKey ? '⚔ A clean hit' : '✖ It strikes back'}
+                  <Glyph
+                    name={chosen === question.correctKey ? 'sword' : 'cross'}
+                    size={13}
+                    className={LEADING_ICON}
+                  />
+                  {chosen === question.correctKey ? 'A clean hit' : 'It strikes back'}
                 </div>
                 <RichText as="div" format="markdown" className="font-read leading-relaxed">
                   {question.why[question.correctKey] ?? question.whyGeneral ?? ''}
@@ -441,11 +459,12 @@ export function BossScreen({ section }: { section: string }) {
                 <Button
                   variant="primary"
                   size="lg"
+                  trailing
                   className="mt-5 w-full"
                   onClick={next}
                   autoFocus
                 >
-                  Press the attack ▸
+                  Press the attack
                 </Button>
               </div>
             )}
@@ -485,7 +504,9 @@ function HealthPips({
               style={{ maxWidth: 26 }}
               animate={{
                 background: lit ? color : '#3a2f21',
-                boxShadow: lit ? `0 0 8px ${color}88` : '0 0 0 rgba(0,0,0,0)',
+                boxShadow: lit
+                  ? `0 0 8px color-mix(in srgb, ${color} 53%, transparent)`
+                  : '0 0 0 rgba(0,0,0,0)',
                 opacity: lit ? 1 : 0.25,
                 scaleY: lit ? 1 : 0.55,
               }}

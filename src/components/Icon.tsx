@@ -49,6 +49,9 @@ export type IconName =
   // navigation
   | 'arrowLeft'
   | 'arrowRight'
+  | 'chevronLeft'
+  | 'chevronRight'
+  | 'chevronUp'
   | 'chevronDown'
   | 'plus'
   | 'minus'
@@ -128,7 +131,7 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
       );
 
     /* A padlock rather than 🔒 — a locked landmark is the most common state
-       on the map, so it is the icon a first-time player sees most. */
+       on the Study tab, so it is the icon a first-time player sees most. */
     case 'lock':
       return (
         <svg {...common}>
@@ -327,6 +330,31 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
       return (
         <svg {...common}>
           <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      );
+
+    /* One arc, four rotations, so the family reads as a single mark.
+       `chevronRight` is the workhorse: it closes every control that moves the
+       reader onward, where the existing `arrowRight` sits too heavy beside a
+       14px label. */
+    case 'chevronLeft':
+      return (
+        <svg {...common}>
+          <path d="M14.5 6 8.5 12l6 6" />
+        </svg>
+      );
+
+    case 'chevronRight':
+      return (
+        <svg {...common}>
+          <path d="m9.5 6 6 6-6 6" />
+        </svg>
+      );
+
+    case 'chevronUp':
+      return (
+        <svg {...common}>
+          <path d="m6 14.5 6-6 6 6" />
         </svg>
       );
 

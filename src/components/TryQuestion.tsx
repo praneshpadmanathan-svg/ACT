@@ -20,6 +20,7 @@
 import { useMemo, useState } from 'react';
 
 import { ALL_QUESTIONS, SECTION_BY_ID, getQuestion } from '@/content';
+import { fromDrillQuestion } from '@/lib/normalize';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import type { Question } from '@/types';
@@ -47,19 +48,34 @@ export function pickSample(): Question | undefined {
 }
 
 export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
-  const question = useMemo(pickSample, []);
+  /* Through `fromDrillQuestion`, the same adapter every real screen uses,
+     rather than reading the authored JSON straight.
+
+     This was rendering `question.choices` in the order they were typed. The
+     bank is badly skewed by position — 40% of authored answers are "A" and
+     under 10% are "D" — which is exactly why `normalize.ts` reshuffles every
+     question from a hash of its id before the runner ever sees it. The sample
+     bypassed that, so the one question a visitor actually answers was the one
+     question in the app showing its answer where the author happened to put
+     it. It also says, a paragraph further down, that it *is* the product; it
+     should therefore behave like the product. */
+  const question = useMemo(() => {
+    const raw = pickSample();
+    return raw ? { raw, run: fromDrillQuestion(raw) } : null;
+  }, []);
   const [chosen, setChosen] = useState<string | null>(null);
 
   if (!question) return null;
 
-  const section = SECTION_BY_ID[question.section];
+  const { raw, run } = question;
+  const section = SECTION_BY_ID[raw.section];
   const revealed = chosen !== null;
-  const correct = chosen === question.answer;
+  const correct = chosen === run.correctKey;
 
-  const answer = (id: string) => {
+  const answer = (key: string) => {
     if (revealed) return;
-    setChosen(id);
-    if (id === question.answer) sfx.correct();
+    setChosen(key);
+    if (key === run.correctKey) sfx.correct();
     else sfx.wrong();
   };
 
@@ -70,13 +86,23 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
           {section?.name ?? 'Sample'}
         </span>
         <span className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
-          {question.topic}
+          {run.topic}
         </span>
       </div>
 
       <p className="mt-4 font-read text-[1.06rem] leading-[1.7] text-parchment-light">
-        {question.context}
+        {run.prompt}
       </p>
+      {/* An English item poses its question by underlining a span inside the
+          sentence. The hand-picked sample is a Math item with no span, but
+          `pickSample` falls back to the bank if that id ever leaves it, and a
+          fallback that dropped the sentence would leave nothing to answer. */}
+      {run.label && (
+        <p
+          className="mt-3 font-read text-[1.02rem] leading-[1.7] text-parchment"
+          dangerouslySetInnerHTML={{ __html: run.label }}
+        />
+      )}
 
       {/* Same semantics the real runner uses: one tab stop, arrows inside.
           A sample that is unusable by keyboard would be advertising the
@@ -94,20 +120,18 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
                 : 0;
           if (step === 0 || revealed) return;
           e.preventDefault();
-          const at = question.choices.findIndex((c) => c.id === chosen);
+          const at = run.choices.findIndex((c) => c.key === chosen);
           const to =
-            question.choices[
-              ((at < 0 ? 0 : at) + step + question.choices.length) % question.choices.length
-            ]!;
-          answer(to.id);
+            run.choices[((at < 0 ? 0 : at) + step + run.choices.length) % run.choices.length]!;
+          answer(to.key);
         }}
       >
-        {question.choices.map((choice, i) => {
-          const isAnswer = choice.id === question.answer;
-          const picked = choice.id === chosen;
+        {run.choices.map((choice, i) => {
+          const isAnswer = choice.key === run.correctKey;
+          const picked = choice.key === chosen;
           return (
             <button
-              key={choice.id}
+              key={choice.key}
               type="button"
               role="radio"
               aria-checked={picked}
@@ -118,7 +142,7 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
                  is wrong, the entire point of the sample, somewhere a
                  keyboard user cannot reach. */
               aria-disabled={revealed}
-              onClick={() => answer(choice.id)}
+              onClick={() => answer(choice.key)}
               className={cx(
                 'rounded-lg border-2 px-4 py-3 text-left transition-colors',
                 !revealed && 'border-leather-700 bg-leather-900/70 hover:border-gold-deep',
@@ -131,7 +155,7 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
               )}
             >
               <span className="flex gap-3">
-                <span className="num flex-none font-semibold text-gold">{choice.id}</span>
+                <span className="num flex-none font-semibold text-gold">{choice.key}</span>
                 <span className="min-w-0 flex-1 font-read text-[15px] leading-snug text-parchment">
                   {choice.text}
                 </span>
@@ -145,7 +169,7 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
                     isAnswer ? 'text-woods-text' : 'text-parchment-dim',
                   )}
                 >
-                  {question.why[choice.id]}
+                  {run.why[choice.key]}
                 </span>
               )}
             </button>
@@ -170,7 +194,7 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
                   onClick={onFinish}
                   className="text-gold underline underline-offset-4 hover:text-gold-bright"
                 >
-                  Start properly ▸
+                  Start properly
                 </button>
               </>
             )}

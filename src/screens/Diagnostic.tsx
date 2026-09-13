@@ -82,13 +82,14 @@ export function DiagnosticScreen() {
             <Button
               variant="primary"
               size="lg"
+              trailing
               className="mt-7 w-full"
               onClick={() => {
                 sfx.select();
                 setStarted(true);
               }}
             >
-              {already ? 'Take it again ▶' : 'Start ▶'}
+              {already ? 'Take it again' : 'Start'}
             </Button>
             <Button
               variant="ghost"
@@ -111,7 +112,7 @@ export function DiagnosticScreen() {
         questions={questions}
         title="Placement"
         subtitle={`${total} questions, all four sections`}
-        accent="#d4a017"
+        accent="oklch(var(--c-gold))"
         deferFeedback
         onQuit={() => setStarted(false)}
         onAnswer={(record) =>
@@ -229,11 +230,11 @@ export function DiagnosticSummary({ result }: { result: DiagnosticResult }) {
         )}
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Button variant="ghost" onClick={() => navigate({ name: 'map' })}>
-            Open the map
+          <Button variant="ghost" onClick={() => navigate({ name: 'path' })}>
+            Start the first road
           </Button>
-          <Button variant="primary" onClick={() => navigate({ name: 'home' })}>
-            See my plan ▸
+          <Button variant="primary" trailing onClick={() => navigate({ name: 'home' })}>
+            See my plan
           </Button>
         </div>
       </div>

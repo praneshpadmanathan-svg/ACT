@@ -1,11 +1,19 @@
 /* Shared primitives, in the leather-and-parchment register. */
 
 import { useCallback, useRef, useState, type ButtonHTMLAttributes, type ReactNode } from 'react';
+import { Glyph, type IconName } from './Icon';
 import { cx } from '@/lib/utils';
 import { sfx } from '@/lib/sfx';
+/* `@/content/sections` and not `@/content`: this file is on the eager path and
+   the barrel drags 738 kB of question JSON in behind it. */
+import { SECTIONS } from '@/content/sections';
+import type { SectionId } from '@/types';
 import { AnimatePresence, m, useReducedMotion, PIN_SPRING } from '@/lib/motion';
 import { RankSigil, type SigilColors } from './RankSigil';
 import { Vignette, type VignetteName } from './Vignette';
+import { useStore } from '@/lib/store';
+import { sectionIsFree } from '@/lib/features';
+import { LockSigil } from '@/game/Sigils';
 
 type Variant = 'primary' | 'ghost' | 'danger' | 'quill';
 type Size = 'sm' | 'md' | 'lg';
@@ -34,7 +42,17 @@ interface ButtonProps extends NativeButtonProps {
   variant?: Variant;
   size?: Size;
   quiet?: boolean;
+  trailing?: boolean;
 }
+
+/* Forty-three buttons in this app ended their label with a typed `▶` or `▸`.
+   That is one affordance — "this moves you onward" — spelled forty-three
+   different ways: two glyphs, whatever font resolved them, no control over
+   size, and a screen reader announcing "black right-pointing triangle" after
+   the label. `trailing` makes it a property of the button instead, so the
+   chevron is one size relative to the label everywhere and the assistive
+   layer never hears it. */
+const TRAIL_SIZE: Record<Size, number> = { sm: 13, md: 15, lg: 17 };
 
 interface Ink {
   id: number;
@@ -58,6 +76,7 @@ export function Button({
   variant = 'ghost',
   size = 'md',
   quiet = false,
+  trailing = false,
   className,
   onClick,
   onPointerDown,
@@ -135,7 +154,46 @@ export function Button({
         ))}
       </AnimatePresence>
       {children}
+      {trailing && <Glyph name="chevronRight" size={TRAIL_SIZE[size]} className="-mr-1 opacity-80" />}
     </m.button>
+  );
+}
+
+/* A leading icon on text that can wrap.
+
+   The obvious spelling — `inline-flex items-center` with the icon as a flex
+   child — is wrong here, and wrong in a way that only shows up at narrow
+   widths: the label becomes a single flex item that wraps internally, and
+   `items-center` then centres the icon against the *whole* wrapped block, so
+   on three lines the star appears beside the second one. An inline-block icon
+   flows with the first line instead and the remaining lines start at the
+   margin, which is what the typed character used to do. */
+export const LEADING_ICON = 'mr-1.5 inline-block align-[-1px]';
+
+/* `.eyebrow` is a text style; this is the marked variant of it, which is how
+   it is used nearly everywhere. The star was a typed `✦`, resolved out of
+   whatever fallback font had it — heavier than the small caps beside it on
+   Windows, missing on some Androids. */
+export function Eyebrow({
+  children,
+  icon = 'spark',
+  className,
+}: {
+  children: ReactNode;
+  icon?: IconName;
+  className?: string;
+}) {
+  /* `block`, not the inline default a bare <span> would take: nearly every
+     call site was a <div> carrying a bottom margin, and one carries an enter
+     animation. Vertical margins and transforms both do nothing on a
+     non-replaced inline box, so an inline eyebrow silently loses its spacing
+     and never animates. A span with `display:block` keeps it legal inside a
+     <p> while behaving like the div it replaced. */
+  return (
+    <span className={cx('eyebrow block', className)}>
+      <Glyph name={icon} size={12} className={LEADING_ICON} />
+      {children}
+    </span>
   );
 }
 
@@ -163,7 +221,10 @@ export function Chip({
   return (
     <span
       className={cx('chip', className)}
-      style={color ? { color, borderColor: `${color}66` } : undefined}
+      /* `color-mix`, not `${color}66`: these colours are token references
+         now (`oklch(var(--c-section-math))`), and appending hex alpha to one
+         yields a string CSS silently drops — the border would just vanish. */
+      style={color ? { color, borderColor: `color-mix(in srgb, ${color} 40%, transparent)` } : undefined}
     >
       {children}
     </span>
@@ -172,7 +233,7 @@ export function Chip({
 
 export function ProgressBar({
   value,
-  color = '#d4a017',
+  color = 'oklch(var(--c-gold))',
   className,
   height = 9,
   label,
@@ -199,7 +260,11 @@ export function ProgressBar({
     >
       <div
         className="h-full rounded-full transition-[width] duration-700 ease-out"
-        style={{ width: `${pctValue}%`, background: color, boxShadow: `0 0 10px ${color}77` }}
+        style={{
+          width: `${pctValue}%`,
+          background: color,
+          boxShadow: `0 0 10px color-mix(in srgb, ${color} 47%, transparent)`,
+        }}
       />
     </div>
   );
@@ -315,6 +380,63 @@ export function SectionHeading({
         )}
       </div>
       {right}
+    </div>
+  );
+}
+
+/* The four-section pill row.
+
+   Library and Training had grown byte-identical copies of this. The Study tab
+   made three, which is where a duplicated block stops being cheaper than a
+   component — the pills are the thing a student uses to move between subjects
+   on every list screen in the app, and they should not be able to drift apart
+   depending on which one you are looking at. */
+export function SectionTabs({
+  active,
+  hrefFor: href,
+}: {
+  active: SectionId;
+  /** Where a pill points. Each screen keeps its own route. */
+  hrefFor: (id: SectionId) => string;
+}) {
+  /* The pills still link to the locked subjects rather than hiding or
+     disabling them. Two reasons: a person should be able to see what is on the
+     other roads before deciding whether it is worth paying for, and a screen
+     you cannot reach cannot explain itself — the destination renders the
+     upsell, which is a better answer than a dead pill that does nothing when
+     tapped. The sigil is what says "this one costs money". */
+  const { isPro } = useStore();
+
+  return (
+    <div className="mb-6 flex flex-wrap gap-2">
+      {SECTIONS.map((s) => {
+        const locked = !isPro && !sectionIsFree(s.id);
+        return (
+          <a
+            key={s.id}
+            href={href(s.id)}
+            onClick={() => sfx.select()}
+            aria-current={s.id === active ? 'page' : undefined}
+            title={locked ? `${s.name} is part of Pro` : undefined}
+            className={cx(
+              'flex items-center gap-1.5 rounded-lg border-2 px-4 py-2 font-script text-[12px] uppercase tracking-wide transition-colors',
+              s.id === active
+                ? 'text-[#0d0620]'
+                : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-parchment',
+            )}
+            style={s.id === active ? { background: s.fill, borderColor: s.fill } : undefined}
+          >
+            {s.name}
+            {locked && (
+              <LockSigil
+                size={14}
+                className={s.id === active ? 'opacity-70' : 'text-gold opacity-80'}
+              />
+            )}
+            {locked && <span className="sr-only">(Pro)</span>}
+          </a>
+        );
+      })}
     </div>
   );
 }

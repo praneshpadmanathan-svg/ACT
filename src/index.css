@@ -6,15 +6,16 @@
    ACT Command — design system
 
    The app is a hand-drawn fantasy quest, and the artwork sets the rules:
-   a painted world map, a camp tent lit by lanterns, and two ink-and-wash
+   painted region backdrops, a camp tent lit by lanterns, and two ink-and-wash
    characters drawn on a cream sheet.
 
    So the UI is built from the same materials:
 
-   1. LEATHER   — dark, warm chrome. Nav, sidebars, HUD, map furniture.
+   1. LEATHER   — dark, warm chrome. Nav, sidebars, HUD, screen furniture.
                   Cinzel for headings, IM Fell English SC for small caps.
 
-   2. PARCHMENT — every reading surface. Deliberately the same cream as the
+   2. PAPER     — every reading surface (the `paper` tokens; `parchment` is
+                  text *on* the leather). Deliberately the same cream as the
                   sheet the characters were drawn on, so a cutout dropped on
                   a panel has no visible seam. Newsreader at a real measure.
 
@@ -25,6 +26,40 @@
   :root {
     --shell-max: 1200px;
     --rule: rgba(203, 182, 143, 0.28);
+
+    /* ---------------------------------------------------------------- paper
+
+       The reading sheet, and the only palette in the app that does not move
+       between themes.
+
+       This exists because two different jobs were sharing the `parchment`
+       tokens. One is "cream text on the dark chrome" (`text-parchment` on
+       `bg-leather-850`), which in light mode has to invert to dark text on
+       pale chrome. The other is "the cream sheet a passage is printed on",
+       which must stay cream in *both* themes — a student switching to light
+       mode is changing the furniture around the words, not the paper.
+
+       Inverting the shared token served the first job and destroyed the
+       second: `.sheet` rendered a near-black background under near-black ink
+       at 1.04:1. Splitting them is the fix. `parchment` keeps the chrome-text
+       role the tailwind config documents; `paper` is the sheet, fixed here at
+       the cream both themes want, and it needs no per-theme override. */
+    --c-paper: 93.40% 0.0355 85.41;
+    --c-paper-light: 96.31% 0.0228 84.59;
+    --c-paper-dim: 88.94% 0.0443 85.23;
+    --c-paper-edge: 78.44% 0.0577 82.84;
+    --c-paper-deep: 71.17% 0.0670 80.43;
+
+    /* Gold leaf as a *fill*, pinned, for the same reason `paper` is pinned.
+
+       `gold` is a text colour that has to darken in light mode to stay
+       legible on pale chrome. But a handful of elements — the primary
+       button, the selected setting chip — use gold as a background with
+       fixed near-black lettering on top. Darkening the token for the text
+       role dropped those to 3.07:1: dark ink on a dark fill. A fill whose
+       text does not move must not move either. */
+    --c-gilt: 73.50% 0.1462 84.27;
+    --c-gilt-bright: 86.28% 0.1390 92.43;
 
     /* Reading typeface, swapped by the high-legibility setting. */
     --font-read: 'Newsreader';
@@ -55,53 +90,139 @@
      `:root` carries dark because dark is the app's identity and the one a
      first-time visitor with no stored preference should get — the alternative,
      defaulting to `prefers-color-scheme`, would hand most phones a light
-     rendering of a game whose artwork is lit by lanterns. */
+     rendering of a game whose artwork is lit by lanterns.
+
+     `.story-overlay` is in this selector rather than in a block of its own so
+     it carries the dark palette in *both* themes, with no second copy of the
+     values to keep in step. It earns that because the cutscene it wraps is
+     hardcoded dark by design — the scrim, the drain, the vignette and every
+     [data-story-mood] below are lantern light on a night world, and a pale
+     version of them is not a thing anyone asked for. What light mode was
+     doing instead was inverting the *text* over that unchanged dark set: the
+     skip control measured 2.53:1. Custom properties resolve at the nearest
+     declaring ancestor, so putting the dark values on the overlay element
+     restores every pairing inside it at once. */
   :root,
-  [data-theme='dark'] {
+  [data-theme='dark'],
+  .story-overlay {
     color-scheme: dark;
 
-    --c-leather-950: 20 16 11;
-    --c-leather-900: 28 22 16;
-    --c-leather-850: 36 29 21;
-    --c-leather-800: 46 37 26;
-    --c-leather-750: 58 47 33;
-    --c-leather-700: 74 60 42;
-    --c-leather-600: 93 75 52;
+    --c-leather-950: 17.62% 0.0119 73.11;
+    --c-leather-900: 20.54% 0.0150 72.50;
+    --c-leather-850: 23.63% 0.0182 70.50;
+    --c-leather-800: 27.13% 0.0235 72.17;
+    --c-leather-750: 31.31% 0.0284 73.19;
+    --c-leather-700: 36.60% 0.0349 73.37;
+    --c-leather-600: 42.52% 0.0429 73.08;
 
-    --c-parchment: 244 232 207;
-    --c-parchment-light: 250 242 226;
-    --c-parchment-dim: 232 217 186;
-    --c-parchment-edge: 203 182 143;
-    --c-parchment-deep: 184 158 114;
+    --c-parchment: 93.40% 0.0355 85.41;
+    --c-parchment-light: 96.31% 0.0228 84.59;
+    --c-parchment-dim: 88.94% 0.0443 85.23;
+    --c-parchment-edge: 78.44% 0.0577 82.84;
+    --c-parchment-deep: 71.17% 0.0670 80.43;
 
-    --c-ink: 43 35 23;
-    --c-ink-soft: 90 76 55;
-    --c-ink-faint: 163 144 108;
+    --c-ink: 26.16% 0.0242 77.48;
+    --c-ink-soft: 42.48% 0.0376 77.55;
+    --c-ink-faint: 68.12% 0.0550 83.19;
 
-    --c-gold: 212 160 23;
-    --c-gold-light: 240 207 122;
-    --c-gold-bright: 242 207 91;
-    --c-gold-deep: 156 116 16;
+    --c-gold: 73.50% 0.1462 84.27;
+    --c-gold-light: 86.47% 0.1109 88.82;
+    --c-gold-bright: 86.28% 0.1390 92.43;
+    --c-gold-deep: 58.35% 0.1155 83.37;
 
-    --c-village: 217 164 65;
-    --c-woods: 95 168 107;
-    --c-desert: 210 112 58;
-    --c-cliffs: 79 157 201;
-    --c-summit: 232 195 74;
-    --c-blood: 168 64 47;
+    --c-village: 75.07% 0.1295 79.85;
+    --c-woods: 66.78% 0.1160 148.00;
+    --c-desert: 64.78% 0.1407 47.39;
+    --c-cliffs: 66.46% 0.1009 235.78;
+    --c-summit: 82.78% 0.1421 91.77;
+    --c-blood: 51.19% 0.1407 31.57;
 
-    --c-blood-text: 221 133 113;
-    --c-woods-text: 124 201 138;
-    --c-cliffs-text: 121 192 234;
-    --c-desert-text: 232 148 99;
+    --c-blood-text: 70.54% 0.1129 33.63;
+    --c-woods-text: 76.94% 0.1180 148.86;
+    --c-cliffs-text: 77.67% 0.0934 235.71;
+    --c-desert-text: 74.21% 0.1204 50.32;
+    --c-village-text: 81.95% 0.1196 83.52;
 
-    --c-body: 230 220 198;
+    /* ------------------------------------------------- section and region ink
+
+       The four section accents and the five painted region accents, as tokens
+       rather than as the hex literals they used to be in `content/sections.ts`
+       and `content/regionFlavor.ts`.
+
+       They had to move here because a hex in a data module cannot know what
+       theme it is being painted in, and every one of these is applied as an
+       inline `style={{ color }}` — which no stylesheet rule can reach. They
+       are tuned for the dark chrome, and on pale chrome they simply vanished:
+       English measured 1.30:1 on the Tests screen, Math 1.57, the Summit
+       1.39. Not "a bit low" — invisible.
+
+       The dark values are unchanged, so nothing about the app's own look
+       moves. The light values are each mixed toward ink in OKLab far enough
+       to clear 4.8:1 against the *darkest* chrome surface they can land on
+       (leather-950), not merely against the lightest — the mistake that let
+       gold ship failing. OKLab rather than sRGB because these carry identity:
+       a reader has to still see four different subjects, and sRGB mixing
+       drains the chroma until they all read as brown. */
+    --c-section-english: 87.89% 0.1623 91.02;
+    --c-section-math: 80.85% 0.1285 211.62;
+    --c-section-reading: 75.29% 0.1527 10.35;
+    --c-section-science: 75.54% 0.1412 295.37;
+
+    --c-region-english: 75.07% 0.1295 79.85;
+    --c-region-reading: 66.78% 0.1160 148.00;
+    --c-region-math: 64.78% 0.1407 47.39;
+    --c-region-science: 66.46% 0.1009 235.78;
+    --c-region-summit: 82.78% 0.1421 91.77;
+
+    /* A rank's colour is badge art — pinned, saturated, drawn against a dark
+       ground — and the rank *name* is painted with it too. On the dark theme
+       that is exactly right, so 100% of it survives. See --rank-tint below
+       for what the light theme has to do instead. */
+    --rank-tint: 100%;
+
+    --c-body: 89.66% 0.0314 86.46;
 
     /* The chrome, as a translucent slab. Overridden in light. */
-    --veil-top: 46 37 26;
-    --veil-bottom: 20 16 11;
+    --veil-top: 27.13% 0.0235 72.17;
+    --veil-bottom: 17.62% 0.0119 73.11;
     --veil-alpha: 0.55;
     --grain-strength: 0.05;
+
+    /* ------------------------------------------------------ the elevation ladder
+
+       Six steps, and the reason there are six is that there used to be three
+       — `card`, `sheet`, `pin` — which is not enough to rank anything. A
+       modal, the nav rail, a stat tile and a passage sheet all ended up with
+       the same 1px border doing the whole job of separating them, and
+       border-led UI reads as a wireframe.
+
+       Each step is a *pair*: a tight contact shadow plus a wide ambient one.
+       One shadow alone never reads as an object — it reads as a drawing of
+       an object with a smudge under it. The contact shadow says where the
+       thing touches; the ambient says how far above the ground it floats.
+
+       Both shadows fall down and slightly right, because there is one light
+       source in this app and it sits upper-left. That single constraint is
+       most of why surfaces start reading as objects at all; see --lamp-edge.
+
+       Rules the components follow:
+         · interaction moves a surface by exactly one step, never two
+         · nothing skips a step
+         · step 5 must be accompanied by a scrim over everything beneath it */
+    --e-flush: inset 0 1px 2px oklch(0% 0 0 / 0.5);
+    --e-resting: 0 1px 2px oklch(0% 0 0 / 0.42), 0 2px 6px oklch(0% 0 0 / 0.26);
+    --e-raised: 0 2px 4px oklch(0% 0 0 / 0.46), 0 8px 20px oklch(0% 0 0 / 0.3);
+    --e-lifted: 0 3px 6px oklch(0% 0 0 / 0.5), 0 16px 36px oklch(0% 0 0 / 0.34);
+    --e-floating: 0 6px 12px oklch(0% 0 0 / 0.54), 0 28px 60px oklch(0% 0 0 / 0.4);
+    --e-overlay: 0 10px 20px oklch(0% 0 0 / 0.6), 0 48px 100px oklch(0% 0 0 / 0.48);
+
+    /* Lamplight, as an edge rather than as a glow. A 1px inset highlight on
+       the top edge is what tells the eye a surface has a lit side, and it is
+       the cheapest possible version of "this is a physical thing". Leather is
+       matte and takes almost none of it; paper and gilt take more. */
+    --lamp-edge: inset 0 1px 0 oklch(100% 0 0 / 0.07);
+    --lamp-edge-paper: inset 0 1px 0 oklch(100% 0 0 / 0.55);
+    --lamp-rim: oklch(73.5% 0.1462 84.27 / 0.22);
   }
 
   /* Warm paper rather than a cold white. The reading sheets barely move —
@@ -111,44 +232,97 @@
 
      Every text pairing below was checked against its own surface:
      parchment-dim (78 65 45) on leather-850 (253 248 236) is 8.1:1;
-     ink-faint (108 92 64) on the same is 5.3:1; gold (138 101 14) is 4.9:1. */
+     ink-faint (108 92 64) on the same is 5.3:1.
+
+     Gold was checked the same way and still shipped failing, which is worth
+     recording: it was measured only against leather-850, the *lightest* of
+     the five chrome surfaces, where it read 4.9:1. Eyebrows and links sit on
+     900 and 750 as often as on 850, and there it fell to 4.33 and 4.21 — and
+     on 950, 3.73. The two golds below are now measured against the darkest
+     chrome surface they can land on, so they hold everywhere: gold clears
+     4.60 on 950 and better on the rest, gold-light 6.51 and up. */
   [data-theme='light'] {
     color-scheme: light;
 
-    --c-leather-950: 227 215 190;
-    --c-leather-900: 240 231 212;
-    --c-leather-850: 253 248 236;
-    --c-leather-800: 248 241 224;
-    --c-leather-750: 238 228 205;
-    --c-leather-700: 203 185 150;
-    --c-leather-600: 182 161 122;
+    --c-leather-950: 88.22% 0.0359 85.41;
+    --c-leather-900: 93.00% 0.0271 85.67;
+    --c-leather-850: 97.97% 0.0167 88.00;
+    --c-leather-800: 95.90% 0.0237 88.23;
+    --c-leather-750: 92.07% 0.0324 87.29;
+    --c-leather-700: 79.20% 0.0515 83.90;
+    --c-leather-600: 71.76% 0.0587 82.76;
 
-    --c-parchment: 40 32 20;
-    --c-parchment-light: 24 18 9;
-    --c-parchment-dim: 78 65 45;
-    --c-parchment-edge: 110 94 68;
-    --c-parchment-deep: 132 113 82;
+    --c-parchment: 24.91% 0.0244 77.37;
+    --c-parchment-light: 18.68% 0.0196 77.31;
+    --c-parchment-dim: 38.32% 0.0363 78.08;
+    --c-parchment-edge: 49.05% 0.0440 79.52;
+    --c-parchment-deep: 55.85% 0.0507 79.60;
 
-    --c-ink: 43 35 23;
-    --c-ink-soft: 90 76 55;
-    --c-ink-faint: 108 92 64;
+    --c-ink: 26.16% 0.0242 77.48;
+    --c-ink-soft: 42.48% 0.0376 77.55;
+    --c-ink-faint: 48.30% 0.0465 81.19;
 
-    --c-gold: 138 101 14;
-    --c-gold-light: 122 88 10;
-    --c-gold-bright: 160 116 12;
-    --c-gold-deep: 178 148 82;
+    --c-gold: 48.15% 0.0945 82.59;
+    --c-gold-light: 40.00% 0.0769 82.39;
+    --c-gold-bright: 58.80% 0.1183 81.26;
+    --c-gold-deep: 67.98% 0.0923 85.47;
 
-    --c-blood-text: 143 47 32;
-    --c-woods-text: 44 102 57;
-    --c-cliffs-text: 25 93 133;
-    --c-desert-text: 145 68 26;
+    --c-blood-text: 44.57% 0.1329 31.51;
+    --c-woods-text: 45.90% 0.0946 148.80;
+    --c-cliffs-text: 45.69% 0.0922 239.86;
+    --c-desert-text: 47.88% 0.1171 45.93;
+    --c-village-text: 44.21% 0.0935 74.52;
 
-    --c-body: 40 32 20;
+    /* Each ≥4.8:1 on leather-950, the darkest surface these can land on. */
+    --c-section-english: 46.86% 0.0714 88.20;
+    --c-section-math: 46.39% 0.0487 207.13;
+    --c-section-reading: 47.91% 0.0817 14.24;
+    --c-section-science: 46.83% 0.0640 300.43;
 
-    --veil-top: 255 251 242;
-    --veil-bottom: 236 226 204;
+    --c-region-english: 47.14% 0.0704 77.86;
+    --c-region-reading: 43.69% 0.0594 141.33;
+    --c-region-math: 42.72% 0.0779 48.98;
+    --c-region-science: 43.39% 0.0427 234.14;
+    --c-region-summit: 46.68% 0.0677 89.36;
+
+    /* The same art colour on light chrome bottoms out at 1.04:1 (Sagecrown's
+       #ffe36e on leather-850). Rather than invent seven more tokens for a
+       decorative tint, keep a third of the hue and let --c-parchment — which
+       does invert — supply the rest. Worst case across all seven ranks and
+       both chrome steps is then 5.26:1. */
+    --rank-tint: 35%;
+
+    --c-body: 24.91% 0.0244 77.37;
+
+    --veil-top: 98.87% 0.0126 86.83;
+    --veil-bottom: 91.49% 0.0312 86.46;
     --veil-alpha: 0.78;
     --grain-strength: 0.035;
+
+    /* The same ladder, re-tuned rather than reused.
+
+       A shadow that reads as "lifted" on near-black reads as a bruise on warm
+       paper: the dark theme's step 3 at 50% black under a cream panel looks
+       like dirt, not like height. So the alphas come down by roughly half and
+       the shadow colour stops being neutral black — it carries the ramp's own
+       hue, which is what a warm light actually casts on a warm ground.
+
+       The ladder keeps its shape, so a component asking for `shadow-lifted`
+       gets the same *rank* in both themes and never has to know which one it
+       is in. That is the whole point of naming the steps after their job. */
+    --e-flush: inset 0 1px 2px oklch(35% 0.02 72 / 0.14);
+    --e-resting: 0 1px 2px oklch(35% 0.02 72 / 0.16), 0 2px 6px oklch(35% 0.02 72 / 0.09);
+    --e-raised: 0 2px 4px oklch(35% 0.02 72 / 0.18), 0 8px 20px oklch(35% 0.02 72 / 0.11);
+    --e-lifted: 0 3px 6px oklch(35% 0.02 72 / 0.2), 0 16px 36px oklch(35% 0.02 72 / 0.13);
+    --e-floating: 0 6px 12px oklch(35% 0.02 72 / 0.22), 0 28px 60px oklch(35% 0.02 72 / 0.16);
+    --e-overlay: 0 10px 20px oklch(35% 0.02 72 / 0.26), 0 48px 100px oklch(35% 0.02 72 / 0.2);
+
+    /* On a pale ground the lit edge has to be a *shadow* of a highlight —
+       white on cream is invisible, so the top edge darkens very slightly
+       instead, which reads as the same bevel from the same light. */
+    --lamp-edge: inset 0 1px 0 oklch(35% 0.02 72 / 0.06);
+    --lamp-edge-paper: inset 0 1px 0 oklch(100% 0 0 / 0.8);
+    --lamp-rim: oklch(48.15% 0.0945 82.59 / 0.28);
   }
 
   html {
@@ -158,7 +332,7 @@
 
   body {
     @apply bg-leather-900 font-sans antialiased;
-    color: rgb(var(--c-body));
+    color: oklch(var(--c-body));
     /* A faint woven texture so large dark areas are not flat. */
     background-image:
       radial-gradient(ellipse at 22% 12%, rgba(212, 160, 23, 0.05), transparent 55%),
@@ -188,10 +362,11 @@
     z-index: 1;
   }
 
-  /* Reduced-data mode: the map, the camp and the character cutouts are the
-     heavy part of this app on a metered connection. The setting swaps every
-     one of them for a painted-in gradient in the same key, so the layout and
-     the colour story survive and the bytes do not. See `prefs.tsx`. */
+  /* Reduced-data mode: the region backdrops, the camp and the character
+     cutouts are the heavy part of this app on a metered connection. The
+     setting swaps every one of them for a painted-in gradient in the same key,
+     so the layout and the colour story survive and the bytes do not. See
+     `prefs.tsx`. */
   [data-data='reduced'] .art-heavy {
     display: none !important;
   }
@@ -242,8 +417,9 @@
 
 @layer components {
   /* ------------------------------------------------------------- nav rail
-     A lit rail rather than a row of tabs: drawn glyphs, a marker that slides
-     between destinations, and a lift on hover. */
+     A lit rail down the left edge rather than a row of tabs: grouped
+     destinations, a drawn glyph each, a bar on the active item's leading edge,
+     and a lift on hover. */
 
   .brand-sigil {
     @apply flex h-8 w-8 flex-none items-center justify-center rounded-lg border
@@ -257,47 +433,72 @@
       0 0 14px rgba(212, 160, 23, 0.28);
   }
 
-  .nav-item {
-    @apply relative flex items-center gap-2 rounded-lg px-3 py-2 font-display
-           text-[13.5px] font-semibold tracking-wide text-parchment-dim
-           transition-all duration-200;
+  /* A group heading. Small-caps script at the smallest size the type system
+     has: it has to separate the groups without competing with the eight
+     destinations that are the actual navigation. */
+  .rail-group {
+    @apply px-2.5 font-script text-[10.5px] uppercase tracking-[0.2em] text-gold-deep;
   }
-  .nav-item:hover {
-    @apply -translate-y-px bg-leather-850 text-parchment;
+
+  .rail-item {
+    @apply relative flex items-center gap-2.5 rounded-lg py-1.5 pl-3 pr-2.5
+           text-parchment-dim transition-all duration-200;
   }
-  .nav-item-glyph {
+  .rail-item:hover {
+    @apply bg-leather-850 text-parchment;
+  }
+  .rail-glyph {
     @apply flex-none text-ink-faint transition-all duration-200;
   }
-  .nav-item:hover .nav-item-glyph {
-    @apply -translate-y-px text-gold;
-  }
-  .nav-item-active {
-    @apply text-gold;
-  }
-  .nav-item-active .nav-item-glyph {
+  .rail-item:hover .rail-glyph {
     @apply text-gold;
   }
 
-  /* The sliding underline. Positioned in JS, animated in CSS. */
-  .nav-marker {
-    @apply pointer-events-none absolute bottom-0 block h-[2px] rounded-full;
-    background: linear-gradient(90deg, transparent, theme('colors.gold.bright'), transparent);
+  /* The active bar, on the leading edge. Collapsed to nothing when inactive so
+     it grows into place rather than appearing — and drawn per item, which is
+     why the vertical rail needs none of the DOM measurement the horizontal one
+     did. */
+  .rail-marker {
+    @apply pointer-events-none absolute left-0 top-1/2 block w-[3px] -translate-y-1/2
+           rounded-full transition-all duration-200;
+    height: 0;
+    opacity: 0;
+    background: linear-gradient(180deg, theme('colors.gold.deep'), theme('colors.gold.bright'));
     box-shadow: 0 0 10px rgba(242, 207, 91, 0.55);
   }
-
-  .nav-item-mobile {
-    @apply flex items-center gap-2.5 rounded-lg border border-leather-700 bg-leather-850
-           px-3.5 py-3 text-left font-display text-[14px] font-semibold
-           text-parchment-dim transition-all duration-150;
+  .rail-item-active {
+    @apply bg-leather-850 text-gold;
   }
-  .nav-item-mobile:active {
-    @apply scale-[.98];
+  .rail-item-active .rail-marker {
+    height: 62%;
+    opacity: 1;
   }
-  .nav-item-mobile-active {
-    @apply border-gold-deep bg-leather-750 text-gold;
+  .rail-item-active .rail-glyph {
+    @apply text-gold;
   }
 
-  /* Right-hand HUD block: rank sigil, name, XP. */
+  /* A destination's own size, beside its label. Tabular so the column of them
+     does not wobble, and gold because it is the one number in the chrome that
+     is trying to persuade you of something. */
+  .rail-meta {
+    @apply num flex-none text-[11px] font-semibold leading-none text-gold-deep;
+  }
+  .rail-item:hover .rail-meta,
+  .rail-item-active .rail-meta {
+    @apply text-gold;
+  }
+
+  /* The bank total at the foot of the rail. */
+  .rail-bank {
+    @apply block rounded-lg border border-gold-deep/45 bg-leather-900/70 px-3 py-2.5
+           text-center transition-all duration-200;
+  }
+  .rail-bank:hover {
+    @apply border-gold-deep bg-leather-850;
+    box-shadow: 0 0 18px rgba(212, 160, 23, 0.18);
+  }
+
+  /* Rank block: sigil, name, XP. */
   .hud-block {
     @apply flex items-center gap-2.5 rounded-lg border border-leather-700 bg-leather-850
            px-2.5 py-1.5 transition-all duration-200;
@@ -347,15 +548,14 @@
      A story beat can say what the world is doing while it is spoken, and this
      is what does it. See `BeatMood` in story.ts for the reasoning; the short
      version is that the scene used to be played on a curtain — an 88% scrim
-     and a picture of the camp, drawn over the map whatever was being said — so
-     Wizzy described the Grey lying over the land with the land hidden behind
-     him.
+     and a picture of the camp, drawn over whatever was being said — so Wizzy
+     described the Grey lying over the land with the land hidden behind him.
 
-     Everything here keys off one attribute on <html>, which is why the map
-     underneath reacts without the overlay and the map knowing about each
-     other. Every layer transitions rather than cuts, and they all share the
-     same duration, so a mood change is one movement of the whole screen
-     instead of four things starting at once.
+     Everything here keys off one attribute on <html>, which is why the screen
+     underneath reacts without it and the overlay knowing about each other.
+     Every layer transitions rather than cuts, and they all share the same
+     duration, so a mood change is one movement of the whole screen instead of
+     four things starting at once.
 
      900ms is slow for a UI transition and right for this: it is the difference
      between the world changing and the world being switched. */
@@ -367,20 +567,20 @@
       background 900ms ease;
   }
 
-  /* The base scrim. Thin, because the whole point is that the map stays
-     visible — the card carries its own 96%-opaque background, so nothing here
-     is holding the text up. */
+  /* The base scrim. Thin, because the whole point is that the screen behind
+     stays visible — the card carries its own 96%-opaque background, so nothing
+     here is holding the text up. */
   .story-scrim {
     background: rgba(12, 9, 6, 0.58);
     backdrop-filter: blur(2px);
   }
 
-  /* Colour drained out of everything beneath, by the same trick PlagueLayer
-     uses on the map: `saturation` takes this layer's saturation and the hue
-     and lightness of what is under it, so a flat grey pulls the life out of
-     the map, the pins, Wizzy and the card in one pass without any of them
-     knowing. A filter on the map root would have cost a re-raster of every
-     layer in it and would not have touched the overlay at all. */
+  /* Colour drained out of everything beneath. `saturation` takes this layer's
+     saturation and the hue and lightness of what is under it, so a flat grey
+     pulls the life out of the backdrop, Wizzy and the card in one pass without
+     any of them knowing. A filter on a root element would have cost a
+     re-raster of every layer inside it and would not have touched this overlay
+     at all. */
   .story-drain {
     background: #808080;
     mix-blend-mode: saturation;
@@ -398,9 +598,9 @@
     background: radial-gradient(ellipse at 50% 58%, transparent 38%, rgba(12, 9, 6, 0.86) 100%);
   }
 
-  /* Weather across the whole frame, not in its band. Same construction as the
-     map's banks — rasterised small, scaled up, moved only by transform — so a
-     screen of storm costs about two viewports of surface and no repaints. */
+  /* Weather across the whole frame, not in its band. Rasterised small, scaled
+     up, moved only by transform — so a screen of storm costs about two
+     viewports of surface and no repaints. */
   .story-weather {
     @apply pointer-events-none absolute inset-0 overflow-hidden;
     opacity: 0;
@@ -413,11 +613,34 @@
     width: 48%;
     height: 48%;
     transform-origin: 50% 50%;
-    /* A duration here as well as inline: this class is outside the map, so
-       `check-map-animations` does not police it, and an animation that
-       computes to 0s fails silently. */
-    animation: fx-grey-churn 40s ease-in-out infinite;
+    /* A duration here as well as the inline one StoryOverlay sets per sheet.
+       An animation that computes to 0s fails silently — it simply parks on the
+       first keyframe, and a storm that does not move still looks like fog. */
+    animation: story-churn 40s ease-in-out infinite;
     will-change: transform;
+  }
+  /* Percentages in `translate` resolve against the element's own border box —
+     48% of the frame — so `--cx: 22%` moves the sheet about 10% of the frame,
+     against 22% of overhang on that side. The sheet's edge stays outside the
+     viewport at every point in the cycle, so the storm never shows a seam. */
+  @keyframes story-churn {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(var(--churn-scale, 3));
+    }
+    25% {
+      transform: translate(-50%, -50%) translate(var(--cx, 20%), calc(var(--cy, 14%) * -1))
+        scale(calc(var(--churn-scale, 3) * 1.07));
+    }
+    50% {
+      transform: translate(-50%, -50%) translate(calc(var(--cx, 20%) * -0.55), var(--cy, 14%))
+        scale(var(--churn-scale, 3));
+    }
+    75% {
+      transform: translate(-50%, -50%)
+        translate(calc(var(--cx, 20%) * -1), calc(var(--cy, 14%) * -0.45))
+        scale(calc(var(--churn-scale, 3) * 1.1));
+    }
   }
 
   /* ----------------------------------------------------------- the moods */
@@ -467,25 +690,16 @@
     opacity: 1;
   }
 
-  /* The map itself, underneath. The Grey's own banks lean into a grey beat and
-     fall back afterwards, so the weather Wizzy is describing is the weather on
-     the map behind him rather than a separate effect drawn on top of it. */
-  [data-story-mood='grey'] .mapfx-grey-bank {
-    /* The transition lives on the base class, so this eases in *and* back out
-       when the mood clears. */
-    opacity: 0.86 !important;
-  }
-  /* The wisps lash harder. Deliberately not the storm light: fx-grey-flash
-     clears the 10% relative-luminance bar, so every stab counts as a flash
-     under WCAG 2.3.1, which allows three in any one second. Six flash elements
-     are mounted at a time and their clocks are independent — at the shipped
-     17/23/29s periods they can only rarely coincide, but shortened to a common
-     few seconds they would align regularly and put six inside a second. The
-     audience is 13-to-17-year-olds. The fog surging is what makes a grey beat
-     violent; more lightning is not worth a seizure risk. */
-  [data-story-mood='grey'] .mapfx-grey-tendril {
-    animation-duration: 5s !important;
-  }
+  /* A grey beat used to reach past the overlay and lean on the map's own fog
+     banks underneath, so the weather Wizzy describes was the weather behind
+     him. There is no map behind him now, and `.story-weather` above carries
+     the whole storm on its own.
+
+     One rule from that pass is worth keeping in mind if this ever grows
+     lightning: a white stab clears the 10% relative-luminance bar, so each one
+     counts as a flash under WCAG 2.3.1, which allows three per second. The
+     audience is 13-to-17-year-olds, and fog surging is what makes a grey beat
+     feel violent anyway. */
 
   /* ----------------------------------------------------------- the juice bus
 
@@ -514,23 +728,83 @@
     );
   }
 
+  /* ------------------------------------------------------------ materials
+
+     Every surface in the app declares which of three materials it is made of,
+     and its fill, edge and shadow follow from that. Nothing picks a shadow or
+     an edge per component any more.
+
+       LEATHER  the tooled cover — all chrome. Matte, absorbs light. Its edge
+                is a debossed groove, not a drawn line.
+       PAPER    the page — every reading surface. Catches light, takes a real
+                drop shadow, and never wears a gold border.
+       GILT     gold leaf — only ever an edge, a letter or a seal. Never a
+                large flat fill, because large flat gold reads as plastic.
+
+     A fourth thing, lamplight, is not a material: it is the rule that there is
+     one light source, upper-left, and that every shadow and every lit edge in
+     the app agrees about where it is. That agreement is most of why these
+     start reading as objects rather than as rectangles.
+
+     `.panel` and `.sheet` are kept as the names the app already uses — about
+     ninety call sites — and re-pointed at the materials underneath. Renaming
+     them would have been ninety diffs for no behaviour change. */
+
+  .mat-leather {
+    @apply bg-leather-850/90 backdrop-blur-sm;
+    /* The groove, not a stroke: a hairline of the ramp's own darker step,
+       plus the lit top edge. A 1px border-leather-700 used to do this job
+       alone, which is why everything read as a wireframe — the border was
+       the only thing separating a surface from its background. */
+    border: 1px solid oklch(var(--c-leather-700) / 0.55);
+  }
+
+  /* The reading surface. Four layers, and each is doing a job: the grain tile
+     breaks up the flat fill, the 4px repeating rule is laid paper's chain
+     lines, and the two off-centre radials are the uneven thickness a sheet
+     pressed by hand actually has. Multiplying the grain rather than laying it
+     over is what keeps it reading as fibre in the paper instead of dust on
+     top of it. */
+  .mat-paper {
+    @apply text-ink;
+    background-color: theme('colors.paper.DEFAULT');
+    background-image:
+      var(--grain-paper),
+      repeating-linear-gradient(90deg, rgba(184, 158, 114, 0.055) 0 1px, transparent 1px 4px),
+      radial-gradient(circle at 18% 22%, rgba(184, 158, 114, 0.14), transparent 45%),
+      radial-gradient(circle at 78% 74%, rgba(184, 158, 114, 0.12), transparent 42%);
+    background-blend-mode: multiply, normal, normal, normal;
+    border: 1px solid theme('colors.paper.edge');
+  }
+
+  .mat-gilt-rule {
+    @apply pointer-events-none block h-px w-full;
+    background: linear-gradient(90deg, transparent, oklch(var(--c-gold-light) / 0.55), transparent);
+  }
+
   /* --------------------------------------------------------------- chrome */
 
   .panel {
-    @apply rounded-xl border border-leather-700 bg-leather-850/90 shadow-card
-           backdrop-blur-sm transition-all duration-200;
+    @apply mat-leather rounded-xl transition-[transform,box-shadow,border-color] duration-base ease-out;
+    box-shadow:
+      var(--lamp-edge),
+      var(--e-raised);
   }
   /* Only interactive panels lift — a static card that moves under the cursor
-     reads as a bug. */
+     reads as a bug.
+
+     One step up the ladder, never two: raised to lifted. The old rule hand-
+     wrote a third shadow with a gold glow in it, which is how a hover state
+     ends up brighter than the modal it sits under. */
   a.panel:hover,
   button.panel:hover,
   a.panel-lit:hover,
   button.panel-lit:hover {
-    @apply -translate-y-0.5 border-gold-deep;
+    @apply -translate-y-0.5;
+    border-color: var(--lamp-rim);
     box-shadow:
-      0 2px 0 rgba(0, 0, 0, 0.35),
-      0 14px 30px rgba(0, 0, 0, 0.4),
-      0 0 22px rgba(212, 160, 23, 0.12);
+      var(--lamp-edge),
+      var(--e-lifted);
   }
 
   /* A gold hairline along the top edge — reads as lantern light catching a
@@ -540,8 +814,7 @@
   }
   .panel-lit::before {
     content: '';
-    @apply pointer-events-none absolute inset-x-0 top-0 h-px;
-    background: linear-gradient(90deg, transparent, rgba(240, 207, 122, 0.55), transparent);
+    @apply mat-gilt-rule absolute inset-x-0 top-0;
   }
 
   .heading {
@@ -582,7 +855,7 @@
   }
 
   .btn-primary {
-    @apply border-gold-deep bg-gradient-to-b from-gold-bright to-gold text-[#2a2008];
+    @apply border-gold-deep bg-gradient-to-b from-gilt-bright to-gilt text-[#2a2008];
     box-shadow:
       0 1px 0 rgba(255, 255, 255, 0.35) inset,
       0 6px 16px rgba(212, 160, 23, 0.25);
@@ -618,8 +891,15 @@
     @apply border-gold-deep bg-leather-750 text-parchment;
   }
 
+  /* `paper-light`, not `parchment-light`, and the distinction matters here.
+     The fill is a fixed red in both themes, so its text has to be a fixed
+     cream — and `parchment-light` inverts to near-black in light mode, which
+     put dark text on the red at 3.05:1. This is the one place a surface token
+     legitimately does a foreground job: what is wanted is literally "the
+     cream, pinned", and that is what `paper` now means. The same reasoning
+     covers the two answer-feedback keys below. */
   .btn-danger {
-    @apply border-[#7d2f22] bg-blood text-parchment-light;
+    @apply border-[#7d2f22] bg-blood text-paper-light;
   }
   .btn-danger:hover:not(:disabled) {
     @apply bg-[#bd4c39];
@@ -627,10 +907,10 @@
 
   /* On parchment surfaces the ghost button needs ink, not cream. */
   .btn-quill {
-    @apply border-parchment-deep bg-parchment-dim text-ink;
+    @apply border-paper-deep bg-paper-dim text-ink;
   }
   .btn-quill:hover:not(:disabled) {
-    @apply border-ink-soft bg-parchment-light;
+    @apply border-ink-soft bg-paper-light;
   }
 
   .btn-lg {
@@ -691,8 +971,8 @@
            transition-all duration-200;
     background: linear-gradient(
       180deg,
-      rgb(var(--veil-top) / var(--veil-alpha)),
-      rgb(var(--veil-bottom) / calc(var(--veil-alpha) + 0.07))
+      oklch(var(--veil-top) / var(--veil-alpha)),
+      oklch(var(--veil-bottom) / calc(var(--veil-alpha) + 0.07))
     );
     box-shadow:
       inset 0 1px 0 rgba(240, 207, 122, 0.07),
@@ -721,8 +1001,8 @@
     @apply relative rounded-lg border border-leather-700/50 backdrop-blur-sm;
     background: linear-gradient(
       180deg,
-      rgb(var(--veil-top) / calc(var(--veil-alpha) - 0.13)),
-      rgb(var(--veil-bottom) / calc(var(--veil-alpha) - 0.07))
+      oklch(var(--veil-top) / calc(var(--veil-alpha) - 0.13)),
+      oklch(var(--veil-bottom) / calc(var(--veil-alpha) - 0.07))
     );
   }
 
@@ -763,16 +1043,11 @@
      the grain's dark pixels and leaves the light ones alone, which is what
      fibre does to ink-receptive paper. Overlay would have lifted the
      highlights and made it look like plastic. */
+  /* A sheet is the paper material, cornered and lifted off the desk. The
+     material itself carries no radius or shadow so it can also line a popup
+     or a pull-quote without bringing a card's geometry along with it. */
   .sheet {
-    @apply rounded-xl text-ink shadow-sheet;
-    background-color: theme('colors.parchment.DEFAULT');
-    background-image:
-      var(--grain-paper),
-      repeating-linear-gradient(90deg, rgba(184, 158, 114, 0.055) 0 1px, transparent 1px 4px),
-      radial-gradient(circle at 18% 22%, rgba(184, 158, 114, 0.14), transparent 45%),
-      radial-gradient(circle at 78% 74%, rgba(184, 158, 114, 0.12), transparent 42%);
-    background-blend-mode: multiply, normal, normal, normal;
-    border: 1px solid theme('colors.parchment.edge');
+    @apply mat-paper rounded-xl shadow-sheet;
   }
 
   .prose-quill {
@@ -789,7 +1064,7 @@
     @apply italic text-ink-soft;
   }
   .prose-quill code {
-    @apply rounded bg-parchment-dim px-1.5 py-0.5 font-mono text-[0.88em] text-[#4a3a1c];
+    @apply rounded bg-paper-dim px-1.5 py-0.5 font-mono text-[0.88em] text-[#4a3a1c];
   }
 
   .prose-passage {
@@ -942,11 +1217,11 @@
     @apply w-full border-collapse text-[0.95rem];
   }
   .quill-table th {
-    @apply border-b-2 border-parchment-edge bg-parchment-dim px-3 py-2 text-left
+    @apply border-b-2 border-paper-edge bg-paper-dim px-3 py-2 text-left
            font-script text-[0.8rem] uppercase tracking-[0.12em] text-ink-soft;
   }
   .quill-table td {
-    @apply border-b border-parchment-edge px-3 py-2 font-read;
+    @apply border-b border-paper-edge px-3 py-2 font-read;
   }
   .quill-table tr:last-child td {
     @apply border-b-0;
@@ -955,8 +1230,8 @@
   /* ---------------------------------------------------------------- choice */
 
   .choice {
-    @apply flex w-full items-start gap-3 rounded-lg border-2 border-parchment-edge
-           bg-parchment-light/70 px-4 py-3 text-left font-read text-[1.04rem]
+    @apply flex w-full items-start gap-3 rounded-lg border-2 border-paper-edge
+           bg-paper-light/70 px-4 py-3 text-left font-read text-[1.04rem]
            leading-relaxed text-ink transition-colors duration-100;
   }
   /* Colour and shadow only. The nudge on hover, the give on press and the
@@ -965,31 +1240,35 @@
      overridden by it or, in the case of a keyframe animation, silently win
      and cancel it. Transform belongs to exactly one owner per element. */
   .choice:hover:not(:disabled):not(.choice-locked) {
-    @apply border-ink-faint bg-parchment-light;
+    @apply border-ink-faint bg-paper-light;
     box-shadow: 0 3px 10px rgba(43, 35, 23, 0.14);
   }
   .choice-key {
     @apply mt-px flex h-6 w-6 flex-none items-center justify-center rounded-full
-           border-2 border-parchment-deep bg-parchment-dim font-display
+           border-2 border-paper-deep bg-paper-dim font-display
            text-[12px] font-semibold text-ink-soft;
   }
+  /* Choice states live entirely on the paper sheet, so every literal here is
+     pinned in both themes — the sheet does not invert. The greens were
+     #3f7d47, which put the key's paper-light letter at 4.45:1; #367040 is the
+     same hue two steps down and lands at 5.35:1. */
   .choice-correct {
-    @apply border-[#3f7d47] bg-[#e9f3e8];
+    @apply border-[#367040] bg-[#e9f3e8];
   }
   .choice-correct .choice-key {
-    @apply border-[#3f7d47] bg-[#3f7d47] text-parchment-light;
+    @apply border-[#367040] bg-[#367040] text-paper-light;
   }
   .choice-wrong {
     @apply border-blood bg-[#f8eae6];
   }
   .choice-wrong .choice-key {
-    @apply border-blood bg-blood text-parchment-light;
+    @apply border-blood bg-blood text-paper-light;
   }
   .choice-selected {
     @apply border-gold-deep bg-[#f7eed6];
   }
   .choice-selected .choice-key {
-    @apply border-gold-deep bg-gold text-[#2a2008];
+    @apply border-gold-deep bg-gilt text-[#2a2008];
   }
 
   /* ---------------------------------------------------------------- layout */
@@ -997,1701 +1276,6 @@
   .shell {
     @apply mx-auto w-full px-4 sm:px-6;
     max-width: var(--shell-max);
-  }
-
-  /* ------------------------------------------------------------- map atoms */
-
-  /* A landmark pin. Sized in map-space pixels, because the whole world layer
-     is scaled by one transform — a viewport-relative size would fight it. */
-  /* Position and transform, kept apart.
-
-     The pin used to carry both: `-translate-x-1/2 -translate-y-1/2` to sit on
-     its coordinate, and a CSS transition for its hover lift. That works until
-     something else wants to drive `transform` — Motion writes the whole
-     property, so a spring on `scale` would silently throw away the centring
-     and drop every pin half its width down and right. The anchor holds the
-     position; the button inside is free to be animated. */
-  .pin-anchor {
-    @apply absolute z-10;
-    transform: translate(-50%, -50%);
-  }
-  .pin {
-    @apply relative flex cursor-pointer items-center justify-center rounded-full border-2;
-    width: 34px;
-    height: 34px;
-    box-shadow: theme('boxShadow.pin');
-  }
-
-  /* Hover card above a pin.
-
-     Counter-scaled, and that is the whole point of it.
-
-     Everything in the map's transformed layer is scaled by one `scale()`,
-     which is right for the world — a landmark is a place, and places get
-     bigger as you lean in. It is wrong for a label. This card is writing
-     *about* the world, and it was being magnified with it: measured on a
-     375px phone at a middling zoom, 26px type in a card 386px wide — 103% of
-     the screen, off both edges, and that was not even full zoom. At the top
-     of the zoom range it works out near 44px type in a 650px card.
-
-     Dividing the layer's scale back out pins the card to real CSS pixels at
-     every zoom, so 13px type is 13px type. `transform-origin` is the bottom
-     centre — the point where the card meets the pin — so it stays hitched to
-     its landmark instead of sliding off as the scale changes. The gap above
-     the pin is part of the transform rather than a margin, because a margin
-     would be back in map space and would breathe with the zoom again. */
-  .pin-card {
-    @apply pointer-events-none absolute bottom-full left-1/2 z-20 hidden w-max
-           max-w-[15rem] rounded-lg border border-parchment-edge
-           bg-parchment px-3 py-2 text-left shadow-card;
-    transform-origin: bottom center;
-    transform: translateX(-50%) scale(calc(1 / var(--map-scale, 1))) translateY(-0.5rem);
-  }
-  .pin:hover .pin-card,
-  .pin:focus-visible .pin-card {
-    @apply block;
-  }
-
-  /* On a touch screen the card above can never open: neither `:hover` nor
-     `:focus-visible` fires for a thumb, and a tap navigates straight into the
-     zone. So on those devices every string this map carries about its own
-     contents is unreachable — the landmark's name, what it teaches, the best
-     score, how many questions have come due. What is left is a numbered disc,
-     which is a poor thing to hand a phone-first audience.
-
-     Only the *current* pin gets it, and only where hover is unavailable.
-     Showing all 37 would bury the map they are drawn on, and one card per
-     region says the same "go here next" the gold ring already means — it just
-     names the place. `hover: none` rather than `pointer: coarse`: a laptop
-     with a touchscreen reports coarse but can still hover, and should keep the
-     hover behaviour rather than growing four permanent cards. */
-  @media (hover: none) {
-    .pin-current .pin-card {
-      @apply block;
-    }
-  }
-
-  /* Map HUD furniture. */
-  .map-btn {
-    @apply inline-flex items-center gap-1.5 rounded-lg border border-leather-700
-           bg-leather-950/85 px-3.5 py-2 font-display text-[13px] font-semibold
-           text-parchment-dim shadow-card backdrop-blur transition-colors;
-  }
-  .map-btn:hover {
-    @apply border-gold-deep text-parchment;
-  }
-
-  /* Wraps rather than overflows. Four tallies at full width come to 426px,
-     which is wider than the phone most of this audience reads it on — it used
-     to run off the right edge and back across the Camp button. Wrapping costs
-     a second line on a narrow screen and keeps every number on it. */
-  .map-hud {
-    @apply flex flex-wrap items-center justify-end gap-x-2.5 gap-y-1
-           rounded-lg border border-leather-700 bg-leather-950/85 px-3.5 py-2
-           shadow-card backdrop-blur sm:gap-x-1;
-  }
-  /* The dividing rules only exist at widths where the bar fits on one line.
-     CSS cannot tell which item started a new row, so a `border-l` that
-     survived the wrap would draw a stray tick in the left margin of row two.
-     Below `sm` the gap does the separating instead. */
-  .map-hud-sep {
-    @apply sm:ml-2 sm:border-l sm:border-leather-700 sm:pl-2;
-  }
-
-  /* The rank cartouche, under the tallies. Narrower than `.map-hud` and
-     right-aligned to it, so the two read as one stack rather than as two
-     unrelated boxes that happen to share a corner. */
-  .rank-cartouche {
-    @apply flex items-center gap-2 rounded-lg border border-leather-700
-           bg-leather-950/85 py-1.5 pl-2 pr-3 shadow-card backdrop-blur
-           transition-colors;
-  }
-  .rank-cartouche:hover {
-    @apply border-gold-deep;
-  }
-  .rank-cartouche-bar {
-    display: block;
-    width: 72px;
-    height: 3px;
-    border-radius: 999px;
-    background: rgba(255, 251, 240, 0.13);
-    overflow: hidden;
-  }
-  .rank-cartouche-bar > i {
-    display: block;
-    height: 100%;
-    border-radius: 999px;
-    /* Width only. Animating the fill would mean it starts empty every time the
-       map mounts, so a student who opened the map twice would watch their rank
-       progress "earn itself" again — and under reduced motion it would park at
-       whichever keyframe was last, which is not necessarily the true value. */
-    transition: width 420ms cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  /* Keep the map's controls out from under the hardware.
-
-     index.html asks for `viewport-fit=cover` so the artwork can bleed into the
-     display cutout — which is right for the artwork and wrong for everything
-     drawn on top of it. Nothing here ever padded for the insets, so on a phone
-     with a Dynamic Island the exit button and the landmark counter sat under
-     it, and "find my traveller" sat under the home indicator. The map is the
-     screen this audience spends the most time on, and most of them are holding
-     a phone in portrait.
-
-     `max()` rather than a bare inset so the padding never collapses to nothing
-     on hardware that reports zero. */
-  .map-safe {
-    padding-top: max(0.75rem, env(safe-area-inset-top));
-    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
-    padding-left: max(0.75rem, env(safe-area-inset-left));
-    padding-right: max(0.75rem, env(safe-area-inset-right));
-  }
-  @media (min-width: 640px) {
-    .map-safe {
-      padding-top: max(1.25rem, env(safe-area-inset-top));
-      padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
-      padding-left: max(1.25rem, env(safe-area-inset-left));
-      padding-right: max(1.25rem, env(safe-area-inset-right));
-    }
-  }
-
-  /* The current objective, sitting on the map. The story needs somewhere to
-     live between overlays, or the quest chain is invisible while you work. */
-  .quest-card {
-    @apply rounded-xl border border-leather-700 bg-leather-950/90 px-4 py-3
-           shadow-card backdrop-blur;
-    border-top-color: rgba(212, 160, 23, 0.45);
-  }
-  .quest-bar {
-    @apply block h-1 overflow-hidden rounded-full bg-leather-900;
-  }
-  .quest-bar > i {
-    @apply block h-full rounded-full transition-[width] duration-700 ease-out;
-    background: linear-gradient(90deg, theme('colors.gold.deep'), theme('colors.gold.bright'));
-  }
-
-  .map-zoom {
-    @apply flex h-9 w-9 items-center justify-center rounded-lg border border-leather-700
-           bg-leather-950/85 font-display text-[18px] leading-none text-parchment-dim
-           shadow-card backdrop-blur transition-colors;
-  }
-  .map-zoom:hover {
-    @apply border-gold-deep text-gold;
-  }
-  .pin:hover,
-  .pin:focus-visible {
-    transform: translate(-50%, -50%) scale(1.18);
-  }
-  .pin-open {
-    @apply border-[#f3e4bd] bg-gradient-to-b from-[#fdf3d6] to-[#e2c98e] text-ink;
-  }
-  .pin-done {
-    @apply border-[#cfe6c6] bg-gradient-to-b from-[#8fce8a] to-[#4f9a53] text-[#123018];
-  }
-  .pin-locked {
-    @apply cursor-not-allowed border-[#6a5b45] bg-gradient-to-b from-[#57492f] to-[#3a2f21] text-[#a2917a];
-  }
-  .pin-current {
-    @apply border-[#fff0c0];
-    background: linear-gradient(180deg, #ffe89a, #e8b62e);
-    color: #2a2008;
-  }
-  .pin-summit {
-    @apply border-[#fff1bb];
-    background: linear-gradient(180deg, #ffe89a, #e0a81c);
-  }
-
-  /* ------------------------------------------------------------- map fx
-     Everything below is scenery motion layered over the illustration. All of
-     it is positioned in map-percentage space and is pointer-transparent, so
-     it stays locked to its landmark through any pan or zoom. */
-
-  .mapfx {
-    @apply pointer-events-none absolute inset-0 overflow-hidden;
-  }
-  .mapfx > span {
-    @apply pointer-events-none absolute block;
-    transform: translate(-50%, -50%);
-  }
-
-  /* --------------------------------------------------------------- volcano
-
-     Same treatment as the waterfall, and the same discovery: the effects were
-     off the feature. Sampling for hot pixels (red high, blue low) puts the
-     crater at x 81.5, y 42 — the brightest are rgb(246,214,33) and
-     rgb(240,116,45) at x 81-82. The heat shimmer was at x 77.5, four percent
-     to the left, glowing over ordinary canyon rock. */
-
-  /* the molten core, breathing */
-  .mapfx-crater {
-    border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(255, 244, 190, 0.95) 0%,
-      rgba(255, 176, 48, 0.75) 28%,
-      rgba(226, 88, 30, 0.45) 55%,
-      transparent 76%
-    );
-    filter: blur(2px);
-    animation: fx-crater ease-in-out infinite;
-  }
-  @keyframes fx-crater {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) scale(0.88);
-      opacity: 0.6;
-    }
-    50% {
-      transform: translate(-50%, -50%) scale(1.12);
-      opacity: 0.95;
-    }
-  }
-
-  /* light thrown onto the rock around the crater, so the glow lands on
-     something rather than floating */
-  .mapfx-craterlight {
-    border-radius: 50%;
-    background: radial-gradient(
-      ellipse,
-      rgba(255, 158, 62, 0.4) 0%,
-      rgba(226, 88, 30, 0.16) 45%,
-      transparent 72%
-    );
-    filter: blur(7px);
-    mix-blend-mode: screen;
-    animation: fx-crater ease-in-out infinite;
-  }
-
-  /* an ash plume, leaning with the wind as it rises */
-  .mapfx-plume {
-    border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(84, 72, 66, 0.5) 0%,
-      rgba(104, 92, 84, 0.22) 50%,
-      transparent 74%
-    );
-    filter: blur(5px);
-    animation: fx-plume ease-out infinite;
-  }
-  @keyframes fx-plume {
-    0% {
-      transform: translate(-50%, -50%) translate(0, 0) scale(0.35);
-      opacity: 0;
-    }
-    22% {
-      opacity: 0.55;
-    }
-    100% {
-      transform: translate(-50%, -50%) translate(140%, -420%) scale(2.4);
-      opacity: 0;
-    }
-  }
-
-  /* the surge — every so often the crater flares and throws more up */
-  .mapfx-surge {
-    border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(255, 236, 170, 0.9) 0%,
-      rgba(255, 150, 40, 0.5) 40%,
-      transparent 70%
-    );
-    filter: blur(4px);
-    animation: fx-surge ease-out infinite;
-  }
-  @keyframes fx-surge {
-    0%,
-    82%,
-    100% {
-      transform: translate(-50%, -50%) scale(0.5);
-      opacity: 0;
-    }
-    88% {
-      transform: translate(-50%, -50%) scale(1.5);
-      opacity: 0.85;
-    }
-    94% {
-      transform: translate(-50%, -50%) scale(1.9);
-      opacity: 0.2;
-    }
-  }
-
-  /* ------------------------------------------------------------- waterfall
-
-     Rebuilt against the artwork rather than by eye. Pixel-sampling the
-     illustration puts the lip at y 35.5-36.5, the water column at x 7.4-11.8,
-     and painted foam in the plunge pool from y 42 to 46 spreading right to
-     x 15. The old streaks ran x 8.3-12.5 starting at y 32.5 — which is still
-     river, above the drop — so half of them fell down bare rock beside the
-     falls and all of them started in mid-air above the lip.
-
-     Eight layers, because a waterfall is not one thing: the water goes over an
-     edge, accelerates, becomes a mass rather than lines, hits, throws spray
-     up, and hangs mist that catches the light. */
-
-  /* the lip — bright, where the river turns over the edge */
-  .mapfx-crest {
-    border-radius: 999px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(238, 250, 255, 0.9) 22%,
-      rgba(255, 255, 255, 0.95) 50%,
-      rgba(238, 250, 255, 0.9) 78%,
-      transparent
-    );
-    filter: blur(1.5px);
-    animation: fx-crest 4.5s ease-in-out infinite;
-  }
-  @keyframes fx-crest {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) scaleY(0.85);
-      opacity: 0.55;
-    }
-    50% {
-      transform: translate(-50%, -50%) scaleY(1.15);
-      opacity: 0.85;
-    }
-  }
-
-  /* falling water.
-
-     `ease-in` because water accelerates — the old `linear` is why it read as
-     a texture scrolling past rather than as anything falling. Each streak also
-     stretches as it drops, which is what real falling water does and what sells
-     the acceleration more than the timing alone. */
-  .mapfx-fall {
-    border-radius: 999px;
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(226, 245, 255, 0.95) 45%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    transform-origin: top center;
-    animation: fx-fall cubic-bezier(0.45, 0, 0.85, 0.4) infinite;
-  }
-
-  /* the veil — a soft sheet over the streaks so they read as one body of
-     water instead of separate lines. Scrolls slower than the streaks do. */
-  .mapfx-veil {
-    background: linear-gradient(
-      to bottom,
-      rgba(232, 246, 252, 0) 0%,
-      rgba(232, 246, 252, 0.34) 30%,
-      rgba(214, 238, 250, 0.28) 70%,
-      rgba(232, 246, 252, 0) 100%
-    );
-    filter: blur(2.5px);
-    animation: fx-veil 2.6s linear infinite;
-  }
-  @keyframes fx-veil {
-    0% {
-      transform: translate(-50%, -50%) translateY(-8%);
-      opacity: 0.5;
-    }
-    50% {
-      opacity: 0.75;
-    }
-    100% {
-      transform: translate(-50%, -50%) translateY(8%);
-      opacity: 0.5;
-    }
-  }
-
-  /* impact — the bright bloom where the column lands */
-  .mapfx-impact {
-    border-radius: 50%;
-    background: radial-gradient(
-      ellipse,
-      rgba(255, 255, 255, 0.9) 0%,
-      rgba(226, 245, 255, 0.45) 40%,
-      transparent 72%
-    );
-    filter: blur(3px);
-    animation: fx-impact ease-out infinite;
-  }
-  @keyframes fx-impact {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) scale(0.8);
-      opacity: 0.35;
-    }
-    45% {
-      transform: translate(-50%, -50%) scale(1.25);
-      opacity: 0.8;
-    }
-  }
-
-  /* mist hanging over the pool, backlit */
-  .mapfx-mistball {
-    border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(248, 253, 255, 0.55) 0%,
-      rgba(226, 243, 252, 0.28) 45%,
-      transparent 72%
-    );
-    filter: blur(6px);
-    animation: fx-mistball ease-in-out infinite;
-  }
-  @keyframes fx-mistball {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) scale(0.9) translateY(0);
-      opacity: 0.4;
-    }
-    50% {
-      transform: translate(-50%, -50%) scale(1.2) translateY(-8%);
-      opacity: 0.7;
-    }
-  }
-
-  /* ripple rings spreading across the pool from the impact */
-  .mapfx-ripple {
-    border-radius: 50%;
-    border: 1px solid rgba(236, 250, 255, 0.5);
-    animation: fx-ripple ease-out infinite;
-  }
-  @keyframes fx-ripple {
-    0% {
-      transform: translate(-50%, -50%) scale(0.25);
-      opacity: 0;
-    }
-    18% {
-      opacity: 0.65;
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(1.6);
-      opacity: 0;
-    }
-  }
-
-  /* the rainbow that stands in the spray when the light is right */
-  .mapfx-bow {
-    border-radius: 999px 999px 0 0;
-    background: conic-gradient(
-      from 270deg at 50% 100%,
-      transparent 0deg,
-      rgba(255, 138, 128, 0.34) 18deg,
-      rgba(255, 214, 120, 0.32) 30deg,
-      rgba(150, 240, 170, 0.3) 42deg,
-      rgba(130, 200, 255, 0.32) 54deg,
-      rgba(198, 158, 255, 0.3) 66deg,
-      transparent 84deg
-    );
-    mask-image: radial-gradient(
-      ellipse 100% 100% at 50% 100%,
-      transparent 58%,
-      #000 62%,
-      #000 76%,
-      transparent 82%
-    );
-    -webkit-mask-image: radial-gradient(
-      ellipse 100% 100% at 50% 100%,
-      transparent 58%,
-      #000 62%,
-      #000 76%,
-      transparent 82%
-    );
-    filter: blur(1.2px);
-    animation: fx-bow 13s ease-in-out infinite;
-  }
-  @keyframes fx-bow {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) scale(0.94);
-      opacity: 0;
-    }
-    /* only present while the mist is thick enough to hold it */
-    38%,
-    62% {
-      opacity: 0.75;
-    }
-    50% {
-      transform: translate(-50%, -50%) scale(1.06);
-    }
-  }
-  @keyframes fx-fall {
-    0% {
-      transform: translate(-50%, -110%) scaleY(0.5);
-      opacity: 0;
-    }
-    18% {
-      opacity: 1;
-    }
-    100% {
-      transform: translate(-50%, 120%) scaleY(1.25);
-      opacity: 0;
-    }
-  }
-
-  .mapfx-spray {
-    width: 1.5%;
-    aspect-ratio: 1;
-    border-radius: 999px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.65), transparent 68%);
-    animation: fx-spray 2.6s ease-out infinite;
-  }
-  @keyframes fx-spray {
-    0% {
-      transform: translate(-50%, -50%) scale(0.35);
-      opacity: 0;
-    }
-    30% {
-      opacity: 0.8;
-    }
-    100% {
-      transform: translate(-50%, -170%) scale(1.5);
-      opacity: 0;
-    }
-  }
-
-  /* specular drift over open water */
-  .mapfx-water {
-    border-radius: 40%;
-    background: linear-gradient(
-      115deg,
-      transparent 38%,
-      rgba(216, 244, 255, 0.24) 50%,
-      transparent 62%
-    );
-    mix-blend-mode: screen;
-    animation: fx-water 11s ease-in-out infinite;
-  }
-  @keyframes fx-water {
-    0%,
-    100% {
-      opacity: 0.18;
-      transform: translate(-50%, -50%) translateX(-6%);
-    }
-    50% {
-      opacity: 0.55;
-      transform: translate(-50%, -50%) translateX(6%);
-    }
-  }
-
-  /* pulsing bio-luminescence */
-  .mapfx-glow {
-    aspect-ratio: 1;
-    border-radius: 999px;
-    mix-blend-mode: screen;
-    animation: fx-glow 3s ease-in-out infinite;
-  }
-  @keyframes fx-glow {
-    0%,
-    100% {
-      opacity: 0.32;
-      transform: translate(-50%, -50%) scale(0.82);
-    }
-    50% {
-      opacity: 0.95;
-      transform: translate(-50%, -50%) scale(1.16);
-    }
-  }
-
-  .mapfx-fly {
-    width: 0.42%;
-    aspect-ratio: 1;
-    border-radius: 999px;
-    background: #ffe9a0;
-    box-shadow: 0 0 6px 2px rgba(255, 224, 130, 0.85);
-    animation: fx-fly ease-in-out infinite;
-  }
-  @keyframes fx-fly {
-    0% {
-      transform: translate(-50%, -50%) translate(0, 0);
-      opacity: 0;
-    }
-    12%,
-    78% {
-      opacity: 0.95;
-    }
-    50% {
-      transform: translate(-50%, -50%) translate(var(--drift, 3%), -4%);
-    }
-    100% {
-      transform: translate(-50%, -50%) translate(calc(var(--drift, 3%) * 2), -8%);
-      opacity: 0;
-    }
-  }
-
-  /* crystal glints */
-  .mapfx-sparkle {
-    aspect-ratio: 1;
-    background:
-      radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, transparent 62%),
-      conic-gradient(
-        from 0deg,
-        transparent 0deg 78deg,
-        rgba(255, 255, 255, 0.8) 90deg,
-        transparent 102deg 168deg,
-        rgba(255, 255, 255, 0.8) 180deg,
-        transparent 192deg 258deg,
-        rgba(255, 255, 255, 0.8) 270deg,
-        transparent 282deg 348deg
-      );
-    mix-blend-mode: screen;
-    animation: fx-sparkle 5s ease-in-out infinite;
-  }
-  /* Rests visible, not invisible.
-
-     `prefers-reduced-motion` collapses every animation to one near-zero
-     iteration, which parks an element on its 100% keyframe. This one ended at
-     `opacity: 0`, so all nine crystal sparkles vanished completely for
-     reduced-motion users and the crystal formations lost their only treatment.
-
-     Transient effects — a bird crossing, a leaf falling — are meant to end at
-     zero, and freezing one mid-flight would be worse. But a sparkle marks a
-     permanent feature, so it needs a resting state that survives stillness.
-     Checked the other 27: this was the only permanent feature drawn as a
-     transient. `fx-mist` sets no opacity at 100%, so the Grey — the one signal
-     that genuinely had to survive — persists at its base value already. */
-  @keyframes fx-sparkle {
-    0%,
-    72%,
-    100% {
-      opacity: 0.22;
-      transform: translate(-50%, -50%) scale(0.8) rotate(0deg);
-    }
-    82% {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1.15) rotate(45deg);
-    }
-    92% {
-      opacity: 0.25;
-      transform: translate(-50%, -50%) scale(0.7) rotate(70deg);
-    }
-  }
-
-  /* volcano */
-  .mapfx-heat {
-    width: 9%;
-    aspect-ratio: 1.4;
-    border-radius: 50%;
-    background: radial-gradient(
-      ellipse,
-      rgba(255, 132, 46, 0.42) 0%,
-      rgba(255, 90, 20, 0.14) 45%,
-      transparent 72%
-    );
-    mix-blend-mode: screen;
-    animation: fx-glow 2.4s ease-in-out infinite;
-  }
-  .mapfx-ember {
-    aspect-ratio: 1;
-    border-radius: 999px;
-    background: #ffb347;
-    box-shadow: 0 0 5px 1.5px rgba(255, 140, 50, 0.9);
-    animation: fx-ember ease-out infinite;
-  }
-  @keyframes fx-ember {
-    0% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0;
-    }
-    15% {
-      opacity: 1;
-    }
-    100% {
-      transform: translate(-50%, -50%) translate(-1.5%, -13%) scale(0.25);
-      opacity: 0;
-    }
-  }
-
-  /* lighthouse sweep */
-  .mapfx-beam {
-    width: 22%;
-    aspect-ratio: 1;
-    border-radius: 999px;
-    background: conic-gradient(
-      from 0deg,
-      rgba(255, 240, 190, 0.34) 0deg 17deg,
-      transparent 17deg 360deg
-    );
-    mix-blend-mode: screen;
-    animation: fx-sweep 9s linear infinite;
-  }
-  @keyframes fx-sweep {
-    to {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-  }
-
-  /* the citadel's beacon */
-  .mapfx-citadel {
-    width: 15%;
-    aspect-ratio: 1;
-    border-radius: 999px;
-    background: radial-gradient(
-      circle,
-      rgba(255, 226, 138, 0.5) 0%,
-      rgba(255, 196, 74, 0.2) 38%,
-      transparent 68%
-    );
-    mix-blend-mode: screen;
-    animation: fx-glow 4.2s ease-in-out infinite;
-  }
-
-  /* moored boats rocking */
-  .mapfx-boat {
-    width: 3%;
-    aspect-ratio: 2;
-    background: transparent;
-    animation: fx-bob 4.6s ease-in-out infinite;
-  }
-  @keyframes fx-bob {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) rotate(-1.6deg) translateY(0);
-    }
-    50% {
-      transform: translate(-50%, -50%) rotate(1.6deg) translateY(-0.35%);
-    }
-  }
-
-  /* chimney smoke */
-  .mapfx-smoke {
-    width: 1.4%;
-    aspect-ratio: 1;
-    border-radius: 999px;
-    background: radial-gradient(circle, rgba(236, 228, 214, 0.5), transparent 70%);
-    animation: fx-smoke ease-out infinite;
-  }
-  @keyframes fx-smoke {
-    0% {
-      transform: translate(-50%, -50%) scale(0.4);
-      opacity: 0;
-    }
-    20% {
-      opacity: 0.55;
-    }
-    100% {
-      transform: translate(-50%, -50%) translate(1.6%, -7%) scale(1.9);
-      opacity: 0;
-    }
-  }
-
-  /* shore foam */
-  .mapfx-wave {
-    aspect-ratio: 4;
-    border-radius: 999px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-    mix-blend-mode: screen;
-    animation: fx-wave ease-in-out infinite;
-  }
-  @keyframes fx-wave {
-    0%,
-    100% {
-      opacity: 0.12;
-      transform: translate(-50%, -50%) scaleX(0.75);
-    }
-    50% {
-      opacity: 0.6;
-      transform: translate(-50%, -50%) scaleX(1.15);
-    }
-  }
-
-  /* Leaves lifting off the canopy.
-
-     This rule used to *be* the leaf: a lozenge cut with
-     `border-radius: 40% 60% 40% 60%` and filled with one flat green. At four
-     screen pixels that is most of the way there, and it was still the one thing
-     on a hand-painted map that read as geometry. It is a real sprite now — see
-     `Leaves` in `MapFx.tsx` — so this keeps the motion and lets the art be art.
-     Width arrives inline, per leaf, since they are no longer all one size. */
-  .mapfx-leaf {
-    opacity: 0;
-    animation: fx-leaf ease-in-out infinite;
-  }
-  .mapfx-leaf img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  @keyframes fx-leaf {
-    0% {
-      transform: translate(-50%, -50%) rotate(0deg);
-      opacity: 0;
-    }
-    12%,
-    80% {
-      opacity: 0.85;
-    }
-    100% {
-      transform: translate(-50%, -50%) translate(var(--sway, 10%), var(--lift, -8%)) rotate(320deg);
-      opacity: 0;
-    }
-  }
-
-  /* dust drifting over the sand */
-  .mapfx-dust {
-    aspect-ratio: 2.4;
-    border-radius: 999px;
-    background: linear-gradient(90deg, transparent, rgba(214, 176, 122, 0.42), transparent);
-    animation: fx-dust ease-in-out infinite;
-  }
-  @keyframes fx-dust {
-    0% {
-      transform: translate(-50%, -50%) scale(0.6);
-      opacity: 0;
-    }
-    25%,
-    70% {
-      opacity: 0.5;
-    }
-    100% {
-      transform: translate(-50%, -50%) translateX(14%) scale(1.3);
-      opacity: 0;
-    }
-  }
-
-  /* a rare shooting star */
-  .mapfx-shoot {
-    width: 7%;
-    height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, transparent, rgba(255, 248, 220, 0.95));
-    opacity: 0;
-    animation: fx-shoot 23s linear infinite;
-  }
-  @keyframes fx-shoot {
-    0%,
-    92% {
-      opacity: 0;
-      transform: translate(-50%, -50%) translate(0, 0) rotate(18deg);
-    }
-    94% {
-      opacity: 1;
-    }
-    99% {
-      opacity: 0;
-      transform: translate(-50%, -50%) translate(22%, 9%) rotate(18deg);
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-
-  /* Anything that crosses the whole map, travelling in the map's own units.
-
-     These used to move by `112vw` / `128vw`. Viewport width has no relationship
-     to map width inside a layer that the map pans and zooms with a CSS
-     transform, so every crossing thing covered an arbitrary distance: birds and
-     clouds stopped short or shot far past the coast, and it changed every time
-     you zoomed or resized. Percentages of the *viewport* describing motion
-     across the *map* was the bug, in three places.
-
-     A track fixes it by construction. The animated element is a strip 124% of
-     the map wide with its artwork pinned to the left edge, so `translateX(100%)`
-     — 100% of its own width, which is defined in map units — is exactly one
-     crossing, at every zoom, on every screen. */
-  .mapfx-crossing {
-    left: -12%;
-    width: 124%;
-    height: 0;
-    line-height: 0;
-    transform: none;
-    animation: fx-crossing linear infinite;
-  }
-  @keyframes fx-crossing {
-    0% {
-      transform: translateX(0);
-      opacity: 0;
-    }
-    8%,
-    92% {
-      opacity: var(--peak, 0.75);
-    }
-    100% {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-  }
-  /* the wing beat, on its own clock so the flock is not in lockstep */
-  .mapfx-wing {
-    display: block;
-    transform-origin: 50% 70%;
-    animation: fx-flap ease-in-out infinite;
-  }
-  @keyframes fx-flap {
-    0%,
-    100% {
-      transform: scaleY(1);
-    }
-    50% {
-      transform: scaleY(0.34);
-    }
-  }
-
-  /* drifting cloud cover — the body rides a crossing track */
-  .mapfx-cloud-body {
-    display: block;
-    aspect-ratio: 2;
-    filter: blur(5px);
-  }
-  .mapfx-cloud-body > svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-  /* the shadow it throws on the terrain below */
-  .mapfx-cloud-shadow {
-    display: block;
-    aspect-ratio: 2.4;
-    border-radius: 50%;
-    background: radial-gradient(ellipse, rgba(24, 18, 10, 0.5) 0%, transparent 70%);
-    filter: blur(9px);
-  }
-
-  /* a gust crossing open ground */
-  .mapfx-gust {
-    aspect-ratio: 5;
-    border-radius: 999px;
-    background: linear-gradient(90deg, transparent, rgba(255, 252, 235, 0.5), transparent);
-    mix-blend-mode: soft-light;
-    animation: fx-gust ease-in-out infinite;
-  }
-  @keyframes fx-gust {
-    0% {
-      transform: translate(-50%, -50%) translateX(-40%) scaleX(0.6);
-      opacity: 0;
-    }
-    35%,
-    60% {
-      opacity: 0.85;
-    }
-    100% {
-      transform: translate(-50%, -50%) translateX(45%) scaleX(1.25);
-      opacity: 0;
-    }
-  }
-
-  /* lamplight in a window */
-  .mapfx-window {
-    aspect-ratio: 1;
-    border-radius: 999px;
-    background: radial-gradient(
-      circle,
-      rgba(255, 224, 150, 0.95) 0%,
-      rgba(255, 196, 80, 0.35) 40%,
-      transparent 72%
-    );
-    mix-blend-mode: screen;
-    animation: fx-lamp ease-in-out infinite;
-  }
-  @keyframes fx-lamp {
-    0%,
-    100% {
-      opacity: 0.3;
-      transform: translate(-50%, -50%) scale(0.9);
-    }
-    50% {
-      opacity: 0.9;
-      transform: translate(-50%, -50%) scale(1.1);
-    }
-  }
-
-  /* A ship under sail, crossing the bay — and only the bay.
-
-     It used to travel `112vw`: viewport units, inside a layer that the map pans
-     and zooms with a CSS transform. Viewport width has nothing to do with map
-     width, so the distance was arbitrary — the ship set off from the river
-     mouth at the far left and sailed straight over the village, the woods and
-     the desert before leaving on the right. A ship crossing dry land is exactly
-     as odd as it sounds, and at any zoom but 1 it was odder.
-
-     Measured in the map's own units now. The element is a *track* as wide as
-     the open water (44% of the map, starting at 52%), the hull sits at its left
-     edge, and `translateX(100%)` means 100% of that track — so the crossing
-     ends on the far shore at every zoom. The rocking is a separate animation on
-     the hull, because rotating a track this wide would swing the ship through
-     the sky. */
-  .mapfx-sail {
-    left: 52%;
-    width: 44%;
-    height: 0;
-    line-height: 0;
-    transform: none;
-    animation: fx-sail 84s linear infinite;
-  }
-  .mapfx-sail > svg {
-    display: block;
-    transform-origin: 50% 90%;
-    animation: fx-sail-rock 6.5s ease-in-out infinite;
-  }
-  @keyframes fx-sail {
-    0% {
-      transform: translateX(0);
-      opacity: 0;
-    }
-    7%,
-    90% {
-      opacity: 0.85;
-    }
-    100% {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-  }
-  @keyframes fx-sail-rock {
-    0%,
-    100% {
-      transform: rotate(-3.5deg) translateY(0);
-    }
-    50% {
-      transform: rotate(3.5deg) translateY(-1.5px);
-    }
-  }
-
-  /* Region names, engraved on the terrain they label.
-
-     The ink needs a light surround on every side, not just below. Sampling the
-     illustration under each plaque: the ink measures 3.7:1 over the village
-     fields, 3.6:1 over the sand — and 1.50:1 over the dark forest canopy. The
-     old single `0 1px 0` shadow only backed the bottom edge of each glyph, so
-     the woods plaque was genuinely hard to read. A ring of shadows puts a
-     near-opaque light plate immediately around every glyph, which brings the
-     effective backdrop to ~#e4dfc6 or lighter everywhere: 9.3:1 at worst. */
-  /* ------------------------------------------------------------- guardians
-
-     Bigger than a landmark pin, because a guardian is not a landmark — it is
-     the thing at the end of the road. Sits above the pins so it is never
-     buried by one. */
-
-  .guardian {
-    @apply absolute z-[12] flex -translate-x-1/2 -translate-y-1/2 cursor-pointer
-           items-center justify-center rounded-full border-2 transition-transform duration-150;
-    width: 54px;
-    height: 54px;
-    background: radial-gradient(circle at 50% 35%, rgba(46, 37, 26, 0.94), rgba(14, 11, 7, 0.96));
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.55);
-  }
-  .guardian:hover,
-  .guardian:focus-visible {
-    transform: translate(-50%, -50%) scale(1.12);
-  }
-  .guardian-art {
-    @apply block w-[38px];
-  }
-
-  .guardian-awake {
-    border-color: theme('colors.gold.bright');
-    box-shadow:
-      0 4px 14px rgba(0, 0, 0, 0.55),
-      0 0 20px rgba(242, 207, 91, 0.35);
-  }
-  .guardian-felled {
-    @apply border-leather-600;
-    filter: grayscale(0.7);
-    opacity: 0.75;
-  }
-  .guardian-sealed {
-    @apply cursor-not-allowed border-leather-700;
-    filter: grayscale(1) brightness(0.55);
-    opacity: 0.7;
-  }
-  .guardian:hover .pin-card,
-  .guardian:focus-visible .pin-card {
-    @apply block;
-  }
-
-  /* ------------------------------------------------------------- the echo
-
-     A landmark whose questions have come due again.
-
-     Deliberately not another pulse ring. The current landmark already pulses in
-     gold and means "go here next"; this means "you have been here, and it is
-     fading." Two rings with the same motion and different instructions is worse
-     than not marking it — so this is a slow breathing halo in the woods green
-     the review surfaces already use, sitting *behind* the pin rather than on
-     its edge, and it never fully disappears the way a pulse does.
-
-     18 seconds is deliberate. Fast enough to read as alive when you look at it,
-     slow enough that four of them across a region do not turn the map into a
-     set of blinking alarms. Nothing here is urgent; that is the point. */
-
-  .echo-halo {
-    @apply pointer-events-none absolute rounded-full;
-    inset: -9px;
-    z-index: -1;
-    background: radial-gradient(
-      circle,
-      rgba(95, 168, 107, 0.42) 0%,
-      rgba(95, 168, 107, 0.16) 55%,
-      transparent 72%
-    );
-    animation: echoBreathe 18s ease-in-out infinite;
-  }
-
-  /* How many, in the corner of the pin. A halo says "something"; a student
-     deciding whether to spend four minutes here needs "two" or "nine". */
-  .echo-count {
-    @apply pointer-events-none absolute flex items-center justify-center rounded-full
-           border font-semibold leading-none;
-    right: -7px;
-    bottom: -7px;
-    min-width: 16px;
-    height: 16px;
-    padding: 0 4px;
-    font-size: 10.5px;
-    border-color: rgba(159, 214, 166, 0.75);
-    background: linear-gradient(180deg, #4f8f57, #2f6438);
-    color: #eaf7ea;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-  }
-
-  /* Bright at 0% and 100%, dim in the middle — not the other way round.
-     `prefers-reduced-motion` collapses this to one near-zero iteration and
-     parks the element on its 100% keyframe, so whichever state ends the cycle
-     is the one a reduced-motion student looks at forever. Ending dim would
-     leave the halo almost invisible for exactly the people least likely to have
-     noticed the motion that was supposed to draw their eye. Same trap as
-     `fx-sparkle` above. */
-  @keyframes echoBreathe {
-    0%,
-    100% {
-      opacity: 0.7;
-      transform: scale(1.05);
-    }
-    50% {
-      opacity: 0.34;
-      transform: scale(0.95);
-    }
-  }
-
-  /* ----------------------------------------------------------- the courier
-
-     Today's daily challenge, standing at a landmark instead of sitting in a
-     dashboard tile. Sized between a pin and a guardian: she is more than a
-     landmark and less than a Seal. Offset up and right of the pin she shares a
-     spot with, so neither hides the other. */
-
-  .courier {
-    @apply absolute z-[13] flex cursor-pointer items-center justify-center rounded-full border-2;
-    width: 30px;
-    height: 30px;
-    /* Not centred on the pin — beside it. The pin still has to be readable and
-       clickable underneath. */
-    transform: translate(28%, -128%);
-    border-color: #f0c987;
-    background: radial-gradient(circle at 50% 32%, #6b4a24, #2b1c0d);
-    box-shadow:
-      0 3px 10px rgba(0, 0, 0, 0.55),
-      0 0 16px rgba(224, 168, 28, 0.3);
-  }
-  .courier-mark {
-    @apply block font-display leading-none;
-    font-size: 15px;
-    color: #ffd98a;
-  }
-  .courier-done {
-    @apply border-leather-600;
-    filter: grayscale(0.75);
-    opacity: 0.6;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
-  }
-  .courier:hover .pin-card,
-  .courier:focus-visible .pin-card {
-    @apply block;
-  }
-
-  /* --------------------------------------------------------- fast travel
-
-     Four buttons, one per region: jump the camera there, and read how that road
-     is doing without going. The dot carries the region's own colour, which is
-     the same colour its pins, plaque and road already use — so the rail is
-     legible without a single word of label. */
-
-  .region-jump {
-    @apply relative flex items-center gap-1.5 rounded-lg border border-leather-700
-           bg-leather-950/85 px-2 py-1.5 text-parchment-dim shadow-card
-           backdrop-blur transition-colors;
-  }
-  .region-jump:hover,
-  .region-jump:focus-visible {
-    @apply border-gold-deep text-parchment;
-  }
-  .region-jump-dot {
-    @apply block h-2.5 w-2.5 shrink-0 rounded-full;
-    background: var(--region);
-    box-shadow: 0 0 6px var(--region);
-  }
-  /* A region with work waiting carries the same green as the echoes on its
-     landmarks, so the rail and the map agree without explaining themselves. */
-  .region-jump-due {
-    @apply absolute block rounded-full;
-    top: -3px;
-    right: -3px;
-    width: 7px;
-    height: 7px;
-    background: #7cc487;
-    box-shadow: 0 0 6px rgba(124, 196, 135, 0.9);
-  }
-
-  /* ------------------------------------------------------- exploration layer
-
-     A discovery you have not found is a glint: enough to catch the eye while
-     panning, not enough to look like a button demanding to be pressed. Finding
-     it should feel like noticing something. */
-
-  .discovery {
-    @apply absolute z-[8] flex -translate-x-1/2 -translate-y-1/2 cursor-pointer
-           items-center justify-center rounded-full transition-transform duration-150;
-    width: 26px;
-    height: 26px;
-  }
-  .discovery:hover,
-  .discovery:focus-visible {
-    transform: translate(-50%, -50%) scale(1.25);
-  }
-
-  /* ------------------------------------------------ marker hit targets
-   *
-   * Every mark in the world layer is authored in map pixels and then scaled
-   * by `--map-scale`, so its size on the glass is whatever the frame and the
-   * zoom happen to make it — and at the bottom of the zoom range on a phone
-   * that is far too small to hit. Measured at 375x812: cover scale is
-   * `max(375/768, 812/1376)` = 0.59, so at `MIN_ZOOM` the 34px landmark pin
-   * lands at 20px, the 26px discovery glint at 15px and the 30px courier at
-   * 18px — all under the 24px floor in WCAG 2.2 target size (minimum).
-   *
-   * Two ways to fix that, and the obvious one is wrong. Counter-scaling the
-   * marks themselves would hold them at a constant size on the glass, which
-   * breaks the thing the scale is *for*: a landmark is a place, and places
-   * get bigger as you lean in. So the drawn mark keeps scaling, and an
-   * invisible box takes the floor instead.
-   *
-   * `max()` against the element's own 100% means this only ever grows the
-   * target — zoomed in, where the mark is already comfortably over 24px, the
-   * pseudo-element is exactly the size of the mark and changes nothing.
-   *
-   * 24px rather than the more familiar 44px is deliberate: the pins are only
-   * 3-5 map percent apart, which at min zoom is around 30px on the glass, so
-   * 44px targets would overlap each other and steal each other's taps. */
-  .pin::before,
-  .guardian::before,
-  .courier::before,
-  .discovery::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: max(100%, calc(24px / var(--map-scale, 1)));
-    height: max(100%, calc(24px / var(--map-scale, 1)));
-    transform: translate(-50%, -50%);
-  }
-
-  .discovery-hidden .discovery-mark {
-    @apply block rounded-full;
-    width: 9px;
-    height: 9px;
-    background: radial-gradient(
-      circle,
-      rgba(255, 246, 214, 0.95) 0%,
-      rgba(255, 226, 150, 0.5) 45%,
-      transparent 72%
-    );
-    box-shadow: 0 0 10px 3px rgba(255, 226, 150, 0.5);
-    animation: fx-glint 3.8s ease-in-out infinite;
-  }
-  @keyframes fx-glint {
-    0%,
-    62%,
-    100% {
-      opacity: 0.25;
-      transform: scale(0.75);
-    }
-    78% {
-      opacity: 1;
-      transform: scale(1.25);
-    }
-  }
-
-  .discovery-found .discovery-mark {
-    @apply flex h-[22px] w-[22px] items-center justify-center rounded-full border;
-    border-color: rgba(240, 207, 122, 0.75);
-    background: linear-gradient(180deg, rgba(46, 37, 26, 0.92), rgba(20, 16, 11, 0.92));
-    color: theme('colors.gold.light');
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
-  }
-
-  /* Cloud over ground you have not walked. Sits above the artwork but below the
-     pins, so a landmark is always reachable even while its region is misted.
-
-     The bands are rectangles at fixed vertical ranges, which on their own read
-     as horizontal stripes rather than weather. The mask feathers the top and
-     bottom edges to nothing, so a band dissolves into its neighbours and into
-     cleared ground instead of ending on a line. The overlapping radial blobs
-     are what stop the remaining edges looking straight. */
-  /* ------------------------------------------------------------ more weather
-
-     All of these animate transform and opacity only, so they stay on the
-     compositor and off the main thread — the whole map can be moving without
-     any of it costing a layout. */
-
-  /* a rain squall dragging across the open water */
-  .mapfx-squall {
-    background: repeating-linear-gradient(
-      74deg,
-      rgba(206, 224, 238, 0.34) 0 1px,
-      transparent 1px 7px
-    );
-    border-radius: 40%;
-    filter: blur(2px);
-    mask-image: radial-gradient(ellipse 60% 70% at 50% 50%, #000 30%, transparent 78%);
-    -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 50%, #000 30%, transparent 78%);
-  }
-  /* the aurora that hangs over the northern sky on cold nights */
-  .mapfx-aurora {
-    background: linear-gradient(
-      100deg,
-      transparent 0%,
-      rgba(122, 232, 200, 0.3) 22%,
-      rgba(150, 200, 255, 0.26) 48%,
-      rgba(196, 158, 255, 0.24) 70%,
-      transparent 100%
-    );
-    filter: blur(16px);
-    mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
-    -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
-    animation: fx-aurora ease-in-out infinite;
-  }
-  @keyframes fx-aurora {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) skewX(-8deg) scaleY(0.9);
-      opacity: 0.28;
-    }
-    50% {
-      transform: translate(-50%, -50%) skewX(9deg) scaleY(1.15);
-      opacity: 0.62;
-    }
-  }
-
-  /* butterflies over the forest clearings */
-  .mapfx-flutter {
-    line-height: 0;
-    animation: fx-flutter ease-in-out infinite;
-  }
-  @keyframes fx-flutter {
-    0% {
-      transform: translate(-50%, -50%) translate(0, 0) rotate(-6deg);
-      opacity: 0;
-    }
-    12%,
-    84% {
-      opacity: 0.9;
-    }
-    30% {
-      transform: translate(-50%, -50%) translate(180%, -140%) rotate(8deg);
-    }
-    58% {
-      transform: translate(-50%, -50%) translate(340%, 60%) rotate(-9deg);
-    }
-    100% {
-      transform: translate(-50%, -50%) translate(520%, -90%) rotate(5deg);
-      opacity: 0;
-    }
-  }
-
-  /* tumbleweed bouncing along the desert floor */
-  .mapfx-tumble {
-    line-height: 0;
-    animation: fx-tumble linear infinite;
-  }
-  @keyframes fx-tumble {
-    0% {
-      transform: translateX(0) translateY(0) rotate(0deg);
-      opacity: 0;
-    }
-    6%,
-    90% {
-      opacity: 0.7;
-    }
-    /* the little hops, riding the same clock as the roll */
-    25% {
-      transform: translateX(25%) translateY(-9px) rotate(340deg);
-    }
-    50% {
-      transform: translateX(50%) translateY(0) rotate(700deg);
-    }
-    75% {
-      transform: translateX(75%) translateY(-6px) rotate(1040deg);
-    }
-    100% {
-      transform: translateX(100%) translateY(0) rotate(1400deg);
-      opacity: 0;
-    }
-  }
-
-  /* the banner over the citadel gate */
-  /* The banner had two faults stacked, and the first hid the second.
-
-     Its `animation` shorthand carried no <time>, so the computed duration was
-     0s and it had never once moved. Underneath that, the keyframes set
-     `transform` without re-including the `translate(-50%, -50%)` that
-     `.mapfx > span` applies for centring — so the moment anyone supplied the
-     missing duration, the banner would have jumped half its own size down and
-     right and stayed there. A dead animation concealing a trap for whoever
-     revived it. Both fixed together, which is the only safe order. */
-  .mapfx-banner {
-    transform-origin: 0% 50%;
-    animation: fx-banner 3.4s ease-in-out infinite;
-  }
-  @keyframes fx-banner {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) skewY(-4deg) scaleX(0.94);
-    }
-    50% {
-      transform: translate(-50%, -50%) skewY(5deg) scaleX(1);
-    }
-  }
-
-  /* ------------------------------------------------------------- the Grey
-
-     Wizzy calls it a plague that settles over land until nobody remembers what
-     was underneath. It used to be a pale wash that slid 7% sideways over
-     thirty seconds, which reads as haze on a still morning — the least
-     threatening weather there is.
-
-     Two things were wrong with it, and they turn out to be the same thing.
-
-     It was built as one flat sheet whose `background-position` animated, and
-     `background-position` is a paint property: every frame, the browser
-     re-rasterised a 1728x991 element carrying five stacked radial gradients
-     under a 7px blur, four of them at once, whether or not you were looking at
-     that region. Nine viewports of blurred pixels, repainted continuously, is
-     most of why the map answered a drag late. And a sheet that can only slide
-     cannot do anything but slide — the cheapest possible motion was also the
-     only motion available to it.
-
-     So it is built out of turning sheets now. Each bank is a clipping box that
-     holds the opacity and the feathered edges, and everything inside it is
-     oversized and rotates. Rotation is a transform: the blur rasterises once
-     into a surface the compositor then turns, so the churn is free where the
-     slide was not. Three sheets per bank at different rates and opposing
-     directions, and the interference between them is what reads as boiling
-     rather than drifting — no single layer does anything complicated.
-
-     Violence is mostly contrast. The old palette ran 226-242 across every
-     stop, which is fog lit evenly, and evenly lit means nothing inside it has
-     shape. These carry a dark slate core against a cold white edge, so the
-     bank has weight in it and you can see it turn.
-
-     Culled to the visible band by `mapView.tsx`, so what follows costs one
-     region rather than four. */
-
-  .mapfx-grey-bank {
-    @apply pointer-events-none absolute inset-x-0 z-[3] overflow-hidden;
-    transition: opacity 900ms ease-out;
-    /* Feather both edges so a bank never ends on a straight line. */
-    -webkit-mask-image: linear-gradient(
-      180deg,
-      transparent 0%,
-      #000 15%,
-      #000 85%,
-      transparent 100%
-    );
-    mask-image: linear-gradient(180deg, transparent 0%, #000 15%, #000 85%, transparent 100%);
-  }
-
-  /* One drifting sheet.
-
-     Three things had to be true at once, and each of the first two attempts
-     got one of them and paid for it somewhere else.
-
-     They translate and swell; they do not rotate. Rotation was the obvious way
-     to get churn and it is the wrong primitive for a band this shape: a sheet
-     that turns a full circle must stay covered at every angle, so it needs a
-     radius of half its own diagonal, and for a band 1728 wide by 990 tall that
-     is a square about 2000 on a side. Nine of those measured 208x the viewport
-     in blurred surface against 11.7x for the flat sheet they replaced.
-
-     Translating needs only enough overhang to cover the longest offset, which
-     brought it to 39x — better, still four times worse than what it replaced,
-     because three sheets at 1.44x the band in both dimensions is 6x the area
-     of one sheet at 1x however cheaply each one moves.
-
-     So they are rasterised small and scaled up. The sheet is laid out at 48%
-     of the bank and blown up 3x, which covers the same 144% while rasterising
-     23% of the pixels — a ninth of the surface for an identical picture,
-     because the picture is four soft gradients under a blur and there is no
-     detail in it to lose. The blur radius is divided by the same 3, since the
-     filter is applied before the scale.
-
-     What matters per frame is that none of this repaints. `background-position`
-     — the original — invalidates paint every frame, so the browser re-blurred
-     six megapixels of gradient continuously. A transform on a filtered element
-     rasterises once into a surface the compositor then moves. */
-  .mapfx-grey-churn {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 48%;
-    height: 48%;
-    transform-origin: 50% 50%;
-    animation: fx-grey-churn ease-in-out infinite;
-    /* Promotes the blurred sheet to its own surface once, rather than letting
-       the browser decide each frame. Only ever three of these are mounted. */
-    will-change: transform;
-  }
-  /* Percentages in `translate` resolve against the element's own border box —
-     48% of the bank — so `--cx: 20%` moves it 9.6% of the bank, against 22% of
-     overhang on that side. The mask's straight edge stays outside the box at
-     every point in the cycle. */
-  @keyframes fx-grey-churn {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) scale(var(--churn-scale, 3));
-    }
-    25% {
-      transform: translate(-50%, -50%) translate(var(--cx, 20%), calc(var(--cy, 14%) * -1))
-        scale(calc(var(--churn-scale, 3) * 1.07));
-    }
-    50% {
-      transform: translate(-50%, -50%) translate(calc(var(--cx, 20%) * -0.55), var(--cy, 14%))
-        scale(var(--churn-scale, 3));
-    }
-    75% {
-      transform: translate(-50%, -50%)
-        translate(calc(var(--cx, 20%) * -1), calc(var(--cy, 14%) * -0.45))
-        scale(calc(var(--churn-scale, 3) * 1.1));
-    }
-  }
-
-  /* The bank breathing in and out — a swell that carries the whole mass
-     forward and lets it fall back. Scale rather than opacity does the work,
-     because fog that only brightens reads as a light coming on; fog that grows
-     reads as fog arriving. */
-  .mapfx-grey-surge {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 44%;
-    height: 44%;
-    transform-origin: 50% 50%;
-    animation: fx-grey-surge ease-in-out infinite;
-    will-change: transform, opacity;
-  }
-  /* Rasterised small and scaled, for the reason given above the churn. 2.8x
-     from 44% covers 123% of the bank, which is all a swell needs — it grows
-     from the middle and never has to reach a corner. */
-  @keyframes fx-grey-surge {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) scale(2.8);
-      opacity: 0.42;
-    }
-    38% {
-      transform: translate(-50%, -50%) translateY(-3%) scale(3.42);
-      opacity: 0.9;
-    }
-    64% {
-      transform: translate(-50%, -50%) translateY(1%) scale(2.97);
-      opacity: 0.58;
-    }
-  }
-
-  /* Storm light inside the bank.
-
-     One stab per cycle, not two.
-
-     It used to double — a rise to .75, a trough at .15, a second rise to .55 —
-     because real sheet lightning doubles. Both transitions clear the 10%
-     relative-luminance bar, so both count as flashes under WCAG 2.3.1, which
-     caps them at three in any one second.
-
-     Each element passed on its own: two flashes ~0.7s apart is 2/sec. But the
-     banks run on independent clocks, so their bursts drift through one another,
-     and roughly once every four minutes two bursts overlapped and put four
-     flashes inside a second. Over an hour on the map that is about fifteen
-     violations, for an audience of 13-to-17-year-olds.
-
-     One stab each caps the worst case at three simultaneous — at the limit
-     rather than over it — with no scheduler and no JavaScript. Culling helps
-     here too and is not relied on: banks are only mounted near the frame now,
-     so in practice fewer clocks are running at once, but the cap has to hold
-     without that. The doubling was a nice touch that was not worth a seizure
-     risk, and a single harder stab reads better anyway. */
-  .mapfx-grey-flash {
-    @apply pointer-events-none absolute z-[4];
-    border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(244, 248, 255, 0.92) 0%,
-      rgba(186, 196, 214, 0.4) 38%,
-      transparent 70%
-    );
-    filter: blur(12px);
-    opacity: 0;
-    animation: fx-grey-flash ease-out infinite;
-  }
-  @keyframes fx-grey-flash {
-    0%,
-    88%,
-    100% {
-      opacity: 0;
-    }
-    91% {
-      opacity: 0.85;
-    }
-    95% {
-      opacity: 0.12;
-    }
-  }
-
-  /* Wisps out of the underside of a bank.
-
-     They used to rise and fade on a symmetrical ease, which is a plant growing.
-     A lash needs the fast part at the start and the recovery slow, so the
-     stretch happens in a fifth of the cycle and the rest is the wisp being
-     drawn back up into the mass. The sideways skew is what stops four of them
-     reading as four identical fingers. */
-  .mapfx-grey-tendril {
-    @apply pointer-events-none absolute z-[4];
-    border-radius: 999px;
-    background: linear-gradient(180deg, rgba(236, 240, 248, 0.8), transparent 82%);
-    filter: blur(4px);
-    transform-origin: 50% 0%;
-    animation: fx-grey-tendril cubic-bezier(0.16, 0.9, 0.3, 1) infinite;
-  }
-  @keyframes fx-grey-tendril {
-    0%,
-    100% {
-      transform: scaleY(0.28) skewX(0deg);
-      opacity: 0;
-    }
-    12% {
-      opacity: 0.72;
-    }
-    22% {
-      transform: scaleY(1.45) skewX(var(--lash, 7deg));
-      opacity: 0.68;
-    }
-    70% {
-      transform: scaleY(0.62) skewX(calc(var(--lash, 7deg) * -0.4));
-      opacity: 0.24;
-    }
-  }
-
-  .region-plaque {
-    @apply pointer-events-none absolute z-[5] -translate-x-1/2 -translate-y-1/2
-           whitespace-nowrap font-script text-[clamp(11px,1.35vw,17px)]
-           uppercase tracking-[0.2em];
-    color: #3a2d0c;
-    text-shadow:
-      0 0 2px rgba(255, 250, 235, 0.98),
-      1px 1px 2px rgba(255, 250, 235, 0.95),
-      -1px 1px 2px rgba(255, 250, 235, 0.95),
-      1px -1px 2px rgba(255, 250, 235, 0.95),
-      -1px -1px 2px rgba(255, 250, 235, 0.95),
-      0 2px 3px rgba(255, 250, 235, 0.9),
-      0 -2px 3px rgba(255, 250, 235, 0.9),
-      0 0 18px rgba(255, 245, 214, 0.75);
   }
 }
 

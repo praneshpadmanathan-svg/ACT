@@ -31,6 +31,8 @@ import { checkPassword } from '@/lib/password';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import { Button } from '@/components/ui';
+import { FieldLabel, Select } from '@/components/fields';
+import { Glyph } from '@/components/Icon';
 import { burstConfetti } from '@/components/Feedback';
 import { Art } from '@/components/Art';
 
@@ -220,8 +222,8 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
           <b className="text-parchment-dim">VITE_SUPABASE_ANON_KEY</b> are set — see
           docs/launch-checklist.md.
         </p>
-        <Button variant="primary" size="lg" className="w-full" onClick={startPlaying}>
-          Start the journey ▶
+        <Button variant="primary" size="lg" trailing className="w-full" onClick={startPlaying}>
+          Start the journey
         </Button>
         <BackLink onClick={() => navigate({ name: 'landing' })} />
       </Frame>
@@ -240,8 +242,8 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
           progress saves on this device, so come back to the same browser and your world is where
           you left it.
         </p>
-        <Button variant="primary" size="lg" className="mt-7 w-full" onClick={startPlaying}>
-          Start the journey ▶
+        <Button variant="primary" size="lg" trailing className="mt-7 w-full" onClick={startPlaying}>
+          Start the journey
         </Button>
         <BackLink onClick={() => navigate({ name: 'landing' })} />
       </Frame>
@@ -271,7 +273,7 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         title: 'Check your email',
         body: (
           <>
-            We have sent a message to <b className="text-cliffs">{email}</b>. Open the link in it
+            We have sent a message to <b className="text-cliffs-text">{email}</b>. Open the link in it
             and you will land back here, signed in, with your progress intact. If that address
             already has an account, the message will say so instead.
           </>
@@ -281,7 +283,7 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         title: 'Check your email',
         body: (
           <>
-            If <b className="text-cliffs">{email}</b> has an account, a sign-in code is on its way.
+            If <b className="text-cliffs-text">{email}</b> has an account, a sign-in code is on its way.
             Enter it below — or just open the link in the same email.
           </>
         ),
@@ -290,7 +292,7 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         title: 'Check your email',
         body: (
           <>
-            If <b className="text-cliffs">{email}</b> has an account, a reset link is on its way.
+            If <b className="text-cliffs-text">{email}</b> has an account, a reset link is on its way.
             Open it and you can choose a new password.
           </>
         ),
@@ -538,18 +540,13 @@ function AgeGate({ onAnswer, onBack }: { onAnswer: (dob: DateParts) => void; onB
         <div className="grid grid-cols-[1.4fr_0.8fr_1fr] gap-2.5">
           <label className="block">
             <FieldLabel>Month</FieldLabel>
-            <select
+            <Select
+              ariaLabel="Birth month"
               value={month}
-              onChange={(e) => setMonth(e.target.value)}
-              className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3 py-2.5 font-read text-[15px] text-parchment outline-none transition-colors focus:border-gold-deep"
-            >
-              <option value="">—</option>
-              {MONTHS.map((m, i) => (
-                <option key={m} value={i + 1}>
-                  {m}
-                </option>
-              ))}
-            </select>
+              onValueChange={setMonth}
+              options={MONTHS.map((m, i) => ({ value: String(i + 1), label: m }))}
+              placeholder="Month"
+            />
           </label>
 
           <label className="block">
@@ -592,13 +589,6 @@ function AgeGate({ onAnswer, onBack }: { onAnswer: (dob: DateParts) => void; onB
   );
 }
 
-function FieldLabel({ children }: { children: ReactNode }) {
-  return (
-    <span className="mb-1.5 block font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint">
-      {children}
-    </span>
-  );
-}
 
 function ErrorNote({ children }: { children: ReactNode }) {
   return (
@@ -616,9 +606,10 @@ function BackLink({ onClick }: { onClick: () => void }) {
     <button
       type="button"
       onClick={onClick}
-      className="mt-6 w-full font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
+      className="mt-6 inline-flex w-full items-center justify-center gap-1.5 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
     >
-      ← Back
+      <Glyph name="arrowLeft" size={13} strokeWidth={2} />
+      Back
     </button>
   );
 }

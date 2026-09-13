@@ -9,20 +9,23 @@
    finishing a page. */
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { NOTES, SECTIONS, SECTION_BY_ID, getNotePage, ALL_NOTE_PAGES } from '@/content';
+import { NOTES, SECTION_BY_ID, getNotePage, ALL_NOTE_PAGES } from '@/content';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import type { NoteBlock, SectionId } from '@/types';
 import { BackLink, Page } from '@/components/Shell';
-import { Button, EmptyState, ProgressBar, SectionHeading } from '@/components/ui';
+import { Button, EmptyState, LEADING_ICON, ProgressBar, SectionHeading, SectionTabs } from '@/components/ui';
+import { Glyph } from '@/components/Icon';
 import { RichText } from '@/components/RichText';
+import { ProUpsell } from '@/components/ProGate';
+import { sectionIsFree } from '@/lib/features';
 
 /* ------------------------------------------------------------- library */
 
 export function NotesScreen({ section }: { section?: string }) {
-  const { progress } = useStore();
+  const { progress, isPro } = useStore();
   const navigate = useNavigate();
   const active = (section as SectionId) ?? 'english';
   const meta = SECTION_BY_ID[active];
@@ -46,6 +49,22 @@ export function NotesScreen({ section }: { section?: string }) {
     );
   }
 
+  /* Gated on the route, like the road and the drills it belongs with: a
+     locked subject is locked in all three places or in none, or the free tier
+     becomes a puzzle about which door happens to be open. */
+  if (!isPro && !sectionIsFree(active)) {
+    return (
+      <Page>
+        <SectionHeading eyebrow={meta.name} title="Study notes" detail={meta.blurb} />
+        <SectionTabs active={active} hrefFor={(id) => hrefFor({ name: 'notes', section: id })} />
+        <ProUpsell
+          title={`${meta.name} notes are Pro`}
+          detail="Every page that teaches this subject, each ending in a check question. English notes stay open for good."
+        />
+      </Page>
+    );
+  }
+
   const units = NOTES[active];
   const readInSection = units.reduce(
     (n, unit) => n + unit.pages.filter((p) => progress.notesRead.includes(p.id)).length,
@@ -61,25 +80,7 @@ export function NotesScreen({ section }: { section?: string }) {
         detail="Short pages that teach exactly what the ACT asks. Each one ends with a check question."
       />
 
-      {/* section tabs */}
-      <div className="mb-6 flex flex-wrap gap-2">
-        {SECTIONS.map((s) => (
-          <a
-            key={s.id}
-            href={hrefFor({ name: 'notes', section: s.id })}
-            onClick={() => sfx.select()}
-            className={cx(
-              'rounded-lg border-2 px-4 py-2 font-script text-[12px] uppercase tracking-wide transition-colors',
-              s.id === active
-                ? 'text-[#0d0620]'
-                : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-parchment',
-            )}
-            style={s.id === active ? { background: s.color, borderColor: s.color } : undefined}
-          >
-            {s.name}
-          </a>
-        ))}
-      </div>
+      <SectionTabs active={active} hrefFor={(id) => hrefFor({ name: 'notes', section: id })} />
 
       <div className="mb-7 flex items-center gap-4">
         <ProgressBar
@@ -117,7 +118,7 @@ export function NotesScreen({ section }: { section?: string }) {
                       )}
                       aria-hidden="true"
                     >
-                      {read ? '✓' : ''}
+                      {read ? <Glyph name="check" size={14} strokeWidth={2.4} /> : null}
                     </span>
                     <span className="min-w-0">
                       <span className="block font-sans text-[15px] font-semibold leading-snug text-parchment">
@@ -146,7 +147,7 @@ export function NotesScreen({ section }: { section?: string }) {
 export function NoteReader({ pageId }: { pageId: string }) {
   const page = getNotePage(pageId);
   const navigate = useNavigate();
-  const { progress, markNoteRead } = useStore();
+  const { progress, markNoteRead, isPro } = useStore();
   const [scrolled, setScrolled] = useState(0);
   const articleRef = useRef<HTMLElement>(null);
 
@@ -196,6 +197,22 @@ export function NoteReader({ pageId }: { pageId: string }) {
   }
 
   const meta = SECTION_BY_ID[page.section];
+
+  /* Checked below the hooks, above the sheet: `#/note/<id>` is linked from
+     the Library, from a landmark lesson, and from the prev/next pair at the
+     foot of every other page, so a locked subject reached through any of them
+     arrives here rather than at the list. */
+  if (!isPro && !sectionIsFree(page.section)) {
+    return (
+      <Page>
+        <ProUpsell
+          title={`${meta.name} notes are Pro`}
+          detail={`"${page.title}" is part of the ${meta.name.toLowerCase()} notes. Every English page stays open; Pro opens the other three subjects end to end.`}
+        />
+      </Page>
+    );
+  }
+
   const alreadyRead = progress.notesRead.includes(page.id);
 
   return (
@@ -208,7 +225,7 @@ export function NoteReader({ pageId }: { pageId: string }) {
       </div>
 
       <article ref={articleRef} className="sheet mx-auto max-w-3xl p-6 sm:p-10">
-        <header className="mb-8 border-b-2 border-parchment-edge pb-6">
+        <header className="mb-8 border-b-2 border-paper-edge pb-6">
           <div className="label-quill">
             {meta.name} · {page.unitLabel} · {page.minutes} min
           </div>
@@ -228,10 +245,11 @@ export function NoteReader({ pageId }: { pageId: string }) {
           ))}
         </div>
 
-        <footer className="mt-10 border-t-2 border-parchment-edge pt-7">
+        <footer className="mt-10 border-t-2 border-paper-edge pt-7">
           {alreadyRead ? (
             <p className="text-center font-script text-[12px] uppercase tracking-wide text-[#2f6b3a]">
-              ✓ Page complete
+              <Glyph name="check" size={12} strokeWidth={2.2} className={LEADING_ICON} />
+              Page complete
             </p>
           ) : (
             <Button
@@ -354,7 +372,7 @@ function NoteBlockView({ block }: { block: NoteBlock }) {
 
     case 'table':
       return (
-        <div className="overflow-x-auto rounded-lg border-2 border-parchment-edge">
+        <div className="overflow-x-auto rounded-lg border-2 border-paper-edge">
           <table className="quill-table">
             <thead>
               <tr>
@@ -437,7 +455,13 @@ function CheckBlock({ block }: { block: Extract<NoteBlock, { type: 'check' }> })
             className="mb-1.5 font-script text-[11.5px] font-semibold uppercase tracking-[0.14em]"
             style={{ color: chosen === block.answer ? '#2f6b3a' : '#9c3326' }}
           >
-            {chosen === block.answer ? '✓ Correct' : '✕ Not quite'}
+            <Glyph
+              name={chosen === block.answer ? 'check' : 'cross'}
+              size={12}
+              strokeWidth={2.2}
+              className={LEADING_ICON}
+            />
+            {chosen === block.answer ? 'Correct' : 'Not quite'}
           </div>
           <RichText as="div" className="font-read text-[1.02rem] leading-[1.72] text-ink">
             {block.explain}

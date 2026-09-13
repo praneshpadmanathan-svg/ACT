@@ -25,20 +25,42 @@ import { cloudEnabled } from '@/lib/supabase';
 import { sfx } from '@/lib/sfx';
 import { titleCase } from '@/lib/utils';
 import { Page } from '@/components/Shell';
-import { Button, ProgressBar, ProgressRing, RankBadge } from '@/components/ui';
-import { useMapProgress } from '@/game/AdventureMap';
-import { REGIONS } from '@/game/mapData';
+import { Button, Eyebrow, LEADING_ICON, ProgressBar, ProgressRing, RankBadge } from '@/components/ui';
+import { Glyph, type IconName } from '@/components/Icon';
+import { useZoneProgress } from '@/lib/zoneProgress';
+import { REGIONS } from '@/content/regionFlavor';
 import { nextChapter } from '@/game/story';
 import { Art } from '@/components/Art';
+import { FREE_SECTIONS, sectionIsFree } from '@/lib/features';
+import { LockSigil } from '@/game/Sigils';
 
 /** Dismissal of the "make an account" nudge, so it asks once and takes no for
  *  an answer. Nagging a teenager for an email address is how you lose them. */
 const SAVE_PROMPT_KEY = 'act-command:save-prompt-dismissed';
 
 export function Home() {
-  const { progress, rank, playerName, isGuest } = useStore();
+  const { progress, rank, playerName, isGuest, isPro } = useStore();
   const navigate = useNavigate();
-  const { current, cleared, total, allCleared } = useMapProgress();
+  const { current: standing, cleared, total, allCleared } = useZoneProgress();
+
+  /* The camp's headline CTA has to point somewhere a free traveller can
+     actually go. `useZoneProgress` walks the subject they chose first, so
+     after a trial ends — or for anyone who picked Math on the way in — the
+     one big button on the home screen would otherwise open an upsell. That is
+     the worst possible place for a wall: it is the first thing they see, and
+     it makes the app look finished rather than partly bought.
+     
+     So when the standing landmark is behind the gate, walk the free roads for
+     the first one that is not. If those are cleared too, `current` goes null
+     and the button becomes the Summit CTA, which is itself gated but is at
+     least an honest "you have finished what is open". */
+  const current =
+    standing && (isPro || sectionIsFree(standing.section))
+      ? standing
+      : (FREE_SECTIONS.map((id) => PATH_BY_ID[id])
+          .flatMap((path) => path?.nodes ?? [])
+          .filter((zone) => progress.zonesCleared[zone.id] === undefined)
+          .map((zone) => ({ zone }))[0] ?? null);
 
   const { pct, next } = rankProgress(progress.xp);
   const estimate = estimatedComposite(progress);
@@ -64,14 +86,14 @@ export function Home() {
       <div className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-leather-950/80 via-leather-950/88 to-leather-950" />
 
       <Page>
-        {/* Story beats play on the map, so a chapter you have earned but not
-            yet seen is invisible from camp. Say so, and offer the door. */}
+        {/* Story beats play out on the road, so a chapter you have earned but
+            not yet seen is invisible from camp. Say so, and offer the door. */}
         {pendingChapter && (
           <button
             type="button"
             onClick={() => {
               sfx.select();
-              navigate({ name: 'map' });
+              navigate({ name: 'path' });
             }}
             className="panel-lit mb-5 flex w-full items-center gap-4 p-4 text-left transition-all
                        hover:-translate-y-0.5 hover:border-gold-deep sm:p-5"
@@ -82,15 +104,18 @@ export function Home() {
               className="animate-float w-[52px] flex-none select-none sm:w-[64px]"
             />
             <span className="min-w-0 flex-1">
-              <span className="eyebrow block">✦ Wizzy has something to tell you</span>
+              <Eyebrow>Wizzy has something to tell you</Eyebrow>
               <span className="mt-1 block font-display text-[15px] font-semibold text-gold-light">
                 {pendingChapter.title}
               </span>
               <span className="mt-0.5 block font-read text-[13.5px] text-parchment-dim">
-                He is waiting out on the map.
+                He is waiting out on the road.
               </span>
             </span>
-            <span className="flex-none font-display text-[13px] font-semibold text-gold">Go ▸</span>
+            <span className="flex flex-none items-center gap-1 font-display text-[13px] font-semibold text-gold">
+              Go
+              <Glyph name="chevronRight" size={13} strokeWidth={2} />
+            </span>
           </button>
         )}
 
@@ -106,7 +131,15 @@ export function Home() {
                 </h1>
                 <p
                   className="mt-1 font-script text-[14px] uppercase tracking-[0.14em]"
-                  style={{ color: rank.color }}
+                  /* Tinted toward the surface rather than set raw, the same way
+                     the ranks on the Progress screen are. `rank.color` is a
+                     badge colour picked to read on dark metal — Lorewarden's
+                     cyan lands at 1.49:1 on light parchment — and the mix keeps
+                     each rank's identity while letting it invert with the
+                     theme. See --rank-tint in index.css. */
+                  style={{
+                    color: `color-mix(in oklab, ${rank.color} var(--rank-tint), oklch(var(--c-parchment)))`,
+                  }}
                 >
                   {rank.name}
                 </p>
@@ -132,21 +165,24 @@ export function Home() {
             onClick={() => {
               sfx.select();
               if (current) navigate({ name: 'zone', zone: current.zone.id });
-              else navigate({ name: 'tests' });
+              else navigate(allCleared ? { name: 'tests' } : { name: 'profile' });
             }}
             className="panel-lit group p-6 text-left transition-colors hover:border-gold-deep sm:p-7"
           >
-            <div className="eyebrow mb-3">⚑ Continue your quest</div>
+            <Eyebrow icon="flag" className="mb-3">Continue your quest</Eyebrow>
             <h2 className="heading text-[clamp(1.15rem,2.4vw,1.5rem)] text-gold-light">
-              {current ? current.zone.name : 'The Final Summit'}
+              {current ? current.zone.name : allCleared ? 'The Final Summit' : 'The roads ahead'}
             </h2>
             <p className="mt-2 font-read text-[15px] leading-relaxed text-parchment-dim">
               {current
                 ? `${current.zone.sub} — a short lesson, then a quiz to clear the landmark.`
-                : 'Every landmark cleared. Sail to the citadel and take your full mock test.'}
+                : allCleared
+                  ? 'Every landmark cleared. Sail to the citadel and take your full mock test.'
+                  : 'You have cleared every landmark that is open to you. Three more roads are waiting behind Pro.'}
             </p>
             <span className="mt-5 inline-flex items-center gap-2 font-display text-[14px] font-semibold text-gold group-hover:text-gold-bright">
-              {current ? 'Begin the lesson' : 'Take the mock test'} ▸
+              {current ? 'Begin the lesson' : allCleared ? 'Take the mock test' : 'See what Pro opens'}
+              <Glyph name="chevronRight" size={14} strokeWidth={2} />
             </span>
           </button>
         </div>
@@ -161,7 +197,7 @@ export function Home() {
         {isGuest && cloudEnabled && cleared >= 1 && !savePromptHidden && (
           <div className="panel-lit mb-5 flex flex-wrap items-center gap-4 p-4 sm:p-5">
             <span className="min-w-0 flex-1">
-              <span className="eyebrow block">✦ Keep this</span>
+              <Eyebrow>Keep this</Eyebrow>
               <span className="mt-1 block font-display text-[15px] font-semibold text-gold-light">
                 {cleared} landmark{cleared === 1 ? '' : 's'} and {progress.xp.toLocaleString()} XP,
                 saved only in this browser
@@ -243,7 +279,9 @@ export function Home() {
             </dl>
 
             <a href={hrefFor({ name: 'stats' })} onClick={() => sfx.select()}>
-              <Button className="mt-5 w-full">View full progress ▸</Button>
+              <Button trailing className="mt-5 w-full">
+                View full progress
+              </Button>
             </a>
           </section>
 
@@ -263,10 +301,10 @@ export function Home() {
               href={hrefFor({ name: reviewDue > 0 ? 'review' : 'drills' })}
               onClick={() => sfx.select()}
             >
-              <Button variant={reviewDue > 0 ? 'primary' : 'ghost'} className="mt-5 w-full">
+              <Button variant={reviewDue > 0 ? 'primary' : 'ghost'} trailing className="mt-5 w-full">
                 {reviewDue > 0
-                  ? `Review ${reviewDue} question${reviewDue === 1 ? '' : 's'} ▸`
-                  : 'Train a skill ▸'}
+                  ? `Review ${reviewDue} question${reviewDue === 1 ? '' : 's'}`
+                  : 'Train a skill'}
               </Button>
             </a>
           </section>
@@ -288,8 +326,11 @@ export function Home() {
                   className="panel flex items-center gap-4 px-5 py-4 text-left transition-colors hover:border-gold-deep"
                 >
                   <span className="min-w-0 flex-1">
-                    <span className="block truncate font-display text-[15px] font-semibold text-parchment">
-                      {titleCase(t.topic)}
+                    <span className="flex items-center gap-1.5 font-display text-[15px] font-semibold text-parchment">
+                      <span className="truncate">{titleCase(t.topic)}</span>
+                      {!isPro && !sectionIsFree(t.section) && (
+                        <LockSigil size={13} className="flex-none text-gold opacity-80" />
+                      )}
                     </span>
                     <span className="mt-0.5 block font-read text-[13.5px] text-ink-faint">
                       {t.correct}/{t.attempts} correct · {t.avgSeconds.toFixed(0)}s average
@@ -302,7 +343,7 @@ export function Home() {
                        last one that should be hard to read. */
                     style={{
                       color:
-                        t.accuracy < 0.5 ? '#dd8571' : t.accuracy < 0.7 ? '#d4a017' : '#7cc98a',
+                        t.accuracy < 0.5 ? 'oklch(var(--c-blood-text))' : t.accuracy < 0.7 ? 'oklch(var(--c-gold))' : 'oklch(var(--c-woods-text))',
                     }}
                   >
                     {Math.round(t.accuracy * 100)}%
@@ -316,9 +357,9 @@ export function Home() {
         {/* ----------------------------------------------------------- routes */}
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <Quick
-            label="Adventure map"
+            label="The four roads"
             detail={allCleared ? 'All cleared' : `${total - cleared} landmarks left`}
-            to="map"
+            to="path"
           />
           <Quick label="The library" detail={`${LIBRARY_STATS.notePages} lessons`} to="notes" />
           <Quick
@@ -354,7 +395,7 @@ function PlacementPrompt() {
   return (
     <div className="panel-lit mb-6 flex flex-wrap items-center gap-4 p-5 sm:p-6">
       <span className="min-w-0 flex-1">
-        <span className="eyebrow block">✦ Where do you stand?</span>
+        <Eyebrow>Where do you stand?</Eyebrow>
         <span className="mt-1 block font-display text-[15px] font-semibold text-gold-light">
           Take the placement test
         </span>
@@ -413,17 +454,18 @@ function DailyCard() {
                   }`}
     >
       <span
-        className="num flex-none rounded-lg border-2 px-4 py-2 text-[26px] leading-none"
+        className="num flex flex-none items-center justify-center rounded-lg border-2 px-4 py-2 text-[26px] leading-none"
         style={{
-          color: done ? '#7cc98a' : '#d4a017',
+          color: done ? 'oklch(var(--c-woods-text))' : 'oklch(var(--c-gold))',
           borderColor: done ? '#3f6b4a' : '#8a6a1c',
         }}
       >
-        {done ? '✓' : DAILY_SIZE}
+        {done ? <Glyph name="check" size={26} strokeWidth={2.2} /> : DAILY_SIZE}
       </span>
       <span className="min-w-0 flex-1">
-        <span className="eyebrow block">
-          {done ? '✓ Daily challenge done' : '☀ Daily challenge'}
+        <span className="eyebrow">
+          <Glyph name={done ? 'check' : 'calendar'} size={12} className={LEADING_ICON} />
+          {done ? 'Daily challenge done' : 'Daily challenge'}
         </span>
         <span className="mt-1 block font-display text-[15px] font-semibold text-gold-light">
           {done
@@ -435,7 +477,10 @@ function DailyCard() {
         </span>
       </span>
       {!done && (
-        <span className="flex-none font-display text-[13px] font-semibold text-gold">Start ▸</span>
+        <span className="flex flex-none items-center gap-1 font-display text-[13px] font-semibold text-gold">
+          Start
+          <Glyph name="chevronRight" size={13} strokeWidth={2} />
+        </span>
       )}
     </button>
   );
@@ -455,11 +500,26 @@ function DailyCard() {
 
 const TRACK_FACE: Record<
   Exclude<TrackVerdict, 'unknown'>,
-  { eyebrow: string; color: string; border: string }
+  { icon: IconName; eyebrow: string; color: string; border: string }
 > = {
-  ahead: { eyebrow: '✦ Ahead of your target', color: '#7cc98a', border: 'border-[#3f6b4a]' },
-  onTrack: { eyebrow: '⚑ On track', color: '#d4a017', border: 'border-gold-deep' },
-  behind: { eyebrow: '⚠ Behind your target', color: '#dd8571', border: 'border-[#7a4038]' },
+  ahead: {
+    icon: 'spark',
+    eyebrow: 'Ahead of your target',
+    color: 'oklch(var(--c-woods-text))',
+    border: 'border-[#3f6b4a]',
+  },
+  onTrack: {
+    icon: 'flag',
+    eyebrow: 'On track',
+    color: 'oklch(var(--c-gold))',
+    border: 'border-gold-deep',
+  },
+  behind: {
+    icon: 'alert',
+    eyebrow: 'Behind your target',
+    color: 'oklch(var(--c-blood-text))',
+    border: 'border-[#7a4038]',
+  },
 };
 
 function TrackCard() {
@@ -491,11 +551,18 @@ function TrackCard() {
     <section className={`panel mb-6 border-2 ${face.border} p-6 sm:p-7`}>
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
         <span className="eyebrow" style={{ color: face.color }}>
+          <Glyph name={face.icon} size={12} className={LEADING_ICON} />
           {face.eyebrow}
         </span>
         {status.change !== null && status.change !== 0 && (
           <span className="ml-auto font-display text-[13px] font-semibold text-parchment-dim">
-            {status.change > 0 ? '▲' : '▼'} {Math.abs(status.change)} point
+            <Glyph
+              name={status.change > 0 ? 'chevronUp' : 'chevronDown'}
+              size={12}
+              strokeWidth={2.2}
+              className={LEADING_ICON}
+            />
+            {Math.abs(status.change)} point
             {Math.abs(status.change) === 1 ? '' : 's'} in the last 60 days
           </span>
         )}
@@ -535,7 +602,7 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
   const plan = todaysPlan(progress, currentZone);
   const lead = plan.steps[0];
 
-  const countdown = urgency === 'close' ? '#dd8571' : urgency === 'soon' ? '#d4a017' : '#7cc98a';
+  const countdown = urgency === 'close' ? 'oklch(var(--c-blood-text))' : urgency === 'soon' ? 'oklch(var(--c-gold))' : 'oklch(var(--c-woods-text))';
 
   return (
     <section className="panel-lit mb-6 p-6 sm:p-7">
@@ -629,7 +696,7 @@ function Stat({ label, value, note }: { label: string; value: string; note?: str
     <div>
       <dt className="label-sm">{label}</dt>
       <dd className="num mt-1 text-[22px] text-parchment">{value}</dd>
-      {note && <dd className="mt-0.5 font-read text-[11.5px] leading-tight text-cliffs">{note}</dd>}
+      {note && <dd className="mt-0.5 font-read text-[11.5px] leading-tight text-cliffs-text">{note}</dd>}
     </div>
   );
 }
@@ -638,7 +705,7 @@ function Row({ label, value, highlight }: { label: string; value: string; highli
   return (
     <div className="flex items-center justify-between border-b border-leather-700/60 pb-2.5 last:border-0">
       <dt className="font-read text-[14.5px] text-parchment-dim">{label}</dt>
-      <dd className="num text-[18px]" style={{ color: highlight ? '#d4a017' : '#e8d9ba' }}>
+      <dd className="num text-[18px]" style={{ color: highlight ? 'oklch(var(--c-gold))' : 'oklch(var(--c-parchment-dim))' }}>
         {value}
       </dd>
     </div>
@@ -652,7 +719,7 @@ function Quick({
 }: {
   label: string;
   detail: string;
-  to: 'map' | 'notes' | 'drills' | 'tests';
+  to: 'path' | 'notes' | 'drills' | 'tests';
 }) {
   return (
     <a

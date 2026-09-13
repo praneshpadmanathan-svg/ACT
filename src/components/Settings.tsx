@@ -73,7 +73,7 @@ function Segmented<T extends string | number>({
             className={cx(
               'rounded-lg border-2 px-3.5 py-2 font-display text-[13px] font-semibold transition-colors',
               active
-                ? 'border-gold bg-gold text-[#2a2000]'
+                ? 'border-gilt bg-gilt text-[#2a2000]'
                 : 'border-leather-700 bg-leather-800 text-parchment-dim hover:border-gold-deep hover:text-parchment',
             )}
             title={option.detail}
@@ -223,7 +223,7 @@ export function DisplaySettings() {
 
       <SwitchRow
         label="Use less data"
-        detail="Replaces the painted map, the camp and the character art with flat colour in the same key. Worth turning on if you are on a metered connection or a slow one."
+        detail="Replaces the region backdrops, the camp and the character art with flat colour in the same key. Worth turning on if you are on a metered connection or a slow one."
         on={prefs.reducedData}
         onChange={(v) => setPref('reducedData', v)}
       />
@@ -287,8 +287,17 @@ export function DiagnosticsPanel() {
       <ul className="mb-4 max-h-56 space-y-1.5 overflow-auto rounded-lg border border-leather-700 bg-leather-950/60 p-3">
         {[...events].reverse().map((e, i) => (
           <li key={`${e.at}-${i}`} className="font-mono text-[11px] leading-relaxed">
-            <span className={e.level === 'error' ? 'text-blood-text' : 'text-gold'}>
-              {e.level === 'error' ? '✕' : '!'}
+            <span
+              className={e.level === 'error' ? 'text-blood-text' : 'text-gold'}
+              role="img"
+              aria-label={e.level === 'error' ? 'Error' : 'Warning'}
+            >
+              <Glyph
+                name={e.level === 'error' ? 'cross' : 'alert'}
+                size={11}
+                strokeWidth={2.2}
+                className="inline-block align-[-1px]"
+              />
             </span>{' '}
             <span className="text-parchment-dim">{e.scope}</span>{' '}
             <span className="text-ink-faint">{e.message}</span>

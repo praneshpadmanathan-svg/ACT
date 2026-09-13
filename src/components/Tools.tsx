@@ -177,7 +177,7 @@ function Calculator() {
       className={cx(
         'rounded-lg border-2 py-2.5 font-display text-[15px] font-semibold transition-colors',
         variant === 'op' && 'border-gold-deep bg-leather-800 text-gold hover:bg-leather-750',
-        variant === 'accent' && 'border-gold bg-gold text-[#2a2000] hover:brightness-110',
+        variant === 'accent' && 'border-gilt bg-gilt text-[#2a2000] hover:brightness-110',
         variant === 'wide' &&
           'col-span-2 border-leather-700 bg-leather-800 text-parchment-dim hover:border-gold-deep',
         !variant && 'border-leather-700 bg-leather-850 text-parchment hover:border-gold-deep',
@@ -256,7 +256,7 @@ function Scratchpad() {
         spellCheck={false}
         rows={11}
         placeholder={'Work it out here.\n\n2x + 6 = 18\n2x = 12\nx = 6'}
-        className="w-full resize-none rounded-lg border-2 border-parchment-edge bg-parchment px-3.5 py-3
+        className="w-full resize-none rounded-lg border-2 border-paper-edge bg-paper px-3.5 py-3
                    font-mono text-[13.5px] leading-relaxed text-ink outline-none
                    placeholder:text-ink-faint focus:border-gold-deep"
       />
@@ -401,7 +401,7 @@ function DockButton({
       className={cx(
         'flex h-11 w-11 items-center justify-center rounded-xl border-2 shadow-card backdrop-blur transition-colors',
         active
-          ? 'border-gold bg-gold text-[#2a2000]'
+          ? 'border-gilt bg-gilt text-[#2a2000]'
           : 'border-leather-700 bg-leather-950/90 text-parchment-dim hover:border-gold-deep hover:text-gold',
         hint && 'animate-questPulse',
       )}

@@ -5,17 +5,17 @@
    spends its questions where they are worth the most. */
 
 import { useMemo, useState } from 'react';
-import { QUESTIONS, SECTIONS, SECTION_BY_ID, TOPICS_BY_SECTION, getQuestion } from '@/content';
+import { QUESTIONS, SECTION_BY_ID, TOPICS_BY_SECTION, getQuestion } from '@/content';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { fromDrillQuestion, runnableById } from '@/lib/normalize';
 import { dailyDone, dueForReview, topicStats, XP } from '@/lib/progress';
 import { dailyBlurb, pickDaily } from '@/lib/daily';
 import { sfx } from '@/lib/sfx';
-import { cx, shuffle, titleCase } from '@/lib/utils';
+import { shuffle, titleCase } from '@/lib/utils';
 import type { Question, SectionId } from '@/types';
 import { Page } from '@/components/Shell';
-import { Button, EmptyState, ProgressBar, SectionHeading } from '@/components/ui';
+import { Button, EmptyState, ProgressBar, SectionHeading, SectionTabs } from '@/components/ui';
 import {
   QuestionRunner,
   type AnswerRecord,
@@ -23,6 +23,8 @@ import {
 } from '@/components/QuestionRunner';
 import { RichText } from '@/components/RichText';
 import { Glyph } from '@/components/Icon';
+import { ProGate, ProUpsell } from '@/components/ProGate';
+import { FREE_SECTIONS, sectionIsFree } from '@/lib/features';
 
 const LENGTHS = [5, 10, 20];
 
@@ -30,7 +32,7 @@ const LENGTHS = [5, 10, 20];
 
 export function DrillsScreen({ section }: { section?: string }) {
   const navigate = useNavigate();
-  const { progress } = useStore();
+  const { progress, isPro } = useStore();
   const active = (section as SectionId) ?? 'english';
   const meta = SECTION_BY_ID[active];
 
@@ -58,6 +60,22 @@ export function DrillsScreen({ section }: { section?: string }) {
     );
   }
 
+  /* Same reasoning as the Study road: the route is the thing that has to be
+     gated, because `#/drills/science` is reachable without ever seeing a pill.
+     The heading and the pills stay so the way back to English is one tap. */
+  if (!isPro && !sectionIsFree(active)) {
+    return (
+      <Page>
+        <SectionHeading eyebrow={meta.name} title="Drills" detail={meta.blurb} />
+        <SectionTabs active={active} hrefFor={(id) => hrefFor({ name: 'drills', section: id })} />
+        <ProUpsell
+          title={`${meta.name} drills are Pro`}
+          detail={`${QUESTIONS[active].length} graded ${meta.name.toLowerCase()} questions, every choice explained — plus the road, the notes and the guardian that go with them.`}
+        />
+      </Page>
+    );
+  }
+
   const topics = TOPICS_BY_SECTION[active];
 
   return (
@@ -68,24 +86,7 @@ export function DrillsScreen({ section }: { section?: string }) {
         detail="Adaptive practice from the graded question bank. Every choice gets an explanation, not just the right one."
       />
 
-      <div className="mb-6 flex flex-wrap gap-2">
-        {SECTIONS.map((s) => (
-          <a
-            key={s.id}
-            href={hrefFor({ name: 'drills', section: s.id })}
-            onClick={() => sfx.select()}
-            className={cx(
-              'rounded-lg border-2 px-4 py-2 font-script text-[12px] uppercase tracking-wide transition-colors',
-              s.id === active
-                ? 'text-[#0d0620]'
-                : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-parchment',
-            )}
-            style={s.id === active ? { background: s.color, borderColor: s.color } : undefined}
-          >
-            {s.name}
-          </a>
-        ))}
-      </div>
+      <SectionTabs active={active} hrefFor={(id) => hrefFor({ name: 'drills', section: id })} />
 
       {/* mixed drill */}
       <div
@@ -129,7 +130,10 @@ export function DrillsScreen({ section }: { section?: string }) {
               The ones you set aside to come back to.
             </span>
           </span>
-          <span className="flex-none font-display text-[13px] font-semibold text-gold">Open ▸</span>
+          <span className="flex flex-none items-center gap-1 font-display text-[13px] font-semibold text-gold">
+            Open
+            <Glyph name="chevronRight" size={13} strokeWidth={2} />
+          </span>
         </a>
       )}
 
@@ -168,12 +172,12 @@ export function DrillsScreen({ section }: { section?: string }) {
                 style={{
                   color:
                     accuracy === null
-                      ? '#a3906c'
+                      ? 'oklch(var(--c-ink-faint))'
                       : accuracy < 0.5
-                        ? '#dd8571'
+                        ? 'oklch(var(--c-blood-text))'
                         : accuracy < 0.75
-                          ? '#e8c34a'
-                          : '#7cc98a',
+                          ? 'oklch(var(--c-region-summit))'
+                          : 'oklch(var(--c-woods-text))',
                 }}
               >
                 {accuracy === null ? '—' : `${Math.round(accuracy * 100)}%`}
@@ -212,7 +216,7 @@ function pickAdaptive(
 
 export function DrillRunner({ section, topic }: { section: string; topic?: string }) {
   const navigate = useNavigate();
-  const { progress, answerQuestion } = useStore();
+  const { progress, answerQuestion, isPro } = useStore();
   const [results, setResults] = useState<AnswerRecord[] | null>(null);
 
   const sectionId = section as SectionId;
@@ -251,6 +255,21 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
     // would swap questions under the player.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sectionId, topic]);
+
+  /* The setup screen is gated, but a drill is a URL of its own — bookmarked
+     mid-session, or reached from a Camp suggestion written before the trial
+     ran out. Checked after the hooks above, never before: an early return
+     placed above `useMemo` would change the hook count between renders. */
+  if (meta && !isPro && !sectionIsFree(sectionId)) {
+    return (
+      <Page>
+        <ProUpsell
+          title={`${meta.name} drills are Pro`}
+          detail="This drill is on one of the Pro roads. English drills stay open, and Pro opens the other three."
+        />
+      </Page>
+    );
+  }
 
   if (!meta || questions.length === 0) {
     return (
@@ -309,7 +328,19 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
 
 /* --------------------------------------------------------------- review */
 
+/* Review is gated as a whole feature rather than per subject: the queue is
+   mixed by design — it is whatever you got wrong, in whatever subject — so
+   there is no coherent English-only version of it to give away. The wrapper
+   sits outside the body so the hooks inside run identically either way. */
 export function ReviewScreen() {
+  return (
+    <ProGate feature="review" page>
+      <ReviewSession />
+    </ProGate>
+  );
+}
+
+function ReviewSession() {
   const navigate = useNavigate();
   const { progress, answerQuestion } = useStore();
   const [results, setResults] = useState<AnswerRecord[] | null>(null);
@@ -331,7 +362,7 @@ export function ReviewScreen() {
     return (
       <DrillSummary
         results={results}
-        accent="#3ad6f0"
+        accent="oklch(var(--c-cliffs-text))"
         onRetry={() => {
           setResults(null);
           setStarted(false);
@@ -367,15 +398,21 @@ export function ReviewScreen() {
           />
         ) : (
           <div className="panel p-7 text-center sm:p-9">
-            <div className="num text-[64px] leading-none text-cliffs">{due.length}</div>
+            <div className="num text-[64px] leading-none text-cliffs-text">{due.length}</div>
             <p className="mt-2 font-script text-[12px] uppercase tracking-wide text-ink-faint">
               question{due.length === 1 ? '' : 's'} due
             </p>
             <p className="mx-auto mt-5 max-w-md text-[15px] leading-relaxed text-parchment-dim">
               Get one right and it moves further out. Get it wrong and it comes back tomorrow.
             </p>
-            <Button variant="primary" size="lg" className="mt-7" onClick={() => setStarted(true)}>
-              Start review ▶
+            <Button
+              variant="primary"
+              size="lg"
+              trailing
+              className="mt-7"
+              onClick={() => setStarted(true)}
+            >
+              Start review
             </Button>
             {upcoming > 0 && (
               <p className="mt-4 text-[13px] text-ink-faint">{upcoming} more scheduled for later</p>
@@ -392,7 +429,7 @@ export function ReviewScreen() {
         questions={due}
         title="Review session"
         subtitle="Questions you have missed before"
-        accent="#3ad6f0"
+        accent="oklch(var(--c-cliffs-text))"
         onQuit={() => setStarted(false)}
         onAnswer={(record) =>
           answerQuestion({
@@ -448,7 +485,7 @@ export function BookmarksScreen() {
     return (
       <DrillSummary
         results={results}
-        accent="#d4a017"
+        accent="oklch(var(--c-gold))"
         onRetry={() => {
           setResults(null);
           setStarted(false);
@@ -465,7 +502,7 @@ export function BookmarksScreen() {
           questions={saved.map(fromDrillQuestion)}
           title="Saved questions"
           subtitle={`${saved.length} you set aside`}
-          accent="#d4a017"
+          accent="oklch(var(--c-gold))"
           onQuit={() => setStarted(false)}
           onAnswer={(record) =>
             answerQuestion({
@@ -505,8 +542,8 @@ export function BookmarksScreen() {
       ) : (
         <>
           <div className="mb-5 flex flex-wrap items-center gap-3">
-            <Button variant="primary" onClick={() => setStarted(true)}>
-              Run all {saved.length} as a drill ▶
+            <Button variant="primary" trailing onClick={() => setStarted(true)}>
+              Run all {saved.length} as a drill
             </Button>
             <span className="text-[13px] text-ink-faint">
               Answering them here counts the same as any other practice.
@@ -570,22 +607,28 @@ export function BookmarksScreen() {
  * seconds this exists to fill. */
 export function DailyScreen() {
   const navigate = useNavigate();
-  const { progress, answerQuestion, finishDaily } = useStore();
+  const { progress, answerQuestion, finishDaily, isPro } = useStore();
   const [results, setResults] = useState<AnswerRecord[] | null>(null);
 
   const done = dailyDone(progress);
 
+  /* The daily stays open on the free tier — it is the ninety-second habit the
+     whole app is built to support, and taking it away would be selling the
+     habit rather than the material. What it does not do is quietly hand out
+     questions from the three roads that are locked. */
+  const allowed = isPro ? undefined : FREE_SECTIONS;
+
   /* Chosen once, from the state as it was on arrival. Not reactive to
      `progress`: answering question two must not re-pick questions three
      through five underneath the player. */
-  const [questions] = useState(() => pickDaily(progress));
-  const [blurb] = useState(() => dailyBlurb(progress));
+  const [questions] = useState(() => pickDaily(progress, undefined, allowed));
+  const [blurb] = useState(() => dailyBlurb(progress, allowed));
 
   if (results) {
     return (
       <DrillSummary
         results={results}
-        accent="#ffd23e"
+        accent="oklch(var(--c-gold))"
         onRetry={() => navigate({ name: 'drills' })}
         onDone={() => navigate({ name: 'home' })}
       />
@@ -636,7 +679,7 @@ export function DailyScreen() {
         questions={questions}
         title="Daily challenge"
         subtitle={blurb}
-        accent="#ffd23e"
+        accent="oklch(var(--c-gold))"
         onQuit={() => navigate({ name: 'home' })}
         onAnswer={(record) =>
           answerQuestion({

@@ -25,20 +25,21 @@ import { useRoute } from '@/lib/router';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import { useDialogFocus } from '@/lib/useDialogFocus';
-import { REGION_ORDER } from './mapData';
+import { REGION_ORDER } from '@/content/regionFlavor';
 import { nextChapter, type Chapter, type StoryChoice } from './story';
 import { Art } from '@/components/Art';
+import { Glyph } from '@/components/Icon';
+import { Eyebrow } from '@/components/ui';
 
 const TYPE_MS = 16;
 
 /* Storm across the whole frame, for a beat whose mood is `grey`.
 
-   Built exactly like the map's banks — see `SHEETS` in DiscoveryLayer.tsx and
-   `.mapfx-grey-churn` in index.css — and for the same reason: rasterised at
-   48% and scaled up, so a screen of weather costs about two viewports of
-   surface and nothing repaints while it moves. Two sheets here rather than
-   three; this one is behind a card and only has to read as churn in the
-   margins, not carry a region on its own. */
+   Rasterised at 48% and scaled up rather than drawn at full size, so a screen
+   of weather costs about two viewports of surface and nothing repaints while
+   it moves. Two sheets is enough: this sits behind a card and only has to read
+   as churn in the margins. See `.story-churn` in index.css for the keyframe —
+   the per-sheet duration, offsets and scale are set inline below. */
 const STORY_CHURN = [
   {
     dur: 37,
@@ -111,14 +112,22 @@ function useTypewriter(text: string, enabled: boolean) {
   return { shown, done, finish };
 }
 
-/* The story plays on the adventure map and nowhere else.
+/* The story plays where the world is, and nowhere else.
 
    It used to be an exclusion list — everywhere except the landing, auth and
    onboarding — which meant chapters opened over the camp dashboard. An
-   allowlist puts every beat over the world it is describing, and means a
-   landmark you clear banks its beat until you step back out onto the map,
-   which is where you were heading anyway. */
-const STORY_ROUTES = new Set(['map']);
+   allowlist puts every beat over the thing it is describing, and means a
+   landmark you clear banks its beat until you step back out to the list,
+   which is where you were heading anyway.
+
+   This was `['map']` while there was a map. Both survivors of that screen are
+   here: the subject list, where landmarks are cleared, and the duels list,
+   where the Seals are broken. Narrowing this set to a route that no longer
+   exists does not throw — `nextChapter` simply never gets called, the chain
+   stops advancing, and every achievement keyed on `storySeen` quietly becomes
+   unreachable. Any future route change here needs testing by clearing a
+   landmark and watching for a beat, not by reading the diff. */
+const STORY_ROUTES = new Set(['path', 'duels']);
 
 export function StoryOverlay() {
   const { progress, updateProgress } = useStore();
@@ -210,11 +219,11 @@ export function StoryOverlay() {
   /* What the world is doing, published for everything that should react.
 
      One attribute on <html> rather than props, because the things that have to
-     move are in three different trees: this overlay, the map underneath it and
-     the Grey's own banks inside that. Prop-drilling a mood from a story beat
-     into DiscoveryLayer would have meant threading it through the map, which
-     has nothing to do with the story and should not learn about it. Everything
-     it drives is in index.css under [data-story-mood].
+     move sit in different trees: this overlay and whatever screen is rendered
+     underneath it. Prop-drilling a mood from a story beat down into a screen
+     would have meant teaching that screen about the story, which has nothing
+     to do with it. Everything the mood drives is in index.css under
+     [data-story-mood].
 
      Cleared on unmount as well as on change: leaving the document drained
      because a chapter closed on a grey beat would be a bug you would never
@@ -224,7 +233,7 @@ export function StoryOverlay() {
      340ms storyIn fade. That fade puts opacity below 1 on the root, and an
      element with opacity below 1 is an isolated group — .story-drain blends
      with its backdrop, so while the fade is running it would desaturate only
-     the overlay's own contents and not the map underneath. Titled chapters
+     the overlay's own contents and not the screen underneath. Titled chapters
      dismiss at 1500ms so they are never near it. Dispatches skip the title and
      would be, but they are generated from DISPATCH_LINES and carry no mood; if
      that ever changes, this needs to wait out the fade too. */
@@ -343,8 +352,15 @@ export function StoryOverlay() {
   return (
     <div
       ref={dialogRef}
+      /* `story-overlay` is not a look — it is what marks this subtree as a
+         dark island. The scrim, the drain, the vignette and every mood below
+         are a lantern-lit cutscene, and they are hardcoded dark on purpose in
+         both themes. Left alone, a light-theme reader got that same dark
+         cinematic with its *text* inverted to near-black over it: the skip
+         control measured 2.53:1. See the rule in index.css that pins the dark
+         palette back on inside here. */
       className={cx(
-        'fixed inset-0 z-[120] flex items-center justify-center p-4',
+        'story-overlay fixed inset-0 z-[120] flex items-center justify-center p-4',
         closing ? 'animate-storyOut' : 'animate-storyIn',
       )}
       role="dialog"
@@ -357,9 +373,9 @@ export function StoryOverlay() {
           This used to be an 88%-opaque scrim with a painting of the camp over
           it, which meant every chapter was played against the same closed set
           — including the ones describing the land the player is looking at.
-          The map is right there behind this, still moving, and the card
-          carries its own 96%-opaque background, so nothing here is holding the
-          text up and it can afford to be thin.
+          The screen is right there behind this, and the card carries its own
+          96%-opaque background, so nothing here is holding the text up and it
+          can afford to be thin.
 
           Four layers rather than one because a mood needs to be able to drain
           the colour, change the light and bring weather in independently; all
@@ -477,18 +493,17 @@ export function StoryOverlay() {
 
             <div className="story-card min-w-0 flex-1">
               <div className="flex items-center justify-between gap-3">
-                <span className="eyebrow">
-                  ✦ {chapter.compact ? chapter.eyebrow : 'Wizzy the Guide'}
-                </span>
+                <Eyebrow>{chapter.compact ? chapter.eyebrow : 'Wizzy the Guide'}</Eyebrow>
                 <button
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
                     close();
                   }}
-                  className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
+                  className="inline-flex items-center gap-1 font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
                 >
-                  Skip ▸
+                  Skip
+                  <Glyph name="chevronRight" size={11} strokeWidth={2} />
                 </button>
               </div>
 
@@ -536,11 +551,18 @@ export function StoryOverlay() {
                   </span>
                   <span
                     className={cx(
-                      'font-script text-[12px] uppercase tracking-[0.16em]',
+                      'inline-flex items-center gap-1 font-script text-[12px] uppercase tracking-[0.16em]',
                       typing.done ? 'animate-shimmer text-gold' : 'text-ink-faint',
                     )}
                   >
-                    {typing.done ? 'Tap to continue ▸' : 'Tap to skip'}
+                    {typing.done ? (
+                      <>
+                        Tap to continue
+                        <Glyph name="chevronRight" size={12} strokeWidth={2} />
+                      </>
+                    ) : (
+                      'Tap to skip'
+                    )}
                   </span>
                 </div>
               )}
