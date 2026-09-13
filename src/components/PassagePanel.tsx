@@ -3,7 +3,8 @@
    Three shapes exist in the library and they need different treatment:
      English  — prose with an intro line
      Reading  — prose with a genre label and a blurb
-     Science  — a short setup plus one or more data tables
+     Science  — a short setup plus figures: data tables, plotted charts, or
+                the competing positions of a Conflicting Viewpoints passage
 
    On desktop the panel sticks alongside the question so you can look back at
    the text without losing your place; on mobile it collapses to a summary
@@ -13,13 +14,14 @@
 import { useState } from 'react';
 import type { Passage } from '@/types';
 import { Prose, RichText } from './RichText';
+import { FigureChartView } from './FigureChart';
 
 export function PassagePanel({ passage }: { passage: Passage }) {
   const [openOnMobile, setOpenOnMobile] = useState(false);
 
   return (
     <aside className="sheet overflow-hidden lg:sticky lg:top-20 lg:max-h-[calc(100dvh-6rem)] lg:overflow-y-auto">
-      <div className="border-b-2 border-parchment-edge bg-[#efeae0] px-6 py-4">
+      <div className="border-b-2 border-paper-edge bg-[#efeae0] px-6 py-4">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
             {passage.type && <div className="label-quill">{passage.type}</div>}
@@ -30,7 +32,7 @@ export function PassagePanel({ passage }: { passage: Passage }) {
           <button
             type="button"
             onClick={() => setOpenOnMobile((v) => !v)}
-            className="flex-none rounded border-2 border-parchment-edge bg-white px-2.5 py-1 font-script text-[10px] uppercase tracking-wide text-ink-soft lg:hidden"
+            className="flex-none rounded border-2 border-paper-edge bg-white px-2.5 py-1 font-script text-[10px] uppercase tracking-wide text-ink-soft lg:hidden"
             aria-expanded={openOnMobile}
           >
             {openOnMobile ? 'Hide' : 'Read'}
@@ -59,7 +61,7 @@ export function PassagePanel({ passage }: { passage: Passage }) {
             </figcaption>
 
             {figure.type === 'table' ? (
-              <div className="overflow-x-auto rounded-lg border-2 border-parchment-edge">
+              <div className="overflow-x-auto rounded-lg border-2 border-paper-edge">
                 <table className="quill-table">
                   <thead>
                     <tr>
@@ -87,6 +89,8 @@ export function PassagePanel({ passage }: { passage: Passage }) {
                   </tbody>
                 </table>
               </div>
+            ) : figure.type === 'chart' ? (
+              <FigureChartView figure={figure} />
             ) : (
               /* Conflicting Viewpoints passages are entirely these — each one
                  is a scientist's position, so they need to read as prose. */
