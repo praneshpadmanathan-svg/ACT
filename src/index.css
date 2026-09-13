@@ -1999,6 +1999,106 @@
     }
   }
 
+  /* ====================================================== the landmark route
+
+     Thirty-seven landmarks were a painted map, then a list of cards, and the
+     list was the better screen in every way that mattered — legible, keyboard-
+     reachable, honest about order. What it lost was the one thing the map was
+     actually for: the sense that these are places on a road you are walking
+     down, rather than rows in a table.
+
+     A gilt thread gives that back without giving the pixels back. The thread is
+     the road; it runs bright behind the ground you have taken, stops at you,
+     and goes dim ahead. Everything else here is the same data, the same locks
+     and the same navigation as before. */
+
+  .route-step {
+    @apply relative py-[5px] pl-[58px];
+  }
+  /* The thread. Drawn per row rather than as one line down the list, so it
+     tracks whatever height a row happens to be and cannot drift out of
+     alignment with the discs it is threading. The first and last rows are
+     clipped to the disc so the road begins and ends at a place rather than in
+     mid-air. */
+  .route-step::before {
+    content: '';
+    @apply pointer-events-none absolute bottom-0 top-0 w-0.5;
+    left: 19px;
+    background: oklch(var(--c-leather-700));
+  }
+  .route-step:first-child::before {
+    top: 50%;
+  }
+  .route-step:last-child::before {
+    bottom: 50%;
+  }
+  .route-step[data-state='cleared']::before {
+    background: linear-gradient(
+      180deg,
+      oklch(var(--c-gold-deep) / 0.85),
+      oklch(var(--c-gold) / 0.85)
+    );
+  }
+  /* The road reaches you and stops. Gilt into the disc, leather out of it —
+     which is the whole state of play in one gradient, and the reason the
+     current node needs no badge saying "you are here". */
+  .route-step[data-state='current']::before {
+    background: linear-gradient(
+      180deg,
+      oklch(var(--c-gold) / 0.85) 0%,
+      oklch(var(--c-gold) / 0.85) 48%,
+      oklch(var(--c-leather-700)) 56%,
+      oklch(var(--c-leather-700)) 100%
+    );
+  }
+
+  .route-node {
+    @apply absolute left-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center
+           justify-center rounded-full;
+    transition: box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  /* Sealed. A filled disc in the region's own colour with the lamp catching its
+     upper lip — the same light every other object on the screen is lit by, which
+     is what stops it reading as a coloured circle and starts it reading as wax
+     pressed into the page. */
+  .route-node-cleared {
+    box-shadow: var(--lamp-edge), var(--e-raised);
+  }
+  /* Lit, and the only lit thing in the column. */
+  .route-node-current {
+    background: oklch(var(--c-leather-900));
+    border: 2px solid oklch(var(--c-gold));
+    color: oklch(var(--c-gold-light));
+    box-shadow:
+      0 0 0 4px oklch(var(--c-gold) / 0.12),
+      0 0 18px oklch(var(--c-gold) / 0.3),
+      var(--e-raised);
+  }
+  /* Debossed and unlit: set *into* the leather rather than sitting on it.
+     `--e-flush` is the inset pair the ladder reserves for exactly this — a
+     thing that is part of the surface and not an object on top of it. */
+  .route-node-locked {
+    background: oklch(var(--c-leather-950) / 0.7);
+    border: 1px solid oklch(var(--c-leather-800));
+    color: oklch(var(--c-ink-faint));
+    box-shadow: var(--e-flush);
+  }
+
+  /* The row itself takes `.panel-quiet` when it is behind you or ahead of you
+     and `.panel` when it is the next thing — one rung of the elevation ladder
+     apart, and no gilt rule on any of them. The guardian card above the list is
+     already gilt-ruled; giving the current landmark the same treatment would say
+     the two are the same kind of thing. The glow lives in the disc instead, so
+     exactly one object in the column is lit. */
+  .route-card {
+    @apply flex w-full items-center gap-4 px-5 py-4 text-left;
+  }
+  .route-step[data-state='locked'] .route-card {
+    @apply cursor-not-allowed;
+    opacity: 0.55;
+  }
+
+
   /* ---------------------------------------------------------------- layout */
 
   .shell {

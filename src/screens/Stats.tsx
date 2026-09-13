@@ -23,6 +23,7 @@ import { DateField } from '@/components/fields';
 import { AchievementBadge } from '@/components/RankSigil';
 import { ScoreCaveat } from '@/components/ScoreCaveat';
 import { PlanPanel, ProGate } from '@/components/ProGate';
+import { ActivityChart, MIN_TREND_POINTS, ScoreTrend } from '@/components/StatCharts';
 import { DiagnosticsPanel, DisplaySettings } from '@/components/Settings';
 import { HeroChooser } from '@/game/HeroChooser';
 import { HeroSprite } from '@/game/HeroSprite';
@@ -46,7 +47,7 @@ export function StatsScreen() {
      re-bucketing the raw log, which no longer goes back far enough to ask. */
   const activity = useMemo(() => dailyActivity(progress, 84), [progress]);
 
-  const maxActivity = Math.max(1, ...activity);
+  const tests = progress.testHistory;
   const { answered, correct: totalCorrect } = progress.tally;
   const overallAccuracy = answered ? totalCorrect / answered : 0;
 
@@ -71,31 +72,82 @@ export function StatsScreen() {
         detail="Everything here comes from questions you have actually answered."
       />
 
-      {/* headline numbers */}
-      <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <Tile
-          label="Estimated composite"
-          value={estimate !== null ? String(estimate) : '—'}
-          color="oklch(var(--c-gold))"
-        />
-        <Tile
-          label="Overall accuracy"
-          value={`${Math.round(overallAccuracy * 100)}%`}
-          color="oklch(var(--c-woods-text))"
-        />
-        <Tile
-          label="Questions answered"
-          value={answered.toLocaleString()}
-          color="oklch(var(--c-desert-text))"
-        />
-        <Tile
-          label="Day streak"
-          value={String(progress.dayStreak)}
-          color="oklch(var(--c-cliffs-text))"
-        />
+      {/* One number is the headline, and the other three are not.
+
+          This was four tiles in a row, identical in size and weight, so the
+          projected score — the only figure on the screen anyone opens this
+          page to see — was typeset exactly as loudly as the day streak. A
+          screen where everything is emphasised has no emphasis. The composite
+          now sits at display size on the one gilt-ruled panel here; accuracy,
+          volume and streak drop a rung to supporting figures. Nothing is
+          hidden and nothing moved behind the paywall — only the type changed
+          size to match what the numbers are worth. */}
+      <div className="panel-lit mb-4 p-6 sm:p-7">
+        <div className="grid items-center gap-7 sm:grid-cols-[minmax(0,1fr)_auto]">
+          <div>
+            <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
+              Projected composite
+            </div>
+            <div className="mt-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <span className="num text-display-l leading-none text-gold">
+                {estimate !== null ? estimate : '—'}
+              </span>
+              <span className="font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint">
+                of 36 · goal {progress.targetScore}
+              </span>
+            </div>
+            {estimate !== null && (
+              <p className="mt-2 font-read text-[13px] text-parchment-dim">
+                {estimate >= progress.targetScore ? (
+                  <>You are at your goal. Raise it, or hold it steady under a clock.</>
+                ) : (
+                  <>
+                    <b className="text-parchment">{progress.targetScore - estimate}</b> point
+                    {progress.targetScore - estimate === 1 ? '' : 's'} to your goal.
+                  </>
+                )}
+              </p>
+            )}
+          </div>
+
+          {/* The trend is a different instrument from the number beside it —
+              scored tests, not drill accuracy — so it is labelled as one and
+              never joins that number on a single line. When there are not two
+              tests to draw, the space says why instead of showing a line with
+              one point in it. */}
+          {tests.length >= MIN_TREND_POINTS ? (
+            <ScoreTrend tests={tests} target={progress.targetScore} />
+          ) : (
+            <p className="max-w-[260px] font-read text-[12.5px] leading-relaxed text-ink-faint">
+              A trend line needs{' '}
+              <b className="text-parchment-dim">two scored tests</b> — you have{' '}
+              {tests.length === 0 ? 'none' : 'one'}. The number beside it is worked out from
+              practice accuracy, which is a different instrument and does not belong on the same
+              axis.{' '}
+              <a
+                href={hrefFor({ name: 'tests' })}
+                className="underline underline-offset-2 transition-colors hover:text-parchment-dim"
+              >
+                Sit one at the Summit
+              </a>
+              .
+            </p>
+          )}
+        </div>
       </div>
 
-      {estimate !== null && <ScoreCaveat kind="estimate" className="mb-6 -mt-2 max-w-xl" />}
+      {/* The caveat belongs to the number directly above it, so it sits
+          directly below that number — not after an intervening row of tiles,
+          where it reads as a footnote to whatever it happens to follow. */}
+      {estimate !== null && <ScoreCaveat kind="estimate" className="mb-5 max-w-xl" />}
+
+      {/* Supporting figures. One rung down the elevation ladder and roughly
+          half the type size, which is the whole hierarchy. */}
+      <div className="mb-6 grid grid-cols-3 gap-3">
+        <Figure label="Overall accuracy" value={`${Math.round(overallAccuracy * 100)}%`} />
+        <Figure label="Questions answered" value={answered.toLocaleString()} />
+        <Figure label="Day streak" value={String(progress.dayStreak)} />
+      </div>
 
       {/* A composite needs two sections with real data behind it. Saying so
           beats a bare em-dash, which reads as "broken" rather than "not yet". */}
@@ -128,7 +180,18 @@ export function StatsScreen() {
         title="The full breakdown"
         detail="Where the time went, which topics are costing you points, and twelve weeks of history. Your headline numbers above stay free."
       >
-      {/* per section */}
+      {/* Small multiples: the same card, the same 0-100% scale, the same four
+          pieces in the same four places, repeated once per section. That
+          sameness is the point — it is what lets the eye compare four things
+          by shape instead of by reading four numbers.
+
+          Each facet carries its own title, so which section a card belongs to
+          never rests on its accent colour. It cannot: the four section hues
+          are pinned to roughly one lightness in the light theme and the worst
+          adjacent pair separates by 3.9 under simulated protanopia, against a
+          target of 8. They are fine as one accent per titled card, which is
+          all they are used as here, and must never become the only thing
+          telling two series apart inside one plot. */}
       <h2 className="heading mb-4 text-[13px] text-parchment">By section</h2>
       <div className="mb-6 grid gap-3 sm:grid-cols-2">
         {SECTIONS.map((section) => {
@@ -137,10 +200,7 @@ export function StatsScreen() {
           const zones = path.nodes.filter((z) => progress.zonesCleared[z.id] !== undefined).length;
 
           return (
-            <div
-              key={section.id}
-              className="rounded-lg border-2 border-leather-700 bg-leather-850 p-5 shadow-card"
-            >
+            <div key={section.id} className="panel-quiet p-5">
               <div className="flex items-baseline justify-between">
                 <h3 className="heading text-[12px]" style={{ color: section.color }}>
                   {section.name}
@@ -167,29 +227,8 @@ export function StatsScreen() {
 
       {/* activity */}
       <h2 className="heading mb-4 text-[13px] text-parchment">Last 12 weeks</h2>
-      <div className="mb-6 rounded-lg border-2 border-leather-700 bg-leather-850 p-5 shadow-card">
-        <div className="flex items-end gap-[3px]" style={{ height: 90 }}>
-          {activity.map((count, i) => (
-            <div
-              key={i}
-              className="flex-1 rounded-sm transition-all"
-              style={{
-                height: `${Math.max(3, (count / maxActivity) * 100)}%`,
-                background:
-                  count === 0
-                    ? 'oklch(var(--c-leather-800))'
-                    : count > maxActivity * 0.6
-                      ? 'oklch(var(--c-gold))'
-                      : 'oklch(var(--c-gold-deep))',
-              }}
-              title={`${count} question${count === 1 ? '' : 's'}`}
-            />
-          ))}
-        </div>
-        <div className="mt-3 flex justify-between font-script text-[10px] uppercase tracking-wide text-ink-faint">
-          <span>12 weeks ago</span>
-          <span>Today</span>
-        </div>
+      <div className="panel-quiet mb-6 p-5">
+        <ActivityChart counts={activity} />
       </div>
 
       {/* topics */}
@@ -210,7 +249,7 @@ export function StatsScreen() {
           return (
             <div
               key={`${t.section}-${t.topic}`}
-              className="flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-4 py-3"
+              className="panel-quiet flex items-center gap-4 px-4 py-3"
             >
               <span className="w-36 flex-none truncate font-sans text-[13px] font-semibold text-parchment sm:w-48">
                 {titleCase(t.topic)}
@@ -247,15 +286,21 @@ export function StatsScreen() {
   );
 }
 
-function Tile({ label, value, color }: { label: string; value: string; color: string }) {
+/* A supporting figure: the same object the headline used to be, at half the
+   size and without an accent colour of its own.
+
+   The colours went deliberately. Four tiles in four different hues made the
+   set read as four categories, which they are not — they are four unrelated
+   measures of one person, and the hues were decoration standing in for
+   meaning. Parchment for all three says what is true: none of them is more
+   important than another, and none of them is the headline. */
+function Figure({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-lg border-2 border-leather-700 bg-leather-850 px-4 py-4 shadow-card">
+    <div className="panel-quiet px-4 py-3.5">
       <div className="font-script text-[10px] uppercase leading-tight tracking-[0.12em] text-ink-faint">
         {label}
       </div>
-      <div className="num mt-2 text-[32px] leading-none" style={{ color }}>
-        {value}
-      </div>
+      <div className="num mt-1.5 text-[22px] leading-none text-parchment">{value}</div>
     </div>
   );
 }

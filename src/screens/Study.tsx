@@ -127,9 +127,18 @@ export function StudyScreen({ section }: { section?: string }) {
         {/* the guardian at the end of the road */}
         <BossCard section={sectionId} cleared={done} total={path.nodes.length} />
 
-        {/* Staggered so the road assembles itself down the page rather than
-            appearing all at once — the one place a list reads as a journey. */}
-        <m.ol className="space-y-2.5" variants={staggerList} initial="initial" animate="animate">
+        {/* A route, not a list of cards.
+
+            The landmarks were never rows in a table — they were places on a
+            road, and that was the one thing the painted map carried that the
+            flat list dropped. A gilt thread down the disc column gives it back
+            for two pixels of width: bright behind the ground you have taken,
+            stopping at the disc you are standing on, dim ahead of you. The
+            data, the order, the locks and the destination are all unchanged.
+
+            Staggered so the road assembles itself down the page rather than
+            appearing all at once. */}
+        <m.ol className="route" variants={staggerList} initial="initial" animate="animate">
           {path.nodes.map((zone, index) => {
             const best = progress.zonesCleared[zone.id] ?? null;
             const cleared = best !== null;
@@ -138,9 +147,49 @@ export function StudyScreen({ section }: { section?: string }) {
               if (unlockedSeen) locked = true;
               else unlockedSeen = true;
             }
+            /* One string drives the thread's gradient, the disc's treatment and
+               the row's elevation, so the three can never disagree about which
+               landmark you are standing on. */
+            const state = cleared ? 'cleared' : locked ? 'locked' : 'current';
 
             return (
-              <m.li key={zone.id} variants={riseItem}>
+              <m.li key={zone.id} className="route-step" data-state={state} variants={riseItem}>
+                {/* The disc sits in the gutter, on the thread, outside the card:
+                    a place on the road rather than a badge on a row. It takes no
+                    clicks — the card beside it already goes there, and a second
+                    hit area for one destination is only a way to miss. Hidden
+                    from the reading order for the same reason it is redundant to
+                    the eye: an <ol> already numbers itself, `disabled` already
+                    says locked, and the score already says cleared.
+
+                    The drawn sigils are the old map pins. This list once showed
+                    a 🔒 emoji, which rendered differently on every platform and
+                    matched nothing else on the screen. */}
+                <span
+                  aria-hidden="true"
+                  className={cx(
+                    'route-node pointer-events-none',
+                    cleared
+                      ? 'route-node-cleared'
+                      : locked
+                        ? 'route-node-locked'
+                        : 'route-node-current',
+                  )}
+                  style={
+                    cleared
+                      ? { background: region.color, color: 'oklch(var(--c-leather-950))' }
+                      : undefined
+                  }
+                >
+                  {cleared ? (
+                    <ClearedSigil size={19} />
+                  ) : locked ? (
+                    <LockSigil size={18} />
+                  ) : (
+                    <span className="num text-[15px]">{index + 1}</span>
+                  )}
+                </span>
+
                 <button
                   type="button"
                   disabled={locked}
@@ -148,32 +197,8 @@ export function StudyScreen({ section }: { section?: string }) {
                     sfx.select();
                     navigate({ name: 'zone', zone: zone.id });
                   }}
-                  className={cx(
-                    'panel flex w-full items-center gap-4 px-5 py-4 text-left transition-colors',
-                    locked ? 'cursor-not-allowed opacity-55' : 'hover:border-gold-deep',
-                  )}
+                  className={cx('route-card', cleared || locked ? 'panel-quiet' : 'panel')}
                 >
-                  {/* The drawn sigils, same as the old map pins — this list
-                      used to show a 🔒 emoji, which rendered differently on
-                      every platform and did not match anything else. The old
-                      #8a7856 numeral also measured 3.89:1 on leather. */}
-                  <span
-                    className="num flex h-10 w-10 flex-none items-center justify-center rounded-full border-2 text-[15px]"
-                    style={{
-                      borderColor: cleared ? region.color : 'oklch(var(--c-leather-700))',
-                      background: cleared ? region.color : 'transparent',
-                      color: cleared ? 'oklch(var(--c-leather-950))' : 'oklch(var(--c-ink-faint))',
-                    }}
-                  >
-                    {cleared ? (
-                      <ClearedSigil size={19} />
-                    ) : locked ? (
-                      <LockSigil size={18} />
-                    ) : (
-                      index + 1
-                    )}
-                  </span>
-
                   <span className="min-w-0 flex-1">
                     <span className="block truncate font-display text-[16px] font-semibold text-parchment">
                       {zone.name}
