@@ -1,6 +1,13 @@
 /* Shared primitives, in the leather-and-parchment register. */
 
-import { useCallback, useRef, useState, type ButtonHTMLAttributes, type ReactNode } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type ButtonHTMLAttributes,
+  type ReactNode,
+} from 'react';
 import { Glyph, type IconName } from './Icon';
 import { cx } from '@/lib/utils';
 import { sfx } from '@/lib/sfx';
@@ -231,24 +238,132 @@ export function Chip({
   );
 }
 
+/** A number that counts to its new value instead of cutting to it.
+ *
+ *  The redesign plan called for `@number-flow/react`. This is the same effect
+ *  in thirty lines against `motion`'s reduced-motion hook and one rAF, and
+ *  `motion` is already in the bundle on every screen. It is the same trade
+ *  that kept the house icon set instead of Lucide in phase 1: a dependency,
+ *  a second animation runtime and ~12 kB for one animated integer is not a
+ *  deal worth taking.
+ *
+ *  Digit-by-digit sliding columns were deliberately not attempted. At the
+ *  letter-spacing `.num` sets, sliding digits read as a slot machine, and an
+ *  XP total is meant to read as a quantity you earned, not a payout. Easing
+ *  the value and reformatting keeps "1,240 XP" one legible number throughout.
+ *
+ *  The moving copy is hidden from assistive tech and the settled value is
+ *  exposed beside it, so a screen reader is never handed a number mid-count. */
+export function Tally({
+  value,
+  className,
+  format = (n: number) => n.toLocaleString(),
+}: {
+  value: number;
+  className?: string;
+  format?: (n: number) => string;
+}) {
+  const reduced = useReducedMotion();
+  const [shown, setShown] = useState(value);
+  /* The displayed value as a ref as well as state: a second change arriving
+     mid-count has to ease from where the digits actually are, not from where
+     the last run started. */
+  const shownRef = useRef(value);
+
+  useEffect(() => {
+    if (reduced || shownRef.current === value) {
+      shownRef.current = value;
+      setShown(value);
+      return;
+    }
+    const from = shownRef.current;
+    const start = performance.now();
+    let raf = requestAnimationFrame(function tick(now) {
+      const p = Math.min(1, (now - start) / 620); // DUR.cinematic
+      const eased = 1 - (1 - p) ** 3; // EASE.out, near enough in one line
+      const next = Math.round(from + (value - from) * eased);
+      shownRef.current = next;
+      setShown(next);
+      if (p < 1) raf = requestAnimationFrame(tick);
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [value, reduced]);
+
+  return (
+    <span className={className}>
+      <span aria-hidden="true">{format(shown)}</span>
+      <span className="sr-only">{format(value)}</span>
+    </span>
+  );
+}
+
+/* What each sweeping bar last celebrated, for the lifetime of the tab.
+
+   Camp's XP rail is the case this exists for, and it is not a small one: you
+   earn the XP *inside a drill*, with Camp unmounted. By the time Camp renders
+   again the higher number is simply the number, no change ever happened in
+   front of a mounted bar, and a purely local "did it go up" check would mean
+   the celebration never fires on the one screen the plan asked for it.
+
+   Keyed by `label`, the only stable identity a `ProgressBar` has. Module scope
+   because the whole point is to outlive the component; deliberately not
+   persisted, because a sweep on the first Camp of a new session would be
+   celebrating something the student never saw happen. */
+const lastCelebrated = new Map<string, number>();
+
 export function ProgressBar({
   value,
   color = 'oklch(var(--c-gold))',
   className,
   height = 9,
   label,
+  sweep = false,
 }: {
   value: number;
   color?: string;
   className?: string;
   height?: number;
   label?: string;
+  /** Sweep gilt along the rail whenever the value goes up. Opt-in, because
+   *  this is a celebration and most bars in the app are just readouts. */
+  sweep?: boolean;
 }) {
   const pctValue = Math.round(Math.min(1, Math.max(0, value)) * 100);
+  const reduced = useReducedMotion();
+
+  /* The gilt sweep — what replaced the XP confetti.
+
+     The burst was thrown from the middle of the rank card with nothing bounding
+     it, and landed on whichever text happened to be nearby; the plan's own
+     diagnosis was that it "must never overlap text". A sweep cannot leave the
+     rail it belongs to, so the entire class of collision stops being something
+     to tune and starts being impossible.
+
+     Counted rather than flagged, and the count is the element's `key`: a CSS
+     animation already running will not restart on its own, so two gains in
+     quick succession would have shown one sweep. */
+  const [gains, setGains] = useState(0);
+  const key = sweep ? (label ?? '') : null;
+  /* Watching `value`, not `pctValue`. The rounded percentage is the bar's
+     width, not the thing that happened: at 4 XP out of the 900 to the next
+     rank, answering a question moves the fraction and leaves the integer at 0,
+     so a check on the rounded number would stay silent for the first several
+     hours of a new rank — exactly the stretch where encouragement is worth
+     most. */
+  const prev = useRef(key !== null ? (lastCelebrated.get(key) ?? value) : value);
+  useEffect(() => {
+    /* Only upward. Rank progress resets toward zero when you rank up, and a
+       celebration on the way down would be a lie — the rank-up sequence in
+       `Feedback` is what marks that moment. */
+    if (value > prev.current) setGains((n) => n + 1);
+    prev.current = value;
+    if (key !== null) lastCelebrated.set(key, value);
+  }, [value, key]);
+
   return (
     <div
       className={cx(
-        'w-full overflow-hidden rounded-full border border-leather-700 bg-leather-950',
+        'relative w-full overflow-hidden rounded-full border border-leather-700 bg-leather-950',
         className,
       )}
       style={{ height }}
@@ -266,6 +381,9 @@ export function ProgressBar({
           boxShadow: `0 0 10px color-mix(in srgb, ${color} 47%, transparent)`,
         }}
       />
+      {sweep && gains > 0 && !reduced && (
+        <span key={gains} className="xp-sweep" aria-hidden="true" />
+      )}
     </div>
   );
 }
@@ -322,7 +440,7 @@ export function ProgressRing({
  * moved to `RankSigil.tsx`, where each of the seven ranks now has its own
  * silhouette rather than sharing one recoloured shield.
  */
-export function RankBadge(props: { rank: SigilColors; size?: number }) {
+export function RankBadge(props: { rank: SigilColors; size?: number; aura?: boolean }) {
   return <RankSigil {...props} />;
 }
 

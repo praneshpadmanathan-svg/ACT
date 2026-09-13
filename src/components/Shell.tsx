@@ -30,6 +30,8 @@ import { cx } from '@/lib/utils';
 import { NavGlyph, type GlyphName } from './NavGlyph';
 import { Glyph } from './Icon';
 import { RankBadge } from './ui';
+import { PaletteHost } from './PaletteHost';
+import { modKey, openPalette } from '@/lib/palette';
 import { trialDaysLeft, trialExpired } from '@/lib/entitlements';
 import { LIBRARY_STATS } from '@/content/stats';
 
@@ -366,9 +368,16 @@ export function SideNav() {
           1024px, not the old 1140: the rail no longer competes with the page
           for horizontal room, so it turns on wherever a 232px column plus a
           readable measure will fit. */}
+      {/* Elevation 2, and a gilt hairline down the right edge instead of a
+          `border-r`. A border is a seam between two flat things and it read as
+          one: the rail and the page looked like two halves of the same sheet
+          with a line drawn between them. `.rail-surface` casts the panel's own
+          shadow onto the page and lights the bevel where the lamp would catch
+          it, which is what makes the rail a piece of tooled leather the content
+          sits beside rather than a column of the same document. */}
       <aside
-        className="sticky top-0 z-40 hidden h-dvh w-[236px] flex-none flex-col border-r
-                   border-leather-700 bg-leather-950/94 backdrop-blur-md lg:flex"
+        className="rail-surface sticky top-0 z-40 hidden h-dvh w-[236px] flex-none flex-col
+                   bg-leather-950/94 backdrop-blur-md lg:flex"
         aria-label="Main"
       >
         <a
@@ -383,6 +392,17 @@ export function SideNav() {
             ACT Command
           </span>
         </a>
+
+        {/* The palette's own door. A shortcut nobody is told about is a
+            shortcut for the person who wrote it, so the rail carries the key
+            cap and the same placeholder the dialog opens with. */}
+        <div className="flex-none px-2.5 pt-2.5">
+          <button type="button" onClick={openPalette} className="rail-search">
+            <Glyph name="compass" size={15} className="flex-none text-ink-faint" />
+            <span className="min-w-0 flex-1 truncate text-left">Jump to…</span>
+            <kbd className="palette-kbd flex-none">{modKey()}K</kbd>
+          </button>
+        </div>
 
         <nav className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-2.5 py-3">
           <RailGroups />
@@ -441,6 +461,22 @@ export function SideNav() {
             <PlayerBlock compact />
           </span>
 
+          {/* The palette earns its place on a phone too — a tap and a few
+              letters beats opening the drawer and scrolling a list of
+              thirty-seven landmarks, and the on-screen keyboard is right there
+              anyway. */}
+          <button
+            type="button"
+            onClick={() => {
+              sfx.select();
+              openPalette();
+            }}
+            className="hud-icon flex-none"
+            aria-label="Jump to"
+          >
+            <Glyph name="compass" size={17} />
+          </button>
+
           <button
             type="button"
             onClick={() => {
@@ -476,6 +512,13 @@ export function SideNav() {
           </nav>
         )}
       </header>
+
+      {/* Mounted once, alongside the chrome rather than inside it: the shortcut
+          is global and the dialog portals to the body, so neither the rail nor
+          the mobile bar is its parent in any meaningful sense. Bare routes —
+          the landing page, auth — render no `SideNav` and so get no palette,
+          which is right: there is nothing to jump to yet. */}
+      <PaletteHost />
     </>
   );
 }
@@ -497,11 +540,15 @@ export function Page({
        here: without it the browser scrolls to the anchor and leaves focus on
        the link, and the next Tab goes back into the navigation the user just
        asked to skip. */
+    /* The content canvas. `--measure-wide` by default, `--measure-full` when a
+       screen genuinely needs the room (stats grids, the landmark list) — both
+       named in index.css rather than being a `1200` here and a `1400` there.
+       Full-bleed cards on a 1440px display are most of why the app read as a
+       form: a card 1,300px wide has nothing in common with a page. */
     <main
       id="main"
       tabIndex={-1}
-      className={cx('shell py-7 outline-none sm:py-9', className)}
-      style={wide ? { maxWidth: 1400 } : undefined}
+      className={cx('shell py-7 outline-none sm:py-9', wide ? 'canvas-full' : 'canvas', className)}
     >
       {children}
     </main>

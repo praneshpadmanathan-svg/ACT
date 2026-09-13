@@ -24,6 +24,22 @@
 
 @layer base {
   :root {
+    /* ---------------------------------------------------------- the measures
+
+       Named widths, because "how wide is a column of this kind" is a design
+       decision, and `1200px` in this file with an inline `maxWidth: 1400` in
+       Shell.tsx is not one decision, it is two guesses that never met.
+
+         --measure-wide  the content canvas — the app's working width
+         --measure-full  the widest canvas: stats grids, the landmark list
+         --shell-max     the marketing pages, which want the full bleed
+
+       The canvas is the one that matters. A card stretched across a 1440px
+       display has nothing in common with a page; it reads as a form. Capping
+       the column and centring it is most of what makes the app feel printed
+       rather than generated. */
+    --measure-wide: 1080px;
+    --measure-full: 1340px;
     --shell-max: 1200px;
     --rule: rgba(203, 182, 143, 0.28);
 
@@ -440,6 +456,22 @@
     @apply px-2.5 font-script text-[10.5px] uppercase tracking-[0.2em] text-gold-deep;
   }
 
+  /* The palette's door, at the head of the rail. Debossed like the blocks at
+     the foot, because it is the one control in the rail that is a field rather
+     than a destination — it should look like something you type into, even
+     though tapping it opens a dialog that does the typing properly. */
+  .rail-search {
+    @apply flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 font-read text-[13px]
+           text-ink-faint transition-[background-color,border-color,box-shadow] duration-200;
+    border: 1px solid oklch(var(--c-leather-700) / 0.6);
+    background-color: oklch(var(--c-leather-950) / 0.6);
+    box-shadow: var(--e-flush);
+  }
+  .rail-search:hover {
+    @apply text-parchment-dim;
+    border-color: oklch(var(--c-gold-deep) / 0.7);
+  }
+
   .rail-item {
     @apply relative flex items-center gap-2.5 rounded-lg py-1.5 pl-3 pr-2.5
            text-parchment-dim transition-all duration-200;
@@ -488,24 +520,43 @@
     @apply text-gold;
   }
 
-  /* The bank total at the foot of the rail. */
+  /* The bank total at the foot of the rail, set into the leather.
+
+     The rail should read as a tooled panel with things let into it, not as a
+     column of chips floating on it, so these two blocks are hollows.
+     `--e-flush` is the inset pair — shadow along the top lip, light along the
+     bottom — which puts them under the same upper-left lamp as every other
+     shadow in the app. On hover the hollow keeps its depth and only the gilt
+     comes up: a well that rises under the pointer is a button pretending to
+     be a recess. */
   .rail-bank {
-    @apply block rounded-lg border border-gold-deep/45 bg-leather-900/70 px-3 py-2.5
-           text-center transition-all duration-200;
+    @apply block rounded-lg border border-gold-deep/40 px-3 py-2.5 text-center
+           transition-[background-color,border-color,box-shadow] duration-200;
+    background-color: oklch(var(--c-leather-950) / 0.6);
+    box-shadow: var(--e-flush);
   }
   .rail-bank:hover {
-    @apply border-gold-deep bg-leather-850;
-    box-shadow: 0 0 18px rgba(212, 160, 23, 0.18);
+    @apply border-gold-deep;
+    background-color: oklch(var(--c-leather-950) / 0.85);
+    box-shadow:
+      var(--e-flush),
+      inset 0 0 12px oklch(var(--c-gilt) / 0.16);
   }
 
-  /* Rank block: sigil, name, XP. */
+  /* Rank block: sigil, name, XP. Debossed for the same reason as `.rail-bank`
+     above, and it loses the `-translate-y-px` it used to lift by. */
   .hud-block {
-    @apply flex items-center gap-2.5 rounded-lg border border-leather-700 bg-leather-850
-           px-2.5 py-1.5 transition-all duration-200;
+    @apply flex items-center gap-2.5 rounded-lg border border-leather-700 px-2.5 py-1.5
+           transition-[background-color,border-color,box-shadow] duration-200;
+    background-color: oklch(var(--c-leather-950) / 0.6);
+    box-shadow: var(--e-flush);
   }
   .hud-block:hover {
-    @apply -translate-y-px border-gold-deep;
-    box-shadow: 0 0 16px rgba(212, 160, 23, 0.18);
+    @apply border-gold-deep/70;
+    background-color: oklch(var(--c-leather-950) / 0.85);
+    box-shadow:
+      var(--e-flush),
+      inset 0 0 12px oklch(var(--c-gilt) / 0.16);
   }
   .hud-xp {
     @apply block h-1 w-12 overflow-hidden rounded-full bg-leather-950;
@@ -805,6 +856,26 @@
     box-shadow:
       var(--lamp-edge),
       var(--e-lifted);
+  }
+
+  /* Elevation 1, and no gilt rule: the surface for everything that is not the
+     one thing to do next.
+
+     Camp was five cards at elevation 2, each with a gilt hairline, each with
+     its own heading at the same size. Five equally lit objects is a list of
+     options, which is the opposite of what a dashboard owes someone opening it
+     — so the hero keeps the lift and the rule, and its neighbours get this.
+     They are still leather, still bounded, just plainly further away. */
+  .panel-quiet {
+    @apply mat-leather rounded-xl transition-[transform,box-shadow,border-color] duration-base ease-out;
+    box-shadow: var(--e-resting);
+  }
+  a.panel-quiet:hover,
+  button.panel-quiet:hover {
+    border-color: var(--lamp-rim);
+    box-shadow:
+      var(--lamp-edge),
+      var(--e-raised);
   }
 
   /* A gold hairline along the top edge — reads as lantern light catching a
@@ -1428,11 +1499,189 @@
     @apply mat-gilt-rule absolute inset-x-0 top-0;
   }
 
+  /* ------------------------------------------------------------- the rail
+
+     Tooled leather with things set into it, rather than a column with a
+     border down one side. Three changes carry that: the panel itself lifts to
+     elevation 2, its right edge becomes a gilt hairline instead of a 1px
+     leather border, and the blocks at the foot are debossed wells. */
+
+  .rail-surface {
+    @apply relative;
+    box-shadow:
+      var(--lamp-edge),
+      var(--e-raised);
+  }
+  /* A hairline of light down the edge, not a border. A border-right is a seam
+     between two flat things; this is the lamp catching the bevel, so it is
+     brightest where the light is and falls off at both ends. */
+  .rail-surface::after {
+    content: '';
+    @apply pointer-events-none absolute inset-y-0 right-0 w-px;
+    background: linear-gradient(
+      180deg,
+      transparent,
+      oklch(var(--c-gold-light) / 0.42) 18%,
+      oklch(var(--c-gold-light) / 0.22) 62%,
+      transparent
+    );
+  }
+
+  /* The active marker is a light source, not a bar.
+
+     The 3px gradient stays — it is the filament — but the glow bleeding right
+     off it is what makes the row read as lit rather than as labelled. Kept on
+     the row rather than the marker so it can spread past the marker's 3px box
+     without a blur radius that would fuzz the filament itself. */
+  .rail-item-active {
+    background-image: linear-gradient(
+      90deg,
+      oklch(var(--c-gilt) / 0.2),
+      oklch(var(--c-gilt) / 0.07) 38%,
+      transparent 78%
+    );
+  }
+  .rail-item-active .rail-marker {
+    box-shadow:
+      0 0 10px oklch(var(--c-gilt) / 0.65),
+      0 0 24px oklch(var(--c-gilt) / 0.4);
+  }
+
+  /* ------------------------------------------------------------ camp hero
+
+     One object on the screen at elevation 3, and this is it: the day's actual
+     work, on paper, at reading size. Everything else on Camp sits at 1. The
+     old screen was five cards of equal weight, which is a list of options
+     rather than an answer to "what do I do now". */
+  .camp-hero {
+    @apply mat-paper relative block w-full overflow-hidden rounded-2xl text-left;
+    /* Elevation 3, and the only object on Camp that gets it. Not 4 — floating
+       belongs to things that actually float over content, and a hero that
+       borrows an overlay's shadow leaves the real overlays nowhere to go. */
+    box-shadow:
+      var(--lamp-edge-paper),
+      var(--e-lifted);
+    transition:
+      box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .camp-hero::before {
+    content: '';
+    @apply mat-gilt-rule absolute inset-x-0 top-0;
+  }
+  .camp-hero:hover {
+    @apply -translate-y-0.5;
+    box-shadow:
+      var(--lamp-edge-paper),
+      var(--e-floating);
+  }
+  /* The whole card is the target, so the gilt CTA inside it lights up when the
+     card does — not only when the pointer happens to land on the button-shaped
+     part of it. Mirrors `.btn-primary`'s own hover, including the reason the
+     transition is declared here and not on the resting state: it has to snap
+     back invisibly rather than sweep backwards on mouse-out. */
+  .camp-hero:hover .btn-primary {
+    @apply from-[#f7dc7d] to-[#e0ae1e];
+  }
+  .camp-hero:hover .btn-primary::after {
+    transform: translateX(130%);
+    transition: transform 640ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* -------------------------------------------------------- the gilt sweep
+
+     What replaced the XP confetti.
+
+     A burst of particles over the rank block could not be aimed — it was
+     thrown from the middle of a card and landed on whatever text was nearby.
+     A sweep travels the one object that actually changed, cannot leave it,
+     and reads as more expensive besides. It runs once per XP change, keyed on
+     the value in `ProgressBar`. */
+  .xp-sweep {
+    @apply pointer-events-none absolute inset-y-0 left-0 w-full;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      oklch(var(--c-gilt-bright) / 0.85) 46%,
+      oklch(100% 0 0 / 0.55) 52%,
+      oklch(var(--c-gilt-bright) / 0.85) 58%,
+      transparent
+    );
+    animation: xpSweep 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes xpSweep {
+    from {
+      transform: translateX(-102%);
+    }
+    to {
+      transform: translateX(102%);
+    }
+  }
+
+  /* --------------------------------------------------------- command palette
+
+     The dialog is Base UI's; everything visible here is ours. It sits on
+     leather at overlay elevation because it is the one surface that floats
+     above the whole app. */
+  .palette {
+    @apply mat-leather relative w-[min(38rem,calc(100vw-2rem))] overflow-hidden rounded-2xl;
+    box-shadow:
+      var(--lamp-edge),
+      var(--e-overlay);
+  }
+  .palette::before {
+    content: '';
+    @apply mat-gilt-rule absolute inset-x-0 top-0;
+  }
+  .palette-input {
+    @apply w-full bg-transparent font-read text-[16px] text-parchment outline-none
+           placeholder:text-ink-faint;
+  }
+  .palette-item {
+    @apply relative flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left
+           text-parchment-dim transition-colors duration-quick ease-out;
+  }
+  /* Selection is keyboard-first here, so the highlight is driven by an
+     attribute rather than by :hover — the pointer and the arrow keys have to
+     agree on which row is current, and only one of them can be :hover. */
+  .palette-item[data-active='true'] {
+    @apply bg-leather-800 text-parchment;
+    background-image: linear-gradient(
+      90deg,
+      oklch(var(--c-gilt) / 0.18),
+      oklch(var(--c-gilt) / 0.05) 45%,
+      transparent 80%
+    );
+  }
+  .palette-item[data-active='true'] .palette-glyph {
+    @apply text-gold;
+  }
+  .palette-glyph {
+    @apply flex-none text-ink-faint transition-colors duration-quick ease-out;
+  }
+  .palette-group {
+    @apply px-3 pb-1 pt-3 font-script text-[10.5px] uppercase tracking-[0.2em] text-gold-deep;
+  }
+  .palette-kbd {
+    @apply inline-flex items-center rounded border border-leather-700 bg-leather-900 px-1.5 py-0.5 font-mono
+           text-[10.5px] leading-none text-ink-faint;
+  }
   /* ---------------------------------------------------------------- layout */
 
   .shell {
     @apply mx-auto w-full px-4 sm:px-6;
     max-width: var(--shell-max);
+  }
+
+  /* The content canvas. These retune `.shell`'s own variable rather than
+     setting `max-width` a second time, so `class="shell canvas"` cannot come
+     down to which rule the stylesheet happens to define last. */
+  .canvas {
+    --shell-max: var(--measure-wide);
+  }
+  .canvas-full {
+    --shell-max: var(--measure-full);
   }
 }
 

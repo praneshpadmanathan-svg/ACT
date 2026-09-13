@@ -316,6 +316,12 @@ const SPECS: Record<string, Spec> = {
 
 /** Whether this rank has a field at all. Used by `RankSigil` so it can skip
  *  mounting a canvas it would only immediately tear down. */
+/** How far the field spills past the badge on each side, in badge widths.
+ *  Exported because the badge's own layout has to reserve it — see the note in
+ *  `RankSigil`. A canvas this much larger than its container, with no z-index
+ *  and no reserved footprint, was painting over the text beside it. */
+export const AURA_PAD = 0.5;
+
 export function hasAura(id: string): boolean {
   return id in SPECS;
 }
@@ -340,6 +346,13 @@ interface P {
 
 const rand = (a: number, b: number) => a + Math.random() * (b - a);
 
+/** The canvas edge for a badge of this size — the layout figure `RankSigil`
+ *  reserves and the drawing figure used below, from one definition so they
+ *  cannot drift apart. */
+export function auraBox(size: number): number {
+  return Math.round(size * (1 + AURA_PAD * 2));
+}
+
 export function RankAura({ rankId, size }: { rankId: string; size: number }) {
   const ref = useRef<HTMLCanvasElement>(null);
   const reduced = useReducedMotion();
@@ -354,8 +367,7 @@ export function RankAura({ rankId, size }: { rankId: string; size: number }) {
     /* The field is drawn on a canvas wider than the badge so particles can
        leave the emblem and still be somewhere. Everything in `spec` is in
        badge widths, so the conversion happens once, here. */
-    const pad = 0.5;
-    const box = Math.round(size * (1 + pad * 2));
+    const box = auraBox(size);
     const unit = size; // one "box width" in device-independent pixels
     const ox = box / 2;
     const oy = box / 2;

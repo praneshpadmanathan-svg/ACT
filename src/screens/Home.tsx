@@ -25,7 +25,15 @@ import { cloudEnabled } from '@/lib/supabase';
 import { sfx } from '@/lib/sfx';
 import { titleCase } from '@/lib/utils';
 import { Page } from '@/components/Shell';
-import { Button, Eyebrow, LEADING_ICON, ProgressBar, ProgressRing, RankBadge } from '@/components/ui';
+import {
+  Button,
+  Eyebrow,
+  LEADING_ICON,
+  ProgressBar,
+  ProgressRing,
+  RankBadge,
+  Tally,
+} from '@/components/ui';
 import { Glyph, type IconName } from '@/components/Icon';
 import { useZoneProgress } from '@/lib/zoneProgress';
 import { REGIONS } from '@/content/regionFlavor';
@@ -95,8 +103,7 @@ export function Home() {
               sfx.select();
               navigate({ name: 'path' });
             }}
-            className="panel-lit mb-5 flex w-full items-center gap-4 p-4 text-left transition-all
-                       hover:-translate-y-0.5 hover:border-gold-deep sm:p-5"
+            className="panel-quiet mb-5 flex w-full items-center gap-4 p-4 text-left sm:p-5"
           >
             <Art
               name="wizzy"
@@ -119,72 +126,57 @@ export function Home() {
           </button>
         )}
 
-        {/* ---------------------------------------------------------- greeting */}
-        <div className="mb-6 grid gap-4 lg:grid-cols-[1.25fr_1fr]">
-          <div className="panel-lit p-6 sm:p-7">
-            <div className="flex items-start gap-4">
-              <RankBadge rank={rank} size={64} />
-              <div className="min-w-0">
-                <div className="eyebrow">{isGuest ? 'Travelling as a guest' : 'Welcome back'}</div>
-                <h1 className="heading mt-1 truncate text-[clamp(1.4rem,3vw,1.9rem)]">
-                  {playerName}
-                </h1>
-                <p
-                  className="mt-1 font-script text-[14px] uppercase tracking-[0.14em]"
-                  /* Tinted toward the surface rather than set raw, the same way
-                     the ranks on the Progress screen are. `rank.color` is a
-                     badge colour picked to read on dark metal — Lorewarden's
-                     cyan lands at 1.49:1 on light parchment — and the mix keeps
-                     each rank's identity while letting it invert with the
-                     theme. See --rank-tint in index.css. */
-                  style={{
-                    color: `color-mix(in oklab, ${rank.color} var(--rank-tint), oklch(var(--c-parchment)))`,
-                  }}
-                >
-                  {rank.name}
-                </p>
-              </div>
-            </div>
+        {/* ------------------------------------------------------------- hero */}
+        <CampHero currentZone={currentZone} allCleared={allCleared} />
 
-            <div className="mt-6">
-              <div className="mb-2 flex items-baseline justify-between">
-                <span className="num text-[24px] text-gold">{progress.xp.toLocaleString()} XP</span>
-                {next && (
-                  <span className="label-sm">
-                    {(next.xp - progress.xp).toLocaleString()} to {next.name}
-                  </span>
-                )}
-              </div>
-              <ProgressBar value={pct} label="Rank progress" />
+        {/* --------------------------------------------------------- standing */}
+        {/* Who you are and how far along, at elevation 1 and about half the
+            type size it used to run at.
+
+            This was a 1.25fr card with a 64px badge, a clamped 1.9rem name and
+            a 24px XP figure, sitting beside an equally loud "Continue your
+            quest". Two elevation-2 cards of the same weight is the screen
+            asking you to choose, which is precisely the decision Camp exists to
+            make for you. Your rank is worth seeing every visit; it is not worth
+            the largest type on the page every visit. */}
+        <div className="panel-quiet mb-6 flex flex-wrap items-center gap-x-6 gap-y-4 px-5 py-4">
+          {/* `aura={false}`: the field would reserve a 76px box for a 38px
+              badge — see the footprint note in `RankSigil`. A strip this quiet
+              does not want a particle system in it either. */}
+          <RankBadge rank={rank} size={38} aura={false} />
+          <div className="min-w-0 flex-1">
+            <div className="flex flex-wrap items-baseline gap-x-2.5">
+              <h1 className="heading truncate text-[15.5px]">{playerName}</h1>
+              <span
+                className="font-script text-[11.5px] uppercase tracking-[0.14em]"
+                /* Tinted toward the surface rather than set raw, the same way
+                   the ranks on the Progress screen are. `rank.color` is a
+                   badge colour picked to read on dark metal — Lorewarden's
+                   cyan lands at 1.49:1 on light parchment — and the mix keeps
+                   each rank's identity while letting it invert with the
+                   theme. See --rank-tint in index.css. */
+                style={{
+                  color: `color-mix(in oklab, ${rank.color} var(--rank-tint), oklch(var(--c-parchment)))`,
+                }}
+              >
+                {rank.name}
+              </span>
+              {isGuest && <span className="label-sm">travelling as a guest</span>}
+            </div>
+            <div className="mt-2 flex items-center gap-3">
+              <ProgressBar value={pct} label="Rank progress" height={6} sweep className="flex-1" />
+              {next && (
+                <span className="label-sm flex-none">
+                  {(next.xp - progress.xp).toLocaleString()} to {next.name}
+                </span>
+              )}
             </div>
           </div>
-
-          {/* continue the quest */}
-          <button
-            type="button"
-            onClick={() => {
-              sfx.select();
-              if (current) navigate({ name: 'zone', zone: current.zone.id });
-              else navigate(allCleared ? { name: 'tests' } : { name: 'profile' });
-            }}
-            className="panel-lit group p-6 text-left transition-colors hover:border-gold-deep sm:p-7"
-          >
-            <Eyebrow icon="flag" className="mb-3">Continue your quest</Eyebrow>
-            <h2 className="heading text-[clamp(1.15rem,2.4vw,1.5rem)] text-gold-light">
-              {current ? current.zone.name : allCleared ? 'The Final Summit' : 'The roads ahead'}
-            </h2>
-            <p className="mt-2 font-read text-[15px] leading-relaxed text-parchment-dim">
-              {current
-                ? `${current.zone.sub} — a short lesson, then a quiz to clear the landmark.`
-                : allCleared
-                  ? 'Every landmark cleared. Sail to the citadel and take your full mock test.'
-                  : 'You have cleared every landmark that is open to you. Three more roads are waiting behind Pro.'}
-            </p>
-            <span className="mt-5 inline-flex items-center gap-2 font-display text-[14px] font-semibold text-gold group-hover:text-gold-bright">
-              {current ? 'Begin the lesson' : allCleared ? 'Take the mock test' : 'See what Pro opens'}
-              <Glyph name="chevronRight" size={14} strokeWidth={2} />
-            </span>
-          </button>
+          <Tally
+            value={progress.xp}
+            className="num flex-none text-[17px] text-gold"
+            format={(n) => `${n.toLocaleString()} XP`}
+          />
         </div>
 
         {/* ------------------------------------------------------------ stats */}
@@ -195,7 +187,7 @@ export function Home() {
             the honest reason to make one — "your world would survive a cleared
             cache" — is not true yet when you have nothing saved. */}
         {isGuest && cloudEnabled && cleared >= 1 && !savePromptHidden && (
-          <div className="panel-lit mb-5 flex flex-wrap items-center gap-4 p-4 sm:p-5">
+          <div className="panel-quiet mb-5 flex flex-wrap items-center gap-4 p-4 sm:p-5">
             <span className="min-w-0 flex-1">
               <Eyebrow>Keep this</Eyebrow>
               <span className="mt-1 block font-display text-[15px] font-semibold text-gold-light">
@@ -242,7 +234,7 @@ export function Home() {
         <TodayPanel currentZone={currentZone} />
 
         <div className="mb-6 grid gap-4 lg:grid-cols-[1.25fr_1fr]">
-          <section className="panel p-6 sm:p-7">
+          <section className="panel-quiet p-6 sm:p-7">
             <h3 className="heading mb-5 text-[17px]">Your progress</h3>
             <div className="grid grid-cols-4 gap-2">
               {SECTIONS.map((section) => {
@@ -285,7 +277,7 @@ export function Home() {
             </a>
           </section>
 
-          <section className="panel p-6 sm:p-7">
+          <section className="panel-quiet p-6 sm:p-7">
             <h3 className="heading mb-5 text-[17px]">All time</h3>
             <dl className="space-y-3">
               <Row label="Target score" value={String(progress.targetScore)} />
@@ -323,7 +315,7 @@ export function Home() {
                     sfx.select();
                     navigate({ name: 'drill', section: t.section, topic: t.topic });
                   }}
-                  className="panel flex items-center gap-4 px-5 py-4 text-left transition-colors hover:border-gold-deep"
+                  className="panel-quiet flex items-center gap-4 px-5 py-4 text-left"
                 >
                   <span className="min-w-0 flex-1">
                     <span className="flex items-center gap-1.5 font-display text-[15px] font-semibold text-parchment">
@@ -374,6 +366,80 @@ export function Home() {
   );
 }
 
+/* The single next action — the one elevation-3 object on Camp.
+ *
+ * It renders `todaysPlan`'s first step rather than holding a second opinion
+ * about what to do. Camp used to have both: a "Continue your quest" card at the
+ * top pointing at the current landmark, and a "Today" panel five sections
+ * further down whose "Start here" button pointed wherever the plan actually
+ * pointed — often at review, because a question you got wrong and never saw
+ * again is the most expensive thing in a study plan. Only one of them could be
+ * right and it was never the one at the top.
+ *
+ * So the plan wins and moves up here, on paper, at reading size, with the
+ * minutes it will take. `TodayPanel` keeps the week and whatever comes after
+ * this. */
+function CampHero({
+  currentZone,
+  allCleared,
+}: {
+  currentZone: { id: string; name: string } | null;
+  allCleared: boolean;
+}) {
+  const { progress } = useStore();
+  const navigate = useNavigate();
+
+  const plan = todaysPlan(progress, currentZone);
+  const lead = plan.steps[0];
+  if (!lead) return null;
+
+  /* Paper, so it is the only surface on Camp you read rather than consult, and
+     `.camp-hero` supplies the material and the elevation. */
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        sfx.select();
+        navigate(lead.to);
+      }}
+      className="camp-hero mb-6 px-6 py-7 sm:px-9 sm:py-8"
+    >
+      <span className="flex flex-wrap items-baseline justify-between gap-x-5 gap-y-1">
+        <span className="label-quill">
+          {plan.done ? 'Done for today — carry on if you like' : 'Do this next'}
+        </span>
+        <span className="num text-[12.5px] text-ink-faint">about {lead.minutes} min</span>
+      </span>
+
+      {/* The largest type on the screen, and the only thing on Camp allowed to
+          be. It is a title from content, so it wraps rather than truncates —
+          "Review 14 questions" and "The Marsh of Misplaced Modifiers" have very
+          different lengths and both have to survive. */}
+      <span className="mt-3 block font-display text-[clamp(1.5rem,4.2vw,2.15rem)] font-semibold leading-[1.14] tracking-wide text-ink">
+        {lead.title}
+      </span>
+      <span className="mt-3 block max-w-[48ch] font-read text-[clamp(1rem,1.5vw,1.1rem)] leading-relaxed text-ink-soft">
+        {lead.detail}
+      </span>
+
+      {/* A span, not a `Button`: a button inside a button is invalid markup and
+          browsers resolve it by dropping one of them. The gilt classes are pure
+          CSS, and `.camp-hero:hover .btn-primary` in index.css lights it from
+          the card so the whole surface behaves as the one target it looks like. */}
+      <span className="btn btn-primary btn-lg mt-6">
+        {lead.kind === 'review'
+          ? 'Start reviewing'
+          : lead.kind === 'test'
+            ? 'Enter the summit'
+            : allCleared
+              ? 'Take the mock test'
+              : 'Begin'}
+        <Glyph name="chevronRight" size={15} strokeWidth={2} />
+      </span>
+    </button>
+  );
+}
+
 /* Offer the placement test, once, and take no for an answer.
  *
  * It appears only while the app genuinely cannot see the student yet — no
@@ -393,7 +459,7 @@ function PlacementPrompt() {
   if (hidden || progress.diagnostic || hasEvidence) return null;
 
   return (
-    <div className="panel-lit mb-6 flex flex-wrap items-center gap-4 p-5 sm:p-6">
+    <div className="panel-quiet mb-6 flex flex-wrap items-center gap-4 p-5 sm:p-6">
       <span className="min-w-0 flex-1">
         <Eyebrow>Where do you stand?</Eyebrow>
         <span className="mt-1 block font-display text-[15px] font-semibold text-gold-light">
@@ -446,12 +512,13 @@ function DailyCard() {
         sfx.select();
         navigate({ name: 'daily' });
       }}
-      className={`mb-6 flex w-full items-center gap-4 rounded-lg border-2 p-5 text-left transition-all
-                  hover:-translate-y-0.5 sm:p-6 ${
-                    done
-                      ? 'border-leather-700 bg-leather-900 hover:border-leather-600'
-                      : 'panel-lit hover:border-gold-deep'
-                  }`}
+      /* Elevation 1 either way now. The daily used to be a gilt-ruled card at
+         elevation 2 that lifted on hover, which put it in a shouting match with
+         the hero directly above it — and the hero is frequently the daily's own
+         first step, so the screen was competing with itself. */
+      className={`panel-quiet mb-6 flex w-full items-center gap-4 p-5 text-left sm:p-6 ${
+        done ? 'opacity-80' : ''
+      }`}
     >
       <span
         className="num flex flex-none items-center justify-center rounded-lg border-2 px-4 py-2 text-[26px] leading-none"
@@ -548,7 +615,7 @@ function TrackCard() {
   })();
 
   return (
-    <section className={`panel mb-6 border-2 ${face.border} p-6 sm:p-7`}>
+    <section className={`panel-quiet mb-6 ${face.border} p-5 sm:p-6`}>
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
         <span className="eyebrow" style={{ color: face.color }}>
           <Glyph name={face.icon} size={12} className={LEADING_ICON} />
@@ -599,15 +666,17 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
   const days = daysUntilTest(progress);
   const urgency = testUrgency(days);
   const week = weekProgress(progress);
-  const plan = todaysPlan(progress, currentZone);
-  const lead = plan.steps[0];
+  /* The lead step is the Camp hero now, so this panel picks up after it. When
+     there is nothing after it, the week bar and the countdown are still worth
+     the section — they are the only place either one appears. */
+  const rest = todaysPlan(progress, currentZone).steps.slice(1);
 
   const countdown = urgency === 'close' ? 'oklch(var(--c-blood-text))' : urgency === 'soon' ? 'oklch(var(--c-gold))' : 'oklch(var(--c-woods-text))';
 
   return (
-    <section className="panel-lit mb-6 p-6 sm:p-7">
+    <section className="panel-quiet mb-6 p-5 sm:p-6">
       <div className="mb-5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h3 className="heading text-[17px]">Today</h3>
+        <h3 className="heading text-[15px]">Today</h3>
         {days !== null && (
           <span className="font-display text-[13.5px] font-semibold" style={{ color: countdown }}>
             {days > 0
@@ -636,35 +705,16 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
         )}
       </div>
 
-      {/* the session */}
-      {lead && (
+      {/* what is left after the hero */}
+      {rest.length > 0 && (
         <div className="border-t border-leather-700 pt-5">
-          <div className="mb-3 flex items-baseline justify-between gap-3">
-            <span className="label-sm">
-              {plan.done ? 'Done for today — carry on if you like' : 'Start here'}
-            </span>
-            <span className="label-sm">~{plan.minutes} min</span>
+          <div className="mb-3">
+            <span className="label-sm">Then, if you have the time</span>
           </div>
 
-          <button
-            type="button"
-            onClick={() => {
-              sfx.select();
-              navigate(lead.to);
-            }}
-            className="w-full rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-4 text-left transition-colors hover:border-gold-deep"
-          >
-            <span className="block font-display text-[15px] font-semibold text-gold-light">
-              {lead.title}
-            </span>
-            <span className="mt-0.5 block font-read text-[13.5px] leading-relaxed text-parchment-dim">
-              {lead.detail}
-            </span>
-          </button>
-
-          {plan.steps.length > 1 && (
-            <ol className="mt-2.5 space-y-2">
-              {plan.steps.slice(1).map((step) => (
+          {(
+            <ol className="space-y-2">
+              {rest.map((step) => (
                 <li key={`${step.kind}-${step.title}`}>
                   <button
                     type="button"
@@ -725,7 +775,7 @@ function Quick({
     <a
       href={hrefFor({ name: to })}
       onClick={() => sfx.select()}
-      className="panel px-5 py-4 transition-all hover:-translate-y-0.5 hover:border-gold-deep"
+      className="panel-quiet px-5 py-4"
     >
       <span className="block font-display text-[15px] font-semibold text-parchment">{label}</span>
       <span className="mt-0.5 block font-read text-[13.5px] text-ink-faint">{detail}</span>

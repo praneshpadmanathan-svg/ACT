@@ -38,7 +38,7 @@
 import { useId } from 'react';
 import rankArt from '@/rankArt.json';
 import { Glyph, type IconName } from './Icon';
-import { RankAura, hasAura } from './RankAura';
+import { RankAura, auraBox, hasAura } from './RankAura';
 
 type ArtEntry = { width: number; height: number; src: string };
 const ART = rankArt as Record<string, ArtEntry>;
@@ -75,10 +75,26 @@ export function RankSigil({
 
   if (!art) return null;
 
+  /* A live aura reserves its own footprint, and the emblem centres inside it.
+
+     The field is painted on a canvas half again the badge's width on every
+     side (`AURA_PAD`). Absolutely positioned in a box only `size` across, with
+     no z-index and nothing reserving room for it, it overflowed in silence and
+     painted *on top of* whatever sat next to the badge — measured at 16px into
+     Camp's player-name heading, and the XP bar below was clearing it by 10px
+     of luck rather than by design.
+
+     Padding a neighbour would have fixed that one screen until someone
+     adjusted a gap. Reserving the box makes the collision impossible at every
+     call site, including ones that do not exist yet. The cost is that a badge
+     with an aura takes real space, which is correct: it is a bigger object.
+     A caller that needs exactly `size` passes `aura={false}`. */
+  const box = live ? auraBox(size) : size;
+
   return (
     <span
       className="relative inline-flex flex-none items-center justify-center"
-      style={{ width: size, height: size }}
+      style={{ width: box, height: box }}
     >
       {live && <RankAura rankId={rank.id} size={size} />}
       <img
