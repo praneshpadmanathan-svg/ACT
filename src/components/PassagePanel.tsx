@@ -20,7 +20,11 @@ export function PassagePanel({ passage }: { passage: Passage }) {
   const [openOnMobile, setOpenOnMobile] = useState(false);
 
   return (
-    <aside className="sheet overflow-hidden lg:sticky lg:top-20 lg:max-h-[calc(100dvh-6rem)] lg:overflow-y-auto">
+    /* A page, and one step lower than the objects you act on. `.sheet` alone
+       put the passage at the same elevation as the task column beside it, in
+       the same cream, which is the reason the eye had nowhere to land: two
+       equal cards, neither of them obviously the thing to read. */
+    <aside className="sheet overflow-hidden shadow-resting lg:sticky lg:top-20 lg:max-h-[calc(100dvh-6rem)] lg:overflow-y-auto">
       <div className="border-b-2 border-paper-edge bg-[#efeae0] px-6 py-4">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">

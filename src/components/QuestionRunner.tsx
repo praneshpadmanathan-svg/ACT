@@ -11,10 +11,9 @@ import type { Difficulty, Passage, SectionId } from '@/types';
 import { juice } from '@/lib/juice';
 import { cx, formatClock } from '@/lib/utils';
 import { AnimatePresence, m, SPRING, SPRING_SNAP } from '@/lib/motion';
-import { burstConfetti } from './Feedback';
 import { RichText } from './RichText';
 import { PassagePanel } from './PassagePanel';
-import { Button, ProgressBar } from './ui';
+import { Button, LEADING_ICON } from './ui';
 import { Glyph } from './Icon';
 import { QuestionActions } from './QuestionActions';
 import { ToolDock } from './Tools';
@@ -71,12 +70,20 @@ interface Props {
    which is why a run of eight never felt like anything. Three tiers, so the
    feedback grows with the streak and the player can feel it accumulating:
 
-     1  (1-2)  a tick and the row lifting — barely anything
-     2  (3-5)  a warm flash at the edges of the screen, the chip grows
-     3  (6+)   the chip catches fire, sparks come off the answer
+     1  (1-2)  the gilt edge draws onto the row and the seal lands
+     2  (3-5)  the streak chip grows
+     3  (6+)   the chip catches fire
 
-   The audio already escalates — `sfx.combo(n)` walks up a pentatonic scale —
-   so this is the picture catching up with the sound. */
+   Two things used to sit on top of that: a burst of gold particles thrown out
+   of the answer row, and a full-screen flare at tiers 2 and 3. Both are gone.
+   Confetti over a live passage reads as a z-index bug rather than as polish,
+   and the flare was a second screen-wide effect stacked on the one the impact
+   bus already fires. The reward lives on the row that earned it now — see
+   `.choice-correct` and `.choice-seal` — which is both quieter and more
+   pointed. The audio escalation is untouched: `sfx.combo(n)` still walks up a
+   pentatonic scale, and it is now carrying the tiering on its own above 3.
+
+   `streakTier` stays because the chip still reads from it. */
 type Tier = 0 | 1 | 2 | 3;
 
 function streakTier(streak: number): Tier {
@@ -85,12 +92,6 @@ function streakTier(streak: number): Tier {
   if (streak >= 1) return 1;
   return 0;
 }
-
-/* WCAG 2.3.1 caps flashing at three per second. A player cannot normally
-   answer that fast — they have to read — but answer-Enter-answer on the
-   keyboard can get close, so the flare refuses to retrigger inside this
-   window rather than trusting them not to. */
-const FLARE_FLOOR_MS = 340;
 
 /* How long the right answer waits before lighting up, when you got it wrong.
    The order is the message: the row you picked shakes and goes quiet, and
@@ -157,11 +158,8 @@ export function QuestionRunner({
   const [elapsed, setElapsed] = useState(0);
   /* The correct row lights on its own beat, not on `revealed` — see REVEAL_LAG. */
   const [litCorrect, setLitCorrect] = useState(false);
-  const [flare, setFlare] = useState<{ id: number; tier: Tier } | null>(null);
 
   const litTimer = useRef<number | null>(null);
-  const lastFlareAt = useRef(0);
-  const flareId = useRef(0);
   const choiceEls = useRef<Record<string, HTMLButtonElement | null>>({});
 
   const question = questions[index];
@@ -198,27 +196,15 @@ export function QuestionRunner({
       if (correct) {
         /* One call rather than a sound here and visuals scattered below: the
            bus fires the sound at contact, holds a beat, then kicks the stage
-           and washes the screen. `visuals` is off in test mode for the same
-           reason the flare and the sparks are — a timed test does not tell you
-           how you did until the end. */
+           and washes the screen. `visuals` is off in test mode because a timed
+           test does not tell you how you did until the end. */
         juice.correct({ visuals: !deferFeedback });
         if (streak >= 1) juice.combo(streak + 1, { visuals: !deferFeedback });
 
-        /* Right first time, so there is nothing to disambiguate: light it now. */
+        /* Right first time, so there is nothing to disambiguate: light it now.
+           The gilt edge and the seal are CSS on the row itself, so there is
+           nothing else to fire here. */
         setLitCorrect(true);
-
-        const tier = streakTier(streak + 1);
-        const now = Date.now();
-        if (tier >= 2 && !deferFeedback && now - lastFlareAt.current > FLARE_FLOOR_MS) {
-          lastFlareAt.current = now;
-          setFlare({ id: flareId.current++, tier });
-        }
-        /* Sparks come off the answer itself rather than the middle of the
-           screen, so the celebration points at what earned it. */
-        if (tier === 3 && !deferFeedback) {
-          const box = choiceEls.current[key]?.getBoundingClientRect();
-          if (box) burstConfetti(18, box.right - 34, box.top + box.height / 2, 9);
-        }
       } else {
         juice.wrong({ visuals: !deferFeedback });
         litTimer.current = window.setTimeout(() => setLitCorrect(true), REVEAL_LAG * 1000);
@@ -291,12 +277,13 @@ export function QuestionRunner({
 
   const explanationForChosen = chosen ? question.why[chosen] : undefined;
   const explanationForCorrect = question.why[question.correctKey];
+  const gotItRight = chosen === question.correctKey;
 
   return (
     <div>
       {/* ------------------------------------------------------------- HUD */}
-      <div className="mb-5 rounded-xl border-2 border-leather-700 bg-leather-850 p-4 shadow-card sm:p-5">
-        <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+      <div className="mb-5 rounded-xl border border-leather-700/55 bg-leather-850/90 p-4 shadow-card sm:p-5">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
           <div className="min-w-0">
             <h1 className="heading truncate text-[13px]" style={{ color: accent }}>
               {title}
@@ -304,7 +291,7 @@ export function QuestionRunner({
             {subtitle && <p className="mt-1 text-[13px] text-ink-faint">{subtitle}</p>}
           </div>
 
-          <div className="ml-auto flex items-center gap-3">
+          <div className="ml-auto flex flex-wrap items-center justify-end gap-2 sm:gap-3">
             {/* The chip is the running total of the escalation: it grows with
                 the tier, and at tier 3 it is visibly alight. Losing a streak
                 gets a real exit — it drops and tumbles out — because a reward
@@ -328,14 +315,27 @@ export function QuestionRunner({
                 </m.span>
               )}
             </AnimatePresence>
+
             <span className="chip">
               <span className="num text-[15px] text-parchment">{formatClock(elapsed)}</span>
             </span>
-            <span className="chip">
-              <span className="num text-[15px] text-parchment">
-                {index + 1}/{questions.length}
-              </span>
+
+            {/* The count is no longer a chip. The rail down the task column is
+                the progress signal now; this is the exact number, kept for the
+                reader who wants it and for anyone on a screen reader, at the
+                weight a secondary reading deserves. */}
+            <span className="font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+              Question <span className="num text-parchment-dim">{index + 1}</span> of{' '}
+              <span className="num text-parchment-dim">{questions.length}</span>
             </span>
+
+            {/* Calculator and scratch paper, labelled and in the header.
+                The real exam permits both. The calculator gets a first-visit
+                nudge on Math and nowhere else, because that is the only
+                section where not knowing it exists changes how you would have
+                worked the problem. */}
+            <ToolDock placement="inline" mathHint={question.section === 'math'} />
+
             {onQuit && (
               <Button size="sm" variant="ghost" onClick={onQuit}>
                 Exit
@@ -344,358 +344,357 @@ export function QuestionRunner({
           </div>
         </div>
 
-        <ProgressBar
-          value={(index + (revealed ? 1 : 0)) / questions.length}
-          color={accent}
-          height={8}
-          label="Progress"
-        />
-
         {!deferFeedback && records.length > 0 && (
-          <p className="mt-2.5 font-script text-[10px] uppercase tracking-wide text-ink-faint">
+          <p className="mt-3 font-script text-[10px] uppercase tracking-wide text-ink-faint">
             {correctSoFar} correct of {records.length} answered
           </p>
         )}
       </div>
 
-      {/* ---------------------------------------------------------- content */}
+      {/* ---------------------------------------------------------- content
+
+          Two materials, and the whole point of the layout is that they are
+          never confused: the passage is a page, the task column is a leather
+          well with paper objects raised out of it. */}
       <div className={cx('grid gap-5', question.passage && 'lg:grid-cols-2')}>
         {question.passage && <PassagePanel passage={question.passage} />}
 
-        {/* The sheet remounts per question, so every question arrives instead
+        {/* The well remounts per question, so every question arrives instead
             of being swapped underneath the reader. Keyed on the index as well
             as the id because a review session can serve the same question
             twice and the second one still has to animate.
 
-            No exit animation on purpose: an outgoing sheet would have to
+            No exit animation on purpose: an outgoing column would have to
             finish before the next mounts, and rAF is frozen in a hidden tab.
             Arriving unconditionally cannot get stuck. */}
         <m.div
           key={`${index}-${question.id}`}
-          className="sheet p-6 sm:p-8"
+          className="task-well"
           initial={{ opacity: 0, x: 26 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="mb-5 flex flex-wrap items-center gap-2">
-            <span className="label-quill">{question.topic}</span>
-            <span
-              className="rounded px-2 py-0.5 font-script text-[10px] uppercase tracking-wide"
-              style={{
-                color: DIFFICULTY_COLOR[question.difficulty],
-                background: `${DIFFICULTY_COLOR[question.difficulty]}22`,
-              }}
-            >
-              {DIFFICULTY_LABEL[question.difficulty]}
-            </span>
-
-            {/* Read aloud, bookmark, report — secondary to answering, so they
-                sit on the metadata line rather than near the choices. Hidden
-                in test mode: none of the three exists on a real exam, and a
-                bookmark you cannot revisit until the test ends is a
-                distraction dressed as a feature. */}
-            {!deferFeedback && (
-              <QuestionActions
-                questionId={question.id}
-                spokenText={spokenForm(question)}
-                prompt={question.prompt}
-                topic={question.topic}
+          {/* The rail. Decorative to a screen reader — the count above says
+              the same thing in words, and ten unlabelled list items would say
+              it far worse. */}
+          <div className="rail" aria-hidden="true">
+            {questions.map((q, i) => (
+              <span
+                key={`${i}-${q.id}`}
+                className={cx(
+                  'rail-tick',
+                  i === index
+                    ? 'rail-tick-now'
+                    : i < index || (i === index && revealed)
+                      ? 'rail-tick-done'
+                      : '',
+                )}
               />
-            )}
+            ))}
           </div>
 
-          {question.label && (
-            <p className="mb-4 border-l-4 border-[#c9b06a] bg-[#fbf6e6] px-4 py-3 font-read text-[1.02rem] leading-relaxed">
-              <RichText as="span" format="html">
-                {question.label}
-              </RichText>
-            </p>
-          )}
-
-          <div className="prose-quill mb-6" id={promptId}>
-            <RichText as="div" format={question.promptFormat}>
-              {question.prompt}
-            </RichText>
-          </div>
-
-          {/* `radiogroup`, not `group`.
-
-              These are four mutually exclusive options where picking one is
-              the answer, which is exactly what a radio group is. Under `group`
-              a screen reader announced four unrelated buttons and never said
-              how many there were or which was chosen; under `radiogroup` it
-              says "radio group, A, 1 of 4" and reads the selection back.
-              `aria-pressed` came off at the same time — a control cannot be
-              both a toggle button and a radio.
-
-              The group is labelled by the stem rather than by the words
-              "Answer choices": on entering the group a screen reader reads its
-              label, and hearing the question again there is worth more than
-              hearing a category name. */}
-          <div className="space-y-2.5" role="radiogroup" aria-labelledby={promptId}>
-            {question.choices.map((choice, i) => {
-              const isCorrect = choice.key === question.correctKey;
-              const isChosen = choice.key === chosen;
-              const wrongPick = revealed && isChosen && !isCorrect;
-              /* Lit is not the same as correct: after a wrong answer the right
-                 row stays dim for REVEAL_LAG, so the two states are separate. */
-              const lit = revealed && isCorrect && litCorrect;
-
-              const state = !revealed
-                ? isChosen
-                  ? 'choice-selected'
-                  : ''
-                : lit
-                  ? 'choice-correct'
-                  : wrongPick
-                    ? 'choice-wrong'
-                    : '';
-
-              return (
-                <m.button
-                  key={choice.key}
-                  ref={(el: HTMLButtonElement | null) => {
-                    choiceEls.current[choice.key] = el;
+          <div className="min-w-0 flex-1">
+            {/* ------------------------------------------------- the task */}
+            <div className="task-card">
+              <div className="mb-5 flex flex-wrap items-center gap-2">
+                <span className="label-quill">{question.topic}</span>
+                <span
+                  className="rounded px-2 py-0.5 font-script text-[10px] uppercase tracking-wide"
+                  style={{
+                    color: DIFFICULTY_COLOR[question.difficulty],
+                    background: `${DIFFICULTY_COLOR[question.difficulty]}22`,
                   }}
-                  type="button"
-                  onClick={() => commit(choice.key)}
-                  disabled={revealed}
-                  className={cx('choice', state, revealed && 'choice-locked cursor-default')}
-                  role="radio"
-                  aria-checked={isChosen}
-                  /* Roving tabindex: the group is one stop, and once an answer
-                     is on screen the arrow keys move between options the way
-                     they do in every other radio group. Before anything is
-                     chosen the first option holds the stop, which is the
-                     pattern's own rule. */
-                  tabIndex={revealed ? -1 : (chosen ? isChosen : i === 0) ? 0 : -1}
-                  onKeyDown={(e: React.KeyboardEvent) => {
-                    const step =
-                      e.key === 'ArrowDown' || e.key === 'ArrowRight'
-                        ? 1
-                        : e.key === 'ArrowUp' || e.key === 'ArrowLeft'
-                          ? -1
-                          : 0;
-                    if (!step || revealed) return;
-                    e.preventDefault();
-                    // `i` is this choice's own index, so the wrap lands in range.
-                    const n = question.choices.length;
-                    const next = question.choices[(i + step + n) % n]!;
-                    choiceEls.current[next.key]?.focus();
-                  }}
-                  initial={{ opacity: 0, y: 14 }}
-                  animate={
-                    !revealed
-                      ? { opacity: 1, y: 0, x: 0, scale: 1 }
-                      : lit
-                        ? /* the answer arriving: lifts off the page and settles */
-                          { opacity: 1, y: -2, x: 0, scale: [1, 1.035, 1] }
-                        : wrongPick
-                          ? /* a headshake, not a buzzer */
-                            { opacity: 1, y: 0, scale: 1, x: [0, -9, 7, -5, 3, 0] }
-                          : /* everything else steps back so the eye has two rows to compare */
-                            { opacity: 0.45, y: 0, x: 0, scale: 1 }
-                  }
-                  transition={
-                    !revealed
-                      ? { ...SPRING, delay: 0.06 + i * 0.04 }
-                      : wrongPick
-                        ? { duration: 0.42, ease: 'easeInOut' }
-                        : lit
-                          ? SPRING_SNAP
-                          : { duration: 0.28 }
-                  }
-                  whileHover={revealed ? undefined : { x: 3 }}
-                  whileTap={revealed ? undefined : { scale: 0.985 }}
                 >
-                  <span className="choice-key">{'ABCD'[i] ?? choice.key}</span>
-                  <RichText as="span" format={choice.format} className="min-w-0 flex-1">
-                    {choice.text}
-                  </RichText>
-                  {/* Decorative. The verdict reaches a screen reader through
-                      the live region below, on its own timing, rather than as
-                      a stray tick character inside a button label. */}
-                  {lit && (
-                    <Glyph name="check" size={17} className="ml-auto flex-none text-[#2f6b3a]" />
-                  )}
-                  {wrongPick && (
-                    <Glyph name="cross" size={16} className="ml-auto flex-none text-[#9c3326]" />
-                  )}
-                </m.button>
-              );
-            })}
-          </div>
+                  {DIFFICULTY_LABEL[question.difficulty]}
+                </span>
 
-          {!revealed && (
-            <p className="mt-5 text-[12px] text-ink-soft">
-              Tip: press{' '}
-              <kbd className="rounded border border-paper-edge bg-[#ece7db] px-1.5 py-0.5 font-mono text-[11px]">
-                A
-              </kbd>
-              –
-              <kbd className="rounded border border-paper-edge bg-[#ece7db] px-1.5 py-0.5 font-mono text-[11px]">
-                D
-              </kbd>{' '}
-              to answer.
-            </p>
-          )}
-
-          {/* ------------------------------------------------ explanation
-
-              Gated on `litCorrect` rather than `revealed`, so the verdict does
-              not appear in text while the rows are still resolving. Reading
-              "Not quite" before the shake has finished spoils its own reveal. */}
-          {revealed && litCorrect && !deferFeedback && (
-            <m.div
-              className="mt-7 border-t-2 border-paper-edge pt-6"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            >
-              {/* The one thing that must be spoken. `role="status"` is polite,
-                  so it waits for the reader to finish the choice it just moved
-                  through instead of cutting it off, and it names the right
-                  answer — "Not quite" alone tells a blind student nothing they
-                  could not already tell. */}
-              <m.div
-                className="mb-4 flex items-center gap-1.5 font-script text-[12.5px] font-semibold uppercase tracking-[0.14em]"
-                style={{ color: chosen === question.correctKey ? '#2f6b3a' : '#9c3326' }}
-                role="status"
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.26, delay: 0.06 }}
-              >
-                <Glyph
-                  name={chosen === question.correctKey ? 'check' : 'cross'}
-                  size={15}
-                  className="flex-none"
-                />
-                {chosen === question.correctKey
-                  ? 'Correct'
-                  : `Not quite — the answer is ${question.correctKey}`}
-              </m.div>
-
-              {/* Both explanations used to be tinted boxes. Unfilled and
-                  labelled reads faster, and stacking two of them no longer
-                  turns the page into a pile of cards. */}
-              {/* The trap first, then the answer, 90ms apart — the same order
-                  the rows resolved in, so the page repeats the lesson rather
-                  than restating it. */}
-              <div className="lesson">
-                {chosen !== question.correctKey && explanationForChosen && (
-                  <m.section
-                    className="ink-trap lesson-trap"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                  >
-                    <div className="lesson-label">Why {chosen} is wrong</div>
-                    <RichText
-                      as="div"
-                      format="markdown"
-                      className="font-read text-[1.02rem] leading-[1.72] text-ink"
-                    >
-                      {explanationForChosen}
-                    </RichText>
-                  </m.section>
-                )}
-
-                {explanationForCorrect && (
-                  <m.section
-                    className="ink-example"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.3,
-                      delay: chosen === question.correctKey ? 0.1 : 0.19,
-                    }}
-                  >
-                    <div className="lesson-label">Why {question.correctKey} is right</div>
-                    <RichText
-                      as="div"
-                      format="markdown"
-                      className="font-read text-[1.02rem] leading-[1.72] text-ink"
-                    >
-                      {explanationForCorrect}
-                    </RichText>
-                  </m.section>
-                )}
-
-                {!explanationForCorrect && question.whyGeneral && (
-                  <m.section
-                    className="ink-example"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                  >
-                    <div className="lesson-label">Why</div>
-                    <RichText
-                      as="div"
-                      format="html"
-                      className="font-read text-[1.02rem] leading-[1.72] text-ink"
-                    >
-                      {question.whyGeneral}
-                    </RichText>
-                  </m.section>
+                {/* Read aloud, bookmark, report — secondary to answering, so
+                    they sit on the metadata line rather than near the choices.
+                    Hidden in test mode: none of the three exists on a real
+                    exam, and a bookmark you cannot revisit until the test ends
+                    is a distraction dressed as a feature. */}
+                {!deferFeedback && (
+                  <QuestionActions
+                    questionId={question.id}
+                    spokenText={spokenForm(question)}
+                    prompt={question.prompt}
+                    topic={question.topic}
+                  />
                 )}
               </div>
 
-              {/* Arrives last, after the reading has settled. It is still
-                  focused immediately, so Enter works before it has finished
-                  moving — the animation decorates the button, it does not
-                  gate it. */}
+              {question.label && (
+                <p className="mb-4 border-l-4 border-[#c9b06a] bg-[#fbf6e6] px-4 py-3 font-read text-[1.02rem] leading-relaxed">
+                  <RichText as="span" format="html">
+                    {question.label}
+                  </RichText>
+                </p>
+              )}
+
+              <div className="prose-quill" id={promptId}>
+                <RichText as="div" format={question.promptFormat}>
+                  {question.prompt}
+                </RichText>
+              </div>
+            </div>
+
+            {/* `radiogroup`, not `group`.
+
+                These are four mutually exclusive options where picking one is
+                the answer, which is exactly what a radio group is. Under `group`
+                a screen reader announced four unrelated buttons and never said
+                how many there were or which was chosen; under `radiogroup` it
+                says "radio group, A, 1 of 4" and reads the selection back.
+                `aria-pressed` came off at the same time — a control cannot be
+                both a toggle button and a radio.
+
+                The group is labelled by the stem rather than by the words
+                "Answer choices": on entering the group a screen reader reads its
+                label, and hearing the question again there is worth more than
+                hearing a category name. */}
+            <div className="mt-4 space-y-2.5" role="radiogroup" aria-labelledby={promptId}>
+              {question.choices.map((choice, i) => {
+                const isCorrect = choice.key === question.correctKey;
+                const isChosen = choice.key === chosen;
+                const wrongPick = revealed && isChosen && !isCorrect;
+                /* Lit is not the same as correct: after a wrong answer the right
+                   row stays dim for REVEAL_LAG, so the two states are separate. */
+                const lit = revealed && isCorrect && litCorrect;
+
+                const state = !revealed
+                  ? isChosen
+                    ? 'choice-selected'
+                    : ''
+                  : lit
+                    ? 'choice-correct'
+                    : wrongPick
+                      ? 'choice-wrong'
+                      : '';
+
+                return (
+                  <m.button
+                    key={choice.key}
+                    ref={(el: HTMLButtonElement | null) => {
+                      choiceEls.current[choice.key] = el;
+                    }}
+                    type="button"
+                    onClick={() => commit(choice.key)}
+                    disabled={revealed}
+                    className={cx('choice', state, revealed && 'choice-locked cursor-default')}
+                    role="radio"
+                    aria-checked={isChosen}
+                    /* Roving tabindex: the group is one stop, and once an answer
+                       is on screen the arrow keys move between options the way
+                       they do in every other radio group. Before anything is
+                       chosen the first option holds the stop, which is the
+                       pattern's own rule. */
+                    tabIndex={revealed ? -1 : (chosen ? isChosen : i === 0) ? 0 : -1}
+                    onKeyDown={(e: React.KeyboardEvent) => {
+                      const step =
+                        e.key === 'ArrowDown' || e.key === 'ArrowRight'
+                          ? 1
+                          : e.key === 'ArrowUp' || e.key === 'ArrowLeft'
+                            ? -1
+                            : 0;
+                      if (!step || revealed) return;
+                      e.preventDefault();
+                      // `i` is this choice's own index, so the wrap lands in range.
+                      const n = question.choices.length;
+                      const next = question.choices[(i + step + n) % n]!;
+                      choiceEls.current[next.key]?.focus();
+                    }}
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={
+                      !revealed
+                        ? { opacity: 1, y: 0, x: 0, scale: 1 }
+                        : lit
+                          ? /* the answer arriving: lifts off the desk and settles */
+                            { opacity: 1, y: -2, x: 0, scale: [1, 1.02, 1] }
+                          : wrongPick
+                            ? /* a headshake, not a buzzer */
+                              { opacity: 1, y: 0, scale: 1, x: [0, -3, 3, -3, 0] }
+                            : /* everything else steps back so the eye has two rows to compare */
+                              { opacity: 0.6, y: 0, x: 0, scale: 1 }
+                    }
+                    transition={
+                      !revealed
+                        ? { ...SPRING, delay: 0.06 + i * 0.04 }
+                        : wrongPick
+                          ? /* Four beats at the plan's 90ms each. A single 90ms
+                               shake is three frames — a glitch, not a gesture. */
+                            { duration: 0.18, ease: 'easeInOut' }
+                          : lit
+                            ? SPRING_SNAP
+                            : { duration: 0.28 }
+                    }
+                    whileHover={revealed ? undefined : { x: 3 }}
+                    whileTap={revealed ? undefined : { scale: 0.985 }}
+                  >
+                    <span className="choice-key">{'ABCD'[i] ?? choice.key}</span>
+                    <RichText as="span" format={choice.format} className="min-w-0 flex-1">
+                      {choice.text}
+                    </RichText>
+                    {/* Decorative, both of them. The verdict reaches a screen
+                        reader through the live region below, on its own timing,
+                        rather than as a stray mark inside a button label.
+
+                        The seal is where the reward lives now: the confetti
+                        that used to burst out of this row and across the
+                        passage is gone, and a stamp that lands on the row that
+                        earned it says the same thing without covering the
+                        text. */}
+                    {lit && (
+                      <span className="choice-seal" aria-hidden="true">
+                        <Glyph name="check" size={15} strokeWidth={2.4} />
+                      </span>
+                    )}
+                    {wrongPick && (
+                      <Glyph name="cross" size={16} className="ml-auto flex-none text-[#9c3326]" />
+                    )}
+                  </m.button>
+                );
+              })}
+            </div>
+
+            {!revealed && (
+              <p className="mt-4 px-1 text-[12px] text-ink-faint">
+                Tip: press{' '}
+                <kbd className="rounded border border-leather-700 bg-leather-800 px-1.5 py-0.5 font-mono text-[11px] text-parchment-dim">
+                  A
+                </kbd>
+                –
+                <kbd className="rounded border border-leather-700 bg-leather-800 px-1.5 py-0.5 font-mono text-[11px] text-parchment-dim">
+                  D
+                </kbd>{' '}
+                to answer.
+              </p>
+            )}
+
+            {/* ----------------------------------------- explanation sheet
+
+                Gated on `litCorrect` rather than `revealed`, so the verdict does
+                not appear in text while the rows are still resolving. Reading
+                "Not quite" before the shake has finished spoils its own reveal.
+
+                A sheet rising out of the well, not an inline expansion: the
+                explanation used to grow the page under the reader, and a
+                layout that shifts while you are looking at it is what made the
+                reveal feel cheap. */}
+            {revealed && litCorrect && !deferFeedback && (
               <m.div
-                initial={{ opacity: 0, y: 14 }}
+                className="explain-sheet mt-4"
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ ...SPRING, delay: 0.3 }}
+                transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
               >
-                <Button
-                  variant="primary"
-                  size="lg"
-                  trailing
-                  className="mt-6 w-full"
-                  onClick={() => advance(records)}
-                  autoFocus
+                {/* The one thing that must be spoken. `role="status"` is polite,
+                    so it waits for the reader to finish the choice it just moved
+                    through instead of cutting it off, and it names the right
+                    answer — "Not quite" alone tells a blind student nothing they
+                    could not already tell. */}
+                {/* Deliberately not `.lesson-label`, which is a flex row: the
+                    verdict is the one label in the app long enough to wrap, and
+                    a centred flex icon beside wrapped text ends up next to the
+                    *second* line. */}
+                <m.div
+                  className="mb-5 font-script text-[13px] font-semibold uppercase tracking-[0.16em]"
+                  style={{ color: gotItRight ? '#2f6b3a' : '#9c3326' }}
+                  role="status"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.26, delay: 0.1 }}
                 >
-                  {isLast ? 'See results' : 'Next question'}
-                </Button>
+                  <Glyph name={gotItRight ? 'check' : 'cross'} size={15} className={LEADING_ICON} />
+                  {gotItRight ? 'Correct' : `Not quite — the answer is ${question.correctKey}`}
+                </m.div>
+
+                {/* Both explanations used to be tinted boxes. Unfilled and
+                    labelled reads faster, and stacking two of them no longer
+                    turns the page into a pile of cards. */}
+                {/* The trap first, then the answer, 90ms apart — the same order
+                    the rows resolved in, so the page repeats the lesson rather
+                    than restating it. */}
+                <div className="lesson">
+                  {!gotItRight && explanationForChosen && (
+                    <m.section
+                      className="ink-trap lesson-trap"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.14 }}
+                    >
+                      <div className="lesson-label">Why {chosen} is wrong</div>
+                      <RichText
+                        as="div"
+                        format="markdown"
+                        className="font-read text-[1.02rem] leading-[1.72] text-ink"
+                      >
+                        {explanationForChosen}
+                      </RichText>
+                    </m.section>
+                  )}
+
+                  {explanationForCorrect && (
+                    <m.section
+                      className="ink-example"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: gotItRight ? 0.14 : 0.23 }}
+                    >
+                      <div className="lesson-label">Why {question.correctKey} is right</div>
+                      <RichText
+                        as="div"
+                        format="markdown"
+                        className="font-read text-[1.02rem] leading-[1.72] text-ink"
+                      >
+                        {explanationForCorrect}
+                      </RichText>
+                    </m.section>
+                  )}
+
+                  {!explanationForCorrect && question.whyGeneral && (
+                    <m.section
+                      className="ink-example"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.14 }}
+                    >
+                      <div className="lesson-label">Why</div>
+                      <RichText
+                        as="div"
+                        format="html"
+                        className="font-read text-[1.02rem] leading-[1.72] text-ink"
+                      >
+                        {question.whyGeneral}
+                      </RichText>
+                    </m.section>
+                  )}
+                </div>
+
+                {/* Arrives last, after the reading has settled. It is still
+                    focused immediately, so Enter works before it has finished
+                    moving — the animation decorates the button, it does not
+                    gate it. */}
+                <m.div
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ ...SPRING, delay: 0.34 }}
+                >
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    trailing
+                    className="mt-6 w-full"
+                    onClick={() => advance(records)}
+                    autoFocus
+                  >
+                    {isLast ? 'See results' : 'Next question'}
+                  </Button>
+                </m.div>
               </m.div>
-            </m.div>
-          )}
+            )}
+          </div>
         </m.div>
       </div>
-
-      {/* -------------------------------------------------- streak escalation
-
-          Tier 2 warms the edges of the screen; tier 3 sets them alight. Keyed
-          on a counter so a repeat at the same tier replays rather than sitting
-          idle, and fixed to the viewport so it frames the whole run instead of
-          the sheet. */}
-      <AnimatePresence>
-        {flare && (
-          <m.div
-            key={flare.id}
-            aria-hidden="true"
-            className="pointer-events-none fixed inset-0 z-[70]"
-            style={{
-              boxShadow:
-                flare.tier === 3
-                  ? 'inset 0 0 150px rgba(255,122,46,.6), inset 0 0 60px rgba(255,196,92,.35)'
-                  : 'inset 0 0 96px rgba(255,210,62,.42)',
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{ duration: flare.tier === 3 ? 0.9 : 0.6, ease: 'easeOut' }}
-            onAnimationComplete={() => setFlare(null)}
-          />
-        )}
-      </AnimatePresence>
-
-      {/* Calculator and scratch paper, corner-docked.
-          The real exam permits both. The calculator gets a first-visit nudge
-          on Math and nowhere else, because that is the only section where not
-          knowing it exists changes how you would have worked the problem. */}
-      <ToolDock mathHint={question.section === 'math'} />
     </div>
   );
 }

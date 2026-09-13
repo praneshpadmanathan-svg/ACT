@@ -281,18 +281,33 @@ function Scratchpad() {
 type Tool = 'calculator' | 'scratch';
 
 /**
- * The corner dock.
+ * The tools the real exam permits, as two labelled controls.
  *
- * Rendered fixed, above the sheet but below the story overlay, and padded for
- * the safe-area insets so it clears the home indicator on a phone. Open state
- * is local: a student who closes the calculator on question 4 and wants it
- * again on question 9 is one tap away either time, and remembering it across a
- * session would leave it covering the answers for everyone who does not.
+ * They used to float in the bottom-right corner as two unlabelled icons —
+ * defect #8 in the redesign plan, and a fair one: a floating glyph over the
+ * answers is a thing you have to decode and then dismiss. They now sit in the
+ * runner's header, next to the clock, where a control that belongs to the
+ * session belongs, and they carry their names at `sm` and up.
+ *
+ * `placement="corner"` keeps the old fixed dock for anything that has no
+ * header to put them in.
+ *
+ * Open state is local: a student who closes the calculator on question 4 and
+ * wants it again on question 9 is one tap away either time, and remembering it
+ * across a session would leave it covering the answers for everyone who does
+ * not.
  */
-export function ToolDock({ mathHint = false }: { mathHint?: boolean }) {
+export function ToolDock({
+  mathHint = false,
+  placement = 'corner',
+}: {
+  mathHint?: boolean;
+  placement?: 'corner' | 'inline';
+}) {
   const [open, setOpen] = useState<Tool | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const openerRef = useRef<HTMLElement | null>(null);
+  const inline = placement === 'inline';
 
   /* Deliberately **not** `useDialogFocus`.
    *
@@ -326,70 +341,102 @@ export function ToolDock({ mathHint = false }: { mathHint?: boolean }) {
     };
   }, [open]);
 
+  const panel = open && (
+    <div
+      ref={panelRef}
+      role="dialog"
+      aria-modal="false"
+      aria-label={open === 'calculator' ? 'Calculator' : 'Scratch paper'}
+      tabIndex={-1}
+      className={cx(
+        'panel pointer-events-auto w-[min(20rem,calc(100vw-2rem))] animate-riseIn p-4 shadow-floating',
+        /* Inline, the panel hangs off the header it was opened from and has to
+           clear the content beneath it; cornered, it stacks above the buttons
+           in the dock's own flex column. */
+        inline && 'absolute right-0 top-[calc(100%+0.6rem)] z-50',
+      )}
+    >
+      <div className="mb-3 flex items-center justify-between">
+        <span className="font-script text-[11px] uppercase tracking-[0.16em] text-gold">
+          {open === 'calculator' ? 'Calculator' : 'Scratch paper'}
+        </span>
+        <button
+          type="button"
+          onClick={() => setOpen(null)}
+          className="hud-icon h-7 w-7"
+          aria-label="Close"
+        >
+          <Glyph name="cross" size={14} />
+        </button>
+      </div>
+      {open === 'calculator' ? <Calculator /> : <Scratchpad />}
+    </div>
+  );
+
+  const buttons = (
+    <>
+      <DockButton
+        label="Scratch paper"
+        short="Scratch"
+        icon="pencil"
+        inline={inline}
+        active={open === 'scratch'}
+        onClick={() => setOpen((v) => (v === 'scratch' ? null : 'scratch'))}
+      />
+      <DockButton
+        label="Calculator"
+        short="Calculator"
+        icon="calculator"
+        inline={inline}
+        active={open === 'calculator'}
+        onClick={() => setOpen((v) => (v === 'calculator' ? null : 'calculator'))}
+        /* On Math, the calculator is the one the real exam permits, so it is
+           worth pointing at the first time somebody lands on the section. */
+        hint={mathHint && !open}
+      />
+    </>
+  );
+
+  if (inline) {
+    return (
+      <div className="relative flex gap-2">
+        {buttons}
+        {panel}
+      </div>
+    );
+  }
+
   return (
     <div
       className="pointer-events-none fixed bottom-0 right-0 z-[80] flex flex-col items-end gap-2 p-4"
       style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
     >
-      {open && (
-        <div
-          ref={panelRef}
-          role="dialog"
-          aria-modal="false"
-          aria-label={open === 'calculator' ? 'Calculator' : 'Scratch paper'}
-          tabIndex={-1}
-          className="panel pointer-events-auto w-[min(20rem,calc(100vw-2rem))] animate-riseIn p-4 shadow-card"
-        >
-          <div className="mb-3 flex items-center justify-between">
-            <span className="font-script text-[11px] uppercase tracking-[0.16em] text-gold">
-              {open === 'calculator' ? 'Calculator' : 'Scratch paper'}
-            </span>
-            <button
-              type="button"
-              onClick={() => setOpen(null)}
-              className="hud-icon h-7 w-7"
-              aria-label="Close"
-            >
-              <Glyph name="cross" size={14} />
-            </button>
-          </div>
-          {open === 'calculator' ? <Calculator /> : <Scratchpad />}
-        </div>
-      )}
-
-      <div className="pointer-events-auto flex gap-2">
-        <DockButton
-          label="Scratch paper"
-          icon="pencil"
-          active={open === 'scratch'}
-          onClick={() => setOpen((v) => (v === 'scratch' ? null : 'scratch'))}
-        />
-        <DockButton
-          label="Calculator"
-          icon="calculator"
-          active={open === 'calculator'}
-          onClick={() => setOpen((v) => (v === 'calculator' ? null : 'calculator'))}
-          /* On Math, the calculator is the one the real exam permits, so it is
-             worth pointing at the first time somebody lands on the section. */
-          hint={mathHint && !open}
-        />
-      </div>
+      {panel}
+      <div className="pointer-events-auto flex gap-2">{buttons}</div>
     </div>
   );
 }
 
+/* Labelled from `sm` up, icon-only below it. A tooltip was the obvious answer
+   and the wrong one: the only viewport narrow enough to need it is the one
+   with no pointer to hover with, so the label would have been invisible
+   exactly where the button is hardest to guess. The name itself is cheaper. */
 function DockButton({
   label,
+  short,
   icon,
   active,
   onClick,
   hint,
+  inline,
 }: {
   label: string;
+  short: string;
   icon: 'pencil' | 'calculator';
   active: boolean;
   onClick: () => void;
   hint?: boolean;
+  inline?: boolean;
 }) {
   return (
     <button
@@ -397,9 +444,9 @@ function DockButton({
       onClick={onClick}
       aria-pressed={active}
       aria-label={label}
-      title={label}
       className={cx(
-        'flex h-11 w-11 items-center justify-center rounded-xl border-2 shadow-card backdrop-blur transition-colors',
+        'flex h-11 items-center justify-center gap-2 rounded-xl border-2 font-script text-[11px] uppercase tracking-[0.14em] shadow-card backdrop-blur transition-colors duration-quick ease-out',
+        inline ? 'w-11 sm:w-auto sm:px-3.5' : 'w-11',
         active
           ? 'border-gilt bg-gilt text-[#2a2000]'
           : 'border-leather-700 bg-leather-950/90 text-parchment-dim hover:border-gold-deep hover:text-gold',
@@ -407,6 +454,7 @@ function DockButton({
       )}
     >
       <Glyph name={icon} size={19} />
+      {inline && <span className="hidden sm:inline">{short}</span>}
     </button>
   );
 }

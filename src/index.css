@@ -1227,12 +1227,24 @@
     @apply border-b-0;
   }
 
-  /* ---------------------------------------------------------------- choice */
+  /* ---------------------------------------------------------------- choice
+
+     A choice is an object on a surface, not a tinted rectangle. The states
+     are told apart by elevation first and colour second: resting on the desk,
+     raised under the cursor, lifted and gilt-rimmed once chosen. The letter
+     badge is debossed — pressed into the card rather than printed on it —
+     which is what stops four identical discs reading as decoration.
+
+     Shared with Boss and Notes on purpose. One choice idiom in the app. */
 
   .choice {
-    @apply flex w-full items-start gap-3 rounded-lg border-2 border-paper-edge
-           bg-paper-light/70 px-4 py-3 text-left font-read text-[1.04rem]
-           leading-relaxed text-ink transition-colors duration-100;
+    @apply relative flex w-full items-start gap-3 rounded-lg border border-paper-edge
+           bg-paper-light/80 px-4 py-3 text-left font-read text-[1.04rem]
+           leading-relaxed text-ink
+           transition-[background-color,border-color,box-shadow] duration-base ease-out;
+    box-shadow:
+      var(--lamp-edge-paper),
+      var(--e-resting);
   }
   /* Colour and shadow only. The nudge on hover, the give on press and the
      whole reveal — the shake, the lift, the settle — are springs on the
@@ -1240,35 +1252,180 @@
      overridden by it or, in the case of a keyframe animation, silently win
      and cancel it. Transform belongs to exactly one owner per element. */
   .choice:hover:not(:disabled):not(.choice-locked) {
-    @apply border-ink-faint bg-paper-light;
-    box-shadow: 0 3px 10px rgba(43, 35, 23, 0.14);
+    @apply border-paper-deep bg-paper-light;
+    box-shadow:
+      var(--lamp-edge-paper),
+      var(--e-raised);
   }
+
+  /* Debossed, and debossed in agreement with the lamp: the light is upper-
+     left, so the shadow it casts inside a pressed hollow falls upper-left and
+     the lit lip sits along the bottom. */
   .choice-key {
     @apply mt-px flex h-6 w-6 flex-none items-center justify-center rounded-full
-           border-2 border-paper-deep bg-paper-dim font-display
-           text-[12px] font-semibold text-ink-soft;
+           border border-paper-deep font-display text-[12px] font-semibold text-ink-soft;
+    background: radial-gradient(
+      circle at 62% 74%,
+      oklch(var(--c-paper-dim)),
+      oklch(var(--c-paper-deep))
+    );
+    box-shadow:
+      inset 0 1px 2px rgba(74, 58, 28, 0.3),
+      0 1px 0 rgba(255, 255, 255, 0.5);
   }
+
   /* Choice states live entirely on the paper sheet, so every literal here is
      pinned in both themes — the sheet does not invert. The greens were
      #3f7d47, which put the key's paper-light letter at 4.45:1; #367040 is the
      same hue two steps down and lands at 5.35:1. */
-  .choice-correct {
-    @apply border-[#367040] bg-[#e9f3e8];
-  }
-  .choice-correct .choice-key {
-    @apply border-[#367040] bg-[#367040] text-paper-light;
-  }
-  .choice-wrong {
-    @apply border-blood bg-[#f8eae6];
-  }
-  .choice-wrong .choice-key {
-    @apply border-blood bg-blood text-paper-light;
-  }
   .choice-selected {
     @apply border-gold-deep bg-[#f7eed6];
+    box-shadow:
+      var(--lamp-edge-paper),
+      var(--e-lifted),
+      inset 0 0 0 1px rgba(212, 160, 23, 0.45);
   }
   .choice-selected .choice-key {
-    @apply border-gold-deep bg-gilt text-[#2a2008];
+    @apply border-gold-deep text-[#2a2008];
+    background: radial-gradient(circle at 34% 28%, #f4d37a, #c79a1e);
+  }
+
+  /* The right answer does not simply turn green: a gilt edge is drawn onto the
+     card left to right, and a seal is stamped at the end of it. The reward
+     happens on the row that earned it, which is the whole reason the confetti
+     that used to fire across the passage could go. */
+  .choice-correct {
+    @apply border-[#367040] bg-[#e9f3e8];
+    box-shadow:
+      var(--lamp-edge-paper),
+      var(--e-lifted);
+  }
+  .choice-correct::after {
+    content: '';
+    @apply pointer-events-none absolute inset-0 rounded-lg;
+    box-shadow:
+      inset 0 0 0 2px rgba(212, 160, 23, 0.85),
+      inset 0 0 16px rgba(212, 160, 23, 0.18);
+    animation: giltDraw 240ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .choice-correct .choice-key {
+    @apply border-[#367040] text-paper-light;
+    background: radial-gradient(circle at 34% 28%, #4a8a55, #367040);
+  }
+
+  /* A hairline, not a fill. Being wrong should read as a correction in the
+     margin rather than as a warning box. */
+  .choice-wrong {
+    @apply border-blood bg-[#f8eae6];
+    box-shadow:
+      var(--lamp-edge-paper),
+      var(--e-resting),
+      inset 0 0 0 1px rgba(156, 51, 38, 0.4);
+  }
+  .choice-wrong .choice-key {
+    @apply border-blood text-paper-light;
+    background: radial-gradient(circle at 34% 28%, #b4503f, #9c3326);
+  }
+
+  /* The seal. One object, stamped once, landing slightly off square the way a
+     real one does. */
+  .choice-seal {
+    @apply ml-auto flex h-7 w-7 flex-none items-center justify-center rounded-full
+           text-[#3a2c05];
+    background: radial-gradient(circle at 32% 26%, #f7dd93, #c08f14);
+    box-shadow:
+      0 1px 3px rgba(58, 44, 5, 0.38),
+      inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    animation: sealStamp 260ms cubic-bezier(0.22, 1.4, 0.36, 1) both;
+  }
+
+  @keyframes giltDraw {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes sealStamp {
+    0% {
+      opacity: 0;
+      transform: scale(1.85) rotate(-16deg);
+    }
+    55% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(-6deg);
+    }
+  }
+
+  /* ------------------------------------------------------------ the runner
+
+     The one screen that has to separate its two materials at a glance. The
+     passage is Paper — a page you read. Everything you *do* sits in a leather
+     well pressed into the desk, with the paper objects you act on raised out
+     of it. Before this, the passage panel and the task sheet were the same
+     cream and the eye had nowhere to land. */
+
+  .task-well {
+    @apply relative flex gap-3 rounded-xl p-3 sm:gap-4 sm:p-4;
+    background-color: oklch(var(--c-leather-900) / 0.55);
+    border: 1px solid oklch(var(--c-leather-700) / 0.45);
+    box-shadow: var(--e-flush);
+  }
+
+  /* The stem, on its own plate. It is the thing being read closely, so it
+     keeps the study register even though the column around it is chrome. */
+  .task-card {
+    @apply mat-paper rounded-lg px-5 py-5 sm:px-6 sm:py-6;
+    box-shadow:
+      var(--lamp-edge-paper),
+      var(--e-resting);
+  }
+
+  /* ---------------------------------------------------------- progress rail
+
+     Ticks down the left edge of the task column, filling as you go. This is
+     the primary progress signal now: "3/10" is a number you have to read and
+     convert, where a rail is a shape you take in without looking at it. */
+  .rail {
+    @apply flex w-2 flex-none flex-col items-center gap-1.5 py-1;
+  }
+  /* Capped, or a ten-tick rail beside a tall Reading question stretches into
+     ten long bars and the current one stops being distinguishable — the rail
+     has to read as a count, not as a gradient. */
+  .rail-tick {
+    @apply w-1.5 flex-1 rounded-full transition-[background-color,box-shadow,width] duration-base ease-out;
+    min-height: 5px;
+    max-height: 26px;
+    background-color: oklch(var(--c-leather-700) / 0.5);
+  }
+  .rail-tick-done {
+    background: linear-gradient(180deg, oklch(var(--c-gilt-bright)), oklch(var(--c-gold-deep)));
+  }
+  .rail-tick-now {
+    @apply w-2;
+    background: oklch(var(--c-gilt-bright));
+    box-shadow: 0 0 0 2px oklch(var(--c-gilt) / 0.28);
+  }
+
+  /* ------------------------------------------------------ explanation sheet
+
+     A sheet that rises from the bottom of the task column, not an inline
+     expansion. The old reveal simply grew the page under the reader, which is
+     the layout jump that made it feel cheap; a sheet arriving is an event. */
+  .explain-sheet {
+    @apply mat-paper relative overflow-hidden rounded-xl px-5 py-5 sm:px-7 sm:py-6;
+    box-shadow:
+      var(--lamp-edge-paper),
+      var(--e-raised);
+  }
+  .explain-sheet::before {
+    content: '';
+    @apply mat-gilt-rule absolute inset-x-0 top-0;
   }
 
   /* ---------------------------------------------------------------- layout */
