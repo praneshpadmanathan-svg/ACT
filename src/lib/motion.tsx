@@ -1,9 +1,9 @@
 /* Motion setup and shared presets.
 
-   The ambient scenery on the map stays in CSS — 170-odd elements on infinite
-   GPU-composited keyframes is exactly what CSS is best at, and handing that to
-   JavaScript would cost frames for nothing. Motion is here for the things CSS
-   genuinely cannot do:
+   Ambient, always-running scenery stays in CSS — infinite GPU-composited
+   keyframes are exactly what CSS is best at, and handing them to JavaScript
+   would cost frames for nothing. The story overlay's storm is the last of it.
+   Motion is here for the things CSS genuinely cannot do:
 
      - exit animations (an element leaving the DOM)
      - springs, so motion decelerates like weight rather than on a curve

@@ -193,6 +193,10 @@ animation is skipped or interrupted, the route still changes.
 
 ## 297. A camera director for the map
 
+> **Obsolete — the map screen was removed.** Progression is a flat list
+> under the Study tab now, so there is no viewport to move and nothing to
+> frame. Kept for the reasoning, which transfers to any future camera work.
+
 `AdventureMap.tsx` owns `view` and `clampView` already. Add an imperative
 scripting layer on top.
 
@@ -408,6 +412,10 @@ and the chip pulses on arrival — the value visibly _travels_.
 **314.** Answering with the keyboard shows the key badge depressing physically.
 
 ## 3.2 The map as a world
+
+> **Obsolete — the map screen was removed.** Progression is a flat list
+> under the Study tab now, so there is no viewport to move and nothing to
+> frame. Kept for the reasoning, which transfers to any future camera work.
 
 **315.** Camera pulls back to frame a region when it completes, holds, returns.
 **316.** Camera drifts slowly during story beats (`camera.drift`) so the world is

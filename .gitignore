@@ -25,3 +25,10 @@ pnpm-debug.log*
 .vercel
 tsconfig.tsbuildinfo
 *.tsbuildinfo
+
+# Intermediate canvases from scripts/build-surround.mjs — the script's committed
+# outputs are what the app loads; these 3.7 MB of sources are regenerable scratch
+# and the rest of art-src/ being tracked would otherwise sweep them in.
+art-src/surround-canvas.png
+art-src/surround-canvas.jpg
+art-src/surround-canvas-1568.jpg

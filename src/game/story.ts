@@ -34,13 +34,13 @@ export interface StoryChoice {
 /** What the world is doing while a beat is spoken.
 
     The story used to play on a curtain: an 88%-opaque scrim and a picture of
-    the camp, drawn over the top of the map regardless of what was being said.
-    So Wizzy could describe the Grey lying over the land like wet ash while the
-    land it was lying on was hidden behind him, and the most atmospheric writing
-    in the app was delivered to a closed set.
+    the camp, drawn over the top of the screen regardless of what was being
+    said. So Wizzy could describe the Grey lying over the land like wet ash
+    while the land it was lying on was hidden behind him, and the most
+    atmospheric writing in the app was delivered to a closed set.
 
     A mood is the beat telling the world to react. It is published as a single
-    attribute on the document, so the overlay, the map underneath and the
+    attribute on the document, so the overlay, the screen underneath and the
     weather all read one signal and move together rather than being wired to
     each other. Everything it drives is in `index.css` under `[data-story-mood]`.
 
@@ -99,15 +99,22 @@ const clearedCount = (_p: Progress, ctx: StoryContext) => ctx.cleared;
 const sealsBroken = (p: Progress) => p.achievements.filter((a) => a.startsWith('boss-')).length;
 const fullTrials = (p: Progress) => p.testHistory.filter((t) => t.sections.length === 4).length;
 
+/** Resolve a quest's target against the live realm. */
+export const needOf = (quest: Quest, ctx: StoryContext): number =>
+  typeof quest.need === 'function' ? quest.need(ctx) : quest.need;
+
 /* -------------------------------------------------------------------- quests */
 
 export interface Quest {
   id: string;
-  /** Short name for the map HUD. */
+  /** Short name for the quest hint. */
   name: string;
   /** One imperative line: what to actually do. */
   objective: string;
-  need: number;
+  /** How many are required. A function when the target is the whole realm,
+   *  so adding or removing a landmark cannot leave this quest unreachable —
+   *  or reachable early — the way a hardcoded count would. */
+  need: number | ((ctx: StoryContext) => number);
   count: (p: Progress, ctx: StoryContext) => number;
   /** Wizzy sets the quest. */
   intro: { eyebrow: string; title: string; beats: StoryBeat[] };
@@ -128,81 +135,57 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'Ah — you found the path. Most people walk straight past it.',
-            'I am <b>Wizzy</b>. I have watched a great many travellers set out from this camp, and I will not pretend this is a good year to be setting out.',
-            'Look south. That glow on the horizon, over the water — that is the citadel at the <b>Summit</b>.',
+            'I am <b>Wizzy</b>. South of here, past the water, a citadel at the <b>Summit</b> — and its light is going out.',
           ],
           mood: 'summit',
         },
         {
           lines: [
-            'It is dimmer than it was. Every season it dims further, and every season fewer travellers reach it.',
-            'Now look at the rest. That grey lying over the land like wet ash — that is the <b>Grey</b>, and it is why I am still standing at this camp instead of somewhere warm.',
+            'The <b>Grey</b> is putting it out. It does not burn or break anything. It <b>settles</b>, and afterwards nobody remembers what was underneath.',
+            'It spreads wherever nobody walks.',
           ],
           shake: 'soft',
           mood: 'grey',
         },
         {
           lines: [
-            'It is a plague, of a sort. It does not burn anything or knock anything down. It simply <b>settles</b> — over a field, a wood, a stretch of coast — and after a while nobody can remember what was underneath.',
-            'Not destroyed. <b>Forgotten.</b> Which is worse, because there is nothing left to bury.',
-            'It spreads wherever nobody walks. That is the whole of its cunning, and it is enough.',
-          ],
-          shake: 'soft',
-          mood: 'grey',
-        },
-        {
-          lines: [
-            'Four regions are still standing: <b>the Grammar Village</b>, <b>the Enchanted Woods</b>, <b>the Number Desert</b>, <b>the Science Cliffs</b>.',
-            'Each one is held shut by a <b>Seal</b>, and at each Seal something is waiting that will not let you pass for asking nicely.',
-          ],
-        },
-        {
-          lines: [
-            'So here is what it takes, and I will not dress it up.',
-            '<b>Break all four Seals, and the Grey lifts.</b> Not one. Not three. Every region cleared to its last landmark, every guardian put down — and the plague has nowhere left to sit.',
-            'Thirty-seven landmarks between here and that. Each holds a single skill, and each one you take is ground the Grey cannot come back to.',
-            'Clear the four, and the road to the Summit opens behind them.',
+            'Four regions still stand, each held shut by a <b>Seal</b> with a guardian at it. <b>Break all four and the Grey lifts.</b>',
           ],
           shake: 'hard',
           mood: 'seal',
         },
         {
-          lines: ['One question before you set out, traveller. I ask everyone.'],
+          lines: ['One question before you set out.'],
           choice: {
             prompt: 'Why are you climbing?',
             options: [
               {
                 label: 'A score opens a door I want',
                 value: 'door',
-                reply:
-                  'A door, then. Doors open for those who keep walking at them — that is the whole trick, and it is duller than people hope.',
+                reply: 'A door, then. Doors open for those who keep walking at them.',
               },
               {
                 label: 'I want to prove I can',
                 value: 'proof',
-                reply:
-                  'To prove it to yourself. The best reason there is, and the only one still standing at midnight.',
+                reply: 'To yourself. The only reason still standing at midnight.',
               },
               {
                 label: 'Someone is counting on me',
                 value: 'someone',
-                reply:
-                  'For them, then. Carry that quietly — it will get you up the hard slopes when nothing else will.',
+                reply: 'Carry that quietly. It will get you up the hard slopes.',
               },
               {
                 label: 'I just want to be good at it',
                 value: 'curious',
-                reply: 'Curiosity! Rarer than courage on this road, and it outlasts it.',
+                reply: 'Curiosity. Rarer than courage, and it outlasts it.',
               },
             ],
           },
         },
         {
           lines: [
-            'Then I shall hold you to it.',
-            'Your traveller stands at the first glowing marker. Read the lesson, clear the quiz at seven in ten, and the next stretch of road appears.',
-            'And when you get something wrong — you will — I keep it. It comes back tomorrow, then in three days, then a week, until it stops being a problem. That is not a punishment. That is the entire method.',
+            'Then I shall hold you to it. Read the lesson, clear the quiz at seven in ten, and the next landmark opens.',
+            'What you get wrong, I keep — it returns tomorrow, then in three days, then a week. That is the method.',
           ],
         },
       ],
@@ -213,16 +196,10 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'There. Feel that?',
-            'One landmark. The Grey just pulled back the width of a single field, and somewhere behind you a place that was fading is solid again.',
+            'One landmark, and the Grey pulled back the width of a field.',
+            'It never feels like much. The climb is not one heroic afternoon — it is a great many small ones.',
           ],
           shake: 'soft',
-        },
-        {
-          lines: [
-            'I know it does not feel like much. It never does.',
-            'The climb is not one heroic afternoon. It is thirty-seven small ones, and you have had the first. Keep going — the road only appears under people who are walking it.',
-          ],
         },
       ],
     },
@@ -240,9 +217,8 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'One light will not hold. The Grey closes around a single point like water around a stone.',
-            'Give me <b>four</b>. Four landmarks in a line is not a point any more — it is a road, and roads are much harder to erase.',
-            'Watch your <b>Review</b> queue while you walk. Everything you missed is in there, and those questions are the only ones with anything left to teach you.',
+            'One light will not hold. Give me <b>four</b> — four in a line is a road, and roads are harder to erase.',
+            'Watch your <b>Review</b> queue as you walk. Only the questions you missed have anything left to teach you.',
           ],
           mood: 'grey',
         },
@@ -254,18 +230,11 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'Four. Look behind you, traveller — properly, look.',
-            'The road is <i>there</i>. Not fading at the edges. There.',
+            'Four. Look behind you — the road is <i>there</i>, not fading at the edges.',
+            'Now: something is going to notice you.',
           ],
           shake: 'hard',
-        },
-        {
-          lines: [
-            'That is what ground looks like when someone is standing on it. The Grey has lost this stretch, and it will not get it back while you keep coming this way.',
-            'Now. Something is going to notice you.',
-          ],
           mood: 'summit',
-          shake: 'soft',
         },
       ],
     },
@@ -283,17 +252,10 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'It has noticed you.',
-            'Each region has a <b>guardian</b>, and each guardian holds one of the four Seals on the southern road. They were set to keep the Grey out. They have been standing so long they no longer tell the difference between the Grey and anyone else.',
+            'Each region has a <b>guardian</b> holding one of the four Seals. Clear every landmark in a region and its guardian wakes.',
+            'They ask the hardest questions their region knows. You will lose the first time — it costs you nothing but the walk back.',
           ],
           shake: 'soft',
-        },
-        {
-          lines: [
-            'You cannot talk your way past one. They ask questions — the hardest ones their region knows — and a wrong answer costs you.',
-            'Clear every landmark in a region and its guardian wakes. Then go and take the Seal.',
-            'You will lose the first time. Losing costs you nothing but the walk back, and I would rather you learned that from me than from the Summit.',
-          ],
         },
       ],
     },
@@ -304,14 +266,7 @@ export const QUESTS: Quest[] = [
         {
           lines: [
             'It is down. <b>It is down.</b>',
-            'Do you hear that? That crack, running away south under the ground?',
-          ],
-          shake: 'hard',
-        },
-        {
-          lines: [
-            'That is a Seal breaking. The first in longer than I have been alive.',
-            'Three left, traveller. Three, and the road to the Summit opens for the first time in living memory.',
+            'That crack running south under the ground is a Seal breaking. Three left.',
           ],
           shake: 'hard',
         },
@@ -331,16 +286,10 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'Now the unglamorous stretch. <b>Twelve landmarks.</b>',
-            'This is where travellers turn back, and not from difficulty — from boredom. The Grey does not need to beat you. It only needs you to stop finding this interesting.',
+            'Now the unglamorous stretch. This is where travellers turn back — not from difficulty, from boredom.',
+            'Your score does not come from what you found easy. Open <b>Progress</b>: your weakest topics are listed there, and that is where the points are.',
           ],
           mood: 'grey',
-        },
-        {
-          lines: [
-            'So here is the thing the map will not tell you: your score does not come from the landmarks you found easy.',
-            'It comes from the handful you keep getting wrong. Open <b>Progress</b> sometime — your weakest topics are listed there, plainly. Ground already won is worth less than ground you keep slipping on.',
-          ],
         },
       ],
     },
@@ -350,8 +299,8 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'Twelve. You are properly inside the realm now — far enough that turning back would be longer than going on.',
-            'Most travellers never see this part of the map. You are walking through the middle of the boring bit, which is the only part that has ever separated anyone from anyone else.',
+            'Twelve. Far enough that turning back is longer than going on.',
+            'The boring middle is the only part that has ever separated anyone from anyone else.',
           ],
           shake: 'soft',
         },
@@ -371,8 +320,8 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'Word travels among them. The remaining guardians know a Seal has broken, and they are not going to be careless about the next one.',
-            'Take a <b>second Seal</b>. A different region — the fight will not feel the same, because the questions are not the same shape.',
+            'The guardians still standing know a Seal has broken.',
+            'Take a <b>second</b>, in a different region — the questions are not the same shape.',
           ],
           shake: 'soft',
         },
@@ -385,7 +334,7 @@ export const QUESTS: Quest[] = [
         {
           lines: [
             'Two Seals. Half the binding on the southern road, gone.',
-            'And look — the citadel. It is brighter. Do not tell me you cannot see it, because I can see it from here.',
+            'And the citadel is brighter. I can see it from here.',
           ],
           shake: 'hard',
         },
@@ -405,14 +354,8 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'Halfway. <b>Nineteen landmarks.</b> From that ridge you will see the Summit with your own eyes rather than on my word.',
-            'A warning about the second half: it rewards <b>pace</b> as much as knowledge. Knowing an answer slowly is worth nothing on the day.',
-          ],
-        },
-        {
-          lines: [
-            'When you feel ready, sit a <i>single</i> timed section at the citadel. Not the full trial — one section.',
-            'It will tell you more about your timing than a week of practice with no clock on it.',
+            'Halfway. The second half rewards <b>pace</b> as much as knowledge — knowing an answer slowly is worth nothing on the day.',
+            'Sit a <i>single</i> timed section at the citadel. Not the full trial. It will tell you more than a week of practice with no clock on it.',
           ],
         },
       ],
@@ -423,8 +366,7 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'There it is.',
-            'Not a rumour. Not a glow on the horizon. A citadel, on an island, with the light still in it — and you are close enough now to be counted among the people who got this far.',
+            'There it is. Not a rumour — a citadel, on an island, with the light still in it.',
           ],
           shake: 'hard',
         },
@@ -444,8 +386,8 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'Two guardians left, and they have had a long time to get ready for you.',
-            'These are the fights that will find out whether you actually learned your regions or only walked through them. There is no trick I can give you. Go and know the material.',
+            'Two guardians left, and they have had a long time to get ready.',
+            'These fights find out whether you learned your regions or only walked through them. Go and know the material.',
           ],
           shake: 'soft',
         },
@@ -457,18 +399,11 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'Four Seals. <b>All four.</b>',
-            'The southern road is open, traveller. It has not been open in my lifetime, and I am not a young man.',
+            'Four Seals. <b>All four.</b> The southern road has not been open in my lifetime.',
+            'Finish the roads. Then we sail.',
           ],
           shake: 'hard',
-        },
-        {
-          lines: [
-            'The Grey has nothing left to hold on to between here and the water. Every region is lit and standing.',
-            'Finish the map. Then we sail.',
-          ],
           mood: 'summit',
-          shake: 'soft',
         },
       ],
     },
@@ -476,9 +411,9 @@ export const QUESTS: Quest[] = [
 
   {
     id: 'summit-road',
-    name: 'The Whole Map',
-    objective: 'Clear all 37 landmarks',
-    need: 37,
+    name: 'The Whole Realm',
+    objective: 'Clear every landmark',
+    need: (ctx) => ctx.total,
     count: clearedCount,
     intro: {
       eyebrow: 'Chapter Fifteen',
@@ -486,8 +421,7 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'Every landmark, before we sail. All thirty-seven.',
-            'Not for the story — for you. Any skill you skip on this map is a question you will meet in the citadel with nothing prepared. The Grey is patient about gaps.',
+            'Every landmark before we sail. Any skill you skip out here is a question you will meet in the citadel with nothing prepared.',
           ],
           mood: 'grey',
         },
@@ -499,16 +433,10 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'Every landmark. Every region. Every Seal.',
-            'I did not say so at the start, traveller, because I did not want to frighten you — but almost nobody stands where you are standing.',
+            'Every landmark. Every region. Every Seal. Almost nobody stands where you are standing.',
+            'Inside waits the full trial: four sections, properly timed, no explanations until the end.',
           ],
           shake: 'hard',
-        },
-        {
-          lines: [
-            'The citadel on the southern isle is lit, and the doors are open. Inside waits the full trial: four sections, properly timed, no explanations until the end.',
-            'It will not feel pleasant while you sit it. That is rather the point. It is the only honest measure of where you actually stand.',
-          ],
         },
       ],
     },
@@ -526,8 +454,8 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'Go in when you are ready. Four sections, the clock running, nobody telling you how you are doing until it is finished.',
-            'Sleep first if it is late. I am serious — the trial measures a rested traveller and a tired one very differently, and only one of those numbers is useful to you.',
+            'Four sections, the clock running, nobody telling you how you are doing until it is finished.',
+            'Sleep first if it is late. The trial measures a rested traveller and a tired one very differently.',
           ],
         },
       ],
@@ -538,17 +466,11 @@ export const QUESTS: Quest[] = [
       beats: [
         {
           lines: [
-            'You sat it. However that felt — you know something now that you did not know this morning.',
             'A score is not a verdict. It is a reading.',
+            'Read the report rather than the number — it names the topics that cost you, and those are your last few points sitting there with labels on.',
+            'Then drill them and sit another. That loop is the whole craft.',
           ],
           shake: 'hard',
-        },
-        {
-          lines: [
-            'Read the report rather than the number. It names the topics that cost you, and those are your last few points sitting there with labels on.',
-            'Then drill them, and sit another. That loop, repeated, is the whole craft — there is no other secret, and I have been at this a very long time.',
-            'The light is back in the citadel, traveller. You did that. Go on — you know this road better than I do now.',
-          ],
         },
       ],
     },
@@ -568,7 +490,7 @@ const DISPATCH_LINES: [number, string][] = [
   ],
   [
     7,
-    'The cottages you walked past have their lamps on again. Someone put them there. That happens where the map is solid, and it does not happen anywhere else.',
+    'The cottages you walked past have their lamps on again. Someone put them there. That happens where the road is solid, and it does not happen anywhere else.',
   ],
   [
     11,
@@ -588,15 +510,15 @@ const DISPATCH_LINES: [number, string][] = [
   ],
   [
     27,
-    'Something came to the camp fence in the dark and looked at the map on my table for a long while. Then it left. I do not think it liked what it saw.',
+    'Something came to the camp fence in the dark and looked a long while down the road you cleared. Then it left. I do not think it liked what it saw.',
   ],
   [
     31,
-    'Six landmarks left, and the Grey has stopped taking ground anywhere on this continent. It is only holding what it has. You did that by walking.',
+    'The Grey has stopped taking ground anywhere on this continent. It is only holding what it already has. You did that by walking.',
   ],
   [
     35,
-    'Two left. Two. Sit down a moment, traveller — I have watched this road for forty years and I have never once seen it look like this.',
+    'Sit down a moment, traveller. I have watched this road for forty years and I have never once seen it look like this.',
   ],
 ];
 
@@ -615,14 +537,14 @@ function questChapters(): Chapter[] {
       eyebrow: quest.intro.eyebrow,
       title: quest.intro.title,
       beats: quest.intro.beats,
-      when: (p, ctx) => (previous ? previous.count(p, ctx) >= previous.need : true),
+      when: (p, ctx) => (previous ? previous.count(p, ctx) >= needOf(previous, ctx) : true),
     });
     out.push({
       id: `q-${quest.id}-done`,
       eyebrow: quest.done.eyebrow,
       title: quest.done.title,
       beats: quest.done.beats,
-      when: (p, ctx) => quest.count(p, ctx) >= quest.need,
+      when: (p, ctx) => quest.count(p, ctx) >= needOf(quest, ctx),
     });
   });
   return out;
@@ -652,7 +574,7 @@ export const CHAPTERS: Chapter[] = [
   }),
 ];
 
-/** The opening chapter's id, so the map can wait for it before asking anything. */
+/** The opening chapter's id, so Study can wait for it before asking anything. */
 export const PROLOGUE_ID = 'q-oath-intro';
 
 /** The next chapter that has been earned and not yet seen. */
@@ -684,12 +606,13 @@ export interface QuestState {
 export function activeQuest(progress: Progress, ctx: StoryContext): QuestState | null {
   for (const [i, quest] of QUESTS.entries()) {
     const have = quest.count(progress, ctx);
-    if (have < quest.need) {
-      return { quest, have, need: quest.need, step: i + 1, total: QUESTS.length };
+    const need = needOf(quest, ctx);
+    if (have < need) {
+      return { quest, have, need, step: i + 1, total: QUESTS.length };
     }
   }
   return null;
 }
 
-/** Region a guardian belongs to, for the quest hint on the map. */
+/** Region a guardian belongs to, for the quest hint. */
 export const SEAL_REGION_ORDER: SectionId[] = ['english', 'reading', 'math', 'science'];

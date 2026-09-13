@@ -1,9 +1,20 @@
 # Commissioning a new world map
 
-The map is the one asset the whole game is built on: 37 landmark pins, 14
-discoveries, 4 region plaques and the mist bands are all positioned as
-percentages of this single image. A replacement has to keep the same _layout_
-or every one of those coordinates has to be re-derived by hand.
+> **Half of this is historical.** There is no map screen any more —
+> progression was flattened into the Study tab, and nothing is positioned as a
+> percentage of this image today. The pin, discovery and plaque coordinates
+> below describe a layout that no longer exists.
+>
+> The asset itself is still live: `public/art/world-map.webp` is the source for
+> the social card (`scripts/build-og.mjs`) and the region backdrops
+> (`src/game/RegionBackdrop.tsx`). **The dimensions, palette and ink-wash
+> constraints still bind** — a replacement still has to be 768×1376 and still
+> has to match the rest of the art. The re-verification steps for pin
+> alignment do not.
+
+The map was the one asset the whole game was built on: 37 landmark pins, 14
+discoveries, 4 region plaques and the mist bands were all positioned as
+percentages of this single image.
 
 Read this before generating anything.
 

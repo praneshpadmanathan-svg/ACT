@@ -19,10 +19,11 @@ export type Route =
   | { name: 'faq' }
   | { name: 'onboarding' }
   | { name: 'home' }
-  | { name: 'map' }
-  | { name: 'path'; section: string }
+  | { name: 'path'; section?: string }
   | { name: 'zone'; zone: string }
+  | { name: 'duels' }
   | { name: 'boss'; section: string }
+  | { name: 'codex' }
   | { name: 'notes'; section?: string }
   | { name: 'note'; page: string }
   | { name: 'drills'; section?: string }
@@ -68,14 +69,19 @@ export function parseRoute(hash: string = currentHash()): Route {
       return { name: 'onboarding' };
     case 'home':
       return { name: 'home' };
+    /* `#/map` was the adventure map. Old bookmarks and any link that escaped
+       into the wild land on the subject list, which is what replaced it. */
     case 'map':
-      return { name: 'map' };
     case 'path':
-      return parts[1] ? { name: 'path', section: parts[1] } : { name: 'map' };
+      return { name: 'path', section: parts[1] };
     case 'zone':
-      return parts[1] ? { name: 'zone', zone: parts[1] } : { name: 'map' };
+      return parts[1] ? { name: 'zone', zone: parts[1] } : { name: 'path' };
+    case 'duels':
+      return { name: 'duels' };
     case 'boss':
-      return parts[1] ? { name: 'boss', section: parts[1] } : { name: 'map' };
+      return parts[1] ? { name: 'boss', section: parts[1] } : { name: 'duels' };
+    case 'codex':
+      return { name: 'codex' };
     case 'notes':
       return { name: 'notes', section: parts[1] };
     case 'note':
@@ -116,7 +122,7 @@ export function hrefFor(route: Route): string {
     case 'auth':
       return `#/auth/${route.mode}`;
     case 'path':
-      return `#/path/${route.section}`;
+      return route.section ? `#/path/${route.section}` : '#/path';
     case 'zone':
       return `#/zone/${route.zone}`;
     case 'boss':

@@ -117,10 +117,10 @@ const SCATTER: Record<SectionId, Placement[]> = {
    so light mode gets a pale wash under dark text instead of a dark one. */
 const SCRIM =
   'linear-gradient(to bottom,' +
-  ' rgb(var(--c-leather-950) / 0.94) 0%,' +
-  ' rgb(var(--c-leather-950) / 0.93) 20%,' +
-  ' rgb(var(--c-leather-950) / 0.74) 52%,' +
-  ' rgb(var(--c-leather-950) / 0.86) 100%)';
+  ' oklch(var(--c-leather-950) / 0.94) 0%,' +
+  ' oklch(var(--c-leather-950) / 0.93) 20%,' +
+  ' oklch(var(--c-leather-950) / 0.74) 52%,' +
+  ' oklch(var(--c-leather-950) / 0.86) 100%)';
 
 /** The section comes off the URL, so it can be anything at all — `/#/path/frog`
  *  is a link a person can type, and `PathScreen` answers it with "No such

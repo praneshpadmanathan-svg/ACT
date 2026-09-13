@@ -2,14 +2,15 @@
 
    Emoji looked amateur next to the illustrations and rendered differently on
    every platform. These are line-drawn at a consistent 24px grid and stroke
-   weight so the nav reads as one set — a tent, a map, a tome, a blade, an
-   hourglass, a crown. */
+   weight so the nav reads as one set — a tent, a map, a tome, a blade, a
+   shield, an hourglass, a crown. */
 
 export type GlyphName =
   | 'tent'
   | 'map'
   | 'book'
   | 'sword'
+  | 'shield'
   | 'hourglass'
   | 'crown'
   | 'chart'
@@ -75,6 +76,19 @@ export function NavGlyph({ name, size = 18, className }: Props) {
           <path d="m7.2 16.3 1.2-1.2 1.4 1.4-1.2 1.2" />
           <path d="M6.4 17.1 4 19.5l.6.6L7 17.7" />
           <path d="m8.4 13.5 2.2 2.2" />
+        </svg>
+      );
+
+    /* The guardians. A blade would have been the obvious choice and is already
+       taken by Training — two tabs wearing one icon is worse than a slightly
+       less literal glyph, so the duels get the thing standing between you and
+       the region's end: a sealed shield, cracked down the middle. */
+    case 'shield':
+      return (
+        <svg {...common}>
+          <path d="M12 3.2 19.5 6v6.2c0 4-3.1 7-7.5 8.6-4.4-1.6-7.5-4.6-7.5-8.6V6L12 3.2Z" />
+          <path d="M12 8.4v7.4" />
+          <path d="m9.6 11 2.4-2.6 2.4 2.6" />
         </svg>
       );
 

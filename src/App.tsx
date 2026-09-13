@@ -6,7 +6,7 @@ import { useStore } from '@/lib/store';
 import { onUpdateReady } from '@/lib/pwa';
 import { m, MotionProvider, pageVariants } from '@/lib/motion';
 import { registerStage } from '@/lib/juice';
-import { TopBar } from '@/components/Shell';
+import { SideNav } from '@/components/Shell';
 import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
 import { StoryOverlay } from '@/game/StoryOverlay';
 import { RegionBackdrop } from '@/game/RegionBackdrop';
@@ -43,9 +43,11 @@ const load = {
   explain: () => import('@/screens/Explain'),
   onboarding: () => import('@/screens/Onboarding'),
   home: () => import('@/screens/Home'),
-  mapScreens: () => import('@/screens/MapScreens'),
+  study: () => import('@/screens/Study'),
   zone: () => import('@/screens/Zone'),
+  duels: () => import('@/screens/Duels'),
   boss: () => import('@/screens/Boss'),
+  codex: () => import('@/screens/Codex'),
   notes: () => import('@/screens/Notes'),
   drills: () => import('@/screens/Drills'),
   diagnostic: () => import('@/screens/Diagnostic'),
@@ -58,10 +60,11 @@ const LegalScreen = lazy(() => load.legal().then((m) => ({ default: m.LegalScree
 const ExplainScreen = lazy(() => load.explain().then((m) => ({ default: m.ExplainScreen })));
 const Onboarding = lazy(() => load.onboarding().then((m) => ({ default: m.Onboarding })));
 const Home = lazy(() => load.home().then((m) => ({ default: m.Home })));
-const MapScreen = lazy(() => load.mapScreens().then((m) => ({ default: m.MapScreen })));
-const PathScreen = lazy(() => load.mapScreens().then((m) => ({ default: m.PathScreen })));
+const StudyScreen = lazy(() => load.study().then((m) => ({ default: m.StudyScreen })));
 const ZoneScreen = lazy(() => load.zone().then((m) => ({ default: m.ZoneScreen })));
+const DuelsScreen = lazy(() => load.duels().then((m) => ({ default: m.DuelsScreen })));
 const BossScreen = lazy(() => load.boss().then((m) => ({ default: m.BossScreen })));
+const CodexScreen = lazy(() => load.codex().then((m) => ({ default: m.CodexScreen })));
 const NotesScreen = lazy(() => load.notes().then((m) => ({ default: m.NotesScreen })));
 const NoteReader = lazy(() => load.notes().then((m) => ({ default: m.NoteReader })));
 const DrillsScreen = lazy(() => load.drills().then((m) => ({ default: m.DrillsScreen })));
@@ -79,9 +82,10 @@ const StatsScreen = lazy(() => load.stats().then((m) => ({ default: m.StatsScree
 const ProfileScreen = lazy(() => load.stats().then((m) => ({ default: m.ProfileScreen })));
 
 /** Routes that render their own full-screen chrome and suppress the top bar.
- *  The map is here because it is a full-viewport game view with its own
- *  floating controls — a nav bar over it broke the immersion. */
-const BARE_ROUTES = new Set(['landing', 'auth', 'onboarding', 'map', 'privacy', 'terms', 'faq']);
+ *  The adventure map used to be here — a full-viewport game view with its own
+ *  floating controls, which a nav bar over the top of ruined. Everything the
+ *  map became is a normal tabbed screen and wears the nav like the rest. */
+const BARE_ROUTES = new Set(['landing', 'auth', 'onboarding', 'privacy', 'terms', 'faq']);
 
 /** Reachable without having started: the front door, everything legal, and the
  *  page that explains what the ACT is — which is no use at all behind a flow
@@ -103,7 +107,7 @@ const OPEN_ROUTES = new Set(['landing', 'auth', 'privacy', 'terms', 'faq', 'onbo
 function prefetchEverydayScreens() {
   const warm = () => {
     void load.home();
-    void load.mapScreens();
+    void load.study();
     void load.drills();
     void load.notes();
   };
@@ -205,7 +209,7 @@ export default function App() {
           road. As a sibling of both it has no transformed ancestor. It sits at
           `-z-10`, so coming first in the DOM costs it nothing. See
           `game/RegionBackdrop` for the rest of it. */}
-      {route.name === 'path' && <RegionBackdrop section={route.section} />}
+      {route.name === 'path' && <RegionBackdrop section={route.section ?? 'english'} />}
 
       {/* The stage: what a screen shake moves.
 
@@ -220,10 +224,16 @@ export default function App() {
 
           `lib/juice.ts` removes the transform when a shake ends rather than
           zeroing it, so this is a plain static div the rest of the time. */}
-      <div ref={registerStage}>
-        {!bare && <TopBar />}
+      <div ref={registerStage} className={bare ? undefined : 'lg:flex lg:min-h-dvh'}>
+        {!bare && <SideNav />}
 
-        {/* Screens animate in, and nothing waits on an animation to do it.
+        {/* The page column. Its own stacking/flex context so the rail keeps a
+            fixed 236px and the content takes what is left — `min-w-0` because a
+            flex item defaults to `min-width:auto` and a wide table or code block
+            inside a screen would otherwise widen the column rather than scroll
+            inside it, pushing the rail off the left edge. */}
+        <div className={bare ? undefined : 'min-w-0 lg:flex-1'}>
+          {/* Screens animate in, and nothing waits on an animation to do it.
 
           This started as AnimatePresence with mode="wait" so the outgoing
           screen could animate away first. That gates mounting the next screen
@@ -237,21 +247,17 @@ export default function App() {
           The cost is losing a 160ms fade on the way out; the gain is that a
           decorative animation can never hold the app hostage. The key is the
           route identity rather than just its name, so paging between two note
-          pages re-animates too. The map is excluded: it owns the viewport and
-          brings its own artwork in. */}
-        {/* One boundary around the route, keyed with it. Keying matters: without
+          pages re-animates too. */}
+          {/* One boundary around the route, keyed with it. Keying matters: without
           it React keeps the boundary mounted across a navigation and reuses
           the previous screen as the fallback's sibling, so moving from a long
           page to a lazy one leaves the old page on screen until the new chunk
           lands. Keyed, the fallback shows immediately and the transition is
           honest about what is happening. */}
-        {route.name === 'map' ? (
-          <Suspense fallback={<ScreenFallback />}>{renderRoute(route)}</Suspense>
-        ) : (
           <m.div key={routeKey(route)} variants={pageVariants} initial="initial" animate="animate">
             <Suspense fallback={<ScreenFallback />}>{renderRoute(route)}</Suspense>
           </m.div>
-        )}
+        </div>
       </div>
 
       {/* Story runs above every screen so a chapter can fire wherever you
@@ -269,9 +275,9 @@ export default function App() {
 
 /* A newer build is installed and waiting.
 
-   Offered rather than applied. Reloading on its own would be fine on the map
-   and unforgivable eleven minutes into a timed section, and the service worker
-   cannot tell the difference — so the person does. */
+   Offered rather than applied. Reloading on its own would be fine on the Study
+   tab and unforgivable eleven minutes into a timed section, and the service
+   worker cannot tell the difference — so the person does. */
 function UpdatePrompt() {
   const [apply, setApply] = useState<(() => void) | null>(null);
 
@@ -325,14 +331,16 @@ function renderRoute(route: ReturnType<typeof useRoute>) {
       return <Onboarding />;
     case 'home':
       return <Home />;
-    case 'map':
-      return <MapScreen />;
     case 'path':
-      return <PathScreen section={route.section} />;
+      return <StudyScreen section={route.section} />;
     case 'zone':
       return <ZoneScreen zoneId={route.zone} />;
+    case 'duels':
+      return <DuelsScreen />;
     case 'boss':
       return <BossScreen section={route.section} />;
+    case 'codex':
+      return <CodexScreen />;
     case 'notes':
       return <NotesScreen section={route.section} />;
     case 'note':

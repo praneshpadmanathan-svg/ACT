@@ -14,7 +14,23 @@ export interface SectionMeta {
   name: string;
   /** How the section is labelled on the real test. */
   label: string;
+  /* A CSS colour, not a hex — see `--c-section-*` in index.css.
+   *
+   * It reads as indirection for its own sake until you notice where this
+   * value ends up: almost always an inline `style={{ color }}`, which no
+   * stylesheet can override, on chrome that inverts with the theme. As a hex
+   * it was correct in dark mode and invisible in light (1.30:1). As a token
+   * reference the same string paints correctly in both, and every consumer —
+   * text, progress fill, ring — keeps working unchanged, because this is
+   * still just a colour anywhere CSS accepts one. */
   color: string;
+  /* The same accent as a *background*, fixed in both themes.
+   *
+   * `color` darkens in light mode so it stays legible as text. The subject
+   * pills paint it as a fill with fixed near-black lettering on top, and a
+   * darkened fill there gave dark-on-dark at 2.87:1. Two roles, two fields —
+   * the same split `gilt` makes for gold. */
+  fill: string;
   /** Tailwind-friendly accent used for rails and rings. */
   accent: string;
   questionCount: number;
@@ -27,7 +43,8 @@ export const SECTIONS: SectionMeta[] = [
     id: 'english',
     name: 'English',
     label: 'English',
-    color: '#ffd23e',
+    color: 'oklch(var(--c-section-english))',
+    fill: '#ffd23e',
     accent: 'gold',
     questionCount: 50,
     minutes: 35,
@@ -37,7 +54,8 @@ export const SECTIONS: SectionMeta[] = [
     id: 'math',
     name: 'Math',
     label: 'Mathematics',
-    color: '#3ad6f0',
+    color: 'oklch(var(--c-section-math))',
+    fill: '#3ad6f0',
     accent: 'cyan',
     questionCount: 45,
     minutes: 50,
@@ -47,7 +65,8 @@ export const SECTIONS: SectionMeta[] = [
     id: 'reading',
     name: 'Reading',
     label: 'Reading',
-    color: '#ff8298',
+    color: 'oklch(var(--c-section-reading))',
+    fill: '#ff8298',
     accent: 'rose',
     questionCount: 36,
     minutes: 40,
@@ -57,7 +76,8 @@ export const SECTIONS: SectionMeta[] = [
     id: 'science',
     name: 'Science',
     label: 'Science',
-    color: '#b79cff',
+    color: 'oklch(var(--c-section-science))',
+    fill: '#b79cff',
     accent: 'violet',
     questionCount: 40,
     minutes: 40,

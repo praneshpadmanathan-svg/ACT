@@ -83,12 +83,19 @@ rust, sea blue. Both registers live in [`src/index.css`](src/index.css) as
 component classes (`.panel`, `.sheet`, `.prose-quill`, `.choice`, `.pin`, …)
 and in the theme in [`tailwind.config.js`](tailwind.config.js).
 
-### Replacing the map
+### The world map, and where it went
 
-Every pin, discovery, plaque and mist band is positioned as a percentage of
-`public/art/world-map.webp`. [docs/map-art-brief.md](docs/map-art-brief.md) has the
-image prompt, the hard constraints (768x1376, four bands at fixed vertical
-ranges) and the re-verification steps a new map needs.
+There is no map screen. Progression was flattened into the **Study** tab — an
+ordered list per subject — because a pannable painted world made every landmark
+two gestures further away than a list of them, on a phone, which is where this
+gets used.
+
+`public/art/world-map.webp` is still in the tree and still earns its place: it
+is the source art for the social card (`scripts/build-og.mjs`) and for the
+region backdrops behind the Study tab (`src/game/RegionBackdrop.tsx`). What is
+gone is the pin geometry — nothing is positioned as a percentage of that image
+any more. [docs/map-art-brief.md](docs/map-art-brief.md) is kept for the asset's
+own constraints; its pin-placement half is historical.
 
 ### The artwork
 

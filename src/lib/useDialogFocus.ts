@@ -2,16 +2,17 @@
 
    Both the story overlay and the road chooser cover the whole viewport, but
    neither moved focus into itself, and everything behind them stayed in the tab
-   order — on the map that is 44 landmark pins plus the HUD. A keyboard user had
-   to tab through the entire world to reach "Skip", and a screen reader user was
-   never told a dialog had opened at all.
+   order — on the Study tab that is nine landmark rows, the boss card, the
+   subject pills and the whole nav rail. A keyboard user had to tab through all
+   of it to reach "Skip", and a screen reader user was never told a dialog had
+   opened at all.
 
    So: move focus in on open, keep Tab inside while it is open, mark the rest of
    the page inert, and put focus back where it came from on close.
 
    `onEscape` is optional on purpose. Escape should close anything you opened to
    look at, but the road chooser is a forced choice with no default — dismissing
-   it would leave the map in a state the player never picked — so it passes
+   it would leave the profile in a state the player never picked — so it passes
    nothing and stays non-dismissible. */
 
 import { useEffect, useRef, type RefObject } from 'react';

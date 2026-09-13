@@ -546,3 +546,105 @@ is repeated four ways rather than once.
 **Expect the count to be wrong.** It usually is. Cut whatever comes back and map
 cell to id through the table in the slicer, exactly as the foliage sheet's
 thirteen-cells-for-twelve-particles was handled.
+
+---
+
+## Sheet 7 — The world surround (third attempt at extending the map)
+
+The map has been extended twice and thrown away twice. Sheet 4 has the
+post-mortem; the short version is that both attempts asked a text prompt to
+paint "what is off the edges" and got back art drawn at roughly four times fewer
+metres per pixel, so the map's village read as the size of the new art's
+mountain range. Sheet 4 ends by naming the fix and not taking it: _"paint what
+is off the edges **at this scale**, with the map itself supplied as reference."_
+
+This sheet takes it, and goes one step further than reference. **The map is not
+described to the model, and it is not supplied alongside — it is supplied
+_inside the frame the model is painting_.**
+
+```bash
+npm run build:surround -- --canvas
+```
+
+writes `art-src/surround-canvas.png`: `world-map.webp` sitting dead centre on a
+1152x2048 field of flat grey, 192 px of margin at the sides and 336 px top and
+bottom. That file is the input. Scale stops being something a prompt has to
+describe and becomes something the model can see at the exact pixels it has to
+match — and the two previous failures were both failures to describe it.
+
+### What to run it on
+
+**Use the Pro-tier image model** (Nano Banana Pro / Gemini 3 Pro Image), not the
+Flash tier, for one reason: output resolution. The margin is the whole deliverable
+and it is only 192 px wide. Come back at 1024 on the long side and that margin
+arrives 96 px wide, which is a smear. Ask for **9:16** and **2K**; check what
+actually lands, because ~1152x2048 is what the assembler expects and it will
+refuse a different aspect ratio.
+
+Everything inside the map's rectangle is discarded. Do not spend a revision on
+it, do not reject a result because the map came back subtly repainted — it always
+will, and `world-map.webp` is composited back over its own footprint at full
+resolution afterwards. **Judge the margin and nothing else.**
+
+### The prompt
+
+> This image is a hand-inked fantasy atlas plate on aged parchment, surrounded by
+> a flat grey border. The grey is not part of the artwork — it is empty canvas.
+> Paint it.
+>
+> Continue the existing painting outward past its edges, in exactly the style
+> already in the frame: soft brush shading rather than flat fill, warm brown ink
+> linework, a faint paper grain over everything, deep blue-teal sea drawn with
+> fine wave lines, painted white cloud drifting over the outer margins. Top-down
+> three-quarter view, lit from the upper left, same palette, same weight of line.
+>
+> **Match the scale of what is already there.** This is the single most important
+> instruction. The plate in the middle draws individual cottages, single trees and
+> one castle. Nothing you paint may be larger than the rocky island the golden
+> castle stands on near the bottom. No mountain ranges, no continents, no
+> landmasses spanning the new border. If in doubt, paint water.
+>
+> What each side continues:
+>
+> - **Bottom** — open sea, deepening away from the coast. A few small rocky
+>   islets and a scatter of drawn wave lines. Nothing else.
+> - **Left** — the channel already running down the left side opens out into the
+>   same open sea. A low far shore may appear at the extreme edge.
+> - **Right** — the dark rocky highland already at that edge falls away into
+>   broken cliffs and then sea.
+> - **Top** — the green rolling hills already at that edge recede into distance
+>   and mist. No new settlements, no new landmarks.
+>
+> Blend the new work into the existing edges so there is no visible boundary
+> where the grey used to be.
+>
+> No lettering, no labels, no place names, no compass rose, no border or frame,
+> no grid, no scale bar, no sparkle or watermark.
+
+### Judging what comes back
+
+Two failure modes, and only one of them is worth a second attempt.
+
+**Scale.** Hold the result at thumbnail size. If your eye reads the new margin
+as "more of the same world" the scale is right; if it reads as "a different,
+bigger map with the old one pasted in the middle", it is the Sheet 4 failure
+again. The concrete test: find the largest single thing in the margin and
+compare it against the golden castle's island. Bigger, and reject it.
+
+**Content.** New settlements, roads, castles or named-looking landmarks in the
+margin are a reject even when the scale is right. Every landmark in this game is
+a zone a student can walk to. Painting one that isn't makes a promise the app
+cannot keep, which is exactly the bug Sheet 4's pixel-art attempt would also have
+shipped.
+
+Everything else — a slightly different green, a cloud in the wrong place, the map
+itself coming back altered — is not worth a revision. It is either invisible
+under the scrim or thrown away by the assembler.
+
+Then:
+
+```bash
+# save the result as art-src/surround.png
+npm run build:surround
+npm run build:art
+```

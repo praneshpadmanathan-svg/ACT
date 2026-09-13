@@ -24,9 +24,11 @@
  * And `art-heavy`, which is the hook reduced-data mode hangs on: with the
  * setting on, `index.css` hides everything carrying that class. The class is
  * applied here so no screen can forget it — but only to the decorative
- * paintings. The world map is `essential`: hiding it would leave a student on
- * a blank screen with thirty-seven invisible buttons, which is not a
- * data-saving mode, it is a broken app.
+ * paintings. `essential` is the opt-out for art that carries information
+ * rather than atmosphere: hiding that kind would not be a data-saving mode,
+ * it would be a broken screen. The painted world map was the only asset that
+ * ever needed it; nothing claims it today, which is the correct state now that
+ * every screen is text and layout with art behind it.
  */
 
 import { cx } from '@/lib/utils';
@@ -71,7 +73,7 @@ export function Art({
    *  lazy, because the camp backdrop on the legal page can wait. */
   priority?: boolean;
   /** Carries information rather than atmosphere, so reduced-data mode keeps
-   *  it. True for exactly one asset today: the world map. */
+   *  it. No caller sets it today — see the note at the top of this file. */
   essential?: boolean;
   style?: React.CSSProperties;
   draggable?: boolean;

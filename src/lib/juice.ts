@@ -265,9 +265,9 @@ export async function hit({
    interval once the clock restarts. For the shake it is not, because a frozen
    shake leaves a transform on the stage, and a transform on the stage is a
    containing block for every `position: fixed` descendant for as long as it
-   sits there. The map is fixed. That is a layout bug waiting for someone to
-   switch tabs at the wrong moment, and it would be almost impossible to
-   reproduce on purpose.
+   sits there. The region backdrop is fixed, and so are the toasts, Wizzy and
+   the flash itself. That is a layout bug waiting for someone to switch tabs at
+   the wrong moment, and it would be almost impossible to reproduce on purpose.
 
    So both are torn down on the way out. The effect is lost rather than
    completed, which is the right trade: an impact that lands while nobody is

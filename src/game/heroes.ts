@@ -89,7 +89,7 @@ export const HEROES: Hero[] = [
   {
     id: 'noor',
     name: 'Noor',
-    tagline: 'Keeps the map.',
+    tagline: 'Knows every road.',
     skin: '#c98f62',
     skinShade: '#a56e45',
     hair: '#241812',
