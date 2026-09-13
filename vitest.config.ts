@@ -16,7 +16,10 @@ export default defineConfig({
   },
   test: {
     environment: 'jsdom',
-    // Pure-function unit tests live beside the module they test.
-    include: ['src/**/*.test.ts', 'src/**/*.test.tsx'],
+    /* Pure-function unit tests live beside the module they test — including
+       under scripts/, where the perfect36 importer's two content transforms
+       live. Build tooling is normally left untested here because it fails
+       loudly, but those two produce plausible-looking wrong content instead. */
+    include: ['src/**/*.test.ts', 'src/**/*.test.tsx', 'scripts/**/*.test.mjs'],
   },
 });

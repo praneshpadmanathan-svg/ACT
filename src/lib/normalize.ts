@@ -87,9 +87,26 @@ export function fromDrillQuestion(q: Question): RunnableQuestion {
   const guillemet = /«(.+?)»/s;
   const hasUnderline = guillemet.test(q.context);
 
+  /* Three ways an item states its question, in the order they win.
+     An underlined span turns the prompt into the standard instruction and
+     moves the sentence into `label`. Otherwise `context` is the question.
+     When `context` is empty the question is in `stem` — the mode every
+     "writers purpose" and "sentence order" item uses, because "where should
+     this sentence go?" cannot be asked by highlighting anything.
+
+     That last branch is new. Without it those twenty-eight items rendered
+     their four choices under a blank prompt: four placements, or four
+     verdicts on the writer's goal, and no statement of what was being
+     placed or judged. They were unanswerable except by guessing, and they
+     had been in the bank long enough to be sitting in people's review
+     queues. */
+  const asked = hasUnderline
+    ? 'Which choice best replaces the highlighted text?'
+    : q.context.trim() || (q.stem ?? '').trim();
+
   return shuffleChoices({
     id: q.id,
-    prompt: hasUnderline ? 'Which choice best replaces the highlighted text?' : q.context,
+    prompt: asked,
     promptFormat: 'markdown',
     label: hasUnderline ? q.context.replace(guillemet, '<u><b>$1</b></u>') : undefined,
     choices: q.choices.map((c) => ({ key: c.id, text: c.text, format: 'markdown' as const })),
@@ -198,9 +215,9 @@ export function fromZoneQuestion(
    which is built from the drill bank alone. Zone questions live in a separate
    file and are not in it, so a landmark question could be scheduled for review
    and then never found again: the queue took them in and nothing could get
-   them out. Together with the positional ids above, the map's entire share of
-   spaced repetition was inert — it counted toward the "N due" figure on the
-   home screen and then quietly failed to appear in the session.
+   them out. Together with the positional ids above, the landmarks' entire
+   share of spaced repetition was inert — it counted toward the "N due" figure
+   on the home screen and then quietly failed to appear in the session.
 
    One resolver over both banks, so there is one place that knows how an id
    becomes a question. */

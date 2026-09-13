@@ -2374,5 +2374,3008 @@
       "C": "Mouse results appear earlier and are not restated.",
       "D": "The paragraph argues for caution instead."
     }
+  },
+  {
+    "id": "p36-read-cs-function-d2-0001",
+    "section": "reading",
+    "topic": "function",
+    "difficulty": "easy",
+    "passage": "p36-read-time-bank-0001",
+    "context": "The example comparing \"an hour of accounting advice and an hour of yard work\" in the first paragraph primarily functions to—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prove that accounting advice is objectively less valuable than yard work."
+      },
+      {
+        "id": "B",
+        "text": "introduce the critics who argue that time banks fail to scale to full neighborhood economies."
+      },
+      {
+        "id": "C",
+        "text": "explain why some time banks choose to exclude licensed trades from their exchanges."
+      },
+      {
+        "id": "D",
+        "text": "illustrate concretely what the time bank's flat, hour-for-hour equivalence actually means in practice."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "This early example makes the abstract idea of flat hour-for-hour value concrete, before the passage moves on to discuss administration and critics.",
+      "A": "the passage makes no claim about the objective value of either service",
+      "B": "the critics are introduced in a later paragraph, not through this example",
+      "C": "that explanation appears in a later paragraph and is not connected to this specific comparison"
+    }
+  },
+  {
+    "id": "p36-read-cs-function-d3-0001",
+    "section": "reading",
+    "topic": "function",
+    "difficulty": "medium",
+    "passage": "p36-read-cartographer-0001",
+    "context": "The sentence \"What mattered, Master Alduin often said, was that a chart carried his name\" primarily functions in the passage to—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prove that Master Alduin's charts were more accurate than those of his professional rivals."
+      },
+      {
+        "id": "B",
+        "text": "explain the personal stakes that make Master Alduin resistant to being corrected."
+      },
+      {
+        "id": "C",
+        "text": "foreshadow that Master Alduin will eventually dismiss Mireille from her apprenticeship."
+      },
+      {
+        "id": "D",
+        "text": "provide historical background on how the shipping company was originally founded."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "This sentence gives the reader Master Alduin's own stated reasoning for why he resists correction - his name and reputation are on the line - which explains both his treatment of the journeyman and Mireille's fear of confronting him.",
+      "A": "the sentence is about his attitude toward his reputation, not a comparison to other cartographers",
+      "C": "the passage's ending contradicts this - he keeps her on and extends her more responsibility",
+      "D": "the sentence is about Master Alduin's personal values, not the shipping company's history"
+    }
+  },
+  {
+    "id": "p36-read-cs-function-d4-0001",
+    "section": "reading",
+    "topic": "function",
+    "difficulty": "hard",
+    "passage": "p36-read-serotiny-0001",
+    "context": "The sentence \"Understood in isolation, holding a seed hostage to fire looks like poor design. Understood against the specific ecology of a fire-adapted forest, it looks instead like the only design that reliably works\" primarily functions in the passage to—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "summarize the passage's overall conclusion after all of its supporting evidence has been presented."
+      },
+      {
+        "id": "B",
+        "text": "introduce a competing scientific theory that the rest of the passage will go on to refute."
+      },
+      {
+        "id": "C",
+        "text": "signal a shift from describing serotiny's apparent costs to explaining the ecological logic that justifies it."
+      },
+      {
+        "id": "D",
+        "text": "prove that serotinous trees are more intelligent than non-serotinous conifer species."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "This sentence pivots the passage from the apparent evolutionary gamble of serotiny to the detailed ecological explanation that occupies the remaining paragraphs.",
+      "A": "this sentence appears early, before most of the supporting evidence, functioning as a transition rather than a final summary",
+      "B": "no competing theory is introduced or refuted anywhere in the passage",
+      "D": "the passage never makes any claim about tree intelligence"
+    }
+  },
+  {
+    "id": "p36-read-cs-purpose-pov-d3-0001",
+    "section": "reading",
+    "topic": "function",
+    "difficulty": "medium",
+    "passage": "p36-read-nightwatch-0001",
+    "context": "The sentence \"That was the whole of the job, Master Okafor liked to say. Not the flame. The turning.\" primarily functions in the passage to—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "reveal that Master Okafor considers the flame itself unimportant to the lighthouse's function."
+      },
+      {
+        "id": "B",
+        "text": "explain why Renata was initially denied permission to stand a solo watch."
+      },
+      {
+        "id": "C",
+        "text": "foreshadow that the lighthouse will eventually be replaced by an automated system."
+      },
+      {
+        "id": "D",
+        "text": "establish, early on, the specific mechanical detail that will become central to the story's crisis later that night."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "By naming the turning, rather than the flame, as the real job, this early sentence sets up the gear failure that becomes the passage's central problem.",
+      "A": "overstates his view - he is drawing a distinction of emphasis, not calling the flame unimportant",
+      "B": "unrelated to the four-month wait mentioned in the opening sentence",
+      "C": "no such topic appears anywhere in the passage"
+    }
+  },
+  {
+    "id": "p36-read-cs-purpose-pov-d3-0002",
+    "section": "reading",
+    "topic": "function",
+    "difficulty": "medium",
+    "passage": "p36-read-translation-0001",
+    "context": "The comparison to a building whose 'materials...age faster than the design they were meant to serve' primarily functions in the passage to—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "argue that older translations should be physically discarded rather than kept in print."
+      },
+      {
+        "id": "B",
+        "text": "suggest that translators need formal training in architecture to do their work well."
+      },
+      {
+        "id": "C",
+        "text": "clarify why retranslation should be understood as ongoing maintenance rather than as a correction of past mistakes."
+      },
+      {
+        "id": "D",
+        "text": "prove that all buildings and all translations eventually fail in the same way."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "This comparison directly follows the sentence stating 'retranslation is not vanity in this light; it is maintenance,' clarifying that idea with a concrete parallel.",
+      "A": "no such argument about discarding older translations is made",
+      "B": "the architecture reference is a comparison, not a claim about translator training",
+      "D": "overstates the comparison into a universal claim the passage never makes"
+    }
+  },
+  {
+    "id": "p36-read-cs-purpose-pov-d4-0001",
+    "section": "reading",
+    "topic": "function",
+    "difficulty": "hard",
+    "passage": "p36-read-notebooks-paired-0001",
+    "context": "The description of the note app opening 'by accident...into an email I meant to answer three days ago' in Passage A primarily functions to—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "criticize a specific email application by name for its poor design."
+      },
+      {
+        "id": "B",
+        "text": "explain why the author originally chose to start keeping a journal at all."
+      },
+      {
+        "id": "C",
+        "text": "give a concrete, personal example of the kind of distraction the author believes a paper notebook eliminates."
+      },
+      {
+        "id": "D",
+        "text": "suggest that the author has generally poor time-management skills."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "This specific, embarrassing example makes concrete the paragraph's broader claim that a notebook 'cannot open, by accident, into some other application entirely.'",
+      "A": "no specific application is named in the passage",
+      "B": "this detail illustrates a drawback of phone journaling, not the author's original motivation for journaling",
+      "D": "the detail is offered as an example of the tool's distraction, not as a broader claim about the author's habits"
+    }
+  },
+  {
+    "id": "p36-read-cs-text-structure-d2-0001",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "easy",
+    "passage": "p36-read-time-bank-0001",
+    "context": "Which choice best describes the overall structure of the passage?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "It explains how time banks work and the reasoning behind them, then examines the factors that determine whether a given time bank succeeds or fails."
+      },
+      {
+        "id": "B",
+        "text": "It presents two opposing historical accounts of when time banking first began, then resolves the disagreement."
+      },
+      {
+        "id": "C",
+        "text": "It narrates, in chronological order, the founding and eventual collapse of one specific time bank."
+      },
+      {
+        "id": "D",
+        "text": "It opens with a critic's objection and spends the remainder of the passage refuting it point by point."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The passage moves from defining the time-bank concept and its motivation to analyzing the administrative and social factors that separate lasting banks from failing ones.",
+      "B": "no competing historical origin accounts appear anywhere in the passage",
+      "C": "the passage discusses time banks in general terms, not the history of one specific bank",
+      "D": "the passage does not open with an objection, and it does not simply refute the critics it later discusses"
+    }
+  },
+  {
+    "id": "p36-read-cs-text-structure-d3-0001",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "p36-read-serotiny-0001",
+    "context": "Which choice best describes the relationship between the passage's fourth and fifth paragraphs?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The fourth paragraph presents a hypothesis, and the fifth paragraph reports an experiment that disproves it."
+      },
+      {
+        "id": "B",
+        "text": "The two paragraphs describe two entirely unrelated adaptations found in different pine species."
+      },
+      {
+        "id": "C",
+        "text": "The fourth paragraph is a historical account, and the fifth paragraph is a prediction about the future."
+      },
+      {
+        "id": "D",
+        "text": "The fourth paragraph explains an advantage of synchronized germination, and the fifth paragraph identifies a cost that emerges from that same synchronization."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "The fourth paragraph explains why synchronized germination benefits a new generation of seedlings, and the fifth paragraph turns to the forest-scale cost of that same synchronization.",
+      "A": "no experiment or disproof is described in the fifth paragraph",
+      "B": "both paragraphs concern the same synchronized-germination adaptation in serotinous pines",
+      "C": "neither paragraph is framed as history or as a future prediction"
+    }
+  },
+  {
+    "id": "p36-read-cs-tone-d2-0001",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "easy",
+    "passage": "p36-read-nightwatch-0001",
+    "context": "The tone of the passage's final paragraph is best described as—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "quietly admiring, treating Renata's competence as noteworthy even though Master Okafor himself does not say so directly."
+      },
+      {
+        "id": "B",
+        "text": "openly celebratory, matching the harbor office's enthusiastic reaction to the news."
+      },
+      {
+        "id": "C",
+        "text": "bitterly ironic, mocking Master Okafor's inability to praise his assistant properly."
+      },
+      {
+        "id": "D",
+        "text": "coldly clinical, focused only on the technical details of the gear replacement."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The paragraph's focus on how Renata comes to understand his understated words as a genuine compliment gives it a quietly admiring tone.",
+      "B": "the harbor office's reaction is never described as enthusiastic",
+      "C": "the paragraph is sincere, not ironic or mocking",
+      "D": "the paragraph focuses on what his words meant to Renata, not on technical detail"
+    }
+  },
+  {
+    "id": "p36-read-cs-tone-d2-0002",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "easy",
+    "passage": "p36-read-translation-0001",
+    "context": "The tone of the passage toward the practice of retranslating classic novels is best described as—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "dismissive, treating retranslation as a wasteful publishing gimmick."
+      },
+      {
+        "id": "B",
+        "text": "nostalgic, longing for a return to nineteenth-century translation standards."
+      },
+      {
+        "id": "C",
+        "text": "alarmed, warning readers that most modern translations cannot be trusted."
+      },
+      {
+        "id": "D",
+        "text": "measured and analytical, treating retranslation as a reasonable response to real linguistic and interpretive change."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "Across all three of its supporting reasons, the passage explains retranslation calmly and even-handedly, including a fair hearing of its critics, which gives it a measured, analytical tone.",
+      "A": "contradicted - the passage takes retranslation seriously as 'maintenance,' not waste",
+      "B": "the passage explains why earlier standards became dated rather than idealizing them",
+      "C": "no alarm or warning of this kind appears in the passage"
+    }
+  },
+  {
+    "id": "p36-read-cs-vocab-in-context-d2-0001",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "easy",
+    "passage": "p36-read-cartographer-0001",
+    "context": "As it is used in the passage, the word \"smooth\" in the phrase \"her explanation rehearsed so many times it had worn smooth\" most nearly means—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "practiced until it flowed without hesitation."
+      },
+      {
+        "id": "B",
+        "text": "physically flat and even in texture."
+      },
+      {
+        "id": "C",
+        "text": "calm and even-tempered in manner."
+      },
+      {
+        "id": "D",
+        "text": "polished to a glossy shine."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The passage uses \"worn smooth\" figuratively, the way repeated handling wears an object smooth, to describe an explanation Mireille has rehearsed so many times that it comes out fluently, without stumbling.",
+      "B": "the literal, physical meaning of \"smooth,\" not the figurative meaning used here",
+      "C": "describes a personality trait, not the rehearsed quality of an explanation",
+      "D": "another literal, physical sense of the word that doesn't fit an explanation being described"
+    }
+  },
+  {
+    "id": "p36-read-cs-vocab-in-context-d2-0002",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "easy",
+    "passage": "p36-read-time-bank-0001",
+    "context": "As it is used in the passage, the word \"ledger\" in the final paragraph most nearly means—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a physical book bound in leather, used for older accounting methods."
+      },
+      {
+        "id": "B",
+        "text": "a formal record that tracks what each member has given and is owed."
+      },
+      {
+        "id": "C",
+        "text": "a legal contract that obligates a member to repay a debt."
+      },
+      {
+        "id": "D",
+        "text": "a public announcement of a time bank's rules to new members."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "Throughout the passage, \"ledger\" refers to the record system that tracks members' hours given and owed, not a physical object or a set of rules.",
+      "A": "the literal, physical sense of the word, not how it functions in this passage's discussion",
+      "C": "overstates the term - the passage treats a deficit as trust-based, not a binding legal contract",
+      "D": "confuses the ledger with a set of rules, which the passage discusses separately"
+    }
+  },
+  {
+    "id": "p36-read-cs-vocab-in-context-d3-0001",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "medium",
+    "passage": "p36-read-translation-0001",
+    "context": "As it is used in the passage, the word \"stilted\" in the fourth paragraph most nearly means—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "elevated on physical supports, as a building might be."
+      },
+      {
+        "id": "B",
+        "text": "deliberately funny in a way that is out of place."
+      },
+      {
+        "id": "C",
+        "text": "exceptionally rich in figurative language and imagery."
+      },
+      {
+        "id": "D",
+        "text": "unnaturally stiff and awkward in phrasing."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "The passage uses \"stilted\" to describe sentences produced by a translation aiming at maximum literal precision - stiff, awkward English rather than natural prose.",
+      "A": "the literal, architectural sense of the word, not the sense used to describe prose here",
+      "B": "conflates 'stilted' with 'comic,' a different quality raised elsewhere in the passage",
+      "C": "close to the opposite of the word's meaning here - stilted prose reads as forced, not richly figurative"
+    }
+  },
+  {
+    "id": "p36-read-cs-vocab-in-context-d3-0002",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "medium",
+    "passage": "p36-read-serotiny-0001",
+    "context": "As it is used in the passage, the word \"cohort\" in the fifth paragraph most nearly means—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a group that shares the same age because they began life at the same time."
+      },
+      {
+        "id": "B",
+        "text": "a small committee formed to manage a shared forest resource."
+      },
+      {
+        "id": "C",
+        "text": "a single tree that produces an unusually large number of cones."
+      },
+      {
+        "id": "D",
+        "text": "a species of insect that feeds specifically on pine seedlings."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The passage uses \"cohort\" to describe the group of trees that germinated together after the same fire and therefore ages, matures, and becomes vulnerable together.",
+      "B": "confuses the ecological sense of the word with an administrative sense",
+      "C": "the term describes a group of trees, not an individual tree's cone production",
+      "D": "no such insect is mentioned anywhere in the passage"
+    }
+  },
+  {
+    "id": "p36-read-function-0001",
+    "section": "reading",
+    "topic": "function",
+    "difficulty": "hard",
+    "passage": "p36-read-drill-lichen-0001",
+    "context": "The main function of the third paragraph is to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "explain why a reasonable objection was raised and how evidence finally answered it."
+      },
+      {
+        "id": "B",
+        "text": "demonstrate that the critics of the partnership theory were motivated by professional rivalry."
+      },
+      {
+        "id": "C",
+        "text": "introduce the chemical processes that allow lichens to break down rock."
+      },
+      {
+        "id": "D",
+        "text": "compare the growth of a lichen with the growth of a moss."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The paragraph states that the resistance 'was not unreasonable', gives the critics' two arguments, and then describes the separate-and-recombine experiments that settled the matter. Objection followed by resolving evidence is exactly its structure.",
+      "B": "The passage explicitly calls the resistance reasonable and never assigns the critics a motive.",
+      "C": "The acids appear in the fourth paragraph, not the third.",
+      "D": "The moss appears in the fifth paragraph, in the account of soil formation."
+    }
+  },
+  {
+    "id": "p36-read-iki-argument-d2-0001",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "easy",
+    "passage": "p36-read-translation-0001",
+    "context": "Which choice best describes how the passage handles the claim that multiplying translations benefits readers?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "It presents the claim, then thoroughly disproves it using historical examples."
+      },
+      {
+        "id": "B",
+        "text": "It presents the claim's reasoning, then raises a genuine counterobjection without fully settling which side is correct."
+      },
+      {
+        "id": "C",
+        "text": "It ignores any possible objection to the claim entirely."
+      },
+      {
+        "id": "D",
+        "text": "It attributes the claim to a single named scholar and then discredits that scholar's other work."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "The fourth paragraph lays out the reasoning for multiplying translations, and the fifth paragraph raises a fair objection to it without resolving the disagreement.",
+      "A": "the passage does not disprove the claim - it raises a counterobjection but does not declare a winner",
+      "C": "directly contradicted - a specific counterobjection is discussed at length",
+      "D": "no named scholar is identified or discredited anywhere in the passage"
+    }
+  },
+  {
+    "id": "p36-read-iki-argument-d3-0001",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "medium",
+    "passage": "p36-read-notebooks-paired-0001",
+    "context": "Which choice best describes a weakness in Passage B's argument that could be raised using evidence from Passage A?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Passage B never mentions the author's grandmother, so its central example is unsupported."
+      },
+      {
+        "id": "B",
+        "text": "Passage B contradicts itself by claiming that digital notes are both searchable and difficult to organize."
+      },
+      {
+        "id": "C",
+        "text": "Passage B fails to mention that paper notebooks are less expensive than digital devices."
+      },
+      {
+        "id": "D",
+        "text": "Passage B does not fully address Passage A's claim that the effort required by handwriting improves the quality of a reflection before it is even written, focusing instead on access after the fact."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "Passage B's strongest counterpoint concerns friction and access after writing, but it does not directly engage Passage A's separate claim that handwriting improves what gets written in the first place.",
+      "A": "factually incorrect - the grandmother's diary is Passage B's central example",
+      "B": "Passage B does not make this contradictory claim - it consistently presents digital notes as easier to organize by tag",
+      "C": "cost is not a topic either passage raises, so its absence is not a weakness in Passage B's actual argument"
+    }
+  },
+  {
+    "id": "p36-read-iki-comparative-d2-0001",
+    "section": "reading",
+    "topic": "comparison",
+    "difficulty": "easy",
+    "passage": "p36-read-notebooks-paired-0001",
+    "context": "Which choice best characterizes the relationship between the personal anecdotes used in Passage A and in Passage B?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Both passages use a family member's experience to argue against digital note-taking."
+      },
+      {
+        "id": "B",
+        "text": "Passage A uses a family member's experience, while Passage B uses the author's own habit, to make opposite arguments from what each actually makes."
+      },
+      {
+        "id": "C",
+        "text": "Passage A uses the author's own notebook habit to argue for paper's benefits, while Passage B uses a family member's notebooks to argue for paper's practical limitations."
+      },
+      {
+        "id": "D",
+        "text": "Neither passage relies on a personal anecdote to support its argument."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "Passage A's evidence is the author's own eleven notebooks; Passage B's evidence is the grandmother's sixty years of unsorted diaries, used to make an opposing point about paper's usefulness.",
+      "A": "only Passage B involves a family member; Passage A discusses the author's own habit",
+      "B": "swaps which anecdote belongs to which passage",
+      "D": "both passages clearly rely on personal anecdotes - the author's own notebooks in A, the grandmother's diary in B"
+    }
+  },
+  {
+    "id": "p36-read-iki-comparative-d3-0001",
+    "section": "reading",
+    "topic": "comparison",
+    "difficulty": "medium",
+    "passage": "p36-read-notebooks-paired-0001",
+    "context": "A reader who accepted the reasoning in both Passage A and Passage B fully would most likely conclude that—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "digital note-taking is entirely without value for personal reflection."
+      },
+      {
+        "id": "B",
+        "text": "handwriting guarantees a permanent record that will always remain readable to future generations."
+      },
+      {
+        "id": "C",
+        "text": "there is no meaningful difference between the two methods once friction is set aside."
+      },
+      {
+        "id": "D",
+        "text": "handwriting may improve the quality of individual reflections, but a digital system may better preserve access to those reflections over many years."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "Combining Passage A's case for handwriting's filtering effect with Passage B's case for digital access over decades produces a synthesis in which each method offers a distinct advantage.",
+      "A": "contradicted by Passage B's argument, which the reader is assumed to accept",
+      "B": "contradicted by Passage B's account of the grandmother's largely inaccessible diary",
+      "C": "both passages describe meaningful differences beyond friction, such as searchability and tagging"
+    }
+  },
+  {
+    "id": "p36-read-iki-evidence-d3-0001",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "medium",
+    "passage": "p36-read-time-bank-0001",
+    "context": "Which piece of evidence from the passage most directly supports the claim that time banks can formalize trust that already exists rather than create it from nothing?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "An hour of teaching bicycle repair earns the same credit as an hour of gardening."
+      },
+      {
+        "id": "B",
+        "text": "Some time banks exclude licensed trades like electrical work from their exchanges."
+      },
+      {
+        "id": "C",
+        "text": "Banks organized among people who already saw each other at a community center or shared block tend to survive slow patches better than banks assembled from online sign-ups."
+      },
+      {
+        "id": "D",
+        "text": "Large time banks sometimes attract members trying to escape rent or utility bills."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "The final paragraph's comparison between community-rooted banks and sign-up-sheet banks is the passage's direct evidence that formal trust depends on trust that already existed.",
+      "A": "supports the flat-equivalence design of time banks, not the trust-formalization claim",
+      "B": "supports a point about administrative scope, not about trust or prior relationships",
+      "D": "supports the point about scaling challenges, not the trust-formalization claim"
+    }
+  },
+  {
+    "id": "p36-read-iki-evidence-d3-0002",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "medium",
+    "passage": "p36-read-serotiny-0001",
+    "context": "Which piece of evidence from the passage most directly supports the claim that shortened fire intervals threaten serotinous forests?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A canopy fire converts accumulated forest-floor litter into a thin layer of mineral-rich ash."
+      },
+      {
+        "id": "B",
+        "text": "Foresters have begun observing land that burns and then fails to regrow the same forest it burned away."
+      },
+      {
+        "id": "C",
+        "text": "A serotinous cone's resin does not soften at ordinary summer temperatures."
+      },
+      {
+        "id": "D",
+        "text": "Serotinous seeds fall onto exposed ground within days of a fire's passing."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "The final paragraph's observation of land that burns and fails to regrow the same forest is the passage's direct, real-world evidence for the shortened-interval threat.",
+      "A": "supports the claim about post-fire soil conditions, not the claim about shortened fire intervals",
+      "C": "supports the description of the resin threshold, not the claim about shortened fire intervals",
+      "D": "supports the timing-advantage claim, not the claim about the risk from shortened intervals"
+    }
+  },
+  {
+    "id": "p36-read-iki-paired-synthesis-d1-0001",
+    "section": "reading",
+    "topic": "comparison",
+    "difficulty": "easy",
+    "passage": "p36-read-notebooks-paired-0001",
+    "context": "Both passages are primarily concerned with—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "describing the biographical details of the authors' family members."
+      },
+      {
+        "id": "B",
+        "text": "comparing the practice of handwritten journaling to digital note-taking as tools for personal reflection."
+      },
+      {
+        "id": "C",
+        "text": "arguing that one specific journaling app is superior to all its competitors."
+      },
+      {
+        "id": "D",
+        "text": "explaining the history of the notebook as a manufactured object."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "Both authors compare their own experience of handwritten and digital journaling to make a broader case for one method's advantages for personal reflection.",
+      "A": "the grandmother is mentioned only in Passage B, and only briefly, not as the main concern of either passage",
+      "C": "neither passage names or promotes a specific app",
+      "D": "neither passage discusses the manufacturing history of notebooks"
+    }
+  },
+  {
+    "id": "p36-read-iki-paired-synthesis-d2-0001",
+    "section": "reading",
+    "topic": "comparison",
+    "difficulty": "easy",
+    "passage": "p36-read-notebooks-paired-0001",
+    "context": "Which choice best describes a key difference between how the author of Passage A and the author of Passage B view the friction involved in handwriting?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The author of Passage A views the friction as a minor inconvenience, while the author of Passage B views it as the primary reason to keep a journal at all."
+      },
+      {
+        "id": "B",
+        "text": "Both authors agree that the friction of handwriting is the single most important factor in choosing a journaling method."
+      },
+      {
+        "id": "C",
+        "text": "The author of Passage A dismisses the friction entirely, while the author of Passage B considers it essential."
+      },
+      {
+        "id": "D",
+        "text": "The author of Passage A sees that friction as a valuable filter that improves what gets written, while the author of Passage B sees it as just as likely to produce shorter, more guarded entries."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "Passage A treats the pen's drag and the hand's cramp as the 'entire mechanism' behind paper's usefulness, while Passage B explicitly argues the same friction can produce a worse, more guarded entry.",
+      "A": "reverses both authors' actual positions on friction",
+      "B": "Passage B explicitly downplays friction as 'not obviously a virtue,' so the two authors do not agree here",
+      "C": "Passage A does not dismiss the friction - the author explicitly values it; this distractor swaps the two authors' views"
+    }
+  },
+  {
+    "id": "p36-read-iki-paired-synthesis-d3-0001",
+    "section": "reading",
+    "topic": "comparison",
+    "difficulty": "medium",
+    "passage": "p36-read-notebooks-paired-0001",
+    "context": "Based on both passages, the author of Passage B would most likely respond to Passage A's claim that a notebook 'is a room with one door' by arguing that—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a single, fixed location for a thought is a limitation, not an advantage, since most thoughts belong in more than one context."
+      },
+      {
+        "id": "B",
+        "text": "a notebook's single location makes it more secure from accidental deletion than any digital system."
+      },
+      {
+        "id": "C",
+        "text": "a room with one door is an accurate description of how digital note systems also function."
+      },
+      {
+        "id": "D",
+        "text": "the comparison to a room is unfair because notebooks do not actually resemble rooms in any way."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Passage B's central argument is that paper forces a single-location decision at the moment of writing, while a digital entry can be tagged to several places at once - the direct opposite of treating one location as an advantage.",
+      "B": "Passage B never raises security or deletion risk as a concern",
+      "C": "directly contradicts Passage B's central point that digital notes can live in multiple places at once",
+      "D": "misreads the metaphor as a literal claim rather than engaging with the substance Passage B does address"
+    }
+  },
+  {
+    "id": "p36-read-kid-cause-effect-d2-0001",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "easy",
+    "passage": "p36-read-nightwatch-0001",
+    "context": "What most directly leads Renata to try oiling the gear housing rather than attempting some other repair?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Written instructions Master Okafor had taped inside the lamp room door."
+      },
+      {
+        "id": "B",
+        "text": "A suggestion radioed in from the harbor office during the storm."
+      },
+      {
+        "id": "C",
+        "text": "A similar repair she had already performed alone earlier that same night."
+      },
+      {
+        "id": "D",
+        "text": "Her memory of watching Master Okafor use thinned reservoir oil to ease a swollen metal part in October."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "The passage states plainly that what she had was the memory of Master Okafor's October repair with thinned oil, which she then applies to the gear.",
+      "A": "the passage states those instructions do not cover this situation",
+      "B": "no radio contact occurs anywhere in the passage",
+      "C": "this is her first attempt at this repair; no earlier repair that night is described"
+    }
+  },
+  {
+    "id": "p36-read-kid-cause-effect-d2-0002",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "easy",
+    "passage": "p36-read-translation-0001",
+    "context": "Based on the passage, what causes a translation choice that once sounded neutral to eventually sound archaic or unintentionally comic?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The original novel's plot becomes less relevant to contemporary readers."
+      },
+      {
+        "id": "B",
+        "text": "Later translators deliberately introduce comic errors to critique earlier versions."
+      },
+      {
+        "id": "C",
+        "text": "The target language keeps changing over time while the translation's word choices remain fixed."
+      },
+      {
+        "id": "D",
+        "text": "Publishers edit older translations without updating their original publication dates."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "The third paragraph explains that words drift in register over time, so a translation calibrated to an earlier register can come to sound archaic or comic as the living language moves on without it.",
+      "A": "the passage discusses language drift, not the plot's relevance",
+      "B": "no such deliberate critique is described in the passage",
+      "D": "not mentioned anywhere in the passage"
+    }
+  },
+  {
+    "id": "p36-read-kid-cause-effect-d3-0001",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "medium",
+    "passage": "p36-read-cartographer-0001",
+    "context": "What most directly causes Mireille to finally tell Master Alduin about the error, after having already decided to say nothing?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Master Alduin's direct request that she double-check her soundings before he signed the chart."
+      },
+      {
+        "id": "B",
+        "text": "Learning from the clerk that a ship had been lost near Cormorant Point on an improperly charted reef."
+      },
+      {
+        "id": "C",
+        "text": "Her fear that she would be dismissed the way the journeyman had been two winters earlier."
+      },
+      {
+        "id": "D",
+        "text": "The shipping company's deadline for delivering the finished chart."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "The passage states plainly that it was the clerk's mention of the vessel lost eleven years earlier that changed Mireille's mind, giving the abstract quarter-mile error real, human stakes.",
+      "A": "Master Alduin never makes this request in the passage",
+      "C": "this fear is part of why she initially says nothing, not why she changes her mind",
+      "D": "no deadline is mentioned as a cause of her decision"
+    }
+  },
+  {
+    "id": "p36-read-kid-cause-effect-d3-0002",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "medium",
+    "passage": "p36-read-time-bank-0001",
+    "context": "Based on the passage, what most directly causes some large time banks to 'stall,' as the passage describes it?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Members begin demanding cash payment instead of hourly credit once the bank grows large."
+      },
+      {
+        "id": "B",
+        "text": "The bank's administrators run out of hours to allocate to new members."
+      },
+      {
+        "id": "C",
+        "text": "Licensed tradespeople refuse to participate once a bank exceeds a certain size."
+      },
+      {
+        "id": "D",
+        "text": "Supply and demand for different kinds of labor fail to match, so a member needing one kind of help can't find it even though the ledger shows available hours."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "The fourth paragraph explains that a stall occurs when a bank has plenty of one kind of labor and little of another, the same way any market stalls when supply and demand fail to match.",
+      "A": "not described in the passage - the stall is attributed to mismatched labor supply, not a shift to cash",
+      "B": "administrators allocating hours to new members is not described as a mechanism",
+      "C": "the passage discusses licensed trades only as a category some banks exclude from the start, not tradespeople leaving due to size"
+    }
+  },
+  {
+    "id": "p36-read-kid-cause-effect-d4-0001",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "hard",
+    "passage": "p36-read-serotiny-0001",
+    "context": "Based on the passage, why does a serotinous cone opening at a lower heat threshold, after a milder fire, put its seed at a disadvantage?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The seed would be released before the resin had fully matured, making it unable to germinate at all."
+      },
+      {
+        "id": "B",
+        "text": "The seed would fall onto ash too nutrient-rich for a young seedling to tolerate."
+      },
+      {
+        "id": "C",
+        "text": "The seed would be exposed to browsing animals before the fire had passed completely."
+      },
+      {
+        "id": "D",
+        "text": "The seed would land on ground still shaded by a canopy that the milder fire failed to clear, leaving it unable to compete for sunlight."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "The third paragraph explains that a lower-threshold cone would scatter its seed onto ground still shaded by an intact canopy, too shaded for the seedling to compete for sunlight.",
+      "A": "the passage never claims a seed released this way cannot germinate",
+      "B": "the passage describes nutrient-rich ash as beneficial, not harmful, to germinating seeds",
+      "C": "the passage attributes protection from browsing animals to litter being burned away, not to timing relative to browsing animals"
+    }
+  },
+  {
+    "id": "p36-read-kid-detail-d1-0001",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "easy",
+    "passage": "p36-read-nightwatch-0001",
+    "context": "According to the passage, what specifically caused the lamp's beam to slow from its normal four-second interval?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The reservoir had run low on oil, weakening the flame's brightness."
+      },
+      {
+        "id": "B",
+        "text": "A gear tooth in the clockwork housing had worn thin and begun to slip instead of catch."
+      },
+      {
+        "id": "C",
+        "text": "High winds had cracked the lamp room's glass, letting rain into the mechanism."
+      },
+      {
+        "id": "D",
+        "text": "The clockwork spring had wound down completely and stopped turning."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "The fourth paragraph states that a worn gear tooth had begun to slip rather than catch, costing the mechanism a fraction of a second on each turn.",
+      "A": "the reservoir was checked and found fine; the oil is later used on the gear, not the flame",
+      "C": "the glass rattled but is never described as cracking",
+      "D": "the mechanism slows, it does not stop, and the spring is not named as the cause"
+    }
+  },
+  {
+    "id": "p36-read-kid-detail-d2-0001",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "easy",
+    "passage": "p36-read-cartographer-0001",
+    "context": "According to the passage, what specifically was wrong with the chart Mireille was working on?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The chart's scale made the harbor appear larger than it actually was."
+      },
+      {
+        "id": "B",
+        "text": "A river mouth had silted since the chart's last survey."
+      },
+      {
+        "id": "C",
+        "text": "A reef off Cormorant Point had been placed a quarter mile from its actual location."
+      },
+      {
+        "id": "D",
+        "text": "The tide's reach had been calculated incorrectly along the northern coastline."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "The second paragraph states directly that Mireille found the reef off Cormorant Point placed a full quarter mile from where it actually lay.",
+      "A": "not mentioned anywhere in the passage",
+      "B": "this detail describes the earlier error the dismissed journeyman pointed out, not the reef error Mireille finds",
+      "D": "not the error described - the passage specifies the reef's placement, not a tide calculation"
+    }
+  },
+  {
+    "id": "p36-read-kid-detail-d2-0002",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "easy",
+    "passage": "p36-read-time-bank-0001",
+    "context": "According to the passage, what specific problem did early advocates of time banking identify in conventional markets?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Conventional markets overpay for licensed trades relative to the actual skill involved."
+      },
+      {
+        "id": "B",
+        "text": "Conventional markets price scarce skills efficiently but fail to value care work, such as checking on an elderly neighbor, which is not scarce."
+      },
+      {
+        "id": "C",
+        "text": "Conventional markets cannot function without a stable government currency to anchor prices."
+      },
+      {
+        "id": "D",
+        "text": "Conventional markets undervalue accounting advice compared to manual labor like yard work."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "The second paragraph states directly that markets price scarce skills efficiently but are poor at valuing common, uncounted care work.",
+      "A": "not a claim made anywhere in the passage",
+      "C": "government currency is not discussed in the passage",
+      "D": "misreads the accounting and yard-work example, which illustrates the time bank's own equivalence, not a market flaw"
+    }
+  },
+  {
+    "id": "p36-read-kid-detail-d2-0003",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "easy",
+    "passage": "p36-read-translation-0001",
+    "context": "According to the passage, what assumption did translators working in the 1910s bring to their work that a translator today would not share?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A belief that novels should be translated only by native speakers of the source language."
+      },
+      {
+        "id": "B",
+        "text": "A rule requiring translations to preserve the original's exact sentence length."
+      },
+      {
+        "id": "C",
+        "text": "A preference for translating poetry over prose whenever possible."
+      },
+      {
+        "id": "D",
+        "text": "Assumptions about formality and how much a text should be smoothed for a genteel reading public."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "The second paragraph names formality and smoothing for a genteel public as the inherited assumptions a modern translator would not share.",
+      "A": "not a claim made anywhere in the passage",
+      "B": "no such rule is described in the passage",
+      "C": "the passage discusses novels; no stated preference between poetry and prose appears"
+    }
+  },
+  {
+    "id": "p36-read-kid-detail-d2-0004",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "easy",
+    "passage": "p36-read-serotiny-0001",
+    "context": "According to the passage, what specifically seals a serotinous cone shut?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A layer of ash deposited by previous, milder ground fires."
+      },
+      {
+        "id": "B",
+        "text": "A thick bark that only splits open once the tree reaches full maturity."
+      },
+      {
+        "id": "C",
+        "text": "A resin that will not soften except at the high, sustained heat of a canopy fire."
+      },
+      {
+        "id": "D",
+        "text": "A waxy coating that dissolves gradually over several mild winters."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "The first and third paragraphs identify a resin, requiring sustained canopy-fire heat to soften, as the substance sealing the seeds inside the cone.",
+      "A": "ash is described as covering the forest floor after a fire, not as the substance sealing the cone",
+      "B": "bark and tree maturity are not described as the sealing mechanism",
+      "D": "not mentioned in the passage; contradicts the resin threshold, which responds to fire heat, not gradual seasonal change"
+    }
+  },
+  {
+    "id": "p36-read-kid-detail-d2-0005",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "easy",
+    "passage": "p36-read-notebooks-paired-0001",
+    "context": "According to Passage B, what specifically made most of the author's grandmother's diary entries unreadable to her family after her death?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The grandmother's handwriting had become entirely illegible by the end of her life."
+      },
+      {
+        "id": "B",
+        "text": "There was no way to find a specific entry within sixty years of chronological, otherwise unsorted pages."
+      },
+      {
+        "id": "C",
+        "text": "The notebooks were damaged and partially destroyed before the family could read them."
+      },
+      {
+        "id": "D",
+        "text": "The grandmother had written the entries in a private code her family could not decipher."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "Passage B states directly that the entries went unread 'not because her handwriting was illegible...but because there was no way to find anything' across sixty unsorted years.",
+      "A": "the passage says the handwriting 'nearly' became illegible, but explicitly states this was not the reason entries went unread",
+      "C": "no damage or destruction of the notebooks is mentioned in the passage",
+      "D": "no code or private language is mentioned anywhere in the passage"
+    }
+  },
+  {
+    "id": "p36-read-kid-detail-d3-0001",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "medium",
+    "passage": "p36-read-cartographer-0001",
+    "context": "According to the passage, why had the shipping company commissioned this particular survey of the coastline near Cormorant Point?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Because Master Alduin had recently opened a workshop in the shipping company's home port."
+      },
+      {
+        "id": "B",
+        "text": "Because the shipping company was expanding its route to new fishing villages further north."
+      },
+      {
+        "id": "C",
+        "text": "Because Master Alduin had personally requested the commission to demonstrate his charting skill."
+      },
+      {
+        "id": "D",
+        "text": "Because the company's older charts near Cormorant Point could not be trusted, following the loss of a vessel there eleven years earlier."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "The clerk's comment in the seventh paragraph explains that the company commissioned the new survey specifically because its old charts near Cormorant Point couldn't be trusted, after a vessel was lost there eleven years earlier.",
+      "A": "the passage never explains why Master Alduin was hired, only why a new survey was needed",
+      "B": "the passage mentions the existing route to the villages but not an expansion as the reason for the survey",
+      "C": "reverses the relationship - the company commissioned the work from him, not the other way around"
+    }
+  },
+  {
+    "id": "p36-read-kid-detail-d4-0001",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "hard",
+    "passage": "p36-read-nightwatch-0001",
+    "context": "According to the passage, what happened to the keeper Renata's predecessor two winters before the events described?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "He successfully repaired a jammed bearing using thinned reservoir oil."
+      },
+      {
+        "id": "B",
+        "text": "He requested that a new gear be sent out on the next boat."
+      },
+      {
+        "id": "C",
+        "text": "He was dismissed after a lesser fault than the one Renata faced during the storm."
+      },
+      {
+        "id": "D",
+        "text": "He was promoted to a position in the harbor office after his watch."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "The passage mentions, in passing, that Renata expected the disappointment Master Okafor had shown 'the keeper before her, a man dismissed for a lesser fault two winters back.'",
+      "A": "that repair belongs to Master Okafor's memory of October, not to the predecessor",
+      "B": "that request comes from Master Okafor at the end of the passage, not the predecessor",
+      "D": "nothing of the kind is stated; the passage says he was dismissed"
+    }
+  },
+  {
+    "id": "p36-read-kid-detail-d5-0001",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "hard",
+    "passage": "p36-read-time-bank-0001",
+    "context": "According to the passage, why do some time banks cap how far a member's balance can fall into deficit?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Because those banks treat an uncorrected deficit as a kind of debt that the whole community ends up absorbing."
+      },
+      {
+        "id": "B",
+        "text": "Because state regulations require a cap on any system that functions as an alternative currency."
+      },
+      {
+        "id": "C",
+        "text": "Because members voted to remove any bank feature that resembled a conventional loan."
+      },
+      {
+        "id": "D",
+        "text": "Because a deficit cap increases the total number of hours logged across the bank each year."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The third paragraph explains that some banks cap deficits because an uncorrected deficit functions as a kind of debt the community absorbs.",
+      "B": "no regulatory requirement is mentioned anywhere in the passage",
+      "C": "no vote or removal process of this kind is described",
+      "D": "the passage never claims a cap increases logged hours; it presents the cap as a response to risk, not a growth strategy"
+    }
+  },
+  {
+    "id": "p36-read-kid-generalization-d2-0001",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "easy",
+    "passage": "p36-read-nightwatch-0001",
+    "context": "The passage as a whole suggests which generalization about competence, as Master Okafor seems to understand it?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Competence is best proven through formal exams rather than through experience."
+      },
+      {
+        "id": "B",
+        "text": "Real competence often goes unremarked because it is expected, not because it goes unnoticed."
+      },
+      {
+        "id": "C",
+        "text": "Competence matters less than following written instructions exactly."
+      },
+      {
+        "id": "D",
+        "text": "Competence is impossible to develop without direct supervision at all times."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "Master Okafor treats Renata's success as an unremarkable fact rather than an occasion for celebration, which the passage explicitly connects to how he understands competence generally.",
+      "A": "no exams are mentioned; the passage emphasizes experience and improvisation instead",
+      "C": "the passage shows Renata succeeding by going beyond the taped instructions, not by following them exactly",
+      "D": "contradicted - she succeeds precisely while alone, without supervision"
+    }
+  },
+  {
+    "id": "p36-read-kid-generalization-d3-0001",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "medium",
+    "passage": "p36-read-translation-0001",
+    "context": "The passage as a whole supports which generalization about translated literature?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Translated literature is generally less valuable to readers than literature originally written in English."
+      },
+      {
+        "id": "B",
+        "text": "A translated text's relationship to its readers keeps evolving long after the original author's work is finished."
+      },
+      {
+        "id": "C",
+        "text": "Most readers actively prefer literal, word-for-word translations over ones that preserve rhythm."
+      },
+      {
+        "id": "D",
+        "text": "Retranslation became necessary only after the invention of modern publishing technology."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "The passage's closing paragraph states this generalization almost directly: the original stops changing, but everything that happens to it afterward belongs to whichever language carries it forward.",
+      "A": "no such value judgment appears anywhere in the passage",
+      "C": "no reader preference of this kind is described or claimed",
+      "D": "no connection to publishing technology is made anywhere in the passage"
+    }
+  },
+  {
+    "id": "p36-read-kid-inference-d2-0001",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "easy",
+    "passage": "p36-read-cartographer-0001",
+    "context": "It can reasonably be inferred that Master Alduin dismissed the journeyman mentioned in the passage primarily because—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the journeyman's observation about the river mouth turned out to be incorrect."
+      },
+      {
+        "id": "B",
+        "text": "the journeyman had a pattern of making careless errors in his own survey work."
+      },
+      {
+        "id": "C",
+        "text": "he valued his charts' reputation for infallibility more than he valued being corrected."
+      },
+      {
+        "id": "D",
+        "text": "Master Alduin needed to reduce the number of apprentices in his workshop that year."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "The passage explains that what mattered to Master Alduin was that his charts be trusted without question, and that he treated any correction as doubt rather than help - directly implying that protecting his reputation outweighed accepting a true correction.",
+      "A": "the passage states the journeyman had been right, which contradicts this choice",
+      "B": "not supported anywhere in the passage",
+      "D": "no such reason is given or implied"
+    }
+  },
+  {
+    "id": "p36-read-kid-inference-d3-0001",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "medium",
+    "passage": "p36-read-cartographer-0001",
+    "context": "The passage most strongly suggests that Master Alduin's behavior in the final two paragraphs represents—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a full public apology to the shipping company for the error in the original chart."
+      },
+      {
+        "id": "B",
+        "text": "a decision to stop training apprentices in order to avoid future disputes over his work."
+      },
+      {
+        "id": "C",
+        "text": "continued distrust of Mireille's judgment despite correcting the chart himself."
+      },
+      {
+        "id": "D",
+        "text": "a private acknowledgment of his own mistake, expressed through action rather than words, along with a new degree of trust in Mireille's judgment."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "Master Alduin never apologizes in words, but he silently admits his own error was the true cause, redraws the reef himself, and then extends Mireille new, unsupervised responsibility - all of which point to a private acknowledgment paired with increased trust.",
+      "A": "the passage describes no communication with the shipping company at all",
+      "B": "contradicted by the passage - he assigns Mireille more independent responsibility, not less contact with apprentices",
+      "C": "contradicted by the final paragraph, where he lets her survey unsupervised without checking her soundings"
+    }
+  },
+  {
+    "id": "p36-read-kid-inference-d3-0002",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "medium",
+    "passage": "p36-read-time-bank-0001",
+    "context": "It can reasonably be inferred from the passage that a time bank formed entirely through an anonymous online sign-up sheet would most likely—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "immediately outperform banks organized among people who already know each other."
+      },
+      {
+        "id": "B",
+        "text": "be legally prohibited from operating as a time bank."
+      },
+      {
+        "id": "C",
+        "text": "struggle to build the trust that helps other time banks survive slow periods."
+      },
+      {
+        "id": "D",
+        "text": "automatically exclude licensed trades from its list of qualifying services."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "The final paragraph explains that a bank without prior contact among its members has to build trust at the same time it is trying to move hours, and more often fails to do either.",
+      "A": "directly contradicted - the passage says prior relationship density is what helps banks survive",
+      "B": "no legal restriction of this kind is mentioned in the passage",
+      "D": "the licensed-trade exclusion is one bank's choice among several, not a rule tied to how a bank formed"
+    }
+  },
+  {
+    "id": "p36-read-kid-inference-d3-0003",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "medium",
+    "passage": "p36-read-serotiny-0001",
+    "context": "It can reasonably be inferred from the passage that a serotinous forest experiencing fires more frequently than its trees can build a seed bank would most likely—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "develop a lower resin threshold within a single generation to compensate."
+      },
+      {
+        "id": "B",
+        "text": "risk losing a local population of trees that never had the chance to reseed the area."
+      },
+      {
+        "id": "C",
+        "text": "produce cones that open at ordinary summer temperatures instead of fire temperatures."
+      },
+      {
+        "id": "D",
+        "text": "become immune to the effects of drought on fire frequency."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "The fifth paragraph explains that a fire arriving before young trees have built a seed bank can eliminate a local population that never gets the chance to reseed itself.",
+      "A": "contradicted - the passage states the strategy does not adjust within a single generation",
+      "C": "no mechanism for this kind of rapid threshold change is described",
+      "D": "the passage links drought to shortened fire intervals as a problem, not something the trees become immune to"
+    }
+  },
+  {
+    "id": "p36-read-kid-inference-d4-0001",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "hard",
+    "passage": "p36-read-nightwatch-0001",
+    "context": "It can reasonably be inferred that Master Okafor's comment to the harbor office about the gear was, for him, intended as—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a formal reprimand meant to be relayed to Renata through official channels."
+      },
+      {
+        "id": "B",
+        "text": "an attempt to avoid taking any personal responsibility for the aging equipment."
+      },
+      {
+        "id": "C",
+        "text": "a genuine expression of praise for Renata, delivered in the same plain manner he might use to describe the weather."
+      },
+      {
+        "id": "D",
+        "text": "a routine report unrelated to Renata's actions during the night."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "The final paragraph explains that Master Okafor stated the fact as plainly as he stated the weather, and that this understated report was, for him, the whole of the compliment.",
+      "A": "nothing suggests reprimand; the passage frames the comment explicitly as praise",
+      "B": "the passage does not discuss blame or responsibility for the equipment's age",
+      "D": "the report directly credits her actions, so it is not unrelated to them"
+    }
+  },
+  {
+    "id": "p36-read-kid-inference-d4-0002",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "hard",
+    "passage": "p36-read-translation-0001",
+    "context": "It can reasonably be inferred that the passage's author regards the objection about a 'strange kind of gift' to general readers as—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a legitimate concern worth taking seriously, even though the author does not fully resolve it."
+      },
+      {
+        "id": "B",
+        "text": "an objection so weak that it does not deserve serious discussion."
+      },
+      {
+        "id": "C",
+        "text": "proof that multiplying translations actively harms every kind of reader equally."
+      },
+      {
+        "id": "D",
+        "text": "evidence that publishers deliberately mislead readers for commercial gain."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The fifth paragraph states directly that this objection 'deserves more than a dismissal,' and the passage does not claim to resolve it, only to lay it out fairly.",
+      "B": "contradicted - the passage explicitly says the objection 'deserves more than a dismissal'",
+      "C": "overstates the passage's claim; it says a shelf of versions can genuinely serve a specialist",
+      "D": "no claim of deliberate deception appears anywhere in the passage"
+    }
+  },
+  {
+    "id": "p36-read-kid-inference-d5-0001",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "hard",
+    "passage": "p36-read-serotiny-0001",
+    "context": "The passage most strongly suggests that a botanist studying a newly discovered serotinous pine population, without yet knowing the local fire history, could reasonably use the population's cone-opening threshold to—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "determine the exact number of years since the population last flowered."
+      },
+      {
+        "id": "B",
+        "text": "predict the total number of seeds a single cone will eventually release."
+      },
+      {
+        "id": "C",
+        "text": "estimate the intensity of canopy fire the local ecosystem has historically produced."
+      },
+      {
+        "id": "D",
+        "text": "calculate the average rainfall the region receives annually."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "Because the passage establishes that the resin threshold is calibrated specifically to the heat of a canopy fire severe enough to clear competing trees, that threshold reflects the intensity of fire the population has adapted to.",
+      "A": "the passage connects the threshold to fire intensity, not to a count of years since flowering",
+      "B": "seed count per cone is never discussed in the passage",
+      "D": "rainfall is not linked to the resin threshold; only drought's effect on fire interval is mentioned, a different relationship"
+    }
+  },
+  {
+    "id": "p36-read-kid-main-idea-d1-0001",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "easy",
+    "passage": "p36-read-nightwatch-0001",
+    "context": "Which choice best states the main idea of the passage?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A lighthouse keeper's assistant handles a mechanical failure alone during a storm, and her mentor recognizes her competence in his own understated way."
+      },
+      {
+        "id": "B",
+        "text": "A lighthouse's turning mechanism breaks permanently during a storm, forcing the harbor office to replace the entire lamp."
+      },
+      {
+        "id": "C",
+        "text": "A master keeper teaches his assistant the full lighthouse maintenance routine over several months."
+      },
+      {
+        "id": "D",
+        "text": "A storm damages a lighthouse so severely that ships in the strait lose sight of its beam entirely."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The passage centers on Renata's solo handling of the failing gear during the storm and Master Okafor's quiet, plainly stated recognition of what she accomplished.",
+      "B": "the mechanism does not fail permanently, and only a gear, not the entire lamp, needs replacing",
+      "C": "describes only the passage's opening background, not its central event",
+      "D": "the beam never goes out entirely - it only slows - which overstates the damage"
+    }
+  },
+  {
+    "id": "p36-read-kid-main-idea-d1-0002",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "easy",
+    "passage": "p36-read-notebooks-paired-0001",
+    "context": "Which choice best states the main idea of Passage A?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The author values the physical resistance of handwriting because it forces more careful selection of what gets written down."
+      },
+      {
+        "id": "B",
+        "text": "The author regrets giving up a phone journal for a paper notebook."
+      },
+      {
+        "id": "C",
+        "text": "The author argues that phone notifications are the most serious flaw in any digital note-taking system."
+      },
+      {
+        "id": "D",
+        "text": "The author explains the manufacturing process behind the eleven notebooks mentioned in the passage."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Passage A's central claim, developed across all three paragraphs, is that the physical resistance of paper - the drag of the pen, the cost of an entry - is the mechanism that makes writing by hand valuable.",
+      "B": "contradicted - the author presents the switch as a deliberate improvement, not a regret",
+      "C": "notifications are one detail mentioned, not the passage's main idea",
+      "D": "no such manufacturing explanation appears in the passage"
+    }
+  },
+  {
+    "id": "p36-read-kid-main-idea-d2-0001",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "easy",
+    "passage": "p36-read-cartographer-0001",
+    "context": "Which choice best states the main idea of the passage?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A shipping company loses a vessel because a cartographer refuses to admit a charting mistake."
+      },
+      {
+        "id": "B",
+        "text": "An apprentice risks her master's disapproval to correct a dangerous error in his work, and he ultimately accepts both the correction and her judgment."
+      },
+      {
+        "id": "C",
+        "text": "An apprentice spends years mastering the technical skills of chart-making before earning her master's trust."
+      },
+      {
+        "id": "D",
+        "text": "A master cartographer dismisses his apprentice after she questions the accuracy of his work."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "The passage centers on Mireille's discovery of the reef's misplacement, her fear of confronting Master Alduin, and his ultimately quiet acceptance of both the correction and her growing competence.",
+      "A": "misstates the plot - no vessel is lost during the events of this passage, and Master Alduin does admit his mistake",
+      "C": "describes only the passage's opening detail, not the central conflict about the error and its correction",
+      "D": "the opposite happens - Master Alduin gives her more independence, not less, by the end"
+    }
+  },
+  {
+    "id": "p36-read-kid-main-idea-d2-0002",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "easy",
+    "passage": "p36-read-time-bank-0001",
+    "context": "Which choice best states the main idea of the passage?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Time banks are a recent invention designed primarily to replace licensed trades like electrical work with volunteer labor."
+      },
+      {
+        "id": "B",
+        "text": "Time banks always fail once they grow large enough to attract members seeking to escape rent or utility costs."
+      },
+      {
+        "id": "C",
+        "text": "Time banks exchange hours of labor as a currency meant to value care work overlooked by conventional markets, but their long-term success depends heavily on the trust that existed among members before the system began."
+      },
+      {
+        "id": "D",
+        "text": "Time banks assign credit based on the market value of the skill being exchanged."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "The passage explains the flat-value logic behind time banks, then spends its second half on what determines whether a given bank actually succeeds - prior relationship density among its members.",
+      "A": "the passage says some banks specifically exclude licensed trades, which misstates their purpose",
+      "B": "overstates the passage's claim - growth is described as revealing a challenge, not guaranteeing failure",
+      "D": "directly contradicted - the whole design is a flat hour-for-hour equivalence regardless of market value"
+    }
+  },
+  {
+    "id": "p36-read-kid-main-idea-d3-0001",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "medium",
+    "passage": "p36-read-translation-0001",
+    "context": "Which choice best states the main idea of the passage?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Early twentieth-century translators were generally incompetent compared to translators working today."
+      },
+      {
+        "id": "B",
+        "text": "Classic novels are retranslated repeatedly not because earlier translations were flawed, but because language, taste, and ideas about fidelity all keep shifting even after the original text stops changing."
+      },
+      {
+        "id": "C",
+        "text": "A single definitive translation of any classic novel is achievable if a translator works carefully enough."
+      },
+      {
+        "id": "D",
+        "text": "Publishers should be required to print a translation's specific priorities on its cover."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "The passage gives three separate reasons - dated arguments, language drift, and irreducible tradeoffs in fidelity - all converging on why retranslation keeps happening despite a fixed original.",
+      "A": "the passage explicitly states the earlier translator 'was not incompetent'",
+      "C": "contradicted - the passage argues translation is not a one-time, solvable problem",
+      "D": "raised as a problem, never proposed as a requirement or solution"
+    }
+  },
+  {
+    "id": "p36-read-kid-main-idea-d4-0001",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "hard",
+    "passage": "p36-read-serotiny-0001",
+    "context": "Which choice best states the main idea of the passage?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Serotinous pine seeds are adapted to open only after intense fire, a strategy that works well at the scale of an individual tree but creates new risks for the forest as fire intervals change."
+      },
+      {
+        "id": "B",
+        "text": "Serotinous pine trees are less successful overall than conifer species that disperse seeds immediately after maturing."
+      },
+      {
+        "id": "C",
+        "text": "Ground fires of ordinary summer heat are sufficient to trigger the release of serotinous seeds."
+      },
+      {
+        "id": "D",
+        "text": "Foresters have found a reliable method for shortening the fire intervals that serotinous forests require."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The passage explains serotiny's individual-level logic in its early paragraphs, then turns to the forest-scale vulnerability created by synchronized germination and shifting fire intervals.",
+      "B": "the passage frames serotiny as well-adapted to its specific ecology, not as generally less successful",
+      "C": "contradicted directly - ordinary heat does not approach the needed temperature",
+      "D": "no such method is described; the passage discusses a mismatch problem, not a solution foresters found"
+    }
+  },
+  {
+    "id": "p36-read-kid-sequence-d2-0001",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "easy",
+    "passage": "p36-read-cartographer-0001",
+    "context": "Which of the following events occurs first in the passage?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Mireille compares the finished chart to her own sounding notes from the previous autumn."
+      },
+      {
+        "id": "B",
+        "text": "The shipping company's clerk mentions the vessel lost eleven years earlier."
+      },
+      {
+        "id": "C",
+        "text": "Master Alduin redraws the reef in its correct position."
+      },
+      {
+        "id": "D",
+        "text": "Mireille decides to say nothing and delivers the finished chart to Master Alduin's desk."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The passage's second paragraph describes Mireille comparing the nearly finished chart to her sounding notes, which is where she first discovers the reef's misplacement - before any of the other listed events occur.",
+      "B": "happens after Mireille has already discovered the error and delivered the chart",
+      "C": "the final event in the passage, after Mireille's confrontation with him",
+      "D": "occurs after she has already found and rechecked the error, not before"
+    }
+  },
+  {
+    "id": "p36-read-kid-sequence-d3-0001",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "medium",
+    "passage": "p36-read-nightwatch-0001",
+    "context": "Which of the following events occurs first in the passage?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Renata twists a rag thin enough to reach between the gears."
+      },
+      {
+        "id": "B",
+        "text": "Master Okafor turns the clockwork mechanism by hand and listens to it."
+      },
+      {
+        "id": "C",
+        "text": "Renata notices the beam taking five, then six seconds to sweep past the window."
+      },
+      {
+        "id": "D",
+        "text": "Renata checks the lamp's reservoir out of habit rather than necessity."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "The second paragraph places the reservoir check at nine o'clock, before the beam begins to slow near midnight and before any of the repair actions that follow.",
+      "A": "happens after she has already diagnosed the worn gear tooth",
+      "B": "happens the next morning, near the end of the passage",
+      "C": "happens after the nine o'clock reservoir check, closer to midnight"
+    }
+  },
+  {
+    "id": "p36-read-main-idea-0001",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "easy",
+    "passage": "p36-read-drill-lichen-0001",
+    "context": "The passage as a whole is best described as an account of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a reclassification that revealed an organism to be a partnership, and what followed from that discovery."
+      },
+      {
+        "id": "B",
+        "text": "a long dispute between botanists that was never satisfactorily resolved."
+      },
+      {
+        "id": "C",
+        "text": "the techniques microscopists developed for separating and culturing cells."
+      },
+      {
+        "id": "D",
+        "text": "the role of lichens in monitoring air quality in industrial regions."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The passage opens with lichens misfiled among the plants, describes the microscope evidence and the resistance to it, and then spends its second half on what follows from the partnership: the division of labor, soil formation, air-quality monitoring, and the unsettled boundary between cooperation and individuality.",
+      "B": "The dispute is described as settled by culturing experiments, not left open.",
+      "C": "The culturing work appears in one paragraph as evidence, not as the subject of the passage.",
+      "D": "Air-quality monitoring is one consequence among several, and it occupies a single paragraph."
+    }
+  },
+  {
+    "id": "p36-read-vocab-in-context-0001",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "medium",
+    "passage": "p36-read-drill-lichen-0001",
+    "context": "As it is used in the fifth paragraph, the word instruments most nearly means:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "tools of measurement."
+      },
+      {
+        "id": "B",
+        "text": "devices for producing sound."
+      },
+      {
+        "id": "C",
+        "text": "legal documents."
+      },
+      {
+        "id": "D",
+        "text": "surgical implements."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The sentences around the word describe lichens accumulating pollutants in proportion to what is in the air, and the paragraph ends with surveys tracking air quality that later instruments confirmed. The lichens are functioning as measuring devices.",
+      "B": "Takes the most frequent everyday sense of the word, which the paragraph gives no support for.",
+      "C": "Is a real sense of the word, but belongs to a legal context absent from the passage.",
+      "D": "Substitutes a medical sense that nothing in the paragraph suggests."
+    }
+  },
+  {
+    "id": "r073",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "medium",
+    "passage": "rp9",
+    "context": "The passage as a whole is best described as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "an argument that copying is a way of producing knowledge rather than a failure of originality."
+      },
+      {
+        "id": "B",
+        "text": "a warning that skilled copyists make art forgery increasingly difficult to detect."
+      },
+      {
+        "id": "C",
+        "text": "a profile of a painter who hopes to have her own original work recognized."
+      },
+      {
+        "id": "D",
+        "text": "a history of how museums came to license artists to work in their galleries."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the passage uses Obregón's forty-three attempts and the history of copying to argue that copying yields understanding the eye alone cannot reach.",
+      "B": "The passage explicitly separates copying from forgery and never suggests detection is becoming harder.",
+      "C": "Obregón is described as having no interest in scholarly recognition, and no original work of hers is mentioned.",
+      "D": "Her license is mentioned in a single clause and is never the subject of the passage."
+    }
+  },
+  {
+    "id": "r074",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "medium",
+    "passage": "rp9",
+    "context": "The author's attitude toward Obregón is best characterized as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "respectful of her precision without romanticizing her work."
+      },
+      {
+        "id": "B",
+        "text": "sympathetic toward an artist whose talent has been wasted."
+      },
+      {
+        "id": "C",
+        "text": "skeptical of claims she makes that cannot be verified."
+      },
+      {
+        "id": "D",
+        "text": "amused by the obsessiveness of her forty-three attempts."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the author reports her specific observations as genuine findings and notes that conservators acted on them, but never calls her an artist-hero or her work beautiful.",
+      "B": "Nothing suggests waste; the passage argues her work produces real knowledge.",
+      "C": "Her observations are presented as reliable, and the conservators' response corroborates them.",
+      "D": "The author explicitly rejects reading her dissatisfaction as a joke about perfectionism."
+    }
+  },
+  {
+    "id": "r075",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "hard",
+    "passage": "rp9",
+    "context": "The sentences \"This sounds like modesty, or like a joke about perfectionism. It is neither.\" primarily function to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "dismiss two easy readings of her remark in order to insist on a literal one."
+      },
+      {
+        "id": "B",
+        "text": "soften the preceding claim so it will seem less boastful."
+      },
+      {
+        "id": "C",
+        "text": "signal that the author doubts the accuracy of Obregón's self-assessment."
+      },
+      {
+        "id": "D",
+        "text": "introduce a contrast between Obregón's view and the curators' view."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the author names the two interpretations a reader would reach for, rejects both, and then gives the specific technical complaint that shows the remark was meant literally.",
+      "B": "The remark was Obregón's, not a boast of the author's, and the sentences sharpen rather than soften it.",
+      "C": "The following paragraph supports her assessment in detail rather than doubting it.",
+      "D": "The curators are not mentioned until the next paragraph, and they agree with her value, not her verdict."
+    }
+  },
+  {
+    "id": "r076",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "medium",
+    "passage": "rp9",
+    "context": "The description of the Romantics as having \"left everything else looking like craft at best and fraud at worst\" conveys the author's:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "disagreement with an inherited assumption the passage goes on to challenge."
+      },
+      {
+        "id": "B",
+        "text": "appreciation for a movement that clarified what art should value."
+      },
+      {
+        "id": "C",
+        "text": "neutrality about a historical shift with no bearing on the present."
+      },
+      {
+        "id": "D",
+        "text": "regret that the Romantics themselves were often accused of fraud."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the phrase sets up the next paragraph, which opens \"But the suspicion is historically strange\" and argues the inherited view is wrong.",
+      "B": "The author treats the Romantic elevation of originality as a distortion, not a clarification.",
+      "C": "The passage insists the shift still shapes how copyists are regarded, so it is not neutral about it.",
+      "D": "No accusation against the Romantics is made anywhere in the passage."
+    }
+  },
+  {
+    "id": "r077",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "rp9",
+    "context": "The fourth paragraph, beginning \"But the suspicion is historically strange,\" functions in the passage to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "supply historical evidence that undercuts the modern assumption just described."
+      },
+      {
+        "id": "B",
+        "text": "concede a limitation before returning to the author's main claim."
+      },
+      {
+        "id": "C",
+        "text": "provide background needed to understand the technical detail about the hand."
+      },
+      {
+        "id": "D",
+        "text": "shift the passage's focus from Obregón to the history of photography."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — having described the inherited suspicion in paragraph three, the author answers it with four hundred years of practice in which copying was central and unembarrassed.",
+      "B": "The paragraph concedes nothing; it contradicts the view stated before it.",
+      "C": "The detail about the hand comes earlier and needs no historical background to follow.",
+      "D": "Photography appears in one clause as a marker of when copying's role changed, not as a new subject."
+    }
+  },
+  {
+    "id": "r078",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "hard",
+    "passage": "rp9",
+    "context": "The pair of questions \"will this pass?\" and \"how was this done?\" are used to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "distinguish two practices that produce similar objects but differ in purpose."
+      },
+      {
+        "id": "B",
+        "text": "list the two questions Obregón asks herself as she works."
+      },
+      {
+        "id": "C",
+        "text": "suggest that the line between copying and forgery is difficult to draw."
+      },
+      {
+        "id": "D",
+        "text": "introduce the technical findings described in the following paragraph."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the questions are assigned to the forger and the copyist respectively, and the author immediately explains that one is about the viewer and the other about the painter.",
+      "B": "Only the second question is attributed to the copyist; the first belongs to the forger.",
+      "C": "The author says the difference is \"worth stating plainly,\" which asserts the line is clear rather than blurry.",
+      "D": "The findings that follow illustrate what copying teaches, but the questions are framed as a definition, not a preview."
+    }
+  },
+  {
+    "id": "r079",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "rp9",
+    "context": "Which choice best describes the overall organization of the passage?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A particular case, then a historical objection to how such cases are viewed, then what the case yields."
+      },
+      {
+        "id": "B",
+        "text": "A chronological account of one painter's career from apprenticeship to recognition."
+      },
+      {
+        "id": "C",
+        "text": "A comparison of two artists who approach the same portrait differently."
+      },
+      {
+        "id": "D",
+        "text": "A claim stated at the outset and then defended against three named critics."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the passage opens on Obregón, turns to the Romantic suspicion and the older history that answers it, and closes with the specific knowledge her copying produced.",
+      "B": "No career arc is traced; the eleven years are presented as repetition rather than progression.",
+      "C": "Only one copyist appears. The forger is a category, not a second artist.",
+      "D": "No critics are named, and the central claim emerges gradually rather than being stated first."
+    }
+  },
+  {
+    "id": "r080",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "medium",
+    "passage": "rp9",
+    "context": "Which detail most directly supports the claim that Obregón's observations have practical value beyond her own studio?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Conservators asked what she had seen, and afterward changed their plans."
+      },
+      {
+        "id": "B",
+        "text": "The museum licenses her to paint in the gallery on Tuesdays."
+      },
+      {
+        "id": "C",
+        "text": "She has completed forty-three copies of the same portrait."
+      },
+      {
+        "id": "D",
+        "text": "She can identify precisely what is wrong with her most recent copy."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — this is the one detail showing her observations changing a decision made by someone else.",
+      "B": "The license grants her access; it says nothing about whether her findings are used.",
+      "C": "The count establishes her persistence, not the usefulness of what she learned.",
+      "D": "Her self-criticism demonstrates her precision but stays inside her own practice."
+    }
+  },
+  {
+    "id": "r081",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "hard",
+    "passage": "rp9",
+    "context": "Which detail best supports the passage's claim that copying was once central to how paintings were encountered?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A painting's reputation in Antwerp depended on the quality of the copies that reached Madrid."
+      },
+      {
+        "id": "B",
+        "text": "Painters we now call original were often the best copyists of their generation."
+      },
+      {
+        "id": "C",
+        "text": "The Romantics elevated originality into the central virtue of art."
+      },
+      {
+        "id": "D",
+        "text": "The background of the portrait is three colours rather than one."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it shows copies carrying a work's reputation between cities, which is precisely the claim that copies were how paintings were seen.",
+      "B": "This supports copying's role in training and skill, not in how audiences encountered work.",
+      "C": "This describes the attitude the passage is arguing against, not evidence for copying's former centrality.",
+      "D": "This is a finding from Obregón's own practice and has no bearing on historical reception."
+    }
+  },
+  {
+    "id": "r082",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "rp10",
+    "context": "The third paragraph, which describes \"a chain\" of estimated numbers, primarily serves to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "explain why the uncertainty in the population figure accumulates rather than arising at one step."
+      },
+      {
+        "id": "B",
+        "text": "argue that the researchers have chosen an unnecessarily complicated method."
+      },
+      {
+        "id": "C",
+        "text": "establish that tagging studies are the weakest part of the procedure."
+      },
+      {
+        "id": "D",
+        "text": "introduce acoustics as the solution to the problems just described."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the paragraph walks through three separate assumptions, each carrying its own estimate, to show that the final figure inherits uncertainty from all of them.",
+      "B": "The previous paragraph argues the method is forced by arithmetic, not chosen carelessly.",
+      "C": "Tagging is one link among several and is not singled out as the weakest.",
+      "D": "Acoustics does not appear until two paragraphs later."
+    }
+  },
+  {
+    "id": "r083",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "hard",
+    "passage": "rp10",
+    "context": "Which choice best describes the function of the second paragraph in relation to the first?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "It answers an objection the first paragraph invites by showing the constraint is physical rather than human."
+      },
+      {
+        "id": "B",
+        "text": "It provides statistical detail supporting the figure of thirty animals."
+      },
+      {
+        "id": "C",
+        "text": "It introduces a disagreement among researchers about survey design."
+      },
+      {
+        "id": "D",
+        "text": "It narrows the passage's subject from all whales to a single population."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the first paragraph says the survey effort \"would embarrass a pollster,\" and the second replies \"This is not carelessness. It is arithmetic,\" then shows why exhaustive coverage is impossible.",
+      "B": "The second paragraph explains why counting fails; it offers no support for the specific figure.",
+      "C": "No disagreement between researchers is described anywhere in the passage.",
+      "D": "The first paragraph has already named the eastern population, so no narrowing occurs."
+    }
+  },
+  {
+    "id": "r084",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "rp10",
+    "context": "The passage is organized primarily as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a problem, the reasons it resists a direct solution, a partial advance, and what remains unresolved."
+      },
+      {
+        "id": "B",
+        "text": "a chronological history of whale surveys from the nineteenth century to the present."
+      },
+      {
+        "id": "C",
+        "text": "a comparison of two competing methods, ending in an endorsement of one."
+      },
+      {
+        "id": "D",
+        "text": "a case study of one survey voyage, generalized into a broader principle."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the passage opens on the unknown number, explains why direct counting is impossible, presents acoustics as a real but partial gain, and closes on what is still unknown.",
+      "B": "No history of past surveys is given; the time references are illustrative rather than sequential.",
+      "C": "Acoustics is presented as complementary and explicitly unable to count, so it is not endorsed over ship surveys.",
+      "D": "No individual voyage is described."
+    }
+  },
+  {
+    "id": "r085",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "medium",
+    "passage": "rp10",
+    "context": "The author's attitude toward the researchers' population estimate is best described as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "accepting of its usefulness while insisting on the limits of what it can claim."
+      },
+      {
+        "id": "B",
+        "text": "dismissive of a figure produced by inadequate fieldwork."
+      },
+      {
+        "id": "C",
+        "text": "confident that acoustic methods have now made it reliable."
+      },
+      {
+        "id": "D",
+        "text": "indifferent to a technical dispute with no practical stakes."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the author writes that \"None of this means the number is worthless\" and then insists it is \"a conclusion, not an observation.\"",
+      "B": "The author explicitly rejects the reading that the fieldwork was careless.",
+      "C": "Acoustics is said to establish where whales are, while counting \"remains unsolved for this species.\"",
+      "D": "The final sentence stresses that the stakes are enormous if the number is wrong."
+    }
+  },
+  {
+    "id": "r086",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "hard",
+    "passage": "rp10",
+    "context": "The phrase \"somewhere uncomfortable and honest\" conveys the author's view that the field has:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "gained real knowledge while becoming more candid about what it still cannot measure."
+      },
+      {
+        "id": "B",
+        "text": "reached an impasse that makes further research difficult to justify."
+      },
+      {
+        "id": "C",
+        "text": "allowed political pressure to distort what it reports publicly."
+      },
+      {
+        "id": "D",
+        "text": "abandoned ship surveys in favor of a method it does not fully trust."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the sentence that follows says the field knows more about where the whales are and not much more about how many, which is exactly a gain paired with an admitted limit.",
+      "B": "The passage describes acoustics as an advance, not a dead end.",
+      "C": "No political distortion of reported results is suggested; managers use the best available number openly.",
+      "D": "Nothing indicates ship surveys have been abandoned."
+    }
+  },
+  {
+    "id": "r087",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "medium",
+    "passage": "rp10",
+    "context": "The comparison of the survey effort to something that \"would embarrass a pollster\" is used to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "convey how small the sample is relative to the area it is meant to represent."
+      },
+      {
+        "id": "B",
+        "text": "suggest that whale researchers lack training in statistical sampling."
+      },
+      {
+        "id": "C",
+        "text": "imply that public opinion polling is a more rigorous discipline."
+      },
+      {
+        "id": "D",
+        "text": "criticize the funding agencies that limit time at sea."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the clause is immediately followed by the scale of the mismatch: a handful of ships and a few weeks against an ocean the size of a continent.",
+      "B": "The next paragraph attributes the limitation to arithmetic rather than to the researchers' skill.",
+      "C": "Polling is invoked as a familiar yardstick for sample size, not held up as superior.",
+      "D": "Funding is never mentioned in the passage."
+    }
+  },
+  {
+    "id": "r088",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "medium",
+    "passage": "rp10",
+    "context": "Which detail most directly supports the claim that exhaustive ship-based counting is impractical?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Covering the eastern North Pacific with one vessel would take roughly forty years."
+      },
+      {
+        "id": "B",
+        "text": "The most cited figure is around thirty animals."
+      },
+      {
+        "id": "C",
+        "text": "Right whales gather where their prey gathers."
+      },
+      {
+        "id": "D",
+        "text": "A moored recorder can listen for a year rather than a few weeks."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a survey that outlasts the population it measures is the passage's direct demonstration that the approach cannot work.",
+      "B": "The figure is the disputed output of the method, not evidence about its feasibility.",
+      "C": "Uneven distribution undermines an assumption in the reasoning, but it does not speak to how long a survey would take.",
+      "D": "This describes the advantage of the alternative method rather than the limits of the ship-based one."
+    }
+  },
+  {
+    "id": "r089",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "hard",
+    "passage": "rp10",
+    "context": "Which detail best supports the claim that acoustic monitoring has genuinely added to what researchers know?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Recorders have shown right whales present in parts of the Bering Sea in months no survey has covered."
+      },
+      {
+        "id": "B",
+        "text": "Right whales call, and recorders can operate in darkness and fog."
+      },
+      {
+        "id": "C",
+        "text": "A hundred calls may come from one talkative animal or from twenty quiet ones."
+      },
+      {
+        "id": "D",
+        "text": "A responsible estimate is published as a range spanning roughly a factor of three."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — this is a specific fact established by recorders that no previous method had produced.",
+      "B": "This explains why recorders are capable, which is a precondition for the finding rather than the finding itself.",
+      "C": "This states a limitation of acoustics, not a contribution.",
+      "D": "The published range describes the uncertainty of the ship-based estimate and predates the acoustic work."
+    }
+  },
+  {
+    "id": "r090",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "medium",
+    "passage": "rp10",
+    "context": "Which detail most directly supports the idea that the assumption about how whales distribute themselves is imperfect?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Whales gather where their prey gathers, and prey is not evenly distributed either."
+      },
+      {
+        "id": "B",
+        "text": "A whale must be at the surface in order to be seen."
+      },
+      {
+        "id": "C",
+        "text": "Detection rates are measured in conditions unlike those of an actual survey."
+      },
+      {
+        "id": "D",
+        "text": "Distinguishing individual whales by voice remains unsolved."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the passage names this as the reason the even-distribution assumption is \"false in detail.\"",
+      "B": "Surfacing time affects whether an animal is visible, a separate link in the chain.",
+      "C": "Detection rates concern the observer's reliability, not how whales are spread across the ocean.",
+      "D": "This is a limitation of acoustics and unrelated to the distribution assumption."
+    }
+  },
+  {
+    "id": "r091",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "medium",
+    "passage": "rp11",
+    "context": "In describing the cabinets as \"a museum with no curator,\" the narrator most nearly means that the contents were:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "carefully preserved by someone who was no longer there to explain them"
+      },
+      {
+        "id": "B",
+        "text": "valuable enough that a museum would have wanted to acquire them"
+      },
+      {
+        "id": "C",
+        "text": "neglected for years and left in disorder"
+      },
+      {
+        "id": "D",
+        "text": "arranged deliberately for visitors to walk through and admire"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the museum half of the comparison captures the deliberate order the narrator finds, while the missing curator captures the absence of the one person who could say what any of it meant.",
+      "B": "The comparison is about how the objects were kept, not what they were worth; nothing suggests the flour tins and buttons had market value.",
+      "C": "This ignores the museum half entirely. The narrator finds flour in labeled tins and buttons sorted by color, which is the opposite of disorder.",
+      "D": "Perpetua lived alone and kept the cabinets for herself. The comparison points to preservation, not display."
+    }
+  },
+  {
+    "id": "r092",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "medium",
+    "passage": "rp11",
+    "context": "The narrator's comparison of the house to a shell, \"the way a shell is a container for whatever lives inside it,\" functions in the passage to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "state a belief the narrator goes on to reverse"
+      },
+      {
+        "id": "B",
+        "text": "explain why the house was built the way it was"
+      },
+      {
+        "id": "C",
+        "text": "emphasize how fragile the old house had become"
+      },
+      {
+        "id": "D",
+        "text": "suggest that Perpetua felt trapped in the house"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the narrator introduces the shell comparison as what she \"had believed\" and immediately says she had it backward: Perpetua was keeping the house, not being kept by it.",
+      "B": "The comparison describes a relationship between person and house, not architecture or construction.",
+      "C": "Shells can suggest fragility, but the narrator uses this one for the idea of containing, and the house in this passage is anything but delicate.",
+      "D": "The passage reverses the containment idea rather than developing it into confinement; Perpetua is shown as the active keeper."
+    }
+  },
+  {
+    "id": "r093",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "hard",
+    "passage": "rp11",
+    "context": "The phrase \"that thin, upright script that leaned into the wind of the page\" characterizes Perpetua's handwriting as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "narrow and slanted, as though pressing forward against resistance"
+      },
+      {
+        "id": "B",
+        "text": "faded by age to the point of near illegibility"
+      },
+      {
+        "id": "C",
+        "text": "hurried and careless, made without attention"
+      },
+      {
+        "id": "D",
+        "text": "unusually large and looping across the paper"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — thin and upright describe the letters themselves, and leaning into a wind supplies the slant along with a sense of effort directed against something.",
+      "B": "Nothing in the description concerns fading or legibility; the narrator reads the labels without difficulty.",
+      "C": "Labeled tins and sorted buttons establish care, and an upright script leaning deliberately is not a careless one.",
+      "D": "Thin and upright are the opposite of large and looping."
+    }
+  },
+  {
+    "id": "r094",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "medium",
+    "passage": "rp11",
+    "context": "The narrator compares the six wooden spoons to \"a set of parentheses waiting for something to enclose\" primarily to convey that the spoons:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "share a matching curve that now surrounds nothing"
+      },
+      {
+        "id": "B",
+        "text": "were kept as a complete set and never separated"
+      },
+      {
+        "id": "C",
+        "text": "had been damaged in a way that made them unusable"
+      },
+      {
+        "id": "D",
+        "text": "were arranged in pairs rather than as a group of six"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the spoons are all worn on one side and curved the same direction, and parentheses that enclose nothing carry the sense of something absent, which the closing paragraph confirms when they sit in a drawer \"still waiting.\"",
+      "B": "That the set is complete is stated plainly elsewhere; the comparison is doing the work of shape and absence, not of completeness.",
+      "C": "The wear is evidence of long use, and the narrator keeps and stores them, so usability is not the point.",
+      "D": "Parentheses come in pairs, but the narrator describes all six laid side by side, not sorted into pairs."
+    }
+  },
+  {
+    "id": "r095",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "medium",
+    "passage": "rp11",
+    "context": "By describing her mother's reaction as \"a small exhale that in our family does the work of an entire paragraph,\" the narrator suggests that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a wordless sound communicates a great deal among people who know each other well"
+      },
+      {
+        "id": "B",
+        "text": "her mother had been rehearsing a long speech about the house"
+      },
+      {
+        "id": "C",
+        "text": "her mother was too out of breath from other work to say much"
+      },
+      {
+        "id": "D",
+        "text": "the family prefers writing to speaking when a subject is difficult"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the sound is small, the narrator recognizes it immediately, and its stated effect is that of a paragraph, so brevity is carrying a large amount of shared meaning.",
+      "B": "Her mother's actual words are two short remarks; nothing suggests a prepared speech.",
+      "C": "An exhale here is an expressive sound, not a sign of physical exertion, and the phone call gives no hint of either.",
+      "D": "The comparison to a paragraph is a measure of how much is conveyed, not a claim about a preference for writing."
+    }
+  },
+  {
+    "id": "r096",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "hard",
+    "passage": "rp11",
+    "context": "The statement that \"Perpetua's English arrived late and never fully unpacked\" treats her language as though it were:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a traveler who came to stay but never quite settled in"
+      },
+      {
+        "id": "B",
+        "text": "a skill she abandoned before completing it"
+      },
+      {
+        "id": "C",
+        "text": "a possession she deliberately kept hidden from her family"
+      },
+      {
+        "id": "D",
+        "text": "a burden she was forced to carry against her will"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — arriving and unpacking belong to someone who travels to a new place, and the sentence goes on to describe sentences that \"took the long way around,\" extending the same idea.",
+      "B": "She used English daily in speech and writing, so the comparison is about how it settled rather than whether she stopped learning.",
+      "C": "Nothing suggests concealment; the narrator reads her labels and recipe cards freely.",
+      "D": "Unpacking implies arrival and settling, not compulsion, and the passage treats her English with affection rather than resentment."
+    }
+  },
+  {
+    "id": "r097",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "medium",
+    "passage": "rp11",
+    "context": "The narrator describes the evening light as moving \"the way water finds the low places\" in order to emphasize the light's:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "slow, unhurried spread across the room"
+      },
+      {
+        "id": "B",
+        "text": "unusual coldness at the end of the day"
+      },
+      {
+        "id": "C",
+        "text": "tendency to damage the old floorboards"
+      },
+      {
+        "id": "D",
+        "text": "sudden appearance after a long absence"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the sentence already says the light came across the floorboards slowly, and water settling into low ground is a gradual, inevitable motion that reinforces it.",
+      "B": "The comparison is to how water moves, not to how water feels; temperature is not at issue.",
+      "C": "Water can damage floors, but the point of comparison here is the manner of the movement, and nothing in the passage reports damage.",
+      "D": "Finding the low places is a gradual process, the opposite of a sudden arrival."
+    }
+  },
+  {
+    "id": "r098",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "hard",
+    "passage": "rp11",
+    "context": "The assertion that \"an empty house is heavier than a full one\" is best understood as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a deliberate paradox in which weight stands for emotional difficulty"
+      },
+      {
+        "id": "B",
+        "text": "a literal observation about how sound carries in a bare room"
+      },
+      {
+        "id": "C",
+        "text": "an exaggeration the narrator immediately admits is untrue"
+      },
+      {
+        "id": "D",
+        "text": "a practical warning about the labor of moving furniture"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the claim contradicts ordinary sense, and the sentences that follow relocate the weight to \"somewhere harder to carry,\" which makes the burden felt rather than physical.",
+      "B": "Acoustics never come up, and the narrator ties the heaviness to what packing removes, not to what a bare room sounds like.",
+      "C": "She does not retract it; she elaborates on it, saying the three-quarters-boxed kitchen pressed on her more than before.",
+      "D": "The labor of packing is real in the passage, but the narrator's point is that the room grew heavier as it emptied, which no amount of lifting explains."
+    }
+  },
+  {
+    "id": "r099",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "medium",
+    "passage": "rp11",
+    "context": "The passage's closing image, in which the narrator hears the third stair \"clearing its throat,\" achieves its effect by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "returning to the house's voice from the opening paragraph and treating it as still speaking"
+      },
+      {
+        "id": "B",
+        "text": "revealing that the narrator has moved back into her grandmother's house"
+      },
+      {
+        "id": "C",
+        "text": "suggesting that the narrator has begun to doubt her own memory"
+      },
+      {
+        "id": "D",
+        "text": "introducing a new character who has been listening from the stairs"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the opening gives the house creaks, drafts, and a groan from the third stair, and the ending gives that same stair a throat to clear, so the house is still addressing her from forty miles away.",
+      "B": "She says the spoons are in a drawer in her own kitchen and the stair is forty miles off, so she has not returned.",
+      "C": "The image is presented as something she hears rather than something she questions, and nothing casts doubt on her recollection.",
+      "D": "No person is introduced; the sound belongs to the stair, which the passage has treated as part of the house's voice from the first paragraph."
+    }
+  },
+  {
+    "id": "r100",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "medium",
+    "passage": "rp1",
+    "context": "Nadia's reaction to her brother's age is compared to being startled \"the way you are startled by your own voice on a recording\" in order to suggest that she finds the fact:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "familiar and strange at the same time, because it concerns her as much as him"
+      },
+      {
+        "id": "B",
+        "text": "embarrassing to admit to anyone outside the family"
+      },
+      {
+        "id": "C",
+        "text": "impossible to believe without seeing documentation"
+      },
+      {
+        "id": "D",
+        "text": "less important than the other changes she has been through"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a recorded voice is unmistakably your own and still sounds wrong, and Amir turning forty-four means Nadia is aging too, so the comparison folds her into the surprise.",
+      "B": "The comparison concerns a private jolt of recognition, and nothing in the scene suggests she is worried about outside opinion.",
+      "C": "The narrator says she keeps forgetting and being startled, not that she doubts the fact.",
+      "D": "The passage lists her own changes separately; this comparison is about the shock itself, not about ranking it below anything."
+    }
+  },
+  {
+    "id": "r101",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "hard",
+    "passage": "rp1",
+    "context": "In writing that the clove cigarettes their father quit in 1998 left a smell \"whose ghost had never left the front room,\" the narrator conveys that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a trace of him persists in the house long after the habit ended"
+      },
+      {
+        "id": "B",
+        "text": "the family believes the house is genuinely haunted"
+      },
+      {
+        "id": "C",
+        "text": "their father continued smoking in secret for years afterward"
+      },
+      {
+        "id": "D",
+        "text": "the front room has been sealed off and left unused"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — calling the lingering smell a ghost makes it a remnant that outlasts its source, which fits a habit abandoned decades earlier and still faintly detectable.",
+      "B": "The word is figurative; the passage treats the smell as a physical trace, and no character suggests a haunting.",
+      "C": "The passage gives 1998 as the year he quit and offers nothing to undercut it.",
+      "D": "Nadia stands in the entryway and the room is part of the house they are sorting, so it is not sealed off."
+    }
+  },
+  {
+    "id": "r102",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "medium",
+    "passage": "rp1",
+    "context": "The narrator writes that \"The arithmetic of it had never balanced\" to describe the relationship between Nadia and Amir. This figure of speech emphasizes that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the two siblings contributed to their father unequally, and both knew it"
+      },
+      {
+        "id": "B",
+        "text": "the siblings disagreed about how much the house was worth"
+      },
+      {
+        "id": "C",
+        "text": "Nadia had sent less money than she had promised to send"
+      },
+      {
+        "id": "D",
+        "text": "their father had divided his property unfairly between them"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the sentence follows a list of what Amir did over eleven years against what Nadia did, and the accounting image names the imbalance they both recognized and never discussed.",
+      "B": "Valuation never comes up; the imbalance described is one of time and presence.",
+      "C": "The passage says she sent money and called on birthdays without suggesting she fell short of a promise.",
+      "D": "The figure describes what the siblings gave, not what their father left behind."
+    }
+  },
+  {
+    "id": "r103",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "hard",
+    "passage": "rp1",
+    "context": "The maple in the side yard, remembered as \"a stick of a thing tied to a stake\" and now tall enough to shade the house, most likely functions as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a measure of how much time has passed since the family arrived"
+      },
+      {
+        "id": "B",
+        "text": "evidence that the property has been poorly maintained"
+      },
+      {
+        "id": "C",
+        "text": "a sign that Nadia intends to sell the house quickly"
+      },
+      {
+        "id": "D",
+        "text": "a reminder of an argument the siblings had as children"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Nadia remembers it being planted the spring after they arrived, so its growth from a staked stick to full shade marks the same span the photograph and her father's 1971 arrival establish.",
+      "B": "A tree that has grown tall enough to shade a wall is a sign of years passing, not of neglect.",
+      "C": "Her plans for the house are left unresolved, and the tree is tied to memory rather than to any decision.",
+      "D": "No argument involving the tree is mentioned; what she recalls is its planting."
+    }
+  },
+  {
+    "id": "r104",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "medium",
+    "passage": "rp5",
+    "context": "The narrator describes the bakery's finances as \"a slow leak she had mistaken for a business.\" This comparison is used to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "capture the harshness of the judgment the narrator made at nineteen"
+      },
+      {
+        "id": "B",
+        "text": "explain a physical problem with the bakery building"
+      },
+      {
+        "id": "C",
+        "text": "show that Mr. Callan shared the narrator's view of the loan"
+      },
+      {
+        "id": "D",
+        "text": "present the mother's own assessment of what she was doing"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the phrase comes from the speech the narrator delivered in the car at nineteen while having opinions, and the rest of the passage is spent revising it.",
+      "B": "The leak is figurative, standing for money steadily lost; no damage to the building is mentioned.",
+      "C": "Mr. Callan grants the loan every year and speaks of what the town needs, so he does not treat it as a mistake.",
+      "D": "The mother answers that she is not arguing with the arithmetic but also counting other things, which is a different assessment from the narrator's."
+    }
+  },
+  {
+    "id": "r105",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "hard",
+    "passage": "rp5",
+    "context": "Mr. Callan says the town needs \"somewhere that smells like something in February.\" He uses this phrasing to identify the bakery as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a source of ordinary comfort during the emptiest part of the year"
+      },
+      {
+        "id": "B",
+        "text": "the only building in town with working heat in winter"
+      },
+      {
+        "id": "C",
+        "text": "a business that could attract tourists earlier in the season"
+      },
+      {
+        "id": "D",
+        "text": "a place whose ventilation problems the town had long tolerated"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — February falls in the months the passage describes as emptied of everyone but the crews and the eleven families, and naming a smell rather than a product makes the bakery a comfort rather than a transaction.",
+      "B": "He speaks of smell, not warmth, and no comparison between buildings is made.",
+      "C": "His remark is about the off-season itself; the passage treats summer tourists as a separate matter the loan cannot fix.",
+      "D": "The smell he names is the appeal of the place, not a defect."
+    }
+  },
+  {
+    "id": "r106",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "medium",
+    "passage": "rp5",
+    "context": "The narrator writes that on the drive home his mother \"let me sit with it for about ten miles.\" Measuring the pause this way primarily conveys:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "that she allowed a long silence to pass before responding"
+      },
+      {
+        "id": "B",
+        "text": "that the two of them were lost and driving without direction"
+      },
+      {
+        "id": "C",
+        "text": "that she was concentrating too hard on the road to speak"
+      },
+      {
+        "id": "D",
+        "text": "that the argument continued for most of the drive"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the drive is forty minutes each way, so ten miles of it is a substantial stretch, and giving the silence a distance rather than a duration stresses how long she let it run.",
+      "B": "The route is a familiar annual one between Wexford and home, and no confusion about direction is suggested.",
+      "C": "The passage attributes the silence to her deliberate choice, introduced by her letting him sit with it.",
+      "D": "The narrator had already finished speaking before this pause; what fills the ten miles is silence, not argument."
+    }
   }
 ]

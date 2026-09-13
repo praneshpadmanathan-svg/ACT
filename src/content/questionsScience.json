@@ -2638,5 +2638,4856 @@
       "C": "Neither disputes the roughly 1,200-year duration.",
       "D": "Only Scientist 1 raises hemispheric asymmetry, and Scientist 2 does not contest it."
     }
+  },
+  {
+    "id": "p36-sci-compare-figures-0001",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "p36-sci-drill-dye-fading-0001",
+    "context": "According to Figure 1, the absorbance of the sample exposed at 800 lux first fell below 0.20 between:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0 and 15 min"
+      },
+      {
+        "id": "B",
+        "text": "15 and 30 min"
+      },
+      {
+        "id": "C",
+        "text": "30 and 45 min"
+      },
+      {
+        "id": "D",
+        "text": "45 and 60 min"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "On the 800 lux curve the reading at 30 minutes is 0.31, which is above 0.20, and the reading at 45 minutes is 0.17, which is below it. The crossing therefore happens between 30 and 45 minutes.",
+      "A": "Covers the steepest part of the curve, but absorbance is still 0.55 at 15 minutes.",
+      "B": "Ends at 0.31, which has not yet fallen below the threshold.",
+      "D": "Begins at 0.17, by which point the curve has already crossed."
+    }
+  },
+  {
+    "id": "p36-sci-design-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "p36-sci-drill-dye-fading-0001",
+    "context": "All samples in both studies were held at 22 degrees C in a water bath. The most likely reason for this choice was to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "ensure that any difference in fading could be attributed to light intensity rather than to temperature."
+      },
+      {
+        "id": "B",
+        "text": "raise the temperature enough that the dye would break down within one hour."
+      },
+      {
+        "id": "C",
+        "text": "keep the dye from dissolving further during the exposure."
+      },
+      {
+        "id": "D",
+        "text": "allow absorbance to be measured without removing the sample from the bath."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Light intensity is the variable being changed between samples. Holding temperature constant removes it as an explanation for any difference in absorbance, which is what makes the comparison between samples meaningful.",
+      "B": "Treats a controlled variable as if it were the cause under study, and 22 degrees C is close to room temperature rather than elevated.",
+      "C": "Describes an effect on dissolving that the passage never raises; the dye is already in solution.",
+      "D": "Describes a convenience of the apparatus, not a reason to fix the temperature at a particular value."
+    }
+  },
+  {
+    "id": "p36-sci-emi-inference-d2-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "p36-sci-frog-decline-0001",
+    "context": "Based on Biologist 2's hypothesis, which frogs would be expected to show the least impact from the decline?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Frogs living in ponds farthest from the streams that drain the farmland."
+      },
+      {
+        "id": "B",
+        "text": "Frogs living in ponds closest to the streams that drain the farmland."
+      },
+      {
+        "id": "C",
+        "text": "Frogs living in ponds stocked with the invasive fish."
+      },
+      {
+        "id": "D",
+        "text": "Frogs that have already been exposed to the fungus."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Biologist 2's hypothesis predicts reproductive success is lowest closest to the farmland drainage streams, so frogs farthest from those streams should be least affected.",
+      "B": "Biologist 2's hypothesis predicts the opposite: reproductive success should be lowest closest to those streams",
+      "C": "this describes a prediction of Biologist 3's hypothesis, not Biologist 2's",
+      "D": "this describes a prediction of Biologist 1's hypothesis, not Biologist 2's"
+    }
+  },
+  {
+    "id": "p36-sci-emi-inference-d3-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "p36-sci-desert-varnish-0001",
+    "context": "Based on Geologist 3's hypothesis, rock outcrops located far apart but within the same regional dust source would most likely have varnish that is—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "chemically similar only if the rocks underneath are also the same type."
+      },
+      {
+        "id": "B",
+        "text": "chemically unique to each individual outcrop."
+      },
+      {
+        "id": "C",
+        "text": "entirely free of iron and manganese."
+      },
+      {
+        "id": "D",
+        "text": "chemically similar to each other, regardless of the type of rock underneath."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "Because Geologist 3 attributes varnish minerals to a shared regional dust source rather than to the underlying rock, outcrops sharing that dust source should have chemically similar varnish regardless of rock type.",
+      "A": "Geologist 3's hypothesis ties varnish composition to the shared dust source, not to the underlying rock type",
+      "B": "this contradicts Geologist 3's claim that a shared regional dust source should produce similar varnish",
+      "C": "Geologist 3's hypothesis explains how iron and manganese arrive in the varnish, not their absence"
+    }
+  },
+  {
+    "id": "p36-sci-emi-inference-d3-0002",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "p36-sci-frog-decline-0001",
+    "context": "Based on Biologist 3's hypothesis, a pond within Cedar Hollow that has never been stocked with the invasive fish should have-",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a frog population as sparse as the rest of Cedar Hollow."
+      },
+      {
+        "id": "B",
+        "text": "no frogs at all, regardless of fish presence."
+      },
+      {
+        "id": "C",
+        "text": "a frog population that depends on fungal presence instead."
+      },
+      {
+        "id": "D",
+        "text": "a relatively dense frog population, similar to levels before the regional decline began."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "Biologist 3 explicitly notes that fish-free ponds within the wetland still support relatively dense frog populations, consistent with a hypothesis that ties scarcity to the invasive fish's presence.",
+      "A": "this contradicts Biologist 3's own observation about fish-free ponds within the wetland",
+      "B": "Biologist 3's hypothesis ties frog scarcity specifically to the presence of the invasive fish",
+      "C": "this describes Biologist 1's hypothesis, not Biologist 3's"
+    }
+  },
+  {
+    "id": "p36-sci-emi-inference-d4-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "p36-sci-desert-varnish-0001",
+    "context": "Suppose two rock outcrops of identical mineral composition are found in two different regions with very different local dust compositions. If Geologist 1's hypothesis alone were correct, the varnish on the two outcrops should be—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "chemically similar to each other, since both would be governed by the same rock composition rather than by regional dust."
+      },
+      {
+        "id": "B",
+        "text": "chemically different, reflecting the different regional dust in each area."
+      },
+      {
+        "id": "C",
+        "text": "entirely absent from both outcrops."
+      },
+      {
+        "id": "D",
+        "text": "present on only one of the two outcrops."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Under Geologist 1's hypothesis alone, varnish composition is governed by the rock's own mineral makeup. Since both outcrops share identical rock composition, their varnish should be chemically similar despite the different regional dust.",
+      "B": "this describes a prediction of Geologist 3's dust-based hypothesis, not Geologist 1's rock-based hypothesis",
+      "C": "Geologist 1's hypothesis explains how varnish forms on rock containing trace minerals, not its absence",
+      "D": "nothing in Geologist 1's hypothesis distinguishes between two outcrops of identical rock composition"
+    }
+  },
+  {
+    "id": "p36-sci-emi-model-comparison-d2-0001",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "p36-sci-desert-varnish-0001",
+    "context": "All three geologists would most likely agree that desert varnish is composed primarily of—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "calcium carbonate."
+      },
+      {
+        "id": "B",
+        "text": "silica and quartz fragments."
+      },
+      {
+        "id": "C",
+        "text": "iron and manganese oxides."
+      },
+      {
+        "id": "D",
+        "text": "organic plant material."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "The passage's introduction, which precedes and applies to all three geologists' hypotheses, identifies desert varnish as a coating of iron and manganese oxides.",
+      "A": "not identified as a component of the varnish anywhere in the passage",
+      "B": "not identified as a component of the varnish anywhere in the passage",
+      "D": "not identified as a component of the varnish anywhere in the passage"
+    }
+  },
+  {
+    "id": "p36-sci-emi-model-comparison-d2-0002",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "p36-sci-frog-decline-0001",
+    "context": "All three biologists would most likely agree that the decline of the blue-spotted tree frog in Cedar Hollow is-",
+    "choices": [
+      {
+        "id": "A",
+        "text": "linked to a specific, identifiable cause rather than to random chance."
+      },
+      {
+        "id": "B",
+        "text": "caused primarily by a fungal skin infection."
+      },
+      {
+        "id": "C",
+        "text": "caused primarily by agricultural pesticide runoff."
+      },
+      {
+        "id": "D",
+        "text": "caused primarily by an invasive predator."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Each biologist proposes a distinct but specific, identifiable mechanism for the decline; none attributes it to unexplained or random variation.",
+      "B": "this is only Biologist 1's specific explanation, not one shared by all three",
+      "C": "this is only Biologist 2's specific explanation, not one shared by all three",
+      "D": "this is only Biologist 3's specific explanation, not one shared by all three"
+    }
+  },
+  {
+    "id": "p36-sci-emi-model-comparison-d3-0001",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "p36-sci-desert-varnish-0001",
+    "context": "Which of the following is a prediction shared by all three geologists' hypotheses?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Varnish composition always matches the composition of the rock beneath it."
+      },
+      {
+        "id": "B",
+        "text": "Living organisms are required for the varnish to form."
+      },
+      {
+        "id": "C",
+        "text": "The varnish's minerals always originate from outside the rock."
+      },
+      {
+        "id": "D",
+        "text": "Desert varnish accumulates gradually over a long period of time rather than forming quickly."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "All three mechanisms described - slow leaching cycles, gradual bacterial buildup, and continuous dust accumulation - describe a slow, long-term process, consistent with the passage's opening statement that varnish can take centuries to form.",
+      "A": "this prediction follows only from Geologist 1's hypothesis, not from Geologist 2's or Geologist 3's",
+      "B": "this prediction follows only from Geologist 2's hypothesis, not from Geologist 1's or Geologist 3's",
+      "C": "this prediction follows from Geologist 2's and Geologist 3's hypotheses but contradicts Geologist 1's"
+    }
+  },
+  {
+    "id": "p36-sci-emi-model-comparison-d4-0001",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "p36-sci-frog-decline-0001",
+    "context": "Which of the following, if true, would be equally consistent with the hypotheses of all three biologists?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Frogs are absent from every pond stocked with the invasive fish."
+      },
+      {
+        "id": "B",
+        "text": "The wetland's frog population was significantly larger 20 years ago than it is today."
+      },
+      {
+        "id": "C",
+        "text": "The fungus has been detected at every site sampled in the wetland."
+      },
+      {
+        "id": "D",
+        "text": "Reproductive success is lowest closest to the farmland drainage streams."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "All three biologists are trying to explain the same underlying fact - that the population has fallen substantially over time - so that fact itself is equally consistent with, and does not favor, any one of their three specific hypotheses.",
+      "A": "this specifically supports Biologist 3's hypothesis over the other two",
+      "C": "this specifically supports Biologist 1's hypothesis over the other two",
+      "D": "this specifically supports Biologist 2's hypothesis over the other two"
+    }
+  },
+  {
+    "id": "p36-sci-emi-outside-knowledge-d2-0001",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "p36-sci-desert-varnish-0001",
+    "context": "Geologist 2's hypothesis depends on bacteria that gain usable energy by chemically oxidizing manganese. This kind of energy-yielding chemical reaction is most similar to—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the reaction plants use to convert sunlight into chemical energy."
+      },
+      {
+        "id": "B",
+        "text": "the reaction certain other bacteria use to oxidize iron or sulfur compounds for energy in different environments."
+      },
+      {
+        "id": "C",
+        "text": "the reaction animals use to break down sugar using oxygen for energy."
+      },
+      {
+        "id": "D",
+        "text": "the physical process of water freezing into ice."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "Bacteria that gain energy by oxidizing inorganic compounds like iron or sulfur use the same general kind of chemical process Geologist 2 describes for manganese - extracting usable energy from oxidizing a chemical compound rather than from light or from digesting sugar.",
+      "A": "that reaction is driven by light rather than by oxidizing a chemical compound",
+      "C": "that reaction uses a different starting material and does not involve oxidizing a metal",
+      "D": "freezing is a physical change of state, not a chemical, energy-yielding reaction"
+    }
+  },
+  {
+    "id": "p36-sci-emi-outside-knowledge-d3-0001",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "p36-sci-frog-decline-0001",
+    "context": "Biologist 2's hypothesis proposes that the pesticide interferes with the frogs' hormone systems. A chemical that disrupts normal hormone signaling in an animal's body is generally known as-",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a photosynthetic pigment."
+      },
+      {
+        "id": "B",
+        "text": "an enzyme cofactor."
+      },
+      {
+        "id": "C",
+        "text": "a structural protein."
+      },
+      {
+        "id": "D",
+        "text": "an endocrine disruptor."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "A chemical that interferes with an animal's hormone signaling is classified as an endocrine disruptor, which is the general term for the kind of substance Biologist 2 describes.",
+      "A": "pigments used in photosynthesis are unrelated to hormone signaling and occur in plants, not animals",
+      "B": "a cofactor assists an enzyme's normal function rather than disrupting hormone signaling",
+      "C": "a structural protein provides physical support in cells and tissues rather than signaling"
+    }
+  },
+  {
+    "id": "p36-sci-emi-support-weaken-d2-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "p36-sci-frog-decline-0001",
+    "context": "Finding that frog populations in wetlands downstream of the same farms, but well outside the pesticide's typical travel range, declined just as sharply as Cedar Hollow's population would most directly weaken the hypothesis of-",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Biologist 1"
+      },
+      {
+        "id": "B",
+        "text": "Biologist 3"
+      },
+      {
+        "id": "C",
+        "text": "none of the biologists"
+      },
+      {
+        "id": "D",
+        "text": "Biologist 2"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "Biologist 2's hypothesis predicts less decline farther from the pesticide's reach; a similarly sharp decline well outside that range contradicts that specific prediction.",
+      "A": "this finding does not involve the fungus or its spread in any way",
+      "B": "this finding does not involve the invasive fish or its presence in any way",
+      "C": "this finding specifically undercuts the pesticide-exposure mechanism Biologist 2 proposes"
+    }
+  },
+  {
+    "id": "p36-sci-emi-support-weaken-d3-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "p36-sci-desert-varnish-0001",
+    "context": "The discovery of DNA from manganese-oxidizing bacteria embedded within the varnish layer of several rock samples would most directly support the hypothesis of—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Geologist 2"
+      },
+      {
+        "id": "B",
+        "text": "Geologist 1"
+      },
+      {
+        "id": "C",
+        "text": "Geologist 3"
+      },
+      {
+        "id": "D",
+        "text": "none of the geologists"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Geologist 2's hypothesis specifically proposes that manganese-oxidizing bacteria are responsible for the coating, so finding their DNA within the varnish would directly support that view.",
+      "B": "Geologist 1's hypothesis describes a purely chemical process and does not involve living organisms at all",
+      "C": "Geologist 3's hypothesis describes dust cemented by moisture, not a biological process",
+      "D": "this finding directly matches the biological mechanism Geologist 2 specifically proposes"
+    }
+  },
+  {
+    "id": "p36-sci-emi-support-weaken-d3-0002",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "p36-sci-desert-varnish-0001",
+    "context": "Finding that desert varnish forms at measurably different rates on rocks of different mineral composition within the same regional dust environment would most directly support the hypothesis of—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Geologist 2"
+      },
+      {
+        "id": "B",
+        "text": "Geologist 3"
+      },
+      {
+        "id": "C",
+        "text": "Geologist 1"
+      },
+      {
+        "id": "D",
+        "text": "none of the geologists"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "Only Geologist 1's hypothesis ties the varnish directly to the composition of the rock itself, so a formation rate that varies with rock composition, even under identical regional dust conditions, would support that specific claim.",
+      "A": "Geologist 2's hypothesis ties varnish formation to bacterial colonization rather than to the rock's own mineral composition",
+      "B": "Geologist 3's hypothesis predicts varnish should depend on the shared regional dust source, not on differences between individual rocks",
+      "D": "this finding specifically matches Geologist 1's claim that the rock's own composition governs the coating"
+    }
+  },
+  {
+    "id": "p36-sci-emi-support-weaken-d4-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "p36-sci-desert-varnish-0001",
+    "context": "Chemical analysis showing that a set of rocks' varnish matches the trace-mineral ratios of local windblown dust, but does not match the trace-mineral ratios of the rocks themselves, would most directly weaken the hypothesis of—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Geologist 2"
+      },
+      {
+        "id": "B",
+        "text": "Geologist 1"
+      },
+      {
+        "id": "C",
+        "text": "Geologist 3"
+      },
+      {
+        "id": "D",
+        "text": "all three geologists equally"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "Geologist 1's hypothesis predicts the varnish should match the rock's own mineral makeup. A mismatch with the rock, paired with a match to regional dust, directly contradicts that specific prediction.",
+      "A": "this finding is consistent with an external mineral source, which Geologist 2's hypothesis already proposes",
+      "C": "this finding directly matches what Geologist 3's hypothesis predicts, so it supports rather than weakens that view",
+      "D": "the finding specifically contradicts a claim made only by Geologist 1, not by all three"
+    }
+  },
+  {
+    "id": "p36-sci-emi-support-weaken-d5-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "p36-sci-frog-decline-0001",
+    "context": "Suppose researchers remove the invasive fish from every pond in Cedar Hollow, and over the following five years frog populations recover to their levels from 20 years ago, even though the fungus remains widespread in the wetland and pesticide use upstream continues unchanged. This outcome would most directly support the hypothesis of-",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Biologist 1"
+      },
+      {
+        "id": "B",
+        "text": "Biologist 2"
+      },
+      {
+        "id": "C",
+        "text": "Biologist 3"
+      },
+      {
+        "id": "D",
+        "text": "none of the biologists"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "Recovery follows fish removal specifically, while the factors central to the other two hypotheses (fungus, pesticide) remain unchanged, so this outcome most directly supports Biologist 3's hypothesis.",
+      "A": "recovery occurs even though the fungus remains widespread, which does not fit Biologist 1's hypothesis",
+      "B": "recovery occurs even though pesticide use continues unchanged, which does not fit Biologist 2's hypothesis",
+      "D": "recovery tracks the one variable that did change, fish removal, which is exactly what Biologist 3's hypothesis predicts"
+    }
+  },
+  {
+    "id": "p36-sci-emi-viewpoint-consistency-d1-0001",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "p36-sci-frog-decline-0001",
+    "context": "Which biologist attributes the frog decline primarily to an infectious disease?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Biologist 2"
+      },
+      {
+        "id": "B",
+        "text": "Biologist 3"
+      },
+      {
+        "id": "C",
+        "text": "None of the biologists"
+      },
+      {
+        "id": "D",
+        "text": "Biologist 1"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "Biologist 1's hypothesis centers on a fungal skin infection spreading through the frog population.",
+      "A": "Biologist 2's hypothesis centers on pesticide runoff, not infectious disease",
+      "B": "Biologist 3's hypothesis centers on an invasive predator, not infectious disease",
+      "C": "Biologist 1 specifically attributes the decline to a fungal skin infection"
+    }
+  },
+  {
+    "id": "p36-sci-emi-viewpoint-consistency-d2-0001",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "p36-sci-desert-varnish-0001",
+    "context": "Which geologist(s) would most likely predict that desert varnish could form on a rock made of pure quartz, a mineral that contains no iron or manganese of its own?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Geologist 1 only"
+      },
+      {
+        "id": "B",
+        "text": "Geologist 1 and Geologist 2 only"
+      },
+      {
+        "id": "C",
+        "text": "Geologist 2 and Geologist 3 only"
+      },
+      {
+        "id": "D",
+        "text": "Geologist 1, Geologist 2, and Geologist 3"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "Geologists 2 and 3 both propose external mineral sources (bacteria absorbing dust-carried metals, or dust itself), so both would predict varnish could form on a rock with no iron or manganese of its own. Geologist 1's hypothesis specifically requires minerals from the rock's own interior.",
+      "A": "Geologist 1's hypothesis specifically requires minerals from within the rock itself, so a mineral-free rock like quartz would prevent varnish from forming under this view",
+      "B": "Geologist 1's hypothesis is excluded, since it depends on minerals already present in the rock",
+      "D": "Geologist 1's hypothesis is excluded, since it depends on minerals already present in the rock"
+    }
+  },
+  {
+    "id": "p36-sci-emi-viewpoint-consistency-d3-0001",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "p36-sci-desert-varnish-0001",
+    "context": "Geologist 1's hypothesis differs from both Geologist 2's and Geologist 3's primarily in that only Geologist 1 proposes that—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "desert varnish takes centuries to form."
+      },
+      {
+        "id": "B",
+        "text": "the varnish darkens in color the longer it is exposed."
+      },
+      {
+        "id": "C",
+        "text": "living organisms play no role in forming any desert coating anywhere."
+      },
+      {
+        "id": "D",
+        "text": "the minerals in the varnish originate from inside the rock rather than from an external source."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "Geologist 1 alone proposes an internal mineral source, migrating outward from the rock; Geologists 2 and 3 both propose external sources - bacteria-processed dust and directly deposited dust, respectively.",
+      "A": "this general timescale is stated in the passage's introduction and is not specific to any one geologist's hypothesis",
+      "B": "this is also a general observation from the introduction, not a claim distinguishing the three hypotheses",
+      "C": "Geologist 1's hypothesis makes a claim about this specific coating's chemical origin, not a general claim ruling out biology everywhere"
+    }
+  },
+  {
+    "id": "p36-sci-emi-viewpoint-consistency-d3-0002",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "p36-sci-frog-decline-0001",
+    "context": "Biologist 1's and Biologist 3's hypotheses differ from Biologist 2's primarily in that only Biologist 2 proposes a mechanism involving-",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a factor whose effects vary from pond to pond within Cedar Hollow."
+      },
+      {
+        "id": "B",
+        "text": "a chemical that interferes with reproduction rather than directly killing frogs or their eggs."
+      },
+      {
+        "id": "C",
+        "text": "a cause that arrived in Cedar Hollow within the last 20 years."
+      },
+      {
+        "id": "D",
+        "text": "a decline that researchers agree has actually occurred."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "Biologist 2 alone proposes a chemical mechanism that reduces reproductive success without necessarily killing frogs outright; Biologist 1 describes a fatal infection and Biologist 3 describes direct predation on eggs and tadpoles.",
+      "A": "Biologist 3's hypothesis also predicts effects that vary from pond to pond, based on fish presence",
+      "C": "all three biologists describe a cause that arrived within roughly this timeframe",
+      "D": "all three biologists agree on the extent of the decline itself"
+    }
+  },
+  {
+    "id": "p36-sci-emi-viewpoint-consistency-d5-0001",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "p36-sci-frog-decline-0001",
+    "context": "A wetland resembling Cedar Hollow in climate and vegetation, but located far from any farmland and never stocked with the invasive fish, experiences a similar decline shortly after the fungus is detected there for the first time. This finding is most consistent with the view of-",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Biologist 1 alone."
+      },
+      {
+        "id": "B",
+        "text": "Biologist 2 alone."
+      },
+      {
+        "id": "C",
+        "text": "Biologist 3 alone."
+      },
+      {
+        "id": "D",
+        "text": "all three biologists equally."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Because the wetland has no nearby farmland and no invasive fish, the pesticide and predator hypotheses cannot explain its decline; only the fungal hypothesis, tied to the disease's detected arrival, remains consistent with this outcome.",
+      "B": "this wetland has no farmland nearby, ruling out the pesticide-runoff mechanism Biologist 2 proposes",
+      "C": "this wetland was never stocked with the invasive fish, ruling out the predator mechanism Biologist 3 proposes",
+      "D": "the scenario specifically rules out the mechanisms proposed by Biologist 2 and Biologist 3"
+    }
+  },
+  {
+    "id": "p36-sci-interpolate-0001",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "p36-sci-drill-dye-fading-0001",
+    "context": "Based on Table 1, if a sample had been exposed at a light intensity of 300 lux, its absorbance after 30 minutes would most likely have been closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.48"
+      },
+      {
+        "id": "B",
+        "text": "0.63"
+      },
+      {
+        "id": "C",
+        "text": "0.75"
+      },
+      {
+        "id": "D",
+        "text": "0.88"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "300 lux falls between the 200 lux reading of 0.71 and the 400 lux reading of 0.54. Absorbance decreases as intensity increases, so the value must lie between 0.54 and 0.71, and 0.63 is the only choice that does.",
+      "A": "Falls below the 400 lux reading, which would require 300 lux to fade the dye faster than 400 lux does.",
+      "C": "Falls above the 200 lux reading, which would require less fading at a higher intensity.",
+      "D": "Is close to the 100 lux reading, ignoring the two rows that actually bracket 300 lux."
+    }
+  },
+  {
+    "id": "p36-sci-iod-combine-text-d3-0001",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "p36-sci-catalyst-rate-0001",
+    "context": "Using the definition of reaction rate given in the passage and the data in Table 1, what was the reaction rate, in s^-1, for Catalyst X at a concentration of 0.2 mol/L?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.0083"
+      },
+      {
+        "id": "B",
+        "text": "0.0125"
+      },
+      {
+        "id": "C",
+        "text": "0.02"
+      },
+      {
+        "id": "D",
+        "text": "80"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "The passage defines rate as 1 divided by time. At 0.2 mol/L, the time is 80 s, so the rate is 1/80 = 0.0125 s^-1.",
+      "D": "reports the time itself rather than 1 divided by the time",
+      "C": "uses the time for 0.4 mol/L (50 s) instead of 0.2 mol/L (80 s)",
+      "A": "uses the time for 0.1 mol/L (120 s) instead of 0.2 mol/L (80 s)"
+    }
+  },
+  {
+    "id": "p36-sci-iod-combine-text-d3-0002",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "p36-sci-radish-growth-0001",
+    "context": "Using the definition given in the passage, what was the relative growth rate, in cm/day, of the seedlings watered every 1 day between day 0 and day 7?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.35"
+      },
+      {
+        "id": "B",
+        "text": "0.7"
+      },
+      {
+        "id": "C",
+        "text": "1.4"
+      },
+      {
+        "id": "D",
+        "text": "4.9"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "The passage defines relative growth rate as the change in height divided by days elapsed. From day 0 to day 7, height rose from 0 to 4.9 cm: 4.9 / 7 = 0.7 cm/day.",
+      "D": "reports the total height change without dividing by the number of days elapsed",
+      "C": "doubles the correct rate rather than dividing height change by days elapsed",
+      "A": "divides the correct rate in half rather than dividing height change by days elapsed"
+    }
+  },
+  {
+    "id": "p36-sci-iod-combine-text-d3-0003",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "p36-sci-pendulum-period-0001",
+    "context": "Using the definition given in the passage and the data in Table 1, what was the frequency, in swings per second, of the pendulum with a string length of 100 cm?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.25"
+      },
+      {
+        "id": "B",
+        "text": "0.4"
+      },
+      {
+        "id": "C",
+        "text": "0.5"
+      },
+      {
+        "id": "D",
+        "text": "2.0"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "The passage defines frequency as 1 divided by the period. At a 100 cm string length, the period is 2.0 s, so the frequency is 1/2.0 = 0.5 swings per second.",
+      "D": "reports the period itself rather than 1 divided by the period",
+      "B": "uses a period of 2.5 s rather than the actual 2.0 s recorded for 100 cm",
+      "A": "divides the correct frequency in half rather than computing 1 divided by the period"
+    }
+  },
+  {
+    "id": "p36-sci-iod-compare-figures-d2-0001",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "p36-sci-catalyst-rate-0001",
+    "context": "According to Figure 1, which catalyst produced a shorter time to completion at every concentration tested?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Catalyst Y"
+      },
+      {
+        "id": "B",
+        "text": "Catalyst X"
+      },
+      {
+        "id": "C",
+        "text": "They were equally fast at every concentration tested."
+      },
+      {
+        "id": "D",
+        "text": "It varied - each catalyst was faster at some concentrations."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "At every plotted concentration, the Catalyst X curve lies below the Catalyst Y curve, meaning a shorter time to completion.",
+      "A": "Figure 1 shows Catalyst Y's curve above Catalyst X's curve at every concentration, meaning longer times, not shorter",
+      "C": "the two curves in Figure 1 never touch or cross",
+      "D": "Catalyst X's curve stays below Catalyst Y's curve across the entire range shown"
+    }
+  },
+  {
+    "id": "p36-sci-iod-compare-figures-d3-0001",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "p36-sci-catalyst-rate-0001",
+    "context": "According to Figure 1, at a concentration of 0.4 mol/L, how much shorter was the time to completion for Catalyst X than for Catalyst Y?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "30"
+      },
+      {
+        "id": "B",
+        "text": "50"
+      },
+      {
+        "id": "C",
+        "text": "80"
+      },
+      {
+        "id": "D",
+        "text": "110"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "At 0.4 mol/L, Catalyst Y takes 80 s and Catalyst X takes 50 s; the difference is 80 - 50 = 30 s.",
+      "B": "the time for Catalyst X itself, not the difference between the two catalysts",
+      "C": "the time for Catalyst Y itself, not the difference between the two catalysts",
+      "D": "adds the two times together instead of subtracting"
+    }
+  },
+  {
+    "id": "p36-sci-iod-compare-figures-d3-0002",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "p36-sci-radish-growth-0001",
+    "context": "According to Figure 1, on which measured day did the height difference between the two watering groups first exceed 5 cm?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Day 7"
+      },
+      {
+        "id": "B",
+        "text": "Day 21"
+      },
+      {
+        "id": "C",
+        "text": "Day 28"
+      },
+      {
+        "id": "D",
+        "text": "Day 14"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "The height difference is 2.1 cm at day 7 and 5.2 cm at day 14, so day 14 is the first measured day on which it exceeds 5 cm.",
+      "A": "the difference between the two groups at day 7 is only 2.1 cm, under the 5 cm threshold",
+      "B": "the difference already exceeds 5 cm by day 14, one measurement earlier",
+      "C": "the difference exceeds 5 cm well before the final measurement"
+    }
+  },
+  {
+    "id": "p36-sci-iod-compare-figures-d5-0001",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "p36-sci-pendulum-period-0001",
+    "context": "A student claims that, based on Figure 1, doubling the mass of the bob will double the pendulum's period. Do the data in Figure 1 support this claim?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because period is calculated partly from the bob's mass."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because the heaviest bob (400 g) took visibly longer to complete one swing."
+      },
+      {
+        "id": "C",
+        "text": "No relevant data on mass were collected in this experiment."
+      },
+      {
+        "id": "D",
+        "text": "No, because the period remained approximately the same (about 2.0 s) at every mass tested, including when mass was doubled from one trial to the next."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "Figure 1 shows a period of about 2.0 s at every mass tested, including pairs of masses where one doubles the other (20 g to 40 g would, but even the tested 50 g to 100 g and 100 g to 200 g doublings show no change), so the claim is not supported.",
+      "A": "the passage never defines period in terms of mass, and Figure 1's data show no such relationship",
+      "B": "Figure 1 shows the 400 g bob's period matching every other mass tested, not exceeding it",
+      "C": "Figure 1 specifically reports period at five different bob masses"
+    }
+  },
+  {
+    "id": "p36-sci-iod-interpolate-d3-0001",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "p36-sci-catalyst-rate-0001",
+    "context": "Based on the data in Table 1, the time to completion for Catalyst X at a concentration of 0.3 mol/L would most likely be closest to—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "50"
+      },
+      {
+        "id": "B",
+        "text": "65"
+      },
+      {
+        "id": "C",
+        "text": "80"
+      },
+      {
+        "id": "D",
+        "text": "95"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "A concentration of 0.3 mol/L falls exactly halfway between the 0.2 mol/L row (80 s) and the 0.4 mol/L row (50 s), so the estimated time is halfway between them: 80 - (80-50)/2 = 65 s.",
+      "A": "the reading for 0.4 mol/L, one row past the value being asked about",
+      "C": "the reading for 0.2 mol/L, one row before the value being asked about",
+      "D": "adds, rather than subtracts, half the difference between the two bracketing rows"
+    }
+  },
+  {
+    "id": "p36-sci-iod-interpolate-d3-0002",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "p36-sci-radish-growth-0001",
+    "context": "Based on Figure 1, the height of the seedlings watered every 4 days on day 17.5 would most likely be closest to—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6.4"
+      },
+      {
+        "id": "B",
+        "text": "7.5"
+      },
+      {
+        "id": "C",
+        "text": "8.45"
+      },
+      {
+        "id": "D",
+        "text": "10.5"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "Day 17.5 falls exactly halfway between day 14 (6.4 cm) and day 21 (10.5 cm), so the estimated height is halfway between them: 6.4 + (10.5-6.4)/2 = 8.45 cm.",
+      "A": "the reading for day 14, one measurement before the day being asked about",
+      "D": "the reading for day 21, one measurement after the day being asked about",
+      "B": "averages the two nearest readings incorrectly rather than interpolating proportionally"
+    }
+  },
+  {
+    "id": "p36-sci-iod-interpolate-d4-0001",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "hard",
+    "passage": "p36-sci-pendulum-period-0001",
+    "context": "Based on the data in Table 1, the period of the pendulum for a string length of 75 cm would most likely be closest to-",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.4"
+      },
+      {
+        "id": "B",
+        "text": "1.55"
+      },
+      {
+        "id": "C",
+        "text": "1.7"
+      },
+      {
+        "id": "D",
+        "text": "2.0"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "A string length of 75 cm falls exactly halfway between the 50 cm row (1.4 s) and the 100 cm row (2.0 s), so the estimated period is halfway between them: 1.4 + (2.0-1.4)/2 = 1.7 s.",
+      "A": "the reading for a 50 cm string length, one row before the value being asked about",
+      "D": "the reading for a 100 cm string length, one row after the value being asked about",
+      "B": "a plausible-looking value that does not fall halfway between the two bracketing rows"
+    }
+  },
+  {
+    "id": "p36-sci-iod-read-value-d1-0001",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "p36-sci-catalyst-rate-0001",
+    "context": "According to Table 1, what was the time to completion for Catalyst X at a concentration of 0.4 mol/L?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "18"
+      },
+      {
+        "id": "B",
+        "text": "30"
+      },
+      {
+        "id": "C",
+        "text": "50"
+      },
+      {
+        "id": "D",
+        "text": "80"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "Table 1 lists 50 s in the row for a concentration of 0.4 mol/L.",
+      "D": "reads the row for 0.2 mol/L instead of 0.4 mol/L",
+      "B": "reads the row for 0.8 mol/L instead of 0.4 mol/L",
+      "A": "reads the bottom row of the table, 1.6 mol/L, instead of 0.4 mol/L"
+    }
+  },
+  {
+    "id": "p36-sci-iod-read-value-d1-0002",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "p36-sci-radish-growth-0001",
+    "context": "According to Table 1, what was the height of seedlings watered once every 3 days, measured after 21 days?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6.8"
+      },
+      {
+        "id": "B",
+        "text": "10.5"
+      },
+      {
+        "id": "C",
+        "text": "14.2"
+      },
+      {
+        "id": "D",
+        "text": "16.9"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "Table 1 lists 14.2 cm in the row for a 3-day watering interval.",
+      "D": "reads the row for a 2-day interval instead of a 3-day interval",
+      "B": "reads the row for a 4-day interval instead of a 3-day interval",
+      "A": "reads the bottom row of the table, a 5-day interval, instead of a 3-day interval"
+    }
+  },
+  {
+    "id": "p36-sci-iod-read-value-d1-0003",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "p36-sci-pendulum-period-0001",
+    "context": "According to Table 1, what was the period of the pendulum for a string length of 100 cm?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.4"
+      },
+      {
+        "id": "B",
+        "text": "2.0"
+      },
+      {
+        "id": "C",
+        "text": "2.4"
+      },
+      {
+        "id": "D",
+        "text": "2.8"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "Table 1 lists 2.0 s in the row for a 100 cm string length.",
+      "A": "reads the row for a 50 cm string length instead of 100 cm",
+      "C": "reads the row for a 150 cm string length instead of 100 cm",
+      "D": "reads the bottom row of the table, 200 cm, instead of 100 cm"
+    }
+  },
+  {
+    "id": "p36-sci-iod-read-value-d2-0001",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "p36-sci-catalyst-rate-0001",
+    "context": "According to Figure 1, what was the time to completion for Catalyst Y at a concentration of 0.8 mol/L?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "30"
+      },
+      {
+        "id": "B",
+        "text": "35"
+      },
+      {
+        "id": "C",
+        "text": "55"
+      },
+      {
+        "id": "D",
+        "text": "80"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "The Catalyst Y curve in Figure 1 passes through 55 s at a concentration of 0.8 mol/L.",
+      "A": "reads the Catalyst X curve at 0.8 mol/L instead of Catalyst Y",
+      "D": "reads the Catalyst Y curve at 0.4 mol/L instead of 0.8 mol/L",
+      "B": "reads the Catalyst Y curve at 1.6 mol/L instead of 0.8 mol/L"
+    }
+  },
+  {
+    "id": "p36-sci-iod-translate-d2-0001",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "p36-sci-catalyst-rate-0001",
+    "context": "The value shown in Table 1 for a concentration of 0.2 mol/L corresponds to which point plotted in Figure 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The Catalyst Y point at (0.2 mol/L, 110 s)."
+      },
+      {
+        "id": "B",
+        "text": "The Catalyst X point at (0.4 mol/L, 50 s)."
+      },
+      {
+        "id": "C",
+        "text": "The Catalyst X point at (0.2 mol/L, 80 s)."
+      },
+      {
+        "id": "D",
+        "text": "The Catalyst Y point at (0.1 mol/L, 150 s)."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "Table 1 records only Catalyst X data, and its row for 0.2 mol/L (80 s) matches the Catalyst X point plotted at (0.2, 80) in Figure 1.",
+      "A": "Table 1 reports only Catalyst X data, not Catalyst Y",
+      "B": "matches the wrong concentration - 0.4 mol/L, not 0.2 mol/L",
+      "D": "matches neither the correct catalyst nor the correct concentration"
+    }
+  },
+  {
+    "id": "p36-sci-iod-translate-d2-0002",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "p36-sci-radish-growth-0001",
+    "context": "The height recorded in Table 1 for the group watered once every 4 days corresponds most closely to which point plotted in Figure 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The 'Every 4 days' point at day 21 (10.5 cm)."
+      },
+      {
+        "id": "B",
+        "text": "The 'Every 1 day' point at day 21 (18.4 cm)."
+      },
+      {
+        "id": "C",
+        "text": "The 'Every 4 days' point at day 28 (13.2 cm)."
+      },
+      {
+        "id": "D",
+        "text": "The 'Every 1 day' point at day 14 (11.6 cm)."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Table 1's row for a 4-day interval (10.5 cm, measured after 21 days) matches the 'Every 4 days' curve's point at day 21 in Figure 1.",
+      "B": "matches the wrong watering group - Table 1's 4-day row does not correspond to the 1-day series",
+      "C": "matches the wrong day - Table 1 measures height after 21 days, not 28",
+      "D": "matches neither the correct watering group nor the correct day"
+    }
+  },
+  {
+    "id": "p36-sci-iod-translate-d3-0001",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "p36-sci-pendulum-period-0001",
+    "context": "A period of 2.0 s appears in both Table 1 and Figure 1. Which of the following correctly identifies both occurrences?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Table 1's row for a 150 cm string length, and every point plotted in Figure 1."
+      },
+      {
+        "id": "B",
+        "text": "Table 1's row for a 100 cm string length, and every point plotted in Figure 1."
+      },
+      {
+        "id": "C",
+        "text": "Table 1's row for a 100 cm string length, and only the 100 g point in Figure 1."
+      },
+      {
+        "id": "D",
+        "text": "Table 1's row for a 200 cm string length, and only the 20 g point in Figure 1."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "Table 1 records 2.0 s only in its 100 cm row, and Figure 1 shows every plotted mass at approximately 2.0 s, since that figure held string length constant at 100 cm throughout.",
+      "A": "Table 1's 150 cm row records 2.4 s, not 2.0 s",
+      "C": "Figure 1 shows a period of 2.0 s at every mass tested, not only at 100 g",
+      "D": "Table 1's 200 cm row records 2.8 s, not 2.0 s"
+    }
+  },
+  {
+    "id": "p36-sci-iod-trend-d1-0001",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "p36-sci-pendulum-period-0001",
+    "context": "According to Table 1, as string length increased from 25 cm to 200 cm, the period of the pendulum-",
+    "choices": [
+      {
+        "id": "A",
+        "text": "decreased throughout the range tested."
+      },
+      {
+        "id": "B",
+        "text": "increased and then decreased."
+      },
+      {
+        "id": "C",
+        "text": "stayed approximately the same regardless of string length."
+      },
+      {
+        "id": "D",
+        "text": "increased throughout the range tested."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "Each successive row of Table 1 shows a longer period than the row before it, from 1.0 s up to 2.8 s.",
+      "A": "reverses the actual direction of the trend shown in Table 1",
+      "B": "no reversal occurs anywhere in Table 1's five rows",
+      "C": "the period nearly triples from the shortest to the longest string length tested"
+    }
+  },
+  {
+    "id": "p36-sci-iod-trend-d2-0001",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "p36-sci-catalyst-rate-0001",
+    "context": "According to Table 1, as the concentration of Catalyst X increased from 0.1 to 1.6 mol/L, the time to completion—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "decreased throughout the range tested."
+      },
+      {
+        "id": "B",
+        "text": "increased throughout the range tested."
+      },
+      {
+        "id": "C",
+        "text": "decreased and then increased."
+      },
+      {
+        "id": "D",
+        "text": "stayed approximately the same."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Each successive row of Table 1 shows a lower time than the row before it, from 120 s down to 18 s.",
+      "B": "reverses the actual direction of the trend shown in Table 1",
+      "C": "no reversal occurs anywhere in Table 1's five rows",
+      "D": "the time changes by more than a factor of six across the table, which is not approximately constant"
+    }
+  },
+  {
+    "id": "p36-sci-iod-trend-d2-0002",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "p36-sci-radish-growth-0001",
+    "context": "According to Table 1, as the watering interval increased from 1 to 5 days, seedling height after 21 days—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "increased throughout the range tested."
+      },
+      {
+        "id": "B",
+        "text": "decreased and then leveled off."
+      },
+      {
+        "id": "C",
+        "text": "decreased throughout the range tested."
+      },
+      {
+        "id": "D",
+        "text": "stayed approximately the same regardless of interval."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "Each successive row of Table 1 shows a shorter height than the row before it, from 18.4 cm down to 6.8 cm.",
+      "A": "reverses the actual direction of the trend shown in Table 1",
+      "B": "the height keeps falling at every interval tested, with no leveling off visible in the table",
+      "D": "height falls by more than half from the shortest to the longest interval tested"
+    }
+  },
+  {
+    "id": "p36-sci-read-value-0001",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "p36-sci-drill-dye-fading-0001",
+    "context": "According to Table 1, the absorbance measured after 30 minutes at a light intensity of 400 lux was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.12"
+      },
+      {
+        "id": "B",
+        "text": "0.31"
+      },
+      {
+        "id": "C",
+        "text": "0.54"
+      },
+      {
+        "id": "D",
+        "text": "0.82"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "Find the row for 400 lux in Table 1 and read across to the absorbance column: 0.54.",
+      "A": "Read the bottom row of the table, 1600 lux, rather than the row asked for.",
+      "B": "Read the next row down, 800 lux, a common slip when tracking across a table by eye.",
+      "D": "Read the first row, 100 lux, apparently matching on the leading digit 1."
+    }
+  },
+  {
+    "id": "p36-sci-si-design-d1-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "p36-sci-catalyst-rate-0001",
+    "context": "In this experiment, the concentration of catalyst was—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the dependent variable."
+      },
+      {
+        "id": "B",
+        "text": "a control variable."
+      },
+      {
+        "id": "C",
+        "text": "not manipulated by the student."
+      },
+      {
+        "id": "D",
+        "text": "the independent variable."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "The student deliberately set concentration to different values across trials, which makes it the independent variable.",
+      "A": "the dependent variable is the time to completion, which the student measured, not set",
+      "B": "concentration was deliberately varied across trials, so it was not held constant",
+      "C": "the student specifically chose and set each concentration tested"
+    }
+  },
+  {
+    "id": "p36-sci-si-design-d1-0002",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "p36-sci-pendulum-period-0001",
+    "context": "In the second set of trials, the mass of the bob was-",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the dependent variable."
+      },
+      {
+        "id": "B",
+        "text": "a control variable."
+      },
+      {
+        "id": "C",
+        "text": "not manipulated by the student."
+      },
+      {
+        "id": "D",
+        "text": "the independent variable."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "The student deliberately set the bob's mass to different values across the second set of trials, which makes it the independent variable.",
+      "A": "the dependent variable is the period, which was measured, not set",
+      "B": "mass was deliberately varied across the second set of trials, so it was not held constant",
+      "C": "the student specifically chose and set each bob mass tested"
+    }
+  },
+  {
+    "id": "p36-sci-si-design-d2-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "p36-sci-radish-growth-0001",
+    "context": "In Study 1, the watering interval assigned to each group of seedlings was—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the dependent variable."
+      },
+      {
+        "id": "B",
+        "text": "the independent variable."
+      },
+      {
+        "id": "C",
+        "text": "a control variable."
+      },
+      {
+        "id": "D",
+        "text": "not something the students controlled."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "The students deliberately assigned a different watering interval to each group, which makes it the independent variable.",
+      "A": "the dependent variable is seedling height, which was measured, not assigned",
+      "C": "the watering interval was deliberately varied across the five groups, so it was not held constant",
+      "D": "the students specifically assigned each group's watering interval"
+    }
+  },
+  {
+    "id": "p36-sci-si-design-d3-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "p36-sci-catalyst-rate-0001",
+    "context": "Which of the following, if it had varied across trials rather than been held constant, would most directly threaten the validity of comparing Catalyst X and Catalyst Y's effectiveness?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The temperature at which each trial was run."
+      },
+      {
+        "id": "B",
+        "text": "The color of each catalyst solution."
+      },
+      {
+        "id": "C",
+        "text": "The brand of stopwatch used to time each trial."
+      },
+      {
+        "id": "D",
+        "text": "The order in which the five concentrations were tested."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The passage states temperature was held constant at 25 degrees C; since reaction speed is often sensitive to temperature, letting it vary would confound the comparison between the two catalysts.",
+      "B": "color is not described as affecting reaction speed anywhere in the passage",
+      "C": "a stopwatch's brand does not change the chemistry of the reaction being timed",
+      "D": "the passage gives no reason to expect testing order to affect a given trial's result"
+    }
+  },
+  {
+    "id": "p36-sci-si-design-d3-0002",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "p36-sci-radish-growth-0001",
+    "context": "Which of the following best explains why the students used 10 seedlings per group in Study 1 rather than a single seedling per group?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "To make the experiment take less time to complete overall."
+      },
+      {
+        "id": "B",
+        "text": "Because radish seeds are typically sold in large packets."
+      },
+      {
+        "id": "C",
+        "text": "To account for natural variation among individual seedlings and obtain a more reliable average height."
+      },
+      {
+        "id": "D",
+        "text": "To allow each individual seedling to be watered on a different schedule."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "A single seedling's height could reflect chance variation unrelated to watering; averaging across 10 seedlings per group produces a more reliable estimate of the group's typical height.",
+      "A": "using more seedlings per group adds work rather than saving time",
+      "B": "how seeds are packaged has no bearing on the experiment's design",
+      "D": "all seedlings within a group shared the same watering schedule"
+    }
+  },
+  {
+    "id": "p36-sci-si-design-d4-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "p36-sci-pendulum-period-0001",
+    "context": "Which of the following was NOT held constant across the trials summarized in Table 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The length of the string."
+      },
+      {
+        "id": "B",
+        "text": "The mass of the bob."
+      },
+      {
+        "id": "C",
+        "text": "The angle at which the pendulum was released."
+      },
+      {
+        "id": "D",
+        "text": "The definition of one complete swing."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "String length is the variable the student deliberately changed across the trials in Table 1; mass and release angle are explicitly described as held constant.",
+      "B": "the passage states the bob's mass was held constant at 50 g throughout the first set of trials",
+      "C": "the passage states the release angle was held constant throughout the first set of trials",
+      "D": "what counts as one period was not redefined between trials"
+    }
+  },
+  {
+    "id": "p36-sci-si-hypothesis-d2-0001",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "easy",
+    "passage": "p36-sci-pendulum-period-0001",
+    "context": "A student hypothesized that a heavier bob would swing with a longer period than a lighter bob, when string length is held constant. Do the results in Figure 1 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No, because period stayed approximately the same across every mass tested."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because the 400 g bob shows a visibly longer period than the 20 g bob."
+      },
+      {
+        "id": "C",
+        "text": "Yes, because heavier objects generally take longer to move in everyday experience."
+      },
+      {
+        "id": "D",
+        "text": "The results are inconclusive because too few masses were tested."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Figure 1 shows essentially no change in period across the five bob masses tested, so the hypothesis that mass affects period is not supported by these results.",
+      "B": "Figure 1 shows both of these bobs with the same period, about 2.0 s",
+      "C": "the passage's own data, not general intuition, are what the question asks you to evaluate",
+      "D": "five different masses spanning a twenty-fold range were tested, all showing the same period"
+    }
+  },
+  {
+    "id": "p36-sci-si-hypothesis-d3-0001",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "p36-sci-radish-growth-0001",
+    "context": "A student hypothesized that seedlings watered more frequently would grow taller only up to a point, after which additional watering would provide no further benefit. Do the results of Study 1 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because height leveled off between the 4-day and 5-day groups."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because the tallest group also received the most water overall."
+      },
+      {
+        "id": "C",
+        "text": "No relevant data were collected to test this hypothesis in Study 1."
+      },
+      {
+        "id": "D",
+        "text": "No, because height increased continuously across the entire range of watering frequencies tested, with no leveling off."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "Table 1 shows height rising steadily as watering interval shortens, all the way from a 5-day interval to a 1-day interval, with no interval at which additional watering stops helping.",
+      "A": "Table 1 shows a continued decline in height between these two rows, not a leveling off",
+      "B": "this restates a detail from the data but does not describe a leveling-off point, which the hypothesis specifically requires",
+      "C": "Study 1's design, varying watering frequency and measuring height, is directly relevant to this hypothesis"
+    }
+  },
+  {
+    "id": "p36-sci-si-method-comparison-d2-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "p36-sci-radish-growth-0001",
+    "context": "Suppose the students had measured seedling height in inches instead of centimeters. This change would most likely—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "cause the 5-day group to become taller than the 1-day group."
+      },
+      {
+        "id": "B",
+        "text": "have no effect on the trend observed between watering interval and height."
+      },
+      {
+        "id": "C",
+        "text": "eliminate the need for Study 2."
+      },
+      {
+        "id": "D",
+        "text": "change the independent variable of the experiment."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "Height is height regardless of the unit used to record it; converting centimeters to inches would rescale the numbers but not change which group grew more or less.",
+      "A": "changing the unit of measurement cannot change which group actually grew taller",
+      "C": "the unit used to measure height has no bearing on why a second study over time was conducted",
+      "D": "watering interval remains the variable being deliberately assigned regardless of the height unit used"
+    }
+  },
+  {
+    "id": "p36-sci-si-method-comparison-d3-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "p36-sci-pendulum-period-0001",
+    "context": "Suppose the student repeated the string-length trials in Table 1 using a heavier bob than the 50 g bob originally used. Based on the results shown in Figure 1, this change would most likely-",
+    "choices": [
+      {
+        "id": "A",
+        "text": "cause the period to increase substantially at every string length."
+      },
+      {
+        "id": "B",
+        "text": "cause the period to decrease substantially at every string length."
+      },
+      {
+        "id": "C",
+        "text": "have little to no effect on the period values recorded in a repeat of Table 1's trials."
+      },
+      {
+        "id": "D",
+        "text": "change the independent variable of the first set of trials."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "C": "Figure 1 shows that period does not meaningfully depend on bob mass, so using a heavier bob in a repeat of Table 1's trials would most likely leave the recorded periods largely unchanged.",
+      "A": "Figure 1 shows period is essentially unaffected by bob mass at a fixed string length",
+      "B": "Figure 1 shows period is essentially unaffected by bob mass at a fixed string length",
+      "D": "string length remains the variable being deliberately varied regardless of which bob mass is used"
+    }
+  },
+  {
+    "id": "p36-sci-si-method-comparison-d5-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "p36-sci-catalyst-rate-0001",
+    "context": "Suppose a second student repeated this experiment but measured completion time using a light sensor triggered by the color change, instead of a stopwatch operated by hand. Compared with the original method, the light-sensor method would most likely—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "eliminate the need for a control group in the experiment."
+      },
+      {
+        "id": "B",
+        "text": "reduce the effect of human reaction-time error on the recorded times."
+      },
+      {
+        "id": "C",
+        "text": "change which variable is the independent variable in the experiment."
+      },
+      {
+        "id": "D",
+        "text": "make Catalyst Y react faster than Catalyst X."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "B": "A stopwatch depends on a person noticing the color change and reacting, introducing small timing errors; an automated sensor removes that source of human error.",
+      "A": "this experiment does not rely on a control group in the first place, and a timing method does not create or remove one",
+      "C": "concentration remains the variable being deliberately set regardless of how time is measured",
+      "D": "the timing method used cannot change the underlying chemistry of either catalyst"
+    }
+  },
+  {
+    "id": "p36-sci-si-predict-d4-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "p36-sci-catalyst-rate-0001",
+    "context": "Extrapolating the trend shown in Table 1 using the rate of change observed between 0.8 and 1.6 mol/L, the time to completion for Catalyst X at a concentration of 2.4 mol/L would most likely be closest to—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6"
+      },
+      {
+        "id": "B",
+        "text": "12"
+      },
+      {
+        "id": "C",
+        "text": "18"
+      },
+      {
+        "id": "D",
+        "text": "30"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Between 0.8 and 1.6 mol/L, time falls by 12 s over a 0.8 mol/L increase, a rate of -15 s per mol/L. Applying that same rate for another 0.8 mol/L increase, from 1.6 to 2.4 mol/L, gives 18 - 15(0.8) = 6 s.",
+      "C": "assumes no further change beyond the 1.6 mol/L reading",
+      "D": "reuses the 0.8 mol/L reading rather than extrapolating past 1.6 mol/L",
+      "B": "extrapolates only half of the expected further decrease"
+    }
+  },
+  {
+    "id": "p36-sci-si-predict-d4-0002",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "p36-sci-radish-growth-0001",
+    "context": "If a sixth group of seedlings had been watered once every 6 days, the height of that group after 21 days would most likely have been—",
+    "choices": [
+      {
+        "id": "A",
+        "text": "less than 6.8 cm."
+      },
+      {
+        "id": "B",
+        "text": "greater than 18.4 cm."
+      },
+      {
+        "id": "C",
+        "text": "exactly 6.8 cm, with no further change."
+      },
+      {
+        "id": "D",
+        "text": "between 10.5 cm and 14.2 cm."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Height fell continuously as watering interval increased throughout Table 1, with no sign of leveling off, so a still-longer interval of 6 days would most likely continue that decline below the 5-day group's 6.8 cm.",
+      "B": "reverses the trend shown across every row of Table 1",
+      "C": "Table 1 shows a continued decrease at every step, giving no reason to expect the decline to stop",
+      "D": "this range corresponds to shorter intervals already tested, not a longer interval than any tested"
+    }
+  },
+  {
+    "id": "p36-sci-si-predict-d5-0001",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "p36-sci-pendulum-period-0001",
+    "context": "If the student tested a string length of 300 cm using the same experimental setup as Table 1, the period would most likely be-",
+    "choices": [
+      {
+        "id": "A",
+        "text": "less than 1.0 s."
+      },
+      {
+        "id": "B",
+        "text": "exactly 2.8 s, the same as the 200 cm trial."
+      },
+      {
+        "id": "C",
+        "text": "between 1.4 s and 2.0 s."
+      },
+      {
+        "id": "D",
+        "text": "greater than 2.8 s."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "D": "Period increased at every step in Table 1, with no sign of leveling off, so a string length longer than any tested (300 cm) would most likely continue that increase above 2.8 s.",
+      "A": "reverses the direction of the trend shown across every row of Table 1",
+      "B": "Table 1 shows a continued increase at every step, giving no reason to expect the period to stop rising",
+      "C": "this range corresponds to shorter string lengths already tested, not a length longer than any tested"
+    }
+  },
+  {
+    "id": "s081",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "easy",
+    "passage": "sp18",
+    "context": "A student hypothesized that iron requires both water and air in order to corrode. Do the results of Study 1 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because the two tubes missing either water or air showed almost no mass change, while the two with both showed much larger changes."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because the nail in dry air gained more mass than the nail in moist air."
+      },
+      {
+        "id": "C",
+        "text": "No, because the nail sealed in boiled water still gained 0.01 g."
+      },
+      {
+        "id": "D",
+        "text": "No, because Study 1 did not include a tube containing only air."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — dry air gave 0.00 g and de-aerated water gave 0.01 g, while the two conditions supplying both water and air gave 0.18 g and 0.22 g.",
+      "B": "The dry-air nail gained 0.00 g and the moist-air nail gained 0.22 g, the reverse of this claim.",
+      "C": "A 0.01 g change is negligible beside 0.18 and 0.22 g, and boiling is described as removing the air rather than all of it perfectly.",
+      "D": "The dry-air tube is exactly that condition: air present, water removed by the desiccant."
+    }
+  },
+  {
+    "id": "s082",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp18",
+    "context": "A second student hypothesized that corrosion increases steadily as NaCl concentration increases. Do the results of Study 3 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No, because mass change rose through 3.5% but then fell at 10.0%."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because the 10.0% solution produced more corrosion than the 0.0% solution."
+      },
+      {
+        "id": "C",
+        "text": "Yes, because each increase in concentration produced an increase in mass change."
+      },
+      {
+        "id": "D",
+        "text": "No, because salt water produced less corrosion than distilled water at every concentration."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the values climb 0.18, 0.26, 0.33, 0.41 and then drop to 0.30, so the trend reverses rather than continuing steadily.",
+      "B": "That single comparison holds, but a hypothesis of steady increase is refuted by the drop in between.",
+      "C": "The step from 3.5% to 10.0% is a decrease, from 0.41 g to 0.30 g.",
+      "D": "Every salt concentration tested produced more corrosion than the 0.18 g of distilled water, not less."
+    }
+  },
+  {
+    "id": "s083",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp18",
+    "context": "A student predicted that any coating would prevent corrosion entirely. Which result from Study 2 most directly contradicts this prediction?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The scratched painted nail gained 0.12 g."
+      },
+      {
+        "id": "B",
+        "text": "The zinc-coated nail gained 0.01 g."
+      },
+      {
+        "id": "C",
+        "text": "The oil-coated nail gained 0.03 g."
+      },
+      {
+        "id": "D",
+        "text": "The uncoated nail gained 0.22 g."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 0.12 g is more than half the uncoated nail's 0.22 g, so this coating clearly did not prevent corrosion.",
+      "B": "0.01 g is consistent with the prediction, since it is nearly no change at all.",
+      "C": "0.03 g is also close to the prediction rather than a contradiction of it.",
+      "D": "The uncoated nail had no coating, so it cannot test a claim about coatings."
+    }
+  },
+  {
+    "id": "s084",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp18",
+    "context": "A researcher proposes that zinc protects iron by corroding in the iron's place rather than by merely sealing the surface. Which additional result would best support this proposal over the sealing explanation?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A zinc-coated nail scratched through to the metal still gains almost no mass."
+      },
+      {
+        "id": "B",
+        "text": "A zinc-coated nail gains less mass than an oil-coated nail."
+      },
+      {
+        "id": "C",
+        "text": "A thicker zinc coating produces a smaller mass change than a thin one."
+      },
+      {
+        "id": "D",
+        "text": "A zinc-coated nail kept in dry air gains no mass at all."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — scratching destroys any seal, so continued protection can only come from the zinc itself being attacked instead of the iron. The scratched paint result shows that a purely sealing coating fails once broken.",
+      "B": "Both coatings already give near-zero values, and a smaller number does not distinguish between the two mechanisms.",
+      "C": "A thicker layer would seal better as well, so this result fits either explanation.",
+      "D": "Dry air produces no corrosion even on a bare nail, so this trial tests nothing about the coating."
+    }
+  },
+  {
+    "id": "s085",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp18",
+    "context": "The solid product that forms on the nails is iron oxide. Which component of the air is most directly responsible for its formation?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Oxygen"
+      },
+      {
+        "id": "B",
+        "text": "Nitrogen"
+      },
+      {
+        "id": "C",
+        "text": "Argon"
+      },
+      {
+        "id": "D",
+        "text": "Carbon dioxide"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — an oxide forms when a substance combines with oxygen, which is why removing air stopped the reaction in Study 1.",
+      "B": "Nitrogen is the most abundant gas in air but is largely unreactive at room temperature.",
+      "C": "Argon is a noble gas and does not form compounds under these conditions.",
+      "D": "Carbon dioxide contributes to some corrosion chemistry but is not the source of oxygen in an oxide named here."
+    }
+  },
+  {
+    "id": "s086",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp18",
+    "context": "Dissolved NaCl increases a solution's ability to conduct electric current. This fact best helps explain why:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "salt solutions produced more corrosion than distilled water at every concentration tested."
+      },
+      {
+        "id": "B",
+        "text": "the mass change fell between 3.5% and 10.0% NaCl."
+      },
+      {
+        "id": "C",
+        "text": "the nail in dry air showed no mass change."
+      },
+      {
+        "id": "D",
+        "text": "the zinc coating was more effective than the oil coating."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — corrosion of iron in water involves charge moving between regions of the metal, so a solution that conducts better speeds the process, matching the jump from 0.18 g to 0.26 g and beyond.",
+      "B": "Conductivity keeps rising with concentration, so it cannot explain a decrease; something else, such as less dissolved oxygen, must account for that.",
+      "C": "No liquid was present in the dry tube, so conductivity is irrelevant there.",
+      "D": "Both coatings were tested in moist air rather than in salt solution."
+    }
+  },
+  {
+    "id": "s087",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp18",
+    "context": "The amount of oxygen that dissolves in water decreases as the concentration of dissolved salt increases. This fact is most consistent with which result?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The 10.0% solution produced less corrosion than the 3.5% solution."
+      },
+      {
+        "id": "B",
+        "text": "The 3.5% solution produced the largest mass change of any trial in Study 3."
+      },
+      {
+        "id": "C",
+        "text": "Distilled water open to air produced less corrosion than moist air."
+      },
+      {
+        "id": "D",
+        "text": "The nail in boiled, sealed water gained only 0.01 g."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — at high salinity the loss of dissolved oxygen outweighs the gain in conductivity, which accounts for the drop from 0.41 g to 0.30 g.",
+      "B": "The peak at 3.5% reflects the balance of two competing effects; the oxygen fact alone predicts a decline, not a maximum there.",
+      "C": "That difference involves no salt at all, so dissolved-oxygen changes from salinity cannot explain it.",
+      "D": "That tube had its air removed deliberately, which is a separate reason for the low value."
+    }
+  },
+  {
+    "id": "s088",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "easy",
+    "passage": "sp19",
+    "context": "A student hypothesized that most water loss from these cuttings occurs through the leaves rather than the stem. Do the results of Study 2 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because removing all leaves reduced water loss from 1.40 g to 0.08 g."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because water loss rose as leaves were removed."
+      },
+      {
+        "id": "C",
+        "text": "No, because the leafless cutting still lost 0.08 g."
+      },
+      {
+        "id": "D",
+        "text": "No, because Study 2 did not test a cutting with no stem."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — with the leaves gone, loss fell to about 6% of the 8-leaf value, so the leaves account for the great majority of it.",
+      "B": "Water loss fell steadily as leaves were removed, from 1.40 g down to 0.08 g.",
+      "C": "The 0.08 g shows the stem loses a little, but it is small beside 1.40 g and does not overturn the hypothesis.",
+      "D": "A cutting with no stem could not be connected to the water, so that trial is not possible."
+    }
+  },
+  {
+    "id": "s089",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp19",
+    "context": "A student hypothesized that water loss depends only on the number of leaves and not on the surrounding conditions. Which result most directly contradicts this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Cuttings with 8 leaves lost 1.40 g in still air but 2.35 g in moving air."
+      },
+      {
+        "id": "B",
+        "text": "Water loss fell from 1.40 g to 0.40 g as leaves were reduced from 8 to 2."
+      },
+      {
+        "id": "C",
+        "text": "Coating the lower surfaces reduced loss to 0.45 g."
+      },
+      {
+        "id": "D",
+        "text": "The leafless cutting lost 0.08 g."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the leaf count is identical in both trials, so the difference must come from the surroundings, which is exactly what the hypothesis denies.",
+      "B": "This varies leaf number and is consistent with the hypothesis rather than against it.",
+      "C": "This varies the leaf surface available, not the surrounding conditions.",
+      "D": "This also varies leaf number, so it does not test the role of the surroundings."
+    }
+  },
+  {
+    "id": "s090",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp19",
+    "context": "A researcher hypothesized that stomata close in darkness. Which pair of results best supports this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Still air with the lamp on gave 1.40 g, while still air in the dark gave 0.60 g."
+      },
+      {
+        "id": "B",
+        "text": "Moving air gave 2.35 g, while still air gave 1.40 g."
+      },
+      {
+        "id": "C",
+        "text": "The humid chamber gave 0.45 g, while still air gave 1.40 g."
+      },
+      {
+        "id": "D",
+        "text": "Coating both surfaces gave 0.20 g, while leaving them untreated gave 1.40 g."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — these two trials differ only in light, and the large drop in the dark is what closing pores would produce.",
+      "B": "This pair differs in air movement, which affects how quickly vapor is carried away rather than whether pores are open.",
+      "C": "This pair differs in humidity, which changes the gradient driving evaporation, not the state of the stomata.",
+      "D": "Blocking the pores physically does not tell you whether darkness closes them on its own."
+    }
+  },
+  {
+    "id": "s091",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp19",
+    "context": "Based on Study 3, a student predicted that coating the upper surfaces alone would cut water loss roughly in half. Do the results support this prediction?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No, because coating the upper surfaces reduced loss only from 1.40 g to 1.20 g."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because coating the upper surfaces reduced loss to 0.45 g."
+      },
+      {
+        "id": "C",
+        "text": "No, because coating the upper surfaces increased water loss."
+      },
+      {
+        "id": "D",
+        "text": "Yes, because coating both surfaces reduced loss to 0.20 g."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — that is a reduction of about 14%, far short of half, because few stomata sit on the upper surface.",
+      "B": "0.45 g is the result for coating the lower surfaces, not the upper ones.",
+      "C": "Loss decreased slightly, from 1.40 g to 1.20 g; it did not increase.",
+      "D": "Coating both surfaces tests a different treatment and says nothing about the upper surfaces alone."
+    }
+  },
+  {
+    "id": "s092",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp19",
+    "context": "Evaporation of water from a surface slows as the surrounding air approaches saturation with water vapor. This fact best explains which result?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The humid chamber trial lost only 0.45 g."
+      },
+      {
+        "id": "B",
+        "text": "The dark trial lost only 0.60 g."
+      },
+      {
+        "id": "C",
+        "text": "The leafless cutting lost only 0.08 g."
+      },
+      {
+        "id": "D",
+        "text": "The fan trial lost 2.35 g."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — at 95% relative humidity the air is nearly saturated, so there is little gradient left to drive evaporation.",
+      "B": "Darkness works through the plant's own pores rather than through the humidity of the air.",
+      "C": "That result follows from having almost no leaf surface, not from the state of the air.",
+      "D": "The fan trial shows loss rising, not slowing. It involves the same principle in reverse, with drier air replacing the saturated layer at the leaf surface."
+    }
+  },
+  {
+    "id": "s093",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp19",
+    "context": "In most species, stomata are far more numerous on the lower leaf surface than on the upper. Which result in Study 3 most directly reflects this fact?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Coating the lower surfaces cut loss to 0.45 g, while coating the upper surfaces left 1.20 g."
+      },
+      {
+        "id": "B",
+        "text": "Coating both surfaces cut loss to 0.20 g."
+      },
+      {
+        "id": "C",
+        "text": "The untreated cutting lost 1.40 g."
+      },
+      {
+        "id": "D",
+        "text": "Coating the upper surfaces cut loss from 1.40 g to 1.20 g."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — blocking the lower surface removes most of the loss while blocking the upper surface removes little, which is what an uneven distribution of pores predicts.",
+      "B": "Coating everything blocks all pores regardless of where they are, so it reveals nothing about the distribution.",
+      "C": "The untreated value is the baseline and involves no comparison between surfaces.",
+      "D": "This half of the comparison shows the upper surface matters little, but the contrast with the lower surface is what demonstrates the uneven distribution."
+    }
+  },
+  {
+    "id": "s094",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "sp19",
+    "context": "The oil layer floating on the water in each tube was included in order to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prevent water from evaporating directly from the tube's surface."
+      },
+      {
+        "id": "B",
+        "text": "supply the cutting with nutrients it would otherwise lack."
+      },
+      {
+        "id": "C",
+        "text": "keep the water at a constant temperature of 22 °C."
+      },
+      {
+        "id": "D",
+        "text": "stop air from dissolving into the water in the tube."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the passage states the oil ensures that any mass the tube loses must have passed through the cutting, which requires blocking evaporation from the open water.",
+      "B": "Oil provides no nutrients, and nutrient supply is irrelevant over a 3-hour trial.",
+      "C": "A thin oil film does not hold temperature steady; the stated 22 °C comes from the surrounding conditions.",
+      "D": "Dissolved air is not measured or discussed in this experiment."
+    }
+  },
+  {
+    "id": "s095",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "easy",
+    "passage": "sp20",
+    "context": "In Study 2, the quantity recorded every 30 seconds is measured in which units?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Milliliters, a unit of volume"
+      },
+      {
+        "id": "B",
+        "text": "Seconds, a unit of time"
+      },
+      {
+        "id": "C",
+        "text": "Degrees Celsius, a unit of temperature"
+      },
+      {
+        "id": "D",
+        "text": "Grams, a unit of mass"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 2 reports total CO₂ collected in mL, which measures volume.",
+      "B": "Seconds label the first column, which is when each reading was taken, not what was measured.",
+      "C": "Temperature was held constant at 20 °C in Study 2 and is not the recorded quantity.",
+      "D": "No mass is recorded in this study; the gas is measured by the volume it occupies."
+    }
+  },
+  {
+    "id": "s096",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "easy",
+    "passage": "sp20",
+    "context": "A student reports that a whole tablet took about 2 minutes to dissolve at 20 °C. Is this consistent with Table 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because 120 s is equal to 2 minutes."
+      },
+      {
+        "id": "B",
+        "text": "No, because 120 s is equal to 1.2 minutes."
+      },
+      {
+        "id": "C",
+        "text": "No, because 120 s is equal to 12 minutes."
+      },
+      {
+        "id": "D",
+        "text": "Yes, because 120 s is equal to 20 minutes."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a minute is 60 seconds, so 120 s ÷ 60 = 2 minutes, matching the table entry at 20 °C.",
+      "B": "This divides by 100 rather than 60. Time is not a decimal unit.",
+      "C": "This divides by 10, which is not the relationship between seconds and minutes.",
+      "D": "This multiplies rather than divides, giving a figure far longer than the trial lasted."
+    }
+  },
+  {
+    "id": "s097",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp20",
+    "context": "Which units would be most appropriate for reporting how fast CO₂ was produced in Study 2?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "mL/s"
+      },
+      {
+        "id": "B",
+        "text": "mL"
+      },
+      {
+        "id": "C",
+        "text": "s"
+      },
+      {
+        "id": "D",
+        "text": "mL·s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a rate of production is an amount divided by the time it took, so volume per second.",
+      "B": "Milliliters alone give the amount collected, not how quickly it arrived.",
+      "C": "Seconds alone give elapsed time with no reference to how much gas was produced.",
+      "D": "Multiplying volume by time produces a quantity with no physical meaning here."
+    }
+  },
+  {
+    "id": "s098",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp18",
+    "context": "The uncoated nail in moist air gained 0.22 g. This mass is equal to how many milligrams?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "220 mg"
+      },
+      {
+        "id": "B",
+        "text": "22 mg"
+      },
+      {
+        "id": "C",
+        "text": "2,200 mg"
+      },
+      {
+        "id": "D",
+        "text": "0.00022 mg"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — there are 1,000 milligrams in a gram, so 0.22 × 1,000 = 220 mg.",
+      "B": "This multiplies by 100 rather than 1,000.",
+      "C": "This multiplies by 10,000, one factor of ten too many.",
+      "D": "This divides by 1,000 instead of multiplying; a milligram is smaller than a gram, so the number must get larger."
+    }
+  },
+  {
+    "id": "s099",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "easy",
+    "passage": "sp20",
+    "context": "Each trial in Study 1 used 200 mL of water. This volume is equal to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.2 L"
+      },
+      {
+        "id": "B",
+        "text": "2 L"
+      },
+      {
+        "id": "C",
+        "text": "20 L"
+      },
+      {
+        "id": "D",
+        "text": "0.02 L"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a liter is 1,000 mL, so 200 ÷ 1,000 = 0.2 L.",
+      "B": "2 L would be 2,000 mL, ten times the volume used.",
+      "C": "20 L would be 20,000 mL, a hundred times too much.",
+      "D": "0.02 L would be only 20 mL."
+    }
+  },
+  {
+    "id": "s100",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp19",
+    "context": "Water has a mass of about 1 g per mL. The 1.40 g lost by the cutting in still air therefore corresponds to a volume closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.4 mL"
+      },
+      {
+        "id": "B",
+        "text": "14 mL"
+      },
+      {
+        "id": "C",
+        "text": "140 mL"
+      },
+      {
+        "id": "D",
+        "text": "0.14 mL"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — at 1 g per mL, a mass of 1.40 g occupies about 1.40 mL.",
+      "B": "This multiplies by 10, which the stated density does not call for.",
+      "C": "This multiplies by 100 and would be nearly a cupful of water.",
+      "D": "This divides by 10, giving less volume than the mass implies."
+    }
+  },
+  {
+    "id": "s101",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp20",
+    "context": "Water freezes at 0 °C and boils at 100 °C at sea level. The highest temperature tested in Study 1 is best described as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "hot, but well below boiling"
+      },
+      {
+        "id": "B",
+        "text": "just below freezing"
+      },
+      {
+        "id": "C",
+        "text": "exactly at the boiling point"
+      },
+      {
+        "id": "D",
+        "text": "above the boiling point"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the highest temperature tested is 50 °C, which is halfway between freezing and boiling.",
+      "B": "50 °C is well above 0 °C, so the water is nowhere near freezing.",
+      "C": "Boiling occurs at 100 °C, twice the highest temperature used.",
+      "D": "Water above 100 °C would not remain liquid at sea level, and no such trial was run."
+    }
+  },
+  {
+    "id": "s102",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "easy",
+    "passage": "sp20",
+    "context": "The final reading in Table 2 was taken at 150 s. How long is this in minutes?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2.5 minutes"
+      },
+      {
+        "id": "B",
+        "text": "1.5 minutes"
+      },
+      {
+        "id": "C",
+        "text": "15 minutes"
+      },
+      {
+        "id": "D",
+        "text": "2 minutes"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 150 ÷ 60 = 2.5 minutes.",
+      "B": "This divides by 100, treating time as decimal.",
+      "C": "This divides by 10, which is not the seconds-to-minutes relationship.",
+      "D": "2 minutes is 120 s, which is the second-to-last reading rather than the final one."
+    }
+  },
+  {
+    "id": "s103",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp20",
+    "context": "What was the average rate of CO₂ production during the first 30 seconds of Study 2?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 0.73 mL/s"
+      },
+      {
+        "id": "B",
+        "text": "About 22 mL/s"
+      },
+      {
+        "id": "C",
+        "text": "About 0.37 mL/s"
+      },
+      {
+        "id": "D",
+        "text": "About 1.36 mL/s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 22 mL collected in 30 s gives 22 ÷ 30 ≈ 0.73 mL/s.",
+      "B": "22 mL is the total volume for the interval, not a rate; it still has to be divided by the time.",
+      "C": "0.37 mL/s is the average across the whole 150 s, which is slower because production tails off.",
+      "D": "This divides 30 by 22, inverting the rate into seconds per milliliter."
+    }
+  },
+  {
+    "id": "s104",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "easy",
+    "passage": "sp20",
+    "context": "During which interval was CO₂ produced most rapidly?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0 to 30 s"
+      },
+      {
+        "id": "B",
+        "text": "30 to 60 s"
+      },
+      {
+        "id": "C",
+        "text": "90 to 120 s"
+      },
+      {
+        "id": "D",
+        "text": "120 to 150 s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 22 mL appeared in this interval, more than in any other 30-second span.",
+      "B": "This interval added 16 mL, less than the first.",
+      "C": "This interval added only 6 mL.",
+      "D": "This interval added just 2 mL, the slowest of all."
+    }
+  },
+  {
+    "id": "s105",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp20",
+    "context": "What was the average rate of CO₂ production across the entire 150 seconds?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 0.37 mL/s"
+      },
+      {
+        "id": "B",
+        "text": "About 0.73 mL/s"
+      },
+      {
+        "id": "C",
+        "text": "About 1.0 mL/s"
+      },
+      {
+        "id": "D",
+        "text": "About 0.07 mL/s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 56 mL total divided by 150 s gives about 0.37 mL/s.",
+      "B": "0.73 mL/s is the rate during the first 30 s only, when production was fastest.",
+      "C": "This would require 150 mL of gas, nearly three times what was collected.",
+      "D": "0.07 mL/s is roughly the rate in the final interval, not the average over the whole run."
+    }
+  },
+  {
+    "id": "s106",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp20",
+    "context": "How does the rate of CO₂ production change over the course of Study 2?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "It decreases steadily throughout."
+      },
+      {
+        "id": "B",
+        "text": "It increases steadily throughout."
+      },
+      {
+        "id": "C",
+        "text": "It stays roughly constant until the reaction stops."
+      },
+      {
+        "id": "D",
+        "text": "It increases and then decreases."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — successive 30-second intervals add 22, 16, 10, 6, and 2 mL, a falling amount each time.",
+      "B": "The amounts added fall rather than rise; only the running total increases.",
+      "C": "A constant rate would add equal volumes each interval, but the first adds eleven times what the last does.",
+      "D": "There is no early rise; the fastest interval is the very first one."
+    }
+  },
+  {
+    "id": "s107",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp19",
+    "context": "In the still-air trial with the lamp on, what was the average rate of water loss per hour?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 0.47 g/h"
+      },
+      {
+        "id": "B",
+        "text": "About 4.2 g/h"
+      },
+      {
+        "id": "C",
+        "text": "About 1.40 g/h"
+      },
+      {
+        "id": "D",
+        "text": "About 0.23 g/h"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 1.40 g lost over 3 hours gives 1.40 ÷ 3 ≈ 0.47 g/h.",
+      "B": "This multiplies by 3 instead of dividing, giving the loss for nine hours.",
+      "C": "1.40 g is the total for the whole trial, not the amount per hour.",
+      "D": "This divides by 6, as though the trial had run for six hours."
+    }
+  },
+  {
+    "id": "s108",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp19",
+    "context": "By approximately what factor did moving air increase the rate of water loss compared with still air, with the lamp on in both trials?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 1.7 times"
+      },
+      {
+        "id": "B",
+        "text": "About 0.6 times"
+      },
+      {
+        "id": "C",
+        "text": "About 3.4 times"
+      },
+      {
+        "id": "D",
+        "text": "About 1.0 times"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 2.35 g against 1.40 g over the same 3 hours gives a ratio of about 1.7.",
+      "B": "This is the reciprocal, 1.40 ÷ 2.35, which would mean the fan slowed the loss.",
+      "C": "This roughly doubles the correct ratio; 3.4 times 1.40 would be well above the measured 2.35 g.",
+      "D": "A factor of 1.0 would mean the fan made no difference, but the loss rose by nearly a gram."
+    }
+  },
+  {
+    "id": "s109",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp20",
+    "context": "Across the full range tested in Study 1, what was the average change in dissolution time for each 10 °C rise in water temperature?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A decrease of about 35 s"
+      },
+      {
+        "id": "B",
+        "text": "A decrease of about 140 s"
+      },
+      {
+        "id": "C",
+        "text": "A decrease of about 28 s"
+      },
+      {
+        "id": "D",
+        "text": "A decrease of about 3.5 s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the time fell from 180 s to 40 s, a change of 140 s spread over four 10-degree steps, so 140 ÷ 4 = 35 s per step.",
+      "B": "140 s is the total change across the whole range, not the change per step.",
+      "C": "This divides 140 by 5, the number of temperatures tested, rather than by the 4 intervals between them.",
+      "D": "This divides by 40, mixing up the degrees with the number of steps."
+    }
+  },
+  {
+    "id": "s110",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp20",
+    "context": "What was the approximate rate of CO₂ production between 120 s and 150 s?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 0.07 mL/s"
+      },
+      {
+        "id": "B",
+        "text": "About 0.2 mL/s"
+      },
+      {
+        "id": "C",
+        "text": "About 2 mL/s"
+      },
+      {
+        "id": "D",
+        "text": "About 1.9 mL/s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the total rose from 54 mL to 56 mL, so 2 mL over 30 s is about 0.07 mL/s.",
+      "B": "0.2 mL/s is the rate in the preceding interval, when 6 mL was produced.",
+      "C": "2 mL is the volume added during the interval, not the rate per second.",
+      "D": "This divides the running total of 56 mL by 30 s, ignoring the gas already collected."
+    }
+  },
+  {
+    "id": "s111",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "easy",
+    "passage": "sp20",
+    "context": "What total volume of CO₂ had been collected once the readings stopped changing?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "56 mL"
+      },
+      {
+        "id": "B",
+        "text": "54 mL"
+      },
+      {
+        "id": "C",
+        "text": "218 mL"
+      },
+      {
+        "id": "D",
+        "text": "2 mL"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 2 reports a running total, and its final value is 56 mL.",
+      "B": "54 mL is the reading at 120 s, before the last 2 mL appeared.",
+      "C": "This adds every reading together, but the column is already cumulative.",
+      "D": "2 mL is the amount added in the final interval, not the total."
+    }
+  },
+  {
+    "id": "s112",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp20",
+    "context": "How much CO₂ was produced between 30 s and 90 s?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "26 mL"
+      },
+      {
+        "id": "B",
+        "text": "70 mL"
+      },
+      {
+        "id": "C",
+        "text": "48 mL"
+      },
+      {
+        "id": "D",
+        "text": "10 mL"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the total rose from 22 mL to 48 mL, a difference of 26 mL.",
+      "B": "This adds the two readings rather than subtracting them.",
+      "C": "48 mL is the running total at 90 s, which includes gas produced before 30 s.",
+      "D": "10 mL is the amount added between 60 s and 90 s alone."
+    }
+  },
+  {
+    "id": "s113",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "easy",
+    "passage": "sp20",
+    "context": "How many seconds faster did a powdered tablet dissolve than a whole one?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "75 s"
+      },
+      {
+        "id": "B",
+        "text": "45 s"
+      },
+      {
+        "id": "C",
+        "text": "95 s"
+      },
+      {
+        "id": "D",
+        "text": "25 s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 120 s for the whole tablet minus 45 s for the powder gives 75 s.",
+      "B": "45 s is the powder's own dissolution time, not the difference.",
+      "C": "95 s is the time for the halved tablet.",
+      "D": "25 s is the difference between the whole tablet and the halved one."
+    }
+  },
+  {
+    "id": "s114",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp20",
+    "context": "What is the difference in dissolution time between water at 10 °C and water at 30 °C?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "100 s"
+      },
+      {
+        "id": "B",
+        "text": "60 s"
+      },
+      {
+        "id": "C",
+        "text": "140 s"
+      },
+      {
+        "id": "D",
+        "text": "40 s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 180 s at 10 °C minus 80 s at 30 °C equals 100 s.",
+      "B": "60 s is the difference between 10 °C and 20 °C.",
+      "C": "140 s is the difference between the extremes, 10 °C and 50 °C.",
+      "D": "40 s is the difference between 20 °C and 30 °C."
+    }
+  },
+  {
+    "id": "s115",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp18",
+    "context": "In Study 3, how much greater was the mass change in 3.5% NaCl than in distilled water?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.23 g"
+      },
+      {
+        "id": "B",
+        "text": "0.59 g"
+      },
+      {
+        "id": "C",
+        "text": "0.13 g"
+      },
+      {
+        "id": "D",
+        "text": "0.41 g"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 0.41 g minus 0.18 g equals 0.23 g.",
+      "B": "This adds the two values instead of subtracting them.",
+      "C": "This subtracts using the 0.5% result, 0.26 g, rather than the 0.0% result.",
+      "D": "0.41 g is the mass change at 3.5% on its own, not the difference."
+    }
+  },
+  {
+    "id": "s116",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp19",
+    "context": "For the 8-leaf cutting in still air, what was the average water loss per leaf over the 3 hours?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 0.18 g"
+      },
+      {
+        "id": "B",
+        "text": "About 0.08 g"
+      },
+      {
+        "id": "C",
+        "text": "About 11.2 g"
+      },
+      {
+        "id": "D",
+        "text": "About 0.35 g"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 1.40 g divided among 8 leaves gives 0.175 g per leaf.",
+      "B": "0.08 g is the loss measured from the leafless cutting, which came through the stem.",
+      "C": "This multiplies 1.40 by 8 rather than dividing.",
+      "D": "This divides by 4 instead of 8."
+    }
+  },
+  {
+    "id": "s117",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp19",
+    "context": "Coating the lower leaf surfaces reduced water loss by approximately what percentage of the untreated value?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 68%"
+      },
+      {
+        "id": "B",
+        "text": "About 32%"
+      },
+      {
+        "id": "C",
+        "text": "About 45%"
+      },
+      {
+        "id": "D",
+        "text": "About 86%"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the loss fell from 1.40 g to 0.45 g, a drop of 0.95 g, and 0.95 ÷ 1.40 is about 68%.",
+      "B": "32% is the fraction of the original loss that remained, not the reduction.",
+      "C": "This treats the remaining 0.45 g as a percentage without dividing by the original.",
+      "D": "86% would leave only about 0.20 g, which is the result for coating both surfaces."
+    }
+  },
+  {
+    "id": "s118",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp20",
+    "context": "What percentage of the total CO₂ had been collected by 90 seconds?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 86%"
+      },
+      {
+        "id": "B",
+        "text": "About 48%"
+      },
+      {
+        "id": "C",
+        "text": "About 68%"
+      },
+      {
+        "id": "D",
+        "text": "About 96%"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 48 mL of the eventual 56 mL is about 86%.",
+      "B": "48 is the volume in milliliters, not a percentage.",
+      "C": "About 68% corresponds to the 38 mL reading at 60 s.",
+      "D": "96% would be about 54 mL, the reading at 120 s."
+    }
+  },
+  {
+    "id": "s119",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "easy",
+    "passage": "sp21",
+    "context": "A student hypothesized that sandstone with more pore space cracks after fewer freezing cycles. Do the results of Experiment 1 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes; as porosity rises from 4% to 18%, the cycles to first crack fall from 210 to 30."
+      },
+      {
+        "id": "B",
+        "text": "Yes; as porosity rises from 4% to 18%, the cycles to first crack rise from 30 to 210."
+      },
+      {
+        "id": "C",
+        "text": "No; porosity and cycles to first crack both increase together."
+      },
+      {
+        "id": "D",
+        "text": "No; Experiment 1 held porosity constant."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 1 shows fewer cycles needed at higher porosity, which is exactly what the hypothesis predicts.",
+      "B": "Reads the table backwards. The 210-cycle core is the 4% one, the least porous.",
+      "C": "The two move in opposite directions, not together.",
+      "D": "Porosity is the variable Experiment 1 varies; it is held constant in Experiments 2 and 3."
+    }
+  },
+  {
+    "id": "s120",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp21",
+    "context": "Experiment 3 was designed to test which hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "That cracking requires water inside the pore spaces, not merely repeated cooling."
+      },
+      {
+        "id": "B",
+        "text": "That cracking depends on the porosity of the sandstone."
+      },
+      {
+        "id": "C",
+        "text": "That cracking occurs faster when the maximum temperature of the cycle is raised."
+      },
+      {
+        "id": "D",
+        "text": "That sandstone cracks more readily than other rock types."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Experiment 3 changes only one thing from Experiment 2: the cores are dried. That isolates the role of pore water.",
+      "B": "Porosity was held at 12% throughout Experiment 3, so it cannot be what the experiment tests.",
+      "C": "The maximum stayed at +5 °C in every experiment described.",
+      "D": "Only sandstone was tested; no comparison with another rock type appears anywhere in the studies."
+    }
+  },
+  {
+    "id": "s121",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp21",
+    "context": "The results of Experiment 3 are most consistent with which statement?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Freezing temperatures alone are not sufficient to crack sandstone."
+      },
+      {
+        "id": "B",
+        "text": "Freezing temperatures alone are sufficient to crack sandstone."
+      },
+      {
+        "id": "C",
+        "text": "Dried sandstone cracks more slowly, but still cracks within 300 cycles."
+      },
+      {
+        "id": "D",
+        "text": "Cracking depends only on how far below 0 °C the rock is taken."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — dried cores taken to −20 °C 300 times showed no cracks at all, so the cold by itself did not do the damage.",
+      "B": "If cold alone were sufficient, the dried cores would have cracked. None did.",
+      "C": "Table 3 reports zero cracks, not slower cracking.",
+      "D": "This is the claim Experiment 3 rules out: the dried cores reached the same temperatures and survived."
+    }
+  },
+  {
+    "id": "s122",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp21",
+    "context": "Experiment 2 was most likely designed to test the hypothesis that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "how cold the rock gets during a cycle affects how quickly it cracks."
+      },
+      {
+        "id": "B",
+        "text": "how porous the rock is affects how quickly it cracks."
+      },
+      {
+        "id": "C",
+        "text": "how long a core is soaked before cycling affects how quickly it cracks."
+      },
+      {
+        "id": "D",
+        "text": "dried cores crack at the same rate as soaked cores."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Experiment 2 varies the minimum temperature and holds porosity fixed at 12%, so the minimum temperature is what it is testing.",
+      "B": "That is Experiment 1. Experiment 2 uses a single porosity.",
+      "C": "The 48-hour soak was the same for every soaked core; it was never varied.",
+      "D": "That comparison belongs to Experiment 3."
+    }
+  },
+  {
+    "id": "s123",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp21",
+    "context": "A geologist hypothesizes that once the minimum temperature is below −10 °C, cooling the rock further has no additional effect on how quickly it cracks. Do the results of Experiment 2 support this?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No; cycles to first crack fall from 65 to 40 as the minimum drops from −10 °C to −20 °C."
+      },
+      {
+        "id": "B",
+        "text": "Yes; cycles to first crack are the same at −10 °C and −20 °C."
+      },
+      {
+        "id": "C",
+        "text": "Yes; no cores cracked at temperatures below −10 °C."
+      },
+      {
+        "id": "D",
+        "text": "No; cycles to first crack rise from 40 to 65 as the minimum drops from −10 °C to −20 °C."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a further drop still shortened the time to cracking, so the additional cooling did have an effect.",
+      "B": "Table 2 gives 65 at −10 °C and 40 at −20 °C, which are not the same.",
+      "C": "The −20 °C cores cracked sooner than any others in Experiment 2.",
+      "D": "Reverses the direction. Colder minimums produced cracking in fewer cycles, not more."
+    }
+  },
+  {
+    "id": "s124",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp21",
+    "context": "Which result would most weaken the hypothesis that expanding pore ice is what breaks the rock?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Soaked cores cycled between +5 °C and +2 °C crack after about 65 cycles."
+      },
+      {
+        "id": "B",
+        "text": "Soaked cores of 25% porosity crack after about 20 cycles."
+      },
+      {
+        "id": "C",
+        "text": "Dried cores cycled 600 times at −20 °C still show no cracks."
+      },
+      {
+        "id": "D",
+        "text": "Soaked cores cycled to −30 °C crack after about 32 cycles."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — water in the pores never freezes on that cycle, so cracking without any ice would undercut the proposed mechanism.",
+      "B": "This extends the porosity trend of Experiment 1 and fits the mechanism rather than challenging it.",
+      "C": "This reinforces the mechanism: without pore water there is no ice, and no cracking.",
+      "D": "This extends the temperature trend of Experiment 2 and is consistent with the mechanism."
+    }
+  },
+  {
+    "id": "s125",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp21",
+    "context": "In Experiment 1, which variable was deliberately varied between cores?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The porosity of the sandstone"
+      },
+      {
+        "id": "B",
+        "text": "The minimum temperature of the freezing cycle"
+      },
+      {
+        "id": "C",
+        "text": "The length of time each core was soaked"
+      },
+      {
+        "id": "D",
+        "text": "The number of cycles each core received"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — four sandstones of differing porosity were cut into cores and otherwise treated identically.",
+      "B": "The cycle ran between +5 °C and −10 °C for every core in Experiment 1. Varying the minimum is Experiment 2.",
+      "C": "Every core was soaked for 48 hours.",
+      "D": "Cycles were counted, not set in advance; cores were inspected after every cycle until one cracked."
+    }
+  },
+  {
+    "id": "s126",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp21",
+    "context": "Which variable was varied in Experiment 1 but held constant in Experiment 2?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Porosity"
+      },
+      {
+        "id": "B",
+        "text": "Minimum cycle temperature"
+      },
+      {
+        "id": "C",
+        "text": "Maximum cycle temperature"
+      },
+      {
+        "id": "D",
+        "text": "Soaking time"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Experiment 1 used four porosities; Experiment 2 used only 12% cores.",
+      "B": "This runs the other way: it was fixed in Experiment 1 and varied in Experiment 2.",
+      "C": "The maximum was +5 °C in both experiments, so it was not varied in either.",
+      "D": "Soaking time was 48 hours in both."
+    }
+  },
+  {
+    "id": "s127",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp21",
+    "context": "Experiment 3 differed from Experiment 2 in which single respect?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The cores were dried and kept sealed from moisture rather than soaked."
+      },
+      {
+        "id": "B",
+        "text": "The cores had a different porosity."
+      },
+      {
+        "id": "C",
+        "text": "The cycle ran between different maximum and minimum temperatures."
+      },
+      {
+        "id": "D",
+        "text": "The cores were inspected only once rather than after every cycle."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the porosity, the temperatures, and the cycling were carried over unchanged; only the water was removed.",
+      "B": "Both experiments used 12% porosity cores.",
+      "C": "Experiment 3 repeated the same set of minimum temperatures used in Experiment 2.",
+      "D": "Nothing in the description changes the inspection schedule; in any case no cracks appeared to find."
+    }
+  },
+  {
+    "id": "s128",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp21",
+    "context": "A 12% porosity core cycled to a minimum of −10 °C appears in both Experiment 1 and Experiment 2. What do the two results show?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Both report cracking at 65 cycles, so the conditions were reproduced."
+      },
+      {
+        "id": "B",
+        "text": "Experiment 1 reports 65 cycles and Experiment 2 reports 130, a discrepancy."
+      },
+      {
+        "id": "C",
+        "text": "Experiment 1 reports 210 cycles and Experiment 2 reports 65."
+      },
+      {
+        "id": "D",
+        "text": "Only Experiment 2 tested that combination, so no comparison is possible."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the 12% row of Table 1 and the −10 °C row of Table 2 describe the same conditions and give the same figure.",
+      "B": "130 is the Experiment 2 value for a −5 °C minimum, not −10 °C.",
+      "C": "210 is the Experiment 1 value for 4% porosity, not 12%.",
+      "D": "Experiment 1 ran every core to a −10 °C minimum, and one of those cores was 12% porosity."
+    }
+  },
+  {
+    "id": "s129",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp21",
+    "context": "Suppose a core of 15% porosity had been included in Experiment 1. Based on Table 1, it would most likely have cracked after how many cycles?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Fewer than 30"
+      },
+      {
+        "id": "B",
+        "text": "Between 30 and 65"
+      },
+      {
+        "id": "C",
+        "text": "Between 65 and 120"
+      },
+      {
+        "id": "D",
+        "text": "More than 210"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Fewer than 30 cycles would put a 15% core past the 18% core, but it is less porous than that one.",
+      "B": "Correct — 15% falls between the 12% core (65 cycles) and the 18% core (30 cycles), so its value falls between theirs.",
+      "C": "This range belongs to cores less porous than 12%.",
+      "D": "More than 210 cycles is beyond even the least porous core tested."
+    }
+  },
+  {
+    "id": "s130",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp21",
+    "context": "The mechanism these experiments investigate depends on an unusual property of water. Which statement describes it?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Water expands when it freezes, whereas most substances contract on solidifying."
+      },
+      {
+        "id": "B",
+        "text": "Water contracts when it freezes, as most substances do."
+      },
+      {
+        "id": "C",
+        "text": "Water changes directly from liquid to gas at 0 °C."
+      },
+      {
+        "id": "D",
+        "text": "Water conducts heat better as a solid than any other common material."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — ice occupies more volume than the water it came from, which is why freezing inside a sealed pore pushes outward on the rock.",
+      "B": "If water contracted on freezing, it would pull away from the pore walls rather than press against them, and the proposed mechanism would not work.",
+      "C": "0 °C is water's freezing point. The liquid-to-gas change is boiling, at 100 °C at sea level.",
+      "D": "Thermal conductivity is not what breaks the rock here; the expansion of the ice is."
+    }
+  },
+  {
+    "id": "s131",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp21",
+    "context": "Pure water at ordinary pressure freezes at 0 °C. Which minimum temperature used in Experiment 2 would leave pore water closest to the point of not freezing at all?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−2 °C"
+      },
+      {
+        "id": "B",
+        "text": "−5 °C"
+      },
+      {
+        "id": "C",
+        "text": "−10 °C"
+      },
+      {
+        "id": "D",
+        "text": "−20 °C"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it is the minimum nearest 0 °C, and the cores cycled to it took the most cycles to crack, 240.",
+      "B": "Colder than −2 °C, and further from the freezing point.",
+      "C": "This is the standard minimum used in Experiment 1, not the one nearest freezing.",
+      "D": "This is the coldest minimum tested, the furthest from 0 °C."
+    }
+  },
+  {
+    "id": "s132",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp21",
+    "context": "Dissolved salt lowers the temperature at which water freezes. If the cores in Experiment 2 had been soaked in salt water instead of pure water, the cycles to first crack at a minimum of −2 °C would most likely have:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "increased, because the pore water might not freeze at −2 °C at all."
+      },
+      {
+        "id": "B",
+        "text": "decreased, because salt water expands more than pure water on freezing."
+      },
+      {
+        "id": "C",
+        "text": "stayed at 240, because salt does not enter the pore spaces."
+      },
+      {
+        "id": "D",
+        "text": "decreased, because salt water freezes at a higher temperature."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — with the freezing point pushed below −2 °C, some or all cycles would produce no ice, and cracking would take longer or not occur.",
+      "B": "Nothing here suggests salt water expands more; the relevant effect is on when it freezes.",
+      "C": "The cores are soaked, so whatever is dissolved in the water enters the pores with it.",
+      "D": "Salt lowers the freezing point rather than raising it."
+    }
+  },
+  {
+    "id": "s133",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "easy",
+    "passage": "sp21",
+    "context": "The second column of Table 1 reports its values in which units?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Cycles, a count of completed freeze-and-thaw repetitions"
+      },
+      {
+        "id": "B",
+        "text": "Seconds, a unit of time"
+      },
+      {
+        "id": "C",
+        "text": "Degrees Celsius, a unit of temperature"
+      },
+      {
+        "id": "D",
+        "text": "Percent, a proportion of the rock's volume"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the column heading reads \"Cycles to first crack,\" and a cycle is one full pass between the two temperatures.",
+      "B": "No time in seconds is reported anywhere in these studies.",
+      "C": "Degrees Celsius label the temperatures in Table 2 and Table 3, not this column.",
+      "D": "Percent is the unit of the porosity column, the first one."
+    }
+  },
+  {
+    "id": "s134",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp21",
+    "context": "The chamber completes one cycle per hour. Approximately how long did a 12% porosity core take to crack in Experiment 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 65 minutes"
+      },
+      {
+        "id": "B",
+        "text": "About 3 days"
+      },
+      {
+        "id": "C",
+        "text": "About 3 weeks"
+      },
+      {
+        "id": "D",
+        "text": "About 65 days"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Treats each cycle as a minute rather than an hour.",
+      "B": "Correct — 65 cycles at one per hour is 65 hours, which is a little under 3 days.",
+      "C": "Three weeks would be over 500 hours, far more than 65 cycles.",
+      "D": "Treats each cycle as a day rather than an hour."
+    }
+  },
+  {
+    "id": "s135",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp21",
+    "context": "A summary of Experiment 2 reports one of the minimum temperatures as 263 K. Given that a temperature in kelvins is the Celsius value plus 273, which row of Table 2 does this describe?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The −2 °C row"
+      },
+      {
+        "id": "B",
+        "text": "The −5 °C row"
+      },
+      {
+        "id": "C",
+        "text": "The −10 °C row"
+      },
+      {
+        "id": "D",
+        "text": "The −20 °C row"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "−2 °C corresponds to about 271 K.",
+      "B": "−5 °C corresponds to about 268 K.",
+      "C": "Correct — 263 − 273 = −10, so 263 K is −10 °C.",
+      "D": "−20 °C corresponds to about 253 K."
+    }
+  },
+  {
+    "id": "s136",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "easy",
+    "passage": "sp22",
+    "context": "According to Table 3, which soil took in water fastest during the final interval of the test?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Sand"
+      },
+      {
+        "id": "B",
+        "text": "Loam"
+      },
+      {
+        "id": "C",
+        "text": "Clay"
+      },
+      {
+        "id": "D",
+        "text": "Sand and loam were equal."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — sand's rate of 180 mm/hr is the largest of the three.",
+      "B": "Loam's 66 mm/hr is well below sand's.",
+      "C": "Clay's 18 mm/hr is the smallest of the three.",
+      "D": "The two differ by more than a factor of two."
+    }
+  },
+  {
+    "id": "s137",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp22",
+    "context": "During the first 5 minutes of the test, at what average rate did water soak into the sand?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5 mm/min"
+      },
+      {
+        "id": "B",
+        "text": "9 mm/min"
+      },
+      {
+        "id": "C",
+        "text": "45 mm/min"
+      },
+      {
+        "id": "D",
+        "text": "225 mm/min"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Reports the elapsed time rather than the rate.",
+      "B": "Correct — 45 mm of water soaked in over 5 minutes, and 45 ÷ 5 = 9 mm/min.",
+      "C": "This is the total depth over the interval, not the rate per minute.",
+      "D": "Multiplies depth by time instead of dividing."
+    }
+  },
+  {
+    "id": "s138",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp22",
+    "context": "For loam, how does the average rate of infiltration over the 20–40 minute interval compare with the rate over the first 5 minutes?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "It is lower: about 1.1 mm/min compared with 4 mm/min."
+      },
+      {
+        "id": "B",
+        "text": "It is higher: about 4 mm/min compared with 1.1 mm/min."
+      },
+      {
+        "id": "C",
+        "text": "It is unchanged at about 2 mm/min throughout."
+      },
+      {
+        "id": "D",
+        "text": "It cannot be compared, because Table 1 reports totals rather than rates."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — loam gained 20 mm in the first 5 minutes (4 mm/min) and 22 mm over the last 20 minutes (1.1 mm/min).",
+      "B": "Reverses the two intervals. Infiltration slows as the test goes on.",
+      "C": "The rate falls by roughly a factor of four across the test.",
+      "D": "Rates follow from totals: the change in cumulative depth divided by the time it took."
+    }
+  },
+  {
+    "id": "s139",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp22",
+    "context": "Do the clay figures in Table 1 for the 20–40 minute interval agree with the rate reported for clay in Table 3?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes; 6 mm over 20 minutes is 0.3 mm/min, which is 18 mm/hr."
+      },
+      {
+        "id": "B",
+        "text": "No; 6 mm over 20 minutes is 0.3 mm/hr, not 18 mm/hr."
+      },
+      {
+        "id": "C",
+        "text": "No; 21 mm over 40 minutes is 31.5 mm/hr, not 18 mm/hr."
+      },
+      {
+        "id": "D",
+        "text": "Yes; 15 mm over 20 minutes is 45 mm/hr, which rounds to 18 mm/hr."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — clay rose from 15 mm to 21 mm, a gain of 6 mm in 20 minutes, and 0.3 mm/min × 60 = 18 mm/hr.",
+      "B": "Confuses per-minute with per-hour. Converting between them is the step that produces 18.",
+      "C": "This is the average over the whole test, not the final interval Table 3 reports.",
+      "D": "15 mm is the cumulative total at 20 minutes, not the gain during the final interval."
+    }
+  },
+  {
+    "id": "s140",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp22",
+    "context": "By approximately what factor does sand's final infiltration rate exceed clay's?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "10"
+      },
+      {
+        "id": "C",
+        "text": "162"
+      },
+      {
+        "id": "D",
+        "text": "3,240"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This is closer to the ratio between loam and clay, 66 to 18.",
+      "B": "Correct — 180 mm/hr ÷ 18 mm/hr = 10.",
+      "C": "This is the difference between the two rates, not the factor by which one exceeds the other.",
+      "D": "Multiplies the two rates instead of dividing."
+    }
+  },
+  {
+    "id": "s141",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp22",
+    "context": "For how many of the three soils is the final-interval rate in Table 3 lower than that soil's average rate across the whole 40-minute test?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "None of them"
+      },
+      {
+        "id": "B",
+        "text": "One"
+      },
+      {
+        "id": "C",
+        "text": "Two"
+      },
+      {
+        "id": "D",
+        "text": "All three"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Every soil's cumulative curve flattens as the test goes on, which is exactly what a falling rate looks like.",
+      "B": "Sand, loam, and clay all show the same pattern, not just one of them.",
+      "C": "The third soil behaves the same way as the other two.",
+      "D": "Correct — the whole-test averages are about 285, 111, and 32 mm/hr, each above the 180, 66, and 18 mm/hr of the final interval."
+    }
+  },
+  {
+    "id": "s142",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "easy",
+    "passage": "sp22",
+    "context": "After 40 minutes, how much more water had soaked into the sand than into the clay?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "21 mm"
+      },
+      {
+        "id": "B",
+        "text": "115 mm"
+      },
+      {
+        "id": "C",
+        "text": "169 mm"
+      },
+      {
+        "id": "D",
+        "text": "211 mm"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is the clay total alone.",
+      "B": "Subtracts the wrong pair: sand at 20 minutes minus clay at 20 minutes gives 115.",
+      "C": "Correct — 190 mm − 21 mm = 169 mm.",
+      "D": "Adds the two totals instead of subtracting."
+    }
+  },
+  {
+    "id": "s143",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp22",
+    "context": "What percentage of the sand's 40-minute total had already soaked in by the 10-minute mark?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 25%"
+      },
+      {
+        "id": "B",
+        "text": "About 42%"
+      },
+      {
+        "id": "C",
+        "text": "About 68%"
+      },
+      {
+        "id": "D",
+        "text": "About 80%"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "25% would correspond to about 48 mm, which is closer to the 5-minute reading.",
+      "B": "Correct — 80 mm of the eventual 190 mm is 80 ÷ 190 ≈ 42%.",
+      "C": "68% would be about 130 mm, the reading at 20 minutes rather than 10.",
+      "D": "Reads the 80 mm value as a percentage."
+    }
+  },
+  {
+    "id": "s144",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp22",
+    "context": "How much water soaked into the loam between the 10-minute and 20-minute readings?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "18 mm"
+      },
+      {
+        "id": "B",
+        "text": "34 mm"
+      },
+      {
+        "id": "C",
+        "text": "52 mm"
+      },
+      {
+        "id": "D",
+        "text": "86 mm"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the cumulative figures are 34 mm and 52 mm, a gain of 18 mm.",
+      "B": "This is the cumulative total at 10 minutes, not the gain over the interval.",
+      "C": "This is the cumulative total at 20 minutes.",
+      "D": "Adds the two cumulative readings instead of subtracting."
+    }
+  },
+  {
+    "id": "s145",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp22",
+    "context": "If clay continued to take in water at the rate given for it in Table 3, what would its cumulative infiltration be at 60 minutes?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "24 mm"
+      },
+      {
+        "id": "B",
+        "text": "27 mm"
+      },
+      {
+        "id": "C",
+        "text": "39 mm"
+      },
+      {
+        "id": "D",
+        "text": "42 mm"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Adds only 3 mm, the gain over 10 further minutes rather than 20.",
+      "B": "Correct — 18 mm/hr for the extra 20 minutes adds 6 mm to the 21 mm already recorded.",
+      "C": "Adds a full hour's worth of infiltration, 18 mm, rather than 20 minutes' worth.",
+      "D": "Doubles the 40-minute total."
+    }
+  },
+  {
+    "id": "s146",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp22",
+    "context": "At the 40-minute reading, the gap between loam and clay is approximately how many times the gap between them at the 5-minute reading?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 2 times"
+      },
+      {
+        "id": "B",
+        "text": "About 4 times"
+      },
+      {
+        "id": "C",
+        "text": "About 8 times"
+      },
+      {
+        "id": "D",
+        "text": "About 14 times"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Two times would put the 40-minute gap near 28 mm; it is 53 mm.",
+      "B": "Correct — the gaps are 74 − 21 = 53 mm and 20 − 6 = 14 mm, and 53 ÷ 14 ≈ 3.8.",
+      "C": "Eight times would require a 40-minute gap of over 100 mm.",
+      "D": "Reuses the 5-minute gap of 14 mm as though it were the factor."
+    }
+  },
+  {
+    "id": "s147",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp22",
+    "context": "At the 20-minute reading, the loam's cumulative infiltration is closest to what fraction of the sand's?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "One-eighth"
+      },
+      {
+        "id": "B",
+        "text": "One-quarter"
+      },
+      {
+        "id": "C",
+        "text": "Two-fifths"
+      },
+      {
+        "id": "D",
+        "text": "Three-quarters"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "One-eighth of 130 mm is about 16 mm, which is close to the clay reading, not the loam one.",
+      "B": "One-quarter of 130 mm is about 33 mm, below the loam's 52 mm.",
+      "C": "Correct — 52 mm out of 130 mm is exactly 0.4.",
+      "D": "Three-quarters would be about 98 mm, far above the loam reading."
+    }
+  },
+  {
+    "id": "s148",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "easy",
+    "passage": "sp22",
+    "context": "Bulk density in Table 2 is reported in g/cm³. This unit expresses:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "mass per unit volume."
+      },
+      {
+        "id": "B",
+        "text": "volume per unit mass."
+      },
+      {
+        "id": "C",
+        "text": "mass per unit area."
+      },
+      {
+        "id": "D",
+        "text": "a percentage of the sample's total weight."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — grams measure mass and cubic centimeters measure volume, so the ratio is mass per volume.",
+      "B": "That would be cm³/g, the reciprocal of what is given.",
+      "C": "Area would be a squared length, such as cm², not a cubed one.",
+      "D": "Percentages are the unit of the organic matter and clay content columns."
+    }
+  },
+  {
+    "id": "s149",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp22",
+    "context": "Sand's rate in Table 3 is 180 mm/hr. Expressed in millimeters per minute, this rate is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.8 mm/min"
+      },
+      {
+        "id": "B",
+        "text": "3 mm/min"
+      },
+      {
+        "id": "C",
+        "text": "18 mm/min"
+      },
+      {
+        "id": "D",
+        "text": "10,800 mm/min"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Divides by 100 rather than by 60.",
+      "B": "Correct — an hour holds 60 minutes, so 180 ÷ 60 = 3 mm/min.",
+      "C": "Divides by 10 rather than by 60.",
+      "D": "Multiplies by 60. Converting to a shorter time interval makes the number smaller, not larger."
+    }
+  },
+  {
+    "id": "s150",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp22",
+    "context": "According to Table 2, which soil has the greatest clay content?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Sand, at 4%"
+      },
+      {
+        "id": "B",
+        "text": "Loam, at 19%"
+      },
+      {
+        "id": "C",
+        "text": "Clay, at 52%"
+      },
+      {
+        "id": "D",
+        "text": "Loam and clay are equal."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "4% is the smallest of the three values.",
+      "B": "19% is larger than sand's but well below clay's.",
+      "C": "Correct — 52% is the largest value in the clay content column.",
+      "D": "The two differ by 33 percentage points."
+    }
+  },
+  {
+    "id": "s151",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp22",
+    "context": "Across the three soils, how does the final-interval infiltration rate change as clay content increases?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "It decreases."
+      },
+      {
+        "id": "B",
+        "text": "It increases."
+      },
+      {
+        "id": "C",
+        "text": "It increases and then decreases."
+      },
+      {
+        "id": "D",
+        "text": "It shows no consistent pattern."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — clay content of 4%, 19%, and 52% pairs with rates of 180, 66, and 18 mm/hr.",
+      "B": "The rates fall as clay content rises, not the reverse.",
+      "C": "There is no turning point; each step down in rate follows a step up in clay content.",
+      "D": "The pattern holds for all three soils without exception."
+    }
+  },
+  {
+    "id": "s152",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp22",
+    "context": "Which soil has both the lowest bulk density and the highest organic matter content?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Sand"
+      },
+      {
+        "id": "B",
+        "text": "Loam"
+      },
+      {
+        "id": "C",
+        "text": "Clay"
+      },
+      {
+        "id": "D",
+        "text": "No single soil has both."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Sand has the highest bulk density, 1.55 g/cm³, and the lowest organic matter, 0.8%.",
+      "B": "Correct — loam's 1.32 g/cm³ is the lowest bulk density and its 3.6% is the highest organic matter.",
+      "C": "Clay is in the middle on both measures.",
+      "D": "One soil does hold both extremes, which is what makes the pairing worth noticing."
+    }
+  },
+  {
+    "id": "s153",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp23",
+    "context": "According to Scientist 1, the trout disappeared primarily because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the band of water cold enough for trout grew thinner each summer until it closed."
+      },
+      {
+        "id": "B",
+        "text": "phosphorus from farmland fed algae whose decay used up the deep layer's oxygen."
+      },
+      {
+        "id": "C",
+        "text": "the deep layer of the lake warmed past the temperature trout can tolerate."
+      },
+      {
+        "id": "D",
+        "text": "trout were caught faster than they could reproduce."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Scientist 1 describes a warming surface and a sinking boundary squeezing the habitable band until it closed in the hottest years.",
+      "B": "This is Scientist 2's account, not Scientist 1's.",
+      "C": "Scientist 1 points to the surface layer warming and expanding downward; Table 1 shows the deep layer holding near 6 °C.",
+      "D": "Neither scientist raises fishing pressure as a cause."
+    }
+  },
+  {
+    "id": "s154",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp23",
+    "context": "Scientist 2 attributes the loss of the trout to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a rise in the lake's surface temperature of 2.6 °C."
+      },
+      {
+        "id": "B",
+        "text": "oxygen loss in the deep layer, driven by nutrients running off expanded farmland."
+      },
+      {
+        "id": "C",
+        "text": "the disappearance of the cold deep layer during the hottest summers."
+      },
+      {
+        "id": "D",
+        "text": "a decline in the algae the trout depend on for food."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Scientist 2 names this figure only to argue it is too small to explain the loss on its own.",
+      "B": "Correct — doubled farm acreage raised phosphorus, phosphorus fed algae, and decaying algae consumed the deep layer's oxygen.",
+      "C": "Scientist 2 argues the opposite: the cold water never disappeared, it became unbreathable.",
+      "D": "In Scientist 2's account algae increased, and their increase is the problem rather than a food supply."
+    }
+  },
+  {
+    "id": "s155",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp23",
+    "context": "Which statement would both scientists accept?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Oxygen in the lake's deep layer declined over the period studied."
+      },
+      {
+        "id": "B",
+        "text": "The decline in oxygen was caused by a longer stratified season."
+      },
+      {
+        "id": "C",
+        "text": "Phosphorus entering the lake rose after 1990."
+      },
+      {
+        "id": "D",
+        "text": "The deep layer became too warm for trout."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Scientist 2 builds the argument on it and Scientist 1 concedes it outright, disagreeing only about its cause.",
+      "B": "This is Scientist 1's explanation for the oxygen decline, and it is precisely what Scientist 2 rejects as the primary story.",
+      "C": "Scientist 2 asserts this; Scientist 1 never addresses farm acreage at all.",
+      "D": "Neither scientist claims this, and Table 1 shows the deep layer steady near 6 °C."
+    }
+  },
+  {
+    "id": "s156",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp23",
+    "context": "How does Scientist 1 account for the fall in deep-layer oxygen?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "As a measurement artifact that does not reflect a real change."
+      },
+      {
+        "id": "B",
+        "text": "As a downstream effect of warming, which keeps the deep layer sealed off for more weeks each year."
+      },
+      {
+        "id": "C",
+        "text": "As the direct cause of the decline, agreeing with Scientist 2 on that point."
+      },
+      {
+        "id": "D",
+        "text": "As the result of trout themselves consuming more oxygen as the water warmed."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Scientist 1 accepts the fall as real and offers a cause for it.",
+      "B": "Correct — a warmer, longer-stratified summer cuts the deep layer off from the air for longer, which is how Scientist 1 folds the oxygen data into a warming explanation.",
+      "C": "Scientist 1 treats the oxygen fall as a consequence of warming rather than as the primary cause.",
+      "D": "No such claim appears; a declining fish population would in any case consume less oxygen, not more."
+    }
+  },
+  {
+    "id": "s157",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp23",
+    "context": "Which finding, if confirmed, would most weaken Scientist 2's explanation?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Phosphorus entering Lake Idris was measured every year and did not change between 1990 and 2020."
+      },
+      {
+        "id": "B",
+        "text": "Algae in Lake Idris became more abundant after 1990."
+      },
+      {
+        "id": "C",
+        "text": "Lake trout in laboratory tanks stop feeding below 4 mg/L of dissolved oxygen."
+      },
+      {
+        "id": "D",
+        "text": "August surface temperature rose faster after 2010 than before it."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the phosphorus increase is the first link in Scientist 2's chain. Remove it and the algae, the decay, and the oxygen loss lose their proposed source.",
+      "B": "More algae is what Scientist 2 predicts, so this supports the account.",
+      "C": "This supports Scientist 2 by confirming that the measured oxygen levels are low enough to matter.",
+      "D": "This bears on Scientist 1's timeline and leaves the nutrient argument untouched."
+    }
+  },
+  {
+    "id": "s158",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp23",
+    "context": "A nearby lake warmed by the same amount over the same period but has no farmland in its watershed, and its trout population is unchanged. This finding would:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "support Scientist 2, because warming without nutrient runoff did not cost that lake its trout."
+      },
+      {
+        "id": "B",
+        "text": "support Scientist 1, because it shows warming is widespread across the region."
+      },
+      {
+        "id": "C",
+        "text": "weaken both accounts, because neither predicts a lake that keeps its trout."
+      },
+      {
+        "id": "D",
+        "text": "have no bearing, because the two lakes are not the same size."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the comparison lake isolates warming from runoff, and warming alone was not enough, which is Scientist 2's central claim.",
+      "B": "Whether warming is widespread is not in dispute. What the comparison tests is whether warming alone suffices, and here it did not.",
+      "C": "Scientist 2 predicts exactly this outcome for a lake without added nutrients.",
+      "D": "Size is never raised by either scientist, and the comparison controls the one variable that matters to the dispute."
+    }
+  },
+  {
+    "id": "s159",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp23",
+    "context": "Scientist 2 answers the warming argument chiefly by pointing out that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "surface temperature was never measured accurately before 2000."
+      },
+      {
+        "id": "B",
+        "text": "the deep layer remained near 6 °C in August, so cold water was still available."
+      },
+      {
+        "id": "C",
+        "text": "lake trout can tolerate water as warm as 22 °C for short periods."
+      },
+      {
+        "id": "D",
+        "text": "the catch fell in years when the summer was unusually cool."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Scientist 2 disputes the significance of the temperature rise, not the measurements themselves.",
+      "B": "Correct — the argument is that a 2.6 °C surface rise cannot remove a deep layer that is still 6 °C, so the cold habitat persisted and something else made it unusable.",
+      "C": "Neither scientist makes any claim about trout tolerating 22 °C water.",
+      "D": "It is Scientist 1 who ties the steepest drops to the hottest summers; Scientist 2 does not contest that pairing."
+    }
+  },
+  {
+    "id": "s160",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp23",
+    "context": "Which prediction follows from both scientists' accounts?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A fish species that tolerates both warm water and low oxygen would not have declined in Lake Idris."
+      },
+      {
+        "id": "B",
+        "text": "A fish species that requires cold water but tolerates low oxygen would have declined."
+      },
+      {
+        "id": "C",
+        "text": "A fish species that requires high oxygen but tolerates warm water would have declined."
+      },
+      {
+        "id": "D",
+        "text": "Every fish species in Lake Idris would have declined at the same rate as the trout."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it escapes both proposed causes, so neither account predicts trouble for it.",
+      "B": "Scientist 1 would predict a decline, but Scientist 2 would not, since such a fish could live in the deoxygenated cold layer.",
+      "C": "Scientist 2 would predict a decline, but Scientist 1 would not, since such a fish could live in the warm surface layer.",
+      "D": "Both accounts turn on the specific requirements of the trout, so species with different tolerances would fare differently."
+    }
+  },
+  {
+    "id": "s161",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp23",
+    "context": "Which column of Table 1 most directly tests Scientist 2's hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Surface temperature"
+      },
+      {
+        "id": "B",
+        "text": "Deep-layer temperature"
+      },
+      {
+        "id": "C",
+        "text": "Deep-layer oxygen"
+      },
+      {
+        "id": "D",
+        "text": "Trout catch"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Surface temperature is the measurement Scientist 1's hypothesis turns on.",
+      "B": "Scientist 2 cites this column only to show the cold water persisted, not as the proposed cause.",
+      "C": "Correct — Scientist 2's claim is that oxygen in the deep layer fell below what trout require, and this column is the measurement of exactly that.",
+      "D": "The catch is the outcome both scientists are trying to explain, so it cannot distinguish between them."
+    }
+  },
+  {
+    "id": "s162",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp23",
+    "context": "Scientist 1's account predicts what about the boundary between the warm and cold layers over the period studied?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "It sank steadily deeper."
+      },
+      {
+        "id": "B",
+        "text": "It rose steadily toward the surface."
+      },
+      {
+        "id": "C",
+        "text": "It stayed at a constant depth."
+      },
+      {
+        "id": "D",
+        "text": "It disappeared entirely after 1995."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a deepening boundary is what thins the cold band from above, which is the mechanism Scientist 1 describes.",
+      "B": "A rising boundary would give the trout more cold water, not less.",
+      "C": "A constant boundary would leave the habitable band the same width each summer, and the account requires it to narrow.",
+      "D": "Scientist 1 says the cold band closed in the hottest years, not that the lake stopped separating into layers at all."
+    }
+  },
+  {
+    "id": "s163",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp23",
+    "context": "In which year did the deep-layer oxygen measurement first fall below the threshold Scientist 2 identifies as the trout's requirement?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2000"
+      },
+      {
+        "id": "B",
+        "text": "2005"
+      },
+      {
+        "id": "C",
+        "text": "2010"
+      },
+      {
+        "id": "D",
+        "text": "2015"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The 2000 reading is 6.7 mg/L, well above the stated requirement.",
+      "B": "The 2005 reading is 5.2 mg/L, still above it.",
+      "C": "Correct — Scientist 2 gives 4 mg/L as the requirement, and 2010 is the first year the measurement, 3.8 mg/L, falls below it.",
+      "D": "The 2015 reading of 2.6 mg/L is below the threshold, but it is not the first year that happened."
+    }
+  },
+  {
+    "id": "s164",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp23",
+    "context": "Suppose the deep-layer temperature column in Table 1 had instead risen from 5.8 °C in 1995 to 12 °C in 2020. What effect would this have on the two accounts?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "It would strengthen Scientist 1 and undercut a key claim of Scientist 2."
+      },
+      {
+        "id": "B",
+        "text": "It would strengthen Scientist 2 and undercut a key claim of Scientist 1."
+      },
+      {
+        "id": "C",
+        "text": "It would strengthen both accounts equally."
+      },
+      {
+        "id": "D",
+        "text": "It would have no effect on either account."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Scientist 2 insists the cold water persisted and only became unbreathable; a deep layer at 12 °C would no longer be cold enough for trout, which is Scientist 1's picture of a closing habitable band.",
+      "B": "Scientist 2's argument depends on the deep layer staying cold, so warming it to 12 °C works against that account.",
+      "C": "The two accounts make opposite predictions about this column, so one measurement cannot favor both.",
+      "D": "Whether cold water remained available is the exact point on which the two accounts differ."
+    }
+  },
+  {
+    "id": "s165",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "sp23",
+    "context": "Dissolved oxygen is reported in milligrams per liter. A reading of 1.9 mg/L means that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "each liter of lake water contains 1.9 milligrams of dissolved oxygen."
+      },
+      {
+        "id": "B",
+        "text": "1.9% of the lake water is oxygen by volume."
+      },
+      {
+        "id": "C",
+        "text": "each milligram of water holds 1.9 liters of oxygen."
+      },
+      {
+        "id": "D",
+        "text": "the lake contains 1.9 milligrams of oxygen in total."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the unit is a mass of oxygen per volume of water, so 1.9 mg of oxygen accompanies every liter.",
+      "B": "A percentage by volume would be a unitless proportion, not a mass per volume.",
+      "C": "Inverts the unit. The milligrams measure oxygen and the liters measure water.",
+      "D": "The unit describes a concentration, which does not depend on how large the lake is."
+    }
+  },
+  {
+    "id": "s166",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp23",
+    "context": "Bacteria that break down dead organic matter consume oxygen as they do so. This fact is most directly relevant to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Scientist 2's claim that decaying algae drew down the deep layer's oxygen."
+      },
+      {
+        "id": "B",
+        "text": "Scientist 1's claim that the habitable cold band narrowed each summer."
+      },
+      {
+        "id": "C",
+        "text": "Scientist 1's claim that the decline tracked air temperature year for year."
+      },
+      {
+        "id": "D",
+        "text": "Scientist 2's claim that the deep layer stayed near 6 °C."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — decay consuming oxygen is the step that connects the algae to the oxygen readings in Scientist 2's chain.",
+      "B": "The width of the cold band depends on temperature, not on decomposition.",
+      "C": "The year-by-year tracking is an argument from timing, and bacteria do not bear on it.",
+      "D": "The deep layer's temperature is a physical measurement, unaffected by what bacteria consume."
+    }
+  },
+  {
+    "id": "s167",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp23",
+    "context": "Warm water holds less dissolved oxygen than cold water does. Which scientist's argument does this fact most directly reinforce?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Scientist 1, whose account already treats the oxygen decline as a consequence of warming."
+      },
+      {
+        "id": "B",
+        "text": "Scientist 2, whose account treats the oxygen decline as independent of temperature."
+      },
+      {
+        "id": "C",
+        "text": "Neither, because the deep layer's temperature barely changed."
+      },
+      {
+        "id": "D",
+        "text": "Both, because both attribute the oxygen decline to the same cause."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it supplies a second route from warming to lower oxygen, strengthening the claim that warming is the root cause.",
+      "B": "It works against Scientist 2, who needs the oxygen loss to come from nutrients rather than from temperature.",
+      "C": "The surface layer warmed substantially, and Scientist 1's mechanism runs through the whole summer's stratification rather than the deep layer's own temperature.",
+      "D": "The two accounts give different causes for the oxygen decline; that disagreement is the heart of the dispute."
+    }
+  },
+  {
+    "id": "s168",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp23",
+    "context": "Phosphorus is a common ingredient in agricultural fertilizer. Knowing this makes which part of the discussion easier to follow?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Why doubling farm acreage would raise the phosphorus entering the lake."
+      },
+      {
+        "id": "B",
+        "text": "Why the deep layer of the lake stays colder than the surface."
+      },
+      {
+        "id": "C",
+        "text": "Why trout require dissolved oxygen above 4 mg/L."
+      },
+      {
+        "id": "D",
+        "text": "Why August surface temperature rose by 2.6 °C."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it supplies the missing link between more farmland and more phosphorus, which Scientist 2 states but does not explain.",
+      "B": "Layering in a lake follows from the density of water at different temperatures, not from fertilizer.",
+      "C": "The oxygen requirement is a property of the fish, unrelated to what enters the watershed.",
+      "D": "The temperature rise is attributed to climate, and no part of either account routes it through fertilizer."
+    }
+  },
+  {
+    "id": "s169",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp23",
+    "context": "In summer the lake separates into a warm upper layer that floats on a cold lower layer. Which statement about water explains why the layers sit in that order?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Above about 4 °C, warmer water is less dense than colder water."
+      },
+      {
+        "id": "B",
+        "text": "Above about 4 °C, warmer water is denser than colder water."
+      },
+      {
+        "id": "C",
+        "text": "Water density does not change with temperature."
+      },
+      {
+        "id": "D",
+        "text": "Dissolved oxygen makes the lower layer lighter than the upper one."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the less dense warm water rides on top, which is what keeps the cold layer sealed below through the summer.",
+      "B": "If warm water were denser it would sink, and the lake would not layer in the order described.",
+      "C": "If density were unaffected by temperature, nothing would drive the separation in the first place.",
+      "D": "Dissolved gases are present in far too small a quantity to order the layers, and the deep layer is the one that loses oxygen."
+    }
   }
 ]

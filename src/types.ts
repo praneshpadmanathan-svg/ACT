@@ -90,6 +90,15 @@ export interface Question {
   passage?: string;
   /** The question stem, or the underlined portion for English. */
   context: string;
+  /** Where the question is posed in words rather than by underlining a span.
+   *  Twenty-eight English items — every "writers purpose" and "sentence
+   *  order" question — ask something the passage cannot show by highlighting,
+   *  so they carry an empty `context` and put the question here. This field
+   *  existed in the JSON long before it existed in the type, which is exactly
+   *  how `fromDrillQuestion` came to render those items with no question at
+   *  all: nothing it read was ever undefined, because nothing it read was
+   *  ever this. */
+  stem?: string;
   choices: Choice[];
   answer: string;
   why: Record<string, string>;
@@ -114,7 +123,37 @@ export interface FigureNote {
   text: string;
 }
 
-export type Figure = FigureTable | FigureNote;
+/** A plotted figure — the other half of ACT Science.
+ *
+ *  Reading a value off a graph is a tested skill in its own right, distinct
+ *  from reading it out of a table, so a chart is never flattened into a
+ *  `FigureTable`: doing that silently swaps the question for an easier one.
+ *
+ *  `kind` is how the series are drawn, not what the data means. `line` is a
+ *  continuous x-axis; `bar` treats each distinct x as a category and spaces
+ *  them evenly, because a bar chart's x positions carry no magnitude — the
+ *  pendulum figure plots masses 20/50/100/200/400 g and spacing those
+ *  linearly would bunch four bars against the axis and strand the fifth. */
+export interface FigureChart {
+  label: string;
+  caption: string;
+  type: 'chart';
+  kind: 'line' | 'bar';
+  xLabel: string;
+  yLabel: string;
+  /** Prose description of the plot, for anyone who cannot see it. Written to
+   *  convey the trend, not the exact readings — a full value dump would hand
+   *  over the answer to precisely the questions these figures are asked about. */
+  alt: string;
+  series: ChartSeries[];
+}
+
+export interface ChartSeries {
+  name: string;
+  points: { x: number; y: number }[];
+}
+
+export type Figure = FigureTable | FigureNote | FigureChart;
 
 export interface Passage {
   id: string;

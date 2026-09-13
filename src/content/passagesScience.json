@@ -896,5 +896,933 @@
         "text": "A comet or asteroid fragmented over the ice sheet, triggering continent-scale wildfires whose soot blocked sunlight and initiated cooling. A thin sediment layer dated to 12,900 years ago contains elevated platinum, magnetic microspherules, and nanodiamonds at dozens of sites across three continents — materials associated with extraterrestrial impacts and not produced by lake drainage. The abruptness of the onset, within decades, favors a sudden catastrophic trigger over a gradual oceanographic change."
       }
     ]
+  },
+  {
+    "id": "p36-sci-catalyst-rate-0001",
+    "title": "Effect of Catalyst Concentration on Reaction Rate",
+    "type": "Data Representation",
+    "text": "A student investigated how the concentration of a catalyst affects the speed of a color-change reaction between two solutions. In each trial, the student combined the two solutions with a fixed volume of catalyst solution at a given concentration. The student then used a stopwatch to record the time, in seconds, until the mixture turned from clear to blue. All trials were run at a constant temperature of 25 degrees C. Reaction rate is defined as 1 divided by the time required for the color change, measured in inverse seconds (s^-1). A larger rate means a faster reaction.\n\nThe student first tested Catalyst X at five concentrations (see Table 1). The student then repeated the experiment at the same five concentrations using Catalyst Y, a different compound. The completion times for both catalysts were plotted together (see Figure 1).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "",
+        "type": "table",
+        "head": [
+          "Concentration (mol/L)",
+          "Time to completion (s)"
+        ],
+        "rows": [
+          [
+            "0.1",
+            "120"
+          ],
+          [
+            "0.2",
+            "80"
+          ],
+          [
+            "0.4",
+            "50"
+          ],
+          [
+            "0.8",
+            "30"
+          ],
+          [
+            "1.6",
+            "18"
+          ]
+        ]
+      },
+      {
+        "label": "Figure 1",
+        "caption": "",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Concentration (mol/L)",
+        "yLabel": "Time to completion (s)",
+        "alt": "Line graph of time to completion against concentration for two catalysts. Catalyst X falls from 120 to 18 seconds; Catalyst Y falls from 150 to 35 seconds, staying above Catalyst X at every concentration tested.",
+        "series": [
+          {
+            "name": "Catalyst X",
+            "points": [
+              {
+                "x": 0.1,
+                "y": 120
+              },
+              {
+                "x": 0.2,
+                "y": 80
+              },
+              {
+                "x": 0.4,
+                "y": 50
+              },
+              {
+                "x": 0.8,
+                "y": 30
+              },
+              {
+                "x": 1.6,
+                "y": 18
+              }
+            ]
+          },
+          {
+            "name": "Catalyst Y",
+            "points": [
+              {
+                "x": 0.1,
+                "y": 150
+              },
+              {
+                "x": 0.2,
+                "y": 110
+              },
+              {
+                "x": 0.4,
+                "y": 80
+              },
+              {
+                "x": 0.8,
+                "y": 55
+              },
+              {
+                "x": 1.6,
+                "y": 35
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "p36-sci-desert-varnish-0001",
+    "title": "Three Explanations for Desert Varnish",
+    "type": "Conflicting Viewpoints",
+    "text": "Desert varnish is a thin, dark coating of iron and manganese oxides that forms on exposed rock surfaces in arid regions. It can take centuries to accumulate a layer less than a millimeter thick, and the coating darkens further the longer it remains exposed. Three geologists studying the same varnished rock outcrop proposed different explanations for where the coating's minerals originally come from.\n\nGeologist 1\nGeologist 1 argues that the varnish forms from within the rock itself. Many desert rocks contain small amounts of iron and manganese bound up in their internal mineral structure. Geologist 1 proposes that rainwater rarely but occasionally seeps into surface cracks and pores, where it slowly dissolves these trace minerals. The water then evaporates quickly, which is typical of an arid climate. As it evaporates, it deposits the dissolved iron and manganese as a thin film on the rock's outer surface. Repeated over thousands of cycles of wetting and evaporation, this film thickens into visible varnish. Under this view, the varnish's composition should closely mirror the mineral makeup of the rock beneath it. The coating, in this account, is made from material that migrated outward from the rock's own interior rather than arriving from anywhere else.\n\nGeologist 2\nGeologist 2 rejects a purely chemical explanation and points instead to microorganisms living directly on the rock surface. Certain bacteria are known to gain usable energy by chemically oxidizing manganese, a process that leaves behind solid manganese oxide as a byproduct. Geologist 2 proposes that these bacteria colonize the rock surface in a thin biological film. As they grow, the bacteria absorb trace manganese and iron carried by windblown dust and moisture, and deposit the oxidized metals directly onto the rock. Because the responsible organisms are living things rather than a passive chemical process, this hypothesis makes a distinct prediction. A rock's varnish should be able to form even on rock types that contain little or no iron or manganese of their own, since the metals arrive from outside sources rather than leaching from within the rock.\n\nGeologist 3\nGeologist 3 attributes the varnish almost entirely to windblown dust. Deserts generate large quantities of fine airborne particles, some of which carry trace iron and manganese picked up from distant soils. Geologist 3 proposes that this dust settles continuously on exposed rock surfaces. Thin films of moisture from dew or occasional rain bind the particles to the rock and to each other, gradually cementing them into a hardened crust. Because the source of the minerals is external dust rather than the rock's own composition or living organisms, this hypothesis makes a distinct prediction of its own. Varnish from different rock outcrops in the same region should share a similar chemical makeup regardless of what kind of rock lies underneath, since all of the outcrops in an area receive dust from the same regional source."
+  },
+  {
+    "id": "p36-sci-drill-dye-fading-0001",
+    "title": "Fading of a Dye Under Light",
+    "type": "Research Summaries",
+    "text": "A dye dissolved in water absorbs blue light, and the amount it absorbs is reported as absorbance. Absorbance falls as the dye breaks down. Students prepared identical dye solutions and measured absorbance with a meter. All samples were held at 22 degrees C in a water bath.\n\nStudy 1\n\nFive samples were placed under lamps of different intensity, measured in lux. Absorbance was recorded after 30 minutes of exposure. The starting absorbance of every sample was 1.00 (see Table 1).\n\nStudy 2\n\nTwo further samples were exposed at 200 lux and at 800 lux. Absorbance was recorded every 15 minutes for one hour (see Figure 1).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "",
+        "type": "table",
+        "head": [
+          "Light intensity (lux)",
+          "Absorbance after 30 min"
+        ],
+        "rows": [
+          [
+            "100",
+            "0.82"
+          ],
+          [
+            "200",
+            "0.71"
+          ],
+          [
+            "400",
+            "0.54"
+          ],
+          [
+            "800",
+            "0.31"
+          ],
+          [
+            "1600",
+            "0.12"
+          ]
+        ]
+      },
+      {
+        "label": "Figure 1",
+        "caption": "",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Time",
+        "yLabel": "Absorbance",
+        "alt": "Line graph of absorbance against time for two samples over one hour. Both begin at 1.00; the sample at 200 lux falls gradually to 0.50, while the sample at 800 lux falls steeply to 0.09.",
+        "series": [
+          {
+            "name": "200 lux",
+            "points": [
+              {
+                "x": 0,
+                "y": 1
+              },
+              {
+                "x": 15,
+                "y": 0.85
+              },
+              {
+                "x": 30,
+                "y": 0.71
+              },
+              {
+                "x": 45,
+                "y": 0.6
+              },
+              {
+                "x": 60,
+                "y": 0.5
+              }
+            ]
+          },
+          {
+            "name": "800 lux",
+            "points": [
+              {
+                "x": 0,
+                "y": 1
+              },
+              {
+                "x": 15,
+                "y": 0.55
+              },
+              {
+                "x": 30,
+                "y": 0.31
+              },
+              {
+                "x": 45,
+                "y": 0.17
+              },
+              {
+                "x": 60,
+                "y": 0.09
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "p36-sci-frog-decline-0001",
+    "title": "Why Is the Blue-Spotted Tree Frog Declining in Cedar Hollow?",
+    "type": "Conflicting Viewpoints",
+    "text": "Over the past 15 years, the population of blue-spotted tree frogs in Cedar Hollow, a forested wetland, has declined by more than 70 percent. Researchers agree on the extent of the decline but disagree about its primary cause. Three biologists studying the wetland have proposed different explanations.\n\nBiologist 1\nBiologist 1 attributes the decline primarily to a fungal skin infection that has been detected on frogs throughout the region. The fungus disrupts a frog's ability to regulate water and electrolytes through its skin, which can be fatal within weeks of infection. Biologist 1 notes that the fungus thrives in cool, wet conditions similar to those in Cedar Hollow, and that infected frogs have been found at every site sampled in the wetland. Under this view, the decline should track the spread of the fungus itself rather than any change in the physical habitat. Populations in wetlands where the fungus has not yet arrived should remain stable, even if those wetlands closely resemble Cedar Hollow in every other respect.\n\nBiologist 2\nBiologist 2 points instead to agricultural runoff. Farms upstream of Cedar Hollow began using a new pesticide roughly 18 years ago. Biologist 2 argues that trace amounts carried into the wetland by rainwater have interfered with the frogs' hormone systems, reducing successful reproduction even among adults that otherwise appear healthy. Biologist 2 notes that the timing of the decline follows the introduction of the pesticide more closely than it follows any known arrival of disease. Under this view, reproductive success should be lowest closest to the streams that drain the farmland. Wetlands with no agricultural runoff nearby should show a much smaller decline, even if the fungus described by Biologist 1 is also present there.\n\nBiologist 3\nBiologist 3 argues that the decline is best explained by an invasive fish species, introduced to Cedar Hollow's ponds around 20 years ago for recreational fishing, that preys heavily on frog eggs and tadpoles. Biologist 3 notes that ponds within the wetland that remain fish-free still support relatively dense frog populations, while ponds stocked with the invasive fish show far fewer frogs at every life stage. Under this view, the decline should correlate closely with the presence of the invasive fish from pond to pond within Cedar Hollow itself, regardless of disease exposure or nearby farmland. Removing the fish from a pond should allow the frog population there to recover over time."
+  },
+  {
+    "id": "p36-sci-pendulum-period-0001",
+    "title": "Period of a Pendulum at Different String Lengths",
+    "type": "Data Representation",
+    "text": "A student built a simple pendulum by attaching a metal bob to a string, and measured the time for one complete swing, called the period, in seconds. Frequency is defined as the number of complete swings per second, equal to 1 divided by the period. In the first set of trials, the student varied the string length. The bob's mass, 50 g, and the release angle were held constant (see Table 1). In a second set of trials, the student kept the string length constant at 100 cm and varied the mass of the bob instead, again releasing it from the same small angle each time (see Figure 1).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "",
+        "type": "table",
+        "head": [
+          "String length (cm)",
+          "Period (s)"
+        ],
+        "rows": [
+          [
+            "25",
+            "1"
+          ],
+          [
+            "50",
+            "1.4"
+          ],
+          [
+            "100",
+            "2"
+          ],
+          [
+            "150",
+            "2.4"
+          ],
+          [
+            "200",
+            "2.8"
+          ]
+        ]
+      },
+      {
+        "label": "Figure 1",
+        "caption": "",
+        "type": "chart",
+        "kind": "bar",
+        "xLabel": "Bob mass (g)",
+        "yLabel": "Period (s)",
+        "alt": "Bar graph of period against bob mass for five masses from 20 to 400 grams, showing the period holding steady at about 2.0 seconds regardless of mass.",
+        "series": [
+          {
+            "name": "Period",
+            "points": [
+              {
+                "x": 20,
+                "y": 2
+              },
+              {
+                "x": 50,
+                "y": 2
+              },
+              {
+                "x": 100,
+                "y": 2
+              },
+              {
+                "x": 200,
+                "y": 2
+              },
+              {
+                "x": 400,
+                "y": 2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "p36-sci-radish-growth-0001",
+    "title": "Growth of Radish Seedlings Under Different Watering Schedules",
+    "type": "Research Summaries",
+    "text": "Radish seeds were planted in identical pots of the same potting soil and kept under identical grow lights. Seedling height was measured in centimeters from the soil surface to the tallest leaf tip. Relative growth rate is defined in this study as the change in height divided by the number of days elapsed.\n\nStudy 1\nFive groups of seedlings (10 per group) were watered on different schedules: once every 1, 2, 3, 4, or 5 days, with 20 mL of water per watering. Height was measured after 21 days (see Table 1).\n\nStudy 2\nTwo additional groups were watered once every 1 day or once every 4 days. Height was measured every 7 days for 28 days (see Figure 1).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "",
+        "type": "table",
+        "head": [
+          "Watering interval (days)",
+          "Height after 21 days (cm)"
+        ],
+        "rows": [
+          [
+            "1",
+            "18.4"
+          ],
+          [
+            "2",
+            "16.9"
+          ],
+          [
+            "3",
+            "14.2"
+          ],
+          [
+            "4",
+            "10.5"
+          ],
+          [
+            "5",
+            "6.8"
+          ]
+        ]
+      },
+      {
+        "label": "Figure 1",
+        "caption": "",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Day",
+        "yLabel": "Height (cm)",
+        "alt": "Line graph of seedling height against day for two watering groups over 28 days. The every-1-day group rises to 24.1 cm; the every-4-days group rises more slowly to 13.2 cm.",
+        "series": [
+          {
+            "name": "Every 1 day",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 7,
+                "y": 4.9
+              },
+              {
+                "x": 14,
+                "y": 11.6
+              },
+              {
+                "x": 21,
+                "y": 18.4
+              },
+              {
+                "x": 28,
+                "y": 24.1
+              }
+            ]
+          },
+          {
+            "name": "Every 4 days",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 7,
+                "y": 2.8
+              },
+              {
+                "x": 14,
+                "y": 6.4
+              },
+              {
+                "x": 21,
+                "y": 10.5
+              },
+              {
+                "x": 28,
+                "y": 13.2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp18",
+    "type": "Research Summaries",
+    "title": "Conditions for Iron Corrosion",
+    "intro": "Iron corrodes (rusts) when it combines with other substances to form a solid product. In each trial below, a cleaned iron nail of initial mass 5.00 g was sealed in a test tube and held at 22 °C for 14 days. The nail and any solid product were then dried and weighed together; an increase in mass indicates that corrosion occurred, and a larger increase indicates more corrosion.\n\nStudy 1\n\nNails were sealed with different tube contents. In one tube a desiccant removed water vapor. In another, distilled water was boiled first to drive off dissolved air, then sealed with no air space. A third held distilled water open to an air space, and a fourth held damp cotton so the nail sat in moist air without being immersed.\n\nStudy 2\n\nNails were given various coatings and then sealed in moist air, matching the fourth condition of Study 1. The painted nail was deliberately scratched through to the metal before sealing.\n\nStudy 3\n\nNails were immersed in sodium chloride (NaCl) solutions of varying concentration, each open to an air space.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Study 1: mass change after 14 days",
+        "type": "table",
+        "head": [
+          "Tube contents",
+          "Mass change (g)"
+        ],
+        "rows": [
+          [
+            "Dry air (desiccant added)",
+            "0.00"
+          ],
+          [
+            "Distilled water, air removed",
+            "0.01"
+          ],
+          [
+            "Distilled water, open to air",
+            "0.18"
+          ],
+          [
+            "Moist air (damp cotton)",
+            "0.22"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Study 2: mass change after 14 days, all nails in moist air",
+        "type": "table",
+        "head": [
+          "Coating",
+          "Mass change (g)"
+        ],
+        "rows": [
+          [
+            "None",
+            "0.22"
+          ],
+          [
+            "Oil",
+            "0.03"
+          ],
+          [
+            "Zinc",
+            "0.01"
+          ],
+          [
+            "Paint, scratched",
+            "0.12"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Study 3: mass change after 14 days in NaCl solution open to air",
+        "type": "table",
+        "head": [
+          "NaCl concentration (% by mass)",
+          "Mass change (g)"
+        ],
+        "rows": [
+          [
+            "0.0",
+            "0.18"
+          ],
+          [
+            "0.5",
+            "0.26"
+          ],
+          [
+            "1.0",
+            "0.33"
+          ],
+          [
+            "3.5",
+            "0.41"
+          ],
+          [
+            "10.0",
+            "0.30"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp19",
+    "type": "Research Summaries",
+    "title": "Water Loss from Leafy Cuttings",
+    "intro": "Plants lose water vapor from their leaves, mostly through small pores called stomata, which are far more numerous on the lower leaf surface than on the upper one in most species. To measure this loss, bean cuttings of equal total leaf area were placed in tubes of water. A thin layer of oil floated on each tube's water surface so that any mass lost by the tube had to have passed through the cutting. Each tube was weighed at the start and again after 3 hours, and the loss is reported below. Unless noted, trials ran in still air at 22 °C under a lamp.\n\nStudy 1\n\nCuttings with 8 leaves each were held under four different surrounding conditions.\n\nStudy 2\n\nLeaves were removed from otherwise identical cuttings before the 3-hour trial, which ran in still air under the lamp.\n\nStudy 3\n\nPetroleum jelly, which is impermeable to water vapor, was spread over leaf surfaces of 8-leaf cuttings before the trial.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Study 1: water loss over 3 hours",
+        "type": "table",
+        "head": [
+          "Condition",
+          "Water loss (g)"
+        ],
+        "rows": [
+          [
+            "Still air, lamp on",
+            "1.40"
+          ],
+          [
+            "Moving air (fan), lamp on",
+            "2.35"
+          ],
+          [
+            "Humid chamber (95% relative humidity), lamp on",
+            "0.45"
+          ],
+          [
+            "Still air, lamp off (dark)",
+            "0.60"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Study 2: water loss over 3 hours by number of leaves",
+        "type": "table",
+        "head": [
+          "Leaves remaining",
+          "Water loss (g)"
+        ],
+        "rows": [
+          [
+            "8",
+            "1.40"
+          ],
+          [
+            "6",
+            "1.10"
+          ],
+          [
+            "4",
+            "0.75"
+          ],
+          [
+            "2",
+            "0.40"
+          ],
+          [
+            "0",
+            "0.08"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Study 3: water loss over 3 hours by coated surface",
+        "type": "table",
+        "head": [
+          "Treatment",
+          "Water loss (g)"
+        ],
+        "rows": [
+          [
+            "Untreated",
+            "1.40"
+          ],
+          [
+            "Upper surfaces coated",
+            "1.20"
+          ],
+          [
+            "Lower surfaces coated",
+            "0.45"
+          ],
+          [
+            "Both surfaces coated",
+            "0.20"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp20",
+    "type": "Data Representation",
+    "title": "Dissolving Antacid Tablets",
+    "intro": "An antacid tablet fizzes as it dissolves in water, releasing carbon dioxide (CO₂) gas. Students measured how quickly identical tablets dissolved under different conditions. A tablet was recorded as fully dissolved when no solid remained visible.\n\nStudy 1\n\nOne whole tablet was dropped into 200 mL of water at each of five temperatures, and the time to full dissolution was recorded.\n\nStudy 2\n\nA whole tablet was dropped into 200 mL of water at 20 °C, and the total volume of CO₂ collected was recorded every 30 seconds until it stopped changing.\n\nStudy 3\n\nTablets were left whole, broken into two halves, or ground to a powder, then dropped into 200 mL of water at 20 °C.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Study 1: time to full dissolution at each water temperature",
+        "type": "table",
+        "head": [
+          "Water temperature (°C)",
+          "Dissolution time (s)"
+        ],
+        "rows": [
+          [
+            "10",
+            "180"
+          ],
+          [
+            "20",
+            "120"
+          ],
+          [
+            "30",
+            "80"
+          ],
+          [
+            "40",
+            "55"
+          ],
+          [
+            "50",
+            "40"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Study 2: total CO₂ collected over time at 20 °C",
+        "type": "table",
+        "head": [
+          "Time (s)",
+          "Total CO₂ collected (mL)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "30",
+            "22"
+          ],
+          [
+            "60",
+            "38"
+          ],
+          [
+            "90",
+            "48"
+          ],
+          [
+            "120",
+            "54"
+          ],
+          [
+            "150",
+            "56"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Study 3: time to full dissolution by tablet form, 20 °C",
+        "type": "table",
+        "head": [
+          "Tablet form",
+          "Dissolution time (s)"
+        ],
+        "rows": [
+          [
+            "Whole",
+            "120"
+          ],
+          [
+            "Two halves",
+            "95"
+          ],
+          [
+            "Powder",
+            "45"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp21",
+    "type": "Research Summaries",
+    "title": "Frost Cracking in Sandstone",
+    "intro": "Water expands as it freezes. When water fills the pore spaces inside a rock and then freezes, the expansion pushes outward on the pore walls. Geologists studied whether repeated freezing could break sandstone, and if so, what controls how quickly it happens.\n\nPorosity is the percentage of a rock's volume made up of pore space.\n\nExperiment 1\n\nCylindrical cores were cut from four sandstones of differing porosity. Each core was soaked in water for 48 hours, then placed in a chamber that cycled once per hour between +5 °C and −10 °C. Cores were inspected after every cycle, and the cycle at which a crack first became visible was recorded.\n\nExperiment 2\n\nThe procedure of Experiment 1 was repeated using only 12% porosity cores, but the minimum temperature of the cycle was varied. The maximum remained +5 °C.\n\nExperiment 3\n\nThe procedure of Experiment 2 was repeated with 12% porosity cores that had been oven-dried for 72 hours and kept sealed from moisture. Each core was cycled 300 times.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: cycles to first visible crack, by porosity",
+        "type": "table",
+        "head": [
+          "Porosity (%)",
+          "Cycles to first crack"
+        ],
+        "rows": [
+          [
+            "4",
+            "210"
+          ],
+          [
+            "8",
+            "120"
+          ],
+          [
+            "12",
+            "65"
+          ],
+          [
+            "18",
+            "30"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: cycles to first crack at each minimum temperature (12% porosity)",
+        "type": "table",
+        "head": [
+          "Minimum temperature (°C)",
+          "Cycles to first crack"
+        ],
+        "rows": [
+          [
+            "−2",
+            "240"
+          ],
+          [
+            "−5",
+            "130"
+          ],
+          [
+            "−10",
+            "65"
+          ],
+          [
+            "−20",
+            "40"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: dried cores after 300 cycles (12% porosity)",
+        "type": "table",
+        "head": [
+          "Minimum temperature (°C)",
+          "Cracks observed"
+        ],
+        "rows": [
+          [
+            "−2",
+            "0"
+          ],
+          [
+            "−5",
+            "0"
+          ],
+          [
+            "−10",
+            "0"
+          ],
+          [
+            "−20",
+            "0"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp22",
+    "type": "Data Representation",
+    "title": "Water Soaking into Three Soils",
+    "intro": "A ring infiltrometer is a metal ring driven partway into the ground and filled with water. The depth of water that disappears into the soil is read off the ring's inner scale. Cumulative infiltration is the total depth of water that has soaked in since the start of the test.\n\nThe same test was run on three soils at a single field station on the same morning. Each soil was tested at the same starting water content.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Cumulative infiltration (mm) over the course of each test",
+        "type": "table",
+        "head": [
+          "Time (min)",
+          "Sand",
+          "Loam",
+          "Clay"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "5",
+            "45",
+            "20",
+            "6"
+          ],
+          [
+            "10",
+            "80",
+            "34",
+            "10"
+          ],
+          [
+            "20",
+            "130",
+            "52",
+            "15"
+          ],
+          [
+            "40",
+            "190",
+            "74",
+            "21"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Properties of the three soils",
+        "type": "table",
+        "head": [
+          "Soil",
+          "Bulk density (g/cm³)",
+          "Organic matter (%)",
+          "Clay content (%)"
+        ],
+        "rows": [
+          [
+            "Sand",
+            "1.55",
+            "0.8",
+            "4"
+          ],
+          [
+            "Loam",
+            "1.32",
+            "3.6",
+            "19"
+          ],
+          [
+            "Clay",
+            "1.41",
+            "2.1",
+            "52"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Infiltration rate during the final interval of each test (20–40 min)",
+        "type": "table",
+        "head": [
+          "Soil",
+          "Infiltration rate (mm/hr)"
+        ],
+        "rows": [
+          [
+            "Sand",
+            "180"
+          ],
+          [
+            "Loam",
+            "66"
+          ],
+          [
+            "Clay",
+            "18"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp23",
+    "type": "Conflicting Viewpoints",
+    "title": "The Trout of Lake Idris",
+    "intro": "Lake Idris supported a lake trout population for as long as records exist. Lake trout need cold water and also need dissolved oxygen; in summer the lake separates into a warm surface layer and a cold deep layer, and the fish are confined to whatever water satisfies both requirements. Between 1995 and 2020 the catch fell by more than 90%, and by 2020 no trout were found. Two limnologists proposed different explanations.\n\nScientist 1\n\nThe lake warmed. Mean August surface temperature rose 2.6 °C over the period, and the boundary between the warm and cold layers sank steadily deeper. Each summer the band of water cold enough for trout grew thinner, until in the hottest years it closed entirely for several weeks. Trout that cannot escape warm water stop feeding, grow slowly, and fail to spawn. The decline tracks air temperature almost year for year, and the three steepest single-year drops in catch all followed the three hottest summers on record. Oxygen in the deep layer did fall, but that fall is itself a consequence of warming: a warmer, longer-stratified summer keeps the deep layer sealed off from the air for more weeks each year.\n\nScientist 2\n\nThe lake lost its oxygen. Farm acreage in the watershed doubled after 1990, and the phosphorus entering the lake rose with it. Phosphorus feeds algae; when the algae die they sink and decay, and decay consumes oxygen in exactly the deep, cold water the trout depend on. Measured August oxygen in the deep layer fell from 8.1 mg/L to 1.9 mg/L, well below the 4 mg/L that lake trout require. The cold water never disappeared — it simply became unbreathable. Warming may have made matters worse at the margins, but a 2.6 °C rise in surface temperature does not by itself remove a deep layer that is still 6 °C in August.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Lake Idris, August measurements",
+        "type": "table",
+        "head": [
+          "Year",
+          "Surface temp (°C)",
+          "Deep-layer temp (°C)",
+          "Deep-layer O₂ (mg/L)",
+          "Trout catch (fish)"
+        ],
+        "rows": [
+          [
+            "1995",
+            "19.4",
+            "5.8",
+            "8.1",
+            "1,240"
+          ],
+          [
+            "2000",
+            "20.1",
+            "5.9",
+            "6.7",
+            "980"
+          ],
+          [
+            "2005",
+            "20.8",
+            "6.0",
+            "5.2",
+            "610"
+          ],
+          [
+            "2010",
+            "21.3",
+            "6.1",
+            "3.8",
+            "295"
+          ],
+          [
+            "2015",
+            "21.7",
+            "6.0",
+            "2.6",
+            "110"
+          ],
+          [
+            "2020",
+            "22.0",
+            "6.0",
+            "1.9",
+            "0"
+          ]
+        ]
+      }
+    ]
   }
 ]
