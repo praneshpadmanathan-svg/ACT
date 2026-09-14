@@ -1,6 +1,6 @@
 # Living Realm: graphics, motion, and journey review
 
-Status: local design branch only. No push or deployment authorized for this pass.
+Status: published to the `design/living-realm` branch. Production deployment remains pending.
 
 ## Review boundary
 
@@ -92,4 +92,4 @@ Prompt:
 
 Reviewed the cumulative branch diff against `main`. Fixed remaining landing CTAs switching returning users to guest mode, scoped cinematic control colors for light-theme readability, and added wrapping/mobile layout safeguards for long player names. Added three animation lifecycle regression tests covering offscreen pause/resume, hidden-tab behavior, and observer cleanup/fallback.
 
-Validation: production build passed; 155 tests across seven files passed; lint has zero errors and 15 existing warnings; 13 artwork originals and 68 responsive variant references validated; all 118 precache paths exist, including the new opening original. Browser visual QA remains pending; no push or deployment performed.
+Validation: production build passed; 155 tests across seven files passed; lint has zero errors and 15 existing warnings; 13 artwork originals and 68 responsive variant references validated; all 118 precache paths exist, including the new opening original. Browser visual QA and production deployment remain pending.
