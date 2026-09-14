@@ -300,7 +300,10 @@ export function QuestionRunner({
               {streak >= 2 && (
                 <m.span
                   key="streak"
-                  className={cx('chip', tier === 3 ? 'chip-ablaze text-desert-text' : 'text-desert-text')}
+                  className={cx(
+                    'chip',
+                    tier === 3 ? 'chip-ablaze text-desert-text' : 'text-desert-text',
+                  )}
                   style={{
                     borderColor: tier === 3 ? '#ff7a2e' : tier === 2 ? '#ffb066aa' : '#ff9d5c66',
                     transformOrigin: 'center',

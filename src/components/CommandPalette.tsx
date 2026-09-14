@@ -70,21 +70,117 @@ function staticEntries(): PaletteEntry[] {
      that already exist. Camp is a lantern because the camp art is lit by them;
      Review is a clock because the whole idea is the right moment. */
   const out: PaletteEntry[] = [
-    { id: 'go-home', label: 'Camp', group: 'Go', icon: 'lantern', to: { name: 'home' }, hint: 'What to do today' },
-    { id: 'go-path', label: 'Study', group: 'Go', icon: 'map', to: { name: 'path' }, hint: 'Lesson, then quiz' },
-    { id: 'go-notes', label: 'Library', group: 'Go', icon: 'book', to: { name: 'notes' }, hint: 'Every rule, explained' },
-    { id: 'go-drills', label: 'Training', group: 'Go', icon: 'sword', to: { name: 'drills' }, hint: 'Free practice' },
-    { id: 'go-review', label: 'Review', group: 'Go', icon: 'clock', to: { name: 'review' }, hint: 'What you got wrong' },
-    { id: 'go-duels', label: 'Duels', group: 'Go', icon: 'shield', to: { name: 'duels' }, hint: 'The four guardians' },
-    { id: 'go-tests', label: 'Summit', group: 'Go', icon: 'trophy', to: { name: 'tests' }, hint: 'Full timed trial' },
-    { id: 'go-stats', label: 'Progress', group: 'Go', icon: 'target', to: { name: 'stats' }, hint: 'Score, streak, weak spots' },
-    { id: 'go-codex', label: 'Codex', group: 'Go', icon: 'scroll', to: { name: 'codex' }, hint: 'What you have found' },
-    { id: 'go-bookmarks', label: 'Bookmarks', group: 'Go', icon: 'bookmark', to: { name: 'bookmarks' }, hint: 'Saved questions' },
-    { id: 'go-profile', label: 'Profile', group: 'Go', icon: 'settings', to: { name: 'profile' }, hint: 'Your account and plan' },
+    {
+      id: 'go-home',
+      label: 'Camp',
+      group: 'Go',
+      icon: 'lantern',
+      to: { name: 'home' },
+      hint: 'What to do today',
+    },
+    {
+      id: 'go-path',
+      label: 'Study',
+      group: 'Go',
+      icon: 'map',
+      to: { name: 'path' },
+      hint: 'Lesson, then quiz',
+    },
+    {
+      id: 'go-notes',
+      label: 'Library',
+      group: 'Go',
+      icon: 'book',
+      to: { name: 'notes' },
+      hint: 'Every rule, explained',
+    },
+    {
+      id: 'go-drills',
+      label: 'Training',
+      group: 'Go',
+      icon: 'sword',
+      to: { name: 'drills' },
+      hint: 'Free practice',
+    },
+    {
+      id: 'go-review',
+      label: 'Review',
+      group: 'Go',
+      icon: 'clock',
+      to: { name: 'review' },
+      hint: 'What you got wrong',
+    },
+    {
+      id: 'go-duels',
+      label: 'Duels',
+      group: 'Go',
+      icon: 'shield',
+      to: { name: 'duels' },
+      hint: 'The four guardians',
+    },
+    {
+      id: 'go-tests',
+      label: 'Summit',
+      group: 'Go',
+      icon: 'trophy',
+      to: { name: 'tests' },
+      hint: 'Full timed trial',
+    },
+    {
+      id: 'go-stats',
+      label: 'Progress',
+      group: 'Go',
+      icon: 'target',
+      to: { name: 'stats' },
+      hint: 'Score, streak, weak spots',
+    },
+    {
+      id: 'go-codex',
+      label: 'Codex',
+      group: 'Go',
+      icon: 'scroll',
+      to: { name: 'codex' },
+      hint: 'What you have found',
+    },
+    {
+      id: 'go-bookmarks',
+      label: 'Bookmarks',
+      group: 'Go',
+      icon: 'bookmark',
+      to: { name: 'bookmarks' },
+      hint: 'Saved questions',
+    },
+    {
+      id: 'go-profile',
+      label: 'Profile',
+      group: 'Go',
+      icon: 'settings',
+      to: { name: 'profile' },
+      hint: 'Your account and plan',
+    },
 
-    { id: 'do-daily', label: "Today's daily", group: 'Do', icon: 'calendar', to: { name: 'daily' }, hint: 'A short mixed set' },
-    { id: 'do-review', label: 'Review what is due', group: 'Do', icon: 'clock', to: { name: 'review' } },
-    { id: 'do-diagnostic', label: 'Take the placement test', group: 'Do', icon: 'compass', to: { name: 'diagnostic' } },
+    {
+      id: 'do-daily',
+      label: "Today's daily",
+      group: 'Do',
+      icon: 'calendar',
+      to: { name: 'daily' },
+      hint: 'A short mixed set',
+    },
+    {
+      id: 'do-review',
+      label: 'Review what is due',
+      group: 'Do',
+      icon: 'clock',
+      to: { name: 'review' },
+    },
+    {
+      id: 'do-diagnostic',
+      label: 'Take the placement test',
+      group: 'Do',
+      icon: 'compass',
+      to: { name: 'diagnostic' },
+    },
   ];
 
   for (const { zone, path } of ALL_ZONES) {
@@ -283,7 +379,9 @@ export function CommandPalette({
                 role="combobox"
                 aria-expanded
                 aria-controls="palette-list"
-                aria-activedescendant={results[cursor] ? `palette-${results[cursor].id}` : undefined}
+                aria-activedescendant={
+                  results[cursor] ? `palette-${results[cursor].id}` : undefined
+                }
                 autoComplete="off"
                 spellCheck={false}
               />

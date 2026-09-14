@@ -83,8 +83,11 @@ for (const [theme, block] of Object.entries(THEMES)) {
     for (const fg of roles) {
       const measured = surfaces.map((bg) => ({ bg, r: ratio(token(block, fg), token(block, bg)) }));
       const worst = measured.reduce((a, b) => (b.r < a.r ? b : a));
-      if (worst.r < MIN) failures.push(`${theme}: ${fg} on ${worst.bg} is ${worst.r.toFixed(2)}:1, below ${MIN}:1`);
-      lines.push(`  ${theme.padEnd(5)} ${fg.padEnd(14)} ${worst.r.toFixed(2).padStart(5)}:1  worst on ${worst.bg}`);
+      if (worst.r < MIN)
+        failures.push(`${theme}: ${fg} on ${worst.bg} is ${worst.r.toFixed(2)}:1, below ${MIN}:1`);
+      lines.push(
+        `  ${theme.padEnd(5)} ${fg.padEnd(14)} ${worst.r.toFixed(2).padStart(5)}:1  worst on ${worst.bg}`,
+      );
     }
   }
 }

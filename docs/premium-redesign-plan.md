@@ -1,7 +1,7 @@
 # ACT Command — the premium rebuild
 
-**Thesis in one sentence.** The app is not missing decoration; it is missing *materials, elevation, and
-governance* — every surface is the same flat translucent rectangle with a 1px gold border, so nothing can
+**Thesis in one sentence.** The app is not missing decoration; it is missing _materials, elevation, and
+governance_ — every surface is the same flat translucent rectangle with a 1px gold border, so nothing can
 be more important than anything else, and the fix is a material system plus a small set of governed
 tokens, not more ornament.
 
@@ -15,22 +15,22 @@ phase depends on it. Nothing here asks for a paid service, a new backend, or a c
 I ran the app at 1440×900 and walked landing → onboarding → camp → English drill. Ranked by how much each
 costs us:
 
-| # | Defect | Where | Why it reads as cheap |
-|---|--------|-------|----------------------|
-| 1 | **Decorative particles overlap live content.** Gold confetti sits on top of the passage text in the drill and on top of the XP bar on Camp. | `QuestionRunner`, `Feedback`, `RankAura`, Camp | Nothing signals "unfinished" faster than an effect the layout did not plan for. It reads as a z-index bug, not as polish. |
-| 2 | **Everything is one surface.** A modal, the nav rail, a stat tile and a reading sheet all have the same fill, the same 1px gold border, the same corner radius. | Global — `.panel`, `.sheet`, `.story-card` | There are exactly **three** box-shadows in `tailwind.config.js` (`card`, `sheet`, `pin`). With no elevation ladder there is no hierarchy, and borders end up doing all the work. Border-led UI reads as a wireframe. |
-| 3 | **Display text sits on illustration with no scrim.** "YOUR CLIMB TO 36 STARTS HERE" is barely legible over the sunset; the body line under it is unreadable over the village. | `Landing` hero | This is the first thing anyone sees. |
-| 4 | **Native controls leak through.** The onboarding test-date field is a raw `<input type="date">`, complete with the OS calendar chrome. | `Onboarding` | One unstyled control destroys the world the illustrations spent 30 seconds building. |
-| 5 | **Motion is rich but ungoverned.** 30+ bespoke keyframe animations, every one with its own hand-picked duration and cubic-bézier. | `tailwind.config.js` | No two things move alike, so movement carries no meaning. |
-| 6 | **Mixed art fidelity with no rule.** Pixel-art sprites, painted scenes and vector glyphs all appear in the same card with no stated relationship. | `HeroChooser`, Camp, `Landing` | Reads as assets from three different products. |
-| 7 | **Uniform density.** Every screen is a stack of same-width, same-padding cards. | Camp, Stats, Drills | No rhythm, no focal point, no "look here first". |
-| 8 | **Unlabelled floating buttons.** Two round icon buttons bottom-right of the drill with no label and no tooltip. | `Tools` | Mystery meat. |
+| #   | Defect                                                                                                                                                                        | Where                                          | Why it reads as cheap                                                                                                                                                                                                |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | **Decorative particles overlap live content.** Gold confetti sits on top of the passage text in the drill and on top of the XP bar on Camp.                                   | `QuestionRunner`, `Feedback`, `RankAura`, Camp | Nothing signals "unfinished" faster than an effect the layout did not plan for. It reads as a z-index bug, not as polish.                                                                                            |
+| 2   | **Everything is one surface.** A modal, the nav rail, a stat tile and a reading sheet all have the same fill, the same 1px gold border, the same corner radius.               | Global — `.panel`, `.sheet`, `.story-card`     | There are exactly **three** box-shadows in `tailwind.config.js` (`card`, `sheet`, `pin`). With no elevation ladder there is no hierarchy, and borders end up doing all the work. Border-led UI reads as a wireframe. |
+| 3   | **Display text sits on illustration with no scrim.** "YOUR CLIMB TO 36 STARTS HERE" is barely legible over the sunset; the body line under it is unreadable over the village. | `Landing` hero                                 | This is the first thing anyone sees.                                                                                                                                                                                 |
+| 4   | **Native controls leak through.** The onboarding test-date field is a raw `<input type="date">`, complete with the OS calendar chrome.                                        | `Onboarding`                                   | One unstyled control destroys the world the illustrations spent 30 seconds building.                                                                                                                                 |
+| 5   | **Motion is rich but ungoverned.** 30+ bespoke keyframe animations, every one with its own hand-picked duration and cubic-bézier.                                             | `tailwind.config.js`                           | No two things move alike, so movement carries no meaning.                                                                                                                                                            |
+| 6   | **Mixed art fidelity with no rule.** Pixel-art sprites, painted scenes and vector glyphs all appear in the same card with no stated relationship.                             | `HeroChooser`, Camp, `Landing`                 | Reads as assets from three different products.                                                                                                                                                                       |
+| 7   | **Uniform density.** Every screen is a stack of same-width, same-padding cards.                                                                                               | Camp, Stats, Drills                            | No rhythm, no focal point, no "look here first".                                                                                                                                                                     |
+| 8   | **Unlabelled floating buttons.** Two round icon buttons bottom-right of the drill with no label and no tooltip.                                                               | `Tools`                                        | Mystery meat.                                                                                                                                                                                                        |
 
 Everything above is fixable without touching content, routing, auth, or the question bank.
 
 ---
 
-## 2. The direction: what "premium" means *for this product*
+## 2. The direction: what "premium" means _for this product_
 
 ### 2.1 The reference class we are NOT copying
 
@@ -53,7 +53,7 @@ Four sources, all of which handle "ornate but disciplined" better than SaaS does
 2. **Heritage-craft and luxury-goods sites** — restraint, cinematic pacing, one hero moment per page, and
    typography doing the work instead of effects. Awwwards juries in 2026 consistently note that the
    strongest entries "use trendy features with restraint — as seasoning, not the main course."
-3. **High-end game journals** — *Hades*, *Disco Elysium*, *Baldur's Gate 3*. Ornament everywhere, but
+3. **High-end game journals** — _Hades_, _Disco Elysium_, _Baldur's Gate 3_. Ornament everywhere, but
    every piece of it obeys a grid and a material rule.
 4. **Premium reading apps** — paper treated as a real material with real light on it.
 
@@ -64,12 +64,12 @@ Four sources, all of which handle "ornate but disciplined" better than SaaS does
 Every surface in the app must declare which of four materials it is made of. Its fill, edge, shadow,
 sheen and grain follow from that declaration — they are never chosen per-component again.
 
-| Material | What it is | Used for | Behaviour |
-|---|---|---|---|
-| **Leather** | The tooled cover. Deep, matte, warm-black, fine grain. | App chrome: rail, headers, HUD, modals' backing | Absorbs light. Never glossy. Edges are a debossed groove, not a stroke. |
-| **Paper** | The page. Cream, fibrous, slightly warm. | Every reading surface: passages, lessons, notes, explanations | Catches light. Has a soft top-edge highlight and a real drop shadow. Never has a gold border. |
-| **Gilt** | Gold leaf on an edge or a letter. | Rules, active markers, credited answers, rank sigils, the one CTA per view | Only ever an *edge*, a *letter*, or a *seal* — never a large fill. Reflects; has a gradient across it, never a flat swatch. |
-| **Lamplight** | The single warm light source, upper-left. | Not a surface — the rule that unifies the other three | Every shadow falls down-right. Every highlight is on the top-left edge. One light, one direction, no exceptions. |
+| Material      | What it is                                             | Used for                                                                   | Behaviour                                                                                                                   |
+| ------------- | ------------------------------------------------------ | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **Leather**   | The tooled cover. Deep, matte, warm-black, fine grain. | App chrome: rail, headers, HUD, modals' backing                            | Absorbs light. Never glossy. Edges are a debossed groove, not a stroke.                                                     |
+| **Paper**     | The page. Cream, fibrous, slightly warm.               | Every reading surface: passages, lessons, notes, explanations              | Catches light. Has a soft top-edge highlight and a real drop shadow. Never has a gold border.                               |
+| **Gilt**      | Gold leaf on an edge or a letter.                      | Rules, active markers, credited answers, rank sigils, the one CTA per view | Only ever an _edge_, a _letter_, or a _seal_ — never a large fill. Reflects; has a gradient across it, never a flat swatch. |
+| **Lamplight** | The single warm light source, upper-left.              | Not a surface — the rule that unifies the other three                      | Every shadow falls down-right. Every highlight is on the top-left edge. One light, one direction, no exceptions.            |
 
 That last row is the whole trick. The reason the current UI looks flat is that its shadows and highlights
 have no shared light source, so surfaces do not read as objects.
@@ -91,7 +91,7 @@ is Tailwind v4's native format
 Why it matters here specifically: the leather ramp (`950`→`600`) and the gold ramp are currently
 hand-tuned hex values that drift in lightness, which is why some cards look muddier than their neighbours
 at the same nominal step. In OKLCH we can hold L constant across a hue rotation and get a ramp that is
-*actually* even.
+_actually_ even.
 
 Deliverable: `--leather-*`, `--paper-*`, `--gilt-*` regenerated as `oklch(L C H)` with L on a fixed ladder,
 plus a documented rule for which L step is legal on which material. **Contrast ratios must be re-measured,
@@ -100,17 +100,17 @@ failed`); keep that discipline.
 
 ### 3.2 The elevation ladder (the highest-leverage single change)
 
-Replace three ad-hoc shadows with a governed six-step ladder. Each step is a *pair*: a contact shadow
+Replace three ad-hoc shadows with a governed six-step ladder. Each step is a _pair_: a contact shadow
 (tight, dark) plus an ambient shadow (wide, soft), because one shadow never reads as a real object.
 
-| Step | Name | Used for | Contact | Ambient | Edge |
-|---|---|---|---|---|---|
-| 0 | `flush` | Backgrounds, inset wells | — | — | inset hairline |
-| 1 | `resting` | Static cards, list rows | `0 1px 2px / .30` | `0 2px 6px / .18` | top hairline light |
-| 2 | `raised` | Interactive cards, chips | `0 2px 4px / .34` | `0 8px 20px / .22` | top hairline light |
-| 3 | `lifted` | Hovered card, active nav | `0 3px 6px / .38` | `0 16px 36px / .26` | + faint gilt rim |
-| 4 | `floating` | Popovers, tooltips, drawers | `0 6px 12px / .42` | `0 28px 60px / .32` | + gilt rim |
-| 5 | `overlay` | Modals, story overlay | `0 10px 20px / .48` | `0 48px 100px / .40` | + gilt rim + scrim behind |
+| Step | Name       | Used for                    | Contact             | Ambient              | Edge                      |
+| ---- | ---------- | --------------------------- | ------------------- | -------------------- | ------------------------- |
+| 0    | `flush`    | Backgrounds, inset wells    | —                   | —                    | inset hairline            |
+| 1    | `resting`  | Static cards, list rows     | `0 1px 2px / .30`   | `0 2px 6px / .18`    | top hairline light        |
+| 2    | `raised`   | Interactive cards, chips    | `0 2px 4px / .34`   | `0 8px 20px / .22`   | top hairline light        |
+| 3    | `lifted`   | Hovered card, active nav    | `0 3px 6px / .38`   | `0 16px 36px / .26`  | + faint gilt rim          |
+| 4    | `floating` | Popovers, tooltips, drawers | `0 6px 12px / .42`  | `0 28px 60px / .32`  | + gilt rim                |
+| 5    | `overlay`  | Modals, story overlay       | `0 10px 20px / .48` | `0 48px 100px / .40` | + gilt rim + scrim behind |
 
 Rules: elevation only ever changes by **one** step on interaction; nothing skips a step; a step-5 surface
 must be accompanied by a scrim on everything below it.
@@ -118,23 +118,23 @@ must be accompanied by a scrim on everything below it.
 ### 3.3 Typography → an editorial scale
 
 Keep the faces — Cinzel, IM Fell English SC, Newsreader, Inter, Atkinson Hyperlegible. They are a good,
-distinctive set and replacing them would be change for its own sake. What is missing is a *scale* and
-*roles*.
+distinctive set and replacing them would be change for its own sake. What is missing is a _scale_ and
+_roles_.
 
 - **Move to variable versions** where they exist (Newsreader already is via `@fontsource-variable`). Cinzel
   ships a variable build; switching gets us real weight interpolation instead of two static cuts.
 - **Fluid scale via `clamp()`**, one ratio (1.25 minor-third at body sizes, opening to 1.333 at display
   sizes so headlines get dramatic on wide screens without the body text ballooning):
 
-  | Token | Role | Face | Size |
-  |---|---|---|---|
-  | `display-xl` | Landing hero only | Cinzel var. 600 | `clamp(2.75rem, 1.6rem + 5.2vw, 6rem)` |
-  | `display-l` | Screen titles | Cinzel var. 600 | `clamp(2rem, 1.4rem + 2.6vw, 3.25rem)` |
-  | `title` | Card headings | IM Fell SC | `clamp(1.15rem, 1.05rem + .5vw, 1.5rem)` |
-  | `body-read` | Passages, lessons | Newsreader var. | `clamp(1.0625rem, 1rem + .35vw, 1.1875rem)` / 1.65 |
-  | `body-ui` | UI copy | Inter | `.9375rem` / 1.5 |
-  | `label` | Eyebrows, meta | IM Fell SC, `.18em` tracking | `.6875rem` |
-  | `num` | Every figure | tabular-nums, `font-variant-numeric` | inherits |
+  | Token        | Role              | Face                                 | Size                                               |
+  | ------------ | ----------------- | ------------------------------------ | -------------------------------------------------- |
+  | `display-xl` | Landing hero only | Cinzel var. 600                      | `clamp(2.75rem, 1.6rem + 5.2vw, 6rem)`             |
+  | `display-l`  | Screen titles     | Cinzel var. 600                      | `clamp(2rem, 1.4rem + 2.6vw, 3.25rem)`             |
+  | `title`      | Card headings     | IM Fell SC                           | `clamp(1.15rem, 1.05rem + .5vw, 1.5rem)`           |
+  | `body-read`  | Passages, lessons | Newsreader var.                      | `clamp(1.0625rem, 1rem + .35vw, 1.1875rem)` / 1.65 |
+  | `body-ui`    | UI copy           | Inter                                | `.9375rem` / 1.5                                   |
+  | `label`      | Eyebrows, meta    | IM Fell SC, `.18em` tracking         | `.6875rem`                                         |
+  | `num`        | Every figure      | tabular-nums, `font-variant-numeric` | inherits                                           |
 
 - **Optical sizing.** Newsreader carries an `opsz` axis. Wire `font-optical-sizing: auto` so passage text
   at 19px and footnotes at 13px are actually different drawings, not one drawing scaled. This is a
@@ -146,27 +146,28 @@ distinctive set and replacing them would be change for its own sake. What is mis
 
 Replace 30 bespoke curves with a governed set, then express the existing animations in terms of it.
 Durations from the current consensus: <100 ms reads instant, 100–300 ms is the transition sweet spot,
->500 ms feels slow; Material fixes 200 ms as the standard reference and 300 ms for screen changes.
 
-| Token | Value | Use |
-|---|---|---|
-| `--dur-instant` | 90 ms | Press feedback, checkbox |
-| `--dur-quick` | 160 ms | Hover, focus ring, tooltip |
-| `--dur-base` | 240 ms | Card enter/exit, tab change |
-| `--dur-screen` | 320 ms | Route transition, drawer |
-| `--dur-cinematic` | 620 ms | Story beat, boss reveal, seal stamp |
-| `--ease-out` | `cubic-bezier(.22, 1, .36, 1)` | Anything entering |
-| `--ease-in` | `cubic-bezier(.4, 0, .7, .2)` | Anything leaving |
-| `--ease-inout` | `cubic-bezier(.65, 0, .35, 1)` | Same element changing state |
-| `--spring-soft` | `stiffness 260, damping 30` | Cards, sheets |
-| `--spring-snap` | `stiffness 420, damping 26` | Choice selection, XP tick |
+> 500 ms feels slow; Material fixes 200 ms as the standard reference and 300 ms for screen changes.
 
-Springs come from `motion` (already a dependency) and are the right tool for anything the user *caused*,
+| Token             | Value                          | Use                                 |
+| ----------------- | ------------------------------ | ----------------------------------- |
+| `--dur-instant`   | 90 ms                          | Press feedback, checkbox            |
+| `--dur-quick`     | 160 ms                         | Hover, focus ring, tooltip          |
+| `--dur-base`      | 240 ms                         | Card enter/exit, tab change         |
+| `--dur-screen`    | 320 ms                         | Route transition, drawer            |
+| `--dur-cinematic` | 620 ms                         | Story beat, boss reveal, seal stamp |
+| `--ease-out`      | `cubic-bezier(.22, 1, .36, 1)` | Anything entering                   |
+| `--ease-in`       | `cubic-bezier(.4, 0, .7, .2)`  | Anything leaving                    |
+| `--ease-inout`    | `cubic-bezier(.65, 0, .35, 1)` | Same element changing state         |
+| `--spring-soft`   | `stiffness 260, damping 30`    | Cards, sheets                       |
+| `--spring-snap`   | `stiffness 420, damping 26`    | Choice selection, XP tick           |
+
+Springs come from `motion` (already a dependency) and are the right tool for anything the user _caused_,
 because a spring responds to velocity and never looks canned. Bézier curves stay for anything the system
 initiated.
 
 **One hard rule:** every animation over `--dur-base` must be gated on `prefers-reduced-motion`. Not
-reduced — *skipped*.
+reduced — _skipped_.
 
 ### 3.5 Grid and rhythm
 
@@ -184,10 +185,10 @@ reduced — *skipped*.
 
 Additions, with justification and cost. Everything listed is MIT/free.
 
-| Library | Why | Cost (gz) | Risk |
-|---|---|---|---|
-| `@base-ui/react` | Dialog, Popover, Tooltip, Select, Tabs, Slider — accessible primitives, unstyled. **This is what kills the native `<input type="date">` and the mystery-meat buttons.** Base UI is now the more actively maintained primitive layer and is shadcn's default as of July 2026. | ~41 kB gzip, lazily loaded (see note) | Low. Unstyled — our design survives intact. |
-| ~~`lucide-react`~~ | **Not adopted.** See the note below. | — | — |
+| Library            | Why                                                                                                                                                                                                                                                                          | Cost (gz)                             | Risk                                        |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------------------------- |
+| `@base-ui/react`   | Dialog, Popover, Tooltip, Select, Tabs, Slider — accessible primitives, unstyled. **This is what kills the native `<input type="date">` and the mystery-meat buttons.** Base UI is now the more actively maintained primitive layer and is shadcn's default as of July 2026. | ~41 kB gzip, lazily loaded (see note) | Low. Unstyled — our design survives intact. |
+| ~~`lucide-react`~~ | **Not adopted.** See the note below.                                                                                                                                                                                                                                         | —                                     | —                                           |
 
 > **Two corrections made during Phase 1.**
 >
@@ -208,14 +209,14 @@ Additions, with justification and cost. Everything listed is MIT/free.
 > level up — two stroke weights, two corner treatments, two idioms. Phase 1
 > instead added the three missing marks (`chevronLeft` / `chevronRight` /
 > `chevronUp`) to the existing set, which covered all 76 replacements.
-| `@number-flow/react` | Animated tabular numerals for XP, score, streak, question counts. Turns a static number into a *value that changed*. | ~5 kB | Low |
-| `vaul` | Mobile bottom sheets — replaces the current mobile drawer. | ~6 kB | Low |
-| `lenis` | Momentum scrolling — **landing route only**, never in-app. | ~4 kB | Medium: must be disabled under reduced-motion and must not fight the runner's keyboard scrolling. |
-| `gsap` + ScrollTrigger | The landing scroll score. Core + ScrollTrigger are free as of 2025. | ~40 kB, lazy on `/` only | Medium. See guardrail below. |
-| `postprocessing` / `three` / `@react-three/fiber` | Only if we take the 3D sigil option in §6. | ~150 kB, lazy | High — gated behind Phase 5. |
+> | `@number-flow/react` | Animated tabular numerals for XP, score, streak, question counts. Turns a static number into a _value that changed_. | ~5 kB | Low |
+> | `vaul` | Mobile bottom sheets — replaces the current mobile drawer. | ~6 kB | Low |
+> | `lenis` | Momentum scrolling — **landing route only**, never in-app. | ~4 kB | Medium: must be disabled under reduced-motion and must not fight the runner's keyboard scrolling. |
+> | `gsap` + ScrollTrigger | The landing scroll score. Core + ScrollTrigger are free as of 2025. | ~40 kB, lazy on `/` only | Medium. See guardrail below. |
+> | `postprocessing` / `three` / `@react-three/fiber` | Only if we take the 3D sigil option in §6. | ~150 kB, lazy | High — gated behind Phase 5. |
 
 **Do NOT add:** shadcn/ui (its whole value is a neutral default look; we have a strong one, so it is pure
-cost), Framer Motion *in addition to* `motion` (same library, one is the old name), any component kit with
+cost), Framer Motion _in addition to_ `motion` (same library, one is the old name), any component kit with
 opinionated styling, GSAP's paid plugins (SplitText, MorphSVG — Club GSAP only).
 
 **Guardrail on GSAP + Lenis:** they must share one ticker. The standard failure is two competing
@@ -228,7 +229,7 @@ only `transform`/`opacity`; done that way it has no measurable effect on LCP or 
 The instruction to stop using bad characters and use design libraries instead is right, and the split is:
 
 - **Identity glyphs stay hand-drawn.** `NavGlyph.tsx`'s tent, map, book, sword, shield, crown are an
-  *asset*, not a liability — they are the reason the rail looks like this product and not like every other
+  _asset_, not a liability — they are the reason the rail looks like this product and not like every other
   React app. They get refined (consistent 1.75px stroke, 24px grid, aligned optical weight), not replaced.
 - **Utility icons come from the house set** (`<Glyph>`, `src/components/Icon.tsx`) — see the
   correction above. Close, chevron, external-link, volume, settings, flag, bookmark,
@@ -278,13 +279,13 @@ timeline needs programmatic control. Scroll-driven animations (`animation-timeli
 are cross-browser as of 2026 at ~84% global support with Chrome/Edge 115+, Firefox 132+, Safari 18+ —
 which means they are the default and GSAP is the exception, not the reverse.
 
-| Act | Content | Technique |
-|---|---|---|
-| **I — Arrival** | The sunset ridge. Title. One CTA. | Pinned hero. **Fixes defect #3**: a bottom-anchored radial scrim (`oklch` leather at 0→85%) behind the type block, plus a text-shadow ladder. Illustration parallaxes in 3 depth planes at 0.4/0.7/1.0 scroll rate. |
-| **II — The claim** | "1,407 questions. Every answer explained." | The number counts up once on enter via NumberFlow. The three sub-stats reveal on a `view()` timeline, staggered 60 ms. |
-| **III — The proof** | A live question, playable right there. | Already exists as `TryQuestion`. Promote it to the emotional centre: full-bleed Paper sheet, the explanation panel sliding up as a Gilt-edged sheet on answer. **This is the single most persuasive thing on the page and it is currently buried.** |
-| **IV — The world** | The four regions. | Horizontal scroll-snap band of four painted plates, each with its skill count. Not a carousel with arrows — a scroll region with snap points and a progress rule. |
-| **V — The ask** | Sign up / begin. | Quiet. Deep leather, one gilt CTA, the trademark disclaimer set properly rather than as an afterthought. |
+| Act                 | Content                                    | Technique                                                                                                                                                                                                                                           |
+| ------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **I — Arrival**     | The sunset ridge. Title. One CTA.          | Pinned hero. **Fixes defect #3**: a bottom-anchored radial scrim (`oklch` leather at 0→85%) behind the type block, plus a text-shadow ladder. Illustration parallaxes in 3 depth planes at 0.4/0.7/1.0 scroll rate.                                 |
+| **II — The claim**  | "1,407 questions. Every answer explained." | The number counts up once on enter via NumberFlow. The three sub-stats reveal on a `view()` timeline, staggered 60 ms.                                                                                                                              |
+| **III — The proof** | A live question, playable right there.     | Already exists as `TryQuestion`. Promote it to the emotional centre: full-bleed Paper sheet, the explanation panel sliding up as a Gilt-edged sheet on answer. **This is the single most persuasive thing on the page and it is currently buried.** |
+| **IV — The world**  | The four regions.                          | Horizontal scroll-snap band of four painted plates, each with its skill count. Not a carousel with arrows — a scroll region with snap points and a progress rule.                                                                                   |
+| **V — The ask**     | Sign up / begin.                           | Quiet. Deep leather, one gilt CTA, the trademark disclaimer set properly rather than as an afterthought.                                                                                                                                            |
 
 Additionally: **cross-document View Transitions** for landing → app, so entering the realm is a match-cut
 rather than a white flash. Supported in Chrome/Edge/Safari 18+; degrades to the current behaviour
@@ -297,8 +298,8 @@ The rail from the last pass is structurally right. What it needs:
 - Elevation 2 with a **vertical gilt hairline** on its right edge rather than a border-right.
 - The active marker becomes a **light source**: a soft gilt glow bleeding right from the marker, not just
   a 3px bar.
-- The bank badge and player block get a debossed well (`elevation 0, inset`) so the rail reads as *tooled
-  leather with things set into it*.
+- The bank badge and player block get a debossed well (`elevation 0, inset`) so the rail reads as _tooled
+  leather with things set into it_.
 - **A command palette** (`⌘K` / `Ctrl+K`), built on Base UI. Jump to any topic, any lesson, any of the 37
   landmarks, resume the last drill, start the daily. This is the single biggest perceived-sophistication
   win per line of code, and it also fixes a real problem: 20 topics per section is too many for a grid.
@@ -341,7 +342,7 @@ This is where users spend 90% of their time, so it gets the most care.
 
 - **Study**: the 37 landmarks become a **vertical route** with a gilt thread connecting them, not a list of
   cards — cleared nodes are sealed discs, the current one glows, locked ones are debossed and unlit. Same
-  data, same logic; it just becomes a *path* again without a pannable map.
+  data, same logic; it just becomes a _path_ again without a pannable map.
 - **Stats**: one hero metric (projected score) at `display-l` with a sparkline, then small multiples
   beneath. Currently a uniform card grid where the most important number is the same size as the least.
   Charts should follow the project's dataviz rules — one axis, never dual, categorical hues assigned in
@@ -380,16 +381,16 @@ Optional third: the boss reveal. Only after A and B ship and measure well.
 
 ### 6.3 Budgets and fallbacks — binding
 
-| Constraint | Value |
-|---|---|
-| Total 3D payload | ≤ 220 kB gz, **lazy-loaded, route-split, never in the app-shell chunk** |
-| Draw calls | ≤ 60 |
-| Frame budget | 60 fps on an M1 Air; ≥ 30 fps on a 2021 mid-range Android |
-| Context policy | One WebGL context in the app at a time; disposed on unmount, verified with a leak test |
-| Renderer | WebGL2. **Not WebGPU** — R3F does not fully support the WebGPU renderer yet, so it would mean two code paths for a 3–5× gain we do not need at this scale |
-| Textures | KTX2/Basis; geometry Draco-compressed if any model is used at all |
-| Fallback ladder | WebGL2 → static poster PNG. Trigger the poster on: no WebGL, `prefers-reduced-motion: reduce`, `navigator.hardwareConcurrency ≤ 4`, `saveData`, or a first-frame budget miss |
-| Accessibility | The 3D layer is `aria-hidden` and purely decorative. No information exists only in the 3D layer. |
+| Constraint       | Value                                                                                                                                                                        |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Total 3D payload | ≤ 220 kB gz, **lazy-loaded, route-split, never in the app-shell chunk**                                                                                                      |
+| Draw calls       | ≤ 60                                                                                                                                                                         |
+| Frame budget     | 60 fps on an M1 Air; ≥ 30 fps on a 2021 mid-range Android                                                                                                                    |
+| Context policy   | One WebGL context in the app at a time; disposed on unmount, verified with a leak test                                                                                       |
+| Renderer         | WebGL2. **Not WebGPU** — R3F does not fully support the WebGPU renderer yet, so it would mean two code paths for a 3–5× gain we do not need at this scale                    |
+| Textures         | KTX2/Basis; geometry Draco-compressed if any model is used at all                                                                                                            |
+| Fallback ladder  | WebGL2 → static poster PNG. Trigger the poster on: no WebGL, `prefers-reduced-motion: reduce`, `navigator.hardwareConcurrency ≤ 4`, `saveData`, or a first-frame budget miss |
+| Accessibility    | The 3D layer is `aria-hidden` and purely decorative. No information exists only in the 3D layer.                                                                             |
 
 If A alone lands well, **B is optional**. That is the correct order of operations: cheap depth first,
 measure, then decide whether to pay for WebGL.
@@ -407,7 +408,7 @@ Beyond the tokens, three rules make motion feel authored rather than applied:
 3. **One thing moves at a time.** If the page is transitioning, nothing inside it animates.
 
 Route transitions upgrade from the current cross-fade to View Transitions with named shared elements: the
-topic chip you clicked *becomes* the drill header. That is the effect people describe as "expensive" and
+topic chip you clicked _becomes_ the drill header. That is the effect people describe as "expensive" and
 it is now a platform feature rather than a library.
 
 ---
@@ -416,15 +417,15 @@ it is now a platform feature rather than a library.
 
 These become build gates alongside `check:content`:
 
-| Gate | Rule |
-|---|---|
-| **No raw shadows/colours** | Lint fails on `box-shadow:`/`border-color:` literals in `src/components` and `src/screens` — must come from tokens. |
-| **No bad characters** | Lint fails on decorative Unicode glyphs in component JSX (content files exempt). |
-| **No native form controls** | Lint fails on bare `<input type="date|range|color|file">` and unstyled `<select>`. |
-| **Reduced motion** | A test asserts every animation over 240 ms is inside a `prefers-reduced-motion` guard. |
-| **Bundle budget** | App-shell chunk ≤ 220 kB gz (currently ~185 kB excluding content); 3D chunk ≤ 220 kB gz and must not be reachable from the shell's import graph. |
-| **Contrast** | Every token pair used as text-on-surface measured ≥ 4.5:1, recorded in a comment as the config already does. |
-| **A11y** | Every interactive element reachable and operable by keyboard; the command palette, sheets and dialogs get focus traps for free from Base UI. |
+| Gate                        | Rule                                                                                                                                             |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **No raw shadows/colours**  | Lint fails on `box-shadow:`/`border-color:` literals in `src/components` and `src/screens` — must come from tokens.                              |
+| **No bad characters**       | Lint fails on decorative Unicode glyphs in component JSX (content files exempt).                                                                 |
+| **No native form controls** | Lint fails on bare `<input type="date                                                                                                            | range | color | file">`and unstyled`<select>`. |
+| **Reduced motion**          | A test asserts every animation over 240 ms is inside a `prefers-reduced-motion` guard.                                                           |
+| **Bundle budget**           | App-shell chunk ≤ 220 kB gz (currently ~185 kB excluding content); 3D chunk ≤ 220 kB gz and must not be reachable from the shell's import graph. |
+| **Contrast**                | Every token pair used as text-on-surface measured ≥ 4.5:1, recorded in a comment as the config already does.                                     |
+| **A11y**                    | Every interactive element reachable and operable by keyboard; the command palette, sheets and dialogs get focus traps for free from Base UI.     |
 
 ---
 
@@ -432,15 +433,15 @@ These become build gates alongside `check:content`:
 
 Ordered so that value lands early and nothing is blocked on 3D.
 
-| Phase | Contents | Ships what | Risk |
-|---|---|---|---|
-| **0. Foundation** | OKLCH tokens, elevation ladder, type scale, motion tokens, grain + lamplight, 8px baseline | Nothing visible alone — but every later phase becomes small | Low |
-| **1. Materials** | `.mat-leather` / `.mat-paper` / `.mat-gilt-rule`, with `.panel`/`.sheet` re-pointed at them, Base UI in, native controls out, every decorative glyph replaced | The whole app gains depth in one commit | Low |
-| **2. The runner** | Two-material split, particles removed, choice objects, explanation sheet, progress rail, labelled tools | The screen users actually live in | Low |
-| **3. Shell & Camp** | Rail as tooled leather, command palette, content canvas, Camp's single-hero restructure, XP burst replaced by the gilt sweep | Daily-use polish + the ⌘K moment | Medium (palette is new surface area) |
-| **4. Landing** | Five-act scroll score, hero scrim, layered parallax depth, `TryQuestion` promoted, view transitions | First impression, and the conversion surface | Medium (GSAP/Lenis discipline) |
-| **5. Study & Stats** | Landmark route with the gilt thread, editorial stats with one hero metric | Structure work | Low |
-| **6. 3D (optional)** | Rank sigil as a real gilded object; boss reveal only if the sigil measures well | The "how did they do that" moment | High — strictly gated on §6.3 |
+| Phase                | Contents                                                                                                                                                      | Ships what                                                  | Risk                                 |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------ |
+| **0. Foundation**    | OKLCH tokens, elevation ladder, type scale, motion tokens, grain + lamplight, 8px baseline                                                                    | Nothing visible alone — but every later phase becomes small | Low                                  |
+| **1. Materials**     | `.mat-leather` / `.mat-paper` / `.mat-gilt-rule`, with `.panel`/`.sheet` re-pointed at them, Base UI in, native controls out, every decorative glyph replaced | The whole app gains depth in one commit                     | Low                                  |
+| **2. The runner**    | Two-material split, particles removed, choice objects, explanation sheet, progress rail, labelled tools                                                       | The screen users actually live in                           | Low                                  |
+| **3. Shell & Camp**  | Rail as tooled leather, command palette, content canvas, Camp's single-hero restructure, XP burst replaced by the gilt sweep                                  | Daily-use polish + the ⌘K moment                            | Medium (palette is new surface area) |
+| **4. Landing**       | Five-act scroll score, hero scrim, layered parallax depth, `TryQuestion` promoted, view transitions                                                           | First impression, and the conversion surface                | Medium (GSAP/Lenis discipline)       |
+| **5. Study & Stats** | Landmark route with the gilt thread, editorial stats with one hero metric                                                                                     | Structure work                                              | Low                                  |
+| **6. 3D (optional)** | Rank sigil as a real gilded object; boss reveal only if the sigil measures well                                                                               | The "how did they do that" moment                           | High — strictly gated on §6.3        |
 
 Phases 0–2 are the ones that change the verdict. If only three phases ever ship, ship those.
 
@@ -453,7 +454,7 @@ Phases 0–2 are the ones that change the verdict. If only three phases ever shi
 - A CSS-in-JS runtime, a new build tool, or a framework change.
 - Rewriting the question bank, the routing, auth, or Supabase sync.
 - Anything paid: no Club GSAP plugins, no paid icon sets, no hosted 3D editors.
-- Replacing the illustrations. They are an asset. The plan raises the *chrome* to their level, not the
+- Replacing the illustrations. They are an asset. The plan raises the _chrome_ to their level, not the
   reverse.
 
 ---

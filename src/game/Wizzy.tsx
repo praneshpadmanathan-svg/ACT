@@ -37,16 +37,12 @@ export function Wizzy() {
       );
       const seals = progress.achievements.filter((a) => a.startsWith('boss-')).length;
       if (seals > 0 && seals < 4) {
-        list.push(
-          `<b>${seals} of the four Seals</b> broken. The rest know it.`,
-        );
+        list.push(`<b>${seals} of the four Seals</b> broken. The rest know it.`);
       }
     }
 
     if (allCleared) {
-      list.push(
-        'Every landmark is lit. Sail to the citadel and sit the trial.',
-      );
+      list.push('Every landmark is lit. Sail to the citadel and sit the trial.');
     } else if (cleared === 0) {
       list.push(
         `I am Wizzy. Your road begins at <b>${current?.zone.name ?? 'the first landmark'}</b>, already open to you.`,
@@ -67,15 +63,11 @@ export function Wizzy() {
     // Call back to the prologue answer, so the guide remembers you.
     const echo = progress.oath ? OATH_ECHO[progress.oath] : null;
     if (echo && cleared > 0) {
-      list.push(
-        `When the road drags, remember ${echo}.`,
-      );
+      list.push(`When the road drags, remember ${echo}.`);
     }
 
     if (progress.dayStreak >= 2) {
-      list.push(
-        `<b>${progress.dayStreak}-day streak.</b> One question today keeps it burning.`,
-      );
+      list.push(`<b>${progress.dayStreak}-day streak.</b> One question today keeps it burning.`);
     }
     list.push(
       'The citadel holds the timed trial and your predicted score. That is where the climb is measured.',

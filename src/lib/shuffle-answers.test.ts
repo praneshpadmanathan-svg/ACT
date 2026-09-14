@@ -35,9 +35,7 @@ describe('the shuffle preserves the question', () => {
   it('keeps every choice, exactly once', () => {
     for (const q of ALL_QUESTIONS) {
       const run = fromDrillQuestion(q);
-      expect(run.choices.map((c) => c.text).sort()).toEqual(
-        q.choices.map((c) => c.text).sort(),
-      );
+      expect(run.choices.map((c) => c.text).sort()).toEqual(q.choices.map((c) => c.text).sort());
     }
   });
 

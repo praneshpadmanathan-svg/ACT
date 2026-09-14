@@ -78,8 +78,7 @@ export function ScoreTrend({ tests, target }: { tests: TestResult[]; target: num
      off is a real shape, and evenly spacing them would draw steady work that
      never happened. */
   const xExtent = extentOf(points.map((t) => t.at));
-  const toX = (v: number) =>
-    project(v, xExtent, { from: PAD.left, to: W - PAD.right });
+  const toX = (v: number) => project(v, xExtent, { from: PAD.left, to: W - PAD.right });
 
   const path = points.map((t, i) => `${i ? 'L' : 'M'}${toX(t.at)},${toY(t.composite)}`).join(' ');
   const last = points[points.length - 1]!;
@@ -205,7 +204,10 @@ export function ActivityChart({ counts }: { counts: number[] }) {
 
   return (
     <figure className="m-0">
-      <div className="flex items-end gap-[2px]" style={{ height: 90 }} role="img"
+      <div
+        className="flex items-end gap-[2px]"
+        style={{ height: 90 }}
+        role="img"
         aria-label={`Questions answered on each of the last ${counts.length} days. ${total} in total, busiest day ${max}.`}
       >
         {counts.map((count, i) => (
@@ -240,8 +242,7 @@ export function ActivityChart({ counts }: { counts: number[] }) {
                     count === 0
                       ? 'oklch(var(--c-leather-800))'
                       : `oklch(var(--c-gold) / ${(0.4 + 0.6 * (count / max)).toFixed(2)})`,
-                  outline:
-                    hover === i ? '1px solid oklch(var(--c-gold-light))' : undefined,
+                  outline: hover === i ? '1px solid oklch(var(--c-gold-light))' : undefined,
                   outlineOffset: 1,
                 }}
               />

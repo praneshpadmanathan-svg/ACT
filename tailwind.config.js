@@ -185,8 +185,14 @@ export default {
          wraps every emitted font-size, including these, so the accessibility
          setting still multiplies the whole scale. */
       fontSize: {
-        'display-xl': ['clamp(2.75rem, 1.6rem + 5.2vw, 6rem)', { lineHeight: '1.02', letterSpacing: '-0.015em' }],
-        'display-l': ['clamp(2rem, 1.4rem + 2.6vw, 3.25rem)', { lineHeight: '1.08', letterSpacing: '-0.01em' }],
+        'display-xl': [
+          'clamp(2.75rem, 1.6rem + 5.2vw, 6rem)',
+          { lineHeight: '1.02', letterSpacing: '-0.015em' },
+        ],
+        'display-l': [
+          'clamp(2rem, 1.4rem + 2.6vw, 3.25rem)',
+          { lineHeight: '1.08', letterSpacing: '-0.01em' },
+        ],
         'display-m': ['clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem)', { lineHeight: '1.15' }],
         title: ['clamp(1.15rem, 1.05rem + 0.5vw, 1.5rem)', { lineHeight: '1.25' }],
         'body-read': ['clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem)', { lineHeight: '1.65' }],

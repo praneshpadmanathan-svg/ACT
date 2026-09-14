@@ -18,14 +18,14 @@ dist/assets/content-xDzbuL8C.js   941 kB   637 × "answer":"<key>"
 
 ACT Command is a static SPA. There is no server between the visitor and the
 content — Vercel serves the bundle, and Supabase only stores progress. So a
-`<ProGate>` around the Math road hides the *button*, not the *questions*.
+`<ProGate>` around the Math road hides the _button_, not the _questions_.
 Anyone who opens devtools, or just fetches that one URL, has the entire bank
 including the answer keys. This is not a bug in the gate; it is what a static
 site is.
 
 That leaves two honest options, and they lead to different amounts of work:
 
-**Option A — accept cosmetic gating.** Sell the *app*, not the *file*: the
+**Option A — accept cosmetic gating.** Sell the _app_, not the _file_: the
 scheduling, the spaced-review queue, the timed test engine, the progress
 model, the duels. Nobody who would have paid $4.99 is going to hand-parse a
 minified JSON blob to avoid it. Most indie study apps ship exactly this.
@@ -59,11 +59,11 @@ about EU VAT is a good trade.
 
 Two candidates:
 
-| | Paddle | Lemon Squeezy |
-|---|---|---|
-| Standing | Independent, established, enterprise-grade | Acquired by Stripe in 2024 |
-| DX | Heavier API, more onboarding friction | Noticeably nicer to build against |
-| Approval | Manual review of your site before you can sell | Faster |
+|          | Paddle                                         | Lemon Squeezy                     |
+| -------- | ---------------------------------------------- | --------------------------------- |
+| Standing | Independent, established, enterprise-grade     | Acquired by Stripe in 2024        |
+| DX       | Heavier API, more onboarding friction          | Noticeably nicer to build against |
+| Approval | Manual review of your site before you can sell | Faster                            |
 
 **Recommendation: Paddle**, on longevity grounds — Lemon Squeezy is now a
 Stripe property and I would not want your billing to sit on a product whose
@@ -172,7 +172,7 @@ create trigger on_auth_user_created after insert on auth.users
 A trigger rather than an app call because it cannot be skipped, cannot race a
 sign-in, and cannot be replayed by a client to reset its own trial.
 
-Note the trial is per *account*, and nothing stops someone making a second
+Note the trial is per _account_, and nothing stops someone making a second
 account. Accept that — every fix for it is worse than the problem.
 
 ---
@@ -245,7 +245,7 @@ mechanism, a `max_uses` and an `expires_at`, a different label.
 
 ## 5. Client side
 
-**`src/lib/payments/`** — new directory, and the *only* place in the app that
+**`src/lib/payments/`** — new directory, and the _only_ place in the app that
 knows a payment provider exists. This is your existing rule and it is worth
 keeping: it means swapping Paddle for something else later touches one folder.
 Exports `startCheckout()`, `openBillingPortal()`, `redeemCode(code)`. Nothing
@@ -254,9 +254,10 @@ outside it imports the provider's SDK or references its URLs.
 **`src/lib/entitlements.ts`** — reads the row, derives the boolean:
 
 ```ts
-isPro = (status === 'active')
-     || (status === 'trialing' && trialEndsAt > now)
-     || (status === 'canceled' && currentPeriodEnd > now)  // paid through
+isPro =
+  status === 'active' ||
+  (status === 'trialing' && trialEndsAt > now) ||
+  (status === 'canceled' && currentPeriodEnd > now); // paid through
 ```
 
 Note the third case: a cancelled subscription keeps Pro until the period they
@@ -264,7 +265,7 @@ already paid for runs out. Getting that wrong is the single most common
 billing complaint.
 
 **Offline.** The app works fully offline today and that must not regress.
-Cache the last known entitlement locally *with its own freshness stamp*, and
+Cache the last known entitlement locally _with its own freshness stamp_, and
 honour it while offline for a bounded window — 7 days is reasonable. Never
 honour an unbounded stale cache, and never store a bare `isPro: true` boolean
 that survives a sign-out.
@@ -282,20 +283,20 @@ A proposal, sized against what actually exists (637 questions, 37 lessons and
 mini-quizzes, 14 note articles, 4 section tests plus a full test, 4 duels, the
 Leitner review queue, the Codex):
 
-| | Free (after trial) | Pro |
-|---|---|---|
-| Study roads | English only | all four |
-| Drills | English topics | all topics |
-| Library | the 5 English notes | all 14 |
-| Summit | — | section tests + full test |
-| Duels | — | all four guardians |
-| Review | — | the spaced-repetition queue |
-| Progress | basic totals | full analytics, topic breakdown, score estimate |
-| Tools | — | scratch paper, calculator |
-| Codex | free | free |
+|             | Free (after trial)  | Pro                                             |
+| ----------- | ------------------- | ----------------------------------------------- |
+| Study roads | English only        | all four                                        |
+| Drills      | English topics      | all topics                                      |
+| Library     | the 5 English notes | all 14                                          |
+| Summit      | —                   | section tests + full test                       |
+| Duels       | —                   | all four guardians                              |
+| Review      | —                   | the spaced-repetition queue                     |
+| Progress    | basic totals        | full analytics, topic breakdown, score estimate |
+| Tools       | —                   | scratch paper, calculator                       |
+| Codex       | free                | free                                            |
 
 Reasoning: give away enough that the app is genuinely useful and the quality
-is obvious, and put the *systems* — review scheduling, timed tests, analytics
+is obvious, and put the _systems_ — review scheduling, timed tests, analytics
 — behind the wall, because those are the things that take work to build and
 cannot be lifted out of a JSON file.
 
@@ -347,7 +348,7 @@ to be Pro is to be in your trial.
 > Two changes to the offer as written above, both made while placing the gates:
 >
 > 1. **`tools` was dropped from the paid set.** The `ToolDock` lives in
->    `QuestionRunner`, so it appears in *every* quiz — and with the Summit
+>    `QuestionRunner`, so it appears in _every_ quiz — and with the Summit
 >    already Pro, gating it could only have removed scratch paper from a free
 >    English drill. That is not a reason to subscribe. Four features remain,
 >    each a whole system the free tier genuinely does without.
@@ -385,15 +386,15 @@ permanently, whenever you like.** No processor needed.
 > and raising it later does not invalidate codes already issued.
 >
 > The iteration count is deliberately moderate (100k). A slow KDF exists to make
-> guessing a *low-entropy* secret expensive; these codes carry 125 bits from a
+> guessing a _low-entropy_ secret expensive; these codes carry 125 bits from a
 > CSPRNG, so the entropy is what stops a guess, not the hash. Cranking it higher
 > would mostly hand anyone with an account a way to burn server CPU per request.
 >
 > Three things the implementation added that the plan did not call for:
 >
 > 1. **A rate limiter that fails closed.** `redemption_attempts` counts five per
->    account per hour, checked *before* any hashing so a flood costs a row count
->    rather than a KDF, and logged *before* the work rather than after — a
+>    account per hour, checked _before_ any hashing so a flood costs a row count
+>    rather than a KDF, and logged _before_ the work rather than after — a
 >    request abandoned mid-hash would otherwise cost an attacker nothing.
 >    If the limiter table cannot be read, the request is refused rather than
 >    waved through.
@@ -401,7 +402,7 @@ permanently, whenever you like.** No processor needed.
 >    increment as a conditional `UPDATE` inside a `security definer` function, so
 >    a `max_uses = 1` code pasted by two people at the same moment cannot pass
 >    twice. The function is revoked from `anon` and `authenticated`: it takes a
->    code *id*, and ids are not secret — left callable it would be exactly the
+>    code _id_, and ids are not secret — left callable it would be exactly the
 >    "set my own plan to pro" endpoint 0003 avoided providing.
 > 3. **Unknown and exhausted return identical wording.** Distinguishing them
 >    turns guessing into a search with feedback.
@@ -424,7 +425,7 @@ billing portal, plan changes.
 ## 9. Tests worth writing
 
 - **RLS is the load-bearing one.** A test that signs in as a real user and
-  attempts `update entitlements set plan='pro'` on their *own* row, and
+  attempts `update entitlements set plan='pro'` on their _own_ row, and
   asserts it fails. If that test ever passes, the entire scheme is decorative.
 - Webhook idempotency: post the same `provider_event_id` twice, assert one
   entitlement change.

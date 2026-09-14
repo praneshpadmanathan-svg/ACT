@@ -27,7 +27,8 @@ const VERIFIER = readFileSync('supabase/functions/redeem-code/index.ts', 'utf8')
    with itself no matter what either side does. */
 const VECTOR = {
   code: 'CBD4T-130TQ-7Q09Z-KNGJ6-9AQRS',
-  stored: 'pbkdf2-sha256$100000$5+aSKsfuQRARDe3dGksQQQ==$rKGeqAC2IQOvTmYbSbr3QWsDZzR+LMdk0lZ4ZSgUbwQ=',
+  stored:
+    'pbkdf2-sha256$100000$5+aSKsfuQRARDe3dGksQQQ==$rKGeqAC2IQOvTmYbSbr3QWsDZzR+LMdk0lZ4ZSgUbwQ=',
 };
 
 /** The verifier's algorithm, kept deliberately independent of both files. */
@@ -129,14 +130,15 @@ describe('the client holds no opinion about codes', () => {
     const client = readFileSync('src/lib/entitlements.ts', 'utf8');
     const body = client.slice(client.indexOf('export async function redeemCode'));
     expect(body).not.toMatch(/===\s*['"`][A-Z0-9-]{8,}/);
-    expect(body).toContain("functions.invoke");
+    expect(body).toContain('functions.invoke');
   });
 
   it('keeps no code plaintext anywhere in the repo source', () => {
     /* The vector above is the only 25-character grouped string that should
        exist in the tree, and it is a throwaway. A real one landing in a file
        is the failure this whole design exists to prevent. */
-    const pattern = /[0-9A-HJKMNP-TV-Z]{5}-[0-9A-HJKMNP-TV-Z]{5}-[0-9A-HJKMNP-TV-Z]{5}-[0-9A-HJKMNP-TV-Z]{5}-[0-9A-HJKMNP-TV-Z]{5}/;
+    const pattern =
+      /[0-9A-HJKMNP-TV-Z]{5}-[0-9A-HJKMNP-TV-Z]{5}-[0-9A-HJKMNP-TV-Z]{5}-[0-9A-HJKMNP-TV-Z]{5}-[0-9A-HJKMNP-TV-Z]{5}/;
     expect(pattern.test(GENERATOR)).toBe(false);
     expect(pattern.test(VERIFIER)).toBe(false);
     expect(pattern.test(readFileSync('src/lib/entitlements.ts', 'utf8'))).toBe(false);

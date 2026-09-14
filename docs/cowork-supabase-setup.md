@@ -183,7 +183,6 @@ Two things that are meant to happen and are not bugs:
   used up. Telling someone their guess was a real-but-exhausted code confirms
   the guess.
 
-
 ## Then prove it, on the deployed domain
 
 Not on localhost. The redirect allowlist and the PKCE round trip are exactly the

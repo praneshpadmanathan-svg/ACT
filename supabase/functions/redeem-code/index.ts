@@ -246,7 +246,9 @@ Deno.serve(async (req: Request) => {
     .update({ ok: true })
     .eq('id', attempt.id);
   if (markError) {
-    console.error(`redeem-code: could not mark attempt ${attempt.id} successful (${markError.message})`);
+    console.error(
+      `redeem-code: could not mark attempt ${attempt.id} successful (${markError.message})`,
+    );
   }
 
   /* 'already' is a success. They hold the code and they hold the entitlement;

@@ -16,7 +16,14 @@ import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import type { NoteBlock, SectionId } from '@/types';
 import { BackLink, Page } from '@/components/Shell';
-import { Button, EmptyState, LEADING_ICON, ProgressBar, SectionHeading, SectionTabs } from '@/components/ui';
+import {
+  Button,
+  EmptyState,
+  LEADING_ICON,
+  ProgressBar,
+  SectionHeading,
+  SectionTabs,
+} from '@/components/ui';
 import { Glyph } from '@/components/Icon';
 import { RichText } from '@/components/RichText';
 import { ProUpsell } from '@/components/ProGate';

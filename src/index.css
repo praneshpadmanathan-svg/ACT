@@ -60,11 +60,11 @@
        at 1.04:1. Splitting them is the fix. `parchment` keeps the chrome-text
        role the tailwind config documents; `paper` is the sheet, fixed here at
        the cream both themes want, and it needs no per-theme override. */
-    --c-paper: 93.40% 0.0355 85.41;
+    --c-paper: 93.4% 0.0355 85.41;
     --c-paper-light: 96.31% 0.0228 84.59;
     --c-paper-dim: 88.94% 0.0443 85.23;
     --c-paper-edge: 78.44% 0.0577 82.84;
-    --c-paper-deep: 71.17% 0.0670 80.43;
+    --c-paper-deep: 71.17% 0.067 80.43;
 
     /* Gold leaf as a *fill*, pinned, for the same reason `paper` is pinned.
 
@@ -74,8 +74,8 @@
        fixed near-black lettering on top. Darkening the token for the text
        role dropped those to 3.07:1: dark ink on a dark fill. A fill whose
        text does not move must not move either. */
-    --c-gilt: 73.50% 0.1462 84.27;
-    --c-gilt-bright: 86.28% 0.1390 92.43;
+    --c-gilt: 73.5% 0.1462 84.27;
+    --c-gilt-bright: 86.28% 0.139 92.43;
 
     /* Reading typeface, swapped by the high-legibility setting. */
     --font-read: 'Newsreader';
@@ -124,37 +124,37 @@
     color-scheme: dark;
 
     --c-leather-950: 17.62% 0.0119 73.11;
-    --c-leather-900: 20.54% 0.0150 72.50;
-    --c-leather-850: 23.63% 0.0182 70.50;
+    --c-leather-900: 20.54% 0.015 72.5;
+    --c-leather-850: 23.63% 0.0182 70.5;
     --c-leather-800: 27.13% 0.0235 72.17;
     --c-leather-750: 31.31% 0.0284 73.19;
-    --c-leather-700: 36.60% 0.0349 73.37;
+    --c-leather-700: 36.6% 0.0349 73.37;
     --c-leather-600: 42.52% 0.0429 73.08;
 
-    --c-parchment: 93.40% 0.0355 85.41;
+    --c-parchment: 93.4% 0.0355 85.41;
     --c-parchment-light: 96.31% 0.0228 84.59;
     --c-parchment-dim: 88.94% 0.0443 85.23;
     --c-parchment-edge: 78.44% 0.0577 82.84;
-    --c-parchment-deep: 71.17% 0.0670 80.43;
+    --c-parchment-deep: 71.17% 0.067 80.43;
 
     --c-ink: 26.16% 0.0242 77.48;
     --c-ink-soft: 42.48% 0.0376 77.55;
-    --c-ink-faint: 68.12% 0.0550 83.19;
+    --c-ink-faint: 68.12% 0.055 83.19;
 
-    --c-gold: 73.50% 0.1462 84.27;
+    --c-gold: 73.5% 0.1462 84.27;
     --c-gold-light: 86.47% 0.1109 88.82;
-    --c-gold-bright: 86.28% 0.1390 92.43;
+    --c-gold-bright: 86.28% 0.139 92.43;
     --c-gold-deep: 58.35% 0.1155 83.37;
 
     --c-village: 75.07% 0.1295 79.85;
-    --c-woods: 66.78% 0.1160 148.00;
+    --c-woods: 66.78% 0.116 148;
     --c-desert: 64.78% 0.1407 47.39;
     --c-cliffs: 66.46% 0.1009 235.78;
     --c-summit: 82.78% 0.1421 91.77;
     --c-blood: 51.19% 0.1407 31.57;
 
     --c-blood-text: 70.54% 0.1129 33.63;
-    --c-woods-text: 76.94% 0.1180 148.86;
+    --c-woods-text: 76.94% 0.118 148.86;
     --c-cliffs-text: 77.67% 0.0934 235.71;
     --c-desert-text: 74.21% 0.1204 50.32;
     --c-village-text: 81.95% 0.1196 83.52;
@@ -185,7 +185,7 @@
     --c-section-science: 75.54% 0.1412 295.37;
 
     --c-region-english: 75.07% 0.1295 79.85;
-    --c-region-reading: 66.78% 0.1160 148.00;
+    --c-region-reading: 66.78% 0.116 148;
     --c-region-math: 64.78% 0.1407 47.39;
     --c-region-science: 66.46% 0.1009 235.78;
     --c-region-summit: 82.78% 0.1421 91.77;
@@ -261,39 +261,39 @@
     color-scheme: light;
 
     --c-leather-950: 88.22% 0.0359 85.41;
-    --c-leather-900: 93.00% 0.0271 85.67;
-    --c-leather-850: 97.97% 0.0167 88.00;
-    --c-leather-800: 95.90% 0.0237 88.23;
+    --c-leather-900: 93% 0.0271 85.67;
+    --c-leather-850: 97.97% 0.0167 88;
+    --c-leather-800: 95.9% 0.0237 88.23;
     --c-leather-750: 92.07% 0.0324 87.29;
-    --c-leather-700: 79.20% 0.0515 83.90;
+    --c-leather-700: 79.2% 0.0515 83.9;
     --c-leather-600: 71.76% 0.0587 82.76;
 
     --c-parchment: 24.91% 0.0244 77.37;
     --c-parchment-light: 18.68% 0.0196 77.31;
     --c-parchment-dim: 38.32% 0.0363 78.08;
-    --c-parchment-edge: 49.05% 0.0440 79.52;
-    --c-parchment-deep: 55.85% 0.0507 79.60;
+    --c-parchment-edge: 49.05% 0.044 79.52;
+    --c-parchment-deep: 55.85% 0.0507 79.6;
 
     --c-ink: 26.16% 0.0242 77.48;
     --c-ink-soft: 42.48% 0.0376 77.55;
-    --c-ink-faint: 48.30% 0.0465 81.19;
+    --c-ink-faint: 48.3% 0.0465 81.19;
 
     --c-gold: 48.15% 0.0945 82.59;
-    --c-gold-light: 40.00% 0.0769 82.39;
-    --c-gold-bright: 58.80% 0.1183 81.26;
+    --c-gold-light: 40% 0.0769 82.39;
+    --c-gold-bright: 58.8% 0.1183 81.26;
     --c-gold-deep: 67.98% 0.0923 85.47;
 
     --c-blood-text: 44.57% 0.1329 31.51;
-    --c-woods-text: 45.90% 0.0946 148.80;
+    --c-woods-text: 45.9% 0.0946 148.8;
     --c-cliffs-text: 45.69% 0.0922 239.86;
     --c-desert-text: 47.88% 0.1171 45.93;
     --c-village-text: 44.21% 0.0935 74.52;
 
     /* Each ≥4.8:1 on leather-950, the darkest surface these can land on. */
-    --c-section-english: 46.86% 0.0714 88.20;
+    --c-section-english: 46.86% 0.0714 88.2;
     --c-section-math: 46.39% 0.0487 207.13;
     --c-section-reading: 47.91% 0.0817 14.24;
-    --c-section-science: 46.83% 0.0640 300.43;
+    --c-section-science: 46.83% 0.064 300.43;
 
     --c-region-english: 47.14% 0.0704 77.86;
     --c-region-reading: 43.69% 0.0594 141.33;
@@ -837,9 +837,7 @@
 
   .panel {
     @apply mat-leather rounded-xl transition-[transform,box-shadow,border-color] duration-base ease-out;
-    box-shadow:
-      var(--lamp-edge),
-      var(--e-raised);
+    box-shadow: var(--lamp-edge), var(--e-raised);
   }
   /* Only interactive panels lift — a static card that moves under the cursor
      reads as a bug.
@@ -853,9 +851,7 @@
   button.panel-lit:hover {
     @apply -translate-y-0.5;
     border-color: var(--lamp-rim);
-    box-shadow:
-      var(--lamp-edge),
-      var(--e-lifted);
+    box-shadow: var(--lamp-edge), var(--e-lifted);
   }
 
   /* Elevation 1, and no gilt rule: the surface for everything that is not the
@@ -873,9 +869,7 @@
   a.panel-quiet:hover,
   button.panel-quiet:hover {
     border-color: var(--lamp-rim);
-    box-shadow:
-      var(--lamp-edge),
-      var(--e-raised);
+    box-shadow: var(--lamp-edge), var(--e-raised);
   }
 
   /* A gold hairline along the top edge — reads as lantern light catching a
@@ -1313,9 +1307,7 @@
            bg-paper-light/80 px-4 py-3 text-left font-read text-[1.04rem]
            leading-relaxed text-ink
            transition-[background-color,border-color,box-shadow] duration-base ease-out;
-    box-shadow:
-      var(--lamp-edge-paper),
-      var(--e-resting);
+    box-shadow: var(--lamp-edge-paper), var(--e-resting);
   }
   /* Colour and shadow only. The nudge on hover, the give on press and the
      whole reveal — the shake, the lift, the settle — are springs on the
@@ -1324,9 +1316,7 @@
      and cancel it. Transform belongs to exactly one owner per element. */
   .choice:hover:not(:disabled):not(.choice-locked) {
     @apply border-paper-deep bg-paper-light;
-    box-shadow:
-      var(--lamp-edge-paper),
-      var(--e-raised);
+    box-shadow: var(--lamp-edge-paper), var(--e-raised);
   }
 
   /* Debossed, and debossed in agreement with the lamp: the light is upper-
@@ -1367,9 +1357,7 @@
      that used to fire across the passage could go. */
   .choice-correct {
     @apply border-[#367040] bg-[#e9f3e8];
-    box-shadow:
-      var(--lamp-edge-paper),
-      var(--e-lifted);
+    box-shadow: var(--lamp-edge-paper), var(--e-lifted);
   }
   .choice-correct::after {
     content: '';
@@ -1452,9 +1440,7 @@
      keeps the study register even though the column around it is chrome. */
   .task-card {
     @apply mat-paper rounded-lg px-5 py-5 sm:px-6 sm:py-6;
-    box-shadow:
-      var(--lamp-edge-paper),
-      var(--e-resting);
+    box-shadow: var(--lamp-edge-paper), var(--e-resting);
   }
 
   /* ---------------------------------------------------------- progress rail
@@ -1490,9 +1476,7 @@
      the layout jump that made it feel cheap; a sheet arriving is an event. */
   .explain-sheet {
     @apply mat-paper relative overflow-hidden rounded-xl px-5 py-5 sm:px-7 sm:py-6;
-    box-shadow:
-      var(--lamp-edge-paper),
-      var(--e-raised);
+    box-shadow: var(--lamp-edge-paper), var(--e-raised);
   }
   .explain-sheet::before {
     content: '';
@@ -1508,9 +1492,7 @@
 
   .rail-surface {
     @apply relative;
-    box-shadow:
-      var(--lamp-edge),
-      var(--e-raised);
+    box-shadow: var(--lamp-edge), var(--e-raised);
   }
   /* A hairline of light down the edge, not a border. A border-right is a seam
      between two flat things; this is the lamp catching the bevel, so it is
@@ -1558,9 +1540,7 @@
     /* Elevation 3, and the only object on Camp that gets it. Not 4 — floating
        belongs to things that actually float over content, and a hero that
        borrows an overlay's shadow leaves the real overlays nowhere to go. */
-    box-shadow:
-      var(--lamp-edge-paper),
-      var(--e-lifted);
+    box-shadow: var(--lamp-edge-paper), var(--e-lifted);
     transition:
       box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1),
       transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -1571,9 +1551,7 @@
   }
   .camp-hero:hover {
     @apply -translate-y-0.5;
-    box-shadow:
-      var(--lamp-edge-paper),
-      var(--e-floating);
+    box-shadow: var(--lamp-edge-paper), var(--e-floating);
   }
   /* The whole card is the target, so the gilt CTA inside it lights up when the
      card does — not only when the pointer happens to land on the button-shaped
@@ -1626,9 +1604,7 @@
      above the whole app. */
   .palette {
     @apply mat-leather relative w-[min(38rem,calc(100vw-2rem))] overflow-hidden rounded-2xl;
-    box-shadow:
-      var(--lamp-edge),
-      var(--e-overlay);
+    box-shadow: var(--lamp-edge), var(--e-overlay);
   }
   .palette::before {
     content: '';
@@ -1783,9 +1759,7 @@
      material the grammar says it is. */
   .proof-sheet {
     @apply mat-leather relative overflow-hidden rounded-2xl;
-    box-shadow:
-      var(--lamp-edge),
-      var(--e-lifted);
+    box-shadow: var(--lamp-edge), var(--e-lifted);
   }
   .proof-sheet::before {
     content: '';
@@ -1824,9 +1798,7 @@
   }
   .plate-card:hover {
     border-color: var(--lamp-rim);
-    box-shadow:
-      var(--lamp-edge),
-      var(--e-raised);
+    box-shadow: var(--lamp-edge), var(--e-raised);
   }
   /* The plate reads at roughly a third of its strength behind the copy. Any
      more and the region name stops being legible; any less and it is a texture
@@ -2097,7 +2069,6 @@
     @apply cursor-not-allowed;
     opacity: 0.55;
   }
-
 
   /* ---------------------------------------------------------------- layout */
 

@@ -105,10 +105,13 @@ export function Select({
 }
 
 export function FieldLabel({ children }: { children: ReactNode }) {
-  return <span className="mb-1.5 block font-script text-label uppercase text-ink-faint">{children}</span>;
+  return (
+    <span className="mb-1.5 block font-script text-label uppercase text-ink-faint">{children}</span>
+  );
 }
 
-const opts = (xs: readonly string[], from = 1) => xs.map((label, i) => ({ value: String(i + from), label }));
+const opts = (xs: readonly string[], from = 1) =>
+  xs.map((label, i) => ({ value: String(i + from), label }));
 
 /* Days in the selected month, so February never offers a 31st. The year
    matters for February, so a year that has not been picked yet is treated as
@@ -150,7 +153,9 @@ export function DateField({
     const limit = daysIn(Number(nextM), nextY ? Number(nextY) : null);
     if (nextD && Number(nextD) > limit) nextD = String(limit);
 
-    onChange(nextY && nextM && nextD ? `${nextY}-${nextM.padStart(2, '0')}-${nextD.padStart(2, '0')}` : '');
+    onChange(
+      nextY && nextM && nextD ? `${nextY}-${nextM.padStart(2, '0')}-${nextD.padStart(2, '0')}` : '',
+    );
   };
 
   const years = Array.from({ length: toYear - fromYear + 1 }, (_, i) => String(fromYear + i));

@@ -273,8 +273,8 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         title: 'Check your email',
         body: (
           <>
-            We have sent a message to <b className="text-cliffs-text">{email}</b>. Open the link in it
-            and you will land back here, signed in, with your progress intact. If that address
+            We have sent a message to <b className="text-cliffs-text">{email}</b>. Open the link in
+            it and you will land back here, signed in, with your progress intact. If that address
             already has an account, the message will say so instead.
           </>
         ),
@@ -283,8 +283,8 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         title: 'Check your email',
         body: (
           <>
-            If <b className="text-cliffs-text">{email}</b> has an account, a sign-in code is on its way.
-            Enter it below — or just open the link in the same email.
+            If <b className="text-cliffs-text">{email}</b> has an account, a sign-in code is on its
+            way. Enter it below — or just open the link in the same email.
           </>
         ),
       },
@@ -292,8 +292,8 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         title: 'Check your email',
         body: (
           <>
-            If <b className="text-cliffs-text">{email}</b> has an account, a reset link is on its way.
-            Open it and you can choose a new password.
+            If <b className="text-cliffs-text">{email}</b> has an account, a reset link is on its
+            way. Open it and you can choose a new password.
           </>
         ),
       },
@@ -588,7 +588,6 @@ function AgeGate({ onAnswer, onBack }: { onAnswer: (dob: DateParts) => void; onB
     </Frame>
   );
 }
-
 
 function ErrorNote({ children }: { children: ReactNode }) {
   return (

@@ -303,7 +303,10 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
       <div className="mx-auto max-w-2xl">
         <div
           className="rounded-xl border-2 p-7 text-center shadow-card sm:p-9"
-          style={{ borderColor: passed ? 'oklch(var(--c-woods-text))' : 'oklch(var(--c-blood-text))', background: 'oklch(var(--c-leather-900))' }}
+          style={{
+            borderColor: passed ? 'oklch(var(--c-woods-text))' : 'oklch(var(--c-blood-text))',
+            background: 'oklch(var(--c-leather-900))',
+          }}
         >
           <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
             {zone.name}
@@ -326,7 +329,10 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
           </p>
 
           <div className="mx-auto mt-6 max-w-sm">
-            <ProgressBar value={percent / 100} color={passed ? 'oklch(var(--c-woods-text))' : 'oklch(var(--c-blood-text))'} />
+            <ProgressBar
+              value={percent / 100}
+              color={passed ? 'oklch(var(--c-woods-text))' : 'oklch(var(--c-blood-text))'}
+            />
           </div>
 
           <p className="mt-6 text-[15px] leading-relaxed text-parchment-dim">

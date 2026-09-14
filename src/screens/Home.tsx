@@ -293,7 +293,11 @@ export function Home() {
               href={hrefFor({ name: reviewDue > 0 ? 'review' : 'drills' })}
               onClick={() => sfx.select()}
             >
-              <Button variant={reviewDue > 0 ? 'primary' : 'ghost'} trailing className="mt-5 w-full">
+              <Button
+                variant={reviewDue > 0 ? 'primary' : 'ghost'}
+                trailing
+                className="mt-5 w-full"
+              >
                 {reviewDue > 0
                   ? `Review ${reviewDue} question${reviewDue === 1 ? '' : 's'}`
                   : 'Train a skill'}
@@ -335,7 +339,11 @@ export function Home() {
                        last one that should be hard to read. */
                     style={{
                       color:
-                        t.accuracy < 0.5 ? 'oklch(var(--c-blood-text))' : t.accuracy < 0.7 ? 'oklch(var(--c-gold))' : 'oklch(var(--c-woods-text))',
+                        t.accuracy < 0.5
+                          ? 'oklch(var(--c-blood-text))'
+                          : t.accuracy < 0.7
+                            ? 'oklch(var(--c-gold))'
+                            : 'oklch(var(--c-woods-text))',
                     }}
                   >
                     {Math.round(t.accuracy * 100)}%
@@ -671,7 +679,12 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
      the section — they are the only place either one appears. */
   const rest = todaysPlan(progress, currentZone).steps.slice(1);
 
-  const countdown = urgency === 'close' ? 'oklch(var(--c-blood-text))' : urgency === 'soon' ? 'oklch(var(--c-gold))' : 'oklch(var(--c-woods-text))';
+  const countdown =
+    urgency === 'close'
+      ? 'oklch(var(--c-blood-text))'
+      : urgency === 'soon'
+        ? 'oklch(var(--c-gold))'
+        : 'oklch(var(--c-woods-text))';
 
   return (
     <section className="panel-quiet mb-6 p-5 sm:p-6">
@@ -712,7 +725,7 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
             <span className="label-sm">Then, if you have the time</span>
           </div>
 
-          {(
+          {
             <ol className="space-y-2">
               {rest.map((step) => (
                 <li key={`${step.kind}-${step.title}`}>
@@ -734,7 +747,7 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
                 </li>
               ))}
             </ol>
-          )}
+          }
         </div>
       )}
     </section>
@@ -746,7 +759,9 @@ function Stat({ label, value, note }: { label: string; value: string; note?: str
     <div>
       <dt className="label-sm">{label}</dt>
       <dd className="num mt-1 text-[22px] text-parchment">{value}</dd>
-      {note && <dd className="mt-0.5 font-read text-[11.5px] leading-tight text-cliffs-text">{note}</dd>}
+      {note && (
+        <dd className="mt-0.5 font-read text-[11.5px] leading-tight text-cliffs-text">{note}</dd>
+      )}
     </div>
   );
 }
@@ -755,7 +770,10 @@ function Row({ label, value, highlight }: { label: string; value: string; highli
   return (
     <div className="flex items-center justify-between border-b border-leather-700/60 pb-2.5 last:border-0">
       <dt className="font-read text-[14.5px] text-parchment-dim">{label}</dt>
-      <dd className="num text-[18px]" style={{ color: highlight ? 'oklch(var(--c-gold))' : 'oklch(var(--c-parchment-dim))' }}>
+      <dd
+        className="num text-[18px]"
+        style={{ color: highlight ? 'oklch(var(--c-gold))' : 'oklch(var(--c-parchment-dim))' }}
+      >
         {value}
       </dd>
     </div>
@@ -772,11 +790,7 @@ function Quick({
   to: 'path' | 'notes' | 'drills' | 'tests';
 }) {
   return (
-    <a
-      href={hrefFor({ name: to })}
-      onClick={() => sfx.select()}
-      className="panel-quiet px-5 py-4"
-    >
+    <a href={hrefFor({ name: to })} onClick={() => sfx.select()} className="panel-quiet px-5 py-4">
       <span className="block font-display text-[15px] font-semibold text-parchment">{label}</span>
       <span className="mt-0.5 block font-read text-[13.5px] text-ink-faint">{detail}</span>
     </a>

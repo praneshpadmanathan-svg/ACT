@@ -571,7 +571,13 @@ function SectionTimer({
         </span>
         <span
           className={cx('num ml-auto text-[26px] leading-none', critical && 'animate-shimmer')}
-          style={{ color: critical ? 'oklch(var(--c-blood-text))' : urgent ? 'oklch(var(--c-gold))' : color }}
+          style={{
+            color: critical
+              ? 'oklch(var(--c-blood-text))'
+              : urgent
+                ? 'oklch(var(--c-gold))'
+                : color,
+          }}
         >
           {formatClock(remaining)}
         </span>
@@ -797,7 +803,13 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
                   </span>
                   <ProgressBar
                     value={t.accuracy}
-                    color={t.accuracy < 0.5 ? 'oklch(var(--c-blood-text))' : t.accuracy < 0.75 ? 'oklch(var(--c-gold))' : 'oklch(var(--c-woods-text))'}
+                    color={
+                      t.accuracy < 0.5
+                        ? 'oklch(var(--c-blood-text))'
+                        : t.accuracy < 0.75
+                          ? 'oklch(var(--c-gold))'
+                          : 'oklch(var(--c-woods-text))'
+                    }
                     height={8}
                   />
                   <span className="num w-16 flex-none text-right text-[17px] text-parchment-dim">

@@ -161,7 +161,9 @@ export function Button({
         ))}
       </AnimatePresence>
       {children}
-      {trailing && <Glyph name="chevronRight" size={TRAIL_SIZE[size]} className="-mr-1 opacity-80" />}
+      {trailing && (
+        <Glyph name="chevronRight" size={TRAIL_SIZE[size]} className="-mr-1 opacity-80" />
+      )}
     </m.button>
   );
 }
@@ -231,7 +233,9 @@ export function Chip({
       /* `color-mix`, not `${color}66`: these colours are token references
          now (`oklch(var(--c-section-math))`), and appending hex alpha to one
          yields a string CSS silently drops — the border would just vanish. */
-      style={color ? { color, borderColor: `color-mix(in srgb, ${color} 40%, transparent)` } : undefined}
+      style={
+        color ? { color, borderColor: `color-mix(in srgb, ${color} 40%, transparent)` } : undefined
+      }
     >
       {children}
     </span>

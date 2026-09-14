@@ -208,8 +208,7 @@ export function proUnlocked(entitlement: Entitlement | null, now?: number): bool
 /* ------------------------------------------------------------- redeeming */
 
 export type RedeemResult =
-  | { status: 'ok'; alreadyHeld: boolean }
-  | { status: 'error'; message: string };
+  { status: 'ok'; alreadyHeld: boolean } | { status: 'error'; message: string };
 
 /**
  * Hand a code to the server and see what it says.

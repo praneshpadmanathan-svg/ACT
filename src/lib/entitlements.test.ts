@@ -102,7 +102,11 @@ describe('isPro', () => {
 
 describe('trial reporting', () => {
   it('floors the days remaining', () => {
-    const nearly = ent({ status: 'trialing', trialEndsAt: NOW + 2 * DAY + 1, currentPeriodEnd: null });
+    const nearly = ent({
+      status: 'trialing',
+      trialEndsAt: NOW + 2 * DAY + 1,
+      currentPeriodEnd: null,
+    });
     expect(trialDaysLeft(nearly, NOW)).toBe(2);
   });
 

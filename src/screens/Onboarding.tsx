@@ -269,7 +269,11 @@ export function Onboarding() {
             <h1 className="heading mb-6 mt-5 text-[22px] text-gold">Your plan is ready</h1>
 
             <dl className="space-y-2.5 text-left">
-              <PlanRow label="Target score" value={String(answers.target ?? 30)} color="oklch(var(--c-desert-text))" />
+              <PlanRow
+                label="Target score"
+                value={String(answers.target ?? 30)}
+                color="oklch(var(--c-desert-text))"
+              />
               <PlanRow
                 label="Questions a week"
                 value={String(goalForTiming((answers.when as OnboardingProfile['when']) ?? 'none'))}

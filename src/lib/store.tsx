@@ -293,7 +293,12 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       unlocked.forEach((a, i) => {
         window.setTimeout(
           () => {
-            pushToast({ title: a.name, detail: a.detail, color: 'oklch(var(--c-gold))', icon: a.icon });
+            pushToast({
+              title: a.name,
+              detail: a.detail,
+              color: 'oklch(var(--c-gold))',
+              icon: a.icon,
+            });
             sfx.achieve();
           },
           result.rankedUp ? 1400 + i * 400 : i * 400,

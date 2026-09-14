@@ -137,7 +137,9 @@ function ProFeatureRow({ name, blurb }: { name: string; blurb: string }) {
     <li className="flex items-start gap-3 rounded-lg border-2 border-leather-700 bg-leather-850 px-4 py-3">
       <Glyph name="spark" size={13} className="mt-1 flex-none text-gold" />
       <span>
-        <span className="block font-display text-[13.5px] font-semibold text-parchment">{name}</span>
+        <span className="block font-display text-[13.5px] font-semibold text-parchment">
+          {name}
+        </span>
         <span className="mt-0.5 block font-read text-[13.5px] leading-snug text-parchment-dim">
           {blurb}
         </span>

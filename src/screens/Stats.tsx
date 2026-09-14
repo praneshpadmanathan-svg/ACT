@@ -119,8 +119,7 @@ export function StatsScreen() {
             <ScoreTrend tests={tests} target={progress.targetScore} />
           ) : (
             <p className="max-w-[260px] font-read text-[12.5px] leading-relaxed text-ink-faint">
-              A trend line needs{' '}
-              <b className="text-parchment-dim">two scored tests</b> — you have{' '}
+              A trend line needs <b className="text-parchment-dim">two scored tests</b> — you have{' '}
               {tests.length === 0 ? 'none' : 'one'}. The number beside it is worked out from
               practice accuracy, which is a different instrument and does not belong on the same
               axis.{' '}
@@ -180,7 +179,7 @@ export function StatsScreen() {
         title="The full breakdown"
         detail="Where the time went, which topics are costing you points, and twelve weeks of history. Your headline numbers above stay free."
       >
-      {/* Small multiples: the same card, the same 0-100% scale, the same four
+        {/* Small multiples: the same card, the same 0-100% scale, the same four
           pieces in the same four places, repeated once per section. That
           sameness is the point — it is what lets the eye compare four things
           by shape instead of by reading four numbers.
@@ -192,50 +191,52 @@ export function StatsScreen() {
           target of 8. They are fine as one accent per titled card, which is
           all they are used as here, and must never become the only thing
           telling two series apart inside one plot. */}
-      <h2 className="heading mb-4 text-[13px] text-parchment">By section</h2>
-      <div className="mb-6 grid gap-3 sm:grid-cols-2">
-        {SECTIONS.map((section) => {
-          const { n, ok, pct } = sectionAccuracy(progress, section.id);
-          const path = PATH_BY_ID[section.id];
-          const zones = path.nodes.filter((z) => progress.zonesCleared[z.id] !== undefined).length;
+        <h2 className="heading mb-4 text-[13px] text-parchment">By section</h2>
+        <div className="mb-6 grid gap-3 sm:grid-cols-2">
+          {SECTIONS.map((section) => {
+            const { n, ok, pct } = sectionAccuracy(progress, section.id);
+            const path = PATH_BY_ID[section.id];
+            const zones = path.nodes.filter(
+              (z) => progress.zonesCleared[z.id] !== undefined,
+            ).length;
 
-          return (
-            <div key={section.id} className="panel-quiet p-5">
-              <div className="flex items-baseline justify-between">
-                <h3 className="heading text-[12px]" style={{ color: section.color }}>
-                  {section.name}
-                </h3>
-                <span className="num text-[26px]" style={{ color: section.color }}>
-                  {n >= 5 ? `${Math.round(pct * 100)}%` : '—'}
-                </span>
+            return (
+              <div key={section.id} className="panel-quiet p-5">
+                <div className="flex items-baseline justify-between">
+                  <h3 className="heading text-[12px]" style={{ color: section.color }}>
+                    {section.name}
+                  </h3>
+                  <span className="num text-[26px]" style={{ color: section.color }}>
+                    {n >= 5 ? `${Math.round(pct * 100)}%` : '—'}
+                  </span>
+                </div>
+                <div className="mt-3">
+                  <ProgressBar value={pct} color={section.color} height={8} />
+                </div>
+                <div className="mt-2.5 flex justify-between font-script text-[10px] uppercase tracking-wide text-ink-faint">
+                  <span>
+                    {ok}/{n} correct
+                  </span>
+                  <span>
+                    {zones}/{path.nodes.length} zones
+                  </span>
+                </div>
               </div>
-              <div className="mt-3">
-                <ProgressBar value={pct} color={section.color} height={8} />
-              </div>
-              <div className="mt-2.5 flex justify-between font-script text-[10px] uppercase tracking-wide text-ink-faint">
-                <span>
-                  {ok}/{n} correct
-                </span>
-                <span>
-                  {zones}/{path.nodes.length} zones
-                </span>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
 
-      {/* activity */}
-      <h2 className="heading mb-4 text-[13px] text-parchment">Last 12 weeks</h2>
-      <div className="panel-quiet mb-6 p-5">
-        <ActivityChart counts={activity} />
-      </div>
+        {/* activity */}
+        <h2 className="heading mb-4 text-[13px] text-parchment">Last 12 weeks</h2>
+        <div className="panel-quiet mb-6 p-5">
+          <ActivityChart counts={activity} />
+        </div>
 
-      {/* topics */}
-      <h2 className="heading mb-4 text-[13px] text-parchment">Every topic you have tried</h2>
-      <div className="space-y-2">
-        {allTopics.map((t) => {
-          /* There is no "Zone" label any more. It was never a section — it
+        {/* topics */}
+        <h2 className="heading mb-4 text-[13px] text-parchment">Every topic you have tried</h2>
+        <div className="space-y-2">
+          {allTopics.map((t) => {
+            /* There is no "Zone" label any more. It was never a section — it
              was the bug, standing as a fifth column beside the four real
              ones and taking every landmark topic with it. A topic you met at
              a landmark is an English topic, and English is the only honest
@@ -245,42 +246,42 @@ export function StatsScreen() {
              have aged out of the answer log before the migration in
              `progress.ts` could place them. Those render with no section
              rather than with an invented one. */
-          const meta = t.section === 'zone' ? undefined : SECTION_BY_ID[t.section];
-          return (
-            <div
-              key={`${t.section}-${t.topic}`}
-              className="panel-quiet flex items-center gap-4 px-4 py-3"
-            >
-              <span className="w-36 flex-none truncate font-sans text-[13px] font-semibold text-parchment sm:w-48">
-                {titleCase(t.topic)}
-              </span>
-              <span
-                className="hidden w-16 flex-none font-script text-[10px] uppercase tracking-wide sm:block"
-                style={{ color: meta?.color }}
+            const meta = t.section === 'zone' ? undefined : SECTION_BY_ID[t.section];
+            return (
+              <div
+                key={`${t.section}-${t.topic}`}
+                className="panel-quiet flex items-center gap-4 px-4 py-3"
               >
-                {meta?.name}
-              </span>
-              <ProgressBar
-                value={t.accuracy}
-                color={
-                  t.accuracy < 0.5
-                    ? 'oklch(var(--c-blood-text))'
-                    : t.accuracy < 0.75
-                      ? 'oklch(var(--c-gold))'
-                      : 'oklch(var(--c-woods-text))'
-                }
-                height={8}
-              />
-              <span className="num w-14 flex-none text-right text-[15px] text-parchment-dim">
-                {t.correct}/{t.attempts}
-              </span>
-              <span className="num hidden w-12 flex-none text-right text-[14px] text-ink-faint sm:block">
-                {t.avgSeconds.toFixed(0)}s
-              </span>
-            </div>
-          );
-        })}
-      </div>
+                <span className="w-36 flex-none truncate font-sans text-[13px] font-semibold text-parchment sm:w-48">
+                  {titleCase(t.topic)}
+                </span>
+                <span
+                  className="hidden w-16 flex-none font-script text-[10px] uppercase tracking-wide sm:block"
+                  style={{ color: meta?.color }}
+                >
+                  {meta?.name}
+                </span>
+                <ProgressBar
+                  value={t.accuracy}
+                  color={
+                    t.accuracy < 0.5
+                      ? 'oklch(var(--c-blood-text))'
+                      : t.accuracy < 0.75
+                        ? 'oklch(var(--c-gold))'
+                        : 'oklch(var(--c-woods-text))'
+                  }
+                  height={8}
+                />
+                <span className="num w-14 flex-none text-right text-[15px] text-parchment-dim">
+                  {t.correct}/{t.attempts}
+                </span>
+                <span className="num hidden w-12 flex-none text-right text-[14px] text-ink-faint sm:block">
+                  {t.avgSeconds.toFixed(0)}s
+                </span>
+              </div>
+            );
+          })}
+        </div>
       </ProGate>
     </Page>
   );

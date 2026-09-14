@@ -37,8 +37,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
    — – … ‘ ’ “ ” « » ° × · • (the password field's dots), − (U+2212, the true
    minus sign in question text) and √ (the calculator's square-root key, where
    the character *is* the label). */
-const BANNED =
-  /[←→↑↓↔⇒⇐▶◀▸◂▴▾►◄▲▼✦✧★☆✪✓✔✗✘✕✖➜➔⟶⚑⚐⚔⚠☀☁☹☺♦♠♣♥]|\p{Extended_Pictographic}/gu;
+const BANNED = /[←→↑↓↔⇒⇐▶◀▸◂▴▾►◄▲▼✦✧★☆✪✓✔✗✘✕✖➜➔⟶⚑⚐⚔⚠☀☁☹☺♦♠♣♥]|\p{Extended_Pictographic}/gu;
 
 /* `IconName` values, not free text — the suggestion is meant to be pasteable.
    A glyph with no entry is still banned; it just has no obvious house icon

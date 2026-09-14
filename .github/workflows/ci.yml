@@ -46,8 +46,22 @@ jobs:
       - run: npm ci
 
       # Cheapest first, so the common failure reports in seconds.
-      - name: Map animations
-        run: npm run check:anim
+      #
+      # There was a `Map animations` step here, running `check:anim` over the
+      # painted map's keyframes. The map is gone and so is the script, but this
+      # file kept calling it — so every run since the flatten died on step one
+      # with `Missing script: check:anim`, before a single real check ran. A
+      # deleted npm script fails loudly; a workflow that calls one fails
+      # loudly somewhere nobody is looking.
+      #
+      # `check:tokens` and `check:glyphs` take its place. They are in the build
+      # chain and were never here, which quietly made the claim at the top of
+      # this file — that these are the commands `npm run build` runs — untrue.
+      - name: Design tokens
+        run: npm run check:tokens
+
+      - name: Glyphs
+        run: npm run check:glyphs
 
       - name: Content library
         run: npm run check:content
