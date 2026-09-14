@@ -63,7 +63,7 @@ const FEATHER_TOP_ONLY = 'linear-gradient(to bottom, transparent 0%, #000 12%, #
  *
  * Not 1. A fully desaturated map is a grey rectangle, and a grey rectangle is
  * not a world worth saving — a first-time player has to want to go there. At
- * 0.86 the terrain still reads as farmland and forest and canyon; it just
+ * 0.58 the terrain still reads as farmland and forest and canyon; it just
  * looks like the life has been drained out of it, which is the thing the story
  * actually says.
  *
@@ -72,7 +72,7 @@ const FEATHER_TOP_ONLY = 'linear-gradient(to bottom, transparent 0%, #000 12%, #
  * wash and a lighter drain gave something that read as *fog* — weather, not
  * blight, and the map already has weather. Letting the desaturation do most
  * of the work and the wash only tint the greys is what reads as drained. */
-const MAX_DRAIN = 0.86;
+const MAX_DRAIN = 0.58;
 
 /** Ash wash over a plagued region: cold, slightly blue, and very light. */
 const ASH = 'rgba(126, 130, 146, 0.20)';

@@ -126,6 +126,21 @@ export function Onboarding() {
       <div className="absolute inset-0 bg-leather-950/84" />
 
       <div className="panel-lit relative z-10 w-full max-w-lg p-7 sm:p-9">
+        <ol className="onboarding-chapters" aria-label="Journey setup">
+          {['Your goals', 'Your traveller', 'Your adventure'].map((label, index) => {
+            const active = phase === 'plan' ? 2 : phase === 'hero' ? 1 : 0;
+            return (
+              <li
+                key={label}
+                aria-current={index === active ? 'step' : undefined}
+                data-complete={index < active}
+              >
+                <span aria-hidden="true">{index < active ? '✓' : `0${index + 1}`}</span>
+                {label}
+              </li>
+            );
+          })}
+        </ol>
         {phase === 'questions' && (
           <>
             <div className="mb-6">

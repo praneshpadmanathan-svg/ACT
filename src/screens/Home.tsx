@@ -1,3 +1,5 @@
+import { RegionPortals } from '@/components/RegionPortals';
+import { CampVista } from '@/components/CampVista';
 /* Camp — the dashboard.
 
    Set inside the campaign tent from the artwork. Answers three questions
@@ -13,7 +15,6 @@ import {
   dailyDone,
   dueForReview,
   estimatedComposite,
-  rankProgress,
   trackStatus,
   weakestTopics,
   type TrackVerdict,
@@ -25,7 +26,7 @@ import { cloudEnabled } from '@/lib/supabase';
 import { sfx } from '@/lib/sfx';
 import { titleCase } from '@/lib/utils';
 import { Page } from '@/components/Shell';
-import { Button, ProgressBar, ProgressRing, RankBadge } from '@/components/ui';
+import { Button, ProgressBar, ProgressRing } from '@/components/ui';
 import { useMapProgress } from '@/game/AdventureMap';
 import { REGIONS } from '@/game/mapData';
 import { nextChapter } from '@/game/story';
@@ -36,11 +37,10 @@ import { Art } from '@/components/Art';
 const SAVE_PROMPT_KEY = 'act-command:save-prompt-dismissed';
 
 export function Home() {
-  const { progress, rank, playerName, isGuest } = useStore();
+  const { progress, isGuest } = useStore();
   const navigate = useNavigate();
   const { current, cleared, total, allCleared } = useMapProgress();
 
-  const { pct, next } = rankProgress(progress.xp);
   const estimate = estimatedComposite(progress);
   const reviewDue = dueForReview(progress).length;
   const weak = weakestTopics(progress, 4);
@@ -61,6 +61,11 @@ export function Home() {
       <div className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-leather-950/80 via-leather-950/88 to-leather-950" />
 
       <Page>
+        <CampVista
+          cleared={cleared}
+          total={total}
+          destination={current?.zone.name ?? 'The Final Summit'}
+        />
         {/* Story beats play on the map, so a chapter you have earned but not
             yet seen is invisible from camp. Say so, and offer the door. */}
         {pendingChapter && (
@@ -91,62 +96,14 @@ export function Home() {
           </button>
         )}
 
-        {/* ---------------------------------------------------------- greeting */}
-        <div className="mb-6 grid gap-4 lg:grid-cols-[1.25fr_1fr]">
-          <div className="panel-lit p-6 sm:p-7">
-            <div className="flex items-start gap-4">
-              <RankBadge rank={rank} size={64} />
-              <div className="min-w-0">
-                <div className="eyebrow">{isGuest ? 'Travelling as a guest' : 'Welcome back'}</div>
-                <h1 className="heading mt-1 truncate text-[clamp(1.4rem,3vw,1.9rem)]">
-                  {playerName}
-                </h1>
-                <p
-                  className="mt-1 font-script text-[14px] uppercase tracking-[0.14em]"
-                  style={{ color: rank.color }}
-                >
-                  {rank.name}
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-6">
-              <div className="mb-2 flex items-baseline justify-between">
-                <span className="num text-[24px] text-gold">{progress.xp.toLocaleString()} XP</span>
-                {next && (
-                  <span className="label-sm">
-                    {(next.xp - progress.xp).toLocaleString()} to {next.name}
-                  </span>
-                )}
-              </div>
-              <ProgressBar value={pct} label="Rank progress" />
-            </div>
+        <div className="camp-regions-heading">
+          <div>
+            <span className="eyebrow">The world beyond your camp</span>
+            <h2 className="heading">Choose a little wonder.</h2>
           </div>
-
-          {/* continue the quest */}
-          <button
-            type="button"
-            onClick={() => {
-              sfx.select();
-              if (current) navigate({ name: 'zone', zone: current.zone.id });
-              else navigate({ name: 'tests' });
-            }}
-            className="panel-lit group p-6 text-left transition-colors hover:border-gold-deep sm:p-7"
-          >
-            <div className="eyebrow mb-3">⚑ Continue your quest</div>
-            <h2 className="heading text-[clamp(1.15rem,2.4vw,1.5rem)] text-gold-light">
-              {current ? current.zone.name : 'The Final Summit'}
-            </h2>
-            <p className="mt-2 font-read text-[15px] leading-relaxed text-parchment-dim">
-              {current
-                ? `${current.zone.sub} — a short lesson, then a quiz to clear the landmark.`
-                : 'Every landmark cleared. Sail to the citadel and take your full mock test.'}
-            </p>
-            <span className="mt-5 inline-flex items-center gap-2 font-display text-[14px] font-semibold text-gold group-hover:text-gold-bright">
-              {current ? 'Begin the lesson' : 'Take the mock test'} ▸
-            </span>
-          </button>
+          <span>Four regions. Your own pace.</span>
         </div>
+        <RegionPortals />
 
         {/* ------------------------------------------------------------ stats */}
         {/* A guest has something worth losing now.

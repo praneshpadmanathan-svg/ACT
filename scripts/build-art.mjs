@@ -47,6 +47,7 @@ const WIDTHS = {
   'world-map': [768, 1152, 1536],
   'camp-bg': [640, 1024, 1376],
   'landing-hero': [512, 768, 1024],
+  'realm-opening-v2': [768, 1280, 1672],
   wizzy: [235, 470],
   /* The four loading backdrops. 928 is the whole source after
      `build-scenes.mjs` trims the generator's mark, and they are square art

@@ -1,3 +1,5 @@
+import { RealmScene } from '@/components/RealmScene';
+import { HeroSprite } from '@/game/HeroSprite';
 /* A zone: read the lesson, then clear the quiz.
 
    The lesson is the study register — this is the one place in the game layer
@@ -117,7 +119,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
         </div>
 
         {lesson ? (
-          <article className="sheet p-6 sm:p-9">
+          <article className="sheet mx-auto max-w-3xl p-6 sm:p-9">
             <p className="prose-quill text-[1.15rem] leading-[1.7] text-ink">
               <RichText as="span">{lesson.intro}</RichText>
             </p>
@@ -248,24 +250,39 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
 
   return (
     <Page>
-      <div className="mx-auto max-w-2xl">
-        <div
-          className="rounded-xl border-2 p-7 text-center shadow-card sm:p-9"
-          style={{ borderColor: passed ? '#5ee6a8' : '#ff8298', background: '#16102e' }}
+      <div className="mx-auto max-w-3xl">
+        <RealmScene
+          art={
+            (
+              {
+                english: 'scene-river',
+                reading: 'scene-ridge',
+                math: 'scene-pass',
+                science: 'scene-harbour',
+              } as const
+            )[path.id]
+          }
+          className={`realm-reward ${passed ? 'realm-reward-won' : ''}`}
         >
+          <div className="realm-reward-seal" aria-hidden="true">
+            {passed ? '✧' : '◇'}
+          </div>
+          <div className="realm-reward-hero" aria-hidden="true">
+            <HeroSprite hero={progress.hero} height={100} />
+          </div>
           <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
             {zone.name}
           </div>
           <h1
             className="heading mt-3 text-[clamp(17px,3.4vw,26px)]"
-            style={{ color: passed ? '#5ee6a8' : '#ff8298' }}
+            style={{ color: passed ? '#f0d89e' : '#e9b5a4' }}
           >
-            {passed ? 'Zone cleared' : 'Not yet'}
+            {passed ? 'A little more light in the world.' : 'Every journey takes practice.'}
           </h1>
 
           <div
             className="num mt-6 text-[64px] leading-none"
-            style={{ color: passed ? '#5ee6a8' : '#ff8298' }}
+            style={{ color: passed ? '#f0d89e' : '#e9b5a4' }}
           >
             {percent}%
           </div>
@@ -274,18 +291,23 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
           </p>
 
           <div className="mx-auto mt-6 max-w-sm">
-            <ProgressBar value={percent / 100} color={passed ? '#5ee6a8' : '#ff8298'} />
+            <ProgressBar value={percent / 100} color={passed ? '#f0d89e' : '#e9b5a4'} />
           </div>
 
           <p className="mt-6 text-[15px] leading-relaxed text-parchment-dim">
             {passed
               ? priorBest !== null && percent <= priorBest
                 ? `Cleared again — your best here is still ${priorBest}%.`
-                : 'Nice. The next zone on this path is open.'
+                : 'You have restored this landmark. Return to the map to see your world change.'
               : `You need ${Math.round(PASS_MARK * 100)}% to clear this zone. Re-read the lesson and try again — you get a different set of questions.`}
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
+            {passed && (
+              <Button variant="primary" size="lg" onClick={() => navigate({ name: 'map' })}>
+                See your world change ↗
+              </Button>
+            )}
             <Button
               variant="ghost"
               onClick={() => {
@@ -302,7 +324,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
             </Button>
             {passed && nextZone ? (
               <Button
-                variant="primary"
+                variant="ghost"
                 onClick={() => {
                   setResults(null);
                   setPhase('lesson');
@@ -320,7 +342,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
               </Button>
             )}
           </div>
-        </div>
+        </RealmScene>
 
         {/* what you missed */}
         {results && results.some((r) => !r.correct) && (

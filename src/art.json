@@ -366,5 +366,39 @@
         "src": "/art/gen/world-map-768.webp"
       }
     ]
+  },
+  "realm-opening-v2": {
+    "width": 1672,
+    "height": 941,
+    "fallback": "/art/realm-opening-v2.webp",
+    "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQBACdASoUAAsAPu1iqU2ppaOiMAgBMB2JQBOgA3PlX/XkTEKBf7sQAAD+8rTT1D3WwdeIJboBLvjw0Z6+icgT6e5i2jWwNRc1Pa1NAl1gryy78ZrPu2yW1YKxRWuxSSLwAA==",
+    "avif": [
+      {
+        "w": 768,
+        "src": "/art/gen/realm-opening-v2-768.avif"
+      },
+      {
+        "w": 1280,
+        "src": "/art/gen/realm-opening-v2-1280.avif"
+      },
+      {
+        "w": 1672,
+        "src": "/art/gen/realm-opening-v2-1672.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 768,
+        "src": "/art/gen/realm-opening-v2-768.webp"
+      },
+      {
+        "w": 1280,
+        "src": "/art/gen/realm-opening-v2-1280.webp"
+      },
+      {
+        "w": 1672,
+        "src": "/art/gen/realm-opening-v2-1672.webp"
+      }
+    ]
   }
 }

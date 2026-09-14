@@ -269,7 +269,7 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
     w: typeof window === 'undefined' ? 0 : window.innerWidth,
     h: typeof window === 'undefined' ? 0 : window.innerHeight,
   }));
-  const [view, setView] = useState<View>({ zoom: 1.35, x: 0, y: 0 });
+  const [view, setView] = useState<View>({ zoom: 1.1, x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const [ready, setReady] = useState(false);
 
@@ -756,7 +756,7 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
             <span
               key={id}
               className="region-plaque"
-              style={{ left: `${region.labelAt[0]}%`, top: `${region.labelAt[1]}%`, fontSize: 19 }}
+              style={{ left: `${region.labelAt[0]}%`, top: `${region.labelAt[1]}%` }}
             >
               {region.title}
             </span>
@@ -953,7 +953,7 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
               navigate({ name: 'daily' });
             }}
             className={cx('courier group', courier.done && 'courier-done')}
-            style={{ left: `${courierPin.x}%`, top: `${courierPin.y}%` }}
+            style={{ left: `${courierPin.x + 3.8}%`, top: `${courierPin.y - 1}%` }}
             /* The position is keyed so that a courier who has moved overnight
                arrives rather than blinks into place — the same reasoning as the
                traveller walking between landmarks. */
