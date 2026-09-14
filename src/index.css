@@ -1132,6 +1132,23 @@
     @apply rounded bg-paper-dim px-1.5 py-0.5 font-mono text-[0.88em] text-[#4a3a1c];
   }
 
+  /* Data questions embed a small table in the stem. The RichText sanitizer
+     strips every attribute, so the markup arrives as a bare <table> and has to
+     be styled by descent rather than by a class. */
+  .prose-quill table {
+    @apply my-3 w-full border-collapse text-[0.95em];
+  }
+  .prose-quill th {
+    @apply border-b-2 border-paper-edge bg-paper-dim px-2.5 py-1.5 text-left
+           font-script text-[0.78em] uppercase tracking-[0.1em] text-ink-soft;
+  }
+  .prose-quill td {
+    @apply border-b border-paper-edge px-2.5 py-1.5 tabular-nums;
+  }
+  .prose-quill tr:last-child td {
+    @apply border-b-0;
+  }
+
   .prose-passage {
     @apply prose-quill text-[1.13rem] leading-[1.82];
     max-width: 66ch;

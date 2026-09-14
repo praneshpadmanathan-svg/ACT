@@ -434,6 +434,96 @@ for (const [section, questions] of Object.entries(questionsBySection)) {
   }
 }
 
+/* ------------------------------------------- rule 9: the zone quizzes hold
+   enough genuinely different questions to fill a quiz
+
+   Rules 1-8 are about the drill bank. The landmark quizzes
+   (`miniquizzes.json`) went unchecked, and three things went wrong in the gap.
+
+   9a — a zone question's options are all distinct. This is rule 7b for the
+     other bank, and it was not a hypothetical: seventeen items shipped with
+     two options that were the same answer separated by a trailing space
+     (`["π ", "π", "2π", "π/2"]`, credited index 1). A student who picked the
+     un-keyed twin was marked wrong for a correct answer. Rule 5's fingerprint
+     could not see it — it hashes the raw strings, so the twins hash apart.
+
+   9b — no option carries leading or trailing whitespace. 9a would catch the
+     twins on its own, but padding is what produced them, and a padded option
+     that happens not to collide is still an option the author did not mean to
+     write.
+
+   9c — a zone holds at least `QUIZ_LENGTH` questions. `Zone.tsx` draws six.
+     Thirty of the thirty-seven zones held three or four, so the pool *was*
+     the quiz: every attempt showed the same three questions in a new order,
+     and clearing a landmark twice taught nothing the second time.
+
+   9d — no two questions in a zone are the same question with different
+     numbers. This is the one that produced the complaint. The seven zones
+     that did have a real pool were one stem re-rolled: thirty-one items in
+     `function_foundry` were four questions, and a six-question draw repeated
+     a template 95-100% of the time. Blanking every number is a blunt
+     fingerprint and that is the point — two items that differ only in their
+     digits are one question for the purpose of a quiz, whatever the bank
+     totals say. */
+
+const QUIZ_LENGTH = 6;
+
+/* Every run of digits becomes `N`, so `(2, 3)` and `(-4, 11)` collapse
+   together. Vulgar-fraction glyphs count as digits; they are numbers that
+   happen to be one character. */
+const questionTemplate = (text) =>
+  String(text ?? '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/[−–-]?\d+(?:\.\d+)?/g, 'N')
+    .replace(/[½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]/g, 'N')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+
+for (const [zoneId, questions] of Object.entries(miniquizzes)) {
+  if (questions.length < QUIZ_LENGTH) {
+    failures.push(
+      `${zoneId}: holds ${questions.length} questions but a quiz draws ${QUIZ_LENGTH}. ` +
+        `The whole pool is the quiz, so every retry is the same questions reordered.`,
+    );
+  }
+
+  const templates = new Map();
+
+  questions.forEach((q, i) => {
+    const optionText = new Map();
+    (q.opts ?? []).forEach((opt, j) => {
+      const text = flatten(opt);
+      if (optionText.has(text)) {
+        failures.push(
+          `${zoneId}[${i}]: options ${optionText.get(text)} and ${j} are both "${text}". ` +
+            `One of them is credited and the other is not, so a student who reads the ` +
+            `question correctly can still be marked wrong. ("${flatten(q.q).slice(0, 60)}")`,
+        );
+      } else {
+        optionText.set(text, j);
+      }
+      if (opt !== String(opt).trim()) {
+        failures.push(
+          `${zoneId}[${i}]: option ${j} is ${JSON.stringify(opt)} — padded with whitespace. ` +
+            `Padding is what produced the duplicate-answer items; trim it.`,
+        );
+      }
+    });
+
+    const template = questionTemplate(q.q);
+    if (templates.has(template)) {
+      failures.push(
+        `${zoneId}[${i}]: is ${zoneId}[${templates.get(template)}] with different numbers ` +
+          `("${flatten(q.q).slice(0, 70)}"). A pool of re-rolls is one question wearing ` +
+          `several hats — the quiz draws the same thing twice and the student notices.`,
+      );
+    } else {
+      templates.set(template, i);
+    }
+  });
+}
+
 /* ----------------------------------------------------------------- report */
 
 if (failures.length) {
