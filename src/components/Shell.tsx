@@ -14,7 +14,7 @@ import { rankProgress } from '@/lib/progress';
 import { isMuted, onMutedChange, sfx, toggleMuted } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import { NavGlyph, type GlyphName } from './NavGlyph';
-import { RankBadge } from './ui';
+import { RankIdentity } from './RankIdentity';
 
 interface NavItem {
   label: string;
@@ -52,7 +52,7 @@ function MuteButton() {
 export function TopBar() {
   const route = useRoute();
   const navigate = useNavigate();
-  const { progress, rank, playerName, isGuest, syncing } = useStore();
+  const { progress, rank, playerName, syncing } = useStore();
   const { pct, next } = rankProgress(progress.xp);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -165,22 +165,7 @@ export function TopBar() {
             className="hud-block group"
             aria-label={`${playerName}, ${rank.name}, ${progress.xp.toLocaleString()} XP`}
           >
-            <span className="relative flex-none transition-transform duration-200 group-hover:scale-105">
-              <RankBadge rank={rank} size={30} />
-            </span>
-            <span className="hidden text-left leading-tight sm:block">
-              <span className="block max-w-[9rem] truncate font-display text-[12.5px] font-semibold text-parchment">
-                {isGuest ? 'Traveller' : playerName}
-              </span>
-              <span className="mt-0.5 flex items-center gap-1.5">
-                <span className="num text-[13px] leading-none text-gold">
-                  {progress.xp.toLocaleString()}
-                </span>
-                <span className="hud-xp">
-                  <i style={{ width: `${pct * 100}%` }} />
-                </span>
-              </span>
-            </span>
+            <RankIdentity rank={rank} compact />
           </a>
 
           <MuteButton />

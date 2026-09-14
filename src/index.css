@@ -2766,18 +2766,160 @@
   letter-spacing: 0.14em;
   color: #bfd0c3;
 }
-.camp-expedition-bar strong {
+.camp-expedition-bar > div > strong {
   display: block;
   font-family: var(--font-read), serif;
   font-size: 29px;
   font-weight: 400;
 }
-.camp-expedition-bar strong span {
+.camp-expedition-bar > div > strong span {
   color: #bccbbf;
   font-size: 17px;
 }
 .camp-rank-meter {
   width: min(48%, 330px);
+}
+
+/* Rank identity: a framed collectible, with the title taking precedence. */
+.rank-identity {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  min-width: 0;
+  text-align: left;
+}
+.rank-identity-emblem {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  flex: none;
+  place-items: center;
+  padding: 9px;
+  border: 1px solid color-mix(in srgb, var(--rank-accent), transparent 45%);
+  border-radius: 28% 28% 42% 42%;
+  background: radial-gradient(ellipse at 50% 20%, #e8c98c26, #0c202b 75%);
+  box-shadow:
+    inset 0 1px 0 #fff3,
+    inset 0 -5px 15px #0008,
+    0 12px 26px #0004;
+}
+.rank-identity-emblem::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid #ead19b30;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.rank-identity-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 5px;
+}
+.rank-identity-label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgb(var(--c-ink-faint));
+}
+.rank-title {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: clamp(22px, 2.5vw, 34px);
+  line-height: 1.2;
+  letter-spacing: 0.035em;
+  color: rgb(var(--c-parchment));
+  overflow-wrap: anywhere;
+}
+.realm-scene .rank-title {
+  color: #f7e4b6;
+  text-shadow: 0 2px 16px #dcae4530;
+}
+.rank-identity-motto {
+  font-family: var(--font-read), serif;
+  font-size: 15px;
+  color: rgb(var(--c-parchment-dim));
+  max-width: 30ch;
+}
+.rank-identity-compact {
+  gap: 9px;
+}
+.rank-identity-compact .rank-identity-emblem {
+  padding: 0;
+  border-radius: 12px;
+}
+.rank-identity-compact .rank-title,
+.rank-map-title {
+  font-size: 14px;
+}
+.rank-identity-compact .rank-identity-label {
+  font-size: 8px;
+}
+.camp-expedition-bar {
+  gap: 24px;
+  padding-block: 22px;
+}
+.camp-rank-meter {
+  flex: 0 1 290px;
+}
+.camp-landmarks {
+  display: block;
+  font-size: 11px;
+  margin-top: 10px;
+  color: #b4c3b8;
+}
+.rank-cartouche {
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 #fce5b533,
+    0 8px 24px #0004;
+}
+.rank-cartouche:focus-visible,
+.hud-block:focus-visible {
+  outline: 2px solid #e6c785;
+  outline-offset: 4px;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .rank-identity-emblem {
+    transition:
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.4s;
+  }
+  a:hover .rank-identity-emblem {
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 1px 0 #fff3,
+      0 10px 24px #d4b87625;
+  }
+}
+@media (max-width: 640px) {
+  .camp-expedition-bar {
+    position: relative;
+    margin: 26px -25px -32px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .camp-vista {
+    padding-bottom: 32px;
+  }
+  .camp-expedition-bar .rank-identity {
+    gap: 16px;
+  }
+  .camp-expedition-bar .rank-identity-emblem {
+    padding: 2px;
+  }
+  .camp-expedition-bar .camp-rank-meter {
+    width: 100%;
+    flex-basis: auto;
+  }
+  .rank-identity-compact .rank-title {
+    font-size: 12px;
+  }
+  .rank-identity-compact .rank-identity-label {
+    display: none;
+  }
 }
 .camp-rank-meter > div:first-child {
   display: flex;
@@ -3226,7 +3368,64 @@
     flex-wrap: wrap;
   }
   .camp-rank-meter {
-    min-width: 145px;
+    min-width: 0;
     flex: 1;
+  }
+}
+
+.destination-header {
+  margin-bottom: 30px;
+  padding: clamp(28px, 5vw, 58px);
+  min-height: 245px;
+  border: 1px solid #ddc68f40;
+  border-radius: 24px;
+  box-shadow:
+    0 18px 45px #0003,
+    inset 0 1px 0 #fff2;
+}
+.destination-header .realm-scene-shade {
+  background: linear-gradient(90deg, #091e27f2, #091e27b3 55%, #091e2733);
+}
+.destination-header-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+.destination-header h1 {
+  margin: 15px 0 12px;
+  font-family: var(--font-read), serif;
+  font-size: clamp(30px, 4.3vw, 52px);
+  line-height: 1.1;
+  color: #f6e9d0;
+}
+.destination-header p {
+  max-width: 49ch;
+  color: #d0d9cd;
+  line-height: 1.7;
+  font-size: 15px;
+}
+.destination-compass {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  font-size: 100px;
+  color: #f0d8a766;
+  pointer-events: none;
+}
+@media (max-width: 640px) {
+  .camp-vista {
+    padding-bottom: 0;
+  }
+  .camp-expedition-bar {
+    margin: 28px -25px 0;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .camp-expedition-bar .camp-rank-meter {
+    width: 100%;
+    flex-basis: auto;
+  }
+  .destination-compass {
+    display: none;
   }
 }

@@ -24,7 +24,8 @@ import { sfx } from '@/lib/sfx';
 import { cx, formatClock, formatRelative, shuffle, titleCase } from '@/lib/utils';
 import type { SectionId, TestResult } from '@/types';
 import { Page } from '@/components/Shell';
-import { Button, EmptyState, ProgressBar, SectionHeading } from '@/components/ui';
+import { Button, EmptyState, ProgressBar } from '@/components/ui';
+import { DestinationHeader } from '@/components/DestinationHeader';
 import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
 import { burstConfetti } from '@/components/Feedback';
 import { ScoreCaveat } from '@/components/ScoreCaveat';
@@ -76,9 +77,10 @@ export function TestsScreen() {
 
   return (
     <Page>
-      <SectionHeading
-        eyebrow="Boss battles"
-        title="Practice tests"
+      <DestinationHeader
+        art="scene-ridge"
+        eyebrow="The Summit · Practice tests"
+        title="See how far you have come."
         detail="Timed, no explanations until you finish. The report tells you which topics cost you the most points."
       />
 

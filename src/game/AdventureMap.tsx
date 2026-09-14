@@ -1225,27 +1225,25 @@ export function AdventureMap({ onExit }: { onExit?: () => void }) {
                 carried neither. So the one axis that runs the whole length of
                 the game was invisible on the screen built to show a journey.
 
-                It opens Stats rather than doing nothing, because the obvious
+                It opens Profile rather than doing nothing, because the obvious
                 question a bar four-fifths full provokes is "of what?", and the
                 rank ladder that answers it already exists there. */}
               <button
                 type="button"
                 onClick={() => {
                   sfx.select();
-                  navigate({ name: 'stats' });
+                  navigate({ name: 'profile' });
                 }}
                 className="rank-cartouche pointer-events-auto"
                 aria-label={
                   rankPct.next
-                    ? `${rank.name} — ${rankPct.span - rankPct.into} XP to ${rankPct.next.name}. Open your stats.`
-                    : `${rank.name}, the highest rank. Open your stats.`
+                    ? `${rank.name} — ${rankPct.span - rankPct.into} XP to ${rankPct.next.name}. Open your rank collection.`
+                    : `${rank.name}, the highest rank. Open your rank collection.`
                 }
               >
-                <RankSigil rank={rank} size={26} />
+                <RankSigil rank={rank} size={42} aura={false} />
                 <span className="flex flex-col items-start gap-1">
-                  <span className="font-script text-[11px] uppercase leading-none tracking-[0.14em] text-parchment-dim">
-                    {rank.name}
-                  </span>
+                  <strong className="rank-title rank-map-title">{rank.name}</strong>
                   {/* At the top rank there is no "next", and a bar pinned full
                     forever reads as a broken bar. The XP total is the honest
                     thing to show once there is nothing left to fill. */}

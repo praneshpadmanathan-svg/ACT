@@ -19,6 +19,7 @@ import { Button, EmptyState, ProgressBar, SectionHeading } from '@/components/ui
 import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
 import { RichText } from '@/components/RichText';
 import { Glyph } from '@/components/Icon';
+import { DestinationHeader } from '@/components/DestinationHeader';
 
 const LENGTHS = [5, 10, 20];
 
@@ -58,10 +59,11 @@ export function DrillsScreen({ section }: { section?: string }) {
 
   return (
     <Page>
-      <SectionHeading
-        eyebrow={`${QUESTIONS[active].length} questions available`}
-        title="Drills"
-        detail="Adaptive practice from the graded question bank. Every choice gets an explanation, not just the right one."
+      <DestinationHeader
+        art="scene-pass"
+        eyebrow="The training grounds"
+        title="Find your edge."
+        detail="Choose a skill. Set your pace. Turn a little practice into your next breakthrough."
       />
 
       <div className="mb-6 flex flex-wrap gap-2">

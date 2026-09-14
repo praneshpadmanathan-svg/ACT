@@ -23,6 +23,7 @@ import { ScoreCaveat } from '@/components/ScoreCaveat';
 import { DiagnosticsPanel, DisplaySettings } from '@/components/Settings';
 import { HeroChooser } from '@/game/HeroChooser';
 import { HeroSprite } from '@/game/HeroSprite';
+import { RankIdentity } from '@/components/RankIdentity';
 
 /* ---------------------------------------------------------------- stats */
 
@@ -250,21 +251,9 @@ export function ProfileScreen() {
               app was a heraldic device rather than a person. */}
           <div className="flex items-end justify-center gap-1">
             <HeroSprite hero={progress.hero} height={104} />
-            {/* -6 when this sat beside a drawn avatar, which carried empty
-                padding either side. The sprite is cut to its own silhouette,
-                so the same pull put the badge on top of the staff arm. */}
-            <div className="-ml-2 mb-1">
-              <RankBadge rank={rank} size={54} />
-            </div>
           </div>
           <h2 className="heading mt-3 text-[14px] text-parchment">{playerName}</h2>
-          <p
-            className="mt-2 font-script text-[11px] uppercase tracking-wide"
-            style={{ color: rank.color }}
-          >
-            {rank.name}
-          </p>
-          <p className="mt-1 text-[13px] text-ink-faint">{rank.tagline}</p>
+          <RankIdentity rank={rank} />
 
           <div className="mt-5">
             <ProgressBar value={pct} color={rank.color} />
@@ -469,7 +458,7 @@ export function ProfileScreen() {
             <RankBadge rank={r} size={38} />
             <div className="min-w-0">
               <div
-                className="truncate font-script text-[11px] uppercase tracking-wide"
+                className="truncate font-display text-[13px] font-bold tracking-wide"
                 style={{ color: r.color }}
               >
                 {r.name}

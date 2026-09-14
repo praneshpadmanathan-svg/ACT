@@ -16,8 +16,9 @@ import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import type { NoteBlock, SectionId } from '@/types';
 import { BackLink, Page } from '@/components/Shell';
-import { Button, EmptyState, ProgressBar, SectionHeading } from '@/components/ui';
+import { Button, EmptyState, ProgressBar } from '@/components/ui';
 import { RichText } from '@/components/RichText';
+import { DestinationHeader } from '@/components/DestinationHeader';
 
 /* ------------------------------------------------------------- library */
 
@@ -55,10 +56,11 @@ export function NotesScreen({ section }: { section?: string }) {
 
   return (
     <Page>
-      <SectionHeading
-        eyebrow={`${progress.notesRead.length} of ${ALL_NOTE_PAGES.length} pages read overall`}
-        title="Study notes"
-        detail="Short pages that teach exactly what the ACT asks. Each one ends with a check question."
+      <DestinationHeader
+        art="scene-river"
+        eyebrow="The library"
+        title="A little curiosity. A new discovery."
+        detail="Open a lesson, discover the idea, and carry it into your next adventure."
       />
 
       {/* section tabs */}

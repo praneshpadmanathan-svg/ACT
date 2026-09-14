@@ -276,11 +276,7 @@ export function Home() {
             to="map"
           />
           <Quick label="The library" detail={`${LIBRARY_STATS.notePages} lessons`} to="notes" />
-          <Quick
-            label="Training yard"
-            detail={`${LIBRARY_STATS.drillQuestions} questions`}
-            to="drills"
-          />
+          <Quick label="Training yard" detail="Sharpen your skills" to="drills" />
           <Quick label="The Summit" detail="Timed mock test" to="tests" />
         </div>
       </Page>

@@ -1,5 +1,22 @@
 # Living Realm: graphics, motion, and journey review
 
+## Rank-first follow-up (local changes)
+
+The next presentation pass makes rank identity prominent in Camp, navigation,
+the map, Profile, and the rank ladder. The shared identity uses a framed existing
+emblem, bold Cinzel title, and a separate progress treatment without a question
+total. Training's question-bank headline and Camp's advertising-style training
+count are removed. Library, Training, and Summit now have illustrated entrances
+using existing responsive scene artwork and offscreen-paused atmosphere.
+
+The public landing and setup were inspected again on September 14. The public
+landing still uses the older opening and advertises newer question content than
+this design checkout. Do not replace production content with this checkout;
+reconcile the design diff with the current production branch before deployment.
+The browser blocked the local preview, so this pass is not visually signed off.
+The whole-app walkthrough, responsive visual checks, authored character motion,
+and landmark restoration choreography remain unfinished.
+
 Status: published to the `design/living-realm` branch. Production deployment remains pending.
 
 ## Review boundary
