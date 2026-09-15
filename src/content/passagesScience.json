@@ -1996,5 +1996,189 @@
         ]
       }
     ]
+  },
+  {
+    "id": "sp26",
+    "title": "Thermal Tolerance in Two Trout Populations",
+    "type": "Data Representation",
+    "text": "Two populations of the same trout species were compared. The coastal population lives in a river whose summer temperature rarely exceeds 18 degrees C. The inland population lives in a river that regularly reaches 25 degrees C in late summer.\n\nFish from both populations were held in tanks at controlled temperatures. Figure 1 shows oxygen consumption, a measure of how hard the fish are working to stay alive, at five temperatures. Figure 2 shows the percentage of fish still alive after 96 hours at four temperatures. Table 1 gives the critical thermal maximum for each population, the temperature at which a fish loses the ability to right itself.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Oxygen consumption at five water temperatures",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Water temperature (°C)",
+        "yLabel": "O₂ consumed (mg/kg/h)",
+        "alt": "Line graph of oxygen consumption against water temperature for two trout populations. Both begin together at the coldest temperature. The coastal line rises more steeply, peaks, and then falls at the warmest temperature; the inland line rises more gradually and is still rising at the warmest temperature, where it passes above the coastal line.",
+        "series": [
+          {
+            "name": "Coastal",
+            "points": [
+              {
+                "x": 8,
+                "y": 100
+              },
+              {
+                "x": 12,
+                "y": 180
+              },
+              {
+                "x": 16,
+                "y": 260
+              },
+              {
+                "x": 20,
+                "y": 340
+              },
+              {
+                "x": 24,
+                "y": 300
+              }
+            ]
+          },
+          {
+            "name": "Inland",
+            "points": [
+              {
+                "x": 8,
+                "y": 100
+              },
+              {
+                "x": 12,
+                "y": 140
+              },
+              {
+                "x": 16,
+                "y": 200
+              },
+              {
+                "x": 20,
+                "y": 280
+              },
+              {
+                "x": 24,
+                "y": 340
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Figure 2",
+        "caption": "Survival after 96 hours",
+        "type": "chart",
+        "kind": "bar",
+        "xLabel": "Water temperature (°C)",
+        "yLabel": "Surviving (%)",
+        "alt": "Grouped bar chart of percentage surviving after 96 hours at four temperatures, one pair of bars per temperature. Both populations survive almost completely at the two cooler temperatures. At the warmest temperature the coastal bar is very short while the inland bar remains above half.",
+        "series": [
+          {
+            "name": "Coastal",
+            "points": [
+              {
+                "x": 16,
+                "y": 100
+              },
+              {
+                "x": 20,
+                "y": 90
+              },
+              {
+                "x": 24,
+                "y": 40
+              },
+              {
+                "x": 28,
+                "y": 5
+              }
+            ]
+          },
+          {
+            "name": "Inland",
+            "points": [
+              {
+                "x": 16,
+                "y": 100
+              },
+              {
+                "x": 20,
+                "y": 100
+              },
+              {
+                "x": 24,
+                "y": 85
+              },
+              {
+                "x": 28,
+                "y": 55
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Critical thermal maximum",
+        "type": "table",
+        "head": [
+          "Population",
+          "Critical thermal maximum (°C)"
+        ],
+        "rows": [
+          [
+            "Coastal",
+            "26.4"
+          ],
+          [
+            "Inland",
+            "29.1"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp27",
+    "title": "The Origin of the Ring Structure at Saarat",
+    "type": "Conflicting Viewpoints",
+    "text": "A roughly circular structure 4 km across sits in flat sedimentary rock in a remote basin. Its rim stands 60 m above the surrounding plain. Three geologists account for it differently.\n\nGeologist 1\n\nThe structure is an impact crater. Quartz grains from the rim show planar deformation features, a set of parallel microscopic fractures that form only under shock pressures above 5 gigapascals. No volcanic or tectonic process on Earth generates pressures in that range. The circular shape, the raised rim, and the shocked quartz together admit only one explanation.\n\nGeologist 2\n\nThe structure is a collapsed salt dome. A thick salt layer underlies the basin, and salt rises through denser overlying rock, doming it upward. When groundwater later dissolves the salt, the dome collapses and leaves a circular depression with an upturned rim. The planar features in the quartz can also be produced by rapid tectonic movement along a fault, and faults are mapped through this basin. No meteorite fragments have been recovered from the site.\n\nGeologist 3\n\nThe structure is a volcanic maar, formed when rising magma met groundwater and flashed it to steam. The explosion excavated a circular crater and threw a rim of debris around it. Basaltic dikes are exposed 9 km to the north, showing that magma reached shallow depths in this basin. Such an explosion generates pressures sufficient to deform quartz, and it leaves no meteorite fragments because no meteorite was involved.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Measurements from the Saarat structure",
+        "type": "table",
+        "head": [
+          "Measurement",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Diameter",
+            "4.0 km"
+          ],
+          [
+            "Rim height above plain",
+            "60 m"
+          ],
+          [
+            "Depth of salt layer beneath site",
+            "1.8 km"
+          ],
+          [
+            "Shocked quartz grains per 100 sampled",
+            "12"
+          ],
+          [
+            "Meteorite fragments recovered",
+            "0"
+          ],
+          [
+            "Nearest exposed basaltic dike",
+            "9 km"
+          ]
+        ]
+      }
+    ]
   }
 ]

@@ -8479,5 +8479,797 @@
       "C": "Salt dissolves in the spray regardless of what the panel is coated with.",
       "D": "Heat conduction plays no part in salt-spray corrosion, which is an electrochemical process."
     }
+  },
+  {
+    "id": "s200",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp26",
+    "context": "According to Figure 1, oxygen consumption by the inland population at 16 °C was closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "200 mg/kg/h"
+      },
+      {
+        "id": "B",
+        "text": "260 mg/kg/h"
+      },
+      {
+        "id": "C",
+        "text": "280 mg/kg/h"
+      },
+      {
+        "id": "D",
+        "text": "140 mg/kg/h"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Read up from 16 °C to the inland line, which is the lower of the two at that temperature.",
+      "B": "260 is the coastal line at 16 °C — right temperature, wrong line.",
+      "C": "280 is the inland line at 20 °C, one step to the right.",
+      "D": "140 is the inland line at 12 °C, one step to the left."
+    }
+  },
+  {
+    "id": "s201",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp26",
+    "context": "According to Figure 2, the percentage of coastal fish surviving 96 hours at 24 °C was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "40%"
+      },
+      {
+        "id": "B",
+        "text": "85%"
+      },
+      {
+        "id": "C",
+        "text": "90%"
+      },
+      {
+        "id": "D",
+        "text": "5%"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "At 24 °C the coastal bar reaches 40, well below its inland neighbour.",
+      "B": "85% is the inland bar at the same temperature.",
+      "C": "90% is the coastal bar at 20 °C, one band to the left.",
+      "D": "5% is the coastal bar at 28 °C, one band to the right."
+    }
+  },
+  {
+    "id": "s202",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp26",
+    "context": "Based on Figure 1, the two populations consumed the same amount of oxygen at 8 °C. Above that temperature, the coastal line:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "stays above the inland line until somewhere between 20 and 24 °C, where the two cross."
+      },
+      {
+        "id": "B",
+        "text": "stays above the inland line at every temperature shown."
+      },
+      {
+        "id": "C",
+        "text": "stays below the inland line at every temperature shown."
+      },
+      {
+        "id": "D",
+        "text": "crosses the inland line twice, once near 12 °C and again near 24 °C."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "At 20 °C coastal is 340 and inland 280, so coastal is higher; at 24 °C coastal is 300 and inland 340, so inland is higher. The lines must have crossed between those two readings.",
+      "B": "At 24 °C the inland line is the higher of the two, so the coastal line does not stay above throughout.",
+      "C": "At 12, 16 and 20 °C the coastal line is clearly the upper one.",
+      "D": "Between 8 and 20 °C the gap only widens. There is no crossing near 12 °C."
+    }
+  },
+  {
+    "id": "s203",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp26",
+    "context": "Figure 1 shows a feature in the coastal curve that the inland curve does not have within the range tested. That feature is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a peak, after which consumption falls."
+      },
+      {
+        "id": "B",
+        "text": "a flat section where consumption does not change."
+      },
+      {
+        "id": "C",
+        "text": "a drop below the starting value."
+      },
+      {
+        "id": "D",
+        "text": "a steeper rise at every temperature."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The coastal line rises to 340 at 20 °C and then falls to 300 at 24 °C. The inland line is still climbing at the warmest temperature tested.",
+      "B": "Neither line is flat anywhere; both change at every step.",
+      "C": "The coastal line falls only to 300, which is well above its starting value of 100.",
+      "D": "Between 20 and 24 °C the coastal line falls while the inland line rises, so it is not steeper everywhere."
+    }
+  },
+  {
+    "id": "s204",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp26",
+    "context": "Based on Figure 2, how many more inland fish than coastal fish out of every 100 survived 96 hours at 28 °C?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "50"
+      },
+      {
+        "id": "B",
+        "text": "55"
+      },
+      {
+        "id": "C",
+        "text": "5"
+      },
+      {
+        "id": "D",
+        "text": "60"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Inland reaches 55 and coastal 5, so the difference is 50 out of every 100.",
+      "B": "55 is the inland figure on its own.",
+      "C": "5 is the coastal figure on its own.",
+      "D": "60 adds the two bars instead of subtracting them."
+    }
+  },
+  {
+    "id": "s205",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp26",
+    "context": "Based on Table 1, the inland population’s critical thermal maximum exceeds the coastal population’s by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2.7 °C"
+      },
+      {
+        "id": "B",
+        "text": "3.7 °C"
+      },
+      {
+        "id": "C",
+        "text": "1.7 °C"
+      },
+      {
+        "id": "D",
+        "text": "55.5 °C"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Subtract the coastal value from the inland one: 29.1 − 26.4 = 2.7 degrees.",
+      "B": "This borrows incorrectly across the decimal point; 29.1 minus 26.4 leaves 2.7, not 3.7.",
+      "C": "This subtracts 27.4 rather than 26.4.",
+      "D": "55.5 adds the two values instead of subtracting."
+    }
+  },
+  {
+    "id": "s206",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp26",
+    "context": "A student predicts that coastal fish held at 27 °C would lose the ability to right themselves while inland fish at the same temperature would not. Do the data support this?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because 27 °C is above the coastal critical thermal maximum of 26.4 °C and below the inland value of 29.1 °C."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because Figure 2 shows survival at 27 °C for both populations."
+      },
+      {
+        "id": "C",
+        "text": "No, because 27 °C was not among the temperatures tested in either figure."
+      },
+      {
+        "id": "D",
+        "text": "No, because both critical thermal maxima are above 27 °C."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The critical thermal maximum is defined in the passage as the temperature at which righting fails, and 27 °C falls between the two values, so it should pass one threshold and not the other.",
+      "B": "Figure 2 uses 16, 20, 24 and 28 °C. There is no 27 °C bar.",
+      "C": "Table 1 gives the thresholds directly, so no test at 27 °C is needed to place it between them.",
+      "D": "The coastal value, 26.4 °C, is below 27 °C, not above it."
+    }
+  },
+  {
+    "id": "s207",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp26",
+    "context": "Figure 2 provides information that Figure 1 cannot, because Figure 2 reports:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "whether the fish were alive at the end of the exposure, not only how hard they were working."
+      },
+      {
+        "id": "B",
+        "text": "oxygen consumption over a wider range of temperatures."
+      },
+      {
+        "id": "C",
+        "text": "the behaviour of a third population."
+      },
+      {
+        "id": "D",
+        "text": "how long each fish was held at each temperature."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Oxygen consumption is a rate measured in a living fish, and a high rate says nothing about whether the fish can keep it up. Survival is the outcome that metabolic effort was only a proxy for.",
+      "B": "Figure 2 has no oxygen data at all; it reports percentages surviving.",
+      "C": "Both figures cover the same two populations.",
+      "D": "The 96-hour exposure is stated in the passage and in Figure 2’s caption, and it is the same for every bar."
+    }
+  },
+  {
+    "id": "s208",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp26",
+    "context": "In the comparison shown in Figure 1, the variable deliberately set by the researchers was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "water temperature."
+      },
+      {
+        "id": "B",
+        "text": "oxygen consumption."
+      },
+      {
+        "id": "C",
+        "text": "survival time."
+      },
+      {
+        "id": "D",
+        "text": "the river each population came from."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Temperature is what the tanks were set to, and it is the axis the researchers chose values along.",
+      "B": "Oxygen consumption is what was measured in response, which makes it the dependent variable.",
+      "C": "Survival time belongs to Figure 2 and is fixed at 96 hours rather than varied.",
+      "D": "The two populations were found as they were, not assigned by the researchers, so the origin is a pre-existing difference rather than something set."
+    }
+  },
+  {
+    "id": "s209",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp26",
+    "context": "Based on Figure 1, the average increase in oxygen consumption for the inland population between 16 and 20 °C was closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "20 mg/kg/h per °C"
+      },
+      {
+        "id": "B",
+        "text": "80 mg/kg/h per °C"
+      },
+      {
+        "id": "C",
+        "text": "5 mg/kg/h per °C"
+      },
+      {
+        "id": "D",
+        "text": "70 mg/kg/h per °C"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "From 200 to 280 is 80 across 4 degrees, and 80 ÷ 4 = 20.",
+      "B": "80 is the total rise across the interval, not the rise per degree.",
+      "C": "This divides by 16 rather than by the 4-degree width of the interval.",
+      "D": "70 would be the rate if the rise were divided by a single degree step of about 1.14, which matches nothing in the figure."
+    }
+  },
+  {
+    "id": "s210",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp26",
+    "context": "Warmer water holds less dissolved oxygen than cooler water. This fact makes the pattern in Figure 1 harder on the fish because, as temperature rises, a fish:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "needs more oxygen at the same time as less is available."
+      },
+      {
+        "id": "B",
+        "text": "needs less oxygen at the same time as less is available."
+      },
+      {
+        "id": "C",
+        "text": "needs more oxygen at the same time as more is available."
+      },
+      {
+        "id": "D",
+        "text": "needs the same oxygen regardless of temperature."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Both curves climb with temperature, so demand rises. Supply falls at the same time, which is why the squeeze tightens from both directions.",
+      "B": "Figure 1 shows consumption rising, not falling, as the water warms.",
+      "C": "The premise of the question is that warmer water holds less oxygen, so supply is falling.",
+      "D": "Consumption more than triples between 8 and 20 °C in both populations."
+    }
+  },
+  {
+    "id": "s211",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "easy",
+    "passage": "sp26",
+    "context": "Oxygen consumption in Figure 1 is given in milligrams per kilogram per hour. Expressing it this way rather than in milligrams per hour allows a reader to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "compare fish of different sizes on the same scale."
+      },
+      {
+        "id": "B",
+        "text": "convert directly to a percentage of the oxygen available."
+      },
+      {
+        "id": "C",
+        "text": "read the total oxygen a fish used over 96 hours."
+      },
+      {
+        "id": "D",
+        "text": "determine the temperature of the water."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Dividing by body mass removes size from the number, so a large fish and a small one can be put on the same axis.",
+      "B": "Nothing in the unit refers to how much oxygen the water holds, so no percentage of availability follows from it.",
+      "C": "A total would need the rate multiplied by a duration and by the fish’s mass; the rate alone does not give it.",
+      "D": "Temperature is the other axis, and the unit says nothing about it."
+    }
+  },
+  {
+    "id": "s212",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp27",
+    "context": "Geologist 1 argues that the structure is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "an impact crater."
+      },
+      {
+        "id": "B",
+        "text": "a collapsed salt dome."
+      },
+      {
+        "id": "C",
+        "text": "a volcanic maar."
+      },
+      {
+        "id": "D",
+        "text": "a tectonic fault basin."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Geologist 1 opens by naming it an impact crater and argues from shocked quartz.",
+      "B": "The salt dome is Geologist 2’s account.",
+      "C": "The maar is Geologist 3’s account.",
+      "D": "Faults appear in Geologist 2’s argument as an alternative source of quartz deformation, not as the structure itself."
+    }
+  },
+  {
+    "id": "s213",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp27",
+    "context": "Geologists 2 and 3 agree with each other, and disagree with Geologist 1, about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "whether shocked quartz can be produced without a meteorite impact."
+      },
+      {
+        "id": "B",
+        "text": "whether a salt layer underlies the basin."
+      },
+      {
+        "id": "C",
+        "text": "whether the structure is roughly circular."
+      },
+      {
+        "id": "D",
+        "text": "whether magma reached shallow depths in the basin."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Geologist 2 offers rapid fault movement and Geologist 3 offers a steam explosion, both as terrestrial sources of the deformation Geologist 1 says only impact can cause.",
+      "B": "Only Geologist 2 builds an argument on the salt layer; Geologist 3 never mentions it.",
+      "C": "All three accept the circular shape and each explains how their process produces it.",
+      "D": "The dikes are Geologist 3’s evidence alone, and Geologist 2 does not address them."
+    }
+  },
+  {
+    "id": "s214",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp27",
+    "context": "The absence of meteorite fragments, given in Table 1 as zero recovered, is used by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Geologists 2 and 3 as evidence against an impact origin."
+      },
+      {
+        "id": "B",
+        "text": "Geologist 1 as evidence that the impactor vaporised."
+      },
+      {
+        "id": "C",
+        "text": "all three geologists as their central piece of evidence."
+      },
+      {
+        "id": "D",
+        "text": "Geologist 3 alone, to argue for a salt origin."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Geologist 2 states it outright, and Geologist 3 makes a point of the maar leaving no fragments because no meteorite was involved. Geologist 1 never raises the fragments at all.",
+      "B": "Geologist 1 argues only from the shocked quartz and the shape, and says nothing about the impactor’s fate.",
+      "C": "Geologist 1’s case rests on planar deformation features, not on what is missing.",
+      "D": "The salt origin is Geologist 2’s position, not Geologist 3’s."
+    }
+  },
+  {
+    "id": "s215",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp27",
+    "context": "A laboratory finds that rapid movement along a fault produces planar deformation features indistinguishable from those at the site. This finding would most strengthen:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Geologist 2’s position."
+      },
+      {
+        "id": "B",
+        "text": "Geologist 1’s position."
+      },
+      {
+        "id": "C",
+        "text": "Geologist 3’s position."
+      },
+      {
+        "id": "D",
+        "text": "none of the three positions."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Geologist 2 specifically proposes fault movement as the alternative source of the planar features, and this supplies the evidence that proposal was missing.",
+      "B": "It weakens Geologist 1, whose argument depends on impact being the only way to reach those pressures.",
+      "C": "Geologist 3 attributes the deformation to a steam explosion, which the finding neither supports nor addresses.",
+      "D": "It bears directly on the one point every position has to account for, so it cannot be neutral."
+    }
+  },
+  {
+    "id": "s216",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp27",
+    "context": "Which finding would most weaken Geologist 2’s position?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Drilling shows the salt layer beneath the site is intact and undissolved."
+      },
+      {
+        "id": "B",
+        "text": "Drilling confirms the salt layer lies 1.8 km below the site."
+      },
+      {
+        "id": "C",
+        "text": "The rim is found to be 60 m above the surrounding plain."
+      },
+      {
+        "id": "D",
+        "text": "No meteorite fragments are found after a further search."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Geologist 2’s mechanism requires the salt to have dissolved so the dome above it could collapse. An intact salt layer removes the cause of the collapse.",
+      "B": "Confirming the salt layer is present supports that account rather than weakening it.",
+      "C": "The rim height is already in Table 1 and every position explains it.",
+      "D": "The absence of fragments is evidence Geologist 2 already cites in support."
+    }
+  },
+  {
+    "id": "s217",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp27",
+    "context": "Geologist 3’s argument depends on a claim that Table 1 supports only indirectly, namely that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "magma reached shallow depths in this basin."
+      },
+      {
+        "id": "B",
+        "text": "the structure is approximately 4 km across."
+      },
+      {
+        "id": "C",
+        "text": "shocked quartz is present in the rim."
+      },
+      {
+        "id": "D",
+        "text": "no meteorite fragments have been recovered."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The nearest exposed dike is 9 km away, which shows magma nearby but not under the structure itself. The table gives the distance and leaves the inference to be made.",
+      "B": "The diameter is stated directly in Table 1.",
+      "C": "The shocked quartz count is stated directly, at 12 grains per 100.",
+      "D": "The zero fragment count is stated directly as well."
+    }
+  },
+  {
+    "id": "s218",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp27",
+    "context": "All three geologists would agree that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the structure was formed by a process that excavated or deformed rock in a roughly circular pattern."
+      },
+      {
+        "id": "B",
+        "text": "shocked quartz requires pressures above 5 gigapascals."
+      },
+      {
+        "id": "C",
+        "text": "a salt layer is responsible for the raised rim."
+      },
+      {
+        "id": "D",
+        "text": "magma played some part in forming the structure."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Impact, dome collapse and steam explosion are different processes, but each is offered as an account of the same circular structure with its raised rim.",
+      "B": "That threshold is Geologist 1’s premise, and the other two argue the features can form at lower pressures by other routes.",
+      "C": "Only Geologist 2 involves salt.",
+      "D": "Only Geologist 3 involves magma."
+    }
+  },
+  {
+    "id": "s219",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp27",
+    "context": "According to Table 1, the number of shocked quartz grains per 100 sampled was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "12"
+      },
+      {
+        "id": "B",
+        "text": "0"
+      },
+      {
+        "id": "C",
+        "text": "60"
+      },
+      {
+        "id": "D",
+        "text": "9"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Read the shocked quartz row of Table 1.",
+      "B": "0 is the count of meteorite fragments recovered.",
+      "C": "60 is the rim height in metres.",
+      "D": "9 is the distance in kilometres to the nearest exposed dike."
+    }
+  },
+  {
+    "id": "s220",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp27",
+    "context": "Suppose a crater of confirmed impact origin elsewhere is found to contain 40 shocked quartz grains per 100 sampled. How would this bear on Geologist 1’s position?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "It would weaken it slightly, since the Saarat count of 12 is well below the confirmed impact figure."
+      },
+      {
+        "id": "B",
+        "text": "It would strengthen it, since both sites contain shocked quartz."
+      },
+      {
+        "id": "C",
+        "text": "It would have no bearing, since the two sites are in different basins."
+      },
+      {
+        "id": "D",
+        "text": "It would weaken it decisively, since any difference in count rules out impact."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "A much lower count at Saarat is a point of difference from a confirmed impact site, which counts against the identification without settling it — concentration could vary with sampling depth or target rock.",
+      "B": "Presence at both sites is common ground; the comparison here is about how much, and Saarat has less than a third as much.",
+      "C": "The whole point of a confirmed case is to give the disputed one something to be measured against.",
+      "D": "\"Decisively\" overstates it. One comparison site does not establish what range of counts an impact can produce."
+    }
+  },
+  {
+    "id": "s221",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp27",
+    "context": "Geologist 2 states that salt rises through denser overlying rock. The property of salt that makes this possible is its:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower density than the rock above it."
+      },
+      {
+        "id": "B",
+        "text": "higher melting point than the rock above it."
+      },
+      {
+        "id": "C",
+        "text": "greater hardness than the rock above it."
+      },
+      {
+        "id": "D",
+        "text": "solubility in groundwater."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "A less dense material under a denser one is buoyant, and over geological time it flows upward through it. That is the mechanism the argument names.",
+      "B": "Melting is not involved; the salt moves as a solid that deforms slowly.",
+      "C": "Hardness would resist deformation, which is the opposite of what rising requires.",
+      "D": "Solubility explains the later collapse in Geologist 2’s account, not the initial rise."
+    }
+  },
+  {
+    "id": "s222",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "easy",
+    "passage": "sp27",
+    "context": "Table 1 reports the depth of the salt layer in kilometres and the rim height in metres. The rim height, expressed in kilometres, is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.060 km"
+      },
+      {
+        "id": "B",
+        "text": "0.60 km"
+      },
+      {
+        "id": "C",
+        "text": "6.0 km"
+      },
+      {
+        "id": "D",
+        "text": "60,000 km"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "There are 1,000 metres in a kilometre, so 60 m is 60/1000 = 0.060 km.",
+      "B": "This divides by 100 rather than by 1,000.",
+      "C": "Dividing by 10 gives this, but a kilometre is a thousand metres, not ten.",
+      "D": "This multiplies by 1,000, which converts in the wrong direction."
+    }
+  },
+  {
+    "id": "s223",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp27",
+    "context": "Which piece of evidence, if found, would be consistent with Geologist 1’s position and inconsistent with both of the others?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A layer of iridium-rich sediment of the same age as the structure, spread evenly around it."
+      },
+      {
+        "id": "B",
+        "text": "A ring of upturned sedimentary beds at the rim."
+      },
+      {
+        "id": "C",
+        "text": "Steam-altered minerals in the rim debris."
+      },
+      {
+        "id": "D",
+        "text": "A fault trace passing directly beneath the structure."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Iridium is rare in the Earth’s crust and abundant in meteorites, so a spread of it dated to the event points at material arriving from outside — which neither a salt collapse nor a steam explosion supplies.",
+      "B": "Upturned beds form at the rim of any structure that was pushed up or blown out, so all three accounts predict them.",
+      "C": "Steam alteration is what Geologist 3’s maar would produce, so it favours that position rather than Geologist 1’s.",
+      "D": "A fault beneath the site is what Geologist 2 needs for the alternative source of deformation."
+    }
   }
 ]
