@@ -15504,5 +15504,500 @@
       "C": "By the final paragraph the ridge has dropped out of the discussion entirely.",
       "D": "The learning of the song is a separate thread, and the ridge interrupts it there."
     }
+  },
+  {
+    "id": "e417",
+    "section": "english",
+    "topic": "commas",
+    "difficulty": "medium",
+    "passage": "ep27",
+    "context": "The library, which had charged ten cents a day since «1971 stopped» charging anything in 2016.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "1971, stopped"
+      },
+      {
+        "id": "C",
+        "text": "1971; stopped"
+      },
+      {
+        "id": "D",
+        "text": "1971: stopped"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A non-essential clause needs a comma at both ends, and the closing one is missing here.",
+      "B": "Correct — the clause beginning \"which\" is fenced off by a comma at each end.",
+      "C": "A semicolon needs an independent clause on both sides, and the left side is not one.",
+      "D": "A colon delivers what an independent clause has promised, and none is promised here."
+    }
+  },
+  {
+    "id": "e418",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "medium",
+    "passage": "ep27",
+    "context": "Since the amnesty took effect, circulation «has risen» in every branch but one.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "had risen"
+      },
+      {
+        "id": "C",
+        "text": "rose"
+      },
+      {
+        "id": "D",
+        "text": "is rising"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — \"since\" plus a result that still stands calls for the present perfect.",
+      "B": "The past perfect would place the rise before some other past event, and none is given.",
+      "C": "A simple past closes the rise off, but \"since\" keeps it running up to the present.",
+      "D": "The present progressive drops the link back to the moment the amnesty took effect."
+    }
+  },
+  {
+    "id": "e419",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "medium",
+    "passage": "ep27",
+    "context": "The staff «had expected in advance to anticipate» a wave of books that never came home.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "expected"
+      },
+      {
+        "id": "C",
+        "text": "anticipated in advance"
+      },
+      {
+        "id": "D",
+        "text": "expected in advance"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"In advance\" and \"anticipate\" both repeat what \"expected\" has already said.",
+      "B": "Correct — one verb carries the whole meaning without saying it twice.",
+      "C": "Anticipating is by definition done beforehand, so the phrase adds nothing at all.",
+      "D": "Expecting also happens beforehand, which makes the added phrase redundant."
+    }
+  },
+  {
+    "id": "e420",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "hard",
+    "passage": "ep27",
+    "context": "«Overdue for eleven years, a woman returned a field guide» in the second week.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "A woman returned a field guide that had been overdue for eleven years"
+      },
+      {
+        "id": "C",
+        "text": "Overdue for eleven years, the second week brought back a field guide"
+      },
+      {
+        "id": "D",
+        "text": "Returning a field guide, eleven years overdue was the woman"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The opening phrase describes the field guide, but a woman is what follows the comma.",
+      "B": "Correct — the eleven years attach to the guide, the only thing that was overdue.",
+      "C": "This hands the overdue years to the second week, which cannot itself be overdue.",
+      "D": "Inverting the clause leaves the phrase attached to nothing and the sentence unreadable."
+    }
+  },
+  {
+    "id": "e421",
+    "section": "english",
+    "topic": "dashes",
+    "difficulty": "hard",
+    "passage": "ep27",
+    "context": "The board’s first objection «, that the fines paid for something —» turned out to be the weaker one.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "— that the fines paid for something —"
+      },
+      {
+        "id": "C",
+        "text": ", that the fines paid for something;"
+      },
+      {
+        "id": "D",
+        "text": ": that the fines paid for something,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "An interrupter has to open and close with the same mark, and a comma cannot close a dash.",
+      "B": "Correct — the aside is fenced by a dash at each end, so the pair finally matches.",
+      "C": "A semicolon needs an independent clause on each side, and neither side here is one.",
+      "D": "A colon introduces what an independent clause has promised, which this aside is not."
+    }
+  },
+  {
+    "id": "e422",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "medium",
+    "passage": "ep27",
+    "context": "The board asked the director and «I» to prepare a report on the first year.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "me"
+      },
+      {
+        "id": "C",
+        "text": "myself"
+      },
+      {
+        "id": "D",
+        "text": "mine"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The pronoun is the object of \"asked\", and \"I\" can only ever be a subject.",
+      "B": "Correct — drop \"the director and\" and \"asked me\" is what remains.",
+      "C": "A reflexive has to match the subject, and the board is the subject of this sentence.",
+      "D": "\"Mine\" is a possessive form and cannot stand as the object of a verb."
+    }
+  },
+  {
+    "id": "e423",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "medium",
+    "passage": "ep27",
+    "context": "Return rates barely moved. «Therefore,» the number of reinstated cards tripled in six months.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Meanwhile,"
+      },
+      {
+        "id": "C",
+        "text": "Nevertheless,"
+      },
+      {
+        "id": "D",
+        "text": "For example,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Therefore\" claims the flat return rate caused the tripling, which nothing supports.",
+      "B": "Correct — the two facts run alongside each other, which is what \"meanwhile\" marks.",
+      "C": "\"Nevertheless\" sets up a contrast, but neither fact works against the other one.",
+      "D": "The reinstated cards are a second result rather than an instance of the return rate."
+    }
+  },
+  {
+    "id": "e424",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "medium",
+    "passage": "ep27",
+    "context": "The report tracked how many books came back, how many cards were reopened, and «the rise in circulation».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "how much circulation rose"
+      },
+      {
+        "id": "C",
+        "text": "circulation rising steadily"
+      },
+      {
+        "id": "D",
+        "text": "to watch circulation rise"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A noun phrase breaks a series whose first two members are clauses beginning \"how\".",
+      "B": "Correct — all three items now open with \"how\", so the series matches itself.",
+      "C": "A gerund phrase is a third different shape, which leaves the list uneven.",
+      "D": "An infinitive turns the third item into a purpose rather than a third thing tracked."
+    }
+  },
+  {
+    "id": "e425",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "medium",
+    "passage": "ep27",
+    "context": "Neither the fine schedule nor the reminder letters «was» changed during the first year.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "were"
+      },
+      {
+        "id": "C",
+        "text": "has been"
+      },
+      {
+        "id": "D",
+        "text": "is"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "With \"neither ... nor\" the verb matches the nearer subject, and \"letters\" is plural.",
+      "B": "Correct — \"letters\" sits closest to the verb, so the verb has to be plural.",
+      "C": "This is singular as well as perfect, so it disagrees with the nearer subject.",
+      "D": "A singular present-tense verb misses both the number and the past time frame."
+    }
+  },
+  {
+    "id": "e426",
+    "section": "english",
+    "topic": "adding/deleting",
+    "difficulty": "medium",
+    "passage": "ep27",
+    "context": "The writer is considering adding a sentence naming the architecture firm that designed the library building. Should the sentence be added?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No, because the essay is about the fines policy rather than the building."
+      },
+      {
+        "id": "B",
+        "text": "No, because the firm is already named earlier in the same paragraph."
+      },
+      {
+        "id": "C",
+        "text": "Yes, because it explains why the board was reluctant to lose the revenue."
+      },
+      {
+        "id": "D",
+        "text": "Yes, because it shows that the library has served the city for a long time."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the architect has no bearing on what the fines did or on whom they fell.",
+      "B": "No firm is named anywhere in the essay, so nothing would be repeated.",
+      "C": "A design credit says nothing about revenue or about the board’s reasoning.",
+      "D": "Length of service is not at issue, and the sentence would still change the subject."
+    }
+  },
+  {
+    "id": "e427",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "medium",
+    "passage": "ep27",
+    "context": "The «librarians» objections were heard at three meetings before the vote.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "librarians’"
+      },
+      {
+        "id": "C",
+        "text": "librarian’s"
+      },
+      {
+        "id": "D",
+        "text": "librarians’s"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "With no apostrophe the word is a plain plural and shows no ownership at all.",
+      "B": "Correct — several librarians own the objections, so the apostrophe follows the s.",
+      "C": "The singular possessive would mean one librarian raised every objection.",
+      "D": "A plural already ending in s never takes a second s after the apostrophe."
+    }
+  },
+  {
+    "id": "e428",
+    "section": "english",
+    "topic": "word choice",
+    "difficulty": "medium",
+    "passage": "ep27",
+    "context": "The amnesty had no «effect» on how quickly borrowed books came back.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "affect"
+      },
+      {
+        "id": "C",
+        "text": "affectation"
+      },
+      {
+        "id": "D",
+        "text": "effecting"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the noun after \"no\" is \"effect\", and a result is exactly what is meant.",
+      "B": "\"Affect\" is the verb form, and a verb cannot follow \"no\" in this position.",
+      "C": "An affectation is a put-on manner, which has nothing to do with return times.",
+      "D": "An -ing form cannot serve as the noun the sentence needs after \"no\"."
+    }
+  },
+  {
+    "id": "e429",
+    "section": "english",
+    "topic": "writers purpose",
+    "difficulty": "hard",
+    "passage": "ep27",
+    "context": "Suppose the writer wanted to close the essay by stressing that the question is still open. Which of the following would best accomplish that goal?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The board votes on the policy each year and has not yet voted the same way twice."
+      },
+      {
+        "id": "B",
+        "text": "The library holds about four hundred thousand items across its seven branches."
+      },
+      {
+        "id": "C",
+        "text": "Fines had been charged at ten cents a day without interruption since 1971."
+      },
+      {
+        "id": "D",
+        "text": "The director keeps the first amnesty poster framed behind her office door."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a vote that keeps changing is the clearest sign the question is still open.",
+      "B": "The size of the collection is a fact about the library, not about the argument.",
+      "C": "The old fine rate is background and says nothing about what happens next.",
+      "D": "A framed poster suggests the matter was closed, which is the opposite of the goal."
+    }
+  },
+  {
+    "id": "e430",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "medium",
+    "passage": "ep27",
+    "context": "Three branches reported the same three problems«:» damaged spines, missing discs and unshelved returns.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ";"
+      },
+      {
+        "id": "C",
+        "text": ","
+      },
+      {
+        "id": "D",
+        "text": "— namely,"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — an independent clause promises three problems, and a colon delivers the list.",
+      "B": "A semicolon separates independent clauses, and a bare list of nouns is not one.",
+      "C": "A comma is too weak to introduce a list the clause has just announced.",
+      "D": "\"Namely\" duplicates the work the colon is already doing before it."
+    }
+  },
+  {
+    "id": "e431",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "medium",
+    "passage": "ep27",
+    "context": "The reminder letters went out every Friday. «Although nobody on the staff expecting a reply.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Nobody on the staff expected a reply."
+      },
+      {
+        "id": "C",
+        "text": "Although nobody on the staff expecting a reply,"
+      },
+      {
+        "id": "D",
+        "text": "Nobody on the staff, expecting a reply."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This has a subordinator and no finite verb, so it never becomes a sentence.",
+      "B": "Correct — a subject and a finite verb turn the fragment into a real sentence.",
+      "C": "A comma at the end leaves the clause subordinate and just as dependent as before.",
+      "D": "The participle still supplies no finite verb, so these words cannot stand alone."
+    }
   }
 ]
