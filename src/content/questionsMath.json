@@ -13310,5 +13310,645 @@
       "C": "2/3 is the first fraction unchanged.",
       "D": "27/8 inverts the wrong fraction, taking (3/2)(9/4)."
     }
+  },
+  {
+    "id": "m417",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "medium",
+    "context": "If 2ˣ = 32, what is the value of 2ˣ⁺²?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "64"
+      },
+      {
+        "id": "B",
+        "text": "128"
+      },
+      {
+        "id": "C",
+        "text": "34"
+      },
+      {
+        "id": "D",
+        "text": "1024"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This adds one to the exponent rather than two, giving 2⁶ instead of 2⁷.",
+      "B": "Correct — x = 5, so 2ˣ⁺² = 2⁷ = 128, which is 32 multiplied by 2².",
+      "C": "This adds 2 to the value 32 instead of adding 2 to the exponent.",
+      "D": "This squares 32. Adding 2 to an exponent multiplies by 2², not by 2ˣ."
+    }
+  },
+  {
+    "id": "m418",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "medium",
+    "context": "Simplify √50 − √18.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "√32"
+      },
+      {
+        "id": "B",
+        "text": "8√2"
+      },
+      {
+        "id": "C",
+        "text": "2√2"
+      },
+      {
+        "id": "D",
+        "text": "32"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Radicals do not subtract inside the sign; √50 − √18 is not √(50 − 18).",
+      "B": "This adds the two simplified radicals, 5√2 + 3√2, instead of subtracting.",
+      "C": "Correct — √50 = 5√2 and √18 = 3√2, and 5√2 − 3√2 leaves 2√2.",
+      "D": "This subtracts the radicands and then drops the radical sign entirely."
+    }
+  },
+  {
+    "id": "m419",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "medium",
+    "context": "For the data set {4, 9, 9, 12, 16}, what is the mean minus the median?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "−1"
+      },
+      {
+        "id": "C",
+        "text": "0"
+      },
+      {
+        "id": "D",
+        "text": "3"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the five values total 50, so the mean is 10, and the middle value is 9.",
+      "B": "This subtracts in the other order, taking the median minus the mean.",
+      "C": "Zero would require the mean and median to match, but 10 and 9 differ.",
+      "D": "This uses 9 as the mean, which is the most common value rather than the average."
+    }
+  },
+  {
+    "id": "m420",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "medium",
+    "context": "Six test scores have a mean of 82. A seventh score of 96 is added. What is the mean of all seven?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "89"
+      },
+      {
+        "id": "B",
+        "text": "83"
+      },
+      {
+        "id": "C",
+        "text": "84"
+      },
+      {
+        "id": "D",
+        "text": "86"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This averages 82 and 96 as though each carried the same weight.",
+      "B": "This raises the mean by one point; the actual total rises by 96, not by 7.",
+      "C": "Correct — the six scores total 492, so all seven total 588, and 588 ÷ 7 = 84.",
+      "D": "This divides the new total by six instead of by the seven scores now present."
+    }
+  },
+  {
+    "id": "m421",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "easy",
+    "context": "A bag holds 3 blue marbles and 7 red marbles. One marble is drawn at random. What is the probability that it is not blue?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3/10"
+      },
+      {
+        "id": "B",
+        "text": "7/10"
+      },
+      {
+        "id": "C",
+        "text": "7/3"
+      },
+      {
+        "id": "D",
+        "text": "1/7"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This is the probability that the marble is blue, which is the event being excluded.",
+      "B": "Correct — 7 of the 10 marbles are not blue, and every marble is equally likely.",
+      "C": "This is the ratio of red marbles to blue ones, which is not a probability at all.",
+      "D": "This treats the 7 red marbles as the total rather than as the favourable outcomes."
+    }
+  },
+  {
+    "id": "m422",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "hard",
+    "context": "Two fair six-sided dice are rolled. What is the probability that the sum of the two numbers is 9?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1/6"
+      },
+      {
+        "id": "B",
+        "text": "5/36"
+      },
+      {
+        "id": "C",
+        "text": "1/12"
+      },
+      {
+        "id": "D",
+        "text": "1/9"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "A sum of 9 is not as likely as rolling one chosen face on a single die.",
+      "B": "Five ways would be right for a sum of 8; a sum of 9 has only four.",
+      "C": "This counts 3+6 and 4+5 but misses 6+3 and 5+4, which are separate outcomes.",
+      "D": "Correct — 3+6, 4+5, 5+4 and 6+3 are 4 of the 36 equally likely outcomes."
+    }
+  },
+  {
+    "id": "m423",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "medium",
+    "context": "A right circular cylinder has radius 3 and height 10. What is its volume?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "30π"
+      },
+      {
+        "id": "B",
+        "text": "90π"
+      },
+      {
+        "id": "C",
+        "text": "60π"
+      },
+      {
+        "id": "D",
+        "text": "900π"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This multiplies the radius by the height without squaring the radius first.",
+      "B": "Correct — the volume is πr²h, and π(3²)(10) gives 90π.",
+      "C": "This is the lateral surface area, 2πrh, rather than the volume.",
+      "D": "This squares the radius and then also squares the height along with it."
+    }
+  },
+  {
+    "id": "m424",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "medium",
+    "context": "A rectangular box measures 4 by 5 by 6. What is its total surface area?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "120"
+      },
+      {
+        "id": "B",
+        "text": "74"
+      },
+      {
+        "id": "C",
+        "text": "148"
+      },
+      {
+        "id": "D",
+        "text": "60"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is the volume of the box, 4 × 5 × 6, not the area of its outside.",
+      "B": "This adds the three distinct face areas once each and forgets the opposite faces.",
+      "C": "Correct — the three distinct faces measure 20, 24 and 30, and each occurs twice.",
+      "D": "This adds the three face areas and stops before the 30-square face is counted."
+    }
+  },
+  {
+    "id": "m425",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "medium",
+    "context": "Two parallel lines are cut by a transversal. One of a pair of same-side interior angles measures 116°. What is the measure of the other?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "64°"
+      },
+      {
+        "id": "B",
+        "text": "116°"
+      },
+      {
+        "id": "C",
+        "text": "244°"
+      },
+      {
+        "id": "D",
+        "text": "34°"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — same-side interior angles are supplementary, and 180 − 116 = 64.",
+      "B": "Equal measures belong to alternate interior or corresponding angles, not this pair.",
+      "C": "This adds the two measures to 360°, which is true of angles around a point.",
+      "D": "This treats the pair as complementary, subtracting from 90° instead of 180°."
+    }
+  },
+  {
+    "id": "m426",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "medium",
+    "context": "The three angles of a triangle are in the ratio 2 : 3 : 4. What is the measure of the largest angle?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "90°"
+      },
+      {
+        "id": "B",
+        "text": "40°"
+      },
+      {
+        "id": "C",
+        "text": "60°"
+      },
+      {
+        "id": "D",
+        "text": "80°"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "A ratio of 2 : 3 : 4 never produces a right angle; 90° would need the parts to be 4.5.",
+      "B": "This is the smallest angle, 2 parts of the 9 the triangle is divided into.",
+      "C": "This is the middle angle, 3 of the 9 parts, not the largest of the three.",
+      "D": "Correct — the 9 parts total 180°, so each part is 20° and 4 parts give 80°."
+    }
+  },
+  {
+    "id": "m427",
+    "section": "math",
+    "topic": "systems",
+    "difficulty": "medium",
+    "context": "If 3x + 2y = 18 and x − 2y = 2, what is the value of x?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2"
+      },
+      {
+        "id": "B",
+        "text": "5"
+      },
+      {
+        "id": "C",
+        "text": "4"
+      },
+      {
+        "id": "D",
+        "text": "8"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This reads x straight off the second equation as though the 2y term were absent.",
+      "B": "Correct — adding the equations cancels the y terms and leaves 4x = 20.",
+      "C": "This subtracts the equations instead of adding them, so the y terms survive.",
+      "D": "This solves for 20 ÷ 2 rather than 20 ÷ 4, using only one of the x terms."
+    }
+  },
+  {
+    "id": "m428",
+    "section": "math",
+    "topic": "systems",
+    "difficulty": "hard",
+    "context": "For what value of k does the system 2x + 3y = 9 and 4x + ky = 18 have infinitely many solutions?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6"
+      },
+      {
+        "id": "B",
+        "text": "3"
+      },
+      {
+        "id": "C",
+        "text": "12"
+      },
+      {
+        "id": "D",
+        "text": "2"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the second equation must be the first doubled, and 3 doubled is 6.",
+      "B": "Leaving k at 3 makes the two equations inconsistent, so there is no solution.",
+      "C": "This doubles 3 twice over, matching a factor of 4 rather than the factor of 2.",
+      "D": "This is the factor relating the two equations, not the coefficient the factor produces."
+    }
+  },
+  {
+    "id": "m429",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "medium",
+    "context": "A jacket is marked down 30% and now sells for $63. What was its price before the markdown?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "$81.90"
+      },
+      {
+        "id": "B",
+        "text": "$93.00"
+      },
+      {
+        "id": "C",
+        "text": "$90.00"
+      },
+      {
+        "id": "D",
+        "text": "$210.00"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This adds 30% to the sale price, but 30% of the larger original is more than that.",
+      "B": "This adds $30 to the sale price, treating a percentage as a flat dollar amount.",
+      "C": "Correct — $63 is 70% of the original, so the original is 63 ÷ 0.7.",
+      "D": "This divides by 0.3, treating $63 as the discount rather than as what remains."
+    }
+  },
+  {
+    "id": "m430",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "hard",
+    "context": "A car travels 120 miles at 40 miles per hour, then 120 miles at 60 miles per hour. What is its average speed for the whole trip?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "50 mph"
+      },
+      {
+        "id": "B",
+        "text": "48 mph"
+      },
+      {
+        "id": "C",
+        "text": "45 mph"
+      },
+      {
+        "id": "D",
+        "text": "52 mph"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This averages the two speeds, which would only be right if each lasted the same time.",
+      "B": "Correct — the trip takes 3 hours then 2 hours, and 240 miles ÷ 5 hours is 48.",
+      "C": "This splits the difference toward the slower leg without using the actual times.",
+      "D": "This leans toward the faster leg, but more of the trip is spent at 40 mph."
+    }
+  },
+  {
+    "id": "m431",
+    "section": "math",
+    "topic": "circles",
+    "difficulty": "easy",
+    "context": "A circle has center (2, −5) and passes through the point (2, 2). What is its radius?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "√53"
+      },
+      {
+        "id": "C",
+        "text": "7"
+      },
+      {
+        "id": "D",
+        "text": "49"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This subtracts the two y-values as 5 − 2 instead of 2 − (−5).",
+      "B": "This treats −5 as a horizontal difference, but both points share the x-value 2.",
+      "C": "Correct — the points sit on the same vertical line, and 2 − (−5) = 7.",
+      "D": "This is the square of the radius, which is what appears in the circle equation."
+    }
+  },
+  {
+    "id": "m432",
+    "section": "math",
+    "topic": "circles",
+    "difficulty": "medium",
+    "context": "In a circle of radius 6, what is the length of an arc cut off by a central angle of 60°?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6π"
+      },
+      {
+        "id": "B",
+        "text": "π"
+      },
+      {
+        "id": "C",
+        "text": "12π"
+      },
+      {
+        "id": "D",
+        "text": "2π"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This takes half the circumference, the arc a 180° central angle would cut.",
+      "B": "This takes a sixth of the radius rather than a sixth of the circumference.",
+      "C": "This is the whole circumference, 2π(6), with the 60° angle never applied.",
+      "D": "Correct — 60° is a sixth of the circle, and a sixth of 12π is 2π."
+    }
+  },
+  {
+    "id": "m433",
+    "section": "math",
+    "topic": "quadratics",
+    "difficulty": "medium",
+    "context": "What is the sum of the roots of x² − 7x + 10 = 0?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "10"
+      },
+      {
+        "id": "B",
+        "text": "7"
+      },
+      {
+        "id": "C",
+        "text": "−7"
+      },
+      {
+        "id": "D",
+        "text": "3"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This is the product of the roots, 2 × 5, which is the constant term.",
+      "B": "Correct — the roots are 2 and 5, and their sum matches −b/a, which is 7.",
+      "C": "This copies the coefficient of x without changing its sign, and −b/a is +7.",
+      "D": "This is the difference of the roots, 5 − 2, rather than the sum of them."
+    }
+  },
+  {
+    "id": "m434",
+    "section": "math",
+    "topic": "quadratics",
+    "difficulty": "hard",
+    "context": "What is the vertex of the parabola y = x² − 6x + 11?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "(−3, 2)"
+      },
+      {
+        "id": "B",
+        "text": "(3, 11)"
+      },
+      {
+        "id": "C",
+        "text": "(3, 2)"
+      },
+      {
+        "id": "D",
+        "text": "(6, 11)"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This keeps the sign of −6 instead of negating it, since x = −b/2a is +3.",
+      "B": "The x-value is right, but 11 is the y-intercept rather than the value at x = 3.",
+      "C": "Correct — x = −(−6)/2 = 3, and substituting 3 gives 9 − 18 + 11 = 2.",
+      "D": "This uses −b rather than −b/2a, and pairs it with the constant term."
+    }
+  },
+  {
+    "id": "m435",
+    "section": "math",
+    "topic": "trigonometry",
+    "difficulty": "medium",
+    "context": "In a right triangle, the leg adjacent to angle A measures 24 and the hypotenuse measures 25. What is cos A?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "7/25"
+      },
+      {
+        "id": "B",
+        "text": "24/25"
+      },
+      {
+        "id": "C",
+        "text": "24/7"
+      },
+      {
+        "id": "D",
+        "text": "25/24"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This uses the opposite leg, 7, so it gives sin A rather than cos A.",
+      "B": "Correct — cosine is adjacent over hypotenuse, and that ratio is 24 to 25.",
+      "C": "This is adjacent over opposite, which is cot A and can exceed 1.",
+      "D": "This inverts the ratio; a cosine can never be larger than 1."
+    }
+  },
+  {
+    "id": "m436",
+    "section": "math",
+    "topic": "trigonometry",
+    "difficulty": "hard",
+    "context": "What is the value of sin 150°?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−1/2"
+      },
+      {
+        "id": "B",
+        "text": "√3/2"
+      },
+      {
+        "id": "C",
+        "text": "1/2"
+      },
+      {
+        "id": "D",
+        "text": "−√3/2"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Sine is positive in the second quadrant, where 150° lies, so the sign is wrong.",
+      "B": "This is cos 30°, the value of the other leg of the reference triangle.",
+      "C": "Correct — 150° has a reference angle of 30°, and sine is positive there.",
+      "D": "This has both the wrong function and the wrong sign for a second-quadrant angle."
+    }
   }
 ]
