@@ -17484,5 +17484,500 @@
       "C": "A comma before \"and\" is for two independent clauses, and \"the wet\" is not one.",
       "D": "A comma after the pair cuts the phrase off from the comparison that follows."
     }
+  },
+  {
+    "id": "e477",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "medium",
+    "passage": "ep31",
+    "context": "Before the committee met, the developer «submits» a list of forty possible names.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "had submitted"
+      },
+      {
+        "id": "C",
+        "text": "submit"
+      },
+      {
+        "id": "D",
+        "text": "is submitting"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A present-tense verb cannot report something finished before a past meeting.",
+      "B": "Correct — the past perfect places the list before the meeting the sentence names.",
+      "C": "\"Submit\" is plural as well as present, and the developer is one party.",
+      "D": "The present progressive puts the filing in progress now rather than before then."
+    }
+  },
+  {
+    "id": "e478",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "hard",
+    "passage": "ep31",
+    "context": "The fire officer «has sat» on the committee since the radio system was replaced.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "sat"
+      },
+      {
+        "id": "C",
+        "text": "sits"
+      },
+      {
+        "id": "D",
+        "text": "had sat"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — \"since\" plus a past starting point calls for the present perfect.",
+      "B": "A plain past would close the service off, and he is still on the committee.",
+      "C": "The simple present drops the stretch of time the \"since\" clause opens up.",
+      "D": "The past perfect needs a second past event for the sitting to have preceded."
+    }
+  },
+  {
+    "id": "e479",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "medium",
+    "passage": "ep31",
+    "context": "Hard to spell over a radio«, the officer rejected the name» at the first meeting.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", the name was rejected by the officer"
+      },
+      {
+        "id": "C",
+        "text": ", the officer rejecting the name"
+      },
+      {
+        "id": "D",
+        "text": ", rejection of the name followed"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The opening phrase describes the name, so it cannot attach to the officer.",
+      "B": "Correct — the name becomes the subject the opening phrase is describing.",
+      "C": "A participle leaves the officer as the thing that is hard to spell.",
+      "D": "A rejection is not hard to spell over a radio, so the phrase still dangles."
+    }
+  },
+  {
+    "id": "e480",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "hard",
+    "passage": "ep31",
+    "context": "Walking the new estate with a map, «the names seemed» interchangeable to the clerk.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "the clerk found the names"
+      },
+      {
+        "id": "C",
+        "text": "the names were seeming"
+      },
+      {
+        "id": "D",
+        "text": "it seemed the names were"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Names cannot walk an estate with a map, so the opening phrase has no owner.",
+      "B": "Correct — the clerk is the one walking, so the clerk becomes the subject.",
+      "C": "Changing the verb form leaves the names doing the walking all the same.",
+      "D": "\"It\" is a placeholder and cannot be the person carrying the map either."
+    }
+  },
+  {
+    "id": "e481",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "medium",
+    "passage": "ep31",
+    "context": "The committee gave the clerk and «I» the list of forty names to sort.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "me"
+      },
+      {
+        "id": "C",
+        "text": "myself"
+      },
+      {
+        "id": "D",
+        "text": "mine"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"I\" is a subject form and cannot receive the action of the verb \"gave\".",
+      "B": "Correct — the pair receives the list, so the object form is the one needed.",
+      "C": "A reflexive needs the same person as the subject earlier in the clause.",
+      "D": "\"Mine\" is possessive and names a thing owned rather than a person handed something."
+    }
+  },
+  {
+    "id": "e482",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "hard",
+    "passage": "ep31",
+    "context": "Every one of the forty names had «their» own objection attached to it.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "its"
+      },
+      {
+        "id": "C",
+        "text": "it’s"
+      },
+      {
+        "id": "D",
+        "text": "those"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Their\" is plural, and the subject of the sentence is \"every one\", not \"names\".",
+      "B": "Correct — \"every one\" is singular, so the singular possessive is the match.",
+      "C": "\"It’s\" is the contraction of \"it is\" and cannot show possession at all.",
+      "D": "\"Those\" is a demonstrative and cannot stand in front of \"own objection\"."
+    }
+  },
+  {
+    "id": "e483",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "medium",
+    "passage": "ep31",
+    "context": "The officer’s rules are practical. «However,» they decide more names than the historian’s do.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "In fact,"
+      },
+      {
+        "id": "C",
+        "text": "Nevertheless,"
+      },
+      {
+        "id": "D",
+        "text": "For example,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"However\" promises a reversal, and the second sentence extends the first instead.",
+      "B": "Correct — the second sentence presses the first one further, which \"in fact\" signals.",
+      "C": "\"Nevertheless\" concedes something, and nothing here is being conceded.",
+      "D": "What follows is a broader claim rather than an instance of the first sentence."
+    }
+  },
+  {
+    "id": "e484",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "hard",
+    "passage": "ep31",
+    "context": "Renaming a street costs the people who live on it. «Meanwhile,» the committee renames almost nothing.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "For that reason,"
+      },
+      {
+        "id": "C",
+        "text": "Even so,"
+      },
+      {
+        "id": "D",
+        "text": "Similarly,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Meanwhile\" marks two things happening at once rather than one causing the other.",
+      "B": "Correct — the cost is the reason the committee leaves existing names alone.",
+      "C": "\"Even so\" would mean the committee renames despite the cost, which it does not.",
+      "D": "\"Similarly\" needs two parallel facts, and the second follows from the first."
+    }
+  },
+  {
+    "id": "e485",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "medium",
+    "passage": "ep31",
+    "context": "The committee checks a name for spelling, for length, and «whether it sounds like another street.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "for its likeness to another street."
+      },
+      {
+        "id": "C",
+        "text": "if it sounds like another street."
+      },
+      {
+        "id": "D",
+        "text": "sounding like another street."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A clause cannot sit in a list whose other members are prepositional phrases.",
+      "B": "Correct — a third \"for\" phrase matches the two that come before it.",
+      "C": "Swapping \"whether\" for \"if\" leaves a clause where a phrase is needed.",
+      "D": "A bare participle still does not match the \"for\" pattern the list has set."
+    }
+  },
+  {
+    "id": "e486",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "hard",
+    "passage": "ep31",
+    "context": "A good name is easy to say, easy to spell, and «easy to hear» over a radio.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "it is easy to hear"
+      },
+      {
+        "id": "C",
+        "text": "hearing it is easy"
+      },
+      {
+        "id": "D",
+        "text": "easily heard"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the third item repeats the \"easy to\" pattern the first two set.",
+      "B": "A full clause breaks a list whose other members are adjective phrases.",
+      "C": "A gerund subject turns the third item into a sentence of its own shape.",
+      "D": "An adverb and participle drop the \"easy to\" frame the other two items share."
+    }
+  },
+  {
+    "id": "e487",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "medium",
+    "passage": "ep31",
+    "context": "The «officers» objection was that two streets in the estate sounded alike.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "officer’s"
+      },
+      {
+        "id": "C",
+        "text": "officers’"
+      },
+      {
+        "id": "D",
+        "text": "officer"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Without an apostrophe the word is a plural noun and cannot own the objection.",
+      "B": "Correct — one officer owns the objection, so the apostrophe goes before the s.",
+      "C": "The plural possessive would mean several officers, and the room holds one.",
+      "D": "Dropping the ending leaves two nouns in a row with no possession marked."
+    }
+  },
+  {
+    "id": "e488",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "hard",
+    "passage": "ep31",
+    "context": "The committee rejected the name on «it’s» third reading, without a vote.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "its"
+      },
+      {
+        "id": "C",
+        "text": "its’"
+      },
+      {
+        "id": "D",
+        "text": "it is"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"It’s\" expands to \"it is\", which cannot stand before \"third reading\".",
+      "B": "Correct — the possessive of \"it\" carries no apostrophe in any position.",
+      "C": "There is no form \"its’\" in English, plural or singular or otherwise.",
+      "D": "Writing the contraction out in full only makes the same error visible."
+    }
+  },
+  {
+    "id": "e489",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "medium",
+    "passage": "ep31",
+    "context": "The clerk types the minutes«, the historian checks the dates» before the file closes.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "; the historian checks the dates"
+      },
+      {
+        "id": "C",
+        "text": ", then the historian checks the dates"
+      },
+      {
+        "id": "D",
+        "text": ", the historian checks the dates,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A comma alone cannot hold two independent clauses together in one sentence.",
+      "B": "Correct — a semicolon is strong enough to join two complete statements.",
+      "C": "\"Then\" is an adverb and leaves the comma doing work it cannot do.",
+      "D": "A second comma brackets the clause without fixing the join at the front."
+    }
+  },
+  {
+    "id": "e490",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "hard",
+    "passage": "ep31",
+    "context": "Nobody watches the committee«,» its decisions surface only when a sign goes up.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ";"
+      },
+      {
+        "id": "C",
+        "text": ", however,"
+      },
+      {
+        "id": "D",
+        "text": ", then"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Two complete statements joined by a comma alone make a splice.",
+      "B": "Correct — a semicolon links two related independent clauses without a conjunction.",
+      "C": "\"However\" is a conjunctive adverb and cannot join clauses across a comma.",
+      "D": "\"Then\" is likewise an adverb, so the comma is still carrying the whole join."
+    }
+  },
+  {
+    "id": "e491",
+    "section": "english",
+    "topic": "word choice",
+    "difficulty": "medium",
+    "passage": "ep31",
+    "context": "The committee can «refuse» a name, but it cannot make a street worth living on.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "refute"
+      },
+      {
+        "id": "C",
+        "text": "repulse"
+      },
+      {
+        "id": "D",
+        "text": "renounce"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — to refuse something is to decline to accept it, which is what happens.",
+      "B": "\"Refute\" means to disprove a claim, and a proposed name makes no claim.",
+      "C": "\"Repulse\" means to drive back an attack, which no list of names amounts to.",
+      "D": "\"Renounce\" means giving up something one holds, and the name was never held."
+    }
   }
 ]
