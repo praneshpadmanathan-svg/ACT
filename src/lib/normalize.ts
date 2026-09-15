@@ -85,7 +85,8 @@ export function fromDrillQuestion(q: Question): RunnableQuestion {
      surrounding sentence. Split it out so the sentence reads as context and
      the underlined part is visibly the thing under test. */
   const guillemet = /«(.+?)»/s;
-  const hasUnderline = guillemet.test(q.context);
+  const context = String(q.context ?? '');
+  const hasUnderline = guillemet.test(context);
 
   /* Three ways an item states its question, in the order they win.
      An underlined span turns the prompt into the standard instruction and
@@ -102,13 +103,13 @@ export function fromDrillQuestion(q: Question): RunnableQuestion {
      queues. */
   const asked = hasUnderline
     ? 'Which choice best replaces the highlighted text?'
-    : q.context.trim() || (q.stem ?? '').trim();
+    : context.trim() || (q.stem ?? '').trim();
 
   return shuffleChoices({
     id: q.id,
     prompt: asked,
     promptFormat: 'markdown',
-    label: hasUnderline ? q.context.replace(guillemet, '<u><b>$1</b></u>') : undefined,
+    label: hasUnderline ? context.replace(guillemet, '<u><b>$1</b></u>') : undefined,
     choices: q.choices.map((c) => ({ key: c.id, text: c.text, format: 'markdown' as const })),
     correctKey: q.answer,
     why: q.why,

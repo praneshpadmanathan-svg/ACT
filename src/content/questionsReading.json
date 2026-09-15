@@ -6928,5 +6928,335 @@
       "C": "Neither position raises the costume dating, which appears only as background.",
       "D": "Both assume removal is possible — the first objects that it would destroy the visible painting, which presupposes it could be done."
     }
+  },
+  {
+    "id": "r154",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "rp16",
+    "context": "The passage as a whole is organised as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "an attractive inference, a long test of it, and a narrowing of what it supports."
+      },
+      {
+        "id": "B",
+        "text": "a chronological account of one bleaching event and the damage that it caused."
+      },
+      {
+        "id": "C",
+        "text": "a comparison of two competing explanations for a decline in reef fish counts."
+      },
+      {
+        "id": "D",
+        "text": "a defence of acoustic monitoring against critics who would abandon the method."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the first paragraph states the inference, the middle paragraphs test it over nine years, and the last two say what survives.",
+      "B": "The bleaching is mentioned once, in a single clause, as the starting condition rather than as the subject.",
+      "C": "Only one explanation of the divergence is offered, and no competing account of fish counts appears anywhere.",
+      "D": "No critic is named or answered; the narrowing comes from Baptista, who still uses the method herself."
+    }
+  },
+  {
+    "id": "r155",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "hard",
+    "passage": "rp16",
+    "context": "The paragraph reporting that the records came apart functions in the passage as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a summary of everything the nine years of recordings established."
+      },
+      {
+        "id": "B",
+        "text": "the break in the agreement the previous paragraph had just described."
+      },
+      {
+        "id": "C",
+        "text": "the first mention of the closure the local cooperative put in place."
+      },
+      {
+        "id": "D",
+        "text": "the explanation of why shrimp noise falls as coral cover keeps rising."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "It covers three years of a nine-year record and summarises nothing that came before it.",
+      "B": "Correct — the paragraph before it reports four years of agreement, and this one is where that agreement ends.",
+      "C": "The closure is introduced two paragraphs earlier, in the account of how the study was set up.",
+      "D": "This paragraph reports the divergence; the explanation of it does not arrive until the paragraph after."
+    }
+  },
+  {
+    "id": "r156",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "medium",
+    "passage": "rp16",
+    "context": "Baptista’s attitude toward acoustic monitoring by the end of the passage is best described as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "confidence that loudness tracks reef health better than diver surveys do."
+      },
+      {
+        "id": "B",
+        "text": "indifference as to which of the two records a reef manager relies on."
+      },
+      {
+        "id": "C",
+        "text": "continued use of it, paired with a narrower claim about what it measures."
+      },
+      {
+        "id": "D",
+        "text": "regret at nine years spent on a method that turned out to have failed."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That was her 2017 position, and the passage exists to record how she left it behind.",
+      "B": "The last paragraph turns on the difference between the two records, which is the opposite of indifference.",
+      "C": "Correct — she still records and would rather have the hydrophone, but says loudness was never a measure of health.",
+      "D": "She says explicitly that the method is not useless, and she has not stopped using it."
+    }
+  },
+  {
+    "id": "r157",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "hard",
+    "passage": "rp16",
+    "context": "The remark that the explanation \"turned out to be uninteresting in the way that correct explanations often are\" conveys:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "impatience with Baptista for needing two more years to find it."
+      },
+      {
+        "id": "B",
+        "text": "doubt about whether the explanation offered is in fact the right one."
+      },
+      {
+        "id": "C",
+        "text": "enthusiasm for the novelty of what the shrimp turned out to be doing."
+      },
+      {
+        "id": "D",
+        "text": "a dry acceptance that the true account is rarely the dramatic one."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The two years are reported without objection, and the sentence faults the explanation for nothing.",
+      "B": "The word \"correct\" is doing the opposite work: it grants the explanation before calling it dull.",
+      "C": "Nothing here is presented as novel; the point is that the answer was ordinary.",
+      "D": "Correct — calling correctness routinely uninteresting is a wry concession, not a complaint about this case."
+    }
+  },
+  {
+    "id": "r158",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "hard",
+    "passage": "rp16",
+    "context": "Which finding most directly supports the claim that loudness measured housing rather than health?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Coral growth slowly cemented over the rubble the snapping shrimp had occupied."
+      },
+      {
+        "id": "B",
+        "text": "Coral cover on the bank rose from nine percent to twenty-two in four years."
+      },
+      {
+        "id": "C",
+        "text": "The sound record moved earlier than the twice-yearly diver surveys did."
+      },
+      {
+        "id": "D",
+        "text": "The reef lost nearly six decibels in the band where the snapping shrimp sit."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it names the mechanism: the noise fell because the cavities the noisy animals live in were closing up.",
+      "B": "Rising coral cover is the recovery itself, and on its own it says nothing about what the sound was tracking.",
+      "C": "Moving earlier was the reason to prefer the sound record, not evidence about what it measured.",
+      "D": "The decibel drop is the puzzle the claim has to explain; by itself it does not explain anything."
+    }
+  },
+  {
+    "id": "r159",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "medium",
+    "passage": "rp16",
+    "context": "The observation about what the cooperative would have concluded in 2019 is offered mainly to show that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "sound records are cheaper to collect than repeated diver transects are."
+      },
+      {
+        "id": "B",
+        "text": "a mismeasured index can recommend abandoning the thing that is working."
+      },
+      {
+        "id": "C",
+        "text": "the cooperative lacked the training needed to read a hydrophone record."
+      },
+      {
+        "id": "D",
+        "text": "the closure should have been lifted in 2019 and then imposed again later."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The cost advantage is granted earlier and is not what this final observation turns on.",
+      "B": "Correct — the sound record would have condemned the closure in the years the closure was in fact succeeding.",
+      "C": "The point is not that the cooperative would have misread the record but that the record itself misled.",
+      "D": "The passage says the closure worked, so it recommends nothing of the kind."
+    }
+  },
+  {
+    "id": "r160",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "medium",
+    "passage": "rp16",
+    "context": "As it is used in the first paragraph, the word \"short\" in \"The inference was short and attractive\" most nearly means:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lacking in courtesy."
+      },
+      {
+        "id": "B",
+        "text": "below a required amount."
+      },
+      {
+        "id": "C",
+        "text": "reached in few steps."
+      },
+      {
+        "id": "D",
+        "text": "lasting only briefly."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That sense applies to a manner of speaking to someone, and no speaker is being described.",
+      "B": "Nothing is being measured against a requirement here, which is what that sense needs.",
+      "C": "Correct — the next sentence lays out the inference in three clauses, showing how little reasoning it takes.",
+      "D": "The inference held for years and is still current, so brevity in time is not the sense."
+    }
+  },
+  {
+    "id": "r161",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "medium",
+    "passage": "rp16",
+    "context": "As it is used in the fourth paragraph, the word \"sensitive\" most nearly means:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "easily upset by criticism."
+      },
+      {
+        "id": "B",
+        "text": "needing to be handled with care."
+      },
+      {
+        "id": "C",
+        "text": "responsive to physical touch."
+      },
+      {
+        "id": "D",
+        "text": "quicker to register a change."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That sense applies to people, and the thing called sensitive here is a record of measurements.",
+      "B": "Careful handling is not at issue; the sentence is comparing how soon each record moved.",
+      "C": "A hydrophone record is not touched at all, and the comparison is about timing rather than contact.",
+      "D": "Correct — the colon that follows explains it: the sound record moved earlier than the surveys did."
+    }
+  },
+  {
+    "id": "r162",
+    "section": "reading",
+    "topic": "function",
+    "difficulty": "medium",
+    "passage": "rp16",
+    "context": "The comparison to \"frying bacon\" in the first paragraph serves mainly to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "give a reader who has never heard a reef something familiar to hold onto."
+      },
+      {
+        "id": "B",
+        "text": "suggest that the noise of a reef is unpleasant to listen to for very long."
+      },
+      {
+        "id": "C",
+        "text": "establish that snapping shrimp are the loudest animals living on the bank."
+      },
+      {
+        "id": "D",
+        "text": "contrast the sound of this reef with the silence of a badly damaged one."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it translates an unfamiliar underwater sound into one almost any reader has stood next to.",
+      "B": "No judgement about the noise being unpleasant appears anywhere in the paragraph.",
+      "C": "The shrimp are one of three sources listed, and their loudness relative to the others is not raised until later.",
+      "D": "Damaged reefs come up two sentences later, and the bacon is offered before any contrast is drawn."
+    }
+  },
+  {
+    "id": "r163",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "hard",
+    "passage": "rp16",
+    "context": "The passage most strongly suggests that an index of this kind is most dangerous when it:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "disagrees with every other record from the first year it is collected."
+      },
+      {
+        "id": "B",
+        "text": "agrees with the thing it stands for long enough to be trusted on its own."
+      },
+      {
+        "id": "C",
+        "text": "costs more to collect than the survey it was meant to stand in for does."
+      },
+      {
+        "id": "D",
+        "text": "is collected by a local cooperative rather than by trained divers."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "An index that never agrees with anything would be discarded early, which is the safe case rather than the dangerous one.",
+      "B": "Correct — four years of agreement are what earned the sound record its authority, and it kept that authority after the agreement ended.",
+      "C": "Cost is presented as the sound record’s advantage, and the passage never treats expense as a hazard.",
+      "D": "The cooperative managed the closure; it did not collect either record, and no such contrast is drawn."
+    }
   }
 ]
