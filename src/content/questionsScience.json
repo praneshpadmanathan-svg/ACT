@@ -207,11 +207,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because activity peaked at 37°C."
+        "text": "Yes, because activity peaked at 37°C in Study 1."
       },
       {
         "id": "B",
-        "text": "Yes, because pH was held constant in Study 1."
+        "text": "Yes, because pH was held constant throughout Study 1."
       },
       {
         "id": "C",
@@ -219,7 +219,7 @@
       },
       {
         "id": "D",
-        "text": "No, because Study 1 used only seven temperatures."
+        "text": "No, because Study 1 used only seven temperatures, which is too few to establish a dependence."
       }
     ],
     "answer": "C",
@@ -409,15 +409,15 @@
       },
       {
         "id": "B",
-        "text": "both light and moisture are varied for all three species."
+        "text": "both light and moisture are varied together for all three species."
       },
       {
         "id": "C",
-        "text": "Species A is grown in darkness at a new temperature."
+        "text": "Species A is grown in complete darkness at a new temperature."
       },
       {
         "id": "D",
-        "text": "Species B and C are grown under different light conditions."
+        "text": "Species B and C are each grown under a different light condition from the one used before."
       }
     ],
     "answer": "A",
@@ -768,7 +768,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Blue light alone produces more growth than any combination."
+        "text": "Blue light alone produces more growth than any combination of colors at the same intensity."
       },
       {
         "id": "B",
@@ -776,11 +776,11 @@
       },
       {
         "id": "C",
-        "text": "Green light is essential for maximum growth."
+        "text": "Green light is essential for reaching maximum growth."
       },
       {
         "id": "D",
-        "text": "Light intensity has no effect on dry mass."
+        "text": "Light intensity has no effect on final dry mass."
       }
     ],
     "answer": "B",
@@ -1527,7 +1527,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "increase the number of trials."
+        "text": "increase the number of trials that were run."
       },
       {
         "id": "B",
@@ -1535,11 +1535,11 @@
       },
       {
         "id": "C",
-        "text": "make the oysters grow faster."
+        "text": "make the oysters grow faster overall."
       },
       {
         "id": "D",
-        "text": "test whether pH affects survival."
+        "text": "test whether pH has any effect on the survival of the oysters."
       }
     ],
     "answer": "B",
@@ -1791,7 +1791,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes — material produced a 37°C spread while room temperature produced only 15°C."
+        "text": "Yes — material produced a 37°C spread, room temperature only 15°C."
       },
       {
         "id": "B",
@@ -1803,7 +1803,7 @@
       },
       {
         "id": "D",
-        "text": "No, because the two variables were never tested together."
+        "text": "No, because the two variables were never tested together in a single trial."
       }
     ],
     "answer": "A",
@@ -2253,7 +2253,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "has no effect on the period at any angle."
+        "text": "has no effect on the period at any of the release angles that were tested at all."
       },
       {
         "id": "B",
@@ -2261,11 +2261,11 @@
       },
       {
         "id": "C",
-        "text": "has a large effect at every angle."
+        "text": "has a large effect at every angle tested."
       },
       {
         "id": "D",
-        "text": "decreases the period as angle increases."
+        "text": "decreases the period steadily as the angle increases."
       }
     ],
     "answer": "B",
@@ -2356,15 +2356,15 @@
       },
       {
         "id": "B",
-        "text": "Because a single swing cannot be timed."
+        "text": "Because a single swing cannot be timed accurately with a stopwatch by hand."
       },
       {
         "id": "C",
-        "text": "To increase the pendulum’s period."
+        "text": "To increase the pendulum’s measured period."
       },
       {
         "id": "D",
-        "text": "To change the release angle."
+        "text": "To change the release angle between trials."
       }
     ],
     "answer": "A",
@@ -2682,7 +2682,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "ensure that any difference in fading could be attributed to light intensity rather than to temperature."
+        "text": "ensure any difference in fading was due to light rather than temperature."
       },
       {
         "id": "B",
@@ -2781,15 +2781,15 @@
     "choices": [
       {
         "id": "A",
-        "text": "a frog population as sparse as the rest of Cedar Hollow."
+        "text": "a frog population as sparse as the rest of Cedar Hollow shows."
       },
       {
         "id": "B",
-        "text": "no frogs at all, regardless of fish presence."
+        "text": "no frogs at all, regardless of whether fish are present."
       },
       {
         "id": "C",
-        "text": "a frog population that depends on fungal presence instead."
+        "text": "a frog population whose density depends on fungal presence instead of on the presence of the invasive fish."
       },
       {
         "id": "D",
@@ -2814,19 +2814,19 @@
     "choices": [
       {
         "id": "A",
-        "text": "chemically similar to each other, since both would be governed by the same rock composition rather than by regional dust."
+        "text": "chemically similar, since the same rock composition would govern both."
       },
       {
         "id": "B",
-        "text": "chemically different, reflecting the different regional dust in each area."
+        "text": "chemically different, reflecting the different regional dust in each of the two areas."
       },
       {
         "id": "C",
-        "text": "entirely absent from both outcrops."
+        "text": "entirely absent from both of the outcrops."
       },
       {
         "id": "D",
-        "text": "present on only one of the two outcrops."
+        "text": "present on only one of the two outcrops, not both."
       }
     ],
     "answer": "A",
@@ -2884,15 +2884,15 @@
       },
       {
         "id": "B",
-        "text": "caused primarily by a fungal skin infection."
+        "text": "caused primarily by a fungal skin infection in the frogs."
       },
       {
         "id": "C",
-        "text": "caused primarily by agricultural pesticide runoff."
+        "text": "caused primarily by pesticide runoff from the farmland surrounding Cedar Hollow."
       },
       {
         "id": "D",
-        "text": "caused primarily by an invasive predator."
+        "text": "caused primarily by an invasive predator fish."
       }
     ],
     "answer": "A",
@@ -2979,15 +2979,15 @@
     "choices": [
       {
         "id": "A",
-        "text": "the reaction plants use to convert sunlight into chemical energy."
+        "text": "the reaction plants use to convert sunlight into stored chemical energy."
       },
       {
         "id": "B",
-        "text": "the reaction certain other bacteria use to oxidize iron or sulfur compounds for energy in different environments."
+        "text": "the reaction other bacteria use to oxidize iron or sulfur for energy."
       },
       {
         "id": "C",
-        "text": "the reaction animals use to break down sugar using oxygen for energy."
+        "text": "the reaction animals use to break down sugar with oxygen for energy."
       },
       {
         "id": "D",
@@ -3284,11 +3284,11 @@
       },
       {
         "id": "C",
-        "text": "living organisms play no role in forming any desert coating anywhere."
+        "text": "living organisms play no role at all in forming any desert coating anywhere."
       },
       {
         "id": "D",
-        "text": "the minerals in the varnish originate from inside the rock rather than from an external source."
+        "text": "the varnish minerals come from inside the rock rather than from outside."
       }
     ],
     "answer": "D",
@@ -3309,11 +3309,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "a factor whose effects vary from pond to pond within Cedar Hollow."
+        "text": "a factor whose effects vary from one pond to another within Cedar Hollow."
       },
       {
         "id": "B",
-        "text": "a chemical that interferes with reproduction rather than directly killing frogs or their eggs."
+        "text": "a chemical that interferes with reproduction rather than killing frogs."
       },
       {
         "id": "C",
@@ -3618,7 +3618,7 @@
       },
       {
         "id": "D",
-        "text": "No, because the period remained approximately the same (about 2.0 s) at every mass tested, including when mass was doubled from one trial to the next."
+        "text": "No, because the period stayed at about 2.0 s at every mass tested."
       }
     ],
     "answer": "D",
@@ -4241,7 +4241,7 @@
       },
       {
         "id": "C",
-        "text": "To account for natural variation among individual seedlings and obtain a more reliable average height."
+        "text": "To average out natural variation among individual seedlings."
       },
       {
         "id": "D",
@@ -4332,7 +4332,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because height leveled off between the 4-day and 5-day groups."
+        "text": "Yes, because height leveled off between the 4-day and the 5-day watering groups."
       },
       {
         "id": "B",
@@ -4344,7 +4344,7 @@
       },
       {
         "id": "D",
-        "text": "No, because height increased continuously across the entire range of watering frequencies tested, with no leveling off."
+        "text": "No, because height increased across the whole range tested, with no plateau."
       }
     ],
     "answer": "D",
@@ -4398,11 +4398,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "cause the period to increase substantially at every string length."
+        "text": "cause the period to increase substantially at every one of the string lengths that were tested."
       },
       {
         "id": "B",
-        "text": "cause the period to decrease substantially at every string length."
+        "text": "cause the period to decrease substantially at every string length tested."
       },
       {
         "id": "C",
@@ -4732,15 +4732,15 @@
       },
       {
         "id": "B",
-        "text": "the mass change fell between 3.5% and 10.0% NaCl."
+        "text": "the mass change fell between the 3.5% and 10.0% NaCl solutions."
       },
       {
         "id": "C",
-        "text": "the nail in dry air showed no mass change."
+        "text": "the nail left in dry air showed no mass change at all."
       },
       {
         "id": "D",
-        "text": "the zinc coating was more effective than the oil coating."
+        "text": "the zinc coating proved more effective at preventing corrosion than the oil coating did in the same test."
       }
     ],
     "answer": "A",
@@ -4963,15 +4963,15 @@
       },
       {
         "id": "B",
-        "text": "Coating both surfaces cut loss to 0.20 g."
+        "text": "Coating both surfaces together cut the loss to 0.20 g, the lowest figure recorded anywhere in Study 3."
       },
       {
         "id": "C",
-        "text": "The untreated cutting lost 1.40 g."
+        "text": "The untreated cutting lost 1.40 g in the same period."
       },
       {
         "id": "D",
-        "text": "Coating the upper surfaces cut loss from 1.40 g to 1.20 g."
+        "text": "Coating the upper surfaces cut the loss only from 1.40 g down to 1.20 g."
       }
     ],
     "answer": "A",
@@ -7042,15 +7042,15 @@
       },
       {
         "id": "B",
-        "text": "As a downstream effect of warming, which keeps the deep layer sealed off for more weeks each year."
+        "text": "As a downstream effect of warming, which seals the deep layer off for more weeks each year."
       },
       {
         "id": "C",
-        "text": "As the direct cause of the decline, agreeing with Scientist 2 on that point."
+        "text": "As the direct cause of the decline, agreeing with Scientist 2 on that particular point."
       },
       {
         "id": "D",
-        "text": "As the result of trout themselves consuming more oxygen as the water warmed."
+        "text": "As the result of the trout themselves consuming more oxygen as the water warmed up further."
       }
     ],
     "answer": "B",
@@ -7632,7 +7632,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because absorbance at 1600 lux is 0.12 at 30 minutes and Figure 1 shows absorbance continuing to fall after 30 minutes."
+        "text": "Yes, because absorbance is 0.12 at 30 minutes and Figure 1 shows it still falling."
       },
       {
         "id": "B",
@@ -7900,15 +7900,15 @@
       },
       {
         "id": "B",
-        "text": "the response of both species rather than one."
+        "text": "the response of both species rather than the response of only one of them."
       },
       {
         "id": "C",
-        "text": "the effect of temperature on germination."
+        "text": "the effect of temperature on germination rate."
       },
       {
         "id": "D",
-        "text": "germination at a wider range of salinities."
+        "text": "germination at a wider range of salinities than Study 1."
       }
     ],
     "answer": "A",
