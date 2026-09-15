@@ -11841,5 +11841,1193 @@
       "C": "He says the opposite: he would make the soundboard thicker and accept a smaller sound.",
       "D": "One builder is how the passage makes its point, and Huang states the principle in general terms."
     }
+  },
+  {
+    "id": "e306",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "medium",
+    "passage": "ep9",
+    "context": "Pell had no training as a scientist«, but she» simply continued the work when her husband died.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", she"
+      },
+      {
+        "id": "C",
+        "text": " but she"
+      },
+      {
+        "id": "D",
+        "text": ". But, she"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — two independent clauses joined by a comma and a coordinating conjunction, which is one of the four ways English lets you join them.",
+      "B": "A comma alone cannot hold two independent clauses together. Without \"but\" this is a splice.",
+      "C": "The conjunction is there but the comma is not, and a compound sentence of this length needs both.",
+      "D": "A sentence may open with \"But\", but not with a comma after it; nothing is being set off."
+    }
+  },
+  {
+    "id": "e307",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "medium",
+    "passage": "ep9",
+    "context": "The entries in the ledger «were» spare: wind direction, cloud cover, and the hour the lamp was lit.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "was"
+      },
+      {
+        "id": "C",
+        "text": "is"
+      },
+      {
+        "id": "D",
+        "text": "has been"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the subject is \"entries\", and the phrase \"in the ledger\" that follows it does not change what the verb has to agree with.",
+      "B": "Agrees with \"ledger\" rather than with \"entries\". The prepositional phrase is not the subject.",
+      "C": "Singular and in the wrong tense; everything around it describes a record kept in the past.",
+      "D": "Singular, and the present perfect suggests the entries are still being written."
+    }
+  },
+  {
+    "id": "e308",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "medium",
+    "passage": "ep9",
+    "context": "«Because she had no reason to think anyone would read the notes, she kept them for herself.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Because she had no reason to think anyone would read the notes."
+      },
+      {
+        "id": "C",
+        "text": "Having no reason to think anyone would read the notes."
+      },
+      {
+        "id": "D",
+        "text": "Because she had no reason to think anyone would read the notes, keeping them for herself."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a subordinate clause followed by a main clause that gives it a subject and a verb of its own.",
+      "B": "A subordinate clause with nothing to attach to. \"Because\" always promises a main clause that never arrives here.",
+      "C": "A participial phrase, which cannot stand as a sentence no matter how much information it carries.",
+      "D": "The main clause has been turned into a participle, so nothing in the sentence is a finite verb."
+    }
+  },
+  {
+    "id": "e309",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "easy",
+    "passage": "ep9",
+    "context": "«Pell’s» ledger reached back into the 1880s, and it was continuous.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Pells"
+      },
+      {
+        "id": "C",
+        "text": "Pells’"
+      },
+      {
+        "id": "D",
+        "text": "Pells’s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — one keeper, so the possessive is the name plus apostrophe-s.",
+      "B": "A plural with no apostrophe, which says there were several Pells and claims nothing for any of them.",
+      "C": "The plural possessive. There is only one Pell in the passage.",
+      "D": "Pluralises the name and then makes the plural possessive, compounding both errors."
+    }
+  },
+  {
+    "id": "e310",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "medium",
+    "passage": "ep9",
+    "context": "«Looking for shipping records, Alcantara opened the almanac instead.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Looking for shipping records, the almanac was opened instead."
+      },
+      {
+        "id": "C",
+        "text": "The almanac, looking for shipping records, was opened by Alcantara instead."
+      },
+      {
+        "id": "D",
+        "text": "Looking for shipping records, it was the almanac that was opened instead."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the person doing the looking is the subject of the main clause, which is what an opening participial phrase requires.",
+      "B": "The almanac was not looking for shipping records. The participle has nothing to modify but the subject it is given.",
+      "C": "Puts the phrase beside \"almanac\", which makes the ledger the one conducting the search.",
+      "D": "The subject is now \"it\", so the search belongs to nothing in the sentence at all."
+    }
+  },
+  {
+    "id": "e311",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "hard",
+    "passage": "ep9",
+    "context": "Read together, those columns recorded «when the ice broke, when the ducks arrived, and when the herring ran.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "when the ice broke, the arrival of the ducks, and when the herring ran."
+      },
+      {
+        "id": "C",
+        "text": "the ice breaking, when the ducks arrived, and the herring running."
+      },
+      {
+        "id": "D",
+        "text": "when the ice broke, the ducks arriving, and the running of the herring."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — three clauses of the same shape, each opening with \"when\" and each with its own subject and past-tense verb.",
+      "B": "The middle item becomes a noun phrase while the two around it stay clauses.",
+      "C": "Two gerund phrases with a clause wedged between them; no two items match.",
+      "D": "Three different constructions in three slots: a clause, a participial phrase, and a noun phrase."
+    }
+  },
+  {
+    "id": "e312",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "medium",
+    "passage": "ep9",
+    "context": "Alcantara «spent two years transcribing» the almanac.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "spent a period of two years in the transcription of"
+      },
+      {
+        "id": "C",
+        "text": "used up two years of time transcribing"
+      },
+      {
+        "id": "D",
+        "text": "spent two years engaged in the transcribing of"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the verb takes the gerund directly, and nothing in the sentence is doing work twice.",
+      "B": "\"A period of\" says only what \"two years\" already says, and the noun form of transcribe adds a preposition for nothing.",
+      "C": "Two years is already a quantity of time, so \"of time\" is empty.",
+      "D": "\"Engaged in the transcribing of\" is four words where \"transcribing\" was enough."
+    }
+  },
+  {
+    "id": "e313",
+    "section": "english",
+    "topic": "commas",
+    "difficulty": "hard",
+    "passage": "ep9",
+    "context": "In 1994 a graduate student «named Teodoro Alcantara» opened it instead.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", named Teodoro Alcantara,"
+      },
+      {
+        "id": "C",
+        "text": "named, Teodoro Alcantara,"
+      },
+      {
+        "id": "D",
+        "text": ", named Teodoro Alcantara"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — \"a graduate student\" has not identified anyone yet, so the name is doing necessary work and takes no commas.",
+      "B": "Commas would make the name an aside, as though the reader already knew which student was meant.",
+      "C": "A comma after \"named\" separates the participle from the name it introduces.",
+      "D": "One comma opens an interruption that is never closed."
+    }
+  },
+  {
+    "id": "e314",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "medium",
+    "passage": "ep9",
+    "context": "Researchers had plenty of instrument data from the twentieth century and almost none from before it. Pell’s ledger, «by contrast,» reached back into the 1880s.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "for example,"
+      },
+      {
+        "id": "C",
+        "text": "in addition,"
+      },
+      {
+        "id": "D",
+        "text": "as a result,"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the ledger is set against the gap just described, and that opposition is what the sentence turns on.",
+      "B": "The ledger is not an instance of the shortage; it is the exception to it.",
+      "C": "Adding would suggest the ledger is more of the same scarce data rather than the thing that fills the gap.",
+      "D": "The ledger did not come about because the record was thin. It was kept decades before anyone noticed the gap."
+    }
+  },
+  {
+    "id": "e315",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "medium",
+    "passage": "ep9",
+    "context": "That trend «has since been corroborated» by three other regional records.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "had since been corroborated"
+      },
+      {
+        "id": "C",
+        "text": "will since be corroborated"
+      },
+      {
+        "id": "D",
+        "text": "is since being corroborated"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the present perfect covers a stretch reaching from the discovery up to now, which is what \"since\" asks for.",
+      "B": "The past perfect puts the corroboration before some earlier past event, and no such event is named.",
+      "C": "The future contradicts \"since\", which looks back from the present.",
+      "D": "The progressive makes corroborating an activity still underway; the three records already exist."
+    }
+  },
+  {
+    "id": "e316",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "medium",
+    "passage": "ep9",
+    "context": "The inspectors who visited every spring found the brass polished and the ledger current, and «they» never noticed the extra columns.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "it"
+      },
+      {
+        "id": "C",
+        "text": "he"
+      },
+      {
+        "id": "D",
+        "text": "one"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the antecedent is \"inspectors\", which is plural and human, so the plural pronoun is the only one that fits.",
+      "B": "Singular and non-human. The nearest plausible antecedent is a group of people.",
+      "C": "Singular, and the passage never narrows the inspectors down to one man.",
+      "D": "\"One\" generalises to anybody at all, which loses the inspectors the sentence is about."
+    }
+  },
+  {
+    "id": "e338",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "hard",
+    "passage": "ep9",
+    "context": "Pell had no training as a scientist«; nevertheless, she» kept the most complete coastal record of her century.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", nevertheless, she"
+      },
+      {
+        "id": "C",
+        "text": " nevertheless she"
+      },
+      {
+        "id": "D",
+        "text": "; nevertheless, and she"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a semicolon joins the two statements and the conjunctive adverb, set off by its comma, names the relation between them.",
+      "B": "\"Nevertheless\" is not a conjunction, so a comma on each side of it leaves two independent clauses spliced together.",
+      "C": "No punctuation at all between two complete statements, which fuses them.",
+      "D": "The semicolon has already done the joining; adding \"and\" joins it twice."
+    }
+  },
+  {
+    "id": "e340",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "easy",
+    "passage": "ep9",
+    "context": "The inspectors «visited» every spring.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "made a visit"
+      },
+      {
+        "id": "C",
+        "text": "came for the purpose of a visit"
+      },
+      {
+        "id": "D",
+        "text": "paid a visit on a yearly basis"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — one verb carries the whole action, and \"every spring\" already says how often.",
+      "B": "Turns a verb into a noun and then needs a second verb to carry it.",
+      "C": "\"For the purpose of\" announces an intention the sentence never needed.",
+      "D": "\"On a yearly basis\" repeats what \"every spring\" has already established."
+    }
+  },
+  {
+    "id": "e317",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "medium",
+    "passage": "ep16",
+    "context": "The city had no interest in the number«;» the bridge was scheduled for replacement in 1974.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ","
+      },
+      {
+        "id": "C",
+        "text": "no punctuation at all"
+      },
+      {
+        "id": "D",
+        "text": "; because"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — two statements that could each stand alone, closely enough related that a semicolon is better than a full stop.",
+      "B": "A comma between two independent clauses is a splice, whatever the relation between them.",
+      "C": "With nothing between them the two statements fuse into one ungrammatical sentence.",
+      "D": "\"Because\" turns the second half into a subordinate clause, which cannot follow a semicolon."
+    }
+  },
+  {
+    "id": "e318",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "hard",
+    "passage": "ep16",
+    "context": "The plans for the replacement «were» drawn, and the money was appropriated.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "was"
+      },
+      {
+        "id": "C",
+        "text": "has been"
+      },
+      {
+        "id": "D",
+        "text": "is"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — \"plans\" is the subject, and \"for the replacement\" sits between it and the verb without changing the agreement.",
+      "B": "Agrees with \"replacement\", the nearest noun, rather than with the subject.",
+      "C": "Singular, and the present perfect sits oddly beside \"was appropriated\" in the second half.",
+      "D": "Singular and present, in a sentence about what happened before 1974."
+    }
+  },
+  {
+    "id": "e319",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "hard",
+    "passage": "ep16",
+    "context": "«Standing at the east abutment, Ellery held a mechanical tally counter in each hand.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Standing at the east abutment, a mechanical tally counter was held in each hand."
+      },
+      {
+        "id": "C",
+        "text": "A mechanical tally counter was in each hand, standing at the east abutment."
+      },
+      {
+        "id": "D",
+        "text": "Held in each hand, Ellery stood at the east abutment with a mechanical tally counter."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Ellery is both the one standing and the subject of the main clause, which is what the opening participle needs.",
+      "B": "The counters are not standing anywhere; the passive has removed the only thing that could be.",
+      "C": "Same dangling participle, now at the end of the sentence, where it attaches to the counter.",
+      "D": "\"Held in each hand\" lands on Ellery, which says she was the thing being held."
+    }
+  },
+  {
+    "id": "e320",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "easy",
+    "passage": "ep16",
+    "context": "Ellery «counted» the cars that crossed the bridge.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "made a count of"
+      },
+      {
+        "id": "C",
+        "text": "engaged in the counting of"
+      },
+      {
+        "id": "D",
+        "text": "performed a count upon"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the verb does the work on its own and takes its object directly.",
+      "B": "Buries the verb in a noun and needs \"made\" plus \"of\" to get it back.",
+      "C": "Three words of scaffolding around a verb that needed none.",
+      "D": "\"Performed a count upon\" is both padded and wrong about the preposition."
+    }
+  },
+  {
+    "id": "e321",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "medium",
+    "passage": "ep16",
+    "context": "She stood at the abutment, «recorded the totals in a ledger, and drove home before the traffic thickened.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "recorded the totals in a ledger, and was driving home before the traffic thickened."
+      },
+      {
+        "id": "C",
+        "text": "recording the totals in a ledger, and drove home before the traffic thickened."
+      },
+      {
+        "id": "D",
+        "text": "recorded the totals in a ledger, and her drive home came before the traffic thickened."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — three simple past verbs hanging off one subject: stood, recorded, drove.",
+      "B": "The third verb shifts into the past progressive while the first two stay simple.",
+      "C": "A participle in the second slot breaks the series the first and third keep.",
+      "D": "The third item becomes a clause with a new subject, so the sentence stops being a list of what she did."
+    }
+  },
+  {
+    "id": "e322",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "medium",
+    "passage": "ep16",
+    "context": "«Ellery’s» ledgers are in the municipal archive now.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Ellerys"
+      },
+      {
+        "id": "C",
+        "text": "Elleries’"
+      },
+      {
+        "id": "D",
+        "text": "Ellery’s’"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — one engineer, so the name takes an apostrophe and an s to claim the ledgers.",
+      "B": "No apostrophe, so nothing is possessed; this reads as a plural of the surname.",
+      "C": "Invents a plural of the name and then makes it possessive.",
+      "D": "An apostrophe on each end, which no possessive form uses."
+    }
+  },
+  {
+    "id": "e323",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "medium",
+    "passage": "ep16",
+    "context": "«The model was never checked against anything, and hers was the only number in the room that had been.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "The model never checked against anything, and hers the only number in the room that had been."
+      },
+      {
+        "id": "C",
+        "text": "Because the model was never checked against anything, and hers was the only number in the room that had been."
+      },
+      {
+        "id": "D",
+        "text": "The model was never checked against anything. Hers being the only number in the room that had been."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — two independent clauses, each with a subject and a finite verb, joined by a comma and \"and\".",
+      "B": "Both halves lose their verbs: \"never checked\" needs \"was\", and \"hers the only number\" has no verb at all.",
+      "C": "\"Because\" subordinates everything that follows, leaving the whole sentence without a main clause.",
+      "D": "The second sentence is a participial phrase, which cannot stand on its own however long it is."
+    }
+  },
+  {
+    "id": "e324",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "hard",
+    "passage": "ep16",
+    "context": "By 1985 the bridge was carrying fewer cars than it had when she started. The four-percent model, «however,» had projected a figure roughly double the one her ledger showed.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "therefore,"
+      },
+      {
+        "id": "C",
+        "text": "for instance,"
+      },
+      {
+        "id": "D",
+        "text": "likewise,"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the model and the ledger point in opposite directions, and that disagreement is the whole point of the paragraph.",
+      "B": "The projection did not follow from the decline; it preceded it and got it wrong.",
+      "C": "The model is not an example of falling traffic. It predicted the opposite.",
+      "D": "\"Likewise\" claims the two agree, which is exactly what the sentence is denying."
+    }
+  },
+  {
+    "id": "e325",
+    "section": "english",
+    "topic": "commas",
+    "difficulty": "medium",
+    "passage": "ep16",
+    "context": "Ellery«, who is ninety-one,» is careful about how she tells this.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": " who is ninety-one"
+      },
+      {
+        "id": "C",
+        "text": ", who is ninety-one"
+      },
+      {
+        "id": "D",
+        "text": " who is ninety-one,"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — her age does not pick her out from other Elleries, so the clause is an aside and takes a comma at each end.",
+      "B": "Without commas the clause reads as restrictive, as though it were distinguishing this Ellery from another one.",
+      "C": "Opens the interruption and never closes it, so the reader cannot tell where the main clause resumes.",
+      "D": "Closes an interruption that was never opened."
+    }
+  },
+  {
+    "id": "e326",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "medium",
+    "passage": "ep16",
+    "context": "A graduate student «found» them in 2019 and built a paper around them.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "finds"
+      },
+      {
+        "id": "C",
+        "text": "has found"
+      },
+      {
+        "id": "D",
+        "text": "had found"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a single completed event with its year attached, which the simple past is for, and it matches \"built\" beside it.",
+      "B": "The present tense fights the date. 2019 is over.",
+      "C": "The present perfect cannot take a stated past time like \"in 2019\".",
+      "D": "The past perfect would need a later past event for the finding to precede."
+    }
+  },
+  {
+    "id": "e327",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "hard",
+    "passage": "ep16",
+    "context": "The paper’s central point is one «she» had made in a letter forty years earlier.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "her"
+      },
+      {
+        "id": "C",
+        "text": "herself"
+      },
+      {
+        "id": "D",
+        "text": "hers"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the pronoun is the subject of \"had made\" inside the relative clause, so it takes the subject form.",
+      "B": "The object form, which cannot be the thing doing the making.",
+      "C": "A reflexive needs a subject elsewhere in the clause to refer back to, and there is none.",
+      "D": "A possessive standing where the sentence needs a subject."
+    }
+  },
+  {
+    "id": "e339",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "medium",
+    "passage": "ep16",
+    "context": "Ellery had signed the inspection report that recommended the replacement«. She agreed» with it.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", she agreed"
+      },
+      {
+        "id": "C",
+        "text": " she agreed"
+      },
+      {
+        "id": "D",
+        "text": ", and, she agreed"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — two complete statements, and the full stop between them lets the short second one land.",
+      "B": "A comma cannot join two independent clauses on its own.",
+      "C": "Nothing between them at all, so the two statements run together.",
+      "D": "The comma after \"and\" separates the conjunction from the clause it introduces."
+    }
+  },
+  {
+    "id": "e341",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "medium",
+    "passage": "ep16",
+    "context": "What she claims is «narrower and harder to argue with.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "of a narrower nature and harder to argue with."
+      },
+      {
+        "id": "C",
+        "text": "more narrow in scope and more difficult in terms of arguing with."
+      },
+      {
+        "id": "D",
+        "text": "narrower, and it is harder to argue with it."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — two comparative adjectives sharing one verb, with nothing between them that does not carry meaning.",
+      "B": "\"Of a narrower nature\" is four words for the comparative the adjective already has.",
+      "C": "\"In scope\" and \"in terms of\" are both filler, and \"more narrow\" ignores the shorter comparative form.",
+      "D": "Splits one comparison into two clauses and repeats the pronoun to do it."
+    }
+  },
+  {
+    "id": "e328",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "I walked the aisles with a handheld logger«, and I confirmed» that the temperature at each station matched what the central system claimed.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", I confirmed"
+      },
+      {
+        "id": "C",
+        "text": " and I confirmed"
+      },
+      {
+        "id": "D",
+        "text": "; and, I confirmed"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a comma plus \"and\" joining two independent clauses, each with its own subject and verb.",
+      "B": "Removing the conjunction leaves a comma holding two full clauses together, which it cannot do.",
+      "C": "The conjunction without the comma runs a compound sentence of this length together.",
+      "D": "A semicolon already joins the clauses, so \"and\" is redundant, and the comma after it is wrong."
+    }
+  },
+  {
+    "id": "e329",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "The temperature at each of forty stations «matched» what the central system claimed it was.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "match"
+      },
+      {
+        "id": "C",
+        "text": "were matching"
+      },
+      {
+        "id": "D",
+        "text": "have matched"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the subject is the singular \"temperature\", and \"at each of forty stations\" is a prepositional phrase, not a plural subject.",
+      "B": "Plural, agreeing with \"stations\" instead of with \"temperature\".",
+      "C": "Plural and progressive, both wrong for a single nightly check that either matched or did not.",
+      "D": "Plural, and the present perfect reads as though the checking were still going on."
+    }
+  },
+  {
+    "id": "e330",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "A system that reports on itself «will report» that it is fine right up until it cannot.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "will make a report to the effect"
+      },
+      {
+        "id": "C",
+        "text": "is going to be reporting"
+      },
+      {
+        "id": "D",
+        "text": "will give a report saying"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the verb the sentence has already used once, used again in the same plain form for the same action.",
+      "B": "\"Make a report to the effect\" is five words doing what \"report\" does in one.",
+      "C": "The progressive future makes the reporting an ongoing activity when what is meant is what the system will do.",
+      "D": "Pairs a vague verb with the noun form of the real one."
+    }
+  },
+  {
+    "id": "e331",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "«Standing in the airlock in a borrowed parka, I learned that the twenty minutes was not a suggestion.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Standing in the airlock in a borrowed parka, the twenty minutes turned out not to be a suggestion."
+      },
+      {
+        "id": "C",
+        "text": "The twenty minutes, standing in the airlock in a borrowed parka, was not a suggestion."
+      },
+      {
+        "id": "D",
+        "text": "In a borrowed parka standing in the airlock, it was learned that the twenty minutes was not a suggestion."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the narrator is the one standing in the airlock and the subject of the main clause, so the phrase has something to modify.",
+      "B": "Twenty minutes cannot stand in an airlock wearing a parka.",
+      "C": "The phrase now sits inside the subject, which makes the time limit the one in the parka.",
+      "D": "The passive removes the person entirely, leaving the phrase attached to \"it\"."
+    }
+  },
+  {
+    "id": "e332",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "«Both were a tenth of a degree, and both were explained by a sensor that needed recalibrating.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Both of them a tenth of a degree, and both of them explained by a sensor that needed recalibrating."
+      },
+      {
+        "id": "C",
+        "text": "Both a tenth of a degree, both explained by a sensor that needed recalibrating."
+      },
+      {
+        "id": "D",
+        "text": "Being a tenth of a degree each, and explained by a sensor that needed recalibrating."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — two clauses, each with a subject and a finite verb, joined by a comma and \"and\".",
+      "B": "Neither half has a verb; \"explained\" is a participle here, not a predicate.",
+      "C": "Two phrases in apposition with nothing to be in apposition to.",
+      "D": "Opens with a participle and never reaches a subject or a main verb."
+    }
+  },
+  {
+    "id": "e333",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "hard",
+    "passage": "ep19",
+    "context": "What I was doing in the cold was not measuring the temperature«; it was making sure there were two independent answers to the question.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "; it was to make sure there were two independent answers to the question."
+      },
+      {
+        "id": "C",
+        "text": "; but to make sure there were two independent answers to the question."
+      },
+      {
+        "id": "D",
+        "text": "; making sure there were two independent answers to the question."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — \"was making\" answers \"was not measuring\" in the same form, which is what the contrast needs to land.",
+      "B": "An infinitive on one side of the contrast and a gerund on the other.",
+      "C": "\"But\" after a semicolon, and an infinitive set against a gerund.",
+      "D": "A participial phrase with no subject or verb, which cannot follow a semicolon."
+    }
+  },
+  {
+    "id": "e334",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "hard",
+    "passage": "ep19",
+    "context": "A system that reports on itself will report that «it’s» fine right up until it cannot.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "its"
+      },
+      {
+        "id": "C",
+        "text": "its’"
+      },
+      {
+        "id": "D",
+        "text": "it has"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the sentence needs \"it is\", and the apostrophe marks the missing letter of the contraction.",
+      "B": "The possessive, which would have the system owning a \"fine\" rather than being in one.",
+      "C": "No such form exists. \"Its\" is already possessive and never takes an apostrophe.",
+      "D": "\"It has fine\" is not a sentence; the contraction here stands for \"it is\"."
+    }
+  },
+  {
+    "id": "e335",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "For the first few months this struck me as an elaborate way of proving that a thermometer works. «Then» a storage manager from another seed bank came through on a tour.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Similarly,"
+      },
+      {
+        "id": "C",
+        "text": "For example,"
+      },
+      {
+        "id": "D",
+        "text": "In contrast,"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the paragraph is narrating a change of mind, and the visit is what came next in that sequence.",
+      "B": "The visit is not another instance of the job feeling pointless; it is what stopped it feeling that way.",
+      "C": "A visiting manager is not an example of an elaborate proof.",
+      "D": "A contrast marker would set the visit against the first few months, but the sentence is simply what happened after them."
+    }
+  },
+  {
+    "id": "e336",
+    "section": "english",
+    "topic": "commas",
+    "difficulty": "hard",
+    "passage": "ep19",
+    "context": "The job posting said \"facility technician\"« and» did not mention that the facility was kept at minus eighteen degrees.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", and"
+      },
+      {
+        "id": "C",
+        "text": ", and it"
+      },
+      {
+        "id": "D",
+        "text": "; and"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — one subject with two verbs, \"said\" and \"did not mention\", and a compound predicate takes no comma before the conjunction.",
+      "B": "The comma suggests a second independent clause, but what follows has no subject of its own.",
+      "C": "Supplying \"it\" creates a second clause, which changes the sentence rather than punctuating it.",
+      "D": "A semicolon needs a complete statement on each side, and the second half has no subject."
+    }
+  },
+  {
+    "id": "e337",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "Nobody expected a mismatch, and in eleven months I «found» two.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "have found"
+      },
+      {
+        "id": "C",
+        "text": "had found"
+      },
+      {
+        "id": "D",
+        "text": "find"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the eleven months are over and the narrator has left the job, so the simple past closes the account, matching \"expected\".",
+      "B": "The present perfect keeps the period open, but the narrator says elsewhere that the year ended.",
+      "C": "The past perfect needs a later past moment to sit before, and none is given.",
+      "D": "The present tense contradicts both \"expected\" and the eleven months already elapsed."
+    }
   }
 ]
