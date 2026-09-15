@@ -8248,5 +8248,335 @@
       "C": "That is the position the writer abandons after the Tuesday in the Dutch gallery.",
       "D": "The passage argues the opposite: ninety words decide what a stranger notices for life."
     }
+  },
+  {
+    "id": "r194",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "rp20",
+    "context": "The passage is organized primarily as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "two rival explanations, the evidence between them, and what is still unsettled."
+      },
+      {
+        "id": "B",
+        "text": "a chronological history of European robin migration studies since 1970."
+      },
+      {
+        "id": "C",
+        "text": "a set of instructions for testing a bird’s orientation in a laboratory."
+      },
+      {
+        "id": "D",
+        "text": "an argument that magnetic navigation in birds is not real at all."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the two candidates are set out, weighed against results, and left short of a full answer.",
+      "B": "Fifty years of argument is mentioned once; no sequence of studies is traced by date.",
+      "C": "Experiments are described for what they showed, never as procedures to follow.",
+      "D": "The opening establishes that something in the bird reads the field; that is not in dispute."
+    }
+  },
+  {
+    "id": "r195",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "hard",
+    "passage": "rp20",
+    "context": "The fifth paragraph contributes to the passage’s structure chiefly by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "explaining why the retinal mechanism cannot account for the map sense."
+      },
+      {
+        "id": "B",
+        "text": "removing support from the candidate the passage introduced first."
+      },
+      {
+        "id": "C",
+        "text": "introducing a third mechanism that neither earlier paragraph considered."
+      },
+      {
+        "id": "D",
+        "text": "restating the radio-frequency result in more accessible language."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The limits of the retinal mechanism are the closing paragraph’s business, not this one’s.",
+      "B": "Correct — the beak cells were the mechanical candidate’s physical evidence, and they are reassigned.",
+      "C": "No third mechanism appears; the paragraph is about what one of the two lost.",
+      "D": "The radio-frequency result belongs to the paragraph before and is not repeated here."
+    }
+  },
+  {
+    "id": "r196",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "medium",
+    "passage": "rp20",
+    "context": "The writer’s attitude toward the magnetite hypothesis is best described as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "convinced that it remains the better of the two available explanations."
+      },
+      {
+        "id": "B",
+        "text": "uninterested, since the passage is concerned only with the retina."
+      },
+      {
+        "id": "C",
+        "text": "sympathetic to its appeal while following the evidence away from it."
+      },
+      {
+        "id": "D",
+        "text": "contemptuous of researchers who proposed something so obviously wrong."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The passage says the weight of evidence moved toward the retina instead.",
+      "B": "Two full paragraphs are given to it, which is not the treatment of a side issue.",
+      "C": "Correct — it is called satisfying and concrete, and then shown losing ground twice over.",
+      "D": "Nothing mocks anyone; the reassignment of the beak cells is reported without blame."
+    }
+  },
+  {
+    "id": "r197",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "hard",
+    "passage": "rp20",
+    "context": "In the final paragraph the writer’s attitude toward what remains unknown is best described as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "frustrated that fifty years has produced so little."
+      },
+      {
+        "id": "B",
+        "text": "confident the map sense uses the same mechanism."
+      },
+      {
+        "id": "C",
+        "text": "doubtful a displaced bird finds its way home."
+      },
+      {
+        "id": "D",
+        "text": "untroubled by what is still open."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The argument is called unusually productive, which is the opposite of a complaint.",
+      "B": "The paragraph raises iron-based sensing as the likelier candidate for that second job.",
+      "C": "Displacement is offered as something birds evidently manage and nobody has explained.",
+      "D": "Correct — the gap is stated plainly, with the honest summary preferred to the headlines."
+    }
+  },
+  {
+    "id": "r198",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "medium",
+    "passage": "rp20",
+    "context": "Which result most directly supports locating the compass in the retina rather than the beak?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A weak radio-frequency field, too feeble to move a crystal, scrambles orientation."
+      },
+      {
+        "id": "B",
+        "text": "Magnetite crystals were reported in the upper beaks of several migratory species."
+      },
+      {
+        "id": "C",
+        "text": "A robin taken from a German garden sets off toward the southwest when released."
+      },
+      {
+        "id": "D",
+        "text": "Cryptochrome is a light-sensitive protein that sits in the retina of the bird."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it rules out a mechanical needle by being far too weak to move one.",
+      "B": "That is the evidence for the beak, and the passage later reassigns the cells that carried it.",
+      "C": "The southwest heading shows a magnetic sense exists without saying where it sits.",
+      "D": "Where the protein sits is the hypothesis being tested, not a result that tests it."
+    }
+  },
+  {
+    "id": "r199",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "hard",
+    "passage": "rp20",
+    "context": "Which finding, if established, would most weaken the case built in the fourth paragraph?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The field is weaker over Germany than Norway."
+      },
+      {
+        "id": "B",
+        "text": "Robins orient normally in the dark."
+      },
+      {
+        "id": "C",
+        "text": "Cryptochrome occurs in non-migratory birds too."
+      },
+      {
+        "id": "D",
+        "text": "Magnetite occurs in the beaks of fish as well."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Field strength varies everywhere and bears on neither result in that paragraph.",
+      "B": "Correct — the paragraph rests on light being required, and this would remove that requirement.",
+      "C": "A protein found more widely than expected says nothing about whether it senses the field.",
+      "D": "Where else magnetite occurs leaves the light and radio-frequency results untouched."
+    }
+  },
+  {
+    "id": "r200",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "medium",
+    "passage": "rp20",
+    "context": "The statement that \"A compass and a map are not the same instrument\" serves to distinguish:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the mechanical hypothesis from the chemical one that displaced it."
+      },
+      {
+        "id": "B",
+        "text": "migratory species of bird from the species that stay in one place."
+      },
+      {
+        "id": "C",
+        "text": "knowing which way is north from knowing where you have been taken."
+      },
+      {
+        "id": "D",
+        "text": "laboratory testing of captive birds from observation of birds in the wild."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Both candidates are compasses; the map is a separate job that neither has explained.",
+      "B": "Non-migratory birds are not discussed, so the image cannot be drawing that line.",
+      "C": "Correct — the next sentences give direction to the compass and displacement to the map.",
+      "D": "Captivity and the wild are never contrasted anywhere in the passage."
+    }
+  },
+  {
+    "id": "r201",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "hard",
+    "passage": "rp20",
+    "context": "The writer says a bird would \"not feel north so much as see it\" in order to convey that the retinal mechanism:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "produces a bright spot on the horizon that the bird can fly toward."
+      },
+      {
+        "id": "B",
+        "text": "works only in daylight and shuts down completely after dusk."
+      },
+      {
+        "id": "C",
+        "text": "requires the bird to have learned the route before it can be used."
+      },
+      {
+        "id": "D",
+        "text": "delivers direction as part of vision rather than as a push on a nerve."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The passage describes a faint pattern laid over the view, not a point of light to aim at.",
+      "B": "Light is needed, but the sentence is about the form of the signal rather than its schedule.",
+      "C": "Learning is never mentioned; the robin in the first paragraph sets off without being taught.",
+      "D": "Correct — the contrast is with the beak needle, whose signal is a physical push on a nerve."
+    }
+  },
+  {
+    "id": "r202",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "medium",
+    "passage": "rp20",
+    "context": "As used in the final paragraph, \"robustly\" most nearly means:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "in a way that holds up under testing."
+      },
+      {
+        "id": "B",
+        "text": "with unusual physical strength or vigour."
+      },
+      {
+        "id": "C",
+        "text": "in a manner that is loud and unsubtle."
+      },
+      {
+        "id": "D",
+        "text": "without allowing for any exception at all."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it modifies \"explains\", and the two results in the fourth paragraph are the testing.",
+      "B": "Physical vigour belongs to bodies rather than to explanations.",
+      "C": "The word describes how well the explanation survives, not how it sounds.",
+      "D": "The same sentence goes on to name a large exception, so nothing is being claimed absolutely."
+    }
+  },
+  {
+    "id": "r203",
+    "section": "reading",
+    "topic": "comparison",
+    "difficulty": "medium",
+    "passage": "rp20",
+    "context": "The two candidate mechanisms differ most importantly in that only the retinal one:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "was supported by images later reinterpreted."
+      },
+      {
+        "id": "B",
+        "text": "needs light in order to work."
+      },
+      {
+        "id": "C",
+        "text": "has ever been proposed for the European robin."
+      },
+      {
+        "id": "D",
+        "text": "explains how a displaced bird knows its direction."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The reinterpreted images were the beak cells, which belong to the mechanical candidate.",
+      "B": "Correct — the light and colour results are the ones a mechanical needle would not care about.",
+      "C": "Both candidates are discussed in connection with the robin from the opening paragraph.",
+      "D": "Neither explains the map sense; that is the gap the passage closes on."
+    }
   }
 ]
