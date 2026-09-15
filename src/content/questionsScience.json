@@ -3519,7 +3519,7 @@
       },
       {
         "id": "D",
-        "text": "It varied - each catalyst was faster at some concentrations."
+        "text": "It varied — each catalyst was faster at some concentrations."
       }
     ],
     "answer": "B",
@@ -3557,7 +3557,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "At 0.4 mol/L, Catalyst Y takes 80 s and Catalyst X takes 50 s; the difference is 80 - 50 = 30 s.",
+      "A": "At 0.4 mol/L, Catalyst Y takes 80 s and Catalyst X takes 50 s; the difference is 80 − 50 = 30 s.",
       "B": "The time for Catalyst X itself, not the difference between the two catalysts.",
       "C": "The time for Catalyst Y itself, not the difference between the two catalysts.",
       "D": "Adds the two times together instead of subtracting."
@@ -3656,7 +3656,7 @@
     ],
     "answer": "B",
     "why": {
-      "B": "A concentration of 0.3 mol/L falls exactly halfway between the 0.2 mol/L row (80 s) and the 0.4 mol/L row (50 s), so the estimated time is halfway between them: 80 - (80-50)/2 = 65 s.",
+      "B": "A concentration of 0.3 mol/L falls exactly halfway between the 0.2 mol/L row (80 s) and the 0.4 mol/L row (50 s), so the estimated time is halfway between them: 80 − (80 − 50)/2 = 65 s.",
       "A": "The reading for 0.4 mol/L, one row past the value being asked about.",
       "C": "The reading for 0.2 mol/L, one row before the value being asked about.",
       "D": "Adds, rather than subtracts, half the difference between the two bracketing rows."
@@ -4481,7 +4481,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Between 0.8 and 1.6 mol/L, time falls by 12 s over a 0.8 mol/L increase, a rate of -15 s per mol/L. Applying that same rate for another 0.8 mol/L increase, from 1.6 to 2.4 mol/L, gives 18 - 15(0.8) = 6 s.",
+      "A": "Between 0.8 and 1.6 mol/L, time falls by 12 s over a 0.8 mol/L increase, a rate of −15 s per mol/L. Applying that same rate for another 0.8 mol/L increase, from 1.6 to 2.4 mol/L, gives 18 − 15(0.8) = 6 s.",
       "C": "Assumes no further change beyond the 1.6 mol/L reading.",
       "D": "Reuses the 0.8 mol/L reading rather than extrapolating past 1.6 mol/L.",
       "B": "Extrapolates only half of the expected further decrease."

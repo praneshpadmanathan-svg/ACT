@@ -2969,7 +2969,7 @@
     ],
     "answer": "B",
     "why": {
-      "B": "The flat fee is charged once, so subtract it before dividing: 185 - 45 = 140 dollars of labor. At $28 per hour, 140 / 28 = 5 hours.",
+      "B": "The flat fee is charged once, so subtract it before dividing: 185 − 45 = 140 dollars of labor. At $28 per hour, 140 / 28 = 5 hours.",
       "A": "Subtracted the flat fee and then one hour's labor as well, as if the first hour were included in the fee.",
       "C": "Divided the whole bill by the hourly rate, never removing the flat fee.",
       "D": "Added the flat fee instead of subtracting it, giving 230 / 28."
@@ -3001,7 +3001,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Subtract 7 from both sides: x = 15 - 7 = 8.",
+      "A": "Subtract 7 from both sides: x = 15 − 7 = 8.",
       "D": "Added 7 to 15 instead of subtracting it from both sides.",
       "C": "Forgot to subtract 7 from both sides, leaving x equal to the total.",
       "B": "Made an arithmetic slip while subtracting 7 from 15."
@@ -3012,11 +3012,11 @@
     "section": "math",
     "topic": "linear equations",
     "difficulty": "easy",
-    "context": "What is the solution to 3(2x - 5) = 4x + 7?",
+    "context": "What is the solution to 3(2x − 5) = 4x + 7?",
     "choices": [
       {
         "id": "A",
-        "text": "-4"
+        "text": "−4"
       },
       {
         "id": "B",
@@ -3033,7 +3033,7 @@
     ],
     "answer": "D",
     "why": {
-      "D": "Distribute: 6x - 15 = 4x + 7. Collect x-terms: 6x - 4x = 7 + 15, so 2x = 22 and x = 11.",
+      "D": "Distribute: 6x − 15 = 4x + 7. Collect x-terms: 6x − 4x = 7 + 15, so 2x = 22 and x = 11.",
       "C": "Distributed the 3 across only the first term inside the parentheses.",
       "A": "Subtracted 15 from 7 instead of adding it when moving terms.",
       "B": "Added 4x to both sides instead of subtracting it."
@@ -3044,7 +3044,7 @@
     "section": "math",
     "topic": "linear equations",
     "difficulty": "easy",
-    "context": "Solve for x: 4x - 9 = 2x + 7.",
+    "context": "Solve for x: 4x − 9 = 2x + 7.",
     "choices": [
       {
         "id": "A",
@@ -3065,7 +3065,7 @@
     ],
     "answer": "B",
     "why": {
-      "B": "4x - 2x = 7 + 9, so 2x = 16 and x = 8.",
+      "B": "4x − 2x = 7 + 9, so 2x = 16 and x = 8.",
       "A": "Divided 16 by 4 instead of by 2.",
       "D": "Forgot to divide by 2 after combining the x-terms.",
       "C": "Made an arithmetic slip while combining like terms."
@@ -3097,7 +3097,7 @@
     ],
     "answer": "C",
     "why": {
-      "C": "Subtract the flat fee from the total: 79 - 35 = 44. Divide the remainder by the per-mile rate: 44 / 0.20 = 220 miles.",
+      "C": "Subtract the flat fee from the total: 79 − 35 = 44. Divide the remainder by the per-mile rate: 44 / 0.20 = 220 miles.",
       "D": "Divided the total charge by the per-mile rate without first subtracting the flat fee.",
       "A": "Correctly subtracted the flat fee but forgot to divide by the per-mile rate.",
       "B": "Divided the flat fee by the rate instead of the remaining charge."
@@ -3129,7 +3129,7 @@
     ],
     "answer": "C",
     "why": {
-      "C": "Subtract the fee: 260 - 50 = 210. Divide by the monthly rate: 210 / 30 = 7 months.",
+      "C": "Subtract the fee: 260 − 50 = 210. Divide by the monthly rate: 210 / 30 = 7 months.",
       "D": "Divided the total by the monthly rate without first subtracting the sign-up fee.",
       "B": "Made an arithmetic slip after correctly subtracting the fee.",
       "A": "Swapped the fee and the monthly rate before dividing."
@@ -3140,7 +3140,7 @@
     "section": "math",
     "topic": "linear equations",
     "difficulty": "hard",
-    "context": "A chemist mixes x liters of a 10% acid solution with (20 - x) liters of a 40% acid solution to make 20 liters of a 25% acid mixture. How many liters of the 10% solution are used?",
+    "context": "A chemist mixes x liters of a 10% acid solution with (20 − x) liters of a 40% acid solution to make 20 liters of a 25% acid mixture. How many liters of the 10% solution are used?",
     "choices": [
       {
         "id": "A",
@@ -3161,7 +3161,7 @@
     ],
     "answer": "D",
     "why": {
-      "D": "0.10x + 0.40(20 - x) = 0.25(20). Expanding: 0.10x + 8 - 0.40x = 5, so -0.30x = -3 and x = 10.",
+      "D": "0.10x + 0.40(20 − x) = 0.25(20). Expanding: 0.10x + 8 − 0.40x = 5, so −0.30x = −3 and x = 10.",
       "B": "Set up the mixture equation with the two percentages swapped.",
       "C": "Made an arithmetic slip while combining the percentage terms.",
       "A": "Used the target percent directly as part of the setup instead of solving the equation."
@@ -3172,11 +3172,11 @@
     "section": "math",
     "topic": "quadratics",
     "difficulty": "easy",
-    "context": "What is the product (x - 5)(x + 5)?",
+    "context": "What is the product (x − 5)(x + 5)?",
     "choices": [
       {
         "id": "A",
-        "text": "x² - 10x - 25"
+        "text": "x² − 10x − 25"
       },
       {
         "id": "B",
@@ -3184,16 +3184,16 @@
       },
       {
         "id": "C",
-        "text": "x² - 10x + 25"
+        "text": "x² − 10x + 25"
       },
       {
         "id": "D",
-        "text": "x² - 25"
+        "text": "x² − 25"
       }
     ],
     "answer": "D",
     "why": {
-      "D": "This is a difference of squares: (x-5)(x+5) = x² - 25.",
+      "D": "This is a difference of squares: (x-5)(x+5) = x² − 25.",
       "A": "Incorrectly included a middle term instead of recognizing the difference of squares.",
       "B": "Made a sign error on the constant term.",
       "C": "Confused this with expanding (x-5)², a perfect square, instead of a difference of squares."
@@ -3204,28 +3204,28 @@
     "section": "math",
     "topic": "quadratics",
     "difficulty": "medium",
-    "context": "What is the product (x + 4)(x - 6) written in standard form?",
+    "context": "What is the product (x + 4)(x − 6) written in standard form?",
     "choices": [
       {
         "id": "A",
-        "text": "x² + 2x - 24"
+        "text": "x² + 2x − 24"
       },
       {
         "id": "B",
-        "text": "x² - 2x + 24"
+        "text": "x² − 2x + 24"
       },
       {
         "id": "C",
-        "text": "x² - 2x - 24"
+        "text": "x² − 2x − 24"
       },
       {
         "id": "D",
-        "text": "x² - 24"
+        "text": "x² − 24"
       }
     ],
     "answer": "C",
     "why": {
-      "C": "Using FOIL: x·x + x·(-6) + 4·x + 4·(-6) = x² - 6x + 4x - 24 = x² - 2x - 24.",
+      "C": "Using FOIL: x·x + x·(−6) + 4·x + 4·(−6) = x² − 6x + 4x − 24 = x² − 2x − 24.",
       "A": "Made a sign error while combining the middle terms.",
       "B": "Multiplied the constant terms as if both were positive.",
       "D": "Dropped the middle term when distributing."
@@ -3236,31 +3236,31 @@
     "section": "math",
     "topic": "quadratics",
     "difficulty": "medium",
-    "context": "Factor completely: x² + 3x - 18.",
+    "context": "Factor completely: x² + 3x − 18.",
     "choices": [
       {
         "id": "A",
-        "text": "(x + 6)(x - 3)"
+        "text": "(x + 6)(x − 3)"
       },
       {
         "id": "B",
-        "text": "(x + 3)(x - 6)"
+        "text": "(x + 3)(x − 6)"
       },
       {
         "id": "C",
-        "text": "(x - 6)(x - 3)"
+        "text": "(x − 6)(x − 3)"
       },
       {
         "id": "D",
-        "text": "(x + 9)(x - 2)"
+        "text": "(x + 9)(x − 2)"
       }
     ],
     "answer": "A",
     "why": {
-      "A": "Looking for two numbers that multiply to -18 and add to 3: 6 and -3 work, giving (x+6)(x-3).",
-      "B": "Used the coefficient 3 directly as a factor's constant instead of finding factor pairs of -18.",
+      "A": "Looking for two numbers that multiply to −18 and add to 3: 6 and −3 work, giving (x+6)(x-3).",
+      "B": "Used the coefficient 3 directly as a factor's constant instead of finding factor pairs of −18.",
       "C": "Made a sign error, using two negative constants instead of one positive and one negative.",
-      "D": "Chose a factor pair of -18 that doesn't sum to 3."
+      "D": "Chose a factor pair of −18 that doesn't sum to 3."
     }
   },
   {
@@ -3268,19 +3268,19 @@
     "section": "math",
     "topic": "quadratics",
     "difficulty": "hard",
-    "context": "Factor completely by grouping: x³ + 2x² - 9x - 18.",
+    "context": "Factor completely by grouping: x³ + 2x² − 9x − 18.",
     "choices": [
       {
         "id": "A",
-        "text": "(x + 2)(x - 9)"
+        "text": "(x + 2)(x − 9)"
       },
       {
         "id": "B",
-        "text": "(x + 2)(x - 3)(x + 3)"
+        "text": "(x + 2)(x − 3)(x + 3)"
       },
       {
         "id": "C",
-        "text": "(x - 2)(x + 3)(x - 3)"
+        "text": "(x − 2)(x + 3)(x − 3)"
       },
       {
         "id": "D",
@@ -3289,8 +3289,8 @@
     ],
     "answer": "B",
     "why": {
-      "B": "Group as x²(x+2) - 9(x+2) = (x+2)(x²-9), and x²-9 factors further as (x-3)(x+3), giving (x+2)(x-3)(x+3).",
-      "A": "Treated x² - 9 as a single binomial factor instead of factoring it as a difference of squares.",
+      "B": "Group as x²(x+2) − 9(x+2) = (x+2)(x²-9), and x²-9 factors further as (x-3)(x+3), giving (x+2)(x-3)(x+3).",
+      "A": "Treated x² − 9 as a single binomial factor instead of factoring it as a difference of squares.",
       "C": "Made a sign error on the first grouped factor.",
       "D": "Used the same sign for both factors of the difference of squares instead of one positive and one negative."
     }
@@ -3321,7 +3321,7 @@
     ],
     "answer": "B",
     "why": {
-      "B": "Let the integers be n and n + 2. Then n(n + 2) = 168, so n^2 + 2n - 168 = 0, which factors as (n + 14)(n - 12) = 0. The positive solution is n = 12, so the integers are 12 and 14 and their sum is 26.",
+      "B": "Let the integers be n and n + 2. Then n(n + 2) = 168, so n^2 + 2n − 168 = 0, which factors as (n + 14)(n − 12) = 0. The positive solution is n = 12, so the integers are 12 and 14 and their sum is 26.",
       "A": "Reported the larger integer instead of the sum the question asked for.",
       "C": "Used consecutive integers (13 and 14) rather than consecutive even integers.",
       "D": "Halved the product instead of solving for the integers."
@@ -3336,7 +3336,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "-5"
+        "text": "−5"
       },
       {
         "id": "B",
@@ -3396,7 +3396,7 @@
     "section": "math",
     "topic": "quadratics",
     "difficulty": "easy",
-    "context": "What is the positive solution to x² - 9 = 0?",
+    "context": "What is the positive solution to x² − 9 = 0?",
     "choices": [
       {
         "id": "A",
@@ -3428,19 +3428,19 @@
     "section": "math",
     "topic": "quadratics",
     "difficulty": "medium",
-    "context": "One solution of x² - 5x - 24 = 0 is x = 8. What is the other solution?",
+    "context": "One solution of x² − 5x − 24 = 0 is x = 8. What is the other solution?",
     "choices": [
       {
         "id": "A",
-        "text": "-16"
+        "text": "−16"
       },
       {
         "id": "B",
-        "text": "-8"
+        "text": "−8"
       },
       {
         "id": "C",
-        "text": "-3"
+        "text": "−3"
       },
       {
         "id": "D",
@@ -3449,10 +3449,10 @@
     ],
     "answer": "C",
     "why": {
-      "C": "For x² + bx + c = 0, the product of the roots equals c. Here c = -24, so the other root is -24 / 8 = -3.",
+      "C": "For x² + bx + c = 0, the product of the roots equals c. Here c = −24, so the other root is −24 / 8 = −3.",
       "D": "Dropped the negative sign on the second root.",
       "B": "Repeated the given root instead of solving for the other one.",
-      "A": "Subtracted 24 - 8 instead of dividing the constant term by the known root."
+      "A": "Subtracted 24 − 8 instead of dividing the constant term by the known root."
     }
   },
   {
@@ -3460,11 +3460,11 @@
     "section": "math",
     "topic": "quadratics",
     "difficulty": "medium",
-    "context": "What is the sum of the solutions to x² - 7x + 10 = 0?",
+    "context": "What is the sum of the solutions to x² − 7x + 10 = 0?",
     "choices": [
       {
         "id": "A",
-        "text": "-7"
+        "text": "−7"
       },
       {
         "id": "B",
@@ -3481,8 +3481,8 @@
     ],
     "answer": "C",
     "why": {
-      "C": "For ax² + bx + c = 0, the sum of the roots equals -b/a. Here a = 1 and b = -7, so the sum is -(-7)/1 = 7.",
-      "A": "Used -b directly without dividing by a, forgetting the sum of roots is -b/a with the correct sign.",
+      "C": "For ax² + bx + c = 0, the sum of the roots equals −b/a. Here a = 1 and b = −7, so the sum is −(−7)/1 = 7.",
+      "A": "Used −b directly without dividing by a, forgetting the sum of roots is −b/a with the correct sign.",
       "D": "Reported the product of the roots instead of their sum.",
       "B": "Solved for the roots but reported only the smaller one."
     }
@@ -3513,7 +3513,7 @@
     ],
     "answer": "B",
     "why": {
-      "B": "Factoring: (x+1)(x+5) = 0, so x = -1 or x = -5. The positive difference is |-1 - (-5)| = 4.",
+      "B": "Factoring: (x+1)(x+5) = 0, so x = −1 or x = −5. The positive difference is |−1 − (−5)| = 4.",
       "A": "Reported the smaller root's absolute value instead of the difference.",
       "C": "Reported the larger root's absolute value instead of the difference.",
       "D": "Used the coefficient b directly as the difference between the roots."
@@ -3524,7 +3524,7 @@
     "section": "math",
     "topic": "quadratics",
     "difficulty": "hard",
-    "context": "The height of a ball thrown into the air is modeled by h(t) = -16t² + 64t + 5, where h is in feet and t is in seconds. What is the maximum height the ball reaches, in feet?",
+    "context": "The height of a ball thrown into the air is modeled by h(t) = −16t² + 64t + 5, where h is in feet and t is in seconds. What is the maximum height the ball reaches, in feet?",
     "choices": [
       {
         "id": "A",
@@ -3545,9 +3545,9 @@
     ],
     "answer": "C",
     "why": {
-      "C": "The maximum of a downward-opening parabola occurs at its vertex, t = -b/(2a) = -64/(2·-16) = 2. h(2) = -16(4) + 64(2) + 5 = -64 + 128 + 5 = 69 feet.",
+      "C": "The maximum of a downward-opening parabola occurs at its vertex, t = −b/(2a) = −64/(2·-16) = 2. h(2) = −16(4) + 64(2) + 5 = −64 + 128 + 5 = 69 feet.",
       "B": "Used the linear coefficient as the maximum height instead of evaluating h at the vertex.",
-      "D": "Computed only 64t at the vertex and omitted the -16t² and +5 terms.",
+      "D": "Computed only 64t at the vertex and omitted the −16t² and +5 terms.",
       "A": "Evaluated h(0), the starting height, instead of the maximum."
     }
   },
@@ -3577,7 +3577,7 @@
     ],
     "answer": "C",
     "why": {
-      "C": "A repeated root requires the discriminant to be zero: k² - 4(1)(16) = 0, so k² = 64 and k = 8.",
+      "C": "A repeated root requires the discriminant to be zero: k² − 4(1)(16) = 0, so k² = 64 and k = 8.",
       "A": "Took half of 16 instead of the square root of 4 times 16.",
       "B": "Made an arithmetic slip while solving k² = 64.",
       "D": "Used the constant term itself as k instead of solving the discriminant equation."
@@ -3652,7 +3652,7 @@
     "section": "math",
     "topic": "fractions & percents",
     "difficulty": "medium",
-    "context": "Simplify (x² - 9) / (x + 3) for x ≠ -3.",
+    "context": "Simplify (x² − 9) / (x + 3) for x ≠ −3.",
     "choices": [
       {
         "id": "A",
@@ -3660,20 +3660,20 @@
       },
       {
         "id": "B",
-        "text": "x - 9"
+        "text": "x − 9"
       },
       {
         "id": "C",
-        "text": "x² - 3"
+        "text": "x² − 3"
       },
       {
         "id": "D",
-        "text": "x - 3"
+        "text": "x − 3"
       }
     ],
     "answer": "D",
     "why": {
-      "D": "x² - 9 factors as (x - 3)(x + 3). Dividing by (x + 3) leaves x - 3, valid wherever x ≠ -3.",
+      "D": "x² − 9 factors as (x − 3)(x + 3). Dividing by (x + 3) leaves x − 3, valid wherever x ≠ −3.",
       "A": "Canceled the denominator against the wrong factor of the numerator.",
       "B": "Subtracted 9 from x instead of factoring the difference of squares.",
       "C": "Canceled only part of the numerator instead of the full matching factor."
@@ -3684,7 +3684,7 @@
     "section": "math",
     "topic": "fractions & percents",
     "difficulty": "medium",
-    "context": "Simplify (x² + 5x + 6) / (x + 2) for x ≠ -2.",
+    "context": "Simplify (x² + 5x + 6) / (x + 2) for x ≠ −2.",
     "choices": [
       {
         "id": "A",
@@ -3716,7 +3716,7 @@
     "section": "math",
     "topic": "fractions & percents",
     "difficulty": "hard",
-    "context": "Solve for x: (x + 1) / (x - 2) = 3.",
+    "context": "Solve for x: (x + 1) / (x − 2) = 3.",
     "choices": [
       {
         "id": "A",
@@ -3737,7 +3737,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Cross-multiplying: x + 1 = 3(x - 2) = 3x - 6, so 7 = 2x and x = 3.5.",
+      "A": "Cross-multiplying: x + 1 = 3(x − 2) = 3x − 6, so 7 = 2x and x = 3.5.",
       "D": "Added instead of subtracted when isolating x, doubling the constant term.",
       "B": "Made an arithmetic slip while combining like terms.",
       "C": "Left x on both sides of the equation without fully combining like terms."
@@ -3748,7 +3748,7 @@
     "section": "math",
     "topic": "systems",
     "difficulty": "easy",
-    "context": "Solve the system x + y = 10 and x - y = 2 for x.",
+    "context": "Solve the system x + y = 10 and x − y = 2 for x.",
     "choices": [
       {
         "id": "A",
@@ -3784,7 +3784,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "-2"
+        "text": "−2"
       },
       {
         "id": "B",
@@ -3812,7 +3812,7 @@
     "section": "math",
     "topic": "systems",
     "difficulty": "easy",
-    "context": "Solve the system y = 2x + 1 and y = -x + 7 for x.",
+    "context": "Solve the system y = 2x + 1 and y = −x + 7 for x.",
     "choices": [
       {
         "id": "A",
@@ -3833,7 +3833,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Setting the expressions equal: 2x + 1 = -x + 7, so 3x = 6 and x = 2.",
+      "A": "Setting the expressions equal: 2x + 1 = −x + 7, so 3x = 6 and x = 2.",
       "D": "Added the two equations' constants, 1 and 7, instead of solving for x.",
       "B": "Made an arithmetic slip while combining like terms.",
       "C": "Used the y-intercept of the second equation as the value of x."
@@ -3844,11 +3844,11 @@
     "section": "math",
     "topic": "systems",
     "difficulty": "medium",
-    "context": "Solve the system 2x + y = 11 and x - y = 1. What is the value of y?",
+    "context": "Solve the system 2x + y = 11 and x − y = 1. What is the value of y?",
     "choices": [
       {
         "id": "A",
-        "text": "-3"
+        "text": "−3"
       },
       {
         "id": "B",
@@ -3865,10 +3865,10 @@
     ],
     "answer": "B",
     "why": {
-      "B": "From x - y = 1, x = y + 1. Substitute into 2x + y = 11: 2(y+1) + y = 11, so 3y + 2 = 11, 3y = 9, and y = 3.",
+      "B": "From x − y = 1, x = y + 1. Substitute into 2x + y = 11: 2(y+1) + y = 11, so 3y + 2 = 11, 3y = 9, and y = 3.",
       "C": "Found the value of x and reported it instead of y.",
       "A": "Made a sign error while solving for y.",
-      "D": "Misread x - y = 1 as x = 1 and substituted 1 for x."
+      "D": "Misread x − y = 1 as x = 1 and substituted 1 for x."
     }
   },
   {
@@ -3876,7 +3876,7 @@
     "section": "math",
     "topic": "systems",
     "difficulty": "medium",
-    "context": "Solve the system 4x - y = 10 and 2x + y = 8 for x.",
+    "context": "Solve the system 4x − y = 10 and 2x + y = 8 for x.",
     "choices": [
       {
         "id": "A",
@@ -3940,7 +3940,7 @@
     "section": "math",
     "topic": "functions",
     "difficulty": "easy",
-    "context": "If f(x) = 4x - 8, what is f⁻¹(x)?",
+    "context": "If f(x) = 4x − 8, what is f⁻¹(x)?",
     "choices": [
       {
         "id": "A",
@@ -3952,16 +3952,16 @@
       },
       {
         "id": "C",
-        "text": "(x - 8)/4"
+        "text": "(x − 8)/4"
       },
       {
         "id": "D",
-        "text": "x/4 - 8"
+        "text": "x/4 − 8"
       }
     ],
     "answer": "A",
     "why": {
-      "A": "Set y = 4x - 8, swap x and y to get x = 4y - 8, then solve for y: y = (x+8)/4.",
+      "A": "Set y = 4x − 8, swap x and y to get x = 4y − 8, then solve for y: y = (x+8)/4.",
       "B": "Reversed the signs without actually solving the equation for x.",
       "C": "Made a sign error, subtracting 8 instead of adding it.",
       "D": "Divided by 4 before adding 8 instead of after."
@@ -3972,7 +3972,7 @@
     "section": "math",
     "topic": "functions",
     "difficulty": "medium",
-    "context": "If f(x) = 2x + 3 and g(x) = x - 1, what is f(g(4))?",
+    "context": "If f(x) = 2x + 3 and g(x) = x − 1, what is f(g(4))?",
     "choices": [
       {
         "id": "A",
@@ -3993,7 +3993,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "First find g(4) = 4 - 1 = 3. Then f(3) = 2(3) + 3 = 6 + 3 = 9.",
+      "A": "First find g(4) = 4 − 1 = 3. Then f(3) = 2(3) + 3 = 6 + 3 = 9.",
       "B": "Evaluated g(f(4)) instead of f(g(4)).",
       "D": "Added f(4) and g(4) instead of composing the functions.",
       "C": "Used g(4) = 4 directly, forgetting to subtract 1, then applied f to that value."
@@ -4004,7 +4004,7 @@
     "section": "math",
     "topic": "functions",
     "difficulty": "hard",
-    "context": "If f(x) = x + 3 and g(x) = x², what is g(f(x)) - f(g(x))?",
+    "context": "If f(x) = x + 3 and g(x) = x², what is g(f(x)) − f(g(x))?",
     "choices": [
       {
         "id": "A",
@@ -4025,7 +4025,7 @@
     ],
     "answer": "B",
     "why": {
-      "B": "g(f(x)) = (x+3)² = x² + 6x + 9. f(g(x)) = x² + 3. Subtracting: (x²+6x+9) - (x²+3) = 6x + 6.",
+      "B": "g(f(x)) = (x+3)² = x² + 6x + 9. f(g(x)) = x² + 3. Subtracting: (x²+6x+9) − (x²+3) = 6x + 6.",
       "A": "Subtracted the constants incorrectly while combining terms.",
       "C": "Forgot to cancel the x² terms when subtracting.",
       "D": "Dropped the constant term entirely while combining like terms."
@@ -4036,11 +4036,11 @@
     "section": "math",
     "topic": "functions",
     "difficulty": "easy",
-    "context": "What is the domain of f(x) = 1 / (x - 3)?",
+    "context": "What is the domain of f(x) = 1 / (x − 3)?",
     "choices": [
       {
         "id": "A",
-        "text": "x ≠ -3"
+        "text": "x ≠ −3"
       },
       {
         "id": "B",
@@ -4057,7 +4057,7 @@
     ],
     "answer": "C",
     "why": {
-      "C": "The denominator cannot equal zero, so x - 3 ≠ 0, meaning x ≠ 3.",
+      "C": "The denominator cannot equal zero, so x − 3 ≠ 0, meaning x ≠ 3.",
       "A": "Made a sign error identifying the excluded value.",
       "B": "Confused a rational function's restriction with a square root's inequality restriction.",
       "D": "Overlooked that division by zero is undefined when x = 3."
@@ -4068,7 +4068,7 @@
     "section": "math",
     "topic": "functions",
     "difficulty": "medium",
-    "context": "What is the domain of f(x) = √(x - 5)?",
+    "context": "What is the domain of f(x) = √(x − 5)?",
     "choices": [
       {
         "id": "A",
@@ -4084,15 +4084,15 @@
       },
       {
         "id": "D",
-        "text": "x ≥ -5"
+        "text": "x ≥ −5"
       }
     ],
     "answer": "A",
     "why": {
-      "A": "A square root's radicand cannot be negative, so x - 5 ≥ 0. Solving gives x ≥ 5, and x = 5 is included since √0 = 0 is defined.",
+      "A": "A square root's radicand cannot be negative, so x − 5 ≥ 0. Solving gives x ≥ 5, and x = 5 is included since √0 = 0 is defined.",
       "B": "Excluded the boundary point where the radicand equals zero.",
       "C": "Reversed the direction of the inequality.",
-      "D": "Solved x - 5 ≥ 0 as if it were x + 5 ≥ 0."
+      "D": "Solved x − 5 ≥ 0 as if it were x + 5 ≥ 0."
     }
   },
   {
@@ -4100,7 +4100,7 @@
     "section": "math",
     "topic": "functions",
     "difficulty": "hard",
-    "context": "What is the range of f(x) = (x - 2)² + 5?",
+    "context": "What is the range of f(x) = (x − 2)² + 5?",
     "choices": [
       {
         "id": "A",
@@ -4153,7 +4153,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Slope = (7 - 3) / (2 - 0) = 4 / 2 = 2.",
+      "A": "Slope = (7 − 3) / (2 − 0) = 4 / 2 = 2.",
       "C": "Used the rise but forgot to divide by the run.",
       "D": "Added the coordinates instead of subtracting them.",
       "B": "Made an arithmetic slip while combining the coordinates."
@@ -4164,11 +4164,11 @@
     "section": "math",
     "topic": "functions",
     "difficulty": "medium",
-    "context": "The graph of g(x) crosses the x-axis at x = -3 and x = 5, and has a y-intercept of -15. If g(x) = a(x+3)(x-5) for some constant a, what is the value of a?",
+    "context": "The graph of g(x) crosses the x-axis at x = −3 and x = 5, and has a y-intercept of −15. If g(x) = a(x+3)(x-5) for some constant a, what is the value of a?",
     "choices": [
       {
         "id": "A",
-        "text": "-1"
+        "text": "−1"
       },
       {
         "id": "B",
@@ -4185,8 +4185,8 @@
     ],
     "answer": "B",
     "why": {
-      "B": "Substitute x = 0 for the y-intercept: g(0) = a(3)(-5) = -15a. Setting -15a = -15 gives a = 1.",
-      "A": "Made a sign error while solving -15a = -15.",
+      "B": "Substitute x = 0 for the y-intercept: g(0) = a(3)(−5) = −15a. Setting −15a = −15 gives a = 1.",
+      "A": "Made a sign error while solving −15a = −15.",
       "C": "Used one of the given roots as the value of a.",
       "D": "Reported the magnitude of the y-intercept instead of solving for a."
     }
@@ -4196,7 +4196,7 @@
     "section": "math",
     "topic": "functions",
     "difficulty": "easy",
-    "context": "If f(x) = 5x - 3, what is f(4)?",
+    "context": "If f(x) = 5x − 3, what is f(4)?",
     "choices": [
       {
         "id": "A",
@@ -4217,7 +4217,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "f(4) = 5(4) - 3 = 20 - 3 = 17.",
+      "A": "f(4) = 5(4) − 3 = 20 − 3 = 17.",
       "B": "Added 3 instead of subtracting it.",
       "C": "Added 3 twice by mistake instead of subtracting it once.",
       "D": "Multiplied the entire expression by x again instead of substituting once."
@@ -4228,11 +4228,11 @@
     "section": "math",
     "topic": "functions",
     "difficulty": "medium",
-    "context": "If f(x) = 3x² - 2x + 1, what is f(-2)?",
+    "context": "If f(x) = 3x² − 2x + 1, what is f(−2)?",
     "choices": [
       {
         "id": "A",
-        "text": "-1"
+        "text": "−1"
       },
       {
         "id": "B",
@@ -4249,8 +4249,8 @@
     ],
     "answer": "D",
     "why": {
-      "D": "f(-2) = 3(-2)² - 2(-2) + 1 = 3(4) + 4 + 1 = 12 + 4 + 1 = 17.",
-      "B": "Evaluated f(2) instead of f(-2), losing the sign on the linear term.",
+      "D": "f(−2) = 3(−2)² − 2(−2) + 1 = 3(4) + 4 + 1 = 12 + 4 + 1 = 17.",
+      "B": "Evaluated f(2) instead of f(−2), losing the sign on the linear term.",
       "A": "Used x instead of x² in the first term.",
       "C": "Omitted the constant term at the end."
     }
@@ -4260,7 +4260,7 @@
     "section": "math",
     "topic": "functions",
     "difficulty": "hard",
-    "context": "If f(x) = 2x² - x + 4, what is f(a+1) - f(a), in terms of a?",
+    "context": "If f(x) = 2x² − x + 4, what is f(a+1) − f(a), in terms of a?",
     "choices": [
       {
         "id": "A",
@@ -4276,12 +4276,12 @@
       },
       {
         "id": "D",
-        "text": "4a - 1"
+        "text": "4a − 1"
       }
     ],
     "answer": "B",
     "why": {
-      "B": "f(a+1) = 2(a+1)² - (a+1) + 4 = 2a² + 4a + 2 - a - 1 + 4 = 2a² + 3a + 5. Subtracting f(a) = 2a² - a + 4 gives 4a + 1.",
+      "B": "f(a+1) = 2(a+1)² − (a+1) + 4 = 2a² + 4a + 2 − a − 1 + 4 = 2a² + 3a + 5. Subtracting f(a) = 2a² − a + 4 gives 4a + 1.",
       "A": "Subtracted the constant terms incorrectly while combining like terms.",
       "C": "Dropped a factor of 2 from the linear coefficient during expansion.",
       "D": "Made a sign error on the constant term while combining like terms."
@@ -4292,15 +4292,15 @@
     "section": "math",
     "topic": "functions",
     "difficulty": "easy",
-    "context": "A function is defined as f(x) = 2x for x ≤ 0, and f(x) = x + 3 for x > 0. What is f(-2)?",
+    "context": "A function is defined as f(x) = 2x for x ≤ 0, and f(x) = x + 3 for x > 0. What is f(−2)?",
     "choices": [
       {
         "id": "A",
-        "text": "-4"
+        "text": "−4"
       },
       {
         "id": "B",
-        "text": "-1"
+        "text": "−1"
       },
       {
         "id": "C",
@@ -4313,9 +4313,9 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Since -2 ≤ 0, use the first piece: f(-2) = 2(-2) = -4.",
-      "C": "Used the wrong piece (x+3) instead of checking that x = -2 satisfies x ≤ 0.",
-      "B": "Made an arithmetic slip while doubling -2.",
+      "A": "Since −2 ≤ 0, use the first piece: f(−2) = 2(−2) = −4.",
+      "C": "Used the wrong piece (x+3) instead of checking that x = −2 satisfies x ≤ 0.",
+      "B": "Made an arithmetic slip while doubling −2.",
       "D": "Evaluated the wrong piece and made an arithmetic slip at the same time."
     }
   },
@@ -4324,7 +4324,7 @@
     "section": "math",
     "topic": "functions",
     "difficulty": "medium",
-    "context": "A function is defined as f(x) = x + 1 for x < 2, and f(x) = 2x - 1 for x ≥ 2. What is f(5)?",
+    "context": "A function is defined as f(x) = x + 1 for x < 2, and f(x) = 2x − 1 for x ≥ 2. What is f(5)?",
     "choices": [
       {
         "id": "A",
@@ -4345,7 +4345,7 @@
     ],
     "answer": "C",
     "why": {
-      "C": "Since 5 ≥ 2, use the second piece: f(5) = 2(5) - 1 = 10 - 1 = 9.",
+      "C": "Since 5 ≥ 2, use the second piece: f(5) = 2(5) − 1 = 10 − 1 = 9.",
       "B": "Used the first piece (x + 1) instead of checking which piece applies at x = 5.",
       "D": "Computed 2x for the second piece but dropped the constant term.",
       "A": "Evaluated the piecewise definition at x = 2 instead of x = 5."
@@ -4364,7 +4364,7 @@
       },
       {
         "id": "B",
-        "text": "y = |x-4| - 1"
+        "text": "y = |x-4| − 1"
       },
       {
         "id": "C",
@@ -4392,11 +4392,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "y = (x+3)² - 2"
+        "text": "y = (x+3)² − 2"
       },
       {
         "id": "B",
-        "text": "y = (x-3)² - 2"
+        "text": "y = (x-3)² − 2"
       },
       {
         "id": "C",
@@ -4409,7 +4409,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Shifting left by h replaces x with (x + h): shifting left 3 gives (x+3)². Shifting down 2 subtracts 2 from the whole expression: (x+3)² - 2.",
+      "A": "Shifting left by h replaces x with (x + h): shifting left 3 gives (x+3)². Shifting down 2 subtracts 2 from the whole expression: (x+3)² − 2.",
       "B": "Shifted the graph right instead of left.",
       "C": "Shifted the graph up instead of down.",
       "D": "Swapped the horizontal and vertical shift amounts."
@@ -4428,20 +4428,20 @@
       },
       {
         "id": "B",
-        "text": "y = -(x-2)²"
+        "text": "y = −(x-2)²"
       },
       {
         "id": "C",
-        "text": "y = -x² + 2"
+        "text": "y = −x² + 2"
       },
       {
         "id": "D",
-        "text": "y = -(x+2)²"
+        "text": "y = −(x+2)²"
       }
     ],
     "answer": "D",
     "why": {
-      "D": "Reflecting over the x-axis negates the whole function: y = -x². Shifting left 2 replaces x with (x+2): y = -(x+2)².",
+      "D": "Reflecting over the x-axis negates the whole function: y = −x². Shifting left 2 replaces x with (x+2): y = −(x+2)².",
       "A": "Omitted the negative sign, leaving out the reflection entirely.",
       "B": "Shifted right instead of left.",
       "C": "Shifted upward instead of shifting the input left."
@@ -4537,7 +4537,7 @@
     ],
     "answer": "B",
     "why": {
-      "B": "A linear pair is supplementary, summing to 180°: 180 - 35 = 145°.",
+      "B": "A linear pair is supplementary, summing to 180°: 180 − 35 = 145°.",
       "A": "Confused a linear pair (supplementary, 180°) with complementary angles (90°).",
       "D": "Added 180 twice instead of subtracting once.",
       "C": "Subtracted 35 from 250 instead of from 180."
@@ -4569,7 +4569,7 @@
     ],
     "answer": "D",
     "why": {
-      "D": "Co-interior (same-side interior) angles are supplementary, summing to 180°. So the other angle is 180 - 62 = 118°.",
+      "D": "Co-interior (same-side interior) angles are supplementary, summing to 180°. So the other angle is 180 − 62 = 118°.",
       "B": "Treated the angles as alternate interior angles, which are congruent, instead of co-interior angles, which are supplementary.",
       "A": "Subtracted 62 from 90 instead of from 180.",
       "C": "Assumed the angles were complementary instead of supplementary."
@@ -4612,7 +4612,7 @@
     "section": "math",
     "topic": "circles",
     "difficulty": "medium",
-    "context": "In the standard (x,y) coordinate plane, a circle is given by x^2 + y^2 - 6x + 8y - 11 = 0. What is the radius of the circle?",
+    "context": "In the standard (x,y) coordinate plane, a circle is given by x^2 + y^2 − 6x + 8y − 11 = 0. What is the radius of the circle?",
     "choices": [
       {
         "id": "A",
@@ -4633,7 +4633,7 @@
     ],
     "answer": "C",
     "why": {
-      "C": "Complete the square in each variable: (x^2 - 6x + 9) + (y^2 + 8y + 16) = 11 + 9 + 16, so (x - 3)^2 + (y + 4)^2 = 36. The right side is r^2, so r = 6.",
+      "C": "Complete the square in each variable: (x^2 − 6x + 9) + (y^2 + 8y + 16) = 11 + 9 + 16, so (x − 3)^2 + (y + 4)^2 = 36. The right side is r^2, so r = 6.",
       "A": "Read the x-coordinate of the center as the radius.",
       "B": "Took the square root of 9 + 16, combining the two completing-the-square constants instead of adding them to the constant term.",
       "D": "Stopped at r^2 and never took the square root."
@@ -4676,11 +4676,11 @@
     "section": "math",
     "topic": "circles",
     "difficulty": "easy",
-    "context": "A circle has center (3, -2) and passes through the point (3, 6). What is the radius of the circle?",
+    "context": "A circle has center (3, −2) and passes through the point (3, 6). What is the radius of the circle?",
     "choices": [
       {
         "id": "A",
-        "text": "-2"
+        "text": "−2"
       },
       {
         "id": "B",
@@ -4697,7 +4697,7 @@
     ],
     "answer": "D",
     "why": {
-      "D": "Since the center and the point share the same x-coordinate, the radius is just the vertical distance between them: |6 - (-2)| = 8.",
+      "D": "Since the center and the point share the same x-coordinate, the radius is just the vertical distance between them: |6 − (−2)| = 8.",
       "A": "Used the center's y-coordinate as the radius.",
       "C": "Used the point's y-coordinate as the radius.",
       "B": "Took half of the vertical distance instead of the full distance."
@@ -4836,7 +4836,7 @@
     "section": "math",
     "topic": "coordinate geometry",
     "difficulty": "easy",
-    "context": "What is the distance between the points (-3, 2) and (5, -4) in the standard (x, y) coordinate plane?",
+    "context": "What is the distance between the points (−3, 2) and (5, −4) in the standard (x, y) coordinate plane?",
     "choices": [
       {
         "id": "A",
@@ -4857,7 +4857,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "The distance formula is √((x₂-x₁)² + (y₂-y₁)²). Here x₂-x₁ = 5-(-3) = 8 and y₂-y₁ = -4-2 = -6. Distance = √(8² + (-6)²) = √(64+36) = √100 = 10.",
+      "A": "The distance formula is √((x₂-x₁)² + (y₂-y₁)²). Here x₂-x₁ = 5-(−3) = 8 and y₂-y₁ = −4-2 = −6. Distance = √(8² + (−6)²) = √(64+36) = √100 = 10.",
       "B": "Added the horizontal and vertical distances instead of using the distance formula.",
       "C": "Added the horizontal and vertical distances before squaring them.",
       "D": "Used only the vertical distance between the points."
@@ -4868,7 +4868,7 @@
     "section": "math",
     "topic": "coordinate geometry",
     "difficulty": "easy",
-    "context": "What is the midpoint of the segment connecting (-2, 7) and (6, -3) in the standard (x, y) coordinate plane?",
+    "context": "What is the midpoint of the segment connecting (−2, 7) and (6, −3) in the standard (x, y) coordinate plane?",
     "choices": [
       {
         "id": "A",
@@ -4884,12 +4884,12 @@
       },
       {
         "id": "D",
-        "text": "(8, -10)"
+        "text": "(8, −10)"
       }
     ],
     "answer": "B",
     "why": {
-      "B": "The midpoint is the average of the x-coordinates and the average of the y-coordinates: ((-2+6)/2, (7+(-3))/2) = (4/2, 4/2) = (2, 2).",
+      "B": "The midpoint is the average of the x-coordinates and the average of the y-coordinates: ((−2+6)/2, (7+(−3))/2) = (4/2, 4/2) = (2, 2).",
       "A": "Added the coordinates but forgot to divide by 2.",
       "C": "Subtracted the y-coordinates instead of adding them before averaging.",
       "D": "Computed the change in x and y instead of their average."
@@ -4900,15 +4900,15 @@
     "section": "math",
     "topic": "coordinate geometry",
     "difficulty": "easy",
-    "context": "What is the midpoint of the segment connecting (-4, 1) and (2, 9)?",
+    "context": "What is the midpoint of the segment connecting (−4, 1) and (2, 9)?",
     "choices": [
       {
         "id": "A",
-        "text": "(-2, 10)"
+        "text": "(−2, 10)"
       },
       {
         "id": "B",
-        "text": "(-1, 5)"
+        "text": "(−1, 5)"
       },
       {
         "id": "C",
@@ -4921,7 +4921,7 @@
     ],
     "answer": "B",
     "why": {
-      "B": "Midpoint = ((-4+2)/2, (1+9)/2) = (-1, 5).",
+      "B": "Midpoint = ((−4+2)/2, (1+9)/2) = (−1, 5).",
       "A": "Added the coordinates but forgot to divide by 2.",
       "C": "Subtracted the coordinates instead of averaging them.",
       "D": "Computed the difference in each coordinate instead of the midpoint."
@@ -4932,11 +4932,11 @@
     "section": "math",
     "topic": "coordinate geometry",
     "difficulty": "easy",
-    "context": "A line has slope -3 and passes through (2, -1). What is its y-intercept?",
+    "context": "A line has slope −3 and passes through (2, −1). What is its y-intercept?",
     "choices": [
       {
         "id": "A",
-        "text": "-7"
+        "text": "−7"
       },
       {
         "id": "B",
@@ -4953,9 +4953,9 @@
     ],
     "answer": "C",
     "why": {
-      "C": "y = mx + b, so -1 = -3(2) + b, giving -1 = -6 + b and b = 5.",
-      "A": "Used -6 as if adding it to -1 instead of subtracting.",
-      "B": "Made an arithmetic slip while combining -1 and -6.",
+      "C": "y = mx + b, so −1 = −3(2) + b, giving −1 = −6 + b and b = 5.",
+      "A": "Used −6 as if adding it to −1 instead of subtracting.",
+      "B": "Made an arithmetic slip while combining −1 and −6.",
       "D": "Added instead of subtracted when isolating b."
     }
   },
@@ -4980,7 +4980,7 @@
       },
       {
         "id": "D",
-        "text": "y = -2x + 9"
+        "text": "y = −2x + 9"
       }
     ],
     "answer": "C",
@@ -4996,11 +4996,11 @@
     "section": "math",
     "topic": "coordinate geometry",
     "difficulty": "medium",
-    "context": "A line is perpendicular to the line y = 2x - 3 and passes through the point (4, 1). What is the equation of this line in slope-intercept form?",
+    "context": "A line is perpendicular to the line y = 2x − 3 and passes through the point (4, 1). What is the equation of this line in slope-intercept form?",
     "choices": [
       {
         "id": "A",
-        "text": "y = -0.5x + 3"
+        "text": "y = −0.5x + 3"
       },
       {
         "id": "B",
@@ -5008,7 +5008,7 @@
       },
       {
         "id": "C",
-        "text": "y = -0.5x - 1"
+        "text": "y = −0.5x − 1"
       },
       {
         "id": "D",
@@ -5017,7 +5017,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Perpendicular lines have slopes that are negative reciprocals. The given line has slope 2, so the new line has slope -0.5. Using the point (4,1): 1 = -0.5(4) + b, so 1 = -2 + b and b = 3.",
+      "A": "Perpendicular lines have slopes that are negative reciprocals. The given line has slope 2, so the new line has slope −0.5. Using the point (4,1): 1 = −0.5(4) + b, so 1 = −2 + b and b = 3.",
       "B": "Used the original line's slope instead of its negative reciprocal.",
       "C": "Made a sign error while solving for the y-intercept.",
       "D": "Used the positive reciprocal of the slope instead of the negative reciprocal."
@@ -5049,7 +5049,7 @@
     ],
     "answer": "D",
     "why": {
-      "D": "y = 2 + (3/4)(12 - 4) = 2 + (3/4)(8) = 2 + 6 = 8.",
+      "D": "y = 2 + (3/4)(12 − 4) = 2 + (3/4)(8) = 2 + 6 = 8.",
       "B": "Computed the change in y but forgot to add the starting y-value.",
       "A": "Used only the denominator of the slope to divide the new x-value.",
       "C": "Made an arithmetic slip while adding the change in y to the starting y-value."
@@ -5081,7 +5081,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Using the shoelace formula: Area = ½|x₁(y₂-y₃) + x₂(y₃-y₁) + x₃(y₁-y₂)| = ½|1(4) + 4(0) + 7(-4)| = ½|4 - 28| = 12.",
+      "A": "Using the shoelace formula: Area = ½|x₁(y₂-y₃) + x₂(y₃-y₁) + x₃(y₁-y₂)| = ½|1(4) + 4(0) + 7(−4)| = ½|4 − 28| = 12.",
       "D": "Forgot the 1/2 factor in the shoelace formula.",
       "C": "Used only two of the three vertices' contributions.",
       "B": "Made an arithmetic slip while combining terms."
@@ -5369,7 +5369,7 @@
     ],
     "answer": "B",
     "why": {
-      "B": "The interior angles of a triangle sum to 180°: 180 - 40 - 75 = 65.",
+      "B": "The interior angles of a triangle sum to 180°: 180 − 40 − 75 = 65.",
       "C": "Added the two given angles instead of subtracting their sum from 180°.",
       "D": "Subtracted only angle A from 180°, ignoring angle B.",
       "A": "Subtracted angle A from angle B instead of subtracting both from 180°."
@@ -5401,7 +5401,7 @@
     ],
     "answer": "B",
     "why": {
-      "B": "A triangle's angles sum to 180°: 180 - 50 - 60 = 70.",
+      "B": "A triangle's angles sum to 180°: 180 − 50 − 60 = 70.",
       "C": "Subtracted only one of the two given angles from 180° instead of both.",
       "D": "Added the two given angles instead of subtracting their sum from 180°.",
       "A": "Repeated one of the given angles instead of solving for the third."
@@ -5593,7 +5593,7 @@
     ],
     "answer": "B",
     "why": {
-      "B": "The ladder, wall, and ground form a right triangle with the ladder as the hypotenuse. Height = √(13² - 5²) = √(169 - 25) = √144 = 12 feet.",
+      "B": "The ladder, wall, and ground form a right triangle with the ladder as the hypotenuse. Height = √(13² − 5²) = √(169 − 25) = √144 = 12 feet.",
       "A": "Subtracted the base distance from the ladder's length instead of applying the Pythagorean theorem.",
       "D": "Added the ladder's length and the base distance instead of applying the Pythagorean theorem.",
       "C": "Used the ladder's length itself as the height reached."
@@ -5625,7 +5625,7 @@
     ],
     "answer": "D",
     "why": {
-      "D": "Room area = 15 × 10 = 150. Rug area = 9 × 6 = 54. Uncovered area = 150 - 54 = 96 square feet.",
+      "D": "Room area = 15 × 10 = 150. Rug area = 9 × 6 = 54. Uncovered area = 150 − 54 = 96 square feet.",
       "B": "Reported the rug's area instead of the uncovered floor area.",
       "C": "Made an arithmetic slip while subtracting the rug's area from the room's area.",
       "A": "Subtracted the room's area from double the rug's area instead of the reverse."
@@ -5657,7 +5657,7 @@
     ],
     "answer": "C",
     "why": {
-      "C": "Spring = 20 - 6 - 5 - 4 = 5 students.",
+      "C": "Spring = 20 − 6 − 5 − 4 = 5 students.",
       "B": "Repeated the number of students who said winter instead of solving for spring.",
       "A": "Made an arithmetic slip while subtracting from the total.",
       "D": "Added the fall and winter counts instead of subtracting all three from the total."
@@ -5689,7 +5689,7 @@
     ],
     "answer": "D",
     "why": {
-      "D": "The highest score is 95 and the lowest is 68: 95 - 68 = 27.",
+      "D": "The highest score is 95 and the lowest is 68: 95 − 68 = 27.",
       "C": "Used the second-lowest score instead of the true lowest.",
       "A": "Subtracted two scores that were not the actual maximum and minimum.",
       "B": "Made an arithmetic slip while subtracting 68 from 95."
@@ -6297,7 +6297,7 @@
     ],
     "answer": "D",
     "why": {
-      "D": "\"Twice a number, decreased by 7\" is 2n - 7 = 15. Solving: 2n = 22, n = 11.",
+      "D": "\"Twice a number, decreased by 7\" is 2n − 7 = 15. Solving: 2n = 22, n = 11.",
       "B": "Subtracted 15 from 7 and dropped the negative sign instead of solving the equation.",
       "C": "Added 7 to 15 then divided by 3 instead of by 2.",
       "A": "Made an arithmetic slip while isolating the number."
@@ -6344,15 +6344,15 @@
     "choices": [
       {
         "id": "A",
-        "text": "-14.5"
+        "text": "−14.5"
       },
       {
         "id": "B",
-        "text": "-6.5"
+        "text": "−6.5"
       },
       {
         "id": "C",
-        "text": "-0.75"
+        "text": "−0.75"
       },
       {
         "id": "D",
@@ -6361,8 +6361,8 @@
     ],
     "answer": "B",
     "why": {
-      "B": "Translate each phrase: 'eight more than three times a number' is 3x + 8; '5 less than the number' is x - 5. Set 3x + 8 = x - 5, so 2x = -13 and x = -6.5.",
-      "C": "Translated '5 less than the number' as 5 - x instead of x - 5.",
+      "B": "Translate each phrase: 'eight more than three times a number' is 3x + 8; '5 less than the number' is x − 5. Set 3x + 8 = x − 5, so 2x = −13 and x = −6.5.",
+      "C": "Translated '5 less than the number' as 5 − x instead of x − 5.",
       "A": "Translated 'eight more than three times a number' as 3(x + 8) instead of 3x + 8.",
       "D": "Solved correctly but dropped the negative sign."
     }
@@ -6777,7 +6777,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "The total sum must be 20 × 5 = 100. The four known values sum to 80, so the fifth is 100 - 80 = 20.",
+      "A": "The total sum must be 20 × 5 = 100. The four known values sum to 80, so the fifth is 100 − 80 = 20.",
       "B": "Made an arithmetic slip while adding the four known values.",
       "C": "Repeated one of the given numbers instead of solving for the fifth.",
       "D": "Multiplied the mean by 1.5 instead of using it to find the total sum."
@@ -6841,7 +6841,7 @@
     ],
     "answer": "C",
     "why": {
-      "C": "Bike percentage: 100 - 45 - 30 - 15 = 10%. Number of students: 400 × 0.10 = 40.",
+      "C": "Bike percentage: 100 − 45 − 30 − 15 = 10%. Number of students: 400 × 0.10 = 40.",
       "D": "Used the walking percentage instead of solving for the bike percentage.",
       "B": "Misread the car percentage as the bike percentage.",
       "A": "Reported the bike percentage itself instead of converting it to a count of students."
@@ -6873,7 +6873,7 @@
     ],
     "answer": "D",
     "why": {
-      "D": "The range is the maximum value minus the minimum value: 200 - 90 = 110.",
+      "D": "The range is the maximum value minus the minimum value: 200 − 90 = 110.",
       "B": "Left out Wednesday's low value, comparing only the remaining four days when finding the minimum.",
       "C": "Left out Thursday's peak value, comparing only the remaining four days when finding the maximum.",
       "A": "Used the difference between the two closest values instead of the true maximum and minimum."
