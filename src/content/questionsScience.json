@@ -126,7 +126,7 @@
     "answer": "A",
     "why": {
       "A": "Correct — lower pH values indicate greater acidity.",
-      "B": "pH 7.0 is neutral.",
+      "B": "pH 7.0 is neutral, the dividing line between acidic and basic rather than an acidic value.",
       "C": "pH 9.0 is basic, which puts it on the opposite side of neutral from any acidic value.",
       "D": "The most basic value tested."
     }
@@ -389,9 +389,9 @@
     ],
     "answer": "D",
     "why": {
-      "A": "Range is 48 − 5 = 43.",
-      "B": "Range is 76 − 19 = 57.",
-      "C": "Range is 88 − 52 = 36.",
+      "A": "At 10% the three species spread only 48 − 5 = 43 seeds, less than the spread at 50%.",
+      "B": "At 20% the spread is 76 − 19 = 57 seeds, still short of the 65 recorded at 50%.",
+      "C": "At 30% the three counts sit closest together, spreading only 88 − 52 = 36 seeds.",
       "D": "Correct — range is 94 − 29 = 65, the largest spread."
     }
   },
@@ -471,7 +471,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "test the effect of temperature on corrosion."
+        "text": "test whether temperature changes the rate of corrosion."
       },
       {
         "id": "B",
@@ -479,11 +479,11 @@
       },
       {
         "id": "C",
-        "text": "compare different coatings."
+        "text": "compare how well two different coatings protect the nails."
       },
       {
         "id": "D",
-        "text": "measure the density of the solutions."
+        "text": "measure the density of each of the solutions used."
       }
     ],
     "answer": "B",
@@ -689,7 +689,7 @@
       "A": "1.84 g, well above green.",
       "B": "Correct — 0.71 g, the lowest value among the illuminated groups.",
       "C": "Red produced 2.05 g, nearly three times the mass of the lowest illuminated group.",
-      "D": "2.31 g, the highest."
+      "D": "White light gave 2.31 g, the highest of the illuminated groups rather than the lowest."
     }
   },
   {
@@ -702,7 +702,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "test whether seedlings can survive without water."
+        "text": "test whether the seedlings can survive without any water at all."
       },
       {
         "id": "B",
@@ -710,11 +710,11 @@
       },
       {
         "id": "C",
-        "text": "measure leaf area more precisely."
+        "text": "measure leaf area more precisely than Experiment 1 allowed."
       },
       {
         "id": "D",
-        "text": "compare blue and red light directly."
+        "text": "compare the effects of blue and of red light directly."
       }
     ],
     "answer": "B",
@@ -867,11 +867,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "800 μmol/m²/s of red light."
+        "text": "800 μmol/m²/s of red light, the brightest tested."
       },
       {
         "id": "B",
-        "text": "200 μmol/m²/s of a 25:75 blue-to-red mixture."
+        "text": "200 μmol/m²/s of 25:75 blue and red light."
       },
       {
         "id": "C",
@@ -887,7 +887,7 @@
       "A": "Yields 2.49 g but at four times the intensity, and the gain over 400 is negligible.",
       "B": "Correct — 2.38 g at only 200 μmol/m²/s, nearly matching the highest yields at a quarter of the energy.",
       "C": "Green light produced the poorest illuminated growth.",
-      "D": "Yields only 0.88 g."
+      "D": "At 50 μmol/m²/s the yield is only 0.88 g — cheap to run, but nowhere near maximum dry mass."
     }
   },
   {
@@ -1281,7 +1281,7 @@
     "answer": "C",
     "why": {
       "A": "KNO₃ at 1.16 g/mL is less dense than the NaCl solution, but it is still above the cerium sulfate value.",
-      "B": "1.20 g/mL, the densest.",
+      "B": "At 1.20 g/mL the NaCl solution is the densest in the table, not the least dense.",
       "C": "Correct — 1.09 g/mL, the lowest value listed.",
       "D": "The three densities differ."
     }
@@ -1379,9 +1379,9 @@
     ],
     "answer": "B",
     "why": {
-      "A": "Values fall, not rise.",
+      "A": "The column falls from 142 mg to 18 mg, so shell mass gain drops rather than rises.",
       "B": "Correct — 142 → 118 → 76 → 41 → 18 mg.",
-      "C": "No reversal occurs.",
+      "C": "A rise and then a fall would need the column to turn back upward somewhere, and it never does.",
       "D": "The values change by more than 120 mg."
     }
   },
@@ -1577,10 +1577,10 @@
     ],
     "answer": "B",
     "why": {
-      "A": "A drop of 24 mg.",
+      "A": "142 → 118 is a drop of 24 mg, smaller than the step from 7.9 to 7.7.",
       "B": "Correct — 118 → 76 is a drop of 42 mg, the largest single step.",
-      "C": "A drop of 35 mg.",
-      "D": "A drop of 23 mg."
+      "C": "76 → 41 is a drop of 35 mg, the second largest step in the table but not the largest.",
+      "D": "41 → 18 is a drop of 23 mg, the smallest single step in the table."
     }
   },
   {
@@ -1626,7 +1626,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "test a new insulating material."
+        "text": "test how well a new insulating material performs."
       },
       {
         "id": "B",
@@ -1634,11 +1634,11 @@
       },
       {
         "id": "C",
-        "text": "measure the room temperature."
+        "text": "measure the temperature of the surrounding room."
       },
       {
         "id": "D",
-        "text": "check the accuracy of the thermometer."
+        "text": "check the accuracy of the thermometer used in each trial."
       }
     ],
     "answer": "B",
@@ -1678,7 +1678,7 @@
     "why": {
       "A": "Correct — 58 → 68 → 75 → 80°C as volume rose from 250 to 2000 mL.",
       "B": "The trend runs the other way.",
-      "C": "No reversal appears.",
+      "C": "The final temperature rises at every volume tested, so it never turns back downward.",
       "D": "The trend is consistent across all four trials."
     }
   },
@@ -1711,7 +1711,7 @@
     "why": {
       "A": "Below the 500 mL value of 68°C.",
       "B": "Correct — 750 mL lies between 500 mL (68°C) and 1000 mL (75°C).",
-      "C": "Above the 1000 mL value.",
+      "C": "78°C is above the 75°C measured at 1000 mL, so it overshoots what 750 mL can reach.",
       "D": "Exceeds the highest measured value."
     }
   },
@@ -1743,7 +1743,7 @@
     "answer": "A",
     "why": {
       "A": "Correct — it matches Trial 11 (foam, 500 mL, 30°C) in every respect except the material being compared.",
-      "B": "Changes volume as well.",
+      "B": "Cutting the volume to 250 mL changes a second variable, so the two materials cannot be compared.",
       "C": "Changes both volume and room temperature.",
       "D": "Tests a third material rather than paper."
     }
@@ -2139,9 +2139,9 @@
     "answer": "A",
     "why": {
       "A": "Correct — 1.00 → 1.42 → 1.74 → 2.01 → 2.46 s.",
-      "B": "The values rise.",
+      "B": "The period rises from 1.00 s to 2.46 s as the string lengthens, so it does not decrease.",
       "C": "They change by nearly 1.5 s.",
-      "D": "No reversal appears."
+      "D": "The period climbs at every length tested, so it never turns back downward."
     }
   },
   {
@@ -2206,7 +2206,7 @@
     "why": {
       "A": "Below the 100 cm value of 2.01 s.",
       "B": "Correct — 125 cm lies between 100 cm (2.01 s) and 150 cm (2.46 s).",
-      "C": "Above the 150 cm value.",
+      "C": "2.60 s exceeds the 2.46 s measured at 150 cm, so it is too long for a 125 cm string.",
       "D": "Far beyond any measured value."
     }
   },
@@ -2290,22 +2290,22 @@
       },
       {
         "id": "B",
-        "text": "50 cm, with a 500 g bob"
+        "text": "50 cm, with any mass and a small release angle"
       },
       {
         "id": "C",
-        "text": "100 cm, with a 50 g bob"
+        "text": "100 cm, with a light bob and a small release angle"
       },
       {
         "id": "D",
-        "text": "25 cm, but only with a 100 g bob"
+        "text": "25 cm, but only with a bob of 100 g or less"
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — Trial 1 gives 1.00 s at 25 cm, and Experiment 2 shows mass is irrelevant.",
-      "B": "50 cm produces about 1.42 s.",
-      "C": "100 cm produces about 2.01 s.",
+      "B": "At 50 cm the period is about 1.42 s, so the length is wrong no matter what the bob weighs.",
+      "C": "At 100 cm the period is about 2.01 s; a lighter bob does not shorten it, since mass has no effect.",
       "D": "The mass restriction is unnecessary, since mass does not affect the period."
     }
   },
@@ -4365,7 +4365,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "cause the 5-day group to become taller than the 1-day group."
+        "text": "cause the 5-day group to appear taller than the 1-day group in Study 1."
       },
       {
         "id": "B",
@@ -4373,11 +4373,11 @@
       },
       {
         "id": "C",
-        "text": "eliminate the need for Study 2."
+        "text": "eliminate the need for the second study entirely."
       },
       {
         "id": "D",
-        "text": "change the independent variable of the experiment."
+        "text": "change which variable the students treated as independent."
       }
     ],
     "answer": "B",
@@ -4798,15 +4798,15 @@
       },
       {
         "id": "B",
-        "text": "Yes, because water loss rose as leaves were removed."
+        "text": "Yes, because water loss rose steadily as more of the leaves were removed."
       },
       {
         "id": "C",
-        "text": "No, because the leafless cutting still lost 0.08 g."
+        "text": "No, because the cutting with no leaves left still lost 0.08 g."
       },
       {
         "id": "D",
-        "text": "No, because Study 2 did not test a cutting with no stem."
+        "text": "No, because Study 2 never tested a cutting whose stem had been removed."
       }
     ],
     "answer": "A",
@@ -4897,7 +4897,7 @@
       },
       {
         "id": "B",
-        "text": "Yes, because coating the upper surfaces reduced loss to 0.45 g."
+        "text": "Yes, because coating only the upper surfaces reduced water loss to 0.45 g."
       },
       {
         "id": "C",
@@ -4905,7 +4905,7 @@
       },
       {
         "id": "D",
-        "text": "Yes, because coating both surfaces reduced loss to 0.20 g."
+        "text": "Yes, because coating both surfaces of every leaf reduced loss to 0.20 g."
       }
     ],
     "answer": "A",
@@ -5986,7 +5986,7 @@
       },
       {
         "id": "B",
-        "text": "Soaked cores of 25% porosity crack after about 20 cycles."
+        "text": "Soaked cores of 25% porosity crack after only about 20 freeze-thaw cycles."
       },
       {
         "id": "C",
@@ -6184,7 +6184,7 @@
       },
       {
         "id": "B",
-        "text": "Water contracts when it freezes, as most substances do."
+        "text": "Water contracts when it freezes, just as most other substances do."
       },
       {
         "id": "C",
@@ -6192,7 +6192,7 @@
       },
       {
         "id": "D",
-        "text": "Water conducts heat better as a solid than any other common material."
+        "text": "Water conducts heat better as a solid than nearly any other common material."
       }
     ],
     "answer": "A",
@@ -7339,15 +7339,15 @@
       },
       {
         "id": "B",
-        "text": "1.9% of the lake water is oxygen by volume."
+        "text": "1.9% of the water in the lake is oxygen by volume."
       },
       {
         "id": "C",
-        "text": "each milligram of water holds 1.9 liters of oxygen."
+        "text": "each milligram of the lake water holds 1.9 liters of dissolved oxygen."
       },
       {
         "id": "D",
-        "text": "the lake contains 1.9 milligrams of oxygen in total."
+        "text": "the lake as a whole contains 1.9 milligrams of oxygen."
       }
     ],
     "answer": "A",
@@ -7438,15 +7438,15 @@
       },
       {
         "id": "B",
-        "text": "Why the deep layer of the lake stays colder than the surface."
+        "text": "Why the deep layer of the lake stays colder all summer than the surface."
       },
       {
         "id": "C",
-        "text": "Why trout require dissolved oxygen above 4 mg/L."
+        "text": "Why trout require dissolved oxygen above 4 mg/L in order to feed."
       },
       {
         "id": "D",
-        "text": "Why August surface temperature rose by 2.6 °C."
+        "text": "Why the August surface temperature of the lake rose by 2.6 °C."
       }
     ],
     "answer": "A",
@@ -7669,15 +7669,15 @@
       },
       {
         "id": "B",
-        "text": "uses a wider range of light intensities."
+        "text": "uses a wider range of light intensities than Study 1 does."
       },
       {
         "id": "C",
-        "text": "holds the samples at a different temperature."
+        "text": "holds the samples at a different temperature throughout."
       },
       {
         "id": "D",
-        "text": "measures a different quantity than Study 1 does."
+        "text": "measures a quantity that Study 1 does not report at any point."
       }
     ],
     "answer": "A",
@@ -8362,15 +8362,15 @@
       },
       {
         "id": "B",
-        "text": "how mass loss depends on the length of exposure."
+        "text": "how mass loss depends on the total length of the exposure period."
       },
       {
         "id": "C",
-        "text": "how zinc and epoxy compare with each other."
+        "text": "how zinc and epoxy coatings compare with each other directly."
       },
       {
         "id": "D",
-        "text": "how the panels were weighed."
+        "text": "how the panels were weighed after each exposure."
       }
     ],
     "answer": "A",
@@ -8391,7 +8391,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because mass loss falls at every doubling and each doubling takes off less than the one before."
+        "text": "Yes, because mass loss falls at every doubling, each time by less than before."
       },
       {
         "id": "B",
