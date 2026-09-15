@@ -900,7 +900,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "explaining how hydrophone networks are built and how their recordings are sorted."
+        "text": "explaining how hydrophone networks are built and how the recordings they gather are sorted."
       },
       {
         "id": "B",
@@ -1007,19 +1007,19 @@
       },
       {
         "id": "C",
-        "text": "only older males sing."
+        "text": "only the older males in a population sing."
       },
       {
         "id": "D",
-        "text": "song occurs primarily on feeding grounds rather than breeding grounds."
+        "text": "song occurs primarily on the feeding grounds rather than on the breeding grounds."
       }
     ],
     "answer": "B",
     "why": {
       "A": "Female response is not the stated objection.",
       "B": "Correct — the passage states that such a signal \"conveys nothing about any individual.\"",
-      "C": "Age is never discussed.",
-      "D": "The passage says males sing chiefly on the breeding grounds."
+      "C": "Age is never discussed. What the passage notes is that only males sing, and that they converge.",
+      "D": "The passage says males sing chiefly on the breeding grounds, which is what points toward mating in the first place."
     }
   },
   {
@@ -1135,7 +1135,7 @@
       },
       {
         "id": "B",
-        "text": "produces recordings of higher quality than earlier methods managed."
+        "text": "produces recordings of markedly higher quality than earlier methods managed."
       },
       {
         "id": "C",
@@ -1329,7 +1329,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "reciting numbers aloud."
+        "text": "reciting a series of numbers aloud."
       },
       {
         "id": "B",
@@ -1337,19 +1337,19 @@
       },
       {
         "id": "C",
-        "text": "depending on someone for help."
+        "text": "depending on another person for help when it is needed."
       },
       {
         "id": "D",
-        "text": "expecting an outcome."
+        "text": "expecting a particular outcome to arrive."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "No literal counting occurs.",
+      "A": "No literal counting occurs anywhere in the passage; the mother is weighing, not reciting.",
       "B": "Correct — the mother weighs non-financial factors alongside the arithmetic.",
-      "C": "That would be \"counting on.\"",
-      "D": "\"Counting on\" an outcome means expecting it, but there is no \"on\" in the passage — the mother is counting things, not counting on them."
+      "C": "That is the sense of \"counting on\", and the passage has her counting things rather than counting on anyone.",
+      "D": "\"Counting on\" an outcome means expecting it, but there is no \"on\" here — she is counting other things."
     }
   },
   {
@@ -1593,7 +1593,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "simultaneous invention has never occurred."
+        "text": "simultaneous invention has never really occurred at all."
       },
       {
         "id": "B",
@@ -1601,19 +1601,19 @@
       },
       {
         "id": "C",
-        "text": "inventions are entirely determined by prior conditions."
+        "text": "inventions are entirely determined by the conditions already in place."
       },
       {
         "id": "D",
-        "text": "prizes are always superior to patents."
+        "text": "prizes are always a better instrument than patents."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The passage treats the pattern as well documented.",
+      "A": "The passage treats the pattern as well documented, with 148 catalogued cases.",
       "B": "Correct — the passage attributes exactly this reply to patent defenders.",
-      "C": "That is the argument they are resisting.",
-      "D": "That is the opposing position."
+      "C": "That is the argument a patent defender is resisting, not one they would make.",
+      "D": "That is the opposing position, which the passage attributes to some economists."
     }
   },
   {
@@ -1626,7 +1626,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "weak patent protection still produced substantial innovation in that sector."
+        "text": "weak patent protection still produced a substantial amount of innovation in that sector."
       },
       {
         "id": "B",
@@ -1696,7 +1696,7 @@
       },
       {
         "id": "B",
-        "text": "requires an inventor to publish the method in full."
+        "text": "requires an inventor to publish the whole of the method in full."
       },
       {
         "id": "C",
@@ -1725,7 +1725,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "propose a specific reform for the patent system."
+        "text": "propose a specific reform for the patent system to adopt."
       },
       {
         "id": "B",
@@ -1733,7 +1733,7 @@
       },
       {
         "id": "C",
-        "text": "summarise the exhibition and pharmaceutical studies."
+        "text": "summarise the exhibition studies and the pharmaceutical ones."
       },
       {
         "id": "D",
@@ -1758,7 +1758,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "evidence of fraud."
+        "text": "evidence of fraud by one of the two."
       },
       {
         "id": "B",
@@ -1766,19 +1766,19 @@
       },
       {
         "id": "C",
-        "text": "a legal dispute."
+        "text": "a legal dispute between two claimants."
       },
       {
         "id": "D",
-        "text": "an unimportant detail."
+        "text": "an unimportant detail of the record."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "Fraud is never suggested.",
+      "A": "Fraud is never suggested; Gray filed a caveat on the same day and the passage treats both as independent.",
       "B": "Correct — \"the simultaneity is not the anomaly. It is the pattern.\"",
-      "C": "The patent conflict is background, not the historians’ point.",
-      "D": "They treat it as highly significant."
+      "C": "The patent conflict is background. What interests historians is that two people arrived at once.",
+      "D": "They treat it as highly significant — the simultaneity is the pattern rather than the anomaly."
     }
   },
   {
@@ -1824,7 +1824,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "painful and treatable."
+        "text": "painful but largely treatable."
       },
       {
         "id": "B",
@@ -1832,19 +1832,19 @@
       },
       {
         "id": "C",
-        "text": "caused by a single injury to the tendon."
+        "text": "caused by a single injury to a tendon in the hand."
       },
       {
         "id": "D",
-        "text": "reversible with rest."
+        "text": "reversible with enough rest from playing."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The passage says it is painless and has almost no useful treatment.",
+      "A": "The passage says it is painless and that there is almost no useful treatment.",
       "B": "Correct — \"It is painless. It is also, for a musician, absolute.\"",
-      "C": "It is described as neurological, not tendon damage.",
-      "D": "No reversal is described."
+      "C": "It is described as neurological — the brain’s map of the hand degrading — rather than as tendon damage.",
+      "D": "No reversal is described. The author rebuilt the skill on the other side instead."
     }
   },
   {
@@ -1993,7 +1993,7 @@
       },
       {
         "id": "B",
-        "text": "readers may not believe the injury happened as described."
+        "text": "readers may not quite believe the injury happened as described."
       },
       {
         "id": "C",
@@ -2121,7 +2121,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "cause cells to divide indefinitely."
+        "text": "are what allows a cell to divide indefinitely."
       },
       {
         "id": "B",
@@ -2129,19 +2129,19 @@
       },
       {
         "id": "C",
-        "text": "are produced by senescent cells."
+        "text": "are produced and secreted by senescent cells."
       },
       {
         "id": "D",
-        "text": "were discovered by Alexis Carrel."
+        "text": "were first identified by Alexis Carrel in culture."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "Their shortening ends division.",
+      "A": "Their shortening is what ends division, which is the opposite of allowing it to continue.",
       "B": "Correct — repetitive sequences capping chromosomes that absorb end-replication loss.",
-      "C": "They are chromosomal structures, not secretions.",
-      "D": "Carrel’s contaminated experiment is cited for the opposite belief."
+      "C": "They are structures on the chromosome, not part of the secretory phenotype.",
+      "D": "Carrel’s contaminated experiment is cited as the source of the opposite belief, that cells were immortal."
     }
   },
   {
@@ -4270,23 +4270,23 @@
       },
       {
         "id": "B",
-        "text": "a warning that skilled copyists make art forgery increasingly difficult to detect."
+        "text": "a warning that skilled copyists are making art forgery increasingly difficult to detect."
       },
       {
         "id": "C",
-        "text": "a profile of a painter who hopes to have her own original work recognized."
+        "text": "a profile of a painter who hopes to have her own original work recognised at last."
       },
       {
         "id": "D",
-        "text": "a history of how museums came to license artists to work in their galleries."
+        "text": "a history of how museums came to license working artists to paint in their own galleries."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the passage uses Obregón's forty-three attempts and the history of copying to argue that copying yields understanding the eye alone cannot reach.",
-      "B": "The passage explicitly separates copying from forgery and never suggests detection is becoming harder.",
-      "C": "Obregón is described as having no interest in scholarly recognition, and no original work of hers is mentioned.",
-      "D": "Her license is mentioned in a single clause and is never the subject of the passage."
+      "B": "The passage separates copying from forgery outright and never suggests detection is becoming harder.",
+      "C": "Obregón is described as having no interest in recognition, and no original work of hers is mentioned.",
+      "D": "Her licence is mentioned in a single clause and is never what the passage is about."
     }
   },
   {
@@ -4468,22 +4468,22 @@
       },
       {
         "id": "B",
-        "text": "A chronological account of one painter's career from apprenticeship to recognition."
+        "text": "A chronological account of one painter's career, from her apprenticeship through to recognition."
       },
       {
         "id": "C",
-        "text": "A comparison of two artists who approach the same portrait differently."
+        "text": "A comparison of two artists who approach the same seventeenth-century portrait differently."
       },
       {
         "id": "D",
-        "text": "A claim stated at the outset and then defended against three named critics."
+        "text": "A claim stated plainly at the outset and then defended against three named critics of it."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the passage opens on Obregón, turns to the Romantic suspicion and the older history that answers it, and closes with the specific knowledge her copying produced.",
       "B": "No career arc is traced; the eleven years are presented as repetition rather than progression.",
-      "C": "Only one copyist appears. The forger is a category, not a second artist.",
+      "C": "Only one copyist appears. The forger is a category the passage defines, not a second artist.",
       "D": "No critics are named, and the central claim emerges gradually rather than being stated first."
     }
   },
@@ -4534,22 +4534,22 @@
       },
       {
         "id": "B",
-        "text": "Painters we now call original were often the best copyists of their generation."
+        "text": "The painters we now call original were often the best copyists of their whole generation."
       },
       {
         "id": "C",
-        "text": "The Romantics elevated originality into the central virtue of art."
+        "text": "The Romantics elevated originality into the central virtue of art and left the rest as craft."
       },
       {
         "id": "D",
-        "text": "The background of the portrait is three colours rather than one."
+        "text": "The background of the portrait turns out to be three colours rather than one."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — it shows copies carrying a work's reputation between cities, which is precisely the claim that copies were how paintings were seen.",
-      "B": "This supports copying's role in training and skill, not in how audiences encountered work.",
-      "C": "This describes the attitude the passage is arguing against, not evidence for copying's former centrality.",
+      "B": "This supports copying's role in training and skill rather than in how audiences encountered work.",
+      "C": "This describes the attitude the passage argues against, not evidence for copying's former centrality.",
       "D": "This is a finding from Obregón's own practice and has no bearing on historical reception."
     }
   },
@@ -4600,7 +4600,7 @@
       },
       {
         "id": "B",
-        "text": "It provides the statistical detail that supports the most cited figure of about thirty animals."
+        "text": "It provides the statistical detail that supports the most cited figure of about thirty animals in the east."
       },
       {
         "id": "C",
@@ -4930,22 +4930,22 @@
       },
       {
         "id": "B",
-        "text": "faded by age to the point of near illegibility"
+        "text": "faded by age almost to the point of being illegible"
       },
       {
         "id": "C",
-        "text": "hurried and careless, made without attention"
+        "text": "hurried and careless, set down without much attention"
       },
       {
         "id": "D",
-        "text": "unusually large and looping across the paper"
+        "text": "unusually large and looping right across the page"
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — thin and upright describe the letters themselves, and leaning into a wind supplies the slant along with a sense of effort directed against something.",
       "B": "Nothing in the description concerns fading or legibility; the narrator reads the labels without difficulty.",
-      "C": "Labeled tins and sorted buttons establish care, and an upright script leaning deliberately is not a careless one.",
+      "C": "Labelled tins and sorted buttons establish care, and an upright script leaning deliberately is not a careless one.",
       "D": "Thin and upright are the opposite of large and looping."
     }
   },
@@ -4996,23 +4996,23 @@
       },
       {
         "id": "B",
-        "text": "her mother had been rehearsing a long speech about the house"
+        "text": "her mother had been rehearsing a long speech about the house beforehand"
       },
       {
         "id": "C",
-        "text": "her mother was too out of breath from other work to say much"
+        "text": "her mother was too out of breath from some other work to say much"
       },
       {
         "id": "D",
-        "text": "the family prefers writing to speaking when a subject is difficult"
+        "text": "the family would rather write than speak when a subject turns difficult"
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the sound is small, the narrator recognizes it immediately, and its stated effect is that of a paragraph, so brevity is carrying a large amount of shared meaning.",
-      "B": "Her mother's actual words are two short remarks; nothing suggests a prepared speech.",
-      "C": "An exhale here is an expressive sound, not a sign of physical exertion, and the phone call gives no hint of either.",
-      "D": "The comparison to a paragraph is a measure of how much is conveyed, not a claim about a preference for writing."
+      "B": "Her mother's actual words are two short remarks, and nothing suggests anything prepared.",
+      "C": "An exhale here is an expressive sound rather than a sign of exertion, and the call gives no hint of either.",
+      "D": "The comparison to a paragraph measures how much is conveyed; it is not a claim about a preference for writing."
     }
   },
   {
@@ -5128,22 +5128,22 @@
       },
       {
         "id": "B",
-        "text": "revealing that the narrator has moved back into her grandmother's house"
+        "text": "revealing that the narrator has since moved back into her grandmother's house"
       },
       {
         "id": "C",
-        "text": "suggesting that the narrator has begun to doubt her own memory"
+        "text": "suggesting that the narrator has begun to doubt her own memory of the house"
       },
       {
         "id": "D",
-        "text": "introducing a new character who has been listening from the stairs"
+        "text": "introducing a new character who has been listening all along from the stairs"
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the opening gives the house creaks, drafts, and a groan from the third stair, and the ending gives that same stair a throat to clear, so the house is still addressing her from forty miles away.",
       "B": "She says the spoons are in a drawer in her own kitchen and the stair is forty miles off, so she has not returned.",
-      "C": "The image is presented as something she hears rather than something she questions, and nothing casts doubt on her recollection.",
+      "C": "The image is presented as something she hears rather than something she questions.",
       "D": "No person is introduced; the sound belongs to the stair, which the passage has treated as part of the house's voice from the first paragraph."
     }
   },
@@ -5627,7 +5627,7 @@
       },
       {
         "id": "C",
-        "text": "a summer spent learning to drive a delivery van across two valleys efficiently."
+        "text": "a summer spent learning to drive a bread van through two valleys as efficiently as he possibly could."
       },
       {
         "id": "D",
@@ -5726,7 +5726,7 @@
       },
       {
         "id": "C",
-        "text": "suggest that the mother had been careless about the paperwork for nineteen years."
+        "text": "suggest that the mother had been careless about her paperwork across all nineteen of those years."
       },
       {
         "id": "D",
@@ -5821,7 +5821,7 @@
       },
       {
         "id": "B",
-        "text": "a strictly chronological account of the summer with no later commentary."
+        "text": "a strictly chronological account of the summer, offered with no commentary from later on."
       },
       {
         "id": "C",
@@ -5891,7 +5891,7 @@
       },
       {
         "id": "C",
-        "text": "She handed him the keys the week her wrist finally gave out, after nineteen years of driving the route."
+        "text": "She handed him the keys during the week her wrist finally gave out, after nineteen years of driving the route herself."
       },
       {
         "id": "D",
@@ -5920,23 +5920,23 @@
       },
       {
         "id": "B",
-        "text": "had grown careless about the quality of her work."
+        "text": "had grown careless about the quality of the work she was still doing."
       },
       {
         "id": "C",
-        "text": "was reluctant to give up control of the business."
+        "text": "was reluctant to give up control of the route to her son."
       },
       {
         "id": "D",
-        "text": "could no longer see well enough to drive safely."
+        "text": "could no longer see well enough to drive the route safely."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Glasses worn that long are looked *with*, not *at*. The image says the route had stopped being a thing she could describe — which is why the instructions she gives are so thin.",
       "B": "Everything that follows shows the work being done with care, most of it unrecorded.",
-      "C": "She hands the keys over in the first sentence without any resistance.",
-      "D": "Her wrist is what gave out; the image is about familiarity, not eyesight."
+      "C": "She hands the keys over in the first sentence without any resistance at all.",
+      "D": "Her wrist is what gave out. The image is about familiarity, not about eyesight."
     }
   },
   {
@@ -6283,7 +6283,7 @@
       },
       {
         "id": "B",
-        "text": "the working conditions of the children employed in the Massachusetts textile mills before the age law."
+        "text": "the working conditions of the children who were employed in the Massachusetts textile mills before the age law passed."
       },
       {
         "id": "C",
@@ -6514,7 +6514,7 @@
       },
       {
         "id": "B",
-        "text": "She kept forty-one ledgers across a career that ran from the law’s passage to 1919."
+        "text": "She kept forty-one ledgers over the course of a career that ran from the passage of the law to 1919."
       },
       {
         "id": "C",
@@ -6613,22 +6613,22 @@
       },
       {
         "id": "B",
-        "text": "the technical methods conservators use to image paintings without damaging them."
+        "text": "the technical methods that conservators use to image a panel like this one without damaging it."
       },
       {
         "id": "C",
-        "text": "the attribution of a Nativity to a follower of Gerard David."
+        "text": "the attribution of the Nativity on this panel to a follower of Gerard David."
       },
       {
         "id": "D",
-        "text": "the practice of overpainting in sixteenth-century workshops."
+        "text": "the practice of overpainting an older panel in sixteenth-century workshops."
       }
     ],
     "answer": "A",
     "why": {
       "A": "The discovery opens the passage, two opposed positions occupy its middle, and the department’s decision and its justification close it.",
       "B": "Infrared and X-ray appear once, as the form the published record took, and are never explained.",
-      "C": "The attribution is given in the first paragraph as background and is never questioned or argued about.",
+      "C": "The attribution is given in the first paragraph as background and is never argued about.",
       "D": "Overpainting appears only inside the second position’s argument, as a reason the top layer is itself a restoration."
     }
   },
@@ -6679,7 +6679,7 @@
       },
       {
         "id": "B",
-        "text": "underestimates how difficult removing a whole layer of paint actually is."
+        "text": "underestimates how difficult it actually is to remove a whole layer of old paint cleanly."
       },
       {
         "id": "C",
@@ -6745,7 +6745,7 @@
       },
       {
         "id": "B",
-        "text": "a chronological account of one restoration project from its start to its finish."
+        "text": "a chronological account of one restoration project, followed from its start through to its finish."
       },
       {
         "id": "C",
@@ -6819,7 +6819,7 @@
       },
       {
         "id": "D",
-        "text": "The imaging of every layer was published at full resolution as a permanent record rather than as catalogue illustrations."
+        "text": "The imaging of every one of the layers was published at full resolution as a permanent record rather than merely as catalogue illustrations."
       }
     ],
     "answer": "A",
@@ -6827,7 +6827,7 @@
       "A": "Her definition is that a compromise splits a difference. Separating two values and answering each on its own terms is not splitting anything, which is why she refuses the word.",
       "B": "Satisfying neither side is what a compromise usually looks like, so this points the other way.",
       "C": "How long the argument took says nothing about the shape of its conclusion.",
-      "D": "The resolution of the images shows how thorough the record is, not why the decision was principled."
+      "D": "How thorough the record is says nothing about why the decision itself was principled."
     }
   },
   {
@@ -6844,23 +6844,23 @@
       },
       {
         "id": "B",
-        "text": "issued by an official body."
+        "text": "issued by an officially constituted body."
       },
       {
         "id": "C",
-        "text": "commanding in manner or appearance."
+        "text": "commanding in manner or in appearance."
       },
       {
         "id": "D",
-        "text": "strictly and consistently enforced."
+        "text": "enforced strictly and consistently wherever it applies."
       }
     ],
     "answer": "A",
     "why": {
       "A": "The sentence asks why the topmost layer should count as the painting, so the word is about which version has the final claim.",
-      "B": "No official body issued any layer of the panel.",
+      "B": "No official body issued any layer of the panel; the question is which layer is the painting.",
       "C": "That sense describes a person’s bearing, and the subject here is a layer of paint.",
-      "D": "Enforcement belongs to rules, and the passage is asking which object is the work."
+      "D": "Enforcement belongs to rules, and the passage is asking which object counts as the work."
     }
   },
   {
@@ -6877,23 +6877,23 @@
       },
       {
         "id": "B",
-        "text": "shown to visitors alongside the 1520 Nativity."
+        "text": "hung where visitors could see them alongside the 1520 Nativity."
       },
       {
         "id": "C",
-        "text": "dated more precisely than the visible surface."
+        "text": "dated rather more precisely than the visible surface."
       },
       {
         "id": "D",
-        "text": "removed and remounted on separate panels."
+        "text": "removed and remounted onto separate panels."
       }
     ],
     "answer": "A",
     "why": {
       "A": "The passage says the lower paintings \"can be studied by anyone, and will never be seen\", which is only possible because the record exists apart from the object.",
-      "B": "They remain under the paint. What hangs is still the 1520 Nativity.",
-      "C": "No dates are given for the lower layers at all.",
-      "D": "Removing them is precisely what the department decided against."
+      "B": "They remain under the paint. What hangs in the gallery is still the 1520 Nativity.",
+      "C": "No dates are given for the lower layers at all, so nothing could be compared.",
+      "D": "Removing them is precisely what the department decided against doing."
     }
   },
   {
@@ -6910,7 +6910,7 @@
       },
       {
         "id": "B",
-        "text": "whether the lower layers are worth documenting at all before they go."
+        "text": "whether the lower layers are worth documenting at all before they disappear from view again."
       },
       {
         "id": "C",
