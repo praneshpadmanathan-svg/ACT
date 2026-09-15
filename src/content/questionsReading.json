@@ -9,7 +9,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "a legal dispute between siblings over an inheritance."
+        "text": "a legal dispute between two siblings over how an inheritance should be divided."
       },
       {
         "id": "B",
@@ -17,19 +17,19 @@
       },
       {
         "id": "C",
-        "text": "a family’s immigration from Cleveland to Dearborn."
+        "text": "a family’s immigration, traced from the bus station in Cleveland to the house in Dearborn."
       },
       {
         "id": "D",
-        "text": "a brother’s decision to sell the family home."
+        "text": "a brother’s decision to sell the family home after eleven years of keeping it up."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "No dispute occurs; the siblings work together companionably.",
+      "A": "No dispute occurs. Amir has made a list, Nadia laughs at it, and they work through the afternoon together.",
       "B": "Correct — the photograph and Amir’s observation drive Nadia toward recognizing her own reticence.",
-      "C": "Immigration is background, mentioned only through the 1971 photograph.",
-      "D": "No decision about selling is made or discussed."
+      "C": "The 1971 arrival is one photograph near the bottom of a shoebox, and the passage never follows it forward.",
+      "D": "No decision about selling is made or discussed; the questions raised are about wallpaper and what to keep."
     }
   },
   {
@@ -112,23 +112,23 @@
       },
       {
         "id": "B",
-        "text": "suggest the house has been carefully maintained by Amir."
+        "text": "suggest the house has stayed as it was because Amir kept it up for eleven years."
       },
       {
         "id": "C",
-        "text": "establish that the family lacked money for renovations."
+        "text": "establish that the family never had the money to put the house right."
       },
       {
         "id": "D",
-        "text": "foreshadow the discovery of the photograph."
+        "text": "foreshadow the photograph Nadia will find at the bottom of the shoebox."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the sentence directly juxtaposes \"She had changed enormously\" with the unchanged house.",
-      "B": "Amir’s maintenance is mentioned later and separately; it is not the point of this line.",
-      "C": "Finances are never raised.",
-      "D": "Nothing in the image points toward the photograph."
+      "B": "Amir’s storm windows and arguments about the roof come a paragraph later and are not what this line is doing.",
+      "C": "Finances are never raised about the house. The crooked step and the cold gap are offered as continuity, not as poverty.",
+      "D": "Nothing in the image of the unchanged house points toward the photograph or the bus station."
     }
   },
   {
@@ -174,7 +174,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Nadia had failed to contribute her share of household expenses."
+        "text": "Nadia had failed to contribute her share of what the house and their father cost."
       },
       {
         "id": "B",
@@ -182,19 +182,19 @@
       },
       {
         "id": "C",
-        "text": "Amir had been secretly resentful for eleven years."
+        "text": "Amir had been quietly resentful across the eleven years of driving out."
       },
       {
         "id": "D",
-        "text": "their father had divided his estate unfairly."
+        "text": "their father had divided what he left between them unfairly."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "She sent money; the imbalance is not financial.",
+      "A": "She sent money and called on birthdays. The imbalance the sentence names is not a financial shortfall.",
       "B": "Correct — the sentence follows a list contrasting Amir’s presence with Nadia’s money and birthday calls.",
-      "C": "The passage says neither of them ever said so, and Amir’s tone is explicitly not accusatory.",
-      "D": "The estate’s division is never mentioned."
+      "C": "The passage says neither of them ever said so, and it is explicit that his remark is not an accusation.",
+      "D": "The division of the estate is never mentioned; the sentence is about what each of them gave, not what they got."
     }
   },
   {
@@ -240,7 +240,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "indicate that the property has become valuable."
+        "text": "indicate that the property has become valuable in the years since they arrived."
       },
       {
         "id": "B",
@@ -248,19 +248,19 @@
       },
       {
         "id": "C",
-        "text": "explain why the house is difficult to heat."
+        "text": "explain why the house has always been difficult to keep warm in winter."
       },
       {
         "id": "D",
-        "text": "introduce a new conflict between the siblings."
+        "text": "introduce a new conflict between the siblings for the story to resolve."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "Property value is never at issue.",
+      "A": "Property value is never at issue, and the tree is remembered rather than appraised.",
       "B": "Correct — the tree Nadia \"suddenly remembered\" as a stick now shades the whole west side, mirroring the years she missed.",
-      "C": "The cold under the kitchen door is a separate, earlier detail.",
-      "D": "The passage ends without new conflict."
+      "C": "The cold under the kitchen door is a separate detail from the opening paragraph, and shade is not cold.",
+      "D": "The passage ends on Nadia not answering and on the light going, with no new conflict raised."
     }
   },
   {
@@ -273,11 +273,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "their financial circumstances."
+        "text": "the financial circumstances each of them was in."
       },
       {
         "id": "B",
-        "text": "their affection for their father."
+        "text": "how much affection each of them felt for their father."
       },
       {
         "id": "C",
@@ -285,15 +285,15 @@
       },
       {
         "id": "D",
-        "text": "their memories of childhood."
+        "text": "what each of them remembers of their childhood in the house."
       }
     ],
     "answer": "C",
     "why": {
-      "A": "Money appears only as one of Nadia’s contributions, not as a comparison of means.",
-      "B": "The passage never suggests either loved the father less.",
+      "A": "Money appears only as one of the things Nadia sent, never as a comparison of what either could afford.",
+      "B": "The passage never suggests either loved him less; Amir’s point is about what neither of them could ask.",
       "C": "Correct — Amir drove out every other Sunday and sat through silences; Nadia sent money and fixed things.",
-      "D": "Their childhood memories are not compared."
+      "D": "Their childhood memories are never set against each other. Only Nadia’s are given, and only in passing."
     }
   },
   {
@@ -900,7 +900,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "explaining how hydrophone networks are constructed."
+        "text": "explaining how hydrophone networks are built and how their recordings are sorted."
       },
       {
         "id": "B",
@@ -908,19 +908,19 @@
       },
       {
         "id": "C",
-        "text": "arguing that humpback whales possess language comparable to human speech."
+        "text": "arguing that humpback song amounts to a language comparable to human speech."
       },
       {
         "id": "D",
-        "text": "documenting the decline of humpback populations in the South Pacific."
+        "text": "documenting the decline of humpback populations across the South Pacific."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "Hydrophones appear only as a method in one paragraph.",
+      "A": "Hydrophones and the machine-learning classifiers occupy one paragraph, as the method that made the rest observable.",
       "B": "Correct — the passage establishes the shared-and-shifting song, then surveys three hypotheses.",
-      "C": "The passage compares song to culture and fashion, never to language.",
-      "D": "Population decline is never mentioned."
+      "C": "The passage compares song to culture and to fashion, and never to language.",
+      "D": "Population decline is never mentioned; what moves eastward across the Pacific is the song, not a loss."
     }
   },
   {
@@ -966,7 +966,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "gradually modified its existing song over several seasons."
+        "text": "gradually modified its own existing song across several breeding seasons."
       },
       {
         "id": "B",
@@ -974,19 +974,19 @@
       },
       {
         "id": "C",
-        "text": "ceased singing entirely for two years."
+        "text": "stopped singing entirely for the two years that followed."
       },
       {
         "id": "D",
-        "text": "split into two groups with different songs."
+        "text": "split into two groups singing two different songs."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "That describes ordinary within-season change, not the 1996 event.",
+      "A": "That describes the ordinary within-season drift of the second paragraph, not what happened in 1996.",
       "B": "Correct — within two years the eastern population \"adopted the western one wholesale.\"",
-      "C": "Singing did not stop.",
-      "D": "No split is described; the replacement was population-wide."
+      "C": "Singing did not stop. Within two years the population was singing the western song instead.",
+      "D": "No split is described. The passage says the replacement was adopted wholesale, by every male."
     }
   },
   {
@@ -1032,7 +1032,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "why only males sing."
+        "text": "why it is only the males that sing."
       },
       {
         "id": "B",
@@ -1040,19 +1040,19 @@
       },
       {
         "id": "C",
-        "text": "why songs travel from east to west."
+        "text": "why the songs travel from east to west across the Pacific."
       },
       {
         "id": "D",
-        "text": "why song complexity decreases over time."
+        "text": "why the complexity of a song decreases over successive seasons."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The hypothesis concerns female preference for new variants, not the sex of singers.",
+      "A": "The hypothesis concerns female preference for new variants and says nothing about which sex sings.",
       "B": "Correct — the passage says it \"would explain both the constant change and the rapid adoption.\"",
-      "C": "The documented direction is westward-origin moving eastward.",
-      "D": "The passage reports complexity increasing until a new song arrives."
+      "C": "The documented direction is the reverse: songs originate in the west and move eastward in waves.",
+      "D": "The passage reports complexity increasing after adoption, until a new song arrives and the cycle restarts."
     }
   },
   {
@@ -1065,7 +1065,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "argue that whales imitate human cultural practices."
+        "text": "argue that whales are imitating a pattern they have picked up from human culture."
       },
       {
         "id": "B",
@@ -1073,19 +1073,19 @@
       },
       {
         "id": "C",
-        "text": "dismiss the scientific significance of the findings."
+        "text": "dismiss the scientific significance of the complexity finding."
       },
       {
         "id": "D",
-        "text": "introduce a new hypothesis about female choice."
+        "text": "introduce a fourth hypothesis, this one about female choice."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "No claim of imitation of humans is made.",
+      "A": "No claim of imitation is made. The resemblance is the author’s analogy, not a route of influence.",
       "B": "Correct — the sentence follows the finding that songs grow elaborate, then are replaced when a new one arrives.",
-      "C": "The author calls the finding one that \"complicates the picture usefully.\"",
-      "D": "It offers an analogy, not a fourth hypothesis."
+      "C": "The author introduces that finding as one that \"complicates the picture usefully.\"",
+      "D": "It offers an analogy for a pattern already described rather than a further explanation of it."
     }
   },
   {
@@ -1135,23 +1135,23 @@
       },
       {
         "id": "B",
-        "text": "produces higher-quality recordings than earlier methods."
+        "text": "produces recordings of higher quality than earlier methods managed."
       },
       {
         "id": "C",
-        "text": "identifies individual whales by name."
+        "text": "makes it possible to identify individual whales one by one."
       },
       {
         "id": "D",
-        "text": "eliminates the need for machine-learning analysis."
+        "text": "removes the need for machine-learning analysis of the recordings."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the passage notes whales \"cannot be marked without considerable disturbance\" and that hydrophones track songs \"without observing the singers at all.\"",
-      "B": "Recording quality is never compared.",
-      "C": "The passage says individuals are difficult to identify.",
-      "D": "Machine learning is described as handling the sorting, not being replaced."
+      "B": "Recording quality is never compared. What the passage contrasts is continuous coverage against years of manual analysis.",
+      "C": "The passage says individuals cannot be marked without considerable disturbance, and hydrophones never see the singers.",
+      "D": "Machine learning is described as doing the sorting that monitoring made necessary, not as something it replaced."
     }
   },
   {
@@ -1168,23 +1168,23 @@
       },
       {
         "id": "B",
-        "text": "assumes females play no role in selection."
+        "text": "assumes that females play no part at all in selecting which male to mate with."
       },
       {
         "id": "C",
-        "text": "accounts for the song’s annual changes."
+        "text": "accounts for the changes the song undergoes each year."
       },
       {
         "id": "D",
-        "text": "relies on acoustic monitoring data."
+        "text": "rests on data gathered by acoustic monitoring."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the population-marker hypothesis is defined by conspecific identification; the coordination hypothesis concerns spacing and readiness among males.",
-      "B": "Both de-emphasize direct female attraction; that is not what distinguishes them.",
-      "C": "Neither is presented as primarily explaining annual change; that is the novelty hypothesis.",
-      "D": "Monitoring is a method common to all research described."
+      "B": "Both hypotheses de-emphasise direct female attraction, so that is not what separates them.",
+      "C": "Neither is offered as an explanation of annual change; that is the work the novelty hypothesis does.",
+      "D": "Monitoring is the method behind all of the research described, so it cannot distinguish one hypothesis from another."
     }
   },
   {
@@ -1494,7 +1494,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Elisha Gray deserves credit for inventing the telephone."
+        "text": "Elisha Gray deserves as much credit for the telephone as Bell received."
       },
       {
         "id": "B",
@@ -1502,19 +1502,19 @@
       },
       {
         "id": "C",
-        "text": "patents should be abolished in all industries."
+        "text": "patents should be abolished and replaced with prizes across every industry."
       },
       {
         "id": "D",
-        "text": "individual brilliance plays no role in technological progress."
+        "text": "individual brilliance plays no real role in how technology advances."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "Gray opens the passage as an illustration, not its subject.",
+      "A": "Gray opens the passage as the illustration of a pattern, and the passage never argues about who deserves the credit.",
       "B": "Correct — the passage documents the pattern and then traces its implications for patents.",
-      "C": "The passage says a uniform regime is unlikely to be optimal, not that patents should end.",
-      "D": "It explicitly says brilliance is relocated, not denied."
+      "C": "The passage reports that argument from some economists and then answers it, concluding only that one uniform regime is unlikely to suit all sectors.",
+      "D": "It says the opposite in as many words: this view does not deny individual brilliance, it relocates it."
     }
   },
   {
@@ -1560,7 +1560,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "prove Bell plagiarized his design."
+        "text": "prove that Bell took his design from work already published."
       },
       {
         "id": "B",
@@ -1568,19 +1568,19 @@
       },
       {
         "id": "C",
-        "text": "explain how patents are filed."
+        "text": "explain how a patent and a caveat are filed."
       },
       {
         "id": "D",
-        "text": "compare European and American research."
+        "text": "compare European research with the American work that followed it."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "No plagiarism is alleged.",
+      "A": "No plagiarism is alleged. Bell is called a gifted experimenter working a genuinely hard problem.",
       "B": "Correct — they are given as the prerequisites that put Bell in \"a room that many people had entered.\"",
-      "C": "Filing procedure is not described.",
-      "D": "No such comparison is drawn."
+      "C": "Filing procedure is never described, and the distinction between Bell’s patent and Gray’s caveat is not explained.",
+      "D": "No such comparison is drawn. Helmholtz is named as a prerequisite, not as one side of a contest."
     }
   },
   {
@@ -1626,7 +1626,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "weak patent protection still produces substantial innovation."
+        "text": "weak patent protection still produced substantial innovation in that sector."
       },
       {
         "id": "B",
@@ -1634,19 +1634,19 @@
       },
       {
         "id": "C",
-        "text": "patents have no measurable effect."
+        "text": "patents have no effect on innovation that can be measured."
       },
       {
         "id": "D",
-        "text": "prizes outperform patents."
+        "text": "prizes work better than patents at encouraging new drugs."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "That describes the nineteenth-century exhibition studies.",
+      "A": "That is the finding from the nineteenth-century industrial exhibitions, which the passage sets against the drug studies.",
       "B": "Correct — the passage says pharmaceutical studies \"find the opposite.\"",
-      "C": "The passage reports an effect in that sector.",
-      "D": "No such comparison is reported for pharmaceuticals."
+      "C": "The passage reports a real effect in that sector, which is why it calls the overall evidence mixed.",
+      "D": "Prizes are raised as a proposal by some economists, and no pharmaceutical comparison of the two is reported."
     }
   },
   {
@@ -1659,7 +1659,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "moves to a new physical address."
+        "text": "moves something to a new physical address."
       },
       {
         "id": "B",
@@ -1667,19 +1667,19 @@
       },
       {
         "id": "C",
-        "text": "eliminates entirely."
+        "text": "does away with something entirely."
       },
       {
         "id": "D",
-        "text": "measures precisely."
+        "text": "measures something precisely."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "No physical movement is described.",
+      "A": "No physical movement is described; what moves is where brilliance sits in the explanation.",
       "B": "Correct — brilliance is repositioned within a causal account rather than removed.",
-      "C": "The sentence explicitly says it does not deny brilliance.",
-      "D": "Nothing is being measured."
+      "C": "The sentence says explicitly that this view does not deny brilliance, so nothing is eliminated.",
+      "D": "Nothing is being measured. The verb governs brilliance, which the passage treats as real but repositioned."
     }
   },
   {
@@ -1696,23 +1696,23 @@
       },
       {
         "id": "B",
-        "text": "requires inventors to publish their methods."
+        "text": "requires an inventor to publish the method in full."
       },
       {
         "id": "C",
-        "text": "is too short in duration."
+        "text": "lasts for too short a period to matter."
       },
       {
         "id": "D",
-        "text": "applies only to pharmaceuticals."
+        "text": "applies only to the pharmaceutical industry."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — if timing rather than creation is rewarded, the monopoly blocks others who were nearly there.",
-      "B": "Publication would aid diffusion, not retard it.",
-      "C": "Duration is never discussed.",
-      "D": "Pharmaceuticals are one example among several."
+      "B": "Publication would spread a solution rather than hold it back, so it cannot be the reason diffusion slows.",
+      "C": "Duration is never discussed, and a shorter monopoly would slow diffusion less, not more.",
+      "D": "Pharmaceuticals are one example among several, and the passage’s point is that the answer varies by industry."
     }
   },
   {
@@ -1725,7 +1725,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "propose a specific reform to patent law."
+        "text": "propose a specific reform for the patent system."
       },
       {
         "id": "B",
@@ -1733,19 +1733,19 @@
       },
       {
         "id": "C",
-        "text": "summarize the studies cited earlier."
+        "text": "summarise the exhibition and pharmaceutical studies."
       },
       {
         "id": "D",
-        "text": "introduce a new case of simultaneous invention."
+        "text": "introduce one more case of simultaneous invention."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "No reform is proposed there.",
+      "A": "No reform is proposed there; the proposals appear two paragraphs earlier and are left unresolved.",
       "B": "Correct — it argues the lone-inventor story persists because it is useful, not because it is true.",
-      "C": "The studies are not revisited.",
-      "D": "No new case appears."
+      "C": "The studies are not revisited. The paragraph turns from evidence to why the story survives it.",
+      "D": "No new case appears; the paragraph is about what the pattern costs a storyteller."
     }
   },
   {
@@ -1791,7 +1791,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "the medical treatment of focal dystonia."
+        "text": "the medical treatment available for focal dystonia and why so little of it works."
       },
       {
         "id": "B",
@@ -1799,19 +1799,19 @@
       },
       {
         "id": "C",
-        "text": "arguing that musicians should practice less."
+        "text": "arguing that musicians would be better off practising far fewer hours a day."
       },
       {
         "id": "D",
-        "text": "the author’s early career successes."
+        "text": "the author’s early successes as a violinist before the injury."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The passage notes there is almost no useful treatment and moves on.",
+      "A": "The passage says in one clause that there is almost no useful treatment, and never returns to the subject.",
       "B": "Correct — the arc runs from loss to relearning to a different kind of understanding.",
-      "C": "The reduced practice is a constraint of the author’s situation, not a general prescription.",
-      "D": "Early success occupies one sentence."
+      "C": "The ninety-minute limit is a constraint the author was under, offered as autobiography rather than advice.",
+      "D": "Early success occupies the opening sentence, which exists to set up the loss in the same breath."
     }
   },
   {
@@ -1857,7 +1857,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "offered a cure."
+        "text": "offered a course of treatment that might reverse the damage."
       },
       {
         "id": "B",
@@ -1865,19 +1865,19 @@
       },
       {
         "id": "C",
-        "text": "proved the injury was not the author’s fault."
+        "text": "showed that the injury had not been the author’s own fault after all."
       },
       {
         "id": "D",
-        "text": "showed the condition was common among violinists."
+        "text": "showed that the condition is common among violinists who practise for as many hours."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "No cure is offered anywhere in the passage.",
+      "A": "No cure is offered anywhere in the passage; the author calls the condition, for a musician, absolute.",
       "B": "Correct — the author later says \"sameness was now the enemy\" and varies everything.",
-      "C": "The explanation implicates the author’s own practice, and blame is never the issue.",
-      "D": "Prevalence is never mentioned."
+      "C": "The explanation implicates the author’s own practice, and blame is never what the passage is weighing.",
+      "D": "Prevalence is never mentioned. What the explanation gives the author is a cause, not company."
     }
   },
   {
@@ -1890,7 +1890,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "imitation and long hours."
+        "text": "imitation, scales and long daily hours."
       },
       {
         "id": "B",
@@ -1898,19 +1898,19 @@
       },
       {
         "id": "C",
-        "text": "a different teacher."
+        "text": "a different teacher and a different method."
       },
       {
         "id": "D",
-        "text": "a smaller instrument."
+        "text": "a smaller instrument suited to the other hand."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "That describes the first learning at age nine.",
+      "A": "That is the first learning, at nine: imitation and volume, with hours, scales and correction.",
       "B": "Correct — the author worked out motions in advance, varied everything, and practiced ninety minutes a day.",
-      "C": "No teacher is mentioned.",
-      "D": "The instrument was restrung, not resized."
+      "C": "No teacher is mentioned in either period. The method changed because the author worked it out alone.",
+      "D": "The instrument was restrung in reverse, not resized; nothing about its dimensions changed."
     }
   },
   {
@@ -1956,7 +1956,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "the financial cost of the author’s training."
+        "text": "the financial cost of fourteen years of violin training."
       },
       {
         "id": "B",
@@ -1964,19 +1964,19 @@
       },
       {
         "id": "C",
-        "text": "that the author had borrowed the instrument."
+        "text": "that the instrument itself had been borrowed rather than owned."
       },
       {
         "id": "D",
-        "text": "that the skill would eventually return."
+        "text": "that the skill was only suspended and would eventually return."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "Cost is never discussed.",
+      "A": "Cost is never discussed. The word \"rented\" describes how securely the skill was held, not what it was paid for.",
       "B": "Correct — the skill had felt like a property of the body, \"like being right-handed,\" until it was revoked.",
-      "C": "No borrowed instrument appears.",
-      "D": "The passage says relearning took nine years on the other hand."
+      "C": "No borrowed instrument appears; the metaphor is about the skill, which the author calls a property of the body.",
+      "D": "It did not return. The author rebuilt it on the other side across nine years."
     }
   },
   {
@@ -1993,23 +1993,23 @@
       },
       {
         "id": "B",
-        "text": "readers will not believe the injury occurred."
+        "text": "readers may not believe the injury happened as described."
       },
       {
         "id": "C",
-        "text": "the technical loss was insignificant."
+        "text": "the technical loss turned out to be insignificant."
       },
       {
         "id": "D",
-        "text": "other musicians should injure themselves."
+        "text": "other musicians would gain from a similar setback."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the author insists on a form of understanding available only through rebuilding.",
-      "B": "The injury’s reality is never in question.",
-      "C": "The author explicitly calls the second self \"a technically lesser\" musician.",
-      "D": "No such absurd implication is drawn."
+      "B": "The injury’s reality is never in question. What the author expects to be doubted is the claim of a gain.",
+      "C": "The author says the opposite in the same sentence: a better musician, though a technically lesser one.",
+      "D": "The passage draws no such recommendation, and the author spent two years finding the cause unbearable."
     }
   },
   {
@@ -2022,7 +2022,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "which hand was used."
+        "text": "which hand held the bow and which the strings."
       },
       {
         "id": "B",
@@ -2030,19 +2030,19 @@
       },
       {
         "id": "C",
-        "text": "the genre of music studied."
+        "text": "the kind of music the author set out to study."
       },
       {
         "id": "D",
-        "text": "the author’s level of talent."
+        "text": "how much natural talent the author had to work with."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "True but presented as the occasion, not the fundamental difference.",
+      "A": "The switch is true, and it is the occasion for the difference rather than the difference itself.",
       "B": "Correct — the closing states the author \"could no longer take any part of it for granted.\"",
-      "C": "Genre is never mentioned.",
-      "D": "Talent is not framed as the variable."
+      "C": "Genre is never mentioned; the same instrument and the same repertoire are implied throughout.",
+      "D": "Talent is never the variable. What changed is that nothing could be taken for granted."
     }
   },
   {
@@ -5161,23 +5161,23 @@
       },
       {
         "id": "B",
-        "text": "embarrassing to admit to anyone outside the family"
+        "text": "embarrassing to admit to anyone outside the two of them"
       },
       {
         "id": "C",
-        "text": "impossible to believe without seeing documentation"
+        "text": "impossible to credit without seeing something written down"
       },
       {
         "id": "D",
-        "text": "less important than the other changes she has been through"
+        "text": "less important than the three cities and the divorce behind her"
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — a recorded voice is unmistakably your own and still sounds wrong, and Amir turning forty-four means Nadia is aging too, so the comparison folds her into the surprise.",
       "B": "The comparison concerns a private jolt of recognition, and nothing in the scene suggests she is worried about outside opinion.",
-      "C": "The narrator says she keeps forgetting and being startled, not that she doubts the fact.",
-      "D": "The passage lists her own changes separately; this comparison is about the shock itself, not about ranking it below anything."
+      "C": "The narrator says she keeps forgetting and being startled, not that she doubts the fact when she is told it.",
+      "D": "The passage lists her own changes separately. This comparison is about the shock itself, not about ranking it below anything."
     }
   },
   {
