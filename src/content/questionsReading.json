@@ -306,7 +306,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Marchetti’s constant has been definitively disproven by recent commuting data."
+        "text": "Marchetti’s constant has been disproven by commuting data showing the average trip lengthening since 1980."
       },
       {
         "id": "B",
@@ -314,19 +314,19 @@
       },
       {
         "id": "C",
-        "text": "the fifteen-minute city is the only viable model for modern urban development."
+        "text": "the fifteen-minute city is the only workable model for modern development, whatever its critics say about affordability."
       },
       {
         "id": "D",
-        "text": "building highways is the most effective way to reduce urban congestion."
+        "text": "building highways is the most effective way to reduce congestion, since new lane miles relieve the trips already being made."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The passage presents criticism but explicitly leaves the question \"unresolved.\"",
+      "A": "The drift from twenty-two minutes to nearly twenty-seven is in the passage, but it is offered as a criticism and the passage calls the question unresolved.",
       "B": "Correct — the passage surveys the claim, the objections, and concludes its value lies in reframing planning.",
-      "C": "The passage notes legitimate criticisms of the fifteen-minute city.",
-      "D": "The passage argues the opposite via induced demand."
+      "C": "The passage treats the affordability objection as legitimate and never claims the model is the only workable one.",
+      "D": "The passage argues the opposite: vehicle miles rose almost exactly in proportion to lane miles, leaving congestion unchanged."
     }
   },
   {
@@ -438,7 +438,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "commute times have risen since 1980."
+        "text": "average one-way commute times rose from about twenty-two minutes in 1980 to nearly twenty-seven by 2019."
       },
       {
         "id": "B",
@@ -446,19 +446,19 @@
       },
       {
         "id": "C",
-        "text": "transit investment outperforms highway investment."
+        "text": "investment in transit delivers more accessibility per dollar than the same money spent on highway lane miles."
       },
       {
         "id": "D",
-        "text": "remote work reduces total vehicle miles traveled."
+        "text": "remote work has reduced total vehicle miles traveled across American metropolitan areas."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "That claim is supported by different figures, from 1980 and 2019.",
+      "A": "Those figures are real but belong to the paragraph on Marchetti’s critics, not to the 2011 study.",
       "B": "Correct — vehicle miles traveled rose \"almost exactly in proportion to new lane miles built.\"",
-      "C": "No comparison to transit investment is made.",
-      "D": "Remote work is discussed only in the final paragraph, with ambiguous results."
+      "C": "The passage never compares the two kinds of investment. The study counts lane miles and vehicle miles and nothing else.",
+      "D": "Remote work appears only in the final paragraph, two decades after the study, and the passage calls its early data ambiguous."
     }
   },
   {
@@ -504,7 +504,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "rejects the idea that travel time is stable."
+        "text": "rejects the premise that a household’s daily travel time is stable enough to plan around."
       },
       {
         "id": "B",
@@ -512,19 +512,19 @@
       },
       {
         "id": "C",
-        "text": "seeks to reduce the travel time budget below thirty minutes."
+        "text": "aims to shrink the daily travel budget well below the half hour Marchetti identified as customary."
       },
       {
         "id": "D",
-        "text": "applies only to European cities."
+        "text": "applies only to dense European cores, where the walking distances the model assumes already exist."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "It relies on that stability rather than rejecting it.",
+      "A": "The model relies on that stability rather than rejecting it — a fixed budget is what there is to invert.",
       "B": "Correct — the final sentence of that paragraph states this contrast explicitly.",
-      "C": "The model concerns what is reachable, not shortening the budget itself.",
-      "D": "The passage notes questions about non-European application but does not define the concept that way."
+      "C": "The model concerns how much can be reached inside the budget, and the passage says it changes nobody’s travel time at all.",
+      "D": "The passage raises that as an open question about how far the model travels, not as part of what the model is."
     }
   },
   {
@@ -1197,7 +1197,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "a bank’s decision to stop lending to small businesses."
+        "text": "a bank’s decision to stop lending to a business it had carried for years."
       },
       {
         "id": "B",
@@ -1205,19 +1205,19 @@
       },
       {
         "id": "C",
-        "text": "a family’s decision to sell the bakery."
+        "text": "a family’s decision to sell the bakery once the winter losses became clear."
       },
       {
         "id": "D",
-        "text": "the economic history of a coastal town."
+        "text": "the economic history of a coastal town as the tourist season came to dominate it."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "Mr. Callan grants the loan every year.",
+      "A": "Mr. Callan grants the loan again in the year the narrator attends, and walks them to the door afterward.",
       "B": "Correct — the narrator moves from criticizing the arithmetic to grasping what the mother was also counting.",
-      "C": "No sale is discussed.",
-      "D": "The town is background, not the subject."
+      "C": "No sale is discussed. The question in the passage is whether the door stays open, not who owns it.",
+      "D": "The town is the setting. The eleven families and the fishing crews are given as what the mother counted, not as a history."
     }
   },
   {
@@ -1263,7 +1263,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "he is not aware of her death."
+        "text": "he has not been told that the grandmother died six years earlier."
       },
       {
         "id": "B",
@@ -1271,19 +1271,19 @@
       },
       {
         "id": "C",
-        "text": "the mother is deceiving him about her circumstances."
+        "text": "the mother is deceiving him about her circumstances to secure the loan."
       },
       {
         "id": "D",
-        "text": "he is close to retirement."
+        "text": "he is close to retirement and no longer following the details."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The narrator later says Callan knew she was dead.",
+      "A": "The narrator says outright that Callan knew she was dead, which is what makes the question a ritual.",
       "B": "Correct — the passage calls it \"part of it too,\" and the closing paragraph names it as one of the other things being counted.",
-      "C": "The deception reading is contradicted by \"a woman he knew was dead.\"",
-      "D": "Nothing indicates his career stage."
+      "C": "The deception reading is closed off by the phrase \"a woman he knew was dead\" — both of them know.",
+      "D": "Nothing indicates his career stage, and he is attentive enough to remember her long division from school."
     }
   },
   {
@@ -1296,7 +1296,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "show that the mother agreed with the narrator’s analysis."
+        "text": "show that the mother agreed with the arithmetic her son had just laid out."
       },
       {
         "id": "B",
@@ -1304,19 +1304,19 @@
       },
       {
         "id": "C",
-        "text": "establish that the mother was distracted by driving."
+        "text": "establish that the mother was concentrating on the forty-minute drive inland."
       },
       {
         "id": "D",
-        "text": "introduce a conflict that ends the relationship."
+        "text": "introduce a conflict that permanently divides the narrator and the mother."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "She does partly agree, but that is not what the warning refers to.",
+      "A": "She does agree with the arithmetic, and says so later — but agreement is not what the narrator was warned of.",
       "B": "Correct — \"should have warned me\" is retrospective narration flagging what follows.",
-      "C": "No distraction is described.",
-      "D": "No rupture occurs."
+      "C": "No distraction is described, and she answers the argument in full on the way back.",
+      "D": "No rupture occurs. The narrator spends twenty years working out what she meant."
     }
   },
   {
@@ -1362,7 +1362,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "the flour supplier raised prices."
+        "text": "the flour supplier raised prices once the tourist season ended."
       },
       {
         "id": "B",
@@ -1370,19 +1370,19 @@
       },
       {
         "id": "C",
-        "text": "the fishing crews refused to pay."
+        "text": "the fishing crews could not afford to pay the summer prices."
       },
       {
         "id": "D",
-        "text": "a competitor had opened nearby."
+        "text": "a competitor had opened nearby and taken the winter trade."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "Supply costs are never mentioned.",
+      "A": "Supply costs are never mentioned. The loss comes from selling to a town that has emptied.",
       "B": "Correct — \"if she closed the door in November it would not open in June.\"",
-      "C": "No refusal to pay is described.",
-      "D": "No competitor appears."
+      "C": "No difficulty over payment is described; the crews are named as part of what the bakery was for.",
+      "D": "No competitor appears. Mr. Callan’s remark assumes the bakery is the only such place in town."
     }
   },
   {
@@ -1395,7 +1395,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "the mother had asked him to explain the loan."
+        "text": "the mother had asked him to explain the loan to her son on the way out."
       },
       {
         "id": "B",
@@ -1403,19 +1403,19 @@
       },
       {
         "id": "C",
-        "text": "he was avoiding eye contact with the mother."
+        "text": "he was avoiding the mother’s eye after granting the loan again."
       },
       {
         "id": "D",
-        "text": "the narrator had asked him a direct question."
+        "text": "the narrator had asked him directly why the bank kept lending."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "No such request is described.",
+      "A": "No such request is described. She lets the narrator sit with it for ten miles instead.",
       "B": "Correct — the narrator has just argued the arithmetic is insane, and Callan supplies the counting the narrator is missing.",
-      "C": "No such detail appears.",
-      "D": "The narrator only shakes his hand."
+      "C": "No such detail appears, and he has just come out from behind his desk to see them off.",
+      "D": "The narrator says nothing at the bank and only shakes his hand."
     }
   },
   {
@@ -1432,23 +1432,23 @@
       },
       {
         "id": "B",
-        "text": "ability to perform arithmetic."
+        "text": "ability to perform the arithmetic the bakery’s finances required."
       },
       {
         "id": "C",
-        "text": "affection for the mother."
+        "text": "affection for the mother and for what she was doing."
       },
       {
         "id": "D",
-        "text": "knowledge of the town’s history."
+        "text": "knowledge of the town and the eleven families in it."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the closing paragraph describes twenty years of working out what she meant.",
-      "B": "The arithmetic was correct then and now.",
-      "C": "No change in affection is indicated.",
-      "D": "The town is equally familiar to both."
+      "B": "The arithmetic was right at nineteen and is still right; the mother concedes it twice.",
+      "C": "No change in affection is indicated — the narrator went with her and has thought about her answer for twenty years.",
+      "D": "The town is equally familiar to the narrator at both ages; what changes is what the narrator counts."
     }
   },
   {
@@ -1461,7 +1461,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "concede that the mother’s business model was unsustainable."
+        "text": "concede that the mother’s way of running the bakery could not have lasted another decade."
       },
       {
         "id": "B",
@@ -1469,19 +1469,19 @@
       },
       {
         "id": "C",
-        "text": "explain how the loan was eventually repaid."
+        "text": "explain how the spring loan was eventually repaid out of summer trade."
       },
       {
         "id": "D",
-        "text": "introduce a new character."
+        "text": "introduce a character who had not appeared in the story before."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The narrator never retracts the arithmetic, but that is not the sentence’s work.",
+      "A": "The narrator never retracts the arithmetic, but conceding it is not what the final sentence does.",
       "B": "Correct — it states that these factors were \"the actual reason the ledger existed,\" not additions to it.",
-      "C": "Repayment is never resolved.",
-      "D": "No new character appears."
+      "C": "Repayment is never resolved. The passage says the summer profit never quite closed the gap.",
+      "D": "No new character appears; the grandmother, Callan and the families are all already there."
     }
   },
   {
@@ -2088,7 +2088,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "proving that senescent cells cause all aging."
+        "text": "establishing that the accumulation of senescent cells is the single cause of age-related decline."
       },
       {
         "id": "B",
@@ -2096,19 +2096,19 @@
       },
       {
         "id": "C",
-        "text": "the biography of Leonard Hayflick."
+        "text": "the career of Leonard Hayflick, from the 1961 culture experiments through the telomere work that followed."
       },
       {
         "id": "D",
-        "text": "arguing that senolytic drugs should be approved immediately."
+        "text": "arguing that senolytic drugs are ready for use and that regulatory recognition is the only thing still missing."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The passage says the simple picture \"has since become considerably more complicated.\"",
+      "A": "The passage offers senescence as one thread and says the simple picture — cells run out, tissues decline — has since become considerably more complicated.",
       "B": "Correct — it traces the Hayflick limit through telomeres, the secretory phenotype, and senolytics with caveats.",
-      "C": "Hayflick appears in one paragraph.",
-      "D": "The closing paragraph argues for caution."
+      "C": "Hayflick occupies one paragraph, and the telomere mechanism is not attributed to him at all.",
+      "D": "The closing paragraph argues the opposite, naming impaired wound healing and unknown cancer risk as reasons for caution."
     }
   },
   {
@@ -2154,7 +2154,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "die immediately after their final division."
+        "text": "die shortly after their final division rather than persisting."
       },
       {
         "id": "B",
@@ -2162,19 +2162,19 @@
       },
       {
         "id": "C",
-        "text": "continue dividing at a slower rate."
+        "text": "continue dividing, but at a much slower rate than before."
       },
       {
         "id": "D",
-        "text": "are found only in elderly animals."
+        "text": "appear only in elderly animals, not in young ones."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The passage says senescence \"does not die.\"",
+      "A": "The passage is explicit that a senescent cell stops dividing permanently but does not die.",
       "B": "Correct — they permanently stop dividing and produce the secretory phenotype.",
-      "C": "Division stops entirely.",
-      "D": "They are produced continuously in young animals as well."
+      "C": "Division stops entirely once telomeres shorten past the threshold; it does not merely slow down.",
+      "D": "Young animals produce them continuously. What changes with age is that removal becomes less efficient."
     }
   },
   {
@@ -2187,7 +2187,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "be technically impossible."
+        "text": "be technically impossible with current methods."
       },
       {
         "id": "B",
@@ -2195,19 +2195,19 @@
       },
       {
         "id": "C",
-        "text": "require gene editing in humans."
+        "text": "require the kind of genetic engineering used on the mice."
       },
       {
         "id": "D",
-        "text": "shorten telomeres further."
+        "text": "shorten telomeres faster than division already does."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "Impossibility is never claimed.",
+      "A": "The passage never says prevention cannot be done, only that it would give something up.",
       "B": "Correct — the passage notes senescence \"is also a defense against cancer.\"",
-      "C": "Gene editing is mentioned only for the engineered mice.",
-      "D": "Prevention would not shorten telomeres."
+      "C": "That engineering was a way to destroy senescent cells in mice, not a way to prevent senescence.",
+      "D": "Preventing senescence would not shorten telomeres — telomere shortening is what triggers it."
     }
   },
   {
@@ -2224,23 +2224,23 @@
       },
       {
         "id": "B",
-        "text": "demonstrate that senescence protects against cancer."
+        "text": "demonstrate that senescence is also a defense against cancer."
       },
       {
         "id": "C",
-        "text": "introduce the secretory phenotype."
+        "text": "introduce the senescence-associated secretory phenotype."
       },
       {
         "id": "D",
-        "text": "describe an early senolytic trial."
+        "text": "describe an early attempt at a senolytic treatment."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the belief rested \"largely on a contaminated experiment.\"",
-      "B": "That point arises much later and from different evidence.",
-      "C": "The phenotype appears in a later paragraph.",
-      "D": "Senolytic trials came decades afterward."
+      "B": "That point arrives several paragraphs later and rests on the logic of a cell that cannot divide, not on Carrel.",
+      "C": "The phenotype is introduced much later, and nothing about Carrel’s culture bears on it.",
+      "D": "Senolytics were identified decades afterward, and Carrel’s experiment established nothing about clearing cells."
     }
   },
   {
@@ -2253,7 +2253,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "a sign or hint."
+        "text": "a sign or hint that something is about to happen."
       },
       {
         "id": "B",
@@ -2261,19 +2261,19 @@
       },
       {
         "id": "C",
-        "text": "a measurement."
+        "text": "a reading taken from an instrument or a test."
       },
       {
         "id": "D",
-        "text": "a warning label."
+        "text": "a warning printed on a drug’s packaging."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "A common sense of the word, but not the regulatory usage here.",
+      "A": "That is the common sense of the word, but the sentence is about what regulators approve a drug to treat.",
       "B": "Correct — the sentence concerns regulators not recognizing aging as a treatable condition.",
-      "C": "Nothing is being measured.",
-      "D": "No labeling is discussed."
+      "C": "Nothing in the sentence is being measured; the word sits inside a regulatory phrase.",
+      "D": "No labelling is discussed. The sentence concerns which conditions a treatment may be approved for."
     }
   },
   {
@@ -2286,7 +2286,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "uniformly harmful."
+        "text": "harmful wherever it appears, at any age."
       },
       {
         "id": "B",
@@ -2294,19 +2294,19 @@
       },
       {
         "id": "C",
-        "text": "irrelevant to aging."
+        "text": "largely irrelevant to how an organism ages."
       },
       {
         "id": "D",
-        "text": "a product of telomere lengthening."
+        "text": "a consequence of telomeres lengthening past a threshold."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "It aids wound healing and immune recruitment.",
+      "A": "It recruits immune cells, aids wound healing and helps clear damaged tissue in the short term.",
       "B": "Correct — useful \"in small numbers and for short periods,\" damaging when cells accumulate over years.",
-      "C": "It is central to the passage’s account of aging.",
-      "D": "It follows telomere shortening, not lengthening."
+      "C": "It is the centre of the passage’s account: the same secretions drive chronic inflammation as the cells accumulate.",
+      "D": "Telomeres shorten past a threshold. Nothing in the passage describes them lengthening."
     }
   },
   {
@@ -2319,7 +2319,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "aging itself."
+        "text": "aging itself, on the strength of the extended lifespan seen in mice."
       },
       {
         "id": "B",
@@ -2327,19 +2327,19 @@
       },
       {
         "id": "C",
-        "text": "cancer prevention."
+        "text": "the prevention of cancer in patients already at high risk."
       },
       {
         "id": "D",
-        "text": "wound healing."
+        "text": "the acceleration of wound healing after surgery."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The passage says regulators do not recognize aging as an indication.",
+      "A": "The passage says trials target specific conditions rather than aging, because regulators do not recognise aging as an indication.",
       "B": "Correct — both conditions are named.",
-      "C": "Cancer appears as a caution, not a trial target.",
-      "D": "Wound healing is raised as a risk of clearing, not a target."
+      "C": "Cancer appears only as a reason for caution about clearing these cells, never as a trial target.",
+      "D": "Wound healing is named as something indiscriminate clearing might impair, which is the opposite of a target."
     }
   },
   {
@@ -2352,7 +2352,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "reject senolytics as unworkable."
+        "text": "reject senolytics as unworkable, given how much about their long-term effects is still unknown."
       },
       {
         "id": "B",
@@ -2360,19 +2360,19 @@
       },
       {
         "id": "C",
-        "text": "summarize the mouse results."
+        "text": "summarise the mouse results on cardiac function, frailty and median lifespan."
       },
       {
         "id": "D",
-        "text": "call for faster regulatory approval."
+        "text": "call for regulators to move faster on approving senolytic treatments."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The passage reports substantial promise.",
+      "A": "The passage reports substantial results in mice and preliminary human trials, not a dead end.",
       "B": "Correct — it replaces a yes/no framing with questions of dose, location, and timing.",
-      "C": "Mouse results appear earlier and are not restated.",
-      "D": "The paragraph argues for caution instead."
+      "C": "Those results appear two paragraphs earlier, and the closing sentence does not restate them.",
+      "D": "The paragraph it closes is the one arguing for caution, and it names two specific unknowns."
     }
   },
   {
@@ -4567,23 +4567,23 @@
       },
       {
         "id": "B",
-        "text": "argue that the researchers have chosen an unnecessarily complicated method."
+        "text": "argue that the researchers have chosen an unnecessarily complicated method over a simpler one."
       },
       {
         "id": "C",
-        "text": "establish that tagging studies are the weakest part of the procedure."
+        "text": "establish that the tagging studies are the weakest of the several links in the procedure."
       },
       {
         "id": "D",
-        "text": "introduce acoustics as the solution to the problems just described."
+        "text": "introduce acoustic monitoring as the answer to the problems the paragraph has just described."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the paragraph walks through three separate assumptions, each carrying its own estimate, to show that the final figure inherits uncertainty from all of them.",
       "B": "The previous paragraph argues the method is forced by arithmetic, not chosen carelessly.",
-      "C": "Tagging is one link among several and is not singled out as the weakest.",
-      "D": "Acoustics does not appear until two paragraphs later."
+      "C": "Tagging is one link among several, and the paragraph singles none of them out as the weakest.",
+      "D": "Acoustics does not appear until two paragraphs later, and the passage says it cannot count."
     }
   },
   {
@@ -4600,23 +4600,23 @@
       },
       {
         "id": "B",
-        "text": "It provides statistical detail supporting the figure of thirty animals."
+        "text": "It provides the statistical detail that supports the most cited figure of about thirty animals."
       },
       {
         "id": "C",
-        "text": "It introduces a disagreement among researchers about survey design."
+        "text": "It introduces a disagreement among researchers about how the surveys ought to be designed."
       },
       {
         "id": "D",
-        "text": "It narrows the passage's subject from all whales to a single population."
+        "text": "It narrows the passage's subject from right whales generally to the eastern population."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the first paragraph says the survey effort \"would embarrass a pollster,\" and the second replies \"This is not carelessness. It is arithmetic,\" then shows why exhaustive coverage is impossible.",
-      "B": "The second paragraph explains why counting fails; it offers no support for the specific figure.",
+      "B": "The second paragraph explains why counting fails; it offers no support for that particular figure.",
       "C": "No disagreement between researchers is described anywhere in the passage.",
-      "D": "The first paragraph has already named the eastern population, so no narrowing occurs."
+      "D": "The first paragraph has already named the eastern population, so there is nothing left to narrow."
     }
   },
   {
@@ -4633,23 +4633,23 @@
       },
       {
         "id": "B",
-        "text": "a chronological history of whale surveys from the nineteenth century to the present."
+        "text": "a chronological history of right whale surveys from the nineteenth century to the present day."
       },
       {
         "id": "C",
-        "text": "a comparison of two competing methods, ending in an endorsement of one."
+        "text": "a comparison of two competing survey methods, ending in an endorsement of the newer one."
       },
       {
         "id": "D",
-        "text": "a case study of one survey voyage, generalized into a broader principle."
+        "text": "a case study of a single survey voyage, generalised into a broader principle about counting."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the passage opens on the unknown number, explains why direct counting is impossible, presents acoustics as a real but partial gain, and closes on what is still unknown.",
-      "B": "No history of past surveys is given; the time references are illustrative rather than sequential.",
+      "B": "No history of past surveys is given; the time references illustrate the arithmetic rather than a sequence.",
       "C": "Acoustics is presented as complementary and explicitly unable to count, so it is not endorsed over ship surveys.",
-      "D": "No individual voyage is described."
+      "D": "No individual voyage is described; the forty-year figure is a calculation, not a trip."
     }
   },
   {
@@ -4666,23 +4666,23 @@
       },
       {
         "id": "B",
-        "text": "dismissive of a figure produced by inadequate fieldwork."
+        "text": "dismissive of a figure produced by fieldwork the author considers inadequate."
       },
       {
         "id": "C",
-        "text": "confident that acoustic methods have now made it reliable."
+        "text": "confident that acoustic monitoring has now made the population figure reliable."
       },
       {
         "id": "D",
-        "text": "indifferent to a technical dispute with no practical stakes."
+        "text": "indifferent to a technical dispute the author regards as having no practical stakes."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the author writes that \"None of this means the number is worthless\" and then insists it is \"a conclusion, not an observation.\"",
-      "B": "The author explicitly rejects the reading that the fieldwork was careless.",
+      "B": "The author explicitly rejects that reading: \"This is not carelessness. It is arithmetic.\"",
       "C": "Acoustics is said to establish where whales are, while counting \"remains unsolved for this species.\"",
-      "D": "The final sentence stresses that the stakes are enormous if the number is wrong."
+      "D": "The final sentence stresses that the stakes are enormous if the number turns out to be wrong."
     }
   },
   {
@@ -4699,23 +4699,23 @@
       },
       {
         "id": "B",
-        "text": "reached an impasse that makes further research difficult to justify."
+        "text": "reached an impasse that makes further work on the population figure hard to justify."
       },
       {
         "id": "C",
-        "text": "allowed political pressure to distort what it reports publicly."
+        "text": "allowed pressure from managers to distort the figures it reports publicly."
       },
       {
         "id": "D",
-        "text": "abandoned ship surveys in favor of a method it does not fully trust."
+        "text": "abandoned ship surveys in favour of a newer method it does not fully trust."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the sentence that follows says the field knows more about where the whales are and not much more about how many, which is exactly a gain paired with an admitted limit.",
-      "B": "The passage describes acoustics as an advance, not a dead end.",
-      "C": "No political distortion of reported results is suggested; managers use the best available number openly.",
-      "D": "Nothing indicates ship surveys have been abandoned."
+      "B": "The passage describes acoustics as a real advance rather than a dead end.",
+      "C": "No distortion is suggested. Managers use the best available number, and the passage says so plainly.",
+      "D": "Nothing indicates ship surveys have been abandoned; acoustics is added to them, not substituted."
     }
   },
   {
@@ -4765,22 +4765,22 @@
       },
       {
         "id": "B",
-        "text": "The most cited figure is around thirty animals."
+        "text": "The most cited figure for the eastern population is around thirty animals."
       },
       {
         "id": "C",
-        "text": "Right whales gather where their prey gathers."
+        "text": "Right whales gather where their prey gathers, and prey is not evenly spread."
       },
       {
         "id": "D",
-        "text": "A moored recorder can listen for a year rather than a few weeks."
+        "text": "A moored recorder can listen for a year rather than for a few weeks each summer."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — a survey that outlasts the population it measures is the passage's direct demonstration that the approach cannot work.",
-      "B": "The figure is the disputed output of the method, not evidence about its feasibility.",
-      "C": "Uneven distribution undermines an assumption in the reasoning, but it does not speak to how long a survey would take.",
+      "B": "The figure is the disputed output of the method, not evidence about whether the method is feasible.",
+      "C": "Uneven distribution undermines an assumption inside the reasoning, but says nothing about how long a survey would take.",
       "D": "This describes the advantage of the alternative method rather than the limits of the ship-based one."
     }
   },
@@ -4798,22 +4798,22 @@
       },
       {
         "id": "B",
-        "text": "Right whales call, and recorders can operate in darkness and fog."
+        "text": "Right whales call, and recorders keep working in darkness, fog and heavy weather."
       },
       {
         "id": "C",
-        "text": "A hundred calls may come from one talkative animal or from twenty quiet ones."
+        "text": "A hundred recorded calls may come from one talkative animal or from twenty quiet ones."
       },
       {
         "id": "D",
-        "text": "A responsible estimate is published as a range spanning roughly a factor of three."
+        "text": "A responsible population estimate is published as a range spanning roughly a factor of three."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — this is a specific fact established by recorders that no previous method had produced.",
       "B": "This explains why recorders are capable, which is a precondition for the finding rather than the finding itself.",
-      "C": "This states a limitation of acoustics, not a contribution.",
+      "C": "This states the limitation of acoustics, which is the reason it cannot yet count rather than a contribution.",
       "D": "The published range describes the uncertainty of the ship-based estimate and predates the acoustic work."
     }
   },
