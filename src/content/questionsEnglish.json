@@ -87,7 +87,7 @@
       },
       {
         "id": "D",
-        "text": "one line at a time, in sequence, individually."
+        "text": "OMIT the underlined portion, ending the sentence after \"readings.\""
       }
     ],
     "answer": "C",
@@ -95,7 +95,7 @@
       "A": "\"one single\" is redundant and \"one after another\" repeats \"at a time.\"",
       "B": "\"one single\" still says the same thing twice.",
       "C": "Correct — the shortest phrasing that keeps the full meaning.",
-      "D": "Piles up three synonymous modifiers."
+      "D": "This removes the redundancy by removing the information. The sentence exists to say how slowly the plotting went, and \"one line at a time\" is the only place it says it."
     }
   },
   {
@@ -1512,7 +1512,7 @@
       },
       {
         "id": "D",
-        "text": "in the previous sense of my past belief in recipes."
+        "text": "OMIT the underlined portion, ending the sentence after \"recipe.\""
       }
     ],
     "answer": "B",
@@ -1520,7 +1520,7 @@
       "A": "\"previously\" and \"in the past\" say the same thing twice.",
       "B": "Correct — removes the redundancy while keeping the meaning.",
       "C": "\"previously\" and \"before\" duplicate each other.",
-      "D": "\"previous\" and \"past\" duplicate each other, and the phrasing is convoluted."
+      "D": "\"There was no recipe\" flatly contradicts the paragraph, which has just described one. The qualification is the sentence’s point, so it cannot be cut to fix its wordiness."
     }
   },
   {
@@ -1578,7 +1578,7 @@
       },
       {
         "id": "D",
-        "text": "For example,"
+        "text": "DELETE the underlined portion (capitalizing \"She\")."
       }
     ],
     "answer": "B",
@@ -1586,7 +1586,7 @@
       "A": "\"Similarly\" implies a comparison that does not exist between the rolls and her looking.",
       "B": "Correct — the relationship is simple sequence.",
       "C": "There is no contrast to signal.",
-      "D": "Her look is not an example of the rolls being golden."
+      "D": "Grammatical, but the two sentences then sit side by side with nothing to say the second follows the first. \"Then\" is what makes the pause a consequence of the rolls coming out right."
     }
   },
   {
@@ -2407,7 +2407,7 @@
       },
       {
         "id": "D",
-        "text": "instead of rather than being designed."
+        "text": "OMIT the underlined portion, ending the sentence after \"urban life.\""
       }
     ],
     "answer": "B",
@@ -2415,7 +2415,7 @@
       "A": "\"designed by design\" repeats itself.",
       "B": "Correct — removes the redundancy.",
       "C": "Keeps the redundant phrase.",
-      "D": "\"instead of rather than\" doubles the contrast marker."
+      "D": "The contrast between byproduct and design is what the paragraph goes on to argue about. Cutting it leaves a sentence nobody would disagree with and nothing to develop."
     }
   },
   {
@@ -3072,7 +3072,7 @@
       },
       {
         "id": "D",
-        "text": "the most and highest the room had done."
+        "text": "OMIT the underlined portion, ending the sentence after \"covers.\""
       }
     ],
     "answer": "B",
@@ -3080,7 +3080,7 @@
       "A": "\"most and highest\" and \"ever before previously\" each repeat themselves.",
       "B": "Correct — a tight appositive with no redundancy.",
       "C": "\"ever\" and \"before\" still overlap.",
-      "D": "Keeps the doubled superlative."
+      "D": "Two hundred and eleven covers means nothing to a reader who does not know the room. The clause is redundant in its wording, not in its work."
     }
   },
   {
@@ -3138,7 +3138,7 @@
       },
       {
         "id": "D",
-        "text": "For example,"
+        "text": "DELETE the underlined portion (capitalizing \"He\")."
       }
     ],
     "answer": "B",
@@ -3146,7 +3146,7 @@
       "A": "There is no contrast between fixing the machine and washing pans.",
       "B": "Correct — the relationship is simple sequence.",
       "C": "Also signals a contrast that does not exist.",
-      "D": "Washing is not an example of the repair."
+      "D": "The sentence survives the deletion, but the sequence does not: without \"Then\" there is nothing to say the washing came after the four minutes rather than instead of them."
     }
   },
   {
@@ -8267,7 +8267,7 @@
       },
       {
         "id": "D",
-        "text": "For instance,"
+        "text": "DELETE the underlined portion (capitalizing \"Laid\")."
       }
     ],
     "answer": "A",
@@ -8275,7 +8275,7 @@
       "A": "Barely moving and showing a crash are in tension, and the sentence exists to mark that tension. \"Yet\" is the contrast signal.",
       "B": "\"Therefore\" claims the second fact follows from the first, when it cuts against it.",
       "C": "\"Similarly\" claims likeness, which is the opposite of what the two sentences do.",
-      "D": "\"For instance\" promises an example, but a nineteen-year trend is not an instance of a flat morning."
+      "D": "Deleting leaves two true sentences and no relation between them. The whole point is that the daily numbers and the nineteen-year record disagree, and \"Yet\" is what says so."
     }
   },
   {
@@ -8729,7 +8729,7 @@
       },
       {
         "id": "D",
-        "text": "In other words,"
+        "text": "DELETE the underlined portion (capitalizing \"The\")."
       }
     ],
     "answer": "A",
@@ -8737,7 +8737,7 @@
       "A": "Three left and one stayed. The second sentence exists to mark the exception, and \"by contrast\" is the signal for an exception.",
       "B": "\"Similarly\" claims the fourth did what the other three did, which is the reverse of the fact.",
       "C": "\"As a result\" claims the fourth stayed because the others left, a causal link the passage never draws.",
-      "D": "\"In other words\" promises a restatement, but the second sentence adds a new fact."
+      "D": "Three left and one stayed is a contrast, and deleting the transition asks the reader to supply it. The sentence reads as a fourth item in a list instead of an exception to one."
     }
   },
   {
@@ -9719,7 +9719,7 @@
       },
       {
         "id": "D",
-        "text": "Similarly,"
+        "text": "DELETE the underlined portion (capitalizing \"She\")."
       }
     ],
     "answer": "B",
@@ -9727,7 +9727,7 @@
       "A": "Not being able to state the amount is not an example of being consistent; it works against it.",
       "B": "\"Even so\" concedes the first sentence and then sets the limitation against it, which is the relation here.",
       "C": "\"Therefore\" claims the inability follows from the consistency, and it does not.",
-      "D": "\"Similarly\" claims the two sentences say the same kind of thing, but one is a strength and one is a limit."
+      "D": "The essay turns on the gap between doing a thing well and being able to say how, so the concession has to be marked. Deleted, the two sentences read as unrelated observations."
     }
   },
   {
@@ -10210,7 +10210,7 @@
       },
       {
         "id": "C",
-        "text": "Otherwise,"
+        "text": "DELETE the underlined portion (capitalizing \"They\")."
       },
       {
         "id": "D",
@@ -10221,7 +10221,7 @@
     "why": {
       "A": "\"Similarly\" says the second statement is a parallel case, but it goes further than the first rather than alongside it.",
       "B": "\"In fact\" is what carries a sentence past the previous claim to a stronger one: not merely not eliminated, but concentrated.",
-      "C": "\"Otherwise\" introduces an alternative that would hold if the first were untrue, and no alternative is offered.",
+      "C": "The second sentence corrects the first rather than adding to it. Without a marker the reader has no reason to read it as a correction, which is the paragraph’s whole claim.",
       "D": "\"By contrast\" sets the two statements against each other, but they point the same way."
     }
   },
