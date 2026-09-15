@@ -79,7 +79,7 @@
       },
       {
         "id": "B",
-        "text": "one single line at a time."
+        "text": "one line."
       },
       {
         "id": "C",
@@ -93,7 +93,7 @@
     "answer": "C",
     "why": {
       "A": "\"one single\" is redundant and \"one after another\" repeats \"at a time.\"",
-      "B": "\"one single\" still says the same thing twice.",
+      "B": "Cuts past the redundancy into the meaning: she plotted thousands of lines over four years, not one, and \"at a time\" is what says so.",
       "C": "Correct — the shortest phrasing that keeps the full meaning.",
       "D": "This removes the redundancy by removing the information. The sentence exists to say how slowly the plotting went, and \"one line at a time\" is the only place it says it."
     }
@@ -613,7 +613,7 @@
       },
       {
         "id": "C",
-        "text": "was prepared and ready to discard one"
+        "text": "had thrown one away"
       },
       {
         "id": "D",
@@ -624,7 +624,7 @@
     "why": {
       "A": "\"prepared and ready\" is redundant, as is \"away in the garbage.\"",
       "B": "Correct — removes both redundancies without losing meaning.",
-      "C": "Still doubles \"prepared and ready.\"",
+      "C": "Shorter, and it reports something that never happened. He was willing to throw the toaster out; the sentence goes on to say he did not.",
       "D": "\"throw away in the trash\" repeats itself."
     }
   },
@@ -1508,7 +1508,7 @@
       },
       {
         "id": "C",
-        "text": "in the sense that previously I had believed in them before."
+        "text": "as I had believed."
       },
       {
         "id": "D",
@@ -1519,7 +1519,7 @@
     "why": {
       "A": "\"previously\" and \"in the past\" say the same thing twice.",
       "B": "Correct — removes the redundancy while keeping the meaning.",
-      "C": "\"previously\" and \"before\" duplicate each other.",
+      "C": "\"As I had believed\" means the narrator had expected this, which is the opposite of the paragraph. The original phrase names a sense of the word recipe, not an expectation.",
       "D": "\"There was no recipe\" flatly contradicts the paragraph, which has just described one. The qualification is the sentence’s point, so it cannot be cut to fix its wordiness."
     }
   },
@@ -1976,7 +1976,7 @@
       },
       {
         "id": "D",
-        "text": "are now currently covering"
+        "text": "covered"
       }
     ],
     "answer": "B",
@@ -1984,7 +1984,7 @@
       "A": "\"now,\" \"currently,\" and \"at the present time\" all say the same thing.",
       "B": "Correct — one time marker is enough.",
       "C": "Still doubles the time reference.",
-      "D": "Retains two redundant markers and adds a needless progressive."
+      "D": "The shortest option here is also the wrong tense: the cameras are the successors, watching the district now, and the past tense retires them."
     }
   },
   {
@@ -2403,7 +2403,7 @@
       },
       {
         "id": "C",
-        "text": "rather than something that is designed by design."
+        "text": "not designed."
       },
       {
         "id": "D",
@@ -2414,7 +2414,7 @@
     "why": {
       "A": "\"designed by design\" repeats itself.",
       "B": "Correct — removes the redundancy.",
-      "C": "Keeps the redundant phrase.",
+      "C": "Drops the \"rather than\" and with it the comparison. The sentence stops contrasting two ways of treating noise and simply asserts that urban life is undesigned.",
       "D": "The contrast between byproduct and design is what the paragraph goes on to argue about. Cutting it leaves a sentence nobody would disagree with and nothing to develop."
     }
   },
@@ -3068,7 +3068,7 @@
       },
       {
         "id": "C",
-        "text": "which was the highest number ever done before."
+        "text": "the most ever."
       },
       {
         "id": "D",
@@ -3079,7 +3079,7 @@
     "why": {
       "A": "\"most and highest\" and \"ever before previously\" each repeat themselves.",
       "B": "Correct — a tight appositive with no redundancy.",
-      "C": "\"ever\" and \"before\" still overlap.",
+      "C": "Cuts the room out of the claim, so the sentence now says two hundred and eleven covers is a record for anyone anywhere rather than for this kitchen.",
       "D": "Two hundred and eleven covers means nothing to a reader who does not know the room. The clause is redundant in its wording, not in its work."
     }
   },
@@ -3367,7 +3367,7 @@
       },
       {
         "id": "C",
-        "text": "The reason the library works is because"
+        "text": "The library works"
       },
       {
         "id": "D",
@@ -3378,7 +3378,7 @@
     "why": {
       "B": "'The reason that ... is that' is a long frame around a simple causal claim, and 'works so well and continues to work well' says one thing twice. 'The library works because' keeps the meaning in four words.",
       "A": "Keeps both the padded frame and the redundant pair of verbs.",
-      "C": "Pairs 'the reason' with 'because', which states the causal relationship twice.",
+      "C": "Removes the wordiness and the connective with it, leaving \"The library works most tools sit idle\" — two clauses with nothing joining them.",
       "D": "Is longer than the original and adds a nominalization on top of the redundancy."
     }
   },
@@ -4353,7 +4353,7 @@
       },
       {
         "id": "B",
-        "text": "The lot at Fifth and Poplar will never make anyone rich due to the fact that it only produces a few hundred pounds of vegetables a year, which is not enough to matter to anyone's grocery bill."
+        "text": "The lot at Fifth and Poplar will never make anyone rich; it produces only a few hundred pounds of vegetables a year."
       },
       {
         "id": "C",
@@ -4368,7 +4368,7 @@
     "why": {
       "C": "\"Due to the fact that\" can be cut to \"because\" — or, as here, to a semicolon linking two related independent clauses — and \"in a significant way\" adds nothing \"not enough to matter\" doesn't already say. Fixing only one of the two leaves the sentence still needlessly wordy.",
       "A": "Keeps both wordy constructions, \"due to the fact that\" and \"in a significant way,\" that the sentence doesn't need.",
-      "B": "Fixes \"in a significant way\" but leaves \"due to the fact that\" in place.",
+      "B": "The shortest version on offer, and it drops the clause that tells the reader why a few hundred pounds is a small amount. The question asks for concision without loss of meaning.",
       "D": "Fixes \"due to the fact that\" but leaves \"in a significant way\" in place."
     }
   },
@@ -8597,7 +8597,7 @@
       },
       {
         "id": "D",
-        "text": "The reason why she charges more is due to the fact that"
+        "text": "She charges more"
       }
     ],
     "answer": "A",
@@ -8605,7 +8605,7 @@
       "A": "Four words instead of seven, and the cause is stated once rather than twice.",
       "B": "\"The reason … is because\" says the causal relationship twice over, once in \"reason\" and again in \"because\".",
       "C": "Swaps \"because\" for \"on account of\" and keeps the doubled cause, while adding a nominalization.",
-      "D": "Longer than the original and still doubles the cause, now with \"why\" and \"due to the fact that\"."
+      "D": "Concise to the point of breaking: \"She charges more the work takes longer\" joins two statements with no connective between them."
     }
   },
   {
@@ -10247,7 +10247,7 @@
       },
       {
         "id": "D",
-        "text": "made the conclusion, from out of the resulting failure,"
+        "text": "concluding"
       }
     ],
     "answer": "B",
@@ -10255,7 +10255,7 @@
       "A": "\"Came to the conclusion\" and \"on the basis of the failure that resulted\" both take several words to do one word’s work.",
       "B": "\"Concluded from the resulting failure\" keeps every piece of meaning and matches the two compact verbs before it.",
       "C": "This is the same padding with different words, and \"based upon\" and \"which resulted\" add nothing.",
-      "D": "\"Made the conclusion\" is not idiomatic, and \"from out of\" doubles the preposition."
+      "D": "Breaks the series. The cities installed, budgeted and concluded; a participle leaves the third item hanging off the first two."
     }
   },
   {
@@ -10610,7 +10610,7 @@
       },
       {
         "id": "D",
-        "text": "there were only two that I was able to find"
+        "text": "I found two"
       }
     ],
     "answer": "B",
@@ -10618,7 +10618,7 @@
       "A": "\"Was able to find\" and \"a total of\" are both padding around the simple verb \"found\".",
       "B": "Three words carry the whole meaning, and \"only\" stays where it belongs, next to \"two\".",
       "C": "\"The number of two\" is not idiomatic and adds nothing to \"two\".",
-      "D": "This buries the writer in a \"there were\" construction and makes the sentence longer than the original."
+      "D": "Drops \"only\", which is the word doing the work. The paragraph is about how rarely the check caught anything, not about the count on its own."
     }
   },
   {
@@ -11171,7 +11171,7 @@
       },
       {
         "id": "D",
-        "text": "happens to be real, not being captured"
+        "text": "is uncaptured"
       }
     ],
     "answer": "B",
@@ -11179,7 +11179,7 @@
       "A": "\"Is a thing that is\" wraps two words of padding around each half of the sentence.",
       "B": "Both claims survive, and the parallel \"is real and is not captured\" is clearer without the scaffolding.",
       "C": "\"Not being captured\" turns a statement into a participle and loses the parallel.",
-      "D": "\"Happens to be\" weakens a claim the writer means seriously."
+      "D": "Shorter, and it quietly abandons the claim. The sentence is asserting two things about the contribution: that it is real, and that no number holds it."
     }
   },
   {
@@ -11732,7 +11732,7 @@
       },
       {
         "id": "D",
-        "text": "would say that his opinion is that he is not"
+        "text": "is not"
       }
     ],
     "answer": "B",
@@ -11740,7 +11740,7 @@
       "A": "\"Is of the opinion that\" is four words doing the work of one verb.",
       "B": "\"Says\" is direct, and the passage attributes the claim to him rather than endorsing it.",
       "C": "This swaps one padded phrase for another of the same length.",
-      "D": "This stacks \"would say\" on top of \"his opinion is\", doubling the hedge."
+      "D": "Removes Huang from his own judgement. The essay reports what he says about himself; stated flatly, it becomes the writer ranking builders."
     }
   },
   {
