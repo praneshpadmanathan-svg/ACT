@@ -12030,5 +12030,1285 @@
       "C": "Uses a = 3 and b = 3, mixing up which variable each equation solves for.",
       "D": "Divides 5 + 5i by 2 − i but forgets the denominator's magnitude, inflating both parts."
     }
+  },
+  {
+    "id": "m377",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "hard",
+    "context": "Simplify: (8x⁶)^(2/3)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4x⁴"
+      },
+      {
+        "id": "B",
+        "text": "16x⁴"
+      },
+      {
+        "id": "C",
+        "text": "4x⁹"
+      },
+      {
+        "id": "D",
+        "text": "64x⁴"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 8^(2/3) is the cube root of 8 squared, which is 2² = 4, and 6 · 2/3 = 4.",
+      "B": "16 would be 8^(4/3). Taking the cube root first gives 2, and 2 squared is 4, not 16.",
+      "C": "This divides the exponent by 2/3 instead of multiplying: 6 ÷ (2/3) = 9. A power of a power multiplies.",
+      "D": "64 is 8², which drops the cube root entirely."
+    }
+  },
+  {
+    "id": "m378",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "medium",
+    "context": "Rationalise the denominator: 6/√3",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2√3"
+      },
+      {
+        "id": "B",
+        "text": "6√3"
+      },
+      {
+        "id": "C",
+        "text": "2"
+      },
+      {
+        "id": "D",
+        "text": "2√3/3"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — multiply top and bottom by √3: 6√3 over √3·√3 = 6√3/3 = 2√3.",
+      "B": "This multiplies the numerator by √3 but leaves the denominator alone. Multiplying √3 by itself gives 3, which then divides the 6.",
+      "C": "Dividing 6 by 3 treats √3 as though it were 3, which discards the radical instead of moving it.",
+      "D": "This is what rationalising 2/√3 would give. The numerator in this problem is 6, so the result is three times larger."
+    }
+  },
+  {
+    "id": "m379",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "hard",
+    "context": "The mean of six numbers is 14. One of the numbers, 9, is removed. What is the mean of the remaining five?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "15"
+      },
+      {
+        "id": "B",
+        "text": "14"
+      },
+      {
+        "id": "C",
+        "text": "13.5"
+      },
+      {
+        "id": "D",
+        "text": "16"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the six numbers total 6 × 14 = 84. Removing 9 leaves 75 across five numbers, and 75 ÷ 5 = 15.",
+      "B": "The mean only stays put if the removed number equals it. Removing a below-average value pulls the mean up.",
+      "C": "This moves the mean down, but taking away a number smaller than the mean has to raise it.",
+      "D": "Close, but the total is 75, not 80. Work from the sum rather than adjusting the mean by eye."
+    }
+  },
+  {
+    "id": "m380",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "medium",
+    "context": "For the data set {4, 7, 7, 10, 12, 20}, what is the median minus the mean?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−1.5"
+      },
+      {
+        "id": "B",
+        "text": "1.5"
+      },
+      {
+        "id": "C",
+        "text": "−2.5"
+      },
+      {
+        "id": "D",
+        "text": "0"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — with six values the median is (7 + 10)/2 = 8.5, the mean is 60/6 = 10, and 8.5 − 10 = −1.5.",
+      "B": "This subtracts in the other order. The median is the smaller of the two here, so the difference is negative.",
+      "C": "Using 7 as the median gives this. With an even count the median is the average of the two middle values.",
+      "D": "A difference of zero would need mean and median to coincide, which the 20 at the top prevents."
+    }
+  },
+  {
+    "id": "m381",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "hard",
+    "context": "A bag holds 5 red marbles and 3 blue marbles. Two are drawn without replacement. What is the probability that both are red?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5/14"
+      },
+      {
+        "id": "B",
+        "text": "25/64"
+      },
+      {
+        "id": "C",
+        "text": "5/8"
+      },
+      {
+        "id": "D",
+        "text": "3/14"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 5/8 on the first draw, then 4/7 on the second, and (5/8)(4/7) = 20/56 = 5/14.",
+      "B": "25/64 is (5/8)², which is the answer if the first marble goes back in the bag.",
+      "C": "5/8 is the probability for the first draw alone.",
+      "D": "This uses 3/7 for the second draw, which is the count of blue marbles rather than the reds remaining."
+    }
+  },
+  {
+    "id": "m382",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "medium",
+    "context": "A fair six-sided die is rolled twice. What is the probability that the two rolls sum to 9?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1/9"
+      },
+      {
+        "id": "B",
+        "text": "1/6"
+      },
+      {
+        "id": "C",
+        "text": "1/12"
+      },
+      {
+        "id": "D",
+        "text": "5/36"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the ordered pairs are (3,6), (4,5), (5,4) and (6,3), so 4 of 36 outcomes, which is 1/9.",
+      "B": "1/6 = 6/36 counts six outcomes, but only four pairs reach 9.",
+      "C": "1/12 = 3/36 counts three, which misses one of the two reversals.",
+      "D": "5/36 is the count for a sum of 8, which has one more pair than 9 does."
+    }
+  },
+  {
+    "id": "m383",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "hard",
+    "context": "A cone with radius 3 and height 10 is carved out of a cylinder with the same radius and height. What volume of the cylinder remains?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "60π"
+      },
+      {
+        "id": "B",
+        "text": "30π"
+      },
+      {
+        "id": "C",
+        "text": "90π"
+      },
+      {
+        "id": "D",
+        "text": "120π"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the cylinder is π(3²)(10) = 90π and the cone is one third of that, 30π, leaving 60π.",
+      "B": "30π is the cone that was removed, not what is left.",
+      "C": "90π is the whole cylinder before anything is taken out.",
+      "D": "This adds the cone instead of subtracting it."
+    }
+  },
+  {
+    "id": "m384",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "medium",
+    "context": "A rectangular prism has a square base of side 4 and a volume of 240. What is its height?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "15"
+      },
+      {
+        "id": "B",
+        "text": "60"
+      },
+      {
+        "id": "C",
+        "text": "30"
+      },
+      {
+        "id": "D",
+        "text": "12"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the base area is 4 × 4 = 16, and 240 ÷ 16 = 15.",
+      "B": "This divides by the side length rather than by the base area.",
+      "C": "This divides by 8, which is the perimeter of two sides rather than the area of the base.",
+      "D": "This divides by 20, which is neither the side nor the base area."
+    }
+  },
+  {
+    "id": "m385",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "medium",
+    "context": "Two parallel lines are cut by a transversal. A pair of alternate interior angles measure (3x + 10)° and (5x − 30)°. What is the measure of each angle?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "70°"
+      },
+      {
+        "id": "B",
+        "text": "20°"
+      },
+      {
+        "id": "C",
+        "text": "110°"
+      },
+      {
+        "id": "D",
+        "text": "80°"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — alternate interior angles are equal, so 3x + 10 = 5x − 30 gives x = 20, and 3(20) + 10 = 70.",
+      "B": "20 is the value of x, not the angle. Substitute it back into one of the expressions.",
+      "C": "110° is the supplement of the answer, which would be a co-interior angle rather than an alternate interior one.",
+      "D": "This comes from setting the two expressions supplementary instead of equal."
+    }
+  },
+  {
+    "id": "m386",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "hard",
+    "context": "Two angles are supplementary. One is 24° more than three times the other. What is the measure of the smaller angle?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "39°"
+      },
+      {
+        "id": "B",
+        "text": "141°"
+      },
+      {
+        "id": "C",
+        "text": "44°"
+      },
+      {
+        "id": "D",
+        "text": "36°"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — x + (3x + 24) = 180 gives 4x = 156 and x = 39.",
+      "B": "141° is the larger angle, 3(39) + 24.",
+      "C": "This solves x + 3x + 24 = 200 or similar; check that the two angles total 180, not more.",
+      "D": "This drops the 24 and solves 4x = 144, ignoring the \"more than\" in the problem."
+    }
+  },
+  {
+    "id": "m387",
+    "section": "math",
+    "topic": "systems",
+    "difficulty": "hard",
+    "context": "If 2x + 3y = 23 and x − y = 4, what is the value of x + y?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "10"
+      },
+      {
+        "id": "B",
+        "text": "4"
+      },
+      {
+        "id": "C",
+        "text": "21"
+      },
+      {
+        "id": "D",
+        "text": "3"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — x = y + 4, so 2(y + 4) + 3y = 23 gives 5y = 15, y = 3 and x = 7. Then x + y = 10.",
+      "B": "4 is the value of x − y, which the problem gives rather than asks for.",
+      "C": "21 is the product xy, since x = 7 and y = 3. The question asks for their sum.",
+      "D": "3 is y alone. The question asks for the sum."
+    }
+  },
+  {
+    "id": "m388",
+    "section": "math",
+    "topic": "systems",
+    "difficulty": "medium",
+    "context": "If 4x + y = 17 and y = 2x − 1, what is the value of x?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "5"
+      },
+      {
+        "id": "C",
+        "text": "18"
+      },
+      {
+        "id": "D",
+        "text": "2"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — substituting gives 4x + 2x − 1 = 17, so 6x = 18 and x = 3.",
+      "B": "5 is the value of y, found by substituting x = 3 back into the second equation.",
+      "C": "18 is 6x, one step short of dividing.",
+      "D": "This comes from 4x + 2x + 1 = 17, which adds the −1 instead of subtracting it."
+    }
+  },
+  {
+    "id": "m389",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "hard",
+    "context": "A train leaves a station travelling 60 miles per hour. Two hours later a second train leaves the same station on the same track travelling 80 miles per hour. How long after the second train departs does it catch the first?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6 hours"
+      },
+      {
+        "id": "B",
+        "text": "4 hours"
+      },
+      {
+        "id": "C",
+        "text": "8 hours"
+      },
+      {
+        "id": "D",
+        "text": "2 hours"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the first train is 120 miles ahead, and the gap closes at 80 − 60 = 20 mph, so 120 ÷ 20 = 6 hours.",
+      "B": "This divides the 120-mile lead by 30, which is not the difference between the two speeds.",
+      "C": "This divides the head start by 15. The closing speed is the difference between the speeds, 20 mph.",
+      "D": "2 hours is the head start in time, not the time needed to erase it."
+    }
+  },
+  {
+    "id": "m390",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "medium",
+    "context": "A shirt is marked down 20 percent, and the sale price is then reduced by a further 25 percent. What is the total discount from the original price?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "40%"
+      },
+      {
+        "id": "B",
+        "text": "45%"
+      },
+      {
+        "id": "C",
+        "text": "35%"
+      },
+      {
+        "id": "D",
+        "text": "5%"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the price becomes 0.80 × 0.75 = 0.60 of the original, which is a 40 percent discount.",
+      "B": "Percentages off successive prices do not add, because the second one applies to a price that has already shrunk.",
+      "C": "35% would require the discounts to compound to 0.65, and 0.8 × 0.75 is 0.60.",
+      "D": "5% is the difference between the two discounts, which has no meaning here."
+    }
+  },
+  {
+    "id": "m391",
+    "section": "math",
+    "topic": "circles",
+    "difficulty": "hard",
+    "context": "What is the radius of the circle x² + y² − 6x + 8y = 0?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5"
+      },
+      {
+        "id": "B",
+        "text": "25"
+      },
+      {
+        "id": "C",
+        "text": "10"
+      },
+      {
+        "id": "D",
+        "text": "√14"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — completing both squares gives (x − 3)² + (y + 4)² = 9 + 16 = 25, so the radius is √25 = 5.",
+      "B": "25 is r². The equation ends at the square of the radius, so one more step is needed.",
+      "C": "10 is the diameter, twice the radius.",
+      "D": "This subtracts what was added to complete the squares instead of adding it to the right side."
+    }
+  },
+  {
+    "id": "m392",
+    "section": "math",
+    "topic": "circles",
+    "difficulty": "medium",
+    "context": "A central angle of 60° is drawn in a circle of radius 12. What is the length of the arc it cuts off?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4π"
+      },
+      {
+        "id": "B",
+        "text": "24π"
+      },
+      {
+        "id": "C",
+        "text": "2π"
+      },
+      {
+        "id": "D",
+        "text": "12π"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 60/360 is one sixth of the circumference 2π(12) = 24π, and one sixth of 24π is 4π.",
+      "B": "24π is the whole circumference.",
+      "C": "This takes one sixth of πr instead of 2πr, halving the circumference first.",
+      "D": "This takes half the circumference, which would be a 180° angle."
+    }
+  },
+  {
+    "id": "m393",
+    "section": "math",
+    "topic": "quadratics",
+    "difficulty": "hard",
+    "context": "What are the solutions to x² − 6x + 13 = 0?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3 ± 2i"
+      },
+      {
+        "id": "B",
+        "text": "3 ± 4i"
+      },
+      {
+        "id": "C",
+        "text": "−3 ± 2i"
+      },
+      {
+        "id": "D",
+        "text": "6 ± 2i"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the discriminant is 36 − 52 = −16, so x = (6 ± 4i)/2 = 3 ± 2i.",
+      "B": "This forgets to divide the √−16 = 4i by the 2a in the denominator.",
+      "C": "The sign of −b is positive here: −(−6) = 6, so the real part is +3.",
+      "D": "This divides only the imaginary part by 2a and leaves the 6 undivided."
+    }
+  },
+  {
+    "id": "m394",
+    "section": "math",
+    "topic": "quadratics",
+    "difficulty": "medium",
+    "context": "What is the vertex of the parabola y = x² − 8x + 12?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "(4, −4)"
+      },
+      {
+        "id": "B",
+        "text": "(−4, −4)"
+      },
+      {
+        "id": "C",
+        "text": "(4, 12)"
+      },
+      {
+        "id": "D",
+        "text": "(2, 0)"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — x = −b/2a = 8/2 = 4, and y = 16 − 32 + 12 = −4.",
+      "B": "The formula is −b/2a, and b is −8, so −b is +8 and the x-coordinate is positive.",
+      "C": "12 is the y-intercept, the value at x = 0, not at the vertex.",
+      "D": "(2, 0) is one of the x-intercepts, where the parabola crosses rather than turns."
+    }
+  },
+  {
+    "id": "m395",
+    "section": "math",
+    "topic": "trigonometry",
+    "difficulty": "hard",
+    "context": "In a right triangle, θ is an acute angle and sin θ = 3/5. What is tan θ?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3/4"
+      },
+      {
+        "id": "B",
+        "text": "4/3"
+      },
+      {
+        "id": "C",
+        "text": "5/4"
+      },
+      {
+        "id": "D",
+        "text": "5/3"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — sin θ = 3/5 means opposite 3 and hypotenuse 5, so the adjacent side is 4 and tan θ = 3/4.",
+      "B": "4/3 is 1/tan θ, which swaps opposite and adjacent.",
+      "C": "5/4 is sec θ, the hypotenuse over the adjacent side.",
+      "D": "5/3 is csc θ, the reciprocal of the sine that was given."
+    }
+  },
+  {
+    "id": "m396",
+    "section": "math",
+    "topic": "trigonometry",
+    "difficulty": "medium",
+    "context": "What is the value of cos 120°?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−1/2"
+      },
+      {
+        "id": "B",
+        "text": "1/2"
+      },
+      {
+        "id": "C",
+        "text": "−√3/2"
+      },
+      {
+        "id": "D",
+        "text": "√3/2"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 120° sits in the second quadrant where cosine is negative, and its reference angle is 60°, whose cosine is 1/2.",
+      "B": "The magnitude is right but cosine is negative in the second quadrant.",
+      "C": "−√3/2 is sin 240°, or cos 150° — it uses a 30° reference angle rather than 60°.",
+      "D": "√3/2 is cos 30°, wrong in both reference angle and sign."
+    }
+  },
+  {
+    "id": "m397",
+    "section": "math",
+    "topic": "linear equations",
+    "difficulty": "hard",
+    "context": "What is the slope of the line that passes through (2, −3) and is perpendicular to 4x − 2y = 7?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−1/2"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "−2"
+      },
+      {
+        "id": "D",
+        "text": "1/2"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — solving for y gives y = 2x − 7/2, so the given slope is 2 and the perpendicular slope is its negative reciprocal, −1/2.",
+      "B": "2 is the slope of the given line, not of a line perpendicular to it.",
+      "C": "−2 flips the sign but not the fraction. A perpendicular slope needs both.",
+      "D": "1/2 flips the fraction but not the sign."
+    }
+  },
+  {
+    "id": "m398",
+    "section": "math",
+    "topic": "linear equations",
+    "difficulty": "medium",
+    "context": "Solve for x: 5(x − 3) = 2x + 9",
+    "choices": [
+      {
+        "id": "A",
+        "text": "8"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "6"
+      },
+      {
+        "id": "D",
+        "text": "−8"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 5x − 15 = 2x + 9 gives 3x = 24 and x = 8.",
+      "B": "This comes from distributing only to the x and leaving 5(−3) as −3.",
+      "C": "This comes from 3x = 18, which subtracts 15 from 9 instead of adding.",
+      "D": "This solves 3x = −24, moving the 15 to the wrong side."
+    }
+  },
+  {
+    "id": "m399",
+    "section": "math",
+    "topic": "triangles",
+    "difficulty": "hard",
+    "context": "A triangle has sides of length 7, 24 and 25. What is its area?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "84"
+      },
+      {
+        "id": "B",
+        "text": "168"
+      },
+      {
+        "id": "C",
+        "text": "56"
+      },
+      {
+        "id": "D",
+        "text": "300"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 7² + 24² = 625 = 25², so it is a right triangle with legs 7 and 24, and the area is ½(7)(24) = 84.",
+      "B": "168 is 7 × 24, which is the area of the rectangle the triangle is half of.",
+      "C": "This halves 7 × 16, or uses 25 as a leg somewhere. The legs are 7 and 24.",
+      "D": "This uses 24 and 25 as the legs, but 25 is the hypotenuse."
+    }
+  },
+  {
+    "id": "m400",
+    "section": "math",
+    "topic": "triangles",
+    "difficulty": "medium",
+    "context": "Two similar triangles have corresponding sides in the ratio 3:5. What is the ratio of their areas?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "9:25"
+      },
+      {
+        "id": "B",
+        "text": "3:5"
+      },
+      {
+        "id": "C",
+        "text": "6:10"
+      },
+      {
+        "id": "D",
+        "text": "27:125"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — area scales with the square of the linear ratio, so 3² : 5² = 9:25.",
+      "B": "3:5 is the ratio of the sides themselves, which is what areas scale from rather than equal.",
+      "C": "6:10 doubles the side ratio, which is the same ratio written differently, not the area ratio.",
+      "D": "27:125 cubes the ratio, which is how volume scales, not area."
+    }
+  },
+  {
+    "id": "m401",
+    "section": "math",
+    "topic": "coordinate geometry",
+    "difficulty": "hard",
+    "context": "What is the distance between (−1, 4) and (5, −4)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "10"
+      },
+      {
+        "id": "B",
+        "text": "14"
+      },
+      {
+        "id": "C",
+        "text": "2√7"
+      },
+      {
+        "id": "D",
+        "text": "2√13"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the legs are 6 and 8, and √(36 + 64) = √100 = 10.",
+      "B": "14 adds the two legs, 6 + 8, instead of using the Pythagorean theorem on them.",
+      "C": "This comes from 36 − 64 or a similar subtraction. The squares are added.",
+      "D": "This uses legs of 4 and 6, which would come from subtracting one pair of coordinates incorrectly."
+    }
+  },
+  {
+    "id": "m402",
+    "section": "math",
+    "topic": "coordinate geometry",
+    "difficulty": "medium",
+    "context": "What is the midpoint of the segment joining (−3, 7) and (9, −1)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "(3, 3)"
+      },
+      {
+        "id": "B",
+        "text": "(6, 6)"
+      },
+      {
+        "id": "C",
+        "text": "(3, 4)"
+      },
+      {
+        "id": "D",
+        "text": "(−6, 4)"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the midpoint averages each coordinate: (−3 + 9)/2 = 3 and (7 + −1)/2 = 3.",
+      "B": "This adds the coordinates without dividing by 2.",
+      "C": "The y-coordinate averages 7 and −1, which is 3, not 4.",
+      "D": "This subtracts the coordinates rather than averaging them."
+    }
+  },
+  {
+    "id": "m403",
+    "section": "math",
+    "topic": "number properties",
+    "difficulty": "hard",
+    "context": "What is the least common multiple of 12, 18 and 30?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "180"
+      },
+      {
+        "id": "B",
+        "text": "90"
+      },
+      {
+        "id": "C",
+        "text": "360"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 12 = 2²·3, 18 = 2·3² and 30 = 2·3·5. Taking the highest power of each prime gives 2²·3²·5 = 180.",
+      "B": "90 is a multiple of 18 and 30 but not of 12, since 90 ÷ 12 is not a whole number.",
+      "C": "360 is a common multiple, but it is twice the least one.",
+      "D": "6 is the greatest common factor, the largest number dividing all three rather than the smallest they all divide."
+    }
+  },
+  {
+    "id": "m404",
+    "section": "math",
+    "topic": "number properties",
+    "difficulty": "medium",
+    "context": "How many positive divisors does 72 have?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "12"
+      },
+      {
+        "id": "B",
+        "text": "8"
+      },
+      {
+        "id": "C",
+        "text": "6"
+      },
+      {
+        "id": "D",
+        "text": "36"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 72 = 2³ · 3², so the count is (3 + 1)(2 + 1) = 12.",
+      "B": "8 counts only the divisors up to 9, missing the six larger ones that pair with them.",
+      "C": "6 multiplies the exponents rather than the exponents each increased by one.",
+      "D": "36 is half of 72, not a count of its divisors."
+    }
+  },
+  {
+    "id": "m405",
+    "section": "math",
+    "topic": "sequences",
+    "difficulty": "hard",
+    "context": "In an arithmetic sequence, the third term is 11 and the seventh term is 27. What is the first term?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "7"
+      },
+      {
+        "id": "C",
+        "text": "−1"
+      },
+      {
+        "id": "D",
+        "text": "5"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — four steps carry 11 to 27, so d = 16/4 = 4, and stepping back twice from 11 gives 11 − 8 = 3.",
+      "B": "7 steps back only one term instead of two.",
+      "C": "This steps back three terms, as if the 11 were the fourth term.",
+      "D": "This uses d = 3, which would come from dividing 16 by 5 or 6 rather than by the 4 steps between term 3 and term 7."
+    }
+  },
+  {
+    "id": "m406",
+    "section": "math",
+    "topic": "sequences",
+    "difficulty": "medium",
+    "context": "What is the seventh term of the geometric sequence 3, 6, 12, …?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "192"
+      },
+      {
+        "id": "B",
+        "text": "96"
+      },
+      {
+        "id": "C",
+        "text": "384"
+      },
+      {
+        "id": "D",
+        "text": "21"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the ratio is 2, and the seventh term is 3 · 2⁶ = 3 · 64 = 192.",
+      "B": "96 is the sixth term. The exponent is one less than the term number, so term 7 uses 2⁶.",
+      "C": "384 is the eighth term, which uses 2⁷.",
+      "D": "21 treats the sequence as arithmetic with a common difference of 3."
+    }
+  },
+  {
+    "id": "m407",
+    "section": "math",
+    "topic": "logarithms",
+    "difficulty": "hard",
+    "context": "If log₃ x = 4, what is log₃ (9x)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6"
+      },
+      {
+        "id": "B",
+        "text": "36"
+      },
+      {
+        "id": "C",
+        "text": "13"
+      },
+      {
+        "id": "D",
+        "text": "12"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — log₃(9x) = log₃ 9 + log₃ x = 2 + 4 = 6, since 9 = 3².",
+      "B": "36 multiplies 9 by the value 4 instead of adding logarithms.",
+      "C": "13 adds 9 to 4 directly, but it is log₃ 9 = 2 that gets added, not 9 itself.",
+      "D": "12 multiplies the logarithms, but a product inside a log becomes a sum outside it."
+    }
+  },
+  {
+    "id": "m408",
+    "section": "math",
+    "topic": "logarithms",
+    "difficulty": "medium",
+    "context": "What is log₂ 32 − log₂ 4?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "8"
+      },
+      {
+        "id": "C",
+        "text": "28"
+      },
+      {
+        "id": "D",
+        "text": "2.5"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 5 − 2 = 3, which is also log₂(32/4) = log₂ 8 = 3.",
+      "B": "8 is 32/4 itself, one step short of taking its logarithm.",
+      "C": "28 subtracts the arguments instead of dividing them, and then skips the logarithm entirely.",
+      "D": "2.5 divides the two logarithms, 5 ÷ 2. A difference of logs corresponds to a quotient inside, not a quotient outside."
+    }
+  },
+  {
+    "id": "m409",
+    "section": "math",
+    "topic": "matrices",
+    "difficulty": "hard",
+    "context": "What is the determinant of the matrix with first row [2, 1] and second row [3, 4]?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5"
+      },
+      {
+        "id": "B",
+        "text": "11"
+      },
+      {
+        "id": "C",
+        "text": "−5"
+      },
+      {
+        "id": "D",
+        "text": "8"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — for a 2×2 matrix the determinant is ad − bc = (2)(4) − (1)(3) = 8 − 3 = 5.",
+      "B": "11 adds the two products instead of subtracting: 8 + 3.",
+      "C": "−5 subtracts in the wrong order, taking bc − ad.",
+      "D": "8 is the product of the main diagonal alone, leaving out the other term."
+    }
+  },
+  {
+    "id": "m410",
+    "section": "math",
+    "topic": "matrices",
+    "difficulty": "medium",
+    "context": "Add the matrix with rows [1, 2] and [0, 3] to the matrix with rows [4, −1] and [2, 5].",
+    "choices": [
+      {
+        "id": "A",
+        "text": "rows [5, 1] and [2, 8]"
+      },
+      {
+        "id": "B",
+        "text": "rows [5, 1] and [2, 15]"
+      },
+      {
+        "id": "C",
+        "text": "rows [4, −2] and [0, 15]"
+      },
+      {
+        "id": "D",
+        "text": "rows [−3, 3] and [−2, −2]"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — matrix addition works position by position: 1 + 4, 2 + (−1), 0 + 2 and 3 + 5.",
+      "B": "The bottom-right entry is 3 + 5 = 8. 15 multiplies those two rather than adding them.",
+      "C": "This multiplies every pair of entries instead of adding them.",
+      "D": "This subtracts the first matrix from the second rather than adding."
+    }
+  },
+  {
+    "id": "m411",
+    "section": "math",
+    "topic": "functions",
+    "difficulty": "hard",
+    "context": "If f(x) = 2x − 5 and g(x) = x² + 1, what is f(g(2))?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "10"
+      },
+      {
+        "id": "D",
+        "text": "1"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — g(2) = 4 + 1 = 5, and f(5) = 10 − 5 = 5.",
+      "B": "2 is g(f(2)), which applies the two functions in the opposite order.",
+      "C": "10 is 2 × 5, which stops before subtracting the 5 in f.",
+      "D": "1 is the constant in g, not the result of either composition."
+    }
+  },
+  {
+    "id": "m412",
+    "section": "math",
+    "topic": "functions",
+    "difficulty": "medium",
+    "context": "If f(x) = 3x + 7, what is the inverse function f⁻¹(x)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "(x − 7)/3"
+      },
+      {
+        "id": "B",
+        "text": "(x + 7)/3"
+      },
+      {
+        "id": "C",
+        "text": "3x − 7"
+      },
+      {
+        "id": "D",
+        "text": "1/(3x + 7)"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — swap x and y in y = 3x + 7 and solve: x = 3y + 7 gives y = (x − 7)/3.",
+      "B": "The 7 was added going forward, so it is subtracted going back.",
+      "C": "This keeps the multiplication by 3 instead of undoing it.",
+      "D": "This is the reciprocal of the function, which is a different thing from its inverse."
+    }
+  },
+  {
+    "id": "m413",
+    "section": "math",
+    "topic": "complex numbers",
+    "difficulty": "hard",
+    "context": "What is the product (3 + 2i)(3 − 2i)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "13"
+      },
+      {
+        "id": "B",
+        "text": "5"
+      },
+      {
+        "id": "C",
+        "text": "9 − 4i"
+      },
+      {
+        "id": "D",
+        "text": "13 + 12i"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — this is a difference of squares, 9 − 4i², and since i² = −1 it becomes 9 + 4 = 13.",
+      "B": "5 comes from 9 − 4, which treats i² as +1 rather than −1.",
+      "C": "The middle terms −6i and +6i cancel, so no imaginary part survives.",
+      "D": "This keeps a 12i that does not exist; the cross terms cancel because the factors are conjugates."
+    }
+  },
+  {
+    "id": "m414",
+    "section": "math",
+    "topic": "complex numbers",
+    "difficulty": "medium",
+    "context": "What is the value of i²³?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−i"
+      },
+      {
+        "id": "B",
+        "text": "i"
+      },
+      {
+        "id": "C",
+        "text": "−1"
+      },
+      {
+        "id": "D",
+        "text": "1"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — powers of i cycle every four, and 23 leaves remainder 3, so i²³ = i³ = −i.",
+      "B": "i is the value when the remainder is 1.",
+      "C": "−1 is the value when the remainder is 2.",
+      "D": "1 is the value when the power is a multiple of 4."
+    }
+  },
+  {
+    "id": "m415",
+    "section": "math",
+    "topic": "fractions & percents",
+    "difficulty": "hard",
+    "context": "18 is 40 percent of what number?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "45"
+      },
+      {
+        "id": "B",
+        "text": "7.2"
+      },
+      {
+        "id": "C",
+        "text": "72"
+      },
+      {
+        "id": "D",
+        "text": "25.2"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 0.40n = 18, so n = 18 ÷ 0.40 = 45.",
+      "B": "7.2 is 40 percent of 18, which reverses what is being asked for.",
+      "C": "72 divides by 0.25 rather than 0.40 — the answer to \"18 is 25 percent of what\".",
+      "D": "This adds 40 percent to 18 instead of treating 18 as the 40 percent."
+    }
+  },
+  {
+    "id": "m416",
+    "section": "math",
+    "topic": "fractions & percents",
+    "difficulty": "medium",
+    "context": "What is (2/3) ÷ (4/9)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3/2"
+      },
+      {
+        "id": "B",
+        "text": "8/27"
+      },
+      {
+        "id": "C",
+        "text": "2/3"
+      },
+      {
+        "id": "D",
+        "text": "27/8"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — dividing by a fraction multiplies by its reciprocal: (2/3)(9/4) = 18/12 = 3/2.",
+      "B": "8/27 multiplies the two fractions instead of dividing.",
+      "C": "2/3 is the first fraction unchanged.",
+      "D": "27/8 inverts the wrong fraction, taking (3/2)(9/4)."
+    }
   }
 ]
