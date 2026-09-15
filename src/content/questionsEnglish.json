@@ -14514,5 +14514,500 @@
       "C": "This is the plural possessive, but the rest of the sentence treats the sensor as singular.",
       "D": "A plural already ending in s takes an apostrophe alone; a second s is never added."
     }
+  },
+  {
+    "id": "e387",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "medium",
+    "passage": "ep25",
+    "context": "A truck comes over the pit, you take a probe sample, and «reading the moisture».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "you read the moisture"
+      },
+      {
+        "id": "C",
+        "text": "the moisture is read"
+      },
+      {
+        "id": "D",
+        "text": "to read the moisture"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A gerund phrase breaks a series whose other members are full clauses beginning with \"you\".",
+      "B": "Correct — the series runs on parallel clauses, and this one matches the two in front of it.",
+      "C": "A passive clause changes who is doing the work, so it no longer matches the pattern.",
+      "D": "An infinitive turns the third item into a purpose rather than a third step in the sequence."
+    }
+  },
+  {
+    "id": "e388",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "hard",
+    "passage": "ep25",
+    "context": "The job is mostly arithmetic, paperwork, and «you have to keep the scale clean».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "keeping the scale clean"
+      },
+      {
+        "id": "C",
+        "text": "to keep the scale clean"
+      },
+      {
+        "id": "D",
+        "text": "the scale must be kept clean"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A full clause cannot sit in a list beside two bare nouns; the three items have to match.",
+      "B": "Correct — a gerund phrase works as a noun, which is what the other two items already are.",
+      "C": "An infinitive is not a noun of the same kind, so the third item still stands apart.",
+      "D": "This is a clause again, and a passive one, which pulls further from the two nouns."
+    }
+  },
+  {
+    "id": "e389",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "medium",
+    "passage": "ep25",
+    "context": "He would run the sample, note the dial, and «then he squeezed a handful» of corn from the hopper.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "squeeze a handful"
+      },
+      {
+        "id": "C",
+        "text": "squeezing a handful"
+      },
+      {
+        "id": "D",
+        "text": "a handful was squeezed"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The first two verbs follow \"would\" directly, so a separate past-tense clause breaks the pattern.",
+      "B": "Correct — \"would run, note, squeeze\" keeps all three verbs under the same auxiliary.",
+      "C": "A gerund cannot follow \"would\", so the third action no longer attaches to the auxiliary.",
+      "D": "A passive clause moves the subject from the uncle to the handful of corn."
+    }
+  },
+  {
+    "id": "e390",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "medium",
+    "passage": "ep25",
+    "context": "The argument at the scale house always came down to one thing«:» how wet the corn was.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ","
+      },
+      {
+        "id": "C",
+        "text": ";"
+      },
+      {
+        "id": "D",
+        "text": "that is"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a colon delivers the thing an independent clause has just promised to name.",
+      "B": "A comma is too weak to introduce an explanation, and it leaves the phrase dangling.",
+      "C": "A semicolon joins two independent clauses, and what follows here is not one.",
+      "D": "\"That is\" would need punctuation of its own and still not do the introducing."
+    }
+  },
+  {
+    "id": "e391",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "hard",
+    "passage": "ep25",
+    "context": "The office kept two records for every load«;» the dial reading and the weight ticket.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ":"
+      },
+      {
+        "id": "C",
+        "text": ","
+      },
+      {
+        "id": "D",
+        "text": "— namely"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A semicolon needs an independent clause on both sides, and a pair of nouns is not one.",
+      "B": "Correct — a colon introduces the items an independent clause has just announced.",
+      "C": "A comma is too weak to signal that what follows names the two records.",
+      "D": "A dash could work on its own, but \"namely\" after it repeats the job the mark already does."
+    }
+  },
+  {
+    "id": "e392",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "medium",
+    "passage": "ep25",
+    "context": "There was only one reason to run a second sample«:» doubt about the first.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ";"
+      },
+      {
+        "id": "C",
+        "text": ","
+      },
+      {
+        "id": "D",
+        "text": "that is"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a colon introduces the noun phrase the clause before it has led the reader to expect.",
+      "B": "A semicolon requires an independent clause after it, and \"doubt about the first\" is a phrase.",
+      "C": "A comma attaches the phrase loosely, without signalling that it names the reason.",
+      "D": "\"That is\" needs its own punctuation and still does not perform the introduction."
+    }
+  },
+  {
+    "id": "e393",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "medium",
+    "passage": "ep25",
+    "context": "He was slower than the man who replaced him«. By about ninety seconds a truck.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", by about ninety seconds a truck."
+      },
+      {
+        "id": "C",
+        "text": "; by about ninety seconds a truck."
+      },
+      {
+        "id": "D",
+        "text": ": by about ninety seconds a truck."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The second group has neither a subject nor a verb, so it cannot stand as a sentence.",
+      "B": "Correct — a comma attaches the measuring phrase to the clause it modifies.",
+      "C": "A semicolon promises an independent clause on the right, and a phrase is not one.",
+      "D": "A colon would announce the phrase as a list or explanation, which overstates its job."
+    }
+  },
+  {
+    "id": "e394",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "hard",
+    "passage": "ep25",
+    "context": "Corn out of a dry August behaves differently in the hand than corn out of a wet one«. Even at the same reading on the dial.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", even at the same reading on the dial."
+      },
+      {
+        "id": "C",
+        "text": "; even at the same reading on the dial."
+      },
+      {
+        "id": "D",
+        "text": ": even at the same reading on the dial."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The group beginning \"Even at\" has no subject and no verb, which makes it a fragment.",
+      "B": "Correct — a comma joins the qualifying phrase to the sentence it qualifies.",
+      "C": "A semicolon promises an independent clause on the other side, and none arrives.",
+      "D": "A colon announces something the clause has led the reader to expect, and nothing here does."
+    }
+  },
+  {
+    "id": "e395",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "medium",
+    "passage": "ep25",
+    "context": "In the last week of October, ninety seconds a truck is a line of trucks out to the county road«. Which nobody wanted to see.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", which nobody wanted to see."
+      },
+      {
+        "id": "C",
+        "text": "; which nobody wanted to see."
+      },
+      {
+        "id": "D",
+        "text": ", which nobody wanted to see it."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A clause beginning with \"which\" is subordinate and cannot stand as a sentence by itself.",
+      "B": "Correct — a comma attaches the relative clause to the noun it describes.",
+      "C": "A semicolon calls for an independent clause, and a \"which\" clause is not one.",
+      "D": "The relative pronoun already stands in for the line of trucks, so \"it\" repeats the object."
+    }
+  },
+  {
+    "id": "e396",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "medium",
+    "passage": "ep25",
+    "context": "The difference between the two weights «are» somebody’s year.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "is"
+      },
+      {
+        "id": "C",
+        "text": "were"
+      },
+      {
+        "id": "D",
+        "text": "have been"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The subject is \"difference\", and the plural noun sitting between it and the verb does not govern it.",
+      "B": "Correct — \"difference\" is singular, so the verb agrees with it rather than with \"weights\".",
+      "C": "This is plural as well, and it moves a standing fact into the past for no reason.",
+      "D": "A plural perfect verb repeats the agreement error and adds a tense the sentence does not need."
+    }
+  },
+  {
+    "id": "e397",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "hard",
+    "passage": "ep25",
+    "context": "Neither the dial nor the two weight tickets «tells» the whole story of a load.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "tell"
+      },
+      {
+        "id": "C",
+        "text": "has told"
+      },
+      {
+        "id": "D",
+        "text": "is telling"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "With \"neither...nor\" the verb agrees with the nearer subject, and \"tickets\" is plural.",
+      "B": "Correct — \"tickets\" sits closest to the verb, so the plural is the form the rule calls for.",
+      "C": "This is singular and also shifts into the perfect, which nothing in the sentence supports.",
+      "D": "A singular progressive is wrong in number and turns a standing fact into a passing moment."
+    }
+  },
+  {
+    "id": "e398",
+    "section": "english",
+    "topic": "adding/deleting",
+    "difficulty": "medium",
+    "passage": "ep25",
+    "context": "The writer is considering deleting the detail that the uncle would have been fired if he had ever overruled the dial. Should it be kept?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Kept, because it shows the limits he worked inside, and so what the second sample cost."
+      },
+      {
+        "id": "B",
+        "text": "Kept, because it proves the elevator was wrong to write the rule the way it did."
+      },
+      {
+        "id": "C",
+        "text": "Deleted, because the passage is about the uncle rather than about company policy."
+      },
+      {
+        "id": "D",
+        "text": "Deleted, because it contradicts the claim that he wrote the dial’s number every time."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a man who cannot act on what he learns is doing something stranger than second-guessing.",
+      "B": "The passage never faults the rule; it says the elevator paid for something it never priced.",
+      "C": "The policy is the thing the uncle is working inside, so it is not a departure from the subject.",
+      "D": "There is no contradiction: the rule and his practice agree, which is the whole of the point."
+    }
+  },
+  {
+    "id": "e399",
+    "section": "english",
+    "topic": "adding/deleting",
+    "difficulty": "hard",
+    "passage": "ep25",
+    "context": "The writer is considering adding a sentence at the end of the fourth paragraph reporting that the meter was recalibrated twice a season. Should it be added?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No, because the paragraph is about what the meter could not measure, not about its accuracy."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because it would show that the uncle’s suspicion of the meter was well founded."
+      },
+      {
+        "id": "C",
+        "text": "No, because the passage has already given the meter’s reading to one decimal place."
+      },
+      {
+        "id": "D",
+        "text": "Yes, because a reader needs to know how often the equipment was maintained."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the paragraph turns on a difference the meter reads correctly and still cannot explain.",
+      "B": "The passage says he wrote the dial’s number every time, so it never claims the meter was wrong.",
+      "C": "The decimal place appears two paragraphs earlier and settles nothing about this one.",
+      "D": "Maintenance is never at issue, and nothing in the passage turns on the meter drifting."
+    }
+  },
+  {
+    "id": "e400",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "medium",
+    "passage": "ep25",
+    "context": "The elevator paid that price without ever being told what it was paying «for».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "of"
+      },
+      {
+        "id": "C",
+        "text": "about"
+      },
+      {
+        "id": "D",
+        "text": "with"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — \"pay for\" is the fixed pairing when what follows names the thing being bought.",
+      "B": "\"Pay of\" is not English, and \"of\" cannot introduce what a payment buys.",
+      "C": "\"Pay about\" would concern a topic rather than a purchase.",
+      "D": "\"Pay with\" names the means of payment rather than the thing paid for."
+    }
+  },
+  {
+    "id": "e401",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "hard",
+    "passage": "ep25",
+    "context": "Corn out of a dry August behaves differently «in comparison to» corn out of a wet one.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "from"
+      },
+      {
+        "id": "C",
+        "text": "than"
+      },
+      {
+        "id": "D",
+        "text": "compared with"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"In comparison to\" pads the sentence, since \"differently\" has already set up the comparison.",
+      "B": "Correct — \"differently from\" is the standard pairing when a noun phrase follows.",
+      "C": "\"Differently than\" is widely objected to and wants a clause after it, not a noun phrase.",
+      "D": "\"Compared with\" names a deliberate act of comparing rather than a difference in behaviour."
+    }
   }
 ]
