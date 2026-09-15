@@ -310,7 +310,7 @@
       },
       {
         "id": "B",
-        "text": "a proposed regularity in travel time, though disputed, usefully reframes transportation planning around accessibility."
+        "text": "a disputed regularity in travel time reframes planning around access."
       },
       {
         "id": "C",
@@ -376,7 +376,7 @@
       },
       {
         "id": "B",
-        "text": "illustrate the claim that faster travel yields greater distance rather than saved time."
+        "text": "illustrate that faster travel buys distance, not saved time."
       },
       {
         "id": "C",
@@ -508,7 +508,7 @@
       },
       {
         "id": "B",
-        "text": "takes the travel budget as fixed and asks what can be brought within it, rather than how far it extends."
+        "text": "takes the travel budget as fixed and asks what fits inside it."
       },
       {
         "id": "C",
@@ -603,7 +603,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "argue that digital restoration is a necessary rescue rather than an optional enhancement."
+        "text": "argue that restoration is a rescue, not an option."
       },
       {
         "id": "B",
@@ -615,7 +615,7 @@
       },
       {
         "id": "D",
-        "text": "propose new funding for the archives doing this work."
+        "text": "propose new public funding for the archives doing this work."
       }
     ],
     "answer": "A",
@@ -706,11 +706,11 @@
       },
       {
         "id": "B",
-        "text": "removes grain that constitutes the physical substrate of the image, producing a look no original audience saw."
+        "text": "strips the grain that is the physical substrate of the image."
       },
       {
         "id": "C",
-        "text": "introduces new scratches and artefacts into the scanned image."
+        "text": "introduces new scratches and visible artefacts into the scanned image."
       },
       {
         "id": "D",
@@ -735,11 +735,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "restoration inevitably involves interpretive judgment."
+        "text": "restoration always involves judgment."
       },
       {
         "id": "B",
-        "text": "grain should be preserved at all costs."
+        "text": "grain should be preserved at whatever the cost."
       },
       {
         "id": "C",
@@ -1032,11 +1032,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "why it is only the males that sing."
+        "text": "why it is only the males of the species that sing."
       },
       {
         "id": "B",
-        "text": "both the constant change in song and its rapid adoption."
+        "text": "why the song changes and spreads so fast."
       },
       {
         "id": "C",
@@ -1564,11 +1564,11 @@
       },
       {
         "id": "B",
-        "text": "identify the prior conditions that made the telephone solvable."
+        "text": "name what made the telephone solvable."
       },
       {
         "id": "C",
-        "text": "explain how a patent and a caveat are filed."
+        "text": "explain the procedure by which a patent and a caveat are filed."
       },
       {
         "id": "D",
@@ -1824,11 +1824,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "painful but largely treatable."
+        "text": "painful but largely treatable with rest."
       },
       {
         "id": "B",
-        "text": "painless but effectively disabling for a musician."
+        "text": "painless but disabling."
       },
       {
         "id": "C",
@@ -1923,11 +1923,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "perfect."
+        "text": "flawless in every respect."
       },
       {
         "id": "B",
-        "text": "total in its effect."
+        "text": "total."
       },
       {
         "id": "C",
@@ -2323,7 +2323,7 @@
       },
       {
         "id": "B",
-        "text": "specific conditions such as pulmonary fibrosis and diabetic kidney disease."
+        "text": "specific diseases rather than aging itself."
       },
       {
         "id": "C",
@@ -2331,13 +2331,13 @@
       },
       {
         "id": "D",
-        "text": "the acceleration of wound healing after surgery."
+        "text": "the acceleration of wound healing after major surgery."
       }
     ],
     "answer": "B",
     "why": {
       "A": "The passage says trials target specific conditions rather than aging, because regulators do not recognise aging as an indication.",
-      "B": "Correct — both conditions are named.",
+      "B": "Correct — pulmonary fibrosis and diabetic kidney disease are the named targets.",
       "C": "Cancer appears only as a reason for caution about clearing these cells, never as a trial target.",
       "D": "Wound healing is named as something indiscriminate clearing might impair, which is the opposite of a target."
     }
@@ -3379,11 +3379,11 @@
       },
       {
         "id": "B",
-        "text": "A river mouth had silted since the chart's last survey."
+        "text": "A river mouth had silted up since the chart's last survey was made."
       },
       {
         "id": "C",
-        "text": "A reef off Cormorant Point had been placed a quarter mile from its actual location."
+        "text": "A reef off Cormorant Point was in the wrong place."
       },
       {
         "id": "D",
@@ -3577,11 +3577,11 @@
       },
       {
         "id": "B",
-        "text": "He requested that a new gear be sent out on the next boat."
+        "text": "He requested that a new gear be sent out on the following boat."
       },
       {
         "id": "C",
-        "text": "He was dismissed after a lesser fault than the one Renata faced during the storm."
+        "text": "He was dismissed for a smaller fault than Renata's."
       },
       {
         "id": "D",
@@ -3775,11 +3775,11 @@
       },
       {
         "id": "B",
-        "text": "be legally prohibited from operating as a time bank."
+        "text": "be legally prohibited from operating as a time bank at all."
       },
       {
         "id": "C",
-        "text": "struggle to build the trust that helps other time banks survive slow periods."
+        "text": "struggle to build the trust other banks rely on."
       },
       {
         "id": "D",
