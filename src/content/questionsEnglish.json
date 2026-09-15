@@ -15999,5 +15999,500 @@
       "C": "A comma at the end leaves the clause subordinate and just as dependent as before.",
       "D": "The participle still supplies no finite verb, so these words cannot stand alone."
     }
+  },
+  {
+    "id": "e432",
+    "section": "english",
+    "topic": "commas",
+    "difficulty": "medium",
+    "passage": "ep28",
+    "context": "My aunt Verity, who had worked the board for thirty-one «years kept» a clock in the same room.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "years, kept"
+      },
+      {
+        "id": "C",
+        "text": "years; kept"
+      },
+      {
+        "id": "D",
+        "text": "years: kept"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A non-essential clause needs a comma at both ends, and the closing one is missing.",
+      "B": "Correct — the clause beginning \"who\" is fenced off by a comma at each end.",
+      "C": "A semicolon needs an independent clause on both sides, and the left side is not one.",
+      "D": "A colon delivers what a full clause has promised, and nothing has been promised here."
+    }
+  },
+  {
+    "id": "e433",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "medium",
+    "passage": "ep28",
+    "context": "The automatic equipment was «faster, nobody in Ardnew has ever argued otherwise».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "faster; nobody in Ardnew has ever argued otherwise"
+      },
+      {
+        "id": "C",
+        "text": "faster nobody in Ardnew has ever argued otherwise"
+      },
+      {
+        "id": "D",
+        "text": "faster, and nobody in Ardnew ever argued otherwise, either"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Two independent clauses joined by a comma alone make a comma splice.",
+      "B": "Correct — a semicolon is strong enough to join two clauses that could each stand alone.",
+      "C": "Removing the punctuation leaves the two clauses fused, which is worse than the splice.",
+      "D": "The conjunction fixes the splice but the added \"either\" makes the sentence say less clearly."
+    }
+  },
+  {
+    "id": "e434",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "medium",
+    "passage": "ep28",
+    "context": "She let me plug the easy calls. «Although never the ones going out of the county.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "She never let me plug the ones going out of the county."
+      },
+      {
+        "id": "C",
+        "text": "Although never the ones going out of the county,"
+      },
+      {
+        "id": "D",
+        "text": "Never the ones going out of the county."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A subordinator with no subject and no finite verb cannot stand as a sentence.",
+      "B": "Correct — a subject and a finite verb turn the fragment into a sentence.",
+      "C": "A comma at the end leaves the clause subordinate and still dependent on something.",
+      "D": "Dropping \"although\" removes the subordinator but supplies no verb, so it is still a fragment."
+    }
+  },
+  {
+    "id": "e435",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "hard",
+    "passage": "ep28",
+    "context": "By the time the automatic equipment arrived, Verity «had worked» the board for thirty-one years.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "has worked"
+      },
+      {
+        "id": "C",
+        "text": "works"
+      },
+      {
+        "id": "D",
+        "text": "was working"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the past perfect places the thirty-one years before the equipment arrived.",
+      "B": "The present perfect runs up to now, but the arrival is finished and in the past.",
+      "C": "A present-tense verb puts the work in the reader’s own time rather than in the past.",
+      "D": "The past progressive describes something under way and does not total the years."
+    }
+  },
+  {
+    "id": "e436",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "medium",
+    "passage": "ep28",
+    "context": "The row of small hinged shutters «drop» open whenever anyone lifts a receiver.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "drops"
+      },
+      {
+        "id": "C",
+        "text": "have dropped"
+      },
+      {
+        "id": "D",
+        "text": "are dropping"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The subject is \"row\", which is singular; \"of shutters\" cannot change its number.",
+      "B": "Correct — a singular subject takes the singular verb \"drops\".",
+      "C": "This is plural as well as perfect, so it matches neither the subject nor the time frame.",
+      "D": "A plural progressive still fails to agree with the singular subject \"row\"."
+    }
+  },
+  {
+    "id": "e437",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "hard",
+    "passage": "ep28",
+    "context": "Verity apologised to the man on the line for «myself» and then took the cord back.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "me"
+      },
+      {
+        "id": "C",
+        "text": "I"
+      },
+      {
+        "id": "D",
+        "text": "my"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A reflexive has to match the subject, and Verity rather than the narrator is the subject.",
+      "B": "Correct — the object of \"for\" is the plain object pronoun.",
+      "C": "\"I\" is a subject form and cannot follow a preposition.",
+      "D": "\"My\" is possessive and needs a noun after it, which the sentence does not supply."
+    }
+  },
+  {
+    "id": "e438",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "medium",
+    "passage": "ep28",
+    "context": "The «Cassidys» telephone rang at half past six on a morning in August.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Cassidys’"
+      },
+      {
+        "id": "C",
+        "text": "Cassidy’s"
+      },
+      {
+        "id": "D",
+        "text": "Cassidys’s"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Without an apostrophe the word is a plain plural and marks no ownership.",
+      "B": "Correct — the family is plural and already ends in s, so the apostrophe follows it.",
+      "C": "The singular possessive would mean one Cassidy rather than the household.",
+      "D": "A plural already ending in s never takes a second s after the apostrophe."
+    }
+  },
+  {
+    "id": "e439",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "hard",
+    "passage": "ep28",
+    "context": "«Hanging on their weighted pulleys, I could see the cords» from the doorway.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "I could see the cords hanging on their weighted pulleys"
+      },
+      {
+        "id": "C",
+        "text": "Hanging on their weighted pulleys, the doorway showed the cords"
+      },
+      {
+        "id": "D",
+        "text": "The cords, I could see hanging on their weighted pulleys,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The opening phrase describes the cords, but \"I\" is what follows the comma.",
+      "B": "Correct — the phrase now sits beside the cords, which are the things hanging.",
+      "C": "This hands the pulleys to the doorway, which is not hanging from anything.",
+      "D": "Fencing the clause off in the middle leaves the sentence without a main verb."
+    }
+  },
+  {
+    "id": "e440",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "medium",
+    "passage": "ep28",
+    "context": "Verity knew the hours, knew the names, and «was aware of every routine» in Ardnew.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "knew the routines"
+      },
+      {
+        "id": "C",
+        "text": "the routines were known to her"
+      },
+      {
+        "id": "D",
+        "text": "had awareness of the routines"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The first two items share the verb \"knew\", so a different verb breaks the pattern.",
+      "B": "Correct — all three items now run \"knew the ___\", which is what a series needs.",
+      "C": "A passive clause changes who is doing the knowing and no longer matches.",
+      "D": "This swaps the verb for a noun phrase, which is a fourth shape rather than the same one."
+    }
+  },
+  {
+    "id": "e441",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "medium",
+    "passage": "ep28",
+    "context": "The new equipment connected a call in under a second. «Likewise,» it knew nothing about the town.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "But"
+      },
+      {
+        "id": "C",
+        "text": "Therefore,"
+      },
+      {
+        "id": "D",
+        "text": "In addition,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Likewise\" claims the two sentences agree, and the second one takes something back.",
+      "B": "Correct — speed and ignorance pull against each other, which is what \"but\" marks.",
+      "C": "\"Therefore\" would make the ignorance a consequence of the speed, which it is not.",
+      "D": "\"In addition\" stacks a second point of the same kind, and this one runs the other way."
+    }
+  },
+  {
+    "id": "e442",
+    "section": "english",
+    "topic": "dashes",
+    "difficulty": "medium",
+    "passage": "ep28",
+    "context": "The board held a hundred jacks «— one for every line in Ardnew —» and a hundred cords.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "— one for every line in Ardnew,"
+      },
+      {
+        "id": "C",
+        "text": ", one for every line in Ardnew —"
+      },
+      {
+        "id": "D",
+        "text": "; one for every line in Ardnew;"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a pair of dashes fences off the aside with the same mark at each end.",
+      "B": "An interrupter cannot open with a dash and close with a comma; the marks must match.",
+      "C": "This mixes the two marks in the other order, which fails for the same reason.",
+      "D": "Semicolons separate independent clauses and cannot fence off a phrase like this."
+    }
+  },
+  {
+    "id": "e443",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "hard",
+    "passage": "ep28",
+    "context": "The job came down to one thing that no wire carried«,» knowing the town.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ":"
+      },
+      {
+        "id": "C",
+        "text": ";"
+      },
+      {
+        "id": "D",
+        "text": "— that is"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A comma is too weak to deliver the thing the clause has just promised to name.",
+      "B": "Correct — a colon introduces what an independent clause has announced is coming.",
+      "C": "A semicolon joins two independent clauses, and \"knowing the town\" is not one.",
+      "D": "\"That is\" needs punctuation of its own and still leaves the introduction undone."
+    }
+  },
+  {
+    "id": "e444",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "medium",
+    "passage": "ep28",
+    "context": "Verity was never impatient «of» a caller who could not remember a number.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "from"
+      },
+      {
+        "id": "D",
+        "text": "against"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Impatient of\" is used for things one refuses to tolerate, not for people one waits on.",
+      "B": "Correct — English pairs \"impatient\" with \"with\" when the object is a person.",
+      "C": "\"Impatient from\" is not an English pairing in any sense of the adjective.",
+      "D": "\"Against\" suggests opposition rather than the strain of waiting for someone."
+    }
+  },
+  {
+    "id": "e445",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "medium",
+    "passage": "ep28",
+    "context": "The shutter dropped and «made an audible clicking sound that could be heard» in the kitchen.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "clicked"
+      },
+      {
+        "id": "C",
+        "text": "sounded"
+      },
+      {
+        "id": "D",
+        "text": "emitted a sound"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Audible\" and \"could be heard\" say the same thing twice over in one phrase.",
+      "B": "Correct — one plain verb carries the meaning and names the noise exactly.",
+      "C": "\"Sounded\" drops the particular noise the shutter makes, which is the point of the line.",
+      "D": "\"Emitted a sound\" is both longer and vaguer than the verb the sentence wants."
+    }
+  },
+  {
+    "id": "e446",
+    "section": "english",
+    "topic": "sentence order",
+    "difficulty": "hard",
+    "passage": "ep28",
+    "context": "For the sake of logic and coherence, the sentence beginning \"None of that was written anywhere\" belongs:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "after the list of what Verity knew about the town."
+      },
+      {
+        "id": "B",
+        "text": "in the opening paragraph, before the board is described."
+      },
+      {
+        "id": "C",
+        "text": "in the final paragraph, after the clock is mentioned."
+      },
+      {
+        "id": "D",
+        "text": "before the sentence explaining that the narrator was thirteen."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — \"that\" has nothing to point back to until the list of what she knew has run.",
+      "B": "In the opening paragraph there is no knowledge yet for the sentence to be about.",
+      "C": "By the final paragraph the exchange is closed and the knowledge is no longer the subject.",
+      "D": "The narrator’s age comes before any of the knowledge, so the reference would be empty."
+    }
   }
 ]
