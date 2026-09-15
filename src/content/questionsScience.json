@@ -588,7 +588,7 @@
     "answer": "C",
     "why": {
       "A": "Below the value already recorded at 35°C.",
-      "B": "Also below the 35°C value of 78 mg.",
+      "B": "70 mg is lower than the 78 mg already recorded at 35 °C, and mass lost rises with temperature, so 45 °C cannot come in under it.",
       "C": "Correct — 45°C lies between 35°C (78) and 50°C (112), so the value must fall between them.",
       "D": "Exceeds the highest measured value."
     }
