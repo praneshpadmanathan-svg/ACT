@@ -1914,7 +1914,7 @@
     "answer": "C",
     "why": {
       "A": "Subtracts instead of handling the double negative.",
-      "B": "Sign error.",
+      "B": "This drops the minus sign on −3, computing 5 − 2(3) = −1 and then reporting its opposite.",
       "C": "Correct — 5 − 2(−3) = 5 + 6 = 11.",
       "D": "Sign error on the whole expression."
     }
@@ -1945,9 +1945,9 @@
     ],
     "answer": "B",
     "why": {
-      "A": "Rounds down incorrectly.",
+      "A": "Multiplying gives 18/4, which is 4.5 exactly. Rounding it down to a whole cup loses half a cup of sugar.",
       "B": "Correct — (3/4)(6) = 18/4 = 4.5 cups.",
-      "C": "Rounds up incorrectly.",
+      "C": "Multiplying gives 18/4, which is 4.5 exactly. There is nothing to round up to 5.",
       "D": "Divides 6 by 3/4 instead of multiplying."
     }
   },
@@ -2105,7 +2105,7 @@
     ],
     "answer": "B",
     "why": {
-      "A": "Uses an incorrect pair.",
+      "A": "This is 10 × 4. The pair x = 10, y = 4 satisfies x + y = 14 but gives a difference of 6, not 4.",
       "B": "Correct — adding gives 2x = 18 so x = 9, then y = 5, and 9 × 5 = 45.",
       "C": "Multiplies the two given constants.",
       "D": "Squares 6."
@@ -2436,31 +2436,31 @@
     "section": "math",
     "topic": "logarithms",
     "difficulty": "medium",
-    "context": "What is log₃(81)?",
+    "context": "If log₅(x) + log₅(4) = 2, what is x?",
     "choices": [
       {
         "id": "A",
-        "text": "3"
+        "text": "6.25"
       },
       {
         "id": "B",
-        "text": "4"
+        "text": "5"
       },
       {
         "id": "C",
-        "text": "27"
+        "text": "21"
       },
       {
         "id": "D",
-        "text": "9"
+        "text": "100"
       }
     ],
-    "answer": "B",
+    "answer": "A",
     "why": {
-      "A": "3³ = 27, not 81.",
-      "B": "Correct — 3⁴ = 81.",
-      "C": "This is 81/3.",
-      "D": "This is √81."
+      "A": "A sum of logs with the same base is the log of the product: log₅(4x) = 2, so 4x = 5² = 25 and x = 6.25.",
+      "B": "This divides 25 by 5 rather than by the 4 that came out of the second logarithm.",
+      "C": "This subtracts 4 from 25. The 4 multiplies x inside the logarithm, so it has to be divided out.",
+      "D": "This multiplies 25 by 4 instead of dividing, which undoes the wrong operation."
     }
   },
   {
@@ -2490,7 +2490,7 @@
     "answer": "C",
     "why": {
       "A": "This is the GCF.",
-      "B": "Not divisible by 20.",
+      "B": "30 is a multiple of 15, but 30 ÷ 20 is not a whole number, so 30 is not a common multiple at all.",
       "C": "Correct — 15 = 3·5 and 20 = 2²·5, so LCM = 2²·3·5 = 60.",
       "D": "The product, not reduced by the GCF."
     }
@@ -2780,7 +2780,7 @@
       "A": "Amplitude is an absolute value and cannot be negative.",
       "B": "Correct — |−4| = 4 and the vertical shift sets the midline at y = 3.",
       "C": "Confuses the coefficient with the midline.",
-      "D": "Swaps the two values."
+      "D": "This reads the vertical shift as the amplitude and the coefficient as the midline, reversing the two."
     }
   },
   {
@@ -2905,7 +2905,7 @@
     ],
     "answer": "B",
     "why": {
-      "B": "32 = 2⁵, so x = 5.",
+      "B": "Rewrite 32 as a power of the base: 32 = 2⁵, so the exponent x must be 5.",
       "A": "stopped one power of 2 short of 32",
       "C": "made an off-by-one error counting the powers of 2",
       "D": "confused the exponent with half of 32, rather than solving 2^x = 32 for x"
@@ -5307,7 +5307,7 @@
     "why": {
       "A": "By the Pythagorean theorem, c² = 3² + 4² = 25, so c = 5.",
       "C": "added the two legs instead of applying the Pythagorean theorem",
-      "D": "reported c² instead of c",
+      "D": "This reports c² rather than c — the square root step was never taken.",
       "B": "made an arithmetic slip while taking the square root"
     }
   },
@@ -5850,7 +5850,7 @@
     "answer": "D",
     "why": {
       "D": "20% of 50 is 0.20 × 50 = 10.",
-      "C": "used 10% instead of 20%",
+      "C": "This applies a 10% change rather than the 20% the problem gives.",
       "B": "misplaced the decimal, treating 20% as 0.02 instead of 0.20",
       "A": "misplaced the decimal by an additional place"
     }
@@ -6524,7 +6524,7 @@
       "B": "3/4 of 60 is 60 × 3/4 = 45.",
       "A": "divided 60 by 3 instead of multiplying by 3/4",
       "D": "divided by 3 then multiplied by 4 instead of the reverse",
-      "C": "used 4/5 instead of 3/4"
+      "C": "This uses the ratio 4/5 rather than the 3/4 the problem states."
     }
   },
   {
@@ -7396,31 +7396,31 @@
     "section": "math",
     "topic": "complex numbers",
     "difficulty": "easy",
-    "context": "What is i¹⁵?",
+    "context": "What is (4 − i) − (2 + 5i)?",
     "choices": [
       {
         "id": "A",
-        "text": "−i"
+        "text": "2 − 6i"
       },
       {
         "id": "B",
-        "text": "i"
+        "text": "2 + 4i"
       },
       {
         "id": "C",
-        "text": "−1"
+        "text": "6 + 4i"
       },
       {
         "id": "D",
-        "text": "1"
+        "text": "6 − 6i"
       }
     ],
     "answer": "A",
     "why": {
-      "A": "Correct — powers of i cycle every 4. Since 15 ÷ 4 leaves remainder 3, i¹⁵ = i³ = −i.",
-      "B": "i itself is the remainder-1 case. 15 leaves remainder 3, not 1.",
-      "C": "−1 is i², the remainder-2 case.",
-      "D": "1 is i⁴, the remainder-0 case. That would need an exponent divisible by 4."
+      "A": "Subtract the real parts, 4 − 2 = 2, and the imaginary parts, −1 − 5 = −6.",
+      "B": "The real parts were subtracted correctly, but the imaginary parts were added: −1 + 5 = 4. The minus sign has to reach both halves of the second term.",
+      "C": "This adds both parts instead of subtracting them, so the minus sign in front of the second complex number is ignored entirely.",
+      "D": "The imaginary part is right, but the real parts were added rather than subtracted — the minus sign reached only half of the second term."
     }
   },
   {
@@ -8964,31 +8964,31 @@
     "section": "math",
     "topic": "trigonometry",
     "difficulty": "hard",
-    "context": "What is cos 120°?",
+    "context": "In right triangle ABC, angle C is the right angle, AB = 13, and BC = 5. What is tan A?",
     "choices": [
       {
         "id": "A",
-        "text": "−1/2"
+        "text": "5/12"
       },
       {
         "id": "B",
-        "text": "1/2"
+        "text": "12/5"
       },
       {
         "id": "C",
-        "text": "−√3/2"
+        "text": "5/13"
       },
       {
         "id": "D",
-        "text": "√3/2"
+        "text": "12/13"
       }
     ],
     "answer": "A",
     "why": {
-      "A": "Correct — 120° sits in the second quadrant, where cosine is negative, and its reference angle is 60°, whose cosine is 1/2.",
-      "B": "The size is right but the sign is not; cosine is negative for angles between 90° and 180°.",
-      "C": "−√3/2 is sin 240° or cos 150°. The reference angle here is 60°, not 30°.",
-      "D": "This is cos 30°, and it also carries the wrong sign for the second quadrant."
+      "A": "AB is the hypotenuse, so AC = √(13² − 5²) = 12. Tangent is opposite over adjacent, which from A is BC/AC = 5/12.",
+      "B": "This is tan B, not tan A — it puts the leg adjacent to A over the leg opposite it.",
+      "C": "This is sin A. It divides by the hypotenuse instead of by the adjacent leg.",
+      "D": "This is cos A, the adjacent leg over the hypotenuse rather than over the opposite leg."
     }
   },
   {
@@ -11108,31 +11108,31 @@
     "section": "math",
     "topic": "number properties",
     "difficulty": "medium",
-    "context": "What is the least common multiple of 12, 18, and 30?",
+    "context": "How many positive integers less than 100 are divisible by both 6 and 8?",
     "choices": [
       {
         "id": "A",
-        "text": "90"
+        "text": "4"
       },
       {
         "id": "B",
-        "text": "180"
+        "text": "2"
       },
       {
         "id": "C",
-        "text": "360"
+        "text": "8"
       },
       {
         "id": "D",
-        "text": "540"
+        "text": "16"
       }
     ],
-    "answer": "B",
+    "answer": "A",
     "why": {
-      "A": "A multiple of 18 and 30, but not of 12.",
-      "B": "Correct — taking the highest power of each prime gives 2²·3²·5 = 180.",
-      "C": "A common multiple, but twice as large as it needs to be.",
-      "D": "Uses 3³ when the highest power of 3 present in any of the three numbers is 3²."
+      "A": "A number divisible by both is divisible by their least common multiple, 24. Under 100 that gives 24, 48, 72 and 96.",
+      "B": "This counts multiples of 48, using the product of 6 and 8 rather than their least common multiple, and so misses 24 and 72.",
+      "C": "This counts the eight multiples of 12 below 100, which is the least common multiple of 6 and 4, not of 6 and 8.",
+      "D": "This counts every multiple of 6 below 100 and never applies the second condition."
     }
   },
   {

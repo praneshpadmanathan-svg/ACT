@@ -1851,7 +1851,7 @@
     "why": {
       "A": "\"towers\" is plural and the passage is in past tense.",
       "B": "Correct — plural subject with past-tense verb.",
-      "C": "Singular verb form.",
+      "C": "\"has remained\" is singular and present perfect, and the subject is plural and the passage past.",
       "D": "\"three hundred tower\" is ungrammatical."
     }
   },
@@ -10355,6 +10355,1491 @@
       "B": "The culverts are background. They explain what the new approach replaced, not why the new approach can fail.",
       "C": "The final paragraph says the opposite, describing cities that installed the gardens and watched them fail.",
       "D": "Cost is the whole subject of the final paragraph, including the mismatch with how budgets are built."
+    }
+  },
+  {
+    "id": "e261",
+    "section": "english",
+    "topic": "commas",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "I stood in the airlock in a borrowed parka «while a woman named Ingrid, explained» the rules of the cold.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "while a woman named Ingrid explained"
+      },
+      {
+        "id": "C",
+        "text": "while a woman, named Ingrid explained"
+      },
+      {
+        "id": "D",
+        "text": "while a woman named Ingrid; explained"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The comma cuts the subject \"a woman named Ingrid\" away from its verb \"explained\".",
+      "B": "Subject and verb take no punctuation between them, and \"named Ingrid\" is essential to identifying which woman.",
+      "C": "Opening a nonessential phrase before \"named\" without closing it leaves the sentence with one stray comma.",
+      "D": "A semicolon needs a complete sentence on each side, and \"explained the rules of the cold\" has no subject of its own."
+    }
+  },
+  {
+    "id": "e262",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "hard",
+    "passage": "ep19",
+    "context": "The temperature at each of forty stations «were» checked against what the central system reported.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "was"
+      },
+      {
+        "id": "C",
+        "text": "have been"
+      },
+      {
+        "id": "D",
+        "text": "are"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Were\" is plural, and the subject is the singular \"temperature\". \"Stations\" sits inside a prepositional phrase.",
+      "B": "\"The temperature ... was checked\" — the verb agrees with the head noun, not with the nearest one.",
+      "C": "\"Have been\" is plural and shifts to the present perfect, neither of which fits.",
+      "D": "\"Are\" is plural and present, and the passage places this in the past."
+    }
+  },
+  {
+    "id": "e263",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "By the time I left, I «work» eleven months of night shifts in the cold.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "had worked"
+      },
+      {
+        "id": "C",
+        "text": "will work"
+      },
+      {
+        "id": "D",
+        "text": "work through"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The present tense cannot describe eleven months completed before a past departure.",
+      "B": "The past perfect places the eleven months before the leaving, which is what \"by the time I left\" requires.",
+      "C": "The future tense points ahead of now, and the leaving is already behind the writer.",
+      "D": "This keeps the present tense and adds a preposition that changes nothing about the timing."
+    }
+  },
+  {
+    "id": "e264",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "Ingrid handed the logger to Teodor and «I» before the airlock door closed.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "me"
+      },
+      {
+        "id": "C",
+        "text": "myself"
+      },
+      {
+        "id": "D",
+        "text": "mine"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"I\" is a subject form, and this word is the object of the preposition \"to\".",
+      "B": "Drop the other name and the ear settles it: \"handed the logger to me\", not \"to I\".",
+      "C": "\"Myself\" needs an earlier \"I\" in the same sentence to point back to, and the subject here is Ingrid.",
+      "D": "\"Mine\" is possessive and stands in for a noun, which this slot does not want."
+    }
+  },
+  {
+    "id": "e265",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "The work was walking the aisles, reading the stations, and «to confirm» that the numbers agreed.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "confirming"
+      },
+      {
+        "id": "C",
+        "text": "confirmed"
+      },
+      {
+        "id": "D",
+        "text": "a confirmation of"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The first two items are gerunds. An infinitive in the third slot breaks the pattern.",
+      "B": "\"Walking, reading, and confirming\" — all three items now take the same form.",
+      "C": "A past-tense verb does not match two gerunds.",
+      "D": "A noun phrase cannot sit in a list whose other members are gerunds."
+    }
+  },
+  {
+    "id": "e266",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "hard",
+    "passage": "ep19",
+    "context": "«Kept at minus eighteen degrees, I could stay inside the vault for only twenty minutes.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Because the vault was kept at minus eighteen degrees, I could stay inside for only twenty minutes."
+      },
+      {
+        "id": "C",
+        "text": "Kept at minus eighteen degrees, only twenty minutes inside the vault were possible for me."
+      },
+      {
+        "id": "D",
+        "text": "I could stay, kept at minus eighteen degrees, inside the vault for only twenty minutes."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The opening phrase lands on \"I\", so the sentence says the writer was kept at minus eighteen degrees.",
+      "B": "Turning the phrase into a clause names the vault as the thing being kept cold, which removes the ambiguity entirely.",
+      "C": "The phrase now modifies \"twenty minutes\", which is no more refrigerated than the writer was.",
+      "D": "Moving the phrase beside \"I could stay\" attaches it to the writer even more firmly."
+    }
+  },
+  {
+    "id": "e267",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "The twenty minutes was not a suggestion «it was the point at which the cold begins» to be dangerous.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "suggestion; it was the point at which the cold begins"
+      },
+      {
+        "id": "C",
+        "text": "suggestion, it was the point at which the cold begins"
+      },
+      {
+        "id": "D",
+        "text": "suggestion it was, the point at which the cold begins"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Two complete sentences run together with no punctuation between them.",
+      "B": "A semicolon joins two independent clauses that belong together and carry no conjunction.",
+      "C": "A comma alone between two independent clauses is a splice.",
+      "D": "This rearranges the words into \"suggestion it was\", which does not fix the join and garbles the meaning."
+    }
+  },
+  {
+    "id": "e268",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "easy",
+    "passage": "ep19",
+    "context": "In eleven months «I was only able to find a total of two» mismatches, both of a tenth of a degree.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "I found only two"
+      },
+      {
+        "id": "C",
+        "text": "I only managed to find the number of two"
+      },
+      {
+        "id": "D",
+        "text": "there were only two that I was able to find"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Was able to find\" and \"a total of\" are both padding around the simple verb \"found\".",
+      "B": "Three words carry the whole meaning, and \"only\" stays where it belongs, next to \"two\".",
+      "C": "\"The number of two\" is not idiomatic and adds nothing to \"two\".",
+      "D": "This buries the writer in a \"there were\" construction and makes the sentence longer than the original."
+    }
+  },
+  {
+    "id": "e269",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "Nobody expected a mismatch, and in eleven months I found two. «Therefore,» the checking struck me for months as an elaborate way of proving that a thermometer works.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Not surprisingly,"
+      },
+      {
+        "id": "C",
+        "text": "However,"
+      },
+      {
+        "id": "D",
+        "text": "By contrast,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Therefore\" claims a logical consequence, and finding almost nothing does not entail a conclusion about the job.",
+      "B": "Finding nearly nothing is exactly why the work felt pointless, so the second sentence follows naturally rather than logically.",
+      "C": "\"However\" sets up a contrast, but the second sentence agrees with the first rather than qualifying it.",
+      "D": "\"By contrast\" also promises opposition that the sentence does not deliver."
+    }
+  },
+  {
+    "id": "e270",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "hard",
+    "passage": "ep19",
+    "context": "The storage manager described the failure that worries her «most: a compressor drifting out of tolerance for four years with nobody watching.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "most; a compressor drifting out of tolerance for four years with nobody watching."
+      },
+      {
+        "id": "C",
+        "text": "most — which was a compressor drifting out of tolerance for four years, with nobody watching."
+      },
+      {
+        "id": "D",
+        "text": "most, : a compressor drifting out of tolerance for four years with nobody watching."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "A complete sentence precedes the colon, and what follows delivers the \"failure\" the sentence has just promised. That is the colon’s job.",
+      "B": "A semicolon needs an independent clause after it, and this is a noun phrase.",
+      "C": "A dash could work here, but \"which was\" turns the phrase into a clause and adds a comma that separates the subject from its verb.",
+      "D": "A comma followed by a colon is not a punctuation mark in English."
+    }
+  },
+  {
+    "id": "e271",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "The only record of the temperature was the one «the compressors» own sensor produced.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "the compressor’s"
+      },
+      {
+        "id": "C",
+        "text": "the compressors’"
+      },
+      {
+        "id": "D",
+        "text": "the compressor"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The sensor belongs to the compressor, and possession requires an apostrophe.",
+      "B": "One compressor, so the apostrophe goes before the s.",
+      "C": "An apostrophe after the s marks a plural possessive, but the passage describes a single compressor.",
+      "D": "Dropping the ending entirely leaves \"the compressor own sensor\", which is not English."
+    }
+  },
+  {
+    "id": "e272",
+    "section": "english",
+    "topic": "word choice",
+    "difficulty": "medium",
+    "passage": "ep19",
+    "context": "A system that reports on itself will «infer» that it is fine right up until it cannot.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "report"
+      },
+      {
+        "id": "C",
+        "text": "imply"
+      },
+      {
+        "id": "D",
+        "text": "insinuate"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Infer\" means to draw a conclusion from evidence, which is what the reader does, not what the system does.",
+      "B": "\"Report\" is what a monitoring system does, and it echoes \"reports on itself\" earlier in the sentence deliberately.",
+      "C": "\"Imply\" means to suggest without stating, and the system states its readings outright.",
+      "D": "\"Insinuate\" adds a suggestion of bad faith that the sentence does not intend."
+    }
+  },
+  {
+    "id": "e273",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "easy",
+    "passage": "ep19",
+    "context": "What I was doing in the cold was not measuring the temperature. «Making sure there were two independent answers to the question.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "I was making sure there were two independent answers to the question."
+      },
+      {
+        "id": "C",
+        "text": "Making sure, there were two independent answers to the question."
+      },
+      {
+        "id": "D",
+        "text": "Two independent answers to the question, making sure there were."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Making\" is a participle with no subject, so this group of words has no main clause.",
+      "B": "Adding the subject and helping verb turns the participle into a predicate and the fragment into a sentence.",
+      "C": "The comma leaves \"making sure\" dangling in front of a clause it cannot attach to.",
+      "D": "This reorders the words without ever supplying a subject and a main verb."
+    }
+  },
+  {
+    "id": "e274",
+    "section": "english",
+    "topic": "adding/deleting",
+    "difficulty": "hard",
+    "passage": "ep19",
+    "context": "The writer is considering deleting the sentence describing the vault where a compressor drifted out of tolerance for four years. Should it be kept?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Kept, because it is the concrete failure that turns the writer’s routine checking from pointless into necessary."
+      },
+      {
+        "id": "B",
+        "text": "Kept, because it identifies the country the visiting storage manager came from."
+      },
+      {
+        "id": "C",
+        "text": "Deleted, because the essay is about the writer’s own vault and not about failures elsewhere."
+      },
+      {
+        "id": "D",
+        "text": "Deleted, because it repeats the point already made about sensor recalibration."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The essay hinges on the writer’s view changing, and this is the story that changes it. Without the failure, the argument in the following paragraph has nothing standing behind it.",
+      "B": "The country is left unnamed, and naming it would not matter to the argument.",
+      "C": "The failure elsewhere is what explains the procedure here, so it is not a digression.",
+      "D": "The recalibration was a sensor working correctly and being corrected. This is a system reporting on itself and going unchecked — the opposite case."
+    }
+  },
+  {
+    "id": "e275",
+    "section": "english",
+    "topic": "writers purpose",
+    "difficulty": "hard",
+    "passage": "ep19",
+    "context": "Suppose the writer had intended to explain why a measurement should be taken by something other than the thing being measured. Would this essay accomplish that goal?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because it contrasts an independent logger with a compressor that was the only witness to its own drift."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because it describes the parka and the twenty-minute limit in the vault."
+      },
+      {
+        "id": "C",
+        "text": "No, because the writer found only two mismatches in eleven months."
+      },
+      {
+        "id": "D",
+        "text": "No, because the essay is about a seed vault rather than about measurement."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The two cases sit directly against each other, and the essay states the principle outright: a system that reports on itself will report that it is fine right up until it cannot.",
+      "B": "The parka and the time limit establish the setting, not the argument.",
+      "C": "Finding almost nothing is the writer’s own first objection, which the essay then answers.",
+      "D": "The vault is the occasion. The final paragraph generalises past it to any monitoring dashboard."
+    }
+  },
+  {
+    "id": "e276",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "medium",
+    "passage": "ep20",
+    "context": "The researchers are careful to distinguish the ferry’s social value «with» its value as a route.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "from"
+      },
+      {
+        "id": "C",
+        "text": "against"
+      },
+      {
+        "id": "D",
+        "text": "to"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Distinguish with\" is not an English construction.",
+      "B": "\"Distinguish X from Y\" is the idiom for telling two things apart.",
+      "C": "\"Distinguish against\" is not idiomatic, and it imports a sense of opposition that the sentence does not want.",
+      "D": "\"Distinguish to\" is not a pairing English uses."
+    }
+  },
+  {
+    "id": "e277",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "medium",
+    "passage": "ep20",
+    "context": "Ridership fell by ninety percent in the first year, and the service «is cut» four years later.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "was cut"
+      },
+      {
+        "id": "C",
+        "text": "will be cut"
+      },
+      {
+        "id": "D",
+        "text": "has been cut"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The present tense clashes with \"fell\" earlier in the sentence and with \"four years later\".",
+      "B": "The simple past matches the rest of the sentence and the closed stretch of time it describes.",
+      "C": "The future tense places the cut ahead of now, but it happened before the passage was written.",
+      "D": "The present perfect connects the event to the present moment, which the fixed interval rules out."
+    }
+  },
+  {
+    "id": "e278",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "medium",
+    "passage": "ep20",
+    "context": "The set of arguments made at these town meetings «vary» remarkably little from one town to the next.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "varies"
+      },
+      {
+        "id": "C",
+        "text": "have varied"
+      },
+      {
+        "id": "D",
+        "text": "are varying"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Vary\" is plural, and the subject is the singular \"set\". \"Arguments\" sits inside a prepositional phrase.",
+      "B": "\"The set ... varies\" — a collective noun used as a single unit takes a singular verb.",
+      "C": "\"Have varied\" is plural and shifts the tense as well.",
+      "D": "\"Are varying\" is plural, and the progressive suggests a change in progress that the sentence does not describe."
+    }
+  },
+  {
+    "id": "e279",
+    "section": "english",
+    "topic": "commas",
+    "difficulty": "hard",
+    "passage": "ep20",
+    "context": "Islanders «who would never arrange to see one another, end up» standing on the same deck twice a day.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "who would never arrange to see one another end up"
+      },
+      {
+        "id": "C",
+        "text": "who would never arrange to see one another, end up,"
+      },
+      {
+        "id": "D",
+        "text": ", who would never arrange to see one another, end up"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The stray comma separates the subject \"Islanders who would never arrange to see one another\" from its verb \"end up\".",
+      "B": "The clause is essential — it says which islanders — so it takes no commas, and none belongs before the verb.",
+      "C": "Adding a second comma encloses the verb, which is not an interruption.",
+      "D": "A matched pair would make the clause nonessential, implying every islander avoids every other, which the sentence does not mean."
+    }
+  },
+  {
+    "id": "e280",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "medium",
+    "passage": "ep20",
+    "context": "The ferry is slow, the ferry is expensive per crossing, and «bad weather stops it running».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "the ferry stops running in bad weather"
+      },
+      {
+        "id": "C",
+        "text": "stopping in bad weather"
+      },
+      {
+        "id": "D",
+        "text": "its stopping in bad weather"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The first two items make the ferry the subject. The third switches to \"bad weather\", breaking the pattern.",
+      "B": "All three items now read \"the ferry is\" or \"the ferry stops\", with the same subject throughout.",
+      "C": "A participial phrase does not match two full clauses.",
+      "D": "A possessive gerund phrase is a noun, and the other two items are clauses."
+    }
+  },
+  {
+    "id": "e281",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "hard",
+    "passage": "ep20",
+    "context": "The town kept the ferry running after the bridge opened, but «it» was cut four years later.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "the service"
+      },
+      {
+        "id": "C",
+        "text": "they"
+      },
+      {
+        "id": "D",
+        "text": "this"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"It\" could refer to the ferry, the bridge or the town, and only the noun itself settles which.",
+      "B": "Naming the service removes an ambiguity that no pronoun in this sentence can resolve.",
+      "C": "\"They\" is plural, and none of the candidate antecedents is.",
+      "D": "\"This\" standing alone is at least as vague as \"it\" and adds a demonstrative with nothing to point at."
+    }
+  },
+  {
+    "id": "e282",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "hard",
+    "passage": "ep20",
+    "context": "«Running at a loss for four years, the council finally cut the subsidised ferry.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "The council finally cut the subsidised ferry, which had been running at a loss for four years."
+      },
+      {
+        "id": "C",
+        "text": "Running at a loss for four years, the cut was finally made by the council."
+      },
+      {
+        "id": "D",
+        "text": "The council, running at a loss for four years, finally cut the subsidised ferry."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The opening phrase lands on \"the council\", so the sentence says the council had been running at a loss.",
+      "B": "The relative clause sits directly against \"ferry\", which is the thing that was losing money.",
+      "C": "This attaches the losses to \"the cut\", which is an event rather than an operation.",
+      "D": "Placing the phrase inside commas after \"the council\" states the misreading outright instead of merely inviting it."
+    }
+  },
+  {
+    "id": "e283",
+    "section": "english",
+    "topic": "dashes",
+    "difficulty": "medium",
+    "passage": "ep20",
+    "context": "Economists have a term for this «— incidental social contact —» and a literature arguing that it matters.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "— incidental social contact,"
+      },
+      {
+        "id": "C",
+        "text": ", incidental social contact —"
+      },
+      {
+        "id": "D",
+        "text": "; incidental social contact;"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "A matched pair of dashes sets off the term as an interruption, and both ends use the same mark.",
+      "B": "Opening with a dash and closing with a comma leaves the pair mismatched.",
+      "C": "The same mismatch reversed.",
+      "D": "A semicolon needs an independent clause on each side, and a bare noun phrase is not one."
+    }
+  },
+  {
+    "id": "e284",
+    "section": "english",
+    "topic": "sentence order",
+    "difficulty": "hard",
+    "passage": "ep20",
+    "context": "The writer wants to add the sentence \"None of this is an argument against bridges.\" Where in the passage does it belong?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "At the start of the third paragraph, before the ambulance example."
+      },
+      {
+        "id": "B",
+        "text": "At the start of the first paragraph, before the standard case for a bridge."
+      },
+      {
+        "id": "C",
+        "text": "At the end of the second paragraph, after the list of what travels on the deck."
+      },
+      {
+        "id": "D",
+        "text": "At the very end of the passage, as its closing line."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The second paragraph has just made the case for the ferry, and the third paragraph exists to bound that case. The disclaimer is what turns the two into an argument rather than a contradiction.",
+      "B": "The first paragraph has not yet raised anything that could be mistaken for an argument against bridges.",
+      "C": "Ending the second paragraph on the disclaimer would undercut the point that paragraph is still making.",
+      "D": "The passage ends on the Norwegian result, and a disclaimer there would answer a question nobody is still asking."
+    }
+  },
+  {
+    "id": "e285",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "medium",
+    "passage": "ep20",
+    "context": "The ferry’s contribution «is a thing that is real and that is not captured» by any number on the comparison sheet.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "is real and is not captured"
+      },
+      {
+        "id": "C",
+        "text": "is a real thing not being captured"
+      },
+      {
+        "id": "D",
+        "text": "happens to be real, not being captured"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Is a thing that is\" wraps two words of padding around each half of the sentence.",
+      "B": "Both claims survive, and the parallel \"is real and is not captured\" is clearer without the scaffolding.",
+      "C": "\"Not being captured\" turns a statement into a participle and loses the parallel.",
+      "D": "\"Happens to be\" weakens a claim the writer means seriously."
+    }
+  },
+  {
+    "id": "e286",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "medium",
+    "passage": "ep20",
+    "context": "The Norwegian result is often reported as a refutation. «Moreover,» it is not quite one.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "It is not,"
+      },
+      {
+        "id": "C",
+        "text": "And so,"
+      },
+      {
+        "id": "D",
+        "text": "Consequently,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Moreover\" adds a further point in the same direction, and this sentence turns against the previous one.",
+      "B": "The passage is correcting the usual reading, and beginning with the correction itself is the most direct way to mark the reversal.",
+      "C": "\"And so\" presents the second sentence as following from the first, and it contradicts it.",
+      "D": "\"Consequently\" claims the same false dependence."
+    }
+  },
+  {
+    "id": "e287",
+    "section": "english",
+    "topic": "word choice",
+    "difficulty": "hard",
+    "passage": "ep20",
+    "context": "The finding shows the contact cannot be preserved by offering it as an option, which is a real finding and a «disinterested» one.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "discouraging"
+      },
+      {
+        "id": "C",
+        "text": "uninterested"
+      },
+      {
+        "id": "D",
+        "text": "indifferent"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Disinterested\" means impartial, having no stake in the outcome, which says nothing about how the result feels.",
+      "B": "The passage treats the result as bad news for people who valued the crossing, and \"discouraging\" is the word for that.",
+      "C": "\"Uninterested\" means bored, which describes a person rather than a finding.",
+      "D": "\"Indifferent\" also describes an attitude, and a finding does not have one."
+    }
+  },
+  {
+    "id": "e288",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "medium",
+    "passage": "ep20",
+    "context": "A ferry has a schedule. «Which collects people who would otherwise never meet.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "A schedule collects people who would otherwise never meet."
+      },
+      {
+        "id": "C",
+        "text": "Which collects people, who would otherwise never meet."
+      },
+      {
+        "id": "D",
+        "text": "Collecting people who would otherwise never meet."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Which\" opens a relative clause, and a relative clause cannot stand as a sentence on its own.",
+      "B": "Replacing \"which\" with a real subject gives the clause a subject and a main verb.",
+      "C": "Adding a comma leaves the relative pronoun in place and the fragment intact.",
+      "D": "A participle is no more a sentence than a relative clause is."
+    }
+  },
+  {
+    "id": "e289",
+    "section": "english",
+    "topic": "adding/deleting",
+    "difficulty": "hard",
+    "passage": "ep20",
+    "context": "The writer is considering deleting the sentence about an ambulance reaching a hospital in half the time. Should it be kept?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Kept, because it concedes that a bridge can be worth more than the contact, which keeps the paragraph’s narrower claim credible."
+      },
+      {
+        "id": "B",
+        "text": "Kept, because it explains how long the ferry crossing took."
+      },
+      {
+        "id": "C",
+        "text": "Deleted, because the passage is about social contact rather than about emergency services."
+      },
+      {
+        "id": "D",
+        "text": "Deleted, because it contradicts the paragraph’s argument that the ferry’s contribution is real."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The paragraph exists to bound the argument, and this is the concession that does the bounding. Removing it leaves the passage arguing for ferries without limit.",
+      "B": "The eighteen-minute crossing is given in the previous paragraph, not here.",
+      "C": "The comparison is precisely what makes the claim about contact a narrow one rather than a sweeping one.",
+      "D": "Saying a bridge can be worth more does not deny that the contact was worth something."
+    }
+  },
+  {
+    "id": "e290",
+    "section": "english",
+    "topic": "writers purpose",
+    "difficulty": "hard",
+    "passage": "ep20",
+    "context": "Suppose the writer had intended to show that a comparison can be sound and still leave something out. Would this passage accomplish that goal?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because it accepts the numerical case for the bridge and then identifies a benefit that no figure on the sheet records."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because it demonstrates that the numerical case for bridges is usually mistaken."
+      },
+      {
+        "id": "C",
+        "text": "No, because it concludes that the Norwegian subsidy failed."
+      },
+      {
+        "id": "D",
+        "text": "No, because it never states what the ferry crossing cost."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The first paragraph grants that the case is usually straightforward, and the rest identifies what the straightforward case omits. That is exactly the shape the question describes.",
+      "B": "The passage never disputes the numbers; its whole method is to accept them.",
+      "C": "The failure of the subsidy is about how the contact can be preserved, not about whether it existed.",
+      "D": "The passage says the ferry is expensive per crossing, and an exact figure would not change the argument."
+    }
+  },
+  {
+    "id": "e291",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "medium",
+    "passage": "ep21",
+    "context": "Huang has a particular «reputation: his instruments are the ones that do not need him afterward.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "reputation; that his instruments are the ones that do not need him afterward."
+      },
+      {
+        "id": "C",
+        "text": "reputation, : his instruments are the ones that do not need him afterward."
+      },
+      {
+        "id": "D",
+        "text": "reputation his instruments being the ones that do not need him afterward."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "A complete sentence precedes the colon, and what follows says what the reputation is. That is precisely what a colon introduces.",
+      "B": "A semicolon needs an independent clause after it, and \"that his instruments are...\" is subordinate.",
+      "C": "A comma and a colon together is not a punctuation mark.",
+      "D": "A participial phrase with no punctuation runs straight into the main clause and loses the announcement the sentence was making."
+    }
+  },
+  {
+    "id": "e292",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "hard",
+    "passage": "ep21",
+    "context": "The soundboard could not survive the «seasons changes» in the room the instrument went to.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "season’s changes"
+      },
+      {
+        "id": "C",
+        "text": "seasons’ changes"
+      },
+      {
+        "id": "D",
+        "text": "seasons changes’"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The changes belong to the seasons, and possession requires an apostrophe.",
+      "B": "This makes it a single season, but the passage describes a yearly cycle of several.",
+      "C": "Correct — more than one season, so the apostrophe goes after the plural s.",
+      "D": "This puts the apostrophe on \"changes\", which is what is possessed rather than what possesses."
+    }
+  },
+  {
+    "id": "e293",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "hard",
+    "passage": "ep21",
+    "context": "The instrument «is» unplayable within eight years of the day he finished it.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "was"
+      },
+      {
+        "id": "C",
+        "text": "will be"
+      },
+      {
+        "id": "D",
+        "text": "would have been"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The present tense clashes with \"finished\" and with a span that closed decades ago — and the instrument is playable now, since he keeps it restrung.",
+      "B": "The simple past matches the finishing and the eight years that followed it.",
+      "C": "The future tense points ahead of the present, and the failure is long past.",
+      "D": "The conditional perfect describes something that did not happen, and this did."
+    }
+  },
+  {
+    "id": "e294",
+    "section": "english",
+    "topic": "commas",
+    "difficulty": "medium",
+    "passage": "ep21",
+    "context": "Teodor Huang«, who builds harpsichords in a converted dairy» has a waiting list of six years.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", who builds harpsichords in a converted dairy,"
+      },
+      {
+        "id": "C",
+        "text": "who builds harpsichords in a converted dairy,"
+      },
+      {
+        "id": "D",
+        "text": "who builds harpsichords in a converted dairy"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The clause is opened with a comma and never closed, so the interruption has no end.",
+      "B": "A nonessential clause takes a comma at both ends. Remove what sits between them and the sentence still stands.",
+      "C": "Closing without opening is the same error in the other direction.",
+      "D": "With no commas the clause reads as essential, implying there are several Teodor Huangs and this is the harpsichord one."
+    }
+  },
+  {
+    "id": "e295",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "medium",
+    "passage": "ep21",
+    "context": "The temptation is always «toward» the version that sounds best on the day you hand it over.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "with"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "\"A temptation toward\" something is the standard pairing for an inclination pulling in a direction.",
+      "B": "\"Temptation for\" suggests the thing is tempting to someone, which reverses what the sentence is describing.",
+      "C": "\"Temptation at\" is not an English pairing.",
+      "D": "\"Temptation with\" is not an English pairing either."
+    }
+  },
+  {
+    "id": "e296",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "medium",
+    "passage": "ep21",
+    "context": "Huang keeps the instrument where apprentices can see it, «restrung and playable».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "restrung and playable, in the workshop."
+      },
+      {
+        "id": "C",
+        "text": "and it is restrung and playable."
+      },
+      {
+        "id": "D",
+        "text": "being restrung and playable."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The phrase sits close enough to \"the instrument\" to attach to it without ambiguity, and nothing between them competes for it.",
+      "B": "Adding \"in the workshop\" after the modifier pushes a second location in behind \"where apprentices can see it\", which already gave one.",
+      "C": "Turning it into a clause joined by \"and\" is grammatical but flattens a modifier into a separate assertion, losing the connection to the instrument.",
+      "D": "\"Being\" makes the phrase read as a cause, as if the instrument is kept there because it is restrung."
+    }
+  },
+  {
+    "id": "e297",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "medium",
+    "passage": "ep21",
+    "context": "Huang rebuilt the instrument twice and then bought «them» back.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "it"
+      },
+      {
+        "id": "C",
+        "text": "they"
+      },
+      {
+        "id": "D",
+        "text": "its"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Them\" is plural, and the antecedent \"the instrument\" is singular.",
+      "B": "One instrument, so the pronoun is \"it\".",
+      "C": "\"They\" is both plural and a subject form, and this word is the object of \"bought\".",
+      "D": "\"Its\" is possessive, and nothing here is being possessed."
+    }
+  },
+  {
+    "id": "e298",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "medium",
+    "passage": "ep21",
+    "context": "Everyone agrees with the principle «nobody believes it applies» to the instrument in front of them.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "principle, but nobody believes it applies"
+      },
+      {
+        "id": "C",
+        "text": "principle, nobody believes it applies"
+      },
+      {
+        "id": "D",
+        "text": "principle nobody believes, it applies"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Two complete sentences run together with nothing between them.",
+      "B": "A comma with the conjunction \"but\" joins them correctly and marks the contrast the sentence is drawing.",
+      "C": "A comma alone between two independent clauses is a splice.",
+      "D": "This rearranges the words into a different claim and still leaves the two clauses badly joined."
+    }
+  },
+  {
+    "id": "e299",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "hard",
+    "passage": "ep21",
+    "context": "The box moves with humidity, with age, and «temperature changes affect it too».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "with changes in temperature"
+      },
+      {
+        "id": "C",
+        "text": "changing temperature"
+      },
+      {
+        "id": "D",
+        "text": "it is affected by temperature"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The first two items are \"with\" phrases. A full clause in the third slot leaves the list unfinished.",
+      "B": "\"With humidity, with age, and with changes in temperature\" — three matching prepositional phrases.",
+      "C": "A bare noun phrase does not match two \"with\" phrases.",
+      "D": "A clause with its own subject and verb breaks the pattern in the same way the original does."
+    }
+  },
+  {
+    "id": "e300",
+    "section": "english",
+    "topic": "word choice",
+    "difficulty": "medium",
+    "passage": "ep21",
+    "context": "The elegant solutions tend to be the ones that «compel» the builder to come back and adjust things.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "require"
+      },
+      {
+        "id": "C",
+        "text": "coerce"
+      },
+      {
+        "id": "D",
+        "text": "obligate"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Compel\" implies a force acting on a person against resistance, and a design simply makes the return necessary.",
+      "B": "\"Require\" is the plain word for a design that cannot do without something.",
+      "C": "\"Coerce\" adds a suggestion of threat that a harpsichord cannot carry out.",
+      "D": "\"Obligate\" refers to a duty a person owes, and this is a practical necessity rather than a duty."
+    }
+  },
+  {
+    "id": "e301",
+    "section": "english",
+    "topic": "dashes",
+    "difficulty": "hard",
+    "passage": "ep21",
+    "context": "He would make the soundboard thicker «and accept a smaller sound —» which is the trade he did not make in 1986.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "and accept a smaller sound,"
+      },
+      {
+        "id": "C",
+        "text": "— and accept a smaller sound —"
+      },
+      {
+        "id": "D",
+        "text": "and accept a smaller sound;"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A single dash before a \"which\" clause leaves the clause more strongly detached than its close relationship to the sentence warrants, and nothing earlier opened a pair.",
+      "B": "A comma is the ordinary mark before a nonessential \"which\" clause, and the sentence has no interruption needing anything heavier.",
+      "C": "A matched pair of dashes would set off \"and accept a smaller sound\" as an interruption, but it is part of what he would do, not an aside.",
+      "D": "A semicolon needs an independent clause after it, and \"which is the trade he did not make\" is subordinate."
+    }
+  },
+  {
+    "id": "e302",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "easy",
+    "passage": "ep21",
+    "context": "Huang «is of the opinion that he is not» the best builder working today.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "says he is not"
+      },
+      {
+        "id": "C",
+        "text": "holds the opinion that he is not"
+      },
+      {
+        "id": "D",
+        "text": "would say that his opinion is that he is not"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Is of the opinion that\" is four words doing the work of one verb.",
+      "B": "\"Says\" is direct, and the passage attributes the claim to him rather than endorsing it.",
+      "C": "This swaps one padded phrase for another of the same length.",
+      "D": "This stacks \"would say\" on top of \"his opinion is\", doubling the hedge."
+    }
+  },
+  {
+    "id": "e303",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "medium",
+    "passage": "ep21",
+    "context": "The 1986 instrument sounded better than anything he has made since. «Similarly,» it was unplayable within eight years.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "It was also, however,"
+      },
+      {
+        "id": "C",
+        "text": "As a result,"
+      },
+      {
+        "id": "D",
+        "text": "In other words,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Similarly\" presents the second fact as another of the same kind, and one is a success while the other is a failure.",
+      "B": "The two facts are both true of the same instrument and pull in opposite directions, which is what \"also, however\" marks.",
+      "C": "\"As a result\" claims the failure followed from the sound, and the passage locates the cause in the soundboard’s thinness instead.",
+      "D": "\"In other words\" restates, and the second sentence says something new."
+    }
+  },
+  {
+    "id": "e304",
+    "section": "english",
+    "topic": "sentence order",
+    "difficulty": "hard",
+    "passage": "ep21",
+    "context": "Within the third paragraph, the sentence \"It sounded, by his own account, better than anything he had made before or has made since\" belongs where it is because it:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "establishes what was lost, so that the failure described immediately afterward costs something."
+      },
+      {
+        "id": "B",
+        "text": "introduces the 1986 instrument for the first time."
+      },
+      {
+        "id": "C",
+        "text": "explains why Huang bought the instrument back."
+      },
+      {
+        "id": "D",
+        "text": "summarises the paragraph’s argument before the evidence for it."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "A failure is only instructive if the thing that failed was worth having. Placing the praise first is what makes the eight-year collapse a trade rather than a mistake.",
+      "B": "The previous sentence already introduces it as the instrument he considers his worst.",
+      "C": "The buyback is explained by the two rebuilds that precede it, not by the sound.",
+      "D": "The paragraph has no thesis to summarise; it is narrating a case."
+    }
+  },
+  {
+    "id": "e305",
+    "section": "english",
+    "topic": "writers purpose",
+    "difficulty": "hard",
+    "passage": "ep21",
+    "context": "Suppose the writer had intended to show why a principle can be widely agreed on and still rarely followed. Would this passage accomplish that goal?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because Huang states that everyone accepts the principle and nobody believes it applies to the instrument in front of them."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because it explains how a harpsichord responds to changes in humidity."
+      },
+      {
+        "id": "C",
+        "text": "No, because Huang says he would not do anything differently."
+      },
+      {
+        "id": "D",
+        "text": "No, because the passage concerns one builder rather than the trade as a whole."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "That sentence names both halves of the question directly — universal agreement and near-universal exception — and the 1986 instrument is the case that shows it.",
+      "B": "The humidity explains why the problem exists, not why the principle goes unfollowed.",
+      "C": "He says the opposite: he would make the soundboard thicker and accept a smaller sound.",
+      "D": "One builder is how the passage makes its point, and Huang states the principle in general terms."
     }
   }
 ]

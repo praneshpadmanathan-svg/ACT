@@ -289,7 +289,15 @@ if (process.argv.includes('--write')) {
      passage. A quotation the student cannot locate makes the item
      unanswerable in a way that reads as their own failure to find it. Single
      quoted words are matched on their stem, since an item may label a
-     hypothesis "coordination" where the passage writes "song coordinates". */
+     hypothesis "coordination" where the passage writes "song coordinates".
+
+   7f — no two questions on the same passage are the same question with a word
+     of filler between them. 7a compares stems literally, so "What is cos 120°?"
+     and "What is the value of cos 120°?" hash apart and both shipped. Four
+     Math pairs got in that way. This compares a stripped form — case,
+     whitespace, punctuation and the openers a stem can be phrased with either
+     way ("what is", "the value of", "find") all removed — while keeping digits,
+     superscripts and operators, so 7⁴ and 7²³ stay different questions. */
 
 const readPassageText = new Map(
   readJSON('passagesReading.json').map((pg) => [
@@ -319,8 +327,33 @@ function quotedSpans(text) {
   return out;
 }
 
+/* The superscripts a Math stem uses to write an exponent are the difference
+   between two questions, so they survive the strip as "^n". */
+const SUPERSCRIPTS = {
+  '⁰': '0',
+  '¹': '1',
+  '²': '2',
+  '³': '3',
+  '⁴': '4',
+  '⁵': '5',
+  '⁶': '6',
+  '⁷': '7',
+  '⁸': '8',
+  '⁹': '9',
+};
+const FILLER =
+  /\b(what is|what was|which of the following is|which of the following|the value of|find|determine|calculate|approximately)\b/g;
+
+const loosen = (value) =>
+  String(value ?? '')
+    .toLowerCase()
+    .replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]/g, (c) => `^${SUPERSCRIPTS[c]}`)
+    .replace(FILLER, ' ')
+    .replace(/[^a-z0-9^+*/=<>().√π÷×°%-]+/g, '');
+
 for (const [section, questions] of Object.entries(questionsBySection)) {
   const stemsSeen = new Map();
+  const loosenedSeen = new Map();
 
   for (const q of questions) {
     const stemKey = `${q.passage ?? '-'}|${flatten(q.stem)}|${flatten(q.context)}`;
@@ -332,6 +365,16 @@ for (const [section, questions] of Object.entries(questionsBySection)) {
         );
       } else {
         stemsSeen.set(stemKey, q.id);
+      }
+
+      const looseKey = `${q.passage ?? '-'}|${loosen(q.stem)}|${loosen(q.context)}`;
+      if (loosenedSeen.has(looseKey)) {
+        failures.push(
+          `${section}/${q.id}: asks the same question as ${loosenedSeen.get(looseKey)} with only ` +
+            `filler wording between them. One of the two is a duplicate.`,
+        );
+      } else {
+        loosenedSeen.set(looseKey, q.id);
       }
     }
 
