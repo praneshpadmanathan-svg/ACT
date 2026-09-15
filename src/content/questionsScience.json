@@ -966,7 +966,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "human hunting was the primary cause of the extinctions."
+        "text": "human hunting was the primary cause of the extinctions on every one of the affected landmasses."
       },
       {
         "id": "B",
@@ -974,11 +974,11 @@
       },
       {
         "id": "C",
-        "text": "climate change had no role in the extinctions."
+        "text": "climate change had no role at all in the late Pleistocene extinctions."
       },
       {
         "id": "D",
-        "text": "Africa lost most of its megafauna."
+        "text": "Africa lost most of its megafauna along with the other continents."
       }
     ],
     "answer": "B",
@@ -999,15 +999,15 @@
     "choices": [
       {
         "id": "A",
-        "text": "Pollen records show vegetation change 2,000 years before the extinctions."
+        "text": "Pollen records show vegetation change beginning 2,000 years before the extinctions on every continent studied."
       },
       {
         "id": "B",
-        "text": "Several megafauna species went extinct on islands where vegetation remained unchanged but humans had recently arrived."
+        "text": "Several megafauna species went extinct on islands where vegetation was unchanged but humans had arrived."
       },
       {
         "id": "C",
-        "text": "Mammoth steppe habitat declined sharply after 15,000 years ago."
+        "text": "Mammoth steppe habitat declined sharply everywhere after 15,000 years ago."
       },
       {
         "id": "D",
@@ -1032,7 +1032,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "African climate was more stable than elsewhere."
+        "text": "African climate was considerably more stable than the climate elsewhere."
       },
       {
         "id": "B",
@@ -1040,11 +1040,11 @@
       },
       {
         "id": "C",
-        "text": "African megafauna were smaller and reproduced faster."
+        "text": "African megafauna were smaller on average and reproduced faster than those on other continents."
       },
       {
         "id": "D",
-        "text": "humans never hunted large mammals in Africa."
+        "text": "humans in Africa never hunted large mammals of any size."
       }
     ],
     "answer": "B",
@@ -1065,7 +1065,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "migrate over long distances."
+        "text": "migrate over long distances between seasonal ranges."
       },
       {
         "id": "B",
@@ -1073,11 +1073,11 @@
       },
       {
         "id": "C",
-        "text": "depend entirely on grassland habitat."
+        "text": "depend entirely on a grassland habitat that was already disappearing."
       },
       {
         "id": "D",
-        "text": "have no natural predators."
+        "text": "have no natural predators other than humans."
       }
     ],
     "answer": "B",
@@ -1098,26 +1098,26 @@
     "choices": [
       {
         "id": "A",
-        "text": "support Scientist 1 and weaken Scientist 2."
+        "text": "support Scientist 1 and weaken Scientist 2 in equal measure."
       },
       {
         "id": "B",
-        "text": "support Scientist 2, who cites prolonged coexistence as inconsistent with rapid hunting-driven collapse."
+        "text": "support Scientist 2, who cites prolonged coexistence as inconsistent with rapid collapse."
       },
       {
         "id": "C",
-        "text": "support neither scientist."
+        "text": "support neither scientist, because Eurasia lies outside the scope of both hypotheses as stated."
       },
       {
         "id": "D",
-        "text": "prove that climate change did not occur."
+        "text": "prove that climate change did not occur at the end of the last glacial period."
       }
     ],
     "answer": "B",
     "why": {
       "A": "Scientist 1’s model emphasizes losses shortly after human arrival.",
       "B": "Correct — Scientist 2 explicitly raises prolonged survival alongside humans as an objection to overkill.",
-      "C": "It bears directly on the dispute.",
+      "C": "It bears directly on the dispute, and Eurasia is where Scientist 2 raises prolonged coexistence.",
       "D": "It says nothing about whether climate changed."
     }
   },
@@ -2418,7 +2418,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "the cooling lasted 1,200 years."
+        "text": "the cooling lasted for roughly 1,200 years before reversing."
       },
       {
         "id": "B",
@@ -2426,11 +2426,11 @@
       },
       {
         "id": "C",
-        "text": "ocean circulation weakened."
+        "text": "ocean circulation weakened in the North Atlantic."
       },
       {
         "id": "D",
-        "text": "glacial lakes drained rapidly."
+        "text": "glacial lakes drained rapidly into the North Atlantic."
       }
     ],
     "answer": "B",
@@ -2451,7 +2451,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "a comet fragmented over the ice sheet."
+        "text": "a comet fragmented over the North American ice sheet roughly 12,900 years ago."
       },
       {
         "id": "B",
@@ -2459,11 +2459,11 @@
       },
       {
         "id": "C",
-        "text": "ocean circulation was unaffected."
+        "text": "ocean circulation was unaffected throughout the cooling."
       },
       {
         "id": "D",
-        "text": "the cooling was gradual."
+        "text": "the cooling came on gradually rather than abruptly."
       }
     ],
     "answer": "B",
@@ -2488,15 +2488,15 @@
       },
       {
         "id": "B",
-        "text": "Evidence of elevated platinum in sediments."
+        "text": "Evidence of elevated platinum in sediments at many sites."
       },
       {
         "id": "C",
-        "text": "Evidence that the cooling began within decades."
+        "text": "Evidence that the cooling began within a few decades."
       },
       {
         "id": "D",
-        "text": "Evidence that a glacial lake existed in North America."
+        "text": "Evidence that a large glacial lake existed in North America at exactly that time."
       }
     ],
     "answer": "A",
@@ -2517,7 +2517,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "date the impact layer."
+        "text": "date the impact layer at the St. Lawrence outlet."
       },
       {
         "id": "B",
@@ -2525,11 +2525,11 @@
       },
       {
         "id": "C",
-        "text": "measure Southern Hemisphere temperatures."
+        "text": "measure Southern Hemisphere temperatures during the 1,200 years the cooling lasted."
       },
       {
         "id": "D",
-        "text": "show that wildfires were widespread."
+        "text": "show that continent-scale wildfires were widespread."
       }
     ],
     "answer": "B",
@@ -2550,7 +2550,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "oceanographic changes are always slow."
+        "text": "oceanographic changes are always slow and could not possibly act within only a few decades."
       },
       {
         "id": "B",
@@ -2558,11 +2558,11 @@
       },
       {
         "id": "C",
-        "text": "impacts always cause cooling."
+        "text": "impacts always cause cooling wherever they occur."
       },
       {
         "id": "D",
-        "text": "ice cores cannot resolve decades."
+        "text": "ice cores cannot resolve intervals as short as decades."
       }
     ],
     "answer": "B",
@@ -2583,7 +2583,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "strengthen Scientist 2’s hypothesis."
+        "text": "strengthen Scientist 2’s hypothesis considerably."
       },
       {
         "id": "B",
@@ -2591,11 +2591,11 @@
       },
       {
         "id": "C",
-        "text": "weaken Scientist 1’s hypothesis."
+        "text": "weaken Scientist 1’s hypothesis instead."
       },
       {
         "id": "D",
-        "text": "have no bearing on either hypothesis."
+        "text": "have no bearing on either hypothesis, since neither depends on the impact materials."
       }
     ],
     "answer": "B",
@@ -4563,15 +4563,15 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because the two tubes missing either water or air showed almost no mass change, while the two with both showed much larger changes."
+        "text": "Yes, because only the tubes with both water and air showed a large mass change."
       },
       {
         "id": "B",
-        "text": "Yes, because the nail in dry air gained more mass than the nail in moist air."
+        "text": "Yes, because the nail left in dry air gained more mass than the nail sealed in the tube of moist air."
       },
       {
         "id": "C",
-        "text": "No, because the nail sealed in boiled water still gained 0.01 g."
+        "text": "No, because the nail sealed in the boiled water still gained 0.01 g of mass."
       },
       {
         "id": "D",
@@ -7966,15 +7966,15 @@
       },
       {
         "id": "B",
-        "text": "Yes, because Table 1 reports the value at 30 g/L directly."
+        "text": "Yes, because Table 1 reports the value at 30 g/L for Species B directly."
       },
       {
         "id": "C",
-        "text": "No, because 30 g/L was not tested, so nothing can be said about it."
+        "text": "No, because 30 g/L was not among the concentrations tested, so nothing at all can be said about that concentration."
       },
       {
         "id": "D",
-        "text": "No, because germination in Species B levels off above 20 g/L."
+        "text": "No, because germination in Species B levels off at every step above 20 g/L."
       }
     ],
     "answer": "A",
@@ -8692,15 +8692,15 @@
       },
       {
         "id": "B",
-        "text": "Yes, because Figure 2 shows survival at 27 °C for both populations."
+        "text": "Yes, because Figure 2 shows survival at 27 °C for both of the populations."
       },
       {
         "id": "C",
-        "text": "No, because 27 °C was not among the temperatures tested in either figure."
+        "text": "No, because 27 °C was not among the temperatures tested in either figure, so the prediction cannot be checked at all."
       },
       {
         "id": "D",
-        "text": "No, because both critical thermal maxima are above 27 °C."
+        "text": "No, because both critical thermal maxima lie above 27 °C already."
       }
     ],
     "answer": "A",
@@ -8725,15 +8725,15 @@
       },
       {
         "id": "B",
-        "text": "oxygen consumption over a wider range of temperatures."
+        "text": "oxygen consumption over a wider range of temperatures than Figure 1 covers for either population."
       },
       {
         "id": "C",
-        "text": "the behaviour of a third population."
+        "text": "the behaviour of a third population not shown in Figure 1."
       },
       {
         "id": "D",
-        "text": "how long each fish was held at each temperature."
+        "text": "how long each fish was held at each of the temperatures."
       }
     ],
     "answer": "A",
@@ -9088,15 +9088,15 @@
       },
       {
         "id": "B",
-        "text": "shocked quartz requires pressures above 5 gigapascals."
+        "text": "shocked quartz requires pressures above 5 gigapascals, which only a hypervelocity impact could ever generate."
       },
       {
         "id": "C",
-        "text": "a salt layer is responsible for the raised rim."
+        "text": "a salt layer is responsible for the raised rim of the structure."
       },
       {
         "id": "D",
-        "text": "magma played some part in forming the structure."
+        "text": "magma played some part in forming the structure at depth."
       }
     ],
     "answer": "A",
@@ -9158,11 +9158,11 @@
       },
       {
         "id": "C",
-        "text": "It would have no bearing, since the two sites are in different basins."
+        "text": "It would have no bearing, since the two sites lie in different basins."
       },
       {
         "id": "D",
-        "text": "It would weaken it decisively, since any difference in count rules out impact."
+        "text": "It would weaken it decisively, since any difference in grain count rules out an impact origin altogether."
       }
     ],
     "answer": "A",
@@ -9249,19 +9249,19 @@
     "choices": [
       {
         "id": "A",
-        "text": "A layer of iridium-rich sediment of the same age as the structure, spread evenly around it."
+        "text": "A layer of iridium-rich sediment of the same age, spread evenly around it."
       },
       {
         "id": "B",
-        "text": "A ring of upturned sedimentary beds at the rim."
+        "text": "A ring of upturned sedimentary beds all the way around the rim."
       },
       {
         "id": "C",
-        "text": "Steam-altered minerals in the rim debris."
+        "text": "Steam-altered minerals scattered through the rim debris."
       },
       {
         "id": "D",
-        "text": "A fault trace passing directly beneath the structure."
+        "text": "A fault trace passing directly beneath the structure and continuing well beyond its raised rim."
       }
     ],
     "answer": "A",
