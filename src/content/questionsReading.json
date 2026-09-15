@@ -9568,5 +9568,335 @@
       "C": "The paragraph goes on to say that translator made none of these mistakes.",
       "D": "The absorbed-phrasing disadvantage belongs to a later paragraph entirely."
     }
+  },
+  {
+    "id": "r234",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "medium",
+    "passage": "rp24",
+    "context": "The passage is chiefly concerned with:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "two explanations of autumn red and why neither wins outright."
+      },
+      {
+        "id": "B",
+        "text": "the chemistry by which chlorophyll is dismantled in a dying leaf."
+      },
+      {
+        "id": "C",
+        "text": "the damage aphids do to maples over the course of a season."
+      },
+      {
+        "id": "D",
+        "text": "the case for planting saplings in the open rather than under cover."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the two accounts are set out, tested against maps, and both come back partly right.",
+      "B": "Chlorophyll’s removal explains yellow, which the passage sets aside in its first lines.",
+      "C": "Aphid damage appears only as something a signal would have to answer to over time.",
+      "D": "The open sapling is a test case for exposure and not a recommendation to anyone."
+    }
+  },
+  {
+    "id": "r235",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "rp24",
+    "context": "The passage is organized as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a comparison of autumn colour in three regions with different climates."
+      },
+      {
+        "id": "B",
+        "text": "a puzzle, two rival answers, a test that would separate them, and the result."
+      },
+      {
+        "id": "C",
+        "text": "a history of pigment research told through the people who carried it out."
+      },
+      {
+        "id": "D",
+        "text": "a description of one experiment followed by objections raised to its design."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Regions are never compared, and climate enters only as cold nights and bright days.",
+      "B": "Correct — the five paragraphs run in exactly that order from the opening puzzle.",
+      "C": "No researcher is named and no sequence of past work is described anywhere.",
+      "D": "No single experiment is reported; the fourth paragraph describes predictions instead."
+    }
+  },
+  {
+    "id": "r236",
+    "section": "reading",
+    "topic": "function",
+    "difficulty": "medium",
+    "passage": "rp24",
+    "context": "The opening discussion of autumn yellow serves mainly to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "suggest that yellow leaves are cheaper for a tree to produce."
+      },
+      {
+        "id": "B",
+        "text": "introduce the aphids that will choose among the coloured trees."
+      },
+      {
+        "id": "C",
+        "text": "show by contrast what makes red worth explaining."
+      },
+      {
+        "id": "D",
+        "text": "establish which pigments a maple holds through the summer."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Cost is raised only for red; yellow is never costed against anything at all.",
+      "B": "The aphids belong to the third paragraph and are not present in the opening.",
+      "C": "Correct — yellow is what is left over, and red is built, which is where the puzzle starts.",
+      "D": "The inventory is a means to the contrast rather than the point of the paragraph."
+    }
+  },
+  {
+    "id": "r237",
+    "section": "reading",
+    "topic": "function",
+    "difficulty": "hard",
+    "passage": "rp24",
+    "context": "The fourth paragraph serves to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "settle the dispute in favour of the protective explanation."
+      },
+      {
+        "id": "B",
+        "text": "restate the signalling account in more technical language."
+      },
+      {
+        "id": "C",
+        "text": "raise a third explanation neither earlier paragraph considered."
+      },
+      {
+        "id": "D",
+        "text": "convert the two accounts into predictions that could come apart."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Nothing is settled there; the results arrive only in the paragraph after it.",
+      "B": "The signalling account is not restated but turned into a testable expectation.",
+      "C": "Only the two accounts already introduced are carried into the predictions.",
+      "D": "Correct — it says the accounts predict different maps and describes each map."
+    }
+  },
+  {
+    "id": "r238",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "medium",
+    "passage": "rp24",
+    "context": "Which finding is offered as support for the protective account?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Exposure predicts how red a leaf is within a single tree."
+      },
+      {
+        "id": "B",
+        "text": "Redness is strongest in the species that aphids specialise on."
+      },
+      {
+        "id": "C",
+        "text": "Anthocyanin is manufactured rather than uncovered in autumn."
+      },
+      {
+        "id": "D",
+        "text": "A weakened tree could not pay for a brilliant autumn display."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the sunscreen account predicted exactly that map, and it came back right.",
+      "B": "Species-level insect pressure is the prediction the signalling account made.",
+      "C": "Manufacture is the puzzle both accounts exist to explain, not evidence for either.",
+      "D": "That is the reasoning behind the signal, offered before any result is reported."
+    }
+  },
+  {
+    "id": "r239",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "hard",
+    "passage": "rp24",
+    "context": "The writer’s claim that a trait may outlast its original cause rests on the point that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the yellow pigments are present in the leaf throughout the summer."
+      },
+      {
+        "id": "B",
+        "text": "something cheap to keep need not be held up by what first favoured it."
+      },
+      {
+        "id": "C",
+        "text": "aphids arriving in autumn have no way of judging a tree’s defences."
+      },
+      {
+        "id": "D",
+        "text": "nitrogen withdrawal takes about a fortnight in most species studied."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Summer carotenoids explain yellow and have nothing to do with a trait outlasting a cause.",
+      "B": "Correct — the final paragraph states it as the reason two jobs can coexist.",
+      "C": "The passage says the opposite: the display is honest and worth the insect reading.",
+      "D": "The fortnight measures how long the sunscreen would be needed, not how traits persist."
+    }
+  },
+  {
+    "id": "r240",
+    "section": "reading",
+    "topic": "comparison",
+    "difficulty": "hard",
+    "passage": "rp24",
+    "context": "The two accounts differ most fundamentally in that only the signalling account holds that the pigment:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "costs the tree resources it might otherwise keep."
+      },
+      {
+        "id": "B",
+        "text": "appears most strongly on the southern face of a canopy."
+      },
+      {
+        "id": "C",
+        "text": "acts on something outside the tree entirely."
+      },
+      {
+        "id": "D",
+        "text": "is manufactured late in the life of the leaf."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Both accounts turn on the expense; they disagree about what the expense buys.",
+      "B": "The southern face is the sunscreen account’s prediction, not the signal’s.",
+      "C": "Correct — the passage says the pigment does nothing to the leaf and talks to an insect.",
+      "D": "Late manufacture is the shared puzzle that both accounts set out to explain."
+    }
+  },
+  {
+    "id": "r241",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "medium",
+    "passage": "rp24",
+    "context": "As used in the third paragraph, \"honest\" most nearly means:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "sincere in the intention behind it."
+      },
+      {
+        "id": "B",
+        "text": "plainly visible from a long distance."
+      },
+      {
+        "id": "C",
+        "text": "accurate in every biological detail."
+      },
+      {
+        "id": "D",
+        "text": "impossible to fake cheaply."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "A tree has no intentions, and the passage never attributes any to one.",
+      "B": "Visibility is how the signal reaches the aphid, not what makes it trustworthy.",
+      "C": "Detail accuracy belongs to descriptions, and a pigment describes nothing.",
+      "D": "Correct — the sentence grounds the honesty in a weak tree being unable to pay."
+    }
+  },
+  {
+    "id": "r242",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "hard",
+    "passage": "rp24",
+    "context": "The description of the pigment as \"talking to something outside the tree\" is used to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "mark the difference between a shield and a message."
+      },
+      {
+        "id": "B",
+        "text": "suggest that trees communicate with one another through colour."
+      },
+      {
+        "id": "C",
+        "text": "imply that the aphids respond to sound as well as to sight."
+      },
+      {
+        "id": "D",
+        "text": "concede that the signalling account cannot be tested directly."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the clause before it says the pigment is doing nothing to the leaf itself.",
+      "B": "The audience named is an insect choosing a tree, not another tree.",
+      "C": "Talking is a figure for signalling, and nothing in the passage involves sound.",
+      "D": "The next paragraph gives a testable prediction for exactly this account."
+    }
+  },
+  {
+    "id": "r243",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "medium",
+    "passage": "rp24",
+    "context": "The writer calls the mixed result \"the least satisfying result available\" chiefly to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "express regret that the protective account was not confirmed."
+      },
+      {
+        "id": "B",
+        "text": "admit its awkwardness while accepting it as probably true."
+      },
+      {
+        "id": "C",
+        "text": "dismiss the studies that produced it as poorly designed."
+      },
+      {
+        "id": "D",
+        "text": "urge that the two accounts be tested again more carefully."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Exposure predicting redness within a tree is the protective account holding up.",
+      "B": "Correct — the same sentence calls it probably the true one, which is not a complaint.",
+      "C": "No study’s design is criticised, and the results are taken at face value.",
+      "D": "Nothing calls for retesting; the paragraph moves on to what the result implies."
+    }
   }
 ]
