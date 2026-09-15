@@ -2733,9 +2733,9 @@
     "answer": "A",
     "why": {
       "A": "Biologist 2's hypothesis predicts reproductive success is lowest closest to the farmland drainage streams, so frogs farthest from those streams should be least affected.",
-      "B": "Biologist 2's hypothesis predicts the opposite: reproductive success should be lowest closest to those streams",
-      "C": "this describes a prediction of Biologist 3's hypothesis, not Biologist 2's",
-      "D": "this describes a prediction of Biologist 1's hypothesis, not Biologist 2's"
+      "B": "Biologist 2's hypothesis predicts the opposite: reproductive success should be lowest closest to those streams.",
+      "C": "This describes a prediction of Biologist 3's hypothesis, not Biologist 2's.",
+      "D": "This describes a prediction of Biologist 1's hypothesis, not Biologist 2's."
     }
   },
   {
@@ -2766,9 +2766,9 @@
     "answer": "D",
     "why": {
       "D": "Because Geologist 3 attributes varnish minerals to a shared regional dust source rather than to the underlying rock, outcrops sharing that dust source should have chemically similar varnish regardless of rock type.",
-      "A": "Geologist 3's hypothesis ties varnish composition to the shared dust source, not to the underlying rock type",
-      "B": "this contradicts Geologist 3's claim that a shared regional dust source should produce similar varnish",
-      "C": "Geologist 3's hypothesis explains how iron and manganese arrive in the varnish, not their absence"
+      "A": "Geologist 3's hypothesis ties varnish composition to the shared dust source, not to the underlying rock type.",
+      "B": "This contradicts Geologist 3's claim that a shared regional dust source should produce similar varnish.",
+      "C": "Geologist 3's hypothesis explains how iron and manganese arrive in the varnish, not their absence."
     }
   },
   {
@@ -2799,9 +2799,9 @@
     "answer": "D",
     "why": {
       "D": "Biologist 3 explicitly notes that fish-free ponds within the wetland still support relatively dense frog populations, consistent with a hypothesis that ties scarcity to the invasive fish's presence.",
-      "A": "this contradicts Biologist 3's own observation about fish-free ponds within the wetland",
-      "B": "Biologist 3's hypothesis ties frog scarcity specifically to the presence of the invasive fish",
-      "C": "this describes Biologist 1's hypothesis, not Biologist 3's"
+      "A": "This contradicts Biologist 3's own observation about fish-free ponds within the wetland.",
+      "B": "Biologist 3's hypothesis ties frog scarcity specifically to the presence of the invasive fish.",
+      "C": "This describes Biologist 1's hypothesis, not Biologist 3's."
     }
   },
   {
@@ -2832,9 +2832,9 @@
     "answer": "A",
     "why": {
       "A": "Under Geologist 1's hypothesis alone, varnish composition is governed by the rock's own mineral makeup. Since both outcrops share identical rock composition, their varnish should be chemically similar despite the different regional dust.",
-      "B": "this describes a prediction of Geologist 3's dust-based hypothesis, not Geologist 1's rock-based hypothesis",
-      "C": "Geologist 1's hypothesis explains how varnish forms on rock containing trace minerals, not its absence",
-      "D": "nothing in Geologist 1's hypothesis distinguishes between two outcrops of identical rock composition"
+      "B": "This describes a prediction of Geologist 3's dust-based hypothesis, not Geologist 1's rock-based hypothesis.",
+      "C": "Geologist 1's hypothesis explains how varnish forms on rock containing trace minerals, not its absence.",
+      "D": "Nothing in Geologist 1's hypothesis distinguishes between two outcrops of identical rock composition."
     }
   },
   {
@@ -2898,9 +2898,9 @@
     "answer": "A",
     "why": {
       "A": "Each biologist proposes a distinct but specific, identifiable mechanism for the decline; none attributes it to unexplained or random variation.",
-      "B": "this is only Biologist 1's specific explanation, not one shared by all three",
-      "C": "this is only Biologist 2's specific explanation, not one shared by all three",
-      "D": "this is only Biologist 3's specific explanation, not one shared by all three"
+      "B": "This is only Biologist 1's specific explanation, not one shared by all three.",
+      "C": "This is only Biologist 2's specific explanation, not one shared by all three.",
+      "D": "This is only Biologist 3's specific explanation, not one shared by all three."
     }
   },
   {
@@ -2930,10 +2930,10 @@
     ],
     "answer": "D",
     "why": {
-      "D": "All three mechanisms described - slow leaching cycles, gradual bacterial buildup, and continuous dust accumulation - describe a slow, long-term process, consistent with the passage's opening statement that varnish can take centuries to form.",
-      "A": "this prediction follows only from Geologist 1's hypothesis, not from Geologist 2's or Geologist 3's",
-      "B": "this prediction follows only from Geologist 2's hypothesis, not from Geologist 1's or Geologist 3's",
-      "C": "this prediction follows from Geologist 2's and Geologist 3's hypotheses but contradicts Geologist 1's"
+      "D": "All three mechanisms described — slow leaching cycles, gradual bacterial buildup, and continuous dust accumulation — describe a slow, long-term process, consistent with the passage's opening statement that varnish can take centuries to form.",
+      "A": "This prediction follows only from Geologist 1's hypothesis, not from Geologist 2's or Geologist 3's.",
+      "B": "This prediction follows only from Geologist 2's hypothesis, not from Geologist 1's or Geologist 3's.",
+      "C": "This prediction follows from Geologist 2's and Geologist 3's hypotheses but contradicts Geologist 1's."
     }
   },
   {
@@ -2963,10 +2963,10 @@
     ],
     "answer": "B",
     "why": {
-      "B": "All three biologists are trying to explain the same underlying fact - that the population has fallen substantially over time - so that fact itself is equally consistent with, and does not favor, any one of their three specific hypotheses.",
-      "A": "this specifically supports Biologist 3's hypothesis over the other two",
-      "C": "this specifically supports Biologist 1's hypothesis over the other two",
-      "D": "this specifically supports Biologist 2's hypothesis over the other two"
+      "B": "All three biologists are trying to explain the same underlying fact — that the population has fallen substantially over time — so that fact itself is equally consistent with, and does not favor, any one of their three specific hypotheses.",
+      "A": "This specifically supports Biologist 3's hypothesis over the other two.",
+      "C": "This specifically supports Biologist 1's hypothesis over the other two.",
+      "D": "This specifically supports Biologist 2's hypothesis over the other two."
     }
   },
   {
@@ -2996,10 +2996,10 @@
     ],
     "answer": "B",
     "why": {
-      "B": "Bacteria that gain energy by oxidizing inorganic compounds like iron or sulfur use the same general kind of chemical process Geologist 2 describes for manganese - extracting usable energy from oxidizing a chemical compound rather than from light or from digesting sugar.",
-      "A": "that reaction is driven by light rather than by oxidizing a chemical compound",
-      "C": "that reaction uses a different starting material and does not involve oxidizing a metal",
-      "D": "freezing is a physical change of state, not a chemical, energy-yielding reaction"
+      "B": "Bacteria that gain energy by oxidizing inorganic compounds like iron or sulfur use the same general kind of chemical process Geologist 2 describes for manganese — extracting usable energy from oxidizing a chemical compound rather than from light or from digesting sugar.",
+      "A": "That reaction is driven by light rather than by oxidizing a chemical compound.",
+      "C": "That reaction uses a different starting material and does not involve oxidizing a metal.",
+      "D": "Freezing is a physical change of state, not a chemical, energy-yielding reaction."
     }
   },
   {
@@ -3030,9 +3030,9 @@
     "answer": "D",
     "why": {
       "D": "A chemical that interferes with an animal's hormone signaling is classified as an endocrine disruptor, which is the general term for the kind of substance Biologist 2 describes.",
-      "A": "pigments used in photosynthesis are unrelated to hormone signaling and occur in plants, not animals",
-      "B": "a cofactor assists an enzyme's normal function rather than disrupting hormone signaling",
-      "C": "a structural protein provides physical support in cells and tissues rather than signaling"
+      "A": "Pigments used in photosynthesis are unrelated to hormone signaling and occur in plants, not animals.",
+      "B": "A cofactor assists an enzyme's normal function rather than disrupting hormone signaling.",
+      "C": "A structural protein provides physical support in cells and tissues rather than signaling."
     }
   },
   {
@@ -3063,9 +3063,9 @@
     "answer": "D",
     "why": {
       "D": "Biologist 2's hypothesis predicts less decline farther from the pesticide's reach; a similarly sharp decline well outside that range contradicts that specific prediction.",
-      "A": "this finding does not involve the fungus or its spread in any way",
-      "B": "this finding does not involve the invasive fish or its presence in any way",
-      "C": "this finding specifically undercuts the pesticide-exposure mechanism Biologist 2 proposes"
+      "A": "This finding does not involve the fungus or its spread in any way.",
+      "B": "This finding does not involve the invasive fish or its presence in any way.",
+      "C": "This finding specifically undercuts the pesticide-exposure mechanism Biologist 2 proposes."
     }
   },
   {
@@ -3096,9 +3096,9 @@
     "answer": "A",
     "why": {
       "A": "Geologist 2's hypothesis specifically proposes that manganese-oxidizing bacteria are responsible for the coating, so finding their DNA within the varnish would directly support that view.",
-      "B": "Geologist 1's hypothesis describes a purely chemical process and does not involve living organisms at all",
-      "C": "Geologist 3's hypothesis describes dust cemented by moisture, not a biological process",
-      "D": "this finding directly matches the biological mechanism Geologist 2 specifically proposes"
+      "B": "Geologist 1's hypothesis describes a purely chemical process and does not involve living organisms at all.",
+      "C": "Geologist 3's hypothesis describes dust cemented by moisture, not a biological process.",
+      "D": "This finding directly matches the biological mechanism Geologist 2 specifically proposes."
     }
   },
   {
@@ -3129,9 +3129,9 @@
     "answer": "C",
     "why": {
       "C": "Only Geologist 1's hypothesis ties the varnish directly to the composition of the rock itself, so a formation rate that varies with rock composition, even under identical regional dust conditions, would support that specific claim.",
-      "A": "Geologist 2's hypothesis ties varnish formation to bacterial colonization rather than to the rock's own mineral composition",
-      "B": "Geologist 3's hypothesis predicts varnish should depend on the shared regional dust source, not on differences between individual rocks",
-      "D": "this finding specifically matches Geologist 1's claim that the rock's own composition governs the coating"
+      "A": "Geologist 2's hypothesis ties varnish formation to bacterial colonization rather than to the rock's own mineral composition.",
+      "B": "Geologist 3's hypothesis predicts varnish should depend on the shared regional dust source, not on differences between individual rocks.",
+      "D": "This finding specifically matches Geologist 1's claim that the rock's own composition governs the coating."
     }
   },
   {
@@ -3162,9 +3162,9 @@
     "answer": "B",
     "why": {
       "B": "Geologist 1's hypothesis predicts the varnish should match the rock's own mineral makeup. A mismatch with the rock, paired with a match to regional dust, directly contradicts that specific prediction.",
-      "A": "this finding is consistent with an external mineral source, which Geologist 2's hypothesis already proposes",
-      "C": "this finding directly matches what Geologist 3's hypothesis predicts, so it supports rather than weakens that view",
-      "D": "the finding specifically contradicts a claim made only by Geologist 1, not by all three"
+      "A": "This finding is consistent with an external mineral source, which Geologist 2's hypothesis already proposes.",
+      "C": "This finding directly matches what Geologist 3's hypothesis predicts, so it supports rather than weakens that view.",
+      "D": "The finding specifically contradicts a claim made only by Geologist 1, not by all three."
     }
   },
   {
@@ -3195,9 +3195,9 @@
     "answer": "C",
     "why": {
       "C": "Recovery follows fish removal specifically, while the factors central to the other two hypotheses (fungus, pesticide) remain unchanged, so this outcome most directly supports Biologist 3's hypothesis.",
-      "A": "recovery occurs even though the fungus remains widespread, which does not fit Biologist 1's hypothesis",
-      "B": "recovery occurs even though pesticide use continues unchanged, which does not fit Biologist 2's hypothesis",
-      "D": "recovery tracks the one variable that did change, fish removal, which is exactly what Biologist 3's hypothesis predicts"
+      "A": "Recovery occurs even though the fungus remains widespread, which does not fit Biologist 1's hypothesis.",
+      "B": "Recovery occurs even though pesticide use continues unchanged, which does not fit Biologist 2's hypothesis.",
+      "D": "Recovery tracks the one variable that did change, fish removal, which is exactly what Biologist 3's hypothesis predicts."
     }
   },
   {
@@ -3228,9 +3228,9 @@
     "answer": "D",
     "why": {
       "D": "Biologist 1's hypothesis centers on a fungal skin infection spreading through the frog population.",
-      "A": "Biologist 2's hypothesis centers on pesticide runoff, not infectious disease",
-      "B": "Biologist 3's hypothesis centers on an invasive predator, not infectious disease",
-      "C": "Biologist 1 specifically attributes the decline to a fungal skin infection"
+      "A": "Biologist 2's hypothesis centers on pesticide runoff, not infectious disease.",
+      "B": "Biologist 3's hypothesis centers on an invasive predator, not infectious disease.",
+      "C": "Biologist 1 specifically attributes the decline to a fungal skin infection."
     }
   },
   {
@@ -3261,7 +3261,7 @@
     "answer": "C",
     "why": {
       "C": "Geologists 2 and 3 both propose external mineral sources (bacteria absorbing dust-carried metals, or dust itself), so both would predict varnish could form on a rock with no iron or manganese of its own. Geologist 1's hypothesis specifically requires minerals from the rock's own interior.",
-      "A": "Geologist 1's hypothesis specifically requires minerals from within the rock itself, so a mineral-free rock like quartz would prevent varnish from forming under this view",
+      "A": "Geologist 1's hypothesis specifically requires minerals from within the rock itself, so a mineral-free rock like quartz would prevent varnish from forming under this view.",
       "B": "Geologist 2 belongs in the answer, but Geologist 1 does not: that hypothesis draws the metals from inside the rock, and pure quartz has none to give.",
       "D": "This includes all three, but Geologist 1 cannot be among them — that hypothesis needs iron and manganese already in the rock, which is exactly what pure quartz lacks."
     }
@@ -3293,10 +3293,10 @@
     ],
     "answer": "D",
     "why": {
-      "D": "Geologist 1 alone proposes an internal mineral source, migrating outward from the rock; Geologists 2 and 3 both propose external sources - bacteria-processed dust and directly deposited dust, respectively.",
-      "A": "this general timescale is stated in the passage's introduction and is not specific to any one geologist's hypothesis",
-      "B": "this is also a general observation from the introduction, not a claim distinguishing the three hypotheses",
-      "C": "Geologist 1's hypothesis makes a claim about this specific coating's chemical origin, not a general claim ruling out biology everywhere"
+      "D": "Geologist 1 alone proposes an internal mineral source, migrating outward from the rock; Geologists 2 and 3 both propose external sources — bacteria-processed dust and directly deposited dust, respectively.",
+      "A": "This general timescale is stated in the passage's introduction and is not specific to any one geologist's hypothesis.",
+      "B": "This is also a general observation from the introduction, not a claim distinguishing the three hypotheses.",
+      "C": "Geologist 1's hypothesis makes a claim about this specific coating's chemical origin, not a general claim ruling out biology everywhere."
     }
   },
   {
@@ -3327,9 +3327,9 @@
     "answer": "B",
     "why": {
       "B": "Biologist 2 alone proposes a chemical mechanism that reduces reproductive success without necessarily killing frogs outright; Biologist 1 describes a fatal infection and Biologist 3 describes direct predation on eggs and tadpoles.",
-      "A": "Biologist 3's hypothesis also predicts effects that vary from pond to pond, based on fish presence",
-      "C": "all three biologists describe a cause that arrived within roughly this timeframe",
-      "D": "all three biologists agree on the extent of the decline itself"
+      "A": "Biologist 3's hypothesis also predicts effects that vary from pond to pond, based on fish presence.",
+      "C": "All three biologists describe a cause that arrived within roughly this timeframe.",
+      "D": "All three biologists agree on the extent of the decline itself."
     }
   },
   {
@@ -3360,9 +3360,9 @@
     "answer": "A",
     "why": {
       "A": "Because the wetland has no nearby farmland and no invasive fish, the pesticide and predator hypotheses cannot explain its decline; only the fungal hypothesis, tied to the disease's detected arrival, remains consistent with this outcome.",
-      "B": "this wetland has no farmland nearby, ruling out the pesticide-runoff mechanism Biologist 2 proposes",
-      "C": "this wetland was never stocked with the invasive fish, ruling out the predator mechanism Biologist 3 proposes",
-      "D": "the scenario specifically rules out the mechanisms proposed by Biologist 2 and Biologist 3"
+      "B": "This wetland has no farmland nearby, ruling out the pesticide-runoff mechanism Biologist 2 proposes.",
+      "C": "This wetland was never stocked with the invasive fish, ruling out the predator mechanism Biologist 3 proposes.",
+      "D": "The scenario specifically rules out the mechanisms proposed by Biologist 2 and Biologist 3."
     }
   },
   {
@@ -3426,9 +3426,9 @@
     "answer": "B",
     "why": {
       "B": "The passage defines rate as 1 divided by time. At 0.2 mol/L, the time is 80 s, so the rate is 1/80 = 0.0125 s^-1.",
-      "D": "reports the time itself rather than 1 divided by the time",
-      "C": "uses the time for 0.4 mol/L (50 s) instead of 0.2 mol/L (80 s)",
-      "A": "uses the time for 0.1 mol/L (120 s) instead of 0.2 mol/L (80 s)"
+      "D": "Reports the time itself rather than 1 divided by the time.",
+      "C": "Uses the time for 0.4 mol/L (50 s) instead of 0.2 mol/L (80 s).",
+      "A": "Uses the time for 0.1 mol/L (120 s) instead of 0.2 mol/L (80 s)."
     }
   },
   {
@@ -3459,9 +3459,9 @@
     "answer": "B",
     "why": {
       "B": "The passage defines relative growth rate as the change in height divided by days elapsed. From day 0 to day 7, height rose from 0 to 4.9 cm: 4.9 / 7 = 0.7 cm/day.",
-      "D": "reports the total height change without dividing by the number of days elapsed",
-      "C": "doubles the correct rate rather than dividing height change by days elapsed",
-      "A": "divides the correct rate in half rather than dividing height change by days elapsed"
+      "D": "Reports the total height change without dividing by the number of days elapsed.",
+      "C": "Doubles the correct rate rather than dividing height change by days elapsed.",
+      "A": "Divides the correct rate in half rather than dividing height change by days elapsed."
     }
   },
   {
@@ -3492,9 +3492,9 @@
     "answer": "C",
     "why": {
       "C": "The passage defines frequency as 1 divided by the period. At a 100 cm string length, the period is 2.0 s, so the frequency is 1/2.0 = 0.5 swings per second.",
-      "D": "reports the period itself rather than 1 divided by the period",
-      "B": "uses a period of 2.5 s rather than the actual 2.0 s recorded for 100 cm",
-      "A": "divides the correct frequency in half rather than computing 1 divided by the period"
+      "D": "Reports the period itself rather than 1 divided by the period.",
+      "B": "Uses a period of 2.5 s rather than the actual 2.0 s recorded for 100 cm.",
+      "A": "Divides the correct frequency in half rather than computing 1 divided by the period."
     }
   },
   {
@@ -3525,9 +3525,9 @@
     "answer": "B",
     "why": {
       "B": "At every plotted concentration, the Catalyst X curve lies below the Catalyst Y curve, meaning a shorter time to completion.",
-      "A": "Figure 1 shows Catalyst Y's curve above Catalyst X's curve at every concentration, meaning longer times, not shorter",
-      "C": "the two curves in Figure 1 never touch or cross",
-      "D": "Catalyst X's curve stays below Catalyst Y's curve across the entire range shown"
+      "A": "Figure 1 shows Catalyst Y's curve above Catalyst X's curve at every concentration, meaning longer times, not shorter.",
+      "C": "The two curves in Figure 1 never touch or cross.",
+      "D": "Catalyst X's curve stays below Catalyst Y's curve across the entire range shown."
     }
   },
   {
@@ -3558,9 +3558,9 @@
     "answer": "A",
     "why": {
       "A": "At 0.4 mol/L, Catalyst Y takes 80 s and Catalyst X takes 50 s; the difference is 80 - 50 = 30 s.",
-      "B": "the time for Catalyst X itself, not the difference between the two catalysts",
-      "C": "the time for Catalyst Y itself, not the difference between the two catalysts",
-      "D": "adds the two times together instead of subtracting"
+      "B": "The time for Catalyst X itself, not the difference between the two catalysts.",
+      "C": "The time for Catalyst Y itself, not the difference between the two catalysts.",
+      "D": "Adds the two times together instead of subtracting."
     }
   },
   {
@@ -3591,9 +3591,9 @@
     "answer": "D",
     "why": {
       "D": "The height difference is 2.1 cm at day 7 and 5.2 cm at day 14, so day 14 is the first measured day on which it exceeds 5 cm.",
-      "A": "the difference between the two groups at day 7 is only 2.1 cm, under the 5 cm threshold",
-      "B": "the difference already exceeds 5 cm by day 14, one measurement earlier",
-      "C": "the difference exceeds 5 cm well before the final measurement"
+      "A": "The difference between the two groups at day 7 is only 2.1 cm, under the 5 cm threshold.",
+      "B": "The difference already exceeds 5 cm by day 14, one measurement earlier.",
+      "C": "The difference exceeds 5 cm well before the final measurement."
     }
   },
   {
@@ -3624,9 +3624,9 @@
     "answer": "D",
     "why": {
       "D": "Figure 1 shows a period of about 2.0 s at every mass tested, including pairs of masses where one doubles the other (20 g to 40 g would, but even the tested 50 g to 100 g and 100 g to 200 g doublings show no change), so the claim is not supported.",
-      "A": "the passage never defines period in terms of mass, and Figure 1's data show no such relationship",
-      "B": "Figure 1 shows the 400 g bob's period matching every other mass tested, not exceeding it",
-      "C": "Figure 1 specifically reports period at five different bob masses"
+      "A": "The passage never defines period in terms of mass, and Figure 1's data show no such relationship.",
+      "B": "Figure 1 shows the 400 g bob's period matching every other mass tested, not exceeding it.",
+      "C": "Figure 1 specifically reports period at five different bob masses."
     }
   },
   {
@@ -3657,9 +3657,9 @@
     "answer": "B",
     "why": {
       "B": "A concentration of 0.3 mol/L falls exactly halfway between the 0.2 mol/L row (80 s) and the 0.4 mol/L row (50 s), so the estimated time is halfway between them: 80 - (80-50)/2 = 65 s.",
-      "A": "the reading for 0.4 mol/L, one row past the value being asked about",
-      "C": "the reading for 0.2 mol/L, one row before the value being asked about",
-      "D": "adds, rather than subtracts, half the difference between the two bracketing rows"
+      "A": "The reading for 0.4 mol/L, one row past the value being asked about.",
+      "C": "The reading for 0.2 mol/L, one row before the value being asked about.",
+      "D": "Adds, rather than subtracts, half the difference between the two bracketing rows."
     }
   },
   {
@@ -3690,9 +3690,9 @@
     "answer": "C",
     "why": {
       "C": "Day 17.5 falls exactly halfway between day 14 (6.4 cm) and day 21 (10.5 cm), so the estimated height is halfway between them: 6.4 + (10.5-6.4)/2 = 8.45 cm.",
-      "A": "the reading for day 14, one measurement before the day being asked about",
-      "D": "the reading for day 21, one measurement after the day being asked about",
-      "B": "averages the two nearest readings incorrectly rather than interpolating proportionally"
+      "A": "The reading for day 14, one measurement before the day being asked about.",
+      "D": "The reading for day 21, one measurement after the day being asked about.",
+      "B": "Averages the two nearest readings incorrectly rather than interpolating proportionally."
     }
   },
   {
@@ -3723,9 +3723,9 @@
     "answer": "C",
     "why": {
       "C": "A string length of 75 cm falls exactly halfway between the 50 cm row (1.4 s) and the 100 cm row (2.0 s), so the estimated period is halfway between them: 1.4 + (2.0-1.4)/2 = 1.7 s.",
-      "A": "the reading for a 50 cm string length, one row before the value being asked about",
-      "D": "the reading for a 100 cm string length, one row after the value being asked about",
-      "B": "a plausible-looking value that does not fall halfway between the two bracketing rows"
+      "A": "The reading for a 50 cm string length, one row before the value being asked about.",
+      "D": "The reading for a 100 cm string length, one row after the value being asked about.",
+      "B": "A plausible-looking value that does not fall halfway between the two bracketing rows."
     }
   },
   {
@@ -3756,9 +3756,9 @@
     "answer": "C",
     "why": {
       "C": "Table 1 lists 50 s in the row for a concentration of 0.4 mol/L.",
-      "D": "reads the row for 0.2 mol/L instead of 0.4 mol/L",
-      "B": "reads the row for 0.8 mol/L instead of 0.4 mol/L",
-      "A": "reads the bottom row of the table, 1.6 mol/L, instead of 0.4 mol/L"
+      "D": "Reads the row for 0.2 mol/L instead of 0.4 mol/L.",
+      "B": "Reads the row for 0.8 mol/L instead of 0.4 mol/L.",
+      "A": "Reads the bottom row of the table, 1.6 mol/L, instead of 0.4 mol/L."
     }
   },
   {
@@ -3789,9 +3789,9 @@
     "answer": "C",
     "why": {
       "C": "Table 1 lists 14.2 cm in the row for a 3-day watering interval.",
-      "D": "reads the row for a 2-day interval instead of a 3-day interval",
-      "B": "reads the row for a 4-day interval instead of a 3-day interval",
-      "A": "reads the bottom row of the table, a 5-day interval, instead of a 3-day interval"
+      "D": "Reads the row for a 2-day interval instead of a 3-day interval.",
+      "B": "Reads the row for a 4-day interval instead of a 3-day interval.",
+      "A": "Reads the bottom row of the table, a 5-day interval, instead of a 3-day interval."
     }
   },
   {
@@ -3822,9 +3822,9 @@
     "answer": "B",
     "why": {
       "B": "Table 1 lists 2.0 s in the row for a 100 cm string length.",
-      "A": "reads the row for a 50 cm string length instead of 100 cm",
-      "C": "reads the row for a 150 cm string length instead of 100 cm",
-      "D": "reads the bottom row of the table, 200 cm, instead of 100 cm"
+      "A": "Reads the row for a 50 cm string length instead of 100 cm.",
+      "C": "Reads the row for a 150 cm string length instead of 100 cm.",
+      "D": "Reads the bottom row of the table, 200 cm, instead of 100 cm."
     }
   },
   {
@@ -3855,9 +3855,9 @@
     "answer": "C",
     "why": {
       "C": "The Catalyst Y curve in Figure 1 passes through 55 s at a concentration of 0.8 mol/L.",
-      "A": "reads the Catalyst X curve at 0.8 mol/L instead of Catalyst Y",
-      "D": "reads the Catalyst Y curve at 0.4 mol/L instead of 0.8 mol/L",
-      "B": "reads the Catalyst Y curve at 1.6 mol/L instead of 0.8 mol/L"
+      "A": "Reads the Catalyst X curve at 0.8 mol/L instead of Catalyst Y.",
+      "D": "Reads the Catalyst Y curve at 0.4 mol/L instead of 0.8 mol/L.",
+      "B": "Reads the Catalyst Y curve at 1.6 mol/L instead of 0.8 mol/L."
     }
   },
   {
@@ -3888,9 +3888,9 @@
     "answer": "C",
     "why": {
       "C": "Table 1 records only Catalyst X data, and its row for 0.2 mol/L (80 s) matches the Catalyst X point plotted at (0.2, 80) in Figure 1.",
-      "A": "Table 1 reports only Catalyst X data, not Catalyst Y",
-      "B": "matches the wrong concentration - 0.4 mol/L, not 0.2 mol/L",
-      "D": "matches neither the correct catalyst nor the correct concentration"
+      "A": "Table 1 reports only Catalyst X data, not Catalyst Y.",
+      "B": "Matches the wrong concentration — 0.4 mol/L, not 0.2 mol/L.",
+      "D": "Matches neither the correct catalyst nor the correct concentration."
     }
   },
   {
@@ -3921,9 +3921,9 @@
     "answer": "A",
     "why": {
       "A": "Table 1's row for a 4-day interval (10.5 cm, measured after 21 days) matches the 'Every 4 days' curve's point at day 21 in Figure 1.",
-      "B": "matches the wrong watering group - Table 1's 4-day row does not correspond to the 1-day series",
-      "C": "matches the wrong day - Table 1 measures height after 21 days, not 28",
-      "D": "matches neither the correct watering group nor the correct day"
+      "B": "Matches the wrong watering group — Table 1's 4-day row does not correspond to the 1-day series.",
+      "C": "Matches the wrong day — Table 1 measures height after 21 days, not 28.",
+      "D": "Matches neither the correct watering group nor the correct day."
     }
   },
   {
@@ -3954,9 +3954,9 @@
     "answer": "B",
     "why": {
       "B": "Table 1 records 2.0 s only in its 100 cm row, and Figure 1 shows every plotted mass at approximately 2.0 s, since that figure held string length constant at 100 cm throughout.",
-      "A": "Table 1's 150 cm row records 2.4 s, not 2.0 s",
-      "C": "Figure 1 shows a period of 2.0 s at every mass tested, not only at 100 g",
-      "D": "Table 1's 200 cm row records 2.8 s, not 2.0 s"
+      "A": "Table 1's 150 cm row records 2.4 s, not 2.0 s.",
+      "C": "Figure 1 shows a period of 2.0 s at every mass tested, not only at 100 g.",
+      "D": "Table 1's 200 cm row records 2.8 s, not 2.0 s."
     }
   },
   {
@@ -3987,9 +3987,9 @@
     "answer": "D",
     "why": {
       "D": "Each successive row of Table 1 shows a longer period than the row before it, from 1.0 s up to 2.8 s.",
-      "A": "reverses the actual direction of the trend shown in Table 1",
-      "B": "no reversal occurs anywhere in Table 1's five rows",
-      "C": "the period nearly triples from the shortest to the longest string length tested"
+      "A": "Reverses the actual direction of the trend shown in Table 1.",
+      "B": "No reversal occurs anywhere in Table 1's five rows.",
+      "C": "The period nearly triples from the shortest to the longest string length tested."
     }
   },
   {
@@ -4020,9 +4020,9 @@
     "answer": "A",
     "why": {
       "A": "Each successive row of Table 1 shows a lower time than the row before it, from 120 s down to 18 s.",
-      "B": "reverses the actual direction of the trend shown in Table 1",
-      "C": "no reversal occurs anywhere in Table 1's five rows",
-      "D": "the time changes by more than a factor of six across the table, which is not approximately constant"
+      "B": "Reverses the actual direction of the trend shown in Table 1.",
+      "C": "No reversal occurs anywhere in Table 1's five rows.",
+      "D": "The time changes by more than a factor of six across the table, which is not approximately constant."
     }
   },
   {
@@ -4053,9 +4053,9 @@
     "answer": "C",
     "why": {
       "C": "Each successive row of Table 1 shows a shorter height than the row before it, from 18.4 cm down to 6.8 cm.",
-      "A": "reverses the actual direction of the trend shown in Table 1",
-      "B": "the height keeps falling at every interval tested, with no leveling off visible in the table",
-      "D": "height falls by more than half from the shortest to the longest interval tested"
+      "A": "Reverses the actual direction of the trend shown in Table 1.",
+      "B": "The height keeps falling at every interval tested, with no leveling off visible in the table.",
+      "D": "Height falls by more than half from the shortest to the longest interval tested."
     }
   },
   {
@@ -4119,9 +4119,9 @@
     "answer": "D",
     "why": {
       "D": "The student deliberately set concentration to different values across trials, which makes it the independent variable.",
-      "A": "the dependent variable is the time to completion, which the student measured, not set",
-      "B": "concentration was deliberately varied across trials, so it was not held constant",
-      "C": "the student specifically chose and set each concentration tested"
+      "A": "The dependent variable is the time to completion, which the student measured, not set.",
+      "B": "Concentration was deliberately varied across trials, so it was not held constant.",
+      "C": "The student specifically chose and set each concentration tested."
     }
   },
   {
@@ -4152,9 +4152,9 @@
     "answer": "D",
     "why": {
       "D": "The student deliberately set the bob's mass to different values across the second set of trials, which makes it the independent variable.",
-      "A": "the dependent variable is the period, which was measured, not set",
-      "B": "mass was deliberately varied across the second set of trials, so it was not held constant",
-      "C": "the student specifically chose and set each bob mass tested"
+      "A": "The dependent variable is the period, which was measured, not set.",
+      "B": "Mass was deliberately varied across the second set of trials, so it was not held constant.",
+      "C": "The student specifically chose and set each bob mass tested."
     }
   },
   {
@@ -4185,9 +4185,9 @@
     "answer": "B",
     "why": {
       "B": "The students deliberately assigned a different watering interval to each group, which makes it the independent variable.",
-      "A": "the dependent variable is seedling height, which was measured, not assigned",
-      "C": "the watering interval was deliberately varied across the five groups, so it was not held constant",
-      "D": "the students specifically assigned each group's watering interval"
+      "A": "The dependent variable is seedling height, which was measured, not assigned.",
+      "C": "The watering interval was deliberately varied across the five groups, so it was not held constant.",
+      "D": "The students specifically assigned each group's watering interval."
     }
   },
   {
@@ -4218,9 +4218,9 @@
     "answer": "A",
     "why": {
       "A": "The passage states temperature was held constant at 25 degrees C; since reaction speed is often sensitive to temperature, letting it vary would confound the comparison between the two catalysts.",
-      "B": "color is not described as affecting reaction speed anywhere in the passage",
-      "C": "a stopwatch's brand does not change the chemistry of the reaction being timed",
-      "D": "the passage gives no reason to expect testing order to affect a given trial's result"
+      "B": "Color is not described as affecting reaction speed anywhere in the passage.",
+      "C": "A stopwatch's brand does not change the chemistry of the reaction being timed.",
+      "D": "The passage gives no reason to expect testing order to affect a given trial's result."
     }
   },
   {
@@ -4251,9 +4251,9 @@
     "answer": "C",
     "why": {
       "C": "A single seedling's height could reflect chance variation unrelated to watering; averaging across 10 seedlings per group produces a more reliable estimate of the group's typical height.",
-      "A": "using more seedlings per group adds work rather than saving time",
-      "B": "how seeds are packaged has no bearing on the experiment's design",
-      "D": "all seedlings within a group shared the same watering schedule"
+      "A": "Using more seedlings per group adds work rather than saving time.",
+      "B": "How seeds are packaged has no bearing on the experiment's design.",
+      "D": "All seedlings within a group shared the same watering schedule."
     }
   },
   {
@@ -4284,9 +4284,9 @@
     "answer": "A",
     "why": {
       "A": "String length is the variable the student deliberately changed across the trials in Table 1; mass and release angle are explicitly described as held constant.",
-      "B": "the passage states the bob's mass was held constant at 50 g throughout the first set of trials",
-      "C": "the passage states the release angle was held constant throughout the first set of trials",
-      "D": "what counts as one period was not redefined between trials"
+      "B": "The passage states the bob's mass was held constant at 50 g throughout the first set of trials.",
+      "C": "The passage states the release angle was held constant throughout the first set of trials.",
+      "D": "What counts as one period was not redefined between trials."
     }
   },
   {
@@ -4317,9 +4317,9 @@
     "answer": "A",
     "why": {
       "A": "Figure 1 shows essentially no change in period across the five bob masses tested, so the hypothesis that mass affects period is not supported by these results.",
-      "B": "Figure 1 shows both of these bobs with the same period, about 2.0 s",
-      "C": "the passage's own data, not general intuition, are what the question asks you to evaluate",
-      "D": "five different masses spanning a twenty-fold range were tested, all showing the same period"
+      "B": "Figure 1 shows both of these bobs with the same period, about 2.0 s.",
+      "C": "The passage's own data, not general intuition, are what the question asks you to evaluate.",
+      "D": "Five different masses spanning a twenty-fold range were tested, all showing the same period."
     }
   },
   {
@@ -4350,9 +4350,9 @@
     "answer": "D",
     "why": {
       "D": "Table 1 shows height rising steadily as watering interval shortens, all the way from a 5-day interval to a 1-day interval, with no interval at which additional watering stops helping.",
-      "A": "Table 1 shows a continued decline in height between these two rows, not a leveling off",
-      "B": "this restates a detail from the data but does not describe a leveling-off point, which the hypothesis specifically requires",
-      "C": "Study 1's design, varying watering frequency and measuring height, is directly relevant to this hypothesis"
+      "A": "Table 1 shows a continued decline in height between these two rows, not a leveling off.",
+      "B": "This restates a detail from the data but does not describe a leveling-off point, which the hypothesis specifically requires.",
+      "C": "Study 1's design, varying watering frequency and measuring height, is directly relevant to this hypothesis."
     }
   },
   {
@@ -4383,9 +4383,9 @@
     "answer": "B",
     "why": {
       "B": "Height is height regardless of the unit used to record it; converting centimeters to inches would rescale the numbers but not change which group grew more or less.",
-      "A": "changing the unit of measurement cannot change which group actually grew taller",
-      "C": "the unit used to measure height has no bearing on why a second study over time was conducted",
-      "D": "watering interval remains the variable being deliberately assigned regardless of the height unit used"
+      "A": "Changing the unit of measurement cannot change which group actually grew taller.",
+      "C": "The unit used to measure height has no bearing on why a second study over time was conducted.",
+      "D": "Watering interval remains the variable being deliberately assigned regardless of the height unit used."
     }
   },
   {
@@ -4418,7 +4418,7 @@
       "C": "Figure 1 shows that period does not meaningfully depend on bob mass, so using a heavier bob in a repeat of Table 1's trials would most likely leave the recorded periods largely unchanged.",
       "A": "A substantial increase would require period to rise with mass, and Figure 1 is flat across the mass range at any fixed string length.",
       "B": "A substantial decrease would require period to fall with mass. Figure 1 shows no such fall — the trace is flat in either direction.",
-      "D": "string length remains the variable being deliberately varied regardless of which bob mass is used"
+      "D": "String length remains the variable being deliberately varied regardless of which bob mass is used."
     }
   },
   {
@@ -4449,9 +4449,9 @@
     "answer": "B",
     "why": {
       "B": "A stopwatch depends on a person noticing the color change and reacting, introducing small timing errors; an automated sensor removes that source of human error.",
-      "A": "this experiment does not rely on a control group in the first place, and a timing method does not create or remove one",
-      "C": "concentration remains the variable being deliberately set regardless of how time is measured",
-      "D": "the timing method used cannot change the underlying chemistry of either catalyst"
+      "A": "This experiment does not rely on a control group in the first place, and a timing method does not create or remove one.",
+      "C": "Concentration remains the variable being deliberately set regardless of how time is measured.",
+      "D": "The timing method used cannot change the underlying chemistry of either catalyst."
     }
   },
   {
@@ -4482,9 +4482,9 @@
     "answer": "A",
     "why": {
       "A": "Between 0.8 and 1.6 mol/L, time falls by 12 s over a 0.8 mol/L increase, a rate of -15 s per mol/L. Applying that same rate for another 0.8 mol/L increase, from 1.6 to 2.4 mol/L, gives 18 - 15(0.8) = 6 s.",
-      "C": "assumes no further change beyond the 1.6 mol/L reading",
-      "D": "reuses the 0.8 mol/L reading rather than extrapolating past 1.6 mol/L",
-      "B": "extrapolates only half of the expected further decrease"
+      "C": "Assumes no further change beyond the 1.6 mol/L reading.",
+      "D": "Reuses the 0.8 mol/L reading rather than extrapolating past 1.6 mol/L.",
+      "B": "Extrapolates only half of the expected further decrease."
     }
   },
   {
@@ -4515,9 +4515,9 @@
     "answer": "A",
     "why": {
       "A": "Height fell continuously as watering interval increased throughout Table 1, with no sign of leveling off, so a still-longer interval of 6 days would most likely continue that decline below the 5-day group's 6.8 cm.",
-      "B": "reverses the trend shown across every row of Table 1",
-      "C": "Table 1 shows a continued decrease at every step, giving no reason to expect the decline to stop",
-      "D": "this range corresponds to shorter intervals already tested, not a longer interval than any tested"
+      "B": "Reverses the trend shown across every row of Table 1.",
+      "C": "Table 1 shows a continued decrease at every step, giving no reason to expect the decline to stop.",
+      "D": "This range corresponds to shorter intervals already tested, not a longer interval than any tested."
     }
   },
   {
@@ -4548,9 +4548,9 @@
     "answer": "D",
     "why": {
       "D": "Period increased at every step in Table 1, with no sign of leveling off, so a string length longer than any tested (300 cm) would most likely continue that increase above 2.8 s.",
-      "A": "reverses the direction of the trend shown across every row of Table 1",
-      "B": "Table 1 shows a continued increase at every step, giving no reason to expect the period to stop rising",
-      "C": "this range corresponds to shorter string lengths already tested, not a length longer than any tested"
+      "A": "Reverses the direction of the trend shown across every row of Table 1.",
+      "B": "Table 1 shows a continued increase at every step, giving no reason to expect the period to stop rising.",
+      "C": "This range corresponds to shorter string lengths already tested, not a length longer than any tested."
     }
   },
   {

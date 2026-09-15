@@ -2906,9 +2906,9 @@
     "answer": "B",
     "why": {
       "B": "Rewrite 32 as a power of the base: 32 = 2⁵, so the exponent x must be 5.",
-      "A": "stopped one power of 2 short of 32",
-      "C": "made an off-by-one error counting the powers of 2",
-      "D": "confused the exponent with half of 32, rather than solving 2^x = 32 for x"
+      "A": "Stopped one power of 2 short of 32.",
+      "C": "Made an off-by-one error counting the powers of 2.",
+      "D": "Confused the exponent with half of 32, rather than solving 2^x = 32 for x."
     }
   },
   {
@@ -2938,9 +2938,9 @@
     "answer": "C",
     "why": {
       "C": "2⁶ = 64, so log₂(64) = 6.",
-      "B": "confused 64 with 32, one power of 2 too low",
-      "A": "divided 64 by 16 instead of finding the exponent",
-      "D": "confused 64 with 256, one power of 2 too high"
+      "B": "Confused 64 with 32, one power of 2 too low.",
+      "A": "Divided 64 by 16 instead of finding the exponent.",
+      "D": "Confused 64 with 256, one power of 2 too high."
     }
   },
   {
@@ -3002,9 +3002,9 @@
     "answer": "A",
     "why": {
       "A": "Subtract 7 from both sides: x = 15 - 7 = 8.",
-      "D": "added 7 to 15 instead of subtracting it from both sides",
-      "C": "forgot to subtract 7 from both sides, leaving x equal to the total",
-      "B": "made an arithmetic slip while subtracting 7 from 15"
+      "D": "Added 7 to 15 instead of subtracting it from both sides.",
+      "C": "Forgot to subtract 7 from both sides, leaving x equal to the total.",
+      "B": "Made an arithmetic slip while subtracting 7 from 15."
     }
   },
   {
@@ -3034,9 +3034,9 @@
     "answer": "D",
     "why": {
       "D": "Distribute: 6x - 15 = 4x + 7. Collect x-terms: 6x - 4x = 7 + 15, so 2x = 22 and x = 11.",
-      "C": "distributed the 3 across only the first term inside the parentheses",
-      "A": "subtracted 15 from 7 instead of adding it when moving terms",
-      "B": "added 4x to both sides instead of subtracting it"
+      "C": "Distributed the 3 across only the first term inside the parentheses.",
+      "A": "Subtracted 15 from 7 instead of adding it when moving terms.",
+      "B": "Added 4x to both sides instead of subtracting it."
     }
   },
   {
@@ -3066,9 +3066,9 @@
     "answer": "B",
     "why": {
       "B": "4x - 2x = 7 + 9, so 2x = 16 and x = 8.",
-      "A": "divided 16 by 4 instead of by 2",
-      "D": "forgot to divide by 2 after combining the x-terms",
-      "C": "made an arithmetic slip while combining like terms"
+      "A": "Divided 16 by 4 instead of by 2.",
+      "D": "Forgot to divide by 2 after combining the x-terms.",
+      "C": "Made an arithmetic slip while combining like terms."
     }
   },
   {
@@ -3098,9 +3098,9 @@
     "answer": "C",
     "why": {
       "C": "Subtract the flat fee from the total: 79 - 35 = 44. Divide the remainder by the per-mile rate: 44 / 0.20 = 220 miles.",
-      "D": "divided the total charge by the per-mile rate without first subtracting the flat fee",
-      "A": "correctly subtracted the flat fee but forgot to divide by the per-mile rate",
-      "B": "divided the flat fee by the rate instead of the remaining charge"
+      "D": "Divided the total charge by the per-mile rate without first subtracting the flat fee.",
+      "A": "Correctly subtracted the flat fee but forgot to divide by the per-mile rate.",
+      "B": "Divided the flat fee by the rate instead of the remaining charge."
     }
   },
   {
@@ -3130,9 +3130,9 @@
     "answer": "C",
     "why": {
       "C": "Subtract the fee: 260 - 50 = 210. Divide by the monthly rate: 210 / 30 = 7 months.",
-      "D": "divided the total by the monthly rate without first subtracting the sign-up fee",
-      "B": "made an arithmetic slip after correctly subtracting the fee",
-      "A": "swapped the fee and the monthly rate before dividing"
+      "D": "Divided the total by the monthly rate without first subtracting the sign-up fee.",
+      "B": "Made an arithmetic slip after correctly subtracting the fee.",
+      "A": "Swapped the fee and the monthly rate before dividing."
     }
   },
   {
@@ -3162,9 +3162,9 @@
     "answer": "D",
     "why": {
       "D": "0.10x + 0.40(20 - x) = 0.25(20). Expanding: 0.10x + 8 - 0.40x = 5, so -0.30x = -3 and x = 10.",
-      "B": "set up the mixture equation with the two percentages swapped",
-      "C": "made an arithmetic slip while combining the percentage terms",
-      "A": "used the target percent directly as part of the setup instead of solving the equation"
+      "B": "Set up the mixture equation with the two percentages swapped.",
+      "C": "Made an arithmetic slip while combining the percentage terms.",
+      "A": "Used the target percent directly as part of the setup instead of solving the equation."
     }
   },
   {
@@ -3194,9 +3194,9 @@
     "answer": "D",
     "why": {
       "D": "This is a difference of squares: (x-5)(x+5) = x² - 25.",
-      "A": "incorrectly included a middle term instead of recognizing the difference of squares",
-      "B": "made a sign error on the constant term",
-      "C": "confused this with expanding (x-5)², a perfect square, instead of a difference of squares"
+      "A": "Incorrectly included a middle term instead of recognizing the difference of squares.",
+      "B": "Made a sign error on the constant term.",
+      "C": "Confused this with expanding (x-5)², a perfect square, instead of a difference of squares."
     }
   },
   {
@@ -3226,9 +3226,9 @@
     "answer": "C",
     "why": {
       "C": "Using FOIL: x·x + x·(-6) + 4·x + 4·(-6) = x² - 6x + 4x - 24 = x² - 2x - 24.",
-      "A": "made a sign error while combining the middle terms",
-      "B": "multiplied the constant terms as if both were positive",
-      "D": "dropped the middle term when distributing"
+      "A": "Made a sign error while combining the middle terms.",
+      "B": "Multiplied the constant terms as if both were positive.",
+      "D": "Dropped the middle term when distributing."
     }
   },
   {
@@ -3258,9 +3258,9 @@
     "answer": "A",
     "why": {
       "A": "Looking for two numbers that multiply to -18 and add to 3: 6 and -3 work, giving (x+6)(x-3).",
-      "B": "used the coefficient 3 directly as a factor's constant instead of finding factor pairs of -18",
-      "C": "made a sign error, using two negative constants instead of one positive and one negative",
-      "D": "chose a factor pair of -18 that doesn't sum to 3"
+      "B": "Used the coefficient 3 directly as a factor's constant instead of finding factor pairs of -18.",
+      "C": "Made a sign error, using two negative constants instead of one positive and one negative.",
+      "D": "Chose a factor pair of -18 that doesn't sum to 3."
     }
   },
   {
@@ -3290,9 +3290,9 @@
     "answer": "B",
     "why": {
       "B": "Group as x²(x+2) - 9(x+2) = (x+2)(x²-9), and x²-9 factors further as (x-3)(x+3), giving (x+2)(x-3)(x+3).",
-      "A": "treated x² - 9 as a single binomial factor instead of factoring it as a difference of squares",
-      "C": "made a sign error on the first grouped factor",
-      "D": "used the same sign for both factors of the difference of squares instead of one positive and one negative"
+      "A": "Treated x² - 9 as a single binomial factor instead of factoring it as a difference of squares.",
+      "C": "Made a sign error on the first grouped factor.",
+      "D": "Used the same sign for both factors of the difference of squares instead of one positive and one negative."
     }
   },
   {
@@ -3354,9 +3354,9 @@
     "answer": "B",
     "why": {
       "B": "Taking the square root of both sides gives x = ±5; the positive solution is 5.",
-      "A": "reported the negative root instead of the positive one requested",
-      "D": "forgot to take the square root after isolating x²",
-      "C": "divided 25 by 2 instead of taking its square root"
+      "A": "Reported the negative root instead of the positive one requested.",
+      "D": "Forgot to take the square root after isolating x².",
+      "C": "Divided 25 by 2 instead of taking its square root."
     }
   },
   {
@@ -3386,9 +3386,9 @@
     "answer": "B",
     "why": {
       "B": "A perfect square trinomial has the form (x + n)² = x² + 2nx + n². Matching 2n to 12 gives n = 6, so k = n² = 36.",
-      "A": "took half of the linear coefficient but forgot to square it",
-      "D": "squared the linear coefficient itself instead of half of it",
-      "C": "multiplied the linear coefficient by half of it without squaring"
+      "A": "Took half of the linear coefficient but forgot to square it.",
+      "D": "Squared the linear coefficient itself instead of half of it.",
+      "C": "Multiplied the linear coefficient by half of it without squaring."
     }
   },
   {
@@ -3418,9 +3418,9 @@
     "answer": "A",
     "why": {
       "A": "x² = 9, so x = ±3. The positive solution is 3.",
-      "D": "forgot to take the square root after isolating x²",
-      "C": "added 3 to itself instead of just reporting the root",
-      "B": "divided 9 by 2 instead of taking its square root"
+      "D": "Forgot to take the square root after isolating x².",
+      "C": "Added 3 to itself instead of just reporting the root.",
+      "B": "Divided 9 by 2 instead of taking its square root."
     }
   },
   {
@@ -3450,9 +3450,9 @@
     "answer": "C",
     "why": {
       "C": "For x² + bx + c = 0, the product of the roots equals c. Here c = -24, so the other root is -24 / 8 = -3.",
-      "D": "dropped the negative sign on the second root",
-      "B": "repeated the given root instead of solving for the other one",
-      "A": "subtracted 24 - 8 instead of dividing the constant term by the known root"
+      "D": "Dropped the negative sign on the second root.",
+      "B": "Repeated the given root instead of solving for the other one.",
+      "A": "Subtracted 24 - 8 instead of dividing the constant term by the known root."
     }
   },
   {
@@ -3482,9 +3482,9 @@
     "answer": "C",
     "why": {
       "C": "For ax² + bx + c = 0, the sum of the roots equals -b/a. Here a = 1 and b = -7, so the sum is -(-7)/1 = 7.",
-      "A": "used -b directly without dividing by a, forgetting the sum of roots is -b/a with the correct sign",
-      "D": "reported the product of the roots instead of their sum",
-      "B": "solved for the roots but reported only the smaller one"
+      "A": "Used -b directly without dividing by a, forgetting the sum of roots is -b/a with the correct sign.",
+      "D": "Reported the product of the roots instead of their sum.",
+      "B": "Solved for the roots but reported only the smaller one."
     }
   },
   {
@@ -3514,9 +3514,9 @@
     "answer": "B",
     "why": {
       "B": "Factoring: (x+1)(x+5) = 0, so x = -1 or x = -5. The positive difference is |-1 - (-5)| = 4.",
-      "A": "reported the smaller root's absolute value instead of the difference",
-      "C": "reported the larger root's absolute value instead of the difference",
-      "D": "used the coefficient b directly as the difference between the roots"
+      "A": "Reported the smaller root's absolute value instead of the difference.",
+      "C": "Reported the larger root's absolute value instead of the difference.",
+      "D": "Used the coefficient b directly as the difference between the roots."
     }
   },
   {
@@ -3546,9 +3546,9 @@
     "answer": "C",
     "why": {
       "C": "The maximum of a downward-opening parabola occurs at its vertex, t = -b/(2a) = -64/(2·-16) = 2. h(2) = -16(4) + 64(2) + 5 = -64 + 128 + 5 = 69 feet.",
-      "B": "used the linear coefficient as the maximum height instead of evaluating h at the vertex",
-      "D": "computed only 64t at the vertex and omitted the -16t² and +5 terms",
-      "A": "evaluated h(0), the starting height, instead of the maximum"
+      "B": "Used the linear coefficient as the maximum height instead of evaluating h at the vertex.",
+      "D": "Computed only 64t at the vertex and omitted the -16t² and +5 terms.",
+      "A": "Evaluated h(0), the starting height, instead of the maximum."
     }
   },
   {
@@ -3578,9 +3578,9 @@
     "answer": "C",
     "why": {
       "C": "A repeated root requires the discriminant to be zero: k² - 4(1)(16) = 0, so k² = 64 and k = 8.",
-      "A": "took half of 16 instead of the square root of 4 times 16",
-      "B": "made an arithmetic slip while solving k² = 64",
-      "D": "used the constant term itself as k instead of solving the discriminant equation"
+      "A": "Took half of 16 instead of the square root of 4 times 16.",
+      "B": "Made an arithmetic slip while solving k² = 64.",
+      "D": "Used the constant term itself as k instead of solving the discriminant equation."
     }
   },
   {
@@ -3610,9 +3610,9 @@
     "answer": "D",
     "why": {
       "D": "Square both sides: x + 2 = 16, so x = 14.",
-      "A": "did not square both sides before isolating x",
-      "C": "made an arithmetic slip while subtracting 2 from 16",
-      "B": "halved 16 instead of just subtracting 2, then never adjusted further"
+      "A": "Did not square both sides before isolating x.",
+      "C": "Made an arithmetic slip while subtracting 2 from 16.",
+      "B": "Halved 16 instead of just subtracting 2, then never adjusted further."
     }
   },
   {
@@ -3642,9 +3642,9 @@
     "answer": "A",
     "why": {
       "A": "Divide the coefficients (6/2 = 3) and subtract the exponents on x (x²/x = x): 3x.",
-      "B": "divided the coefficients correctly but dropped the variable entirely",
-      "C": "divided the coefficients but forgot to reduce the exponent on x",
-      "D": "multiplied the coefficients instead of dividing them"
+      "B": "Divided the coefficients correctly but dropped the variable entirely.",
+      "C": "Divided the coefficients but forgot to reduce the exponent on x.",
+      "D": "Multiplied the coefficients instead of dividing them."
     }
   },
   {
@@ -3674,9 +3674,9 @@
     "answer": "D",
     "why": {
       "D": "x² - 9 factors as (x - 3)(x + 3). Dividing by (x + 3) leaves x - 3, valid wherever x ≠ -3.",
-      "A": "canceled the denominator against the wrong factor of the numerator",
-      "B": "subtracted 9 from x instead of factoring the difference of squares",
-      "C": "canceled only part of the numerator instead of the full matching factor"
+      "A": "Canceled the denominator against the wrong factor of the numerator.",
+      "B": "Subtracted 9 from x instead of factoring the difference of squares.",
+      "C": "Canceled only part of the numerator instead of the full matching factor."
     }
   },
   {
@@ -3706,9 +3706,9 @@
     "answer": "D",
     "why": {
       "D": "Factor the numerator: (x+2)(x+3) / (x+2) = x + 3.",
-      "A": "canceled the (x+2) factor against the linear coefficient instead of factoring first",
-      "B": "canceled only part of the numerator without factoring",
-      "C": "subtracted 2 from the wrong term while attempting to cancel"
+      "A": "Canceled the (x+2) factor against the linear coefficient instead of factoring first.",
+      "B": "Canceled only part of the numerator without factoring.",
+      "C": "Subtracted 2 from the wrong term while attempting to cancel."
     }
   },
   {
@@ -3738,9 +3738,9 @@
     "answer": "A",
     "why": {
       "A": "Cross-multiplying: x + 1 = 3(x - 2) = 3x - 6, so 7 = 2x and x = 3.5.",
-      "D": "added instead of subtracted when isolating x, doubling the constant term",
-      "B": "made an arithmetic slip while combining like terms",
-      "C": "left x on both sides of the equation without fully combining like terms"
+      "D": "Added instead of subtracted when isolating x, doubling the constant term.",
+      "B": "Made an arithmetic slip while combining like terms.",
+      "C": "Left x on both sides of the equation without fully combining like terms."
     }
   },
   {
@@ -3770,9 +3770,9 @@
     "answer": "D",
     "why": {
       "D": "Adding the two equations eliminates y: 2x = 12, so x = 6.",
-      "B": "solved for y instead of x",
-      "A": "reported the given difference instead of solving the system",
-      "C": "halved only the first equation's total, ignoring the second equation"
+      "B": "Solved for y instead of x.",
+      "A": "Reported the given difference instead of solving the system.",
+      "C": "Halved only the first equation's total, ignoring the second equation."
     }
   },
   {
@@ -3834,9 +3834,9 @@
     "answer": "A",
     "why": {
       "A": "Setting the expressions equal: 2x + 1 = -x + 7, so 3x = 6 and x = 2.",
-      "D": "added the two equations' constants, 1 and 7, instead of solving for x",
-      "B": "made an arithmetic slip while combining like terms",
-      "C": "used the y-intercept of the second equation as the value of x"
+      "D": "Added the two equations' constants, 1 and 7, instead of solving for x.",
+      "B": "Made an arithmetic slip while combining like terms.",
+      "C": "Used the y-intercept of the second equation as the value of x."
     }
   },
   {
@@ -3866,9 +3866,9 @@
     "answer": "B",
     "why": {
       "B": "From x - y = 1, x = y + 1. Substitute into 2x + y = 11: 2(y+1) + y = 11, so 3y + 2 = 11, 3y = 9, and y = 3.",
-      "C": "found the value of x and reported it instead of y",
-      "A": "made a sign error while solving for y",
-      "D": "misread x - y = 1 as x = 1 and substituted 1 for x"
+      "C": "Found the value of x and reported it instead of y.",
+      "A": "Made a sign error while solving for y.",
+      "D": "Misread x - y = 1 as x = 1 and substituted 1 for x."
     }
   },
   {
@@ -3898,9 +3898,9 @@
     "answer": "B",
     "why": {
       "B": "Adding the two equations eliminates y: 6x = 18, so x = 3.",
-      "A": "made an arithmetic slip while solving for x",
-      "C": "divided the sum of the constants by 3 instead of the coefficient sum",
-      "D": "used 18 as the final answer without dividing by the coefficient sum"
+      "A": "Made an arithmetic slip while solving for x.",
+      "C": "Divided the sum of the constants by 3 instead of the coefficient sum.",
+      "D": "Used 18 as the final answer without dividing by the coefficient sum."
     }
   },
   {
@@ -3930,9 +3930,9 @@
     "answer": "C",
     "why": {
       "C": "The second equation is exactly twice the first on the left side, so it needs the same scaling on the right: k = 2(12) = 24.",
-      "B": "used the same constant as the first equation instead of scaling it",
-      "A": "divided the first equation's constant by 2 instead of multiplying it",
-      "D": "quadrupled the first equation's constant instead of doubling it"
+      "B": "Used the same constant as the first equation instead of scaling it.",
+      "A": "Divided the first equation's constant by 2 instead of multiplying it.",
+      "D": "Quadrupled the first equation's constant instead of doubling it."
     }
   },
   {
@@ -3962,9 +3962,9 @@
     "answer": "A",
     "why": {
       "A": "Set y = 4x - 8, swap x and y to get x = 4y - 8, then solve for y: y = (x+8)/4.",
-      "B": "reversed the signs without actually solving the equation for x",
-      "C": "made a sign error, subtracting 8 instead of adding it",
-      "D": "divided by 4 before adding 8 instead of after"
+      "B": "Reversed the signs without actually solving the equation for x.",
+      "C": "Made a sign error, subtracting 8 instead of adding it.",
+      "D": "Divided by 4 before adding 8 instead of after."
     }
   },
   {
@@ -3994,9 +3994,9 @@
     "answer": "A",
     "why": {
       "A": "First find g(4) = 4 - 1 = 3. Then f(3) = 2(3) + 3 = 6 + 3 = 9.",
-      "B": "evaluated g(f(4)) instead of f(g(4))",
-      "D": "added f(4) and g(4) instead of composing the functions",
-      "C": "used g(4) = 4 directly, forgetting to subtract 1, then applied f to that value"
+      "B": "Evaluated g(f(4)) instead of f(g(4)).",
+      "D": "Added f(4) and g(4) instead of composing the functions.",
+      "C": "Used g(4) = 4 directly, forgetting to subtract 1, then applied f to that value."
     }
   },
   {
@@ -4026,9 +4026,9 @@
     "answer": "B",
     "why": {
       "B": "g(f(x)) = (x+3)² = x² + 6x + 9. f(g(x)) = x² + 3. Subtracting: (x²+6x+9) - (x²+3) = 6x + 6.",
-      "A": "subtracted the constants incorrectly while combining terms",
-      "C": "forgot to cancel the x² terms when subtracting",
-      "D": "dropped the constant term entirely while combining like terms"
+      "A": "Subtracted the constants incorrectly while combining terms.",
+      "C": "Forgot to cancel the x² terms when subtracting.",
+      "D": "Dropped the constant term entirely while combining like terms."
     }
   },
   {
@@ -4058,9 +4058,9 @@
     "answer": "C",
     "why": {
       "C": "The denominator cannot equal zero, so x - 3 ≠ 0, meaning x ≠ 3.",
-      "A": "made a sign error identifying the excluded value",
-      "B": "confused a rational function's restriction with a square root's inequality restriction",
-      "D": "overlooked that division by zero is undefined when x = 3"
+      "A": "Made a sign error identifying the excluded value.",
+      "B": "Confused a rational function's restriction with a square root's inequality restriction.",
+      "D": "Overlooked that division by zero is undefined when x = 3."
     }
   },
   {
@@ -4090,9 +4090,9 @@
     "answer": "A",
     "why": {
       "A": "A square root's radicand cannot be negative, so x - 5 ≥ 0. Solving gives x ≥ 5, and x = 5 is included since √0 = 0 is defined.",
-      "B": "excluded the boundary point where the radicand equals zero",
-      "C": "reversed the direction of the inequality",
-      "D": "solved x - 5 ≥ 0 as if it were x + 5 ≥ 0"
+      "B": "Excluded the boundary point where the radicand equals zero.",
+      "C": "Reversed the direction of the inequality.",
+      "D": "Solved x - 5 ≥ 0 as if it were x + 5 ≥ 0."
     }
   },
   {
@@ -4122,9 +4122,9 @@
     "answer": "D",
     "why": {
       "D": "This is vertex form with vertex (2, 5) opening upward, so the minimum y-value is 5, and the range is y ≥ 5.",
-      "A": "used the horizontal shift value instead of the vertical shift for the minimum",
-      "B": "reversed the inequality direction for an upward-opening parabola",
-      "C": "overlooked that a squared term can never be negative, which restricts the range"
+      "A": "Used the horizontal shift value instead of the vertical shift for the minimum.",
+      "B": "Reversed the inequality direction for an upward-opening parabola.",
+      "C": "Overlooked that a squared term can never be negative, which restricts the range."
     }
   },
   {
@@ -4154,9 +4154,9 @@
     "answer": "A",
     "why": {
       "A": "Slope = (7 - 3) / (2 - 0) = 4 / 2 = 2.",
-      "C": "used the rise but forgot to divide by the run",
-      "D": "added the coordinates instead of subtracting them",
-      "B": "made an arithmetic slip while combining the coordinates"
+      "C": "Used the rise but forgot to divide by the run.",
+      "D": "Added the coordinates instead of subtracting them.",
+      "B": "Made an arithmetic slip while combining the coordinates."
     }
   },
   {
@@ -4186,9 +4186,9 @@
     "answer": "B",
     "why": {
       "B": "Substitute x = 0 for the y-intercept: g(0) = a(3)(-5) = -15a. Setting -15a = -15 gives a = 1.",
-      "A": "made a sign error while solving -15a = -15",
-      "C": "used one of the given roots as the value of a",
-      "D": "reported the magnitude of the y-intercept instead of solving for a"
+      "A": "Made a sign error while solving -15a = -15.",
+      "C": "Used one of the given roots as the value of a.",
+      "D": "Reported the magnitude of the y-intercept instead of solving for a."
     }
   },
   {
@@ -4218,9 +4218,9 @@
     "answer": "A",
     "why": {
       "A": "f(4) = 5(4) - 3 = 20 - 3 = 17.",
-      "B": "added 3 instead of subtracting it",
-      "C": "added 3 twice by mistake instead of subtracting it once",
-      "D": "multiplied the entire expression by x again instead of substituting once"
+      "B": "Added 3 instead of subtracting it.",
+      "C": "Added 3 twice by mistake instead of subtracting it once.",
+      "D": "Multiplied the entire expression by x again instead of substituting once."
     }
   },
   {
@@ -4250,9 +4250,9 @@
     "answer": "D",
     "why": {
       "D": "f(-2) = 3(-2)² - 2(-2) + 1 = 3(4) + 4 + 1 = 12 + 4 + 1 = 17.",
-      "B": "evaluated f(2) instead of f(-2), losing the sign on the linear term",
-      "A": "used x instead of x² in the first term",
-      "C": "omitted the constant term at the end"
+      "B": "Evaluated f(2) instead of f(-2), losing the sign on the linear term.",
+      "A": "Used x instead of x² in the first term.",
+      "C": "Omitted the constant term at the end."
     }
   },
   {
@@ -4282,9 +4282,9 @@
     "answer": "B",
     "why": {
       "B": "f(a+1) = 2(a+1)² - (a+1) + 4 = 2a² + 4a + 2 - a - 1 + 4 = 2a² + 3a + 5. Subtracting f(a) = 2a² - a + 4 gives 4a + 1.",
-      "A": "subtracted the constant terms incorrectly while combining like terms",
-      "C": "dropped a factor of 2 from the linear coefficient during expansion",
-      "D": "made a sign error on the constant term while combining like terms"
+      "A": "Subtracted the constant terms incorrectly while combining like terms.",
+      "C": "Dropped a factor of 2 from the linear coefficient during expansion.",
+      "D": "Made a sign error on the constant term while combining like terms."
     }
   },
   {
@@ -4314,9 +4314,9 @@
     "answer": "A",
     "why": {
       "A": "Since -2 ≤ 0, use the first piece: f(-2) = 2(-2) = -4.",
-      "C": "used the wrong piece (x+3) instead of checking that x = -2 satisfies x ≤ 0",
-      "B": "made an arithmetic slip while doubling -2",
-      "D": "evaluated the wrong piece and made an arithmetic slip at the same time"
+      "C": "Used the wrong piece (x+3) instead of checking that x = -2 satisfies x ≤ 0.",
+      "B": "Made an arithmetic slip while doubling -2.",
+      "D": "Evaluated the wrong piece and made an arithmetic slip at the same time."
     }
   },
   {
@@ -4346,9 +4346,9 @@
     "answer": "C",
     "why": {
       "C": "Since 5 ≥ 2, use the second piece: f(5) = 2(5) - 1 = 10 - 1 = 9.",
-      "B": "used the first piece (x + 1) instead of checking which piece applies at x = 5",
-      "D": "computed 2x for the second piece but dropped the constant term",
-      "A": "evaluated the piecewise definition at x = 2 instead of x = 5"
+      "B": "Used the first piece (x + 1) instead of checking which piece applies at x = 5.",
+      "D": "Computed 2x for the second piece but dropped the constant term.",
+      "A": "Evaluated the piecewise definition at x = 2 instead of x = 5."
     }
   },
   {
@@ -4378,9 +4378,9 @@
     "answer": "C",
     "why": {
       "C": "A rightward shift of 4 replaces x with (x-4); an upward shift of 1 adds 1: y = |x-4| + 1.",
-      "A": "shifted left instead of right",
-      "B": "shifted down instead of up",
-      "D": "swapped the horizontal and vertical shift amounts"
+      "A": "Shifted left instead of right.",
+      "B": "Shifted down instead of up.",
+      "D": "Swapped the horizontal and vertical shift amounts."
     }
   },
   {
@@ -4410,9 +4410,9 @@
     "answer": "A",
     "why": {
       "A": "Shifting left by h replaces x with (x + h): shifting left 3 gives (x+3)². Shifting down 2 subtracts 2 from the whole expression: (x+3)² - 2.",
-      "B": "shifted the graph right instead of left",
-      "C": "shifted the graph up instead of down",
-      "D": "swapped the horizontal and vertical shift amounts"
+      "B": "Shifted the graph right instead of left.",
+      "C": "Shifted the graph up instead of down.",
+      "D": "Swapped the horizontal and vertical shift amounts."
     }
   },
   {
@@ -4442,9 +4442,9 @@
     "answer": "D",
     "why": {
       "D": "Reflecting over the x-axis negates the whole function: y = -x². Shifting left 2 replaces x with (x+2): y = -(x+2)².",
-      "A": "omitted the negative sign, leaving out the reflection entirely",
-      "B": "shifted right instead of left",
-      "C": "shifted upward instead of shifting the input left"
+      "A": "Omitted the negative sign, leaving out the reflection entirely.",
+      "B": "Shifted right instead of left.",
+      "C": "Shifted upward instead of shifting the input left."
     }
   },
   {
@@ -4474,7 +4474,7 @@
     "answer": "A",
     "why": {
       "A": "Angle C is the right angle, so AB is the hypotenuse and BC is the side opposite angle A. Sine is opposite over hypotenuse, so sin A = BC/AB = 5/13.",
-      "B": "Used the adjacent leg, 12, as the denominator - that ratio is tan A, not sin A.",
+      "B": "Used the adjacent leg, 12, as the denominator — that ratio is tan A, not sin A.",
       "C": "Gave cos A, using the adjacent leg 12 over the hypotenuse.",
       "D": "Inverted the ratio, putting the hypotenuse on top."
     }
@@ -4505,10 +4505,10 @@
     ],
     "answer": "A",
     "why": {
-      "A": "sin = opposite/hypotenuse = 6/10, which reduces to 3/5.",
-      "D": "inverted the ratio, using the hypotenuse over the opposite side instead of the reverse",
-      "C": "used the adjacent side (found via the Pythagorean theorem) instead of the opposite side",
-      "B": "used the adjacent side as the denominator instead of the hypotenuse"
+      "A": "Sin = opposite/hypotenuse = 6/10, which reduces to 3/5.",
+      "D": "Inverted the ratio, using the hypotenuse over the opposite side instead of the reverse.",
+      "C": "Used the adjacent side (found via the Pythagorean theorem) instead of the opposite side.",
+      "B": "Used the adjacent side as the denominator instead of the hypotenuse."
     }
   },
   {
@@ -4538,9 +4538,9 @@
     "answer": "B",
     "why": {
       "B": "A linear pair is supplementary, summing to 180°: 180 - 35 = 145°.",
-      "A": "confused a linear pair (supplementary, 180°) with complementary angles (90°)",
-      "D": "added 180 twice instead of subtracting once",
-      "C": "subtracted 35 from 250 instead of from 180"
+      "A": "Confused a linear pair (supplementary, 180°) with complementary angles (90°).",
+      "D": "Added 180 twice instead of subtracting once.",
+      "C": "Subtracted 35 from 250 instead of from 180."
     }
   },
   {
@@ -4570,9 +4570,9 @@
     "answer": "D",
     "why": {
       "D": "Co-interior (same-side interior) angles are supplementary, summing to 180°. So the other angle is 180 - 62 = 118°.",
-      "B": "treated the angles as alternate interior angles, which are congruent, instead of co-interior angles, which are supplementary",
-      "A": "subtracted 62 from 90 instead of from 180",
-      "C": "assumed the angles were complementary instead of supplementary"
+      "B": "Treated the angles as alternate interior angles, which are congruent, instead of co-interior angles, which are supplementary.",
+      "A": "Subtracted 62 from 90 instead of from 180.",
+      "C": "Assumed the angles were complementary instead of supplementary."
     }
   },
   {
@@ -4602,9 +4602,9 @@
     "answer": "C",
     "why": {
       "C": "An exterior angle equals the sum of the two remote interior angles: 130 = 55 + B, so B = 75°.",
-      "B": "lost track of the exterior angle relationship while combining the given angles",
-      "D": "added 130 and 55 instead of subtracting",
-      "A": "subtracted 130 from 55 and dropped the negative sign, reversing the correct operation"
+      "B": "Lost track of the exterior angle relationship while combining the given angles.",
+      "D": "Added 130 and 55 instead of subtracting.",
+      "A": "Subtracted 130 from 55 and dropped the negative sign, reversing the correct operation."
     }
   },
   {
@@ -4666,9 +4666,9 @@
     "answer": "C",
     "why": {
       "C": "Circumference is 2πr. With r = 5, that's 2π(5) = 10π.",
-      "A": "used the radius directly as the coefficient instead of doubling it",
-      "B": "used the area formula πr² instead of the circumference formula",
-      "D": "doubled the diameter instead of using it directly"
+      "A": "Used the radius directly as the coefficient instead of doubling it.",
+      "B": "Used the area formula πr² instead of the circumference formula.",
+      "D": "Doubled the diameter instead of using it directly."
     }
   },
   {
@@ -4698,9 +4698,9 @@
     "answer": "D",
     "why": {
       "D": "Since the center and the point share the same x-coordinate, the radius is just the vertical distance between them: |6 - (-2)| = 8.",
-      "A": "used the center's y-coordinate as the radius",
-      "C": "used the point's y-coordinate as the radius",
-      "B": "took half of the vertical distance instead of the full distance"
+      "A": "Used the center's y-coordinate as the radius.",
+      "C": "Used the point's y-coordinate as the radius.",
+      "B": "Took half of the vertical distance instead of the full distance."
     }
   },
   {
@@ -4730,9 +4730,9 @@
     "answer": "D",
     "why": {
       "D": "Circumference is C = πd. With d = 18, C = 18π.",
-      "A": "used the radius as if it were the diameter",
-      "B": "used the area formula πr² with r = 9 instead of the circumference formula",
-      "C": "doubled the diameter instead of using it directly"
+      "A": "Used the radius as if it were the diameter.",
+      "B": "Used the area formula πr² with r = 9 instead of the circumference formula.",
+      "C": "Doubled the diameter instead of using it directly."
     }
   },
   {
@@ -4762,9 +4762,9 @@
     "answer": "D",
     "why": {
       "D": "The area of a circle is πr². With r = 6, the area is π(6²) = 36π square units.",
-      "A": "used the circumference formula 2πr instead of the area formula",
-      "B": "used the radius directly as the coefficient instead of squaring it",
-      "C": "squared the diameter instead of the radius"
+      "A": "Used the circumference formula 2πr instead of the area formula.",
+      "B": "Used the radius directly as the coefficient instead of squaring it.",
+      "C": "Squared the diameter instead of the radius."
     }
   },
   {
@@ -4794,9 +4794,9 @@
     "answer": "A",
     "why": {
       "A": "Arc length = (60/360) × 2π(12) = (1/6)(24π) = 4π.",
-      "B": "computed the full circumference instead of the arc length",
-      "C": "used half the circumference (180°) instead of the 60° fraction",
-      "D": "used the wrong fraction of the circle, 30° instead of 60°"
+      "B": "Computed the full circumference instead of the arc length.",
+      "C": "Used half the circumference (180°) instead of the 60° fraction.",
+      "D": "Used the wrong fraction of the circle, 30° instead of 60°."
     }
   },
   {
@@ -4826,9 +4826,9 @@
     "answer": "D",
     "why": {
       "D": "By the distance formula, √(3² + 4²) = √(9 + 16) = √25 = 5.",
-      "B": "used only the horizontal distance between the points",
-      "C": "used only the vertical distance between the points",
-      "A": "subtracted the horizontal and vertical distances instead of using the distance formula"
+      "B": "Used only the horizontal distance between the points.",
+      "C": "Used only the vertical distance between the points.",
+      "A": "Subtracted the horizontal and vertical distances instead of using the distance formula."
     }
   },
   {
@@ -4858,9 +4858,9 @@
     "answer": "A",
     "why": {
       "A": "The distance formula is √((x₂-x₁)² + (y₂-y₁)²). Here x₂-x₁ = 5-(-3) = 8 and y₂-y₁ = -4-2 = -6. Distance = √(8² + (-6)²) = √(64+36) = √100 = 10.",
-      "B": "added the horizontal and vertical distances instead of using the distance formula",
-      "C": "added the horizontal and vertical distances before squaring them",
-      "D": "used only the vertical distance between the points"
+      "B": "Added the horizontal and vertical distances instead of using the distance formula.",
+      "C": "Added the horizontal and vertical distances before squaring them.",
+      "D": "Used only the vertical distance between the points."
     }
   },
   {
@@ -4890,9 +4890,9 @@
     "answer": "B",
     "why": {
       "B": "The midpoint is the average of the x-coordinates and the average of the y-coordinates: ((-2+6)/2, (7+(-3))/2) = (4/2, 4/2) = (2, 2).",
-      "A": "added the coordinates but forgot to divide by 2",
-      "C": "subtracted the y-coordinates instead of adding them before averaging",
-      "D": "computed the change in x and y instead of their average"
+      "A": "Added the coordinates but forgot to divide by 2.",
+      "C": "Subtracted the y-coordinates instead of adding them before averaging.",
+      "D": "Computed the change in x and y instead of their average."
     }
   },
   {
@@ -4922,9 +4922,9 @@
     "answer": "B",
     "why": {
       "B": "Midpoint = ((-4+2)/2, (1+9)/2) = (-1, 5).",
-      "A": "added the coordinates but forgot to divide by 2",
-      "C": "subtracted the coordinates instead of averaging them",
-      "D": "computed the difference in each coordinate instead of the midpoint"
+      "A": "Added the coordinates but forgot to divide by 2.",
+      "C": "Subtracted the coordinates instead of averaging them.",
+      "D": "Computed the difference in each coordinate instead of the midpoint."
     }
   },
   {
@@ -4954,9 +4954,9 @@
     "answer": "C",
     "why": {
       "C": "y = mx + b, so -1 = -3(2) + b, giving -1 = -6 + b and b = 5.",
-      "A": "used -6 as if adding it to -1 instead of subtracting",
-      "B": "made an arithmetic slip while combining -1 and -6",
-      "D": "added instead of subtracted when isolating b"
+      "A": "Used -6 as if adding it to -1 instead of subtracting.",
+      "B": "Made an arithmetic slip while combining -1 and -6.",
+      "D": "Added instead of subtracted when isolating b."
     }
   },
   {
@@ -4986,9 +4986,9 @@
     "answer": "C",
     "why": {
       "C": "Slope = (13-5)/(6-2) = 8/4 = 2. Using the point (2, 5): 5 = 2(2) + b, so 5 = 4 + b and b = 1. The equation is y = 2x + 1.",
-      "A": "inverted the slope formula, dividing the run by the rise",
-      "B": "used the point's y-coordinate directly as the y-intercept",
-      "D": "used the negative of the correct slope"
+      "A": "Inverted the slope formula, dividing the run by the rise.",
+      "B": "Used the point's y-coordinate directly as the y-intercept.",
+      "D": "Used the negative of the correct slope."
     }
   },
   {
@@ -5018,9 +5018,9 @@
     "answer": "A",
     "why": {
       "A": "Perpendicular lines have slopes that are negative reciprocals. The given line has slope 2, so the new line has slope -0.5. Using the point (4,1): 1 = -0.5(4) + b, so 1 = -2 + b and b = 3.",
-      "B": "used the original line's slope instead of its negative reciprocal",
-      "C": "made a sign error while solving for the y-intercept",
-      "D": "used the positive reciprocal of the slope instead of the negative reciprocal"
+      "B": "Used the original line's slope instead of its negative reciprocal.",
+      "C": "Made a sign error while solving for the y-intercept.",
+      "D": "Used the positive reciprocal of the slope instead of the negative reciprocal."
     }
   },
   {
@@ -5050,9 +5050,9 @@
     "answer": "D",
     "why": {
       "D": "y = 2 + (3/4)(12 - 4) = 2 + (3/4)(8) = 2 + 6 = 8.",
-      "B": "computed the change in y but forgot to add the starting y-value",
-      "A": "used only the denominator of the slope to divide the new x-value",
-      "C": "made an arithmetic slip while adding the change in y to the starting y-value"
+      "B": "Computed the change in y but forgot to add the starting y-value.",
+      "A": "Used only the denominator of the slope to divide the new x-value.",
+      "C": "Made an arithmetic slip while adding the change in y to the starting y-value."
     }
   },
   {
@@ -5082,9 +5082,9 @@
     "answer": "A",
     "why": {
       "A": "Using the shoelace formula: Area = ½|x₁(y₂-y₃) + x₂(y₃-y₁) + x₃(y₁-y₂)| = ½|1(4) + 4(0) + 7(-4)| = ½|4 - 28| = 12.",
-      "D": "forgot the 1/2 factor in the shoelace formula",
-      "C": "used only two of the three vertices' contributions",
-      "B": "made an arithmetic slip while combining terms"
+      "D": "Forgot the 1/2 factor in the shoelace formula.",
+      "C": "Used only two of the three vertices' contributions.",
+      "B": "Made an arithmetic slip while combining terms."
     }
   },
   {
@@ -5114,9 +5114,9 @@
     "answer": "D",
     "why": {
       "D": "The sum of interior angles is (5-2)×180 = 540°. Divided evenly among 5 angles: 540/5 = 108°.",
-      "B": "computed the exterior angle instead of the interior angle",
-      "C": "assumed the pentagon's angles matched a square's interior angle",
-      "A": "divided the sum of interior angles by 9 instead of by 5"
+      "B": "Computed the exterior angle instead of the interior angle.",
+      "C": "Assumed the pentagon's angles matched a square's interior angle.",
+      "A": "Divided the sum of interior angles by 9 instead of by 5."
     }
   },
   {
@@ -5146,9 +5146,9 @@
     "answer": "A",
     "why": {
       "A": "The sum of a polygon's interior angles is (n-2) × 180°. For a hexagon, n = 6: (6-2) × 180 = 720°.",
-      "C": "used 8 sides in the formula instead of 6",
-      "B": "used 7 sides in the formula instead of 6",
-      "D": "added 2 to the number of sides instead of subtracting 2"
+      "C": "Used 8 sides in the formula instead of 6.",
+      "B": "Used 7 sides in the formula instead of 6.",
+      "D": "Added 2 to the number of sides instead of subtracting 2."
     }
   },
   {
@@ -5178,9 +5178,9 @@
     "answer": "A",
     "why": {
       "A": "A regular polygon's exterior angles always sum to 360°: 360/9 = 40°.",
-      "B": "used 8 sides instead of 9 in the formula 360/n",
-      "D": "computed the interior angle instead of the exterior angle",
-      "C": "used 6 sides instead of 9 in the formula 360/n"
+      "B": "Used 8 sides instead of 9 in the formula 360/n.",
+      "D": "Computed the interior angle instead of the exterior angle.",
+      "C": "Used 6 sides instead of 9 in the formula 360/n."
     }
   },
   {
@@ -5210,9 +5210,9 @@
     "answer": "B",
     "why": {
       "B": "A cube has 6 identical faces, each with area 5² = 25. Total surface area: 6 × 25 = 150.",
-      "A": "computed the volume (5³) instead of the surface area",
-      "C": "miscalculated one face's area during the six-face sum",
-      "D": "doubled the correct surface area by mistake"
+      "A": "Computed the volume (5³) instead of the surface area.",
+      "C": "Miscalculated one face's area during the six-face sum.",
+      "D": "Doubled the correct surface area by mistake."
     }
   },
   {
@@ -5242,9 +5242,9 @@
     "answer": "D",
     "why": {
       "D": "The volume of a rectangular prism is length × width × height = 4 × 5 × 6 = 120.",
-      "B": "added the three dimensions instead of multiplying them",
-      "C": "computed the area of one pair of faces instead of the volume",
-      "A": "multiplied only two of the three dimensions"
+      "B": "Added the three dimensions instead of multiplying them.",
+      "C": "Computed the area of one pair of faces instead of the volume.",
+      "A": "Multiplied only two of the three dimensions."
     }
   },
   {
@@ -5274,9 +5274,9 @@
     "answer": "C",
     "why": {
       "C": "Cylinder volume is V = πr²h = π(3²)(10) = 90π.",
-      "A": "used a cone's volume formula, without its 1/3 factor, instead of a cylinder's",
-      "B": "used the diameter in place of the radius without squaring it correctly",
-      "D": "multiplied by the radius one extra time instead of squaring it"
+      "A": "Used a cone's volume formula, without its 1/3 factor, instead of a cylinder's.",
+      "B": "Used the diameter in place of the radius without squaring it correctly.",
+      "D": "Multiplied by the radius one extra time instead of squaring it."
     }
   },
   {
@@ -5306,9 +5306,9 @@
     "answer": "A",
     "why": {
       "A": "By the Pythagorean theorem, c² = 3² + 4² = 25, so c = 5.",
-      "C": "added the two legs instead of applying the Pythagorean theorem",
+      "C": "Added the two legs instead of applying the Pythagorean theorem.",
       "D": "This reports c² rather than c — the square root step was never taken.",
-      "B": "made an arithmetic slip while taking the square root"
+      "B": "Made an arithmetic slip while taking the square root."
     }
   },
   {
@@ -5338,9 +5338,9 @@
     "answer": "B",
     "why": {
       "B": "By the Pythagorean theorem, c² = a² + b² = 81 + 144 = 225, so c = √225 = 15.",
-      "A": "added the two legs instead of applying the Pythagorean theorem",
-      "C": "subtracted the squares of the legs instead of adding them",
-      "D": "averaged the leg lengths instead of computing the hypotenuse"
+      "A": "Added the two legs instead of applying the Pythagorean theorem.",
+      "C": "Subtracted the squares of the legs instead of adding them.",
+      "D": "Averaged the leg lengths instead of computing the hypotenuse."
     }
   },
   {
@@ -5370,9 +5370,9 @@
     "answer": "B",
     "why": {
       "B": "The interior angles of a triangle sum to 180°: 180 - 40 - 75 = 65.",
-      "C": "added the two given angles instead of subtracting their sum from 180°",
-      "D": "subtracted only angle A from 180°, ignoring angle B",
-      "A": "subtracted angle A from angle B instead of subtracting both from 180°"
+      "C": "Added the two given angles instead of subtracting their sum from 180°.",
+      "D": "Subtracted only angle A from 180°, ignoring angle B.",
+      "A": "Subtracted angle A from angle B instead of subtracting both from 180°."
     }
   },
   {
@@ -5402,9 +5402,9 @@
     "answer": "B",
     "why": {
       "B": "A triangle's angles sum to 180°: 180 - 50 - 60 = 70.",
-      "C": "subtracted only one of the two given angles from 180° instead of both",
-      "D": "added the two given angles instead of subtracting their sum from 180°",
-      "A": "repeated one of the given angles instead of solving for the third"
+      "C": "Subtracted only one of the two given angles from 180° instead of both.",
+      "D": "Added the two given angles instead of subtracting their sum from 180°.",
+      "A": "Repeated one of the given angles instead of solving for the third."
     }
   },
   {
@@ -5434,9 +5434,9 @@
     "answer": "D",
     "why": {
       "D": "Area scales by the square of the linear scale factor: 20 × 3² = 20 × 9 = 180 square units.",
-      "C": "scaled the area by the linear factor of 3 instead of by 3²",
-      "A": "divided the area by the scale factor instead of multiplying by its square",
-      "B": "added the scale factor to the area instead of applying it as a multiplier"
+      "C": "Scaled the area by the linear factor of 3 instead of by 3².",
+      "A": "Divided the area by the scale factor instead of multiplying by its square.",
+      "B": "Added the scale factor to the area instead of applying it as a multiplier."
     }
   },
   {
@@ -5466,9 +5466,9 @@
     "answer": "C",
     "why": {
       "C": "In a 30-60-90 triangle, the sides are in ratio 1 : √3 : 2, where 2 corresponds to the hypotenuse. The shorter leg is half the hypotenuse: 14 / 2 = 7.",
-      "A": "reported the longer leg instead of the shorter leg",
-      "B": "multiplied the hypotenuse by 2 instead of dividing by 2",
-      "D": "divided the hypotenuse by √2, treating the triangle as a 45-45-90"
+      "A": "Reported the longer leg instead of the shorter leg.",
+      "B": "Multiplied the hypotenuse by 2 instead of dividing by 2.",
+      "D": "Divided the hypotenuse by √2, treating the triangle as a 45-45-90."
     }
   },
   {
@@ -5498,9 +5498,9 @@
     "answer": "C",
     "why": {
       "C": "Area = ½ × base × height, so 84 = ½(14)(h). Solving: h = (2 × 84) / 14 = 12.",
-      "B": "forgot to double the area before dividing by the base",
-      "D": "doubled the correct height by mistake",
-      "A": "divided the area by the base and then by 2 again instead of multiplying by 2"
+      "B": "Forgot to double the area before dividing by the base.",
+      "D": "Doubled the correct height by mistake.",
+      "A": "Divided the area by the base and then by 2 again instead of multiplying by 2."
     }
   },
   {
@@ -5530,9 +5530,9 @@
     "answer": "B",
     "why": {
       "B": "Area = length × width = 6 × 4 = 24 square feet.",
-      "A": "computed the perimeter instead of the area",
-      "C": "multiplied length by width, then added the width again by mistake",
-      "D": "doubled the correct area by mistake"
+      "A": "Computed the perimeter instead of the area.",
+      "C": "Multiplied length by width, then added the width again by mistake.",
+      "D": "Doubled the correct area by mistake."
     }
   },
   {
@@ -5562,9 +5562,9 @@
     "answer": "C",
     "why": {
       "C": "Perimeter = 2(length + width) = 2(12 + 8) = 40 feet.",
-      "A": "added the length and width but forgot to double the sum",
-      "D": "computed the area instead of the perimeter",
-      "B": "made an arithmetic slip while adding the length and width before doubling"
+      "A": "Added the length and width but forgot to double the sum.",
+      "D": "Computed the area instead of the perimeter.",
+      "B": "Made an arithmetic slip while adding the length and width before doubling."
     }
   },
   {
@@ -5594,9 +5594,9 @@
     "answer": "B",
     "why": {
       "B": "The ladder, wall, and ground form a right triangle with the ladder as the hypotenuse. Height = √(13² - 5²) = √(169 - 25) = √144 = 12 feet.",
-      "A": "subtracted the base distance from the ladder's length instead of applying the Pythagorean theorem",
-      "D": "added the ladder's length and the base distance instead of applying the Pythagorean theorem",
-      "C": "used the ladder's length itself as the height reached"
+      "A": "Subtracted the base distance from the ladder's length instead of applying the Pythagorean theorem.",
+      "D": "Added the ladder's length and the base distance instead of applying the Pythagorean theorem.",
+      "C": "Used the ladder's length itself as the height reached."
     }
   },
   {
@@ -5626,9 +5626,9 @@
     "answer": "D",
     "why": {
       "D": "Room area = 15 × 10 = 150. Rug area = 9 × 6 = 54. Uncovered area = 150 - 54 = 96 square feet.",
-      "B": "reported the rug's area instead of the uncovered floor area",
-      "C": "made an arithmetic slip while subtracting the rug's area from the room's area",
-      "A": "subtracted the room's area from double the rug's area instead of the reverse"
+      "B": "Reported the rug's area instead of the uncovered floor area.",
+      "C": "Made an arithmetic slip while subtracting the rug's area from the room's area.",
+      "A": "Subtracted the room's area from double the rug's area instead of the reverse."
     }
   },
   {
@@ -5658,9 +5658,9 @@
     "answer": "C",
     "why": {
       "C": "Spring = 20 - 6 - 5 - 4 = 5 students.",
-      "B": "repeated the number of students who said winter instead of solving for spring",
-      "A": "made an arithmetic slip while subtracting from the total",
-      "D": "added the fall and winter counts instead of subtracting all three from the total"
+      "B": "Repeated the number of students who said winter instead of solving for spring.",
+      "A": "Made an arithmetic slip while subtracting from the total.",
+      "D": "Added the fall and winter counts instead of subtracting all three from the total."
     }
   },
   {
@@ -5690,9 +5690,9 @@
     "answer": "D",
     "why": {
       "D": "The highest score is 95 and the lowest is 68: 95 - 68 = 27.",
-      "C": "used the second-lowest score instead of the true lowest",
-      "A": "subtracted two scores that were not the actual maximum and minimum",
-      "B": "made an arithmetic slip while subtracting 68 from 95"
+      "C": "Used the second-lowest score instead of the true lowest.",
+      "A": "Subtracted two scores that were not the actual maximum and minimum.",
+      "B": "Made an arithmetic slip while subtracting 68 from 95."
     }
   },
   {
@@ -5722,9 +5722,9 @@
     "answer": "A",
     "why": {
       "A": "Total books read: 0(6) + 1(10) + 2(14) + 3(7) + 4(3) = 0+10+28+21+12 = 71. Mean = 71 / 40 = 1.775, which rounds to 1.8.",
-      "B": "used the median instead of the mean",
-      "D": "divided the total books by the number of categories instead of the number of students",
-      "C": "excluded the 6 students who read 0 books from the total count"
+      "B": "Used the median instead of the mean.",
+      "D": "Divided the total books by the number of categories instead of the number of students.",
+      "C": "Excluded the 6 students who read 0 books from the total count."
     }
   },
   {
@@ -5754,9 +5754,9 @@
     "answer": "A",
     "why": {
       "A": "Students who play soccer: 20 + 15 = 35. Total students: 50. Percent: 35/50 = 70%.",
-      "B": "used only the boys' totals instead of all students in the denominator",
-      "C": "added the two \"play soccer\" rows and rounded up incorrectly",
-      "D": "confused the total number of boys with the total number of all students"
+      "B": "Used only the boys' totals instead of all students in the denominator.",
+      "C": "Added the two \"play soccer\" rows and rounded up incorrectly.",
+      "D": "Confused the total number of boys with the total number of all students."
     }
   },
   {
@@ -5786,9 +5786,9 @@
     "answer": "B",
     "why": {
       "B": "The increase from Q3 to Q4 is $35,000, on a base of $35,000: 35000/35000 = 1.00, or 100%.",
-      "A": "divided the increase by the Q4 value instead of the Q3 value",
-      "D": "divided the increase by half of the Q3 value by mistake",
-      "C": "made an arithmetic slip while computing the percent"
+      "A": "Divided the increase by the Q4 value instead of the Q3 value.",
+      "D": "Divided the increase by half of the Q3 value by mistake.",
+      "C": "Made an arithmetic slip while computing the percent."
     }
   },
   {
@@ -5851,8 +5851,8 @@
     "why": {
       "D": "20% of 50 is 0.20 × 50 = 10.",
       "C": "This applies a 10% change rather than the 20% the problem gives.",
-      "B": "misplaced the decimal, treating 20% as 0.02 instead of 0.20",
-      "A": "misplaced the decimal by an additional place"
+      "B": "Misplaced the decimal, treating 20% as 0.02 instead of 0.20.",
+      "A": "Misplaced the decimal by an additional place."
     }
   },
   {
@@ -5882,9 +5882,9 @@
     "answer": "C",
     "why": {
       "C": "New population = 200 × 1.15 = 230.",
-      "B": "added 15 directly instead of 15% of 200",
-      "A": "misplaced the decimal, adding 1.5% instead of 15%",
-      "D": "added 15% of 200 a second time by mistake"
+      "B": "Added 15 directly instead of 15% of 200.",
+      "A": "Misplaced the decimal, adding 1.5% instead of 15%.",
+      "D": "Added 15% of 200 a second time by mistake."
     }
   },
   {
@@ -5914,9 +5914,9 @@
     "answer": "D",
     "why": {
       "D": "40% off means paying 60% of the price: 90 × 0.60 = 54.",
-      "A": "reported the dollar amount of the discount instead of the sale price",
-      "C": "made an arithmetic slip while multiplying 90 by 0.6",
-      "B": "used a 50% discount instead of 40%"
+      "A": "Reported the dollar amount of the discount instead of the sale price.",
+      "C": "Made an arithmetic slip while multiplying 90 by 0.6.",
+      "B": "Used a 50% discount instead of 40%."
     }
   },
   {
@@ -5946,9 +5946,9 @@
     "answer": "C",
     "why": {
       "C": "Apply the discount first: 80 × 0.75 = 60. Then apply the 10% increase to that new price: 60 × 1.10 = 66.",
-      "D": "combined 25% off and 10% on into a single 15% decrease instead of applying the changes one after another",
-      "A": "applied the discount but forgot to add the restocking fee",
-      "B": "subtracted $25 as a flat amount instead of 25% of the price"
+      "D": "Combined 25% off and 10% on into a single 15% decrease instead of applying the changes one after another.",
+      "A": "Applied the discount but forgot to add the restocking fee.",
+      "B": "Subtracted $25 as a flat amount instead of 25% of the price."
     }
   },
   {
@@ -5978,9 +5978,9 @@
     "answer": "A",
     "why": {
       "A": "The unit rate is $2 / 4 = $0.50 per apple. 10 apples cost 10 × $0.50 = $5.",
-      "C": "used $2 as the price per apple instead of finding the unit rate",
-      "D": "multiplied the total cost by 10 instead of finding the unit rate first",
-      "B": "made an arithmetic slip while multiplying the unit rate by 10"
+      "C": "Used $2 as the price per apple instead of finding the unit rate.",
+      "D": "Multiplied the total cost by 10 instead of finding the unit rate first.",
+      "B": "Made an arithmetic slip while multiplying the unit rate by 10."
     }
   },
   {
@@ -6010,9 +6010,9 @@
     "answer": "A",
     "why": {
       "A": "The scale factor is 10/4 = 2.5. New height = 6 × 2.5 = 15 inches.",
-      "B": "made an arithmetic slip while multiplying 6 by the scale factor",
-      "D": "used the new width, 10, as the scale factor itself instead of 10/4",
-      "C": "used an incorrect scale factor of about 3.33 instead of 2.5"
+      "B": "Made an arithmetic slip while multiplying 6 by the scale factor.",
+      "D": "Used the new width, 10, as the scale factor itself instead of 10/4.",
+      "C": "Used an incorrect scale factor of about 3.33 instead of 2.5."
     }
   },
   {
@@ -6042,9 +6042,9 @@
     "answer": "D",
     "why": {
       "D": "Multiply the map distance by the scale: 3.5 inches × 25 miles/inch = 87.5 miles.",
-      "B": "added 25 and 3.5 instead of multiplying",
-      "A": "divided 25 by 3.5 instead of multiplying",
-      "C": "rounded 3.5 down to 3 before multiplying by the scale"
+      "B": "Added 25 and 3.5 instead of multiplying.",
+      "A": "Divided 25 by 3.5 instead of multiplying.",
+      "C": "Rounded 3.5 down to 3 before multiplying by the scale."
     }
   },
   {
@@ -6074,9 +6074,9 @@
     "answer": "B",
     "why": {
       "B": "Perimeter scales the same way linear measurements do: 18 × (5/2) = 45.",
-      "A": "inverted the scale ratio, multiplying by 2/5 instead of 5/2",
-      "C": "made an arithmetic slip while multiplying 18 by 5/2",
-      "D": "doubled the correct perimeter by mistake"
+      "A": "Inverted the scale ratio, multiplying by 2/5 instead of 5/2.",
+      "C": "Made an arithmetic slip while multiplying 18 by 5/2.",
+      "D": "Doubled the correct perimeter by mistake."
     }
   },
   {
@@ -6106,9 +6106,9 @@
     "answer": "B",
     "why": {
       "B": "There are 60 minutes in an hour, so 180 / 60 = 3 hours.",
-      "A": "divided by 100 instead of 60",
-      "D": "multiplied by 60 instead of dividing by it",
-      "C": "divided by 10 instead of 60"
+      "A": "Divided by 100 instead of 60.",
+      "D": "Multiplied by 60 instead of dividing by it.",
+      "C": "Divided by 10 instead of 60."
     }
   },
   {
@@ -6138,9 +6138,9 @@
     "answer": "A",
     "why": {
       "A": "The rate is 240/4 = 60 mph. In 7 hours: 60 × 7 = 420 miles.",
-      "C": "used a rounded rate instead of the exact unit rate before multiplying",
-      "D": "multiplied 240 by 7 directly instead of finding the unit rate first",
-      "B": "made an arithmetic slip while multiplying the unit rate by 7"
+      "C": "Used a rounded rate instead of the exact unit rate before multiplying.",
+      "D": "Multiplied 240 by 7 directly instead of finding the unit rate first.",
+      "B": "Made an arithmetic slip while multiplying the unit rate by 7."
     }
   },
   {
@@ -6170,9 +6170,9 @@
     "answer": "B",
     "why": {
       "B": "Time = total pages / rate = 100 / 8 = 12.5 minutes.",
-      "A": "reported the rate itself instead of solving for the time",
-      "D": "multiplied 100 by 8 instead of dividing",
-      "C": "made an arithmetic slip while dividing 100 by 8"
+      "A": "Reported the rate itself instead of solving for the time.",
+      "D": "Multiplied 100 by 8 instead of dividing.",
+      "C": "Made an arithmetic slip while dividing 100 by 8."
     }
   },
   {
@@ -6202,9 +6202,9 @@
     "answer": "C",
     "why": {
       "C": "The unit rate is 45 ÷ 2 = 22.5 pages per minute. Time = 315 ÷ 22.5 = 14 minutes.",
-      "B": "divided the total pages by 45 without accounting for the 2 minutes per cycle",
-      "D": "multiplied the total pages by 2 instead of dividing by the rate",
-      "A": "used 45 × 2 as the rate instead of 45 ÷ 2"
+      "B": "Divided the total pages by 45 without accounting for the 2 minutes per cycle.",
+      "D": "Multiplied the total pages by 2 instead of dividing by the rate.",
+      "A": "Used 45 × 2 as the rate instead of 45 ÷ 2."
     }
   },
   {
@@ -6234,9 +6234,9 @@
     "answer": "C",
     "why": {
       "C": "Combined rate = 1/6 + 1/3 = 1/6 + 2/6 = 3/6 = 1/2 tank per hour, so the tank fills in 2 hours.",
-      "A": "averaged the two individual times instead of combining their rates",
-      "B": "made an arithmetic slip while combining the two rates",
-      "D": "averaged the two times directly, (6+3)/2, instead of combining rates"
+      "A": "Averaged the two individual times instead of combining their rates.",
+      "B": "Made an arithmetic slip while combining the two rates.",
+      "D": "Averaged the two times directly, (6+3)/2, instead of combining rates."
     }
   },
   {
@@ -6266,9 +6266,9 @@
     "answer": "C",
     "why": {
       "C": "\"Five more than a number\" is x + 5 = 12, so x = 7.",
-      "D": "added 5 to 12 instead of subtracting it",
-      "A": "divided 12 by 5 instead of subtracting",
-      "B": "reported the given number 5 itself instead of solving for the unknown"
+      "D": "Added 5 to 12 instead of subtracting it.",
+      "A": "Divided 12 by 5 instead of subtracting.",
+      "B": "Reported the given number 5 itself instead of solving for the unknown."
     }
   },
   {
@@ -6298,9 +6298,9 @@
     "answer": "D",
     "why": {
       "D": "\"Twice a number, decreased by 7\" is 2n - 7 = 15. Solving: 2n = 22, n = 11.",
-      "B": "subtracted 15 from 7 and dropped the negative sign instead of solving the equation",
-      "C": "added 7 to 15 then divided by 3 instead of by 2",
-      "A": "made an arithmetic slip while isolating the number"
+      "B": "Subtracted 15 from 7 and dropped the negative sign instead of solving the equation.",
+      "C": "Added 7 to 15 then divided by 3 instead of by 2.",
+      "A": "Made an arithmetic slip while isolating the number."
     }
   },
   {
@@ -6330,9 +6330,9 @@
     "answer": "A",
     "why": {
       "A": "n + 9 = 4n, so 9 = 3n, and n = 3.",
-      "D": "reported the constant from the equation instead of solving for the number",
-      "B": "reported the coefficient from the equation instead of solving for the number",
-      "C": "made an arithmetic slip while dividing 9 by 3"
+      "D": "Reported the constant from the equation instead of solving for the number.",
+      "B": "Reported the coefficient from the equation instead of solving for the number.",
+      "C": "Made an arithmetic slip while dividing 9 by 3."
     }
   },
   {
@@ -6362,9 +6362,9 @@
     "answer": "B",
     "why": {
       "B": "Translate each phrase: 'eight more than three times a number' is 3x + 8; '5 less than the number' is x - 5. Set 3x + 8 = x - 5, so 2x = -13 and x = -6.5.",
-      "C": "translated '5 less than the number' as 5 - x instead of x - 5",
-      "A": "translated 'eight more than three times a number' as 3(x + 8) instead of 3x + 8",
-      "D": "solved correctly but dropped the negative sign"
+      "C": "Translated '5 less than the number' as 5 - x instead of x - 5.",
+      "A": "Translated 'eight more than three times a number' as 3(x + 8) instead of 3x + 8.",
+      "D": "Solved correctly but dropped the negative sign."
     }
   },
   {
@@ -6394,9 +6394,9 @@
     "answer": "B",
     "why": {
       "B": "\"A number increased by 20% of itself\" is n + 0.20n = 1.20n = 54, so n = 45.",
-      "A": "found 20% of 54 and subtracted it from 54 instead of dividing by 1.2",
-      "D": "multiplied 54 by 1.2 instead of dividing by it",
-      "C": "made an arithmetic slip while dividing 54 by 1.2"
+      "A": "Found 20% of 54 and subtracted it from 54 instead of dividing by 1.2.",
+      "D": "Multiplied 54 by 1.2 instead of dividing by it.",
+      "C": "Made an arithmetic slip while dividing 54 by 1.2."
     }
   },
   {
@@ -6426,9 +6426,9 @@
     "answer": "D",
     "why": {
       "D": "Multiplying powers with the same base adds the exponents: x⁵ · x³ = x^(5+3) = x^8.",
-      "A": "multiplied the exponents instead of adding them",
-      "B": "subtracted the exponents instead of adding them",
-      "C": "added an extra coefficient of 2 that doesn't belong in the product"
+      "A": "Multiplied the exponents instead of adding them.",
+      "B": "Subtracted the exponents instead of adding them.",
+      "C": "Added an extra coefficient of 2 that doesn't belong in the product."
     }
   },
   {
@@ -6458,9 +6458,9 @@
     "answer": "A",
     "why": {
       "A": "72 = 36 × 2, and 36 is the largest perfect square factor of 72. √72 = √36 × √2 = 6√2.",
-      "B": "forgot to take the square root of the perfect-square factor pulled out",
-      "C": "swapped the outer coefficient and the remaining radicand",
-      "D": "chose factors that were not the largest perfect square available"
+      "B": "Forgot to take the square root of the perfect-square factor pulled out.",
+      "C": "Swapped the outer coefficient and the remaining radicand.",
+      "D": "Chose factors that were not the largest perfect square available."
     }
   },
   {
@@ -6490,9 +6490,9 @@
     "answer": "A",
     "why": {
       "A": "8^(2/3) = (8^(1/3))² = 2² = 4.",
-      "C": "squared 8 directly instead of taking the cube root first",
-      "B": "added the numerator and denominator of the exponent to 8 instead of applying it as a root and a power",
-      "D": "misread the exponent 2/3 as multiplying 8 by 2 and dividing by 3"
+      "C": "Squared 8 directly instead of taking the cube root first.",
+      "B": "Added the numerator and denominator of the exponent to 8 instead of applying it as a root and a power.",
+      "D": "Misread the exponent 2/3 as multiplying 8 by 2 and dividing by 3."
     }
   },
   {
@@ -6522,8 +6522,8 @@
     "answer": "B",
     "why": {
       "B": "3/4 of 60 is 60 × 3/4 = 45.",
-      "A": "divided 60 by 3 instead of multiplying by 3/4",
-      "D": "divided by 3 then multiplied by 4 instead of the reverse",
+      "A": "Divided 60 by 3 instead of multiplying by 3/4.",
+      "D": "Divided by 3 then multiplied by 4 instead of the reverse.",
       "C": "This uses the ratio 4/5 rather than the 3/4 the problem states."
     }
   },
@@ -6554,9 +6554,9 @@
     "answer": "D",
     "why": {
       "D": "Flour and sugar scale together in the ratio 5:3, so flour = sugar × (5/3) = 24 × 5/3 = 40 cups.",
-      "A": "used the reciprocal ratio 3/5 instead of 5/3",
-      "B": "subtracted the ratio difference from the sugar amount instead of scaling by the ratio",
-      "C": "added 3 to 24 instead of multiplying by the ratio"
+      "A": "Used the reciprocal ratio 3/5 instead of 5/3.",
+      "B": "Subtracted the ratio difference from the sugar amount instead of scaling by the ratio.",
+      "C": "Added 3 to 24 instead of multiplying by the ratio."
     }
   },
   {
@@ -6586,9 +6586,9 @@
     "answer": "C",
     "why": {
       "C": "The ratio has 4+2+1 = 7 total parts. Sugar is 2 parts: 21 × (2/7) = 6 cups.",
-      "A": "used butter's 1 part instead of sugar's 2 parts",
-      "D": "used flour's 4 parts instead of sugar's 2 parts",
-      "B": "divided the total by the number of ingredients (3) instead of the number of parts (7)"
+      "A": "Used butter's 1 part instead of sugar's 2 parts.",
+      "D": "Used flour's 4 parts instead of sugar's 2 parts.",
+      "B": "Divided the total by the number of ingredients (3) instead of the number of parts (7)."
     }
   },
   {
@@ -6618,9 +6618,9 @@
     "answer": "D",
     "why": {
       "D": "Let the integers be n and n+1: n + (n+1) = 45, so 2n = 44 and n = 22. The larger is 23.",
-      "C": "reported the smaller integer instead of the larger one",
-      "B": "made an arithmetic slip while solving for the smaller integer",
-      "A": "divided the sum by 4 instead of setting up 2n + 1 = 45"
+      "C": "Reported the smaller integer instead of the larger one.",
+      "B": "Made an arithmetic slip while solving for the smaller integer.",
+      "A": "Divided the sum by 4 instead of setting up 2n + 1 = 45."
     }
   },
   {
@@ -6650,9 +6650,9 @@
     "answer": "A",
     "why": {
       "A": "Let the integers be n, n+2, n+4: 3n + 6 = 96, so n = 30.",
-      "C": "reported the middle integer instead of the smallest",
-      "D": "reported the largest integer instead of the smallest",
-      "B": "treated the integers as regular consecutive integers instead of consecutive even integers"
+      "C": "Reported the middle integer instead of the smallest.",
+      "D": "Reported the largest integer instead of the smallest.",
+      "B": "Treated the integers as regular consecutive integers instead of consecutive even integers."
     }
   },
   {
@@ -6682,9 +6682,9 @@
     "answer": "B",
     "why": {
       "B": "45/60 = 0.75, which is 75%.",
-      "A": "reported the part itself instead of computing the percent",
-      "C": "made an arithmetic slip while dividing 45 by 60",
-      "D": "reversed which number is the part and which is the whole"
+      "A": "Reported the part itself instead of computing the percent.",
+      "C": "Made an arithmetic slip while dividing 45 by 60.",
+      "D": "Reversed which number is the part and which is the whole."
     }
   },
   {
@@ -6714,9 +6714,9 @@
     "answer": "C",
     "why": {
       "C": "The increase is $12 on an original price of $40: 12/40 = 0.30, or 30%.",
-      "B": "divided the increase by the new price instead of the original price",
-      "A": "reported the dollar increase instead of converting it to a percent",
-      "D": "confused the percent increase with the original price"
+      "B": "Divided the increase by the new price instead of the original price.",
+      "A": "Reported the dollar increase instead of converting it to a percent.",
+      "D": "Confused the percent increase with the original price."
     }
   },
   {
@@ -6746,9 +6746,9 @@
     "answer": "B",
     "why": {
       "B": "Sorted, the data is 3, 7, 8, 12, 15. The middle value is 8.",
-      "A": "reported the value just below the median instead of the median itself",
-      "C": "computed the mean instead of the median",
-      "D": "reported the largest value in the data set instead of the median"
+      "A": "Reported the value just below the median instead of the median itself.",
+      "C": "Computed the mean instead of the median.",
+      "D": "Reported the largest value in the data set instead of the median."
     }
   },
   {
@@ -6778,9 +6778,9 @@
     "answer": "A",
     "why": {
       "A": "The total sum must be 20 × 5 = 100. The four known values sum to 80, so the fifth is 100 - 80 = 20.",
-      "B": "made an arithmetic slip while adding the four known values",
-      "C": "repeated one of the given numbers instead of solving for the fifth",
-      "D": "multiplied the mean by 1.5 instead of using it to find the total sum"
+      "B": "Made an arithmetic slip while adding the four known values.",
+      "C": "Repeated one of the given numbers instead of solving for the fifth.",
+      "D": "Multiplied the mean by 1.5 instead of using it to find the total sum."
     }
   },
   {
@@ -6810,9 +6810,9 @@
     "answer": "B",
     "why": {
       "B": "The old total is 78 × 20 = 1560. Adding the new score: 1659. Dividing by 21 students: 1659/21 = 79.0.",
-      "A": "assumed the new score wouldn't change the mean at all",
-      "C": "divided by 20 instead of 21 after adding the new score",
-      "D": "averaged only the old mean and the new score directly, ignoring the other 20 students"
+      "A": "Assumed the new score wouldn't change the mean at all.",
+      "C": "Divided by 20 instead of 21 after adding the new score.",
+      "D": "Averaged only the old mean and the new score directly, ignoring the other 20 students."
     }
   },
   {
@@ -6842,9 +6842,9 @@
     "answer": "C",
     "why": {
       "C": "Bike percentage: 100 - 45 - 30 - 15 = 10%. Number of students: 400 × 0.10 = 40.",
-      "D": "used the walking percentage instead of solving for the bike percentage",
-      "B": "misread the car percentage as the bike percentage",
-      "A": "reported the bike percentage itself instead of converting it to a count of students"
+      "D": "Used the walking percentage instead of solving for the bike percentage.",
+      "B": "Misread the car percentage as the bike percentage.",
+      "A": "Reported the bike percentage itself instead of converting it to a count of students."
     }
   },
   {
@@ -6874,9 +6874,9 @@
     "answer": "D",
     "why": {
       "D": "The range is the maximum value minus the minimum value: 200 - 90 = 110.",
-      "B": "left out Wednesday's low value, comparing only the remaining four days when finding the minimum",
-      "C": "left out Thursday's peak value, comparing only the remaining four days when finding the maximum",
-      "A": "used the difference between the two closest values instead of the true maximum and minimum"
+      "B": "Left out Wednesday's low value, comparing only the remaining four days when finding the minimum.",
+      "C": "Left out Thursday's peak value, comparing only the remaining four days when finding the maximum.",
+      "A": "Used the difference between the two closest values instead of the true maximum and minimum."
     }
   },
   {
@@ -6938,9 +6938,9 @@
     "answer": "C",
     "why": {
       "C": "There are 4 + 3 = 7 favorable outcomes (red or green) out of 4 + 5 + 3 = 12 total marbles, giving 7/12.",
-      "A": "found the probability of drawing green only, not red or green",
-      "B": "found the probability of drawing red only, not red or green",
-      "D": "used the count of red and green marbles as the denominator instead of the total number of marbles"
+      "A": "Found the probability of drawing green only, not red or green.",
+      "B": "Found the probability of drawing red only, not red or green.",
+      "D": "Used the count of red and green marbles as the denominator instead of the total number of marbles."
     }
   },
   {
