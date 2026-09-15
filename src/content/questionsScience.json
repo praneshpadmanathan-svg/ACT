@@ -9271,5 +9271,335 @@
       "C": "Steam alteration is what Geologist 3’s maar would produce, so it favours that position rather than Geologist 1’s.",
       "D": "A fault beneath the site is what Geologist 2 needs for the alternative source of deformation."
     }
+  },
+  {
+    "id": "s224",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp10",
+    "context": "A student asks whether the period would still be independent of bob mass if the pendulum were released from 45°. Based on Experiments 1–3, this question:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "cannot be answered, because no trial varied the mass at any angle other than 10°."
+      },
+      {
+        "id": "B",
+        "text": "can be answered yes, because Trial 13 released the pendulum from 45°."
+      },
+      {
+        "id": "C",
+        "text": "can be answered no, because the period at 45° differs from the period at 10°."
+      },
+      {
+        "id": "D",
+        "text": "can be answered yes, because Experiment 2 varied the mass across four trials."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Experiment 2 varied mass only at 10°, and Experiment 3 varied angle only at 100 g, so the combination was never tested.",
+      "B": "Trial 13 does use 45°, but it holds the mass at 100 g, so it says nothing about whether mass matters there.",
+      "C": "The period does rise at 45°, but that is the effect of the angle, not evidence about the effect of mass at that angle.",
+      "D": "Experiment 2 varied mass at a single release angle of 10°, so its result cannot be carried over to 45°."
+    }
+  },
+  {
+    "id": "s225",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp2",
+    "context": "Based on Table 1 alone, which species would germinate best in soil at 60% moisture?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Species A, whose count was the highest of the three at 40% moisture."
+      },
+      {
+        "id": "B",
+        "text": "Species B, which germinated best at the lowest moisture level tested."
+      },
+      {
+        "id": "C",
+        "text": "Species C, whose count was still rising at the highest level tested."
+      },
+      {
+        "id": "D",
+        "text": "It cannot be determined, because 60% lies beyond the range that was tested."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Species A peaks at 40% and falls by 50%, so its own trend argues against it, and 60% is outside the table anyway.",
+      "B": "Species B peaks at 30% and has fallen to 29 seeds by 50%, the steepest decline of the three.",
+      "C": "Species C is the tempting choice, but a count still rising at the last point tested is not evidence about a level past it.",
+      "D": "Correct — the table stops at 50%, and two of the three species have already turned downward, so nothing in it fixes what happens at 60%."
+    }
+  },
+  {
+    "id": "s226",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp2",
+    "context": "For Species B, the moisture level with the greatest germination and the level with the greatest shoot height are, respectively:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "30% and 30%."
+      },
+      {
+        "id": "B",
+        "text": "40% and 40%."
+      },
+      {
+        "id": "C",
+        "text": "30% and 40%."
+      },
+      {
+        "id": "D",
+        "text": "40% and 30%."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Species B germinates best at 30% (88 seeds) and grows tallest at 30% as well (41 mm).",
+      "B": "At 40% Species B falls to 61 seeds and 30 mm, below its values at 30% in both of the tables.",
+      "C": "The germination figure is right, but shoot height peaks at 30% too, not at 40%.",
+      "D": "Both halves are wrong: 40% is the peak for neither measure in Species B."
+    }
+  },
+  {
+    "id": "s227",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp22",
+    "context": "Do the results show whether sand would still take in water fastest if all three soils had begun the test wetter than they did?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because Table 1 reports cumulative infiltration at five separate times."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because the three soils were tested on the same morning at one station."
+      },
+      {
+        "id": "C",
+        "text": "No, because every soil was tested at the same single starting water content."
+      },
+      {
+        "id": "D",
+        "text": "No, because Table 3 reports a rate rather than a cumulative depth of water."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Repeated readings during one test show how infiltration changes with time, not how it would change with a wetter start.",
+      "B": "Testing all three at one time and place is what makes the comparison fair; it does not extend the result to other conditions.",
+      "C": "Correct — starting water content was held fixed, so the experiment has no trial at a wetter start to compare against.",
+      "D": "Table 3 does report a rate, but rates and depths are interchangeable here; the missing piece is a second starting condition."
+    }
+  },
+  {
+    "id": "s228",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp22",
+    "context": "Across the three soils in Table 2, as clay content increases, bulk density:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "decreases, then increases."
+      },
+      {
+        "id": "B",
+        "text": "increases throughout."
+      },
+      {
+        "id": "C",
+        "text": "decreases throughout."
+      },
+      {
+        "id": "D",
+        "text": "increases, then decreases."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — clay content runs 4% → 19% → 52% while bulk density runs 1.55 → 1.32 → 1.41 g/cm³.",
+      "B": "Bulk density falls from sand to loam before rising again, so it does not climb throughout.",
+      "C": "Bulk density falls only over the first step; the clay soil is denser than the loam.",
+      "D": "This reverses the order: the fall comes first and the rise second."
+    }
+  },
+  {
+    "id": "s229",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp22",
+    "context": "Which property in Table 2 changes in step with the final-interval infiltration rates in Table 3 across all three soils?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Clay content, which rises as the infiltration rate falls."
+      },
+      {
+        "id": "B",
+        "text": "Bulk density, which rises as the infiltration rate falls."
+      },
+      {
+        "id": "C",
+        "text": "Organic matter, which rises as the infiltration rate falls."
+      },
+      {
+        "id": "D",
+        "text": "None of the three, since each one varies independently of rate."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — clay content runs 4% → 19% → 52% as the rate runs 180 → 66 → 18 mm/hr, a clean inverse order.",
+      "B": "Bulk density runs 1.55 → 1.32 → 1.41, which is not in order with the falling rates.",
+      "C": "Organic matter runs 0.8 → 3.6 → 2.1, rising and then falling while the rate only falls.",
+      "D": "One property does track the rate across all three soils, so this goes too far."
+    }
+  },
+  {
+    "id": "s230",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp19",
+    "context": "Do the three studies establish that these cuttings had more stomata on their lower leaf surfaces than on their upper surfaces?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because Study 3 counted the pores on each surface separately."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because Study 2 showed water loss falling as leaves were removed."
+      },
+      {
+        "id": "C",
+        "text": "No, because no stomata were counted, though Study 3 is consistent with it."
+      },
+      {
+        "id": "D",
+        "text": "No, because Study 3 shows the upper surfaces losing the most water."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Study 3 coated surfaces and weighed the tubes; at no point were pores counted on either surface.",
+      "B": "Study 2 compares whole leaves against one another and never distinguishes the two surfaces of a leaf.",
+      "C": "Correct — coating the lower surfaces cuts loss far more than coating the upper ones, which fits the claim without measuring it.",
+      "D": "Study 3 shows the reverse: coating the lower surfaces produced much the larger reduction."
+    }
+  },
+  {
+    "id": "s231",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp19",
+    "context": "Which pair of conditions in Table 1 differ in the lamp alone, and so isolate the effect of light on water loss?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Still air with the lamp on and still air in the dark."
+      },
+      {
+        "id": "B",
+        "text": "Still air with the lamp on and moving air with the lamp on."
+      },
+      {
+        "id": "C",
+        "text": "Moving air with the lamp on and still air in the dark."
+      },
+      {
+        "id": "D",
+        "text": "The humid chamber with the lamp on and still air in the dark."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — both are still air, so the drop from 1.40 g to 0.60 g can only be the lamp being switched off.",
+      "B": "Both of these have the lamp on; what changes between them is the air movement.",
+      "C": "These differ in two ways at once, in air movement and in light, so neither effect is isolated.",
+      "D": "These differ in humidity and in light together, so the 0.45 g and 0.60 g cannot be attributed to either alone."
+    }
+  },
+  {
+    "id": "s232",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp21",
+    "context": "In Experiment 1, the cycles to first crack for an 18% porosity core is closest to what fraction of the figure for a 4% core?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1/7"
+      },
+      {
+        "id": "B",
+        "text": "1/4"
+      },
+      {
+        "id": "C",
+        "text": "1/3"
+      },
+      {
+        "id": "D",
+        "text": "2/3"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 30 cycles against 210 cycles is 30/210, which reduces to about one seventh.",
+      "B": "One quarter of 210 would be about 53 cycles, well above the 30 recorded at 18% porosity.",
+      "C": "One third of 210 is 70 cycles, which is the figure for the 12% core rather than the 18% core.",
+      "D": "Two thirds of 210 is 140 cycles, close to the 8% figure and more than four times the right value."
+    }
+  },
+  {
+    "id": "s233",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp21",
+    "context": "Which comparison isolates the role of water in the cracking, holding everything else constant?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Experiment 2 against Experiment 3 at the same minimum temperature."
+      },
+      {
+        "id": "B",
+        "text": "Experiment 1 against Experiment 2 at the same core porosity."
+      },
+      {
+        "id": "C",
+        "text": "The 4% core against the 18% core within Experiment 1 alone."
+      },
+      {
+        "id": "D",
+        "text": "The −2 °C row against the −20 °C row within Experiment 3 alone."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — both use 12% porosity cores cycled to the same minimum, and only the soaking differs between them.",
+      "B": "These differ in the minimum temperature as well, since Experiment 1 held it at −10 °C throughout.",
+      "C": "Both of these cores were soaked, so the comparison shows the effect of porosity, not of water.",
+      "D": "Both of these cores were dried, so neither one has water in its pores to begin with."
+    }
   }
 ]
