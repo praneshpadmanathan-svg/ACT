@@ -141,7 +141,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "governmental."
+        "text": "having to do with government."
       },
       {
         "id": "B",
@@ -149,19 +149,19 @@
       },
       {
         "id": "C",
-        "text": "authoritative."
+        "text": "carrying authority over others."
       },
       {
         "id": "D",
-        "text": "reluctant."
+        "text": "reluctant and unwilling."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "No government context is present.",
+      "A": "No government context is present. The paragraph is about wallpaper, boxes and what to keep.",
       "B": "Correct — the following sentence lists wallpaper, boxes, and decisions about what to keep.",
-      "C": "Nadia is not asserting authority over anyone.",
-      "D": "Her alertness is described as arriving readily, not reluctantly."
+      "C": "Nadia is not asserting authority over anyone; she is cataloguing tasks in an entryway.",
+      "D": "Her alertness is described as arriving readily, not as something resisted."
     }
   },
   {
@@ -207,7 +207,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "smiling nervously beside a bus."
+        "text": "smiling nervously beside a bus at the station."
       },
       {
         "id": "B",
@@ -215,19 +215,19 @@
       },
       {
         "id": "C",
-        "text": "standing with her mother on a beach."
+        "text": "standing with her mother on a beach in Ontario."
       },
       {
         "id": "D",
-        "text": "holding a schedule board."
+        "text": "holding a schedule board he cannot read."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The passage explicitly says he was not smiling.",
+      "A": "The passage says outright that he was not smiling; the narrator reads him as terrified.",
       "B": "Correct — \"a coat too large for him\" and \"holding a suitcase with both hands.\"",
-      "C": "That describes a different photograph in the box.",
-      "D": "The schedule board is behind him and too blurred to read."
+      "C": "That describes a different photograph from the same shoebox, among the unremarkable ones.",
+      "D": "The schedule board is behind him and too blurred to read; what he holds is the suitcase."
     }
   },
   {
@@ -240,7 +240,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "indicate that the property has become valuable in the years since they arrived."
+        "text": "indicate that the property has become valuable in the decades since the family arrived in Dearborn."
       },
       {
         "id": "B",
@@ -372,7 +372,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "demonstrate that cities were healthier before automobiles."
+        "text": "demonstrate that cities were healthier before the automobile arrived to spread them out."
       },
       {
         "id": "B",
@@ -380,19 +380,19 @@
       },
       {
         "id": "C",
-        "text": "argue that streetcars should be reintroduced."
+        "text": "argue that streetcars should be reintroduced along the old radial lines."
       },
       {
         "id": "D",
-        "text": "establish the chronology of European urban development."
+        "text": "establish the chronology of European urban development from the medieval period onward."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "Health is never discussed.",
+      "A": "Health is never discussed. Both examples are about radius, not about how it felt to live inside one.",
       "B": "Correct — both examples show settlements expanding to a new radius that still takes about thirty minutes to cross.",
-      "C": "No policy recommendation about streetcars is made.",
-      "D": "Chronology is incidental to the argument."
+      "C": "No policy recommendation about streetcars is made; they are cited as a stage in the same pattern.",
+      "D": "Chronology is incidental. The three eras are offered because each repeats the same half hour."
     }
   },
   {
@@ -409,23 +409,23 @@
       },
       {
         "id": "B",
-        "text": "commuters consistently underestimate how long their trips take."
+        "text": "commuters consistently underestimate how long their own daily trips actually take."
       },
       {
         "id": "C",
-        "text": "travel surveys are generally unreliable."
+        "text": "the travel surveys the claim rests on are generally unreliable."
       },
       {
         "id": "D",
-        "text": "people prefer longer commutes than Marchetti assumed."
+        "text": "people prefer rather longer commutes than Marchetti assumed they would."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the preceding sentence describes commuters \"priced out of the neighborhoods near their jobs.\"",
-      "B": "Estimation error is never raised.",
-      "C": "The critique concerns which populations the data draw on, not the surveys’ accuracy.",
-      "D": "The point is that some travel more than they would prefer."
+      "B": "Estimation error is never raised. The objection is about which populations the data cover.",
+      "C": "The critique concerns whose choices the data capture, not whether the surveys measure accurately.",
+      "D": "The point is the reverse: some travel farther than they would prefer, because they were priced out."
     }
   },
   {
@@ -471,7 +471,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "accommodation for people with disabilities."
+        "text": "the accommodations made for people with disabilities."
       },
       {
         "id": "B",
@@ -479,19 +479,19 @@
       },
       {
         "id": "C",
-        "text": "the affordability of housing near transit."
+        "text": "the affordability of housing built close to transit stops."
       },
       {
         "id": "D",
-        "text": "the ease of obtaining a driver’s license."
+        "text": "the ease with which a driver’s licence can be obtained."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "A common meaning of the word, but not the planning sense used here.",
+      "A": "A common meaning of the word, but not the planning sense the paragraph defines.",
       "B": "Correct — the paragraph defines it as what people \"can reach within the time they are already willing to spend.\"",
-      "C": "Affordability appears later as a criticism, not as this definition.",
-      "D": "Irrelevant to the passage."
+      "C": "Affordability appears later as a criticism of the fifteen-minute city, not as this definition.",
+      "D": "Nothing in the passage concerns licensing; the paragraph is about what a trip can reach."
     }
   },
   {
@@ -537,7 +537,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "enthusiastic endorsement of it as a natural law."
+        "text": "enthusiastic endorsement of it as a genuine law of human behaviour."
       },
       {
         "id": "B",
@@ -545,19 +545,19 @@
       },
       {
         "id": "C",
-        "text": "dismissal of it as an outdated hypothesis."
+        "text": "dismissal of it as a hypothesis the data have outdated."
       },
       {
         "id": "D",
-        "text": "indifference to the debate surrounding it."
+        "text": "indifference to the debate that has grown up around it."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The author writes that \"not everyone accepts\" it and calls the question unresolved.",
+      "A": "The author writes that not everyone accepts it and calls the question unresolved.",
       "B": "Correct — the author presents criticisms fairly while arguing its \"practical value does not depend on its being a law.\"",
-      "C": "The author explicitly defends its usefulness.",
-      "D": "The passage engages the debate in detail."
+      "C": "The author explicitly defends its usefulness, which does not depend on its being a law.",
+      "D": "The passage sets out the criticisms at length before answering them, which is not indifference."
     }
   },
   {
@@ -570,7 +570,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "returned to full-time office schedules."
+        "text": "returned to full-time office schedules and longer commutes."
       },
       {
         "id": "B",
@@ -578,19 +578,19 @@
       },
       {
         "id": "C",
-        "text": "relocated to dense fifteen-minute neighborhoods."
+        "text": "relocated into the dense fifteen-minute neighbourhoods described earlier."
       },
       {
         "id": "D",
-        "text": "stopped commuting entirely."
+        "text": "stopped commuting entirely once remote work arrived."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "A return to full-time office work is not described.",
+      "A": "A return to full-time office work is not described; the workers in question still go in some days.",
       "B": "Correct — the final paragraph states exactly this pattern.",
-      "C": "No such relocation is reported.",
-      "D": "The passage describes them as still traveling on some days."
+      "C": "No such relocation is reported. They moved farther out, not closer in.",
+      "D": "The passage describes them as still travelling on the days they go in, which is the whole ambiguity."
     }
   },
   {
@@ -607,23 +607,23 @@
       },
       {
         "id": "B",
-        "text": "catalogue the chemical processes by which film stock decays."
+        "text": "catalogue the chemical processes by which nitrate and acetate stock decay over time."
       },
       {
         "id": "C",
-        "text": "criticize audiences who prefer unrestored prints."
+        "text": "criticise the audiences who would rather see a print with its scars left on it."
       },
       {
         "id": "D",
-        "text": "propose new funding for film archives."
+        "text": "propose new funding for the archives doing this work."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the archivist frames decay as an arithmetic certainty and restoration as rescue, while conceding that judgment is involved.",
-      "B": "Decay is described in the opening but serves the argument rather than being the point.",
-      "C": "The author expresses \"some sympathy\" for that objection.",
-      "D": "Funding is never mentioned."
+      "B": "Decay opens the passage but serves the argument for rescue rather than being the point of it.",
+      "C": "The author expresses \"some sympathy\" for that objection before answering it.",
+      "D": "Funding is never mentioned. What the passage asks for is raw scans kept beside graded versions."
     }
   },
   {
@@ -636,7 +636,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "part of the film’s historical texture that must be preserved."
+        "text": "part of the film’s historical texture, and therefore something that must be preserved."
       },
       {
         "id": "B",
@@ -644,19 +644,19 @@
       },
       {
         "id": "C",
-        "text": "evidence of the film’s popularity."
+        "text": "evidence of how widely the film was projected."
       },
       {
         "id": "D",
-        "text": "impossible to remove with current software."
+        "text": "impossible to remove with the software now available."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The author explicitly rejects this position.",
+      "A": "The author rejects this directly: the scratches are the absence of history rather than history.",
       "B": "Correct — \"A tear introduced by a careless projectionist in 1958 tells us about that projectionist, not about the film.\"",
-      "C": "Popularity is never invoked.",
-      "D": "The passage describes removing exactly such damage."
+      "C": "Popularity is never invoked. The projectionist tells us about the projectionist.",
+      "D": "The passage describes removing exactly such damage from the second reel of a 1927 comedy."
     }
   },
   {
@@ -669,7 +669,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "rejecting it as insufficient because restoration should be halted entirely."
+        "text": "rejecting it as insufficient, on the grounds that restoration ought to be halted entirely."
       },
       {
         "id": "B",
@@ -677,19 +677,19 @@
       },
       {
         "id": "C",
-        "text": "dismissing it as irrelevant to questions of grain and color."
+        "text": "dismissing it as irrelevant to the questions of grain and colour B actually raises."
       },
       {
         "id": "D",
-        "text": "arguing that archives should not preserve raw scans."
+        "text": "arguing that archives ought not to keep the raw scans at all."
       }
     ],
     "answer": "B",
     "why": {
       "A": "Passage B states plainly, \"I do not want restoration halted.\"",
       "B": "Correct — B’s central complaint is that judgments \"arrive invisibly\" to streaming viewers, and asks only that they be labeled.",
-      "C": "Documentation is precisely B’s remedy for the grain and color problems.",
-      "D": "B never opposes preserving raw scans."
+      "C": "Documentation is precisely B’s remedy for the grain and colour problems, not something beside them.",
+      "D": "B never opposes preserving raw scans; the complaint is that viewers never learn what was done."
     }
   },
   {
@@ -702,7 +702,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "makes films more expensive to restore."
+        "text": "makes a film considerably more expensive to restore than it needs to be."
       },
       {
         "id": "B",
@@ -710,19 +710,19 @@
       },
       {
         "id": "C",
-        "text": "introduces new scratches into the image."
+        "text": "introduces new scratches and artefacts into the scanned image."
       },
       {
         "id": "D",
-        "text": "cannot be applied consistently across a full film."
+        "text": "cannot be applied consistently from one reel of a film to the next, so the texture shifts mid-picture."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "Cost is never discussed.",
+      "A": "Cost is never discussed in either passage.",
       "B": "Correct — B calls grain \"the physical substrate of the image\" and the smoothed result \"technically sharper and historically falser.\"",
-      "C": "Noise reduction removes rather than adds damage.",
-      "D": "Consistency is not the objection raised."
+      "C": "Noise reduction removes rather than adds; the objection is to what it takes away.",
+      "D": "Consistency is not the objection. B objects that the smoothed result is historically false everywhere it is applied."
     }
   },
   {
@@ -772,23 +772,23 @@
       },
       {
         "id": "B",
-        "text": "the cost of restoration ... the aesthetics of grain"
+        "text": "the rising cost of restoration work ... the aesthetics of photographic grain"
       },
       {
         "id": "C",
-        "text": "the history of nitrate film ... the economics of streaming"
+        "text": "the history of nitrate and acetate film ... the economics of streaming platforms"
       },
       {
         "id": "D",
-        "text": "audience preferences ... archival technique"
+        "text": "what audiences would prefer to see ... the techniques archives use"
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — A opens with \"Every film print is dying\"; B’s stated concern is that judgments \"arrive invisibly.\"",
-      "B": "Neither passage discusses cost.",
-      "C": "Streaming economics are never analyzed.",
-      "D": "This reverses both passages’ actual emphases."
+      "B": "Neither passage discusses cost, and grain is B’s example rather than B’s subject.",
+      "C": "Streaming appears in B only as where viewers meet an unlabelled restoration, and its economics are never analysed.",
+      "D": "This reverses both emphases: A argues from the material and B from what the viewer is not told."
     }
   },
   {
@@ -838,23 +838,23 @@
       },
       {
         "id": "B",
-        "text": "accuse restorers of concealing their methods deliberately."
+        "text": "accuse restorers of having concealed their methods deliberately."
       },
       {
         "id": "C",
-        "text": "demonstrate that digital restoration is technically unreliable."
+        "text": "demonstrate that digital restoration is technically unreliable at high resolutions."
       },
       {
         "id": "D",
-        "text": "introduce the discussion of Technicolor."
+        "text": "introduce the discussion of Technicolor prints that follows."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — B notes it \"suggests the concern is not merely nostalgic,\" citing professional revision as evidence.",
-      "B": "\"Quietly\" indicates low profile, not deliberate concealment; B’s complaint is about labeling to viewers.",
-      "C": "The point concerns aesthetic judgment, not technical failure.",
-      "D": "Technicolor is introduced in the next paragraph by a separate transition."
+      "B": "\"Quietly\" indicates a low profile rather than deliberate concealment; B’s complaint is about what reaches viewers.",
+      "C": "The point concerns aesthetic judgment rather than technical failure — the revised restorations worked as intended.",
+      "D": "Technicolor is introduced in the next paragraph by its own transition, \"Consider color.\""
     }
   },
   {
@@ -867,7 +867,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "abandon the argument for restoration."
+        "text": "abandon the argument for restoration he has been making."
       },
       {
         "id": "B",
@@ -875,19 +875,19 @@
       },
       {
         "id": "C",
-        "text": "agree with critics that restoration should be delayed."
+        "text": "agree with the critics that restoration ought to be delayed until the judgments are better understood."
       },
       {
         "id": "D",
-        "text": "explain why color timing is impossible."
+        "text": "explain why colour timing cannot be done reliably."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The paragraph ends by rejecting inaction as preserving \"nothing at all.\"",
+      "A": "The paragraph ends by rejecting inaction, which the author says preserves nothing at all.",
       "B": "Correct — this is a classic concession that builds credibility before the final rebuttal.",
-      "C": "A argues delay costs irrecoverable frames.",
-      "D": "A treats color timing as interpretive, not impossible."
+      "C": "A argues that every year of delay costs frames that cannot be recovered.",
+      "D": "A treats colour timing as an interpretation to be documented, not as something impossible."
     }
   },
   {
@@ -5169,7 +5169,7 @@
       },
       {
         "id": "D",
-        "text": "less important than the three cities and the divorce behind her"
+        "text": "less important than the three cities, the divorce and the career she rebuilt"
       }
     ],
     "answer": "A",
@@ -5235,7 +5235,7 @@
       },
       {
         "id": "D",
-        "text": "their father had divided his property unfairly between them"
+        "text": "their father had divided what he owned unfairly between the two of them"
       }
     ],
     "answer": "A",
@@ -5953,23 +5953,23 @@
       },
       {
         "id": "B",
-        "text": "establishing that disposable bags are more harmful than reusable ones."
+        "text": "establishing that disposable bags do more environmental harm than reusable ones do."
       },
       {
         "id": "C",
-        "text": "arguing that governments should replace bag charges with bonuses."
+        "text": "arguing that cities would do better to replace their bag charges with bonuses."
       },
       {
         "id": "D",
-        "text": "tracing the history of environmental regulation in cities."
+        "text": "tracing the history of environmental regulation in cities over recent decades."
       }
     ],
     "answer": "A",
     "why": {
       "A": "It opens with the gap between the prediction and the result, weighs two explanations, brings in the bonus experiment to separate them, and closes on what the case does and does not generalise to.",
-      "B": "Environmental harm is never discussed. The passage is about behaviour and incentives.",
-      "C": "Bonuses appear as a comparison that worked worse, which is the opposite of a recommendation.",
-      "D": "No history is given; no dates or jurisdictions are named."
+      "B": "Environmental harm is never discussed. The passage is about behaviour and incentives from beginning to end.",
+      "C": "Bonuses appear as the comparison that worked worse, which is the opposite of a recommendation.",
+      "D": "No history is given, and the passage names neither a date nor a jurisdiction."
     }
   },
   {
@@ -6085,22 +6085,22 @@
       },
       {
         "id": "B",
-        "text": "the bonus was smaller than the charge."
+        "text": "the bonus on offer was smaller than the charge it was compared against."
       },
       {
         "id": "C",
-        "text": "shoppers in those jurisdictions already owned reusable bags."
+        "text": "shoppers in the jurisdictions that tried the bonus already owned reusable bags."
       },
       {
         "id": "D",
-        "text": "the bonus was offered only to shoppers who asked for it."
+        "text": "the bonus was paid out only to those shoppers who thought to ask for it."
       }
     ],
     "answer": "A",
     "why": {
       "A": "The passage says so directly: \"the shopper is asked at the register either way.\" If attention alone were doing the work, the two should have performed alike, and they did not.",
       "B": "Five cents against ten is a difference the first explanation dismisses, since on that account the amount is \"close to irrelevant\".",
-      "C": "The passage never says this, and it would explain a smaller effect for both instruments, not just one.",
+      "C": "The passage never says this, and it would explain a smaller effect for both instruments rather than for one.",
       "D": "Nothing indicates the bonus had to be requested; it is described as given to shoppers who brought their own bags."
     }
   },
@@ -6147,27 +6147,27 @@
     "choices": [
       {
         "id": "A",
-        "text": "presenting a puzzle, weighing two explanations, introducing a case that separates them, and then marking the limits of the finding."
+        "text": "presenting a puzzle, weighing two explanations, introducing a case that separates them, then bounding the finding."
       },
       {
         "id": "B",
-        "text": "listing the effects of several environmental policies in order of size."
+        "text": "listing the measured effects of several different environmental policies in order of the size of each one."
       },
       {
         "id": "C",
-        "text": "defending a single explanation against objections raised in turn."
+        "text": "defending one single explanation of the result against a long series of objections raised in turn."
       },
       {
         "id": "D",
-        "text": "comparing one city’s experience with another’s in detail."
+        "text": "comparing one city’s experience of the charge with another city’s in close detail."
       }
     ],
     "answer": "A",
     "why": {
       "A": "That is the sequence exactly: the gap between prediction and result, the two accounts, the bonus experiment, and the closing paragraphs on cups and on what the case establishes.",
-      "B": "Only bags and cups appear, and they are not ranked.",
-      "C": "The author does not defend one account from the outset; the second is preferred only after the evidence arrives.",
-      "D": "No city is named or described in detail."
+      "B": "Only bags and cups appear, and the passage never ranks them against each other.",
+      "C": "The author does not defend one account from the outset; the second is preferred only once the bonus evidence arrives.",
+      "D": "No city is named or described in detail anywhere in the passage."
     }
   },
   {
@@ -6184,22 +6184,22 @@
       },
       {
         "id": "B",
-        "text": "enthusiastic about applying them wherever possible."
+        "text": "enthusiastic about applying them wherever a disposable item can be charged for."
       },
       {
         "id": "C",
-        "text": "sceptical that the reported reductions occurred at all."
+        "text": "sceptical that the reductions reported for bags occurred at all."
       },
       {
         "id": "D",
-        "text": "neutral, declining to draw any conclusion."
+        "text": "neutral, declining to draw any conclusion from the case."
       }
     ],
     "answer": "A",
     "why": {
       "A": "The final two paragraphs do both jobs: \"not that small charges are a general instrument\", and then a narrower claim the author calls \"still useful\".",
-      "B": "The cup paragraph is an explicit warning against that, noting annoyance and avoidance as the failure modes.",
-      "C": "The reductions are reported as established fact and used as the starting point.",
+      "B": "The cup paragraph is an explicit warning against that, naming annoyance and avoidance as the failure modes.",
+      "C": "The reductions are reported as established fact and used as the passage’s starting point.",
       "D": "The passage ends with a stated conclusion about the most common error in designing such policies."
     }
   },
