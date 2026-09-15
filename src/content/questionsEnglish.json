@@ -15009,5 +15009,500 @@
       "C": "\"Differently than\" is widely objected to and wants a clause after it, not a noun phrase.",
       "D": "\"Compared with\" names a deliberate act of comparing rather than a difference in behaviour."
     }
+  },
+  {
+    "id": "e402",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "medium",
+    "passage": "ep26",
+    "context": "A young male learns «his fathers song» only if he hears it during his first summer.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "his father’s song"
+      },
+      {
+        "id": "C",
+        "text": "his fathers’ song"
+      },
+      {
+        "id": "D",
+        "text": "his fathers songs"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "With no apostrophe at all, \"fathers\" is a plain plural and nothing shows possession.",
+      "B": "Correct — one father owns the song, so the apostrophe goes in front of the s.",
+      "C": "The plural possessive would mean several fathers share the one song between them.",
+      "D": "This makes both words plain plurals, which leaves the possession unmarked again."
+    }
+  },
+  {
+    "id": "e403",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "hard",
+    "passage": "ep26",
+    "context": "The basement archive is older than «it’s» nearest rival by about fifteen years.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "its"
+      },
+      {
+        "id": "C",
+        "text": "its’"
+      },
+      {
+        "id": "D",
+        "text": "it is"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Read out in full this says \"older than it is nearest rival\", which is not English.",
+      "B": "Correct — the possessive form of \"it\" never takes an apostrophe.",
+      "C": "There is no such form; the possessive of \"it\" carries no apostrophe in any position.",
+      "D": "Spelling the contraction out only makes the broken sentence easier to hear."
+    }
+  },
+  {
+    "id": "e404",
+    "section": "english",
+    "topic": "word choice",
+    "difficulty": "medium",
+    "passage": "ep26",
+    "context": "The line where the buzz gives way to the whistle has «moved» twice since the first tapes were cut.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "migrated"
+      },
+      {
+        "id": "C",
+        "text": "transferred"
+      },
+      {
+        "id": "D",
+        "text": "relocated"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — \"moved\" is the plain verb for a line shifting position on a map.",
+      "B": "\"Migrated\" belongs to the birds themselves rather than to an invisible boundary.",
+      "C": "\"Transferred\" needs someone to hand a thing over from one place to another.",
+      "D": "\"Relocated\" suggests a deliberate move made by somebody in charge of it."
+    }
+  },
+  {
+    "id": "e405",
+    "section": "english",
+    "topic": "word choice",
+    "difficulty": "hard",
+    "passage": "ep26",
+    "context": "The song is learned rather than inherited, which «infers» that a boundary can move in one generation.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "means"
+      },
+      {
+        "id": "C",
+        "text": "implicates"
+      },
+      {
+        "id": "D",
+        "text": "alludes"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Infer\" is what a listener does with evidence; a fact cannot infer anything itself.",
+      "B": "Correct — the fact leads straight to the conclusion, which is what \"means\" says.",
+      "C": "\"Implicates\" is used for involving someone in wrongdoing, not for drawing conclusions.",
+      "D": "\"Alludes\" needs \"to\" after it and names an indirect reference, not a consequence."
+    }
+  },
+  {
+    "id": "e406",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "medium",
+    "passage": "ep26",
+    "context": "The tapes cut in the 1960s differ «with» the ones made last spring in a way anyone can hear.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "from"
+      },
+      {
+        "id": "C",
+        "text": "than"
+      },
+      {
+        "id": "D",
+        "text": "against"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Differ with\" means to disagree with a person, not to be unlike another thing.",
+      "B": "Correct — English pairs \"differ\" with \"from\" when two things are unlike.",
+      "C": "\"Than\" follows a comparative such as \"more\" or \"louder\", and none appears here.",
+      "D": "\"Differ against\" is not an English pairing in any sense of the verb."
+    }
+  },
+  {
+    "id": "e407",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "hard",
+    "passage": "ep26",
+    "context": "Field workers must be «capable to distinguish» the two dialects by ear before they work alone.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "capable of distinguishing"
+      },
+      {
+        "id": "C",
+        "text": "capable in distinguishing"
+      },
+      {
+        "id": "D",
+        "text": "capable to distinguishing"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Capable\" is followed by \"of\" and an -ing verb, never by an infinitive.",
+      "B": "Correct — \"capable of\" takes the -ing form of the verb that follows it.",
+      "C": "\"Capable in\" is not an English pairing, whatever verb form comes after it.",
+      "D": "This keeps the wrong preposition and adds the wrong verb form on top of it."
+    }
+  },
+  {
+    "id": "e408",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "medium",
+    "passage": "ep26",
+    "context": "By the time the second survey began in 1979, the northern dialect «had already crossed» the ridge.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "has already crossed"
+      },
+      {
+        "id": "C",
+        "text": "already crosses"
+      },
+      {
+        "id": "D",
+        "text": "was already crossing"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the past perfect marks the crossing as finished before the 1979 survey.",
+      "B": "The present perfect cannot describe something completed before a past event.",
+      "C": "A present-tense verb puts the crossing in the reader’s own time rather than in 1979.",
+      "D": "The past progressive leaves the crossing still under way when the survey began."
+    }
+  },
+  {
+    "id": "e409",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "hard",
+    "passage": "ep26",
+    "context": "«Listening to the two dialects side by side, the difference is obvious» even to a beginner.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Listening to the two dialects side by side, a beginner hears the difference"
+      },
+      {
+        "id": "C",
+        "text": "Listening to the two dialects side by side, the difference can be heard"
+      },
+      {
+        "id": "D",
+        "text": "The difference, listening to the two dialects side by side, is obvious"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The opening phrase describes a listener, but the sentence supplies \"the difference\" instead.",
+      "B": "Correct — the beginner is the one listening, so the beginner has to follow the comma.",
+      "C": "The passive still leaves no listener in the main clause for the phrase to describe.",
+      "D": "Moving the phrase into the middle does not change what it is attached to."
+    }
+  },
+  {
+    "id": "e410",
+    "section": "english",
+    "topic": "dashes",
+    "difficulty": "medium",
+    "passage": "ep26",
+    "context": "One tape from 1968 «— cut during a thunderstorm —» is still the clearest in the basement.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "— cut during a thunderstorm,"
+      },
+      {
+        "id": "C",
+        "text": ", cut during a thunderstorm —"
+      },
+      {
+        "id": "D",
+        "text": "; cut during a thunderstorm;"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a pair of dashes fences off the aside with the same mark at each end.",
+      "B": "An interrupter cannot open with a dash and close with a comma; the marks must match.",
+      "C": "This mixes the two marks in the other order, which fails for the same reason.",
+      "D": "Semicolons separate independent clauses and cannot fence off a phrase like this one."
+    }
+  },
+  {
+    "id": "e411",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "medium",
+    "passage": "ep26",
+    "context": "Neither of the two surveys published «their» recordings in full.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "its"
+      },
+      {
+        "id": "C",
+        "text": "it’s"
+      },
+      {
+        "id": "D",
+        "text": "their own"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Neither\" is singular, so a plural pronoun does not agree with it.",
+      "B": "Correct — \"neither\" takes a singular pronoun, and the possessive form is \"its\".",
+      "C": "This is the contraction of \"it is\", which cannot show possession of anything.",
+      "D": "Adding \"own\" leaves the pronoun plural and the disagreement entirely untouched."
+    }
+  },
+  {
+    "id": "e412",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "hard",
+    "passage": "ep26",
+    "context": "The archive of field tapes, along with the notebooks kept beside the machines, «are» stored in a basement.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "is"
+      },
+      {
+        "id": "C",
+        "text": "were"
+      },
+      {
+        "id": "D",
+        "text": "have been"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The subject is \"archive\", and the phrase fenced off by commas cannot change its number.",
+      "B": "Correct — \"archive\" is singular, so the verb that follows it is \"is\".",
+      "C": "This is plural as well as past, so it disagrees with the singular subject twice over.",
+      "D": "A plural auxiliary still fails to match the singular subject \"archive\"."
+    }
+  },
+  {
+    "id": "e413",
+    "section": "english",
+    "topic": "writers purpose",
+    "difficulty": "medium",
+    "passage": "ep26",
+    "context": "Suppose the writer wanted to add a sentence stressing that the dialect boundary is not fixed. Which of the following would best accomplish that goal?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The line has shifted twice since the first surveys, and no one expects it to hold."
+      },
+      {
+        "id": "B",
+        "text": "The recordings are catalogued by date, by location and by the initials of the recordist."
+      },
+      {
+        "id": "C",
+        "text": "A white-crowned sparrow weighs about as much as a small handful of paper clips."
+      },
+      {
+        "id": "D",
+        "text": "Reel-to-reel tape was the standard recording medium throughout the 1960s."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a line that has already shifted twice is plainly not a fixed one.",
+      "B": "Cataloguing practice says nothing about whether the boundary stays where it is.",
+      "C": "The bird’s weight is a physical detail unrelated to where the two dialects meet.",
+      "D": "The recording medium is background, and it leaves the boundary entirely unaddressed."
+    }
+  },
+  {
+    "id": "e414",
+    "section": "english",
+    "topic": "writers purpose",
+    "difficulty": "hard",
+    "passage": "ep26",
+    "context": "Suppose the writer’s goal had been to explain why a song can change faster than a beak can. Would this essay accomplish that goal?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because it shows the song is learned each generation while the body is not."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because it lists every location where the two dialects have been recorded."
+      },
+      {
+        "id": "C",
+        "text": "No, because it never gives the shape or the size of the sparrow’s beak at all."
+      },
+      {
+        "id": "D",
+        "text": "No, because it describes the recordings without saying who paid for them."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — learning happens once a generation, while inheritance shifts far more slowly.",
+      "B": "A list of locations would show where the dialects are, not why one can change quickly.",
+      "C": "The beak is only an example of an inherited trait, so its measurements are beside the point.",
+      "D": "Funding is irrelevant, and the essay does address how quickly a song can change."
+    }
+  },
+  {
+    "id": "e415",
+    "section": "english",
+    "topic": "adding/deleting",
+    "difficulty": "medium",
+    "passage": "ep26",
+    "context": "The writer is considering deleting the statement that a male raised where he hears no adult singer invents a song of his own. Should it be kept?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Kept, because it shows that the song has to be learned from another bird."
+      },
+      {
+        "id": "B",
+        "text": "Kept, because it names the month in which young males first begin to sing."
+      },
+      {
+        "id": "C",
+        "text": "Deleted, because the essay is about boundaries rather than about single birds."
+      },
+      {
+        "id": "D",
+        "text": "Deleted, because the opening paragraph has already made the same point."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the invented song is the evidence that learning, not instinct, supplies the tune.",
+      "B": "No month appears anywhere in that statement, so the stated reason does not match it.",
+      "C": "The single bird is exactly what explains how a boundary can move at all.",
+      "D": "The opening paragraph describes the ridge and never mentions an isolated male."
+    }
+  },
+  {
+    "id": "e416",
+    "section": "english",
+    "topic": "sentence order",
+    "difficulty": "hard",
+    "passage": "ep26",
+    "context": "For the sake of logic and coherence, the sentence beginning \"But the ridge itself is only a few hundred metres high\" belongs:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "after the two slopes and their two songs have both been described."
+      },
+      {
+        "id": "B",
+        "text": "at the very start of the essay, before either dialect is introduced."
+      },
+      {
+        "id": "C",
+        "text": "in the final paragraph, after the account of how fast a song can change."
+      },
+      {
+        "id": "D",
+        "text": "immediately before the explanation of how a young male learns his song."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the objection only lands once the reader knows a ridge divides the two.",
+      "B": "Opening with an objection to a claim the reader has not yet met would only confuse.",
+      "C": "By the final paragraph the ridge has dropped out of the discussion entirely.",
+      "D": "The learning of the song is a separate thread, and the ridge interrupts it there."
+    }
   }
 ]
