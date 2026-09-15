@@ -16989,5 +16989,500 @@
       "C": "Removing the punctuation fuses the two clauses, which is worse than the splice.",
       "D": "The extra \"either\" and the trailing comma leave the sentence harder to follow."
     }
+  },
+  {
+    "id": "e462",
+    "section": "english",
+    "topic": "sentence order",
+    "difficulty": "medium",
+    "passage": "ep30",
+    "context": "For the sake of logic and coherence, the sentence \"The first dozen were unusable.\" belongs:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "after the two ways in which a mix can go wrong."
+      },
+      {
+        "id": "B",
+        "text": "in the opening paragraph, before the riverbank is described."
+      },
+      {
+        "id": "C",
+        "text": "in the final paragraph, beside the shelf of dated blocks."
+      },
+      {
+        "id": "D",
+        "text": "in the fourth paragraph, after the refusal to give a census."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — \"the first dozen\" means the first dozen attempts, which the two failures define.",
+      "B": "Nothing has been attempted yet in the opening paragraph, so there is no dozen to count.",
+      "C": "The shelf holds the casts that worked, which is the opposite of what the sentence reports.",
+      "D": "The census refusal is about what a good cast cannot say, not about ruined ones."
+    }
+  },
+  {
+    "id": "e463",
+    "section": "english",
+    "topic": "sentence order",
+    "difficulty": "hard",
+    "passage": "ep30",
+    "context": "For the sake of logic and coherence, the sentence \"None of that survives in a photograph.\" belongs:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "after the description of the fox that paused at the water."
+      },
+      {
+        "id": "B",
+        "text": "at the start of the second paragraph, before any comparison is drawn."
+      },
+      {
+        "id": "C",
+        "text": "in the third paragraph, after the plaster is mixed too thin."
+      },
+      {
+        "id": "D",
+        "text": "in the final paragraph, after the badger prints thin out."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — \"that\" needs the depths and the pausing fox in front of it to point back to.",
+      "B": "At the paragraph’s start nothing has been described yet for \"that\" to refer to.",
+      "C": "The thin mix is a failure of method and has no bearing on what a picture records.",
+      "D": "Which animals come to the water is a separate subject from what a cast can hold."
+    }
+  },
+  {
+    "id": "e464",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "medium",
+    "passage": "ep30",
+    "context": "A good track «lasts for a period of about a day» before the weather takes it.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "lasts about a day"
+      },
+      {
+        "id": "C",
+        "text": "lasts for about a day in time"
+      },
+      {
+        "id": "D",
+        "text": "has a duration of about a day"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"For a period of\" says nothing that \"about a day\" has not already said.",
+      "B": "Correct — the verb and the span of time are all the sentence needs.",
+      "C": "\"In time\" repeats what a day already is, so one padding phrase replaces another.",
+      "D": "\"Has a duration of\" turns a plain verb into a noun and three extra words."
+    }
+  },
+  {
+    "id": "e465",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "hard",
+    "passage": "ep30",
+    "context": "He «came to the realization that he had learned» the consistency by ruining things.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "realized he had learned"
+      },
+      {
+        "id": "C",
+        "text": "came to realize that he had learned"
+      },
+      {
+        "id": "D",
+        "text": "had the realization of learning"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Came to the realization\" is a four-word way of saying one verb’s worth of meaning.",
+      "B": "Correct — one verb carries the whole thought with nothing left over.",
+      "C": "Trimming the noun still leaves \"came to\" doing work the verb can do alone.",
+      "D": "\"Had the realization of\" is the same noun phrase with a different preposition."
+    }
+  },
+  {
+    "id": "e466",
+    "section": "english",
+    "topic": "dashes",
+    "difficulty": "medium",
+    "passage": "ep30",
+    "context": "Pryce will not say why the badgers went «— that is somebody else’s work —» and he says so early.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", that is somebody else’s work,"
+      },
+      {
+        "id": "C",
+        "text": "— that is somebody else’s work"
+      },
+      {
+        "id": "D",
+        "text": "; that is somebody else’s work;"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — paired dashes can enclose a full clause dropped into another sentence.",
+      "B": "Commas around an independent clause inside another sentence make a splice.",
+      "C": "An opening dash with no closing mark leaves the interruption hanging open.",
+      "D": "Semicolons join independent clauses in sequence; they cannot bracket an aside."
+    }
+  },
+  {
+    "id": "e467",
+    "section": "english",
+    "topic": "dashes",
+    "difficulty": "hard",
+    "passage": "ep30",
+    "context": "The shelf of dated blocks «— twenty years of them,» stands in an unheated outbuilding.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "— twenty years of them —"
+      },
+      {
+        "id": "C",
+        "text": "— twenty years of them, and"
+      },
+      {
+        "id": "D",
+        "text": "— twenty years of them"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A dash opens the interruption, and a comma cannot close what a dash began.",
+      "B": "Correct — the same mark closes the interruption that the opening dash began.",
+      "C": "Adding \"and\" leaves the sentence with an interruption that never closes at all.",
+      "D": "With no closing mark the subject runs straight into its verb without a break."
+    }
+  },
+  {
+    "id": "e468",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "medium",
+    "passage": "ep30",
+    "context": "The depth of the toe prints «tell» how the animal put its weight down.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "tells"
+      },
+      {
+        "id": "C",
+        "text": "have told"
+      },
+      {
+        "id": "D",
+        "text": "are telling"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Tell\" agrees with \"prints\", which sits in a phrase and is not the subject.",
+      "B": "Correct — the subject is \"depth\", a singular noun, so the verb is singular.",
+      "C": "\"Have told\" is plural as well, and it moves the sentence into a finished past.",
+      "D": "\"Are telling\" is plural and turns a standing fact into something in progress."
+    }
+  },
+  {
+    "id": "e469",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "hard",
+    "passage": "ep30",
+    "context": "Neither the stones nor the root «was» visible under the mud he was working.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "were"
+      },
+      {
+        "id": "C",
+        "text": "have been"
+      },
+      {
+        "id": "D",
+        "text": "are"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — after neither/nor the verb agrees with the nearer subject, \"root\".",
+      "B": "\"Were\" agrees with \"stones\", which is the further of the two subjects here.",
+      "C": "\"Have been\" is plural and also pulls the sentence out of the past it describes.",
+      "D": "\"Are\" is wrong in number and puts a finished afternoon into the present tense."
+    }
+  },
+  {
+    "id": "e470",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "medium",
+    "passage": "ep30",
+    "context": "He goes out in the worst weather for a plain reason«,» the short life of a track.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ":"
+      },
+      {
+        "id": "C",
+        "text": ";"
+      },
+      {
+        "id": "D",
+        "text": "; namely,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A comma cannot carry the announcement the first clause has just made.",
+      "B": "Correct — a colon follows a complete clause and delivers what it announced.",
+      "C": "A semicolon needs an independent clause after it, and this phrase is not one.",
+      "D": "\"Namely\" after a semicolon still leaves an incomplete clause on the right."
+    }
+  },
+  {
+    "id": "e471",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "hard",
+    "passage": "ep30",
+    "context": "The three things a cast cannot report «are:» health, hunger and age.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "are"
+      },
+      {
+        "id": "C",
+        "text": "are, namely:"
+      },
+      {
+        "id": "D",
+        "text": "are —"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A colon after \"are\" cuts a linking verb off from the complement it needs.",
+      "B": "Correct — the list completes the verb directly, so nothing belongs between them.",
+      "C": "\"Namely\" adds a signpost and keeps the same break between verb and complement.",
+      "D": "A dash makes the same interruption a colon does, only with a different mark."
+    }
+  },
+  {
+    "id": "e472",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "medium",
+    "passage": "ep30",
+    "context": "He still loses one in five. «Usually to a stone he did not see under the mud.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "A stone he did not see usually takes it."
+      },
+      {
+        "id": "C",
+        "text": "Usually to a stone he did not see under the mud,"
+      },
+      {
+        "id": "D",
+        "text": "Usually a stone under the mud he did not see."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A prepositional phrase on its own has no subject and no verb to run on.",
+      "B": "Correct — a subject and a finite verb turn the phrase into a sentence.",
+      "C": "A comma at the end leaves the phrase attached to nothing that follows it.",
+      "D": "Dropping \"to\" produces a noun phrase, which is still not a sentence."
+    }
+  },
+  {
+    "id": "e473",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "hard",
+    "passage": "ep30",
+    "context": "The plaster sets in twenty minutes. «Which is long enough for the light to go.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "That is long enough for the light to go."
+      },
+      {
+        "id": "C",
+        "text": "Long enough for the light to go."
+      },
+      {
+        "id": "D",
+        "text": "Which is long enough, the light goes."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A clause opening with \"which\" attaches to a sentence rather than standing as one.",
+      "B": "Correct — \"that\" is a subject pronoun, so the clause has a subject and a verb.",
+      "C": "Dropping \"which\" removes the relative but supplies no subject and no verb.",
+      "D": "A comma between two statements makes a splice on top of the original fragment."
+    }
+  },
+  {
+    "id": "e474",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "medium",
+    "passage": "ep30",
+    "context": "Pryce is careful «about» what a cast can be asked to prove.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "on"
+      },
+      {
+        "id": "D",
+        "text": "with"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — English pairs \"careful\" with \"about\" before a subject of concern.",
+      "B": "\"Careful for\" is not an English pairing after this adjective in any sense.",
+      "C": "\"Careful on\" names a surface underfoot rather than a matter under thought.",
+      "D": "\"Careful with\" takes an object being handled, not a question being weighed."
+    }
+  },
+  {
+    "id": "e475",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "hard",
+    "passage": "ep30",
+    "context": "The deer that arrived eight years ago show no sign «on» leaving the crossing.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "of"
+      },
+      {
+        "id": "C",
+        "text": "for"
+      },
+      {
+        "id": "D",
+        "text": "to"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Sign on\" is not an English pairing before a word ending in -ing.",
+      "B": "Correct — \"sign\" takes \"of\" before the thing the sign is evidence for.",
+      "C": "\"For\" would name a purpose, and no purpose is being reported here.",
+      "D": "\"To\" would need an infinitive after it rather than the -ing form."
+    }
+  },
+  {
+    "id": "e476",
+    "section": "english",
+    "topic": "commas",
+    "difficulty": "medium",
+    "passage": "ep30",
+    "context": "He goes out «in the cold and, the wet» rather than on the pleasant mornings.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "in the cold and the wet"
+      },
+      {
+        "id": "C",
+        "text": "in the cold, and the wet"
+      },
+      {
+        "id": "D",
+        "text": "in the cold and the wet,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A comma after \"and\" separates the conjunction from the item it is joining.",
+      "B": "Correct — two items joined by \"and\" take no comma between them.",
+      "C": "A comma before \"and\" is for two independent clauses, and \"the wet\" is not one.",
+      "D": "A comma after the pair cuts the phrase off from the comparison that follows."
+    }
   }
 ]
