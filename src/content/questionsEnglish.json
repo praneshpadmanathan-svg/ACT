@@ -18474,5 +18474,401 @@
       "C": "A semicolon needs a full clause on its right, and a list of three nouns is not one.",
       "D": "Adding \"namely\" does not repair a semicolon standing before an incomplete clause."
     }
+  },
+  {
+    "id": "e507",
+    "section": "english",
+    "topic": "dashes",
+    "difficulty": "medium",
+    "passage": "ep33",
+    "context": "Three people changed the habit«, a conductor, a critic and a publisher,» within one decade.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "— a conductor, a critic and a publisher —"
+      },
+      {
+        "id": "C",
+        "text": "— a conductor, a critic and a publisher,"
+      },
+      {
+        "id": "D",
+        "text": ": a conductor, a critic and a publisher,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The list already uses commas, so commas cannot also show where it starts and stops.",
+      "B": "Correct — dashes mark off a list that has commas of its own inside it.",
+      "C": "A dash at the front and a comma at the back leave the interruption unmatched.",
+      "D": "A colon may introduce a list but cannot close one in the middle of a sentence."
+    }
+  },
+  {
+    "id": "e508",
+    "section": "english",
+    "topic": "dashes",
+    "difficulty": "hard",
+    "passage": "ep33",
+    "context": "Everything the convention gained is audible in one place «— the end of a slow movement.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "; the end of a slow movement."
+      },
+      {
+        "id": "C",
+        "text": "— the end of a slow movement —"
+      },
+      {
+        "id": "D",
+        "text": ", the end of a slow movement,"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a single dash before a closing phrase delivers what the clause promised.",
+      "B": "A semicolon needs a complete clause after it, and this phrase has no verb.",
+      "C": "A second dash closes an interruption, and nothing follows it to interrupt.",
+      "D": "The comma at the end brackets a phrase that runs to the full stop instead."
+    }
+  },
+  {
+    "id": "e509",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "medium",
+    "passage": "ep33",
+    "context": "The convention that governs concert audiences «have» changed twice in two centuries.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "has"
+      },
+      {
+        "id": "C",
+        "text": "were"
+      },
+      {
+        "id": "D",
+        "text": "are"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Have\" agrees with \"audiences\", which sits inside the clause and is not the subject.",
+      "B": "Correct — the subject is \"convention\", a singular noun, so the verb is singular.",
+      "C": "\"Were\" is plural as well and pushes the sentence into a different tense.",
+      "D": "\"Are\" is plural and cannot govern a change already completed twice."
+    }
+  },
+  {
+    "id": "e510",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "hard",
+    "passage": "ep33",
+    "context": "Neither the critics nor the conductor «were» willing to wait for the habit to form.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "was"
+      },
+      {
+        "id": "C",
+        "text": "have been"
+      },
+      {
+        "id": "D",
+        "text": "are"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Were\" agrees with the critics, who are the further of the two subjects here.",
+      "B": "Correct — after neither/nor the verb matches the nearer subject, \"conductor\".",
+      "C": "\"Have been\" is plural and moves a finished episode into the present perfect.",
+      "D": "\"Are\" is wrong in both number and time for something settled a century ago."
+    }
+  },
+  {
+    "id": "e511",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "medium",
+    "passage": "ep33",
+    "context": "Composers wrote home about applause in the middle of a movement. «With evident pleasure.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "They did so with evident pleasure."
+      },
+      {
+        "id": "C",
+        "text": "With evident pleasure on their part,"
+      },
+      {
+        "id": "D",
+        "text": "Evident pleasure in the reporting."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A prepositional phrase standing alone has neither a subject nor a verb.",
+      "B": "Correct — a subject and a finite verb make the phrase a sentence.",
+      "C": "A comma at the end leaves the phrase leaning on something that never comes.",
+      "D": "Adding words to a noun phrase does not supply the verb it still lacks."
+    }
+  },
+  {
+    "id": "e512",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "hard",
+    "passage": "ep33",
+    "context": "What the older audience gave a composer was information. «It is not available now.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Which is not available now."
+      },
+      {
+        "id": "C",
+        "text": "Not available now."
+      },
+      {
+        "id": "D",
+        "text": "Information not available now."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a subject pronoun and a finite verb make this a complete sentence.",
+      "B": "A relative clause opening with \"which\" has to attach to a sentence, not be one.",
+      "C": "An adjective phrase on its own supplies neither a subject nor a verb.",
+      "D": "Putting a noun in front of the phrase makes it longer without making it a clause."
+    }
+  },
+  {
+    "id": "e513",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "hard",
+    "passage": "ep33",
+    "context": "By the time the critics took up the cause, audiences «have been» clapping between movements for a century.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "had been"
+      },
+      {
+        "id": "C",
+        "text": "are"
+      },
+      {
+        "id": "D",
+        "text": "will have been"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The present perfect runs up to now, and the sentence stops at a moment in the past.",
+      "B": "Correct — the past perfect covers a stretch finishing at the point already named.",
+      "C": "A simple present contradicts the past-tense clause that opens the sentence.",
+      "D": "The future perfect points forward from now, and nothing here looks forward."
+    }
+  },
+  {
+    "id": "e514",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "medium",
+    "passage": "ep33",
+    "context": "Having been trained for a generation, «the silence came easily».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "the audience kept the silence easily"
+      },
+      {
+        "id": "C",
+        "text": "the silence was coming easily"
+      },
+      {
+        "id": "D",
+        "text": "coming easily was the silence"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A silence cannot be trained, so the opening phrase has nothing to attach to.",
+      "B": "Correct — the audience is what was trained, so the audience becomes the subject.",
+      "C": "Changing the verb form leaves the silence as the thing that underwent training.",
+      "D": "Reversing the order keeps the silence in the position the phrase describes."
+    }
+  },
+  {
+    "id": "e515",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "medium",
+    "passage": "ep33",
+    "context": "Between the critic and «he», the habit was settled inside a single decade.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "him"
+      },
+      {
+        "id": "C",
+        "text": "himself"
+      },
+      {
+        "id": "D",
+        "text": "his"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"He\" is a subject form and cannot follow the preposition \"between\".",
+      "B": "Correct — a preposition takes the object form, so \"him\" is the one needed.",
+      "C": "A reflexive needs a matching subject earlier in the same clause to point back to.",
+      "D": "\"His\" is possessive and would name something owned rather than a second person."
+    }
+  },
+  {
+    "id": "e516",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "medium",
+    "passage": "ep33",
+    "context": "The silence lets a slow movement end in its own quiet. «On the other hand,» it makes the shape of a symphony audible.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Moreover,"
+      },
+      {
+        "id": "C",
+        "text": "By contrast,"
+      },
+      {
+        "id": "D",
+        "text": "For instance,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"On the other hand\" promises an opposing point, and a second gain follows instead.",
+      "B": "Correct — the sentence adds a second gain, which is what \"moreover\" signals.",
+      "C": "\"By contrast\" sets two things against each other, and these two run together.",
+      "D": "An audible symphonic shape is a separate gain rather than an instance of the first."
+    }
+  },
+  {
+    "id": "e517",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "hard",
+    "passage": "ep33",
+    "context": "The convention was made by critics, by conductors, and «by publishers» in one decade.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "publishers"
+      },
+      {
+        "id": "C",
+        "text": "publishers as well"
+      },
+      {
+        "id": "D",
+        "text": "with publishers"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the third item repeats the \"by\" that the first two items both carry.",
+      "B": "Dropping the preposition breaks a pattern the other two members of the list keep.",
+      "C": "Adding \"as well\" replaces the missing preposition with something that is not parallel.",
+      "D": "Switching to \"with\" changes the relationship as well as breaking the pattern."
+    }
+  },
+  {
+    "id": "e518",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "medium",
+    "passage": "ep33",
+    "context": "The three «critic’s» columns ran within a month of one another that winter.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "critics’"
+      },
+      {
+        "id": "C",
+        "text": "critics"
+      },
+      {
+        "id": "D",
+        "text": "critic"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The singular possessive contradicts \"three\", which needs a plural owner.",
+      "B": "Correct — a plural ending in s takes the apostrophe after the s it already has.",
+      "C": "Without an apostrophe the word is a plain plural and owns nothing at all.",
+      "D": "A bare singular disagrees with \"three\" and marks no possession either."
+    }
   }
 ]
