@@ -2496,7 +2496,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because it documents the noise reduction and then the new question of what cities should sound like."
+        "text": "Yes, because it documents the reduction and then asks what cities should sound like."
       },
       {
         "id": "B",
@@ -2504,11 +2504,11 @@
       },
       {
         "id": "C",
-        "text": "No, because it does not explain how electric motors work."
+        "text": "No, because it never explains how an electric motor produces so much less noise than an engine does."
       },
       {
         "id": "D",
-        "text": "No, because it focuses only on Oslo."
+        "text": "No, because it focuses only on Oslo and never looks at any other city."
       }
     ],
     "answer": "A",
@@ -3293,11 +3293,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "explain why the narrator chose not to work in restaurants."
+        "text": "explain why the narrator decided against ever taking a restaurant job of his own."
       },
       {
         "id": "B",
-        "text": "reveal the narrator’s realization about how little the father had shared of his working life."
+        "text": "reveal how little of his working life the narrator’s father had ever shared."
       },
       {
         "id": "C",
@@ -3305,7 +3305,7 @@
       },
       {
         "id": "D",
-        "text": "criticize the father for missing family birthdays."
+        "text": "criticize the father for having missed so many family birthdays over the years."
       }
     ],
     "answer": "B",
@@ -4526,7 +4526,7 @@
       },
       {
         "id": "D",
-        "text": "[1], [2], [3], [4] — the paragraph's order as written."
+        "text": "[1], [2], [3], [4]"
       }
     ],
     "answer": "D",
@@ -4555,11 +4555,11 @@
       },
       {
         "id": "C",
-        "text": "evidence that Maple Street Books' book club was profitable."
+        "text": "evidence that the book club at Maple Street Books was profitable."
       },
       {
         "id": "D",
-        "text": "the paragraph's only reference to Maple Street Books by name."
+        "text": "the paragraph's only reference to Maple Street Books by name anywhere in the whole essay."
       }
     ],
     "answer": "A",
@@ -4621,11 +4621,11 @@
       },
       {
         "id": "C",
-        "text": "No, because Paragraph 4 generalizes from the specific Poplar Street example built in Paragraphs 2 and 3, and moving it earlier would leave that generalization with no example to draw from yet."
+        "text": "No, because Paragraph 4 generalizes from the Poplar Street example that Paragraphs 2 and 3 build."
       },
       {
         "id": "D",
-        "text": "No, because Paragraph 1 already discusses composting classes in detail."
+        "text": "No, because Paragraph 1 already discusses the composting classes in some detail."
       }
     ],
     "answer": "C",
@@ -4658,7 +4658,7 @@
       },
       {
         "id": "D",
-        "text": "Yes, because it adds a specific, concrete detail that reinforces the paragraph's description of the lot's neglected condition."
+        "text": "Yes, because it adds a concrete detail that reinforces the paragraph's picture of a neglected lot."
       }
     ],
     "answer": "D",
@@ -4848,11 +4848,11 @@
       },
       {
         "id": "B",
-        "text": "\"In surveys, garden members cite the friendships they've formed as their top reason for returning, even in seasons when a poor harvest yields almost nothing to take home.\""
+        "text": "\"In surveys, members name the friendships they've formed as their top reason for returning, even after a poor harvest.\""
       },
       {
         "id": "C",
-        "text": "\"Community gardens have existed in some form in the United States since at least the late nineteenth century.\""
+        "text": "\"Community gardens have existed in some form in the United States since at least the closing decades of the nineteenth century.\""
       },
       {
         "id": "D",
@@ -6928,15 +6928,15 @@
     "choices": [
       {
         "id": "A",
-        "text": "In the paragraph about the seeds in the drawer, after the explanation that nobody expected anything to happen."
+        "text": "In the paragraph about the seeds in the drawer, after the note that nobody expected anything."
       },
       {
         "id": "B",
-        "text": "In the opening sentence, before the planting is described."
+        "text": "In the opening sentence, before any of the planting is described."
       },
       {
         "id": "C",
-        "text": "In the paragraph about quiescence, after the discussion of moisture."
+        "text": "In the paragraph about quiescence, immediately after the discussion of moisture and temperature."
       },
       {
         "id": "D",
@@ -7797,15 +7797,15 @@
       },
       {
         "id": "B",
-        "text": "At [1], ending the opening paragraph."
+        "text": "At [1], ending the opening paragraph, before any borrower is introduced."
       },
       {
         "id": "C",
-        "text": "At [2], opening the second paragraph."
+        "text": "At [2], opening the second paragraph, before the collection is described."
       },
       {
         "id": "D",
-        "text": "At [3], opening the third paragraph."
+        "text": "At [3], opening the third paragraph, just where the pressure washer first appears."
       }
     ],
     "answer": "A",
@@ -7826,7 +7826,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "No, because the paragraph is about an unplanned social effect and the fee is a separate matter already mentioned."
+        "text": "No, because the paragraph is about an unplanned social effect, not about the fee."
       },
       {
         "id": "B",
@@ -7834,11 +7834,11 @@
       },
       {
         "id": "C",
-        "text": "Yes, because it explains why members are willing to ask for advice."
+        "text": "Yes, because it explains why members are willing to ask the desk volunteer for advice."
       },
       {
         "id": "D",
-        "text": "No, because the essay never discusses money anywhere."
+        "text": "No, because the essay never discusses money anywhere else."
       }
     ],
     "answer": "A",
@@ -7859,7 +7859,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because it identifies idle ownership as the underlying reason and illustrates it with the pressure washer."
+        "text": "Yes, because it traces the idea to idle ownership and illustrates it with the pressure washer."
       },
       {
         "id": "B",
@@ -7867,11 +7867,11 @@
       },
       {
         "id": "C",
-        "text": "No, because it never states the annual fee or the operating budget."
+        "text": "No, because it never states the annual fee, the operating budget, or the staffing."
       },
       {
         "id": "D",
-        "text": "No, because it is concerned only with the social effects of borrowing."
+        "text": "No, because it is concerned only with the social effects of borrowing rather than with the money."
       }
     ],
     "answer": "A",
@@ -8354,11 +8354,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because it shows a nineteen-year record revealing changes that no single season could have shown, and says there is no shortcut to it."
+        "text": "Yes, because it shows a nineteen-year record revealing changes no single season could have shown."
       },
       {
         "id": "B",
-        "text": "Yes, because it lists the species found in the pools."
+        "text": "Yes, because it lists every species found in the pools over the nineteen years."
       },
       {
         "id": "C",
@@ -8366,7 +8366,7 @@
       },
       {
         "id": "D",
-        "text": "No, because it is concerned only with the narrator’s feelings about a summer job."
+        "text": "No, because it is concerned only with the narrator’s own feelings about a summer spent at the pools."
       }
     ],
     "answer": "A",
@@ -8849,7 +8849,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because it hands the ordinary work to vinyl and locates the craft’s remaining value in decisions made on site."
+        "text": "Yes, because it hands the ordinary work to vinyl and locates the craft’s value on site."
       },
       {
         "id": "B",
@@ -8857,11 +8857,11 @@
       },
       {
         "id": "C",
-        "text": "No, because it concedes that vinyl is cheaper and faster."
+        "text": "No, because it concedes that vinyl is cheaper and faster than anything cut by hand in the shop."
       },
       {
         "id": "D",
-        "text": "No, because three of her four apprentices left the trade."
+        "text": "No, because three of her four apprentices left the trade for steadier work."
       }
     ],
     "answer": "A",
@@ -9344,15 +9344,15 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because it sets a four-percent growth model against an eleven-year record showing the opposite, and notes that the model was never checked against anything."
+        "text": "Yes, because it sets a four-percent growth model against an eleven-year record showing the opposite."
       },
       {
         "id": "B",
-        "text": "Yes, because it describes the mechanical tally counters Ellery held in each hand."
+        "text": "Yes, because it describes the mechanical tally counters that Ellery held in each hand at the roadside."
       },
       {
         "id": "C",
-        "text": "No, because the essay concerns a single bridge and never uses the word forecast."
+        "text": "No, because the essay concerns a single bridge and never once uses the word forecast."
       },
       {
         "id": "D",
@@ -9839,15 +9839,15 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because it shows a cook executing a sequence reliably for sixty years while being unable to say why the sequence was right."
+        "text": "Yes, because it shows a cook running a sequence reliably for sixty years without being able to say why it worked."
       },
       {
         "id": "B",
-        "text": "Yes, because it lists the eleven dishes the grandmother made without recipes."
+        "text": "Yes, because it lists all eleven of the dishes the grandmother made without ever writing down a recipe for any of them."
       },
       {
         "id": "C",
-        "text": "No, because the essay is about recipes rather than about knowledge."
+        "text": "No, because the essay is about recipes rather than about knowledge of any kind."
       },
       {
         "id": "D",
@@ -10334,15 +10334,15 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because it shows that slow-water designs work hydrologically and then fail where cities fund construction but not maintenance."
+        "text": "Yes, because slow-water designs work hydrologically and then fail where nobody funds maintenance."
       },
       {
         "id": "B",
-        "text": "Yes, because it describes how culverts were built during the twentieth century."
+        "text": "Yes, because it describes how culverts came to be built the way they were during the twentieth century."
       },
       {
         "id": "C",
-        "text": "No, because the passage argues that slow-water design succeeds wherever it is tried."
+        "text": "No, because the passage argues that slow-water design succeeds wherever anybody has tried it."
       },
       {
         "id": "D",
@@ -11324,15 +11324,15 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because it accepts the numerical case for the bridge and then identifies a benefit that no figure on the sheet records."
+        "text": "Yes, because it accepts the numerical case and then names a benefit no figure records."
       },
       {
         "id": "B",
-        "text": "Yes, because it demonstrates that the numerical case for bridges is usually mistaken."
+        "text": "Yes, because it demonstrates that the numerical case for building bridges is usually mistaken."
       },
       {
         "id": "C",
-        "text": "No, because it concludes that the Norwegian subsidy failed."
+        "text": "No, because it concludes that the Norwegian subsidy failed in the end."
       },
       {
         "id": "D",
@@ -11786,11 +11786,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "establishes what was lost, so that the failure described immediately afterward costs something."
+        "text": "establishes what was lost, so the failure described afterward costs something."
       },
       {
         "id": "B",
-        "text": "introduces the 1986 instrument for the first time."
+        "text": "introduces the 1986 instrument to the reader for the first time."
       },
       {
         "id": "C",
@@ -11798,7 +11798,7 @@
       },
       {
         "id": "D",
-        "text": "summarises the paragraph’s argument before the evidence for it."
+        "text": "summarises the paragraph’s argument before any of the evidence for it has been given."
       }
     ],
     "answer": "A",
@@ -11819,11 +11819,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because Huang states that everyone accepts the principle and nobody believes it applies to the instrument in front of them."
+        "text": "Yes, because Huang says everyone accepts the principle and nobody applies it to the instrument in front of them."
       },
       {
         "id": "B",
-        "text": "Yes, because it explains how a harpsichord responds to changes in humidity."
+        "text": "Yes, because it explains in detail how a harpsichord responds to changes in the humidity of the room it is standing in."
       },
       {
         "id": "C",
@@ -11831,7 +11831,7 @@
       },
       {
         "id": "D",
-        "text": "No, because the passage concerns one builder rather than the trade as a whole."
+        "text": "No, because the passage concerns a single builder rather than the trade as a whole."
       }
     ],
     "answer": "A",
