@@ -13950,5 +13950,645 @@
       "C": "Correct — 150° has a reference angle of 30°, and sine is positive there.",
       "D": "This has both the wrong function and the wrong sign for a second-quadrant angle."
     }
+  },
+  {
+    "id": "m437",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "medium",
+    "context": "If 3ˣ = 81, what is the value of 3ˣ⁻¹?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "27"
+      },
+      {
+        "id": "B",
+        "text": "80"
+      },
+      {
+        "id": "C",
+        "text": "243"
+      },
+      {
+        "id": "D",
+        "text": "9"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — x = 4, so 3ˣ⁻¹ = 3³ = 27, which is 81 divided by 3.",
+      "B": "This subtracts 1 from the value 81 instead of subtracting 1 from the exponent.",
+      "C": "This is 3⁵, which raises the exponent by one rather than lowering it.",
+      "D": "This is 3², two steps down from 3⁴ rather than one."
+    }
+  },
+  {
+    "id": "m438",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "hard",
+    "context": "Simplify (2x³)⁴.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2x¹²"
+      },
+      {
+        "id": "B",
+        "text": "8x¹²"
+      },
+      {
+        "id": "C",
+        "text": "16x¹²"
+      },
+      {
+        "id": "D",
+        "text": "16x⁷"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The exponent is handled correctly, but the coefficient 2 must be raised to the fourth as well.",
+      "B": "This gives the coefficient 2³ rather than 2⁴, applying the outer exponent one step short.",
+      "C": "Correct — the outer exponent hits both factors: 2⁴ is 16 and x³ raised to the fourth is x¹².",
+      "D": "This adds the exponents, 3 + 4, where raising a power to a power multiplies them."
+    }
+  },
+  {
+    "id": "m439",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "medium",
+    "context": "For the data set {6, 8, 8, 10, 13, 15}, what is the mode minus the median?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "−1"
+      },
+      {
+        "id": "C",
+        "text": "0"
+      },
+      {
+        "id": "D",
+        "text": "−2"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This subtracts in the other order, taking the median minus the mode.",
+      "B": "Correct — the mode is 8 and the median is the average of 8 and 10, which is 9.",
+      "C": "Zero would need the mode and median to match, but 8 and 9 differ by one.",
+      "D": "This uses 10 as the median rather than the average of the two middle values."
+    }
+  },
+  {
+    "id": "m440",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "hard",
+    "context": "Four numbers have a mean of 15. Three of them are 9, 14 and 20. What is the fourth?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "15"
+      },
+      {
+        "id": "B",
+        "text": "16"
+      },
+      {
+        "id": "C",
+        "text": "17"
+      },
+      {
+        "id": "D",
+        "text": "22"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This assumes the missing value equals the mean, which is true only when the others already average 15.",
+      "B": "This subtracts the three known values from 59 rather than from the total of 60.",
+      "C": "Correct — the four must total 60, and 60 − 43 leaves 17.",
+      "D": "This uses a total of 65, which would give a mean above 16."
+    }
+  },
+  {
+    "id": "m441",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "easy",
+    "context": "A spinner has 8 equal sectors numbered 1 through 8. What is the probability of landing on a number greater than 5?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5/8"
+      },
+      {
+        "id": "B",
+        "text": "3/8"
+      },
+      {
+        "id": "C",
+        "text": "1/8"
+      },
+      {
+        "id": "D",
+        "text": "3/5"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This counts 1 through 5, the sectors the question excludes rather than the ones it asks for.",
+      "B": "Correct — the sectors 6, 7 and 8 are greater than 5, so 3 of the 8 qualify.",
+      "C": "This counts only one sector, as though the spinner had to land on 8 exactly.",
+      "D": "This compares the 3 winning sectors to the 5 losing ones instead of to all 8."
+    }
+  },
+  {
+    "id": "m442",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "hard",
+    "context": "Ten cards numbered 1 through 10 are shuffled, and two are drawn without replacement. What is the probability that both are even?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1/4"
+      },
+      {
+        "id": "B",
+        "text": "5/18"
+      },
+      {
+        "id": "C",
+        "text": "2/9"
+      },
+      {
+        "id": "D",
+        "text": "1/2"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This squares 1/2, which would be right only if the first card were put back before the second draw.",
+      "B": "This keeps 5 even cards available for the second draw, but one even card has already been taken.",
+      "C": "Correct — the first draw is even 5 times in 10, and then 4 of the 9 remaining cards are even.",
+      "D": "This is the probability that a single card is even, with the second draw never accounted for."
+    }
+  },
+  {
+    "id": "m443",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "medium",
+    "context": "A trapezoid has parallel sides of length 7 and 11 and a height of 6. What is its area?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "108"
+      },
+      {
+        "id": "B",
+        "text": "54"
+      },
+      {
+        "id": "C",
+        "text": "66"
+      },
+      {
+        "id": "D",
+        "text": "42"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This multiplies the sum of the parallel sides by the height without halving it.",
+      "B": "Correct — the average of 7 and 11 is 9, and 9 × 6 gives 54.",
+      "C": "This multiplies the longer parallel side by the height, treating the shape as a rectangle.",
+      "D": "This multiplies the shorter parallel side by the height, ignoring the other one."
+    }
+  },
+  {
+    "id": "m444",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "medium",
+    "context": "A cube has a total surface area of 96 cm². What is its volume?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "96 cm³"
+      },
+      {
+        "id": "B",
+        "text": "512 cm³"
+      },
+      {
+        "id": "C",
+        "text": "24 cm³"
+      },
+      {
+        "id": "D",
+        "text": "64 cm³"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This reuses the surface area as the volume, but the two are different quantities.",
+      "B": "This takes the edge to be 8 cm, which would give a face area of 64 and a surface area of 384.",
+      "C": "This divides the surface area by four rather than working back through the edge length.",
+      "D": "Correct — each of the six faces has area 16, so the edge is 4 cm and the volume is 4³."
+    }
+  },
+  {
+    "id": "m445",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "medium",
+    "context": "What is the measure of each exterior angle of a regular 12-sided polygon?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "30°"
+      },
+      {
+        "id": "B",
+        "text": "150°"
+      },
+      {
+        "id": "C",
+        "text": "15°"
+      },
+      {
+        "id": "D",
+        "text": "60°"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the exterior angles of any polygon total 360°, so each of twelve is 30°.",
+      "B": "This is the interior angle at each vertex, which is the supplement of the exterior angle.",
+      "C": "This halves the correct value, as though the 360° were shared among twenty-four corners.",
+      "D": "This divides 720° among the twelve corners, but the exterior angles total 360°."
+    }
+  },
+  {
+    "id": "m446",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "hard",
+    "context": "Two angles are supplementary, and one of them is 3 times the other. What is the measure of the smaller angle?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "45°"
+      },
+      {
+        "id": "B",
+        "text": "60°"
+      },
+      {
+        "id": "C",
+        "text": "30°"
+      },
+      {
+        "id": "D",
+        "text": "22.5°"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the four equal parts total 180°, so each part is 45° and the smaller angle is one part.",
+      "B": "This splits 180° into three parts rather than the four the ratio 1 : 3 calls for.",
+      "C": "This splits 180° into six parts, which would fit a ratio of 1 : 5 instead.",
+      "D": "This uses 90° as the total, which would make the two angles complementary rather than supplementary."
+    }
+  },
+  {
+    "id": "m447",
+    "section": "math",
+    "topic": "systems",
+    "difficulty": "medium",
+    "context": "If 2x + y = 11 and x − y = 1, what is the value of y?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4"
+      },
+      {
+        "id": "B",
+        "text": "3"
+      },
+      {
+        "id": "C",
+        "text": "5"
+      },
+      {
+        "id": "D",
+        "text": "2"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This is the value of x, which the addition step produces before y is found.",
+      "B": "Correct — adding the equations gives 3x = 12, so x = 4 and y = 11 − 8 = 3.",
+      "C": "This substitutes x = 3 into the first equation, reversing the two unknowns.",
+      "D": "This subtracts the equations instead of adding them, which does not clear either variable."
+    }
+  },
+  {
+    "id": "m448",
+    "section": "math",
+    "topic": "systems",
+    "difficulty": "hard",
+    "context": "How many solutions does the system 3x − y = 7 and 6x − 2y = 10 have?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Exactly one"
+      },
+      {
+        "id": "B",
+        "text": "None"
+      },
+      {
+        "id": "C",
+        "text": "Infinitely many"
+      },
+      {
+        "id": "D",
+        "text": "Exactly two"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "One solution would need the two lines to have different slopes, but both slopes are 3.",
+      "B": "Correct — doubling the first equation gives 6x − 2y = 14, which cannot also equal 10.",
+      "C": "Infinitely many solutions would need the second equation to be the first doubled, giving 14.",
+      "D": "Two straight lines meet at one point or at none; they never meet at exactly two."
+    }
+  },
+  {
+    "id": "m449",
+    "section": "math",
+    "topic": "linear equations",
+    "difficulty": "medium",
+    "context": "Solve 4(x − 3) = 2x + 6.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "4.5"
+      },
+      {
+        "id": "C",
+        "text": "9"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Substituting 3 gives 0 on the left and 12 on the right, so the two sides do not match.",
+      "B": "This divides 9 by 2 a second time after the equation has already been reduced to 2x = 18.",
+      "C": "Correct — distributing gives 4x − 12 = 2x + 6, so 2x = 18 and x = 9.",
+      "D": "This drops the 3 inside the parentheses instead of distributing the 4 across it."
+    }
+  },
+  {
+    "id": "m450",
+    "section": "math",
+    "topic": "linear equations",
+    "difficulty": "medium",
+    "context": "If (2x + 5)/3 = 7, what is the value of x?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "13"
+      },
+      {
+        "id": "B",
+        "text": "8"
+      },
+      {
+        "id": "C",
+        "text": "11"
+      },
+      {
+        "id": "D",
+        "text": "5.5"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This subtracts 5 after dividing by 2 rather than before, reversing the order of operations.",
+      "B": "Correct — multiplying both sides by 3 gives 2x + 5 = 21, so 2x = 16 and x = 8.",
+      "C": "This forgets to subtract the 5 before dividing the 21 by 2.",
+      "D": "This divides 7 by 2 first, applying the 3 to only part of the numerator."
+    }
+  },
+  {
+    "id": "m451",
+    "section": "math",
+    "topic": "triangles",
+    "difficulty": "medium",
+    "context": "In right triangle ABC the right angle is at C, AC = 8 and BC = 15. What is the perimeter of the triangle?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "23"
+      },
+      {
+        "id": "B",
+        "text": "40"
+      },
+      {
+        "id": "C",
+        "text": "46"
+      },
+      {
+        "id": "D",
+        "text": "60"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This is the sum of the two legs only, with the hypotenuse never added in.",
+      "B": "Correct — the hypotenuse is √(64 + 225) = 17, and 8 + 15 + 17 gives 40.",
+      "C": "This uses 23 for the hypotenuse, which is the sum of the legs rather than √289.",
+      "D": "This is the area of the triangle, which is half of 8 × 15, not its perimeter."
+    }
+  },
+  {
+    "id": "m452",
+    "section": "math",
+    "topic": "triangles",
+    "difficulty": "hard",
+    "context": "In triangle ABC, AB = AC and angle A measures 40°. What is the measure of angle B?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "40°"
+      },
+      {
+        "id": "B",
+        "text": "50°"
+      },
+      {
+        "id": "C",
+        "text": "70°"
+      },
+      {
+        "id": "D",
+        "text": "100°"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This copies the measure of angle A, but the two equal angles are B and C, not A and B.",
+      "B": "This subtracts 40 from 90, treating angles B and A as complementary.",
+      "C": "Correct — B and C are equal because AB = AC, and together they make up 180 − 40 = 140.",
+      "D": "This is the sum of angles B and C rather than the measure of either one alone."
+    }
+  },
+  {
+    "id": "m453",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "medium",
+    "context": "A recipe uses 3 cups of flour to make 24 cookies. At the same rate, how many cups are needed for 36 cookies?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4"
+      },
+      {
+        "id": "B",
+        "text": "4.5"
+      },
+      {
+        "id": "C",
+        "text": "5"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This adds one cup for the extra dozen, but 12 more cookies need one and a half cups.",
+      "B": "Correct — each cookie takes 1/8 cup, and 36 cookies therefore take 4.5 cups.",
+      "C": "This adds two cups for the extra 12 cookies, which is more than the rate allows.",
+      "D": "This doubles the recipe, which would make 48 cookies rather than 36."
+    }
+  },
+  {
+    "id": "m454",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "hard",
+    "context": "A worker earns $18 per hour for the first 40 hours of a week and 1.5 times that rate for each hour beyond 40. What is the pay for a 46-hour week?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "$828"
+      },
+      {
+        "id": "B",
+        "text": "$882"
+      },
+      {
+        "id": "C",
+        "text": "$900"
+      },
+      {
+        "id": "D",
+        "text": "$810"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This pays all 46 hours at the base rate of $18, with no overtime applied at all.",
+      "B": "Correct — 40 hours at $18 is $720, and 6 hours at $27 adds $162.",
+      "C": "This pays the overtime hours at double the base rate rather than at one and a half times it.",
+      "D": "This pays 45 hours at $18, which misses both the sixth overtime hour and the higher rate."
+    }
+  },
+  {
+    "id": "m455",
+    "section": "math",
+    "topic": "coordinate geometry",
+    "difficulty": "medium",
+    "context": "What is the midpoint of the segment joining (−3, 8) and (5, −2)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "(2, 6)"
+      },
+      {
+        "id": "B",
+        "text": "(1, 3)"
+      },
+      {
+        "id": "C",
+        "text": "(1, 5)"
+      },
+      {
+        "id": "D",
+        "text": "(4, 5)"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This adds the coordinates without halving either sum.",
+      "B": "Correct — the midpoint averages each coordinate: (−3 + 5)/2 = 1 and (8 − 2)/2 = 3.",
+      "C": "The x-value is right, but 5 averages 8 and 2 rather than 8 and −2.",
+      "D": "This halves the differences between the coordinates rather than averaging them."
+    }
+  },
+  {
+    "id": "m456",
+    "section": "math",
+    "topic": "coordinate geometry",
+    "difficulty": "hard",
+    "context": "Line m is perpendicular to the line y = (2/5)x + 1 and passes through (0, −4). What is the equation of line m?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "y = (5/2)x − 4"
+      },
+      {
+        "id": "B",
+        "text": "y = −(2/5)x − 4"
+      },
+      {
+        "id": "C",
+        "text": "y = (2/5)x − 4"
+      },
+      {
+        "id": "D",
+        "text": "y = −(5/2)x − 4"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This inverts the slope but leaves the sign alone; a perpendicular slope needs both changes.",
+      "B": "This changes the sign but not the fraction, so the two lines are not perpendicular.",
+      "C": "This is parallel to the given line, since it keeps the slope exactly as it was.",
+      "D": "Correct — the negative reciprocal of 2/5 is −5/2, and the point (0, −4) is the y-intercept."
+    }
   }
 ]
