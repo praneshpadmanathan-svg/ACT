@@ -124,7 +124,7 @@
       "A": "Coefficients multiply, they do not add.",
       "B": "Correct — 4·3 = 12 and x³·x⁵ = x⁸.",
       "C": "Exponents add when multiplying like bases; they do not multiply.",
-      "D": "Both errors combined."
+      "D": "This adds the coefficients and multiplies the exponents, so both operations are the wrong one: 4 + 3 instead of 4 × 3, and 3 × 5 instead of 3 + 5."
     }
   },
   {
@@ -220,7 +220,7 @@
       "A": "Correct — (−7 − 5)/(4 − (−2)) = −12/6 = −2.",
       "B": "Sign error in the numerator.",
       "C": "Inverts rise and run.",
-      "D": "Both errors combined."
+      "D": "This loses the negative sign and inverts rise over run, so both the direction and the size of the slope are wrong."
     }
   },
   {
@@ -1052,7 +1052,7 @@
       "A": "Correct — the signs invert inside the parentheses and the radius is squared.",
       "B": "Reverses both signs, giving center (3, −4).",
       "C": "Fails to square the radius.",
-      "D": "Both errors combined."
+      "D": "This copies the centre’s signs straight into the parentheses and leaves the radius unsquared, so it describes a circle at (3, 4) with radius √6."
     }
   },
   {
@@ -1657,7 +1657,7 @@
     ],
     "answer": "B",
     "why": {
-      "A": "Arithmetic slip.",
+      "A": "0.35 × 240 = 84, not 74. A quick check: 10% of 240 is 24, so 30% alone is already 72.",
       "B": "Correct — 0.35 × 240 = 84.",
       "C": "This is 40% of 240.",
       "D": "Decimal point misplaced."
@@ -1785,7 +1785,7 @@
     ],
     "answer": "B",
     "why": {
-      "A": "Arithmetic error.",
+      "A": "Subtracting both angles from 170 rather than 180 gives this. The three angles of a triangle sum to 180°.",
       "B": "Correct — 180 − 47 − 68 = 65°.",
       "C": "Subtracts from 190.",
       "D": "This is the sum of the two given angles."

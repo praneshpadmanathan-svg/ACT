@@ -127,7 +127,7 @@
     "why": {
       "A": "Correct — lower pH values indicate greater acidity.",
       "B": "pH 7.0 is neutral.",
-      "C": "Basic.",
+      "C": "pH 9.0 is basic, which puts it on the opposite side of neutral from any acidic value.",
       "D": "The most basic value tested."
     }
   },
@@ -688,7 +688,7 @@
     "why": {
       "A": "1.84 g, well above green.",
       "B": "Correct — 0.71 g, the lowest value among the illuminated groups.",
-      "C": "2.05 g.",
+      "C": "Red produced 2.05 g, nearly three times the mass of the lowest illuminated group.",
       "D": "2.31 g, the highest."
     }
   },
@@ -1280,7 +1280,7 @@
     ],
     "answer": "C",
     "why": {
-      "A": "1.16 g/mL.",
+      "A": "KNO₃ at 1.16 g/mL is less dense than the NaCl solution, but it is still above the cerium sulfate value.",
       "B": "1.20 g/mL, the densest.",
       "C": "Correct — 1.09 g/mL, the lowest value listed.",
       "D": "The three densities differ."
@@ -1346,9 +1346,9 @@
     ],
     "answer": "D",
     "why": {
-      "A": "94%, the highest.",
-      "B": "82%.",
-      "C": "64%.",
+      "A": "94% survived at pH 8.1, the highest figure in the table. That makes it where survival was best, not worst.",
+      "B": "82% at pH 7.7 is down from pH 8.1, but it is still more than double the figure at the bottom of the table.",
+      "C": "64% at pH 7.5 continues the decline without reaching the end of it. One more row down is lower still.",
       "D": "Correct — 37%, the lowest value listed."
     }
   },
@@ -1610,9 +1610,9 @@
     ],
     "answer": "D",
     "why": {
-      "A": "44°C, the coldest.",
-      "B": "52°C.",
-      "C": "68°C.",
+      "A": "Bare glass finished at 44 °C, the lowest of the four. This is the worst insulator in the experiment, not the best.",
+      "B": "Paper reached 52 °C — better than bare glass, but 29 degrees short of the best result.",
+      "C": "Foam reached 68 °C, the best of the ordinary materials, and it is still 13 degrees below the vacuum flask.",
       "D": "Correct — 81°C, the highest final temperature."
     }
   },
@@ -1874,10 +1874,10 @@
     ],
     "answer": "C",
     "why": {
-      "A": "92 cm.",
-      "B": "61 cm.",
+      "A": "2016 recorded 92 cm, well above the driest year. Scan the whole column before settling on a row.",
+      "B": "61 cm in 2017 is the second-lowest figure in the table, so it is close but not the least.",
       "C": "Correct — 38 cm, the lowest value.",
-      "D": "104 cm."
+      "D": "2020 recorded 104 cm, the most rainfall in the table rather than the least."
     }
   },
   {
@@ -2865,9 +2865,9 @@
     "answer": "C",
     "why": {
       "C": "The passage's introduction, which precedes and applies to all three geologists' hypotheses, identifies desert varnish as a coating of iron and manganese oxides.",
-      "A": "not identified as a component of the varnish anywhere in the passage",
-      "B": "not identified as a component of the varnish anywhere in the passage",
-      "D": "not identified as a component of the varnish anywhere in the passage"
+      "A": "Calcium carbonate is never named as part of the varnish. It is a common desert mineral, which is what makes it a tempting answer, but the passage does not put it in the coating.",
+      "B": "Silica and quartz are what many of these rocks are made of, not what the coating on them is made of. The question asks about the varnish.",
+      "D": "Organic material appears in the passage only as something bacteria contribute to the process, never as a component of the finished varnish."
     }
   },
   {
@@ -3262,8 +3262,8 @@
     "why": {
       "C": "Geologists 2 and 3 both propose external mineral sources (bacteria absorbing dust-carried metals, or dust itself), so both would predict varnish could form on a rock with no iron or manganese of its own. Geologist 1's hypothesis specifically requires minerals from the rock's own interior.",
       "A": "Geologist 1's hypothesis specifically requires minerals from within the rock itself, so a mineral-free rock like quartz would prevent varnish from forming under this view",
-      "B": "Geologist 1's hypothesis is excluded, since it depends on minerals already present in the rock",
-      "D": "Geologist 1's hypothesis is excluded, since it depends on minerals already present in the rock"
+      "B": "Geologist 2 belongs in the answer, but Geologist 1 does not: that hypothesis draws the metals from inside the rock, and pure quartz has none to give.",
+      "D": "This includes all three, but Geologist 1 cannot be among them — that hypothesis needs iron and manganese already in the rock, which is exactly what pure quartz lacks."
     }
   },
   {
@@ -4416,8 +4416,8 @@
     "answer": "C",
     "why": {
       "C": "Figure 1 shows that period does not meaningfully depend on bob mass, so using a heavier bob in a repeat of Table 1's trials would most likely leave the recorded periods largely unchanged.",
-      "A": "Figure 1 shows period is essentially unaffected by bob mass at a fixed string length",
-      "B": "Figure 1 shows period is essentially unaffected by bob mass at a fixed string length",
+      "A": "A substantial increase would require period to rise with mass, and Figure 1 is flat across the mass range at any fixed string length.",
+      "B": "A substantial decrease would require period to fall with mass. Figure 1 shows no such fall — the trace is flat in either direction.",
       "D": "string length remains the variable being deliberately varied regardless of which bob mass is used"
     }
   },

@@ -2083,7 +2083,7 @@
       "A": "Possession requires an apostrophe.",
       "B": "Correct — singular \"one\" takes apostrophe + s.",
       "C": "Places the apostrophe as if \"one\" were plural.",
-      "D": "Not a word."
+      "D": "This closes the space between the two words and still supplies no apostrophe, so it fails on spacing and on possession both."
     }
   },
   {
@@ -2348,7 +2348,7 @@
       "A": "\"treat like\" is informal; standard usage is \"treat as.\"",
       "B": "Correct — \"treated X as Y\" is the idiomatic construction.",
       "C": "\"treat for\" means to give medical care.",
-      "D": "Not idiomatic."
+      "D": "\"Treat in\" is not an English idiom. The preposition has to be \"as\" to link the thing to what it is being treated as."
     }
   },
   {
@@ -3113,7 +3113,7 @@
       "A": "Possession requires an apostrophe.",
       "B": "Correct — one drain, so apostrophe before the s.",
       "C": "Marks a plural possessive, but only one drain is described.",
-      "D": "Not a valid form."
+      "D": "This adds a plural possessive apostrophe and then a second s on top of it, which no possessive form in English uses."
     }
   },
   {
