@@ -8578,5 +8578,335 @@
       "C": "Both candidates are discussed in connection with the robin from the opening paragraph.",
       "D": "Neither explains the map sense; that is the gap the passage closes on."
     }
+  },
+  {
+    "id": "r204",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "rp21",
+    "context": "The passage is organized primarily as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a contrast between two habits, a striking result, and a limit on what it shows."
+      },
+      {
+        "id": "B",
+        "text": "a chronological account of how jury procedure changed over the last century."
+      },
+      {
+        "id": "C",
+        "text": "a set of recommendations for how a jury foreperson ought to run a room."
+      },
+      {
+        "id": "D",
+        "text": "an argument that juries should be replaced by panels of trained judges."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the two room types, the first-ballot result, and the mock-jury caution, in that order.",
+      "B": "No dates are given and no change in procedure over time is described anywhere.",
+      "C": "The passage describes what rooms do; it never tells a foreperson what to do.",
+      "D": "Judges are not mentioned, and nothing proposes replacing the jury with anything."
+    }
+  },
+  {
+    "id": "r205",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "hard",
+    "passage": "rp21",
+    "context": "The fourth paragraph functions in the passage’s structure chiefly as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a summary of the two habits introduced at the opening."
+      },
+      {
+        "id": "B",
+        "text": "a limit placed on the claim the passage has just made."
+      },
+      {
+        "id": "C",
+        "text": "the first description of what an evidence-driven room does."
+      },
+      {
+        "id": "D",
+        "text": "a second piece of evidence for the first-ballot finding."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Nothing is restated here, and the two habits are not the paragraph’s subject.",
+      "B": "Correct — it names the closed-door problem and the mock juries the findings rest on.",
+      "C": "The evidence-driven room is described in the second paragraph, not in this one.",
+      "D": "It supplies no new support; it questions the footing of what has already been said."
+    }
+  },
+  {
+    "id": "r206",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "medium",
+    "passage": "rp21",
+    "context": "The writer’s attitude toward the first-ballot finding is best described as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "certain that it settles who is convicted and who is not."
+      },
+      {
+        "id": "B",
+        "text": "indifferent, since the studies were all done on volunteers."
+      },
+      {
+        "id": "C",
+        "text": "persuaded but careful about how far it reaches."
+      },
+      {
+        "id": "D",
+        "text": "sceptical that any pattern in the data is real at all."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The closing sentence says exactly the opposite about who goes to prison.",
+      "B": "The volunteers are raised as a caution the writer takes seriously rather than ignores.",
+      "C": "Correct — the finding is called striking and then explicitly held back from the courtroom.",
+      "D": "The passage says the pattern survives decades and countries, which is not scepticism."
+    }
+  },
+  {
+    "id": "r207",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "hard",
+    "passage": "rp21",
+    "context": "The phrase \"a caution that is easy to skip\" suggests the writer regards the mock-jury problem as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "so severe that the research cannot be used for anything."
+      },
+      {
+        "id": "B",
+        "text": "a complaint raised only by people hostile to the research."
+      },
+      {
+        "id": "C",
+        "text": "already solved by the volume of studies that have been run."
+      },
+      {
+        "id": "D",
+        "text": "a real point that readers pass over."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The next paragraph opens by saying the caution does not dissolve the finding.",
+      "B": "The writer raises it personally and treats it as a fair point rather than an attack.",
+      "C": "Volume makes an artefact less likely but leaves the closed-door problem in place.",
+      "D": "Correct — something easy to skip is something readers pass over, which is why it is flagged."
+    }
+  },
+  {
+    "id": "r208",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "medium",
+    "passage": "rp21",
+    "context": "Which detail most directly supports the claim that an evidence-driven room serves its members better?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Its members are less likely to report having gone along with something."
+      },
+      {
+        "id": "B",
+        "text": "It postpones any count until the talking through the witnesses has run its course."
+      },
+      {
+        "id": "C",
+        "text": "It is the habit that the researchers studying deliberation describe second."
+      },
+      {
+        "id": "D",
+        "text": "Its discussion is organised around the two camps that the first poll creates."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it names an outcome for the people in the room rather than a feature of the method.",
+      "B": "Postponing the count is what the habit is, not evidence that the habit does any good.",
+      "C": "The order in which the two are introduced carries no claim about either one.",
+      "D": "Camps formed by an early poll belong to the verdict-driven room instead."
+    }
+  },
+  {
+    "id": "r209",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "hard",
+    "passage": "rp21",
+    "context": "The writer’s chief reason for not dismissing the mock-jury research is that its central pattern:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "has never once been challenged by anyone working in the field."
+      },
+      {
+        "id": "B",
+        "text": "reappears across decades, countries and formats."
+      },
+      {
+        "id": "C",
+        "text": "has been confirmed by observers sitting in on real deliberations."
+      },
+      {
+        "id": "D",
+        "text": "agrees with what jurors themselves say about their own rooms."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The passage raises a challenge itself, so the research is plainly not unchallenged.",
+      "B": "Correct — the passage says a result surviving that much variation is rarely an artefact.",
+      "C": "Real deliberations are closed, which is the whole reason the caution exists.",
+      "D": "Only one report from members is mentioned, and it is an outcome rather than a check."
+    }
+  },
+  {
+    "id": "r210",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "hard",
+    "passage": "rp21",
+    "context": "The contrast between a window opening and \"a door closing\" conveys that an early ballot:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "makes the deliberation take considerably longer to finish."
+      },
+      {
+        "id": "B",
+        "text": "is required by the rules under which a jury must operate."
+      },
+      {
+        "id": "C",
+        "text": "shuts off the thinking it appears to reveal."
+      },
+      {
+        "id": "D",
+        "text": "lets the rest of the room see what each member believes."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The verdict-driven room is described as the one that finishes sooner.",
+      "B": "The opening paragraph says nobody instructs the room to take the vote at all.",
+      "C": "Correct — the next sentence says the discussion afterward becomes a defence, not an enquiry.",
+      "D": "That is the window the image rejects; the passage says the ballot is the other thing."
+    }
+  },
+  {
+    "id": "r211",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "medium",
+    "passage": "rp21",
+    "context": "As used in the final paragraph, \"artefact\" most nearly means:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "an object recovered from a site and kept for study."
+      },
+      {
+        "id": "B",
+        "text": "a deliberate attempt to mislead a reader about data."
+      },
+      {
+        "id": "C",
+        "text": "a skilled piece of work made by hand rather than machine."
+      },
+      {
+        "id": "D",
+        "text": "a result produced by the method rather than the world."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The archaeological sense has nothing to do with a statistical result.",
+      "B": "Nothing suggests deception; the worry is that the setup produced the pattern by itself.",
+      "C": "Handmade craft is a third unrelated sense of the word entirely.",
+      "D": "Correct — the sentence contrasts it with a pattern that survives changes in the laboratory setup."
+    }
+  },
+  {
+    "id": "r212",
+    "section": "reading",
+    "topic": "comparison",
+    "difficulty": "medium",
+    "passage": "rp21",
+    "context": "The two kinds of room differ most importantly in that only the evidence-driven one:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "waits before it counts a single hand."
+      },
+      {
+        "id": "B",
+        "text": "is made up of twelve people shown into a room together."
+      },
+      {
+        "id": "C",
+        "text": "reaches a verdict that matches its first-ballot majority."
+      },
+      {
+        "id": "D",
+        "text": "has been studied by researchers using volunteers as jurors."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the early poll is exactly what separates the verdict-driven room from it.",
+      "B": "Both rooms are the same twelve people; the difference is what they do first.",
+      "C": "Finishing where the first ballot started is the verdict-driven room’s pattern.",
+      "D": "The mock-jury method covers both habits, since both are observed in the same studies."
+    }
+  },
+  {
+    "id": "r213",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "hard",
+    "passage": "rp21",
+    "context": "The main idea of the passage is that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the number of jurors in a room matters more than the order in which they speak."
+      },
+      {
+        "id": "B",
+        "text": "when a room votes changes what it remembers, though not provably who it convicts."
+      },
+      {
+        "id": "C",
+        "text": "juries reach the wrong verdict whenever they take a ballot in the first ten minutes."
+      },
+      {
+        "id": "D",
+        "text": "research on deliberation is too compromised by its methods to be worth attending to."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The number twelve appears once as a setting and is never compared with anything.",
+      "B": "Correct — the closing paragraph draws exactly that line between what is shown and what is not.",
+      "C": "No verdict is called wrong anywhere; the passage is about memory and participation.",
+      "D": "The caution is raised and then answered by the pattern surviving across decades."
+    }
   }
 ]
