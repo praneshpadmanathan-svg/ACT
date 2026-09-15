@@ -60,7 +60,7 @@
       "A": "Comes from subtracting rather than adding 8 to both sides.",
       "B": "Results from dividing 22 by an incorrect coefficient.",
       "C": "Correct — 2x = 22, so x = 11.",
-      "D": "This is 2x, not x."
+      "D": "22 is the value of 2x; the last step divides it by the coefficient."
     }
   },
   {
@@ -92,7 +92,7 @@
       "A": "6 divides both but is not the greatest such factor.",
       "B": "9 divides both but 18 also does.",
       "C": "Correct — 54 = 2·3³, 90 = 2·3²·5, so GCF = 2·3² = 18.",
-      "D": "27 does not divide 90."
+      "D": "27 divides 54 but leaves a remainder in 90, so it is not a common factor."
     }
   },
   {
@@ -219,7 +219,7 @@
     "why": {
       "A": "Correct — (−7 − 5)/(4 − (−2)) = −12/6 = −2.",
       "B": "Sign error in the numerator.",
-      "C": "Inverts rise and run.",
+      "C": "−1/2 divides the run by the rise; slope is rise over run.",
       "D": "This loses the negative sign and inverts rise over run, so both the direction and the size of the slope are wrong."
     }
   },
@@ -282,7 +282,7 @@
     "answer": "C",
     "why": {
       "A": "Adds the dimensions instead of multiplying.",
-      "B": "This is the perimeter.",
+      "B": "46 feet is the distance around the room, not the area of its floor.",
       "C": "Correct — 14 × 9 = 126 square feet.",
       "D": "Doubles the area unnecessarily."
     }
@@ -315,7 +315,7 @@
     "why": {
       "A": "Uses 6 hours instead of 7.",
       "B": "Correct — rate = 52 mph, and 52 × 7 = 364 miles.",
-      "C": "Uses a rate of 54 mph.",
+      "C": "54 mph would come from dividing 234 by 4.33 rather than by 4.5.",
       "D": "Multiplies 234 by 1.75 rather than scaling the rate."
     }
   },
@@ -346,7 +346,7 @@
     "answer": "C",
     "why": {
       "A": "Sign error in the squared term.",
-      "B": "Treats (−2)² as −4.",
+      "B": "This treats (−2)² as −4, but squaring a negative number gives a positive.",
       "C": "Correct — 3(4) − 4(−2) + 1 = 12 + 8 + 1 = 21.",
       "D": "Subtracts 8 instead of adding it."
     }
@@ -378,9 +378,9 @@
     "answer": "A",
     "why": {
       "A": "Correct — complementary angles sum to 90°, so 90 − 37 = 53°.",
-      "B": "Subtracts from 100.",
+      "B": "63° subtracts 37 from 100, but complementary angles total 90°.",
       "C": "Uses supplementary (180°) instead of complementary.",
-      "D": "Subtracts from 360°."
+      "D": "323° subtracts from a full turn of 360° instead of from a right angle."
     }
   },
   {
@@ -410,9 +410,9 @@
     "answer": "A",
     "why": {
       "A": "Correct — a₁₂ = 4 + 11(7) = 4 + 77 = 81.",
-      "B": "Uses 12d instead of 11d.",
+      "B": "88 adds twelve common differences; reaching the 12th term takes eleven.",
       "C": "Forgets to add the first term.",
-      "D": "Uses 13 terms."
+      "D": "95 adds thirteen differences, two steps past where the 12th term sits."
     }
   },
   {
@@ -667,7 +667,7 @@
     "why": {
       "A": "This is the longer leg, opposite the 60° angle.",
       "B": "Correct — the hypotenuse is twice the short leg: 2(6) = 12.",
-      "C": "Uses the 45-45-90 ratio.",
+      "C": "6√2 is the 45-45-90 ratio, which applies when the two legs are equal.",
       "D": "Halves rather than doubles."
     }
   },
@@ -762,8 +762,8 @@
     "answer": "A",
     "why": {
       "A": "Correct — AB = 10, and the side opposite angle A is BC = 6, so sin A = 6/10.",
-      "B": "This is cos A.",
-      "C": "This is tan A.",
+      "B": "8/10 is cos A, built from the leg adjacent to angle A rather than opposite.",
+      "C": "6/8 is tan A, opposite over adjacent instead of over the hypotenuse.",
       "D": "This is the reciprocal of tan A."
     }
   },
@@ -794,7 +794,7 @@
     "answer": "C",
     "why": {
       "A": "Multiplies radius by height without squaring.",
-      "B": "Uses 2r instead of r².",
+      "B": "80π doubles the radius where the formula squares it.",
       "C": "Correct — V = πr²h = π(16)(10) = 160π.",
       "D": "Squares the height instead of the radius."
     }
@@ -890,9 +890,9 @@
     "answer": "C",
     "why": {
       "A": "Multiplies base and exponent.",
-      "B": "Computes 5².",
-      "C": "Correct — 2⁵ = 32.",
-      "D": "Computes 2⁶."
+      "B": "25 is 5², which swaps the base and the exponent of the logarithm.",
+      "C": "Correct — log₂(x) = 5 asks what 2 raised to the 5th is, and 2⁵ = 32.",
+      "D": "64 is 2⁶, one power further than the logarithm of 5 calls for."
     }
   },
   {
@@ -1081,10 +1081,10 @@
     ],
     "answer": "B",
     "why": {
-      "A": "This is the 4th term.",
+      "A": "135 is the 4th term, 5 · 3³, one multiplication short of the answer.",
       "B": "Correct — a₅ = 5 · 3⁴ = 5 · 81 = 405.",
       "C": "This is 3⁵, omitting the first term.",
-      "D": "This is the 6th term."
+      "D": "1215 is the 6th term, 5 · 3⁵, one multiplication too far."
     }
   },
   {
@@ -1114,7 +1114,7 @@
     "answer": "C",
     "why": {
       "A": "This is the GCF, which answers a different kind of question.",
-      "B": "Adds the two intervals.",
+      "B": "42 adds the two intervals, and 42 is a multiple of neither one.",
       "C": "Correct — LCM of 18 and 24 is 72.",
       "D": "Multiplies the intervals without reducing by the GCF."
     }
@@ -1243,8 +1243,8 @@
     "why": {
       "A": "Would yield roughly 11.25% salt.",
       "B": "Correct — salt stays at 9 L; 9/(60 + w) = 0.10 gives 60 + w = 90, so w = 30.",
-      "C": "Would yield 12% salt.",
-      "D": "Would yield 8.6% salt."
+      "C": "Adding 15 L leaves 9 L of salt in 75 L of solution, which is 12%.",
+      "D": "Adding 45 L leaves 9 L of salt in 105 L, diluting past the 10% target."
     }
   },
   {
@@ -1532,7 +1532,7 @@
       "A": "Does not follow from the two volume formulas.",
       "B": "Correct — (4/3)πr³ ÷ (πr²·2r) = (4/3)/2 = 2/3.",
       "C": "Inverts part of the computation.",
-      "D": "Reverses the ratio."
+      "D": "4:3 compares the cylinder to the sphere, reversing the order asked for."
     }
   },
   {
@@ -1626,9 +1626,9 @@
     "answer": "A",
     "why": {
       "A": "Correct — 7x = 35, so x = 5.",
-      "B": "Would give 46.",
-      "C": "Would give 53.",
-      "D": "This is 7x, not x."
+      "B": "Substituting 6 gives 7(6) + 4 = 46, which overshoots 39.",
+      "C": "Substituting 7 gives 7(7) + 4 = 53, further past 39 still.",
+      "D": "35 is the value of 7x after subtracting 4; one division remains."
     }
   },
   {
@@ -1659,8 +1659,8 @@
     "why": {
       "A": "0.35 × 240 = 84, not 74. A quick check: 10% of 240 is 24, so 30% alone is already 72.",
       "B": "Correct — 0.35 × 240 = 84.",
-      "C": "This is 40% of 240.",
-      "D": "Decimal point misplaced."
+      "C": "96 is 40% of 240, five percentage points above what was asked.",
+      "D": "8.4 is 3.5% of 240; the decimal point has slipped one place left."
     }
   },
   {
@@ -1689,10 +1689,10 @@
     ],
     "answer": "C",
     "why": {
-      "A": "51 = 3 × 17.",
-      "B": "57 = 3 × 19.",
+      "A": "51 factors as 3 × 17, so it has divisors besides 1 and itself.",
+      "B": "57 factors as 3 × 19; its digits sum to 12, which flags the factor of 3.",
       "C": "Correct — 59 has no factors other than 1 and itself.",
-      "D": "63 = 7 × 9."
+      "D": "63 factors as 7 × 9, and it is odd only, not prime."
     }
   },
   {
@@ -1723,7 +1723,7 @@
     "why": {
       "A": "Adds the exponents instead of multiplying.",
       "B": "Correct — a power raised to a power multiplies exponents.",
-      "C": "Divides the exponents.",
+      "C": "x² divides the exponents, but a power of a power multiplies them.",
       "D": "Treats the outer exponent as a coefficient."
     }
   },
@@ -1755,8 +1755,8 @@
     "why": {
       "A": "One of the two middle values, not their average.",
       "B": "Correct — sorted: 3,4,6,7,9,12; middle two are 6 and 7, averaging 6.5.",
-      "C": "The other middle value.",
-      "D": "This is the mean."
+      "C": "7 is the upper of the two middle values, and the median averages both.",
+      "D": "6.83 is the mean, the total divided by six rather than the middle value."
     }
   },
   {
@@ -1787,7 +1787,7 @@
     "why": {
       "A": "Subtracting both angles from 170 rather than 180 gives this. The three angles of a triangle sum to 180°.",
       "B": "Correct — 180 − 47 − 68 = 65°.",
-      "C": "Subtracts from 190.",
+      "C": "75° subtracts the two angles from 190°, but a triangle totals 180°.",
       "D": "This is the sum of the two given angles."
     }
   },
@@ -1850,8 +1850,8 @@
     "answer": "A",
     "why": {
       "A": "Correct — 4 of 20 chips are blue, so 4/20 = 1/5.",
-      "B": "Uses a total of 16.",
-      "C": "Doubles the numerator.",
+      "B": "1/4 uses a total of 16 chips, leaving the white ones out of the count.",
+      "C": "2/5 counts 8 blue chips, twice the number the jar actually holds.",
       "D": "Uses only the white chips as the total."
     }
   },
@@ -1881,10 +1881,10 @@
     ],
     "answer": "C",
     "why": {
-      "A": "Adds the dimensions.",
-      "B": "Doubles the sum.",
+      "A": "23 adds the base and the height instead of multiplying them.",
+      "B": "46 doubles the sum of base and height, which is a perimeter move.",
       "C": "Correct — ½(14)(9) = 63 cm².",
-      "D": "Forgets the factor of ½."
+      "D": "126 cm² is the whole rectangle; a triangle covers half of it."
     }
   },
   {
@@ -1980,7 +1980,7 @@
       "A": "Doubles instead of tripling.",
       "B": "Correct — each term is multiplied by 3, so 54 × 3 = 162.",
       "C": "Adds 36, treating it as arithmetic.",
-      "D": "Multiplies by 4."
+      "D": "216 multiplies by 4, but each term here is three times the one before."
     }
   },
   {
@@ -2011,7 +2011,7 @@
     "why": {
       "A": "This is the corresponding or alternate angle.",
       "B": "Correct — same-side interior angles are supplementary: 180 − 118 = 62°.",
-      "C": "Subtracts from 160.",
+      "C": "42° subtracts from 160°, and supplementary angles total 180°.",
       "D": "Adds instead of subtracting."
     }
   },
@@ -2041,9 +2041,9 @@
     ],
     "answer": "B",
     "why": {
-      "A": "Uses r instead of 2r.",
-      "B": "Correct — C = 2πr = 18π.",
-      "C": "This is the area.",
+      "A": "9π uses the radius where the circumference formula calls for the diameter.",
+      "B": "Correct — circumference is 2πr, and 2π(9) gives 18π.",
+      "C": "81π is πr², the area enclosed rather than the distance around.",
       "D": "Uses the diameter as the radius."
     }
   },
@@ -2076,7 +2076,7 @@
       "A": "Substituting 5 gives 25 + 10 − 15 = 20, not 0.",
       "B": "Correct — (x + 5)(x − 3) = 0.",
       "C": "Product is −15 but the sum is 14.",
-      "D": "Product would be +15."
+      "D": "Two negative roots multiply to +15, but the constant term here is −15."
     }
   },
   {
@@ -2108,7 +2108,7 @@
       "A": "This is 10 × 4. The pair x = 10, y = 4 satisfies x + y = 14 but gives a difference of 6, not 4.",
       "B": "Correct — adding gives 2x = 18 so x = 9, then y = 5, and 9 × 5 = 45.",
       "C": "Multiplies the two given constants.",
-      "D": "Squares 6."
+      "D": "36 squares the difference the equations suggest, rather than multiplying x by y."
     }
   },
   {
@@ -2171,7 +2171,7 @@
     "why": {
       "A": "Correct — 60 × 1.15 = 69, then 69 × 0.90 = $62.10.",
       "B": "Applies the 10% to the original price.",
-      "C": "Adds the percentages.",
+      "C": "A 15% rise then a 10% cut cannot reach $65; the rise alone stops at $69.",
       "D": "Assumes the changes cancel exactly."
     }
   },
@@ -2201,10 +2201,10 @@
     ],
     "answer": "C",
     "why": {
-      "A": "This is sin θ.",
-      "B": "Inverts the ratio.",
+      "A": "15/17 is sin θ, the opposite side over the hypotenuse.",
+      "B": "8/15 puts adjacent over opposite, which inverts the tangent.",
       "C": "Correct — the opposite side is √(289 − 64) = 15, so tan θ = 15/8.",
-      "D": "This is sec θ."
+      "D": "17/8 is sec θ, the reciprocal of the cosine that was given."
     }
   },
   {
@@ -2236,7 +2236,7 @@
       "A": "Sum would be 118, giving a mean of 23.6.",
       "B": "Correct — total must be 120, and 120 − 98 = 22.",
       "C": "Assumes the missing value equals the mean.",
-      "D": "Sum would be 124."
+      "D": "A fifth value of 26 brings the total to 124, a mean of 24.8."
     }
   },
   {
@@ -2267,7 +2267,7 @@
     "why": {
       "A": "Correct — solving for y gives y = (3/4)x − 3.",
       "B": "Sign error when dividing by −4.",
-      "C": "Inverts the slope.",
+      "C": "4/3 divides 4 by 3; solving for y puts the 3 on top instead.",
       "D": "Reads the x-coefficient directly."
     }
   },
@@ -2299,7 +2299,7 @@
     "why": {
       "A": "(x − 3) shifts right, not left.",
       "B": "Correct — left shifts add inside the parentheses; up shifts add outside.",
-      "C": "The −2 shifts down.",
+      "C": "Adding 3 inside is right, but −2 outside moves the graph down, not up.",
       "D": "Both shifts are reversed."
     }
   },
@@ -2331,7 +2331,7 @@
     "why": {
       "A": "Correct — in an isosceles right triangle the hypotenuse is leg × √2.",
       "B": "Doubles the leg, which applies to 30-60-90.",
-      "C": "Uses the 30-60-90 ratio.",
+      "C": "7√3 is the 30-60-90 ratio, which needs legs of different lengths.",
       "D": "Divides instead of multiplying."
     }
   },
@@ -2361,10 +2361,10 @@
     ],
     "answer": "C",
     "why": {
-      "A": "This is the volume.",
+      "A": "60 in³ is the volume, 5 × 4 × 3, rather than the area of the six faces.",
       "B": "Half of the correct answer.",
       "C": "Correct — 2(20 + 15 + 12) = 2(47) = 94 in².",
-      "D": "Doubles the volume."
+      "D": "120 doubles the volume; it is the three face areas that need doubling."
     }
   },
   {
@@ -2425,10 +2425,10 @@
     ],
     "answer": "B",
     "why": {
-      "A": "Would total $404.",
+      "A": "16 student tickets leaves 24 adult ones, and that sale brings in $404.",
       "B": "Correct — 12a + 7s = 380 with a + s = 40 gives s = 20.",
-      "C": "Would total $360.",
-      "D": "Would total $340."
+      "C": "24 student tickets leaves 16 adult ones, which totals only $360.",
+      "D": "28 student tickets leaves 12 adult ones, which totals just $340."
     }
   },
   {
@@ -2489,7 +2489,7 @@
     ],
     "answer": "C",
     "why": {
-      "A": "This is the GCF.",
+      "A": "5 is the greatest common factor, the largest number dividing both.",
       "B": "30 is a multiple of 15, but 30 ÷ 20 is not a whole number, so 30 is not a common multiple at all.",
       "C": "Correct — 15 = 3·5 and 20 = 2²·5, so LCM = 2²·3·5 = 60.",
       "D": "The product, not reduced by the GCF."
@@ -2555,7 +2555,7 @@
     "why": {
       "A": "Correct — scalar multiplication multiplies every entry by 4.",
       "B": "Multiplies only the first entry.",
-      "C": "Adds 4 to each entry.",
+      "C": "This adds 4 to every entry, but a scalar in front multiplies them.",
       "D": "Incorrectly turns the zero entry into 4."
     }
   },
@@ -2585,10 +2585,10 @@
     ],
     "answer": "C",
     "why": {
-      "A": "Would give 7.",
-      "B": "Would give 12.25.",
+      "A": "Substituting 12 gives 4 + 3 = 7, exactly half of what is needed.",
+      "B": "Substituting 21 gives 7 + 5.25 = 12.25, still short of 14.",
       "C": "Correct — combining gives 7x/12 = 14, so x = 24.",
-      "D": "Would give about 16.3."
+      "D": "Substituting 28 gives about 9.33 + 7 = 16.33, past 14."
     }
   },
   {
@@ -2619,7 +2619,7 @@
     "why": {
       "A": "Correct — 5d = 20 so d = 4, and a₁ = 11 − 2(4) = 3.",
       "B": "This is the common difference.",
-      "C": "Subtracts only one d.",
+      "C": "5 steps back a single common difference; the first term is two steps back.",
       "D": "Subtracts d from 11 once."
     }
   },
@@ -2649,10 +2649,10 @@
     ],
     "answer": "C",
     "why": {
-      "A": "Would give an arc of 3π.",
-      "B": "Would give an arc of 4π.",
+      "A": "45° is an eighth of the circle, so it cuts an arc of 3π, not 6π.",
+      "B": "60° is a sixth of the circle, so it cuts an arc of 4π.",
       "C": "Correct — circumference is 24π, and 6π is one quarter of it, so 90°.",
-      "D": "Would give an arc of 8π."
+      "D": "120° is a third of the circle, so it cuts an arc of 8π."
     }
   },
   {
@@ -2683,8 +2683,8 @@
     "why": {
       "A": "This is the nonagon value.",
       "B": "Correct — (10 − 2) × 180° = 1440°.",
-      "C": "Uses n − 1.",
-      "D": "Uses n directly."
+      "C": "1620° comes from (10 − 1) × 180°; a polygon splits into n − 2 triangles.",
+      "D": "1800° is 10 × 180°, two triangles more than a decagon contains."
     }
   },
   {
@@ -2713,10 +2713,10 @@
     ],
     "answer": "B",
     "why": {
-      "A": "10 × 12 = 120, not 168.",
+      "A": "The pair 10 and 12 sums to 22 but multiplies to 120, short of 168.",
       "B": "Correct — 12 × 14 = 168, and 12 + 14 = 26.",
-      "C": "Would require 14 × 14.",
-      "D": "14 × 16 = 224."
+      "C": "A sum of 28 would need 14 and 14, which are the same integer.",
+      "D": "The pair 14 and 16 sums to 30 but multiplies to 224, well past 168."
     }
   },
   {
@@ -2809,9 +2809,9 @@
     ],
     "answer": "B",
     "why": {
-      "A": "Divides by 4.",
+      "A": "12 cm³ takes a quarter of the cylinder; a cone is a third of it.",
       "B": "Correct — a cone is exactly one third of the matching cylinder: 48/3 = 16 cm³.",
-      "C": "Halves the volume.",
+      "C": "24 cm³ halves the cylinder, but the cone formula carries a factor of ⅓.",
       "D": "Multiplies by 3 instead of dividing."
     }
   },
@@ -9082,8 +9082,8 @@
     "answer": "A",
     "why": {
       "A": "Correct — multiply by π/180: 150 · π/180 = 5π/6.",
-      "B": "3π/4 is 135°.",
-      "C": "2π/3 is 120°.",
+      "B": "3π/4 converts to 135°, fifteen degrees short of the angle given.",
+      "C": "2π/3 converts to 120°, thirty degrees short of the angle given.",
       "D": "5π/3 is 300°, which doubles the correct answer."
     }
   },
@@ -10396,7 +10396,7 @@
       "A": "This is the coefficient of x before the equation is solved for y.",
       "B": "Correct — solving for y gives y = (3/4)x − 3, so the slope is 3/4.",
       "C": "Keeps the minus sign that disappears when both sides are divided by −4.",
-      "D": "Inverts rise and run."
+      "D": "4/3 divides the y-coefficient into the x-coefficient, inverting the slope."
     }
   },
   {
@@ -10459,7 +10459,7 @@
     "why": {
       "A": "Uses the wrong sign for the y-intercept. The line crosses the y-axis below the origin.",
       "B": "Correct — the point (0, −4) is the y-intercept, so y = mx + b gives y = (2/3)x − 4.",
-      "C": "Inverts the slope.",
+      "C": "The intercept is right, but 3/2 inverts the given slope of 2/3.",
       "D": "Swaps the slope and the intercept."
     }
   },
@@ -10491,7 +10491,7 @@
     "why": {
       "A": "Correct — the slope is (5 − (−1))/(2 − (−1)) = 2, and y − 5 = 2(x − 2) gives y = 2x + 1.",
       "B": "Right slope, but subtracts where the point-slope form adds. Test x = 2: this gives 3, not 5.",
-      "C": "Inverts rise and run.",
+      "C": "A slope of 1/2 inverts rise over run; the rise is 6 and the run is 3.",
       "D": "Reverses the order of subtraction in the numerator only, flipping the slope's sign."
     }
   },
@@ -10588,7 +10588,7 @@
       "A": "Uses a slope of −1 instead of −1/2.",
       "B": "Correct — 2x + 4y = 9 has slope −1/2, so (k − 7)/8 = −1/2 and k = 3.",
       "C": "Uses a slope of +1/2. Parallel lines share the sign as well as the size of the slope.",
-      "D": "Uses a slope of +1."
+      "D": "15 follows from a slope of +1, but the given line has slope −1/2."
     }
   },
   {
@@ -11450,7 +11450,7 @@
     "answer": "B",
     "why": {
       "A": "Reads back the base rather than the exponent.",
-      "B": "Correct — 3⁴ = 81.",
+      "B": "Correct — log₃(81) asks what power of 3 gives 81, and 3⁴ = 81.",
       "C": "This is √81, not the power of 3 that produces 81.",
       "D": "This is 3³, which is 27, not 81."
     }
