@@ -7258,5 +7258,335 @@
       "C": "Cost is presented as the sound record’s advantage, and the passage never treats expense as a hazard.",
       "D": "The cooperative managed the closure; it did not collect either record, and no such contrast is drawn."
     }
+  },
+  {
+    "id": "r164",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "rp17",
+    "context": "Which of the following best describes the way the passage is put together?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a standard measure, a second one run beside it, and what their disagreement shows."
+      },
+      {
+        "id": "B",
+        "text": "a history of how the state’s library funding formula came to be written."
+      },
+      {
+        "id": "C",
+        "text": "an argument that circulation should be dropped as a measure of library use."
+      },
+      {
+        "id": "D",
+        "text": "a profile of one director and the five branches she has run since 2014."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — circulation opens the passage, the sweep joins it, and the closing paragraphs read the gap.",
+      "B": "The formula is mentioned twice but never traced back to who wrote it or when.",
+      "C": "The sixth paragraph says plainly that circulation is not a bad measure, only a partial one.",
+      "D": "Adeyemi-Lowe arrives in the fifth paragraph, and the branches are counted once in passing."
+    }
+  },
+  {
+    "id": "r165",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "hard",
+    "passage": "rp17",
+    "context": "The short third paragraph functions in the passage chiefly to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "establish that Kettleman runs a main branch and four smaller ones."
+      },
+      {
+        "id": "B",
+        "text": "separate the method, which is common, from the record, which is not."
+      },
+      {
+        "id": "C",
+        "text": "explain the fixed schedule on which staff walk the library floor."
+      },
+      {
+        "id": "D",
+        "text": "introduce the disagreement between the two records for the first time."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The branches are counted in the second paragraph, and nothing here returns to them.",
+      "B": "Correct — it grants that sweeps are ordinary, so the claim has to rest on nine published years.",
+      "C": "The schedule is given in the paragraph before, as part of describing what the sweep is.",
+      "D": "The disagreement arrives in the paragraph after this one, which reports it collection by collection."
+    }
+  },
+  {
+    "id": "r166",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "rp17",
+    "context": "The fourth paragraph differs from the paragraphs before it chiefly in that it:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "concedes that the sweep cannot show whether anybody read anything."
+      },
+      {
+        "id": "B",
+        "text": "explains why an atlas is borrowed less often than a popular novel."
+      },
+      {
+        "id": "C",
+        "text": "reports what the two records did rather than how they were collected."
+      },
+      {
+        "id": "D",
+        "text": "names the director of the Kettleman County system for the first time."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That concession is made by Adeyemi-Lowe later, not by the paragraph reporting the counts.",
+      "B": "The reasons behind the gap, the atlas included, arrive two paragraphs further on.",
+      "C": "Correct — the earlier paragraphs set the two counts up, and this is the first to put numbers beside each other.",
+      "D": "Adeyemi-Lowe is named in the fifth paragraph, the one immediately after this."
+    }
+  },
+  {
+    "id": "r167",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "medium",
+    "passage": "rp17",
+    "context": "Adeyemi-Lowe’s attitude toward circulation as a measure is best described as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "frustration at a formula she has spent nine years trying to overturn."
+      },
+      {
+        "id": "B",
+        "text": "confidence that the sweep should replace it as the number reported."
+      },
+      {
+        "id": "C",
+        "text": "indifference to which of the two numbers the state chooses to use."
+      },
+      {
+        "id": "D",
+        "text": "acceptance of what it counts, paired with insistence on what it does not."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "She never asks for the formula to change; she asks that the note beside it be read.",
+      "B": "She says the sweep does not show that anybody read anything, which is no case for replacing.",
+      "C": "She spent six years on the wording of the note, which is the opposite of not caring.",
+      "D": "Correct — she says circulation is not a bad measure, only one that counts a single behaviour."
+    }
+  },
+  {
+    "id": "r168",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "hard",
+    "passage": "rp17",
+    "context": "The remark that Adeyemi-Lowe is \"careful not to overclaim\" serves mainly to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "mark the limit she sets before she draws anything from the sweep."
+      },
+      {
+        "id": "B",
+        "text": "suggest that she doubts the sweep counts were recorded accurately."
+      },
+      {
+        "id": "C",
+        "text": "criticise other librarians who have claimed too much for the method."
+      },
+      {
+        "id": "D",
+        "text": "signal that the writer disagrees with the conclusion she reaches."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the sentence after it says what the sweep does not show before saying what it does.",
+      "B": "Her caution is about what the counts mean, not about whether they were taken correctly.",
+      "C": "No other librarian appears in the passage, and the method is described as ordinary practice.",
+      "D": "The writer reports her conclusion without objection and gives it the final paragraph."
+    }
+  },
+  {
+    "id": "r169",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "medium",
+    "passage": "rp17",
+    "context": "The final sentence of the passage conveys:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "pride in the length of the record the county has kept."
+      },
+      {
+        "id": "B",
+        "text": "a wry sense that the hardest part of the work was the smallest."
+      },
+      {
+        "id": "C",
+        "text": "regret that six years of effort produced only a short note."
+      },
+      {
+        "id": "D",
+        "text": "anger at readers who will not read a longer explanation."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The nine years are mentioned earlier and without emphasis, and this sentence is about the note.",
+      "B": "Correct — she calls the note the part that matters, then reports how long it took to shorten it.",
+      "C": "She names the note as the thing that matters, so the six years are not presented as wasted.",
+      "D": "The sentence faults nobody; it treats a short note as the goal rather than as a surrender."
+    }
+  },
+  {
+    "id": "r170",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "hard",
+    "passage": "rp17",
+    "context": "Which finding most directly supports the claim that circulation misses work a collection is doing?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Reference material was once kept non-circulating as a matter of policy."
+      },
+      {
+        "id": "B",
+        "text": "The state has not changed the formula it uses to fund the system."
+      },
+      {
+        "id": "C",
+        "text": "A shelf that circulated eleven times in a year drew 2,300 sweep entries."
+      },
+      {
+        "id": "D",
+        "text": "Popular fiction rises and falls in both records at the same time."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The old policy helps explain the habit, but it is not itself a measurement of use.",
+      "B": "What the state does with the numbers is not evidence about what the numbers capture.",
+      "C": "Correct — the same shelf is nearly invisible in one record and heavily used in the other.",
+      "D": "Fiction is the collection where the two agree, so it shows the measure working, not failing."
+    }
+  },
+  {
+    "id": "r171",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "medium",
+    "passage": "rp17",
+    "context": "Which finding, if true, would most weaken the case Kettleman makes for the sweep?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The sweep was carried out four times a day rather than continuously."
+      },
+      {
+        "id": "B",
+        "text": "Other library systems in the state have run sweeps of their own."
+      },
+      {
+        "id": "C",
+        "text": "Local history is the smallest collection the main branch holds."
+      },
+      {
+        "id": "D",
+        "text": "Most items recorded in a sweep were set down by staff reshelving carts."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The schedule is stated in the passage, and a fixed interval is what makes the counts comparable.",
+      "B": "The passage says the method is ordinary, so other systems running it changes nothing.",
+      "C": "Collection size would not explain one shelf appearing 2,300 times in the sweep record.",
+      "D": "Correct — the sweep is meant to count what a person took off a shelf, and this makes it count staff."
+    }
+  },
+  {
+    "id": "r172",
+    "section": "reading",
+    "topic": "comparison",
+    "difficulty": "medium",
+    "passage": "rp17",
+    "context": "The passage draws which contrast between popular fiction and local history?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The two records agree about one and come apart completely about the other."
+      },
+      {
+        "id": "B",
+        "text": "One is borrowed by adults and the other chiefly by students doing research."
+      },
+      {
+        "id": "C",
+        "text": "One was placed on a withdrawal list in 2016 and the other was not."
+      },
+      {
+        "id": "D",
+        "text": "One is counted in the sweep and the other is counted in circulation."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — fiction rises and falls in both counts together, while local history splits them apart.",
+      "B": "The passage never says who borrows either collection or what they are doing with it.",
+      "C": "The withdrawal list is mentioned for local history, but fiction is never weighed against it.",
+      "D": "Both collections appear in both records, which is what makes the comparison possible at all."
+    }
+  },
+  {
+    "id": "r173",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "medium",
+    "passage": "rp17",
+    "context": "As used in the sixth paragraph, \"consulted\" most nearly means:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "compared against another source."
+      },
+      {
+        "id": "B",
+        "text": "looked into for one particular thing."
+      },
+      {
+        "id": "C",
+        "text": "asked for advice or an opinion."
+      },
+      {
+        "id": "D",
+        "text": "borrowed for use at home."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Nothing in the paragraph involves setting one source beside another to check it.",
+      "B": "Correct — the sentence sets it against reading through, so it means dipping in for a single item.",
+      "C": "That is the sense the word carries about a person, and a yearbook is not being asked anything.",
+      "D": "Taking a thing home is exactly the behaviour the paragraph says a yearbook does not attract."
+    }
   }
 ]
