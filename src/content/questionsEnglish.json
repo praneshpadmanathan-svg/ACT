@@ -1155,8 +1155,8 @@
     "why": {
       "A": "\"due to the fact that\" is a five-word way of saying one word.",
       "B": "Correct — the concise standard form.",
-      "C": "Even longer padding.",
-      "D": "Same padding in different words."
+      "C": "Six words where one would do. Length is the fault, and this is longer than the original.",
+      "D": "\"Owing to the fact that\" is the same padding with a different opening word."
     }
   },
   {
@@ -1687,7 +1687,7 @@
       "A": "\"her’s\" is never a word; possessive pronouns take no apostrophe.",
       "B": "\"hers\" stands alone and cannot modify a noun.",
       "C": "Correct — \"her\" is the possessive adjective form.",
-      "D": "Also not a real form."
+      "D": "\"Her’\" puts an apostrophe on a possessive pronoun, which never takes one — the same error as \"her’s\" with the s removed."
     }
   },
   {
@@ -1949,7 +1949,7 @@
     "answer": "C",
     "why": {
       "A": "\"this\" vaguely refers to the whole preceding clause.",
-      "B": "Equally vague.",
+      "B": "\"That\" points at the whole preceding clause exactly as \"this\" does, so the referent is still unnamed.",
       "C": "Correct — naming the referent removes the ambiguity.",
       "D": "\"it\" has no clear antecedent."
     }
@@ -2049,7 +2049,7 @@
     "why": {
       "A": "\"all sappy\" is colloquial and clashes with the profile’s measured tone.",
       "B": "Correct — maintains the passage’s restrained register.",
-      "C": "Even more informal.",
+      "C": "\"Get all mushy over\" is further from the profile’s measured register than the original, not closer to it.",
       "D": "Changes the meaning and adds slang."
     }
   },
@@ -2713,8 +2713,8 @@
     "why": {
       "A": "\"due to the fact that\" is five words for one.",
       "B": "Correct — the concise phrasing keeps the contrast with \"convenience\" parallel.",
-      "C": "Still padded.",
-      "D": "Equally padded and awkward."
+      "C": "\"On account of it offering\" is six words carrying the work of one, and it breaks the parallel with \"convenience\".",
+      "D": "\"Owing to the fact of\" keeps the padding and loses the verb, so the sentence no longer says what redundancy was offered by."
     }
   },
   {
@@ -4401,8 +4401,8 @@
     "why": {
       "D": "The essay's voice throughout is reflective and personal but not slangy. \"Totally a bummer\" breaks that register; \"more difficult than I had expected\" keeps the same sincerity without the clashing slang.",
       "A": "\"totally a bummer\" is casual slang that clashes with the essay's consistently reflective, personal tone",
-      "B": "still casual slang, the same register problem as the original phrase",
-      "C": "still casual slang, the same register problem as the original phrase"
+      "B": "\"Super\" as an intensifier is spoken slang. It swaps one casual register for another instead of fixing it.",
+      "C": "\"A drag\" is the same kind of slang idiom as \"a bummer\" — a synonym for the problem, not a repair."
     }
   },
   {
@@ -7583,6 +7583,1293 @@
       "B": "The flood is one episode within the record rather than the arc the goal describes.",
       "C": "The dispute occupies a paragraph and is the occasion for the record, not the subject.",
       "D": "The mechanics of a model were never part of the stated goal."
+    }
+  },
+  {
+    "id": "e177",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "medium",
+    "passage": "p36-eng-drill-tool-library-0001",
+    "context": "A member can «borrow a tile saw for a weekend, return it on Monday, and pay nothing» beyond the annual fee.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "borrow a tile saw for a weekend, returning it on Monday, and pay nothing"
+      },
+      {
+        "id": "C",
+        "text": "borrow a tile saw for a weekend, return it on Monday, and paying nothing"
+      },
+      {
+        "id": "D",
+        "text": "borrowing a tile saw for a weekend, return it on Monday, and pay nothing"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Three verbs share one \"can\": borrow, return, pay. All three are bare infinitives, so the series is parallel as written.",
+      "B": "\"Returning\" is a participle where the other two items are infinitives, so the middle item no longer attaches to \"can\".",
+      "C": "\"Paying\" breaks the series at the last item, which is where a reader is least likely to notice and most likely to be marked wrong.",
+      "D": "\"Borrowing\" breaks the series at the first item, and \"can borrowing\" is not a possible verb form."
+    }
+  },
+  {
+    "id": "e178",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "medium",
+    "passage": "p36-eng-drill-tool-library-0001",
+    "context": "Today «the shelves, crowded from floor to ceiling, holds» more than nine hundred items.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the shelves, crowded from floor to ceiling, hold"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "the shelves, crowded from floor to ceiling, has held"
+      },
+      {
+        "id": "D",
+        "text": "the shelves, crowded from floor to ceiling, holds now"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The subject is \"shelves\", which is plural, so the verb is \"hold\". The interrupting phrase changes nothing.",
+      "B": "The phrase between the commas ends in a singular-sounding word and pulls the verb with it. Cover the interruption and read \"the shelves holds\" to hear the error.",
+      "C": "\"Has held\" is singular as well, and it also shifts the sentence into the present perfect for no reason.",
+      "D": "Adding \"now\" leaves the agreement error untouched and duplicates the \"Today\" already opening the sentence."
+    }
+  },
+  {
+    "id": "e179",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "easy",
+    "passage": "p36-eng-drill-tool-library-0001",
+    "context": "… a sewing machine that three separate members «learned» to use last spring.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "have learned"
+      },
+      {
+        "id": "C",
+        "text": "will have learned"
+      },
+      {
+        "id": "D",
+        "text": "learn"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "\"Last spring\" places the action in a finished period, and the simple past is the tense for a finished period.",
+      "B": "The present perfect resists a specific finished time. \"Have learned last spring\" is not idiomatic English.",
+      "C": "The future perfect places the action ahead of a future moment, which contradicts \"last spring\" outright.",
+      "D": "The simple present would describe a habit or a general truth, not something that happened in one named season."
+    }
+  },
+  {
+    "id": "e180",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "medium",
+    "passage": "p36-eng-drill-tool-library-0001",
+    "context": "The collection began with a single donated item«:» a wheelbarrow with a cracked handle.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ";"
+      },
+      {
+        "id": "C",
+        "text": "no punctuation at all"
+      },
+      {
+        "id": "D",
+        "text": ", which was,"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "A colon may follow a complete sentence to introduce what that sentence has promised. \"The collection began with a single donated item\" is complete, and the wheelbarrow names the item.",
+      "B": "A semicolon joins two independent clauses. \"A wheelbarrow with a cracked handle\" has no verb, so nothing can stand on the right of one.",
+      "C": "Running the two together gives \"a single donated item a wheelbarrow\", a noun followed by a stray noun.",
+      "D": "The second comma closes a clause the first one never properly opened, stranding \"was\" without its complement."
+    }
+  },
+  {
+    "id": "e181",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "medium",
+    "passage": "p36-eng-drill-tool-library-0001",
+    "context": "A homeowner who buys a pressure washer uses it perhaps twice a «year, the» same machine, shared, runs most weekends from April to October.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "year; the"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "year the"
+      },
+      {
+        "id": "D",
+        "text": "year, therefore the"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Both halves are complete sentences. A semicolon is the mark that joins two of those while keeping the contrast tight.",
+      "B": "A comma alone between two independent clauses is a comma splice — the most tested error on the section.",
+      "C": "Removing the punctuation turns the splice into a fused sentence, which is worse rather than better.",
+      "D": "\"Therefore\" is an adverb, not a conjunction, so it cannot join two clauses. The comma splice survives underneath it."
+    }
+  },
+  {
+    "id": "e182",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "easy",
+    "passage": "p36-eng-drill-tool-library-0001",
+    "context": "Donations arrive faster than the volunteers can catalog «them. Which is why» a backlog now fills the hallway.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them, which is why"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "them. Which is the reason why"
+      },
+      {
+        "id": "D",
+        "text": "them; which is why"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "A relative clause cannot stand alone. Attaching it with a comma to the sentence it modifies gives \"which\" something to refer to.",
+      "B": "\"Which is why a backlog now fills the hallway\" has a verb but no subject of its own — \"which\" is a relative pronoun, so what follows the period is a fragment.",
+      "C": "Swapping \"why\" for \"the reason why\" leaves the same relative pronoun after the same period, so the fragment survives and gains a redundancy.",
+      "D": "A semicolon needs a complete sentence on each side, and the right-hand side here is still a relative clause."
+    }
+  },
+  {
+    "id": "e183",
+    "section": "english",
+    "topic": "sentence order",
+    "difficulty": "hard",
+    "passage": "p36-eng-drill-tool-library-0001",
+    "context": "The writer wants to add the sentence \"They had expected the saw and the ladder to move; they had not expected the conversations.\" Where should it go?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "At the end of the final paragraph, after the description of the desk volunteer."
+      },
+      {
+        "id": "B",
+        "text": "At [1], ending the opening paragraph."
+      },
+      {
+        "id": "C",
+        "text": "At [2], opening the second paragraph."
+      },
+      {
+        "id": "D",
+        "text": "At [3], opening the third paragraph."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "\"They\" needs the founders, who appear only in the final paragraph, and \"the conversations\" needs the talked-through job that ends the essay. The sentence closes a point the last paragraph has just made.",
+      "B": "At [1] neither \"they\" nor \"the conversations\" has anything to refer to yet — the founders and the desk are still four paragraphs away.",
+      "C": "[2] sits in the middle of the growth-of-the-collection account, where a remark about conversations has nothing to attach to.",
+      "D": "[3] opens the paragraph about idle tools, and the added sentence would interrupt the economic argument before it is made."
+    }
+  },
+  {
+    "id": "e184",
+    "section": "english",
+    "topic": "adding/deleting",
+    "difficulty": "hard",
+    "passage": "p36-eng-drill-tool-library-0001",
+    "context": "The writer is considering adding the following sentence to the final paragraph: \"The annual fee is forty dollars, payable in instalments.\" Should it be added?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No, because the paragraph is about an unplanned social effect and the fee is a separate matter already mentioned."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because readers will want to know what membership costs."
+      },
+      {
+        "id": "C",
+        "text": "Yes, because it explains why members are willing to ask for advice."
+      },
+      {
+        "id": "D",
+        "text": "No, because the essay never discusses money anywhere."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The final paragraph has one subject: the conversations the founders did not anticipate. A fee figure neither supports that nor follows from it, and the opening paragraph has already established that a fee exists.",
+      "B": "Reader curiosity is not the test. The test is whether the sentence does work for the paragraph it lands in.",
+      "C": "Nothing connects the price of membership to a willingness to ask the desk for help; the essay proposes no such link.",
+      "D": "The essay does mention money — \"pay nothing beyond the annual fee\" — so this reason is false even though the conclusion is right."
+    }
+  },
+  {
+    "id": "e185",
+    "section": "english",
+    "topic": "writers purpose",
+    "difficulty": "hard",
+    "passage": "p36-eng-drill-tool-library-0001",
+    "context": "Suppose the writer’s goal had been to explain why a tool library is economically workable. Would this essay accomplish that goal?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because it identifies idle ownership as the underlying reason and illustrates it with the pressure washer."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because it reports how many items the collection now holds."
+      },
+      {
+        "id": "C",
+        "text": "No, because it never states the annual fee or the operating budget."
+      },
+      {
+        "id": "D",
+        "text": "No, because it is concerned only with the social effects of borrowing."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The third paragraph names the mechanism — most tools sit idle — and the pressure washer converts that claim into a number a reader can check: twice a year alone, most weekends shared.",
+      "B": "Nine hundred items measures the collection’s size, not why sharing works. A large collection of tools nobody wanted would prove nothing.",
+      "C": "An explanation of the underlying economics does not require a budget, and the essay does give the mechanism.",
+      "D": "The social effect occupies the final paragraph only, and the essay explicitly calls it something the founders \"did not anticipate\" — an addition to the argument, not the whole of it."
+    }
+  },
+  {
+    "id": "e186",
+    "section": "english",
+    "topic": "commas",
+    "difficulty": "medium",
+    "passage": "ep14",
+    "context": "Every morning at low tide I walked the same hundred metres of shelf «with a laminated card, and counted» what was in the pools.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "with a laminated card and counted"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "with a laminated card, and, counted"
+      },
+      {
+        "id": "D",
+        "text": "with a laminated card; and counted"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "\"Walked\" and \"counted\" share the subject \"I\", so this is a compound predicate, not two sentences. A compound predicate takes no comma before \"and\".",
+      "B": "The comma suggests an independent clause is coming, and then no subject arrives.",
+      "C": "Adds a second comma that encloses \"and\", which is not an interruption.",
+      "D": "A semicolon needs a complete sentence on each side, and \"counted what was in the pools\" has no subject of its own."
+    }
+  },
+  {
+    "id": "e187",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "medium",
+    "passage": "ep14",
+    "context": "The columns of figures in the nineteen binders «tells» a story no single morning could.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "tell"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "has told"
+      },
+      {
+        "id": "D",
+        "text": "is telling"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The subject is \"columns\", which is plural. \"Of figures in the nineteen binders\" is prepositional and cannot supply the subject.",
+      "B": "The singular verb has been pulled toward \"binders\" — or toward \"figures\" — neither of which is the subject.",
+      "C": "\"Has told\" is singular as well, and the perfect tense adds a completion the sentence does not intend.",
+      "D": "\"Is telling\" is also singular, and the progressive suggests a story currently being delivered rather than one the record holds."
+    }
+  },
+  {
+    "id": "e188",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "medium",
+    "passage": "ep14",
+    "context": "By the time Marisol brought out the binders, I «had decided» that the counting was pointless.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "have decided"
+      },
+      {
+        "id": "C",
+        "text": "decide"
+      },
+      {
+        "id": "D",
+        "text": "will have decided"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Two past actions, one finished before the other. The earlier one takes the past perfect, which is what \"by the time\" sets up.",
+      "B": "The present perfect connects a past action to the present, but this decision was over before the binders appeared.",
+      "C": "The simple present puts the decision in the same moment as the reader, contradicting \"by the time … brought\".",
+      "D": "The future perfect places the action before a future point, and nothing here is in the future."
+    }
+  },
+  {
+    "id": "e189",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "medium",
+    "passage": "ep14",
+    "context": "Marisol let the question sit for three weeks before she showed the binders to the other counter and «I».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "me"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "myself"
+      },
+      {
+        "id": "D",
+        "text": "mine"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "\"To\" takes an object, so the pronoun is \"me\". Drop the other person and the ear settles it: she showed the binders to me.",
+      "B": "\"I\" is the subject form, and nothing here needs a second subject.",
+      "C": "A reflexive needs a matching subject in the same clause. The subject is \"she\", so \"myself\" has nothing to reflect.",
+      "D": "\"Mine\" is possessive and would mean she showed the binders to something the narrator owns."
+    }
+  },
+  {
+    "id": "e190",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "hard",
+    "passage": "ep14",
+    "context": "«Laid end to end, I could see that the columns» of figures were not slow at all.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Laid end to end, the columns"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "Laying end to end, I could see that the columns"
+      },
+      {
+        "id": "D",
+        "text": "Having laid them end to end, the columns"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "An opening participial phrase attaches to whatever noun follows it. The columns are what was laid end to end, so the columns have to come first.",
+      "B": "As written, the narrator is the one laid end to end.",
+      "C": "\"Laying\" makes the dangle active instead of passive without fixing what it attaches to.",
+      "D": "Now the columns are doing the laying, which reverses who acted on what."
+    }
+  },
+  {
+    "id": "e191",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "medium",
+    "passage": "ep14",
+    "context": "Every morning I counted the pools, and every afternoon I «was taking school groups» over the same ground.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "took school groups"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "would be taking school groups"
+      },
+      {
+        "id": "D",
+        "text": "school groups were taken by me"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The sentence sets two habits against each other. \"Counted\" is simple past, so its partner is \"took\".",
+      "B": "The past progressive describes an action in progress, which breaks the parallel with the plain \"counted\".",
+      "C": "\"Would be taking\" adds a conditional flavour the sentence never sets up.",
+      "D": "Switching to the passive changes the subject halfway through and buries the contrast the sentence is built on."
+    }
+  },
+  {
+    "id": "e192",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "easy",
+    "passage": "ep14",
+    "context": "The «stations» nineteen binders held the same hundred metres counted the same way.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "station's"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "stations'"
+      },
+      {
+        "id": "D",
+        "text": "stations's"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "One station owns the binders, and a singular noun takes an apostrophe and then an s.",
+      "B": "An unmarked plural cannot show possession, and there is only one station in any case.",
+      "C": "The plural possessive would mean several stations share the nineteen binders.",
+      "D": "Adds a possessive ending to a plural, producing a form English does not use."
+    }
+  },
+  {
+    "id": "e193",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "medium",
+    "passage": "ep14",
+    "context": "For most of June the counting produced one thing«:» a very slow way of proving nothing.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ";"
+      },
+      {
+        "id": "C",
+        "text": ","
+      },
+      {
+        "id": "D",
+        "text": "; namely,"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "A colon may follow a complete sentence to deliver what that sentence has promised, and \"a very slow way of proving nothing\" is the thing promised.",
+      "B": "A semicolon needs an independent clause on its right, and this phrase has no verb.",
+      "C": "A comma here reads as though a list is starting, and then only one item arrives.",
+      "D": "Adding \"namely\" does not rescue the semicolon; the right-hand side is still not a sentence."
+    }
+  },
+  {
+    "id": "e194",
+    "section": "english",
+    "topic": "dashes",
+    "difficulty": "medium",
+    "passage": "ep14",
+    "context": "The ochre stars «— eleven one morning, twelve the next —» barely seemed to move.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "— eleven one morning, twelve the next,"
+      },
+      {
+        "id": "C",
+        "text": ", eleven one morning, twelve the next —"
+      },
+      {
+        "id": "D",
+        "text": "— eleven one morning, twelve the next"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "An interruption in the middle of a sentence needs the same mark at both ends. Two dashes open and close it cleanly.",
+      "B": "Opens with a dash and closes with a comma, so the pair does not match.",
+      "C": "The same mismatch the other way round.",
+      "D": "Never closes the interruption, leaving \"barely seemed to move\" outside a clause that was never finished."
+    }
+  },
+  {
+    "id": "e195",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "easy",
+    "passage": "ep14",
+    "context": "Twelve stars one morning, eleven the next, thirteen the morning after that. «A column of figures that looked like a very slow way of proving nothing.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The result was a column of figures that looked like a very slow way of proving nothing."
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "A column of figures, looking like a very slow way of proving nothing."
+      },
+      {
+        "id": "D",
+        "text": "Which was a column of figures that looked like a very slow way of proving nothing."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Supplying a subject and a verb — \"The result was\" — turns the noun phrase into a sentence.",
+      "B": "\"A column of figures that looked like…\" is a noun and a relative clause. There is no main verb, so it is a fragment.",
+      "C": "Replacing the relative clause with a participle removes the only verb the phrase had.",
+      "D": "Opening with \"which\" makes it a relative clause, which is a different kind of fragment rather than a repair."
+    }
+  },
+  {
+    "id": "e196",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "medium",
+    "passage": "ep14",
+    "context": "For three weeks the numbers barely «moved they» told me nothing.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "moved; they"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "moved, they"
+      },
+      {
+        "id": "D",
+        "text": "moved, however they"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Two complete sentences sit side by side, and a semicolon joins two complete sentences.",
+      "B": "Running them together with no mark at all is a fused sentence.",
+      "C": "A comma between two independent clauses is a comma splice.",
+      "D": "\"However\" is an adverb, not a conjunction, so the splice survives underneath it."
+    }
+  },
+  {
+    "id": "e197",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "medium",
+    "passage": "ep14",
+    "context": "The numbers barely moved from one morning to the next. «Therefore,» laid end to end across nineteen years they showed a crash and a slow recovery.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yet"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "Similarly,"
+      },
+      {
+        "id": "D",
+        "text": "For instance,"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Barely moving and showing a crash are in tension, and the sentence exists to mark that tension. \"Yet\" is the contrast signal.",
+      "B": "\"Therefore\" claims the second fact follows from the first, when it cuts against it.",
+      "C": "\"Similarly\" claims likeness, which is the opposite of what the two sentences do.",
+      "D": "\"For instance\" promises an example, but a nineteen-year trend is not an instance of a flat morning."
+    }
+  },
+  {
+    "id": "e198",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "easy",
+    "passage": "ep14",
+    "context": "«On account of the fact that» the binders existed, the counting had a point.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Because"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "Owing to the fact that"
+      },
+      {
+        "id": "D",
+        "text": "In light of the fact that"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "One word does the work of five, and nothing in the meaning is lost.",
+      "B": "Five words for a single causal connective.",
+      "C": "The same padding with a different opening word.",
+      "D": "Longer still, and \"in light of\" suggests weighing evidence rather than stating a cause."
+    }
+  },
+  {
+    "id": "e199",
+    "section": "english",
+    "topic": "word choice",
+    "difficulty": "medium",
+    "passage": "ep14",
+    "context": "Marisol «was super chill about» letting me think this for three weeks.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "was content to let me"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "was totally fine with"
+      },
+      {
+        "id": "D",
+        "text": "did not even care about"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The essay’s voice is plain and reflective, and \"content to\" carries the same meaning without the slang.",
+      "B": "\"Super chill\" is spoken slang and clashes with every sentence around it.",
+      "C": "\"Totally fine with\" swaps one casual register for another rather than fixing it.",
+      "D": "Indifference is a different claim: the passage presents her patience as deliberate, not as a lack of interest."
+    }
+  },
+  {
+    "id": "e200",
+    "section": "english",
+    "topic": "writers purpose",
+    "difficulty": "hard",
+    "passage": "ep14",
+    "context": "Suppose the writer had intended to explain why long-running measurement programs are worth continuing. Would this essay accomplish that goal?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because it shows a nineteen-year record revealing changes that no single season could have shown, and says there is no shortcut to it."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because it lists the species found in the pools."
+      },
+      {
+        "id": "C",
+        "text": "No, because it never says who pays for the station."
+      },
+      {
+        "id": "D",
+        "text": "No, because it is concerned only with the narrator’s feelings about a summer job."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The binders paragraph supplies the evidence — a crash and an uneven recovery invisible from inside one morning — and the paragraph after it states the principle: no clever method lets you skip the eighteen years.",
+      "B": "The ochre stars and hermit crabs establish the setting. A list of species does not show why a long record is worth keeping.",
+      "C": "Funding is one way to argue for a programme, but the essay makes the case on what the record reveals, which is sufficient.",
+      "D": "The narrator’s feelings are the route into the point, not the whole of it; the essay states a general claim about measurement in its penultimate paragraph."
+    }
+  },
+  {
+    "id": "e201",
+    "section": "english",
+    "topic": "commas",
+    "difficulty": "medium",
+    "passage": "ep15",
+    "context": "«Dolores Nakata, who has painted signs by hand for fifty-one years,» is the only person on Ellis Street who still does.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Dolores Nakata, who has painted signs by hand for fifty-one years"
+      },
+      {
+        "id": "C",
+        "text": "Dolores Nakata who has painted signs by hand for fifty-one years,"
+      },
+      {
+        "id": "D",
+        "text": "Dolores Nakata who has painted signs by hand for fifty-one years"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Her name already identifies her, so the clause is nonrestrictive and takes a comma at both ends.",
+      "B": "Opens the interruption and never closes it, so \"is the only person\" is left stranded inside the clause.",
+      "C": "Closes an interruption that was never opened.",
+      "D": "Without commas the clause reads as restrictive, implying there is another Dolores Nakata who has not painted signs for fifty-one years."
+    }
+  },
+  {
+    "id": "e202",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "medium",
+    "passage": "ep15",
+    "context": "She is not sentimental «about» this, which surprises people who come to interview her.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "on"
+      },
+      {
+        "id": "C",
+        "text": "for"
+      },
+      {
+        "id": "D",
+        "text": "with"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "\"Sentimental about\" is the fixed pairing in English. Idiom questions have no rule behind them beyond what the language settled on.",
+      "B": "\"Sentimental on\" is not an English collocation.",
+      "C": "\"Sentimental for\" reverses the sense toward longing for something rather than having feelings about it.",
+      "D": "\"Sentimental with\" would describe how she treats a person, not what she feels about a situation."
+    }
+  },
+  {
+    "id": "e203",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "medium",
+    "passage": "ep15",
+    "context": "For the last nine years she «is» the only person on Ellis Street who still letters by hand.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "has been"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "was"
+      },
+      {
+        "id": "D",
+        "text": "will be"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "\"For the last nine years\" runs from the past into the present, and the present perfect is the tense built for that span.",
+      "B": "The simple present describes now only, and cannot carry a nine-year stretch.",
+      "C": "The simple past would place the whole span in a finished period and imply she no longer is.",
+      "D": "The future contradicts a period that has already elapsed."
+    }
+  },
+  {
+    "id": "e204",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "hard",
+    "passage": "ep15",
+    "context": "The vocabulary of the trade, along with the tools it names, «have» mostly gone out of the language.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "has"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "were"
+      },
+      {
+        "id": "D",
+        "text": "are"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "\"Along with\" does not create a compound subject. The subject is still the singular \"vocabulary\".",
+      "B": "The plural verb is agreeing with \"tools\", which sits inside a parenthetical phrase rather than in the subject.",
+      "C": "\"Were\" is plural and also shifts the sentence out of the perfect that \"gone\" requires.",
+      "D": "\"Are\" is plural, and \"are gone out\" is not an English construction."
+    }
+  },
+  {
+    "id": "e205",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "medium",
+    "passage": "ep15",
+    "context": "She spends her weekdays «setting type on a screen and her Saturdays to work in the shop».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "setting type on a screen and her Saturdays working in the shop"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "to set type on a screen and her Saturdays working in the shop"
+      },
+      {
+        "id": "D",
+        "text": "setting type on a screen and her Saturdays she works in the shop"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "\"Spends X doing, and Y doing\" — both halves need the same gerund form for the shared verb to reach them.",
+      "B": "\"To work\" is an infinitive where the first half used a gerund, so the two halves no longer match.",
+      "C": "Fixes the second half and breaks the first, which leaves the sentence exactly as unparallel.",
+      "D": "Turns the second half into a clause with its own subject and verb, which \"spends\" can no longer govern."
+    }
+  },
+  {
+    "id": "e206",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "hard",
+    "passage": "ep15",
+    "context": "«Spaced by eye against the actual wall, a printer cannot make these decisions.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Spaced by eye against the actual wall, the letters reflect decisions a printer cannot make."
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "Spacing by eye against the actual wall, a printer cannot make these decisions."
+      },
+      {
+        "id": "D",
+        "text": "Spaced by eye against the actual wall, these decisions cannot be made by a printer."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The letters are what gets spaced by eye, so the letters must follow the opening phrase.",
+      "B": "As written, the printer is the thing spaced by eye against the wall.",
+      "C": "\"Spacing\" makes the printer the one doing the spacing, which is precisely what the passage denies it can do.",
+      "D": "Now the decisions are what was spaced by eye, which is no closer to the meaning."
+    }
+  },
+  {
+    "id": "e207",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "easy",
+    "passage": "ep15",
+    "context": "«The reason that she charges more is because» the work takes longer and no one else can do it.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "She charges more because"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "The reason for her charging more is on account of"
+      },
+      {
+        "id": "D",
+        "text": "The reason why she charges more is due to the fact that"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Four words instead of seven, and the cause is stated once rather than twice.",
+      "B": "\"The reason … is because\" says the causal relationship twice over, once in \"reason\" and again in \"because\".",
+      "C": "Swaps \"because\" for \"on account of\" and keeps the doubled cause, while adding a nominalization.",
+      "D": "Longer than the original and still doubles the cause, now with \"why\" and \"due to the fact that\"."
+    }
+  },
+  {
+    "id": "e208",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "medium",
+    "passage": "ep15",
+    "context": "The trade has a vocabulary of its own«:» the layout, the pounce pattern, the fitch and the quill.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ";"
+      },
+      {
+        "id": "C",
+        "text": ","
+      },
+      {
+        "id": "D",
+        "text": "; namely"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "A complete sentence on the left, a list on the right — which is the standard job of a colon.",
+      "B": "A semicolon requires an independent clause on the right, and a list of nouns is not one.",
+      "C": "A comma makes \"the layout\" look like the first of several things the trade has, rather than the first item of the vocabulary.",
+      "D": "\"Namely\" does not change what a semicolon needs on its right."
+    }
+  },
+  {
+    "id": "e209",
+    "section": "english",
+    "topic": "dashes",
+    "difficulty": "medium",
+    "passage": "ep15",
+    "context": "She has taught the words to four apprentices «— three of whom now work in other trades».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "— three of whom now work in other trades —"
+      },
+      {
+        "id": "C",
+        "text": ", three of who now work in other trades"
+      },
+      {
+        "id": "D",
+        "text": "; three of whom now work in other trades"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "A single dash can introduce a trailing addition at the end of a sentence. Nothing follows it, so nothing needs closing.",
+      "B": "A closing dash promises the sentence continues, and it does not.",
+      "C": "\"Who\" is the subject form; here the pronoun is the object of \"of\", so it has to be \"whom\".",
+      "D": "A semicolon needs a complete sentence on its right, and this is a relative clause."
+    }
+  },
+  {
+    "id": "e210",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "medium",
+    "passage": "ep15",
+    "context": "Nakata learned the words from a man «who» had learned them in the 1930s.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "whom"
+      },
+      {
+        "id": "C",
+        "text": "which"
+      },
+      {
+        "id": "D",
+        "text": "whose"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The pronoun is the subject of \"had learned\", and the subject form is \"who\".",
+      "B": "\"Whom\" is the object form. Test it by substituting he/him: *he* had learned them, so \"who\".",
+      "C": "\"Which\" refers to things, and the antecedent here is a man.",
+      "D": "\"Whose\" is possessive and would need a noun after it."
+    }
+  },
+  {
+    "id": "e211",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "medium",
+    "passage": "ep15",
+    "context": "Three of the four apprentices now work in other trades. «Similarly,» the fourth has stayed.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "By contrast,"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "As a result,"
+      },
+      {
+        "id": "D",
+        "text": "In other words,"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Three left and one stayed. The second sentence exists to mark the exception, and \"by contrast\" is the signal for an exception.",
+      "B": "\"Similarly\" claims the fourth did what the other three did, which is the reverse of the fact.",
+      "C": "\"As a result\" claims the fourth stayed because the others left, a causal link the passage never draws.",
+      "D": "\"In other words\" promises a restatement, but the second sentence adds a new fact."
+    }
+  },
+  {
+    "id": "e212",
+    "section": "english",
+    "topic": "word choice",
+    "difficulty": "medium",
+    "passage": "ep15",
+    "context": "Nakata «doesn’t get all misty about» the decline of her trade.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "is not sentimental about"
+      },
+      {
+        "id": "B",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "C",
+        "text": "isn’t super bothered by"
+      },
+      {
+        "id": "D",
+        "text": "refuses to acknowledge"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The article’s register is measured throughout, and \"not sentimental\" states the point plainly.",
+      "B": "\"Gets all misty\" is colloquial in a way nothing else in the piece is.",
+      "C": "Casual in the same way, and it also softens the claim from \"unsentimental\" to \"not very troubled\".",
+      "D": "Refusing to acknowledge a decline is a different claim — and a false one, since she describes vinyl’s advantages herself."
+    }
+  },
+  {
+    "id": "e213",
+    "section": "english",
+    "topic": "sentence order",
+    "difficulty": "hard",
+    "passage": "ep15",
+    "context": "The writer wants to place the sentence \"A notice about parking does not need to be beautiful.\" Where does it best belong?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Immediately after \"cheaper and faster is the correct answer.\""
+      },
+      {
+        "id": "B",
+        "text": "As the opening sentence of the passage."
+      },
+      {
+        "id": "C",
+        "text": "In the paragraph describing the trade’s vocabulary."
+      },
+      {
+        "id": "D",
+        "text": "As the last sentence of the passage."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "It is the concrete case for the concession just made. Placed there, it shows what \"most of what a sign has to do\" covers.",
+      "B": "Opening on parking notices would put a supporting example before anything it supports.",
+      "C": "That paragraph is about the layout, the pounce pattern and the quill, and a parking notice has nothing to do with them.",
+      "D": "The passage ends on the trade’s survival. A concession about parking notices would undercut the close for no reason."
+    }
+  },
+  {
+    "id": "e214",
+    "section": "english",
+    "topic": "adding/deleting",
+    "difficulty": "hard",
+    "passage": "ep15",
+    "context": "The writer is considering deleting the sentence \"Vinyl is cheaper and faster, she says, and for most of what a sign has to do, cheaper and faster is the correct answer.\" Should it be deleted?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No, because it establishes that her argument is a narrow one rather than a defence of hand-lettering in general."
+      },
+      {
+        "id": "B",
+        "text": "No, because it gives the price difference between vinyl and painted work."
+      },
+      {
+        "id": "C",
+        "text": "Yes, because it contradicts her decision to go on painting."
+      },
+      {
+        "id": "D",
+        "text": "Yes, because the comparison with vinyl has already been made in the previous paragraph."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Everything after it depends on the concession. Without it the paragraph that begins \"What she argues for is narrower\" has nothing to be narrower than.",
+      "B": "The price comparison is in the first paragraph. This sentence gives no figures.",
+      "C": "It does not contradict her; it is what makes her position defensible rather than nostalgic.",
+      "D": "The previous paragraph compares cost and speed. This sentence concedes the point, which is different work."
+    }
+  },
+  {
+    "id": "e215",
+    "section": "english",
+    "topic": "writers purpose",
+    "difficulty": "hard",
+    "passage": "ep15",
+    "context": "Suppose the writer had intended to show that a craft can survive by doing what its replacement cannot. Would this passage accomplish that goal?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because it hands the ordinary work to vinyl and locates the craft’s remaining value in decisions made on site."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because it reports how many years Nakata has worked."
+      },
+      {
+        "id": "C",
+        "text": "No, because it concedes that vinyl is cheaper and faster."
+      },
+      {
+        "id": "D",
+        "text": "No, because three of her four apprentices left the trade."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The third paragraph names what a printer cannot do — space letters by eye, in the real light, at the real reading distance — and the fourth apprentice’s testimony confirms the skill transfers rather than expires.",
+      "B": "Fifty-one years measures her career, not what the craft can do that vinyl cannot.",
+      "C": "The concession is what makes the argument work. A claim that survives an honest concession is stronger, not weaker.",
+      "D": "The fourth stayed, and the closing paragraph treats the trade as having outlasted several announcements of its death."
     }
   }
 ]

@@ -1544,8 +1544,8 @@
     ],
     "answer": "C",
     "why": {
-      "A": "Not a figure in the passage.",
-      "B": "Not a figure in the passage.",
+      "A": "48 is 148 with the leading digit dropped. Detail questions reward going back to the sentence instead of trusting a half-remembered number.",
+      "B": "No such figure appears. 118 is near enough to 148 to feel familiar, which is exactly why the sentence has to be reread.",
       "C": "Correct — the passage states 148 cases.",
       "D": "This is the year Bell filed his patent."
     }
@@ -4229,7 +4229,7 @@
     "topic": "vocabulary in context",
     "difficulty": "medium",
     "passage": "p36-read-drill-lichen-0001",
-    "context": "As it is used in the fifth paragraph, the word instruments most nearly means:",
+    "context": "As it is used in the sixth paragraph, the word instruments most nearly means:",
     "choices": [
       {
         "id": "A",
@@ -5376,6 +5376,897 @@
       "B": "The route is a familiar annual one between Wexford and home, and no confusion about direction is suggested.",
       "C": "The passage attributes the silence to her deliberate choice, introduced by her letting him sit with it.",
       "D": "The narrator had already finished speaking before this pause; what fills the ten miles is silence, not argument."
+    }
+  },
+  {
+    "id": "r107",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "easy",
+    "passage": "p36-read-drill-lichen-0001",
+    "context": "According to the passage, when investigators grew the fungus by itself, it produced:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a formless mat."
+      },
+      {
+        "id": "B",
+        "text": "a thin green smear."
+      },
+      {
+        "id": "C",
+        "text": "a layered, weatherproof body."
+      },
+      {
+        "id": "D",
+        "text": "an outer rind and a loose interior."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The third paragraph is explicit: \"Alone, the fungus produced a formless mat and the alga a thin green smear.\"",
+      "B": "That is what the alga produced alone. The sentence names both results, and this is the other one.",
+      "C": "The layered body appeared only when the two were brought back together under the right moisture and light.",
+      "D": "The rind and the loose interior are parts of the finished lichen described in the fourth paragraph, not of the fungus grown alone."
+    }
+  },
+  {
+    "id": "r108",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "hard",
+    "passage": "p36-read-drill-lichen-0001",
+    "context": "The passage presents which finding as having settled the dispute over whether a lichen is a single organism?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Separating the two partners, growing each alone, and recombining them into the familiar layered body."
+      },
+      {
+        "id": "B",
+        "text": "The discovery under the microscope that lichen tissue contains two kinds of cell."
+      },
+      {
+        "id": "C",
+        "text": "The demonstration that lichen acids dissolve the mineral surfaces the organism sits on."
+      },
+      {
+        "id": "D",
+        "text": "The later discovery of a yeast embedded in the outer layer of many lichens."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The third paragraph says settling the question \"required patience rather than argument\", and the patience described is the separate-and-recombine work. Producing the whole organism from two cultured parts is what the critics’ objections could not survive.",
+      "B": "The microscope raised the proposal. The passage then spends a paragraph on why that evidence alone was resisted, so it cannot be what settled the matter.",
+      "C": "The acids explain how the partnership works, and appear after the dispute has already been described as settled.",
+      "D": "The yeast is later work, and the passage offers it as unsettling the picture further rather than as resolving the original argument."
+    }
+  },
+  {
+    "id": "r109",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "medium",
+    "passage": "p36-read-drill-lichen-0001",
+    "context": "The passage suggests that lichens can serve as a record of air quality mainly because they:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "take in material directly from the air and cannot get rid of it."
+      },
+      {
+        "id": "B",
+        "text": "grow faster in places where the air is clean."
+      },
+      {
+        "id": "C",
+        "text": "change colour in proportion to the sulfur around them."
+      },
+      {
+        "id": "D",
+        "text": "are found only in regions that have never been industrialised."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Two facts in the sixth paragraph combine: having no roots, lichens absorb across their whole surface, and \"they cannot shed what they absorb\". Retention is what turns an organism into a record.",
+      "B": "The passage never links growth rate to air quality. It links which species survive to air quality.",
+      "C": "The change described is in the composition of the community — which species remain — not in the colour of an individual.",
+      "D": "The passage describes surveys in places where sulfur compounds are heavy, so lichens plainly occur in industrial regions."
+    }
+  },
+  {
+    "id": "r110",
+    "section": "reading",
+    "topic": "comparison",
+    "difficulty": "medium",
+    "passage": "p36-read-drill-lichen-0001",
+    "context": "According to the seventh paragraph, the two reproductive strategies differ mainly in whether:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the dispersing unit already contains both partners."
+      },
+      {
+        "id": "B",
+        "text": "the lichen reproduces in wind or through animals."
+      },
+      {
+        "id": "C",
+        "text": "the fungus or the alga initiates the process."
+      },
+      {
+        "id": "D",
+        "text": "reproduction happens in wet conditions or dry ones."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "A spore \"carries none of its partner with it\" and must find an alga; the bundles arrive \"complete\". Whether both partners travel together is the whole of the difference.",
+      "B": "Wind and passing animals are both named as ways the same bundles travel, so they do not separate the two strategies.",
+      "C": "The paragraph describes the fungus as the one reproducing in both cases.",
+      "D": "Moisture appears in the third paragraph as a condition for assembly, not as a difference between the two strategies."
+    }
+  },
+  {
+    "id": "r111",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "medium",
+    "passage": "p36-read-drill-lichen-0001",
+    "context": "The phrase \"a slow machine for making soil\" serves mainly to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "cast a scattered set of small effects as one piece of steady, purposeful work."
+      },
+      {
+        "id": "B",
+        "text": "suggest that lichens were engineered for a particular function."
+      },
+      {
+        "id": "C",
+        "text": "emphasise how little soil a single lichen can produce."
+      },
+      {
+        "id": "D",
+        "text": "contrast biological processes with industrial ones."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The sentences after it list etching, trapping dust, and accumulating debris over centuries. Calling that a machine gathers separate slow effects into one process with an output.",
+      "B": "The passage treats the arrangement as something that evolved, and nothing in the paragraph implies design.",
+      "C": "The paragraph stresses that the process works — \"the reason that bare rock does not stay bare\" — not that its yield is negligible.",
+      "D": "No industrial process is mentioned. \"Machine\" is doing metaphorical work, not setting up a comparison."
+    }
+  },
+  {
+    "id": "r112",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "p36-read-drill-lichen-0001",
+    "context": "The passage as a whole is organised to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "establish a correction to an old classification, then trace what followed from it."
+      },
+      {
+        "id": "B",
+        "text": "alternate between the arguments of the critics and those of their opponents."
+      },
+      {
+        "id": "C",
+        "text": "move backwards from a present-day use of lichens to the discovery behind it."
+      },
+      {
+        "id": "D",
+        "text": "compare lichens with other organisms that live in partnerships."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The first three paragraphs establish the misfiling and the evidence that overturned it. Everything after — division of labour, soil, air quality, reproduction, the boundary of individuality — follows from the organism being a partnership.",
+      "B": "The critics appear in one paragraph and are answered in the same one. There is no alternation.",
+      "C": "The order runs forward: the nineteenth century first, the later work last.",
+      "D": "No other partnership organism is discussed. The yeast in the final paragraph is a third partner inside lichens, not a comparison case."
+    }
+  },
+  {
+    "id": "r113",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "hard",
+    "passage": "p36-read-drill-lichen-0001",
+    "context": "The author’s attitude toward the botanists who first classified lichens as plants is best described as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "willing to explain how a reasonable error arose without defending the conclusion."
+      },
+      {
+        "id": "B",
+        "text": "openly scornful of their inattention."
+      },
+      {
+        "id": "C",
+        "text": "indifferent to whether their reasoning was sound."
+      },
+      {
+        "id": "D",
+        "text": "admiring of a classification that later work confirmed."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The first paragraph grants that lichens \"looked like modest vegetation\" and calls the result \"tidy\" — then, in the same breath, \"completely mistaken\". The third paragraph extends the same courtesy to the critics, whose resistance \"was not unreasonable\".",
+      "B": "Scorn would not bother to explain why the mistake was easy to make, and \"filed them among the plants and moved on\" is the sharpest phrasing in the passage.",
+      "C": "The passage sets out the critics’ two arguments in detail, which is the opposite of indifference to their reasoning.",
+      "D": "The classification was overturned, and the passage says so in its second sentence."
+    }
+  },
+  {
+    "id": "r114",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "medium",
+    "passage": "rp12",
+    "context": "The passage is best described as an account of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a young man discovering that his mother’s job consisted largely of obligations no record held."
+      },
+      {
+        "id": "B",
+        "text": "a family business failing after the closure of the mills."
+      },
+      {
+        "id": "C",
+        "text": "a summer spent learning to drive a delivery van efficiently."
+      },
+      {
+        "id": "D",
+        "text": "a disagreement between a mother and son over how a route should be run."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The narrator memorises the streets in a week and then spends the rest of the summer learning the rest: the extra loaves, the porch in winter, the tomatoes. \"None of it was in the ledger\" states the passage’s subject outright.",
+      "B": "The mills appear in one sentence as background. The route is still running, and nothing in the passage suggests it is failing.",
+      "C": "He has the driving in hand by the end of the first week, which the passage treats as the least of what the job requires.",
+      "D": "Mother and son never disagree. The closest thing to a correction is her remark about Ridge Road, and she is pleased."
+    }
+  },
+  {
+    "id": "r115",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "easy",
+    "passage": "rp12",
+    "context": "According to the passage, the narrator’s mother had driven the route for:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "nineteen years."
+      },
+      {
+        "id": "B",
+        "text": "twenty years."
+      },
+      {
+        "id": "C",
+        "text": "nine years."
+      },
+      {
+        "id": "D",
+        "text": "forty-one years."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The first sentence gives nineteen years, and the last paragraph repeats it.",
+      "B": "Twenty is the narrator’s age, given in the third paragraph.",
+      "C": "Nine miles is the distance to the next grocery, not a span of years.",
+      "D": "Forty-one is the number of stops on the route."
+    }
+  },
+  {
+    "id": "r116",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "medium",
+    "passage": "rp12",
+    "context": "The grocery owner’s behaviour at the fourth stop most strongly suggests that he:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "was more interested in the narrator’s mother than in getting the facts right."
+      },
+      {
+        "id": "B",
+        "text": "resented having to deal with an inexperienced driver."
+      },
+      {
+        "id": "C",
+        "text": "had been misinformed about the nature of her injury."
+      },
+      {
+        "id": "D",
+        "text": "wanted to delay the delivery until he had cleared shelf space."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "He asks three questions about \"a surgery my mother had not had\" and nods at bad answers \"as though I had been some help\". The questions are a way of attending to her, and their accuracy is beside the point.",
+      "B": "He comes out to the curb before the van is open and stays talking, which is welcome rather than resentful.",
+      "C": "The passage gives no source of misinformation, and his satisfaction with wrong answers shows the facts were not what he was after.",
+      "D": "He takes the tray immediately and holds it throughout, so nothing is being delayed."
+    }
+  },
+  {
+    "id": "r117",
+    "section": "reading",
+    "topic": "function",
+    "difficulty": "hard",
+    "passage": "rp12",
+    "context": "The one-sentence paragraph \"The ledger recorded loaves.\" functions mainly to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "set the formal record against the arrangements the preceding paragraph has just described."
+      },
+      {
+        "id": "B",
+        "text": "indicate that the narrator had begun keeping the books himself."
+      },
+      {
+        "id": "C",
+        "text": "suggest that the mother had been careless about her paperwork."
+      },
+      {
+        "id": "D",
+        "text": "introduce the financial difficulty the route was in."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "It lands immediately after Mr. Alves’s extra loaves and the storm porch on Ridge Road, and immediately after \"None of it was in the ledger.\" Its brevity is the point: the record holds one thing, the job holds many.",
+      "B": "The narrator never describes doing the books; he describes driving and delivering.",
+      "C": "Nothing suggests the ledger was kept badly. It recorded exactly what a ledger records.",
+      "D": "No financial difficulty appears anywhere in the passage."
+    }
+  },
+  {
+    "id": "r118",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "medium",
+    "passage": "rp12",
+    "context": "As it is used in the phrase \"a circuit of small accounts, most of them not in money,\" the word accounts most nearly means:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "ongoing obligations."
+      },
+      {
+        "id": "B",
+        "text": "financial records."
+      },
+      {
+        "id": "C",
+        "text": "spoken descriptions."
+      },
+      {
+        "id": "D",
+        "text": "customer complaints."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The clause \"most of them not in money\" rules out the financial sense on purpose, and the examples that follow — extra loaves for news, bread left in a porch — are debts of a non-monetary kind.",
+      "B": "That is the sense the sentence explicitly sets aside, and the ledger sentence two paragraphs later marks the difference.",
+      "C": "An account in the sense of a narrative would not be described as being \"in money\" or not.",
+      "D": "No one in the passage complains. The arrangements are willing on both sides."
+    }
+  },
+  {
+    "id": "r119",
+    "section": "reading",
+    "topic": "comparison",
+    "difficulty": "medium",
+    "passage": "rp12",
+    "context": "The narrator’s understanding in August differs from his understanding in June chiefly in that by August he recognises the arrangements as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "choices his mother made repeatedly rather than simply how things were done."
+      },
+      {
+        "id": "B",
+        "text": "inefficiencies that a new driver could reasonably remove."
+      },
+      {
+        "id": "C",
+        "text": "obligations imposed on his mother by her customers."
+      },
+      {
+        "id": "D",
+        "text": "a system his mother had designed before he was born."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The final paragraph turns on exactly this: \"I had not thought of it as a decision. That, I understand now, is what she was telling me: that it had been one, every time, for nineteen years.\"",
+      "B": "He continues every arrangement he inherits, including the one that is no longer necessary in summer.",
+      "C": "Mrs. Ferreira presses tomatoes on him and Mr. Alves offers news; the exchanges run both ways rather than being imposed.",
+      "D": "The passage presents the arrangements as having accumulated one at a time, not as a design."
+    }
+  },
+  {
+    "id": "r120",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "rp12",
+    "context": "The passage is organised as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a narrator recounting a past summer while commenting on it from a later vantage point."
+      },
+      {
+        "id": "B",
+        "text": "a strictly chronological account with no later commentary."
+      },
+      {
+        "id": "C",
+        "text": "a series of character sketches framed by a single conversation."
+      },
+      {
+        "id": "D",
+        "text": "an argument supported by episodes drawn from several summers."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The events run from June to August, but phrases like \"It took me most of June to understand\" and \"That, I understand now\" are spoken by someone who already knows how the summer ends.",
+      "B": "The chronology is there, but so is the later voice, which the final paragraph makes explicit.",
+      "C": "Mr. Alves and Mrs. Ferreira are sketched briefly, and no single conversation frames the passage.",
+      "D": "One summer is described, and the passage tells rather than argues."
+    }
+  },
+  {
+    "id": "r121",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "hard",
+    "passage": "rp12",
+    "context": "The narrator’s attitude toward his twenty-year-old self is best described as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "amused at his confidence without being harsh about it."
+      },
+      {
+        "id": "B",
+        "text": "embarrassed to the point of dismissing everything he did."
+      },
+      {
+        "id": "C",
+        "text": "defensive about how quickly he learned the route."
+      },
+      {
+        "id": "D",
+        "text": "indifferent, reporting his actions without evaluation."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "\"The unearned confidence of someone who has recently learned to parallel park\" is affectionate mockery, and the closing clause — later than she hoped, earlier than she feared — grades him gently in both directions.",
+      "B": "He credits himself with noticing, and with keeping the porch arrangement up past winter.",
+      "C": "He offers the week it took him to memorise the streets as evidence of how little that mattered, not as a defence.",
+      "D": "Nearly every sentence about his younger self carries an evaluation; the closing paragraph is almost entirely evaluation."
+    }
+  },
+  {
+    "id": "r122",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "hard",
+    "passage": "rp12",
+    "context": "Which detail best supports the idea that the narrator’s mother intended him to work the route out for himself?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "She rode along in August \"with her hands in her lap and said almost nothing, which was its own kind of instruction.\""
+      },
+      {
+        "id": "B",
+        "text": "She warned him that Mrs. Ferreira would try to give him tomatoes."
+      },
+      {
+        "id": "C",
+        "text": "She handed him the keys when her wrist gave out."
+      },
+      {
+        "id": "D",
+        "text": "She asked whether he had kept up the Ridge Road arrangement."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The narrator names the silence as instruction. Choosing not to explain, while present and able to, is the clearest evidence of intent in the passage.",
+      "B": "The tomato warning is one of the few things she does explain, so it works against the claim rather than for it.",
+      "C": "Handing over the keys was forced by the injury; the passage gives it no pedagogical purpose.",
+      "D": "That question comes after the summer is over and confirms what he did. It is the test of the lesson, not evidence of the intention behind it."
+    }
+  },
+  {
+    "id": "r123",
+    "section": "reading",
+    "topic": "figurative language",
+    "difficulty": "medium",
+    "passage": "rp12",
+    "context": "The comparison of the keys to \"a pair of glasses you have worn so long you have stopped seeing through them\" conveys mainly that the mother:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "no longer noticed the route as something separate from herself."
+      },
+      {
+        "id": "B",
+        "text": "had grown careless about the quality of her work."
+      },
+      {
+        "id": "C",
+        "text": "was reluctant to give up control of the business."
+      },
+      {
+        "id": "D",
+        "text": "could no longer see well enough to drive safely."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Glasses worn that long are looked *with*, not *at*. The image says the route had stopped being a thing she could describe — which is why the instructions she gives are so thin.",
+      "B": "Everything that follows shows the work being done with care, most of it unrecorded.",
+      "C": "She hands the keys over in the first sentence without any resistance.",
+      "D": "Her wrist is what gave out; the image is about familiarity, not eyesight."
+    }
+  },
+  {
+    "id": "r124",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "medium",
+    "passage": "rp13",
+    "context": "The passage is primarily concerned with:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "why a very small charge produced a large change, and what that does and does not prove."
+      },
+      {
+        "id": "B",
+        "text": "establishing that disposable bags are more harmful than reusable ones."
+      },
+      {
+        "id": "C",
+        "text": "arguing that governments should replace bag charges with bonuses."
+      },
+      {
+        "id": "D",
+        "text": "tracing the history of environmental regulation in cities."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "It opens with the gap between the prediction and the result, weighs two explanations, brings in the bonus experiment to separate them, and closes on what the case does and does not generalise to.",
+      "B": "Environmental harm is never discussed. The passage is about behaviour and incentives.",
+      "C": "Bonuses appear as a comparison that worked worse, which is the opposite of a recommendation.",
+      "D": "No history is given; no dates or jurisdictions are named."
+    }
+  },
+  {
+    "id": "r125",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "easy",
+    "passage": "rp13",
+    "context": "According to the passage, where bag charges have been introduced, bag use commonly falls by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "seventy per cent or more within a month."
+      },
+      {
+        "id": "B",
+        "text": "about ten per cent within a year."
+      },
+      {
+        "id": "C",
+        "text": "five per cent, matching the size of the bonus."
+      },
+      {
+        "id": "D",
+        "text": "an amount too small to measure."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Stated in the first paragraph, along with the fact that the reduction holds rather than rebounding.",
+      "B": "Ten is the number of cents charged, not a percentage, and the passage gives no one-year figure.",
+      "C": "Five cents is the size of the bonus in the comparison study, not a reduction in bag use.",
+      "D": "That describes the bonus result in two studies, not the charge result."
+    }
+  },
+  {
+    "id": "r126",
+    "section": "reading",
+    "topic": "comparison",
+    "difficulty": "medium",
+    "passage": "rp13",
+    "context": "The two explanations offered in the passage differ mainly over whether:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the size of the charge matters at all."
+      },
+      {
+        "id": "B",
+        "text": "bag use actually fell after the charge was introduced."
+      },
+      {
+        "id": "C",
+        "text": "shoppers are aware that a charge exists."
+      },
+      {
+        "id": "D",
+        "text": "cities are entitled to impose such charges."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The first says a one-cent charge \"would do nearly as much work\"; the second says the amount \"matters somewhat\", because it has to read as deliberate. That is the axis they disagree on.",
+      "B": "Both accounts are attempts to explain the fall, so both take it as given.",
+      "C": "Both require the shopper to notice the charge — as a moment of choice, or as a signal.",
+      "D": "Entitlement is a question of policy authority, which the passage never raises."
+    }
+  },
+  {
+    "id": "r127",
+    "section": "reading",
+    "topic": "function",
+    "difficulty": "medium",
+    "passage": "rp13",
+    "context": "The paragraph describing jurisdictions that offered a five-cent bonus functions mainly to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "supply a case that pulls the two explanations apart."
+      },
+      {
+        "id": "B",
+        "text": "show that both explanations were mistaken."
+      },
+      {
+        "id": "C",
+        "text": "introduce a policy the author prefers to the charge."
+      },
+      {
+        "id": "D",
+        "text": "illustrate how difficult it is to measure shopping behaviour."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The paragraph before it says the two accounts \"are difficult to separate, because most policies deliver both effects at once\", and this one is introduced as the case that \"came closer than most\".",
+      "B": "The result damages the first explanation \"on its own\" and fits the second, so it discriminates between them rather than refuting both.",
+      "C": "The bonus performed worse, and the author treats that as informative rather than desirable.",
+      "D": "The measurements are reported without complaint; what is difficult is separating causes, not measuring effects."
+    }
+  },
+  {
+    "id": "r128",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "hard",
+    "passage": "rp13",
+    "context": "The bonus result is presented as a difficulty for the first explanation because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a bonus creates a moment of choice as surely as a charge does, yet produced far less change."
+      },
+      {
+        "id": "B",
+        "text": "the bonus was smaller than the charge."
+      },
+      {
+        "id": "C",
+        "text": "shoppers in those jurisdictions already owned reusable bags."
+      },
+      {
+        "id": "D",
+        "text": "the bonus was offered only to shoppers who asked for it."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The passage says so directly: \"the shopper is asked at the register either way.\" If attention alone were doing the work, the two should have performed alike, and they did not.",
+      "B": "Five cents against ten is a difference the first explanation dismisses, since on that account the amount is \"close to irrelevant\".",
+      "C": "The passage never says this, and it would explain a smaller effect for both instruments, not just one.",
+      "D": "Nothing indicates the bonus had to be requested; it is described as given to shoppers who brought their own bags."
+    }
+  },
+  {
+    "id": "r129",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "medium",
+    "passage": "rp13",
+    "context": "As it is used in the phrase \"hard for the first explanation to accommodate,\" the word accommodate most nearly means:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "account for."
+      },
+      {
+        "id": "B",
+        "text": "provide lodging for."
+      },
+      {
+        "id": "C",
+        "text": "adapt itself to please."
+      },
+      {
+        "id": "D",
+        "text": "make room by moving aside."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The sentence is about whether an explanation can absorb an awkward result and still stand. Explaining the result is what it would have to do.",
+      "B": "The literal lodging sense has no application to an explanation.",
+      "C": "An explanation obliging someone would be a different claim, and the paragraph is about evidence rather than about anyone’s preferences.",
+      "D": "Making room physically is closer to the lodging sense and, again, not something an explanation does."
+    }
+  },
+  {
+    "id": "r130",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "rp13",
+    "context": "The passage is organised by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "presenting a puzzle, weighing two explanations, introducing a case that separates them, and then marking the limits of the finding."
+      },
+      {
+        "id": "B",
+        "text": "listing the effects of several environmental policies in order of size."
+      },
+      {
+        "id": "C",
+        "text": "defending a single explanation against objections raised in turn."
+      },
+      {
+        "id": "D",
+        "text": "comparing one city’s experience with another’s in detail."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "That is the sequence exactly: the gap between prediction and result, the two accounts, the bonus experiment, and the closing paragraphs on cups and on what the case establishes.",
+      "B": "Only bags and cups appear, and they are not ranked.",
+      "C": "The author does not defend one account from the outset; the second is preferred only after the evidence arrives.",
+      "D": "No city is named or described in detail."
+    }
+  },
+  {
+    "id": "r131",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "medium",
+    "passage": "rp13",
+    "context": "The author’s attitude toward small charges as a policy instrument is best described as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "persuaded that they worked here, and careful about generalising from it."
+      },
+      {
+        "id": "B",
+        "text": "enthusiastic about applying them wherever possible."
+      },
+      {
+        "id": "C",
+        "text": "sceptical that the reported reductions occurred at all."
+      },
+      {
+        "id": "D",
+        "text": "neutral, declining to draw any conclusion."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The final two paragraphs do both jobs: \"not that small charges are a general instrument\", and then a narrower claim the author calls \"still useful\".",
+      "B": "The cup paragraph is an explicit warning against that, noting annoyance and avoidance as the failure modes.",
+      "C": "The reductions are reported as established fact and used as the starting point.",
+      "D": "The passage ends with a stated conclusion about the most common error in designing such policies."
+    }
+  },
+  {
+    "id": "r132",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "hard",
+    "passage": "rp13",
+    "context": "Which finding does the passage offer as evidence that small charges are not a general instrument?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Charges on disposable cups have worked in some cities and failed in others."
+      },
+      {
+        "id": "B",
+        "text": "Bag use fell by seventy per cent or more wherever charges were introduced."
+      },
+      {
+        "id": "C",
+        "text": "A five-cent bonus produced no measurable reduction in two studies."
+      },
+      {
+        "id": "D",
+        "text": "Losses are felt more sharply than equivalent gains."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "It is introduced as the reason \"attempts to reproduce the bag result elsewhere have been uneven\", and the passage supplies the mechanism: whether a usable alternative is already in the shopper’s possession.",
+      "B": "That is the consistent result the passage is trying to explain, so it cannot be evidence of unevenness.",
+      "C": "The bonus result separates the two explanations of why the charge worked. It says nothing about where charges transfer.",
+      "D": "That is a psychological principle the passage draws on, not a finding about the reach of the policy."
+    }
+  },
+  {
+    "id": "r133",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "hard",
+    "passage": "rp13",
+    "context": "The passage’s closing sentences suggest that a policymaker designing an incentive is most likely to go wrong by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "assuming that a bigger number will produce a bigger effect."
+      },
+      {
+        "id": "B",
+        "text": "setting the charge lower than the public will tolerate."
+      },
+      {
+        "id": "C",
+        "text": "relying on evidence from a single city."
+      },
+      {
+        "id": "D",
+        "text": "choosing a charge when a bonus would be cheaper."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The last two sentences name the error: not \"setting the number too low\", but \"treating the number as the thing that matters\" — which is the assumption that size and effect track each other.",
+      "B": "The passage explicitly rejects this as the common error in the sentence before its conclusion.",
+      "C": "Evidence from several jurisdictions is cited, and the unevenness of the cup results is presented as instructive rather than as a methodological warning.",
+      "D": "Cost to the treasury is never discussed, and the bonus is reported as the weaker instrument."
     }
   }
 ]

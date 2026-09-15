@@ -7489,5 +7489,995 @@
       "C": "If density were unaffected by temperature, nothing would drive the separation in the first place.",
       "D": "Dissolved gases are present in far too small a quantity to order the layers, and the deep layer is the one that loses oxygen."
     }
+  },
+  {
+    "id": "s170",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "p36-sci-drill-dye-fading-0001",
+    "context": "According to Figure 1, the absorbance of the sample exposed at 200 lux after 30 minutes was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.71"
+      },
+      {
+        "id": "B",
+        "text": "0.85"
+      },
+      {
+        "id": "C",
+        "text": "0.50"
+      },
+      {
+        "id": "D",
+        "text": "0.31"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Read up from 30 minutes to the 200 lux curve. The value there is 0.71, which is also what Table 1 records for 200 lux after 30 minutes — the two figures agree, as they should.",
+      "B": "0.85 is the 200 lux value at 15 minutes, one point too early.",
+      "C": "0.50 is where the 200 lux curve finishes at 60 minutes.",
+      "D": "0.31 is the 800 lux value at 30 minutes — right time, wrong curve."
+    }
+  },
+  {
+    "id": "s171",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "p36-sci-drill-dye-fading-0001",
+    "context": "Based on Figure 1, how much did the absorbance of the 800 lux sample fall during the first 15 minutes?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.45"
+      },
+      {
+        "id": "B",
+        "text": "0.55"
+      },
+      {
+        "id": "C",
+        "text": "0.24"
+      },
+      {
+        "id": "D",
+        "text": "0.91"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "It starts at 1.00 and reads 0.55 at 15 minutes, so the fall is 1.00 − 0.55 = 0.45.",
+      "B": "0.55 is the value at 15 minutes, not the amount it changed by.",
+      "C": "0.24 is the fall over the *second* fifteen minutes, from 0.55 to 0.31.",
+      "D": "0.91 is the total fall across the whole hour, from 1.00 to 0.09."
+    }
+  },
+  {
+    "id": "s172",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "p36-sci-drill-dye-fading-0001",
+    "context": "Based on Figure 1, the average decrease in absorbance per 15-minute interval for the 200 lux sample over the full hour was closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.13"
+      },
+      {
+        "id": "B",
+        "text": "0.50"
+      },
+      {
+        "id": "C",
+        "text": "0.25"
+      },
+      {
+        "id": "D",
+        "text": "0.03"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The sample falls from 1.00 to 0.50, a change of 0.50, across four 15-minute intervals: 0.50 ÷ 4 = 0.125.",
+      "B": "0.50 is the total change over the hour, not the change per interval.",
+      "C": "0.25 divides the total by two rather than by the four intervals the hour contains.",
+      "D": "0.03 would be the change per minute if you divided by 15 as well, applying the division twice."
+    }
+  },
+  {
+    "id": "s173",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "p36-sci-drill-dye-fading-0001",
+    "context": "According to Table 1, as light intensity increases, the absorbance measured after 30 minutes:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "decreases throughout."
+      },
+      {
+        "id": "B",
+        "text": "increases throughout."
+      },
+      {
+        "id": "C",
+        "text": "increases and then decreases."
+      },
+      {
+        "id": "D",
+        "text": "stays about the same."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "0.82, 0.71, 0.54, 0.31, 0.12 — every step down the table is smaller than the one above it.",
+      "B": "That reverses the trend. Check the first and last rows against each other before answering.",
+      "C": "There is no turning point; the column never rises.",
+      "D": "The column runs from 0.82 to 0.12, a fall of more than eighty per cent of the starting value."
+    }
+  },
+  {
+    "id": "s174",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "p36-sci-drill-dye-fading-0001",
+    "context": "A student predicts that a sample exposed at 1600 lux would have an absorbance below 0.12 after 60 minutes. Do the data support the prediction?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because absorbance at 1600 lux is 0.12 at 30 minutes and Figure 1 shows absorbance continuing to fall after 30 minutes."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because Table 1 reports the 60-minute value at 1600 lux directly."
+      },
+      {
+        "id": "C",
+        "text": "No, because absorbance cannot fall below the 0.12 recorded in Table 1."
+      },
+      {
+        "id": "D",
+        "text": "No, because Study 2 tested only 200 lux and 800 lux, so nothing can be said about 1600 lux."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The prediction needs two things, and both are present: a starting point from Table 1, and the shape of the curves in Figure 1, where both samples keep falling from 30 to 60 minutes.",
+      "B": "Table 1 reports one time only — 30 minutes. No 60-minute value appears in it.",
+      "C": "Nothing establishes 0.12 as a floor, and both curves in Figure 1 fall well past their own 30-minute values.",
+      "D": "Study 2 does not have to include 1600 lux for its shape to be informative. Reasoning from a demonstrated pattern to an untested condition is exactly what the question asks for, and the answer should say how far that reasoning reaches, not refuse it."
+    }
+  },
+  {
+    "id": "s175",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "p36-sci-drill-dye-fading-0001",
+    "context": "Study 2 provides information that Study 1 alone cannot, because Study 2:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "records absorbance at several times rather than at a single time."
+      },
+      {
+        "id": "B",
+        "text": "uses a wider range of light intensities."
+      },
+      {
+        "id": "C",
+        "text": "holds the samples at a different temperature."
+      },
+      {
+        "id": "D",
+        "text": "measures a different quantity than Study 1 does."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Study 1 is one reading per sample, all at 30 minutes. Study 2 reads the same two intensities every 15 minutes, which is the only way the shape of the decline becomes visible.",
+      "B": "Study 1 covers 100 to 1600 lux; Study 2 covers two values inside that range. The range is narrower, not wider.",
+      "C": "The setup states that all samples in both studies were held at 22 °C.",
+      "D": "Both studies measure absorbance. What changes is how often."
+    }
+  },
+  {
+    "id": "s176",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp24",
+    "context": "According to Table 1, the percentage of Species B seeds that germinated at 10 g/L NaCl was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "45%"
+      },
+      {
+        "id": "B",
+        "text": "71%"
+      },
+      {
+        "id": "C",
+        "text": "74%"
+      },
+      {
+        "id": "D",
+        "text": "12%"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Find the 10 g/L row, then read across to the Species B column.",
+      "B": "71% is Species A in the same row — right row, wrong column.",
+      "C": "74% is Species B one row higher, at 5 g/L.",
+      "D": "12% is Species B one row lower, at 20 g/L."
+    }
+  },
+  {
+    "id": "s177",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp24",
+    "context": "According to Figure 1, the percentage of Species A seeds germinated at 20 g/L after 7 days was closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "18%"
+      },
+      {
+        "id": "B",
+        "text": "61%"
+      },
+      {
+        "id": "C",
+        "text": "33%"
+      },
+      {
+        "id": "D",
+        "text": "42%"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Read up from day 7 to the lower curve, the one labelled 20 g/L.",
+      "B": "61% is the 0 g/L curve at day 7 — right day, wrong curve.",
+      "C": "33% is the 20 g/L curve at day 10.",
+      "D": "42% is where the 20 g/L curve finishes, at day 14."
+    }
+  },
+  {
+    "id": "s178",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp24",
+    "context": "According to Table 1, as NaCl concentration increases, germination in the two species:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "decreases in both."
+      },
+      {
+        "id": "B",
+        "text": "increases in both."
+      },
+      {
+        "id": "C",
+        "text": "decreases in A only."
+      },
+      {
+        "id": "D",
+        "text": "decreases in B only."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Species A runs 96, 88, 71, 42, 9 and Species B runs 92, 74, 45, 12, 0. Both columns fall at every step.",
+      "B": "That reverses both trends. Compare the top and bottom rows before answering.",
+      "C": "Species B falls further than Species A does, so it can hardly be the one that holds steady.",
+      "D": "Species A falls from 96 to 9, which is not holding steady either."
+    }
+  },
+  {
+    "id": "s179",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp24",
+    "context": "Based on Table 1, the difference between the two species’ germination percentages is greatest at a NaCl concentration of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "20 g/L"
+      },
+      {
+        "id": "B",
+        "text": "10 g/L"
+      },
+      {
+        "id": "C",
+        "text": "40 g/L"
+      },
+      {
+        "id": "D",
+        "text": "0 g/L"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Subtract row by row: 4, 14, 26, 30, 9. The 30-point gap at 20 g/L is the largest.",
+      "B": "10 g/L gives 71 − 45 = 26, which is close but not the largest.",
+      "C": "At 40 g/L both species have nearly stopped germinating, so the gap collapses to 9.",
+      "D": "With no salt the two species behave almost identically — a 4-point gap, the smallest in the table."
+    }
+  },
+  {
+    "id": "s180",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp24",
+    "context": "Based on Table 1, germination in Species B fell by how many percentage points between 0 g/L and 20 g/L?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "80"
+      },
+      {
+        "id": "B",
+        "text": "12"
+      },
+      {
+        "id": "C",
+        "text": "92"
+      },
+      {
+        "id": "D",
+        "text": "54"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "92 at 0 g/L minus 12 at 20 g/L gives a fall of 80 percentage points.",
+      "B": "12 is the value at 20 g/L, not the size of the change.",
+      "C": "92 is the starting value.",
+      "D": "54 is the fall for Species A over the same range, from 96 to 42."
+    }
+  },
+  {
+    "id": "s181",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp24",
+    "context": "Based on Table 1, germination in Species A at 10 g/L was approximately what percentage of its germination at 0 g/L?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "74%"
+      },
+      {
+        "id": "B",
+        "text": "71%"
+      },
+      {
+        "id": "C",
+        "text": "26%"
+      },
+      {
+        "id": "D",
+        "text": "135%"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "71 ÷ 96 = 0.74. The question asks for a proportion of the salt-free value, not the value itself.",
+      "B": "71% is the raw germination figure at 10 g/L, which is what the question is asking you to convert.",
+      "C": "26% is the size of the drop, not what remains.",
+      "D": "135% comes from dividing the wrong way round, 96 ÷ 71."
+    }
+  },
+  {
+    "id": "s182",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp24",
+    "context": "Study 2 provides information that Study 1 alone cannot, because Study 2 shows:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "how quickly germination occurs, not only how much occurs by day 14."
+      },
+      {
+        "id": "B",
+        "text": "the response of both species rather than one."
+      },
+      {
+        "id": "C",
+        "text": "the effect of temperature on germination."
+      },
+      {
+        "id": "D",
+        "text": "germination at a wider range of salinities."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Study 1 is a single reading at 14 days. Study 2 reads the same species repeatedly, which is the only way the shape of the response becomes visible — and it shows the 20 g/L curve flattening rather than merely ending low.",
+      "B": "Study 2 uses Species A only; Study 1 is the one covering both.",
+      "C": "The setup states that every dish in both studies was held at 20 °C.",
+      "D": "Study 1 covers five concentrations; Study 2 covers two of them."
+    }
+  },
+  {
+    "id": "s183",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp24",
+    "context": "In Study 2, the variables that the researchers deliberately varied were:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NaCl concentration and time."
+      },
+      {
+        "id": "B",
+        "text": "NaCl concentration only."
+      },
+      {
+        "id": "C",
+        "text": "time only."
+      },
+      {
+        "id": "D",
+        "text": "species and NaCl concentration."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Two salinities were chosen, and readings were taken at several times. Both are set by the researchers, and both appear as axes or curve labels in Figure 1.",
+      "B": "Salinity alone would give two numbers, not two curves.",
+      "C": "Time alone would give one curve. Figure 1 has two, because salinity was varied as well.",
+      "D": "Study 2 used Species A only, so species was held constant."
+    }
+  },
+  {
+    "id": "s184",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp24",
+    "context": "A student predicts that fewer than 12% of Species B seeds would germinate at 30 g/L NaCl. Do the data in Table 1 support the prediction?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because germination in Species B falls at every step and is already 12% at 20 g/L and 0% at 40 g/L."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because Table 1 reports the value at 30 g/L directly."
+      },
+      {
+        "id": "C",
+        "text": "No, because 30 g/L was not tested, so nothing can be said about it."
+      },
+      {
+        "id": "D",
+        "text": "No, because germination in Species B levels off above 20 g/L."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "30 g/L sits between two tested values, and the column is falling throughout. A value between 12% and 0% is below 12%, so the prediction follows from the bracket rather than from a guess.",
+      "B": "The table jumps from 20 g/L to 40 g/L. No 30 g/L row exists.",
+      "C": "Reading between two measured points is interpolation, and it is one of the things a data table is for. Refusing to reason inside the tested range gives up information that is genuinely there.",
+      "D": "Nothing in Table 1 shows levelling off; Species B goes to zero by 40 g/L."
+    }
+  },
+  {
+    "id": "s185",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp24",
+    "context": "Based on Figure 1, the average increase in germination for Species A at 0 g/L between day 3 and day 10 was closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "9 percentage points per day"
+      },
+      {
+        "id": "B",
+        "text": "62 percentage points per day"
+      },
+      {
+        "id": "C",
+        "text": "4 percentage points per day"
+      },
+      {
+        "id": "D",
+        "text": "84 percentage points per day"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "From 22% to 84% is 62 points across 7 days, and 62 ÷ 7 ≈ 8.9.",
+      "B": "62 is the total change over the whole interval, not the change per day.",
+      "C": "Dividing by 14 instead of 7 uses the length of the study rather than the length of the interval asked about.",
+      "D": "84 is the reading at day 10, not a rate."
+    }
+  },
+  {
+    "id": "s186",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp24",
+    "context": "Salt in the soil solution makes water uptake harder for a seed because water tends to move:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "toward the side with more dissolved solute."
+      },
+      {
+        "id": "B",
+        "text": "toward the side with less dissolved solute."
+      },
+      {
+        "id": "C",
+        "text": "toward whichever side is warmer."
+      },
+      {
+        "id": "D",
+        "text": "equally in both directions regardless of solute."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Osmosis moves water across a membrane toward the higher solute concentration. Salty soil pulls against the seed instead of feeding it.",
+      "B": "That reverses osmosis, and would make salty soil easier to draw from rather than harder.",
+      "C": "Temperature affects rate, but the direction of osmotic movement is set by solute concentration.",
+      "D": "Movement is net in one direction whenever the two sides differ, which is what makes the salinity matter."
+    }
+  },
+  {
+    "id": "s187",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "easy",
+    "passage": "sp24",
+    "context": "The NaCl values in Table 1 are given in grams per litre. This unit expresses:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a concentration."
+      },
+      {
+        "id": "B",
+        "text": "a mass."
+      },
+      {
+        "id": "C",
+        "text": "a volume."
+      },
+      {
+        "id": "D",
+        "text": "a rate of change."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "A mass divided by a volume is an amount per amount — how much salt is in a given quantity of solution.",
+      "B": "Grams alone would be a mass. Dividing by litres changes what is being described.",
+      "C": "Litres alone would be a volume, and here they are the denominator.",
+      "D": "A rate of change needs time or another varying quantity in the denominator, and there is none here."
+    }
+  },
+  {
+    "id": "s188",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp25",
+    "context": "According to Table 1, the mass lost by the panel coated with zinc alone was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "78 mg"
+      },
+      {
+        "id": "B",
+        "text": "412 mg"
+      },
+      {
+        "id": "C",
+        "text": "34 mg"
+      },
+      {
+        "id": "D",
+        "text": "9 mg"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Read the zinc row of Table 1.",
+      "B": "412 mg is the uncoated panel, the baseline the others are measured against.",
+      "C": "34 mg is the epoxy panel.",
+      "D": "9 mg is the panel carrying both coatings."
+    }
+  },
+  {
+    "id": "s189",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp25",
+    "context": "According to Table 2, the mass lost by a panel with an 80 µm epoxy coating was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "19 mg"
+      },
+      {
+        "id": "B",
+        "text": "34 mg"
+      },
+      {
+        "id": "C",
+        "text": "11 mg"
+      },
+      {
+        "id": "D",
+        "text": "96 mg"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Read down the thickness column to 80 µm, then across to the mass lost column.",
+      "B": "34 mg belongs to the 40 µm row, one line above.",
+      "C": "11 mg belongs to 160 µm, one line below.",
+      "D": "96 mg is the thinnest coating in the table, at 10 µm."
+    }
+  },
+  {
+    "id": "s190",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp25",
+    "context": "According to Table 2, as epoxy thickness increases, the mass lost:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "decreases throughout."
+      },
+      {
+        "id": "B",
+        "text": "increases throughout."
+      },
+      {
+        "id": "C",
+        "text": "decreases and then increases."
+      },
+      {
+        "id": "D",
+        "text": "stays about the same."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "96, 61, 34, 19, 11 — every row is lower than the one above it.",
+      "B": "That reverses the trend. Thicker coating, less corrosion.",
+      "C": "There is no turning point; the column never rises.",
+      "D": "The column falls from 96 mg to 11 mg, a reduction of almost ninety per cent."
+    }
+  },
+  {
+    "id": "s191",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp25",
+    "context": "Based on Table 1, which coating protected the steel best?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "zinc plus epoxy"
+      },
+      {
+        "id": "B",
+        "text": "epoxy alone"
+      },
+      {
+        "id": "C",
+        "text": "zinc alone"
+      },
+      {
+        "id": "D",
+        "text": "none"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Best protection means least mass lost, and 9 mg is the smallest figure in the table.",
+      "B": "Epoxy alone gives 34 mg, better than zinc but almost four times the combined coating.",
+      "C": "Zinc alone gives 78 mg, the weakest of the three coatings tested.",
+      "D": "The uncoated panel lost 412 mg, which is the worst result, not the best."
+    }
+  },
+  {
+    "id": "s192",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp25",
+    "context": "Based on Table 1, how much less mass was lost by the zinc-coated panel than by the uncoated panel?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "334 mg"
+      },
+      {
+        "id": "B",
+        "text": "78 mg"
+      },
+      {
+        "id": "C",
+        "text": "412 mg"
+      },
+      {
+        "id": "D",
+        "text": "490 mg"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Subtract the zinc panel from the uncoated one: 412 − 78 = 334 mg of damage avoided.",
+      "B": "78 mg is what the zinc panel lost, not the difference.",
+      "C": "412 mg is what the uncoated panel lost.",
+      "D": "490 mg adds the two figures instead of subtracting them."
+    }
+  },
+  {
+    "id": "s193",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp25",
+    "context": "Based on Table 2, increasing the epoxy thickness from 20 µm to 40 µm reduced the mass lost by approximately:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "44%"
+      },
+      {
+        "id": "B",
+        "text": "27%"
+      },
+      {
+        "id": "C",
+        "text": "56%"
+      },
+      {
+        "id": "D",
+        "text": "79%"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The drop is 61 − 34 = 27 mg, and 27 ÷ 61 ≈ 0.44. Percent change is always measured against the starting value.",
+      "B": "27 is the size of the drop in milligrams, not the percentage.",
+      "C": "56% is what remains after the drop, which is the complement of the answer.",
+      "D": "79% would come from dividing by 34, the ending value, instead of by 61."
+    }
+  },
+  {
+    "id": "s194",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp25",
+    "context": "Based on Table 2, each doubling of epoxy thickness reduces the mass lost, but the size of each reduction:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "gets smaller as the coating gets thicker."
+      },
+      {
+        "id": "B",
+        "text": "gets larger as the coating gets thicker."
+      },
+      {
+        "id": "C",
+        "text": "stays the same at every doubling."
+      },
+      {
+        "id": "D",
+        "text": "cannot be compared across doublings."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The four doublings take off 35, 27, 15 and 8 mg in turn. Each one buys less than the last, which is the classic diminishing-returns shape.",
+      "B": "That reverses the pattern; the first doubling is the most valuable one.",
+      "C": "A constant reduction would mean four equal drops, and 35 and 8 are not equal.",
+      "D": "The thicknesses in Table 2 double at every step, which is exactly what makes them comparable."
+    }
+  },
+  {
+    "id": "s195",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp25",
+    "context": "The epoxy entry in Table 1 corresponds to which row of Table 2?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "40 µm"
+      },
+      {
+        "id": "B",
+        "text": "10 µm"
+      },
+      {
+        "id": "C",
+        "text": "80 µm"
+      },
+      {
+        "id": "D",
+        "text": "160 µm"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Table 1 lists the epoxy coating as 40 µm and records 34 mg, and the 40 µm row of Table 2 records 34 mg. The two tables agree where they overlap.",
+      "B": "The 10 µm panel lost 96 mg, nearly three times the Table 1 figure.",
+      "C": "The 80 µm panel lost 19 mg, which is better than the Table 1 result.",
+      "D": "The 160 µm panel lost 11 mg, the best epoxy result in either table."
+    }
+  },
+  {
+    "id": "s196",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp25",
+    "context": "Table 2 provides information that Table 1 alone cannot, because Table 2 shows:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "how mass loss depends on thickness within a single coating type."
+      },
+      {
+        "id": "B",
+        "text": "how mass loss depends on the length of exposure."
+      },
+      {
+        "id": "C",
+        "text": "how zinc and epoxy compare with each other."
+      },
+      {
+        "id": "D",
+        "text": "how the panels were weighed."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Table 1 holds thickness fixed at 40 µm and varies the coating. Table 2 holds the coating fixed and varies the thickness, which is the only way that second dependence becomes visible.",
+      "B": "Both tables report a single 500-hour exposure. Neither varies time.",
+      "C": "That comparison is what Table 1 is for.",
+      "D": "The weighing procedure is described in the passage, and neither table addresses it."
+    }
+  },
+  {
+    "id": "s197",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp25",
+    "context": "A student predicts that a 320 µm epoxy coating would lose less than 11 mg, but not much less. Do the data support this?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because mass loss falls at every doubling and each doubling takes off less than the one before."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because the trend in Table 2 is linear and can be extended by subtracting 8 mg."
+      },
+      {
+        "id": "C",
+        "text": "No, because mass loss cannot fall below the 11 mg recorded at 160 µm."
+      },
+      {
+        "id": "D",
+        "text": "No, because 320 µm lies outside the range tested and nothing can be inferred."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Both halves of the prediction come from the table: the direction from the falling column, and \"not much less\" from the shrinking size of each successive reduction.",
+      "B": "The reductions are 35, 27, 15 and 8 — not constant, so the relationship is not linear and cannot be extended by repeated subtraction.",
+      "C": "Nothing establishes 11 mg as a floor, and the column has fallen at every previous step.",
+      "D": "Extrapolating one step beyond a strong, consistent trend is reasonable so long as it is stated as less certain — which is what \"not much less\" does."
+    }
+  },
+  {
+    "id": "s198",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "easy",
+    "passage": "sp25",
+    "context": "The thicknesses in Table 2 are given in micrometres (µm). One micrometre is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "one millionth of a metre."
+      },
+      {
+        "id": "B",
+        "text": "one thousandth of a metre."
+      },
+      {
+        "id": "C",
+        "text": "one millionth of a millimetre."
+      },
+      {
+        "id": "D",
+        "text": "one thousand metres."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The prefix micro- means one millionth, so 1 µm = 0.000001 m. A 160 µm coating is about a sixth of a millimetre.",
+      "B": "One thousandth of a metre is a millimetre.",
+      "C": "That would be a nanometre divided again — far smaller than any coating on a steel panel.",
+      "D": "One thousand metres is a kilometre; micro- makes things smaller, not larger."
+    }
+  },
+  {
+    "id": "s199",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp25",
+    "context": "Zinc is commonly used to protect steel because zinc:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "corrodes in place of the steel beneath it."
+      },
+      {
+        "id": "B",
+        "text": "is harder than steel and resists scratching."
+      },
+      {
+        "id": "C",
+        "text": "prevents salt from dissolving in water."
+      },
+      {
+        "id": "D",
+        "text": "conducts heat away from the steel surface."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Zinc is more reactive than iron, so it gives up electrons first and is consumed while the steel is spared. The protection is chemical, and it keeps working even where the coating is scratched.",
+      "B": "Zinc is softer than steel, not harder, so a physical-hardness account gets the direction wrong.",
+      "C": "Salt dissolves in the spray regardless of what the panel is coated with.",
+      "D": "Heat conduction plays no part in salt-spray corrosion, which is an electrochemical process."
+    }
   }
 ]

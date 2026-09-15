@@ -3802,9 +3802,9 @@
     "answer": "D",
     "why": {
       "D": "Substituting x = y+2 into the first equation: 3(y+2) + 2y = 16, so 5y + 6 = 16 and y = 2.",
-      "B": "made an arithmetic slip while solving for y",
-      "C": "made an arithmetic slip while solving for y",
-      "A": "made a sign error while isolating y"
+      "B": "Check it: y = 0 makes x = 2, and 3(2) + 2(0) = 6, not 16.",
+      "C": "Check it: y = 1 makes x = 3, and 3(3) + 2(1) = 11, not 16.",
+      "A": "Check it: y = −2 makes x = 0, and 3(0) + 2(−2) = −4, not 16."
     }
   },
   {
@@ -11065,9 +11065,9 @@
     ],
     "answer": "D",
     "why": {
-      "A": "A common factor, but not the greatest one.",
-      "B": "A common factor, but 42 is larger and still divides both.",
-      "C": "A common factor, but 42 is larger and still divides both.",
+      "A": "6 = 2·3. It divides both numbers but leaves out the shared 7.",
+      "B": "14 = 2·7. It divides both numbers but leaves out the shared 3.",
+      "C": "21 = 3·7. It divides both numbers but leaves out the shared 2.",
       "D": "Correct — 84 = 2²·3·7 and 126 = 2·3²·7, so the shared factors are 2·3·7 = 42."
     }
   },

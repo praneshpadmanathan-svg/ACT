@@ -1824,5 +1824,177 @@
         ]
       }
     ]
+  },
+  {
+    "id": "sp24",
+    "title": "Salinity and Seed Germination",
+    "type": "Research Summaries",
+    "text": "Salt dissolved in soil water makes it harder for a seed to take up the water it needs to germinate. Researchers tested two native species from a coastal plain: Species A, a grass found close to the shoreline, and Species B, a shrub found further inland.\n\nStudy 1\n\nSeeds of both species were placed on moist filter paper in identical dishes. Each dish received a solution of a different sodium chloride (NaCl) concentration. The percentage of seeds that had germinated after 14 days was recorded (see Table 1).\n\nStudy 2\n\nSeeds of Species A only were germinated at 0 g/L and at 20 g/L, and the percentage germinated was recorded every few days for 14 days (see Figure 1). All dishes in both studies were held at 20 degrees C under identical light.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Percentage of seeds germinated after 14 days",
+        "type": "table",
+        "head": [
+          "NaCl (g/L)",
+          "Species A (%)",
+          "Species B (%)"
+        ],
+        "rows": [
+          [
+            "0",
+            "96",
+            "92"
+          ],
+          [
+            "5",
+            "88",
+            "74"
+          ],
+          [
+            "10",
+            "71",
+            "45"
+          ],
+          [
+            "20",
+            "42",
+            "12"
+          ],
+          [
+            "40",
+            "9",
+            "0"
+          ]
+        ]
+      },
+      {
+        "label": "Figure 1",
+        "caption": "Germination of Species A over 14 days",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Time (days)",
+        "yLabel": "Germinated (%)",
+        "alt": "Line graph of percentage germinated against time for Species A at two salinities. At 0 g/L the curve rises from 0 to 96 per cent over 14 days; at 20 g/L it rises more slowly and levels near 42 per cent.",
+        "series": [
+          {
+            "name": "0 g/L",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 3,
+                "y": 22
+              },
+              {
+                "x": 7,
+                "y": 61
+              },
+              {
+                "x": 10,
+                "y": 84
+              },
+              {
+                "x": 14,
+                "y": 96
+              }
+            ]
+          },
+          {
+            "name": "20 g/L",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 3,
+                "y": 4
+              },
+              {
+                "x": 7,
+                "y": 18
+              },
+              {
+                "x": 10,
+                "y": 33
+              },
+              {
+                "x": 14,
+                "y": 42
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp25",
+    "title": "Corrosion of Coated Steel",
+    "type": "Data Representation",
+    "text": "Steel corrodes when exposed to salt spray, and the mass lost to corrosion is used as a measure of how much damage has occurred. Identical steel panels were coated in different ways, held in a salt-spray chamber for 500 hours, and weighed before and after.\n\nTable 1 gives the mass lost by panels carrying four different coatings. Table 2 gives the mass lost by panels carrying an epoxy coating applied at five different thicknesses, measured in micrometres.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Mass lost after 500 hours of salt spray",
+        "type": "table",
+        "head": [
+          "Coating",
+          "Mass lost (mg)"
+        ],
+        "rows": [
+          [
+            "none",
+            "412"
+          ],
+          [
+            "zinc",
+            "78"
+          ],
+          [
+            "epoxy, 40 µm",
+            "34"
+          ],
+          [
+            "zinc plus epoxy, 40 µm",
+            "9"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Mass lost by epoxy-coated panels of varying thickness",
+        "type": "table",
+        "head": [
+          "Epoxy thickness (µm)",
+          "Mass lost (mg)"
+        ],
+        "rows": [
+          [
+            "10",
+            "96"
+          ],
+          [
+            "20",
+            "61"
+          ],
+          [
+            "40",
+            "34"
+          ],
+          [
+            "80",
+            "19"
+          ],
+          [
+            "160",
+            "11"
+          ]
+        ]
+      }
+    ]
   }
 ]
