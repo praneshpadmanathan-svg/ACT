@@ -1762,7 +1762,7 @@
     "topic": "dashes",
     "difficulty": "medium",
     "passage": "ep5",
-    "context": "an Osborne Firefinder «— a rotating brass sighting device, essentially unchanged since 1915 —» that lets an observer report a bearing.",
+    "context": "an Osborne Firefinder «— a rotating brass sighting device, essentially unchanged since 1915,» that lets an observer report a bearing.",
     "choices": [
       {
         "id": "A",
@@ -1770,7 +1770,7 @@
       },
       {
         "id": "B",
-        "text": "— a rotating brass sighting device, essentially unchanged since 1915,"
+        "text": "— a rotating brass sighting device, essentially unchanged since 1915 —"
       },
       {
         "id": "C",
@@ -1781,10 +1781,10 @@
         "text": "a rotating brass sighting device essentially unchanged since 1915"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "Correct — a matched pair of dashes cleanly brackets an interruption that already contains a comma.",
-      "B": "Mixes an opening dash with a closing comma.",
+      "A": "The description opens with a dash and closes with a comma. The sentence then has no mark telling the reader where the interruption ended and the main clause resumed.",
+      "B": "Correct — the interrupter is set off by a matched pair of dashes, and the dash is the right choice here because the description already contains a comma of its own.",
       "C": "Mixes an opening comma with a closing dash.",
       "D": "Removes all punctuation, fusing the appositive into the sentence."
     }
@@ -5137,7 +5137,7 @@
     "topic": "dashes",
     "difficulty": "medium",
     "passage": "ep9",
-    "context": "The almanac «— a ledger she kept for fifty-one years —» sat in a county archive for most of a century.",
+    "context": "The almanac «— a ledger she kept for fifty-one years,» sat in a county archive for most of a century.",
     "choices": [
       {
         "id": "A",
@@ -5145,7 +5145,7 @@
       },
       {
         "id": "B",
-        "text": "— a ledger she kept for fifty-one years,"
+        "text": "— a ledger she kept for fifty-one years —"
       },
       {
         "id": "C",
@@ -5156,10 +5156,10 @@
         "text": "- a ledger she kept for fifty-one years -"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "Correct — a pair of dashes sets off the interrupting description, and both ends match.",
-      "B": "An interrupter must open and close with the same mark; a dash cannot be closed by a comma.",
+      "A": "A dash opens the description and a comma closes it. An interrupter has to be bracketed by two of the same mark, whichever mark is chosen.",
+      "B": "Correct — both ends of the description now carry a dash, so \"The almanac sat in a county archive\" reads straight through with the ledger held aside.",
       "C": "Same mismatch in the other direction: a comma cannot be closed by a dash.",
       "D": "These are hyphens, not dashes. A hyphen joins parts of a word; it cannot set off a phrase."
     }
@@ -5335,7 +5335,7 @@
     "topic": "idioms",
     "difficulty": "medium",
     "passage": "ep9",
-    "context": "That trend has since been «corroborated by» three other regional records.",
+    "context": "That trend has since been «corroborated with» three other regional records.",
     "choices": [
       {
         "id": "A",
@@ -5343,7 +5343,7 @@
       },
       {
         "id": "B",
-        "text": "corroborated with"
+        "text": "corroborated by"
       },
       {
         "id": "C",
@@ -5354,10 +5354,10 @@
         "text": "corroborated through"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "Correct — evidence corroborates a claim, so in the passive the standard pairing is \"corroborated by.\"",
-      "B": "\"With\" suggests the records were a tool used alongside something else rather than the source of confirmation.",
+      "A": "\"Corroborated with\" names an instrument rather than a source. The records are what do the corroborating.",
+      "B": "Correct — evidence is corroborated by whatever supplies the confirmation, which is the idiom English settled on.",
       "C": "\"From\" would name an origin, which is not the relationship between evidence and the claim it supports.",
       "D": "\"Through\" implies a route or a means, not the agent doing the corroborating."
     }
@@ -5500,7 +5500,7 @@
     "topic": "dashes",
     "difficulty": "hard",
     "passage": "ep9",
-    "context": "Three regional records «— one from a lightship, one from a cannery, and one from a ferry line —» have since corroborated the trend.",
+    "context": "Three regional records «— one from a lightship, one from a cannery, and one from a ferry line,» have since corroborated the trend.",
     "choices": [
       {
         "id": "A",
@@ -5512,18 +5512,18 @@
       },
       {
         "id": "C",
-        "text": "— one from a lightship, one from a cannery, and one from a ferry line,"
+        "text": "— one from a lightship, one from a cannery, and one from a ferry line —"
       },
       {
         "id": "D",
         "text": "one from a lightship, one from a cannery, and one from a ferry line"
       }
     ],
-    "answer": "A",
+    "answer": "C",
     "why": {
-      "A": "Correct — the interrupter already contains commas, so dashes are needed to mark where it starts and stops.",
+      "A": "The list opens behind a dash and closes with a comma, which leaves the reader unable to see where the list stops and the verb picks up.",
       "B": "Commas here compete with the three commas inside the list, leaving the reader unsure where the aside ends.",
-      "C": "The opening dash and closing comma do not match.",
+      "C": "Correct — a matched pair of dashes. Dashes rather than commas, because the list being set off has commas inside it already.",
       "D": "With no punctuation the list collides with the main verb, and the sentence reads as though the records themselves were the three items."
     }
   },
@@ -5896,7 +5896,7 @@
     "topic": "idioms",
     "difficulty": "medium",
     "passage": "ep10",
-    "context": "The bridge was strong enough «to hold» many times the crowd standing on it that morning.",
+    "context": "The bridge was strong enough «for holding» many times the crowd standing on it that morning.",
     "choices": [
       {
         "id": "A",
@@ -5904,7 +5904,7 @@
       },
       {
         "id": "B",
-        "text": "for holding"
+        "text": "to hold"
       },
       {
         "id": "C",
@@ -5915,10 +5915,10 @@
         "text": "in holding"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "Correct — \"enough\" is followed by an infinitive: strong enough to hold.",
-      "B": "\"Enough for holding\" is not standard; the adjective takes an infinitive, not a prepositional phrase.",
+      "A": "\"Strong enough\" takes an infinitive, not a gerund phrase: enough to do something, never enough for doing it.",
+      "B": "Correct — \"strong enough to hold\" is the idiom, and the infinitive is what \"enough\" is looking for.",
       "C": "\"To\" here is part of the infinitive, so it must be followed by the base verb \"hold,\" not \"holding.\"",
       "D": "\"In holding\" describes a circumstance and does not complete the \"strong enough\" construction."
     }
@@ -5929,7 +5929,7 @@
     "topic": "idioms",
     "difficulty": "medium",
     "passage": "ep10",
-    "context": "Pedestrian lock-in «depends on» the number of walkers rather than their weight.",
+    "context": "Pedestrian lock-in «depends of» the number of walkers rather than their weight.",
     "choices": [
       {
         "id": "A",
@@ -5937,7 +5937,7 @@
       },
       {
         "id": "B",
-        "text": "depends of"
+        "text": "depends on"
       },
       {
         "id": "C",
@@ -5948,10 +5948,10 @@
         "text": "depends in"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "Correct — the verb \"depend\" always takes the preposition \"on\" in this sense.",
-      "B": "\"Depends of\" is not English, though the equivalent phrase in several other languages uses \"of.\"",
+      "A": "Nothing depends \"of\" anything in English; the verb has never taken that preposition.",
+      "B": "Correct — the verb is fixed to \"on\", whatever the thing being depended upon happens to be.",
       "C": "\"Depends from\" appears only in the unrelated architectural sense of hanging from something.",
       "D": "\"Depends in\" is not an accepted pairing for this verb."
     }
@@ -6226,7 +6226,7 @@
     "topic": "colons",
     "difficulty": "medium",
     "passage": "ep11",
-    "context": "The radio link reports exactly one «fact: lamp» on or lamp off, and it reports that fact perfectly.",
+    "context": "The radio link reports exactly one «fact; lamp» on or lamp off, and it reports that fact perfectly.",
     "choices": [
       {
         "id": "A",
@@ -6234,7 +6234,7 @@
       },
       {
         "id": "B",
-        "text": "fact; lamp"
+        "text": "fact: lamp"
       },
       {
         "id": "C",
@@ -6245,10 +6245,10 @@
         "text": "fact lamp"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "Correct — the clause before the colon is complete, and what follows names the one fact it promised.",
-      "B": "A semicolon needs an independent clause on both sides, and \"lamp on or lamp off\" is not one.",
+      "A": "\"Lamp on or lamp off\" is the fact being named rather than a second statement about it, so it cannot sit on the far side of a semicolon.",
+      "B": "Correct — the colon names the one fact the link reports, which is what the first half of the sentence has promised.",
       "C": "A comma is too weak to carry the announcement the sentence has set up.",
       "D": "Runs the announcement into its own answer with no punctuation at all."
     }
@@ -6692,7 +6692,7 @@
     "topic": "dashes",
     "difficulty": "medium",
     "passage": "ep12",
-    "context": "The others «— kept in a university drawer for thirty years —» were never planted because nobody expected anything to happen.",
+    "context": "The others «— kept in a university drawer for thirty years,» were never planted because nobody expected anything to happen.",
     "choices": [
       {
         "id": "A",
@@ -6700,7 +6700,7 @@
       },
       {
         "id": "B",
-        "text": "— kept in a university drawer for thirty years,"
+        "text": "— kept in a university drawer for thirty years —"
       },
       {
         "id": "C",
@@ -6711,10 +6711,10 @@
         "text": "— kept in a university drawer for thirty years;"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "Correct — a matched pair of dashes encloses the aside and the sentence still reads correctly with the aside removed.",
-      "B": "Opens with a dash and closes with a comma, leaving the pair unmatched.",
+      "A": "The opening dash is never answered. A comma cannot close what a dash opened, and the subject is left waiting for its verb.",
+      "B": "Correct — the modifier is fenced off at both ends by dashes, so \"The others were never planted\" survives intact underneath it.",
       "C": "Drops the opening mark, so the reader cannot tell where the interruption began.",
       "D": "A semicolon cannot close an interruption; it can only join clauses."
     }
@@ -7690,7 +7690,7 @@
     "topic": "colons",
     "difficulty": "medium",
     "passage": "p36-eng-drill-tool-library-0001",
-    "context": "The collection began with a single donated item«:» a wheelbarrow with a cracked handle.",
+    "context": "The collection began with a single donated item«;» a wheelbarrow with a cracked handle.",
     "choices": [
       {
         "id": "A",
@@ -7698,7 +7698,7 @@
       },
       {
         "id": "B",
-        "text": ";"
+        "text": ":"
       },
       {
         "id": "C",
@@ -7709,10 +7709,10 @@
         "text": ", which was,"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "A colon may follow a complete sentence to introduce what that sentence has promised. \"The collection began with a single donated item\" is complete, and the wheelbarrow names the item.",
-      "B": "A semicolon joins two independent clauses. \"A wheelbarrow with a cracked handle\" has no verb, so nothing can stand on the right of one.",
+      "A": "A wheelbarrow with a cracked handle is a thing, not a statement, so a semicolon has nothing to join it to.",
+      "B": "Correct — the colon identifies the single donated item, which is the appositive relationship the sentence is built on.",
       "C": "Running the two together gives \"a single donated item a wheelbarrow\", a noun followed by a stray noun.",
       "D": "The second comma closes a clause the first one never properly opened, stranding \"was\" without its complement."
     }
@@ -8119,7 +8119,7 @@
     "topic": "colons",
     "difficulty": "medium",
     "passage": "ep14",
-    "context": "For most of June the counting produced one thing«:» a very slow way of proving nothing.",
+    "context": "For most of June the counting produced one thing«;» a very slow way of proving nothing.",
     "choices": [
       {
         "id": "A",
@@ -8127,7 +8127,7 @@
       },
       {
         "id": "B",
-        "text": ";"
+        "text": ":"
       },
       {
         "id": "C",
@@ -8138,10 +8138,10 @@
         "text": "; namely,"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "A colon may follow a complete sentence to deliver what that sentence has promised, and \"a very slow way of proving nothing\" is the thing promised.",
-      "B": "A semicolon needs an independent clause on its right, and this phrase has no verb.",
+      "A": "A semicolon needs a statement on each side of it. \"A very slow way of proving nothing\" is a phrase naming the one thing, not a second statement.",
+      "B": "Correct — the colon delivers the one thing the clause has just promised, which is the mark for an appositive of that kind.",
       "C": "A comma here reads as though a list is starting, and then only one item arrives.",
       "D": "Adding \"namely\" does not rescue the semicolon; the right-hand side is still not a sentence."
     }
@@ -8152,7 +8152,7 @@
     "topic": "dashes",
     "difficulty": "medium",
     "passage": "ep14",
-    "context": "The ochre stars «— eleven one morning, twelve the next —» barely seemed to move.",
+    "context": "The ochre stars «— eleven one morning, twelve the next,» barely seemed to move.",
     "choices": [
       {
         "id": "A",
@@ -8160,7 +8160,7 @@
       },
       {
         "id": "B",
-        "text": "— eleven one morning, twelve the next,"
+        "text": "— eleven one morning, twelve the next —"
       },
       {
         "id": "C",
@@ -8171,10 +8171,10 @@
         "text": "— eleven one morning, twelve the next"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "An interruption in the middle of a sentence needs the same mark at both ends. Two dashes open and close it cleanly.",
-      "B": "Opens with a dash and closes with a comma, so the pair does not match.",
+      "A": "Opens with a dash, closes with a comma. The counts are an aside, and an aside needs the same mark at both ends to be read as one.",
+      "B": "Correct — two dashes, so the counts sit inside them and \"The ochre stars barely seemed to move\" is the sentence the reader comes away with.",
       "C": "The same mismatch the other way round.",
       "D": "Never closes the interruption, leaving \"barely seemed to move\" outside a clause that was never finished."
     }
@@ -8416,7 +8416,7 @@
     "topic": "idioms",
     "difficulty": "medium",
     "passage": "ep15",
-    "context": "She is not sentimental «about» this, which surprises people who come to interview her.",
+    "context": "She is not sentimental «on» this, which surprises people who come to interview her.",
     "choices": [
       {
         "id": "A",
@@ -8424,7 +8424,7 @@
       },
       {
         "id": "B",
-        "text": "on"
+        "text": "about"
       },
       {
         "id": "C",
@@ -8435,10 +8435,10 @@
         "text": "with"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "\"Sentimental about\" is the fixed pairing in English. Idiom questions have no rule behind them beyond what the language settled on.",
-      "B": "\"Sentimental on\" is not an English collocation.",
+      "A": "A person can be keen on something but never sentimental on it; the adjective does not take \"on\".",
+      "B": "Correct — sentimentality is always about its object, and that is the preposition the adjective requires.",
       "C": "\"Sentimental for\" reverses the sense toward longing for something rather than having feelings about it.",
       "D": "\"Sentimental with\" would describe how she treats a person, not what she feels about a situation."
     }
@@ -8614,7 +8614,7 @@
     "topic": "colons",
     "difficulty": "medium",
     "passage": "ep15",
-    "context": "The trade has a vocabulary of its own«:» the layout, the pounce pattern, the fitch and the quill.",
+    "context": "The trade has a vocabulary of its own«;» the layout, the pounce pattern, the fitch and the quill.",
     "choices": [
       {
         "id": "A",
@@ -8622,7 +8622,7 @@
       },
       {
         "id": "B",
-        "text": ";"
+        "text": ":"
       },
       {
         "id": "C",
@@ -8633,10 +8633,10 @@
         "text": "; namely"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "A complete sentence on the left, a list on the right — which is the standard job of a colon.",
-      "B": "A semicolon requires an independent clause on the right, and a list of nouns is not one.",
+      "A": "What follows is four nouns, and a semicolon cannot stand between a full clause and a bare list of nouns.",
+      "B": "Correct — the clause announces a vocabulary and the colon opens the list of words that make it up.",
       "C": "A comma makes \"the layout\" look like the first of several things the trade has, rather than the first item of the vocabulary.",
       "D": "\"Namely\" does not change what a semicolon needs on its right."
     }
@@ -9208,7 +9208,7 @@
     "topic": "dashes",
     "difficulty": "medium",
     "passage": "ep16",
-    "context": "The new bridge «— built to the original specification —» has never carried six lanes of traffic.",
+    "context": "The new bridge «— built to the original specification,» has never carried six lanes of traffic.",
     "choices": [
       {
         "id": "A",
@@ -9216,7 +9216,7 @@
       },
       {
         "id": "B",
-        "text": "— built to the original specification,"
+        "text": "— built to the original specification —"
       },
       {
         "id": "C",
@@ -9227,10 +9227,10 @@
         "text": "built to the original specification"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "A pair of dashes sets off an interruption, and the pair is matched: a dash opens it and a dash closes it.",
-      "B": "Opening with a dash and closing with a comma mixes the two marks. Whichever is used has to be used at both ends.",
+      "A": "A dash on one side and a comma on the other. Whichever mark is used, the same one has to close the interruption that opened it.",
+      "B": "Correct — matched dashes hold the modifier apart from \"The new bridge has never carried six lanes of traffic\", which is the claim being made.",
       "C": "Same mismatch in the other direction — a comma cannot open what a dash closes.",
       "D": "With no punctuation at all, \"The new bridge built to the original specification\" reads as one noun phrase and the interruption disappears."
     }
@@ -9769,7 +9769,7 @@
     "topic": "dashes",
     "difficulty": "medium",
     "passage": "ep17",
-    "context": "The measurements were astonishingly consistent «— ninety-two grams, then ninety, then ninety-four —» which is a tighter tolerance than most cooks manage.",
+    "context": "The measurements were astonishingly consistent «— ninety-two grams, then ninety, then ninety-four,» which is a tighter tolerance than most cooks manage.",
     "choices": [
       {
         "id": "A",
@@ -9777,7 +9777,7 @@
       },
       {
         "id": "B",
-        "text": "— ninety-two grams, then ninety, then ninety-four,"
+        "text": "— ninety-two grams, then ninety, then ninety-four —"
       },
       {
         "id": "C",
@@ -9788,10 +9788,10 @@
         "text": "ninety-two grams, then ninety, then ninety-four"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "The readings interrupt the sentence and a matched pair of dashes sets them off — which is also the clearest mark to use when the interruption itself contains commas.",
-      "B": "A dash at one end and a comma at the other leaves the pair unmatched.",
+      "A": "The three weights are introduced by a dash and dismissed by a comma, so nothing marks the point where the figures end and the comment on them begins.",
+      "B": "Correct — the figures are bracketed by dashes, which is what lets the \"which\" clause attach to the consistency rather than to ninety-four grams.",
       "C": "Same mismatch reversed, and a comma cannot open an interruption that already contains commas without confusing the reader.",
       "D": "With no punctuation the three readings run straight into the sentence and the reader cannot tell where the interruption ends."
     }
@@ -10132,7 +10132,7 @@
     "topic": "colons",
     "difficulty": "hard",
     "passage": "ep18",
-    "context": "Slow-water design has one economic feature municipal budgets are not built for«: it is cheap to build and expensive to maintain.»",
+    "context": "Slow-water design has one economic feature municipal budgets are not built for«; that it is cheap to build and expensive to maintain.»",
     "choices": [
       {
         "id": "A",
@@ -10140,7 +10140,7 @@
       },
       {
         "id": "B",
-        "text": "; that it is cheap to build and expensive to maintain."
+        "text": ": it is cheap to build and expensive to maintain."
       },
       {
         "id": "C",
@@ -10151,10 +10151,10 @@
         "text": ", it is cheap to build and expensive to maintain."
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "Everything before the colon is a complete sentence, and what follows explains the \"one economic feature\" it promised. That is exactly what a colon is for.",
-      "B": "A semicolon needs an independent clause after it, and \"that it is cheap to build\" is a subordinate clause.",
+      "A": "\"That it is cheap to build\" is a subordinate clause, so it cannot sit on the far side of a semicolon, which joins two statements that could each stand alone.",
+      "B": "Correct — the colon points from the named feature to the explanation of it, and what follows the colon is a complete statement in its own right.",
       "C": "A comma and a colon together is not a punctuation mark in English.",
       "D": "A comma cannot join two independent clauses on its own, and it also drops the promise the colon was making."
     }
@@ -10660,7 +10660,7 @@
     "topic": "colons",
     "difficulty": "hard",
     "passage": "ep19",
-    "context": "The storage manager described the failure that worries her «most: a compressor drifting out of tolerance for four years with nobody watching.»",
+    "context": "The storage manager described the failure that worries her «most; a compressor drifting out of tolerance for four years with nobody watching.»",
     "choices": [
       {
         "id": "A",
@@ -10668,7 +10668,7 @@
       },
       {
         "id": "B",
-        "text": "most; a compressor drifting out of tolerance for four years with nobody watching."
+        "text": "most: a compressor drifting out of tolerance for four years with nobody watching."
       },
       {
         "id": "C",
@@ -10679,10 +10679,10 @@
         "text": "most, : a compressor drifting out of tolerance for four years with nobody watching."
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "A complete sentence precedes the colon, and what follows delivers the \"failure\" the sentence has just promised. That is the colon’s job.",
-      "B": "A semicolon needs an independent clause after it, and this is a noun phrase.",
+      "A": "A compressor drifting out of tolerance is a thing being named, not a statement, so the semicolon has nothing on its right to join.",
+      "B": "Correct — the colon identifies the failure the first half of the sentence has referred to without naming.",
       "C": "A dash could work here, but \"which was\" turns the phrase into a clause and adds a comma that separates the subject from its verb.",
       "D": "A comma followed by a colon is not a punctuation mark in English."
     }
@@ -11089,7 +11089,7 @@
     "topic": "dashes",
     "difficulty": "medium",
     "passage": "ep20",
-    "context": "Economists have a term for this «— incidental social contact —» and a literature arguing that it matters.",
+    "context": "Economists have a term for this «— incidental social contact,» and a literature arguing that it matters.",
     "choices": [
       {
         "id": "A",
@@ -11097,7 +11097,7 @@
       },
       {
         "id": "B",
-        "text": "— incidental social contact,"
+        "text": "— incidental social contact —"
       },
       {
         "id": "C",
@@ -11108,10 +11108,10 @@
         "text": "; incidental social contact;"
       }
     ],
-    "answer": "A",
+    "answer": "B",
     "why": {
-      "A": "A matched pair of dashes sets off the term as an interruption, and both ends use the same mark.",
-      "B": "Opening with a dash and closing with a comma leaves the pair mismatched.",
+      "A": "With a comma closing what a dash opened, the term and the literature read as two items in a list rather than as a term followed by its aside.",
+      "B": "Correct — matched dashes set the term aside, leaving \"Economists have a term for this and a literature arguing that it matters\" as the spine of the sentence.",
       "C": "The same mismatch reversed.",
       "D": "A semicolon needs an independent clause on each side, and a bare noun phrase is not one."
     }
