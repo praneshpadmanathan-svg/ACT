@@ -2180,5 +2180,99 @@
         ]
       }
     ]
+  },
+  {
+    "id": "sp28",
+    "title": "Water Loss from Open Irrigation Trays",
+    "type": "Research Summaries",
+    "text": "Irrigation districts lose part of their water to evaporation from open channels. Students modelled this loss with identical shallow trays, each with a water surface of 0.50 m² filled to a depth of 40 mm. Unless stated otherwise, every trial was run outdoors at a water temperature of 20 °C.\n\nExperiment 1. Four trays were placed in a wind tunnel open at both ends and held at a fixed wind speed for 24 hours. The depth of water remaining was measured with a hook gauge. Table 1 gives the depth lost per day at each wind speed.\n\nExperiment 2. Four trays were left in still air for 24 hours, three of them covered. The shade cloth blocked most sunlight but let air pass; the floating balls covered about 90 percent of the surface; the sealed lid rested on a gasket. Each tray was weighed before and after. Table 2 gives the mass of water lost.\n\nExperiment 3. A single tray was held in still air at each of four water temperatures, and the volume of water lost was measured hourly. Table 3 gives the average evaporation rate over 6 hours at each temperature.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Depth of water lost in 24 hours at four wind speeds (20 °C)",
+        "type": "table",
+        "head": [
+          "Trial",
+          "Wind speed (m/s)",
+          "Depth lost (mm/day)"
+        ],
+        "rows": [
+          [
+            "1",
+            "0.0",
+            "2.0"
+          ],
+          [
+            "2",
+            "1.0",
+            "3.0"
+          ],
+          [
+            "3",
+            "2.0",
+            "4.0"
+          ],
+          [
+            "4",
+            "4.0",
+            "8.0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Mass of water lost in 24 hours in still air (20 °C)",
+        "type": "table",
+        "head": [
+          "Cover",
+          "Mass lost (g)"
+        ],
+        "rows": [
+          [
+            "None",
+            "1000"
+          ],
+          [
+            "Shade cloth",
+            "620"
+          ],
+          [
+            "Floating balls",
+            "250"
+          ],
+          [
+            "Sealed lid",
+            "15"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Average evaporation rate in still air at four water temperatures",
+        "type": "table",
+        "head": [
+          "Water temperature (°C)",
+          "Evaporation rate (mL/h)"
+        ],
+        "rows": [
+          [
+            "10",
+            "20"
+          ],
+          [
+            "15",
+            "29"
+          ],
+          [
+            "20",
+            "42"
+          ],
+          [
+            "25",
+            "60"
+          ]
+        ]
+      }
+    ]
   }
 ]

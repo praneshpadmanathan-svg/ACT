@@ -9601,5 +9601,401 @@
       "C": "Both of these cores were soaked, so the comparison shows the effect of porosity, not of water.",
       "D": "Both of these cores were dried, so neither one has water in its pores to begin with."
     }
+  },
+  {
+    "id": "s234",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp28",
+    "context": "In Trial 1 of Experiment 1 the tray lost 2.0 mm of depth. Over a water surface of 0.50 m², this depth corresponds to a volume closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.0 L"
+      },
+      {
+        "id": "B",
+        "text": "0.10 L"
+      },
+      {
+        "id": "C",
+        "text": "10 L"
+      },
+      {
+        "id": "D",
+        "text": "4.0 L"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 2.0 mm is 0.0020 m, and 0.0020 m × 0.50 m² is 0.0010 m³, which is 1.0 L.",
+      "B": "0.10 L is a tenth of the volume; the metre-to-millimetre conversion has slipped a factor of ten.",
+      "C": "10 L would need a depth of 20 mm, half the water the tray was filled with.",
+      "D": "4.0 L multiplies 2.0 by 2 instead of by the 0.50 m² surface the water sits on."
+    }
+  },
+  {
+    "id": "s235",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp28",
+    "context": "The shade-cloth tray in Experiment 2 lost 620 g of water. Taking 1.00 g of water to occupy 1.00 mL, this mass corresponds to a volume of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.0620 L"
+      },
+      {
+        "id": "B",
+        "text": "6.20 L"
+      },
+      {
+        "id": "C",
+        "text": "0.620 L"
+      },
+      {
+        "id": "D",
+        "text": "62.0 L"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "0.0620 L is 62 mL, a tenth of the mass the tray actually lost.",
+      "B": "6.20 L is ten times too large; 620 mL is well under one litre, not over six.",
+      "C": "Correct — 620 g of water is 620 mL, and 620 mL is 0.620 L.",
+      "D": "62.0 L is a hundred times the volume, and the tray holds only 20 L in total."
+    }
+  },
+  {
+    "id": "s236",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp28",
+    "context": "At 25 °C the tray in Experiment 3 lost water at 60 mL/h. If that rate held for a full 24 hours, the volume lost would be closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.144 L"
+      },
+      {
+        "id": "B",
+        "text": "2.50 L"
+      },
+      {
+        "id": "C",
+        "text": "14.4 L"
+      },
+      {
+        "id": "D",
+        "text": "1.44 L"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "0.144 L is 144 mL, which is the loss over about two and a half hours.",
+      "B": "2.50 L divides 60 by 24 rather than multiplying, then treats the result as litres.",
+      "C": "14.4 L is ten times too large; 1440 mL is 1.44 L, not 14.4 L.",
+      "D": "Correct — 60 mL/h × 24 h is 1440 mL, and 1440 mL is 1.44 L."
+    }
+  },
+  {
+    "id": "s237",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp28",
+    "context": "According to Table 1, the rate of water loss first reaches twice its still-air value at a wind speed of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2.0 m/s"
+      },
+      {
+        "id": "B",
+        "text": "4.0 m/s"
+      },
+      {
+        "id": "C",
+        "text": "8.0 m/s"
+      },
+      {
+        "id": "D",
+        "text": "1.0 m/s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — still air loses 2.0 mm/day, and 2.0 m/s is the first trial to reach 4.0 mm/day.",
+      "B": "At 4.0 m/s the loss is four times the still-air value, so the doubling happened earlier.",
+      "C": "No trial ran at 8.0 m/s, and the loss had already doubled by 2.0 m/s in any case.",
+      "D": "At 1.0 m/s the loss is 3.0 mm/day, which is one and a half times the still-air value."
+    }
+  },
+  {
+    "id": "s238",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp28",
+    "context": "In Table 3, the increase in evaporation rate across each 5 °C step is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "largest between 20 °C and 25 °C."
+      },
+      {
+        "id": "B",
+        "text": "the same size at every step."
+      },
+      {
+        "id": "C",
+        "text": "largest between 10 °C and 15 °C."
+      },
+      {
+        "id": "D",
+        "text": "zero above 20 °C."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the steps are 9, 13 and 18 mL/h, so the last one is the largest of the three.",
+      "B": "Equal steps would mean a straight-line relationship, but the three increases differ.",
+      "C": "The first step is 20 to 29 mL/h, an increase of 9, which is the smallest of the three.",
+      "D": "The rate climbs from 42 to 60 mL/h above 20 °C, which is the largest increase in the table."
+    }
+  },
+  {
+    "id": "s239",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp28",
+    "context": "According to Table 2, which cover or covers reduced the 24-hour loss to less than one third of the uncovered tray?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "None of the three covers tested."
+      },
+      {
+        "id": "B",
+        "text": "The shade cloth and nothing else."
+      },
+      {
+        "id": "C",
+        "text": "The floating balls and the sealed lid."
+      },
+      {
+        "id": "D",
+        "text": "The sealed lid and nothing else."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Two of the covers fall below 333 g, so at least one cover does qualify.",
+      "B": "The shade cloth lost 620 g, which is well over a third of the uncovered 1000 g.",
+      "C": "Correct — a third of 1000 g is about 333 g, and the balls lost 250 g and the lid 15 g.",
+      "D": "The sealed lid qualifies, but so do the floating balls at 250 g."
+    }
+  },
+  {
+    "id": "s240",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp28",
+    "context": "A tray is held at a wind speed of 2.0 m/s for 3 days at 20 °C. Based on Table 1, the total depth of water it loses would be closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4 mm"
+      },
+      {
+        "id": "B",
+        "text": "24 mm"
+      },
+      {
+        "id": "C",
+        "text": "12 mm"
+      },
+      {
+        "id": "D",
+        "text": "6 mm"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "4 mm is the loss for a single day, not for the three days the question asks about.",
+      "B": "24 mm uses the 8.0 mm/day figure, which belongs to the 4.0 m/s trial.",
+      "C": "Correct — Table 1 gives 4.0 mm/day at 2.0 m/s, and three days at that rate is 12 mm.",
+      "D": "6 mm would follow from the still-air rate of 2.0 mm/day rather than the 2.0 m/s rate."
+    }
+  },
+  {
+    "id": "s241",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp28",
+    "context": "Based on Table 3, the evaporation rate of a tray held at 22.5 °C would most likely be closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "42 mL/h"
+      },
+      {
+        "id": "B",
+        "text": "60 mL/h"
+      },
+      {
+        "id": "C",
+        "text": "35 mL/h"
+      },
+      {
+        "id": "D",
+        "text": "51 mL/h"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "42 mL/h is the rate at 20 °C, and the rate rises with every temperature step in the table.",
+      "B": "60 mL/h is the rate at 25 °C, which is above the temperature the question names.",
+      "C": "35 mL/h falls between the 15 °C and 20 °C rows, below the range the question asks about.",
+      "D": "Correct — 22.5 °C sits halfway between 20 and 25 °C, whose rates are 42 and 60 mL/h."
+    }
+  },
+  {
+    "id": "s242",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp28",
+    "context": "A student hypothesised that a cover reduces evaporation only by blocking sunlight from the water. Do the Experiment 2 results support that hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No, because two covers that both block light gave very different results."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because every one of the three covers reduced the mass lost."
+      },
+      {
+        "id": "C",
+        "text": "No, because the shade-cloth tray lost more water than the uncovered tray."
+      },
+      {
+        "id": "D",
+        "text": "Yes, because the cover that blocked the most light lost the least water."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — blocking light alone cannot explain a gap between 250 g and 15 g among covers that all shade the water.",
+      "B": "A reduction under every cover is consistent with several explanations, not only with shading.",
+      "C": "The shade-cloth tray lost 620 g against 1000 g uncovered, so it lost less, not more.",
+      "D": "The sealed lid blocks air as well as light, so its result cannot single out shading."
+    }
+  },
+  {
+    "id": "s243",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp28",
+    "context": "On the basis of Experiments 1 and 3 together, the evaporation rate of a tray held at 25 °C in a 4.0 m/s wind:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "is the sum of those two values once they are in common units."
+      },
+      {
+        "id": "B",
+        "text": "cannot be determined, because no trial combined warm water with wind."
+      },
+      {
+        "id": "C",
+        "text": "is 8.0 mm/day, which is the value Table 1 gives for a 4.0 m/s wind."
+      },
+      {
+        "id": "D",
+        "text": "is 60 mL/h, which is the value Table 3 gives for water at 25 °C."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Nothing in the two experiments shows that the two effects simply add, and neither was tested with the other.",
+      "B": "Correct — Experiment 1 varied wind at 20 °C and Experiment 3 varied temperature in still air, so the combination was never tested.",
+      "C": "That figure was measured at 20 °C, and the question raises the temperature above it.",
+      "D": "That figure was measured in still air, and the question puts the tray in a 4.0 m/s wind."
+    }
+  },
+  {
+    "id": "s244",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp28",
+    "context": "Evaporation cools the water that stays behind in the tray. This happens chiefly because the molecules that escape the surface:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "release heat into the water as they enter the gas phase."
+      },
+      {
+        "id": "B",
+        "text": "reduce the surface area available for further evaporation."
+      },
+      {
+        "id": "C",
+        "text": "carry away more than the average kinetic energy of the water."
+      },
+      {
+        "id": "D",
+        "text": "leave behind molecules that are moving faster on average."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Entering the gas phase absorbs energy from the water; it does not release heat into it.",
+      "B": "The surface area of the tray is fixed by its shape and does not change as water leaves.",
+      "C": "Correct — only the fastest molecules escape, so the average energy of what remains falls.",
+      "D": "Losing the fastest molecules lowers the average speed of those left, rather than raising it."
+    }
+  },
+  {
+    "id": "s245",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp28",
+    "context": "Moving air increases evaporation from an open surface. The best explanation for this effect is that wind:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "raises the temperature of the water at the surface of the tray."
+      },
+      {
+        "id": "B",
+        "text": "increases the atmospheric pressure pushing down on the water."
+      },
+      {
+        "id": "C",
+        "text": "adds kinetic energy directly to the molecules in the liquid."
+      },
+      {
+        "id": "D",
+        "text": "carries away humid air before it can slow further evaporation."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Moving air usually cools an evaporating surface rather than warming it.",
+      "B": "Wind does not raise atmospheric pressure, and higher pressure would slow evaporation anyway.",
+      "C": "Wind acts on the air above the surface; it does not push energy into the liquid below.",
+      "D": "Correct — still air above the water grows humid, and a humid layer returns molecules as fast as it loses them."
+    }
   }
 ]
