@@ -6268,5 +6268,665 @@
       "C": "Evidence from several jurisdictions is cited, and the unevenness of the cup results is presented as instructive rather than as a methodological warning.",
       "D": "Cost to the treasury is never discussed, and the bonus is reported as the weaker instrument."
     }
+  },
+  {
+    "id": "r134",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "medium",
+    "passage": "rp14",
+    "context": "The passage is primarily concerned with:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a verification requirement that was poorly designed, and the unrelated change that eventually made it unnecessary."
+      },
+      {
+        "id": "B",
+        "text": "the working conditions of children employed in Massachusetts textile mills."
+      },
+      {
+        "id": "C",
+        "text": "the career of an inspector whose accuracy was recognized in her own lifetime."
+      },
+      {
+        "id": "D",
+        "text": "the history of birth registration across the United States."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The passage sets up the affidavit as the wrong instrument for the job, gives Farrow’s diagnosis of why, and then shows the problem dissolving when registries arrived for entirely different reasons.",
+      "B": "The mills are the setting. The passage never describes what the work was like, only how the children’s ages were established.",
+      "C": "The accuracy is established in the final paragraph, and the passage is explicit that it is read for now, not something she was recognized for then.",
+      "D": "Registration appears only in the single paragraph explaining why it spread, and only as it bears on the age question."
+    }
+  },
+  {
+    "id": "r135",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "easy",
+    "passage": "rp14",
+    "context": "According to the passage, the law Farrow enforced permitted an employer to establish a child’s age by producing:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "an affidavit from a parent."
+      },
+      {
+        "id": "B",
+        "text": "a birth certificate issued by the state."
+      },
+      {
+        "id": "C",
+        "text": "the inspector’s written judgment."
+      },
+      {
+        "id": "D",
+        "text": "a physician’s examination."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The first paragraph says the law \"permitted an employer to satisfy an inspector with an affidavit from a parent\".",
+      "B": "The passage says most of these families had no certificate, which is the whole reason the affidavit existed.",
+      "C": "Farrow recorded her judgment in a second column of her own, not as something the law recognized.",
+      "D": "No physician appears anywhere in the passage."
+    }
+  },
+  {
+    "id": "r136",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "medium",
+    "passage": "rp14",
+    "context": "The passage suggests that a mother who swore to an inaccurate age most often did so because she:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "did not know the date and gave a figure she had reason to think was close enough."
+      },
+      {
+        "id": "B",
+        "text": "had been instructed what to say by the mill’s management."
+      },
+      {
+        "id": "C",
+        "text": "was concealing a birth certificate she actually possessed."
+      },
+      {
+        "id": "D",
+        "text": "expected no one would ever check the claim against a record."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The second paragraph says a mother asked to swear \"often did not know it\", and would give an age she \"had every reason to believe was close enough\".",
+      "B": "No pressure from employers is described. Farrow’s account locates the problem in the record, not in coercion.",
+      "C": "The passage says many families had no certificate at all, so there was usually nothing to conceal.",
+      "D": "There was no record to check against, which is the point — not that checking was being evaded."
+    }
+  },
+  {
+    "id": "r137",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "hard",
+    "passage": "rp14",
+    "context": "Farrow’s 1913 memorandum implies that she regarded false swearing as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a symptom of a recording failure rather than the underlying problem."
+      },
+      {
+        "id": "B",
+        "text": "the most serious offense an inspector was likely to encounter."
+      },
+      {
+        "id": "C",
+        "text": "impossible to detect without a physician’s help."
+      },
+      {
+        "id": "D",
+        "text": "less common than other inspectors believed it to be."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Her proposed remedy was a registry rather than a stiffer penalty for false swearing, which only makes sense if she thought the swearing was downstream of the missing record.",
+      "B": "Treating it as the gravest offense would have pointed her toward penalties, which is the remedy she specifically did not propose.",
+      "C": "She judged ages herself, without a physician, and did so accurately.",
+      "D": "She reports disagreement in more than two visits in three, which is a high rate, not a low one."
+    }
+  },
+  {
+    "id": "r138",
+    "section": "reading",
+    "topic": "function",
+    "difficulty": "medium",
+    "passage": "rp14",
+    "context": "The fourth paragraph functions primarily to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "show that the remedy Farrow wanted arrived for reasons that had nothing to do with her argument."
+      },
+      {
+        "id": "B",
+        "text": "describe the actuarial methods the insurance industry was developing."
+      },
+      {
+        "id": "C",
+        "text": "establish the date on which Farrow left the inspectorate."
+      },
+      {
+        "id": "D",
+        "text": "contrast conditions in the northeast with conditions elsewhere."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "It lists pensions, the draft and insurance as the motives, and then says outright that the question stopped \"not because anyone won the argument\".",
+      "B": "The actuarial tables are named in a single clause as one motive among three, and are never described.",
+      "C": "Her departure in 1919 belongs to the following paragraph.",
+      "D": "The northeast is mentioned once to bound a claim about coverage, not to set up a regional comparison."
+    }
+  },
+  {
+    "id": "r139",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "hard",
+    "passage": "rp14",
+    "context": "The passage is organized as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a problem, one official’s diagnosis of it, and the unrelated development that dissolved it."
+      },
+      {
+        "id": "B",
+        "text": "a chronological biography of a single public official."
+      },
+      {
+        "id": "C",
+        "text": "a comparison of two competing pieces of legislation."
+      },
+      {
+        "id": "D",
+        "text": "a summary of evidence followed by a rebuttal of it."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The gap between the two columns is the problem, the 1913 memorandum is the diagnosis, and the registry paragraph is the development that ends the problem without resolving the argument.",
+      "B": "A biography would not end with the subject \"difficult to follow\" and the ledgers read for a purpose she did not intend.",
+      "C": "Only one law is described, and the registry is not presented as competing legislation.",
+      "D": "Nothing in the passage is rebutted. The final paragraph adds a finding rather than answering one."
+    }
+  },
+  {
+    "id": "r140",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "medium",
+    "passage": "rp14",
+    "context": "The author’s attitude toward Farrow is best described as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "respectful of her reasoning and candid about how little effect it had."
+      },
+      {
+        "id": "B",
+        "text": "admiring of her achievements and confident that they were recognized."
+      },
+      {
+        "id": "C",
+        "text": "skeptical of the accuracy she is now credited with."
+      },
+      {
+        "id": "D",
+        "text": "detached, treating her as one example among many."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Her notes are called careful and her judgments accurate, and the passage still says the memorandum \"was not acted on\" and that no one won the argument.",
+      "B": "The passage says the opposite about recognition — she is difficult to follow after 1919, and the ledgers are read for something she was not trying to show.",
+      "C": "The eighty-percent figure is reported without hedging, and the author raises no doubt about it.",
+      "D": "She is the only person the passage follows, and her reasoning is set out at length."
+    }
+  },
+  {
+    "id": "r141",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "medium",
+    "passage": "rp14",
+    "context": "Which detail most directly supports the claim that Farrow’s judgments of age were reliable?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Her judged ages matched certificates issued later within a year about eighty percent of the time."
+      },
+      {
+        "id": "B",
+        "text": "She kept forty-one ledgers over the course of her career."
+      },
+      {
+        "id": "C",
+        "text": "Her memorandum circulated among inspectors in 1913."
+      },
+      {
+        "id": "D",
+        "text": "She told a state commission that she looked at the hands."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "This is a check of her judgments against an independent record made afterward, which is what evidence of accuracy has to be.",
+      "B": "The number of ledgers shows how much she recorded, not whether what she recorded was right.",
+      "C": "Circulation shows her argument was read, which is a separate matter from her accuracy.",
+      "D": "That remark describes her method, or rather her inability to describe it, and establishes nothing about the results."
+    }
+  },
+  {
+    "id": "r142",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "medium",
+    "passage": "rp14",
+    "context": "As used in the final paragraph, \"follow\" most nearly means:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "trace the later course of."
+      },
+      {
+        "id": "B",
+        "text": "obey."
+      },
+      {
+        "id": "C",
+        "text": "understand."
+      },
+      {
+        "id": "D",
+        "text": "come after in sequence."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The sentence concerns what became of Farrow after 1919, so following her means tracking where she went.",
+      "B": "Obeying would require an instruction, and nothing in the sentence issues one.",
+      "C": "The difficulty is in locating her afterward, not in making sense of her.",
+      "D": "That sense needs two things in an order, and the sentence names only Farrow."
+    }
+  },
+  {
+    "id": "r143",
+    "section": "reading",
+    "topic": "comparison",
+    "difficulty": "hard",
+    "passage": "rp14",
+    "context": "The passage draws its central distinction between:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "certifying a fact and having recorded that fact in the first place."
+      },
+      {
+        "id": "B",
+        "text": "state law and municipal ordinance."
+      },
+      {
+        "id": "C",
+        "text": "an inspector’s authority and an employer’s."
+      },
+      {
+        "id": "D",
+        "text": "the northeast and the rest of the country."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Farrow’s argument is that the affidavit \"asked a parent to certify a fact the state had never bothered to record\" — the certifying and the recording are precisely what the passage separates.",
+      "B": "The passage mentions the city and the states but never sets their laws against each other.",
+      "C": "The affidavit is what the employer produces and the inspector accepts, so the two are not in conflict over authority.",
+      "D": "The one regional reference bounds a claim about coverage and is not developed into a contrast."
+    }
+  },
+  {
+    "id": "r144",
+    "section": "reading",
+    "topic": "main idea",
+    "difficulty": "medium",
+    "passage": "rp15",
+    "context": "The passage is primarily concerned with:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a decision about what to uncover in a layered panel, and the competing principles behind it."
+      },
+      {
+        "id": "B",
+        "text": "the technical methods conservators use to image paintings without damaging them."
+      },
+      {
+        "id": "C",
+        "text": "the attribution of a Nativity to a follower of Gerard David."
+      },
+      {
+        "id": "D",
+        "text": "the practice of overpainting in sixteenth-century workshops."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The discovery opens the passage, two opposed positions occupy its middle, and the department’s decision and its justification close it.",
+      "B": "Infrared and X-ray appear once, as the form the published record took, and are never explained.",
+      "C": "The attribution is given in the first paragraph as background and is never questioned or argued about.",
+      "D": "Overpainting appears only inside the second position’s argument, as a reason the top layer is itself a restoration."
+    }
+  },
+  {
+    "id": "r145",
+    "section": "reading",
+    "topic": "detail",
+    "difficulty": "easy",
+    "passage": "rp15",
+    "context": "According to the passage, the layer found directly on the bare oak was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a drawing."
+      },
+      {
+        "id": "B",
+        "text": "a ground with no image on it."
+      },
+      {
+        "id": "C",
+        "text": "an earlier Nativity."
+      },
+      {
+        "id": "D",
+        "text": "the 1520 Nativity."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The first paragraph works downward and ends \"on the bare oak, a drawing\".",
+      "B": "The blank ground is the layer immediately above the drawing, not the one on the wood.",
+      "C": "The earlier Nativity is the second layer from the top.",
+      "D": "The 1520 Nativity is the visible surface, the layer furthest from the oak."
+    }
+  },
+  {
+    "id": "r146",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "hard",
+    "passage": "rp15",
+    "context": "The second position would most likely object to the first position on the grounds that it:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "grants authority to the topmost layer without any reason beyond its being topmost."
+      },
+      {
+        "id": "B",
+        "text": "underestimates how difficult removing a layer of paint actually is."
+      },
+      {
+        "id": "C",
+        "text": "assumes the lower paintings are of higher artistic quality."
+      },
+      {
+        "id": "D",
+        "text": "disregards the costume evidence used to date the panel."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The fourth paragraph puts this as a question: why should the last hand to touch a panel have more authority than the first? That is an objection to the rule, not to the painting.",
+      "B": "Technical difficulty is never raised by either position.",
+      "C": "The passage says explicitly that the second position \"does not hold that older is better\".",
+      "D": "The costume dating is stated once as background and neither position disputes it."
+    }
+  },
+  {
+    "id": "r147",
+    "section": "reading",
+    "topic": "function",
+    "difficulty": "medium",
+    "passage": "rp15",
+    "context": "The statement that the drawing on the oak \"was never meant to be seen\" serves to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "support the first position’s view that not everything beneath a surface belongs to the finished work."
+      },
+      {
+        "id": "B",
+        "text": "explain why infrared imaging was needed to find it."
+      },
+      {
+        "id": "C",
+        "text": "establish that the drawing came from a different hand than the paintings."
+      },
+      {
+        "id": "D",
+        "text": "cast doubt on the attribution to a follower of Gerard David."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "It closes the paragraph setting out the first position, and it does the work of distinguishing the finished object from the working notes underneath it.",
+      "B": "The imaging is described two paragraphs later and for a different reason.",
+      "C": "The passage never says who made the drawing.",
+      "D": "The attribution concerns the top layer, which this sentence is not about."
+    }
+  },
+  {
+    "id": "r148",
+    "section": "reading",
+    "topic": "text structure",
+    "difficulty": "medium",
+    "passage": "rp15",
+    "context": "The passage is organized as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a discovery, two opposed positions on what to do about it, and the resolution actually adopted."
+      },
+      {
+        "id": "B",
+        "text": "a chronological account of a single restoration project from start to finish."
+      },
+      {
+        "id": "C",
+        "text": "a general principle illustrated by a series of comparable cases."
+      },
+      {
+        "id": "D",
+        "text": "an argument for one position and a rebuttal of the other."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Paragraph one is the discovery, paragraphs three and four are the two positions, and the last two give the decision and the conservator’s account of it.",
+      "B": "The passage skips most of the project and spends its length on an argument rather than a sequence of events.",
+      "C": "Only one case is discussed. The author says the argument recurs but gives no other instance.",
+      "D": "The author argues for neither position and says the decision satisfied neither."
+    }
+  },
+  {
+    "id": "r149",
+    "section": "reading",
+    "topic": "tone",
+    "difficulty": "hard",
+    "passage": "rp15",
+    "context": "The author’s treatment of the second position is best described as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "deliberately even-handed, noting that it is usually presented less carefully than it deserves."
+      },
+      {
+        "id": "B",
+        "text": "dismissive, treating it as a caricature of a serious view."
+      },
+      {
+        "id": "C",
+        "text": "enthusiastic, endorsing it over the first position."
+      },
+      {
+        "id": "D",
+        "text": "so neutral that the position is never actually stated."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The paragraph opens by saying the position \"is less easily caricatured than it is usually made to sound\", and then states it carefully — the remark is a correction of how it is usually handled.",
+      "B": "The author names the caricature in order to set it aside, which is the opposite of endorsing it.",
+      "C": "The passage gives the first position an equally careful hearing and endorses neither.",
+      "D": "The position is stated at length, including the question it rests on."
+    }
+  },
+  {
+    "id": "r150",
+    "section": "reading",
+    "topic": "evidence",
+    "difficulty": "hard",
+    "passage": "rp15",
+    "context": "Which statement best supports the senior conservator’s claim that the decision was not a compromise?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The department concluded that the panel’s value as an object and its value as evidence were different things, only one of which required removing paint."
+      },
+      {
+        "id": "B",
+        "text": "The decision satisfied neither of the two positions."
+      },
+      {
+        "id": "C",
+        "text": "The argument occupied the department for two years before a decision was reached."
+      },
+      {
+        "id": "D",
+        "text": "The imaging was published at full resolution rather than as illustrations."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Her definition is that a compromise splits a difference. Separating two values and answering each on its own terms is not splitting anything, which is exactly why she refuses the word.",
+      "B": "Satisfying neither side is what a compromise usually looks like, so this points the other way.",
+      "C": "How long the argument took says nothing about the shape of its conclusion.",
+      "D": "The resolution of the images shows how thorough the record is, not why the decision was principled."
+    }
+  },
+  {
+    "id": "r151",
+    "section": "reading",
+    "topic": "vocabulary in context",
+    "difficulty": "medium",
+    "passage": "rp15",
+    "context": "As used in the fourth paragraph, \"authoritative\" most nearly means:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "entitled to be treated as the definitive version."
+      },
+      {
+        "id": "B",
+        "text": "issued by an official body."
+      },
+      {
+        "id": "C",
+        "text": "commanding in manner or appearance."
+      },
+      {
+        "id": "D",
+        "text": "strictly and consistently enforced."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The sentence asks why the topmost layer should count as the painting, so the word is about which version has the final claim.",
+      "B": "No official body issued any layer of the panel.",
+      "C": "That sense describes a person’s bearing, and the subject here is a layer of paint.",
+      "D": "Enforcement belongs to rules, and the passage is asking which object is the work."
+    }
+  },
+  {
+    "id": "r152",
+    "section": "reading",
+    "topic": "inference",
+    "difficulty": "medium",
+    "passage": "rp15",
+    "context": "It can reasonably be inferred that the published images allow the lower paintings to be:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "studied in detail even though they will remain covered."
+      },
+      {
+        "id": "B",
+        "text": "shown to visitors alongside the 1520 Nativity."
+      },
+      {
+        "id": "C",
+        "text": "dated more precisely than the visible surface."
+      },
+      {
+        "id": "D",
+        "text": "removed and remounted on separate panels."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The passage says the lower paintings \"can be studied by anyone, and will never be seen\", which is only possible because the record exists apart from the object.",
+      "B": "They remain under the paint. What hangs is still the 1520 Nativity.",
+      "C": "No dates are given for the lower layers at all.",
+      "D": "Removing them is precisely what the department decided against."
+    }
+  },
+  {
+    "id": "r153",
+    "section": "reading",
+    "topic": "comparison",
+    "difficulty": "hard",
+    "passage": "rp15",
+    "context": "The two positions described in the passage differ most fundamentally over:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "what gives one layer of a panel a better claim than another to be the work itself."
+      },
+      {
+        "id": "B",
+        "text": "whether the lower layers are worth documenting at all."
+      },
+      {
+        "id": "C",
+        "text": "how much weight costume evidence should carry in dating a panel."
+      },
+      {
+        "id": "D",
+        "text": "whether removing an upper layer is technically achievable."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The first position takes the last coherent state; the second asks why last should mean authoritative. Both are answers to the same question about which layer counts.",
+      "B": "The first position calls the lower layers \"worth recording, worth publishing\", so documentation is common ground.",
+      "C": "Neither position raises the costume dating, which appears only as background.",
+      "D": "Both assume removal is possible — the first objects that it would destroy the visible painting, which presupposes it could be done."
+    }
   }
 ]
