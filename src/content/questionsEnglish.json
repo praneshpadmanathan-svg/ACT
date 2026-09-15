@@ -13524,5 +13524,500 @@
       "C": "The writer grants the policy and then argues that something real falls outside it, so the concession is part of the case.",
       "D": "When she retired has no bearing on whether the passage shows uncounted work, which it does through the 2009 call."
     }
+  },
+  {
+    "id": "e357",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "medium",
+    "passage": "ep23",
+    "context": "The records of every earlier retuning «is» kept in the parish book.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "are"
+      },
+      {
+        "id": "C",
+        "text": "has been"
+      },
+      {
+        "id": "D",
+        "text": "was"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The subject is \"records\", not \"retuning\", so a singular verb has no plural noun to agree with.",
+      "B": "Correct — \"records\" is the plural subject, and the phrase between it and the verb does not change that.",
+      "C": "This is singular as well, and it adds a perfect tense the sentence gives no reason to shift into.",
+      "D": "A singular past verb repeats the agreement error and moves a standing fact into the past."
+    }
+  },
+  {
+    "id": "e358",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "hard",
+    "passage": "ep23",
+    "context": "Neither the historical society nor the parish trustees «was» willing to pay for a new bell.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "were"
+      },
+      {
+        "id": "C",
+        "text": "has been"
+      },
+      {
+        "id": "D",
+        "text": "is"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "With \"neither...nor\" the verb agrees with the nearer subject, and \"trustees\" is plural.",
+      "B": "Correct — \"trustees\" sits closest to the verb, so the plural is the form the rule calls for.",
+      "C": "This is singular and also shifts into the present perfect, which the surrounding past tense does not support.",
+      "D": "A present singular verb is wrong on both counts, in number and in time."
+    }
+  },
+  {
+    "id": "e359",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "medium",
+    "passage": "ep23",
+    "context": "The foundry proposed to tune the bell «by means of removing» metal from the inside.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "by removing"
+      },
+      {
+        "id": "C",
+        "text": "through removing of"
+      },
+      {
+        "id": "D",
+        "text": "with removing"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"By means of\" takes a noun, not a gerund phrase, and here it only pads out a simpler idiom.",
+      "B": "Correct — \"by\" plus a gerund is the ordinary way English names the method of an action.",
+      "C": "\"Through removing of\" mixes two constructions and leaves the \"of\" with nothing to attach to.",
+      "D": "\"With\" names an instrument rather than a method, so it cannot introduce the removing itself."
+    }
+  },
+  {
+    "id": "e360",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "hard",
+    "passage": "ep23",
+    "context": "Nkemelu was not indifferent «to» the objection; she had grown up under the same bell.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "about"
+      },
+      {
+        "id": "C",
+        "text": "from"
+      },
+      {
+        "id": "D",
+        "text": "with"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — \"indifferent to\" is the fixed pairing when the adjective takes what is being disregarded.",
+      "B": "\"Indifferent about\" is not idiomatic; \"about\" follows verbs of opinion rather than this adjective.",
+      "C": "\"From\" would suggest distance or origin, neither of which is the relationship being described.",
+      "D": "\"Indifferent with\" is not English, and \"with\" would imply accompaniment rather than attitude."
+    }
+  },
+  {
+    "id": "e361",
+    "section": "english",
+    "topic": "sentence order",
+    "difficulty": "medium",
+    "passage": "ep23",
+    "context": "Within the fourth paragraph, the sentence listing the cuttings of 1854, 1901 and 1963 belongs where it is because it:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "supplies the record that turns the objection back against the society itself."
+      },
+      {
+        "id": "B",
+        "text": "introduces Nkemelu to the reader before her apprenticeship is described."
+      },
+      {
+        "id": "C",
+        "text": "explains why a bell has to be cast thick and then cut on a lathe."
+      },
+      {
+        "id": "D",
+        "text": "concedes that the bell in the tower is no longer the bell of 1817."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the sentence after it draws the conclusion, and it can only be drawn once the three dates are on the table.",
+      "B": "Nkemelu is introduced in the sentence before this one, together with her apprenticeship.",
+      "C": "How a bell is tuned is explained in the second paragraph, not here.",
+      "D": "The paragraph uses the earlier cuttings to answer that claim rather than to grant it."
+    }
+  },
+  {
+    "id": "e362",
+    "section": "english",
+    "topic": "sentence order",
+    "difficulty": "hard",
+    "passage": "ep23",
+    "context": "The writer is considering moving the sentence \"A bell is tuned by taking metal away, never by adding it\" to the opening paragraph. This move would:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "weaken the passage, because it is what makes the proposal beside it make sense."
+      },
+      {
+        "id": "B",
+        "text": "strengthen the passage, because the opening paragraph is where the crack is described."
+      },
+      {
+        "id": "C",
+        "text": "weaken the passage, because the opening paragraph is already the longest of the five."
+      },
+      {
+        "id": "D",
+        "text": "strengthen the passage, because a reader needs to know how bells work before the date."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it explains why cutting is the only remedy available, and the proposal it explains is the sentence directly before it.",
+      "B": "The crack is what creates the problem; the method of tuning belongs with the proposed answer to it.",
+      "C": "Paragraph length is not what governs placement, and the opening paragraph is not the longest anyway.",
+      "D": "The first paragraph asks the reader to understand a silent bell, which needs no account of tuning at all."
+    }
+  },
+  {
+    "id": "e363",
+    "section": "english",
+    "topic": "adding/deleting",
+    "difficulty": "medium",
+    "passage": "ep23",
+    "context": "The writer is considering deleting the detail that the bell went unrung for eleven of its two hundred and six years. Should it be kept?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Kept, because it measures the cost of the decade the parish spent arguing."
+      },
+      {
+        "id": "B",
+        "text": "Kept, because it establishes that the crack made the bell unsafe to ring."
+      },
+      {
+        "id": "C",
+        "text": "Deleted, because the passage is about the objection rather than about silence."
+      },
+      {
+        "id": "D",
+        "text": "Deleted, because the figure conflicts with the date the bell was hung again."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — eleven years against two hundred and six is what makes the delay register as a loss rather than a pause.",
+      "B": "The passage never says the crack made the bell unsafe, only that it killed the note.",
+      "C": "The silence is what the objection cost, so it is part of the subject rather than a departure from it.",
+      "D": "The figures agree: silent from 2009, cut in 2020 and hung again that July."
+    }
+  },
+  {
+    "id": "e364",
+    "section": "english",
+    "topic": "adding/deleting",
+    "difficulty": "hard",
+    "passage": "ep23",
+    "context": "The writer is considering adding the following sentence to the second paragraph: \"Foundries in several countries have experimented with welding cracked bells instead.\" Should it be added?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No, because the paragraph is establishing that cutting is the remedy a bell allows."
+      },
+      {
+        "id": "B",
+        "text": "No, because the passage does not name the countries where this has been tried."
+      },
+      {
+        "id": "C",
+        "text": "Yes, because it shows the foundry had an alternative it declined to offer."
+      },
+      {
+        "id": "D",
+        "text": "Yes, because it supports the claim that a bell is never tuned by adding metal."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the paragraph turns on there being one remedy, and a second one contradicts the sentence it sits beside.",
+      "B": "Naming the countries would not repair the problem, which is that the addition undercuts the paragraph.",
+      "C": "The passage gives no sign that welding was available or declined, so the sentence would imply what it cannot show.",
+      "D": "Welding adds metal, so the sentence would tell against that claim rather than support it."
+    }
+  },
+  {
+    "id": "e365",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "medium",
+    "passage": "ep23",
+    "context": "By the time the crack was found, the bell «has rung» for nearly two centuries.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "had rung"
+      },
+      {
+        "id": "C",
+        "text": "rings"
+      },
+      {
+        "id": "D",
+        "text": "is ringing"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The present perfect reaches up to now, but the ringing had already finished by a point in the past.",
+      "B": "Correct — the past perfect places the two centuries of ringing before the moment the crack was found.",
+      "C": "A present-tense verb puts the ringing in the present, while the clause beside it is plainly in the past.",
+      "D": "The present progressive says the ringing is going on as we read, which the crack ended in 2009."
+    }
+  },
+  {
+    "id": "e366",
+    "section": "english",
+    "topic": "dashes",
+    "difficulty": "hard",
+    "passage": "ep23",
+    "context": "The foundry proposed the only remedy a bell allows «— cutting the inside on a lathe —» and the trustees agreed to it.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "— cutting the inside on a lathe,"
+      },
+      {
+        "id": "C",
+        "text": ", cutting the inside on a lathe —"
+      },
+      {
+        "id": "D",
+        "text": "(cutting the inside on a lathe —"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a pair of dashes sets off an interruption, and both ends of this one are dashes.",
+      "B": "Opening with a dash and closing with a comma leaves the interruption with two different marks around it.",
+      "C": "This is the same mismatch the other way round, opening with a comma and closing with a dash.",
+      "D": "A parenthesis has to be closed by a parenthesis; a dash cannot finish what a bracket started."
+    }
+  },
+  {
+    "id": "e367",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "medium",
+    "passage": "ep23",
+    "context": "The historical society announced that «they» would not pay for any cutting.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "it"
+      },
+      {
+        "id": "C",
+        "text": "those"
+      },
+      {
+        "id": "D",
+        "text": "them"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A society is a single body, so a plural pronoun has no plural antecedent to point back to.",
+      "B": "Correct — \"the historical society\" is singular, and \"it\" is the pronoun that matches.",
+      "C": "\"Those\" is a demonstrative and points at nothing in the sentence that could be plural.",
+      "D": "\"Them\" is an object pronoun standing where the subject of the clause has to go."
+    }
+  },
+  {
+    "id": "e368",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "medium",
+    "passage": "ep23",
+    "context": "The «founders» intention in 1817 is the one thing nobody can now establish.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "founder’s"
+      },
+      {
+        "id": "C",
+        "text": "founders’"
+      },
+      {
+        "id": "D",
+        "text": "founders’s"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Without an apostrophe this reads as a plural noun, and the intention plainly belongs to somebody.",
+      "B": "Correct — one founder cast the bell in 1817, so the apostrophe goes before the s.",
+      "C": "This makes the intention belong to several founders, and the passage describes a single casting.",
+      "D": "A plural already ending in s never takes a second s after the apostrophe."
+    }
+  },
+  {
+    "id": "e369",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "hard",
+    "passage": "ep23",
+    "context": "Nkemelu names what the ten years were really «about: who in a town gets to decide» what it sounds like.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "about; who in a town gets to decide"
+      },
+      {
+        "id": "C",
+        "text": "about, : who in a town gets to decide"
+      },
+      {
+        "id": "D",
+        "text": "about who in a town gets to decide"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a complete sentence precedes the colon and what follows delivers the thing it promised to name.",
+      "B": "A semicolon needs an independent clause after it, and a noun clause beginning \"who\" is not one.",
+      "C": "A comma and a colon together is not a punctuation mark in English.",
+      "D": "With no mark at all the clause runs into the verb and the announcement the sentence was making is lost."
+    }
+  },
+  {
+    "id": "e370",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "medium",
+    "passage": "ep23",
+    "context": "The parish book records every earlier cutting in the same hand. «Which the society had never read.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "a book the society had never read."
+      },
+      {
+        "id": "C",
+        "text": "The society had never read it, though."
+      },
+      {
+        "id": "D",
+        "text": "Never having been read by the society."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "A clause opening with \"which\" is subordinate, so standing alone it is a fragment with no main verb of its own.",
+      "B": "This is a noun phrase, not a sentence, and it would need to be joined to the sentence before it.",
+      "C": "Correct — this is a complete sentence with its own subject and verb, and it keeps the contrast intact.",
+      "D": "A participial phrase cannot stand as a sentence, and this one names nobody who did the not-reading."
+    }
+  },
+  {
+    "id": "e371",
+    "section": "english",
+    "topic": "word choice",
+    "difficulty": "medium",
+    "passage": "ep23",
+    "context": "The crack had no visible «affect» on the bell, but the note went dead.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "effect"
+      },
+      {
+        "id": "C",
+        "text": "affectation"
+      },
+      {
+        "id": "D",
+        "text": "effecting"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Affect\" is ordinarily the verb; the sentence needs the noun that follows \"no visible\".",
+      "B": "Correct — \"effect\" is the noun for a result, which is what the crack did or did not produce.",
+      "C": "An affectation is a put-on manner, which a crack in a bell cannot have.",
+      "D": "\"Effecting\" is a participle of the verb meaning to bring about, and no verb form fits after \"no visible\"."
+    }
   }
 ]
