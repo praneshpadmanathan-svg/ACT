@@ -14590,5 +14590,1605 @@
       "C": "This is parallel to the given line, since it keeps the slope exactly as it was.",
       "D": "Correct — the negative reciprocal of 2/5 is −5/2, and the point (0, −4) is the y-intercept."
     }
+  },
+  {
+    "id": "m457",
+    "section": "math",
+    "topic": "linear equations",
+    "difficulty": "easy",
+    "context": "If 3x + 7 = 22, what is the value of x?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5"
+      },
+      {
+        "id": "B",
+        "text": "9"
+      },
+      {
+        "id": "C",
+        "text": "15"
+      },
+      {
+        "id": "D",
+        "text": "−5"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — subtracting 7 leaves 3x = 15, and dividing by 3 gives x = 5.",
+      "B": "This divides 27 by 3, which adds the 7 to 22 instead of subtracting it.",
+      "C": "This is 3x rather than x; the division by 3 has not been carried out.",
+      "D": "This solves 3x + 7 = −8, changing the sign of the 15 for no reason."
+    }
+  },
+  {
+    "id": "m458",
+    "section": "math",
+    "topic": "linear equations",
+    "difficulty": "medium",
+    "context": "If (2x − 1)/3 = (x + 4)/2, what is the value of x?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2"
+      },
+      {
+        "id": "B",
+        "text": "14"
+      },
+      {
+        "id": "C",
+        "text": "7"
+      },
+      {
+        "id": "D",
+        "text": "−14"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This comes from cancelling the denominators without multiplying both numerators.",
+      "B": "Correct — cross-multiplying gives 4x − 2 = 3x + 12, so x = 14.",
+      "C": "This halves the answer, as though the 3x had been subtracted from 4x twice.",
+      "D": "This moves both constants the wrong way, giving 4x − 2 = 3x − 12."
+    }
+  },
+  {
+    "id": "m459",
+    "section": "math",
+    "topic": "linear equations",
+    "difficulty": "medium",
+    "context": "A line passes through (2, 5) and has slope −3. What is the y-coordinate of the point on the line where x = 6?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−13"
+      },
+      {
+        "id": "B",
+        "text": "−1"
+      },
+      {
+        "id": "C",
+        "text": "−7"
+      },
+      {
+        "id": "D",
+        "text": "17"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This multiplies the slope by 6 rather than by the change in x, which is 4.",
+      "B": "This applies the slope only once rather than across all four units of x.",
+      "C": "Correct — x increases by 4, so y changes by −3 × 4 = −12, and 5 − 12 = −7.",
+      "D": "This adds 12 instead of subtracting it, ignoring the negative slope."
+    }
+  },
+  {
+    "id": "m460",
+    "section": "math",
+    "topic": "linear equations",
+    "difficulty": "hard",
+    "context": "If 5 − 2(3 − x) = 4x + 1, what is the value of x?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "−3"
+      },
+      {
+        "id": "C",
+        "text": "0"
+      },
+      {
+        "id": "D",
+        "text": "−1"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This drops the sign when distributing −2, making the left side 2x + 11.",
+      "B": "This distributes the −2 to the 3 only, leaving 5 − 6 − x on the left.",
+      "C": "This comes from setting 2x = 4x, losing both constants along the way.",
+      "D": "Correct — the left side is 2x − 1, so 2x − 1 = 4x + 1 gives −2 = 2x and x = −1."
+    }
+  },
+  {
+    "id": "m461",
+    "section": "math",
+    "topic": "linear equations",
+    "difficulty": "hard",
+    "context": "The equation 3(x + k) = 5x − 9 has the solution x = 6. What is the value of k?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "3"
+      },
+      {
+        "id": "C",
+        "text": "−1"
+      },
+      {
+        "id": "D",
+        "text": "9"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — substituting gives 18 + 3k = 21, so 3k = 3 and k = 1.",
+      "B": "This solves 18 + k = 21, forgetting that the 3 also multiplies k.",
+      "C": "This changes the sign of a correct result, as though 3k = −3.",
+      "D": "This reads k straight off the −9 without substituting x = 6 at all."
+    }
+  },
+  {
+    "id": "m462",
+    "section": "math",
+    "topic": "number properties",
+    "difficulty": "easy",
+    "context": "How many prime numbers are greater than 20 and less than 30?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "3"
+      },
+      {
+        "id": "D",
+        "text": "4"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This misses one of the two: both 23 and 29 resist every factor up to their square roots.",
+      "B": "Correct — only 23 and 29 are prime, since every other number there has a small factor.",
+      "C": "This counts 27 as prime, but 27 is 3 × 9 and so has factors besides 1 and itself.",
+      "D": "This counts 21 and 27 as well, though 21 is 3 × 7 and 27 is 3 × 9."
+    }
+  },
+  {
+    "id": "m463",
+    "section": "math",
+    "topic": "number properties",
+    "difficulty": "medium",
+    "context": "What is the smallest positive integer that is divisible by 6, 8, and 15?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "720"
+      },
+      {
+        "id": "B",
+        "text": "240"
+      },
+      {
+        "id": "C",
+        "text": "120"
+      },
+      {
+        "id": "D",
+        "text": "60"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is 6 × 8 × 15, which is a common multiple but not the smallest one.",
+      "B": "This is twice the least common multiple, so a smaller one exists.",
+      "C": "Correct — 120 is 2³ × 3 × 5, which carries every prime factor the three numbers need.",
+      "D": "Sixty is divisible by 6 and 15 but not by 8, since 60 ÷ 8 is not a whole number."
+    }
+  },
+  {
+    "id": "m464",
+    "section": "math",
+    "topic": "number properties",
+    "difficulty": "medium",
+    "context": "The product of two integers is odd. Which statement about the two integers must be true?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Both of them are even."
+      },
+      {
+        "id": "B",
+        "text": "Exactly one of them is odd."
+      },
+      {
+        "id": "C",
+        "text": "Their sum is odd."
+      },
+      {
+        "id": "D",
+        "text": "Both of them are odd."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Two even integers multiply to a number divisible by 4, which cannot be odd.",
+      "B": "One even factor is enough to make the product even, as 3 × 4 = 12 shows.",
+      "C": "Two odd integers sum to an even number, so this is false whenever the product is odd.",
+      "D": "Correct — a single even factor would put a factor of 2 into the product, making it even."
+    }
+  },
+  {
+    "id": "m465",
+    "section": "math",
+    "topic": "number properties",
+    "difficulty": "hard",
+    "context": "What is the remainder when 7¹⁰⁰ is divided by 5?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "4"
+      },
+      {
+        "id": "D",
+        "text": "3"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — powers of 7 leave remainders 2, 4, 3, 1 in a four-step cycle, and 100 ends one.",
+      "B": "Two is the remainder for 7¹, the first step of the cycle rather than the hundredth.",
+      "C": "Four is the remainder for 7², which is where the cycle sits after two steps.",
+      "D": "Three is the remainder for 7³, one step short of the end of the cycle."
+    }
+  },
+  {
+    "id": "m466",
+    "section": "math",
+    "topic": "number properties",
+    "difficulty": "hard",
+    "context": "How many positive integer divisors does 360 have?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "36"
+      },
+      {
+        "id": "B",
+        "text": "24"
+      },
+      {
+        "id": "C",
+        "text": "12"
+      },
+      {
+        "id": "D",
+        "text": "18"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This counts ordered pairs of factors, which double-counts every divisor.",
+      "B": "Correct — 360 = 2³ × 3² × 5, so the count is (3 + 1)(2 + 1)(1 + 1) = 24.",
+      "C": "This multiplies the exponents rather than the exponents each raised by one.",
+      "D": "This uses 3 × 3 × 2, adding one to only two of the three exponents."
+    }
+  },
+  {
+    "id": "m467",
+    "section": "math",
+    "topic": "fractions & percents",
+    "difficulty": "easy",
+    "context": "What is 5/6 − 1/4?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4/12"
+      },
+      {
+        "id": "B",
+        "text": "1/2"
+      },
+      {
+        "id": "C",
+        "text": "7/12"
+      },
+      {
+        "id": "D",
+        "text": "6/10"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This finds a common denominator but takes 6/12 rather than 3/12 for the quarter.",
+      "B": "This is 5/6 − 1/3, converting the quarter into the wrong number of twelfths.",
+      "C": "Correct — twelfths give 10/12 − 3/12, which is 7/12 and will not reduce further.",
+      "D": "This subtracts the numerators and the denominators separately, which is not the rule."
+    }
+  },
+  {
+    "id": "m468",
+    "section": "math",
+    "topic": "fractions & percents",
+    "difficulty": "medium",
+    "context": "A price is increased by 20% and the new price is then decreased by 20%. Compared with the original price, the final price is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the same"
+      },
+      {
+        "id": "B",
+        "text": "4% higher"
+      },
+      {
+        "id": "C",
+        "text": "20% lower"
+      },
+      {
+        "id": "D",
+        "text": "4% lower"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The two percentages are taken from different bases, so they do not cancel.",
+      "B": "The decrease is applied to a larger number than the increase was, so the net is down.",
+      "C": "This applies only the decrease and ignores the increase that came before it.",
+      "D": "Correct — 1.20 × 0.80 = 0.96, which is 4% below where the price started."
+    }
+  },
+  {
+    "id": "m469",
+    "section": "math",
+    "topic": "fractions & percents",
+    "difficulty": "medium",
+    "context": "Three-eighths of a tank holds 15 litres. How many litres does the full tank hold?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "40"
+      },
+      {
+        "id": "B",
+        "text": "24"
+      },
+      {
+        "id": "C",
+        "text": "45"
+      },
+      {
+        "id": "D",
+        "text": "120"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — one eighth is 5 litres, so eight eighths is 40 litres.",
+      "B": "This multiplies 15 by 8/5 rather than by 8/3.",
+      "C": "This multiplies 15 by 3, which finds three times the part rather than the whole.",
+      "D": "This multiplies 15 by 8 without first dividing by the 3."
+    }
+  },
+  {
+    "id": "m470",
+    "section": "math",
+    "topic": "fractions & percents",
+    "difficulty": "hard",
+    "context": "An item is sold at a 15% discount, and 8% tax is then added to the discounted price. The customer pays $91.80. What was the price before the discount?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "$93.00"
+      },
+      {
+        "id": "B",
+        "text": "$100.00"
+      },
+      {
+        "id": "C",
+        "text": "$107.00"
+      },
+      {
+        "id": "D",
+        "text": "$108.00"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This adds 1.5% to the payment, treating the two rates as nearly cancelling.",
+      "B": "Correct — 0.85 × 1.08 = 0.918, and 91.80 ÷ 0.918 = 100.",
+      "C": "This subtracts 15 and adds 8 as though they were dollars rather than percentages.",
+      "D": "This applies the tax to the original price instead of to the discounted price."
+    }
+  },
+  {
+    "id": "m471",
+    "section": "math",
+    "topic": "fractions & percents",
+    "difficulty": "hard",
+    "context": "A 50-litre mixture is 40% acid. How many litres of pure acid must be added so that the result is 60% acid?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "20"
+      },
+      {
+        "id": "B",
+        "text": "12.5"
+      },
+      {
+        "id": "C",
+        "text": "25"
+      },
+      {
+        "id": "D",
+        "text": "10"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This takes 40% of 50 as the amount to add rather than solving for the new share.",
+      "B": "This treats the 20-point rise as a quarter of the original volume.",
+      "C": "Correct — (20 + x)/(50 + x) = 0.60 gives 20 + x = 30 + 0.6x, so 0.4x = 10 and x = 25.",
+      "D": "This raises the acid to 30 litres but forgets that the total volume also grows."
+    }
+  },
+  {
+    "id": "m472",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "easy",
+    "context": "A car travels 180 miles in 3 hours. What is its average speed, in miles per hour?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "54"
+      },
+      {
+        "id": "B",
+        "text": "540"
+      },
+      {
+        "id": "C",
+        "text": "183"
+      },
+      {
+        "id": "D",
+        "text": "60"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This divides 180 by 3 and then subtracts 6 for no reason the problem gives.",
+      "B": "This multiplies the distance by the time instead of dividing.",
+      "C": "This adds the hours to the miles, which combines two different quantities.",
+      "D": "Correct — average speed is distance divided by time, and 180 ÷ 3 = 60."
+    }
+  },
+  {
+    "id": "m473",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "medium",
+    "context": "Two numbers have a sum of 46 and a difference of 8. What is the larger number?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "27"
+      },
+      {
+        "id": "B",
+        "text": "19"
+      },
+      {
+        "id": "C",
+        "text": "23"
+      },
+      {
+        "id": "D",
+        "text": "38"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — adding the two equations gives 2x = 54, so the larger number is 27.",
+      "B": "This is the smaller of the two numbers, which the question does not ask for.",
+      "C": "This is half of 46, which would be right only if the difference were zero.",
+      "D": "This subtracts 8 from 46 without halving, so the pair would not sum to 46."
+    }
+  },
+  {
+    "id": "m474",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "medium",
+    "context": "Adult tickets cost $12 and child tickets cost $7. Thirty tickets were sold for a total of $290. How many adult tickets were sold?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "10"
+      },
+      {
+        "id": "B",
+        "text": "16"
+      },
+      {
+        "id": "C",
+        "text": "14"
+      },
+      {
+        "id": "D",
+        "text": "18"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This divides the total by 29 and rounds, which ignores the two prices.",
+      "B": "Correct — 12a + 7(30 − a) = 290 gives 5a = 80, so a = 16.",
+      "C": "This is the number of child tickets, which the question does not ask for.",
+      "D": "This solves 5a = 90, using 300 rather than 290 as the total."
+    }
+  },
+  {
+    "id": "m475",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "hard",
+    "context": "Pipe A alone fills a tank in 6 hours and pipe B alone fills it in 4 hours. How many hours does it take to fill the tank with both pipes running?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2"
+      },
+      {
+        "id": "B",
+        "text": "10"
+      },
+      {
+        "id": "C",
+        "text": "2.4"
+      },
+      {
+        "id": "D",
+        "text": "5"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This halves the faster pipe’s time instead of combining the two rates.",
+      "B": "This adds the two times, which describes running the pipes one after the other.",
+      "C": "Correct — the pipes fill 1/6 + 1/4 = 5/12 of the tank per hour, and 12/5 = 2.4.",
+      "D": "This averages the two times, which would only work if the rates were equal."
+    }
+  },
+  {
+    "id": "m476",
+    "section": "math",
+    "topic": "word problems",
+    "difficulty": "hard",
+    "context": "A train leaves a station travelling at 60 miles per hour. Two hours later a second train leaves the same station on the same route at 80 miles per hour. How many hours after it leaves does the second train catch the first?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "8"
+      },
+      {
+        "id": "B",
+        "text": "3"
+      },
+      {
+        "id": "C",
+        "text": "4"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This is how long the first train has been travelling when it is caught, not the second.",
+      "B": "This divides the 120-mile lead by 40, treating the gap as closing twice as fast as it does.",
+      "C": "This divides 80 by 20, which uses the second train’s speed rather than the lead.",
+      "D": "Correct — the first train is 120 miles ahead and the gap closes at 20 mph, so 120 ÷ 20 = 6."
+    }
+  },
+  {
+    "id": "m477",
+    "section": "math",
+    "topic": "coordinate geometry",
+    "difficulty": "easy",
+    "context": "What is the distance between the points (1, 2) and (4, 6) in the standard plane?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5"
+      },
+      {
+        "id": "B",
+        "text": "7"
+      },
+      {
+        "id": "C",
+        "text": "25"
+      },
+      {
+        "id": "D",
+        "text": "√7"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the legs are 3 and 4, so the distance is √(9 + 16) = 5.",
+      "B": "This adds the two legs instead of using the Pythagorean theorem.",
+      "C": "This is the square of the distance; the square root has not been taken.",
+      "D": "This adds the legs before squaring rather than squaring each one first."
+    }
+  },
+  {
+    "id": "m478",
+    "section": "math",
+    "topic": "coordinate geometry",
+    "difficulty": "medium",
+    "context": "What is the midpoint of the segment joining (−3, 7) and (5, −1)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "(8, −8)"
+      },
+      {
+        "id": "B",
+        "text": "(1, 3)"
+      },
+      {
+        "id": "C",
+        "text": "(2, 6)"
+      },
+      {
+        "id": "D",
+        "text": "(4, −4)"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This gives the differences themselves, which describe the segment, not its centre.",
+      "B": "Correct — the midpoint averages the coordinates: (−3 + 5)/2 = 1 and (7 − 1)/2 = 3.",
+      "C": "This adds the coordinates without halving either sum.",
+      "D": "This halves the differences rather than the sums of the coordinates."
+    }
+  },
+  {
+    "id": "m479",
+    "section": "math",
+    "topic": "coordinate geometry",
+    "difficulty": "medium",
+    "context": "What is the slope of the line passing through (0, 3) and (4, 11)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "8"
+      },
+      {
+        "id": "B",
+        "text": "−2"
+      },
+      {
+        "id": "C",
+        "text": "2"
+      },
+      {
+        "id": "D",
+        "text": "1/2"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is the rise alone, with no division by the run.",
+      "B": "This reverses the sign, though y increases as x increases here.",
+      "C": "Correct — the rise is 11 − 3 = 8 and the run is 4 − 0 = 4, so the slope is 2.",
+      "D": "This divides the run by the rise, inverting the ratio slope is defined by."
+    }
+  },
+  {
+    "id": "m480",
+    "section": "math",
+    "topic": "coordinate geometry",
+    "difficulty": "hard",
+    "context": "Which of the following points lies on the circle (x − 3)² + (y + 2)² = 25?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "(3, 2)"
+      },
+      {
+        "id": "B",
+        "text": "(−3, 2)"
+      },
+      {
+        "id": "C",
+        "text": "(8, 3)"
+      },
+      {
+        "id": "D",
+        "text": "(3, 3)"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This gives 0² + 4² = 16, which places the point inside the circle.",
+      "B": "This gives (−6)² + 4² = 52, well outside a circle of radius 5.",
+      "C": "This gives 5² + 5² = 50, which is the radius in each direction at once.",
+      "D": "Correct — 0² + 5² = 25, so this point is exactly five units from the centre."
+    }
+  },
+  {
+    "id": "m481",
+    "section": "math",
+    "topic": "coordinate geometry",
+    "difficulty": "hard",
+    "context": "A triangle has vertices at (0, 0), (6, 0), and (0, 8). What is the length of the segment from (0, 0) to the midpoint of the side joining (6, 0) and (0, 8)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5"
+      },
+      {
+        "id": "B",
+        "text": "10"
+      },
+      {
+        "id": "C",
+        "text": "7"
+      },
+      {
+        "id": "D",
+        "text": "4"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the midpoint is (3, 4), and its distance from the origin is √(9 + 16) = 5.",
+      "B": "This is the full length of the side, not the distance to its midpoint.",
+      "C": "This adds 3 and 4 rather than treating them as the legs of a right triangle.",
+      "D": "This uses only the vertical coordinate of the midpoint and ignores the horizontal one."
+    }
+  },
+  {
+    "id": "m482",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "easy",
+    "context": "Simplify: (2x⁴)(5x²)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "10x⁶"
+      },
+      {
+        "id": "B",
+        "text": "10x⁸"
+      },
+      {
+        "id": "C",
+        "text": "7x⁶"
+      },
+      {
+        "id": "D",
+        "text": "10x²"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — multiply the coefficients and add the exponents: 2 × 5 = 10 and 4 + 2 = 6.",
+      "B": "This multiplies the exponents instead of adding them, giving x⁸.",
+      "C": "This adds the coefficients rather than multiplying them.",
+      "D": "This subtracts the exponents, which is the rule for division rather than multiplication."
+    }
+  },
+  {
+    "id": "m483",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "medium",
+    "context": "Simplify √75 − √12 in simplest radical form.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2√3"
+      },
+      {
+        "id": "B",
+        "text": "3√3"
+      },
+      {
+        "id": "C",
+        "text": "√63"
+      },
+      {
+        "id": "D",
+        "text": "7√3"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This takes √75 as 4√3, which would make 75 equal to 48.",
+      "B": "Correct — √75 = 5√3 and √12 = 2√3, so the difference is 3√3.",
+      "C": "This subtracts under one radical, but √a − √b is not √(a − b).",
+      "D": "This adds the two radicals instead of subtracting them."
+    }
+  },
+  {
+    "id": "m484",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "medium",
+    "context": "If 4ˣ = 8, what is the value of x?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1/2"
+      },
+      {
+        "id": "B",
+        "text": "2/3"
+      },
+      {
+        "id": "C",
+        "text": "3/2"
+      },
+      {
+        "id": "D",
+        "text": "2"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This solves 4ˣ = 2 instead of 4ˣ = 8.",
+      "B": "This inverts the ratio, solving 2x = 3 as x = 2/3.",
+      "C": "Correct — writing both sides in base 2 gives 2²ˣ = 2³, so 2x = 3 and x = 3/2.",
+      "D": "This reads the exponent off the base 4 rather than solving for x."
+    }
+  },
+  {
+    "id": "m485",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "hard",
+    "context": "Rationalise the denominator and simplify: 4/(√5 − 1)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "√5 − 1"
+      },
+      {
+        "id": "B",
+        "text": "4√5 + 4"
+      },
+      {
+        "id": "C",
+        "text": "(√5 + 1)/4"
+      },
+      {
+        "id": "D",
+        "text": "√5 + 1"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This uses the same binomial rather than its conjugate, so the radical survives.",
+      "B": "This forgets that the denominator becomes 5 − 1 = 4, which cancels the 4 on top.",
+      "C": "This divides by the 4 instead of cancelling it against the numerator.",
+      "D": "Correct — multiplying by (√5 + 1)/(√5 + 1) gives 4(√5 + 1)/4, which is √5 + 1."
+    }
+  },
+  {
+    "id": "m486",
+    "section": "math",
+    "topic": "exponents & radicals",
+    "difficulty": "hard",
+    "context": "Simplify: (2x³y⁻²)⁻²",
+    "choices": [
+      {
+        "id": "A",
+        "text": "y⁴/(4x⁶)"
+      },
+      {
+        "id": "B",
+        "text": "4x⁶/y⁴"
+      },
+      {
+        "id": "C",
+        "text": "y⁴/(2x⁶)"
+      },
+      {
+        "id": "D",
+        "text": "x⁶y⁴/4"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the outer −2 gives 2⁻²x⁻⁶y⁴, and 2⁻² is 1/4.",
+      "B": "This applies the outer exponent as +2, inverting the whole expression.",
+      "C": "This raises the 2 to the first power rather than squaring it.",
+      "D": "This leaves x in the numerator, though x³ raised to −2 belongs below the line."
+    }
+  },
+  {
+    "id": "m487",
+    "section": "math",
+    "topic": "quadratics",
+    "difficulty": "easy",
+    "context": "What are the solutions to x² − 7x + 12 = 0?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "x = 1 and x = 12"
+      },
+      {
+        "id": "B",
+        "text": "x = 3 and x = 4"
+      },
+      {
+        "id": "C",
+        "text": "x = −3 and x = −4"
+      },
+      {
+        "id": "D",
+        "text": "x = 2 and x = 6"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "These multiply to 12 but add to 13, which is not the middle coefficient.",
+      "B": "Correct — 3 and 4 multiply to 12 and add to 7, so the factors are (x − 3)(x − 4).",
+      "C": "These multiply to 12 but add to −7, which would need a +7x middle term.",
+      "D": "These multiply to 12 but add to 8 rather than 7."
+    }
+  },
+  {
+    "id": "m488",
+    "section": "math",
+    "topic": "quadratics",
+    "difficulty": "medium",
+    "context": "How many real solutions does 2x² − 4x + 5 = 0 have?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "exactly two"
+      },
+      {
+        "id": "B",
+        "text": "infinitely many"
+      },
+      {
+        "id": "C",
+        "text": "none"
+      },
+      {
+        "id": "D",
+        "text": "exactly one"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Two real solutions need a positive discriminant; a parabola opening up can miss the axis.",
+      "B": "A quadratic with a non-zero leading coefficient never has infinitely many solutions.",
+      "C": "Correct — the discriminant is 16 − 40 = −24, and a negative discriminant gives no real root.",
+      "D": "Exactly one real solution needs a discriminant of zero, and this one is negative."
+    }
+  },
+  {
+    "id": "m489",
+    "section": "math",
+    "topic": "quadratics",
+    "difficulty": "medium",
+    "context": "The parabola y = −2(x − 3)² + 8 has a maximum. What is the maximum value of y?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "−8"
+      },
+      {
+        "id": "C",
+        "text": "−2"
+      },
+      {
+        "id": "D",
+        "text": "8"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Three is the x-coordinate of the vertex, not the maximum value of y.",
+      "B": "The sign of the constant is not changed by the −2 in front of the squared term.",
+      "C": "This is the leading coefficient, which sets the shape rather than the height.",
+      "D": "Correct — the squared term is never positive after the −2, so y is largest when it is zero."
+    }
+  },
+  {
+    "id": "m490",
+    "section": "math",
+    "topic": "quadratics",
+    "difficulty": "hard",
+    "context": "The length of a rectangle is 3 metres more than its width, and its area is 54 square metres. What is its perimeter, in metres?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "30"
+      },
+      {
+        "id": "B",
+        "text": "15"
+      },
+      {
+        "id": "C",
+        "text": "24"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — w(w + 3) = 54 gives w = 6 and length 9, so the perimeter is 2(6 + 9) = 30.",
+      "B": "This is the sum of the length and the width, which is only half the perimeter.",
+      "C": "This uses a width of 6 twice and a length of 6, which does not give an area of 54.",
+      "D": "This is the width alone, which the question does not ask for."
+    }
+  },
+  {
+    "id": "m491",
+    "section": "math",
+    "topic": "quadratics",
+    "difficulty": "hard",
+    "context": "For which values of k does x² − 6x + k = 0 have two distinct real solutions?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "k < 0"
+      },
+      {
+        "id": "B",
+        "text": "k < 9"
+      },
+      {
+        "id": "C",
+        "text": "k > 9"
+      },
+      {
+        "id": "D",
+        "text": "k = 9"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Negative k does give two solutions, but so does every k between 0 and 9.",
+      "B": "Correct — the discriminant is 36 − 4k, and 36 − 4k > 0 means k < 9.",
+      "C": "Above 9 the discriminant turns negative, so there are no real solutions at all.",
+      "D": "At k = 9 the discriminant is zero, which gives one repeated solution rather than two."
+    }
+  },
+  {
+    "id": "m492",
+    "section": "math",
+    "topic": "trigonometry",
+    "difficulty": "easy",
+    "context": "What is the value of sin 30°?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "√2/2"
+      },
+      {
+        "id": "B",
+        "text": "1"
+      },
+      {
+        "id": "C",
+        "text": "1/2"
+      },
+      {
+        "id": "D",
+        "text": "√3/2"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is sin 45°, which belongs to the isosceles right triangle instead.",
+      "B": "Sine reaches 1 only at 90°, where the opposite side is the hypotenuse.",
+      "C": "Correct — in a 30-60-90 triangle the side opposite 30° is half the hypotenuse.",
+      "D": "This is sin 60°, the sine of the other acute angle in the same triangle."
+    }
+  },
+  {
+    "id": "m493",
+    "section": "math",
+    "topic": "trigonometry",
+    "difficulty": "medium",
+    "context": "In a right triangle, A is an acute angle and cos A = 5/13. What is sin A?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "13/12"
+      },
+      {
+        "id": "B",
+        "text": "5/12"
+      },
+      {
+        "id": "C",
+        "text": "12/5"
+      },
+      {
+        "id": "D",
+        "text": "12/13"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This inverts the ratio, which would make the sine of an acute angle greater than 1.",
+      "B": "This is the ratio of the two legs, which gives the tangent rather than the sine.",
+      "C": "This is the tangent inverted, so it is neither the sine nor the cosine.",
+      "D": "Correct — the missing leg is √(169 − 25) = 12, and sine is opposite over hypotenuse."
+    }
+  },
+  {
+    "id": "m494",
+    "section": "math",
+    "topic": "trigonometry",
+    "difficulty": "medium",
+    "context": "What is the period of the function y = 3 cos(πx)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2"
+      },
+      {
+        "id": "B",
+        "text": "2π"
+      },
+      {
+        "id": "C",
+        "text": "π"
+      },
+      {
+        "id": "D",
+        "text": "1/2"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the period is 2π divided by the coefficient of x, and 2π ÷ π = 2.",
+      "B": "This is the period of cos x itself, before the π inside the function is applied.",
+      "C": "This is the coefficient of x rather than the period it produces.",
+      "D": "This divides the coefficient by 2π instead of dividing 2π by the coefficient."
+    }
+  },
+  {
+    "id": "m495",
+    "section": "math",
+    "topic": "trigonometry",
+    "difficulty": "hard",
+    "context": "In triangle ABC, a = 8, b = 5, and the measure of angle C is 120°. What is the length of side c?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "13"
+      },
+      {
+        "id": "B",
+        "text": "√129"
+      },
+      {
+        "id": "C",
+        "text": "√49"
+      },
+      {
+        "id": "D",
+        "text": "√89"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This adds the two given sides, which is the upper limit c can never reach.",
+      "B": "Correct — c² = 64 + 25 − 80 cos 120°, and cos 120° = −1/2, so c² = 89 + 40 = 129.",
+      "C": "This uses cos 120° as +1/2, subtracting 40 where the law of cosines adds it.",
+      "D": "This drops the cosine term entirely, which would require a right angle at C."
+    }
+  },
+  {
+    "id": "m496",
+    "section": "math",
+    "topic": "trigonometry",
+    "difficulty": "hard",
+    "context": "A vertical pole 12 metres tall casts a shadow 9 metres long on level ground. What is the angle of elevation of the sun, to the nearest degree?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "41°"
+      },
+      {
+        "id": "B",
+        "text": "49°"
+      },
+      {
+        "id": "C",
+        "text": "53°"
+      },
+      {
+        "id": "D",
+        "text": "37°"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This would follow from sin θ = 12/18, using a hypotenuse the problem never gives.",
+      "B": "This comes from tan θ = 9/8, mixing the shadow with the wrong second side.",
+      "C": "Correct — tan θ = 12/9, and the angle whose tangent is 1.33 is about 53°.",
+      "D": "This is the angle at the top of the pole, between the pole and the ray of light."
+    }
+  },
+  {
+    "id": "m497",
+    "section": "math",
+    "topic": "systems",
+    "difficulty": "easy",
+    "context": "Solve the system y = 3x and x + y = 16 for x.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "12"
+      },
+      {
+        "id": "B",
+        "text": "8"
+      },
+      {
+        "id": "C",
+        "text": "16"
+      },
+      {
+        "id": "D",
+        "text": "4"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This is y rather than x; the question asks for the smaller of the two.",
+      "B": "This halves 16, which would be right only if x and y were equal.",
+      "C": "This is the sum of x and y rather than x on its own.",
+      "D": "Correct — substituting gives x + 3x = 16, so 4x = 16 and x = 4."
+    }
+  },
+  {
+    "id": "m498",
+    "section": "math",
+    "topic": "systems",
+    "difficulty": "medium",
+    "context": "If 3x − y = 11 and x + 2y = 6, what is the value of x?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4"
+      },
+      {
+        "id": "B",
+        "text": "1"
+      },
+      {
+        "id": "C",
+        "text": "−4"
+      },
+      {
+        "id": "D",
+        "text": "2"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the first equation gives y = 3x − 11, and substituting leaves 7x = 28.",
+      "B": "This is y rather than x, since 3(4) − 11 = 1.",
+      "C": "This changes the sign of a correct result, as though 7x came to −28.",
+      "D": "This solves 7x = 14, using 6 rather than 6 + 22 on the right-hand side."
+    }
+  },
+  {
+    "id": "m499",
+    "section": "math",
+    "topic": "systems",
+    "difficulty": "medium",
+    "context": "How many solutions does the system 5x + 2y = 20 and 5x + 2y = 14 have?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "infinitely many"
+      },
+      {
+        "id": "B",
+        "text": "none"
+      },
+      {
+        "id": "C",
+        "text": "exactly one"
+      },
+      {
+        "id": "D",
+        "text": "exactly two"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Infinitely many solutions would need the two equations to be identical.",
+      "B": "Correct — the same expression cannot equal both 20 and 14, so the lines are parallel.",
+      "C": "One solution needs the two lines to cross, and lines with equal slopes never do.",
+      "D": "Two straight lines meet at most once, so two solutions is never possible here."
+    }
+  },
+  {
+    "id": "m500",
+    "section": "math",
+    "topic": "systems",
+    "difficulty": "hard",
+    "context": "A shop blends coffee costing $9 per pound with coffee costing $14 per pound to make 20 pounds of blend worth $11.50 per pound. How many pounds of the $9 coffee are used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "12"
+      },
+      {
+        "id": "B",
+        "text": "14"
+      },
+      {
+        "id": "C",
+        "text": "10"
+      },
+      {
+        "id": "D",
+        "text": "8"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is the amount of the cheaper coffee needed for a blend worth $11 per pound.",
+      "B": "This reads the answer off the $14 price rather than solving the equation.",
+      "C": "Correct — 9a + 14(20 − a) = 230 gives −5a = −50, so a = 10.",
+      "D": "This would make the blend worth $12 per pound rather than $11.50."
+    }
+  },
+  {
+    "id": "m501",
+    "section": "math",
+    "topic": "systems",
+    "difficulty": "hard",
+    "context": "If 2x + 3y = 12 and 3x + 2y = 13, what is the value of x − y?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5"
+      },
+      {
+        "id": "B",
+        "text": "−1"
+      },
+      {
+        "id": "C",
+        "text": "25"
+      },
+      {
+        "id": "D",
+        "text": "1"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This adds the two equations and divides by 5, which gives x + y rather than x − y.",
+      "B": "This subtracts in the other order, giving y − x instead.",
+      "C": "This is the sum of the two right-hand sides, which answers no question asked.",
+      "D": "Correct — subtracting the first equation from the second gives x − y = 1 directly."
+    }
+  },
+  {
+    "id": "m502",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "easy",
+    "context": "What is the mode of the data set 4, 7, 7, 9, 11, 7, 2?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "7"
+      },
+      {
+        "id": "B",
+        "text": "9"
+      },
+      {
+        "id": "C",
+        "text": "4"
+      },
+      {
+        "id": "D",
+        "text": "6.71"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 7 appears three times and every other value appears once.",
+      "B": "Nine is the median once the values are put in order, not the most frequent value.",
+      "C": "Four is simply the first value listed and appears only once.",
+      "D": "This is the mean of the seven values rather than the mode."
+    }
+  },
+  {
+    "id": "m503",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "medium",
+    "context": "What is the range of the data set 14, 9, 22, 6, 18?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "28"
+      },
+      {
+        "id": "B",
+        "text": "16"
+      },
+      {
+        "id": "C",
+        "text": "13.8"
+      },
+      {
+        "id": "D",
+        "text": "14"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This adds the largest and smallest values instead of subtracting.",
+      "B": "Correct — the range is the largest value minus the smallest: 22 − 6 = 16.",
+      "C": "This is the mean of the five values rather than the spread between the extremes.",
+      "D": "This is the median, which sits in the middle rather than measuring the spread."
+    }
+  },
+  {
+    "id": "m504",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "medium",
+    "context": "A set of 8 numbers has a mean of 12. Every number in the set is then increased by 3. What is the mean of the new set?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "36"
+      },
+      {
+        "id": "B",
+        "text": "12.375"
+      },
+      {
+        "id": "C",
+        "text": "15"
+      },
+      {
+        "id": "D",
+        "text": "12"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This multiplies the mean by 3 instead of adding 3 to it.",
+      "B": "This adds 3 to the total rather than to each of the eight numbers.",
+      "C": "Correct — the total rises by 8 × 3 = 24, and 24 ÷ 8 = 3, so the mean rises by 3.",
+      "D": "Adding the same amount to every value shifts the mean rather than leaving it alone."
+    }
+  },
+  {
+    "id": "m505",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "hard",
+    "context": "The mean of five numbers is 30. One of the numbers is then changed from 18 to 38 and nothing else changes. What is the new mean?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "50"
+      },
+      {
+        "id": "B",
+        "text": "32"
+      },
+      {
+        "id": "C",
+        "text": "38"
+      },
+      {
+        "id": "D",
+        "text": "34"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This adds the full 20 to the mean rather than sharing it across the five values.",
+      "B": "This raises the mean by 2, as though the change were spread over ten numbers.",
+      "C": "This reports the changed value itself rather than the new mean of the set.",
+      "D": "Correct — the total rises by 20, and 20 spread over five numbers raises the mean by 4."
+    }
+  },
+  {
+    "id": "m506",
+    "section": "math",
+    "topic": "statistics",
+    "difficulty": "hard",
+    "context": "Five numbers have a mean of 20. The largest of the five is increased by 10 and nothing else changes. Which statement is true of the new set?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The mean rises by 2 and the median is unchanged."
+      },
+      {
+        "id": "B",
+        "text": "The mean and the median both rise by 2."
+      },
+      {
+        "id": "C",
+        "text": "The mean rises by 10 and the median is unchanged."
+      },
+      {
+        "id": "D",
+        "text": "The mean is unchanged and the median rises by 2."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the total rises by 10, so the mean rises by 2, and the middle value never moves.",
+      "B": "The median is the third value in order, and changing the largest leaves it where it was.",
+      "C": "The whole increase falls on one of five numbers, so the mean rises by a fifth of it.",
+      "D": "A change to any value changes the total, so the mean cannot stay where it was."
+    }
   }
 ]
