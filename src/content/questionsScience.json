@@ -9997,5 +9997,335 @@
       "C": "Wind acts on the air above the surface; it does not push energy into the liquid below.",
       "D": "Correct — still air above the water grows humid, and a humid layer returns molecules as fast as it loses them."
     }
+  },
+  {
+    "id": "s246",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp28",
+    "context": "Trial 1 of Experiment 1 and the uncovered tray of Experiment 2 were run under the same conditions. Which calculation shows that the two results agree?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2.0 mm across 0.50 m² is 1.0 L of water, which has a mass of 1000 g."
+      },
+      {
+        "id": "B",
+        "text": "2.0 mm across 0.50 m² is 100 mL of water, which has a mass of 1000 g."
+      },
+      {
+        "id": "C",
+        "text": "2.0 mm across 0.50 m² is 1.0 L of water, which has a mass of 100 g."
+      },
+      {
+        "id": "D",
+        "text": "2.0 mm across 0.50 m² is 2.0 L of water, which has a mass of 1000 g."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 0.002 m × 0.50 m² is 0.001 m³, which is one litre and so one thousand grams.",
+      "B": "One litre is 1000 mL, so calling the same volume 100 mL is off by a factor of ten.",
+      "C": "A litre of water has a mass of 1000 g rather than 100 g, so the trials would not match.",
+      "D": "The volume works out to 0.001 m³, which is 1.0 L; doubling it breaks the agreement."
+    }
+  },
+  {
+    "id": "s247",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp28",
+    "context": "A district wants the Table 3 result for 25 °C expressed as a depth of water lost per day from a tray of 0.50 m². That depth is closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.4 mm/day"
+      },
+      {
+        "id": "B",
+        "text": "2.9 mm/day"
+      },
+      {
+        "id": "C",
+        "text": "0.29 mm/day"
+      },
+      {
+        "id": "D",
+        "text": "29 mm/day"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That would follow from using twelve hours rather than the full day the question names.",
+      "B": "Correct — 60 mL/h over 24 h is 1440 cm³, and 1440 cm³ spread over 5000 cm² is 0.29 cm.",
+      "C": "That is the depth in centimetres rather than millimetres, so it is ten times too small.",
+      "D": "Multiplying by the area instead of dividing by it inflates the answer tenfold."
+    }
+  },
+  {
+    "id": "s248",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp22",
+    "context": "Table 3 reports an infiltration rate for sand of 180 mm/hr. That figure follows from Table 1 because sand takes in:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "130 mm in the first 20 minutes, which is 180 mm in an hour."
+      },
+      {
+        "id": "B",
+        "text": "80 mm in the first 10 minutes, which is 180 mm in an hour."
+      },
+      {
+        "id": "C",
+        "text": "60 mm between 20 and 40 minutes, which is 180 mm in an hour."
+      },
+      {
+        "id": "D",
+        "text": "190 mm over the 40 minutes, which is 180 mm in an hour."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The first twenty minutes run faster than the last and work out near 390 mm/hr.",
+      "B": "Ten minutes of cumulative depth gives about 480 mm/hr, far above the reported rate.",
+      "C": "Correct — 190 − 130 is 60 mm across a twenty-minute interval, and 60 × 3 is 180.",
+      "D": "Averaging the whole test folds in the fast early minutes and gives about 285 mm/hr."
+    }
+  },
+  {
+    "id": "s249",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp22",
+    "context": "Table 2 gives loam a bulk density of 1.32 g/cm³. Expressed in kilograms per cubic metre, that density is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "132 kg/m³"
+      },
+      {
+        "id": "B",
+        "text": "13,200 kg/m³"
+      },
+      {
+        "id": "C",
+        "text": "1.32 kg/m³"
+      },
+      {
+        "id": "D",
+        "text": "1320 kg/m³"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is ten times too small, as though a cubic metre held only 100,000 cm³.",
+      "B": "That is ten times too large and would make loam denser than most solid rock.",
+      "C": "Changing the mass unit while leaving the volume alone drops a factor of a million.",
+      "D": "Correct — a cubic metre holds a million cubic centimetres, so 1.32 g/cm³ is 1320 kg."
+    }
+  },
+  {
+    "id": "s250",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp28",
+    "context": "Across Table 1, the way depth lost responds to wind changes above 2.0 m/s: each further 1.0 m/s of wind then costs:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "twice as much depth as it did below 2.0 m/s."
+      },
+      {
+        "id": "B",
+        "text": "half as much depth as it did below 2.0 m/s."
+      },
+      {
+        "id": "C",
+        "text": "the same depth as it did below 2.0 m/s."
+      },
+      {
+        "id": "D",
+        "text": "no further depth once 4.0 mm has been lost."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 1.0 mm per m/s up to 2.0 m/s, then 4.0 mm across the next 2.0 m/s.",
+      "B": "Halving would put the 4.0 m/s trial near 5.0 mm rather than at the 8.0 mm recorded.",
+      "C": "A steady rate would put the 4.0 m/s trial at 6.0 mm, which is not what Table 1 shows.",
+      "D": "Depth lost keeps climbing past 4.0 mm, reaching 8.0 mm at the highest wind speed."
+    }
+  },
+  {
+    "id": "s251",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp28",
+    "context": "Suppose a tray covered with floating balls were run in the wind tunnel at 2.0 m/s for 24 hours. Based on all three tables, the mass of water lost would be closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2000 g, the loss an uncovered tray shows at that wind speed."
+      },
+      {
+        "id": "B",
+        "text": "500 g, a quarter of what an uncovered tray loses at that wind speed."
+      },
+      {
+        "id": "C",
+        "text": "250 g, the same loss the floating balls allowed in still air."
+      },
+      {
+        "id": "D",
+        "text": "1000 g, the loss an uncovered tray shows in still air."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the uncovered loss at that wind speed, with the cover not applied at all.",
+      "B": "Correct — 4.0 mm is 2000 g uncovered, and floating balls leave about a quarter of that.",
+      "C": "The still-air figure takes no account of the wind, which doubles the uncovered loss.",
+      "D": "That is what an uncovered tray loses before either the wind or the cover is applied."
+    }
+  },
+  {
+    "id": "s252",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp22",
+    "context": "Which property in Table 2 orders the three soils the same way their infiltration rates in Table 3 are ordered?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Organic matter, which rises as the rate falls."
+      },
+      {
+        "id": "B",
+        "text": "None of the three orders the soils that way."
+      },
+      {
+        "id": "C",
+        "text": "Clay content, which rises as the rate falls."
+      },
+      {
+        "id": "D",
+        "text": "Bulk density, which rises as the rate falls."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Loam holds the most organic matter, so that column peaks in the middle, not at an end.",
+      "B": "Clay content does order them, running upward exactly as the rate runs downward.",
+      "C": "Correct — 4, 19 and 52 per cent run opposite to 180, 66 and 18 mm/hr.",
+      "D": "Loam has the lowest bulk density of the three, yet its rate sits in the middle."
+    }
+  },
+  {
+    "id": "s253",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp22",
+    "context": "Between the first 5 minutes of a test and the final 20 minutes, the infiltration rate falls by the largest factor for:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "loam, which falls further than either other soil."
+      },
+      {
+        "id": "B",
+        "text": "sand, which falls further than either other soil."
+      },
+      {
+        "id": "C",
+        "text": "all three, whose rates fall by the same factor."
+      },
+      {
+        "id": "D",
+        "text": "clay, whose rate falls by a factor of about four."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Loam falls from roughly 240 to 66 mm/hr, a factor near 3.6 rather than the largest.",
+      "B": "Sand falls from roughly 540 to 180 mm/hr, a factor of three and the smallest drop.",
+      "C": "The three factors come out near 3.0, 3.6 and 4.0, so they are not equal.",
+      "D": "Correct — about 72 mm/hr early against 18 mm/hr late is the steepest drop of the three."
+    }
+  },
+  {
+    "id": "s254",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp25",
+    "context": "If the pattern in Table 2 continued, a panel coated with 320 µm of epoxy would most likely lose a mass closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6 mg, since each doubling of thickness cuts the loss by nearly half."
+      },
+      {
+        "id": "B",
+        "text": "0 mg, since a coating this thick would stop corrosion entirely."
+      },
+      {
+        "id": "C",
+        "text": "11 mg, since the loss has levelled off and stopped changing."
+      },
+      {
+        "id": "D",
+        "text": "2 mg, since the loss falls by 9 mg with every doubling."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 96, 61, 34, 19 and 11 each run about 0.58 of the one before, and 11 × 0.58 is near 6.",
+      "B": "Every thickness tested still loses some mass, and nothing in the table reaches zero.",
+      "C": "The loss is still falling between 80 and 160 µm, from 19 mg down to 11 mg.",
+      "D": "The drops shrink as the coating thickens — 35, 27, 15 and 8 mg — rather than holding at 9."
+    }
+  },
+  {
+    "id": "s255",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp25",
+    "context": "Table 1 shows that zinc plus 40 µm of epoxy lost 9 mg. Based on Table 2, epoxy used on its own would have to be:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "thinner than 10 µm to lose as little as 9 mg."
+      },
+      {
+        "id": "B",
+        "text": "thicker than 160 µm to lose as little as 9 mg."
+      },
+      {
+        "id": "C",
+        "text": "about 80 µm thick to lose as little as 9 mg."
+      },
+      {
+        "id": "D",
+        "text": "about 40 µm thick to lose as little as 9 mg."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Thinner coatings lose more, and 10 µm was the worst epoxy panel at 96 mg.",
+      "B": "Correct — the thickest epoxy tested, 160 µm, still lost 11 mg, which is more than 9 mg.",
+      "C": "Epoxy at 80 µm lost 19 mg, roughly twice what the zinc-and-epoxy panel lost.",
+      "D": "Epoxy at 40 µm lost 34 mg, which is what Table 1 reports for that panel as well."
+    }
   }
 ]
