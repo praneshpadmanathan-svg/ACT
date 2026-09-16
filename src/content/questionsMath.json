@@ -16190,5 +16190,1605 @@
       "C": "The whole increase falls on one of five numbers, so the mean rises by a fifth of it.",
       "D": "A change to any value changes the total, so the mean cannot stay where it was."
     }
+  },
+  {
+    "id": "m507",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "easy",
+    "context": "What is the area of a circle with a radius of 7 cm, in terms of π?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "49π cm²"
+      },
+      {
+        "id": "B",
+        "text": "14π cm²"
+      },
+      {
+        "id": "C",
+        "text": "7π cm²"
+      },
+      {
+        "id": "D",
+        "text": "28π cm²"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the area of a circle is πr², and 7² = 49.",
+      "B": "This is the circumference, 2πr, rather than the area.",
+      "C": "This uses the radius itself in place of its square.",
+      "D": "This doubles the diameter instead of squaring the radius."
+    }
+  },
+  {
+    "id": "m508",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "medium",
+    "context": "The volume of a cube is 125 cm³. What is the length of one edge, in centimetres?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "41.7"
+      },
+      {
+        "id": "B",
+        "text": "5"
+      },
+      {
+        "id": "C",
+        "text": "25"
+      },
+      {
+        "id": "D",
+        "text": "15"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This divides 125 by 3, which treats the exponent as a multiplier.",
+      "B": "Correct — the volume of a cube is s³, and the cube root of 125 is 5.",
+      "C": "This is the area of one face, which is s² rather than s.",
+      "D": "This divides the volume by the three dimensions rather than taking a cube root."
+    }
+  },
+  {
+    "id": "m509",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "medium",
+    "context": "A cylinder has a volume of 200π cubic centimetres and a radius of 5 cm. What is its height, in centimetres?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4"
+      },
+      {
+        "id": "B",
+        "text": "12.7"
+      },
+      {
+        "id": "C",
+        "text": "8"
+      },
+      {
+        "id": "D",
+        "text": "40"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This divides by 50, doubling the 25 that πr² actually contributes.",
+      "B": "This divides 200 by 5π, leaving a π in the denominator that should have cancelled.",
+      "C": "Correct — V = πr²h gives 200π = 25πh, so h = 8.",
+      "D": "This divides by the radius rather than by the radius squared."
+    }
+  },
+  {
+    "id": "m510",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "hard",
+    "context": "A rectangular pool measuring 20 feet by 12 feet is surrounded by a walkway 3 feet wide on all sides. What is the area of the walkway, in square feet?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "192"
+      },
+      {
+        "id": "B",
+        "text": "468"
+      },
+      {
+        "id": "C",
+        "text": "96"
+      },
+      {
+        "id": "D",
+        "text": "228"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This adds 3 to each dimension rather than 3 on each of the two opposite sides.",
+      "B": "This is the area of the pool and the walkway together, not the walkway alone.",
+      "C": "This is the perimeter of the pool multiplied by 3, which double-counts nothing at the corners.",
+      "D": "Correct — the outer rectangle is 26 by 18, so 468 − 240 = 228."
+    }
+  },
+  {
+    "id": "m511",
+    "section": "math",
+    "topic": "area & volume",
+    "difficulty": "hard",
+    "context": "A sphere has a volume of 36π cubic units. What is its surface area, in terms of π?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "36π"
+      },
+      {
+        "id": "B",
+        "text": "27π"
+      },
+      {
+        "id": "C",
+        "text": "9π"
+      },
+      {
+        "id": "D",
+        "text": "12π"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — (4/3)πr³ = 36π gives r³ = 27 and r = 3, so 4πr² = 36π.",
+      "B": "This is r³ rather than the surface area the radius produces.",
+      "C": "This is πr² instead of 4πr², so it covers a quarter of the sphere.",
+      "D": "This is 4r rather than 4r², leaving the radius unsquared."
+    }
+  },
+  {
+    "id": "m512",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "easy",
+    "context": "An angle measures 58°. What is the measure of its complement?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "58°"
+      },
+      {
+        "id": "B",
+        "text": "32°"
+      },
+      {
+        "id": "C",
+        "text": "122°"
+      },
+      {
+        "id": "D",
+        "text": "42°"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "An angle is its own complement only when it measures 45°.",
+      "B": "Correct — complementary angles sum to 90°, and 90 − 58 = 32.",
+      "C": "This is the supplement, which uses 180° rather than 90°.",
+      "D": "This subtracts from 100° instead of from 90°."
+    }
+  },
+  {
+    "id": "m513",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "medium",
+    "context": "In an isosceles triangle, the angle between the two equal sides measures 40°. What is the measure of each of the other two angles?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "50°"
+      },
+      {
+        "id": "B",
+        "text": "40°"
+      },
+      {
+        "id": "C",
+        "text": "70°"
+      },
+      {
+        "id": "D",
+        "text": "140°"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This treats the triangle as right-angled, which nothing in the problem states.",
+      "B": "This repeats the vertex angle, which would make all three sum to 120°.",
+      "C": "Correct — the remaining 140° is shared equally by the two base angles.",
+      "D": "This is the total left after the vertex angle, before it is split between two angles."
+    }
+  },
+  {
+    "id": "m514",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "medium",
+    "context": "Each exterior angle of a regular polygon measures 24°. How many sides does the polygon have?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "24"
+      },
+      {
+        "id": "B",
+        "text": "12"
+      },
+      {
+        "id": "C",
+        "text": "7"
+      },
+      {
+        "id": "D",
+        "text": "15"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This repeats the angle measure rather than counting how many of them fit in 360°.",
+      "B": "This divides 288 by 24, using the wrong total for the exterior angles.",
+      "C": "This divides 180 by 24 and rounds, using the interior angle sum of a triangle.",
+      "D": "Correct — the exterior angles of any polygon sum to 360°, and 360 ÷ 24 = 15."
+    }
+  },
+  {
+    "id": "m515",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "hard",
+    "context": "Two parallel lines are cut by a transversal. One same-side interior angle measures (3x + 10)° and the other measures (2x + 20)°. What is the value of x?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "30"
+      },
+      {
+        "id": "B",
+        "text": "10"
+      },
+      {
+        "id": "C",
+        "text": "36"
+      },
+      {
+        "id": "D",
+        "text": "2"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — same-side interior angles are supplementary, so 5x + 30 = 180 and x = 30.",
+      "B": "This sets the two expressions equal, which is true of alternate interior angles instead.",
+      "C": "This solves 5x = 180, dropping the constant 30 on the left.",
+      "D": "This solves 5x + 30 = 40, using a right angle in place of the straight angle."
+    }
+  },
+  {
+    "id": "m516",
+    "section": "math",
+    "topic": "lines & angles",
+    "difficulty": "hard",
+    "context": "In triangle ABC, the measure of angle A is twice the measure of angle B, and angle C measures 30° more than angle B. What is the measure of angle A?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "90°"
+      },
+      {
+        "id": "B",
+        "text": "75°"
+      },
+      {
+        "id": "C",
+        "text": "37.5°"
+      },
+      {
+        "id": "D",
+        "text": "67.5°"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This assumes the triangle is right-angled, which the conditions do not require.",
+      "B": "Correct — B + 2B + (B + 30) = 180 gives 4B = 150, so B = 37.5 and A = 75.",
+      "C": "This is angle B, which the question does not ask for.",
+      "D": "This is angle C, the third of the three angles."
+    }
+  },
+  {
+    "id": "m517",
+    "section": "math",
+    "topic": "logarithms",
+    "difficulty": "easy",
+    "context": "What is the value of log₁₀(1000)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "10"
+      },
+      {
+        "id": "B",
+        "text": "1/3"
+      },
+      {
+        "id": "C",
+        "text": "3"
+      },
+      {
+        "id": "D",
+        "text": "100"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This reports the base rather than the exponent the base is raised to.",
+      "B": "This inverts the answer, as though the logarithm were a reciprocal.",
+      "C": "Correct — 10³ = 1000, so the logarithm is the exponent 3.",
+      "D": "This divides 1000 by 10 rather than asking what power of 10 gives 1000."
+    }
+  },
+  {
+    "id": "m518",
+    "section": "math",
+    "topic": "logarithms",
+    "difficulty": "medium",
+    "context": "What is the value of log₄(2)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2"
+      },
+      {
+        "id": "B",
+        "text": "−2"
+      },
+      {
+        "id": "C",
+        "text": "1/4"
+      },
+      {
+        "id": "D",
+        "text": "1/2"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This is log₂(4), which reverses the base and the argument.",
+      "B": "A logarithm of a number larger than 1 is positive when the base is larger than 1.",
+      "C": "This is 4 inverted rather than the exponent the question asks for.",
+      "D": "Correct — 4^(1/2) = 2, so the exponent that turns 4 into 2 is one half."
+    }
+  },
+  {
+    "id": "m519",
+    "section": "math",
+    "topic": "logarithms",
+    "difficulty": "medium",
+    "context": "If log₂(x) = 3, what is the value of log₂(x²)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6"
+      },
+      {
+        "id": "B",
+        "text": "9"
+      },
+      {
+        "id": "C",
+        "text": "8"
+      },
+      {
+        "id": "D",
+        "text": "3"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the logarithm of a square is twice the logarithm, so 2 × 3 = 6.",
+      "B": "This squares the logarithm rather than the number the logarithm describes.",
+      "C": "This is x itself, since log₂(x) = 3 means x = 8.",
+      "D": "This repeats the original logarithm without applying the square at all."
+    }
+  },
+  {
+    "id": "m520",
+    "section": "math",
+    "topic": "logarithms",
+    "difficulty": "hard",
+    "context": "Solve for x: log₃(x + 6) − log₃(x) = 2",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−3/4"
+      },
+      {
+        "id": "B",
+        "text": "3/4"
+      },
+      {
+        "id": "C",
+        "text": "3"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A negative x would put the logarithm of a negative number in the equation.",
+      "B": "Correct — the difference of logs gives (x + 6)/x = 9, so x + 6 = 9x and x = 3/4.",
+      "C": "This solves (x + 6)/x = 3, using the base rather than 3² on the right.",
+      "D": "This reads x off the 6 in the expression without solving anything."
+    }
+  },
+  {
+    "id": "m521",
+    "section": "math",
+    "topic": "logarithms",
+    "difficulty": "hard",
+    "context": "If log(2) ≈ 0.301, what is log(50), where log means logarithm base 10?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.505"
+      },
+      {
+        "id": "B",
+        "text": "2.301"
+      },
+      {
+        "id": "C",
+        "text": "1.699"
+      },
+      {
+        "id": "D",
+        "text": "0.602"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This multiplies log 2 by 5, though 50 is not 2 raised to any such power.",
+      "B": "This adds log 2 to 2 instead of subtracting it, which gives log 200.",
+      "C": "Correct — 50 is 100 ÷ 2, so log 50 = log 100 − log 2 = 2 − 0.301.",
+      "D": "This doubles log 2, which gives log 4 rather than log 50."
+    }
+  },
+  {
+    "id": "m522",
+    "section": "math",
+    "topic": "matrices",
+    "difficulty": "easy",
+    "context": "What are the dimensions of the product of a 2 × 5 matrix and a 5 × 3 matrix?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5 × 5"
+      },
+      {
+        "id": "B",
+        "text": "3 × 2"
+      },
+      {
+        "id": "C",
+        "text": "2 × 5"
+      },
+      {
+        "id": "D",
+        "text": "2 × 3"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This uses the two inner dimensions, which must match but do not survive the product.",
+      "B": "This reverses rows and columns, describing the transpose of the answer.",
+      "C": "This repeats the first matrix, ignoring the second one entirely.",
+      "D": "Correct — the product keeps the rows of the first matrix and the columns of the second."
+    }
+  },
+  {
+    "id": "m523",
+    "section": "math",
+    "topic": "matrices",
+    "difficulty": "medium",
+    "context": "What is the determinant of the matrix [[4, 7], [2, 6]]?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "10"
+      },
+      {
+        "id": "B",
+        "text": "38"
+      },
+      {
+        "id": "C",
+        "text": "−10"
+      },
+      {
+        "id": "D",
+        "text": "24"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the determinant is ad − bc, and 24 − 14 = 10.",
+      "B": "This adds the two products instead of subtracting the second from the first.",
+      "C": "This subtracts in the other order, giving bc − ad.",
+      "D": "This is the product of the main diagonal alone, with bc never subtracted."
+    }
+  },
+  {
+    "id": "m524",
+    "section": "math",
+    "topic": "matrices",
+    "difficulty": "medium",
+    "context": "If A = [[2, 0], [1, 3]], what is A²?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "[[2, 0], [1, 9]]"
+      },
+      {
+        "id": "B",
+        "text": "[[4, 0], [5, 9]]"
+      },
+      {
+        "id": "C",
+        "text": "[[4, 0], [1, 9]]"
+      },
+      {
+        "id": "D",
+        "text": "[[4, 0], [2, 6]]"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This squares only the diagonal entries and leaves the others untouched.",
+      "B": "Correct — the lower-left entry is 1 × 2 + 3 × 1 = 5, and the rest follow the same rule.",
+      "C": "This squares each entry separately, which is not how matrix multiplication works.",
+      "D": "This doubles the matrix rather than multiplying it by itself."
+    }
+  },
+  {
+    "id": "m525",
+    "section": "math",
+    "topic": "matrices",
+    "difficulty": "hard",
+    "context": "The matrix [[2, k], [3, 6]] has a determinant of 0. What is the value of k?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−4"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "4"
+      },
+      {
+        "id": "D",
+        "text": "12"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This changes the sign, which would make the determinant 24 rather than 0.",
+      "B": "This reads k off the top-left entry instead of solving 12 − 3k = 0.",
+      "C": "Correct — the determinant is 12 − 3k, and 12 − 3k = 0 gives k = 4.",
+      "D": "This is the product of the main diagonal rather than the value of k."
+    }
+  },
+  {
+    "id": "m526",
+    "section": "math",
+    "topic": "matrices",
+    "difficulty": "hard",
+    "context": "If A = [[1, 2], [0, 1]], what is A³?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "[[1, 8], [0, 1]]"
+      },
+      {
+        "id": "B",
+        "text": "[[3, 6], [0, 3]]"
+      },
+      {
+        "id": "C",
+        "text": "[[1, 2], [0, 1]]"
+      },
+      {
+        "id": "D",
+        "text": "[[1, 6], [0, 1]]"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This cubes the 2 in the top-right corner rather than accumulating it.",
+      "B": "This multiplies every entry by 3, which is 3A rather than A³.",
+      "C": "This is A itself; the matrix is not its own cube unless it is the identity.",
+      "D": "Correct — each multiplication adds 2 to the top-right entry, so three of them give 6."
+    }
+  },
+  {
+    "id": "m527",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "easy",
+    "context": "A spinner has 5 equal sectors coloured red, red, blue, green, and yellow. What is the probability that one spin lands on red?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2/5"
+      },
+      {
+        "id": "B",
+        "text": "1/5"
+      },
+      {
+        "id": "C",
+        "text": "1/2"
+      },
+      {
+        "id": "D",
+        "text": "2/3"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — two of the five equal sectors are red.",
+      "B": "This counts red once, though two separate sectors carry that colour.",
+      "C": "This treats the spinner as having only two outcomes rather than five sectors.",
+      "D": "This compares red with the three other colours rather than with all five sectors."
+    }
+  },
+  {
+    "id": "m528",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "medium",
+    "context": "A drawer holds 4 white socks and 6 black socks. One sock is drawn, its colour noted, and it is returned. A second sock is then drawn. What is the probability that both are white?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "8/10"
+      },
+      {
+        "id": "B",
+        "text": "4/25"
+      },
+      {
+        "id": "C",
+        "text": "2/15"
+      },
+      {
+        "id": "D",
+        "text": "2/5"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This adds the two probabilities instead of multiplying them.",
+      "B": "Correct — the sock is replaced, so each draw is 4/10 and the product is 16/100.",
+      "C": "This is the answer without replacement, where the second draw would be 3/9.",
+      "D": "This is the probability for a single draw rather than for both."
+    }
+  },
+  {
+    "id": "m529",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "medium",
+    "context": "An eight-sided die with faces numbered 1 through 8 is rolled once. What is the probability of rolling a multiple of 3?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1/3"
+      },
+      {
+        "id": "B",
+        "text": "1/8"
+      },
+      {
+        "id": "C",
+        "text": "1/4"
+      },
+      {
+        "id": "D",
+        "text": "3/8"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This assumes a third of the faces qualify, which would need a multiple of 3 faces.",
+      "B": "This counts only one favourable face when there are two.",
+      "C": "Correct — only 3 and 6 are multiples of 3, so the probability is 2/8.",
+      "D": "This counts 3, 6 and 9, though the die has no face numbered 9."
+    }
+  },
+  {
+    "id": "m530",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "hard",
+    "context": "Two cards are drawn without replacement from a standard 52-card deck containing 13 hearts. What is the probability that both are hearts?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1/16"
+      },
+      {
+        "id": "B",
+        "text": "13/102"
+      },
+      {
+        "id": "C",
+        "text": "1/4"
+      },
+      {
+        "id": "D",
+        "text": "1/17"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This is (1/4)², which would be right only if the first card were replaced.",
+      "B": "This uses 13/51 for the second draw, forgetting that a heart has been removed.",
+      "C": "This is the probability that the first card alone is a heart.",
+      "D": "Correct — (13/52)(12/51) = 156/2652, which reduces to 1/17."
+    }
+  },
+  {
+    "id": "m531",
+    "section": "math",
+    "topic": "probability",
+    "difficulty": "hard",
+    "context": "A bag holds 3 red marbles and 5 blue marbles. Three marbles are drawn without replacement. What is the probability that exactly one of them is red?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "15/28"
+      },
+      {
+        "id": "B",
+        "text": "3/8"
+      },
+      {
+        "id": "C",
+        "text": "5/28"
+      },
+      {
+        "id": "D",
+        "text": "9/56"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — there are 3 × 10 = 30 ways to take one red and two blue, out of 56 draws of three.",
+      "B": "This is the share of red marbles in the bag rather than a probability across three draws.",
+      "C": "This counts only the ways to choose two blue, leaving out the choice of which red.",
+      "D": "This multiplies 3/8 by 3/7, which describes drawing reds rather than exactly one."
+    }
+  },
+  {
+    "id": "m532",
+    "section": "math",
+    "topic": "sequences",
+    "difficulty": "easy",
+    "context": "In the arithmetic sequence 10, 17, 24, 31, …, what is the common difference?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "7"
+      },
+      {
+        "id": "B",
+        "text": "10"
+      },
+      {
+        "id": "C",
+        "text": "6"
+      },
+      {
+        "id": "D",
+        "text": "17"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — each term is 7 more than the one before it.",
+      "B": "This is the first term rather than the gap between consecutive terms.",
+      "C": "This counts the numbers between 10 and 17 rather than the difference.",
+      "D": "This is the second term, not the amount added to reach it."
+    }
+  },
+  {
+    "id": "m533",
+    "section": "math",
+    "topic": "sequences",
+    "difficulty": "medium",
+    "context": "A geometric sequence has a 3rd term of 20 and a 4th term of 40. What is its 1st term?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2.5"
+      },
+      {
+        "id": "B",
+        "text": "5"
+      },
+      {
+        "id": "C",
+        "text": "10"
+      },
+      {
+        "id": "D",
+        "text": "20"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This steps back three times, as though 20 were the 4th term.",
+      "B": "Correct — the ratio is 2, so stepping back twice from 20 gives 10 and then 5.",
+      "C": "This steps back only once from the 3rd term.",
+      "D": "This repeats the 3rd term rather than working back to the 1st."
+    }
+  },
+  {
+    "id": "m534",
+    "section": "math",
+    "topic": "sequences",
+    "difficulty": "medium",
+    "context": "What is the sum of the first 30 positive even integers?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "900"
+      },
+      {
+        "id": "B",
+        "text": "870"
+      },
+      {
+        "id": "C",
+        "text": "930"
+      },
+      {
+        "id": "D",
+        "text": "465"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is 30², which counts the odd integers instead.",
+      "B": "This drops the final term, summing only the first 29 even integers.",
+      "C": "Correct — the terms run 2 through 60, and 30 × (2 + 60)/2 = 930.",
+      "D": "This is the sum of the first 30 integers, before each is doubled."
+    }
+  },
+  {
+    "id": "m535",
+    "section": "math",
+    "topic": "sequences",
+    "difficulty": "hard",
+    "context": "In an arithmetic sequence the 2nd term and the 6th term add to 34, and the common difference is 4. What is the 1st term?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "9"
+      },
+      {
+        "id": "B",
+        "text": "17"
+      },
+      {
+        "id": "C",
+        "text": "13"
+      },
+      {
+        "id": "D",
+        "text": "5"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This is the 2nd term, which the sum is built from rather than asked for.",
+      "B": "This halves 34, treating the two terms as equal.",
+      "C": "This uses 2a + 8 = 34, counting only one common difference instead of six.",
+      "D": "Correct — (a + 4) + (a + 20) = 34 gives 2a + 24 = 34, so a = 5."
+    }
+  },
+  {
+    "id": "m536",
+    "section": "math",
+    "topic": "sequences",
+    "difficulty": "hard",
+    "context": "A sequence is defined by aₙ = n² − n. Which is the first term of the sequence greater than 100?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the 11th"
+      },
+      {
+        "id": "B",
+        "text": "the 10th"
+      },
+      {
+        "id": "C",
+        "text": "the 12th"
+      },
+      {
+        "id": "D",
+        "text": "the 51st"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the 10th term is 90 and the 11th is 110, the first above 100.",
+      "B": "The 10th term is 90, which is still below 100.",
+      "C": "The 12th term is 132, but the 11th already passes 100.",
+      "D": "This solves n − 1 = 100 rather than n² − n > 100."
+    }
+  },
+  {
+    "id": "m537",
+    "section": "math",
+    "topic": "complex numbers",
+    "difficulty": "easy",
+    "context": "What is (5 + 2i) + (1 − 6i)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6 − 4"
+      },
+      {
+        "id": "B",
+        "text": "6 − 4i"
+      },
+      {
+        "id": "C",
+        "text": "6 + 8i"
+      },
+      {
+        "id": "D",
+        "text": "4 + 8i"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This drops the i, which cannot be combined with a real number.",
+      "B": "Correct — add the real parts and the imaginary parts separately.",
+      "C": "This subtracts −6 rather than adding it, flipping the sign of the second term.",
+      "D": "This subtracts the real parts while adding the imaginary ones."
+    }
+  },
+  {
+    "id": "m538",
+    "section": "math",
+    "topic": "complex numbers",
+    "difficulty": "medium",
+    "context": "What is the value of i⁵⁰?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "i"
+      },
+      {
+        "id": "B",
+        "text": "−i"
+      },
+      {
+        "id": "C",
+        "text": "−1"
+      },
+      {
+        "id": "D",
+        "text": "1"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is the remainder 1 case, one step short of 50.",
+      "B": "This is the remainder 3 case, one step past 50.",
+      "C": "Correct — powers of i repeat every four, and 50 leaves a remainder of 2, giving i² = −1.",
+      "D": "This is i⁴⁸, where the remainder is 0 rather than 2."
+    }
+  },
+  {
+    "id": "m539",
+    "section": "math",
+    "topic": "complex numbers",
+    "difficulty": "medium",
+    "context": "What is −3i(4 − 2i)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6 − 12i"
+      },
+      {
+        "id": "B",
+        "text": "−6i"
+      },
+      {
+        "id": "C",
+        "text": "−6 + 12i"
+      },
+      {
+        "id": "D",
+        "text": "−6 − 12i"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This leaves 6i² as +6 rather than −6.",
+      "B": "This treats i² as i, so the two terms wrongly combine.",
+      "C": "This flips both signs, distributing −3i as though it were 3i.",
+      "D": "Correct — −12i + 6i² = −12i − 6, since i² = −1."
+    }
+  },
+  {
+    "id": "m540",
+    "section": "math",
+    "topic": "complex numbers",
+    "difficulty": "hard",
+    "context": "What is (5 + 5i) ÷ (1 + 2i), expressed in the form a + bi?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3 − i"
+      },
+      {
+        "id": "B",
+        "text": "3 + i"
+      },
+      {
+        "id": "C",
+        "text": "1 + 3i"
+      },
+      {
+        "id": "D",
+        "text": "5 + 5i"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — multiplying above and below by 1 − 2i gives (15 − 5i)/5.",
+      "B": "This uses 1 + 2i as the multiplier instead of the conjugate.",
+      "C": "This swaps the real and imaginary parts of the result.",
+      "D": "This divides only the real parts and leaves the imaginary part untouched."
+    }
+  },
+  {
+    "id": "m541",
+    "section": "math",
+    "topic": "complex numbers",
+    "difficulty": "hard",
+    "context": "What is the sum of the two solutions to x² − 4x + 13 = 0?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−4"
+      },
+      {
+        "id": "B",
+        "text": "4"
+      },
+      {
+        "id": "C",
+        "text": "13"
+      },
+      {
+        "id": "D",
+        "text": "0"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This keeps the sign of the middle coefficient instead of reversing it.",
+      "B": "Correct — the solutions are 2 + 3i and 2 − 3i, and the imaginary parts cancel.",
+      "C": "This is the product of the two solutions rather than their sum.",
+      "D": "The imaginary parts cancel, but the real parts add to 4 rather than 0."
+    }
+  },
+  {
+    "id": "m542",
+    "section": "math",
+    "topic": "triangles",
+    "difficulty": "easy",
+    "context": "A triangle has a base of 10 and a height of 6. What is its area?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "16"
+      },
+      {
+        "id": "B",
+        "text": "32"
+      },
+      {
+        "id": "C",
+        "text": "30"
+      },
+      {
+        "id": "D",
+        "text": "60"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This adds the base and the height rather than multiplying them.",
+      "B": "This is the perimeter of a rectangle with those dimensions.",
+      "C": "Correct — the area of a triangle is half the base times the height.",
+      "D": "This is base times height, which is the area of a rectangle."
+    }
+  },
+  {
+    "id": "m543",
+    "section": "math",
+    "topic": "triangles",
+    "difficulty": "medium",
+    "context": "In a 30°-60°-90° triangle, the shorter leg measures 5. What is the length of the longer leg?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "10"
+      },
+      {
+        "id": "B",
+        "text": "5√2"
+      },
+      {
+        "id": "C",
+        "text": "10√3"
+      },
+      {
+        "id": "D",
+        "text": "5√3"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This is the hypotenuse, which is twice the shorter leg.",
+      "B": "The √2 ratio belongs to the 45°-45°-90° triangle.",
+      "C": "This applies √3 to the hypotenuse rather than to the shorter leg.",
+      "D": "Correct — the sides run x, x√3, 2x, so the longer leg is 5√3."
+    }
+  },
+  {
+    "id": "m544",
+    "section": "math",
+    "topic": "triangles",
+    "difficulty": "medium",
+    "context": "The perimeter of an equilateral triangle is 36. What is its height?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6√3"
+      },
+      {
+        "id": "B",
+        "text": "12"
+      },
+      {
+        "id": "C",
+        "text": "18"
+      },
+      {
+        "id": "D",
+        "text": "12√3"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — each side is 12, and the height splits it into a 6, 6√3, 12 triangle.",
+      "B": "This is the side length, which the height is measured against rather than equal to.",
+      "C": "This halves the perimeter rather than finding the height.",
+      "D": "This uses the full side of 12 as the shorter leg instead of half of it."
+    }
+  },
+  {
+    "id": "m545",
+    "section": "math",
+    "topic": "triangles",
+    "difficulty": "hard",
+    "context": "In triangle ABC, the exterior angle at vertex C measures 110° and angle A measures 45°. What is the measure of angle B?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "45°"
+      },
+      {
+        "id": "B",
+        "text": "65°"
+      },
+      {
+        "id": "C",
+        "text": "70°"
+      },
+      {
+        "id": "D",
+        "text": "25°"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This repeats angle A, which the two angles need not share.",
+      "B": "Correct — an exterior angle equals the sum of the two remote interior angles.",
+      "C": "This is angle C itself, the supplement of the exterior angle.",
+      "D": "This subtracts 45 from 70, using the interior angle at C in place of the exterior one."
+    }
+  },
+  {
+    "id": "m546",
+    "section": "math",
+    "topic": "triangles",
+    "difficulty": "hard",
+    "context": "An equilateral triangle has an area of 25√3 square units. What is the length of one side?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "25"
+      },
+      {
+        "id": "B",
+        "text": "50"
+      },
+      {
+        "id": "C",
+        "text": "10"
+      },
+      {
+        "id": "D",
+        "text": "5"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This reads the side off the 25 in the area expression.",
+      "B": "This doubles 25 rather than solving s² = 100.",
+      "C": "Correct — (√3/4)s² = 25√3 gives s² = 100, so s = 10.",
+      "D": "This takes the square root of 25 without first clearing the √3/4."
+    }
+  },
+  {
+    "id": "m547",
+    "section": "math",
+    "topic": "functions",
+    "difficulty": "easy",
+    "context": "If f(x) = x² + 2, what is f(3)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "8"
+      },
+      {
+        "id": "B",
+        "text": "25"
+      },
+      {
+        "id": "C",
+        "text": "9"
+      },
+      {
+        "id": "D",
+        "text": "11"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This multiplies 3 by 2 and adds 2 rather than squaring.",
+      "B": "This adds 2 to 3 first and then squares the result.",
+      "C": "This squares 3 but never adds the 2.",
+      "D": "Correct — 3² is 9, and 9 + 2 = 11."
+    }
+  },
+  {
+    "id": "m548",
+    "section": "math",
+    "topic": "functions",
+    "difficulty": "medium",
+    "context": "If f(x) = 2x − 6, for what value of x does f(x) = 0?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "−6"
+      },
+      {
+        "id": "C",
+        "text": "6"
+      },
+      {
+        "id": "D",
+        "text": "−3"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 2x − 6 = 0 gives 2x = 6, so x = 3.",
+      "B": "This is the y-intercept, the value of f at x = 0 rather than the reverse.",
+      "C": "This solves 2x = 12, doubling the 6 instead of dividing by 2.",
+      "D": "This divides −6 by 2 without first moving it to the other side."
+    }
+  },
+  {
+    "id": "m549",
+    "section": "math",
+    "topic": "functions",
+    "difficulty": "medium",
+    "context": "If h(x) = |x − 4|, what is h(1) + h(7)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "12"
+      },
+      {
+        "id": "B",
+        "text": "6"
+      },
+      {
+        "id": "C",
+        "text": "0"
+      },
+      {
+        "id": "D",
+        "text": "4"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This doubles the correct sum, as though each output were 6.",
+      "B": "Correct — h(1) = 3 and h(7) = 3, so the sum is 6.",
+      "C": "This leaves h(1) as −3, which the absolute value bars rule out.",
+      "D": "This evaluates h(1 + 7) rather than adding the two separate outputs."
+    }
+  },
+  {
+    "id": "m550",
+    "section": "math",
+    "topic": "functions",
+    "difficulty": "hard",
+    "context": "If f(x) = x² − 6x + 5, what is the minimum value of f(x)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5"
+      },
+      {
+        "id": "B",
+        "text": "0"
+      },
+      {
+        "id": "C",
+        "text": "−4"
+      },
+      {
+        "id": "D",
+        "text": "3"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This is f(0), the y-intercept, which is not the lowest point.",
+      "B": "This is the smaller root, where the graph crosses rather than turns.",
+      "C": "Correct — the vertex sits at x = 3, and f(3) = 9 − 18 + 5 = −4.",
+      "D": "This is the x-value of the vertex rather than the value of the function there."
+    }
+  },
+  {
+    "id": "m551",
+    "section": "math",
+    "topic": "functions",
+    "difficulty": "hard",
+    "context": "If f(x) = 2x + 1 and f(g(x)) = 6x − 3, what is g(x)?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3x − 1"
+      },
+      {
+        "id": "B",
+        "text": "6x − 4"
+      },
+      {
+        "id": "C",
+        "text": "3x + 2"
+      },
+      {
+        "id": "D",
+        "text": "3x − 2"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This divides 6x by 2 but forgets to move the +1 before halving the constant.",
+      "B": "This solves for 2g(x) and stops before dividing by 2.",
+      "C": "This adds the 1 to the right side instead of subtracting it.",
+      "D": "Correct — 2g(x) + 1 = 6x − 3 gives 2g(x) = 6x − 4, so g(x) = 3x − 2."
+    }
+  },
+  {
+    "id": "m552",
+    "section": "math",
+    "topic": "circles",
+    "difficulty": "easy",
+    "context": "What is the area of a circle with a diameter of 10, in terms of π?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "25π"
+      },
+      {
+        "id": "B",
+        "text": "100π"
+      },
+      {
+        "id": "C",
+        "text": "10π"
+      },
+      {
+        "id": "D",
+        "text": "5π"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the radius is 5, and πr² gives 25π.",
+      "B": "This squares the diameter rather than the radius.",
+      "C": "This is the circumference, πd, rather than the area.",
+      "D": "This uses the radius itself in place of its square."
+    }
+  },
+  {
+    "id": "m553",
+    "section": "math",
+    "topic": "circles",
+    "difficulty": "medium",
+    "context": "A circle has the equation (x + 2)² + (y − 5)² = 49. What is its centre?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "(2, 5)"
+      },
+      {
+        "id": "B",
+        "text": "(−2, 5)"
+      },
+      {
+        "id": "C",
+        "text": "(2, −5)"
+      },
+      {
+        "id": "D",
+        "text": "(−2, −5)"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This reverses the sign on y but not on x.",
+      "B": "Correct — the standard form is (x − h)² + (y − k)², so h = −2 and k = 5.",
+      "C": "This reads the signs straight off the equation without reversing them.",
+      "D": "This reverses the sign on x but not on y."
+    }
+  },
+  {
+    "id": "m554",
+    "section": "math",
+    "topic": "circles",
+    "difficulty": "medium",
+    "context": "The area of a circle is 81π square units. What is its diameter?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "81"
+      },
+      {
+        "id": "B",
+        "text": "40.5"
+      },
+      {
+        "id": "C",
+        "text": "18"
+      },
+      {
+        "id": "D",
+        "text": "9"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This repeats r² instead of taking its square root.",
+      "B": "This halves 81 rather than taking a square root and doubling.",
+      "C": "Correct — r² = 81 gives r = 9, and the diameter is twice that.",
+      "D": "This is the radius, one step short of the diameter."
+    }
+  },
+  {
+    "id": "m555",
+    "section": "math",
+    "topic": "circles",
+    "difficulty": "hard",
+    "context": "In a circle of radius 10, a sector has a central angle of 72°. What is the area of the sector?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4π"
+      },
+      {
+        "id": "B",
+        "text": "72π"
+      },
+      {
+        "id": "C",
+        "text": "100π"
+      },
+      {
+        "id": "D",
+        "text": "20π"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This is the arc length of the sector rather than its area.",
+      "B": "This treats the angle itself as the area in square units.",
+      "C": "This is the area of the whole circle, before the fraction is applied.",
+      "D": "Correct — 72/360 is one fifth, and one fifth of 100π is 20π."
+    }
+  },
+  {
+    "id": "m556",
+    "section": "math",
+    "topic": "circles",
+    "difficulty": "hard",
+    "context": "A circle is inscribed in a square with sides of length 12. What is the area of the region inside the square but outside the circle?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "144 − 36π"
+      },
+      {
+        "id": "B",
+        "text": "144 − 144π"
+      },
+      {
+        "id": "C",
+        "text": "36π − 144"
+      },
+      {
+        "id": "D",
+        "text": "144 − 12π"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the circle has radius 6, so 144 − 36π is what the square has left over.",
+      "B": "This uses the side of the square as the radius rather than half of it.",
+      "C": "This subtracts in the wrong order, which would give a negative area.",
+      "D": "This uses the diameter in place of the radius squared."
+    }
   }
 ]
