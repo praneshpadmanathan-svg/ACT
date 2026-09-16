@@ -50,7 +50,12 @@ import { join } from 'node:path';
 const root = new URL('..', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
 const contentDir = join(root, 'src/content');
 
-const readJSON = (name) => JSON.parse(readFileSync(join(contentDir, name), 'utf8'));
+const expansion = JSON.parse(readFileSync(join(contentDir, 'expansion.json'), 'utf8'));
+const readJSON = (name) => {
+  const data = JSON.parse(readFileSync(join(contentDir, name), 'utf8'));
+  const match = /^(questions|passages)(English|Math|Reading|Science)\.json$/.exec(name);
+  return match ? [...data, ...(expansion[match[1]][match[2].toLowerCase()] ?? [])] : data;
+};
 
 const canonicalTopic = (raw) =>
   raw.trim().replace(/[–—]/g, '-').replace(/_/g, ' ').replace(/\s+/g, ' ').toLowerCase();

@@ -82,6 +82,8 @@ export interface Choice {
 
 /** A drill / test question. `why` explains every choice, not just the key. */
 export interface Question {
+  /** Focused exercises excluded from timed assessment sampling. */
+  practiceOnly?: boolean;
   id: string;
   section: SectionId;
   topic: string;

@@ -36,6 +36,7 @@ import questionsEnglish from './questionsEnglish.json';
 import questionsMath from './questionsMath.json';
 import questionsReading from './questionsReading.json';
 import questionsScience from './questionsScience.json';
+import expansion from './expansion.json';
 
 import passagesEnglish from './passagesEnglish.json';
 import passagesReading from './passagesReading.json';
@@ -67,10 +68,10 @@ export const getNotePage = (id: string) => NOTE_PAGE_BY_ID.get(id);
 /* --------------------------------------------------------------- questions */
 
 export const QUESTIONS: Record<SectionId, Question[]> = {
-  english: questionsEnglish as Question[],
-  math: questionsMath as Question[],
-  reading: questionsReading as Question[],
-  science: questionsScience as Question[],
+  english: [...questionsEnglish, ...expansion.questions.english] as Question[],
+  math: [...questionsMath, ...expansion.questions.math] as Question[],
+  reading: [...questionsReading, ...expansion.questions.reading] as Question[],
+  science: [...questionsScience, ...expansion.questions.science] as Question[],
 };
 
 export const ALL_QUESTIONS: Question[] = SECTIONS.flatMap((s) => QUESTIONS[s.id]);
@@ -86,6 +87,8 @@ export const TOPICS_BY_SECTION: Record<SectionId, string[]> = Object.fromEntries
 /* ---------------------------------------------------------------- passages */
 
 export const PASSAGES: Passage[] = [
+  ...(expansion.passages.reading as Passage[]),
+  ...(expansion.passages.science as Passage[]),
   ...(passagesEnglish as Passage[]),
   ...(passagesReading as Passage[]),
   ...(passagesScience as Passage[]),
