@@ -18870,5 +18870,467 @@
       "C": "Without an apostrophe the word is a plain plural and owns nothing at all.",
       "D": "A bare singular disagrees with \"three\" and marks no possession either."
     }
+  },
+  {
+    "id": "e519",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "easy",
+    "passage": "ep31",
+    "context": "The clerk checks the spelling, the historian checks the record, and the fire officer «checking» the sound.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "to check"
+      },
+      {
+        "id": "C",
+        "text": "checks"
+      },
+      {
+        "id": "D",
+        "text": "having checked"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "A participle cannot match the two plain finite verbs the list has already used.",
+      "B": "An infinitive breaks a pattern the first two items set with ordinary present verbs.",
+      "C": "Correct — \"checks\" matches the \"checks\" that opens each of the first two items.",
+      "D": "A perfect participle shifts the time as well as breaking the pattern of the list."
+    }
+  },
+  {
+    "id": "e520",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "easy",
+    "passage": "ep33",
+    "context": "The older audience could applaud a striking passage, a slow movement, or «whenever a soloist pleased them».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "when a soloist pleased them"
+      },
+      {
+        "id": "C",
+        "text": "if a soloist was pleasing"
+      },
+      {
+        "id": "D",
+        "text": "a pleasing soloist"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "A clause cannot join a list whose other two members are both noun phrases.",
+      "B": "Swapping \"whenever\" for \"when\" leaves a clause where a noun phrase belongs.",
+      "C": "An \"if\" clause is still a clause and still breaks the pattern the list set.",
+      "D": "Correct — a noun phrase matches \"a striking passage\" and \"a slow movement\"."
+    }
+  },
+  {
+    "id": "e521",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "easy",
+    "passage": "ep31",
+    "context": "The historian is asked whether the record supports what the brochure says «about» the person.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "into"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — what a text \"says about\" a person is the ordinary English phrasing.",
+      "B": "\"Says for\" would mean speaking on someone's behalf, which is not the sense here.",
+      "C": "\"Says at\" is not English; one may speak at a person but does not say at them.",
+      "D": "\"Says into\" needs a thing spoken into, such as a microphone or a recorder."
+    }
+  },
+  {
+    "id": "e522",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "easy",
+    "passage": "ep33",
+    "context": "The rule applies «to» every movement of a symphony, not merely the first.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "on"
+      },
+      {
+        "id": "D",
+        "text": "at"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a rule \"applies to\" whatever it governs, which is the standard phrasing.",
+      "B": "\"Applies for\" is what a person does in seeking a job, a licence or a grant.",
+      "C": "\"Applies on\" describes spreading something onto a surface rather than governing it.",
+      "D": "\"Applies at\" would give a place or a time, not the thing a rule covers."
+    }
+  },
+  {
+    "id": "e523",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "hard",
+    "passage": "ep31",
+    "context": "The «committees» three members meet only when a developer hands in a list.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "committee’s"
+      },
+      {
+        "id": "C",
+        "text": "committees’"
+      },
+      {
+        "id": "D",
+        "text": "committee"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Without an apostrophe the word is a plain plural and marks no possession at all.",
+      "B": "Correct — one committee owns the members, so the apostrophe goes before the s.",
+      "C": "The plural possessive would mean several committees, and the city convenes one.",
+      "D": "A bare singular marks no possession and leaves two nouns sitting side by side."
+    }
+  },
+  {
+    "id": "e524",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "hard",
+    "passage": "ep33",
+    "context": "The «composers» letters home describe applause in the middle of a movement.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "composer’s"
+      },
+      {
+        "id": "C",
+        "text": "composers’"
+      },
+      {
+        "id": "D",
+        "text": "composer"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Without an apostrophe the word is a plain plural and owns nothing in the sentence.",
+      "B": "The singular possessive would make one composer the author of all the letters.",
+      "C": "Correct — many composers wrote home, and a plural in s takes the apostrophe after it.",
+      "D": "A bare singular contradicts the passage and marks no possession either way."
+    }
+  },
+  {
+    "id": "e525",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "hard",
+    "passage": "ep31",
+    "context": "The committee objected less to the name than to the «developers» insisting on it.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "developers’"
+      },
+      {
+        "id": "C",
+        "text": "developer"
+      },
+      {
+        "id": "D",
+        "text": "developer’s"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Without an apostrophe the word is a plural noun and cannot own the insisting.",
+      "B": "The plural possessive would put several developers behind a single list of names.",
+      "C": "A bare singular leaves the gerund with no owner and no apostrophe at all.",
+      "D": "Correct — a gerund takes a possessive before it, and one developer is insisting."
+    }
+  },
+  {
+    "id": "e526",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "hard",
+    "passage": "ep33",
+    "context": "The convention is worth keeping«, however, the policing of it is not.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "; however, the policing of it is not."
+      },
+      {
+        "id": "C",
+        "text": ", the policing of it, however, is not."
+      },
+      {
+        "id": "D",
+        "text": ", however the policing of it is not."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"However\" is a conjunctive adverb and cannot join two clauses across a comma.",
+      "B": "Correct — a semicolon carries the join, and \"however\" then sits inside the second clause.",
+      "C": "Moving \"however\" into the clause leaves the comma splice exactly where it was.",
+      "D": "Dropping the comma after \"however\" changes nothing about the join at the front."
+    }
+  },
+  {
+    "id": "e527",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "hard",
+    "passage": "ep31",
+    "context": "The fire officer’s rules come first«, nevertheless the historian is assumed to hold the pen.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", nevertheless, the historian is assumed to hold the pen."
+      },
+      {
+        "id": "C",
+        "text": "; nevertheless, the historian is assumed to hold the pen."
+      },
+      {
+        "id": "D",
+        "text": ": nevertheless the historian is assumed to hold the pen."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "A comma alone cannot join two clauses, and \"nevertheless\" joins nothing either.",
+      "B": "Adding a comma after the adverb leaves the splice in front of it exactly as it was.",
+      "C": "Correct — the semicolon carries the join and \"nevertheless\" marks the contrast.",
+      "D": "A colon promises that what follows explains what came before, and this contradicts it."
+    }
+  },
+  {
+    "id": "e528",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "hard",
+    "passage": "ep33",
+    "context": "A slow movement can now end in its own quiet«, moreover the shape of a symphony became audible.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", moreover, the shape of a symphony became audible."
+      },
+      {
+        "id": "C",
+        "text": ", moreover the shape of a symphony becoming audible."
+      },
+      {
+        "id": "D",
+        "text": "; moreover, the shape of a symphony became audible."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "\"Moreover\" is an adverb, so the comma is left joining two full clauses on its own.",
+      "B": "A comma after the adverb does nothing about the comma splice ahead of it.",
+      "C": "A participle leaves the second half without a finite verb and so without a clause.",
+      "D": "Correct — a semicolon joins the clauses and \"moreover\" adds the second to the first."
+    }
+  },
+  {
+    "id": "e529",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "hard",
+    "passage": "ep31",
+    "context": "Roughly a third of proposed commemorations rest on a claim that «nobody can source or find the origin of».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "nobody can source"
+      },
+      {
+        "id": "C",
+        "text": "nobody can source or locate the origin of"
+      },
+      {
+        "id": "D",
+        "text": "no one person is able to source"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Source\" and \"find the origin of\" say the same thing twice in the same clause.",
+      "B": "Correct — one verb carries the whole meaning the pair was splitting between them.",
+      "C": "Swapping \"find\" for \"locate\" keeps the repetition and only changes its wording.",
+      "D": "This runs longer than the original and adds \"one person\", which narrows nothing."
+    }
+  },
+  {
+    "id": "e530",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "hard",
+    "passage": "ep33",
+    "context": "The modern hall returns one «single undifferentiated verdict, a verdict that is not broken down,» at the end of forty minutes.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "single verdict that is undifferentiated,"
+      },
+      {
+        "id": "C",
+        "text": "undifferentiated verdict"
+      },
+      {
+        "id": "D",
+        "text": "single, undifferentiated verdict that is whole,"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "\"One\", \"single\" and \"not broken down\" all repeat what \"undifferentiated\" says.",
+      "B": "Moving the adjective into a relative clause keeps \"single\" and spends words saying it.",
+      "C": "Correct — a single adjective carries what the original spread across three phrases.",
+      "D": "\"Whole\" repeats \"undifferentiated\" a third time rather than replacing anything."
+    }
+  },
+  {
+    "id": "e531",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "hard",
+    "passage": "ep31",
+    "context": "When the clerk handed the historian the brochure, «she» returned it without an argument about merit.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "her"
+      },
+      {
+        "id": "C",
+        "text": "they"
+      },
+      {
+        "id": "D",
+        "text": "the historian"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "\"She\" could be the clerk or the historian, and the sentence never settles which.",
+      "B": "An object form cannot serve as the subject of \"returned\" in this clause.",
+      "C": "\"They\" is plural and leaves the same ambiguity it was brought in to clear up.",
+      "D": "Correct — naming the historian removes an ambiguity no pronoun can resolve here."
+    }
+  },
+  {
+    "id": "e532",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "hard",
+    "passage": "ep33",
+    "context": "Neither the critic nor the publishers thought «their» work was finished that decade.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "his"
+      },
+      {
+        "id": "C",
+        "text": "its"
+      },
+      {
+        "id": "D",
+        "text": "one’s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — after neither/nor the pronoun matches the nearer subject, which is plural.",
+      "B": "A singular pronoun would agree with the critic, who is the further of the two.",
+      "C": "\"Its\" would treat a group of people as a thing rather than as persons.",
+      "D": "\"One's\" is indefinite and points to nobody actually named in the sentence."
+    }
   }
 ]
