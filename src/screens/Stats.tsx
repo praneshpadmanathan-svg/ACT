@@ -1,8 +1,8 @@
 /* Progress analytics and the profile / settings screen. */
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { LIBRARY_STATS, PATH_BY_ID, SECTIONS, SECTION_BY_ID } from '@/content';
-import { hrefFor, useNavigate } from '@/lib/router';
+import { hrefFor } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import {
   ACHIEVEMENTS,
@@ -13,18 +13,12 @@ import {
   sectionAccuracy,
   topicStats,
 } from '@/lib/progress';
-import { cloudEnabled } from '@/lib/supabase';
-import { downloadProgress } from '@/lib/exportData';
 import { cx, formatRelative, titleCase } from '@/lib/utils';
 import { Page } from '@/components/Shell';
 import { Button, ProgressBar, RankBadge, SectionHeading, EmptyState } from '@/components/ui';
-import { Glyph } from '@/components/Icon';
-import { DateField } from '@/components/fields';
 import { AchievementBadge } from '@/components/RankSigil';
 import { ScoreCaveat } from '@/components/ScoreCaveat';
-import { PlanPanel, ProGate } from '@/components/ProGate';
 import { ActivityChart, MIN_TREND_POINTS, ScoreTrend } from '@/components/StatCharts';
-import { DiagnosticsPanel, DisplaySettings } from '@/components/Settings';
 import { HeroChooser } from '@/game/HeroChooser';
 import { HeroSprite } from '@/game/HeroSprite';
 
@@ -174,12 +168,7 @@ export function StatsScreen() {
           than no streak counter at all. What Pro buys is the *breakdown* — the
           part that tells you what to do next, which is the part that takes the
           section model, the history and the topic table to compute. */}
-      <ProGate
-        feature="analytics"
-        title="The full breakdown"
-        detail="Where the time went, which topics are costing you points, and twelve weeks of history. Your headline numbers above stay free."
-      >
-        {/* Small multiples: the same card, the same 0-100% scale, the same four
+      {/* Small multiples: the same card, the same 0-100% scale, the same four
           pieces in the same four places, repeated once per section. That
           sameness is the point — it is what lets the eye compare four things
           by shape instead of by reading four numbers.
@@ -191,52 +180,50 @@ export function StatsScreen() {
           target of 8. They are fine as one accent per titled card, which is
           all they are used as here, and must never become the only thing
           telling two series apart inside one plot. */}
-        <h2 className="heading mb-4 text-[13px] text-parchment">By section</h2>
-        <div className="mb-6 grid gap-3 sm:grid-cols-2">
-          {SECTIONS.map((section) => {
-            const { n, ok, pct } = sectionAccuracy(progress, section.id);
-            const path = PATH_BY_ID[section.id];
-            const zones = path.nodes.filter(
-              (z) => progress.zonesCleared[z.id] !== undefined,
-            ).length;
+      <h2 className="heading mb-4 text-[13px] text-parchment">By section</h2>
+      <div className="mb-6 grid gap-3 sm:grid-cols-2">
+        {SECTIONS.map((section) => {
+          const { n, ok, pct } = sectionAccuracy(progress, section.id);
+          const path = PATH_BY_ID[section.id];
+          const zones = path.nodes.filter((z) => progress.zonesCleared[z.id] !== undefined).length;
 
-            return (
-              <div key={section.id} className="panel-quiet p-5">
-                <div className="flex items-baseline justify-between">
-                  <h3 className="heading text-[12px]" style={{ color: section.color }}>
-                    {section.name}
-                  </h3>
-                  <span className="num text-[26px]" style={{ color: section.color }}>
-                    {n >= 5 ? `${Math.round(pct * 100)}%` : '—'}
-                  </span>
-                </div>
-                <div className="mt-3">
-                  <ProgressBar value={pct} color={section.color} height={8} />
-                </div>
-                <div className="mt-2.5 flex justify-between font-script text-[10px] uppercase tracking-wide text-ink-faint">
-                  <span>
-                    {ok}/{n} correct
-                  </span>
-                  <span>
-                    {zones}/{path.nodes.length} zones
-                  </span>
-                </div>
+          return (
+            <div key={section.id} className="panel-quiet p-5">
+              <div className="flex items-baseline justify-between">
+                <h3 className="heading text-[12px]" style={{ color: section.color }}>
+                  {section.name}
+                </h3>
+                <span className="num text-[26px]" style={{ color: section.color }}>
+                  {n >= 5 ? `${Math.round(pct * 100)}%` : '—'}
+                </span>
               </div>
-            );
-          })}
-        </div>
+              <div className="mt-3">
+                <ProgressBar value={pct} color={section.color} height={8} />
+              </div>
+              <div className="mt-2.5 flex justify-between font-script text-[10px] uppercase tracking-wide text-ink-faint">
+                <span>
+                  {ok}/{n} correct
+                </span>
+                <span>
+                  {zones}/{path.nodes.length} zones
+                </span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
 
-        {/* activity */}
-        <h2 className="heading mb-4 text-[13px] text-parchment">Last 12 weeks</h2>
-        <div className="panel-quiet mb-6 p-5">
-          <ActivityChart counts={activity} />
-        </div>
+      {/* activity */}
+      <h2 className="heading mb-4 text-[13px] text-parchment">Last 12 weeks</h2>
+      <div className="panel-quiet mb-6 p-5">
+        <ActivityChart counts={activity} />
+      </div>
 
-        {/* topics */}
-        <h2 className="heading mb-4 text-[13px] text-parchment">Every topic you have tried</h2>
-        <div className="space-y-2">
-          {allTopics.map((t) => {
-            /* There is no "Zone" label any more. It was never a section — it
+      {/* topics */}
+      <h2 className="heading mb-4 text-[13px] text-parchment">Every topic you have tried</h2>
+      <div className="space-y-2">
+        {allTopics.map((t) => {
+          /* There is no "Zone" label any more. It was never a section — it
              was the bug, standing as a fifth column beside the four real
              ones and taking every landmark topic with it. A topic you met at
              a landmark is an English topic, and English is the only honest
@@ -246,43 +233,42 @@ export function StatsScreen() {
              have aged out of the answer log before the migration in
              `progress.ts` could place them. Those render with no section
              rather than with an invented one. */
-            const meta = t.section === 'zone' ? undefined : SECTION_BY_ID[t.section];
-            return (
-              <div
-                key={`${t.section}-${t.topic}`}
-                className="panel-quiet flex items-center gap-4 px-4 py-3"
+          const meta = t.section === 'zone' ? undefined : SECTION_BY_ID[t.section];
+          return (
+            <div
+              key={`${t.section}-${t.topic}`}
+              className="panel-quiet flex items-center gap-4 px-4 py-3"
+            >
+              <span className="w-36 flex-none truncate font-sans text-[13px] font-semibold text-parchment sm:w-48">
+                {titleCase(t.topic)}
+              </span>
+              <span
+                className="hidden w-16 flex-none font-script text-[10px] uppercase tracking-wide sm:block"
+                style={{ color: meta?.color }}
               >
-                <span className="w-36 flex-none truncate font-sans text-[13px] font-semibold text-parchment sm:w-48">
-                  {titleCase(t.topic)}
-                </span>
-                <span
-                  className="hidden w-16 flex-none font-script text-[10px] uppercase tracking-wide sm:block"
-                  style={{ color: meta?.color }}
-                >
-                  {meta?.name}
-                </span>
-                <ProgressBar
-                  value={t.accuracy}
-                  color={
-                    t.accuracy < 0.5
-                      ? 'oklch(var(--c-blood-text))'
-                      : t.accuracy < 0.75
-                        ? 'oklch(var(--c-gold))'
-                        : 'oklch(var(--c-woods-text))'
-                  }
-                  height={8}
-                />
-                <span className="num w-14 flex-none text-right text-[15px] text-parchment-dim">
-                  {t.correct}/{t.attempts}
-                </span>
-                <span className="num hidden w-12 flex-none text-right text-[14px] text-ink-faint sm:block">
-                  {t.avgSeconds.toFixed(0)}s
-                </span>
-              </div>
-            );
-          })}
-        </div>
-      </ProGate>
+                {meta?.name}
+              </span>
+              <ProgressBar
+                value={t.accuracy}
+                color={
+                  t.accuracy < 0.5
+                    ? 'oklch(var(--c-blood-text))'
+                    : t.accuracy < 0.75
+                      ? 'oklch(var(--c-gold))'
+                      : 'oklch(var(--c-woods-text))'
+                }
+                height={8}
+              />
+              <span className="num w-14 flex-none text-right text-[15px] text-parchment-dim">
+                {t.correct}/{t.attempts}
+              </span>
+              <span className="num hidden w-12 flex-none text-right text-[14px] text-ink-faint sm:block">
+                {t.avgSeconds.toFixed(0)}s
+              </span>
+            </div>
+          );
+        })}
+      </div>
     </Page>
   );
 }
@@ -309,40 +295,28 @@ function Figure({ label, value }: { label: string; value: string }) {
 /* -------------------------------------------------------------- profile */
 
 export function ProfileScreen() {
-  const thisYear = new Date().getFullYear();
-  const navigate = useNavigate();
-  const {
-    progress,
-    rank,
-    rankIndex,
-    playerName,
-    isGuest,
-    syncing,
-    lastSyncError,
-    signOut,
-    syncNow,
-    updateProgress,
-    resetEverything,
-    deleteAccount,
-  } = useStore();
+  const { progress, rank, rankIndex, playerName } = useStore();
 
   const { pct, next } = rankProgress(progress.xp);
   const unlocked = new Set(progress.achievements);
-  const [erasing, setErasing] = useState(false);
-  const [eraseError, setEraseError] = useState<string | null>(null);
 
   return (
     <Page>
-      <SectionHeading eyebrow="Your account" title="Profile" />
+      <SectionHeading
+        eyebrow="Your account"
+        title="Profile"
+        right={
+          <a href={hrefFor({ name: 'settings' })}>
+            <Button>Settings</Button>
+          </a>
+        }
+      />
 
-      {/* First panel on the screen, above the account block, because every
-          upsell in the app links here and landing below the fold on the thing
-          you were sent to read is its own small insult. */}
-      <PlanPanel />
-
-      {/* identity */}
-      <div className="mb-6 grid gap-4 lg:grid-cols-[1fr_1.2fr]">
-        <div className="panel p-6 text-center sm:p-7">
+      {/* identity — one column since the settings panel moved out; a lone
+          card stretched across a 1fr/1.2fr grid is a card with an empty half
+          beside it. */}
+      <div className="mb-6">
+        <div className="panel mx-auto max-w-md p-6 text-center sm:p-7">
           {/* The traveller and the rank together. Previously this was the
               badge alone, which meant the one picture of "you" in the whole
               app was a heraldic device rather than a person. */}
@@ -379,170 +353,6 @@ export function ProfileScreen() {
             </p>
           </div>
         </div>
-
-        <div className="panel p-6 sm:p-7">
-          <h3 className="heading mb-5 text-[12px] text-parchment">Settings</h3>
-
-          <label className="mb-5 block">
-            <span className="mb-2 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
-              Target score
-            </span>
-            <div className="flex flex-wrap gap-2">
-              {[24, 27, 30, 33, 36].map((score) => (
-                <button
-                  key={score}
-                  type="button"
-                  onClick={() => updateProgress((p) => ({ ...p, targetScore: score }))}
-                  className={cx(
-                    'num rounded-lg border-2 px-4 py-2 text-[19px] transition-colors',
-                    progress.targetScore === score
-                      ? 'border-gilt bg-gilt text-[#2a2000]'
-                      : 'border-leather-700 bg-leather-800 text-parchment-dim hover:border-gold-deep',
-                  )}
-                >
-                  {score}
-                </button>
-              ))}
-            </div>
-          </label>
-
-          {/* Onboarding promises this can be changed later, so it has to be
-              changeable later. Clearing it stops the countdown rather than
-              leaving a date that has quietly gone by. */}
-          <label className="mb-5 block">
-            <span className="mb-2 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
-              Test date
-            </span>
-            <div className="flex flex-wrap items-center gap-2.5">
-              <div className="min-w-[15rem] flex-1">
-                <DateField
-                  value={progress.profile?.testDate ?? ''}
-                  onChange={(iso) =>
-                    updateProgress((p) => ({
-                      ...p,
-                      profile: p.profile ? { ...p.profile, testDate: iso || null } : p.profile,
-                    }))
-                  }
-                  fromYear={thisYear}
-                  toYear={thisYear + 2}
-                  ariaPrefix="Test date"
-                />
-              </div>
-              {progress.profile?.testDate && (
-                <Button
-                  variant="ghost"
-                  onClick={() =>
-                    updateProgress((p) => ({
-                      ...p,
-                      profile: p.profile ? { ...p.profile, testDate: null } : p.profile,
-                    }))
-                  }
-                >
-                  Clear
-                </Button>
-              )}
-            </div>
-          </label>
-
-          <div className="border-t-2 border-leather-700 pt-5">
-            <span className="mb-2.5 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
-              Account
-            </span>
-
-            {isGuest ? (
-              <>
-                <p className="mb-3 text-[13px] leading-relaxed text-ink-faint">
-                  {cloudEnabled
-                    ? 'You are playing without an account, so progress lives in this browser only — clearing your browser data would end the journey. An account carries it to your phone.'
-                    : 'This deployment has no account server, so progress saves to this browser only.'}
-                </p>
-                {cloudEnabled && (
-                  <Button
-                    variant="primary"
-                    onClick={() => navigate({ name: 'auth', mode: 'signup' })}
-                  >
-                    Save my progress
-                  </Button>
-                )}
-              </>
-            ) : (
-              <>
-                <p className="mb-3 text-[13px] leading-relaxed text-ink-faint">
-                  Signed in as <b className="text-parchment">{playerName}</b>. Your progress syncs
-                  to every device you sign in on.
-                </p>
-                <div className="flex flex-wrap gap-2.5">
-                  <Button variant="ghost" onClick={() => void syncNow()} disabled={syncing}>
-                    {syncing ? 'Syncing…' : 'Sync now'}
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    onClick={() => {
-                      void signOut();
-                      navigate({ name: 'landing' });
-                    }}
-                  >
-                    Sign out
-                  </Button>
-                </div>
-              </>
-            )}
-
-            {/* Your data, on your terms — and export sits next to delete on
-                purpose, so erasing everything is never the only way out. */}
-            <div className="mt-5 border-t-2 border-leather-700 pt-5">
-              <span className="mb-2.5 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
-                Your data
-              </span>
-              <Button
-                variant="ghost"
-                onClick={() =>
-                  downloadProgress(progress, isGuest ? undefined : { name: playerName })
-                }
-              >
-                Download everything
-                <Glyph name="chevronDown" size={14} strokeWidth={2} className="-mr-1" />
-              </Button>
-              <p className="mt-2.5 text-[12px] leading-relaxed text-ink-faint">
-                A file with all of it — XP, accuracy by topic, test results, achievements.
-              </p>
-            </div>
-
-            {lastSyncError && (
-              <p className="mt-3 rounded-lg border-2 border-blood/40 bg-blood/10 px-3 py-2 text-[12px] leading-snug text-[#e8a094]">
-                {lastSyncError}
-              </p>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* The explainer was reachable from the landing page and nowhere else,
-          which means the moment you actually have the question — mid-way
-          through, looking at a number you do not trust — you are on a screen
-          with no way to it. */}
-      <div className="panel mb-6 flex flex-wrap items-center gap-x-5 gap-y-2 p-5">
-        <span className="font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
-          Questions about the app
-        </span>
-        <a
-          href={hrefFor({ name: 'faq' })}
-          className="font-read text-[13.5px] text-parchment-dim underline underline-offset-4 transition-colors hover:text-parchment"
-        >
-          What the ACT is, how accurate the score is, why it's free
-        </a>
-        <a
-          href={hrefFor({ name: 'privacy' })}
-          className="font-read text-[13.5px] text-parchment-dim underline underline-offset-4 transition-colors hover:text-parchment"
-        >
-          Privacy
-        </a>
-        <a
-          href={hrefFor({ name: 'terms' })}
-          className="font-read text-[13.5px] text-parchment-dim underline underline-offset-4 transition-colors hover:text-parchment"
-        >
-          Terms
-        </a>
       </div>
 
       {/* traveller */}
@@ -554,9 +364,6 @@ export function ProfileScreen() {
         </p>
         <HeroChooser />
       </div>
-
-      {/* display and accessibility */}
-      <DisplaySettings />
 
       {/* ranks */}
       <h2 className="heading mb-4 text-[13px] text-parchment">Ranks</h2>
@@ -627,8 +434,8 @@ export function ProfileScreen() {
         })}
       </div>
 
-      {/* library + danger zone */}
-      <div className="grid gap-4 lg:grid-cols-2">
+      {/* library */}
+      <div>
         <div className="panel p-6">
           <h3 className="heading mb-4 text-[12px] text-parchment">Your library</h3>
           <dl className="space-y-2 text-[14px]">
@@ -647,72 +454,7 @@ export function ProfileScreen() {
             )}
           </dl>
         </div>
-
-        <div className="rounded-lg border-2 border-blood/40 bg-leather-850 p-6">
-          <h3 className="heading mb-3 text-[12px] text-blood-text">Danger zone</h3>
-          <p className="mb-4 text-[13px] leading-relaxed text-ink-faint">
-            Deletes all XP, answers, cleared zones and test results
-            {isGuest ? ' from this browser' : ', on every device and in the cloud'}. This cannot be
-            undone — download your data first if you want to keep a copy.
-          </p>
-          <div className="flex flex-wrap gap-2.5">
-            <Button
-              variant="danger"
-              disabled={erasing}
-              onClick={() => {
-                const ok = window.confirm(
-                  isGuest
-                    ? 'Delete all progress on this device? This cannot be undone.'
-                    : 'Delete all progress everywhere, including the cloud copy? Your account stays. This cannot be undone.',
-                );
-                if (ok) void resetEverything();
-              }}
-            >
-              Reset progress
-            </Button>
-
-            {!isGuest && (
-              <Button
-                variant="danger"
-                disabled={erasing}
-                onClick={() => {
-                  /* Two prompts, because this one takes the account with it and
-                     there is no undo, no grace period and no copy kept. */
-                  if (!window.confirm('Delete your account and all of your progress?')) return;
-                  if (
-                    !window.confirm(
-                      'Last check — this is permanent. Your account, your email and every bit of progress will be erased and cannot be recovered.',
-                    )
-                  ) {
-                    return;
-                  }
-                  setEraseError(null);
-                  setErasing(true);
-                  void deleteAccount().then((result) => {
-                    if (!result.ok) {
-                      setEraseError(result.error ?? 'Could not delete the account.');
-                      setErasing(false);
-                    }
-                  });
-                }}
-              >
-                {erasing ? 'Deleting…' : 'Delete my account'}
-              </Button>
-            )}
-          </div>
-
-          {eraseError && (
-            <p className="mt-3 rounded-lg border-2 border-blood/40 bg-blood/10 px-3 py-2 text-[12px] leading-snug text-[#e8a094]">
-              {eraseError}
-            </p>
-          )}
-        </div>
       </div>
-
-      {/* Last on the page on purpose: nobody goes looking for this until
-          something has already gone wrong, and it is the only block here that
-          is addressed to us rather than to the student. */}
-      <DiagnosticsPanel />
     </Page>
   );
 }

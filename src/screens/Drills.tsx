@@ -23,8 +23,6 @@ import {
 } from '@/components/QuestionRunner';
 import { RichText } from '@/components/RichText';
 import { Glyph } from '@/components/Icon';
-import { ProGate, ProUpsell } from '@/components/ProGate';
-import { FREE_SECTIONS, sectionIsFree } from '@/lib/features';
 
 const LENGTHS = [5, 10, 20];
 
@@ -32,7 +30,7 @@ const LENGTHS = [5, 10, 20];
 
 export function DrillsScreen({ section }: { section?: string }) {
   const navigate = useNavigate();
-  const { progress, isPro } = useStore();
+  const { progress } = useStore();
   const active = (section as SectionId) ?? 'english';
   const meta = SECTION_BY_ID[active];
 
@@ -55,22 +53,6 @@ export function DrillsScreen({ section }: { section?: string }) {
               English drills
             </Button>
           }
-        />
-      </Page>
-    );
-  }
-
-  /* Same reasoning as the Study road: the route is the thing that has to be
-     gated, because `#/drills/science` is reachable without ever seeing a pill.
-     The heading and the pills stay so the way back to English is one tap. */
-  if (!isPro && !sectionIsFree(active)) {
-    return (
-      <Page>
-        <SectionHeading eyebrow={meta.name} title="Drills" detail={meta.blurb} />
-        <SectionTabs active={active} hrefFor={(id) => hrefFor({ name: 'drills', section: id })} />
-        <ProUpsell
-          title={`${meta.name} drills are Pro`}
-          detail={`${QUESTIONS[active].length} graded ${meta.name.toLowerCase()} questions, every choice explained — plus the road, the notes and the guardian that go with them.`}
         />
       </Page>
     );
@@ -216,7 +198,7 @@ function pickAdaptive(
 
 export function DrillRunner({ section, topic }: { section: string; topic?: string }) {
   const navigate = useNavigate();
-  const { progress, answerQuestion, isPro } = useStore();
+  const { progress, answerQuestion } = useStore();
   const [results, setResults] = useState<AnswerRecord[] | null>(null);
 
   const sectionId = section as SectionId;
@@ -255,21 +237,6 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
     // would swap questions under the player.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sectionId, topic]);
-
-  /* The setup screen is gated, but a drill is a URL of its own — bookmarked
-     mid-session, or reached from a Camp suggestion written before the trial
-     ran out. Checked after the hooks above, never before: an early return
-     placed above `useMemo` would change the hook count between renders. */
-  if (meta && !isPro && !sectionIsFree(sectionId)) {
-    return (
-      <Page>
-        <ProUpsell
-          title={`${meta.name} drills are Pro`}
-          detail="This drill is on one of the Pro roads. English drills stay open, and Pro opens the other three."
-        />
-      </Page>
-    );
-  }
 
   if (!meta || questions.length === 0) {
     return (
@@ -333,11 +300,7 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
    there is no coherent English-only version of it to give away. The wrapper
    sits outside the body so the hooks inside run identically either way. */
 export function ReviewScreen() {
-  return (
-    <ProGate feature="review" page>
-      <ReviewSession />
-    </ProGate>
-  );
+  return <ReviewSession />;
 }
 
 function ReviewSession() {
@@ -607,7 +570,7 @@ export function BookmarksScreen() {
  * seconds this exists to fill. */
 export function DailyScreen() {
   const navigate = useNavigate();
-  const { progress, answerQuestion, finishDaily, isPro } = useStore();
+  const { progress, answerQuestion, finishDaily } = useStore();
   const [results, setResults] = useState<AnswerRecord[] | null>(null);
 
   const done = dailyDone(progress);
@@ -616,7 +579,7 @@ export function DailyScreen() {
      whole app is built to support, and taking it away would be selling the
      habit rather than the material. What it does not do is quietly hand out
      questions from the three roads that are locked. */
-  const allowed = isPro ? undefined : FREE_SECTIONS;
+  const allowed = undefined;
 
   /* Chosen once, from the state as it was on arrival. Not reactive to
      `progress`: answering question two must not re-pick questions three

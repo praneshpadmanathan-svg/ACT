@@ -26,13 +26,11 @@ import { RoadChooser } from '@/game/RoadChooser';
 import { PROLOGUE_ID } from '@/game/story';
 import { BossCard } from '@/game/BossCard';
 import { ClearedSigil, LockSigil } from '@/game/Sigils';
-import { ProUpsell } from '@/components/ProGate';
-import { sectionIsFree } from '@/lib/features';
 import { m, riseItem, staggerList } from '@/lib/motion';
 
 export function StudyScreen({ section }: { section?: string }) {
   const navigate = useNavigate();
-  const { progress, isPro } = useStore();
+  const { progress } = useStore();
   const { cleared: clearedOverall } = useZoneProgress();
 
   const sectionId = (section as SectionId) ?? 'english';
@@ -77,19 +75,6 @@ export function StudyScreen({ section }: { section?: string }) {
      pills. A person who lands here should be able to see which road this is,
      read why it costs money, and step back to English in one tap, rather than
      hitting a blank wall with no way out but the back button. */
-  if (!isPro && !sectionIsFree(sectionId)) {
-    return (
-      <Page>
-        <SectionHeading eyebrow={meta.name} title={region.title} detail={meta.blurb} />
-        <SectionTabs active={sectionId} hrefFor={(id) => hrefFor({ name: 'path', section: id })} />
-        <ProUpsell
-          title={`${region.title} is a Pro road`}
-          detail={`${meta.name} runs ${path.nodes.length} landmarks, its own drills and notes, and the guardian at the end. Pro opens this road and the other two, plus timed tests, spaced review and full progress.`}
-        />
-      </Page>
-    );
-  }
-
   const done = path.nodes.filter((n) => progress.zonesCleared[n.id] !== undefined).length;
   let unlockedSeen = false;
 

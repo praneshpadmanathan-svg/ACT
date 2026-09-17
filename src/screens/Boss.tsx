@@ -27,16 +27,11 @@ import { HeroSprite } from '@/game/HeroSprite';
 import { bossFor } from '@/game/bosses';
 import { REGIONS } from '@/content/regionFlavor';
 import { m, SPRING_SNAP } from '@/lib/motion';
-import { ProGate } from '@/components/ProGate';
 
 type Phase = 'intro' | 'fight' | 'won' | 'lost';
 
 export function BossScreen({ section }: { section: string }) {
-  return (
-    <ProGate feature="duels" page>
-      <BossDuel section={section} />
-    </ProGate>
-  );
+  return <BossDuel section={section} />;
 }
 
 function BossDuel({ section }: { section: string }) {

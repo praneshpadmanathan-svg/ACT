@@ -53,6 +53,7 @@ const load = {
   diagnostic: () => import('@/screens/Diagnostic'),
   tests: () => import('@/screens/Tests'),
   stats: () => import('@/screens/Stats'),
+  settings: () => import('@/screens/Settings'),
 };
 
 const Auth = lazy(() => load.auth().then((m) => ({ default: m.Auth })));
@@ -80,6 +81,7 @@ const TestRunner = lazy(() => load.tests().then((m) => ({ default: m.TestRunner 
 const ReportScreen = lazy(() => load.tests().then((m) => ({ default: m.ReportScreen })));
 const StatsScreen = lazy(() => load.stats().then((m) => ({ default: m.StatsScreen })));
 const ProfileScreen = lazy(() => load.stats().then((m) => ({ default: m.ProfileScreen })));
+const SettingsScreen = lazy(() => load.settings().then((m) => ({ default: m.SettingsScreen })));
 
 /** Routes that render their own full-screen chrome and suppress the top bar.
  *  The adventure map used to be here — a full-viewport game view with its own
@@ -359,6 +361,8 @@ function renderRoute(route: ReturnType<typeof useRoute>) {
       return <StatsScreen />;
     case 'profile':
       return <ProfileScreen />;
+    case 'settings':
+      return <SettingsScreen />;
     default:
       return <Home />;
   }

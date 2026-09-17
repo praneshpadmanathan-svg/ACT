@@ -18,8 +18,6 @@ import type { SectionId } from '@/types';
 import { AnimatePresence, m, useReducedMotion, PIN_SPRING } from '@/lib/motion';
 import { RankSigil, type SigilColors } from './RankSigil';
 import { Vignette, type VignetteName } from './Vignette';
-import { useStore } from '@/lib/store';
-import { sectionIsFree } from '@/lib/features';
 import { LockSigil } from '@/game/Sigils';
 
 type Variant = 'primary' | 'ghost' | 'danger' | 'quill';
@@ -537,12 +535,11 @@ export function SectionTabs({
      you cannot reach cannot explain itself — the destination renders the
      upsell, which is a better answer than a dead pill that does nothing when
      tapped. The sigil is what says "this one costs money". */
-  const { isPro } = useStore();
 
   return (
     <div className="mb-6 flex flex-wrap gap-2">
       {SECTIONS.map((s) => {
-        const locked = !isPro && !sectionIsFree(s.id);
+        const locked = false;
         return (
           <a
             key={s.id}

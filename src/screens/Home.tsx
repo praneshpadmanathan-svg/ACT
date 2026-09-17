@@ -39,15 +39,13 @@ import { useZoneProgress } from '@/lib/zoneProgress';
 import { REGIONS } from '@/content/regionFlavor';
 import { nextChapter } from '@/game/story';
 import { Art } from '@/components/Art';
-import { FREE_SECTIONS, sectionIsFree } from '@/lib/features';
-import { LockSigil } from '@/game/Sigils';
 
 /** Dismissal of the "make an account" nudge, so it asks once and takes no for
  *  an answer. Nagging a teenager for an email address is how you lose them. */
 const SAVE_PROMPT_KEY = 'act-command:save-prompt-dismissed';
 
 export function Home() {
-  const { progress, rank, playerName, isGuest, isPro } = useStore();
+  const { progress, rank, playerName, isGuest } = useStore();
   const navigate = useNavigate();
   const { current: standing, cleared, total, allCleared } = useZoneProgress();
 
@@ -57,18 +55,9 @@ export function Home() {
      one big button on the home screen would otherwise open an upsell. That is
      the worst possible place for a wall: it is the first thing they see, and
      it makes the app look finished rather than partly bought.
-     
-     So when the standing landmark is behind the gate, walk the free roads for
-     the first one that is not. If those are cleared too, `current` goes null
-     and the button becomes the Summit CTA, which is itself gated but is at
-     least an honest "you have finished what is open". */
-  const current =
-    standing && (isPro || sectionIsFree(standing.section))
-      ? standing
-      : (FREE_SECTIONS.map((id) => PATH_BY_ID[id])
-          .flatMap((path) => path?.nodes ?? [])
-          .filter((zone) => progress.zonesCleared[zone.id] === undefined)
-          .map((zone) => ({ zone }))[0] ?? null);
+          Nothing is gated any more, so the standing landmark is simply the one
+     to point at. */
+  const current = standing ?? null;
 
   const { pct, next } = rankProgress(progress.xp);
   const estimate = estimatedComposite(progress);
@@ -324,9 +313,6 @@ export function Home() {
                   <span className="min-w-0 flex-1">
                     <span className="flex items-center gap-1.5 font-display text-[15px] font-semibold text-parchment">
                       <span className="truncate">{titleCase(t.topic)}</span>
-                      {!isPro && !sectionIsFree(t.section) && (
-                        <LockSigil size={13} className="flex-none text-gold opacity-80" />
-                      )}
                     </span>
                     <span className="mt-0.5 block font-read text-[13.5px] text-ink-faint">
                       {t.correct}/{t.attempts} correct · {t.avgSeconds.toFixed(0)}s average

@@ -17,8 +17,6 @@ import { Button, EmptyState, ProgressBar } from '@/components/ui';
 import { RichText } from '@/components/RichText';
 import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
 import { burstConfetti } from '@/components/Feedback';
-import { ProUpsell } from '@/components/ProGate';
-import { sectionIsFree } from '@/lib/features';
 
 const QUIZ_LENGTH = 6;
 const PASS_MARK = 0.7;
@@ -46,7 +44,7 @@ type Phase = 'lesson' | 'quiz' | 'result';
 export function ZoneScreen({ zoneId }: { zoneId: string }) {
   const entry = getZone(zoneId);
   const navigate = useNavigate();
-  const { progress, answerQuestion, clearZone, isPro } = useStore();
+  const { progress, answerQuestion, clearZone } = useStore();
 
   const [phase, setPhase] = useState<Phase>('lesson');
   const [results, setResults] = useState<AnswerRecord[] | null>(null);
@@ -92,21 +90,6 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
 
   const { zone, path } = entry;
   const meta = SECTION_BY_ID[path.id];
-
-  /* A landmark is its own URL, and the one most likely to be held: it is what
-     "Continue your quest" points at and what the browser restores on reopen.
-     Gating only the road that lists it would leave the lesson and its quiz
-     wide open to anyone who had ever been here during their trial. */
-  if (!isPro && !sectionIsFree(path.id)) {
-    return (
-      <Page>
-        <ProUpsell
-          title={`${zone.name} is on a Pro road`}
-          detail={`This landmark belongs to ${meta?.name ?? 'another subject'}. English stays open in full; Pro reopens this road and the other two, along with the Summit, review and the guardians.`}
-        />
-      </Page>
-    );
-  }
 
   const lesson = LESSONS[zoneId];
   const best = progress.zonesCleared[zoneId] ?? null;

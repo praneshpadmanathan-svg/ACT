@@ -26,13 +26,11 @@ import {
 } from '@/components/ui';
 import { Glyph } from '@/components/Icon';
 import { RichText } from '@/components/RichText';
-import { ProUpsell } from '@/components/ProGate';
-import { sectionIsFree } from '@/lib/features';
 
 /* ------------------------------------------------------------- library */
 
 export function NotesScreen({ section }: { section?: string }) {
-  const { progress, isPro } = useStore();
+  const { progress } = useStore();
   const navigate = useNavigate();
   const active = (section as SectionId) ?? 'english';
   const meta = SECTION_BY_ID[active];
@@ -51,22 +49,6 @@ export function NotesScreen({ section }: { section?: string }) {
               English notes
             </Button>
           }
-        />
-      </Page>
-    );
-  }
-
-  /* Gated on the route, like the road and the drills it belongs with: a
-     locked subject is locked in all three places or in none, or the free tier
-     becomes a puzzle about which door happens to be open. */
-  if (!isPro && !sectionIsFree(active)) {
-    return (
-      <Page>
-        <SectionHeading eyebrow={meta.name} title="Study notes" detail={meta.blurb} />
-        <SectionTabs active={active} hrefFor={(id) => hrefFor({ name: 'notes', section: id })} />
-        <ProUpsell
-          title={`${meta.name} notes are Pro`}
-          detail="Every page that teaches this subject, each ending in a check question. English notes stay open for good."
         />
       </Page>
     );
@@ -154,7 +136,7 @@ export function NotesScreen({ section }: { section?: string }) {
 export function NoteReader({ pageId }: { pageId: string }) {
   const page = getNotePage(pageId);
   const navigate = useNavigate();
-  const { progress, markNoteRead, isPro } = useStore();
+  const { progress, markNoteRead } = useStore();
   const [scrolled, setScrolled] = useState(0);
   const articleRef = useRef<HTMLElement>(null);
 
@@ -204,21 +186,6 @@ export function NoteReader({ pageId }: { pageId: string }) {
   }
 
   const meta = SECTION_BY_ID[page.section];
-
-  /* Checked below the hooks, above the sheet: `#/note/<id>` is linked from
-     the Library, from a landmark lesson, and from the prev/next pair at the
-     foot of every other page, so a locked subject reached through any of them
-     arrives here rather than at the list. */
-  if (!isPro && !sectionIsFree(page.section)) {
-    return (
-      <Page>
-        <ProUpsell
-          title={`${meta.name} notes are Pro`}
-          detail={`"${page.title}" is part of the ${meta.name.toLowerCase()} notes. Every English page stays open; Pro opens the other three subjects end to end.`}
-        />
-      </Page>
-    );
-  }
 
   const alreadyRead = progress.notesRead.includes(page.id);
 

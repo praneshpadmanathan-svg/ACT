@@ -90,7 +90,9 @@ export const STORAGE_KEYS = {
   guest: 'act-command:guest',
   muted: 'act-command:muted',
   seenIntro: 'act-command:seen-intro',
-  /** Prefix. The account id is appended — see entitlements.ts, which will not
+  /** Unused since the paywall came out. Kept named so a stale value left in
+   *  a returning visitor's localStorage is still findable. The account id is
+   *  appended — nothing
    *  read a cache written under a different sign-in. */
   entitlement: 'act-command:entitlement:v1',
   /** Progress written by the previous single-file build, migrated on boot. */

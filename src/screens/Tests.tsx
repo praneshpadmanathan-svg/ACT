@@ -29,7 +29,6 @@ import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
 import { burstConfetti } from '@/components/Feedback';
 import { ScoreCaveat } from '@/components/ScoreCaveat';
 import { DrillSummary } from './Drills';
-import { ProGate } from '@/components/ProGate';
 
 /* Section lengths, scaled to what the bank can actually supply. The real ACT
    is longer; these keep the pacing pressure honest without inventing
@@ -73,11 +72,7 @@ function soleSectionName(sections: SectionId[]): string {
    and taking away someone's own results when a trial lapses is a different
    thing from not selling them a new test. */
 export function TestsScreen() {
-  return (
-    <ProGate feature="tests" page>
-      <TestsBoard />
-    </ProGate>
-  );
+  return <TestsBoard />;
 }
 
 function TestsBoard() {
@@ -220,11 +215,7 @@ type Stage =
   | { kind: 'done' };
 
 export function TestRunner({ config }: { config: string }) {
-  return (
-    <ProGate feature="tests" page>
-      <TestSession config={config} />
-    </ProGate>
-  );
+  return <TestSession config={config} />;
 }
 
 function TestSession({ config }: { config: string }) {

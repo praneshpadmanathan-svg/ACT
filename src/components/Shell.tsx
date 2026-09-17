@@ -32,7 +32,6 @@ import { Glyph } from './Icon';
 import { RankBadge } from './ui';
 import { PaletteHost } from './PaletteHost';
 import { modKey, openPalette } from '@/lib/palette';
-import { trialDaysLeft, trialExpired } from '@/lib/entitlements';
 import { LIBRARY_STATS } from '@/content/stats';
 
 interface NavItem {
@@ -138,6 +137,13 @@ const GROUPS: NavGroup[] = [
         match: ['stats'],
         hint: 'Score, streak, weak spots',
       },
+      {
+        label: 'Settings',
+        glyph: 'gear',
+        route: { name: 'settings' },
+        match: ['settings'],
+        hint: 'Theme, reading, account, data',
+      },
     ],
   },
 ];
@@ -157,49 +163,6 @@ function MuteButton() {
     >
       <NavGlyph name={muted ? 'soundOff' : 'sound'} size={17} />
     </button>
-  );
-}
-
-/* The trial clock.
- *
- * It sits in the rail rather than on a screen because a countdown nobody sees
- * is not a countdown — the whole point is that the last day does not arrive as
- * a surprise on the morning of a practice test. It renders nothing at all for
- * a paying subscriber, for a redeemed code, and for a build with no accounts
- * configured, because in each of those cases there is no clock running.
- *
- * On the last day it says "ends today" rather than "0 days left", which is the
- * same fact phrased as information instead of as a scold. */
-function TrialPill({ className }: { className?: string }) {
-  const { entitlement } = useStore();
-  const days = trialDaysLeft(entitlement);
-  const ended = trialExpired(entitlement);
-
-  if (days === null && !ended) return null;
-
-  const label = ended
-    ? 'Unlock Pro'
-    : days === 0
-      ? 'Trial ends today'
-      : `Trial · ${days} days left`;
-
-  return (
-    <a
-      href={hrefFor({ name: 'profile' })}
-      onClick={() => sfx.select()}
-      className={cx(
-        'block rounded-lg border-2 border-gold-deep/60 px-2.5 py-1.5 text-center font-script',
-        'text-[11px] uppercase leading-none tracking-wide text-gold transition-colors hover:border-gold',
-        className,
-      )}
-      title={
-        ended
-          ? 'Your free trial has ended. Pro reopens every subject, the Summit, review and duels.'
-          : `${days} day${days === 1 ? '' : 's'} left of full access.`
-      }
-    >
-      {label}
-    </a>
   );
 }
 
@@ -402,7 +365,6 @@ export function SideNav() {
 
         <div className="flex-none space-y-2 border-t border-leather-800 p-2.5">
           <BankBadge />
-          <TrialPill />
           <div className="flex items-center gap-2">
             <PlayerBlock />
             <MuteButton />
@@ -492,7 +454,6 @@ export function SideNav() {
             <RailGroups onNavigate={() => setMenuOpen(false)} />
             <div className="mt-3 space-y-2 border-t border-leather-800 pt-3">
               <BankBadge />
-              <TrialPill />
               <div className="flex items-center gap-2 sm:hidden">
                 <PlayerBlock />
                 <MuteButton />

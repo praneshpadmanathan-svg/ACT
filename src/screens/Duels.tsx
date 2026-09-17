@@ -15,17 +15,12 @@ import { useStore } from '@/lib/store';
 import { Page } from '@/components/Shell';
 import { SectionHeading } from '@/components/ui';
 import { BossCard, regionStanding } from '@/game/BossCard';
-import { ProGate } from '@/components/ProGate';
 
 /* Whole-feature gate. A duel is not divisible by subject the way a road is —
    the point of it is the set of four and the Seals they hold, and handing out
    one guardian would sell the ending of a story whose middle is locked. */
 export function DuelsScreen() {
-  return (
-    <ProGate feature="duels" page>
-      <DuelsBoard />
-    </ProGate>
-  );
+  return <DuelsBoard />;
 }
 
 function DuelsBoard() {

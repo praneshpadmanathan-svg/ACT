@@ -36,7 +36,8 @@ export type Route =
   | { name: 'test'; config: string }
   | { name: 'report'; id: string }
   | { name: 'stats' }
-  | { name: 'profile' };
+  | { name: 'profile' }
+  | { name: 'settings' };
 
 const listeners = new Set<() => void>();
 
@@ -110,6 +111,8 @@ export function parseRoute(hash: string = currentHash()): Route {
       return { name: 'stats' };
     case 'profile':
       return { name: 'profile' };
+    case 'settings':
+      return { name: 'settings' };
     default:
       return { name: 'home' };
   }
