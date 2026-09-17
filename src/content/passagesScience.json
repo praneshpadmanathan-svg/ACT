@@ -2274,5 +2274,217 @@
         ]
       }
     ]
+  },
+  {
+    "id": "sp29",
+    "title": "Sound Absorption in Wall Panels",
+    "type": "Data Representation",
+    "text": "When sound strikes a wall, part of its energy is reflected back into the room and part is absorbed. The absorption coefficient (alpha) of a surface is the fraction of the incident energy that is absorbed, so alpha runs from 0 for a perfect reflector to 1 for a surface that returns nothing. A room lined with absorbent panels has a shorter reverberation time than the same room lined with plaster.\n\nPanels were tested in a reverberation chamber. Every panel had a face area of 1.0 m squared. A panel described as mounted flush was fixed directly against the chamber wall; a panel described as mounted on an air gap was held 50 mm clear of it on battens, with the gap left open.\n\nFigure 1 gives alpha for a 25 mm panel of open-cell foam, mounted flush, at six frequencies.\n\nTable 1 gives alpha at 500 Hz for four thicknesses of that same open-cell foam, each thickness measured twice: once mounted flush and once on a 50 mm air gap.\n\nTable 2 gives alpha at 1000 Hz for four panel materials, every one of them 50 mm thick and mounted flush, together with the density of each material. The material listed first in Table 2 is the same open-cell foam used for Figure 1 and Table 1.\n\nRooms are usually hardest to treat at low frequencies. A sound at 125 Hz has a wavelength of about 2.7 m in air, while a sound at 4000 Hz has a wavelength of about 85 mm, and a panel only a few tens of millimetres thick sits very differently against those two lengths. Designers therefore quote a panel by the frequency band it is meant to control rather than by a single figure, and a panel chosen for speech may do little for traffic noise coming through the same wall.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Absorption coefficient of 25 mm open-cell foam, mounted flush",
+        "type": "table",
+        "head": [
+          "Frequency (Hz)",
+          "Absorption coefficient"
+        ],
+        "rows": [
+          [
+            "125",
+            "0.10"
+          ],
+          [
+            "250",
+            "0.22"
+          ],
+          [
+            "500",
+            "0.45"
+          ],
+          [
+            "1000",
+            "0.68"
+          ],
+          [
+            "2000",
+            "0.82"
+          ],
+          [
+            "4000",
+            "0.88"
+          ]
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Absorption coefficient of open-cell foam at 500 Hz, by thickness and mounting",
+        "type": "table",
+        "head": [
+          "Thickness (mm)",
+          "Mounted flush",
+          "On a 50 mm air gap"
+        ],
+        "rows": [
+          [
+            "25",
+            "0.45",
+            "0.62"
+          ],
+          [
+            "50",
+            "0.66",
+            "0.80"
+          ],
+          [
+            "75",
+            "0.78",
+            "0.87"
+          ],
+          [
+            "100",
+            "0.85",
+            "0.90"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Absorption coefficient at 1000 Hz of four materials, each 50 mm thick and flush",
+        "type": "table",
+        "head": [
+          "Material",
+          "Density (kg/m^3)",
+          "Absorption coefficient"
+        ],
+        "rows": [
+          [
+            "Open-cell foam",
+            "30",
+            "0.86"
+          ],
+          [
+            "Mineral wool",
+            "60",
+            "0.92"
+          ],
+          [
+            "Polyester batt",
+            "20",
+            "0.74"
+          ],
+          [
+            "Perforated wood over foam",
+            "210",
+            "0.55"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp30",
+    "title": "Spheres Falling Through Oil",
+    "type": "Research Summaries",
+    "text": "A sphere released in a still liquid speeds up until the drag on it balances its weight, after which it falls at a steady terminal velocity. Students measured terminal velocity by timing steel spheres over a 0.50 m section of a tall tube, marked far enough below the surface that the sphere had already stopped accelerating. Every sphere was made of the same steel, of density 7.8 g/cm cubed. The viscosity of a liquid is a measure of its resistance to flow and is reported here in pascal-seconds.\n\nEach trial was repeated three times and the three timings averaged; no timing differed from its average by more than two per cent. Between trials the tube was left to stand until any bubbles raised by the previous sphere had cleared, since a bubble crossing the marked section makes the sphere appear to hesitate. Spheres were recovered from the base of the tube with a magnet, wiped, and reused.\n\nExperiment 1. Four steel spheres of different radii were released in oil A, held at 20 degrees Celsius, at which temperature oil A has a viscosity of 0.20 pascal-seconds. Table 1 gives the terminal velocity of each sphere.\n\nExperiment 2. A single steel sphere of radius 2.0 mm was released in each of four oils, all held at 20 degrees Celsius. Table 2 gives the viscosity of each oil and the terminal velocity of the sphere in it.\n\nExperiment 3. The same 2.0 mm sphere was released in oil A at each of four temperatures. Warming an oil lowers its viscosity. Table 3 gives the viscosity of oil A at each temperature and the terminal velocity measured there.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Terminal velocity of steel spheres in oil A at 20 degrees Celsius",
+        "type": "table",
+        "head": [
+          "Sphere radius (mm)",
+          "Terminal velocity (m/s)"
+        ],
+        "rows": [
+          [
+            "1.0",
+            "0.085"
+          ],
+          [
+            "2.0",
+            "0.34"
+          ],
+          [
+            "3.0",
+            "0.76"
+          ],
+          [
+            "4.0",
+            "1.36"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "The 2.0 mm sphere in four oils at 20 degrees Celsius",
+        "type": "table",
+        "head": [
+          "Oil",
+          "Viscosity (Pa*s)",
+          "Terminal velocity (m/s)"
+        ],
+        "rows": [
+          [
+            "A",
+            "0.20",
+            "0.34"
+          ],
+          [
+            "B",
+            "0.40",
+            "0.17"
+          ],
+          [
+            "C",
+            "0.80",
+            "0.085"
+          ],
+          [
+            "D",
+            "1.60",
+            "0.043"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "The 2.0 mm sphere in oil A at four temperatures",
+        "type": "table",
+        "head": [
+          "Temperature (deg C)",
+          "Viscosity of oil A (Pa*s)",
+          "Terminal velocity (m/s)"
+        ],
+        "rows": [
+          [
+            "10",
+            "0.34",
+            "0.20"
+          ],
+          [
+            "20",
+            "0.20",
+            "0.34"
+          ],
+          [
+            "30",
+            "0.12",
+            "0.57"
+          ],
+          [
+            "40",
+            "0.075",
+            "0.91"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp31",
+    "title": "The Mounds at Kerrin",
+    "type": "Conflicting Viewpoints",
+    "text": "The Kerrin plain carries tens of thousands of low earth mounds, each roughly 2 m high and 20 m across, spread over 40 km of grassland. Seen from the air they stand in a strikingly even pattern, with about 30 m of bare ground between neighbouring mounds. Grass grows taller and greener on the mounds than between them. Three students account for the pattern.\n\nStudent 1. The mounds are built. A soil-moving insect colony occupies each one, carrying grains up from below and heaping them at the surface over centuries. The even spacing is the signature of neighbouring colonies meeting at their boundaries and pushing no further, exactly as territorial colonies do elsewhere. Soil brought up from depth should differ from the surface soil around it, and because the colonies are still at work the mounds should still be growing.\n\nStudent 2. Nothing builds the mounds. On a dry plain, water soaks in faster where plants already grow, so a patch of vegetation takes more of each rainfall than the bare ground beside it and dries that ground further. The patches that survive draw water from a fixed radius, and that radius sets the spacing. Wind-blown dust settles among the stems and accumulates, and the mound is simply what has piled up. Where rainfall is lower each patch must draw on a wider area, so the spacing between mounds should be wider.\n\nStudent 3. The mounds are relics of farming. Several centuries ago the plain was cultivated in planting mounds laid out on a regular grid, and what remains is the eroded remnant of that grid. No living builder is needed and none should be found. The mound soil should carry traces of occupation, such as charcoal or fragments of fired pottery, the field should end abruptly at the old boundaries rather than fading out, and the mounds should be slowly wearing down rather than growing.\n\nTwo further observations are available to all three students. Soil taken from the mounds holds more clay than the topsoil between them. Along a rainfall gradient that runs across the plain, mounds in the wetter zone, which receives about 400 mm of rain a year, stand about 30 m apart, while mounds in the drier zone, which receives about 250 mm, stand about 55 m apart."
   }
 ]

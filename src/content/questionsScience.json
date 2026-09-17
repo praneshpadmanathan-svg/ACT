@@ -10327,5 +10327,1193 @@
       "C": "Epoxy at 80 µm lost 19 mg, roughly twice what the zinc-and-epoxy panel lost.",
       "D": "Epoxy at 40 µm lost 34 mg, which is what Table 1 reports for that panel as well."
     }
+  },
+  {
+    "id": "s256",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp29",
+    "context": "According to Figure 1, the absorption coefficient of the 25 mm foam panel at 2000 Hz was closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.82"
+      },
+      {
+        "id": "B",
+        "text": "0.68"
+      },
+      {
+        "id": "C",
+        "text": "0.88"
+      },
+      {
+        "id": "D",
+        "text": "0.45"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the 2000 Hz row of Figure 1 gives 0.82.",
+      "B": "0.68 is the value one row higher, at 1000 Hz.",
+      "C": "0.88 is the value one row lower, at 4000 Hz.",
+      "D": "0.45 is the value at 500 Hz, two rows above the one asked for."
+    }
+  },
+  {
+    "id": "s257",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp29",
+    "context": "According to Table 1, a 50 mm foam panel mounted flush had an absorption coefficient at 500 Hz of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.78"
+      },
+      {
+        "id": "B",
+        "text": "0.66"
+      },
+      {
+        "id": "C",
+        "text": "0.80"
+      },
+      {
+        "id": "D",
+        "text": "0.45"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "0.78 is the 75 mm panel mounted flush.",
+      "B": "Correct — the 50 mm row of Table 1 gives 0.66 in the flush column.",
+      "C": "0.80 is the 50 mm panel on a 50 mm air gap, not mounted flush.",
+      "D": "0.45 is the 25 mm panel mounted flush."
+    }
+  },
+  {
+    "id": "s258",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp29",
+    "context": "Figure 1 shows that, for the 25 mm foam panel, as the frequency of the sound increased, the absorption coefficient:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "increased and then decreased."
+      },
+      {
+        "id": "B",
+        "text": "stayed the same over the whole range."
+      },
+      {
+        "id": "C",
+        "text": "increased over the whole range tested."
+      },
+      {
+        "id": "D",
+        "text": "decreased over the whole range tested."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "No value in Figure 1 is lower than the value before it.",
+      "B": "The value at 4000 Hz is nearly nine times the value at 125 Hz.",
+      "C": "Correct — the values run 0.10, 0.22, 0.45, 0.68, 0.82, 0.88, rising at every step.",
+      "D": "The lowest value in Figure 1 is at the lowest frequency, not the highest."
+    }
+  },
+  {
+    "id": "s259",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp29",
+    "context": "Based on Table 1, how much greater was the absorption coefficient of a 100 mm panel on an air gap than that of a 25 mm panel mounted flush?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.05"
+      },
+      {
+        "id": "B",
+        "text": "0.17"
+      },
+      {
+        "id": "C",
+        "text": "1.35"
+      },
+      {
+        "id": "D",
+        "text": "0.45"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "0.05 is the gain from the air gap at 100 mm alone, 0.90 minus 0.85.",
+      "B": "0.17 is the gain from the air gap at 25 mm alone, 0.62 minus 0.45.",
+      "C": "1.35 is the two values added rather than subtracted, and no coefficient can exceed 1.",
+      "D": "Correct — 0.90 minus 0.45 is 0.45."
+    }
+  },
+  {
+    "id": "s260",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp29",
+    "context": "One entry in Table 1 describes the same panel, mounting and frequency as an entry in Figure 1. Those two entries are:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the 25 mm flush panel and the 500 Hz point, both 0.45."
+      },
+      {
+        "id": "B",
+        "text": "the 50 mm flush panel and the 1000 Hz point, both 0.68."
+      },
+      {
+        "id": "C",
+        "text": "the 25 mm gap panel and the 1000 Hz point, both 0.62."
+      },
+      {
+        "id": "D",
+        "text": "the 100 mm flush panel and the 4000 Hz point, both 0.88."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Figure 1 is a 25 mm flush panel, and Table 1 is at 500 Hz, so only that pair matches on all three.",
+      "B": "Figure 1 reports only a 25 mm panel, so its 1000 Hz point cannot describe a 50 mm one.",
+      "C": "Figure 1 is measured flush throughout, so none of its points describes an air-gap mounting.",
+      "D": "Table 1 is measured at 500 Hz throughout, so none of its entries describes 4000 Hz."
+    }
+  },
+  {
+    "id": "s261",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp29",
+    "context": "Total absorption, in square metres, is the absorption coefficient multiplied by the area of the surface. At 1000 Hz, twelve of the 50 mm mineral wool panels would provide a total absorption closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "13 m^2"
+      },
+      {
+        "id": "B",
+        "text": "11 m^2"
+      },
+      {
+        "id": "C",
+        "text": "0.92 m^2"
+      },
+      {
+        "id": "D",
+        "text": "12 m^2"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "13 is larger than the total area of the twelve panels, which is the ceiling here.",
+      "B": "Correct — each panel is 1.0 m squared, so 12 x 1.0 x 0.92 is 11.04.",
+      "C": "0.92 is the coefficient for one panel, before any area is applied.",
+      "D": "12 would be the answer only if the panels absorbed everything striking them."
+    }
+  },
+  {
+    "id": "s262",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp29",
+    "context": "One of the 50 mm polyester batt panels described in Table 2 would have a mass closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.020 kg"
+      },
+      {
+        "id": "B",
+        "text": "3.0 kg"
+      },
+      {
+        "id": "C",
+        "text": "1.0 kg"
+      },
+      {
+        "id": "D",
+        "text": "20 kg"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "0.020 kg treats the density as a mass, ignoring the volume entirely.",
+      "B": "3.0 kg uses the density of the open-cell foam rather than of the polyester batt.",
+      "C": "Correct — 50 mm is 0.050 m, so the volume is 0.050 m cubed, and 0.050 x 20 is 1.0 kg.",
+      "D": "20 kg is the mass of a full cubic metre of the material, not of this panel."
+    }
+  },
+  {
+    "id": "s263",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp29",
+    "context": "Based on Table 1, the benefit of mounting a panel on an air gap rather than flush was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "largest for the thickest panel and smallest for the thinnest."
+      },
+      {
+        "id": "B",
+        "text": "about the same at every thickness tested."
+      },
+      {
+        "id": "C",
+        "text": "present at 25 mm only and absent at every other thickness."
+      },
+      {
+        "id": "D",
+        "text": "largest for the thinnest panel and smallest for the thickest."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The 100 mm panel gained 0.05 from the gap, the smallest gain of the four.",
+      "B": "The gain at 25 mm is more than three times the gain at 100 mm.",
+      "C": "Every thickness absorbed more on the gap than flush, including 100 mm.",
+      "D": "Correct — the gain falls from 0.17 at 25 mm to 0.14, then 0.09, then 0.05 at 100 mm."
+    }
+  },
+  {
+    "id": "s264",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp29",
+    "context": "A student predicts that a 50 mm foam panel mounted flush would have an absorption coefficient at 4000 Hz of at least 0.88. Do the data support this prediction?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because thickening the panel and raising the frequency each raised alpha."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because alpha at 500 Hz rose above 0.88 once the panel reached 50 mm."
+      },
+      {
+        "id": "C",
+        "text": "No, because alpha fell at the highest frequency tested in Figure 1."
+      },
+      {
+        "id": "D",
+        "text": "No, because thickening the panel lowered alpha at every frequency tested."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a 25 mm panel already reaches 0.88 at 4000 Hz, and Table 1 shows thickening raises alpha further.",
+      "B": "The 50 mm panel reads 0.66 at 500 Hz, well short of 0.88.",
+      "C": "Figure 1 rises to its maximum of 0.88 at 4000 Hz rather than falling there.",
+      "D": "Table 1 shows alpha rising with thickness at every mounting tested."
+    }
+  },
+  {
+    "id": "s265",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp29",
+    "context": "If the pattern in the flush column of Table 1 continued, a 125 mm foam panel mounted flush would have an absorption coefficient at 500 Hz closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.78, because the panel is past the thickness that absorbs best."
+      },
+      {
+        "id": "B",
+        "text": "0.89, because each added 25 mm is worth less than the one before."
+      },
+      {
+        "id": "C",
+        "text": "1.06, because each added 25 mm is worth a further 0.21."
+      },
+      {
+        "id": "D",
+        "text": "0.85, because absorption has stopped changing with thickness."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "0.78 is the 75 mm value, and nothing in the table falls as thickness increases.",
+      "B": "Correct — the steps run 0.21, 0.12, 0.07, so the next is nearer 0.04, giving about 0.89.",
+      "C": "The steps shrink rather than repeating, and no coefficient can exceed 1 in any case.",
+      "D": "Absorption was still rising between 75 and 100 mm, from 0.78 to 0.85."
+    }
+  },
+  {
+    "id": "s266",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "hard",
+    "passage": "sp29",
+    "context": "A reader wants a single material whose absorption is reported both in Table 1 and in Table 2. That material and the obstacle to comparing the two values are:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "polyester batt, but one table mounted it flush and the other on a gap."
+      },
+      {
+        "id": "B",
+        "text": "perforated wood, but only one table reports a density for it."
+      },
+      {
+        "id": "C",
+        "text": "open-cell foam, but the two tables were measured at different frequencies."
+      },
+      {
+        "id": "D",
+        "text": "mineral wool, but the two tables used different panel thicknesses."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Polyester batt appears only in Table 2, and both of its entries are flush.",
+      "B": "Perforated wood appears only in Table 2, so there is no second value to compare.",
+      "C": "Correct — the text names Table 1 as the same open-cell foam, but Table 1 is at 500 Hz and Table 2 at 1000 Hz.",
+      "D": "Mineral wool appears only in Table 2; Table 1 reports one material throughout."
+    }
+  },
+  {
+    "id": "s267",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp29",
+    "context": "One engineer holds that a panel absorbs a fixed fraction of the sound striking it, set by its thickness alone. Another holds that absorption depends on thickness compared with the wavelength of the sound. The results that distinguish these two accounts are:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Table 1, where thickening the panel raises absorption at a single frequency."
+      },
+      {
+        "id": "B",
+        "text": "Table 2, where four materials of one thickness absorb different fractions."
+      },
+      {
+        "id": "C",
+        "text": "Table 1, where the air gap raises absorption without changing the thickness."
+      },
+      {
+        "id": "D",
+        "text": "Figure 1, where one unchanged panel absorbs very differently at different frequencies."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Both accounts expect a thicker panel to absorb more, so this separates nothing.",
+      "B": "Differences between materials are outside both claims, which are about thickness.",
+      "C": "The gap is a mounting change, and neither account makes a claim about mounting.",
+      "D": "Correct — the panel in Figure 1 never changes, so a fraction fixed by thickness alone cannot run from 0.10 to 0.88."
+    }
+  },
+  {
+    "id": "s268",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp30",
+    "context": "According to Table 1, the terminal velocity of the sphere of radius 3.0 mm was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.76 m/s"
+      },
+      {
+        "id": "B",
+        "text": "0.34 m/s"
+      },
+      {
+        "id": "C",
+        "text": "1.36 m/s"
+      },
+      {
+        "id": "D",
+        "text": "0.085 m/s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the 3.0 mm row of Table 1 gives 0.76 m/s.",
+      "B": "0.34 m/s is the velocity of the 2.0 mm sphere.",
+      "C": "1.36 m/s is the velocity of the 4.0 mm sphere.",
+      "D": "0.085 m/s is the velocity of the 1.0 mm sphere, the slowest tested."
+    }
+  },
+  {
+    "id": "s269",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp30",
+    "context": "In Experiment 2, the variable that was deliberately changed from trial to trial was the:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "distance over which the sphere was timed."
+      },
+      {
+        "id": "B",
+        "text": "viscosity of the liquid the sphere fell through."
+      },
+      {
+        "id": "C",
+        "text": "radius of the steel sphere that was released."
+      },
+      {
+        "id": "D",
+        "text": "temperature at which the trial was carried out."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The timed section was 0.50 m in every experiment described.",
+      "B": "Correct — one sphere was dropped in four oils whose viscosities run from 0.20 to 1.60 Pa*s.",
+      "C": "The text says a single 2.0 mm sphere was used for every trial in Experiment 2.",
+      "D": "Every trial in Experiment 2 was held at 20 degrees Celsius."
+    }
+  },
+  {
+    "id": "s270",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp30",
+    "context": "According to Table 3, the viscosity of oil A at 30 degrees Celsius was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.57 Pa*s"
+      },
+      {
+        "id": "B",
+        "text": "0.075 Pa*s"
+      },
+      {
+        "id": "C",
+        "text": "0.12 Pa*s"
+      },
+      {
+        "id": "D",
+        "text": "0.20 Pa*s"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "0.57 is the terminal velocity at 30 degrees, read from the wrong column.",
+      "B": "0.075 Pa*s is the viscosity at 40 degrees Celsius.",
+      "C": "Correct — the 30 degree row of Table 3 gives a viscosity of 0.12 Pa*s.",
+      "D": "0.20 Pa*s is the viscosity of oil A at 20 degrees Celsius."
+    }
+  },
+  {
+    "id": "s271",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp30",
+    "context": "Based on Table 1, the time taken by the 2.0 mm sphere to cross the 0.50 m timed section was closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.7 s"
+      },
+      {
+        "id": "B",
+        "text": "3.0 s"
+      },
+      {
+        "id": "C",
+        "text": "0.2 s"
+      },
+      {
+        "id": "D",
+        "text": "1.5 s"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "0.7 s comes from multiplying 0.50 by 1.36 rather than dividing by 0.34.",
+      "B": "3.0 s would be the time at half the measured velocity.",
+      "C": "0.2 s is close to the velocity times the distance, which is not a time.",
+      "D": "Correct — 0.50 m divided by 0.34 m/s is about 1.5 s."
+    }
+  },
+  {
+    "id": "s272",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp30",
+    "context": "Based on Table 3, the 2.0 mm sphere took how much longer to cross the timed section at 10 degrees Celsius than at 40 degrees Celsius?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "about 2.0 s"
+      },
+      {
+        "id": "B",
+        "text": "about 0.6 s"
+      },
+      {
+        "id": "C",
+        "text": "about 2.5 s"
+      },
+      {
+        "id": "D",
+        "text": "about 0.7 s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 0.50 divided by 0.20 is 2.5 s, 0.50 divided by 0.91 is 0.55 s, and the gap is about 2.0 s.",
+      "B": "0.6 s is roughly the time at 40 degrees on its own, not the difference.",
+      "C": "2.5 s is the time at 10 degrees on its own, with nothing subtracted.",
+      "D": "0.7 s is the difference between the two velocities, which is not a time."
+    }
+  },
+  {
+    "id": "s273",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp30",
+    "context": "The terminal velocity of the 1.0 mm sphere given in Table 1, expressed in centimetres per second, is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.085 cm/s"
+      },
+      {
+        "id": "B",
+        "text": "8.5 cm/s"
+      },
+      {
+        "id": "C",
+        "text": "0.85 cm/s"
+      },
+      {
+        "id": "D",
+        "text": "85 cm/s"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "0.085 cm/s leaves the value in metres per second and relabels it.",
+      "B": "Correct — 0.085 m/s multiplied by 100 cm per metre is 8.5 cm/s.",
+      "C": "0.85 cm/s multiplies by 10 rather than by 100.",
+      "D": "85 cm/s multiplies by 1000, the factor for millimetres."
+    }
+  },
+  {
+    "id": "s274",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp30",
+    "context": "The sphere used in Experiments 2 and 3 presents a circular cross-section of area pi times the square of its radius. That area, in square metres, is closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.3 x 10^-11 m^2"
+      },
+      {
+        "id": "B",
+        "text": "6.3 x 10^-3 m^2"
+      },
+      {
+        "id": "C",
+        "text": "1.3 x 10^-5 m^2"
+      },
+      {
+        "id": "D",
+        "text": "1.3 x 10^-2 m^2"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "1.3 x 10 to the minus 11 converts the radius to metres twice before squaring.",
+      "B": "6.3 x 10 to the minus 3 is the circumference in metres rather than the area.",
+      "C": "Correct — 2.0 mm is 0.0020 m, and pi times 0.0020 squared is about 1.3 x 10 to the minus 5.",
+      "D": "1.3 x 10 to the minus 2 squares the radius in millimetres and then divides by 1000 once."
+    }
+  },
+  {
+    "id": "s275",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp30",
+    "context": "Table 1 shows that when the radius of the sphere was doubled, the terminal velocity was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "multiplied by about 2."
+      },
+      {
+        "id": "B",
+        "text": "divided by about 2."
+      },
+      {
+        "id": "C",
+        "text": "left essentially unchanged."
+      },
+      {
+        "id": "D",
+        "text": "multiplied by about 4."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Doubling the radius from 2.0 to 4.0 mm raised the velocity from 0.34 to 1.36, not to 0.68.",
+      "B": "Every larger sphere in Table 1 fell faster, not slower.",
+      "C": "The fastest sphere in Table 1 falls sixteen times as fast as the slowest.",
+      "D": "Correct — 1.0 to 2.0 mm takes 0.085 to 0.34, and 2.0 to 4.0 mm takes 0.34 to 1.36."
+    }
+  },
+  {
+    "id": "s276",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp30",
+    "context": "For the 2.0 mm sphere to fall through oil A as slowly as it fell through oil C, oil A would have to be held at a temperature:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "below 10 degrees Celsius."
+      },
+      {
+        "id": "B",
+        "text": "between 10 and 20 degrees Celsius."
+      },
+      {
+        "id": "C",
+        "text": "between 20 and 30 degrees Celsius."
+      },
+      {
+        "id": "D",
+        "text": "above 40 degrees Celsius."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — oil C gives 0.085 m/s, slower than the 0.20 m/s oil A manages even at 10 degrees, its coldest trial.",
+      "B": "Between those temperatures oil A runs from 0.20 to 0.34 m/s, both faster than 0.085 m/s.",
+      "C": "Warming oil A to that range raises the velocity to between 0.34 and 0.57 m/s.",
+      "D": "Above 40 degrees oil A is thinner still, so the sphere falls faster than 0.91 m/s."
+    }
+  },
+  {
+    "id": "s277",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp30",
+    "context": "A student predicts that if oil A were cooled to 0 degrees Celsius, the 2.0 mm sphere would fall more slowly than 0.20 m/s. The data in Table 3:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "contradict this, since viscosity was unchanged across the range tested."
+      },
+      {
+        "id": "B",
+        "text": "support this, since cooling raised viscosity and lowered velocity at every step."
+      },
+      {
+        "id": "C",
+        "text": "support this, since velocity rose as the oil was cooled toward 10 degrees."
+      },
+      {
+        "id": "D",
+        "text": "contradict this, since velocity was highest at the lowest temperature tested."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Viscosity rises from 0.075 to 0.34 Pa*s across the range in Table 3.",
+      "B": "Correct — velocity falls from 0.91 to 0.20 m/s as the oil is cooled from 40 to 10 degrees.",
+      "C": "Velocity fell as the oil was cooled, reaching its lowest value at 10 degrees.",
+      "D": "The lowest temperature tested, 10 degrees, gave the lowest velocity of the four."
+    }
+  },
+  {
+    "id": "s278",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp30",
+    "context": "Based on Tables 1 and 2, a 1.0 mm steel sphere released in oil B at 20 degrees Celsius would have a terminal velocity closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.17 m/s"
+      },
+      {
+        "id": "B",
+        "text": "0.34 m/s"
+      },
+      {
+        "id": "C",
+        "text": "0.043 m/s"
+      },
+      {
+        "id": "D",
+        "text": "0.085 m/s"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "0.17 m/s is the 2.0 mm sphere in oil B and ignores the change of radius.",
+      "B": "0.34 m/s is the 2.0 mm sphere in oil A, holding neither variable at the stated value.",
+      "C": "Correct — the 1.0 mm sphere manages 0.085 m/s in oil A, and oil B is twice as viscous, halving it.",
+      "D": "0.085 m/s is the velocity in oil A and ignores the change of oil."
+    }
+  },
+  {
+    "id": "s279",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp30",
+    "context": "The students used the same 2.0 mm sphere throughout Experiments 2 and 3 most likely in order to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "ensure the sphere reached terminal velocity before the marked section."
+      },
+      {
+        "id": "B",
+        "text": "allow the timed section to be shortened below 0.50 m."
+      },
+      {
+        "id": "C",
+        "text": "raise the terminal velocity enough to be timed by hand."
+      },
+      {
+        "id": "D",
+        "text": "keep radius from varying alongside the variable under test."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The marked section was placed far enough down the tube for that reason, whatever sphere was used.",
+      "B": "The timed section stayed at 0.50 m throughout, and a fixed sphere would not require shortening it.",
+      "C": "The 2.0 mm sphere is not the fastest available; the 4.0 mm sphere was four times quicker.",
+      "D": "Correct — Table 1 shows radius alone changes velocity sixteenfold, so a varying radius would mask the effect of the oil."
+    }
+  },
+  {
+    "id": "s280",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp31",
+    "context": "According to Student 1, the mounds at Kerrin were formed by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "insect colonies carrying soil up from below over centuries."
+      },
+      {
+        "id": "B",
+        "text": "dust settling among patches of surviving vegetation."
+      },
+      {
+        "id": "C",
+        "text": "farmers heaping soil into a regular grid of planting mounds."
+      },
+      {
+        "id": "D",
+        "text": "rainfall washing fine soil off the bare ground between them."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Student 1 describes a soil-moving colony in each mound, heaping grains at the surface.",
+      "B": "That is Student 2, who denies that anything builds the mounds at all.",
+      "C": "That is Student 3, who treats the mounds as relics of cultivation.",
+      "D": "No student explains the mounds by erosion of the ground between them."
+    }
+  },
+  {
+    "id": "s281",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp31",
+    "context": "Student 3 predicts that soil taken from the mounds should contain:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "more wind-blown dust than the ground nearby."
+      },
+      {
+        "id": "B",
+        "text": "charcoal or fragments of fired pottery."
+      },
+      {
+        "id": "C",
+        "text": "a living colony of soil-moving insects."
+      },
+      {
+        "id": "D",
+        "text": "grains carried up from well below the surface."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Accumulated wind-blown dust is Student 2 account of what a mound is.",
+      "B": "Correct — Student 3 expects traces of occupation, naming charcoal and fired pottery.",
+      "C": "Student 3 says explicitly that no living builder is needed and none should be found.",
+      "D": "Soil brought up from depth is Student 1 prediction, resting on an active colony."
+    }
+  },
+  {
+    "id": "s282",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp31",
+    "context": "Students 1 and 3 agree with each other, and differ from Student 2, in holding that the mounds:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "should contain traces of human occupation."
+      },
+      {
+        "id": "B",
+        "text": "are spaced by the area each one draws water from."
+      },
+      {
+        "id": "C",
+        "text": "were piled up by something that acted deliberately."
+      },
+      {
+        "id": "D",
+        "text": "are still gaining height year by year."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Only Student 3 predicts charcoal or pottery, and Student 1 predicts deep soil instead.",
+      "B": "The water-drawing radius is Student 2 explanation, which neither of the others shares.",
+      "C": "Correct — one has insects building them and the other has farmers, while Student 2 says nothing builds them.",
+      "D": "Student 1 expects them to grow; Student 3 expects them to be wearing down."
+    }
+  },
+  {
+    "id": "s283",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp31",
+    "context": "The finding that mounds stand 30 m apart in the 400 mm rainfall zone and 55 m apart in the 250 mm zone most directly supports:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Student 3, whose grid should be laid out at a single fixed interval."
+      },
+      {
+        "id": "B",
+        "text": "Student 1, who ties the spacing to charcoal found in the mound soil."
+      },
+      {
+        "id": "C",
+        "text": "Student 2, who predicts that the mounds should be wearing down."
+      },
+      {
+        "id": "D",
+        "text": "Student 2, who predicts wider spacing where rainfall is lower."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "A grid laid out by farmers has no reason to track a modern rainfall gradient.",
+      "B": "Student 1 ties spacing to colony boundaries and never mentions charcoal.",
+      "C": "The mounds wearing down is Student 3 prediction, and it is not what the spacing shows.",
+      "D": "Correct — Student 2 argues each patch must draw on a wider area where rain is scarcer, widening the spacing."
+    }
+  },
+  {
+    "id": "s284",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp31",
+    "context": "Student 1 treats the extra clay in the mound soil as soil carried up from depth. Student 2 would most likely respond that the clay:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "arrived as wind-blown dust, which is itself fine-grained."
+      },
+      {
+        "id": "B",
+        "text": "was carried up by a colony too small to have been noticed."
+      },
+      {
+        "id": "C",
+        "text": "is a trace of occupation left behind by the farmers."
+      },
+      {
+        "id": "D",
+        "text": "shows the mounds must be wearing down rather than growing."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Student 2 has the mound made of dust trapped among the stems, and dust is fine-grained, so clay is what she expects.",
+      "B": "Student 2 denies any builder, so conceding a colony would abandon her own account.",
+      "C": "Traces of occupation belong to Student 3, whose explanation Student 2 rejects.",
+      "D": "Whether mounds grow or shrink is a separate question from what the soil is made of."
+    }
+  },
+  {
+    "id": "s285",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp31",
+    "context": "Student 2 offers the rainfall gradient as evidence for her account. Student 1 could most reasonably reply that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the wetter zone and the drier zone should hold mounds of different heights."
+      },
+      {
+        "id": "B",
+        "text": "colonies also need wider territories where food is scarcer, so spacing widens either way."
+      },
+      {
+        "id": "C",
+        "text": "rainfall could not have differed across the plain at the time the mounds formed."
+      },
+      {
+        "id": "D",
+        "text": "the spacing of colony boundaries is set by the depth of the soil, not by the surface."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The passage reports one mound height throughout, and height is not what is at issue.",
+      "B": "Correct — the observation fits territorial colonies as readily as vegetation patches, so it fails to separate the two.",
+      "C": "Nothing in the passage licenses that claim, and Student 1 does not need it.",
+      "D": "Student 1 ties spacing to neighbouring colonies meeting, not to soil depth."
+    }
+  },
+  {
+    "id": "s286",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp31",
+    "context": "Which observation, if made, would most weaken Student 3?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Grass on the mounds is taller than the grass between them."
+      },
+      {
+        "id": "B",
+        "text": "Mound soil holds more clay than the topsoil around it."
+      },
+      {
+        "id": "C",
+        "text": "Survey markers show the mounds have gained height over the past decade."
+      },
+      {
+        "id": "D",
+        "text": "The mound field ends abruptly along a straight line at its northern edge."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "All three students can accommodate better growth on the mounds themselves.",
+      "B": "Extra clay is discussed by the others and does not bear on cultivation either way.",
+      "C": "Correct — Student 3 has the mounds slowly wearing down, so mounds that are growing need a process still at work.",
+      "D": "An abrupt edge is what Student 3 predicts at an old field boundary."
+    }
+  },
+  {
+    "id": "s287",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp31",
+    "context": "A team can excavate ten mounds and record one thing. The finding that would best separate Student 1 from Student 2 is whether:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the mounds are spaced more widely in the drier part of the plain."
+      },
+      {
+        "id": "B",
+        "text": "the mound soil holds more clay than the ground around it."
+      },
+      {
+        "id": "C",
+        "text": "the grass growing on the mounds is taller than the grass beside them."
+      },
+      {
+        "id": "D",
+        "text": "a living colony of soil-moving insects occupies the mounds."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Wider spacing in the drier zone fits both, since scarcer food widens colony territories too.",
+      "B": "Both can claim the clay: Student 1 brings it up from depth and Student 2 has it blow in.",
+      "C": "Taller grass on a mound is compatible with every account offered.",
+      "D": "Correct — Student 1 requires a colony still at work and Student 2 requires none, so the two accounts predict opposite results."
+    }
+  },
+  {
+    "id": "s288",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp31",
+    "context": "All three students are obliged to give some account of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "why the mounds stand at such regular intervals."
+      },
+      {
+        "id": "B",
+        "text": "why the mound soil holds charcoal and pottery."
+      },
+      {
+        "id": "C",
+        "text": "why the colonies stop at their neighbours boundaries."
+      },
+      {
+        "id": "D",
+        "text": "why the mound field spans 40 km of grassland."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the even spacing is the observation the passage sets out, and each student explains it differently.",
+      "B": "Only Student 3 predicts those traces; the others neither need nor expect them.",
+      "C": "Colony boundaries arise only within Student 1 explanation.",
+      "D": "The extent of the field is mentioned once and no student is committed to explaining it."
+    }
+  },
+  {
+    "id": "s289",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp31",
+    "context": "Clay particles are the smallest of the common soil particle sizes, finer than silt or sand. This fact is most useful to Student 2 because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "cultivation grinds soil particles down toward clay sizes."
+      },
+      {
+        "id": "B",
+        "text": "the finest particles are the ones wind carries furthest."
+      },
+      {
+        "id": "C",
+        "text": "the finest particles hold the least water in a dry climate."
+      },
+      {
+        "id": "D",
+        "text": "only insects can move particles that small any distance."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Grinding by cultivation, if it happened, would support Student 3 instead.",
+      "B": "Correct — Student 2 builds the mound from wind-blown dust, and the finest fraction is exactly what wind delivers.",
+      "C": "Clay in fact holds water well, and poor water retention would undercut her account rather than support it.",
+      "D": "That claim would favour Student 1, whose colony carries the grains."
+    }
+  },
+  {
+    "id": "s290",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp31",
+    "context": "The mound field spans 40 km and holds tens of thousands of mounds. This scale is a difficulty for Student 3 chiefly because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "it rules out any process that depends on a rainfall gradient."
+      },
+      {
+        "id": "B",
+        "text": "it shows the mounds cannot have been wearing down since."
+      },
+      {
+        "id": "C",
+        "text": "it requires cultivation over an area far larger than a field system."
+      },
+      {
+        "id": "D",
+        "text": "it means the mounds must have been built within a single season."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Extent and rainfall are separate observations, and neither rules the other out.",
+      "B": "A field can erode for centuries whatever its size, so extent says nothing about wear.",
+      "C": "Correct — Student 3 rests on a laid-out grid, and a grid across 40 km demands cultivation on an implausible scale.",
+      "D": "Student 3 places the cultivation centuries ago and never commits to a single season."
+    }
+  },
+  {
+    "id": "s291",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp31",
+    "context": "Student 2 account leads most directly to the prediction that mounds should be:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "absent from the driest grassland, where no vegetation can survive."
+      },
+      {
+        "id": "B",
+        "text": "tallest where the rainfall is heaviest and the grass grows fastest."
+      },
+      {
+        "id": "C",
+        "text": "laid out on straight lines rather than at even distances apart."
+      },
+      {
+        "id": "D",
+        "text": "absent from the wettest grassland, where bare ground never dries out."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "She has patches persisting in dry conditions, which is where her mechanism works best.",
+      "B": "She ties rainfall to the spacing between mounds rather than to their height.",
+      "C": "Straight lines are Student 3 grid; her patches settle at even distances, not in rows.",
+      "D": "Correct — her mechanism needs the ground between patches to dry out, which cannot happen where water is abundant everywhere."
+    }
   }
 ]
