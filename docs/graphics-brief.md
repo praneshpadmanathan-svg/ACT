@@ -4,6 +4,8 @@
 `act-command` who did not build it.
 **Goal:** take an app that is already architecturally well-dressed and close
 every remaining gap between it and something a student would pay for.
+**Scope:** the owner has explicitly opened up layout and animation — read
+§0.5 before §0.1, because it changes what the constraint table forbids.
 **Written:** 2026-09-16, against commit `7e54e75`, bank at 2,386 drill +
 370 zone questions.
 
@@ -19,16 +21,16 @@ instead of trusting this document.
 
 These are not style preferences. They are load-bearing.
 
-| Constraint                                                                                                                                                                                                   | Why                                                                                                                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **All colour comes from CSS variables in `src/index.css`, surfaced as Tailwind tokens in `tailwind.config.js`.** Never add a hex literal, never add a `dark:` prefix.                                        | The light theme works by swapping `:root` variables under `[data-theme='light']`. There are **zero** `dark:` classes in the entire codebase, by design. One literal is one element that renders the wrong theme. |
-| **Never widen the elevation ladder.** Six named steps: `flush`, `resting`, `raised`, `lifted`, `floating`, `overlay`.                                                                                        | The values live in `index.css` because a shadow tuned for near-black leather reads as a smudge on cream paper. A new one-off shadow is a theme bug waiting for a light-mode user.                                |
-| **Never add a bespoke cubic-bézier for interface motion.** Five durations (`instant` 90ms, `quick` 160ms, `base` 240ms, `screen` 320ms, `cinematic` 620ms), four curves (`out`, `in`, `inout`, `overshoot`). | The app had thirty-odd hand-picked curves once; nothing moved alike and movement carried no meaning. Combat/sprite animations are exempt — they are timed against sound cues.                                    |
-| **Do not touch `src/lib/normalize.ts`.**                                                                                                                                                                     | `shuffleChoices()` deterministically reorders answer choices from a hash of the item id. Changing it re-shuffles every question in the bank and invalidates saved progress.                                      |
-| **Do not touch the answer-shape gates** in the content scripts.                                                                                                                                              | The bank was answering itself through choice length. The gates are symmetric on purpose — banning only long keys turns "cross out the longest" into "cross out the shortest".                                    |
-| **Content is original and must stay so.**                                                                                                                                                                    | No ACT, ACEly, PrepScholar, Magoosh, UWorld or Khan Academy material, verbatim or paraphrased. The trademark disclaimer stays.                                                                                   |
-| **No secrets in the repo. RLS on every table. Entitlements enforced server-side. Nothing outside `/lib/payments/` imports Stripe.**                                                                          | Security invariants. A visual change should never touch these; if yours does, stop.                                                                                                                              |
-| **`correct_key` is never exposed client-side for an in-progress timed test.**                                                                                                                                | Same.                                                                                                                                                                                                            |
+| Constraint                                                                                                                                                                                                   | Why                                                                                                                                                                                                                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **All colour comes from CSS variables in `src/index.css`, surfaced as Tailwind tokens in `tailwind.config.js`.** Never add a hex literal, never add a `dark:` prefix.                                        | The light theme works by swapping `:root` variables under `[data-theme='light']`. There are **zero** `dark:` classes in the entire codebase, by design. One literal is one element that renders the wrong theme.                                                                                                                        |
+| **Never widen the elevation ladder.** Six named steps: `flush`, `resting`, `raised`, `lifted`, `floating`, `overlay`.                                                                                        | The values live in `index.css` because a shadow tuned for near-black leather reads as a smudge on cream paper. A new one-off shadow is a theme bug waiting for a light-mode user. **Retuning the six values is open (§0.5); adding a seventh step is not.**                                                                             |
+| **Never add a bespoke cubic-bézier for interface motion.** Five durations (`instant` 90ms, `quick` 160ms, `base` 240ms, `screen` 320ms, `cinematic` 620ms), four curves (`out`, `in`, `inout`, `overshoot`). | The app had thirty-odd hand-picked curves once; nothing moved alike and movement carried no meaning. Combat/sprite animations are exempt — they are timed against sound cues. **The ladder’s values are yours to retune and its animations yours to rewrite — see §0.5. What must not change is that there are five and four of them.** |
+| **Do not touch `src/lib/normalize.ts`.**                                                                                                                                                                     | `shuffleChoices()` deterministically reorders answer choices from a hash of the item id. Changing it re-shuffles every question in the bank and invalidates saved progress.                                                                                                                                                             |
+| **Do not touch the answer-shape gates** in the content scripts.                                                                                                                                              | The bank was answering itself through choice length. The gates are symmetric on purpose — banning only long keys turns "cross out the longest" into "cross out the shortest".                                                                                                                                                           |
+| **Content is original and must stay so.**                                                                                                                                                                    | No ACT, ACEly, PrepScholar, Magoosh, UWorld or Khan Academy material, verbatim or paraphrased. The trademark disclaimer stays.                                                                                                                                                                                                          |
+| **No secrets in the repo. RLS on every table. Entitlements enforced server-side. Nothing outside `/lib/payments/` imports Stripe.**                                                                          | Security invariants. A visual change should never touch these; if yours does, stop.                                                                                                                                                                                                                                                     |
+| **`correct_key` is never exposed client-side for an in-progress timed test.**                                                                                                                                | Same.                                                                                                                                                                                                                                                                                                                                   |
 
 ### 0.2 What is already good — do not "improve" it
 
@@ -95,6 +97,98 @@ performance ceiling.
 - **P1** — systemic; breaks the design system's own promises.
 - **P2** — per-screen craft.
 - **P3** — the ceiling. What separates "clean" from "worth paying for."
+
+### 0.5 Mandate from the owner — layout and animation are open
+
+Read this before you read §0.1's constraint table, because it changes how that
+table applies to you.
+
+**The owner's words:** _"I don't like a lot of the formatting and animations…
+it can change the layout to an extent, and edit animations to make everything
+look more premium."_
+
+So the rest of this brief is not a repair list to execute conservatively.
+**Formatting, layout and animation are explicitly open for redesign.** Where an
+earlier section says a thing "exists" or "already works", that is a statement of
+fact, not a defence of it. Working is the floor, not the goal.
+
+**What you may now do without asking:**
+
+| Open                                                                                                                                                            | How far                                                                                                                                                          |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Recompose any screen's layout.** Reorder blocks, change a grid's column count, promote or demote a section, collapse two panels into one, split one into two. | Up to and including a different arrangement of the same information. The screen's _job_ and its information are fixed; its composition is not.                   |
+| **Retune every number in the motion ladder.** Durations, curves, stagger, the order in which things arrive.                                                     | Change the values in `index.css` freely. Keep **five named durations and four named curves** — the ladder itself is the invariant, not its current milliseconds. |
+| **Rewrite, retime or delete any individual animation,** including ones this brief praises.                                                                      | An animation that draws attention to itself rather than to the content is a defect. Deleting it is a valid fix, and often the premium one.                       |
+| **Retune the elevation ladder's shadow values** — softer, tighter, more or less spread, a different ambient/direct split.                                       | Six named steps stay six named steps. Their values are yours. Re-measure both themes afterwards.                                                                 |
+| **Change spacing rhythm, radii, border weights, and the type scale's ratio.**                                                                                   | Through the tokens, globally. A different rhythm applied consistently is a redesign; the same change applied to one component is a bug.                          |
+| **Change how a component is _built_** — a stack of cards into a table, a table into a list, a modal into an inline panel.                                       | If the new form serves the content better, take it. Name the change in your write-up.                                                                            |
+
+**What stays fixed, and why none of it is arbitrary:**
+
+- **Every change still goes through tokens and named classes.** This is the one
+  rule that does not bend. You may change what `--c-leather` or `--dur-base`
+  _is_; you may not stop using them. The light theme, the text-scale
+  accessibility setting and the high-legibility toggle all work by substitution
+  — a hardcoded value silently opts that element out for the student who needed
+  it.
+- **The five/four/six ladder shapes.** Widening them is how the app ended up
+  with thirty hand-picked curves the first time.
+- **Information is not yours to cut.** Recompose a screen; do not remove what it
+  tells the student. If something looks like it should go, say so in the
+  write-up and leave it in.
+- **Everything in §0.1's security and content rows.** Those are not design.
+
+**What "premium" means here, concretely.** The brief is that a student should
+feel the app cost thousands. That feeling does not come from more animation. It
+comes from:
+
+1. **Fewer things moving, but the right ones.** A premium interface is mostly
+   still. It spends motion on the two or three moments that carry meaning —
+   committing to an answer, earning a rank, a page arriving — and leaves the
+   rest alone. If everything animates, nothing reads as significant. Audit
+   `docs/animation-inventory.md` and be willing to come out of it with **fewer**
+   animations than you went in with.
+2. **Motion that obeys physics.** Things that should feel heavy accelerate
+   slowly. A panel that slides in decelerates into place (`out`), never linear.
+   Nothing bounces unless it is meant to feel light. One `overshoot` per screen
+   at most, on the thing you want remembered.
+3. **Transitions that preserve continuity.** The premium feeling is that
+   elements _move_ between states rather than being replaced. If a sigil is on
+   the list and then on the detail screen, it should travel; if it cross-fades,
+   the two screens read as two documents rather than as one place.
+4. **Staggered arrival, never simultaneous.** A list whose rows arrive 30–40ms
+   apart reads as considered; the same list arriving at once reads as a render.
+   Cap the total stagger — past roughly 300ms it reads as slow rather than as
+   craft.
+5. **Nothing looping in the periphery.** Ambient shimmer, drifting particles and
+   pulsing glows are the single loudest cheap-app tell, and
+   `docs/premium-redesign-plan.md` already ranked decorative particles over live
+   content as defect one. If it loops forever and is not conveying state, remove
+   it.
+6. **Restraint in formatting.** Fewer borders. Fewer filled cards. More
+   whitespace carrying the grouping that a box is currently carrying. Hierarchy
+   from type weight and space before it comes from a container.
+
+**Where to spend the layout latitude first.** This is §4's order, and it is the
+same order for composition as for repair:
+
+1. **`QuestionRunner.tsx` + `PassagePanel.tsx`.** Ninety per cent of a student's
+   time. The reading column, the choice list and the feedback moment. The
+   choices are almost certainly over-boxed, and the passage/question split is
+   the single most consequential layout decision in the app.
+2. **`Landing.tsx` (869 lines).** The only screen a non-customer sees. Its
+   composition is the entire pitch.
+3. **`Home.tsx` (798 lines).** Seen daily. It should open on the one thing to do
+   next, not on a wall of equal-weight cards.
+4. **`Stats.tsx` (727 lines).** See §5.4.
+5. **`Tests.tsx` (864 lines).** Under timed conditions calm beats interesting.
+   This is the screen on which you spend the _least_ motion.
+
+**One process requirement.** Because this latitude is broad, keep a running
+`docs/redesign-log.md`: one line per layout or motion change, saying what you
+changed and what it serves. The owner should be able to read what happened
+without diffing 800-line screens, and anything that turns out to be wrong should
+be findable and reversible as a single entry.
 
 ---
 
@@ -411,7 +505,10 @@ mapping is one-to-one. Every table, code block and diagram lives in its own
 ## 4. P2 — screen-by-screen
 
 I have not audited every screen at pixel level. Rather than invent defects,
-here is the signal to look for and the order to work in. Screens by size:
+here is the signal to look for and the order to work in. Per §0.5, a screen
+here may be **recomposed**, not merely corrected: if the checklist below keeps
+coming back clean and the screen still reads as ordinary, the composition is
+the defect. Screens by size:
 
 | screen        | lines |
 | ------------- | ----- |
@@ -534,8 +631,14 @@ per-component texture is how you get 154 literals again.
 
 ### 5.3 Motion that means something
 
-The motion ladder is already defined and mostly respected. The ceiling is in
-what is _not yet animated_:
+The motion ladder is already defined and mostly respected — but per §0.5 the
+owner does not like much of the current animation, so read this section as
+"what motion is for", not as a list of things to add on top of what is there.
+Before adding any of the below, walk `docs/animation-inventory.md` and cut what
+loops, decorates, or moves without meaning. **A net reduction in the number of
+animations, with the survivors retimed, is the expected outcome.**
+
+The ceiling is in what is _not yet animated_, once the noise is gone:
 
 - **Answer feedback.** `.choice-correct`, `.choice-wrong`, `.choice-seal`,
   `.juice-flash` and `.hitstop` classes exist. The moment a student selects an
@@ -657,6 +760,10 @@ Plus, by hand:
 - [ ] No hand-typed question count anywhere in a shipped page.
 - [ ] `world-map` assets gone; the unreferenced-art loop from §5.1 prints
       nothing.
+- [ ] The app has **fewer** running animations than it started with, and the
+      survivors are on the ladder (§0.5).
+- [ ] Nothing loops in the periphery of a screen a student reads on.
+- [ ] `docs/redesign-log.md` has an entry for every layout and motion change.
 - [ ] Screenshot every screen before and after, both themes, and diff them. A
       change you cannot see is a change you did not need to make; a change you
       did not intend is a regression.
@@ -674,5 +781,13 @@ Plus, by hand:
 5. §2.2 the content chunk. Largest single win, largest single risk; do it once
    the visual layer is stable so a regression is attributable.
 6. §3.2 the state vocabulary, §3.3 lint, §3.4 images.
-7. §4 screen passes, in the stated order.
-8. §5 the ceiling.
+7. **§0.5 the animation cut.** Walk `docs/animation-inventory.md` and remove
+   what loops, decorates, or moves without meaning, before adding anything.
+   Do this _before_ the screen passes: it is much easier to compose a screen
+   that has stopped twitching.
+8. §4 screen passes, in the stated order — and per §0.5 these are
+   recompositions, not touch-ups.
+9. §5 the ceiling, including the retimed survivors of step 7.
+
+Steps 1–6 are repair and are not negotiable. Steps 7–9 are where the owner
+expects the app's character to change. Log each one in `docs/redesign-log.md`.
