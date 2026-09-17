@@ -108,8 +108,12 @@ export default {
           DEFAULT: tone('gilt'),
           bright: tone('gilt-bright'),
         },
-        /* Region accents, keyed to the painted map. Identical in both themes —
-           they are mid-tones lifted off the artwork and read on either. */
+        /* Region accents, keyed to the painted world. These used to be
+           identical in both themes — mid-tones lifted off the artwork, meant
+           to read on either — but they did not: five of the six fell under
+           3:1 on light paper. The light theme now declares its own six,
+           re-picked so they stay apart from one another as well as from the
+           page. See the note on them in index.css. */
         village: tone('village'),
         woods: tone('woods'),
         desert: tone('desert'),
@@ -126,6 +130,8 @@ export default {
         'cliffs-text': tone('cliffs-text'),
         'desert-text': tone('desert-text'),
         'village-text': tone('village-text'),
+        /* Ink for a glyph on a woods fill, which inverts between themes. */
+        'woods-ink': tone('woods-ink'),
       },
       fontFamily: {
         /* Three families, not four.

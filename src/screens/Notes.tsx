@@ -120,7 +120,7 @@ export function NotesScreen({ section }: { section?: string }) {
                       className={cx(
                         'mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded border-2 text-[12px]',
                         read
-                          ? 'border-woods bg-woods text-[#04200f]'
+                          ? 'border-woods bg-woods text-woods-ink'
                           : 'border-leather-700 text-ink-faint',
                       )}
                       aria-hidden="true"

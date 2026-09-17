@@ -164,6 +164,13 @@
     --c-summit: 82.78% 0.1421 91.77;
     --c-blood: 51.19% 0.1407 31.57;
 
+    /* Ink for a glyph sitting on a woods fill — the read tick in the
+       Library. Dark theme: woods is a mid green, so the ink is near-black.
+       6.71:1. It is a token rather than a literal because the light theme
+       inverts woods, and a fixed ink cannot serve both; the literal that
+       used to be here measured 2.31:1 once light mode darkened the fill. */
+    --c-woods-ink: 16% 0.03 148;
+
     --c-blood-text: 70.54% 0.1129 33.63;
     --c-woods-text: 76.94% 0.118 148.86;
     --c-cliffs-text: 77.67% 0.0934 235.71;
@@ -270,12 +277,30 @@
      4.60 on 950 and better on the rest, gold-light 6.51 and up. */
   [data-theme='light'] {
     color-scheme: light;
-    --c-village: 44% 0.09 80;
-    --c-woods: 44% 0.09 148;
-    --c-desert: 44% 0.1 47;
-    --c-cliffs: 44% 0.09 236;
-    --c-summit: 44% 0.09 92;
-    --c-blood: 44% 0.13 32;
+    /* The six region fills, light theme.
+
+       These were all set to L 44% to clear 4.5:1 on paper, which fixed the
+       contrast failure and created a separation one: six colours at one
+       lightness, four of them inside a 60-degree warm arc, are not tellable
+       apart. Measured on the L-44 set, village and summit separated by 1.9
+       in normal vision and 0.6 under deuteranopia — the same colour.
+
+       Hue carries a region's identity, so hue is held within 8 degrees of
+       its dark-theme value and the separation is bought with lightness,
+       which is what survives a dichromat simulation. Worst pair across
+       normal, deuteranopic and protanopic vision is now dE 13.6, against a
+       target of 8; contrast on paper runs 4.60 to 10.45. Re-derive with
+       scripts/solve-regions.mjs before changing any of the six. */
+    --c-village: 51.66% 0.0502 75.08;
+    --c-woods: 43.04% 0.1014 155.79;
+    --c-desert: 53.5% 0.1723 39.42;
+    --c-cliffs: 51.06% 0.0871 237.32;
+    --c-summit: 32.01% 0.052 90.02;
+    --c-blood: 39.39% 0.1634 29.64;
+
+    /* Ink for a glyph sitting on a woods fill. Light theme: woods is dark,
+       so the ink is paper. 6.91:1. */
+    --c-woods-ink: 96.31% 0.0228 84.59;
 
     --c-leather-950: 88.22% 0.0359 85.41;
     --c-leather-900: 93% 0.0271 85.67;
