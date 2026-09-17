@@ -32,17 +32,17 @@ trap is hard.
 
 ## English
 
-| Topic | easy | medium | hard |
-|---|---|---|---|
-| subject-verb agreement | subject adjacent to the verb | one intervening prepositional phrase or relative clause | `neither/nor`; a parenthetical like `, along with …,`; `each of` / `every one of` / a fraction of; existential `there was/were` |
-| apostrophes | bare plural against a possessive | `its` against `it's` | plural possessive against the singular possessive of the same noun; a possessive before a gerund |
-| fragments | a bare phrase with no verb | a subordinator or an `-ing` opener | opens with `which` / `who` / `whose`, which reads like a clause until you look for the main verb |
-| run-ons | the join is plainly a comma and a full stop would do | a semicolon is among the options | a conjunctive adverb (`however`, `therefore`, `moreover`, `nevertheless`, `thus`) doing a conjunction's job |
-| idioms | a collocation nobody has to reason about | four bare prepositions, one of which is the idiom | the whole phrase is swapped, so there is no memorised slot to fill |
-| parallelism | the pattern is shown twice before the tested slot | the pattern is set by two items of different surface shape | the list is interrupted, or the shared element is a preposition rather than a verb form |
-| pronouns | one possible antecedent | case after a preposition or a compound object | two possible antecedents; agreement with `each` / `every one`; `neither/nor` picking the nearer noun |
-| wordiness | the repetition sits adjacent to itself | a stock filler phrase can be cut whole | the redundancy is split across the sentence, so both halves read fine alone |
-| transitions | the two sentences plainly agree or plainly contrast | three of four options are the wrong relation | two options name the same relation and differ only in strength |
+| Topic                  | easy                                                 | medium                                                     | hard                                                                                                                            |
+| ---------------------- | ---------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| subject-verb agreement | subject adjacent to the verb                         | one intervening prepositional phrase or relative clause    | `neither/nor`; a parenthetical like `, along with …,`; `each of` / `every one of` / a fraction of; existential `there was/were` |
+| apostrophes            | bare plural against a possessive                     | `its` against `it's`                                       | plural possessive against the singular possessive of the same noun; a possessive before a gerund                                |
+| fragments              | a bare phrase with no verb                           | a subordinator or an `-ing` opener                         | opens with `which` / `who` / `whose`, which reads like a clause until you look for the main verb                                |
+| run-ons                | the join is plainly a comma and a full stop would do | a semicolon is among the options                           | a conjunctive adverb (`however`, `therefore`, `moreover`, `nevertheless`, `thus`) doing a conjunction's job                     |
+| idioms                 | a collocation nobody has to reason about             | four bare prepositions, one of which is the idiom          | the whole phrase is swapped, so there is no memorised slot to fill                                                              |
+| parallelism            | the pattern is shown twice before the tested slot    | the pattern is set by two items of different surface shape | the list is interrupted, or the shared element is a preposition rather than a verb form                                         |
+| pronouns               | one possible antecedent                              | case after a preposition or a compound object              | two possible antecedents; agreement with `each` / `every one`; `neither/nor` picking the nearer noun                            |
+| wordiness              | the repetition sits adjacent to itself               | a stock filler phrase can be cut whole                     | the redundancy is split across the sentence, so both halves read fine alone                                                     |
+| transitions            | the two sentences plainly agree or plainly contrast  | three of four options are the wrong relation               | two options name the same relation and differ only in strength                                                                  |
 
 Rhetorical topics — `writers purpose`, `adding/deleting`, `sentence order` —
 are hard by default. They ask what a sentence is doing rather than whether it is
@@ -63,25 +63,25 @@ who understands the skill can still get it wrong.
 
 ## Reading
 
-| Topic | easy | medium | hard |
-|---|---|---|---|
-| detail | the answer is stated in one place | stated, but the stem paraphrases it | stated in two places that must agree |
-| main idea | the thesis is a sentence in the passage | assembled from the shape of the whole | the obvious candidate is a paragraph's point, not the passage's |
-| inference | one step past what is stated | two steps, or across paragraphs | a distractor is true of the world but not supported by this passage |
-| vocabulary in context | the word carries its everyday sense | a common word in a mildly narrowed sense | a common word carrying an uncommon sense, with the everyday sense offered as a live distractor |
-| figurative language | the passage glosses the image in the next breath | the image is explained a paragraph away | the image carries a claim the passage never states literally |
-| tone | one clearly loaded word | the attitude is held across a paragraph | the writer concedes something, so a one-word read gets it backward |
+| Topic                 | easy                                             | medium                                   | hard                                                                                           |
+| --------------------- | ------------------------------------------------ | ---------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| detail                | the answer is stated in one place                | stated, but the stem paraphrases it      | stated in two places that must agree                                                           |
+| main idea             | the thesis is a sentence in the passage          | assembled from the shape of the whole    | the obvious candidate is a paragraph's point, not the passage's                                |
+| inference             | one step past what is stated                     | two steps, or across paragraphs          | a distractor is true of the world but not supported by this passage                            |
+| vocabulary in context | the word carries its everyday sense              | a common word in a mildly narrowed sense | a common word carrying an uncommon sense, with the everyday sense offered as a live distractor |
+| figurative language   | the passage glosses the image in the next breath | the image is explained a paragraph away  | the image carries a claim the passage never states literally                                   |
+| tone                  | one clearly loaded word                          | the attitude is held across a paragraph  | the writer concedes something, so a one-word read gets it backward                             |
 
 ## Science
 
-| Topic | easy | medium | hard |
-|---|---|---|---|
-| reading data | one value, one figure | a value that must be interpolated between rows | a value read against a condition stated only in the text |
-| data representation | a trend within one figure | a trend compared across two figures | a number carried from one table into another, or an extrapolation past the last row |
-| units | the unit is given and used as given | one conversion | two conversions, or a conversion through an area or a volume |
-| calculating from data | one arithmetic step | two steps within one table | steps spanning two tables |
-| hypotheses | the prediction is stated | the prediction follows from one result | two accounts predict different things and the item asks which result separates them |
-| conflicting viewpoints | one scientist's own claim | a claim compared with one other | what one scientist would say about evidence only the other discussed |
+| Topic                  | easy                                | medium                                         | hard                                                                                |
+| ---------------------- | ----------------------------------- | ---------------------------------------------- | ----------------------------------------------------------------------------------- |
+| reading data           | one value, one figure               | a value that must be interpolated between rows | a value read against a condition stated only in the text                            |
+| data representation    | a trend within one figure           | a trend compared across two figures            | a number carried from one table into another, or an extrapolation past the last row |
+| units                  | the unit is given and used as given | one conversion                                 | two conversions, or a conversion through an area or a volume                        |
+| calculating from data  | one arithmetic step                 | two steps within one table                     | steps spanning two tables                                                           |
+| hypotheses             | the prediction is stated            | the prediction follows from one result         | two accounts predict different things and the item asks which result separates them |
+| conflicting viewpoints | one scientist's own claim           | a claim compared with one other                | what one scientist would say about evidence only the other discussed                |
 
 ## Checking yourself
 

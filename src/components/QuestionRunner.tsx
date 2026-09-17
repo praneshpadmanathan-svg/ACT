@@ -305,7 +305,12 @@ export function QuestionRunner({
                     tier === 3 ? 'chip-ablaze text-desert-text' : 'text-desert-text',
                   )}
                   style={{
-                    borderColor: tier === 3 ? 'oklch(var(--c-desert-text))' : tier === 2 ? 'oklch(var(--c-desert-text)/.7)' : 'oklch(var(--c-desert-text)/.4)',
+                    borderColor:
+                      tier === 3
+                        ? 'oklch(var(--c-desert-text))'
+                        : tier === 2
+                          ? 'oklch(var(--c-desert-text)/.7)'
+                          : 'oklch(var(--c-desert-text)/.4)',
                     transformOrigin: 'center',
                   }}
                   initial={{ opacity: 0, scale: 0.5, y: 8 }}
@@ -552,7 +557,11 @@ export function QuestionRunner({
                       </span>
                     )}
                     {wrongPick && (
-                      <Glyph name="cross" size={16} className="ml-auto flex-none text-[oklch(var(--c-feedback-wrong))]" />
+                      <Glyph
+                        name="cross"
+                        size={16}
+                        className="ml-auto flex-none text-[oklch(var(--c-feedback-wrong))]"
+                      />
                     )}
                   </m.button>
                 );
@@ -601,7 +610,11 @@ export function QuestionRunner({
                     *second* line. */}
                 <m.div
                   className="mb-5 font-script text-[13px] font-semibold uppercase tracking-[0.16em]"
-                  style={{ color: gotItRight ? 'oklch(var(--c-feedback-correct))' : 'oklch(var(--c-feedback-wrong))' }}
+                  style={{
+                    color: gotItRight
+                      ? 'oklch(var(--c-feedback-correct))'
+                      : 'oklch(var(--c-feedback-wrong))',
+                  }}
                   role="status"
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}

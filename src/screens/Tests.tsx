@@ -267,7 +267,9 @@ function TestSession({ config }: { config: string }) {
     const out: Partial<Record<SectionId, ReturnType<typeof fromDrillQuestion>[]>> = {};
     for (const id of sectionIds) {
       const plan = TEST_PLAN[id];
-      out[id] = shuffle(QUESTIONS[id].filter(q => !q.practiceOnly)).slice(0, plan.questions).map(fromDrillQuestion);
+      out[id] = shuffle(QUESTIONS[id].filter((q) => !q.practiceOnly))
+        .slice(0, plan.questions)
+        .map(fromDrillQuestion);
     }
     return out;
   }, [sectionIds]);

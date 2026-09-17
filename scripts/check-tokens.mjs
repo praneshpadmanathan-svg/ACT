@@ -77,7 +77,16 @@ for (const name of ['village', 'woods', 'desert', 'cliffs', 'summit', 'blood']) 
   const contrast = ratio(token(THEMES.light, name), token(THEMES.light, 'paper'));
   if (contrast < 4.5) failures.push(`Light region ${name} fails on paper: ${contrast.toFixed(2)}`);
 }
-for (const name of ['series-1', 'series-2', 'series-3', 'series-4', 'series-5', 'feedback-correct', 'feedback-medium', 'feedback-wrong']) {
+for (const name of [
+  'series-1',
+  'series-2',
+  'series-3',
+  'series-4',
+  'series-5',
+  'feedback-correct',
+  'feedback-medium',
+  'feedback-wrong',
+]) {
   const contrast = ratio(token(THEMES.dark, name), token(THEMES.dark, 'paper'));
   if (contrast < 4.5) failures.push(`${name} fails on paper: ${contrast.toFixed(2)}`);
 }

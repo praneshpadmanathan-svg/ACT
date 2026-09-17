@@ -32,9 +32,9 @@
     --c-series-2: 45% 0.11 240;
     --c-series-3: 35% 0.06 155;
     --c-series-4: 50% 0.14 315;
-    --c-series-5: 51% 0.10 85;
+    --c-series-5: 51% 0.1 85;
     --loading-sky: oklch(var(--c-leather-800)), oklch(var(--c-leather-950));
-    --art-shadow: drop-shadow(0 10px 22px oklch(0% 0 0 / .5));
+    --art-shadow: drop-shadow(0 10px 22px oklch(0% 0 0 / 0.5));
     /* ---------------------------------------------------------- the measures
 
        Named widths, because "how wide is a column of this kind" is a design
@@ -272,7 +272,7 @@
     color-scheme: light;
     --c-village: 44% 0.09 80;
     --c-woods: 44% 0.09 148;
-    --c-desert: 44% 0.10 47;
+    --c-desert: 44% 0.1 47;
     --c-cliffs: 44% 0.09 236;
     --c-summit: 44% 0.09 92;
     --c-blood: 44% 0.13 32;
