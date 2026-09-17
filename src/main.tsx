@@ -33,6 +33,7 @@ import '@fontsource/inter/latin-700.css';
 import '@fontsource-variable/newsreader/opsz.css';
 
 import './index.css';
+import './premium.css';
 
 /* Catch `unhandledrejection` and `error`, and route both — along with the
    eleven console.warn sites scattered through the app — into one reporter.

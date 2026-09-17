@@ -10,7 +10,7 @@ import { SideNav } from '@/components/Shell';
 import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
 import { StoryOverlay } from '@/game/StoryOverlay';
 import { RegionBackdrop } from '@/game/RegionBackdrop';
-import { Vignette } from '@/components/Vignette';
+import { ScreenSkeleton } from '@/components/ScreenSkeleton';
 import { LoadingScreen } from '@/components/LoadingScreen';
 
 /* The front door, and only the front door.
@@ -126,15 +126,7 @@ function prefetchEverydayScreens() {
  * the first, and every visit at all once the service worker has precached the
  * build — this is on screen for a single frame or not at all. */
 function ScreenFallback() {
-  return (
-    <div
-      className="flex min-h-[60vh] flex-col items-center justify-center gap-4"
-      role="status"
-      aria-label="Loading"
-    >
-      <Vignette name="compass" size={84} />
-    </div>
-  );
+  return <ScreenSkeleton />;
 }
 
 export default function App() {

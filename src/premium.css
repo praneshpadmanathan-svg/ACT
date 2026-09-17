@@ -1,0 +1,276 @@
+/* Shared material and interaction rules; every colour comes from the theme. */
+::selection {
+  background: oklch(var(--c-gilt) / 0.4);
+  color: oklch(var(--c-ink));
+}
+input,
+textarea {
+  caret-color: oklch(var(--c-gold));
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+* {
+  scrollbar-color: oklch(var(--c-gold-deep)) oklch(var(--c-leather-900));
+  scrollbar-width: thin;
+}
+.realm-explorer {
+  overflow: hidden;
+  border: 1px solid oklch(var(--c-leather-700));
+  border-radius: 1.5rem;
+  background: oklch(var(--c-leather-900));
+  box-shadow: var(--lamp-edge), var(--e-raised);
+}
+.realm-selector {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-bottom: 1px solid oklch(var(--c-leather-700));
+}
+.realm-selector button {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.25rem 0.5rem;
+  color: oklch(var(--c-parchment-dim));
+  transition: background var(--dur-quick, 160ms);
+}
+.realm-selector button .num {
+  font-size: 0.75rem;
+  color: oklch(var(--c-ink-faint));
+}
+.realm-selector button[aria-pressed='true'] {
+  background: oklch(var(--c-leather-800));
+  color: oklch(var(--c-gold));
+  box-shadow: inset 0 -3px oklch(var(--c-gold));
+}
+.realm-scene {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  min-height: 28rem;
+}
+.realm-art {
+  min-width: 0;
+  overflow: hidden;
+}
+.realm-art picture {
+  height: 100%;
+}
+.realm-copy {
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.realm-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8125rem;
+  color: oklch(var(--c-ink-faint));
+}
+.rank-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  border-block: 1px solid oklch(var(--c-gold-deep) / 0.4);
+  background: radial-gradient(ellipse at 80% 50%, oklch(var(--c-gilt) / 0.08), transparent 65%);
+}
+.rank-showcase-copy {
+  display: grid;
+  gap: 1.5rem;
+}
+.rank-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.rank-picker button {
+  display: grid;
+  place-items: center;
+  min-width: 3.25rem;
+  min-height: 3.25rem;
+  padding: 0.25rem;
+  border: 1px solid oklch(var(--c-leather-700));
+  border-radius: 0.75rem;
+  background: oklch(var(--c-leather-900));
+  transition: transform var(--dur-quick, 160ms);
+}
+.rank-picker button[aria-pressed='true'] {
+  border-color: oklch(var(--c-gold));
+  box-shadow: var(--lamp-edge), var(--e-raised);
+}
+.rank-display {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+.rank-reveal {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 16rem;
+  height: 16rem;
+  isolation: isolate;
+}
+.rank-orbit {
+  position: absolute;
+  inset: 10%;
+  border: 1px solid oklch(var(--c-gold) / 0.35);
+  border-radius: 50%;
+}
+.rank-orbit-outer {
+  inset: 0;
+  border-style: dashed;
+}
+.rank-reveal-2 .rank-orbit,
+.rank-reveal-4 .rank-orbit {
+  border-radius: 25%;
+  rotate: 45deg;
+}
+.rank-reveal-6 .rank-orbit {
+  border-width: 3px;
+  border-style: double;
+}
+.rank-replay {
+  color: oklch(var(--c-gold));
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+  padding: 0.5rem 1rem;
+}
+.screen-skeleton {
+  width: min(100%, 67.5rem);
+  margin: auto;
+  padding: 3rem 1rem;
+  min-height: 60vh;
+}
+.skeleton-line,
+.skeleton-cards > div {
+  background: oklch(var(--c-leather-800));
+  border: 1px solid oklch(var(--c-leather-700) / 0.5);
+  border-radius: 0.75rem;
+}
+.skeleton-line {
+  height: 1rem;
+  max-width: 36rem;
+  margin-bottom: 1.25rem;
+}
+.skeleton-short {
+  width: 8rem;
+}
+.skeleton-title {
+  height: 3rem;
+  width: 60%;
+}
+.skeleton-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.skeleton-cards > div {
+  height: 14rem;
+}
+.premium-landing .hero-type-block h1 {
+  text-wrap: balance;
+}
+.premium-landing .hero-type-block {
+  padding-block: 2rem;
+}
+.premium-landing .plate-card {
+  box-shadow: var(--lamp-edge), var(--e-resting);
+}
+.sheet {
+  background-image: linear-gradient(135deg, oklch(var(--c-paper-light) / 0.5), transparent 60%);
+}
+.prose-passage {
+  max-width: 68ch;
+  font-optical-sizing: auto;
+}
+.quill-table {
+  font-variant-numeric: tabular-nums;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .realm-scene {
+    animation: premium-arrival 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .rank-reveal > :last-child {
+    animation: premium-seal 620ms cubic-bezier(0.22, 1.4, 0.36, 1) both;
+  }
+  .rank-reveal-1 > :last-child,
+  .rank-reveal-3 > :last-child {
+    animation-name: premium-page;
+  }
+  .rank-orbit {
+    animation: premium-arrival 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @media (hover: hover) {
+    .rank-picker button:hover {
+      transform: translateY(-3px);
+    }
+  }
+}
+@keyframes premium-arrival {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes premium-seal {
+  from {
+    opacity: 0;
+    transform: scale(0.65) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes premium-page {
+  from {
+    opacity: 0;
+    transform: perspective(500px) rotateY(-70deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 767px) {
+  .realm-scene,
+  .rank-showcase {
+    grid-template-columns: 1fr;
+  }
+  .realm-art {
+    aspect-ratio: 16/10;
+  }
+  .realm-selector button {
+    font-size: 0.8125rem;
+  }
+  .skeleton-cards {
+    grid-template-columns: 1fr;
+  }
+  .skeleton-cards > div {
+    height: 7rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rank-picker button {
+    transition: none;
+  }
+}

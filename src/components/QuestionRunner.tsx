@@ -115,9 +115,9 @@ const DIFFICULTY_LABEL: Record<Difficulty, string> = {
    below AA while looking fine on paper alone. These clear 5.0 there and 6.0
    on bare paper, so the tint can change without dropping under the line. */
 const DIFFICULTY_COLOR: Record<Difficulty, string> = {
-  easy: '#2a6034',
-  medium: '#774d0f',
-  hard: '#973125',
+  easy: 'oklch(var(--c-feedback-correct))',
+  medium: 'oklch(var(--c-feedback-medium))',
+  hard: 'oklch(var(--c-feedback-wrong))',
 };
 
 /** Strip markup and assemble the question as one spoken passage.
@@ -305,7 +305,7 @@ export function QuestionRunner({
                     tier === 3 ? 'chip-ablaze text-desert-text' : 'text-desert-text',
                   )}
                   style={{
-                    borderColor: tier === 3 ? '#ff7a2e' : tier === 2 ? '#ffb066aa' : '#ff9d5c66',
+                    borderColor: tier === 3 ? 'oklch(var(--c-desert-text))' : tier === 2 ? 'oklch(var(--c-desert-text)/.7)' : 'oklch(var(--c-desert-text)/.4)',
                     transformOrigin: 'center',
                   }}
                   initial={{ opacity: 0, scale: 0.5, y: 8 }}
@@ -427,7 +427,7 @@ export function QuestionRunner({
               </div>
 
               {question.label && (
-                <p className="mb-4 border-l-4 border-[#c9b06a] bg-[#fbf6e6] px-4 py-3 font-read text-[1.02rem] leading-relaxed">
+                <p className="mb-4 border-l-4 border-paper-deep bg-paper-light px-4 py-3 font-read text-[1.02rem] leading-relaxed">
                   <RichText as="span" format="html">
                     {question.label}
                   </RichText>
@@ -552,7 +552,7 @@ export function QuestionRunner({
                       </span>
                     )}
                     {wrongPick && (
-                      <Glyph name="cross" size={16} className="ml-auto flex-none text-[#9c3326]" />
+                      <Glyph name="cross" size={16} className="ml-auto flex-none text-[oklch(var(--c-feedback-wrong))]" />
                     )}
                   </m.button>
                 );
@@ -601,7 +601,7 @@ export function QuestionRunner({
                     *second* line. */}
                 <m.div
                   className="mb-5 font-script text-[13px] font-semibold uppercase tracking-[0.16em]"
-                  style={{ color: gotItRight ? '#2f6b3a' : '#9c3326' }}
+                  style={{ color: gotItRight ? 'oklch(var(--c-feedback-correct))' : 'oklch(var(--c-feedback-wrong))' }}
                   role="status"
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}

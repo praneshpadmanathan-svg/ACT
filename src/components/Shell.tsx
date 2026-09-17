@@ -210,24 +210,16 @@ function TrialPill({ className }: { className?: string }) {
    makes the app worth opening, and it stops being persuasive the moment it is
    sized like a caption. */
 function BankBadge() {
+  const { rank } = useStore();
   return (
     <a
-      href={hrefFor({ name: 'drills' })}
-      onClick={() => sfx.select()}
+      href={hrefFor({ name: 'profile' })}
       className="rail-bank group"
-      title="Every question is original and every wrong answer is explained."
+      title="View your rank and progress"
     >
-      <span
-        className="num block text-[26px] font-bold leading-none text-gold-bright transition-colors
-                   group-hover:text-gold-light"
-        style={{ textShadow: '0 0 18px rgba(242, 207, 91, 0.22)' }}
-      >
-        {LIBRARY_STATS.totalQuestions.toLocaleString()}
-      </span>
-      <span className="label-sm mt-1.5 block text-gold">questions</span>
-      <span className="mt-1 block font-read text-[11.5px] leading-snug text-ink-faint">
-        every answer explained
-      </span>
+      <RankBadge rank={rank} size={64} aura={false} />
+      <strong className="mt-3 block font-display text-title text-gold">{rank.name}</strong>
+      <span className="label-sm mt-2 block">Your rank</span>
     </a>
   );
 }

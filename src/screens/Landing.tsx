@@ -11,6 +11,8 @@
    with no card at all — the feature list especially — were the hardest thing
    on the page to read. */
 
+import { RealmExplorer } from '@/components/RealmExplorer';
+import { RankShowcase } from '@/components/RankShowcase';
 import { lazy, Suspense, useEffect, useRef, type ReactNode } from 'react';
 
 /* Three narrow imports rather than one from `@/content`. This is the only
@@ -18,7 +20,6 @@ import { lazy, Suspense, useEffect, useRef, type ReactNode } from 'react';
    touches is in the first paint, and it quotes the library's totals in prose.
    Reading those totals off the barrel meant downloading 738 kB of question
    bank to render a sentence about how many questions there are. */
-import { SECTIONS } from '@/content/sections';
 import { PATH_BY_ID } from '@/content/zones';
 import { LIBRARY_STATS } from '@/content/stats';
 import { hrefFor, useNavigate } from '@/lib/router';
@@ -29,8 +30,7 @@ import { Button, Eyebrow, Tally } from '@/components/ui';
 import { useInView } from '@/lib/useInView';
 import { Glyph } from '@/components/Icon';
 import { NavGlyph, type GlyphName } from '@/components/NavGlyph';
-import { REGIONS, REGION_ORDER } from '@/content/regionFlavor';
-import type { SectionId } from '@/types';
+import { REGION_ORDER } from '@/content/regionFlavor';
 import { Art } from '@/components/Art';
 import { NearViewport } from '@/components/NearViewport';
 /* The one thing on this page that genuinely needs the question bank, and the
@@ -131,12 +131,6 @@ function Hl({ tone = 'gold', children }: { tone?: Tone; children: ReactNode }) {
    the four were byte-identical to `--c-*-text` tokens that already invert;
    the fourth had no token, which is presumably why the set was hand-written
    in the first place. `--c-village-text` now exists for it. */
-const REGION_TEXT: Record<SectionId, string> = {
-  english: 'oklch(var(--c-village-text))',
-  reading: 'oklch(var(--c-woods-text))',
-  math: 'oklch(var(--c-desert-text))',
-  science: 'oklch(var(--c-cliffs-text))',
-};
 
 /* A rule broken by a diamond, under every section heading. */
 function Ornament() {
@@ -330,7 +324,7 @@ export function Landing() {
   };
 
   return (
-    <div className="min-h-dvh">
+    <div className="min-h-dvh premium-landing">
       <header className="absolute inset-x-0 top-0 z-30">
         <div className="shell flex h-16 items-center">
           <span className="flex items-center gap-2 font-display text-[16px] font-semibold tracking-wide text-parchment">
@@ -625,73 +619,12 @@ export function Landing() {
           }
         />
 
-        {/* A track rather than a grid. The four painted region plates have only
-            ever been seen as backdrops behind the path screens, under a scrim
-            at low opacity; this is the one place on the site where they can be
-            looked at. It also does something a grid cannot — it puts the roads
-            in an order and makes you travel them.
-
-            `tabIndex` and the label are not decoration: a scroll container that
-            only a wheel can reach is a region of the page a keyboard user
-            cannot read at all. */}
-        <div className="band-scope act-rise">
-          <div
-            className="plate-band"
-            role="region"
-            aria-label="The four regions — scroll to see each"
-            tabIndex={0}
-          >
-            {SECTIONS.map((section) => {
-              const region = REGIONS[section.id];
-              const tint = REGION_TEXT[section.id];
-              const zones = PATH_BY_ID[section.id]?.nodes.length ?? 0;
-              return (
-                <article
-                  key={section.id}
-                  className="plate-card"
-                  style={{ borderTopColor: region.color, borderTopWidth: 3 }}
-                >
-                  <Art
-                    name={`region-${section.id}` as const}
-                    className="plate-card-art"
-                    sizes="(max-width: 640px) 80vw, 330px"
-                  />
-                  <div className="plate-card-veil" />
-                  <div className="relative flex h-full min-h-[300px] flex-col p-6">
-                    <h3 className="heading text-[18px]" style={{ color: tint }}>
-                      {region.title}
-                    </h3>
-                    <p className="label-sm mt-1">{section.name}</p>
-                    <p className="mt-3 flex-1 font-read text-[14.5px] leading-relaxed text-parchment-dim">
-                      {section.blurb}
-                    </p>
-                    <p className="mt-4 border-t border-leather-700/60 pt-3 font-read text-[13px] text-ink-faint">
-                      <b className="num text-[14px]" style={{ color: tint }}>
-                        {section.questionCount}
-                      </b>{' '}
-                      questions ·{' '}
-                      <b className="num text-[14px]" style={{ color: tint }}>
-                        {section.minutes}
-                      </b>{' '}
-                      min ·{' '}
-                      <b className="num text-[14px]" style={{ color: tint }}>
-                        {zones}
-                      </b>{' '}
-                      landmarks
-                    </p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-          {/* The scrollbar the band hides, restated. Driven by the band's own
-              scroll position through a named scroll timeline — see the gate in
-              `index.css`; where that is unsupported it is a static gilt stub,
-              which still reads as "there is more to the right". */}
-          <div className="band-rule" aria-hidden="true" />
-        </div>
+        <RealmExplorer onBegin={begin} />
       </section>
 
+      <div className="shell pb-20">
+        <RankShowcase />
+      </div>
       {/* -------------------------------------------------------- features */}
       <section className="border-y border-leather-700 bg-leather-950/50 py-20">
         <div className="shell">

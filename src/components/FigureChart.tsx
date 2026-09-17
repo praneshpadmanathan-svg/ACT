@@ -24,13 +24,14 @@ import { niceScale, formatTick, categories, extentOf, project } from '@/lib/char
    because they carry identity, not chrome: a series must not change colour
    when the reader flips the theme, exactly as the correct-answer green
    elsewhere in the app is fixed. */
-const SERIES_COLORS = ['#9E3B1E', '#1A6B9A', '#3F7D47', '#6B3FA0', '#8A6510'];
+const SERIES_COLORS = Array.from({ length: 5 }, (_, i) => `oklch(var(--c-series-${i + 1}))`);
 const DASHES = ['', '7 4', '2 3', '10 3 2 3', '4 2'];
 
 /* Wrapped rather than indexed inline: the index is always in range because it
    is taken modulo the array length, but the compiler cannot see that, and a
    cast to silence it would also silence a real out-of-range read later. */
-const colorAt = (i: number): string => SERIES_COLORS[i % SERIES_COLORS.length] ?? '#9E3B1E';
+const colorAt = (i: number): string =>
+  SERIES_COLORS[i % SERIES_COLORS.length] ?? 'oklch(var(--c-series-1))';
 const dashAt = (i: number): string | undefined => DASHES[i % DASHES.length] || undefined;
 
 /** The gap between two ticks — the precision their labels should be shown at. */
@@ -271,10 +272,18 @@ function Marker({
     stroke: ring ? 'oklch(var(--c-paper))' : undefined,
     strokeWidth: ring ? 2 : undefined,
   };
-  if (index % 3 === 1) {
+  if (index % 5 === 3) {
+    return (
+      <polygon points={`${x},${y - 5} ${x + 5},${y} ${x},${y + 5} ${x - 5},${y}`} {...common} />
+    );
+  }
+  if (index % 5 === 4) {
+    return <path d={`M${x - 5},${y - 2}h3v-3h4v3h3v4h-3v3h-4v-3h-3Z`} {...common} />;
+  }
+  if (index % 5 === 1) {
     return <rect x={x - 4} y={y - 4} width="8" height="8" rx="1" {...common} />;
   }
-  if (index % 3 === 2) {
+  if (index % 5 === 2) {
     return <polygon points={`${x},${y - 5} ${x + 5},${y + 4} ${x - 5},${y + 4}`} {...common} />;
   }
   return <circle cx={x} cy={y} r="4.5" {...common} />;

@@ -1,4 +1,4 @@
-import { readdirSync, statSync, writeFileSync } from 'node:fs';
+import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath, URL } from 'node:url';
 
@@ -191,7 +191,20 @@ export default defineConfig(({ mode }) => {
   const supabase = resolveSupabase(mode);
 
   return {
-    plugins: [react(), serviceWorker()],
+    plugins: [
+      react(),
+      serviceWorker(),
+      {
+        name: 'current-library-metadata',
+        transformIndexHtml(html) {
+          const stats = JSON.parse(readFileSync(join(root, 'src/content/stats.json'), 'utf8'));
+          return html.replaceAll(
+            '%QUESTION_TOTAL%',
+            (stats.drillQuestions + stats.zoneQuestions).toLocaleString('en-US'),
+          );
+        },
+      },
+    ],
     /* The app reads `import.meta.env.VITE_SUPABASE_*`. These are substituted at
      build time from whichever publishable name the host actually provided, so
      the same source works with a hand-written .env or with the Vercel

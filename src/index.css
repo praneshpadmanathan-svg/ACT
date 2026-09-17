@@ -24,6 +24,17 @@
 
 @layer base {
   :root {
+    /* Feedback and chart ink use the fixed paper surface in both themes. */
+    --c-feedback-correct: 43% 0.09 145;
+    --c-feedback-medium: 43% 0.08 75;
+    --c-feedback-wrong: 43% 0.13 30;
+    --c-series-1: 40% 0.13 30;
+    --c-series-2: 45% 0.11 240;
+    --c-series-3: 35% 0.06 155;
+    --c-series-4: 50% 0.14 315;
+    --c-series-5: 51% 0.10 85;
+    --loading-sky: oklch(var(--c-leather-800)), oklch(var(--c-leather-950));
+    --art-shadow: drop-shadow(0 10px 22px oklch(0% 0 0 / .5));
     /* ---------------------------------------------------------- the measures
 
        Named widths, because "how wide is a column of this kind" is a design
@@ -259,6 +270,12 @@
      4.60 on 950 and better on the rest, gold-light 6.51 and up. */
   [data-theme='light'] {
     color-scheme: light;
+    --c-village: 44% 0.09 80;
+    --c-woods: 44% 0.09 148;
+    --c-desert: 44% 0.10 47;
+    --c-cliffs: 44% 0.09 236;
+    --c-summit: 44% 0.09 92;
+    --c-blood: 44% 0.13 32;
 
     --c-leather-950: 88.22% 0.0359 85.41;
     --c-leather-900: 93% 0.0271 85.67;
@@ -405,7 +422,8 @@
   }
 
   :focus-visible {
-    outline: 2px solid theme('colors.gold.bright');
+    outline: 2px solid oklch(var(--c-gold));
+    box-shadow: 0 0 0 1px oklch(var(--c-leather-950));
     outline-offset: 2px;
     border-radius: 4px;
   }

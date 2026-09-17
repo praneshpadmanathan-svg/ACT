@@ -47,22 +47,10 @@ import scenes from '@/sceneArt.json';
    most likely to keep. Hand-picking these would drift from the art the moment
    a backdrop was regenerated; these were measured. */
 const BACKDROPS: { name: ArtName; sky: string }[] = [
-  {
-    name: 'scene-ridge',
-    sky: '#252f52 0%, #905973 18%, #faa259 36%, #623c4c 50%, #453133 64%, #2d231b 80%, #36211a 100%',
-  },
-  {
-    name: 'scene-river',
-    sky: '#232e51 0%, #89536e 18%, #fba457 36%, #5e3a50 50%, #83593b 64%, #a76344 80%, #3e251e 100%',
-  },
-  {
-    name: 'scene-pass',
-    sky: '#4f6471 0%, #979082 18%, #c2a282 36%, #b19074 50%, #765a4b 64%, #573f33 80%, #573e31 100%',
-  },
-  {
-    name: 'scene-harbour',
-    sky: '#2b5f68 0%, #83867a 18%, #d98c64 36%, #6a4b3d 50%, #b37352 64%, #834731 80%, #6a3e2c 100%',
-  },
+  { name: 'scene-ridge', sky: 'var(--loading-sky)' },
+  { name: 'scene-river', sky: 'var(--loading-sky)' },
+  { name: 'scene-pass', sky: 'var(--loading-sky)' },
+  { name: 'scene-harbour', sky: 'var(--loading-sky)' },
 ];
 
 const pick = <T,>(xs: readonly T[]): T => xs[Math.floor(Math.random() * xs.length)] as T;
@@ -102,7 +90,7 @@ export function LoadingScreen() {
         decoding="async"
         draggable={false}
         className="animate-float relative z-10 w-[min(52vw,224px)] select-none"
-        style={{ filter: 'drop-shadow(0 10px 22px rgba(0,0,0,.7))' }}
+        style={{ filter: 'var(--art-shadow)' }}
       />
       <span className="sr-only">Loading</span>
     </div>

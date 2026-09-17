@@ -1,5 +1,13 @@
 # Animation inventory — everything that could move
 
+## Implemented September 17 visual pass
+
+- Subject explorer: user-triggered 320ms arrival, house out curve; static under reduced motion.
+- Rank gallery: replayable 620ms seal/page entrances, house overshoot/out curves;
+  selection never changes earned progress. Reduced-motion shows the final emblem.
+- Rank buttons: 160ms hover lift on fine pointers only.
+- Route skeleton: static placeholder, so no ambient motion competes with reading.
+
 A complete pass over the app, surface by surface. Every item is one buildable change.
 
 ## Where the motion actually is today
