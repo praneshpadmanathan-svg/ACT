@@ -19332,5 +19332,1193 @@
       "C": "\"Its\" would treat a group of people as a thing rather than as persons.",
       "D": "\"One's\" is indefinite and points to nobody actually named in the sentence."
     }
+  },
+  {
+    "id": "e533",
+    "section": "english",
+    "topic": "commas",
+    "difficulty": "easy",
+    "passage": "ep34",
+    "context": "The gauge, «which his father had bought secondhand,» stood in the same corner for forty-seven years.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "which his father had bought secondhand"
+      },
+      {
+        "id": "C",
+        "text": "that his father had bought secondhand,"
+      },
+      {
+        "id": "D",
+        "text": "which his father, had bought secondhand,"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a non-essential clause opening with \"which\" takes a comma at both ends, and both are here.",
+      "B": "Dropping the closing comma leaves the clause open at one end while the other end is still punctuated.",
+      "C": "\"That\" introduces an essential clause, which takes no commas at all, so the one left behind is stranded.",
+      "D": "This puts a comma between the subject of the clause and its verb, which separates two words that belong together."
+    }
+  },
+  {
+    "id": "e534",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "medium",
+    "passage": "ep34",
+    "context": "Each book held «two columns; a date and a measurement in millimetres.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "two columns: a date and a measurement in millimetres."
+      },
+      {
+        "id": "C",
+        "text": "two columns, a date: and a measurement in millimetres."
+      },
+      {
+        "id": "D",
+        "text": "two columns a date and a measurement in millimetres."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A semicolon joins two things that could each stand alone, and \"a date and a measurement in millimetres\" could not.",
+      "B": "Correct — the colon introduces the list that spells out what the two columns were.",
+      "C": "The colon has landed inside the list rather than in front of it, splitting the first item from the second.",
+      "D": "With no mark at all the list runs straight into the clause and the reader has to guess where it starts."
+    }
+  },
+  {
+    "id": "e535",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "medium",
+    "passage": "ep34",
+    "context": "The twenty-three exercise books on the shelf above his desk «was» the whole record.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "has been"
+      },
+      {
+        "id": "C",
+        "text": "were"
+      },
+      {
+        "id": "D",
+        "text": "is"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The subject is \"books,\" which is plural; the shelf is only where they sit.",
+      "B": "This is singular as well, and it adds a present-perfect sense the sentence has no use for.",
+      "C": "Correct — the plural subject \"books\" takes the plural verb \"were.\"",
+      "D": "This is singular and present tense, while the record is being described in the past."
+    }
+  },
+  {
+    "id": "e536",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "medium",
+    "passage": "ep34",
+    "context": "By the time the office wrote to him in 1979, Pym «keeps» the record for forty-five years.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "keeping"
+      },
+      {
+        "id": "C",
+        "text": "will keep"
+      },
+      {
+        "id": "D",
+        "text": "had kept"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "A present-tense verb cannot describe something finished before a past event.",
+      "B": "A bare participle leaves the sentence with no main verb for its subject.",
+      "C": "The future tense points past 1979, while the forty-five years lie behind it.",
+      "D": "Correct — the past perfect places the forty-five years of keeping before the letter of 1979."
+    }
+  },
+  {
+    "id": "e537",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "hard",
+    "passage": "ep34",
+    "context": "«Standing in the lee of a rising hedge, the record was compromised by the gauge.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Standing in the lee of a rising hedge, the gauge compromised the record."
+      },
+      {
+        "id": "C",
+        "text": "The record, standing in the lee of a rising hedge, was compromised."
+      },
+      {
+        "id": "D",
+        "text": "Compromised by the gauge, the record stood in the lee of a rising hedge."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The opening phrase describes whatever follows the comma, and a record does not stand in the lee of anything.",
+      "B": "Correct — the gauge is the thing that stands in the hedge’s lee, and it now follows the phrase directly.",
+      "C": "Moving the phrase into the middle does not change what it attaches to; the record is still doing the standing.",
+      "D": "This keeps the same mismatch and adds a second one, since the gauge has become the thing doing the compromising to itself."
+    }
+  },
+  {
+    "id": "e538",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "medium",
+    "passage": "ep34",
+    "context": "The dates ran without a gap. «Likewise,» eleven of them were written by his daughter.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Therefore,"
+      },
+      {
+        "id": "C",
+        "text": "However,"
+      },
+      {
+        "id": "D",
+        "text": "For example,"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "\"Likewise\" says the second fact matches the first, but an unbroken run and a change of hand are not the same kind of fact.",
+      "B": "Nothing about an unbroken run of dates causes somebody else to have written eleven of them.",
+      "C": "Correct — the second sentence qualifies the first, which is the job of a contrasting transition.",
+      "D": "The eleven days are an exception to the claim rather than an instance of it."
+    }
+  },
+  {
+    "id": "e539",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "easy",
+    "passage": "ep34",
+    "context": "His «daughters» handwriting was larger and rounder than his own.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "daughters’s"
+      },
+      {
+        "id": "C",
+        "text": "daughters’"
+      },
+      {
+        "id": "D",
+        "text": "daughter’s"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Without an apostrophe this is a plain plural, and the handwriting is not being said to belong to anyone.",
+      "B": "A plural already ending in s never takes a further s after the apostrophe.",
+      "C": "This would mean two or more daughters, and the passage gives Pym one.",
+      "D": "Correct — one daughter possesses the handwriting, so the apostrophe goes before the s."
+    }
+  },
+  {
+    "id": "e540",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "medium",
+    "passage": "ep34",
+    "context": "He copied the remaining books out before sending them. «A job that took him a year and a half.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "It was a job that took him a year and a half."
+      },
+      {
+        "id": "C",
+        "text": "a job that took him a year and a half."
+      },
+      {
+        "id": "D",
+        "text": "Taking him a year and a half to do."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "This is a noun with a clause hanging off it and no verb of its own, so it cannot stand as a sentence.",
+      "B": "Correct — \"It was\" gives the group of words a subject and a verb, which is what it lacked.",
+      "C": "Lowercasing the first word does not supply the missing verb; it only hides the seam.",
+      "D": "A participle is still not a main verb, so this remains a fragment."
+    }
+  },
+  {
+    "id": "e541",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "hard",
+    "passage": "ep34",
+    "context": "The correction was large, «it was larger than any single day’s rainfall he had recorded.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "it was larger than any single day’s rainfall he had recorded;"
+      },
+      {
+        "id": "C",
+        "text": "larger than any single day’s rainfall he had recorded."
+      },
+      {
+        "id": "D",
+        "text": "and larger, than any single day’s rainfall he had recorded."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "A comma alone cannot hold two complete sentences together.",
+      "B": "This moves the mark to the end, where it separates the clause from the full stop rather than from the clause before it.",
+      "C": "Correct — dropping \"it was\" turns the second half into a phrase that the comma can properly attach.",
+      "D": "The comma now falls between \"larger\" and the comparison it governs, splitting the phrase it should join."
+    }
+  },
+  {
+    "id": "e542",
+    "section": "english",
+    "topic": "dashes",
+    "difficulty": "hard",
+    "passage": "ep34",
+    "context": "The rarest thing about the record «— that one man took it at one spot by one method —» is also what made the hedge matter so much.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "— that one man took it at one spot by one method,"
+      },
+      {
+        "id": "C",
+        "text": ", that one man took it at one spot by one method —"
+      },
+      {
+        "id": "D",
+        "text": "that one man took it at one spot by one method"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a pair of dashes sets off the interruption, and a pair is what is here.",
+      "B": "A dash at the front and a comma at the back is a mismatched pair, and a mismatched pair reads as one mark gone missing.",
+      "C": "This is the same mismatch the other way round, opening with a comma and closing with a dash.",
+      "D": "With nothing setting it off, the inserted clause runs into the subject and the reader loses the main verb."
+    }
+  },
+  {
+    "id": "e543",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "medium",
+    "passage": "ep34",
+    "context": "The office had to «work backwards in a reverse direction from the record itself» to find the error.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "work in reverse"
+      },
+      {
+        "id": "C",
+        "text": "work backwards, going in reverse, from the record itself"
+      },
+      {
+        "id": "D",
+        "text": "work backwards from the record itself"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "\"Backwards\" and \"in a reverse direction\" say the same thing twice over.",
+      "B": "This is the shortest choice, but it cuts the phrase naming what the office worked back from, which the sentence needs.",
+      "C": "Setting the repetition off in commas makes it more prominent rather than less.",
+      "D": "Correct — this keeps the whole meaning and drops the phrase that only repeats \"backwards.\""
+    }
+  },
+  {
+    "id": "e544",
+    "section": "english",
+    "topic": "word choice",
+    "difficulty": "medium",
+    "passage": "ep34",
+    "context": "A gauge in the lee of a tall hedge «collects» less rain than one standing clear.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "accumulates"
+      },
+      {
+        "id": "C",
+        "text": "amasses"
+      },
+      {
+        "id": "D",
+        "text": "hoards"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — \"collects\" is the plain word for what a gauge does and matches the register of the passage.",
+      "B": "\"Accumulates\" suggests a gradual pile-up rather than the daily catch the passage describes.",
+      "C": "\"Amasses\" implies a great quantity gathered up, which overstates a few millimetres.",
+      "D": "\"Hoards\" attributes an intention to the instrument, which nothing in the passage supports."
+    }
+  },
+  {
+    "id": "e545",
+    "section": "english",
+    "topic": "sentence order",
+    "difficulty": "hard",
+    "passage": "ep34",
+    "context": "For the sake of logic and coherence, the sentence \"Nothing in twenty-three exercise books says when a hedge got tall.\" belongs:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "after the hedge is introduced and before the office works backwards."
+      },
+      {
+        "id": "B",
+        "text": "in the opening paragraph, beside the description of the brass gauge."
+      },
+      {
+        "id": "C",
+        "text": "in the paragraph about the eleven days his daughter covered."
+      },
+      {
+        "id": "D",
+        "text": "at the very end, after the reader has been told this was not a defeat."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it explains why the record cannot answer the question itself, which is exactly what sends the office to the other stations.",
+      "B": "The hedge has not been mentioned at that point, so the sentence would be about a thing the reader does not yet know exists.",
+      "C": "That paragraph is about a gap in who took the readings, not about what the readings fail to record.",
+      "D": "Placed last it becomes an afterthought, arriving after the problem it creates has already been settled."
+    }
+  },
+  {
+    "id": "e546",
+    "section": "english",
+    "topic": "adding/deleting",
+    "difficulty": "hard",
+    "passage": "ep34",
+    "context": "At this point the writer is considering adding: \"Sheffield is about fifteen miles from the Pym house by road.\" Should this be added?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No, because the passage has already given the distance to the two stations."
+      },
+      {
+        "id": "B",
+        "text": "No, because the distance to the hospital has no bearing on the record."
+      },
+      {
+        "id": "C",
+        "text": "Yes, because it explains why his daughter rather than his wife took the readings."
+      },
+      {
+        "id": "D",
+        "text": "Yes, because it shows how far the correction the office applied had to reach."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The twelve miles the passage gives belongs to the comparison stations, not to Sheffield, so this is not a repetition.",
+      "B": "Correct — the paragraph is about who wrote eleven figures down, and a road distance does nothing for that.",
+      "C": "The passage never raises the question of which member of the household went out, only that the daughter did.",
+      "D": "The correction was worked out from two stations twelve miles away, which has nothing to do with the hospital."
+    }
+  },
+  {
+    "id": "e547",
+    "section": "english",
+    "topic": "writers purpose",
+    "difficulty": "hard",
+    "passage": "ep34",
+    "context": "Suppose the writer’s goal had been to show that a careful record can be undone by something its keeper never thought to record. Would this passage accomplish that goal?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because the hedge is exactly the fact the exercise books do not hold."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because the eleven missing days are what forced the office to correct it."
+      },
+      {
+        "id": "C",
+        "text": "No, because the office was able to correct the record from other stations."
+      },
+      {
+        "id": "D",
+        "text": "No, because the passage says the column of figures was sound throughout."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the closing paragraph turns on the hedge being both the cause and the thing no column recorded.",
+      "B": "The eleven days are covered in the record, by a different hand, and the passage says the dates run without a gap.",
+      "C": "The correction confirms the problem rather than removing it; the office still had to reach outside the record.",
+      "D": "The figures being sound is the point: a sound column still produced a record that needed correcting."
+    }
+  },
+  {
+    "id": "e548",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "easy",
+    "passage": "ep34",
+    "context": "Pym had been fond «for» the hedge long before it began to cost him anything.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "of"
+      },
+      {
+        "id": "D",
+        "text": "about"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "\"Fond for\" is not an English pairing; the adjective does not take \"for.\"",
+      "B": "\"Fond with\" is not idiomatic in any sense of the word.",
+      "C": "Correct — \"fond of\" is the fixed pairing.",
+      "D": "\"Fond about\" is likewise not a pairing English uses."
+    }
+  },
+  {
+    "id": "e549",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "medium",
+    "passage": "ep34",
+    "context": "He emptied the gauge, «wrote down the figure, and was returning» to the house.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "writing down the figure, and returning"
+      },
+      {
+        "id": "C",
+        "text": "was writing down the figure, and returned"
+      },
+      {
+        "id": "D",
+        "text": "wrote down the figure, and returned"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The third verb shifts into a different form from the two simple past verbs beside it.",
+      "B": "Two participles against one past-tense verb leaves the series uneven and the sentence without a clear main verb.",
+      "C": "This fixes the third verb by breaking the second, leaving the series mismatched in a new place.",
+      "D": "Correct — \"emptied,\" \"wrote\" and \"returned\" are all simple past, so the three match."
+    }
+  },
+  {
+    "id": "e550",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "hard",
+    "passage": "ep34",
+    "context": "Neither the office nor the surrounding stations had kept «its» instruments in one place for as long.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "their"
+      },
+      {
+        "id": "C",
+        "text": "his"
+      },
+      {
+        "id": "D",
+        "text": "it’s"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "After neither/nor the pronoun agrees with the nearer subject, and \"stations\" is plural.",
+      "B": "Correct — the nearer subject is plural, so the plural pronoun is the one that agrees.",
+      "C": "A masculine singular pronoun points at a person, and neither subject in the sentence is one.",
+      "D": "\"It’s\" is the contraction of \"it is\" and cannot show possession at all."
+    }
+  },
+  {
+    "id": "e551",
+    "section": "english",
+    "topic": "commas",
+    "difficulty": "easy",
+    "passage": "ep35",
+    "context": "He owned three pen nibs «a fine one, a medium one and a broad one,» and one bottle of ink.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "a fine one a medium one and a broad one,"
+      },
+      {
+        "id": "C",
+        "text": "— a fine one, a medium one and a broad one —"
+      },
+      {
+        "id": "D",
+        "text": ", a fine one, a medium one and a broad one"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The list is closed off at the end but not opened at the front, so it runs straight into \"nibs.\"",
+      "B": "Removing the commas inside the list makes the three items run together.",
+      "C": "Correct — a pair of dashes sets off a list that already contains commas of its own.",
+      "D": "This opens the list without closing it, which is the same fault as the original in reverse."
+    }
+  },
+  {
+    "id": "e552",
+    "section": "english",
+    "topic": "colons",
+    "difficulty": "medium",
+    "passage": "ep35",
+    "context": "He was particular about which nib did which job «: the fine one for streams, the medium for paths.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", the fine one for streams: the medium for paths."
+      },
+      {
+        "id": "C",
+        "text": "; the fine one for streams, the medium for paths."
+      },
+      {
+        "id": "D",
+        "text": ": the fine one for streams, the medium for paths."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "A colon closes up against the word before it; the space in front of it is a typographical error.",
+      "B": "This puts the colon between the two items of the list instead of in front of them.",
+      "C": "A semicolon joins two things that could each stand alone, and what follows is a list rather than a clause.",
+      "D": "Correct — the colon sits tight against \"job\" and introduces the two examples that follow."
+    }
+  },
+  {
+    "id": "e553",
+    "section": "english",
+    "topic": "verb tense",
+    "difficulty": "medium",
+    "passage": "ep35",
+    "context": "He «will not draw» a path he had not walked, and he never announced this as a rule.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "would not draw"
+      },
+      {
+        "id": "C",
+        "text": "does not draw"
+      },
+      {
+        "id": "D",
+        "text": "has not drawn"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The future tense clashes with \"had not walked\" and \"never announced,\" both of which are in the past.",
+      "B": "Correct — \"would not draw\" is the past habitual, which is what the rest of the sentence is in.",
+      "C": "The present tense describes a man still at the board, and the passage has him finished.",
+      "D": "The present perfect reaches up to now, which conflicts with a habit described as having ended."
+    }
+  },
+  {
+    "id": "e554",
+    "section": "english",
+    "topic": "modifiers",
+    "difficulty": "hard",
+    "passage": "ep35",
+    "context": "«Pushing a measuring wheel ahead of him, the count went onto the back of an envelope.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "The count, pushing a measuring wheel ahead of him, went onto an envelope."
+      },
+      {
+        "id": "C",
+        "text": "Pushing a measuring wheel ahead of him, he wrote the count on the back of an envelope."
+      },
+      {
+        "id": "D",
+        "text": "Pushed ahead of him, the measuring wheel wrote the count on an envelope."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The opening phrase needs a person after the comma, and a count cannot push a wheel.",
+      "B": "Moving the phrase inside the sentence leaves it attached to the count just as before.",
+      "C": "Correct — \"he\" now follows the phrase, and he is the one doing the pushing.",
+      "D": "This makes the wheel do the writing, which is a new mismatch in place of the old one."
+    }
+  },
+  {
+    "id": "e555",
+    "section": "english",
+    "topic": "subject-verb agreement",
+    "difficulty": "medium",
+    "passage": "ep35",
+    "context": "The envelopes with the count written on the back of each one «goes» into a tin.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "has gone"
+      },
+      {
+        "id": "C",
+        "text": "is going"
+      },
+      {
+        "id": "D",
+        "text": "go"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The subject is \"envelopes,\" which is plural; everything between it and the verb is description.",
+      "B": "This is singular as well, and the present perfect turns a repeated action into a finished one.",
+      "C": "This is singular, and it also shifts the habit into something happening at this moment.",
+      "D": "Correct — the plural subject takes the plural verb \"go.\""
+    }
+  },
+  {
+    "id": "e556",
+    "section": "english",
+    "topic": "transitions",
+    "difficulty": "medium",
+    "passage": "ep35",
+    "context": "Everyone in the parish had used the way for years. «As a result,» there was no right of way.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "Even so,"
+      },
+      {
+        "id": "C",
+        "text": "In addition,"
+      },
+      {
+        "id": "D",
+        "text": "For instance,"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Long use is not what produced the absence of a right of way; the two facts pull against each other.",
+      "B": "Correct — the second fact sits awkwardly beside the first, which is what a concessive transition marks.",
+      "C": "This presents the two as facts stacking up in the same direction, when they point opposite ways.",
+      "D": "The absence of a right of way is not an example of everyone having used the path."
+    }
+  },
+  {
+    "id": "e557",
+    "section": "english",
+    "topic": "apostrophes",
+    "difficulty": "medium",
+    "passage": "ep35",
+    "context": "Both «gates were» chained by the end of that August.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "gate’s were"
+      },
+      {
+        "id": "C",
+        "text": "gates’ were"
+      },
+      {
+        "id": "D",
+        "text": "gates were’"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — \"gates\" here is a plain plural subject and owns nothing, so it takes no apostrophe.",
+      "B": "This makes one gate the owner of something, and nothing in the sentence is being owned.",
+      "C": "This makes several gates the owners of something, with the thing owned never named.",
+      "D": "An apostrophe after a verb has no function in English punctuation."
+    }
+  },
+  {
+    "id": "e558",
+    "section": "english",
+    "topic": "fragments",
+    "difficulty": "medium",
+    "passage": "ep35",
+    "context": "The club printed the map anyway. «Four hundred copies going out in the spring.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "four hundred copies going out in the spring."
+      },
+      {
+        "id": "C",
+        "text": "Four hundred copies went out in the spring."
+      },
+      {
+        "id": "D",
+        "text": "Four hundred copies, going out in the spring."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "\"Going\" is a participle rather than a main verb, so this group of words has no verb to call its own.",
+      "B": "Joining it to the previous sentence with a lowercase letter and a full stop still leaves it standing alone.",
+      "C": "Correct — \"went\" is a main verb, which is what turns the phrase into a sentence.",
+      "D": "Adding a comma changes the pacing but not the grammar; there is still no main verb."
+    }
+  },
+  {
+    "id": "e559",
+    "section": "english",
+    "topic": "run-ons",
+    "difficulty": "hard",
+    "passage": "ep35",
+    "context": "Ronan left the field off the map, «the club added it themselves.»",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "the club added it themselves;"
+      },
+      {
+        "id": "C",
+        "text": "the club, added it themselves."
+      },
+      {
+        "id": "D",
+        "text": "so the club added it themselves."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Two complete sentences are being held together by a comma, which cannot do that job alone.",
+      "B": "A semicolon would work in place of the comma, but here it has been put at the end instead.",
+      "C": "The added comma falls between the subject and its verb and does nothing about the splice.",
+      "D": "Correct — \"so\" is a conjunction, and a comma before a conjunction is the standard way to join two clauses."
+    }
+  },
+  {
+    "id": "e560",
+    "section": "english",
+    "topic": "dashes",
+    "difficulty": "medium",
+    "passage": "ep35",
+    "context": "The path was inked in badly «— with the medium nib where the fine one was wanted —» and the sheet went out.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": ", with the medium nib where the fine one was wanted,"
+      },
+      {
+        "id": "C",
+        "text": "— with the medium nib where the fine one was wanted,"
+      },
+      {
+        "id": "D",
+        "text": "with the medium nib — where the fine one was wanted"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the aside is set off by a matched pair of dashes, which is what an interruption of this length wants.",
+      "B": "A pair of commas would be defensible on its own, but the sentence already runs on commas elsewhere and the aside would blur into them.",
+      "C": "Opening with a dash and closing with a comma is a mismatched pair.",
+      "D": "This puts one dash in the middle of the aside, cutting it in two rather than fencing it off."
+    }
+  },
+  {
+    "id": "e561",
+    "section": "english",
+    "topic": "wordiness",
+    "difficulty": "easy",
+    "passage": "ep35",
+    "context": "He walked «each and every one of the paths personally himself» before drawing them.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "every path himself"
+      },
+      {
+        "id": "C",
+        "text": "each and every path himself"
+      },
+      {
+        "id": "D",
+        "text": "every one of the paths personally"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "\"Each and every\" doubles one idea and \"personally himself\" doubles another.",
+      "B": "Correct — this keeps the whole meaning with neither pair of repeated words.",
+      "C": "This clears the second redundancy but leaves \"each and every\" standing.",
+      "D": "This clears the first redundancy but keeps \"personally,\" which \"himself\" would already have covered."
+    }
+  },
+  {
+    "id": "e562",
+    "section": "english",
+    "topic": "word choice",
+    "difficulty": "medium",
+    "passage": "ep35",
+    "context": "A path on a printed map, he said, stops being a favour and becomes a «claim».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "complaint"
+      },
+      {
+        "id": "C",
+        "text": "demand"
+      },
+      {
+        "id": "D",
+        "text": "proposal"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a claim is an assertion of a right, which is precisely what the printed path asserts without asking.",
+      "B": "A complaint is an expression of grievance, and the map is not grumbling about anything.",
+      "C": "A demand is addressed to someone, and the map addresses no one in particular.",
+      "D": "A proposal invites an answer, and the objection is that nobody was asked."
+    }
+  },
+  {
+    "id": "e563",
+    "section": "english",
+    "topic": "parallelism",
+    "difficulty": "medium",
+    "passage": "ep35",
+    "context": "He went on drawing, the club went on printing, and «the gates stayed chained».",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "the gates went on staying chained"
+      },
+      {
+        "id": "C",
+        "text": "chained gates"
+      },
+      {
+        "id": "D",
+        "text": "the gates having stayed chained"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — all three are clauses with a subject and a past-tense verb, which is as parallel as they need to be.",
+      "B": "Forcing \"went on\" into the third clause makes it a mechanical echo rather than a matching structure.",
+      "C": "A bare noun phrase cannot sit in a series whose other two members are full clauses.",
+      "D": "A participle leaves the third member without a main verb while the first two have one."
+    }
+  },
+  {
+    "id": "e564",
+    "section": "english",
+    "topic": "pronouns",
+    "difficulty": "hard",
+    "passage": "ep35",
+    "context": "Between Ronan and «I», only one of us had walked the field in question.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "myself"
+      },
+      {
+        "id": "C",
+        "text": "me"
+      },
+      {
+        "id": "D",
+        "text": "mine"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "\"I\" is a subject pronoun, and a word governed by \"between\" is an object.",
+      "B": "A reflexive pronoun needs a subject earlier in the clause to point back at, and there is none.",
+      "C": "Correct — \"between\" takes an object, and \"me\" is the object form.",
+      "D": "\"Mine\" is possessive, and nothing in the sentence is being said to belong to the narrator."
+    }
+  },
+  {
+    "id": "e565",
+    "section": "english",
+    "topic": "sentence order",
+    "difficulty": "hard",
+    "passage": "ep35",
+    "context": "For the sake of logic and coherence, the sentence \"This was not a rule he announced.\" belongs:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "in the final paragraph, beside the map the narrator still keeps."
+      },
+      {
+        "id": "B",
+        "text": "in the opening paragraph, after the three nibs have been described."
+      },
+      {
+        "id": "C",
+        "text": "in the paragraph about Colm Tarry’s field and the missing right of way."
+      },
+      {
+        "id": "D",
+        "text": "immediately after the statement that he would not draw an unwalked path."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Placed at the end it would refer back across four paragraphs to a rule the reader has long since absorbed.",
+      "B": "No rule has been stated at that point, so \"this\" would have nothing to refer back to.",
+      "C": "That paragraph is about a rule he did announce, out loud, to the club.",
+      "D": "Correct — it qualifies the rule the sentence before it states, and the story of the moor then shows how it was learned."
+    }
+  },
+  {
+    "id": "e566",
+    "section": "english",
+    "topic": "adding/deleting",
+    "difficulty": "hard",
+    "passage": "ep35",
+    "context": "At this point the writer is considering adding: \"The club had two hundred members when Ronan first drew for it.\" Should this be added?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No, because the passage has already given the number of members in the spring."
+      },
+      {
+        "id": "B",
+        "text": "No, because the growth of the club is not what the paragraph is weighing."
+      },
+      {
+        "id": "C",
+        "text": "Yes, because it shows how far the printed map travelled once it went out."
+      },
+      {
+        "id": "D",
+        "text": "Yes, because it explains why the club overruled him about the field."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The four hundred belongs to the print run of the map, not to the club at the time Ronan started.",
+      "B": "Correct — the paragraph is about what a printed path does to a landowner, and a membership figure does not bear on that.",
+      "C": "A figure from years earlier says nothing about the reach of the sheet that actually went out.",
+      "D": "The passage gives the club’s reason as wanting the path on the map, and size is never offered as part of it."
+    }
+  },
+  {
+    "id": "e567",
+    "section": "english",
+    "topic": "writers purpose",
+    "difficulty": "hard",
+    "passage": "ep35",
+    "context": "Suppose the writer’s goal had been to show that being proved right can be worth less than what it cost. Would this passage accomplish that goal?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because the parish lost the path that Ronan’s refusal was meant to protect."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because the club apologised to him once the gates had been chained."
+      },
+      {
+        "id": "C",
+        "text": "No, because Ronan states plainly at the end that the argument went his way."
+      },
+      {
+        "id": "D",
+        "text": "No, because the passage never says what happened after the map went out."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — he was right about what a printed path would do, and the field closed anyway, to everyone.",
+      "B": "No apology appears anywhere; the passage says only that the club went on printing.",
+      "C": "The passage says the opposite, that Ronan never claimed he had been right.",
+      "D": "The fourth paragraph follows the map through June and August to the chained gates."
+    }
+  },
+  {
+    "id": "e568",
+    "section": "english",
+    "topic": "idioms",
+    "difficulty": "easy",
+    "passage": "ep35",
+    "context": "The club insisted «in» putting the path on the map.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NO CHANGE"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "on"
+      },
+      {
+        "id": "D",
+        "text": "about"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "\"Insisted in\" is not an English pairing, though it is a common slip.",
+      "B": "\"Insisted for\" is not idiomatic in any sense of the verb.",
+      "C": "Correct — \"insist on\" is the fixed pairing before a thing insisted upon.",
+      "D": "\"Insisted about\" is likewise not a pairing English uses."
+    }
   }
 ]
