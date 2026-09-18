@@ -2486,5 +2486,210 @@
     "title": "The Mounds at Kerrin",
     "type": "Conflicting Viewpoints",
     "text": "The Kerrin plain carries tens of thousands of low earth mounds, each roughly 2 m high and 20 m across, spread over 40 km of grassland. Seen from the air they stand in a strikingly even pattern, with about 30 m of bare ground between neighbouring mounds. Grass grows taller and greener on the mounds than between them. Three students account for the pattern.\n\nStudent 1. The mounds are built. A soil-moving insect colony occupies each one, carrying grains up from below and heaping them at the surface over centuries. The even spacing is the signature of neighbouring colonies meeting at their boundaries and pushing no further, exactly as territorial colonies do elsewhere. Soil brought up from depth should differ from the surface soil around it, and because the colonies are still at work the mounds should still be growing.\n\nStudent 2. Nothing builds the mounds. On a dry plain, water soaks in faster where plants already grow, so a patch of vegetation takes more of each rainfall than the bare ground beside it and dries that ground further. The patches that survive draw water from a fixed radius, and that radius sets the spacing. Wind-blown dust settles among the stems and accumulates, and the mound is simply what has piled up. Where rainfall is lower each patch must draw on a wider area, so the spacing between mounds should be wider.\n\nStudent 3. The mounds are relics of farming. Several centuries ago the plain was cultivated in planting mounds laid out on a regular grid, and what remains is the eroded remnant of that grid. No living builder is needed and none should be found. The mound soil should carry traces of occupation, such as charcoal or fragments of fired pottery, the field should end abruptly at the old boundaries rather than fading out, and the mounds should be slowly wearing down rather than growing.\n\nTwo further observations are available to all three students. Soil taken from the mounds holds more clay than the topsoil between them. Along a rainfall gradient that runs across the plain, mounds in the wetter zone, which receives about 400 mm of rain a year, stand about 30 m apart, while mounds in the drier zone, which receives about 250 mm, stand about 55 m apart."
+  },
+  {
+    "id": "sp32",
+    "title": "Output of a Photovoltaic Panel",
+    "type": "Data Representation",
+    "text": "A photovoltaic panel turns part of the sunlight falling on it into electrical power. Irradiance is the power arriving per unit of face area, in watts per square metre. The efficiency of a panel is the power it delivers divided by the power arriving on its face, so a panel of face area 1.6 m squared sitting under an irradiance of 800 W/m squared is being offered 1280 W however much of it the panel manages to use.\n\nOne panel of face area 1.6 m squared was tested outdoors on a frame that could be tilted. Tilt angle is measured from horizontal, so a tilt of 0 degrees lies flat and a tilt of 90 degrees stands upright. Cell temperature was measured with a sensor bonded to the back of the panel; it is not the air temperature, and a panel in still air runs well above the air around it.\n\nTable 1 gives the output of the panel at six tilt angles, every reading taken at an irradiance of 800 W/m squared and a cell temperature of 25 degrees C, with the face freshly cleaned.\n\nTable 2 gives the output at five cell temperatures, every reading taken at a tilt of 30 degrees, an irradiance of 800 W/m squared, and with the face freshly cleaned.\n\nTable 3 gives the output for four states of the panel face, from freshly cleaned to a settled film of wind-blown sand, together with the number of days since the face was last washed. Every reading in Table 3 was taken at a tilt of 30 degrees, an irradiance of 800 W/m squared, and a cell temperature of 45 degrees C.\n\nThe cells themselves do not choose how warm they run. Sunlight that is not converted is absorbed as heat, so the conditions that offer a panel the most light are the conditions that warm it most, and an installer choosing a mounting has to weigh the light a tilt gains against the air it lets past the back.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Output at six tilt angles (800 W/m squared, cell temperature 25 degrees C)",
+        "type": "table",
+        "head": [
+          "Tilt angle (degrees)",
+          "Output (W)"
+        ],
+        "rows": [
+          [
+            "0",
+            "132"
+          ],
+          [
+            "15",
+            "148"
+          ],
+          [
+            "30",
+            "159"
+          ],
+          [
+            "45",
+            "156"
+          ],
+          [
+            "60",
+            "141"
+          ],
+          [
+            "75",
+            "115"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Output at five cell temperatures (tilt 30 degrees, 800 W/m squared)",
+        "type": "table",
+        "head": [
+          "Cell temperature (degrees C)",
+          "Output (W)"
+        ],
+        "rows": [
+          [
+            "25",
+            "159"
+          ],
+          [
+            "35",
+            "152"
+          ],
+          [
+            "45",
+            "146"
+          ],
+          [
+            "55",
+            "139"
+          ],
+          [
+            "65",
+            "133"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Output for four face conditions (tilt 30 degrees, 800 W/m squared, cell temperature 45 degrees C)",
+        "type": "table",
+        "head": [
+          "Face condition",
+          "Days since washing",
+          "Output (W)"
+        ],
+        "rows": [
+          [
+            "Freshly cleaned",
+            "0",
+            "146"
+          ],
+          [
+            "Light dust",
+            "7",
+            "138"
+          ],
+          [
+            "Heavy dust",
+            "21",
+            "121"
+          ],
+          [
+            "Settled sand film",
+            "60",
+            "99"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp33",
+    "title": "Testing Antibiotics on Two Bacterial Strains",
+    "type": "Research Summaries",
+    "text": "A bacterium spread evenly over a nutrient plate grows into a continuous lawn. If a small paper disc soaked in an antibiotic is laid on that lawn, the antibiotic seeps outward through the jelly and the bacteria closest to the disc fail to grow, leaving a clear circle called the zone of inhibition. The diameter of that circle is measured in millimetres, and a diameter of 0 mm means the lawn grew right up to the edge of the paper.\n\nA laboratory used the same plates, the same growing jelly, the same 6 mm paper discs and the same 18 hours at 35 degrees C for every test below. Diameters include the width of the disc itself. The laboratory treated a strain as susceptible to an antibiotic when the zone reached 15 mm or more.\n\nExperiment 1. Four antibiotics, W, X, Y and Z, were each loaded onto a disc at 10 micrograms and laid on separate plates of Strain A. Table 1 gives the zone diameter for each.\n\nExperiment 2. Antibiotic Y alone was loaded onto discs at five different masses and laid on plates of Strain A. Table 2 gives the zone diameter at each mass. The 10 microgram disc in Table 2 is the same test as the Antibiotic Y row of Table 1.\n\nExperiment 3. Experiment 1 was repeated exactly, with the same four antibiotics at the same 10 micrograms, on Strain C instead of Strain A. Strain C had been recovered from a patient who had already been treated with Antibiotic W. Table 3 gives the zone diameters.\n\nA zone says only that growth stopped somewhere. How far the antibiotic travelled through the jelly before it thinned below a useful concentration depends on the size and solubility of the molecule as much as on what it does once it arrives, so two antibiotics with equal zones are not necessarily equally useful in a patient.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1 — Strain A, 10 micrograms per disc",
+        "type": "table",
+        "head": [
+          "Antibiotic",
+          "Zone diameter (mm)"
+        ],
+        "rows": [
+          [
+            "W",
+            "9"
+          ],
+          [
+            "X",
+            "14"
+          ],
+          [
+            "Y",
+            "22"
+          ],
+          [
+            "Z",
+            "18"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2 — Strain A, Antibiotic Y at five masses",
+        "type": "table",
+        "head": [
+          "Mass on disc (micrograms)",
+          "Zone diameter (mm)"
+        ],
+        "rows": [
+          [
+            "1",
+            "11"
+          ],
+          [
+            "3",
+            "16"
+          ],
+          [
+            "10",
+            "22"
+          ],
+          [
+            "30",
+            "27"
+          ],
+          [
+            "100",
+            "32"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3 — Strain C, 10 micrograms per disc",
+        "type": "table",
+        "head": [
+          "Antibiotic",
+          "Zone diameter (mm)"
+        ],
+        "rows": [
+          [
+            "W",
+            "0"
+          ],
+          [
+            "X",
+            "7"
+          ],
+          [
+            "Y",
+            "11"
+          ],
+          [
+            "Z",
+            "17"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp34",
+    "title": "Why Did the Petrel Colony at Ard Skerry Fail?",
+    "type": "Conflicting Viewpoints",
+    "text": "Storm petrels are small seabirds that nest in burrows dug into turf and in the gaps under boulders. A pair lays one egg a year, and the chick leaves the burrow about sixty days after hatching. The colony on the island of Ard Skerry has been counted since 1978.\n\nThe count of breeding pairs was 4,200 in 1978, 1,900 in 1995 and 190 in 2012. Fledging success, the number of chicks that left the burrow per breeding pair, was 0.71 in 1978, 0.66 in 1990, 0.21 in 1998 and 0.18 in 2010. Brown rats were first recorded on the island in 1991, after a fishing boat grounded on its north shore. Landings of sand eels, the small fish the adults carry back to the burrow, fell by roughly two thirds in the surrounding sea between 1985 and 2000. A severe October storm in 2004 drove seawater across the low southern terrace and flooded the burrows there.\n\nScientist 1. Rats caused the collapse. Rats take eggs and small chicks, and a burrow offers a chick no defence against one. Fledging success was still 0.66 in 1990 and had fallen to 0.21 by 1998, which brackets the arrival of rats in 1991 and nothing else. Burrows on the high northern slope, which the 2004 storm never reached, failed in the same years and at the same rate as burrows on the southern terrace, so flooding cannot be the general cause. Adults returning to a burrow they have lost a chick in tend to move elsewhere the following year, which is why the count kept falling long after the first rats arrived.\n\nScientist 2. Food caused the collapse. The count had already dropped from 4,200 to below 3,000 by 1990, before any rat set foot on the island, and the sand eel decline was well under way by then. A chick fed too little does not starve outright; it fledges late and light, and a light fledgling rarely returns to breed. That is why the count keeps falling even in years when many chicks leave the burrow. Rats were present on the neighbouring island of Fara throughout this period, and the Fara colony held steady while its birds fished a different bank.\n\nScientist 3. Storms caused the collapse. Severe autumn storms became roughly twice as frequent over this period. Flooding kills a chick outright, and it also collapses the burrow, so a pair that loses one must dig again in ground that is now waterlogged. The 2004 storm alone took the whole southern terrace, and the terrace held most of the colony when the counts began. High-slope burrows are dug into thin turf over rock and have always been the poorer ground; that they now fail at the same rate as the terrace says the terrace has been ruined, not that the slope was ever safe."
   }
 ]

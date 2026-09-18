@@ -11515,5 +11515,1193 @@
       "C": "Straight lines are Student 3 grid; her patches settle at even distances, not in rows.",
       "D": "Correct — her mechanism needs the ground between patches to dry out, which cannot happen where water is abundant everywhere."
     }
+  },
+  {
+    "id": "s292",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp32",
+    "context": "According to Table 1, the output of the panel at a tilt angle of 60 degrees was closest to which of the following?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "115 W"
+      },
+      {
+        "id": "B",
+        "text": "141 W"
+      },
+      {
+        "id": "C",
+        "text": "156 W"
+      },
+      {
+        "id": "D",
+        "text": "159 W"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "115 W is the reading at a tilt of 75 degrees, one row further down the table.",
+      "B": "Correct. The 60 degree row of Table 1 gives 141 W.",
+      "C": "156 W is the reading at 45 degrees, the row immediately above 60 degrees.",
+      "D": "159 W is the highest reading in Table 1, and it belongs to the 30 degree row."
+    }
+  },
+  {
+    "id": "s293",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp32",
+    "context": "Based on Table 1, as tilt angle increased from 0 degrees to 75 degrees, the output of the panel:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "decreased, then increased."
+      },
+      {
+        "id": "B",
+        "text": "increased throughout."
+      },
+      {
+        "id": "C",
+        "text": "decreased throughout."
+      },
+      {
+        "id": "D",
+        "text": "increased, then decreased."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This reverses the shape of the table: the peak sits in the middle, not the trough.",
+      "B": "Output rises only as far as 30 degrees; from there to 75 degrees every reading is lower than the one before it.",
+      "C": "The first three readings rise, from 132 W at 0 degrees to 159 W at 30 degrees, so the fall is not the whole story.",
+      "D": "Correct. Output rises from 132 W to a peak of 159 W at 30 degrees, then falls away to 115 W at 75 degrees."
+    }
+  },
+  {
+    "id": "s294",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp32",
+    "context": "Based on Table 2, by approximately how much did output fall for each 10 degree C rise in cell temperature?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "13 W"
+      },
+      {
+        "id": "B",
+        "text": "26 W"
+      },
+      {
+        "id": "C",
+        "text": "2.6 W"
+      },
+      {
+        "id": "D",
+        "text": "6.5 W"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This is the fall across two steps, not one; 25 to 45 degrees C loses 13 W.",
+      "B": "This is the total fall across the whole table, from 25 degrees C all the way to 65 degrees C.",
+      "C": "This is about a quarter of the true step; it would leave the panel at roughly 149 W at 65 degrees C rather than 133 W.",
+      "D": "Correct. Output falls from 159 W to 133 W across four 10 degree steps, which is 26 W over four steps, or 6.5 W each."
+    }
+  },
+  {
+    "id": "s295",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp32",
+    "context": "The output given for the freshly cleaned panel in Table 3 is identical to the output given in Table 2 at which cell temperature?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "35 degrees C"
+      },
+      {
+        "id": "B",
+        "text": "45 degrees C"
+      },
+      {
+        "id": "C",
+        "text": "55 degrees C"
+      },
+      {
+        "id": "D",
+        "text": "25 degrees C"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Table 2 gives 152 W at 35 degrees C, six watts above the freshly cleaned reading in Table 3.",
+      "B": "Correct. Both give 146 W, and the header of Table 3 states that every reading in it was taken at a cell temperature of 45 degrees C.",
+      "C": "Table 2 gives 139 W at 55 degrees C, which is lower than any freshly cleaned reading.",
+      "D": "Table 2 gives 159 W at 25 degrees C, which is the highest figure in that table and well above the 146 W in Table 3."
+    }
+  },
+  {
+    "id": "s296",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp32",
+    "context": "Irradiance is given in watts per square metre and the face area of the panel in square metres. The product of the two has which units?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "watts"
+      },
+      {
+        "id": "B",
+        "text": "watts per square metre"
+      },
+      {
+        "id": "C",
+        "text": "joules"
+      },
+      {
+        "id": "D",
+        "text": "watts per second"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct. The square metres in the area cancel the per square metre in the irradiance, leaving watts, which is the power arriving on the face.",
+      "B": "These are the units of irradiance on its own; multiplying by an area is exactly what removes the per square metre.",
+      "C": "A joule is an amount of energy rather than a rate, and nothing in the product introduces a span of time.",
+      "D": "A watt is already an energy per unit time, so dividing it again by seconds describes how fast power is changing."
+    }
+  },
+  {
+    "id": "s297",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp32",
+    "context": "The efficiency of the panel is its output divided by the power arriving on its face. Using Table 3 and the information in the passage, the efficiency of the freshly cleaned panel was closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "23%"
+      },
+      {
+        "id": "B",
+        "text": "9%"
+      },
+      {
+        "id": "C",
+        "text": "11%"
+      },
+      {
+        "id": "D",
+        "text": "18%"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "No combination of the figures given reaches this; it is roughly double the correct value.",
+      "B": "This is close to what you get by dividing by an area of 2.0 m squared rather than the 1.6 m squared the passage gives.",
+      "C": "Correct. The face receives 800 times 1.6, or 1280 W, and 146 divided by 1280 is about 0.11.",
+      "D": "This would follow from dividing 146 W by 800 W directly, which ignores the face area altogether."
+    }
+  },
+  {
+    "id": "s298",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp32",
+    "context": "Based on Table 3, what was the average loss in output per day between the freshly cleaned reading and the settled sand film reading?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "about 2.4 W per day"
+      },
+      {
+        "id": "B",
+        "text": "about 4.7 W per day"
+      },
+      {
+        "id": "C",
+        "text": "about 0.8 W per day"
+      },
+      {
+        "id": "D",
+        "text": "about 1.7 W per day"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This would be the rate if the 47 W had been lost in about 20 days rather than 60.",
+      "B": "This is the total fall in output divided by 10 rather than by the 60 days the table gives.",
+      "C": "Correct. Output falls 47 W across 60 days, and 47 divided by 60 is about 0.8 W per day.",
+      "D": "This is roughly the rate over the first seven days alone, which is steeper than the average across the whole 60."
+    }
+  },
+  {
+    "id": "s299",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp32",
+    "context": "A student claims that the fall in output across Table 3 is caused by the cells running hotter as the days pass. Table 3 itself argues against this claim because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the four readings were taken at four different tilt angles."
+      },
+      {
+        "id": "B",
+        "text": "output rose rather than fell as the days passed."
+      },
+      {
+        "id": "C",
+        "text": "cell temperature is not measured anywhere in the passage."
+      },
+      {
+        "id": "D",
+        "text": "the four readings were taken at the same cell temperature."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Tilt was held at 30 degrees for all four readings, which is another variable ruled out rather than a source of the fall.",
+      "B": "Output falls steadily down the table, from 146 W to 99 W.",
+      "C": "Cell temperature is measured by a sensor bonded to the back of the panel, and Table 2 is built entirely on it.",
+      "D": "Correct. Every reading in Table 3 was taken at 45 degrees C, so temperature cannot be what separates them."
+    }
+  },
+  {
+    "id": "s300",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp32",
+    "context": "An installer predicts that raising the tilt of a panel will always raise its output. The results in Table 1:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "support the prediction, because output rises at every tilt tested."
+      },
+      {
+        "id": "B",
+        "text": "support the prediction, because the highest tilt gave the highest output."
+      },
+      {
+        "id": "C",
+        "text": "contradict the prediction, because output falls beyond 30 degrees."
+      },
+      {
+        "id": "D",
+        "text": "contradict the prediction, because output was unchanged across all six tilts."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Output rises only up to 30 degrees, and the three readings above that angle are all lower.",
+      "B": "The highest tilt tested, 75 degrees, gave the lowest output in the table.",
+      "C": "Correct. Output peaks at 159 W at 30 degrees and then drops to 156, 141 and 115 W.",
+      "D": "The readings run from 115 W to 159 W, a spread of more than a third of the largest value."
+    }
+  },
+  {
+    "id": "s301",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp32",
+    "context": "A panel delivers the most power when sunlight strikes its face nearly head on. Compared with a site where the midday sun stands high overhead, a site where the midday sun stands low in the sky would be best served by a tilt that is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "unchanged, since tilt has no effect on how light meets the face."
+      },
+      {
+        "id": "B",
+        "text": "larger, so the face turns further up toward the vertical."
+      },
+      {
+        "id": "C",
+        "text": "smaller, so the face lies closer to horizontal."
+      },
+      {
+        "id": "D",
+        "text": "exactly 30 degrees, the best angle found in Table 1."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Table 1 shows output changing by more than 40 W across the tilts tested, so the angle plainly matters.",
+      "B": "Correct. A low sun arrives at a shallow angle, and standing the face up further is what turns it to meet that light head on.",
+      "C": "Lying the face flat points it at the overhead sky, which is what suits a high sun rather than a low one.",
+      "D": "Table 1 was taken at one site on one day; 30 degrees is the best angle for those conditions, not everywhere."
+    }
+  },
+  {
+    "id": "s302",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp32",
+    "context": "Based on Table 2, the output of the panel at a cell temperature of 50 degrees C would most likely be closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "about 143 W"
+      },
+      {
+        "id": "B",
+        "text": "about 149 W"
+      },
+      {
+        "id": "C",
+        "text": "about 133 W"
+      },
+      {
+        "id": "D",
+        "text": "about 136 W"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct. 50 degrees C sits midway between the 45 degree reading of 146 W and the 55 degree reading of 139 W.",
+      "B": "This lies above the 45 degree C reading, but 50 degrees C is warmer than 45, so output should be lower.",
+      "C": "This is the reading at 65 degrees C, three steps warmer than the temperature asked about.",
+      "D": "This falls below the 55 degree C reading of 139 W, but 50 degrees C is cooler than 55, so output should be higher."
+    }
+  },
+  {
+    "id": "s303",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp32",
+    "context": "Which of the following is the largest output reported anywhere in Tables 1, 2 and 3?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "146 W"
+      },
+      {
+        "id": "B",
+        "text": "156 W"
+      },
+      {
+        "id": "C",
+        "text": "159 W"
+      },
+      {
+        "id": "D",
+        "text": "132 W"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "146 W is the freshly cleaned reading in Table 3 and the 45 degree C reading in Table 2.",
+      "B": "156 W is the 45 degree tilt reading, which is the second highest in Table 1 alone.",
+      "C": "Correct. 159 W appears at a tilt of 30 degrees in Table 1 and at 25 degrees C in Table 2, and nothing in any table beats it.",
+      "D": "132 W is the flat-panel reading in Table 1 and the smallest of these four."
+    }
+  },
+  {
+    "id": "s304",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp33",
+    "context": "According to Table 1, which antibiotic produced the largest zone of inhibition on Strain A?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "W"
+      },
+      {
+        "id": "B",
+        "text": "X"
+      },
+      {
+        "id": "C",
+        "text": "Y"
+      },
+      {
+        "id": "D",
+        "text": "Z"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "W produced the smallest zone in Table 1, at 9 mm, which is below the 15 mm the laboratory treats as susceptible.",
+      "B": "X produced 14 mm, larger than W but smaller than both Y and Z.",
+      "C": "Correct. Y produced 22 mm, the largest zone in Table 1.",
+      "D": "Z produced 18 mm, which is the second largest zone rather than the largest."
+    }
+  },
+  {
+    "id": "s305",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp33",
+    "context": "In Experiment 1, which of the following was the same for all four discs tested?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The identity of the antibiotic."
+      },
+      {
+        "id": "B",
+        "text": "The mass of antibiotic on the disc."
+      },
+      {
+        "id": "C",
+        "text": "The zone diameter produced."
+      },
+      {
+        "id": "D",
+        "text": "The bacterial strain the discs were laid on, but not the growing time."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The four discs carried four different antibiotics, W, X, Y and Z; that is the variable being changed.",
+      "B": "Correct. Experiment 1 loaded every disc at 10 micrograms, which is what makes the four zones comparable.",
+      "C": "The zones ranged from 9 mm to 22 mm, and that spread is the result the experiment was run to find.",
+      "D": "The strain was indeed the same, but so was the growing time; the passage fixes 18 hours at 35 degrees C for every test."
+    }
+  },
+  {
+    "id": "s306",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp33",
+    "context": "According to Table 2, a zone of 27 mm was produced by a disc carrying how much Antibiotic Y?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "30 micrograms"
+      },
+      {
+        "id": "B",
+        "text": "100 micrograms"
+      },
+      {
+        "id": "C",
+        "text": "3 micrograms"
+      },
+      {
+        "id": "D",
+        "text": "10 micrograms"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct. The 30 microgram row of Table 2 gives a zone of 27 mm.",
+      "B": "100 micrograms produced the largest zone in Table 2, at 32 mm.",
+      "C": "3 micrograms produced a 16 mm zone, only just over the 15 mm susceptibility mark.",
+      "D": "10 micrograms produced 22 mm, which is the reading Table 1 also reports for Y."
+    }
+  },
+  {
+    "id": "s307",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp33",
+    "context": "One test appears in both Table 1 and Table 2. Comparing the two tables, that shared test:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "gives 22 mm in Table 1 and 11 mm in Table 2."
+      },
+      {
+        "id": "B",
+        "text": "gives 14 mm in both, so the two experiments agree."
+      },
+      {
+        "id": "C",
+        "text": "appears only in Table 1, since Table 2 used a different strain."
+      },
+      {
+        "id": "D",
+        "text": "gives 22 mm in both, so the two experiments agree."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "11 mm is the Strain C reading for Y in Table 3, not anything reported in Table 2.",
+      "B": "14 mm belongs to Antibiotic X in Table 1 and appears nowhere in Table 2.",
+      "C": "Experiment 2 used Strain A, the same strain as Experiment 1; it was Experiment 3 that changed the strain.",
+      "D": "Correct. Antibiotic Y at 10 micrograms on Strain A gives 22 mm in Table 1 and 22 mm in Table 2, exactly as the passage says it should."
+    }
+  },
+  {
+    "id": "s308",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp33",
+    "context": "In Table 2, each threefold increase in the mass on the disc adds roughly 5 mm to the zone. On that pattern, a disc carrying 300 micrograms of Antibiotic Y on Strain A would give a zone closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "27 mm"
+      },
+      {
+        "id": "B",
+        "text": "32 mm"
+      },
+      {
+        "id": "C",
+        "text": "37 mm"
+      },
+      {
+        "id": "D",
+        "text": "96 mm"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "27 mm is the 30 microgram reading, a tenfold smaller dose than the one asked about.",
+      "B": "32 mm is the 100 microgram reading, the starting point rather than the answer.",
+      "C": "Correct. 300 micrograms is one threefold step above 100 micrograms, so add about 5 mm to the 32 mm reading.",
+      "D": "This multiplies the zone by three along with the dose, but the table shows zones growing by a fixed few millimetres, not in proportion."
+    }
+  },
+  {
+    "id": "s309",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp33",
+    "context": "Using the laboratory 15 mm mark, Strain C would be classed as susceptible to which antibiotic or antibiotics at 10 micrograms?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "None of the four"
+      },
+      {
+        "id": "B",
+        "text": "Z only"
+      },
+      {
+        "id": "C",
+        "text": "Y and Z only"
+      },
+      {
+        "id": "D",
+        "text": "X, Y and Z only"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Z reaches 17 mm, so at least one antibiotic clears the threshold.",
+      "B": "Correct. In Table 3 only Z clears 15 mm, at 17 mm; W, X and Y give 0, 7 and 11 mm.",
+      "C": "Y gives 11 mm on Strain C, which is four millimetres short of the mark even though it was the best performer on Strain A.",
+      "D": "X gives only 7 mm on Strain C, less than half the mark."
+    }
+  },
+  {
+    "id": "s310",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp33",
+    "context": "Comparing Table 1 with Table 3, which antibiotic lost the most zone diameter when the strain was changed from A to C?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Y"
+      },
+      {
+        "id": "B",
+        "text": "Z"
+      },
+      {
+        "id": "C",
+        "text": "W"
+      },
+      {
+        "id": "D",
+        "text": "X"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct. Y fell from 22 mm to 11 mm, a loss of 11 mm, larger than any other antibiotic here.",
+      "B": "Z fell from 18 mm to 17 mm, a loss of just 1 mm, the smallest of the four.",
+      "C": "W fell from 9 mm to 0 mm, a loss of 9 mm — the most complete failure, but not the largest loss in millimetres.",
+      "D": "X fell from 14 mm to 7 mm, a loss of 7 mm."
+    }
+  },
+  {
+    "id": "s311",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp33",
+    "context": "Experiment 3 used the same four antibiotics at the same 10 micrograms as Experiment 1. This was done primarily so that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the effect of dose on zone size could be measured."
+      },
+      {
+        "id": "B",
+        "text": "the zones on Strain C would be larger than those on Strain A."
+      },
+      {
+        "id": "C",
+        "text": "the growing time could be shortened for the second strain."
+      },
+      {
+        "id": "D",
+        "text": "any difference in zone size could be attributed to the strain."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is what Experiment 2 does, by varying the mass of a single antibiotic; Experiment 3 holds mass fixed.",
+      "B": "Every zone on Strain C was smaller than the matching zone on Strain A, and in any case an experiment is not run to guarantee a result.",
+      "C": "The passage states that every test in all three experiments ran for the same 18 hours at 35 degrees C.",
+      "D": "Correct. Holding the antibiotics and the dose fixed leaves the strain as the only thing that changed between the two tables."
+    }
+  },
+  {
+    "id": "s312",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp33",
+    "context": "The largest disc in Table 2 carried 100 micrograms of Antibiotic Y. Expressed in milligrams, that mass is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.1 mg"
+      },
+      {
+        "id": "B",
+        "text": "1.0 mg"
+      },
+      {
+        "id": "C",
+        "text": "10 mg"
+      },
+      {
+        "id": "D",
+        "text": "100,000 mg"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct. There are 1,000 micrograms in a milligram, so 100 micrograms is one tenth of a milligram.",
+      "B": "A full milligram would be 1,000 micrograms, ten times the mass on the disc.",
+      "C": "10 mg would be 10,000 micrograms, a hundred times the mass on the disc.",
+      "D": "This multiplies by a thousand instead of dividing, turning a speck of powder into a mass of about 100 grams."
+    }
+  },
+  {
+    "id": "s313",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp33",
+    "context": "Suppose Antibiotic Y on Strain C gains about 5 mm of zone for each threefold increase in dose, as it does on Strain A. Starting from the Table 3 reading, the smallest dose listed in Table 2 that would bring Strain C to the 15 mm mark is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "100 micrograms"
+      },
+      {
+        "id": "B",
+        "text": "1 microgram"
+      },
+      {
+        "id": "C",
+        "text": "3 micrograms"
+      },
+      {
+        "id": "D",
+        "text": "30 micrograms"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "100 micrograms would clear the mark too, at roughly 21 mm, but it is not the smallest listed dose that does so.",
+      "B": "1 microgram is a threefold step below the 10 microgram reading, so it would take the zone down to about 6 mm.",
+      "C": "3 micrograms is also below 10 micrograms and would give roughly 6 mm less than 11 mm, not more.",
+      "D": "Correct. Strain C gives 11 mm at 10 micrograms, and one threefold step up to 30 micrograms adds about 5 mm, reaching roughly 16 mm."
+    }
+  },
+  {
+    "id": "s314",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp33",
+    "context": "A student proposes that zone diameter measures only how quickly an antibiotic spreads through the jelly, and not how strongly it stops bacteria. Which result is hardest for that proposal to explain?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Every zone measured includes the 6 mm width of the disc itself."
+      },
+      {
+        "id": "B",
+        "text": "Strain C had come from a patient previously treated with Antibiotic W."
+      },
+      {
+        "id": "C",
+        "text": "One antibiotic gave five different zones at five different doses on one strain."
+      },
+      {
+        "id": "D",
+        "text": "Four different antibiotics gave four different zones in Experiment 1."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is a constant added to every measurement and so cannot distinguish between any two explanations of the differences.",
+      "B": "This bears on why W failed on Strain C, not on what a zone diameter is measuring.",
+      "C": "Correct. Table 2 changes the amount of one molecule, whose spreading speed does not change with dose, and the zone still moves from 11 mm to 32 mm.",
+      "D": "Four different molecules could easily spread at four different speeds, so this result fits the proposal rather than straining it."
+    }
+  },
+  {
+    "id": "s315",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp33",
+    "context": "Antibiotics act on bacteria and have no effect on viruses. The method described in this passage would therefore be unsuitable for testing a treatment for:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "strep throat."
+      },
+      {
+        "id": "B",
+        "text": "tuberculosis."
+      },
+      {
+        "id": "C",
+        "text": "bacterial food poisoning."
+      },
+      {
+        "id": "D",
+        "text": "influenza."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Strep throat is caused by a bacterium and would grow the lawn this method requires.",
+      "B": "Tuberculosis is caused by a bacterium, so a disc test of this kind is possible in principle.",
+      "C": "Food poisoning of this sort is bacterial, and plating the organism is a standard way to test it.",
+      "D": "Correct. Influenza is caused by a virus, which would not form the bacterial lawn the method depends on."
+    }
+  },
+  {
+    "id": "s316",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp34",
+    "context": "Scientist 1 claims that the collapse of the colony was caused primarily by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a shortage of sand eels."
+      },
+      {
+        "id": "B",
+        "text": "the arrival of rats on the island."
+      },
+      {
+        "id": "C",
+        "text": "an increase in severe autumn storms."
+      },
+      {
+        "id": "D",
+        "text": "competition from the colony on Fara."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the position of Scientist 2, who points to the sand eel decline beginning in 1985.",
+      "B": "Correct. Scientist 1 opens by naming rats as the cause and argues from their arrival in 1991.",
+      "C": "That is the position of Scientist 3, who notes that severe autumn storms roughly doubled in frequency.",
+      "D": "Fara is mentioned only by Scientist 2, and as a comparison colony rather than a competitor."
+    }
+  },
+  {
+    "id": "s317",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp34",
+    "context": "Scientist 2 argues that the decline began before rats arrived. Which piece of shared information most directly supports that argument?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A severe storm flooded the southern terrace in 2004."
+      },
+      {
+        "id": "B",
+        "text": "The count had fallen below 3,000 pairs by 1990."
+      },
+      {
+        "id": "C",
+        "text": "Rats were first recorded on the island in 1991."
+      },
+      {
+        "id": "D",
+        "text": "Fledging success was 0.21 in 1998."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A storm in 2004 falls long after the period Scientist 2 is pointing to.",
+      "B": "Correct. A fall of more than a thousand pairs before 1991 is a decline that rats cannot have caused, whatever they did afterwards.",
+      "C": "This establishes when rats arrived but says nothing on its own about what happened before.",
+      "D": "The 1998 figure comes seven years after rats arrived, so it fits the rat account at least as comfortably."
+    }
+  },
+  {
+    "id": "s318",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp34",
+    "context": "Scientist 1 and Scientist 3 disagree most directly about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "whether petrels dig burrows or nest openly on the surface of the island."
+      },
+      {
+        "id": "B",
+        "text": "whether landings of sand eels declined in the sea around the island."
+      },
+      {
+        "id": "C",
+        "text": "what it means that the high northern slope failed at the same rate as the terrace."
+      },
+      {
+        "id": "D",
+        "text": "whether the count of breeding pairs really fell between 1978 and 2012."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The introduction states that petrels nest in burrows and under boulders, and no account disputes it.",
+      "B": "The sand eel decline is also given in the introduction, and neither of these two scientists denies it.",
+      "C": "Correct. Scientist 1 reads that fact as clearing storms of blame; Scientist 3 reads it as showing the terrace has been ruined.",
+      "D": "All three accept the counts in the shared introduction, which fall from 4,200 pairs to 190."
+    }
+  },
+  {
+    "id": "s319",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp34",
+    "context": "Suppose burrows on the high northern slope were found to have failed at a much lower rate than burrows on the southern terrace. This finding would most weaken the argument of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Scientist 2."
+      },
+      {
+        "id": "B",
+        "text": "Scientist 3."
+      },
+      {
+        "id": "C",
+        "text": "all three equally."
+      },
+      {
+        "id": "D",
+        "text": "Scientist 1."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Scientist 2 argues from food supply at sea and never relies on how the two parts of the island compare.",
+      "B": "This finding would strengthen Scientist 3, since flooding reached the terrace and not the slope.",
+      "C": "The finding bears on where on the island birds failed, which only two of the three accounts turn on, and in opposite directions.",
+      "D": "Correct. Scientist 1 rules out flooding precisely because the high slope failed at the same rate, and this finding removes that step."
+    }
+  },
+  {
+    "id": "s320",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp34",
+    "context": "All three scientists would most likely agree that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the number of breeding pairs at Ard Skerry fell sharply between 1978 and 2012."
+      },
+      {
+        "id": "B",
+        "text": "rats were present on Ard Skerry before 1985."
+      },
+      {
+        "id": "C",
+        "text": "flooding destroyed most burrows on the northern slope."
+      },
+      {
+        "id": "D",
+        "text": "the Fara colony declined at the same rate as the Ard Skerry colony."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct. The counts of 4,200, 1,900 and 190 pairs are in the shared introduction, and every account is an attempt to explain them.",
+      "B": "The introduction dates the first record of rats to 1991, and Scientist 2 leans on their absence before then.",
+      "C": "Scientist 3 says the 2004 storm took the southern terrace; the northern slope is the ground it never reached.",
+      "D": "Scientist 2 states that the Fara colony held steady, which is the whole point of raising it."
+    }
+  },
+  {
+    "id": "s321",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp34",
+    "context": "Scientist 2 raises the colony on Fara in order to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "explain why fledging success at Ard Skerry was still 0.66 in 1990."
+      },
+      {
+        "id": "B",
+        "text": "challenge the claim that the presence of rats is enough to cause a collapse."
+      },
+      {
+        "id": "C",
+        "text": "show that severe storms did not reach that part of the coast."
+      },
+      {
+        "id": "D",
+        "text": "establish that sand eel landings fell across the whole region."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The 1990 figure is used to argue that the decline predates the rats, and it is not what the Fara comparison is for.",
+      "B": "Correct. Fara had rats throughout and held steady, which is offered as a case where rats did not produce the outcome Scientist 1 attributes to them.",
+      "C": "Storms are Scientist 3 subject, and nothing is said about what weather Fara received.",
+      "D": "The point made about Fara is the opposite: its birds fished a different bank, so the food supply there was not the same."
+    }
+  },
+  {
+    "id": "s322",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp34",
+    "context": "Each of the three scientists offers an explanation for why the count kept falling even after the worst years. Which pairing is correct?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Scientist 2: burrows that collapse must be dug again in waterlogged ground."
+      },
+      {
+        "id": "B",
+        "text": "Scientist 3: rats keep taking eggs long after they arrive."
+      },
+      {
+        "id": "C",
+        "text": "Scientist 1: adults that lose a chick tend to move elsewhere the next year."
+      },
+      {
+        "id": "D",
+        "text": "Scientist 1: light fledglings rarely return to breed."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The waterlogged ground argument belongs to Scientist 3, who is explaining the cost of a collapsed burrow.",
+      "B": "Rats are Scientist 1 subject; Scientist 3 does not appeal to them at all.",
+      "C": "Correct. Scientist 1 closes on exactly this point, offering it as the reason the count kept falling after 1991.",
+      "D": "The light fledgling argument belongs to Scientist 2, not Scientist 1."
+    }
+  },
+  {
+    "id": "s323",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp34",
+    "context": "Fledging success fell from 0.66 in 1990 to 0.21 in 1998. Scientist 1 treats this change as important because it:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "coincides with the end of the sand eel decline."
+      },
+      {
+        "id": "B",
+        "text": "occurred entirely after the severe storm of 2004."
+      },
+      {
+        "id": "C",
+        "text": "shows that fledging success was rising over that period."
+      },
+      {
+        "id": "D",
+        "text": "brackets the year rats were first recorded on the island."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The introduction dates the sand eel decline to 1985 through 2000, and that is the point Scientist 2 makes rather than Scientist 1.",
+      "B": "Both years fall well before 2004, so the storm cannot be what separates them.",
+      "C": "A fall from 0.66 to 0.21 is a drop of roughly two thirds.",
+      "D": "Correct. Rats were recorded in 1991, which sits between the two years, and Scientist 1 says nothing else does."
+    }
+  },
+  {
+    "id": "s324",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp34",
+    "context": "Which finding, if confirmed, would most strengthen Scientist 2 and weaken both of the others?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Chicks that fledged after 1995 weighed markedly less than those that fledged in 1978."
+      },
+      {
+        "id": "B",
+        "text": "Rat droppings were found inside failed burrows on the southern terrace."
+      },
+      {
+        "id": "C",
+        "text": "Seawater reached the high northern slope during a storm in 2009."
+      },
+      {
+        "id": "D",
+        "text": "The 1978 count was later shown to have been an underestimate."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct. Underweight fledglings are the mechanism Scientist 2 proposes, and neither a rat nor a flood leaves a chick alive but light.",
+      "B": "This is direct evidence for Scientist 1 rather than against.",
+      "C": "Seawater reaching the high slope would support Scientist 3 by extending flooding to the ground Scientist 1 treats as safe.",
+      "D": "A larger 1978 figure would make the total decline steeper without favouring any one explanation of it."
+    }
+  },
+  {
+    "id": "s325",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp34",
+    "context": "Scientist 3 accounts for the poor performance of the high northern slope by arguing that it:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "was where the rats first came ashore in 1991."
+      },
+      {
+        "id": "B",
+        "text": "has always been the poorer ground, being thin turf over rock."
+      },
+      {
+        "id": "C",
+        "text": "was reached by the 2004 storm along with the terrace."
+      },
+      {
+        "id": "D",
+        "text": "holds most of the colony and always has."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The introduction places the grounded boat on the north shore, but Scientist 3 makes no use of rats at all.",
+      "B": "Correct. Scientist 3 says the slope has always been poorer ground, so its failing now does not mean it was ever safe.",
+      "C": "Scientist 3 says the storm took the southern terrace; the slope is the ground it did not reach.",
+      "D": "Scientist 3 says the terrace held most of the colony when the counts began."
+    }
+  },
+  {
+    "id": "s326",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp34",
+    "context": "A fourth researcher proposes that the three causes acted together, each one making the others more costly. This proposal is most consistent with which observation from the shared introduction?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A pair lays one egg a year."
+      },
+      {
+        "id": "B",
+        "text": "Chicks leave the burrow about sixty days after hatching."
+      },
+      {
+        "id": "C",
+        "text": "The three proposed causes overlap in time across the period of the decline."
+      },
+      {
+        "id": "D",
+        "text": "The count in 2012 was 190 pairs."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "A single egg a year limits how fast any colony can recover, which is true whatever the cause.",
+      "B": "The length of the chick period is the same under every account and does not distinguish between them.",
+      "C": "Correct. The sand eel decline ran from 1985, rats arrived in 1991 and the storms worsened across the same span, so all three were in play at once.",
+      "D": "The final count tells you the outcome was severe, not how many causes produced it."
+    }
+  },
+  {
+    "id": "s327",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp34",
+    "context": "Scientist 2 argues that a colony can keep shrinking even in years when many chicks leave the burrow. This argument depends on the assumption that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "rats take adults as readily as they take chicks."
+      },
+      {
+        "id": "B",
+        "text": "fledging success was recorded accurately only after 1995."
+      },
+      {
+        "id": "C",
+        "text": "burrows on the terrace flood more often than burrows on the slope."
+      },
+      {
+        "id": "D",
+        "text": "how well a fledgling is fed affects whether it survives to breed later."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Scientist 2 attributes nothing to rats and would gain nothing from this claim.",
+      "B": "Scientist 2 relies on the 1978 and 1990 figures, so treating the early record as unreliable would undercut the argument.",
+      "C": "This is a claim about flooding, which belongs to the dispute between Scientists 1 and 3.",
+      "D": "Correct. Without that link, a chick that leaves the burrow is simply a success, and the count would track fledging success rather than drifting below it."
+    }
   }
 ]
