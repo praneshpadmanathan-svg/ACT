@@ -2691,5 +2691,242 @@
     "title": "Why Did the Petrel Colony at Ard Skerry Fail?",
     "type": "Conflicting Viewpoints",
     "text": "Storm petrels are small seabirds that nest in burrows dug into turf and in the gaps under boulders. A pair lays one egg a year, and the chick leaves the burrow about sixty days after hatching. The colony on the island of Ard Skerry has been counted since 1978.\n\nThe count of breeding pairs was 4,200 in 1978, 1,900 in 1995 and 190 in 2012. Fledging success, the number of chicks that left the burrow per breeding pair, was 0.71 in 1978, 0.66 in 1990, 0.21 in 1998 and 0.18 in 2010. Brown rats were first recorded on the island in 1991, after a fishing boat grounded on its north shore. Landings of sand eels, the small fish the adults carry back to the burrow, fell by roughly two thirds in the surrounding sea between 1985 and 2000. A severe October storm in 2004 drove seawater across the low southern terrace and flooded the burrows there.\n\nScientist 1. Rats caused the collapse. Rats take eggs and small chicks, and a burrow offers a chick no defence against one. Fledging success was still 0.66 in 1990 and had fallen to 0.21 by 1998, which brackets the arrival of rats in 1991 and nothing else. Burrows on the high northern slope, which the 2004 storm never reached, failed in the same years and at the same rate as burrows on the southern terrace, so flooding cannot be the general cause. Adults returning to a burrow they have lost a chick in tend to move elsewhere the following year, which is why the count kept falling long after the first rats arrived.\n\nScientist 2. Food caused the collapse. The count had already dropped from 4,200 to below 3,000 by 1990, before any rat set foot on the island, and the sand eel decline was well under way by then. A chick fed too little does not starve outright; it fledges late and light, and a light fledgling rarely returns to breed. That is why the count keeps falling even in years when many chicks leave the burrow. Rats were present on the neighbouring island of Fara throughout this period, and the Fara colony held steady while its birds fished a different bank.\n\nScientist 3. Storms caused the collapse. Severe autumn storms became roughly twice as frequent over this period. Flooding kills a chick outright, and it also collapses the burrow, so a pair that loses one must dig again in ground that is now waterlogged. The 2004 storm alone took the whole southern terrace, and the terrace held most of the colony when the counts began. High-slope burrows are dug into thin turf over rock and have always been the poorer ground; that they now fail at the same rate as the terrace says the terrace has been ruined, not that the slope was ever safe."
+  },
+  {
+    "id": "sp35",
+    "title": "Flow in the River Anwen",
+    "type": "Data Representation",
+    "text": "A gauging station on the River Anwen, 62 km from the source and draining a catchment of 480 km squared, records stage, which is the height of the water surface above a fixed datum, in metres. Stage is easy to read continuously; discharge, the volume of water passing the station each second in cubic metres per second, is not. Discharge was therefore measured directly with a current meter on 14 occasions spread over three years, and a rating curve was fitted relating stage to discharge, so that every later stage reading could be converted.\n\nTable 1 gives discharge at six stages, read from that rating curve.\n\nTable 2 gives the mean discharge for each month of one calendar year at the same station.\n\nSuspended sediment is the material carried along within the water rather than rolled along the bed. It was measured from bottle samples drawn at mid-depth and expressed as a concentration in milligrams per litre. Table 3 gives concentration at five discharges. The load of sediment passing the station, in kilograms per second, is the concentration multiplied by the discharge, once the units are made to agree: 1 m cubed of water is 1000 L, and 1 000 000 mg is 1 kg.\n\nThe rating curve is fitted only over the range of stages at which a direct measurement was made, and the highest of the 14 measurements was taken at a stage of 2.40 m. Readings above that stage can be recorded by the gauge, but no measured discharge exists to anchor them.\n\nThe catchment is grazed pasture on clay, with no reservoir and no abstraction upstream of the station. Rain falling on clay reaches the channel quickly, which is why the monthly means in Table 2 follow the rainfall of the season closely rather than lagging behind it by months as they would on a chalk catchment.\n\nAll readings were taken at the same station, and no tributary enters between the source and the station.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Discharge at six stages, from the fitted rating curve",
+        "type": "table",
+        "head": [
+          "Stage (m)",
+          "Discharge (m cubed/s)"
+        ],
+        "rows": [
+          [
+            "0.40",
+            "1.2"
+          ],
+          [
+            "0.80",
+            "6.5"
+          ],
+          [
+            "1.20",
+            "17.0"
+          ],
+          [
+            "1.60",
+            "33.5"
+          ],
+          [
+            "2.00",
+            "56.0"
+          ],
+          [
+            "2.40",
+            "85.0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Mean discharge by month, one calendar year",
+        "type": "table",
+        "head": [
+          "Month",
+          "Mean discharge (m cubed/s)"
+        ],
+        "rows": [
+          [
+            "January",
+            "41.0"
+          ],
+          [
+            "February",
+            "38.0"
+          ],
+          [
+            "March",
+            "29.0"
+          ],
+          [
+            "April",
+            "20.0"
+          ],
+          [
+            "May",
+            "13.0"
+          ],
+          [
+            "June",
+            "8.0"
+          ],
+          [
+            "July",
+            "4.5"
+          ],
+          [
+            "August",
+            "3.8"
+          ],
+          [
+            "September",
+            "6.2"
+          ],
+          [
+            "October",
+            "15.0"
+          ],
+          [
+            "November",
+            "28.0"
+          ],
+          [
+            "December",
+            "39.0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Suspended sediment concentration at five discharges",
+        "type": "table",
+        "head": [
+          "Discharge (m cubed/s)",
+          "Concentration (mg/L)"
+        ],
+        "rows": [
+          [
+            "5",
+            "12"
+          ],
+          [
+            "15",
+            "48"
+          ],
+          [
+            "30",
+            "140"
+          ],
+          [
+            "55",
+            "380"
+          ],
+          [
+            "85",
+            "900"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp36",
+    "title": "Rooting Willow Cuttings",
+    "type": "Research Summaries",
+    "text": "A cutting is a length of shoot removed from a parent plant and induced to grow roots of its own. Indole-3-butyric acid (IBA) is a rooting hormone applied as a dip to the cut end. In all three experiments below, cuttings 18 cm long were taken from one willow, dipped for five seconds, and stood in trays of the same rooting medium under an automatic mist bench. A cutting was scored as rooted if it had at least one root 5 mm or longer after 21 days.\n\nExperiment 1. One hundred twenty middle-of-shoot cuttings were divided into 4 groups of 30 and dipped in IBA at 0, 500, 1000 or 3000 parts per million (ppm). All trays were held at 22 degrees C. Table 1 gives the number of the 30 that rooted and the mean number of roots on each rooted cutting.\n\nExperiment 2. Middle-of-shoot cuttings were dipped at 1000 ppm and held at one of five bench temperatures for the same 21 days, 30 cuttings at each temperature. Table 2 gives the number rooted.\n\nExperiment 3. Cuttings were dipped at 1000 ppm and held at 22 degrees C, but were taken from three positions along the parent shoot: the tip, the middle, and the woody base. Table 3 gives the number of 30 that rooted and the mean number of roots on each rooted cutting.\n\nThe 1000 ppm group of Experiment 1, the 22 degrees C group of Experiment 2, and the middle group of Experiment 3 were treated identically.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: four IBA concentrations, 22 degrees C, middle cuttings",
+        "type": "table",
+        "head": [
+          "IBA (ppm)",
+          "Number rooted (of 30)",
+          "Mean roots per rooted cutting"
+        ],
+        "rows": [
+          [
+            "0",
+            "9",
+            "3.1"
+          ],
+          [
+            "500",
+            "21",
+            "5.4"
+          ],
+          [
+            "1000",
+            "26",
+            "7.8"
+          ],
+          [
+            "3000",
+            "24",
+            "6.0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: five bench temperatures, 1000 ppm IBA, middle cuttings",
+        "type": "table",
+        "head": [
+          "Bench temperature (degrees C)",
+          "Number rooted (of 30)"
+        ],
+        "rows": [
+          [
+            "14",
+            "11"
+          ],
+          [
+            "18",
+            "19"
+          ],
+          [
+            "22",
+            "26"
+          ],
+          [
+            "26",
+            "27"
+          ],
+          [
+            "30",
+            "17"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: three cutting positions, 1000 ppm IBA, 22 degrees C",
+        "type": "table",
+        "head": [
+          "Position on shoot",
+          "Number rooted (of 30)",
+          "Mean roots per rooted cutting"
+        ],
+        "rows": [
+          [
+            "Tip",
+            "28",
+            "8.4"
+          ],
+          [
+            "Middle",
+            "26",
+            "7.8"
+          ],
+          [
+            "Woody base",
+            "14",
+            "4.1"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp37",
+    "title": "The Pits at Tolven Down",
+    "type": "Conflicting Viewpoints",
+    "text": "Tolven Down is a chalk ridge carrying a field of 60 shallow pits, each 2 to 3 m across and 0.6 to 1.1 m deep. Fourteen have been excavated. Struck flint flakes were found in 5 of the 14; charcoal lay at the base of 3. A low mound sits immediately beside the hollow in 9 of the 14. The long axes of the pits cluster near 040 degrees; joint sets mapped in the chalk elsewhere on the down run at 038 degrees and 128 degrees. Flint nodules occur in a band about 0.8 m below the surface. Pollen from a nearby bog shows woodland cover on the down until about 3400 years ago.\n\nScientist 1. The pits are flint quarries. People dug down to the nodule band, which the depths reach almost exactly, took what they wanted, and left. The struck flakes are the waste of working the flint at the pit edge, and the charcoal is from fires at the same working. That only some pits contain flakes is expected, because a quarry is emptied and backfilled, and most debris was carried off to be used elsewhere.\n\nScientist 2. The pits are solution hollows. Rainwater made mildly acidic by carbon dioxide dissolves chalk, and it does so fastest where joints in the rock let water down. The alignment of the pits at 040 degrees matches a joint set at 038 degrees, which no human plan would reproduce. Nothing about the depths is meaningful: solution stops where the chalk is less jointed, which happens to be near the nodule band because the nodules interrupt the joints. There are no spoil heaps, and a quarry that moved a cubic metre of chalk must leave the chalk somewhere.\n\nScientist 3. The pits are tree-throw hollows. When a large tree is blown over, its root plate tears out of the ground and leaves a hollow with the root plate, and the soil in it, as a mound alongside. That is exactly the paired shape recorded in 9 of the 14 pits, and it is the only proposal that explains a mound at all. The pollen record puts woodland on the down until 3400 years ago, so the trees were there. Flakes and charcoal are ordinary material of an inhabited landscape and fall into any hollow that is open."
   }
 ]

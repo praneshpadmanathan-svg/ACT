@@ -12703,5 +12703,1193 @@
       "C": "This is a claim about flooding, which belongs to the dispute between Scientists 1 and 3.",
       "D": "Correct. Without that link, a chick that leaves the burrow is simply a success, and the count would track fledging success rather than drifting below it."
     }
+  },
+  {
+    "id": "s328",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp35",
+    "context": "According to Table 1, the discharge at a stage of 1.60 m was closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "33.5 m cubed/s"
+      },
+      {
+        "id": "B",
+        "text": "17.0 m cubed/s"
+      },
+      {
+        "id": "C",
+        "text": "56.0 m cubed/s"
+      },
+      {
+        "id": "D",
+        "text": "6.5 m cubed/s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 1 pairs a stage of 1.60 m with a discharge of 33.5 m cubed/s.",
+      "B": "That is the discharge at the lower stage of 1.20 m.",
+      "C": "That is the discharge at the higher stage of 2.00 m.",
+      "D": "That is the discharge far lower down the curve, at a stage of 0.80 m."
+    }
+  },
+  {
+    "id": "s329",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp35",
+    "context": "According to Table 2, the lowest mean monthly discharge of the year occurred in:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "February"
+      },
+      {
+        "id": "B",
+        "text": "August"
+      },
+      {
+        "id": "C",
+        "text": "July"
+      },
+      {
+        "id": "D",
+        "text": "June"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "February is 38.0 m cubed/s, among the highest months of the year.",
+      "B": "Correct — August is 3.8 m cubed/s, below every other month in Table 2.",
+      "C": "July is 4.5 m cubed/s, which is low but not the lowest.",
+      "D": "June is 8.0 m cubed/s, roughly twice the August value."
+    }
+  },
+  {
+    "id": "s330",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp35",
+    "context": "Based on Table 3, as discharge increased from 5 to 85 m cubed/s, suspended sediment concentration:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "increased and then levelled off above 30 m cubed/s."
+      },
+      {
+        "id": "B",
+        "text": "decreased throughout, most steeply at the highest discharges."
+      },
+      {
+        "id": "C",
+        "text": "increased throughout, and by a larger step at each increase."
+      },
+      {
+        "id": "D",
+        "text": "increased throughout, and by a smaller step at each increase."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The largest rise of all comes between 55 and 85 m cubed/s, so nothing levels off.",
+      "B": "Every value in the column is larger than the one above it.",
+      "C": "Correct — the steps are 36, 92, 240 and 520 mg/L, each larger than the one before it.",
+      "D": "The steps grow rather than shrink across the five rows."
+    }
+  },
+  {
+    "id": "s331",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp35",
+    "context": "A stage of 1.00 m was recorded. Based on Table 1, the discharge was most likely between:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.2 and 6.5 m cubed/s"
+      },
+      {
+        "id": "B",
+        "text": "17.0 and 33.5 m cubed/s"
+      },
+      {
+        "id": "C",
+        "text": "33.5 and 56.0 m cubed/s"
+      },
+      {
+        "id": "D",
+        "text": "6.5 and 17.0 m cubed/s"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That range belongs to stages between 0.40 m and 0.80 m, below the reading given.",
+      "B": "That range belongs to stages between 1.20 m and 1.60 m, above the reading given.",
+      "C": "That range belongs to stages between 1.60 m and 2.00 m, well above the reading given.",
+      "D": "Correct — 1.00 m lies between the tabulated stages of 0.80 m and 1.20 m, whose discharges are 6.5 and 17.0 m cubed/s."
+    }
+  },
+  {
+    "id": "s332",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp35",
+    "context": "Which statement best describes the shape of the rating curve in Table 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Each equal rise in stage adds more discharge than the rise before it."
+      },
+      {
+        "id": "B",
+        "text": "Each equal rise in stage adds the same amount of discharge."
+      },
+      {
+        "id": "C",
+        "text": "Each equal rise in stage adds less discharge than the rise before it."
+      },
+      {
+        "id": "D",
+        "text": "Discharge rises to a maximum near 1.60 m and then falls away."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the stage rises in equal 0.40 m steps while the discharge steps are 5.3, 10.5, 16.5, 22.5 and 29.0 m cubed/s.",
+      "B": "Equal steps would give a straight line, and the increments are not equal.",
+      "C": "The increments grow rather than shrink as the stage rises.",
+      "D": "Discharge is still rising at the top of the table, at 2.40 m."
+    }
+  },
+  {
+    "id": "s333",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp35",
+    "context": "The rating curve was fitted from 14 direct measurements. A stage of 3.20 m is later recorded. Using the curve to obtain a discharge for that stage is questionable mainly because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "discharge cannot exceed the highest value that appears in Table 1."
+      },
+      {
+        "id": "B",
+        "text": "the stage lies beyond the range over which the curve was established."
+      },
+      {
+        "id": "C",
+        "text": "stage cannot be read accurately when the river is in flood."
+      },
+      {
+        "id": "D",
+        "text": "the relationship between stage and discharge is known to be a straight line."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Table 1 lists values at chosen stages; it does not set a ceiling on the river.",
+      "B": "Correct — Table 1 stops at 2.40 m, so 3.20 m asks the curve to predict outside the range the measurements covered.",
+      "C": "The passage says stage is the quantity that is easy to read continuously.",
+      "D": "The table shows a curve that steepens, not a straight line, and a straight line would raise no objection anyway."
+    }
+  },
+  {
+    "id": "s334",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp35",
+    "context": "Based on Table 2, the mean discharge in January exceeded that in July by approximately how many m cubed/s?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4.5"
+      },
+      {
+        "id": "B",
+        "text": "9.1"
+      },
+      {
+        "id": "C",
+        "text": "36.5"
+      },
+      {
+        "id": "D",
+        "text": "45.5"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the July value on its own, not the excess of January over it.",
+      "B": "That is roughly the ratio of the two months, which is a number of times, not a discharge.",
+      "C": "Correct — 41.0 m cubed/s minus 4.5 m cubed/s is 36.5 m cubed/s.",
+      "D": "That is the sum of the two months rather than the difference between them."
+    }
+  },
+  {
+    "id": "s335",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp35",
+    "context": "Using Table 3 and the relationship given in the passage, the sediment load at a discharge of 85 m cubed/s was closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "7.65 kg/s"
+      },
+      {
+        "id": "B",
+        "text": "765 kg/s"
+      },
+      {
+        "id": "C",
+        "text": "0.90 kg/s"
+      },
+      {
+        "id": "D",
+        "text": "76.5 kg/s"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This is the right calculation with one factor of ten dropped.",
+      "B": "This is the right calculation with one factor of ten added.",
+      "C": "That is the mass of sediment in a single cubic metre, not the load passing each second.",
+      "D": "Correct — 900 mg/L is 900 000 mg per m cubed, or 0.9 kg per m cubed, and 0.9 kg times 85 m cubed/s is 76.5 kg/s."
+    }
+  },
+  {
+    "id": "s336",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp35",
+    "context": "Which of the following is the best description of discharge as the passage defines it?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "A volume of water passing a point per unit of time."
+      },
+      {
+        "id": "B",
+        "text": "The depth of water standing above a fixed datum."
+      },
+      {
+        "id": "C",
+        "text": "The mass of sediment carried in each litre of water."
+      },
+      {
+        "id": "D",
+        "text": "The total volume of water stored in the catchment."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the first paragraph defines it as the volume passing the station each second, in cubic metres per second.",
+      "B": "That is the definition of stage, which the passage distinguishes from discharge.",
+      "C": "That is suspended sediment concentration, defined in the fourth paragraph.",
+      "D": "Nothing in the passage reports a stored volume for the 480 km squared catchment."
+    }
+  },
+  {
+    "id": "s337",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp35",
+    "context": "Between which pair of consecutive months in Table 2 did mean discharge change at the greatest rate?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "April to May"
+      },
+      {
+        "id": "B",
+        "text": "September to October"
+      },
+      {
+        "id": "C",
+        "text": "June to July"
+      },
+      {
+        "id": "D",
+        "text": "January to February"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That step is 7.0 m cubed/s, large but still less than 8.8.",
+      "B": "Correct — 6.2 to 15.0 m cubed/s is a change of 8.8, the largest single month-to-month step in the table.",
+      "C": "That step is 3.5 m cubed/s, well short of the September-to-October change.",
+      "D": "That step is 3.0 m cubed/s, one of the smaller changes in the table."
+    }
+  },
+  {
+    "id": "s338",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp35",
+    "context": "A student reports the August mean discharge as \"3.8 m cubed.\" The report is incomplete because discharge must be given:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "as a mass rather than a volume."
+      },
+      {
+        "id": "B",
+        "text": "relative to a fixed datum."
+      },
+      {
+        "id": "C",
+        "text": "per unit of time."
+      },
+      {
+        "id": "D",
+        "text": "per unit of catchment area."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Discharge is defined as a volume; it is the sediment load that is a mass per second.",
+      "B": "A datum is needed for stage, which is a height, not for discharge.",
+      "C": "Correct — discharge is a volume per second, so a bare volume names no flow at all.",
+      "D": "Dividing by area would give a different quantity, and the passage never expresses discharge that way."
+    }
+  },
+  {
+    "id": "s339",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp35",
+    "context": "Based on the passage, a concentration of 140 mg/L is the same as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.40 kg per m cubed"
+      },
+      {
+        "id": "B",
+        "text": "140 kg per m cubed"
+      },
+      {
+        "id": "C",
+        "text": "0.140 kg per litre"
+      },
+      {
+        "id": "D",
+        "text": "0.140 kg per m cubed"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "This is ten times too large, as though a cubic metre held 10 000 L.",
+      "B": "This treats milligrams and kilograms as the same unit.",
+      "C": "A litre holds only 140 mg, which is 0.000140 kg, not 0.140 kg.",
+      "D": "Correct — 140 mg/L times 1000 L per m cubed is 140 000 mg per m cubed, and 140 000 mg is 0.140 kg."
+    }
+  },
+  {
+    "id": "s340",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp36",
+    "context": "In Experiment 1, the number of cuttings that rooted at 500 ppm IBA was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "21"
+      },
+      {
+        "id": "B",
+        "text": "9"
+      },
+      {
+        "id": "C",
+        "text": "26"
+      },
+      {
+        "id": "D",
+        "text": "24"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 1 gives 21 of 30 rooted at 500 ppm.",
+      "B": "That is the untreated group at 0 ppm.",
+      "C": "That is the 1000 ppm group, the best in the experiment.",
+      "D": "That is the 3000 ppm group, which rooted slightly fewer than at 1000 ppm."
+    }
+  },
+  {
+    "id": "s341",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp36",
+    "context": "Based on Table 2, the number rooted was highest at a bench temperature of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "14 degrees C"
+      },
+      {
+        "id": "B",
+        "text": "26 degrees C"
+      },
+      {
+        "id": "C",
+        "text": "22 degrees C"
+      },
+      {
+        "id": "D",
+        "text": "30 degrees C"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Eleven rooted at 14 degrees C, the lowest result in Table 2.",
+      "B": "Correct — 27 of 30 rooted at 26 degrees C, one more than at any other temperature tested.",
+      "C": "Twenty-six rooted at 22 degrees C, just below the peak.",
+      "D": "Only 17 rooted at 30 degrees C, a sharp fall from the peak."
+    }
+  },
+  {
+    "id": "s342",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp36",
+    "context": "Which variable was deliberately changed in Experiment 2 but held constant in Experiment 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Length of the cuttings"
+      },
+      {
+        "id": "B",
+        "text": "Number of days before scoring"
+      },
+      {
+        "id": "C",
+        "text": "Bench temperature"
+      },
+      {
+        "id": "D",
+        "text": "IBA concentration"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "All cuttings in all three experiments were 18 cm long.",
+      "B": "All cuttings were scored after the same 21 days.",
+      "C": "Correct — Experiment 1 held every tray at 22 degrees C, and Experiment 2 varied the bench temperature across five values.",
+      "D": "IBA was the variable in Experiment 1 and was fixed at 1000 ppm in Experiment 2."
+    }
+  },
+  {
+    "id": "s343",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp36",
+    "context": "The statement that the 1000 ppm group of Experiment 1, the 22 degrees C group of Experiment 2, and the middle group of Experiment 3 were treated identically is important because it:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "shows that IBA concentration had no effect on the number of cuttings that rooted."
+      },
+      {
+        "id": "B",
+        "text": "proves that the three experiments were run on the same day."
+      },
+      {
+        "id": "C",
+        "text": "means that only 30 cuttings in total were used across the study."
+      },
+      {
+        "id": "D",
+        "text": "lets results from the three experiments be compared against a shared reference point."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Table 1 shows rooting rising from 9 to 26 as IBA rises, which is a large effect.",
+      "B": "Identical treatment says nothing about when each experiment was carried out.",
+      "C": "Experiment 1 alone used 120 cuttings, in four groups of 30.",
+      "D": "Correct — a condition repeated in all three tables ties them together, and all three report the same 26 of 30."
+    }
+  },
+  {
+    "id": "s344",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp36",
+    "context": "A grower wants to know whether 3000 ppm IBA would still be the poorer choice at 26 degrees C. These experiments cannot answer that because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "no group combined 3000 ppm with a temperature other than 22 degrees C."
+      },
+      {
+        "id": "B",
+        "text": "Experiment 2 did not include a temperature as high as 26 degrees C."
+      },
+      {
+        "id": "C",
+        "text": "the mean number of roots was not recorded in Experiment 2."
+      },
+      {
+        "id": "D",
+        "text": "cuttings were scored as rooted at 5 mm rather than at a longer root length."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 3000 ppm appears only in Experiment 1, every group of which was held at 22 degrees C.",
+      "B": "Experiment 2 tested 26 degrees C, but only at 1000 ppm.",
+      "C": "A missing root count would not prevent a comparison of numbers rooted.",
+      "D": "The 5 mm threshold was applied uniformly and does not favour either concentration."
+    }
+  },
+  {
+    "id": "s345",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp36",
+    "context": "Which hypothesis is best supported by Table 1 alone?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Cuttings will not root at all without an application of IBA."
+      },
+      {
+        "id": "B",
+        "text": "Rooting improves with IBA up to a point, beyond which more gives no further gain."
+      },
+      {
+        "id": "C",
+        "text": "Rooting improves steadily with every increase in IBA concentration."
+      },
+      {
+        "id": "D",
+        "text": "IBA improves the number of roots per cutting but not the number rooting."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Nine of the 30 untreated cuttings rooted with no IBA at all.",
+      "B": "Correct — rooting rises from 9 to 21 to 26 and then falls to 24 at the highest concentration.",
+      "C": "The 3000 ppm group did worse than the 1000 ppm group on both measures.",
+      "D": "Both measures rise with IBA, from 9 to 26 rooted and from 3.1 to 7.8 roots."
+    }
+  },
+  {
+    "id": "s346",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp36",
+    "context": "A student predicts that cuttings held at 34 degrees C at 1000 ppm would root better than those at 30 degrees C. Table 2 suggests this prediction is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "likely, because warmer benches shorten the time needed to root."
+      },
+      {
+        "id": "B",
+        "text": "unlikely, because no cuttings rooted at temperatures above 26 degrees C."
+      },
+      {
+        "id": "C",
+        "text": "unlikely, because rooting was already falling sharply above 26 degrees C."
+      },
+      {
+        "id": "D",
+        "text": "likely, because rooting rose at every temperature increase tested."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Time to root was not measured; all cuttings were scored at 21 days.",
+      "B": "Seventeen of 30 rooted at 30 degrees C, so rooting had not stopped.",
+      "C": "Correct — the count drops from 27 at 26 degrees C to 17 at 30 degrees C, so the trend is already downward.",
+      "D": "Rooting fell between 26 and 30 degrees C rather than rising throughout."
+    }
+  },
+  {
+    "id": "s347",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp36",
+    "context": "In Experiment 3, how many more tip cuttings than woody base cuttings rooted?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "28"
+      },
+      {
+        "id": "B",
+        "text": "42"
+      },
+      {
+        "id": "C",
+        "text": "4.3"
+      },
+      {
+        "id": "D",
+        "text": "14"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the tip count on its own rather than the difference.",
+      "B": "That is the sum of the two groups.",
+      "C": "That is the difference in mean roots per cutting, not in the number that rooted.",
+      "D": "Correct — 28 tip cuttings rooted against 14 from the woody base, a difference of 14."
+    }
+  },
+  {
+    "id": "s348",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp36",
+    "context": "In Experiment 1, the approximate total number of roots produced by the whole 1000 ppm group was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "203"
+      },
+      {
+        "id": "B",
+        "text": "234"
+      },
+      {
+        "id": "C",
+        "text": "78"
+      },
+      {
+        "id": "D",
+        "text": "26"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 26 cuttings rooted, each with a mean of 7.8 roots, and 26 times 7.8 is about 203.",
+      "B": "That multiplies the mean by all 30 cuttings, including the four that never rooted.",
+      "C": "That multiplies the mean by 10 rather than by the number that rooted.",
+      "D": "That is the number of cuttings that rooted, not the number of roots."
+    }
+  },
+  {
+    "id": "s349",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp36",
+    "context": "Expressed as a percentage of the cuttings in its group, rooting in Experiment 3 fell from tip to woody base by approximately:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "93 percentage points"
+      },
+      {
+        "id": "B",
+        "text": "47 percentage points"
+      },
+      {
+        "id": "C",
+        "text": "14 percentage points"
+      },
+      {
+        "id": "D",
+        "text": "50 percentage points"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Ninety-three per cent is the tip figure itself, and the base group was far from zero.",
+      "B": "Correct — 28 of 30 is about 93 per cent and 14 of 30 is about 47 per cent, a fall of roughly 47 points.",
+      "C": "Fourteen is the fall in the number of cuttings, not in percentage points.",
+      "D": "Halving 93 per cent would give about 47 points of fall, not 50."
+    }
+  },
+  {
+    "id": "s350",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp36",
+    "context": "A concentration of 1000 ppm means that in each million parts of the dip solution there are:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1 000 000 parts of IBA."
+      },
+      {
+        "id": "B",
+        "text": "1000 parts of water."
+      },
+      {
+        "id": "C",
+        "text": "1000 parts of IBA."
+      },
+      {
+        "id": "D",
+        "text": "1000 grams of IBA."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That would be a solution of pure IBA and no solvent at all.",
+      "B": "The figure counts the IBA, not what it is dissolved in.",
+      "C": "Correct — parts per million counts the parts of the named substance in every million parts of the whole.",
+      "D": "Parts per million is a ratio and carries no mass on its own."
+    }
+  },
+  {
+    "id": "s351",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp36",
+    "context": "All cuttings came from a single parent willow. Compared with seedlings raised from seed, cuttings taken this way are:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "genetically identical to one another only if they came from the same shoot."
+      },
+      {
+        "id": "B",
+        "text": "more genetically varied, because each cutting develops its own root system."
+      },
+      {
+        "id": "C",
+        "text": "unable to reproduce sexually once they have been rooted."
+      },
+      {
+        "id": "D",
+        "text": "genetically identical to the parent, so differences between them are not inherited differences."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Every shoot on the parent carries the same genome, so position on the plant makes no genetic difference.",
+      "B": "Rooting produces new tissue by the same division; it introduces no new genetic variation.",
+      "C": "A rooted cutting grows into a normal plant that can flower and set seed.",
+      "D": "Correct — a cutting grows by mitosis from parent tissue, so the whole set is one clone and the treatment differences cannot be genetic."
+    }
+  },
+  {
+    "id": "s352",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp37",
+    "context": "Scientist 2 attributes the pits to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "chalk dissolved by acidic rainwater moving down joints."
+      },
+      {
+        "id": "B",
+        "text": "people digging down to a band of flint nodules."
+      },
+      {
+        "id": "C",
+        "text": "root plates torn out by wind-thrown trees."
+      },
+      {
+        "id": "D",
+        "text": "the slow settling of ground above buried hollows."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Scientist 2 describes rainwater made acidic by carbon dioxide dissolving chalk fastest along joints.",
+      "B": "That is the quarrying account offered by Scientist 1.",
+      "C": "That is the tree-throw account offered by Scientist 3.",
+      "D": "No scientist proposes settling above buried hollows."
+    }
+  },
+  {
+    "id": "s353",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp37",
+    "context": "Which observation does Scientist 1 explain as waste from working flint at the pit edge?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The woodland pollen from the nearby bog"
+      },
+      {
+        "id": "B",
+        "text": "The struck flakes in 5 of the 14 excavated pits"
+      },
+      {
+        "id": "C",
+        "text": "The mound beside the hollow in 9 of the 14 pits"
+      },
+      {
+        "id": "D",
+        "text": "The clustering of pit long axes near 040 degrees"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The pollen is used by Scientist 3 to show trees were present.",
+      "B": "Correct — Scientist 1 calls the flakes the waste of working the flint at the pit edge.",
+      "C": "The mounds are the observation Scientist 3 claims only tree-throw explains.",
+      "D": "The alignment is the observation Scientist 2 rests on."
+    }
+  },
+  {
+    "id": "s354",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp37",
+    "context": "Scientists 1 and 2 disagree most directly about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "whether the pits are older than 3400 years."
+      },
+      {
+        "id": "B",
+        "text": "how many of the excavated pits contained charcoal."
+      },
+      {
+        "id": "C",
+        "text": "why the pits stop at the depth of the nodule band."
+      },
+      {
+        "id": "D",
+        "text": "whether flint nodules are present beneath the down at all."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Neither scientist assigns the pits an age, and only Scientist 3 raises the 3400-year figure.",
+      "B": "The charcoal count is a shared observation that neither disputes.",
+      "C": "Correct — Scientist 1 says diggers stopped at the nodules, and Scientist 2 says solution stops there because the nodules interrupt the joints.",
+      "D": "Both accept the nodule band; they differ over what it means."
+    }
+  },
+  {
+    "id": "s355",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp37",
+    "context": "Scientist 2 argues that the absence of spoil heaps counts against Scientist 1 because quarrying would:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "require tools that would have been abandoned at the site."
+      },
+      {
+        "id": "B",
+        "text": "leave the pits deeper than the nodule band rather than at it."
+      },
+      {
+        "id": "C",
+        "text": "produce pits of very different sizes from one another."
+      },
+      {
+        "id": "D",
+        "text": "move a large volume of chalk that has to end up somewhere nearby."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Tools are never mentioned by any of the three scientists.",
+      "B": "Scientist 1 explains the depths as reaching the nodules, and Scientist 2 raises spoil as a separate objection.",
+      "C": "The pits vary only from 2 to 3 m across, and nobody argues from that range.",
+      "D": "Correct — Scientist 2 says a quarry that moved a cubic metre of chalk must leave the chalk somewhere."
+    }
+  },
+  {
+    "id": "s356",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp37",
+    "context": "Which finding, if made, would most weaken Scientist 3’s account?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The mound beside each hollow is made of chalk rubble with no soil or root traces."
+      },
+      {
+        "id": "B",
+        "text": "Pollen shows that woodland persisted on the down until 3200 years ago."
+      },
+      {
+        "id": "C",
+        "text": "Struck flakes are found in several more of the pits on further excavation."
+      },
+      {
+        "id": "D",
+        "text": "The pits vary in depth from 0.6 m to 1.1 m rather than being uniform."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Scientist 3 says the mound is the root plate and the soil it carried, so a mound of bare chalk rubble is the wrong material.",
+      "B": "That moves the woodland date slightly later and still supports the presence of trees.",
+      "C": "Scientist 3 already treats flakes as ordinary material falling into any open hollow.",
+      "D": "Root plates of different trees would not be expected to leave hollows of one depth."
+    }
+  },
+  {
+    "id": "s357",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp37",
+    "context": "Which single observation is claimed as support by Scientist 2 and left unaddressed by both other scientists?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The pits are 2 to 3 m across."
+      },
+      {
+        "id": "B",
+        "text": "The pit long axes cluster near a mapped joint direction."
+      },
+      {
+        "id": "C",
+        "text": "Charcoal lies at the base of 3 of the 14 excavated pits."
+      },
+      {
+        "id": "D",
+        "text": "Flint nodules occur about 0.8 m below the surface."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The widths are background shared by all three and used as evidence by none.",
+      "B": "Correct — the 040-degree alignment matching a 038-degree joint set is Scientist 2’s central evidence, and neither other account mentions it.",
+      "C": "Scientists 1 and 3 both account for the charcoal.",
+      "D": "The nodule band figures in the accounts of both Scientists 1 and 2."
+    }
+  },
+  {
+    "id": "s358",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp37",
+    "context": "Which prediction follows from Scientist 1’s account but not from Scientist 2’s?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The chalk beneath the pits will be more heavily jointed than elsewhere."
+      },
+      {
+        "id": "B",
+        "text": "Each pit will be paired with a mound of the same volume."
+      },
+      {
+        "id": "C",
+        "text": "Excavation will show the flint nodule band broken and partly removed beneath the pits."
+      },
+      {
+        "id": "D",
+        "text": "The pits will prove to be arranged along the two mapped joint directions."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Scientist 2 argues the chalk at the pits is less jointed near the nodules, so heavier jointing suits neither account.",
+      "B": "Paired mounds belong to Scientist 3.",
+      "C": "Correct — quarrying implies the nodules were taken, while solution leaves them in place as the thing that halts the process.",
+      "D": "That is Scientist 2’s prediction, drawn from the joint sets."
+    }
+  },
+  {
+    "id": "s359",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp37",
+    "context": "Suppose charcoal from the base of a pit is dated to 5200 years ago. This would be:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "consistent with Scientist 3 and a difficulty for Scientist 1."
+      },
+      {
+        "id": "B",
+        "text": "a difficulty for all three accounts equally."
+      },
+      {
+        "id": "C",
+        "text": "irrelevant, since charcoal cannot be dated."
+      },
+      {
+        "id": "D",
+        "text": "consistent with Scientist 1 and a difficulty for Scientist 3."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The date is older than Scientist 3’s woodland clearance, which is the opposite of helpful.",
+      "B": "Scientist 2 makes no claim about the age of the pits, so the date leaves that account untouched.",
+      "C": "Charcoal is routinely dated, and the passage offers it as excavated evidence.",
+      "D": "Correct — Scientist 1 links the charcoal to fires at the working, while Scientist 3 needs material that fell in after the trees came down about 3400 years ago."
+    }
+  },
+  {
+    "id": "s360",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp37",
+    "context": "Which result would best support the possibility that more than one process formed the field of pits?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The 9 pits with mounds lack flakes, and the 5 with flakes lack mounds."
+      },
+      {
+        "id": "B",
+        "text": "Every excavated pit reaches exactly the depth of the nodule band."
+      },
+      {
+        "id": "C",
+        "text": "All 60 pits share the same alignment near 040 degrees."
+      },
+      {
+        "id": "D",
+        "text": "No charcoal is found in any of the remaining 46 pits."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — two sets of pits with opposite signatures is what a mixed origin looks like, while each single account predicts one population.",
+      "B": "A uniform depth points to one process acting throughout.",
+      "C": "A shared alignment is evidence for one cause across the whole field.",
+      "D": "Absent charcoal removes evidence rather than dividing the pits into groups."
+    }
+  },
+  {
+    "id": "s361",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp37",
+    "context": "Scientist 2’s mechanism depends on rainwater becoming mildly acidic. That acidity comes chiefly from:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "chalk dust dissolving in the water as it falls."
+      },
+      {
+        "id": "B",
+        "text": "carbon dioxide dissolving in the water to form carbonic acid."
+      },
+      {
+        "id": "C",
+        "text": "nitrogen gas dissolving in the water to form nitric acid."
+      },
+      {
+        "id": "D",
+        "text": "oxygen dissolving in the water to form hydrogen peroxide."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Chalk is a base; dissolving it would raise the pH rather than lower it.",
+      "B": "Correct — dissolved carbon dioxide forms carbonic acid, which is what dissolves limestone and chalk, and Scientist 2 names carbon dioxide directly.",
+      "C": "Atmospheric nitrogen is famously unreactive and does not acidify rain by dissolving.",
+      "D": "Dissolved oxygen does not form hydrogen peroxide in rainfall."
+    }
+  },
+  {
+    "id": "s362",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp37",
+    "context": "Chalk and the flint nodules within it differ in that flint is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a metal ore that was smelted at the pit edge."
+      },
+      {
+        "id": "B",
+        "text": "a soft material that breaks down before the chalk does."
+      },
+      {
+        "id": "C",
+        "text": "a silica rock that resists the acid that dissolves the surrounding chalk."
+      },
+      {
+        "id": "D",
+        "text": "a carbonate rock that dissolves faster than the chalk around it."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Flint is not an ore and is worked by striking, not by smelting.",
+      "B": "Flint is markedly harder and more durable than the chalk enclosing it.",
+      "C": "Correct — flint is a form of silica, which carbonic acid does not attack, which is why it survives as nodules and can be struck into flakes.",
+      "D": "If flint dissolved faster than chalk there would be no nodule band left to quarry."
+    }
+  },
+  {
+    "id": "s363",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp37",
+    "context": "Of the 14 excavated pits, the observation recorded in the greatest number of them was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "struck flint flakes."
+      },
+      {
+        "id": "B",
+        "text": "charcoal at the base."
+      },
+      {
+        "id": "C",
+        "text": "flint nodules still in place."
+      },
+      {
+        "id": "D",
+        "text": "a mound beside the hollow."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Flakes were found in 5 of the 14, fewer than the mounds.",
+      "B": "Charcoal was the least common, at 3 of the 14.",
+      "C": "The passage reports the nodule band as a feature of the down, not as a count from the excavations.",
+      "D": "Correct — mounds appear in 9 of the 14, against 5 with flakes and 3 with charcoal."
+    }
   }
 ]
