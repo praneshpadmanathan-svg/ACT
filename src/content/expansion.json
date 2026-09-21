@@ -18081,135 +18081,135 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At lamp distance of 6 cm, what mean sensor reading was recorded?",
+        "context": "At 6 hours, what was the cell density in Flask C?",
         "practiceOnly": true,
         "passage": "exp26-sp-11",
         "choices": [
           {
             "id": "A",
-            "text": "30 units"
+            "text": "4.4 million/mL"
           },
           {
             "id": "B",
-            "text": "26 units"
+            "text": "7.4 million/mL"
           },
           {
             "id": "C",
-            "text": "28 units"
+            "text": "9.6 million/mL"
           },
           {
             "id": "D",
-            "text": "32 units"
+            "text": "11.2 million/mL"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "This belongs to the setting of 4.",
-          "B": "This belongs to the setting of 8.",
-          "C": "Read the entry for the setting of 6.",
-          "D": "This belongs to the setting of 2."
+          "A": "Table 1 gives 4.4 for Flask T at 4 hours, from the wrong column and the wrong row.",
+          "B": "Table 1 pairs the 6-hour row with 7.4 million cells per millilitre in the control flask.",
+          "C": "This is Flask T at 6 hours, read from the treated column instead of the control.",
+          "D": "This is Flask C two hours later, at the 8-hour reading."
         }
       },
       {
         "id": "exp26-science-052",
         "section": "science",
         "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "difficulty": "medium",
+        "context": "Flask C received sterile water rather than nothing at all most likely so that:",
         "practiceOnly": true,
         "passage": "exp26-sp-11",
         "choices": [
           {
             "id": "A",
-            "text": "sensor reading"
+            "text": "the supplement was the only difference between flasks"
           },
           {
             "id": "B",
-            "text": "the number of trials per setting"
+            "text": "the control flask would grow faster than the treated one"
           },
           {
             "id": "C",
-            "text": "the measuring procedure"
+            "text": "the bacteria in the control would survive the full 10 hours"
           },
           {
             "id": "D",
-            "text": "lamp distance"
+            "text": "both flasks could be counted on the same piece of equipment"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This was the measured response, not the variable deliberately set.",
-          "B": "Every setting used three trials.",
-          "C": "The passage states that the same procedure was used.",
-          "D": "The passage identifies lamp distance as the changed factor."
+          "A": "Matching the added volume leaves the supplement itself as the one thing that differs.",
+          "B": "The control grows more slowly, and no design would aim to make it grow faster.",
+          "C": "Bacteria in plain broth survive without added water; survival is not what the volume controls.",
+          "D": "Counting equipment is unaffected by whether a few millilitres of water were added."
         }
       },
       {
         "id": "exp26-science-053",
         "section": "science",
-        "topic": "calculating from data",
+        "topic": "research summaries",
         "difficulty": "medium",
-        "context": "What is the change in mean sensor reading when lamp distance increases from 2 to 8 cm? Use final minus initial.",
+        "context": "The figure 21.0 appears in both tables because:",
         "practiceOnly": true,
         "passage": "exp26-sp-11",
         "choices": [
           {
             "id": "A",
-            "text": "-6 units"
+            "text": "the counting method rounds every result to 21.0"
           },
           {
             "id": "B",
-            "text": "-2 units"
+            "text": "one condition is shared between the two experiments"
           },
           {
             "id": "C",
-            "text": "6 units"
+            "text": "the control flask reached the same density by chance"
           },
           {
             "id": "D",
-            "text": "58 units"
+            "text": "the supplement fixes density at 21.0 whatever is done"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "26 - 32 = -6.",
-          "B": "This is the change for a single step, not all three steps.",
-          "C": "This reverses final and initial.",
-          "D": "A change is a difference, not a sum."
+          "A": "Other figures read 5.3, 10.6 and 41.8, so nothing is being rounded to a single value.",
+          "B": "Experiment 2 includes a 1.0 inoculum at 8 hours, which is exactly Flask T at 8 hours.",
+          "C": "The control reached 11.2 at 8 hours, which is nowhere near the shared figure.",
+          "D": "Table 2 shows density varying from 5.3 to 41.8 under the same supplement."
         }
       },
       {
         "id": "exp26-science-054",
         "section": "science",
-        "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "topic": "calculating from data",
+        "difficulty": "hard",
+        "context": "Between 8 and 10 hours, the density in Flask T increased by roughly what factor?",
         "practiceOnly": true,
         "passage": "exp26-sp-11",
         "choices": [
           {
             "id": "A",
-            "text": "It proves A is correct for every possible setting."
+            "text": "1.5 times"
           },
           {
             "id": "B",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "2.1 times"
           },
           {
             "id": "C",
-            "text": "It supports B and contradicts A."
+            "text": "4.0 times"
           },
           {
             "id": "D",
-            "text": "It contradicts both because the means are all different."
+            "text": "23 times"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "A finite tested range cannot establish behavior at every possible setting.",
-          "B": "Successive means differ by -2, rather than remaining constant.",
-          "C": "The means change by equal nonzero differences.",
-          "D": "Different means can support a constant change per step."
+          "A": "This would take 21.0 to about 31, well short of the 44.0 actually recorded.",
+          "B": "Flask T runs from 21.0 to 44.0 over those two hours, and 44.0 divided by 21.0 is about 2.1.",
+          "C": "Quadrupling would reach 84, far above any figure in the table.",
+          "D": "This is the increase in millions per millilitre rather than the factor of increase."
         }
       },
       {
@@ -18217,33 +18217,33 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 cm, what mean sensor reading would A predict?",
+        "context": "The flattening of Flask C between 8 and 10 hours most likely indicates that:",
         "practiceOnly": true,
         "passage": "exp26-sp-11",
         "choices": [
           {
             "id": "A",
-            "text": "22 units"
+            "text": "something the culture needed had run low"
           },
           {
             "id": "B",
-            "text": "34 units"
+            "text": "the bacteria in the control flask had all died"
           },
           {
             "id": "C",
-            "text": "24 units"
+            "text": "the flask had been shaken at the wrong rate"
           },
           {
             "id": "D",
-            "text": "26 units"
+            "text": "the supplement had leaked into the control"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This advances two steps beyond the last setting instead of one.",
-          "B": "This extends the pattern backward rather than forward.",
-          "C": "One additional step adds -2 to 26; this is a conditional prediction, not a measurement.",
-          "D": "This assumes the response stops changing after the last measured setting."
+          "A": "Growth stalling at 12.0 while the supplemented flask keeps doubling points to a shortage.",
+          "B": "The count holds at 12.0 rather than falling, so the population is not dying off.",
+          "C": "Both flasks were shaken at the same rate, so shaking cannot explain the difference.",
+          "D": "Contamination would speed the control up toward Flask T, not stop its growth."
         }
       },
       {
@@ -18251,67 +18251,67 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At filter layers of 6 layers, what mean collected particles was recorded?",
+        "context": "What damage followed a night with an air minimum of -3.0 °C?",
         "practiceOnly": true,
         "passage": "exp26-sp-12",
         "choices": [
           {
             "id": "A",
-            "text": "34 particles"
+            "text": "4 percent"
           },
           {
             "id": "B",
-            "text": "37 particles"
+            "text": "38 percent"
           },
           {
             "id": "C",
-            "text": "43 particles"
+            "text": "71 percent"
           },
           {
             "id": "D",
-            "text": "40 particles"
+            "text": "94 percent"
           }
         ],
-        "answer": "D",
+        "answer": "C",
         "why": {
-          "A": "This belongs to the setting of 2.",
-          "B": "This belongs to the setting of 4.",
-          "C": "This belongs to the setting of 8.",
-          "D": "Read the entry for the setting of 6."
+          "A": "Table 1 gives 4 percent at -1.0 °C, two rows above the night in question.",
+          "B": "Table 1 gives 38 percent at -2.0 °C, one row above the night in question.",
+          "C": "Table 1 pairs an air minimum of -3.0 °C with damage of 71 percent.",
+          "D": "Table 1 gives 94 percent at -4.0 °C, the coldest night on the list."
         }
       },
       {
         "id": "exp26-science-057",
         "section": "science",
-        "topic": "research summaries",
+        "topic": "reading data",
         "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "context": "According to Table 2, a screen reading of 0.0 °C corresponded to a blossom-level minimum of:",
         "practiceOnly": true,
         "passage": "exp26-sp-12",
         "choices": [
           {
             "id": "A",
-            "text": "filter layers"
+            "text": "0.4 °C"
           },
           {
             "id": "B",
-            "text": "collected particles"
+            "text": "-1.5 °C"
           },
           {
             "id": "C",
-            "text": "the number of trials per setting"
+            "text": "-3.4 °C"
           },
           {
             "id": "D",
-            "text": "the measuring procedure"
+            "text": "-5.3 °C"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "The passage identifies filter layers as the changed factor.",
-          "B": "This was the measured response, not the variable deliberately set.",
-          "C": "Every setting used three trials.",
-          "D": "The passage states that the same procedure was used."
+          "A": "Table 2 pairs 0.4 °C at the blossom with a screen reading of 2.0 °C.",
+          "B": "Table 2 pairs a screen reading of 0.0 °C with -1.5 °C at the blossom cluster.",
+          "C": "This is the blossom reading for a screen minimum of -2.0 °C.",
+          "D": "This is the blossom reading for the coldest night listed, at -4.0 °C."
         }
       },
       {
@@ -18319,67 +18319,67 @@
         "section": "science",
         "topic": "calculating from data",
         "difficulty": "medium",
-        "context": "What is the change in mean collected particles when filter layers increases from 2 to 8 layers? Use final minus initial.",
+        "context": "How much does damage rise between an air minimum of -1.0 °C and one of -2.0 °C?",
         "practiceOnly": true,
         "passage": "exp26-sp-12",
         "choices": [
           {
             "id": "A",
-            "text": "77 particles"
+            "text": "1 percentage point"
           },
           {
             "id": "B",
-            "text": "9 particles"
+            "text": "34 percentage points"
           },
           {
             "id": "C",
-            "text": "3 particles"
+            "text": "38 percentage points"
           },
           {
             "id": "D",
-            "text": "-9 particles"
+            "text": "67 percentage points"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "A change is a difference, not a sum.",
-          "B": "43 - 34 = 9.",
-          "C": "This is the change for a single step, not all three steps.",
-          "D": "This reverses final and initial."
+          "A": "One point is the typical step between the four mildest nights, not across this pair.",
+          "B": "Damage runs from 4 percent to 38 percent across those two rows, a rise of 34 points.",
+          "C": "This is the damage figure at -2.0 °C itself rather than the rise from the row above.",
+          "D": "This is the step from -2.0 °C to -3.0 °C added on, which the question does not ask for."
         }
       },
       {
         "id": "exp26-science-059",
         "section": "science",
-        "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "topic": "hypotheses",
+        "difficulty": "hard",
+        "context": "Table 1 indicates that damage climbs steeply only once the air minimum falls below about:",
         "practiceOnly": true,
         "passage": "exp26-sp-12",
         "choices": [
           {
             "id": "A",
-            "text": "It contradicts both because the means are all different."
+            "text": "2.0 °C"
           },
           {
             "id": "B",
-            "text": "It proves A is correct for every possible setting."
+            "text": "0.0 °C"
           },
           {
             "id": "C",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "-1.0 °C"
           },
           {
             "id": "D",
-            "text": "It supports B and contradicts A."
+            "text": "-3.0 °C"
           }
         ],
         "answer": "C",
         "why": {
-          "A": "Different means can support a constant change per step.",
-          "B": "A finite tested range cannot establish behavior at every possible setting.",
-          "C": "Successive means differ by 3, rather than remaining constant.",
-          "D": "The means change by equal nonzero differences."
+          "A": "Damage at 2.0 °C is 1 percent, and it is still only 3 percent two rows colder.",
+          "B": "Damage at 0.0 °C is 3 percent and rises to just 4 percent on the next row down.",
+          "C": "Damage holds between 1 and 4 percent down to -1.0 °C and then jumps to 38 percent.",
+          "D": "By -3.0 °C damage has already reached 71 percent, so the climb began well above it."
         }
       },
       {
@@ -18387,33 +18387,33 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 layers, what mean collected particles would A predict?",
+        "context": "Table 2 helps account for the pattern in Table 1 by showing that the blossom itself is:",
         "practiceOnly": true,
         "passage": "exp26-sp-12",
         "choices": [
           {
             "id": "A",
-            "text": "43 particles"
+            "text": "colder than the screen reading by roughly 1.5 °C"
           },
           {
             "id": "B",
-            "text": "49 particles"
+            "text": "warmer than the screen reading on the coldest nights"
           },
           {
             "id": "C",
-            "text": "31 particles"
+            "text": "at exactly the temperature the screen reading gives"
           },
           {
             "id": "D",
-            "text": "46 particles"
+            "text": "unaffected by the air temperature around the orchard"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This assumes the response stops changing after the last measured setting.",
-          "B": "This advances two steps beyond the last setting instead of one.",
-          "C": "This extends the pattern backward rather than forward.",
-          "D": "One additional step adds 3 to 43; this is a conditional prediction, not a measurement."
+          "A": "Every pair runs about 1.5 °C colder at the cluster, so the blossom freezes before the screen says so.",
+          "B": "At -4.0 °C on the screen the blossom reads -5.3 °C, which is colder rather than warmer.",
+          "C": "None of the four pairs matches; the gap is between 1.3 and 1.6 °C throughout.",
+          "D": "The blossom reading tracks the screen reading closely down the whole table."
         }
       },
       {
@@ -18421,271 +18421,271 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At stirring time of 6 s, what mean dissolved mass was recorded?",
+        "context": "How many trout per 100 m did the lower reach hold in 2024?",
         "practiceOnly": true,
         "passage": "exp26-sp-13",
         "choices": [
           {
             "id": "A",
-            "text": "42 g"
+            "text": "12"
           },
           {
             "id": "B",
-            "text": "36 g"
+            "text": "38"
           },
           {
             "id": "C",
-            "text": "39 g"
+            "text": "42"
           },
           {
             "id": "D",
-            "text": "45 g"
+            "text": "51"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Read the entry for the setting of 6.",
-          "B": "This belongs to the setting of 2.",
-          "C": "This belongs to the setting of 4.",
-          "D": "This belongs to the setting of 8."
+          "A": "Table 1 gives 12 trout per 100 m in the lower reach for 2024.",
+          "B": "This is the upper reach in 2024, which held its population far better.",
+          "C": "This is the upper reach in 2010, at the start of the record.",
+          "D": "This is the lower reach in 2010, before the decline being explained."
         }
       },
       {
         "id": "exp26-science-062",
         "section": "science",
-        "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "topic": "conflicting viewpoints",
+        "difficulty": "medium",
+        "context": "Both ecologists accept that:",
         "practiceOnly": true,
         "passage": "exp26-sp-13",
         "choices": [
           {
             "id": "A",
-            "text": "the measuring procedure"
+            "text": "summer water temperature has risen since 2010"
           },
           {
             "id": "B",
-            "text": "stirring time"
+            "text": "the weir rebuilt in 2011 is too steep for a trout"
           },
           {
             "id": "C",
-            "text": "dissolved mass"
+            "text": "replanting the banks would restore the population"
           },
           {
             "id": "D",
-            "text": "the number of trials per setting"
+            "text": "the upper reach has lost most of its trout as well"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The passage states that the same procedure was used.",
-          "B": "The passage identifies stirring time as the changed factor.",
-          "C": "This was the measured response, not the variable deliberately set.",
-          "D": "Every setting used three trials."
+          "A": "Ecologist 1 makes the rise the cause, and Ecologist 2 grants it while denying it explains the pattern.",
+          "B": "The weir is the whole of Ecologist 2’s case and forms no part of Ecologist 1’s.",
+          "C": "Replanting is Ecologist 1’s remedy; Ecologist 2 proposes a fish pass instead.",
+          "D": "The upper reach fell from 42 to 38 per 100 m, which both treat as holding steady."
         }
       },
       {
         "id": "exp26-science-063",
         "section": "science",
-        "topic": "calculating from data",
-        "difficulty": "medium",
-        "context": "What is the change in mean dissolved mass when stirring time increases from 2 to 8 s? Use final minus initial.",
+        "topic": "conflicting viewpoints",
+        "difficulty": "hard",
+        "context": "Which observation does Ecologist 2 raise against Ecologist 1?",
         "practiceOnly": true,
         "passage": "exp26-sp-13",
         "choices": [
           {
             "id": "A",
-            "text": "-9 g"
+            "text": "The shaded reach warmed as well and did not decline."
           },
           {
             "id": "B",
-            "text": "81 g"
+            "text": "Trout spawn in gravel rather than in open water."
           },
           {
             "id": "C",
-            "text": "9 g"
+            "text": "The lower reach is warmer than the upper reach."
           },
           {
             "id": "D",
-            "text": "3 g"
+            "text": "Two-thirds of the population has been lost since 2010."
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This reverses final and initial.",
-          "B": "A change is a difference, not a sum.",
-          "C": "45 - 36 = 9.",
-          "D": "This is the change for a single step, not all three steps."
+          "A": "The upper reach rose 1.7 °C and held its fish, which strains a purely thermal account.",
+          "B": "Spawning gravel supports Ecologist 2’s own mechanism rather than attacking the rival.",
+          "C": "Both ecologists accept this, and Ecologist 1 uses it to make the thermal case.",
+          "D": "The total loss is the thing being explained, so it argues against neither account."
         }
       },
       {
         "id": "exp26-science-064",
         "section": "science",
         "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "difficulty": "hard",
+        "context": "Ecologist 1’s account requires that the lower reach:",
         "practiceOnly": true,
         "passage": "exp26-sp-13",
         "choices": [
           {
             "id": "A",
-            "text": "It supports B and contradicts A."
+            "text": "lies downstream of gravel suitable for spawning"
           },
           {
             "id": "B",
-            "text": "It contradicts both because the means are all different."
+            "text": "crossed a temperature threshold the upper did not"
           },
           {
             "id": "C",
-            "text": "It proves A is correct for every possible setting."
+            "text": "was stocked with hatchery fish before the year 2010"
           },
           {
             "id": "D",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "has become shallower since the weir was rebuilt"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The means change by equal nonzero differences.",
-          "B": "Different means can support a constant change per step.",
-          "C": "A finite tested range cannot establish behavior at every possible setting.",
-          "D": "Successive means differ by 3, rather than remaining constant."
+          "A": "Spawning gravel below the reach is Ecologist 2’s geography, not part of the thermal case.",
+          "B": "Near 19 °C is the stated threshold: the lower reach reaches 19.7 °C and the upper only 16.8 °C.",
+          "C": "Stocking is mentioned by neither ecologist anywhere in the passage.",
+          "D": "Depth is never discussed, and Ecologist 1 does not mention the weir at all."
         }
       },
       {
         "id": "exp26-science-065",
         "section": "science",
-        "topic": "hypotheses",
+        "topic": "conflicting viewpoints",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 s, what mean dissolved mass would A predict?",
+        "context": "Which result would best distinguish between the two accounts?",
         "practiceOnly": true,
         "passage": "exp26-sp-13",
         "choices": [
           {
             "id": "A",
-            "text": "48 g"
+            "text": "A fish pass is fitted and the lower reach recovers while it stays warm."
           },
           {
             "id": "B",
-            "text": "45 g"
+            "text": "Summer temperature in the lower reach rises further over the next decade."
           },
           {
             "id": "C",
-            "text": "51 g"
+            "text": "The upper reach is found to hold more spawning gravel than the lower."
           },
           {
             "id": "D",
-            "text": "33 g"
+            "text": "Trout numbers in a nearby shaded beck are counted for the first time."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "One additional step adds 3 to 45; this is a conditional prediction, not a measurement.",
-          "B": "This assumes the response stops changing after the last measured setting.",
-          "C": "This advances two steps beyond the last setting instead of one.",
-          "D": "This extends the pattern backward rather than forward."
+          "A": "It separates the two causes: passage restored, temperature unchanged, and only one account survives.",
+          "B": "Further warming affects what happens next without telling us what caused the past decline.",
+          "C": "Both ecologists already place the spawning gravel in the upper reach.",
+          "D": "A different beck differs in too many ways to settle what happened in this one."
         }
       },
       {
         "id": "exp26-science-066",
         "section": "science",
-        "topic": "reading data",
-        "difficulty": "easy",
-        "context": "At panel tilt of 6 degrees, what mean power output was recorded?",
+        "topic": "calculating from data",
+        "difficulty": "medium",
+        "context": "As the water-to-cement ratio rises from 0.35 to 0.60, 28-day strength falls by how much?",
         "practiceOnly": true,
         "passage": "exp26-sp-14",
         "choices": [
           {
             "id": "A",
-            "text": "47 mW"
+            "text": "23 MPa"
           },
           {
             "id": "B",
-            "text": "44 mW"
+            "text": "35 MPa"
           },
           {
             "id": "C",
-            "text": "38 mW"
+            "text": "58 MPa"
           },
           {
             "id": "D",
-            "text": "41 mW"
+            "text": "81 MPa"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "This belongs to the setting of 8.",
-          "B": "Read the entry for the setting of 6.",
-          "C": "This belongs to the setting of 2.",
-          "D": "This belongs to the setting of 4."
+          "A": "This is the strength at the 0.60 ratio itself rather than the size of the fall.",
+          "B": "Strength runs from 58 MPa down to 23 MPa across those rows, a fall of 35 MPa.",
+          "C": "This is the strength at the 0.35 ratio, which is where the fall begins.",
+          "D": "This adds the two end figures together instead of subtracting one from the other."
         }
       },
       {
         "id": "exp26-science-067",
         "section": "science",
-        "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "topic": "calculating from data",
+        "difficulty": "hard",
+        "context": "For each 0.05 rise in the water-to-cement ratio, slump rises by about:",
         "practiceOnly": true,
         "passage": "exp26-sp-14",
         "choices": [
           {
             "id": "A",
-            "text": "the number of trials per setting"
+            "text": "15 mm"
           },
           {
             "id": "B",
-            "text": "the measuring procedure"
+            "text": "35 mm"
           },
           {
             "id": "C",
-            "text": "panel tilt"
+            "text": "80 mm"
           },
           {
             "id": "D",
-            "text": "power output"
+            "text": "170 mm"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "Every setting used three trials.",
-          "B": "The passage states that the same procedure was used.",
-          "C": "The passage identifies panel tilt as the changed factor.",
-          "D": "This was the measured response, not the variable deliberately set."
+          "A": "Fifteen millimetres is the slump of the stiffest mix, not the step between rows.",
+          "B": "The steps run 30, 35, 35, 35 and 35 mm down the column, so about 35 mm each time.",
+          "C": "Eighty millimetres is the slump at a 0.45 ratio rather than a step size.",
+          "D": "This is close to the total rise across the whole table, not one step of it."
         }
       },
       {
         "id": "exp26-science-068",
         "section": "science",
-        "topic": "calculating from data",
+        "topic": "research summaries",
         "difficulty": "medium",
-        "context": "What is the change in mean power output when panel tilt increases from 2 to 8 degrees? Use final minus initial.",
+        "context": "All specimens were cured in the same water bath most likely so that differences could be:",
         "practiceOnly": true,
         "passage": "exp26-sp-14",
         "choices": [
           {
             "id": "A",
-            "text": "3 mW"
+            "text": "credited to the mix rather than to the curing"
           },
           {
             "id": "B",
-            "text": "-9 mW"
+            "text": "measured without waiting the full 28 days"
           },
           {
             "id": "C",
-            "text": "85 mW"
+            "text": "produced more cheaply than in separate baths"
           },
           {
             "id": "D",
-            "text": "9 mW"
+            "text": "compared against a published national standard"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is the change for a single step, not all three steps.",
-          "B": "This reverses final and initial.",
-          "C": "A change is a difference, not a sum.",
-          "D": "47 - 38 = 9."
+          "A": "Curing conditions affect strength, so holding them identical isolates the water-to-cement ratio.",
+          "B": "Every Experiment 1 specimen still waited 28 days; the shared bath saved no time.",
+          "C": "Cost is never mentioned, and it would not justify a choice that affects the result.",
+          "D": "No external standard appears anywhere in the passage."
         }
       },
       {
@@ -18693,33 +18693,33 @@
         "section": "science",
         "topic": "conflicting viewpoints",
         "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "context": "Engineer 2’s objection is essentially that cylinder strength may:",
         "practiceOnly": true,
         "passage": "exp26-sp-14",
         "choices": [
           {
             "id": "A",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "overstate how strong badly placed concrete is"
           },
           {
             "id": "B",
-            "text": "It supports B and contradicts A."
+            "text": "be measured at the wrong number of curing days"
           },
           {
             "id": "C",
-            "text": "It contradicts both because the means are all different."
+            "text": "fall faster than Table 1 suggests it actually does"
           },
           {
             "id": "D",
-            "text": "It proves A is correct for every possible setting."
+            "text": "depend on the size of the gravel used in the mix"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Successive means differ by 3, rather than remaining constant.",
-          "B": "The means change by equal nonzero differences.",
-          "C": "Different means can support a constant change per step.",
-          "D": "A finite tested range cannot establish behavior at every possible setting."
+          "A": "A stiff mix that leaves voids around the reinforcement performs worse in place than in a cylinder.",
+          "B": "Curing time is Experiment 2’s subject and forms no part of the disagreement.",
+          "C": "Engineer 2 does not dispute the figures, only what they predict about a real pour.",
+          "D": "Gravel was identical across all six batches, so it cannot be the objection."
         }
       },
       {
@@ -18727,33 +18727,33 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 degrees, what mean power output would A predict?",
+        "context": "A pour requires a slump of at least 100 mm and a 28-day strength of at least 30 MPa. Which ratio meets both?",
         "practiceOnly": true,
         "passage": "exp26-sp-14",
         "choices": [
           {
             "id": "A",
-            "text": "35 mW"
+            "text": "0.40"
           },
           {
             "id": "B",
-            "text": "50 mW"
+            "text": "0.45"
           },
           {
             "id": "C",
-            "text": "47 mW"
+            "text": "0.50"
           },
           {
             "id": "D",
-            "text": "53 mW"
+            "text": "0.55"
           }
         ],
-        "answer": "B",
+        "answer": "C",
         "why": {
-          "A": "This extends the pattern backward rather than forward.",
-          "B": "One additional step adds 3 to 47; this is a conditional prediction, not a measurement.",
-          "C": "This assumes the response stops changing after the last measured setting.",
-          "D": "This advances two steps beyond the last setting instead of one."
+          "A": "Strength is ample at 49 MPa, but a slump of 45 mm is far below the 100 mm needed.",
+          "B": "Slump reaches only 80 mm here, so the mix is still too stiff for the pour.",
+          "C": "A 0.50 ratio gives 115 mm of slump and 34 MPa, clearing both requirements.",
+          "D": "Slump is generous at 150 mm, but 28 MPa falls short of the 30 MPa required."
         }
       },
       {
@@ -18761,135 +18761,135 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At insulation thickness of 6 mm, what mean temperature decrease was recorded?",
+        "context": "What annual mean was logged for 2016?",
         "practiceOnly": true,
         "passage": "exp26-sp-15",
         "choices": [
           {
             "id": "A",
-            "text": "38 °C"
+            "text": "17.4 micrograms per cubic metre"
           },
           {
             "id": "B",
-            "text": "34 °C"
+            "text": "18.1 micrograms per cubic metre"
           },
           {
             "id": "C",
-            "text": "36 °C"
+            "text": "21.6 micrograms per cubic metre"
           },
           {
             "id": "D",
-            "text": "40 °C"
+            "text": "22.9 micrograms per cubic metre"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This belongs to the setting of 4.",
-          "B": "This belongs to the setting of 8.",
-          "C": "Read the entry for the setting of 6.",
-          "D": "This belongs to the setting of 2."
+          "A": "Table 1 pairs 2016 with an annual mean of 17.4 micrograms per cubic metre.",
+          "B": "This is the 2014 figure, two years before the one the question asks about.",
+          "C": "This is the 2022 figure, taken long after the analyser was replaced.",
+          "D": "This is the 2018 figure, the year the new instrument came into service."
         }
       },
       {
         "id": "exp26-science-072",
         "section": "science",
         "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "difficulty": "medium",
+        "context": "Running both analysers on one inlet for eleven months served to:",
         "practiceOnly": true,
         "passage": "exp26-sp-15",
         "choices": [
           {
             "id": "A",
-            "text": "temperature decrease"
+            "text": "let readings from the two instruments be compared"
           },
           {
             "id": "B",
-            "text": "the number of trials per setting"
+            "text": "raise the number of samples taken during the year"
           },
           {
             "id": "C",
-            "text": "the measuring procedure"
+            "text": "keep the station running while a repair was made"
           },
           {
             "id": "D",
-            "text": "insulation thickness"
+            "text": "check that the rooftop site was still a suitable one"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This was the measured response, not the variable deliberately set.",
-          "B": "Every setting used three trials.",
-          "C": "The passage states that the same procedure was used.",
-          "D": "The passage identifies insulation thickness as the changed factor."
+          "A": "Feeding both instruments the same air isolates the instrument as the only difference.",
+          "B": "Sample count is unchanged; the same air is simply measured twice over.",
+          "C": "The old analyser was replaced rather than repaired, and neither was out of service.",
+          "D": "The passage states the site did not change, so it was not what was under test."
         }
       },
       {
         "id": "exp26-science-073",
         "section": "science",
-        "topic": "calculating from data",
+        "topic": "research summaries",
         "difficulty": "medium",
-        "context": "What is the change in mean temperature decrease when insulation thickness increases from 2 to 8 mm? Use final minus initial.",
+        "context": "The two analysers differ in that the old instrument:",
         "practiceOnly": true,
         "passage": "exp26-sp-15",
         "choices": [
           {
             "id": "A",
-            "text": "-6 °C"
+            "text": "heated the air before the particles were weighed"
           },
           {
             "id": "B",
-            "text": "-2 °C"
+            "text": "sampled the air on a slower monthly schedule"
           },
           {
             "id": "C",
-            "text": "6 °C"
+            "text": "stood at a greater height above the street below"
           },
           {
             "id": "D",
-            "text": "74 °C"
+            "text": "weighed particles without drawing in any air"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "34 - 40 = -6.",
-          "B": "This is the change for a single step, not all three steps.",
-          "C": "This reverses final and initial.",
-          "D": "A change is a difference, not a sum."
+          "A": "Its heated inlet drove off water and volatile material that the new one leaves in place.",
+          "B": "The sampling schedule is listed among the things that did not change.",
+          "C": "Height above the street is also listed as unchanged since 2012.",
+          "D": "Both instruments draw air through an inlet; only the heating differs."
         }
       },
       {
         "id": "exp26-science-074",
         "section": "science",
-        "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "topic": "calculating from data",
+        "difficulty": "hard",
+        "context": "On the same air, the new analyser reads higher than the old by a factor of about:",
         "practiceOnly": true,
         "passage": "exp26-sp-15",
         "choices": [
           {
             "id": "A",
-            "text": "It proves A is correct for every possible setting."
+            "text": "1.1"
           },
           {
             "id": "B",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "1.3"
           },
           {
             "id": "C",
-            "text": "It supports B and contradicts A."
+            "text": "1.8"
           },
           {
             "id": "D",
-            "text": "It contradicts both because the means are all different."
+            "text": "2.4"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "A finite tested range cannot establish behavior at every possible setting.",
-          "B": "Successive means differ by -2, rather than remaining constant.",
-          "C": "The means change by equal nonzero differences.",
-          "D": "Different means can support a constant change per step."
+          "A": "A tenth more would put the May pair at about 17.8 rather than the 21.0 recorded.",
+          "B": "The four pairs give ratios of 1.30, 1.30, 1.30 and 1.30, so the new instrument reads about 30 percent higher.",
+          "C": "This would put the August pair near 23 against the 16.6 actually measured.",
+          "D": "More than doubling is far outside every pair in the table."
         }
       },
       {
@@ -18897,33 +18897,33 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 mm, what mean temperature decrease would A predict?",
+        "context": "The rise between the 2016 and 2018 entries in Table 1 is best explained as:",
         "practiceOnly": true,
         "passage": "exp26-sp-15",
         "choices": [
           {
             "id": "A",
-            "text": "30 °C"
+            "text": "largely an effect of changing the instrument"
           },
           {
             "id": "B",
-            "text": "42 °C"
+            "text": "a genuine worsening of the city’s air quality"
           },
           {
             "id": "C",
-            "text": "32 °C"
+            "text": "the result of moving the station to a new roof"
           },
           {
             "id": "D",
-            "text": "34 °C"
+            "text": "a change in how often the station takes samples"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This advances two steps beyond the last setting instead of one.",
-          "B": "This extends the pattern backward rather than forward.",
-          "C": "One additional step adds -2 to 34; this is a conditional prediction, not a measurement.",
-          "D": "This assumes the response stops changing after the last measured setting."
+          "A": "The new analyser reads about 30 percent high on identical air, which covers most of the 5.5-unit jump.",
+          "B": "Real air would have to worsen by exactly as much as the instrument changed, which the paired table rules out.",
+          "C": "The passage states the rooftop and its height above the street did not change.",
+          "D": "The sampling schedule is listed as unchanged since the station opened in 2012."
         }
       },
       {
@@ -20561,34 +20561,76 @@
       {
         "id": "exp26-sp-11",
         "type": "Research Summaries",
-        "title": "Model study 11: lamp distance",
+        "title": "A flask and its control",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a light sensor. Students changed lamp distance while keeping the same lamp and sensor. For each setting, they used three fresh trials and recorded the mean sensor reading. The same measuring procedure was used for every trial.\n\nStudent A proposes that sensor reading changes by a constant amount for every 2-cm increase within the tested range. Student B proposes that the sensor reading remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "Experiment 1. Two flasks of identical broth were inoculated with the same strain of bacteria. Flask T received 0.5 g/L of a nutrient supplement; Flask C, the control, received an equal volume of sterile water. Both were held at 30 °C and shaken at the same rate, and cell density was measured every 2 hours.\n\nExperiment 2. The supplement concentration that gave the highest 8-hour density in a pilot run was then used across four starting inoculum sizes, with every other condition as in Experiment 1.\n\nEvery flask was prepared from one batch of broth and one overnight culture, so that the flasks began alike in everything but the variable under test. Density is reported in millions of cells per millilitre, each figure being the mean of two counts.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Experiment 1: cell density in the treated flask and the control",
             "head": [
-              "lamp distance (cm)",
-              "sensor reading (units)"
+              "time (h)",
+              "Flask T (millions/mL)",
+              "Flask C (millions/mL)"
             ],
             "rows": [
               [
+                "0",
+                "1.0",
+                "1.0"
+              ],
+              [
                 "2",
-                "32"
+                "2.1",
+                "2.0"
               ],
               [
                 "4",
-                "30"
+                "4.4",
+                "3.9"
               ],
               [
                 "6",
-                "28"
+                "9.6",
+                "7.4"
               ],
               [
                 "8",
-                "26"
+                "21.0",
+                "11.2"
+              ],
+              [
+                "10",
+                "44.0",
+                "12.0"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "Experiment 2: density after 8 hours, by starting inoculum",
+            "head": [
+              "starting inoculum (millions/mL)",
+              "density at 8 h (millions/mL)"
+            ],
+            "rows": [
+              [
+                "0.25",
+                "5.3"
+              ],
+              [
+                "0.5",
+                "10.6"
+              ],
+              [
+                "1.0",
+                "21.0"
+              ],
+              [
+                "2.0",
+                "41.8"
               ]
             ]
           }
@@ -20596,35 +20638,74 @@
       },
       {
         "id": "exp26-sp-12",
-        "type": "Research Summaries",
-        "title": "Model study 12: filter layers",
+        "type": "Data Representation",
+        "title": "The night the blossom froze",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a filter collector. Students changed filter layers while keeping the same incoming particle mixture and collection time. For each setting, they used three fresh trials and recorded the mean collected particles. The same measuring procedure was used for every trial.\n\nStudent A proposes that collected particles changes by a constant amount for every 2-layers increase within the tested range. Student B proposes that the collected particles remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "A grower recorded damage to apple blossom after nights of differing minimum temperature. Damage is the percentage of blossoms that failed to set fruit, assessed two weeks later on 200 marked blossoms per night.\n\nNights were drawn from a single orchard across three springs. Only nights with no wind and no rain were included, since both change how cold the blossom itself becomes relative to the surrounding air.\n\nAir minimum is the lowest reading from the standard screen, a ventilated white box 1.5 m above the ground. A second set of readings was taken with a sensor clipped directly to a blossom cluster on the same nights, and those appear in Table 2.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Blossom damage after nights of differing air minimum",
             "head": [
-              "filter layers (layers)",
-              "collected particles (particles)"
+              "air minimum (°C)",
+              "blossom damage (%)"
             ],
             "rows": [
               [
-                "2",
-                "34"
+                "2.0",
+                "1"
               ],
               [
-                "4",
-                "37"
+                "1.0",
+                "2"
               ],
               [
-                "6",
-                "40"
+                "0.0",
+                "3"
               ],
               [
-                "8",
-                "43"
+                "-1.0",
+                "4"
+              ],
+              [
+                "-2.0",
+                "38"
+              ],
+              [
+                "-3.0",
+                "71"
+              ],
+              [
+                "-4.0",
+                "94"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "Screen reading against a sensor clipped to the blossom",
+            "head": [
+              "air minimum (°C)",
+              "blossom-level minimum (°C)"
+            ],
+            "rows": [
+              [
+                "2.0",
+                "0.4"
+              ],
+              [
+                "0.0",
+                "-1.5"
+              ],
+              [
+                "-2.0",
+                "-3.4"
+              ],
+              [
+                "-4.0",
+                "-5.3"
               ]
             ]
           }
@@ -20632,35 +20713,36 @@
       },
       {
         "id": "exp26-sp-13",
-        "type": "Research Summaries",
-        "title": "Model study 13: stirring time",
+        "type": "Conflicting Viewpoints",
+        "title": "What emptied the lower beck",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a mixing container. Students changed stirring time while keeping the same liquid volume and starting solid. For each setting, they used three fresh trials and recorded the mean dissolved mass. The same measuring procedure was used for every trial.\n\nStudent A proposes that dissolved mass changes by a constant amount for every 2-s increase within the tested range. Student B proposes that the dissolved mass remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "The trout population of Ledd Beck has fallen by roughly two-thirds since 2010. Two ecologists disagree about why.\n\nEcologist 1. The cause is temperature. Mean summer water temperature has risen by nearly 2 °C since 2010, and trout eggs and young fish fail above a threshold near 19 °C. The upper reach is shaded by woodland and stays cooler, and it still holds trout at close to its old density. The lower reach is open to the sun, and that is where the loss has happened. Replanting the banks to restore shade is the remedy.\n\nEcologist 2. The cause is the weir rebuilt in 2011. Trout spawn in the gravel of the upper reach and feed in the lower one, and the new weir is too steep for an adult fish to pass. The upper reach holds its fish because the spawning grounds are there; the lower reach has emptied because nothing recruits into it any more. Temperature has indeed risen, but it has risen in the shaded reach too, and that reach did not decline. A fish pass would settle the question within two seasons.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Ledd Beck: density and summer temperature, by reach",
             "head": [
-              "stirring time (s)",
-              "dissolved mass (g)"
+              "reach",
+              "trout per 100 m, 2010",
+              "trout per 100 m, 2024",
+              "mean summer temp 2010 (°C)",
+              "mean summer temp 2024 (°C)"
             ],
             "rows": [
               [
-                "2",
-                "36"
+                "upper (shaded, above weir)",
+                "42",
+                "38",
+                "15.1",
+                "16.8"
               ],
               [
-                "4",
-                "39"
-              ],
-              [
-                "6",
-                "42"
-              ],
-              [
-                "8",
-                "45"
+                "lower (open, below weir)",
+                "51",
+                "12",
+                "17.9",
+                "19.7"
               ]
             ]
           }
@@ -20669,34 +20751,72 @@
       {
         "id": "exp26-sp-14",
         "type": "Research Summaries",
-        "title": "Model study 14: panel tilt",
+        "title": "Wet enough to pour, dry enough to hold",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a model solar panel. Students changed panel tilt while keeping the same light source and panel. For each setting, they used three fresh trials and recorded the mean power output. The same measuring procedure was used for every trial.\n\nStudent A proposes that power output changes by a constant amount for every 2-degrees increase within the tested range. Student B proposes that the power output remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "Experiment 1. Six batches of concrete were mixed from the same cement, sand and gravel, differing only in the mass of water added per kilogram of cement. Each batch was tested for slump, a measure of how readily the wet mix flows, and then, after curing for 28 days, for compressive strength.\n\nExperiment 2. The batch at a water-to-cement ratio of 0.50 was repeated and tested at three curing times.\n\nAll specimens were cured at 20 °C in the same water bath, and each figure is the mean of three cylinders.\n\nTwo engineers disagreed about the results. Engineer 1 recommends the lowest water-to-cement ratio the pour will allow, on the grounds that strength is what the structure needs. Engineer 2 replies that a mix too stiff to flow around the reinforcement leaves voids behind, and that badly placed concrete is weaker in the finished structure than its cylinder strength suggests.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Experiment 1: slump and 28-day strength by water-to-cement ratio",
             "head": [
-              "panel tilt (degrees)",
-              "power output (mW)"
+              "water-to-cement ratio",
+              "slump (mm)",
+              "28-day strength (MPa)"
             ],
             "rows": [
               [
-                "2",
-                "38"
+                "0.35",
+                "15",
+                "58"
               ],
               [
-                "4",
+                "0.40",
+                "45",
+                "49"
+              ],
+              [
+                "0.45",
+                "80",
                 "41"
               ],
               [
-                "6",
-                "44"
+                "0.50",
+                "115",
+                "34"
               ],
               [
-                "8",
-                "47"
+                "0.55",
+                "150",
+                "28"
+              ],
+              [
+                "0.60",
+                "185",
+                "23"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "Experiment 2: strength at a 0.50 ratio, by curing time",
+            "head": [
+              "curing time (days)",
+              "compressive strength (MPa)"
+            ],
+            "rows": [
+              [
+                "7",
+                "22"
+              ],
+              [
+                "28",
+                "34"
+              ],
+              [
+                "90",
+                "39"
               ]
             ]
           }
@@ -20705,34 +20825,70 @@
       {
         "id": "exp26-sp-15",
         "type": "Research Summaries",
-        "title": "Model study 15: insulation thickness",
+        "title": "The year the numbers jumped",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested an insulated container. Students changed insulation thickness while keeping the same starting temperature and observation time. For each setting, they used three fresh trials and recorded the mean temperature decrease. The same measuring procedure was used for every trial.\n\nStudent A proposes that temperature decrease changes by a constant amount for every 2-mm increase within the tested range. Student B proposes that the temperature decrease remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "A city has logged airborne particulate matter at one rooftop station since 2012. Annual means appear in Table 1, in micrograms per cubic metre.\n\nIn March 2018 the station's analyser was replaced. The old instrument drew air through a heated inlet, which evaporated some of the water and volatile material carried on the particles before they were weighed. The new instrument does not heat its inlet, so that material stays on the particles and is weighed with them.\n\nFor eleven months spanning the changeover the two analysers ran side by side on the same inlet, sampling the same air. Table 2 gives the paired monthly means from four of those months.\n\nNothing else about the station changed: the rooftop, the height above the street and the sampling schedule are as they were in 2012.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Annual mean particulate matter at the rooftop station",
             "head": [
-              "insulation thickness (mm)",
-              "temperature decrease (°C)"
+              "year",
+              "annual mean (micrograms per cubic metre)"
             ],
             "rows": [
               [
-                "2",
-                "40"
+                "2014",
+                "18.1"
               ],
               [
-                "4",
-                "38"
+                "2016",
+                "17.4"
               ],
               [
-                "6",
-                "36"
+                "2018",
+                "22.9"
               ],
               [
-                "8",
-                "34"
+                "2020",
+                "22.1"
+              ],
+              [
+                "2022",
+                "21.6"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "The two analysers running side by side on one inlet",
+            "head": [
+              "month",
+              "old analyser (micrograms per cubic metre)",
+              "new analyser (micrograms per cubic metre)"
+            ],
+            "rows": [
+              [
+                "May",
+                "16.2",
+                "21.0"
+              ],
+              [
+                "August",
+                "12.8",
+                "16.6"
+              ],
+              [
+                "November",
+                "19.4",
+                "25.2"
+              ],
+              [
+                "February",
+                "21.0",
+                "27.3"
               ]
             ]
           }
