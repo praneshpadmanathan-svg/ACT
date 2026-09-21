@@ -5056,99 +5056,99 @@
         "id": "exp26-math-001",
         "section": "math",
         "topic": "linear equations",
-        "difficulty": "medium",
-        "context": "If 23x + 26 = 578, what is x?",
+        "difficulty": "easy",
+        "context": "If 7x = 91, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "24"
+            "text": "13"
           },
           {
             "id": "B",
-            "text": "552"
+            "text": "84"
           },
           {
             "id": "C",
-            "text": "25"
+            "text": "98"
           },
           {
             "id": "D",
-            "text": "-24"
+            "text": "637"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Subtract 26, then divide by 23: x = 24.",
-          "B": "552 is 23x; divide by the coefficient.",
-          "C": "Substitution gives 601, not 578.",
-          "D": "Subtracting the constant does not make the solution negative."
+          "A": "Dividing both sides by 7 leaves x alone and gives 91 ÷ 7.",
+          "B": "Subtracting 7 rather than dividing by it treats a product as a sum.",
+          "C": "Adding 7 to 91 undoes nothing, since 7 is multiplying rather than added.",
+          "D": "Multiplying by 7 moves in the wrong direction and makes x larger."
         }
       },
       {
         "id": "exp26-math-002",
         "section": "math",
         "topic": "systems",
-        "difficulty": "medium",
-        "context": "The equations x + y = 47 and 2x + y = 71 hold. What is y?",
+        "difficulty": "easy",
+        "context": "If x + y = 10 and x - y = 4, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-23"
+            "text": "7"
           },
           {
             "id": "B",
-            "text": "23"
+            "text": "3"
           },
           {
             "id": "C",
-            "text": "24"
+            "text": "14"
           },
           {
             "id": "D",
-            "text": "47"
+            "text": "5"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Substitution with this negative value does not satisfy both equations.",
-          "B": "Subtract the first equation from the second to get x = 24; then y = 47 - 24 = 23.",
-          "C": "This is x, not y.",
-          "D": "This is the sum of both variables."
+          "A": "Adding the two equations gives 2x = 14, so x must be 7.",
+          "B": "This is the value of y, found once x has been substituted back.",
+          "C": "This is 2x, the sum of the two equations before halving.",
+          "D": "Halving the first total alone assumes the two numbers are equal."
         }
       },
       {
         "id": "exp26-math-003",
         "section": "math",
         "topic": "fractions & percents",
-        "difficulty": "medium",
-        "context": "A backpack costs $60. A store discounts it by 20%. Before tax, how many dollars does it cost?",
+        "difficulty": "easy",
+        "context": "What is 15% of 240?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "80"
+            "text": "36"
           },
           {
             "id": "B",
-            "text": "60"
+            "text": "16"
           },
           {
             "id": "C",
-            "text": "48"
+            "text": "3.6"
           },
           {
             "id": "D",
-            "text": "12"
+            "text": "360"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "A percentage discount is not a fixed number of dollars added.",
-          "B": "This is the original price before the discount.",
-          "C": "The remaining fraction is 0.8; multiply 60 by this fraction.",
-          "D": "This is the amount saved, not the amount paid."
+          "A": "Fifteen per cent is 0.15, and 0.15 multiplied by 240 is 36.",
+          "B": "Dividing 240 by 15 answers a different question entirely.",
+          "C": "A decimal point has slipped one place from the correct value.",
+          "D": "Multiplying by 1.5 rather than 0.15 is ten times too large."
         }
       },
       {
@@ -5156,32 +5156,32 @@
         "section": "math",
         "topic": "functions",
         "difficulty": "easy",
-        "context": "For f(t) = 23t² - 26, what is f(3)?",
+        "context": "If f(x) = 3x - 5, what is f(4)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "43"
+            "text": "7"
           },
           {
             "id": "B",
-            "text": "233"
+            "text": "17"
           },
           {
             "id": "C",
-            "text": "4735"
+            "text": "2"
           },
           {
             "id": "D",
-            "text": "181"
+            "text": "12"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "The input must be squared.",
-          "B": "The constant is subtracted, not added.",
-          "C": "Only t is squared, not the coefficient.",
-          "D": "Square the input first: 23(9) - 26 = 181."
+          "A": "Substituting 4 for x gives 12 - 5, which comes to 7.",
+          "B": "Adding 5 rather than subtracting it reverses the sign of the constant.",
+          "C": "Subtracting 5 from 3 plus 4 treats the 3 as added rather than multiplied.",
+          "D": "This is 3x with the constant term not yet applied."
         }
       },
       {
@@ -5189,49 +5189,16 @@
         "section": "math",
         "topic": "coordinate geometry",
         "difficulty": "easy",
-        "context": "What is the slope of the line through (1, 23) and (5, 127)?",
+        "context": "What is the slope of the line through (1, 2) and (4, 11)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "26"
+            "text": "3"
           },
           {
             "id": "B",
-            "text": "0.03846"
-          },
-          {
-            "id": "C",
-            "text": "104"
-          },
-          {
-            "id": "D",
-            "text": "27"
-          }
-        ],
-        "answer": "A",
-        "why": {
-          "A": "Slope = (127 - 23) / (5 - 1) = 26.",
-          "B": "This reverses rise and run.",
-          "C": "This is the rise without division by the run.",
-          "D": "Use the difference of the y-coordinates divided by the difference of the x-coordinates."
-        }
-      },
-      {
-        "id": "exp26-math-006",
-        "section": "math",
-        "topic": "statistics",
-        "difficulty": "medium",
-        "context": "Four numbers have mean 9. Three of the numbers are 6, 10, and 13. What is the fourth?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "11"
-          },
-          {
-            "id": "B",
-            "text": "7"
+            "text": "1/3"
           },
           {
             "id": "C",
@@ -5239,15 +5206,48 @@
           },
           {
             "id": "D",
-            "text": "36"
+            "text": "-3"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The three given numbers are above their target total by 2, so subtract 2.",
-          "B": "All four sum to 36. The known sum is 29, leaving 7.",
-          "C": "The missing number need not equal the mean.",
-          "D": "This is the required total of all four."
+          "A": "The rise of 9 divided by the run of 3 gives a slope of 3.",
+          "B": "Dividing the run by the rise inverts the slope entirely.",
+          "C": "This is the rise alone, with the run not yet divided out.",
+          "D": "The line climbs from left to right, so the slope cannot be negative."
+        }
+      },
+      {
+        "id": "exp26-math-006",
+        "section": "math",
+        "topic": "statistics",
+        "difficulty": "easy",
+        "context": "What is the mean of 3, 7, 8 and 14?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "8"
+          },
+          {
+            "id": "B",
+            "text": "7.5"
+          },
+          {
+            "id": "C",
+            "text": "11"
+          },
+          {
+            "id": "D",
+            "text": "32"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "The four values total 32, and 32 divided by 4 is 8.",
+          "B": "This is the median, the midpoint of the two middle values.",
+          "C": "This is the range, the gap between the largest and smallest.",
+          "D": "This is the total of the four values, before dividing by 4."
         }
       },
       {
@@ -5255,32 +5255,32 @@
         "section": "math",
         "topic": "probability",
         "difficulty": "easy",
-        "context": "A bag holds 23 blue tiles and 26 red tiles. One tile is chosen uniformly at random. What is the probability of choosing blue?",
+        "context": "A bag holds 3 red and 5 blue marbles. What is the probability of drawing a red one?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "23/26"
+            "text": "3/8"
           },
           {
             "id": "B",
-            "text": "1/49"
+            "text": "3/5"
           },
           {
             "id": "C",
-            "text": "23/49"
+            "text": "5/8"
           },
           {
             "id": "D",
-            "text": "26/49"
+            "text": "1/3"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The denominator must include both colors.",
-          "B": "There is more than one blue tile.",
-          "C": "There are 23 favorable outcomes among 49 equally likely tiles.",
-          "D": "This is the probability of red."
+          "A": "Three of the eight marbles are red, so the chance is 3 out of 8.",
+          "B": "This compares the reds with the blues rather than with the whole bag.",
+          "C": "This is the chance of drawing a blue marble instead of a red one.",
+          "D": "This counts the three reds against three colours rather than eight marbles."
         }
       },
       {
@@ -5288,32 +5288,32 @@
         "section": "math",
         "topic": "area & volume",
         "difficulty": "easy",
-        "context": "A rectangular storage box has interior dimensions 23 cm by 26 cm by 4 cm. What is its volume in cm³?",
+        "context": "What is the area of a rectangle 7 units by 9 units?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "598"
+            "text": "63"
           },
           {
             "id": "B",
-            "text": "106"
+            "text": "32"
           },
           {
             "id": "C",
-            "text": "1588"
+            "text": "16"
           },
           {
             "id": "D",
-            "text": "2392"
+            "text": "126"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is the area of the base only.",
-          "B": "Adding edge lengths does not give volume.",
-          "C": "This is surface area in square centimeters.",
-          "D": "Multiply all three perpendicular dimensions: 23 × 26 × 4 = 2392."
+          "A": "The area of a rectangle is length times width, so 7 × 9.",
+          "B": "This is the perimeter, the distance all the way round the edge.",
+          "C": "Adding the two sides gives neither the area nor the perimeter.",
+          "D": "This doubles the area, as though the rectangle were counted twice."
         }
       },
       {
@@ -5321,32 +5321,32 @@
         "section": "math",
         "topic": "triangles",
         "difficulty": "easy",
-        "context": "A right triangle has legs 3 and 4. What is its hypotenuse?",
+        "context": "Two angles of a triangle measure 40° and 75°. What is the third angle?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "5"
+            "text": "65°"
           },
           {
             "id": "B",
-            "text": "7"
+            "text": "115°"
           },
           {
             "id": "C",
-            "text": "1"
+            "text": "245°"
           },
           {
             "id": "D",
-            "text": "25"
+            "text": "105°"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "By the Pythagorean theorem, c² = 9 + 16 = 25; c = 5.",
-          "B": "The hypotenuse is not the sum of the legs.",
-          "C": "The difference of the legs is not the hypotenuse.",
-          "D": "This is c²; take its positive square root."
+          "A": "The three angles total 180°, so the third is 180 less 115.",
+          "B": "This is the total of the two given angles, not what is left over.",
+          "C": "Subtracting from 360° uses the total for a full turn, not a triangle.",
+          "D": "This subtracts only one of the two given angles from 180°."
         }
       },
       {
@@ -5354,32 +5354,32 @@
         "section": "math",
         "topic": "quadratics",
         "difficulty": "easy",
-        "context": "What is the larger solution of (x - 23)(x - 26) = 0?",
+        "context": "What are the solutions of (x - 3)(x + 5) = 0?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "49"
+            "text": "3 and -5"
           },
           {
             "id": "B",
-            "text": "26"
+            "text": "-3 and 5"
           },
           {
             "id": "C",
-            "text": "23"
+            "text": "3 and 5"
           },
           {
             "id": "D",
-            "text": "-26"
+            "text": "-3 and -5"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The sum of the roots is not itself a root here.",
-          "B": "A product is zero when a factor is zero; the roots are 23 and 26, and 26 is larger.",
-          "C": "This is the smaller solution.",
-          "D": "Setting x minus a number to zero gives that positive number."
+          "A": "A product is zero when a factor is, so x - 3 = 0 or x + 5 = 0.",
+          "B": "Both signs have been flipped from what each factor actually gives.",
+          "C": "The second factor is a sum, so it vanishes at a negative value of x.",
+          "D": "The first factor is a difference, so it vanishes at a positive value."
         }
       },
       {
@@ -5716,99 +5716,99 @@
         "id": "exp26-math-021",
         "section": "math",
         "topic": "linear equations",
-        "difficulty": "medium",
-        "context": "If 24x + 27 = 627, what is x?",
+        "difficulty": "easy",
+        "context": "If x - 14 = 9, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "25"
+            "text": "23"
           },
           {
             "id": "B",
-            "text": "600"
+            "text": "-5"
           },
           {
             "id": "C",
-            "text": "26"
+            "text": "5"
           },
           {
             "id": "D",
-            "text": "-25"
+            "text": "126"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Subtract 27, then divide by 24: x = 25.",
-          "B": "600 is 24x; divide by the coefficient.",
-          "C": "Substitution gives 651, not 627.",
-          "D": "Subtracting the constant does not make the solution negative."
+          "A": "Adding 14 to both sides isolates x and gives 9 + 14.",
+          "B": "Subtracting 14 from 9 undoes the equation in the wrong direction.",
+          "C": "Taking 9 from 14 reverses the subtraction that the equation states.",
+          "D": "Multiplying the two numbers treats a difference as a product."
         }
       },
       {
         "id": "exp26-math-022",
         "section": "math",
         "topic": "systems",
-        "difficulty": "medium",
-        "context": "The equations x + y = 49 and 2x + y = 74 hold. What is y?",
+        "difficulty": "easy",
+        "context": "If y = 3x and x + y = 16, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-24"
+            "text": "4"
           },
           {
             "id": "B",
-            "text": "24"
+            "text": "12"
           },
           {
             "id": "C",
-            "text": "25"
+            "text": "16"
           },
           {
             "id": "D",
-            "text": "49"
+            "text": "8"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Substitution with this negative value does not satisfy both equations.",
-          "B": "Subtract the first equation from the second to get x = 25; then y = 49 - 25 = 24.",
-          "C": "This is x, not y.",
-          "D": "This is the sum of both variables."
+          "A": "Substituting gives x + 3x = 16, so 4x is 16 and x is 4.",
+          "B": "This is y, which is three times the x the question asks for.",
+          "C": "This is the total of the two numbers rather than either one.",
+          "D": "Halving the total assumes the two numbers are equal, which they are not."
         }
       },
       {
         "id": "exp26-math-023",
         "section": "math",
         "topic": "fractions & percents",
-        "difficulty": "medium",
-        "context": "A backpack costs $80. A store discounts it by 25%. Before tax, how many dollars does it cost?",
+        "difficulty": "easy",
+        "context": "What is 3/8 + 1/8 in lowest terms?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "105"
+            "text": "1/2"
           },
           {
             "id": "B",
-            "text": "80"
+            "text": "4/16"
           },
           {
             "id": "C",
-            "text": "60"
+            "text": "3/64"
           },
           {
             "id": "D",
-            "text": "20"
+            "text": "1/4"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "A percentage discount is not a fixed number of dollars added.",
-          "B": "This is the original price before the discount.",
-          "C": "The remaining fraction is 0.75; multiply 80 by this fraction.",
-          "D": "This is the amount saved, not the amount paid."
+          "A": "With a common denominator the numerators add to 4/8, which reduces to 1/2.",
+          "B": "Adding the denominators as well as the numerators doubles the bottom.",
+          "C": "Multiplying the fractions instead of adding them gives this value.",
+          "D": "This is half the correct sum, as though 4/8 reduced to a quarter."
         }
       },
       {
@@ -5816,32 +5816,32 @@
         "section": "math",
         "topic": "functions",
         "difficulty": "easy",
-        "context": "For f(t) = 24t² - 27, what is f(3)?",
+        "context": "If g(x) = x² + 1, what is g(-3)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "45"
+            "text": "10"
           },
           {
             "id": "B",
-            "text": "243"
+            "text": "-8"
           },
           {
             "id": "C",
-            "text": "5157"
+            "text": "8"
           },
           {
             "id": "D",
-            "text": "189"
+            "text": "-10"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "The input must be squared.",
-          "B": "The constant is subtracted, not added.",
-          "C": "Only t is squared, not the coefficient.",
-          "D": "Square the input first: 24(9) - 27 = 189."
+          "A": "Squaring -3 gives a positive 9, and adding 1 gives 10.",
+          "B": "Treating the square of -3 as -9 loses the sign that squaring removes.",
+          "C": "Subtracting 1 rather than adding it flips the sign of the constant.",
+          "D": "Both the sign of the square and the sign of the constant are wrong here."
         }
       },
       {
@@ -5849,65 +5849,65 @@
         "section": "math",
         "topic": "coordinate geometry",
         "difficulty": "easy",
-        "context": "What is the slope of the line through (2, 24) and (6, 132)?",
+        "context": "What is the midpoint of the segment joining (2, 6) and (8, -2)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "27"
+            "text": "(5, 2)"
           },
           {
             "id": "B",
-            "text": "0.03704"
+            "text": "(10, 4)"
           },
           {
             "id": "C",
-            "text": "108"
+            "text": "(3, -4)"
           },
           {
             "id": "D",
-            "text": "28"
+            "text": "(5, 4)"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Slope = (132 - 24) / (6 - 2) = 27.",
-          "B": "This reverses rise and run.",
-          "C": "This is the rise without division by the run.",
-          "D": "Use the difference of the y-coordinates divided by the difference of the x-coordinates."
+          "A": "Averaging the two x values gives 5 and averaging the y values gives 2.",
+          "B": "Adding the coordinates without halving them gives twice the midpoint.",
+          "C": "Halving the difference between the points measures the gap, not the middle.",
+          "D": "The x is right, but the sign on the -2 was dropped when averaging y."
         }
       },
       {
         "id": "exp26-math-026",
         "section": "math",
         "topic": "statistics",
-        "difficulty": "medium",
-        "context": "Four numbers have mean 10. Three of the numbers are 7, 11, and 14. What is the fourth?",
+        "difficulty": "easy",
+        "context": "What is the median of 3, 8, 5, 12 and 9?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "12"
-          },
-          {
-            "id": "B",
             "text": "8"
           },
           {
+            "id": "B",
+            "text": "5"
+          },
+          {
             "id": "C",
-            "text": "10"
+            "text": "9"
           },
           {
             "id": "D",
-            "text": "40"
+            "text": "7.4"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The three given numbers are above their target total by 2, so subtract 2.",
-          "B": "All four sum to 40. The known sum is 32, leaving 8.",
-          "C": "The missing number need not equal the mean.",
-          "D": "This is the required total of all four."
+          "A": "Put in order the values run 3, 5, 8, 9, 12, and 8 sits in the middle.",
+          "B": "This is the middle value of the list as written, not of the sorted list.",
+          "C": "This is the fourth value in order, one place past the middle.",
+          "D": "This is the mean of the five values rather than the median."
         }
       },
       {
@@ -5915,32 +5915,32 @@
         "section": "math",
         "topic": "probability",
         "difficulty": "easy",
-        "context": "A bag holds 24 blue tiles and 27 red tiles. One tile is chosen uniformly at random. What is the probability of choosing blue?",
+        "context": "A fair six-sided die is rolled. What is the probability of rolling a number greater than 4?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "24/27"
+            "text": "1/3"
           },
           {
             "id": "B",
-            "text": "1/51"
+            "text": "1/6"
           },
           {
             "id": "C",
-            "text": "24/51"
+            "text": "2/3"
           },
           {
             "id": "D",
-            "text": "27/51"
+            "text": "1/2"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The denominator must include both colors.",
-          "B": "There is more than one blue tile.",
-          "C": "There are 24 favorable outcomes among 51 equally likely tiles.",
-          "D": "This is the probability of red."
+          "A": "Only 5 and 6 are greater than 4, so two of the six faces qualify.",
+          "B": "This counts a single face rather than the two that are above 4.",
+          "C": "This is the chance of rolling 4 or lower, which is the other outcome.",
+          "D": "Half the faces would be three of them, and only two are above 4."
         }
       },
       {
@@ -5948,32 +5948,32 @@
         "section": "math",
         "topic": "area & volume",
         "difficulty": "easy",
-        "context": "A rectangular storage box has interior dimensions 24 cm by 27 cm by 4 cm. What is its volume in cm³?",
+        "context": "What is the area of a triangle with base 10 and height 6?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "648"
+            "text": "30"
           },
           {
             "id": "B",
-            "text": "110"
+            "text": "60"
           },
           {
             "id": "C",
-            "text": "1704"
+            "text": "16"
           },
           {
             "id": "D",
-            "text": "2592"
+            "text": "15"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is the area of the base only.",
-          "B": "Adding edge lengths does not give volume.",
-          "C": "This is surface area in square centimeters.",
-          "D": "Multiply all three perpendicular dimensions: 24 × 27 × 4 = 2592."
+          "A": "A triangle is half of its surrounding rectangle, so the area is half of 60.",
+          "B": "This is base times height, with the halving still to be done.",
+          "C": "Adding the base and height gives a length rather than an area.",
+          "D": "Halving twice leaves the answer at half of what the triangle covers."
         }
       },
       {
@@ -5981,32 +5981,32 @@
         "section": "math",
         "topic": "triangles",
         "difficulty": "easy",
-        "context": "A right triangle has legs 6 and 8. What is its hypotenuse?",
+        "context": "A right triangle has legs of 9 and 12. What is the length of the hypotenuse?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "10"
+            "text": "15"
           },
           {
             "id": "B",
-            "text": "14"
+            "text": "21"
           },
           {
             "id": "C",
-            "text": "2"
+            "text": "225"
           },
           {
             "id": "D",
-            "text": "100"
+            "text": "108"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "By the Pythagorean theorem, c² = 36 + 64 = 100; c = 10.",
-          "B": "The hypotenuse is not the sum of the legs.",
-          "C": "The difference of the legs is not the hypotenuse.",
-          "D": "This is c²; take its positive square root."
+          "A": "The squares 81 and 144 total 225, whose square root is 15.",
+          "B": "Adding the legs overshoots, since the hypotenuse is the shortest path.",
+          "C": "This is the square of the hypotenuse, with the root not yet taken.",
+          "D": "Multiplying the legs gives twice the area rather than a side length."
         }
       },
       {
@@ -6014,32 +6014,32 @@
         "section": "math",
         "topic": "quadratics",
         "difficulty": "easy",
-        "context": "What is the larger solution of (x - 24)(x - 27) = 0?",
+        "context": "What is the value of x² - 2x when x = 5?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "51"
+            "text": "15"
           },
           {
             "id": "B",
-            "text": "27"
+            "text": "35"
           },
           {
             "id": "C",
-            "text": "24"
+            "text": "3"
           },
           {
             "id": "D",
-            "text": "-27"
+            "text": "20"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The sum of the roots is not itself a root here.",
-          "B": "A product is zero when a factor is zero; the roots are 24 and 27, and 27 is larger.",
-          "C": "This is the smaller solution.",
-          "D": "Setting x minus a number to zero gives that positive number."
+          "A": "Five squared is 25, and subtracting 2 × 5 leaves 15.",
+          "B": "Adding 2x rather than subtracting it reverses the second term.",
+          "C": "Subtracting 2 from 5 ignores the squaring the expression calls for.",
+          "D": "Subtracting 5 rather than 2x takes away the wrong amount."
         }
       },
       {
@@ -6376,99 +6376,99 @@
         "id": "exp26-math-041",
         "section": "math",
         "topic": "linear equations",
-        "difficulty": "medium",
-        "context": "If 25x + 28 = 678, what is x?",
+        "difficulty": "easy",
+        "context": "If x ÷ 5 = 12, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "26"
+            "text": "60"
           },
           {
             "id": "B",
-            "text": "650"
+            "text": "17"
           },
           {
             "id": "C",
-            "text": "27"
+            "text": "7"
           },
           {
             "id": "D",
-            "text": "-26"
+            "text": "2.4"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Subtract 28, then divide by 25: x = 26.",
-          "B": "650 is 25x; divide by the coefficient.",
-          "C": "Substitution gives 703, not 678.",
-          "D": "Subtracting the constant does not make the solution negative."
+          "A": "Multiplying both sides by 5 undoes the division and gives 12 × 5.",
+          "B": "Adding 5 to 12 treats the division as though it were a sum.",
+          "C": "Subtracting 5 from 12 undoes an operation the equation never performs.",
+          "D": "Dividing 12 by 5 repeats the division instead of reversing it."
         }
       },
       {
         "id": "exp26-math-042",
         "section": "math",
         "topic": "systems",
-        "difficulty": "medium",
-        "context": "The equations x + y = 51 and 2x + y = 77 hold. What is y?",
+        "difficulty": "easy",
+        "context": "If 2x + y = 11 and y = 5, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-25"
+            "text": "3"
           },
           {
             "id": "B",
-            "text": "25"
+            "text": "6"
           },
           {
             "id": "C",
-            "text": "26"
+            "text": "8"
           },
           {
             "id": "D",
-            "text": "51"
+            "text": "5.5"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Substitution with this negative value does not satisfy both equations.",
-          "B": "Subtract the first equation from the second to get x = 26; then y = 51 - 26 = 25.",
-          "C": "This is x, not y.",
-          "D": "This is the sum of both variables."
+          "A": "Substituting the known y gives 2x = 6, so x must be 3.",
+          "B": "This is 2x, with the final division by 2 still to do.",
+          "C": "Adding 5 to 11 before halving reverses the sign of the y term.",
+          "D": "Dividing 11 by 2 before using the value of y skips a step."
         }
       },
       {
         "id": "exp26-math-043",
         "section": "math",
         "topic": "fractions & percents",
-        "difficulty": "medium",
-        "context": "A backpack costs $100. A store discounts it by 30%. Before tax, how many dollars does it cost?",
+        "difficulty": "easy",
+        "context": "Twelve is what per cent of 50?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "130"
+            "text": "24%"
           },
           {
             "id": "B",
-            "text": "100"
+            "text": "38%"
           },
           {
             "id": "C",
-            "text": "70"
+            "text": "416%"
           },
           {
             "id": "D",
-            "text": "30"
+            "text": "76%"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "A percentage discount is not a fixed number of dollars added.",
-          "B": "This is the original price before the discount.",
-          "C": "The remaining fraction is 0.7; multiply 100 by this fraction.",
-          "D": "This is the amount saved, not the amount paid."
+          "A": "Dividing 12 by 50 gives 0.24, which is 24 per cent.",
+          "B": "Subtracting 12 from 50 answers a question about difference, not ratio.",
+          "C": "Dividing 50 by 12 inverts the ratio the question asks for.",
+          "D": "This is the share of 50 that the other 38 occupies, not the 12."
         }
       },
       {
@@ -6476,32 +6476,32 @@
         "section": "math",
         "topic": "functions",
         "difficulty": "easy",
-        "context": "For f(t) = 25t² - 28, what is f(3)?",
+        "context": "If f(x) = 5 - 2x, what is f(3)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "47"
+            "text": "-1"
           },
           {
             "id": "B",
-            "text": "253"
+            "text": "11"
           },
           {
             "id": "C",
-            "text": "5597"
+            "text": "1"
           },
           {
             "id": "D",
-            "text": "197"
+            "text": "-11"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "The input must be squared.",
-          "B": "The constant is subtracted, not added.",
-          "C": "Only t is squared, not the coefficient.",
-          "D": "Square the input first: 25(9) - 28 = 197."
+          "A": "Substituting 3 for x gives 5 - 6, which comes to -1.",
+          "B": "Adding 2x rather than subtracting it reverses the sign of that term.",
+          "C": "Subtracting 5 from 6 instead of 6 from 5 flips the sign.",
+          "D": "This combines both sign errors and lands well away from the value."
         }
       },
       {
@@ -6509,65 +6509,65 @@
         "section": "math",
         "topic": "coordinate geometry",
         "difficulty": "easy",
-        "context": "What is the slope of the line through (3, 25) and (7, 137)?",
+        "context": "What is the distance from the origin to the point (6, 8)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "28"
+            "text": "10"
           },
           {
             "id": "B",
-            "text": "0.03571"
+            "text": "14"
           },
           {
             "id": "C",
-            "text": "112"
+            "text": "100"
           },
           {
             "id": "D",
-            "text": "29"
+            "text": "48"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Slope = (137 - 25) / (7 - 3) = 28.",
-          "B": "This reverses rise and run.",
-          "C": "This is the rise without division by the run.",
-          "D": "Use the difference of the y-coordinates divided by the difference of the x-coordinates."
+          "A": "The legs 6 and 8 give a hypotenuse of the square root of 36 plus 64.",
+          "B": "Adding the coordinates measures a path along the axes, not a straight line.",
+          "C": "This is the square of the distance, with the root not yet taken.",
+          "D": "Multiplying the coordinates gives an area rather than a length."
         }
       },
       {
         "id": "exp26-math-046",
         "section": "math",
         "topic": "statistics",
-        "difficulty": "medium",
-        "context": "Four numbers have mean 11. Three of the numbers are 8, 12, and 15. What is the fourth?",
+        "difficulty": "easy",
+        "context": "What is the range of 12, 5, 19, 7 and 14?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "13"
+            "text": "14"
           },
           {
             "id": "B",
-            "text": "9"
+            "text": "19"
           },
           {
             "id": "C",
-            "text": "11"
+            "text": "11.4"
           },
           {
             "id": "D",
-            "text": "44"
+            "text": "12"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The three given numbers are above their target total by 2, so subtract 2.",
-          "B": "All four sum to 44. The known sum is 35, leaving 9.",
-          "C": "The missing number need not equal the mean.",
-          "D": "This is the required total of all four."
+          "A": "The range is the largest value less the smallest, so 19 - 5.",
+          "B": "This is the largest value on its own, with nothing subtracted.",
+          "C": "This is the mean of the five values rather than their spread.",
+          "D": "This is the median, the value sitting in the middle when sorted."
         }
       },
       {
@@ -6575,32 +6575,32 @@
         "section": "math",
         "topic": "probability",
         "difficulty": "easy",
-        "context": "A bag holds 25 blue tiles and 28 red tiles. One tile is chosen uniformly at random. What is the probability of choosing blue?",
+        "context": "A spinner has 5 equal sections: 2 red, 2 blue and 1 green. What is the chance of red?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "25/28"
+            "text": "2/5"
           },
           {
             "id": "B",
-            "text": "1/53"
+            "text": "1/5"
           },
           {
             "id": "C",
-            "text": "25/53"
+            "text": "2/3"
           },
           {
             "id": "D",
-            "text": "28/53"
+            "text": "3/5"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The denominator must include both colors.",
-          "B": "There is more than one blue tile.",
-          "C": "There are 25 favorable outcomes among 53 equally likely tiles.",
-          "D": "This is the probability of red."
+          "A": "Two of the five equal sections are red, so the chance is 2 out of 5.",
+          "B": "This counts one red section instead of both of them.",
+          "C": "This divides the red sections by the three colours rather than five sections.",
+          "D": "This is the chance of landing on something that is not red."
         }
       },
       {
@@ -6608,32 +6608,32 @@
         "section": "math",
         "topic": "area & volume",
         "difficulty": "easy",
-        "context": "A rectangular storage box has interior dimensions 25 cm by 28 cm by 4 cm. What is its volume in cm³?",
+        "context": "What is the volume of a box 3 by 4 by 5 units?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "700"
+            "text": "60"
           },
           {
             "id": "B",
-            "text": "114"
+            "text": "12"
           },
           {
             "id": "C",
-            "text": "1824"
+            "text": "94"
           },
           {
             "id": "D",
-            "text": "2800"
+            "text": "47"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is the area of the base only.",
-          "B": "Adding edge lengths does not give volume.",
-          "C": "This is surface area in square centimeters.",
-          "D": "Multiply all three perpendicular dimensions: 25 × 28 × 4 = 2800."
+          "A": "Volume multiplies all three dimensions together, so 3 × 4 × 5.",
+          "B": "This is the area of one face rather than the space inside the box.",
+          "C": "This is the surface area, the total of all six faces of the box.",
+          "D": "This is half the surface area, which measures no part of the box."
         }
       },
       {
@@ -6641,32 +6641,32 @@
         "section": "math",
         "topic": "triangles",
         "difficulty": "easy",
-        "context": "A right triangle has legs 9 and 12. What is its hypotenuse?",
+        "context": "A triangle has sides of 5, 5 and 8. What kind of triangle is it?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "15"
+            "text": "isosceles"
           },
           {
             "id": "B",
-            "text": "21"
+            "text": "equilateral"
           },
           {
             "id": "C",
-            "text": "3"
+            "text": "scalene"
           },
           {
             "id": "D",
-            "text": "225"
+            "text": "right-angled"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "By the Pythagorean theorem, c² = 81 + 144 = 225; c = 15.",
-          "B": "The hypotenuse is not the sum of the legs.",
-          "C": "The difference of the legs is not the hypotenuse.",
-          "D": "This is c²; take its positive square root."
+          "A": "Exactly two of the three sides are equal, which is what isosceles means.",
+          "B": "An equilateral triangle needs all three sides to be the same length.",
+          "C": "A scalene triangle has three different side lengths, and two match here.",
+          "D": "The squares 25 and 25 total 50, which is not the 64 a right angle needs."
         }
       },
       {
@@ -6674,32 +6674,32 @@
         "section": "math",
         "topic": "quadratics",
         "difficulty": "easy",
-        "context": "What is the larger solution of (x - 25)(x - 28) = 0?",
+        "context": "Which is the factored form of x² + 7x + 12?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "53"
+            "text": "(x + 3)(x + 4)"
           },
           {
             "id": "B",
-            "text": "28"
+            "text": "(x + 2)(x + 6)"
           },
           {
             "id": "C",
-            "text": "25"
+            "text": "(x - 3)(x - 4)"
           },
           {
             "id": "D",
-            "text": "-28"
+            "text": "(x + 1)(x + 12)"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The sum of the roots is not itself a root here.",
-          "B": "A product is zero when a factor is zero; the roots are 25 and 28, and 28 is larger.",
-          "C": "This is the smaller solution.",
-          "D": "Setting x minus a number to zero gives that positive number."
+          "A": "The pair must multiply to 12 and add to 7, and 3 and 4 do both.",
+          "B": "These multiply to 12 but add to 8 rather than to the 7 required.",
+          "C": "Two negatives multiply to 12 but give a middle term of -7.",
+          "D": "These multiply to 12 but add to 13, which is far from the 7 needed."
         }
       },
       {
@@ -7036,99 +7036,99 @@
         "id": "exp26-math-061",
         "section": "math",
         "topic": "linear equations",
-        "difficulty": "medium",
-        "context": "If 26x + 29 = 731, what is x?",
+        "difficulty": "easy",
+        "context": "If 4x + 7 = 39, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "27"
+            "text": "8"
           },
           {
             "id": "B",
-            "text": "702"
+            "text": "11.5"
           },
           {
             "id": "C",
-            "text": "28"
+            "text": "9.75"
           },
           {
             "id": "D",
-            "text": "-27"
+            "text": "32"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Subtract 29, then divide by 26: x = 27.",
-          "B": "702 is 26x; divide by the coefficient.",
-          "C": "Substitution gives 757, not 731.",
-          "D": "Subtracting the constant does not make the solution negative."
+          "A": "Taking 7 from both sides gives 4x = 32, and dividing by 4 gives 8.",
+          "B": "Adding 7 rather than subtracting it before dividing gives this value.",
+          "C": "Dividing 39 by 4 ignores the constant term sitting beside the 4x.",
+          "D": "This is 4x rather than x, so one step is still outstanding."
         }
       },
       {
         "id": "exp26-math-062",
         "section": "math",
         "topic": "systems",
-        "difficulty": "medium",
-        "context": "The equations x + y = 53 and 2x + y = 80 hold. What is y?",
+        "difficulty": "easy",
+        "context": "If x + y = 12 and y = 2x, what is the value of y?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-26"
+            "text": "8"
           },
           {
             "id": "B",
-            "text": "26"
+            "text": "4"
           },
           {
             "id": "C",
-            "text": "27"
+            "text": "6"
           },
           {
             "id": "D",
-            "text": "53"
+            "text": "24"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Substitution with this negative value does not satisfy both equations.",
-          "B": "Subtract the first equation from the second to get x = 27; then y = 53 - 27 = 26.",
-          "C": "This is x, not y.",
-          "D": "This is the sum of both variables."
+          "A": "Substituting gives 3x = 12, so x is 4 and y is twice that.",
+          "B": "This is x, and the question asks for y, which is double it.",
+          "C": "Splitting the total evenly ignores that y is twice as large as x.",
+          "D": "Doubling the total rather than doubling x gives this value."
         }
       },
       {
         "id": "exp26-math-063",
         "section": "math",
         "topic": "fractions & percents",
-        "difficulty": "medium",
-        "context": "A backpack costs $120. A store discounts it by 10%. Before tax, how many dollars does it cost?",
+        "difficulty": "easy",
+        "context": "What is 2/5 of 45?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "130"
+            "text": "18"
           },
           {
             "id": "B",
-            "text": "120"
+            "text": "22.5"
           },
           {
             "id": "C",
-            "text": "108"
+            "text": "90"
           },
           {
             "id": "D",
-            "text": "12"
+            "text": "9"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "A percentage discount is not a fixed number of dollars added.",
-          "B": "This is the original price before the discount.",
-          "C": "The remaining fraction is 0.9; multiply 120 by this fraction.",
-          "D": "This is the amount saved, not the amount paid."
+          "A": "A fifth of 45 is 9, and two fifths is twice that.",
+          "B": "Halving 45 uses a fraction of one half rather than two fifths.",
+          "C": "Multiplying by 2 without dividing by 5 leaves the fraction half applied.",
+          "D": "This is one fifth of 45, with the numerator of 2 not yet used."
         }
       },
       {
@@ -7136,32 +7136,32 @@
         "section": "math",
         "topic": "functions",
         "difficulty": "easy",
-        "context": "For f(t) = 26t² - 29, what is f(3)?",
+        "context": "If f(x) = x ÷ 2 + 6, what is f(8)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "49"
+            "text": "10"
           },
           {
             "id": "B",
-            "text": "263"
+            "text": "7"
           },
           {
             "id": "C",
-            "text": "6055"
+            "text": "14"
           },
           {
             "id": "D",
-            "text": "205"
+            "text": "4"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "The input must be squared.",
-          "B": "The constant is subtracted, not added.",
-          "C": "Only t is squared, not the coefficient.",
-          "D": "Square the input first: 26(9) - 29 = 205."
+          "A": "Half of 8 is 4, and adding the 6 brings the total to 10.",
+          "B": "Adding 6 before halving applies the two steps in the wrong order.",
+          "C": "Adding 6 to 8 without halving leaves the division undone.",
+          "D": "This is x ÷ 2 alone, with the constant not yet added."
         }
       },
       {
@@ -7169,65 +7169,65 @@
         "section": "math",
         "topic": "coordinate geometry",
         "difficulty": "easy",
-        "context": "What is the slope of the line through (4, 26) and (8, 142)?",
+        "context": "What is the y-intercept of the line y = -2x + 7?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "29"
+            "text": "7"
           },
           {
             "id": "B",
-            "text": "0.03448"
+            "text": "-2"
           },
           {
             "id": "C",
-            "text": "116"
+            "text": "3.5"
           },
           {
             "id": "D",
-            "text": "30"
+            "text": "-7"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Slope = (142 - 26) / (8 - 4) = 29.",
-          "B": "This reverses rise and run.",
-          "C": "This is the rise without division by the run.",
-          "D": "Use the difference of the y-coordinates divided by the difference of the x-coordinates."
+          "A": "Setting x to zero leaves y equal to 7, which is where the line crosses.",
+          "B": "This is the slope of the line rather than where it meets the axis.",
+          "C": "Dividing the intercept by the slope finds the x-intercept instead.",
+          "D": "The sign of the constant has been flipped without cause."
         }
       },
       {
         "id": "exp26-math-066",
         "section": "math",
         "topic": "statistics",
-        "difficulty": "medium",
-        "context": "Four numbers have mean 12. Three of the numbers are 9, 13, and 16. What is the fourth?",
+        "difficulty": "easy",
+        "context": "What is the mode of 4, 7, 4, 9, 7 and 4?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "14"
+            "text": "4"
           },
           {
             "id": "B",
-            "text": "10"
+            "text": "7"
           },
           {
             "id": "C",
-            "text": "12"
+            "text": "5.5"
           },
           {
             "id": "D",
-            "text": "48"
+            "text": "9"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The three given numbers are above their target total by 2, so subtract 2.",
-          "B": "All four sum to 48. The known sum is 38, leaving 10.",
-          "C": "The missing number need not equal the mean.",
-          "D": "This is the required total of all four."
+          "A": "The mode is the value appearing most often, and 4 appears three times.",
+          "B": "This value appears twice, which is one time fewer than the mode.",
+          "C": "This is the median of the six values rather than the mode.",
+          "D": "This is the largest value, which appears only once in the list."
         }
       },
       {
@@ -7235,32 +7235,32 @@
         "section": "math",
         "topic": "probability",
         "difficulty": "easy",
-        "context": "A bag holds 26 blue tiles and 29 red tiles. One tile is chosen uniformly at random. What is the probability of choosing blue?",
+        "context": "Two fair coins are tossed. What is the probability that both land heads?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "26/29"
+            "text": "1/4"
           },
           {
             "id": "B",
-            "text": "1/55"
+            "text": "1/2"
           },
           {
             "id": "C",
-            "text": "26/55"
+            "text": "1/3"
           },
           {
             "id": "D",
-            "text": "29/55"
+            "text": "3/4"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The denominator must include both colors.",
-          "B": "There is more than one blue tile.",
-          "C": "There are 26 favorable outcomes among 55 equally likely tiles.",
-          "D": "This is the probability of red."
+          "A": "Four equally likely results are possible, and only one is two heads.",
+          "B": "This is the chance for a single coin, not for both of them together.",
+          "C": "Counting three results treats two heads and a head and a tail alike.",
+          "D": "This is the chance of getting at least one head across the two coins."
         }
       },
       {
@@ -7268,32 +7268,32 @@
         "section": "math",
         "topic": "area & volume",
         "difficulty": "easy",
-        "context": "A rectangular storage box has interior dimensions 26 cm by 29 cm by 4 cm. What is its volume in cm³?",
+        "context": "What is the circumference of a circle of radius 5, in terms of π?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "754"
+            "text": "10π"
           },
           {
             "id": "B",
-            "text": "118"
+            "text": "25π"
           },
           {
             "id": "C",
-            "text": "1948"
+            "text": "5π"
           },
           {
             "id": "D",
-            "text": "3016"
+            "text": "100π"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is the area of the base only.",
-          "B": "Adding edge lengths does not give volume.",
-          "C": "This is surface area in square centimeters.",
-          "D": "Multiply all three perpendicular dimensions: 26 × 29 × 4 = 3016."
+          "A": "Circumference is 2πr, so a radius of 5 gives 10π.",
+          "B": "This is the area of the circle rather than the distance round it.",
+          "C": "This uses the radius where the formula calls for the diameter.",
+          "D": "This squares the diameter instead of simply doubling the radius."
         }
       },
       {
@@ -7301,32 +7301,32 @@
         "section": "math",
         "topic": "triangles",
         "difficulty": "easy",
-        "context": "A right triangle has legs 12 and 16. What is its hypotenuse?",
+        "context": "Two angles of an isosceles triangle each measure 50°. What is the third angle?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "20"
+            "text": "80°"
           },
           {
             "id": "B",
-            "text": "28"
+            "text": "100°"
           },
           {
             "id": "C",
-            "text": "4"
+            "text": "50°"
           },
           {
             "id": "D",
-            "text": "400"
+            "text": "130°"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "By the Pythagorean theorem, c² = 144 + 256 = 400; c = 20.",
-          "B": "The hypotenuse is not the sum of the legs.",
-          "C": "The difference of the legs is not the hypotenuse.",
-          "D": "This is c²; take its positive square root."
+          "A": "The two equal angles total 100°, and 180 less 100 leaves 80.",
+          "B": "This is the total of the two equal angles rather than what remains.",
+          "C": "A third angle equal to the others would make the triangle equilateral.",
+          "D": "This subtracts only one of the two 50° angles from the total of 180°."
         }
       },
       {
@@ -7334,32 +7334,32 @@
         "section": "math",
         "topic": "quadratics",
         "difficulty": "easy",
-        "context": "What is the larger solution of (x - 26)(x - 29) = 0?",
+        "context": "What is the y-intercept of the parabola y = x² - 6x + 8?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "55"
+            "text": "8"
           },
           {
             "id": "B",
-            "text": "29"
+            "text": "-6"
           },
           {
             "id": "C",
-            "text": "26"
+            "text": "2"
           },
           {
             "id": "D",
-            "text": "-29"
+            "text": "4"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The sum of the roots is not itself a root here.",
-          "B": "A product is zero when a factor is zero; the roots are 26 and 29, and 29 is larger.",
-          "C": "This is the smaller solution.",
-          "D": "Setting x minus a number to zero gives that positive number."
+          "A": "Setting x to zero removes both x terms and leaves the constant 8.",
+          "B": "This is the coefficient of x rather than the value at x = 0.",
+          "C": "This is one of the roots, where the curve meets the other axis.",
+          "D": "This is the other root, which is again a crossing of the x-axis."
         }
       },
       {
@@ -7697,32 +7697,32 @@
         "section": "math",
         "topic": "linear equations",
         "difficulty": "medium",
-        "context": "If 27x + 30 = 786, what is x?",
+        "context": "If 5x - 3 = 2x + 18, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "28"
+            "text": "7"
           },
           {
             "id": "B",
-            "text": "756"
+            "text": "5"
           },
           {
             "id": "C",
-            "text": "29"
+            "text": "21"
           },
           {
             "id": "D",
-            "text": "-28"
+            "text": "6"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Subtract 30, then divide by 27: x = 28.",
-          "B": "756 is 27x; divide by the coefficient.",
-          "C": "Substitution gives 813, not 786.",
-          "D": "Subtracting the constant does not make the solution negative."
+          "A": "Collecting gives 3x = 21, and dividing by 3 leaves x equal to 7.",
+          "B": "Subtracting 3 from 18 rather than adding it gives 3x = 15 instead.",
+          "C": "This is 3x, the value before the final division by 3.",
+          "D": "Dividing 18 by 3 leaves the constant on the left entirely unhandled."
         }
       },
       {
@@ -7730,32 +7730,32 @@
         "section": "math",
         "topic": "systems",
         "difficulty": "medium",
-        "context": "The equations x + y = 55 and 2x + y = 83 hold. What is y?",
+        "context": "If 2x + 3y = 16 and x = y + 3, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-27"
+            "text": "5"
           },
           {
             "id": "B",
-            "text": "27"
+            "text": "2"
           },
           {
             "id": "C",
-            "text": "28"
+            "text": "3"
           },
           {
             "id": "D",
-            "text": "55"
+            "text": "8"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Substitution with this negative value does not satisfy both equations.",
-          "B": "Subtract the first equation from the second to get x = 28; then y = 55 - 28 = 27.",
-          "C": "This is x, not y.",
-          "D": "This is the sum of both variables."
+          "A": "Substituting gives 5y + 6 = 16, so y is 2 and x is 5.",
+          "B": "This is y, which is three less than the x the question asks for.",
+          "C": "This is the difference between the two unknowns rather than either one.",
+          "D": "Dividing 10 by 2 rather than by 5 gives y = 5 and this value of x."
         }
       },
       {
@@ -7763,98 +7763,98 @@
         "section": "math",
         "topic": "fractions & percents",
         "difficulty": "medium",
-        "context": "A backpack costs $140. A store discounts it by 20%. Before tax, how many dollars does it cost?",
+        "context": "A price rises from 80 to 92. What is the percentage increase?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "160"
+            "text": "15%"
           },
           {
             "id": "B",
-            "text": "140"
+            "text": "12%"
           },
           {
             "id": "C",
-            "text": "112"
+            "text": "13%"
           },
           {
             "id": "D",
-            "text": "28"
+            "text": "87%"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "A percentage discount is not a fixed number of dollars added.",
-          "B": "This is the original price before the discount.",
-          "C": "The remaining fraction is 0.8; multiply 140 by this fraction.",
-          "D": "This is the amount saved, not the amount paid."
+          "A": "The rise of 12 is divided by the original 80, which gives 0.15.",
+          "B": "This is the size of the rise itself rather than the rise as a percentage.",
+          "C": "Dividing the rise by the new price rather than the original gives this.",
+          "D": "This is the old price as a share of the new one, which is a different ratio."
         }
       },
       {
         "id": "exp26-math-084",
         "section": "math",
         "topic": "functions",
-        "difficulty": "easy",
-        "context": "For f(t) = 27t² - 30, what is f(3)?",
+        "difficulty": "medium",
+        "context": "If f(x) = 2x + 1, what is f(f(2))?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "51"
+            "text": "11"
           },
           {
             "id": "B",
-            "text": "273"
+            "text": "5"
           },
           {
             "id": "C",
-            "text": "6531"
+            "text": "10"
           },
           {
             "id": "D",
-            "text": "213"
+            "text": "7"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "The input must be squared.",
-          "B": "The constant is subtracted, not added.",
-          "C": "Only t is squared, not the coefficient.",
-          "D": "Square the input first: 27(9) - 30 = 213."
+          "A": "The inner f(2) is 5, and applying f again gives 2 × 5 + 1.",
+          "B": "This is f(2) alone, with the second application still to come.",
+          "C": "Doubling 5 without adding the 1 leaves the second step half done.",
+          "D": "Applying f once to 3 rather than twice to 2 gives this value."
         }
       },
       {
         "id": "exp26-math-085",
         "section": "math",
         "topic": "coordinate geometry",
-        "difficulty": "easy",
-        "context": "What is the slope of the line through (5, 27) and (9, 147)?",
+        "difficulty": "medium",
+        "context": "What is the equation of the line through (0, 3) with slope -2?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "30"
+            "text": "y = -2x + 3"
           },
           {
             "id": "B",
-            "text": "0.03333"
+            "text": "y = 3x - 2"
           },
           {
             "id": "C",
-            "text": "120"
+            "text": "y = 2x + 3"
           },
           {
             "id": "D",
-            "text": "31"
+            "text": "y = -2x - 3"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Slope = (147 - 27) / (9 - 5) = 30.",
-          "B": "This reverses rise and run.",
-          "C": "This is the rise without division by the run.",
-          "D": "Use the difference of the y-coordinates divided by the difference of the x-coordinates."
+          "A": "The slope sits in front of x and the given point is the y-intercept.",
+          "B": "The slope and intercept have been swapped with each other.",
+          "C": "The slope should be negative, since the line falls from left to right.",
+          "D": "The intercept is positive, since the line passes above the origin."
         }
       },
       {
@@ -7862,164 +7862,164 @@
         "section": "math",
         "topic": "statistics",
         "difficulty": "medium",
-        "context": "Four numbers have mean 13. Three of the numbers are 10, 14, and 17. What is the fourth?",
+        "context": "The mean of five numbers is 12. What is their sum?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "15"
+            "text": "60"
           },
           {
             "id": "B",
-            "text": "11"
+            "text": "17"
           },
           {
             "id": "C",
-            "text": "13"
+            "text": "2.4"
           },
           {
             "id": "D",
-            "text": "52"
+            "text": "7"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The three given numbers are above their target total by 2, so subtract 2.",
-          "B": "All four sum to 52. The known sum is 41, leaving 11.",
-          "C": "The missing number need not equal the mean.",
-          "D": "This is the required total of all four."
+          "A": "A mean is the sum divided by the count, so the sum is 12 × 5.",
+          "B": "Adding the count to the mean treats them as quantities of one kind.",
+          "C": "Dividing the mean by the count reverses the step that produced it.",
+          "D": "Subtracting the count from the mean leaves neither of the two figures."
         }
       },
       {
         "id": "exp26-math-087",
         "section": "math",
         "topic": "probability",
-        "difficulty": "easy",
-        "context": "A bag holds 27 blue tiles and 30 red tiles. One tile is chosen uniformly at random. What is the probability of choosing blue?",
+        "difficulty": "medium",
+        "context": "A bag holds 4 green and 6 yellow counters. Two are drawn without replacement. What is the chance both are green?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "27/30"
+            "text": "2/15"
           },
           {
             "id": "B",
-            "text": "1/57"
+            "text": "4/25"
           },
           {
             "id": "C",
-            "text": "27/57"
+            "text": "2/5"
           },
           {
             "id": "D",
-            "text": "30/57"
+            "text": "3/25"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The denominator must include both colors.",
-          "B": "There is more than one blue tile.",
-          "C": "There are 27 favorable outcomes among 57 equally likely tiles.",
-          "D": "This is the probability of red."
+          "A": "The chances 4/10 and 3/9 multiply, and 12/90 reduces to 2/15.",
+          "B": "This treats the first counter as replaced, leaving the bag unchanged.",
+          "C": "This is the chance for the first draw alone, with the second not used.",
+          "D": "This drops a green from the bag but leaves the total at ten counters."
         }
       },
       {
         "id": "exp26-math-088",
         "section": "math",
         "topic": "area & volume",
-        "difficulty": "easy",
-        "context": "A rectangular storage box has interior dimensions 27 cm by 30 cm by 4 cm. What is its volume in cm³?",
+        "difficulty": "medium",
+        "context": "A rectangle has an area of 48 and a width of 6. What is its perimeter?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "810"
+            "text": "28"
           },
           {
             "id": "B",
-            "text": "122"
+            "text": "14"
           },
           {
             "id": "C",
-            "text": "2076"
+            "text": "54"
           },
           {
             "id": "D",
-            "text": "3240"
+            "text": "96"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is the area of the base only.",
-          "B": "Adding edge lengths does not give volume.",
-          "C": "This is surface area in square centimeters.",
-          "D": "Multiply all three perpendicular dimensions: 27 × 30 × 4 = 3240."
+          "A": "The length is 48 ÷ 6, or 8, and the perimeter is twice 8 plus 6.",
+          "B": "This is one length plus one width, which is half the way round.",
+          "C": "Adding the area to the width combines two different kinds of measure.",
+          "D": "Doubling the area gives neither a perimeter nor a sensible length."
         }
       },
       {
         "id": "exp26-math-089",
         "section": "math",
         "topic": "triangles",
-        "difficulty": "easy",
-        "context": "A right triangle has legs 15 and 20. What is its hypotenuse?",
+        "difficulty": "medium",
+        "context": "A right triangle has a hypotenuse of 13 and one leg of 5. What is the other leg?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "25"
+            "text": "12"
           },
           {
             "id": "B",
-            "text": "35"
+            "text": "8"
           },
           {
             "id": "C",
-            "text": "5"
+            "text": "18"
           },
           {
             "id": "D",
-            "text": "625"
+            "text": "144"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "By the Pythagorean theorem, c² = 225 + 400 = 625; c = 25.",
-          "B": "The hypotenuse is not the sum of the legs.",
-          "C": "The difference of the legs is not the hypotenuse.",
-          "D": "This is c²; take its positive square root."
+          "A": "Subtracting 25 from 169 leaves 144, whose square root is 12.",
+          "B": "Subtracting the sides themselves skips the squaring the theorem needs.",
+          "C": "Adding the two given lengths gives more than the hypotenuse allows.",
+          "D": "This is the square of the missing leg, with the root not yet taken."
         }
       },
       {
         "id": "exp26-math-090",
         "section": "math",
         "topic": "quadratics",
-        "difficulty": "easy",
-        "context": "What is the larger solution of (x - 27)(x - 30) = 0?",
+        "difficulty": "medium",
+        "context": "What are the roots of x² - 5x + 6 = 0?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "57"
+            "text": "2 and 3"
           },
           {
             "id": "B",
-            "text": "30"
+            "text": "-2 and -3"
           },
           {
             "id": "C",
-            "text": "27"
+            "text": "1 and 6"
           },
           {
             "id": "D",
-            "text": "-30"
+            "text": "5 and 6"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The sum of the roots is not itself a root here.",
-          "B": "A product is zero when a factor is zero; the roots are 27 and 30, and 30 is larger.",
-          "C": "This is the smaller solution.",
-          "D": "Setting x minus a number to zero gives that positive number."
+          "A": "The pair must multiply to 6 and add to 5, and the factors give 2 and 3.",
+          "B": "Negative roots would make the middle term positive rather than negative.",
+          "C": "These multiply to 6 but add to 7 instead of the 5 the equation needs.",
+          "D": "These are the two coefficients read off the equation, not its roots."
         }
       },
       {
@@ -8357,32 +8357,32 @@
         "section": "math",
         "topic": "linear equations",
         "difficulty": "medium",
-        "context": "If 28x + 31 = 843, what is x?",
+        "context": "If 3(x - 4) = 27, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "29"
+            "text": "13"
           },
           {
             "id": "B",
-            "text": "812"
+            "text": "9"
           },
           {
             "id": "C",
-            "text": "30"
+            "text": "5"
           },
           {
             "id": "D",
-            "text": "-29"
+            "text": "31"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Subtract 31, then divide by 28: x = 29.",
-          "B": "812 is 28x; divide by the coefficient.",
-          "C": "Substitution gives 871, not 843.",
-          "D": "Subtracting the constant does not make the solution negative."
+          "A": "Dividing by 3 gives x - 4 = 9, and adding 4 gives 13.",
+          "B": "This is x - 4 rather than x, so the 4 has still to be added back.",
+          "C": "Subtracting 4 instead of adding it moves in the wrong direction.",
+          "D": "Adding the 4 to 27 without dividing by 3 leaves a step undone."
         }
       },
       {
@@ -8390,32 +8390,32 @@
         "section": "math",
         "topic": "systems",
         "difficulty": "medium",
-        "context": "The equations x + y = 57 and 2x + y = 86 hold. What is y?",
+        "context": "If 3x + 2y = 19 and x - 2y = 1, what is the value of y?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-28"
+            "text": "2"
           },
           {
             "id": "B",
-            "text": "28"
+            "text": "5"
           },
           {
             "id": "C",
-            "text": "29"
+            "text": "-2"
           },
           {
             "id": "D",
-            "text": "57"
+            "text": "9.5"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Substitution with this negative value does not satisfy both equations.",
-          "B": "Subtract the first equation from the second to get x = 29; then y = 57 - 29 = 28.",
-          "C": "This is x, not y.",
-          "D": "This is the sum of both variables."
+          "A": "Adding the equations eliminates y and gives x = 5, so y is 2.",
+          "B": "This is x, found on the way to the y the question asks for.",
+          "C": "A sign slip when substituting x back flips the value of y.",
+          "D": "Halving 19 ignores the second equation and the x term entirely."
         }
       },
       {
@@ -8423,98 +8423,98 @@
         "section": "math",
         "topic": "fractions & percents",
         "difficulty": "medium",
-        "context": "A backpack costs $160. A store discounts it by 25%. Before tax, how many dollars does it cost?",
+        "context": "What is 3/4 ÷ 2/3?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "185"
+            "text": "9/8"
           },
           {
             "id": "B",
-            "text": "160"
+            "text": "8/9"
           },
           {
             "id": "C",
-            "text": "120"
+            "text": "1/2"
           },
           {
             "id": "D",
-            "text": "40"
+            "text": "3/2"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "A percentage discount is not a fixed number of dollars added.",
-          "B": "This is the original price before the discount.",
-          "C": "The remaining fraction is 0.75; multiply 160 by this fraction.",
-          "D": "This is the amount saved, not the amount paid."
+          "A": "Dividing by a fraction multiplies by its reciprocal, giving 3/4 × 3/2.",
+          "B": "Inverting the first fraction rather than the second gives this value.",
+          "C": "Multiplying the two fractions straight across is not how division works.",
+          "D": "Using only the denominator of the divisor leaves its numerator unused."
         }
       },
       {
         "id": "exp26-math-104",
         "section": "math",
         "topic": "functions",
-        "difficulty": "easy",
-        "context": "For f(t) = 28t² - 31, what is f(3)?",
+        "difficulty": "medium",
+        "context": "If f(x) = x² - 4x, for what positive value of x is f(x) = 0?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "53"
+            "text": "4"
           },
           {
             "id": "B",
-            "text": "283"
+            "text": "0"
           },
           {
             "id": "C",
-            "text": "7025"
+            "text": "2"
           },
           {
             "id": "D",
-            "text": "221"
+            "text": "-4"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "The input must be squared.",
-          "B": "The constant is subtracted, not added.",
-          "C": "Only t is squared, not the coefficient.",
-          "D": "Square the input first: 28(9) - 31 = 221."
+          "A": "Factoring gives x(x - 4), so the roots are 0 and 4, and 4 is positive.",
+          "B": "Zero is a root but the question asks for the positive value.",
+          "C": "Halving the coefficient gives the vertex rather than a root.",
+          "D": "A sign error on the root turns 4 into its negative."
         }
       },
       {
         "id": "exp26-math-105",
         "section": "math",
         "topic": "coordinate geometry",
-        "difficulty": "easy",
-        "context": "What is the slope of the line through (6, 28) and (10, 152)?",
+        "difficulty": "medium",
+        "context": "What is the x-intercept of the line 3x + 4y = 24?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "31"
+            "text": "8"
           },
           {
             "id": "B",
-            "text": "0.03226"
+            "text": "6"
           },
           {
             "id": "C",
-            "text": "124"
+            "text": "24"
           },
           {
             "id": "D",
-            "text": "32"
+            "text": "4"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Slope = (152 - 28) / (10 - 6) = 31.",
-          "B": "This reverses rise and run.",
-          "C": "This is the rise without division by the run.",
-          "D": "Use the difference of the y-coordinates divided by the difference of the x-coordinates."
+          "A": "Setting y to zero leaves 3x = 24, so the line crosses at x equal to 8.",
+          "B": "This is the y-intercept, found by setting x rather than y to zero.",
+          "C": "This is the constant on the right, before either coefficient is divided out.",
+          "D": "Dividing by 6 rather than by the coefficient of x gives this value."
         }
       },
       {
@@ -8522,148 +8522,16 @@
         "section": "math",
         "topic": "statistics",
         "difficulty": "medium",
-        "context": "Four numbers have mean 14. Three of the numbers are 11, 15, and 18. What is the fourth?",
+        "context": "Four numbers have a mean of 9. A fifth number, 19, is added. What is the new mean?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "16"
+            "text": "11"
           },
           {
             "id": "B",
-            "text": "12"
-          },
-          {
-            "id": "C",
             "text": "14"
-          },
-          {
-            "id": "D",
-            "text": "56"
-          }
-        ],
-        "answer": "B",
-        "why": {
-          "A": "The three given numbers are above their target total by 2, so subtract 2.",
-          "B": "All four sum to 56. The known sum is 44, leaving 12.",
-          "C": "The missing number need not equal the mean.",
-          "D": "This is the required total of all four."
-        }
-      },
-      {
-        "id": "exp26-math-107",
-        "section": "math",
-        "topic": "probability",
-        "difficulty": "easy",
-        "context": "A bag holds 28 blue tiles and 31 red tiles. One tile is chosen uniformly at random. What is the probability of choosing blue?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "28/31"
-          },
-          {
-            "id": "B",
-            "text": "1/59"
-          },
-          {
-            "id": "C",
-            "text": "28/59"
-          },
-          {
-            "id": "D",
-            "text": "31/59"
-          }
-        ],
-        "answer": "C",
-        "why": {
-          "A": "The denominator must include both colors.",
-          "B": "There is more than one blue tile.",
-          "C": "There are 28 favorable outcomes among 59 equally likely tiles.",
-          "D": "This is the probability of red."
-        }
-      },
-      {
-        "id": "exp26-math-108",
-        "section": "math",
-        "topic": "area & volume",
-        "difficulty": "easy",
-        "context": "A rectangular storage box has interior dimensions 28 cm by 31 cm by 4 cm. What is its volume in cm³?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "868"
-          },
-          {
-            "id": "B",
-            "text": "126"
-          },
-          {
-            "id": "C",
-            "text": "2208"
-          },
-          {
-            "id": "D",
-            "text": "3472"
-          }
-        ],
-        "answer": "D",
-        "why": {
-          "A": "This is the area of the base only.",
-          "B": "Adding edge lengths does not give volume.",
-          "C": "This is surface area in square centimeters.",
-          "D": "Multiply all three perpendicular dimensions: 28 × 31 × 4 = 3472."
-        }
-      },
-      {
-        "id": "exp26-math-109",
-        "section": "math",
-        "topic": "triangles",
-        "difficulty": "easy",
-        "context": "A right triangle has legs 18 and 24. What is its hypotenuse?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "30"
-          },
-          {
-            "id": "B",
-            "text": "42"
-          },
-          {
-            "id": "C",
-            "text": "6"
-          },
-          {
-            "id": "D",
-            "text": "900"
-          }
-        ],
-        "answer": "A",
-        "why": {
-          "A": "By the Pythagorean theorem, c² = 324 + 576 = 900; c = 30.",
-          "B": "The hypotenuse is not the sum of the legs.",
-          "C": "The difference of the legs is not the hypotenuse.",
-          "D": "This is c²; take its positive square root."
-        }
-      },
-      {
-        "id": "exp26-math-110",
-        "section": "math",
-        "topic": "quadratics",
-        "difficulty": "easy",
-        "context": "What is the larger solution of (x - 28)(x - 31) = 0?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "59"
-          },
-          {
-            "id": "B",
-            "text": "31"
           },
           {
             "id": "C",
@@ -8671,15 +8539,147 @@
           },
           {
             "id": "D",
-            "text": "-31"
+            "text": "9"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The sum of the roots is not itself a root here.",
-          "B": "A product is zero when a factor is zero; the roots are 28 and 31, and 31 is larger.",
-          "C": "This is the smaller solution.",
-          "D": "Setting x minus a number to zero gives that positive number."
+          "A": "The first four total 36, so the five together total 55 and average 11.",
+          "B": "Averaging the old mean with the new value ignores the four it stood for.",
+          "C": "This adds the new value to the old mean without dividing at all.",
+          "D": "A value well above the mean must pull the mean up rather than leave it."
+        }
+      },
+      {
+        "id": "exp26-math-107",
+        "section": "math",
+        "topic": "probability",
+        "difficulty": "medium",
+        "context": "A fair die is rolled twice. What is the probability of rolling a 6 both times?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "1/36"
+          },
+          {
+            "id": "B",
+            "text": "1/6"
+          },
+          {
+            "id": "C",
+            "text": "1/3"
+          },
+          {
+            "id": "D",
+            "text": "1/18"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "The two rolls are independent, so 1/6 multiplies by 1/6.",
+          "B": "This is the chance on a single roll rather than on both of them.",
+          "C": "Adding the two chances counts outcomes that cannot both happen.",
+          "D": "Doubling the single-roll chance is not how repeated rolls combine."
+        }
+      },
+      {
+        "id": "exp26-math-108",
+        "section": "math",
+        "topic": "area & volume",
+        "difficulty": "medium",
+        "context": "What is the area of a circle of diameter 12, in terms of π?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "36π"
+          },
+          {
+            "id": "B",
+            "text": "144π"
+          },
+          {
+            "id": "C",
+            "text": "12π"
+          },
+          {
+            "id": "D",
+            "text": "6π"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "The radius is half the diameter, so the area is π times 6 squared.",
+          "B": "This squares the diameter rather than the radius, which is twice too big.",
+          "C": "This is the circumference of the circle rather than its area.",
+          "D": "This is the radius with a π attached, which measures nothing here."
+        }
+      },
+      {
+        "id": "exp26-math-109",
+        "section": "math",
+        "topic": "triangles",
+        "difficulty": "medium",
+        "context": "Triangle ABC is similar to triangle DEF, with AB = 4, DE = 10 and BC = 6. What is EF?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "15"
+          },
+          {
+            "id": "B",
+            "text": "12"
+          },
+          {
+            "id": "C",
+            "text": "2.4"
+          },
+          {
+            "id": "D",
+            "text": "24"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "The scale factor is 10 ÷ 4, and 6 multiplied by 2.5 gives 15.",
+          "B": "Adding the difference between AB and DE treats the growth as a sum.",
+          "C": "This inverts the scale factor and shrinks the side instead of growing it.",
+          "D": "Multiplying by the smaller side rather than the scale factor overshoots."
+        }
+      },
+      {
+        "id": "exp26-math-110",
+        "section": "math",
+        "topic": "quadratics",
+        "difficulty": "medium",
+        "context": "What is the vertex of the parabola y = (x - 4)² + 1?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "(4, 1)"
+          },
+          {
+            "id": "B",
+            "text": "(-4, 1)"
+          },
+          {
+            "id": "C",
+            "text": "(1, 4)"
+          },
+          {
+            "id": "D",
+            "text": "(-4, -1)"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "The squared term vanishes at x = 4, where y takes its smallest value.",
+          "B": "The sign inside the bracket is reversed when the vertex is read off.",
+          "C": "The two coordinates have been written in the wrong order.",
+          "D": "Both coordinates have had their signs flipped from the true vertex."
         }
       },
       {
@@ -9017,32 +9017,32 @@
         "section": "math",
         "topic": "linear equations",
         "difficulty": "medium",
-        "context": "If 29x + 32 = 902, what is x?",
+        "context": "If (2x + 1) ÷ 3 = 5, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "30"
+            "text": "7"
           },
           {
             "id": "B",
-            "text": "870"
+            "text": "8"
           },
           {
             "id": "C",
-            "text": "31"
+            "text": "2"
           },
           {
             "id": "D",
-            "text": "-30"
+            "text": "16"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Subtract 32, then divide by 29: x = 30.",
-          "B": "870 is 29x; divide by the coefficient.",
-          "C": "Substitution gives 931, not 902.",
-          "D": "Subtracting the constant does not make the solution negative."
+          "A": "Multiplying by 3 gives 2x + 1 = 15, so 2x is 14 and x is 7.",
+          "B": "Dividing 16 by 2 is right but the 1 was added rather than subtracted.",
+          "C": "Forgetting to multiply through by 3 solves 2x + 1 = 5 instead.",
+          "D": "This is 2x once the 1 has been handled, with the halving still to do."
         }
       },
       {
@@ -9050,32 +9050,32 @@
         "section": "math",
         "topic": "systems",
         "difficulty": "medium",
-        "context": "The equations x + y = 59 and 2x + y = 89 hold. What is y?",
+        "context": "If 4x - y = 10 and 2x + y = 8, what is the value of x + y?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-29"
+            "text": "5"
           },
           {
             "id": "B",
-            "text": "29"
+            "text": "3"
           },
           {
             "id": "C",
-            "text": "30"
+            "text": "2"
           },
           {
             "id": "D",
-            "text": "59"
+            "text": "1"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Substitution with this negative value does not satisfy both equations.",
-          "B": "Subtract the first equation from the second to get x = 30; then y = 59 - 30 = 29.",
-          "C": "This is x, not y.",
-          "D": "This is the sum of both variables."
+          "A": "Adding the equations gives 6x = 18, so x is 3, y is 2 and the sum is 5.",
+          "B": "This is x on its own, with y still to be added to it.",
+          "C": "This is y on its own, with x still to be added to it.",
+          "D": "This is the difference between the two unknowns rather than their sum."
         }
       },
       {
@@ -9083,98 +9083,98 @@
         "section": "math",
         "topic": "fractions & percents",
         "difficulty": "medium",
-        "context": "A backpack costs $180. A store discounts it by 30%. Before tax, how many dollars does it cost?",
+        "context": "Thirty per cent of a number is 21. What is the number?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "210"
+            "text": "70"
           },
           {
             "id": "B",
-            "text": "180"
+            "text": "6.3"
           },
           {
             "id": "C",
-            "text": "126"
+            "text": "51"
           },
           {
             "id": "D",
-            "text": "54"
+            "text": "700"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "A percentage discount is not a fixed number of dollars added.",
-          "B": "This is the original price before the discount.",
-          "C": "The remaining fraction is 0.7; multiply 180 by this fraction.",
-          "D": "This is the amount saved, not the amount paid."
+          "A": "Dividing 21 by 0.3 recovers the whole from the part.",
+          "B": "Taking 30 per cent of 21 applies the percentage a second time.",
+          "C": "Adding 30 to 21 treats a percentage as though it were a quantity.",
+          "D": "A decimal point has slipped, making the answer ten times too large."
         }
       },
       {
         "id": "exp26-math-124",
         "section": "math",
         "topic": "functions",
-        "difficulty": "easy",
-        "context": "For f(t) = 29t² - 32, what is f(3)?",
+        "difficulty": "medium",
+        "context": "If f(x) = 3x + b and f(2) = 11, what is b?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "55"
+            "text": "5"
           },
           {
             "id": "B",
-            "text": "293"
+            "text": "17"
           },
           {
             "id": "C",
-            "text": "7537"
+            "text": "-5"
           },
           {
             "id": "D",
-            "text": "229"
+            "text": "7"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "The input must be squared.",
-          "B": "The constant is subtracted, not added.",
-          "C": "Only t is squared, not the coefficient.",
-          "D": "Square the input first: 29(9) - 32 = 229."
+          "A": "Substituting x = 2 gives 6 + b = 11, so b must be 5.",
+          "B": "Adding 6 to 11 rather than subtracting it reverses the step.",
+          "C": "A sign slip when isolating b flips the answer to its negative.",
+          "D": "Subtracting 2 from 9 rather than 6 from 11 mixes up the substitution."
         }
       },
       {
         "id": "exp26-math-125",
         "section": "math",
         "topic": "coordinate geometry",
-        "difficulty": "easy",
-        "context": "What is the slope of the line through (7, 29) and (11, 157)?",
+        "difficulty": "medium",
+        "context": "A line parallel to y = 4x - 1 passes through (2, 3). What is its y-intercept?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "32"
+            "text": "-5"
           },
           {
             "id": "B",
-            "text": "0.03125"
+            "text": "11"
           },
           {
             "id": "C",
-            "text": "128"
+            "text": "5"
           },
           {
             "id": "D",
-            "text": "33"
+            "text": "-1"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Slope = (157 - 29) / (11 - 7) = 32.",
-          "B": "This reverses rise and run.",
-          "C": "This is the rise without division by the run.",
-          "D": "Use the difference of the y-coordinates divided by the difference of the x-coordinates."
+          "A": "A parallel line keeps the slope 4, so 3 = 8 + b makes b equal to -5.",
+          "B": "Adding 8 to 3 rather than subtracting it reverses the step.",
+          "C": "A sign error when isolating the intercept flips it to positive.",
+          "D": "This is the intercept of the original line rather than the new one."
         }
       },
       {
@@ -9182,164 +9182,164 @@
         "section": "math",
         "topic": "statistics",
         "difficulty": "medium",
-        "context": "Four numbers have mean 15. Three of the numbers are 12, 16, and 19. What is the fourth?",
+        "context": "The numbers 4, 9, x and 14 are in increasing order and have a median of 10. What is x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "17"
+            "text": "11"
           },
           {
             "id": "B",
-            "text": "13"
+            "text": "10"
           },
           {
             "id": "C",
-            "text": "15"
+            "text": "20"
           },
           {
             "id": "D",
-            "text": "60"
+            "text": "12"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The three given numbers are above their target total by 2, so subtract 2.",
-          "B": "All four sum to 60. The known sum is 47, leaving 13.",
-          "C": "The missing number need not equal the mean.",
-          "D": "This is the required total of all four."
+          "A": "The median of four values averages the middle two, so 9 and x average 10.",
+          "B": "The median is the average of two values, not the missing value itself.",
+          "C": "Doubling the median gives the total of the middle pair, not x alone.",
+          "D": "This is off by one, which puts the middle pair at an average of 10.5."
         }
       },
       {
         "id": "exp26-math-127",
         "section": "math",
         "topic": "probability",
-        "difficulty": "easy",
-        "context": "A bag holds 29 blue tiles and 32 red tiles. One tile is chosen uniformly at random. What is the probability of choosing blue?",
+        "difficulty": "medium",
+        "context": "Of 20 people, 12 own a bicycle. What is the probability that one chosen at random does not?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "29/32"
+            "text": "2/5"
           },
           {
             "id": "B",
-            "text": "1/61"
+            "text": "3/5"
           },
           {
             "id": "C",
-            "text": "29/61"
+            "text": "8/12"
           },
           {
             "id": "D",
-            "text": "32/61"
+            "text": "1/2"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The denominator must include both colors.",
-          "B": "There is more than one blue tile.",
-          "C": "There are 29 favorable outcomes among 61 equally likely tiles.",
-          "D": "This is the probability of red."
+          "A": "Eight of the twenty do not own one, and 8 out of 20 reduces to 2/5.",
+          "B": "This is the chance that the person chosen does own a bicycle.",
+          "C": "This compares owners with non-owners rather than with the whole group.",
+          "D": "An even split would need ten owners, and there are twelve."
         }
       },
       {
         "id": "exp26-math-128",
         "section": "math",
         "topic": "area & volume",
-        "difficulty": "easy",
-        "context": "A rectangular storage box has interior dimensions 29 cm by 32 cm by 4 cm. What is its volume in cm³?",
+        "difficulty": "medium",
+        "context": "A cylinder has radius 3 and height 7. What is its volume, in terms of π?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "928"
+            "text": "63π"
           },
           {
             "id": "B",
-            "text": "130"
+            "text": "21π"
           },
           {
             "id": "C",
-            "text": "2344"
+            "text": "42π"
           },
           {
             "id": "D",
-            "text": "3712"
+            "text": "441π"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is the area of the base only.",
-          "B": "Adding edge lengths does not give volume.",
-          "C": "This is surface area in square centimeters.",
-          "D": "Multiply all three perpendicular dimensions: 29 × 32 × 4 = 3712."
+          "A": "The volume is the circular base, 9π, multiplied by the height of 7.",
+          "B": "This multiplies the radius by the height without squaring the radius.",
+          "C": "This is the curved surface area, 2πrh, rather than the volume.",
+          "D": "This squares the height as well as the radius, which counts it twice."
         }
       },
       {
         "id": "exp26-math-129",
         "section": "math",
         "topic": "triangles",
-        "difficulty": "easy",
-        "context": "A right triangle has legs 21 and 28. What is its hypotenuse?",
+        "difficulty": "medium",
+        "context": "The angles of a triangle are in the ratio 1 : 2 : 3. What is the largest angle?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "35"
+            "text": "90°"
           },
           {
             "id": "B",
-            "text": "49"
+            "text": "60°"
           },
           {
             "id": "C",
-            "text": "7"
+            "text": "120°"
           },
           {
             "id": "D",
-            "text": "1225"
+            "text": "30°"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "By the Pythagorean theorem, c² = 441 + 784 = 1225; c = 35.",
-          "B": "The hypotenuse is not the sum of the legs.",
-          "C": "The difference of the legs is not the hypotenuse.",
-          "D": "This is c²; take its positive square root."
+          "A": "The six parts total 180°, so one part is 30° and three parts are 90°.",
+          "B": "This is the middle angle, worth two of the six equal parts.",
+          "C": "Sharing 360° among the parts uses the total for a full turn.",
+          "D": "This is the smallest angle, worth a single one of the six parts."
         }
       },
       {
         "id": "exp26-math-130",
         "section": "math",
         "topic": "quadratics",
-        "difficulty": "easy",
-        "context": "What is the larger solution of (x - 29)(x - 32) = 0?",
+        "difficulty": "medium",
+        "context": "The product of two consecutive positive integers is 56. What is the larger one?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "61"
+            "text": "8"
           },
           {
             "id": "B",
-            "text": "32"
+            "text": "7"
           },
           {
             "id": "C",
-            "text": "29"
+            "text": "28"
           },
           {
             "id": "D",
-            "text": "-32"
+            "text": "56"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The sum of the roots is not itself a root here.",
-          "B": "A product is zero when a factor is zero; the roots are 29 and 32, and 32 is larger.",
-          "C": "This is the smaller solution.",
-          "D": "Setting x minus a number to zero gives that positive number."
+          "A": "The pair is 7 and 8, since 7 × 8 is 56, and 8 is the larger.",
+          "B": "This is the smaller of the two consecutive integers.",
+          "C": "Halving the product treats the two integers as though they were equal.",
+          "D": "This is the product itself rather than either of the two integers."
         }
       },
       {
@@ -9677,32 +9677,32 @@
         "section": "math",
         "topic": "linear equations",
         "difficulty": "medium",
-        "context": "If 30x + 33 = 963, what is x?",
+        "context": "If 0.4x + 1.2 = 3.6, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "31"
+            "text": "6"
           },
           {
             "id": "B",
-            "text": "930"
+            "text": "12"
           },
           {
             "id": "C",
-            "text": "32"
+            "text": "2.4"
           },
           {
             "id": "D",
-            "text": "-31"
+            "text": "9"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Subtract 33, then divide by 30: x = 31.",
-          "B": "930 is 30x; divide by the coefficient.",
-          "C": "Substitution gives 993, not 963.",
-          "D": "Subtracting the constant does not make the solution negative."
+          "A": "Subtracting 1.2 gives 0.4x = 2.4, and dividing by 0.4 gives 6.",
+          "B": "Dividing 2.4 by 0.2 rather than 0.4 doubles the answer.",
+          "C": "This is 0.4x, the value before the final division.",
+          "D": "Dividing 3.6 by 0.4 skips the subtraction of the constant."
         }
       },
       {
@@ -9710,32 +9710,32 @@
         "section": "math",
         "topic": "systems",
         "difficulty": "medium",
-        "context": "The equations x + y = 61 and 2x + y = 92 hold. What is y?",
+        "context": "If x + 2y = 9 and 3x - 2y = 11, what is the value of 2x - y?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-30"
+            "text": "8"
           },
           {
             "id": "B",
-            "text": "30"
+            "text": "10"
           },
           {
             "id": "C",
-            "text": "31"
+            "text": "3"
           },
           {
             "id": "D",
-            "text": "61"
+            "text": "7"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Substitution with this negative value does not satisfy both equations.",
-          "B": "Subtract the first equation from the second to get x = 31; then y = 61 - 31 = 30.",
-          "C": "This is x, not y.",
-          "D": "This is the sum of both variables."
+          "A": "Adding gives 4x = 20, so x is 5 and y is 2, making 2x - y equal to 8.",
+          "B": "Doubling x without subtracting y leaves the second term unused.",
+          "C": "This is the difference x - y rather than the expression asked for.",
+          "D": "Adding x and y instead of doubling x gives this value."
         }
       },
       {
@@ -9743,98 +9743,98 @@
         "section": "math",
         "topic": "fractions & percents",
         "difficulty": "medium",
-        "context": "A backpack costs $200. A store discounts it by 10%. Before tax, how many dollars does it cost?",
+        "context": "A shirt marked 45 is discounted by 20%. What is the sale price?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "210"
+            "text": "36"
           },
           {
             "id": "B",
-            "text": "200"
+            "text": "25"
           },
           {
             "id": "C",
-            "text": "180"
+            "text": "9"
           },
           {
             "id": "D",
-            "text": "20"
+            "text": "54"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "A percentage discount is not a fixed number of dollars added.",
-          "B": "This is the original price before the discount.",
-          "C": "The remaining fraction is 0.9; multiply 200 by this fraction.",
-          "D": "This is the amount saved, not the amount paid."
+          "A": "Twenty per cent of 45 is 9, and 45 less 9 is 36.",
+          "B": "Subtracting 20 itself rather than 20 per cent of the price gives this.",
+          "C": "This is the discount rather than the price left after it.",
+          "D": "Adding the discount instead of subtracting it raises the price."
         }
       },
       {
         "id": "exp26-math-144",
         "section": "math",
         "topic": "functions",
-        "difficulty": "easy",
-        "context": "For f(t) = 30t² - 33, what is f(3)?",
+        "difficulty": "medium",
+        "context": "If f(x) = |x - 6|, what is the sum of all values of x for which f(x) = 4?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "57"
+            "text": "12"
           },
           {
             "id": "B",
-            "text": "303"
+            "text": "10"
           },
           {
             "id": "C",
-            "text": "8067"
+            "text": "2"
           },
           {
             "id": "D",
-            "text": "237"
+            "text": "8"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "The input must be squared.",
-          "B": "The constant is subtracted, not added.",
-          "C": "Only t is squared, not the coefficient.",
-          "D": "Square the input first: 30(9) - 33 = 237."
+          "A": "The two solutions are 10 and 2, and their sum is 12.",
+          "B": "This is only the larger of the two solutions the equation has.",
+          "C": "This is only the smaller of the two solutions the equation has.",
+          "D": "Doubling 4 measures the gap between the solutions, not their sum."
         }
       },
       {
         "id": "exp26-math-145",
         "section": "math",
         "topic": "coordinate geometry",
-        "difficulty": "easy",
-        "context": "What is the slope of the line through (8, 30) and (12, 162)?",
+        "difficulty": "medium",
+        "context": "What is the reflection of the point (3, -5) across the x-axis?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "33"
+            "text": "(3, 5)"
           },
           {
             "id": "B",
-            "text": "0.0303"
+            "text": "(-3, -5)"
           },
           {
             "id": "C",
-            "text": "132"
+            "text": "(-3, 5)"
           },
           {
             "id": "D",
-            "text": "34"
+            "text": "(-5, 3)"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Slope = (162 - 30) / (12 - 8) = 33.",
-          "B": "This reverses rise and run.",
-          "C": "This is the rise without division by the run.",
-          "D": "Use the difference of the y-coordinates divided by the difference of the x-coordinates."
+          "A": "Reflecting across the x-axis leaves x alone and flips the sign of y.",
+          "B": "This reflects across the y-axis, which flips the wrong coordinate.",
+          "C": "Flipping both signs reflects the point through the origin instead.",
+          "D": "Swapping the coordinates reflects across the line y = x."
         }
       },
       {
@@ -9842,164 +9842,164 @@
         "section": "math",
         "topic": "statistics",
         "difficulty": "medium",
-        "context": "Four numbers have mean 16. Three of the numbers are 13, 17, and 20. What is the fourth?",
+        "context": "In a class, 3 students scored 90 and 7 students scored 80. What is the mean score?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "18"
+            "text": "83"
           },
           {
             "id": "B",
-            "text": "14"
+            "text": "85"
           },
           {
             "id": "C",
-            "text": "16"
+            "text": "830"
           },
           {
             "id": "D",
-            "text": "64"
+            "text": "80"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The three given numbers are above their target total by 2, so subtract 2.",
-          "B": "All four sum to 64. The known sum is 50, leaving 14.",
-          "C": "The missing number need not equal the mean.",
-          "D": "This is the required total of all four."
+          "A": "The ten scores total 830, and 830 divided by 10 gives 83.",
+          "B": "Averaging the two scores ignores how many students earned each one.",
+          "C": "This is the total of all ten scores, before dividing by the count.",
+          "D": "This is the more common score, which the three higher scores pull above."
         }
       },
       {
         "id": "exp26-math-147",
         "section": "math",
         "topic": "probability",
-        "difficulty": "easy",
-        "context": "A bag holds 30 blue tiles and 33 red tiles. One tile is chosen uniformly at random. What is the probability of choosing blue?",
+        "difficulty": "medium",
+        "context": "A card is drawn from a standard 52-card deck. What is the chance it is a heart or a spade?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "30/33"
+            "text": "1/2"
           },
           {
             "id": "B",
-            "text": "1/63"
+            "text": "1/4"
           },
           {
             "id": "C",
-            "text": "30/63"
+            "text": "1/13"
           },
           {
             "id": "D",
-            "text": "33/63"
+            "text": "3/4"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The denominator must include both colors.",
-          "B": "There is more than one blue tile.",
-          "C": "There are 30 favorable outcomes among 63 equally likely tiles.",
-          "D": "This is the probability of red."
+          "A": "Two suits hold 26 of the 52 cards, which is exactly half the deck.",
+          "B": "This is the chance of a single named suit rather than two of them.",
+          "C": "This is the chance of a particular rank, which is a different question.",
+          "D": "This counts three of the four suits instead of the two named."
         }
       },
       {
         "id": "exp26-math-148",
         "section": "math",
         "topic": "area & volume",
-        "difficulty": "easy",
-        "context": "A rectangular storage box has interior dimensions 30 cm by 33 cm by 4 cm. What is its volume in cm³?",
+        "difficulty": "medium",
+        "context": "A square has a perimeter of 36. What is its area?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "990"
+            "text": "81"
           },
           {
             "id": "B",
-            "text": "134"
+            "text": "1296"
           },
           {
             "id": "C",
-            "text": "2484"
+            "text": "36"
           },
           {
             "id": "D",
-            "text": "3960"
+            "text": "324"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is the area of the base only.",
-          "B": "Adding edge lengths does not give volume.",
-          "C": "This is surface area in square centimeters.",
-          "D": "Multiply all three perpendicular dimensions: 30 × 33 × 4 = 3960."
+          "A": "Each side is 36 ÷ 4, or 9, and the area is 9 squared.",
+          "B": "This squares the perimeter rather than the length of one side.",
+          "C": "This is the perimeter again, which measures the edge, not the inside.",
+          "D": "This multiplies the perimeter by a side rather than a side by a side."
         }
       },
       {
         "id": "exp26-math-149",
         "section": "math",
         "topic": "triangles",
-        "difficulty": "easy",
-        "context": "A right triangle has legs 24 and 32. What is its hypotenuse?",
+        "difficulty": "medium",
+        "context": "A triangle has sides of 7, 24 and 25. What is its area?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "40"
+            "text": "84"
           },
           {
             "id": "B",
-            "text": "56"
+            "text": "300"
           },
           {
             "id": "C",
-            "text": "8"
+            "text": "168"
           },
           {
             "id": "D",
-            "text": "1600"
+            "text": "56"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "By the Pythagorean theorem, c² = 576 + 1024 = 1600; c = 40.",
-          "B": "The hypotenuse is not the sum of the legs.",
-          "C": "The difference of the legs is not the hypotenuse.",
-          "D": "This is c²; take its positive square root."
+          "A": "The 7 and 24 are the legs of a right angle, so the area is half of 168.",
+          "B": "Taking 24 and 25 as the legs uses the hypotenuse as though it were one.",
+          "C": "This is 7 × 24, with the halving that a triangle needs still to do.",
+          "D": "This is the perimeter of the triangle rather than the area inside it."
         }
       },
       {
         "id": "exp26-math-150",
         "section": "math",
         "topic": "quadratics",
-        "difficulty": "easy",
-        "context": "What is the larger solution of (x - 30)(x - 33) = 0?",
+        "difficulty": "medium",
+        "context": "For what value of x does x² + 6x + 9 equal 0?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "63"
+            "text": "-3"
           },
           {
             "id": "B",
-            "text": "33"
+            "text": "3"
           },
           {
             "id": "C",
-            "text": "30"
+            "text": "-9"
           },
           {
             "id": "D",
-            "text": "-33"
+            "text": "9"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The sum of the roots is not itself a root here.",
-          "B": "A product is zero when a factor is zero; the roots are 30 and 33, and 33 is larger.",
-          "C": "This is the smaller solution.",
-          "D": "Setting x minus a number to zero gives that positive number."
+          "A": "The expression is (x + 3) squared, which is zero only at x = -3.",
+          "B": "A positive 3 makes every term positive, so the total cannot be zero.",
+          "C": "This is the constant term with a sign attached, not a root.",
+          "D": "This is the constant term itself, which is not where the curve sits."
         }
       },
       {
@@ -10336,153 +10336,120 @@
         "id": "exp26-math-161",
         "section": "math",
         "topic": "linear equations",
-        "difficulty": "medium",
-        "context": "If 31x + 34 = 1026, what is x?",
+        "difficulty": "hard",
+        "context": "If 2(x - 3) + 5 = 3(x + 1) - 4, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "32"
+            "text": "0"
           },
           {
             "id": "B",
-            "text": "992"
+            "text": "2"
           },
           {
             "id": "C",
-            "text": "33"
+            "text": "-2"
           },
           {
             "id": "D",
-            "text": "-32"
+            "text": "1"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Subtract 34, then divide by 31: x = 32.",
-          "B": "992 is 31x; divide by the coefficient.",
-          "C": "Substitution gives 1057, not 1026.",
-          "D": "Subtracting the constant does not make the solution negative."
+          "A": "Both sides reduce to the same constant, leaving x equal to zero.",
+          "B": "This comes from dropping a sign while expanding one of the brackets.",
+          "C": "Moving a constant across without changing its sign gives this value.",
+          "D": "A slip of one in the arithmetic of the constants produces this answer."
         }
       },
       {
         "id": "exp26-math-162",
         "section": "math",
         "topic": "systems",
-        "difficulty": "medium",
-        "context": "The equations x + y = 63 and 2x + y = 95 hold. What is y?",
+        "difficulty": "hard",
+        "context": "If 5x + 2y = 11 and 3x + 4y = 15, what is the value of y?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-31"
+            "text": "3"
           },
           {
             "id": "B",
-            "text": "31"
+            "text": "1"
           },
           {
             "id": "C",
-            "text": "32"
+            "text": "-3"
           },
           {
             "id": "D",
-            "text": "63"
+            "text": "6"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Substitution with this negative value does not satisfy both equations.",
-          "B": "Subtract the first equation from the second to get x = 32; then y = 63 - 32 = 31.",
-          "C": "This is x, not y.",
-          "D": "This is the sum of both variables."
+          "A": "Doubling the first equation and subtracting gives 7x = 7, so y is 3.",
+          "B": "This is x, which the elimination finds first on the way to y.",
+          "C": "A sign error when substituting x back flips y to its negative.",
+          "D": "This is 2y rather than y, with the final halving still to do."
         }
       },
       {
         "id": "exp26-math-163",
         "section": "math",
         "topic": "fractions & percents",
-        "difficulty": "medium",
-        "context": "A backpack costs $220. A store discounts it by 20%. Before tax, how many dollars does it cost?",
+        "difficulty": "hard",
+        "context": "A price is raised by 25% and the new price is then cut by 20%. How does the final price compare with the starting price?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "240"
+            "text": "unchanged"
           },
           {
             "id": "B",
-            "text": "220"
+            "text": "5% higher"
           },
           {
             "id": "C",
-            "text": "176"
+            "text": "5% lower"
           },
           {
             "id": "D",
-            "text": "44"
+            "text": "45% higher"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "A percentage discount is not a fixed number of dollars added.",
-          "B": "This is the original price before the discount.",
-          "C": "The remaining fraction is 0.8; multiply 220 by this fraction.",
-          "D": "This is the amount saved, not the amount paid."
+          "A": "Multiplying by 1.25 and then by 0.8 returns exactly the original price.",
+          "B": "Subtracting the percentages ignores that the second acts on a larger price.",
+          "C": "The two percentages do not simply cancel by subtraction in either direction.",
+          "D": "Adding the two percentages treats successive changes as a single one."
         }
       },
       {
         "id": "exp26-math-164",
         "section": "math",
         "topic": "functions",
-        "difficulty": "easy",
-        "context": "For f(t) = 31t² - 34, what is f(3)?",
+        "difficulty": "hard",
+        "context": "If f(x) = 2x - 1 and g(x) = x², what is g(f(3))?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "59"
+            "text": "25"
           },
           {
             "id": "B",
-            "text": "313"
+            "text": "17"
           },
           {
             "id": "C",
-            "text": "8615"
-          },
-          {
-            "id": "D",
-            "text": "245"
-          }
-        ],
-        "answer": "D",
-        "why": {
-          "A": "The input must be squared.",
-          "B": "The constant is subtracted, not added.",
-          "C": "Only t is squared, not the coefficient.",
-          "D": "Square the input first: 31(9) - 34 = 245."
-        }
-      },
-      {
-        "id": "exp26-math-165",
-        "section": "math",
-        "topic": "coordinate geometry",
-        "difficulty": "easy",
-        "context": "What is the slope of the line through (9, 31) and (13, 167)?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "34"
-          },
-          {
-            "id": "B",
-            "text": "0.02941"
-          },
-          {
-            "id": "C",
-            "text": "136"
+            "text": "36"
           },
           {
             "id": "D",
@@ -10491,175 +10458,208 @@
         ],
         "answer": "A",
         "why": {
-          "A": "Slope = (167 - 31) / (13 - 9) = 34.",
-          "B": "This reverses rise and run.",
-          "C": "This is the rise without division by the run.",
-          "D": "Use the difference of the y-coordinates divided by the difference of the x-coordinates."
+          "A": "The inner f(3) comes to 5, and squaring 5 gives 25.",
+          "B": "This is f(g(3)), which applies the two functions in the wrong order.",
+          "C": "Squaring 2 × 3 forgets to subtract the 1 inside the first function.",
+          "D": "Subtracting the 1 after squaring rather than before gives this value."
+        }
+      },
+      {
+        "id": "exp26-math-165",
+        "section": "math",
+        "topic": "coordinate geometry",
+        "difficulty": "hard",
+        "context": "A line perpendicular to y = (2/3)x + 1 passes through (4, 0). What is its y-intercept?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "6"
+          },
+          {
+            "id": "B",
+            "text": "-6"
+          },
+          {
+            "id": "C",
+            "text": "-8/3"
+          },
+          {
+            "id": "D",
+            "text": "-3/2"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "The perpendicular slope is -3/2, so 0 = -6 + b makes b equal to 6.",
+          "B": "A sign error when isolating the intercept flips it to negative.",
+          "C": "Keeping the slope 2/3 instead of taking the perpendicular gives this.",
+          "D": "This is the perpendicular slope itself rather than the intercept."
         }
       },
       {
         "id": "exp26-math-166",
         "section": "math",
         "topic": "statistics",
-        "difficulty": "medium",
-        "context": "Four numbers have mean 17. Three of the numbers are 14, 18, and 21. What is the fourth?",
+        "difficulty": "hard",
+        "context": "The mean of 3, 7, 11 and x is 9. What is x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "19"
-          },
-          {
-            "id": "B",
             "text": "15"
           },
           {
+            "id": "B",
+            "text": "9"
+          },
+          {
             "id": "C",
-            "text": "17"
+            "text": "36"
           },
           {
             "id": "D",
-            "text": "68"
+            "text": "27"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The three given numbers are above their target total by 2, so subtract 2.",
-          "B": "All four sum to 68. The known sum is 53, leaving 15.",
-          "C": "The missing number need not equal the mean.",
-          "D": "This is the required total of all four."
+          "A": "Four values averaging 9 total 36, and the three given ones total 21.",
+          "B": "The mean itself is not the missing value unless every value matches it.",
+          "C": "This is the total the four values must reach, not the missing one.",
+          "D": "Subtracting the mean from that total leaves this rather than x."
         }
       },
       {
         "id": "exp26-math-167",
         "section": "math",
         "topic": "probability",
-        "difficulty": "easy",
-        "context": "A bag holds 31 blue tiles and 34 red tiles. One tile is chosen uniformly at random. What is the probability of choosing blue?",
+        "difficulty": "hard",
+        "context": "A bag holds 5 red and 3 white marbles. Two are drawn without replacement. What is the chance exactly one is red?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "31/34"
+            "text": "15/28"
           },
           {
             "id": "B",
-            "text": "1/65"
+            "text": "15/56"
           },
           {
             "id": "C",
-            "text": "31/65"
+            "text": "5/8"
           },
           {
             "id": "D",
-            "text": "34/65"
+            "text": "3/8"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The denominator must include both colors.",
-          "B": "There is more than one blue tile.",
-          "C": "There are 31 favorable outcomes among 65 equally likely tiles.",
-          "D": "This is the probability of red."
+          "A": "Red then white and white then red each give 15/56, and the two add.",
+          "B": "This counts only one of the two orders in which it can happen.",
+          "C": "This is the chance the first marble drawn is red, with one draw used.",
+          "D": "This is the chance the first marble drawn is white, which is one case."
         }
       },
       {
         "id": "exp26-math-168",
         "section": "math",
         "topic": "area & volume",
-        "difficulty": "easy",
-        "context": "A rectangular storage box has interior dimensions 31 cm by 34 cm by 4 cm. What is its volume in cm³?",
+        "difficulty": "hard",
+        "context": "A cube has a volume of 125. What is its surface area?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "1054"
+            "text": "150"
           },
           {
             "id": "B",
-            "text": "138"
+            "text": "750"
           },
           {
             "id": "C",
-            "text": "2628"
+            "text": "25"
           },
           {
             "id": "D",
-            "text": "4216"
+            "text": "100"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is the area of the base only.",
-          "B": "Adding edge lengths does not give volume.",
-          "C": "This is surface area in square centimeters.",
-          "D": "Multiply all three perpendicular dimensions: 31 × 34 × 4 = 4216."
+          "A": "The side is the cube root of 125, or 5, and six faces of 25 give 150.",
+          "B": "This multiplies the volume by six instead of the area of one face.",
+          "C": "This is the area of a single face, with five faces still uncounted.",
+          "D": "This counts only four of the six faces that a cube actually has."
         }
       },
       {
         "id": "exp26-math-169",
         "section": "math",
         "topic": "triangles",
-        "difficulty": "easy",
-        "context": "A right triangle has legs 27 and 36. What is its hypotenuse?",
+        "difficulty": "hard",
+        "context": "In a right triangle, one acute angle is twice the other. What is the smaller acute angle?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "45"
+            "text": "30°"
           },
           {
             "id": "B",
-            "text": "63"
+            "text": "60°"
           },
           {
             "id": "C",
-            "text": "9"
+            "text": "45°"
           },
           {
             "id": "D",
-            "text": "2025"
+            "text": "90°"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "By the Pythagorean theorem, c² = 729 + 1296 = 2025; c = 45.",
-          "B": "The hypotenuse is not the sum of the legs.",
-          "C": "The difference of the legs is not the hypotenuse.",
-          "D": "This is c²; take its positive square root."
+          "A": "The two acute angles total 90°, and three equal parts of 90 give 30.",
+          "B": "This is the larger acute angle, which is twice the one asked for.",
+          "C": "Equal acute angles would make neither of them twice the other.",
+          "D": "This is the right angle itself, not one of the two acute angles."
         }
       },
       {
         "id": "exp26-math-170",
         "section": "math",
         "topic": "quadratics",
-        "difficulty": "easy",
-        "context": "What is the larger solution of (x - 31)(x - 34) = 0?",
+        "difficulty": "hard",
+        "context": "The equation x² + kx + 16 = 0 has exactly one solution. What is a possible value of k?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "65"
+            "text": "8"
           },
           {
             "id": "B",
-            "text": "34"
+            "text": "4"
           },
           {
             "id": "C",
-            "text": "31"
+            "text": "16"
           },
           {
             "id": "D",
-            "text": "-34"
+            "text": "32"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The sum of the roots is not itself a root here.",
-          "B": "A product is zero when a factor is zero; the roots are 31 and 34, and 34 is larger.",
-          "C": "This is the smaller solution.",
-          "D": "Setting x minus a number to zero gives that positive number."
+          "A": "One solution needs k² to equal 4 × 16, so k is the square root of 64.",
+          "B": "This is the square root of the constant rather than of four times it.",
+          "C": "This is the constant term itself, which is not what k must equal.",
+          "D": "Doubling the constant overshoots the value the discriminant fixes."
         }
       },
       {
@@ -10996,330 +10996,330 @@
         "id": "exp26-math-181",
         "section": "math",
         "topic": "linear equations",
-        "difficulty": "medium",
-        "context": "If 32x + 35 = 1091, what is x?",
+        "difficulty": "hard",
+        "context": "If x ÷ 2 + x ÷ 3 = 10, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "33"
+            "text": "12"
           },
           {
             "id": "B",
-            "text": "1056"
+            "text": "50"
           },
           {
             "id": "C",
-            "text": "34"
+            "text": "20"
           },
           {
             "id": "D",
-            "text": "-33"
+            "text": "2"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Subtract 35, then divide by 32: x = 33.",
-          "B": "1056 is 32x; divide by the coefficient.",
-          "C": "Substitution gives 1123, not 1091.",
-          "D": "Subtracting the constant does not make the solution negative."
+          "A": "The two terms combine to five sixths of x, and 10 divided by that is 12.",
+          "B": "Adding the denominators to make a fifth of x is not how fractions combine.",
+          "C": "Solving only the first term leaves the second one out of the equation.",
+          "D": "Dividing 10 by the sum of the two denominators is a false shortcut."
         }
       },
       {
         "id": "exp26-math-182",
         "section": "math",
         "topic": "systems",
-        "difficulty": "medium",
-        "context": "The equations x + y = 65 and 2x + y = 98 hold. What is y?",
+        "difficulty": "hard",
+        "context": "How many solutions does the system 2x + 6y = 14 and x + 3y = 7 have?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-32"
+            "text": "infinitely many"
           },
           {
             "id": "B",
-            "text": "32"
+            "text": "exactly one solution"
           },
           {
             "id": "C",
-            "text": "33"
+            "text": "no solution at all"
           },
           {
             "id": "D",
-            "text": "65"
+            "text": "exactly two solutions"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Substitution with this negative value does not satisfy both equations.",
-          "B": "Subtract the first equation from the second to get x = 33; then y = 65 - 33 = 32.",
-          "C": "This is x, not y.",
-          "D": "This is the sum of both variables."
+          "A": "The first equation is twice the second, so the two describe one line.",
+          "B": "A single solution would need two lines that cross at one point.",
+          "C": "No solution would need parallel lines with different intercepts.",
+          "D": "Two straight lines cannot meet at exactly two separate points."
         }
       },
       {
         "id": "exp26-math-183",
         "section": "math",
         "topic": "fractions & percents",
-        "difficulty": "medium",
-        "context": "A backpack costs $240. A store discounts it by 25%. Before tax, how many dollars does it cost?",
+        "difficulty": "hard",
+        "context": "Two thirds of a class are girls, and three eighths of the girls play an instrument. What fraction of the class is that?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "265"
+            "text": "1/4"
           },
           {
             "id": "B",
-            "text": "240"
+            "text": "3/8"
           },
           {
             "id": "C",
-            "text": "180"
+            "text": "2/3"
           },
           {
             "id": "D",
-            "text": "60"
+            "text": "16/9"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "A percentage discount is not a fixed number of dollars added.",
-          "B": "This is the original price before the discount.",
-          "C": "The remaining fraction is 0.75; multiply 240 by this fraction.",
-          "D": "This is the amount saved, not the amount paid."
+          "A": "A fraction of a fraction multiplies, and 2/3 times 3/8 reduces to 1/4.",
+          "B": "This is the share of the girls rather than the share of the whole class.",
+          "C": "This is the share of the class that is girls, before the second fraction.",
+          "D": "Dividing one fraction by the other inverts the relationship between them."
         }
       },
       {
         "id": "exp26-math-184",
         "section": "math",
         "topic": "functions",
-        "difficulty": "easy",
-        "context": "For f(t) = 32t² - 35, what is f(3)?",
+        "difficulty": "hard",
+        "context": "For f(x) = (x + 2) ÷ (x - 3), which value of x is not in the domain?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "61"
+            "text": "3"
           },
           {
             "id": "B",
-            "text": "323"
+            "text": "-2"
           },
           {
             "id": "C",
-            "text": "9181"
+            "text": "0"
           },
           {
             "id": "D",
-            "text": "253"
+            "text": "2"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "The input must be squared.",
-          "B": "The constant is subtracted, not added.",
-          "C": "Only t is squared, not the coefficient.",
-          "D": "Square the input first: 32(9) - 35 = 253."
+          "A": "At 3 the denominator is zero, and division by zero is undefined.",
+          "B": "At -2 the numerator is zero, which makes the value zero rather than undefined.",
+          "C": "At 0 the function evaluates to a perfectly ordinary number.",
+          "D": "At 2 the denominator is -1, which causes no difficulty at all."
         }
       },
       {
         "id": "exp26-math-185",
         "section": "math",
         "topic": "coordinate geometry",
-        "difficulty": "easy",
-        "context": "What is the slope of the line through (10, 32) and (14, 172)?",
+        "difficulty": "hard",
+        "context": "Which point lies on the circle (x - 2)² + (y + 3)² = 25?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "35"
+            "text": "(2, 2)"
           },
           {
             "id": "B",
-            "text": "0.02857"
+            "text": "(7, 2)"
           },
           {
             "id": "C",
-            "text": "140"
+            "text": "(-2, -3)"
           },
           {
             "id": "D",
-            "text": "36"
+            "text": "(2, 3)"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Slope = (172 - 32) / (14 - 10) = 35.",
-          "B": "This reverses rise and run.",
-          "C": "This is the rise without division by the run.",
-          "D": "Use the difference of the y-coordinates divided by the difference of the x-coordinates."
+          "A": "The centre is at (2, -3), and this point sits exactly 5 units above it.",
+          "B": "This point is 5 across and 5 up from the centre, which is too far out.",
+          "C": "This point is 4 to the left of the centre, one unit short of the radius.",
+          "D": "This point is 6 units above the centre, one unit beyond the radius."
         }
       },
       {
         "id": "exp26-math-186",
         "section": "math",
         "topic": "statistics",
-        "difficulty": "medium",
-        "context": "Four numbers have mean 18. Three of the numbers are 15, 19, and 22. What is the fourth?",
+        "difficulty": "hard",
+        "context": "Six numbers have a mean of 10. Removing one of them leaves a mean of 11. What was removed?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "20"
+            "text": "5"
           },
           {
             "id": "B",
-            "text": "16"
+            "text": "1"
           },
           {
             "id": "C",
-            "text": "18"
+            "text": "11"
           },
           {
             "id": "D",
-            "text": "72"
+            "text": "55"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The three given numbers are above their target total by 2, so subtract 2.",
-          "B": "All four sum to 72. The known sum is 56, leaving 16.",
-          "C": "The missing number need not equal the mean.",
-          "D": "This is the required total of all four."
+          "A": "The six total 60 and the remaining five total 55, so 5 was taken out.",
+          "B": "This is the change in the mean, not the value that caused the change.",
+          "C": "The mean of what is left is not the number that was taken away.",
+          "D": "This is the total of the five numbers that remain after the removal."
         }
       },
       {
         "id": "exp26-math-187",
         "section": "math",
         "topic": "probability",
-        "difficulty": "easy",
-        "context": "A bag holds 32 blue tiles and 35 red tiles. One tile is chosen uniformly at random. What is the probability of choosing blue?",
+        "difficulty": "hard",
+        "context": "Rain has a chance of 0.4 on Saturday and 0.5 on Sunday, independently. What is the chance of neither?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "32/35"
+            "text": "0.3"
           },
           {
             "id": "B",
-            "text": "1/67"
+            "text": "0.1"
           },
           {
             "id": "C",
-            "text": "32/67"
+            "text": "0.9"
           },
           {
             "id": "D",
-            "text": "35/67"
+            "text": "0.2"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The denominator must include both colors.",
-          "B": "There is more than one blue tile.",
-          "C": "There are 32 favorable outcomes among 67 equally likely tiles.",
-          "D": "This is the probability of red."
+          "A": "A dry Saturday has chance 0.6 and a dry Sunday 0.5, and these multiply.",
+          "B": "Subtracting one chance from the other answers a different question.",
+          "C": "Adding the two chances gives the total of two separate likelihoods.",
+          "D": "This multiplies the two rain chances, which is the chance of both days."
         }
       },
       {
         "id": "exp26-math-188",
         "section": "math",
         "topic": "area & volume",
-        "difficulty": "easy",
-        "context": "A rectangular storage box has interior dimensions 32 cm by 35 cm by 4 cm. What is its volume in cm³?",
+        "difficulty": "hard",
+        "context": "A triangle of area 24 has a base of 8. A second triangle has the same height and a base of 12. What is its area?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "1120"
+            "text": "36"
           },
           {
             "id": "B",
-            "text": "142"
+            "text": "48"
           },
           {
             "id": "C",
-            "text": "2776"
+            "text": "30"
           },
           {
             "id": "D",
-            "text": "4480"
+            "text": "18"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is the area of the base only.",
-          "B": "Adding edge lengths does not give volume.",
-          "C": "This is surface area in square centimeters.",
-          "D": "Multiply all three perpendicular dimensions: 32 × 35 × 4 = 4480."
+          "A": "The shared height is 6, so the second area is half of 12 times 6.",
+          "B": "Doubling the first area assumes the base doubled, and it grew by half.",
+          "C": "Adding the height to the first area combines two different measures.",
+          "D": "A wider base on the same height must give a larger area, not a smaller."
         }
       },
       {
         "id": "exp26-math-189",
         "section": "math",
         "topic": "triangles",
-        "difficulty": "easy",
-        "context": "A right triangle has legs 30 and 40. What is its hypotenuse?",
+        "difficulty": "hard",
+        "context": "A triangle has sides of 9, 12 and 15. What is the height drawn to the longest side?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "50"
+            "text": "7.2"
           },
           {
             "id": "B",
-            "text": "70"
+            "text": "7.5"
           },
           {
             "id": "C",
-            "text": "10"
+            "text": "9"
           },
           {
             "id": "D",
-            "text": "2500"
+            "text": "54"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "By the Pythagorean theorem, c² = 900 + 1600 = 2500; c = 50.",
-          "B": "The hypotenuse is not the sum of the legs.",
-          "C": "The difference of the legs is not the hypotenuse.",
-          "D": "This is c²; take its positive square root."
+          "A": "The area is 54, and a base of 15 with area 54 needs a height of 7.2.",
+          "B": "Halving the longest side gives a length that no height here matches.",
+          "C": "This is one of the legs, which is the height only to the other leg.",
+          "D": "This is the area of the triangle rather than a height inside it."
         }
       },
       {
         "id": "exp26-math-190",
         "section": "math",
         "topic": "quadratics",
-        "difficulty": "easy",
-        "context": "What is the larger solution of (x - 32)(x - 35) = 0?",
+        "difficulty": "hard",
+        "context": "A ball rises and falls with height h = -16t² + 48t. After how many seconds does it land?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "67"
+            "text": "3"
           },
           {
             "id": "B",
-            "text": "35"
+            "text": "1.5"
           },
           {
             "id": "C",
-            "text": "32"
+            "text": "48"
           },
           {
             "id": "D",
-            "text": "-35"
+            "text": "16"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The sum of the roots is not itself a root here.",
-          "B": "A product is zero when a factor is zero; the roots are 32 and 35, and 35 is larger.",
-          "C": "This is the smaller solution.",
-          "D": "Setting x minus a number to zero gives that positive number."
+          "A": "Setting h to zero gives t(48 - 16t), so the ball lands at t = 3.",
+          "B": "This is when the ball is highest, which is halfway through the flight.",
+          "C": "This is the coefficient of t rather than a number of seconds.",
+          "D": "This is the coefficient of t², which sets the pull of gravity."
         }
       },
       {
@@ -11656,330 +11656,330 @@
         "id": "exp26-math-201",
         "section": "math",
         "topic": "linear equations",
-        "difficulty": "medium",
-        "context": "If 33x + 36 = 1158, what is x?",
+        "difficulty": "hard",
+        "context": "If 5 - 2(x + 4) = 3x - 8, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "34"
+            "text": "1"
           },
           {
             "id": "B",
-            "text": "1122"
+            "text": "5"
           },
           {
             "id": "C",
-            "text": "35"
+            "text": "-1"
           },
           {
             "id": "D",
-            "text": "-34"
+            "text": "3"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Subtract 36, then divide by 33: x = 34.",
-          "B": "1122 is 33x; divide by the coefficient.",
-          "C": "Substitution gives 1191, not 1158.",
-          "D": "Subtracting the constant does not make the solution negative."
+          "A": "Expanding gives -2x - 3 on the left, and collecting leaves 5x = 5.",
+          "B": "Failing to carry the minus sign into the bracket produces this value.",
+          "C": "A sign error on the final division flips the answer to its negative.",
+          "D": "Adding the constants rather than subtracting them gives this result."
         }
       },
       {
         "id": "exp26-math-202",
         "section": "math",
         "topic": "systems",
-        "difficulty": "medium",
-        "context": "The equations x + y = 67 and 2x + y = 101 hold. What is y?",
+        "difficulty": "hard",
+        "context": "For what value of k does the system 3x + ky = 12 and 6x + 8y = 5 have no solution?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-33"
+            "text": "4"
           },
           {
             "id": "B",
-            "text": "33"
+            "text": "2"
           },
           {
             "id": "C",
-            "text": "34"
+            "text": "16"
           },
           {
             "id": "D",
-            "text": "67"
+            "text": "-4"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Substitution with this negative value does not satisfy both equations.",
-          "B": "Subtract the first equation from the second to get x = 34; then y = 67 - 34 = 33.",
-          "C": "This is x, not y.",
-          "D": "This is the sum of both variables."
+          "A": "Parallel lines need matching ratios, and 6 ÷ 3 is 2, so k is 8 ÷ 2.",
+          "B": "This is the ratio between the two equations rather than the value of k.",
+          "C": "Multiplying 8 by 2 instead of dividing it reverses the ratio.",
+          "D": "A negative k tilts the second line the other way and they still meet."
         }
       },
       {
         "id": "exp26-math-203",
         "section": "math",
         "topic": "fractions & percents",
-        "difficulty": "medium",
-        "context": "A backpack costs $260. A store discounts it by 30%. Before tax, how many dollars does it cost?",
+        "difficulty": "hard",
+        "context": "After a 15% tax is added, a bill comes to 69. What was the bill before tax?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "290"
+            "text": "60"
           },
           {
             "id": "B",
-            "text": "260"
+            "text": "58.65"
           },
           {
             "id": "C",
-            "text": "182"
+            "text": "54"
           },
           {
             "id": "D",
-            "text": "78"
+            "text": "79.35"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "A percentage discount is not a fixed number of dollars added.",
-          "B": "This is the original price before the discount.",
-          "C": "The remaining fraction is 0.7; multiply 260 by this fraction.",
-          "D": "This is the amount saved, not the amount paid."
+          "A": "The total is 1.15 times the original, so dividing 69 by 1.15 gives 60.",
+          "B": "Taking 15 per cent off 69 removes a share of the wrong quantity.",
+          "C": "Subtracting 15 itself treats the tax as a fixed amount rather than a rate.",
+          "D": "Adding a further 15 per cent moves away from the pre-tax figure."
         }
       },
       {
         "id": "exp26-math-204",
         "section": "math",
         "topic": "functions",
-        "difficulty": "easy",
-        "context": "For f(t) = 33t² - 36, what is f(3)?",
+        "difficulty": "hard",
+        "context": "If f(x) = x² and f(a) = f(a + 6), what is a?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "63"
+            "text": "-3"
           },
           {
             "id": "B",
-            "text": "333"
+            "text": "3"
           },
           {
             "id": "C",
-            "text": "9765"
+            "text": "-6"
           },
           {
             "id": "D",
-            "text": "261"
+            "text": "0"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "The input must be squared.",
-          "B": "The constant is subtracted, not added.",
-          "C": "Only t is squared, not the coefficient.",
-          "D": "Square the input first: 33(9) - 36 = 261."
+          "A": "Expanding gives 12a + 36 = 0, so a is -3, midway between a and a + 6.",
+          "B": "A sign error on the final division turns -3 into its positive.",
+          "C": "This is the shift itself rather than the value that balances it.",
+          "D": "At zero the two inputs are 0 and 6, whose squares are not equal."
         }
       },
       {
         "id": "exp26-math-205",
         "section": "math",
         "topic": "coordinate geometry",
-        "difficulty": "easy",
-        "context": "What is the slope of the line through (11, 33) and (15, 177)?",
+        "difficulty": "hard",
+        "context": "What is the area of the triangle with vertices (1, 1), (5, 1) and (4, 6)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "36"
+            "text": "10"
           },
           {
             "id": "B",
-            "text": "0.02778"
+            "text": "20"
           },
           {
             "id": "C",
-            "text": "144"
+            "text": "12"
           },
           {
             "id": "D",
-            "text": "37"
+            "text": "5"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Slope = (177 - 33) / (15 - 11) = 36.",
-          "B": "This reverses rise and run.",
-          "C": "This is the rise without division by the run.",
-          "D": "Use the difference of the y-coordinates divided by the difference of the x-coordinates."
+          "A": "The base along y = 1 is 4 and the height is 5, so the area is half of 20.",
+          "B": "This is base times height, with the halving still to be done.",
+          "C": "Using 6 as the height forgets that the base sits one unit above the axis.",
+          "D": "This is the height alone, with the base and the halving both unused."
         }
       },
       {
         "id": "exp26-math-206",
         "section": "math",
         "topic": "statistics",
-        "difficulty": "medium",
-        "context": "Four numbers have mean 19. Three of the numbers are 16, 20, and 23. What is the fourth?",
+        "difficulty": "hard",
+        "context": "Five numbers have a mean of 9. Four of them are 3, 8, 8 and 15. What is the fifth?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "21"
+            "text": "11"
           },
           {
             "id": "B",
-            "text": "17"
+            "text": "9"
           },
           {
             "id": "C",
-            "text": "19"
+            "text": "8"
           },
           {
             "id": "D",
-            "text": "76"
+            "text": "45"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The three given numbers are above their target total by 2, so subtract 2.",
-          "B": "All four sum to 76. The known sum is 59, leaving 17.",
-          "C": "The missing number need not equal the mean.",
-          "D": "This is the required total of all four."
+          "A": "The five must total 45, and the four given ones already total 34.",
+          "B": "The mean is not the missing value unless the others all match it.",
+          "C": "This is the value appearing twice in the list, not the one missing.",
+          "D": "This is the total the five must reach rather than the fifth value."
         }
       },
       {
         "id": "exp26-math-207",
         "section": "math",
         "topic": "probability",
-        "difficulty": "easy",
-        "context": "A bag holds 33 blue tiles and 36 red tiles. One tile is chosen uniformly at random. What is the probability of choosing blue?",
+        "difficulty": "hard",
+        "context": "A committee of 2 is chosen at random from 3 men and 2 women. What is the chance both are women?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "33/36"
+            "text": "1/10"
           },
           {
             "id": "B",
-            "text": "1/69"
+            "text": "2/5"
           },
           {
             "id": "C",
-            "text": "33/69"
+            "text": "1/5"
           },
           {
             "id": "D",
-            "text": "36/69"
+            "text": "4/25"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The denominator must include both colors.",
-          "B": "There is more than one blue tile.",
-          "C": "There are 33 favorable outcomes among 69 equally likely tiles.",
-          "D": "This is the probability of red."
+          "A": "There are ten possible pairs and only one of them is the two women.",
+          "B": "This is the chance the first person chosen is a woman, not the pair.",
+          "C": "Halving that single-person chance is not how a second draw works.",
+          "D": "This treats the first choice as replaced before the second is made."
         }
       },
       {
         "id": "exp26-math-208",
         "section": "math",
         "topic": "area & volume",
-        "difficulty": "easy",
-        "context": "A rectangular storage box has interior dimensions 33 cm by 36 cm by 4 cm. What is its volume in cm³?",
+        "difficulty": "hard",
+        "context": "A rectangular tank 4 by 5 by 3 units is half full. How many cubic units of water is that?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "1188"
+            "text": "30"
           },
           {
             "id": "B",
-            "text": "146"
+            "text": "60"
           },
           {
             "id": "C",
-            "text": "2928"
+            "text": "20"
           },
           {
             "id": "D",
-            "text": "4752"
+            "text": "10"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is the area of the base only.",
-          "B": "Adding edge lengths does not give volume.",
-          "C": "This is surface area in square centimeters.",
-          "D": "Multiply all three perpendicular dimensions: 33 × 36 × 4 = 4752."
+          "A": "The tank holds 60 cubic units in all, and half of that is 30.",
+          "B": "This is the full capacity, with the halving still to be applied.",
+          "C": "This is the area of the base rather than a volume of water.",
+          "D": "This halves the base area, which is not a measure of the tank at all."
         }
       },
       {
         "id": "exp26-math-209",
         "section": "math",
         "topic": "triangles",
-        "difficulty": "easy",
-        "context": "A right triangle has legs 33 and 44. What is its hypotenuse?",
+        "difficulty": "hard",
+        "context": "Two sides of a triangle measure 7 and 11. Which length could not be the third side?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "55"
+            "text": "4"
           },
           {
             "id": "B",
-            "text": "77"
+            "text": "5"
           },
           {
             "id": "C",
-            "text": "11"
+            "text": "10"
           },
           {
             "id": "D",
-            "text": "3025"
+            "text": "17"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "By the Pythagorean theorem, c² = 1089 + 1936 = 3025; c = 55.",
-          "B": "The hypotenuse is not the sum of the legs.",
-          "C": "The difference of the legs is not the hypotenuse.",
-          "D": "This is c²; take its positive square root."
+          "A": "Two sides must together exceed the third, and 7 plus 4 only equals 11.",
+          "B": "With 5 the two shorter sides total 12, which is more than 11.",
+          "C": "Ten sits comfortably between the difference and the sum of the two sides.",
+          "D": "Seventeen is below the sum of 18, so the three sides still close up."
         }
       },
       {
         "id": "exp26-math-210",
         "section": "math",
         "topic": "quadratics",
-        "difficulty": "easy",
-        "context": "What is the larger solution of (x - 33)(x - 36) = 0?",
+        "difficulty": "hard",
+        "context": "What is the sum of the roots of x² - 7x + 10 = 0?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "69"
+            "text": "7"
           },
           {
             "id": "B",
-            "text": "36"
+            "text": "10"
           },
           {
             "id": "C",
-            "text": "33"
+            "text": "-7"
           },
           {
             "id": "D",
-            "text": "-36"
+            "text": "5"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The sum of the roots is not itself a root here.",
-          "B": "A product is zero when a factor is zero; the roots are 33 and 36, and 36 is larger.",
-          "C": "This is the smaller solution.",
-          "D": "Setting x minus a number to zero gives that positive number."
+          "A": "The roots are 2 and 5, and their sum is the 7 the middle term shows.",
+          "B": "This is the product of the roots rather than the total of them.",
+          "C": "The sum takes the opposite sign of the middle coefficient, so it is positive.",
+          "D": "This is the larger of the two roots, with the smaller not yet added."
         }
       },
       {
@@ -12316,173 +12316,41 @@
         "id": "exp26-math-221",
         "section": "math",
         "topic": "linear equations",
-        "difficulty": "medium",
-        "context": "If 34x + 37 = 1227, what is x?",
+        "difficulty": "hard",
+        "context": "If (3x - 1) ÷ 4 = (x + 5) ÷ 2, what is the value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "35"
+            "text": "11"
           },
           {
             "id": "B",
-            "text": "1190"
+            "text": "3"
           },
           {
             "id": "C",
-            "text": "36"
+            "text": "9"
           },
           {
             "id": "D",
-            "text": "-35"
+            "text": "21"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Subtract 37, then divide by 34: x = 35.",
-          "B": "1190 is 34x; divide by the coefficient.",
-          "C": "Substitution gives 1261, not 1227.",
-          "D": "Subtracting the constant does not make the solution negative."
+          "A": "Multiplying through by 4 gives 3x - 1 = 2x + 10, so x is 11.",
+          "B": "Multiplying only one side by 4 leaves the equation unbalanced.",
+          "C": "Forgetting to double the 5 when clearing the denominators gives this.",
+          "D": "Adding the two numerators rather than clearing the fractions gives this."
         }
       },
       {
         "id": "exp26-math-222",
         "section": "math",
         "topic": "systems",
-        "difficulty": "medium",
-        "context": "The equations x + y = 69 and 2x + y = 104 hold. What is y?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "-34"
-          },
-          {
-            "id": "B",
-            "text": "34"
-          },
-          {
-            "id": "C",
-            "text": "35"
-          },
-          {
-            "id": "D",
-            "text": "69"
-          }
-        ],
-        "answer": "B",
-        "why": {
-          "A": "Substitution with this negative value does not satisfy both equations.",
-          "B": "Subtract the first equation from the second to get x = 35; then y = 69 - 35 = 34.",
-          "C": "This is x, not y.",
-          "D": "This is the sum of both variables."
-        }
-      },
-      {
-        "id": "exp26-math-223",
-        "section": "math",
-        "topic": "fractions & percents",
-        "difficulty": "medium",
-        "context": "A backpack costs $280. A store discounts it by 10%. Before tax, how many dollars does it cost?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "290"
-          },
-          {
-            "id": "B",
-            "text": "280"
-          },
-          {
-            "id": "C",
-            "text": "252"
-          },
-          {
-            "id": "D",
-            "text": "28"
-          }
-        ],
-        "answer": "C",
-        "why": {
-          "A": "A percentage discount is not a fixed number of dollars added.",
-          "B": "This is the original price before the discount.",
-          "C": "The remaining fraction is 0.9; multiply 280 by this fraction.",
-          "D": "This is the amount saved, not the amount paid."
-        }
-      },
-      {
-        "id": "exp26-math-224",
-        "section": "math",
-        "topic": "functions",
-        "difficulty": "easy",
-        "context": "For f(t) = 34t² - 37, what is f(3)?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "65"
-          },
-          {
-            "id": "B",
-            "text": "343"
-          },
-          {
-            "id": "C",
-            "text": "10367"
-          },
-          {
-            "id": "D",
-            "text": "269"
-          }
-        ],
-        "answer": "D",
-        "why": {
-          "A": "The input must be squared.",
-          "B": "The constant is subtracted, not added.",
-          "C": "Only t is squared, not the coefficient.",
-          "D": "Square the input first: 34(9) - 37 = 269."
-        }
-      },
-      {
-        "id": "exp26-math-225",
-        "section": "math",
-        "topic": "coordinate geometry",
-        "difficulty": "easy",
-        "context": "What is the slope of the line through (12, 34) and (16, 182)?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "37"
-          },
-          {
-            "id": "B",
-            "text": "0.02703"
-          },
-          {
-            "id": "C",
-            "text": "148"
-          },
-          {
-            "id": "D",
-            "text": "38"
-          }
-        ],
-        "answer": "A",
-        "why": {
-          "A": "Slope = (182 - 34) / (16 - 12) = 37.",
-          "B": "This reverses rise and run.",
-          "C": "This is the rise without division by the run.",
-          "D": "Use the difference of the y-coordinates divided by the difference of the x-coordinates."
-        }
-      },
-      {
-        "id": "exp26-math-226",
-        "section": "math",
-        "topic": "statistics",
-        "difficulty": "medium",
-        "context": "Four numbers have mean 20. Three of the numbers are 17, 21, and 24. What is the fourth?",
+        "difficulty": "hard",
+        "context": "Two numbers sum to 31. Three times the smaller exceeds the larger by 5. What is the larger number?",
         "practiceOnly": true,
         "choices": [
           {
@@ -12491,155 +12359,287 @@
           },
           {
             "id": "B",
-            "text": "18"
+            "text": "9"
           },
           {
             "id": "C",
-            "text": "20"
+            "text": "13"
           },
           {
             "id": "D",
-            "text": "80"
+            "text": "26"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The three given numbers are above their target total by 2, so subtract 2.",
-          "B": "All four sum to 80. The known sum is 62, leaving 18.",
-          "C": "The missing number need not equal the mean.",
-          "D": "This is the required total of all four."
+          "A": "Writing the larger as 31 - s gives 4s = 36, so s is 9 and the larger is 22.",
+          "B": "This is the smaller number, which the working finds first.",
+          "C": "This is the difference between the two numbers rather than the larger one.",
+          "D": "Subtracting 5 from the total rather than solving the system gives this."
+        }
+      },
+      {
+        "id": "exp26-math-223",
+        "section": "math",
+        "topic": "fractions & percents",
+        "difficulty": "hard",
+        "context": "Ten litres of water are added to 30 litres of a mixture that is 40% acid. What per cent acid is the result?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "30%"
+          },
+          {
+            "id": "B",
+            "text": "40%"
+          },
+          {
+            "id": "C",
+            "text": "25%"
+          },
+          {
+            "id": "D",
+            "text": "33%"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "The 12 litres of acid are unchanged, and 12 out of 40 litres is 30 per cent.",
+          "B": "The concentration cannot stay the same once the volume has grown.",
+          "C": "Dividing by 48 rather than by the new total of 40 litres gives this.",
+          "D": "Subtracting a tenth from 40 per cent is not how a dilution works."
+        }
+      },
+      {
+        "id": "exp26-math-224",
+        "section": "math",
+        "topic": "functions",
+        "difficulty": "hard",
+        "context": "A linear function has f(1) = 4 and f(5) = 16. What is f(9)?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "28"
+          },
+          {
+            "id": "B",
+            "text": "20"
+          },
+          {
+            "id": "C",
+            "text": "32"
+          },
+          {
+            "id": "D",
+            "text": "24"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "The slope is 3 per unit, so four more units past 5 adds 12 to 16.",
+          "B": "Adding 4 assumes the function climbs by 1 per unit rather than 3.",
+          "C": "Doubling 16 treats the function as though it were proportional.",
+          "D": "Taking the slope as 2 rather than 3 adds only 8 to the value at 5."
+        }
+      },
+      {
+        "id": "exp26-math-225",
+        "section": "math",
+        "topic": "coordinate geometry",
+        "difficulty": "hard",
+        "context": "The line through (1, 5) and (k, 11) has slope 2. What is k?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "4"
+          },
+          {
+            "id": "B",
+            "text": "7"
+          },
+          {
+            "id": "C",
+            "text": "3"
+          },
+          {
+            "id": "D",
+            "text": "2"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "The rise of 6 divided by the run gives 2, so the run is 3 and k is 4.",
+          "B": "Adding the rise to the starting x ignores the slope entirely.",
+          "C": "This is the run rather than the x coordinate it leads to.",
+          "D": "This is the slope itself rather than the unknown coordinate."
+        }
+      },
+      {
+        "id": "exp26-math-226",
+        "section": "math",
+        "topic": "statistics",
+        "difficulty": "hard",
+        "context": "Every number in a list of seven values is increased by 4. What happens to the mean and the range?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "the mean rises by 4 and the range stays the same"
+          },
+          {
+            "id": "B",
+            "text": "both the mean and the range rise by 4"
+          },
+          {
+            "id": "C",
+            "text": "the mean stays the same and the range rises by 4"
+          },
+          {
+            "id": "D",
+            "text": "both the mean and the range stay the same"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "Shifting every value shifts the average, but the gaps between them hold.",
+          "B": "The range measures a difference, and adding 4 to both ends cancels out.",
+          "C": "A mean cannot stay put when every value it averages has moved up.",
+          "D": "The mean is the one of the two that moves when the whole list shifts."
         }
       },
       {
         "id": "exp26-math-227",
         "section": "math",
         "topic": "probability",
-        "difficulty": "easy",
-        "context": "A bag holds 34 blue tiles and 37 red tiles. One tile is chosen uniformly at random. What is the probability of choosing blue?",
+        "difficulty": "hard",
+        "context": "A spinner lands on red with probability 1/3. What is the chance of red exactly once in two spins?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "34/37"
+            "text": "4/9"
           },
           {
             "id": "B",
-            "text": "1/71"
+            "text": "2/9"
           },
           {
             "id": "C",
-            "text": "34/71"
+            "text": "1/9"
           },
           {
             "id": "D",
-            "text": "37/71"
+            "text": "2/3"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The denominator must include both colors.",
-          "B": "There is more than one blue tile.",
-          "C": "There are 34 favorable outcomes among 71 equally likely tiles.",
-          "D": "This is the probability of red."
+          "A": "Red then other and other then red each give 2/9, and the two add.",
+          "B": "This counts only one of the two orders the single red can come in.",
+          "C": "This is the chance of red on both spins rather than on exactly one.",
+          "D": "Adding the two single-spin chances double counts the case of two reds."
         }
       },
       {
         "id": "exp26-math-228",
         "section": "math",
         "topic": "area & volume",
-        "difficulty": "easy",
-        "context": "A rectangular storage box has interior dimensions 34 cm by 37 cm by 4 cm. What is its volume in cm³?",
+        "difficulty": "hard",
+        "context": "The radius of a circle is doubled. By what factor does its area change?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "1258"
+            "text": "4"
           },
           {
             "id": "B",
-            "text": "150"
+            "text": "2"
           },
           {
             "id": "C",
-            "text": "3084"
+            "text": "8"
           },
           {
             "id": "D",
-            "text": "5032"
+            "text": "16"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is the area of the base only.",
-          "B": "Adding edge lengths does not give volume.",
-          "C": "This is surface area in square centimeters.",
-          "D": "Multiply all three perpendicular dimensions: 34 × 37 × 4 = 5032."
+          "A": "Area depends on the square of the radius, so doubling it multiplies by 4.",
+          "B": "The radius doubles, but the area grows faster than the radius does.",
+          "C": "Cubing the factor would apply to a volume rather than to an area.",
+          "D": "This squares the factor twice over, which overshoots the growth."
         }
       },
       {
         "id": "exp26-math-229",
         "section": "math",
         "topic": "triangles",
-        "difficulty": "easy",
-        "context": "A right triangle has legs 36 and 48. What is its hypotenuse?",
+        "difficulty": "hard",
+        "context": "In a 30-60-90 triangle, the shortest side is 5. What is the hypotenuse?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "60"
+            "text": "10"
           },
           {
             "id": "B",
-            "text": "84"
+            "text": "5√3"
           },
           {
             "id": "C",
-            "text": "12"
+            "text": "15"
           },
           {
             "id": "D",
-            "text": "3600"
+            "text": "7.5"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "By the Pythagorean theorem, c² = 1296 + 2304 = 3600; c = 60.",
-          "B": "The hypotenuse is not the sum of the legs.",
-          "C": "The difference of the legs is not the hypotenuse.",
-          "D": "This is c²; take its positive square root."
+          "A": "In this triangle the hypotenuse is always twice the shortest side.",
+          "B": "This is the middle side, which sits opposite the 60° angle.",
+          "C": "Tripling the shortest side overshoots the ratio these angles fix.",
+          "D": "Adding half the short side is not the relation this triangle holds."
         }
       },
       {
         "id": "exp26-math-230",
         "section": "math",
         "topic": "quadratics",
-        "difficulty": "easy",
-        "context": "What is the larger solution of (x - 34)(x - 37) = 0?",
+        "difficulty": "hard",
+        "context": "The parabola y = x² - 4x + c touches the x-axis at exactly one point. What is c?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "71"
+            "text": "4"
           },
           {
             "id": "B",
-            "text": "37"
+            "text": "-4"
           },
           {
             "id": "C",
-            "text": "34"
+            "text": "2"
           },
           {
             "id": "D",
-            "text": "-37"
+            "text": "16"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The sum of the roots is not itself a root here.",
-          "B": "A product is zero when a factor is zero; the roots are 34 and 37, and 37 is larger.",
-          "C": "This is the smaller solution.",
-          "D": "Setting x minus a number to zero gives that positive number."
+          "A": "A single touch needs 16 - 4c to be zero, which puts c at 4.",
+          "B": "A negative constant lowers the curve so that it crosses twice.",
+          "C": "This is half the coefficient of x rather than the value c must take.",
+          "D": "This is the square of that coefficient, before dividing by four."
         }
       },
       {
