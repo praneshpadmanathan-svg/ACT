@@ -15079,5 +15079,203 @@
       "C": "The flask was sealed and the passage specifies that yeast works here without oxygen.",
       "D": "Correct — fermentation is enzyme-driven, and above an optimum an enzyme denatures and loses the shape its active site depends on."
     }
+  },
+  {
+    "id": "s400",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "easy",
+    "passage": "sp28",
+    "context": "In still air, at what rate did water evaporate from a tray at 20 °C?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "42 mL/h"
+      },
+      {
+        "id": "B",
+        "text": "20 mL/h"
+      },
+      {
+        "id": "C",
+        "text": "29 mL/h"
+      },
+      {
+        "id": "D",
+        "text": "60 mL/h"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Table 3 gives 42 mL/h on the row for water held at 20 degrees.",
+      "B": "This is the rate at 10 degrees, the coldest water in the table.",
+      "C": "This is the rate at 15 degrees, the row above the one asked for.",
+      "D": "This is the rate at 25 degrees, the warmest water in the table."
+    }
+  },
+  {
+    "id": "s401",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "easy",
+    "passage": "sp28",
+    "context": "In Experiment 1, as wind speed rose from 0.0 to 4.0 m/s, the depth lost each day:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "rose at every step."
+      },
+      {
+        "id": "B",
+        "text": "fell at every step."
+      },
+      {
+        "id": "C",
+        "text": "stayed at 2.0 mm/day."
+      },
+      {
+        "id": "D",
+        "text": "rose and then fell back."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "The depths run 2.0, 3.0, 4.0 and 8.0 mm/day as the wind picks up.",
+      "B": "The column climbs from the top of the table to the bottom of it.",
+      "C": "That is the still-air trial, and the other three all lose more.",
+      "D": "No trial in the table loses less water than the trial above it."
+    }
+  },
+  {
+    "id": "s402",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "easy",
+    "passage": "sp30",
+    "context": "In oil A at 20 degrees Celsius, how fast did the 3.0 mm sphere fall?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.76 m/s"
+      },
+      {
+        "id": "B",
+        "text": "0.34 m/s"
+      },
+      {
+        "id": "C",
+        "text": "1.36 m/s"
+      },
+      {
+        "id": "D",
+        "text": "0.085 m/s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Table 1 pairs a radius of 3.0 mm with a velocity of 0.76 m/s.",
+      "B": "That is the 2.0 mm sphere, one row above the one asked about.",
+      "C": "That is the 4.0 mm sphere, one row below the one asked about.",
+      "D": "That is the smallest sphere in the table, of radius 1.0 mm."
+    }
+  },
+  {
+    "id": "s403",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "easy",
+    "passage": "sp35",
+    "context": "Across the months listed in Table 2, the mean discharge of the river:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "fell from month to month."
+      },
+      {
+        "id": "B",
+        "text": "rose from month to month."
+      },
+      {
+        "id": "C",
+        "text": "held steady near 20 m cubed/s."
+      },
+      {
+        "id": "D",
+        "text": "fell and then rose again."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "January is the highest at 41.0, and every month after it is lower.",
+      "B": "The column falls from 41.0 down to 3.8 rather than climbing at all.",
+      "C": "Twenty is the April figure alone; the rest run from 3.8 up to 41.0.",
+      "D": "No month in the table turns the figure back upward again."
+    }
+  },
+  {
+    "id": "s404",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "easy",
+    "passage": "sp38",
+    "context": "At 60 km/h with a reaction time of 1.0 s, how far did the car travel before the brakes acted?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "16.7 m"
+      },
+      {
+        "id": "B",
+        "text": "20.4 m"
+      },
+      {
+        "id": "C",
+        "text": "11.1 m"
+      },
+      {
+        "id": "D",
+        "text": "22.2 m"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Table 3 pairs 60 km/h with a reaction distance of 16.7 metres.",
+      "B": "That is the braking distance at 60 km/h, which Table 1 gives.",
+      "C": "That is the reaction distance at 40 km/h, one row further up.",
+      "D": "That is the reaction distance at 80 km/h, one row further down."
+    }
+  },
+  {
+    "id": "s405",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "easy",
+    "passage": "sp19",
+    "context": "In Study 3, which treatment let the cuttings lose water most slowly?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Both surfaces coated"
+      },
+      {
+        "id": "B",
+        "text": "Lower surfaces coated"
+      },
+      {
+        "id": "C",
+        "text": "Upper surfaces coated"
+      },
+      {
+        "id": "D",
+        "text": "Untreated cuttings"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Coating both surfaces loses 0.20 g, the smallest figure in Table 3.",
+      "B": "Coating the lower surfaces alone still loses more than twice that.",
+      "C": "Coating the upper surfaces alone barely changes the loss at all.",
+      "D": "The untreated cuttings lose 1.40 g, the most of any treatment here."
+    }
   }
 ]
