@@ -13891,5 +13891,1193 @@
       "C": "The passage reports the nodule band as a feature of the down, not as a count from the excavations.",
       "D": "Correct — mounds appear in 9 of the 14, against 5 with flakes and 3 with charcoal."
     }
+  },
+  {
+    "id": "s364",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp38",
+    "context": "According to Table 2, the braking distance at 60 km/h on loose gravel was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "45.9 m"
+      },
+      {
+        "id": "B",
+        "text": "30.6 m"
+      },
+      {
+        "id": "C",
+        "text": "20.4 m"
+      },
+      {
+        "id": "D",
+        "text": "81.6 m"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 2 pairs loose gravel with a braking distance of 45.9 m.",
+      "B": "That is the wet asphalt figure, shorter than gravel.",
+      "C": "That is the dry asphalt figure, the shortest of the four.",
+      "D": "That is packed snow, the longest of the four."
+    }
+  },
+  {
+    "id": "s365",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp38",
+    "context": "Based on Table 1, doubling the speed from 40 km/h to 80 km/h changed the braking distance by a factor closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "4"
+      },
+      {
+        "id": "C",
+        "text": "2"
+      },
+      {
+        "id": "D",
+        "text": "8"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The braking distance changed by a large factor, not by none at all.",
+      "B": "Correct — 36.3 m divided by 9.1 m is about 4, so the distance quadrupled when the speed doubled.",
+      "C": "Doubling would give about 18 m, well short of the 36.3 m measured.",
+      "D": "An eightfold rise would put the 80 km/h figure near 73 m."
+    }
+  },
+  {
+    "id": "s366",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp38",
+    "context": "Comparing Tables 1 and 3 across the five speeds, reaction distance and braking distance differ in that reaction distance:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "stays constant, while braking distance rises with speed."
+      },
+      {
+        "id": "B",
+        "text": "rises with speed, while braking distance stays constant."
+      },
+      {
+        "id": "C",
+        "text": "rises in proportion to speed, while braking distance rises faster than that."
+      },
+      {
+        "id": "D",
+        "text": "rises faster than speed, while braking distance rises in proportion to it."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Reaction distance rises fivefold from 20 to 100 km/h.",
+      "B": "Braking distance rises by a factor of about twenty-five across the same range.",
+      "C": "Correct — reaction distance goes 5.6, 11.1, 16.7, 22.2, 27.8 m in equal steps, while braking distance goes 2.3 to 56.7 m in growing ones.",
+      "D": "Reaction distance rises in equal steps, which is exactly proportional."
+    }
+  },
+  {
+    "id": "s367",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp38",
+    "context": "At which speed in Tables 1 and 3 was the reaction distance first shorter than the braking distance?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "40 km/h"
+      },
+      {
+        "id": "B",
+        "text": "80 km/h"
+      },
+      {
+        "id": "C",
+        "text": "20 km/h"
+      },
+      {
+        "id": "D",
+        "text": "60 km/h"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "At 40 km/h the reaction distance of 11.1 m still exceeds the braking distance of 9.1 m.",
+      "B": "Braking exceeds reaction at 80 km/h too, but 60 km/h is the first speed at which it does.",
+      "C": "At 20 km/h the reaction distance is more than twice the braking distance.",
+      "D": "Correct — at 60 km/h the reaction distance is 16.7 m against a braking distance of 20.4 m, the lowest speed at which braking is the longer part."
+    }
+  },
+  {
+    "id": "s368",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp38",
+    "context": "Based on Tables 1 and 3, the total stopping distance at 100 km/h on dry asphalt was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "84.5 m"
+      },
+      {
+        "id": "B",
+        "text": "56.7 m"
+      },
+      {
+        "id": "C",
+        "text": "28.9 m"
+      },
+      {
+        "id": "D",
+        "text": "27.8 m"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 56.7 m of braking plus 27.8 m of reaction is 84.5 m in total.",
+      "B": "That is the braking distance alone, leaving out the second of reaction.",
+      "C": "That is the difference between the two distances rather than their sum.",
+      "D": "That is the reaction distance alone, with no braking at all."
+    }
+  },
+  {
+    "id": "s369",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp38",
+    "context": "Based on Table 2, the braking distance on packed snow at 60 km/h was how many times that on dry asphalt at the same speed?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.5"
+      },
+      {
+        "id": "B",
+        "text": "4.0"
+      },
+      {
+        "id": "C",
+        "text": "2.0"
+      },
+      {
+        "id": "D",
+        "text": "61.2"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is roughly the ratio of wet asphalt to dry, not of snow to dry.",
+      "B": "Correct — 81.6 m divided by 20.4 m is exactly 4.0.",
+      "C": "Doubling 20.4 m gives 40.8 m, half the snow figure.",
+      "D": "That is the difference between the two distances in metres, not a ratio."
+    }
+  },
+  {
+    "id": "s370",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp38",
+    "context": "A driver reacting in 2.0 s rather than 1.0 s at 80 km/h would have a reaction distance of about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "11.1 m"
+      },
+      {
+        "id": "B",
+        "text": "80 m"
+      },
+      {
+        "id": "C",
+        "text": "44.4 m"
+      },
+      {
+        "id": "D",
+        "text": "22.2 m"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the 1.0 s reaction distance at the lower speed of 40 km/h.",
+      "B": "That is the speed in km/h, which is not a distance.",
+      "C": "Correct — at constant speed the distance is proportional to the time, so doubling the second doubles 22.2 m to 44.4 m.",
+      "D": "That is the distance for the 1.0 s reaction given in Table 3."
+    }
+  },
+  {
+    "id": "s371",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp38",
+    "context": "The passage states that 60 km/h is about 16.7 m/s, and Table 3 gives a reaction distance of 16.7 m at that speed. These agree because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the car slows slightly during the reaction time."
+      },
+      {
+        "id": "B",
+        "text": "braking distance and reaction distance are equal at 60 km/h."
+      },
+      {
+        "id": "C",
+        "text": "the conversion between km/h and m/s happens to equal the reaction time."
+      },
+      {
+        "id": "D",
+        "text": "a reaction time of 1.0 s covers exactly one second’s worth of travel."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The passage says the car does not slow at all during the reaction distance.",
+      "B": "Table 1 gives 20.4 m of braking at 60 km/h, which is not 16.7 m.",
+      "C": "The conversion factor is 3.6, which plays no part in the coincidence of numbers.",
+      "D": "Correct — distance equals speed times time, and with a time of 1.0 s the number of metres matches the speed in m/s."
+    }
+  },
+  {
+    "id": "s372",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp38",
+    "context": "Which quantity is closest to constant across the five rows of Table 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The braking distance divided by the square of the speed"
+      },
+      {
+        "id": "B",
+        "text": "The braking distance divided by the speed"
+      },
+      {
+        "id": "C",
+        "text": "The braking distance multiplied by the speed"
+      },
+      {
+        "id": "D",
+        "text": "The braking distance itself"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 2.3/400, 9.1/1600, 20.4/3600, 36.3/6400 and 56.7/10000 all come to about 0.0057.",
+      "B": "Dividing by speed gives 0.115, 0.228, 0.340, 0.454 and 0.567, which climbs steadily.",
+      "C": "Multiplying makes the spread far wider, from 46 to 5670.",
+      "D": "The braking distance itself rises from 2.3 m to 56.7 m."
+    }
+  },
+  {
+    "id": "s373",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp38",
+    "context": "To convert the 100 km/h test speed into metres per second, one should:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "divide by 100."
+      },
+      {
+        "id": "B",
+        "text": "multiply by 1000 and divide by 3600."
+      },
+      {
+        "id": "C",
+        "text": "multiply by 3600 and divide by 1000."
+      },
+      {
+        "id": "D",
+        "text": "multiply by 60."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Dividing by 100 has no basis in either unit and would give 1 m/s.",
+      "B": "Correct — a kilometre is 1000 m and an hour is 3600 s, so 100 km/h is 100 000/3600, about 27.8 m/s.",
+      "C": "That would give 360 000, turning a car into something far faster than sound.",
+      "D": "Minutes are not involved in a conversion from hours straight to seconds."
+    }
+  },
+  {
+    "id": "s374",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp38",
+    "context": "A report gives a result as \"a stopping distance of 3.4 seconds.\" The figure is unusable as a distance because seconds measure:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "length, but on a scale too small for a track test."
+      },
+      {
+        "id": "B",
+        "text": "acceleration, which the passage never reports."
+      },
+      {
+        "id": "C",
+        "text": "time, and a distance must be in units of length."
+      },
+      {
+        "id": "D",
+        "text": "speed, which has already been recorded separately."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The second is not a unit of length at any scale.",
+      "B": "Acceleration is a length divided by a time squared.",
+      "C": "Correct — every distance in the three tables is in metres, and no amount of time names a length on its own.",
+      "D": "Speed is a length divided by a time, not a time."
+    }
+  },
+  {
+    "id": "s375",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp38",
+    "context": "The braking distances in Table 2 differ between surfaces chiefly because the surfaces differ in:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the mass of the car resting on them."
+      },
+      {
+        "id": "B",
+        "text": "the speed at which the runs were made."
+      },
+      {
+        "id": "C",
+        "text": "the reaction time of the driver on each."
+      },
+      {
+        "id": "D",
+        "text": "the frictional force available between tyre and road."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The same car carried only its driver on every run.",
+      "B": "Every run in Table 2 was made at 60 km/h.",
+      "C": "Reaction time was fixed at 1.0 s and belongs to Table 3 in any case.",
+      "D": "Correct — the braking force comes from friction at the contact patch, and snow or gravel supplies far less of it than dry asphalt."
+    }
+  },
+  {
+    "id": "s376",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp39",
+    "context": "According to Table 1, the fundamental frequency at a vibrating length of 0.60 m was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "186 Hz"
+      },
+      {
+        "id": "B",
+        "text": "280 Hz"
+      },
+      {
+        "id": "C",
+        "text": "140 Hz"
+      },
+      {
+        "id": "D",
+        "text": "559 Hz"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 1 pairs a length of 0.60 m with 186 Hz.",
+      "B": "That is the frequency at the shorter length of 0.40 m.",
+      "C": "That is the frequency at the longer length of 0.80 m.",
+      "D": "That is the frequency at the shortest length tested, 0.20 m."
+    }
+  },
+  {
+    "id": "s377",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp39",
+    "context": "Based on Table 1, doubling the vibrating length changed the frequency by a factor of about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "one quarter"
+      },
+      {
+        "id": "B",
+        "text": "one half"
+      },
+      {
+        "id": "C",
+        "text": "two"
+      },
+      {
+        "id": "D",
+        "text": "four"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Quartering 559 Hz would give about 140 Hz, which is the 0.80 m reading, not the 0.40 m one.",
+      "B": "Correct — 0.20 m to 0.40 m takes 559 Hz to 280 Hz, and 0.40 m to 0.80 m takes 280 Hz to 140 Hz.",
+      "C": "Frequency falls as the string lengthens rather than rising.",
+      "D": "A fourfold change would put the 0.40 m reading near 2200 Hz."
+    }
+  },
+  {
+    "id": "s378",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp39",
+    "context": "Which variable was held constant in Experiment 1 but deliberately varied in Experiment 3?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Tension in the wire"
+      },
+      {
+        "id": "B",
+        "text": "Room temperature"
+      },
+      {
+        "id": "C",
+        "text": "Linear density of the wire"
+      },
+      {
+        "id": "D",
+        "text": "Vibrating length"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Tension was 40 N in both experiments.",
+      "B": "The room was held at 20 degrees C in every experiment.",
+      "C": "Correct — Experiment 1 used one 0.80 g/m wire throughout, and Experiment 3 used four wires of different linear densities.",
+      "D": "Length was the variable in Experiment 1 and was fixed at 0.50 m in Experiment 3."
+    }
+  },
+  {
+    "id": "s379",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp39",
+    "context": "The shared condition noted at the end of the passage is best confirmed by the fact that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Table 1 and Table 2 both contain a reading of 112 Hz."
+      },
+      {
+        "id": "B",
+        "text": "Table 3 contains the same four frequencies as Table 2."
+      },
+      {
+        "id": "C",
+        "text": "every table records a frequency below 600 Hz."
+      },
+      {
+        "id": "D",
+        "text": "the 40 N row of Table 2 and the 0.80 g/m row of Table 3 both read 224 Hz."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Those two 112 Hz readings come from quite different conditions and agree by coincidence.",
+      "B": "Table 3 has four values and Table 2 five; only some overlap.",
+      "C": "A shared upper bound says nothing about any particular condition being repeated.",
+      "D": "Correct — those two rows describe the same 0.50 m length, 40 N tension and 0.80 g/m wire, and they agree exactly."
+    }
+  },
+  {
+    "id": "s380",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp39",
+    "context": "Which hypothesis is best supported by Table 2?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Quadrupling the tension doubles the frequency."
+      },
+      {
+        "id": "B",
+        "text": "Doubling the tension doubles the frequency."
+      },
+      {
+        "id": "C",
+        "text": "Quadrupling the tension quadruples the frequency."
+      },
+      {
+        "id": "D",
+        "text": "Frequency does not depend on tension."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 10 N to 40 N takes 112 Hz to 224 Hz, and 40 N to 160 N takes 224 Hz to 447 Hz.",
+      "B": "Doubling from 10 N to 20 N takes 112 Hz only to 158 Hz.",
+      "C": "Quadrupling from 10 N would then give about 448 Hz, well above the 224 Hz measured.",
+      "D": "Frequency rises fourfold across the range of tensions tested."
+    }
+  },
+  {
+    "id": "s381",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp39",
+    "context": "A student predicts that a wire of linear density 3.20 g/m at 0.50 m and 40 N would sound about 112 Hz. Table 3 suggests this prediction is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "untestable, because linear density cannot be varied independently of tension."
+      },
+      {
+        "id": "B",
+        "text": "reasonable, since each quadrupling of linear density has halved the frequency."
+      },
+      {
+        "id": "C",
+        "text": "too low, since frequency has fallen more slowly than that in the table."
+      },
+      {
+        "id": "D",
+        "text": "too high, since each doubling of linear density has halved the frequency."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Experiment 3 varies linear density with tension held at 40 N throughout.",
+      "B": "Correct — 0.20 to 0.80 g/m halves 447 Hz to 224 Hz, so 0.80 to 3.20 g/m should halve 224 Hz to about 112 Hz.",
+      "C": "The pattern in the table is exactly the one the prediction extends.",
+      "D": "Doubling from 0.20 to 0.40 g/m takes 447 Hz to 316 Hz, not to about 224 Hz."
+    }
+  },
+  {
+    "id": "s382",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp39",
+    "context": "A frequency of 224 Hz means that the wire completes:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "one full vibration every 224 seconds."
+      },
+      {
+        "id": "B",
+        "text": "224 vibrations over the whole time it is sounding."
+      },
+      {
+        "id": "C",
+        "text": "224 full vibrations each second."
+      },
+      {
+        "id": "D",
+        "text": "224 full vibrations each minute."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That describes a frequency of about 0.0045 Hz, which no wire in the tables approaches.",
+      "B": "A frequency is a rate and does not depend on how long the note lasts.",
+      "C": "Correct — the hertz is one cycle per second, so 224 Hz is 224 cycles per second.",
+      "D": "Per minute would make the hertz sixty times smaller than it is."
+    }
+  },
+  {
+    "id": "s383",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp39",
+    "context": "Based on Table 1, the time taken for one full vibration at a vibrating length of 1.00 m was closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.09 s"
+      },
+      {
+        "id": "B",
+        "text": "112 s"
+      },
+      {
+        "id": "C",
+        "text": "1.12 s"
+      },
+      {
+        "id": "D",
+        "text": "0.009 s"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is ten times too long and would correspond to about 11 Hz.",
+      "B": "That is the frequency in hertz, read as though it were a time.",
+      "C": "That is the frequency with a decimal point moved, and is far too long for an audible note.",
+      "D": "Correct — the period is one divided by the frequency, and 1/112 is about 0.0089 s."
+    }
+  },
+  {
+    "id": "s384",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp39",
+    "context": "A linear density of 0.80 g/m means that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "each metre of the wire has a mass of 0.80 g."
+      },
+      {
+        "id": "B",
+        "text": "the whole wire has a mass of 0.80 g."
+      },
+      {
+        "id": "C",
+        "text": "each gram of the wire is 0.80 m long."
+      },
+      {
+        "id": "D",
+        "text": "the wire is 0.80 mm thick."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the passage defines linear density as the mass of the wire per metre.",
+      "B": "The total mass depends on how long the wire is, which varies between experiments.",
+      "C": "That inverts the ratio and would be metres per gram.",
+      "D": "Thickness is related to linear density but is a different quantity in different units."
+    }
+  },
+  {
+    "id": "s385",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp39",
+    "context": "The tensions in Table 2 are given in newtons. A newton is a unit of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "pressure"
+      },
+      {
+        "id": "B",
+        "text": "force"
+      },
+      {
+        "id": "C",
+        "text": "mass"
+      },
+      {
+        "id": "D",
+        "text": "energy"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Pressure is measured in pascals, a newton spread over a square metre.",
+      "B": "Correct — the hanging weight pulls on the wire with a force, and the newton is the SI unit of force.",
+      "C": "Mass is measured in kilograms; the weight hung on the pulley has a mass, but the tension is its pull.",
+      "D": "Energy is measured in joules, which is a newton acting through a metre."
+    }
+  },
+  {
+    "id": "s386",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp39",
+    "context": "On a guitar, pressing a string against a fret shortens the vibrating length. Based on Table 1, this makes the note sounded:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "louder but unchanged in pitch."
+      },
+      {
+        "id": "B",
+        "text": "unchanged, since only tension sets the pitch."
+      },
+      {
+        "id": "C",
+        "text": "higher in pitch."
+      },
+      {
+        "id": "D",
+        "text": "lower in pitch."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Loudness depends on how hard the string is plucked, which is unrelated to length.",
+      "B": "Table 1 varies length alone at fixed tension and finds a fivefold change in frequency.",
+      "C": "Correct — Table 1 shows frequency rising as the length falls, and a higher frequency is a higher pitch.",
+      "D": "Lengthening the string, not shortening it, lowers the frequency."
+    }
+  },
+  {
+    "id": "s387",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp39",
+    "context": "The frequencies in the three tables all lie within the range a young adult with normal hearing can detect, which is roughly:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.2 Hz to 200 Hz"
+      },
+      {
+        "id": "B",
+        "text": "200 Hz to 2000 Hz"
+      },
+      {
+        "id": "C",
+        "text": "2000 Hz to 200 000 Hz"
+      },
+      {
+        "id": "D",
+        "text": "20 Hz to 20 000 Hz"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "An upper limit of 200 Hz would place most of Table 2 beyond hearing.",
+      "B": "Several readings, including 112 Hz and 140 Hz, fall below 200 Hz and are still plainly audible.",
+      "C": "A lower limit of 2000 Hz would make every note in all three tables inaudible.",
+      "D": "Correct — human hearing spans about 20 Hz to 20 kHz, and every reading here falls between 112 and 559 Hz."
+    }
+  },
+  {
+    "id": "s388",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp40",
+    "context": "In Experiment 2, the gas collected using 2.0 g of dried yeast was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "71 mL"
+      },
+      {
+        "id": "B",
+        "text": "38 mL"
+      },
+      {
+        "id": "C",
+        "text": "96 mL"
+      },
+      {
+        "id": "D",
+        "text": "20 mL"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 2 pairs 2.0 g of yeast with 71 mL of gas.",
+      "B": "That is the 1.0 g trial, half the yeast.",
+      "C": "That is the 4.0 g trial, twice the yeast.",
+      "D": "That is the 0.5 g trial, the smallest mass tested."
+    }
+  },
+  {
+    "id": "s389",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp40",
+    "context": "The 0 g/L trial in Experiment 1 served mainly as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a check on the accuracy of the measuring cylinder."
+      },
+      {
+        "id": "B",
+        "text": "a control showing that no gas appears without glucose."
+      },
+      {
+        "id": "C",
+        "text": "a measure of how much gas dissolves in the water of the cylinder."
+      },
+      {
+        "id": "D",
+        "text": "a test of whether the flask seal leaks under pressure."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The cylinder is read the same way in all fifteen trials.",
+      "B": "Correct — it removes the one substance being tested and records 0 mL, which is what a control is for.",
+      "C": "Dissolution would affect every trial alike and is not what varying the glucose tests.",
+      "D": "A leak would show as lost gas in trials that produce some, not in one that produces none."
+    }
+  },
+  {
+    "id": "s390",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp40",
+    "context": "Which hypothesis is best supported by Table 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Gas output is unaffected by the amount of glucose available."
+      },
+      {
+        "id": "B",
+        "text": "Gas output falls once glucose rises above 10 g/L."
+      },
+      {
+        "id": "C",
+        "text": "Gas output rises with glucose until some other factor becomes limiting."
+      },
+      {
+        "id": "D",
+        "text": "Gas output rises in direct proportion to glucose across the whole range."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Output rises from 0 mL to 41 mL across the range tested.",
+      "B": "The 20 g/L figure of 41 mL is higher than the 10 g/L figure, not lower.",
+      "C": "Correct — output climbs from 0 to 38 mL up to 10 g/L, then adds only 3 mL when the glucose is doubled again.",
+      "D": "Direct proportion would put the 20 g/L trial near 76 mL rather than at 41 mL."
+    }
+  },
+  {
+    "id": "s391",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp40",
+    "context": "Taken together, Tables 1 and 2 suggest that the flattening seen above 10 g/L in Table 1 was caused by a shortage of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "glucose, since the highest concentration gave the highest output."
+      },
+      {
+        "id": "B",
+        "text": "water, since the solution volume was fixed at 100 mL."
+      },
+      {
+        "id": "C",
+        "text": "time, since every trial was stopped at 20 minutes."
+      },
+      {
+        "id": "D",
+        "text": "yeast, since adding more yeast at 10 g/L kept raising the output."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "If glucose were short, adding more of it would have helped, and beyond 10 g/L it barely did.",
+      "B": "The volume was the same in every trial, including those that produced far more gas.",
+      "C": "A shared 20-minute window cannot explain why some trials in that window produced much more than others.",
+      "D": "Correct — at a fixed 10 g/L, output went on rising from 20 to 96 mL as yeast was added, so the cells rather than the sugar were the limit."
+    }
+  },
+  {
+    "id": "s392",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp40",
+    "context": "A student proposes that gas output always rises with temperature. Table 3 refutes this because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "output collapsed from 44 mL at 40 degrees C to 3 mL at 50 degrees C."
+      },
+      {
+        "id": "B",
+        "text": "output rose only slightly between 30 and 40 degrees C."
+      },
+      {
+        "id": "C",
+        "text": "output at 10 degrees C was already above zero."
+      },
+      {
+        "id": "D",
+        "text": "the same temperature was used throughout Experiments 1 and 2."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a single large fall at the top of the range is enough to overturn a claim that output always rises.",
+      "B": "A small rise is still a rise and does not contradict the claim.",
+      "C": "Gas at the lowest temperature is consistent with output rising from there.",
+      "D": "A fixed temperature elsewhere says nothing about how output responds to changing it."
+    }
+  },
+  {
+    "id": "s393",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp40",
+    "context": "In the 30 degrees C trial of Experiment 3, the mean rate of gas production was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "760 mL/min"
+      },
+      {
+        "id": "B",
+        "text": "1.9 mL/min"
+      },
+      {
+        "id": "C",
+        "text": "38 mL/min"
+      },
+      {
+        "id": "D",
+        "text": "0.53 mL/min"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That multiplies the volume by the time instead of dividing.",
+      "B": "Correct — 38 mL collected in 20 minutes is 38 divided by 20, or 1.9 mL each minute.",
+      "C": "That is the whole 20-minute volume relabelled as a per-minute rate.",
+      "D": "That divides the minutes by the millilitres, inverting the rate."
+    }
+  },
+  {
+    "id": "s394",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp40",
+    "context": "Based on Table 2, the gas collected per gram of yeast was greatest at a yeast mass of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2.0 g"
+      },
+      {
+        "id": "B",
+        "text": "4.0 g"
+      },
+      {
+        "id": "C",
+        "text": "0.5 g"
+      },
+      {
+        "id": "D",
+        "text": "1.0 g"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "At 2.0 g the yield is 71 divided by 2.0, or 35.5 mL per gram.",
+      "B": "At 4.0 g the yield is 96 divided by 4.0, or 24 mL per gram.",
+      "C": "Correct — 20 mL from 0.5 g is 40 mL per gram, the highest yield in the table even though it is the smallest total.",
+      "D": "At 1.0 g the yield is 38 divided by 1.0, or 38 mL per gram, just short of the smallest trial."
+    }
+  },
+  {
+    "id": "s395",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp40",
+    "context": "Based on Table 3, the gas collected at 40 degrees C exceeded that at 20 degrees C by what percentage of the 20 degrees C value?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "about 25 per cent"
+      },
+      {
+        "id": "B",
+        "text": "about 57 per cent"
+      },
+      {
+        "id": "C",
+        "text": "about 230 per cent"
+      },
+      {
+        "id": "D",
+        "text": "about 130 per cent"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Twenty-five is the rise in millilitres, not a percentage of anything.",
+      "B": "That is 25 as a share of the 44 mL figure rather than of the 19 mL baseline.",
+      "C": "That treats 44 as the increase rather than the total.",
+      "D": "Correct — the rise is 44 minus 19, or 25 mL, and 25 divided by 19 is about 1.3, which is 130 per cent."
+    }
+  },
+  {
+    "id": "s396",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp40",
+    "context": "Suppose the 4.0 g trial of Experiment 2 had been run for 40 minutes rather than 20. The collected volume would most likely be:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "less than 192 mL, because the glucose supply is limited."
+      },
+      {
+        "id": "B",
+        "text": "exactly 192 mL, since the rate is constant throughout."
+      },
+      {
+        "id": "C",
+        "text": "greater than 192 mL, because the yeast multiplies as it works."
+      },
+      {
+        "id": "D",
+        "text": "unchanged at 96 mL, since the reaction stops at 20 minutes."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 1 shows glucose already limiting above 10 g/L, so a heavily yeasted flask will exhaust its sugar and fall short of a doubled volume.",
+      "B": "A constant rate would require a supply that the tables show is already running short.",
+      "C": "Growth would need more sugar, which is the very thing in short supply.",
+      "D": "Nothing indicates the reaction halts at the moment of measurement."
+    }
+  },
+  {
+    "id": "s397",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp40",
+    "context": "A glucose concentration of 10 g/L in 100 mL of solution corresponds to a mass of glucose of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "100 g"
+      },
+      {
+        "id": "B",
+        "text": "1.0 g"
+      },
+      {
+        "id": "C",
+        "text": "10 g"
+      },
+      {
+        "id": "D",
+        "text": "0.10 g"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the mass in ten litres, a hundred times the volume used.",
+      "B": "Correct — 100 mL is a tenth of a litre, so it holds a tenth of 10 g.",
+      "C": "That is the mass in a full litre, ten times the volume used.",
+      "D": "That would be the mass in 10 mL of the solution."
+    }
+  },
+  {
+    "id": "s398",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp40",
+    "context": "Besides carbon dioxide, the process described in the passage produces:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lactic acid"
+      },
+      {
+        "id": "B",
+        "text": "methane"
+      },
+      {
+        "id": "C",
+        "text": "ethanol"
+      },
+      {
+        "id": "D",
+        "text": "oxygen"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Lactic acid is the product of fermentation in animal muscle, not in yeast.",
+      "B": "Methane comes from a different group of microorganisms entirely.",
+      "C": "Correct — the first sentence states that yeast releases carbon dioxide and ethanol, which is why the process is used in brewing.",
+      "D": "Oxygen is produced in photosynthesis, and this process runs without oxygen at all."
+    }
+  },
+  {
+    "id": "s399",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp40",
+    "context": "The collapse in output at 50 degrees C in Table 3 is best explained by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "glucose breaking down into other sugars before the yeast can use it."
+      },
+      {
+        "id": "B",
+        "text": "carbon dioxide dissolving more readily in warm water than in cold."
+      },
+      {
+        "id": "C",
+        "text": "the yeast switching to using oxygen instead of glucose."
+      },
+      {
+        "id": "D",
+        "text": "enzymes in the yeast losing their shape and stopping work at high temperature."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Glucose is stable at 50 degrees C, far below any temperature that would break it down.",
+      "B": "More dissolving would reduce the reading somewhat, not cut 44 mL to 3 mL.",
+      "C": "The flask was sealed and the passage specifies that yeast works here without oxygen.",
+      "D": "Correct — fermentation is enzyme-driven, and above an optimum an enzyme denatures and loses the shape its active site depends on."
+    }
   }
 ]

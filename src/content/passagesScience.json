@@ -2928,5 +2928,296 @@
     "title": "The Pits at Tolven Down",
     "type": "Conflicting Viewpoints",
     "text": "Tolven Down is a chalk ridge carrying a field of 60 shallow pits, each 2 to 3 m across and 0.6 to 1.1 m deep. Fourteen have been excavated. Struck flint flakes were found in 5 of the 14; charcoal lay at the base of 3. A low mound sits immediately beside the hollow in 9 of the 14. The long axes of the pits cluster near 040 degrees; joint sets mapped in the chalk elsewhere on the down run at 038 degrees and 128 degrees. Flint nodules occur in a band about 0.8 m below the surface. Pollen from a nearby bog shows woodland cover on the down until about 3400 years ago.\n\nScientist 1. The pits are flint quarries. People dug down to the nodule band, which the depths reach almost exactly, took what they wanted, and left. The struck flakes are the waste of working the flint at the pit edge, and the charcoal is from fires at the same working. That only some pits contain flakes is expected, because a quarry is emptied and backfilled, and most debris was carried off to be used elsewhere.\n\nScientist 2. The pits are solution hollows. Rainwater made mildly acidic by carbon dioxide dissolves chalk, and it does so fastest where joints in the rock let water down. The alignment of the pits at 040 degrees matches a joint set at 038 degrees, which no human plan would reproduce. Nothing about the depths is meaningful: solution stops where the chalk is less jointed, which happens to be near the nodule band because the nodules interrupt the joints. There are no spoil heaps, and a quarry that moved a cubic metre of chalk must leave the chalk somewhere.\n\nScientist 3. The pits are tree-throw hollows. When a large tree is blown over, its root plate tears out of the ground and leaves a hollow with the root plate, and the soil in it, as a mound alongside. That is exactly the paired shape recorded in 9 of the 14 pits, and it is the only proposal that explains a mound at all. The pollen record puts woodland on the down until 3400 years ago, so the trees were there. Flakes and charcoal are ordinary material of an inhabited landscape and fall into any hollow that is open."
+  },
+  {
+    "id": "sp38",
+    "title": "Stopping a Test Vehicle",
+    "type": "Data Representation",
+    "text": "A stop has two parts. Reaction distance is the ground covered between the moment a driver sees a hazard and the moment the brakes begin to act; during it the vehicle does not slow at all. Braking distance is the ground covered from that moment until the vehicle is at rest. Total stopping distance is the sum of the two.\n\nOne car, fitted with anti-lock brakes and the same set of tyres throughout, was tested on a closed track. Braking distance was measured from the point of brake application to the point of rest. Reaction distance was not measured but calculated, using a fixed reaction time of 1.0 s, as the distance the car travels at its set speed in that second.\n\nTable 1 gives braking distance at five speeds on dry asphalt.\n\nTable 2 gives braking distance at 60 km/h on four surfaces, every run made at that one speed.\n\nTable 3 gives the reaction distance at the same five speeds, for a reaction time of 1.0 s.\n\nAnti-lock brakes matter to the comparison in Table 2. Without them a hard stop on a slippery surface locks the wheels, and a locked wheel slides rather than grips, which lengthens the stop further and removes the driver’s ability to steer. The system releases and reapplies the brakes many times a second to keep each wheel just short of locking, so every figure in Table 2 is close to the best that surface can give.\n\nThe test says nothing about a loaded car, a worn tyre, a slope, or a driver who is tired or distracted. A reaction time of 1.0 s is a convention rather than a measurement, and published estimates of ordinary drivers run from about 0.7 s to well over 2 s depending on how expected the hazard is.\n\nThe track was level throughout, the car carried only its driver, and every run began with the brakes cold. A speed of 60 km/h is about 16.7 m/s.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Braking distance at five speeds, dry asphalt",
+        "type": "table",
+        "head": [
+          "Speed (km/h)",
+          "Braking distance (m)"
+        ],
+        "rows": [
+          [
+            "20",
+            "2.3"
+          ],
+          [
+            "40",
+            "9.1"
+          ],
+          [
+            "60",
+            "20.4"
+          ],
+          [
+            "80",
+            "36.3"
+          ],
+          [
+            "100",
+            "56.7"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Braking distance on four surfaces, all at 60 km/h",
+        "type": "table",
+        "head": [
+          "Surface",
+          "Braking distance (m)"
+        ],
+        "rows": [
+          [
+            "Dry asphalt",
+            "20.4"
+          ],
+          [
+            "Wet asphalt",
+            "30.6"
+          ],
+          [
+            "Loose gravel",
+            "45.9"
+          ],
+          [
+            "Packed snow",
+            "81.6"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Reaction distance at five speeds, reaction time 1.0 s",
+        "type": "table",
+        "head": [
+          "Speed (km/h)",
+          "Reaction distance (m)"
+        ],
+        "rows": [
+          [
+            "20",
+            "5.6"
+          ],
+          [
+            "40",
+            "11.1"
+          ],
+          [
+            "60",
+            "16.7"
+          ],
+          [
+            "80",
+            "22.2"
+          ],
+          [
+            "100",
+            "27.8"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp39",
+    "title": "A Vibrating String",
+    "type": "Research Summaries",
+    "text": "A steel wire was stretched horizontally over two fixed bridges and tensioned by hanging a known weight over a pulley at one end. The vibrating length is the distance between the bridges. Linear density is the mass of the wire per metre, given here in grams per metre. When the wire is plucked it sounds a lowest, or fundamental, frequency, which was read in hertz from an electronic meter. In every experiment the wire was plucked at its midpoint and the room was held at 20 degrees C.\n\nExperiment 1. Tension was fixed at 40 N and a wire of linear density 0.80 g/m was used. The vibrating length was set to five values in turn. Table 1 gives the fundamental frequency at each.\n\nExperiment 2. The vibrating length was fixed at 0.50 m and the same 0.80 g/m wire was used. The hanging weight was changed to give five tensions. Table 2 gives the fundamental frequency at each.\n\nExperiment 3. The vibrating length was fixed at 0.50 m and the tension at 40 N. Four wires of the same steel but different thicknesses, and therefore different linear densities, were used in turn. Table 3 gives the fundamental frequency of each.\n\nA wire fixed at both ends can vibrate only in patterns that fit a whole number of half-waves between the bridges. The fundamental is the pattern with a single half-wave, which is why it is the lowest note the wire will sound. Higher patterns, sounding at whole-number multiples of the fundamental, are present in every pluck and give the note its character, but the meter was set to report only the lowest.\n\nThe condition of a 0.50 m length of the 0.80 g/m wire under 40 N appears in both Experiment 2 and Experiment 3.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: five vibrating lengths (tension 40 N, wire 0.80 g/m)",
+        "type": "table",
+        "head": [
+          "Vibrating length (m)",
+          "Frequency (Hz)"
+        ],
+        "rows": [
+          [
+            "0.20",
+            "559"
+          ],
+          [
+            "0.40",
+            "280"
+          ],
+          [
+            "0.60",
+            "186"
+          ],
+          [
+            "0.80",
+            "140"
+          ],
+          [
+            "1.00",
+            "112"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: five tensions (length 0.50 m, wire 0.80 g/m)",
+        "type": "table",
+        "head": [
+          "Tension (N)",
+          "Frequency (Hz)"
+        ],
+        "rows": [
+          [
+            "10",
+            "112"
+          ],
+          [
+            "20",
+            "158"
+          ],
+          [
+            "40",
+            "224"
+          ],
+          [
+            "80",
+            "316"
+          ],
+          [
+            "160",
+            "447"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: four wires (length 0.50 m, tension 40 N)",
+        "type": "table",
+        "head": [
+          "Linear density (g/m)",
+          "Frequency (Hz)"
+        ],
+        "rows": [
+          [
+            "0.20",
+            "447"
+          ],
+          [
+            "0.40",
+            "316"
+          ],
+          [
+            "0.80",
+            "224"
+          ],
+          [
+            "1.60",
+            "158"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp40",
+    "title": "Fermentation in Yeast",
+    "type": "Research Summaries",
+    "text": "Yeast breaks down glucose without oxygen, releasing carbon dioxide gas and ethanol. In each trial below, yeast and a glucose solution were sealed in a flask fitted with a delivery tube, and the gas given off was collected under water in an inverted measuring cylinder. The volume of gas collected in 20 minutes was recorded in millilitres. Unless stated otherwise, a trial used 1.0 g of dried yeast in 100 mL of solution held at 30 degrees C.\n\nExperiment 1. Glucose concentration was set to five values, from none to 20 g/L. Table 1 gives the gas collected.\n\nExperiment 2. Glucose was fixed at 10 g/L and the mass of dried yeast was set to four values. Table 2 gives the gas collected.\n\nExperiment 3. Glucose was fixed at 10 g/L and 1.0 g of yeast was used, but the flask was held at one of five temperatures. Table 3 gives the gas collected.\n\nGas was read off the cylinder at the end of the 20 minutes rather than continuously, so the tables give a total for the period and not a rate at any instant within it. No trial ran long enough for the solution to become saturated with dissolved gas.\n\nThe flask was sealed within 15 seconds of mixing, and the same batch of dried yeast was used throughout. The 10 g/L trial of Experiment 1, the 1.0 g trial of Experiment 2, and the 30 degrees C trial of Experiment 3 were the same set of conditions.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: five glucose concentrations (1.0 g yeast, 30 degrees C)",
+        "type": "table",
+        "head": [
+          "Glucose (g/L)",
+          "Gas collected in 20 min (mL)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "2",
+            "9"
+          ],
+          [
+            "5",
+            "22"
+          ],
+          [
+            "10",
+            "38"
+          ],
+          [
+            "20",
+            "41"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: four yeast masses (10 g/L glucose, 30 degrees C)",
+        "type": "table",
+        "head": [
+          "Dried yeast (g)",
+          "Gas collected in 20 min (mL)"
+        ],
+        "rows": [
+          [
+            "0.5",
+            "20"
+          ],
+          [
+            "1.0",
+            "38"
+          ],
+          [
+            "2.0",
+            "71"
+          ],
+          [
+            "4.0",
+            "96"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: five temperatures (10 g/L glucose, 1.0 g yeast)",
+        "type": "table",
+        "head": [
+          "Temperature (degrees C)",
+          "Gas collected in 20 min (mL)"
+        ],
+        "rows": [
+          [
+            "10",
+            "6"
+          ],
+          [
+            "20",
+            "19"
+          ],
+          [
+            "30",
+            "38"
+          ],
+          [
+            "40",
+            "44"
+          ],
+          [
+            "50",
+            "3"
+          ]
+        ]
+      }
+    ]
   }
 ]
