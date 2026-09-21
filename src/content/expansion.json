@@ -6,32 +6,32 @@
         "section": "english",
         "topic": "subject-verb agreement",
         "difficulty": "easy",
-        "context": "Choose the verb that completes this sentence in standard English: \"The collection of exhibits ___ ready for inspection.\"",
+        "context": "The lighthouse keeper «record» the weather at dawn and again at dusk.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "is"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "are"
+            "text": "records"
           },
           {
             "id": "C",
-            "text": "have been"
+            "text": "have recorded"
           },
           {
             "id": "D",
-            "text": "were"
+            "text": "are recording"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Collection is the singular subject, so is agrees with it.",
-          "B": "The head noun collection is singular; the plural noun in the of-phrase does not control the verb.",
-          "C": "A singular subject requires has been.",
-          "D": "The singular subject requires was in the past tense."
+          "A": "A singular subject takes the -s form of a present-tense verb.",
+          "B": "Keeper is singular and stands directly beside the verb, so records agrees with it.",
+          "C": "The plural auxiliary have cannot follow a singular subject like keeper.",
+          "D": "Are recording is plural, and the sentence describes a daily routine rather than something under way."
         }
       },
       {
@@ -39,32 +39,32 @@
         "section": "english",
         "topic": "verb tense",
         "difficulty": "easy",
-        "context": "\"Yesterday, Mina ___ the exhibits before the doors opened.\" Which choice makes the sequence of past events clear?",
+        "context": "Last winter the harbour «freezes» so hard that the ferry stopped running.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "is deciding to catalog"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "had decided to catalog"
+            "text": "froze"
           },
           {
             "id": "C",
-            "text": "will decide to catalog"
+            "text": "will freeze"
           },
           {
             "id": "D",
-            "text": "has decided to catalog"
+            "text": "is freezing"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "Present progressive conflicts with yesterday.",
-          "B": "Past perfect marks a decision made before another past event.",
-          "C": "Future tense conflicts with the completed event yesterday.",
-          "D": "Present perfect does not fit this completed past time frame."
+          "A": "Present tense clashes with last winter and with the past-tense stopped.",
+          "B": "Last winter and stopped both set the sentence in the past, which froze matches.",
+          "C": "Future tense cannot describe a winter that has already gone by.",
+          "D": "Present progressive puts the freezing under way now rather than last year."
         }
       },
       {
@@ -72,32 +72,32 @@
         "section": "english",
         "topic": "commas",
         "difficulty": "easy",
-        "context": "Which version correctly punctuates the clause about Mina preparing to catalog the exhibits?",
+        "context": "The tuner arrived early «and, checked» every string before the recital.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Before, Mina could catalog the exhibits the lights went out."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Before Mina, could catalog the exhibits the lights went out."
+            "text": "and checked"
           },
           {
             "id": "C",
-            "text": "Before Mina could catalog the exhibits, the lights went out."
+            "text": "and; checked"
           },
           {
             "id": "D",
-            "text": "Before Mina could catalog, the exhibits the lights went out."
+            "text": ", and checked"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "Do not place a comma immediately after Before here.",
-          "B": "This separates a subject from its verb.",
-          "C": "Put the comma after the complete introductory dependent clause, not inside it.",
-          "D": "This separates the verb from its object."
+          "A": "A comma cannot stand between a conjunction and the verb that follows it.",
+          "B": "Arrived and checked share one subject, so nothing is punctuated between them.",
+          "C": "A semicolon needs a complete sentence on each side of it.",
+          "D": "A comma before and would suit two full sentences, but checked has no subject."
         }
       },
       {
@@ -105,32 +105,32 @@
         "section": "english",
         "topic": "apostrophes",
         "difficulty": "easy",
-        "context": "The following sentence refers to exactly one curator: \"Mina followed the ___ instructions to catalog the exhibits.\" Which choice is correct?",
+        "context": "The «violin's» in the long case were all made before 1900.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "curators"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "curators'"
+            "text": "violins"
           },
           {
             "id": "C",
-            "text": "curator"
+            "text": "violins'"
           },
           {
             "id": "D",
-            "text": "curator's"
+            "text": "violin"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "A plural noun does not show singular possession.",
-          "B": "This indicates possession by multiple curators.",
-          "C": "This does not mark the instructions as belonging to the curator.",
-          "D": "A singular possessive noun takes apostrophe + s."
+          "A": "An apostrophe marks possession, and nothing in the sentence belongs to a violin.",
+          "B": "The sentence counts more than one instrument, which calls for a plain plural.",
+          "C": "A plural possessive needs a following noun for the violins to own.",
+          "D": "A singular noun cannot take the plural verb were later in the sentence."
         }
       },
       {
@@ -138,32 +138,32 @@
         "section": "english",
         "topic": "pronouns",
         "difficulty": "easy",
-        "context": "\"The director asked Mina and ___ to catalog the exhibits.\" Which pronoun is correct?",
+        "context": "The cellist tuned the instrument and then set «them» carefully against the wall.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "me"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "I"
+            "text": "it"
           },
           {
             "id": "C",
-            "text": "myself"
+            "text": "those"
           },
           {
             "id": "D",
-            "text": "mine"
+            "text": "that one"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Remove the other name: the director asked me. The compound object uses the same case.",
-          "B": "The pronoun is an object of asked, not the subject.",
-          "C": "A reflexive pronoun needs an appropriate antecedent; I is not the subject here.",
-          "D": "Mine expresses possession, not an object receiving a request."
+          "A": "Them is plural, while only one instrument has been mentioned.",
+          "B": "The instrument is a single object, so the singular pronoun it refers back to it.",
+          "C": "Those points at more than one thing and has nothing plural to name.",
+          "D": "That one implies a choice among several instruments, and there is only one."
         }
       },
       {
@@ -567,32 +567,32 @@
         "section": "english",
         "topic": "subject-verb agreement",
         "difficulty": "easy",
-        "context": "Choose the verb that completes this sentence in standard English: \"The collection of seedlings ___ ready for inspection.\"",
+        "context": "Across the valley, three wind turbines «turns» steadily all afternoon.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "were"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "is"
+            "text": "has turned"
           },
           {
             "id": "C",
-            "text": "are"
+            "text": "turn"
           },
           {
             "id": "D",
-            "text": "have been"
+            "text": "is turning"
           }
         ],
-        "answer": "B",
+        "answer": "C",
         "why": {
-          "A": "The singular subject requires was in the past tense.",
-          "B": "Collection is the singular subject, so is agrees with it.",
-          "C": "The head noun collection is singular; the plural noun in the of-phrase does not control the verb.",
-          "D": "A singular subject requires has been."
+          "A": "Turbines is plural, so the -s form of the verb cannot agree with it.",
+          "B": "Has turned is singular, and the sentence describes what the turbines do now.",
+          "C": "Three turbines is a plural subject, so the plural verb turn agrees with it.",
+          "D": "Is turning is singular and cannot take a plural subject like three turbines."
         }
       },
       {
@@ -600,32 +600,32 @@
         "section": "english",
         "topic": "verb tense",
         "difficulty": "easy",
-        "context": "\"Yesterday, Leo ___ the seedlings before the doors opened.\" Which choice makes the sequence of past events clear?",
+        "context": "Tomorrow the restorers «removed» the yellowed varnish from the altarpiece.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "has decided to label"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "is deciding to label"
+            "text": "had removed"
           },
           {
             "id": "C",
-            "text": "had decided to label"
+            "text": "will remove"
           },
           {
             "id": "D",
-            "text": "will decide to label"
+            "text": "have removed"
           }
         ],
         "answer": "C",
         "why": {
-          "A": "Present perfect does not fit this completed past time frame.",
-          "B": "Present progressive conflicts with yesterday.",
-          "C": "Past perfect marks a decision made before another past event.",
-          "D": "Future tense conflicts with the completed event yesterday."
+          "A": "Past tense contradicts tomorrow, which places the work ahead of us.",
+          "B": "Past perfect puts the work before some other past event, not in the future.",
+          "C": "Tomorrow places the work in the future, which will remove states plainly.",
+          "D": "Present perfect reports work already finished, which tomorrow rules out."
         }
       },
       {
@@ -633,32 +633,32 @@
         "section": "english",
         "topic": "commas",
         "difficulty": "easy",
-        "context": "Which version correctly punctuates the clause about Leo preparing to label the seedlings?",
+        "context": "«Marta hurried» down the platform with the trumpet case under one arm.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Before Leo could label, the seedlings the lights went out."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Before, Leo could label the seedlings the lights went out."
+            "text": "Marta, hurried"
           },
           {
             "id": "C",
-            "text": "Before Leo, could label the seedlings the lights went out."
+            "text": "Marta, hurried,"
           },
           {
             "id": "D",
-            "text": "Before Leo could label the seedlings, the lights went out."
+            "text": "Marta; hurried"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This separates the verb from its object.",
-          "B": "Do not place a comma immediately after Before here.",
-          "C": "This separates a subject from its verb.",
-          "D": "Put the comma after the complete introductory dependent clause, not inside it."
+          "A": "Nothing should separate a subject from the verb that belongs to it.",
+          "B": "A single comma here cuts the subject away from its own verb.",
+          "C": "Two commas mark an interruption, but Marta and hurried belong together.",
+          "D": "A semicolon joins two complete sentences, and hurried alone is not one."
         }
       },
       {
@@ -666,32 +666,32 @@
         "section": "english",
         "topic": "apostrophes",
         "difficulty": "easy",
-        "context": "The following sentence refers to exactly one curator: \"Leo followed the ___ instructions to label the seedlings.\" Which choice is correct?",
+        "context": "The museum lends «painting's» to three local schools every spring.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "curator's"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "curators"
+            "text": "paintings"
           },
           {
             "id": "C",
-            "text": "curators'"
+            "text": "paintings'"
           },
           {
             "id": "D",
-            "text": "curator"
+            "text": "painting"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "A singular possessive noun takes apostrophe + s.",
-          "B": "A plural noun does not show singular possession.",
-          "C": "This indicates possession by multiple curators.",
-          "D": "This does not mark the instructions as belonging to the curator."
+          "A": "The apostrophe claims possession, but the paintings own nothing here.",
+          "B": "Lending several works calls for the ordinary plural with no apostrophe.",
+          "C": "A plural possessive would need something for the paintings to possess.",
+          "D": "The singular would mean one work travels to all three schools at once."
         }
       },
       {
@@ -699,12 +699,12 @@
         "section": "english",
         "topic": "pronouns",
         "difficulty": "easy",
-        "context": "\"The director asked Leo and ___ to label the seedlings.\" Which pronoun is correct?",
+        "context": "Sana and I carried the crate up three flights, but «I» dropped my end at the top.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "mine"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
@@ -712,19 +712,19 @@
           },
           {
             "id": "C",
-            "text": "I"
+            "text": "myself"
           },
           {
             "id": "D",
-            "text": "myself"
+            "text": "us"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Mine expresses possession, not an object receiving a request.",
-          "B": "Remove the other name: the director asked me. The compound object uses the same case.",
-          "C": "The pronoun is an object of asked, not the subject.",
-          "D": "A reflexive pronoun needs an appropriate antecedent; I is not the subject here."
+          "A": "The pronoun is the subject of dropped, and the subject form is I.",
+          "B": "Me is the object form and cannot be the subject of a verb.",
+          "C": "Myself reflects back on a subject, and this clause has no earlier I.",
+          "D": "Us is plural, though only one of the two carriers dropped an end."
         }
       },
       {
@@ -1128,32 +1128,32 @@
         "section": "english",
         "topic": "subject-verb agreement",
         "difficulty": "easy",
-        "context": "Choose the verb that completes this sentence in standard English: \"The collection of costumes ___ ready for inspection.\"",
+        "context": "The archivist «catalogues» each donation during the week it arrives.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "have been"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "were"
+            "text": "catalogue"
           },
           {
             "id": "C",
-            "text": "is"
+            "text": "have catalogued"
           },
           {
             "id": "D",
-            "text": "are"
+            "text": "are cataloguing"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "A singular subject requires has been.",
-          "B": "The singular subject requires was in the past tense.",
-          "C": "Collection is the singular subject, so is agrees with it.",
-          "D": "The head noun collection is singular; the plural noun in the of-phrase does not control the verb."
+          "A": "Archivist is singular, and catalogues is the singular present-tense form.",
+          "B": "Catalogue is the plural form and does not agree with a single archivist.",
+          "C": "Have catalogued is plural, and the sentence describes a standing practice.",
+          "D": "Are cataloguing is plural and turns a weekly routine into something in progress."
         }
       },
       {
@@ -1161,32 +1161,32 @@
         "section": "english",
         "topic": "verb tense",
         "difficulty": "easy",
-        "context": "\"Yesterday, Asha ___ the costumes before the doors opened.\" Which choice makes the sequence of past events clear?",
+        "context": "Right now the kiln «cooled» slowly at the back of the workshop.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "will decide to repair"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "has decided to repair"
+            "text": "is cooling"
           },
           {
             "id": "C",
-            "text": "is deciding to repair"
+            "text": "had cooled"
           },
           {
             "id": "D",
-            "text": "had decided to repair"
+            "text": "will cool"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "Future tense conflicts with the completed event yesterday.",
-          "B": "Present perfect does not fit this completed past time frame.",
-          "C": "Present progressive conflicts with yesterday.",
-          "D": "Past perfect marks a decision made before another past event."
+          "A": "Past tense contradicts right now, which points at this very moment.",
+          "B": "Right now calls for the present progressive, which is cooling supplies.",
+          "C": "Past perfect places the cooling before some other past event entirely.",
+          "D": "Future tense would mean the kiln has not started to cool at all yet."
         }
       },
       {
@@ -1194,32 +1194,32 @@
         "section": "english",
         "topic": "commas",
         "difficulty": "easy",
-        "context": "Which version correctly punctuates the clause about Asha preparing to repair the costumes?",
+        "context": "The recipe calls for «flour butter and» a pinch of coarse salt.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Before Asha could repair the costumes, the lights went out."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Before Asha could repair, the costumes the lights went out."
+            "text": "flour, butter, and"
           },
           {
             "id": "C",
-            "text": "Before, Asha could repair the costumes the lights went out."
+            "text": "flour, butter and,"
           },
           {
             "id": "D",
-            "text": "Before Asha, could repair the costumes the lights went out."
+            "text": "flour butter, and"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Put the comma after the complete introductory dependent clause, not inside it.",
-          "B": "This separates the verb from its object.",
-          "C": "Do not place a comma immediately after Before here.",
-          "D": "This separates a subject from its verb."
+          "A": "Items in a series are separated by commas, and this list has none at all.",
+          "B": "Three items in a series take a comma after the first and after the second.",
+          "C": "The comma after and cuts the conjunction off from the item it introduces.",
+          "D": "A comma is still missing between the first item and the second one."
         }
       },
       {
@@ -1227,32 +1227,32 @@
         "section": "english",
         "topic": "apostrophes",
         "difficulty": "easy",
-        "context": "The following sentence refers to exactly one curator: \"Asha followed the ___ instructions to repair the costumes.\" Which choice is correct?",
+        "context": "«Its» a long walk from the station out to the old quarry.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "curator"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "curator's"
+            "text": "It's"
           },
           {
             "id": "C",
-            "text": "curators"
+            "text": "Its'"
           },
           {
             "id": "D",
-            "text": "curators'"
+            "text": "It's's"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "This does not mark the instructions as belonging to the curator.",
-          "B": "A singular possessive noun takes apostrophe + s.",
-          "C": "A plural noun does not show singular possession.",
-          "D": "This indicates possession by multiple curators."
+          "A": "Its is the possessive form and cannot stand in for the words it is.",
+          "B": "The sentence means it is a long walk, and that contracts to it apostrophe s.",
+          "C": "No such form exists; the possessive its never takes an apostrophe at all.",
+          "D": "Stacking a second apostrophe and s produces a word nobody writes."
         }
       },
       {
@@ -1260,32 +1260,32 @@
         "section": "english",
         "topic": "pronouns",
         "difficulty": "easy",
-        "context": "\"The director asked Asha and ___ to repair the costumes.\" Which pronoun is correct?",
+        "context": "The letters arrived without stamps, and the clerk returned «it» unopened.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "myself"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "mine"
+            "text": "them"
           },
           {
             "id": "C",
-            "text": "me"
+            "text": "those ones"
           },
           {
             "id": "D",
-            "text": "I"
+            "text": "that"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "A reflexive pronoun needs an appropriate antecedent; I is not the subject here.",
-          "B": "Mine expresses possession, not an object receiving a request.",
-          "C": "Remove the other name: the director asked me. The compound object uses the same case.",
-          "D": "The pronoun is an object of asked, not the subject."
+          "A": "It is singular, while the sentence has described more than one letter.",
+          "B": "Letters is plural, so the plural pronoun them stands in for it.",
+          "C": "Those ones is not standard, and a plain plural pronoun already fits.",
+          "D": "That singles out one thing, but every letter went back unopened."
         }
       },
       {
@@ -1688,165 +1688,165 @@
         "id": "exp26-english-052",
         "section": "english",
         "topic": "subject-verb agreement",
-        "difficulty": "easy",
-        "context": "Choose the verb that completes this sentence in standard English: \"The collection of maps ___ ready for inspection.\"",
+        "difficulty": "medium",
+        "context": "The crate of glass negatives «were» hauled up from the cellar last spring.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "are"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "have been"
+            "text": "has been"
           },
           {
             "id": "C",
-            "text": "were"
+            "text": "was"
           },
           {
             "id": "D",
-            "text": "is"
+            "text": "are"
           }
         ],
-        "answer": "D",
+        "answer": "C",
         "why": {
-          "A": "The head noun collection is singular; the plural noun in the of-phrase does not control the verb.",
-          "B": "A singular subject requires has been.",
-          "C": "The singular subject requires was in the past tense.",
-          "D": "Collection is the singular subject, so is agrees with it."
+          "A": "Were agrees with negatives, but the subject of the sentence is crate.",
+          "B": "Has been ties the hauling to the present, though it happened last spring.",
+          "C": "The head noun crate is singular, so the singular past-tense was agrees with it.",
+          "D": "Are is both plural and present, and the hauling is finished and past."
         }
       },
       {
         "id": "exp26-english-053",
         "section": "english",
         "topic": "verb tense",
-        "difficulty": "easy",
-        "context": "\"Yesterday, Theo ___ the maps before the doors opened.\" Which choice makes the sequence of past events clear?",
+        "difficulty": "medium",
+        "context": "The surveyors had already mapped the ridge before the storm «arrives».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "had decided to sort"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "will decide to sort"
+            "text": "arrived"
           },
           {
             "id": "C",
-            "text": "has decided to sort"
+            "text": "will arrive"
           },
           {
             "id": "D",
-            "text": "is deciding to sort"
+            "text": "has arrived"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Past perfect marks a decision made before another past event.",
-          "B": "Future tense conflicts with the completed event yesterday.",
-          "C": "Present perfect does not fit this completed past time frame.",
-          "D": "Present progressive conflicts with yesterday."
+          "A": "A present-tense verb cannot follow the past perfect had already mapped.",
+          "B": "Had mapped sets an earlier past, so the later event takes the simple past.",
+          "C": "Future tense contradicts a mapping that was finished before it.",
+          "D": "Present perfect ties the arrival to now, though the sentence is wholly past."
         }
       },
       {
         "id": "exp26-english-054",
         "section": "english",
         "topic": "commas",
-        "difficulty": "easy",
-        "context": "Which version correctly punctuates the clause about Theo preparing to sort the maps?",
+        "difficulty": "medium",
+        "context": "«After the flood receded the council» met twice in a single week.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Before Theo, could sort the maps the lights went out."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Before Theo could sort the maps, the lights went out."
+            "text": "After the flood, receded the council"
           },
           {
             "id": "C",
-            "text": "Before Theo could sort, the maps the lights went out."
+            "text": "After the flood receded, the council"
           },
           {
             "id": "D",
-            "text": "Before, Theo could sort the maps the lights went out."
+            "text": "After the flood, receded, the council"
           }
         ],
-        "answer": "B",
+        "answer": "C",
         "why": {
-          "A": "This separates a subject from its verb.",
-          "B": "Put the comma after the complete introductory dependent clause, not inside it.",
-          "C": "This separates the verb from its object.",
-          "D": "Do not place a comma immediately after Before here."
+          "A": "An introductory clause needs a comma before the main sentence begins.",
+          "B": "The comma falls inside the opening clause and splits its own subject off.",
+          "C": "The comma marks where the introductory clause ends and the sentence proper starts.",
+          "D": "Two commas fence off receded, which is the verb of the opening clause."
         }
       },
       {
         "id": "exp26-english-055",
         "section": "english",
         "topic": "apostrophes",
-        "difficulty": "easy",
-        "context": "The following sentence refers to exactly one curator: \"Theo followed the ___ instructions to sort the maps.\" Which choice is correct?",
+        "difficulty": "medium",
+        "context": "The clock lost «it's» minute hand somewhere between the two houses.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "curators'"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "curator"
+            "text": "its"
           },
           {
             "id": "C",
-            "text": "curator's"
+            "text": "its'"
           },
           {
             "id": "D",
-            "text": "curators"
+            "text": "it is"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "This indicates possession by multiple curators.",
-          "B": "This does not mark the instructions as belonging to the curator.",
-          "C": "A singular possessive noun takes apostrophe + s.",
-          "D": "A plural noun does not show singular possession."
+          "A": "It apostrophe s is short for it is, which makes no sense before minute hand.",
+          "B": "The hand belongs to the clock, and the possessive form of it is its.",
+          "C": "The possessive its never carries an apostrophe in any position.",
+          "D": "Writing it is out in full leaves the sentence with no working verb."
         }
       },
       {
         "id": "exp26-english-056",
         "section": "english",
         "topic": "pronouns",
-        "difficulty": "easy",
-        "context": "\"The director asked Theo and ___ to sort the maps.\" Which pronoun is correct?",
+        "difficulty": "medium",
+        "context": "The prize money was divided between Devi and «I» after the second heat.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "I"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "myself"
+            "text": "me"
           },
           {
             "id": "C",
-            "text": "mine"
+            "text": "myself"
           },
           {
             "id": "D",
-            "text": "me"
+            "text": "mine"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The pronoun is an object of asked, not the subject.",
-          "B": "A reflexive pronoun needs an appropriate antecedent; I is not the subject here.",
-          "C": "Mine expresses possession, not an object receiving a request.",
-          "D": "Remove the other name: the director asked me. The compound object uses the same case."
+          "A": "After a preposition the object form is required, and I is a subject form.",
+          "B": "Between is a preposition, so the pronoun that follows takes the object form.",
+          "C": "Myself needs an earlier I in the same clause to reflect back on.",
+          "D": "Mine names something owned rather than a person sharing the prize."
         }
       },
       {
@@ -2249,165 +2249,165 @@
         "id": "exp26-english-069",
         "section": "english",
         "topic": "subject-verb agreement",
-        "difficulty": "easy",
-        "context": "Choose the verb that completes this sentence in standard English: \"The collection of lenses ___ ready for inspection.\"",
+        "difficulty": "medium",
+        "context": "A row of poplars that the farmers planted in 1890 «mark» the old boundary.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "is"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "are"
+            "text": "marks"
           },
           {
             "id": "C",
-            "text": "have been"
+            "text": "have marked"
           },
           {
             "id": "D",
-            "text": "were"
+            "text": "are marking"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Collection is the singular subject, so is agrees with it.",
-          "B": "The head noun collection is singular; the plural noun in the of-phrase does not control the verb.",
-          "C": "A singular subject requires has been.",
-          "D": "The singular subject requires was in the past tense."
+          "A": "Mark agrees with poplars, the nearest noun, rather than with the subject.",
+          "B": "The head noun row is singular, so the singular verb marks agrees with it.",
+          "C": "Have marked is plural and does not agree with the singular subject row.",
+          "D": "Are marking is plural and suggests a boundary being drawn at this moment."
         }
       },
       {
         "id": "exp26-english-070",
         "section": "english",
         "topic": "verb tense",
-        "difficulty": "easy",
-        "context": "\"Yesterday, Nora ___ the lenses before the doors opened.\" Which choice makes the sequence of past events clear?",
+        "difficulty": "medium",
+        "context": "Since the mill closed in 1974, the village «has lost» a third of its population.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "is deciding to clean"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "had decided to clean"
+            "text": "loses"
           },
           {
             "id": "C",
-            "text": "will decide to clean"
+            "text": "lost"
           },
           {
             "id": "D",
-            "text": "has decided to clean"
+            "text": "had lost"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Present progressive conflicts with yesterday.",
-          "B": "Past perfect marks a decision made before another past event.",
-          "C": "Future tense conflicts with the completed event yesterday.",
-          "D": "Present perfect does not fit this completed past time frame."
+          "A": "Since plus a past starting point calls for the present perfect has lost.",
+          "B": "Simple present describes a habit rather than a loss piling up since 1974.",
+          "C": "Simple past closes the loss off, though since keeps it running up to now.",
+          "D": "Past perfect would need a second past event for the loss to come before."
         }
       },
       {
         "id": "exp26-english-071",
         "section": "english",
         "topic": "commas",
-        "difficulty": "easy",
-        "context": "Which version correctly punctuates the clause about Nora preparing to clean the lenses?",
+        "difficulty": "medium",
+        "context": "The archivist «handed me a folder, that held» three unopened letters.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Before, Nora could clean the lenses the lights went out."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Before Nora, could clean the lenses the lights went out."
+            "text": "handed me, a folder that held"
           },
           {
             "id": "C",
-            "text": "Before Nora could clean the lenses, the lights went out."
+            "text": "handed me a folder that held"
           },
           {
             "id": "D",
-            "text": "Before Nora could clean, the lenses the lights went out."
+            "text": "handed me a folder, that, held"
           }
         ],
         "answer": "C",
         "why": {
-          "A": "Do not place a comma immediately after Before here.",
-          "B": "This separates a subject from its verb.",
-          "C": "Put the comma after the complete introductory dependent clause, not inside it.",
-          "D": "This separates the verb from its object."
+          "A": "A that-clause identifying the folder is essential and takes no comma before it.",
+          "B": "The comma separates the verb from the object that follows it.",
+          "C": "That held says which folder, so nothing separates the clause from folder.",
+          "D": "Commas at both ends would mark an interruption, but this clause is essential."
         }
       },
       {
         "id": "exp26-english-072",
         "section": "english",
         "topic": "apostrophes",
-        "difficulty": "easy",
-        "context": "The following sentence refers to exactly one curator: \"Nora followed the ___ instructions to clean the lenses.\" Which choice is correct?",
+        "difficulty": "medium",
+        "context": "The «womens» entrance on Bridge Street was bricked up in 1931.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "curators"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "curators'"
+            "text": "womens'"
           },
           {
             "id": "C",
-            "text": "curator"
+            "text": "women's"
           },
           {
             "id": "D",
-            "text": "curator's"
+            "text": "womans'"
           }
         ],
-        "answer": "D",
+        "answer": "C",
         "why": {
-          "A": "A plural noun does not show singular possession.",
-          "B": "This indicates possession by multiple curators.",
-          "C": "This does not mark the instructions as belonging to the curator.",
-          "D": "A singular possessive noun takes apostrophe + s."
+          "A": "Women is already plural, and an entrance belonging to them needs an apostrophe.",
+          "B": "An apostrophe after the s suits plurals ending in s, which women does not.",
+          "C": "Women is an irregular plural, so its possessive adds an apostrophe and an s.",
+          "D": "Womans is not a word, and the entrance served more than one person."
         }
       },
       {
         "id": "exp26-english-073",
         "section": "english",
         "topic": "pronouns",
-        "difficulty": "easy",
-        "context": "\"The director asked Nora and ___ to clean the lenses.\" Which pronoun is correct?",
+        "difficulty": "medium",
+        "context": "The violinist «who» the orchestra hired in June left again before Christmas.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "me"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "I"
+            "text": "whom"
           },
           {
             "id": "C",
-            "text": "myself"
+            "text": "which"
           },
           {
             "id": "D",
-            "text": "mine"
+            "text": "whose"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Remove the other name: the director asked me. The compound object uses the same case.",
-          "B": "The pronoun is an object of asked, not the subject.",
-          "C": "A reflexive pronoun needs an appropriate antecedent; I is not the subject here.",
-          "D": "Mine expresses possession, not an object receiving a request."
+          "A": "Who is the subject form, but this pronoun is the object of hired.",
+          "B": "The orchestra hired the violinist, so the object form whom belongs here.",
+          "C": "Which refers to things rather than to a person.",
+          "D": "Whose marks ownership, and nothing in the clause belongs to the violinist."
         }
       },
       {
@@ -2810,165 +2810,165 @@
         "id": "exp26-english-086",
         "section": "english",
         "topic": "subject-verb agreement",
-        "difficulty": "easy",
-        "context": "Choose the verb that completes this sentence in standard English: \"The collection of sketches ___ ready for inspection.\"",
+        "difficulty": "medium",
+        "context": "The report on the flooded lower galleries «are» due at the end of the week.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "were"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "is"
+            "text": "were"
           },
           {
             "id": "C",
-            "text": "are"
+            "text": "have been"
           },
           {
             "id": "D",
-            "text": "have been"
+            "text": "is"
           }
         ],
-        "answer": "B",
+        "answer": "D",
         "why": {
-          "A": "The singular subject requires was in the past tense.",
-          "B": "Collection is the singular subject, so is agrees with it.",
-          "C": "The head noun collection is singular; the plural noun in the of-phrase does not control the verb.",
-          "D": "A singular subject requires has been."
+          "A": "Are agrees with galleries, which sits inside a prepositional phrase.",
+          "B": "Were is plural and also drags a deadline still ahead into the past.",
+          "C": "Have been is plural and does not agree with the singular subject report.",
+          "D": "Report is the singular subject, so the singular verb is agrees with it."
         }
       },
       {
         "id": "exp26-english-087",
         "section": "english",
         "topic": "verb tense",
-        "difficulty": "easy",
-        "context": "\"Yesterday, Inez ___ the sketches before the doors opened.\" Which choice makes the sequence of past events clear?",
+        "difficulty": "medium",
+        "context": "When the tide finally turned, the boats that had waited all morning «move» out past the bar.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "has decided to display"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "is deciding to display"
+            "text": "moved"
           },
           {
             "id": "C",
-            "text": "had decided to display"
+            "text": "will move"
           },
           {
             "id": "D",
-            "text": "will decide to display"
+            "text": "have moved"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "Present perfect does not fit this completed past time frame.",
-          "B": "Present progressive conflicts with yesterday.",
-          "C": "Past perfect marks a decision made before another past event.",
-          "D": "Future tense conflicts with the completed event yesterday."
+          "A": "Present tense clashes with turned and had waited, both firmly in the past.",
+          "B": "Turned and had waited set the sentence in the past, which moved matches.",
+          "C": "Future tense contradicts a tide that has already turned.",
+          "D": "Present perfect connects the departure to now rather than to that morning."
         }
       },
       {
         "id": "exp26-english-088",
         "section": "english",
         "topic": "commas",
-        "difficulty": "easy",
-        "context": "Which version correctly punctuates the clause about Inez preparing to display the sketches?",
+        "difficulty": "medium",
+        "context": "«Dr. Okonjo, who trained in Lagos, now» runs the museum's conservation lab.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Before Inez could display, the sketches the lights went out."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Before, Inez could display the sketches the lights went out."
+            "text": "Dr. Okonjo who trained in Lagos now"
           },
           {
             "id": "C",
-            "text": "Before Inez, could display the sketches the lights went out."
+            "text": "Dr. Okonjo, who trained in Lagos now"
           },
           {
             "id": "D",
-            "text": "Before Inez could display the sketches, the lights went out."
+            "text": "Dr. Okonjo who trained in Lagos, now"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This separates the verb from its object.",
-          "B": "Do not place a comma immediately after Before here.",
-          "C": "This separates a subject from its verb.",
-          "D": "Put the comma after the complete introductory dependent clause, not inside it."
+          "A": "The clause adds detail about someone already named, so commas fence it off.",
+          "B": "Without commas the clause reads as though it picks one Okonjo out of several.",
+          "C": "An interruption needs a comma at both ends, not only at the front of it.",
+          "D": "The opening comma is missing, so the interruption is only half marked."
         }
       },
       {
         "id": "exp26-english-089",
         "section": "english",
         "topic": "apostrophes",
-        "difficulty": "easy",
-        "context": "The following sentence refers to exactly one curator: \"Inez followed the ___ instructions to display the sketches.\" Which choice is correct?",
+        "difficulty": "medium",
+        "context": "«Whose» been keeping the tide log since the lighthouse closed?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "curator's"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "curators"
+            "text": "Who's"
           },
           {
             "id": "C",
-            "text": "curators'"
+            "text": "Whos"
           },
           {
             "id": "D",
-            "text": "curator"
+            "text": "Whose's"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "A singular possessive noun takes apostrophe + s.",
-          "B": "A plural noun does not show singular possession.",
-          "C": "This indicates possession by multiple curators.",
-          "D": "This does not mark the instructions as belonging to the curator."
+          "A": "Whose asks about ownership, but the sentence asks who has been keeping it.",
+          "B": "The question means who has been, and who has contracts to who apostrophe s.",
+          "C": "Without an apostrophe the contraction is simply a misspelling.",
+          "D": "Whose is already possessive, so an apostrophe and s compound the error."
         }
       },
       {
         "id": "exp26-english-090",
         "section": "english",
         "topic": "pronouns",
-        "difficulty": "easy",
-        "context": "\"The director asked Inez and ___ to display the sketches.\" Which pronoun is correct?",
+        "difficulty": "medium",
+        "context": "There is nobody in the tower tonight but «her» and the watchman.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "mine"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "me"
+            "text": "she"
           },
           {
             "id": "C",
-            "text": "I"
+            "text": "hers"
           },
           {
             "id": "D",
-            "text": "myself"
+            "text": "herself"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Mine expresses possession, not an object receiving a request.",
-          "B": "Remove the other name: the director asked me. The compound object uses the same case.",
-          "C": "The pronoun is an object of asked, not the subject.",
-          "D": "A reflexive pronoun needs an appropriate antecedent; I is not the subject here."
+          "A": "But works as a preposition here, so the pronoun after it takes the object form.",
+          "B": "She is the subject form and does not follow a preposition.",
+          "C": "Hers names something owned rather than the person up in the tower.",
+          "D": "Herself needs an earlier she in the clause for it to point back to."
         }
       },
       {
@@ -3371,13 +3371,13 @@
         "id": "exp26-english-103",
         "section": "english",
         "topic": "subject-verb agreement",
-        "difficulty": "easy",
-        "context": "Choose the verb that completes this sentence in standard English: \"The collection of timetables ___ ready for inspection.\"",
+        "difficulty": "hard",
+        "context": "Neither the curator nor her two assistants «was» told that the loan had fallen through.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "have been"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
@@ -3385,151 +3385,151 @@
           },
           {
             "id": "C",
-            "text": "is"
+            "text": "has been"
           },
           {
             "id": "D",
-            "text": "are"
+            "text": "is"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "A singular subject requires has been.",
-          "B": "The singular subject requires was in the past tense.",
-          "C": "Collection is the singular subject, so is agrees with it.",
-          "D": "The head noun collection is singular; the plural noun in the of-phrase does not control the verb."
+          "A": "With neither and nor the verb agrees with the nearer subject, which is plural.",
+          "B": "Assistants is the nearer of the two subjects, so the plural were agrees.",
+          "C": "Has been is singular and also replaces the past tense the sentence needs.",
+          "D": "A singular present verb suits neither the nearer subject nor the past setting."
         }
       },
       {
         "id": "exp26-english-104",
         "section": "english",
         "topic": "verb tense",
-        "difficulty": "easy",
-        "context": "\"Yesterday, Omar ___ the timetables before the doors opened.\" Which choice makes the sequence of past events clear?",
+        "difficulty": "hard",
+        "context": "By the time the inspector arrived, the crew «worked» through two shifts without a break.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "will decide to update"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "has decided to update"
+            "text": "had worked"
           },
           {
             "id": "C",
-            "text": "is deciding to update"
+            "text": "works"
           },
           {
             "id": "D",
-            "text": "had decided to update"
+            "text": "would work"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "Future tense conflicts with the completed event yesterday.",
-          "B": "Present perfect does not fit this completed past time frame.",
-          "C": "Present progressive conflicts with yesterday.",
-          "D": "Past perfect marks a decision made before another past event."
+          "A": "Simple past leaves both events at one moment, though one plainly came first.",
+          "B": "By the time marks one past event as earlier, which the past perfect shows.",
+          "C": "Present tense contradicts an arrival that has already happened.",
+          "D": "Would work describes something hypothetical rather than two shifts already done."
         }
       },
       {
         "id": "exp26-english-105",
         "section": "english",
         "topic": "commas",
-        "difficulty": "easy",
-        "context": "Which version correctly punctuates the clause about Omar preparing to update the timetables?",
+        "difficulty": "hard",
+        "context": "The printer set the type by hand «and, then pulled» a proof before lunch.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Before Omar could update the timetables, the lights went out."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Before Omar could update, the timetables the lights went out."
+            "text": ", and then pulled"
           },
           {
             "id": "C",
-            "text": "Before, Omar could update the timetables the lights went out."
+            "text": "and then pulled"
           },
           {
             "id": "D",
-            "text": "Before Omar, could update the timetables the lights went out."
+            "text": "and then, pulled"
           }
         ],
-        "answer": "A",
+        "answer": "C",
         "why": {
-          "A": "Put the comma after the complete introductory dependent clause, not inside it.",
-          "B": "This separates the verb from its object.",
-          "C": "Do not place a comma immediately after Before here.",
-          "D": "This separates a subject from its verb."
+          "A": "A comma after and cuts the conjunction off from the verb it introduces.",
+          "B": "A comma before and suits two complete sentences, but pulled has no subject.",
+          "C": "Set and pulled share one subject, so the compound verb takes no comma.",
+          "D": "The comma falls between the adverb and the verb that it modifies."
         }
       },
       {
         "id": "exp26-english-106",
         "section": "english",
         "topic": "apostrophes",
-        "difficulty": "easy",
-        "context": "The following sentence refers to exactly one curator: \"Omar followed the ___ instructions to update the timetables.\" Which choice is correct?",
+        "difficulty": "hard",
+        "context": "The three «tenants'» complaints were all filed on the same afternoon.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "curator"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "curator's"
+            "text": "tenant's"
           },
           {
             "id": "C",
-            "text": "curators"
+            "text": "tenants"
           },
           {
             "id": "D",
-            "text": "curators'"
+            "text": "tenants's"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This does not mark the instructions as belonging to the curator.",
-          "B": "A singular possessive noun takes apostrophe + s.",
-          "C": "A plural noun does not show singular possession.",
-          "D": "This indicates possession by multiple curators."
+          "A": "Three tenants own the complaints, so the plural takes a trailing apostrophe.",
+          "B": "A single tenant cannot be the owner when the sentence counts three of them.",
+          "C": "Without an apostrophe the tenants no longer own the complaints at all.",
+          "D": "A plural already ending in s takes no second s after the apostrophe."
         }
       },
       {
         "id": "exp26-english-107",
         "section": "english",
         "topic": "pronouns",
-        "difficulty": "easy",
-        "context": "\"The director asked Omar and ___ to update the timetables.\" Which pronoun is correct?",
+        "difficulty": "hard",
+        "context": "When the ledger was set beside the diary, «it» turned out to be a forgery.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "myself"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "mine"
+            "text": "the ledger"
           },
           {
             "id": "C",
-            "text": "me"
+            "text": "they"
           },
           {
             "id": "D",
-            "text": "I"
+            "text": "the other one"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "A reflexive pronoun needs an appropriate antecedent; I is not the subject here.",
-          "B": "Mine expresses possession, not an object receiving a request.",
-          "C": "Remove the other name: the director asked me. The compound object uses the same case.",
-          "D": "The pronoun is an object of asked, not the subject."
+          "A": "Two singular nouns come before the pronoun, so it could point at either.",
+          "B": "Naming the ledger outright settles which of the two documents was faked.",
+          "C": "They is plural, and only one of the two documents proved to be false.",
+          "D": "The other one still leaves a reader working out which document is meant."
         }
       },
       {
@@ -3932,17 +3932,17 @@
         "id": "exp26-english-120",
         "section": "english",
         "topic": "subject-verb agreement",
-        "difficulty": "easy",
-        "context": "Choose the verb that completes this sentence in standard English: \"The collection of instruments ___ ready for inspection.\"",
+        "difficulty": "hard",
+        "context": "Each of the seventeen bell founders «have» left a mark on the rim.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "are"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "have been"
+            "text": "has"
           },
           {
             "id": "C",
@@ -3950,147 +3950,147 @@
           },
           {
             "id": "D",
-            "text": "is"
+            "text": "are having"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The head noun collection is singular; the plural noun in the of-phrase does not control the verb.",
-          "B": "A singular subject requires has been.",
-          "C": "The singular subject requires was in the past tense.",
-          "D": "Collection is the singular subject, so is agrees with it."
+          "A": "Have agrees with founders, but the subject of the sentence is each.",
+          "B": "Each stays singular however many founders follow it, so has agrees with it.",
+          "C": "Were is plural and turns a mark still on the rim into a finished past act.",
+          "D": "Are having is plural and describes something under way rather than a mark left behind."
         }
       },
       {
         "id": "exp26-english-121",
         "section": "english",
         "topic": "verb tense",
-        "difficulty": "easy",
-        "context": "\"Yesterday, Wren ___ the instruments before the doors opened.\" Which choice makes the sequence of past events clear?",
+        "difficulty": "hard",
+        "context": "If the foundation had sent the grant a month earlier, the dig «would finish» before the frost.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "had decided to inspect"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "will decide to inspect"
+            "text": "would have been finishing"
           },
           {
             "id": "C",
-            "text": "has decided to inspect"
+            "text": "would have finished"
           },
           {
             "id": "D",
-            "text": "is deciding to inspect"
+            "text": "will have finished"
           }
         ],
-        "answer": "A",
+        "answer": "C",
         "why": {
-          "A": "Past perfect marks a decision made before another past event.",
-          "B": "Future tense conflicts with the completed event yesterday.",
-          "C": "Present perfect does not fit this completed past time frame.",
-          "D": "Present progressive conflicts with yesterday."
+          "A": "Had sent sets up a condition in the past, so the result belongs in the past too.",
+          "B": "The progressive leaves work still under way rather than a dig brought to an end.",
+          "C": "A past unreal condition takes would have and a participle in the result clause.",
+          "D": "Will have finished treats the grant as something that might still arrive."
         }
       },
       {
         "id": "exp26-english-122",
         "section": "english",
         "topic": "commas",
-        "difficulty": "easy",
-        "context": "Which version correctly punctuates the clause about Wren preparing to inspect the instruments?",
+        "difficulty": "hard",
+        "context": "Wheeler's second novel «a quiet book about ferries was» out of print for thirty years.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Before Wren, could inspect the instruments the lights went out."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Before Wren could inspect the instruments, the lights went out."
+            "text": "a quiet book about ferries, was"
           },
           {
             "id": "C",
-            "text": "Before Wren could inspect, the instruments the lights went out."
+            "text": "; a quiet book about ferries; was"
           },
           {
             "id": "D",
-            "text": "Before, Wren could inspect the instruments the lights went out."
+            "text": ", a quiet book about ferries, was"
           }
         ],
-        "answer": "B",
+        "answer": "D",
         "why": {
-          "A": "This separates a subject from its verb.",
-          "B": "Put the comma after the complete introductory dependent clause, not inside it.",
-          "C": "This separates the verb from its object.",
-          "D": "Do not place a comma immediately after Before here."
+          "A": "A renaming phrase dropped between subject and verb has to be fenced off.",
+          "B": "Only the closing comma is there, so the phrase opens without any warning.",
+          "C": "Semicolons join complete sentences, and a renaming phrase is not one.",
+          "D": "The phrase renames the novel, so a comma stands at each end of it."
         }
       },
       {
         "id": "exp26-english-123",
         "section": "english",
         "topic": "apostrophes",
-        "difficulty": "easy",
-        "context": "The following sentence refers to exactly one curator: \"Wren followed the ___ instructions to inspect the instruments.\" Which choice is correct?",
+        "difficulty": "hard",
+        "context": "Nobody objected to «Marguerite» leaving early on the last night of the run.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "curators'"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "curator"
+            "text": "Marguerite's"
           },
           {
             "id": "C",
-            "text": "curator's"
+            "text": "Marguerites"
           },
           {
             "id": "D",
-            "text": "curators"
+            "text": "Marguerites'"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "This indicates possession by multiple curators.",
-          "B": "This does not mark the instructions as belonging to the curator.",
-          "C": "A singular possessive noun takes apostrophe + s.",
-          "D": "A plural noun does not show singular possession."
+          "A": "What nobody objected to is the leaving, so the name before it turns possessive.",
+          "B": "A gerund takes a possessive in front of it, which makes the form Marguerite plus s.",
+          "C": "The plural would mean several people share the name and all left early.",
+          "D": "A plural possessive needs more than one Marguerite to do the owning."
         }
       },
       {
         "id": "exp26-english-124",
         "section": "english",
         "topic": "pronouns",
-        "difficulty": "easy",
-        "context": "\"The director asked Wren and ___ to inspect the instruments.\" Which pronoun is correct?",
+        "difficulty": "hard",
+        "context": "Every one of the bells in the tower carries «their» own inscription.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "I"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "myself"
+            "text": "its"
           },
           {
             "id": "C",
-            "text": "mine"
+            "text": "it's"
           },
           {
             "id": "D",
-            "text": "me"
+            "text": "theirs"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The pronoun is an object of asked, not the subject.",
-          "B": "A reflexive pronoun needs an appropriate antecedent; I is not the subject here.",
-          "C": "Mine expresses possession, not an object receiving a request.",
-          "D": "Remove the other name: the director asked me. The compound object uses the same case."
+          "A": "Their agrees with bells, but the subject of the sentence is every one.",
+          "B": "Every one stays singular however many bells follow, so the pronoun is its.",
+          "C": "It apostrophe s is short for it is and cannot show that a bell owns anything.",
+          "D": "Theirs stands alone in place of a noun and cannot sit before inscription."
         }
       },
       {
@@ -4493,13 +4493,13 @@
         "id": "exp26-english-137",
         "section": "english",
         "topic": "subject-verb agreement",
-        "difficulty": "easy",
-        "context": "Choose the verb that completes this sentence in standard English: \"The collection of recordings ___ ready for inspection.\"",
+        "difficulty": "hard",
+        "context": "The director, along with the entire conservation team, «is» expected at noon.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "is"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
@@ -4516,142 +4516,142 @@
         ],
         "answer": "A",
         "why": {
-          "A": "Collection is the singular subject, so is agrees with it.",
-          "B": "The head noun collection is singular; the plural noun in the of-phrase does not control the verb.",
-          "C": "A singular subject requires has been.",
-          "D": "The singular subject requires was in the past tense."
+          "A": "A phrase opening with along with does not make a singular subject plural.",
+          "B": "Are agrees with team, which sits inside the interrupting phrase, not with director.",
+          "C": "Have been is plural and replaces an expectation with a state already reached.",
+          "D": "Were is plural and shifts an arrival still to come into the past."
         }
       },
       {
         "id": "exp26-english-138",
         "section": "english",
         "topic": "verb tense",
-        "difficulty": "easy",
-        "context": "\"Yesterday, Ravi ___ the recordings before the doors opened.\" Which choice makes the sequence of past events clear?",
+        "difficulty": "hard",
+        "context": "The letters prove that Aldridge «has begun» the design years before the commission was announced.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "is deciding to organize"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "had decided to organize"
+            "text": "had begun"
           },
           {
             "id": "C",
-            "text": "will decide to organize"
+            "text": "begins"
           },
           {
             "id": "D",
-            "text": "has decided to organize"
+            "text": "would begin"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "Present progressive conflicts with yesterday.",
-          "B": "Past perfect marks a decision made before another past event.",
-          "C": "Future tense conflicts with the completed event yesterday.",
-          "D": "Present perfect does not fit this completed past time frame."
+          "A": "Present perfect reaches up to now, though the design came before the announcement.",
+          "B": "One past event precedes another, and the earlier of the two takes had begun.",
+          "C": "Present tense contradicts an announcement made long ago.",
+          "D": "Would begin looks forward from the past rather than back to an earlier start."
         }
       },
       {
         "id": "exp26-english-139",
         "section": "english",
         "topic": "commas",
-        "difficulty": "easy",
-        "context": "Which version correctly punctuates the clause about Ravi preparing to organize the recordings?",
+        "difficulty": "hard",
+        "context": "«Everything the divers recovered that season, was» catalogued twice before it left the boat.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Before, Ravi could organize the recordings the lights went out."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Before Ravi, could organize the recordings the lights went out."
+            "text": "Everything the divers recovered, that season was"
           },
           {
             "id": "C",
-            "text": "Before Ravi could organize the recordings, the lights went out."
+            "text": "Everything the divers recovered that season was"
           },
           {
             "id": "D",
-            "text": "Before Ravi could organize, the recordings the lights went out."
+            "text": "Everything, the divers recovered that season, was"
           }
         ],
         "answer": "C",
         "why": {
-          "A": "Do not place a comma immediately after Before here.",
-          "B": "This separates a subject from its verb.",
-          "C": "Put the comma after the complete introductory dependent clause, not inside it.",
-          "D": "This separates the verb from its object."
+          "A": "The comma stands between a long subject and its verb, where none belongs.",
+          "B": "Moving the comma splits the subject in a different place, which helps nothing.",
+          "C": "However long a subject runs, no comma separates it from its own verb.",
+          "D": "Fencing the whole clause as an interruption leaves everything with no verb."
         }
       },
       {
         "id": "exp26-english-140",
         "section": "english",
         "topic": "apostrophes",
-        "difficulty": "easy",
-        "context": "The following sentence refers to exactly one curator: \"Ravi followed the ___ instructions to organize the recordings.\" Which choice is correct?",
+        "difficulty": "hard",
+        "context": "The «childrens'» coats were still hanging on the hooks by the door.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "curators"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "curators'"
+            "text": "childrens"
           },
           {
             "id": "C",
-            "text": "curator"
+            "text": "children's"
           },
           {
             "id": "D",
-            "text": "curator's"
+            "text": "childrens's"
           }
         ],
-        "answer": "D",
+        "answer": "C",
         "why": {
-          "A": "A plural noun does not show singular possession.",
-          "B": "This indicates possession by multiple curators.",
-          "C": "This does not mark the instructions as belonging to the curator.",
-          "D": "A singular possessive noun takes apostrophe + s."
+          "A": "Children is already plural, so no s belongs in front of the apostrophe.",
+          "B": "Dropping the apostrophe leaves the coats belonging to nobody at all.",
+          "C": "Children is an irregular plural, so the possessive is an apostrophe then an s.",
+          "D": "Childrens is not a plural form, so nothing can be built on top of it."
         }
       },
       {
         "id": "exp26-english-141",
         "section": "english",
         "topic": "pronouns",
-        "difficulty": "easy",
-        "context": "\"The director asked Ravi and ___ to organize the recordings.\" Which pronoun is correct?",
+        "difficulty": "hard",
+        "context": "Neither the pilot nor the two mechanics could explain why «he» had signed the log.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "me"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "I"
+            "text": "they"
           },
           {
             "id": "C",
-            "text": "myself"
+            "text": "it"
           },
           {
             "id": "D",
-            "text": "mine"
+            "text": "that one"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Remove the other name: the director asked me. The compound object uses the same case.",
-          "B": "The pronoun is an object of asked, not the subject.",
-          "C": "A reflexive pronoun needs an appropriate antecedent; I is not the subject here.",
-          "D": "Mine expresses possession, not an object receiving a request."
+          "A": "He picks out the pilot alone, though the sentence covers the mechanics too.",
+          "B": "With neither and nor the pronoun follows the nearer subject, which is plural.",
+          "C": "It refers to a thing, and a log is signed by a person.",
+          "D": "That one still refuses to say which of the people signed the log."
         }
       },
       {
