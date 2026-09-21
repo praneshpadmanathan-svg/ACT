@@ -5386,13 +5386,13 @@
         "id": "exp26-math-011",
         "section": "math",
         "topic": "sequences",
-        "difficulty": "medium",
-        "context": "An arithmetic sequence begins 23, 26, 29, …. What is its 5th term?",
+        "difficulty": "easy",
+        "context": "What is the next term of the sequence 4, 9, 14, 19, …?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "27"
+            "text": "24"
           },
           {
             "id": "B",
@@ -5400,19 +5400,19 @@
           },
           {
             "id": "C",
-            "text": "35"
+            "text": "25"
           },
           {
             "id": "D",
             "text": "38"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Each step adds 3, not 1.",
-          "B": "This is only the first term; add the common difference for subsequent terms.",
-          "C": "Add the common difference 3 exactly 4 times to the first term.",
-          "D": "This adds one extra common difference."
+          "A": "Each term is 5 more than the one before, so 19 gives way to 24.",
+          "B": "This adds 4 rather than the 5 that separates each pair of terms.",
+          "C": "This adds 6, which is one more than the step the sequence takes.",
+          "D": "Doubling the last term treats an adding rule as a multiplying one."
         }
       },
       {
@@ -5420,32 +5420,32 @@
         "section": "math",
         "topic": "exponents & radicals",
         "difficulty": "easy",
-        "context": "For nonzero x, simplify x^26 / x^23.",
+        "context": "What is 3⁴?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "x^49"
+            "text": "81"
           },
           {
             "id": "B",
-            "text": "x^24"
+            "text": "12"
           },
           {
             "id": "C",
-            "text": "3x"
+            "text": "64"
           },
           {
             "id": "D",
-            "text": "x³"
+            "text": "27"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "Adding exponents is the rule for multiplication, not division.",
-          "B": "The denominator exponent must be subtracted.",
-          "C": "An exponent of 3 means three factors of x.",
-          "D": "Subtract exponents with a common base: (26) - 23 = 3."
+          "A": "Four threes multiplied together come to 81 in all.",
+          "B": "Multiplying the base by the exponent treats a power as a product.",
+          "C": "This raises 4 to the third power, swapping base and exponent over.",
+          "D": "This is 3 to the third power, one multiplication short of the answer."
         }
       },
       {
@@ -5453,214 +5453,82 @@
         "section": "math",
         "topic": "circles",
         "difficulty": "easy",
-        "context": "A circle has radius 23 cm. What is its circumference in centimeters?",
+        "context": "A circle has a diameter of 18. What is its radius?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "46π"
+            "text": "9"
           },
           {
             "id": "B",
-            "text": "23π"
+            "text": "36"
           },
           {
             "id": "C",
-            "text": "529π"
+            "text": "18"
           },
           {
             "id": "D",
-            "text": "2116π"
+            "text": "4.5"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Circumference is 2πr = 46π.",
-          "B": "This omits the factor 2.",
-          "C": "This is the area, not circumference.",
-          "D": "This uses an area formula with the diameter substituted for the radius."
+          "A": "The radius is half the diameter, so 18 halves to 9.",
+          "B": "This doubles the diameter rather than halving it.",
+          "C": "This is the diameter again, which reaches right across the circle.",
+          "D": "This halves the diameter twice over, giving half the radius."
         }
       },
       {
         "id": "exp26-math-014",
         "section": "math",
         "topic": "lines & angles",
-        "difficulty": "medium",
-        "context": "Two supplementary angles measure (23x)° and (26x)°. What is x?",
+        "difficulty": "easy",
+        "context": "Two angles are supplementary and one measures 130°. What is the other?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "60"
+            "text": "50°"
           },
           {
             "id": "B",
-            "text": "3.67347"
+            "text": "230°"
           },
           {
             "id": "C",
-            "text": "1.83673"
+            "text": "40°"
           },
           {
             "id": "D",
-            "text": "7.34694"
+            "text": "65°"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Add the angle expressions; do not subtract them.",
-          "B": "Supplementary angles sum to 180°, so (23 + 26)x = 180. The decimal choices are rounded to five places.",
-          "C": "This uses 90°, appropriate for complementary angles.",
-          "D": "Supplementary angles do not total a full turn."
+          "A": "Supplementary angles total 180°, so the other is 180 less 130.",
+          "B": "This subtracts from 360°, the total for a full turn rather than a line.",
+          "C": "This subtracts from 90°, which is what complementary angles total.",
+          "D": "Halving the given angle has no bearing on what completes the 180°."
         }
       },
       {
         "id": "exp26-math-015",
         "section": "math",
         "topic": "word problems",
-        "difficulty": "medium",
-        "context": "A printing service charges $26 plus $23 per poster. What is the total cost, in dollars, of 24 posters?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "552"
-          },
-          {
-            "id": "B",
-            "text": "73"
-          },
-          {
-            "id": "C",
-            "text": "578"
-          },
-          {
-            "id": "D",
-            "text": "1176"
-          }
-        ],
-        "answer": "C",
-        "why": {
-          "A": "This omits the fixed fee.",
-          "B": "Multiply the per-poster rate by the number of posters.",
-          "C": "Pay the fixed charge once, plus 24 charges of $23: 26 + 23(24).",
-          "D": "This charges the fixed fee for every poster."
-        }
-      },
-      {
-        "id": "exp26-math-016",
-        "section": "math",
-        "topic": "trigonometry",
         "difficulty": "easy",
-        "context": "An acute angle θ is in a right triangle. Its opposite leg is 6, its adjacent leg is 8, and its hypotenuse is 10. What is tan θ?",
+        "context": "A worker earns 18 per hour. How much is earned in a 35-hour week?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3/5"
+            "text": "630"
           },
           {
             "id": "B",
-            "text": "4/5"
-          },
-          {
-            "id": "C",
-            "text": "4/3"
-          },
-          {
-            "id": "D",
-            "text": "3/4"
-          }
-        ],
-        "answer": "D",
-        "why": {
-          "A": "This is sine.",
-          "B": "This is cosine.",
-          "C": "This reverses opposite and adjacent.",
-          "D": "Tangent is opposite divided by adjacent, so 3/4 after canceling the common factor."
-        }
-      },
-      {
-        "id": "exp26-math-017",
-        "section": "math",
-        "topic": "logarithms",
-        "difficulty": "easy",
-        "context": "If the logarithm of x to base 3 equals 2, which expression equals x?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "3^2"
-          },
-          {
-            "id": "B",
-            "text": "3 × 2"
-          },
-          {
-            "id": "C",
-            "text": "3 + 2"
-          },
-          {
-            "id": "D",
-            "text": "3^3"
-          }
-        ],
-        "answer": "A",
-        "why": {
-          "A": "Logarithmic form converts to x = 3^2.",
-          "B": "Multiplication does not undo a logarithm.",
-          "C": "Addition does not undo a logarithm.",
-          "D": "This uses an exponent one too large."
-        }
-      },
-      {
-        "id": "exp26-math-018",
-        "section": "math",
-        "topic": "matrices",
-        "difficulty": "easy",
-        "context": "Let A = [[23, 2], [3, 26]]. What is the determinant of A?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "-592"
-          },
-          {
-            "id": "B",
-            "text": "592"
-          },
-          {
-            "id": "C",
-            "text": "604"
-          },
-          {
-            "id": "D",
-            "text": "44"
-          }
-        ],
-        "answer": "B",
-        "why": {
-          "A": "This reverses the order of the two diagonal products.",
-          "B": "For [[a,b],[c,d]], determinant = ad - bc: 23(26) - 2(3).",
-          "C": "Subtract the cross product instead of adding.",
-          "D": "Multiply entries along diagonals; do not sum them."
-        }
-      },
-      {
-        "id": "exp26-math-019",
-        "section": "math",
-        "topic": "complex numbers",
-        "difficulty": "hard",
-        "context": "What is the real part of (23 + 2i)(3 + 26i), where i² = -1?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "604"
-          },
-          {
-            "id": "B",
-            "text": "69"
+            "text": "53"
           },
           {
             "id": "C",
@@ -5668,15 +5536,147 @@
           },
           {
             "id": "D",
-            "text": "121"
+            "text": "1260"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This is the coefficient of i.",
-          "B": "This omits the real contribution from multiplying the imaginary terms.",
-          "C": "The real terms are 69 + 52i² = 17.",
-          "D": "Use i² = -1, not +1."
+          "A": "Thirty-five hours at 18 an hour come to 35 multiplied by 18.",
+          "B": "Adding the rate to the hours treats them as quantities of one kind.",
+          "C": "Subtracting the rate from the hours leaves neither of the two figures.",
+          "D": "This is the pay for seventy hours rather than the thirty-five worked."
+        }
+      },
+      {
+        "id": "exp26-math-016",
+        "section": "math",
+        "topic": "trigonometry",
+        "difficulty": "easy",
+        "context": "What is the value of cos 60°?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "1/2"
+          },
+          {
+            "id": "B",
+            "text": "√3/2"
+          },
+          {
+            "id": "C",
+            "text": "2"
+          },
+          {
+            "id": "D",
+            "text": "1/√2"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "In a 30-60-90 triangle the side beside the 60° angle is half the hypotenuse.",
+          "B": "This is the sine of 60°, which sits opposite the angle rather than beside it.",
+          "C": "A cosine can never exceed 1, since a leg cannot be longer than the hypotenuse.",
+          "D": "This is the cosine of 45°, where the two legs are of equal length."
+        }
+      },
+      {
+        "id": "exp26-math-017",
+        "section": "math",
+        "topic": "logarithms",
+        "difficulty": "easy",
+        "context": "What is the value of log₄(16)?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "2"
+          },
+          {
+            "id": "B",
+            "text": "4"
+          },
+          {
+            "id": "C",
+            "text": "8"
+          },
+          {
+            "id": "D",
+            "text": "16"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "Two fours multiplied together make 16, so the logarithm is 2.",
+          "B": "This is the base of the logarithm rather than the power it is raised to.",
+          "C": "This doubles the base rather than counting how many times it is used.",
+          "D": "This is the number inside the logarithm rather than the answer."
+        }
+      },
+      {
+        "id": "exp26-math-018",
+        "section": "math",
+        "topic": "matrices",
+        "difficulty": "easy",
+        "context": "What is the determinant of [[5, 3], [2, 4]]?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "14"
+          },
+          {
+            "id": "B",
+            "text": "26"
+          },
+          {
+            "id": "C",
+            "text": "20"
+          },
+          {
+            "id": "D",
+            "text": "6"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "The determinant is the main diagonal product less the other one.",
+          "B": "Adding the two products treats the determinant as a sum.",
+          "C": "This is the main diagonal product alone, with nothing subtracted.",
+          "D": "This is the other diagonal product, which is what gets subtracted."
+        }
+      },
+      {
+        "id": "exp26-math-019",
+        "section": "math",
+        "topic": "complex numbers",
+        "difficulty": "easy",
+        "context": "What is (5 + 2i) + (3 + 4i)?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "8 + 6i"
+          },
+          {
+            "id": "B",
+            "text": "8 + 8i"
+          },
+          {
+            "id": "C",
+            "text": "15 + 8i"
+          },
+          {
+            "id": "D",
+            "text": "2 - 2i"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "Real parts add to 8 and imaginary parts add to 6i.",
+          "B": "The imaginary parts have been added incorrectly to give 8i.",
+          "C": "The two parts have been multiplied rather than added together.",
+          "D": "The second number has been subtracted rather than added."
         }
       },
       {
@@ -5684,32 +5684,32 @@
         "section": "math",
         "topic": "number properties",
         "difficulty": "easy",
-        "context": "What is the greatest common factor of 252 and 378?",
+        "context": "What is the greatest common factor of 36 and 60?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "63"
+            "text": "12"
           },
           {
             "id": "B",
-            "text": "756"
+            "text": "6"
           },
           {
             "id": "C",
-            "text": "42"
+            "text": "180"
           },
           {
             "id": "D",
-            "text": "126"
+            "text": "24"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This divides both numbers but is not greatest.",
-          "B": "This is their least common multiple, not their greatest common factor.",
-          "C": "This is a common factor but not the greatest.",
-          "D": "Factor out 21. Since gcd(12,18) = 6, the greatest common factor is 126."
+          "A": "Both numbers divide by 12, and no larger factor divides them both.",
+          "B": "This divides both numbers but 12 does so as well and is larger.",
+          "C": "This is the least common multiple rather than the greatest common factor.",
+          "D": "This divides 36 but leaves a remainder when it goes into 60."
         }
       },
       {
@@ -6046,33 +6046,33 @@
         "id": "exp26-math-031",
         "section": "math",
         "topic": "sequences",
-        "difficulty": "medium",
-        "context": "An arithmetic sequence begins 24, 27, 30, …. What is its 6th term?",
+        "difficulty": "easy",
+        "context": "What is the common difference of the sequence 17, 13, 9, 5, …?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "29"
+            "text": "-4"
           },
           {
             "id": "B",
-            "text": "24"
+            "text": "4"
           },
           {
             "id": "C",
-            "text": "39"
+            "text": "-13"
           },
           {
             "id": "D",
-            "text": "42"
+            "text": "3"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Each step adds 3, not 1.",
-          "B": "This is only the first term; add the common difference for subsequent terms.",
-          "C": "Add the common difference 3 exactly 5 times to the first term.",
-          "D": "This adds one extra common difference."
+          "A": "Each term is 4 less than the one before, so the difference is negative.",
+          "B": "The size is right but the sequence falls, so the sign must be negative.",
+          "C": "This is the second term with a minus attached, not the step between terms.",
+          "D": "The gap between consecutive terms is 4 rather than 3 throughout."
         }
       },
       {
@@ -6080,243 +6080,12 @@
         "section": "math",
         "topic": "exponents & radicals",
         "difficulty": "easy",
-        "context": "For nonzero x, simplify x^27 / x^24.",
+        "context": "What is √144?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "x^51"
-          },
-          {
-            "id": "B",
-            "text": "x^25"
-          },
-          {
-            "id": "C",
-            "text": "3x"
-          },
-          {
-            "id": "D",
-            "text": "x³"
-          }
-        ],
-        "answer": "D",
-        "why": {
-          "A": "Adding exponents is the rule for multiplication, not division.",
-          "B": "The denominator exponent must be subtracted.",
-          "C": "An exponent of 3 means three factors of x.",
-          "D": "Subtract exponents with a common base: (27) - 24 = 3."
-        }
-      },
-      {
-        "id": "exp26-math-033",
-        "section": "math",
-        "topic": "circles",
-        "difficulty": "easy",
-        "context": "A circle has radius 24 cm. What is its circumference in centimeters?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "48π"
-          },
-          {
-            "id": "B",
-            "text": "24π"
-          },
-          {
-            "id": "C",
-            "text": "576π"
-          },
-          {
-            "id": "D",
-            "text": "2304π"
-          }
-        ],
-        "answer": "A",
-        "why": {
-          "A": "Circumference is 2πr = 48π.",
-          "B": "This omits the factor 2.",
-          "C": "This is the area, not circumference.",
-          "D": "This uses an area formula with the diameter substituted for the radius."
-        }
-      },
-      {
-        "id": "exp26-math-034",
-        "section": "math",
-        "topic": "lines & angles",
-        "difficulty": "medium",
-        "context": "Two supplementary angles measure (24x)° and (27x)°. What is x?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "60"
-          },
-          {
-            "id": "B",
-            "text": "3.52941"
-          },
-          {
-            "id": "C",
-            "text": "1.76471"
-          },
-          {
-            "id": "D",
-            "text": "7.05882"
-          }
-        ],
-        "answer": "B",
-        "why": {
-          "A": "Add the angle expressions; do not subtract them.",
-          "B": "Supplementary angles sum to 180°, so (24 + 27)x = 180. The decimal choices are rounded to five places.",
-          "C": "This uses 90°, appropriate for complementary angles.",
-          "D": "Supplementary angles do not total a full turn."
-        }
-      },
-      {
-        "id": "exp26-math-035",
-        "section": "math",
-        "topic": "word problems",
-        "difficulty": "medium",
-        "context": "A printing service charges $27 plus $24 per poster. What is the total cost, in dollars, of 25 posters?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "600"
-          },
-          {
-            "id": "B",
-            "text": "76"
-          },
-          {
-            "id": "C",
-            "text": "627"
-          },
-          {
-            "id": "D",
-            "text": "1275"
-          }
-        ],
-        "answer": "C",
-        "why": {
-          "A": "This omits the fixed fee.",
-          "B": "Multiply the per-poster rate by the number of posters.",
-          "C": "Pay the fixed charge once, plus 25 charges of $24: 27 + 24(25).",
-          "D": "This charges the fixed fee for every poster."
-        }
-      },
-      {
-        "id": "exp26-math-036",
-        "section": "math",
-        "topic": "trigonometry",
-        "difficulty": "easy",
-        "context": "An acute angle θ is in a right triangle. Its opposite leg is 9, its adjacent leg is 12, and its hypotenuse is 15. What is tan θ?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "3/5"
-          },
-          {
-            "id": "B",
-            "text": "4/5"
-          },
-          {
-            "id": "C",
-            "text": "4/3"
-          },
-          {
-            "id": "D",
-            "text": "3/4"
-          }
-        ],
-        "answer": "D",
-        "why": {
-          "A": "This is sine.",
-          "B": "This is cosine.",
-          "C": "This reverses opposite and adjacent.",
-          "D": "Tangent is opposite divided by adjacent, so 3/4 after canceling the common factor."
-        }
-      },
-      {
-        "id": "exp26-math-037",
-        "section": "math",
-        "topic": "logarithms",
-        "difficulty": "easy",
-        "context": "If the logarithm of x to base 3 equals 3, which expression equals x?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "3^3"
-          },
-          {
-            "id": "B",
-            "text": "3 × 3"
-          },
-          {
-            "id": "C",
-            "text": "3 + 3"
-          },
-          {
-            "id": "D",
-            "text": "3^4"
-          }
-        ],
-        "answer": "A",
-        "why": {
-          "A": "Logarithmic form converts to x = 3^3.",
-          "B": "Multiplication does not undo a logarithm.",
-          "C": "Addition does not undo a logarithm.",
-          "D": "This uses an exponent one too large."
-        }
-      },
-      {
-        "id": "exp26-math-038",
-        "section": "math",
-        "topic": "matrices",
-        "difficulty": "easy",
-        "context": "Let A = [[24, 2], [3, 27]]. What is the determinant of A?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "-642"
-          },
-          {
-            "id": "B",
-            "text": "642"
-          },
-          {
-            "id": "C",
-            "text": "654"
-          },
-          {
-            "id": "D",
-            "text": "46"
-          }
-        ],
-        "answer": "B",
-        "why": {
-          "A": "This reverses the order of the two diagonal products.",
-          "B": "For [[a,b],[c,d]], determinant = ad - bc: 24(27) - 2(3).",
-          "C": "Subtract the cross product instead of adding.",
-          "D": "Multiply entries along diagonals; do not sum them."
-        }
-      },
-      {
-        "id": "exp26-math-039",
-        "section": "math",
-        "topic": "complex numbers",
-        "difficulty": "hard",
-        "context": "What is the real part of (24 + 2i)(3 + 27i), where i² = -1?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "654"
+            "text": "12"
           },
           {
             "id": "B",
@@ -6324,19 +6093,250 @@
           },
           {
             "id": "C",
-            "text": "18"
+            "text": "288"
           },
           {
             "id": "D",
-            "text": "126"
+            "text": "11"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This is the coefficient of i.",
-          "B": "This omits the real contribution from multiplying the imaginary terms.",
-          "C": "The real terms are 72 + 54i² = 18.",
-          "D": "Use i² = -1, not +1."
+          "A": "Twelve multiplied by itself gives 144, so 12 is the square root.",
+          "B": "Halving the number is not the same as taking its square root.",
+          "C": "Doubling the number moves away from the root rather than towards it.",
+          "D": "This is the square root of 121, which is the next square down."
+        }
+      },
+      {
+        "id": "exp26-math-033",
+        "section": "math",
+        "topic": "circles",
+        "difficulty": "easy",
+        "context": "A central angle cuts off exactly one quarter of a circle. How many degrees is it?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "90°"
+          },
+          {
+            "id": "B",
+            "text": "45°"
+          },
+          {
+            "id": "C",
+            "text": "120°"
+          },
+          {
+            "id": "D",
+            "text": "180°"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "A full turn is 360°, and a quarter of that is 90°.",
+          "B": "This is an eighth of the full turn rather than a quarter of it.",
+          "C": "This is a third of the circle, which is wider than a quarter.",
+          "D": "This is half the circle, which is twice the quarter asked for."
+        }
+      },
+      {
+        "id": "exp26-math-034",
+        "section": "math",
+        "topic": "lines & angles",
+        "difficulty": "easy",
+        "context": "Two angles are complementary and one measures 35°. What is the other?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "55°"
+          },
+          {
+            "id": "B",
+            "text": "145°"
+          },
+          {
+            "id": "C",
+            "text": "325°"
+          },
+          {
+            "id": "D",
+            "text": "70°"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "Complementary angles total 90°, so the other is 90 less 35.",
+          "B": "This subtracts from 180°, which is what supplementary angles total.",
+          "C": "This subtracts from 360°, the total for a complete turn.",
+          "D": "Doubling the given angle is unrelated to what completes the right angle."
+        }
+      },
+      {
+        "id": "exp26-math-035",
+        "section": "math",
+        "topic": "word problems",
+        "difficulty": "easy",
+        "context": "Tickets cost 12 each. What do seven tickets cost?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "84"
+          },
+          {
+            "id": "B",
+            "text": "19"
+          },
+          {
+            "id": "C",
+            "text": "5"
+          },
+          {
+            "id": "D",
+            "text": "96"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "Seven tickets at 12 each come to 7 multiplied by 12.",
+          "B": "Adding the price to the count treats them as quantities of one kind.",
+          "C": "Subtracting the count from the price leaves neither figure.",
+          "D": "This is the cost of eight tickets rather than the seven bought."
+        }
+      },
+      {
+        "id": "exp26-math-036",
+        "section": "math",
+        "topic": "trigonometry",
+        "difficulty": "easy",
+        "context": "For an acute angle in a right triangle, the tangent is which ratio?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "opposite over adjacent"
+          },
+          {
+            "id": "B",
+            "text": "adjacent over opposite"
+          },
+          {
+            "id": "C",
+            "text": "opposite over hypotenuse"
+          },
+          {
+            "id": "D",
+            "text": "adjacent over hypotenuse"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "Tangent compares the two legs, with the opposite one on top.",
+          "B": "This inverted ratio is the cotangent rather than the tangent.",
+          "C": "This ratio is the sine, which brings the hypotenuse into the comparison.",
+          "D": "This ratio is the cosine, which also involves the hypotenuse."
+        }
+      },
+      {
+        "id": "exp26-math-037",
+        "section": "math",
+        "topic": "logarithms",
+        "difficulty": "easy",
+        "context": "Which equation says the same thing as log₅(25) = 2?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "5² = 25"
+          },
+          {
+            "id": "B",
+            "text": "2⁵ = 25"
+          },
+          {
+            "id": "C",
+            "text": "25² = 5"
+          },
+          {
+            "id": "D",
+            "text": "5 × 2 = 25"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "A logarithm names the power, so the base raised to it gives the number.",
+          "B": "This swaps the base with the power that the logarithm names.",
+          "C": "This raises the number rather than the base, which reverses the statement.",
+          "D": "A logarithm counts multiplications of the base, not a single product."
+        }
+      },
+      {
+        "id": "exp26-math-038",
+        "section": "math",
+        "topic": "matrices",
+        "difficulty": "easy",
+        "context": "If A = [[2, -1], [0, 4]], what is 2A?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "[[4, -2], [0, 8]]"
+          },
+          {
+            "id": "B",
+            "text": "[[4, -1], [0, 4]]"
+          },
+          {
+            "id": "C",
+            "text": "[[2, -2], [0, 8]]"
+          },
+          {
+            "id": "D",
+            "text": "[[4, -2], [2, 8]]"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "A scalar multiplies every entry, including the zero and the negative one.",
+          "B": "Only the first entry has been doubled, leaving the rest untouched.",
+          "C": "The first entry has been left alone while the others were doubled.",
+          "D": "A zero entry stays zero when doubled rather than becoming the scalar."
+        }
+      },
+      {
+        "id": "exp26-math-039",
+        "section": "math",
+        "topic": "complex numbers",
+        "difficulty": "easy",
+        "context": "What is the value of i³?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "-i"
+          },
+          {
+            "id": "B",
+            "text": "i"
+          },
+          {
+            "id": "C",
+            "text": "-1"
+          },
+          {
+            "id": "D",
+            "text": "1"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "Since i² is -1, multiplying once more by i gives -i.",
+          "B": "This is i to the first power, three steps earlier in the cycle.",
+          "C": "This is i squared, one multiplication short of the third power.",
+          "D": "This is i to the fourth power, one multiplication too far along."
         }
       },
       {
@@ -6344,32 +6344,32 @@
         "section": "math",
         "topic": "number properties",
         "difficulty": "easy",
-        "context": "What is the greatest common factor of 264 and 396?",
+        "context": "What is the least common multiple of 4 and 10?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "66"
+            "text": "20"
           },
           {
             "id": "B",
-            "text": "792"
+            "text": "40"
           },
           {
             "id": "C",
-            "text": "44"
+            "text": "2"
           },
           {
             "id": "D",
-            "text": "132"
+            "text": "14"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This divides both numbers but is not greatest.",
-          "B": "This is their least common multiple, not their greatest common factor.",
-          "C": "This is a common factor but not the greatest.",
-          "D": "Factor out 22. Since gcd(12,18) = 6, the greatest common factor is 132."
+          "A": "Twenty is the first number that both 4 and 10 divide into exactly.",
+          "B": "This is a common multiple but not the least one of them.",
+          "C": "This is the greatest common factor rather than the least common multiple.",
+          "D": "Adding the two numbers gives a total that 4 does not divide into."
         }
       },
       {
@@ -6706,33 +6706,33 @@
         "id": "exp26-math-051",
         "section": "math",
         "topic": "sequences",
-        "difficulty": "medium",
-        "context": "An arithmetic sequence begins 25, 28, 31, …. What is its 7th term?",
+        "difficulty": "easy",
+        "context": "What is the next term of the sequence 3, 6, 12, 24, …?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "31"
+            "text": "48"
           },
           {
             "id": "B",
-            "text": "25"
+            "text": "36"
           },
           {
             "id": "C",
-            "text": "43"
+            "text": "30"
           },
           {
             "id": "D",
-            "text": "46"
+            "text": "96"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Each step adds 3, not 1.",
-          "B": "This is only the first term; add the common difference for subsequent terms.",
-          "C": "Add the common difference 3 exactly 6 times to the first term.",
-          "D": "This adds one extra common difference."
+          "A": "Each term is twice the one before, so 24 is followed by 48.",
+          "B": "This adds 12, but the gaps grow, so the rule cannot be a fixed sum.",
+          "C": "This adds 6, which was the gap near the start rather than the rule.",
+          "D": "This doubles twice over and skips a term of the sequence."
         }
       },
       {
@@ -6740,32 +6740,32 @@
         "section": "math",
         "topic": "exponents & radicals",
         "difficulty": "easy",
-        "context": "For nonzero x, simplify x^28 / x^25.",
+        "context": "What is x³ · x⁵ in simplest form?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "x^53"
+            "text": "x⁸"
           },
           {
             "id": "B",
-            "text": "x^26"
+            "text": "x¹⁵"
           },
           {
             "id": "C",
-            "text": "3x"
+            "text": "x²"
           },
           {
             "id": "D",
-            "text": "x³"
+            "text": "2x⁸"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "Adding exponents is the rule for multiplication, not division.",
-          "B": "The denominator exponent must be subtracted.",
-          "C": "An exponent of 3 means three factors of x.",
-          "D": "Subtract exponents with a common base: (28) - 25 = 3."
+          "A": "Multiplying powers of the same base adds the exponents together.",
+          "B": "Multiplying the exponents is the rule for a power raised to a power.",
+          "C": "Subtracting the exponents is the rule for dividing, not multiplying.",
+          "D": "The exponent is right, but nothing in the product creates a coefficient."
         }
       },
       {
@@ -6773,98 +6773,98 @@
         "section": "math",
         "topic": "circles",
         "difficulty": "easy",
-        "context": "A circle has radius 25 cm. What is its circumference in centimeters?",
+        "context": "What is the area of a circle of radius 4, in terms of π?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "50π"
+            "text": "16π"
           },
           {
             "id": "B",
-            "text": "25π"
+            "text": "8π"
           },
           {
             "id": "C",
-            "text": "625π"
+            "text": "4π"
           },
           {
             "id": "D",
-            "text": "2500π"
+            "text": "64π"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Circumference is 2πr = 50π.",
-          "B": "This omits the factor 2.",
-          "C": "This is the area, not circumference.",
-          "D": "This uses an area formula with the diameter substituted for the radius."
+          "A": "Area is πr², and squaring the radius of 4 gives 16.",
+          "B": "This doubles the radius, which gives the circumference instead.",
+          "C": "This is the radius with a π attached and no squaring at all.",
+          "D": "This cubes the radius rather than squaring it."
         }
       },
       {
         "id": "exp26-math-054",
         "section": "math",
         "topic": "lines & angles",
-        "difficulty": "medium",
-        "context": "Two supplementary angles measure (25x)° and (28x)°. What is x?",
+        "difficulty": "easy",
+        "context": "Two lines cross, and one of the four angles measures 70°. What is the angle vertical to it?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "60"
+            "text": "70°"
           },
           {
             "id": "B",
-            "text": "3.39623"
+            "text": "110°"
           },
           {
             "id": "C",
-            "text": "1.69811"
+            "text": "20°"
           },
           {
             "id": "D",
-            "text": "6.79245"
+            "text": "140°"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Add the angle expressions; do not subtract them.",
-          "B": "Supplementary angles sum to 180°, so (25 + 28)x = 180. The decimal choices are rounded to five places.",
-          "C": "This uses 90°, appropriate for complementary angles.",
-          "D": "Supplementary angles do not total a full turn."
+          "A": "Vertical angles sit opposite each other and are always equal.",
+          "B": "This is the angle beside it, which completes the straight line.",
+          "C": "This is what would remain of a right angle, which is not the figure here.",
+          "D": "Doubling the angle describes none of the four angles at the crossing."
         }
       },
       {
         "id": "exp26-math-055",
         "section": "math",
         "topic": "word problems",
-        "difficulty": "medium",
-        "context": "A printing service charges $28 plus $25 per poster. What is the total cost, in dollars, of 26 posters?",
+        "difficulty": "easy",
+        "context": "A recipe uses 3 cups of flour for 12 biscuits. How many cups are needed for 4 biscuits?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "650"
+            "text": "1"
           },
           {
             "id": "B",
-            "text": "79"
+            "text": "3"
           },
           {
             "id": "C",
-            "text": "678"
+            "text": "9"
           },
           {
             "id": "D",
-            "text": "1378"
+            "text": "4"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This omits the fixed fee.",
-          "B": "Multiply the per-poster rate by the number of posters.",
-          "C": "Pay the fixed charge once, plus 26 charges of $25: 28 + 25(26).",
-          "D": "This charges the fixed fee for every poster."
+          "A": "Four biscuits are a third of twelve, so they need a third of the flour.",
+          "B": "This is the flour for the full batch rather than for a third of it.",
+          "C": "This triples the flour instead of dividing it into three.",
+          "D": "This is the number of biscuits rather than the cups they need."
         }
       },
       {
@@ -6872,32 +6872,32 @@
         "section": "math",
         "topic": "trigonometry",
         "difficulty": "easy",
-        "context": "An acute angle θ is in a right triangle. Its opposite leg is 12, its adjacent leg is 16, and its hypotenuse is 20. What is tan θ?",
+        "context": "What is the amplitude of y = 5 sin(3x)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3/5"
+            "text": "5"
           },
           {
             "id": "B",
-            "text": "4/5"
+            "text": "3"
           },
           {
             "id": "C",
-            "text": "4/3"
+            "text": "15"
           },
           {
             "id": "D",
-            "text": "3/4"
+            "text": "2π/3"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is sine.",
-          "B": "This is cosine.",
-          "C": "This reverses opposite and adjacent.",
-          "D": "Tangent is opposite divided by adjacent, so 3/4 after canceling the common factor."
+          "A": "Amplitude is the coefficient in front of the sine, which is 5 here.",
+          "B": "The 3 inside the bracket changes how fast the curve repeats, not its height.",
+          "C": "Multiplying the two numbers mixes the height with the rate of repetition.",
+          "D": "This is the period of the curve rather than how far it rises and falls."
         }
       },
       {
@@ -6905,32 +6905,32 @@
         "section": "math",
         "topic": "logarithms",
         "difficulty": "easy",
-        "context": "If the logarithm of x to base 3 equals 4, which expression equals x?",
+        "context": "What is the value of log₉(9)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3^4"
+            "text": "1"
           },
           {
             "id": "B",
-            "text": "3 × 4"
+            "text": "0"
           },
           {
             "id": "C",
-            "text": "3 + 4"
+            "text": "9"
           },
           {
             "id": "D",
-            "text": "3^5"
+            "text": "81"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Logarithmic form converts to x = 3^4.",
-          "B": "Multiplication does not undo a logarithm.",
-          "C": "Addition does not undo a logarithm.",
-          "D": "This uses an exponent one too large."
+          "A": "A base raised to the power 1 gives itself, so the logarithm is 1.",
+          "B": "A logarithm of 0 belongs to the number 1, whatever the base may be.",
+          "C": "This is the base itself rather than the power it must be raised to.",
+          "D": "This is the base squared, which would make the logarithm 2 instead."
         }
       },
       {
@@ -6938,65 +6938,65 @@
         "section": "math",
         "topic": "matrices",
         "difficulty": "easy",
-        "context": "Let A = [[25, 2], [3, 28]]. What is the determinant of A?",
+        "context": "Matrix A is 2 × 3 and matrix B is 3 × 5. What are the dimensions of AB?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-694"
+            "text": "2 × 5"
           },
           {
             "id": "B",
-            "text": "694"
+            "text": "3 × 3"
           },
           {
             "id": "C",
-            "text": "706"
+            "text": "5 × 2"
           },
           {
             "id": "D",
-            "text": "48"
+            "text": "2 × 3"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This reverses the order of the two diagonal products.",
-          "B": "For [[a,b],[c,d]], determinant = ad - bc: 25(28) - 2(3).",
-          "C": "Subtract the cross product instead of adding.",
-          "D": "Multiply entries along diagonals; do not sum them."
+          "A": "The product keeps the rows of the first and the columns of the second.",
+          "B": "The inner dimensions cancel in the product rather than surviving it.",
+          "C": "This reverses the order, which would describe the product taken the other way.",
+          "D": "These are the dimensions of the first matrix rather than of the product."
         }
       },
       {
         "id": "exp26-math-059",
         "section": "math",
         "topic": "complex numbers",
-        "difficulty": "hard",
-        "context": "What is the real part of (25 + 2i)(3 + 28i), where i² = -1?",
+        "difficulty": "easy",
+        "context": "What is the complex conjugate of 4 - 9i?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "706"
+            "text": "4 + 9i"
           },
           {
             "id": "B",
-            "text": "75"
+            "text": "-4 + 9i"
           },
           {
             "id": "C",
-            "text": "19"
+            "text": "-4 - 9i"
           },
           {
             "id": "D",
-            "text": "131"
+            "text": "9 + 4i"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This is the coefficient of i.",
-          "B": "This omits the real contribution from multiplying the imaginary terms.",
-          "C": "The real terms are 75 + 56i² = 19.",
-          "D": "Use i² = -1, not +1."
+          "A": "A conjugate flips the sign of the imaginary part and leaves the real one.",
+          "B": "Both signs have been changed rather than only the imaginary one.",
+          "C": "Only the real part has been changed, which a conjugate leaves alone.",
+          "D": "The two parts have swapped places, which a conjugate never does."
         }
       },
       {
@@ -7004,32 +7004,32 @@
         "section": "math",
         "topic": "number properties",
         "difficulty": "easy",
-        "context": "What is the greatest common factor of 276 and 414?",
+        "context": "How many positive factors does 16 have?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "69"
+            "text": "5"
           },
           {
             "id": "B",
-            "text": "828"
+            "text": "4"
           },
           {
             "id": "C",
-            "text": "46"
+            "text": "8"
           },
           {
             "id": "D",
-            "text": "138"
+            "text": "16"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This divides both numbers but is not greatest.",
-          "B": "This is their least common multiple, not their greatest common factor.",
-          "C": "This is a common factor but not the greatest.",
-          "D": "Factor out 23. Since gcd(12,18) = 6, the greatest common factor is 138."
+          "A": "The factors are 1, 2, 4, 8 and 16, which makes five of them.",
+          "B": "This leaves out the number itself, which is always a factor.",
+          "C": "This is the largest factor below 16 rather than a count of them.",
+          "D": "This is the number itself rather than how many factors it has."
         }
       },
       {
@@ -7366,33 +7366,33 @@
         "id": "exp26-math-071",
         "section": "math",
         "topic": "sequences",
-        "difficulty": "medium",
-        "context": "An arithmetic sequence begins 26, 29, 32, …. What is its 8th term?",
+        "difficulty": "easy",
+        "context": "An arithmetic sequence starts at 7 with a common difference of 5. What is its third term?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "33"
+            "text": "17"
           },
           {
             "id": "B",
-            "text": "26"
+            "text": "12"
           },
           {
             "id": "C",
-            "text": "47"
+            "text": "22"
           },
           {
             "id": "D",
-            "text": "50"
+            "text": "35"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Each step adds 3, not 1.",
-          "B": "This is only the first term; add the common difference for subsequent terms.",
-          "C": "Add the common difference 3 exactly 7 times to the first term.",
-          "D": "This adds one extra common difference."
+          "A": "Two steps of 5 from the first term give 7 plus 10.",
+          "B": "This is the second term, one step short of the one asked for.",
+          "C": "This is the fourth term, one step beyond the one asked for.",
+          "D": "Multiplying the first term by the difference is not how terms are built."
         }
       },
       {
@@ -7400,32 +7400,32 @@
         "section": "math",
         "topic": "exponents & radicals",
         "difficulty": "easy",
-        "context": "For nonzero x, simplify x^29 / x^26.",
+        "context": "What is 5⁰?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "x^55"
+            "text": "1"
           },
           {
             "id": "B",
-            "text": "x^27"
+            "text": "0"
           },
           {
             "id": "C",
-            "text": "3x"
+            "text": "5"
           },
           {
             "id": "D",
-            "text": "x³"
+            "text": "-5"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "Adding exponents is the rule for multiplication, not division.",
-          "B": "The denominator exponent must be subtracted.",
-          "C": "An exponent of 3 means three factors of x.",
-          "D": "Subtract exponents with a common base: (29) - 26 = 3."
+          "A": "Any non-zero number raised to the power zero is defined as 1.",
+          "B": "A zero exponent does not make the value itself zero.",
+          "C": "This is the base alone, which would need an exponent of 1.",
+          "D": "A zero exponent has nothing to do with the sign of the base."
         }
       },
       {
@@ -7433,98 +7433,98 @@
         "section": "math",
         "topic": "circles",
         "difficulty": "easy",
-        "context": "A circle has radius 26 cm. What is its circumference in centimeters?",
+        "context": "A circle has a circumference of 12π. What is its radius?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "52π"
+            "text": "6"
           },
           {
             "id": "B",
-            "text": "26π"
+            "text": "12"
           },
           {
             "id": "C",
-            "text": "676π"
+            "text": "24"
           },
           {
             "id": "D",
-            "text": "2704π"
+            "text": "3"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Circumference is 2πr = 52π.",
-          "B": "This omits the factor 2.",
-          "C": "This is the area, not circumference.",
-          "D": "This uses an area formula with the diameter substituted for the radius."
+          "A": "Circumference is 2πr, so dividing 12π by 2π leaves a radius of 6.",
+          "B": "This is the diameter, which is twice the radius asked for.",
+          "C": "This doubles the circumference figure instead of halving it.",
+          "D": "This halves the radius one time more than the formula calls for."
         }
       },
       {
         "id": "exp26-math-074",
         "section": "math",
         "topic": "lines & angles",
-        "difficulty": "medium",
-        "context": "Two supplementary angles measure (26x)° and (29x)°. What is x?",
+        "difficulty": "easy",
+        "context": "Three angles meet along a straight line. Two measure 40° and 85°. What is the third?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "60"
+            "text": "55°"
           },
           {
             "id": "B",
-            "text": "3.27273"
+            "text": "125°"
           },
           {
             "id": "C",
-            "text": "1.63636"
+            "text": "235°"
           },
           {
             "id": "D",
-            "text": "6.54545"
+            "text": "95°"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Add the angle expressions; do not subtract them.",
-          "B": "Supplementary angles sum to 180°, so (26 + 29)x = 180. The decimal choices are rounded to five places.",
-          "C": "This uses 90°, appropriate for complementary angles.",
-          "D": "Supplementary angles do not total a full turn."
+          "A": "Angles on a straight line total 180°, and the two given ones make 125.",
+          "B": "This is the total of the two given angles rather than what is left.",
+          "C": "This subtracts from 360°, the total for angles around a point.",
+          "D": "This subtracts only one of the two given angles from 180°."
         }
       },
       {
         "id": "exp26-math-075",
         "section": "math",
         "topic": "word problems",
-        "difficulty": "medium",
-        "context": "A printing service charges $29 plus $26 per poster. What is the total cost, in dollars, of 27 posters?",
+        "difficulty": "easy",
+        "context": "A shirt costs 24 and a hat costs 15. What is the change from 50?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "702"
+            "text": "11"
           },
           {
             "id": "B",
-            "text": "82"
+            "text": "39"
           },
           {
             "id": "C",
-            "text": "731"
+            "text": "26"
           },
           {
             "id": "D",
-            "text": "1485"
+            "text": "35"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This omits the fixed fee.",
-          "B": "Multiply the per-poster rate by the number of posters.",
-          "C": "Pay the fixed charge once, plus 27 charges of $26: 29 + 26(27).",
-          "D": "This charges the fixed fee for every poster."
+          "A": "The two items total 39, and 50 less 39 leaves 11.",
+          "B": "This is the cost of the two items rather than what is left over.",
+          "C": "This subtracts the shirt but leaves the hat unpaid for.",
+          "D": "This subtracts the hat but leaves the shirt unpaid for."
         }
       },
       {
@@ -7532,32 +7532,32 @@
         "section": "math",
         "topic": "trigonometry",
         "difficulty": "easy",
-        "context": "An acute angle θ is in a right triangle. Its opposite leg is 15, its adjacent leg is 20, and its hypotenuse is 25. What is tan θ?",
+        "context": "What is the value of tan 60°?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3/5"
+            "text": "√3"
           },
           {
             "id": "B",
-            "text": "4/5"
+            "text": "1/√3"
           },
           {
             "id": "C",
-            "text": "4/3"
+            "text": "1"
           },
           {
             "id": "D",
-            "text": "3/4"
+            "text": "√3/2"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is sine.",
-          "B": "This is cosine.",
-          "C": "This reverses opposite and adjacent.",
-          "D": "Tangent is opposite divided by adjacent, so 3/4 after canceling the common factor."
+          "A": "In a 30-60-90 triangle the legs are 1 and √3, with √3 opposite the 60°.",
+          "B": "This is the tangent of 30°, where the two legs swap places.",
+          "C": "A tangent of 1 belongs to 45°, where the two legs are equal.",
+          "D": "This is the sine of 60° rather than the ratio of the two legs."
         }
       },
       {
@@ -7565,32 +7565,32 @@
         "section": "math",
         "topic": "logarithms",
         "difficulty": "easy",
-        "context": "If the logarithm of x to base 3 equals 5, which expression equals x?",
+        "context": "What is the value of log₂(32)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3^5"
+            "text": "5"
           },
           {
             "id": "B",
-            "text": "3 × 5"
+            "text": "16"
           },
           {
             "id": "C",
-            "text": "3 + 5"
+            "text": "6"
           },
           {
             "id": "D",
-            "text": "3^6"
+            "text": "4"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Logarithmic form converts to x = 3^5.",
-          "B": "Multiplication does not undo a logarithm.",
-          "C": "Addition does not undo a logarithm.",
-          "D": "This uses an exponent one too large."
+          "A": "Five twos multiplied together give 32, so the logarithm is 5.",
+          "B": "This halves the number instead of counting the doublings within it.",
+          "C": "Six twos multiplied together give 64, which overshoots the 32.",
+          "D": "Four twos multiplied together give 16, one doubling short of 32."
         }
       },
       {
@@ -7598,65 +7598,65 @@
         "section": "math",
         "topic": "matrices",
         "difficulty": "easy",
-        "context": "Let A = [[26, 2], [3, 29]]. What is the determinant of A?",
+        "context": "What is the sum of [[1, 4], [3, 0]] and [[2, -1], [5, 6]]?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-748"
+            "text": "[[3, 3], [8, 6]]"
           },
           {
             "id": "B",
-            "text": "748"
+            "text": "[[3, 5], [8, 6]]"
           },
           {
             "id": "C",
-            "text": "760"
+            "text": "[[2, -4], [15, 0]]"
           },
           {
             "id": "D",
-            "text": "50"
+            "text": "[[-1, 5], [-2, -6]]"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This reverses the order of the two diagonal products.",
-          "B": "For [[a,b],[c,d]], determinant = ad - bc: 26(29) - 2(3).",
-          "C": "Subtract the cross product instead of adding.",
-          "D": "Multiply entries along diagonals; do not sum them."
+          "A": "Matrices add entry by entry, and 4 plus -1 gives 3 in the corner.",
+          "B": "The negative entry has been added as though it were positive.",
+          "C": "The entries have been multiplied together rather than added.",
+          "D": "The second matrix has been subtracted from the first instead."
         }
       },
       {
         "id": "exp26-math-079",
         "section": "math",
         "topic": "complex numbers",
-        "difficulty": "hard",
-        "context": "What is the real part of (26 + 2i)(3 + 29i), where i² = -1?",
+        "difficulty": "easy",
+        "context": "What is (7 - 3i) - (2 - 8i)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "760"
+            "text": "5 + 5i"
           },
           {
             "id": "B",
-            "text": "78"
+            "text": "5 - 11i"
           },
           {
             "id": "C",
-            "text": "20"
+            "text": "9 - 11i"
           },
           {
             "id": "D",
-            "text": "136"
+            "text": "5 - 5i"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This is the coefficient of i.",
-          "B": "This omits the real contribution from multiplying the imaginary terms.",
-          "C": "The real terms are 78 + 58i² = 20.",
-          "D": "Use i² = -1, not +1."
+          "A": "Subtracting -8i is the same as adding 8i, which leaves 5i.",
+          "B": "The minus sign was not carried into the second imaginary part.",
+          "C": "The two numbers have been added rather than subtracted.",
+          "D": "The real part is right but the imaginary sign has been reversed."
         }
       },
       {
@@ -7664,32 +7664,32 @@
         "section": "math",
         "topic": "number properties",
         "difficulty": "easy",
-        "context": "What is the greatest common factor of 288 and 432?",
+        "context": "What is |−4| − |−9|?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "72"
+            "text": "-5"
           },
           {
             "id": "B",
-            "text": "864"
+            "text": "5"
           },
           {
             "id": "C",
-            "text": "48"
+            "text": "13"
           },
           {
             "id": "D",
-            "text": "144"
+            "text": "-13"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This divides both numbers but is not greatest.",
-          "B": "This is their least common multiple, not their greatest common factor.",
-          "C": "This is a common factor but not the greatest.",
-          "D": "Factor out 24. Since gcd(12,18) = 6, the greatest common factor is 144."
+          "A": "Both bars give positive values, and 4 less 9 comes to -5.",
+          "B": "The subtraction has been taken the other way round.",
+          "C": "The two values have been added rather than subtracted.",
+          "D": "This adds the two and then flips the sign without cause."
         }
       },
       {
@@ -8027,98 +8027,98 @@
         "section": "math",
         "topic": "sequences",
         "difficulty": "medium",
-        "context": "An arithmetic sequence begins 27, 30, 33, …. What is its 9th term?",
+        "context": "What is the 10th term of the arithmetic sequence 6, 10, 14, …?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "35"
+            "text": "42"
           },
           {
             "id": "B",
-            "text": "27"
+            "text": "46"
           },
           {
             "id": "C",
-            "text": "51"
+            "text": "40"
           },
           {
             "id": "D",
-            "text": "54"
+            "text": "36"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Each step adds 3, not 1.",
-          "B": "This is only the first term; add the common difference for subsequent terms.",
-          "C": "Add the common difference 3 exactly 8 times to the first term.",
-          "D": "This adds one extra common difference."
+          "A": "Nine steps of 4 separate the first term from the tenth, so 6 plus 36.",
+          "B": "This takes ten steps, one more than lies between the first and tenth.",
+          "C": "This multiplies the step by the term number and drops the first term.",
+          "D": "This is nine steps of 4 with the starting value never added on."
         }
       },
       {
         "id": "exp26-math-092",
         "section": "math",
         "topic": "exponents & radicals",
-        "difficulty": "easy",
-        "context": "For nonzero x, simplify x^30 / x^27.",
+        "difficulty": "medium",
+        "context": "What is (2³)²?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "x^57"
+            "text": "64"
           },
           {
             "id": "B",
-            "text": "x^28"
+            "text": "32"
           },
           {
             "id": "C",
-            "text": "3x"
+            "text": "36"
           },
           {
             "id": "D",
-            "text": "x³"
+            "text": "8"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "Adding exponents is the rule for multiplication, not division.",
-          "B": "The denominator exponent must be subtracted.",
-          "C": "An exponent of 3 means three factors of x.",
-          "D": "Subtract exponents with a common base: (30) - 27 = 3."
+          "A": "A power raised to a power multiplies the exponents, giving 2 to the sixth.",
+          "B": "Adding the exponents is the rule for multiplying two separate powers.",
+          "C": "This squares the value 6, which is neither the base nor the result.",
+          "D": "This is the inner power alone, with the outer squaring not yet applied."
         }
       },
       {
         "id": "exp26-math-093",
         "section": "math",
         "topic": "circles",
-        "difficulty": "easy",
-        "context": "A circle has radius 27 cm. What is its circumference in centimeters?",
+        "difficulty": "medium",
+        "context": "A circle has an area of 49π. What is its circumference, in terms of π?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "54π"
+            "text": "14π"
           },
           {
             "id": "B",
-            "text": "27π"
+            "text": "7π"
           },
           {
             "id": "C",
-            "text": "729π"
+            "text": "49π"
           },
           {
             "id": "D",
-            "text": "2916π"
+            "text": "98π"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Circumference is 2πr = 54π.",
-          "B": "This omits the factor 2.",
-          "C": "This is the area, not circumference.",
-          "D": "This uses an area formula with the diameter substituted for the radius."
+          "A": "The radius is the square root of 49, and the circumference is twice it.",
+          "B": "This is the radius with a π attached, not the distance round the circle.",
+          "C": "This is the area figure reused as though it were a circumference.",
+          "D": "This doubles the area rather than doubling the radius."
         }
       },
       {
@@ -8126,32 +8126,32 @@
         "section": "math",
         "topic": "lines & angles",
         "difficulty": "medium",
-        "context": "Two supplementary angles measure (27x)° and (30x)°. What is x?",
+        "context": "A transversal crosses two parallel lines. One interior angle is 115°. What is the co-interior angle beside it?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "60"
+            "text": "65°"
           },
           {
             "id": "B",
-            "text": "3.15789"
+            "text": "115°"
           },
           {
             "id": "C",
-            "text": "1.57895"
+            "text": "245°"
           },
           {
             "id": "D",
-            "text": "6.31579"
+            "text": "25°"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Add the angle expressions; do not subtract them.",
-          "B": "Supplementary angles sum to 180°, so (27 + 30)x = 180. The decimal choices are rounded to five places.",
-          "C": "This uses 90°, appropriate for complementary angles.",
-          "D": "Supplementary angles do not total a full turn."
+          "A": "Co-interior angles on the same side of a transversal total 180°.",
+          "B": "Equal angles here would be the alternate or corresponding pair instead.",
+          "C": "This subtracts from 360°, which is the total around a point.",
+          "D": "This subtracts from 90°, which no pair of these angles totals."
         }
       },
       {
@@ -8159,197 +8159,197 @@
         "section": "math",
         "topic": "word problems",
         "difficulty": "medium",
-        "context": "A printing service charges $30 plus $27 per poster. What is the total cost, in dollars, of 28 posters?",
+        "context": "A train travels at 75 km per hour. How far does it go in 40 minutes?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "756"
+            "text": "50"
           },
           {
             "id": "B",
-            "text": "85"
+            "text": "3000"
           },
           {
             "id": "C",
-            "text": "786"
+            "text": "112.5"
           },
           {
             "id": "D",
-            "text": "1596"
+            "text": "35"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This omits the fixed fee.",
-          "B": "Multiply the per-poster rate by the number of posters.",
-          "C": "Pay the fixed charge once, plus 28 charges of $27: 30 + 27(28).",
-          "D": "This charges the fixed fee for every poster."
+          "A": "Forty minutes is two thirds of an hour, and two thirds of 75 is 50.",
+          "B": "This multiplies by 40 minutes as though they were 40 hours.",
+          "C": "This treats 40 minutes as an hour and a half rather than two thirds.",
+          "D": "Subtracting the minutes from the speed mixes two different measures."
         }
       },
       {
         "id": "exp26-math-096",
         "section": "math",
         "topic": "trigonometry",
-        "difficulty": "easy",
-        "context": "An acute angle θ is in a right triangle. Its opposite leg is 18, its adjacent leg is 24, and its hypotenuse is 30. What is tan θ?",
+        "difficulty": "medium",
+        "context": "If sin θ = 8/17 and θ is acute, what is cos θ?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3/5"
+            "text": "15/17"
           },
           {
             "id": "B",
-            "text": "4/5"
+            "text": "8/15"
           },
           {
             "id": "C",
-            "text": "4/3"
+            "text": "17/15"
           },
           {
             "id": "D",
-            "text": "3/4"
+            "text": "9/17"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is sine.",
-          "B": "This is cosine.",
-          "C": "This reverses opposite and adjacent.",
-          "D": "Tangent is opposite divided by adjacent, so 3/4 after canceling the common factor."
+          "A": "The third side is √(289 − 64), or 15, and cosine puts it over 17.",
+          "B": "This is the tangent, which compares the two legs with each other.",
+          "C": "This is the reciprocal of the cosine rather than the cosine itself.",
+          "D": "This subtracts 8 from 17 instead of using the Pythagorean relation."
         }
       },
       {
         "id": "exp26-math-097",
         "section": "math",
         "topic": "logarithms",
-        "difficulty": "easy",
-        "context": "If the logarithm of x to base 3 equals 6, which expression equals x?",
+        "difficulty": "medium",
+        "context": "What is the value of log₂(1/8)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3^6"
+            "text": "-3"
           },
           {
             "id": "B",
-            "text": "3 × 6"
+            "text": "3"
           },
           {
             "id": "C",
-            "text": "3 + 6"
+            "text": "1/3"
           },
           {
             "id": "D",
-            "text": "3^7"
+            "text": "-8"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Logarithmic form converts to x = 3^6.",
-          "B": "Multiplication does not undo a logarithm.",
-          "C": "Addition does not undo a logarithm.",
-          "D": "This uses an exponent one too large."
+          "A": "A reciprocal needs a negative power, and 2 to the -3 gives one eighth.",
+          "B": "This is the logarithm of 8, with the reciprocal not accounted for.",
+          "C": "A fraction inside the logarithm makes the power negative, not fractional.",
+          "D": "This is the denominator with a minus sign rather than the power."
         }
       },
       {
         "id": "exp26-math-098",
         "section": "math",
         "topic": "matrices",
-        "difficulty": "easy",
-        "context": "Let A = [[27, 2], [3, 30]]. What is the determinant of A?",
+        "difficulty": "medium",
+        "context": "If A = [[1, 2], [0, 3]], what is A²?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-804"
+            "text": "[[1, 8], [0, 9]]"
           },
           {
             "id": "B",
-            "text": "804"
+            "text": "[[1, 4], [0, 9]]"
           },
           {
             "id": "C",
-            "text": "816"
+            "text": "[[1, 2], [0, 6]]"
           },
           {
             "id": "D",
-            "text": "52"
+            "text": "[[2, 4], [0, 6]]"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This reverses the order of the two diagonal products.",
-          "B": "For [[a,b],[c,d]], determinant = ad - bc: 27(30) - 2(3).",
-          "C": "Subtract the cross product instead of adding.",
-          "D": "Multiply entries along diagonals; do not sum them."
+          "A": "The top right entry is 1 × 2 plus 2 × 3, which comes to 8.",
+          "B": "Squaring each entry on its own is not how matrices multiply.",
+          "C": "Only the bottom right has been handled; the other entries are unchanged.",
+          "D": "This doubles the matrix rather than multiplying it by itself."
         }
       },
       {
         "id": "exp26-math-099",
         "section": "math",
         "topic": "complex numbers",
-        "difficulty": "hard",
-        "context": "What is the real part of (27 + 2i)(3 + 30i), where i² = -1?",
+        "difficulty": "medium",
+        "context": "What is (1 + 3i)(2 + i)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "816"
+            "text": "-1 + 7i"
           },
           {
             "id": "B",
-            "text": "81"
+            "text": "2 + 3i"
           },
           {
             "id": "C",
-            "text": "21"
+            "text": "5 + 7i"
           },
           {
             "id": "D",
-            "text": "141"
+            "text": "-1 + 5i"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This is the coefficient of i.",
-          "B": "This omits the real contribution from multiplying the imaginary terms.",
-          "C": "The real terms are 81 + 60i² = 21.",
-          "D": "Use i² = -1, not +1."
+          "A": "The 3i² term becomes -3, which pulls the real part down to -1.",
+          "B": "Only the first terms of each bracket have been multiplied together.",
+          "C": "The i² term has been treated as though it were positive 1.",
+          "D": "The imaginary terms have been combined incorrectly to give 5i."
         }
       },
       {
         "id": "exp26-math-100",
         "section": "math",
         "topic": "number properties",
-        "difficulty": "easy",
-        "context": "What is the greatest common factor of 300 and 450?",
+        "difficulty": "medium",
+        "context": "The sum of three consecutive integers is 72. What is the largest of them?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "75"
+            "text": "25"
           },
           {
             "id": "B",
-            "text": "900"
+            "text": "24"
           },
           {
             "id": "C",
-            "text": "50"
+            "text": "23"
           },
           {
             "id": "D",
-            "text": "150"
+            "text": "36"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This divides both numbers but is not greatest.",
-          "B": "This is their least common multiple, not their greatest common factor.",
-          "C": "This is a common factor but not the greatest.",
-          "D": "Factor out 25. Since gcd(12,18) = 6, the greatest common factor is 150."
+          "A": "The middle one is 24, so the three are 23, 24 and 25.",
+          "B": "This is the middle integer, which the division gives directly.",
+          "C": "This is the smallest of the three rather than the largest.",
+          "D": "Halving the total suits two consecutive numbers rather than three."
         }
       },
       {
@@ -8687,98 +8687,98 @@
         "section": "math",
         "topic": "sequences",
         "difficulty": "medium",
-        "context": "An arithmetic sequence begins 28, 31, 34, …. What is its 10th term?",
+        "context": "The 4th term of an arithmetic sequence is 20 and the common difference is 3. What is the first term?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "37"
+            "text": "11"
           },
           {
             "id": "B",
-            "text": "28"
+            "text": "17"
           },
           {
             "id": "C",
-            "text": "55"
+            "text": "8"
           },
           {
             "id": "D",
-            "text": "58"
+            "text": "29"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Each step adds 3, not 1.",
-          "B": "This is only the first term; add the common difference for subsequent terms.",
-          "C": "Add the common difference 3 exactly 9 times to the first term.",
-          "D": "This adds one extra common difference."
+          "A": "Three steps of 3 separate the first term from the fourth, so 20 less 9.",
+          "B": "This steps back only once rather than the three times required.",
+          "C": "This steps back four times, one more than the terms are apart.",
+          "D": "This adds the three steps instead of subtracting them."
         }
       },
       {
         "id": "exp26-math-112",
         "section": "math",
         "topic": "exponents & radicals",
-        "difficulty": "easy",
-        "context": "For nonzero x, simplify x^31 / x^28.",
+        "difficulty": "medium",
+        "context": "What is x⁹ ÷ x³ in simplest form?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "x^59"
+            "text": "x⁶"
           },
           {
             "id": "B",
-            "text": "x^29"
+            "text": "x³"
           },
           {
             "id": "C",
-            "text": "3x"
+            "text": "x²⁷"
           },
           {
             "id": "D",
-            "text": "x³"
+            "text": "x¹²"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "Adding exponents is the rule for multiplication, not division.",
-          "B": "The denominator exponent must be subtracted.",
-          "C": "An exponent of 3 means three factors of x.",
-          "D": "Subtract exponents with a common base: (31) - 28 = 3."
+          "A": "Dividing powers of the same base subtracts the exponents.",
+          "B": "Dividing the exponents is not one of the rules for powers.",
+          "C": "Multiplying the exponents applies to a power raised to a power.",
+          "D": "Adding the exponents is the rule for multiplying, not for dividing."
         }
       },
       {
         "id": "exp26-math-113",
         "section": "math",
         "topic": "circles",
-        "difficulty": "easy",
-        "context": "A circle has radius 28 cm. What is its circumference in centimeters?",
+        "difficulty": "medium",
+        "context": "What is the length of a 90° arc in a circle of radius 8, in terms of π?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "56π"
+            "text": "4π"
           },
           {
             "id": "B",
-            "text": "28π"
+            "text": "8π"
           },
           {
             "id": "C",
-            "text": "784π"
+            "text": "16π"
           },
           {
             "id": "D",
-            "text": "3136π"
+            "text": "2π"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Circumference is 2πr = 56π.",
-          "B": "This omits the factor 2.",
-          "C": "This is the area, not circumference.",
-          "D": "This uses an area formula with the diameter substituted for the radius."
+          "A": "A quarter of the full circumference of 16π is 4π.",
+          "B": "This is half the circumference rather than the quarter asked for.",
+          "C": "This is the whole circumference, with the 90° share not applied.",
+          "D": "This takes an eighth of the circumference instead of a quarter."
         }
       },
       {
@@ -8786,32 +8786,32 @@
         "section": "math",
         "topic": "lines & angles",
         "difficulty": "medium",
-        "context": "Two supplementary angles measure (28x)° and (31x)°. What is x?",
+        "context": "What is the sum of the interior angles of a pentagon?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "60"
+            "text": "540°"
           },
           {
             "id": "B",
-            "text": "3.05085"
+            "text": "360°"
           },
           {
             "id": "C",
-            "text": "1.52542"
+            "text": "720°"
           },
           {
             "id": "D",
-            "text": "6.10169"
+            "text": "900°"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Add the angle expressions; do not subtract them.",
-          "B": "Supplementary angles sum to 180°, so (28 + 31)x = 180. The decimal choices are rounded to five places.",
-          "C": "This uses 90°, appropriate for complementary angles.",
-          "D": "Supplementary angles do not total a full turn."
+          "A": "A pentagon splits into three triangles, each contributing 180°.",
+          "B": "This is the total of the exterior angles, which holds for any polygon.",
+          "C": "This is the interior total for a hexagon, one side further along.",
+          "D": "This multiplies the number of sides by 180 without subtracting two."
         }
       },
       {
@@ -8819,40 +8819,40 @@
         "section": "math",
         "topic": "word problems",
         "difficulty": "medium",
-        "context": "A printing service charges $31 plus $28 per poster. What is the total cost, in dollars, of 29 posters?",
+        "context": "Two workers together paint a fence in 4 hours. One alone would take 12. How long would the other take alone?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "812"
+            "text": "6"
           },
           {
             "id": "B",
-            "text": "88"
+            "text": "8"
           },
           {
             "id": "C",
-            "text": "843"
+            "text": "16"
           },
           {
             "id": "D",
-            "text": "1711"
+            "text": "2"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This omits the fixed fee.",
-          "B": "Multiply the per-poster rate by the number of posters.",
-          "C": "Pay the fixed charge once, plus 29 charges of $28: 31 + 28(29).",
-          "D": "This charges the fixed fee for every poster."
+          "A": "Together they do a quarter an hour and the slower a twelfth, leaving a sixth.",
+          "B": "Subtracting the times treats hours as though they added like rates.",
+          "C": "Adding the times gives longer than either worker takes alone.",
+          "D": "Halving the joint time assumes the two work at exactly the same rate."
         }
       },
       {
         "id": "exp26-math-116",
         "section": "math",
         "topic": "trigonometry",
-        "difficulty": "easy",
-        "context": "An acute angle θ is in a right triangle. Its opposite leg is 21, its adjacent leg is 28, and its hypotenuse is 35. What is tan θ?",
+        "difficulty": "medium",
+        "context": "A ramp rises 3 metres over a horizontal run of 4 metres. What is the sine of its angle with the ground?",
         "practiceOnly": true,
         "choices": [
           {
@@ -8861,155 +8861,155 @@
           },
           {
             "id": "B",
-            "text": "4/5"
+            "text": "3/4"
           },
           {
             "id": "C",
-            "text": "4/3"
+            "text": "4/5"
           },
           {
             "id": "D",
-            "text": "3/4"
+            "text": "5/3"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is sine.",
-          "B": "This is cosine.",
-          "C": "This reverses opposite and adjacent.",
-          "D": "Tangent is opposite divided by adjacent, so 3/4 after canceling the common factor."
+          "A": "The ramp itself is 5 metres long, and sine puts the rise of 3 over it.",
+          "B": "This is the tangent, comparing the rise with the run rather than the ramp.",
+          "C": "This is the cosine, which puts the horizontal run over the ramp length.",
+          "D": "This inverts the ratio, and a sine can never be greater than 1."
         }
       },
       {
         "id": "exp26-math-117",
         "section": "math",
         "topic": "logarithms",
-        "difficulty": "easy",
-        "context": "If the logarithm of x to base 3 equals 7, which expression equals x?",
+        "difficulty": "medium",
+        "context": "Which expression is equal to log(a) + log(b)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3^7"
+            "text": "log(ab)"
           },
           {
             "id": "B",
-            "text": "3 × 7"
+            "text": "log(a + b)"
           },
           {
             "id": "C",
-            "text": "3 + 7"
+            "text": "log(a) × log(b)"
           },
           {
             "id": "D",
-            "text": "3^8"
+            "text": "log(a/b)"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Logarithmic form converts to x = 3^7.",
-          "B": "Multiplication does not undo a logarithm.",
-          "C": "Addition does not undo a logarithm.",
-          "D": "This uses an exponent one too large."
+          "A": "Adding two logarithms corresponds to multiplying the numbers inside them.",
+          "B": "The logarithm of a sum has no simple form in terms of the two parts.",
+          "C": "Multiplying the logarithms themselves is not one of the logarithm rules.",
+          "D": "A quotient inside the logarithm comes from subtracting, not adding."
         }
       },
       {
         "id": "exp26-math-118",
         "section": "math",
         "topic": "matrices",
-        "difficulty": "easy",
-        "context": "Let A = [[28, 2], [3, 31]]. What is the determinant of A?",
+        "difficulty": "medium",
+        "context": "What is the product [[2, 0], [1, 3]] · [[1, 4], [2, 5]]?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-862"
+            "text": "[[2, 8], [7, 19]]"
           },
           {
             "id": "B",
-            "text": "862"
+            "text": "[[2, 0], [2, 15]]"
           },
           {
             "id": "C",
-            "text": "874"
+            "text": "[[2, 8], [7, 17]]"
           },
           {
             "id": "D",
-            "text": "54"
+            "text": "[[3, 4], [3, 8]]"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This reverses the order of the two diagonal products.",
-          "B": "For [[a,b],[c,d]], determinant = ad - bc: 28(31) - 2(3).",
-          "C": "Subtract the cross product instead of adding.",
-          "D": "Multiply entries along diagonals; do not sum them."
+          "A": "Each entry pairs a row of the first with a column of the second.",
+          "B": "This multiplies entry by entry rather than row against column.",
+          "C": "The bottom right should be 1 × 4 plus 3 × 5, which is 19 rather than 17.",
+          "D": "This adds the two matrices instead of multiplying them together."
         }
       },
       {
         "id": "exp26-math-119",
         "section": "math",
         "topic": "complex numbers",
-        "difficulty": "hard",
-        "context": "What is the real part of (28 + 2i)(3 + 31i), where i² = -1?",
+        "difficulty": "medium",
+        "context": "What is (2 + i)², expressed in the form a + bi?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "874"
+            "text": "3 + 4i"
           },
           {
             "id": "B",
-            "text": "84"
+            "text": "5 + 4i"
           },
           {
             "id": "C",
-            "text": "22"
+            "text": "4 + i"
           },
           {
             "id": "D",
-            "text": "146"
+            "text": "3 + 2i"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This is the coefficient of i.",
-          "B": "This omits the real contribution from multiplying the imaginary terms.",
-          "C": "The real terms are 84 + 62i² = 22.",
-          "D": "Use i² = -1, not +1."
+          "A": "Expanding gives 4 + 4i + i², and i² of -1 reduces the real part to 3.",
+          "B": "The i² term has been treated as though it added 1 rather than -1.",
+          "C": "Only the squares have been taken, with the middle term left out.",
+          "D": "The middle term has been counted once rather than twice."
         }
       },
       {
         "id": "exp26-math-120",
         "section": "math",
         "topic": "number properties",
-        "difficulty": "easy",
-        "context": "What is the greatest common factor of 312 and 468?",
+        "difficulty": "medium",
+        "context": "What is the smallest positive integer that both 9 and 12 divide into?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "78"
+            "text": "36"
           },
           {
             "id": "B",
-            "text": "936"
+            "text": "108"
           },
           {
             "id": "C",
-            "text": "52"
+            "text": "3"
           },
           {
             "id": "D",
-            "text": "156"
+            "text": "21"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This divides both numbers but is not greatest.",
-          "B": "This is their least common multiple, not their greatest common factor.",
-          "C": "This is a common factor but not the greatest.",
-          "D": "Factor out 26. Since gcd(12,18) = 6, the greatest common factor is 156."
+          "A": "Thirty-six is the first number that both 9 and 12 go into exactly.",
+          "B": "Multiplying the two numbers gives a common multiple that is not the least.",
+          "C": "This is the greatest common factor rather than a common multiple.",
+          "D": "Adding the two numbers gives a total that 9 does not divide into."
         }
       },
       {
@@ -9347,98 +9347,98 @@
         "section": "math",
         "topic": "sequences",
         "difficulty": "medium",
-        "context": "An arithmetic sequence begins 29, 32, 35, …. What is its 11th term?",
+        "context": "What is the sum of the terms 2, 5, 8, 11 and 14?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "39"
+            "text": "40"
           },
           {
             "id": "B",
-            "text": "29"
+            "text": "26"
           },
           {
             "id": "C",
-            "text": "59"
+            "text": "80"
           },
           {
             "id": "D",
-            "text": "62"
+            "text": "16"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Each step adds 3, not 1.",
-          "B": "This is only the first term; add the common difference for subsequent terms.",
-          "C": "Add the common difference 3 exactly 10 times to the first term.",
-          "D": "This adds one extra common difference."
+          "A": "The first and last average 8, and five terms averaging 8 total 40.",
+          "B": "This is the total of the first four terms, leaving the last one out.",
+          "C": "This doubles the total, as though each term were counted twice.",
+          "D": "This is the first term plus the last, before the count is applied."
         }
       },
       {
         "id": "exp26-math-132",
         "section": "math",
         "topic": "exponents & radicals",
-        "difficulty": "easy",
-        "context": "For nonzero x, simplify x^32 / x^29.",
+        "difficulty": "medium",
+        "context": "What is √(9x⁴) in simplest form?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "x^61"
+            "text": "3x²"
           },
           {
             "id": "B",
-            "text": "x^30"
+            "text": "9x²"
           },
           {
             "id": "C",
-            "text": "3x"
+            "text": "3x⁴"
           },
           {
             "id": "D",
-            "text": "x³"
+            "text": "81x⁸"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "Adding exponents is the rule for multiplication, not division.",
-          "B": "The denominator exponent must be subtracted.",
-          "C": "An exponent of 3 means three factors of x.",
-          "D": "Subtract exponents with a common base: (32) - 29 = 3."
+          "A": "The root of 9 is 3, and taking a root halves the exponent on x.",
+          "B": "The 9 has been carried through without its square root being taken.",
+          "C": "The exponent has been left alone rather than halved by the radical.",
+          "D": "This squares the expression instead of taking its square root."
         }
       },
       {
         "id": "exp26-math-133",
         "section": "math",
         "topic": "circles",
-        "difficulty": "easy",
-        "context": "A circle has radius 29 cm. What is its circumference in centimeters?",
+        "difficulty": "medium",
+        "context": "What is the area of a 60° sector of a circle of radius 6, in terms of π?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "58π"
+            "text": "6π"
           },
           {
             "id": "B",
-            "text": "29π"
+            "text": "36π"
           },
           {
             "id": "C",
-            "text": "841π"
+            "text": "12π"
           },
           {
             "id": "D",
-            "text": "3364π"
+            "text": "3π"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Circumference is 2πr = 58π.",
-          "B": "This omits the factor 2.",
-          "C": "This is the area, not circumference.",
-          "D": "This uses an area formula with the diameter substituted for the radius."
+          "A": "A 60° sector is a sixth of the circle, and a sixth of 36π is 6π.",
+          "B": "This is the area of the whole circle, with the sector share not taken.",
+          "C": "This takes a third of the circle rather than the sixth 60° marks out.",
+          "D": "This takes a twelfth of the circle, which is half the sector asked for."
         }
       },
       {
@@ -9446,32 +9446,32 @@
         "section": "math",
         "topic": "lines & angles",
         "difficulty": "medium",
-        "context": "Two supplementary angles measure (29x)° and (32x)°. What is x?",
+        "context": "An angle is 20° larger than its complement. What is the larger angle?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "60"
+            "text": "55°"
           },
           {
             "id": "B",
-            "text": "2.95082"
+            "text": "35°"
           },
           {
             "id": "C",
-            "text": "1.47541"
+            "text": "100°"
           },
           {
             "id": "D",
-            "text": "5.90164"
+            "text": "20°"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Add the angle expressions; do not subtract them.",
-          "B": "Supplementary angles sum to 180°, so (29 + 32)x = 180. The decimal choices are rounded to five places.",
-          "C": "This uses 90°, appropriate for complementary angles.",
-          "D": "Supplementary angles do not total a full turn."
+          "A": "The two total 90° and differ by 20, so they are 55 and 35.",
+          "B": "This is the smaller of the two angles rather than the larger.",
+          "C": "This answers the same question for supplementary angles instead.",
+          "D": "This is the stated difference rather than either of the two angles."
         }
       },
       {
@@ -9479,197 +9479,197 @@
         "section": "math",
         "topic": "word problems",
         "difficulty": "medium",
-        "context": "A printing service charges $32 plus $29 per poster. What is the total cost, in dollars, of 30 posters?",
+        "context": "Pens cost 3 and notebooks cost 5. Twelve items together cost 46. How many notebooks were bought?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "870"
+            "text": "5"
           },
           {
             "id": "B",
-            "text": "91"
+            "text": "7"
           },
           {
             "id": "C",
-            "text": "902"
+            "text": "12"
           },
           {
             "id": "D",
-            "text": "1830"
+            "text": "23"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This omits the fixed fee.",
-          "B": "Multiply the per-poster rate by the number of posters.",
-          "C": "Pay the fixed charge once, plus 30 charges of $29: 32 + 29(30).",
-          "D": "This charges the fixed fee for every poster."
+          "A": "Twelve pens would cost 36, and each notebook adds 2 to that total.",
+          "B": "This is the number of pens rather than the number of notebooks.",
+          "C": "This is the total number of items rather than the notebooks among them.",
+          "D": "Halving the money spent has no bearing on how the items divide."
         }
       },
       {
         "id": "exp26-math-136",
         "section": "math",
         "topic": "trigonometry",
-        "difficulty": "easy",
-        "context": "An acute angle θ is in a right triangle. Its opposite leg is 24, its adjacent leg is 32, and its hypotenuse is 40. What is tan θ?",
+        "difficulty": "medium",
+        "context": "In triangle ABC, angle B is the right angle, AB = 5 and BC = 12. What is sin A?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3/5"
+            "text": "12/13"
           },
           {
             "id": "B",
-            "text": "4/5"
+            "text": "5/13"
           },
           {
             "id": "C",
-            "text": "4/3"
+            "text": "12/5"
           },
           {
             "id": "D",
-            "text": "3/4"
+            "text": "13/12"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is sine.",
-          "B": "This is cosine.",
-          "C": "This reverses opposite and adjacent.",
-          "D": "Tangent is opposite divided by adjacent, so 3/4 after canceling the common factor."
+          "A": "The hypotenuse is 13, and the side opposite angle A is the 12.",
+          "B": "This puts the side beside angle A on top, which gives the cosine.",
+          "C": "This is the tangent, which compares the two legs without the hypotenuse.",
+          "D": "This inverts the ratio, and a sine can never be greater than 1."
         }
       },
       {
         "id": "exp26-math-137",
         "section": "math",
         "topic": "logarithms",
-        "difficulty": "easy",
-        "context": "If the logarithm of x to base 3 equals 8, which expression equals x?",
+        "difficulty": "medium",
+        "context": "Loudness in decibels is 10 log(I/I₀). If I is 1000 times I₀, how many decibels is that?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3^8"
+            "text": "30"
           },
           {
             "id": "B",
-            "text": "3 × 8"
+            "text": "3"
           },
           {
             "id": "C",
-            "text": "3 + 8"
+            "text": "1000"
           },
           {
             "id": "D",
-            "text": "3^9"
+            "text": "10"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Logarithmic form converts to x = 3^8.",
-          "B": "Multiplication does not undo a logarithm.",
-          "C": "Addition does not undo a logarithm.",
-          "D": "This uses an exponent one too large."
+          "A": "The logarithm of 1000 is 3, and multiplying by 10 gives 30 decibels.",
+          "B": "This is the logarithm alone, with the factor of 10 not yet applied.",
+          "C": "This is the ratio of intensities rather than the decibel figure.",
+          "D": "This is the multiplier in the formula rather than the result."
         }
       },
       {
         "id": "exp26-math-138",
         "section": "math",
         "topic": "matrices",
-        "difficulty": "easy",
-        "context": "Let A = [[29, 2], [3, 32]]. What is the determinant of A?",
+        "difficulty": "medium",
+        "context": "The determinant of [[x, 4], [3, x]] is 13. What are the possible values of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-922"
+            "text": "5 and -5"
           },
           {
             "id": "B",
-            "text": "922"
+            "text": "5 only"
           },
           {
             "id": "C",
-            "text": "934"
+            "text": "13 and -13"
           },
           {
             "id": "D",
-            "text": "56"
+            "text": "25 and -25"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This reverses the order of the two diagonal products.",
-          "B": "For [[a,b],[c,d]], determinant = ad - bc: 29(32) - 2(3).",
-          "C": "Subtract the cross product instead of adding.",
-          "D": "Multiply entries along diagonals; do not sum them."
+          "A": "The determinant is x² − 12, so x² is 25 and x takes either sign.",
+          "B": "A squared unknown gives two values, one positive and one negative.",
+          "C": "This is the determinant itself rather than the value of x behind it.",
+          "D": "This is x squared rather than x, with the root not yet taken."
         }
       },
       {
         "id": "exp26-math-139",
         "section": "math",
         "topic": "complex numbers",
-        "difficulty": "hard",
-        "context": "What is the real part of (29 + 2i)(3 + 32i), where i² = -1?",
+        "difficulty": "medium",
+        "context": "What is |3 + 4i|?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "934"
+            "text": "5"
           },
           {
             "id": "B",
-            "text": "87"
+            "text": "7"
           },
           {
             "id": "C",
-            "text": "23"
+            "text": "25"
           },
           {
             "id": "D",
-            "text": "151"
+            "text": "1"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This is the coefficient of i.",
-          "B": "This omits the real contribution from multiplying the imaginary terms.",
-          "C": "The real terms are 87 + 64i² = 23.",
-          "D": "Use i² = -1, not +1."
+          "A": "The modulus is the square root of 9 plus 16, which is 5.",
+          "B": "Adding the two parts measures neither distance nor either part alone.",
+          "C": "This is the square of the modulus, with the root not yet taken.",
+          "D": "Subtracting the two parts has nothing to do with the modulus."
         }
       },
       {
         "id": "exp26-math-140",
         "section": "math",
         "topic": "number properties",
-        "difficulty": "easy",
-        "context": "What is the greatest common factor of 324 and 486?",
+        "difficulty": "medium",
+        "context": "How many prime numbers lie between 20 and 30?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "81"
+            "text": "2"
           },
           {
             "id": "B",
-            "text": "972"
+            "text": "3"
           },
           {
             "id": "C",
-            "text": "54"
+            "text": "4"
           },
           {
             "id": "D",
-            "text": "162"
+            "text": "1"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This divides both numbers but is not greatest.",
-          "B": "This is their least common multiple, not their greatest common factor.",
-          "C": "This is a common factor but not the greatest.",
-          "D": "Factor out 27. Since gcd(12,18) = 6, the greatest common factor is 162."
+          "A": "Only 23 and 29 have no factors besides themselves and 1.",
+          "B": "This counts 27 as prime, but 27 divides by 3 into 9.",
+          "C": "This counts both 21 and 27, and each of them divides by 3.",
+          "D": "This finds one of the two but misses the other prime in the range."
         }
       },
       {
@@ -10007,7 +10007,271 @@
         "section": "math",
         "topic": "sequences",
         "difficulty": "medium",
-        "context": "An arithmetic sequence begins 30, 33, 36, …. What is its 12th term?",
+        "context": "A geometric sequence starts at 5 with a ratio of 3. What is its fourth term?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "135"
+          },
+          {
+            "id": "B",
+            "text": "45"
+          },
+          {
+            "id": "C",
+            "text": "405"
+          },
+          {
+            "id": "D",
+            "text": "60"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "Three multiplications by 3 from the first term give 5 times 27.",
+          "B": "This is the third term, one multiplication short of the fourth.",
+          "C": "This is the fifth term, one multiplication beyond the fourth.",
+          "D": "Multiplying the first term by the ratio and the count mixes the two rules."
+        }
+      },
+      {
+        "id": "exp26-math-152",
+        "section": "math",
+        "topic": "exponents & radicals",
+        "difficulty": "medium",
+        "context": "What is 2⁻³ written as a fraction?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "1/8"
+          },
+          {
+            "id": "B",
+            "text": "-8"
+          },
+          {
+            "id": "C",
+            "text": "-1/8"
+          },
+          {
+            "id": "D",
+            "text": "8"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "A negative exponent means the reciprocal, so this is 1 over 2 cubed.",
+          "B": "A negative exponent does not make the value itself negative.",
+          "C": "The reciprocal is right, but the sign has been flipped without cause.",
+          "D": "This ignores the minus sign in the exponent altogether."
+        }
+      },
+      {
+        "id": "exp26-math-153",
+        "section": "math",
+        "topic": "circles",
+        "difficulty": "medium",
+        "context": "What is the centre of the circle (x + 1)² + (y - 4)² = 9?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "(-1, 4)"
+          },
+          {
+            "id": "B",
+            "text": "(1, -4)"
+          },
+          {
+            "id": "C",
+            "text": "(1, 4)"
+          },
+          {
+            "id": "D",
+            "text": "(-1, -4)"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "The centre takes the opposite sign of each number inside the brackets.",
+          "B": "Both signs have been flipped the wrong way from what the brackets show.",
+          "C": "The first coordinate keeps the sign written rather than reversing it.",
+          "D": "The second coordinate keeps the sign written rather than reversing it."
+        }
+      },
+      {
+        "id": "exp26-math-154",
+        "section": "math",
+        "topic": "lines & angles",
+        "difficulty": "medium",
+        "context": "Each exterior angle of a regular polygon measures 45°. How many sides has it?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "8"
+          },
+          {
+            "id": "B",
+            "text": "45"
+          },
+          {
+            "id": "C",
+            "text": "6"
+          },
+          {
+            "id": "D",
+            "text": "10"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "Exterior angles total 360°, so 360 divided by 45 gives eight sides.",
+          "B": "This is the size of one angle rather than the count of sides.",
+          "C": "A six-sided polygon has exterior angles of 60° rather than 45°.",
+          "D": "A ten-sided polygon has exterior angles of 36° rather than 45°."
+        }
+      },
+      {
+        "id": "exp26-math-155",
+        "section": "math",
+        "topic": "word problems",
+        "difficulty": "medium",
+        "context": "A rectangle is 3 longer than it is wide, and its perimeter is 26. What is its width?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "5"
+          },
+          {
+            "id": "B",
+            "text": "8"
+          },
+          {
+            "id": "C",
+            "text": "6.5"
+          },
+          {
+            "id": "D",
+            "text": "10"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "The perimeter is four widths plus 6, so four widths make 20.",
+          "B": "This is the length, which is 3 more than the width asked for.",
+          "C": "Dividing the perimeter by 4 ignores the extra 3 on each length.",
+          "D": "This is twice the width, the value before the final halving."
+        }
+      },
+      {
+        "id": "exp26-math-156",
+        "section": "math",
+        "topic": "trigonometry",
+        "difficulty": "medium",
+        "context": "A 10-metre ladder leans against a wall at 60° to the ground. How far is its foot from the wall?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "5"
+          },
+          {
+            "id": "B",
+            "text": "5√3"
+          },
+          {
+            "id": "C",
+            "text": "10"
+          },
+          {
+            "id": "D",
+            "text": "8.7"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "The horizontal distance is 10 cos 60°, and cos 60° is one half.",
+          "B": "This is how far up the wall the ladder reaches rather than along the ground.",
+          "C": "This is the ladder itself, which is the longest of the three lengths.",
+          "D": "This uses the sine of 60° where the cosine measures the ground distance."
+        }
+      },
+      {
+        "id": "exp26-math-157",
+        "section": "math",
+        "topic": "logarithms",
+        "difficulty": "medium",
+        "context": "If log(2) ≈ 0.30 and log(3) ≈ 0.48, what is log(6)?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "0.78"
+          },
+          {
+            "id": "B",
+            "text": "0.144"
+          },
+          {
+            "id": "C",
+            "text": "0.18"
+          },
+          {
+            "id": "D",
+            "text": "1.56"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "Six is 2 × 3, and a product inside a logarithm becomes a sum outside it.",
+          "B": "Multiplying the two logarithms is not one of the rules for logarithms.",
+          "C": "Subtracting corresponds to a quotient, which would give log of two thirds.",
+          "D": "Doubling the sum counts each of the two logarithms twice over."
+        }
+      },
+      {
+        "id": "exp26-math-158",
+        "section": "math",
+        "topic": "matrices",
+        "difficulty": "medium",
+        "context": "Which matrix is the additive identity for 2 × 2 matrices?",
+        "practiceOnly": true,
+        "choices": [
+          {
+            "id": "A",
+            "text": "[[0, 0], [0, 0]]"
+          },
+          {
+            "id": "B",
+            "text": "[[1, 1], [1, 1]]"
+          },
+          {
+            "id": "C",
+            "text": "[[1, 0], [0, 1]]"
+          },
+          {
+            "id": "D",
+            "text": "[[0, 1], [1, 0]]"
+          }
+        ],
+        "answer": "A",
+        "why": {
+          "A": "Adding zeros entry by entry leaves every matrix exactly as it was.",
+          "B": "Adding ones everywhere raises each entry rather than leaving it alone.",
+          "C": "This is the identity for multiplication rather than for addition.",
+          "D": "Adding this swaps nothing and still changes two of the four entries."
+        }
+      },
+      {
+        "id": "exp26-math-159",
+        "section": "math",
+        "topic": "complex numbers",
+        "difficulty": "medium",
+        "context": "What is the product of 4 + 5i and its complex conjugate?",
         "practiceOnly": true,
         "choices": [
           {
@@ -10016,320 +10280,56 @@
           },
           {
             "id": "B",
-            "text": "30"
+            "text": "16"
           },
           {
             "id": "C",
-            "text": "63"
+            "text": "9"
           },
           {
             "id": "D",
-            "text": "66"
-          }
-        ],
-        "answer": "C",
-        "why": {
-          "A": "Each step adds 3, not 1.",
-          "B": "This is only the first term; add the common difference for subsequent terms.",
-          "C": "Add the common difference 3 exactly 11 times to the first term.",
-          "D": "This adds one extra common difference."
-        }
-      },
-      {
-        "id": "exp26-math-152",
-        "section": "math",
-        "topic": "exponents & radicals",
-        "difficulty": "easy",
-        "context": "For nonzero x, simplify x^33 / x^30.",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "x^63"
-          },
-          {
-            "id": "B",
-            "text": "x^31"
-          },
-          {
-            "id": "C",
-            "text": "3x"
-          },
-          {
-            "id": "D",
-            "text": "x³"
-          }
-        ],
-        "answer": "D",
-        "why": {
-          "A": "Adding exponents is the rule for multiplication, not division.",
-          "B": "The denominator exponent must be subtracted.",
-          "C": "An exponent of 3 means three factors of x.",
-          "D": "Subtract exponents with a common base: (33) - 30 = 3."
-        }
-      },
-      {
-        "id": "exp26-math-153",
-        "section": "math",
-        "topic": "circles",
-        "difficulty": "easy",
-        "context": "A circle has radius 30 cm. What is its circumference in centimeters?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "60π"
-          },
-          {
-            "id": "B",
-            "text": "30π"
-          },
-          {
-            "id": "C",
-            "text": "900π"
-          },
-          {
-            "id": "D",
-            "text": "3600π"
+            "text": "-9"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Circumference is 2πr = 60π.",
-          "B": "This omits the factor 2.",
-          "C": "This is the area, not circumference.",
-          "D": "This uses an area formula with the diameter substituted for the radius."
-        }
-      },
-      {
-        "id": "exp26-math-154",
-        "section": "math",
-        "topic": "lines & angles",
-        "difficulty": "medium",
-        "context": "Two supplementary angles measure (30x)° and (33x)°. What is x?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "60"
-          },
-          {
-            "id": "B",
-            "text": "2.85714"
-          },
-          {
-            "id": "C",
-            "text": "1.42857"
-          },
-          {
-            "id": "D",
-            "text": "5.71429"
-          }
-        ],
-        "answer": "B",
-        "why": {
-          "A": "Add the angle expressions; do not subtract them.",
-          "B": "Supplementary angles sum to 180°, so (30 + 33)x = 180. The decimal choices are rounded to five places.",
-          "C": "This uses 90°, appropriate for complementary angles.",
-          "D": "Supplementary angles do not total a full turn."
-        }
-      },
-      {
-        "id": "exp26-math-155",
-        "section": "math",
-        "topic": "word problems",
-        "difficulty": "medium",
-        "context": "A printing service charges $33 plus $30 per poster. What is the total cost, in dollars, of 31 posters?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "930"
-          },
-          {
-            "id": "B",
-            "text": "94"
-          },
-          {
-            "id": "C",
-            "text": "963"
-          },
-          {
-            "id": "D",
-            "text": "1953"
-          }
-        ],
-        "answer": "C",
-        "why": {
-          "A": "This omits the fixed fee.",
-          "B": "Multiply the per-poster rate by the number of posters.",
-          "C": "Pay the fixed charge once, plus 31 charges of $30: 33 + 30(31).",
-          "D": "This charges the fixed fee for every poster."
-        }
-      },
-      {
-        "id": "exp26-math-156",
-        "section": "math",
-        "topic": "trigonometry",
-        "difficulty": "easy",
-        "context": "An acute angle θ is in a right triangle. Its opposite leg is 27, its adjacent leg is 36, and its hypotenuse is 45. What is tan θ?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "3/5"
-          },
-          {
-            "id": "B",
-            "text": "4/5"
-          },
-          {
-            "id": "C",
-            "text": "4/3"
-          },
-          {
-            "id": "D",
-            "text": "3/4"
-          }
-        ],
-        "answer": "D",
-        "why": {
-          "A": "This is sine.",
-          "B": "This is cosine.",
-          "C": "This reverses opposite and adjacent.",
-          "D": "Tangent is opposite divided by adjacent, so 3/4 after canceling the common factor."
-        }
-      },
-      {
-        "id": "exp26-math-157",
-        "section": "math",
-        "topic": "logarithms",
-        "difficulty": "easy",
-        "context": "If the logarithm of x to base 3 equals 9, which expression equals x?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "3^9"
-          },
-          {
-            "id": "B",
-            "text": "3 × 9"
-          },
-          {
-            "id": "C",
-            "text": "3 + 9"
-          },
-          {
-            "id": "D",
-            "text": "3^10"
-          }
-        ],
-        "answer": "A",
-        "why": {
-          "A": "Logarithmic form converts to x = 3^9.",
-          "B": "Multiplication does not undo a logarithm.",
-          "C": "Addition does not undo a logarithm.",
-          "D": "This uses an exponent one too large."
-        }
-      },
-      {
-        "id": "exp26-math-158",
-        "section": "math",
-        "topic": "matrices",
-        "difficulty": "easy",
-        "context": "Let A = [[30, 2], [3, 33]]. What is the determinant of A?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "-984"
-          },
-          {
-            "id": "B",
-            "text": "984"
-          },
-          {
-            "id": "C",
-            "text": "996"
-          },
-          {
-            "id": "D",
-            "text": "58"
-          }
-        ],
-        "answer": "B",
-        "why": {
-          "A": "This reverses the order of the two diagonal products.",
-          "B": "For [[a,b],[c,d]], determinant = ad - bc: 30(33) - 2(3).",
-          "C": "Subtract the cross product instead of adding.",
-          "D": "Multiply entries along diagonals; do not sum them."
-        }
-      },
-      {
-        "id": "exp26-math-159",
-        "section": "math",
-        "topic": "complex numbers",
-        "difficulty": "hard",
-        "context": "What is the real part of (30 + 2i)(3 + 33i), where i² = -1?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "996"
-          },
-          {
-            "id": "B",
-            "text": "90"
-          },
-          {
-            "id": "C",
-            "text": "24"
-          },
-          {
-            "id": "D",
-            "text": "156"
-          }
-        ],
-        "answer": "C",
-        "why": {
-          "A": "This is the coefficient of i.",
-          "B": "This omits the real contribution from multiplying the imaginary terms.",
-          "C": "The real terms are 90 + 66i² = 24.",
-          "D": "Use i² = -1, not +1."
+          "A": "The product is the sum of the squares, since the i terms cancel out.",
+          "B": "This squares the real part only and drops the imaginary one.",
+          "C": "This subtracts the squares instead of adding them together.",
+          "D": "This subtracts them the other way round and lands below zero."
         }
       },
       {
         "id": "exp26-math-160",
         "section": "math",
         "topic": "number properties",
-        "difficulty": "easy",
-        "context": "What is the greatest common factor of 336 and 504?",
+        "difficulty": "medium",
+        "context": "If n is an even integer, which expression is always odd?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "84"
+            "text": "n + 1"
           },
           {
             "id": "B",
-            "text": "1008"
+            "text": "n + 2"
           },
           {
             "id": "C",
-            "text": "56"
+            "text": "2n"
           },
           {
             "id": "D",
-            "text": "168"
+            "text": "n ÷ 2"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This divides both numbers but is not greatest.",
-          "B": "This is their least common multiple, not their greatest common factor.",
-          "C": "This is a common factor but not the greatest.",
-          "D": "Factor out 28. Since gcd(12,18) = 6, the greatest common factor is 168."
+          "A": "Adding 1 to an even number always lands on the odd number above it.",
+          "B": "Adding 2 to an even number gives the next even number along.",
+          "C": "Doubling any integer gives an even result, whatever the integer was.",
+          "D": "Halving an even number can give either an odd or an even result."
         }
       },
       {
@@ -10666,264 +10666,264 @@
         "id": "exp26-math-171",
         "section": "math",
         "topic": "sequences",
-        "difficulty": "medium",
-        "context": "An arithmetic sequence begins 31, 34, 37, …. What is its 13th term?",
+        "difficulty": "hard",
+        "context": "An arithmetic sequence has a 5th term of 23 and a 9th term of 39. What is the common difference?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "43"
+            "text": "4"
           },
           {
             "id": "B",
-            "text": "31"
+            "text": "8"
           },
           {
             "id": "C",
-            "text": "67"
+            "text": "16"
           },
           {
             "id": "D",
-            "text": "70"
+            "text": "2"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Each step adds 3, not 1.",
-          "B": "This is only the first term; add the common difference for subsequent terms.",
-          "C": "Add the common difference 3 exactly 12 times to the first term.",
-          "D": "This adds one extra common difference."
+          "A": "The terms are four steps apart and differ by 16, so each step is 4.",
+          "B": "This halves the gap, as though only two steps separated the terms.",
+          "C": "This is the whole gap between the two terms rather than one step of it.",
+          "D": "This divides the gap by the later term number rather than by four steps."
         }
       },
       {
         "id": "exp26-math-172",
         "section": "math",
         "topic": "exponents & radicals",
-        "difficulty": "easy",
-        "context": "For nonzero x, simplify x^34 / x^31.",
+        "difficulty": "hard",
+        "context": "What is (x²y³)³ in simplest form?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "x^65"
+            "text": "x⁶y⁹"
           },
           {
             "id": "B",
-            "text": "x^32"
+            "text": "x⁵y⁶"
           },
           {
             "id": "C",
-            "text": "3x"
+            "text": "x⁸y²⁷"
           },
           {
             "id": "D",
-            "text": "x³"
+            "text": "x⁶y⁶"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "Adding exponents is the rule for multiplication, not division.",
-          "B": "The denominator exponent must be subtracted.",
-          "C": "An exponent of 3 means three factors of x.",
-          "D": "Subtract exponents with a common base: (34) - 31 = 3."
+          "A": "The outer power multiplies each exponent inside the bracket by 3.",
+          "B": "This adds the outer power to each exponent instead of multiplying.",
+          "C": "This raises each exponent to the third power rather than tripling it.",
+          "D": "The first exponent is handled correctly but the second is not."
         }
       },
       {
         "id": "exp26-math-173",
         "section": "math",
         "topic": "circles",
-        "difficulty": "easy",
-        "context": "A circle has radius 31 cm. What is its circumference in centimeters?",
+        "difficulty": "hard",
+        "context": "A circle has its centre at (2, -1) and passes through (5, 3). What is its radius?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "62π"
+            "text": "5"
           },
           {
             "id": "B",
-            "text": "31π"
+            "text": "25"
           },
           {
             "id": "C",
-            "text": "961π"
+            "text": "7"
           },
           {
             "id": "D",
-            "text": "3844π"
+            "text": "12"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Circumference is 2πr = 62π.",
-          "B": "This omits the factor 2.",
-          "C": "This is the area, not circumference.",
-          "D": "This uses an area formula with the diameter substituted for the radius."
+          "A": "The gaps of 3 and 4 give a distance of 5 between the two points.",
+          "B": "This is the square of the distance, with the root not yet taken.",
+          "C": "Adding the two gaps measures a path along the axes, not a straight line.",
+          "D": "Multiplying the two gaps gives an area rather than a length."
         }
       },
       {
         "id": "exp26-math-174",
         "section": "math",
         "topic": "lines & angles",
-        "difficulty": "medium",
-        "context": "Two supplementary angles measure (31x)° and (34x)°. What is x?",
+        "difficulty": "hard",
+        "context": "A quadrilateral has angles of 90° and 120°, and its other two angles are equal. What is each of those?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "60"
+            "text": "75°"
           },
           {
             "id": "B",
-            "text": "2.76923"
+            "text": "150°"
           },
           {
             "id": "C",
-            "text": "1.38462"
+            "text": "30°"
           },
           {
             "id": "D",
-            "text": "5.53846"
+            "text": "45°"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Add the angle expressions; do not subtract them.",
-          "B": "Supplementary angles sum to 180°, so (31 + 34)x = 180. The decimal choices are rounded to five places.",
-          "C": "This uses 90°, appropriate for complementary angles.",
-          "D": "Supplementary angles do not total a full turn."
+          "A": "The four total 360°, so the remaining 150° splits evenly into two 75s.",
+          "B": "This is the total the two equal angles share, before splitting it.",
+          "C": "This subtracts the 90° a second time before halving the remainder.",
+          "D": "This splits 360° into eight equal parts, which the shape does not have."
         }
       },
       {
         "id": "exp26-math-175",
         "section": "math",
         "topic": "word problems",
-        "difficulty": "medium",
-        "context": "A printing service charges $34 plus $31 per poster. What is the total cost, in dollars, of 32 posters?",
+        "difficulty": "hard",
+        "context": "A boat covers 24 km downstream in 2 hours and the same distance back in 3. What is the current speed?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "992"
+            "text": "2"
           },
           {
             "id": "B",
-            "text": "97"
+            "text": "10"
           },
           {
             "id": "C",
-            "text": "1026"
+            "text": "4"
           },
           {
             "id": "D",
-            "text": "2080"
+            "text": "20"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This omits the fixed fee.",
-          "B": "Multiply the per-poster rate by the number of posters.",
-          "C": "Pay the fixed charge once, plus 32 charges of $31: 34 + 31(32).",
-          "D": "This charges the fixed fee for every poster."
+          "A": "Downstream is 12 and upstream 8, and the current is half their difference.",
+          "B": "This is the speed of the boat in still water, the average of the two.",
+          "C": "This is the whole difference between the speeds rather than half of it.",
+          "D": "Adding the two speeds gives neither the boat nor the current."
         }
       },
       {
         "id": "exp26-math-176",
         "section": "math",
         "topic": "trigonometry",
-        "difficulty": "easy",
-        "context": "An acute angle θ is in a right triangle. Its opposite leg is 30, its adjacent leg is 40, and its hypotenuse is 50. What is tan θ?",
+        "difficulty": "hard",
+        "context": "For what angle between 0° and 90° does sin equal cos?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3/5"
+            "text": "45°"
           },
           {
             "id": "B",
-            "text": "4/5"
+            "text": "30°"
           },
           {
             "id": "C",
-            "text": "4/3"
+            "text": "60°"
           },
           {
             "id": "D",
-            "text": "3/4"
+            "text": "90°"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is sine.",
-          "B": "This is cosine.",
-          "C": "This reverses opposite and adjacent.",
-          "D": "Tangent is opposite divided by adjacent, so 3/4 after canceling the common factor."
+          "A": "The two ratios match only when the two legs do, which is at 45°.",
+          "B": "Here the sine is one half while the cosine is the larger √3/2.",
+          "C": "Here the sine is √3/2 while the cosine is the smaller one half.",
+          "D": "Here the sine reaches 1 while the cosine has fallen all the way to 0."
         }
       },
       {
         "id": "exp26-math-177",
         "section": "math",
         "topic": "logarithms",
-        "difficulty": "easy",
-        "context": "If the logarithm of x to base 3 equals 10, which expression equals x?",
+        "difficulty": "hard",
+        "context": "Solve for x: log₄(x) + log₄(x + 6) = 2.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3^10"
+            "text": "2"
           },
           {
             "id": "B",
-            "text": "3 × 10"
+            "text": "-8"
           },
           {
             "id": "C",
-            "text": "3 + 10"
+            "text": "10"
           },
           {
             "id": "D",
-            "text": "3^11"
+            "text": "4"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Logarithmic form converts to x = 3^10.",
-          "B": "Multiplication does not undo a logarithm.",
-          "C": "Addition does not undo a logarithm.",
-          "D": "This uses an exponent one too large."
+          "A": "The two logarithms combine to log₄ of x(x + 6), which must equal 16.",
+          "B": "This root of the quadratic is negative, and a logarithm needs a positive input.",
+          "C": "This solves x + 6 = 16 and leaves the first logarithm unused.",
+          "D": "This is the base of the logarithm rather than a solution of the equation."
         }
       },
       {
         "id": "exp26-math-178",
         "section": "math",
         "topic": "matrices",
-        "difficulty": "easy",
-        "context": "Let A = [[31, 2], [3, 34]]. What is the determinant of A?",
+        "difficulty": "hard",
+        "context": "The matrix [[3, k], [4, 8]] has no inverse. What is k?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-1048"
+            "text": "6"
           },
           {
             "id": "B",
-            "text": "1048"
+            "text": "2"
           },
           {
             "id": "C",
-            "text": "1060"
+            "text": "-6"
           },
           {
             "id": "D",
-            "text": "60"
+            "text": "24"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This reverses the order of the two diagonal products.",
-          "B": "For [[a,b],[c,d]], determinant = ad - bc: 31(34) - 2(3).",
-          "C": "Subtract the cross product instead of adding.",
-          "D": "Multiply entries along diagonals; do not sum them."
+          "A": "No inverse means a zero determinant, so 24 − 4k must be zero.",
+          "B": "This makes the determinant 16 rather than the zero that is required.",
+          "C": "A negative k makes the determinant 48, which is further from zero.",
+          "D": "This is the main diagonal product rather than the value k must take."
         }
       },
       {
@@ -10931,65 +10931,65 @@
         "section": "math",
         "topic": "complex numbers",
         "difficulty": "hard",
-        "context": "What is the real part of (31 + 2i)(3 + 34i), where i² = -1?",
+        "context": "What is (4 + 2i) ÷ (1 - i), expressed in the form a + bi?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "1060"
+            "text": "1 + 3i"
           },
           {
             "id": "B",
-            "text": "93"
+            "text": "4 + 2i"
           },
           {
             "id": "C",
-            "text": "25"
+            "text": "2 + 6i"
           },
           {
             "id": "D",
-            "text": "161"
+            "text": "1 - 3i"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This is the coefficient of i.",
-          "B": "This omits the real contribution from multiplying the imaginary terms.",
-          "C": "The real terms are 93 + 68i² = 25.",
-          "D": "Use i² = -1, not +1."
+          "A": "Multiplying above and below by 1 + i gives 2 + 6i over 2.",
+          "B": "This leaves the division undone, as though dividing by 1.",
+          "C": "This is the numerator after multiplying, before dividing by 2.",
+          "D": "The conjugate was applied with the wrong sign on the imaginary part."
         }
       },
       {
         "id": "exp26-math-180",
         "section": "math",
         "topic": "number properties",
-        "difficulty": "easy",
-        "context": "What is the greatest common factor of 348 and 522?",
+        "difficulty": "hard",
+        "context": "What is the remainder when 3¹⁰⁰ is divided by 4?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "87"
+            "text": "1"
           },
           {
             "id": "B",
-            "text": "1044"
+            "text": "3"
           },
           {
             "id": "C",
-            "text": "58"
+            "text": "0"
           },
           {
             "id": "D",
-            "text": "174"
+            "text": "2"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This divides both numbers but is not greatest.",
-          "B": "This is their least common multiple, not their greatest common factor.",
-          "C": "This is a common factor but not the greatest.",
-          "D": "Factor out 29. Since gcd(12,18) = 6, the greatest common factor is 174."
+          "A": "Powers of 3 leave remainders of 3 and 1 in turn, and an even power leaves 1.",
+          "B": "This is the remainder an odd power of 3 leaves rather than an even one.",
+          "C": "A remainder of zero would mean 4 divides a power of 3, which it never does.",
+          "D": "The remainders alternate between 3 and 1, so 2 never appears."
         }
       },
       {
@@ -11326,173 +11326,173 @@
         "id": "exp26-math-191",
         "section": "math",
         "topic": "sequences",
-        "difficulty": "medium",
-        "context": "An arithmetic sequence begins 32, 35, 38, …. What is its 14th term?",
+        "difficulty": "hard",
+        "context": "The sum of the first n odd numbers is 49. What is n?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "45"
+            "text": "7"
           },
           {
             "id": "B",
-            "text": "32"
+            "text": "13"
           },
           {
             "id": "C",
-            "text": "71"
+            "text": "24"
           },
           {
             "id": "D",
-            "text": "74"
+            "text": "49"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Each step adds 3, not 1.",
-          "B": "This is only the first term; add the common difference for subsequent terms.",
-          "C": "Add the common difference 3 exactly 13 times to the first term.",
-          "D": "This adds one extra common difference."
+          "A": "The first n odd numbers always total n squared, and 49 is 7 squared.",
+          "B": "This is the last odd number in the run rather than how many there are.",
+          "C": "Halving the total treats the odd numbers as though they averaged two.",
+          "D": "This is the total itself rather than the count of numbers that reach it."
         }
       },
       {
         "id": "exp26-math-192",
         "section": "math",
         "topic": "exponents & radicals",
-        "difficulty": "easy",
-        "context": "For nonzero x, simplify x^35 / x^32.",
+        "difficulty": "hard",
+        "context": "If 3ˣ = 81, what is x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "x^67"
+            "text": "4"
           },
           {
             "id": "B",
-            "text": "x^33"
+            "text": "27"
           },
           {
             "id": "C",
-            "text": "3x"
+            "text": "9"
           },
           {
             "id": "D",
-            "text": "x³"
+            "text": "5"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "Adding exponents is the rule for multiplication, not division.",
-          "B": "The denominator exponent must be subtracted.",
-          "C": "An exponent of 3 means three factors of x.",
-          "D": "Subtract exponents with a common base: (35) - 32 = 3."
+          "A": "Four threes multiply to 81, so the exponent must be 4.",
+          "B": "Dividing 81 by the base once leaves a value, not the exponent.",
+          "C": "This is the square root of 81, which answers a different question.",
+          "D": "Five threes multiply to 243, which overshoots the 81 given."
         }
       },
       {
         "id": "exp26-math-193",
         "section": "math",
         "topic": "circles",
-        "difficulty": "easy",
-        "context": "A circle has radius 32 cm. What is its circumference in centimeters?",
+        "difficulty": "hard",
+        "context": "Which equation describes a circle with centre (0, 3) and radius 4?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "64π"
+            "text": "x² + (y - 3)² = 16"
           },
           {
             "id": "B",
-            "text": "32π"
+            "text": "x² + (y + 3)² = 16"
           },
           {
             "id": "C",
-            "text": "1024π"
+            "text": "x² + (y - 3)² = 4"
           },
           {
             "id": "D",
-            "text": "4096π"
+            "text": "(x - 3)² + y² = 16"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Circumference is 2πr = 64π.",
-          "B": "This omits the factor 2.",
-          "C": "This is the area, not circumference.",
-          "D": "This uses an area formula with the diameter substituted for the radius."
+          "A": "The centre is subtracted inside the brackets and the radius is squared.",
+          "B": "Adding 3 inside the bracket places the centre below the origin.",
+          "C": "The right-hand side must be the radius squared rather than the radius.",
+          "D": "This puts the 3 with x, which moves the centre sideways instead."
         }
       },
       {
         "id": "exp26-math-194",
         "section": "math",
         "topic": "lines & angles",
-        "difficulty": "medium",
-        "context": "Two supplementary angles measure (32x)° and (35x)°. What is x?",
+        "difficulty": "hard",
+        "context": "Two lines cross, and one angle is three times the angle next to it. What is the smaller angle?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "60"
+            "text": "45°"
           },
           {
             "id": "B",
-            "text": "2.68657"
+            "text": "135°"
           },
           {
             "id": "C",
-            "text": "1.34328"
+            "text": "60°"
           },
           {
             "id": "D",
-            "text": "5.37313"
+            "text": "22.5°"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Add the angle expressions; do not subtract them.",
-          "B": "Supplementary angles sum to 180°, so (32 + 35)x = 180. The decimal choices are rounded to five places.",
-          "C": "This uses 90°, appropriate for complementary angles.",
-          "D": "Supplementary angles do not total a full turn."
+          "A": "The two sit on a straight line, so four equal parts of 180° give 45.",
+          "B": "This is the larger of the two angles, which is three times the smaller.",
+          "C": "Splitting 180° into three parts rather than four gives this.",
+          "D": "This halves the answer, as though eight parts made up the straight line."
         }
       },
       {
         "id": "exp26-math-195",
         "section": "math",
         "topic": "word problems",
-        "difficulty": "medium",
-        "context": "A printing service charges $35 plus $32 per poster. What is the total cost, in dollars, of 33 posters?",
+        "difficulty": "hard",
+        "context": "A 40-litre mixture is 3 parts water to 1 part syrup. How much syrup must be added to make it half syrup?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "1056"
+            "text": "20"
           },
           {
             "id": "B",
-            "text": "100"
+            "text": "10"
           },
           {
             "id": "C",
-            "text": "1091"
+            "text": "30"
           },
           {
             "id": "D",
-            "text": "2211"
+            "text": "40"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This omits the fixed fee.",
-          "B": "Multiply the per-poster rate by the number of posters.",
-          "C": "Pay the fixed charge once, plus 33 charges of $32: 35 + 32(33).",
-          "D": "This charges the fixed fee for every poster."
+          "A": "There are 10 litres of syrup and 30 of water, so 20 more evens them up.",
+          "B": "This is the syrup already present rather than the amount to add.",
+          "C": "This is the water present, which the syrup must be brought up to match.",
+          "D": "This is the size of the original mixture rather than an addition to it."
         }
       },
       {
         "id": "exp26-math-196",
         "section": "math",
         "topic": "trigonometry",
-        "difficulty": "easy",
-        "context": "An acute angle θ is in a right triangle. Its opposite leg is 33, its adjacent leg is 44, and its hypotenuse is 55. What is tan θ?",
+        "difficulty": "hard",
+        "context": "If tan θ = 3/4 and θ is acute, what is sin θ?",
         "practiceOnly": true,
         "choices": [
           {
@@ -11505,85 +11505,85 @@
           },
           {
             "id": "C",
-            "text": "4/3"
+            "text": "3/4"
           },
           {
             "id": "D",
-            "text": "3/4"
+            "text": "5/3"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is sine.",
-          "B": "This is cosine.",
-          "C": "This reverses opposite and adjacent.",
-          "D": "Tangent is opposite divided by adjacent, so 3/4 after canceling the common factor."
+          "A": "Legs of 3 and 4 give a hypotenuse of 5, and sine puts the 3 over it.",
+          "B": "This is the cosine, which puts the adjacent leg over the hypotenuse.",
+          "C": "This is the tangent given in the question rather than the sine.",
+          "D": "This inverts the ratio, and a sine can never be greater than 1."
         }
       },
       {
         "id": "exp26-math-197",
         "section": "math",
         "topic": "logarithms",
-        "difficulty": "easy",
-        "context": "If the logarithm of x to base 3 equals 11, which expression equals x?",
+        "difficulty": "hard",
+        "context": "If 2 log(x) = log(36), what is the positive value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3^11"
+            "text": "6"
           },
           {
             "id": "B",
-            "text": "3 × 11"
+            "text": "18"
           },
           {
             "id": "C",
-            "text": "3 + 11"
+            "text": "36"
           },
           {
             "id": "D",
-            "text": "3^12"
+            "text": "1296"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Logarithmic form converts to x = 3^11.",
-          "B": "Multiplication does not undo a logarithm.",
-          "C": "Addition does not undo a logarithm.",
-          "D": "This uses an exponent one too large."
+          "A": "The 2 moves inside as a square, so x² is 36 and x is 6.",
+          "B": "Halving 36 treats the coefficient as though it divided the number.",
+          "C": "This is the number inside the second logarithm rather than x itself.",
+          "D": "Squaring 36 moves in the wrong direction from the equation given."
         }
       },
       {
         "id": "exp26-math-198",
         "section": "math",
         "topic": "matrices",
-        "difficulty": "easy",
-        "context": "Let A = [[32, 2], [3, 35]]. What is the determinant of A?",
+        "difficulty": "hard",
+        "context": "What is the inverse of [[2, 1], [5, 3]]?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-1114"
+            "text": "[[3, -1], [-5, 2]]"
           },
           {
             "id": "B",
-            "text": "1114"
+            "text": "[[2, -1], [-5, 3]]"
           },
           {
             "id": "C",
-            "text": "1126"
+            "text": "[[3, 1], [5, 2]]"
           },
           {
             "id": "D",
-            "text": "62"
+            "text": "[[-3, 1], [5, -2]]"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This reverses the order of the two diagonal products.",
-          "B": "For [[a,b],[c,d]], determinant = ad - bc: 32(35) - 2(3).",
-          "C": "Subtract the cross product instead of adding.",
-          "D": "Multiply entries along diagonals; do not sum them."
+          "A": "The determinant is 1, so the diagonal swaps and the other two change sign.",
+          "B": "The two diagonal entries have been left in place instead of swapping.",
+          "C": "No signs have been changed, so this product is not the identity.",
+          "D": "The signs have been applied to the wrong pair of entries."
         }
       },
       {
@@ -11591,65 +11591,65 @@
         "section": "math",
         "topic": "complex numbers",
         "difficulty": "hard",
-        "context": "What is the real part of (32 + 2i)(3 + 35i), where i² = -1?",
+        "context": "What are the solutions of x² + 25 = 0?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "1126"
+            "text": "5i and -5i"
           },
           {
             "id": "B",
-            "text": "96"
+            "text": "5 and -5"
           },
           {
             "id": "C",
-            "text": "26"
+            "text": "25i and -25i"
           },
           {
             "id": "D",
-            "text": "166"
+            "text": "no real solutions"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This is the coefficient of i.",
-          "B": "This omits the real contribution from multiplying the imaginary terms.",
-          "C": "The real terms are 96 + 70i² = 26.",
-          "D": "Use i² = -1, not +1."
+          "A": "The square root of -25 is 5i, and both signs satisfy the equation.",
+          "B": "Real fives give a positive 25, which cannot cancel the 25 already there.",
+          "C": "The square root of the 25 is 5, so the coefficient should not stay at 25.",
+          "D": "There are no real ones, but the question allows imaginary solutions."
         }
       },
       {
         "id": "exp26-math-200",
         "section": "math",
         "topic": "number properties",
-        "difficulty": "easy",
-        "context": "What is the greatest common factor of 360 and 540?",
+        "difficulty": "hard",
+        "context": "Two numbers have a product of 180 and a greatest common factor of 6. What is their least common multiple?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "90"
+            "text": "30"
           },
           {
             "id": "B",
-            "text": "1080"
+            "text": "180"
           },
           {
             "id": "C",
-            "text": "60"
+            "text": "6"
           },
           {
             "id": "D",
-            "text": "180"
+            "text": "1080"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This divides both numbers but is not greatest.",
-          "B": "This is their least common multiple, not their greatest common factor.",
-          "C": "This is a common factor but not the greatest.",
-          "D": "Factor out 30. Since gcd(12,18) = 6, the greatest common factor is 180."
+          "A": "The factor and the multiple together multiply to the product of the pair.",
+          "B": "This is the product of the two numbers rather than their least multiple.",
+          "C": "This is the greatest common factor that the question already gives.",
+          "D": "Multiplying the product by the factor moves away from the answer."
         }
       },
       {
@@ -11986,264 +11986,264 @@
         "id": "exp26-math-211",
         "section": "math",
         "topic": "sequences",
-        "difficulty": "medium",
-        "context": "An arithmetic sequence begins 33, 36, 39, …. What is its 15th term?",
+        "difficulty": "hard",
+        "context": "A sequence has a first term of 2, and each later term is twice the one before plus 1. What is the 4th term?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "47"
+            "text": "23"
           },
           {
             "id": "B",
-            "text": "33"
+            "text": "11"
           },
           {
             "id": "C",
-            "text": "75"
+            "text": "16"
           },
           {
             "id": "D",
-            "text": "78"
+            "text": "9"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Each step adds 3, not 1.",
-          "B": "This is only the first term; add the common difference for subsequent terms.",
-          "C": "Add the common difference 3 exactly 14 times to the first term.",
-          "D": "This adds one extra common difference."
+          "A": "The terms run 2, 5, 11, 23, each one doubled and raised by 1.",
+          "B": "This is the third term, one application of the rule too early.",
+          "C": "This doubles three times but never adds the 1 the rule calls for.",
+          "D": "This drops the added 1 at every step except the very last one."
         }
       },
       {
         "id": "exp26-math-212",
         "section": "math",
         "topic": "exponents & radicals",
-        "difficulty": "easy",
-        "context": "For nonzero x, simplify x^36 / x^33.",
+        "difficulty": "hard",
+        "context": "What is √8 · √2?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "x^69"
+            "text": "4"
           },
           {
             "id": "B",
-            "text": "x^34"
+            "text": "16"
           },
           {
             "id": "C",
-            "text": "3x"
+            "text": "2√2"
           },
           {
             "id": "D",
-            "text": "x³"
+            "text": "√10"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "Adding exponents is the rule for multiplication, not division.",
-          "B": "The denominator exponent must be subtracted.",
-          "C": "An exponent of 3 means three factors of x.",
-          "D": "Subtract exponents with a common base: (36) - 33 = 3."
+          "A": "Radicals multiply under one root, and the square root of 16 is 4.",
+          "B": "This is the product under the radical, with the root not yet taken.",
+          "C": "This is the first radical simplified, with the second never used.",
+          "D": "Radicals multiply rather than add the numbers beneath them."
         }
       },
       {
         "id": "exp26-math-213",
         "section": "math",
         "topic": "circles",
-        "difficulty": "easy",
-        "context": "A circle has radius 33 cm. What is its circumference in centimeters?",
+        "difficulty": "hard",
+        "context": "The radius of a circle is tripled. By what factor does its circumference change?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "66π"
+            "text": "3"
           },
           {
             "id": "B",
-            "text": "33π"
+            "text": "9"
           },
           {
             "id": "C",
-            "text": "1089π"
+            "text": "6"
           },
           {
             "id": "D",
-            "text": "4356π"
+            "text": "27"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Circumference is 2πr = 66π.",
-          "B": "This omits the factor 2.",
-          "C": "This is the area, not circumference.",
-          "D": "This uses an area formula with the diameter substituted for the radius."
+          "A": "Circumference is proportional to the radius, so it triples as well.",
+          "B": "Squaring the factor is what happens to the area, not the circumference.",
+          "C": "Doubling the factor confuses the 2 in the formula with the scaling.",
+          "D": "Cubing the factor would apply to a volume rather than a length."
         }
       },
       {
         "id": "exp26-math-214",
         "section": "math",
         "topic": "lines & angles",
-        "difficulty": "medium",
-        "context": "Two supplementary angles measure (33x)° and (36x)°. What is x?",
+        "difficulty": "hard",
+        "context": "Each interior angle of a regular polygon measures 150°. How many sides has it?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "60"
+            "text": "12"
           },
           {
             "id": "B",
-            "text": "2.6087"
+            "text": "6"
           },
           {
             "id": "C",
-            "text": "1.30435"
+            "text": "150"
           },
           {
             "id": "D",
-            "text": "5.21739"
+            "text": "10"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Add the angle expressions; do not subtract them.",
-          "B": "Supplementary angles sum to 180°, so (33 + 36)x = 180. The decimal choices are rounded to five places.",
-          "C": "This uses 90°, appropriate for complementary angles.",
-          "D": "Supplementary angles do not total a full turn."
+          "A": "Each exterior angle is 30°, and 360 divided by 30 gives twelve sides.",
+          "B": "A six-sided polygon has interior angles of 120° rather than 150°.",
+          "C": "This is the size of one interior angle rather than the count of sides.",
+          "D": "A ten-sided polygon has interior angles of 144° rather than 150°."
         }
       },
       {
         "id": "exp26-math-215",
         "section": "math",
         "topic": "word problems",
-        "difficulty": "medium",
-        "context": "A printing service charges $36 plus $33 per poster. What is the total cost, in dollars, of 34 posters?",
+        "difficulty": "hard",
+        "context": "Two trains leave one station in opposite directions at 60 and 80 km per hour. When are they 350 km apart?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "1122"
+            "text": "2.5"
           },
           {
             "id": "B",
-            "text": "103"
+            "text": "5"
           },
           {
             "id": "C",
-            "text": "1158"
+            "text": "17.5"
           },
           {
             "id": "D",
-            "text": "2346"
+            "text": "1.75"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This omits the fixed fee.",
-          "B": "Multiply the per-poster rate by the number of posters.",
-          "C": "Pay the fixed charge once, plus 34 charges of $33: 36 + 33(34).",
-          "D": "This charges the fixed fee for every poster."
+          "A": "The gap opens at 140 km per hour, and 350 divided by 140 is 2.5.",
+          "B": "Using the average of the two speeds ignores that both trains are moving.",
+          "C": "Using the difference in speeds would suit trains going the same way.",
+          "D": "This divides by 200, which is more than the two speeds together."
         }
       },
       {
         "id": "exp26-math-216",
         "section": "math",
         "topic": "trigonometry",
-        "difficulty": "easy",
-        "context": "An acute angle θ is in a right triangle. Its opposite leg is 36, its adjacent leg is 48, and its hypotenuse is 60. What is tan θ?",
+        "difficulty": "hard",
+        "context": "What is the period of y = 2 sin(x/3)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3/5"
+            "text": "6π"
           },
           {
             "id": "B",
-            "text": "4/5"
+            "text": "2π/3"
           },
           {
             "id": "C",
-            "text": "4/3"
+            "text": "3π"
           },
           {
             "id": "D",
-            "text": "3/4"
+            "text": "2π"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is sine.",
-          "B": "This is cosine.",
-          "C": "This reverses opposite and adjacent.",
-          "D": "Tangent is opposite divided by adjacent, so 3/4 after canceling the common factor."
+          "A": "Period is 2π divided by the coefficient of x, and a third stretches it to 6π.",
+          "B": "This divides by 3 rather than by one third, which compresses the curve.",
+          "C": "This halves the correct period, as though the coefficient were two thirds.",
+          "D": "This is the period of a plain sine curve, with the stretching not applied."
         }
       },
       {
         "id": "exp26-math-217",
         "section": "math",
         "topic": "logarithms",
-        "difficulty": "easy",
-        "context": "If the logarithm of x to base 3 equals 12, which expression equals x?",
+        "difficulty": "hard",
+        "context": "A population doubles every 5 years. How many years does it take to grow eightfold?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3^12"
+            "text": "15"
           },
           {
             "id": "B",
-            "text": "3 × 12"
+            "text": "40"
           },
           {
             "id": "C",
-            "text": "3 + 12"
+            "text": "10"
           },
           {
             "id": "D",
-            "text": "3^13"
+            "text": "20"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Logarithmic form converts to x = 3^12.",
-          "B": "Multiplication does not undo a logarithm.",
-          "C": "Addition does not undo a logarithm.",
-          "D": "This uses an exponent one too large."
+          "A": "Eight is three doublings, and three periods of 5 years make 15.",
+          "B": "Multiplying the period by 8 treats growth as adding rather than doubling.",
+          "C": "Two doublings give a fourfold increase, one short of eightfold.",
+          "D": "Four doublings give a sixteenfold increase, which overshoots eightfold."
         }
       },
       {
         "id": "exp26-math-218",
         "section": "math",
         "topic": "matrices",
-        "difficulty": "easy",
-        "context": "Let A = [[33, 2], [3, 36]]. What is the determinant of A?",
+        "difficulty": "hard",
+        "context": "If A = [[1, 1], [0, 1]], what is A⁴?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-1182"
+            "text": "[[1, 4], [0, 1]]"
           },
           {
             "id": "B",
-            "text": "1182"
+            "text": "[[1, 1], [0, 1]]"
           },
           {
             "id": "C",
-            "text": "1194"
+            "text": "[[4, 4], [0, 4]]"
           },
           {
             "id": "D",
-            "text": "64"
+            "text": "[[1, 3], [0, 1]]"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This reverses the order of the two diagonal products.",
-          "B": "For [[a,b],[c,d]], determinant = ad - bc: 33(36) - 2(3).",
-          "C": "Subtract the cross product instead of adding.",
-          "D": "Multiply entries along diagonals; do not sum them."
+          "A": "Each multiplication raises the top right by 1, so four give 4 there.",
+          "B": "This is the matrix itself, as though the power changed nothing.",
+          "C": "This multiplies every entry by 4 rather than multiplying the matrices.",
+          "D": "This is the cube, one multiplication short of the fourth power."
         }
       },
       {
@@ -12251,65 +12251,65 @@
         "section": "math",
         "topic": "complex numbers",
         "difficulty": "hard",
-        "context": "What is the real part of (33 + 2i)(3 + 36i), where i² = -1?",
+        "context": "What is i²⁰ + i²²?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "1194"
+            "text": "0"
           },
           {
             "id": "B",
-            "text": "99"
+            "text": "2"
           },
           {
             "id": "C",
-            "text": "27"
+            "text": "1"
           },
           {
             "id": "D",
-            "text": "171"
+            "text": "-1"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This is the coefficient of i.",
-          "B": "This omits the real contribution from multiplying the imaginary terms.",
-          "C": "The real terms are 99 + 72i² = 27.",
-          "D": "Use i² = -1, not +1."
+          "A": "The powers cycle in fours, giving 1 and -1, which cancel each other.",
+          "B": "This treats both powers as 1, ignoring where the second lands in the cycle.",
+          "C": "This is the first term alone, with the second not yet added on.",
+          "D": "This is the second term alone, with the first not yet added on."
         }
       },
       {
         "id": "exp26-math-220",
         "section": "math",
         "topic": "number properties",
-        "difficulty": "easy",
-        "context": "What is the greatest common factor of 372 and 558?",
+        "difficulty": "hard",
+        "context": "What is the units digit of 7 raised to the power 2026?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "93"
+            "text": "9"
           },
           {
             "id": "B",
-            "text": "1116"
+            "text": "7"
           },
           {
             "id": "C",
-            "text": "62"
+            "text": "3"
           },
           {
             "id": "D",
-            "text": "186"
+            "text": "1"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This divides both numbers but is not greatest.",
-          "B": "This is their least common multiple, not their greatest common factor.",
-          "C": "This is a common factor but not the greatest.",
-          "D": "Factor out 31. Since gcd(12,18) = 6, the greatest common factor is 186."
+          "A": "The units digits cycle 7, 9, 3, 1, and 2026 is the second of a cycle.",
+          "B": "This is the first digit of the cycle, which needs a power one lower.",
+          "C": "This is the third digit of the cycle, which needs a power one higher.",
+          "D": "This is the fourth digit of the cycle, where the power divides by 4."
         }
       },
       {
@@ -12646,264 +12646,264 @@
         "id": "exp26-math-231",
         "section": "math",
         "topic": "sequences",
-        "difficulty": "medium",
-        "context": "An arithmetic sequence begins 34, 37, 40, …. What is its 16th term?",
+        "difficulty": "hard",
+        "context": "The terms 3, x and 27 form a geometric sequence. What is the positive value of x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "49"
+            "text": "9"
           },
           {
             "id": "B",
-            "text": "34"
+            "text": "15"
           },
           {
             "id": "C",
-            "text": "79"
+            "text": "81"
           },
           {
             "id": "D",
-            "text": "82"
+            "text": "24"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Each step adds 3, not 1.",
-          "B": "This is only the first term; add the common difference for subsequent terms.",
-          "C": "Add the common difference 3 exactly 15 times to the first term.",
-          "D": "This adds one extra common difference."
+          "A": "The middle term of three is the square root of the outer two multiplied.",
+          "B": "This is the average of the outer terms, which suits an adding sequence.",
+          "C": "This is the product of the outer terms, before the square root is taken.",
+          "D": "This is the difference between the outer terms rather than their middle."
         }
       },
       {
         "id": "exp26-math-232",
         "section": "math",
         "topic": "exponents & radicals",
-        "difficulty": "easy",
-        "context": "For nonzero x, simplify x^37 / x^34.",
+        "difficulty": "hard",
+        "context": "What is (3x²)² ÷ (3x) in simplest form?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "x^71"
+            "text": "3x³"
           },
           {
             "id": "B",
-            "text": "x^35"
+            "text": "9x³"
           },
           {
             "id": "C",
-            "text": "3x"
+            "text": "3x⁴"
           },
           {
             "id": "D",
             "text": "x³"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "Adding exponents is the rule for multiplication, not division.",
-          "B": "The denominator exponent must be subtracted.",
-          "C": "An exponent of 3 means three factors of x.",
-          "D": "Subtract exponents with a common base: (37) - 34 = 3."
+          "A": "The bracket squares to 9x⁴, and dividing by 3x leaves 3x³.",
+          "B": "The coefficient 9 has not been divided by the 3 in the denominator.",
+          "C": "The exponent has not been reduced by the single x in the denominator.",
+          "D": "The exponent is right but the coefficient has been divided away entirely."
         }
       },
       {
         "id": "exp26-math-233",
         "section": "math",
         "topic": "circles",
-        "difficulty": "easy",
-        "context": "A circle has radius 34 cm. What is its circumference in centimeters?",
+        "difficulty": "hard",
+        "context": "A circle of radius 5 has a chord 6 units long. How far is the chord from the centre?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "68π"
+            "text": "4"
           },
           {
             "id": "B",
-            "text": "34π"
+            "text": "3"
           },
           {
             "id": "C",
-            "text": "1156π"
+            "text": "√34"
           },
           {
             "id": "D",
-            "text": "4624π"
+            "text": "5"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Circumference is 2πr = 68π.",
-          "B": "This omits the factor 2.",
-          "C": "This is the area, not circumference.",
-          "D": "This uses an area formula with the diameter substituted for the radius."
+          "A": "Half the chord is 3, and 3 with the radius 5 leaves a leg of 4.",
+          "B": "This is half the chord itself rather than the distance to the centre.",
+          "C": "This adds the squares instead of subtracting one from the other.",
+          "D": "This is the radius, which reaches the circle rather than the chord."
         }
       },
       {
         "id": "exp26-math-234",
         "section": "math",
         "topic": "lines & angles",
-        "difficulty": "medium",
-        "context": "Two supplementary angles measure (34x)° and (37x)°. What is x?",
+        "difficulty": "hard",
+        "context": "A transversal crosses two parallel lines. Co-interior angles measure (2x + 10)° and (3x)°. What is x?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "60"
+            "text": "34"
           },
           {
             "id": "B",
-            "text": "2.53521"
+            "text": "10"
           },
           {
             "id": "C",
-            "text": "1.26761"
+            "text": "16"
           },
           {
             "id": "D",
-            "text": "5.07042"
+            "text": "170"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "Add the angle expressions; do not subtract them.",
-          "B": "Supplementary angles sum to 180°, so (34 + 37)x = 180. The decimal choices are rounded to five places.",
-          "C": "This uses 90°, appropriate for complementary angles.",
-          "D": "Supplementary angles do not total a full turn."
+          "A": "Co-interior angles total 180°, so 5x plus 10 equals 180 and x is 34.",
+          "B": "Setting the two expressions equal treats them as alternate angles.",
+          "C": "This makes the two angles total 90° rather than the 180° they must.",
+          "D": "This is 5x, the value before the final division by 5."
         }
       },
       {
         "id": "exp26-math-235",
         "section": "math",
         "topic": "word problems",
-        "difficulty": "medium",
-        "context": "A printing service charges $37 plus $34 per poster. What is the total cost, in dollars, of 35 posters?",
+        "difficulty": "hard",
+        "context": "A coat is cut by 20%, then by a further 10% of the reduced price, and costs 144. What was the original price?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "1190"
+            "text": "200"
           },
           {
             "id": "B",
-            "text": "106"
+            "text": "180"
           },
           {
             "id": "C",
-            "text": "1227"
+            "text": "160"
           },
           {
             "id": "D",
-            "text": "2485"
+            "text": "201.6"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This omits the fixed fee.",
-          "B": "Multiply the per-poster rate by the number of posters.",
-          "C": "Pay the fixed charge once, plus 35 charges of $34: 37 + 34(35).",
-          "D": "This charges the fixed fee for every poster."
+          "A": "The two cuts leave 72 per cent of the price, and 144 is 72 per cent of 200.",
+          "B": "This reverses only the first discount and leaves the second one applied.",
+          "C": "This reverses only the second discount and leaves the first one applied.",
+          "D": "Adding 40 per cent back on treats the two cuts as a single 30 per cent."
         }
       },
       {
         "id": "exp26-math-236",
         "section": "math",
         "topic": "trigonometry",
-        "difficulty": "easy",
-        "context": "An acute angle θ is in a right triangle. Its opposite leg is 39, its adjacent leg is 52, and its hypotenuse is 65. What is tan θ?",
+        "difficulty": "hard",
+        "context": "If sin θ = 5/13 and θ is obtuse, what is tan θ?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3/5"
+            "text": "-5/12"
           },
           {
             "id": "B",
-            "text": "4/5"
+            "text": "5/12"
           },
           {
             "id": "C",
-            "text": "4/3"
+            "text": "-12/5"
           },
           {
             "id": "D",
-            "text": "3/4"
+            "text": "12/5"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is sine.",
-          "B": "This is cosine.",
-          "C": "This reverses opposite and adjacent.",
-          "D": "Tangent is opposite divided by adjacent, so 3/4 after canceling the common factor."
+          "A": "The third side is 12, and an obtuse angle makes the cosine negative.",
+          "B": "The size is right, but an obtuse angle gives a negative tangent.",
+          "C": "This inverts the ratio, putting the adjacent side on top.",
+          "D": "This inverts the ratio and drops the negative sign as well."
         }
       },
       {
         "id": "exp26-math-237",
         "section": "math",
         "topic": "logarithms",
-        "difficulty": "easy",
-        "context": "If the logarithm of x to base 3 equals 13, which expression equals x?",
+        "difficulty": "hard",
+        "context": "What is the value of log₃(1/81)?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3^13"
+            "text": "-4"
           },
           {
             "id": "B",
-            "text": "3 × 13"
+            "text": "4"
           },
           {
             "id": "C",
-            "text": "3 + 13"
+            "text": "-1/4"
           },
           {
             "id": "D",
-            "text": "3^14"
+            "text": "1/4"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Logarithmic form converts to x = 3^13.",
-          "B": "Multiplication does not undo a logarithm.",
-          "C": "Addition does not undo a logarithm.",
-          "D": "This uses an exponent one too large."
+          "A": "Eighty-one is 3 to the fourth, and the reciprocal makes the power negative.",
+          "B": "This is the logarithm of 81, with the reciprocal not accounted for.",
+          "C": "A reciprocal makes the power negative rather than making it a fraction.",
+          "D": "A fractional power would mean a root, which is not what the reciprocal does."
         }
       },
       {
         "id": "exp26-math-238",
         "section": "math",
         "topic": "matrices",
-        "difficulty": "easy",
-        "context": "Let A = [[34, 2], [3, 37]]. What is the determinant of A?",
+        "difficulty": "hard",
+        "context": "The system 3x - y = 5 and x + 2y = 4 becomes a matrix equation. What is the coefficient determinant?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "-1252"
+            "text": "7"
           },
           {
             "id": "B",
-            "text": "1252"
+            "text": "5"
           },
           {
             "id": "C",
-            "text": "1264"
+            "text": "6"
           },
           {
             "id": "D",
-            "text": "66"
+            "text": "-7"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This reverses the order of the two diagonal products.",
-          "B": "For [[a,b],[c,d]], determinant = ad - bc: 34(37) - 2(3).",
-          "C": "Subtract the cross product instead of adding.",
-          "D": "Multiply entries along diagonals; do not sum them."
+          "A": "The coefficients form [[3, -1], [1, 2]], whose determinant is 6 + 1.",
+          "B": "This is a constant from the right-hand side rather than a determinant.",
+          "C": "This is the main diagonal product with the negative entry not subtracted.",
+          "D": "The sign has been reversed, as though the diagonals were taken the other way."
         }
       },
       {
@@ -12911,65 +12911,65 @@
         "section": "math",
         "topic": "complex numbers",
         "difficulty": "hard",
-        "context": "What is the real part of (34 + 2i)(3 + 37i), where i² = -1?",
+        "context": "If a and b are real and (a + bi)(1 + i) = 4 + 6i, what is a?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "1264"
+            "text": "5"
           },
           {
             "id": "B",
-            "text": "102"
+            "text": "1"
           },
           {
             "id": "C",
-            "text": "28"
+            "text": "4"
           },
           {
             "id": "D",
-            "text": "176"
+            "text": "6"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This is the coefficient of i.",
-          "B": "This omits the real contribution from multiplying the imaginary terms.",
-          "C": "The real terms are 102 + 74i² = 28.",
-          "D": "Use i² = -1, not +1."
+          "A": "Expanding gives a − b = 4 and a + b = 6, so a is 5 and b is 1.",
+          "B": "This is the value of b, which the same pair of equations gives.",
+          "C": "This is the real part of the product rather than the value of a.",
+          "D": "This is the imaginary coefficient of the product rather than a."
         }
       },
       {
         "id": "exp26-math-240",
         "section": "math",
         "topic": "number properties",
-        "difficulty": "easy",
-        "context": "What is the greatest common factor of 384 and 576?",
+        "difficulty": "hard",
+        "context": "What is the smallest integer above 10 that leaves a remainder of 2 when divided by both 3 and 5?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "96"
+            "text": "17"
           },
           {
             "id": "B",
-            "text": "1152"
+            "text": "11"
           },
           {
             "id": "C",
-            "text": "64"
+            "text": "15"
           },
           {
             "id": "D",
-            "text": "192"
+            "text": "32"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This divides both numbers but is not greatest.",
-          "B": "This is their least common multiple, not their greatest common factor.",
-          "C": "This is a common factor but not the greatest.",
-          "D": "Factor out 32. Since gcd(12,18) = 6, the greatest common factor is 192."
+          "A": "Such numbers are 2 more than a multiple of 15, and 15 plus 2 is 17.",
+          "B": "This leaves a remainder of 2 when divided by 3 but 1 when divided by 5.",
+          "C": "This divides exactly by both, leaving no remainder at all.",
+          "D": "This works but is the next one along rather than the smallest."
         }
       }
     ],
