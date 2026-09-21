@@ -257,21 +257,6 @@ function mallet(freq: number, at = 0, gain = 0.22, wet = 0.4): void {
   voice({ freq: freq * 9.2, decay: 0.035, gain: gain * 0.05, at, type: 'sine', wet: wet * 0.4 });
 }
 
-/** Plucked string, for shimmer runs. */
-function pluck(freq: number, at = 0, gain = 0.14): void {
-  voice({ freq, decay: 0.7, gain, at, type: 'triangle', cutoff: 2400, wet: 0.42 });
-  voice({
-    freq: freq * 1.005,
-    decay: 0.7,
-    gain: gain * 0.6,
-    at,
-    type: 'triangle',
-    cutoff: 2200,
-    wet: 0.42,
-    detune: 6,
-  });
-}
-
 /* --------------------------------------------------------------- the cues */
 
 /* A pentatonic set, so overlapping cues never clash.
@@ -302,17 +287,20 @@ export const sfx = {
   /** Softer version for hovers and minor toggles. */
   tick: () => noise({ decay: 0.02, gain: 0.05, freq: 2600, q: 3, wet: 0.08 }),
 
-  /** Correct answer — a struck bar and one note above it.
-
-      Was a mallet and a three-note run climbing to the top of the set. A rising
-      run is the "well done!" gesture itself, and at the old register it arrived
-      as a sparkle; two notes a fifth apart land as confirmation instead, which
-      is what this cue is for. It also fires on nearly every interaction in the
-      app, so it is the one that wears out fastest and the one worth keeping
-      shortest. */
+  /** Friendly rising major chord: soft onset, rounded sine tones, no strike. */
   correct: () => {
-    mallet(PENTA[2], 0, 0.2);
-    pluck(PENTA[4], 0.075, 0.09);
+    [523.25, 659.25, 783.99].forEach((freq, i) => {
+      voice({
+        freq,
+        at: i * 0.08,
+        attack: 0.018,
+        decay: 0.32,
+        gain: 0.1 - i * 0.015,
+        type: 'sine',
+        cutoff: 2200,
+        wet: 0.18,
+      });
+    });
   },
 
   /** Wrong — felt thud, no sting. Being wrong should not feel punishing. */
@@ -321,11 +309,20 @@ export const sfx = {
     noise({ decay: 0.11, gain: 0.07, type: 'lowpass', freq: 520, wet: 0.15 });
   },
 
-  /** Rising run as a streak builds. */
+  /** Quiet chord tone after the success chime; stays consonant on every streak. */
   combo: (n: number) => {
-    const step = PENTA[Math.min(n - 1, PENTA.length - 1)] ?? PENTA[0];
-    pluck(step, 0, 0.11);
-    pluck(step * 2, 0.05, 0.05);
+    const notes = [659.25, 783.99, 1046.5] as const;
+    const freq = notes[Math.max(0, Math.min(n - 2, notes.length - 1))] ?? notes[0];
+    voice({
+      freq,
+      at: 0.24,
+      attack: 0.025,
+      decay: 0.28,
+      gain: 0.045,
+      type: 'sine',
+      cutoff: 2200,
+      wet: 0.18,
+    });
   },
 
   /** Achievement — two struck bars, an octave apart.

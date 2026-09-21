@@ -454,3 +454,11 @@ Not optional, and cheaper to build in than to retrofit.
 8. §3.30 — sliding active-tab indicator
 9. §15.178–180 — landing parallax and counters
 10. §17.203–204 — Wizzy speaks instead of appearing
+
+# Implemented feedback refinement — 21 September 2026
+
+Correct answers and every combo tier now keep the screen still. The answer-row
+seal and a soft gold tint remain; the shared success presets no longer call
+the impact/shake path. Wrong answers retain their small horizontal shake,
+subject to reduced-motion preferences. Success audio is a soft rising C-major
+chime, with a quiet matching chord tone for streaks. Mute remains respected.

@@ -315,11 +315,9 @@ export const juice = {
   /** A right answer. Warm, light, and over quickly — this fires hundreds of
    *  times a session and anything heavier would wear out by the third zone. */
   correct({ visuals = true }: PresetOpts = {}): void {
-    if (!visuals) {
-      sfx.correct();
-      return;
-    }
-    void hit({ power: 0.35, tone: 'gold', sound: () => sfx.correct(), pause: 45 });
+    sfx.correct();
+    // Celebrate in place: positive feedback must never move the reading surface.
+    if (visuals) flash('gold', 0.2);
   },
 
   /** A wrong answer. Sideways only, and no flash: being wrong should register
@@ -338,15 +336,7 @@ export const juice = {
    *  No pause: the answer's own beat already happened and a second one would
    *  read as a stutter. */
   combo(n: number, { visuals = true }: PresetOpts = {}): void {
-    if (!visuals) {
-      sfx.combo(n);
-      return;
-    }
-    void hit({
-      power: Math.min(0.3 + n * 0.08, 0.7),
-      tone: 'gold',
-      sound: () => sfx.combo(n),
-      pause: 0,
-    });
+    sfx.combo(n);
+    if (visuals) flash('gold', 0.25);
   },
 };
