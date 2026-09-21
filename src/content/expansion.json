@@ -17231,67 +17231,67 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At lamp distance of 6 cm, what mean sensor reading was recorded?",
+        "context": "How long did a 0.25-mm grain take to settle through the fresh-water column?",
         "practiceOnly": true,
         "passage": "exp26-sp-6",
         "choices": [
           {
             "id": "A",
-            "text": "16 units"
+            "text": "25.6 s"
           },
           {
             "id": "B",
-            "text": "18 units"
+            "text": "102.4 s"
           },
           {
             "id": "C",
-            "text": "22 units"
+            "text": "409.6 s"
           },
           {
             "id": "D",
-            "text": "20 units"
+            "text": "1638.4 s"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "This belongs to the setting of 8.",
-          "B": "Read the entry for the setting of 6.",
-          "C": "This belongs to the setting of 2.",
-          "D": "This belongs to the setting of 4."
+          "A": "Table 1 gives 25.6 s for the 0.50-mm class, one row above the size asked about.",
+          "B": "Table 1 pairs a grain diameter of 0.25 mm with a mean settling time of 102.4 s.",
+          "C": "Table 1 gives 409.6 s for the 0.125-mm class, one row below the size asked about.",
+          "D": "Table 1 gives 1638.4 s for the smallest class tested, 0.0625 mm."
         }
       },
       {
         "id": "exp26-science-027",
         "section": "science",
-        "topic": "research summaries",
+        "topic": "reading data",
         "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "context": "Which size class reached the base of the column soonest?",
         "practiceOnly": true,
         "passage": "exp26-sp-6",
         "choices": [
           {
             "id": "A",
-            "text": "the number of trials per setting"
+            "text": "the 1.00-mm grains, in 6.4 s"
           },
           {
             "id": "B",
-            "text": "the measuring procedure"
+            "text": "the 0.50-mm grains, in 25.6 s"
           },
           {
             "id": "C",
-            "text": "lamp distance"
+            "text": "the 0.0625-mm grains, in 1638.4 s"
           },
           {
             "id": "D",
-            "text": "sensor reading"
+            "text": "all five classes arrived together"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Every setting used three trials.",
-          "B": "The passage states that the same procedure was used.",
-          "C": "The passage identifies lamp distance as the changed factor.",
-          "D": "This was the measured response, not the variable deliberately set."
+          "A": "The largest class has the shortest time in Table 1, at 6.4 s for the full metre.",
+          "B": "At 25.6 s this class is fourfold slower than the largest grains above it.",
+          "C": "This is the slowest class in the table, not the fastest.",
+          "D": "The times range from 6.4 s to 1638.4 s, so the classes did not arrive together."
         }
       },
       {
@@ -17299,101 +17299,101 @@
         "section": "science",
         "topic": "calculating from data",
         "difficulty": "medium",
-        "context": "What is the change in mean sensor reading when lamp distance increases from 2 to 8 cm? Use final minus initial.",
+        "context": "In Table 1, halving the grain diameter changes the settling time by what factor?",
         "practiceOnly": true,
         "passage": "exp26-sp-6",
         "choices": [
           {
             "id": "A",
-            "text": "-2 units"
+            "text": "It is multiplied by about two."
           },
           {
             "id": "B",
-            "text": "6 units"
+            "text": "It is multiplied by about four."
           },
           {
             "id": "C",
-            "text": "38 units"
+            "text": "It is divided by about two."
           },
           {
             "id": "D",
-            "text": "-6 units"
+            "text": "It rises by about 100 s each time."
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "This is the change for a single step, not all three steps.",
-          "B": "This reverses final and initial.",
-          "C": "A change is a difference, not a sum.",
-          "D": "16 - 22 = -6."
+          "A": "Doubling would take 6.4 s to 12.8 s, but the next row down reads 25.6 s.",
+          "B": "Each row is four times the one above: 6.4, 25.6, 102.4, 409.6 and 1638.4 s.",
+          "C": "The times grow as grains get smaller rather than shrinking.",
+          "D": "The steps grow from 19.2 s to 1228.8 s, so no fixed number of seconds fits."
         }
       },
       {
         "id": "exp26-science-029",
         "section": "science",
-        "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "topic": "calculating from data",
+        "difficulty": "hard",
+        "context": "If the pattern in Table 1 held, a 2.00-mm grain would settle in about:",
         "practiceOnly": true,
         "passage": "exp26-sp-6",
         "choices": [
           {
             "id": "A",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "1.6 s"
           },
           {
             "id": "B",
-            "text": "It supports B and contradicts A."
+            "text": "3.2 s"
           },
           {
             "id": "C",
-            "text": "It contradicts both because the means are all different."
+            "text": "12.8 s"
           },
           {
             "id": "D",
-            "text": "It proves A is correct for every possible setting."
+            "text": "25.6 s"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Successive means differ by -2, rather than remaining constant.",
-          "B": "The means change by equal nonzero differences.",
-          "C": "Different means can support a constant change per step.",
-          "D": "A finite tested range cannot establish behavior at every possible setting."
+          "A": "Doubling the diameter quarters the time, so 6.4 s at 1.00 mm becomes 1.6 s at 2.00 mm.",
+          "B": "Halving the time treats the relationship as a simple doubling, which the table does not show.",
+          "C": "This doubles the 1.00-mm time, but a larger grain settles faster rather than slower.",
+          "D": "This is the measured time for 0.50-mm grains, which are smaller and therefore slower."
         }
       },
       {
         "id": "exp26-science-030",
         "section": "science",
         "topic": "hypotheses",
-        "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 cm, what mean sensor reading would A predict?",
+        "difficulty": "medium",
+        "context": "The Table 2 results suggest that dissolving salt in the water:",
         "practiceOnly": true,
         "passage": "exp26-sp-6",
         "choices": [
           {
             "id": "A",
-            "text": "24 units"
+            "text": "slows settling by a small amount."
           },
           {
             "id": "B",
-            "text": "14 units"
+            "text": "speeds settling by a small amount."
           },
           {
             "id": "C",
-            "text": "16 units"
+            "text": "has no measurable effect at all."
           },
           {
             "id": "D",
-            "text": "12 units"
+            "text": "stops the smallest grains settling."
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This extends the pattern backward rather than forward.",
-          "B": "One additional step adds -2 to 16; this is a conditional prediction, not a measurement.",
-          "C": "This assumes the response stops changing after the last measured setting.",
-          "D": "This advances two steps beyond the last setting instead of one."
+          "A": "Both classes take longer in salt water: 412.1 against 409.6 s, and 1649.6 against 1638.4 s.",
+          "B": "Both salt-water times are larger than their fresh-water counterparts, not smaller.",
+          "C": "The differences are small but consistent in direction across both classes tested.",
+          "D": "Both classes reached the base of the column, so settling did not stop."
         }
       },
       {
@@ -17401,135 +17401,135 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At filter layers of 6 layers, what mean collected particles was recorded?",
+        "context": "In Experiment 1, what activity was recorded at pH 5?",
         "practiceOnly": true,
         "passage": "exp26-sp-7",
         "choices": [
           {
             "id": "A",
-            "text": "27 particles"
+            "text": "9 mg/min"
           },
           {
             "id": "B",
-            "text": "33 particles"
+            "text": "22 mg/min"
           },
           {
             "id": "C",
-            "text": "30 particles"
+            "text": "38 mg/min"
           },
           {
             "id": "D",
-            "text": "24 particles"
+            "text": "41 mg/min"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "This belongs to the setting of 4.",
-          "B": "This belongs to the setting of 8.",
-          "C": "Read the entry for the setting of 6.",
-          "D": "This belongs to the setting of 2."
+          "A": "Table 1 gives 9 mg/min at pH 4, one row above the value asked about.",
+          "B": "Table 1 pairs pH 5 with an activity of 22 mg/min.",
+          "C": "Table 1 gives 38 mg/min at pH 6, one row below the value asked about.",
+          "D": "Table 1 gives 41 mg/min at pH 7, which is the highest activity in the experiment."
         }
       },
       {
         "id": "exp26-science-032",
         "section": "science",
         "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "difficulty": "medium",
+        "context": "Experiment 2 was run at pH 7 because Experiment 1 had shown that pH 7:",
         "practiceOnly": true,
         "passage": "exp26-sp-7",
         "choices": [
           {
             "id": "A",
-            "text": "collected particles"
+            "text": "produced the highest activity of any tested."
           },
           {
             "id": "B",
-            "text": "the number of trials per setting"
+            "text": "was the only pH the buffers could hold steady."
           },
           {
             "id": "C",
-            "text": "the measuring procedure"
+            "text": "matched the pH of the starch solution itself."
           },
           {
             "id": "D",
-            "text": "filter layers"
+            "text": "produced no measurable activity from the enzyme."
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This was the measured response, not the variable deliberately set.",
-          "B": "Every setting used three trials.",
-          "C": "The passage states that the same procedure was used.",
-          "D": "The passage identifies filter layers as the changed factor."
+          "A": "At 41 mg/min pH 7 is the peak of Table 1, so it is the condition worth carrying forward.",
+          "B": "The passage says buffers fixed the pH at all seven values, not just at one.",
+          "C": "The starch solution’s own pH is never given anywhere in the passage.",
+          "D": "pH 7 gave the largest activity recorded, which is the opposite of none."
         }
       },
       {
         "id": "exp26-science-033",
         "section": "science",
-        "topic": "calculating from data",
+        "topic": "research summaries",
         "difficulty": "medium",
-        "context": "What is the change in mean collected particles when filter layers increases from 2 to 8 layers? Use final minus initial.",
+        "context": "Which quantity was varied in Experiment 2 but held constant in Experiment 1?",
         "practiceOnly": true,
         "passage": "exp26-sp-7",
         "choices": [
           {
             "id": "A",
-            "text": "9 particles"
+            "text": "the temperature of the reaction"
           },
           {
             "id": "B",
-            "text": "3 particles"
+            "text": "the acidity of the reaction mixture"
           },
           {
             "id": "C",
-            "text": "-9 particles"
+            "text": "the concentration of the starch"
           },
           {
             "id": "D",
-            "text": "57 particles"
+            "text": "the length of the reaction period"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "33 - 24 = 9.",
-          "B": "This is the change for a single step, not all three steps.",
-          "C": "This reverses final and initial.",
-          "D": "A change is a difference, not a sum."
+          "A": "Experiment 1 held every run at 37 °C, while Experiment 2 tested five temperatures.",
+          "B": "Acidity is the reverse case: varied across seven values first, then fixed at pH 7.",
+          "C": "The same starch concentration was used throughout both experiments.",
+          "D": "Every run lasted 5 minutes, so the reaction period varied in neither experiment."
         }
       },
       {
         "id": "exp26-science-034",
         "section": "science",
-        "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "topic": "hypotheses",
+        "difficulty": "hard",
+        "context": "A student predicts that activity keeps rising as pH rises above 7. Table 1 contradicts this because activity:",
         "practiceOnly": true,
         "passage": "exp26-sp-7",
         "choices": [
           {
             "id": "A",
-            "text": "It proves A is correct for every possible setting."
+            "text": "drops to 19 and then to 3 mg/min."
           },
           {
             "id": "B",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "holds steady at 41 mg/min throughout."
           },
           {
             "id": "C",
-            "text": "It supports B and contradicts A."
+            "text": "was never measured above pH 7 at all."
           },
           {
             "id": "D",
-            "text": "It contradicts both because the means are all different."
+            "text": "rises faster between pH 7 and pH 9."
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "A finite tested range cannot establish behavior at every possible setting.",
-          "B": "Successive means differ by 3, rather than remaining constant.",
-          "C": "The means change by equal nonzero differences.",
-          "D": "Different means can support a constant change per step."
+          "A": "Past the peak the figures fall sharply, from 41 at pH 7 to 19 at pH 8 and 3 at pH 9.",
+          "B": "Only pH 7 reads 41 mg/min; every other row in the table differs from it.",
+          "C": "Table 1 includes pH 8 and pH 9, so the range above 7 was tested.",
+          "D": "Activity falls by 38 mg/min across that stretch rather than rising at all."
         }
       },
       {
@@ -17537,33 +17537,33 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 layers, what mean collected particles would A predict?",
+        "context": "At pH 7 and 50 °C, the activity would most likely fall:",
         "practiceOnly": true,
         "passage": "exp26-sp-7",
         "choices": [
           {
             "id": "A",
-            "text": "39 particles"
+            "text": "between 1 and 30 mg/min."
           },
           {
             "id": "B",
-            "text": "21 particles"
+            "text": "between 41 and 60 mg/min."
           },
           {
             "id": "C",
-            "text": "36 particles"
+            "text": "above any figure in Table 2."
           },
           {
             "id": "D",
-            "text": "33 particles"
+            "text": "below 1 mg/min in every run."
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This advances two steps beyond the last setting instead of one.",
-          "B": "This extends the pattern backward rather than forward.",
-          "C": "One additional step adds 3 to 33; this is a conditional prediction, not a measurement.",
-          "D": "This assumes the response stops changing after the last measured setting."
+          "A": "A temperature of 50 °C sits between 45 °C and 60 °C, whose figures are 30 and 1 mg/min.",
+          "B": "Activity is already falling past 37 °C, so a higher temperature will not exceed the peak.",
+          "C": "The peak of 41 mg/min occurs at 37 °C, well below the temperature in question.",
+          "D": "The 60 °C run still managed 1 mg/min, and 50 °C is the milder condition."
         }
       },
       {
@@ -17571,135 +17571,135 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At stirring time of 6 s, what mean dissolved mass was recorded?",
+        "context": "In Experiment 1, what period was recorded for the 2.00-m string?",
         "practiceOnly": true,
         "passage": "exp26-sp-8",
         "choices": [
           {
             "id": "A",
-            "text": "26 g"
+            "text": "1.42 s"
           },
           {
             "id": "B",
-            "text": "29 g"
+            "text": "2.01 s"
           },
           {
             "id": "C",
-            "text": "35 g"
+            "text": "2.84 s"
           },
           {
             "id": "D",
-            "text": "32 g"
+            "text": "4.01 s"
           }
         ],
-        "answer": "D",
+        "answer": "C",
         "why": {
-          "A": "This belongs to the setting of 2.",
-          "B": "This belongs to the setting of 4.",
-          "C": "This belongs to the setting of 8.",
-          "D": "Read the entry for the setting of 6."
+          "A": "Table 1 gives 1.42 s for the 0.50-m string, a much shorter pendulum.",
+          "B": "Table 1 gives 2.01 s for the 1.00-m string, one row above the length asked about.",
+          "C": "Table 1 pairs a string length of 2.00 m with a period of 2.84 s.",
+          "D": "Table 1 gives 4.01 s for the 4.00-m string, the longest one tested."
         }
       },
       {
         "id": "exp26-science-037",
         "section": "science",
         "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "difficulty": "medium",
+        "context": "Which quantity was deliberately changed in Experiment 2?",
         "practiceOnly": true,
         "passage": "exp26-sp-8",
         "choices": [
           {
             "id": "A",
-            "text": "stirring time"
+            "text": "the mass hanging on the string"
           },
           {
             "id": "B",
-            "text": "dissolved mass"
+            "text": "the angle the bob was released from"
           },
           {
             "id": "C",
-            "text": "the number of trials per setting"
+            "text": "the length of the string in use"
           },
           {
             "id": "D",
-            "text": "the measuring procedure"
+            "text": "the number of swings that were timed"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "The passage identifies stirring time as the changed factor.",
-          "B": "This was the measured response, not the variable deliberately set.",
-          "C": "Every setting used three trials.",
-          "D": "The passage states that the same procedure was used."
+          "A": "Experiment 2 kept one string and one angle and swapped the bob across four masses.",
+          "B": "Release angle is what Experiment 3 varied; Experiment 2 held it at 10°.",
+          "C": "The 1.00-m string was kept throughout Experiment 2.",
+          "D": "Every period in all three experiments is the mean of twenty swings."
         }
       },
       {
         "id": "exp26-science-038",
         "section": "science",
-        "topic": "calculating from data",
+        "topic": "research summaries",
         "difficulty": "medium",
-        "context": "What is the change in mean dissolved mass when stirring time increases from 2 to 8 s? Use final minus initial.",
+        "context": "Experiments 2 and 3 both used the 1.00-m string most likely so that:",
         "practiceOnly": true,
         "passage": "exp26-sp-8",
         "choices": [
           {
             "id": "A",
-            "text": "61 g"
+            "text": "any change could be credited to mass or angle."
           },
           {
             "id": "B",
-            "text": "9 g"
+            "text": "the pendulum would swing for the longest time."
           },
           {
             "id": "C",
-            "text": "3 g"
+            "text": "the results could be compared with Experiment 1."
           },
           {
             "id": "D",
-            "text": "-9 g"
+            "text": "the same timer could be used for every reading."
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "A change is a difference, not a sum.",
-          "B": "35 - 26 = 9.",
-          "C": "This is the change for a single step, not all three steps.",
-          "D": "This reverses final and initial."
+          "A": "Fixing the length leaves the one quantity each experiment varies as the only difference.",
+          "B": "The 4.00-m string gives the longest period, and it was not the one carried forward.",
+          "C": "Comparison is a side benefit; the reason for fixing a variable is to isolate another.",
+          "D": "The same timer was used throughout regardless of which string was fitted."
         }
       },
       {
         "id": "exp26-science-039",
         "section": "science",
-        "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "topic": "calculating from data",
+        "difficulty": "hard",
+        "context": "According to Table 1, quadrupling the string length changes the period by what factor?",
         "practiceOnly": true,
         "passage": "exp26-sp-8",
         "choices": [
           {
             "id": "A",
-            "text": "It contradicts both because the means are all different."
+            "text": "It roughly doubles."
           },
           {
             "id": "B",
-            "text": "It proves A is correct for every possible setting."
+            "text": "It roughly quadruples."
           },
           {
             "id": "C",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "It stays about the same."
           },
           {
             "id": "D",
-            "text": "It supports B and contradicts A."
+            "text": "It falls by about half."
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Different means can support a constant change per step.",
-          "B": "A finite tested range cannot establish behavior at every possible setting.",
-          "C": "Successive means differ by 3, rather than remaining constant.",
-          "D": "The means change by equal nonzero differences."
+          "A": "Going 0.25 m to 1.00 m takes 1.00 s to 2.01 s, and 1.00 m to 4.00 m takes 2.01 s to 4.01 s.",
+          "B": "Quadrupling the period would put the 1.00-m string at about 4 s rather than 2.01 s.",
+          "C": "The period more than doubles across the range, from 1.00 s up to 4.01 s.",
+          "D": "A longer string gives a longer period in every row of the table."
         }
       },
       {
@@ -17707,33 +17707,33 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 s, what mean dissolved mass would A predict?",
+        "context": "Taking all three tables together, which change would lengthen the period the most?",
         "practiceOnly": true,
         "passage": "exp26-sp-8",
         "choices": [
           {
             "id": "A",
-            "text": "35 g"
+            "text": "fitting a string twice as long as before"
           },
           {
             "id": "B",
-            "text": "41 g"
+            "text": "fitting a bob ten times as heavy as before"
           },
           {
             "id": "C",
-            "text": "23 g"
+            "text": "releasing the bob from twice the angle"
           },
           {
             "id": "D",
-            "text": "38 g"
+            "text": "timing forty swings instead of twenty"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This assumes the response stops changing after the last measured setting.",
-          "B": "This advances two steps beyond the last setting instead of one.",
-          "C": "This extends the pattern backward rather than forward.",
-          "D": "One additional step adds 3 to 35; this is a conditional prediction, not a measurement."
+          "A": "Doubling the length moves the period from 2.01 s to 2.84 s, far more than the other tables move.",
+          "B": "Table 2 shifts by 0.01 s across a tenfold change in mass, which is almost nothing.",
+          "C": "Table 3 shifts by 0.02 s when the angle doubles from 10° to 20°.",
+          "D": "The number of swings timed affects the mean’s precision, not the period itself."
         }
       },
       {
@@ -17741,271 +17741,271 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At panel tilt of 6 degrees, what mean power output was recorded?",
+        "context": "In which sampled year was July deep-water oxygen lowest?",
         "practiceOnly": true,
         "passage": "exp26-sp-9",
         "choices": [
           {
             "id": "A",
-            "text": "34 mW"
+            "text": "2005"
           },
           {
             "id": "B",
-            "text": "28 mW"
+            "text": "2012"
           },
           {
             "id": "C",
-            "text": "31 mW"
+            "text": "2016"
           },
           {
             "id": "D",
-            "text": "37 mW"
+            "text": "2020"
           }
         ],
-        "answer": "A",
+        "answer": "D",
         "why": {
-          "A": "Read the entry for the setting of 6.",
-          "B": "This belongs to the setting of 2.",
-          "C": "This belongs to the setting of 4.",
-          "D": "This belongs to the setting of 8."
+          "A": "At 7.8 mg/L this is the highest oxygen figure in the table, not the lowest.",
+          "B": "The 2012 reading of 3.1 mg/L is low but is exceeded by two later years.",
+          "C": "The 2016 reading of 1.6 mg/L is the second lowest in the table.",
+          "D": "Table 1 gives 1.2 mg/L for 2020, the smallest oxygen figure recorded."
         }
       },
       {
         "id": "exp26-science-042",
         "section": "science",
-        "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "topic": "conflicting viewpoints",
+        "difficulty": "medium",
+        "context": "Both limnologists accept that:",
         "practiceOnly": true,
         "passage": "exp26-sp-9",
         "choices": [
           {
             "id": "A",
-            "text": "the measuring procedure"
+            "text": "farm drainage began reaching the inlet in 2009."
           },
           {
             "id": "B",
-            "text": "panel tilt"
+            "text": "the lake separates into layers each summer."
           },
           {
             "id": "C",
-            "text": "power output"
+            "text": "bacteria on the bed play no part in the problem."
           },
           {
             "id": "D",
-            "text": "the number of trials per setting"
+            "text": "the lake should be dredged before next summer."
           }
         ],
         "answer": "B",
         "why": {
-          "A": "The passage states that the same procedure was used.",
-          "B": "The passage identifies panel tilt as the changed factor.",
-          "C": "This was the measured response, not the variable deliberately set.",
-          "D": "Every setting used three trials."
+          "A": "The 2009 drainage is Limnologist 2’s point and is not mentioned by Limnologist 1.",
+          "B": "Limnologist 1 makes layering the cause, and Limnologist 2 calls it a yearly occurrence.",
+          "C": "Both accounts have bacteria consuming the oxygen; they differ on what feeds them.",
+          "D": "Neither limnologist proposes any remedy for the lake at all."
         }
       },
       {
         "id": "exp26-science-043",
         "section": "science",
-        "topic": "calculating from data",
-        "difficulty": "medium",
-        "context": "What is the change in mean power output when panel tilt increases from 2 to 8 degrees? Use final minus initial.",
+        "topic": "conflicting viewpoints",
+        "difficulty": "hard",
+        "context": "Which feature of Table 1 most weakens Limnologist 1’s explanation?",
         "practiceOnly": true,
         "passage": "exp26-sp-9",
         "choices": [
           {
             "id": "A",
-            "text": "-9 mW"
+            "text": "The temperature difference hardly changes across the years."
           },
           {
             "id": "B",
-            "text": "65 mW"
+            "text": "The inlet nitrate figure rises steadily from 2005 onward."
           },
           {
             "id": "C",
-            "text": "9 mW"
+            "text": "Deep-water oxygen falls by more than 6 mg/L over the period."
           },
           {
             "id": "D",
-            "text": "3 mW"
+            "text": "Only five separate years were sampled across the whole record."
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This reverses final and initial.",
-          "B": "A change is a difference, not a sum.",
-          "C": "37 - 28 = 9.",
-          "D": "This is the change for a single step, not all three steps."
+          "A": "Layering is the proposed cause, yet it measures 11.2, 11.0, 11.4, 10.9 and 11.3 °C while oxygen collapses.",
+          "B": "Rising nitrate supports the rival account, but it is the flat temperature column that undercuts this one.",
+          "C": "The oxygen fall is the effect both are explaining, so it counts against neither.",
+          "D": "A small sample limits both accounts equally rather than weakening one of them."
         }
       },
       {
         "id": "exp26-science-044",
         "section": "science",
         "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "difficulty": "hard",
+        "context": "Limnologist 2’s account depends on the claim that:",
         "practiceOnly": true,
         "passage": "exp26-sp-9",
         "choices": [
           {
             "id": "A",
-            "text": "It supports B and contradicts A."
+            "text": "the lake stopped mixing only after the year 2009."
           },
           {
             "id": "B",
-            "text": "It contradicts both because the means are all different."
+            "text": "nitrate reaching the inlet increased after 2009."
           },
           {
             "id": "C",
-            "text": "It proves A is correct for every possible setting."
+            "text": "the surface water cooled steadily after the year 2009."
           },
           {
             "id": "D",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "algae produce more oxygen than bacteria consume."
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The means change by equal nonzero differences.",
-          "B": "Different means can support a constant change per step.",
-          "C": "A finite tested range cannot establish behavior at every possible setting.",
-          "D": "Successive means differ by 3, rather than remaining constant."
+          "A": "Limnologist 2 insists layering happened every summer, including before 2009.",
+          "B": "The added nitrate is the first link in the chain running to bloom, decay and oxygen loss.",
+          "C": "No claim about cooling surface water appears in either account.",
+          "D": "The argument runs the other way: decomposition of the algae is what removes the oxygen."
         }
       },
       {
         "id": "exp26-science-045",
         "section": "science",
-        "topic": "hypotheses",
+        "topic": "conflicting viewpoints",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 degrees, what mean power output would A predict?",
+        "context": "Which finding would most support Limnologist 1 over Limnologist 2?",
         "practiceOnly": true,
         "passage": "exp26-sp-9",
         "choices": [
           {
             "id": "A",
-            "text": "40 mW"
+            "text": "A lake with no farm drainage shows the same July crash."
           },
           {
             "id": "B",
-            "text": "37 mW"
+            "text": "Barrow Lake’s algal bloom has grown heavier since 2009."
           },
           {
             "id": "C",
-            "text": "43 mW"
+            "text": "Deep-water oxygen at Barrow Lake recovers every autumn."
           },
           {
             "id": "D",
-            "text": "25 mW"
+            "text": "Nitrate in the inlet reached 4.6 mg/L in the 2020 season."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "One additional step adds 3 to 37; this is a conditional prediction, not a measurement.",
-          "B": "This assumes the response stops changing after the last measured setting.",
-          "C": "This advances two steps beyond the last setting instead of one.",
-          "D": "This extends the pattern backward rather than forward."
+          "A": "It shows the crash without the nutrient Limnologist 2 requires, leaving layering as the cause.",
+          "B": "A heavier bloom is precisely what Limnologist 2’s account predicts.",
+          "C": "Both accounts expect autumn recovery, since mixing resumes either way.",
+          "D": "A high nitrate figure is evidence for the chemical explanation, not the physical one."
         }
       },
       {
         "id": "exp26-science-046",
         "section": "science",
-        "topic": "reading data",
-        "difficulty": "easy",
-        "context": "At insulation thickness of 6 mm, what mean temperature decrease was recorded?",
+        "topic": "research summaries",
+        "difficulty": "medium",
+        "context": "Adding salt until crystals still remained after 10 minutes ensured that each solution was:",
         "practiceOnly": true,
         "passage": "exp26-sp-10",
         "choices": [
           {
             "id": "A",
-            "text": "24 °C"
+            "text": "holding as much salt as that water could"
           },
           {
             "id": "B",
-            "text": "26 °C"
+            "text": "free of any undissolved material before weighing"
           },
           {
             "id": "C",
-            "text": "30 °C"
+            "text": "exactly the same concentration as every other one"
           },
           {
             "id": "D",
-            "text": "28 °C"
+            "text": "cool enough for the balance to read it accurately"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This belongs to the setting of 8.",
-          "B": "Read the entry for the setting of 6.",
-          "C": "This belongs to the setting of 2.",
-          "D": "This belongs to the setting of 4."
+          "A": "Leftover crystals show no more will dissolve, which is what saturation means.",
+          "B": "Undissolved crystals were deliberately left present and then filtered out.",
+          "C": "The concentrations differ by design; that difference is what the table reports.",
+          "D": "Temperature was the variable under test and was not adjusted for the balance."
         }
       },
       {
         "id": "exp26-science-047",
         "section": "science",
-        "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "topic": "calculating from data",
+        "difficulty": "medium",
+        "context": "At 40 °C, how much more of Salt P dissolves than of Salt Q?",
         "practiceOnly": true,
         "passage": "exp26-sp-10",
         "choices": [
           {
             "id": "A",
-            "text": "the number of trials per setting"
+            "text": "17.4 g"
           },
           {
             "id": "B",
-            "text": "the measuring procedure"
+            "text": "27.4 g"
           },
           {
             "id": "C",
-            "text": "insulation thickness"
+            "text": "36.6 g"
           },
           {
             "id": "D",
-            "text": "temperature decrease"
+            "text": "100.6 g"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "Every setting used three trials.",
-          "B": "The passage states that the same procedure was used.",
-          "C": "The passage identifies insulation thickness as the changed factor.",
-          "D": "This was the measured response, not the variable deliberately set."
+          "A": "This subtracts from 54 g rather than 64 g, which no row of the table gives.",
+          "B": "Table 1 gives 64 g for Salt P and 36.6 g for Salt Q, and 64 minus 36.6 is 27.4.",
+          "C": "This is Salt Q’s own figure at 40 °C rather than the gap between the two salts.",
+          "D": "This adds the two figures together instead of taking their difference."
         }
       },
       {
         "id": "exp26-science-048",
         "section": "science",
         "topic": "calculating from data",
-        "difficulty": "medium",
-        "context": "What is the change in mean temperature decrease when insulation thickness increases from 2 to 8 mm? Use final minus initial.",
+        "difficulty": "hard",
+        "context": "Between which two tested temperatures does Salt P first become the more soluble of the two?",
         "practiceOnly": true,
         "passage": "exp26-sp-10",
         "choices": [
           {
             "id": "A",
-            "text": "-2 °C"
+            "text": "0 °C and 20 °C"
           },
           {
             "id": "B",
-            "text": "6 °C"
+            "text": "20 °C and 40 °C"
           },
           {
             "id": "C",
-            "text": "54 °C"
+            "text": "40 °C and 60 °C"
           },
           {
             "id": "D",
-            "text": "-6 °C"
+            "text": "60 °C and 80 °C"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "This is the change for a single step, not all three steps.",
-          "B": "This reverses final and initial.",
-          "C": "A change is a difference, not a sum.",
-          "D": "24 - 30 = -6."
+          "A": "Salt Q leads at both ends of this interval, by 22.7 g and then by 4.0 g.",
+          "B": "Salt P trails 32 to 36.0 at 20 °C and leads 64 to 36.6 at 40 °C, so it passes in between.",
+          "C": "Salt P is already ahead at 40 °C, so the crossing happened before this interval.",
+          "D": "By 60 °C Salt P leads by nearly 73 g, long after overtaking Salt Q."
         }
       },
       {
@@ -18013,33 +18013,33 @@
         "section": "science",
         "topic": "conflicting viewpoints",
         "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "context": "Table 1 supports Student B rather than Student A because Salt Q:",
         "practiceOnly": true,
         "passage": "exp26-sp-10",
         "choices": [
           {
             "id": "A",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "gains under 3 g across the whole range tested."
           },
           {
             "id": "B",
-            "text": "It supports B and contradicts A."
+            "text": "dissolves less than Salt P at every temperature."
           },
           {
             "id": "C",
-            "text": "It contradicts both because the means are all different."
+            "text": "becomes markedly less soluble as water warms."
           },
           {
             "id": "D",
-            "text": "It proves A is correct for every possible setting."
+            "text": "matches Salt P closely at the highest temperature."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Successive means differ by -2, rather than remaining constant.",
-          "B": "The means change by equal nonzero differences.",
-          "C": "Different means can support a constant change per step.",
-          "D": "A finite tested range cannot establish behavior at every possible setting."
+          "A": "Salt Q moves from 35.7 g to 38.4 g across 80 °C, which is the barely-at-all case.",
+          "B": "Salt Q is ahead of Salt P at 0 °C and 20 °C, so this is not true of every temperature.",
+          "C": "Salt Q’s solubility rises with temperature, just by a very small amount.",
+          "D": "At 80 °C the two are furthest apart, at 169 g against 38.4 g."
         }
       },
       {
@@ -18047,33 +18047,33 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 mm, what mean temperature decrease would A predict?",
+        "context": "If the trends continue, how much Salt Q would dissolve in 100 g of water at 100 °C?",
         "practiceOnly": true,
         "passage": "exp26-sp-10",
         "choices": [
           {
             "id": "A",
-            "text": "32 °C"
+            "text": "about 30 g"
           },
           {
             "id": "B",
-            "text": "22 °C"
+            "text": "about 40 g"
           },
           {
             "id": "C",
-            "text": "24 °C"
+            "text": "about 55 g"
           },
           {
             "id": "D",
-            "text": "20 °C"
+            "text": "about 90 g"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "This extends the pattern backward rather than forward.",
-          "B": "One additional step adds -2 to 24; this is a conditional prediction, not a measurement.",
-          "C": "This assumes the response stops changing after the last measured setting.",
-          "D": "This advances two steps beyond the last setting instead of one."
+          "A": "Salt Q already dissolves 38.4 g at 80 °C, and its figures rise rather than fall.",
+          "B": "The column climbs by roughly a gram per 20 °C, so 38.4 g at 80 °C points just past 39 g.",
+          "C": "A jump of 17 g would be larger than the total change across the whole tested range.",
+          "D": "This is closer to Salt P’s behaviour, which more than doubles between rows."
         }
       },
       {
@@ -20230,35 +20230,58 @@
       },
       {
         "id": "exp26-sp-6",
-        "type": "Research Summaries",
-        "title": "Model study 6: lamp distance",
+        "type": "Data Representation",
+        "title": "How fast grains settle",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a light sensor. Students changed lamp distance while keeping the same lamp and sensor. For each setting, they used three fresh trials and recorded the mean sensor reading. The same measuring procedure was used for every trial.\n\nStudent A proposes that sensor reading changes by a constant amount for every 2-cm increase within the tested range. Student B proposes that the sensor reading remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "A laboratory measured how long grains of different sizes take to settle through still water. Each grain was released at the surface of a 1.00-m column and timed until it reached the base. Grains were sorted by sieve into five size classes and were all quartz of the same density, so that size was the only property differing between classes.\n\nTen grains from each class were timed and the mean recorded. Water was held at 20 °C and allowed to stand for an hour before each run so that no current remained.\n\nA second column, identical except that its water carried 2 g of dissolved salt per litre, was run alongside for the two smallest classes only.\n\nTimes are given to the nearest 0.1 s. Grains that struck the column wall on the way down were discarded and re-run.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Mean settling time through 1.00 m of fresh water",
             "head": [
-              "lamp distance (cm)",
-              "sensor reading (units)"
+              "grain diameter (mm)",
+              "settling time (s)"
             ],
             "rows": [
               [
-                "2",
-                "22"
+                "1.00",
+                "6.4"
               ],
               [
-                "4",
-                "20"
+                "0.50",
+                "25.6"
               ],
               [
-                "6",
-                "18"
+                "0.25",
+                "102.4"
               ],
               [
-                "8",
-                "16"
+                "0.125",
+                "409.6"
+              ],
+              [
+                "0.0625",
+                "1638.4"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "The two smallest classes, repeated in salt water",
+            "head": [
+              "grain diameter (mm)",
+              "settling time (s)"
+            ],
+            "rows": [
+              [
+                "0.125",
+                "412.1"
+              ],
+              [
+                "0.0625",
+                "1649.6"
               ]
             ]
           }
@@ -20267,34 +20290,77 @@
       {
         "id": "exp26-sp-7",
         "type": "Research Summaries",
-        "title": "Model study 7: filter layers",
+        "title": "Conditions for amylase",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a filter collector. Students changed filter layers while keeping the same incoming particle mixture and collection time. For each setting, they used three fresh trials and recorded the mean collected particles. The same measuring procedure was used for every trial.\n\nStudent A proposes that collected particles changes by a constant amount for every 2-layers increase within the tested range. Student B proposes that the collected particles remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "Experiment 1. A fixed amount of the enzyme amylase was added to starch solution at seven pH values, all held at 37 °C. Activity is reported as milligrams of starch broken down per minute.\n\nExperiment 2. The pH that gave the highest activity in Experiment 1 was then held constant while the temperature was varied across five values.\n\nThe same enzyme batch, the same starch concentration and the same 5-minute reaction time were used throughout, and every figure is the mean of four runs. Buffers were used to fix pH, and the buffer itself was shown in a separate trial to have no effect on starch. Activity was found by sampling the mixture each minute, stopping the reaction with iodine, and comparing the colour against a prepared scale of known starch concentrations.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Experiment 1: activity across seven pH values, at 37 °C",
             "head": [
-              "filter layers (layers)",
-              "collected particles (particles)"
+              "pH",
+              "activity (mg/min)"
             ],
             "rows": [
               [
-                "2",
-                "24"
+                "3",
+                "2"
               ],
               [
                 "4",
-                "27"
+                "9"
+              ],
+              [
+                "5",
+                "22"
               ],
               [
                 "6",
-                "30"
+                "38"
+              ],
+              [
+                "7",
+                "41"
               ],
               [
                 "8",
-                "33"
+                "19"
+              ],
+              [
+                "9",
+                "3"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "Experiment 2: activity across five temperatures, at pH 7",
+            "head": [
+              "temperature (°C)",
+              "activity (mg/min)"
+            ],
+            "rows": [
+              [
+                "10",
+                "8"
+              ],
+              [
+                "25",
+                "27"
+              ],
+              [
+                "37",
+                "41"
+              ],
+              [
+                "45",
+                "30"
+              ],
+              [
+                "60",
+                "1"
               ]
             ]
           }
@@ -20303,34 +20369,92 @@
       {
         "id": "exp26-sp-8",
         "type": "Research Summaries",
-        "title": "Model study 8: stirring time",
+        "title": "What sets a pendulum’s period",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a mixing container. Students changed stirring time while keeping the same liquid volume and starting solid. For each setting, they used three fresh trials and recorded the mean dissolved mass. The same measuring procedure was used for every trial.\n\nStudent A proposes that dissolved mass changes by a constant amount for every 2-s increase within the tested range. Student B proposes that the dissolved mass remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "Experiment 1. A bob of mass 200 g was swung on strings of five lengths, released from 10° each time. Each period is the mean of twenty swings.\n\nExperiment 2. The 1.00-m string was kept and the bob replaced with four different masses, all released from 10°.\n\nExperiment 3. The 1.00-m string and the 200-g bob were kept and the release angle was varied across four values.\n\nAll three experiments used the same stand, the same timer and the same operator, and were run in the same room on the same afternoon. Twenty swings were timed together and the total divided by twenty, so that the error in starting and stopping the timer is spread across all twenty rather than falling on one. Periods are given to the nearest 0.01 s.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Experiment 1: period at five string lengths",
             "head": [
-              "stirring time (s)",
-              "dissolved mass (g)"
+              "string length (m)",
+              "period (s)"
             ],
             "rows": [
               [
-                "2",
-                "26"
+                "0.25",
+                "1.00"
               ],
               [
-                "4",
-                "29"
+                "0.50",
+                "1.42"
               ],
               [
-                "6",
-                "32"
+                "1.00",
+                "2.01"
               ],
               [
-                "8",
-                "35"
+                "2.00",
+                "2.84"
+              ],
+              [
+                "4.00",
+                "4.01"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "Experiment 2: period at four bob masses, on a 1.00-m string",
+            "head": [
+              "bob mass (g)",
+              "period (s)"
+            ],
+            "rows": [
+              [
+                "50",
+                "2.01"
+              ],
+              [
+                "100",
+                "2.01"
+              ],
+              [
+                "200",
+                "2.01"
+              ],
+              [
+                "500",
+                "2.02"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 3",
+            "caption": "Experiment 3: period at four release angles, on a 1.00-m string",
+            "head": [
+              "release angle (°)",
+              "period (s)"
+            ],
+            "rows": [
+              [
+                "5",
+                "2.01"
+              ],
+              [
+                "10",
+                "2.01"
+              ],
+              [
+                "20",
+                "2.03"
+              ],
+              [
+                "40",
+                "2.07"
               ]
             ]
           }
@@ -20338,35 +20462,51 @@
       },
       {
         "id": "exp26-sp-9",
-        "type": "Research Summaries",
-        "title": "Model study 9: panel tilt",
+        "type": "Conflicting Viewpoints",
+        "title": "Why the deep water runs out of oxygen",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a model solar panel. Students changed panel tilt while keeping the same light source and panel. For each setting, they used three fresh trials and recorded the mean power output. The same measuring procedure was used for every trial.\n\nStudent A proposes that power output changes by a constant amount for every 2-degrees increase within the tested range. Student B proposes that the power output remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "Dissolved oxygen in Barrow Lake falls sharply each July near the lake bed while staying high near the surface. Two limnologists disagree about the cause.\n\nLimnologist 1. The cause is physical. In summer the surface water warms and floats on the colder deep water, and the two layers stop mixing. Oxygen enters the lake only at the surface, so once the layers separate the deep water is cut off from resupply while bacteria on the bed go on consuming what is left. Autumn cooling breaks the layering and the deep oxygen recovers, which is exactly what the yearly record shows.\n\nLimnologist 2. The cause is chemical. Layering happens every summer, including the summers before 2009, when the deep oxygen did not crash. What changed is the farm drainage entering the inlet from 2009 onward. The added nitrate feeds a heavy algal bloom; the algae die, sink, and are decomposed by bacteria whose respiration strips the oxygen from the deep water. Layering decides only where the effect appears, not whether it happens.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "July measurements at Barrow Lake, five sampled years",
             "head": [
-              "panel tilt (degrees)",
-              "power output (mW)"
+              "year",
+              "deep-water oxygen (mg/L)",
+              "surface minus deep temperature (°C)",
+              "inlet nitrate (mg/L)"
             ],
             "rows": [
               [
-                "2",
-                "28"
+                "2005",
+                "7.8",
+                "11.2",
+                "0.4"
               ],
               [
-                "4",
-                "31"
+                "2008",
+                "7.4",
+                "11.0",
+                "0.5"
               ],
               [
-                "6",
-                "34"
+                "2012",
+                "3.1",
+                "11.4",
+                "2.9"
               ],
               [
-                "8",
-                "37"
+                "2016",
+                "1.6",
+                "10.9",
+                "4.1"
+              ],
+              [
+                "2020",
+                "1.2",
+                "11.3",
+                "4.6"
               ]
             ]
           }
@@ -20374,35 +20514,45 @@
       },
       {
         "id": "exp26-sp-10",
-        "type": "Research Summaries",
-        "title": "Model study 10: insulation thickness",
+        "type": "Data Representation",
+        "title": "Two salts in warm water",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested an insulated container. Students changed insulation thickness while keeping the same starting temperature and observation time. For each setting, they used three fresh trials and recorded the mean temperature decrease. The same measuring procedure was used for every trial.\n\nStudent A proposes that temperature decrease changes by a constant amount for every 2-mm increase within the tested range. Student B proposes that the temperature decrease remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "A technician measured how much of two salts dissolves in 100 g of water across a range of temperatures. For each measurement, salt was added to stirred water until no more would dissolve and undissolved crystals still remained after 10 minutes. The solution was then filtered, evaporated to dryness, and the residue weighed.\n\nSalt P is potassium nitrate. Salt Q is sodium chloride. The same balance, the same stirrer speed and the same 100.0 g of distilled water were used for every measurement.\n\nTwo students disagreed about what the results show. Student A said that warming water always dissolves a great deal more of any salt. Student B said this is true of some salts and barely true at all of others.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Mass dissolving in 100 g of water at saturation",
             "head": [
-              "insulation thickness (mm)",
-              "temperature decrease (°C)"
+              "temperature (°C)",
+              "Salt P (g)",
+              "Salt Q (g)"
             ],
             "rows": [
               [
-                "2",
-                "30"
+                "0",
+                "13",
+                "35.7"
               ],
               [
-                "4",
-                "28"
+                "20",
+                "32",
+                "36.0"
               ],
               [
-                "6",
-                "26"
+                "40",
+                "64",
+                "36.6"
               ],
               [
-                "8",
-                "24"
+                "60",
+                "110",
+                "37.1"
+              ],
+              [
+                "80",
+                "169",
+                "38.4"
               ]
             ]
           }
