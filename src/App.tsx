@@ -80,7 +80,6 @@ const TestsScreen = lazy(() => load.tests().then((m) => ({ default: m.TestsScree
 const TestRunner = lazy(() => load.tests().then((m) => ({ default: m.TestRunner })));
 const ReportScreen = lazy(() => load.tests().then((m) => ({ default: m.ReportScreen })));
 const StatsScreen = lazy(() => load.stats().then((m) => ({ default: m.StatsScreen })));
-const ProfileScreen = lazy(() => load.stats().then((m) => ({ default: m.ProfileScreen })));
 const SettingsScreen = lazy(() => load.settings().then((m) => ({ default: m.SettingsScreen })));
 
 /** Routes that render their own full-screen chrome and suppress the top bar.
@@ -357,10 +356,13 @@ function renderRoute(route: ReturnType<typeof useRoute>) {
       return <TestRunner config={route.config} />;
     case 'report':
       return <ReportScreen id={route.id} />;
+    /* `profile` was its own screen and is now the same one. The route stays
+       rather than 404-ing, because bookmarks and older links to `#/profile`
+       exist and the thing they were pointing at still exists — it just lives
+       on `stats` now. */
     case 'stats':
-      return <StatsScreen />;
     case 'profile':
-      return <ProfileScreen />;
+      return <StatsScreen />;
     case 'settings':
       return <SettingsScreen />;
     default:

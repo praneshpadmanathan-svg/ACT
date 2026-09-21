@@ -4,8 +4,9 @@
    made the one screen that answers "how am I doing" also the screen that holds
    sign-out, theme, reading width and delete-my-account. Two different jobs
    sharing a scroll: the progress you came to look at kept getting pushed under
-   a form. Profile is now yours — rank, XP, traveller, ranks, achievements —
-   and this is the machinery. */
+   a form. Progress is now yours — rank, XP, the ladder, achievements, what you
+   have answered — and this is the machinery, plus the one thing that looks
+   like progress and is not: the traveller you pick. */
 
 import { useState } from 'react';
 import { hrefFor, useNavigate } from '@/lib/router';
@@ -18,6 +19,7 @@ import { Button, SectionHeading } from '@/components/ui';
 import { Glyph } from '@/components/Icon';
 import { DateField } from '@/components/fields';
 import { DiagnosticsPanel, DisplaySettings } from '@/components/Settings';
+import { HeroChooser } from '@/game/HeroChooser';
 
 export function SettingsScreen() {
   const thisYear = new Date().getFullYear();
@@ -107,6 +109,21 @@ export function SettingsScreen() {
             )}
           </div>
         </label>
+      </div>
+
+      {/* traveller — moved here from the progress screen. It sat between the
+          rank ladder and the achievement wall, which put a preference control
+          in the middle of a record of work. Nothing about it is progress:
+          there are no unlocks, nothing is earned, and you set it once. It
+          belongs next to theme and reading width, which are the other things
+          you pick about how the app looks. */}
+      <div className="panel mb-6 p-6 sm:p-7">
+        <h3 className="heading mb-1.5 text-[12px] text-parchment">Your traveller</h3>
+        <p className="mb-5 text-[13px] leading-relaxed text-ink-faint">
+          Nothing here is locked and nothing has to be earned. Pick whoever you want to be on the
+          road; you can change it whenever you like.
+        </p>
+        <HeroChooser />
       </div>
 
       {/* display, reading and accessibility */}

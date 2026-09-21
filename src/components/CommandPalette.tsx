@@ -155,7 +155,7 @@ function staticEntries(): PaletteEntry[] {
       label: 'Profile',
       group: 'Go',
       icon: 'settings',
-      to: { name: 'profile' },
+      to: { name: 'stats' },
       hint: 'Your account and plan',
     },
 

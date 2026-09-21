@@ -169,18 +169,29 @@ function MuteButton() {
    It is set in display type at a size nothing else in the rail comes near,
    because "there are this many questions in here" is the single fact that
    makes the app worth opening, and it stops being persuasive the moment it is
-   sized like a caption. */
+   sized like a caption.
+
+   It had drifted into being a second rank badge: emblem, rank name, "Your
+   rank" — the identical three facts the player block at the top of the same
+   rail was already showing, one screen-height apart, so the rail printed
+   "Inkling" twice and offered two links to the same place. One of them had to
+   go, and this is the one whose own comment describes a different job.
+
+   So it does that job again. The bank total is a fact nothing else in the
+   chrome states, it is the reason the app is worth opening, and it belongs at
+   the foot of the rail pointing at the questions rather than at the player. */
 function BankBadge() {
-  const { rank } = useStore();
   return (
     <a
-      href={hrefFor({ name: 'profile' })}
+      href={hrefFor({ name: 'drills' })}
+      onClick={() => sfx.select()}
       className="rail-bank group"
-      title="View your rank and progress"
+      title="Practise any topic, any time"
     >
-      <RankBadge rank={rank} size={64} aura={false} />
-      <strong className="mt-3 block font-display text-title text-gold">{rank.name}</strong>
-      <span className="label-sm mt-2 block">Your rank</span>
+      <strong className="block font-display text-display-m font-bold text-gold">
+        {LIBRARY_STATS.totalQuestions.toLocaleString()}
+      </strong>
+      <span className="label-sm mt-1 block">questions in the bank</span>
     </a>
   );
 }
@@ -255,7 +266,7 @@ function PlayerBlock({ compact }: { compact?: boolean }) {
 
   return (
     <a
-      href={hrefFor({ name: 'profile' })}
+      href={hrefFor({ name: 'stats' })}
       onClick={() => sfx.select()}
       className={cx('hud-block group w-full', compact && 'px-2 py-1')}
       aria-label={`${playerName}, ${rank.name}, ${progress.xp.toLocaleString()} XP`}
