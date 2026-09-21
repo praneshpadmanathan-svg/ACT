@@ -13828,340 +13828,340 @@
         "id": "exp26-reading-026",
         "section": "reading",
         "topic": "main idea",
-        "difficulty": "medium",
-        "context": "Which statement best expresses the passage’s central idea?",
+        "difficulty": "hard",
+        "context": "The passage is primarily about:",
         "practiceOnly": true,
         "passage": "exp26-rp-6",
         "choices": [
           {
             "id": "A",
-            "text": "The two classes tested entirely different seed varieties."
+            "text": "a comparison that turned out to vary more than one thing."
           },
           {
             "id": "B",
-            "text": "Detailed records make a classroom growing trial useful for repetition."
+            "text": "the correct watering schedule for beans grown indoors."
           },
           {
             "id": "C",
-            "text": "One trial proves that fixed watering schedules always fail."
+            "text": "a teacher correcting two classes that kept poor records."
           },
           {
             "id": "D",
-            "text": "Plant photographs reveal exactly how much water was used."
+            "text": "the advantages of germinating seeds beside a bright window."
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This choice is not supported. Detailed records make a classroom growing trial useful for repetition.",
-          "B": "Supported by the passage: Detailed records make a classroom growing trial useful for repetition.",
-          "C": "This choice is not supported. Detailed records make a classroom growing trial useful for repetition.",
-          "D": "This choice is not supported. Detailed records make a classroom growing trial useful for repetition."
+          "A": "Correct. The closing paragraph says it outright: they ran a test of two levels of attention, not of two watering schedules.",
+          "B": "No schedule is endorsed. The whole point is that the result cannot be read as being about watering at all.",
+          "C": "The records were good enough to find the problem in — the notebook is where the extra actions were discovered.",
+          "D": "Both classes used the same window, so light is held constant and cannot be what the passage is about."
         }
       },
       {
         "id": "exp26-reading-027",
         "section": "reading",
         "topic": "detail",
-        "difficulty": "easy",
-        "context": "What triggered watering in the second class?",
+        "difficulty": "medium",
+        "context": "The notebook shows that, besides watering, the second class also:",
         "practiceOnly": true,
         "passage": "exp26-rp-6",
         "choices": [
           {
             "id": "A",
-            "text": "The plants reaching an identical height"
+            "text": "changed the variety of bean partway through the fortnight."
           },
           {
             "id": "B",
-            "text": "A photograph from another class"
+            "text": "moved one tray away from a sill that had grown cold."
           },
           {
             "id": "C",
-            "text": "The soil surface looking dry"
+            "text": "added fertiliser to the trays that were slowest to sprout."
           },
           {
             "id": "D",
-            "text": "A fixed daily alarm"
+            "text": "watered its trays more often than the first class did."
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "This choice is not supported. The passage specifies the soil surface looking dry.",
-          "B": "This choice is not supported. The passage specifies the soil surface looking dry.",
-          "C": "Supported by the passage: The passage specifies the soil surface looking dry.",
-          "D": "This choice is not supported. The passage specifies the soil surface looking dry."
+          "A": "Both classes planted the same variety, stated in the opening sentence as one of the things held constant.",
+          "B": "Correct. The notebook lists it among the incidental actions: once moved a tray off a cold sill.",
+          "C": "No fertiliser appears anywhere. The soil came from the same bag for both classes.",
+          "D": "Frequency of watering is never compared. What differed was what triggered it, and what else happened alongside."
         }
       },
       {
         "id": "exp26-reading-028",
         "section": "reading",
         "topic": "inference",
-        "difficulty": "medium",
-        "context": "Which conclusion is best supported by the passage?",
+        "difficulty": "easy",
+        "context": "The passage implies that the second class looked at its trays twice a day because:",
         "practiceOnly": true,
         "passage": "exp26-rp-6",
         "choices": [
           {
             "id": "A",
-            "text": "The teacher refuses to let another class repeat the trial."
+            "text": "the teacher had instructed them to record daily observations."
           },
           {
             "id": "B",
-            "text": "Cloudy days always require more watering."
+            "text": "their trays were germinating faster and needed closer watching."
           },
           {
             "id": "C",
-            "text": "The first class did not use trays."
+            "text": "their method required a judgement about whether soil was dry."
           },
           {
             "id": "D",
-            "text": "The teacher sees value in the trial without treating it as conclusive."
+            "text": "they suspected the first class of watering on the wrong days."
           }
         ],
-        "answer": "D",
+        "answer": "C",
         "why": {
-          "A": "This choice is not supported. The teacher sees value in the trial without treating it as conclusive.",
-          "B": "This choice is not supported. The teacher sees value in the trial without treating it as conclusive.",
-          "C": "This choice is not supported. The teacher sees value in the trial without treating it as conclusive.",
-          "D": "Supported by the passage: The teacher sees value in the trial without treating it as conclusive."
+          "A": "The teacher enters only afterwards, to ask what else had differed. No instruction to observe is described.",
+          "B": "The faster germination is the result being explained. It cannot also be the reason they were looking.",
+          "C": "Correct. Watering only when the surface looked dry means somebody has to go and look, which is stated directly.",
+          "D": "No rivalry appears. The two classes are simply running different procedures."
         }
       },
       {
         "id": "exp26-reading-029",
         "section": "reading",
         "topic": "vocabulary in context",
-        "difficulty": "medium",
-        "context": "As used in this passage, “universal” most nearly means:",
+        "difficulty": "easy",
+        "context": "As it is used in the final paragraph, \"consequences\" most nearly means:",
         "practiceOnly": true,
         "passage": "exp26-rp-6",
         "choices": [
           {
             "id": "A",
-            "text": "applicable to every case"
+            "text": "penalties that followed from a mistake in procedure."
           },
           {
             "id": "B",
-            "text": "recorded in a notebook"
+            "text": "results that followed from adopting that method."
           },
           {
             "id": "C",
-            "text": "limited to one class"
+            "text": "matters of serious importance to the experiment."
           },
           {
             "id": "D",
-            "text": "visible in photographs"
+            "text": "conclusions the class drew from their own results."
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Supported by the passage: In context, “universal” means applicable to every case.",
-          "B": "This choice is not supported. In context, “universal” means applicable to every case.",
-          "C": "This choice is not supported. In context, “universal” means applicable to every case.",
-          "D": "This choice is not supported. In context, “universal” means applicable to every case."
+          "A": "Nothing is being punished. The extra actions helped the plants; they simply were not the variable under test.",
+          "B": "Correct. The sentence says the actions were not the method and were things the method brought about.",
+          "C": "Importance is the other everyday sense of the word, and the sentence is about what caused the actions.",
+          "D": "The class draws its conclusion later, after the teacher asks. These are actions, not conclusions."
         }
       },
       {
         "id": "exp26-reading-030",
         "section": "reading",
         "topic": "function",
-        "difficulty": "medium",
-        "context": "What is the primary function of the passage’s final sentence?",
+        "difficulty": "easy",
+        "context": "The second paragraph serves mainly to:",
         "practiceOnly": true,
         "passage": "exp26-rp-6",
         "choices": [
           {
             "id": "A",
-            "text": "Argues that successful plants should never be photographed."
+            "text": "state the result and the reading the rest of the passage tests."
           },
           {
             "id": "B",
-            "text": "Emphasizes why procedural records can be more useful than outcome images."
+            "text": "describe the equipment the two classes had been given."
           },
           {
             "id": "C",
-            "text": "Gives the exact average height of the plants."
+            "text": "introduce the teacher who will later question the class."
           },
           {
             "id": "D",
-            "text": "Identifies the seed variety by its scientific name."
+            "text": "list the variables the two classes had deliberately held constant."
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This choice is not supported. Emphasizes why procedural records can be more useful than outcome images.",
-          "B": "Supported by the passage: Emphasizes why procedural records can be more useful than outcome images.",
-          "C": "This choice is not supported. Emphasizes why procedural records can be more useful than outcome images.",
-          "D": "This choice is not supported. Emphasizes why procedural records can be more useful than outcome images."
+          "A": "Correct. It gives the three-day difference and calls the watering explanation the obvious reading, which the passage then undoes.",
+          "B": "Equipment is covered in the first paragraph — trays, soil, window — not the second.",
+          "C": "The teacher appears at the start of the third paragraph, not in this one.",
+          "D": "The constants are in the opening sentence. This paragraph reports an outcome."
         }
       },
       {
         "id": "exp26-reading-031",
         "section": "reading",
-        "topic": "main idea",
+        "topic": "tone",
         "difficulty": "medium",
-        "context": "Which statement best expresses the passage’s central idea?",
+        "context": "The author's attitude toward the vendors is best described as:",
         "practiceOnly": true,
         "passage": "exp26-rp-7",
         "choices": [
           {
             "id": "A",
-            "text": "Bus travel completely explains every change in attendance."
+            "text": "sympathetic to complaints that were accurate but incomplete."
           },
           {
             "id": "B",
-            "text": "A larger parking area guarantees a successful market."
+            "text": "impatient with traders unwilling to adapt to a better site."
           },
           {
             "id": "C",
-            "text": "Market access depends on daily travel patterns as well as physical space."
+            "text": "sceptical that their reported fall in takings really occurred."
           },
           {
             "id": "D",
-            "text": "The town’s shoppers wanted fewer vendors at the market."
+            "text": "approving of a decision that improved the market in every way."
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This choice is not supported. Market access depends on daily travel patterns as well as physical space.",
-          "B": "This choice is not supported. Market access depends on daily travel patterns as well as physical space.",
-          "C": "Supported by the passage: Market access depends on daily travel patterns as well as physical space.",
-          "D": "This choice is not supported. Market access depends on daily travel patterns as well as physical space."
+          "A": "Correct. The passage grants that the square had every fault they named, and the closing line treats the miss as understandable.",
+          "B": "The vendors wanted the move and got it. Nothing suggests they resisted change.",
+          "C": "The fall is reported as fact — about a fifth within two months — with no doubt attached.",
+          "D": "The move solved three problems and cost the market its passing trade, which the passage does not call an improvement overall."
         }
       },
       {
         "id": "exp26-reading-032",
         "section": "reading",
-        "topic": "detail",
+        "topic": "evidence",
         "difficulty": "easy",
-        "context": "Where was the old square located?",
+        "context": "Which finding best supports the explanation the passage gives for the fall in takings?",
         "practiceOnly": true,
         "passage": "exp26-rp-7",
         "choices": [
           {
             "id": "A",
-            "text": "Inside the new parking area"
+            "text": "Shoppers interviewed afterwards said they liked the new space."
           },
           {
             "id": "B",
-            "text": "Beside a distant train depot"
+            "text": "Deliveries to the old square had to be carried the last stretch."
           },
           {
             "id": "C",
-            "text": "At the end of a private road"
+            "text": "The vendors who pushed for the move noticed the drop first."
           },
           {
             "id": "D",
-            "text": "Between the bus stop and the grocery store"
+            "text": "Much of the old custom had been passing rather than intending."
           }
         ],
         "answer": "D",
         "why": {
-          "A": "This choice is not supported. The passage specifies between the bus stop and the grocery store.",
-          "B": "This choice is not supported. The passage specifies between the bus stop and the grocery store.",
-          "C": "This choice is not supported. The passage specifies between the bus stop and the grocery store.",
-          "D": "Supported by the passage: The passage specifies between the bus stop and the grocery store."
+          "A": "Liking the site is what rules out the obvious explanation. It clears the ground without supplying the cause.",
+          "B": "The delivery problem is one of the faults that justified moving, and it has nothing to do with attendance.",
+          "C": "Who noticed first tells us about the vendors, not about why the shoppers stopped coming.",
+          "D": "Correct. If most custom was incidental to the walk, moving off that walk removes it without any fault in the new site."
         }
       },
       {
         "id": "exp26-reading-033",
         "section": "reading",
-        "topic": "inference",
-        "difficulty": "medium",
-        "context": "Which conclusion is best supported by the passage?",
+        "topic": "text structure",
+        "difficulty": "easy",
+        "context": "The passage is built as:",
         "practiceOnly": true,
         "passage": "exp26-rp-7",
         "choices": [
           {
             "id": "A",
-            "text": "The new market location interrupted some shoppers’ existing routines."
+            "text": "a decision with sound reasons, an unexpected result, and its cause."
           },
           {
             "id": "B",
-            "text": "Attendance rose immediately when the market moved."
+            "text": "a chronological history of one town centre over several decades."
           },
           {
             "id": "C",
-            "text": "All shoppers traveled by car."
+            "text": "two competing proposals, each with its own supporters and opponents."
           },
           {
             "id": "D",
-            "text": "The organizers permanently closed the market."
+            "text": "a general claim about markets illustrated by four different towns."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Supported by the passage: The new market location interrupted some shoppers’ existing routines.",
-          "B": "This choice is not supported. The new market location interrupted some shoppers’ existing routines.",
-          "C": "This choice is not supported. The new market location interrupted some shoppers’ existing routines.",
-          "D": "This choice is not supported. The new market location interrupted some shoppers’ existing routines."
+          "A": "Correct. Paragraph one gives the reasons, two the fall in takings, three and four what actually caused it.",
+          "B": "Only one move is covered, over about two months. No longer history is given.",
+          "C": "No alternative proposal is ever described; the square and the new site are before and after, not rivals.",
+          "D": "One town is discussed throughout, and no general claim is stated before the example."
         }
       },
       {
         "id": "exp26-reading-034",
         "section": "reading",
-        "topic": "vocabulary in context",
+        "topic": "comparison",
         "difficulty": "medium",
-        "context": "As used in this passage, “complicated” most nearly means:",
+        "context": "The passage contrasts the two sites chiefly in terms of whether the market was:",
         "practiceOnly": true,
         "passage": "exp26-rp-7",
         "choices": [
           {
             "id": "A",
-            "text": "repeated word for word"
+            "text": "able to accommodate deliveries made by vehicle."
           },
           {
             "id": "B",
-            "text": "made less simple or certain"
+            "text": "encountered on the way somewhere or travelled to."
           },
           {
             "id": "C",
-            "text": "fully confirmed"
+            "text": "pleasant to walk through on a busy Saturday morning."
           },
           {
             "id": "D",
-            "text": "made illegal"
+            "text": "supported by the vendors who traded there regularly."
           }
         ],
         "answer": "B",
         "why": {
-          "A": "This choice is not supported. In context, “complicated” means made less simple or certain.",
-          "B": "Supported by the passage: In context, “complicated” means made less simple or certain.",
-          "C": "This choice is not supported. In context, “complicated” means made less simple or certain.",
-          "D": "This choice is not supported. In context, “complicated” means made less simple or certain."
+          "A": "Deliveries improved at the new site and had no bearing on whether shoppers arrived.",
+          "B": "Correct. The passage names it directly: the market became a destination, and a destination has to be chosen.",
+          "C": "Comfort improved with the move, which makes it the wrong axis for explaining a fall.",
+          "D": "The vendors supported both the move and the market; their view did not change between sites."
         }
       },
       {
         "id": "exp26-reading-035",
         "section": "reading",
-        "topic": "function",
-        "difficulty": "medium",
-        "context": "What is the primary function of the passage’s final sentence?",
+        "topic": "figurative language",
+        "difficulty": "hard",
+        "context": "The final sentence — that the vendors identified every fault \"except the one that was paying them\" — works by:",
         "practiceOnly": true,
         "passage": "exp26-rp-7",
         "choices": [
           {
             "id": "A",
-            "text": "Explains how to design a grocery store."
+            "text": "treating an advantage of the old site as though it were a defect."
           },
           {
             "id": "B",
-            "text": "Claims the original site was perfect in every way."
+            "text": "suggesting the vendors had been dishonest about their own takings."
           },
           {
             "id": "C",
-            "text": "Contrasts an attractive physical plan with practical convenience."
+            "text": "implying the town council had misled the vendors about the move."
           },
           {
             "id": "D",
-            "text": "Reveals the number of parking spaces at the market."
+            "text": "claiming the new site had a fault the vendors had failed to see."
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This choice is not supported. Contrasts an attractive physical plan with practical convenience.",
-          "B": "This choice is not supported. Contrasts an attractive physical plan with practical convenience.",
-          "C": "Supported by the passage: Contrasts an attractive physical plan with practical convenience.",
-          "D": "This choice is not supported. Contrasts an attractive physical plan with practical convenience."
+          "A": "Correct. Cramped aisles on a busy walking route were the same fact as the passing trade, so the complaint and the income shared a cause.",
+          "B": "The takings are reported straightforwardly. Nothing in the passage questions the vendors’ honesty.",
+          "C": "The council is never described as promising anything, and the move delivered what it was meant to.",
+          "D": "The interviews found nothing wrong with the new site. The missed item belonged to the old one."
         }
       },
       {
@@ -14169,67 +14169,67 @@
         "section": "reading",
         "topic": "main idea",
         "difficulty": "medium",
-        "context": "Which statement best expresses the passage’s central idea?",
+        "context": "The central claim of the passage is that a translation should be judged by:",
         "practiceOnly": true,
         "passage": "exp26-rp-8",
         "choices": [
           {
             "id": "A",
-            "text": "Leena discovers that all translations have identical meanings."
+            "text": "how closely its rhyme scheme follows the original poem."
           },
           {
             "id": "B",
-            "text": "Rhyme is presented as the only valid goal of translation."
+            "text": "the number of images it manages to keep in position."
           },
           {
             "id": "C",
-            "text": "The instructor tells Leena never to judge a translation."
+            "text": "what it decided to give up, rather than by a ranking."
           },
           {
             "id": "D",
-            "text": "Leena learns to evaluate translations by examining specific tradeoffs."
+            "text": "how naturally it reads to someone in the new language."
           }
         ],
-        "answer": "D",
+        "answer": "C",
         "why": {
-          "A": "This choice is not supported. Leena learns to evaluate translations by examining specific tradeoffs.",
-          "B": "This choice is not supported. Leena learns to evaluate translations by examining specific tradeoffs.",
-          "C": "This choice is not supported. Leena learns to evaluate translations by examining specific tradeoffs.",
-          "D": "Supported by the passage: Leena learns to evaluate translations by examining specific tradeoffs."
+          "A": "Rhyme is one of three things that can be kept, and the version that kept it paid for it by moving an image.",
+          "B": "Counting preserved images would be another ranking, which is the approach Leena abandons partway through.",
+          "C": "Correct. She stops ranking and instead writes, under each version, what that version chose to lose.",
+          "D": "The version that read most beautifully is also the one that dropped a clause, so fluency alone settles nothing."
         }
       },
       {
         "id": "exp26-reading-037",
         "section": "reading",
         "topic": "detail",
-        "difficulty": "easy",
-        "context": "What had the third translation added?",
+        "difficulty": "hard",
+        "context": "According to the passage, the third translation:",
         "practiceOnly": true,
         "passage": "exp26-rp-8",
         "choices": [
           {
             "id": "A",
-            "text": "A promise in the final line"
+            "text": "moved a lantern from the second line to the sixth."
           },
           {
             "id": "B",
-            "text": "A new title for the original poet"
+            "text": "preserved every image but allowed the metre to go slack."
           },
           {
             "id": "C",
-            "text": "A missing page from the poem"
+            "text": "omitted a clause that referred to the cold."
           },
           {
             "id": "D",
-            "text": "A regular beat in every line"
+            "text": "was the one Leena ranked first in the margin."
           }
         ],
-        "answer": "A",
+        "answer": "C",
         "why": {
-          "A": "Supported by the passage: The passage specifies a promise in the final line.",
-          "B": "This choice is not supported. The passage specifies a promise in the final line.",
-          "C": "This choice is not supported. The passage specifies a promise in the final line.",
-          "D": "This choice is not supported. The passage specifies a promise in the final line."
+          "A": "The lantern was moved by the first translation, which did it in order to keep the rhyme scheme.",
+          "B": "Preserving the images and losing the metre describes the second version, not the third.",
+          "C": "Correct. The third read beautifully in English and had quietly dropped a whole clause about the cold.",
+          "D": "Her abandoned ranking read \"1, 3, 2\", which places the third second rather than first."
         }
       },
       {
@@ -14237,33 +14237,33 @@
         "section": "reading",
         "topic": "inference",
         "difficulty": "medium",
-        "context": "Which conclusion is best supported by the passage?",
+        "context": "Leena stops writing her ranking because she realises that the three versions:",
         "practiceOnly": true,
         "passage": "exp26-rp-8",
         "choices": [
           {
             "id": "A",
-            "text": "The first translation preserves every image unchanged."
+            "text": "were produced by translators of very unequal skill."
           },
           {
             "id": "B",
-            "text": "A translation that reads smoothly can still alter meaning."
+            "text": "were not all attempting to do the same thing."
           },
           {
             "id": "C",
-            "text": "Leena decides every translation is equally convincing."
+            "text": "contained errors she was not qualified to judge."
           },
           {
             "id": "D",
-            "text": "The instructor forbids comparison with the original."
+            "text": "had been printed from the same faulty source text."
           }
         ],
         "answer": "B",
         "why": {
-          "A": "This choice is not supported. A translation that reads smoothly can still alter meaning.",
-          "B": "Supported by the passage: A translation that reads smoothly can still alter meaning.",
-          "C": "This choice is not supported. A translation that reads smoothly can still alter meaning.",
-          "D": "This choice is not supported. A translation that reads smoothly can still alter meaning."
+          "A": "Skill is never raised. Each version is described as competently doing something different.",
+          "B": "Correct. The passage states it: the ranking assumed the three were attempts at the same task, and they plainly were not.",
+          "C": "She goes on to write three confident sentences about them, so lack of standing is not the problem.",
+          "D": "One original poem is implied throughout, and nothing suggests a defective source."
         }
       },
       {
@@ -14271,203 +14271,203 @@
         "section": "reading",
         "topic": "vocabulary in context",
         "difficulty": "medium",
-        "context": "As used in this passage, “protect” most nearly means:",
+        "context": "As it is used in the third paragraph, \"spends\" most nearly means:",
         "practiceOnly": true,
         "passage": "exp26-rp-8",
         "choices": [
           {
             "id": "A",
-            "text": "remove from the poem"
+            "text": "exhausts through careless and repeated overuse."
           },
           {
             "id": "B",
-            "text": "prove scientifically"
+            "text": "gives up one thing in order to obtain another."
           },
           {
             "id": "C",
-            "text": "preserve as a priority"
+            "text": "passes a period of time working on something."
           },
           {
             "id": "D",
-            "text": "keep physically hidden"
+            "text": "distributes evenly across several competing aims."
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "This choice is not supported. In context, “protect” means preserve as a priority.",
-          "B": "This choice is not supported. In context, “protect” means preserve as a priority.",
-          "C": "Supported by the passage: In context, “protect” means preserve as a priority.",
-          "D": "This choice is not supported. In context, “protect” means preserve as a priority."
+          "A": "Carelessness is the opposite of the passage’s account; each loss is described as a judgement.",
+          "B": "Correct. The clause finishes \"to buy another\", which makes the word a trade rather than a waste.",
+          "C": "Time is the other common sense of the verb, and the sentence is about what the translator gives up.",
+          "D": "Even distribution is precisely what the passage says is impossible — all three cannot be kept together."
         }
       },
       {
         "id": "exp26-reading-040",
         "section": "reading",
         "topic": "function",
-        "difficulty": "medium",
-        "context": "What is the primary function of the passage’s final sentence?",
+        "difficulty": "hard",
+        "context": "The final paragraph functions to:",
         "practiceOnly": true,
         "passage": "exp26-rp-8",
         "choices": [
           {
             "id": "A",
-            "text": "Declares one translation the unquestioned winner."
+            "text": "concede that the ranking she abandoned was right after all."
           },
           {
             "id": "B",
-            "text": "Gives a biography of the original poet."
+            "text": "identify which of the three translations she finally preferred."
           },
           {
             "id": "C",
-            "text": "Shows Leena abandoning the assignment."
+            "text": "show what the alternative to ranking produced for her."
           },
           {
             "id": "D",
-            "text": "Explains how identifying tradeoffs improves judgment."
+            "text": "explain why the poem is difficult to translate into English."
           }
         ],
-        "answer": "D",
+        "answer": "C",
         "why": {
-          "A": "This choice is not supported. Explains how identifying tradeoffs improves judgment.",
-          "B": "This choice is not supported. Explains how identifying tradeoffs improves judgment.",
-          "C": "This choice is not supported. Explains how identifying tradeoffs improves judgment.",
-          "D": "Supported by the passage: Explains how identifying tradeoffs improves judgment."
+          "A": "She never returns to the ranking, and what replaces it is offered as the better instrument.",
+          "B": "No preference is stated. The three sentences describe losses rather than crown a winner.",
+          "C": "Correct. Three sentences naming what each gave up told her more about the original than the translations had.",
+          "D": "Difficulty is established in the third paragraph as a general claim about translation, not here."
         }
       },
       {
         "id": "exp26-reading-041",
         "section": "reading",
         "topic": "main idea",
-        "difficulty": "medium",
-        "context": "Which statement best expresses the passage’s central idea?",
+        "difficulty": "easy",
+        "context": "The passage is mainly about Arun learning that:",
         "practiceOnly": true,
         "passage": "exp26-rp-9",
         "choices": [
           {
             "id": "A",
-            "text": "Arun learns that deliberate planning can matter more than using many materials."
+            "text": "choosing what to leave out can be the harder skill."
           },
           {
             "id": "B",
-            "text": "Arun proves that heavier bridges always hold more weight."
+            "text": "his sister builds better model bridges than he does."
           },
           {
             "id": "C",
-            "text": "His sister constructs both bridges without his help."
+            "text": "wooden kits contain more pieces than are supplied."
           },
           {
             "id": "D",
-            "text": "The kit lacks enough wood to build any working bridge."
+            "text": "a bridge should always be tested before it is glued."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Supported by the passage: Arun learns that deliberate planning can matter more than using many materials.",
-          "B": "This choice is not supported. Arun learns that deliberate planning can matter more than using many materials.",
-          "C": "This choice is not supported. Arun learns that deliberate planning can matter more than using many materials.",
-          "D": "This choice is not supported. Arun learns that deliberate planning can matter more than using many materials."
+          "A": "Correct. The second bridge uses two thirds of the wood, and the hour spent deciding where the rest would not go is called harder.",
+          "B": "His sister supplies the drawing sheet and one remark. Her own bridge is never compared to his.",
+          "C": "The kit has a fixed contents, and the point is that he need not use all of it.",
+          "D": "Both bridges are tested after building. No testing sequence is recommended anywhere."
         }
       },
       {
         "id": "exp26-reading-042",
         "section": "reading",
         "topic": "detail",
-        "difficulty": "easy",
-        "context": "What did Arun sketch before his second attempt?",
+        "difficulty": "medium",
+        "context": "The first bridge fails the third test by:",
         "practiceOnly": true,
         "passage": "exp26-rp-9",
         "choices": [
           {
             "id": "A",
-            "text": "A list of test weights"
+            "text": "breaking suddenly across the middle of the span."
           },
           {
             "id": "B",
-            "text": "Triangles"
+            "text": "tipping to one side as the weight was lowered on."
           },
           {
             "id": "C",
-            "text": "A timetable"
+            "text": "sagging in a way that did not reverse afterwards."
           },
           {
             "id": "D",
-            "text": "A map of the neighborhood"
+            "text": "pulling apart at the glued joints near each end."
           }
         ],
-        "answer": "B",
+        "answer": "C",
         "why": {
-          "A": "This choice is not supported. The passage specifies triangles.",
-          "B": "Supported by the passage: The passage specifies triangles.",
-          "C": "This choice is not supported. The passage specifies triangles.",
-          "D": "This choice is not supported. The passage specifies triangles."
+          "A": "The passage is explicit that it did not break, and uses that to set up the slower kind of failure.",
+          "B": "No sideways movement is described; the deformation is downward, in the middle.",
+          "C": "Correct. It sagged slowly in the middle and the sag did not go away when the weight came off.",
+          "D": "Joints and glue appear only in the account of the second bridge, which used less of both."
         }
       },
       {
         "id": "exp26-reading-043",
         "section": "reading",
         "topic": "inference",
-        "difficulty": "medium",
-        "context": "Which conclusion is best supported by the passage?",
+        "difficulty": "hard",
+        "context": "It can be inferred that the drawing sheet was useful to Arun mainly because it:",
         "practiceOnly": true,
         "passage": "exp26-rp-9",
         "choices": [
           {
             "id": "A",
-            "text": "The second bridge uses more wood than the first."
+            "text": "listed every piece the kit was supposed to contain."
           },
           {
             "id": "B",
-            "text": "His sister advises him never to draw plans."
+            "text": "gave measurements he had previously had to estimate."
           },
           {
             "id": "C",
-            "text": "Arun keeps the first bridge because it records a useful lesson."
+            "text": "showed a design rather stronger than the one he had chosen."
           },
           {
             "id": "D",
-            "text": "Arun plans to enter the broken bridge in a contest."
+            "text": "showed where the load travelled in three different spans."
           }
         ],
-        "answer": "C",
+        "answer": "D",
         "why": {
-          "A": "This choice is not supported. Arun keeps the first bridge because it records a useful lesson.",
-          "B": "This choice is not supported. Arun keeps the first bridge because it records a useful lesson.",
-          "C": "Supported by the passage: Arun keeps the first bridge because it records a useful lesson.",
-          "D": "This choice is not supported. Arun keeps the first bridge because it records a useful lesson."
+          "A": "A parts list would not have told him which pieces to leave out, which is the lesson he takes from it.",
+          "B": "No measurement problem is described. His first bridge failed from where material sat, not from its size.",
+          "C": "It shows three spans rather than one better one, and he goes on to design his own rather than copy any of them.",
+          "D": "Correct. The sheet drew the same span three ways with a note under each about where the load went."
         }
       },
       {
         "id": "exp26-reading-044",
         "section": "reading",
         "topic": "vocabulary in context",
-        "difficulty": "medium",
-        "context": "As used in this passage, “sturdy” most nearly means:",
+        "difficulty": "hard",
+        "context": "As it is used in the first paragraph, \"convincing\" most nearly means:",
         "practiceOnly": true,
         "passage": "exp26-rp-9",
         "choices": [
           {
             "id": "A",
-            "text": "brightly colored"
+            "text": "persuasive in argument to a sceptical listener."
           },
           {
             "id": "B",
-            "text": "unusually expensive"
+            "text": "looking as though it would do what it was for."
           },
           {
             "id": "C",
-            "text": "easy to fold"
+            "text": "built precisely to the tolerances in the drawing."
           },
           {
             "id": "D",
-            "text": "strongly built"
+            "text": "heavy enough to remain stable under its own weight."
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "This choice is not supported. In context, “sturdy” means strongly built.",
-          "B": "This choice is not supported. In context, “sturdy” means strongly built.",
-          "C": "This choice is not supported. In context, “sturdy” means strongly built.",
-          "D": "Supported by the passage: In context, “sturdy” means strongly built."
+          "A": "No argument is taking place. The word describes how the object struck Arun when he looked at it.",
+          "B": "Correct. The clause pairs it with \"looked\", and the bridge then fails, so the look was not the performance.",
+          "C": "He had not unfolded the drawing at that stage, so he could not have been building to it.",
+          "D": "Weight is mentioned separately in the same sentence, which makes it a different property from this one."
         }
       },
       {
@@ -14475,203 +14475,203 @@
         "section": "reading",
         "topic": "function",
         "difficulty": "medium",
-        "context": "What is the primary function of the passage’s final sentence?",
+        "context": "The single-sentence final paragraph mainly serves to:",
         "practiceOnly": true,
         "passage": "exp26-rp-9",
         "choices": [
           {
             "id": "A",
-            "text": "Shows that using fewer pieces no longer feels wasteful to Arun."
+            "text": "confirm the second approach worked, with room to spare."
           },
           {
             "id": "B",
-            "text": "Explains why all the scraps were discarded."
+            "text": "suggest that his sister had exaggerated the test weights."
           },
           {
             "id": "C",
-            "text": "Introduces the rules of a bridge competition."
+            "text": "return the passage to the sagging of the first bridge."
           },
           {
             "id": "D",
-            "text": "Suggests the second bridge has just collapsed."
+            "text": "introduce a competition the two of them plan to enter."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Supported by the passage: Shows that using fewer pieces no longer feels wasteful to Arun.",
-          "B": "This choice is not supported. Shows that using fewer pieces no longer feels wasteful to Arun.",
-          "C": "This choice is not supported. Shows that using fewer pieces no longer feels wasteful to Arun.",
-          "D": "This choice is not supported. Shows that using fewer pieces no longer feels wasteful to Arun."
+          "A": "Correct. It clears every weight in the box, and the last one is marked out as beyond what anyone had held.",
+          "B": "Her remark raises the bar rather than lowering it, and the bridge then meets it.",
+          "C": "The first bridge is finished with by the third paragraph and is not mentioned again.",
+          "D": "No competition appears anywhere in the passage."
         }
       },
       {
         "id": "exp26-reading-046",
         "section": "reading",
-        "topic": "main idea",
-        "difficulty": "medium",
-        "context": "Which statement best expresses the passage’s central idea?",
+        "topic": "tone",
+        "difficulty": "easy",
+        "context": "The author's attitude toward the pupil's conclusion is:",
         "practiceOnly": true,
         "passage": "exp26-rp-10",
         "choices": [
           {
             "id": "A",
-            "text": "The model roofs reproduce every feature of actual buildings."
+            "text": "dismissive of a pupil who had not done the reading."
           },
           {
             "id": "B",
-            "text": "Students interpret a model result cautiously by considering conditions and limits."
+            "text": "undecided, since the shade readings were inconclusive."
           },
           {
             "id": "C",
-            "text": "The students establish that dark roofs are always cooler."
+            "text": "corrective, while treating the error as understandable."
           },
           {
             "id": "D",
-            "text": "Roof color is shown to have identical effects in sunlight and shade."
+            "text": "supportive, because summer sun is what the roofs respond to."
           }
         ],
-        "answer": "B",
+        "answer": "C",
         "why": {
-          "A": "This choice is not supported. Students interpret a model result cautiously by considering conditions and limits.",
-          "B": "Supported by the passage: Students interpret a model result cautiously by considering conditions and limits.",
-          "C": "This choice is not supported. Students interpret a model result cautiously by considering conditions and limits.",
-          "D": "This choice is not supported. Students interpret a model result cautiously by considering conditions and limits."
+          "A": "No pupil is criticised. The passage says the reason is worth stating carefully, which is instruction rather than dismissal.",
+          "B": "The shade result is reported as clear — half a degree, inside the scatter — and is used to make the argument.",
+          "C": "Correct. The conclusion is rejected, and the closing lines explain why the mistake survives most available evidence.",
+          "D": "The passage denies exactly this: summer is not what the roofs respond to, direct sun is."
         }
       },
       {
         "id": "exp26-reading-047",
         "section": "reading",
-        "topic": "detail",
-        "difficulty": "easy",
-        "context": "Under what condition was the temperature difference smaller?",
+        "topic": "evidence",
+        "difficulty": "hard",
+        "context": "Which result is essential to the argument the passage makes?",
         "practiceOnly": true,
         "passage": "exp26-rp-10",
         "choices": [
           {
             "id": "A",
-            "text": "During a snowstorm"
+            "text": "The pale roof ran about four degrees cooler in full sun."
           },
           {
             "id": "B",
-            "text": "Inside a heated oven"
+            "text": "The gap fell to half a degree when the roofs stood in shade."
           },
           {
             "id": "C",
-            "text": "In shade"
+            "text": "The four-degree figure agreed with the published values."
           },
           {
             "id": "D",
-            "text": "In direct sunlight"
+            "text": "The class had predicted the size of the difference in advance."
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "This choice is not supported. The passage specifies in shade.",
-          "B": "This choice is not supported. The passage specifies in shade.",
-          "C": "Supported by the passage: The passage specifies in shade.",
-          "D": "This choice is not supported. The passage specifies in shade."
+          "A": "The full-sun result establishes that colour matters. On its own it is consistent with the pupil’s reading as well.",
+          "B": "Correct. The collapse in shade is the observation the passage has to explain, and the explanation is the argument.",
+          "C": "Agreement with published figures supports the method but adds nothing to the question about shade.",
+          "D": "A correct prediction speaks to the class rather than to why the two roofs converge."
         }
       },
       {
         "id": "exp26-reading-048",
         "section": "reading",
-        "topic": "inference",
+        "topic": "text structure",
         "difficulty": "medium",
-        "context": "Which conclusion is best supported by the passage?",
+        "context": "The passage proceeds by:",
         "practiceOnly": true,
         "passage": "exp26-rp-10",
         "choices": [
           {
             "id": "A",
-            "text": "The report recommends a color for every building."
+            "text": "giving two results, rejecting a reading of them, and explaining why."
           },
           {
             "id": "B",
-            "text": "Ventilation was identical to that of a real house."
+            "text": "describing an experiment, listing its errors, and proposing a redesign."
           },
           {
             "id": "C",
-            "text": "The experiment measured electricity costs directly."
+            "text": "stating a physical law and deriving two predictions from it."
           },
           {
             "id": "D",
-            "text": "Lighting conditions affected the observed difference between roof colors."
+            "text": "comparing published figures with a class’s own measurements."
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This choice is not supported. Lighting conditions affected the observed difference between roof colors.",
-          "B": "This choice is not supported. Lighting conditions affected the observed difference between roof colors.",
-          "C": "This choice is not supported. Lighting conditions affected the observed difference between roof colors.",
-          "D": "Supported by the passage: Lighting conditions affected the observed difference between roof colors."
+          "A": "Correct. Sun and shade come first, the pupil’s conclusion is rejected, and the final paragraphs give the reason.",
+          "B": "No errors are found in the procedure, and no redesign is suggested anywhere.",
+          "C": "The explanation about absorption arrives after the measurements, as an account of them rather than a starting point.",
+          "D": "The published figures appear in one clause, as a check on the first result rather than as the subject."
         }
       },
       {
         "id": "exp26-reading-049",
         "section": "reading",
-        "topic": "vocabulary in context",
-        "difficulty": "medium",
-        "context": "As used in this passage, “isolated” most nearly means:",
+        "topic": "comparison",
+        "difficulty": "easy",
+        "context": "The two trials described in the passage differed mainly in:",
         "practiceOnly": true,
         "passage": "exp26-rp-10",
         "choices": [
           {
             "id": "A",
-            "text": "considered apart from other influences"
+            "text": "the colours that the two model roofs were painted."
           },
           {
             "id": "B",
-            "text": "located on an island"
+            "text": "the number of temperature readings that were taken."
           },
           {
             "id": "C",
-            "text": "colored with pale paint"
+            "text": "how much direct sunlight reached the model roofs."
           },
           {
             "id": "D",
-            "text": "measured without any instruments"
+            "text": "the season of the year in which they were conducted."
           }
         ],
-        "answer": "A",
+        "answer": "C",
         "why": {
-          "A": "Supported by the passage: In context, “isolated” means considered apart from other influences.",
-          "B": "This choice is not supported. In context, “isolated” means considered apart from other influences.",
-          "C": "This choice is not supported. In context, “isolated” means considered apart from other influences.",
-          "D": "This choice is not supported. In context, “isolated” means considered apart from other influences."
+          "A": "The same pale and charcoal roofs are used both times; that is what makes the comparison possible.",
+          "B": "Reading counts are never given, though the scatter of the readings is mentioned once.",
+          "C": "Correct. The first trial was in full sun on the field, the second in the shade of the science block.",
+          "D": "They were a week apart, which is the passage’s reason for ruling the season out as the cause."
         }
       },
       {
         "id": "exp26-reading-050",
         "section": "reading",
-        "topic": "function",
-        "difficulty": "medium",
-        "context": "What is the primary function of the passage’s final sentence?",
+        "topic": "figurative language",
+        "difficulty": "hard",
+        "context": "The phrase \"the quantity it operates on has gone to nearly nothing\" refers to the:",
         "practiceOnly": true,
         "passage": "exp26-rp-10",
         "choices": [
           {
             "id": "A",
-            "text": "Claims that all models are useless."
+            "text": "temperature difference recorded beneath the two roofs."
           },
           {
             "id": "B",
-            "text": "Summarizes the exploratory value and limits of a model."
+            "text": "quantity of paint applied to each of the model roofs."
           },
           {
             "id": "C",
-            "text": "Provides directions for installing a real roof."
+            "text": "amount of sunlight arriving at the roof surfaces."
           },
           {
             "id": "D",
-            "text": "States that the students have no further questions."
+            "text": "range of scatter across the class’s repeated readings."
           }
         ],
-        "answer": "B",
+        "answer": "C",
         "why": {
-          "A": "This choice is not supported. Summarizes the exploratory value and limits of a model.",
-          "B": "Supported by the passage: Summarizes the exploratory value and limits of a model.",
-          "C": "This choice is not supported. Summarizes the exploratory value and limits of a model.",
-          "D": "This choice is not supported. Summarizes the exploratory value and limits of a model."
+          "A": "That difference is the outcome being explained, so it cannot also be what the effect operates on.",
+          "B": "Paint thickness is never discussed. Colour is treated as a property, not as a quantity that varies.",
+          "C": "Correct. The preceding sentence says colour changes how much striking sunlight is absorbed, and shade removes the striking sunlight.",
+          "D": "Scatter describes measurement noise and is used to judge the half-degree, not as the thing colour acts on."
         }
       },
       {
@@ -19820,35 +19820,35 @@
         "type": "Natural Science",
         "title": "The Seed Notebook",
         "blurb": "Original short passage for focused reading practice.",
-        "text": "Two classes planted the same seed variety in identical trays. One class watered on a fixed schedule; the other watered only when the soil surface looked dry. The second class recorded its watering decisions carefully, including cloudy days when the surface dried slowly. At the end of the month, its plants varied less in height. The teacher cautioned that one comparison could not establish a universal rule. Still, the notebook made the result useful: another class could repeat the decisions rather than merely imitate the final photographs. A record of the process offered more than a picture of success."
+        "text": "Two classes at the same school planted the same variety of bean in identical trays, under the same window, in soil from the same bag. One class watered every tray on Mondays, Wednesdays and Fridays. The other watered a tray only when the surface of its soil had gone pale and dry to the touch.\n\nThe second class's trays germinated three days earlier on average and put out more leaves in the first fortnight. The obvious reading was that watering on demand suits beans better than watering on a schedule.\n\nTheir teacher pushed them past that reading by asking what else had differed. The answer was in their own notebook. To decide whether a tray needed water, somebody had to go and look at it, and they had been looking twice a day. In doing so they had twice turned trays that were leaning toward the glass, once moved a tray off a cold sill, and three times broken a crust that had formed on the surface.\n\nNone of those actions was the watering method, and all of them were consequences of it. The class had not run a test of two watering schedules. They had run a test of two levels of attention, and the water was only the part they had written down in advance."
       },
       {
         "id": "exp26-rp-7",
         "type": "Social Science",
         "title": "The Market Route",
         "blurb": "Original short passage for focused reading practice.",
-        "text": "A town moved its Saturday market from a narrow square to a larger parking area. Vendors gained space, yet several regular shoppers stopped attending. Interviews revealed that the old square lay between the bus stop and the grocery store, while the new site required a separate trip. Organizers added a walking route with signs and coordinated market hours with the bus timetable. Attendance recovered partly, though not completely. The experience complicated the original assumption that more space automatically meant better access. A location could be roomy on a plan and inconvenient in an actual day."
+        "text": "When the town moved its Saturday market out of the narrow square and into the old parking area behind the leisure centre, the case for the move was straightforward. Vendors had complained for years about the square: stalls were cramped, deliveries had to be carried the last hundred metres by hand, and on busy mornings the aisles were genuinely unpleasant. The new site solved all three problems at once.\n\nAttendance fell anyway. Takings for the regular vendors dropped by about a fifth within two months, and the vendors who had pushed hardest for the move were the ones who noticed first.\n\nThe interviews that followed found nothing wrong with the new site. Shoppers liked the space. What they had stopped doing was arriving. In the square, the market had sat on the walk between the bus stops and the high street, and a large share of its custom had never set out to visit a market at all — it had simply been passing and had bought something. Behind the leisure centre, the market was a destination, and a destination has to be chosen.\n\nThe vendors had correctly identified every fault in the square except the one that was paying them."
       },
       {
         "id": "exp26-rp-8",
         "type": "Humanities",
         "title": "A Translator’s Margin",
         "blurb": "Original short passage for focused reading practice.",
-        "text": "Leena found three translations of the same poem on her desk. One kept the rhyme but rearranged the images. Another preserved the images but lost the regular beat. The third sounded effortless until she compared its final line with the original and found an added promise. Her instructor asked her to write what each translator had chosen to protect. Leena stopped ranking the versions from best to worst and began making notes in the margins. The exercise did not make every choice equally convincing. It made her judgments more precise by requiring her to name the tradeoff behind each one."
+        "text": "Leena laid three translations of the same fourteen-line poem side by side. The first kept the rhyme scheme intact and, to do it, had moved a lantern from the second line to the sixth. The second preserved every image in its original position and let the metre go slack. The third read beautifully in English and had quietly dropped a whole clause about the cold.\n\nHer first instinct was to rank them, and she got as far as writing \"1, 3, 2\" in the margin before stopping. The ranking assumed the three were attempts at the same task, and they plainly were not.\n\nA translation has to decide what it is carrying. Sound, image and sense can all be preserved in isolation and cannot all be preserved together, so every translator spends one to buy another, and the interesting question is not who was most faithful but what each one judged to be the poem.\n\nWhat Leena finally wrote in the margin was not a ranking. It was three sentences, one under each version, naming what that version had decided to lose. She found that the three sentences told her more about the original than any of the translations had."
       },
       {
         "id": "exp26-rp-9",
         "type": "Literary Narrative",
         "title": "The Second Bridge",
         "blurb": "Original short passage for focused reading practice.",
-        "text": "On his first model bridge, Arun used every piece of wood in the kit. It looked sturdy, but the center sagged under the test weight. His sister pointed to the unused drawing sheet and suggested planning the next attempt. Arun sketched triangles, crossing out several designs before choosing one with fewer pieces. The second bridge held the weight. He kept the first bridge beside it, not as a warning against failure but as a reminder of how quickly he had mistaken busyness for care. The scraps on the table no longer seemed like wasted material."
+        "text": "Arun used every piece of wood in the kit. That had seemed like the point of the kit. The bridge he built out of it was dense and heavy and looked, to him, extremely convincing, and it held the first two test weights without a sound.\n\nAt the third it did not break. It sagged — slowly, in the middle, the way a shelf sags — and the sag did not go away when the weight came off.\n\nHis sister, who had built one the year before, did not say anything about the wood. She turned over the drawing sheet that had come in the box and that Arun had not unfolded, and put it flat on the table. It showed the same span drawn three ways, with a note under each about where the load went.\n\nArun's second bridge used about two thirds of the pieces. He spent an hour deciding where the other third would have gone and choosing not to put them there, which was harder than building the first one had been and took less wood, less glue and less time.\n\nIt held every weight in the box, including the one his sister said nobody's ever held."
       },
       {
         "id": "exp26-rp-10",
         "type": "Natural Science",
         "title": "The Cooling Roofs",
         "blurb": "Original short passage for focused reading practice.",
-        "text": "Students compared afternoon temperatures beneath two model roofs, one pale and one dark. The pale roof stayed cooler in direct sunlight. A week later, they repeated the trial in shade and found a much smaller difference. Their report emphasized the role of lighting conditions rather than treating roof color as an isolated cause with an unchanging effect. They also noted that the models lacked ventilation and insulation found in real buildings. The comparison suggested a direction for further testing, not a complete building recommendation. Small models could open a question without settling every part of it."
+        "text": "A class compared the afternoon temperature beneath two model roofs, one painted pale grey and one painted charcoal, set out on the field in full sun. The pale roof ran about four degrees cooler, which is roughly what the class had predicted and roughly what the published figures say.\n\nA week later they repeated the trial in the shade of the science block, and the difference nearly vanished: half a degree, well inside the scatter of their own readings.\n\nA pupil offered the conclusion that pale roofs only work in summer. The measurements do not support it, and the reason is worth stating carefully. Colour changes how much of the sunlight striking a surface is absorbed rather than reflected. Where there is little sunlight striking the surface, there is little for the colour to change, and the two roofs converge — not because the effect has switched off, but because the quantity it operates on has gone to nearly nothing.\n\nSummer is not what the roofs are responding to. Direct sun is, and the two coincide often enough in an English July that the mistaken version survives contact with most of the evidence a class is likely to collect."
       },
       {
         "id": "exp26-rp-11",
