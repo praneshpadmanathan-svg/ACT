@@ -171,32 +171,32 @@
         "section": "english",
         "topic": "modifiers",
         "difficulty": "easy",
-        "context": "Which sentence clearly indicates that Mina was carrying a clipboard?",
+        "context": "«Rusted through at the hinge, Priya found the gate» impossible to open.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Carrying a clipboard, the arrival of Mina was noticed."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Carrying a clipboard, Mina entered the archive."
+            "text": "Priya found the gate, rusted through at the hinge,"
           },
           {
             "id": "C",
-            "text": "Carrying a clipboard, the archive welcomed Mina."
+            "text": "Rusting through at the hinge, Priya found the gate"
           },
           {
             "id": "D",
-            "text": "Carrying a clipboard, the door opened for Mina."
+            "text": "Priya, rusted through at the hinge, found the gate"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "An arrival cannot carry a clipboard.",
-          "B": "Place the person doing the action immediately after the introductory modifier.",
-          "C": "The introductory modifier attaches to the room.",
-          "D": "The modifier incorrectly describes the door."
+          "A": "The opening phrase describes whoever follows it, which here is Priya.",
+          "B": "Moving the phrase next to gate puts the rust on the thing that rusted.",
+          "C": "Changing the verb form leaves the phrase describing Priya as before.",
+          "D": "Fencing the phrase in commas attaches it to Priya even more firmly."
         }
       },
       {
@@ -204,32 +204,32 @@
         "section": "english",
         "topic": "parallelism",
         "difficulty": "easy",
-        "context": "\"Mina planned to catalog the exhibits, check the schedule, and ___.\" Which choice maintains parallel structure?",
+        "context": "Each morning she sorted the mail, swept the floor, and «was opening the shutters».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "the door was locked"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "a locked door"
+            "text": "opened the shutters"
           },
           {
             "id": "C",
-            "text": "lock the door"
+            "text": "had opened the shutters"
           },
           {
             "id": "D",
-            "text": "locking the door"
+            "text": "would be opening the shutters"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "A complete clause does not match the verb phrases.",
-          "B": "A noun phrase does not complete the parallel series.",
-          "C": "The shared to governs three parallel verbs: to organize the items, check, and lock.",
-          "D": "An -ing form does not match the two bare verbs governed by to."
+          "A": "The first two items are simple past verbs, so a progressive breaks the run.",
+          "B": "Opened matches sorted and swept, which set the pattern before it.",
+          "C": "The past perfect puts the shutters before the other two morning tasks.",
+          "D": "A conditional progressive is further still from the two plain past verbs."
         }
       },
       {
@@ -237,32 +237,32 @@
         "section": "english",
         "topic": "colons",
         "difficulty": "easy",
-        "context": "Which sentence about the museum uses a colon correctly?",
+        "context": "The kit holds three things«, a whistle, a torch and a length of cord».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "The museum needed: a new schedule."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "The museum: needed a new schedule."
+            "text": ": a whistle, a torch and a length of cord"
           },
           {
             "id": "C",
-            "text": "The museum needed a: new schedule."
+            "text": "; a whistle, a torch and a length of cord"
           },
           {
             "id": "D",
-            "text": "The museum needed one thing: a new schedule."
+            "text": ": a whistle; a torch; a length of cord"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The colon interrupts a verb and its direct object.",
-          "B": "The colon separates the subject from its verb.",
-          "C": "The colon splits a noun phrase.",
-          "D": "The words before the colon form a complete sentence; the words after it identify the one thing."
+          "A": "A comma is too weak to introduce a list after a complete sentence.",
+          "B": "The words before it form a full sentence, so a colon can deliver the list.",
+          "C": "A semicolon needs a complete sentence after it, not three objects.",
+          "D": "Semicolons between the items suggest three separate lists rather than one."
         }
       },
       {
@@ -270,32 +270,32 @@
         "section": "english",
         "topic": "run-ons",
         "difficulty": "easy",
-        "context": "Which version correctly joins the clauses about Mina's arrival at the museum?",
+        "context": "The bell rang twice«, the crew went below».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Mina arrived early; the museum was still closed."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Mina arrived early, the museum was still closed."
+            "text": ". The crew went below"
           },
           {
             "id": "C",
-            "text": "Mina arrived early the museum was still closed."
+            "text": ", and the crew going below"
           },
           {
             "id": "D",
-            "text": "Mina arrived early; but, the museum was still closed."
+            "text": " the crew went below"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "A semicolon can join two closely related independent clauses.",
-          "B": "A comma alone creates a comma splice.",
-          "C": "This fuses two independent clauses without punctuation.",
-          "D": "The comma after but is unnecessary, and the coordinated clauses should use a comma before but."
+          "A": "A comma on its own cannot join two complete sentences.",
+          "B": "Each half is a full sentence, so a full stop separates them cleanly.",
+          "C": "The -ing form leaves the second half without a verb that can stand alone.",
+          "D": "Removing the comma runs the two sentences together with nothing between."
         }
       },
       {
@@ -303,32 +303,32 @@
         "section": "english",
         "topic": "fragments",
         "difficulty": "easy",
-        "context": "Which choice about Mina's visit to the museum is a complete sentence?",
+        "context": "The last ferry of the season«, tied up at the far end of the pier».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Mina, waiting outside the archive."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Mina stayed until the museum closed."
+            "text": " was tied up at the far end of the pier"
           },
           {
             "id": "C",
-            "text": "Because Mina stayed until closing."
+            "text": ", tied up at the far end of the pier,"
           },
           {
             "id": "D",
-            "text": "While Mina waited outside the archive."
+            "text": ", tying up at the far end of the stone pier"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "The participle waiting is not a finite main verb.",
-          "B": "The independent clause has the subject and finite verb stayed; the until clause adds detail.",
-          "C": "Because makes this dependent, with no main clause.",
-          "D": "While introduces a dependent clause without a main clause."
+          "A": "The comma leaves a phrase describing the ferry, so no sentence ever starts.",
+          "B": "Adding was supplies the main verb the subject has been waiting for.",
+          "C": "A second comma makes the phrase an interruption and removes the verb entirely.",
+          "D": "The -ing form cannot serve as the main verb of a sentence."
         }
       },
       {
@@ -732,32 +732,32 @@
         "section": "english",
         "topic": "modifiers",
         "difficulty": "easy",
-        "context": "Which sentence clearly indicates that Leo was carrying a clipboard?",
+        "context": "The curator described the vase «to the students that was chipped along the rim».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Carrying a clipboard, the door opened for Leo."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Carrying a clipboard, the arrival of Leo was noticed."
+            "text": "that was chipped along the rim to the students"
           },
           {
             "id": "C",
-            "text": "Carrying a clipboard, Leo entered the greenhouse."
+            "text": "to the students, that was chipped along the rim"
           },
           {
             "id": "D",
-            "text": "Carrying a clipboard, the greenhouse welcomed Leo."
+            "text": "to the students which was chipped along the rim"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "The modifier incorrectly describes the door.",
-          "B": "An arrival cannot carry a clipboard.",
-          "C": "Place the person doing the action immediately after the introductory modifier.",
-          "D": "The introductory modifier attaches to the room."
+          "A": "The clause sits beside students, so it reads as though they were chipped.",
+          "B": "Placing the clause directly after vase makes clear what the chip is on.",
+          "C": "A comma does not move the clause any closer to the noun it describes.",
+          "D": "Swapping that for which leaves the clause attached to the wrong noun."
         }
       },
       {
@@ -765,32 +765,32 @@
         "section": "english",
         "topic": "parallelism",
         "difficulty": "easy",
-        "context": "\"Leo planned to label the seedlings, check the schedule, and ___.\" Which choice maintains parallel structure?",
+        "context": "The course teaches students to measure timber, to cut joints, and «how they should finish surfaces».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "locking the door"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "the door was locked"
+            "text": "to finish surfaces"
           },
           {
             "id": "C",
-            "text": "a locked door"
+            "text": "finishing of surfaces"
           },
           {
             "id": "D",
-            "text": "lock the door"
+            "text": "the finishing of surfaces"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "An -ing form does not match the two bare verbs governed by to.",
-          "B": "A complete clause does not match the verb phrases.",
-          "C": "A noun phrase does not complete the parallel series.",
-          "D": "The shared to governs three parallel verbs: to organize the items, check, and lock."
+          "A": "A how-clause cannot join a list whose first two items are infinitives.",
+          "B": "To finish matches to measure and to cut, the two items already shown.",
+          "C": "A noun phrase does not match the infinitives that open the list.",
+          "D": "Adding an article makes the third item still more clearly a noun."
         }
       },
       {
@@ -798,32 +798,32 @@
         "section": "english",
         "topic": "colons",
         "difficulty": "easy",
-        "context": "Which sentence about the garden uses a colon correctly?",
+        "context": "Only one thing kept the crew ashore«, the wind».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "The garden needed one thing: a new schedule."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "The garden needed: a new schedule."
+            "text": ": the wind"
           },
           {
             "id": "C",
-            "text": "The garden: needed a new schedule."
+            "text": "; the wind"
           },
           {
             "id": "D",
-            "text": "The garden needed a: new schedule."
+            "text": ", which was the wind"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "The words before the colon form a complete sentence; the words after it identify the one thing.",
-          "B": "The colon interrupts a verb and its direct object.",
-          "C": "The colon separates the subject from its verb.",
-          "D": "The colon splits a noun phrase."
+          "A": "A comma leaves the last two words dangling off the end of a sentence.",
+          "B": "A colon after a complete sentence announces the thing it has promised.",
+          "C": "A semicolon has to be followed by a sentence, and the wind is two words.",
+          "D": "Which attaches itself to ashore, which is not what kept the crew in port."
         }
       },
       {
@@ -831,32 +831,32 @@
         "section": "english",
         "topic": "run-ons",
         "difficulty": "easy",
-        "context": "Which version correctly joins the clauses about Leo's arrival at the garden?",
+        "context": "Snow fell all night«, by morning the road was shut».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Leo arrived early; but, the garden was still closed."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Leo arrived early; the garden was still closed."
+            "text": ". By morning the road was shut"
           },
           {
             "id": "C",
-            "text": "Leo arrived early, the garden was still closed."
+            "text": " by morning the road was shut"
           },
           {
             "id": "D",
-            "text": "Leo arrived early the garden was still closed."
+            "text": ", by morning, the road was shut"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "The comma after but is unnecessary, and the coordinated clauses should use a comma before but.",
-          "B": "A semicolon can join two closely related independent clauses.",
-          "C": "A comma alone creates a comma splice.",
-          "D": "This fuses two independent clauses without punctuation."
+          "A": "The comma is doing work only a full stop or a conjunction can do.",
+          "B": "Two complete statements become two sentences, which is what they are.",
+          "C": "With the comma gone the sentences are fused rather than joined.",
+          "D": "Fencing by morning in commas leaves the original splice underneath it."
         }
       },
       {
@@ -864,32 +864,32 @@
         "section": "english",
         "topic": "fragments",
         "difficulty": "easy",
-        "context": "Which choice about Leo's visit to the garden is a complete sentence?",
+        "context": "«A crate of cracked glass plates in the corner of the cellar.»",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "While Leo waited outside the greenhouse."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Leo, waiting outside the greenhouse."
+            "text": "A crate of cracked glass plates stood in the cellar corner."
           },
           {
             "id": "C",
-            "text": "Leo stayed until the garden closed."
+            "text": "A crate of cracked glass plates, in the corner of the cellar."
           },
           {
             "id": "D",
-            "text": "Because Leo stayed until closing."
+            "text": "In the corner of the cellar, a crate of cracked glass plates."
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "While introduces a dependent clause without a main clause.",
-          "B": "The participle waiting is not a finite main verb.",
-          "C": "The independent clause has the subject and finite verb stayed; the until clause adds detail.",
-          "D": "Because makes this dependent, with no main clause."
+          "A": "The words name a crate and say where it is but never say what it does.",
+          "B": "Stood gives the crate a verb, which is what makes the group a sentence.",
+          "C": "A comma does not supply a verb; it only slows the phrase down.",
+          "D": "Moving the place phrase to the front leaves the group without a verb."
         }
       },
       {
@@ -1293,32 +1293,32 @@
         "section": "english",
         "topic": "modifiers",
         "difficulty": "easy",
-        "context": "Which sentence clearly indicates that Asha was carrying a clipboard?",
+        "context": "We watched the ferry leave the harbour «standing on the cold pier».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Carrying a clipboard, the workshop welcomed Asha."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Carrying a clipboard, the door opened for Asha."
+            "text": "while we stood on the cold pier"
           },
           {
             "id": "C",
-            "text": "Carrying a clipboard, the arrival of Asha was noticed."
+            "text": "standing on the cold pier, we"
           },
           {
             "id": "D",
-            "text": "Carrying a clipboard, Asha entered the workshop."
+            "text": "which was standing on the cold pier"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The introductory modifier attaches to the room.",
-          "B": "The modifier incorrectly describes the door.",
-          "C": "An arrival cannot carry a clipboard.",
-          "D": "Place the person doing the action immediately after the introductory modifier."
+          "A": "The phrase sits next to harbour, so the harbour appears to be standing.",
+          "B": "Turning the phrase into a clause with its own subject says who stood there.",
+          "C": "The sentence already has a subject, so a second one leaves it broken.",
+          "D": "Which ties the phrase to harbour, the very noun causing the trouble."
         }
       },
       {
@@ -1326,32 +1326,32 @@
         "section": "english",
         "topic": "parallelism",
         "difficulty": "easy",
-        "context": "\"Asha planned to repair the costumes, check the schedule, and ___.\" Which choice maintains parallel structure?",
+        "context": "The job calls for patience, precision, and «being able to work alone».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "lock the door"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "locking the door"
+            "text": "independence"
           },
           {
             "id": "C",
-            "text": "the door was locked"
+            "text": "to work alone"
           },
           {
             "id": "D",
-            "text": "a locked door"
+            "text": "that you work alone"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "The shared to governs three parallel verbs: to organize the items, check, and lock.",
-          "B": "An -ing form does not match the two bare verbs governed by to.",
-          "C": "A complete clause does not match the verb phrases.",
-          "D": "A noun phrase does not complete the parallel series."
+          "A": "The first two items are single nouns, and a gerund phrase does not match them.",
+          "B": "Independence is a noun, which is the shape patience and precision set.",
+          "C": "An infinitive cannot sit in a list whose other members are nouns.",
+          "D": "A that-clause is further from a noun than either of the other attempts."
         }
       },
       {
@@ -1359,32 +1359,32 @@
         "section": "english",
         "topic": "colons",
         "difficulty": "easy",
-        "context": "Which sentence about the theater uses a colon correctly?",
+        "context": "He gave one reason for the delay«: the ferry had been cancelled».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "The theater needed a: new schedule."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "The theater needed one thing: a new schedule."
+            "text": "; the ferry had been cancelled"
           },
           {
             "id": "C",
-            "text": "The theater needed: a new schedule."
+            "text": ", the ferry had been cancelled"
           },
           {
             "id": "D",
-            "text": "The theater: needed a new schedule."
+            "text": " the ferry had been cancelled"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The colon splits a noun phrase.",
-          "B": "The words before the colon form a complete sentence; the words after it identify the one thing.",
-          "C": "The colon interrupts a verb and its direct object.",
-          "D": "The colon separates the subject from its verb."
+          "A": "A complete sentence comes before the colon, and what follows explains it.",
+          "B": "A semicolon would make the halves equal rather than one explaining the other.",
+          "C": "A comma cannot join two complete sentences on its own.",
+          "D": "With no punctuation the two sentences run straight into one another."
         }
       },
       {
@@ -1392,32 +1392,32 @@
         "section": "english",
         "topic": "run-ons",
         "difficulty": "easy",
-        "context": "Which version correctly joins the clauses about Asha's arrival at the theater?",
+        "context": "The kiln was still hot«, nobody could open it until noon».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Asha arrived early the theater was still closed."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Asha arrived early; but, the theater was still closed."
+            "text": ", so nobody could open it until noon"
           },
           {
             "id": "C",
-            "text": "Asha arrived early; the theater was still closed."
+            "text": " nobody could open it until noon"
           },
           {
             "id": "D",
-            "text": "Asha arrived early, the theater was still closed."
+            "text": ", nobody could open it, until after noon"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "This fuses two independent clauses without punctuation.",
-          "B": "The comma after but is unnecessary, and the coordinated clauses should use a comma before but.",
-          "C": "A semicolon can join two closely related independent clauses.",
-          "D": "A comma alone creates a comma splice."
+          "A": "Two complete sentences are sitting on either side of a single comma.",
+          "B": "A comma plus so joins the sentences and names the relation between them.",
+          "C": "Dropping the comma fuses the two sentences instead of joining them.",
+          "D": "An extra comma inside the second half does nothing about the splice."
         }
       },
       {
@@ -1425,32 +1425,32 @@
         "section": "english",
         "topic": "fragments",
         "difficulty": "easy",
-        "context": "Which choice about Asha's visit to the theater is a complete sentence?",
+        "context": "«Three letters from the same address, all of them unopened.»",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Because Asha stayed until closing."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "While Asha waited outside the workshop."
+            "text": "Three letters came from the same address, all unopened."
           },
           {
             "id": "C",
-            "text": "Asha, waiting outside the workshop."
+            "text": "Three letters from the same address, all unopened."
           },
           {
             "id": "D",
-            "text": "Asha stayed until the theater closed."
+            "text": "Three letters from the same address and all of them unopened."
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "Because makes this dependent, with no main clause.",
-          "B": "While introduces a dependent clause without a main clause.",
-          "C": "The participle waiting is not a finite main verb.",
-          "D": "The independent clause has the subject and finite verb stayed; the until clause adds detail."
+          "A": "The group names letters and describes them but never says what happened.",
+          "B": "Came is the main verb the group needs before it can stand as a sentence.",
+          "C": "Trimming words shortens the fragment without giving it a verb.",
+          "D": "Joining the halves with and produces a longer phrase, not a sentence."
         }
       },
       {
@@ -1853,165 +1853,165 @@
         "id": "exp26-english-057",
         "section": "english",
         "topic": "modifiers",
-        "difficulty": "easy",
-        "context": "Which sentence clearly indicates that Theo was carrying a clipboard?",
+        "difficulty": "medium",
+        "context": "«After sealing the last crate, the truck was loaded» before dark.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Carrying a clipboard, Theo entered the reading room."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Carrying a clipboard, the reading room welcomed Theo."
+            "text": "After sealing the last crate, we loaded the truck"
           },
           {
             "id": "C",
-            "text": "Carrying a clipboard, the door opened for Theo."
+            "text": "Having sealed the last crate, the truck was loaded"
           },
           {
             "id": "D",
-            "text": "Carrying a clipboard, the arrival of Theo was noticed."
+            "text": "Sealing the last crate, the truck was loaded"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Place the person doing the action immediately after the introductory modifier.",
-          "B": "The introductory modifier attaches to the room.",
-          "C": "The modifier incorrectly describes the door.",
-          "D": "An arrival cannot carry a clipboard."
+          "A": "The opening phrase has nobody to attach to, so the truck seems to be sealing.",
+          "B": "Naming we as the subject gives the opening phrase somebody it can describe.",
+          "C": "Changing the form of the phrase leaves it still describing the truck.",
+          "D": "Dropping after shortens the phrase without supplying a human subject."
         }
       },
       {
         "id": "exp26-english-058",
         "section": "english",
         "topic": "parallelism",
-        "difficulty": "easy",
-        "context": "\"Theo planned to sort the maps, check the schedule, and ___.\" Which choice maintains parallel structure?",
+        "difficulty": "medium",
+        "context": "Nadia spent the winter repairing the roof and «to rebuild the stair».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "a locked door"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "lock the door"
+            "text": "rebuilding the stair"
           },
           {
             "id": "C",
-            "text": "locking the door"
+            "text": "rebuilt the stair"
           },
           {
             "id": "D",
-            "text": "the door was locked"
+            "text": "the rebuilding of the stair"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "A noun phrase does not complete the parallel series.",
-          "B": "The shared to governs three parallel verbs: to organize the items, check, and lock.",
-          "C": "An -ing form does not match the two bare verbs governed by to.",
-          "D": "A complete clause does not match the verb phrases."
+          "A": "An infinitive cannot be joined by and to the -ing form before it.",
+          "B": "Rebuilding matches repairing, so both describe how the winter was spent.",
+          "C": "A past-tense verb leaves the sentence with two unconnected predicates.",
+          "D": "A noun phrase does not match the -ing form on the other side of and."
         }
       },
       {
         "id": "exp26-english-059",
         "section": "english",
         "topic": "colons",
-        "difficulty": "easy",
-        "context": "Which sentence about the library uses a colon correctly?",
+        "difficulty": "medium",
+        "context": "Three names were struck from the register«; Hallam, Reed and Ojo».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "The library: needed a new schedule."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "The library needed a: new schedule."
+            "text": ": Hallam, Reed and Ojo"
           },
           {
             "id": "C",
-            "text": "The library needed one thing: a new schedule."
+            "text": ", Hallam, Reed and Ojo"
           },
           {
             "id": "D",
-            "text": "The library needed: a new schedule."
+            "text": " — Hallam: Reed and Ojo"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "The colon separates the subject from its verb.",
-          "B": "The colon splits a noun phrase.",
-          "C": "The words before the colon form a complete sentence; the words after it identify the one thing.",
-          "D": "The colon interrupts a verb and its direct object."
+          "A": "A semicolon must have a complete sentence after it, and a list is not one.",
+          "B": "A complete sentence stands before the mark, so a colon introduces the names.",
+          "C": "A comma makes the names look like a fourth item in some larger series.",
+          "D": "The colon inside the list splits two names off from the first for no reason."
         }
       },
       {
         "id": "exp26-english-060",
         "section": "english",
         "topic": "run-ons",
-        "difficulty": "easy",
-        "context": "Which version correctly joins the clauses about Theo's arrival at the library?",
+        "difficulty": "medium",
+        "context": "The tide turns at four«, the boats leave an hour later».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Theo arrived early, the library was still closed."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Theo arrived early the library was still closed."
+            "text": "; the boats leave an hour later"
           },
           {
             "id": "C",
-            "text": "Theo arrived early; but, the library was still closed."
+            "text": " the boats leave an hour later"
           },
           {
             "id": "D",
-            "text": "Theo arrived early; the library was still closed."
+            "text": ", the boats leaving an hour later"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "A comma alone creates a comma splice.",
-          "B": "This fuses two independent clauses without punctuation.",
-          "C": "The comma after but is unnecessary, and the coordinated clauses should use a comma before but.",
-          "D": "A semicolon can join two closely related independent clauses."
+          "A": "A comma alone cannot hold two complete sentences together.",
+          "B": "A semicolon joins two closely related sentences without needing a conjunction.",
+          "C": "Removing the comma leaves the two sentences fused end to end.",
+          "D": "The -ing form strips the second half of a verb that can stand on its own."
         }
       },
       {
         "id": "exp26-english-061",
         "section": "english",
         "topic": "fragments",
-        "difficulty": "easy",
-        "context": "Which choice about Theo's visit to the library is a complete sentence?",
+        "difficulty": "medium",
+        "context": "«Because the harbour master had refused to sign the clearance.»",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Theo stayed until the library closed."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Because Theo stayed until closing."
+            "text": "The harbour master had refused to sign the clearance."
           },
           {
             "id": "C",
-            "text": "While Theo waited outside the reading room."
+            "text": "Because the harbour master had refused the clearance."
           },
           {
             "id": "D",
-            "text": "Theo, waiting outside the reading room."
+            "text": "Because the harbour master, who refused to sign the clearance."
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "The independent clause has the subject and finite verb stayed; the until clause adds detail.",
-          "B": "Because makes this dependent, with no main clause.",
-          "C": "While introduces a dependent clause without a main clause.",
-          "D": "The participle waiting is not a finite main verb."
+          "A": "Because turns a complete sentence into a clause that needs a main one.",
+          "B": "Dropping because leaves a subject and a verb that stand on their own.",
+          "C": "Shortening the clause does not remove the word making it dependent.",
+          "D": "A relative clause buries the verb and leaves the fragment worse than before."
         }
       },
       {
@@ -2414,165 +2414,165 @@
         "id": "exp26-english-074",
         "section": "english",
         "topic": "modifiers",
-        "difficulty": "easy",
-        "context": "Which sentence clearly indicates that Nora was carrying a clipboard?",
+        "difficulty": "medium",
+        "context": "«While repairing the organ, three pipes were found» to be missing.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Carrying a clipboard, the arrival of Nora was noticed."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Carrying a clipboard, Nora entered the laboratory."
+            "text": "While repairing the organ, the tuner found three pipes"
           },
           {
             "id": "C",
-            "text": "Carrying a clipboard, the laboratory welcomed Nora."
+            "text": "While repairing the organ, three pipes were discovered"
           },
           {
             "id": "D",
-            "text": "Carrying a clipboard, the door opened for Nora."
+            "text": "Repairing the organ, three pipes were found"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "An arrival cannot carry a clipboard.",
-          "B": "Place the person doing the action immediately after the introductory modifier.",
-          "C": "The introductory modifier attaches to the room.",
-          "D": "The modifier incorrectly describes the door."
+          "A": "The opening clause describes the subject, and pipes cannot repair an organ.",
+          "B": "Putting the tuner after the comma gives the opening clause someone to describe.",
+          "C": "Changing the verb leaves the pipes doing the repairing just as before.",
+          "D": "Dropping while makes the opener shorter but no less dangling."
         }
       },
       {
         "id": "exp26-english-075",
         "section": "english",
         "topic": "parallelism",
-        "difficulty": "easy",
-        "context": "\"Nora planned to clean the lenses, check the schedule, and ___.\" Which choice maintains parallel structure?",
+        "difficulty": "medium",
+        "context": "The report praised the crew for their speed and «because they were careful».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "the door was locked"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "a locked door"
+            "text": "their care"
           },
           {
             "id": "C",
-            "text": "lock the door"
+            "text": "how careful"
           },
           {
             "id": "D",
-            "text": "locking the door"
+            "text": "that they were careful"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "A complete clause does not match the verb phrases.",
-          "B": "A noun phrase does not complete the parallel series.",
-          "C": "The shared to governs three parallel verbs: to organize the items, check, and lock.",
-          "D": "An -ing form does not match the two bare verbs governed by to."
+          "A": "A because-clause cannot be joined to a noun phrase by a single and.",
+          "B": "Their care matches their speed, the item already governed by for.",
+          "C": "A how-phrase is not the kind of thing the preposition for can take.",
+          "D": "A that-clause is a sentence in miniature and will not sit beside a noun."
         }
       },
       {
         "id": "exp26-english-076",
         "section": "english",
         "topic": "colons",
-        "difficulty": "easy",
-        "context": "Which sentence about the observatory uses a colon correctly?",
+        "difficulty": "medium",
+        "context": "The archive keeps two kinds of record«: those that are catalogued and those that are not».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "The observatory needed: a new schedule."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "The observatory: needed a new schedule."
+            "text": "; those that are catalogued and those that are not"
           },
           {
             "id": "C",
-            "text": "The observatory needed a: new schedule."
+            "text": ", those that are catalogued and those that are not"
           },
           {
             "id": "D",
-            "text": "The observatory needed one thing: a new schedule."
+            "text": " those that are catalogued and those that are not"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "The colon interrupts a verb and its direct object.",
-          "B": "The colon separates the subject from its verb.",
-          "C": "The colon splits a noun phrase.",
-          "D": "The words before the colon form a complete sentence; the words after it identify the one thing."
+          "A": "The words before the colon are a sentence, and the colon delivers what they promise.",
+          "B": "A semicolon joins two sentences, and the second half here is not one.",
+          "C": "A comma is too weak to carry the announcement made before it.",
+          "D": "With nothing between them the two halves of the sentence collide."
         }
       },
       {
         "id": "exp26-english-077",
         "section": "english",
         "topic": "run-ons",
-        "difficulty": "easy",
-        "context": "Which version correctly joins the clauses about Nora's arrival at the observatory?",
+        "difficulty": "medium",
+        "context": "Petrov rewired the whole gallery«, the job took eleven weeks».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Nora arrived early; the observatory was still closed."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Nora arrived early, the observatory was still closed."
+            "text": "; the job took eleven weeks"
           },
           {
             "id": "C",
-            "text": "Nora arrived early the observatory was still closed."
+            "text": " the job took eleven weeks"
           },
           {
             "id": "D",
-            "text": "Nora arrived early; but, the observatory was still closed."
+            "text": ", the job taking eleven weeks"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "A semicolon can join two closely related independent clauses.",
-          "B": "A comma alone creates a comma splice.",
-          "C": "This fuses two independent clauses without punctuation.",
-          "D": "The comma after but is unnecessary, and the coordinated clauses should use a comma before but."
+          "A": "Both halves are complete sentences, which a comma cannot join by itself.",
+          "B": "The two statements are closely related, and a semicolon links them directly.",
+          "C": "Without punctuation the second sentence crashes into the first.",
+          "D": "Taking is not a main verb, so the second half stops being a sentence."
         }
       },
       {
         "id": "exp26-english-078",
         "section": "english",
         "topic": "fragments",
-        "difficulty": "easy",
-        "context": "Which choice about Nora's visit to the observatory is a complete sentence?",
+        "difficulty": "medium",
+        "context": "«Sorting through the ledgers in the strongroom all that week.»",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Nora, waiting outside the laboratory."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Nora stayed until the observatory closed."
+            "text": "She sorted through the ledgers in the strongroom that week."
           },
           {
             "id": "C",
-            "text": "Because Nora stayed until closing."
+            "text": "Sorting through the ledgers in the strongroom that week."
           },
           {
             "id": "D",
-            "text": "While Nora waited outside the laboratory."
+            "text": "While sorting through the ledgers in the strongroom that week."
           }
         ],
         "answer": "B",
         "why": {
-          "A": "The participle waiting is not a finite main verb.",
-          "B": "The independent clause has the subject and finite verb stayed; the until clause adds detail.",
-          "C": "Because makes this dependent, with no main clause.",
-          "D": "While introduces a dependent clause without a main clause."
+          "A": "An -ing form is not a main verb, so the group never becomes a sentence.",
+          "B": "A subject and a past-tense verb give the group what a sentence needs.",
+          "C": "Cutting a word leaves the -ing form doing work it cannot do.",
+          "D": "While makes the group a dependent clause, which is further from a sentence."
         }
       },
       {
@@ -2975,165 +2975,165 @@
         "id": "exp26-english-091",
         "section": "english",
         "topic": "modifiers",
-        "difficulty": "easy",
-        "context": "Which sentence clearly indicates that Inez was carrying a clipboard?",
+        "difficulty": "medium",
+        "context": "«To qualify for the grant, the application must arrive» before the first of May.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Carrying a clipboard, the door opened for Inez."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Carrying a clipboard, the arrival of Inez was noticed."
+            "text": "To qualify for the grant, you must send the application"
           },
           {
             "id": "C",
-            "text": "Carrying a clipboard, Inez entered the gallery."
+            "text": "To qualify for the grant, the application has to arrive"
           },
           {
             "id": "D",
-            "text": "Carrying a clipboard, the gallery welcomed Inez."
+            "text": "Qualifying for the grant, the application must arrive"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "The modifier incorrectly describes the door.",
-          "B": "An arrival cannot carry a clipboard.",
-          "C": "Place the person doing the action immediately after the introductory modifier.",
-          "D": "The introductory modifier attaches to the room."
+          "A": "An infinitive opener describes the subject, and an application cannot qualify.",
+          "B": "Naming you as the subject supplies someone who is able to qualify.",
+          "C": "Rewording the verb leaves the application still doing the qualifying.",
+          "D": "The participle changes the shape of the opener but not what it describes."
         }
       },
       {
         "id": "exp26-english-092",
         "section": "english",
         "topic": "parallelism",
-        "difficulty": "easy",
-        "context": "\"Inez planned to display the sketches, check the schedule, and ___.\" Which choice maintains parallel structure?",
+        "difficulty": "medium",
+        "context": "The scheme was cheap to set up, simple to run, and «it lasted a long time».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "locking the door"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "the door was locked"
+            "text": "slow to wear out"
           },
           {
             "id": "C",
-            "text": "a locked door"
+            "text": "lasting a long time"
           },
           {
             "id": "D",
-            "text": "lock the door"
+            "text": "of long duration"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "An -ing form does not match the two bare verbs governed by to.",
-          "B": "A complete clause does not match the verb phrases.",
-          "C": "A noun phrase does not complete the parallel series.",
-          "D": "The shared to governs three parallel verbs: to organize the items, check, and lock."
+          "A": "The first two items are adjectives with infinitives, not full clauses.",
+          "B": "Slow to wear out repeats the adjective and infinitive shape of the other two.",
+          "C": "An -ing phrase does not match an adjective followed by an infinitive.",
+          "D": "A prepositional phrase is a fourth shape rather than the one already set."
         }
       },
       {
         "id": "exp26-english-093",
         "section": "english",
         "topic": "colons",
-        "difficulty": "easy",
-        "context": "Which sentence about the studio uses a colon correctly?",
+        "difficulty": "medium",
+        "context": "She had one condition«, that the letters stay sealed».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "The studio needed one thing: a new schedule."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "The studio needed: a new schedule."
+            "text": ": that the letters stay sealed"
           },
           {
             "id": "C",
-            "text": "The studio: needed a new schedule."
+            "text": "; that the letters stay sealed"
           },
           {
             "id": "D",
-            "text": "The studio needed a: new schedule."
+            "text": ": that the letters, stay sealed"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "The words before the colon form a complete sentence; the words after it identify the one thing.",
-          "B": "The colon interrupts a verb and its direct object.",
-          "C": "The colon separates the subject from its verb.",
-          "D": "The colon splits a noun phrase."
+          "A": "A comma cannot introduce the clause that spells out what the condition was.",
+          "B": "A colon follows the complete sentence and delivers the condition it named.",
+          "C": "A semicolon needs a sentence after it, and a that-clause is not one.",
+          "D": "The added comma splits the subject of the clause from its own verb."
         }
       },
       {
         "id": "exp26-english-094",
         "section": "english",
         "topic": "run-ons",
-        "difficulty": "easy",
-        "context": "Which version correctly joins the clauses about Inez's arrival at the studio?",
+        "difficulty": "medium",
+        "context": "Nobody had warned the tenants«, the water was shut off at seven».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Inez arrived early; but, the studio was still closed."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Inez arrived early; the studio was still closed."
+            "text": "; the water was shut off at seven"
           },
           {
             "id": "C",
-            "text": "Inez arrived early, the studio was still closed."
+            "text": " the water was shut off at seven"
           },
           {
             "id": "D",
-            "text": "Inez arrived early the studio was still closed."
+            "text": ", the water being shut off at seven"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "The comma after but is unnecessary, and the coordinated clauses should use a comma before but.",
-          "B": "A semicolon can join two closely related independent clauses.",
-          "C": "A comma alone creates a comma splice.",
-          "D": "This fuses two independent clauses without punctuation."
+          "A": "A comma is holding apart two statements that could each stand alone.",
+          "B": "A semicolon joins the warning and the shut-off without spelling out the link.",
+          "C": "With no mark at all the two sentences are fused into one.",
+          "D": "Being turns the second half into a phrase hanging off the first."
         }
       },
       {
         "id": "exp26-english-095",
         "section": "english",
         "topic": "fragments",
-        "difficulty": "easy",
-        "context": "Which choice about Inez's visit to the studio is a complete sentence?",
+        "difficulty": "medium",
+        "context": "The crew waited two days for the wind. «Then giving up and rowing for the point.»",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "While Inez waited outside the gallery."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Inez, waiting outside the gallery."
+            "text": "Then they gave up and rowed for the point."
           },
           {
             "id": "C",
-            "text": "Inez stayed until the studio closed."
+            "text": "Then giving up and rowing for the point later."
           },
           {
             "id": "D",
-            "text": "Because Inez stayed until closing."
+            "text": "Then, giving up, rowing for the point."
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "While introduces a dependent clause without a main clause.",
-          "B": "The participle waiting is not a finite main verb.",
-          "C": "The independent clause has the subject and finite verb stayed; the until clause adds detail.",
-          "D": "Because makes this dependent, with no main clause."
+          "A": "Both verbs are -ing forms, so the second group has no main verb at all.",
+          "B": "Adding they and past-tense verbs turns the group into a sentence of its own.",
+          "C": "Another word at the end does not give the group a verb that can stand alone.",
+          "D": "Commas rearrange the phrase without supplying a main verb."
         }
       },
       {
@@ -3536,165 +3536,165 @@
         "id": "exp26-english-108",
         "section": "english",
         "topic": "modifiers",
-        "difficulty": "easy",
-        "context": "Which sentence clearly indicates that Omar was carrying a clipboard?",
+        "difficulty": "hard",
+        "context": "The inspector «only found two cracks» in the entire span.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Carrying a clipboard, the office welcomed Omar."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Carrying a clipboard, the door opened for Omar."
+            "text": "found only two cracks"
           },
           {
             "id": "C",
-            "text": "Carrying a clipboard, the arrival of Omar was noticed."
+            "text": "found two only cracks"
           },
           {
             "id": "D",
-            "text": "Carrying a clipboard, Omar entered the office."
+            "text": "had only found two cracks"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The introductory modifier attaches to the room.",
-          "B": "The modifier incorrectly describes the door.",
-          "C": "An arrival cannot carry a clipboard.",
-          "D": "Place the person doing the action immediately after the introductory modifier."
+          "A": "Only sits beside found, so it limits the finding rather than the number.",
+          "B": "Placing only in front of two cracks limits the count, which is the meaning.",
+          "C": "Only cannot slip between a number and the noun that it counts.",
+          "D": "Adding an auxiliary does not move only away from the verb."
         }
       },
       {
         "id": "exp26-english-109",
         "section": "english",
         "topic": "parallelism",
-        "difficulty": "easy",
-        "context": "\"Omar planned to update the timetables, check the schedule, and ___.\" Which choice maintains parallel structure?",
+        "difficulty": "hard",
+        "context": "The grant covers travel to the site, lodging near the harbour, and «for the hire of a boat».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "lock the door"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "locking the door"
+            "text": "hire of a boat"
           },
           {
             "id": "C",
-            "text": "the door was locked"
+            "text": "to hire a boat"
           },
           {
             "id": "D",
-            "text": "a locked door"
+            "text": "the hiring of boats"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "The shared to governs three parallel verbs: to organize the items, check, and lock.",
-          "B": "An -ing form does not match the two bare verbs governed by to.",
-          "C": "A complete clause does not match the verb phrases.",
-          "D": "A noun phrase does not complete the parallel series."
+          "A": "The other two items carry no preposition, so for breaks the run of objects.",
+          "B": "Hire of a boat matches travel to the site and lodging near the harbour.",
+          "C": "An infinitive does not match two noun phrases already joined to covers.",
+          "D": "Adding an article and a plural moves further from the pattern, not closer."
         }
       },
       {
         "id": "exp26-english-110",
         "section": "english",
         "topic": "colons",
-        "difficulty": "easy",
-        "context": "Which sentence about the station uses a colon correctly?",
+        "difficulty": "hard",
+        "context": "The three items on the manifest were«: rope, canvas and tar».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "The station needed a: new schedule."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "The station needed one thing: a new schedule."
+            "text": " rope, canvas and tar"
           },
           {
             "id": "C",
-            "text": "The station needed: a new schedule."
+            "text": ": rope; canvas and tar"
           },
           {
             "id": "D",
-            "text": "The station: needed a new schedule."
+            "text": ", rope, canvas and tar"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "The colon splits a noun phrase.",
-          "B": "The words before the colon form a complete sentence; the words after it identify the one thing.",
-          "C": "The colon interrupts a verb and its direct object.",
-          "D": "The colon separates the subject from its verb."
+          "A": "A colon needs a complete sentence before it, and were leaves one hanging.",
+          "B": "The verb runs straight into the list that completes it, so nothing goes between.",
+          "C": "The colon still follows an unfinished sentence, and the semicolon adds noise.",
+          "D": "A comma after were separates the verb from the list it needs."
         }
       },
       {
         "id": "exp26-english-111",
         "section": "english",
         "topic": "run-ons",
-        "difficulty": "easy",
-        "context": "Which version correctly joins the clauses about Omar's arrival at the station?",
+        "difficulty": "hard",
+        "context": "The hull was sound«, however the rigging had rotted through».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Omar arrived early the station was still closed."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Omar arrived early; but, the station was still closed."
+            "text": "; however, the rigging had rotted through"
           },
           {
             "id": "C",
-            "text": "Omar arrived early; the station was still closed."
+            "text": ", however, the rigging had rotted through"
           },
           {
             "id": "D",
-            "text": "Omar arrived early, the station was still closed."
+            "text": " however the rigging had rotted through"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "This fuses two independent clauses without punctuation.",
-          "B": "The comma after but is unnecessary, and the coordinated clauses should use a comma before but.",
-          "C": "A semicolon can join two closely related independent clauses.",
-          "D": "A comma alone creates a comma splice."
+          "A": "However is an adverb, not a conjunction, so the comma is joining nothing.",
+          "B": "The semicolon does the joining and the comma sets however off as an aside.",
+          "C": "A second comma does not change that however cannot link two sentences.",
+          "D": "Taking the punctuation away leaves the sentences running straight together."
         }
       },
       {
         "id": "exp26-english-112",
         "section": "english",
         "topic": "fragments",
-        "difficulty": "easy",
-        "context": "Which choice about Omar's visit to the station is a complete sentence?",
+        "difficulty": "hard",
+        "context": "The bell was recast in 1847. «Which is why the inscription gives two dates.»",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Because Omar stayed until closing."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "While Omar waited outside the office."
+            "text": "That is why the inscription gives two dates."
           },
           {
             "id": "C",
-            "text": "Omar, waiting outside the office."
+            "text": "Which is the reason the inscription gives two dates."
           },
           {
             "id": "D",
-            "text": "Omar stayed until the station closed."
+            "text": "Which explains why the inscription gives two dates."
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "Because makes this dependent, with no main clause.",
-          "B": "While introduces a dependent clause without a main clause.",
-          "C": "The participle waiting is not a finite main verb.",
-          "D": "The independent clause has the subject and finite verb stayed; the until clause adds detail."
+          "A": "Which opens a clause that has to attach to a sentence rather than start one.",
+          "B": "That is a subject in its own right, so the group becomes a full sentence.",
+          "C": "Rewording the middle leaves which at the front, still needing a host.",
+          "D": "Which explains is still a relative clause and cannot stand by itself."
         }
       },
       {
@@ -4097,165 +4097,165 @@
         "id": "exp26-english-125",
         "section": "english",
         "topic": "modifiers",
-        "difficulty": "easy",
-        "context": "Which sentence clearly indicates that Wren was carrying a clipboard?",
+        "difficulty": "hard",
+        "context": "«Born in Trieste and trained in Vienna, the catalogue was written by Elsa Novak» in 1931.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Carrying a clipboard, Wren entered the music room."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Carrying a clipboard, the music room welcomed Wren."
+            "text": "Elsa Novak, born in Trieste and trained in Vienna, wrote the catalogue"
           },
           {
             "id": "C",
-            "text": "Carrying a clipboard, the door opened for Wren."
+            "text": "Born in Trieste and trained in Vienna, the catalogue was Elsa Novak's"
           },
           {
             "id": "D",
-            "text": "Carrying a clipboard, the arrival of Wren was noticed."
+            "text": "Having been born in Trieste and trained in Vienna, the catalogue was written"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Place the person doing the action immediately after the introductory modifier.",
-          "B": "The introductory modifier attaches to the room.",
-          "C": "The modifier incorrectly describes the door.",
-          "D": "An arrival cannot carry a clipboard."
+          "A": "The opening phrases describe a person, but a catalogue follows them instead.",
+          "B": "Putting Elsa Novak straight after the phrases gives them someone to describe.",
+          "C": "The catalogue still stands where a person belongs, so the phrases dangle.",
+          "D": "Lengthening the opener leaves the catalogue being born in Trieste."
         }
       },
       {
         "id": "exp26-english-126",
         "section": "english",
         "topic": "parallelism",
-        "difficulty": "easy",
-        "context": "\"Wren planned to inspect the instruments, check the schedule, and ___.\" Which choice maintains parallel structure?",
+        "difficulty": "hard",
+        "context": "She was interested not only in the ledgers «but the letters as well».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "a locked door"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "lock the door"
+            "text": "but also in the letters"
           },
           {
             "id": "C",
-            "text": "locking the door"
+            "text": "but in the letters as well"
           },
           {
             "id": "D",
-            "text": "the door was locked"
+            "text": "but also the letters"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "A noun phrase does not complete the parallel series.",
-          "B": "The shared to governs three parallel verbs: to organize the items, check, and lock.",
-          "C": "An -ing form does not match the two bare verbs governed by to.",
-          "D": "A complete clause does not match the verb phrases."
+          "A": "Not only pairs with but also, and the preposition has to appear twice.",
+          "B": "Repeating in after but also gives both halves the same shape.",
+          "C": "The preposition returns but the partner of not only has gone missing.",
+          "D": "Without a second in, the letters hang off interested rather than off in."
         }
       },
       {
         "id": "exp26-english-127",
         "section": "english",
         "topic": "colons",
-        "difficulty": "easy",
-        "context": "Which sentence about the school uses a colon correctly?",
+        "difficulty": "hard",
+        "context": "The survey consisted of«: two dives, a sonar run and a week of plotting».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "The school: needed a new schedule."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "The school needed a: new schedule."
+            "text": " two dives, a sonar run and a week of plotting"
           },
           {
             "id": "C",
-            "text": "The school needed one thing: a new schedule."
+            "text": ": two dives; a sonar run and a week of plotting"
           },
           {
             "id": "D",
-            "text": "The school needed: a new schedule."
+            "text": ", two dives, a sonar run and a week of plotting"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "The colon separates the subject from its verb.",
-          "B": "The colon splits a noun phrase.",
-          "C": "The words before the colon form a complete sentence; the words after it identify the one thing.",
-          "D": "The colon interrupts a verb and its direct object."
+          "A": "A colon cannot follow a preposition, which leaves the sentence unfinished.",
+          "B": "Of takes its objects directly, so the list follows with no mark at all.",
+          "C": "The semicolon groups the items oddly and the colon still follows of.",
+          "D": "A comma cuts the preposition off from the objects that complete it."
         }
       },
       {
         "id": "exp26-english-128",
         "section": "english",
         "topic": "run-ons",
-        "difficulty": "easy",
-        "context": "Which version correctly joins the clauses about Wren's arrival at the school?",
+        "difficulty": "hard",
+        "context": "The chart showed no reef here«, nevertheless the keel struck something hard».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Wren arrived early, the school was still closed."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Wren arrived early the school was still closed."
+            "text": ". Nevertheless, the keel struck something hard"
           },
           {
             "id": "C",
-            "text": "Wren arrived early; but, the school was still closed."
+            "text": ", nevertheless, the keel struck something hard"
           },
           {
             "id": "D",
-            "text": "Wren arrived early; the school was still closed."
+            "text": " nevertheless the keel struck something hard"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "A comma alone creates a comma splice.",
-          "B": "This fuses two independent clauses without punctuation.",
-          "C": "The comma after but is unnecessary, and the coordinated clauses should use a comma before but.",
-          "D": "A semicolon can join two closely related independent clauses."
+          "A": "Nevertheless cannot join two sentences however strongly it contrasts them.",
+          "B": "Splitting the halves into two sentences lets nevertheless open the second.",
+          "C": "Commas around nevertheless leave the splice beneath it exactly as it was.",
+          "D": "Removing the comma fuses the two sentences rather than fixing the join."
         }
       },
       {
         "id": "exp26-english-129",
         "section": "english",
         "topic": "fragments",
-        "difficulty": "easy",
-        "context": "Which choice about Wren's visit to the school is a complete sentence?",
+        "difficulty": "hard",
+        "context": "«Who had been keeping the tide log since her father died.»",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Wren stayed until the school closed."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Because Wren stayed until closing."
+            "text": "She had been keeping the tide log since her father died."
           },
           {
             "id": "C",
-            "text": "While Wren waited outside the music room."
+            "text": "Who had gone on keeping the tide log after her father died."
           },
           {
             "id": "D",
-            "text": "Wren, waiting outside the music room."
+            "text": "Who it was that had kept the tide log since he died."
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "The independent clause has the subject and finite verb stayed; the until clause adds detail.",
-          "B": "Because makes this dependent, with no main clause.",
-          "C": "While introduces a dependent clause without a main clause.",
-          "D": "The participle waiting is not a finite main verb."
+          "A": "Who begins a clause describing somebody named in another sentence.",
+          "B": "Replacing who with she gives the clause a subject and makes it a sentence.",
+          "C": "The wording changes but who still leaves the group hanging on something else.",
+          "D": "Extra words do not free the clause from the who that opens it."
         }
       },
       {
@@ -4658,165 +4658,165 @@
         "id": "exp26-english-142",
         "section": "english",
         "topic": "modifiers",
-        "difficulty": "easy",
-        "context": "Which sentence clearly indicates that Ravi was carrying a clipboard?",
+        "difficulty": "hard",
+        "context": "The storm «nearly damaged every roof» on the seafront.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Carrying a clipboard, the arrival of Ravi was noticed."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Carrying a clipboard, Ravi entered the sound booth."
+            "text": "damaged nearly every roof"
           },
           {
             "id": "C",
-            "text": "Carrying a clipboard, the sound booth welcomed Ravi."
+            "text": "damaged every roof nearly"
           },
           {
             "id": "D",
-            "text": "Carrying a clipboard, the door opened for Ravi."
+            "text": "nearly had damaged every roof"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "An arrival cannot carry a clipboard.",
-          "B": "Place the person doing the action immediately after the introductory modifier.",
-          "C": "The introductory modifier attaches to the room.",
-          "D": "The modifier incorrectly describes the door."
+          "A": "Nearly sits beside damaged, so the storm merely came close to doing harm.",
+          "B": "Placing nearly before every roof counts the roofs, which is the meaning wanted.",
+          "C": "Ending with nearly says each roof was almost damaged rather than most were.",
+          "D": "Adding an auxiliary keeps nearly attached to the verb it should not modify."
         }
       },
       {
         "id": "exp26-english-143",
         "section": "english",
         "topic": "parallelism",
-        "difficulty": "easy",
-        "context": "\"Ravi planned to organize the recordings, check the schedule, and ___.\" Which choice maintains parallel structure?",
+        "difficulty": "hard",
+        "context": "The committee wanted a plan that was cheap to build, that local firms could maintain, and «durable».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "the door was locked"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "a locked door"
+            "text": "that would last for decades"
           },
           {
             "id": "C",
-            "text": "lock the door"
+            "text": "with durability designed in"
           },
           {
             "id": "D",
-            "text": "locking the door"
+            "text": "lasting a long time"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "A complete clause does not match the verb phrases.",
-          "B": "A noun phrase does not complete the parallel series.",
-          "C": "The shared to governs three parallel verbs: to organize the items, check, and lock.",
-          "D": "An -ing form does not match the two bare verbs governed by to."
+          "A": "The first two items are that-clauses, so a bare adjective breaks the run.",
+          "B": "A third that-clause matches the shape of the two items before it.",
+          "C": "A with-phrase does not match the two clauses it has been joined to.",
+          "D": "An -ing phrase is a third shape in a list that already had one."
         }
       },
       {
         "id": "exp26-english-144",
         "section": "english",
         "topic": "colons",
-        "difficulty": "easy",
-        "context": "Which sentence about the center uses a colon correctly?",
+        "difficulty": "hard",
+        "context": "The one thing nobody expected to find«: was the ship's bell».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "The center needed: a new schedule."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "The center: needed a new schedule."
+            "text": " was the ship's bell"
           },
           {
             "id": "C",
-            "text": "The center needed a: new schedule."
+            "text": ", was the ship's bell"
           },
           {
             "id": "D",
-            "text": "The center needed one thing: a new schedule."
+            "text": "; was the ship's bell"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The colon interrupts a verb and its direct object.",
-          "B": "The colon separates the subject from its verb.",
-          "C": "The colon splits a noun phrase.",
-          "D": "The words before the colon form a complete sentence; the words after it identify the one thing."
+          "A": "What comes before the colon is a noun phrase rather than a whole sentence.",
+          "B": "The subject runs straight into its verb, so nothing is punctuated between them.",
+          "C": "A comma still separates the subject from the verb that belongs to it.",
+          "D": "A semicolon demands a sentence on both sides, and neither half is one."
         }
       },
       {
         "id": "exp26-english-145",
         "section": "english",
         "topic": "run-ons",
-        "difficulty": "easy",
-        "context": "Which version correctly joins the clauses about Ravi's arrival at the center?",
+        "difficulty": "hard",
+        "context": "The pump ran all night«, thus the cellar stayed dry until the tide dropped».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Ravi arrived early; the center was still closed."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Ravi arrived early, the center was still closed."
+            "text": ", so the cellar stayed dry until the tide dropped"
           },
           {
             "id": "C",
-            "text": "Ravi arrived early the center was still closed."
+            "text": ", thus, the cellar stayed dry until the tide dropped"
           },
           {
             "id": "D",
-            "text": "Ravi arrived early; but, the center was still closed."
+            "text": " thus the cellar stayed dry until the tide dropped"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "A semicolon can join two closely related independent clauses.",
-          "B": "A comma alone creates a comma splice.",
-          "C": "This fuses two independent clauses without punctuation.",
-          "D": "The comma after but is unnecessary, and the coordinated clauses should use a comma before but."
+          "A": "Thus is an adverb, so the comma is left joining two sentences by itself.",
+          "B": "So is a conjunction, and a comma before one is how two sentences join.",
+          "C": "Fencing thus with commas leaves the comma splice underneath untouched.",
+          "D": "Dropping the comma turns a splice into a fused sentence, which is no better."
         }
       },
       {
         "id": "exp26-english-146",
         "section": "english",
         "topic": "fragments",
-        "difficulty": "easy",
-        "context": "Which choice about Ravi's visit to the center is a complete sentence?",
+        "difficulty": "hard",
+        "context": "Novak left the drawings to the city. «Whose archive had no room for them at the time.»",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Ravi, waiting outside the sound booth."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Ravi stayed until the center closed."
+            "text": "Its archive had no room for them at the time."
           },
           {
             "id": "C",
-            "text": "Because Ravi stayed until closing."
+            "text": "Whose archive had no room for them just then."
           },
           {
             "id": "D",
-            "text": "While Ravi waited outside the sound booth."
+            "text": "Whose archive, having no room for them at the time."
           }
         ],
         "answer": "B",
         "why": {
-          "A": "The participle waiting is not a finite main verb.",
-          "B": "The independent clause has the subject and finite verb stayed; the until clause adds detail.",
-          "C": "Because makes this dependent, with no main clause.",
-          "D": "While introduces a dependent clause without a main clause."
+          "A": "Whose opens a clause belonging to a noun in the sentence before it.",
+          "B": "Its is a possessive pronoun that can begin a sentence of its own.",
+          "C": "Trimming the end leaves whose in front, so the group still cannot stand.",
+          "D": "The -ing form replaces the only verb and leaves the group further adrift."
         }
       },
       {
