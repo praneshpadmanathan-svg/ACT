@@ -5,9 +5,17 @@
 # failing test and a type error and nothing anywhere would say so; the first
 # signal was a red deploy on `main`.
 #
-# The jobs below are the same commands `npm run build` runs, split apart so a
-# failure names itself. One combined step that says "build failed" makes you go
-# read the log to find out whether it was the linter, a test, or the compiler.
+# The jobs below are every command `npm run build` runs, split apart so a
+# failure names itself — one combined step that says "build failed" makes you
+# go read the log to find out whether it was the linter, a test, or the
+# compiler — plus two the build chain leaves out, `format:check` and
+# `typecheck`. That asymmetry is deliberate: formatting is not worth failing a
+# local build over, and `tsc -b` inside the build is incremental where
+# `typecheck` is not. It does mean a clean `npm run build` is not on its own
+# proof that CI will pass, which is worth knowing before pushing.
+#
+# Keep this list and `package.json`'s `build` script in step. The last time
+# they drifted, CI spent four days failing on a script that no longer existed.
 #
 # No secrets. Every `VITE_*` variable this app reads is optional and falls back
 # (`cloudEnabled` is simply false without Supabase credentials), so CI builds

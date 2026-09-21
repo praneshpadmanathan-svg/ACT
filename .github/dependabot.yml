@@ -13,15 +13,40 @@ updates:
     schedule:
       interval: monthly
     open-pull-requests-limit: 3
+    ignore:
+      # TypeScript 7 cannot be installed in this project at all. Every
+      # published typescript-eslint — 8.70.0 is the newest — declares
+      # `peer typescript ">=4.8.4 <6.1.0"`, and npm rejects the whole tree
+      # rather than warning about it. PR #10 proposed typescript ^7.0.2 inside
+      # the dev group and died at `npm ci`, on step four, before one check ran.
+      #
+      # Lift this the day typescript-eslint ships a release whose peer range
+      # admits 7. There is nothing to do in this repository until then, and a
+      # monthly pull request proposing it again is a monthly red tick nobody
+      # can act on.
+      - dependency-name: typescript
+        update-types: ['version-update:semver-major']
     groups:
-      # Anything that only affects the build. Safe to take in a batch, and CI
-      # tells you if it is not.
+      # Anything that only affects the build — minor and patch only.
+      #
+      # This used to read "safe to take in a batch, and CI tells you if it is
+      # not", which assumed a failing batch would name the package that broke
+      # it. It does not. One unsatisfiable peer makes `npm ci` reject the
+      # entire lockfile, so the batch fails as a batch and the twelve updates
+      # that were fine have nowhere to land — which is precisely how one
+      # TypeScript bump held a dependency update red for a month.
+      #
+      # A major that needs real work — Tailwind 4's config rewrite, Vitest 5 —
+      # now arrives as its own pull request. It can sit red on its own without
+      # taking anything else with it.
       dev-dependencies:
         dependency-type: development
+        update-types: ['minor', 'patch']
       # React, Supabase and Motion ship in the bundle a student downloads.
-      # Separate PR, read the changelog.
+      # Separate PR, read the changelog. Same major rule, same reason.
       runtime:
         dependency-type: production
+        update-types: ['minor', 'patch']
 
   - package-ecosystem: github-actions
     directory: '/'
