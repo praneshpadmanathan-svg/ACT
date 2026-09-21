@@ -16381,67 +16381,67 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At lamp distance of 6 cm, what mean sensor reading was recorded?",
+        "context": "In Experiment 1, what sensor reading was recorded at a lamp distance of 30 cm?",
         "practiceOnly": true,
         "passage": "exp26-sp-1",
         "choices": [
           {
             "id": "A",
-            "text": "8 units"
+            "text": "160 units"
           },
           {
             "id": "B",
-            "text": "12 units"
+            "text": "80 units"
           },
           {
             "id": "C",
-            "text": "10 units"
+            "text": "40 units"
           },
           {
             "id": "D",
-            "text": "6 units"
+            "text": "20 units"
           }
         ],
-        "answer": "A",
+        "answer": "C",
         "why": {
-          "A": "Read the entry for the setting of 6.",
-          "B": "This belongs to the setting of 2.",
-          "C": "This belongs to the setting of 4.",
-          "D": "This belongs to the setting of 8."
+          "A": "Table 1 gives 160 units at 10 cm, which is the closest distance tested.",
+          "B": "Table 1 gives 80 units at 20 cm, one row above the setting asked about.",
+          "C": "Table 1 pairs a lamp distance of 30 cm with a mean sensor reading of 40 units.",
+          "D": "Table 1 gives 20 units at 40 cm, one row below the setting asked about."
         }
       },
       {
         "id": "exp26-science-002",
         "section": "science",
         "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "difficulty": "medium",
+        "context": "Which quantity was held constant in Experiment 2 but varied in Experiment 1?",
         "practiceOnly": true,
         "passage": "exp26-sp-1",
         "choices": [
           {
             "id": "A",
-            "text": "the measuring procedure"
+            "text": "the distance from lamp to sensor"
           },
           {
             "id": "B",
-            "text": "lamp distance"
+            "text": "the power rating of the bulb"
           },
           {
             "id": "C",
-            "text": "sensor reading"
+            "text": "the number of trials per setting"
           },
           {
             "id": "D",
-            "text": "the number of trials per setting"
+            "text": "the position of the detector"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "The passage states that the same procedure was used.",
-          "B": "The passage identifies lamp distance as the changed factor.",
-          "C": "This was the measured response, not the variable deliberately set.",
-          "D": "Every setting used three trials."
+          "A": "Experiment 1 moved the lamp across five distances; Experiment 2 fixed it at 20 cm.",
+          "B": "Bulb power is the opposite case: constant at 40 W in Experiment 1 and varied in Experiment 2.",
+          "C": "Three trials per setting were used throughout, so this varied in neither experiment.",
+          "D": "The detector stayed in place for both experiments, so it never varied."
         }
       },
       {
@@ -16449,101 +16449,101 @@
         "section": "science",
         "topic": "calculating from data",
         "difficulty": "medium",
-        "context": "What is the change in mean sensor reading when lamp distance increases from 2 to 8 cm? Use final minus initial.",
+        "context": "Based on Table 2, what reading would a 30-W bulb most likely give at a distance of 20 cm?",
         "practiceOnly": true,
         "passage": "exp26-sp-1",
         "choices": [
           {
             "id": "A",
-            "text": "6 units"
+            "text": "45 units"
           },
           {
             "id": "B",
-            "text": "18 units"
+            "text": "60 units"
           },
           {
             "id": "C",
-            "text": "-6 units"
+            "text": "75 units"
           },
           {
             "id": "D",
-            "text": "-2 units"
+            "text": "90 units"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "This reverses final and initial.",
-          "B": "A change is a difference, not a sum.",
-          "C": "6 - 12 = -6.",
-          "D": "This is the change for a single step, not all three steps."
+          "A": "This falls below the 50 units already recorded for the weaker 25-W bulb.",
+          "B": "Every row of Table 2 gives a reading of twice the bulb power, so 30 W gives 60 units.",
+          "C": "This would place 30 W above the 40-W bulb, which recorded 80 units.",
+          "D": "This matches no pattern in the table; 90 units would need a bulb of about 45 W."
         }
       },
       {
         "id": "exp26-science-004",
         "section": "science",
         "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "difficulty": "hard",
+        "context": "Which feature of Table 1 supports Student 2 rather than Student 1?",
         "practiceOnly": true,
         "passage": "exp26-sp-1",
         "choices": [
           {
             "id": "A",
-            "text": "It supports B and contradicts A."
+            "text": "Each 10 cm of distance halves the reading."
           },
           {
             "id": "B",
-            "text": "It contradicts both because the means are all different."
+            "text": "Each 10 cm of distance removes 40 units."
           },
           {
             "id": "C",
-            "text": "It proves A is correct for every possible setting."
+            "text": "The reading rises as distance increases."
           },
           {
             "id": "D",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "The reading stays the same at every setting."
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "The means change by equal nonzero differences.",
-          "B": "Different means can support a constant change per step.",
-          "C": "A finite tested range cannot establish behavior at every possible setting.",
-          "D": "Successive means differ by -2, rather than remaining constant."
+          "A": "The drops are 80, 40, 20 and 10 units — a fixed fraction, not a fixed amount.",
+          "B": "A constant 40-unit drop is exactly what Student 1 proposed, and the table does not show it.",
+          "C": "The readings fall as distance grows, which neither student disputed.",
+          "D": "No setting repeats a reading; the values change at every distance tested."
         }
       },
       {
         "id": "exp26-science-005",
         "section": "science",
-        "topic": "hypotheses",
+        "topic": "conflicting viewpoints",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 cm, what mean sensor reading would A predict?",
+        "context": "Student 1’s proposal would have been supported if the readings at 10, 20, 30 and 40 cm had been:",
         "practiceOnly": true,
         "passage": "exp26-sp-1",
         "choices": [
           {
             "id": "A",
-            "text": "4 units"
+            "text": "160, 120, 80 and 40 units."
           },
           {
             "id": "B",
-            "text": "6 units"
+            "text": "160, 80, 40 and 20 units."
           },
           {
             "id": "C",
-            "text": "2 units"
+            "text": "160, 160, 160 and 160 units."
           },
           {
             "id": "D",
-            "text": "14 units"
+            "text": "160, 40, 10 and 2.5 units."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "One additional step adds -2 to 6; this is a conditional prediction, not a measurement.",
-          "B": "This assumes the response stops changing after the last measured setting.",
-          "C": "This advances two steps beyond the last setting instead of one.",
-          "D": "This extends the pattern backward rather than forward."
+          "A": "Each step removes the same 40 units, which is the fixed amount Student 1 described.",
+          "B": "These are the readings actually observed, and they halve rather than stepping down evenly.",
+          "C": "An unchanging reading would support neither student, since both expect a fall.",
+          "D": "Quartering at each step is a fixed fraction, so it supports Student 2 more strongly still."
         }
       },
       {
@@ -16551,67 +16551,67 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At filter layers of 6 layers, what mean collected particles was recorded?",
+        "context": "At 3 layers, what percentage of the light does Film Y transmit?",
         "practiceOnly": true,
         "passage": "exp26-sp-2",
         "choices": [
           {
             "id": "A",
-            "text": "23 particles"
+            "text": "12.5 percent"
           },
           {
             "id": "B",
-            "text": "20 particles"
+            "text": "49 percent"
           },
           {
             "id": "C",
-            "text": "14 particles"
+            "text": "52 percent"
           },
           {
             "id": "D",
-            "text": "17 particles"
+            "text": "58 percent"
           }
         ],
-        "answer": "B",
+        "answer": "C",
         "why": {
-          "A": "This belongs to the setting of 8.",
-          "B": "Read the entry for the setting of 6.",
-          "C": "This belongs to the setting of 2.",
-          "D": "This belongs to the setting of 4."
+          "A": "This is Film X at 3 layers, read from the wrong column of the table.",
+          "B": "This is Film Y at 4 layers, one row further down than the question asks.",
+          "C": "Table 1 pairs 3 layers of Film Y with a transmission of 52 percent.",
+          "D": "This is Film Y at 2 layers, one row above the setting asked about."
         }
       },
       {
         "id": "exp26-science-007",
         "section": "science",
-        "topic": "research summaries",
+        "topic": "reading data",
         "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "context": "Which film transmits less light at 2 layers?",
         "practiceOnly": true,
         "passage": "exp26-sp-2",
         "choices": [
           {
             "id": "A",
-            "text": "the number of trials per setting"
+            "text": "Film X, at 25 percent."
           },
           {
             "id": "B",
-            "text": "the measuring procedure"
+            "text": "Film Y, at 58 percent."
           },
           {
             "id": "C",
-            "text": "filter layers"
+            "text": "Both transmit 100 percent."
           },
           {
             "id": "D",
-            "text": "collected particles"
+            "text": "Neither transmits any light."
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Every setting used three trials.",
-          "B": "The passage states that the same procedure was used.",
-          "C": "The passage identifies filter layers as the changed factor.",
-          "D": "This was the measured response, not the variable deliberately set."
+          "A": "At 2 layers Film X transmits 25 percent against Film Y’s 58 percent, so less light gets through.",
+          "B": "Film Y transmits 58 percent at 2 layers, which is more than Film X, not less.",
+          "C": "Both films transmit 100 percent only at 0 layers, where no film is applied.",
+          "D": "Neither film reaches zero transmission anywhere in the tested range."
         }
       },
       {
@@ -16619,67 +16619,67 @@
         "section": "science",
         "topic": "calculating from data",
         "difficulty": "medium",
-        "context": "What is the change in mean collected particles when filter layers increases from 2 to 8 layers? Use final minus initial.",
+        "context": "At 4 layers, how much greater is Film Y’s transmission than Film X’s?",
         "practiceOnly": true,
         "passage": "exp26-sp-2",
         "choices": [
           {
             "id": "A",
-            "text": "3 particles"
+            "text": "6.25 percentage points"
           },
           {
             "id": "B",
-            "text": "-9 particles"
+            "text": "42.75 percentage points"
           },
           {
             "id": "C",
-            "text": "37 particles"
+            "text": "43.25 percentage points"
           },
           {
             "id": "D",
-            "text": "9 particles"
+            "text": "55.75 percentage points"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "This is the change for a single step, not all three steps.",
-          "B": "This reverses final and initial.",
-          "C": "A change is a difference, not a sum.",
-          "D": "23 - 14 = 9."
+          "A": "This is Film X’s transmission itself rather than the gap between the two films.",
+          "B": "Film Y reads 49 percent and Film X reads 6.25 percent, and 49 minus 6.25 is 42.75.",
+          "C": "This subtracts from 49.5 rather than 49, which no row of the table gives.",
+          "D": "This subtracts Film X’s value from 62, a figure that appears nowhere in the table."
         }
       },
       {
         "id": "exp26-science-009",
         "section": "science",
-        "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "topic": "calculating from data",
+        "difficulty": "hard",
+        "context": "By what factor does Film X’s transmission change with each added layer?",
         "practiceOnly": true,
         "passage": "exp26-sp-2",
         "choices": [
           {
             "id": "A",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "It is multiplied by about one half."
           },
           {
             "id": "B",
-            "text": "It supports B and contradicts A."
+            "text": "It falls by about 25 points each time."
           },
           {
             "id": "C",
-            "text": "It contradicts both because the means are all different."
+            "text": "It is multiplied by about one quarter."
           },
           {
             "id": "D",
-            "text": "It proves A is correct for every possible setting."
+            "text": "It falls by about 12 points each time."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Successive means differ by 3, rather than remaining constant.",
-          "B": "The means change by equal nonzero differences.",
-          "C": "Different means can support a constant change per step.",
-          "D": "A finite tested range cannot establish behavior at every possible setting."
+          "A": "The column runs 100, 50, 25, 12.5, 6.25, so each value is half the one above it.",
+          "B": "The drops shrink from 50 points to 25, 12.5 and 6.25, so no fixed number of points fits.",
+          "C": "Quartering would take 100 to 25 in a single layer, but one layer gives 50.",
+          "D": "A fixed 12-point drop would reach zero by the eighth layer, which the data contradict."
         }
       },
       {
@@ -16687,33 +16687,33 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 layers, what mean collected particles would A predict?",
+        "context": "If each trend continues, Film Y at 5 layers will most likely transmit:",
         "practiceOnly": true,
         "passage": "exp26-sp-2",
         "choices": [
           {
             "id": "A",
-            "text": "11 particles"
+            "text": "slightly less than 49 percent."
           },
           {
             "id": "B",
-            "text": "26 particles"
+            "text": "about 24 percent, half of 49."
           },
           {
             "id": "C",
-            "text": "23 particles"
+            "text": "about 42 percent of the light."
           },
           {
             "id": "D",
-            "text": "29 particles"
+            "text": "no measurable light at all."
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This extends the pattern backward rather than forward.",
-          "B": "One additional step adds 3 to 23; this is a conditional prediction, not a measurement.",
-          "C": "This assumes the response stops changing after the last measured setting.",
-          "D": "This advances two steps beyond the last setting instead of one."
+          "A": "Film Y’s drops shrink to 12, 6 and 3 points, so the column is flattening just under 49.",
+          "B": "Halving describes Film X, not Film Y, whose values fall by ever smaller amounts.",
+          "C": "A further 7-point drop would be larger than the 3-point drop in the row before it.",
+          "D": "Film Y is still transmitting nearly half the light at 4 layers and is levelling off."
         }
       },
       {
@@ -16721,135 +16721,135 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At stirring time of 6 s, what mean dissolved mass was recorded?",
+        "context": "In Experiment 1, how many of the 50 seeds germinated at 28 °C?",
         "practiceOnly": true,
         "passage": "exp26-sp-3",
         "choices": [
           {
             "id": "A",
-            "text": "19 g"
+            "text": "12"
           },
           {
             "id": "B",
-            "text": "25 g"
+            "text": "24"
           },
           {
             "id": "C",
-            "text": "22 g"
+            "text": "41"
           },
           {
             "id": "D",
-            "text": "16 g"
+            "text": "43"
           }
         ],
         "answer": "C",
         "why": {
-          "A": "This belongs to the setting of 4.",
-          "B": "This belongs to the setting of 8.",
-          "C": "Read the entry for the setting of 6.",
-          "D": "This belongs to the setting of 2."
+          "A": "Table 1 gives 12 at 34 °C, the hottest tray rather than the one asked about.",
+          "B": "Table 1 gives 24 at 16 °C, well below the temperature in the question.",
+          "C": "Table 1 pairs 28 °C with 41 seeds germinated out of 50.",
+          "D": "Table 1 gives 43 at 22 °C, which is the highest count in the experiment."
         }
       },
       {
         "id": "exp26-science-012",
         "section": "science",
         "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "difficulty": "medium",
+        "context": "Which variable was deliberately changed in Experiment 1 but held fixed in Experiment 3?",
         "practiceOnly": true,
         "passage": "exp26-sp-3",
         "choices": [
           {
             "id": "A",
-            "text": "dissolved mass"
+            "text": "the depth at which seeds were planted"
           },
           {
             "id": "B",
-            "text": "the number of trials per setting"
+            "text": "the temperature the trays were held at"
           },
           {
             "id": "C",
-            "text": "the measuring procedure"
+            "text": "the number of seeds used per condition"
           },
           {
             "id": "D",
-            "text": "stirring time"
+            "text": "the compost the seeds were planted in"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "This was the measured response, not the variable deliberately set.",
-          "B": "Every setting used three trials.",
-          "C": "The passage states that the same procedure was used.",
-          "D": "The passage identifies stirring time as the changed factor."
+          "A": "Depth is the reverse case: fixed at 2 cm in Experiment 1 and varied in Experiment 3.",
+          "B": "Experiment 1 ran five temperatures, while Experiment 3 held every tray at 22 °C.",
+          "C": "Every condition in all three experiments used 50 seeds, so this never varied.",
+          "D": "The same compost was used throughout, which the passage states directly."
         }
       },
       {
         "id": "exp26-science-013",
         "section": "science",
-        "topic": "calculating from data",
+        "topic": "research summaries",
         "difficulty": "medium",
-        "context": "What is the change in mean dissolved mass when stirring time increases from 2 to 8 s? Use final minus initial.",
+        "context": "Experiment 3 used a 6-hour soak most likely because Experiment 2 showed that:",
         "practiceOnly": true,
         "passage": "exp26-sp-3",
         "choices": [
           {
             "id": "A",
-            "text": "9 g"
+            "text": "a 6-hour soak gave the highest germination."
           },
           {
             "id": "B",
-            "text": "3 g"
+            "text": "soaking made no difference to germination."
           },
           {
             "id": "C",
-            "text": "-9 g"
+            "text": "a 12-hour soak damaged too many of the seeds."
           },
           {
             "id": "D",
-            "text": "41 g"
+            "text": "seeds soaked for 3 hours germinated fastest."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "25 - 16 = 9.",
-          "B": "This is the change for a single step, not all three steps.",
-          "C": "This reverses final and initial.",
-          "D": "A change is a difference, not a sum."
+          "A": "Table 2 peaks at 43 seeds for the 6-hour soak, so that is the condition worth carrying forward.",
+          "B": "Germination rose from 31 with no soak to 43 at six hours, which is a clear difference.",
+          "C": "The 12-hour soak gave 42, one below the peak, which is not evidence of damage.",
+          "D": "Speed was never measured; every count is taken at the same 7-day mark."
         }
       },
       {
         "id": "exp26-science-014",
         "section": "science",
-        "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "topic": "hypotheses",
+        "difficulty": "hard",
+        "context": "A student predicts that germination rises steadily with temperature. Table 1 contradicts this because germination:",
         "practiceOnly": true,
         "passage": "exp26-sp-3",
         "choices": [
           {
             "id": "A",
-            "text": "It proves A is correct for every possible setting."
+            "text": "falls above 22 °C rather than continuing to rise."
           },
           {
             "id": "B",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "is unchanged across all five temperatures tested."
           },
           {
             "id": "C",
-            "text": "It supports B and contradicts A."
+            "text": "reaches its highest value at the hottest setting."
           },
           {
             "id": "D",
-            "text": "It contradicts both because the means are all different."
+            "text": "rises fastest between 28 °C and 34 °C in the trial."
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "A finite tested range cannot establish behavior at every possible setting.",
-          "B": "Successive means differ by 3, rather than remaining constant.",
-          "C": "The means change by equal nonzero differences.",
-          "D": "Different means can support a constant change per step."
+          "A": "The counts climb to 43 at 22 °C, then drop to 41 and 12, so the rise does not continue.",
+          "B": "The counts range from 6 to 43, which is far from unchanged.",
+          "C": "The hottest setting, 34 °C, gives 12 seeds — the second lowest count in the table.",
+          "D": "Germination falls by 29 seeds across that interval rather than rising at all."
         }
       },
       {
@@ -16857,33 +16857,33 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 s, what mean dissolved mass would A predict?",
+        "context": "Based on all three tables, which combination of conditions should give the highest germination?",
         "practiceOnly": true,
         "passage": "exp26-sp-3",
         "choices": [
           {
             "id": "A",
-            "text": "31 g"
+            "text": "28 °C, a 3-hour soak, 1 cm deep."
           },
           {
             "id": "B",
-            "text": "13 g"
+            "text": "16 °C, a 12-hour soak, 4 cm deep."
           },
           {
             "id": "C",
-            "text": "28 g"
+            "text": "22 °C, a 6-hour soak, 2 cm deep."
           },
           {
             "id": "D",
-            "text": "25 g"
+            "text": "34 °C, no soak at all, 8 cm deep."
           }
         ],
         "answer": "C",
         "why": {
-          "A": "This advances two steps beyond the last setting instead of one.",
-          "B": "This extends the pattern backward rather than forward.",
-          "C": "One additional step adds 3 to 25; this is a conditional prediction, not a measurement.",
-          "D": "This assumes the response stops changing after the last measured setting."
+          "A": "Each of these is one step off the best setting in its own table, so none is the peak.",
+          "B": "Only the soak is near optimal here; 16 °C and 4 cm both sit well below their best values.",
+          "C": "Each table peaks at exactly these settings: 43 seeds at 22 °C, at 6 hours and at 2 cm.",
+          "D": "All three settings are the worst or near-worst in their tables, giving 12, 31 and 9 seeds."
         }
       },
       {
@@ -16891,135 +16891,135 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At panel tilt of 6 degrees, what mean power output was recorded?",
+        "context": "Under which condition is the probe’s excess over the reference thermometer largest?",
         "practiceOnly": true,
         "passage": "exp26-sp-4",
         "choices": [
           {
             "id": "A",
-            "text": "18 mW"
+            "text": "a clear, calm afternoon"
           },
           {
             "id": "B",
-            "text": "21 mW"
+            "text": "a clear, windy afternoon"
           },
           {
             "id": "C",
-            "text": "27 mW"
+            "text": "a cloudy afternoon"
           },
           {
             "id": "D",
-            "text": "24 mW"
+            "text": "night"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This belongs to the setting of 2.",
-          "B": "This belongs to the setting of 4.",
-          "C": "This belongs to the setting of 8.",
-          "D": "Read the entry for the setting of 6."
+          "A": "Table 1 gives +2.4 °C for this condition, the largest difference listed.",
+          "B": "Wind cuts the difference to +0.3 °C, near the bottom of the table.",
+          "C": "Cloud cuts the difference to +0.6 °C, well under the clear, calm figure.",
+          "D": "At night the difference is +0.1 °C, the smallest value in the table."
         }
       },
       {
         "id": "exp26-science-017",
         "section": "science",
-        "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "topic": "conflicting viewpoints",
+        "difficulty": "medium",
+        "context": "Both technicians agree that:",
         "practiceOnly": true,
         "passage": "exp26-sp-4",
         "choices": [
           {
             "id": "A",
-            "text": "panel tilt"
+            "text": "the housing should be replaced this year."
           },
           {
             "id": "B",
-            "text": "power output"
+            "text": "wind reduces the difference that is measured."
           },
           {
             "id": "C",
-            "text": "the number of trials per setting"
+            "text": "the probe is reporting the wrong temperature."
           },
           {
             "id": "D",
-            "text": "the measuring procedure"
+            "text": "the asphalt path is the source of the heat."
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "The passage identifies panel tilt as the changed factor.",
-          "B": "This was the measured response, not the variable deliberately set.",
-          "C": "Every setting used three trials.",
-          "D": "The passage states that the same procedure was used."
+          "A": "Only Technician 1 calls for a new housing; Technician 2 says the housing is fine.",
+          "B": "Technician 1 says wind flushes the housing and Technician 2 says it mixes the layer away.",
+          "C": "Technician 2 holds that the probe measures the air around it correctly.",
+          "D": "The asphalt is Technician 2’s explanation and forms no part of Technician 1’s."
         }
       },
       {
         "id": "exp26-science-018",
         "section": "science",
-        "topic": "calculating from data",
-        "difficulty": "medium",
-        "context": "What is the change in mean power output when panel tilt increases from 2 to 8 degrees? Use final minus initial.",
+        "topic": "conflicting viewpoints",
+        "difficulty": "hard",
+        "context": "Which finding would most strongly support Technician 2 over Technician 1?",
         "practiceOnly": true,
         "passage": "exp26-sp-4",
         "choices": [
           {
             "id": "A",
-            "text": "45 mW"
+            "text": "A new housing on the same site shows the same afternoon error."
           },
           {
             "id": "B",
-            "text": "9 mW"
+            "text": "The old housing is measurably more yellow than an unused spare."
           },
           {
             "id": "C",
-            "text": "3 mW"
+            "text": "The reference thermometer is checked and found accurate."
           },
           {
             "id": "D",
-            "text": "-9 mW"
+            "text": "The error is larger in summer than it is during winter."
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "A change is a difference, not a sum.",
-          "B": "27 - 18 = 9.",
-          "C": "This is the change for a single step, not all three steps.",
-          "D": "This reverses final and initial."
+          "A": "Technician 1 predicts a new housing cures the error, so the error surviving points to the site.",
+          "B": "Yellowing is the premise of Technician 1’s account, so confirming it favours that view.",
+          "C": "A sound reference establishes that the gap is real without saying which cause produced it.",
+          "D": "Stronger summer sun would warm both a yellowed housing and an asphalt path alike."
         }
       },
       {
         "id": "exp26-science-019",
         "section": "science",
         "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "difficulty": "hard",
+        "context": "Technician 1’s explanation depends on the claim that:",
         "practiceOnly": true,
         "passage": "exp26-sp-4",
         "choices": [
           {
             "id": "A",
-            "text": "It contradicts both because the means are all different."
+            "text": "asphalt radiates heat upward on sunny afternoons."
           },
           {
             "id": "B",
-            "text": "It proves A is correct for every possible setting."
+            "text": "the station was installed at the wrong distance."
           },
           {
             "id": "C",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "the housing absorbs more sunlight than when new."
           },
           {
             "id": "D",
-            "text": "It supports B and contradicts A."
+            "text": "the reference thermometer drifts in warm weather."
           }
         ],
         "answer": "C",
         "why": {
-          "A": "Different means can support a constant change per step.",
-          "B": "A finite tested range cannot establish behavior at every possible setting.",
-          "C": "Successive means differ by 3, rather than remaining constant.",
-          "D": "The means change by equal nonzero differences."
+          "A": "Radiating asphalt is Technician 2’s mechanism and plays no part in the first account.",
+          "B": "Technician 1 never questions the siting, which is the whole of the disagreement.",
+          "C": "The yellowed housing absorbing sunlight is the first step of Technician 1’s chain.",
+          "D": "Neither technician suggests the reference instrument is at fault."
         }
       },
       {
@@ -17027,169 +17027,169 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 degrees, what mean power output would A predict?",
+        "context": "If Technician 2 is correct, moving the station to grass 50 m from the path should:",
         "practiceOnly": true,
         "passage": "exp26-sp-4",
         "choices": [
           {
             "id": "A",
-            "text": "27 mW"
+            "text": "raise the night-time difference above +0.1 °C."
           },
           {
             "id": "B",
-            "text": "33 mW"
+            "text": "shrink the clear, calm afternoon difference."
           },
           {
             "id": "C",
-            "text": "15 mW"
+            "text": "leave every difference in the table unchanged."
           },
           {
             "id": "D",
-            "text": "30 mW"
+            "text": "reverse the sign of the windy-afternoon figure."
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "This assumes the response stops changing after the last measured setting.",
-          "B": "This advances two steps beyond the last setting instead of one.",
-          "C": "This extends the pattern backward rather than forward.",
-          "D": "One additional step adds 3 to 27; this is a conditional prediction, not a measurement."
+          "A": "The night figure is already near zero, and no asphalt heating is claimed after dark.",
+          "B": "Technician 2 blames a hot layer over the path, so removing the path should remove it.",
+          "C": "Unchanged readings after a move would be evidence against Technician 2, not for.",
+          "D": "Nothing in either account predicts the probe reading colder than the reference."
         }
       },
       {
         "id": "exp26-science-021",
         "section": "science",
-        "topic": "reading data",
-        "difficulty": "easy",
-        "context": "At insulation thickness of 6 mm, what mean temperature decrease was recorded?",
+        "topic": "calculating from data",
+        "difficulty": "medium",
+        "context": "According to Table 1, the mass loss of an uncoated nail is how many times that of a zinc-coated nail?",
         "practiceOnly": true,
         "passage": "exp26-sp-5",
         "choices": [
           {
             "id": "A",
-            "text": "16 °C"
+            "text": "4 times"
           },
           {
             "id": "B",
-            "text": "20 °C"
+            "text": "8 times"
           },
           {
             "id": "C",
-            "text": "18 °C"
+            "text": "10 times"
           },
           {
             "id": "D",
-            "text": "14 °C"
+            "text": "43 times"
           }
         ],
-        "answer": "A",
+        "answer": "C",
         "why": {
-          "A": "Read the entry for the setting of 6.",
-          "B": "This belongs to the setting of 2.",
-          "C": "This belongs to the setting of 4.",
-          "D": "This belongs to the setting of 8."
+          "A": "Four is the ratio between neighbouring rows, not between the first row and the third.",
+          "B": "Eight would require a zinc figure of 6.0 mg, and the table gives 4.8 mg.",
+          "C": "Table 1 gives 48.0 mg with no coating and 4.8 mg with zinc, and 48.0 divided by 4.8 is 10.",
+          "D": "This is the difference between the two figures rather than their ratio."
         }
       },
       {
         "id": "exp26-science-022",
         "section": "science",
-        "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "topic": "calculating from data",
+        "difficulty": "hard",
+        "context": "If the pattern in Table 2 continues, what mass loss would a zinc-coated nail show at 14.0% salt?",
         "practiceOnly": true,
         "passage": "exp26-sp-5",
         "choices": [
           {
             "id": "A",
-            "text": "the measuring procedure"
+            "text": "11.2 mg"
           },
           {
             "id": "B",
-            "text": "insulation thickness"
+            "text": "14.4 mg"
           },
           {
             "id": "C",
-            "text": "temperature decrease"
+            "text": "19.2 mg"
           },
           {
             "id": "D",
-            "text": "the number of trials per setting"
+            "text": "38.4 mg"
           }
         ],
-        "answer": "B",
+        "answer": "C",
         "why": {
-          "A": "The passage states that the same procedure was used.",
-          "B": "The passage identifies insulation thickness as the changed factor.",
-          "C": "This was the measured response, not the variable deliberately set.",
-          "D": "Every setting used three trials."
+          "A": "This adds a fixed amount rather than doubling, which the table does not do.",
+          "B": "This is one and a half times the 7.0% figure, and the concentration has doubled.",
+          "C": "Each doubling of salt doubles the mass loss, so 7.0% giving 9.6 mg makes 14.0% give 19.2 mg.",
+          "D": "This doubles twice over, which would match 28.0% salt rather than 14.0%."
         }
       },
       {
         "id": "exp26-science-023",
         "section": "science",
-        "topic": "calculating from data",
+        "topic": "research summaries",
         "difficulty": "medium",
-        "context": "What is the change in mean temperature decrease when insulation thickness increases from 2 to 8 mm? Use final minus initial.",
+        "context": "Temperature was held at 20 °C in both experiments most likely so that:",
         "practiceOnly": true,
         "passage": "exp26-sp-5",
         "choices": [
           {
             "id": "A",
-            "text": "6 °C"
+            "text": "differences could be credited to coating or salt."
           },
           {
             "id": "B",
-            "text": "34 °C"
+            "text": "the nails would corrode faster than at room heat."
           },
           {
             "id": "C",
-            "text": "-6 °C"
+            "text": "the balance would stay within its rated accuracy."
           },
           {
             "id": "D",
-            "text": "-2 °C"
+            "text": "the salt would dissolve completely in the water."
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This reverses final and initial.",
-          "B": "A change is a difference, not a sum.",
-          "C": "14 - 20 = -6.",
-          "D": "This is the change for a single step, not all three steps."
+          "A": "Holding temperature fixed leaves coating and concentration as the only quantities changing.",
+          "B": "Speeding corrosion up would be a reason to change temperature, not to hold it constant.",
+          "C": "The balance reads to 0.1 mg regardless of the temperature of the solution.",
+          "D": "All four concentrations are well below saturation, so dissolving is not in question."
         }
       },
       {
         "id": "exp26-science-024",
         "section": "science",
-        "topic": "conflicting viewpoints",
+        "topic": "research summaries",
         "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "context": "The value 4.8 mg appears in both tables because:",
         "practiceOnly": true,
         "passage": "exp26-sp-5",
         "choices": [
           {
             "id": "A",
-            "text": "It supports B and contradicts A."
+            "text": "the same nail was weighed twice by mistake."
           },
           {
             "id": "B",
-            "text": "It contradicts both because the means are all different."
+            "text": "zinc and paint happen to perform identically."
           },
           {
             "id": "C",
-            "text": "It proves A is correct for every possible setting."
+            "text": "one condition is shared by both experiments."
           },
           {
             "id": "D",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "the balance rounds every reading to 4.8 mg."
           }
         ],
-        "answer": "D",
+        "answer": "C",
         "why": {
-          "A": "The means change by equal nonzero differences.",
-          "B": "Different means can support a constant change per step.",
-          "C": "A finite tested range cannot establish behavior at every possible setting.",
-          "D": "Successive means differ by -2, rather than remaining constant."
+          "A": "Each condition used five fresh nails, and nothing suggests a repeated weighing.",
+          "B": "Paint lost 19.2 mg against zinc’s 4.8 mg, so the two coatings differ by a factor of four.",
+          "C": "Experiment 2 includes 3.5% salt on zinc, which is exactly Experiment 1’s zinc condition.",
+          "D": "Other rows give 48.0, 19.2, 1.2 and 9.6 mg, so no such rounding is happening."
         }
       },
       {
@@ -17197,33 +17197,33 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 mm, what mean temperature decrease would A predict?",
+        "context": "A student claims paint protects steel better than zinc does. Table 1 contradicts this because:",
         "practiceOnly": true,
         "passage": "exp26-sp-5",
         "choices": [
           {
             "id": "A",
-            "text": "12 °C"
+            "text": "paint lost four times the mass that zinc lost."
           },
           {
             "id": "B",
-            "text": "14 °C"
+            "text": "paint and zinc lost the same mass over 30 days."
           },
           {
             "id": "C",
-            "text": "10 °C"
+            "text": "the uncoated nail lost less mass than painted ones."
           },
           {
             "id": "D",
-            "text": "22 °C"
+            "text": "no nail carrying paint lost any measurable mass."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "One additional step adds -2 to 14; this is a conditional prediction, not a measurement.",
-          "B": "This assumes the response stops changing after the last measured setting.",
-          "C": "This advances two steps beyond the last setting instead of one.",
-          "D": "This extends the pattern backward rather than forward."
+          "A": "Paint lost 19.2 mg where zinc lost 4.8 mg, so the painted nail corroded four times as much.",
+          "B": "The two figures differ by 14.4 mg, which is the largest gap between any adjacent rows.",
+          "C": "The uncoated nail lost 48.0 mg, more than any coated nail in the table.",
+          "D": "Both painted conditions lost measurable mass, 19.2 mg alone and 1.2 mg with zinc."
         }
       },
       {
@@ -19925,34 +19925,65 @@
       {
         "id": "exp26-sp-1",
         "type": "Research Summaries",
-        "title": "Model study 1: lamp distance",
+        "title": "Lamp distance and sensor response",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a light sensor. Students changed lamp distance while keeping the same lamp and sensor. For each setting, they used three fresh trials and recorded the mean sensor reading. The same measuring procedure was used for every trial.\n\nStudent A proposes that sensor reading changes by a constant amount for every 2-cm increase within the tested range. Student B proposes that the sensor reading remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "A class investigated how a light sensor responds to a lamp at different distances.\n\nExperiment 1. Students mounted a 40-watt lamp on a track facing the sensor and recorded the sensor reading at five distances. The lamp, the sensor and the room lighting were unchanged between settings, and each reading is the mean of three trials.\n\nExperiment 2. Students returned the lamp to 20 cm and repeated the measurement using bulbs of four different power ratings, holding every other condition as in Experiment 1.\n\nTwo students disagreed about Experiment 1. Student 1 argued that the reading falls by a fixed number of units for each 10 cm of added distance. Student 2 argued that the reading falls by a fixed fraction for each 10 cm, so that the size of the drop gets smaller as the lamp moves away.\n\nNeither student examined Experiment 2, and no distance outside the tested range was measured.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Experiment 1: mean sensor reading at each lamp distance",
             "head": [
               "lamp distance (cm)",
               "sensor reading (units)"
             ],
             "rows": [
               [
-                "2",
-                "12"
+                "10",
+                "160"
               ],
               [
-                "4",
+                "20",
+                "80"
+              ],
+              [
+                "30",
+                "40"
+              ],
+              [
+                "40",
+                "20"
+              ],
+              [
+                "50",
                 "10"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "Experiment 2: mean sensor reading at 20 cm, by bulb power",
+            "head": [
+              "bulb power (W)",
+              "sensor reading (units)"
+            ],
+            "rows": [
+              [
+                "15",
+                "30"
               ],
               [
-                "6",
-                "8"
+                "25",
+                "50"
               ],
               [
-                "8",
-                "6"
+                "40",
+                "80"
+              ],
+              [
+                "60",
+                "120"
               ]
             ]
           }
@@ -19960,35 +19991,45 @@
       },
       {
         "id": "exp26-sp-2",
-        "type": "Research Summaries",
-        "title": "Model study 2: filter layers",
+        "type": "Data Representation",
+        "title": "Two window films",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a filter collector. Students changed filter layers while keeping the same incoming particle mixture and collection time. For each setting, they used three fresh trials and recorded the mean collected particles. The same measuring procedure was used for every trial.\n\nStudent A proposes that collected particles changes by a constant amount for every 2-layers increase within the tested range. Student B proposes that the collected particles remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "A supplier tested two window films by stacking identical layers of each on a glass panel and measuring how much light passed through. Transmission is given as a percentage of the light reaching the panel with no film applied.\n\nFilm X is a dyed polyester. Film Y is a metallised polyester of the same thickness. Both were cut from a single roll and applied by the same machine, and each panel was measured once the adhesive had cured for 24 hours.\n\nThe panel, the lamp and the detector position were identical for every measurement, and no panel carried both films at once. Each reading is the mean of three panels prepared separately, and readings were taken in a darkened room so that only the lamp contributed light. Transmission was recorded to the nearest quarter of a percentage point.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Transmission through stacked layers of each film",
             "head": [
-              "filter layers (layers)",
-              "collected particles (particles)"
+              "layers",
+              "Film X transmission (%)",
+              "Film Y transmission (%)"
             ],
             "rows": [
               [
+                "0",
+                "100",
+                "100"
+              ],
+              [
+                "1",
+                "50",
+                "70"
+              ],
+              [
                 "2",
-                "14"
+                "25",
+                "58"
+              ],
+              [
+                "3",
+                "12.5",
+                "52"
               ],
               [
                 "4",
-                "17"
-              ],
-              [
-                "6",
-                "20"
-              ],
-              [
-                "8",
-                "23"
+                "6.25",
+                "49"
               ]
             ]
           }
@@ -19997,34 +20038,92 @@
       {
         "id": "exp26-sp-3",
         "type": "Research Summaries",
-        "title": "Model study 3: stirring time",
+        "title": "Three conditions for germination",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a mixing container. Students changed stirring time while keeping the same liquid volume and starting solid. For each setting, they used three fresh trials and recorded the mean dissolved mass. The same measuring procedure was used for every trial.\n\nStudent A proposes that dissolved mass changes by a constant amount for every 2-s increase within the tested range. Student B proposes that the dissolved mass remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "A horticulture class ran three experiments on one batch of bean seeds. Every condition used 50 seeds, and a seed counted as germinated if a root was visible after 7 days.\n\nExperiment 1. Trays were held at five constant temperatures. Seeds were planted 2 cm deep with no soak.\n\nExperiment 2. Seeds were soaked in water for four different lengths of time before planting, all at 22 °C and 2 cm deep.\n\nExperiment 3. Seeds were planted at four depths, all at 22 °C and after a 6-hour soak.\n\nSeeds for all three experiments came from the same sack and were planted in the same compost, watered on the same schedule.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Experiment 1: germination at five temperatures",
             "head": [
-              "stirring time (s)",
-              "dissolved mass (g)"
+              "temperature (°C)",
+              "seeds germinated (of 50)"
             ],
             "rows": [
               [
-                "2",
-                "16"
+                "10",
+                "6"
               ],
               [
-                "4",
-                "19"
+                "16",
+                "24"
+              ],
+              [
+                "22",
+                "43"
+              ],
+              [
+                "28",
+                "41"
+              ],
+              [
+                "34",
+                "12"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "Experiment 2: germination after four soak times",
+            "head": [
+              "soak time (h)",
+              "seeds germinated (of 50)"
+            ],
+            "rows": [
+              [
+                "0",
+                "31"
+              ],
+              [
+                "3",
+                "39"
               ],
               [
                 "6",
-                "22"
+                "43"
+              ],
+              [
+                "12",
+                "42"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 3",
+            "caption": "Experiment 3: germination at four planting depths",
+            "head": [
+              "planting depth (cm)",
+              "seeds germinated (of 50)"
+            ],
+            "rows": [
+              [
+                "1",
+                "40"
+              ],
+              [
+                "2",
+                "43"
+              ],
+              [
+                "4",
+                "35"
               ],
               [
                 "8",
-                "25"
+                "9"
               ]
             ]
           }
@@ -20032,35 +20131,35 @@
       },
       {
         "id": "exp26-sp-4",
-        "type": "Research Summaries",
-        "title": "Model study 4: panel tilt",
+        "type": "Conflicting Viewpoints",
+        "title": "Why the probe reads high",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a model solar panel. Students changed panel tilt while keeping the same light source and panel. For each setting, they used three fresh trials and recorded the mean power output. The same measuring procedure was used for every trial.\n\nStudent A proposes that power output changes by a constant amount for every 2-degrees increase within the tested range. Student B proposes that the power output remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "A weather station's air-temperature probe reads higher than a reference thermometer on clear, calm afternoons. The difference nearly disappears at night and on windy days. Two technicians disagree about the cause.\n\nTechnician 1. The probe's white housing has yellowed with age and now absorbs more sunlight than it did when new. The absorbed heat warms the air inside the housing, and the probe measures that warmed air rather than the outside air. Wind flushes the warmed air out, which is why the error shrinks when it is breezy. Replacing the housing would fix the fault.\n\nTechnician 2. The housing is not the issue. The station sits four metres from a dark asphalt path laid in 2021. On sunny afternoons the asphalt radiates heat upward, warming a shallow layer of genuinely hotter air, and the probe measures that layer correctly. Wind mixes the layer away. The probe is working; the site is wrong, and the station should be moved.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Mean difference between probe and reference thermometer",
             "head": [
-              "panel tilt (degrees)",
-              "power output (mW)"
+              "condition",
+              "probe minus reference (°C)"
             ],
             "rows": [
               [
-                "2",
-                "18"
+                "clear, calm afternoon",
+                "+2.4"
               ],
               [
-                "4",
-                "21"
+                "cloudy afternoon",
+                "+0.6"
               ],
               [
-                "6",
-                "24"
+                "clear, windy afternoon",
+                "+0.3"
               ],
               [
-                "8",
-                "27"
+                "night",
+                "+0.1"
               ]
             ]
           }
@@ -20069,34 +20168,61 @@
       {
         "id": "exp26-sp-5",
         "type": "Research Summaries",
-        "title": "Model study 5: insulation thickness",
+        "title": "Coatings against corrosion",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested an insulated container. Students changed insulation thickness while keeping the same starting temperature and observation time. For each setting, they used three fresh trials and recorded the mean temperature decrease. The same measuring procedure was used for every trial.\n\nStudent A proposes that temperature decrease changes by a constant amount for every 2-mm increase within the tested range. Student B proposes that the temperature decrease remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "Identical steel nails were coated and then suspended in salt solution. Mass loss was measured after 30 days.\n\nExperiment 1. Four coatings were compared at one salt concentration, 3.5% by mass, at 20 °C.\n\nExperiment 2. The zinc coating alone was retested at four salt concentrations, all at 20 °C.\n\nEvery nail came from the same box, each condition used five nails, and mass was measured on the same balance to the nearest 0.1 mg. Figures given are the means of the five nails. Before weighing, each nail was rinsed in distilled water and dried for an hour at 60 °C, so that any salt left on the surface would not be counted as remaining metal. Coatings were applied by dipping and were allowed to cure for a week before any nail entered solution.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Experiment 1: mass loss after 30 days in 3.5% salt",
             "head": [
-              "insulation thickness (mm)",
-              "temperature decrease (°C)"
+              "coating",
+              "mass loss (mg)"
             ],
             "rows": [
               [
-                "2",
-                "20"
+                "none",
+                "48.0"
               ],
               [
-                "4",
-                "18"
+                "paint",
+                "19.2"
               ],
               [
-                "6",
-                "16"
+                "zinc",
+                "4.8"
               ],
               [
-                "8",
-                "14"
+                "zinc and paint",
+                "1.2"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "Experiment 2: mass loss of zinc-coated nails, by salt concentration",
+            "head": [
+              "salt (% by mass)",
+              "mass loss (mg)"
+            ],
+            "rows": [
+              [
+                "0.5",
+                "1.2"
+              ],
+              [
+                "1.75",
+                "2.4"
+              ],
+              [
+                "3.5",
+                "4.8"
+              ],
+              [
+                "7.0",
+                "9.6"
               ]
             ]
           }
