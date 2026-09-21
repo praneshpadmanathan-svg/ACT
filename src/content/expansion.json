@@ -18931,135 +18931,135 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At lamp distance of 6 cm, what mean sensor reading was recorded?",
+        "context": "What mean did Lab C report in Experiment 1?",
         "practiceOnly": true,
         "passage": "exp26-sp-16",
         "choices": [
           {
             "id": "A",
-            "text": "42 units"
+            "text": "74 mg/kg"
           },
           {
             "id": "B",
-            "text": "40 units"
+            "text": "76 mg/kg"
           },
           {
             "id": "C",
-            "text": "36 units"
+            "text": "77 mg/kg"
           },
           {
             "id": "D",
-            "text": "38 units"
+            "text": "91 mg/kg"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "This belongs to the setting of 2.",
-          "B": "This belongs to the setting of 4.",
-          "C": "This belongs to the setting of 8.",
-          "D": "Read the entry for the setting of 6."
+          "A": "Table 1 gives 74 mg/kg for Lab A rather than Lab C.",
+          "B": "Table 1 pairs Lab C with a mean of 76 mg/kg on the unknown soil.",
+          "C": "The figure 77 mg/kg is Lab C in Experiment 2, on the certified soil.",
+          "D": "Table 1 gives 91 mg/kg for Lab B, the highest of the three means."
         }
       },
       {
         "id": "exp26-science-077",
         "section": "science",
         "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "difficulty": "medium",
+        "context": "Experiment 2 used a certified soil most likely so that each laboratory’s result could be:",
         "practiceOnly": true,
         "passage": "exp26-sp-16",
         "choices": [
           {
             "id": "A",
-            "text": "lamp distance"
+            "text": "compared against a value already known"
           },
           {
             "id": "B",
-            "text": "sensor reading"
+            "text": "obtained more quickly than in the first round"
           },
           {
             "id": "C",
-            "text": "the number of trials per setting"
+            "text": "kept secret from the two other laboratories"
           },
           {
             "id": "D",
-            "text": "the measuring procedure"
+            "text": "reported in units of its own choosing"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "The passage identifies lamp distance as the changed factor.",
-          "B": "This was the measured response, not the variable deliberately set.",
-          "C": "Every setting used three trials.",
-          "D": "The passage states that the same procedure was used."
+          "A": "With a true value of 82 mg/kg in hand, a laboratory’s error can be measured rather than guessed at.",
+          "B": "Nothing suggests the second round was faster, and speed would not settle the disagreement.",
+          "C": "The laboratories were unaware which sample was which, which is not the same as secrecy between them.",
+          "D": "All three reported in milligrams per kilogram in both experiments."
         }
       },
       {
         "id": "exp26-science-078",
         "section": "science",
-        "topic": "calculating from data",
+        "topic": "research summaries",
         "difficulty": "medium",
-        "context": "What is the change in mean sensor reading when lamp distance increases from 2 to 8 cm? Use final minus initial.",
+        "context": "Drawing all thirty portions from one well-mixed batch ensured that differences between laboratories could not be blamed on:",
         "practiceOnly": true,
         "passage": "exp26-sp-16",
         "choices": [
           {
             "id": "A",
-            "text": "78 units"
+            "text": "the soil portions differing from one another"
           },
           {
             "id": "B",
-            "text": "-6 units"
+            "text": "the laboratories using their own routine methods"
           },
           {
             "id": "C",
-            "text": "-2 units"
+            "text": "the number of portions each laboratory received"
           },
           {
             "id": "D",
-            "text": "6 units"
+            "text": "the certified value being wrongly established"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "A change is a difference, not a sum.",
-          "B": "36 - 42 = -6.",
-          "C": "This is the change for a single step, not all three steps.",
-          "D": "This reverses final and initial."
+          "A": "Homogenising first removes sample variation, leaving the method as the remaining explanation.",
+          "B": "Differing methods are exactly what the experiment is designed to expose, not to rule out.",
+          "C": "Every laboratory received ten portions, so the count was identical throughout.",
+          "D": "The certified value belongs to Experiment 2 and plays no part in mixing the unknown soil."
         }
       },
       {
         "id": "exp26-science-079",
         "section": "science",
-        "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "topic": "calculating from data",
+        "difficulty": "hard",
+        "context": "In Experiment 2, Lab B’s mean differs from the certified value by how much?",
         "practiceOnly": true,
         "passage": "exp26-sp-16",
         "choices": [
           {
             "id": "A",
-            "text": "It contradicts both because the means are all different."
+            "text": "7 mg/kg low"
           },
           {
             "id": "B",
-            "text": "It proves A is correct for every possible setting."
+            "text": "10 mg/kg high"
           },
           {
             "id": "C",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "16 mg/kg high"
           },
           {
             "id": "D",
-            "text": "It supports B and contradicts A."
+            "text": "92 mg/kg high"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "Different means can support a constant change per step.",
-          "B": "A finite tested range cannot establish behavior at every possible setting.",
-          "C": "Successive means differ by -2, rather than remaining constant.",
-          "D": "The means change by equal nonzero differences."
+          "A": "Lab A reads 7 mg/kg below the certified value; Lab B errs in the other direction.",
+          "B": "Lab B reports 92 mg/kg against a certified 82 mg/kg, which is 10 mg/kg too high.",
+          "C": "Sixteen is the gap between Lab B and Lab A, not between Lab B and the true value.",
+          "D": "This is Lab B’s reported mean itself rather than its distance from the certified figure."
         }
       },
       {
@@ -19067,33 +19067,33 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 cm, what mean sensor reading would A predict?",
+        "context": "The two experiments together suggest that the Experiment 1 disagreement is best explained by:",
         "practiceOnly": true,
         "passage": "exp26-sp-16",
         "choices": [
           {
             "id": "A",
-            "text": "36 units"
+            "text": "a bias in the method one laboratory uses"
           },
           {
             "id": "B",
-            "text": "32 units"
+            "text": "genuine variation between the soil portions"
           },
           {
             "id": "C",
-            "text": "44 units"
+            "text": "the unknown soil holding more lead than thought"
           },
           {
             "id": "D",
-            "text": "34 units"
+            "text": "random scatter within each laboratory’s ten runs"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This assumes the response stops changing after the last measured setting.",
-          "B": "This advances two steps beyond the last setting instead of one.",
-          "C": "This extends the pattern backward rather than forward.",
-          "D": "One additional step adds -2 to 36; this is a conditional prediction, not a measurement."
+          "A": "Lab B reads about 10 mg/kg high on a soil of known content, and high by much the same margin on the unknown.",
+          "B": "The batch was homogenised before division, so portion-to-portion variation is negligible.",
+          "C": "The unknown has no accepted value, and Lab B reads high even where the true value is known.",
+          "D": "Each laboratory’s ten portions span about 10 mg/kg, far less than the 17 mg/kg between labs."
         }
       },
       {
@@ -19101,135 +19101,135 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At filter layers of 6 layers, what mean collected particles was recorded?",
+        "context": "In Series 1, what initial rate was measured when M was at 0.20 mol/L?",
         "practiceOnly": true,
         "passage": "exp26-sp-17",
         "choices": [
           {
             "id": "A",
-            "text": "50 particles"
+            "text": "0.8 mmol/L/s"
           },
           {
             "id": "B",
-            "text": "44 particles"
+            "text": "3.2 mmol/L/s"
           },
           {
             "id": "C",
-            "text": "47 particles"
+            "text": "12.8 mmol/L/s"
           },
           {
             "id": "D",
-            "text": "53 particles"
+            "text": "51.2 mmol/L/s"
           }
         ],
-        "answer": "A",
+        "answer": "C",
         "why": {
-          "A": "Read the entry for the setting of 6.",
-          "B": "This belongs to the setting of 2.",
-          "C": "This belongs to the setting of 4.",
-          "D": "This belongs to the setting of 8."
+          "A": "Table 1 gives 0.8 at 0.05 mol/L, the most dilute run in the series.",
+          "B": "Table 1 gives 3.2 at 0.10 mol/L, one row above the concentration asked about.",
+          "C": "Table 1 pairs an M concentration of 0.20 mol/L with a rate of 12.8 mmol/L/s.",
+          "D": "Table 1 gives 51.2 at 0.40 mol/L, the most concentrated run in the series."
         }
       },
       {
         "id": "exp26-science-082",
         "section": "science",
-        "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "topic": "calculating from data",
+        "difficulty": "medium",
+        "context": "In Series 1, doubling the concentration of M changes the rate by what factor?",
         "practiceOnly": true,
         "passage": "exp26-sp-17",
         "choices": [
           {
             "id": "A",
-            "text": "the measuring procedure"
+            "text": "It roughly doubles."
           },
           {
             "id": "B",
-            "text": "filter layers"
+            "text": "It roughly quadruples."
           },
           {
             "id": "C",
-            "text": "collected particles"
+            "text": "It roughly halves."
           },
           {
             "id": "D",
-            "text": "the number of trials per setting"
+            "text": "It barely changes at all."
           }
         ],
         "answer": "B",
         "why": {
-          "A": "The passage states that the same procedure was used.",
-          "B": "The passage identifies filter layers as the changed factor.",
-          "C": "This was the measured response, not the variable deliberately set.",
-          "D": "Every setting used three trials."
+          "A": "Doubling would take 0.8 to 1.6, but the next row of Table 1 reads 3.2.",
+          "B": "Each row is four times the one above it: 0.8, 3.2, 12.8 and 51.2 mmol/L/s.",
+          "C": "The rate rises steeply with concentration rather than falling.",
+          "D": "That describes Series 2; in Series 1 the rate grows by a factor of 64 across the table."
         }
       },
       {
         "id": "exp26-science-083",
         "section": "science",
         "topic": "calculating from data",
-        "difficulty": "medium",
-        "context": "What is the change in mean collected particles when filter layers increases from 2 to 8 layers? Use final minus initial.",
+        "difficulty": "hard",
+        "context": "If Series 1 were extended, the rate at an M concentration of 0.80 mol/L would be about:",
         "practiceOnly": true,
         "passage": "exp26-sp-17",
         "choices": [
           {
             "id": "A",
-            "text": "-9 particles"
+            "text": "102.4 mmol/L/s"
           },
           {
             "id": "B",
-            "text": "97 particles"
+            "text": "153.6 mmol/L/s"
           },
           {
             "id": "C",
-            "text": "9 particles"
+            "text": "204.8 mmol/L/s"
           },
           {
             "id": "D",
-            "text": "3 particles"
+            "text": "409.6 mmol/L/s"
           }
         ],
         "answer": "C",
         "why": {
-          "A": "This reverses final and initial.",
-          "B": "A change is a difference, not a sum.",
-          "C": "53 - 44 = 9.",
-          "D": "This is the change for a single step, not all three steps."
+          "A": "Doubling the previous rate treats the relationship as proportional, which the table rules out.",
+          "B": "Tripling fits no step in the table; every step in Series 1 multiplies the rate by four.",
+          "C": "Doubling the concentration quadruples the rate, so 51.2 at 0.40 mol/L gives 204.8 at 0.80.",
+          "D": "This multiplies by eight, which would need the concentration to double twice over."
         }
       },
       {
         "id": "exp26-science-084",
         "section": "science",
-        "topic": "conflicting viewpoints",
+        "topic": "hypotheses",
         "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "context": "Table 2 indicates that the rate of this reaction:",
         "practiceOnly": true,
         "passage": "exp26-sp-17",
         "choices": [
           {
             "id": "A",
-            "text": "It supports B and contradicts A."
+            "text": "hardly depends on the concentration of N"
           },
           {
             "id": "B",
-            "text": "It contradicts both because the means are all different."
+            "text": "falls as the concentration of N is raised"
           },
           {
             "id": "C",
-            "text": "It proves A is correct for every possible setting."
+            "text": "rises as steeply with N as it does with M"
           },
           {
             "id": "D",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "cannot be measured when N is present"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "The means change by equal nonzero differences.",
-          "B": "Different means can support a constant change per step.",
-          "C": "A finite tested range cannot establish behavior at every possible setting.",
-          "D": "Successive means differ by 3, rather than remaining constant."
+          "A": "The rate holds at 3.2 across an eightfold change in N, moving only to 3.3 at the top.",
+          "B": "The single change in the column is upward, from 3.2 to 3.3, not downward.",
+          "C": "An eightfold rise in M multiplies the rate by 64; the same rise in N changes almost nothing.",
+          "D": "Every run in both series contains N, and all of them produced a measurable rate."
         }
       },
       {
@@ -19237,33 +19237,33 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 layers, what mean collected particles would A predict?",
+        "context": "Starting from 0.10 mol/L of each compound, which change would raise the rate the most?",
         "practiceOnly": true,
         "passage": "exp26-sp-17",
         "choices": [
           {
             "id": "A",
-            "text": "56 particles"
+            "text": "doubling the concentration of M alone"
           },
           {
             "id": "B",
-            "text": "53 particles"
+            "text": "doubling the concentration of N alone"
           },
           {
             "id": "C",
-            "text": "59 particles"
+            "text": "halving the concentration of M alone"
           },
           {
             "id": "D",
-            "text": "41 particles"
+            "text": "doubling both concentrations but cooling"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "One additional step adds 3 to 53; this is a conditional prediction, not a measurement.",
-          "B": "This assumes the response stops changing after the last measured setting.",
-          "C": "This advances two steps beyond the last setting instead of one.",
-          "D": "This extends the pattern backward rather than forward."
+          "A": "Doubling M takes the rate from 3.2 to 12.8, a fourfold rise that nothing else here matches.",
+          "B": "Doubling N leaves the rate at 3.2, as the whole of Table 2 shows.",
+          "C": "Halving M drops the rate to 0.8, which is a fall rather than a rise.",
+          "D": "Every figure was taken at 25 °C, so the effect of cooling is not something the tables can tell us."
         }
       },
       {
@@ -19271,169 +19271,169 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At stirring time of 6 s, what mean dissolved mass was recorded?",
+        "context": "According to Table 1, how many narrow years are recorded in the Rockies?",
         "practiceOnly": true,
         "passage": "exp26-sp-18",
         "choices": [
           {
             "id": "A",
-            "text": "55 g"
+            "text": "2"
           },
           {
             "id": "B",
-            "text": "52 g"
+            "text": "3"
           },
           {
             "id": "C",
-            "text": "46 g"
+            "text": "6"
           },
           {
             "id": "D",
-            "text": "49 g"
+            "text": "1453"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This belongs to the setting of 8.",
-          "B": "Read the entry for the setting of 6.",
-          "C": "This belongs to the setting of 2.",
-          "D": "This belongs to the setting of 4."
+          "A": "Table 1 gives two narrow years for the Rockies sites, beginning in 1453.",
+          "B": "Three narrow years is the Scandinavian figure rather than the Rockies one.",
+          "C": "Six narrow years is the Skarn Ridge figure, the longest interval listed.",
+          "D": "This is the first narrow year at three of the regions, not a count of years."
         }
       },
       {
         "id": "exp26-science-087",
         "section": "science",
-        "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "topic": "conflicting viewpoints",
+        "difficulty": "medium",
+        "context": "Scientist 1’s argument rests chiefly on the claim that:",
         "practiceOnly": true,
         "passage": "exp26-sp-18",
         "choices": [
           {
             "id": "A",
-            "text": "the number of trials per setting"
+            "text": "only a global cause reaches three continents at once"
           },
           {
             "id": "B",
-            "text": "the measuring procedure"
+            "text": "droughts are too brief to narrow rings for six years"
           },
           {
             "id": "C",
-            "text": "stirring time"
+            "text": "looper outbreaks always leave distorted latewood"
           },
           {
             "id": "D",
-            "text": "dissolved mass"
+            "text": "the ridge is drier than Scandinavia or the Rockies"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Every setting used three trials.",
-          "B": "The passage states that the same procedure was used.",
-          "C": "The passage identifies stirring time as the changed factor.",
-          "D": "This was the measured response, not the variable deliberately set."
+          "A": "The spread of narrow rings across three continents is the load-bearing step of the volcanic case.",
+          "B": "Scientist 1 never discusses how long a drought lasts; that is Scientist 2’s territory.",
+          "C": "Distorted latewood is Scientist 3’s evidence and appears nowhere in the first account.",
+          "D": "The ridge being dry is part of Scientist 2’s reasoning about drought."
         }
       },
       {
         "id": "exp26-science-088",
         "section": "science",
-        "topic": "calculating from data",
-        "difficulty": "medium",
-        "context": "What is the change in mean dissolved mass when stirring time increases from 2 to 8 s? Use final minus initial.",
+        "topic": "conflicting viewpoints",
+        "difficulty": "hard",
+        "context": "Scientist 2 objects to Scientist 1 principally on the ground that:",
         "practiceOnly": true,
         "passage": "exp26-sp-18",
         "choices": [
           {
             "id": "A",
-            "text": "3 g"
+            "text": "sulfate spikes and narrow rings often coincide by chance"
           },
           {
             "id": "B",
-            "text": "-9 g"
+            "text": "the polar ice cores have been dated to the wrong decade"
           },
           {
             "id": "C",
-            "text": "101 g"
+            "text": "no eruption large enough occurred anywhere near 1453"
           },
           {
             "id": "D",
-            "text": "9 g"
+            "text": "summer cooling narrows rings more sharply than drought does"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This is the change for a single step, not all three steps.",
-          "B": "This reverses final and initial.",
-          "C": "A change is a difference, not a sum.",
-          "D": "55 - 46 = 9."
+          "A": "Because eruptions are frequent and narrow rings common, their overlap is weak evidence of a link.",
+          "B": "Scientist 2 accepts the dating and disputes what the coincidence proves.",
+          "C": "The eruption itself is never denied; only its role in narrowing these rings is.",
+          "D": "Scientist 2 argues the reverse, that drought narrows rings far more sharply than cooling ever does."
         }
       },
       {
         "id": "exp26-science-089",
         "section": "science",
         "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "difficulty": "hard",
+        "context": "Which evidence does Scientist 3 use that neither of the others addresses?",
         "practiceOnly": true,
         "passage": "exp26-sp-18",
         "choices": [
           {
             "id": "A",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "the shape of the latewood inside the 1453 rings"
           },
           {
             "id": "B",
-            "text": "It supports B and contradicts A."
+            "text": "the sulfate spike recorded in the polar ice cores"
           },
           {
             "id": "C",
-            "text": "It contradicts both because the means are all different."
+            "text": "the six-year low stand in the lake below the ridge"
           },
           {
             "id": "D",
-            "text": "It proves A is correct for every possible setting."
+            "text": "the narrow rings appearing in the Rockies as well"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Successive means differ by 3, rather than remaining constant.",
-          "B": "The means change by equal nonzero differences.",
-          "C": "Different means can support a constant change per step.",
-          "D": "A finite tested range cannot establish behavior at every possible setting."
+          "A": "Distorted latewood is offered as a mark of defoliation that neither cooling nor drought leaves.",
+          "B": "The sulfate spike is Scientist 1’s central evidence.",
+          "C": "The lake low stand is what Scientist 2 builds the drought case on.",
+          "D": "The Rockies rings belong to Scientist 1’s argument about a global signal."
         }
       },
       {
         "id": "exp26-science-090",
         "section": "science",
-        "topic": "hypotheses",
+        "topic": "conflicting viewpoints",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 s, what mean dissolved mass would A predict?",
+        "context": "Which finding would most weaken Scientist 3’s account?",
         "practiceOnly": true,
         "passage": "exp26-sp-18",
         "choices": [
           {
             "id": "A",
-            "text": "43 g"
+            "text": "Ridges with no looper present show the same narrowing."
           },
           {
             "id": "B",
-            "text": "58 g"
+            "text": "Looper outbreaks on the ridge recur roughly every seventy years."
           },
           {
             "id": "C",
-            "text": "55 g"
+            "text": "The 1388 outbreak also lasted for six full growing seasons."
           },
           {
             "id": "D",
-            "text": "61 g"
+            "text": "Defoliated pines elsewhere produce distorted latewood too."
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This extends the pattern backward rather than forward.",
-          "B": "One additional step adds 3 to 55; this is a conditional prediction, not a measurement.",
-          "C": "This assumes the response stops changing after the last measured setting.",
-          "D": "This advances two steps beyond the last setting instead of one."
+          "A": "The same anomaly without the insect leaves defoliation unable to be the cause.",
+          "B": "This is the recurrence interval Scientist 3 cites in support of the account.",
+          "C": "A six-year outbreak matches the anomaly’s length and strengthens the case.",
+          "D": "This confirms the latewood signature Scientist 3 relies on."
         }
       },
       {
@@ -19441,67 +19441,67 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At panel tilt of 6 degrees, what mean power output was recorded?",
+        "context": "What absorbance was recorded for the 6 mg/L standard?",
         "practiceOnly": true,
         "passage": "exp26-sp-19",
         "choices": [
           {
             "id": "A",
-            "text": "51 mW"
+            "text": "0.126"
           },
           {
             "id": "B",
-            "text": "57 mW"
+            "text": "0.251"
           },
           {
             "id": "C",
-            "text": "54 mW"
+            "text": "0.376"
           },
           {
             "id": "D",
-            "text": "48 mW"
+            "text": "0.502"
           }
         ],
         "answer": "C",
         "why": {
-          "A": "This belongs to the setting of 4.",
-          "B": "This belongs to the setting of 8.",
-          "C": "Read the entry for the setting of 6.",
-          "D": "This belongs to the setting of 2."
+          "A": "Table 1 pairs an absorbance of 0.126 with the 2 mg/L standard.",
+          "B": "Table 1 pairs an absorbance of 0.251 with the 4 mg/L standard.",
+          "C": "Table 1 pairs the 6 mg/L standard with an absorbance of 0.376.",
+          "D": "Table 1 pairs an absorbance of 0.502 with the 8 mg/L standard."
         }
       },
       {
         "id": "exp26-science-092",
         "section": "science",
         "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "difficulty": "medium",
+        "context": "The instrument was zeroed against the blank before each reading so that absorbance would reflect:",
         "practiceOnly": true,
         "passage": "exp26-sp-19",
         "choices": [
           {
             "id": "A",
-            "text": "power output"
+            "text": "the dye alone rather than the solvent or cuvette"
           },
           {
             "id": "B",
-            "text": "the number of trials per setting"
+            "text": "the total of everything present inside the cuvette"
           },
           {
             "id": "C",
-            "text": "the measuring procedure"
+            "text": "the concentration of the stock solution used"
           },
           {
             "id": "D",
-            "text": "panel tilt"
+            "text": "the wavelength at which the dye absorbs most"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This was the measured response, not the variable deliberately set.",
-          "B": "Every setting used three trials.",
-          "C": "The passage states that the same procedure was used.",
-          "D": "The passage identifies panel tilt as the changed factor."
+          "A": "Zeroing on the blank subtracts everything the sample shares with it, leaving the dye’s contribution.",
+          "B": "Measuring everything present is what zeroing is designed to avoid.",
+          "C": "The stock is where the standards came from and is not itself being measured.",
+          "D": "Wavelength was chosen beforehand and held constant for every reading."
         }
       },
       {
@@ -19509,67 +19509,67 @@
         "section": "science",
         "topic": "calculating from data",
         "difficulty": "medium",
-        "context": "What is the change in mean power output when panel tilt increases from 2 to 8 degrees? Use final minus initial.",
+        "context": "Using Table 1, an absorbance of 0.251 corresponds to a concentration of:",
         "practiceOnly": true,
         "passage": "exp26-sp-19",
         "choices": [
           {
             "id": "A",
-            "text": "9 mW"
+            "text": "2 mg/L"
           },
           {
             "id": "B",
-            "text": "3 mW"
+            "text": "4 mg/L"
           },
           {
             "id": "C",
-            "text": "-9 mW"
+            "text": "6 mg/L"
           },
           {
             "id": "D",
-            "text": "105 mW"
+            "text": "8 mg/L"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "57 - 48 = 9.",
-          "B": "This is the change for a single step, not all three steps.",
-          "C": "This reverses final and initial.",
-          "D": "A change is a difference, not a sum."
+          "A": "The 2 mg/L standard reads 0.126, about half the absorbance in the question.",
+          "B": "Table 1 lists 0.251 against the 4 mg/L standard exactly.",
+          "C": "The 6 mg/L standard reads 0.376, which is noticeably higher.",
+          "D": "The 8 mg/L standard reads 0.502, roughly double the figure asked about."
         }
       },
       {
         "id": "exp26-science-094",
         "section": "science",
-        "topic": "conflicting viewpoints",
-        "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "topic": "calculating from data",
+        "difficulty": "hard",
+        "context": "From the diluted reading, what is the concentration of the undiluted unknown?",
         "practiceOnly": true,
         "passage": "exp26-sp-19",
         "choices": [
           {
             "id": "A",
-            "text": "It proves A is correct for every possible setting."
+            "text": "2.5 mg/L"
           },
           {
             "id": "B",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "5 mg/L"
           },
           {
             "id": "C",
-            "text": "It supports B and contradicts A."
+            "text": "10 mg/L"
           },
           {
             "id": "D",
-            "text": "It contradicts both because the means are all different."
+            "text": "20 mg/L"
           }
         ],
-        "answer": "B",
+        "answer": "C",
         "why": {
-          "A": "A finite tested range cannot establish behavior at every possible setting.",
-          "B": "Successive means differ by 3, rather than remaining constant.",
-          "C": "The means change by equal nonzero differences.",
-          "D": "Different means can support a constant change per step."
+          "A": "This quarters the diluted concentration instead of reversing a halving.",
+          "B": "Five is the diluted sample’s own concentration, read off the standards.",
+          "C": "An absorbance of 0.314 sits between the 4 and 6 mg/L standards at about 5 mg/L, and the dilution halved it.",
+          "D": "This doubles the answer a second time, as though the sample had been diluted twice."
         }
       },
       {
@@ -19577,33 +19577,33 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 degrees, what mean power output would A predict?",
+        "context": "The undiluted reading is less useful than the diluted one mainly because it:",
         "practiceOnly": true,
         "passage": "exp26-sp-19",
         "choices": [
           {
             "id": "A",
-            "text": "63 mW"
+            "text": "lies beyond the range the standards cover"
           },
           {
             "id": "B",
-            "text": "45 mW"
+            "text": "was taken with a different blank solution"
           },
           {
             "id": "C",
-            "text": "60 mW"
+            "text": "used a cuvette of a slightly greater width"
           },
           {
             "id": "D",
-            "text": "57 mW"
+            "text": "falls exactly between two of the standards"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This advances two steps beyond the last setting instead of one.",
-          "B": "This extends the pattern backward rather than forward.",
-          "C": "One additional step adds 3 to 57; this is a conditional prediction, not a measurement.",
-          "D": "This assumes the response stops changing after the last measured setting."
+          "A": "The highest standard reads 0.502, so 0.690 must be extrapolated rather than read off the curve.",
+          "B": "The same blank was used for every reading, which the passage states directly.",
+          "C": "The same cuvette was used throughout, so its width cannot differ between readings.",
+          "D": "Falling between two standards is the ordinary case and is exactly what the diluted reading does."
         }
       },
       {
@@ -19611,101 +19611,101 @@
         "section": "science",
         "topic": "reading data",
         "difficulty": "easy",
-        "context": "At insulation thickness of 6 mm, what mean temperature decrease was recorded?",
+        "context": "At the open pond, what was the mean torchlight count of common frogs?",
         "practiceOnly": true,
         "passage": "exp26-sp-20",
         "choices": [
           {
             "id": "A",
-            "text": "50 °C"
+            "text": "4"
           },
           {
             "id": "B",
-            "text": "48 °C"
+            "text": "7"
           },
           {
             "id": "C",
-            "text": "44 °C"
+            "text": "14"
           },
           {
             "id": "D",
-            "text": "46 °C"
+            "text": "22"
           }
         ],
         "answer": "D",
         "why": {
-          "A": "This belongs to the setting of 2.",
-          "B": "This belongs to the setting of 4.",
-          "C": "This belongs to the setting of 8.",
-          "D": "Read the entry for the setting of 6."
+          "A": "Four is the trapping count for common frogs, from the other column of Table 1.",
+          "B": "Seven is the common frog torchlight count at the vegetated pond in Table 2.",
+          "C": "Fourteen is the torchlight count for common toads rather than frogs.",
+          "D": "Table 1 pairs common frog with a mean torchlight count of 22 at the open pond."
         }
       },
       {
         "id": "exp26-science-097",
         "section": "science",
         "topic": "research summaries",
-        "difficulty": "easy",
-        "context": "Which quantity did students deliberately vary?",
+        "difficulty": "medium",
+        "context": "Running both methods on the same nights allowed any difference to be credited to:",
         "practiceOnly": true,
         "passage": "exp26-sp-20",
         "choices": [
           {
             "id": "A",
-            "text": "insulation thickness"
+            "text": "the method rather than the night’s conditions"
           },
           {
             "id": "B",
-            "text": "temperature decrease"
+            "text": "the observers rather than the traps they set"
           },
           {
             "id": "C",
-            "text": "the number of trials per setting"
+            "text": "the season rather than the pond being surveyed"
           },
           {
             "id": "D",
-            "text": "the measuring procedure"
+            "text": "the pond’s depth rather than its marginal plants"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "The passage identifies insulation thickness as the changed factor.",
-          "B": "This was the measured response, not the variable deliberately set.",
-          "C": "Every setting used three trials.",
-          "D": "The passage states that the same procedure was used."
+          "A": "Same night, same weather, same animals present — so what remains is how each method counts them.",
+          "B": "Observers and traps are the two methods themselves, not competing explanations of a difference.",
+          "C": "Both methods ran within the same twelve nights, so season cannot separate them.",
+          "D": "The two ponds were matched for size and depth, leaving vegetation as the difference."
         }
       },
       {
         "id": "exp26-science-098",
         "section": "science",
-        "topic": "calculating from data",
+        "topic": "research summaries",
         "difficulty": "medium",
-        "context": "What is the change in mean temperature decrease when insulation thickness increases from 2 to 8 mm? Use final minus initial.",
+        "context": "Experiment 2 used a pond with dense marginal vegetation in order to test how each method performs when:",
         "practiceOnly": true,
         "passage": "exp26-sp-20",
         "choices": [
           {
             "id": "A",
-            "text": "94 °C"
+            "text": "the animals are harder for an observer to see"
           },
           {
             "id": "B",
-            "text": "-6 °C"
+            "text": "the water is substantially deeper than before"
           },
           {
             "id": "C",
-            "text": "-2 °C"
+            "text": "far fewer amphibians are present in the pond"
           },
           {
             "id": "D",
-            "text": "6 °C"
+            "text": "the traps have to be emptied later in the day"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "A change is a difference, not a sum.",
-          "B": "44 - 50 = -6.",
-          "C": "This is the change for a single step, not all three steps.",
-          "D": "This reverses final and initial."
+          "A": "The torchlight count collapses from 31 to 9 newts while trapping holds near 41, which is the point.",
+          "B": "The second pond was chosen to match the first in depth as well as size.",
+          "C": "Trapping finds similar numbers at both ponds, so the populations are comparable.",
+          "D": "Traps were set at dusk and emptied at dawn at both ponds alike."
         }
       },
       {
@@ -19713,33 +19713,33 @@
         "section": "science",
         "topic": "conflicting viewpoints",
         "difficulty": "medium",
-        "context": "Which statement best describes how the table relates to the two students’ proposals?",
+        "context": "Surveyor 2’s objection to relying on trapping alone is that it:",
         "practiceOnly": true,
         "passage": "exp26-sp-20",
         "choices": [
           {
             "id": "A",
-            "text": "It contradicts both because the means are all different."
+            "text": "catches almost no frogs or toads at either pond"
           },
           {
             "id": "B",
-            "text": "It proves A is correct for every possible setting."
+            "text": "depends too heavily on how clear the water is"
           },
           {
             "id": "C",
-            "text": "It supports A within the tested range and contradicts B."
+            "text": "requires two observers to walk the pond margin"
           },
           {
             "id": "D",
-            "text": "It supports B and contradicts A."
+            "text": "produces lower newt counts than torchlight does"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Different means can support a constant change per step.",
-          "B": "A finite tested range cannot establish behavior at every possible setting.",
-          "C": "Successive means differ by -2, rather than remaining constant.",
-          "D": "The means change by equal nonzero differences."
+          "A": "Traps take 4 and 3 frogs and toads at the open pond against 22 and 14 seen by torchlight.",
+          "B": "Independence from water clarity is the argument Surveyor 1 makes in favour of trapping.",
+          "C": "Walking the margin belongs to the torchlight method, not to trapping.",
+          "D": "Trapping records more newts than torchlight at both ponds, not fewer."
         }
       },
       {
@@ -19747,33 +19747,33 @@
         "section": "science",
         "topic": "hypotheses",
         "difficulty": "hard",
-        "context": "If the observed constant change continues to 10 mm, what mean temperature decrease would A predict?",
+        "context": "Taking both tables together, the most complete count of amphibians would come from:",
         "practiceOnly": true,
         "passage": "exp26-sp-20",
         "choices": [
           {
             "id": "A",
-            "text": "44 °C"
+            "text": "using both methods and combining what each finds"
           },
           {
             "id": "B",
-            "text": "40 °C"
+            "text": "using trapping alone on as many nights as possible"
           },
           {
             "id": "C",
-            "text": "52 °C"
+            "text": "using torchlight alone at ponds with open margins"
           },
           {
             "id": "D",
-            "text": "42 °C"
+            "text": "surveying only the pond whose margin is clearest"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This assumes the response stops changing after the last measured setting.",
-          "B": "This advances two steps beyond the last setting instead of one.",
-          "C": "This extends the pattern backward rather than forward.",
-          "D": "One additional step adds -2 to 44; this is a conditional prediction, not a measurement."
+          "A": "Each method misses what the other catches: traps take newts, torchlight finds frogs and toads.",
+          "B": "More trapping nights would still leave frogs and toads badly undercounted.",
+          "C": "Torchlight alone undercounts newts even at the open pond, at 31 against 44.",
+          "D": "Choosing only clear ponds would bias which ponds get surveyed rather than fix either method."
         }
       }
     ]
@@ -20897,34 +20897,61 @@
       {
         "id": "exp26-sp-16",
         "type": "Research Summaries",
-        "title": "Model study 16: lamp distance",
+        "title": "Three laboratories, one soil",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a light sensor. Students changed lamp distance while keeping the same lamp and sensor. For each setting, they used three fresh trials and recorded the mean sensor reading. The same measuring procedure was used for every trial.\n\nStudent A proposes that sensor reading changes by a constant amount for every 2-cm increase within the tested range. Student B proposes that the sensor reading remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "Experiment 1. A single soil sample was dried, ground and mixed thoroughly, then divided into thirty portions. Ten portions went to each of three laboratories, which were asked to report lead concentration in milligrams per kilogram using their own routine methods.\n\nExperiment 2. The same three laboratories were then sent ten portions each of a certified reference soil, whose lead concentration is known to be 82 mg/kg. The laboratories were not told which sample was which.\n\nBecause all thirty portions in Experiment 1 were drawn at random from one well-mixed batch, any real difference in lead content between portions is far smaller than the differences reported. The range given for each laboratory is the lowest and highest of its ten portions.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Experiment 1: the unknown soil, as reported by each laboratory",
             "head": [
-              "lamp distance (cm)",
-              "sensor reading (units)"
+              "laboratory",
+              "mean lead (mg/kg)",
+              "range across ten portions (mg/kg)"
             ],
             "rows": [
               [
-                "2",
-                "42"
+                "Lab A",
+                "74",
+                "69 to 79"
               ],
               [
-                "4",
-                "40"
+                "Lab B",
+                "91",
+                "85 to 97"
               ],
               [
-                "6",
-                "38"
+                "Lab C",
+                "76",
+                "71 to 81"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "Experiment 2: the certified soil, true value 82 mg/kg",
+            "head": [
+              "laboratory",
+              "mean lead (mg/kg)",
+              "range across ten portions (mg/kg)"
+            ],
+            "rows": [
+              [
+                "Lab A",
+                "75",
+                "70 to 80"
               ],
               [
-                "8",
-                "36"
+                "Lab B",
+                "92",
+                "86 to 98"
+              ],
+              [
+                "Lab C",
+                "77",
+                "72 to 82"
               ]
             ]
           }
@@ -20932,35 +20959,62 @@
       },
       {
         "id": "exp26-sp-17",
-        "type": "Research Summaries",
-        "title": "Model study 17: filter layers",
+        "type": "Data Representation",
+        "title": "Which reactant sets the pace",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a filter collector. Students changed filter layers while keeping the same incoming particle mixture and collection time. For each setting, they used three fresh trials and recorded the mean collected particles. The same measuring procedure was used for every trial.\n\nStudent A proposes that collected particles changes by a constant amount for every 2-layers increase within the tested range. Student B proposes that the collected particles remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "A chemist measured the initial rate of a reaction between compounds M and N. In each run the concentration of one compound was varied while the other was held fixed, and the temperature was kept at 25 °C throughout.\n\nSeries 1 varied the concentration of M while holding N at 0.10 mol/L. Series 2 varied the concentration of N while holding M at 0.10 mol/L.\n\nRate is given in millimoles per litre per second. Each figure is the mean of three runs, and every rate was measured over the first ten seconds, before either compound had been appreciably used up, so that the concentrations during measurement are effectively the ones listed.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Series 1: rate against the concentration of M, with N at 0.10 mol/L",
             "head": [
-              "filter layers (layers)",
-              "collected particles (particles)"
+              "concentration of M (mol/L)",
+              "initial rate (mmol/L/s)"
             ],
             "rows": [
               [
-                "2",
-                "44"
+                "0.05",
+                "0.8"
               ],
               [
-                "4",
-                "47"
+                "0.10",
+                "3.2"
               ],
               [
-                "6",
-                "50"
+                "0.20",
+                "12.8"
               ],
               [
-                "8",
-                "53"
+                "0.40",
+                "51.2"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "Series 2: rate against the concentration of N, with M at 0.10 mol/L",
+            "head": [
+              "concentration of N (mol/L)",
+              "initial rate (mmol/L/s)"
+            ],
+            "rows": [
+              [
+                "0.05",
+                "3.2"
+              ],
+              [
+                "0.10",
+                "3.2"
+              ],
+              [
+                "0.20",
+                "3.2"
+              ],
+              [
+                "0.40",
+                "3.3"
               ]
             ]
           }
@@ -20968,35 +21022,67 @@
       },
       {
         "id": "exp26-sp-18",
-        "type": "Research Summaries",
-        "title": "Model study 18: stirring time",
+        "type": "Conflicting Viewpoints",
+        "title": "Six narrow years",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a mixing container. Students changed stirring time while keeping the same liquid volume and starting solid. For each setting, they used three fresh trials and recorded the mean dissolved mass. The same measuring procedure was used for every trial.\n\nStudent A proposes that dissolved mass changes by a constant amount for every 2-s increase within the tested range. Student B proposes that the dissolved mass remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "Cores taken from pines on Skarn Ridge show an abrupt narrowing of the growth rings for the six years after 1452, followed by a full recovery. Three dendrochronologists account for it differently.\n\nScientist 1. An eruption is responsible. A large volcano in 1452 or 1453 put sulfate high into the stratosphere, cooling summers across the hemisphere for several years. Ice cores from both poles carry a sulfate spike dated to those years, and narrow rings of the same age turn up in Scandinavia and in the Rockies. Only a global cause can put the same signal on three continents at once.\n\nScientist 2. A local drought is responsible. Sulfate spikes and narrow rings coincide often enough by chance, since eruptions are frequent and narrow rings are common. Lake sediments below the ridge record a six-year low stand beginning in 1453, and on a dry ridge drought narrows rings far more sharply than a degree of summer cooling ever does.\n\nScientist 3. Both accounts mistake timing for cause. Pine looper outbreaks recur on this ridge every sixty to eighty years and last five to seven, which fits the anomaly's length better than either alternative. The 1453 rings also carry the distorted latewood typical of defoliation, which neither cooling nor drought produces.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Narrow-ring intervals recorded at four regions",
             "head": [
-              "stirring time (s)",
-              "dissolved mass (g)"
+              "region",
+              "first narrow year",
+              "number of narrow years"
             ],
             "rows": [
               [
-                "2",
-                "46"
+                "Skarn Ridge",
+                "1453",
+                "6"
               ],
               [
-                "4",
-                "49"
+                "Scandinavia (3 sites)",
+                "1453",
+                "3"
               ],
               [
-                "6",
-                "52"
+                "Rockies (2 sites)",
+                "1453",
+                "2"
               ],
               [
-                "8",
-                "55"
+                "Southern Alps (2 sites)",
+                "1454",
+                "2"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "Other Skarn Ridge records covering the same period",
+            "head": [
+              "record",
+              "years affected"
+            ],
+            "rows": [
+              [
+                "polar ice sulfate spike",
+                "1452 to 1454"
+              ],
+              [
+                "lake low stand",
+                "1453 to 1458"
+              ],
+              [
+                "previous looper outbreak",
+                "1388 to 1394"
+              ],
+              [
+                "looper outbreak before that",
+                "1312 to 1318"
               ]
             ]
           }
@@ -21004,35 +21090,58 @@
       },
       {
         "id": "exp26-sp-19",
-        "type": "Research Summaries",
-        "title": "Model study 19: panel tilt",
+        "type": "Data Representation",
+        "title": "Reading a concentration off a curve",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested a model solar panel. Students changed panel tilt while keeping the same light source and panel. For each setting, they used three fresh trials and recorded the mean power output. The same measuring procedure was used for every trial.\n\nStudent A proposes that power output changes by a constant amount for every 2-degrees increase within the tested range. Student B proposes that the power output remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "A technician determined the concentration of a dye in an unknown solution by measuring how much light it absorbs. Five standards of known concentration were prepared from a single stock solution by serial dilution, and all five were measured first, working from the most dilute to the most concentrated; the unknown was then measured under identical conditions.\n\nAbsorbance has no units. Every measurement used the same cuvette, the same wavelength and the same blank, and the instrument was zeroed against the blank immediately before each reading.\n\nThe unknown was measured twice: once as received, and once after being diluted with an equal volume of solvent, which halves its concentration. Both readings were taken within a minute of one another, and the cuvette was rinsed with each new solution before being filled with it, so that carry-over from the previous sample could be ruled out.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "The five standards",
             "head": [
-              "panel tilt (degrees)",
-              "power output (mW)"
+              "concentration (mg/L)",
+              "absorbance"
             ],
             "rows": [
               [
+                "0",
+                "0.000"
+              ],
+              [
                 "2",
-                "48"
+                "0.126"
               ],
               [
                 "4",
-                "51"
+                "0.251"
               ],
               [
                 "6",
-                "54"
+                "0.376"
               ],
               [
                 "8",
-                "57"
+                "0.502"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "The unknown, measured twice",
+            "head": [
+              "sample",
+              "absorbance"
+            ],
+            "rows": [
+              [
+                "unknown, as received",
+                "0.690"
+              ],
+              [
+                "unknown, diluted by half",
+                "0.314"
               ]
             ]
           }
@@ -21041,34 +21150,71 @@
       {
         "id": "exp26-sp-20",
         "type": "Research Summaries",
-        "title": "Model study 20: insulation thickness",
+        "title": "Counting what you can see",
         "blurb": "A synthetic dataset for data interpretation; values are stipulated for this exercise.",
-        "text": "A class tested an insulated container. Students changed insulation thickness while keeping the same starting temperature and observation time. For each setting, they used three fresh trials and recorded the mean temperature decrease. The same measuring procedure was used for every trial.\n\nStudent A proposes that temperature decrease changes by a constant amount for every 2-mm increase within the tested range. Student B proposes that the temperature decrease remains the same at every setting. The class has not tested settings outside the table. Measurement variation between trials is not shown.",
+        "text": "Experiment 1. A pond was surveyed for amphibians on twelve nights using two methods at the same time. In the torchlight count, two observers walked the margin and counted the animals they saw. In the trapping count, twenty funnel traps were set at dusk and emptied at dawn.\n\nExperiment 2. On four of those twelve nights, both methods were repeated at a second pond of similar size and depth but with dense marginal vegetation.\n\nThe same two observers and the same twenty traps were used throughout, and each figure is the mean count for that method.\n\nTwo surveyors disagreed about the results. Surveyor 1 argues that the trapping count should be the headline figure, since it depends least on how clear the water and the margin happen to be. Surveyor 2 replies that a method catching almost no frogs or toads cannot stand alone as a count of amphibians.",
         "figures": [
           {
             "type": "table",
             "label": "Table 1",
-            "caption": "Observed means across three trials per setting",
+            "caption": "Experiment 1: the open pond, mean count by method",
             "head": [
-              "insulation thickness (mm)",
-              "temperature decrease (°C)"
+              "species",
+              "torchlight count",
+              "trapping count"
             ],
             "rows": [
               [
-                "2",
-                "50"
-              ],
-              [
-                "4",
-                "48"
-              ],
-              [
-                "6",
-                "46"
-              ],
-              [
-                "8",
+                "smooth newt",
+                "31",
                 "44"
+              ],
+              [
+                "palmate newt",
+                "6",
+                "9"
+              ],
+              [
+                "common frog",
+                "22",
+                "4"
+              ],
+              [
+                "common toad",
+                "14",
+                "3"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "label": "Table 2",
+            "caption": "Experiment 2: the vegetated pond, mean count by method",
+            "head": [
+              "species",
+              "torchlight count",
+              "trapping count"
+            ],
+            "rows": [
+              [
+                "smooth newt",
+                "9",
+                "41"
+              ],
+              [
+                "palmate newt",
+                "2",
+                "8"
+              ],
+              [
+                "common frog",
+                "7",
+                "5"
+              ],
+              [
+                "common toad",
+                "4",
+                "3"
               ]
             ]
           }
