@@ -12978,340 +12978,340 @@
         "id": "exp26-reading-001",
         "section": "reading",
         "topic": "main idea",
-        "difficulty": "medium",
-        "context": "Which statement best expresses the passage’s central idea?",
+        "difficulty": "hard",
+        "context": "The passage is primarily concerned with:",
         "practiceOnly": true,
         "passage": "exp26-rp-1",
         "choices": [
           {
             "id": "A",
-            "text": "Mira learns that an imperfection can preserve a meaningful history."
+            "text": "a repair that changes what an object is able to say."
           },
           {
             "id": "B",
-            "text": "Mira discovers that old clocks cannot be repaired."
+            "text": "a craftsman teaching an apprentice to service a mechanism."
           },
           {
             "id": "C",
-            "text": "The grandfather persuades Mira to stop using clocks."
+            "text": "a family disagreement about the value of an inherited object."
           },
           {
             "id": "D",
-            "text": "A station keeper teaches Mira to paint a clock."
+            "text": "the closure of a rural railway line and its local effects."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Supported by the passage: Mira learns that an imperfection can preserve a meaningful history.",
-          "B": "This choice is not supported. Mira learns that an imperfection can preserve a meaningful history.",
-          "C": "This choice is not supported. Mira learns that an imperfection can preserve a meaningful history.",
-          "D": "This choice is not supported. Mira learns that an imperfection can preserve a meaningful history."
+          "A": "Correct. Mira arrives intending to erase the scratch and leaves able to read it; the mechanism is fixed and the mark is kept.",
+          "B": "The grandfather does service the mechanism, but that hour is the setting for the point, not the point. Mira learns nothing about oiling pivots.",
+          "C": "Nobody argues. Mira offers to repaint, is told what the mark means, and changes her own mind without being opposed.",
+          "D": "The closed line is one clause of background. The passage is about the face of the clock, not the fate of the railway."
         }
       },
       {
         "id": "exp26-reading-002",
         "section": "reading",
         "topic": "detail",
-        "difficulty": "easy",
-        "context": "What does the grandfather clean?",
+        "difficulty": "medium",
+        "context": "According to the passage, the grandfather replaces:",
         "practiceOnly": true,
         "passage": "exp26-rp-1",
         "choices": [
           {
             "id": "A",
-            "text": "A paintbrush"
+            "text": "the scratched face of the clock with a new one."
           },
           {
             "id": "B",
-            "text": "The mechanism"
+            "text": "a suspension spring that had become brittle."
           },
           {
             "id": "C",
-            "text": "The shelf"
+            "text": "the two pivots that he had previously oiled."
           },
           {
             "id": "D",
-            "text": "The station platform"
+            "text": "the wooden case, which had warped out of true."
           }
         ],
         "answer": "B",
         "why": {
-          "A": "This choice is not supported. The passage specifies the mechanism.",
-          "B": "Supported by the passage: The passage specifies the mechanism.",
-          "C": "This choice is not supported. The passage specifies the mechanism.",
-          "D": "This choice is not supported. The passage specifies the mechanism."
+          "A": "He deliberately leaves the face alone. Replacing it is what Mira wanted and what the passage is about him not doing.",
+          "B": "Correct. He puts in \"a new suspension spring in place of one that had gone brittle\" — the only thing replaced rather than cleaned.",
+          "C": "The pivots are oiled, not replaced. The passage lists the two actions separately in the same sentence.",
+          "D": "He turns the case over to open the back. Nothing in the passage says the case is damaged or worked on."
         }
       },
       {
         "id": "exp26-reading-003",
         "section": "reading",
         "topic": "inference",
-        "difficulty": "medium",
-        "context": "Which conclusion is best supported by the passage?",
+        "difficulty": "easy",
+        "context": "It can reasonably be inferred that the grandfather spends the first hour on the mechanism because he:",
         "practiceOnly": true,
         "passage": "exp26-rp-1",
         "choices": [
           {
             "id": "A",
-            "text": "The grandfather secretly repaints the clock."
+            "text": "wants Mira to lose interest in repainting the face."
           },
           {
             "id": "B",
-            "text": "The scratch prevents the clock from keeping time."
+            "text": "has not yet noticed the long scratch on the clock face."
           },
           {
             "id": "C",
-            "text": "Mira’s decision changes because she learns the scratch’s origin."
+            "text": "thinks the clock working matters more than the clock looking new."
           },
           {
             "id": "D",
-            "text": "Mira decides that every damaged object should be discarded."
+            "text": "is waiting for better light before starting the more delicate work."
           }
         ],
         "answer": "C",
         "why": {
-          "A": "This choice is not supported. Mira’s decision changes because she learns the scratch’s origin.",
-          "B": "This choice is not supported. Mira’s decision changes because she learns the scratch’s origin.",
-          "C": "Supported by the passage: Mira’s decision changes because she learns the scratch’s origin.",
-          "D": "This choice is not supported. Mira’s decision changes because she learns the scratch’s origin."
+          "A": "He answers her offer directly with a question about the mark. Nothing suggests he is stalling her.",
+          "B": "He turns the case over and asks her what made the scratch, so he has plainly seen it.",
+          "C": "Correct. Offered a cosmetic job, he opens the back instead and works only on what makes it run.",
+          "D": "Light is never mentioned. The hour is spent on specific repairs the passage lists."
         }
       },
       {
         "id": "exp26-reading-004",
         "section": "reading",
         "topic": "vocabulary in context",
-        "difficulty": "medium",
-        "context": "As used in this passage, “legible” most nearly means:",
+        "difficulty": "easy",
+        "context": "As it is used in the final paragraph, the word \"legible\" most nearly means:",
         "practiceOnly": true,
         "passage": "exp26-rp-1",
         "choices": [
           {
             "id": "A",
-            "text": "silent"
+            "text": "neatly written in a careful hand."
           },
           {
             "id": "B",
-            "text": "newly polished"
+            "text": "able to be read for its meaning."
           },
           {
             "id": "C",
-            "text": "physically smaller"
+            "text": "large enough to be seen clearly."
           },
           {
             "id": "D",
-            "text": "meaningful and understandable"
+            "text": "permanent, and no longer removable."
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "This choice is not supported. In context, “legible” means meaningful and understandable.",
-          "B": "This choice is not supported. In context, “legible” means meaningful and understandable.",
-          "C": "This choice is not supported. In context, “legible” means meaningful and understandable.",
-          "D": "Supported by the passage: In context, “legible” means meaningful and understandable."
+          "A": "Handwriting is the everyday sense of the word and the wrong one here. The mark was scored into metal, not written.",
+          "B": "Correct. The sentence sets it against \"prettier\": the mark did not improve in looks, it became something Mira could read a history off.",
+          "C": "Size is not at issue. Mira could see the scratch perfectly well on the walk to the workshop.",
+          "D": "She could still repaint it and says so. The change is in what it means to her, not in whether it can be removed."
         }
       },
       {
         "id": "exp26-reading-005",
         "section": "reading",
         "topic": "function",
-        "difficulty": "medium",
-        "context": "What is the primary function of the passage’s final sentence?",
+        "difficulty": "easy",
+        "context": "The last sentence of the passage mainly serves to:",
         "practiceOnly": true,
         "passage": "exp26-rp-1",
         "choices": [
           {
             "id": "A",
-            "text": "Explains the historical meaning Mira now sees in the mark."
+            "text": "state the trade Mira has accepted and her judgement of it."
           },
           {
             "id": "B",
-            "text": "Introduces a new disagreement about train fares."
+            "text": "raise a doubt about whether the repair was worth the effort."
           },
           {
             "id": "C",
-            "text": "Gives instructions for replacing the clock mechanism."
+            "text": "explain the mechanical reason the clock keeps poor time."
           },
           {
             "id": "D",
-            "text": "Reveals that the grandfather invented the station."
+            "text": "return to the workshop scene described in the second paragraph."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Supported by the passage: Explains the historical meaning Mira now sees in the mark.",
-          "B": "This choice is not supported. Explains the historical meaning Mira now sees in the mark.",
-          "C": "This choice is not supported. Explains the historical meaning Mira now sees in the mark.",
-          "D": "This choice is not supported. Explains the historical meaning Mira now sees in the mark."
+          "A": "Correct. It names both halves — keeps time badly, says something exactly — and reports that she prefers this arrangement.",
+          "B": "It does the opposite. She states a preference for the outcome she has.",
+          "C": "No mechanical cause is given. The clock is simply described as keeping time badly.",
+          "D": "The sentence is set at home, on a shelf, after the workshop scene has ended."
         }
       },
       {
         "id": "exp26-reading-006",
         "section": "reading",
-        "topic": "main idea",
-        "difficulty": "medium",
-        "context": "Which statement best expresses the passage’s central idea?",
+        "topic": "tone",
+        "difficulty": "easy",
+        "context": "The author's attitude toward the borrowing statistic is best described as:",
         "practiceOnly": true,
         "passage": "exp26-rp-2",
         "choices": [
           {
             "id": "A",
-            "text": "A survey proves all libraries need identical opening hours."
+            "text": "openly hostile to the people who chose to use it."
           },
           {
             "id": "B",
-            "text": "A library broadens its measures to capture how visitors use it."
+            "text": "critical of its fit to this case, not of the measure itself."
           },
           {
             "id": "C",
-            "text": "A library concludes that books are no longer useful."
+            "text": "indifferent, since the branch stayed open in the end."
           },
           {
             "id": "D",
-            "text": "Evening visitors borrow more books than morning visitors."
+            "text": "admiring of its precision by comparison with the door counter."
           }
         ],
         "answer": "B",
         "why": {
-          "A": "This choice is not supported. A library broadens its measures to capture how visitors use it.",
-          "B": "Supported by the passage: A library broadens its measures to capture how visitors use it.",
-          "C": "This choice is not supported. A library broadens its measures to capture how visitors use it.",
-          "D": "This choice is not supported. A library broadens its measures to capture how visitors use it."
+          "A": "Nobody is blamed. The recommendation is even called uncontested, which is reported rather than condemned.",
+          "B": "Correct. The passage calls it \"a reasonable proxy\" for one kind of branch and \"close to useless\" for the other.",
+          "C": "The passage spends its length explaining why the measure misled, which is not indifference to it.",
+          "D": "The door counter is the instrument that settled the matter. The borrowing figure is the one that failed."
         }
       },
       {
         "id": "exp26-reading-007",
         "section": "reading",
-        "topic": "detail",
-        "difficulty": "easy",
-        "context": "What increased sharply after evening hours were extended?",
+        "topic": "evidence",
+        "difficulty": "medium",
+        "context": "Which detail most directly supports the claim that the branch was being measured wrongly?",
         "practiceOnly": true,
         "passage": "exp26-rp-2",
         "choices": [
           {
             "id": "A",
-            "text": "The price of library cards"
+            "text": "It was the weakest of eleven branches on the chosen measure."
           },
           {
             "id": "B",
-            "text": "The number of librarians"
+            "text": "The closure was recommended in 2011 and not seriously contested."
           },
           {
             "id": "C",
-            "text": "Attendance at homework tables"
+            "text": "Its late-afternoon visitors read in the building and rarely borrowed."
           },
           {
             "id": "D",
-            "text": "The number of books borrowed"
+            "text": "A volunteer group compiled door-counter figures across a full school term."
           }
         ],
         "answer": "C",
         "why": {
-          "A": "This choice is not supported. The passage specifies attendance at homework tables.",
-          "B": "This choice is not supported. The passage specifies attendance at homework tables.",
-          "C": "Supported by the passage: The passage specifies attendance at homework tables.",
-          "D": "This choice is not supported. The passage specifies attendance at homework tables."
+          "A": "This is the measure producing its result. It is the finding in dispute, not evidence about whether the finding is sound.",
+          "B": "The date and the lack of objection describe how the decision was taken, not whether the instrument fitted.",
+          "C": "Correct. A metric that counts departures misses a population that stays, and this names that population.",
+          "D": "This is how the correction was delivered. What made the original wrong is the behaviour of the visitors."
         }
       },
       {
         "id": "exp26-reading-008",
         "section": "reading",
-        "topic": "inference",
-        "difficulty": "medium",
-        "context": "Which conclusion is best supported by the passage?",
+        "topic": "text structure",
+        "difficulty": "easy",
+        "context": "The passage is organised as:",
         "practiceOnly": true,
         "passage": "exp26-rp-2",
         "choices": [
           {
             "id": "A",
-            "text": "The director stopped recording circulation."
+            "text": "a decision, the evidence it missed, and how it was reversed."
           },
           {
             "id": "B",
-            "text": "Every visitor came only to borrow books."
+            "text": "a chronological history of eleven branches in one district."
           },
           {
             "id": "C",
-            "text": "The survey compared libraries in several countries."
+            "text": "a comparison of two libraries that have opposite funding models."
           },
           {
             "id": "D",
-            "text": "Stable borrowing did not mean the extended hours lacked value."
+            "text": "an argument for closing branches that lend very few books."
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "This choice is not supported. Stable borrowing did not mean the extended hours lacked value.",
-          "B": "This choice is not supported. Stable borrowing did not mean the extended hours lacked value.",
-          "C": "This choice is not supported. Stable borrowing did not mean the extended hours lacked value.",
-          "D": "Supported by the passage: Stable borrowing did not mean the extended hours lacked value."
+          "A": "Correct. Paragraph one gives the closure, two and three give what the metric could not see, four gives the reversal.",
+          "B": "Only one branch is followed. The other ten appear in a single clause as a ranking.",
+          "C": "A second library is never described. The comparison in the passage is between two kinds of visitor.",
+          "D": "The passage works against that conclusion, showing the lending figure to be the wrong test here."
         }
       },
       {
         "id": "exp26-reading-009",
         "section": "reading",
-        "topic": "vocabulary in context",
+        "topic": "comparison",
         "difficulty": "medium",
-        "context": "As used in this passage, “lens” most nearly means:",
+        "context": "The passage distinguishes the two groups of library users principally by whether they:",
         "practiceOnly": true,
         "passage": "exp26-rp-2",
         "choices": [
           {
             "id": "A",
-            "text": "way of evaluating the library"
+            "text": "are children or adults with daytime employment."
           },
           {
             "id": "B",
-            "text": "piece of glass used to read"
+            "text": "arrive before or after half past four in the afternoon."
           },
           {
             "id": "C",
-            "text": "new desk lamp"
+            "text": "take something away or remain inside the building."
           },
           {
             "id": "D",
-            "text": "camera used at the entrance"
+            "text": "use the printed collection or the public terminals."
           }
         ],
-        "answer": "A",
+        "answer": "C",
         "why": {
-          "A": "Supported by the passage: In context, “lens” means way of evaluating the library.",
-          "B": "This choice is not supported. In context, “lens” means way of evaluating the library.",
-          "C": "This choice is not supported. In context, “lens” means way of evaluating the library.",
-          "D": "This choice is not supported. In context, “lens” means way of evaluating the library."
+          "A": "Age describes the afternoon crowd but is not the distinction the argument turns on; the statistic cannot see age either.",
+          "B": "The time marks when the second group arrives. It is a symptom of the split, not what makes the measure fail.",
+          "C": "Correct. The passage states it directly: a borrowing statistic counts departures, so a branch whose visitors stay reads as empty.",
+          "D": "Terminals are one of several things the second group does. Some of them are reading printed books in the building."
         }
       },
       {
         "id": "exp26-reading-010",
         "section": "reading",
-        "topic": "function",
+        "topic": "figurative language",
         "difficulty": "medium",
-        "context": "What is the primary function of the passage’s final sentence?",
+        "context": "In saying that the two populations \"look identical on the spreadsheet\", the author means that:",
         "practiceOnly": true,
         "passage": "exp26-rp-2",
         "choices": [
           {
             "id": "A",
-            "text": "Explains why evening hours were canceled."
+            "text": "the two groups contain roughly the same number of people."
           },
           {
             "id": "B",
-            "text": "Connects broader measurement to future planning."
+            "text": "the records kept for the branch were careless over many years."
           },
           {
             "id": "C",
-            "text": "Rejects all numerical measures as useless."
+            "text": "the council had merged the figures for all eleven branches."
           },
           {
             "id": "D",
-            "text": "Describes how to build study tables."
+            "text": "the recorded figure is the same whichever group produced it."
           }
         ],
-        "answer": "B",
+        "answer": "D",
         "why": {
-          "A": "This choice is not supported. Connects broader measurement to future planning.",
-          "B": "Supported by the passage: Connects broader measurement to future planning.",
-          "C": "This choice is not supported. Connects broader measurement to future planning.",
-          "D": "This choice is not supported. Connects broader measurement to future planning."
+          "A": "No count of either group is given, and the sentence is about what the figure registers rather than how many people there are.",
+          "B": "The figures are accurate. The complaint is about what they measure, not about how carefully they were taken.",
+          "C": "Each branch is ranked separately — that ranking is how this one came last.",
+          "D": "Correct. A visitor who borrows nothing and a visitor who was never there both register as zero issues."
         }
       },
       {
@@ -13319,101 +13319,101 @@
         "section": "reading",
         "topic": "main idea",
         "difficulty": "medium",
-        "context": "Which statement best expresses the passage’s central idea?",
+        "context": "The main point of the passage is that acoustic monitoring:",
         "practiceOnly": true,
         "passage": "exp26-rp-3",
         "choices": [
           {
             "id": "A",
-            "text": "Visual observation is always more accurate than recording."
+            "text": "has replaced walked transects in nearly all marsh surveys."
           },
           {
             "id": "B",
-            "text": "The students prove that marsh birds never call in the morning."
+            "text": "fails in wind and is therefore unsuited to coastal work."
           },
           {
             "id": "C",
-            "text": "Researchers distinguish what an instrument detects from what exists."
+            "text": "has limits that are specifiable, which is its real advantage."
           },
           {
             "id": "D",
-            "text": "Traffic causes every bird species to leave a marsh."
+            "text": "counts rails more accurately than any other available method."
           }
         ],
         "answer": "C",
         "why": {
-          "A": "This choice is not supported. Researchers distinguish what an instrument detects from what exists.",
-          "B": "This choice is not supported. Researchers distinguish what an instrument detects from what exists.",
-          "C": "Supported by the passage: Researchers distinguish what an instrument detects from what exists.",
-          "D": "This choice is not supported. Researchers distinguish what an instrument detects from what exists."
+          "A": "No claim about adoption is made. The passage compares the two methods without saying which is more used.",
+          "B": "Wind is one stated limit among three, and the closing paragraph explicitly declines that conclusion.",
+          "C": "Correct. The last paragraph makes it the point: wrong in ways that can be written down is a more useful property.",
+          "D": "The passage says the opposite — it measures activity, not abundance, and cannot count individuals."
         }
       },
       {
         "id": "exp26-reading-012",
         "section": "reading",
         "topic": "detail",
-        "difficulty": "easy",
-        "context": "What additional method did the team use?",
+        "difficulty": "hard",
+        "context": "The passage identifies which of the following as a limit of acoustic monitoring?",
         "practiceOnly": true,
         "passage": "exp26-rp-3",
         "choices": [
           {
             "id": "A",
-            "text": "Measuring road width"
+            "text": "It cannot distinguish one species of rail from another."
           },
           {
             "id": "B",
-            "text": "Moving all birds away from traffic"
+            "text": "It requires an observer to remain present before dawn."
           },
           {
             "id": "C",
-            "text": "Recording only at midnight"
+            "text": "It reports activity rather than a count of individuals."
           },
           {
             "id": "D",
-            "text": "Counting birds by sight"
+            "text": "It works only during the hours immediately after sunrise."
           }
         ],
-        "answer": "D",
+        "answer": "C",
         "why": {
-          "A": "This choice is not supported. The passage specifies counting birds by sight.",
-          "B": "This choice is not supported. The passage specifies counting birds by sight.",
-          "C": "This choice is not supported. The passage specifies counting birds by sight.",
-          "D": "Supported by the passage: The passage specifies counting birds by sight."
+          "A": "The passage says the reverse: each species keeps to a narrow, repetitive call, which is why rails suit the method.",
+          "B": "The recorder is fixed before dawn and collected days later. Leaving the observer out is the method’s whole premise.",
+          "C": "Correct. It cannot separate one bird calling ten times from ten calling once, so it measures activity, not abundance.",
+          "D": "No restriction to particular hours is given. The recorder runs unattended across days."
         }
       },
       {
         "id": "exp26-reading-013",
         "section": "reading",
         "topic": "inference",
-        "difficulty": "medium",
-        "context": "Which conclusion is best supported by the passage?",
+        "difficulty": "hard",
+        "context": "The passage suggests that a researcher who needed the number of rails in a marsh would:",
         "practiceOnly": true,
         "passage": "exp26-rp-3",
         "choices": [
           {
             "id": "A",
-            "text": "Traffic may have masked some calls in the initial recordings."
+            "text": "find the recordings alone insufficient for that question."
           },
           {
             "id": "B",
-            "text": "The first recordings proved that no birds lived near the road."
+            "text": "prefer acoustic monitoring for its freedom from observer error."
           },
           {
             "id": "C",
-            "text": "All bird calls were identical."
+            "text": "be unable to survey the marsh by any method now available."
           },
           {
             "id": "D",
-            "text": "The advisor rejected using any instruments."
+            "text": "need to place recorders at a radius wider than the marsh itself."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Supported by the passage: Traffic may have masked some calls in the initial recordings.",
-          "B": "This choice is not supported. Traffic may have masked some calls in the initial recordings.",
-          "C": "This choice is not supported. Traffic may have masked some calls in the initial recordings.",
-          "D": "This choice is not supported. Traffic may have masked some calls in the initial recordings."
+          "A": "Correct. Activity is not abundance, and the passage states the method cannot tell ten calls from ten birds.",
+          "B": "Freedom from the flushing problem is real, but it does not supply a count, which is what this researcher needs.",
+          "C": "The walked transect is still described as available; it is characterised as having different errors, not as unusable.",
+          "D": "Radius limits what the recorder hears. Widening it past the marsh would not solve the one-bird-or-ten problem."
         }
       },
       {
@@ -13421,33 +13421,33 @@
         "section": "reading",
         "topic": "vocabulary in context",
         "difficulty": "medium",
-        "context": "As used in this passage, “detectable” most nearly means:",
+        "context": "As it is used in the third paragraph, \"precise\" most nearly means:",
         "practiceOnly": true,
         "passage": "exp26-rp-3",
         "choices": [
           {
             "id": "A",
-            "text": "impossible to compare"
+            "text": "narrow enough that they are of no practical concern."
           },
           {
             "id": "B",
-            "text": "able to be noticed or recorded"
+            "text": "measured to several decimal places of accuracy."
           },
           {
             "id": "C",
-            "text": "permanently absent"
+            "text": "strict, in the sense of harshly limiting."
           },
           {
             "id": "D",
-            "text": "artificially created"
+            "text": "specific, and therefore able to be stated exactly."
           }
         ],
-        "answer": "B",
+        "answer": "D",
         "why": {
-          "A": "This choice is not supported. In context, “detectable” means able to be noticed or recorded.",
-          "B": "Supported by the passage: In context, “detectable” means able to be noticed or recorded.",
-          "C": "This choice is not supported. In context, “detectable” means able to be noticed or recorded.",
-          "D": "This choice is not supported. In context, “detectable” means able to be noticed or recorded."
+          "A": "The limits matter a great deal — one of them rules out quiet species entirely in wind.",
+          "B": "Decimal accuracy is the numerical sense of the word. The paragraph then lists limits, not measurements.",
+          "C": "Severity is not the contrast. The sentence sets \"precise\" against \"vague\", not against \"mild\".",
+          "D": "Correct. The sentence opposes precise to vague, and what follows is three limits each stated exactly."
         }
       },
       {
@@ -13455,373 +13455,373 @@
         "section": "reading",
         "topic": "function",
         "difficulty": "medium",
-        "context": "What is the primary function of the passage’s final sentence?",
+        "context": "The first paragraph functions primarily to:",
         "practiceOnly": true,
         "passage": "exp26-rp-3",
         "choices": [
           {
             "id": "A",
-            "text": "Provides a numerical estimate of the bird population."
+            "text": "establish the problem the second paragraph answers."
           },
           {
             "id": "B",
-            "text": "Explains the process of building a microphone."
+            "text": "argue that rails are the hardest marsh bird to survey."
           },
           {
             "id": "C",
-            "text": "Restates the distinction between missing evidence and confirmed absence."
+            "text": "describe the equipment used in a walked transect."
           },
           {
             "id": "D",
-            "text": "Introduces a different marsh for the next experiment."
+            "text": "summarise the findings of a completed marsh survey."
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "This choice is not supported. Restates the distinction between missing evidence and confirmed absence.",
-          "B": "This choice is not supported. Restates the distinction between missing evidence and confirmed absence.",
-          "C": "Supported by the passage: Restates the distinction between missing evidence and confirmed absence.",
-          "D": "This choice is not supported. Restates the distinction between missing evidence and confirmed absence."
+          "A": "Correct. It states the flaw in walking a marsh, and the next paragraph opens by saying acoustic monitoring avoids both errors.",
+          "B": "Rails are called easier to hear than to see, which is a fact about method, not a ranking of difficulty among species.",
+          "C": "No equipment appears. The paragraph describes what happens to the birds when a person walks through.",
+          "D": "No survey results are reported anywhere in the passage."
         }
       },
       {
         "id": "exp26-reading-016",
         "section": "reading",
-        "topic": "main idea",
+        "topic": "tone",
         "difficulty": "medium",
-        "context": "Which statement best expresses the passage’s central idea?",
+        "context": "The author's attitude toward Hollar's blank spaces is one of:",
         "practiceOnly": true,
         "passage": "exp26-rp-4",
         "choices": [
           {
             "id": "A",
-            "text": "The expedition proved that inland hills did not exist."
+            "text": "reluctance to judge a practice so far removed in time."
           },
           {
             "id": "B",
-            "text": "Imagined mountains made historical maps more accurate."
+            "text": "considered approval of a choice his contemporaries misread."
           },
           {
             "id": "C",
-            "text": "Owen redraws the entire coastline from memory."
+            "text": "amusement at a mapmaker who could not finish his commission."
           },
           {
             "id": "D",
-            "text": "A map’s deliberate blank space reveals its maker’s caution."
+            "text": "concern that the chart misled the admiralty that paid for it."
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "This choice is not supported. A map’s deliberate blank space reveals its maker’s caution.",
-          "B": "This choice is not supported. A map’s deliberate blank space reveals its maker’s caution.",
-          "C": "This choice is not supported. A map’s deliberate blank space reveals its maker’s caution.",
-          "D": "Supported by the passage: A map’s deliberate blank space reveals its maker’s caution."
+          "A": "The passage judges plainly, calling the choice deliberate rather than lazy and the later verdict kinder and correct.",
+          "B": "Correct. It argues the blankness was principled and that two centuries have been right to admire it.",
+          "C": "It argues against the unfinished reading, using the notebooks to show the gaps were intended.",
+          "D": "Less useful to the admiralty is conceded in passing and immediately outweighed by the use to later surveyors."
         }
       },
       {
         "id": "exp26-reading-017",
         "section": "reading",
-        "topic": "detail",
+        "topic": "evidence",
         "difficulty": "easy",
-        "context": "What source explains why the hills were left blank?",
+        "context": "Which evidence does the author use to show Hollar's blanks were intentional?",
         "practiceOnly": true,
         "passage": "exp26-rp-4",
         "choices": [
           {
             "id": "A",
-            "text": "Letters from the mapmaker"
+            "text": "The chart is still admired by cartographic historians today."
           },
           {
             "id": "B",
-            "text": "A modern tourist brochure"
+            "text": "A fifth of the chart’s surface carries no detail of any kind."
           },
           {
             "id": "C",
-            "text": "A ship’s grocery list"
+            "text": "His notebooks record a refusal to draw a coast he had not seen."
           },
           {
             "id": "D",
-            "text": "A photograph taken during the expedition"
+            "text": "The conventions of the period called for a cartouche or wind rose."
           }
         ],
-        "answer": "A",
+        "answer": "C",
         "why": {
-          "A": "Supported by the passage: The passage specifies letters from the mapmaker.",
-          "B": "This choice is not supported. The passage specifies letters from the mapmaker.",
-          "C": "This choice is not supported. The passage specifies letters from the mapmaker.",
-          "D": "This choice is not supported. The passage specifies letters from the mapmaker."
+          "A": "Later admiration is the passage’s conclusion. It shows how the chart was received, not what Hollar meant by it.",
+          "B": "The extent of the blankness is the thing to be explained. On its own it fits the unfinished reading just as well.",
+          "C": "Correct. The notebooks state the reason in his own words, which is what turns an absence into a decision.",
+          "D": "The convention establishes what he departed from. It is the background against which the choice stands out."
         }
       },
       {
         "id": "exp26-reading-018",
         "section": "reading",
-        "topic": "inference",
+        "topic": "text structure",
         "difficulty": "medium",
-        "context": "Which conclusion is best supported by the passage?",
+        "context": "The passage moves from:",
         "practiceOnly": true,
         "passage": "exp26-rp-4",
         "choices": [
           {
             "id": "A",
-            "text": "All other maps of the period left inland areas blank."
+            "text": "a modern verdict, to the reasoning behind it, to its consequences."
           },
           {
             "id": "B",
-            "text": "The mapmaker preferred admitting uncertainty to inventing features."
+            "text": "a biography of Hollar, to his methods, to his later reputation."
           },
           {
             "id": "C",
-            "text": "The expedition crossed every hill."
+            "text": "a technical problem, to two solutions, to a choice made between them."
           },
           {
             "id": "D",
-            "text": "Owen removed the map from the exhibit."
+            "text": "a general rule about charts, to an exception, to a restatement."
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This choice is not supported. The mapmaker preferred admitting uncertainty to inventing features.",
-          "B": "Supported by the passage: The mapmaker preferred admitting uncertainty to inventing features.",
-          "C": "This choice is not supported. The mapmaker preferred admitting uncertainty to inventing features.",
-          "D": "This choice is not supported. The mapmaker preferred admitting uncertainty to inventing features."
+          "A": "Correct. It opens on what is admired today, turns to the notebooks for why, and closes on who the chart served.",
+          "B": "Hollar’s life is absent. Only one chart and one notebook entry appear.",
+          "C": "Two solutions are never weighed. The ornamental convention is described as what he declined, not as a live option.",
+          "D": "The convention is stated to be departed from, and the passage does not return to endorse it."
         }
       },
       {
         "id": "exp26-reading-019",
         "section": "reading",
-        "topic": "vocabulary in context",
-        "difficulty": "medium",
-        "context": "As used in this passage, “restraint” most nearly means:",
+        "topic": "comparison",
+        "difficulty": "hard",
+        "context": "The passage contrasts a sea monster with an invented headland chiefly on the grounds that:",
         "practiceOnly": true,
         "passage": "exp26-rp-4",
         "choices": [
           {
             "id": "A",
-            "text": "rapid expansion of the expedition"
+            "text": "one was cheaper for an engraver to cut than the other."
           },
           {
             "id": "B",
-            "text": "a decorative style of lettering"
+            "text": "one would be taken as decoration and the other as fact."
           },
           {
             "id": "C",
-            "text": "deliberate limitation of what was included"
+            "text": "one was fashionable in 1732 and the other had fallen out of use."
           },
           {
             "id": "D",
-            "text": "physical capture of the mapmaker"
+            "text": "one occupied more of the chart’s surface than the other."
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "This choice is not supported. In context, “restraint” means deliberate limitation of what was included.",
-          "B": "This choice is not supported. In context, “restraint” means deliberate limitation of what was included.",
-          "C": "Supported by the passage: In context, “restraint” means deliberate limitation of what was included.",
-          "D": "This choice is not supported. In context, “restraint” means deliberate limitation of what was included."
+          "A": "Cost is never raised. The distinction the passage draws is about how each mark would be read.",
+          "B": "Correct. The passage says it almost in those words: a monster is understood as ornament, a headland as a headland.",
+          "C": "Both belong to the same conventional repertoire of the period; neither is described as out of fashion.",
+          "D": "Size is not the issue. A small invented headland would carry the same false claim."
         }
       },
       {
         "id": "exp26-reading-020",
         "section": "reading",
-        "topic": "function",
-        "difficulty": "medium",
-        "context": "What is the primary function of the passage’s final sentence?",
+        "topic": "figurative language",
+        "difficulty": "hard",
+        "context": "The statement that two centuries \"have been kinder to it than its first readers were\" conveys that:",
         "practiceOnly": true,
         "passage": "exp26-rp-4",
         "choices": [
           {
             "id": "A",
-            "text": "States that blank maps are always more useful."
+            "text": "the physical chart has survived in unusually good condition."
           },
           {
             "id": "B",
-            "text": "Lists the instruments aboard the ships."
+            "text": "early copies were damaged and later reproductions were not."
           },
           {
             "id": "C",
-            "text": "Contradicts the letters from the mapmaker."
+            "text": "later judgement has valued precisely what first readers disliked."
           },
           {
             "id": "D",
-            "text": "Shows how acknowledging limits can increase credibility."
+            "text": "the chart was forgotten for a long period and later rediscovered."
           }
         ],
-        "answer": "D",
+        "answer": "C",
         "why": {
-          "A": "This choice is not supported. Shows how acknowledging limits can increase credibility.",
-          "B": "This choice is not supported. Shows how acknowledging limits can increase credibility.",
-          "C": "This choice is not supported. Shows how acknowledging limits can increase credibility.",
-          "D": "Supported by the passage: Shows how acknowledging limits can increase credibility."
+          "A": "Physical survival is never mentioned, and the clause is immediately glossed by a reason about how it was judged.",
+          "B": "No copies or reproductions appear in the passage at all.",
+          "C": "Correct. The sentence finishes \"for exactly the reason they disliked it\", making the reversal the whole point.",
+          "D": "Nothing suggests neglect. The contrast is between two verdicts, not between obscurity and fame."
         }
       },
       {
         "id": "exp26-reading-021",
         "section": "reading",
         "topic": "main idea",
-        "difficulty": "medium",
-        "context": "Which statement best expresses the passage’s central idea?",
+        "difficulty": "hard",
+        "context": "The passage is best described as an account of:",
         "practiceOnly": true,
         "passage": "exp26-rp-5",
         "choices": [
           {
             "id": "A",
-            "text": "Eli improves by listening to how his part relates to another musician’s."
+            "text": "a practice whose purpose becomes clear only through doing it."
           },
           {
             "id": "B",
-            "text": "Eli abandons his instrument because the solo is too difficult."
+            "text": "a disagreement between a student and the leader of her group."
           },
           {
             "id": "C",
-            "text": "The conductor values loudness above timing."
+            "text": "a musician deciding to found an ensemble of her own."
           },
           {
             "id": "D",
-            "text": "A cello player takes over Eli’s solo permanently."
+            "text": "a technique for correcting rhythm that a teacher hands on."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Supported by the passage: Eli improves by listening to how his part relates to another musician’s.",
-          "B": "This choice is not supported. Eli improves by listening to how his part relates to another musician’s.",
-          "C": "This choice is not supported. Eli improves by listening to how his part relates to another musician’s.",
-          "D": "This choice is not supported. Eli improves by listening to how his part relates to another musician’s."
+          "A": "Correct. Devi misreads the rule for two weeks, learns what it does by sitting through it, and later refuses to explain it in advance.",
+          "B": "There is no disagreement. Devi waits politely, then finds the exercise works.",
+          "C": "Her own group appears in one clause, years later, as evidence that she kept the rule.",
+          "D": "No teacher passes on a technique; the passage stresses that no teacher had ever mentioned her rushing."
         }
       },
       {
         "id": "exp26-reading-022",
         "section": "reading",
         "topic": "detail",
-        "difficulty": "easy",
-        "context": "What becomes Eli’s cue?",
+        "difficulty": "medium",
+        "context": "According to the passage, during the ten-minute rule the players:",
         "practiceOnly": true,
         "passage": "exp26-rp-5",
         "choices": [
           {
             "id": "A",
-            "text": "The sound of a closing door"
+            "text": "listen to a recording without commenting on it."
           },
           {
             "id": "B",
-            "text": "The cello’s final note"
+            "text": "warm up quietly before the full rehearsal begins."
           },
           {
             "id": "C",
-            "text": "The audience’s applause"
+            "text": "take turns describing what went wrong last week."
           },
           {
             "id": "D",
-            "text": "The conductor’s speech"
+            "text": "play through the previous week’s material once."
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This choice is not supported. The passage specifies the cello’s final note.",
-          "B": "Supported by the passage: The passage specifies the cello’s final note.",
-          "C": "This choice is not supported. The passage specifies the cello’s final note.",
-          "D": "This choice is not supported. The passage specifies the cello’s final note."
+          "A": "Correct. The passage states both halves: they hear the previous week’s recording, and no comment is allowed during it.",
+          "B": "Devi assumed it was a warm-up. The passage introduces that reading in order to correct it.",
+          "C": "Comment is explicitly forbidden while the recording runs.",
+          "D": "Nobody plays for the first ten minutes — that is the rule itself."
         }
       },
       {
         "id": "exp26-reading-023",
         "section": "reading",
         "topic": "inference",
-        "difficulty": "medium",
-        "context": "Which conclusion is best supported by the passage?",
+        "difficulty": "easy",
+        "context": "It can be inferred that Devi had not noticed her rushing earlier because she:",
         "practiceOnly": true,
         "passage": "exp26-rp-5",
         "choices": [
           {
             "id": "A",
-            "text": "The conductor tells Eli to stop listening to the cello."
+            "text": "had been taught by someone who valued speed in performance."
           },
           {
             "id": "B",
-            "text": "The next performance takes place without a conductor."
+            "text": "could not hear her own playing while she was producing it."
           },
           {
             "id": "C",
-            "text": "Eli initially equates confidence with playing loudly."
+            "text": "had joined the Thursday group only two weeks previously."
           },
           {
             "id": "D",
-            "text": "Eli had never practiced before the rehearsal."
+            "text": "played too quietly for the fault to be audible to others."
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "This choice is not supported. Eli initially equates confidence with playing loudly.",
-          "B": "This choice is not supported. Eli initially equates confidence with playing loudly.",
-          "C": "Supported by the passage: Eli initially equates confidence with playing loudly.",
-          "D": "This choice is not supported. Eli initially equates confidence with playing loudly."
+          "A": "Her teachers are mentioned only to say none of them raised it. No teaching philosophy is described.",
+          "B": "Correct. Ravi states the principle and Devi’s experience confirms it — obvious at once when she was not playing.",
+          "C": "She is at the rehearsal from the first paragraph; the delay was in hearing herself, not in arriving.",
+          "D": "Volume is never mentioned, and others hearing her is not what changed."
         }
       },
       {
         "id": "exp26-reading-024",
         "section": "reading",
         "topic": "vocabulary in context",
-        "difficulty": "medium",
-        "context": "As used in this passage, “phrases” most nearly means:",
+        "difficulty": "hard",
+        "context": "As it is used in the fourth paragraph, \"cost her no effort\" most nearly means that she:",
         "practiceOnly": true,
         "passage": "exp26-rp-5",
         "choices": [
           {
             "id": "A",
-            "text": "written announcements"
+            "text": "was given help by the other five members of the group."
           },
           {
             "id": "B",
-            "text": "pieces of furniture"
+            "text": "found the passage easier than the ones around it."
           },
           {
             "id": "C",
-            "text": "spoken complaints"
+            "text": "had been practising the correction outside rehearsal."
           },
           {
             "id": "D",
-            "text": "connected musical passages"
+            "text": "stopped doing it without having to try to stop."
           }
         ],
         "answer": "D",
         "why": {
-          "A": "This choice is not supported. In context, “phrases” means connected musical passages.",
-          "B": "This choice is not supported. In context, “phrases” means connected musical passages.",
-          "C": "This choice is not supported. In context, “phrases” means connected musical passages.",
-          "D": "Supported by the passage: In context, “phrases” means connected musical passages."
+          "A": "The others never comment; the rule forbids it during the recording and no coaching is described.",
+          "B": "No particular passage of music is singled out as easy or hard anywhere in the paragraph.",
+          "C": "Outside practice is not mentioned, and it would contradict the claim that no effort was involved.",
+          "D": "Correct. The next clause spells it out: she had simply stopped being able to do it."
         }
       },
       {
         "id": "exp26-reading-025",
         "section": "reading",
         "topic": "function",
-        "difficulty": "medium",
-        "context": "What is the primary function of the passage’s final sentence?",
+        "difficulty": "hard",
+        "context": "The final paragraph contributes to the passage mainly by:",
         "practiceOnly": true,
         "passage": "exp26-rp-5",
         "choices": [
           {
             "id": "A",
-            "text": "Contrasts Eli’s earlier self-focused approach with a more collaborative one."
+            "text": "showing that the rule outlasted the group it began in."
           },
           {
             "id": "B",
-            "text": "Explains why the orchestra canceled its concert."
+            "text": "revealing that Devi eventually abandoned the practice."
           },
           {
             "id": "C",
-            "text": "Describes a new instrument that Eli purchased."
+            "text": "explaining the mechanical cause of a rhythmic fault."
           },
           {
             "id": "D",
-            "text": "Shows that Eli wants to be louder than everyone else."
+            "text": "identifying the week in which most players improve."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Supported by the passage: Contrasts Eli’s earlier self-focused approach with a more collaborative one.",
-          "B": "This choice is not supported. Contrasts Eli’s earlier self-focused approach with a more collaborative one.",
-          "C": "This choice is not supported. Contrasts Eli’s earlier self-focused approach with a more collaborative one.",
-          "D": "This choice is not supported. Contrasts Eli’s earlier self-focused approach with a more collaborative one."
+          "A": "Correct. Devi carries the rule to a group of her own years later, which is what turns one rehearsal into a practice.",
+          "B": "She keeps it. What she declines to do is explain it in advance.",
+          "C": "No cause for the rushing is offered anywhere; the passage is about noticing it.",
+          "D": "Week three is when people work the rule out, which is about the rule, not about improvement."
         }
       },
       {
@@ -19785,35 +19785,35 @@
         "type": "Literary Narrative",
         "title": "The Repaired Clock",
         "blurb": "Original short passage for focused reading practice.",
-        "text": "When Mira brought the station clock into the workshop, she expected her grandfather to replace its scratched face. He cleaned the mechanism instead. The clock began to tick, but the scratch remained. Mira found it distracting until he explained that a former station keeper had marked the face to remember the arrival of the first evening train. That evening, she set the clock on a shelf rather than repainting it. The mark had not become prettier; it had become legible. She could now read a small piece of the station’s history in a line she had nearly erased."
+        "text": "When Mira carried the station clock into the workshop, she set it down the way you set down something you have already decided about. The face was scratched — one long line running from the numeral four almost to the centre — and she had spent the walk deciding what colour to repaint it.\n\nHer grandfather turned the case over and opened the back instead. For an hour he did nothing to the face at all. He cleaned the mechanism, oiled two pivots, and put a new suspension spring in place of one that had gone brittle. The clock began to tick. The scratch remained.\n\nMira said she could still fix that part. He asked her whether she knew what had made it. She did not. He told her that the keeper who had run the station before the line closed used to mark the face each time a service was added, and that the long line was the evening train, scored deeper than the others because he had been pleased about it.\n\nShe looked at the mark for a while after that. It had not become prettier. It had become legible. On the shelf at home it kept time badly and said something exactly, and she found she preferred that arrangement to the other one."
       },
       {
         "id": "exp26-rp-2",
         "type": "Social Science",
         "title": "The Library at Dusk",
         "blurb": "Original short passage for focused reading practice.",
-        "text": "A neighborhood library initially measured its success by the number of books borrowed. When staff extended evening hours, borrowing changed little. Attendance at homework tables, however, increased sharply. A survey found that many visitors used their own books and needed only a quiet desk. The director retained circulation figures but added counts of occupied study spaces. Neither measure alone captured the library’s role. The new report did not declare borrowing unimportant; it widened the lens. Services that had always mattered to visitors finally became visible in the statistics used to plan the next year."
+        "text": "The branch library on Alder Street was scheduled for closure in 2011 on the strength of a single measure: books issued per opening hour. By that measure it was the weakest of the eleven branches in the district, and the recommendation was not seriously contested.\n\nWhat the measure could not see was the last ninety minutes of each weekday. From about half past four the building filled with schoolchildren whose parents were still at work, and the circulation desk went quiet because almost nobody in that crowd was borrowing anything. They were reading in the building, using the four public terminals, and — the surveys were blunt about this — being somewhere warm and supervised until six.\n\nA borrowing statistic counts departures. It is a reasonable proxy for use in a branch whose visitors take books home, and it is close to useless in a branch whose visitors stay. The two populations look identical on the spreadsheet and behave in opposite ways.\n\nThe council kept the branch open after a volunteer group produced door-counter data covering a full term. The counter had been installed in 2004 and had never once been read. Nothing about the building's value had changed; only the instrument pointed at it had."
       },
       {
         "id": "exp26-rp-3",
         "type": "Natural Science",
         "title": "Listening to the Marsh",
         "blurb": "Original short passage for focused reading practice.",
-        "text": "A student team placed recorders at three points in a marsh. The first recordings contained fewer bird calls near a road, and the students considered reporting fewer birds there. Their advisor asked whether traffic might hide calls from the microphones. The team repeated the recordings early on a quiet morning and also counted birds by sight. Several species appeared in both locations despite the earlier difference in audible calls. The team revised its conclusion: the first recordings measured detectable sound, not necessarily the number of birds. A silent recording was not the same thing as an empty marsh."
+        "text": "Counting birds in a tidal marsh by walking through it has an obvious flaw: the walking moves the birds. Flush a rail from the reeds and it will not be there to count a second time, and it may well be counted at the next transect as though it were a different bird.\n\nAcoustic monitoring avoids both errors by leaving the observer out. A recorder is fixed to a post before dawn and retrieved days later, and the analysis happens afterwards, on the sound. Rails are well suited to it — they are far easier to hear than to see, and each species keeps to a narrow and repetitive call.\n\nThe method's own limits are precise rather than vague. A recorder samples a fixed radius, so it says nothing about the marsh beyond that circle. It cannot separate one bird calling ten times from ten birds calling once, which makes it a measure of activity and not directly of abundance. Wind above about twenty kilometres an hour raises the noise floor far enough to bury the quieter species entirely.\n\nNone of that makes the recordings worse than a walked transect. It makes them wrong in ways that can be written down, which is a different and more useful property."
       },
       {
         "id": "exp26-rp-4",
         "type": "Humanities",
         "title": "A Map with Empty Spaces",
         "blurb": "Original short passage for focused reading practice.",
-        "text": "The museum’s oldest coastal map left the inland hills blank. At first, the blank space looked like a mistake to curator Owen. Letters from the mapmaker revealed a different explanation: ships had surveyed the coast carefully, but no member of the expedition had crossed the hills. Other maps of the period filled such spaces with imagined mountains. This mapmaker had chosen restraint. Owen’s exhibit label described the blank region as a boundary of knowledge rather than a boundary of land. What the map refused to show became part of what made it trustworthy."
+        "text": "The 1732 chart of the northern coast is admired today for something its maker would have regarded as a failure. Across roughly a fifth of its surface there is nothing at all: no coastline, no soundings, no decorative filler. The convention of the period was to close such gaps with a cartouche, a wind rose, or a sea monster, and the blankness was read at the time as an unfinished job.\n\nHollar's own notebooks make the choice look deliberate rather than lazy. He had surveyed the western reach himself and had only second-hand reports for the eastern one, and he wrote that he would not draw a coast he had not seen, since a drawn coast would be believed. A monster would have been understood as ornament; an invented headland would have been understood as a headland.\n\nThe chart was consequently less useful to the admiralty that commissioned it and considerably more useful to the surveyors who came after, who could tell at a glance which parts of the coast still needed doing. Two centuries of cartographic history have been kinder to it than its first readers were, and for exactly the reason they disliked it."
       },
       {
         "id": "exp26-rp-5",
         "type": "Literary Narrative",
         "title": "The Quiet Rehearsal",
         "blurb": "Original short passage for focused reading practice.",
-        "text": "Eli practiced his solo louder each afternoon, certain that volume would make him sound confident. During rehearsal, the conductor asked him to play softly enough to hear the cello beside him. He missed his entrance once, then noticed that the cello’s final note was his cue. On the next attempt, their phrases fit together. The conductor offered no speech about confidence. Eli carried the discovery home and practiced with the recording turned up and his own instrument turned down. For the first time, practice felt less like announcing his presence and more like finding his place."
+        "text": "The rule at the Thursday rehearsal was that nobody played for the first ten minutes. Devi had thought this was a warm-up exercise of some kind, or a breathing thing, and she had spent her first two weeks waiting politely for it to be over so the music could start.\n\nWhat happened in the ten minutes was that the six of them listened to a recording of the previous week. No comment was allowed during it. Ravi, who had started the group, said only that you cannot hear yourself while you are playing, and that the ear you need is the one in the room, not the one in your own head.\n\nDevi found the first recordings unbearable. She could hear herself rushing the ends of phrases, something no teacher had ever mentioned and which was completely obvious the moment she was not the one producing it. By the sixth week she had stopped rushing, and she noticed the correction had cost her no effort at all; she had simply stopped being able to do it.\n\nShe kept the ten-minute rule when she led her own group years later, and she never explained it in advance. People worked it out, she found, at about week three."
       },
       {
         "id": "exp26-rp-6",
