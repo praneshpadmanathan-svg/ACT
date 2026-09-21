@@ -445,6 +445,82 @@ for (const [section, questions] of Object.entries(questionsBySection)) {
   }
 }
 
+/* ------------------------- rule 7g: one template, a dozen times over
+
+   A stem whose only difference from another stem is the numbers inside it.
+
+   7f strips filler wording but keeps digits, which is what lets it tell 7⁴
+   from 7²³ — and is also what let a whole topic ship as one template with
+   the numbers walked up by one:
+
+     exp26-math-004  For f(t) = 23t² - 26, what is f(3)?
+     exp26-math-024  For f(t) = 24t² - 27, what is f(3)?
+     exp26-math-044  For f(t) = 25t² - 28, what is f(3)?
+
+   — twelve deep, in all twenty Math topics: 240 items written from 20
+   questions. Every rule above passed them. The ids differ, the answers are
+   present, the stems differ both literally and after loosening. A student
+   still met the same question twelve times in a row, which is the complaint
+   that started the rewrite, and nothing here could see it.
+
+   So this masks each run of digits to `#` and counts how many items in one
+   section, topic and passage share the result. Bases and exponents survive
+   as `_n` and `^n`, because log₂(64) and log₄(16) are different questions in
+   a way that 8 × 7 and 9 × 6 are not.
+
+   A family of two or three is ordinary coverage — the hand-authored bank
+   asks for a greatest common factor four times across 2,630 items, with
+   different numbers each time, and that is a bank covering a skill rather
+   than one repeating a question. The cap sits at six: high enough that one
+   more of those never breaks a build, low enough to catch a template
+   collapse at half the size the last one reached. */
+
+const SUBSCRIPTS = {
+  '₀': '0',
+  '₁': '1',
+  '₂': '2',
+  '₃': '3',
+  '₄': '4',
+  '₅': '5',
+  '₆': '6',
+  '₇': '7',
+  '₈': '8',
+  '₉': '9',
+};
+
+const maskNumbers = (value) =>
+  String(value ?? '')
+    .toLowerCase()
+    .replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]/g, (c) => `^${SUPERSCRIPTS[c]}`)
+    .replace(/[₀₁₂₃₄₅₆₇₈₉]/g, (c) => `_${SUBSCRIPTS[c]}`)
+    .replace(FILLER, ' ')
+    .replace(/[^a-z0-9^_+*/=<>().√π÷×°%-]+/g, '')
+    .replace(/(?<![_^])[0-9]+/g, '#');
+
+const TEMPLATE_CAP = 6;
+
+for (const [section, questions] of Object.entries(questionsBySection)) {
+  const families = new Map();
+
+  for (const q of questions) {
+    const body = `${maskNumbers(q.context)}|${maskNumbers(q.stem)}`;
+    if (body === '|') continue;
+    const key = `${q.topic ?? '-'}|${q.passage ?? '-'}|${body}`;
+    if (!families.has(key)) families.set(key, []);
+    families.get(key).push(q.id);
+  }
+
+  for (const ids of families.values()) {
+    if (ids.length <= TEMPLATE_CAP) continue;
+    failures.push(
+      `${section}/${ids[0]}: ${ids.length} items ask this same question with only the numbers ` +
+        `changed between them (${ids.slice(0, 5).join(', ')} and ${ids.length - 5} more). A ` +
+        `student meets one template ${ids.length} times over. Rewrite all but a few of them to ` +
+        `test the skill a different way.`,
+    );
+  }
+}
+
 /* --------------------------------------- rule 8: every item asks something
 
    A question has to reach the student with a question in it.
@@ -583,6 +659,7 @@ if (failures.length) {
 console.log(
   `  content check: ${allQuestions.length} drill questions and ${zoneIds.size} zone questions, ` +
     'no duplicate or colliding ids, every answer and explanation present, every zone topic ' +
-    'matches real question data, no duplicate stems or choices, every quotation locatable, ' +
+    'matches real question data, no duplicate stems or choices, no question asked more than ' +
+    'six times with the numbers changed, every quotation locatable, ' +
     'every item asking a question',
 );
