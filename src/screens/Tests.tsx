@@ -87,7 +87,7 @@ function TestsBoard() {
       <SectionHeading
         eyebrow="Boss battles"
         title="Practice tests"
-        detail="Timed, no explanations until you finish. The report tells you which topics cost you the most points."
+        detail="Shortened practice sets, not full-length ACT simulations. Explanations and an estimated score appear when you finish."
       />
 
       <div className="mb-6 grid gap-3 lg:grid-cols-2">
@@ -95,7 +95,7 @@ function TestsBoard() {
           className="rounded-xl border-2 border-blood bg-leather-850 p-6 shadow-card sm:p-7"
           style={{ borderTopWidth: 4 }}
         >
-          <h2 className="heading text-[13px] text-blood-text">Full test</h2>
+          <h2 className="heading text-[13px] text-blood-text">Four-section practice</h2>
           <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
             All four sections back to back, with a break between each.
           </p>
@@ -111,7 +111,7 @@ function TestsBoard() {
             className="mt-5 w-full"
             onClick={() => navigate({ name: 'test', config: 'full' })}
           >
-            Begin full test
+            Begin timed practice
           </Button>
         </div>
 
@@ -162,7 +162,7 @@ function TestsBoard() {
         <EmptyState
           art="chest"
           title="No tests yet"
-          detail="A full-length test is the only honest way to know where you stand. Take one when you have cleared a few zones."
+          detail="Try a timed set when you are ready. Your report will show which topics need more practice."
         />
       ) : (
         <div className="space-y-2.5">
@@ -175,7 +175,9 @@ function TestsBoard() {
             >
               <div className="min-w-0">
                 <div className="font-script text-[12px] uppercase tracking-wide text-parchment">
-                  {result.sections.length === 4 ? 'Full test' : soleSectionName(result.sections)}
+                  {result.sections.length === 4
+                    ? 'Four-section practice'
+                    : soleSectionName(result.sections)}
                 </div>
                 <div className="mt-0.5 text-[13px] text-ink-faint">{formatRelative(result.at)}</div>
               </div>
@@ -680,7 +682,7 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
         <div className="rounded-xl border-2 border-gold bg-leather-850 p-7 text-center shadow-card sm:p-9">
           <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
             {result.sections.length === 4
-              ? 'Full test'
+              ? 'Four-section practice'
               : `${soleSectionName(result.sections)} section`}{' '}
             · {formatRelative(result.at)}
           </div>

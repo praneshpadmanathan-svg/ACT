@@ -9,6 +9,7 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import type { Difficulty, Passage, SectionId } from '@/types';
 import { juice } from '@/lib/juice';
+import { sfx } from '@/lib/sfx';
 import { cx, formatClock } from '@/lib/utils';
 import { AnimatePresence, m, SPRING, SPRING_SNAP } from '@/lib/motion';
 import { RichText } from './RichText';
@@ -193,7 +194,9 @@ export function QuestionRunner({
       setRecords((prev) => [...prev, record]);
       onAnswer(record);
 
-      if (correct) {
+      if (deferFeedback) {
+        sfx.select();
+      } else if (correct) {
         /* One call rather than a sound here and visuals scattered below: the
            bus fires the sound at contact, holds a beat, then kicks the stage
            and washes the screen. `visuals` is off in test mode because a timed
@@ -297,7 +300,7 @@ export function QuestionRunner({
                 gets a real exit — it drops and tumbles out — because a reward
                 that simply vanishes was never felt as a reward. */}
             <AnimatePresence>
-              {streak >= 2 && (
+              {!deferFeedback && streak >= 2 && (
                 <m.span
                   key="streak"
                   className={cx(
@@ -464,20 +467,21 @@ export function QuestionRunner({
               {question.choices.map((choice, i) => {
                 const isCorrect = choice.key === question.correctKey;
                 const isChosen = choice.key === chosen;
-                const wrongPick = revealed && isChosen && !isCorrect;
+                const wrongPick = !deferFeedback && revealed && isChosen && !isCorrect;
                 /* Lit is not the same as correct: after a wrong answer the right
                    row stays dim for REVEAL_LAG, so the two states are separate. */
-                const lit = revealed && isCorrect && litCorrect;
+                const lit = !deferFeedback && revealed && isCorrect && litCorrect;
 
-                const state = !revealed
-                  ? isChosen
-                    ? 'choice-selected'
-                    : ''
-                  : lit
-                    ? 'choice-correct'
-                    : wrongPick
-                      ? 'choice-wrong'
-                      : '';
+                const state =
+                  !revealed || deferFeedback
+                    ? isChosen
+                      ? 'choice-selected'
+                      : ''
+                    : lit
+                      ? 'choice-correct'
+                      : wrongPick
+                        ? 'choice-wrong'
+                        : '';
 
                 return (
                   <m.button

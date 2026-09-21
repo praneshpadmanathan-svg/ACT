@@ -26,8 +26,7 @@ import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
-import { Button, Eyebrow, Tally } from '@/components/ui';
-import { useInView } from '@/lib/useInView';
+import { Button, Eyebrow } from '@/components/ui';
 import { Glyph } from '@/components/Icon';
 import { NavGlyph, type GlyphName } from '@/components/NavGlyph';
 import { REGION_ORDER } from '@/content/regionFlavor';
@@ -238,7 +237,7 @@ const FEATURES: { id: string; glyph: GlyphName; title: ReactNode; detail: ReactN
     title: 'The Summit measures you',
     detail: (
       <>
-        A full, <Hl tone="cream">properly timed</Hl> mock test and a scored report that{' '}
+        A shorter, <Hl tone="cream">timed</Hl> practice test and a scored report that{' '}
         <Hl>names the topics</Hl> costing you points.
       </>
     ),
@@ -302,11 +301,10 @@ export function Landing() {
   const totalLandmarks = REGION_ORDER.reduce((n, id) => n + (PATH_BY_ID[id]?.nodes.length ?? 0), 0);
 
   const heroRef = usePointerDepth<HTMLElement>();
-  const [claimRef, claimSeen] = useInView<HTMLDivElement>();
 
   const begin = () => {
     sfx.achieve();
-    continueAsGuest();
+    if (!hasStarted) continueAsGuest();
     navigate({ name: progress.profile ? 'home' : 'onboarding' });
   };
 
@@ -319,8 +317,8 @@ export function Landing() {
      Deliberately fire-and-forget: it is a cache warm, and a failed prefetch
      must not become a visible error on a button that has not been pressed. */
   const warm = () => {
-    if (progress.profile) void import('@/screens/Home');
-    else void import('@/screens/Onboarding');
+    if (progress.profile) void import('@/screens/Home').catch(() => {});
+    else void import('@/screens/Onboarding').catch(() => {});
   };
 
   return (
@@ -339,8 +337,12 @@ export function Landing() {
             >
               What is this?
             </a>
-            <a href={hrefFor({ name: 'auth', mode: 'signin' })} onClick={() => sfx.select()}>
-              <Button size="sm">Sign in</Button>
+            <a
+              className="btn btn-ghost btn-sm"
+              href={hrefFor({ name: 'auth', mode: 'signin' })}
+              onClick={() => sfx.select()}
+            >
+              Sign in
             </a>
             {returning ? (
               <Button variant="primary" size="sm" onClick={() => navigate({ name: 'home' })}>
@@ -364,7 +366,7 @@ export function Landing() {
           stacked. */}
       <section
         ref={heroRef}
-        className="relative isolate flex min-h-[94dvh] items-center overflow-hidden"
+        className="relative isolate flex min-h-[82dvh] items-center overflow-hidden"
       >
         <div className="hero-plate">
           <div className="hero-plate-in">
@@ -421,8 +423,8 @@ export function Landing() {
             ) : (
               <>
                 Cross <Hl tone="cream">four regions</Hl>, master every skill the test asks for, and
-                work <Hl>{LIBRARY_STATS.totalQuestions.toLocaleString()}</Hl> real questions where{' '}
-                <Hl tone="cream">every answer is explained</Hl>.
+                work <Hl>{LIBRARY_STATS.totalQuestions.toLocaleString()}</Hl> practice questions
+                where <Hl tone="cream">every answer is explained</Hl>.
               </>
             )}
           </p>
@@ -438,8 +440,12 @@ export function Landing() {
                 >
                   Continue your quest
                 </Button>
-                <a href={hrefFor({ name: 'path' })} onClick={() => sfx.select()}>
-                  <Button size="lg">Back to the road</Button>
+                <a
+                  className="btn btn-ghost btn-lg"
+                  href={hrefFor({ name: 'path' })}
+                  onClick={() => sfx.select()}
+                >
+                  Back to the road
                 </a>
               </>
             ) : (
@@ -452,11 +458,23 @@ export function Landing() {
                   onPointerEnter={warm}
                   onFocus={warm}
                 >
-                  Enter the realm
+                  Start free ACT practice
                 </Button>
-                <a href={hrefFor({ name: 'auth', mode: 'signin' })} onClick={() => sfx.select()}>
-                  <Button size="lg">I have an account</Button>
-                </a>
+                <Button
+                  size="lg"
+                  onClick={() => {
+                    const sample = document.getElementById('try-question');
+                    sample?.scrollIntoView({
+                      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+                        ? 'auto'
+                        : 'smooth',
+                      block: 'start',
+                    });
+                    sample?.focus({ preventScroll: true });
+                  }}
+                >
+                  Try a question first
+                </Button>
               </>
             )}
           </div>
@@ -477,13 +495,9 @@ export function Landing() {
           to carry that much, so nothing else gets set this big. */}
       <section className="relative border-y border-leather-700/70 bg-leather-950/55 py-16 sm:py-20">
         <div className="shell">
-          <div ref={claimRef} className="text-center">
+          <div className="text-center">
             <p className="label-sm">Written for this app — not collected from anywhere</p>
-            {/* Counts once, when it is looked at. `value` swings from zero to
-                the real total the moment the section is seen, which is what
-                `Tally` animates on; `from={0}` only keeps it from showing the
-                answer for one frame before it starts. `useInView` guarantees
-                the swing happens whether or not the observer ever fires. */}
+            {/* Keep the real count readable before any animation or observer runs. */}
             <div
               className="num mt-3 font-bold leading-[0.92] text-gold-bright"
               style={{
@@ -491,7 +505,7 @@ export function Landing() {
                 textShadow: '0 0 52px oklch(var(--c-gold) / 0.22)',
               }}
             >
-              <Tally value={claimSeen ? LIBRARY_STATS.totalQuestions : 0} from={0} />
+              {LIBRARY_STATS.totalQuestions.toLocaleString()}
             </div>
             <p className="heading mt-5 text-balance text-[clamp(1.2rem,3vw,1.75rem)] text-parchment-light">
               questions. <span className="text-gold-bright">Every answer explained.</span>
@@ -528,9 +542,9 @@ export function Landing() {
               t: 'New to this?',
               d: (
                 <>
-                  The ACT is a US university admissions test: four sections, each scored{' '}
-                  <Hl tone="cream">1 to 36</Hl>. Your composite is the average of the four — which
-                  is the 36 the headline means.
+                  The ACT is a US university admissions test scored on a{' '}
+                  <Hl tone="cream">1 to 36</Hl> scale. Practise English, math, reading, and science
+                  here, with explanations as you go.
                 </>
               ),
             },
@@ -547,9 +561,8 @@ export function Landing() {
               t: 'What it costs you',
               d: (
                 <>
-                  <Hl tone="cream">Fifteen to twenty minutes a day.</Hl> No money, no account
-                  needed, no app to install. Two to three months at a steady pace covers all four
-                  roads.
+                  <Hl tone="cream">Start with one question.</Hl> No payment, no account needed, no
+                  app to install. Build a routine at your own pace.
                 </>
               ),
             },
@@ -574,7 +587,12 @@ export function Landing() {
       </section>
 
       {/* ---------------------------------------------------- try one now */}
-      <section className="shell py-20">
+      <section
+        id="try-question"
+        tabIndex={-1}
+        aria-label="Try a practice question"
+        className="shell scroll-mt-8 py-20"
+      >
         <SectionIntro
           title={
             <>

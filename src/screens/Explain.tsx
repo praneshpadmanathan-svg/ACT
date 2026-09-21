@@ -22,7 +22,8 @@
 
 import type { ReactNode } from 'react';
 
-import { LIBRARY_STATS, SECTIONS } from '@/content';
+import { LIBRARY_STATS } from '@/content/stats';
+import { SECTIONS } from '@/content/sections';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { sfx } from '@/lib/sfx';
 import { Button } from '@/components/ui';
@@ -64,10 +65,15 @@ const ENTRIES: Entry[] = [
           on your application alongside your grades.
         </P>
         <P>
-          It has four sections — English, Math, Reading and Science — and each is scored from{' '}
-          <B>1 to 36</B>. Your <B>composite</B> is the average of the four, rounded, so that is out
-          of 36 too. A 36 is a perfect score and very few people get one. The middle of the country
-          sits somewhere around 19 or 20.
+          English, math, and reading contribute to the <B>composite</B>, on a <B>1 to 36</B> scale.
+          Science is optional and has a separate score. See{' '}
+          <a
+            className="underline"
+            href="https://www.act.org/content/act/en/products-and-services/the-act.html"
+          >
+            ACT’s current test overview
+          </a>{' '}
+          for the official format. This app offers practice in all four subjects.
         </P>
         <P>There is also an optional Writing essay. This app does not cover it — see below.</P>
       </>

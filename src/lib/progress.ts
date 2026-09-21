@@ -994,7 +994,12 @@ export function percentileInWords(percentile: number): string {
 }
 
 export function compositeOf(scores: Partial<Record<SectionId, number>>): number {
-  const values = Object.values(scores).filter((v): v is number => typeof v === 'number');
+  // Science is separate from the current ACT composite. Retain the score for
+  // a science-only practice report, which also uses this aggregation helper.
+  const core = [scores.english, scores.math, scores.reading].filter(
+    (v): v is number => typeof v === 'number' && Number.isFinite(v),
+  );
+  const values = core.length ? core : Number.isFinite(scores.science) ? [scores.science!] : [];
   if (!values.length) return 0;
   return Math.round(values.reduce((a, b) => a + b, 0) / values.length);
 }
@@ -1004,7 +1009,7 @@ export function compositeOf(scores: Partial<Record<SectionId, number>>): number 
 export function estimatedComposite(p: Progress): number | null {
   const scores: Partial<Record<SectionId, number>> = {};
   let covered = 0;
-  for (const id of ['english', 'math', 'reading', 'science'] as SectionId[]) {
+  for (const id of ['english', 'math', 'reading'] as SectionId[]) {
     const { n, pct } = sectionAccuracy(p, id);
     if (n >= 8) {
       scores[id] = scaleScore(pct);

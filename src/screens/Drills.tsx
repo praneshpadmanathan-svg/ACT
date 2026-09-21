@@ -488,7 +488,7 @@ export function BookmarksScreen() {
       <SectionHeading
         eyebrow="Set aside"
         title="Saved questions"
-        detail="Anything you bookmarked, newest first. They stay here until you remove them, and they follow you to your other devices."
+        detail="Anything you bookmarked, newest first. Guest saves stay in this browser; sign in to sync them across devices."
       />
 
       {saved.length === 0 ? (

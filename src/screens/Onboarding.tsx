@@ -2,7 +2,7 @@
    which section to start with — all of which the dashboard reads later. */
 
 import { useState } from 'react';
-import { SECTION_BY_ID, SECTIONS } from '@/content';
+import { SECTION_BY_ID, SECTIONS } from '@/content/sections';
 import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { goalForTiming } from '@/lib/plan';
@@ -27,7 +27,7 @@ const STEPS: Step[] = [
   {
     key: 'when',
     question: 'When do you take the ACT?',
-    detail: 'This sets how hard we push your weekly goal.',
+    detail: 'We use this to suggest a weekly goal. You can change it later.',
     options: [
       { label: 'Within a month', value: 'soon' },
       { label: '1–3 months', value: 'mid' },
@@ -38,7 +38,7 @@ const STEPS: Step[] = [
   {
     key: 'before',
     question: 'Have you taken it before?',
-    detail: 'Where you are starting from changes where we start you.',
+    detail: 'A little context for your study plan.',
     options: [
       { label: 'First time', value: 'first' },
       { label: 'Yes — below 20', value: 'b20' },
@@ -59,7 +59,7 @@ const STEPS: Step[] = [
   },
   {
     key: 'fear',
-    question: 'Which section worries you most?',
+    question: 'Which section would you like to start with?',
     detail: 'We will point you there first.',
     options: SECTIONS.map((s) => ({ label: s.name, value: s.id })),
   },
@@ -111,6 +111,7 @@ export function Onboarding() {
     updateProgress((p) => ({
       ...p,
       profile,
+      startRegion: p.startRegion ?? profile.fear,
       targetScore: profile.target,
       weeklyGoal: goalForTiming(profile.when),
     }));
@@ -130,6 +131,16 @@ export function Onboarding() {
       <div className="absolute inset-0 bg-leather-950/84" />
 
       <div className="panel-lit relative z-10 w-full max-w-lg p-7 sm:p-9">
+        <button
+          type="button"
+          className="mb-5 text-sm text-gold underline underline-offset-4"
+          onClick={() => navigate({ name: 'landing' })}
+        >
+          Back to the website
+        </button>
+        <p className="mb-4 text-sm text-parchment-dim">
+          Your plan, then your character. You can change both later.
+        </p>
         {phase === 'questions' && (
           <>
             <div className="mb-6">
@@ -303,8 +314,8 @@ export function Onboarding() {
             </dl>
 
             <p className="mt-6 text-[14px] leading-relaxed text-ink-faint">
-              Wizzy is waiting at the first waystone. He will tell you what has happened to the
-              realm, and then you choose which road to walk first.
+              Start with your chosen subject. Wizzy can introduce the realm along the way; you can
+              skip the story and begin studying immediately.
             </p>
 
             {/* Straight to the road, not to camp.
@@ -319,7 +330,7 @@ export function Onboarding() {
               size="lg"
               trailing
               className="mt-7 w-full"
-              onClick={() => navigate({ name: 'path' }, { replace: true })}
+              onClick={() => navigate({ name: 'path', section: fear }, { replace: true })}
             >
               Set out
             </Button>

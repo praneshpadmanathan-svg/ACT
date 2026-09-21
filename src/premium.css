@@ -186,7 +186,24 @@ p {
   text-wrap: balance;
 }
 .premium-landing .hero-type-block {
-  padding-block: 2rem;
+  padding-block: clamp(5rem, 12vh, 8rem);
+}
+.premium-landing .hero-type-block > p {
+  text-wrap: pretty;
+}
+.premium-landing .hero-type-block > p:last-child {
+  color: oklch(var(--c-parchment));
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+}
+@media (max-width: 40rem) {
+  .premium-landing .hero-type-block button {
+    min-height: 3rem;
+  }
+  .premium-landing .hero-type-block > div {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 .premium-landing .plate-card {
   box-shadow: var(--lamp-edge), var(--e-resting);

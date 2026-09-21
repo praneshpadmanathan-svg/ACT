@@ -61,7 +61,7 @@ const GROUPS: NavGroup[] = [
     label: 'Your climb',
     items: [
       {
-        label: 'Camp',
+        label: 'Home',
         glyph: 'tent',
         route: { name: 'home' },
         match: ['home'],
@@ -73,7 +73,6 @@ const GROUPS: NavGroup[] = [
         route: { name: 'path' },
         match: ['path', 'zone', 'codex'],
         hint: 'Lesson, then quiz',
-        meta: LIBRARY_STATS.zoneQuestions.toLocaleString(),
       },
     ],
   },
@@ -90,12 +89,11 @@ const GROUPS: NavGroup[] = [
         meta: LIBRARY_STATS.notePages.toLocaleString(),
       },
       {
-        label: 'Training',
+        label: 'Practice',
         glyph: 'sword',
         route: { name: 'drills' },
         match: ['drills', 'drill'],
         hint: 'Free practice, any topic',
-        meta: LIBRARY_STATS.drillQuestions.toLocaleString(),
       },
       {
         label: 'Review',
@@ -118,11 +116,11 @@ const GROUPS: NavGroup[] = [
         hint: 'The four guardians',
       },
       {
-        label: 'Summit',
+        label: 'Timed practice',
         glyph: 'crown',
         route: { name: 'tests' },
         match: ['tests', 'test', 'report'],
-        hint: 'Full timed trial',
+        hint: 'Shorter timed sets',
       },
     ],
   },
@@ -306,6 +304,12 @@ export function SideNav() {
           (4.9:1), and on the darker 900 it fell to 4.28 in light mode. */}
       <a
         href="#main"
+        onClick={(event) => {
+          event.preventDefault();
+          const main = document.getElementById('main');
+          main?.focus({ preventScroll: true });
+          main?.scrollIntoView({ block: 'start' });
+        }}
         className="sr-only rounded-lg border-2 border-gold bg-leather-850 px-4 py-2 font-script
                    text-[12px] uppercase tracking-[0.14em] text-gold
                    focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[100]"

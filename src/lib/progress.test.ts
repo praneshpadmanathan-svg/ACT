@@ -409,8 +409,13 @@ describe('scaleScore', () => {
 });
 
 describe('compositeOf', () => {
-  it('averages and rounds the section scores present', () => {
-    expect(compositeOf({ english: 30, math: 28, reading: 32, science: 26 })).toBe(29);
+  it('averages core sections without including the optional science score', () => {
+    expect(compositeOf({ english: 30, math: 28, reading: 32, science: 26 })).toBe(30);
+    expect(compositeOf({ english: 30, math: 28, reading: 32, science: 1 })).toBe(30);
+  });
+
+  it('preserves a science-only practice report', () => {
+    expect(compositeOf({ science: 26 })).toBe(26);
   });
 
   it('ignores sections with no score rather than treating them as zero', () => {

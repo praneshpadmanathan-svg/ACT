@@ -132,7 +132,7 @@ export function RoadChooser() {
                 {feared && (
                   <p className="mt-2.5 font-script text-[11.5px] uppercase tracking-[0.14em] text-desert-text">
                     <Glyph name="spark" size={11} className={LEADING_ICON} />
-                    The one you said worried you most
+                    Your preferred starting subject
                   </p>
                 )}
               </m.button>

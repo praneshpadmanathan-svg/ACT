@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react';
 import { LIBRARY_STATS, PATH_BY_ID, SECTIONS, SECTION_BY_ID } from '@/content';
-import { hrefFor } from '@/lib/router';
+import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import {
   ACHIEVEMENTS,
@@ -25,6 +25,7 @@ import { HeroSprite } from '@/game/HeroSprite';
 /* ---------------------------------------------------------------- stats */
 
 export function StatsScreen() {
+  const navigate = useNavigate();
   const { progress } = useStore();
 
   const estimate = estimatedComposite(progress);
@@ -51,7 +52,12 @@ export function StatsScreen() {
         <SectionHeading eyebrow="Progress" title="Statistics" />
         <EmptyState
           art="scroll"
-          title="Nothing to show yet"
+          title="Your progress starts with one question"
+          action={
+            <Button variant="primary" onClick={() => navigate({ name: 'drills' })}>
+              Start practising
+            </Button>
+          }
           detail="Answer some questions and this fills up with accuracy by topic, an estimated composite, and your activity history."
         />
       </Page>
