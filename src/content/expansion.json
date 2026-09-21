@@ -336,32 +336,32 @@
         "section": "english",
         "topic": "wordiness",
         "difficulty": "easy",
-        "context": "Choose the most concise replacement for the bracketed words without losing meaning: \"Mina returned [at a later point in time] to catalog the exhibits.\"",
+        "context": "The two ships «collided together» in the fog off the point.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "later on in time"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "subsequently at a later time"
+            "text": "collided"
           },
           {
             "id": "C",
-            "text": "later"
+            "text": "collided into one another"
           },
           {
             "id": "D",
-            "text": "at a later future time"
+            "text": "collided together in a crash"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "On in time adds no useful meaning.",
-          "B": "Subsequently and at a later time duplicate each other.",
-          "C": "Later preserves the full time relationship in one word.",
-          "D": "Later and future repeat the same time relationship."
+          "A": "Collided already means the two ships struck each other, so together adds nothing.",
+          "B": "The verb carries the whole idea, and one word says what four were saying.",
+          "C": "Into one another repeats the mutual sense the verb already holds.",
+          "D": "In a crash names a third time the event the verb has named once."
         }
       },
       {
@@ -369,32 +369,32 @@
         "section": "english",
         "topic": "transitions",
         "difficulty": "easy",
-        "context": "\"Mina expected the museum to be empty. ___, every seat was taken.\" Which transition best expresses the relationship?",
+        "context": "The forecast promised clear skies. «Therefore», the rain began before noon.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Therefore"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Similarly"
+            "text": "However"
           },
           {
             "id": "C",
-            "text": "For example"
+            "text": "Likewise"
           },
           {
             "id": "D",
-            "text": "Instead"
+            "text": "Accordingly"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The second sentence contradicts the expectation rather than resulting from it.",
-          "B": "The observed crowd is not similar to the expectation of emptiness.",
-          "C": "A full room does not illustrate an expectation that it would be empty.",
-          "D": "Instead signals that the actual situation differs from the expectation."
+          "A": "Therefore claims the rain followed from the forecast, which it contradicted.",
+          "B": "The two sentences pull against one another, and however marks that turn.",
+          "C": "Likewise says the second sentence matches the first, and it does not.",
+          "D": "Accordingly makes rain the consequence of a forecast that promised sun."
         }
       },
       {
@@ -402,12 +402,12 @@
         "section": "english",
         "topic": "word choice",
         "difficulty": "easy",
-        "context": "\"The new timetable will ___ how Mina plans the day.\" Which choice fits standard usage?",
+        "context": "The delay had no «affect» on the final cost of the repair.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "affect"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
@@ -415,19 +415,19 @@
           },
           {
             "id": "C",
-            "text": "effects"
+            "text": "affectation"
           },
           {
             "id": "D",
-            "text": "affects"
+            "text": "effecting"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Affect is the verb meaning influence, and will is followed by its base form.",
-          "B": "The intended verb means influence, not bring into existence.",
-          "C": "A base-form verb follows will.",
-          "D": "Will takes the base form rather than the third-person singular."
+          "A": "Affect is almost always the verb, and the sentence needs a noun after no.",
+          "B": "Effect is the noun for the result something has on something else.",
+          "C": "An affectation is a put-on manner, which has nothing to do with cost.",
+          "D": "Effecting means bringing about, and no cannot sit in front of it."
         }
       },
       {
@@ -435,32 +435,32 @@
         "section": "english",
         "topic": "idioms",
         "difficulty": "easy",
-        "context": "\"Mina is responsible ___ maintaining the exhibits.\" Which choice completes the standard expression?",
+        "context": "She had to «take a decision» before the tide turned.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "with"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "for"
+            "text": "make a decision"
           },
           {
             "id": "C",
-            "text": "of"
+            "text": "do a decision"
           },
           {
             "id": "D",
-            "text": "to"
+            "text": "perform a decision"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "Responsible with is not the standard construction for an assigned duty.",
-          "B": "Responsible for names the task or duty assigned to someone.",
-          "C": "The standard expression is responsible for, not responsible of.",
-          "D": "Responsible to typically identifies the person one answers to, not the task."
+          "A": "Take a decision is not the English pairing; decisions are made.",
+          "B": "Make a decision is the fixed pairing of verb and noun in English.",
+          "C": "Do is not a verb that English joins to the noun decision.",
+          "D": "Perform suits a task or a duty rather than a decision."
         }
       },
       {
@@ -897,32 +897,32 @@
         "section": "english",
         "topic": "wordiness",
         "difficulty": "easy",
-        "context": "Choose the most concise replacement for the bracketed words without losing meaning: \"Leo returned [at a later point in time] to label the seedlings.\"",
+        "context": "She «repeated the signal again» twice over the radio.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "at a later future time"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "later on in time"
+            "text": "repeated the signal"
           },
           {
             "id": "C",
-            "text": "subsequently at a later time"
+            "text": "repeated the signal once again"
           },
           {
             "id": "D",
-            "text": "later"
+            "text": "said the signal again a second time"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "Later and future repeat the same time relationship.",
-          "B": "On in time adds no useful meaning.",
-          "C": "Subsequently and at a later time duplicate each other.",
-          "D": "Later preserves the full time relationship in one word."
+          "A": "Repeated already means said again, and twice has counted the repetitions.",
+          "B": "Repeated and twice between them say everything the sentence needs.",
+          "C": "Once again is a longer way of writing the again that was redundant already.",
+          "D": "A second time repeats what again repeats, so the sentence says it three times."
         }
       },
       {
@@ -930,32 +930,32 @@
         "section": "english",
         "topic": "transitions",
         "difficulty": "easy",
-        "context": "\"Leo expected the garden to be empty. ___, every seat was taken.\" Which transition best expresses the relationship?",
+        "context": "The kiln reached temperature by ten. «Nevertheless», the firing began on time.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Instead"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Therefore"
+            "text": "So"
           },
           {
             "id": "C",
-            "text": "Similarly"
+            "text": "Instead"
           },
           {
             "id": "D",
-            "text": "For example"
+            "text": "In contrast"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Instead signals that the actual situation differs from the expectation.",
-          "B": "The second sentence contradicts the expectation rather than resulting from it.",
-          "C": "The observed crowd is not similar to the expectation of emptiness.",
-          "D": "A full room does not illustrate an expectation that it would be empty."
+          "A": "Nevertheless marks a contrast, but the second sentence follows from the first.",
+          "B": "Reaching temperature is what let the firing start, and so marks that link.",
+          "C": "Instead replaces one thing with another, and nothing here was replaced.",
+          "D": "In contrast sets the sentences against each other when they agree."
         }
       },
       {
@@ -963,32 +963,32 @@
         "section": "english",
         "topic": "word choice",
         "difficulty": "easy",
-        "context": "\"The new timetable will ___ how Leo plans the day.\" Which choice fits standard usage?",
+        "context": "Fewer boats went out this season «then» in any year since the war.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "affects"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "affect"
+            "text": "than"
           },
           {
             "id": "C",
-            "text": "effect"
+            "text": "then again"
           },
           {
             "id": "D",
-            "text": "effects"
+            "text": "than then"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "Will takes the base form rather than the third-person singular.",
-          "B": "Affect is the verb meaning influence, and will is followed by its base form.",
-          "C": "The intended verb means influence, not bring into existence.",
-          "D": "A base-form verb follows will."
+          "A": "Then marks time, and the sentence is comparing one season with others.",
+          "B": "Than is the word that follows fewer when two quantities are compared.",
+          "C": "Then again begins a fresh thought rather than completing a comparison.",
+          "D": "Stacking the two words leaves a comparison with a stray time word in it."
         }
       },
       {
@@ -996,32 +996,32 @@
         "section": "english",
         "topic": "idioms",
         "difficulty": "easy",
-        "context": "\"Leo is responsible ___ maintaining the seedlings.\" Which choice completes the standard expression?",
+        "context": "The crew «did an effort» to free the anchor before dark.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "to"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "with"
+            "text": "made an effort"
           },
           {
             "id": "C",
-            "text": "for"
+            "text": "took an effort"
           },
           {
             "id": "D",
-            "text": "of"
+            "text": "performed an effort"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "Responsible to typically identifies the person one answers to, not the task.",
-          "B": "Responsible with is not the standard construction for an assigned duty.",
-          "C": "Responsible for names the task or duty assigned to someone.",
-          "D": "The standard expression is responsible for, not responsible of."
+          "A": "Do is not the verb English pairs with effort.",
+          "B": "Make an effort is the settled pairing, whatever the effort is spent on.",
+          "C": "Take an effort reaches for the wrong verb in the same fixed phrase.",
+          "D": "Perform belongs with tasks and duties rather than with effort."
         }
       },
       {
@@ -1458,32 +1458,32 @@
         "section": "english",
         "topic": "wordiness",
         "difficulty": "easy",
-        "context": "Choose the most concise replacement for the bracketed words without losing meaning: \"Asha returned [at a later point in time] to repair the costumes.\"",
+        "context": "By dawn the cellar was «completely full to the brim» with water.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "later"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "at a later future time"
+            "text": "full"
           },
           {
             "id": "C",
-            "text": "later on in time"
+            "text": "full to the brim entirely"
           },
           {
             "id": "D",
-            "text": "subsequently at a later time"
+            "text": "completely and entirely full"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Later preserves the full time relationship in one word.",
-          "B": "Later and future repeat the same time relationship.",
-          "C": "On in time adds no useful meaning.",
-          "D": "Subsequently and at a later time duplicate each other."
+          "A": "To the brim and completely both say what full has already said.",
+          "B": "Full admits of no degrees, so nothing needs to be added to it.",
+          "C": "Entirely piles a third word onto an idea that needed only one.",
+          "D": "Completely and entirely mean the same thing, and full needs neither."
         }
       },
       {
@@ -1491,32 +1491,32 @@
         "section": "english",
         "topic": "transitions",
         "difficulty": "easy",
-        "context": "\"Asha expected the theater to be empty. ___, every seat was taken.\" Which transition best expresses the relationship?",
+        "context": "Tharp drew each profile by hand. «In addition», she checked every one of them twice.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "For example"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Instead"
+            "text": "However"
           },
           {
             "id": "C",
-            "text": "Therefore"
+            "text": "Instead"
           },
           {
             "id": "D",
-            "text": "Similarly"
+            "text": "By contrast"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "A full room does not illustrate an expectation that it would be empty.",
-          "B": "Instead signals that the actual situation differs from the expectation.",
-          "C": "The second sentence contradicts the expectation rather than resulting from it.",
-          "D": "The observed crowd is not similar to the expectation of emptiness."
+          "A": "The second sentence adds a further thing she did, which in addition marks.",
+          "B": "However promises a contrast that the two sentences do not contain.",
+          "C": "Instead would mean she checked the profiles rather than drawing them.",
+          "D": "By contrast sets the two actions against each other, though they agree."
         }
       },
       {
@@ -1524,32 +1524,32 @@
         "section": "english",
         "topic": "word choice",
         "difficulty": "easy",
-        "context": "\"The new timetable will ___ how Asha plans the day.\" Which choice fits standard usage?",
+        "context": "The council «excepted» the surveyor's recommendation without a vote.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "effects"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "affects"
+            "text": "accepted"
           },
           {
             "id": "C",
-            "text": "affect"
+            "text": "excepting"
           },
           {
             "id": "D",
-            "text": "effect"
+            "text": "acceptance of"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "A base-form verb follows will.",
-          "B": "Will takes the base form rather than the third-person singular.",
-          "C": "Affect is the verb meaning influence, and will is followed by its base form.",
-          "D": "The intended verb means influence, not bring into existence."
+          "A": "Except means to leave out, which is the opposite of what the council did.",
+          "B": "Accepted is the verb for agreeing to take what has been offered.",
+          "C": "Excepting is a preposition and cannot serve as the verb of the sentence.",
+          "D": "A noun phrase leaves the council with nothing to do in the sentence."
         }
       },
       {
@@ -1557,32 +1557,32 @@
         "section": "english",
         "topic": "idioms",
         "difficulty": "easy",
-        "context": "\"Asha is responsible ___ maintaining the costumes.\" Which choice completes the standard expression?",
+        "context": "He «gave attention» to the hinge long before he touched the lock.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "of"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "to"
+            "text": "paid attention"
           },
           {
             "id": "C",
-            "text": "with"
+            "text": "did attention"
           },
           {
             "id": "D",
-            "text": "for"
+            "text": "performed attention"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The standard expression is responsible for, not responsible of.",
-          "B": "Responsible to typically identifies the person one answers to, not the task.",
-          "C": "Responsible with is not the standard construction for an assigned duty.",
-          "D": "Responsible for names the task or duty assigned to someone."
+          "A": "Attention is paid in English, not given, however natural give may sound.",
+          "B": "Pay attention is the fixed pairing and the only one used here.",
+          "C": "Do cannot take attention as its object in standard English.",
+          "D": "Perform suits an action carried out rather than attention directed at something."
         }
       },
       {
@@ -2018,116 +2018,116 @@
         "id": "exp26-english-062",
         "section": "english",
         "topic": "wordiness",
-        "difficulty": "easy",
-        "context": "Choose the most concise replacement for the bracketed words without losing meaning: \"Theo returned [at a later point in time] to sort the maps.\"",
+        "difficulty": "medium",
+        "context": "«Due to the fact that» the ferry was cancelled, we waited on the quay.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "subsequently at a later time"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "later"
+            "text": "Because"
           },
           {
             "id": "C",
-            "text": "at a later future time"
+            "text": "Owing to the fact that"
           },
           {
             "id": "D",
-            "text": "later on in time"
+            "text": "In view of the fact that"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "Subsequently and at a later time duplicate each other.",
-          "B": "Later preserves the full time relationship in one word.",
-          "C": "Later and future repeat the same time relationship.",
-          "D": "On in time adds no useful meaning."
+          "A": "Five words are doing the work of one, and the phrase can be cut whole.",
+          "B": "Because states the cause outright and needs nothing propping it up.",
+          "C": "Owing to the fact that is the same padding with a different opening word.",
+          "D": "In view of the fact that is longer still and carries no extra meaning."
         }
       },
       {
         "id": "exp26-english-063",
         "section": "english",
         "topic": "transitions",
-        "difficulty": "easy",
-        "context": "\"Theo expected the library to be empty. ___, every seat was taken.\" Which transition best expresses the relationship?",
+        "difficulty": "medium",
+        "context": "Several of the plates had been mislabelled. «Therefore», three of them carry the wrong date.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Similarly"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "For example"
+            "text": "For instance"
           },
           {
             "id": "C",
-            "text": "Instead"
+            "text": "Nonetheless"
           },
           {
             "id": "D",
-            "text": "Therefore"
+            "text": "In the meantime"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "The observed crowd is not similar to the expectation of emptiness.",
-          "B": "A full room does not illustrate an expectation that it would be empty.",
-          "C": "Instead signals that the actual situation differs from the expectation.",
-          "D": "The second sentence contradicts the expectation rather than resulting from it."
+          "A": "The second sentence gives an example of the problem rather than its result.",
+          "B": "Three plates with the wrong date illustrate the mislabelling just described.",
+          "C": "Nonetheless promises a contrast, though both sentences point the same way.",
+          "D": "In the meantime marks an interval, and no time separates the two statements."
         }
       },
       {
         "id": "exp26-english-064",
         "section": "english",
         "topic": "word choice",
-        "difficulty": "easy",
-        "context": "\"The new timetable will ___ how Theo plans the day.\" Which choice fits standard usage?",
+        "difficulty": "medium",
+        "context": "The report «reckons» that the foundations had shifted by nine millimetres.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "effect"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "effects"
+            "text": "concludes"
           },
           {
             "id": "C",
-            "text": "affects"
+            "text": "guesses at"
           },
           {
             "id": "D",
-            "text": "affect"
+            "text": "has a feeling"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The intended verb means influence, not bring into existence.",
-          "B": "A base-form verb follows will.",
-          "C": "Will takes the base form rather than the third-person singular.",
-          "D": "Affect is the verb meaning influence, and will is followed by its base form."
+          "A": "Reckons is too casual for a document giving a figure to the millimetre.",
+          "B": "Concludes matches the register of a report stating a measured result.",
+          "C": "Guesses at contradicts a number given to the nearest millimetre.",
+          "D": "A feeling is not something a written report is able to have."
         }
       },
       {
         "id": "exp26-english-065",
         "section": "english",
         "topic": "idioms",
-        "difficulty": "easy",
-        "context": "\"Theo is responsible ___ maintaining the maps.\" Which choice completes the standard expression?",
+        "difficulty": "medium",
+        "context": "The result depends «of» the weather in the last week of May.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "for"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "of"
+            "text": "on"
           },
           {
             "id": "C",
@@ -2135,15 +2135,15 @@
           },
           {
             "id": "D",
-            "text": "with"
+            "text": "from"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Responsible for names the task or duty assigned to someone.",
-          "B": "The standard expression is responsible for, not responsible of.",
-          "C": "Responsible to typically identifies the person one answers to, not the task.",
-          "D": "Responsible with is not the standard construction for an assigned duty."
+          "A": "Depend is never completed by of, however close the two sound.",
+          "B": "Depend takes on, and no other preposition finishes the verb.",
+          "C": "To follows verbs such as listen, but it cannot follow depend.",
+          "D": "From marks a source, and depend does not take a source."
         }
       },
       {
@@ -2579,132 +2579,132 @@
         "id": "exp26-english-079",
         "section": "english",
         "topic": "wordiness",
-        "difficulty": "easy",
-        "context": "Choose the most concise replacement for the bracketed words without losing meaning: \"Nora returned [at a later point in time] to clean the lenses.\"",
+        "difficulty": "medium",
+        "context": "«At this point in time» the bell is still hanging in the tower.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "later on in time"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "subsequently at a later time"
+            "text": "Now"
           },
           {
             "id": "C",
-            "text": "later"
+            "text": "At the present moment in time"
           },
           {
             "id": "D",
-            "text": "at a later future time"
+            "text": "At this current point in time"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "On in time adds no useful meaning.",
-          "B": "Subsequently and at a later time duplicate each other.",
-          "C": "Later preserves the full time relationship in one word.",
-          "D": "Later and future repeat the same time relationship."
+          "A": "Point in time is a stock phrase that one short adverb replaces exactly.",
+          "B": "Now carries the whole meaning of the phrase it stands in for.",
+          "C": "Present and in time repeat each other inside a phrase already too long.",
+          "D": "Current adds nothing that this had not already established."
         }
       },
       {
         "id": "exp26-english-080",
         "section": "english",
         "topic": "transitions",
-        "difficulty": "easy",
-        "context": "\"Nora expected the observatory to be empty. ___, every seat was taken.\" Which transition best expresses the relationship?",
+        "difficulty": "medium",
+        "context": "The tide was running hard against them. «For example», they rowed for the lee shore.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Therefore"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Similarly"
+            "text": "So"
           },
           {
             "id": "C",
-            "text": "For example"
+            "text": "Even so"
           },
           {
             "id": "D",
-            "text": "Instead"
+            "text": "Meanwhile"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The second sentence contradicts the expectation rather than resulting from it.",
-          "B": "The observed crowd is not similar to the expectation of emptiness.",
-          "C": "A full room does not illustrate an expectation that it would be empty.",
-          "D": "Instead signals that the actual situation differs from the expectation."
+          "A": "Rowing for the lee shore is what they did about the tide, not an example of it.",
+          "B": "The hard tide is the reason they changed course, which so states plainly.",
+          "C": "Even so would mean they rowed on despite the tide rather than because of it.",
+          "D": "Meanwhile sets the two side by side instead of linking cause to response."
         }
       },
       {
         "id": "exp26-english-081",
         "section": "english",
         "topic": "word choice",
-        "difficulty": "easy",
-        "context": "\"The new timetable will ___ how Nora plans the day.\" Which choice fits standard usage?",
+        "difficulty": "medium",
+        "context": "The storm «decimated» every one of the limes along the avenue.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "affect"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "effect"
+            "text": "destroyed"
           },
           {
             "id": "C",
-            "text": "effects"
+            "text": "depleted"
           },
           {
             "id": "D",
-            "text": "affects"
+            "text": "diminished"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Affect is the verb meaning influence, and will is followed by its base form.",
-          "B": "The intended verb means influence, not bring into existence.",
-          "C": "A base-form verb follows will.",
-          "D": "Will takes the base form rather than the third-person singular."
+          "A": "Decimated means cut down by a tenth, which is far short of every tree.",
+          "B": "Destroyed matches the loss of all the trees that the sentence describes.",
+          "C": "Depleted suits a stock drawn down over time rather than trees blown over.",
+          "D": "Diminished says the avenue grew smaller rather than that the limes were lost."
         }
       },
       {
         "id": "exp26-english-082",
         "section": "english",
         "topic": "idioms",
-        "difficulty": "easy",
-        "context": "\"Nora is responsible ___ maintaining the lenses.\" Which choice completes the standard expression?",
+        "difficulty": "medium",
+        "context": "She was accused «with» taking the log book from the wheelhouse.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "with"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "for"
-          },
-          {
-            "id": "C",
             "text": "of"
           },
           {
+            "id": "C",
+            "text": "for"
+          },
+          {
             "id": "D",
-            "text": "to"
+            "text": "about"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "Responsible with is not the standard construction for an assigned duty.",
-          "B": "Responsible for names the task or duty assigned to someone.",
-          "C": "The standard expression is responsible for, not responsible of.",
-          "D": "Responsible to typically identifies the person one answers to, not the task."
+          "A": "With follows charged in some usages, but accuse never takes it.",
+          "B": "Accuse is completed by of, whatever the accusation happens to be.",
+          "C": "For is what follows blamed, and the two verbs take different prepositions.",
+          "D": "About marks a topic, and accuse does not take a topic."
         }
       },
       {
@@ -3140,132 +3140,132 @@
         "id": "exp26-english-096",
         "section": "english",
         "topic": "wordiness",
-        "difficulty": "easy",
-        "context": "Choose the most concise replacement for the bracketed words without losing meaning: \"Inez returned [at a later point in time] to display the sketches.\"",
+        "difficulty": "medium",
+        "context": "He agreed to help «for the purpose of finishing» the survey before winter.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "at a later future time"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "later on in time"
+            "text": "to finish"
           },
           {
             "id": "C",
-            "text": "subsequently at a later time"
+            "text": "for the purpose of the finishing of"
           },
           {
             "id": "D",
-            "text": "later"
+            "text": "with the purpose of finishing"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "Later and future repeat the same time relationship.",
-          "B": "On in time adds no useful meaning.",
-          "C": "Subsequently and at a later time duplicate each other.",
-          "D": "Later preserves the full time relationship in one word."
+          "A": "An infinitive already states a purpose, so the phrase announcing one is filler.",
+          "B": "To finish says why he agreed in two words instead of five.",
+          "C": "Adding an article and a second of makes the padding worse, not better.",
+          "D": "Swapping for to with leaves the same stock phrase in place."
         }
       },
       {
         "id": "exp26-english-097",
         "section": "english",
         "topic": "transitions",
-        "difficulty": "easy",
-        "context": "\"Inez expected the studio to be empty. ___, every seat was taken.\" Which transition best expresses the relationship?",
+        "difficulty": "medium",
+        "context": "Novak never exhibited the drawings. «In fact», she kept them locked away for forty years.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Instead"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Therefore"
+            "text": "By contrast"
           },
           {
             "id": "C",
-            "text": "Similarly"
+            "text": "Even so"
           },
           {
             "id": "D",
-            "text": "For example"
+            "text": "In the meantime"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "Instead signals that the actual situation differs from the expectation.",
-          "B": "The second sentence contradicts the expectation rather than resulting from it.",
-          "C": "The observed crowd is not similar to the expectation of emptiness.",
-          "D": "A full room does not illustrate an expectation that it would be empty."
+          "A": "The second sentence sharpens the first, which is the work in fact does.",
+          "B": "By contrast would set the locked case against never exhibiting them.",
+          "C": "Even so promises a contrast, though the two statements agree completely.",
+          "D": "In the meantime would need a stretch of time separating the two."
         }
       },
       {
         "id": "exp26-english-098",
         "section": "english",
         "topic": "word choice",
-        "difficulty": "easy",
-        "context": "\"The new timetable will ___ how Inez plans the day.\" Which choice fits standard usage?",
+        "difficulty": "medium",
+        "context": "Her account of the wreck is «incredulous» in one or two places.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "affects"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "affect"
+            "text": "implausible"
           },
           {
             "id": "C",
-            "text": "effect"
+            "text": "incredulously"
           },
           {
             "id": "D",
-            "text": "effects"
+            "text": "uncredible"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "Will takes the base form rather than the third-person singular.",
-          "B": "Affect is the verb meaning influence, and will is followed by its base form.",
-          "C": "The intended verb means influence, not bring into existence.",
-          "D": "A base-form verb follows will."
+          "A": "Incredulous describes a person who disbelieves, not a story hard to believe.",
+          "B": "Implausible is the word for an account that is difficult to credit.",
+          "C": "An adverb cannot follow is and describe the account itself.",
+          "D": "Uncredible is not a word, and the usual form would be incredible."
         }
       },
       {
         "id": "exp26-english-099",
         "section": "english",
         "topic": "idioms",
-        "difficulty": "easy",
-        "context": "\"Inez is responsible ___ maintaining the sketches.\" Which choice completes the standard expression?",
+        "difficulty": "medium",
+        "context": "The rule applies «for» every vessel over nine metres in length.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "to"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "with"
+            "text": "to"
           },
           {
             "id": "C",
-            "text": "for"
+            "text": "on"
           },
           {
             "id": "D",
-            "text": "of"
+            "text": "at"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "Responsible to typically identifies the person one answers to, not the task.",
-          "B": "Responsible with is not the standard construction for an assigned duty.",
-          "C": "Responsible for names the task or duty assigned to someone.",
-          "D": "The standard expression is responsible for, not responsible of."
+          "A": "For marks a purpose or a beneficiary, and a rule has neither here.",
+          "B": "Apply takes to when a rule reaches the things it governs.",
+          "C": "On follows verbs such as impose, not the verb apply.",
+          "D": "At marks a place or a target, and the vessels are neither."
         }
       },
       {
@@ -3701,132 +3701,132 @@
         "id": "exp26-english-113",
         "section": "english",
         "topic": "wordiness",
-        "difficulty": "easy",
-        "context": "Choose the most concise replacement for the bracketed words without losing meaning: \"Omar returned [at a later point in time] to update the timetables.\"",
+        "difficulty": "hard",
+        "context": "Every one of the crates was opened «and each one was also unpacked».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "later"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "at a later future time"
+            "text": "and unpacked"
           },
           {
             "id": "C",
-            "text": "later on in time"
+            "text": "and every one of them was unpacked"
           },
           {
             "id": "D",
-            "text": "subsequently at a later time"
+            "text": "and each of them was unpacked as well"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Later preserves the full time relationship in one word.",
-          "B": "Later and future repeat the same time relationship.",
-          "C": "On in time adds no useful meaning.",
-          "D": "Subsequently and at a later time duplicate each other."
+          "A": "Every one of the crates is already the subject, so each one names them twice.",
+          "B": "Both verbs share the subject stated at the start of the sentence.",
+          "C": "Restating every one of them says a second time what the subject has said.",
+          "D": "As well adds nothing once the same crates govern both verbs."
         }
       },
       {
         "id": "exp26-english-114",
         "section": "english",
         "topic": "transitions",
-        "difficulty": "easy",
-        "context": "\"Omar expected the station to be empty. ___, every seat was taken.\" Which transition best expresses the relationship?",
+        "difficulty": "hard",
+        "context": "Every gauge had been calibrated that morning. «Therefore», the pressure dial read twelve per cent high.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "For example"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Instead"
+            "text": "Even so"
           },
           {
             "id": "C",
-            "text": "Therefore"
+            "text": "For this reason"
           },
           {
             "id": "D",
-            "text": "Similarly"
+            "text": "As a result"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "A full room does not illustrate an expectation that it would be empty.",
-          "B": "Instead signals that the actual situation differs from the expectation.",
-          "C": "The second sentence contradicts the expectation rather than resulting from it.",
-          "D": "The observed crowd is not similar to the expectation of emptiness."
+          "A": "A calibrated gauge reading high contradicts the calibration rather than following from it.",
+          "B": "Even so marks a reading that persists in spite of the morning calibration.",
+          "C": "For this reason claims the calibration caused the error it should have removed.",
+          "D": "As a result names the same relation in other words and fails for the same reason."
         }
       },
       {
         "id": "exp26-english-115",
         "section": "english",
         "topic": "word choice",
-        "difficulty": "easy",
-        "context": "\"The new timetable will ___ how Omar plans the day.\" Which choice fits standard usage?",
+        "difficulty": "hard",
+        "context": "The pump ran «continually» from Friday night to Monday without once stopping.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "effects"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "affects"
+            "text": "continuously"
           },
           {
             "id": "C",
-            "text": "affect"
+            "text": "continual"
           },
           {
             "id": "D",
-            "text": "effect"
+            "text": "in a continual way"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "A base-form verb follows will.",
-          "B": "Will takes the base form rather than the third-person singular.",
-          "C": "Affect is the verb meaning influence, and will is followed by its base form.",
-          "D": "The intended verb means influence, not bring into existence."
+          "A": "Continually means again and again with gaps, but the pump never stopped.",
+          "B": "Continuously describes running without a break, which the sentence states.",
+          "C": "An adjective cannot modify a verb, and ran needs an adverb beside it.",
+          "D": "The phrase keeps the sense of repeated starts that the sentence rules out."
         }
       },
       {
         "id": "exp26-english-116",
         "section": "english",
         "topic": "idioms",
-        "difficulty": "easy",
-        "context": "\"Omar is responsible ___ maintaining the timetables.\" Which choice completes the standard expression?",
+        "difficulty": "hard",
+        "context": "The committee «took issue on» the surveyor's third recommendation.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "of"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "to"
+            "text": "took issue with"
           },
           {
             "id": "C",
-            "text": "with"
+            "text": "made issue of"
           },
           {
             "id": "D",
-            "text": "for"
+            "text": "held issue against"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The standard expression is responsible for, not responsible of.",
-          "B": "Responsible to typically identifies the person one answers to, not the task.",
-          "C": "Responsible with is not the standard construction for an assigned duty.",
-          "D": "Responsible for names the task or duty assigned to someone."
+          "A": "Take issue is completed by with, and no other preposition finishes it.",
+          "B": "Take issue with is the whole idiom, carried over unchanged from use to use.",
+          "C": "Make issue of is not an English phrase; the verb in the idiom is take.",
+          "D": "Hold issue against borrows from two phrases and belongs to neither."
         }
       },
       {
@@ -4262,132 +4262,132 @@
         "id": "exp26-english-130",
         "section": "english",
         "topic": "wordiness",
-        "difficulty": "easy",
-        "context": "Choose the most concise replacement for the bracketed words without losing meaning: \"Wren returned [at a later point in time] to inspect the instruments.\"",
+        "difficulty": "hard",
+        "context": "The reason the dig stopped «was because the money ran out».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "subsequently at a later time"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "later"
+            "text": "was that the money ran out"
           },
           {
             "id": "C",
-            "text": "at a later future time"
+            "text": "was on account of the money running out"
           },
           {
             "id": "D",
-            "text": "later on in time"
+            "text": "was because of the money running out"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "Subsequently and at a later time duplicate each other.",
-          "B": "Later preserves the full time relationship in one word.",
-          "C": "Later and future repeat the same time relationship.",
-          "D": "On in time adds no useful meaning."
+          "A": "Reason and because state the same thing, so one of the two has to go.",
+          "B": "The reason was that gives the cause once rather than announcing it twice.",
+          "C": "On account of is another way of writing because after reason has said it.",
+          "D": "Because of still repeats the cause that reason has already promised."
         }
       },
       {
         "id": "exp26-english-131",
         "section": "english",
         "topic": "transitions",
-        "difficulty": "easy",
-        "context": "\"Wren expected the school to be empty. ___, every seat was taken.\" Which transition best expresses the relationship?",
+        "difficulty": "hard",
+        "context": "The method is slow and it wastes solvent. «On the contrary», it leaves the varnish intact.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Similarly"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "For example"
+            "text": "All the same"
           },
           {
             "id": "C",
-            "text": "Instead"
+            "text": "In other words"
           },
           {
             "id": "D",
-            "text": "Therefore"
+            "text": "Conversely"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "The observed crowd is not similar to the expectation of emptiness.",
-          "B": "A full room does not illustrate an expectation that it would be empty.",
-          "C": "Instead signals that the actual situation differs from the expectation.",
-          "D": "The second sentence contradicts the expectation rather than resulting from it."
+          "A": "On the contrary denies what came before, but the method really is slow.",
+          "B": "All the same lets the drawback stand and adds the reason to use it anyway.",
+          "C": "In other words promises a restatement, and the second sentence says something new.",
+          "D": "Conversely claims the opposite case, though both sentences describe one method."
         }
       },
       {
         "id": "exp26-english-132",
         "section": "english",
         "topic": "word choice",
-        "difficulty": "easy",
-        "context": "\"The new timetable will ___ how Wren plans the day.\" Which choice fits standard usage?",
+        "difficulty": "hard",
+        "context": "The committee was «disinterested» in the proposal and never opened it.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "effect"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "effects"
+            "text": "uninterested"
           },
           {
             "id": "C",
-            "text": "affects"
+            "text": "disinterest"
           },
           {
             "id": "D",
-            "text": "affect"
+            "text": "not disinterested"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The intended verb means influence, not bring into existence.",
-          "B": "A base-form verb follows will.",
-          "C": "Will takes the base form rather than the third-person singular.",
-          "D": "Affect is the verb meaning influence, and will is followed by its base form."
+          "A": "Disinterested means having nothing to gain, which is not the same as bored.",
+          "B": "Uninterested is the word for a committee that could not be bothered to read it.",
+          "C": "A noun cannot follow was and describe how the committee felt.",
+          "D": "The negative reverses the meaning and still reaches for the wrong word."
         }
       },
       {
         "id": "exp26-english-133",
         "section": "english",
         "topic": "idioms",
-        "difficulty": "easy",
-        "context": "\"Wren is responsible ___ maintaining the instruments.\" Which choice completes the standard expression?",
+        "difficulty": "hard",
+        "context": "The new dates «throw doubt to» the age of the timbers in the roof.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "for"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "of"
+            "text": "cast doubt on"
           },
           {
             "id": "C",
-            "text": "to"
+            "text": "put doubt in"
           },
           {
             "id": "D",
-            "text": "with"
+            "text": "place doubt about"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Responsible for names the task or duty assigned to someone.",
-          "B": "The standard expression is responsible for, not responsible of.",
-          "C": "Responsible to typically identifies the person one answers to, not the task.",
-          "D": "Responsible with is not the standard construction for an assigned duty."
+          "A": "Doubt is cast rather than thrown, and it falls on something rather than to it.",
+          "B": "Cast doubt on is the whole idiom, verb and preposition together.",
+          "C": "Put doubt in describes filling someone with doubt, not questioning a date.",
+          "D": "Place doubt about reaches for a third verb and a third preposition."
         }
       },
       {
@@ -4823,132 +4823,132 @@
         "id": "exp26-english-147",
         "section": "english",
         "topic": "wordiness",
-        "difficulty": "easy",
-        "context": "Choose the most concise replacement for the bracketed words without losing meaning: \"Ravi returned [at a later point in time] to organize the recordings.\"",
+        "difficulty": "hard",
+        "context": "«Looking back in hindsight», the decision seems obvious enough now.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "later on in time"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "subsequently at a later time"
+            "text": "Looking back"
           },
           {
             "id": "C",
-            "text": "later"
+            "text": "In hindsight looking backwards"
           },
           {
             "id": "D",
-            "text": "at a later future time"
+            "text": "With hindsight and in retrospect"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "On in time adds no useful meaning.",
-          "B": "Subsequently and at a later time duplicate each other.",
-          "C": "Later preserves the full time relationship in one word.",
-          "D": "Later and future repeat the same time relationship."
+          "A": "Hindsight is exactly what looking back means, so the phrase says it twice.",
+          "B": "Looking back carries the whole idea without help from a second phrase.",
+          "C": "Backwards names a third time the direction the phrase has already named.",
+          "D": "In retrospect is another word for hindsight, so the doubling survives."
         }
       },
       {
         "id": "exp26-english-148",
         "section": "english",
         "topic": "transitions",
-        "difficulty": "easy",
-        "context": "\"Ravi expected the center to be empty. ___, every seat was taken.\" Which transition best expresses the relationship?",
+        "difficulty": "hard",
+        "context": "The frame was assembled on the quay. «As a result», it was floated out on the evening tide.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Therefore"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Similarly"
+            "text": "From there"
           },
           {
             "id": "C",
-            "text": "For example"
+            "text": "In contrast"
           },
           {
             "id": "D",
-            "text": "Instead"
+            "text": "For example"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The second sentence contradicts the expectation rather than resulting from it.",
-          "B": "The observed crowd is not similar to the expectation of emptiness.",
-          "C": "A full room does not illustrate an expectation that it would be empty.",
-          "D": "Instead signals that the actual situation differs from the expectation."
+          "A": "Being assembled on the quay is where the frame started, not why it was floated.",
+          "B": "From there carries the frame on to its next stage from the place just named.",
+          "C": "In contrast sets the two stages against each other, though one follows the other.",
+          "D": "For example would make the floating an instance of the assembly."
         }
       },
       {
         "id": "exp26-english-149",
         "section": "english",
         "topic": "word choice",
-        "difficulty": "easy",
-        "context": "\"The new timetable will ___ how Ravi plans the day.\" Which choice fits standard usage?",
+        "difficulty": "hard",
+        "context": "The survey recorded a smaller «amount» of nesting pairs than the one before it.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "affect"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "effect"
+            "text": "number"
           },
           {
             "id": "C",
-            "text": "effects"
+            "text": "quantity"
           },
           {
             "id": "D",
-            "text": "affects"
+            "text": "count of the"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Affect is the verb meaning influence, and will is followed by its base form.",
-          "B": "The intended verb means influence, not bring into existence.",
-          "C": "A base-form verb follows will.",
-          "D": "Will takes the base form rather than the third-person singular."
+          "A": "Amount measures bulk, and nesting pairs are counted one at a time.",
+          "B": "Number is the word for things that can be counted individually.",
+          "C": "Quantity carries the same bulk sense that makes amount wrong here.",
+          "D": "Count of the leaves the sentence with two determiners in a row."
         }
       },
       {
         "id": "exp26-english-150",
         "section": "english",
         "topic": "idioms",
-        "difficulty": "easy",
-        "context": "\"Ravi is responsible ___ maintaining the recordings.\" Which choice completes the standard expression?",
+        "difficulty": "hard",
+        "context": "They «came to terms about» the loss of the second boat that winter.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "with"
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "for"
+            "text": "came to terms with"
           },
           {
             "id": "C",
-            "text": "of"
+            "text": "got to terms with"
           },
           {
             "id": "D",
-            "text": "to"
+            "text": "arrived at terms about"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "Responsible with is not the standard construction for an assigned duty.",
-          "B": "Responsible for names the task or duty assigned to someone.",
-          "C": "The standard expression is responsible for, not responsible of.",
-          "D": "Responsible to typically identifies the person one answers to, not the task."
+          "A": "Come to terms is completed by with, whatever is being accepted.",
+          "B": "Come to terms with is the whole idiom and admits no other preposition.",
+          "C": "Get to terms is not an English phrase; the verb in the idiom is come.",
+          "D": "Arrive at terms belongs to negotiation and cannot take about here."
         }
       },
       {
