@@ -468,65 +468,65 @@
         "section": "english",
         "topic": "adding/deleting",
         "difficulty": "medium",
-        "context": "A paragraph explains how Mina learned to catalog the exhibits. The writer proposes adding \"Mina's cousin prefers rainy weather.\" Should the sentence be added?",
+        "context": "A paragraph describes how the lighthouse keeper recorded the weather each day. The writer is considering adding the sentence \"The lamp itself was cleaned every Tuesday.\" Should the sentence be added?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Yes, because it identifies the cause of the successful training."
+            "text": "No, because cleaning the lamp is a different duty from recording the weather."
           },
           {
             "id": "B",
-            "text": "No, because a process paragraph cannot mention people."
+            "text": "Yes, because it shows that the keeper had more than one duty to attend to."
           },
           {
             "id": "C",
-            "text": "No, because the weather preference does not explain the learning process."
+            "text": "Yes, because readers will want to know how the lighthouse itself was maintained."
           },
           {
             "id": "D",
-            "text": "Yes, because any personal fact clarifies a technical process."
+            "text": "No, because the paragraph has already described the lamp in some detail."
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The sentence does not connect the cousin or weather to the training.",
-          "B": "People can be relevant to processes; irrelevance is the actual problem.",
-          "C": "The proposed detail has no stated connection to the paragraph’s purpose.",
-          "D": "A personal fact must be relevant to clarify the process."
+          "A": "The paragraph is about the weather record, and the lamp belongs to another task.",
+          "B": "Having several duties is true but tells the reader nothing about the record.",
+          "C": "Maintenance is a subject the paragraph never sets out to cover.",
+          "D": "The paragraph has not described the lamp, so the reason given is not available."
         }
       },
       {
         "id": "exp26-english-016",
         "section": "english",
         "topic": "sentence order",
-        "difficulty": "easy",
-        "context": "Arrange these sentences logically: [1] Finally, Mina returned the key. [2] First, Mina unlocked the archive. [3] Once inside, Mina began to catalog the exhibits.",
+        "difficulty": "medium",
+        "context": "[1] The tide turned at four. [2] By six the channel was passable. [3] The boats had been aground since dawn. [4] They were afloat again before dark. Sentence 3 would most logically be placed where?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "1, 2, 3"
+            "text": "before Sentence 1"
           },
           {
             "id": "B",
-            "text": "3, 2, 1"
+            "text": "where it is now"
           },
           {
             "id": "C",
-            "text": "2, 1, 3"
+            "text": "after Sentence 4"
           },
           {
             "id": "D",
-            "text": "2, 3, 1"
+            "text": "between Sentences 1 and 2"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "Returning the key is marked Finally and belongs at the end.",
-          "B": "Once inside presupposes that the room has already been unlocked.",
-          "C": "This puts the final action before the activity inside the room.",
-          "D": "First introduces unlocking, Once inside follows entry, and Finally closes the sequence."
+          "A": "The grounding comes before the tide turns, so it belongs at the start.",
+          "B": "Between the turning tide and the clearing channel it interrupts the sequence.",
+          "C": "Placed last it would say the boats were aground after they had floated free.",
+          "D": "Placed there it follows the turning tide, though the boats grounded before it."
         }
       },
       {
@@ -534,32 +534,32 @@
         "section": "english",
         "topic": "dashes",
         "difficulty": "easy",
-        "context": "Which version correctly sets off \"a patient volunteer\" in the sentence about Mina helping to catalog the exhibits?",
+        "context": "The whole kit«, rope, canvas and tar,» went over the side in the first hour.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Mina—a patient volunteer—helped catalog the exhibits."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Mina—a patient volunteer helped catalog the exhibits."
+            "text": "—rope, canvas and tar—"
           },
           {
             "id": "C",
-            "text": "Mina, a patient volunteer—helped catalog the exhibits."
+            "text": "—rope, canvas and tar,"
           },
           {
             "id": "D",
-            "text": "Mina—a patient volunteer, helped catalog the exhibits."
+            "text": ", rope, canvas and tar—"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Paired dashes surround the complete interruption; the underlying sentence remains grammatical.",
-          "B": "The interrupting phrase opens with a dash but is not closed.",
-          "C": "The interruption must use a matched pair of commas or dashes.",
-          "D": "The opening dash and closing comma form an unmatched pair."
+          "A": "The list uses commas of its own, so comma fences blur into its items.",
+          "B": "A dash at each end marks the whole list off from the sentence around it.",
+          "C": "A dash at the front and a comma at the back leave the fence half built.",
+          "D": "Opening with a comma and closing with a dash mismatches the two ends."
         }
       },
       {
@@ -1029,65 +1029,65 @@
         "section": "english",
         "topic": "adding/deleting",
         "difficulty": "medium",
-        "context": "A paragraph explains how Leo learned to label the seedlings. The writer proposes adding \"Leo's cousin prefers rainy weather.\" Should the sentence be added?",
+        "context": "A paragraph explains why the ferry stopped running each winter. The writer is considering deleting the sentence \"Ice closed the channel for six weeks in most years.\" If the sentence were deleted, the paragraph would primarily lose:",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Yes, because any personal fact clarifies a technical process."
+            "text": "a specific reason for the winter closure"
           },
           {
             "id": "B",
-            "text": "Yes, because it identifies the cause of the successful training."
+            "text": "a description of how the ferry was built"
           },
           {
             "id": "C",
-            "text": "No, because a process paragraph cannot mention people."
+            "text": "an argument against running the ferry at all"
           },
           {
             "id": "D",
-            "text": "No, because the weather preference does not explain the learning process."
+            "text": "the only mention of the ferry company"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "A personal fact must be relevant to clarify the process.",
-          "B": "The sentence does not connect the cousin or weather to the training.",
-          "C": "People can be relevant to processes; irrelevance is the actual problem.",
-          "D": "The proposed detail has no stated connection to the paragraph’s purpose."
+          "A": "The ice and its six weeks are the concrete cause the paragraph sets out to give.",
+          "B": "Nothing in the sentence concerns how the vessel itself was constructed.",
+          "C": "The sentence explains a seasonal closure rather than arguing against the service.",
+          "D": "No company is named anywhere in the sentence under discussion."
         }
       },
       {
         "id": "exp26-english-033",
         "section": "english",
         "topic": "sentence order",
-        "difficulty": "easy",
-        "context": "Arrange these sentences logically: [1] Finally, Leo returned the key. [2] First, Leo unlocked the greenhouse. [3] Once inside, Leo began to label the seedlings.",
+        "difficulty": "medium",
+        "context": "[1] The kiln was lit on Monday. [2] The glaze had been mixed the week before. [3] It reached temperature on Tuesday night. [4] The pots came out on Thursday. Sentence 2 would most logically be placed where?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "2, 3, 1"
+            "text": "before Sentence 1"
           },
           {
             "id": "B",
-            "text": "1, 2, 3"
+            "text": "where it is now"
           },
           {
             "id": "C",
-            "text": "3, 2, 1"
+            "text": "after Sentence 3"
           },
           {
             "id": "D",
-            "text": "2, 1, 3"
+            "text": "between Sentences 3 and 4"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "First introduces unlocking, Once inside follows entry, and Finally closes the sequence.",
-          "B": "Returning the key is marked Finally and belongs at the end.",
-          "C": "Once inside presupposes that the room has already been unlocked.",
-          "D": "This puts the final action before the activity inside the room."
+          "A": "Mixing the glaze happens a week before the lighting, so it comes first.",
+          "B": "It breaks into the firing between the lighting and the temperature reached.",
+          "C": "After Tuesday night the mixing would follow the firing it prepared for.",
+          "D": "Between the firing and the unloading, the mixing arrives far too late."
         }
       },
       {
@@ -1095,32 +1095,32 @@
         "section": "english",
         "topic": "dashes",
         "difficulty": "easy",
-        "context": "Which version correctly sets off \"a patient volunteer\" in the sentence about Leo helping to label the seedlings?",
+        "context": "Petrov«—the only electrician on the island,» rewired the whole gallery that winter.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Leo—a patient volunteer, helped label the seedlings."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Leo—a patient volunteer—helped label the seedlings."
+            "text": "—the only electrician on the island—"
           },
           {
             "id": "C",
-            "text": "Leo—a patient volunteer helped label the seedlings."
+            "text": ", the only electrician on the island—"
           },
           {
             "id": "D",
-            "text": "Leo, a patient volunteer—helped label the seedlings."
+            "text": ", the only electrician on the island"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "The opening dash and closing comma form an unmatched pair.",
-          "B": "Paired dashes surround the complete interruption; the underlying sentence remains grammatical.",
-          "C": "The interrupting phrase opens with a dash but is not closed.",
-          "D": "The interruption must use a matched pair of commas or dashes."
+          "A": "A dash opens the interruption and a comma closes it, so the pair does not match.",
+          "B": "Both ends are marked the same way, which is what makes them a pair.",
+          "C": "The comma and the dash have swapped ends and still fail to match.",
+          "D": "A single comma leaves the interruption open with nothing to close it."
         }
       },
       {
@@ -1589,66 +1589,66 @@
         "id": "exp26-english-049",
         "section": "english",
         "topic": "adding/deleting",
-        "difficulty": "medium",
-        "context": "A paragraph explains how Asha learned to repair the costumes. The writer proposes adding \"Asha's cousin prefers rainy weather.\" Should the sentence be added?",
+        "difficulty": "hard",
+        "context": "A paragraph argues that the 1931 catalogue was compiled in haste. The writer is considering adding \"Novak finished it in eleven weeks while teaching four days a week.\" Should the sentence be added?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "No, because the weather preference does not explain the learning process."
+            "text": "Yes, because it gives evidence of the pressure the paragraph describes."
           },
           {
             "id": "B",
-            "text": "Yes, because any personal fact clarifies a technical process."
+            "text": "Yes, because it shows that Novak was an unusually hard-working person."
           },
           {
             "id": "C",
-            "text": "Yes, because it identifies the cause of the successful training."
+            "text": "No, because the teaching has no bearing on the quality of the catalogue."
           },
           {
             "id": "D",
-            "text": "No, because a process paragraph cannot mention people."
+            "text": "No, because a paragraph about a catalogue should not name its compiler."
           }
         ],
         "answer": "A",
         "why": {
-          "A": "The proposed detail has no stated connection to the paragraph’s purpose.",
-          "B": "A personal fact must be relevant to clarify the process.",
-          "C": "The sentence does not connect the cousin or weather to the training.",
-          "D": "People can be relevant to processes; irrelevance is the actual problem."
+          "A": "Eleven weeks alongside a teaching load is what haste looks like in figures.",
+          "B": "Admiration for Novak is beside the point the paragraph is making.",
+          "C": "The teaching is exactly what shows how little time the work was given.",
+          "D": "Naming the compiler is ordinary, and the sentence does more than name her."
         }
       },
       {
         "id": "exp26-english-050",
         "section": "english",
         "topic": "sentence order",
-        "difficulty": "easy",
-        "context": "Arrange these sentences logically: [1] Finally, Asha returned the key. [2] First, Asha unlocked the workshop. [3] Once inside, Asha began to repair the costumes.",
+        "difficulty": "hard",
+        "context": "[1] The south ridge took another three weeks. [2] The team mapped the north ridge first. [3] It proved the easier of the two. [4] Both maps were filed in October. Sentence 1 would most logically be placed where?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "2, 1, 3"
+            "text": "after Sentence 3"
           },
           {
             "id": "B",
-            "text": "2, 3, 1"
+            "text": "where it is now"
           },
           {
             "id": "C",
-            "text": "1, 2, 3"
+            "text": "after Sentence 4"
           },
           {
             "id": "D",
-            "text": "3, 2, 1"
+            "text": "between Sentences 2 and 3"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This puts the final action before the activity inside the room.",
-          "B": "First introduces unlocking, Once inside follows entry, and Finally closes the sequence.",
-          "C": "Returning the key is marked Finally and belongs at the end.",
-          "D": "Once inside presupposes that the room has already been unlocked."
+          "A": "Another three weeks follows the north ridge and the comparison drawn from it.",
+          "B": "Opening with another three weeks refers to work the reader has not met yet.",
+          "C": "After the filing it would describe survey work done once the maps were in.",
+          "D": "It would separate the north ridge from the it that refers straight back to it."
         }
       },
       {
@@ -1656,32 +1656,32 @@
         "section": "english",
         "topic": "dashes",
         "difficulty": "easy",
-        "context": "Which version correctly sets off \"a patient volunteer\" in the sentence about Asha helping to repair the costumes?",
+        "context": "The whole rig came down in nine seconds«, mast, sail and all».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Asha, a patient volunteer—helped repair the costumes."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Asha—a patient volunteer, helped repair the costumes."
+            "text": "—mast, sail and all"
           },
           {
             "id": "C",
-            "text": "Asha—a patient volunteer—helped repair the costumes."
+            "text": "—mast, sail and all—"
           },
           {
             "id": "D",
-            "text": "Asha—a patient volunteer helped repair the costumes."
+            "text": ": mast, sail and all—"
           }
         ],
-        "answer": "C",
+        "answer": "B",
         "why": {
-          "A": "The interruption must use a matched pair of commas or dashes.",
-          "B": "The opening dash and closing comma form an unmatched pair.",
-          "C": "Paired dashes surround the complete interruption; the underlying sentence remains grammatical.",
-          "D": "The interrupting phrase opens with a dash but is not closed."
+          "A": "The phrase carries commas of its own, so one more cannot show where it starts.",
+          "B": "A dash sets the summing phrase off from the sentence it rounds out.",
+          "C": "A second dash would close an interruption, but this phrase ends the sentence.",
+          "D": "The colon introduces the phrase and the closing dash has nothing to close."
         }
       },
       {
@@ -2150,99 +2150,99 @@
         "id": "exp26-english-066",
         "section": "english",
         "topic": "adding/deleting",
-        "difficulty": "medium",
-        "context": "A paragraph explains how Theo learned to sort the maps. The writer proposes adding \"Theo's cousin prefers rainy weather.\" Should the sentence be added?",
+        "difficulty": "hard",
+        "context": "A paragraph explains how divers located the wreck using sonar. The writer is considering adding \"Sonar was first used to hunt submarines during the First World War.\" Should the sentence be added?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "No, because a process paragraph cannot mention people."
+            "text": "No, because the history of sonar does not bear on this particular search."
           },
           {
             "id": "B",
-            "text": "No, because the weather preference does not explain the learning process."
+            "text": "Yes, because it establishes that sonar is a thoroughly proven technology."
           },
           {
             "id": "C",
-            "text": "Yes, because any personal fact clarifies a technical process."
+            "text": "Yes, because readers unfamiliar with sonar will need the background."
           },
           {
             "id": "D",
-            "text": "Yes, because it identifies the cause of the successful training."
+            "text": "No, because the paragraph has already explained how sonar works."
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "People can be relevant to processes; irrelevance is the actual problem.",
-          "B": "The proposed detail has no stated connection to the paragraph’s purpose.",
-          "C": "A personal fact must be relevant to clarify the process.",
-          "D": "The sentence does not connect the cousin or weather to the training."
+          "A": "When the technique was invented says nothing about how this wreck was found.",
+          "B": "Whether sonar is proven is not in question anywhere in the paragraph.",
+          "C": "Background on sonar in general is a different subject from the search.",
+          "D": "Explaining how sonar works is not something the paragraph has done."
         }
       },
       {
         "id": "exp26-english-067",
         "section": "english",
         "topic": "sentence order",
-        "difficulty": "easy",
-        "context": "Arrange these sentences logically: [1] Finally, Theo returned the key. [2] First, Theo unlocked the reading room. [3] Once inside, Theo began to sort the maps.",
+        "difficulty": "hard",
+        "context": "[1] She had kept it since her father died. [2] Marguerite brought the tide log to the meeting. [3] Nobody there had seen it before. [4] The clerk copied out four pages. Sentence 1 would most logically be placed where?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3, 2, 1"
+            "text": "after Sentence 2"
           },
           {
             "id": "B",
-            "text": "2, 1, 3"
+            "text": "where it is now"
           },
           {
             "id": "C",
-            "text": "2, 3, 1"
+            "text": "after Sentence 4"
           },
           {
             "id": "D",
-            "text": "1, 2, 3"
+            "text": "between Sentences 3 and 4"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Once inside presupposes that the room has already been unlocked.",
-          "B": "This puts the final action before the activity inside the room.",
-          "C": "First introduces unlocking, Once inside follows entry, and Finally closes the sequence.",
-          "D": "Returning the key is marked Finally and belongs at the end."
+          "A": "She and it have nothing to refer to until Marguerite and the log are named.",
+          "B": "Opening with two pronouns leaves a reader with nothing to attach them to.",
+          "C": "Placed last it would explain the keeping after the copying is finished.",
+          "D": "It would still come after the remark that nobody had seen the log before."
         }
       },
       {
         "id": "exp26-english-068",
         "section": "english",
         "topic": "dashes",
-        "difficulty": "easy",
-        "context": "Which version correctly sets off \"a patient volunteer\" in the sentence about Theo helping to sort the maps?",
+        "difficulty": "medium",
+        "context": "The three of them«—Hallam, Reed and Ojo—» were struck off the register that year.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Theo—a patient volunteer helped sort the maps."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Theo, a patient volunteer—helped sort the maps."
+            "text": "—Hallam, Reed and Ojo,"
           },
           {
             "id": "C",
-            "text": "Theo—a patient volunteer, helped sort the maps."
+            "text": ", Hallam, Reed and Ojo—"
           },
           {
             "id": "D",
-            "text": "Theo—a patient volunteer—helped sort the maps."
+            "text": ", Hallam, Reed and Ojo,"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "The interrupting phrase opens with a dash but is not closed.",
-          "B": "The interruption must use a matched pair of commas or dashes.",
-          "C": "The opening dash and closing comma form an unmatched pair.",
-          "D": "Paired dashes surround the complete interruption; the underlying sentence remains grammatical."
+          "A": "The names carry commas of their own, so dashes at both ends fence them clearly.",
+          "B": "The closing comma does not match the dash that opened the interruption.",
+          "C": "The two marks have swapped ends and still fail to form a pair.",
+          "D": "Commas at both ends cannot be told apart from those inside the list of names."
         }
       },
       {
@@ -2711,99 +2711,99 @@
         "id": "exp26-english-083",
         "section": "english",
         "topic": "adding/deleting",
-        "difficulty": "medium",
-        "context": "A paragraph explains how Nora learned to clean the lenses. The writer proposes adding \"Nora's cousin prefers rainy weather.\" Should the sentence be added?",
+        "difficulty": "hard",
+        "context": "A paragraph describes the condition of the altarpiece before restoration. The writer is considering deleting \"Three of the four panels had split along the grain.\" If the sentence were deleted, the paragraph would primarily lose:",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Yes, because it identifies the cause of the successful training."
+            "text": "a specific account of the damage it describes"
           },
           {
             "id": "B",
-            "text": "No, because a process paragraph cannot mention people."
+            "text": "the writer's opinion of how the damage arose"
           },
           {
             "id": "C",
-            "text": "No, because the weather preference does not explain the learning process."
+            "text": "a transition into the paragraph that follows"
           },
           {
             "id": "D",
-            "text": "Yes, because any personal fact clarifies a technical process."
+            "text": "the only date given anywhere in the paragraph"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The sentence does not connect the cousin or weather to the training.",
-          "B": "People can be relevant to processes; irrelevance is the actual problem.",
-          "C": "The proposed detail has no stated connection to the paragraph’s purpose.",
-          "D": "A personal fact must be relevant to clarify the process."
+          "A": "Three panels split along the grain is the damage stated in measurable terms.",
+          "B": "The sentence reports what the panels look like, not how they came to be so.",
+          "C": "Nothing in the sentence points forward to whatever comes next.",
+          "D": "The sentence carries no date at all, so none can be lost with it."
         }
       },
       {
         "id": "exp26-english-084",
         "section": "english",
         "topic": "sentence order",
-        "difficulty": "easy",
-        "context": "Arrange these sentences logically: [1] Finally, Nora returned the key. [2] First, Nora unlocked the laboratory. [3] Once inside, Nora began to clean the lenses.",
+        "difficulty": "hard",
+        "context": "[1] Work began in March. [2] The council agreed to fund the repair. [3] However, the estimate had doubled by spring. [4] The roof was finished before the gales. Sentence 1 would most logically be placed where?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "1, 2, 3"
+            "text": "after Sentence 3"
           },
           {
             "id": "B",
-            "text": "3, 2, 1"
+            "text": "where it is now"
           },
           {
             "id": "C",
-            "text": "2, 1, 3"
+            "text": "after Sentence 4"
           },
           {
             "id": "D",
-            "text": "2, 3, 1"
+            "text": "between Sentences 2 and 3"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "Returning the key is marked Finally and belongs at the end.",
-          "B": "Once inside presupposes that the room has already been unlocked.",
-          "C": "This puts the final action before the activity inside the room.",
-          "D": "First introduces unlocking, Once inside follows entry, and Finally closes the sequence."
+          "A": "Work starts once the funding is agreed and the raised estimate is known.",
+          "B": "The repair begins before the reader learns it was ever agreed to.",
+          "C": "After the roof is finished, the start of work arrives far too late.",
+          "D": "It would cut between the agreement and the however that answers it."
         }
       },
       {
         "id": "exp26-english-085",
         "section": "english",
         "topic": "dashes",
-        "difficulty": "easy",
-        "context": "Which version correctly sets off \"a patient volunteer\" in the sentence about Nora helping to clean the lenses?",
+        "difficulty": "medium",
+        "context": "Only one thing could have shifted the crate«, the swell that came through at midnight».",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Nora—a patient volunteer—helped clean the lenses."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Nora—a patient volunteer helped clean the lenses."
+            "text": " — the swell that came through at midnight"
           },
           {
             "id": "C",
-            "text": "Nora, a patient volunteer—helped clean the lenses."
+            "text": " — the swell that came through at midnight —"
           },
           {
             "id": "D",
-            "text": "Nora—a patient volunteer, helped clean the lenses."
+            "text": "; the swell that came through at midnight"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Paired dashes surround the complete interruption; the underlying sentence remains grammatical.",
-          "B": "The interrupting phrase opens with a dash but is not closed.",
-          "C": "The interruption must use a matched pair of commas or dashes.",
-          "D": "The opening dash and closing comma form an unmatched pair."
+          "A": "A comma is too weak to introduce the thing the sentence has been pointing at.",
+          "B": "A dash after a complete sentence delivers what that sentence has promised.",
+          "C": "A closing dash would fence an interruption, but this phrase ends the sentence.",
+          "D": "A semicolon needs a complete sentence after it, and this is a noun phrase."
         }
       },
       {
@@ -3272,99 +3272,99 @@
         "id": "exp26-english-100",
         "section": "english",
         "topic": "adding/deleting",
-        "difficulty": "medium",
-        "context": "A paragraph explains how Inez learned to display the sketches. The writer proposes adding \"Inez's cousin prefers rainy weather.\" Should the sentence be added?",
+        "difficulty": "hard",
+        "context": "A paragraph sets out why the council rejected the harbour plan. The writer is considering adding \"The plan's author had designed two similar harbours in Norway.\" Should the sentence be added?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Yes, because any personal fact clarifies a technical process."
+            "text": "No, because the author's record was not among the council's reasons."
           },
           {
             "id": "B",
-            "text": "Yes, because it identifies the cause of the successful training."
+            "text": "Yes, because it shows the plan came from an experienced designer."
           },
           {
             "id": "C",
-            "text": "No, because a process paragraph cannot mention people."
+            "text": "Yes, because it explains why the council took the plan seriously at first."
           },
           {
             "id": "D",
-            "text": "No, because the weather preference does not explain the learning process."
+            "text": "No, because a paragraph about a council should not discuss individuals."
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "A personal fact must be relevant to clarify the process.",
-          "B": "The sentence does not connect the cousin or weather to the training.",
-          "C": "People can be relevant to processes; irrelevance is the actual problem.",
-          "D": "The proposed detail has no stated connection to the paragraph’s purpose."
+          "A": "The paragraph lists the grounds for refusal, and experience was not one of them.",
+          "B": "The designer's experience is real but sits outside what the council weighed.",
+          "C": "How seriously the plan was first taken is not what the paragraph is about.",
+          "D": "Individuals may be discussed; the trouble is that this one is off the point."
         }
       },
       {
         "id": "exp26-english-101",
         "section": "english",
         "topic": "sentence order",
-        "difficulty": "easy",
-        "context": "Arrange these sentences logically: [1] Finally, Inez returned the key. [2] First, Inez unlocked the gallery. [3] Once inside, Inez began to display the sketches.",
+        "difficulty": "hard",
+        "context": "[1] She recorded the difference and moved on. [2] The two gauges read nine millimetres apart. [3] Both had been serviced that autumn. [4] The engineer replaced neither of them. Sentence 1 would most logically be placed where?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "2, 3, 1"
+            "text": "after Sentence 4"
           },
           {
             "id": "B",
-            "text": "1, 2, 3"
+            "text": "where it is now"
           },
           {
             "id": "C",
-            "text": "3, 2, 1"
+            "text": "after Sentence 2"
           },
           {
             "id": "D",
-            "text": "2, 1, 3"
+            "text": "between Sentences 3 and 4"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "First introduces unlocking, Once inside follows entry, and Finally closes the sequence.",
-          "B": "Returning the key is marked Finally and belongs at the end.",
-          "C": "Once inside presupposes that the room has already been unlocked.",
-          "D": "This puts the final action before the activity inside the room."
+          "A": "Recording the gap and moving on is what she did once the gauges were left alone.",
+          "B": "The difference is recorded before the reader is told there was one.",
+          "C": "It would arrive before the servicing that explains why she changed nothing.",
+          "D": "It would still separate the servicing from the decision that followed from it."
         }
       },
       {
         "id": "exp26-english-102",
         "section": "english",
         "topic": "dashes",
-        "difficulty": "easy",
-        "context": "Which version correctly sets off \"a patient volunteer\" in the sentence about Inez helping to display the sketches?",
+        "difficulty": "medium",
+        "context": "Novak«—who had trained in Vienna» left the drawings to the city in 1931.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Inez—a patient volunteer, helped display the sketches."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Inez—a patient volunteer—helped display the sketches."
+            "text": "—who had trained in Vienna—"
           },
           {
             "id": "C",
-            "text": "Inez—a patient volunteer helped display the sketches."
+            "text": ", who had trained in Vienna"
           },
           {
             "id": "D",
-            "text": "Inez, a patient volunteer—helped display the sketches."
+            "text": "—who had trained in Vienna,"
           }
         ],
         "answer": "B",
         "why": {
-          "A": "The opening dash and closing comma form an unmatched pair.",
-          "B": "Paired dashes surround the complete interruption; the underlying sentence remains grammatical.",
-          "C": "The interrupting phrase opens with a dash but is not closed.",
-          "D": "The interruption must use a matched pair of commas or dashes."
+          "A": "The interruption opens with a dash and never closes, so the sentence runs on.",
+          "B": "A dash at each end fences the clause off from the sentence around it.",
+          "C": "Swapping to a comma still leaves the interruption with no end at all.",
+          "D": "A closing comma cannot partner the dash that opened the interruption."
         }
       },
       {
@@ -3833,99 +3833,99 @@
         "id": "exp26-english-117",
         "section": "english",
         "topic": "adding/deleting",
-        "difficulty": "medium",
-        "context": "A paragraph explains how Omar learned to update the timetables. The writer proposes adding \"Omar's cousin prefers rainy weather.\" Should the sentence be added?",
+        "difficulty": "hard",
+        "context": "A paragraph sets out two tide-gauge readings that disagreed by nine millimetres. The writer is considering deleting \"Both gauges had been serviced the previous autumn.\" If the sentence were deleted, the paragraph would primarily lose:",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "No, because the weather preference does not explain the learning process."
+            "text": "a fact that makes the disagreement harder to explain"
           },
           {
             "id": "B",
-            "text": "Yes, because any personal fact clarifies a technical process."
+            "text": "the only account of how a tide gauge is constructed"
           },
           {
             "id": "C",
-            "text": "Yes, because it identifies the cause of the successful training."
+            "text": "an admission that one of the two readings must be wrong"
           },
           {
             "id": "D",
-            "text": "No, because a process paragraph cannot mention people."
+            "text": "a comparison between the two autumns under review"
           }
         ],
         "answer": "A",
         "why": {
-          "A": "The proposed detail has no stated connection to the paragraph’s purpose.",
-          "B": "A personal fact must be relevant to clarify the process.",
-          "C": "The sentence does not connect the cousin or weather to the training.",
-          "D": "People can be relevant to processes; irrelevance is the actual problem."
+          "A": "Recent servicing removes the easiest explanation and leaves the gap standing.",
+          "B": "How a gauge is built is never described in the sentence being considered.",
+          "C": "The sentence reports the servicing and concedes nothing about either reading.",
+          "D": "Only one autumn is mentioned, so no comparison between two can be lost."
         }
       },
       {
         "id": "exp26-english-118",
         "section": "english",
         "topic": "sentence order",
-        "difficulty": "easy",
-        "context": "Arrange these sentences logically: [1] Finally, Omar returned the key. [2] First, Omar unlocked the office. [3] Once inside, Omar began to update the timetables.",
+        "difficulty": "hard",
+        "context": "[1] Aldridge had begun the design years earlier. [2] The commission was announced in June. [3] The letters make this plain. [4] They were found in a bank vault in 1971. Sentence 3 would most logically be placed where?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "2, 1, 3"
+            "text": "after Sentence 1"
           },
           {
             "id": "B",
-            "text": "2, 3, 1"
+            "text": "where it is now"
           },
           {
             "id": "C",
-            "text": "1, 2, 3"
+            "text": "after Sentence 4"
           },
           {
             "id": "D",
-            "text": "3, 2, 1"
+            "text": "before Sentence 1"
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "This puts the final action before the activity inside the room.",
-          "B": "First introduces unlocking, Once inside follows entry, and Finally closes the sequence.",
-          "C": "Returning the key is marked Finally and belongs at the end.",
-          "D": "Once inside presupposes that the room has already been unlocked."
+          "A": "This points at the early start, so the sentence has to follow that claim.",
+          "B": "Standing after the announcement, this appears to refer to the June date.",
+          "C": "After the discovery of the letters, this would refer to the bank vault.",
+          "D": "Placed first, this would have nothing in front of it to refer back to."
         }
       },
       {
         "id": "exp26-english-119",
         "section": "english",
         "topic": "dashes",
-        "difficulty": "easy",
-        "context": "Which version correctly sets off \"a patient volunteer\" in the sentence about Omar helping to update the timetables?",
+        "difficulty": "hard",
+        "context": "The second survey «— the one carried out in 1961 — used» the same three gauges.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Omar, a patient volunteer—helped update the timetables."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Omar—a patient volunteer, helped update the timetables."
+            "text": "— the one carried out in 1961 used"
           },
           {
             "id": "C",
-            "text": "Omar—a patient volunteer—helped update the timetables."
+            "text": "the one carried out in 1961 — used"
           },
           {
             "id": "D",
-            "text": "Omar—a patient volunteer helped update the timetables."
+            "text": "— the one carried out in 1961, used"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The interruption must use a matched pair of commas or dashes.",
-          "B": "The opening dash and closing comma form an unmatched pair.",
-          "C": "Paired dashes surround the complete interruption; the underlying sentence remains grammatical.",
-          "D": "The interrupting phrase opens with a dash but is not closed."
+          "A": "The dashes fence the identifying phrase and hand the sentence back to its verb.",
+          "B": "With no closing dash the verb is swallowed into the interruption.",
+          "C": "Only the closing dash is present, so the interruption never opens.",
+          "D": "A comma cannot close a fence that a dash has opened."
         }
       },
       {
@@ -4394,99 +4394,99 @@
         "id": "exp26-english-134",
         "section": "english",
         "topic": "adding/deleting",
-        "difficulty": "medium",
-        "context": "A paragraph explains how Wren learned to inspect the instruments. The writer proposes adding \"Wren's cousin prefers rainy weather.\" Should the sentence be added?",
+        "difficulty": "hard",
+        "context": "A paragraph argues that the mill closed for reasons unconnected with the flood. The writer is considering adding \"The flood of 1974 reached the second floor of the mill.\" Should the sentence be added?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "No, because a process paragraph cannot mention people."
+            "text": "No, because it draws attention to the very cause the paragraph rules out."
           },
           {
             "id": "B",
-            "text": "No, because the weather preference does not explain the learning process."
+            "text": "Yes, because readers should know how serious the flood actually was."
           },
           {
             "id": "C",
-            "text": "Yes, because any personal fact clarifies a technical process."
+            "text": "Yes, because it supplies the date the paragraph has so far withheld."
           },
           {
             "id": "D",
-            "text": "Yes, because it identifies the cause of the successful training."
+            "text": "No, because the paragraph is about the mill rather than about the river nearby."
           }
         ],
-        "answer": "B",
+        "answer": "A",
         "why": {
-          "A": "People can be relevant to processes; irrelevance is the actual problem.",
-          "B": "The proposed detail has no stated connection to the paragraph’s purpose.",
-          "C": "A personal fact must be relevant to clarify the process.",
-          "D": "The sentence does not connect the cousin or weather to the training."
+          "A": "A vivid detail about the flood works against a paragraph denying the flood mattered.",
+          "B": "The severity of the flood is not what the paragraph has set out to establish.",
+          "C": "A date can be supplied without the flood detail that undercuts the argument.",
+          "D": "The river is a fair subject; the problem is the case the detail helps build."
         }
       },
       {
         "id": "exp26-english-135",
         "section": "english",
         "topic": "sentence order",
-        "difficulty": "easy",
-        "context": "Arrange these sentences logically: [1] Finally, Wren returned the key. [2] First, Wren unlocked the music room. [3] Once inside, Wren began to inspect the instruments.",
+        "difficulty": "hard",
+        "context": "[1] The bell was recast in 1847. [2] It cracked again within a year. [3] The first casting had been hung in 1846. [4] Both dates are cut into the rim. Sentence 3 would most logically be placed where?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "3, 2, 1"
+            "text": "before Sentence 1"
           },
           {
             "id": "B",
-            "text": "2, 1, 3"
+            "text": "where it is now"
           },
           {
             "id": "C",
-            "text": "2, 3, 1"
+            "text": "after Sentence 4"
           },
           {
             "id": "D",
-            "text": "1, 2, 3"
+            "text": "between Sentences 1 and 2"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "Once inside presupposes that the room has already been unlocked.",
-          "B": "This puts the final action before the activity inside the room.",
-          "C": "First introduces unlocking, Once inside follows entry, and Finally closes the sequence.",
-          "D": "Returning the key is marked Finally and belongs at the end."
+          "A": "The first hanging comes before the recasting that was made to replace it.",
+          "B": "It interrupts the recasting and the crack that followed on from it.",
+          "C": "Placed last it introduces the earlier bell after both dates are explained.",
+          "D": "Between recasting and crack it separates an event from its consequence."
         }
       },
       {
         "id": "exp26-english-136",
         "section": "english",
         "topic": "dashes",
-        "difficulty": "easy",
-        "context": "Which version correctly sets off \"a patient volunteer\" in the sentence about Wren helping to inspect the instruments?",
+        "difficulty": "hard",
+        "context": "The one gauge «—that nobody had calibrated—» turned out to be the one reading true.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Wren—a patient volunteer helped inspect the instruments."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Wren, a patient volunteer—helped inspect the instruments."
+            "text": "that nobody had calibrated"
           },
           {
             "id": "C",
-            "text": "Wren—a patient volunteer, helped inspect the instruments."
+            "text": ", that nobody had calibrated,"
           },
           {
             "id": "D",
-            "text": "Wren—a patient volunteer—helped inspect the instruments."
+            "text": "—that nobody had calibrated,"
           }
         ],
-        "answer": "D",
+        "answer": "B",
         "why": {
-          "A": "The interrupting phrase opens with a dash but is not closed.",
-          "B": "The interruption must use a matched pair of commas or dashes.",
-          "C": "The opening dash and closing comma form an unmatched pair.",
-          "D": "Paired dashes surround the complete interruption; the underlying sentence remains grammatical."
+          "A": "The clause says which gauge is meant, and fencing it off throws that away.",
+          "B": "An identifying clause runs straight on from its noun with no marks at all.",
+          "C": "Commas fence the clause just as the dashes did, and it should not be fenced.",
+          "D": "The pair does not match, and an essential clause takes no fence either way."
         }
       },
       {
@@ -4955,99 +4955,99 @@
         "id": "exp26-english-151",
         "section": "english",
         "topic": "adding/deleting",
-        "difficulty": "medium",
-        "context": "A paragraph explains how Ravi learned to organize the recordings. The writer proposes adding \"Ravi's cousin prefers rainy weather.\" Should the sentence be added?",
+        "difficulty": "hard",
+        "context": "A paragraph explains how two dates came to be cast into the rim of the bell. The writer is considering deleting \"The first casting cracked within a year of being hung.\" If the sentence were deleted, the paragraph would primarily lose:",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Yes, because it identifies the cause of the successful training."
+            "text": "the reason a second date appears on the rim at all"
           },
           {
             "id": "B",
-            "text": "No, because a process paragraph cannot mention people."
+            "text": "the name of the founder who cast the original bell"
           },
           {
             "id": "C",
-            "text": "No, because the weather preference does not explain the learning process."
+            "text": "an estimate of what the recasting finally cost"
           },
           {
             "id": "D",
-            "text": "Yes, because any personal fact clarifies a technical process."
+            "text": "a comparison with the bells of neighbouring parishes"
           }
         ],
-        "answer": "C",
+        "answer": "A",
         "why": {
-          "A": "The sentence does not connect the cousin or weather to the training.",
-          "B": "People can be relevant to processes; irrelevance is the actual problem.",
-          "C": "The proposed detail has no stated connection to the paragraph’s purpose.",
-          "D": "A personal fact must be relevant to clarify the process."
+          "A": "The crack is why a second casting happened, and so why a second date exists.",
+          "B": "No founder is named in the sentence that is being considered for deletion.",
+          "C": "The sentence gives no figure for what the second casting cost.",
+          "D": "Other parishes are never brought into the sentence at all."
         }
       },
       {
         "id": "exp26-english-152",
         "section": "english",
         "topic": "sentence order",
-        "difficulty": "easy",
-        "context": "Arrange these sentences logically: [1] Finally, Ravi returned the key. [2] First, Ravi unlocked the sound booth. [3] Once inside, Ravi began to organize the recordings.",
+        "difficulty": "hard",
+        "context": "[1] The water was shut off at seven. [2] By nine the caretaker was going door to door. [3] Nobody had warned the tenants. [4] The notice had gone out to the wrong street. Sentence 3 would most logically be placed where?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "1, 2, 3"
+            "text": "after Sentence 1"
           },
           {
             "id": "B",
-            "text": "3, 2, 1"
+            "text": "where it is now"
           },
           {
             "id": "C",
-            "text": "2, 1, 3"
+            "text": "before Sentence 1"
           },
           {
             "id": "D",
-            "text": "2, 3, 1"
+            "text": "after Sentence 4"
           }
         ],
-        "answer": "D",
+        "answer": "A",
         "why": {
-          "A": "Returning the key is marked Finally and belongs at the end.",
-          "B": "Once inside presupposes that the room has already been unlocked.",
-          "C": "This puts the final action before the activity inside the room.",
-          "D": "First introduces unlocking, Once inside follows entry, and Finally closes the sequence."
+          "A": "The missing warning explains the rounds, so it belongs before the caretaker sets out.",
+          "B": "The warning is reported missing only after its consequence has been described.",
+          "C": "Placed first it would precede the shut-off there had been no warning of.",
+          "D": "After the wrong-street notice it repeats what has just been explained."
         }
       },
       {
         "id": "exp26-english-153",
         "section": "english",
         "topic": "dashes",
-        "difficulty": "easy",
-        "context": "Which version correctly sets off \"a patient volunteer\" in the sentence about Ravi helping to organize the recordings?",
+        "difficulty": "hard",
+        "context": "Wheeler's second novel«, a quiet, difficult book about ferries,» stayed out of print for thirty years.",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "Ravi—a patient volunteer—helped organize the recordings."
+            "text": "NO CHANGE"
           },
           {
             "id": "B",
-            "text": "Ravi—a patient volunteer helped organize the recordings."
+            "text": "—a quiet, difficult book about ferries—"
           },
           {
             "id": "C",
-            "text": "Ravi, a patient volunteer—helped organize the recordings."
+            "text": ", a quiet, difficult book about ferries—"
           },
           {
             "id": "D",
-            "text": "Ravi—a patient volunteer, helped organize the recordings."
+            "text": "—a quiet, difficult book about ferries,"
           }
         ],
-        "answer": "A",
+        "answer": "B",
         "why": {
-          "A": "Paired dashes surround the complete interruption; the underlying sentence remains grammatical.",
-          "B": "The interrupting phrase opens with a dash but is not closed.",
-          "C": "The interruption must use a matched pair of commas or dashes.",
-          "D": "The opening dash and closing comma form an unmatched pair."
+          "A": "The phrase has a comma inside it, so comma fences blur into its own punctuation.",
+          "B": "Dashes at both ends stay distinct from the comma working inside the phrase.",
+          "C": "The comma opening the fence is the same mark the phrase uses internally.",
+          "D": "The closing comma cannot be told apart from the comma inside the phrase."
         }
       }
     ],
