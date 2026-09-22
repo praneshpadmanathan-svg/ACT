@@ -228,7 +228,7 @@ function RailLink({
           </span>
           {item.meta && <span className="rail-meta">{item.meta}</span>}
         </span>
-        <span className="mt-0.5 block truncate font-read text-[11.5px] leading-tight text-ink-faint">
+        <span className="mt-1 block font-read text-[13px] leading-snug text-parchment-dim">
           {item.hint}
         </span>
       </span>

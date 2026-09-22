@@ -89,7 +89,7 @@
     --c-gilt-bright: 86.28% 0.139 92.43;
 
     /* Reading typeface, swapped by the high-legibility setting. */
-    --font-read: 'Newsreader';
+    --font-read: 'Inter';
     --font-sans: 'Inter';
 
     /* How much bigger every piece of text runs. Set by the type-size setting;
@@ -926,15 +926,15 @@
   }
 
   .heading {
-    @apply font-display font-semibold tracking-wide text-parchment;
+    @apply font-display font-semibold tracking-normal text-parchment;
   }
 
   .eyebrow {
-    @apply font-script text-[13px] uppercase tracking-[0.22em] text-gold;
+    @apply font-script text-[13px] font-semibold uppercase tracking-[0.08em] text-gold;
   }
 
   .label-sm {
-    @apply font-script text-[12px] uppercase tracking-[0.18em] text-ink-faint;
+    @apply font-script text-[13px] font-medium tracking-normal text-parchment-dim;
   }
 
   /* Numerals: old-style figures suit the setting better than a mono face. */

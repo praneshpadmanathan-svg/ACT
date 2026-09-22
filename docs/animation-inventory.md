@@ -462,3 +462,11 @@ seal and a soft gold tint remain; the shared success presets no longer call
 the impact/shake path. Wrong answers retain their small horizontal shake,
 subject to reduced-motion preferences. Success audio is a soft rising C-major
 chime, with a quiet matching chord tone for streaks. Mute remains respected.
+
+# Readability refinement — 22 September 2026
+
+Shared buttons now use a damped spring and a smaller press response; reduced
+motion disables those transforms. Answer choices enter with six pixels of
+travel, do not slide on hover, and stay still on a correct reveal. Nonselected
+answers retain full opacity so comparison stays readable. Wrong-choice motion
+is preserved, with static presentation under reduced motion.

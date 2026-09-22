@@ -11,7 +11,7 @@ import type { Difficulty, Passage, SectionId } from '@/types';
 import { juice } from '@/lib/juice';
 import { sfx } from '@/lib/sfx';
 import { cx, formatClock } from '@/lib/utils';
-import { AnimatePresence, m, SPRING, SPRING_SNAP } from '@/lib/motion';
+import { AnimatePresence, m, SPRING, SPRING_SNAP, useReducedMotion } from '@/lib/motion';
 import { RichText } from './RichText';
 import { PassagePanel } from './PassagePanel';
 import { Button, LEADING_ICON } from './ui';
@@ -150,6 +150,7 @@ export function QuestionRunner({
   accent = 'oklch(var(--c-gold))',
   deferFeedback = false,
 }: Props) {
+  const reducedMotion = useReducedMotion();
   const [index, setIndex] = useState(0);
   const [chosen, setChosen] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
@@ -515,18 +516,18 @@ export function QuestionRunner({
                       const next = question.choices[(i + step + n) % n]!;
                       choiceEls.current[next.key]?.focus();
                     }}
-                    initial={{ opacity: 0, y: 14 }}
+                    initial={reducedMotion ? false : { opacity: 0, y: 6 }}
                     animate={
-                      !revealed
+                      !revealed || reducedMotion
                         ? { opacity: 1, y: 0, x: 0, scale: 1 }
                         : lit
                           ? /* the answer arriving: lifts off the desk and settles */
-                            { opacity: 1, y: -2, x: 0, scale: [1, 1.02, 1] }
+                            { opacity: 1, y: 0, x: 0, scale: 1 }
                           : wrongPick
                             ? /* a headshake, not a buzzer */
                               { opacity: 1, y: 0, scale: 1, x: [0, -3, 3, -3, 0] }
                             : /* everything else steps back so the eye has two rows to compare */
-                              { opacity: 0.6, y: 0, x: 0, scale: 1 }
+                              { opacity: 1, y: 0, x: 0, scale: 1 }
                     }
                     transition={
                       !revealed
@@ -539,8 +540,7 @@ export function QuestionRunner({
                             ? SPRING_SNAP
                             : { duration: 0.28 }
                     }
-                    whileHover={revealed ? undefined : { x: 3 }}
-                    whileTap={revealed ? undefined : { scale: 0.985 }}
+                    whileTap={revealed || reducedMotion ? undefined : { scale: 0.995 }}
                   >
                     <span className="choice-key">{'ABCD'[i] ?? choice.key}</span>
                     <RichText as="span" format={choice.format} className="min-w-0 flex-1">

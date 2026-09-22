@@ -106,4 +106,4 @@ export const popItem = {
    carries past its resting size by roughly 6% before settling, and that
    overshoot is the follow-through. It falls out of the physics rather than
    needing a second animation chained onto the first. */
-export const PIN_SPRING = { type: 'spring', stiffness: 380, damping: 18, mass: 0.8 } as const;
+export const PIN_SPRING = { type: 'spring', stiffness: 380, damping: 30, mass: 0.8 } as const;

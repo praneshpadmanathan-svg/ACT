@@ -134,22 +134,12 @@ export default {
         'woods-ink': tone('woods-ink'),
       },
       fontFamily: {
-        /* Three families, not four.
-
-           IM Fell English SC used to hold the `script` role — small-caps
-           eyebrows and labels. It is a second serif display face doing a job
-           Cinzel already does, and shipping both meant a visitor downloaded two
-           near-identical voices to render about forty words. Cinzel takes the
-           role; the class name stays so nothing had to be renamed, and the
-           tracking in `.eyebrow`/`.label-sm` was already carrying most of the
-           small-caps character anyway.
-
-           `--font-read` is a variable rather than a literal because the
-           high-legibility toggle swaps Newsreader for Atkinson Hyperlegible on
-           every reading surface at once. */
-        display: ['Cinzel', 'Georgia', 'serif'],
-        script: ['Cinzel', 'Georgia', 'serif'],
-        read: ['var(--font-read)', 'Newsreader', 'Georgia', 'serif'],
+        /* Interface and reading roles use Inter; the legibility preference
+           replaces both with Atkinson. Cinzel is reserved in premium.css for
+           the hero and rank display, rather than small controls and labels. */
+        display: ['var(--font-sans)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        script: ['var(--font-sans)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        read: ['var(--font-read)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         sans: ['var(--font-sans)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       /* The elevation ladder. The values live in index.css because they have

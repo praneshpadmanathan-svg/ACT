@@ -118,8 +118,8 @@ export function Button({
         size === 'lg' && 'btn-lg',
         className,
       )}
-      whileHover={rest.disabled ? undefined : { y: -1.5 }}
-      whileTap={rest.disabled ? undefined : { y: 1, scale: 0.975 }}
+      whileHover={rest.disabled || stillMotion ? undefined : { y: -1 }}
+      whileTap={rest.disabled || stillMotion ? undefined : { scale: 0.99 }}
       transition={PIN_SPRING}
       onPointerDown={(e) => {
         spread(e);
