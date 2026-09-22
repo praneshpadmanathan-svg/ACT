@@ -24,6 +24,23 @@
  * and what would it take?" — so every rung now answers both, in the panel
  * below, for earned, current and locked alike.
  *
+ * *Beneath* the badges is not where the rail was drawn. The track element was
+ * emitted before the rungs, so it painted above them — a gold line hanging
+ * over the row like a ceiling, with the badges dangling off it and the
+ * selected rung's ring butting into it from below. The comment on
+ * `.rank-ladder-rungs` had described the intended arrangement correctly the
+ * whole time ("rungs sit above the rail, anchored by their bottom edge"); only
+ * the source order disagreed with it. Rungs first, then the rail.
+ *
+ * Double-clicking opens the ladder full screen. At 4.5rem a rung is as wide as
+ * it can be before the narrowest gap — 13% of the track — stops clearing the
+ * widest rank name, which is what holds the inline ladder to a 42rem floor and
+ * makes the badges small. The expanded view is not bound by the panel it sits
+ * in, so it spends the space instead: wider rungs, larger sigils, and a track
+ * deliberately wider than any screen, so the climb is something you travel
+ * along rather than take in at a glance. It opens centred on the rung you are
+ * standing on, which is what puts the ranks behind you off to the left.
+ *
  * The aura is deliberately spent on exactly one badge. `RankAura` is a live
  * canvas per instance; seven of them is seven particle fields competing for
  * the same glance, which makes the current rank harder to find rather than
@@ -31,7 +48,8 @@
  * it is also seven times less work.
  */
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Dialog } from '@base-ui/react/dialog';
 import { RANKS, XP, rankIndexFor, type Rank } from '@/lib/progress';
 import { cx } from '@/lib/utils';
 import { RankSigil } from './RankSigil';
@@ -90,6 +108,109 @@ function positionOf(xp: number): number {
   return 0.3 * share + 0.7 * evenShare;
 }
 
+/* The badges and the rail they stand on, shared by the inline ladder and the
+   expanded one so the two cannot drift apart. Everything that differs between
+   them is a custom property set on the wrapper — see `.rank-ladder` in
+   premium.css — except the sigil, which takes a number and so is passed one. */
+function Rungs({
+  xp,
+  here,
+  selected,
+  onSelect,
+  expanded = false,
+}: {
+  xp: number;
+  here: number;
+  selected: number;
+  onSelect: (i: number) => void;
+  expanded?: boolean;
+}) {
+  const scroller = useRef<HTMLDivElement>(null);
+  const fill = positionOf(xp) * 100;
+
+  /* Opening the expanded view puts the selected rung in the middle of the
+     screen rather than at the left edge. That is what leaves the ranks you
+     have already earned off to the left to scroll back to — starting at
+     scroll zero would hide the far end of the climb instead, which is the
+     half nobody has seen yet.
+
+     Deliberately keyed on `expanded` alone: re-running this on every
+     selection would drag the ladder out from under a pointer that is simply
+     moving along it, which turns clicking the next rung into a chase. */
+  useEffect(() => {
+    if (!expanded) return;
+    const rung = scroller.current?.querySelectorAll<HTMLElement>('.rank-rung')[selected];
+    rung?.scrollIntoView({ inline: 'center', block: 'nearest' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [expanded]);
+
+  return (
+    <div className="rank-ladder-scroll" ref={scroller}>
+      {/* One scroller wrapping both, so the track and the rungs stay on the
+          same scale when a narrow screen — or the expanded view's deliberately
+          oversized floor — makes the ladder wider than the viewport. Scrolling
+          them separately would slide the badges off their own thresholds. */}
+      <div>
+        <ol className="rank-ladder-rungs" aria-label="The seven ranks">
+          {RANKS.map((r, i) => {
+            const earned = i <= here;
+            const current = i === here;
+            return (
+              <li
+                key={r.id}
+                className="rank-rung"
+                style={{ left: `${positionOf(r.xp) * 100}%` }}
+                aria-current={current ? 'step' : undefined}
+              >
+                <button
+                  type="button"
+                  className={cx(
+                    'rank-rung-button',
+                    earned && 'is-earned',
+                    current && 'is-current',
+                    i === selected && 'is-selected',
+                  )}
+                  onClick={() => onSelect(i)}
+                  aria-pressed={i === selected}
+                  /* Metal, dimming and a glow are invisible to a screen reader,
+                     and the earned state is the only thing the ladder is for. */
+                  aria-label={`${r.name}, ${r.xp.toLocaleString()} XP${
+                    current ? ', your rank' : earned ? ', earned' : ', locked'
+                  }`}
+                >
+                  <RankSigil
+                    rank={r}
+                    size={expanded ? (current ? 84 : 64) : current ? 58 : 44}
+                    aura={current}
+                  />
+                  <span
+                    className="rank-rung-name"
+                    style={{
+                      color: earned
+                        ? `color-mix(in oklab, ${r.color} var(--rank-tint), oklch(var(--c-parchment)))`
+                        : undefined,
+                    }}
+                  >
+                    {r.name}
+                  </span>
+                  <span className="num rank-rung-xp">{r.xp.toLocaleString()}</span>
+                </button>
+              </li>
+            );
+          })}
+        </ol>
+
+        {/* The rail, after the rungs so it paints under them. See the note at
+            the top of this file — for its first release it was emitted first
+            and drew a line across the tops of the badges. */}
+        <div className="rank-ladder-track" aria-hidden="true">
+          <span className="rank-ladder-fill" style={{ width: `${fill}%` }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function RankLadder({ xp }: { xp: number }) {
   const here = rankIndexFor(xp);
   /* Opens on the player's own rung — the one they came to look at. The
@@ -97,70 +218,60 @@ export function RankLadder({ xp }: { xp: number }) {
      opening this wants to be told where they are before being told what they
      have not done yet. */
   const [selected, setSelected] = useState(here);
+  const [expanded, setExpanded] = useState(false);
   const rank = RANKS[selected]!;
-
-  const fill = positionOf(xp) * 100;
 
   return (
     <div className="rank-ladder">
-      {/* One scroller wrapping both, so the track and the rungs stay on the
-          same scale when a narrow screen makes the ladder wider than the
-          viewport. Scrolling them separately would slide the badges off their
-          own thresholds. */}
-      <div className="rank-ladder-scroll">
-        <div>
-          <div className="rank-ladder-track" aria-hidden="true">
-            <span className="rank-ladder-fill" style={{ width: `${fill}%` }} />
-          </div>
+      <div className="rank-ladder-head">
+        <button
+          type="button"
+          className="rank-ladder-expand"
+          onClick={() => setExpanded(true)}
+          /* Double-click is the gesture that was asked for, and it is also one
+             nobody discovers on their own. This says the full-screen view
+             exists; the gesture is for the second visit onwards. */
+        >
+          Expand
+        </button>
+      </div>
 
-          <ol className="rank-ladder-rungs" aria-label="The seven ranks">
-            {RANKS.map((r, i) => {
-              const earned = i <= here;
-              const current = i === here;
-              return (
-                <li
-                  key={r.id}
-                  className="rank-rung"
-                  style={{ left: `${positionOf(r.xp) * 100}%` }}
-                  aria-current={current ? 'step' : undefined}
-                >
-                  <button
-                    type="button"
-                    className={cx(
-                      'rank-rung-button',
-                      earned && 'is-earned',
-                      current && 'is-current',
-                      i === selected && 'is-selected',
-                    )}
-                    onClick={() => setSelected(i)}
-                    aria-pressed={i === selected}
-                    /* Metal, dimming and a glow are invisible to a screen reader,
-                   and the earned state is the only thing the ladder is for. */
-                    aria-label={`${r.name}, ${r.xp.toLocaleString()} XP${
-                      current ? ', your rank' : earned ? ', earned' : ', locked'
-                    }`}
-                  >
-                    <RankSigil rank={r} size={current ? 58 : 44} aura={current} />
-                    <span
-                      className="rank-rung-name"
-                      style={{
-                        color: earned
-                          ? `color-mix(in oklab, ${r.color} var(--rank-tint), oklch(var(--c-parchment)))`
-                          : undefined,
-                      }}
-                    >
-                      {r.name}
-                    </span>
-                    <span className="num rank-rung-xp">{r.xp.toLocaleString()}</span>
-                  </button>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
+      <div onDoubleClick={() => setExpanded(true)}>
+        <Rungs xp={xp} here={here} selected={selected} onSelect={setSelected} />
       </div>
 
       <RankDetail rank={rank} index={selected} here={here} xp={xp} />
+
+      {/* Base UI owns the focus trap, the scroll lock, Escape and outside-press
+          — the same four things `CommandPalette` judged worth the dependency,
+          and the same four that are fiddly enough to get subtly wrong by hand.
+          It is already in the bundle this screen loads. */}
+      <Dialog.Root open={expanded} onOpenChange={setExpanded}>
+        <Dialog.Portal>
+          <Dialog.Backdrop className="rank-ladder-backdrop fixed inset-0 z-[110] bg-leather-950/80 backdrop-blur-[2px]" />
+          <Dialog.Popup className="rank-ladder-full panel">
+            <div className="rank-ladder-full-head">
+              <Dialog.Title className="font-display text-title font-bold text-parchment">
+                Your climb
+              </Dialog.Title>
+              <Dialog.Close className="rank-ladder-expand">Close</Dialog.Close>
+            </div>
+
+            {/* The ladder is shorter than a full-screen dialog, so it is
+                centred in what is left below the title rather than left
+                hanging from the top edge with half a screen of nothing under
+                it. A wrapper rather than `margin-block: auto`, which centres
+                just as well right up until the content is taller than the
+                space and then puts the top of it out of scrolling reach. */}
+            <div className="rank-ladder-full-body">
+              <div className="rank-ladder is-expanded">
+                <Rungs xp={xp} here={here} selected={selected} onSelect={setSelected} expanded />
+                <RankDetail rank={rank} index={selected} here={here} xp={xp} />
+              </div>
+            </div>
+          </Dialog.Popup>
+        </Dialog.Portal>
+      </Dialog.Root>
     </div>
   );
 }

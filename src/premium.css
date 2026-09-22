@@ -302,11 +302,44 @@ p {
 .rank-ladder {
   display: grid;
   gap: 1rem;
+
+  /* Everything the expanded view changes, in one place. The markup is shared
+     between the inline ladder and the full-screen one, so the difference
+     between them has to live somewhere the same elements can read — these
+     five, plus the sigil's pixel size, which is a number and goes through a
+     prop. */
+  --ladder-min: 42rem;
+  --ladder-inset: 2.5rem;
+  --rung-w: 4.5rem;
+  --rung-h: 7.25rem;
+  --rungs-h: 7.5rem;
+}
+.rank-ladder-head {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -0.5rem;
+}
+.rank-ladder-expand {
+  font-family: var(--font-script, inherit);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: oklch(var(--c-ink-faint));
+  background: none;
+  border: 0;
+  padding: 0.25rem 0.375rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: color 180ms ease;
+}
+.rank-ladder-expand:hover,
+.rank-ladder-expand:focus-visible {
+  color: oklch(var(--c-parchment));
 }
 .rank-ladder-track {
   position: relative;
   height: 4px;
-  margin: 0 2.5rem;
+  margin: 0 var(--ladder-inset);
   border-radius: 999px;
   background: oklch(var(--c-leather-700));
   overflow: hidden;
@@ -325,11 +358,16 @@ p {
 /* Rungs sit above the rail and are anchored by their bottom edge, so a badge
    that is larger because it is the current rank grows upward and its name
    stays on the same baseline as the other six. Anchoring by the top instead
-   pushed the current rank's label below the rest and bent the row. */
+   pushed the current rank's label below the rest and bent the row.
+
+   This described the intent from the first release and the markup did not
+   match it: the track was emitted before the list, so the rail painted across
+   the tops of the badges. The order in `RankLadder.tsx` is what fixed it —
+   the margin below is the gap between the row and the rail it stands on. */
 .rank-ladder-rungs {
   position: relative;
-  height: 7.5rem;
-  margin: 0 2.5rem 0.5rem;
+  height: var(--rungs-h);
+  margin: 0 var(--ladder-inset) 0.625rem;
   list-style: none;
   padding: 0;
 }
@@ -342,10 +380,10 @@ p {
   display: grid;
   justify-items: center;
   gap: 0.25rem;
-  width: 4.5rem;
+  width: var(--rung-w);
   padding: 0.25rem 0.125rem 0.375rem;
   align-content: end;
-  min-height: 7.25rem;
+  min-height: var(--rung-h);
   border: 0;
   border-radius: 0.5rem;
   background: none;
@@ -435,9 +473,120 @@ p {
 .rank-ladder-scroll {
   overflow-x: auto;
   padding-bottom: 0.25rem;
+  /* Double-click opens the full-screen view, and a double-click that also
+     blue-selects a rank name reads as a misfire. Nothing here is text worth
+     selecting — every word of it is repeated in the detail panel below. */
+  user-select: none;
 }
 .rank-ladder-scroll > * {
-  min-width: 42rem;
+  min-width: var(--ladder-min);
+}
+
+/* The full-screen ladder.
+
+   The width is `max(96rem, 140vw)` and both halves are load-bearing. A fixed
+   floor alone does not work: at 96rem the ladder is 1,536px, which is *less*
+   than the dialog is wide on a 1920px monitor, so on the machines most likely
+   to be used it would not scroll at all — and a climb you can take in at a
+   glance is the thing the inline ladder already is. Tying it to `vw` instead
+   makes the track half again the width of whatever screen it opens on, so
+   there is always somewhere to travel. The 96rem floor then catches the other
+   end: in a narrow window 140vw would fall below the width the labels need,
+   and two rank names would collide.
+
+   At the floor the narrowest gap — 13% of the track, between Inkling and
+   Pagewalker — is 185px against a 112px rung, so the badges can be this wide
+   without ever putting two names on top of each other. */
+.rank-ladder.is-expanded {
+  --ladder-min: max(96rem, 140vw);
+  --ladder-inset: 3.5rem;
+  --rung-w: 7rem;
+  --rung-h: 11rem;
+  --rungs-h: 11.5rem;
+}
+.rank-ladder-full {
+  position: fixed;
+  inset: 4vh 3vw;
+  z-index: 111;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+  overflow-y: auto;
+  outline: none;
+
+  /* `transition: none` here is load-bearing, and it is the opposite of an
+     oversight.
+
+     Base UI keeps a closing popup mounted until whatever transition or
+     animation it can see on the element finishes. `.panel` declares one —
+     transform, box-shadow and border-color over 240ms — and none of those
+     three properties differ between this dialog's open and closed states, so
+     no `transitionend` ever fired and the popup stayed on screen, fully
+     visible and carrying `data-closed`, after Escape and after Close. It read
+     exactly like a dead dismiss. premium.css is unlayered and `.panel` lives
+     in `@layer components`, so stating it here wins.
+
+     The fix could equally have been a real exit transition, and that is the
+     pattern Base UI documents. It is not what this uses, because an exit that
+     has to complete before the dialog leaves is a render gated on an
+     animation, and rAF drops to zero in a backgrounded tab — the dismiss
+     would hang for a real user who hits Escape and immediately switches tab.
+     Entrance is animated, exit is instant, and nothing waits on a frame that
+     may never come. */
+  transition: none;
+  animation: rank-full-in 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.rank-ladder-full[data-closed] {
+  pointer-events: none;
+}
+.rank-ladder-backdrop {
+  transition: none;
+  animation: rank-full-fade 200ms ease-out;
+}
+@keyframes rank-full-in {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+}
+@keyframes rank-full-fade {
+  from {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rank-ladder-full,
+  .rank-ladder-backdrop {
+    animation: none;
+  }
+}
+.rank-ladder-full-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.rank-ladder-full-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Without this a flex child refuses to shrink below its content, and the
+     centring silently becomes an overflow instead. */
+  min-height: 0;
+}
+/* The horizontal scrollbar lands directly beneath the rail, and at the inline
+   ladder's 0.25rem of padding the two touch — the rail reads as though it has
+   grown a second, greyer half. This is the one view where the scrollbar is
+   always present, so it is the one that needs the clearance. */
+.rank-ladder.is-expanded .rank-ladder-scroll {
+  padding-bottom: 0.75rem;
+}
+/* The detail panel is a reading column, not a banner — at 96rem wide its two
+   lines of prose would run the whole width of the screen. */
+.rank-ladder.is-expanded .rank-detail {
+  max-width: 44rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
