@@ -48,11 +48,12 @@
  * it is also seven times less work.
  */
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Dialog } from '@base-ui/react/dialog';
 import { RANKS, XP, rankIndexFor, type Rank } from '@/lib/progress';
 import { cx } from '@/lib/utils';
 import { RankSigil } from './RankSigil';
+import { auraBox } from './RankAura';
 
 /* A medium question is 16 XP before any streak bonus. Read from the real
    table rather than typed here, so a change to the XP economy cannot leave
@@ -128,6 +129,25 @@ function Rungs({
   const scroller = useRef<HTMLDivElement>(null);
   const fill = positionOf(xp) * 100;
 
+  /* The current rank is the only rung carrying a live aura, and an aura
+     reserves a footprint twice the emblem it surrounds (RankAura pads by half
+     the size on every edge). That makes the current rung the tallest and the
+     widest thing in the row by a wide margin — 160px against the other six at
+     116px — so the row has to be built around it rather than around them.
+
+     The size is published to CSS rather than written down in both places. The
+     rungs are absolutely positioned, so their container cannot size to its
+     contents and has to be told a height; while that height was a constant in
+     the stylesheet it said 120px when the current rung measured 160, and the
+     missing 40px came off the top of the badge and of its selected ring.
+     Silently, because `overflow-x: auto` on the scroller forces `overflow-y`
+     to `auto` as well, and content above a scroll box top edge cannot be
+     scrolled into view — it is simply gone, and scrollHeight never mentions
+     it. The same number sets the side inset, or the first and last rungs lose
+     their auras to the same mechanism sideways. */
+  const sigil = { current: expanded ? 84 : 58, other: expanded ? 64 : 44 };
+  const vars = { '--rung-aura': `${auraBox(sigil.current)}px` } as CSSProperties;
+
   /* Opening the expanded view puts the selected rung in the middle of the
      screen rather than at the left edge. That is what leaves the ranks you
      have already earned off to the left to scroll back to — starting at
@@ -145,7 +165,7 @@ function Rungs({
   }, [expanded]);
 
   return (
-    <div className="rank-ladder-scroll" ref={scroller}>
+    <div className="rank-ladder-scroll" ref={scroller} style={vars}>
       {/* One scroller wrapping both, so the track and the rungs stay on the
           same scale when a narrow screen — or the expanded view's deliberately
           oversized floor — makes the ladder wider than the viewport. Scrolling
@@ -178,11 +198,7 @@ function Rungs({
                     current ? ', your rank' : earned ? ', earned' : ', locked'
                   }`}
                 >
-                  <RankSigil
-                    rank={r}
-                    size={expanded ? (current ? 84 : 64) : current ? 58 : 44}
-                    aura={current}
-                  />
+                  <RankSigil rank={r} size={current ? sigil.current : sigil.other} aura={current} />
                   <span
                     className="rank-rung-name"
                     style={{

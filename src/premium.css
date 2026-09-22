@@ -309,10 +309,8 @@ p {
      five, plus the sigil's pixel size, which is a number and goes through a
      prop. */
   --ladder-min: 42rem;
-  --ladder-inset: 2.5rem;
   --rung-w: 4.5rem;
   --rung-h: 7.25rem;
-  --rungs-h: 7.5rem;
 }
 .rank-ladder-head {
   display: flex;
@@ -471,6 +469,20 @@ p {
    other. A breakpoint would have guessed at where that happens; a min-width
    on the thing that actually has the constraint cannot guess wrong. */
 .rank-ladder-scroll {
+  /* `--rung-aura` is set inline by RankLadder, from the same number it
+     renders the current emblem at. Both of these used to be constants sitting
+     in this file, and both were too small: the row clipped the top of the
+     current badge, and the inset clipped the aura of whichever rung sat at
+     either end — most visibly at 0 XP, where the current rank is the first
+     one. Derived, they cannot fall out of step with the emblem again.
+
+     The 3rem is everything under the badge that the aura does not cover: the
+     grid gap, the name, the XP figure, the padding, and the 2px the button
+     lifts on hover. That lift is why this has slack rather than being exact —
+     a row sized to the resting height clips two pixels off the badge on the
+     way up, which is the same bug arriving on hover instead of on load. */
+  --ladder-inset: calc(var(--rung-aura) / 2 + 0.25rem);
+  --rungs-h: calc(var(--rung-aura) + 3rem);
   overflow-x: auto;
   padding-bottom: 0.25rem;
   /* Double-click opens the full-screen view, and a double-click that also
@@ -499,10 +511,8 @@ p {
    without ever putting two names on top of each other. */
 .rank-ladder.is-expanded {
   --ladder-min: max(96rem, 140vw);
-  --ladder-inset: 3.5rem;
   --rung-w: 7rem;
   --rung-h: 11rem;
-  --rungs-h: 11.5rem;
 }
 .rank-ladder-full {
   position: fixed;
