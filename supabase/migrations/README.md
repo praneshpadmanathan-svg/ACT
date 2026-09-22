@@ -7,7 +7,7 @@ about how it got there, so there is no way to tell a fresh project from a stale
 one, and no rollback path when a change turns out to be wrong.
 
 Run them **in filename order**. There is no migration runner wired up — this is
-a project with one table, and pasting two files into the SQL editor is honest
+a project with one table, and pasting five files into the SQL editor is honest
 about the scale. What matters is that each file is numbered, immutable once
 applied, and describes one change.
 
@@ -23,10 +23,13 @@ npm run supabase:doctor
 It reports the table, the function, whether RLS is really filtering, and the auth
 settings, using nothing but the anon key and writing nothing.
 
-| File                                 | What it does                                                                                        |
-| ------------------------------------ | --------------------------------------------------------------------------------------------------- |
-| `0001_initial_schema.sql`            | The `progress` table, its four RLS policies, the 256 KB row cap and the `updated_at` index.         |
-| `0002_push_progress_concurrency.sql` | `push_progress()` — a compare-and-set write, so a second device cannot overwrite work it never saw. |
+| File                                 | What it does                                                                                                                                     |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `0001_initial_schema.sql`            | The `progress` table, its four RLS policies, the 256 KB row cap and the `updated_at` index.                                                      |
+| `0002_push_progress_concurrency.sql` | `push_progress()` — a compare-and-set write, so a second device cannot overwrite work it never saw.                                              |
+| `0003_entitlements.sql`              | The paywall: an entitlement per user, plus the webhook ledger. Superseded by `0005`.                                                             |
+| `0004_redeem.sql`                    | Redemption codes and the rate-limited claim path. Superseded by `0005`.                                                                          |
+| `0005_open_everything.sql`           | Everything is free: drops the two above. On a fresh project 0003–0005 cancel out, and that is fine — run them anyway so the history is recorded. |
 
 ## Rules
 

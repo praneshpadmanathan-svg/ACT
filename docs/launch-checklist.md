@@ -48,9 +48,15 @@ fill the database for everyone else.
 ## 2. Run the migrations
 
 Paste each file in [`supabase/migrations/`](../supabase/migrations/) into the SQL
-editor and run them **in filename order**. There are two: `0001` creates the table
-and its policies, `0002` adds the compare-and-set write that stops one device
-silently overwriting another's work.
+editor and run them **in filename order**. There are **five**. `0001` creates the
+table and its policies and `0002` adds the compare-and-set write that stops one
+device silently overwriting another's work; `0003` and `0004` built the paywall
+and `0005` removes it again, because everything is free now.
+
+On a fresh project the last three cancel out, so running only `0001` and `0002`
+reaches the same schema. Run all five anyway — the point of a numbered directory
+is that the database can say which migrations it has seen, and a project that
+skipped three of them cannot.
 
 They are written to be re-runnable, so a project that already has the table can
 adopt the migration history without dropping anything. Order still matters —
@@ -77,6 +83,10 @@ It earns its keep because the alternative already happened: the project ran live
 with neither migration applied, so every sync write failed server-side and nothing
 in the repo could say so. Run it after any dashboard change and after any
 migration.
+
+It cannot see the _deployment_ either — whether the build that is live was
+given those variables at the moment it was built. `npm run check:deploy` asks
+the shipped bundle that question.
 
 Three things it cannot see, because they need the Management API and a personal
 access token rather than the anon key: the redirect allowlist, the `SITE_URL`
@@ -139,6 +149,14 @@ work is worse than not having one.
 ## 5. Vercel
 
 - [ ] Environment variables: `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. Set them for **all** environments, or preview builds silently fall back to local-only mode and you will test the wrong thing.
+- [ ] **The `VITE_` prefix is the whole thing.** Vite only exposes variables carrying it, so `SUPABASE_URL` and `SUPABASE_ANON_KEY` — the names Supabase's own Vercel integration writes when you connect the two — are invisible to this app. Every name present, none of them matching, and `cloudEnabled` comes out false with no error: the app is built to degrade to local-only, so it does, while the sign-in button stays on screen. Do not assume the integration configured anything.
+- [ ] **Delete the keys nothing uses.** That integration also writes `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_SECRET_KEY`, `SUPABASE_JWT_SECRET` and `POSTGRES_PASSWORD` into the production environment. This is a static build with no server-side code, so nothing legitimate reads them — but the build process can, which means so can anything in the dependency tree at build time. Remove them, and rotate any that have sat there.
+- [ ] Prove it from outside, rather than from the dashboard:
+
+      npm run check:deploy
+
+  It fetches the deployed bundle and reports whether a Supabase host is actually in it, whether a `service_role` or secret key leaked into it, and whether the edge is really sending the headers `vercel.json` declares. A header declared in a repo is not a header on a response.
+
 - [ ] Confirm the deployed response carries the security headers from `vercel.json` (`curl -sI https://your-domain | sort`).
 
 **Vercel Hobby is non-commercial only.** A free study app with no ads and no

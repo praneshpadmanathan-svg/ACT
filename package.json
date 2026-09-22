@@ -30,7 +30,8 @@
     "build:scenes": "node scripts/build-scenes.mjs",
     "build:props": "node scripts/build-props.mjs",
     "build:regions": "node scripts/build-regions.mjs",
-    "build:surround": "node scripts/build-surround.mjs"
+    "build:surround": "node scripts/build-surround.mjs",
+    "check:deploy": "node scripts/check-deploy.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

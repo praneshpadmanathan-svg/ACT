@@ -116,11 +116,18 @@ async function req(path, init = {}) {
         '.github/workflows/keepalive.yml exists to stop that happening again.',
     );
   } else if (res.status === 401 || res.status === 403) {
-    fail(
+    /* Not a verdict on the key. Current PostgREST does not serve the OpenAPI
+       description at the REST root to anon, so a valid key gets 401 here on a
+       perfectly healthy project — this check used to call that a rejected key
+       and tell you to copy it again, which sends you to the dashboard to fix
+       something that is not broken. The key is genuinely exercised by the
+       `progress` probe below, which fails on any non-OK status, so let that be
+       the one that judges it. What this branch still proves is the useful part:
+       the project answered, so it is neither unreachable nor paused. */
+    ok(
       'Project reachable',
-      `The anon key was rejected (HTTP ${res.status}).`,
-      'Copy VITE_SUPABASE_ANON_KEY again from Settings -> API. Note this must ' +
-        'be the anon/publishable key, not the service_role key.',
+      `HTTP ${res.status} from the REST root, which is normal — it does not ` +
+        'serve anon. The key itself is checked by the `progress` probe below.',
     );
   } else {
     ok('Project reachable', `HTTP ${res.status} from the REST endpoint`);
