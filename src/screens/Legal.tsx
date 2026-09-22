@@ -14,17 +14,11 @@ import type { ReactNode } from 'react';
 
 import { hrefFor, useNavigate } from '@/lib/router';
 import { cloudEnabled } from '@/lib/supabase';
+import { CONTACT } from '@/lib/contact';
 import { sfx } from '@/lib/sfx';
 import { Button } from '@/components/ui';
 import { Glyph } from '@/components/Icon';
 import { Art } from '@/components/Art';
-
-/* Where people write when they want their data out, or have a complaint.
-
-   Worth pointing at an address made for the purpose rather than a personal
-   inbox: it goes on a public page aimed at minors, so it will be scraped, and
-   whoever answers it may not always be you. */
-const CONTACT_EMAIL = 'pranesh.padmanathan@gmail.com';
 
 const UPDATED = '31 July 2026';
 
@@ -173,7 +167,7 @@ function Privacy() {
           <P>
             We keep your data until you delete it. If you would rather we did it for you, or you
             have any other question about your information, write to{' '}
-            <A href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</A>.
+            <A href={`mailto:${CONTACT.privacy}`}>{CONTACT.privacy}</A>.
           </P>
 
           <H>If you are under 13</H>
@@ -184,7 +178,7 @@ function Privacy() {
           </P>
           <P>
             If you are a parent and believe a child under 13 has somehow made an account, write to{' '}
-            <A href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</A> and we will delete it.
+            <A href={`mailto:${CONTACT.privacy}`}>{CONTACT.privacy}</A> and we will delete it.
           </P>
         </>
       )}
@@ -271,8 +265,8 @@ function Terms() {
       <P>
         This is provided as it is, for free, with no guarantee that it will always be available or
         always be correct. We try hard to make the explanations right, but if you find a question
-        with a bad answer, tell us at <A href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</A> and it
-        will be fixed.
+        with a bad answer, tell us at <A href={`mailto:${CONTACT.support}`}>{CONTACT.support}</A>{' '}
+        and it will be fixed.
       </P>
       <P>
         To the extent the law allows, we are not liable for losses arising from using the site —

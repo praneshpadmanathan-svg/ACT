@@ -20,8 +20,11 @@
  * same address so a fork with nothing configured still has a working contact
  * rather than a broken `mailto:`.
  *
- * `public/.well-known/security.txt` is generated from the security address at
- * build time — see scripts/build-assets.mjs.
+ * One address this file does NOT reach: `public/.well-known/security.txt` is a
+ * static file copied verbatim into the build, so an env var cannot touch it and
+ * its `Contact:` line has to be edited by hand. `npm run check:deploy` fetches
+ * the live file and fails when it drifts from the address in the bundle, which
+ * is the only reason the two can be trusted to agree.
  */
 
 const FALLBACK = 'pranesh.padmanathan@gmail.com';
@@ -44,7 +47,10 @@ export const CONTACT = {
 } as const;
 
 /** True while the deployment is still using the hard-coded personal address.
- *  The launch checklist asserts against this rather than trusting a memory. */
+ *
+ *  Read by `npm run check:deploy`, which looks for this address in the shipped
+ *  JavaScript rather than trusting a checklist tick: the build that is live is
+ *  the only thing that knows which env vars it was actually given. */
 export const CONTACT_IS_PLACEHOLDER = CONTACT.support === FALLBACK;
 
 /** Build a `mailto:` with the subject and body pre-filled and escaped. */

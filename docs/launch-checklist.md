@@ -100,8 +100,13 @@ Dashboard → Authentication.
 - [ ] **Minimum password length** — 8. (The client enforces 8; make the server agree.)
 - [ ] **Leaked password protection** — ON. Rejects passwords found in known breaches: the single highest-value switch on this page for an audience that reuses passwords. The client refuses the obvious shapes (runs, repeats, the site's name, the user's own email) but it cannot know what is in a breach corpus, so this is the half that actually matters.
 - [ ] **Bot protection (Cloudflare Turnstile)** — ON for sign-up. Bot registrations burn the 50,000-user allowance and fill the database, and neither is recoverable on the free plan.
-- [ ] **Site URL** — the real domain, exactly.
-- [ ] **Redirect URLs** — the real domain, plus `http://localhost:5173` for development. **No wildcards.** A permissive redirect list is an open redirect, and an open redirect on an auth callback hands attackers a token-theft path.
+- [ ] **Site URL** — `https://act-red.vercel.app`, exactly. No trailing slash. This is the origin the confirmation and reset links are built against, so a wrong value here produces mail whose links go nowhere.
+- [ ] **Redirect URLs** — exactly these two lines, and nothing else:
+
+      https://act-red.vercel.app
+      http://localhost:5173
+
+  **No wildcards.** Not `https://*.vercel.app`, and not `https://act-red.vercel.app/**`. A permissive redirect list is an open redirect, and an open redirect on an auth callback hands attackers a token-theft path — they send a victim a real Supabase login link whose `redirect_to` points at a page they control, and the token lands there. `*.vercel.app` is the worst version of it, because anyone can deploy to that domain in thirty seconds.
 
 ### Email templates
 
@@ -128,7 +133,7 @@ supabase functions deploy delete-account
 Then set the origins it will accept — **required**, not optional:
 
 ```bash
-supabase secrets set SITE_URL=https://your-domain,http://localhost:5173
+supabase secrets set SITE_URL=https://act-red.vercel.app,http://localhost:5173
 ```
 
 Comma-separated, no trailing slashes. If this is unset the function falls back to
@@ -151,22 +156,35 @@ work is worse than not having one.
 - [ ] Environment variables: `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. Set them for **all** environments, or preview builds silently fall back to local-only mode and you will test the wrong thing.
 - [ ] **The `VITE_` prefix is the whole thing.** Vite only exposes variables carrying it, so `SUPABASE_URL` and `SUPABASE_ANON_KEY` — the names Supabase's own Vercel integration writes when you connect the two — are invisible to this app. Every name present, none of them matching, and `cloudEnabled` comes out false with no error: the app is built to degrade to local-only, so it does, while the sign-in button stays on screen. Do not assume the integration configured anything.
 - [ ] **Delete the keys nothing uses.** That integration also writes `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_SECRET_KEY`, `SUPABASE_JWT_SECRET` and `POSTGRES_PASSWORD` into the production environment. This is a static build with no server-side code, so nothing legitimate reads them — but the build process can, which means so can anything in the dependency tree at build time. Remove them, and rotate any that have sat there.
-- [ ] Prove it from outside, rather than from the dashboard:
+- [ ] **Contact addresses**: `VITE_CONTACT_SUPPORT`, and optionally `VITE_CONTACT_PRIVACY` and `VITE_CONTACT_SECURITY` (each falls back to support, which falls back to the personal Gmail in `src/lib/contact.ts`). The privacy policy and terms render whichever address is live, so until these are set the deployment publishes a personal inbox on a public page aimed at minors.
+- [ ] **`public/.well-known/security.txt` is static** — no environment variable reaches it, because it is copied verbatim into the build. Edit its `Contact:` line by hand to match, in the same change. `check:deploy` fails when the two disagree, which is the only reason they can be trusted to agree.
+- [ ] Prove all of it from outside, rather than from the dashboard:
 
       npm run check:deploy
 
-  It fetches the deployed bundle and reports whether a Supabase host is actually in it, whether a `service_role` or secret key leaked into it, and whether the edge is really sending the headers `vercel.json` declares. A header declared in a repo is not a header on a response.
-
-- [ ] Confirm the deployed response carries the security headers from `vercel.json` (`curl -sI https://your-domain | sort`).
+  It walks the deployed bundle — every lazily-loaded route chunk, not just the ones the document names — and reports whether a Supabase host is actually in it, whether a `service_role` or secret key leaked into it, which contact address it publishes, whether `security.txt` is served and unexpired and agrees with the bundle, and whether the edge is really sending the headers `vercel.json` declares. A header declared in a repo is not a header on a response, and a variable present in the dashboard is not a variable the build read.
 
 **Vercel Hobby is non-commercial only.** A free study app with no ads and no
 payments is fine. The day it earns money — ads, subscriptions, sponsorship — it
 has to move to Pro, and this is enforced by account suspension rather than a
 polite email.
 
+**Launching on `act-red.vercel.app`, deliberately.** A custom domain is the one
+decision here that gets harder after launch rather than easier: links get shared
+and indexed, and moving breaks them. The trade was made with that known. Two
+things that do _not_ argue against it, so nobody relitigates them later: sessions
+live in `localStorage`, which is scoped to this exact origin, so sharing the
+`vercel.app` suffix with every other Hobby deployment does not expose them — that
+argument is about cookies, and this app sets none; and the redirect allowlist
+above is pinned to the full host, not the suffix. When the domain does move, the
+list of things to change is exactly: Site URL, the redirect allowlist, the
+`SITE_URL` function secret, `Canonical` and `Policy` in `security.txt`, and
+`DEFAULT_SITE` in `scripts/check-deploy.mjs`.
+
 ## 6. Before you tell anyone
 
-- [ ] Set `CONTACT_EMAIL` in `src/screens/Legal.tsx` to an address you are happy to have scraped off a public page. It is currently a personal Gmail.
+- [ ] Point the contact addresses at an inbox you are happy to have scraped off a public page — the Vercel variables in §5, plus `security.txt` by hand. There is no longer an address to edit in `src/screens/Legal.tsx`; it reads `src/lib/contact.ts` like everything else. Until you do, `npm run check:deploy` warns and the deployed policy names a personal Gmail.
+- [ ] Whichever address you choose, **make sure it is monitored**. The privacy policy offers it for data access, correction and deletion requests, and several state privacy laws attach a response window to those. An address that bounces or is never read is a worse position than the personal Gmail, not a better one.
 - [ ] Read the privacy policy and terms end to end and check every sentence is still true of the build you are shipping. A policy that over-promises is a false statement, not a missing one.
 - [ ] Have someone qualified look at both. They describe real obligations to real minors, and I am not a lawyer.
 - [ ] Sign up, confirm the email, sign out, sign in, reset the password, sign in with the new one — on the actual deployed domain, not localhost. This is where the redirect allowlist and the PKCE round trip fail if they are going to.

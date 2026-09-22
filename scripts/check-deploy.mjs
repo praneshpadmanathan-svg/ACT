@@ -67,13 +67,47 @@ if (!res.ok) {
 
 /* ------------------------------------------------------------- the bundle */
 
-/* Only the scripts the document itself names. A lazily imported chunk is not
-   reachable from here without executing the app, and the Supabase client is
-   constructed at module scope in the entry graph, so the entry chunks are where
-   the URL has to be if it is anywhere. */
-const scripts = [
+/* Start from the scripts the document names, then follow the chunk names those
+   scripts mention, and repeat until nothing new turns up.
+
+   The document names 10 chunks; the app ships about 45. Every route past the
+   entry — Legal, Auth, Zone, Boss — is a lazy import, so scanning only the
+   named scripts reads roughly a fifth of the code and then reports "no secret
+   key in the bundle" about the four fifths it never fetched. A leaked key is
+   most likely in exactly the kind of feature module that gets split out.
+
+   Vite writes each lazy import as a bare chunk filename inside the importing
+   chunk, so the graph can be walked by reading strings — nothing is executed. */
+const CHUNK = /["'`](?:\.\/|\/)?(?:assets\/)?([A-Za-z0-9_$-]+-[A-Za-z0-9_-]{8}\.js)["'`]/g;
+
+const queue = [
   ...new Set([...html.matchAll(/(?:src|href)="(\/assets\/[^"]+\.js)"/g)].map((m) => m[1])),
 ];
+const seen = new Set(queue);
+const scripts = [];
+
+let code = '';
+while (queue.length) {
+  const path = queue.shift();
+  let text;
+  try {
+    const r = await get(`${site}${path}`);
+    if (!r.ok) continue;
+    text = await r.text();
+  } catch {
+    /* One unreachable chunk should not mask the checks the others can answer;
+       a wholly unreachable site already exited above. */
+    continue;
+  }
+  scripts.push(path);
+  code += text;
+  for (const [, name] of text.matchAll(CHUNK)) {
+    const next = `/assets/${name}`;
+    if (seen.has(next)) continue;
+    seen.add(next);
+    queue.push(next);
+  }
+}
 
 if (scripts.length === 0) {
   fail(
@@ -81,17 +115,11 @@ if (scripts.length === 0) {
     'The document references no /assets/*.js files.',
     'Check the deployment actually built — an empty shell usually means the output directory is wrong.',
   );
-}
-
-let code = '';
-for (const path of scripts) {
-  try {
-    const r = await get(`${site}${path}`);
-    if (r.ok) code += await r.text();
-  } catch {
-    /* One unreachable chunk should not mask the checks the others can answer;
-       a wholly unreachable site already exited above. */
-  }
+} else {
+  ok(
+    'bundle',
+    `Read ${scripts.length} chunks, ${Math.round(code.length / 1024)} kB of JavaScript.`,
+  );
 }
 
 /* ------------------------------------------------------- is the cloud on? */
@@ -205,6 +233,99 @@ if (hosts.length === 1 && csp && !/connect-src[^;]*supabase\.co/.test(csp)) {
     'The bundle talks to Supabase but connect-src does not allow supabase.co, so every request will be blocked in the browser.',
     'Add https://*.supabase.co and wss://*.supabase.co to connect-src in vercel.json.',
   );
+}
+
+/* ------------------------------------------------------- how to reach anyone */
+
+/* The privacy policy names an address and promises a reply to deletion
+   requests, several of which carry statutory response windows. Two ways that
+   goes wrong, and both are invisible from the repository:
+
+   a free-mail address means the app shipped with src/lib/contact.ts's FALLBACK
+   still in place, i.e. the VITE_CONTACT_* variables were never set on the
+   deployment — a personal inbox on a public page aimed at minors, which will
+   be scraped; and security.txt is a static file no env var can reach, so it
+   drifts silently the moment the bundle's address changes. */
+
+const FREE_MAIL = /@(gmail|googlemail|yahoo|hotmail|outlook|live|icloud|aol|proton(mail)?)\./i;
+
+const bundleEmails = [
+  ...new Set(
+    [...code.matchAll(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g)]
+      .map((m) => m[0])
+      /* Dependencies carry author and issue-tracker addresses of their own, so
+         narrow to addresses the app states as its own: a whole string literal,
+         or the target of a mailto:. All three quote characters, because the
+         minifier picks whichever it likes and this app's address happens to
+         come out in backticks — a filter that checked only ' and " found
+         nothing on a deployment that publishes the address on two pages. */
+      .filter(
+        (e) =>
+          code.includes(`mailto:${e}`) ||
+          [`"`, `'`, '`'].some((q) => code.includes(`${q}${e}${q}`)),
+      ),
+  ),
+];
+
+const personal = bundleEmails.filter((e) => FREE_MAIL.test(e));
+
+if (personal.length) {
+  warn(
+    'contact address',
+    `The live build publishes ${personal.join(', ')} as its contact address. That is the ` +
+      'fallback in src/lib/contact.ts, so the deployment was never given the contact variables.',
+    'Set VITE_CONTACT_SUPPORT (and optionally VITE_CONTACT_PRIVACY, VITE_CONTACT_SECURITY) on the ' +
+      'Vercel project and redeploy, then edit public/.well-known/security.txt to match by hand.',
+  );
+} else if (bundleEmails.length) {
+  ok('contact address', `Publishes ${bundleEmails.join(', ')}.`);
+}
+
+/* RFC 9116. Scanners and researchers read this before they resort to guessing
+   an address or posting the finding publicly, so a stale one is worse than
+   none: an expired file is formally unmaintained, and a Contact: line that no
+   longer matches the app sends the report to an inbox nobody reads. */
+try {
+  const r = await get(`${site}/.well-known/security.txt`);
+  if (!r.ok) {
+    warn(
+      'security.txt',
+      `/.well-known/security.txt answered ${r.status}.`,
+      'Researchers look here first. Without it a finding arrives by whatever route they improvise.',
+    );
+  } else {
+    const txt = await r.text();
+    const at = txt.match(/^Contact:\s*(?:mailto:)?(\S+@\S+)\s*$/im)?.[1];
+    const until = txt.match(/^Expires:\s*(\S+)\s*$/im)?.[1];
+    const expiry = until ? new Date(until) : null;
+
+    if (expiry && !Number.isNaN(expiry.valueOf()) && expiry < new Date()) {
+      fail(
+        'security.txt',
+        `Expired on ${expiry.toISOString().slice(0, 10)}. RFC 9116 says a file past its Expires is to be treated as unmaintained.`,
+        'Renew the Expires date in public/.well-known/security.txt, or delete the file.',
+      );
+    } else if (at && bundleEmails.length && !bundleEmails.includes(at)) {
+      fail(
+        'security.txt',
+        `It gives ${at}, but the app publishes ${bundleEmails.join(', ')}. A vulnerability report would go to the wrong place.`,
+        'public/.well-known/security.txt is static — no env var reaches it. Edit its Contact: line to match.',
+      );
+    } else if (!at) {
+      warn(
+        'security.txt',
+        'Served, but it has no parseable Contact: line.',
+        'Contact: is the one required field in RFC 9116.',
+      );
+    } else {
+      ok(
+        'security.txt',
+        `Served, contact ${at}, valid until ${expiry ? expiry.toISOString().slice(0, 10) : 'unstated'}.`,
+      );
+    }
+  }
+} catch {
+  warn('security.txt', 'Could not be fetched.', 'Check it is committed under public/.well-known/.');
 }
 
 /* ------------------------------------------------------------- the report */
