@@ -101,11 +101,14 @@ reviewable and diffable instead of being someone's memory of a dashboard visit.
 Sign in once, link, **read the diff**, then push:
 
 ```bash
-npx supabase login
-npx supabase link --project-ref wjdvwqcoxemzbemqjbys
+npx --yes supabase@2 login
+npm run supabase:link
 npm run supabase:config-diff
 npm run supabase:config-push
 ```
+
+Only the first one needs a human: it opens a browser and stores a token. Every
+command after it, here and in §4, runs off that token.
 
 Do not skip the diff. `config push` leaves undeclared properties alone — that is
 what makes it safe against a live project — but a non-interactive run proceeds
@@ -144,13 +147,13 @@ Account deletion needs the `service_role` key, which must never be in the
 browser bundle. It lives in an Edge Function instead:
 
 ```bash
-npx supabase functions deploy delete-account
+npm run supabase:deploy-fn
 ```
 
 Then set the origins it will accept — **required**, not optional:
 
 ```bash
-npx supabase secrets set SITE_URL=https://act-red.vercel.app,http://localhost:5173
+npx --yes supabase@2 secrets set SITE_URL=https://act-red.vercel.app,http://localhost:5173
 ```
 
 Comma-separated, no trailing slashes. If this is unset the function falls back to

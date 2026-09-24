@@ -5,9 +5,9 @@
 # the repo being able to say so. Declared here they are reviewable, diffable,
 # and applied by one command:
 #
-#   npx supabase login                       # once, opens a browser
-#   npx supabase link --project-ref wjdvwqcoxemzbemqjbys
-#   npm run supabase:config-diff             # READ THIS before the next line
+#   npx --yes supabase@2 login    # once, opens a browser; the only human step
+#   npm run supabase:link
+#   npm run supabase:config-diff  # READ THIS before the next line
 #   npm run supabase:config-push
 #
 # **Deliberately minimal, and it must stay that way.** `config push` leaves

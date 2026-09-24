@@ -32,8 +32,10 @@
     "build:regions": "node scripts/build-regions.mjs",
     "build:surround": "node scripts/build-surround.mjs",
     "check:deploy": "node scripts/check-deploy.mjs",
-    "supabase:config-diff": "supabase config diff",
-    "supabase:config-push": "supabase config push"
+    "supabase:config-diff": "npx --yes supabase@2 config diff",
+    "supabase:config-push": "npx --yes supabase@2 config push",
+    "supabase:link": "npx --yes supabase@2 link --project-ref wjdvwqcoxemzbemqjbys",
+    "supabase:deploy-fn": "npx --yes supabase@2 functions deploy delete-account"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
