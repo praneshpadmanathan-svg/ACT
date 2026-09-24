@@ -320,5 +320,12 @@ if (failed.length) {
   /* `exitCode` rather than `exit()`: nothing is left pending by this point, so
      letting the process end on its own keeps the status honest. */
   process.exitCode = 1;
+} else {
+  /* This line used to run unconditionally, so a failing run printed its
+     failures to stderr and then "No failures" to stdout. The exit code was
+     right and the summary a human reads was not — and the summary is what a
+     human reads. Measured 2026-09-24 against the live project: two real
+     failures, confirmation off and the delete-account function undeployed,
+     under a closing line saying there were none. */
+  console.log(`  No failures, ${warnings} warning(s).\n`);
 }
-console.log(`  No failures, ${warnings} warning(s).\n`);
