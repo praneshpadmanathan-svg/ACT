@@ -55,26 +55,51 @@ permissions:
 jobs:
   dump:
     runs-on: ubuntu-latest
-    # Without the secret this would fail every night and train everyone to
-    # ignore a red Actions tab. Skip cleanly instead.
-    if: github.repository_owner != ''
     steps:
       - name: Check the connection string is configured
-        id: guard
         env:
           DB_URL: ${{ secrets.SUPABASE_DB_URL }}
         run: |
-          if [ -z "$DB_URL" ]; then
-            echo "SUPABASE_DB_URL is not set — see the header of this workflow." >&2
-            echo "configured=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "configured=true" >> "$GITHUB_OUTPUT"
+          if [ -n "$DB_URL" ]; then
+            echo "SUPABASE_DB_URL is set."
+            exit 0
           fi
+
+          # This step used to write `configured=false` and exit 0, and every
+          # step below tested that with an `if:`. The job went green. Forty-four
+          # consecutive nightly runs — the entire history of this workflow —
+          # reported success while producing no backup at all, and the artifact
+          # list has never held a single file.
+          #
+          # The original reasoning is in the git history: a nightly red "would
+          # train everyone to ignore a red Actions tab". That is a real failure
+          # mode, but it belongs to recurring noise nobody can act on. This is a
+          # one-time setup step — set the secret and it never fires again. The
+          # silence is what let it stay unset for six weeks, because a backup
+          # that has never run looked identical to one that runs every night.
+          {
+            echo "### Backup did not run"
+            echo
+            echo 'The repository secret `SUPABASE_DB_URL` is not set, so there is'
+            echo 'nothing to dump. **There is no backup of student progress**, and'
+            echo 'the free plan has no point-in-time recovery to fall back on.'
+            echo
+            echo 'Supabase dashboard → Project Settings → Database → Connection'
+            echo 'string → URI, then substitute the database password. Use the'
+            echo '**session pooler (port 5432)** URI: the transaction pooler on'
+            echo '6543 does not support the statements `pg_dump` issues.'
+            echo
+            echo '```'
+            echo 'gh secret set SUPABASE_DB_URL'
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          echo "SUPABASE_DB_URL is not set — see the header of this workflow." >&2
+          exit 1
 
       # The runner's bundled client is older than Supabase's server, and
       # pg_dump refuses to dump a server newer than itself.
       - name: Install PostgreSQL 17 client
-        if: steps.guard.outputs.configured == 'true'
         run: |
           sudo install -d /usr/share/postgresql-common/pgdg
           sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc \
@@ -87,7 +112,6 @@ jobs:
           sudo apt-get install -y postgresql-client-17
 
       - name: Dump the public schema
-        if: steps.guard.outputs.configured == 'true'
         env:
           # Passed through the environment, never as an argv the process list
           # would show.
@@ -108,7 +132,6 @@ jobs:
       # the file is a readable archive containing the table that matters,
       # without needing a database to restore into.
       - name: Verify the dump is restorable
-        if: steps.guard.outputs.configured == 'true'
         run: |
           set -euo pipefail
           dump=$(ls backup/*.dump)
@@ -121,7 +144,6 @@ jobs:
           echo "OK — $(wc -l < backup/contents.txt) objects, progress data present."
 
       - name: Upload
-        if: steps.guard.outputs.configured == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: db-backup-${{ github.run_id }}

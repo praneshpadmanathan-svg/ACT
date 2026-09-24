@@ -201,7 +201,31 @@ list of things to change is exactly: Site URL, the redirect allowlist, the
 `SITE_URL` function secret, `Canonical` and `Policy` in `security.txt`, and
 `DEFAULT_SITE` in `scripts/check-deploy.mjs`.
 
-## 6. Before you tell anyone
+## 6. GitHub repository secrets
+
+Two scheduled workflows need secrets, and neither was on this list until now —
+which is most of the reason neither secret was ever set.
+
+- [ ] **`SUPABASE_DB_URL`** → the nightly `Backup` workflow. Project Settings → Database → Connection string → URI, then substitute the database password. It must be the **session pooler (port 5432)** URI; the transaction pooler on 6543 does not support the statements `pg_dump` issues.
+- [ ] **`SUPABASE_URL`** and **`SUPABASE_ANON_KEY`** → the twice-weekly `Keepalive` workflow, which stops the free project pausing after 7 idle days. The same two values the browser bundle already ships. They are secrets only because repository variables are noisier to manage. **Never put the `service_role` key here** — the backup dumps the `public` schema only, on purpose, and nothing in CI should be able to read `auth.users`.
+
+```bash
+gh secret set SUPABASE_DB_URL
+```
+
+**Both workflows used to skip silently when their secrets were missing**, on the
+reasoning that a nightly red trains people to ignore the Actions tab. What it
+actually produced was 44 consecutive green `Backup` runs that dumped nothing and
+left the artifact list empty from the day it was written — a backup and the
+absence of a backup looked exactly alike. They now fail, with the fix written
+into the run summary. That is a one-time red: set the secret and it never fires
+again.
+
+A useful consequence: **the next scheduled run of each is now a test.** Green
+means the secret is really there and the job really did the work; red means it
+never has been. Neither question could be answered from the run list before.
+
+## 7. Before you tell anyone
 
 - [ ] Point the contact addresses at an inbox you are happy to have scraped off a public page — the Vercel variables in §5, plus `security.txt` by hand. There is no longer an address to edit in `src/screens/Legal.tsx`; it reads `src/lib/contact.ts` like everything else. Until you do, `npm run check:deploy` warns and the deployed policy names a personal Gmail.
 - [ ] Whichever address you choose, **make sure it is monitored**. The privacy policy offers it for data access, correction and deletion requests, and several state privacy laws attach a response window to those. An address that bounces or is never read is a worse position than the personal Gmail, not a better one.

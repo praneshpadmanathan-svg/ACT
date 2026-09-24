@@ -52,10 +52,23 @@ jobs:
         run: |
           set -euo pipefail
 
+          # This used to `exit 0` "so the Actions tab does not go red every
+          # week". That made an unconfigured keepalive indistinguishable from a
+          # working one — which is exactly the failure the comment further down
+          # this same step warns about, wired in above it. Nothing in the run
+          # list could tell you whether this job had ever pinged anything.
           if [ -z "${SUPABASE_URL:-}" ] || [ -z "${SUPABASE_ANON_KEY:-}" ]; then
+            {
+              echo "### Keepalive did not run"
+              echo
+              echo 'Set `SUPABASE_URL` and `SUPABASE_ANON_KEY` as repository'
+              echo 'secrets — see the header of this workflow. Until then this'
+              echo 'job checks nothing, the free-tier project can pause after 7'
+              echo 'idle days, and the first sign of that is every sign-in'
+              echo 'failing at once.'
+            } >> "$GITHUB_STEP_SUMMARY"
             echo "SUPABASE_URL / SUPABASE_ANON_KEY are not set — see the header of this workflow." >&2
-            echo "Skipping rather than failing, so the Actions tab does not go red every week." >&2
-            exit 0
+            exit 1
           fi
 
           # A real query against a real table, not a ping at the root. What
