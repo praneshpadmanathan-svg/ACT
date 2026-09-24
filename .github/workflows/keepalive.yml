@@ -14,14 +14,15 @@
 #
 # ── Setting it up ────────────────────────────────────────────────────────────
 #
-# Two repository secrets, the same two values the browser bundle already ships:
+# Nothing to set up. The job needs only the Supabase URL and the publishable
+# key, both of which are public by design and already compiled into the site's
+# JavaScript, so it reads them from the live deployment (scripts/public-config.mjs)
+# instead of from repository secrets. That also means it pings exactly the
+# project the students are using, and cannot drift from it.
 #
-#   gh secret set SUPABASE_URL       # https://<ref>.supabase.co
-#   gh secret set SUPABASE_ANON_KEY  # the anon/publishable key
-#
-# They are secrets only because repository variables are noisier to manage, not
-# because they are sensitive — the anon key is designed to be public and row
-# level security is what protects the data. Never put the service_role key here.
+# It used to need two secrets that nobody ever set, and skipped silently without
+# them — so for its whole history there is no evidence it pinged anything.
+# Never put the service_role key anywhere near this workflow.
 
 name: Keepalive
 
@@ -45,31 +46,21 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
+      # Fails, rather than skipping, if the live bundle does not carry the pair:
+      # that means production is not wired to Supabase at all, which is worse
+      # news than a paused project.
+      - name: Read the public Supabase config from the live site
+        run: node scripts/public-config.mjs --github-env
+
       - name: Ping the REST endpoint
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: |
           set -euo pipefail
-
-          # This used to `exit 0` "so the Actions tab does not go red every
-          # week". That made an unconfigured keepalive indistinguishable from a
-          # working one — which is exactly the failure the comment further down
-          # this same step warns about, wired in above it. Nothing in the run
-          # list could tell you whether this job had ever pinged anything.
-          if [ -z "${SUPABASE_URL:-}" ] || [ -z "${SUPABASE_ANON_KEY:-}" ]; then
-            {
-              echo "### Keepalive did not run"
-              echo
-              echo 'Set `SUPABASE_URL` and `SUPABASE_ANON_KEY` as repository'
-              echo 'secrets — see the header of this workflow. Until then this'
-              echo 'job checks nothing, the free-tier project can pause after 7'
-              echo 'idle days, and the first sign of that is every sign-in'
-              echo 'failing at once.'
-            } >> "$GITHUB_STEP_SUMMARY"
-            echo "SUPABASE_URL / SUPABASE_ANON_KEY are not set — see the header of this workflow." >&2
-            exit 1
-          fi
 
           # A real query against a real table, not a ping at the root. What
           # resets the inactivity timer is database activity, and `select` with

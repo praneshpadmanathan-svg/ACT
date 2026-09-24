@@ -11,10 +11,15 @@
  * way to name a different one — the only account you can delete through this
  * endpoint is your own.
  *
- * Deploy:  supabase functions deploy delete-account
+ * Deploy, either way:
+ *   npm run supabase:deploy-fn
+ *   Dashboard -> Edge Functions -> Deploy a new function -> Via editor, name it
+ *   exactly `delete-account`, paste this whole file, deploy. No CLI or token.
  *
- * `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are injected into the
- * function's environment by the platform; there is nothing to configure.
+ * `SUPABASE_URL`, `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` are
+ * injected into the function's environment by the platform; there is nothing
+ * to configure. Because it reads the platform's legacy anon/service_role pair,
+ * do not disable the project's legacy API keys without updating this first.
  */
 
 import { createClient } from 'jsr:@supabase/supabase-js@2';
@@ -27,10 +32,19 @@ import { createClient } from 'jsr:@supabase/supabase-js@2';
  * it still takes a valid token to do damage, a wildcard turns a stolen or
  * leaked token into a one-request account deletion from anywhere.
  *
- * With nothing configured it now falls back to localhost only, so a
- * misconfigured deployment fails closed and loudly instead of open and quietly.
+ * With nothing configured it falls back to the two origins this app actually
+ * runs on — production and the Vite dev server — named exactly. That is still
+ * fail-closed: every other origin on the internet is refused, and a wildcard
+ * is never the default. It used to fall back to localhost alone, which made
+ * the production site unable to call its own delete button until someone set
+ * a secret by hand; the secret was never set, so the promise in the privacy
+ * policy could not be kept. `SITE_URL` still overrides this list, and must
+ * when the domain moves (see "Launching on act-red.vercel.app" in
+ * docs/launch-checklist.md).
  */
-const ALLOWED = (Deno.env.get('SITE_URL') ?? 'http://localhost:5173')
+const DEFAULT_ORIGINS = 'https://act-red.vercel.app,http://localhost:5173';
+
+const ALLOWED = (Deno.env.get('SITE_URL') || DEFAULT_ORIGINS)
   .split(',')
   .map((o) => o.trim().replace(/\/$/, ''))
   .filter(Boolean);

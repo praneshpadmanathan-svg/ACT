@@ -89,10 +89,48 @@ given those variables at the moment it was built. `npm run check:deploy` asks
 the shipped bundle that question.
 
 Three things it cannot see, because they need the Management API and a personal
-access token rather than the anon key: the redirect allowlist, the `SITE_URL`
-function secret, and the email templates. Those stay hand-checked below.
+access token rather than the anon key: the redirect allowlist, whether custom
+SMTP is on, and the email templates. Those stay hand-checked below.
+
+It needs no setup: with no `.env` it reads the public URL and key from the live
+site, which ships both by design.
 
 ## 3. Auth settings
+
+### 3.0 Email delivery comes first — nothing else here works without it
+
+Supabase's built-in mailer **delivers only to members of the project's own
+team**, at **2 messages an hour**, and Supabase describes it as not meant for
+production. So until a custom SMTP sender is configured:
+
+- no student receives a **confirmation** email,
+- no student receives a **password reset** — forget it, and the account is gone,
+- the **six-digit login code** never arrives.
+
+All three keep working for whoever tests them from a team account, which is
+exactly who would test them. That is why this was invisible.
+
+The order matters: **SMTP first, then Confirm email ON.** Turn confirmation on
+with the built-in mailer and nobody outside the team can ever sign up.
+
+The free route is the dedicated Gmail from §7. Dashboard → Authentication →
+Emails → SMTP Settings → enable custom SMTP:
+
+| Field        | Value                                    |
+| ------------ | ---------------------------------------- |
+| Host         | `smtp.gmail.com`                         |
+| Port         | `465`                                    |
+| Username     | the dedicated Gmail address              |
+| Password     | a Gmail **app password** (not the login) |
+| Sender email | the same address                         |
+| Sender name  | `ACT Command`                            |
+
+An app password needs 2-Step Verification on that Gmail account first (Google
+Account → Security → 2-Step Verification, then App passwords). Gmail allows
+roughly 500 messages a day, which is ample at launch scale. If you outgrow it,
+a transactional sender (Resend, Brevo) slots into the same form.
+
+- [ ] Custom SMTP on, and a test email from the dashboard reaches an address that is **not** on the team.
 
 ### 3a. The ones that are now code
 
@@ -108,7 +146,13 @@ npm run supabase:config-push
 ```
 
 Only the first one needs a human: it opens a browser and stores a token. Every
-command after it, here and in §4, runs off that token.
+command after it, here and in §4, runs off that token. **Do not push until §3.0
+is done** — the file turns confirmation on.
+
+No CLI is required. Every value in the file can be set in the dashboard instead
+(Authentication → Providers → Email, Authentication → URL Configuration), and
+`config-diff` afterwards should come back empty; that is the check the two
+agree.
 
 Do not skip the diff. `config push` leaves undeclared properties alone — that is
 what makes it safe against a live project — but a non-interactive run proceeds
@@ -121,12 +165,10 @@ change, and a six-digit OTP. Each one is commented in the file with the reason.
 
 - [ ] Pushed, and `npm run supabase:doctor` now reports Email confirmation as a pass.
 
-### 3b. The ones that cannot be
+### 3b. Two switches this list used to ask for, and must not
 
-Dashboard → Authentication. Neither has a `config.toml` key.
-
-- [ ] **Leaked password protection** — ON. Rejects passwords found in known breaches: the single highest-value switch on this page for an audience that reuses passwords. The client refuses the obvious shapes (runs, repeats, the site's name, the user's own email) but it cannot know what is in a breach corpus, so this is the half that actually matters.
-- [ ] **Bot protection (Cloudflare Turnstile)** — ON for sign-up. Bot registrations burn the 50,000-user allowance and fill the database, and neither is recoverable on the free plan. `[auth.captcha]` does exist in `config.toml`, but it requires the provider `secret` inline, and no secret goes in this repository — so this one stays in the dashboard on purpose.
+- **Leaked password protection** is **Pro-plan only**. On Free the switch does not exist. The client's password rules and `minimum_password_length = 8` are the stopgap until an upgrade.
+- **Do not turn on bot protection (Turnstile).** The app sends no `captchaToken` with any auth call, so enabling it server-side makes every sign-up, sign-in and password reset fail at once. It needs client code and a Cloudflare site key first. This list used to say "ON for sign-up", and following it would have broken the app.
 
 ### Email templates
 
@@ -150,17 +192,17 @@ browser bundle. It lives in an Edge Function instead:
 npm run supabase:deploy-fn
 ```
 
-Then set the origins it will accept — **required**, not optional:
+Or with no CLI at all: Dashboard → Edge Functions → Deploy a new function → Via
+editor, name it exactly `delete-account`, paste the whole of
+[`index.ts`](../supabase/functions/delete-account/index.ts), deploy.
 
-```bash
-npx --yes supabase@2 secrets set SITE_URL=https://act-red.vercel.app,http://localhost:5173
-```
-
-Comma-separated, no trailing slashes. If this is unset the function falls back to
-localhost only and your deployed site cannot call it, which is the intended
-failure: this is the one endpoint that permanently destroys an account, and a
-wildcard origin on it would let any page on the internet invoke it with a token
-it happened to get hold of. Better it breaks visibly than opens quietly.
+**No secret to set.** The function accepts exactly `https://act-red.vercel.app`
+and `http://localhost:5173` by default, and refuses every other origin. It used
+to accept localhost only until a `SITE_URL` secret was set by hand; it never
+was, so the production delete button could not reach its own function. A
+wildcard is still never the default: this is the one endpoint that permanently
+destroys an account. Set `SITE_URL` only to override the list, and you must
+when the domain moves.
 
 `SUPABASE_URL`, `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` are injected
 by the platform — do not set them yourself, and do not put the service role key
@@ -197,17 +239,23 @@ live in `localStorage`, which is scoped to this exact origin, so sharing the
 `vercel.app` suffix with every other Hobby deployment does not expose them — that
 argument is about cookies, and this app sets none; and the redirect allowlist
 above is pinned to the full host, not the suffix. When the domain does move, the
-list of things to change is exactly: Site URL, the redirect allowlist, the
-`SITE_URL` function secret, `Canonical` and `Policy` in `security.txt`, and
-`DEFAULT_SITE` in `scripts/check-deploy.mjs`.
+list of things to change is exactly: Site URL, the redirect allowlist,
+`DEFAULT_ORIGINS` in the delete-account function (or a `SITE_URL` secret that
+overrides it), `Canonical` and `Policy` in `security.txt`, and `DEFAULT_SITE` in
+`scripts/check-deploy.mjs` and `scripts/public-config.mjs`.
 
 ## 6. GitHub repository secrets
 
-Two scheduled workflows need secrets, and neither was on this list until now —
-which is most of the reason neither secret was ever set.
+One secret, for the backup. It was not on this list until now, which is most of
+the reason it was never set.
 
-- [ ] **`SUPABASE_DB_URL`** → the nightly `Backup` workflow. Project Settings → Database → Connection string → URI, then substitute the database password. It must be the **session pooler (port 5432)** URI; the transaction pooler on 6543 does not support the statements `pg_dump` issues.
-- [ ] **`SUPABASE_URL`** and **`SUPABASE_ANON_KEY`** → the twice-weekly `Keepalive` workflow, which stops the free project pausing after 7 idle days. The same two values the browser bundle already ships. They are secrets only because repository variables are noisier to manage. **Never put the `service_role` key here** — the backup dumps the `public` schema only, on purpose, and nothing in CI should be able to read `auth.users`.
+- [ ] **`SUPABASE_DB_URL`** → the nightly `Backup` workflow. Project Settings → Database → Connection string → URI, then substitute the database password. It must be the **session pooler (port 5432)** URI; the transaction pooler on 6543 does not support the statements `pg_dump` issues. It carries the database password, so a person has to paste it — no agent should carry a password into a form.
+
+The `Keepalive` workflow needs **nothing**: it reads the public URL and
+publishable key from the live site, the same pair every visitor's browser
+downloads. **Never put the `service_role` key in CI** — the backup dumps the
+`public` schema only, on purpose, and nothing in CI should be able to read
+`auth.users`.
 
 ```bash
 gh secret set SUPABASE_DB_URL
@@ -222,8 +270,8 @@ into the run summary. That is a one-time red: set the secret and it never fires
 again.
 
 A useful consequence: **the next scheduled run of each is now a test.** Green
-means the secret is really there and the job really did the work; red means it
-never has been. Neither question could be answered from the run list before.
+means the job really did the work; red means it never has. Neither question
+could be answered from the run list before.
 
 ## 7. Before you tell anyone
 

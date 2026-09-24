@@ -23,6 +23,7 @@
    modify or delete a row. */
 
 import { readFileSync, existsSync } from 'node:fs';
+import { liftPublicConfig, DEFAULT_SITE } from './public-config.mjs';
 
 /* ------------------------------------------------------------ environment */
 
@@ -43,8 +44,24 @@ function loadEnv() {
 }
 
 const env = loadEnv();
-const url = (env.VITE_SUPABASE_URL ?? '').replace(/\/+$/, '');
-const anon = env.VITE_SUPABASE_ANON_KEY ?? '';
+let url = (env.VITE_SUPABASE_URL ?? '').replace(/\/+$/, '');
+let anon = env.VITE_SUPABASE_ANON_KEY ?? '';
+
+/* No `.env`? Ask production. The pair this script needs is public and already
+   in the site's JavaScript, so with nothing configured locally it reads that
+   instead of stopping — which means anyone, or any agent, can run the doctor
+   against the live project with zero setup. A local `.env` still wins, so a
+   developer pointing at a different project is not overridden. */
+if (!url || !anon) {
+  try {
+    const lifted = await liftPublicConfig();
+    url ||= lifted.url.replace(/\/+$/, '');
+    anon ||= lifted.key;
+    console.log(`\n  No .env — using the public config the live site ships (${DEFAULT_SITE}).`);
+  } catch {
+    /* Fall through to the explanation below. */
+  }
+}
 
 /* ---------------------------------------------------------------- results */
 
@@ -258,7 +275,14 @@ async function req(path, init = {}) {
         'Email confirmation',
         'Confirmation is OFF (mailer_autoconfirm is true) — an address is ' +
           'trusted without ever being checked, so anyone can sign up as anyone.',
-        'Authentication -> Providers -> Email -> turn "Confirm email" ON.',
+        /* Order is the whole fix. Supabase's built-in mailer delivers only to
+           members of the project's own team, at 2 messages an hour. Turn this
+           on before a custom SMTP sender exists and no student can ever confirm
+           an address — sign-up breaks for everyone, silently, while it keeps
+           working for whoever tests it from a team account. */
+        'FIRST configure custom SMTP (Authentication -> Emails -> SMTP Settings) — the built-in ' +
+          'mailer only delivers to your own team. THEN Authentication -> Providers -> Email -> ' +
+          'turn "Confirm email" ON. In the other order, nobody outside the team can sign up.',
       );
     } else {
       ok('Email confirmation', 'ON — addresses must be confirmed');
@@ -300,7 +324,8 @@ for (const r of results) {
 console.log(
   '  Not checkable with the anon key, still on you:\n' +
     '    - the redirect allowlist has no wildcards (Authentication -> URL Configuration)\n' +
-    '    - SITE_URL is set as a function secret\n' +
+    '    - custom SMTP is configured — without it no email (confirmation, reset,\n' +
+    '      login code) reaches anyone outside the project team\n' +
     '    - the email templates carry the six-digit code as well as the link\n',
 );
 

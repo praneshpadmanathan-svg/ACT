@@ -18,15 +18,23 @@
 # warns that a non-interactive run proceeds without asking. So: add a key here
 # only when you intend to own that setting, and run `config diff` first, always.
 #
-# Two things that belong on this list and cannot be here:
+# **Do not push this before custom SMTP exists.** `enable_confirmations = true`
+# below is correct and it is also a trap: Supabase's built-in mailer delivers
+# only to members of the project's own team, at 2 messages an hour. Push this
+# first and no student can ever confirm an address — sign-up breaks for
+# everyone except whoever tests it from a team account, which is exactly who
+# would test it. SMTP is not declared here because it needs a password, and no
+# secret goes in this repository. Set it in the dashboard, then push.
 #
-#   - **Leaked-password protection** (rejects passwords found in breach
-#     corpora). No config.toml key exists for it; it is dashboard-only.
-#     Authentication -> Providers -> Email. It is the highest-value switch on
-#     that page for an audience that reuses passwords.
-#   - **Bot protection / Turnstile.** `[auth.captcha]` exists and supports
-#     `provider = "turnstile"`, but it needs `secret = "..."`, and no secret
-#     goes in this repository. Configure it in the dashboard.
+# Two things that looked like they belonged here and do not:
+#
+#   - **Leaked-password protection** is Pro-plan only. This project is on Free,
+#     so the switch does not exist for it; the client-side password rules and
+#     `minimum_password_length` below are the stopgap.
+#   - **Bot protection / Turnstile.** Do not enable it. The app sends no
+#     `captchaToken` with any auth call, so turning it on server-side makes
+#     every sign-up, sign-in and password reset fail. It needs client code and
+#     a Cloudflare site key first; until then it stays off.
 
 project_id = "wjdvwqcoxemzbemqjbys"
 
