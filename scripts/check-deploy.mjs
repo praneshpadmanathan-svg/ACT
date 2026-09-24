@@ -27,6 +27,8 @@
  * Read-only. It makes GET requests to a public site and sends no credentials.
  */
 
+import { readFileSync } from 'node:fs';
+
 const DEFAULT_SITE = 'https://act-red.vercel.app';
 
 const site = (process.argv[2] ?? DEFAULT_SITE).replace(/\/+$/, '');
@@ -241,10 +243,12 @@ if (hosts.length === 1 && csp && !/connect-src[^;]*supabase\.co/.test(csp)) {
    requests, several of which carry statutory response windows. Two ways that
    goes wrong, and both are invisible from the repository:
 
-   a free-mail address means the app shipped with src/lib/contact.ts's FALLBACK
-   still in place, i.e. the VITE_CONTACT_* variables were never set on the
-   deployment — a personal inbox on a public page aimed at minors, which will
-   be scraped; and security.txt is a static file no env var can reach, so it
+   a free-mail address is a personal inbox on a public page aimed at minors,
+   which will be scraped — and it arrives by either of two routes that look
+   identical from outside: the VITE_CONTACT_* variables were never set on the
+   deployment, so src/lib/contact.ts's FALLBACK shipped, or someone set a
+   consumer address on purpose. The check below tells them apart, because the
+   fix differs; and security.txt is a static file no env var can reach, so it
    drifts silently the moment the bundle's address changes. */
 
 const FREE_MAIL = /@(gmail|googlemail|yahoo|hotmail|outlook|live|icloud|aol|proton(mail)?)\./i;
@@ -270,12 +274,35 @@ const bundleEmails = [
 const personal = bundleEmails.filter((e) => FREE_MAIL.test(e));
 
 if (personal.length) {
+  /* Two different problems wear the same symptom, and printing the wrong fix
+     sends you to the wrong place. Still the source fallback means the build was
+     never given the variables; a *different* consumer-mail address means one
+     was chosen on purpose. Both earn a warning on a page that offers minors a
+     data-deletion route — a mailbox on a free provider cannot be handed to
+     anyone else, dies with the personal account, and has no custody story for
+     the access and deletion requests the privacy policy promises to honour —
+     but only the first is a deployment mistake.
+
+     Read the fallback out of the source rather than repeating it here. A second
+     copy of that address in the repo is the thing commit 055a5f4 removed from
+     Legal.tsx, and it would drift the moment either side changed. */
+  const fallback = (readFileSync(new URL('../src/lib/contact.ts', import.meta.url), 'utf8').match(
+    /FALLBACK\s*=\s*['"]([^'"]+)['"]/,
+  ) ?? [])[1];
+  const unset = Boolean(fallback) && personal.includes(fallback);
+
   warn(
     'contact address',
-    `The live build publishes ${personal.join(', ')} as its contact address. That is the ` +
-      'fallback in src/lib/contact.ts, so the deployment was never given the contact variables.',
-    'Set VITE_CONTACT_SUPPORT (and optionally VITE_CONTACT_PRIVACY, VITE_CONTACT_SECURITY) on the ' +
-      'Vercel project and redeploy, then edit public/.well-known/security.txt to match by hand.',
+    `The live build publishes ${personal.join(', ')} as its contact address. ` +
+      (unset
+        ? 'That is still the fallback in src/lib/contact.ts, so the deployment was never given the contact variables.'
+        : 'That is a consumer mail provider, so it was set deliberately — but it is still a personal mailbox on a public page aimed at minors.'),
+    unset
+      ? 'Set VITE_CONTACT_SUPPORT (and optionally VITE_CONTACT_PRIVACY, VITE_CONTACT_SECURITY) on the ' +
+          'Vercel project and redeploy, then edit public/.well-known/security.txt to match by hand.'
+      : 'Prefer an address on a domain you control: it can be handed over, it survives losing the ' +
+          'personal account, and it does not tie the project to one individual. If this is a ' +
+          'deliberate interim choice, it stays a warning and never becomes a failure.',
   );
 } else if (bundleEmails.length) {
   ok('contact address', `Publishes ${bundleEmails.join(', ')}.`);
