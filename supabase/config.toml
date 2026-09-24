@@ -1,0 +1,70 @@
+# Auth settings as code.
+#
+# These used to be checklist boxes someone ticked by hand in the dashboard,
+# which is how "Confirm email" came to be OFF in production without anything in
+# the repo being able to say so. Declared here they are reviewable, diffable,
+# and applied by one command:
+#
+#   npx supabase login                       # once, opens a browser
+#   npx supabase link --project-ref wjdvwqcoxemzbemqjbys
+#   npm run supabase:config-diff             # READ THIS before the next line
+#   npm run supabase:config-push
+#
+# **Deliberately minimal, and it must stay that way.** `config push` leaves
+# properties this file does not declare unchanged — that is the whole reason it
+# is safe to run against a live project. The file `supabase init` generates is
+# the opposite: ~370 lines where every default is declared, so pushing it would
+# overwrite real hosted settings with template values, and the CLI's own help
+# warns that a non-interactive run proceeds without asking. So: add a key here
+# only when you intend to own that setting, and run `config diff` first, always.
+#
+# Two things that belong on this list and cannot be here:
+#
+#   - **Leaked-password protection** (rejects passwords found in breach
+#     corpora). No config.toml key exists for it; it is dashboard-only.
+#     Authentication -> Providers -> Email. It is the highest-value switch on
+#     that page for an audience that reuses passwords.
+#   - **Bot protection / Turnstile.** `[auth.captcha]` exists and supports
+#     `provider = "turnstile"`, but it needs `secret = "..."`, and no secret
+#     goes in this repository. Configure it in the dashboard.
+
+project_id = "wjdvwqcoxemzbemqjbys"
+
+[auth]
+# The origin every confirmation and password-reset link is built against. Wrong
+# here and the mail goes out with links that lead nowhere.
+site_url = "https://act-red.vercel.app"
+
+# *Exact* URLs, no wildcards. Not `https://*.vercel.app` and not a `/**` suffix:
+# a permissive redirect list is an open redirect on an auth callback, which
+# turns a genuine Supabase login link into a token-theft path — the attacker
+# sends a real link whose redirect points at a page they control. The wildcard
+# form is worse than it looks on vercel.app, where anyone can take a subdomain
+# in about thirty seconds.
+additional_redirect_urls = ["http://localhost:5173"]
+
+# The client already refuses anything under 8. This makes the server agree,
+# which is the half that cannot be edited out in devtools.
+minimum_password_length = 8
+
+[auth.email]
+# The one that was actually wrong. Off, an address is trusted without ever being
+# checked, so anyone can sign up as anyone else — including as a teacher, a
+# parent, or another student. The CLI's own default for this key is `false`,
+# which is exactly the production state this file exists to correct.
+enable_confirmations = true
+
+# Confirm an email change on the old address as well as the new one. Without it,
+# whoever holds a logged-in session can quietly move the account to an address
+# the original owner does not control, and the owner is never told.
+double_confirm_changes = true
+
+# Require a recent login before a password change, so a borrowed unlocked phone
+# cannot be turned into a permanent takeover.
+secure_password_change = true
+
+# The app asks for a six-digit code as well as a link (`sendLoginCode` in
+# src/lib/supabase.ts). Declared so a future default change cannot silently
+# break the code path — note this only sets the length; the Magic Link template
+# still has to include `{{ .Token }}` or no code is ever sent.
+otp_length = 6

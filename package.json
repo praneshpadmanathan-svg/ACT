@@ -31,7 +31,9 @@
     "build:props": "node scripts/build-props.mjs",
     "build:regions": "node scripts/build-regions.mjs",
     "build:surround": "node scripts/build-surround.mjs",
-    "check:deploy": "node scripts/check-deploy.mjs"
+    "check:deploy": "node scripts/check-deploy.mjs",
+    "supabase:config-diff": "supabase config diff",
+    "supabase:config-push": "supabase config push"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

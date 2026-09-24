@@ -94,19 +94,36 @@ function secret, and the email templates. Those stay hand-checked below.
 
 ## 3. Auth settings
 
-Dashboard → Authentication.
+### 3a. The ones that are now code
 
-- [ ] **Confirm email** — ON. Without it anyone can sign up as anyone.
-- [ ] **Minimum password length** — 8. (The client enforces 8; make the server agree.)
+[`supabase/config.toml`](../supabase/config.toml) declares them, so they are
+reviewable and diffable instead of being someone's memory of a dashboard visit.
+Sign in once, link, **read the diff**, then push:
+
+```bash
+npx supabase login
+npx supabase link --project-ref wjdvwqcoxemzbemqjbys
+npm run supabase:config-diff
+npm run supabase:config-push
+```
+
+Do not skip the diff. `config push` leaves undeclared properties alone — that is
+what makes it safe against a live project — but a non-interactive run proceeds
+without asking, so the diff is the only review step there is.
+
+That applies: **Confirm email ON**, **minimum password length 8**, **Site URL**
+`https://act-red.vercel.app`, the **redirect allowlist** (exact URLs, no
+wildcards), confirm-both-addresses on an email change, reauth before a password
+change, and a six-digit OTP. Each one is commented in the file with the reason.
+
+- [ ] Pushed, and `npm run supabase:doctor` now reports Email confirmation as a pass.
+
+### 3b. The ones that cannot be
+
+Dashboard → Authentication. Neither has a `config.toml` key.
+
 - [ ] **Leaked password protection** — ON. Rejects passwords found in known breaches: the single highest-value switch on this page for an audience that reuses passwords. The client refuses the obvious shapes (runs, repeats, the site's name, the user's own email) but it cannot know what is in a breach corpus, so this is the half that actually matters.
-- [ ] **Bot protection (Cloudflare Turnstile)** — ON for sign-up. Bot registrations burn the 50,000-user allowance and fill the database, and neither is recoverable on the free plan.
-- [ ] **Site URL** — `https://act-red.vercel.app`, exactly. No trailing slash. This is the origin the confirmation and reset links are built against, so a wrong value here produces mail whose links go nowhere.
-- [ ] **Redirect URLs** — exactly these two lines, and nothing else:
-
-      https://act-red.vercel.app
-      http://localhost:5173
-
-  **No wildcards.** Not `https://*.vercel.app`, and not `https://act-red.vercel.app/**`. A permissive redirect list is an open redirect, and an open redirect on an auth callback hands attackers a token-theft path — they send a victim a real Supabase login link whose `redirect_to` points at a page they control, and the token lands there. `*.vercel.app` is the worst version of it, because anyone can deploy to that domain in thirty seconds.
+- [ ] **Bot protection (Cloudflare Turnstile)** — ON for sign-up. Bot registrations burn the 50,000-user allowance and fill the database, and neither is recoverable on the free plan. `[auth.captcha]` does exist in `config.toml`, but it requires the provider `secret` inline, and no secret goes in this repository — so this one stays in the dashboard on purpose.
 
 ### Email templates
 
@@ -127,13 +144,13 @@ Account deletion needs the `service_role` key, which must never be in the
 browser bundle. It lives in an Edge Function instead:
 
 ```bash
-supabase functions deploy delete-account
+npx supabase functions deploy delete-account
 ```
 
 Then set the origins it will accept — **required**, not optional:
 
 ```bash
-supabase secrets set SITE_URL=https://act-red.vercel.app,http://localhost:5173
+npx supabase secrets set SITE_URL=https://act-red.vercel.app,http://localhost:5173
 ```
 
 Comma-separated, no trailing slashes. If this is unset the function falls back to
