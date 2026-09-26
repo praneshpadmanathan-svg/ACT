@@ -35,10 +35,12 @@ import { FieldLabel, Select } from '@/components/fields';
 import { Glyph } from '@/components/Icon';
 import { burstConfetti } from '@/components/Feedback';
 import { Art } from '@/components/Art';
+import { LIBRARY_STATS } from '@/content/stats';
 
 export function Auth({ mode: initialMode }: { mode: AuthMode }) {
   const navigate = useNavigate();
   const {
+    userId,
     continueAsGuest,
     claimGuestProgress,
     releaseGuestClaim,
@@ -62,6 +64,12 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
   const [tooYoung, setTooYoung] = useState(() => rememberedVerdict() === 'too-young');
 
   const startPlaying = () => {
+    /* Already signed in: the account is the world. Going through onboarding
+       again would overwrite its profile, so go straight back to camp. */
+    if (userId) {
+      navigate({ name: 'home' }, { replace: true });
+      return;
+    }
     continueAsGuest();
     navigate({ name: 'onboarding' }, { replace: true });
   };
@@ -213,8 +221,9 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
       <Frame title="Accounts aren’t switched on yet">
         <p className="mb-4 font-read text-[15px] leading-relaxed text-parchment-dim">
           This copy of ACT Command has no account server connected, so there is nothing to sign in
-          to right now. Everything saves to this browser instead — all 754 questions, every lesson,
-          the guardians and the timed trial work exactly the same.
+          to right now. Everything saves to this browser instead — all{' '}
+          {LIBRARY_STATS.totalQuestions.toLocaleString()} questions, every lesson, the guardians and
+          the timed trial work exactly the same.
         </p>
         <p className="mb-6 rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[13px] leading-relaxed text-ink-faint">
           Running this yourself? Accounts turn on the moment{' '}

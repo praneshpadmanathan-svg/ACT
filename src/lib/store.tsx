@@ -627,12 +627,17 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     remoteUpdatedAtRef.current = null;
   }, []);
 
+  /* Refused while signed in. Switching to the guest world leaves `userId` set,
+     so the push effect above would write the guest's progress — under the
+     name 'Traveller' — into the account's cloud row. Reachable from the
+     Landing header's "Sign in" link, which signed-in users also see. */
   const continueAsGuest = useCallback(() => {
+    if (userId) return;
     writeRaw(STORAGE_KEYS.guest, '1');
     setHasStarted(true);
     setPlayerName('Traveller');
     switchIdentity({ kind: 'guest' });
-  }, [switchIdentity]);
+  }, [userId, switchIdentity]);
 
   const claimGuestProgress = useCallback(() => {
     writeRaw(CLAIM_GUEST_KEY, '1');

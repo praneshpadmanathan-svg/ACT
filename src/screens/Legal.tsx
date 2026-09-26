@@ -19,6 +19,7 @@ import { sfx } from '@/lib/sfx';
 import { Button } from '@/components/ui';
 import { Glyph } from '@/components/Icon';
 import { Art } from '@/components/Art';
+import { LIBRARY_STATS } from '@/content/stats';
 
 const UPDATED = '31 July 2026';
 
@@ -79,8 +80,9 @@ function Privacy() {
 
       <H>Playing without an account</H>
       <P>
-        You can use every part of ACT Command without telling us anything. All 754 questions, every
-        lesson, every landmark, the guardians and the timed trial work with no account at all.
+        You can use every part of ACT Command without telling us anything. All{' '}
+        {LIBRARY_STATS.totalQuestions.toLocaleString()} questions, every lesson, every landmark, the
+        guardians and the timed trial work with no account at all.
       </P>
       <P>
         In that mode your progress is stored by your own browser, on your own device, using

@@ -19,7 +19,7 @@
  */
 import { Select as BaseSelect } from '@base-ui/react/select';
 import { Glyph } from './Icon';
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { cx } from '../lib/utils';
 /* The same twelve strings the age gate already ships. Auth's birth-date
    question and onboarding's test-date question have to agree on them. */
@@ -123,6 +123,11 @@ function daysIn(month: number, year: number | null) {
   return new Date(y, month, 0).getDate();
 }
 
+function splitIso(iso: string) {
+  const [y = '', m = '', d = ''] = iso ? iso.split('-') : [];
+  return { y, m, d };
+}
+
 /* ISO `yyyy-mm-dd` in and out, because that is what both callers already
    store and what Supabase expects. */
 export function DateField({
@@ -138,7 +143,19 @@ export function DateField({
   toYear: number;
   ariaPrefix: string;
 }) {
-  const [y = '', m = '', d = ''] = value ? value.split('-') : [];
+  /* The picks live here, not in `value`. The parent stores only a complete
+     date, so deriving the selects from `value` alone threw away every partial
+     choice: pick a month on an empty field, the parent stores '', and the month
+     snapped straight back to its placeholder. Nobody without a date already
+     saved could ever set one. `value` still wins whenever the parent changes
+     it — a Clear button, or a date loaded from the cloud. */
+  const [parts, setParts] = useState(() => splitIso(value));
+  const [synced, setSynced] = useState(value);
+  if (value !== synced) {
+    setSynced(value);
+    setParts(splitIso(value));
+  }
+  const { y, m, d } = parts;
   const year = y ? Number(y) : null;
   const month = m ? Number(m) : 0;
 
@@ -153,6 +170,7 @@ export function DateField({
     const limit = daysIn(Number(nextM), nextY ? Number(nextY) : null);
     if (nextD && Number(nextD) > limit) nextD = String(limit);
 
+    setParts({ y: nextY, m: nextM, d: nextD });
     onChange(
       nextY && nextM && nextD ? `${nextY}-${nextM.padStart(2, '0')}-${nextD.padStart(2, '0')}` : '',
     );
