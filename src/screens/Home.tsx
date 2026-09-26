@@ -171,7 +171,7 @@ export function Home() {
             <TrackCard />
           </div>
         </div>
-        <div className="mb-6 grid gap-4 lg:grid-cols-[1.25fr_1fr]">
+        <div className="home-activity">
           <section className="panel-quiet p-6 sm:p-7">
             <h3 className="heading mb-5 text-[17px]">Your progress</h3>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -701,13 +701,28 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
           </span>
         </div>
         <ProgressBar value={week.pct} label="Weekly goal" />
-        {week.activeDays > 0 && (
-          <p className="mt-2 font-read text-[13px] text-ink-faint">
-            {week.activeDays} of the last 7 days studied
-            {week.pct >= 1 ? ' — goal met, anything now is ahead of schedule.' : '.'}
-          </p>
-        )}
+        <p className="mt-2 font-read text-[13px] text-ink-faint">
+          {week.activeDays > 0
+            ? `${week.activeDays} of the last 7 days studied${
+                week.pct >= 1 ? ' — goal met, anything now is ahead of schedule.' : '.'
+              }`
+            : `About ${Math.max(5, Math.round(week.goal / 7))} questions a day meets it.`}
+        </p>
       </div>
+
+      {/* With no date there is no countdown, and the panel would be one bar. */}
+      {days === null && rest.length === 0 && (
+        <p className="border-t border-leather-700 pt-4 font-read text-[13.5px] text-parchment-dim">
+          Know your test date?{' '}
+          <a
+            href={hrefFor({ name: 'settings' })}
+            className="font-semibold text-gold hover:underline"
+          >
+            Add it in Settings
+          </a>{' '}
+          for a countdown to test day.
+        </p>
+      )}
 
       {/* what is left after the hero */}
       {rest.length > 0 && (
