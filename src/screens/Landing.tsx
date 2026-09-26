@@ -499,9 +499,8 @@ export function Landing() {
             <p className="label-sm">Written for this app — not collected from anywhere</p>
             {/* Keep the real count readable before any animation or observer runs. */}
             <div
-              className="num mt-3 font-bold leading-[0.92] text-gold-bright"
+              className="bank-count landing-bank-count mt-3 text-gold-bright"
               style={{
-                fontSize: 'clamp(3.4rem, 12vw, 6rem)',
                 textShadow: '0 0 52px oklch(var(--c-gold) / 0.22)',
               }}
             >

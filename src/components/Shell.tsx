@@ -106,7 +106,7 @@ const GROUPS: NavGroup[] = [
   },
   {
     id: 'prove',
-    label: 'Prove it',
+    label: 'Challenges',
     items: [
       {
         label: 'Duels',
@@ -126,7 +126,7 @@ const GROUPS: NavGroup[] = [
   },
   {
     id: 'you',
-    label: 'You',
+    label: 'Your account',
     items: [
       {
         label: 'Progress',
@@ -188,7 +188,7 @@ function BankBadge() {
       className="rail-bank group"
       title="Practise any topic, any time"
     >
-      <strong className="block font-display text-display-m font-bold text-gold">
+      <strong className="bank-count rail-bank-count block text-gold">
         {LIBRARY_STATS.totalQuestions.toLocaleString()}
       </strong>
       <span className="label-sm mt-1 block">questions in the bank</span>
@@ -275,7 +275,7 @@ function PlayerBlock({ compact }: { compact?: boolean }) {
       }
     >
       <span className="relative flex-none transition-transform duration-200 group-hover:scale-105">
-        <RankBadge rank={rank} size={compact ? 26 : 32} />
+        <RankBadge rank={rank} size={compact ? 30 : 36} />
       </span>
       <span className="min-w-0 flex-1 text-left leading-tight">
         <span className="block truncate font-display text-[12.5px] font-semibold text-parchment">

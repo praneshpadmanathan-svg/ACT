@@ -933,3 +933,21 @@ p {
     transform: none;
   }
 }
+
+/* Clear lining numerals, shared by the rail and the public bank total. */
+.bank-count {
+  font-family: var(--font-sans), Inter, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings:
+    'lnum' 1,
+    'tnum' 1;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+.rail-bank-count {
+  font-size: 2rem;
+}
+.landing-bank-count {
+  font-size: clamp(3.4rem, 12vw, 6rem);
+}

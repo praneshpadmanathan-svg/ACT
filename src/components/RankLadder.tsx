@@ -145,7 +145,7 @@ function Rungs({
      scrolled into view — it is simply gone, and scrollHeight never mentions
      it. The same number sets the side inset, or the first and last rungs lose
      their auras to the same mechanism sideways. */
-  const sigil = { current: expanded ? 84 : 58, other: expanded ? 64 : 44 };
+  const sigil = { current: expanded ? 94 : 66, other: expanded ? 72 : 50 };
   const vars = { '--rung-aura': `${auraBox(sigil.current)}px` } as CSSProperties;
 
   /* Opening the expanded view puts the selected rung in the middle of the
