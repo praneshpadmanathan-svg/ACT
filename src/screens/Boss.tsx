@@ -21,6 +21,7 @@ import { BackLink, Page } from '@/components/Shell';
 import { Button, EmptyState, LEADING_ICON } from '@/components/ui';
 import { Glyph } from '@/components/Icon';
 import { RichText } from '@/components/RichText';
+import { PassagePanel } from '@/components/PassagePanel';
 import { burstConfetti } from '@/components/Feedback';
 import { BossArt, type BossState } from '@/game/BossArt';
 import { HeroSprite } from '@/game/HeroSprite';
@@ -378,8 +379,13 @@ function BossDuel({ section }: { section: string }) {
         </div>
       </div>
 
-      {/* ------------------------------------------------------ question */}
-      <div className="mx-auto max-w-3xl">
+      {/* ------------------------------------------------------ question
+
+          Wider when there is a passage, laid out like the question runner.
+          The Reading and Science guardians serve nothing but passage items, and
+          this used to render only the stem: "According to the passage…" with
+          no passage, "Based on Figure 2…" with no figure. */}
+      <div className={cx('mx-auto', question?.passage ? 'max-w-6xl' : 'max-w-3xl')}>
         <div className="mb-3 flex items-center justify-between gap-3">
           <span className="font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint">
             {question?.topic}
@@ -394,75 +400,80 @@ function BossDuel({ section }: { section: string }) {
         </div>
 
         {question && (
-          <div className="sheet p-5 sm:p-7">
-            {question.label && (
-              <p className="mb-4 border-l-4 border-[#c9b06a] bg-[#faf3e0] px-4 py-3 font-read text-[1.02rem] leading-relaxed">
-                <RichText as="span" format="html">
-                  {question.label}
-                </RichText>
-              </p>
+          <div className={cx('grid gap-5', question.passage && 'lg:grid-cols-2')}>
+            {question.passage && (
+              <PassagePanel key={question.passage.id} passage={question.passage} />
             )}
+            <div className="sheet p-5 sm:p-7">
+              {question.label && (
+                <p className="mb-4 border-l-4 border-paper-deep bg-paper-light px-4 py-3 font-read text-[1.02rem] leading-relaxed">
+                  <RichText as="span" format="html">
+                    {question.label}
+                  </RichText>
+                </p>
+              )}
 
-            <div className="prose-quill mb-5">
-              <RichText as="div" format={question.promptFormat}>
-                {question.prompt}
-              </RichText>
-            </div>
-
-            <div className="space-y-2.5">
-              {question.choices.map((choice, i) => {
-                const isCorrect = choice.key === question.correctKey;
-                const isChosen = choice.key === chosen;
-                return (
-                  <button
-                    key={choice.key}
-                    type="button"
-                    onClick={() => strike(choice.key)}
-                    disabled={revealed}
-                    className={cx(
-                      'choice',
-                      revealed && isCorrect && 'choice-correct',
-                      revealed && isChosen && !isCorrect && 'choice-wrong',
-                      revealed && 'choice-locked cursor-default',
-                    )}
-                  >
-                    <span className="choice-key">{'ABCD'[i] ?? choice.key}</span>
-                    <RichText as="span" format={choice.format} className="min-w-0 flex-1">
-                      {choice.text}
-                    </RichText>
-                  </button>
-                );
-              })}
-            </div>
-
-            {revealed && (
-              <div className="mt-6 animate-fadein border-t-2 border-paper-edge pt-5">
-                <div
-                  className="mb-2 font-script text-[13px] uppercase tracking-[0.16em]"
-                  style={{ color: chosen === question.correctKey ? '#2f6b3a' : '#9c3326' }}
-                >
-                  <Glyph
-                    name={chosen === question.correctKey ? 'sword' : 'cross'}
-                    size={13}
-                    className={LEADING_ICON}
-                  />
-                  {chosen === question.correctKey ? 'A clean hit' : 'It strikes back'}
-                </div>
-                <RichText as="div" format="markdown" className="font-read leading-relaxed">
-                  {question.why[question.correctKey] ?? question.whyGeneral ?? ''}
+              <div className="prose-quill mb-5">
+                <RichText as="div" format={question.promptFormat}>
+                  {question.prompt}
                 </RichText>
-                <Button
-                  variant="primary"
-                  size="lg"
-                  trailing
-                  className="mt-5 w-full"
-                  onClick={next}
-                  autoFocus
-                >
-                  Press the attack
-                </Button>
               </div>
-            )}
+
+              <div className="space-y-2.5">
+                {question.choices.map((choice, i) => {
+                  const isCorrect = choice.key === question.correctKey;
+                  const isChosen = choice.key === chosen;
+                  return (
+                    <button
+                      key={choice.key}
+                      type="button"
+                      onClick={() => strike(choice.key)}
+                      disabled={revealed}
+                      className={cx(
+                        'choice',
+                        revealed && isCorrect && 'choice-correct',
+                        revealed && isChosen && !isCorrect && 'choice-wrong',
+                        revealed && 'choice-locked cursor-default',
+                      )}
+                    >
+                      <span className="choice-key">{'ABCD'[i] ?? choice.key}</span>
+                      <RichText as="span" format={choice.format} className="min-w-0 flex-1">
+                        {choice.text}
+                      </RichText>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {revealed && (
+                <div className="mt-6 animate-fadein border-t-2 border-paper-edge pt-5">
+                  <div
+                    className="mb-2 font-script text-[13px] uppercase tracking-[0.16em]"
+                    style={{ color: chosen === question.correctKey ? '#2f6b3a' : '#9c3326' }}
+                  >
+                    <Glyph
+                      name={chosen === question.correctKey ? 'sword' : 'cross'}
+                      size={13}
+                      className={LEADING_ICON}
+                    />
+                    {chosen === question.correctKey ? 'A clean hit' : 'It strikes back'}
+                  </div>
+                  <RichText as="div" format="markdown" className="font-read leading-relaxed">
+                    {question.why[question.correctKey] ?? question.whyGeneral ?? ''}
+                  </RichText>
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    trailing
+                    className="mt-5 w-full"
+                    onClick={next}
+                    autoFocus
+                  >
+                    Press the attack
+                  </Button>
+                </div>
+              )}
+            </div>
           </div>
         )}
       </div>

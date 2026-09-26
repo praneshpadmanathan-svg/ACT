@@ -38,7 +38,12 @@ export function PaletteHost() {
          when they are not already typing, or it eats a slash in an answer. */
       const el = e.target as HTMLElement | null;
       const typing =
-        !!el && (el.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(el.tagName));
+        !!el &&
+        (el.isContentEditable ||
+          ['INPUT', 'TEXTAREA', 'SELECT'].includes(el.tagName) ||
+          /* The calculator's ÷ key is `/`; opening the palette over a timed
+             test is the last thing anyone dividing wants. */
+          !!el.closest('[role="application"],[role="dialog"]'));
       if (e.key === '/' && !typing && !e.metaKey && !e.ctrlKey && !e.altKey) {
         e.preventDefault();
         show();

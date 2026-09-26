@@ -253,6 +253,10 @@ export function QuestionRunner({
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       const target = e.target as HTMLElement | null;
       if (target && ['INPUT', 'TEXTAREA'].includes(target.tagName)) return;
+      /* A key another control already used, or one typed into a tool panel.
+         The calculator takes digits, `c` and Enter, and without this every
+         one of them also answered the question underneath it. */
+      if (e.defaultPrevented || target?.closest('[role="application"],[role="dialog"]')) return;
 
       if (!revealed && question) {
         const letterIndex = 'abcd'.indexOf(e.key.toLowerCase());
@@ -265,6 +269,13 @@ export function QuestionRunner({
         }
         return;
       }
+      /* Enter on Bookmark, Report or Exit should press that button, not skip
+         the question. And in test mode the reveal lasts 120ms before the
+         automatic advance, so a key in that window advanced twice — a question
+         never shown, or a finished test recorded twice. */
+      const onOtherControl =
+        !!target?.closest('button, a') && !target.closest('[role="radiogroup"]');
+      if (deferFeedback || onOtherControl) return;
       if (revealed && (e.key === 'Enter' || e.key === ' ')) {
         e.preventDefault();
         advance(records);
@@ -272,7 +283,7 @@ export function QuestionRunner({
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [revealed, question, commit, advance, records]);
+  }, [revealed, question, commit, advance, records, deferFeedback]);
 
   const correctSoFar = useMemo(() => records.filter((r) => r.correct).length, [records]);
   const tier = streakTier(streak);
@@ -369,7 +380,9 @@ export function QuestionRunner({
           never confused: the passage is a page, the task column is a leather
           well with paper objects raised out of it. */}
       <div className={cx('grid gap-5', question.passage && 'lg:grid-cols-2')}>
-        {question.passage && <PassagePanel passage={question.passage} />}
+        {/* Keyed so a new passage opens at the top, not scrolled to wherever
+            the last one was left. */}
+        {question.passage && <PassagePanel key={question.passage.id} passage={question.passage} />}
 
         {/* The well remounts per question, so every question arrives instead
             of being swapped underneath the reader. Keyed on the index as well

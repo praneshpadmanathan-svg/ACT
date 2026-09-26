@@ -188,7 +188,13 @@ function Calculator() {
   );
 
   return (
-    <div onKeyDown={onKeyDown} role="application" aria-label="Calculator">
+    <div
+      onKeyDown={onKeyDown}
+      role="application"
+      aria-label="Calculator"
+      tabIndex={0}
+      className="rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-gold"
+    >
       <output
         className="mb-2.5 block w-full overflow-hidden text-ellipsis rounded-lg border-2 border-leather-700
                    bg-leather-950 px-3 py-3 text-right font-display text-[26px] leading-none text-gold"
@@ -325,7 +331,13 @@ export function ToolDock({
   useEffect(() => {
     if (!open) return;
     openerRef.current = document.activeElement as HTMLElement | null;
-    const focusIn = () => panelRef.current?.focus({ preventScroll: true });
+    /* The calculator's key handler sits on its own element, and key events
+       bubble up, never down — focusing the panel left "your keyboard works
+       too" untrue until a button had been clicked. */
+    const focusIn = () =>
+      (
+        panelRef.current?.querySelector<HTMLElement>('[role="application"]') ?? panelRef.current
+      )?.focus({ preventScroll: true });
     const raf = window.requestAnimationFrame(focusIn);
     const fallback = window.setTimeout(focusIn, 120);
 

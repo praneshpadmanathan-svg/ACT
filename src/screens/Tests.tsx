@@ -253,6 +253,11 @@ function TestSession({ config }: { config: string }) {
   /* This one *is* state, because the pacing checkpoint renders from it. Reset
      at every section boundary alongside `sectionStartRef`. */
   const [answeredCount, setAnsweredCount] = useState(0);
+  /* This section's answers as they happen, keyed by question. The runner only
+     hands its records over in `onFinish`, so when the clock ran out first
+     there was nothing to score and the whole section came back 0 correct —
+     20 right answers out of 25 reported as none. */
+  const liveAnswersRef = useRef(new Map<string, AnswerRecord>());
 
   // Questions are drawn once, up front, so a re-render never reshuffles a
   // test that is already in progress.
@@ -358,6 +363,7 @@ function TestSession({ config }: { config: string }) {
                 startedAtRef.current = Date.now();
                 sectionStartRef.current = Date.now();
                 setAnsweredCount(0);
+                liveAnswersRef.current = new Map();
                 sfx.warn();
                 setStage({ kind: 'section', index: 0 });
               }}
@@ -400,6 +406,7 @@ function TestSession({ config }: { config: string }) {
               onClick={() => {
                 sectionStartRef.current = Date.now();
                 setAnsweredCount(0);
+                liveAnswersRef.current = new Map();
                 setStage({ kind: 'section', index: stage.nextIndex });
               }}
             >
@@ -478,7 +485,7 @@ function TestSession({ config }: { config: string }) {
         totalQuestions={questions.length}
         onExpire={() => {
           sfx.warn();
-          completeSection(answersBySection[sectionId] ?? []);
+          completeSection([...liveAnswersRef.current.values()]);
         }}
       />
       <QuestionRunner
@@ -488,7 +495,8 @@ function TestSession({ config }: { config: string }) {
         subtitle={`Section ${stageIndex + 1} of ${sectionIds.length}`}
         accent={SECTION_BY_ID[sectionId].color}
         deferFeedback
-        onAnswer={() => {
+        onAnswer={(record) => {
+          liveAnswersRef.current.set(record.question.id, record);
           /* Test answers are scored at the end, not recorded as drill
              attempts — otherwise a test would skew topic accuracy twice. The
              count is all the pacing checkpoint needs. */
@@ -527,7 +535,8 @@ function SectionTimer({
       const left = Math.max(0, Math.round((deadlineRef.current - Date.now()) / 1000));
       setRemaining(left);
 
-      if (left === 300 && !warnedRef.current) {
+      /* `<=`, not `===`: a throttled background tab can tick past 300. */
+      if (left <= 300 && left > 0 && !warnedRef.current) {
         warnedRef.current = true;
         sfx.warn();
       }

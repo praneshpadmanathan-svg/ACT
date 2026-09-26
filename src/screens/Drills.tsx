@@ -5,7 +5,7 @@
    spends its questions where they are worth the most. */
 
 import { useMemo, useState } from 'react';
-import { QUESTIONS, SECTION_BY_ID, TOPICS_BY_SECTION, getQuestion } from '@/content';
+import { QUESTIONS, SECTION_BY_ID, TOPICS_BY_SECTION } from '@/content';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { fromDrillQuestion, runnableById } from '@/lib/normalize';
@@ -307,7 +307,13 @@ function ReviewSession() {
   const navigate = useNavigate();
   const { progress, answerQuestion } = useStore();
   const [results, setResults] = useState<AnswerRecord[] | null>(null);
-  const [started, setStarted] = useState(false);
+  /* The queue as it stood when "Start" was pressed. `due` is recomputed from
+     `progress`, and every answer changes `progress.review` — a right answer
+     pushes the card days out, a wrong one re-sorts it to the front — so
+     running off `due` directly shifted the list under the runner's index:
+     feedback judged against the wrong question, the next one skipped, and a
+     blank screen once the index ran past the shrunken end. */
+  const [started, setStarted] = useState<RunnableQuestion[] | null>(null);
 
   const due = useMemo(() => {
     /* `runnableById`, not `getQuestion`: the latter reads the drill bank
@@ -328,7 +334,7 @@ function ReviewSession() {
         accent="oklch(var(--c-cliffs-text))"
         onRetry={() => {
           setResults(null);
-          setStarted(false);
+          setStarted(null);
         }}
         onDone={() => navigate({ name: 'home' })}
       />
@@ -373,7 +379,7 @@ function ReviewSession() {
               size="lg"
               trailing
               className="mt-7"
-              onClick={() => setStarted(true)}
+              onClick={() => setStarted(due)}
             >
               Start review
             </Button>
@@ -389,11 +395,11 @@ function ReviewSession() {
   return (
     <Page>
       <QuestionRunner
-        questions={due}
+        questions={started}
         title="Review session"
         subtitle="Questions you have missed before"
         accent="oklch(var(--c-cliffs-text))"
-        onQuit={() => setStarted(false)}
+        onQuit={() => setStarted(null)}
         onAnswer={(record) =>
           answerQuestion({
             qid: record.question.id,
@@ -427,7 +433,9 @@ export function BookmarksScreen() {
   const navigate = useNavigate();
   const { progress, updateProgress, answerQuestion } = useStore();
   const [results, setResults] = useState<AnswerRecord[] | null>(null);
-  const [started, setStarted] = useState(false);
+  /* Snapshotted at start for the same reason as review: un-bookmarking the
+     question on screen would otherwise remove it from the running list. */
+  const [started, setStarted] = useState<RunnableQuestion[] | null>(null);
 
   /* Newest first: a bookmark is a note to self, and the most recent one is
      almost always the one being looked for. Ids whose question has since left
@@ -436,8 +444,10 @@ export function BookmarksScreen() {
     () =>
       [...progress.bookmarks]
         .reverse()
-        .map(getQuestion)
-        .filter((q): q is Question => Boolean(q)),
+        /* `runnableById`, not `getQuestion`: landmark questions carry a
+           bookmark button too, and the drill bank alone dropped every one. */
+        .map(runnableById)
+        .filter((q): q is RunnableQuestion => Boolean(q)),
     [progress.bookmarks],
   );
 
@@ -451,22 +461,22 @@ export function BookmarksScreen() {
         accent="oklch(var(--c-gold))"
         onRetry={() => {
           setResults(null);
-          setStarted(false);
+          setStarted(null);
         }}
         onDone={() => navigate({ name: 'drills' })}
       />
     );
   }
 
-  if (started && saved.length > 0) {
+  if (started && started.length > 0) {
     return (
       <Page>
         <QuestionRunner
-          questions={saved.map(fromDrillQuestion)}
+          questions={started}
           title="Saved questions"
-          subtitle={`${saved.length} you set aside`}
+          subtitle={`${started.length} you set aside`}
           accent="oklch(var(--c-gold))"
-          onQuit={() => setStarted(false)}
+          onQuit={() => setStarted(null)}
           onAnswer={(record) =>
             answerQuestion({
               qid: record.question.id,
@@ -505,7 +515,7 @@ export function BookmarksScreen() {
       ) : (
         <>
           <div className="mb-5 flex flex-wrap items-center gap-3">
-            <Button variant="primary" trailing onClick={() => setStarted(true)}>
+            <Button variant="primary" trailing onClick={() => setStarted(saved)}>
               Run all {saved.length} as a drill
             </Button>
             <span className="text-[13px] text-ink-faint">
@@ -534,7 +544,7 @@ export function BookmarksScreen() {
                   {/* The stem, plain and clipped. Enough to recognise the
                       question by without giving the answer away at a glance. */}
                   <span className="mt-1.5 block line-clamp-2 font-read text-[14px] leading-relaxed text-parchment-dim">
-                    {q.context
+                    {(q.label || q.prompt)
                       .replace(/<[^>]+>/g, ' ')
                       .replace(/\s+/g, ' ')
                       .trim()}
@@ -721,7 +731,7 @@ export function DrillSummary({
               {missed.map((r, i) => (
                 <div key={i} className="sheet p-5 sm:p-6">
                   {r.question.label && (
-                    <p className="mb-3 border-l-4 border-[#c9b06a] bg-[#fbf6e6] px-4 py-2.5 font-read text-[0.98rem]">
+                    <p className="mb-3 border-l-4 border-paper-deep bg-paper-light px-4 py-2.5 font-read text-[0.98rem]">
                       <RichText as="span" format="html">
                         {r.question.label}
                       </RichText>
