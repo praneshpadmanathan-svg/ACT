@@ -198,7 +198,13 @@ function Rungs({
                     current ? ', your rank' : earned ? ', earned' : ', locked'
                   }`}
                 >
-                  <RankSigil rank={r} size={current ? sigil.current : sigil.other} aura={current} />
+                  <span className="rank-rung-art">
+                    <RankSigil
+                      rank={r}
+                      size={current ? sigil.current : sigil.other}
+                      aura={current}
+                    />
+                  </span>
                   <span
                     className="rank-rung-name"
                     style={{

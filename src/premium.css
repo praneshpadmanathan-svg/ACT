@@ -316,8 +316,8 @@ p {
      prop. */
   /* Track only: the widest rank name is ~77px and the narrowest gap is 13%
      of the track, so 38rem leaves every pair of labels at least ~8px apart. */
-  --ladder-min: 38rem;
-  --rung-w: 4.5rem;
+  --ladder-min: 52rem;
+  --rung-w: 6.5rem;
   --rung-h: 7.25rem;
 }
 .rank-ladder-head {
@@ -326,8 +326,8 @@ p {
   margin-bottom: -0.5rem;
 }
 .rank-ladder-expand {
-  font-family: var(--font-script, inherit);
-  font-size: 0.625rem;
+  font-family: var(--font-sans), Inter, sans-serif;
+  font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: oklch(var(--c-ink-faint));
@@ -379,6 +379,7 @@ p {
 }
 .rank-rung {
   position: absolute;
+  width: var(--rung-w);
   bottom: 0;
   transform: translateX(-50%);
 }
@@ -398,8 +399,7 @@ p {
   border-radius: 0.5rem;
   background: none;
   cursor: pointer;
-  opacity: 0.5;
-  filter: grayscale(0.65);
+  opacity: 1;
   transition:
     opacity 180ms ease,
     filter 180ms ease,
@@ -412,7 +412,7 @@ p {
 .rank-rung-button:hover,
 .rank-rung-button:focus-visible {
   opacity: 1;
-  transform: translateY(-2px);
+  background: oklch(var(--c-leather-800));
 }
 /* The selected rung is marked by a ring rather than by brightness: brightness
    is already spent saying earned-vs-locked, and a second meaning on the same
@@ -425,17 +425,38 @@ p {
   color: oklch(var(--c-gold));
 }
 .rank-rung-name {
-  font-family: var(--font-script, inherit);
-  font-size: 0.625rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  line-height: 1.1;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-family: var(--font-sans), Inter, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.4;
   text-align: center;
-  color: oklch(var(--c-ink-faint));
+  color: oklch(var(--c-parchment));
 }
 .rank-rung-xp {
-  font-size: 0.625rem;
-  color: oklch(var(--c-ink-faint));
+  font-size: 0.75rem;
+  color: oklch(var(--c-parchment-dim));
+}
+
+.rank-rung-art {
+  width: 100%;
+  height: var(--rung-aura);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.rank-rung-art > * {
+  flex-shrink: 0;
+}
+.rank-rung-button:not(.is-earned) .rank-rung-art {
+  filter: grayscale(0.65);
+  opacity: 0.7;
+}
+.rank-rung-button:focus-visible {
+  outline-offset: 3px;
 }
 
 .rank-detail {
@@ -449,8 +470,8 @@ p {
 }
 .rank-detail-state {
   flex: none;
-  font-family: var(--font-script, inherit);
-  font-size: 0.625rem;
+  font-family: var(--font-sans), Inter, sans-serif;
+  font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: oklch(var(--c-ink-faint));
@@ -494,7 +515,7 @@ p {
      a row sized to the resting height clips two pixels off the badge on the
      way up, which is the same bug arriving on hover instead of on load. */
   --ladder-inset: calc(var(--rung-aura) / 2 + 0.25rem);
-  --rungs-h: calc(var(--rung-aura) + 3rem);
+  --rungs-h: calc(var(--rung-aura) + 5rem);
   overflow-x: auto;
   padding-bottom: 0.25rem;
   /* Double-click opens the full-screen view, and a double-click that also
