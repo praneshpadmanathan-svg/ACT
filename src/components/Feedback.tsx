@@ -214,7 +214,7 @@ export function LevelUpOverlay() {
   return (
     <div
       ref={dialogRef}
-      className="fixed inset-0 z-[110] flex cursor-pointer items-center justify-center overflow-hidden"
+      className="story-overlay fixed inset-0 z-[110] flex cursor-pointer items-center justify-center overflow-hidden"
       style={{
         background: 'radial-gradient(circle at 50% 42%, rgba(46,37,26,.95), rgba(12,9,6,.97))',
       }}

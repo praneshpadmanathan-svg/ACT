@@ -347,7 +347,7 @@ export function SideNav() {
           sits beside rather than a column of the same document. */}
       <aside
         className="rail-surface sticky top-0 z-40 hidden h-dvh w-[236px] flex-none flex-col
-                   bg-leather-950/94 backdrop-blur-md lg:flex"
+                   bg-leather-950/95 backdrop-blur-md lg:flex"
         aria-label="Main"
       >
         <a

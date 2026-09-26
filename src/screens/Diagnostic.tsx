@@ -166,7 +166,7 @@ export function DiagnosticSummary({ result }: { result: DiagnosticResult }) {
   return (
     <Page>
       <div className="mx-auto max-w-2xl">
-        <div className="rounded-xl border-2 border-gold bg-leather-850 p-7 shadow-card sm:p-9">
+        <div className="panel border-gold p-7 sm:p-9">
           <div className="text-center font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
             Placement · {result.asked} questions
           </div>

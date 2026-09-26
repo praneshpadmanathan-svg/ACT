@@ -80,7 +80,7 @@ export function Home() {
         priority
         className="pointer-events-none fixed inset-0 -z-10 h-full w-full select-none object-cover opacity-70"
       />
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-leather-950/80 via-leather-950/88 to-leather-950" />
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-leather-950/80 via-leather-950/90 to-leather-950" />
 
       <Page className="home-dashboard">
         <header className="home-welcome">

@@ -174,7 +174,7 @@ export function SettingsScreen() {
           )}
 
           {lastSyncError && (
-            <p className="mt-3 rounded-lg border-2 border-blood/40 bg-blood/10 px-3 py-2 text-[12px] leading-snug text-[#e8a094]">
+            <p className="mt-3 rounded-lg border-2 border-blood/40 bg-blood/10 px-3 py-2 text-[12px] leading-snug text-blood-text">
               {lastSyncError}
             </p>
           )}
@@ -226,7 +226,7 @@ export function SettingsScreen() {
       </div>
 
       {/* danger zone */}
-      <div className="mb-6 rounded-lg border-2 border-blood/40 bg-leather-850 p-6">
+      <div className="panel mb-6 border-blood/40 p-6">
         <h3 className="heading mb-3 text-[12px] text-blood-text">Danger zone</h3>
         <p className="mb-4 text-[13px] leading-relaxed text-ink-faint">
           Deletes all XP, answers, cleared zones and test results
@@ -280,7 +280,7 @@ export function SettingsScreen() {
         </div>
 
         {eraseError && (
-          <p className="mt-3 rounded-lg border-2 border-blood/40 bg-blood/10 px-3 py-2 text-[12px] leading-snug text-[#e8a094]">
+          <p className="mt-3 rounded-lg border-2 border-blood/40 bg-blood/10 px-3 py-2 text-[12px] leading-snug text-blood-text">
             {eraseError}
           </p>
         )}

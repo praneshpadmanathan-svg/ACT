@@ -96,7 +96,7 @@ export function NotesScreen({ section }: { section?: string }) {
                     key={page.id}
                     href={hrefFor({ name: 'note', page: page.id })}
                     onClick={() => sfx.select()}
-                    className="group flex items-start gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 p-4 shadow-card transition-all hover:-translate-y-0.5 hover:border-gold-deep"
+                    className="panel-quiet group flex items-start gap-4 p-4 transition-all hover:-translate-y-0.5 hover:border-gold-deep"
                   >
                     <span
                       className={cx(

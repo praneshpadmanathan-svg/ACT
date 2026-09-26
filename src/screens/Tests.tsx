@@ -91,10 +91,7 @@ function TestsBoard() {
       />
 
       <div className="mb-6 grid gap-3 lg:grid-cols-2">
-        <div
-          className="rounded-xl border-2 border-blood bg-leather-850 p-6 shadow-card sm:p-7"
-          style={{ borderTopWidth: 4 }}
-        >
+        <div className="panel border-blood p-6 sm:p-7" style={{ borderTopWidth: 4 }}>
           <h2 className="heading text-[13px] text-blood-text">Four-section practice</h2>
           <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
             All four sections back to back, with a break between each.
@@ -115,7 +112,7 @@ function TestsBoard() {
           </Button>
         </div>
 
-        <div className="rounded-xl border-2 border-leather-700 bg-leather-850 p-6 shadow-card sm:p-7">
+        <div className="panel p-6 sm:p-7">
           <h2 className="heading text-[13px] text-parchment">Single section</h2>
           <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
             One section, properly timed. Good for building pace.
@@ -141,7 +138,7 @@ function TestsBoard() {
           then gets out of the way, so without this it would be reachable only
           by typing the URL — which is not a feature, it is a bug with a
           keyboard shortcut. */}
-      <div className="mb-6 flex flex-wrap items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-4">
+      <div className="panel-quiet mb-6 flex flex-wrap items-center gap-4 px-5 py-4">
         <span className="min-w-0 flex-1">
           <span className="font-display text-[14.5px] font-semibold text-parchment">
             Placement test
@@ -171,7 +168,7 @@ function TestsBoard() {
               key={result.id}
               href={hrefFor({ name: 'report', id: result.id })}
               onClick={() => sfx.select()}
-              className="flex flex-wrap items-center gap-x-6 gap-y-3 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-4 shadow-card transition-colors hover:border-gold-deep"
+              className="panel-quiet flex flex-wrap items-center gap-x-6 gap-y-3 px-5 py-4 transition-colors hover:border-gold-deep"
             >
               <div className="min-w-0">
                 <div className="font-script text-[12px] uppercase tracking-wide text-parchment">
@@ -688,7 +685,7 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
   return (
     <Page>
       <div className="mx-auto max-w-3xl">
-        <div className="rounded-xl border-2 border-gold bg-leather-850 p-7 text-center shadow-card sm:p-9">
+        <div className="panel border-gold p-7 text-center sm:p-9">
           <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
             {result.sections.length === 4
               ? 'Four-section practice'
@@ -764,10 +761,7 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
                 const meta = SECTION_BY_ID[id];
                 const tint = PACE_TINT[p.verdict];
                 return (
-                  <div
-                    key={id}
-                    className="flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-3.5"
-                  >
+                  <div key={id} className="panel-quiet flex items-center gap-4 px-5 py-3.5">
                     <span
                       className="w-24 flex-none font-sans text-[14px] font-semibold"
                       style={{ color: meta.color }}
@@ -798,10 +792,7 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
             <h2 className="heading mb-4 text-[13px] text-parchment">Where the points went</h2>
             <div className="space-y-2.5">
               {byTopic.map((t) => (
-                <div
-                  key={t.topic}
-                  className="flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-3.5"
-                >
+                <div key={t.topic} className="panel-quiet flex items-center gap-4 px-5 py-3.5">
                   <span className="w-40 flex-none truncate font-sans text-[14px] font-semibold text-parchment">
                     {titleCase(t.topic)}
                   </span>

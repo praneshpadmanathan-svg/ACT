@@ -297,7 +297,7 @@ export function QuestionRunner({
   return (
     <div>
       {/* ------------------------------------------------------------- HUD */}
-      <div className="mb-5 rounded-xl border border-leather-700/55 bg-leather-850/90 p-4 shadow-card sm:p-5">
+      <div className="panel mb-5 p-4 sm:p-5">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
           <div className="min-w-0">
             <h1 className="heading truncate text-[13px]" style={{ color: accent }}>
@@ -427,7 +427,7 @@ export function QuestionRunner({
                   className="rounded px-2 py-0.5 font-script text-[10px] uppercase tracking-wide"
                   style={{
                     color: DIFFICULTY_COLOR[question.difficulty],
-                    background: `${DIFFICULTY_COLOR[question.difficulty]}22`,
+                    background: `color-mix(in oklab, ${DIFFICULTY_COLOR[question.difficulty]} 13%, transparent)`,
                   }}
                 >
                   {DIFFICULTY_LABEL[question.difficulty]}

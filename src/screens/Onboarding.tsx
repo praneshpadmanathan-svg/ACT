@@ -128,7 +128,7 @@ export function Onboarding() {
         priority
         className="absolute inset-0 h-full w-full select-none object-cover"
       />
-      <div className="absolute inset-0 bg-leather-950/84" />
+      <div className="absolute inset-0 bg-leather-950/85" />
 
       <div className="panel-lit relative z-10 w-full max-w-lg p-7 sm:p-9">
         <button

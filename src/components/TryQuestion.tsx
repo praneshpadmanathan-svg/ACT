@@ -146,8 +146,8 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
               className={cx(
                 'rounded-lg border-2 px-4 py-3 text-left transition-colors',
                 !revealed && 'border-leather-700 bg-leather-900/70 hover:border-gold-deep',
-                revealed && isAnswer && 'border-woods-text bg-woods-text/12',
-                revealed && picked && !isAnswer && 'border-blood-text bg-blood-text/12',
+                revealed && isAnswer && 'border-woods-text bg-woods-text/10',
+                revealed && picked && !isAnswer && 'border-blood-text bg-blood-text/10',
                 revealed &&
                   !isAnswer &&
                   !picked &&

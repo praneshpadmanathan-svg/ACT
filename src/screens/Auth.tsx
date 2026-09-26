@@ -504,7 +504,7 @@ function Frame({
         priority
         className="absolute inset-0 h-full w-full select-none object-cover"
       />
-      <div className="absolute inset-0 bg-leather-950/84" />
+      <div className="absolute inset-0 bg-leather-950/85" />
 
       <div className="panel-lit relative z-10 w-full max-w-md p-7 sm:p-9">
         <h1 className="heading mb-1 text-center text-[24px] text-parchment">{title}</h1>
@@ -565,7 +565,7 @@ function AgeGate({ onAnswer, onBack }: { onAnswer: (dob: DateParts) => void; onB
               onChange={(e) => setDay(e.target.value.replace(/\D/g, '').slice(0, 2))}
               placeholder="1"
               inputMode="numeric"
-              className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3 py-2.5 font-read text-[15px] text-parchment outline-none transition-colors placeholder:text-[#6b5c44] focus:border-gold-deep"
+              className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3 py-2.5 font-read text-[15px] text-parchment outline-none transition-colors placeholder:text-ink-faint focus:border-gold-deep"
             />
           </label>
 
@@ -576,7 +576,7 @@ function AgeGate({ onAnswer, onBack }: { onAnswer: (dob: DateParts) => void; onB
               onChange={(e) => setYear(e.target.value.replace(/\D/g, '').slice(0, 4))}
               placeholder={String(thisYear - 16)}
               inputMode="numeric"
-              className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3 py-2.5 font-read text-[15px] text-parchment outline-none transition-colors placeholder:text-[#6b5c44] focus:border-gold-deep"
+              className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3 py-2.5 font-read text-[15px] text-parchment outline-none transition-colors placeholder:text-ink-faint focus:border-gold-deep"
             />
           </label>
         </div>
@@ -602,7 +602,7 @@ function ErrorNote({ children }: { children: ReactNode }) {
   return (
     <p
       role="alert"
-      className="rounded-lg border border-blood/50 bg-blood/10 px-3 py-2 font-read text-[13.5px] leading-snug text-[#e8a094]"
+      className="rounded-lg border border-blood/50 bg-blood/10 px-3 py-2 font-read text-[13.5px] leading-snug text-blood-text"
     >
       {children}
     </p>
@@ -652,7 +652,7 @@ function Field({
         maxLength={maxLength}
         autoComplete={autoComplete}
         inputMode={inputMode}
-        className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[15px] text-parchment outline-none transition-colors placeholder:text-[#6b5c44] focus:border-gold-deep"
+        className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[15px] text-parchment outline-none transition-colors placeholder:text-ink-faint focus:border-gold-deep"
       />
     </label>
   );

@@ -30,7 +30,7 @@
  *   mode drops it and the gradient underneath carries the screen alone, which
  *   is exactly the graceful thing to happen.
  *
- *   The same `from-leather-950/72 … to-leather-950` scrim the landing screen
+ *   The same `from-leather-950/70 … to-leather-950` scrim the landing screen
  *   uses, so the handover is a continuation rather than a cut.
  *
  * The copy is gone from the screen, not from the accessibility tree.
@@ -76,7 +76,7 @@ export function LoadingScreen() {
         priority
         className="absolute inset-0 h-full w-full select-none object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-leather-950/72 via-leather-950/45 to-leather-950" />
+      <div className="absolute inset-0 bg-gradient-to-b from-leather-950/70 via-leather-950/45 to-leather-950" />
 
       {/* Square, because every sprite is padded to one — so the reserved box is
           identical whichever of the nine comes up, and a wide rolled map simply

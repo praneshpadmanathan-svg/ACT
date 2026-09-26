@@ -72,7 +72,7 @@ export function DrillsScreen({ section }: { section?: string }) {
 
       {/* mixed drill */}
       <div
-        className="mb-6 rounded-xl border-2 border-leather-700 bg-leather-850 p-6 shadow-card sm:p-7"
+        className="panel mb-6 p-6 sm:p-7"
         style={{ borderTopColor: meta.color, borderTopWidth: 4 }}
       >
         <h2 className="heading text-[13px]" style={{ color: meta.color }}>
@@ -100,7 +100,7 @@ export function DrillsScreen({ section }: { section?: string }) {
         <a
           href={hrefFor({ name: 'bookmarks' })}
           onClick={() => sfx.select()}
-          className="mb-6 flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-4 transition-colors hover:border-gold-deep"
+          className="panel-quiet mb-6 flex items-center gap-4 px-5 py-4 transition-colors hover:border-gold-deep"
         >
           <Glyph name="bookmarkFilled" size={17} className="flex-none text-gold" />
           <span className="min-w-0 flex-1">
@@ -135,7 +135,7 @@ export function DrillsScreen({ section }: { section?: string }) {
                 sfx.select();
                 navigate({ name: 'drill', section: active, topic });
               }}
-              className="flex items-center gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-4 py-3.5 text-left shadow-card transition-all hover:-translate-y-0.5 hover:border-gold-deep"
+              className="panel-quiet flex items-center gap-4 px-4 py-3.5 text-left transition-all hover:-translate-y-0.5 hover:border-gold-deep"
             >
               <span className="min-w-0 flex-1">
                 <span className="block truncate font-sans text-[14px] font-semibold text-parchment">
@@ -525,10 +525,7 @@ export function BookmarksScreen() {
 
           <ul className="space-y-2.5">
             {saved.map((q) => (
-              <li
-                key={q.id}
-                className="flex items-start gap-4 rounded-lg border-2 border-leather-700 bg-leather-850 px-5 py-4"
-              >
+              <li key={q.id} className="panel-quiet flex items-start gap-4 px-5 py-4">
                 <span className="min-w-0 flex-1">
                   <span className="flex flex-wrap items-center gap-2">
                     <span
@@ -696,7 +693,7 @@ export function DrillSummary({
   return (
     <Page>
       <div className="mx-auto max-w-3xl">
-        <div className="rounded-xl border-2 border-leather-700 bg-leather-850 p-7 text-center shadow-card sm:p-9">
+        <div className="panel p-7 text-center sm:p-9">
           <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
             Session complete
           </div>

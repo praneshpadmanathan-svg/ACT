@@ -102,7 +102,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
         <BackLink to={{ name: 'path', section: path.id }} label={`${meta.name} path`} />
 
         <div
-          className="mb-6 rounded-xl border-2 border-leather-700 bg-leather-850 p-6 shadow-card sm:p-7"
+          className="panel mb-6 p-6 sm:p-7"
           style={{ borderTopColor: meta.fill, borderTopWidth: 4 }}
         >
           <div className="flex flex-wrap items-start justify-between gap-4">
