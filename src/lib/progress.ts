@@ -325,7 +325,8 @@ export function dailyActivity(p: Progress, days: number): number[] {
   const start = new Date();
   start.setHours(0, 0, 0, 0);
   for (let i = 0; i < days; i++) {
-    const d = new Date(start.getTime() - (days - 1 - i) * 86_400_000);
+    // Calendar arithmetic; see weekProgress in plan.ts for why not 24-hour steps.
+    const d = new Date(start.getFullYear(), start.getMonth(), start.getDate() - (days - 1 - i));
     out[i] = p.tally.daily[dayKey(d)] ?? 0;
   }
   return out;

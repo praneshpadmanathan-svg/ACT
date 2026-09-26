@@ -605,7 +605,7 @@ function TrackCard() {
     }
     const gap = `${status.gap} point${status.gap === 1 ? '' : 's'} to go`;
     if (status.daysLeft === null) {
-      return `${gap}. Set a test date in your profile and this can tell you whether the time adds up.`;
+      return `${gap}. Set a test date in Settings and this can tell you whether the time adds up.`;
     }
     if (status.verdict === 'onTrack') {
       return `${gap}, with ${status.daysLeft} day${status.daysLeft === 1 ? '' : 's'} left. At a steady pace that adds up.`;

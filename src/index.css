@@ -497,7 +497,9 @@
      has: it has to separate the groups without competing with the eight
      destinations that are the actual navigation. */
   .rail-group {
-    @apply px-2.5 font-script text-[10.5px] uppercase tracking-[0.2em] text-gold-deep;
+    /* ink-faint, not gold-deep: gold-deep is a border colour, and as text it
+       measured 3.1:1 on the rail in dark and 2.0:1 in light. */
+    @apply px-2.5 font-script text-[10.5px] uppercase tracking-[0.2em] text-ink-faint;
   }
 
   /* The palette's door, at the head of the rail. Debossed like the blocks at
@@ -557,7 +559,7 @@
      does not wobble, and gold because it is the one number in the chrome that
      is trying to persuade you of something. */
   .rail-meta {
-    @apply num flex-none text-[11px] font-semibold leading-none text-gold-deep;
+    @apply num flex-none text-[11px] font-semibold leading-none text-gold;
   }
   .rail-item:hover .rail-meta,
   .rail-item-active .rail-meta {

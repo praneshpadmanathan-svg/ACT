@@ -146,7 +146,7 @@ function BossDuel({ section }: { section: string }) {
             className="mt-7"
             onClick={() => navigate({ name: 'path', section: sectionId })}
           >
-            Back to the road
+            Back to Study
           </Button>
         </div>
       </Page>

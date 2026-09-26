@@ -80,7 +80,7 @@ function Privacy() {
       <P>
         You can use every part of ACT Command without telling us anything. All{' '}
         {LIBRARY_STATS.totalQuestions.toLocaleString()} questions, every lesson, every landmark, the
-        guardians and the timed trial work with no account at all.
+        duels and timed practice work with no account at all.
       </P>
       <P>
         In that mode your progress is stored by your own browser, on your own device, using
@@ -154,7 +154,7 @@ function Privacy() {
           <P>Neither is given your information for their own purposes.</P>
 
           <H>Getting your data out, or getting rid of it</H>
-          <P>Both live on your profile page, and neither requires emailing anyone or waiting:</P>
+          <P>Both live in Settings, and neither requires emailing anyone or waiting:</P>
           <UL>
             <LI>
               <B>Export</B> downloads everything we hold about you as a file you can keep.
@@ -255,8 +255,8 @@ function Terms() {
             every site, this one included.
           </P>
           <P>
-            You can delete your account whenever you like, from your profile page. We may close an
-            account that is being used to attack the service, which in practice means almost never.
+            You can delete your account whenever you like, from Settings. We may close an account
+            that is being used to attack the service, which in practice means almost never.
           </P>
         </>
       )}

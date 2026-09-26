@@ -222,8 +222,8 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         <p className="mb-4 font-read text-[15px] leading-relaxed text-parchment-dim">
           This copy of ACT Command has no account server connected, so there is nothing to sign in
           to right now. Everything saves to this browser instead — all{' '}
-          {LIBRARY_STATS.totalQuestions.toLocaleString()} questions, every lesson, the guardians and
-          the timed trial work exactly the same.
+          {LIBRARY_STATS.totalQuestions.toLocaleString()} questions, every lesson, the duels and
+          timed practice work exactly the same.
         </p>
         <p className="mb-6 rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[13px] leading-relaxed text-ink-faint">
           Running this yourself? Accounts turn on the moment{' '}
@@ -239,7 +239,11 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
     );
   }
 
-  if (tooYoung) {
+  /* Account creation only. The verdict is remembered per browser, so on a
+     shared computer a younger sibling answering it once used to lock the
+     account holder out of signing in and resetting their password too —
+     neither of which collects anything new. */
+  if (tooYoung && mode === 'signup') {
     return (
       <Frame title="Come on in">
         <p className="font-read text-[15px] leading-relaxed text-parchment-dim">
@@ -247,13 +251,23 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
           one is on the house — nothing to sign up for and no email needed.
         </p>
         <p className="mt-3 font-read text-[15px] leading-relaxed text-parchment-dim">
-          Everything is unlocked: all four roads, every lesson, the guardians, the timed trial. Your
+          Everything is unlocked: all four subjects, every lesson, the duels, timed practice. Your
           progress saves on this device, so come back to the same browser and your world is where
           you left it.
         </p>
         <Button variant="primary" size="lg" trailing className="mt-7 w-full" onClick={startPlaying}>
           Start the journey
         </Button>
+        <p className="mt-5 text-center text-[13px] text-ink-faint">
+          Already have an account?{' '}
+          <button
+            type="button"
+            onClick={() => go('signin')}
+            className="font-semibold text-parchment-dim underline underline-offset-2 transition-colors hover:text-parchment"
+          >
+            Sign in
+          </button>
+        </p>
         <BackLink onClick={() => navigate({ name: 'landing' })} />
       </Frame>
     );

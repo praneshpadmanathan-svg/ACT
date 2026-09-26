@@ -244,7 +244,8 @@ export function Onboarding() {
               Who is walking the roads?
             </h1>
             <p className="mb-7 text-[14px] leading-relaxed text-ink-faint">
-              This is you, on every road and in every duel. Change it whenever you like.
+              This is you on your progress page and in every duel. Change it whenever you like in
+              Settings.
             </p>
 
             <HeroChooser />

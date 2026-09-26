@@ -55,7 +55,10 @@ export function weekProgress(p: Progress, today: Date = new Date()): WeekProgres
   let answered = 0;
   let activeDays = 0;
   for (let i = 0; i < 7; i++) {
-    const day = dayKey(new Date(today.getTime() - i * 86_400_000));
+    /* Calendar days, not 24-hour steps: across the spring clock change a day
+       is 23 hours long, and stepping back 24 from just after midnight lands
+       two dates back — one day counted twice, one never. */
+    const day = dayKey(new Date(today.getFullYear(), today.getMonth(), today.getDate() - i));
     const n = p.tally.daily[day] ?? 0;
     answered += n;
     if (n > 0) activeDays += 1;

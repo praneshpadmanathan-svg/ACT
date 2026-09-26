@@ -199,7 +199,7 @@ const ENTRIES: Entry[] = [
           </LI>
           <LI>
             <B>You can leave with everything.</B> Export-my-data and delete-my-account are both real
-            buttons in your profile, and delete means the row is gone.
+            buttons in Settings, and delete means the row is gone.
           </LI>
         </UL>
         <P>
@@ -229,9 +229,9 @@ const ENTRIES: Entry[] = [
         <P>
           The four roads are a real structure, not decoration: each of the{' '}
           <B>{LIBRARY_STATS.zones}</B> landmarks is one ACT skill, they are ordered so that the
-          things later questions assume come first, and each road opens as you clear it. The fantasy
-          is a way of making that shape visible and giving the next step a place to be. Wizzy tells
-          you what a landmark teaches before you commit to it.
+          things later questions assume come first, and each landmark opens as you clear the one
+          before it. The fantasy is a way of making that shape visible and giving the next step a
+          place to be. Wizzy tells you what a landmark teaches before you commit to it.
         </P>
         <P>
           The questions themselves are straight. No dragons in the algebra — a Math question here

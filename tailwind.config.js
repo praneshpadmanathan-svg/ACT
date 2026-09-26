@@ -293,10 +293,6 @@ export default {
           '100%': { transform: 'translateY(-80px)', opacity: '0' },
         },
         fadein: { from: { opacity: '0' }, to: { opacity: '1' } },
-        slidein: {
-          from: { transform: 'translateX(110%)', opacity: '0' },
-          to: { transform: 'translateX(0)', opacity: '1' },
-        },
         /* The floor is a contrast limit, not a taste call. `animate-shimmer`
            is only ever used on small gold text — the story overlay's "Tap to
            continue", the Codex hint, the Tests hint — and gold on the dark
@@ -421,7 +417,6 @@ export default {
         mote: 'mote var(--md,8s) ease-out var(--dl,0s) infinite',
         rise: 'rise 1.15s ease-out forwards',
         fadein: 'fadein .4s ease-out',
-        slidein: 'slidein .3s ease-out',
         shimmer: 'shimmer 2.6s ease-in-out infinite',
         /* Interface motion, on the ladder. */
         pageIn: `pageIn ${DUR.screen} ${EASE.out}`,

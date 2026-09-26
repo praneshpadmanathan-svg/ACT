@@ -150,13 +150,16 @@ export function XPPopups() {
 export function Toasts() {
   const { toasts, dismissToast } = useStore();
   return (
-    <div className="pointer-events-none fixed right-4 top-20 z-[90] flex w-[min(340px,calc(100vw-2rem))] flex-col gap-2">
+    /* Bottom-left. Top-right sat squarely on the question HUD — the Exit
+       button, the calculator and the clock — at exactly the moment an
+       achievement lands, which is mid-question. Bottom-right is the tool dock. */
+    <div className="pointer-events-none fixed bottom-4 left-4 z-[90] flex w-[min(340px,calc(100vw-2rem))] flex-col gap-2 lg:left-[252px]">
       {toasts.map((t) => (
         <button
           key={t.id}
           type="button"
           onClick={() => dismissToast(t.id)}
-          className="pointer-events-auto flex animate-slidein items-center gap-3 rounded-lg border-2 border-gold-deep bg-leather-850/95 px-4 py-3 text-left shadow-card backdrop-blur"
+          className="pointer-events-auto flex animate-riseIn items-center gap-3 rounded-lg border-2 border-gold-deep bg-leather-850/95 px-4 py-3 text-left shadow-card backdrop-blur"
           style={{ borderLeftWidth: 6, borderLeftColor: t.color ?? 'oklch(var(--c-gold))' }}
         >
           <Glyph name="spark" size={17} className="flex-none text-gold" />

@@ -62,7 +62,7 @@ export function CodexScreen() {
       <SectionHeading
         eyebrow={`${found.size} of ${total} recorded · ${open - found.size} waiting`}
         title="The Codex"
-        detail="The realm, in the pieces you have earned. Clear anything in a region and its entries unseal — the summit keeps its own until all four roads are finished."
+        detail="The realm, in the pieces you have earned. Clear anything in a region and its entries unseal — the summit keeps its own until all four subjects are cleared."
       />
 
       <m.div className="space-y-7" variants={staggerList} initial="initial" animate="animate">
@@ -136,7 +136,7 @@ export function CodexScreen() {
                             {reachable
                               ? 'You have walked far enough into this region to find it.'
                               : region === 'summit'
-                                ? 'Finish all four roads to reach the citadel.'
+                                ? 'Clear every landmark in all four subjects to unseal this.'
                                 : `Clear a landmark in ${REGION_LABEL[region]} to unseal this.`}
                           </p>
                         )}
