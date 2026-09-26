@@ -53,7 +53,7 @@ export function BossCard({
       }}
       className={cx(
         'panel-lit mb-5 flex w-full items-center gap-4 p-5 text-left transition-all sm:gap-6',
-        unlocked ? 'hover:-translate-y-0.5 hover:border-gold-deep' : 'opacity-70',
+        unlocked && 'hover:-translate-y-0.5 hover:border-gold-deep',
       )}
       style={{ borderTopColor: boss.color, borderTopWidth: 3 }}
     >

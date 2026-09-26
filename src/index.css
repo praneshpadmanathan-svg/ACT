@@ -2139,9 +2139,10 @@
   .route-card {
     @apply flex w-full items-center gap-4 px-5 py-4 text-left;
   }
+  /* Dimmed by colour, not opacity: fading the whole card took its hint line
+     to 2.7:1. The lock sigil and the hint already say it is shut. */
   .route-step[data-state='locked'] .route-card {
-    @apply cursor-not-allowed;
-    opacity: 0.55;
+    @apply cursor-not-allowed border-dashed;
   }
 
   /* ---------------------------------------------------------------- layout */

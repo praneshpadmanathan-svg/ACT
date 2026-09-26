@@ -190,7 +190,12 @@ export function StudyScreen({ section }: { section?: string }) {
                   className={cx('route-card', cleared || locked ? 'panel-quiet' : 'panel')}
                 >
                   <span className="min-w-0 flex-1">
-                    <span className="block truncate font-display text-[16px] font-semibold text-parchment">
+                    <span
+                      className={cx(
+                        'block truncate font-display text-[16px] font-semibold',
+                        locked ? 'text-parchment-dim' : 'text-parchment',
+                      )}
+                    >
                       {zone.name}
                     </span>
                     <span className="mt-0.5 block font-read text-[14px] text-ink-faint">
