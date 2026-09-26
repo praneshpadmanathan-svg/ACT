@@ -295,6 +295,9 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
 
 /* --------------------------------------------------------------- review */
 
+/** The most questions one review sitting takes. */
+const SESSION_CAP = 20;
+
 /* Review is gated as a whole feature rather than per subject: the queue is
    mixed by design — it is whatever you got wrong, in whatever subject — so
    there is no coherent English-only version of it to give away. The wrapper
@@ -321,10 +324,12 @@ function ReviewSession() {
        session ran shorter than the count the screen had just promised. */
     return dueForReview(progress)
       .map(runnableById)
-      .filter((q): q is RunnableQuestion => Boolean(q))
-      .slice(0, 20);
+      .filter((q): q is RunnableQuestion => Boolean(q));
   }, [progress]);
 
+  /* One sitting takes at most twenty. Counting "later" from the capped list
+     told a student with fifty due that thirty of them were not due yet. */
+  const session = due.slice(0, SESSION_CAP);
   const upcoming = Object.keys(progress.review).length - due.length;
 
   if (results) {
@@ -379,9 +384,9 @@ function ReviewSession() {
               size="lg"
               trailing
               className="mt-7"
-              onClick={() => setStarted(due)}
+              onClick={() => setStarted(session)}
             >
-              Start review
+              {due.length > SESSION_CAP ? `Review the first ${SESSION_CAP}` : 'Start review'}
             </Button>
             {upcoming > 0 && (
               <p className="mt-4 text-[13px] text-ink-faint">{upcoming} more scheduled for later</p>
