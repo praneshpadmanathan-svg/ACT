@@ -211,8 +211,16 @@ p {
 .premium-landing .plate-card {
   box-shadow: var(--lamp-edge), var(--e-resting);
 }
+/* The light wash goes on top of the paper, not instead of it: a bare
+   background-image here replaced mat-paper's grain, fibre and foxing, and every
+   sheet in the app became a flat cream rectangle. */
 .sheet {
-  background-image: linear-gradient(135deg, oklch(var(--c-paper-light) / 0.5), transparent 60%);
+  background-image:
+    linear-gradient(135deg, oklch(var(--c-paper-light) / 0.5), transparent 60%), var(--grain-paper),
+    repeating-linear-gradient(90deg, rgba(184, 158, 114, 0.055) 0 1px, transparent 1px 4px),
+    radial-gradient(circle at 18% 22%, rgba(184, 158, 114, 0.14), transparent 45%),
+    radial-gradient(circle at 78% 74%, rgba(184, 158, 114, 0.12), transparent 42%);
+  background-blend-mode: normal, multiply, normal, normal, normal;
 }
 .prose-passage {
   max-width: 68ch;

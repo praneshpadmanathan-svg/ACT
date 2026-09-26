@@ -393,8 +393,10 @@
     -webkit-text-size-adjust: 100%;
   }
 
+  /* Full height, because html is a shade darker: on any page shorter than
+     the window the body used to stop partway down and leave a hard seam. */
   body {
-    @apply bg-leather-900 font-sans antialiased;
+    @apply min-h-dvh bg-leather-900 font-sans antialiased;
     color: oklch(var(--c-body));
     /* A faint woven texture so large dark areas are not flat. */
     background-image:
@@ -1372,9 +1374,11 @@
 
      Shared with Boss and Notes on purpose. One choice idiom in the app. */
 
+  /* Opaque. Choices sit on the task well, which is translucent dark leather,
+     so at 80% the paper took on the brown beneath and read as dingy card. */
   .choice {
     @apply relative flex w-full items-start gap-3 rounded-lg border border-paper-edge
-           bg-paper-light/80 px-4 py-3 text-left font-read text-[1.04rem]
+           bg-paper-light px-4 py-3 text-left font-read text-[1.04rem]
            leading-relaxed text-ink
            transition-[background-color,border-color,box-shadow] duration-base ease-out;
     box-shadow: var(--lamp-edge-paper), var(--e-resting);

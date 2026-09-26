@@ -129,17 +129,26 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
             )}
           </div>
 
+          {/* A list, not a row of bordered tiles. Boxed, raised and in a grid,
+              these read as three buttons, and tapping them did nothing. */}
           {zone.learn && (
-            <ul className="mt-6 grid gap-2 sm:grid-cols-3">
-              {zone.learn.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-lg border-2 border-leather-700 bg-leather-900 px-3.5 py-2.5 text-[13px] leading-snug text-parchment-dim"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <div className="mt-6">
+              <div className="eyebrow mb-2">What you will learn</div>
+              <ul className="grid gap-x-6 gap-y-1.5 sm:grid-cols-3">
+                {zone.learn.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-2 text-[13.5px] leading-snug text-parchment-dim"
+                  >
+                    <span
+                      aria-hidden
+                      className="mt-[0.45em] h-1.5 w-1.5 flex-none rotate-45 bg-gold"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
         </div>
 
