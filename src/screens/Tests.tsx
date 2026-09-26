@@ -85,7 +85,7 @@ function TestsBoard() {
   return (
     <Page>
       <SectionHeading
-        eyebrow="Prove it"
+        eyebrow="Challenges"
         title="Timed practice"
         detail="Shortened practice sets, not full-length ACT simulations. Explanations and an estimated score appear when you finish."
       />
