@@ -413,7 +413,7 @@ function CampHero({
           be. It is a title from content, so it wraps rather than truncates —
           "Review 14 questions" and "The Marsh of Misplaced Modifiers" have very
           different lengths and both have to survive. */}
-      <span className="mt-3 block font-display text-[clamp(1.5rem,4.2vw,2.15rem)] font-semibold leading-[1.14] tracking-wide text-ink">
+      <span className="mt-3 block font-heading text-[clamp(1.5rem,4.2vw,2.15rem)] font-semibold leading-[1.14] tracking-wide text-ink">
         {lead.title}
       </span>
       <span className="mt-3 block max-w-[48ch] font-read text-[clamp(1rem,1.5vw,1.1rem)] leading-relaxed text-ink-soft">

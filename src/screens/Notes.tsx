@@ -203,7 +203,7 @@ export function NoteReader({ pageId }: { pageId: string }) {
           <div className="label-quill">
             {meta.name} · {page.unitLabel} · {page.minutes} min
           </div>
-          <h1 className="mt-3 font-read text-[clamp(1.7rem,4vw,2.4rem)] font-semibold leading-tight text-ink">
+          <h1 className="mt-3 font-heading text-[clamp(1.7rem,4vw,2.4rem)] font-semibold leading-tight text-ink">
             {page.title}
           </h1>
           <p className="mt-3 font-read text-[1.05rem] italic leading-relaxed text-ink-soft">

@@ -325,7 +325,7 @@ export function Landing() {
     <div className="min-h-dvh premium-landing">
       <header className="absolute inset-x-0 top-0 z-30">
         <div className="shell flex h-16 items-center">
-          <span className="flex items-center gap-2 font-display text-[16px] font-semibold tracking-wide text-parchment">
+          <span className="flex items-center gap-2 font-heading text-[16px] font-semibold tracking-wide text-parchment">
             <Glyph name="spark" size={15} className="text-gold" />
             ACT Command
           </span>

@@ -399,7 +399,7 @@ export function ExplainScreen() {
         </button>
 
         <div className="sheet p-6 sm:p-10">
-          <h1 className="font-read text-[clamp(1.6rem,4vw,2.1rem)] font-semibold leading-tight text-ink">
+          <h1 className="font-heading text-[clamp(1.6rem,4vw,2.1rem)] font-semibold leading-tight text-ink">
             Questions, answered honestly
           </h1>
           <p className="mt-5 border-l-2 border-paper-edge pl-4 font-read text-[1.08rem] font-medium leading-[1.75] text-ink">

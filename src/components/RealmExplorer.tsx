@@ -51,7 +51,7 @@ export function RealmExplorer({ onBegin }: { onBegin: () => void }) {
         </div>
         <div className="realm-copy">
           <p className="eyebrow">{story[0]}</p>
-          <h3 className="font-display text-display-m font-bold">{story[1]}</h3>
+          <h3 className="font-heading text-display-m font-bold">{story[1]}</h3>
           <p className="font-read text-body-read text-parchment-dim">{story[2]}</p>
           <div className="realm-facts">
             <span>

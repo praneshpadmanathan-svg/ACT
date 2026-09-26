@@ -288,7 +288,7 @@ function Terms() {
 
 function Title({ children }: { children: ReactNode }) {
   return (
-    <h1 className="font-read text-[clamp(1.6rem,4vw,2.1rem)] font-semibold leading-tight text-ink">
+    <h1 className="font-heading text-[clamp(1.6rem,4vw,2.1rem)] font-semibold leading-tight text-ink">
       {children}
     </h1>
   );

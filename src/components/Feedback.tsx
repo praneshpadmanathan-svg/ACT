@@ -268,7 +268,7 @@ export function LevelUpOverlay() {
             something had been earned. The event now announces itself, and the
             name of the rank is what you read second. */}
         <div
-          className="heading animate-stamp text-[clamp(2.2rem,min(11vw,15vh),5.5rem)] font-black uppercase leading-none"
+          className="heading animate-stamp text-[clamp(2.2rem,min(11vw,15vh),5.5rem)] font-bold uppercase leading-none"
           style={{
             color: rank.color,
             WebkitTextStroke: '2px rgba(0,0,0,.55)',

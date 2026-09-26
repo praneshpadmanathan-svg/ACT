@@ -91,6 +91,11 @@
     /* Reading typeface, swapped by the high-legibility setting. */
     --font-read: 'Inter';
     --font-sans: 'Inter';
+    /* Titles only. Inter everywhere left the landing hero as the one line of
+       Cinzel on the site, so the page changed voice a sentence after it
+       opened and every screen inside read as a generic dashboard. Headings
+       carry the world; body, labels and controls stay in Inter for reading. */
+    --font-heading: 'Cinzel';
 
     /* How much bigger every piece of text runs. Set by the type-size setting;
        consumed by the `postcss-text-scale` plugin, which wraps every
@@ -438,6 +443,7 @@
   [data-font='legible'] {
     --font-read: 'Atkinson Hyperlegible';
     --font-sans: 'Atkinson Hyperlegible';
+    --font-heading: 'Atkinson Hyperlegible';
   }
   [data-font='legible'] body,
   [data-font='legible'] .prose-quill,
@@ -926,7 +932,7 @@
   }
 
   .heading {
-    @apply font-display font-semibold tracking-normal text-parchment;
+    @apply font-heading font-semibold tracking-normal text-parchment;
   }
 
   .eyebrow {

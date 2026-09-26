@@ -301,6 +301,12 @@ p {
    gets harder. */
 .rank-ladder {
   display: grid;
+  /* `minmax(0, 1fr)`, not the implicit `auto` track. The rungs carry a
+     42rem min-width so they scroll inside `.rank-ladder-scroll`; an auto
+     track grew to fit them instead, and on a 375px phone the whole Progress
+     page became 709px wide — header, Expand button and rank detail all
+     pushed off the right edge. */
+  grid-template-columns: minmax(0, 1fr);
   gap: 1rem;
 
   /* Everything the expanded view changes, in one place. The markup is shared
@@ -308,7 +314,9 @@ p {
      between them has to live somewhere the same elements can read — these
      five, plus the sigil's pixel size, which is a number and goes through a
      prop. */
-  --ladder-min: 42rem;
+  /* Track only: the widest rank name is ~77px and the narrowest gap is 13%
+     of the track, so 38rem leaves every pair of labels at least ~8px apart. */
+  --ladder-min: 38rem;
   --rung-w: 4.5rem;
   --rung-h: 7.25rem;
 }
@@ -376,6 +384,10 @@ p {
 }
 .rank-rung-button {
   display: grid;
+  /* A fixed column. The current rung's aura box is wider than the rung, and
+     an auto column grew to fit it from the left edge — which shifted that
+     rung's name 24px right and into its neighbour's. */
+  grid-template-columns: minmax(0, 1fr);
   justify-items: center;
   gap: 0.25rem;
   width: var(--rung-w);
@@ -490,8 +502,12 @@ p {
      selecting — every word of it is repeated in the detail panel below. */
   user-select: none;
 }
+/* The floor is for the *track*, so the insets are added on top. It used to be
+   the whole row, and the rungs are laid out inside `--ladder-inset` on both
+   sides — at a 170px aura that took ~170px out of 42rem, the narrowest gap
+   fell to ~50px, and INKLING and PAGEWALKER overlapped by 10px on a phone. */
 .rank-ladder-scroll > * {
-  min-width: var(--ladder-min);
+  min-width: calc(var(--ladder-min) + 2 * var(--ladder-inset));
 }
 
 /* The full-screen ladder.
@@ -513,6 +529,9 @@ p {
   --ladder-min: max(96rem, 140vw);
   --rung-w: 7rem;
   --rung-h: 11rem;
+}
+.rank-ladder-full > * {
+  min-width: 0;
 }
 .rank-ladder-full {
   position: fixed;
@@ -635,8 +654,9 @@ p {
   margin-bottom: 2rem;
 }
 .home-welcome h1 {
+  font-family: var(--font-heading), Cinzel, Georgia, serif;
   font-size: clamp(1.65rem, 3vw, 2.4rem);
-  font-weight: 750;
+  font-weight: 700;
   line-height: 1.2;
   margin-block: 0.5rem;
   overflow-wrap: anywhere;
@@ -690,7 +710,7 @@ p {
   width: 100%;
   font-family: Cinzel, Georgia, serif;
   font-size: clamp(1.4rem, 2.5vw, 2rem);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.3;
   overflow-wrap: anywhere;
 }
@@ -705,10 +725,9 @@ p {
 }
 .home-actions h2,
 .home-dashboard h3.heading {
-  font-family: var(--font-sans), Inter, sans-serif;
+  font-family: var(--font-heading), Cinzel, Georgia, serif;
   font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: -0.015em;
   color: oklch(var(--c-parchment));
   margin-bottom: 1rem;
 }

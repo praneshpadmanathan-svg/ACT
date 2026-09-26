@@ -10,7 +10,7 @@ export function RankShowcase() {
     <section className="rank-showcase" aria-label="Explore the ranks">
       <div className="rank-showcase-copy">
         <p className="eyebrow">Your next chapter</p>
-        <h2 className="font-display text-display-m font-bold">Progress you can see.</h2>
+        <h2 className="font-heading text-display-m font-bold">Progress you can see.</h2>
         <p className="font-read text-body-read text-parchment-dim">
           Seven ranks. Each one earned. Explore the emblems, then make the climb your own.
         </p>
@@ -39,7 +39,7 @@ export function RankShowcase() {
           <span className="rank-orbit rank-orbit-outer" />
           <RankSigil rank={rank} size={150} aura={false} />
         </div>
-        <h3 className="font-display text-display-m font-bold">{rank.name}</h3>
+        <h3 className="font-heading text-display-m font-bold">{rank.name}</h3>
         <p className="text-sm text-parchment-dim">{rank.xp.toLocaleString()} XP · rank preview</p>
         <button className="rank-replay" type="button" onClick={() => setReplay((n) => n + 1)}>
           Replay reveal

@@ -358,7 +358,7 @@ export function SideNav() {
           <span className="brand-sigil">
             <NavGlyph name="star" size={15} />
           </span>
-          <span className="font-display text-[15px] font-semibold tracking-wide text-parchment">
+          <span className="font-heading text-[15px] font-semibold tracking-wide text-parchment">
             ACT Command
           </span>
         </a>

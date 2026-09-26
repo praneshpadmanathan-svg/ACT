@@ -111,12 +111,12 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                 {meta.name} · {zone.topic}
               </div>
               <h1
-                className="heading mt-2 text-[clamp(14px,2.4vw,19px)]"
+                className="heading mt-2 text-[clamp(1.4rem,3.2vw,2rem)]"
                 style={{ color: meta.color }}
               >
                 {zone.name}
               </h1>
-              <p className="mt-2.5 font-read text-[19px] text-parchment-dim">{zone.sub}</p>
+              <p className="mt-2 font-read text-[16px] text-parchment-dim">{zone.sub}</p>
             </div>
             {best !== null && (
               <div className="text-right">

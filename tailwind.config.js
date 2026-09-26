@@ -135,12 +135,14 @@ export default {
       },
       fontFamily: {
         /* Interface and reading roles use Inter; the legibility preference
-           replaces both with Atkinson. Cinzel is reserved in premium.css for
-           the hero and rank display, rather than small controls and labels. */
+           replaces both with Atkinson. Cinzel is the `heading` role only —
+           titles, never small controls or labels — and the legibility
+           preference swaps it for Atkinson too. */
         display: ['var(--font-sans)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         script: ['var(--font-sans)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         read: ['var(--font-read)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         sans: ['var(--font-sans)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-heading)', 'Cinzel', 'Georgia', 'serif'],
       },
       /* The elevation ladder. The values live in index.css because they have
          to change between themes — a shadow tuned for near-black leather
