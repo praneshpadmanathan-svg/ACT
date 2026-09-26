@@ -100,7 +100,7 @@ const GROUPS: NavGroup[] = [
         glyph: 'hourglass',
         route: { name: 'review' },
         match: ['review'],
-        hint: 'What you got wrong',
+        hint: 'Questions coming due again',
       },
     ],
   },

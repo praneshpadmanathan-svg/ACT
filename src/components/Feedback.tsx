@@ -31,6 +31,9 @@ let burstFn: ((count: number, x: number, y: number, spread?: number) => void) | 
 
 /** Fire confetti from anywhere. No-op until the canvas has mounted. */
 export function burstConfetti(count = 90, x?: number, y?: number, spread = 18) {
+  /* Ninety particles flung across the whole viewport is precisely the motion
+     that setting asks us not to make. The sound and the result still land. */
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   burstFn?.(count, x ?? window.innerWidth / 2, y ?? window.innerHeight / 2, spread);
 }
 

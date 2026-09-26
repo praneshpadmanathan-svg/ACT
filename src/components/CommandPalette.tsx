@@ -110,7 +110,7 @@ function staticEntries(): PaletteEntry[] {
       group: 'Go',
       icon: 'clock',
       to: { name: 'review' },
-      hint: 'What you got wrong',
+      hint: 'Questions coming due again',
     },
     {
       id: 'go-duels',

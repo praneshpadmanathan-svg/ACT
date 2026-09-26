@@ -37,7 +37,7 @@ export function BossScreen({ section }: { section: string }) {
 
 function BossDuel({ section }: { section: string }) {
   const navigate = useNavigate();
-  const { progress, answerQuestion, updateProgress } = useStore();
+  const { progress, answerQuestion, defeatBoss } = useStore();
 
   const sectionId = section as SectionId;
   const boss = bossFor(sectionId);
@@ -289,13 +289,7 @@ function BossDuel({ section }: { section: string }) {
           setBossState('defeated');
           sfx.fanfare();
           burstConfetti(140);
-          if (!alreadyBeaten) {
-            updateProgress((p) => ({
-              ...p,
-              achievements: [...p.achievements, `boss-${boss.id}`],
-              xp: p.xp + 400,
-            }));
-          }
+          if (!alreadyBeaten) defeatBoss(boss.id);
           setPhase('won');
         }, 700);
         return;

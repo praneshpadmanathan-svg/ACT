@@ -171,7 +171,7 @@ export function todaysPlan(
     steps.push({
       kind: 'review',
       title: `Review ${due} question${due === 1 ? '' : 's'}`,
-      detail: 'Questions you missed, back at the right moment to make them stick.',
+      detail: 'Questions you have answered before, back at the right moment to make them stick.',
       minutes: Math.max(2, Math.round(due * MINUTES_PER_QUESTION)),
       to: { name: 'review' },
     });

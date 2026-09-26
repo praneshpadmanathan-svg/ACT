@@ -213,6 +213,7 @@ export const XP = {
   testSection: 250,
   fullTest: 900,
   dailyChallenge: 60,
+  bossDefeated: 400,
 };
 
 /* ---------------------------------------------------------------- defaults */
@@ -1194,10 +1195,20 @@ export function completeDaily(p: Progress): RecordResult {
 export function recordTest(p: Progress, result: TestResult): RecordResult {
   const beforeRank = rankIndexFor(p.xp);
   const gain = result.sections.length === 4 ? XP.fullTest : XP.testSection * result.sections.length;
+  /* Test answers are not recorded one by one — a timed section is a
+     measurement, and it should not reshape the topic tally mid-flight — so
+     they never reached the day's count, and a student who sat a forty-minute
+     test that day was told they were behind on their weekly goal. */
+  const worked = Object.values(result.raw).reduce((n, pair) => n + (pair?.[1] ?? 0), 0);
+  const today = dayKey();
   const { progress: next, shieldsSpent } = applyDayStreak({
     ...p,
     xp: p.xp + gain,
     testHistory: [...p.testHistory, result],
+    tally: {
+      ...p.tally,
+      daily: { ...p.tally.daily, [today]: (p.tally.daily[today] ?? 0) + worked },
+    },
   });
   const afterRank = rankIndexFor(next.xp);
   return {

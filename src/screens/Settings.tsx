@@ -49,8 +49,14 @@ export function SettingsScreen() {
       <div className="panel mb-6 p-6 sm:p-7">
         <h3 className="heading mb-5 text-[12px] text-parchment">Your test</h3>
 
-        <label className="mb-5 block">
-          <span className="mb-2 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+        {/* A group, not a <label>. A label forwards clicks on its text to the
+            first control inside it, so tapping the words "Target score"
+            quietly set the target to 24. */}
+        <div role="group" aria-labelledby="settings-target" className="mb-5">
+          <span
+            id="settings-target"
+            className="mb-2 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint"
+          >
             Target score
           </span>
           <div className="flex flex-wrap gap-2">
@@ -58,6 +64,7 @@ export function SettingsScreen() {
               <button
                 key={score}
                 type="button"
+                aria-pressed={progress.targetScore === score}
                 onClick={() => updateProgress((p) => ({ ...p, targetScore: score }))}
                 className={cx(
                   'num rounded-lg border-2 px-4 py-2 text-[19px] transition-colors',
@@ -70,13 +77,16 @@ export function SettingsScreen() {
               </button>
             ))}
           </div>
-        </label>
+        </div>
 
         {/* Onboarding promises this can be changed later, so it has to be
             changeable later. Clearing it stops the countdown rather than
             leaving a date that has quietly gone by. */}
-        <label className="block">
-          <span className="mb-2 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+        <div role="group" aria-labelledby="settings-date">
+          <span
+            id="settings-date"
+            className="mb-2 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint"
+          >
             Test date
           </span>
           <div className="flex flex-wrap items-center gap-2.5">
@@ -108,7 +118,7 @@ export function SettingsScreen() {
               </Button>
             )}
           </div>
-        </label>
+        </div>
       </div>
 
       {/* traveller — moved here from the progress screen. It sat between the

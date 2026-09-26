@@ -219,8 +219,8 @@ export default defineConfig(({ mode }) => {
       },
     },
     build: {
-      // The content chunk is ~600 kB of static JSON by design (754 questions,
-      // 60 note pages, 27 passages). It is split out so the app shell paints
+      // The content chunk is static JSON by design (the whole question bank,
+      // lessons and passages). It is split out so the app shell paints
       // first and the browser caches the library separately across deploys.
       chunkSizeWarningLimit: 700,
       rollupOptions: {

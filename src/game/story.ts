@@ -218,7 +218,7 @@ export const QUESTS: Quest[] = [
         {
           lines: [
             'One light will not hold. Give me <b>four</b> — four in a line is a road, and roads are harder to erase.',
-            'Watch your <b>Review</b> queue as you walk. Only the questions you missed have anything left to teach you.',
+            'Watch your <b>Review</b> queue as you walk. The ones you missed come back soonest, because they have the most left to teach you.',
           ],
           mood: 'grey',
         },

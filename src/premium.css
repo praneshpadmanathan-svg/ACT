@@ -1,6 +1,9 @@
 /* Shared material and interaction rules; every colour comes from the theme. */
+/* Solid, not translucent. At 40% the gilt took on whatever sat behind it, so
+   selected text on the dark leather was dark ink on dark brown. Solid gilt
+   under ink is about 7:1 on every surface in both themes. */
 ::selection {
-  background: oklch(var(--c-gilt) / 0.4);
+  background: oklch(var(--c-gilt));
   color: oklch(var(--c-ink));
 }
 input,

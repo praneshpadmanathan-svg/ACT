@@ -31,20 +31,22 @@ import { titleCase } from '@/lib/utils';
 import type { DiagnosticResult } from '@/types';
 import { Page } from '@/components/Shell';
 import { Button, ProgressBar, SectionHeading } from '@/components/ui';
-import { QuestionRunner } from '@/components/QuestionRunner';
+import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
+import { MissedReview } from '@/components/MissedReview';
 
 export function DiagnosticScreen() {
   const navigate = useNavigate();
   const { progress, answerQuestion, finishDiagnostic } = useStore();
   const [started, setStarted] = useState(false);
   const [result, setResult] = useState<DiagnosticResult | null>(null);
+  const [records, setRecords] = useState<AnswerRecord[]>([]);
 
   const questions = useMemo(() => pickDiagnostic(progress).map(fromDrillQuestion), [progress]);
   const total = diagnosticLength(progress);
   const minutes = diagnosticMinutes(progress);
   const already = progress.diagnostic;
 
-  if (result) return <DiagnosticSummary result={result} />;
+  if (result) return <DiagnosticSummary result={result} records={records} />;
 
   /* ------------------------------------------------------------- intro */
 
@@ -140,6 +142,7 @@ export function DiagnosticScreen() {
           }));
           const scored = scoreDiagnostic(answers);
           finishDiagnostic(scored);
+          setRecords(records);
           setResult(scored);
           sfx.fanfare();
         }}
@@ -155,7 +158,13 @@ export function DiagnosticScreen() {
  * `ScoreReport` leads with one enormous number because a completed test has
  * earned one. This has not, so it leads with the four sections ranked against
  * each other — the thing twenty-eight questions genuinely can tell you. */
-export function DiagnosticSummary({ result }: { result: DiagnosticResult }) {
+export function DiagnosticSummary({
+  result,
+  records = [],
+}: {
+  result: DiagnosticResult;
+  records?: AnswerRecord[];
+}) {
   const navigate = useNavigate();
   const shape = placementShape(result);
 
@@ -231,12 +240,15 @@ export function DiagnosticSummary({ result }: { result: DiagnosticResult }) {
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Button variant="ghost" onClick={() => navigate({ name: 'path' })}>
-            Start the first road
+            Open Study
           </Button>
           <Button variant="primary" trailing onClick={() => navigate({ name: 'home' })}>
             See my plan
           </Button>
         </div>
+
+        {/* The intro promises explanations at the end; this is the end. */}
+        <MissedReview records={records} />
       </div>
     </Page>
   );

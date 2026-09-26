@@ -125,6 +125,8 @@ interface StoreValue {
   finishDaily: () => void;
   /** Save a completed placement test, replacing any earlier one. */
   finishDiagnostic: (result: DiagnosticResult) => void;
+  /** First win against a guardian: the achievement and its bounty, once. */
+  defeatBoss: (bossId: string) => void;
   updateProgress: (fn: (p: Progress) => Progress) => void;
 
   /** Who the loaded progress belongs to. */
@@ -377,6 +379,20 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const finishDiagnostic = useCallback((result: DiagnosticResult) => {
     setProgress((prev) => ({ ...prev, diagnostic: result }));
   }, []);
+
+  /* Through the reward pipeline like every other payout. The duel screen used
+     to add its 400 straight onto `xp` via updateProgress, so the rank-up it
+     frequently causes never played, no XP pop appeared, and achievements keyed
+     on the new total waited for some later answer to notice them. */
+  const defeatBoss = useCallback(
+    (bossId: string) => {
+      const p = progressRef.current;
+      const id = `boss-${bossId}`;
+      if (p.achievements.includes(id)) return;
+      applyResult(awardXPPure({ ...p, achievements: [...p.achievements, id] }, XP.bossDefeated));
+    },
+    [applyResult],
+  );
 
   const updateProgress = useCallback((fn: (p: Progress) => Progress) => {
     setProgress((prev) => fn(prev));
@@ -776,6 +792,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       finishTest,
       finishDaily,
       finishDiagnostic,
+      defeatBoss,
       updateProgress,
       identity,
       continueAsGuest,
@@ -810,6 +827,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       finishTest,
       finishDaily,
       finishDiagnostic,
+      defeatBoss,
       updateProgress,
       identity,
       continueAsGuest,

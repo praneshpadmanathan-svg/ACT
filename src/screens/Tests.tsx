@@ -28,7 +28,7 @@ import { Button, EmptyState, ProgressBar, SectionHeading } from '@/components/ui
 import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
 import { burstConfetti } from '@/components/Feedback';
 import { ScoreCaveat } from '@/components/ScoreCaveat';
-import { DrillSummary } from './Drills';
+import { MissedReview } from '@/components/MissedReview';
 
 /* Section lengths, scaled to what the bank can actually supply. The real ACT
    is longer; these keep the pacing pressure honest without inventing
@@ -672,13 +672,23 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
   }, [result]);
 
   if (showMissed && missed.length > 0) {
+    /* Its own page, not the drill summary. That one headlines a percentage,
+       and fed only the misses it announced "0% — 0 of 12 correct" over a
+       test you may well have done well on. */
     return (
-      <DrillSummary
-        results={missed}
-        accent="oklch(var(--c-blood-text))"
-        onRetry={() => setShowMissed(false)}
-        onDone={() => navigate({ name: 'tests' })}
-      />
+      <Page>
+        <div className="mx-auto max-w-3xl">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <Button variant="ghost" onClick={() => setShowMissed(false)}>
+              Back to your score
+            </Button>
+            <Button variant="primary" onClick={() => navigate({ name: 'tests' })}>
+              Done
+            </Button>
+          </div>
+          <MissedReview records={missed} />
+        </div>
+      </Page>
     );
   }
 

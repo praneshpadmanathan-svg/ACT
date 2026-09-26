@@ -253,10 +253,14 @@ function Scratchpad() {
 
   return (
     <div>
-      <label className="mb-2 block font-script text-[10.5px] uppercase tracking-[0.14em] text-ink-faint">
+      <label
+        htmlFor="scratch-paper"
+        className="mb-2 block font-script text-[10.5px] uppercase tracking-[0.14em] text-ink-faint"
+      >
         Scratch paper
       </label>
       <textarea
+        id="scratch-paper"
         value={text}
         onChange={(e) => setText(e.target.value)}
         spellCheck={false}

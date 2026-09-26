@@ -15,6 +15,7 @@ import { sample } from '@/lib/utils';
 import { BackLink, Page } from '@/components/Shell';
 import { Button, EmptyState, ProgressBar } from '@/components/ui';
 import { RichText } from '@/components/RichText';
+import { MissedReview } from '@/components/MissedReview';
 import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
 import { burstConfetti } from '@/components/Feedback';
 
@@ -253,7 +254,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                     ? 1
                     : 2,
                 record.correct,
-                0,
+                record.streak ?? 0,
               ),
             });
           }}
@@ -379,33 +380,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
           </div>
         </div>
 
-        {/* what you missed */}
-        {results && results.some((r) => !r.correct) && (
-          <div className="mt-6">
-            <h2 className="heading mb-4 text-[13px] text-parchment">What you missed</h2>
-            <div className="space-y-3">
-              {results
-                .filter((r) => !r.correct)
-                .map((r, i) => (
-                  <div key={i} className="sheet p-5">
-                    <RichText as="div" format="html" className="prose-quill mb-3 text-[1rem]">
-                      {r.question.prompt}
-                    </RichText>
-                    <section className="ink-example">
-                      <div className="lesson-label">Correct answer — {r.question.correctKey}</div>
-                      <RichText
-                        as="div"
-                        format="html"
-                        className="font-read text-[1.02rem] leading-[1.72] text-ink"
-                      >
-                        {r.question.why[r.question.correctKey] ?? r.question.whyGeneral ?? ''}
-                      </RichText>
-                    </section>
-                  </div>
-                ))}
-            </div>
-          </div>
-        )}
+        {results && <MissedReview records={results} />}
       </div>
     </Page>
   );

@@ -50,6 +50,8 @@ export interface AnswerRecord {
   chosen: string | null;
   correct: boolean;
   ms: number;
+  /** Consecutive right answers immediately before this one, for the XP bonus. */
+  streak?: number;
 }
 
 interface Props {
@@ -187,7 +189,7 @@ export function QuestionRunner({
 
       const correct = key === question.correctKey;
       const ms = Date.now() - startedAt;
-      const record: AnswerRecord = { question, chosen: key, correct, ms };
+      const record: AnswerRecord = { question, chosen: key, correct, ms, streak };
 
       setChosen(key);
       setRevealed(true);

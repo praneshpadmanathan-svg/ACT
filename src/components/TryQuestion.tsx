@@ -64,6 +64,7 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
     return raw ? { raw, run: fromDrillQuestion(raw) } : null;
   }, []);
   const [chosen, setChosen] = useState<string | null>(null);
+  const [focusAt, setFocusAt] = useState(0);
 
   if (!question) return null;
 
@@ -118,12 +119,15 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
               : e.key === 'ArrowUp' || e.key === 'ArrowLeft'
                 ? -1
                 : 0;
-          if (step === 0 || revealed) return;
+          if (step === 0) return;
           e.preventDefault();
-          const at = run.choices.findIndex((c) => c.key === chosen);
-          const to =
-            run.choices[((at < 0 ? 0 : at) + step + run.choices.length) % run.choices.length]!;
-          answer(to.key);
+          /* Arrows move, Enter or Space commits. Selecting on arrow is the
+             radio-group convention for settings, but here a selection is an
+             irreversible answer — one stray keypress on the way to choice C
+             used to lock in choice B. */
+          const to = (focusAt + step + run.choices.length) % run.choices.length;
+          setFocusAt(to);
+          e.currentTarget.querySelectorAll<HTMLElement>('[role="radio"]')[to]?.focus();
         }}
       >
         {run.choices.map((choice, i) => {
@@ -135,7 +139,8 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
               type="button"
               role="radio"
               aria-checked={picked}
-              tabIndex={revealed || picked || (chosen === null && i === 0) ? 0 : -1}
+              tabIndex={i === focusAt ? 0 : -1}
+              onFocus={() => setFocusAt(i)}
               /* `aria-disabled`, not `disabled`. The explanations render
                  inside these buttons, and a genuinely disabled control drops
                  out of the tab order — which would put the reason each answer

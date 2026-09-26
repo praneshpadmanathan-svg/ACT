@@ -71,6 +71,9 @@ export function HeroChooser({ compact = false }: { compact?: boolean }) {
             role="radio"
             data-hero={hero.id}
             aria-checked={chosen}
+            /* Spelled out: read from the content, the name and tagline ran
+               together as "AshTravels light." */
+            aria-label={`${hero.name}. ${hero.tagline}`}
             tabIndex={roving ? 0 : -1}
             onClick={() => pick(hero.id)}
             className={cx(

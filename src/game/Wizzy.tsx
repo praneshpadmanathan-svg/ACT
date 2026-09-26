@@ -70,7 +70,7 @@ export function Wizzy() {
       list.push(`<b>${progress.dayStreak}-day streak.</b> One question today keeps it burning.`);
     }
     list.push(
-      'The citadel holds the timed trial and your predicted score. That is where the climb is measured.',
+      'Timed practice is where the climb is measured: the clock, the sections, and an estimated score at the end.',
     );
     return list;
   }, [

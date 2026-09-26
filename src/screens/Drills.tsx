@@ -21,7 +21,7 @@ import {
   type AnswerRecord,
   type RunnableQuestion,
 } from '@/components/QuestionRunner';
-import { RichText } from '@/components/RichText';
+import { MissedReview } from '@/components/MissedReview';
 import { Glyph } from '@/components/Icon';
 
 const LENGTHS = [5, 10, 20];
@@ -284,7 +284,7 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
             topic: record.question.topic,
             correct: record.correct,
             ms: record.ms,
-            xp: XP.question(record.question.difficulty, record.correct, 0),
+            xp: XP.question(record.question.difficulty, record.correct, record.streak ?? 0),
           })
         }
         onFinish={setResults}
@@ -347,7 +347,7 @@ function ReviewSession() {
         <SectionHeading
           eyebrow="Spaced repetition"
           title="Review"
-          detail="Questions you missed come back on a schedule — one day, then three, then a week — until you have them cold."
+          detail="Every question you answer comes back on a schedule. A miss returns the next day; each right answer pushes it further out — three days, a week, two weeks — until you have it cold."
         />
 
         {due.length === 0 ? (
@@ -407,7 +407,7 @@ function ReviewSession() {
             topic: record.question.topic,
             correct: record.correct,
             ms: record.ms,
-            xp: XP.question(record.question.difficulty, record.correct, 0),
+            xp: XP.question(record.question.difficulty, record.correct, record.streak ?? 0),
           })
         }
         onFinish={setResults}
@@ -484,7 +484,7 @@ export function BookmarksScreen() {
               topic: record.question.topic,
               correct: record.correct,
               ms: record.ms,
-              xp: XP.question(record.question.difficulty, record.correct, 0),
+              xp: XP.question(record.question.difficulty, record.correct, record.streak ?? 0),
             })
           }
           onFinish={setResults}
@@ -658,7 +658,7 @@ export function DailyScreen() {
             topic: record.question.topic,
             correct: record.correct,
             ms: record.ms,
-            xp: XP.question(record.question.difficulty, record.correct, 0),
+            xp: XP.question(record.question.difficulty, record.correct, record.streak ?? 0),
           })
         }
         onFinish={(records) => {
@@ -687,7 +687,6 @@ export function DrillSummary({
 }) {
   const correct = results.filter((r) => r.correct).length;
   const percent = results.length ? Math.round((correct / results.length) * 100) : 0;
-  const missed = results.filter((r) => !r.correct);
   const totalSeconds = results.reduce((n, r) => n + r.ms, 0) / 1000;
 
   return (
@@ -719,58 +718,7 @@ export function DrillSummary({
           </div>
         </div>
 
-        {missed.length > 0 && (
-          <div className="mt-6">
-            <h2 className="heading mb-4 text-[13px] text-parchment">
-              What you missed ({missed.length})
-            </h2>
-            <div className="space-y-3">
-              {missed.map((r, i) => (
-                <div key={i} className="sheet p-5 sm:p-6">
-                  {r.question.label && (
-                    <p className="mb-3 border-l-4 border-paper-deep bg-paper-light px-4 py-2.5 font-read text-[0.98rem]">
-                      <RichText as="span" format="html">
-                        {r.question.label}
-                      </RichText>
-                    </p>
-                  )}
-                  <RichText
-                    as="div"
-                    format={r.question.promptFormat}
-                    className="prose-quill mb-4 text-[1rem]"
-                  >
-                    {r.question.prompt}
-                  </RichText>
-
-                  {/* Side by side, so the miss and the credited answer can be
-                      compared directly. Labelled rather than tinted. */}
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <section className="ink-trap lesson-trap">
-                      <div className="lesson-label">You chose {r.chosen}</div>
-                      <RichText
-                        as="div"
-                        format="markdown"
-                        className="font-read text-[0.99rem] leading-[1.7] text-ink"
-                      >
-                        {(r.chosen && r.question.why[r.chosen]) || 'Not the credited answer.'}
-                      </RichText>
-                    </section>
-                    <section className="ink-example">
-                      <div className="lesson-label">Answer: {r.question.correctKey}</div>
-                      <RichText
-                        as="div"
-                        format="markdown"
-                        className="font-read text-[0.99rem] leading-[1.7] text-ink"
-                      >
-                        {r.question.why[r.question.correctKey] ?? r.question.whyGeneral ?? ''}
-                      </RichText>
-                    </section>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        <MissedReview records={results} />
       </div>
     </Page>
   );

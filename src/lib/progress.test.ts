@@ -624,4 +624,19 @@ describe('recordTest', () => {
     expect(recordTest(progress(), fullResult).xpGained).toBe(900);
     expect(recordTest(progress(), partialResult).xpGained).toBe(250);
   });
+
+  it("counts a test's questions toward today's weekly-goal tally", () => {
+    const result: TestResult = {
+      id: 't3',
+      at: Date.now(),
+      scores: {},
+      composite: 25,
+      raw: { english: [30, 50], math: [20, 45] },
+      durationSec: 100,
+      sections: ['english', 'math'],
+    };
+    const next = recordTest(progress(), result).progress;
+    const today = Object.keys(next.tally.daily).sort().at(-1)!;
+    expect(next.tally.daily[today]).toBe(95);
+  });
 });
