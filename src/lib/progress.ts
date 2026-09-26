@@ -1255,6 +1255,7 @@ export function mergeProgress(local: Progress, remote: Progress): Progress {
   }
 
   const newer = (local.lastActiveDay ?? '') >= (remote.lastActiveDay ?? '') ? local : remote;
+  const sameDay = (local.lastActiveDay ?? '') === (remote.lastActiveDay ?? '');
 
   return {
     ...remote,
@@ -1281,11 +1282,17 @@ export function mergeProgress(local: Progress, remote: Progress): Progress {
     bookmarks: [...new Set([...(remote.bookmarks ?? []), ...(local.bookmarks ?? [])])],
     zonesCleared,
     review,
-    dayStreak: Math.max(local.dayStreak, remote.dayStreak),
+    /* A streak is a statement about the most recent day, so the side that saw
+       the most recent day owns it. The max resurrected broken streaks: a phone
+       left at 10 days would overwrite the laptop that had since lapsed to 1. */
+    dayStreak: sameDay ? Math.max(local.dayStreak, remote.dayStreak) : newer.dayStreak,
     bestCorrectStreak: Math.max(local.bestCorrectStreak, remote.bestCorrectStreak),
-    /* Counters take the max like everything else, so a shield spent on one
-       device is not silently refunded by the other. */
-    streakShields: Math.max(local.streakShields ?? 0, remote.streakShields ?? 0),
+    /* Same ownership rule. A max here refunded every shield: spending one on
+       the laptop (2 → 1) merged with the phone's untouched 2 gave back 2. On a
+       tie the lower count wins, for the same reason. */
+    streakShields: sameDay
+      ? Math.min(local.streakShields ?? 0, remote.streakShields ?? 0)
+      : (newer.streakShields ?? 0),
     /* Latest wins: doing the daily on your phone must count on your laptop. */
     dailyDoneOn:
       (local.dailyDoneOn ?? '') >= (remote.dailyDoneOn ?? '')

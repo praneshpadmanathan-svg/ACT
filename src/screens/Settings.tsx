@@ -243,7 +243,15 @@ export function SettingsScreen() {
                   ? 'Delete all progress on this device? This cannot be undone.'
                   : 'Delete all progress everywhere, including the cloud copy? Your account stays. This cannot be undone.',
               );
-              if (ok) void resetEverything();
+              if (!ok) return;
+              setEraseError(null);
+              setErasing(true);
+              void resetEverything().then((result) => {
+                if (!result.ok) {
+                  setEraseError(result.error ?? 'Could not reset progress.');
+                  setErasing(false);
+                }
+              });
             }}
           >
             Reset progress

@@ -806,13 +806,23 @@ describe('mergeProgress — fields added by this pass', () => {
     expect(mergeProgress(local, remote).bookmarks.sort()).toEqual(['a', 'b', 'c']);
   });
 
-  it('takes the higher shield count, so a sync cannot spend one twice', () => {
-    expect(
-      mergeProgress(progress({ streakShields: 1 }), progress({ streakShields: 3 })).streakShields,
-    ).toBe(3);
-    expect(
-      mergeProgress(progress({ streakShields: 3 }), progress({ streakShields: 1 })).streakShields,
-    ).toBe(3);
+  it('lets the most recently active device own the streak and its shields', () => {
+    const lapsedLaptop = progress({ lastActiveDay: dayKey(), dayStreak: 1, streakShields: 1 });
+    const stalePhone = progress({ lastActiveDay: daysAgo(6), dayStreak: 10, streakShields: 2 });
+    for (const merged of [
+      mergeProgress(lapsedLaptop, stalePhone),
+      mergeProgress(stalePhone, lapsedLaptop),
+    ]) {
+      expect(merged.dayStreak).toBe(1);
+      expect(merged.streakShields).toBe(1);
+    }
+  });
+
+  it('does not refund a shield spent on the same day on another device', () => {
+    const spent = progress({ lastActiveDay: dayKey(), dayStreak: 5, streakShields: 1 });
+    const unspent = progress({ lastActiveDay: dayKey(), dayStreak: 5, streakShields: 2 });
+    expect(mergeProgress(spent, unspent).streakShields).toBe(1);
+    expect(mergeProgress(unspent, spent).streakShields).toBe(1);
   });
 
   it('keeps the later daily completion, so the phone cannot re-open it on the laptop', () => {

@@ -324,7 +324,13 @@ export function expandFromCloud(row: CloudProgress): Progress {
  * fire-and-forget clobber this module was rewritten to prevent, arriving
  * through the back door. */
 export type PullResult =
-  | { status: 'ok'; data: Progress; updatedAt: number }
+  /* `updatedAt` is the database's own string, never parsed. Postgres keeps
+     microseconds and a JS Date keeps milliseconds, so a round trip through
+     `getTime()` handed `push_progress` a value that could never equal the
+     row's: every push after the first came back as a conflict, and the
+     cloud copy froze at its first write. It is an opaque token — compared by
+     the database, never by us. */
+  | { status: 'ok'; data: Progress; updatedAt: string }
   | { status: 'empty' }
   | { status: 'error'; message: string };
 
@@ -344,7 +350,7 @@ export async function pullProgress(userId: string): Promise<PullResult> {
   return {
     status: 'ok',
     data: expandFromCloud(data.data),
-    updatedAt: new Date(data.updated_at).getTime(),
+    updatedAt: data.updated_at,
   };
 }
 
@@ -356,7 +362,7 @@ export async function pullProgress(userId: string): Promise<PullResult> {
  * a failure would put a scary toast in front of the one case the system is
  * handling properly. */
 export type PushResult =
-  | { status: 'ok'; updatedAt: number }
+  | { status: 'ok'; updatedAt: string }
   | { status: 'conflict' }
   | { status: 'error'; message: string };
 
@@ -376,14 +382,14 @@ export type PushResult =
 export async function pushProgress(
   displayName: string,
   progress: Progress,
-  expectedUpdatedAt: number | null,
+  expectedUpdatedAt: string | null,
 ): Promise<PushResult> {
   if (!supabase) return { status: 'error', message: 'Accounts are not configured.' };
 
   const { data, error } = await supabase.rpc('push_progress', {
     p_display_name: displayName,
     p_data: compactForCloud(progress),
-    p_expected: expectedUpdatedAt === null ? null : new Date(expectedUpdatedAt).toISOString(),
+    p_expected: expectedUpdatedAt,
   });
 
   if (error) {
@@ -395,15 +401,20 @@ export async function pushProgress(
      one means retry, the other means stop. */
   if (data === null) return { status: 'conflict' };
 
-  return { status: 'ok', updatedAt: new Date(data as string).getTime() };
+  return { status: 'ok', updatedAt: data as string };
 }
 
 /** Drop the saved row without touching the account. Used by "reset progress",
  *  which otherwise reloads and pulls everything straight back down. */
-export async function deleteRemoteProgress(userId: string): Promise<void> {
-  if (!supabase) return;
+/** False when the row may still be there — the caller must not report success. */
+export async function deleteRemoteProgress(userId: string): Promise<boolean> {
+  if (!supabase) return true;
   const { error } = await supabase.from('progress').delete().eq('user_id', userId);
-  if (error) reportWarn('sync.reset', error.message);
+  if (error) {
+    reportWarn('sync.reset', error.message);
+    return false;
+  }
+  return true;
 }
 
 /* ----------------------------------------------------------------- erasure */

@@ -138,7 +138,7 @@ interface StoreValue {
   refreshAuth: () => Promise<void>;
   signOut: () => Promise<void>;
   syncNow: () => Promise<void>;
-  resetEverything: () => Promise<void>;
+  resetEverything: () => Promise<{ ok: boolean; error?: string }>;
   deleteAccount: () => Promise<{ ok: boolean; error?: string }>;
 }
 
@@ -188,7 +188,16 @@ export function StoreProvider({ children }: { children: ReactNode }) {
      "no row" — either never synced, or just deleted — which the database treats
      as a distinct expectation rather than as "don't care". Reset on identity
      change, because one account's timestamp says nothing about another's. */
-  const remoteUpdatedAtRef = useRef<number | null>(null);
+  const remoteUpdatedAtRef = useRef<string | null>(null);
+
+  /* Who the cloud work in flight belongs to. A pull that set off for one
+     account can land after a sign-out or a switch to another; merging it then
+     would pour that account's history into whoever is here now. Every await
+     that returns remote data checks this before touching state. */
+  const activeUidRef = useRef<string | null>(null);
+
+  /** Set while a reset is deleting the cloud row, so nothing writes it back. */
+  const resettingRef = useRef(false);
 
   /* ---------------------------------------------------------- persistence */
 
@@ -197,6 +206,21 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     saveProgress(progress, storageKey);
   }, [progress, storageKey]);
+
+  /* Two tabs of the same world each hold a copy in memory and write the whole
+     thing on every change, so without this the last tab to answer a question
+     silently erased everything the other one had done. Follow the other tab's
+     write instead; the next change here then builds on it. */
+  useEffect(() => {
+    const onStorage = (e: StorageEvent) => {
+      if (e.key !== storageKey || e.newValue === null) return;
+      const next = loadProgress(storageKey);
+      progressRef.current = next;
+      setProgress(next);
+    };
+    window.addEventListener('storage', onStorage);
+    return () => window.removeEventListener('storage', onStorage);
+  }, [storageKey]);
 
   /* --------------------------------------------------------------- toasts */
 
@@ -387,6 +411,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
    * it up with a fresher timestamp.
    */
   const pushSynced = useCallback(async (uid: string, name: string): Promise<SyncOutcome> => {
+    if (resettingRef.current) return 'deferred';
     const attempt = async (): Promise<PushResult> =>
       pushProgress(name, progressRef.current, remoteUpdatedAtRef.current);
 
@@ -394,6 +419,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
     if (result.status === 'conflict') {
       const remote = await pullProgress(uid);
+      if (activeUidRef.current !== uid) return 'deferred';
       if (remote.status === 'error') return 'error';
 
       if (remote.status === 'ok') {
@@ -424,11 +450,12 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const syncWithCloud = useCallback(
-    async (uid: string, name: string, base: Progress, claimGuest = false) => {
+    async (uid: string, name: string, claimGuest = false) => {
       setSyncing(true);
       setLastSyncError(null);
       try {
         const remote = await pullProgress(uid);
+        if (activeUidRef.current !== uid) return;
 
         if (remote.status === 'error') {
           /* Do not push. Local might be an empty profile on a fresh device and
@@ -438,15 +465,18 @@ export function StoreProvider({ children }: { children: ReactNode }) {
           return;
         }
 
-        let merged = base;
+        /* Merge into what is loaded *now*, not a snapshot taken when the sync
+           started: the app opens before the pull, so anything answered while
+           it was in flight exists only in the live copy. */
+        let merged = progressRef.current;
         if (remote.status === 'ok') {
-          merged = mergeProgress(base, remote.data);
+          merged = mergeProgress(merged, remote.data);
           remoteUpdatedAtRef.current = remote.updatedAt;
         } else {
           // `empty` is a fact, not a failure: this account has no row yet.
           remoteUpdatedAtRef.current = null;
           if (claimGuest) {
-            merged = mergeProgress(loadProgress(progressKeyFor({ kind: 'guest' })), base);
+            merged = mergeProgress(loadProgress(progressKeyFor({ kind: 'guest' })), merged);
           }
         }
 
@@ -506,6 +536,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       const claimGuest = readRaw(CLAIM_GUEST_KEY) === '1';
       removeRaw(CLAIM_GUEST_KEY);
 
+      activeUidRef.current = user.id;
       setUserId(user.id);
       setPlayerName(name);
       setIdentity(next);
@@ -531,12 +562,21 @@ export function StoreProvider({ children }: { children: ReactNode }) {
          them. Not awaited, so a hung request costs a stale number on a badge
          instead of the entire app. */
       setAuthReady(true);
-      void syncWithCloud(user.id, name, base, claimGuest);
+      void syncWithCloud(user.id, name, claimGuest);
       return;
     }
+    /* Load the guest world along with the guest identity. Switching only the
+       identity left the account's progress in state, and the save effect then
+       wrote it under the guest key — so signing out handed the account's whole
+       history to whoever used the browser next. */
+    const guest = loadProgress(progressKeyFor({ kind: 'guest' }));
+    activeUidRef.current = null;
+    remoteUpdatedAtRef.current = null;
     setUserId(null);
     setPlayerName('Traveller');
     setIdentity({ kind: 'guest' });
+    setProgress(guest);
+    progressRef.current = guest;
     setAuthReady(true);
   }, [syncWithCloud]);
 
@@ -582,7 +622,11 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     })();
 
     if (!supabase) return;
-    const { data } = supabase.auth.onAuthStateChange((event) => {
+    const { data } = supabase.auth.onAuthStateChange((event, session) => {
+      /* Supabase re-announces SIGNED_IN whenever a tab regains focus. For the
+         account already loaded that is not news, and treating it as a sign-in
+         reloaded progress from disk and ran a full sync on every alt-tab. */
+      if (event === 'SIGNED_IN' && session?.user.id === activeUidRef.current) return;
       if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'USER_UPDATED') {
         void refreshAuth();
       }
@@ -657,7 +701,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   }, [switchIdentity]);
 
   const syncNow = useCallback(async () => {
-    if (userId) await syncWithCloud(userId, playerName, progressRef.current);
+    if (userId) await syncWithCloud(userId, playerName);
   }, [userId, playerName, syncWithCloud]);
 
   /* Wipe progress without touching the account.
@@ -667,7 +711,21 @@ export function StoreProvider({ children }: { children: ReactNode }) {
      merged it into the empty local one, so everything the player had just asked
      to delete reappeared. Deleting locally only is not deleting. */
   const resetEverything = useCallback(async () => {
-    if (userId) await deleteRemoteProgress(userId);
+    /* Stop every write first. A debounced push still pending, or the flush
+       that fires as the reload hides the page, would carry the old progress
+       straight back into the row this is about to delete. */
+    resettingRef.current = true;
+    if (pushTimer.current) window.clearTimeout(pushTimer.current);
+    if (userId && !(await deleteRemoteProgress(userId))) {
+      /* Clearing this device anyway would look like success until the next
+         sign-in pulled every bit of it back down. Say so and change nothing. */
+      resettingRef.current = false;
+      return {
+        ok: false,
+        error:
+          'Could not reach the cloud, so nothing was reset. Check your connection and try again.',
+      };
+    }
     removeRaw(storageKey);
     removeRaw(STORAGE_KEYS.progress);
     removeRaw(STORAGE_KEYS.guest);
@@ -677,6 +735,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     removeRaw(STORAGE_KEYS.seenIntro);
     window.location.hash = '#/';
     window.location.reload();
+    return { ok: true };
   }, [storageKey, userId]);
 
   /** Delete the account itself, and every trace of it on this device. */
