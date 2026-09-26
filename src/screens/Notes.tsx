@@ -194,7 +194,7 @@ export function NoteReader({ pageId }: { pageId: string }) {
       <BackLink to={{ name: 'notes', section: page.section }} label={`${meta.name} notes`} />
 
       {/* reading progress */}
-      <div className="sticky top-16 z-30 mb-5">
+      <div className="sticky top-14 lg:top-3 z-30 mb-5">
         <ProgressBar value={scrolled} color={meta.color} height={5} label="Reading progress" />
       </div>
 

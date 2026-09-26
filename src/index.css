@@ -622,6 +622,13 @@
   .hud-icon:hover {
     @apply -translate-y-px border-gold-deep text-gold;
   }
+  /* 36px is a mouse target. On a touchscreen the header icons are the ones a
+     thumb hits most, so they get the full 44. */
+  @media (pointer: coarse) {
+    .hud-icon {
+      @apply h-11 w-11;
+    }
+  }
 
   /* ---------------------------------------------------------------- story */
 

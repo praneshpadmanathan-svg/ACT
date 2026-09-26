@@ -67,16 +67,17 @@ function staticEntries(): PaletteEntry[] {
      rail has eleven glyphs for eight destinations; this list needs fifteen
      kinds of thing, and reusing one glyph three times to avoid drawing new
      ones would be worse than picking the nearest true metaphor from the forty
-     that already exist. Camp is a lantern because the camp art is lit by them;
+     that already exist. Home is a lantern because the camp art is lit by them;
      Review is a clock because the whole idea is the right moment. */
   const out: PaletteEntry[] = [
     {
       id: 'go-home',
-      label: 'Camp',
+      label: 'Home',
       group: 'Go',
       icon: 'lantern',
       to: { name: 'home' },
       hint: 'What to do today',
+      keywords: 'camp dashboard',
     },
     {
       id: 'go-path',
@@ -96,11 +97,12 @@ function staticEntries(): PaletteEntry[] {
     },
     {
       id: 'go-drills',
-      label: 'Training',
+      label: 'Practice',
       group: 'Go',
       icon: 'sword',
       to: { name: 'drills' },
-      hint: 'Free practice',
+      hint: 'Free practice by section and skill',
+      keywords: 'training drills',
     },
     {
       id: 'go-review',
@@ -120,11 +122,12 @@ function staticEntries(): PaletteEntry[] {
     },
     {
       id: 'go-tests',
-      label: 'Summit',
+      label: 'Timed practice',
       group: 'Go',
       icon: 'trophy',
       to: { name: 'tests' },
-      hint: 'Full timed trial',
+      hint: 'Shortened sets against the clock',
+      keywords: 'summit tests exam',
     },
     {
       id: 'go-stats',
@@ -152,11 +155,12 @@ function staticEntries(): PaletteEntry[] {
     },
     {
       id: 'go-profile',
-      label: 'Profile',
+      label: 'Settings',
       group: 'Go',
       icon: 'settings',
-      to: { name: 'stats' },
-      hint: 'Your account and plan',
+      to: { name: 'settings' },
+      hint: 'Account, sound, display',
+      keywords: 'profile account preferences',
     },
 
     {

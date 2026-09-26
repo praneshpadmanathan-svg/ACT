@@ -20,7 +20,14 @@ import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import type { SectionId } from '@/types';
 import { Page } from '@/components/Shell';
-import { Button, EmptyState, ProgressBar, SectionHeading, SectionTabs } from '@/components/ui';
+import {
+  Button,
+  EmptyState,
+  ProgressBar,
+  SectionHeading,
+  SectionTabs,
+  LinkButton,
+} from '@/components/ui';
 import { Wizzy } from '@/game/Wizzy';
 import { RoadChooser } from '@/game/RoadChooser';
 import { PROLOGUE_ID } from '@/game/story';
@@ -87,12 +94,10 @@ export function StudyScreen({ section }: { section?: string }) {
           detail={meta.blurb}
           right={
             <div className="flex flex-wrap gap-2">
-              <a href={hrefFor({ name: 'codex' })} onClick={() => sfx.select()}>
-                <Button>The Codex</Button>
-              </a>
-              <a href={hrefFor({ name: 'drills', section: meta.id })} onClick={() => sfx.select()}>
-                <Button>Free training instead</Button>
-              </a>
+              <LinkButton href={hrefFor({ name: 'codex' })}>The Codex</LinkButton>
+              <LinkButton href={hrefFor({ name: 'drills', section: meta.id })}>
+                Free practice instead
+              </LinkButton>
             </div>
           }
         />

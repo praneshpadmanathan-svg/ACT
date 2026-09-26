@@ -111,8 +111,12 @@ self.addEventListener('fetch', (event) => {
       (async () => {
         try {
           const fresh = await fetch(request);
-          const cache = await caches.open(CACHE);
-          cache.put('/index.html', fresh.clone());
+          /* Only a real page becomes the offline shell. A 404 or a host error
+             page stored here would be what every offline launch opened to. */
+          if (fresh.ok && fresh.headers.get('Content-Type')?.includes('text/html')) {
+            const cache = await caches.open(CACHE);
+            event.waitUntil(cache.put('/index.html', fresh.clone()));
+          }
           return fresh;
         } catch {
           const cached = await caches.match('/index.html', MATCH);

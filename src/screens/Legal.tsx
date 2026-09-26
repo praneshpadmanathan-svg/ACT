@@ -16,7 +16,7 @@ import { hrefFor, useNavigate } from '@/lib/router';
 import { cloudEnabled } from '@/lib/supabase';
 import { CONTACT } from '@/lib/contact';
 import { sfx } from '@/lib/sfx';
-import { Button } from '@/components/ui';
+import { LinkButton } from '@/components/ui';
 import { Glyph } from '@/components/Icon';
 import { Art } from '@/components/Art';
 import { LIBRARY_STATS } from '@/content/stats';
@@ -51,11 +51,9 @@ export function LegalScreen({ page }: { page: 'privacy' | 'terms' }) {
           {page === 'privacy' ? <Privacy /> : <Terms />}
 
           <div className="mt-10 flex flex-wrap gap-3 border-t border-paper-edge pt-6">
-            <a href={hrefFor({ name: page === 'privacy' ? 'terms' : 'privacy' })}>
-              <Button trailing>
-                {page === 'privacy' ? 'Read the terms' : 'Read the privacy policy'}
-              </Button>
-            </a>
+            <LinkButton href={hrefFor({ name: page === 'privacy' ? 'terms' : 'privacy' })} trailing>
+              {page === 'privacy' ? 'Read the terms' : 'Read the privacy policy'}
+            </LinkButton>
           </div>
         </div>
       </div>

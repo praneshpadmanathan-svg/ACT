@@ -339,16 +339,22 @@ export function QuestionRunner({
               )}
             </AnimatePresence>
 
-            <span className="chip">
-              <span className="num text-[15px] text-parchment">{formatClock(elapsed)}</span>
-            </span>
+            {/* A timed section already shows its countdown above the runner; a
+                second clock counting up beside it read as two contradictory
+                answers to "how long have I got". */}
+            {!deferFeedback && (
+              <span className="chip">
+                <span className="num text-[15px] text-parchment">{formatClock(elapsed)}</span>
+              </span>
+            )}
 
             {/* The count is no longer a chip. The rail down the task column is
                 the progress signal now; this is the exact number, kept for the
                 reader who wants it and for anyone on a screen reader, at the
                 weight a secondary reading deserves. */}
             <span className="font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint">
-              Question <span className="num text-parchment-dim">{index + 1}</span> of{' '}
+              <span className="hidden sm:inline">Question </span>
+              <span className="num text-parchment-dim">{index + 1}</span> of{' '}
               <span className="num text-parchment-dim">{questions.length}</span>
             </span>
 

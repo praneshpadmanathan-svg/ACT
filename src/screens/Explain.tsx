@@ -26,7 +26,7 @@ import { LIBRARY_STATS } from '@/content/stats';
 import { SECTIONS } from '@/content/sections';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { sfx } from '@/lib/sfx';
-import { Button } from '@/components/ui';
+import { LinkButton } from '@/components/ui';
 import { Glyph } from '@/components/Icon';
 import { Art } from '@/components/Art';
 
@@ -440,12 +440,12 @@ export function ExplainScreen() {
           ))}
 
           <div className="mt-10 flex flex-wrap gap-3 border-t border-paper-edge pt-6">
-            <a href={hrefFor({ name: 'privacy' })}>
-              <Button trailing>Privacy policy</Button>
-            </a>
-            <a href={hrefFor({ name: 'terms' })}>
-              <Button trailing>Terms</Button>
-            </a>
+            <LinkButton href={hrefFor({ name: 'privacy' })} trailing>
+              Privacy policy
+            </LinkButton>
+            <LinkButton href={hrefFor({ name: 'terms' })} trailing>
+              Terms
+            </LinkButton>
           </div>
         </div>
       </div>

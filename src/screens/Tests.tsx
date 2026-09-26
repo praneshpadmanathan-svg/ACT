@@ -85,8 +85,8 @@ function TestsBoard() {
   return (
     <Page>
       <SectionHeading
-        eyebrow="Boss battles"
-        title="Practice tests"
+        eyebrow="Prove it"
+        title="Timed practice"
         detail="Shortened practice sets, not full-length ACT simulations. Explanations and an estimated score appear when you finish."
       />
 
@@ -556,7 +556,7 @@ function SectionTimer({
   return (
     <div
       className={cx(
-        'sticky top-16 z-40 mb-4 rounded-lg border-2 px-5 py-3 backdrop-blur',
+        'sticky top-14 lg:top-3 z-40 mb-4 rounded-lg border-2 px-5 py-3 backdrop-blur',
         critical
           ? 'border-blood bg-blood/15'
           : urgent

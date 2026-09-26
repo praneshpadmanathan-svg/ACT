@@ -35,8 +35,17 @@ export function registerServiceWorker(): void {
       })
       .catch((err) => reportWarn('pwa.register', err));
 
+    /* The first worker claims the page it was installed from, and that fires
+       `controllerchange` too — which reloaded every first-time visitor a few
+       seconds in, typically halfway through onboarding. Going from no
+       controller to one is not an update; only a swap is. */
+    let controlled = Boolean(navigator.serviceWorker.controller);
     let reloading = false;
     navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!controlled) {
+        controlled = true;
+        return;
+      }
       if (reloading) return;
       reloading = true;
       window.location.reload();

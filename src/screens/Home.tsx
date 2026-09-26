@@ -33,6 +33,7 @@ import {
   ProgressRing,
   RankBadge,
   Tally,
+  LinkButton,
 } from '@/components/ui';
 import { Glyph, type IconName } from '@/components/Icon';
 import { useZoneProgress } from '@/lib/zoneProgress';
@@ -86,7 +87,11 @@ export function Home() {
         <header className="home-welcome">
           <div>
             <p className="home-kicker">Your learning dashboard</p>
-            <h1>Welcome back, {playerName}.</h1>
+            {/* "Back" is a claim about a previous visit, and straight out of
+                onboarding there has not been one. */}
+            <h1>
+              {progress.tally.answered > 0 ? 'Welcome back' : 'Welcome'}, {playerName}.
+            </h1>
             <p>Your next step, your progress, and every way to practise — all in one place.</p>
           </div>
           <a href={hrefFor({ name: 'stats' })} className="btn btn-ghost">
@@ -153,7 +158,7 @@ export function Home() {
             <Quick label="Read a lesson" detail={`${LIBRARY_STATS.notePages} lessons`} to="notes" />
             <Quick
               label="Quick practice"
-              detail={`${LIBRARY_STATS.drillQuestions} questions`}
+              detail={`${LIBRARY_STATS.drillQuestions.toLocaleString()} questions`}
               to="drills"
             />
             <Quick label="Timed practice" detail="Build your test-day pace" to="tests" />
@@ -203,11 +208,9 @@ export function Home() {
               />
             </dl>
 
-            <a href={hrefFor({ name: 'stats' })} onClick={() => sfx.select()}>
-              <Button trailing className="mt-5 w-full">
-                View full progress
-              </Button>
-            </a>
+            <LinkButton href={hrefFor({ name: 'stats' })} trailing className="mt-5 w-full">
+              View full progress
+            </LinkButton>
           </section>
 
           <section className="panel-quiet p-6 sm:p-7">
@@ -222,20 +225,16 @@ export function Home() {
               <Row label="Due for review" value={String(reviewDue)} highlight={reviewDue > 0} />
             </dl>
 
-            <a
+            <LinkButton
               href={hrefFor({ name: reviewDue > 0 ? 'review' : 'drills' })}
-              onClick={() => sfx.select()}
+              variant={reviewDue > 0 ? 'primary' : 'ghost'}
+              trailing
+              className="mt-5 w-full"
             >
-              <Button
-                variant={reviewDue > 0 ? 'primary' : 'ghost'}
-                trailing
-                className="mt-5 w-full"
-              >
-                {reviewDue > 0
-                  ? `Review ${reviewDue} question${reviewDue === 1 ? '' : 's'}`
-                  : 'Train a skill'}
-              </Button>
-            </a>
+              {reviewDue > 0
+                ? `Review ${reviewDue} question${reviewDue === 1 ? '' : 's'}`
+                : 'Practice a skill'}
+            </LinkButton>
           </section>
         </div>
 
@@ -458,7 +457,9 @@ function PlacementPrompt() {
 
   return (
     <div className="panel-quiet mb-6 flex flex-wrap items-center gap-4 p-5 sm:p-6">
-      <span className="min-w-0 flex-1">
+      {/* A real basis, so on a phone the buttons wrap below the copy instead
+          of squeezing it into a one-word-wide column beside them. */}
+      <span className="min-w-0 flex-[1_1_16rem]">
         <Eyebrow>Where do you stand?</Eyebrow>
         <span className="mt-1 block font-display text-[15px] font-semibold text-gold-light">
           Take the placement test
@@ -519,7 +520,7 @@ function DailyCard() {
       }`}
     >
       <span
-        className="num flex flex-none items-center justify-center rounded-lg border-2 px-4 py-2 text-[26px] leading-none"
+        className="num flex flex-none items-center justify-center rounded-lg border-2 px-3 py-2 text-[22px] leading-none sm:px-4 sm:text-[26px]"
         style={{
           color: done ? 'oklch(var(--c-woods-text))' : 'oklch(var(--c-gold))',
           borderColor: done ? '#3f6b4a' : '#8a6a1c',
@@ -543,7 +544,7 @@ function DailyCard() {
       </span>
       {!done && (
         <span className="flex flex-none items-center gap-1 font-display text-[13px] font-semibold text-gold">
-          Start
+          <span className="hidden sm:inline">Start</span>
           <Glyph name="chevronRight" size={13} strokeWidth={2} />
         </span>
       )}

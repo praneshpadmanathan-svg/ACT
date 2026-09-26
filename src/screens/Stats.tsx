@@ -32,7 +32,7 @@ import {
 } from '@/lib/progress';
 import { cx, formatRelative, titleCase } from '@/lib/utils';
 import { Page } from '@/components/Shell';
-import { Button, ProgressBar, SectionHeading, EmptyState } from '@/components/ui';
+import { Button, ProgressBar, SectionHeading, EmptyState, LinkButton } from '@/components/ui';
 import { AchievementBadge } from '@/components/RankSigil';
 import { RankLadder } from '@/components/RankLadder';
 import { ScoreCaveat } from '@/components/ScoreCaveat';
@@ -54,11 +54,7 @@ export function StatsScreen() {
         eyebrow="Your climb"
         title="Progress"
         detail="Everything here comes from questions you have actually answered."
-        right={
-          <a href={hrefFor({ name: 'settings' })}>
-            <Button>Settings</Button>
-          </a>
-        }
+        right={<LinkButton href={hrefFor({ name: 'settings' })}>Settings</LinkButton>}
       />
 
       {/* Who you are, and nothing else. The rank name used to be printed here

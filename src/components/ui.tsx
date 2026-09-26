@@ -50,6 +50,64 @@ interface ButtonProps extends NativeButtonProps {
   trailing?: boolean;
 }
 
+function buttonClass(variant: Variant, size: Size, className?: string) {
+  return cx(
+    'btn',
+    variant === 'primary' && 'btn-primary',
+    variant === 'ghost' && 'btn-ghost',
+    variant === 'danger' && 'btn-danger',
+    variant === 'quill' && 'btn-quill',
+    size === 'sm' && 'btn-sm',
+    size === 'lg' && 'btn-lg',
+    className,
+  );
+}
+
+/* A link that looks like a button.
+
+   Navigation used to be spelled `<a href><Button/></a>`: a button inside a
+   link, which HTML forbids, and which gave every one of them two tab stops and
+   a screen reader announcement of "link, button". This is one element — a real
+   link, so it opens in a new tab and shows its address — wearing the button's
+   classes and the same spring. */
+export function LinkButton({
+  href,
+  variant = 'ghost',
+  size = 'md',
+  trailing = false,
+  className,
+  onClick,
+  children,
+}: {
+  href: string;
+  variant?: Variant;
+  size?: Size;
+  trailing?: boolean;
+  className?: string;
+  onClick?: () => void;
+  children: ReactNode;
+}) {
+  const stillMotion = useReducedMotion();
+  return (
+    <m.a
+      href={href}
+      className={buttonClass(variant, size, className)}
+      whileHover={stillMotion ? undefined : { y: -1 }}
+      whileTap={stillMotion ? undefined : { scale: 0.99 }}
+      transition={PIN_SPRING}
+      onClick={() => {
+        sfx.select();
+        onClick?.();
+      }}
+    >
+      {children}
+      {trailing && (
+        <Glyph name="chevronRight" size={TRAIL_SIZE[size]} className="-mr-1 opacity-80" />
+      )}
+    </m.a>
+  );
+}
+
 /* Forty-three buttons in this app ended their label with a typed `▶` or `▸`.
    That is one affordance — "this moves you onward" — spelled forty-three
    different ways: two glyphs, whatever font resolved them, no control over
@@ -108,16 +166,7 @@ export function Button({
   return (
     <m.button
       type="button"
-      className={cx(
-        'btn',
-        variant === 'primary' && 'btn-primary',
-        variant === 'ghost' && 'btn-ghost',
-        variant === 'danger' && 'btn-danger',
-        variant === 'quill' && 'btn-quill',
-        size === 'sm' && 'btn-sm',
-        size === 'lg' && 'btn-lg',
-        className,
-      )}
+      className={buttonClass(variant, size, className)}
       whileHover={rest.disabled || stillMotion ? undefined : { y: -1 }}
       whileTap={rest.disabled || stillMotion ? undefined : { scale: 0.99 }}
       transition={PIN_SPRING}

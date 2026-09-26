@@ -445,7 +445,7 @@ export function Landing() {
                   href={hrefFor({ name: 'path' })}
                   onClick={() => sfx.select()}
                 >
-                  Back to the road
+                  Open Study
                 </a>
               </>
             ) : (
