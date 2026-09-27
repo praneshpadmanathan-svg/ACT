@@ -10334,7 +10334,7 @@
     "topic": "reading data",
     "difficulty": "easy",
     "passage": "sp29",
-    "context": "According to Figure 1, the absorption coefficient of the 25 mm foam panel at 2000 Hz was closest to:",
+    "context": "According to Table 1, the absorption coefficient of the 25 mm foam panel at 2000 Hz was closest to:",
     "choices": [
       {
         "id": "A",
@@ -10355,7 +10355,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Correct — the 2000 Hz row of Figure 1 gives 0.82.",
+      "A": "Correct — the 2000 Hz row of Table 1 gives 0.82.",
       "B": "0.68 is the value one row higher, at 1000 Hz.",
       "C": "0.88 is the value one row lower, at 4000 Hz.",
       "D": "0.45 is the value at 500 Hz, two rows above the one asked for."
@@ -10367,7 +10367,7 @@
     "topic": "reading data",
     "difficulty": "easy",
     "passage": "sp29",
-    "context": "According to Table 1, a 50 mm foam panel mounted flush had an absorption coefficient at 500 Hz of:",
+    "context": "According to Table 2, a 50 mm foam panel mounted flush had an absorption coefficient at 500 Hz of:",
     "choices": [
       {
         "id": "A",
@@ -10389,7 +10389,7 @@
     "answer": "B",
     "why": {
       "A": "0.78 is the 75 mm panel mounted flush.",
-      "B": "Correct — the 50 mm row of Table 1 gives 0.66 in the flush column.",
+      "B": "Correct — the 50 mm row of Table 2 gives 0.66 in the flush column.",
       "C": "0.80 is the 50 mm panel on a 50 mm air gap, not mounted flush.",
       "D": "0.45 is the 25 mm panel mounted flush."
     }
@@ -10400,7 +10400,7 @@
     "topic": "data representation",
     "difficulty": "easy",
     "passage": "sp29",
-    "context": "Figure 1 shows that, for the 25 mm foam panel, as the frequency of the sound increased, the absorption coefficient:",
+    "context": "Table 1 shows that, for the 25 mm foam panel, as the frequency of the sound increased, the absorption coefficient:",
     "choices": [
       {
         "id": "A",
@@ -10421,10 +10421,10 @@
     ],
     "answer": "C",
     "why": {
-      "A": "No value in Figure 1 is lower than the value before it.",
+      "A": "No value in Table 1 is lower than the value before it.",
       "B": "The value at 4000 Hz is nearly nine times the value at 125 Hz.",
       "C": "Correct — the values run 0.10, 0.22, 0.45, 0.68, 0.82, 0.88, rising at every step.",
-      "D": "The lowest value in Figure 1 is at the lowest frequency, not the highest."
+      "D": "The lowest value in Table 1 is at the lowest frequency, not the highest."
     }
   },
   {
@@ -10433,7 +10433,7 @@
     "topic": "calculating from data",
     "difficulty": "medium",
     "passage": "sp29",
-    "context": "Based on Table 1, how much greater was the absorption coefficient of a 100 mm panel on an air gap than that of a 25 mm panel mounted flush?",
+    "context": "Based on Table 2, how much greater was the absorption coefficient of a 100 mm panel on an air gap than that of a 25 mm panel mounted flush?",
     "choices": [
       {
         "id": "A",
@@ -10466,7 +10466,7 @@
     "topic": "data representation",
     "difficulty": "medium",
     "passage": "sp29",
-    "context": "One entry in Table 1 describes the same panel, mounting and frequency as an entry in Figure 1. Those two entries are:",
+    "context": "One entry in Table 2 describes the same panel, mounting and frequency as an entry in Table 1. Those two entries are:",
     "choices": [
       {
         "id": "A",
@@ -10487,10 +10487,10 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Correct — Figure 1 is a 25 mm flush panel, and Table 1 is at 500 Hz, so only that pair matches on all three.",
-      "B": "Figure 1 reports only a 25 mm panel, so its 1000 Hz point cannot describe a 50 mm one.",
-      "C": "Figure 1 is measured flush throughout, so none of its points describes an air-gap mounting.",
-      "D": "Table 1 is measured at 500 Hz throughout, so none of its entries describes 4000 Hz."
+      "A": "Correct — Table 1 is a 25 mm flush panel, and Table 2 is at 500 Hz, so only that pair matches on all three.",
+      "B": "Table 1 reports only a 25 mm panel, so its 1000 Hz point cannot describe a 50 mm one.",
+      "C": "Table 1 is measured flush throughout, so none of its points describes an air-gap mounting.",
+      "D": "Table 2 is measured at 500 Hz throughout, so none of its entries describes 4000 Hz."
     }
   },
   {
@@ -10532,7 +10532,7 @@
     "topic": "units",
     "difficulty": "hard",
     "passage": "sp29",
-    "context": "One of the 50 mm polyester batt panels described in Table 2 would have a mass closest to:",
+    "context": "One of the 50 mm polyester batt panels described in Table 3 would have a mass closest to:",
     "choices": [
       {
         "id": "A",
@@ -10565,7 +10565,7 @@
     "topic": "calculating from data",
     "difficulty": "medium",
     "passage": "sp29",
-    "context": "Based on Table 1, the benefit of mounting a panel on an air gap rather than flush was:",
+    "context": "Based on Table 2, the benefit of mounting a panel on an air gap rather than flush was:",
     "choices": [
       {
         "id": "A",
@@ -10610,7 +10610,7 @@
       },
       {
         "id": "C",
-        "text": "No, because alpha fell at the highest frequency tested in Figure 1."
+        "text": "No, because alpha fell at the highest frequency tested in Table 1."
       },
       {
         "id": "D",
@@ -10619,10 +10619,10 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Correct — a 25 mm panel already reaches 0.88 at 4000 Hz, and Table 1 shows thickening raises alpha further.",
+      "A": "Correct — a 25 mm panel already reaches 0.88 at 4000 Hz, and Table 2 shows thickening raises alpha further.",
       "B": "The 50 mm panel reads 0.66 at 500 Hz, well short of 0.88.",
-      "C": "Figure 1 rises to its maximum of 0.88 at 4000 Hz rather than falling there.",
-      "D": "Table 1 shows alpha rising with thickness at every mounting tested."
+      "C": "Table 1 rises to its maximum of 0.88 at 4000 Hz rather than falling there.",
+      "D": "Table 2 shows alpha rising with thickness at every mounting tested."
     }
   },
   {
@@ -10631,7 +10631,7 @@
     "topic": "data representation",
     "difficulty": "hard",
     "passage": "sp29",
-    "context": "If the pattern in the flush column of Table 1 continued, a 125 mm foam panel mounted flush would have an absorption coefficient at 500 Hz closest to:",
+    "context": "If the pattern in the flush column of Table 2 continued, a 125 mm foam panel mounted flush would have an absorption coefficient at 500 Hz closest to:",
     "choices": [
       {
         "id": "A",
@@ -10664,7 +10664,7 @@
     "topic": "reading data",
     "difficulty": "hard",
     "passage": "sp29",
-    "context": "A reader wants a single material whose absorption is reported both in Table 1 and in Table 2. That material and the obstacle to comparing the two values are:",
+    "context": "A reader wants a single material whose absorption is reported both in Table 2 and in Table 3. That material and the obstacle to comparing the two values are:",
     "choices": [
       {
         "id": "A",
@@ -10685,10 +10685,10 @@
     ],
     "answer": "C",
     "why": {
-      "A": "Polyester batt appears only in Table 2, and both of its entries are flush.",
-      "B": "Perforated wood appears only in Table 2, so there is no second value to compare.",
-      "C": "Correct — the text names Table 1 as the same open-cell foam, but Table 1 is at 500 Hz and Table 2 at 1000 Hz.",
-      "D": "Mineral wool appears only in Table 2; Table 1 reports one material throughout."
+      "A": "Polyester batt appears only in Table 3, and both of its entries are flush.",
+      "B": "Perforated wood appears only in Table 3, so there is no second value to compare.",
+      "C": "Correct — the text names Table 2 as the same open-cell foam, but Table 2 is at 500 Hz and Table 3 at 1000 Hz.",
+      "D": "Mineral wool appears only in Table 3; Table 2 reports one material throughout."
     }
   },
   {
@@ -10701,19 +10701,19 @@
     "choices": [
       {
         "id": "A",
-        "text": "Table 1, where thickening the panel raises absorption at a single frequency."
+        "text": "Table 2, where thickening the panel raises absorption at a single frequency."
       },
       {
         "id": "B",
-        "text": "Table 2, where four materials of one thickness absorb different fractions."
+        "text": "Table 3, where four materials of one thickness absorb different fractions."
       },
       {
         "id": "C",
-        "text": "Table 1, where the air gap raises absorption without changing the thickness."
+        "text": "Table 2, where the air gap raises absorption without changing the thickness."
       },
       {
         "id": "D",
-        "text": "Figure 1, where one unchanged panel absorbs very differently at different frequencies."
+        "text": "Table 1, where one unchanged panel absorbs very differently at different frequencies."
       }
     ],
     "answer": "D",
@@ -10721,7 +10721,7 @@
       "A": "Both accounts expect a thicker panel to absorb more, so this separates nothing.",
       "B": "Differences between materials are outside both claims, which are about thickness.",
       "C": "The gap is a mounting change, and neither account makes a claim about mounting.",
-      "D": "Correct — the panel in Figure 1 never changes, so a fraction fixed by thickness alone cannot run from 0.10 to 0.88."
+      "D": "Correct — the panel in Table 1 never changes, so a fraction fixed by thickness alone cannot run from 0.10 to 0.88."
     }
   },
   {

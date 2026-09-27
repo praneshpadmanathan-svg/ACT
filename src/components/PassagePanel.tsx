@@ -98,7 +98,7 @@ export function PassagePanel({ passage }: { passage: Passage }) {
             ) : (
               /* Conflicting Viewpoints passages are entirely these — each one
                  is a scientist's position, so they need to read as prose. */
-              <div className="rounded-lg border-l-4 border-[#6a4ff0] bg-[#f1eefb] px-5 py-4">
+              <div className="rounded-lg border-l-4 border-[oklch(var(--c-series-4))] bg-paper-light px-5 py-4">
                 <Prose text={figure.text} />
               </div>
             )}

@@ -37,7 +37,7 @@ import { Button, ProgressBar, SectionHeading, EmptyState, LinkButton } from '@/c
 import { AchievementBadge } from '@/components/RankSigil';
 import { RankLadder } from '@/components/RankLadder';
 import { ScoreCaveat } from '@/components/ScoreCaveat';
-import { ActivityChart, MIN_TREND_POINTS, ScoreTrend } from '@/components/StatCharts';
+import { ActivityChart, MIN_TREND_POINTS, ScoreTrend, fullTests } from '@/components/StatCharts';
 import { HeroSprite } from '@/game/HeroSprite';
 
 /* ---------------------------------------------------------------- stats */
@@ -227,14 +227,14 @@ function StatsBody({ progress }: { progress: Progress }) {
               never joins that number on a single line. When there are not two
               tests to draw, the space says why instead of showing a line with
               one point in it. */}
-          {tests.length >= MIN_TREND_POINTS ? (
+          {fullTests(tests).length >= MIN_TREND_POINTS ? (
             <ScoreTrend tests={tests} target={progress.targetScore} />
           ) : (
             <p className="max-w-[260px] font-read text-[12.5px] leading-relaxed text-ink-faint">
-              A trend line needs <b className="text-parchment-dim">two scored tests</b> — you have{' '}
-              {tests.length === 0 ? 'none' : 'one'}. The number beside it is worked out from
-              practice accuracy, which is a different instrument and does not belong on the same
-              axis.{' '}
+              A trend line needs <b className="text-parchment-dim">two full practice tests</b> — you
+              have {fullTests(tests).length === 0 ? 'none' : 'one'}. The number beside it is worked
+              out from practice accuracy, which is a different instrument and does not belong on the
+              same axis.{' '}
               <a
                 href={hrefFor({ name: 'tests' })}
                 className="underline underline-offset-2 transition-colors hover:text-parchment-dim"

@@ -35,6 +35,12 @@ import type { TestResult } from '@/types';
  *  point is an invitation to read a trend that has not happened yet. */
 export const MIN_TREND_POINTS = 2;
 
+/** A composite from a single-section sitting is that section's score, not an
+ *  ACT composite, and a 30 in Science alone plotted between two full-test 24s
+ *  draws a spike that never happened. The trend is full tests only. */
+export const fullTests = (tests: TestResult[]): TestResult[] =>
+  tests.filter((t) => t.sections.length === 4);
+
 const W = 300;
 const H = 96;
 /* `top` leaves room for the goal label to sit *above* its own rule when the
@@ -63,7 +69,7 @@ export function ScoreTrend({ tests, target }: { tests: TestResult[]; target: num
 
   /* Ordered by when the test was sat, not by whatever order the save happens
      to hold them in — a line drawn through unsorted points is a scribble. */
-  const points = [...tests].sort((a, b) => a.at - b.at);
+  const points = fullTests(tests).sort((a, b) => a.at - b.at);
   if (points.length < MIN_TREND_POINTS) return null;
 
   /* The target is inside the domain so its rule lands in the plot rather than
@@ -91,7 +97,7 @@ export function ScoreTrend({ tests, target }: { tests: TestResult[]; target: num
         className="w-full"
         style={{ maxWidth: 380 }}
         role="img"
-        aria-label={`Composite scores from ${points.length} scored practice tests, ${scores.join(', ')}, against a target of ${target}.`}
+        aria-label={`Composite scores from ${points.length} full practice tests, ${scores.join(', ')}, against a target of ${target}.`}
       >
         {/* The target, as a rule rather than a second series — it is a line on
             the page the scores are measured against, not a thing that varies
@@ -109,7 +115,7 @@ export function ScoreTrend({ tests, target }: { tests: TestResult[]; target: num
           x={PAD.left}
           y={toY(target) - 5}
           className="num"
-          fontSize={11}
+          fontSize={12}
           fill="oklch(var(--c-ink-faint))"
           style={HALO}
         >
@@ -150,7 +156,7 @@ export function ScoreTrend({ tests, target }: { tests: TestResult[]; target: num
           x={toX(last.at) + 7}
           y={toY(last.composite) + 4}
           className="num"
-          fontSize={13}
+          fontSize={14}
           fill="oklch(var(--c-gold-light))"
           style={HALO}
         >
@@ -162,14 +168,14 @@ export function ScoreTrend({ tests, target }: { tests: TestResult[]; target: num
           tooltip positioned against a scaling viewBox is arithmetic waiting to
           drift, and this has somewhere sensible to sit. At rest it names the
           span, which is the axis label the chart is too small to carry. */}
-      <figcaption className="mt-1 font-script text-[10px] uppercase tracking-[0.12em] text-ink-faint">
+      <figcaption className="mt-1 font-script text-[11px] uppercase tracking-[0.12em] text-ink-faint">
         {shown ? (
           <span className="text-parchment-dim">
             <span className="num">{shown.composite}</span> composite · {shortDate(shown.at)}
           </span>
         ) : (
           <>
-            {points.length} scored tests · {shortDate(points[0]!.at)} to {shortDate(last.at)}
+            {points.length} full tests · {shortDate(points[0]!.at)} to {shortDate(last.at)}
           </>
         )}
       </figcaption>
@@ -205,7 +211,7 @@ export function ActivityChart({ counts }: { counts: number[] }) {
   return (
     <figure className="m-0">
       <div
-        className="flex items-end gap-[2px]"
+        className="flex items-end gap-px sm:gap-[2px]"
         style={{ height: 90 }}
         role="img"
         aria-label={`Questions answered on each of the last ${counts.length} days. ${total} in total, busiest day ${max}.`}
@@ -224,13 +230,13 @@ export function ActivityChart({ counts }: { counts: number[] }) {
                 seven pixels wide, so it overhangs its neighbours; the panel's
                 own padding is what it overhangs into. */}
             {i === busiest && (
-              <span className="num absolute -top-0.5 left-1/2 -translate-x-1/2 text-[10px] leading-none text-gold-light">
+              <span className="num absolute -top-0.5 left-1/2 -translate-x-1/2 text-[11px] leading-none text-gold-light">
                 {max}
               </span>
             )}
             <div className="flex h-full flex-col justify-end pt-3.5">
               <div
-                className="rounded-t-[2px] transition-[height,opacity] duration-quick"
+                className="rounded-t-[2px] transition-opacity duration-quick"
                 style={{
                   height: `${Math.max(3, (count / max) * 100)}%`,
                   /* One hue, light to dark. The floor keeps a single-question
@@ -251,7 +257,7 @@ export function ActivityChart({ counts }: { counts: number[] }) {
         ))}
       </div>
 
-      <figcaption className="mt-3 flex justify-between font-script text-[10px] uppercase tracking-wide text-ink-faint">
+      <figcaption className="mt-3 flex justify-between font-script text-[11px] uppercase tracking-wide text-ink-faint">
         {/* The left-hand axis label doubles as the readout. A hovered day says
             what it was; at rest the axis says where the chart starts. Two
             lines would leave one of them empty most of the time. */}

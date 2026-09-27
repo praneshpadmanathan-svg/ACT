@@ -1045,7 +1045,7 @@
         "caption": "Absorbance over one hour at 200 lux and at 800 lux",
         "type": "chart",
         "kind": "line",
-        "xLabel": "Time",
+        "xLabel": "Time (min)",
         "yLabel": "Absorbance",
         "alt": "Line graph of absorbance against time for two samples over one hour. Both begin at 1.00; the sample at 200 lux falls gradually to 0.50, while the sample at 800 lux falls steeply to 0.09.",
         "series": [
@@ -2279,10 +2279,10 @@
     "id": "sp29",
     "title": "Sound Absorption in Wall Panels",
     "type": "Data Representation",
-    "text": "When sound strikes a wall, part of its energy is reflected back into the room and part is absorbed. The absorption coefficient (alpha) of a surface is the fraction of the incident energy that is absorbed, so alpha runs from 0 for a perfect reflector to 1 for a surface that returns nothing. A room lined with absorbent panels has a shorter reverberation time than the same room lined with plaster.\n\nPanels were tested in a reverberation chamber. Every panel had a face area of 1.0 m squared. A panel described as mounted flush was fixed directly against the chamber wall; a panel described as mounted on an air gap was held 50 mm clear of it on battens, with the gap left open.\n\nFigure 1 gives alpha for a 25 mm panel of open-cell foam, mounted flush, at six frequencies.\n\nTable 1 gives alpha at 500 Hz for four thicknesses of that same open-cell foam, each thickness measured twice: once mounted flush and once on a 50 mm air gap.\n\nTable 2 gives alpha at 1000 Hz for four panel materials, every one of them 50 mm thick and mounted flush, together with the density of each material. The material listed first in Table 2 is the same open-cell foam used for Figure 1 and Table 1.\n\nRooms are usually hardest to treat at low frequencies. A sound at 125 Hz has a wavelength of about 2.7 m in air, while a sound at 4000 Hz has a wavelength of about 85 mm, and a panel only a few tens of millimetres thick sits very differently against those two lengths. Designers therefore quote a panel by the frequency band it is meant to control rather than by a single figure, and a panel chosen for speech may do little for traffic noise coming through the same wall.",
+    "text": "When sound strikes a wall, part of its energy is reflected back into the room and part is absorbed. The absorption coefficient (alpha) of a surface is the fraction of the incident energy that is absorbed, so alpha runs from 0 for a perfect reflector to 1 for a surface that returns nothing. A room lined with absorbent panels has a shorter reverberation time than the same room lined with plaster.\n\nPanels were tested in a reverberation chamber. Every panel had a face area of 1.0 m squared. A panel described as mounted flush was fixed directly against the chamber wall; a panel described as mounted on an air gap was held 50 mm clear of it on battens, with the gap left open.\n\nTable 1 gives alpha for a 25 mm panel of open-cell foam, mounted flush, at six frequencies.\n\nTable 2 gives alpha at 500 Hz for four thicknesses of that same open-cell foam, each thickness measured twice: once mounted flush and once on a 50 mm air gap.\n\nTable 3 gives alpha at 1000 Hz for four panel materials, every one of them 50 mm thick and mounted flush, together with the density of each material. The material listed first in Table 3 is the same open-cell foam used for Table 1 and Table 2.\n\nRooms are usually hardest to treat at low frequencies. A sound at 125 Hz has a wavelength of about 2.7 m in air, while a sound at 4000 Hz has a wavelength of about 85 mm, and a panel only a few tens of millimetres thick sits very differently against those two lengths. Designers therefore quote a panel by the frequency band it is meant to control rather than by a single figure, and a panel chosen for speech may do little for traffic noise coming through the same wall.",
     "figures": [
       {
-        "label": "Figure 1",
+        "label": "Table 1",
         "caption": "Absorption coefficient of 25 mm open-cell foam, mounted flush",
         "type": "table",
         "head": [
@@ -2317,7 +2317,7 @@
         ]
       },
       {
-        "label": "Table 1",
+        "label": "Table 2",
         "caption": "Absorption coefficient of open-cell foam at 500 Hz, by thickness and mounting",
         "type": "table",
         "head": [
@@ -2349,7 +2349,7 @@
         ]
       },
       {
-        "label": "Table 2",
+        "label": "Table 3",
         "caption": "Absorption coefficient at 1000 Hz of four materials, each 50 mm thick and flush",
         "type": "table",
         "head": [
