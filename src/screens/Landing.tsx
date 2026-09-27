@@ -200,7 +200,7 @@ const FEATURES: { id: string; glyph: GlyphName; title: ReactNode; detail: ReactN
     glyph: 'book',
     title: (
       <>
-        <Hl>{LIBRARY_STATS.notePages}</Hl> lessons in the library
+        <Hl>{LIBRARY_STATS.notePages}</Hl> pages in the Library
       </>
     ),
     detail: (
@@ -227,15 +227,15 @@ const FEATURES: { id: string; glyph: GlyphName; title: ReactNode; detail: ReactN
     title: 'Misses come back',
     detail: (
       <>
-        Anything you get wrong returns <Hl tone="sand">a day</Hl> later, then{' '}
-        <Hl tone="sand">three</Hl>, then <Hl tone="sand">a week</Hl>, until you genuinely own it.
+        Anything you get wrong <Hl tone="sand">keeps coming back</Hl>, at longer gaps each time you
+        get it right, until you genuinely own it.
       </>
     ),
   },
   {
     id: 'summit',
     glyph: 'crown',
-    title: 'The Summit measures you',
+    title: 'Timed practice measures you',
     detail: (
       <>
         A shorter, <Hl tone="cream">timed</Hl> practice test and a scored report that{' '}
@@ -260,7 +260,7 @@ const STEPS: { n: string; title: string; detail: ReactNode }[] = [
     title: 'Prove it',
     detail: (
       <>
-        Clear the quiz at <Hl tone="woods">70%</Hl> to open the road ahead.
+        Get <Hl tone="woods">5 of 6</Hl> on the quiz to open the next landmark.
       </>
     ),
   },
@@ -514,7 +514,7 @@ export function Landing() {
 
           <dl className="act-stagger mx-auto mt-11 grid max-w-2xl grid-cols-3 gap-4">
             {[
-              [LIBRARY_STATS.notePages.toLocaleString(), 'lessons'],
+              [LIBRARY_STATS.notePages.toLocaleString(), 'Library pages'],
               [LIBRARY_STATS.passages.toLocaleString(), 'passages'],
               ['4', 'regions'],
             ].map(([value, label]) => (

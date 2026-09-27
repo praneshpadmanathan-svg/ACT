@@ -10,6 +10,15 @@ import { QUESTIONS, SECTIONS, SECTION_BY_ID } from '@/content';
 import { hrefFor, useConfirmExit, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { usePrefs } from '@/lib/prefs';
+import { TEST_PLAN, withAllowance } from '@/lib/testPlan';
+
+/* Four letters at most, and Math is only four. `.slice(0, 3)` made it "MAT". */
+const SECTION_ABBR: Record<SectionId, string> = {
+  english: 'Eng',
+  math: 'Math',
+  reading: 'Read',
+  science: 'Sci',
+};
 import { fromDrillQuestion } from '@/lib/normalize';
 import {
   compositeOf,
@@ -29,29 +38,6 @@ import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
 import { burstConfetti } from '@/components/Feedback';
 import { ScoreCaveat } from '@/components/ScoreCaveat';
 import { MissedReview } from '@/components/MissedReview';
-
-/* Section lengths, scaled to what the bank can actually supply. The real ACT
-   is longer; these keep the pacing pressure honest without inventing
-   questions that do not exist. */
-const TEST_PLAN: Record<SectionId, { questions: number; minutes: number }> = {
-  english: { questions: 25, minutes: 18 },
-  math: { questions: 22, minutes: 25 },
-  reading: { questions: 18, minutes: 20 },
-  science: { questions: 20, minutes: 20 },
-};
-
-/* Extended time.
- *
- * ACT grants 50% and 100% extra time as documented accommodations, and a
- * student who will sit the real exam with time and a half has to practise with
- * time and a half — practising at standard timing trains a pace they will not
- * use and teaches them to rush for no reason. It is a display setting rather
- * than something asked about here, because nobody should have to re-declare a
- * disability every time they open a test.
- *
- * Rounded up to the whole minute. 18 × 1.5 is 27 exactly, but 25 × 1.5 is
- * 37.5, and the half-minute belongs to the student. */
-const withAllowance = (minutes: number, allowance: number) => Math.ceil(minutes * allowance);
 
 /* What to call a single-section result.
  *
@@ -146,7 +132,7 @@ function TestsBoard() {
           <span className="mt-0.5 block text-[13px] leading-relaxed text-ink-faint">
             {progress.diagnostic
               ? `Taken ${formatRelative(progress.diagnostic.at)} — ${progress.diagnostic.asked} questions. Not a score; it just tells the plan where to point you.`
-              : 'Untimed, all four sections, no score at the end — it just tells the plan where to point you.'}
+              : 'Untimed, all four sections, a rough placement per section rather than a score — it tells the plan where to point you.'}
           </span>
         </span>
         <Button variant="ghost" onClick={() => navigate({ name: 'diagnostic' })}>
@@ -183,7 +169,7 @@ function TestsBoard() {
                 {result.sections.map((id) => (
                   <div key={id} className="text-center">
                     <div className="font-script text-[9px] uppercase tracking-wide text-ink-faint">
-                      {SECTION_BY_ID[id]?.name.slice(0, 3)}
+                      {SECTION_ABBR[id]}
                     </div>
                     <div className="num text-[19px]" style={{ color: SECTION_BY_ID[id]?.color }}>
                       {result.scores[id]}
@@ -288,7 +274,7 @@ function TestSession({ config }: { config: string }) {
           detail="Pick a test from the list."
           action={
             <Button variant="primary" onClick={() => navigate({ name: 'tests' })}>
-              Back to tests
+              Back to Timed practice
             </Button>
           }
         />
@@ -317,7 +303,7 @@ function TestSession({ config }: { config: string }) {
           <div className="panel p-7 text-center sm:p-9">
             <h1 className="heading text-[15px] text-blood-text">
               {sectionIds.length === 4
-                ? 'Full practice test'
+                ? 'Four-section practice'
                 : `${SECTION_BY_ID[sectionAt(0)].name} section`}
             </h1>
 
@@ -638,9 +624,9 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
   /* Topic breakdown from this test only. */
   const byTopic = useMemo(() => {
     if (!records?.length) return [];
-    const buckets = new Map<string, { n: number; ok: number }>();
+    const buckets = new Map<string, { section: SectionId; n: number; ok: number }>();
     for (const r of records) {
-      const b = buckets.get(r.question.topic) ?? { n: 0, ok: 0 };
+      const b = buckets.get(r.question.topic) ?? { section: r.question.section, n: 0, ok: 0 };
       b.n += 1;
       if (r.correct) b.ok += 1;
       buckets.set(r.question.topic, b);
@@ -650,6 +636,10 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
       .sort((a, b) => a.accuracy - b.accuracy)
       .slice(0, 6);
   }, [records]);
+  /* The weakest topic that cost something. The list is sorted by accuracy, but
+     a clean run still has a first row, and "Drill" a topic you went 3 for 3
+     in is not advice. */
+  const weakest = byTopic.find((t) => t.ok < t.n);
 
   const missed = records?.filter((r) => !r.correct) ?? [];
   const target = progress.targetScore;
@@ -740,7 +730,7 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
           <p className="mx-auto mt-5 max-w-md text-[15px] leading-relaxed text-parchment-dim">
             {gap <= 0
               ? `You are at or above your ${target} target. Keep the streak going and lock it in.`
-              : `${gap} point${gap === 1 ? '' : 's'} from your ${target} target. The topics below are where they are hiding.`}
+              : `${gap} point${gap === 1 ? '' : 's'} from your ${target} target.${byTopic.length > 0 ? ' The topics below are where they are hiding.' : ''}`}
           </p>
 
           <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -846,8 +836,15 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
               Review {missed.length} missed
             </Button>
           )}
-          <Button variant="ghost" onClick={() => navigate({ name: 'drills' })}>
-            Drill weak topics
+          <Button
+            variant="ghost"
+            onClick={() =>
+              weakest
+                ? navigate({ name: 'drill', section: weakest.section, topic: weakest.topic })
+                : navigate({ name: 'drills' })
+            }
+          >
+            {weakest ? `Drill ${titleCase(weakest.topic)}` : 'Go to Practice'}
           </Button>
           <Button variant="primary" onClick={() => navigate({ name: 'tests' })}>
             Done
@@ -872,7 +869,7 @@ export function ReportScreen({ id }: { id: string }) {
           detail="That test result is not saved on this device."
           action={
             <Button variant="primary" onClick={() => navigate({ name: 'tests' })}>
-              Back to tests
+              Back to Timed practice
             </Button>
           }
         />

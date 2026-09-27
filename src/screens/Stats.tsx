@@ -52,7 +52,7 @@ export function StatsScreen() {
   return (
     <Page>
       <SectionHeading
-        eyebrow="Your climb"
+        eyebrow="Your progress"
         title="Progress"
         detail="Everything here comes from questions you have actually answered."
         right={<LinkButton href={hrefFor({ name: 'settings' })}>Settings</LinkButton>}
@@ -146,14 +146,14 @@ export function StatsScreen() {
         <h3 className="heading mb-4 text-[12px] text-parchment">Your library</h3>
         <dl className="space-y-2 text-[14px]">
           <Row
-            label="Note pages read"
+            label="Library pages read"
             value={`${progress.notesRead.length} / ${LIBRARY_STATS.notePages}`}
           />
           <Row
-            label="Zones cleared"
+            label="Landmarks cleared"
             value={`${landmarksCleared(progress)} / ${LIBRARY_STATS.zones}`}
           />
-          <Row label="Tests taken" value={String(progress.testHistory.length)} />
+          <Row label="Timed sets taken" value={String(progress.testHistory.length)} />
           <Row label="Questions in review" value={String(Object.keys(progress.review).length)} />
           {progress.profile && (
             <Row label="Plan created" value={formatRelative(progress.profile.savedAt)} />
@@ -172,7 +172,7 @@ function StatsBody({ progress }: { progress: Progress }) {
   const allTopics = useMemo(() => topicStats(progress).filter((t) => t.attempts >= 2), [progress]);
 
   const sectionsNeedingWork = useMemo(
-    () => SECTIONS.filter((s) => sectionAccuracy(progress, s.id).n < 8),
+    () => SECTIONS.filter((s) => s.id !== 'science' && sectionAccuracy(progress, s.id).n < 8),
     [progress],
   );
 
@@ -198,7 +198,7 @@ function StatsBody({ progress }: { progress: Progress }) {
         <div className="grid items-center gap-7 sm:grid-cols-[minmax(0,1fr)_auto]">
           <div>
             <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
-              Projected composite
+              Estimated composite
             </div>
             <div className="mt-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <span className="num text-display-l leading-none text-gold">
@@ -239,7 +239,7 @@ function StatsBody({ progress }: { progress: Progress }) {
                 href={hrefFor({ name: 'tests' })}
                 className="underline underline-offset-2 transition-colors hover:text-parchment-dim"
               >
-                Sit one at the Summit
+                Take one in Timed practice
               </a>
               .
             </p>
@@ -323,7 +323,7 @@ function StatsBody({ progress }: { progress: Progress }) {
                   {ok}/{n} correct
                 </span>
                 <span>
-                  {zones}/{path.nodes.length} zones
+                  {zones}/{path.nodes.length} landmarks
                 </span>
               </div>
             </div>

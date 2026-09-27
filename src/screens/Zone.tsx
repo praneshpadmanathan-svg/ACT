@@ -78,10 +78,10 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
       <Page>
         <EmptyState
           title="Landmark not found"
-          detail="That landmark does not exist. Head back and pick one off a road."
+          detail="That landmark does not exist. Head back and pick one in Study."
           action={
             <Button variant="primary" onClick={() => navigate({ name: 'path' })}>
-              Back to the roads
+              Back to Study
             </Button>
           }
         />
@@ -100,7 +100,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
   if (phase === 'lesson') {
     return (
       <Page>
-        <BackLink to={{ name: 'path', section: path.id }} label={`${meta.name} path`} />
+        <BackLink to={{ name: 'path', section: path.id }} label={`${meta.name} in Study`} />
 
         <div
           className="panel mb-6 p-6 sm:p-7"
@@ -216,7 +216,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
         ) : (
           <EmptyState
             art="scroll"
-            title="No lesson for this zone"
+            title="No lesson for this landmark"
             detail="Jump straight to the quiz — the explanations after each question teach the same material."
             action={
               <Button variant="primary" onClick={() => setPhase('quiz')}>
@@ -308,7 +308,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
             className="heading mt-3 text-[clamp(17px,3.4vw,26px)]"
             style={{ color: passed ? 'oklch(var(--c-woods-text))' : 'oklch(var(--c-blood-text))' }}
           >
-            {passed ? 'Zone cleared' : 'Not yet'}
+            {passed ? 'Landmark cleared' : 'Not yet'}
           </h1>
 
           <div
@@ -332,7 +332,9 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
             {passed
               ? priorBest !== null && percent <= priorBest
                 ? `Cleared again — your best here is still ${priorBest}%.`
-                : 'Nice. The next zone on this path is open.'
+                : nextZone
+                  ? 'Nice. The next landmark is open.'
+                  : 'Every landmark here is cleared — the guardian is awake.'
               : /* The old copy promised "a different set of questions" on a
                    retry. That is true of seven landmarks and false of the
                    other thirty, whose whole pool is smaller than a quiz —
@@ -340,9 +342,9 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                    same questions in a different order. A student who notices
                    stops believing the rest of the screen, so say which one
                    this is. */
-                `${passNeeded(total)} of ${total} clears this zone — you got ${correct}. ${
+                `${passNeeded(total)} of ${total} clears this landmark — you got ${correct}. ${
                   deepPool
-                    ? 'Re-read the lesson and try again; you get a fresh set of questions.'
+                    ? 'Re-read the lesson and try again; you will get a reshuffled set.'
                     : 'Re-read the lesson and try again — this landmark has only these questions, so read the explanations below first.'
                 }`}
           </p>
@@ -372,7 +374,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                   navigate({ name: 'zone', zone: nextZone.id });
                 }}
               >
-                Next zone
+                Next landmark
               </Button>
             ) : (
               /* Back to the road you were on, not to camp. Clearing a landmark
@@ -383,7 +385,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                 variant="primary"
                 onClick={() => navigate({ name: 'path', section: path.id })}
               >
-                Back to the road
+                Back to Study
               </Button>
             )}
           </div>

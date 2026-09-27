@@ -223,7 +223,7 @@ export function DisplaySettings() {
 
       <SwitchRow
         label="Use less data"
-        detail="Replaces the region backdrops, the camp and the character art with flat colour in the same key. Worth turning on if you are on a metered connection or a slow one."
+        detail="Replaces the region backdrops, the home screen art and the character art with flat colour in the same key. Worth turning on if you are on a metered connection or a slow one."
         on={prefs.reducedData}
         onChange={(v) => setPref('reducedData', v)}
       />

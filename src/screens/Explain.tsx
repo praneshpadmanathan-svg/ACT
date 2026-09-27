@@ -25,10 +25,12 @@ import type { ReactNode } from 'react';
 import { LIBRARY_STATS } from '@/content/stats';
 import { SECTIONS } from '@/content/sections';
 import { hrefFor, useNavigate } from '@/lib/router';
+import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
 import { LinkButton } from '@/components/ui';
 import { Glyph } from '@/components/Icon';
 import { Art } from '@/components/Art';
+import { TEST_PLAN } from '@/lib/testPlan';
 
 /* Real ACT section lengths, for the honest comparison against ours. Public
    information, from ACT's own test description. */
@@ -39,13 +41,8 @@ const REAL_TEST: Record<string, { questions: number; minutes: number }> = {
   science: { questions: 40, minutes: 40 },
 };
 
-/** Ours, mirrored from `TEST_PLAN` in `Tests.tsx`. */
-const OUR_TEST: Record<string, { questions: number; minutes: number }> = {
-  english: { questions: 25, minutes: 18 },
-  math: { questions: 22, minutes: 25 },
-  reading: { questions: 18, minutes: 20 },
-  science: { questions: 20, minutes: 20 },
-};
+/** Ours — the same object the timed practice screen runs, so the two cannot disagree. */
+const OUR_TEST: Record<string, { questions: number; minutes: number }> = TEST_PLAN;
 
 interface Entry {
   id: string;
@@ -195,7 +192,7 @@ const ENTRIES: Entry[] = [
           </LI>
           <LI>
             <B>No free tier with a paywall behind it.</B> There is no paid version. Every question,
-            lesson and mock test is in front of you now.
+            lesson and timed practice set is in front of you now.
           </LI>
           <LI>
             <B>You can leave with everything.</B> Export-my-data and delete-my-account are both real
@@ -331,10 +328,10 @@ const ENTRIES: Entry[] = [
           </LI>
         </UL>
         <P>
-          Being straight about the limit: that is real practice but it is not endless. A few of the
-          narrower topics — dashes, logarithms, matrices — have only two or three questions each, so
-          you will exhaust those quickly and drilling them again is a memory test rather than a
-          skills test. The broad topics are much deeper.
+          Being straight about the limit: that is real practice but it is not endless. The narrowest
+          topics have under thirty questions each, so you will work through those quickly and
+          drilling them again is a memory test rather than a skills test. The broad topics are much
+          deeper.
         </P>
       </>
     ),
@@ -367,7 +364,7 @@ const ENTRIES: Entry[] = [
     a: (
       <P>
         No. ACT Command is not affiliated with, endorsed by, or connected to ACT, Inc. in any way.
-        "ACT" is their registered trademark and is used here only to say which test this material is
+        “ACT” is their registered trademark and is used here only to say which test this material is
         for. Every question and lesson was written for this app.
       </P>
     ),
@@ -376,6 +373,7 @@ const ENTRIES: Entry[] = [
 
 export function ExplainScreen() {
   const navigate = useNavigate();
+  const { hasStarted } = useStore();
 
   return (
     <div className="relative isolate min-h-dvh">
@@ -390,7 +388,9 @@ export function ExplainScreen() {
           type="button"
           onClick={() => {
             sfx.select();
-            navigate({ name: 'landing' });
+            /* Somebody who has started came here from inside the app — Settings,
+               the score caveat — and the front door is not where they were. */
+            navigate({ name: hasStarted ? 'home' : 'landing' });
           }}
           className="mb-8 inline-flex items-center gap-1.5 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
         >

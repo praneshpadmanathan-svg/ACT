@@ -50,7 +50,7 @@ export function DrillsScreen({ section }: { section?: string }) {
               variant="primary"
               onClick={() => navigate({ name: 'drills', section: 'english' })}
             >
-              English drills
+              English practice
             </Button>
           }
         />
@@ -64,7 +64,7 @@ export function DrillsScreen({ section }: { section?: string }) {
     <Page>
       <SectionHeading
         eyebrow={`${QUESTIONS[active].length} questions available`}
-        title="Drills"
+        title="Practice"
         detail="Adaptive practice from the graded question bank. Every choice gets an explanation, not just the right one."
       />
 
@@ -76,7 +76,7 @@ export function DrillsScreen({ section }: { section?: string }) {
         style={{ borderTopColor: meta.color, borderTopWidth: 4 }}
       >
         <h2 className="heading text-[13px]" style={{ color: meta.color }}>
-          Mixed {meta.name.toLowerCase()} drill
+          Mixed {meta.name} drill
         </h2>
         <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
           Questions weighted toward the topics you get wrong most.
@@ -247,7 +247,7 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
           detail="That topic has no questions yet. Try a mixed drill instead."
           action={
             <Button variant="primary" onClick={() => navigate({ name: 'drills', section })}>
-              Back to drills
+              Back to Practice
             </Button>
           }
         />
@@ -260,10 +260,6 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
       <DrillSummary
         results={results}
         accent={meta.color}
-        onRetry={() => {
-          setResults(null);
-          navigate({ name: 'drills', section });
-        }}
         onDone={() => navigate({ name: 'drills', section })}
       />
     );
@@ -352,7 +348,7 @@ function ReviewSession() {
         <SectionHeading
           eyebrow="Spaced repetition"
           title="Review"
-          detail="Every question you answer comes back on a schedule. A miss returns the next day; each right answer pushes it further out — three days, a week, two weeks — until you have it cold."
+          detail="Every question you answer comes back on a schedule. A miss stays due; each right answer pushes it further out — a day, three days, a week, about two weeks, a month — until you have it cold."
         />
 
         {due.length === 0 ? (
@@ -361,12 +357,12 @@ function ReviewSession() {
             title="Nothing due right now"
             detail={
               upcoming > 0
-                ? `${upcoming} question${upcoming === 1 ? '' : 's'} are scheduled for later. Drill some new material in the meantime.`
-                : 'Answer some drill questions first — anything you miss lands here automatically.'
+                ? `${upcoming} question${upcoming === 1 ? ' is' : 's are'} scheduled for later. Drill some new material in the meantime.`
+                : 'Answer some drill questions first — everything you answer is scheduled here automatically.'
             }
             action={
               <Button variant="primary" onClick={() => navigate({ name: 'drills' })}>
-                Go to drills
+                Go to Practice
               </Button>
             }
           />
@@ -377,7 +373,8 @@ function ReviewSession() {
               question{due.length === 1 ? '' : 's'} due
             </p>
             <p className="mx-auto mt-5 max-w-md text-[15px] leading-relaxed text-parchment-dim">
-              Get one right and it moves further out. Get it wrong and it comes back tomorrow.
+              Get one right and it moves further out. Get it wrong and it stays in your queue until
+              you get it right.
             </p>
             <Button
               variant="primary"
@@ -402,7 +399,7 @@ function ReviewSession() {
       <QuestionRunner
         questions={started}
         title="Review session"
-        subtitle="Questions you have missed before"
+        subtitle="Questions due for another look"
         accent="oklch(var(--c-cliffs-text))"
         onQuit={() => setStarted(null)}
         onAnswer={(record) =>
@@ -513,7 +510,7 @@ export function BookmarksScreen() {
           detail="Tap the bookmark on any question to keep it here — useful for the one you nearly had, or the one you want to ask someone about."
           action={
             <Button variant="primary" onClick={() => navigate({ name: 'drills' })}>
-              Go to drills
+              Go to Practice
             </Button>
           }
         />
@@ -605,6 +602,7 @@ export function DailyScreen() {
         results={results}
         accent="oklch(var(--c-gold))"
         onRetry={() => navigate({ name: 'drills' })}
+        retryLabel="Go to Practice"
         onDone={() => navigate({ name: 'home' })}
       />
     );
@@ -623,7 +621,7 @@ export function DailyScreen() {
           detail="Come back tomorrow for five more. In the meantime, a drill or your review queue both count."
           action={
             <Button variant="primary" onClick={() => navigate({ name: 'drills' })}>
-              Go to drills
+              Go to Practice
             </Button>
           }
         />
@@ -640,7 +638,7 @@ export function DailyScreen() {
           detail="The question bank came back empty, which should not happen. Try a drill instead."
           action={
             <Button variant="primary" onClick={() => navigate({ name: 'drills' })}>
-              Go to drills
+              Go to Practice
             </Button>
           }
         />
@@ -683,11 +681,15 @@ export function DrillSummary({
   results,
   accent,
   onRetry,
+  retryLabel = 'Another set',
   onDone,
 }: {
   results: AnswerRecord[];
   accent: string;
-  onRetry: () => void;
+  /** Left out where "another" would only mean going back to the page Done
+   *  already returns to. */
+  onRetry?: () => void;
+  retryLabel?: string;
   onDone: () => void;
 }) {
   const correct = results.filter((r) => r.correct).length;
@@ -714,9 +716,11 @@ export function DrillSummary({
           </div>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button variant="ghost" onClick={onRetry}>
-              Another set
-            </Button>
+            {onRetry && (
+              <Button variant="ghost" onClick={onRetry}>
+                {retryLabel}
+              </Button>
+            )}
             <Button variant="primary" onClick={onDone}>
               Done
             </Button>

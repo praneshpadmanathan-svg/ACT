@@ -11,7 +11,8 @@ import { TOPICS_BY_SECTION } from '@/content';
 import type { Progress, SectionId } from '@/types';
 import { dayKey, weakestTopics } from './progress';
 import { dueQuestionIds } from './normalize';
-import { canonicalTopic } from './utils';
+import { fullSetMinutes } from './testPlan';
+import { canonicalTopic, titleCase } from './utils';
 
 /* ------------------------------------------------------------- the calendar */
 
@@ -167,6 +168,9 @@ export function todaysPlan(
   p: Progress,
   currentZone: { id: string; name: string } | null,
   today: Date = new Date(),
+  /** The extended-time multiplier from display settings, so the timed step
+   *  quotes the minutes the student will actually sit. */
+  allowance = 1,
 ): TodaysPlan {
   const steps: PlanStep[] = [];
 
@@ -192,9 +196,9 @@ export function todaysPlan(
   } else {
     steps.push({
       kind: 'test',
-      title: 'The full timed trial',
-      detail: 'Every landmark is cleared. All that is left is the summit.',
-      minutes: 83,
+      title: 'Four-section practice',
+      detail: 'Every landmark is cleared. Time to practise under the clock.',
+      minutes: fullSetMinutes(allowance),
       to: { name: 'tests' },
     });
   }
@@ -208,7 +212,7 @@ export function todaysPlan(
   if (weak) {
     steps.push({
       kind: 'drill',
-      title: `Drill ${weak.topic}`,
+      title: `Drill ${titleCase(weak.topic)}`,
       detail: `${Math.round(weak.accuracy * 100)}% so far — your weakest topic with enough answers to be sure.`,
       minutes: 8,
       to: { name: 'drill', section: weak.section, topic: weak.topic },
@@ -225,7 +229,7 @@ export function todaysPlan(
     if (cold) {
       steps.push({
         kind: 'drill',
-        title: `Drill ${cold.topic}`,
+        title: `Drill ${titleCase(cold.topic)}`,
         detail: 'From your placement test — you did not get one of these right yet.',
         minutes: 8,
         to: { name: 'drill', section: cold.section, topic: cold.topic },

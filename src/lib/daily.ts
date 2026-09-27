@@ -142,8 +142,8 @@ export function dailyBlurb(p: Progress, allowed?: readonly SectionId[]): string 
   const due = dueForReview(p)
     .map(runnableById)
     .filter((q) => q && (!allowed || allowed.includes(q.section as SectionId))).length;
-  if (due >= DAILY_SIZE) return 'Five questions you have missed before.';
-  if (due > 0) return `${due} you have missed before, plus a few from your weak spots.`;
-  if (weakestTopics(p, 6).length > 0) return 'Five from the topics costing you the most.';
-  return 'Five to start with. Tomorrow they will be aimed at your weak spots.';
+  if (due >= DAILY_SIZE) return 'Five questions due for review.';
+  if (due > 0) return `${due} due for review, plus a few from your weak spots.`;
+  if (weakestTopics(p, 6).length > 0) return 'Mostly from the topics costing you the most.';
+  return 'Five to start with. They get more targeted as you answer more.';
 }

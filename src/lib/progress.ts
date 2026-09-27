@@ -18,6 +18,7 @@ import type { IconName } from '@/components/Icon';
    table built from a 10 kB file. */
 import { ALL_ZONES, getZone, SECTION_BY_ZONE_TOPIC, TOPIC_BY_ZONE_ALIAS } from '@/content/zones';
 import { DEFAULT_HERO_ID, isHeroId } from '@/game/heroes';
+import { LIBRARY_STATS } from '@/content/stats';
 import { readJSON, STORAGE_KEYS, writeJSON } from './storage';
 import { canonicalTopic } from './utils';
 
@@ -1467,7 +1468,7 @@ export const ACHIEVEMENTS: Achievement[] = [
   {
     id: 'reader-10',
     name: 'Well Read',
-    detail: 'Finish 10 note pages.',
+    detail: 'Finish 10 Library pages.',
     icon: 'book',
     tier: 'bronze',
     test: (p) => p.notesRead.length >= 10,
@@ -1475,10 +1476,10 @@ export const ACHIEVEMENTS: Achievement[] = [
   {
     id: 'reader-all',
     name: 'The Archive',
-    detail: 'Finish every note page.',
+    detail: 'Finish every Library page.',
     icon: 'book',
     tier: 'gold',
-    test: (p) => p.notesRead.length >= 60,
+    test: (p) => p.notesRead.length >= LIBRARY_STATS.notePages,
   },
   {
     id: 'zone-5',
@@ -1498,8 +1499,8 @@ export const ACHIEVEMENTS: Achievement[] = [
   },
   {
     id: 'first-test',
-    name: 'Boss Slain',
-    detail: 'Finish a full-length test.',
+    name: 'First Timed Run',
+    detail: 'Finish a timed practice set.',
     icon: 'trophy',
     tier: 'silver',
     test: (p) => p.testHistory.length >= 1,

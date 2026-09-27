@@ -515,10 +515,10 @@ describe('pickDaily — which five', () => {
     const fresh = dailyBlurb(progress());
     const review: Progress['review'] = {};
     for (const q of ALL_QUESTIONS.slice(0, 6)) review[q.id] = due(1);
-    const missed = dailyBlurb(progress({ review }));
+    const dueBlurb = dailyBlurb(progress({ review }));
 
-    expect(missed).not.toBe(fresh);
-    expect(missed.toLowerCase()).toContain('missed');
+    expect(dueBlurb).not.toBe(fresh);
+    expect(dueBlurb.toLowerCase()).toContain('due for review');
   });
 });
 

@@ -184,8 +184,8 @@ export const QUESTS: Quest[] = [
         },
         {
           lines: [
-            'Then I shall hold you to it. Read the lesson, clear the quiz at seven in ten, and the next landmark opens.',
-            'What you get wrong, I keep — it returns tomorrow, then in three days, then a week. That is the method.',
+            'Then I shall hold you to it. Read the lesson, clear the quiz — five of six — and the next landmark opens.',
+            'What you get wrong, I keep — it comes back until you have it, then at longer and longer gaps. That is the method.',
           ],
         },
       ],
@@ -355,7 +355,7 @@ export const QUESTS: Quest[] = [
         {
           lines: [
             'Halfway. The second half rewards <b>pace</b> as much as knowledge — knowing an answer slowly is worth nothing on the day.',
-            'Sit a <i>single</i> timed section at the citadel. Not the full trial. It will tell you more than a week of practice with no clock on it.',
+            'Sit a <i>single</i> timed section in Timed practice. Not all four. It will tell you more than a week of practice with no clock on it.',
           ],
         },
       ],
@@ -434,7 +434,7 @@ export const QUESTS: Quest[] = [
         {
           lines: [
             'Every landmark. Every region. Every Seal. Almost nobody stands where you are standing.',
-            'Inside waits the full trial: four sections, properly timed, no explanations until the end.',
+            'Inside waits the trial: four shortened sections against the clock, no explanations until the end.',
           ],
           shake: 'hard',
         },
@@ -445,7 +445,7 @@ export const QUESTS: Quest[] = [
   {
     id: 'reckoning',
     name: 'The Trial',
-    objective: 'Sit the full timed trial at the Summit',
+    objective: 'Sit a four-section timed practice',
     need: 1,
     count: fullTrials,
     intro: {

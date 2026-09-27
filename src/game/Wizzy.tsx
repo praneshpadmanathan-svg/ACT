@@ -42,7 +42,7 @@ export function Wizzy() {
     }
 
     if (allCleared) {
-      list.push('Every landmark is lit. Sail to the citadel and sit the trial.');
+      list.push('Every landmark is lit. Take a four-section timed practice.');
     } else if (cleared === 0) {
       list.push(
         `I am Wizzy. Your road begins at <b>${current?.zone.name ?? 'the first landmark'}</b>, already open to you.`,
@@ -54,10 +54,10 @@ export function Wizzy() {
     }
 
     list.push(
-      'One landmark, one skill. Read the lesson, clear the quiz at 70%, and the next opens.',
+      'One landmark, one skill. Read the lesson, get 5 of 6 on the quiz, and the next opens.',
     );
     list.push(
-      'Miss a question and it returns in <b>Review</b> — tomorrow, then three days, then a week.',
+      'Miss a question and it waits in <b>Review</b> until you get it right, then comes back at longer and longer gaps.',
     );
 
     // Call back to the prologue answer, so the guide remembers you.

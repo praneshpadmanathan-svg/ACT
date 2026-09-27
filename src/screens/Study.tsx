@@ -61,10 +61,10 @@ export function StudyScreen({ section }: { section?: string }) {
       <Page>
         <EmptyState
           title="No such region"
-          detail="That road is not one of the four. Head back and pick a subject."
+          detail="That subject does not exist. Head back and pick one of the four."
           action={
             <Button variant="primary" onClick={() => navigate({ name: 'path' })}>
-              Back to the roads
+              Back to Study
             </Button>
           }
         />

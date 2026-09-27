@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { LIBRARY_STATS, PATH_BY_ID, SECTIONS } from '@/content';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
+import { usePrefs } from '@/lib/prefs';
 import { dueQuestionIds } from '@/lib/normalize';
 import {
   DAILY_SIZE,
@@ -100,7 +101,7 @@ export function Home() {
         </header>
         <div className="home-overview">
           {/* ------------------------------------------------------------- hero */}
-          <CampHero currentZone={currentZone} allCleared={allCleared} />
+          <CampHero currentZone={currentZone} />
 
           <div className="panel-quiet home-rank">
             {/* A prominent sigil without particles over the progress labels. */}
@@ -134,7 +135,7 @@ export function Home() {
                 />
                 {next && (
                   <span className="label-sm flex-none">
-                    {(next.xp - progress.xp).toLocaleString()} to {next.name}
+                    {(next.xp - progress.xp).toLocaleString()} XP to {next.name}
                   </span>
                 )}
               </div>
@@ -152,10 +153,18 @@ export function Home() {
           <div className="home-shortcuts">
             <Quick
               label="Study a subject"
-              detail={allCleared ? 'All cleared' : `${total - cleared} landmarks left`}
+              detail={
+                allCleared
+                  ? 'All cleared'
+                  : `${total - cleared} landmark${total - cleared === 1 ? '' : 's'} left`
+              }
               to="path"
             />
-            <Quick label="Read a lesson" detail={`${LIBRARY_STATS.notePages} lessons`} to="notes" />
+            <Quick
+              label="Open the Library"
+              detail={`${LIBRARY_STATS.notePages} pages`}
+              to="notes"
+            />
             <Quick
               label="Quick practice"
               detail={`${LIBRARY_STATS.drillQuestions.toLocaleString()} questions`}
@@ -219,7 +228,7 @@ export function Home() {
               <Row label="Target score" value={String(progress.targetScore)} />
               <Row label="Questions answered" value={progress.tally.answered.toLocaleString()} />
               <Row
-                label="Lessons read"
+                label="Library pages read"
                 value={`${progress.notesRead.length}/${LIBRARY_STATS.notePages}`}
               />
               <Row label="Due for review" value={String(reviewDue)} highlight={reviewDue > 0} />
@@ -233,7 +242,7 @@ export function Home() {
             >
               {reviewDue > 0
                 ? `Review ${reviewDue} question${reviewDue === 1 ? '' : 's'}`
-                : 'Practice a skill'}
+                : 'Go to Practice'}
             </LinkButton>
           </section>
         </div>
@@ -307,7 +316,7 @@ export function Home() {
                   {pendingChapter.title}
                 </span>
                 <span className="mt-0.5 block font-read text-[13.5px] text-parchment-dim">
-                  He is waiting out on the road.
+                  He is waiting in Study.
                 </span>
               </span>
               <span className="flex flex-none items-center gap-1 font-display text-[13px] font-semibold text-gold">
@@ -376,17 +385,12 @@ export function Home() {
  * So the plan wins and moves up here, on paper, at reading size, with the
  * minutes it will take. `TodayPanel` keeps the week and whatever comes after
  * this. */
-function CampHero({
-  currentZone,
-  allCleared,
-}: {
-  currentZone: { id: string; name: string } | null;
-  allCleared: boolean;
-}) {
+function CampHero({ currentZone }: { currentZone: { id: string; name: string } | null }) {
   const { progress } = useStore();
+  const { prefs } = usePrefs();
   const navigate = useNavigate();
 
-  const plan = todaysPlan(progress, currentZone);
+  const plan = todaysPlan(progress, currentZone, new Date(), prefs.timeAllowance);
   const lead = plan.steps[0];
   if (!lead) return null;
 
@@ -427,10 +431,8 @@ function CampHero({
         {lead.kind === 'review'
           ? 'Start reviewing'
           : lead.kind === 'test'
-            ? 'Enter the summit'
-            : allCleared
-              ? 'Take the mock test'
-              : 'Begin'}
+            ? 'Start timed practice'
+            : 'Begin'}
         <Glyph name="chevronRight" size={15} strokeWidth={2} />
       </span>
     </button>
@@ -645,8 +647,8 @@ function TrackCard() {
 
       <p className="mt-3 font-read text-[14px] leading-relaxed text-parchment-dim">{line}</p>
       <p className="mt-2 font-read text-[12.5px] text-ink-faint">
-        Estimated from your practice accuracy, not a scored test. Take a full test for the closer
-        number.
+        Estimated from your practice accuracy, not a scored test. Take a four-section timed practice
+        for a closer number.
       </p>
     </section>
   );
@@ -661,6 +663,7 @@ function TrackCard() {
 function TodayPanel({ currentZone }: { currentZone: { id: string; name: string } | null }) {
   const { progress } = useStore();
   const navigate = useNavigate();
+  const { prefs } = usePrefs();
 
   const days = daysUntilTest(progress);
   const urgency = testUrgency(days);
@@ -668,7 +671,7 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
   /* The lead step is the Camp hero now, so this panel picks up after it. When
      there is nothing after it, the week bar and the countdown are still worth
      the section — they are the only place either one appears. */
-  const rest = todaysPlan(progress, currentZone).steps.slice(1);
+  const rest = todaysPlan(progress, currentZone, new Date(), prefs.timeAllowance).steps.slice(1);
 
   const countdown =
     urgency === 'close'
@@ -695,7 +698,7 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
       {/* the week */}
       <div className="mb-5">
         <div className="mb-2 flex items-baseline justify-between">
-          <span className="label-sm">This week</span>
+          <span className="label-sm">Last 7 days</span>
           <span className="num text-[15px] text-parchment-dim">
             {week.answered} / {week.goal} questions
           </span>

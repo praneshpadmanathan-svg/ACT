@@ -558,11 +558,11 @@ export function StoryOverlay() {
                   >
                     {typing.done ? (
                       <>
-                        Tap to continue
+                        Continue
                         <Glyph name="chevronRight" size={12} strokeWidth={2} />
                       </>
                     ) : (
-                      'Tap to skip'
+                      'Show all'
                     )}
                   </span>
                 </div>

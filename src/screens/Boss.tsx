@@ -122,7 +122,7 @@ function BossDuel({ section }: { section: string }) {
   if (!unlocked) {
     return (
       <Page>
-        <BackLink to={{ name: 'path', section: sectionId }} label={region.title} />
+        <BackLink to={{ name: 'duels' }} label="The four guardians" />
         <div className="mx-auto max-w-xl text-center">
           <div className="mx-auto w-44 opacity-40 grayscale">
             <BossArt section={sectionId} state="idle" />
@@ -160,7 +160,7 @@ function BossDuel({ section }: { section: string }) {
   if (phase === 'intro') {
     return (
       <Page>
-        <BackLink to={{ name: 'path', section: sectionId }} label={region.title} />
+        <BackLink to={{ name: 'duels' }} label="The four guardians" />
         <div className="mx-auto max-w-2xl text-center">
           <div className="mx-auto w-56 animate-bossEnter">
             <BossArt section={sectionId} state="idle" />
@@ -386,7 +386,7 @@ function BossDuel({ section }: { section: string }) {
           </span>
           <button
             type="button"
-            onClick={() => navigate({ name: 'path', section: sectionId })}
+            onClick={() => navigate({ name: 'duels' })}
             className="font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
           >
             Flee

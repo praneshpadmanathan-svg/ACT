@@ -187,8 +187,8 @@ export function DiagnosticSummary({
 
           <p className="mx-auto mt-4 max-w-md text-center text-[14px] leading-relaxed text-parchment-dim">
             These are rough placements, not scores. A handful of questions per section is enough to
-            rank them against each other and nothing more — the real number comes from a full timed
-            test.
+            rank them against each other and nothing more — the real number comes from four-section
+            timed practice.
           </p>
 
           <div className="mt-8 space-y-3">
@@ -222,7 +222,7 @@ export function DiagnosticSummary({
           <div className="mt-6">
             <h2 className="heading mb-2 text-[13px] text-parchment">Start with these</h2>
             <p className="mb-4 text-[13px] leading-relaxed text-ink-faint">
-              Topics you got nothing right in. Your plan will lead with them until you have answered
+              Topics you got nothing right in. Your plan will suggest them until you have answered
               enough elsewhere for it to know better.
             </p>
             <div className="flex flex-wrap gap-2">

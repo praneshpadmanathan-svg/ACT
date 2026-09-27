@@ -191,7 +191,7 @@ function BankBadge() {
       <strong className="bank-count rail-bank-count block text-gold">
         {LIBRARY_STATS.totalQuestions.toLocaleString()}
       </strong>
-      <span className="label-sm mt-1 block">questions in the bank</span>
+      <span className="label-sm mt-1 block">questions across the app</span>
     </a>
   );
 }
@@ -269,7 +269,7 @@ function PlayerBlock({ compact }: { compact?: boolean }) {
       href={hrefFor({ name: 'stats' })}
       onClick={() => sfx.select()}
       className={cx('hud-block group w-full', compact && 'px-2 py-1')}
-      aria-label={`${playerName}, ${rank.name}, ${progress.xp.toLocaleString()} XP`}
+      aria-label={`${playerName}, ${rank.name}, ${progress.xp.toLocaleString()} XP, view progress`}
       title={
         next ? `${(next.xp - progress.xp).toLocaleString()} XP to ${next.name}` : 'Highest rank'
       }

@@ -65,7 +65,7 @@ export function NotesScreen({ section }: { section?: string }) {
     <Page>
       <SectionHeading
         eyebrow={`${progress.notesRead.length} of ${ALL_NOTE_PAGES.length} pages read overall`}
-        title="Study notes"
+        title="Library"
         detail="Short pages that teach exactly what the ACT asks. Each one ends with a check question."
       />
 
@@ -174,10 +174,10 @@ export function NoteReader({ pageId }: { pageId: string }) {
       <Page>
         <EmptyState
           title="Page not found"
-          detail="That note page does not exist any more."
+          detail="That Library page does not exist any more."
           action={
             <Button variant="primary" onClick={() => navigate({ name: 'notes' })}>
-              All notes
+              All pages
             </Button>
           }
         />
@@ -191,7 +191,10 @@ export function NoteReader({ pageId }: { pageId: string }) {
 
   return (
     <Page>
-      <BackLink to={{ name: 'notes', section: page.section }} label={`${meta.name} notes`} />
+      <BackLink
+        to={{ name: 'notes', section: page.section }}
+        label={`${meta.name} in the Library`}
+      />
 
       {/* reading progress */}
       <div className="sticky top-14 lg:top-3 z-30 mb-5">

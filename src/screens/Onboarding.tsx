@@ -49,9 +49,10 @@ const STEPS: Step[] = [
   {
     key: 'target',
     question: 'What score are you going for?',
-    detail: 'You can change this any time from your profile.',
+    detail: 'You can change this any time from Settings.',
     options: [
       { label: '24', value: 24 },
+      { label: '27', value: 27 },
       { label: '30', value: 30 },
       { label: '33', value: 33 },
       { label: '36', value: 36 },

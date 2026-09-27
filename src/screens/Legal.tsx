@@ -13,6 +13,7 @@
 import type { ReactNode } from 'react';
 
 import { hrefFor, useNavigate } from '@/lib/router';
+import { useStore } from '@/lib/store';
 import { cloudEnabled } from '@/lib/supabase';
 import { CONTACT } from '@/lib/contact';
 import { sfx } from '@/lib/sfx';
@@ -25,6 +26,7 @@ const UPDATED = '31 July 2026';
 
 export function LegalScreen({ page }: { page: 'privacy' | 'terms' }) {
   const navigate = useNavigate();
+  const { hasStarted } = useStore();
 
   return (
     <div className="relative isolate min-h-dvh">
@@ -39,7 +41,9 @@ export function LegalScreen({ page }: { page: 'privacy' | 'terms' }) {
           type="button"
           onClick={() => {
             sfx.select();
-            navigate({ name: 'landing' });
+            /* Somebody who has started came here from inside the app — Settings,
+               the score caveat — and the front door is not where they were. */
+            navigate({ name: hasStarted ? 'home' : 'landing' });
           }}
           className="mb-8 inline-flex items-center gap-1.5 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
         >
@@ -109,8 +113,9 @@ function Privacy() {
           </UL>
           <P>
             That progress is a summary rather than a recording. We keep totals per topic and a count
-            of how many questions you answered each day. We do not keep a list of every individual
-            question you have ever attempted.
+            of how many questions you answered each day. We keep the ids of the questions in your
+            review queue and your bookmarks, so they can come back to you; we do not keep a log of
+            your raw answers.
           </P>
         </>
       )}
@@ -157,11 +162,12 @@ function Privacy() {
           <P>Both live in Settings, and neither requires emailing anyone or waiting:</P>
           <UL>
             <LI>
-              <B>Export</B> downloads everything we hold about you as a file you can keep.
+              <B>Download everything</B> (in Settings) saves everything we hold about you as a file
+              you can keep.
             </LI>
             <LI>
               <B>Delete my account</B> removes your account and your progress. It is immediate and
-              permanent — we do not keep a copy, so please export first if you want one.
+              permanent — we do not keep a copy, so please download it first if you want one.
             </LI>
           </UL>
           <P>
@@ -216,9 +222,9 @@ function Terms() {
       <H>Not affiliated with ACT, Inc.</H>
       <P>
         This is an independent study tool. It is{' '}
-        <B>not made by, endorsed by, or connected to ACT, Inc.</B>, the organisation that writes and
-        administers the ACT test. "ACT" is their registered trademark and is used here only to
-        describe what the material covers.
+        <B>not affiliated with, endorsed by, or connected to ACT, Inc.</B>, the organisation that
+        writes and administers the ACT test. “ACT” is their registered trademark and is used here
+        only to describe what the material covers.
       </P>
       <P>
         Every question, lesson and passage in this app was written for it. None of it is real exam

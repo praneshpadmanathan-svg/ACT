@@ -104,9 +104,14 @@ const mark = readFileSync(resolve(root, 'public/favicon.svg'), 'utf8')
   .replace('</svg>', '')
   .replace(/<!--[\s\S]*?-->/g, '');
 
+/* Counts come from stats.json, which check-content keeps honest, so the card
+   cannot fall behind the bank the way the hand-typed "754" did. Rounded down
+   to the hundred: a preview image is not the place for "3,006". */
+const stats = JSON.parse(readFileSync(resolve(root, 'src/content/stats.json'), 'utf8'));
+const bank = Math.floor((stats.drillQuestions + stats.zoneQuestions) / 100) * 100;
 const BULLETS = [
-  '754 questions, every choice explained',
-  '60 lessons, timed sections and full tests',
+  `${bank.toLocaleString('en-US')}+ questions, every choice explained`,
+  `${stats.notePages} lessons and timed practice sets`,
   'Free — and no account needed to start',
 ];
 
@@ -157,7 +162,7 @@ const tag = await line('Free prep for the Enhanced ACT', {
   px: 36,
   color: PARCHMENT,
 });
-const sub = await line('A world map you climb one skill at a time.', {
+const sub = await line('Four subjects, one skill at a time.', {
   font: SANS,
   px: 25,
   color: MUTED,

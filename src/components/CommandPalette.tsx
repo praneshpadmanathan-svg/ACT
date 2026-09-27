@@ -101,7 +101,7 @@ function staticEntries(): PaletteEntry[] {
       group: 'Go',
       icon: 'sword',
       to: { name: 'drills' },
-      hint: 'Free practice by section and skill',
+      hint: 'Free practice, any topic',
       keywords: 'training drills',
     },
     {
@@ -126,7 +126,7 @@ function staticEntries(): PaletteEntry[] {
       group: 'Go',
       icon: 'trophy',
       to: { name: 'tests' },
-      hint: 'Shortened sets against the clock',
+      hint: 'Shorter timed sets',
       keywords: 'summit tests exam',
     },
     {
@@ -147,7 +147,7 @@ function staticEntries(): PaletteEntry[] {
     },
     {
       id: 'go-bookmarks',
-      label: 'Bookmarks',
+      label: 'Saved questions',
       group: 'Go',
       icon: 'bookmark',
       to: { name: 'bookmarks' },
@@ -159,7 +159,7 @@ function staticEntries(): PaletteEntry[] {
       group: 'Go',
       icon: 'settings',
       to: { name: 'settings' },
-      hint: 'Account, sound, display',
+      hint: 'Theme, reading, account, data',
       keywords: 'profile account preferences',
     },
 
@@ -231,7 +231,7 @@ export function CommandPalette({
         rows.push({
           id: `note-${page.id}`,
           label: page.title,
-          group: 'Lessons',
+          group: 'Library',
           hint: page.unitLabel,
           icon: 'quill',
           to: { name: 'note', page: page.id },
@@ -376,7 +376,7 @@ export function CommandPalette({
               <input
                 autoFocus
                 className="palette-input"
-                placeholder="Jump to a landmark, a lesson, a drill…"
+                placeholder="Jump to a landmark, a Library page, a drill…"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 aria-label="Search the app"
@@ -461,7 +461,7 @@ export function CommandPalette({
               </span>
               {deep === null && (
                 <span className="ml-auto font-read text-[11.5px] text-ink-faint">
-                  Indexing lessons…
+                  Indexing the Library…
                 </span>
               )}
             </div>

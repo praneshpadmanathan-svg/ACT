@@ -219,7 +219,7 @@ export function SettingsScreen() {
           href={hrefFor({ name: 'faq' })}
           className="font-read text-[13.5px] text-parchment-dim underline underline-offset-4 transition-colors hover:text-parchment"
         >
-          What the ACT is, how accurate the score is, why it's free
+          What the ACT is, how accurate the score is, why it’s free
         </a>
         <a
           href={hrefFor({ name: 'privacy' })}
@@ -233,13 +233,19 @@ export function SettingsScreen() {
         >
           Terms
         </a>
+        {/* The landing page and the FAQ carry this, but a returning student may
+            never see either again; this is the one page they are sure to open. */}
+        <p className="w-full font-read text-[12.5px] leading-relaxed text-ink-faint">
+          Not affiliated with, endorsed by, or connected to ACT, Inc. “ACT” is their registered
+          trademark.
+        </p>
       </div>
 
       {/* danger zone */}
       <div className="panel mb-6 border-blood/40 p-6">
         <h2 className="heading mb-3 text-[12px] text-blood-text">Danger zone</h2>
         <p className="mb-4 text-[13px] leading-relaxed text-ink-faint">
-          Deletes all XP, answers, cleared zones and test results
+          Deletes all XP, answers, cleared landmarks and test results
           {isGuest ? ' from this browser' : ', on every device and in the cloud'}. This cannot be
           undone — download your data first if you want to keep a copy.
         </p>
