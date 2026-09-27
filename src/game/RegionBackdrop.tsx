@@ -170,7 +170,7 @@ export function RegionBackdrop({ section }: { section: string }) {
                  screen — which is the sticker effect, arriving by a different
                  route. Brought down to roughly where the ground is, with the
                  colour pulled out so it does not fight the region's palette. */
-              filter: 'brightness(.5) saturate(.55) drop-shadow(0 8px 14px rgba(0,0,0,.5))',
+              filter: 'brightness(.5) saturate(.55) var(--art-shadow)',
             }}
           />
         );

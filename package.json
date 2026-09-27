@@ -24,7 +24,6 @@
     "build:og": "node scripts/build-og.mjs",
     "build:heroes": "node scripts/build-heroes.mjs",
     "build:ranks": "node scripts/build-ranks.mjs",
-    "build:foliage": "node scripts/build-foliage.mjs",
     "build:bosses": "node scripts/build-bosses.mjs",
     "build:loading": "node scripts/build-loading.mjs",
     "build:scenes": "node scripts/build-scenes.mjs",

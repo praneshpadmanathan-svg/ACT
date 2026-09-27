@@ -55,7 +55,13 @@ export function runs(arr, minLen) {
  *  keeps 8,456 magenta pixels between his arms and legs, which on a dark duel
  *  screen is a figure cut out of hot pink. Turn it off only for art that is
  *  itself magenta, where a pocket might be something drawn on purpose. */
-export function keyBackground(data, W, H, C, { fringe = 3, slack = 34, interior = true } = {}) {
+export function keyBackground(
+  data,
+  W,
+  H,
+  C,
+  { fringe = 3, slack = 34, interior = true, spillReach = 4 } = {},
+) {
   const at = (x, y) => (y * W + x) * C;
   const bg = new Uint8Array(W * H);
   const stack = [];
@@ -124,18 +130,66 @@ export function keyBackground(data, W, H, C, { fringe = 3, slack = 34, interior 
     for (const i of eat) bg[i] = 1;
   }
 
-  for (let i = 0; i < W * H; i++) if (bg[i]) data[i * C + 3] = 0;
+  /* Despill. The fringe passes only eat pixels that are still recognisably
+     magenta; dark ink blended with it (measured around rgb(90,9,61)) is too dark
+     to qualify and stayed opaque, drawing a plum rim round every cut-out —
+     2,970 such pixels on the hourglass alone. Within a few pixels of the
+     background, any pixel whose red and blue both stand well clear of its green
+     (8 levels catches pale glass blended pink; the palette's warm tones all have blue below green, so none qualify) is recoloured to the same lightness in the art's warm ink. */
+  const near = new Uint8Array(W * H);
+  for (let i = 0; i < W * H; i++) if (bg[i]) near[i] = 1;
+  /* `spillReach: Infinity` despills the whole drawing, for sheets whose glass or
+     highlights picked up the pink inside the art as well as at its edge. */
+  if (spillReach === Infinity) near.fill(1);
+  for (let pass = 0; spillReach !== Infinity && pass < spillReach; pass++) {
+    const grow = [];
+    for (let y = 0; y < H; y++)
+      for (let x = 0; x < W; x++) {
+        const i = y * W + x;
+        if (near[i]) continue;
+        if (
+          (x > 0 && near[i - 1]) ||
+          (x < W - 1 && near[i + 1]) ||
+          (y > 0 && near[i - W]) ||
+          (y < H - 1 && near[i + W])
+        )
+          grow.push(i);
+      }
+    for (const i of grow) near[i] = 1;
+  }
+  for (let i = 0; i < W * H; i++) {
+    const o = i * C;
+    if (bg[i]) {
+      // Transparent pixels keep an ink colour, so no resampler can bleed pink.
+      data[o] = 36;
+      data[o + 1] = 26;
+      data[o + 2] = 16;
+      data[o + 3] = 0;
+      continue;
+    }
+    if (!near[i]) continue;
+    const r = data[o],
+      g = data[o + 1],
+      b = data[o + 2];
+    if (r - g > 8 && b - g > 8) {
+      const v = (r + g + b) / 3;
+      data[o] = Math.min(255, Math.round(v * 1.18));
+      data[o + 1] = Math.round(v * 0.96);
+      data[o + 2] = Math.round(v * 0.72);
+    }
+  }
 }
 
 /** Read a sheet, key it, and hand back both the raw pixels and a PNG buffer to
  *  cut from. */
-export async function loadSheet(file) {
+/** `opts` pass through to `keyBackground`. */
+export async function loadSheet(file, opts) {
   const { data, info } = await sharp(file)
     .ensureAlpha()
     .raw()
     .toBuffer({ resolveWithObject: true });
   const { width: W, height: H, channels: C } = info;
-  keyBackground(data, W, H, C);
+  keyBackground(data, W, H, C, opts);
   const keyed = await sharp(Buffer.from(data), { raw: { width: W, height: H, channels: C } })
     .png()
     .toBuffer();

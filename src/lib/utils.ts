@@ -100,3 +100,7 @@ export function isZoneLabel(raw: string): boolean {
   const t = raw.trim();
   return t.length > 0 && t === t.toUpperCase() && /[A-Z]/.test(t);
 }
+
+/** The screen's device pixel ratio, 1 where there is no window. */
+export const devicePixelRatio = (): number =>
+  typeof window === 'undefined' ? 1 : window.devicePixelRatio || 1;

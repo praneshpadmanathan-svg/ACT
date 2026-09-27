@@ -348,23 +348,5 @@
         "src": "/art/gen/wizzy-470.webp"
       }
     ]
-  },
-  "world-map": {
-    "width": 768,
-    "height": 1376,
-    "fallback": "/art/world-map.webp",
-    "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAACwBQCdASoUACQAPtlUo02oJKMiOrmYAQAbCUAX6w9gX7Q0Y+Vozo4sdbWUqF+9AKJFJezyWjAA/HD2HvFbCAvoVMgz2pvb1wwBLfs+Is5+oijZ58axTNSC/2or9OXZAB12TQzqtjrclpWeCrnr0PKTVhHIEzTFuYW0UAO7VyxRXMSpgAAAAA==",
-    "avif": [
-      {
-        "w": 768,
-        "src": "/art/gen/world-map-768.avif"
-      }
-    ],
-    "webp": [
-      {
-        "w": 768,
-        "src": "/art/gen/world-map-768.webp"
-      }
-    ]
   }
 }

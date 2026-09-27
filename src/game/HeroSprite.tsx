@@ -16,6 +16,7 @@
 
 import heroArt from '@/heroArt.json';
 import { heroFor, type Hero } from './heroes';
+import { devicePixelRatio } from '@/lib/utils';
 
 type HeroArtEntry = { width: number; height: number; src: string };
 const ART = heroArt as Record<string, HeroArtEntry>;
@@ -65,8 +66,10 @@ export function HeroSprite({
            pixel art; downscaled with `pixelated` it aliases into sparkling
            noise, because dropping pixels from a hard-edged image is exactly
            the case smoothing exists for. So the rule follows the direction of
-           the scale rather than picking one and living with it. */
-        imageRendering: height > art.height ? 'pixelated' : 'auto',
+           the scale rather than picking one and living with it — measured in
+           device pixels, because a 176px sprite drawn at 140 CSS px on a
+           retina screen is a 1.6x enlargement, not a reduction. */
+        imageRendering: height * devicePixelRatio() > art.height ? 'pixelated' : 'auto',
         ...style,
       }}
     />

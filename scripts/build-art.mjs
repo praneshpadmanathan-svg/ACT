@@ -28,7 +28,7 @@
  * an asset in `public/art/` changes.
  */
 
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { readdirSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -44,7 +44,6 @@ const MANIFEST = path.join(root, 'src', 'art.json');
    1024, and no point emitting a 320 px one for the map, which is pannable and
    is zoomed into. Measured from the components, not guessed. */
 const WIDTHS = {
-  'world-map': [768, 1152, 1536],
   'camp-bg': [640, 1024, 1376],
   'landing-hero': [512, 768, 1024],
   wizzy: [235, 470],
@@ -82,7 +81,11 @@ const kb = (n) => `${(n / 1024).toFixed(0)} KB`;
 async function main() {
   await mkdir(OUT, { recursive: true });
 
-  const sources = readdirSync(SRC).filter((f) => f.endsWith('.webp'));
+  /* The world map left the app with the adventure map; it stays in
+     `public/art` only because `build-og.mjs` paints the share card from it.
+     No component renders it, so it gets no variants and no manifest entry. */
+  const SKIP = new Set(['world-map.webp']);
+  const sources = readdirSync(SRC).filter((f) => f.endsWith('.webp') && !SKIP.has(f));
   const manifest = {};
   let before = 0;
   let after = 0;
@@ -107,7 +110,11 @@ async function main() {
       const avifName = `${name}-${width}.avif`;
       const webpName = `${name}-${width}.webp`;
       const avifBuf = await resized().avif(AVIF).toBuffer();
-      const webpBuf = await resized().webp(WEBP).toBuffer();
+      let webpBuf = await resized().webp(WEBP).toBuffer();
+      /* At the source's own width, re-encoding can only lose: it came back
+         5-9% heavier than the original on three plates. Ship the original. */
+      if (width === meta.width && statSync(abs).size < webpBuf.length)
+        webpBuf = await readFile(abs);
 
       await writeFile(path.join(OUT, avifName), avifBuf);
       await writeFile(path.join(OUT, webpName), webpBuf);

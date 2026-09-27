@@ -86,7 +86,7 @@ export function BossArt({ section, state, className }: Props) {
              The drop shadow replaces the SVG's painted ground shadow: it
              follows the actual silhouette, which a hand-placed ellipse never
              quite did. */
-          filter: 'drop-shadow(0 6px 10px rgba(0,0,0,.55))',
+          filter: 'var(--art-shadow)',
         }}
       />
     </div>

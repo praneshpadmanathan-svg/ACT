@@ -134,6 +134,10 @@ function serviceWorker(): Plugin {
            by Facebook's and Slack's crawlers — the app itself never renders
            it, and no student is offline inside a link preview. */
         name === '/og.png' ||
+        /* The world map's only reader is `build-og.mjs`, at build time. No
+           screen renders it since the map was flattened into tabs, and it was
+           290 KB of every install's offline cache. */
+        name === '/art/world-map.webp' ||
         /* Same reasoning, different audience: `security.txt` and `robots.txt`
            are addressed to researchers and crawlers, are never requested by
            the app, and nobody reads either one on a train with no signal. */

@@ -39,6 +39,7 @@ import { useId } from 'react';
 import rankArt from '@/rankArt.json';
 import { Glyph, type IconName } from './Icon';
 import { RankAura, auraBox, hasAura } from './RankAura';
+import { devicePixelRatio } from '@/lib/utils';
 
 type ArtEntry = { width: number; height: number; src: string };
 const ART = rankArt as Record<string, ArtEntry>;
@@ -108,7 +109,7 @@ export function RankSigil({
         draggable={false}
         className="relative select-none"
         style={{
-          imageRendering: size > art.width ? 'pixelated' : 'auto',
+          imageRendering: size * devicePixelRatio() > art.width ? 'pixelated' : 'auto',
           /* Two shadows doing different jobs: a tight dark one to seat the
              emblem on the page, and a wide one in the rank's own colour so the
              badge throws a little light of its own even when the aura is off. */

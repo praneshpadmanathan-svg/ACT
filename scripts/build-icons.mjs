@@ -65,9 +65,11 @@ const rounded = readFileSync(pub('favicon.svg'));
 const jobs = [
   ['icon-192.png', () => png(rounded, 192)],
   ['icon-512.png', () => png(rounded, 512)],
-  /* 0.62 keeps every gold pixel inside Android's safe circle even when a
-     launcher crops hardest; the leather runs to the edge behind it. */
-  ['maskable-512.png', () => png(framed(0.62), 512)],
+  /* 0.78 keeps every gold pixel inside Android's safe circle (radius 205 of
+     256) even when a launcher crops hardest; the leather runs to the edge
+     behind it. 0.62 was safe too, but the mark filled half the circle and
+     looked a size smaller than every icon beside it. */
+  ['maskable-512.png', () => png(framed(0.78), 512)],
   /* iOS crops less, so the mark can breathe wider. */
   ['apple-touch-icon.png', () => png(framed(0.86), 180)],
 ];

@@ -63,7 +63,9 @@ async function main() {
   const objects = [];
 
   for (const { file, find, slots, union } of SHEETS) {
-    const sheet = await loadSheet(path.join(SRC, file));
+    /* The glass and brass on these objects reflect the magenta they were drawn
+       on, well inside the outline; nothing in them is meant to be pink. */
+    const sheet = await loadSheet(path.join(SRC, file), { spillReach: Infinity });
     let cells = findCells(sheet, find);
     if (!cells.length) throw new Error(`${file}: no drawing found — is the background magenta?`);
 

@@ -10,7 +10,7 @@
  * each to its own box would make the three-rock cluster the same size as the
  * broadleaf tree, and a boulder as tall as an oak is not a map, it is a
  * collage. So the tallest prop sets the scale and everything else is measured
- * against it, exactly as `build-foliage.mjs` does for the leaves.
+ * against it, exactly as the old leaf-particle slicer did.
  *
  * The sheet arrives with cast shadows painted under six of the nine, in a
  * darker magenta than the background. They key out with everything else —
