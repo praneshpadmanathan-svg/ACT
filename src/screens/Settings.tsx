@@ -47,7 +47,7 @@ export function SettingsScreen() {
       {/* your test — the two things the whole app paces itself against, so
           they come first and nothing else on the page is about the ACT. */}
       <div className="panel mb-6 p-6 sm:p-7">
-        <h3 className="heading mb-5 text-[12px] text-parchment">Your test</h3>
+        <h2 className="heading mb-5 text-[12px] text-parchment">Your test</h2>
 
         {/* A group, not a <label>. A label forwards clicks on its text to the
             first control inside it, so tapping the words "Target score"
@@ -128,7 +128,7 @@ export function SettingsScreen() {
           belongs next to theme and reading width, which are the other things
           you pick about how the app looks. */}
       <div className="panel mb-6 p-6 sm:p-7">
-        <h3 className="heading mb-1.5 text-[12px] text-parchment">Your traveller</h3>
+        <h2 className="heading mb-1.5 text-[12px] text-parchment">Your traveller</h2>
         <p className="mb-5 text-[13px] leading-relaxed text-ink-faint">
           Nothing here is locked and nothing has to be earned. Pick whoever you want to be on the
           road; you can change it whenever you like.
@@ -142,7 +142,7 @@ export function SettingsScreen() {
       {/* account and data */}
       <div className="mb-6 grid gap-4 lg:grid-cols-2">
         <div className="panel p-6 sm:p-7">
-          <h3 className="heading mb-4 text-[12px] text-parchment">Account</h3>
+          <h2 className="heading mb-4 text-[12px] text-parchment">Account</h2>
 
           {isGuest ? (
             <>
@@ -193,7 +193,7 @@ export function SettingsScreen() {
         {/* Your data, on your terms — and export sits beside delete on
             purpose, so erasing everything is never the only way out. */}
         <div className="panel p-6 sm:p-7">
-          <h3 className="heading mb-4 text-[12px] text-parchment">Your data</h3>
+          <h2 className="heading mb-4 text-[12px] text-parchment">Your data</h2>
           <Button
             variant="ghost"
             onClick={() => downloadProgress(progress, isGuest ? undefined : { name: playerName })}
@@ -237,7 +237,7 @@ export function SettingsScreen() {
 
       {/* danger zone */}
       <div className="panel mb-6 border-blood/40 p-6">
-        <h3 className="heading mb-3 text-[12px] text-blood-text">Danger zone</h3>
+        <h2 className="heading mb-3 text-[12px] text-blood-text">Danger zone</h2>
         <p className="mb-4 text-[13px] leading-relaxed text-ink-faint">
           Deletes all XP, answers, cleared zones and test results
           {isGuest ? ' from this browser' : ', on every device and in the cloud'}. This cannot be

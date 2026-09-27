@@ -597,7 +597,7 @@ export function SectionTabs({
             aria-current={s.id === active ? 'page' : undefined}
             title={locked ? `${s.name} is part of Pro` : undefined}
             className={cx(
-              'flex items-center gap-1.5 rounded-lg border-2 px-4 py-2 font-script text-[12px] uppercase tracking-wide transition-colors',
+              'flex items-center gap-1.5 rounded-lg border-2 px-4 py-2 font-script [@media(pointer:coarse)]:min-h-11 text-[12px] uppercase tracking-wide transition-colors',
               s.id === active
                 ? 'text-[#0d0620]'
                 : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-parchment',

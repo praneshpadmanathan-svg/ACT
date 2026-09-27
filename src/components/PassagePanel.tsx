@@ -36,7 +36,7 @@ export function PassagePanel({ passage }: { passage: Passage }) {
           <button
             type="button"
             onClick={() => setOpenOnMobile((v) => !v)}
-            className="flex-none rounded border-2 border-paper-edge bg-white px-2.5 py-1 font-script text-[10px] uppercase tracking-wide text-ink-soft lg:hidden"
+            className="flex-none rounded border-2 [@media(pointer:coarse)]:min-h-11 border-paper-edge bg-white px-2.5 py-1 font-script text-[10px] uppercase tracking-wide text-ink-soft lg:hidden"
             aria-expanded={openOnMobile}
           >
             {openOnMobile ? 'Hide' : 'Read'}

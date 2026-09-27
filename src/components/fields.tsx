@@ -31,7 +31,7 @@ const TRIGGER = cx(
   'flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-left',
   'mat-leather font-read text-[15px] text-parchment',
   'transition-[border-color,box-shadow] duration-quick ease-out',
-  'hover:border-gold-deep focus-visible:border-gold-deep focus-visible:outline-none',
+  'hover:border-gold-deep focus-visible:border-gold-deep',
   'data-[popup-open]:border-gold-deep',
 );
 

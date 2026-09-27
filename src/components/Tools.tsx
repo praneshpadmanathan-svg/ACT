@@ -267,8 +267,8 @@ function Scratchpad() {
         rows={11}
         placeholder={'Work it out here.\n\n2x + 6 = 18\n2x = 12\nx = 6'}
         className="w-full resize-none rounded-lg border-2 border-paper-edge bg-paper px-3.5 py-3
-                   font-mono text-[13.5px] leading-relaxed text-ink outline-none
-                   placeholder:text-ink-faint focus:border-gold-deep"
+                   font-mono text-[13.5px] leading-relaxed text-ink
+                   placeholder:text-ink-soft focus:border-gold-deep"
       />
       <div className="mt-2 flex items-center justify-between">
         <p className="font-read text-[11.5px] text-ink-faint">

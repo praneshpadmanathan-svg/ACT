@@ -153,7 +153,11 @@ export function Toasts() {
     /* Bottom-left. Top-right sat squarely on the question HUD — the Exit
        button, the calculator and the clock — at exactly the moment an
        achievement lands, which is mid-question. Bottom-right is the tool dock. */
-    <div className="pointer-events-none fixed bottom-4 left-4 z-[90] flex w-[min(340px,calc(100vw-2rem))] flex-col gap-2 lg:left-[252px]">
+    <div
+      role="status"
+      aria-live="polite"
+      className="pointer-events-none fixed bottom-4 left-4 z-[90] flex w-[min(340px,calc(100vw-2rem))] flex-col gap-2 lg:left-[252px]"
+    >
       {toasts.map((t) => (
         <button
           key={t.id}

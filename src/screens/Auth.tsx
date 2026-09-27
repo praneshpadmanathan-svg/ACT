@@ -388,8 +388,9 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
               key={m}
               type="button"
               onClick={() => go(m)}
+              aria-pressed={mode === m}
               className={cx(
-                'rounded px-3 py-2 font-display text-[13px] font-semibold transition-colors',
+                'rounded px-3 py-2 font-display [@media(pointer:coarse)]:min-h-11 text-[13px] font-semibold transition-colors',
                 mode === m ? 'bg-leather-750 text-gold' : 'text-ink-faint hover:text-parchment',
               )}
             >
@@ -579,7 +580,7 @@ function AgeGate({ onAnswer, onBack }: { onAnswer: (dob: DateParts) => void; onB
               onChange={(e) => setDay(e.target.value.replace(/\D/g, '').slice(0, 2))}
               placeholder="1"
               inputMode="numeric"
-              className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3 py-2.5 font-read text-[15px] text-parchment outline-none transition-colors placeholder:text-ink-faint focus:border-gold-deep"
+              className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3 py-2.5 font-read text-[15px] text-parchment transition-colors placeholder:text-ink-faint focus:border-gold-deep"
             />
           </label>
 
@@ -590,7 +591,7 @@ function AgeGate({ onAnswer, onBack }: { onAnswer: (dob: DateParts) => void; onB
               onChange={(e) => setYear(e.target.value.replace(/\D/g, '').slice(0, 4))}
               placeholder={String(thisYear - 16)}
               inputMode="numeric"
-              className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3 py-2.5 font-read text-[15px] text-parchment outline-none transition-colors placeholder:text-ink-faint focus:border-gold-deep"
+              className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3 py-2.5 font-read text-[15px] text-parchment transition-colors placeholder:text-ink-faint focus:border-gold-deep"
             />
           </label>
         </div>
@@ -666,7 +667,7 @@ function Field({
         maxLength={maxLength}
         autoComplete={autoComplete}
         inputMode={inputMode}
-        className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[15px] text-parchment outline-none transition-colors placeholder:text-ink-faint focus:border-gold-deep"
+        className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[15px] text-parchment transition-colors placeholder:text-ink-faint focus:border-gold-deep"
       />
     </label>
   );

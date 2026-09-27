@@ -601,7 +601,7 @@ function SectionTimer({
       {hint && (
         <div
           aria-hidden
-          className="mt-1.5 border-t border-leather-700/70 pt-1.5 text-right text-[12px] text-gold/80"
+          className="mt-1.5 border-t border-leather-700/70 pt-1.5 text-right text-[12px] text-gold"
         >
           {hint}
         </div>

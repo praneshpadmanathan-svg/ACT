@@ -173,7 +173,7 @@ export function Home() {
         </div>
         <div className="home-activity">
           <section className="panel-quiet p-6 sm:p-7">
-            <h3 className="heading mb-5 text-[17px]">Your progress</h3>
+            <h2 className="heading mb-4 text-[1.2rem]">Your progress</h2>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
               {SECTIONS.map((section) => {
                 const path = PATH_BY_ID[section.id];
@@ -214,7 +214,7 @@ export function Home() {
           </section>
 
           <section className="panel-quiet p-6 sm:p-7">
-            <h3 className="heading mb-5 text-[17px]">All time</h3>
+            <h2 className="heading mb-4 text-[1.2rem]">All time</h2>
             <dl className="space-y-3">
               <Row label="Target score" value={String(progress.targetScore)} />
               <Row label="Questions answered" value={progress.tally.answered.toLocaleString()} />
@@ -241,7 +241,7 @@ export function Home() {
         {/* -------------------------------------------------------- weak spots */}
         {weak.length > 0 && (
           <>
-            <h2 className="heading mb-4 text-[17px]">Worth fixing</h2>
+            <h2 className="heading mb-4 text-[1.2rem]">Worth fixing</h2>
             <div className="mb-6 grid gap-2.5 sm:grid-cols-2">
               {weak.map((t) => (
                 <button
@@ -516,7 +516,7 @@ function DailyCard() {
          the hero directly above it — and the hero is frequently the daily's own
          first step, so the screen was competing with itself. */
       className={`panel-quiet mb-6 flex w-full items-center gap-4 p-6 text-left sm:p-7 ${
-        done ? 'opacity-80' : ''
+        done ? 'border-dashed' : ''
       }`}
     >
       <span
@@ -680,7 +680,7 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
   return (
     <section className="panel-quiet mb-6 p-6 sm:p-7">
       <div className="mb-5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h3 className="heading text-[15px]">Your weekly plan</h3>
+        <h2 className="heading text-[1.2rem]">Your weekly plan</h2>
         {days !== null && (
           <span className="font-display text-[13.5px] font-semibold" style={{ color: countdown }}>
             {days > 0

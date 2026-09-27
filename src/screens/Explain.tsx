@@ -419,7 +419,13 @@ export function ExplainScreen() {
                       /* The router owns the hash, so an in-page anchor cannot
                          use one — clicking would navigate. Scroll by hand. */
                       ev.preventDefault();
-                      document.getElementById(e.id)?.scrollIntoView({ behavior: 'smooth' });
+                      const target = document.getElementById(e.id);
+                      if (!target) return;
+                      const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                      target.scrollIntoView({ behavior: still ? 'auto' : 'smooth' });
+                      // Move focus too, or a keyboard user's next Tab starts back at the list.
+                      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+                      target.focus({ preventScroll: true });
                     }}
                     className="font-read text-[0.98rem] leading-snug text-ink underline decoration-paper-edge underline-offset-2 hover:decoration-ink"
                   >

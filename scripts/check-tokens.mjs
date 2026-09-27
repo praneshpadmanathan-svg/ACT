@@ -67,7 +67,7 @@ function ratio(fg, bg) {
    `text-parchment-edge` anywhere in the app — they are border and rule
    colours, and including them reports failures on pairings that never render. */
 const CHROME = ['leather-950', 'leather-900', 'leather-850', 'leather-800', 'leather-750'];
-const ON_CHROME = ['parchment', 'parchment-dim', 'ink-faint', 'gold', 'gold-light'];
+const ON_CHROME = ['parchment', 'parchment-dim', 'ink-faint', 'gold', 'gold-light', 'gold-bright'];
 const SHEETS = ['paper', 'paper-dim'];
 const ON_PAPER = ['ink', 'ink-soft'];
 

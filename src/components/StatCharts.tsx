@@ -109,7 +109,7 @@ export function ScoreTrend({ tests, target }: { tests: TestResult[]; target: num
           x={PAD.left}
           y={toY(target) - 5}
           className="num"
-          fontSize={9}
+          fontSize={11}
           fill="oklch(var(--c-ink-faint))"
           style={HALO}
         >

@@ -221,7 +221,7 @@ export function NoteReader({ pageId }: { pageId: string }) {
 
         <footer className="mt-10 border-t-2 border-paper-edge pt-7">
           {alreadyRead ? (
-            <p className="text-center font-script text-[12px] uppercase tracking-wide text-[#2f6b3a]">
+            <p className="text-center font-script text-[12px] uppercase tracking-wide text-[oklch(var(--c-feedback-correct))]">
               <Glyph name="check" size={12} strokeWidth={2.2} className={LEADING_ICON} />
               Page complete
             </p>
@@ -309,7 +309,7 @@ function NoteBlockView({ block }: { block: NoteBlock }) {
 
           <p className="mt-3.5 font-read text-[1.02rem] leading-relaxed text-ink">
             <span className="label-quill">Answer</span>{' '}
-            <RichText as="span" className="font-semibold text-[#2f6b3a]">
+            <RichText as="span" className="font-semibold text-[oklch(var(--c-feedback-correct))]">
               {block.answer}
             </RichText>
           </p>
@@ -427,7 +427,12 @@ function CheckBlock({ block }: { block: Extract<NoteBlock, { type: 'check' }> })
         <div className="mt-4 animate-fadein">
           <div
             className="mb-1.5 font-script text-[11.5px] font-semibold uppercase tracking-[0.14em]"
-            style={{ color: chosen === block.answer ? '#2f6b3a' : '#9c3326' }}
+            style={{
+              color:
+                chosen === block.answer
+                  ? 'oklch(var(--c-feedback-correct))'
+                  : 'oklch(var(--c-feedback-wrong))',
+            }}
           >
             <Glyph
               name={chosen === block.answer ? 'check' : 'cross'}

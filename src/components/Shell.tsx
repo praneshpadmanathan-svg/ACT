@@ -406,7 +406,8 @@ export function SideNav() {
           <a
             href={hrefFor({ name: 'home' })}
             onClick={() => sfx.select()}
-            className="group flex flex-none items-center gap-2"
+            aria-label="ACT Command home"
+            className="group flex min-h-11 min-w-11 flex-none items-center gap-2"
           >
             <span className="brand-sigil">
               <NavGlyph name="star" size={15} />

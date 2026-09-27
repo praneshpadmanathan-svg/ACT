@@ -175,7 +175,7 @@ export function DisplaySettings() {
 
   return (
     <div className="panel p-6 sm:p-7">
-      <h3 className="heading mb-5 text-[12px] text-parchment">Display &amp; reading</h3>
+      <h2 className="heading mb-5 text-[12px] text-parchment">Display &amp; reading</h2>
 
       <Field
         label="Theme"
@@ -272,7 +272,7 @@ export function DiagnosticsPanel() {
   return (
     <div className="panel p-6 sm:p-7">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
-        <h3 className="heading text-[12px] text-parchment">Diagnostics</h3>
+        <h2 className="heading text-[12px] text-parchment">Diagnostics</h2>
         <span className="font-script text-[10.5px] uppercase tracking-[0.14em] text-ink-faint">
           {events.length} recorded{errors ? ` · ${errors} error${errors === 1 ? '' : 's'}` : ''}
         </span>

@@ -156,7 +156,7 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
                 revealed &&
                   !isAnswer &&
                   !picked &&
-                  'border-leather-700/60 bg-leather-900/40 opacity-70',
+                  'border-dashed border-leather-700/60 bg-transparent',
               )}
             >
               <span className="flex gap-3">

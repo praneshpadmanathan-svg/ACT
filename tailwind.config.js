@@ -240,11 +240,6 @@ export default {
          * on the map and at 140 in the duel. `transform-origin` sits at the
          * feet, or the lean swings the whole figure sideways instead of
          * pivoting on the leg holding it up. */
-        walkHero: {
-          '0%,100%': { transform: 'translateY(0) rotate(-2.6deg)' },
-          '25%,75%': { transform: 'translateY(-8%) rotate(0deg)' },
-          '50%': { transform: 'translateY(0) rotate(2.6deg)' },
-        },
         /* The rank-up banner arriving. Overshoots wide and settles, with the
            letter-spacing closing at the same time — the word is spread out
            and blurred at the moment it lands, so it reads as being stamped
@@ -272,21 +267,10 @@ export default {
           '0%': { opacity: '.55' },
           '100%': { opacity: '0' },
         },
-        pulseRing: {
-          '0%': { transform: 'scale(.85)', opacity: '.75' },
-          '70%': { transform: 'scale(1.5)', opacity: '0' },
-          '100%': { transform: 'scale(1.5)', opacity: '0' },
-        },
         popIn: {
           '0%': { transform: 'scale(0) translateY(8px)', opacity: '0' },
           '70%': { transform: 'scale(1.12)' },
           '100%': { transform: 'scale(1) translateY(0)', opacity: '1' },
-        },
-        drift: { from: { transform: 'translateX(-15%)' }, to: { transform: 'translateX(115%)' } },
-        mote: {
-          '0%': { transform: 'translateY(0) scale(.6)', opacity: '0' },
-          '30%': { opacity: '.8' },
-          '100%': { transform: 'translateY(-46px) scale(1)', opacity: '0' },
         },
         rise: {
           '0%': { transform: 'translateY(0)', opacity: '1' },
@@ -408,13 +392,9 @@ export default {
         /* 0.62s a cycle is two steps at 310ms each — a walking pace, and the
            interval the footstep cue is fired on. Keep the two in step: the
            number lives in `AdventureMap` as `STEP_MS`. */
-        walkHero: 'walkHero .62s ease-in-out infinite',
-        pulseRing: 'pulseRing 2.4s ease-out infinite',
         popIn: `popIn .42s ${EASE.overshoot} backwards`,
         stamp: 'stamp .72s cubic-bezier(.2,.9,.25,1) backwards',
         flashOut: 'flashOut .5s ease-out forwards',
-        drift: 'drift 90s linear infinite',
-        mote: 'mote var(--md,8s) ease-out var(--dl,0s) infinite',
         rise: 'rise 1.15s ease-out forwards',
         fadein: 'fadein .4s ease-out',
         shimmer: 'shimmer 2.6s ease-in-out infinite',

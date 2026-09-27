@@ -126,7 +126,7 @@ export function Wizzy() {
         <button
           type="button"
           onClick={dismiss}
-          className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded
+          className="absolute right-2 top-2 flex h-6 w-6 [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:min-w-11 items-center justify-center rounded
                      text-ink-faint transition-colors hover:text-parchment"
           aria-label="Hide Wizzy"
         >

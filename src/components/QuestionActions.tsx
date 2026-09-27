@@ -31,7 +31,7 @@ function ActionButton({
   href?: string;
 }) {
   const className = cx(
-    'inline-flex h-8 w-8 items-center justify-center rounded-lg border transition-colors',
+    'inline-flex h-8 w-8 [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:min-w-11 items-center justify-center rounded-lg border transition-colors',
     active
       ? 'border-gold-deep bg-[#f7eed6] text-[#8a5a12]'
       : 'border-paper-edge bg-paper-dim/60 text-ink-soft hover:border-ink-faint hover:text-ink',

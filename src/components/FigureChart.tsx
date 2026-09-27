@@ -154,7 +154,7 @@ export function FigureChartView({ figure }: { figure: FigureChart }) {
             textAnchor="end"
             dominantBaseline="middle"
             className="font-read"
-            fontSize="12"
+            fontSize="14"
             fill="oklch(var(--c-ink-soft))"
           >
             {formatTick(t, yStep)}
@@ -168,7 +168,7 @@ export function FigureChartView({ figure }: { figure: FigureChart }) {
             y={PLOT.y0 + 18}
             textAnchor="middle"
             className="font-read"
-            fontSize="12"
+            fontSize="14"
             fill="oklch(var(--c-ink-soft))"
           >
             {formatTick(t, isBar ? 1 : xStep)}
@@ -180,7 +180,7 @@ export function FigureChartView({ figure }: { figure: FigureChart }) {
           y={H - 8}
           textAnchor="middle"
           className="font-script"
-          fontSize="12"
+          fontSize="14"
           letterSpacing="1.6"
           fill="oklch(var(--c-ink-soft))"
         >
@@ -192,7 +192,7 @@ export function FigureChartView({ figure }: { figure: FigureChart }) {
           y={(PLOT.y0 + PLOT.y1) / 2}
           textAnchor="middle"
           className="font-script"
-          fontSize="12"
+          fontSize="14"
           letterSpacing="1.6"
           fill="oklch(var(--c-ink-soft))"
         >

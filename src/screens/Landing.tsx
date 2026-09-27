@@ -480,7 +480,7 @@ export function Landing() {
             )}
           </div>
 
-          <p className="hero-type mt-9 font-script text-[12px] uppercase tracking-[0.2em] text-ink-faint">
+          <p className="hero-type mt-9 font-script text-[12px] uppercase leading-[1.8] tracking-[0.1em] text-parchment">
             Every answer explained · Free · No account needed
           </p>
         </div>

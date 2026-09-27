@@ -443,7 +443,12 @@ function BossDuel({ section }: { section: string }) {
                 <div className="mt-6 animate-fadein border-t-2 border-paper-edge pt-5">
                   <div
                     className="mb-2 font-script text-[13px] uppercase tracking-[0.16em]"
-                    style={{ color: chosen === question.correctKey ? '#2f6b3a' : '#9c3326' }}
+                    style={{
+                      color:
+                        chosen === question.correctKey
+                          ? 'oklch(var(--c-feedback-correct))'
+                          : 'oklch(var(--c-feedback-wrong))',
+                    }}
                   >
                     <Glyph
                       name={chosen === question.correctKey ? 'sword' : 'cross'}
