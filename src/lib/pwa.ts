@@ -6,6 +6,7 @@
    thing a test timer must not do is surprise you. */
 
 import { reportWarn } from './report';
+import { exitGuarded } from './router';
 
 const UPDATE_EVENT = 'act-command:update-ready';
 
@@ -48,7 +49,11 @@ export function registerServiceWorker(): void {
       }
       if (reloading) return;
       reloading = true;
-      window.location.reload();
+      /* Another tab took the update. Reloading this one mid-test would throw the
+         sitting away, so wait until nothing here is guarding its exit. */
+      const reloadWhenFree = () =>
+        exitGuarded() ? window.setTimeout(reloadWhenFree, 5000) : window.location.reload();
+      reloadWhenFree();
     });
   });
 }

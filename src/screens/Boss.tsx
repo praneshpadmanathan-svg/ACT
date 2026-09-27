@@ -51,6 +51,9 @@ function BossDuel({ section }: { section: string }) {
   const [playerHp, setPlayerHp] = useState(boss?.playerHealth ?? 3);
   const [chosen, setChosen] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
+  /* State lags a render behind a fast double-click, so the answer is locked here
+     too: one strike per question, one advance per reveal. */
+  const answeredRef = useRef(false);
   const [bossState, setBossState] = useState<BossState>('idle');
   const [heroHurt, setHeroHurt] = useState(false);
   const [heroPleased, setHeroPleased] = useState(false);
@@ -243,6 +246,7 @@ function BossDuel({ section }: { section: string }) {
                 setPlayerHp(boss.playerHealth);
                 setChosen(null);
                 setRevealed(false);
+                answeredRef.current = false;
                 setBossState('idle');
                 setPhase('intro');
               }}
@@ -261,7 +265,8 @@ function BossDuel({ section }: { section: string }) {
   /* ------------------------------------------------------------- fight */
 
   const strike = (key: string) => {
-    if (revealed || !question) return;
+    if (revealed || answeredRef.current || !question) return;
+    answeredRef.current = true;
 
     const correct = key === question.correctKey;
     setChosen(key);
@@ -311,6 +316,8 @@ function BossDuel({ section }: { section: string }) {
   };
 
   const next = () => {
+    if (!answeredRef.current) return;
+    answeredRef.current = false;
     sfx.tick();
     setChosen(null);
     setRevealed(false);

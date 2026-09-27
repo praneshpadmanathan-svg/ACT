@@ -9,7 +9,7 @@ import { QUESTIONS, SECTION_BY_ID, TOPICS_BY_SECTION } from '@/content';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { fromDrillQuestion, runnableById } from '@/lib/normalize';
-import { dailyDone, dueForReview, topicStats, XP } from '@/lib/progress';
+import { dailyDone, dayKey, dueForReview, topicStats, XP } from '@/lib/progress';
 import { dailyBlurb, pickDaily } from '@/lib/daily';
 import { sfx } from '@/lib/sfx';
 import { shuffle, titleCase } from '@/lib/utils';
@@ -593,7 +593,8 @@ export function DailyScreen() {
   /* Chosen once, from the state as it was on arrival. Not reactive to
      `progress`: answering question two must not re-pick questions three
      through five underneath the player. */
-  const [questions] = useState(() => pickDaily(progress, undefined, allowed));
+  const [day] = useState(() => dayKey());
+  const [questions] = useState(() => pickDaily(progress, day, allowed));
   const [blurb] = useState(() => dailyBlurb(progress, allowed));
 
   if (results) {
@@ -667,7 +668,7 @@ export function DailyScreen() {
         onFinish={(records) => {
           /* Paid for finishing, not for scoring well. A bonus that only lands
              on a good day is a reason to stop opening the app on bad ones. */
-          finishDaily();
+          finishDaily(day);
           setResults(records);
         }}
       />

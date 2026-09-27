@@ -72,7 +72,8 @@ function shuffleSeeded<T>(items: readonly T[], next: () => number): T[] {
  * count, not asked to work it out. Omit it and nothing is filtered, which is
  * both the old behaviour and what a Pro student gets.
  *
- * `day` is injectable for the tests; nothing in the app passes it.
+ * `day` is the day the challenge was opened on. The screen pins it on arrival,
+ * so a challenge started before midnight is stamped with the day it belongs to.
  */
 export function pickDaily(
   p: Progress,

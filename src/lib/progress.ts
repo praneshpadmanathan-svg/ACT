@@ -1207,11 +1207,11 @@ export const DAILY_SIZE = 5;
 
 export const dailyDone = (p: Progress): boolean => p.dailyDoneOn === dayKey();
 
-export function completeDaily(p: Progress): RecordResult {
-  if (dailyDone(p)) {
+export function completeDaily(p: Progress, day: string = dayKey()): RecordResult {
+  if (p.dailyDoneOn === day) {
     return { progress: p, xpGained: 0, rankedUp: false, newRankIndex: rankIndexFor(p.xp) };
   }
-  return awardXP({ ...p, dailyDoneOn: dayKey() }, XP.dailyChallenge);
+  return awardXP({ ...p, dailyDoneOn: day }, XP.dailyChallenge);
 }
 
 export function recordTest(p: Progress, result: TestResult): RecordResult {

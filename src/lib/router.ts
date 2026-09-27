@@ -154,10 +154,29 @@ export function hrefFor(route: Route): string {
   }
 }
 
+/* While a timed test runs, `useConfirmExit` puts its warning here. The browser's
+   own `beforeunload` prompt only covers closing the tab — the nav rail, a
+   back-swipe and every in-app link change the hash instead, and those left a
+   running test without a word. */
+let exitGuard: string | null = null;
+/* Set when `navigate` has already asked, so the hashchange it causes does not ask again. */
+let confirmedLeave = false;
+let lastHash = typeof window === 'undefined' ? '' : currentHash();
+
+/** True while a screen has work in progress that leaving would lose. */
+export const exitGuarded = (): boolean => exitGuard !== null;
+
 export function navigate(route: Route, opts: { replace?: boolean } = {}): void {
   const href = hrefFor(route);
+  const target = href.replace(/^#\/?/, '');
+  if (target !== currentHash() && exitGuard) {
+    if (!window.confirm(exitGuard)) return;
+    confirmedLeave = true;
+  }
   if (opts.replace) {
     window.history.replaceState(null, '', href);
+    confirmedLeave = false;
+    lastHash = currentHash();
     listeners.forEach((l) => l());
   } else {
     window.location.hash = href.slice(1);
@@ -184,7 +203,18 @@ function getSnapshot(): Route {
 }
 
 if (typeof window !== 'undefined') {
-  window.addEventListener('hashchange', () => listeners.forEach((l) => l()));
+  window.addEventListener('hashchange', () => {
+    const hash = currentHash();
+    const asked = confirmedLeave;
+    confirmedLeave = false;
+    if (!asked && exitGuard && hash !== lastHash && !window.confirm(exitGuard)) {
+      // Put the address back without a second hashchange; the screen never moved.
+      window.history.replaceState(null, '', '#/' + lastHash);
+      return;
+    }
+    lastHash = hash;
+    listeners.forEach((l) => l());
+  });
 }
 
 export function useRoute(): Route {
@@ -199,12 +229,16 @@ export function useNavigate() {
 export function useConfirmExit(active: boolean, message: string) {
   useEffect(() => {
     if (!active) return;
+    exitGuard = message;
     const handler = (e: BeforeUnloadEvent) => {
       e.preventDefault();
       e.returnValue = message;
       return message;
     };
     window.addEventListener('beforeunload', handler);
-    return () => window.removeEventListener('beforeunload', handler);
+    return () => {
+      if (exitGuard === message) exitGuard = null;
+      window.removeEventListener('beforeunload', handler);
+    };
   }, [active, message]);
 }

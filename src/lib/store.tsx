@@ -122,7 +122,8 @@ interface StoreValue {
   clearZone: (zoneId: string, percent: number) => void;
   finishTest: (result: TestResult) => void;
   /** Mark today's daily challenge done and pay for it. Idempotent per day. */
-  finishDaily: () => void;
+  /** `day` is the day the challenge was opened on, so one begun before midnight is not stamped with the next day. */
+  finishDaily: (day?: string) => void;
   /** Save a completed placement test, replacing any earlier one. */
   finishDiagnostic: (result: DiagnosticResult) => void;
   /** First win against a guardian: the achievement and its bounty, once. */
@@ -360,17 +361,20 @@ export function StoreProvider({ children }: { children: ReactNode }) {
      `answerQuestion`, exactly as a drill would; this only pays the bonus and
      stamps the day. `completeDailyPure` is a no-op on a day already claimed,
      so a double-submit or a re-mounted summary cannot pay twice. */
-  const finishDaily = useCallback(() => {
-    const p = progressRef.current;
-    if (dailyDone(p)) return;
-    applyResult(completeDailyPure(p));
-    pushToast({
-      title: 'Daily challenge done',
-      detail: `+${XP.dailyChallenge} XP — back tomorrow`,
-      color: 'oklch(var(--c-gold))',
-      icon: 'flame',
-    });
-  }, [applyResult, pushToast]);
+  const finishDaily = useCallback(
+    (day?: string) => {
+      const p = progressRef.current;
+      if (day ? p.dailyDoneOn === day : dailyDone(p)) return;
+      applyResult(completeDailyPure(p, day));
+      pushToast({
+        title: 'Daily challenge done',
+        detail: `+${XP.dailyChallenge} XP — back tomorrow`,
+        color: 'oklch(var(--c-gold))',
+        icon: 'flame',
+      });
+    },
+    [applyResult, pushToast],
+  );
 
   /* The individual answers have already been recorded through
      `answerQuestion`; this stores the placement they add up to. No XP of its
