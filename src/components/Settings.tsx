@@ -86,7 +86,7 @@ function Segmented<T extends string | number>({
             aria-pressed={active}
             onClick={() => onChange(option.value)}
             className={cx(
-              'rounded-lg border-2 px-3.5 py-2 text-center font-display text-[13px] font-semibold leading-tight transition-colors',
+              'rounded-lg border-2 px-3.5 py-2 text-center font-display text-[13px] font-semibold leading-tight transition-colors [@media(pointer:coarse)]:min-h-11',
               active
                 ? 'border-gilt bg-gilt text-[#2a2000]'
                 : 'border-leather-700 bg-leather-800 text-parchment-dim hover:border-gold-deep hover:text-parchment',
@@ -122,7 +122,8 @@ function Toggle({
       disabled={disabled}
       onClick={() => onChange(!on)}
       className={cx(
-        'relative inline-flex h-7 w-12 flex-none items-center rounded-full border-2 transition-colors disabled:opacity-40',
+        /* The track is 28px; the ::before extends the hit area to 44px without moving anything. */
+        'relative inline-flex h-7 w-12 flex-none items-center rounded-full border-2 transition-colors before:absolute before:-inset-x-1 before:-inset-y-2.5 before:content-[""] disabled:opacity-40',
         on ? 'border-gold bg-gold/30' : 'border-parchment-edge bg-leather-900',
       )}
     >
@@ -189,8 +190,8 @@ export function DisplaySettings() {
   const { prefs, setPref, effectiveTheme } = usePrefs();
 
   return (
-    <div className="panel p-6 sm:p-7">
-      <h2 className="heading mb-5 text-[12px] text-parchment">Display &amp; reading</h2>
+    <div className="panel mb-6 p-6 sm:p-7">
+      <h2 className="heading mb-5 text-[1.125rem] text-parchment">Display &amp; reading</h2>
 
       <Field
         label="Theme"
@@ -287,7 +288,7 @@ export function DiagnosticsPanel() {
   return (
     <div className="panel p-6 sm:p-7">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
-        <h2 className="heading text-[12px] text-parchment">Diagnostics</h2>
+        <h2 className="heading text-[1.125rem] text-parchment">Diagnostics</h2>
         <span className="font-script text-[10.5px] uppercase tracking-[0.14em] text-ink-faint">
           {events.length} recorded{errors ? ` · ${errors} error${errors === 1 ? '' : 's'}` : ''}
         </span>

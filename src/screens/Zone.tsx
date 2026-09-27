@@ -138,7 +138,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                 {zone.learn.map((item) => (
                   <li
                     key={item}
-                    className="flex gap-2 text-[13.5px] leading-snug text-parchment-dim"
+                    className="flex gap-2 text-[14.5px] leading-snug text-parchment-dim"
                   >
                     <span
                       aria-hidden
@@ -173,7 +173,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                       <RichText
                         as="div"
                         format="html"
-                        className="font-read text-[1.02rem] leading-[1.72] text-ink"
+                        className="font-read text-[1.1rem] leading-[1.75] text-ink"
                       >
                         {example}
                       </RichText>
@@ -188,7 +188,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                   <RichText
                     as="div"
                     format="html"
-                    className="font-read text-[1.02rem] leading-[1.72] text-ink"
+                    className="font-read text-[1.1rem] leading-[1.75] text-ink"
                   >
                     {lesson.trap}
                   </RichText>

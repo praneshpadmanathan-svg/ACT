@@ -19,7 +19,9 @@ export function MissedReview({ records }: { records: AnswerRecord[] }) {
 
   return (
     <div className="mt-6">
-      <h2 className="heading mb-4 text-[13px] text-parchment">What you missed ({missed.length})</h2>
+      <h2 className="heading mb-4 text-[1.125rem] text-parchment">
+        What you missed ({missed.length})
+      </h2>
       <div className="space-y-3">
         {missed.map((r, i) => {
           const q = r.question;

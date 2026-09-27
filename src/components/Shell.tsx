@@ -529,7 +529,7 @@ export function BackLink({ to, label }: { to: Route; label: string }) {
     <a
       href={hrefFor(to)}
       onClick={() => sfx.select()}
-      className="group mb-5 inline-flex items-center gap-2 font-script text-[13px] uppercase
+      className="group mb-3 inline-flex min-h-11 items-center gap-2 font-script text-[13px] uppercase
                  tracking-[0.16em] text-ink-faint transition-colors hover:text-gold"
     >
       <span className="inline-flex transition-transform duration-200 group-hover:-translate-x-1">

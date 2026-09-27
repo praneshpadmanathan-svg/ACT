@@ -67,7 +67,7 @@ export function StatsScreen() {
       <div className="panel-lit mb-5 flex flex-wrap items-center gap-x-6 gap-y-4 p-6 sm:p-7">
         <HeroSprite hero={progress.hero} height={92} />
         <div className="min-w-0 flex-1">
-          <h2 className="heading text-[15px] text-parchment">{playerName}</h2>
+          <h2 className="heading text-[1.125rem] text-parchment">{playerName}</h2>
           <p className="mt-1.5 font-read text-[13px] text-ink-faint">
             <b className="num text-[17px] text-gold">{progress.xp.toLocaleString()}</b> XP earned ·{' '}
             <b className="num text-parchment">{answered.toLocaleString()}</b> question
@@ -81,9 +81,11 @@ export function StatsScreen() {
           the only place in the app that shows what the seven ranks *are*, and
           gating that behind having already earned XP would hide the map from
           exactly the person who has not started walking yet. */}
-      <h2 className="heading mb-3 text-[13px] text-parchment">Your rank</h2>
       <div className="panel mb-7 p-5 sm:p-6">
-        <RankLadder xp={progress.xp} />
+        <RankLadder
+          xp={progress.xp}
+          title={<h2 className="heading text-[1.125rem] text-parchment">Your rank</h2>}
+        />
       </div>
 
       {answered === 0 ? (
@@ -102,7 +104,7 @@ export function StatsScreen() {
       )}
 
       {/* achievements */}
-      <h2 className="heading mb-4 mt-7 text-[13px] text-parchment">
+      <h2 className="heading mb-4 mt-7 text-[1.125rem] text-parchment">
         Achievements ({unlocked.size}/{ACHIEVEMENTS.length})
       </h2>
       <div className="mb-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
@@ -143,7 +145,7 @@ export function StatsScreen() {
 
       {/* library */}
       <div className="panel p-6">
-        <h3 className="heading mb-4 text-[12px] text-parchment">Your library</h3>
+        <h3 className="heading mb-4 text-[15px] text-parchment">Your library</h3>
         <dl className="space-y-2 text-[14px]">
           <Row
             label="Library pages read"
@@ -298,7 +300,7 @@ function StatsBody({ progress }: { progress: Progress }) {
           target of 8. They are fine as one accent per titled card, which is
           all they are used as here, and must never become the only thing
           telling two series apart inside one plot. */}
-      <h2 className="heading mb-4 text-[13px] text-parchment">By section</h2>
+      <h2 className="heading mb-4 text-[1.125rem] text-parchment">By section</h2>
       <div className="mb-6 grid gap-3 sm:grid-cols-2">
         {SECTIONS.map((section) => {
           const { n, ok, pct } = sectionAccuracy(progress, section.id);
@@ -308,7 +310,7 @@ function StatsBody({ progress }: { progress: Progress }) {
           return (
             <div key={section.id} className="panel-quiet p-5">
               <div className="flex items-baseline justify-between">
-                <h3 className="heading text-[12px]" style={{ color: section.color }}>
+                <h3 className="heading text-[15px]" style={{ color: section.color }}>
                   {section.name}
                 </h3>
                 <span className="num text-[26px]" style={{ color: section.color }}>
@@ -332,13 +334,13 @@ function StatsBody({ progress }: { progress: Progress }) {
       </div>
 
       {/* activity */}
-      <h2 className="heading mb-4 text-[13px] text-parchment">Last 12 weeks</h2>
+      <h2 className="heading mb-4 text-[1.125rem] text-parchment">Last 12 weeks</h2>
       <div className="panel-quiet mb-6 p-5">
         <ActivityChart counts={activity} />
       </div>
 
       {/* topics */}
-      <h2 className="heading mb-4 text-[13px] text-parchment">Every topic you have tried</h2>
+      <h2 className="heading mb-4 text-[1.125rem] text-parchment">Every topic you have tried</h2>
       <div className="space-y-2">
         {allTopics.map((t) => {
           /* There is no "Zone" label any more. It was never a section — it

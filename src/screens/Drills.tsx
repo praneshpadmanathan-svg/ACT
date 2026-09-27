@@ -75,7 +75,7 @@ export function DrillsScreen({ section }: { section?: string }) {
         className="panel mb-6 p-6 sm:p-7"
         style={{ borderTopColor: meta.color, borderTopWidth: 4 }}
       >
-        <h2 className="heading text-[13px]" style={{ color: meta.color }}>
+        <h2 className="heading text-[1.125rem]" style={{ color: meta.color }}>
           Mixed {meta.name} drill
         </h2>
         <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
@@ -120,7 +120,7 @@ export function DrillsScreen({ section }: { section?: string }) {
       )}
 
       {/* by topic */}
-      <h2 className="heading mb-4 text-[13px] text-parchment">By topic</h2>
+      <h2 className="heading mb-4 text-[1.125rem] text-parchment">By topic</h2>
       <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         {topics.map((topic) => {
           const stat = stats.get(topic);

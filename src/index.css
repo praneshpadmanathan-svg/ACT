@@ -1357,6 +1357,14 @@
   .lesson-trap {
     background: rgba(252, 240, 234, 0.72) !important;
     border-left-width: 5px !important;
+    /* The heavier edge takes its 2px out of the padding, so the trap's text
+       starts on the same line as every other part's. */
+    padding-left: calc(1.25rem - 2px) !important;
+  }
+  @media (min-width: 640px) {
+    .lesson-trap {
+      padding-left: calc(1.5rem - 2px) !important;
+    }
   }
 
   /* The self-check is an activity rather than prose — a dashed edge marks it as
@@ -1540,7 +1548,7 @@
      the primary progress signal now: "3/10" is a number you have to read and
      convert, where a rail is a shape you take in without looking at it. */
   .rail {
-    @apply flex w-2 flex-none flex-col items-center gap-1.5 py-1;
+    @apply hidden w-2 flex-none flex-col items-center gap-1.5 py-1 sm:flex;
   }
   /* Capped, or a ten-tick rail beside a tall Reading question stretches into
      ten long bars and the current one stops being distinguishable — the rail

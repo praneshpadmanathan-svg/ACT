@@ -182,7 +182,7 @@ export function Home() {
         </div>
         <div className="home-activity">
           <section className="panel-quiet p-6 sm:p-7">
-            <h2 className="heading mb-4 text-[1.2rem]">Your progress</h2>
+            <h2 className="heading mb-4 text-[1.125rem]">Your progress</h2>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
               {SECTIONS.map((section) => {
                 const path = PATH_BY_ID[section.id];
@@ -223,7 +223,7 @@ export function Home() {
           </section>
 
           <section className="panel-quiet p-6 sm:p-7">
-            <h2 className="heading mb-4 text-[1.2rem]">All time</h2>
+            <h2 className="heading mb-4 text-[1.125rem]">All time</h2>
             <dl className="space-y-3">
               <Row label="Target score" value={String(progress.targetScore)} />
               <Row label="Questions answered" value={progress.tally.answered.toLocaleString()} />
@@ -250,7 +250,7 @@ export function Home() {
         {/* -------------------------------------------------------- weak spots */}
         {weak.length > 0 && (
           <>
-            <h2 className="heading mb-4 text-[1.2rem]">Worth fixing</h2>
+            <h2 className="heading mb-4 text-[1.125rem]">Worth fixing</h2>
             <div className="mb-6 grid gap-2.5 sm:grid-cols-2">
               {weak.map((t) => (
                 <button
@@ -303,7 +303,7 @@ export function Home() {
                 sfx.select();
                 navigate({ name: 'path' });
               }}
-              className="panel-quiet mb-5 flex w-full items-center gap-4 p-4 text-left sm:p-5"
+              className="panel-quiet mb-6 flex w-full items-center gap-4 p-5 text-left sm:p-6"
             >
               <Art
                 name="wizzy"
@@ -333,7 +333,7 @@ export function Home() {
             the honest reason to make one — "your world would survive a cleared
             cache" — is not true yet when you have nothing saved. */}
           {isGuest && cloudEnabled && cleared >= 1 && !savePromptHidden && (
-            <div className="panel-quiet mb-5 flex flex-wrap items-center gap-4 p-4 sm:p-5">
+            <div className="panel-quiet mb-6 flex flex-wrap items-center gap-4 p-5 sm:p-6">
               <span className="min-w-0 flex-1">
                 <Eyebrow>Keep this</Eyebrow>
                 <span className="mt-1 block font-display text-[15px] font-semibold text-gold-light">
@@ -458,7 +458,7 @@ function PlacementPrompt() {
   if (hidden || progress.diagnostic || hasEvidence) return null;
 
   return (
-    <div className="panel-quiet mb-6 flex flex-wrap items-center gap-4 p-5 sm:p-6">
+    <div className="panel-quiet mb-6 flex flex-wrap items-center gap-4 p-6 sm:p-7">
       {/* A real basis, so on a phone the buttons wrap below the copy instead
           of squeezing it into a one-word-wide column beside them. */}
       <span className="min-w-0 flex-[1_1_16rem]">
@@ -616,7 +616,7 @@ function TrackCard() {
   })();
 
   return (
-    <section className={`panel-quiet mb-6 ${face.border} p-5 sm:p-6`}>
+    <section className={`panel-quiet mb-6 ${face.border} p-6 sm:p-7`}>
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
         <span className="eyebrow" style={{ color: face.color }}>
           <Glyph name={face.icon} size={12} className={LEADING_ICON} />
@@ -683,7 +683,7 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
   return (
     <section className="panel-quiet mb-6 p-6 sm:p-7">
       <div className="mb-5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h2 className="heading text-[1.2rem]">Your weekly plan</h2>
+        <h2 className="heading text-[1.125rem]">Your weekly plan</h2>
         {days !== null && (
           <span className="font-display text-[13.5px] font-semibold" style={{ color: countdown }}>
             {days > 0

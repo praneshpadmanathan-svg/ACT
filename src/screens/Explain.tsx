@@ -392,7 +392,7 @@ export function ExplainScreen() {
                the score caveat — and the front door is not where they were. */
             navigate({ name: hasStarted ? 'home' : 'landing' });
           }}
-          className="mb-8 inline-flex items-center gap-1.5 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
+          className="mb-6 inline-flex min-h-11 items-center gap-1.5 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
         >
           <Glyph name="arrowLeft" size={13} strokeWidth={2} />
           Back
@@ -410,7 +410,7 @@ export function ExplainScreen() {
           {/* A jump list, because this page is long by design and the question
               somebody arrived with is usually one specific one. */}
           <nav aria-label="Jump to a question" className="mt-8 border-t border-paper-edge pt-6">
-            <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
+            <ul className="grid gap-x-6 sm:grid-cols-2">
               {ENTRIES.map((e) => (
                 <li key={e.id}>
                   <a
@@ -427,7 +427,7 @@ export function ExplainScreen() {
                       if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
                       target.focus({ preventScroll: true });
                     }}
-                    className="font-read text-[0.98rem] leading-snug text-ink underline decoration-paper-edge underline-offset-2 hover:decoration-ink"
+                    className="inline-block min-h-11 py-2.5 font-read text-[0.98rem] leading-snug text-ink underline decoration-paper-edge underline-offset-2 hover:decoration-ink"
                   >
                     {e.q}
                   </a>

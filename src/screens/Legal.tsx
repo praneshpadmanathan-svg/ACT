@@ -45,7 +45,7 @@ export function LegalScreen({ page }: { page: 'privacy' | 'terms' }) {
                the score caveat — and the front door is not where they were. */
             navigate({ name: hasStarted ? 'home' : 'landing' });
           }}
-          className="mb-8 inline-flex items-center gap-1.5 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
+          className="mb-6 inline-flex min-h-11 items-center gap-1.5 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
         >
           <Glyph name="arrowLeft" size={13} strokeWidth={2} />
           Back

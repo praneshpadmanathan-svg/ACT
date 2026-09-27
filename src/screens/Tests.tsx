@@ -78,7 +78,7 @@ function TestsBoard() {
 
       <div className="mb-6 grid gap-3 lg:grid-cols-2">
         <div className="panel border-blood p-6 sm:p-7" style={{ borderTopWidth: 4 }}>
-          <h2 className="heading text-[13px] text-blood-text">Four-section practice</h2>
+          <h2 className="heading text-[1.125rem] text-blood-text">Four-section practice</h2>
           <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
             All four sections back to back, with a break between each.
           </p>
@@ -99,7 +99,7 @@ function TestsBoard() {
         </div>
 
         <div className="panel p-6 sm:p-7">
-          <h2 className="heading text-[13px] text-parchment">Single section</h2>
+          <h2 className="heading text-[1.125rem] text-parchment">Single section</h2>
           <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
             One section, properly timed. Good for building pace.
           </p>
@@ -124,12 +124,10 @@ function TestsBoard() {
           then gets out of the way, so without this it would be reachable only
           by typing the URL — which is not a feature, it is a bug with a
           keyboard shortcut. */}
-      <div className="panel-quiet mb-6 flex flex-wrap items-center gap-4 px-5 py-4">
-        <span className="min-w-0 flex-1">
-          <span className="font-display text-[14.5px] font-semibold text-parchment">
-            Placement test
-          </span>
-          <span className="mt-0.5 block text-[13px] leading-relaxed text-ink-faint">
+      <div className="panel-quiet mb-6 flex flex-wrap items-center gap-4 p-6 sm:p-7">
+        <span className="min-w-0 flex-[1_1_16rem]">
+          <h2 className="heading text-[1.125rem] text-parchment">Placement test</h2>
+          <span className="mt-2 block text-[14px] leading-relaxed text-parchment-dim">
             {progress.diagnostic
               ? `Taken ${formatRelative(progress.diagnostic.at)} — ${progress.diagnostic.asked} questions. Not a score; it just tells the plan where to point you.`
               : 'Untimed, all four sections, a rough placement per section rather than a score — it tells the plan where to point you.'}
@@ -140,7 +138,7 @@ function TestsBoard() {
         </Button>
       </div>
 
-      <h2 className="heading mb-4 text-[13px] text-parchment">Your results</h2>
+      <h2 className="heading mb-4 text-[1.125rem] text-parchment">Your results</h2>
       {history.length === 0 ? (
         <EmptyState
           art="chest"
@@ -762,7 +760,7 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
 
         {pacing.length > 0 && (
           <div className="mt-6">
-            <h2 className="heading mb-1.5 text-[13px] text-parchment">How your clock ran</h2>
+            <h2 className="heading mb-1.5 text-[1.125rem] text-parchment">How your clock ran</h2>
             <p className="mb-4 text-[12px] leading-relaxed text-ink-faint">
               Seconds per question, against the real ACT&rsquo;s budget for that section
               {(result.allowance ?? 1) > 1 &&
@@ -803,7 +801,7 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
 
         {byTopic.length > 0 && (
           <div className="mt-6">
-            <h2 className="heading mb-4 text-[13px] text-parchment">Where the points went</h2>
+            <h2 className="heading mb-4 text-[1.125rem] text-parchment">Where the points went</h2>
             <div className="space-y-2.5">
               {byTopic.map((t) => (
                 <div key={t.topic} className="panel-quiet flex items-center gap-4 px-5 py-3.5">

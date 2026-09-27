@@ -85,7 +85,7 @@ export function NotesScreen({ section }: { section?: string }) {
       <div className="space-y-6">
         {units.map((unit) => (
           <section key={unit.id}>
-            <h2 className="heading mb-3 text-[12px]" style={{ color: meta.color }}>
+            <h2 className="heading mb-3 text-[1.125rem]" style={{ color: meta.color }}>
               {unit.label}
             </h2>
             <div className="grid gap-2.5 md:grid-cols-2">

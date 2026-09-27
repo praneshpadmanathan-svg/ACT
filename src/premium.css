@@ -339,8 +339,13 @@ p {
 }
 .rank-ladder-head {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   margin-bottom: -0.5rem;
+}
+.rank-ladder-head > button {
+  margin-left: auto;
 }
 .rank-ladder-expand {
   font-family: var(--font-sans), Inter, sans-serif;

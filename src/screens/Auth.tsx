@@ -524,7 +524,14 @@ function Frame({
       <div className="absolute inset-0 bg-leather-950/85" />
 
       <div className="panel-lit relative z-10 w-full max-w-md p-7 sm:p-9">
-        <h1 className="heading mb-1 text-center text-[24px] text-parchment">{title}</h1>
+        <h1
+          className={cx(
+            'heading text-[24px] text-parchment',
+            subtitle ? 'mb-1 text-center' : 'mb-4',
+          )}
+        >
+          {title}
+        </h1>
         {subtitle && (
           <p className="mb-6 text-center font-read text-[14px] text-ink-faint">{subtitle}</p>
         )}
@@ -631,7 +638,7 @@ function BackLink({ onClick }: { onClick: () => void }) {
     <button
       type="button"
       onClick={onClick}
-      className="mt-6 inline-flex w-full items-center justify-center gap-1.5 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
+      className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-1.5 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
     >
       <Glyph name="arrowLeft" size={13} strokeWidth={2} />
       Back

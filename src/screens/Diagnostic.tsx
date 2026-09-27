@@ -220,7 +220,7 @@ export function DiagnosticSummary({
 
         {result.weakTopics.length > 0 && (
           <div className="mt-6">
-            <h2 className="heading mb-2 text-[13px] text-parchment">Start with these</h2>
+            <h2 className="heading mb-2 text-[1.125rem] text-parchment">Start with these</h2>
             <p className="mb-4 text-[13px] leading-relaxed text-ink-faint">
               Topics you got nothing right in. Your plan will suggest them until you have answered
               enough elsewhere for it to know better.

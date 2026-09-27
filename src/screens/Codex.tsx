@@ -75,7 +75,10 @@ export function CodexScreen() {
           return (
             <section key={region}>
               <div className="mb-2.5 flex items-baseline justify-between gap-4">
-                <h2 className="font-heading text-[15px] font-semibold" style={{ color: colour }}>
+                <h2
+                  className="font-heading text-[1.125rem] font-semibold"
+                  style={{ color: colour }}
+                >
                   {REGION_LABEL[region]}
                 </h2>
                 <span className="num flex-none text-[12px] text-ink-faint">

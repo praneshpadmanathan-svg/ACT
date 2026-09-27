@@ -48,7 +48,7 @@
  * it is also seven times less work.
  */
 
-import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { Dialog } from '@base-ui/react/dialog';
 import { RANKS, XP, rankIndexFor, type Rank } from '@/lib/progress';
 import { cx } from '@/lib/utils';
@@ -233,7 +233,9 @@ function Rungs({
   );
 }
 
-export function RankLadder({ xp }: { xp: number }) {
+/** `title` sits in the header row beside Expand, which otherwise stood alone
+ *  in a row of its own above the rungs. */
+export function RankLadder({ xp, title }: { xp: number; title?: ReactNode }) {
   const here = rankIndexFor(xp);
   /* Opens on the player's own rung — the one they came to look at. The
      selection is deliberately not "the next rank": someone at Quillbearer
@@ -246,6 +248,7 @@ export function RankLadder({ xp }: { xp: number }) {
   return (
     <div className="rank-ladder">
       <div className="rank-ladder-head">
+        {title}
         <button
           type="button"
           className="rank-ladder-expand"
