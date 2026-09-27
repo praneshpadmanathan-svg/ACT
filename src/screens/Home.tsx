@@ -525,7 +525,7 @@ function DailyCard() {
         className="num flex flex-none items-center justify-center rounded-lg border-2 px-3 py-2 text-[22px] leading-none sm:px-4 sm:text-[26px]"
         style={{
           color: done ? 'oklch(var(--c-woods-text))' : 'oklch(var(--c-gold))',
-          borderColor: done ? '#3f6b4a' : '#8a6a1c',
+          borderColor: done ? 'oklch(var(--c-woods))' : 'oklch(var(--c-gold-deep))',
         }}
       >
         {done ? <Glyph name="check" size={26} strokeWidth={2.2} /> : DAILY_SIZE}
@@ -574,7 +574,7 @@ const TRACK_FACE: Record<
     icon: 'spark',
     eyebrow: 'Ahead of your target',
     color: 'oklch(var(--c-woods-text))',
-    border: 'border-[#3f6b4a]',
+    border: 'border-woods',
   },
   onTrack: {
     icon: 'flag',
@@ -586,7 +586,7 @@ const TRACK_FACE: Record<
     icon: 'alert',
     eyebrow: 'Behind your target',
     color: 'oklch(var(--c-blood-text))',
-    border: 'border-[#7a4038]',
+    border: 'border-blood',
   },
 };
 

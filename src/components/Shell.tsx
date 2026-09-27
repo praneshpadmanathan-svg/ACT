@@ -501,9 +501,9 @@ export function Page({
   className?: string;
   wide?: boolean;
 }) {
-  /* The arrival animation moved to the route transition in App.tsx, which can
-     also animate the outgoing screen. Keeping `animate-pageIn` here as well
-     meant every page ran two entrances at once. */
+  /* The arrival animation lives on the keyed route wrapper in App.tsx.
+     Keeping `animate-pageIn` here as well meant every page ran two entrances
+     at once. */
   return (
     /* `tabIndex={-1}` so the skip link in `SideNav` can actually move focus
        here: without it the browser scrolls to the anchor and leaves focus on

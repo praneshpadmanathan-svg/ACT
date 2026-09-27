@@ -290,7 +290,7 @@ export default {
 
         /* page + list entrances — small, fast, never in the way */
         pageIn: {
-          from: { opacity: '0', transform: 'translateY(10px)' },
+          from: { opacity: '.4', transform: 'translateY(10px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
         },
         riseIn: {
@@ -420,7 +420,7 @@ export default {
         shakeSoft: 'shakeSoft .5s ease-out',
         shakeHard: 'shakeHard 1.05s cubic-bezier(.36,.07,.19,.97)',
         sealFlash: 'sealFlash .8s ease-out forwards',
-        questPulse: 'questPulse 2.4s ease-out infinite',
+        questPulse: 'questPulse 2.4s ease-out 4',
       },
     },
   },

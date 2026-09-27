@@ -362,7 +362,12 @@ function BossDuel({ section }: { section: string }) {
               transition: 'filter 180ms ease-out',
             }}
           />
-          <HealthPips label="You" value={playerHp} max={boss.playerHealth} color="#5fa86b" />
+          <HealthPips
+            label="You"
+            value={playerHp}
+            max={boss.playerHealth}
+            color="oklch(var(--c-woods))"
+          />
         </div>
 
         <div className="pb-10 font-display text-[clamp(1rem,2.4vw,1.6rem)] font-semibold text-ink-faint">
@@ -506,22 +511,29 @@ function HealthPips({
       {/* A pip going out gets a spring kick rather than a linear fade, so a hit
           landing is legible in the health bar itself and not only in the
           character's recoil. */}
-      <div className="flex justify-center gap-1">
+      <div
+        className="flex justify-center gap-1"
+        role="meter"
+        aria-label={`${label} health`}
+        aria-valuemin={0}
+        aria-valuemax={max}
+        aria-valuenow={value}
+      >
         {Array.from({ length: max }, (_, i) => {
           const lit = i < value;
+          /* Colour in CSS, shape in Motion: the colours are `oklch(var())`
+             strings, which Motion cannot interpolate, and an empty pip is a
+             leather trough rather than a near-invisible smudge. */
           return (
             <m.span
               key={i}
-              className="h-2.5 flex-1 rounded-full"
-              style={{ maxWidth: 26 }}
-              animate={{
-                background: lit ? color : '#3a2f21',
-                boxShadow: lit
-                  ? `0 0 8px color-mix(in srgb, ${color} 53%, transparent)`
-                  : '0 0 0 rgba(0,0,0,0)',
-                opacity: lit ? 1 : 0.25,
-                scaleY: lit ? 1 : 0.55,
+              className="h-2.5 flex-1 rounded-full transition-[background-color,box-shadow] duration-base"
+              style={{
+                maxWidth: 26,
+                background: lit ? color : 'oklch(var(--c-leather-600))',
+                boxShadow: lit ? `0 0 8px color-mix(in srgb, ${color} 53%, transparent)` : 'none',
               }}
+              animate={{ scaleY: lit ? 1 : 0.55 }}
               transition={SPRING_SNAP}
             />
           );

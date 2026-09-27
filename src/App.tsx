@@ -4,7 +4,7 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import { useNavigate, useRoute } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { onUpdateReady } from '@/lib/pwa';
-import { m, MotionProvider, pageVariants } from '@/lib/motion';
+import { MotionProvider } from '@/lib/motion';
 import { registerStage } from '@/lib/juice';
 import { SideNav } from '@/components/Shell';
 import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
@@ -240,16 +240,22 @@ export default function App() {
           The cost is losing a 160ms fade on the way out; the gain is that a
           decorative animation can never hold the app hostage. The key is the
           route identity rather than just its name, so paging between two note
-          pages re-animates too. */}
+          pages re-animates too.
+
+          And it is CSS, not Motion. A Motion wrapper renders its `initial`
+          style — opacity 0 — until its feature chunk loads and a frame runs,
+          so a slow chunk or a hidden tab held a finished screen invisible. A
+          keyframe needs neither, and starts from a visible 40% so that even a
+          frozen first frame shows the page. */}
           {/* One boundary around the route, keyed with it. Keying matters: without
           it React keeps the boundary mounted across a navigation and reuses
           the previous screen as the fallback's sibling, so moving from a long
           page to a lazy one leaves the old page on screen until the new chunk
           lands. Keyed, the fallback shows immediately and the transition is
           honest about what is happening. */}
-          <m.div key={routeKey(route)} variants={pageVariants} initial="initial" animate="animate">
+          <div key={routeKey(route)} className="animate-pageIn">
             <Suspense fallback={<ScreenFallback />}>{renderRoute(route)}</Suspense>
-          </m.div>
+          </div>
         </div>
       </div>
 

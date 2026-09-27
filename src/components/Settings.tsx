@@ -108,13 +108,13 @@ function Toggle({
       onClick={() => onChange(!on)}
       className={cx(
         'relative inline-flex h-7 w-12 flex-none items-center rounded-full border-2 transition-colors disabled:opacity-40',
-        on ? 'border-gold bg-gold/30' : 'border-leather-700 bg-leather-900',
+        on ? 'border-gold bg-gold/30' : 'border-parchment-edge bg-leather-900',
       )}
     >
       <span
         className={cx(
           'block h-4 w-4 rounded-full transition-transform duration-200',
-          on ? 'translate-x-[22px] bg-gold' : 'translate-x-[4px] bg-leather-600',
+          on ? 'translate-x-[22px] bg-gold' : 'translate-x-[4px] bg-parchment-dim',
         )}
       />
     </button>

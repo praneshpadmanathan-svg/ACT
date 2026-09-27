@@ -48,7 +48,7 @@ const POPUP = cx(
 const ITEM = cx(
   'grid cursor-default grid-cols-[1rem_1fr] items-center gap-2 rounded px-2 py-2',
   'font-read text-[15px] text-parchment outline-none',
-  'data-[highlighted]:bg-leather-750 data-[selected]:text-gold',
+  'data-[highlighted]:bg-leather-750 data-[highlighted]:shadow-[inset_0_0_0_1px_oklch(var(--c-gold-deep))] data-[selected]:text-gold',
 );
 
 export function Select({

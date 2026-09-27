@@ -75,12 +75,6 @@ export const EASE = { duration: 0.26, ease: [0.22, 1, 0.36, 1] } as const;
 
 /* --------------------------------------------------------------- variants */
 
-/** A page arriving. There is deliberately no exit — see the note above. */
-export const pageVariants = {
-  initial: { opacity: 0, y: 12 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] } },
-} as const;
-
 /** Put on a list; children using `riseItem` then time themselves off it. */
 export const staggerList = {
   initial: {},

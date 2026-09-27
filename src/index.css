@@ -462,17 +462,22 @@
     outline-offset: 2px;
     border-radius: 4px;
   }
+  /* Gold on the paper sheets measures 1.96:1; the deep gold is 4.2:1. */
+  .sheet :focus-visible,
+  .proof-sheet :focus-visible {
+    outline-color: oklch(var(--c-gold-deep));
+  }
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: theme('colors.leather.700') transparent;
+    scrollbar-color: theme('colors.leather.600') transparent;
   }
   *::-webkit-scrollbar {
     width: 10px;
     height: 10px;
   }
   *::-webkit-scrollbar-thumb {
-    background: theme('colors.leather.700');
+    background: theme('colors.leather.600');
     border-radius: 6px;
     border: 2px solid transparent;
     background-clip: content-box;
@@ -542,7 +547,7 @@
      did. */
   .rail-marker {
     @apply pointer-events-none absolute left-0 top-1/2 block w-[3px] -translate-y-1/2
-           rounded-full transition-all duration-200;
+           rounded-full transition-[height,opacity] duration-base;
     height: 0;
     opacity: 0;
     background: linear-gradient(180deg, theme('colors.gold.deep'), theme('colors.gold.bright'));
@@ -612,7 +617,7 @@
     @apply block h-1 w-12 overflow-hidden rounded-full bg-leather-950;
   }
   .hud-xp > i {
-    @apply block h-full rounded-full transition-[width] duration-700 ease-out;
+    @apply block h-full rounded-full transition-[width] duration-cinematic ease-out;
     background: linear-gradient(90deg, theme('colors.gold.deep'), theme('colors.gold.bright'));
   }
 
@@ -1446,7 +1451,7 @@
   }
   .choice-correct .choice-key {
     @apply border-[#367040] text-paper-light;
-    background: radial-gradient(circle at 34% 28%, #4a8a55, #367040);
+    background: radial-gradient(circle at 34% 28%, #3f7a4a, #2f6338);
   }
 
   /* A hairline, not a fill. Being wrong should read as a correction in the
@@ -2082,7 +2087,11 @@
   *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
+    /* A staggered list collapses its durations but would still wait out its
+       delays, arriving item by item after up to half a second of blank. */
+    animation-delay: 0s !important;
     transition-duration: 0.001ms !important;
+    transition-delay: 0s !important;
   }
 }
 

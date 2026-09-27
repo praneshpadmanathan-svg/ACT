@@ -390,8 +390,10 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
               onClick={() => go(m)}
               aria-pressed={mode === m}
               className={cx(
-                'rounded px-3 py-2 font-display [@media(pointer:coarse)]:min-h-11 text-[13px] font-semibold transition-colors',
-                mode === m ? 'bg-leather-750 text-gold' : 'text-ink-faint hover:text-parchment',
+                'rounded border px-3 py-2 font-display [@media(pointer:coarse)]:min-h-11 text-[13px] font-semibold transition-colors',
+                mode === m
+                  ? 'border-gold-deep bg-leather-750 text-gold'
+                  : 'border-transparent text-ink-faint hover:text-parchment',
               )}
             >
               {m === 'signup' ? 'New traveller' : 'Returning'}
