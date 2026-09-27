@@ -590,6 +590,11 @@
     background-color: oklch(var(--c-leather-950) / 0.6);
     box-shadow: var(--e-flush);
   }
+  @media (max-height: 950px) {
+    .rail-bank {
+      display: none;
+    }
+  }
   .rail-bank:hover {
     @apply border-gold-deep;
     background-color: oklch(var(--c-leather-950) / 0.85);
@@ -1133,14 +1138,18 @@
     );
   }
 
-  /* A load-bearing word inside body copy. Colour does the lifting; the hairline
-     underneath means it still reads as emphasis without seeing the hue. */
+  /* A load-bearing word inside body copy. Colour does the lifting; a low
+     highlighter band behind the lower half means it still reads as emphasis
+     without seeing the hue — and, unlike the underline it replaces, does not
+     look like a link nobody can follow. */
   .hl {
     @apply font-semibold;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-    text-decoration-color: color-mix(in srgb, currentColor 32%, transparent);
+    background: linear-gradient(
+      transparent 58%,
+      color-mix(in srgb, currentColor 16%, transparent) 58%
+    );
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   /* Section ornament — a rule broken by a diamond. Replaces the bare gap
@@ -1512,7 +1521,7 @@
      cream and the eye had nowhere to land. */
 
   .task-well {
-    @apply relative flex gap-3 rounded-2xl p-3 sm:gap-4 sm:p-4;
+    @apply relative flex gap-2 rounded-2xl p-2 sm:gap-4 sm:p-4;
     background-color: oklch(var(--c-leather-900) / 0.55);
     border: 1px solid oklch(var(--c-leather-700) / 0.45);
     box-shadow: var(--e-flush);
@@ -1521,7 +1530,7 @@
   /* The stem, on its own plate. It is the thing being read closely, so it
      keeps the study register even though the column around it is chrome. */
   .task-card {
-    @apply mat-paper rounded-lg px-5 py-5 sm:px-6 sm:py-6;
+    @apply mat-paper rounded-lg px-4 py-4 sm:px-6 sm:py-6;
     box-shadow: var(--lamp-edge-paper), var(--e-resting);
   }
 

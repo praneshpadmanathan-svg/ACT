@@ -76,9 +76,21 @@ export function BossCard({
               ? 'Every landmark is cleared. The guardian is awake and waiting.'
               : `Sealed until all ${total} landmarks are cleared — ${cleared} so far.`}
         </p>
+        <span className="mt-2 flex items-center gap-1 font-display text-[13px] font-semibold text-gold sm:hidden">
+          {unlocked ? (
+            <>
+              Fight
+              <Glyph name="chevronRight" size={13} strokeWidth={2} />
+            </>
+          ) : (
+            'Sealed'
+          )}
+        </span>
       </div>
 
-      <span className="flex flex-none items-center gap-1 font-display text-[13px] font-semibold text-gold">
+      {/* Beside the text only when there is room; on a phone it took a
+          column that squeezed the description to a few words a line. */}
+      <span className="hidden flex-none items-center gap-1 font-display text-[13px] font-semibold text-gold sm:flex">
         {unlocked ? (
           <>
             Fight

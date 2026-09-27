@@ -138,7 +138,7 @@ function BossDuel({ section }: { section: string }) {
           </p>
           <p className="mx-auto mt-5 max-w-md font-read text-[15.5px] leading-relaxed text-parchment-dim">
             The guardian will not stir until every landmark in {region.title} is cleared. You have{' '}
-            <b className="text-parchment">
+            <b className="whitespace-nowrap text-parchment">
               {clearedInRegion} of {path.nodes.length}
             </b>
             .

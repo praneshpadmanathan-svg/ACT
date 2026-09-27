@@ -501,7 +501,7 @@ export function StoryOverlay() {
                     e.stopPropagation();
                     close();
                   }}
-                  className="inline-flex items-center gap-1 font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
+                  className="-mx-2 inline-flex min-h-11 items-center gap-1 px-2 font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
                 >
                   Skip
                   <Glyph name="chevronRight" size={11} strokeWidth={2} />

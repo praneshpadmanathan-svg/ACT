@@ -64,7 +64,7 @@ const GROUPS: NavGroup[] = [
         label: 'Home',
         glyph: 'tent',
         route: { name: 'home' },
-        match: ['home'],
+        match: ['home', 'daily'],
         hint: 'What to do today',
       },
       {
@@ -92,7 +92,7 @@ const GROUPS: NavGroup[] = [
         label: 'Practice',
         glyph: 'sword',
         route: { name: 'drills' },
-        match: ['drills', 'drill'],
+        match: ['drills', 'drill', 'bookmarks'],
         hint: 'Free practice, any topic',
       },
       {
@@ -119,7 +119,7 @@ const GROUPS: NavGroup[] = [
         label: 'Timed practice',
         glyph: 'crown',
         route: { name: 'tests' },
-        match: ['tests', 'test', 'report'],
+        match: ['tests', 'test', 'report', 'diagnostic'],
         hint: 'Shorter timed sets',
       },
     ],
@@ -132,7 +132,7 @@ const GROUPS: NavGroup[] = [
         label: 'Progress',
         glyph: 'chart',
         route: { name: 'stats' },
-        match: ['stats'],
+        match: ['stats', 'profile'],
         hint: 'Score, streak, weak spots',
       },
       {

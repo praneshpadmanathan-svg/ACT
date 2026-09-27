@@ -59,7 +59,7 @@ export function SettingsScreen() {
           >
             Target score
           </span>
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-5 gap-1.5 sm:flex sm:flex-wrap sm:gap-2">
             {[24, 27, 30, 33, 36].map((score) => (
               <button
                 key={score}
@@ -67,7 +67,7 @@ export function SettingsScreen() {
                 aria-pressed={progress.targetScore === score}
                 onClick={() => updateProgress((p) => ({ ...p, targetScore: score }))}
                 className={cx(
-                  'num rounded-lg border-2 px-4 py-2 text-[19px] transition-colors',
+                  'num rounded-lg border-2 px-2 py-2 text-[19px] transition-colors sm:px-4',
                   progress.targetScore === score
                     ? 'border-gilt bg-gilt text-[#2a2000]'
                     : 'border-leather-700 bg-leather-800 text-parchment-dim hover:border-gold-deep',

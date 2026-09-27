@@ -586,7 +586,9 @@ export function SectionTabs({
      tapped. The sigil is what says "this one costs money". */
 
   return (
-    <div className="mb-6 flex flex-wrap gap-2">
+    /* Four pills in a 2x2 grid on a phone rather than a wrapping row, which
+       left three on one line and Science alone on the next. */
+    <div className="mb-6 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
       {SECTIONS.map((s) => {
         const locked = false;
         return (
@@ -597,7 +599,7 @@ export function SectionTabs({
             aria-current={s.id === active ? 'page' : undefined}
             title={locked ? `${s.name} is part of Pro` : undefined}
             className={cx(
-              'flex items-center gap-1.5 rounded-lg border-2 px-4 py-2 font-script [@media(pointer:coarse)]:min-h-11 text-[12px] uppercase tracking-wide transition-colors',
+              'flex items-center justify-center gap-1.5 rounded-lg border-2 px-4 py-2 font-script [@media(pointer:coarse)]:min-h-11 text-[12px] uppercase tracking-wide transition-colors',
               s.id === active
                 ? 'text-[#0d0620]'
                 : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-parchment',

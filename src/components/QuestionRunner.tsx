@@ -403,8 +403,8 @@ export function QuestionRunner({
         <m.div
           key={`${index}-${question.id}`}
           className="task-well"
-          initial={{ opacity: 0, x: 26 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0.4, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* The rail. Decorative to a screen reader — the count above says
@@ -429,8 +429,8 @@ export function QuestionRunner({
           <div className="min-w-0 flex-1">
             {/* ------------------------------------------------- the task */}
             <div className="task-card">
-              <div className="mb-5 flex flex-wrap items-center gap-2">
-                <span className="label-quill">{question.topic}</span>
+              <div className="mb-5 flex items-center gap-2">
+                <span className="label-quill min-w-0 truncate">{question.topic}</span>
                 <span
                   className="rounded px-2 py-0.5 font-script text-[10px] uppercase tracking-wide"
                   style={{

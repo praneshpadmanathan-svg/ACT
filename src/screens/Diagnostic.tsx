@@ -66,11 +66,11 @@ export function DiagnosticScreen() {
               questions · about {minutes} minutes
             </p>
 
-            <ul className="mx-auto mt-6 max-w-sm space-y-2.5 text-left text-[14px] leading-relaxed text-parchment-dim">
-              <li>· No timer. Take as long as you need on each one.</li>
-              <li>· Explanations come at the end, not as you go.</li>
+            <ul className="mx-auto mt-6 max-w-sm list-disc space-y-2.5 pl-5 text-left text-[14px] leading-relaxed text-parchment-dim marker:text-gold-deep">
+              <li>No timer. Take as long as you need on each one.</li>
+              <li>Explanations come at the end, not as you go.</li>
               <li>
-                · A guess is fine and useful — getting one wrong here is how the app learns what to
+                A guess is fine and useful — getting one wrong here is how the app learns what to
                 show you.
               </li>
             </ul>

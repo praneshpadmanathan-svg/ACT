@@ -81,7 +81,7 @@ export function DrillsScreen({ section }: { section?: string }) {
         <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
           Questions weighted toward the topics you get wrong most.
         </p>
-        <div className="mt-5 flex flex-wrap gap-2.5">
+        <div className="mt-5 grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:gap-2.5">
           {LENGTHS.map((n) => (
             <Button
               key={n}

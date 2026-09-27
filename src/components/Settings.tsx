@@ -61,7 +61,22 @@ function Segmented<T extends string | number>({
   label: string;
 }) {
   return (
-    <div className="flex flex-wrap gap-1.5" role="group" aria-label={label}>
+    /* A grid on phones sized to the option count, so a wrap never leaves one
+       option alone on its own row; a free row from `sm` up. */
+    <div
+      className={cx(
+        'grid gap-1.5 sm:flex sm:flex-wrap',
+        options.length === 4
+          ? 'grid-cols-2'
+          : options.length % 3 === 0 || options.length > 4
+            ? 'grid-cols-3'
+            : options.length === 2
+              ? 'grid-cols-2'
+              : 'grid-cols-1',
+      )}
+      role="group"
+      aria-label={label}
+    >
       {options.map((option) => {
         const active = option.value === value;
         return (
@@ -71,7 +86,7 @@ function Segmented<T extends string | number>({
             aria-pressed={active}
             onClick={() => onChange(option.value)}
             className={cx(
-              'rounded-lg border-2 px-3.5 py-2 font-display text-[13px] font-semibold transition-colors',
+              'rounded-lg border-2 px-3.5 py-2 text-center font-display text-[13px] font-semibold leading-tight transition-colors',
               active
                 ? 'border-gilt bg-gilt text-[#2a2000]'
                 : 'border-leather-700 bg-leather-800 text-parchment-dim hover:border-gold-deep hover:text-parchment',
