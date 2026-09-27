@@ -783,7 +783,7 @@
       },
       {
         "id": "D",
-        "text": "in his name, staffed with three people"
+        "text": "in his name, staffed of three people"
       }
     ],
     "answer": "B",
@@ -791,7 +791,7 @@
       "A": "\"staffed from\" is not idiomatic English.",
       "B": "Correct — \"in his name\" and \"staffed by\" are both standard.",
       "C": "\"on his name\" is not idiomatic.",
-      "D": "\"staffed with\" is used for equipment or categories, not for named individuals doing the staffing."
+      "D": "\"Staffed of\" is not idiomatic; a table is staffed by the people who run it."
     }
   },
   {
@@ -1430,7 +1430,7 @@
     "topic": "word choice",
     "difficulty": "medium",
     "passage": "ep4",
-    "context": "She did not scold me, «which was somehow worse.»",
+    "context": "She did not scold me, «it was somehow worse.»",
     "choices": [
       {
         "id": "A",
@@ -1442,7 +1442,7 @@
       },
       {
         "id": "C",
-        "text": "this was somehow worse."
+        "text": "which being somehow worse."
       },
       {
         "id": "D",
@@ -1451,9 +1451,9 @@
     ],
     "answer": "B",
     "why": {
-      "A": "\"which\" vaguely refers to the entire preceding idea rather than a specific noun.",
+      "A": "A comma alone joins two complete sentences, and \"it\" has no clear antecedent.",
       "B": "Correct — names the referent, eliminating the vague pronoun.",
-      "C": "\"this\" is equally vague and creates a comma splice.",
+      "C": "\"Being\" is not a finished verb, so the clause has no verb and cannot stand.",
       "D": "\"it\" still lacks a clear antecedent."
     }
   },
@@ -2924,7 +2924,7 @@
     "topic": "commas",
     "difficulty": "medium",
     "passage": "ep8",
-    "context": "He talked about the walk-in cooler, the third burner that never lit properly, «and the produce vendor, who shorted him on tomatoes for two years.»",
+    "context": "He talked about the walk-in cooler, the third burner that never lit properly, «and the only one of his produce vendors, who shorted him on tomatoes for two years.»",
     "choices": [
       {
         "id": "A",
@@ -2932,20 +2932,20 @@
       },
       {
         "id": "B",
-        "text": "and the produce vendor who shorted him on tomatoes for two years."
+        "text": "and the only one of his produce vendors who shorted him on tomatoes for two years."
       },
       {
         "id": "C",
-        "text": "and the produce vendor, who shorted him on tomatoes, for two years."
+        "text": "and the only one of his produce vendors, who shorted him on tomatoes, for two years."
       },
       {
         "id": "D",
-        "text": "and the produce vendor; who shorted him on tomatoes for two years."
+        "text": "and the only one of his produce vendors; who shorted him on tomatoes for two years."
       }
     ],
     "answer": "B",
     "why": {
-      "A": "The clause identifies which vendor, so it is essential and takes no comma.",
+      "A": "\"The only one of his produce vendors\" needs the clause to say which one, so the clause is essential and takes no comma.",
       "B": "Correct — essential relative clauses are not set off.",
       "C": "Adds a comma that severs the time phrase from its verb.",
       "D": "A semicolon cannot precede a dependent clause."
@@ -4217,7 +4217,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "already stretched"
+        "text": "already stretches"
       },
       {
         "id": "B",
@@ -4235,7 +4235,7 @@
     "answer": "B",
     "why": {
       "B": "\"By the time I arrived\" sets a past reference point, and the line had already formed before that point — the past perfect (\"had already stretched\") is the tense built for exactly this sequence.",
-      "A": "Simple past doesn't clearly signal that the line formed before the narrator's arrival, only that it happened at some point in the past.",
+      "A": "Present tense clashes with the past \"arrived\" that sets the time of the sentence.",
       "C": "Present perfect is inconsistent with the essay's simple past narrative tense.",
       "D": "Past progressive describes an ongoing action but doesn't capture that the stretching was already complete before the narrator arrived."
     }
@@ -4485,7 +4485,7 @@
       },
       {
         "id": "B",
-        "text": "quiet"
+        "text": "quietly"
       },
       {
         "id": "C",
@@ -4499,7 +4499,7 @@
     "answer": "A",
     "why": {
       "A": "The sentence is describing a change from frightened and crying to soothed and cooperative — an emotional state, not just a noise level. \"Calm\" precisely matches that intended meaning and echoes the \"calm instructions\" that caused it.",
-      "B": "Describes only noise level, not the change in emotional state the sentence is actually describing.",
+      "B": "\"Kept the children ___\" needs an adjective describing the children; \"quietly\" is an adverb.",
       "C": "Too extreme for the context — children getting shots rarely stop making any sound at all, and the word narrows the meaning to pure noise-absence.",
       "D": "Describes physical stillness, not the calming emotional effect the nurse's instructions produced."
     }
@@ -7422,7 +7422,7 @@
     "topic": "word choice",
     "difficulty": "hard",
     "passage": "ep13",
-    "context": "Reed's «indifference» is exactly what makes the ledgers valuable to hydrologists a century and a half later.",
+    "context": "Reed's «impartiality» is exactly what makes the ledgers valuable to hydrologists a century and a half later.",
     "choices": [
       {
         "id": "A",
@@ -7430,11 +7430,11 @@
       },
       {
         "id": "B",
-        "text": "apathy"
+        "text": "indifference"
       },
       {
         "id": "C",
-        "text": "laziness"
+        "text": "apathy"
       },
       {
         "id": "D",
@@ -7445,7 +7445,7 @@
     "why": {
       "A": "Correct — the passage means he recorded without taking a side, and this is the only choice that carries that sense rather than a criticism.",
       "B": "Suggests he did not care about the work at all, which forty-one years of daily readings contradicts.",
-      "C": "A judgement on his effort, and the passage describes the opposite.",
+      "C": "A lack of interest, where the passage describes steady attention without taking a side.",
       "D": "Means he did not know something, where the point is that he declined to comment."
     }
   },
@@ -10610,7 +10610,7 @@
       },
       {
         "id": "D",
-        "text": "I found two"
+        "text": "I found just only two"
       }
     ],
     "answer": "B",
@@ -10618,7 +10618,7 @@
       "A": "\"Was able to find\" and \"a total of\" are both padding around the simple verb \"found\".",
       "B": "Three words carry the whole meaning, and \"only\" stays where it belongs, next to \"two\".",
       "C": "\"The number of two\" is not idiomatic and adds nothing to \"two\".",
-      "D": "Drops \"only\", which is the word doing the work. The paragraph is about how rarely the check caught anything, not about the count on its own."
+      "D": "\"Just\" and \"only\" say the same thing, so one of them is padding."
     }
   },
   {
@@ -11394,7 +11394,7 @@
       },
       {
         "id": "B",
-        "text": "season’s changes"
+        "text": "seasons’s changes"
       },
       {
         "id": "C",
@@ -11408,7 +11408,7 @@
     "answer": "C",
     "why": {
       "A": "The changes belong to the seasons, and possession requires an apostrophe.",
-      "B": "This makes it a single season, but the passage describes a yearly cycle of several.",
+      "B": "A plural that already ends in s takes the apostrophe alone, with no extra s.",
       "C": "Correct — more than one season, so the apostrophe goes after the plural s.",
       "D": "This puts the apostrophe on \"changes\", which is what is possessed rather than what possesses."
     }

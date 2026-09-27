@@ -167,12 +167,12 @@
             "q": "A graph’s y-axis runs from 98 to 102 and a bar rises from 99 to 101. What is the most accurate description?",
             "choices": [
               "The value roughly doubled",
-              "The value increased by about 2%",
+              "The value increased by about 50%",
               "The value increased dramatically",
               "The value increased by 2 units, about 2%"
             ],
             "answer": 3,
-            "explain": "A truncated axis exaggerates small changes visually. From 99 to 101 is 2 units, roughly a 2% increase — accurate on both counts. Choice B omits the absolute change and choice A misreads the axis entirely."
+            "explain": "A truncated axis exaggerates small changes visually. From 99 to 101 is 2 units, roughly a 2% increase — accurate on both counts. Choice B measures the rise against the 4-unit axis window instead of against the starting value, choice C is exactly the impression the truncated axis creates, and choice A misreads the axis entirely."
           }
         ]
       }

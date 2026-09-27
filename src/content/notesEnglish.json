@@ -1473,13 +1473,13 @@
           },
           {
             "type": "example",
-            "prompt": "The archaeologist, *who was a person that specialized in* Iron Age metallurgy, examined the hoard.\nA. NO CHANGE\nB. who specialized in\nC. specializing in\nD. a specialist in",
+            "prompt": "The archaeologist, *who was a person that specialized in* Iron Age metallurgy, examined the hoard.\nA. NO CHANGE\nB. who specialized in\nC. specializing in\nD. a person specializing in",
             "work": [
               "\"a person that\" is empty — \"archaeologist\" already tells us it is a person.",
-              "B, C, and D are all grammatical and equivalent in meaning.",
-              "Count words: B = 3, C = 2, D = 3."
+              "D drops \"that\" but keeps the same empty \"a person.\"",
+              "B and C are both grammatical and mean the same thing. Count words: B = 3, C = 2."
             ],
-            "answer": "**C — specializing in.** When several correct choices remain, count words. On a real ACT the shorter equivalents would not all appear; here C is the tightest phrasing that keeps the nonessential-modifier structure intact."
+            "answer": "**C — specializing in.** When two correct choices remain, the shorter one wins, as long as it keeps the full meaning."
           },
           {
             "type": "trap",

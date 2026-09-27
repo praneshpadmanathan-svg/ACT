@@ -69,14 +69,13 @@
           },
           {
             "type": "example",
-            "prompt": "If (3x − 7)/2 + 4 = 12, what is x?\nA. 5\nB. 7\nC. 9\nD. 11",
+            "prompt": "If (3x − 7)/2 + 4 = 11, what is x?\nA. 5\nB. 7\nC. 9\nD. 11",
             "work": [
-              "Backsolve with C (x = 9): (27 − 7)/2 + 4 = 20/2 + 4 = 10 + 4 = 14. Too big.",
-              "So try a smaller value — B (x = 7): (21 − 7)/2 + 4 = 14/2 + 4 = 7 + 4 = 11. Still not 12, slightly small.",
-              "Between 7 and 9, but only integers offered... recheck: the answer must lie between B and C.",
-              "Solve directly: (3x − 7)/2 = 8 → 3x − 7 = 16 → 3x = 23 → x = 23/3 ≈ 7.67."
+              "Start in the middle — C (x = 9): (27 − 7)/2 + 4 = 20/2 + 4 = 14. Too big.",
+              "Too big means only smaller choices can work, so D is out too.",
+              "Try B (x = 7): (21 − 7)/2 + 4 = 14/2 + 4 = 7 + 4 = 11. It works."
             ],
-            "answer": "This illustrates when backsolving **fails**: if no choice works, you made an arithmetic error or the intended answer is not an integer. Backsolving is a checking tool as much as a solving tool — two tests told us the answer sits between 7 and 9, which would immediately flag a mis-transcribed problem on test day."
+            "answer": "**B — 7.** Starting from a middle choice tells you which direction to go, so two plug-ins settled it with no algebra. If no choice ever works, recheck your arithmetic — backsolving doubles as a check."
           },
           {
             "type": "rule",
@@ -1386,7 +1385,7 @@
               "540°"
             ],
             "answer": 0,
-            "explain": "(7 − 2) × 180° = 5 × 180° = 900°. Choice B is the octagon value and choice D is the pentagon value — both come from an off-by-one in n."
+            "explain": "(7 − 2) × 180° = 5 × 180° = 900°. Choice C (1260°) forgets to subtract 2, choice B (1080°) subtracts only 1, and choice D (540°) subtracts 2 twice."
           }
         ]
       },
@@ -1949,7 +1948,7 @@
               "= 185 − 176(0.766) = 185 − 134.8 = 50.2",
               "c = √50.2 ≈ 7.09"
             ],
-            "answer": "**c ≈ 7.1.** Sanity check: c should be shorter than both given sides because the 40° angle between them is small — and it is."
+            "answer": "**c ≈ 7.1.** Sanity check: an angle under 90° makes c² less than a² + b² = 185, so c has to come out below √185 ≈ 13.6 — and it does."
           },
           {
             "type": "example",
