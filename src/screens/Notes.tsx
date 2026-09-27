@@ -112,6 +112,7 @@ export function NotesScreen({ section }: { section?: string }) {
                     <span className="min-w-0">
                       <span className="block font-sans text-[15px] font-semibold leading-snug text-parchment">
                         {page.title}
+                        {read && <span className="sr-only"> (read)</span>}
                       </span>
                       <span className="mt-1 block text-[13px] leading-relaxed text-ink-faint">
                         {page.summary}
@@ -440,7 +441,7 @@ function CheckBlock({ block }: { block: Extract<NoteBlock, { type: 'check' }> })
             <Glyph
               name={chosen === block.answer ? 'check' : 'cross'}
               size={12}
-              strokeWidth={2.2}
+              strokeWidth={2.8}
               className={LEADING_ICON}
             />
             {chosen === block.answer ? 'Correct' : 'Not quite'}

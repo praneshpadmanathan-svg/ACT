@@ -56,7 +56,10 @@ const titleCase = (label: string): string => {
    plate is drawn for that width so its labels land at 11.5px or more. */
 const WIDE = { W: 540, H: 300, font: 14, pad: { top: 14, right: 18, bottom: 46, left: 56 } };
 const NARROW = { W: 330, H: 270, font: 14, pad: { top: 12, right: 14, bottom: 46, left: 58 } };
-const NARROW_BELOW = 460;
+/* Measured on the wrapper, whose 24px of padding and 4px of border the
+   plate does not get: the wide plate's 14-unit labels hold 11.5px down to a
+   444px plate, which is a 472px wrapper. */
+const NARROW_BELOW = 472;
 
 /** A bar with only its data end rounded: the end at the baseline stays square,
  *  so the bar reads as standing on the axis rather than floating above it. */
@@ -102,6 +105,12 @@ export function FigureChartView({ figure }: { figure: FigureChart }) {
   if (isBar && yHi > 0 && yScale.max === yHi) {
     yScale = niceScale(yLo, yHi + stepOf(yScale.ticks) / 2);
   }
+  /* Except a percentage: headroom over a 100% bar drew an axis to 125, a
+     value the quantity cannot take. 100 is the ceiling, and a bar reaching
+     it reads as "all", not as clipped. */
+  if (/\(%\)/.test(figure.yLabel) && yHi <= 100 && yScale.max > 100) {
+    yScale = niceScale(yLo, 100);
+  }
   const yStep = stepOf(yScale.ticks);
   const toY = (v: number) =>
     project(v, { min: yScale.min, max: yScale.max }, { from: PLOT.y0, to: PLOT.y1 });
@@ -119,8 +128,16 @@ export function FigureChartView({ figure }: { figure: FigureChart }) {
     cats.length >= 2 &&
     cats.length <= 8 &&
     gaps.every((g) => Math.abs(g - (gaps[0] ?? 0)) < 1e-9 * Math.max(1, Math.abs(g)));
-  const xTicks = isBar || even ? cats : xScale.ticks;
-  const xLabelOf = (t: number) => (isBar || even ? exact(t) : formatTick(t, stepOf(xScale.ticks)));
+  /* Uneven sampling too, when the readings sit far enough apart to label
+     each one: sp24 measured days 0, 3, 7, 10 and 14, and its stems cite days
+     3, 7 and 10 — a 0/5/10/15 axis made the student count markers. Readings
+     crowded together (catalyst: 0.1, 0.2, 0.4...) keep the round axis. */
+  const xSpan = xExtent.max - xExtent.min || 1;
+  const spaced =
+    cats.length >= 2 && cats.length <= 8 && Math.min(...gaps) / xSpan >= 36 / (PLOT.x1 - PLOT.x0);
+  const atReadings = isBar || even || spaced;
+  const xTicks = atReadings ? cats : xScale.ticks;
+  const xLabelOf = (t: number) => (atReadings ? exact(t) : formatTick(t, stepOf(xScale.ticks)));
 
   /* Bars sit in evenly spaced bands; a line reads against a real number line. */
   const bandWidth = (PLOT.x1 - PLOT.x0) / Math.max(cats.length, 1);
@@ -180,8 +197,8 @@ export function FigureChartView({ figure }: { figure: FigureChart }) {
         role="img"
         aria-label={figure.alt}
       >
+        {/* No <desc>: it repeated the aria-label, so the alt was read twice. */}
         <title>{figure.label}</title>
-        <desc>{figure.alt}</desc>
 
         {isBar && series.length > 1 && (
           <defs>

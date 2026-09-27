@@ -179,7 +179,7 @@ const layers = [
   ...bullets.map((b, i) => ({ input: b.buf, left: X + 30, top: BULLET_TOP + i * BULLET_STEP })),
 ];
 
-const card = await sharp(resolve(root, 'public/art/world-map.webp'))
+const card = await sharp(resolve(root, 'art-src/world-map.webp'))
   .resize(W, H, { fit: 'cover', position: 'attention' })
   .composite(layers)
   /* PNG is what every crawler accepts; the palette is small enough that

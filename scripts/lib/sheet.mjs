@@ -255,3 +255,8 @@ export function findCells(sheet, { minRow = 80, minCol = 40 } = {}) {
  *  exact case a lossy codec spends its whole budget ruining. */
 export const png = (img, colours = 64) =>
   img.png({ palette: true, colours, compressionLevel: 9, effort: 10 }).toBuffer();
+
+/* Lossy webp with lossless alpha: for the painted sprites (bosses, loading
+   objects) this is about half the palette PNG, and the ink edge survives
+   because the alpha channel is never quantised. */
+export const webp = (img) => img.webp({ quality: 88, alphaQuality: 100, effort: 6 }).toBuffer();

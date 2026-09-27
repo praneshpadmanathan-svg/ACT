@@ -392,7 +392,7 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
               className={cx(
                 'rounded border px-3 py-2 font-display [@media(pointer:coarse)]:min-h-11 text-[13px] font-semibold transition-colors',
                 mode === m
-                  ? 'border-gold-deep bg-leather-750 text-gold'
+                  ? 'border-gold-deep bg-leather-750 text-parchment'
                   : 'border-transparent text-ink-faint hover:text-parchment',
               )}
             >

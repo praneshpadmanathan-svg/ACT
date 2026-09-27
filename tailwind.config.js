@@ -289,9 +289,13 @@ export default {
         shimmer: { '0%,100%': { opacity: '.82' }, '50%': { opacity: '1' } },
 
         /* page + list entrances — small, fast, never in the way */
+        /* Opacity only. A transform on the route wrapper makes it the
+           containing block for everything `position: fixed` inside it, so
+           while it ran the Home, FAQ and legal backdrops sized to the whole
+           page (375x3017 on a phone) and snapped back when it ended. */
         pageIn: {
-          from: { opacity: '.4', transform: 'translateY(10px)' },
-          to: { opacity: '1', transform: 'translateY(0)' },
+          from: { opacity: '.4' },
+          to: { opacity: '1' },
         },
         riseIn: {
           from: { opacity: '0', transform: 'translateY(8px)' },
@@ -387,7 +391,11 @@ export default {
         },
       },
       animation: {
-        float: 'float 3.6s ease-in-out infinite',
+        /* Decorative loops come to rest: a few cycles says "alive", and motion
+           that never stops competes with the reading for as long as the page
+           is open. The loading screen opts back into infinite — it is the
+           indicator. Duel sprites keep idling; they are the game state. */
+        float: 'float 3.6s ease-in-out 2',
         bobHero: 'bobHero 1.9s ease-in-out infinite',
         /* 0.62s a cycle is two steps at 310ms each — a walking pace, and the
            interval the footstep cue is fired on. Keep the two in step: the
@@ -397,7 +405,7 @@ export default {
         flashOut: 'flashOut .5s ease-out forwards',
         rise: 'rise 1.15s ease-out forwards',
         fadein: 'fadein .4s ease-out',
-        shimmer: 'shimmer 2.6s ease-in-out infinite',
+        shimmer: 'shimmer 2.6s ease-in-out 3',
         /* Interface motion, on the ladder. */
         pageIn: `pageIn ${DUR.screen} ${EASE.out}`,
         riseIn: `riseIn ${DUR.screen} ${EASE.out} backwards`,

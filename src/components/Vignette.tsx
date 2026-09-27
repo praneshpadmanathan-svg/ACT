@@ -21,7 +21,7 @@ import { cx } from '@/lib/utils';
    is a token: the same ink on light, a lamp-lit gold rim on dark. */
 const INK = 'var(--vignette-ink)';
 
-export type VignetteName = 'lantern' | 'chest' | 'scroll' | 'compass' | 'campfire';
+export type VignetteName = 'lantern' | 'chest' | 'scroll' | 'campfire';
 
 /**
  * A drawn scene for an empty state.
@@ -73,7 +73,6 @@ export function Vignette({
         {name === 'lantern' && <Lantern url={url} />}
         {name === 'chest' && <Chest url={url} />}
         {name === 'scroll' && <Scroll url={url} />}
-        {name === 'compass' && <Compass url={url} />}
         {name === 'campfire' && <Campfire url={url} />}
       </g>
     </svg>
@@ -131,29 +130,6 @@ function Scroll({ url }: { url: U }) {
       {/* the quill, resting across it */}
       <path d="M86 34 L64 74" strokeWidth="3.4" stroke={INK} />
       <path d="M86 34c-6 2-10 7-11 13 5-1 9-5 11-13Z" fill="#efe4c8" strokeWidth="2.4" />
-    </>
-  );
-}
-
-/** Loading — a compass needle, which is the one thing that should be moving. */
-function Compass({ url }: { url: U }) {
-  return (
-    <>
-      <circle cx="60" cy="60" r="42" fill={url('paper')} />
-      <circle cx="60" cy="60" r="34" fill="none" stroke={INK} strokeWidth="2" opacity=".35" />
-      {/* the cardinal marks */}
-      <g strokeWidth="3">
-        <path d="M60 20v8M60 92v8M20 60h8M92 60h8" />
-      </g>
-      {/* the needle: red half north, pale half south, spinning via CSS */}
-      <g
-        className="origin-center animate-[spin_2.6s_linear_infinite]"
-        style={{ transformOrigin: '60px 60px' }}
-      >
-        <path d="M60 28 L68 60 L60 92 L52 60 Z" fill="#f3e7cb" strokeWidth="2.6" />
-        <path d="M60 28 L68 60 L52 60 Z" fill="#b5432f" strokeWidth="2.6" />
-      </g>
-      <circle cx="60" cy="60" r="5" fill={url('warm')} strokeWidth="2.6" />
     </>
   );
 }

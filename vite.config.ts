@@ -109,6 +109,22 @@ function serviceWorker(): Plugin {
     async writeBundle(options, bundle) {
       const outDir = options.dir ?? join(root, 'dist');
 
+      /* The one responsive variant of each painting that goes offline: the
+         narrowest webp. `/art/gen/camp-bg-640.webp` → kept, the 1024 and
+         1376 siblings and both avifs → left to the network. */
+      const smallestArt = new Set<string>();
+      {
+        const narrowest = new Map<string, { width: number; name: string }>();
+        for (const name of publicAssets()) {
+          const [, base, digits] = /^\/art\/gen\/(.+)-(\d+)\.webp$/.exec(name) ?? [];
+          if (!base || !digits) continue;
+          const width = Number(digits);
+          const best = narrowest.get(base);
+          if (!best || width < best.width) narrowest.set(base, { width, name });
+        }
+        for (const { name } of narrowest.values()) smallestArt.add(name);
+      }
+
       /* What is worth carrying offline.
        *
        * Fontsource ships a `.woff` beside every `.woff2` for browsers older
@@ -122,22 +138,25 @@ function serviceWorker(): Plugin {
         name.endsWith('.map') ||
         name.endsWith('.woff') ||
         name.includes('-vietnamese-') ||
-        /* The responsive art variants under `/art/gen/`. There are twenty-two
-           of them and any one device requests about five — the browser picks
-           by viewport and pixel ratio, so precaching the set would cost around
-           1.2 MB of everyone's storage quota to hold twenty files they will
-           never ask for. The five originals stay precached, and `sw.ts` falls
-           back to the matching original when a variant is wanted offline and
-           has never been fetched. */
-        name.startsWith('/art/gen/') ||
+        /* The responsive art. Eleven paintings, each with two to three widths
+           in two formats under `/art/gen/`, plus the full-size original the
+           variants were cut from. A device asks for one variant per painting
+           and never for the original — every `<picture>` offers a webp
+           source, which every browser with a service worker can decode, so
+           the `<img src>` original is never chosen.
+
+           Precaching the eleven originals was about 940 KB of everyone's
+           storage quota spent on files nothing requests. What goes offline
+           now is the narrowest webp of each (about 375 KB for the set), and
+           `sw.ts` serves it for any variant or original of the same painting
+           that is wanted offline and was never fetched: soft on a large
+           screen, but a picture rather than a hole. */
+        (name.startsWith('/art/gen/') && !smallestArt.has(name)) ||
+        /^\/art\/[a-z-]+\.webp$/.test(name) ||
         /* The share card. A quarter of a megabyte that only ever gets fetched
            by Facebook's and Slack's crawlers — the app itself never renders
            it, and no student is offline inside a link preview. */
         name === '/og.png' ||
-        /* The world map's only reader is `build-og.mjs`, at build time. No
-           screen renders it since the map was flattened into tabs, and it was
-           290 KB of every install's offline cache. */
-        name === '/art/world-map.webp' ||
         /* Same reasoning, different audience: `security.txt` and `robots.txt`
            are addressed to researchers and crawlers, are never requested by
            the app, and nobody reads either one on a train with no signal. */
@@ -154,8 +173,9 @@ function serviceWorker(): Plugin {
          written for: every one of the twenty-two responsive art variants
          lives in `public/`, so the exclusion that exists to keep them out was
          filtering a list they were never in. Verified against `dist/sw.js`
-         after this change — the precache drops from 53 entries to 30, and
-         the five original paintings the fallback needs are all still in it. */
+         after this change — the precache drops from 53 entries to 30. The
+         offline art fallback now rests on the narrowest variants instead of
+         the originals; see `smallestArt` above. */
       const precache = [
         ...new Set(['/index.html', ...emitted, ...publicAssets().filter((n) => !deadWeight(n))]),
       ];

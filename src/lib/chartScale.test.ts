@@ -52,6 +52,10 @@ describe('niceScale', () => {
     expect(s.max).toBeGreaterThanOrEqual(2);
   });
 
+  it('steps down a rung when the ladder would leave too few intervals', () => {
+    expect(niceScale(18, 150).ticks).toEqual([0, 25, 50, 75, 100, 125, 150]);
+  });
+
   it('survives a degenerate domain without producing NaN', () => {
     const s = niceScale(NaN, NaN);
     expect(Number.isFinite(s.min)).toBe(true);
@@ -63,6 +67,17 @@ describe('formatTick', () => {
   it('shows the decimals the step implies, and no more', () => {
     expect(formatTick(0.4, 0.2)).toBe('0.4');
     expect(formatTick(50, 25)).toBe('50');
+  });
+
+  it('keeps the extra digit a 2.5 or 0.25 step carries', () => {
+    expect([0, 2.5, 5, 7.5, 10].map((t) => formatTick(t, 2.5))).toEqual([
+      '0.0',
+      '2.5',
+      '5.0',
+      '7.5',
+      '10.0',
+    ]);
+    expect(formatTick(0.75, 0.25)).toBe('0.75');
   });
 });
 

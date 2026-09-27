@@ -435,9 +435,9 @@ export function ProgressBar({
       aria-label={label}
     >
       <div
-        className="h-full rounded-full transition-[width] duration-cinematic ease-out"
+        className="h-full w-full origin-left rounded-full transition-transform duration-cinematic ease-out"
         style={{
-          width: `${pctValue}%`,
+          transform: `scaleX(${pctValue / 100})`,
           background: color,
           boxShadow: `0 0 10px color-mix(in srgb, ${color} 47%, transparent)`,
         }}
@@ -468,7 +468,7 @@ export function ProgressRing({
   return (
     <div className="flex flex-col items-center gap-2">
       <div className="relative" style={{ width: size, height: size }}>
-        <svg viewBox="0 0 64 64" className="h-full w-full -rotate-90">
+        <svg viewBox="0 0 64 64" className="h-full w-full -rotate-90" aria-hidden="true">
           <circle cx="32" cy="32" r={r} fill="none" stroke="rgba(0,0,0,.35)" strokeWidth="6" />
           <circle
             cx="32"
@@ -501,7 +501,12 @@ export function ProgressRing({
  * moved to `RankSigil.tsx`, where each of the seven ranks now has its own
  * silhouette rather than sharing one recoloured shield.
  */
-export function RankBadge(props: { rank: SigilColors; size?: number; aura?: boolean }) {
+export function RankBadge(props: {
+  rank: SigilColors;
+  size?: number;
+  aura?: boolean;
+  decorative?: boolean;
+}) {
   return <RankSigil {...props} />;
 }
 

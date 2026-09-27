@@ -223,13 +223,13 @@ export function SettingsScreen() {
         </a>
         <a
           href={hrefFor({ name: 'privacy' })}
-          className="font-read text-[13.5px] text-parchment-dim underline underline-offset-4 transition-colors hover:text-parchment"
+          className="inline-flex items-center font-read text-[13.5px] text-parchment-dim underline underline-offset-4 transition-colors hover:text-parchment [@media(pointer:coarse)]:min-h-11"
         >
           Privacy
         </a>
         <a
           href={hrefFor({ name: 'terms' })}
-          className="font-read text-[13.5px] text-parchment-dim underline underline-offset-4 transition-colors hover:text-parchment"
+          className="inline-flex items-center font-read text-[13.5px] text-parchment-dim underline underline-offset-4 transition-colors hover:text-parchment [@media(pointer:coarse)]:min-h-11"
         >
           Terms
         </a>

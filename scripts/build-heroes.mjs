@@ -285,10 +285,26 @@ async function main() {
      * things to keep in sync. (Measured, after guessing wrong: unquantised,
      * lossless WebP was 12.6 KB against the PNG's 13.6, which is where the
      * assumption that WebP would win came from.) */
-    const png = await sharp(cut.data, {
+    const sized = await sharp(cut.data, {
       raw: { width: cut.info.width, height: cut.info.height, channels: cut.info.channels },
     })
       .resize({ height: OUT_H, fit: 'inside', withoutEnlargement: true })
+      .raw()
+      .toBuffer({ resolveWithObject: true });
+
+    /* Lanczos rings a little past the outline, leaving pixels at alpha 1 or 2
+       that nobody can see but that still count as part of the sprite: ash
+       and wren shipped with about 8,000 of them, a faint slab behind the
+       whole figure that bounding-box maths reads as ink. Anything that
+       faint is background. */
+    const { data: px, info } = sized;
+    for (let i = 3; i < px.length; i += info.channels) {
+      if (px[i] <= 2) px[i - 3] = px[i - 2] = px[i - 1] = px[i] = 0;
+    }
+
+    const png = await sharp(px, {
+      raw: { width: info.width, height: info.height, channels: info.channels },
+    })
       .png({ palette: true, colours: 64, compressionLevel: 9, effort: 10 })
       .toBuffer();
     await writeFile(path.join(OUT, `${id}.png`), png);

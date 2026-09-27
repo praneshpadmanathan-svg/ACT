@@ -387,7 +387,11 @@ export function QuestionRunner({
           Two materials, and the whole point of the layout is that they are
           never confused: the passage is a page, the task column is a leather
           well with paper objects raised out of it. */}
-      <div className={cx('grid gap-5', question.passage && 'lg:grid-cols-2')}>
+      {/* `grid-cols-1` is minmax(0, 1fr): a bare grid's one column is `auto`,
+          which grew to fit the nowrap topic label and pushed a phone's page
+          40-60px wide on every passage question. Two columns only from `xl`:
+          at `lg` the rail leaves 355px a column, a phone's measure. */}
+      <div className={cx('grid grid-cols-1 gap-5', question.passage && 'xl:grid-cols-2')}>
         {/* Keyed so a new passage opens at the top, not scrolled to wherever
             the last one was left. */}
         {question.passage && <PassagePanel key={question.passage.id} passage={question.passage} />}
@@ -405,7 +409,7 @@ export function QuestionRunner({
           className="task-well"
           initial={{ opacity: 0.4, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* The rail. Decorative to a screen reader — the count above says
               the same thing in words, and ten unlabelled list items would say
@@ -643,7 +647,7 @@ export function QuestionRunner({
                   role="status"
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.26, delay: 0.1 }}
+                  transition={{ duration: 0.24, delay: 0.1 }}
                 >
                   <Glyph name={gotItRight ? 'check' : 'cross'} size={15} className={LEADING_ICON} />
                   {gotItRight ? 'Correct' : `Not quite — the answer is ${question.correctKey}`}
@@ -661,7 +665,7 @@ export function QuestionRunner({
                       className="ink-trap lesson-trap"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: 0.14 }}
+                      transition={{ duration: 0.32, delay: 0.14 }}
                     >
                       <div className="lesson-label">Why {chosen} is wrong</div>
                       <RichText
@@ -679,7 +683,7 @@ export function QuestionRunner({
                       className="ink-example"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: gotItRight ? 0.14 : 0.23 }}
+                      transition={{ duration: 0.32, delay: gotItRight ? 0.14 : 0.23 }}
                     >
                       <div className="lesson-label">Why {question.correctKey} is right</div>
                       <RichText
@@ -697,7 +701,7 @@ export function QuestionRunner({
                       className="ink-example"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: 0.14 }}
+                      transition={{ duration: 0.32, delay: 0.14 }}
                     >
                       <div className="lesson-label">Why</div>
                       <RichText

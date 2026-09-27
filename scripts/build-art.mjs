@@ -81,11 +81,10 @@ const kb = (n) => `${(n / 1024).toFixed(0)} KB`;
 async function main() {
   await mkdir(OUT, { recursive: true });
 
-  /* The world map left the app with the adventure map; it stays in
-     `public/art` only because `build-og.mjs` paints the share card from it.
-     No component renders it, so it gets no variants and no manifest entry. */
-  const SKIP = new Set(['world-map.webp']);
-  const sources = readdirSync(SRC).filter((f) => f.endsWith('.webp') && !SKIP.has(f));
+  /* The world map left the app with the adventure map. Its only reader is
+     `build-og.mjs`, so it lives in `art-src/` now rather than being
+     deployed for nobody. */
+  const sources = readdirSync(SRC).filter((f) => f.endsWith('.webp'));
   const manifest = {};
   let before = 0;
   let after = 0;

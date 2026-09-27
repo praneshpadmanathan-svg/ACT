@@ -28,7 +28,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
-import { findCells, loadSheet, png } from './lib/sheet.mjs';
+import { findCells, loadSheet, webp } from './lib/sheet.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(root, 'art-src');
@@ -89,7 +89,7 @@ async function main() {
       const w = c.x1 - c.x0 + 1;
       const h = c.y1 - c.y0 + 1;
 
-      const buf = await png(
+      const buf = await webp(
         sharp(sheet.keyed)
           .extract({ left: c.x0, top: c.y0, width: w, height: h })
           /* `contain` scales the longest side to BOX and pads the other with
@@ -103,10 +103,9 @@ async function main() {
             kernel: 'lanczos3',
             background: { r: 0, g: 0, b: 0, alpha: 0 },
           }),
-        128,
       );
 
-      const name = `loading-${id}.png`;
+      const name = `loading-${id}.webp`;
       await writeFile(path.join(OUT, name), buf);
       objects.push({ id, src: `/art/scenes/${name}` });
       console.log(`  ${id.padEnd(10)} ${w}×${h} → ${BOX}²  ${(buf.length / 1024).toFixed(1)} KB`);

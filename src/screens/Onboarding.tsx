@@ -134,7 +134,7 @@ export function Onboarding() {
       <div className="panel-lit relative z-10 w-full max-w-lg p-7 sm:p-9">
         <button
           type="button"
-          className="mb-5 text-sm text-gold underline underline-offset-4"
+          className="mb-3 inline-flex min-h-11 items-center text-sm text-gold underline underline-offset-4"
           onClick={() => navigate({ name: 'landing' })}
         >
           Back to the website
@@ -176,7 +176,7 @@ export function Onboarding() {
               <button
                 type="button"
                 onClick={() => setStep(step - 1)}
-                className="mt-6 inline-flex items-center gap-1.5 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+                className="mt-4 inline-flex min-h-11 items-center gap-1.5 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
               >
                 <Glyph name="arrowLeft" size={13} strokeWidth={2} />
                 Back
@@ -225,7 +225,7 @@ export function Onboarding() {
             <button
               type="button"
               onClick={() => setPhase('questions')}
-              className="mt-6 inline-flex items-center gap-1.5 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+              className="mt-4 inline-flex min-h-11 items-center gap-1.5 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
             >
               <Glyph name="arrowLeft" size={12} strokeWidth={2} />
               Back
@@ -264,7 +264,7 @@ export function Onboarding() {
             <button
               type="button"
               onClick={() => setPhase(answers.when === 'none' ? 'questions' : 'date')}
-              className="mt-6 inline-flex items-center gap-1.5 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+              className="mt-4 inline-flex min-h-11 items-center gap-1.5 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
             >
               <Glyph name="arrowLeft" size={12} strokeWidth={2} />
               Back

@@ -119,7 +119,7 @@ export function Wizzy() {
         name="wizzy"
         sizes="(min-width: 640px) 92px, 74px"
         className="animate-float w-[74px] flex-none select-none sm:w-[92px]"
-        style={{ filter: 'drop-shadow(0 6px 10px rgba(0,0,0,.55))' }}
+        style={{ filter: 'var(--art-shadow)' }}
       />
 
       <div className="panel-lit relative mb-3 flex-1 px-4 py-3.5">

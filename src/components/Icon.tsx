@@ -23,14 +23,10 @@ export type IconName =
   | 'check'
   | 'cross'
   | 'alert'
-  | 'info'
-  | 'lock'
-  | 'unlock'
   // reward and progress
   | 'flame'
   | 'bolt'
   | 'trophy'
-  | 'medal'
   | 'target'
   | 'spark'
   // tools
@@ -45,23 +41,16 @@ export type IconName =
   | 'settings'
   | 'compass'
   | 'clock'
-  | 'refresh'
   // navigation
   | 'arrowLeft'
-  | 'arrowRight'
-  | 'chevronLeft'
   | 'chevronRight'
   | 'chevronUp'
   | 'chevronDown'
-  | 'plus'
-  | 'minus'
   // content
   | 'quill'
   | 'scroll'
   | 'lantern'
   | 'shield'
-  | 'eye'
-  | 'question'
   /* Named by the fifteen achievements in `progress.ts`. That field used to be
      a loose `string` referencing icons nobody had drawn, so all fifteen
      rendered the same ✦; it is `IconName` now, and a typo is a build error. */
@@ -69,7 +58,17 @@ export type IconName =
   | 'sword'
   | 'book'
   | 'map'
-  | 'calendar';
+  | 'calendar'
+  /* Destinations. Drawn here rather than only in NavGlyph so the rail, the
+     command palette and Home's shortcuts all name a place with one glyph —
+     Home was a tent in one and a lantern in another, and the clock meant
+     Review in the palette and Timed practice on Home. */
+  | 'tent'
+  | 'hourglass'
+  | 'crown'
+  | 'chart'
+  | 'shieldCracked'
+  | 'starFilled';
 
 interface Props {
   name: IconName;
@@ -125,35 +124,6 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
         </svg>
       );
 
-    case 'info':
-      return (
-        <svg {...common}>
-          <circle cx="12" cy="12" r="8.8" />
-          <path d="M12 11v5.4" />
-          <circle cx="12" cy="7.9" r=".95" fill="currentColor" stroke="none" />
-        </svg>
-      );
-
-    /* A padlock rather than 🔒 — a locked landmark is the most common state
-       on the Study tab, so it is the icon a first-time player sees most. */
-    case 'lock':
-      return (
-        <svg {...common}>
-          <rect x="4.6" y="10.4" width="14.8" height="10" rx="2.2" />
-          <path d="M8.2 10.4V7.6a3.8 3.8 0 0 1 7.6 0v2.8" />
-          <circle cx="12" cy="15.1" r="1.4" />
-        </svg>
-      );
-
-    case 'unlock':
-      return (
-        <svg {...common}>
-          <rect x="4.6" y="10.4" width="14.8" height="10" rx="2.2" />
-          <path d="M8.2 10.4V7.6a3.8 3.8 0 0 1 7.2-1.6" />
-          <circle cx="12" cy="15.1" r="1.4" />
-        </svg>
-      );
-
     /* --------------------------------------------------- reward + progress */
 
     /* Two nested tongues rather than one outline, so the flame still reads at
@@ -186,19 +156,6 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
           <path d="M7.4 3.6h9.2v5.2a4.6 4.6 0 0 1-9.2 0V3.6Z" />
           <path d="M7.4 5.2H4.6v1.6a3.2 3.2 0 0 0 3 3.2M16.6 5.2h2.8v1.6a3.2 3.2 0 0 1-3 3.2" />
           <path d="M12 13.4v4M8.6 20.4h6.8l-.7-3H9.3l-.7 3Z" />
-        </svg>
-      );
-
-    case 'medal':
-      return (
-        <svg {...common}>
-          <path d="m8.4 3 2.2 5.6M15.6 3l-2.2 5.6" />
-          <circle cx="12" cy="15" r="6" />
-          <path
-            d="m12 11.9 1.1 2.3 2.5.2-1.9 1.6.6 2.4-2.3-1.3-2.3 1.3.6-2.4-1.9-1.6 2.5-.2L12 11.9Z"
-            fill="currentColor"
-            stroke="none"
-          />
         </svg>
       );
 
@@ -280,8 +237,10 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
     case 'flag':
       return (
         <svg {...common}>
-          <path d="M6 21V3.8" />
-          <path d="M6 4.6h11.6l-2.2 3.8 2.2 3.8H6" />
+          <g transform="translate(.2 -.4)">
+            <path d="M6 21V3.8" />
+            <path d="M6 4.6h11.6l-2.2 3.8 2.2 3.8H6" />
+          </g>
         </svg>
       );
 
@@ -317,14 +276,6 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
         </svg>
       );
 
-    case 'refresh':
-      return (
-        <svg {...common}>
-          <path d="M20 11.4a8 8 0 1 0-.6 4.4" />
-          <path d="M20.4 4.6v5.2h-5.2" />
-        </svg>
-      );
-
     /* -------------------------------------------------------- navigation */
 
     case 'arrowLeft':
@@ -334,24 +285,10 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
         </svg>
       );
 
-    case 'arrowRight':
-      return (
-        <svg {...common}>
-          <path d="M5 12h14M13 6l6 6-6 6" />
-        </svg>
-      );
-
     /* One arc, four rotations, so the family reads as a single mark.
        `chevronRight` is the workhorse: it closes every control that moves the
        reader onward, where the existing `arrowRight` sits too heavy beside a
        14px label. */
-    case 'chevronLeft':
-      return (
-        <svg {...common}>
-          <path d="M14.5 6 8.5 12l6 6" />
-        </svg>
-      );
-
     case 'chevronRight':
       return (
         <svg {...common}>
@@ -373,20 +310,6 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
         </svg>
       );
 
-    case 'plus':
-      return (
-        <svg {...common}>
-          <path d="M12 5v14M5 12h14" />
-        </svg>
-      );
-
-    case 'minus':
-      return (
-        <svg {...common}>
-          <path d="M5 12h14" />
-        </svg>
-      );
-
     /* ----------------------------------------------------------- content */
 
     case 'quill':
@@ -402,9 +325,11 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
     case 'scroll':
       return (
         <svg {...common}>
-          <path d="M6.4 4.4h11.2v13.2a2.8 2.8 0 0 0 2.8 2.8H8.4a2 2 0 0 1-2-2V4.4Z" />
-          <path d="M6.4 4.4A2 2 0 0 0 4.4 6.4v1.8h2" />
-          <path d="M9.6 8.6h5.2M9.6 12h5.2" />
+          <g transform="translate(-.4 -.4)">
+            <path d="M6.4 4.4h11.2v13.2a2.8 2.8 0 0 0 2.8 2.8H8.4a2 2 0 0 1-2-2V4.4Z" />
+            <path d="M6.4 4.4A2 2 0 0 0 4.4 6.4v1.8h2" />
+            <path d="M9.6 8.6h5.2M9.6 12h5.2" />
+          </g>
         </svg>
       );
 
@@ -426,23 +351,6 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
       return (
         <svg {...common}>
           <path d="M12 3.2 19.5 6v6.2c0 4-3.1 7-7.5 8.6-4.4-1.6-7.5-4.6-7.5-8.6V6L12 3.2Z" />
-        </svg>
-      );
-
-    case 'eye':
-      return (
-        <svg {...common}>
-          <path d="M2.4 12S5.8 5.6 12 5.6 21.6 12 21.6 12 18.2 18.4 12 18.4 2.4 12 2.4 12Z" />
-          <circle cx="12" cy="12" r="3.1" />
-        </svg>
-      );
-
-    case 'question':
-      return (
-        <svg {...common}>
-          <circle cx="12" cy="12" r="8.8" />
-          <path d="M9.5 9.4a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.2-2.5 3.9" />
-          <circle cx="12" cy="17.2" r=".9" fill="currentColor" stroke="none" />
         </svg>
       );
 
@@ -489,6 +397,62 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
         <svg {...common}>
           <rect x="3.4" y="5.4" width="17.2" height="15.2" rx="2.4" />
           <path d="M3.4 10.2h17.2M8.2 3.4v4M15.8 3.4v4" />
+        </svg>
+      );
+
+    /* ------------------------------------------------------ destinations */
+
+    case 'tent':
+      return (
+        <svg {...common}>
+          <path d="M12 4.5 3.5 19.5h17L12 4.5Z" />
+          <path d="M12 4.5v15" />
+          <path d="m12 12.5 4 7M12 12.5l-4 7" />
+        </svg>
+      );
+
+    case 'hourglass':
+      return (
+        <svg {...common}>
+          <path d="M5 3h14M5 21h14" />
+          <path d="M6.5 3v3.2c0 2.2 5.5 3.9 5.5 5.8s-5.5 3.6-5.5 5.8V21" />
+          <path d="M17.5 3v3.2c0 2.2-5.5 3.9-5.5 5.8s5.5 3.6 5.5 5.8V21" />
+        </svg>
+      );
+
+    case 'crown':
+      return (
+        <svg {...common}>
+          <path d="M3.5 8.2 7 12l3-6 2-2.4L14 6l3 6 3.5-3.8-1.4 10.4H4.9L3.5 8.2Z" />
+          <path d="M5.4 21h13.2" />
+        </svg>
+      );
+
+    case 'chart':
+      return (
+        <svg {...common}>
+          <path d="M4 4v16h16" />
+          <path d="M8 16v-4M12 16V8M16 16v-6" />
+        </svg>
+      );
+
+    /* The guardians: the plain shield is the streak freeze, so the duels get
+       the thing standing between you and the region's end, cracked. */
+    case 'shieldCracked':
+      return (
+        <svg {...common}>
+          <path d="M12 3.2 19.5 6v6.2c0 4-3.1 7-7.5 8.6-4.4-1.6-7.5-4.6-7.5-8.6V6L12 3.2Z" />
+          <path d="m12.4 7-1.4 3.2 2.2 2-1.6 3.2.6 2.4" />
+        </svg>
+      );
+
+    case 'starFilled':
+      return (
+        <svg {...common} strokeWidth={minStroke(1.4, size)}>
+          <path
+            d="M12 3.2l2.6 6.1 6.6.5-5 4.3 1.5 6.5L12 17.2 6.3 20.6l1.5-6.5-5-4.3 6.6-.5L12 3.2Z"
+            fill="currentColor"
+          />
         </svg>
       );
 

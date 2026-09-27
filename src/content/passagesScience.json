@@ -941,7 +941,7 @@
         "kind": "line",
         "xLabel": "Concentration (mol/L)",
         "yLabel": "Time to completion (s)",
-        "alt": "Line graph of time to completion against concentration for two catalysts. Catalyst X falls from 120 to 18 seconds; Catalyst Y falls from 150 to 35 seconds, staying above Catalyst X at every concentration tested.",
+        "alt": "Line graph of time to completion against concentration for two catalysts. Both catalysts take less time as concentration rises, the drop flattening at higher concentrations; Catalyst Y stays above Catalyst X at every concentration tested.",
         "series": [
           {
             "name": "Catalyst X",
@@ -1047,7 +1047,7 @@
         "kind": "line",
         "xLabel": "Time (min)",
         "yLabel": "Absorbance",
-        "alt": "Line graph of absorbance against time for two samples over one hour. Both begin at 1.00; the sample at 200 lux falls gradually to 0.50, while the sample at 800 lux falls steeply to 0.09.",
+        "alt": "Line graph of absorbance against time for two samples over one hour. Both begin at the same absorbance; the sample under the dimmer light falls gradually, while the sample under the brighter light falls steeply and ends far lower.",
         "series": [
           {
             "name": "200 lux",
@@ -1228,7 +1228,7 @@
         "kind": "line",
         "xLabel": "Day",
         "yLabel": "Height (cm)",
-        "alt": "Line graph of seedling height against day for two watering groups over 28 days. The every-1-day group rises to 24.1 cm; the every-4-days group rises more slowly to 13.2 cm.",
+        "alt": "Line graph of seedling height against day for two watering groups over 28 days. Both groups grow throughout; the every-1-day group grows faster and ends well above the every-4-days group.",
         "series": [
           {
             "name": "Every 1 day",
@@ -1875,7 +1875,7 @@
         "kind": "line",
         "xLabel": "Time (days)",
         "yLabel": "Germinated (%)",
-        "alt": "Line graph of percentage germinated against time for Species A at two salinities. At 0 g/L the curve rises from 0 to 96 per cent over 14 days; at 20 g/L it rises more slowly and levels near 42 per cent.",
+        "alt": "Line graph of percentage germinated against time for Species A at two salinities. At 0 g/L the curve rises to nearly complete germination over 14 days; at 20 g/L it rises more slowly and levels off below half.",
         "series": [
           {
             "name": "0 g/L",
@@ -2090,7 +2090,7 @@
               },
               {
                 "x": 28,
-                "y": 5
+                "y": 10
               }
             ]
           },
@@ -2111,7 +2111,7 @@
               },
               {
                 "x": 28,
-                "y": 55
+                "y": 60
               }
             ]
           }

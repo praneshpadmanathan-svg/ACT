@@ -346,19 +346,26 @@ function BossDuel({ section }: { section: string }) {
               carrying most of the hurt read — at 84px on a phone, a changed
               mouth is not what anyone is looking at; the flinch is. A red
               bloom carries the rest, and a warm one marks a landed hit. */}
+          {/* Sized by height, in the sprite's own units: 132px on phones
+              (three quarters of the 176px source) and 176px from `sm` up,
+              which is 1:1 on a standard screen and exactly 2x on retina. The
+              `height` prop is the largest of those, so the sharp-or-smooth
+              choice in HeroSprite is made for the size actually drawn. It was
+              sized by width before, 84 to 140px, which put the real height
+              anywhere from 110 to 184px against a prop that said 140. */}
           <HeroSprite
             hero={progress.hero}
-            height={140}
+            height={176}
             className={cx(
-              'h-auto w-[84px] select-none sm:w-[120px] lg:w-[140px]',
+              'h-[132px] w-auto select-none sm:h-[176px]',
               heroHurt ? 'animate-heroHurt' : 'animate-bobHero',
             )}
             style={{
               filter: heroHurt
-                ? 'drop-shadow(0 8px 12px rgba(0,0,0,.55)) drop-shadow(0 0 9px rgba(198,58,44,.95))'
+                ? 'var(--art-shadow) drop-shadow(0 0 9px oklch(var(--c-blood) / .95))'
                 : heroPleased
-                  ? 'drop-shadow(0 8px 12px rgba(0,0,0,.55)) drop-shadow(0 0 9px rgba(217,168,56,.8))'
-                  : 'drop-shadow(0 8px 12px rgba(0,0,0,.55))',
+                  ? 'var(--art-shadow) drop-shadow(0 0 9px oklch(var(--c-gold) / .8))'
+                  : 'var(--art-shadow)',
               transition: 'filter 180ms ease-out',
             }}
           />

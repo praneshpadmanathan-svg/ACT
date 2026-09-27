@@ -42,16 +42,11 @@
 import { Art, type ArtName } from '@/components/Art';
 import scenes from '@/sceneArt.json';
 
-/* Gradients sampled off the paintings themselves — seven stops each, averaged
-   across the middle half of every row, which is the part `object-cover` is
-   most likely to keep. Hand-picking these would drift from the art the moment
-   a backdrop was regenerated; these were measured. */
-const BACKDROPS: { name: ArtName; sky: string }[] = [
-  { name: 'scene-ridge', sky: 'var(--loading-sky)' },
-  { name: 'scene-river', sky: 'var(--loading-sky)' },
-  { name: 'scene-pass', sky: 'var(--loading-sky)' },
-  { name: 'scene-harbour', sky: 'var(--loading-sky)' },
-];
+/* The four scenes share one sky: `--loading-sky`, a leather gradient from the
+   theme, shown until the painting decodes. It used to be seven stops sampled
+   off each painting, which stopped matching once the theme gained a light
+   mode — a dusk gradient behind a daylight UI. */
+const BACKDROPS: ArtName[] = ['scene-ridge', 'scene-river', 'scene-pass', 'scene-harbour'];
 
 const pick = <T,>(xs: readonly T[]): T => xs[Math.floor(Math.random() * xs.length)] as T;
 
@@ -69,10 +64,10 @@ export function LoadingScreen() {
     >
       <div
         className="absolute inset-0"
-        style={{ background: `linear-gradient(to bottom, ${BACKDROP.sky})` }}
+        style={{ background: 'linear-gradient(to bottom, var(--loading-sky))' }}
       />
       <Art
-        name={BACKDROP.name}
+        name={BACKDROP}
         priority
         className="absolute inset-0 h-full w-full select-none object-cover"
       />
@@ -89,7 +84,7 @@ export function LoadingScreen() {
         alt=""
         decoding="async"
         draggable={false}
-        className="animate-float relative z-10 w-[min(52vw,224px)] select-none"
+        className="animate-float relative z-10 w-[min(52vw,224px)] select-none [animation-iteration-count:infinite]"
         style={{ filter: 'var(--art-shadow)' }}
       />
       <span className="sr-only">Loading</span>

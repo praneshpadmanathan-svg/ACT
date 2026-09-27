@@ -13,9 +13,10 @@ interface SigilProps {
 
 /** Locked zone — a wax seal with an iron hasp across it. */
 export function LockSigil({ size = 18, className }: SigilProps) {
-  /* The seal's 1.1 stroke and 0.8-wide keyhole fall under half a pixel at
-     14px and read as a grey blob, so small sizes get a plain padlock instead. */
-  if (size < 17) {
+  /* The seal's 1.1 stroke and 0.8-wide keyhole fall under a pixel at list
+     sizes, and the padlock on it was 2.2:1 against the seal — so anything
+     below 22px, which is every call site today, gets a plain padlock. */
+  if (size < 22) {
     return (
       <svg
         width={size}
@@ -93,51 +94,6 @@ export function ClearedSigil({ size = 18, className }: SigilProps) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-    </svg>
-  );
-}
-
-/** Mastered zone — a struck star, used when a zone is cleared at 100%. */
-export function MasterSigil({ size = 18, className }: SigilProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      className={className}
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path
-        d="M12 3.2 14.6 9l6.4.5-4.9 4.2 1.5 6.2L12 16.6 6.4 19.9l1.5-6.2L3 9.5 9.4 9Z"
-        fill="currentColor"
-        stroke="currentColor"
-        strokeWidth="1.1"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-/** The summit — a crown above the citadel. */
-export function CrownSigil({ size = 20, className }: SigilProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      className={className}
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path
-        d="M3.6 8.4 7 12l2.9-5.6L12 3.2l2.1 3.2L17 12l3.4-3.6 -1.5 10.2H5.1Z"
-        fill="currentColor"
-        stroke="currentColor"
-        strokeWidth="1.1"
-        strokeLinejoin="round"
-      />
-      <rect x="5.1" y="19.2" width="13.8" height="1.9" rx="0.7" fill="currentColor" />
     </svg>
   );
 }

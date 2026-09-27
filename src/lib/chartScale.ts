@@ -39,7 +39,11 @@ export function niceScale(min: number, max: number, target = 5): { ticks: number
     return niceScale(min - pad, max + pad, target);
   }
 
-  const step = niceStep((max - min) / target);
+  let step = niceStep((max - min) / target);
+  /* The ladder takes the smallest round step at least the raw one, which can
+     overshoot badly: 18-150 wants 26.4, gets 50, and draws three intervals
+     against a target of five. When that happens, one rung down is closer. */
+  if (Math.ceil(max / step) - Math.floor(min / step) < target - 1) step = stepBelow(step);
   const lo = Math.floor(min / step) * step;
   const hi = Math.ceil(max / step) * step;
 
@@ -71,16 +75,34 @@ function niceStep(raw: number): number {
   return 10 * power;
 }
 
+/** The rung below `step` on the same ladder. */
+function stepBelow(step: number): number {
+  const power = Math.pow(10, Math.floor(Math.log10(step)));
+  const scaled = Math.round((step / power) * 10) / 10;
+  if (scaled >= 10) return 5 * power;
+  if (scaled >= 5) return 2.5 * power;
+  if (scaled >= 2.5) return 2 * power;
+  if (scaled >= 2) return power;
+  return power / 2;
+}
+
+/** How many decimals a step carries. Not `-floor(log10(step))`: that says
+ *  2.5 has none and 0.25 has one, and printed a 2.5-step axis as
+ *  0, 3, 5, 8, 10. */
+function decimalsOf(step: number): number {
+  const s = String(Number(Math.abs(step).toPrecision(12)));
+  const dot = s.indexOf('.');
+  return dot === -1 ? 0 : s.length - dot - 1;
+}
+
 /** Trim floating-point noise to the precision the step itself implies. */
 function round(value: number, step: number): number {
-  const decimals = Math.max(0, -Math.floor(Math.log10(step)));
-  return Number(value.toFixed(Math.min(decimals + 1, 12)));
+  return Number(value.toFixed(Math.min(decimalsOf(step) + 1, 12)));
 }
 
 /** Format a tick for display, at the precision its step warrants. */
 export function formatTick(value: number, step: number): string {
-  const decimals = Math.max(0, -Math.floor(Math.log10(Math.abs(step) || 1)));
-  return value.toFixed(Math.min(decimals, 6));
+  return value.toFixed(Math.min(decimalsOf(step || 1), 6));
 }
 
 /** Every distinct x in the data, in ascending order — the categories a bar

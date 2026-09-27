@@ -65,7 +65,7 @@ export function StatsScreen() {
           ladder owns the rank now; this owns the person and the XP that drives
           the ladder. */}
       <div className="panel-lit mb-5 flex flex-wrap items-center gap-x-6 gap-y-4 p-6 sm:p-7">
-        <HeroSprite hero={progress.hero} height={92} />
+        <HeroSprite hero={progress.hero} height={88} />
         <div className="min-w-0 flex-1">
           <h2 className="heading text-[1.125rem] text-parchment">{playerName}</h2>
           <p className="mt-1.5 font-read text-[13px] text-ink-faint">

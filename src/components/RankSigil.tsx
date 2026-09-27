@@ -65,9 +65,13 @@ export function RankSigil({
   rank,
   size = 56,
   aura,
+  decorative = false,
 }: {
   rank: SigilColors;
   size?: number;
+  /** Set where the rank's name is printed beside the sigil, so a screen
+   *  reader does not hear it twice. */
+  decorative?: boolean;
   /** Defaults to on at `AURA_FROM` and up. Pass `false` to force it off. */
   aura?: boolean;
 }) {
@@ -104,7 +108,7 @@ export function RankSigil({
         height={size}
         /* The native mechanism, not `role="img"` + `aria-label`. The SVG this
            replaced needed those because an `<svg>` has no `alt`. */
-        alt={`${rank.name} rank`}
+        alt={decorative ? '' : `${rank.name} rank`}
         decoding="async"
         draggable={false}
         className="relative select-none"
@@ -113,7 +117,7 @@ export function RankSigil({
           /* Two shadows doing different jobs: a tight dark one to seat the
              emblem on the page, and a wide one in the rank's own colour so the
              badge throws a little light of its own even when the aura is off. */
-          filter: `drop-shadow(0 2px 3px rgba(0,0,0,.45)) drop-shadow(0 0 ${Math.round(
+          filter: `var(--art-shadow-sm) drop-shadow(0 0 ${Math.round(
             size * 0.12,
           )}px ${rank.color}55)`,
         }}
@@ -140,7 +144,9 @@ export function RankSigil({
    different, worse feature. */
 
 const METAL: Record<'bronze' | 'silver' | 'gold', { c1: string; c2: string; ring: string }> = {
-  bronze: { c1: '#d08a52', c2: '#8a4f22', ring: '#f0b47c' },
+  /* c2 was #8a4f22, which left the glyph ink at 2.3:1 on the dark end of
+     the gradient; seven of the fifteen achievements are bronze. */
+  bronze: { c1: '#d08a52', c2: '#b06a34', ring: '#f0b47c' },
   silver: { c1: '#e8eef6', c2: '#95a6bd', ring: '#ffffff' },
   gold: { c1: '#ffe07a', c2: '#d99b12', ring: '#fff3b0' },
 };
@@ -170,7 +176,7 @@ export function AchievementBadge({
         viewBox="0 0 48 48"
         aria-hidden="true"
         focusable="false"
-        style={earned ? { filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.45))' } : undefined}
+        style={earned ? { filter: 'var(--art-shadow-sm)' } : undefined}
       >
         <defs>
           <linearGradient id={`${uid}-m`} x1="0.15" y1="0.05" x2="0.85" y2="1">

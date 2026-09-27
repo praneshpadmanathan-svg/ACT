@@ -37,6 +37,7 @@ import { readRaw, removeRaw, STORAGE_KEYS, writeRaw } from './storage';
 import { reportWarn } from './report';
 import { progressKeyFor, retireDeviceAccounts, type Identity } from './identity';
 import { sfx } from './sfx';
+import type { IconName } from '@/components/Icon';
 import {
   cloudEnabled,
   consumeAuthRedirect,
@@ -64,7 +65,7 @@ export interface Toast {
   title: string;
   detail?: string;
   color?: string;
-  icon?: string;
+  icon?: IconName;
 }
 
 /* --------------------------------------------------------------- xp popups */

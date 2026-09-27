@@ -107,13 +107,20 @@ export function ScoreTrend({ tests, target }: { tests: TestResult[]; target: num
           x2={W - PAD.right}
           y1={toY(target)}
           y2={toY(target)}
-          stroke="oklch(var(--c-leather-700))"
+          /* ink-faint at 70%: leather-700 was 1.6:1, a rule nobody could find. */
+          stroke="oklch(var(--c-ink-faint) / 0.7)"
           strokeWidth={1}
           strokeDasharray="3 3"
         />
         <text
           x={PAD.left}
-          y={toY(target) - 5}
+          /* Above the rule, unless the first score sits just above it too — the
+             label is pinned at the left edge, where that point is drawn. */
+          y={
+            scores[0]! > target && toY(target) - toY(scores[0]!) < 16
+              ? toY(target) + 14
+              : toY(target) - 5
+          }
           className="num"
           fontSize={12}
           fill="oklch(var(--c-ink-faint))"
@@ -214,7 +221,11 @@ export function ActivityChart({ counts }: { counts: number[] }) {
         className="flex items-end gap-px sm:gap-[2px]"
         style={{ height: 90 }}
         role="img"
-        aria-label={`Questions answered on each of the last ${counts.length} days. ${total} in total, busiest day ${max}.`}
+        aria-label={
+          total === 0
+            ? `No questions answered in the last ${counts.length} days.`
+            : `Questions answered on each of the last ${counts.length} days. ${total} in total, busiest day ${max}.`
+        }
       >
         {counts.map((count, i) => (
           <div
@@ -240,14 +251,14 @@ export function ActivityChart({ counts }: { counts: number[] }) {
                 style={{
                   height: `${Math.max(3, (count / max) * 100)}%`,
                   /* One hue, light to dark. The floor keeps a single-question
-                     day visible; below that it is indistinguishable from a day
-                     with none, which is the one distinction this chart owes the
-                     reader. A day with no work is leather, not a pale gold —
-                     zero is an absence, not a small amount. */
+                     day visible — at 0.7 it clears 3:1 on the panel in both
+                     themes; 0.4 was 1.85:1 in light. A day with no work is a
+                     leather stub, not a pale gold: zero is an absence, not a
+                     small amount, but the stub still says "a day was here". */
                   background:
                     count === 0
-                      ? 'oklch(var(--c-leather-800))'
-                      : `oklch(var(--c-gold) / ${(0.4 + 0.6 * (count / max)).toFixed(2)})`,
+                      ? 'oklch(var(--c-leather-600))'
+                      : `oklch(var(--c-gold) / ${(0.7 + 0.3 * (count / max)).toFixed(2)})`,
                   outline: hover === i ? '1px solid oklch(var(--c-gold-light))' : undefined,
                   outlineOffset: 1,
                 }}

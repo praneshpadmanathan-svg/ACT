@@ -129,7 +129,7 @@ function Toggle({
     >
       <span
         className={cx(
-          'block h-4 w-4 rounded-full transition-transform duration-200',
+          'block h-4 w-4 rounded-full transition-transform duration-quick',
           on ? 'translate-x-[22px] bg-gold' : 'translate-x-[4px] bg-parchment-dim',
         )}
       />
@@ -310,7 +310,7 @@ export function DiagnosticsPanel() {
             >
               <Glyph
                 name={e.level === 'error' ? 'cross' : 'alert'}
-                size={11}
+                size={e.level === 'error' ? 13 : 10}
                 strokeWidth={2.2}
                 className="inline-block align-[-1px]"
               />

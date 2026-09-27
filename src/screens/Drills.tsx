@@ -86,6 +86,7 @@ export function DrillsScreen({ section }: { section?: string }) {
             <Button
               key={n}
               variant={n === 10 ? 'primary' : 'ghost'}
+              className="px-2 sm:px-4"
               onClick={() => navigate({ name: 'drill', section: active, topic: `mixed:${n}` })}
             >
               {n} questions

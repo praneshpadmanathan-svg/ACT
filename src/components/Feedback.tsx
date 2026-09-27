@@ -136,7 +136,9 @@ export function XPPopups() {
         <div
           key={pop.id}
           className="animate-rise font-display text-[15px] text-gold"
-          style={{ textShadow: '0 2px 0 #000, 0 0 12px rgba(255,210,62,.8)' }}
+          style={{
+            textShadow: '0 2px 0 oklch(var(--c-leather-950)), 0 0 12px oklch(var(--c-gold) / .6)',
+          }}
         >
           +{pop.amount} XP
         </div>
@@ -166,7 +168,7 @@ export function Toasts() {
           className="pointer-events-auto flex animate-riseIn items-center gap-3 rounded-lg border-2 border-gold-deep bg-leather-850/95 px-4 py-3 text-left shadow-card backdrop-blur"
           style={{ borderLeftWidth: 6, borderLeftColor: t.color ?? 'oklch(var(--c-gold))' }}
         >
-          <Glyph name="spark" size={17} className="flex-none text-gold" />
+          <Glyph name={t.icon ?? 'spark'} size={17} className="flex-none text-gold" />
           <span className="min-w-0">
             <span className="block font-script text-[13px] uppercase tracking-wide text-parchment">
               {t.title}
@@ -299,7 +301,7 @@ export function LevelUpOverlay() {
             only way out other than a stray tap — went with it. */}
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6 [@media(max-height:520px)]:gap-2">
           <div className="w-fit animate-popIn [animation-delay:.34s]">
-            <RankBadge rank={rank} size={104} />
+            <RankBadge rank={rank} size={104} decorative />
           </div>
           <h2
             className="heading animate-popIn text-[clamp(1.6rem,min(5.5vw,8vh),3.2rem)] leading-tight [animation-delay:.44s]"

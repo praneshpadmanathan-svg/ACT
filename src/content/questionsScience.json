@@ -3569,7 +3569,7 @@
     "topic": "data representation",
     "difficulty": "medium",
     "passage": "p36-sci-radish-growth-0001",
-    "context": "According to Figure 1, on which measured day did the height difference between the two watering groups first exceed 5 cm?",
+    "context": "According to Figure 1, on which measured day did the height difference between the two watering groups first exceed 4 cm?",
     "choices": [
       {
         "id": "A",
@@ -3590,10 +3590,10 @@
     ],
     "answer": "D",
     "why": {
-      "D": "The height difference is 2.1 cm at day 7 and 5.2 cm at day 14, so day 14 is the first measured day on which it exceeds 5 cm.",
-      "A": "The difference between the two groups at day 7 is only 2.1 cm, under the 5 cm threshold.",
-      "B": "The difference already exceeds 5 cm by day 14, one measurement earlier.",
-      "C": "The difference exceeds 5 cm well before the final measurement."
+      "D": "The height difference is 2.1 cm at day 7 and 5.2 cm at day 14, so day 14 is the first measured day on which it exceeds 4 cm.",
+      "A": "The difference between the two groups at day 7 is only 2.1 cm, under the 4 cm threshold.",
+      "B": "The difference already exceeds 4 cm by day 14, one measurement earlier.",
+      "C": "The difference exceeds 4 cm well before the final measurement."
     }
   },
   {
@@ -8626,23 +8626,23 @@
       },
       {
         "id": "B",
-        "text": "55"
+        "text": "60"
       },
       {
         "id": "C",
-        "text": "5"
+        "text": "10"
       },
       {
         "id": "D",
-        "text": "60"
+        "text": "70"
       }
     ],
     "answer": "A",
     "why": {
-      "A": "Inland reaches 55 and coastal 5, so the difference is 50 out of every 100.",
-      "B": "55 is the inland figure on its own.",
-      "C": "5 is the coastal figure on its own.",
-      "D": "60 adds the two bars instead of subtracting them."
+      "A": "Inland reaches 60 and coastal 10, so the difference is 50 out of every 100.",
+      "B": "60 is the inland figure on its own.",
+      "C": "10 is the coastal figure on its own.",
+      "D": "70 adds the two bars instead of subtracting them."
     }
   },
   {

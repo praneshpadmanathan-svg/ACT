@@ -35,6 +35,8 @@
     --c-series-5: 51% 0.1 85;
     --loading-sky: oklch(var(--c-leather-800)), oklch(var(--c-leather-950));
     --art-shadow: drop-shadow(0 10px 22px oklch(0% 0 0 / 0.5));
+    /* The same shadow for small sprites (rank sigils, medals). */
+    --art-shadow-sm: drop-shadow(0 2px 3px oklch(0% 0 0 / 0.45));
     /* ---------------------------------------------------------- the measures
 
        Named widths, because "how wide is a column of this kind" is a design
@@ -282,6 +284,9 @@
      chrome surface they can land on, so they hold everywhere: gold clears
      4.60 on 950 and better on the rest, gold-light 6.51 and up. */
   [data-theme='light'] {
+    /* Half-black under a sprite on parchment reads as a smudge, not a shadow. */
+    --art-shadow: drop-shadow(0 8px 14px oklch(0% 0 0 / 0.2));
+    --art-shadow-sm: drop-shadow(0 1px 2px oklch(0% 0 0 / 0.25));
     color-scheme: light;
     --vignette-ink: #241a10;
     /* The six region fills, light theme.
@@ -330,7 +335,7 @@
     --c-gold: 48.15% 0.0945 82.59;
     --c-gold-light: 40% 0.0769 82.39;
     --c-gold-bright: 45% 0.11 82;
-    --c-gold-deep: 67.98% 0.0923 85.47;
+    --c-gold-deep: 44% 0.092 83;
 
     --c-blood-text: 44.57% 0.1329 31.51;
     --c-woods-text: 45.9% 0.0946 148.8;
@@ -462,9 +467,10 @@
     outline-offset: 2px;
     border-radius: 4px;
   }
-  /* Gold on the paper sheets measures 1.96:1; the deep gold is 4.2:1. */
-  .sheet :focus-visible,
-  .proof-sheet :focus-visible {
+  /* Gold on the paper sheets measures 1.96:1; the deep gold clears 3:1 on
+     paper in both themes (3.5 dark, 6.5 light). Paper only: `.proof-sheet`
+     is leather, where the default gold is the stronger ring. */
+  .sheet :focus-visible {
     outline-color: oklch(var(--c-gold-deep));
   }
 
@@ -492,14 +498,14 @@
 
   .brand-sigil {
     @apply flex h-8 w-8 flex-none items-center justify-center rounded-lg border
-           border-gold-deep/60 bg-leather-850 text-gold transition-all duration-200;
-    box-shadow: inset 0 1px 0 rgba(240, 207, 122, 0.16);
+           border-gold-deep/60 bg-leather-850 text-gold transition-all duration-quick;
+    box-shadow: inset 0 1px 0 oklch(var(--c-gold-light) / 0.16);
   }
   .group:hover > .brand-sigil {
     @apply border-gold bg-leather-800;
     box-shadow:
-      inset 0 1px 0 rgba(240, 207, 122, 0.3),
-      0 0 14px rgba(212, 160, 23, 0.28);
+      inset 0 1px 0 oklch(var(--c-gold-light) / 0.3),
+      0 0 14px oklch(var(--c-gold) / 0.28);
   }
 
   /* A group heading. Small-caps script at the smallest size the type system
@@ -517,7 +523,7 @@
      though tapping it opens a dialog that does the typing properly. */
   .rail-search {
     @apply flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 font-read text-[13px]
-           text-ink-faint transition-[background-color,border-color,box-shadow] duration-200;
+           text-ink-faint transition-[background-color,border-color,box-shadow] duration-quick;
     border: 1px solid oklch(var(--c-leather-700) / 0.6);
     background-color: oklch(var(--c-leather-950) / 0.6);
     box-shadow: var(--e-flush);
@@ -529,13 +535,13 @@
 
   .rail-item {
     @apply relative flex items-center gap-2.5 rounded-lg py-1.5 pl-3 pr-2.5
-           text-parchment-dim transition-all duration-200;
+           text-parchment-dim transition-all duration-quick;
   }
   .rail-item:hover {
     @apply bg-leather-850 text-parchment;
   }
   .rail-glyph {
-    @apply flex-none text-ink-faint transition-all duration-200;
+    @apply flex-none text-ink-faint transition-all duration-quick;
   }
   .rail-item:hover .rail-glyph {
     @apply text-gold;
@@ -546,9 +552,9 @@
      why the vertical rail needs none of the DOM measurement the horizontal one
      did. */
   .rail-marker {
-    @apply pointer-events-none absolute left-0 top-1/2 block w-[3px] -translate-y-1/2
-           rounded-full transition-[height,opacity] duration-base;
-    height: 0;
+    @apply pointer-events-none absolute left-0 top-1/2 block w-[3px] -translate-y-1/2 scale-y-0
+           rounded-full transition-[transform,opacity] duration-base;
+    height: 62%;
     opacity: 0;
     background: linear-gradient(180deg, theme('colors.gold.deep'), theme('colors.gold.bright'));
     box-shadow: 0 0 10px rgba(242, 207, 91, 0.55);
@@ -557,7 +563,7 @@
     @apply bg-leather-850 text-gold;
   }
   .rail-item-active .rail-marker {
-    height: 62%;
+    @apply scale-y-100;
     opacity: 1;
   }
   .rail-item-active .rail-glyph {
@@ -586,7 +592,7 @@
      be a recess. */
   .rail-bank {
     @apply block rounded-lg border border-gold-deep/40 px-3 py-2.5 text-center
-           transition-[background-color,border-color,box-shadow] duration-200;
+           transition-[background-color,border-color,box-shadow] duration-quick;
     background-color: oklch(var(--c-leather-950) / 0.6);
     box-shadow: var(--e-flush);
   }
@@ -607,7 +613,7 @@
      above, and it loses the `-translate-y-px` it used to lift by. */
   .hud-block {
     @apply flex items-center gap-2.5 rounded-lg border border-leather-700 px-2.5 py-1.5
-           transition-[background-color,border-color,box-shadow] duration-200;
+           transition-[background-color,border-color,box-shadow] duration-quick;
     background-color: oklch(var(--c-leather-950) / 0.6);
     box-shadow: var(--e-flush);
   }
@@ -618,17 +624,20 @@
       var(--e-flush),
       inset 0 0 12px oklch(var(--c-gilt) / 0.16);
   }
+  /* The ring gives the empty track an edge: leather-950 alone was invisible
+     on the drawer's card, and 16 XP of fill read as a stray dot. */
   .hud-xp {
     @apply block h-1 w-12 overflow-hidden rounded-full bg-leather-950;
+    box-shadow: inset 0 0 0 1px oklch(var(--c-leather-600));
   }
   .hud-xp > i {
-    @apply block h-full rounded-full transition-[width] duration-cinematic ease-out;
+    @apply block h-full w-full origin-left rounded-full transition-transform duration-cinematic ease-out;
     background: linear-gradient(90deg, theme('colors.gold.deep'), theme('colors.gold.bright'));
   }
 
   .hud-icon {
     @apply flex h-9 w-9 flex-none items-center justify-center rounded-lg border
-           border-leather-700 bg-leather-850 text-parchment-dim transition-all duration-200;
+           border-leather-700 bg-leather-850 text-parchment-dim transition-all duration-quick;
   }
   .hud-icon:hover {
     @apply -translate-y-px border-gold-deep text-gold;
@@ -651,7 +660,7 @@
 
   .story-choice {
     @apply w-full rounded-lg border border-leather-700 bg-leather-850/90 px-4 py-3
-           text-left font-read text-[15px] text-parchment-dim transition-all duration-150;
+           text-left font-read text-[15px] text-parchment-dim transition-all duration-quick;
   }
   .story-choice:hover {
     @apply -translate-y-px border-gold-deep bg-leather-800 text-parchment;
@@ -979,11 +988,11 @@
        spring into a lagging second animation. `isolate` gives the ink a
        stacking context to sit inside, `overflow-hidden` keeps it in bounds. */
     transition:
-      color 150ms,
-      background-color 150ms,
-      border-color 150ms,
-      box-shadow 150ms,
-      opacity 150ms;
+      color 160ms,
+      background-color 160ms,
+      border-color 160ms,
+      box-shadow 160ms,
+      opacity 160ms;
   }
 
   .btn-primary {
@@ -1013,7 +1022,7 @@
   }
   .btn-primary:hover:not(:disabled)::after {
     transform: translateX(130%);
-    transition: transform 640ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .btn-ghost {
@@ -1064,7 +1073,7 @@
      is scaled by a spring, which is why nothing here touches transform. */
   .chip-ablaze {
     @apply relative isolate;
-    border-color: #ff7a2e;
+    border-color: oklch(var(--c-desert-text));
   }
   .chip-ablaze::before {
     content: '';
@@ -1073,7 +1082,7 @@
     z-index: -1;
     border-radius: 9999px;
     background: radial-gradient(ellipse at center, rgba(255, 122, 46, 0.5), transparent 68%);
-    animation: emberPulse 1.5s ease-in-out infinite;
+    animation: emberPulse 1.5s ease-in-out 3;
   }
   @keyframes emberPulse {
     0%,
@@ -1100,7 +1109,7 @@
 
   .veil {
     @apply relative rounded-xl border border-leather-700/70 backdrop-blur-md
-           transition-all duration-200;
+           transition-all duration-quick;
     background: linear-gradient(
       180deg,
       oklch(var(--veil-top) / var(--veil-alpha)),
@@ -1349,7 +1358,7 @@
     background: var(--mark, theme('colors.ink.soft'));
     -webkit-mask: var(--cross-mask) center / contain no-repeat;
     mask: var(--cross-mask) center / contain no-repeat;
-    --cross-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.4' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6 6 18'/%3E%3C/svg%3E");
+    --cross-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6 6 18'/%3E%3C/svg%3E");
   }
 
   /* The trap is the part you should actually be stopped by, so its plate is
@@ -1494,7 +1503,7 @@
     box-shadow:
       0 1px 3px rgba(58, 44, 5, 0.38),
       inset 0 1px 0 rgba(255, 255, 255, 0.45);
-    animation: sealStamp 260ms cubic-bezier(0.22, 1.4, 0.36, 1) both;
+    animation: sealStamp 240ms cubic-bezier(0.22, 1.4, 0.36, 1) both;
   }
 
   @keyframes giltDraw {
@@ -1554,7 +1563,7 @@
      ten long bars and the current one stops being distinguishable — the rail
      has to read as a count, not as a gradient. */
   .rail-tick {
-    @apply w-1.5 flex-1 rounded-full transition-[background-color,box-shadow,width] duration-base ease-out;
+    @apply w-1.5 flex-1 rounded-full transition-[background-color,box-shadow,transform] duration-base ease-out;
     min-height: 5px;
     max-height: 26px;
     background-color: oklch(var(--c-leather-700) / 0.5);
@@ -1563,7 +1572,7 @@
     background: linear-gradient(180deg, oklch(var(--c-gilt-bright)), oklch(var(--c-gold-deep)));
   }
   .rail-tick-now {
-    @apply w-2;
+    @apply scale-x-[1.34];
     background: oklch(var(--c-gilt-bright));
     box-shadow: 0 0 0 2px oklch(var(--c-gilt) / 0.28);
   }
@@ -1662,7 +1671,7 @@
   }
   .camp-hero:hover .btn-primary::after {
     transform: translateX(130%);
-    transition: transform 640ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   /* -------------------------------------------------------- the gilt sweep
@@ -1716,6 +1725,11 @@
   .palette-item {
     @apply relative flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left
            text-parchment-dim transition-colors duration-quick ease-out;
+  }
+  @media (pointer: coarse) {
+    .palette-item {
+      min-height: 2.75rem;
+    }
   }
   /* Selection is keyboard-first here, so the highlight is driven by an
      attribute rather than by :hover — the pointer and the arrow keys have to

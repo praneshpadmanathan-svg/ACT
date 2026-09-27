@@ -544,7 +544,7 @@ export function StoryOverlay() {
                       <i
                         key={i}
                         className={cx(
-                          'block h-1 rounded-full transition-all duration-300',
+                          'block h-1 rounded-full transition-[width,background-color] duration-base',
                           i < linesSoFar ? 'w-4 bg-gold' : 'w-1.5 bg-leather-700',
                         )}
                       />

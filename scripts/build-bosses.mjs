@@ -23,7 +23,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
-import { findCells, loadSheet, png } from './lib/sheet.mjs';
+import { findCells, loadSheet, webp } from './lib/sheet.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = path.join(root, 'public', 'art', 'bosses');
@@ -68,15 +68,14 @@ async function main() {
       const width = Math.max(1, Math.round(w * scale));
       const height = Math.max(1, Math.round(h * scale));
 
-      const buf = await png(
+      const buf = await webp(
         sharp(sheet.keyed)
           .extract({ left: x0, top: y0, width: w, height: h })
           .resize({ width, height, kernel: 'lanczos3' }),
-        128,
       );
 
-      await writeFile(path.join(OUT, `${id}.png`), buf);
-      manifest[id] = { width, height, src: `/art/bosses/${id}.png` };
+      await writeFile(path.join(OUT, `${id}.webp`), buf);
+      manifest[id] = { width, height, src: `/art/bosses/${id}.webp` };
       console.log(
         `  ${id.padEnd(8)} ${w}×${h} → ${width}×${height}  ${(buf.length / 1024).toFixed(1)} KB`,
       );

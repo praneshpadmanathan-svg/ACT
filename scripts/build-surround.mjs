@@ -70,7 +70,7 @@ const CANVAS_H = 2048;
  *  there is exactly one thing it can mean. */
 const FILL = { r: 128, g: 128, b: 128, alpha: 1 };
 
-const mapPath = path.join(OUT, 'world-map.webp');
+const mapPath = path.join(root, 'art-src', 'world-map.webp');
 const left = Math.round((CANVAS_W - MAP_W) / 2);
 const top = Math.round((CANVAS_H - MAP_H) / 2);
 

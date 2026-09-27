@@ -145,14 +145,13 @@ self.addEventListener('fetch', (event) => {
         }
         return fresh;
       } catch (error) {
-        /* Offline, and this exact file was never fetched. For the responsive
-           art variants that is expected rather than exceptional: the precache
-           deliberately holds only the five originals (see the note in
-           vite.config.ts), and which of the twenty-two variants a device asks
-           for depends on its viewport. Serve the original instead of letting
-           the picture break. */
-        const original = originalFor(url.pathname);
-        const fallback = original ? await caches.match(original, MATCH) : undefined;
+        /* Offline, and this exact file was never fetched. For the paintings
+           that is expected rather than exceptional: the precache deliberately
+           holds only the narrowest webp of each (see `smallestArt` in
+           vite.config.ts), and which variant a device asks for depends on its
+           viewport. Serve that one instead of letting the picture break. */
+        const stand = standInFor(url.pathname);
+        const fallback = stand ? await caches.match(stand, MATCH) : undefined;
         if (fallback) return fallback;
         throw error;
       }
@@ -160,10 +159,15 @@ self.addEventListener('fetch', (event) => {
   );
 });
 
-/** `/art/gen/camp-bg-640.avif` → `/art/camp-bg.webp`. Null for anything else. */
-function originalFor(pathname: string): string | null {
-  const match = /^\/art\/gen\/(.+)-\d+\.(?:avif|webp)$/.exec(pathname);
-  return match ? `/art/${match[1]}.webp` : null;
+/** `/art/gen/camp-bg-1376.avif` or `/art/camp-bg.webp` → the precached
+ *  `/art/gen/camp-bg-640.webp`. Null for anything else. */
+function standInFor(pathname: string): string | null {
+  const match =
+    /^\/art\/gen\/(.+)-\d+\.(?:avif|webp)$/.exec(pathname) ??
+    /^\/art\/([a-z-]+)\.webp$/.exec(pathname);
+  if (!match) return null;
+  const variant = new RegExp(`^/art/gen/${match[1]}-\\d+\\.webp$`);
+  return __PRECACHE__.find((url) => variant.test(url)) ?? null;
 }
 
 export {};

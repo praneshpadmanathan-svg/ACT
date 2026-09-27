@@ -90,7 +90,7 @@ export function HeroChooser({ compact = false }: { compact?: boolean }) {
                 of eight moving is more legible at 54px than a changed mouth. */}
             <HeroSprite
               hero={hero}
-              height={compact ? 62 : 78}
+              height={compact ? 66 : 88}
               className={cx('select-none', chosen && 'animate-bobHero')}
             />
             <span

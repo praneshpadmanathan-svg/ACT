@@ -53,13 +53,26 @@ interface Entry {
 
 const setFor = (variants: Variant[]) => variants.map((v) => `${v.src} ${v.w}w`).join(', ');
 
+/** The opaque plates (the ones with a placeholder) are all `object-cover`
+ *  backdrops, and a landscape plate covering a portrait screen renders far
+ *  wider than the viewport — `100vw` told a phone it needed 375px of a plate
+ *  it drew 1,500px wide, and it took the smallest file and stretched it 3-4x.
+ *  Covering a box of at least the viewport, the drawn width is the larger of
+ *  the viewport's width and its height times the plate's ratio. Cut-out
+ *  figures are sized by their own box, so they keep the plain default. */
+function defaultSizes(entry: Entry) {
+  if (!entry.lqip) return '100vw';
+  const ratio = (entry.width / entry.height).toFixed(3);
+  return `max(100vw, calc(100vh * ${ratio}))`;
+}
+
 export function Art({
   name,
   alt = '',
   className,
-  /** Maps to the `sizes` attribute. Defaults to full viewport width, which is
-   *  right for the backdrops and wrong-but-harmless for the small figures. */
-  sizes = '100vw',
+  /** Maps to the `sizes` attribute. The default is worked out from the
+   *  entry — see `defaultSizes`. */
+  sizes,
   priority = false,
   essential = false,
   style,
@@ -79,6 +92,7 @@ export function Art({
   draggable?: boolean;
 }) {
   const entry = manifest[name] as Entry;
+  const sizesAttr = sizes ?? defaultSizes(entry);
 
   /* `display: contents` makes the wrapper disappear from layout, so the `<img>`
      is laid out by whatever the parent is — a flex item stays a flex item, and
@@ -87,8 +101,8 @@ export function Art({
      the eleven call sites. */
   return (
     <picture className="contents">
-      <source type="image/avif" srcSet={setFor(entry.avif)} sizes={sizes} />
-      <source type="image/webp" srcSet={setFor(entry.webp)} sizes={sizes} />
+      <source type="image/avif" srcSet={setFor(entry.avif)} sizes={sizesAttr} />
+      <source type="image/webp" srcSet={setFor(entry.webp)} sizes={sizesAttr} />
       <img
         src={entry.fallback}
         alt={alt}

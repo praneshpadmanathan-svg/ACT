@@ -274,7 +274,7 @@ function PlayerBlock({ compact }: { compact?: boolean }) {
         next ? `${(next.xp - progress.xp).toLocaleString()} XP to ${next.name}` : 'Highest rank'
       }
     >
-      <span className="relative flex-none transition-transform duration-200 group-hover:scale-105">
+      <span className="relative flex-none transition-transform duration-quick group-hover:scale-105">
         <RankBadge rank={rank} size={compact ? 30 : 36} />
       </span>
       <span className="min-w-0 flex-1 text-left leading-tight">
@@ -287,7 +287,7 @@ function PlayerBlock({ compact }: { compact?: boolean }) {
             {progress.xp.toLocaleString()}
           </span>
           <span className="hud-xp flex-1">
-            <i style={{ width: `${pct * 100}%` }} />
+            <i style={{ transform: `scaleX(${pct})` }} />
           </span>
         </span>
       </span>
@@ -532,7 +532,7 @@ export function BackLink({ to, label }: { to: Route; label: string }) {
       className="group mb-3 inline-flex min-h-11 items-center gap-2 font-script text-[13px] uppercase
                  tracking-[0.16em] text-ink-faint transition-colors hover:text-gold"
     >
-      <span className="inline-flex transition-transform duration-200 group-hover:-translate-x-1">
+      <span className="inline-flex transition-transform duration-quick group-hover:-translate-x-1">
         <Glyph name="arrowLeft" size={14} strokeWidth={2} />
       </span>
       {label}

@@ -105,7 +105,7 @@ export function Home() {
 
           <div className="panel-quiet home-rank">
             {/* A prominent sigil without particles over the progress labels. */}
-            <RankBadge rank={rank} size={76} aura={false} />
+            <RankBadge rank={rank} size={76} aura={false} decorative />
             <div className="min-w-0 flex-1">
               <div className="flex flex-wrap items-baseline gap-x-2.5">
                 <p className="home-kicker">Your rank</p>
@@ -807,7 +807,7 @@ function Quick({
       <span className="home-shortcut-icon">
         <Glyph
           name={
-            to === 'notes' ? 'book' : to === 'tests' ? 'clock' : to === 'drills' ? 'bolt' : 'map'
+            to === 'notes' ? 'book' : to === 'tests' ? 'crown' : to === 'drills' ? 'sword' : 'map'
           }
           size={24}
         />

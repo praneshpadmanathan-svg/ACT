@@ -88,19 +88,16 @@ function walk(dir, want, out = []) {
   for (const entry of readdirSync(dir)) {
     const p = join(dir, entry);
     if (statSync(p).isDirectory()) walk(p, want, out);
-    else if (want.test(entry) && !/\.test\.tsx$/.test(entry)) out.push(p);
+    else if (want.test(entry) && !/\.test\.tsx?$/.test(entry)) out.push(p);
   }
   return out;
 }
 
 /* Stylesheets too: a `content: '✕'` in CSS is the same font glyph as one typed
    into JSX, and it slipped through when only .tsx was scanned. */
-const SOURCES = [
-  ['src/components', /\.tsx$/],
-  ['src/screens', /\.tsx$/],
-  ['src/game', /\.tsx$/],
-  ['src', /\.css$/],
-];
+/* The whole of `src`: App.tsx, `lib/` (the store builds toast strings) and
+   the content modules were outside the four folders this used to walk. */
+const SOURCES = [['src', /\.(tsx?|css)$/]];
 
 const findings = [];
 for (const [dir, want] of SOURCES) {

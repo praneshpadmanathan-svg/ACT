@@ -371,7 +371,13 @@ export function Landing() {
       >
         <div className="hero-plate">
           <div className="hero-plate-in">
-            <Art name="landing-hero" priority className="h-full w-full select-none object-cover" />
+            {/* The traveller stands at ~36% across; a centred phone crop showed
+                sky and river and a sliver of the figure. */}
+            <Art
+              name="landing-hero"
+              priority
+              className="h-full w-full select-none object-cover object-[36%_50%] sm:object-center"
+            />
           </div>
         </div>
         <div className="hero-scrim" />
@@ -481,7 +487,7 @@ export function Landing() {
           </div>
 
           <p className="hero-type mt-9 font-script text-[12px] uppercase leading-[1.8] tracking-[0.1em] text-parchment">
-            Every answer explained · Free · No account needed
+            Every{'\u00a0'}answer{'\u00a0'}explained · Free · No{'\u00a0'}account{'\u00a0'}needed
           </p>
         </div>
       </section>
@@ -787,21 +793,21 @@ export function Landing() {
           <a
             href={hrefFor({ name: 'faq' })}
             onClick={() => sfx.select()}
-            className="font-read text-[13.5px] text-parchment-dim underline-offset-4 transition-colors hover:text-parchment hover:underline"
+            className="inline-flex items-center font-read text-[13.5px] text-parchment-dim underline-offset-4 transition-colors hover:text-parchment hover:underline [@media(pointer:coarse)]:min-h-11"
           >
             FAQ
           </a>
           <a
             href={hrefFor({ name: 'privacy' })}
             onClick={() => sfx.select()}
-            className="font-read text-[13.5px] text-parchment-dim underline-offset-4 transition-colors hover:text-parchment hover:underline"
+            className="inline-flex items-center font-read text-[13.5px] text-parchment-dim underline-offset-4 transition-colors hover:text-parchment hover:underline [@media(pointer:coarse)]:min-h-11"
           >
             Privacy
           </a>
           <a
             href={hrefFor({ name: 'terms' })}
             onClick={() => sfx.select()}
-            className="font-read text-[13.5px] text-parchment-dim underline-offset-4 transition-colors hover:text-parchment hover:underline"
+            className="inline-flex items-center font-read text-[13.5px] text-parchment-dim underline-offset-4 transition-colors hover:text-parchment hover:underline [@media(pointer:coarse)]:min-h-11"
           >
             Terms
           </a>

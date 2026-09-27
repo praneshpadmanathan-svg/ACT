@@ -71,7 +71,7 @@ export const SPRING = { type: 'spring', stiffness: 260, damping: 26, mass: 0.9 }
 export const SPRING_SNAP = { type: 'spring', stiffness: 520, damping: 22, mass: 0.7 } as const;
 
 /** Plain and quick, for fades and anything leaving. */
-export const EASE = { duration: 0.26, ease: [0.22, 1, 0.36, 1] } as const;
+export const EASE = { duration: 0.24, ease: [0.22, 1, 0.36, 1] } as const;
 
 /* --------------------------------------------------------------- variants */
 
@@ -81,14 +81,17 @@ export const staggerList = {
   animate: { transition: { staggerChildren: 0.045, delayChildren: 0.04 } },
 } as const;
 
+/** From a visible start, like the route entrance: Motion's features load
+ *  lazily and a hidden tab runs no frames, and a list parked at opacity 0
+ *  until both arrive is a blank screen (Codex, measured). */
 export const riseItem = {
-  initial: { opacity: 0, y: 14 },
+  initial: { opacity: 0.4, y: 14 },
   animate: { opacity: 1, y: 0, transition: SPRING },
 } as const;
 
 /** For cards that should feel like they were placed rather than faded in. */
 export const popItem = {
-  initial: { opacity: 0, scale: 0.9 },
+  initial: { opacity: 0.4, scale: 0.9 },
   animate: { opacity: 1, scale: 1, transition: SPRING_SNAP },
 } as const;
 
