@@ -286,7 +286,7 @@ export function DiagnosticsPanel() {
 
       <ul className="mb-4 max-h-56 space-y-1.5 overflow-auto rounded-lg border border-leather-700 bg-leather-950/60 p-3">
         {[...events].reverse().map((e, i) => (
-          <li key={`${e.at}-${i}`} className="font-mono text-[11px] leading-relaxed">
+          <li key={`${e.at}-${i}`} className="break-all font-mono text-[11px] leading-relaxed">
             <span
               className={e.level === 'error' ? 'text-blood-text' : 'text-gold'}
               role="img"

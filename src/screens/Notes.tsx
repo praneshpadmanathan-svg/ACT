@@ -239,7 +239,7 @@ export function NoteReader({ pageId }: { pageId: string }) {
             </Button>
           )}
 
-          <div className="mt-5 flex items-center justify-between gap-3">
+          <div className="mt-5 flex items-start justify-between gap-3">
             {siblings.prev ? (
               <a
                 href={hrefFor({ name: 'note', page: siblings.prev.id })}
@@ -247,7 +247,7 @@ export function NoteReader({ pageId }: { pageId: string }) {
                 className="min-w-0 flex-1 text-left"
               >
                 <span className="label-quill block">Previous</span>
-                <span className="mt-0.5 block truncate font-read text-[0.95rem] font-medium text-ink">
+                <span className="mt-0.5 line-clamp-2 font-read text-[0.95rem] font-medium leading-snug text-ink">
                   {siblings.prev.title}
                 </span>
               </a>
@@ -261,7 +261,7 @@ export function NoteReader({ pageId }: { pageId: string }) {
                 className="min-w-0 flex-1 text-right"
               >
                 <span className="label-quill block">Next</span>
-                <span className="mt-0.5 block truncate font-read text-[0.95rem] font-medium text-ink">
+                <span className="mt-0.5 line-clamp-2 font-read text-[0.95rem] font-medium leading-snug text-ink">
                   {siblings.next.title}
                 </span>
               </a>

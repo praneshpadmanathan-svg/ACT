@@ -299,7 +299,7 @@ export function QuestionRunner({
   return (
     <div>
       {/* ------------------------------------------------------------- HUD */}
-      <div className="panel mb-5 p-4 sm:p-5">
+      <div className="panel relative mb-5 p-4 sm:p-5">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
           <div className="min-w-0">
             <h1 className="heading truncate text-[13px]" style={{ color: accent }}>

@@ -370,6 +370,10 @@ export function ToolDock({
            clear the content beneath it; cornered, it stacks above the buttons
            in the dock's own flex column. */
         inline && 'absolute right-0 top-[calc(100%+0.6rem)] z-50',
+        /* On a phone the buttons sit well left of the screen edge, so a
+           right-anchored 20rem panel ran 38px off the left. There the button
+           row is static and the panel spans the question card it sits in. */
+        inline && 'max-sm:left-0 max-sm:w-auto',
       )}
     >
       <div className="mb-3 flex items-center justify-between">
@@ -379,7 +383,7 @@ export function ToolDock({
         <button
           type="button"
           onClick={() => setOpen(null)}
-          className="hud-icon h-7 w-7"
+          className="hud-icon h-7 w-7 [@media(pointer:coarse)]:h-11 [@media(pointer:coarse)]:w-11"
           aria-label="Close"
         >
           <Glyph name="cross" size={14} />
@@ -415,7 +419,7 @@ export function ToolDock({
 
   if (inline) {
     return (
-      <div className="relative flex gap-2">
+      <div className="flex gap-2 sm:relative">
         {buttons}
         {panel}
       </div>

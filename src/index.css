@@ -1504,7 +1504,7 @@
      cream and the eye had nowhere to land. */
 
   .task-well {
-    @apply relative flex gap-3 rounded-xl p-3 sm:gap-4 sm:p-4;
+    @apply relative flex gap-3 rounded-2xl p-3 sm:gap-4 sm:p-4;
     background-color: oklch(var(--c-leather-900) / 0.55);
     border: 1px solid oklch(var(--c-leather-700) / 0.45);
     box-shadow: var(--e-flush);

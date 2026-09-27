@@ -961,3 +961,9 @@ p {
 .landing-bank-count {
   font-size: clamp(3.4rem, 12vw, 6rem);
 }
+
+/* When the track card has nothing to say, the daily card stands alone in the
+   column; let the last card fill it so both columns end on one line. */
+.home-side > :last-child {
+  flex: 1 1 auto;
+}

@@ -515,7 +515,7 @@ function DailyCard() {
          elevation 2 that lifted on hover, which put it in a shouting match with
          the hero directly above it — and the hero is frequently the daily's own
          first step, so the screen was competing with itself. */
-      className={`panel-quiet mb-6 flex w-full items-center gap-4 p-5 text-left sm:p-6 ${
+      className={`panel-quiet mb-6 flex w-full items-center gap-4 p-6 text-left sm:p-7 ${
         done ? 'opacity-80' : ''
       }`}
     >
@@ -678,7 +678,7 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
         : 'oklch(var(--c-woods-text))';
 
   return (
-    <section className="panel-quiet mb-6 p-5 sm:p-6">
+    <section className="panel-quiet mb-6 p-6 sm:p-7">
       <div className="mb-5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <h3 className="heading text-[15px]">Your weekly plan</h3>
         {days !== null && (

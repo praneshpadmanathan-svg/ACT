@@ -213,6 +213,9 @@ export function StudyScreen({ section }: { section?: string }) {
             );
           })}
         </m.ol>
+        {/* Room for Wizzy, who is fixed to the bottom corner and about 150px
+            tall: without it the last landmarks sat under him at full scroll. */}
+        {!chooseRoad && heardPrologue && <div aria-hidden="true" className="h-40" />}
       </Page>
 
       {/* One Wizzy at a time: his standing tip bubble is also labelled "Wizzy
