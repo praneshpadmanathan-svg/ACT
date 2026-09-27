@@ -905,7 +905,7 @@
     "figures": [
       {
         "label": "Table 1",
-        "caption": "",
+        "caption": "Time for the reaction to finish at five concentrations of Catalyst X",
         "type": "table",
         "head": [
           "Concentration (mol/L)",
@@ -936,7 +936,7 @@
       },
       {
         "label": "Figure 1",
-        "caption": "",
+        "caption": "Time to completion against concentration for Catalysts X and Y",
         "type": "chart",
         "kind": "line",
         "xLabel": "Concentration (mol/L)",
@@ -1011,7 +1011,7 @@
     "figures": [
       {
         "label": "Table 1",
-        "caption": "",
+        "caption": "Absorbance of the dye after 30 minutes at five light intensities",
         "type": "table",
         "head": [
           "Light intensity (lux)",
@@ -1042,7 +1042,7 @@
       },
       {
         "label": "Figure 1",
-        "caption": "",
+        "caption": "Absorbance over one hour at 200 lux and at 800 lux",
         "type": "chart",
         "kind": "line",
         "xLabel": "Time",
@@ -1117,7 +1117,7 @@
     "figures": [
       {
         "label": "Table 1",
-        "caption": "",
+        "caption": "Period at five string lengths, with a 50 g bob",
         "type": "table",
         "head": [
           "String length (cm)",
@@ -1148,7 +1148,7 @@
       },
       {
         "label": "Figure 1",
-        "caption": "",
+        "caption": "Period at five bob masses, with a 100 cm string",
         "type": "chart",
         "kind": "bar",
         "xLabel": "Bob mass (g)",
@@ -1192,7 +1192,7 @@
     "figures": [
       {
         "label": "Table 1",
-        "caption": "",
+        "caption": "Height after 21 days at five watering intervals",
         "type": "table",
         "head": [
           "Watering interval (days)",
@@ -1223,7 +1223,7 @@
       },
       {
         "label": "Figure 1",
-        "caption": "",
+        "caption": "Height over 28 days for seedlings watered every day and every 4 days",
         "type": "chart",
         "kind": "line",
         "xLabel": "Day",
@@ -2421,7 +2421,7 @@
         "type": "table",
         "head": [
           "Oil",
-          "Viscosity (Pa*s)",
+          "Viscosity (Pa·s)",
           "Terminal velocity (m/s)"
         ],
         "rows": [
@@ -2452,8 +2452,8 @@
         "caption": "The 2.0 mm sphere in oil A at four temperatures",
         "type": "table",
         "head": [
-          "Temperature (deg C)",
-          "Viscosity of oil A (Pa*s)",
+          "Temperature (°C)",
+          "Viscosity of oil A (Pa·s)",
           "Terminal velocity (m/s)"
         ],
         "rows": [

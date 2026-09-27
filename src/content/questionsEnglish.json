@@ -1578,7 +1578,7 @@
       },
       {
         "id": "D",
-        "text": "DELETE the underlined portion (capitalizing \"She\")."
+        "text": "For example,"
       }
     ],
     "answer": "B",
@@ -1586,7 +1586,7 @@
       "A": "\"Similarly\" implies a comparison that does not exist between the rolls and her looking.",
       "B": "Correct — the relationship is simple sequence.",
       "C": "There is no contrast to signal.",
-      "D": "Grammatical, but the two sentences then sit side by side with nothing to say the second follows the first. \"Then\" is what makes the pause a consequence of the rolls coming out right."
+      "D": "Her looking at the tray is not an example of anything in the sentence before."
     }
   },
   {
@@ -3138,7 +3138,7 @@
       },
       {
         "id": "D",
-        "text": "DELETE the underlined portion (capitalizing \"He\")."
+        "text": "For instance,"
       }
     ],
     "answer": "B",
@@ -3146,7 +3146,7 @@
       "A": "There is no contrast between fixing the machine and washing pans.",
       "B": "Correct — the relationship is simple sequence.",
       "C": "Also signals a contrast that does not exist.",
-      "D": "The sentence survives the deletion, but the sequence does not: without \"Then\" there is nothing to say the washing came after the four minutes rather than instead of them."
+      "D": "Washing the pans is not an instance of fixing the machine."
     }
   },
   {
@@ -11860,7 +11860,7 @@
       },
       {
         "id": "C",
-        "text": " but she"
+        "text": "but she"
       },
       {
         "id": "D",
@@ -19174,7 +19174,7 @@
     "topic": "run-ons",
     "difficulty": "hard",
     "passage": "ep33",
-    "context": "A slow movement can now end in its own quiet«, moreover the shape of a symphony became audible.»",
+    "context": "A slow movement could now end in its own quiet«, moreover the shape of a symphony became audible.»",
     "choices": [
       {
         "id": "A",

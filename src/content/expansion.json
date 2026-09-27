@@ -2787,11 +2787,11 @@
           },
           {
             "id": "B",
-            "text": " — the swell that came through at midnight"
+            "text": "— the swell that came through at midnight"
           },
           {
             "id": "C",
-            "text": " — the swell that came through at midnight —"
+            "text": "— the swell that came through at midnight —"
           },
           {
             "id": "D",
@@ -5519,24 +5519,24 @@
         "section": "math",
         "topic": "word problems",
         "difficulty": "easy",
-        "context": "A worker earns 18 per hour. How much is earned in a 35-hour week?",
+        "context": "A worker earns $18 per hour. How much is earned in a 35-hour week?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "630"
+            "text": "$630"
           },
           {
             "id": "B",
-            "text": "53"
+            "text": "$53"
           },
           {
             "id": "C",
-            "text": "17"
+            "text": "$17"
           },
           {
             "id": "D",
-            "text": "1260"
+            "text": "$1260"
           }
         ],
         "answer": "A",
@@ -5800,7 +5800,7 @@
           },
           {
             "id": "D",
-            "text": "1/4"
+            "text": "3/16"
           }
         ],
         "answer": "A",
@@ -5808,7 +5808,7 @@
           "A": "With a common denominator the numerators add to 4/8, which reduces to 1/2.",
           "B": "Adding the denominators as well as the numerators doubles the bottom.",
           "C": "Multiplying the fractions instead of adding them gives this value.",
-          "D": "This is half the correct sum, as though 4/8 reduced to a quarter."
+          "D": "Keeps the first numerator and adds the denominators, which is not how fractions add."
         }
       },
       {
@@ -6179,24 +6179,24 @@
         "section": "math",
         "topic": "word problems",
         "difficulty": "easy",
-        "context": "Tickets cost 12 each. What do seven tickets cost?",
+        "context": "Tickets cost $12 each. What do seven tickets cost?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "84"
+            "text": "$84"
           },
           {
             "id": "B",
-            "text": "19"
+            "text": "$19"
           },
           {
             "id": "C",
-            "text": "5"
+            "text": "$5"
           },
           {
             "id": "D",
-            "text": "96"
+            "text": "$96"
           }
         ],
         "answer": "A",
@@ -7499,24 +7499,24 @@
         "section": "math",
         "topic": "word problems",
         "difficulty": "easy",
-        "context": "A shirt costs 24 and a hat costs 15. What is the change from 50?",
+        "context": "A shirt costs $24 and a hat costs $15. What is the change from $50?",
         "practiceOnly": true,
         "choices": [
           {
             "id": "A",
-            "text": "11"
+            "text": "$11"
           },
           {
             "id": "B",
-            "text": "39"
+            "text": "$39"
           },
           {
             "id": "C",
-            "text": "26"
+            "text": "$26"
           },
           {
             "id": "D",
-            "text": "35"
+            "text": "$35"
           }
         ],
         "answer": "A",
@@ -7861,7 +7861,7 @@
         "id": "exp26-math-086",
         "section": "math",
         "topic": "statistics",
-        "difficulty": "medium",
+        "difficulty": "easy",
         "context": "The mean of five numbers is 12. What is their sum?",
         "practiceOnly": true,
         "choices": [
@@ -10237,7 +10237,7 @@
         "id": "exp26-math-158",
         "section": "math",
         "topic": "matrices",
-        "difficulty": "medium",
+        "difficulty": "easy",
         "context": "Which matrix is the additive identity for 2 × 2 matrices?",
         "practiceOnly": true,
         "choices": [
@@ -10699,7 +10699,7 @@
         "id": "exp26-math-172",
         "section": "math",
         "topic": "exponents & radicals",
-        "difficulty": "hard",
+        "difficulty": "easy",
         "context": "What is (x²y³)³ in simplest form?",
         "practiceOnly": true,
         "choices": [
@@ -10831,7 +10831,7 @@
         "id": "exp26-math-176",
         "section": "math",
         "topic": "trigonometry",
-        "difficulty": "hard",
+        "difficulty": "easy",
         "context": "For what angle between 0° and 90° does sin equal cos?",
         "practiceOnly": true,
         "choices": [
@@ -11359,7 +11359,7 @@
         "id": "exp26-math-192",
         "section": "math",
         "topic": "exponents & radicals",
-        "difficulty": "hard",
+        "difficulty": "easy",
         "context": "If 3ˣ = 81, what is x?",
         "practiceOnly": true,
         "choices": [
@@ -11950,39 +11950,6 @@
         }
       },
       {
-        "id": "exp26-math-210",
-        "section": "math",
-        "topic": "quadratics",
-        "difficulty": "hard",
-        "context": "What is the sum of the roots of x² - 7x + 10 = 0?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "7"
-          },
-          {
-            "id": "B",
-            "text": "10"
-          },
-          {
-            "id": "C",
-            "text": "-7"
-          },
-          {
-            "id": "D",
-            "text": "5"
-          }
-        ],
-        "answer": "A",
-        "why": {
-          "A": "The roots are 2 and 5, and their sum is the 7 the middle term shows.",
-          "B": "This is the product of the roots rather than the total of them.",
-          "C": "The sum takes the opposite sign of the middle coefficient, so it is positive.",
-          "D": "This is the larger of the two roots, with the smaller not yet added."
-        }
-      },
-      {
         "id": "exp26-math-211",
         "section": "math",
         "topic": "sequences",
@@ -12019,7 +11986,7 @@
         "id": "exp26-math-212",
         "section": "math",
         "topic": "exponents & radicals",
-        "difficulty": "hard",
+        "difficulty": "easy",
         "context": "What is √8 · √2?",
         "practiceOnly": true,
         "choices": [
@@ -12052,7 +12019,7 @@
         "id": "exp26-math-213",
         "section": "math",
         "topic": "circles",
-        "difficulty": "hard",
+        "difficulty": "easy",
         "context": "The radius of a circle is tripled. By what factor does its circumference change?",
         "practiceOnly": true,
         "choices": [
@@ -12079,39 +12046,6 @@
           "B": "Squaring the factor is what happens to the area, not the circumference.",
           "C": "Doubling the factor confuses the 2 in the formula with the scaling.",
           "D": "Cubing the factor would apply to a volume rather than a length."
-        }
-      },
-      {
-        "id": "exp26-math-214",
-        "section": "math",
-        "topic": "lines & angles",
-        "difficulty": "hard",
-        "context": "Each interior angle of a regular polygon measures 150°. How many sides has it?",
-        "practiceOnly": true,
-        "choices": [
-          {
-            "id": "A",
-            "text": "12"
-          },
-          {
-            "id": "B",
-            "text": "6"
-          },
-          {
-            "id": "C",
-            "text": "150"
-          },
-          {
-            "id": "D",
-            "text": "10"
-          }
-        ],
-        "answer": "A",
-        "why": {
-          "A": "Each exterior angle is 30°, and 360 divided by 30 gives twelve sides.",
-          "B": "A six-sided polygon has interior angles of 120° rather than 150°.",
-          "C": "This is the size of one interior angle rather than the count of sides.",
-          "D": "A ten-sided polygon has interior angles of 144° rather than 150°."
         }
       },
       {
@@ -12547,7 +12481,7 @@
         "id": "exp26-math-228",
         "section": "math",
         "topic": "area & volume",
-        "difficulty": "hard",
+        "difficulty": "easy",
         "context": "The radius of a circle is doubled. By what factor does its area change?",
         "practiceOnly": true,
         "choices": [
@@ -12580,7 +12514,7 @@
         "id": "exp26-math-229",
         "section": "math",
         "topic": "triangles",
-        "difficulty": "hard",
+        "difficulty": "easy",
         "context": "In a 30-60-90 triangle, the shortest side is 5. What is the hypotenuse?",
         "practiceOnly": true,
         "choices": [

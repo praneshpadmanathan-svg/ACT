@@ -592,7 +592,7 @@
       },
       {
         "id": "C",
-        "text": "2√17"
+        "text": "2√2"
       },
       {
         "id": "D",
@@ -603,7 +603,7 @@
     "why": {
       "A": "Radicals do not add under a single radical sign.",
       "B": "Correct — 5√2 + 3√2 = 8√2.",
-      "C": "Comes from incorrectly combining radicands.",
+      "C": "Subtracts the radicals — 5√2 − 3√2 — instead of adding them.",
       "D": "Multiplies the coefficients instead of adding."
     }
   },
@@ -2240,38 +2240,6 @@
     }
   },
   {
-    "id": "m071",
-    "section": "math",
-    "topic": "coordinate geometry",
-    "difficulty": "medium",
-    "context": "Line k has equation 3x − 4y = 12. What is its slope?",
-    "choices": [
-      {
-        "id": "A",
-        "text": "3/4"
-      },
-      {
-        "id": "B",
-        "text": "−3/4"
-      },
-      {
-        "id": "C",
-        "text": "4/3"
-      },
-      {
-        "id": "D",
-        "text": "3"
-      }
-    ],
-    "answer": "A",
-    "why": {
-      "A": "Correct — solving for y gives y = (3/4)x − 3.",
-      "B": "Sign error when dividing by −4.",
-      "C": "4/3 divides 4 by 3; solving for y puts the 3 on top instead.",
-      "D": "Reads the x-coefficient directly."
-    }
-  },
-  {
     "id": "m072",
     "section": "math",
     "topic": "functions",
@@ -2688,38 +2656,6 @@
     }
   },
   {
-    "id": "m085",
-    "section": "math",
-    "topic": "quadratics",
-    "difficulty": "hard",
-    "context": "The product of two consecutive positive even integers is 168. What is their sum?",
-    "choices": [
-      {
-        "id": "A",
-        "text": "22"
-      },
-      {
-        "id": "B",
-        "text": "26"
-      },
-      {
-        "id": "C",
-        "text": "28"
-      },
-      {
-        "id": "D",
-        "text": "30"
-      }
-    ],
-    "answer": "B",
-    "why": {
-      "A": "The pair 10 and 12 sums to 22 but multiplies to 120, short of 168.",
-      "B": "Correct — 12 × 14 = 168, and 12 + 14 = 26.",
-      "C": "A sum of 28 would need 14 and 14, which are the same integer.",
-      "D": "The pair 14 and 16 sums to 30 but multiplies to 224, well past 168."
-    }
-  },
-  {
     "id": "m086",
     "section": "math",
     "topic": "functions",
@@ -2787,7 +2723,7 @@
     "id": "m088",
     "section": "math",
     "topic": "area & volume",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "context": "A cone and a cylinder share the same radius and height. If the cylinder holds 48 cm³, how much does the cone hold?",
     "choices": [
       {
@@ -2915,7 +2851,7 @@
     "id": "p36-math-alg-exponential-log-d3-0001",
     "section": "math",
     "topic": "logarithms",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "context": "What is the value of log₂(64)?",
     "choices": [
       {
@@ -3203,7 +3139,7 @@
     "id": "p36-math-alg-polynomials-d3-0001",
     "section": "math",
     "topic": "quadratics",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "context": "What is the product (x + 4)(x − 6) written in standard form?",
     "choices": [
       {
@@ -4099,7 +4035,7 @@
     "id": "p36-math-fun-domain-range-d4-0001",
     "section": "math",
     "topic": "functions",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "context": "What is the range of f(x) = (x − 2)² + 5?",
     "choices": [
       {
@@ -4739,7 +4675,7 @@
     "id": "p36-math-geo-circles-d3-0001",
     "section": "math",
     "topic": "circles",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "context": "A circle has a radius of 6 units. What is its area, in square units?",
     "choices": [
       {
@@ -4771,7 +4707,7 @@
     "id": "p36-math-geo-circles-d4-0001",
     "section": "math",
     "topic": "circles",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "context": "A circle has radius 12. What is the arc length of a 60° arc?",
     "choices": [
       {
@@ -5219,7 +5155,7 @@
     "id": "p36-math-geo-solids-d3-0001",
     "section": "math",
     "topic": "area & volume",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "context": "A rectangular prism has length 4, width 5, and height 6. What is its volume?",
     "choices": [
       {
@@ -5251,7 +5187,7 @@
     "id": "p36-math-geo-solids-d4-0001",
     "section": "math",
     "topic": "area & volume",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "context": "What is the volume of a cylinder with radius 3 and height 10?",
     "choices": [
       {
@@ -5475,7 +5411,7 @@
     "id": "p36-math-geo-triangles-d4-0001",
     "section": "math",
     "topic": "triangles",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "context": "A triangle has a base of 14 and an area of 84. What is its height?",
     "choices": [
       {
@@ -5763,7 +5699,7 @@
     "id": "p36-math-ies-data-tables-d4-0001",
     "section": "math",
     "topic": "statistics",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "context": "A table shows a company's quarterly profits: Q1 $40,000, Q2 $55,000, Q3 $35,000, Q4 $70,000. By what percent did profit increase from Q3 to Q4?",
     "choices": [
       {
@@ -6467,7 +6403,7 @@
     "id": "p36-math-nq-exponents-radicals-d4-0001",
     "section": "math",
     "topic": "exponents & radicals",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "context": "Simplify: 8^(2/3).",
     "choices": [
       {
@@ -8320,38 +8256,6 @@
     }
   },
   {
-    "id": "m134",
-    "section": "math",
-    "topic": "sequences",
-    "difficulty": "hard",
-    "context": "A sequence is defined by a₁ = 2 and aₙ₊₁ = 3aₙ − 1. What is a₄?",
-    "choices": [
-      {
-        "id": "A",
-        "text": "41"
-      },
-      {
-        "id": "B",
-        "text": "40"
-      },
-      {
-        "id": "C",
-        "text": "14"
-      },
-      {
-        "id": "D",
-        "text": "122"
-      }
-    ],
-    "answer": "A",
-    "why": {
-      "A": "Correct — a₂ = 3(2) − 1 = 5, a₃ = 3(5) − 1 = 14, and a₄ = 3(14) − 1 = 41.",
-      "B": "This subtracts 1 only at the final step rather than at every step.",
-      "C": "14 is a₃. One more application of the rule is needed.",
-      "D": "This applies the rule a fourth time, producing a₅."
-    }
-  },
-  {
     "id": "m135",
     "section": "math",
     "topic": "sequences",
@@ -9152,38 +9056,6 @@
     }
   },
   {
-    "id": "m160",
-    "section": "math",
-    "topic": "lines & angles",
-    "difficulty": "medium",
-    "context": "Two parallel lines are cut by a transversal. One of the eight angles formed measures 118°. What is the measure of its co-interior (same-side interior) partner?",
-    "choices": [
-      {
-        "id": "A",
-        "text": "62°"
-      },
-      {
-        "id": "B",
-        "text": "118°"
-      },
-      {
-        "id": "C",
-        "text": "28°"
-      },
-      {
-        "id": "D",
-        "text": "242°"
-      }
-    ],
-    "answer": "A",
-    "why": {
-      "A": "Correct — same-side interior angles are supplementary when the lines are parallel, so the partner is 180 − 118 = 62°.",
-      "B": "Equal measures belong to corresponding, alternate interior, and vertical pairs, not to same-side interior ones.",
-      "C": "This subtracts from 90°. Same-side interior angles are supplementary, not complementary.",
-      "D": "An angle formed by two intersecting lines is less than 180°."
-    }
-  },
-  {
     "id": "m161",
     "section": "math",
     "topic": "lines & angles",
@@ -9341,38 +9213,6 @@
       "B": "25 solves the equation set equal to 180°, which is the supplementary case.",
       "C": "With x = 15 the two angles total 100°, which is more than 90°.",
       "D": "With x = 20 the two angles total 130°, well past a right angle."
-    }
-  },
-  {
-    "id": "m166",
-    "section": "math",
-    "topic": "lines & angles",
-    "difficulty": "hard",
-    "context": "A regular polygon has interior angles measuring 150° each. How many sides does it have?",
-    "choices": [
-      {
-        "id": "A",
-        "text": "12"
-      },
-      {
-        "id": "B",
-        "text": "10"
-      },
-      {
-        "id": "C",
-        "text": "15"
-      },
-      {
-        "id": "D",
-        "text": "8"
-      }
-    ],
-    "answer": "A",
-    "why": {
-      "A": "Correct — each exterior angle is 180 − 150 = 30°, and exterior angles sum to 360°, so there are 360 ÷ 30 = 12 sides.",
-      "B": "A 10-sided regular polygon has interior angles of 144°.",
-      "C": "15 comes from dividing 150 by 10; the exterior-angle route gives 12.",
-      "D": "A regular octagon has interior angles of 135°."
     }
   },
   {
@@ -9539,7 +9379,7 @@
     "id": "m172",
     "section": "math",
     "topic": "probability",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "context": "The probability that it rains tomorrow is 0.3. What is the probability that it does not rain?",
     "choices": [
       {
@@ -9584,7 +9424,7 @@
       },
       {
         "id": "C",
-        "text": "3/4"
+        "text": "1/4"
       },
       {
         "id": "D",
@@ -9595,7 +9435,7 @@
     "why": {
       "A": "Correct — the primes are 2, 3, 5, 7 and the numbers above 6 are 7, 8. Their union is {2, 3, 5, 7, 8}, five sectors out of eight.",
       "B": "1/2 counts only the four primes and leaves out 8.",
-      "C": "This double counts 7, which belongs to both groups but occupies one sector.",
+      "C": "Counts only the numbers greater than 6 and leaves out the primes.",
       "D": "6/8 adds the four primes and the two large numbers without removing the shared 7."
     }
   },
@@ -9693,38 +9533,6 @@
       "B": "These values satisfy the first equation but give 3 − 7 = −4 in the second.",
       "C": "6 + 4 = 10 works, but 6 − 4 = 2, not 4.",
       "D": "5 + 5 = 10 works, but 5 − 5 = 0, not 4."
-    }
-  },
-  {
-    "id": "m177",
-    "section": "math",
-    "topic": "systems",
-    "difficulty": "medium",
-    "context": "Solve the system 3x + 2y = 16 and x = y + 2.",
-    "choices": [
-      {
-        "id": "A",
-        "text": "x = 4, y = 2"
-      },
-      {
-        "id": "B",
-        "text": "x = 2, y = 4"
-      },
-      {
-        "id": "C",
-        "text": "x = 6, y = 4"
-      },
-      {
-        "id": "D",
-        "text": "x = 3, y = 1"
-      }
-    ],
-    "answer": "A",
-    "why": {
-      "A": "Correct — substituting gives 3(y + 2) + 2y = 16, so 5y = 10, y = 2, and x = 4.",
-      "B": "These reverse the two values; x must exceed y by 2, not fall short of it.",
-      "C": "6 = 4 + 2 satisfies the second equation, but 3(6) + 2(4) = 26, not 16.",
-      "D": "3 = 1 + 2 satisfies the second equation, but 3(3) + 2(1) = 11, not 16."
     }
   },
   {
@@ -10019,7 +9827,7 @@
     "id": "m187",
     "section": "math",
     "topic": "exponents & radicals",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "context": "What is 5⁻²?",
     "choices": [
       {
@@ -11168,38 +10976,6 @@
     }
   },
   {
-    "id": "m223",
-    "section": "math",
-    "topic": "number properties",
-    "difficulty": "medium",
-    "context": "How many positive integer factors does 72 have?",
-    "choices": [
-      {
-        "id": "A",
-        "text": "6"
-      },
-      {
-        "id": "B",
-        "text": "8"
-      },
-      {
-        "id": "C",
-        "text": "12"
-      },
-      {
-        "id": "D",
-        "text": "36"
-      }
-    ],
-    "answer": "C",
-    "why": {
-      "A": "Counts only the factors up to 8 and stops.",
-      "B": "Adds the exponents in 2³·3² and doubles, instead of adding one to each exponent first.",
-      "C": "Correct — 72 = 2³·3², so the count is (3 + 1)(2 + 1) = 12.",
-      "D": "This is half of 72, not a count of its factors."
-    }
-  },
-  {
     "id": "m224",
     "section": "math",
     "topic": "number properties",
@@ -11261,38 +11037,6 @@
       "B": "Correct — the common difference is 7, so the 10th term is 5 + 9(7) = 68.",
       "C": "Multiplies 7 by 10 and drops the first term.",
       "D": "Adds ten steps of 7 to the first term instead of nine."
-    }
-  },
-  {
-    "id": "m226",
-    "section": "math",
-    "topic": "sequences",
-    "difficulty": "easy",
-    "context": "The first four terms of a geometric sequence are 3, 6, 12, and 24. What is the 7th term?",
-    "choices": [
-      {
-        "id": "A",
-        "text": "96"
-      },
-      {
-        "id": "B",
-        "text": "128"
-      },
-      {
-        "id": "C",
-        "text": "192"
-      },
-      {
-        "id": "D",
-        "text": "384"
-      }
-    ],
-    "answer": "C",
-    "why": {
-      "A": "This is the 6th term. One more doubling is needed.",
-      "B": "Uses 2⁷ and drops the first term, 3, entirely.",
-      "C": "Correct — the ratio is 2, so the 7th term is 3(2⁶) = 192.",
-      "D": "Doubles seven times instead of six, landing on the 8th term."
     }
   },
   {
@@ -12512,38 +12256,6 @@
     }
   },
   {
-    "id": "m392",
-    "section": "math",
-    "topic": "circles",
-    "difficulty": "medium",
-    "context": "A central angle of 60° is drawn in a circle of radius 12. What is the length of the arc it cuts off?",
-    "choices": [
-      {
-        "id": "A",
-        "text": "4π"
-      },
-      {
-        "id": "B",
-        "text": "24π"
-      },
-      {
-        "id": "C",
-        "text": "2π"
-      },
-      {
-        "id": "D",
-        "text": "12π"
-      }
-    ],
-    "answer": "A",
-    "why": {
-      "A": "Correct — 60/360 is one sixth of the circumference 2π(12) = 24π, and one sixth of 24π is 4π.",
-      "B": "24π is the whole circumference.",
-      "C": "This takes one sixth of πr instead of 2πr, halving the circumference first.",
-      "D": "This takes half the circumference, which would be a 180° angle."
-    }
-  },
-  {
     "id": "m393",
     "section": "math",
     "topic": "quadratics",
@@ -12803,7 +12515,7 @@
     "id": "m401",
     "section": "math",
     "topic": "coordinate geometry",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "context": "What is the distance between (−1, 4) and (5, −4)?",
     "choices": [
       {
@@ -13059,7 +12771,7 @@
     "id": "m409",
     "section": "math",
     "topic": "matrices",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "context": "What is the determinant of the matrix with first row [2, 1] and second row [3, 4]?",
     "choices": [
       {
@@ -13251,7 +12963,7 @@
     "id": "m415",
     "section": "math",
     "topic": "fractions & percents",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "context": "18 is 40 percent of what number?",
     "choices": [
       {
@@ -13472,70 +13184,6 @@
     }
   },
   {
-    "id": "m422",
-    "section": "math",
-    "topic": "probability",
-    "difficulty": "hard",
-    "context": "Two fair six-sided dice are rolled. What is the probability that the sum of the two numbers is 9?",
-    "choices": [
-      {
-        "id": "A",
-        "text": "1/6"
-      },
-      {
-        "id": "B",
-        "text": "5/36"
-      },
-      {
-        "id": "C",
-        "text": "1/12"
-      },
-      {
-        "id": "D",
-        "text": "1/9"
-      }
-    ],
-    "answer": "D",
-    "why": {
-      "A": "A sum of 9 is not as likely as rolling one chosen face on a single die.",
-      "B": "Five ways would be right for a sum of 8; a sum of 9 has only four.",
-      "C": "This counts 3+6 and 4+5 but misses 6+3 and 5+4, which are separate outcomes.",
-      "D": "Correct — 3+6, 4+5, 5+4 and 6+3 are 4 of the 36 equally likely outcomes."
-    }
-  },
-  {
-    "id": "m423",
-    "section": "math",
-    "topic": "area & volume",
-    "difficulty": "medium",
-    "context": "A right circular cylinder has radius 3 and height 10. What is its volume?",
-    "choices": [
-      {
-        "id": "A",
-        "text": "30π"
-      },
-      {
-        "id": "B",
-        "text": "90π"
-      },
-      {
-        "id": "C",
-        "text": "60π"
-      },
-      {
-        "id": "D",
-        "text": "900π"
-      }
-    ],
-    "answer": "B",
-    "why": {
-      "A": "This multiplies the radius by the height without squaring the radius first.",
-      "B": "Correct — the volume is πr²h, and π(3²)(10) gives 90π.",
-      "C": "This is the lateral surface area, 2πrh, rather than the volume.",
-      "D": "This squares the radius and then also squares the height along with it."
-    }
-  },
-  {
     "id": "m424",
     "section": "math",
     "topic": "area & volume",
@@ -13728,38 +13376,6 @@
     }
   },
   {
-    "id": "m430",
-    "section": "math",
-    "topic": "word problems",
-    "difficulty": "hard",
-    "context": "A car travels 120 miles at 40 miles per hour, then 120 miles at 60 miles per hour. What is its average speed for the whole trip?",
-    "choices": [
-      {
-        "id": "A",
-        "text": "50 mph"
-      },
-      {
-        "id": "B",
-        "text": "48 mph"
-      },
-      {
-        "id": "C",
-        "text": "45 mph"
-      },
-      {
-        "id": "D",
-        "text": "52 mph"
-      }
-    ],
-    "answer": "B",
-    "why": {
-      "A": "This averages the two speeds, which would only be right if each lasted the same time.",
-      "B": "Correct — the trip takes 3 hours then 2 hours, and 240 miles ÷ 5 hours is 48.",
-      "C": "This splits the difference toward the slower leg without using the actual times.",
-      "D": "This leans toward the faster leg, but more of the trip is spent at 40 mph."
-    }
-  },
-  {
     "id": "m431",
     "section": "math",
     "topic": "circles",
@@ -13821,38 +13437,6 @@
       "B": "This takes a sixth of the radius rather than a sixth of the circumference.",
       "C": "This is the whole circumference, 2π(6), with the 60° angle never applied.",
       "D": "Correct — 60° is a sixth of the circle, and a sixth of 12π is 2π."
-    }
-  },
-  {
-    "id": "m433",
-    "section": "math",
-    "topic": "quadratics",
-    "difficulty": "medium",
-    "context": "What is the sum of the roots of x² − 7x + 10 = 0?",
-    "choices": [
-      {
-        "id": "A",
-        "text": "10"
-      },
-      {
-        "id": "B",
-        "text": "7"
-      },
-      {
-        "id": "C",
-        "text": "−7"
-      },
-      {
-        "id": "D",
-        "text": "3"
-      }
-    ],
-    "answer": "B",
-    "why": {
-      "A": "This is the product of the roots, 2 × 5, which is the constant term.",
-      "B": "Correct — the roots are 2 and 5, and their sum matches −b/a, which is 7.",
-      "C": "This copies the coefficient of x without changing its sign, and −b/a is +7.",
-      "D": "This is the difference of the roots, 5 − 2, rather than the sum of them."
     }
   },
   {
@@ -13923,7 +13507,7 @@
     "id": "m436",
     "section": "math",
     "topic": "trigonometry",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "context": "What is the value of sin 150°?",
     "choices": [
       {
@@ -13987,7 +13571,7 @@
     "id": "m438",
     "section": "math",
     "topic": "exponents & radicals",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "context": "Simplify (2x³)⁴.",
     "choices": [
       {
