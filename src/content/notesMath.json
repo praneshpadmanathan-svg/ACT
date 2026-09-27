@@ -685,11 +685,11 @@
             "q": "The system y = 3x + 2 and y = 3x − 5 has how many solutions?",
             "choices": [
               "Exactly one",
-              "Zero",
               "Infinitely many",
+              "Zero",
               "Exactly two"
             ],
-            "answer": 1,
+            "answer": 2,
             "explain": "Both lines have slope 3 but different y-intercepts, so they are parallel and never intersect. Substituting gives 3x + 2 = 3x − 5 → 2 = −5, a false statement confirming no solution."
           }
         ]
@@ -1577,7 +1577,7 @@
               "2π"
             ],
             "answer": 0,
-            "explain": "45/360 = 1/8 of the circle. Total area = 64π, so the sector is 64π/8 = 8π. Choice B computes the arc length instead of the area."
+            "explain": "45/360 = 1/8 of the circle. Total area = 64π, so the sector is 64π/8 = 8π. Choice D is the arc length, not the area."
           }
         ]
       },
@@ -2062,7 +2062,7 @@
               "1/4"
             ],
             "answer": 0,
-            "explain": "Primes from 1 to 8 are 2, 3, 5, 7 — four of them, so 4/8 = 1/2. Choice B comes from forgetting that 2 is prime; choice D from counting only odd primes."
+            "explain": "Primes from 1 to 8 are 2, 3, 5, 7 — four of them, so 4/8 = 1/2. Choice B comes from forgetting that 2 is prime; choice C counts 1 as a prime, which it is not."
           }
         ]
       },

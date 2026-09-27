@@ -2828,7 +2828,7 @@
       },
       {
         "id": "B",
-        "text": "10/84"
+        "text": "125/729"
       },
       {
         "id": "C",
@@ -2842,7 +2842,7 @@
     "answer": "A",
     "why": {
       "A": "Correct — C(5,3)/C(9,3) = 10/84 = 5/42.",
-      "B": "The unreduced form is 10/84, which equals 5/42, so this is not in lowest terms as the intended answer.",
+      "B": "Multiplies (5/9)³, as if each pick were made with replacement. A committee cannot hold the same junior twice, so the picks are without replacement: C(5,3)/C(9,3).",
       "C": "Halves the numerator incorrectly.",
       "D": "Does not follow from the counts."
     }

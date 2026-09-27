@@ -66,9 +66,9 @@
     "intro": "Dashes, colons, and semicolons look fancy but follow strict rules.",
     "rules": [
       [
-        "Dashes travel in pairs",
-        "A pair of dashes sets off non-essential info mid-sentence — like a pair of commas. Open with a dash, close with a dash.",
-        "<i>The plan — bold and risky — worked.</i>"
+        "Dashes: a pair, or one at the end",
+        "A pair of dashes sets off non-essential info mid-sentence — like a pair of commas: open with a dash, close with a dash. A single dash can also end a sentence, introducing a final reveal or explanation.",
+        "<i>The plan — bold and risky — worked.</i> <i>She knew who had taken it — her brother.</i>"
       ],
       [
         "Colon = announcement",
@@ -115,7 +115,7 @@
       [
         "Know the categories",
         "Contrast: however, but, yet, nevertheless. Cause/effect: therefore, thus, so. Addition: also, furthermore.",
-        "<i>Cheap; however, effective.</i> (contrast)"
+        "<i>It is cheap; however, it is effective.</i> (contrast)"
       ],
       [
         "Shorter usually wins",
@@ -144,7 +144,7 @@
         "x+y=10, x−y=4 → add → 2x=14 → x=7, y=3."
       ]
     ],
-    "trap": "Distribute before combining: <i>2(x+4)=18</i> → 2x+8=18. (Dividing by 2 first is faster.)"
+    "trap": "Either route works: distribute (<i>2(x+4)=18</i> → 2x+8=18) or divide both sides by 2 first (x+4=9). Dividing first is faster when the number divides evenly."
   },
   "fraction_falls": {
     "intro": "Fractions, percents, and ratios are the same skill in different clothing.",
@@ -298,8 +298,8 @@
     "rules": [
       [
         "Go back to the text",
-        "Reread the referenced line and its neighbors; never answer from memory.",
-        "<i>According to line 20…</i> → read line 20."
+        "Reread the paragraph the question points to, and its neighbors; never answer from memory.",
+        "<i>In the third paragraph…</i> → reread the third paragraph."
       ],
       [
         "Match paraphrase, not wording",
@@ -371,7 +371,7 @@
       ],
       [
         "Interpolate between points",
-        "For an in-between value, estimate between the two nearest results — never outside the range.",
+        "For an in-between value, estimate between the two nearest results. Past the last point, extend the trend (extrapolate) — the answer should keep going the way the data were going.",
         "At 35°: between 30°(6.8) and 40°(9.0) ≈ 7.9."
       ]
     ],

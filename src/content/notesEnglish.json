@@ -57,12 +57,12 @@
             "type": "check",
             "q": "Two answer choices are both fully grammatical. Choice B is 4 words; choice D is 11 words and adds a detail already stated earlier in the paragraph. What does ACT want?",
             "choices": [
-              "B, because it is more concise and the detail is redundant",
+              "It is impossible to tell without the passage",
               "D, because more specific writing is stronger writing",
               "Whichever one matches the sentence’s tone",
-              "It is impossible to tell without the passage"
+              "B, because it is more concise and the detail is redundant"
             ],
-            "answer": 0,
+            "answer": 3,
             "explain": "Concision is an explicit ACT scoring value. When two choices are equally correct, the shorter one wins — and repeating information already given is redundancy, which is always an error on this test."
           }
         ]
@@ -150,12 +150,12 @@
             "type": "check",
             "q": "With 40 seconds left you have 4 questions unanswered. Best move?",
             "choices": [
-              "Bubble a letter for all 4 immediately, then read whichever you can",
+              "Bubble only the ones you can read in time",
               "Carefully solve one and leave three blank",
               "Read all four quickly, then bubble",
-              "Bubble only the ones you can read in time"
+              "Bubble a letter for all 4 immediately, then read whichever you can"
             ],
-            "answer": 0,
+            "answer": 3,
             "explain": "Guessing first guarantees you cannot run out of time with blanks. Four blind guesses average one point; one carefully solved question averages one point — but guessing first lets you also solve some. Always secure the bubbles first."
           }
         ]
@@ -333,12 +333,12 @@
             "type": "check",
             "q": "*The recipe **that my grandmother taught me** uses no measuring cups.* Should this clause be set off by commas?",
             "choices": [
-              "No — \"that\" signals an essential clause",
+              "Only if the grandmother is named",
               "Yes — all descriptive clauses take commas",
               "Yes, but only a closing comma",
-              "Only if the grandmother is named"
+              "No — \"that\" signals an essential clause"
             ],
-            "answer": 0,
+            "answer": 3,
             "explain": "\"that\" introduces essential information identifying which recipe. Deleting it leaves \"The recipe uses no measuring cups,\" which no longer specifies which recipe — proof it is essential, so no commas."
           }
         ]
@@ -449,11 +449,11 @@
             "q": "Which is correct?",
             "choices": [
               "The company lost it’s biggest client, whose contract expired in June.",
-              "The company lost its biggest client, whose contract expired in June.",
               "The company lost its biggest client, who’s contract expired in June.",
+              "The company lost its biggest client, whose contract expired in June.",
               "The company lost its' biggest client, whose contract expired in June."
             ],
-            "answer": 1,
+            "answer": 2,
             "explain": "\"its biggest client\" is possessive (not \"it is biggest client\"). \"whose contract\" is possessive (not \"who is contract\"). And \"its'\" is never a word."
           }
         ]
@@ -517,11 +517,11 @@
             "q": "*The recipe calls for saffron; an expensive spice harvested by hand.* What is wrong?",
             "choices": [
               "Nothing — it is correct",
-              "The second half is a fragment, so it needs a colon or comma, not a semicolon",
+              "\"an expensive spice\" should be plural",
               "It needs a FANBOYS conjunction after the semicolon",
-              "\"an expensive spice\" should be plural"
+              "The second half is a fragment, so it needs a colon or comma, not a semicolon"
             ],
-            "answer": 1,
+            "answer": 3,
             "explain": "\"an expensive spice harvested by hand\" is an appositive phrase, not an independent clause. Since it explains what saffron is, a colon (or a comma) is correct: *...calls for saffron, an expensive spice harvested by hand.*"
           }
         ]
@@ -881,11 +881,11 @@
             "q": "*The list of approved contractors and subcontractors ____ posted online each quarter.*",
             "choices": [
               "are",
-              "is",
+              "have been",
               "were",
-              "have been"
+              "is"
             ],
-            "answer": 1,
+            "answer": 3,
             "explain": "Cross out \"of approved contractors and subcontractors.\" The subject is \"list\" — singular — so \"is posted.\" The plural nouns inside the prepositional phrase are decoys."
           }
         ]
@@ -1029,12 +1029,12 @@
             "type": "check",
             "q": "*The glacier ____ nearly a mile since researchers first surveyed it in 1912.*",
             "choices": [
-              "retreated",
               "has retreated",
+              "retreated",
               "had retreated",
               "was retreating"
             ],
-            "answer": 1,
+            "answer": 0,
             "explain": "\"since [past point]\" signals an action that began in the past and continues to now — present perfect. \"Had retreated\" would require a second, later past event to anchor it."
           }
         ]
@@ -1115,11 +1115,11 @@
             "q": "*The senator, along with two aides ____ she had known for years, boarded the plane.*",
             "choices": [
               "who",
-              "whom",
               "which",
+              "whom",
               "whose"
             ],
-            "answer": 1,
+            "answer": 2,
             "explain": "Substitute into the clause: \"she had known them for years\" — the pronoun is the object of \"known,\" so use *whom*. \"Which\" cannot refer to people."
           }
         ]
@@ -1267,11 +1267,11 @@
             "q": "Which completes the sentence with correct parallelism? *The training emphasized speed, endurance, and ____.*",
             "choices": [
               "how to recover properly",
-              "proper recovery",
+              "to recover properly",
               "recovering in a proper way",
-              "to recover properly"
+              "proper recovery"
             ],
-            "answer": 1,
+            "answer": 3,
             "explain": "\"speed\" and \"endurance\" are single nouns, so the third item must be a noun phrase: \"proper recovery.\" The other options shift to a clause, a gerund phrase, and an infinitive."
           }
         ]
@@ -1742,12 +1742,12 @@
             "type": "check",
             "q": "Sentence 1: *The mill closed in 1998, eliminating 400 jobs.* Sentence 2: *____ the town’s population fell by nearly a third over the next decade.* Best transition?",
             "choices": [
-              "Nevertheless,",
-              "For instance,",
               "Consequently,",
+              "For instance,",
+              "Nevertheless,",
               "On the other hand,"
             ],
-            "answer": 2,
+            "answer": 0,
             "explain": "Job losses causing population decline is a cause-effect relationship. \"Nevertheless\" and \"On the other hand\" signal contrast; \"For instance\" would require sentence 2 to be an example of the closure."
           }
         ]
@@ -1813,11 +1813,11 @@
             "q": "A question asks: \"Which choice most effectively emphasizes the scale of the restoration project?\" Which answer is likely correct?",
             "choices": [
               "The project was carefully planned by a dedicated team.",
-              "The project restored 12,000 acres across four counties.",
               "The project was widely praised by local residents.",
+              "The project restored 12,000 acres across four counties.",
               "The project began in the spring of that year."
             ],
-            "answer": 1,
+            "answer": 2,
             "explain": "The stem asks for scale, so the answer must contain magnitude — acres and counties. The others describe planning, reception, and timing: all fine sentences, none responsive to the instruction."
           }
         ]
@@ -1877,11 +1877,11 @@
             "q": "A sentence begins *\"Neither approach, however, addressed the underlying cost.\"* Where must it go?",
             "choices": [
               "First in the paragraph, as a topic sentence",
-              "After both approaches have been described",
+              "Anywhere, since \"however\" works in any position",
               "Before either approach is described, to preview them",
-              "Anywhere, since \"however\" works in any position"
+              "After both approaches have been described"
             ],
-            "answer": 1,
+            "answer": 3,
             "explain": "\"Neither approach\" refers back to two things already introduced, and \"however\" signals a contrast with what preceded. Both pointers require prior context, so the sentence must follow the descriptions of both approaches."
           }
         ]

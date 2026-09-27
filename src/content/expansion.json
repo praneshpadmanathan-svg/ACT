@@ -501,7 +501,7 @@
         "section": "english",
         "topic": "sentence order",
         "difficulty": "medium",
-        "context": "[1] The tide turned at four. [2] By six the channel was passable. [3] The boats had been aground since dawn. [4] They were afloat again before dark. Sentence 3 would most logically be placed where?",
+        "context": "[1] The tide turned at four. [2] By six the channel was passable. [3] Three fishing boats had been aground since dawn. [4] All three were afloat again before dark. Sentence 3 would most logically be placed where?",
         "practiceOnly": true,
         "choices": [
           {
@@ -523,8 +523,8 @@
         ],
         "answer": "A",
         "why": {
-          "A": "The grounding comes before the tide turns, so it belongs at the start.",
-          "B": "Between the turning tide and the clearing channel it interrupts the sequence.",
+          "A": "Correct — the grounding comes before the tide turns, and it introduces the boats that \"All three\" in Sentence 4 refers back to.",
+          "B": "Between the clearing channel and the refloating, it breaks into the sequence with something that happened hours earlier.",
           "C": "Placed last it would say the boats were aground after they had floated free.",
           "D": "Placed there it follows the turning tide, though the boats grounded before it."
         }
@@ -2745,7 +2745,7 @@
         "section": "english",
         "topic": "sentence order",
         "difficulty": "hard",
-        "context": "[1] Work began in March. [2] The council agreed to fund the repair. [3] However, the estimate had doubled by spring. [4] The roof was finished before the gales. Sentence 1 would most logically be placed where?",
+        "context": "[1] Work began in May. [2] The council agreed to fund the repair. [3] However, the estimate had doubled by spring. [4] The roof was finished before the gales. Sentence 1 would most logically be placed where?",
         "practiceOnly": true,
         "choices": [
           {
@@ -2767,10 +2767,10 @@
         ],
         "answer": "A",
         "why": {
-          "A": "Work starts once the funding is agreed and the raised estimate is known.",
+          "A": "Correct — work starts once the funding is agreed and the raised estimate is known, and May follows the spring the estimate doubled by.",
           "B": "The repair begins before the reader learns it was ever agreed to.",
           "C": "After the roof is finished, the start of work arrives far too late.",
-          "D": "It would cut between the agreement and the however that answers it."
+          "D": "It would cut between the agreement and the \"however\" that answers it, and put May before the spring the estimate changed in."
         }
       },
       {
@@ -3867,7 +3867,7 @@
         "section": "english",
         "topic": "sentence order",
         "difficulty": "hard",
-        "context": "[1] Aldridge had begun the design years earlier. [2] The commission was announced in June. [3] The letters make this plain. [4] They were found in a bank vault in 1971. Sentence 3 would most logically be placed where?",
+        "context": "[1] Aldridge had begun the design years earlier. [2] The commission was announced in June. [3] His letters, found in a bank vault in 1971, make this plain. [4] The building opened two years later. Sentence 3 would most logically be placed where?",
         "practiceOnly": true,
         "choices": [
           {
@@ -3889,9 +3889,9 @@
         ],
         "answer": "A",
         "why": {
-          "A": "This points at the early start, so the sentence has to follow that claim.",
-          "B": "Standing after the announcement, this appears to refer to the June date.",
-          "C": "After the discovery of the letters, this would refer to the bank vault.",
+          "A": "Correct — \"this\" points at the early start, so the sentence has to follow that claim.",
+          "B": "After the announcement, \"this\" appears to refer to the June date, which needs no proof.",
+          "C": "After the opening, \"this\" would seem to refer to the building being finished.",
           "D": "Placed first, this would have nothing in front of it to refer back to."
         }
       },
@@ -4989,7 +4989,7 @@
         "section": "english",
         "topic": "sentence order",
         "difficulty": "hard",
-        "context": "[1] The water was shut off at seven. [2] By nine the caretaker was going door to door. [3] Nobody had warned the tenants. [4] The notice had gone out to the wrong street. Sentence 3 would most logically be placed where?",
+        "context": "[1] The water was shut off at seven. [2] By nine the caretaker was going door to door to apologize. [3] Nobody had warned the tenants, because the notice had gone out to the wrong street. [4] The water came back on at noon. Sentence 3 would most logically be placed where?",
         "practiceOnly": true,
         "choices": [
           {
@@ -5011,10 +5011,10 @@
         ],
         "answer": "A",
         "why": {
-          "A": "The missing warning explains the rounds, so it belongs before the caretaker sets out.",
-          "B": "The warning is reported missing only after its consequence has been described.",
-          "C": "Placed first it would precede the shut-off there had been no warning of.",
-          "D": "After the wrong-street notice it repeats what has just been explained."
+          "A": "Correct — the missing warning is what the caretaker is apologizing for, so it has to come before he sets out.",
+          "B": "The apology arrives before the reader knows what went wrong.",
+          "C": "Placed first it would come before the shut-off it is explaining.",
+          "D": "After the water is back on, the explanation arrives too late to account for the apology."
         }
       },
       {

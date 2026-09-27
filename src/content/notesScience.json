@@ -82,11 +82,11 @@
             "q": "A question refers to \"the concentration of chlorophyll a\" and you have never studied photosynthesis. What should you do?",
             "choices": [
               "Skip the question — it requires outside knowledge",
-              "Treat \"chlorophyll a\" as a label and find that column or curve in the figure",
+              "Read the entire passage to learn what it means",
               "Guess based on general biology intuition",
-              "Read the entire passage to learn what it means"
+              "Treat \"chlorophyll a\" as a label and find that column or curve in the figure"
             ],
-            "answer": 1,
+            "answer": 3,
             "explain": "Unfamiliar terminology on ACT Science is almost always just a label on an axis, a column header, or a curve. Locate it in the figure and read the data. Fewer than 4 of the 40 questions require any real outside knowledge."
           }
         ]
@@ -392,12 +392,12 @@
             "type": "check",
             "q": "Evidence supporting Scientist 2’s hypothesis necessarily weakens Scientist 1’s hypothesis.",
             "choices": [
-              "True — only one can be correct",
               "False — both mechanisms could contribute simultaneously",
+              "True — only one can be correct",
               "True, but only for Conflicting Viewpoints passages",
               "It depends on the field of science"
             ],
-            "answer": 1,
+            "answer": 0,
             "explain": "Unless the passage states the explanations are mutually exclusive, supporting one does not refute the other. To weaken a hypothesis you must contradict a step in its own reasoning — which is exactly what \"weaken\" questions test."
           }
         ]
@@ -457,7 +457,7 @@
               "Outside knowledge required: lower pH = more acidic.",
               "Lowest value listed is 2.1."
             ],
-            "answer": "**pH 2.1.** This is the single most common outside-knowledge question on the ACT. Also remember it is logarithmic, so pH 2.1 is roughly a thousand times more acidic than pH 5.4 — occasionally tested directly."
+            "answer": "**pH 2.1.** This is the single most common outside-knowledge question on the ACT. Also remember it is logarithmic, so pH 2.1 is about two thousand times more acidic than pH 5.4 (3.3 units, and each unit is a factor of ten) — occasionally tested directly."
           },
           {
             "type": "rule",
@@ -469,11 +469,11 @@
             "q": "A solution changes from pH 6 to pH 3. This means it became:",
             "choices": [
               "3 times more acidic",
-              "1,000 times more acidic",
               "3 times more basic",
+              "1,000 times more acidic",
               "1,000 times more basic"
             ],
-            "answer": 1,
+            "answer": 2,
             "explain": "The pH scale is logarithmic, so each unit is a factor of 10. Dropping 3 units is 10³ = 1,000 times more acidic. Lower pH always means more acidic, which rules out both \"more basic\" choices."
           }
         ]

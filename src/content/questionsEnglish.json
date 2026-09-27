@@ -145,7 +145,7 @@
       },
       {
         "id": "B",
-        "text": ", a rift valley."
+        "text": "a rift valley."
       },
       {
         "id": "C",
@@ -159,7 +159,7 @@
     "answer": "A",
     "why": {
       "A": "Correct — a single dash after a complete clause may introduce an appositive for emphasis.",
-      "B": "Also defensible in isolation, but ACT will not offer two fully correct choices; the dash is what the sentence’s emphatic reveal calls for.",
+      "B": "With no punctuation at all, \"a rift valley\" runs straight into \"notch\" and the sentence reads as nonsense.",
       "C": "A semicolon needs an independent clause after it.",
       "D": "A closing dash at the end of a sentence is not a real construction."
     }
@@ -1409,7 +1409,7 @@
       },
       {
         "id": "C",
-        "text": "which came out dense, or flat, or fused into a single continental mass."
+        "text": "which the rolls came out dense, or flat, or fused into a single continental mass."
       },
       {
         "id": "D",
@@ -1420,7 +1420,7 @@
     "why": {
       "A": "Comma splice — two independent clauses joined by a comma alone.",
       "B": "Turns the second half into a participial phrase, which reads awkwardly and loses the parallel.",
-      "C": "\"which\" would have to refer to \"batches,\" creating a vague reference.",
+      "C": "\"Which\" has no job in what follows — \"the rolls came out dense\" is already a complete clause — so the relative pronoun is left dangling and the sentence falls apart.",
       "D": "Correct — comma + FANBOYS legally joins the two independent clauses."
     }
   },
@@ -4151,7 +4151,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "carries"
+        "text": "carried"
       },
       {
         "id": "B",
@@ -4168,8 +4168,8 @@
     ],
     "answer": "A",
     "why": {
-      "A": "\"Each\" is the sentence's subject and is always singular, regardless of the plural noun (\"children\") that follows it in the prepositional phrase. The verb must be singular: \"carries.\"",
-      "B": "Agrees with the plural \"children,\" but the sentence's actual subject is the singular \"Each\".",
+      "A": "Correct — \"Each\" is the subject and is always singular, whatever plural noun follows it in the prepositional phrase, and the sentence is set in the past (\"visited ... that week\"), so the verb is the singular past \"carried.\"",
+      "B": "Agrees with the plural \"children,\" but the subject is the singular \"Each\" — and the present tense clashes with \"visited.\"",
       "C": "Uses a plural, past-progressive form that doesn't agree with the singular subject \"Each\".",
       "D": "Uses a plural auxiliary that doesn't agree with the singular subject \"Each\"."
     }
@@ -10561,7 +10561,7 @@
     "topic": "run-ons",
     "difficulty": "medium",
     "passage": "ep19",
-    "context": "The twenty minutes was not a suggestion «it was the point at which the cold begins» to be dangerous.",
+    "context": "The twenty minutes was not a «suggestion it was the point at which the cold begins» to be dangerous.",
     "choices": [
       {
         "id": "A",
@@ -11196,7 +11196,7 @@
       },
       {
         "id": "B",
-        "text": "It is not,"
+        "text": "But"
       },
       {
         "id": "C",
@@ -11210,7 +11210,7 @@
     "answer": "B",
     "why": {
       "A": "\"Moreover\" adds a further point in the same direction, and this sentence turns against the previous one.",
-      "B": "The passage is correcting the usual reading, and beginning with the correction itself is the most direct way to mark the reversal.",
+      "B": "Correct — the sentence corrects the usual reading of the result, and \"But\" marks that reversal directly.",
       "C": "\"And so\" presents the second sentence as following from the first, and it contradicts it.",
       "D": "\"Consequently\" claims the same false dependence."
     }
@@ -11584,7 +11584,7 @@
     "topic": "run-ons",
     "difficulty": "medium",
     "passage": "ep21",
-    "context": "Everyone agrees with the principle «nobody believes it applies» to the instrument in front of them.",
+    "context": "Everyone agrees with the «principle nobody believes it applies» to the instrument in front of them.",
     "choices": [
       {
         "id": "A",
@@ -11749,7 +11749,7 @@
     "topic": "transitions",
     "difficulty": "medium",
     "passage": "ep21",
-    "context": "The 1986 instrument sounded better than anything he has made since. «Similarly,» it was unplayable within eight years.",
+    "context": "The 1986 instrument sounded better than anything he has made since. «Similarly, it was» unplayable within eight years.",
     "choices": [
       {
         "id": "A",
@@ -11761,11 +11761,11 @@
       },
       {
         "id": "C",
-        "text": "As a result,"
+        "text": "As a result, it was"
       },
       {
         "id": "D",
-        "text": "In other words,"
+        "text": "In other words, it was"
       }
     ],
     "answer": "B",
@@ -19966,7 +19966,7 @@
     "topic": "colons",
     "difficulty": "medium",
     "passage": "ep35",
-    "context": "He was particular about which nib did which job «: the fine one for streams, the medium for paths.»",
+    "context": "He was particular about which nib did which job «; the fine one for streams, the medium for paths.»",
     "choices": [
       {
         "id": "A",
@@ -19978,7 +19978,7 @@
       },
       {
         "id": "C",
-        "text": "; the fine one for streams, the medium for paths."
+        "text": "the fine one for streams, the medium for paths."
       },
       {
         "id": "D",
@@ -19987,9 +19987,9 @@
     ],
     "answer": "D",
     "why": {
-      "A": "A colon closes up against the word before it; the space in front of it is a typographical error.",
+      "A": "A semicolon joins two things that could each stand alone, and what follows is a list of examples, not a clause.",
       "B": "This puts the colon between the two items of the list instead of in front of them.",
-      "C": "A semicolon joins two things that could each stand alone, and what follows is a list rather than a clause.",
+      "C": "With no punctuation, the list runs straight into \"job\" and the reader cannot tell where the sentence turns.",
       "D": "Correct — the colon sits tight against \"job\" and introduces the two examples that follow."
     }
   },

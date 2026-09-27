@@ -152,11 +152,11 @@
             "q": "You have finished reading a Social Science passage in 3 minutes but could not follow the third paragraph’s argument. What is the best move?",
             "choices": [
               "Re-read paragraph 3 carefully before starting the questions",
-              "Move to the questions — you will re-read paragraph 3 only if a question sends you there",
+              "Re-read the whole passage more slowly",
               "Skip the passage and come back later",
-              "Re-read the whole passage more slowly"
+              "Move to the questions — you will re-read paragraph 3 only if a question sends you there"
             ],
-            "answer": 1,
+            "answer": 3,
             "explain": "Perhaps two of the nine questions will touch that paragraph, and those questions will tell you exactly which lines matter. Pre-emptively re-reading spends time on content you may never be asked about — the most common way students run out of time on this section."
           }
         ]
@@ -313,10 +313,10 @@
             "choices": [
               "Unbridled enthusiasm",
               "Complete indifference",
-              "Qualified appreciation",
-              "Bitter contempt"
+              "Bitter contempt",
+              "Qualified appreciation"
             ],
-            "answer": 2,
+            "answer": 3,
             "explain": "ACT passages come from published nonfiction and literature, where authors are rarely absolute. Moderate, hedged attitudes (\"qualified,\" \"cautious,\" \"measured\") are correct far more often than extremes — a pattern you can use to eliminate before even returning to the text."
           }
         ]
@@ -452,12 +452,12 @@
             "type": "check",
             "q": "A correct ACT inference is best described as:",
             "choices": [
-              "A creative interpretation of the passage’s themes",
               "A conclusion that must be true given what the passage states",
+              "A creative interpretation of the passage’s themes",
               "The most likely explanation for the events described",
               "Any conclusion a thoughtful reader might reach"
             ],
-            "answer": 1,
+            "answer": 0,
             "explain": "ACT inferences are logical necessities, not plausible readings. If a choice *could* be false while everything in the passage remains true, it is not the answer — this standard resolves nearly every hard inference question."
           }
         ]
