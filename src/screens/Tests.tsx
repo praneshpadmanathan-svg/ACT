@@ -246,6 +246,8 @@ function TestSession({ config }: { config: string }) {
      counted — it is not time spent answering. */
   const sectionStartRef = useRef<number>(Date.now());
   const sectionSecRef = useRef<Partial<Record<SectionId, number>>>({});
+  /** Sections already finished, so a second finish for one cannot double-record. */
+  const completedRef = useRef<Set<number>>(new Set());
 
   /* This one *is* state, because the pacing checkpoint renders from it. Reset
      at every section boundary alongside `sectionStartRef`. */
@@ -360,6 +362,7 @@ function TestSession({ config }: { config: string }) {
                 startedAtRef.current = Date.now();
                 sectionStartRef.current = Date.now();
                 setAnsweredCount(0);
+                completedRef.current = new Set();
                 liveAnswersRef.current = new Map();
                 sfx.warn();
                 setStage({ kind: 'section', index: 0 });
@@ -431,6 +434,10 @@ function TestSession({ config }: { config: string }) {
   const questions = questionsBySection[sectionId] ?? [];
 
   const completeSection = (records: AnswerRecord[]) => {
+    /* The last answer's advance and the timer running out can both land here
+       for one section; only the first counts. */
+    if (completedRef.current.has(stageIndex)) return;
+    completedRef.current.add(stageIndex);
     const nextAnswers = { ...answersBySection, [sectionId]: records };
     setAnswersBySection(nextAnswers);
     sectionSecRef.current[sectionId] = Math.round((Date.now() - sectionStartRef.current) / 1000);
@@ -444,11 +451,13 @@ function TestSession({ config }: { config: string }) {
     // Score everything.
     const scores: Partial<Record<SectionId, number>> = {};
     const raw: Partial<Record<SectionId, [number, number]>> = {};
+    const answered: Partial<Record<SectionId, number>> = {};
     for (const id of sectionIds) {
       const rs = nextAnswers[id] ?? [];
       const total = questionsBySection[id]?.length ?? rs.length;
       const correct = rs.filter((r) => r.correct).length;
       raw[id] = [correct, total];
+      answered[id] = rs.filter((r) => r.chosen !== null).length;
       scores[id] = scaleScore(total ? correct / total : 0);
     }
 
@@ -458,6 +467,7 @@ function TestSession({ config }: { config: string }) {
       scores,
       composite: compositeOf(scores),
       raw,
+      answered,
       durationSec: Math.round((Date.now() - startedAtRef.current) / 1000),
       sections: sectionIds,
       sectionSec: { ...sectionSecRef.current },
@@ -705,7 +715,11 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
 
           <div className="num mt-5 text-[80px] leading-none text-gold">{result.composite}</div>
           <p className="mt-1 font-script text-[12px] uppercase tracking-wide text-ink-faint">
-            Composite
+            {(['english', 'math', 'reading'] as const).every((s) => result.sections.includes(s))
+              ? 'Composite'
+              : result.sections.length === 1
+                ? 'Section score'
+                : 'Average score'}
           </p>
           <ScoreCaveat kind="test" className="mx-auto mt-2.5 max-w-sm" />
 

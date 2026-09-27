@@ -8,10 +8,10 @@ import { useState } from 'react';
 import { LIBRARY_STATS, PATH_BY_ID, SECTIONS } from '@/content';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
+import { dueQuestionIds } from '@/lib/normalize';
 import {
   DAILY_SIZE,
   dailyDone,
-  dueForReview,
   estimatedComposite,
   rankProgress,
   trackStatus,
@@ -62,7 +62,7 @@ export function Home() {
 
   const { pct, next } = rankProgress(progress.xp);
   const estimate = estimatedComposite(progress);
-  const reviewDue = dueForReview(progress).length;
+  const reviewDue = dueQuestionIds(progress).length;
   /* Only topics with a drill behind them, since the card's whole job is to
      open one — see `drillable`. Over-fetched and then cut to four, so a topic
      with no drill costs a slot in the list rather than the list itself. */

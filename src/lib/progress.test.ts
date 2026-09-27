@@ -625,6 +625,40 @@ describe('recordTest', () => {
     expect(recordTest(progress(), partialResult).xpGained).toBe(250);
   });
 
+  it('counts only answered questions, and pays nothing for a section left blank', () => {
+    const result: TestResult = {
+      id: 't4',
+      at: Date.now(),
+      scores: {},
+      composite: 10,
+      raw: { english: [2, 50], math: [0, 45] },
+      answered: { english: 3, math: 0 },
+      durationSec: 100,
+      sections: ['english', 'math'],
+    };
+    const out = recordTest(progress(), result);
+    const today = Object.keys(out.progress.tally.daily).sort().at(-1)!;
+    expect(out.progress.tally.daily[today]).toBe(3);
+    expect(out.xpGained).toBe(250);
+  });
+
+  it('records the same sitting once, however many times it arrives', () => {
+    const result: TestResult = {
+      id: 't5',
+      at: Date.now(),
+      scores: {},
+      composite: 20,
+      raw: { english: [30, 50] },
+      durationSec: 100,
+      sections: ['english'],
+    };
+    const once = recordTest(progress(), result).progress;
+    const twice = recordTest(once, result);
+    expect(twice.xpGained).toBe(0);
+    expect(twice.progress.testHistory).toHaveLength(1);
+    expect(twice.progress.xp).toBe(once.xp);
+  });
+
   it("counts a test's questions toward today's weekly-goal tally", () => {
     const result: TestResult = {
       id: 't3',

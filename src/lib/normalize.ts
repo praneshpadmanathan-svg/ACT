@@ -6,7 +6,8 @@
    optional `notes` array. Normalising here means the runner never has to
    know which library a question came from. */
 
-import type { Question, SectionId, ZoneQuestion } from '@/types';
+import type { Progress, Question, SectionId, ZoneQuestion } from '@/types';
+import { dueForReview } from './progress';
 import type { RunnableQuestion } from '@/components/QuestionRunner';
 import { getPassage, getQuestion, getZone, TOPIC_BY_ZONE_ALIAS, ZONE_QUIZZES } from '@/content';
 import { canonicalTopic, isZoneLabel, seeded, shuffle } from '@/lib/utils';
@@ -231,6 +232,14 @@ for (const [zoneId, questions] of Object.entries(ZONE_QUIZZES)) {
 /** The question an id names, from either bank, ready for the runner.
  *  `undefined` when it names nothing — a question retired by a content edit,
  *  which the caller should skip rather than treat as an error. */
+/** Review ids that are due *and* still name a question. `dueForReview` cannot
+ *  check the second part — progress.ts stays off the question bank for first
+ *  paint — so an id retired by a content rewrite was counted on Home ("Review 3
+ *  questions") and then absent from the session it opened. Count with this. */
+export function dueQuestionIds(p: Progress): string[] {
+  return dueForReview(p).filter((qid) => runnableById(qid) !== undefined);
+}
+
 export function runnableById(qid: string): RunnableQuestion | undefined {
   const drill = getQuestion(qid);
   if (drill) return fromDrillQuestion(drill);

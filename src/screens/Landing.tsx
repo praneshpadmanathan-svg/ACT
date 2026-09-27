@@ -24,6 +24,7 @@ import { PATH_BY_ID } from '@/content/zones';
 import { LIBRARY_STATS } from '@/content/stats';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
+import { landmarksCleared } from '@/lib/progress';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import { Button, Eyebrow } from '@/components/ui';
@@ -297,7 +298,7 @@ export function Landing() {
 
   /* Counted from the same content the map counts, so the greeting cannot
      claim a total the world does not have. */
-  const cleared = Object.keys(progress.zonesCleared).length;
+  const cleared = landmarksCleared(progress);
   const totalLandmarks = REGION_ORDER.reduce((n, id) => n + (PATH_BY_ID[id]?.nodes.length ?? 0), 0);
 
   const heroRef = usePointerDepth<HTMLElement>();

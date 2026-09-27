@@ -21,6 +21,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 // Narrow import: the overlay renders above every screen, so it loads eagerly.
 import { PATH_BY_ID } from '@/content/zones';
 import { useStore } from '@/lib/store';
+import { landmarksCleared } from '@/lib/progress';
 import { useRoute } from '@/lib/router';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
@@ -139,7 +140,7 @@ export function StoryOverlay() {
     () => REGION_ORDER.reduce((n, id) => n + (PATH_BY_ID[id]?.nodes.length ?? 0), 0),
     [],
   );
-  const cleared = Object.keys(progress.zonesCleared).length;
+  const cleared = landmarksCleared(progress);
 
   const dialogRef = useRef<HTMLDivElement>(null);
   const [chapter, setChapter] = useState<Chapter | null>(null);

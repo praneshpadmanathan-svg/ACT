@@ -10,7 +10,7 @@
 
 import { createClient, type SupabaseClient, type User } from '@supabase/supabase-js';
 import type { Progress } from '@/types';
-import { emptyProgress } from './progress';
+import { normalizeProgress } from './progress';
 import { reportWarn } from './report';
 
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined;
@@ -311,7 +311,7 @@ export function compactForCloud(p: Progress): CloudProgress {
 /** Rebuild a full Progress from a row. The attempt log starts empty, which is
  *  correct: it is a local recent-history convenience, not shared state. */
 export function expandFromCloud(row: CloudProgress): Progress {
-  return { ...emptyProgress(), ...row, attempts: [] };
+  return normalizeProgress({ ...row, attempts: [] });
 }
 
 /* Three outcomes, not two.

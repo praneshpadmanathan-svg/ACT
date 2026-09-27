@@ -9,7 +9,8 @@
 
 import { TOPICS_BY_SECTION } from '@/content';
 import type { Progress, SectionId } from '@/types';
-import { dayKey, dueForReview, weakestTopics } from './progress';
+import { dayKey, weakestTopics } from './progress';
+import { dueQuestionIds } from './normalize';
 import { canonicalTopic } from './utils';
 
 /* ------------------------------------------------------------- the calendar */
@@ -169,7 +170,7 @@ export function todaysPlan(
 ): TodaysPlan {
   const steps: PlanStep[] = [];
 
-  const due = dueForReview(p).length;
+  const due = dueQuestionIds(p).length;
   if (due > 0) {
     steps.push({
       kind: 'review',

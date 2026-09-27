@@ -736,7 +736,7 @@ describe('trackStatus', () => {
       composite,
       raw: {},
       durationSec: 100,
-      sections: ['english'],
+      sections: ['english', 'math', 'reading', 'science'],
     });
     const one = withEstimate(0.8, {
       targetScore: 30,
@@ -763,7 +763,7 @@ describe('trackStatus', () => {
       composite,
       raw: {},
       durationSec: 100,
-      sections: ['english'],
+      sections: ['english', 'math', 'reading', 'science'],
     });
     const history = [test(Date.now() - 30 * DAY, 22), test(Date.now() - 2 * DAY, 22)];
 

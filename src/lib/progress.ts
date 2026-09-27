@@ -16,7 +16,7 @@ import type { IconName } from '@/components/Icon';
    which is reached from `main.tsx`, so whatever it imports is in the first
    paint — and the barrel is 738 kB of question bank to obtain one lookup
    table built from a 10 kB file. */
-import { getZone, SECTION_BY_ZONE_TOPIC, TOPIC_BY_ZONE_ALIAS } from '@/content/zones';
+import { ALL_ZONES, getZone, SECTION_BY_ZONE_TOPIC, TOPIC_BY_ZONE_ALIAS } from '@/content/zones';
 import { DEFAULT_HERO_ID, isHeroId } from '@/game/heroes';
 import { readJSON, STORAGE_KEYS, writeJSON } from './storage';
 import { canonicalTopic } from './utils';
@@ -369,7 +369,19 @@ export function migrateLegacy(current: Progress): Progress {
 /* ------------------------------------------------------------------ loading */
 
 export function loadProgress(key: string = STORAGE_KEYS.progress): Progress {
-  const stored = readJSON<Partial<Progress> | null>(key, null);
+  return normalizeProgress(readJSON<Partial<Progress> | null>(key, null));
+}
+
+/**
+ * Bring a stored record of any age up to the current shape.
+ *
+ * Every source of progress has to come through here, not only local storage.
+ * A cloud row written before these migrations still holds `zone::` topic keys;
+ * merged unmigrated with a migrated local copy, both spellings survived the
+ * per-key max, were pushed back, and were summed into one on the next load, so
+ * the lifetime answer count grew by the legacy bucket on every sync.
+ */
+export function normalizeProgress(stored: Partial<Progress> | null): Progress {
   const base = emptyProgress();
   /* `let`, because one of the migrations below rebuilds the whole record
      rather than patching a field. Everything up to that point is a field
@@ -1075,8 +1087,16 @@ export function trackStatus(p: Progress): TrackStatus {
      it is always available, where a second test may not be — but the estimate
      and a scored test are two different instruments, and the difference
      between them is a systematic offset, not progress. Subtracting one from
-     the other reports the offset as movement. Two tests, or no number. */
-  const recent = p.testHistory.filter((t) => Date.now() - t.at < 60 * 86_400_000);
+     the other reports the offset as movement. Two tests, or no number.
+
+     Only sittings with all three composite sections compare: a science-only
+     set's "composite" is its science score, and subtracting it from a full
+     composite reported a fall that never happened. */
+  const recent = p.testHistory.filter(
+    (t) =>
+      Date.now() - t.at < 60 * 86_400_000 &&
+      (['english', 'math', 'reading'] as const).every((s) => t.sections.includes(s)),
+  );
   const change =
     recent.length >= 2 ? recent[recent.length - 1]!.composite - recent[0]!.composite : null;
 
@@ -1195,12 +1215,22 @@ export function completeDaily(p: Progress): RecordResult {
 
 export function recordTest(p: Progress, result: TestResult): RecordResult {
   const beforeRank = rankIndexFor(p.xp);
-  const gain = result.sections.length === 4 ? XP.fullTest : XP.testSection * result.sections.length;
+  /* The same sitting can arrive twice — the last answer and the timer can both
+     finish a section in the same instant — and must be paid once. */
+  if (p.testHistory.some((t) => t.id === result.id)) {
+    return { progress: p, xpGained: 0, rankedUp: false, newRankIndex: beforeRank, shieldsSpent: 0 };
+  }
+  /* Pay for sections the student worked, not ones they let run down. */
+  const worked = (id: SectionId) => (result.answered ? (result.answered[id] ?? 0) : 1) > 0;
+  const paid = result.sections.filter(worked).length;
+  const gain = paid === 4 ? XP.fullTest : XP.testSection * paid;
   /* Test answers are not recorded one by one — a timed section is a
      measurement, and it should not reshape the topic tally mid-flight — so
      they never reached the day's count, and a student who sat a forty-minute
      test that day was told they were behind on their weekly goal. */
-  const worked = Object.values(result.raw).reduce((n, pair) => n + (pair?.[1] ?? 0), 0);
+  const answeredCount = result.answered
+    ? Object.values(result.answered).reduce((n, k) => n + (k ?? 0), 0)
+    : Object.values(result.raw).reduce((n, pair) => n + (pair?.[1] ?? 0), 0);
   const today = dayKey();
   const { progress: next, shieldsSpent } = applyDayStreak({
     ...p,
@@ -1208,7 +1238,7 @@ export function recordTest(p: Progress, result: TestResult): RecordResult {
     testHistory: [...p.testHistory, result],
     tally: {
       ...p.tally,
-      daily: { ...p.tally.daily, [today]: (p.tally.daily[today] ?? 0) + worked },
+      daily: { ...p.tally.daily, [today]: (p.tally.daily[today] ?? 0) + answeredCount },
     },
   });
   const afterRank = rankIndexFor(next.xp);
@@ -1220,6 +1250,18 @@ export function recordTest(p: Progress, result: TestResult): RecordResult {
     shieldsSpent,
   };
 }
+
+/* ---------------------------------------------------------------- landmarks */
+
+/** Landmarks cleared, counting only ids that are real landmarks today. Old
+ *  saves carry journey ids from before the rewrite, and counting raw keys let
+ *  a story beat or the "every landmark" badge fire before Study agreed. */
+export function landmarksCleared(p: Progress): number {
+  return Object.keys(p.zonesCleared).filter((id) => getZone(id)).length;
+}
+
+/** How many landmarks there are. */
+export const LANDMARK_COUNT = ALL_ZONES.length;
 
 /* -------------------------------------------------------------------- merge */
 
@@ -1441,18 +1483,18 @@ export const ACHIEVEMENTS: Achievement[] = [
   {
     id: 'zone-5',
     name: 'Trailblazer',
-    detail: 'Clear 5 zones.',
+    detail: 'Clear 5 landmarks.',
     icon: 'map',
     tier: 'bronze',
-    test: (p) => Object.keys(p.zonesCleared).length >= 5,
+    test: (p) => landmarksCleared(p) >= 5,
   },
   {
     id: 'zone-all',
     name: 'Cartographer',
-    detail: 'Clear every zone.',
+    detail: 'Clear every landmark.',
     icon: 'map',
     tier: 'gold',
-    test: (p) => Object.keys(p.zonesCleared).length >= 37,
+    test: (p) => landmarksCleared(p) >= LANDMARK_COUNT,
   },
   {
     id: 'first-test',

@@ -262,6 +262,9 @@ export interface TestResult {
   composite: number;
   /** Section id -> [correct, total] */
   raw: Partial<Record<SectionId, [number, number]>>;
+  /** Section id -> questions actually answered. `raw` counts a blank as
+   *  wrong, which is right for the score and wrong for "how much did you do". */
+  answered?: Partial<Record<SectionId, number>>;
   durationSec: number;
   sections: SectionId[];
   /** Seconds spent in each section, for the pacing breakdown. Optional

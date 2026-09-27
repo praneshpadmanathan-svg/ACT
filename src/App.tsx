@@ -301,11 +301,18 @@ function UpdatePrompt() {
   );
 }
 
-/** Identity of the current screen, so a change of parameter transitions too. */
+/** Identity of the current screen, so a change of parameter transitions too.
+ *
+ *  Every parameter, not the first one present: a drill always has a section,
+ *  so keying on that alone meant switching topic from the palette kept the old
+ *  drill mounted, with its index running past the end of the new topic. */
 function routeKey(route: ReturnType<typeof useRoute>): string {
-  const r = route as Record<string, unknown>;
-  const detail = r.section ?? r.zone ?? r.page ?? r.topic ?? r.id ?? r.mode ?? '';
-  return `${route.name}:${String(detail)}`;
+  const { name, ...params } = route as Record<string, unknown> & { name: string };
+  const detail = Object.keys(params)
+    .sort()
+    .map((k) => `${k}=${String(params[k] ?? '')}`)
+    .join('&');
+  return `${name}:${detail}`;
 }
 
 function renderRoute(route: ReturnType<typeof useRoute>) {

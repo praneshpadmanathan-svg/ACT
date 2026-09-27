@@ -536,6 +536,17 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       const next: Identity = { kind: 'cloud', userId: user.id };
       const name = displayNameOf(user);
 
+      /* Already loaded — a second caller for the same sign-in. Sign-up awaits
+         this while the SIGNED_IN listener fires it too; the later one used to
+         reload progress from disk over the guest world the first had just
+         claimed and merged, and the claim flag was already spent. Only the
+         name can have changed (USER_UPDATED). */
+      if (activeUidRef.current === user.id) {
+        setPlayerName(name);
+        setAuthReady(true);
+        return;
+      }
+
       /* Start from *this account's* own saved progress, not from whatever
          happens to be loaded. Reading progressRef here would fold a guest
          session into whichever account signed in next — so someone who played
@@ -710,6 +721,12 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const clearAuthRedirect = useCallback(() => setAuthRedirect(null), []);
 
   const signOutFn = useCallback(async () => {
+    /* Let go of the account before the network round trip. A pull still in
+       flight checks this ref before merging; left set, it could land after
+       the switch below and merge the account into the guest world. */
+    activeUidRef.current = null;
+    remoteUpdatedAtRef.current = null;
+    if (pushTimer.current) window.clearTimeout(pushTimer.current);
     await cloudSignOut();
     setUserId(null);
     setPlayerName('Traveller');
@@ -756,8 +773,14 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   /** Delete the account itself, and every trace of it on this device. */
   const deleteAccountFn = useCallback(async () => {
+    // As in resetEverything: no write may follow the account out.
+    resettingRef.current = true;
+    if (pushTimer.current) window.clearTimeout(pushTimer.current);
     const result = await cloudDeleteAccount();
-    if (!result.ok) return result;
+    if (!result.ok) {
+      resettingRef.current = false;
+      return result;
+    }
     removeRaw(storageKey);
     removeRaw(STORAGE_KEYS.guest);
     removeRaw(CLAIM_GUEST_KEY);

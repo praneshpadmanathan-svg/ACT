@@ -27,6 +27,7 @@ import {
   ACHIEVEMENTS,
   dailyActivity,
   estimatedComposite,
+  landmarksCleared,
   sectionAccuracy,
   topicStats,
 } from '@/lib/progress';
@@ -150,7 +151,7 @@ export function StatsScreen() {
           />
           <Row
             label="Zones cleared"
-            value={`${Object.keys(progress.zonesCleared).length} / ${LIBRARY_STATS.zones}`}
+            value={`${landmarksCleared(progress)} / ${LIBRARY_STATS.zones}`}
           />
           <Row label="Tests taken" value={String(progress.testHistory.length)} />
           <Row label="Questions in review" value={String(Object.keys(progress.review).length)} />
