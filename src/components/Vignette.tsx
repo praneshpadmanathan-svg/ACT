@@ -17,15 +17,14 @@
 import { useId } from 'react';
 import { cx } from '@/lib/utils';
 
-const INK = '#241a10';
+/* Near-black ink vanishes on the dark theme's leather (1.05:1), so the outline
+   is a token: the same ink on light, a lamp-lit gold rim on dark. */
+const INK = 'var(--vignette-ink)';
 
 export type VignetteName = 'lantern' | 'chest' | 'scroll' | 'compass' | 'campfire';
 
 /**
  * A drawn scene for an empty state.
- *
- * `muted` renders it at low contrast for backgrounds that are already dark;
- * the default is the parchment-lit version used inside panels.
  */
 export function Vignette({
   name,
@@ -46,6 +45,7 @@ export function Vignette({
       viewBox="0 0 120 120"
       className={cx('flex-none', className)}
       aria-hidden="true"
+      focusable="false"
     >
       <defs>
         <linearGradient id={`${uid}-warm`} x1="0.15" y1="0" x2="0.85" y2="1">

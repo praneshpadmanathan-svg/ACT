@@ -84,18 +84,27 @@ function stripComments(src) {
     .replace(/(^|[^:])\/\/[^\n]*/g, (m, p) => p + m.slice(p.length).replace(/./g, ' '));
 }
 
-function walk(dir, out = []) {
+function walk(dir, want, out = []) {
   for (const entry of readdirSync(dir)) {
     const p = join(dir, entry);
-    if (statSync(p).isDirectory()) walk(p, out);
-    else if (/\.tsx$/.test(entry) && !/\.test\.tsx$/.test(entry)) out.push(p);
+    if (statSync(p).isDirectory()) walk(p, want, out);
+    else if (want.test(entry) && !/\.test\.tsx$/.test(entry)) out.push(p);
   }
   return out;
 }
 
+/* Stylesheets too: a `content: '✕'` in CSS is the same font glyph as one typed
+   into JSX, and it slipped through when only .tsx was scanned. */
+const SOURCES = [
+  ['src/components', /\.tsx$/],
+  ['src/screens', /\.tsx$/],
+  ['src/game', /\.tsx$/],
+  ['src', /\.css$/],
+];
+
 const findings = [];
-for (const dir of ['src/components', 'src/screens', 'src/game']) {
-  for (const file of walk(join(ROOT, dir))) {
+for (const [dir, want] of SOURCES) {
+  for (const file of walk(join(ROOT, dir), want)) {
     const raw = readFileSync(file, 'utf8');
     const code = stripComments(raw);
     const lines = code.split('\n');

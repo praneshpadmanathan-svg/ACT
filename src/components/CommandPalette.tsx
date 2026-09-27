@@ -368,7 +368,7 @@ export function CommandPalette({
             <div className="flex items-center gap-3 border-b border-leather-700 px-4 py-3.5">
               {/* No magnifier: the house set has none, and a box with a caret
                   blinking in it after ⌘K needs no help saying what it is. */}
-              <Glyph name="compass" size={17} className="flex-none text-gold-deep" aria-hidden />
+              <Glyph name="compass" size={17} className="flex-none text-gold-deep" />
               {/* `autoFocus` is right here and nowhere else in the app: the
                   palette exists to be typed into, and a dialog you summoned by
                   shortcut that then made you click before typing would be

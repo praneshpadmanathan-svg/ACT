@@ -138,6 +138,7 @@
   [data-theme='dark'],
   .story-overlay {
     color-scheme: dark;
+    --vignette-ink: oklch(var(--c-gold-deep));
 
     --c-leather-950: 17.62% 0.0119 73.11;
     --c-leather-900: 20.54% 0.015 72.5;
@@ -282,6 +283,7 @@
      4.60 on 950 and better on the rest, gold-light 6.51 and up. */
   [data-theme='light'] {
     color-scheme: light;
+    --vignette-ink: #241a10;
     /* The six region fills, light theme.
 
        These were all set to L 44% to clear 4.5:1 on paper, which fixed the
@@ -1329,10 +1331,11 @@
   /* Traps get a cross rather than a dot — it is the one list telling you what
      not to do. */
   .lesson-items-x > li::before {
-    content: '✕';
-    @apply left-0 top-0 h-auto w-auto rounded-none bg-transparent font-sans
-           text-[0.85em] font-bold;
-    color: var(--mark);
+    @apply left-0 top-[0.42em] h-[0.8em] w-[0.8em] rounded-none;
+    background: var(--mark, theme('colors.ink.soft'));
+    -webkit-mask: var(--cross-mask) center / contain no-repeat;
+    mask: var(--cross-mask) center / contain no-repeat;
+    --cross-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.4' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6 6 18'/%3E%3C/svg%3E");
   }
 
   /* The trap is the part you should actually be stopped by, so its plate is

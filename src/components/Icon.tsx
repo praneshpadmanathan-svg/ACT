@@ -80,6 +80,10 @@ interface Props {
   strokeWidth?: number;
 }
 
+/* The grid is 24 units, so at 12px a 1.7 stroke draws 0.85 CSS px and turns to
+   grey fuzz. Never let a stroke render thinner than one pixel. */
+export const minStroke = (width: number, size: number): number => Math.max(width, 24 / size);
+
 export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: Props) {
   const common = {
     width: size,
@@ -87,7 +91,7 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
     viewBox: '0 0 24 24',
     fill: 'none' as const,
     stroke: 'currentColor',
-    strokeWidth,
+    strokeWidth: minStroke(strokeWidth, size),
     strokeLinecap: 'round' as const,
     strokeLinejoin: 'round' as const,
     className,
@@ -157,13 +161,15 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
     case 'flame':
       return (
         <svg {...common}>
-          <path d="M12 2.6c.6 3.4-1.4 4.6-3 6.4a6.9 6.9 0 0 0-1.9 4.7 4.9 4.9 0 0 0 9.8 0c0-1.9-.9-3-1.8-4.2-.5 1-1.2 1.6-2 1.9.5-3.2-.3-6-1.1-8.8Z" />
-          <path
-            d="M12 20.7a2.6 2.6 0 0 1-2.6-2.6c0-1.5 1.3-2.3 2.6-4 1.3 1.7 2.6 2.5 2.6 4a2.6 2.6 0 0 1-2.6 2.6Z"
-            fill="currentColor"
-            stroke="none"
-            opacity=".55"
-          />
+          <g transform="translate(0 .8)">
+            <path d="M12 2.6c.6 3.4-1.4 4.6-3 6.4a6.9 6.9 0 0 0-1.9 4.7 4.9 4.9 0 0 0 9.8 0c0-1.9-.9-3-1.8-4.2-.5 1-1.2 1.6-2 1.9.5-3.2-.3-6-1.1-8.8Z" />
+            <path
+              d="M12 20.7a2.6 2.6 0 0 1-2.6-2.6c0-1.5 1.3-2.3 2.6-4 1.3 1.7 2.6 2.5 2.6 4a2.6 2.6 0 0 1-2.6 2.6Z"
+              fill="currentColor"
+              stroke="none"
+              opacity=".55"
+            />
+          </g>
         </svg>
       );
 
@@ -210,11 +216,13 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
     case 'spark':
       return (
         <svg {...common} strokeWidth={1.3}>
-          <path
-            d="M12 2.6c.9 5.1 3.4 7.6 8.5 8.5-5.1.9-7.6 3.4-8.5 8.5-.9-5.1-3.4-7.6-8.5-8.5 5.1-.9 7.6-3.4 8.5-8.5Z"
-            fill="currentColor"
-            stroke="none"
-          />
+          <g transform="translate(0 .9)">
+            <path
+              d="M12 2.6c.9 5.1 3.4 7.6 8.5 8.5-5.1.9-7.6 3.4-8.5 8.5-.9-5.1-3.4-7.6-8.5-8.5 5.1-.9 7.6-3.4 8.5-8.5Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </g>
         </svg>
       );
 
@@ -288,8 +296,8 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
     case 'settings':
       return (
         <svg {...common}>
-          <circle cx="12" cy="12" r="3.1" />
-          <path d="M19.5 14.2a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1v.3a2 2 0 1 1-4 0v-.2a1.6 1.6 0 0 0-2.8-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7h-.3a2 2 0 1 1 0-4h.2a1.6 1.6 0 0 0 1.1-2.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 2.7-1.1v-.3a2 2 0 1 1 4 0v.2a1.6 1.6 0 0 0 2.8 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7h.3a2 2 0 1 1 0 4h-.2a1.6 1.6 0 0 0-1.4.9Z" />
+          <circle cx="12" cy="12" r="3" />
+          <path d="M10.2 5L10.2 2.8L13.8 2.8L13.8 5A7.2 7.2 0 0 1 15.7 5.8L17.3 4.2L19.8 6.7L18.2 8.3A7.2 7.2 0 0 1 19 10.2L21.2 10.2L21.2 13.8L19 13.8A7.2 7.2 0 0 1 18.2 15.7L19.8 17.3L17.3 19.8L15.7 18.2A7.2 7.2 0 0 1 13.8 19L13.8 21.2L10.2 21.2L10.2 19A7.2 7.2 0 0 1 8.3 18.2L6.7 19.8L4.2 17.3L5.8 15.7A7.2 7.2 0 0 1 5 13.8L2.8 13.8L2.8 10.2L5 10.2A7.2 7.2 0 0 1 5.8 8.3L4.2 6.7L6.7 4.2L8.3 5.8A7.2 7.2 0 0 1 10.2 5Z" />
         </svg>
       );
 
@@ -384,8 +392,10 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
     case 'quill':
       return (
         <svg {...common}>
-          <path d="M20.4 3.6c-6.4.5-11 3.6-12.8 8.2-.8 2-.9 3.9-.6 5.4 1.5.3 3.4.2 5.4-.6 4.6-1.8 7.7-6.4 8-12.8Z" />
-          <path d="m7 21 5.4-8.4" />
+          <g transform="translate(-1.6 -.3)">
+            <path d="M20.4 3.6c-6.4.5-11 3.6-12.8 8.2-.8 2-.9 3.9-.6 5.4 1.5.3 3.4.2 5.4-.6 4.6-1.8 7.7-6.4 8-12.8Z" />
+            <path d="m7 21 5.4-8.4" />
+          </g>
         </svg>
       );
 
@@ -403,17 +413,19 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
     case 'lantern':
       return (
         <svg {...common}>
-          <path d="M9 2.8h6M12 2.8v2" />
-          <path d="M7.6 4.8h8.8l1.4 3.2H6.2l1.4-3.2Z" />
-          <path d="M6.6 8h10.8v9.4a2.6 2.6 0 0 1-2.6 2.6H9.2a2.6 2.6 0 0 1-2.6-2.6V8Z" />
-          <path d="M10 11.6c0 2 2 2.4 2 4.4 0-2 2-2.4 2-4.4" />
+          <g transform="translate(0 .6)">
+            <path d="M9 2.8h6M12 2.8v2" />
+            <path d="M7.6 4.8h8.8l1.4 3.2H6.2l1.4-3.2Z" />
+            <path d="M6.6 8h10.8v9.4a2.6 2.6 0 0 1-2.6 2.6H9.2a2.6 2.6 0 0 1-2.6-2.6V8Z" />
+            <path d="M10 11.6c0 2 2 2.4 2 4.4 0-2 2-2.4 2-4.4" />
+          </g>
         </svg>
       );
 
     case 'shield':
       return (
         <svg {...common}>
-          <path d="M12 2.8 20 6v6.2c0 4.6-3.6 8-8 9.4-4.4-1.4-8-4.8-8-9.4V6l8-3.2Z" />
+          <path d="M12 3.2 19.5 6v6.2c0 4-3.1 7-7.5 8.6-4.4-1.6-7.5-4.6-7.5-8.6V6L12 3.2Z" />
         </svg>
       );
 
@@ -446,9 +458,11 @@ export function Glyph({ name, size = 18, className, title, strokeWidth = 1.7 }: 
     case 'sword':
       return (
         <svg {...common}>
-          <path d="M19.4 3.2h1.4v1.4L11.6 13.8 10.2 12.4 19.4 3.2Z" />
-          <path d="M9.4 13.2 10.8 14.6 6.6 18.8 5.2 17.4 9.4 13.2Z" />
-          <path d="m4.4 16.8 2.8 2.8M3.2 19.6l1.2 1.2" />
+          <path d="M20 3.5 10.6 12.9" />
+          <path d="M20 3.5v4.2l-2.6 2.6" />
+          <path d="m7.2 16.3 1.2-1.2 1.4 1.4-1.2 1.2" />
+          <path d="M6.4 17.1 4 19.5l.6.6L7 17.7" />
+          <path d="m8.4 13.5 2.2 2.2" />
         </svg>
       );
 

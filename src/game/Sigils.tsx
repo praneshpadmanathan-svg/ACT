@@ -13,6 +13,28 @@ interface SigilProps {
 
 /** Locked zone — a wax seal with an iron hasp across it. */
 export function LockSigil({ size = 18, className }: SigilProps) {
+  /* The seal's 1.1 stroke and 0.8-wide keyhole fall under half a pixel at
+     14px and read as a grey blob, so small sizes get a plain padlock instead. */
+  if (size < 17) {
+    return (
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        className={className}
+        aria-hidden="true"
+        focusable="false"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={Math.max(2, 24 / size)}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+        <rect x="5.5" y="11" width="13" height="9.5" rx="2" fill="currentColor" />
+      </svg>
+    );
+  }
   return (
     <svg
       width={size}
@@ -22,30 +44,32 @@ export function LockSigil({ size = 18, className }: SigilProps) {
       aria-hidden="true"
       focusable="false"
     >
-      {/* wax seal */}
-      <path
-        d="M12 3.4c1.9 0 2.3 1.5 3.9 2.1 1.6.6 2.9-.3 3.6 1.3.7 1.6-.6 2.5-.6 4.2s1.3 2.6.6 4.2c-.7 1.6-2 .7-3.6 1.3-1.6.6-2 2.1-3.9 2.1s-2.3-1.5-3.9-2.1c-1.6-.6-2.9.3-3.6-1.3-.7-1.6.6-2.5.6-4.2s-1.3-2.6-.6-4.2c.7-1.6 2-.7 3.6-1.3C9.7 4.9 10.1 3.4 12 3.4Z"
-        fill="currentColor"
-        opacity="0.55"
-      />
-      <path
-        d="M12 3.4c1.9 0 2.3 1.5 3.9 2.1 1.6.6 2.9-.3 3.6 1.3.7 1.6-.6 2.5-.6 4.2s1.3 2.6.6 4.2c-.7 1.6-2 .7-3.6 1.3-1.6.6-2 2.1-3.9 2.1s-2.3-1.5-3.9-2.1c-1.6-.6-2.9.3-3.6-1.3-.7-1.6.6-2.5.6-4.2s-1.3-2.6-.6-4.2c.7-1.6 2-.7 3.6-1.3C9.7 4.9 10.1 3.4 12 3.4Z"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.1"
-        opacity="0.9"
-      />
-      {/* hasp */}
-      <path
-        d="M9.4 11.2V9.6a2.6 2.6 0 0 1 5.2 0v1.6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <rect x="8.1" y="11.1" width="7.8" height="5.5" rx="1.2" fill="currentColor" />
-      <circle cx="12" cy="13.4" r="0.85" fill="rgba(0,0,0,.45)" />
-      <rect x="11.6" y="13.8" width="0.8" height="1.9" rx="0.4" fill="rgba(0,0,0,.45)" />
+      <g transform="translate(0 1)">
+        {/* wax seal */}
+        <path
+          d="M12 3.4c1.9 0 2.3 1.5 3.9 2.1 1.6.6 2.9-.3 3.6 1.3.7 1.6-.6 2.5-.6 4.2s1.3 2.6.6 4.2c-.7 1.6-2 .7-3.6 1.3-1.6.6-2 2.1-3.9 2.1s-2.3-1.5-3.9-2.1c-1.6-.6-2.9.3-3.6-1.3-.7-1.6.6-2.5.6-4.2s-1.3-2.6-.6-4.2c.7-1.6 2-.7 3.6-1.3C9.7 4.9 10.1 3.4 12 3.4Z"
+          fill="currentColor"
+          opacity="0.55"
+        />
+        <path
+          d="M12 3.4c1.9 0 2.3 1.5 3.9 2.1 1.6.6 2.9-.3 3.6 1.3.7 1.6-.6 2.5-.6 4.2s1.3 2.6.6 4.2c-.7 1.6-2 .7-3.6 1.3-1.6.6-2 2.1-3.9 2.1s-2.3-1.5-3.9-2.1c-1.6-.6-2.9.3-3.6-1.3-.7-1.6.6-2.5.6-4.2s-1.3-2.6-.6-4.2c.7-1.6 2-.7 3.6-1.3C9.7 4.9 10.1 3.4 12 3.4Z"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.1"
+          opacity="0.9"
+        />
+        {/* hasp */}
+        <path
+          d="M9.4 11.2V9.6a2.6 2.6 0 0 1 5.2 0v1.6"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        <rect x="8.1" y="11.1" width="7.8" height="5.5" rx="1.2" fill="currentColor" />
+        <circle cx="12" cy="13.4" r="0.85" fill="rgba(0,0,0,.45)" />
+        <rect x="11.6" y="13.8" width="0.8" height="1.9" rx="0.4" fill="rgba(0,0,0,.45)" />
+      </g>
     </svg>
   );
 }

@@ -168,6 +168,7 @@ export function AchievementBadge({
         height={size}
         viewBox="0 0 48 48"
         aria-hidden="true"
+        focusable="false"
         style={earned ? { filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.45))' } : undefined}
       >
         <defs>
@@ -180,21 +181,21 @@ export function AchievementBadge({
             enough not to be mistaken for the app's several circles. */}
         <path
           d={twelveGon(24, 24, 21)}
-          fill={earned ? `url(#${uid}-m)` : '#2a2118'}
-          stroke={earned ? metal.ring : '#463a2a'}
+          fill={earned ? `url(#${uid}-m)` : 'oklch(var(--c-leather-850))'}
+          stroke={earned ? metal.ring : 'oklch(var(--c-leather-600))'}
           strokeWidth="2.2"
           strokeLinejoin="round"
         />
         <path
           d={twelveGon(24, 24, 16)}
           fill="none"
-          stroke={earned ? 'rgba(0,0,0,.24)' : '#3a3022'}
+          stroke={earned ? 'rgba(0,0,0,.24)' : 'oklch(var(--c-leather-700))'}
           strokeWidth="1.6"
         />
       </svg>
       <span
         className="absolute inset-0 flex items-center justify-center"
-        style={{ color: earned ? 'rgba(38,26,10,.82)' : '#5b4c37' }}
+        style={{ color: earned ? 'rgba(38,26,10,.82)' : 'oklch(var(--c-parchment-dim) / .7)' }}
       >
         <Glyph name={icon} size={Math.round(size * 0.42)} strokeWidth={2} />
       </span>

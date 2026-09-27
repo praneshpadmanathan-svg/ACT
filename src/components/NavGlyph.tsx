@@ -1,9 +1,23 @@
+import { Glyph, type IconName, minStroke } from './Icon';
+
 /* Drawn nav glyphs.
 
    Emoji looked amateur next to the illustrations and rendered differently on
    every platform. These are line-drawn at a consistent 24px grid and stroke
    weight so the nav reads as one set — a tent, a map, a tome, a blade, a
-   shield, an hourglass, a crown. */
+   shield, an hourglass, a crown.
+
+   A concept both sets need is drawn once, in `Icon`, and borrowed here, so a
+   gear in the rail and a gear in the command palette are the same gear. */
+
+const SHARED: Partial<Record<GlyphName, IconName>> = {
+  map: 'map',
+  book: 'book',
+  sword: 'sword',
+  gear: 'settings',
+  sound: 'speaker',
+  close: 'cross',
+};
 
 export type GlyphName =
   | 'tent'
@@ -28,13 +42,15 @@ interface Props {
 }
 
 export function NavGlyph({ name, size = 18, className }: Props) {
+  const shared = SHARED[name];
+  if (shared) return <Glyph name={shared} size={size} className={className} />;
   const common = {
     width: size,
     height: size,
     viewBox: '0 0 24 24',
     fill: 'none' as const,
     stroke: 'currentColor',
-    strokeWidth: 1.7,
+    strokeWidth: minStroke(1.7, size),
     strokeLinecap: 'round' as const,
     strokeLinejoin: 'round' as const,
     className,
@@ -46,59 +62,30 @@ export function NavGlyph({ name, size = 18, className }: Props) {
     case 'tent':
       return (
         <svg {...common}>
-          <path d="M12 4 3.5 19h17L12 4Z" />
-          <path d="M12 4v15" />
-          <path d="m12 12 4 7M12 12l-4 7" />
-        </svg>
-      );
-
-    case 'map':
-      return (
-        <svg {...common}>
-          <path d="M9 5 3.5 7.4v11.4L9 16.4l6 2.4 5.5-2.4V5L15 7.4 9 5Z" />
-          <path d="M9 5v11.4M15 7.4v11.4" />
-        </svg>
-      );
-
-    case 'book':
-      return (
-        <svg {...common}>
-          <path d="M4 5.2A1.6 1.6 0 0 1 5.6 3.6H19v14.2H5.6A1.6 1.6 0 0 0 4 19.4V5.2Z" />
-          <path d="M4 19.4a1.6 1.6 0 0 0 1.6 1.6H19" />
-          <path d="M8 8h7M8 11.4h5" />
-        </svg>
-      );
-
-    case 'sword':
-      return (
-        <svg {...common}>
-          <path d="M20 3.5 10.6 12.9" />
-          <path d="M20 3.5v4.2l-2.6 2.6" />
-          <path d="m7.2 16.3 1.2-1.2 1.4 1.4-1.2 1.2" />
-          <path d="M6.4 17.1 4 19.5l.6.6L7 17.7" />
-          <path d="m8.4 13.5 2.2 2.2" />
+          <path d="M12 4.5 3.5 19.5h17L12 4.5Z" />
+          <path d="M12 4.5v15" />
+          <path d="m12 12.5 4 7M12 12.5l-4 7" />
         </svg>
       );
 
     /* The guardians. A blade would have been the obvious choice and is already
        taken by Training — two tabs wearing one icon is worse than a slightly
        less literal glyph, so the duels get the thing standing between you and
-       the region's end: a sealed shield, cracked down the middle. */
+       the region's end: a shield with a jagged crack down the middle. */
     case 'shield':
       return (
         <svg {...common}>
           <path d="M12 3.2 19.5 6v6.2c0 4-3.1 7-7.5 8.6-4.4-1.6-7.5-4.6-7.5-8.6V6L12 3.2Z" />
-          <path d="M12 8.4v7.4" />
-          <path d="m9.6 11 2.4-2.6 2.4 2.6" />
+          <path d="m12.4 7-1.4 3.2 2.2 2-1.6 3.2.6 2.4" />
         </svg>
       );
 
     case 'hourglass':
       return (
         <svg {...common}>
-          <path d="M6.5 3h11M6.5 21h11" />
-          <path d="M7.5 3v3.2c0 2 4.5 3.9 4.5 5.8s-4.5 3.8-4.5 5.8V21" />
-          <path d="M16.5 3v3.2c0 2-4.5 3.9-4.5 5.8s4.5 3.8 4.5 5.8V21" />
+          <path d="M5 3h14M5 21h14" />
+          <path d="M6.5 3v3.2c0 2.2 5.5 3.9 5.5 5.8s-5.5 3.6-5.5 5.8V21" />
+          <path d="M17.5 3v3.2c0 2.2-5.5 3.9-5.5 5.8s5.5 3.6 5.5 5.8V21" />
         </svg>
       );
 
@@ -118,29 +105,13 @@ export function NavGlyph({ name, size = 18, className }: Props) {
         </svg>
       );
 
-    case 'gear':
-      return (
-        <svg {...common}>
-          <circle cx="12" cy="12" r="3.1" />
-          <path d="M12 2.6v2.6M12 18.8v2.6M21.4 12h-2.6M5.2 12H2.6M18.6 5.4l-1.8 1.8M7.2 16.8l-1.8 1.8M18.6 18.6l-1.8-1.8M7.2 7.2 5.4 5.4" />
-        </svg>
-      );
-
     case 'star':
       return (
         <svg {...common} strokeWidth={1.4}>
           <path
-            d="M12 3.2 14.4 9l6.4.5-4.8 4.2 1.4 6.2L12 16.6l-5.4 3.3L8 13.7 3.2 9.5 9.6 9 12 3.2Z"
+            d="M12 3.2l2.6 6.1 6.6.5-5 4.3 1.5 6.5L12 17.2 6.3 20.6l1.5-6.5-5-4.3 6.6-.5L12 3.2Z"
             fill="currentColor"
           />
-        </svg>
-      );
-
-    case 'sound':
-      return (
-        <svg {...common}>
-          <path d="M4.5 9.5v5h3l4 3.5v-12l-4 3.5h-3Z" />
-          <path d="M15 9.4a3.6 3.6 0 0 1 0 5.2M17.6 7a7 7 0 0 1 0 10" />
         </svg>
       );
 
@@ -156,13 +127,6 @@ export function NavGlyph({ name, size = 18, className }: Props) {
       return (
         <svg {...common}>
           <path d="M4 7h16M4 12h16M4 17h16" />
-        </svg>
-      );
-
-    case 'close':
-      return (
-        <svg {...common}>
-          <path d="M6 6l12 12M18 6 6 18" />
         </svg>
       );
 
