@@ -1,4 +1,4 @@
-/* Privacy policy and terms.
+/* Privacy policy, terms, and the cookie and storage list.
 
    Written to be read by the people they apply to, which for this app means
    13-to-17-year-olds. That is not a stylistic preference: a policy a minor
@@ -16,15 +16,24 @@ import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { cloudEnabled } from '@/lib/supabase';
 import { CONTACT } from '@/lib/contact';
+import { BUSINESS } from '@/lib/business';
 import { sfx } from '@/lib/sfx';
 import { LinkButton } from '@/components/ui';
 import { Glyph } from '@/components/Icon';
 import { Art } from '@/components/Art';
 import { LIBRARY_STATS } from '@/content/stats';
 
-const UPDATED = '31 July 2026';
+const UPDATED = '27 September 2026';
 
-export function LegalScreen({ page }: { page: 'privacy' | 'terms' }) {
+type LegalPage = 'privacy' | 'terms' | 'cookies';
+
+const PAGE_LINKS: { page: LegalPage; label: string }[] = [
+  { page: 'privacy', label: 'Privacy policy' },
+  { page: 'terms', label: 'Terms of use' },
+  { page: 'cookies', label: 'Cookies and storage' },
+];
+
+export function LegalScreen({ page }: { page: LegalPage }) {
   const navigate = useNavigate();
   const { hasStarted } = useStore();
 
@@ -52,13 +61,16 @@ export function LegalScreen({ page }: { page: 'privacy' | 'terms' }) {
         </button>
 
         <div className="sheet p-6 sm:p-10">
-          {page === 'privacy' ? <Privacy /> : <Terms />}
+          {page === 'privacy' ? <Privacy /> : page === 'terms' ? <Terms /> : <Cookies />}
 
           <div className="mt-10 flex flex-wrap gap-3 border-t border-paper-edge pt-6">
-            <LinkButton href={hrefFor({ name: page === 'privacy' ? 'terms' : 'privacy' })} trailing>
-              {page === 'privacy' ? 'Read the terms' : 'Read the privacy policy'}
-            </LinkButton>
+            {PAGE_LINKS.filter((l) => l.page !== page).map((l) => (
+              <LinkButton key={l.page} href={hrefFor({ name: l.page })} trailing>
+                {l.label}
+              </LinkButton>
+            ))}
           </div>
+          <OperatorNote />
         </div>
       </div>
     </div>
@@ -79,6 +91,12 @@ function Privacy() {
         can follow you to your phone. That is the whole list. We do not run ads, we do not use
         trackers, and we do not sell anything to anyone.
       </Lead>
+
+      <H>Who we are</H>
+      <P>
+        ACT Command is run by {BUSINESS.name}, {BUSINESS.address}. For anything about your
+        information, write to <A href={`mailto:${CONTACT.privacy}`}>{CONTACT.privacy}</A>.
+      </P>
 
       <H>Playing without an account</H>
       <P>
@@ -166,14 +184,46 @@ function Privacy() {
               you can keep.
             </LI>
             <LI>
-              <B>Delete my account</B> removes your account and your progress. It is immediate and
-              permanent — we do not keep a copy, so please download it first if you want one.
+              <B>Delete my account</B> removes your account and your progress from the live service
+              immediately and permanently, so please download it first if you want one.
             </LI>
           </UL>
+          <P>
+            One honest exception: we take a nightly backup of the progress table so a fault cannot
+            wipe everyone’s work. Backups are private, are never used for anything but restoring the
+            service, and each one is deleted automatically after 30 days. So for up to 30 days after
+            you delete your account, your name and progress (but never your email or password, which
+            are not in the backup) still exist in one of those copies, and then they are gone.
+          </P>
           <P>
             We keep your data until you delete it. If you would rather we did it for you, or you
             have any other question about your information, write to{' '}
             <A href={`mailto:${CONTACT.privacy}`}>{CONTACT.privacy}</A>.
+          </P>
+
+          <H>Your rights</H>
+          <P>Wherever you live, you can:</P>
+          <UL>
+            <LI>
+              <B>See</B> what we hold about you: use Download everything.
+            </LI>
+            <LI>
+              <B>Take it with you</B>: the download is a plain file any program can read.
+            </LI>
+            <LI>
+              <B>Delete</B> it: use Delete my account, or ask us to.
+            </LI>
+            <LI>
+              <B>Correct</B> it: write to us and we will fix it, for example the name on your
+              account.
+            </LI>
+          </UL>
+          <P>
+            We do not sell or share personal information, so there is nothing to opt out of. We
+            answer requests within 30 days, and we will never treat you differently for making one.
+            If you are in the UK or the EU, the reason we hold your account data is to provide the
+            service you asked for, and you can also complain to your local data protection
+            authority.
           </P>
 
           <H>If you are under 13</H>
@@ -189,12 +239,21 @@ function Privacy() {
         </>
       )}
 
+      <H>If you email us</H>
+      <P>
+        If you write to us (to report a question, ask for help, or make a privacy request), we get
+        your email address and whatever you wrote, and we use them only to reply. We delete that
+        correspondence once it is dealt with, unless the law requires us to keep it.
+      </P>
+
       <H>Cookies</H>
       <P>
-        No tracking cookies, and no cookie banner, because there is nothing to consent to. Your
-        browser stores your progress locally
+        We set no cookies at all: no tracking cookies, no advertising cookies, no analytics. Your
+        browser stores your progress and settings locally
         {cloudEnabled ? ', and if you are signed in it holds a token that keeps you signed in' : ''}
-        . That is all.
+        . Every item is listed, with what it is for, on the{' '}
+        <A href={hrefFor({ name: 'cookies' })}>cookies and storage</A> page. None of it is used to
+        track you, so there is no cookie banner: there is nothing to accept or refuse.
       </P>
 
       <H>Changes</H>
@@ -218,6 +277,12 @@ function Terms() {
         ACT Command is a free study aid. Use it to prepare, do not try to break it, and please
         understand that the scores it shows you are practice estimates rather than predictions.
       </Lead>
+
+      <H>Who runs this</H>
+      <P>
+        ACT Command is operated by {BUSINESS.name}, {BUSINESS.address}. You can reach us at{' '}
+        <A href={`mailto:${CONTACT.support}`}>{CONTACT.support}</A>.
+      </P>
 
       <H>Not affiliated with ACT, Inc.</H>
       <P>
@@ -267,6 +332,14 @@ function Terms() {
         </>
       )}
 
+      <H>Price, payments and refunds</H>
+      <P>
+        ACT Command is <B>free</B>. There is no paid tier, no subscription, no in-app purchase and
+        no hidden fee, and we never ask for card details. Because we take no payments, there is
+        nothing to refund. If that ever changes, the price will be shown in full before you pay, and
+        these terms will set out a refund policy before anything is sold.
+      </P>
+
       <H>No warranty</H>
       <P>
         This is provided as it is, for free, with no guarantee that it will always be available or
@@ -279,12 +352,144 @@ function Terms() {
         including how a real test turns out. Preparation helps; it does not come with a promise.
       </P>
 
+      <H>The law that applies</H>
+      <P>
+        These terms are governed by the law of {BUSINESS.jurisdiction}. Nothing in them takes away
+        rights the law where you live gives you and that cannot be signed away.
+      </P>
+
       <H>Changes</H>
       <P>
         These terms can change, and the date at the top will say when they last did. Continuing to
         use the site after a change means you are alright with it.
       </P>
     </article>
+  );
+}
+
+/* ---------------------------------------------------------------- cookies */
+
+/* Every item this app writes to the browser. Keep this list in step with the
+   code: `grep -rn "act-command:" src` finds them all. Items only ever written
+   by retired builds are listed at the end, because a returning visitor may
+   still have them until they are cleaned up. */
+const STORED: { key: string; what: string; kept: string }[] = [
+  {
+    key: 'act-command:progress:v2:…',
+    what: 'Your study progress: XP, topic totals, review queue, bookmarks, test scores.',
+    kept: 'Until you clear your browser data or reset progress.',
+  },
+  {
+    key: 'act-command:prefs:v1',
+    what: 'Your settings: theme, text size, reading font, read-aloud, extra time.',
+    kept: 'Until you clear your browser data.',
+  },
+  {
+    key: 'act-command:muted',
+    what: 'Whether sound effects are off.',
+    kept: 'Until you clear your browser data.',
+  },
+  {
+    key: 'act-command:age-verdict',
+    what: 'A single yes or no: whether this browser passed the age check. Never your birthday.',
+    kept: 'Until you clear your browser data.',
+  },
+  {
+    key: 'act-command:scratch',
+    what: 'The text in the scratch pad beside math questions.',
+    kept: 'Until you clear it or your browser data.',
+  },
+  {
+    key: 'act-command:reported',
+    what: 'The ids of questions you reported, so the flag stays lit.',
+    kept: 'The last 200.',
+  },
+  {
+    key: 'act-command:diagnostics:v1',
+    what: 'The last 40 errors the app hit on this device. Never sent anywhere unless you copy it.',
+    kept: 'The last 40, or until you press Clear.',
+  },
+  {
+    key: 'act-command:guest, seen-intro, wizzy-hidden, save-prompt-dismissed, placement-prompt-dismissed, claim-guest',
+    what: 'Small flags so the app does not show you the same message twice.',
+    kept: 'Until you clear your browser data.',
+  },
+];
+
+const STORED_CLOUD: { key: string; what: string; kept: string }[] = [
+  {
+    key: 'sb-…-auth-token',
+    what: 'Keeps you signed in. Set by Supabase, our account provider.',
+    kept: 'Until you sign out.',
+  },
+  {
+    key: 'sb-…-auth-token-code-verifier',
+    what: 'A one-time value used while a sign-in link is completing.',
+    kept: 'Removed when sign-in finishes.',
+  },
+];
+
+function Cookies() {
+  const rows = cloudEnabled ? [...STORED, ...STORED_CLOUD] : STORED;
+  return (
+    <article>
+      <Title>Cookies and storage</Title>
+      <Updated />
+
+      <Lead>
+        ACT Command sets <B>no cookies</B>. It does keep a few things in your browser’s local
+        storage so the app works: your progress, your settings, and (if you have an account) the
+        token that keeps you signed in. None of it is used for advertising or tracking, and none of
+        it is shared.
+      </Lead>
+
+      <H>What is stored, and why</H>
+      <div className="mt-4 space-y-3">
+        {rows.map((row) => (
+          <div key={row.key} className="rounded-lg border border-paper-edge p-4">
+            <p className="break-words font-mono text-[0.85rem] text-ink">{row.key}</p>
+            <p className="mt-1.5 font-read text-[1rem] font-medium leading-[1.6] text-ink">
+              {row.what}
+            </p>
+            <p className="mt-1 font-read text-[0.92rem] leading-[1.6] text-ink-soft">
+              Kept: {row.kept}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <H>Offline copies of the app</H>
+      <P>
+        So the app keeps working without a connection, your browser also keeps a copy of the app’s
+        own files (code, fonts, pictures) in its cache. These are the same for everyone and contain
+        nothing about you.
+      </P>
+
+      <H>Why there is no cookie banner</H>
+      <P>
+        Consent banners exist for cookies and storage that are not needed to give you the service
+        you asked for, like advertising and analytics. We use none of those. Everything above is
+        needed to make the app do what you asked it to, so there is nothing to accept or refuse. If
+        we ever add anything that is optional, we will ask first and it will stay off until you say
+        yes.
+      </P>
+
+      <H>Clearing it</H>
+      <P>
+        Clearing this site’s data in your browser settings removes all of it. If you play without an
+        account, that also removes your progress for good, because it is the only copy.
+      </P>
+    </article>
+  );
+}
+
+/** The operator's details, at the foot of every legal page. */
+function OperatorNote() {
+  return (
+    <p className="mt-6 font-read text-[0.92rem] leading-[1.6] text-ink-soft">
+      {BUSINESS.name} · {BUSINESS.address} ·{' '}
+      <A href={`mailto:${CONTACT.support}`}>{CONTACT.support}</A>
+    </p>
   );
 }
 

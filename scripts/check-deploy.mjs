@@ -308,6 +308,22 @@ if (personal.length) {
   ok('contact address', `Publishes ${bundleEmails.join(', ')}.`);
 }
 
+/* The operator's name, address and governing law are placeholders in
+   src/lib/business.ts until someone supplies them. A legal page that says
+   "operated by [COMPANY NAME]" names nobody, so a live one fails. */
+const placeholders = [
+  ...new Set(code.match(/\[(?:COMPANY NAME|MAILING ADDRESS|GOVERNING JURISDICTION)\]/g) ?? []),
+];
+if (placeholders.length) {
+  fail(
+    'operator details',
+    `The live build still shows ${placeholders.join(', ')} on the legal pages and footer.`,
+    'Fill in src/lib/business.ts and redeploy.',
+  );
+} else {
+  ok('operator details', 'The legal pages name the operator.');
+}
+
 /* RFC 9116. Scanners and researchers read this before they resort to guessing
    an address or posting the finding publicly, so a stale one is worse than
    none: an expired file is formally unmaintained, and a Contact: line that no

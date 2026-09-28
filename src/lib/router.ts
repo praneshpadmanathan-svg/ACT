@@ -16,6 +16,7 @@ export type Route =
   | { name: 'auth'; mode: AuthMode }
   | { name: 'privacy' }
   | { name: 'terms' }
+  | { name: 'cookies' }
   | { name: 'faq' }
   | { name: 'onboarding' }
   | { name: 'home' }
@@ -69,6 +70,8 @@ export function parseRoute(hash: string = currentHash()): Route {
       return { name: 'privacy' };
     case 'terms':
       return { name: 'terms' };
+    case 'cookies':
+      return { name: 'cookies' };
     case 'faq':
       return { name: 'faq' };
     case 'onboarding':

@@ -233,6 +233,12 @@ export function SettingsScreen() {
         >
           Terms
         </a>
+        <a
+          href={hrefFor({ name: 'cookies' })}
+          className="inline-flex items-center font-read text-[13.5px] text-parchment-dim underline underline-offset-4 transition-colors hover:text-parchment [@media(pointer:coarse)]:min-h-11"
+        >
+          Cookies
+        </a>
         {/* The landing page and the FAQ carry this, but a returning student may
             never see either again; this is the one page they are sure to open. */}
         <p className="w-full font-read text-[12.5px] leading-relaxed text-ink-faint">

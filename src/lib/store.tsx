@@ -33,7 +33,7 @@ import {
   type Rank,
   type RecordResult,
 } from './progress';
-import { readRaw, removeRaw, STORAGE_KEYS, writeRaw } from './storage';
+import { readRaw, removeRaw, STORAGE_KEYS, sweepRetiredData, writeRaw } from './storage';
 import { reportWarn } from './report';
 import { progressKeyFor, retireDeviceAccounts, type Identity } from './identity';
 import { sfx } from './sfx';
@@ -159,6 +159,7 @@ let nextId = 1;
 /* Retire the old on-device credential store before anything reads progress.
    Module scope so it happens exactly once per load, not once per mount. */
 const retired = typeof window === 'undefined' ? null : retireDeviceAccounts();
+if (typeof window !== 'undefined') sweepRetiredData();
 
 export function StoreProvider({ children }: { children: ReactNode }) {
   /* Progress is stored per identity so two people sharing a browser cannot

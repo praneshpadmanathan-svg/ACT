@@ -62,6 +62,10 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
      told. Playing needs no age because playing collects nothing. */
   const [ageChecked, setAgeChecked] = useState(() => rememberedVerdict() !== null);
   const [tooYoung, setTooYoung] = useState(() => rememberedVerdict() === 'too-young');
+  /* Explicit agreement, never pre-ticked. "By creating an account you agree"
+     under the button was notice, not consent, and the people agreeing are
+     mostly minors, for whom a clear affirmative act is the one that counts. */
+  const [agreed, setAgreed] = useState(false);
 
   const startPlaying = () => {
     /* Already signed in: the account is the world. Going through onboarding
@@ -89,6 +93,11 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
 
     if (mode !== 'reset' && !/^\S+@\S+\.\S+$/.test(email)) {
       setError('Enter a valid email address.');
+      return;
+    }
+    if (mode === 'signup' && !agreed) {
+      setError('Tick the box to agree to the terms and privacy policy first.');
+      sfx.wrong();
       return;
     }
     if (mode === 'signup' || mode === 'reset') {
@@ -436,6 +445,39 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
           />
         )}
 
+        {mode === 'signup' && (
+          <label className="flex cursor-pointer items-start gap-3 font-read text-[13.5px] leading-relaxed text-parchment-dim">
+            <input
+              type="checkbox"
+              checked={agreed}
+              onChange={(e) => setAgreed(e.target.checked)}
+              className="mt-0.5 h-5 w-5 flex-none cursor-pointer accent-[oklch(var(--c-gold))]"
+            />
+            <span>
+              I agree to the{' '}
+              <a
+                href={hrefFor({ name: 'terms' })}
+                target="_blank"
+                rel="noopener"
+                className="text-cliffs-text underline underline-offset-2"
+              >
+                terms of use
+              </a>{' '}
+              and have read the{' '}
+              <a
+                href={hrefFor({ name: 'privacy' })}
+                target="_blank"
+                rel="noopener"
+                className="text-cliffs-text underline underline-offset-2"
+              >
+                privacy policy
+              </a>
+              . We keep your email, your name and your progress so it can follow you between
+              devices, and nothing else. No advertising, ever.
+            </span>
+          </label>
+        )}
+
         {error && <ErrorNote>{error}</ErrorNote>}
 
         <Button type="submit" variant="primary" size="lg" className="w-full" disabled={busy}>
@@ -468,21 +510,6 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
             Forgot password?
           </button>
         </div>
-      )}
-
-      {mode === 'signup' && (
-        <p className="mt-4 font-read text-[12.5px] leading-relaxed text-ink-faint">
-          By creating an account you agree to our{' '}
-          <a href={hrefFor({ name: 'terms' })} className="text-cliffs-text hover:underline">
-            terms
-          </a>{' '}
-          and{' '}
-          <a href={hrefFor({ name: 'privacy' })} className="text-cliffs-text hover:underline">
-            privacy policy
-          </a>
-          . We ask for an email so your progress can follow you between devices — nothing else, and
-          never for advertising.
-        </p>
       )}
 
       {mode !== 'reset' && (

@@ -53,6 +53,28 @@ export function writeRaw(key: string, value: string): void {
   }
 }
 
+/**
+ * Delete data a retired build wrote and nothing reads any more.
+ *
+ * The paywall cached each signed-in user's entitlement under
+ * `act-command:entitlement:v1:<account id>`. The paywall is gone, so that is
+ * an account id sitting in a browser for no reason. Data kept "just in case"
+ * is data that can leak, so it goes on the next load.
+ */
+export function sweepRetiredData(): void {
+  if (!available()) return;
+  try {
+    const doomed: string[] = [];
+    for (let i = 0; i < window.localStorage.length; i++) {
+      const key = window.localStorage.key(i);
+      if (key?.startsWith(STORAGE_KEYS.entitlement)) doomed.push(key);
+    }
+    for (const key of doomed) window.localStorage.removeItem(key);
+  } catch {
+    /* A locked-down browser: nothing was stored, so nothing to sweep. */
+  }
+}
+
 export function removeRaw(key: string): void {
   memoryFallback.delete(key);
   if (!available()) return;
@@ -90,8 +112,8 @@ export const STORAGE_KEYS = {
   guest: 'act-command:guest',
   muted: 'act-command:muted',
   seenIntro: 'act-command:seen-intro',
-  /** Unused since the paywall came out. Kept named so a stale value left in
-   *  a returning visitor's localStorage is still findable. The account id is
+  /** Unused since the paywall came out. Kept named so `sweepRetiredData` can find and delete
+   *  what a returning visitor still has. The account id is
    *  appended — nothing
    *  read a cache written under a different sign-in. */
   entitlement: 'act-command:entitlement:v1',

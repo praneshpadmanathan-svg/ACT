@@ -33,6 +33,8 @@ import { NavGlyph, type GlyphName } from '@/components/NavGlyph';
 import { REGION_ORDER } from '@/content/regionFlavor';
 import { Art } from '@/components/Art';
 import { NearViewport } from '@/components/NearViewport';
+import { CONTACT } from '@/lib/contact';
+import { BUSINESS } from '@/lib/business';
 /* The one thing on this page that genuinely needs the question bank, and the
    only reason the bank would be on the critical path. It sits four screens
    down, so it is fetched separately — and, per `NearViewport`, not until
@@ -811,7 +813,26 @@ export function Landing() {
           >
             Terms
           </a>
+          <a
+            href={hrefFor({ name: 'cookies' })}
+            onClick={() => sfx.select()}
+            className="inline-flex items-center font-read text-[13.5px] text-parchment-dim underline-offset-4 transition-colors hover:text-parchment hover:underline [@media(pointer:coarse)]:min-h-11"
+          >
+            Cookies
+          </a>
+          <a
+            href={`mailto:${CONTACT.support}`}
+            className="inline-flex items-center font-read text-[13.5px] text-parchment-dim underline-offset-4 transition-colors hover:text-parchment hover:underline [@media(pointer:coarse)]:min-h-11"
+          >
+            Contact
+          </a>
         </nav>
+        <p className="mx-auto mt-4 max-w-md px-6 font-read text-[12.5px] leading-relaxed text-ink-faint">
+          Copyright {new Date().getFullYear()} {BUSINESS.name} · {BUSINESS.address} ·{' '}
+          <a href={`mailto:${CONTACT.support}`} className="underline underline-offset-2">
+            {CONTACT.support}
+          </a>
+        </p>
         {/* The disclaimer itself now closes act V, where it is legible and
             load-bearing rather than set at twelve point under the nav. It is
             repeated here because this is where a reader looks for it, and a

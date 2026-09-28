@@ -86,12 +86,28 @@ const SettingsScreen = lazy(() => load.settings().then((m) => ({ default: m.Sett
  *  The adventure map used to be here — a full-viewport game view with its own
  *  floating controls, which a nav bar over the top of ruined. Everything the
  *  map became is a normal tabbed screen and wears the nav like the rest. */
-const BARE_ROUTES = new Set(['landing', 'auth', 'onboarding', 'privacy', 'terms', 'faq']);
+const BARE_ROUTES = new Set([
+  'landing',
+  'auth',
+  'onboarding',
+  'privacy',
+  'terms',
+  'cookies',
+  'faq',
+]);
 
 /** Reachable without having started: the front door, everything legal, and the
  *  page that explains what the ACT is — which is no use at all behind a flow
  *  you have to enter before you can read it. */
-const OPEN_ROUTES = new Set(['landing', 'auth', 'privacy', 'terms', 'faq', 'onboarding']);
+const OPEN_ROUTES = new Set([
+  'landing',
+  'auth',
+  'privacy',
+  'terms',
+  'cookies',
+  'faq',
+  'onboarding',
+]);
 
 /* Warm the everyday screens once the browser has nothing better to do.
  *
@@ -331,6 +347,8 @@ function renderRoute(route: ReturnType<typeof useRoute>) {
       return <LegalScreen page="privacy" />;
     case 'terms':
       return <LegalScreen page="terms" />;
+    case 'cookies':
+      return <LegalScreen page="cookies" />;
     case 'faq':
       return <ExplainScreen />;
     case 'onboarding':
