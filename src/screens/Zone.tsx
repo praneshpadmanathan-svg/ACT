@@ -55,8 +55,8 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
   const [priorBest, setPriorBest] = useState<number | null>(null);
 
   /* Whether this landmark actually has more questions than one quiz uses.
-     Thirty of the thirty-seven do not, and the retry copy below has to know
-     which kind it is standing in front of. */
+     Every landmark does today, but the retry copy below still has to know
+     which kind it is standing in front of if a pool ever shrinks. */
   const deepPool = (ZONE_QUIZZES[zoneId]?.length ?? 0) > QUIZ_LENGTH;
 
   const questions = useMemo(() => {

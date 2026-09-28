@@ -22,16 +22,16 @@
           },
           {
             "type": "p",
-            "text": "You can tell them apart instantly. If the question is just a boxed number with four options and no question stem, it is a Conventions question — pick the grammatically correct, most concise option. If there is an actual question written above the choices (\"Which choice most effectively...?\", \"If the writer were to delete...\", \"The best placement for...\"), it is a Production question — the question stem is the instruction, and you must obey it literally."
+            "text": "You can usually tell them apart at a glance. If the question is just a boxed number with four options and no question stem, it is usually a Conventions question — pick the grammatically correct, most concise option. If there is an actual question written above the choices (\"Which choice most effectively...?\", \"If the writer were to delete...\", \"The best placement for...\"), it is a Production question — the question stem is the instruction, and you must obey it literally."
           },
           {
             "type": "list",
             "title": "The five habits of a high English scorer",
             "items": [
               "**Read the whole sentence, not the underlined phrase.** The error is usually caused by something outside the underline — a mismatched subject, a dangling modifier, a verb tense established two clauses earlier.",
-              "**Shortest correct answer wins.** When two choices are both grammatically fine, ACT prefers the concise one. Roughly 15% of the section is decided by this alone.",
+              "**Shortest correct answer wins.** When two choices are both grammatically fine, ACT prefers the concise one. A large share of the section comes down to this.",
               "**Read the choices vertically, not horizontally.** Scan down the four options and ask \"what is changing?\" The difference between them tells you which rule is being tested.",
-              "**\"OMIT the underlined portion\" and \"DELETE\" are correct more often than students expect** — around 40% of the time they appear. ACT loves cutting redundancy.",
+              "**\"OMIT the underlined portion\" and \"DELETE\" are correct more often than students expect**, but judge them like any other choice: cut only when the sentence loses nothing it needs.",
               "**Never pick an answer because it \"sounds fancy.\"** ACT English rewards clarity, not sophistication."
             ]
           },
@@ -170,13 +170,13 @@
       {
         "id": "eng-commas-jobs",
         "topic": "commas",
-        "title": "Commas: The Only Four Jobs They Have",
-        "summary": "ACT tests exactly four legal comma uses. If a comma is not doing one of these, delete it.",
+        "title": "Commas: The Four Main Jobs",
+        "summary": "Four structural jobs cover almost every comma the ACT tests. If a comma is not doing one of them (or a small convention such as dates and places), delete it.",
         "minutes": 9,
         "blocks": [
           {
             "type": "p",
-            "text": "Students lose more English points to commas than to anything else, because they were taught to \"put a comma where you pause.\" ACT does not test pauses. It tests four specific structural jobs. **If a comma is not performing one of these four jobs, it is wrong.**"
+            "text": "Students lose more English points to commas than to anything else, because they were taught to \"put a comma where you pause.\" ACT does not test pauses. It tests four structural jobs, plus a few conventions (coordinate adjectives such as *a cold, damp morning*; dates and places such as *Paris, France, in May*). **If a comma is not doing one of these jobs, it is wrong.**"
           },
           {
             "type": "rule",
@@ -274,7 +274,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Roughly one in six ACT English questions turns on whether a phrase is **essential** (needed to identify what you are talking about — no commas) or **nonessential** (bonus information — commas on both sides). There is one reliable procedure."
+            "text": "A large share of ACT comma questions turn on whether a phrase is **essential** (needed to identify what you are talking about — no commas) or **nonessential** (bonus information — commas on both sides). There is one reliable procedure."
           },
           {
             "type": "rule",
@@ -294,7 +294,7 @@
           {
             "type": "rule",
             "title": "That vs. which",
-            "text": "**That** introduces essential clauses and takes **no** comma: *The bike that I bought last spring already needs new brakes.* **Which** introduces nonessential clauses and takes **a comma**: *My bike, which I bought last spring, already needs new brakes.* On ACT, a comma before \"that\" is essentially always wrong."
+            "text": "**That** introduces essential clauses and takes **no** comma: *The bike that I bought last spring already needs new brakes.* **Which** introduces nonessential clauses and takes **a comma**: *My bike, which I bought last spring, already needs new brakes.* On the ACT, a comma before a \"that\" clause is almost always wrong; the rare exception closes an interruption that sits just before it (*the book, I think, that she lent me*)."
           },
           {
             "type": "rule",
@@ -472,7 +472,7 @@
           },
           {
             "type": "p",
-            "text": "This gives you an enormously useful ACT shortcut: **a semicolon and a period are interchangeable.** So if the answer choices offer both a semicolon and a period as separate options, neither can be the answer — ACT never gives two correct choices. Eliminate both and look at the remaining two."
+            "text": "This gives you an enormously useful ACT shortcut: **a semicolon and a period are interchangeable.** So if two choices differ **only** in a semicolon versus a period at the same spot, neither can be the answer — ACT never gives two correct choices. Eliminate both and look at the remaining two. If the choices also differ in other ways, judge each one on its own."
           },
           {
             "type": "example",
@@ -507,7 +507,7 @@
           {
             "type": "trap",
             "items": [
-              "Never use a semicolon before a FANBOYS conjunction: ✗ *She trained hard; but she missed the cut.* Use a comma there.",
+              "Do not put a semicolon before a FANBOYS conjunction: ✗ *She trained hard; but she missed the cut.* Use a comma there. (The rare exception, clauses already crowded with commas, is almost never what the ACT is testing.)",
               "Never use a semicolon to introduce a list or an explanation — that is the colon’s job.",
               "\"However\" at the start of a clause almost always needs a semicolon or period before it, not a comma."
             ]
@@ -612,7 +612,7 @@
           {
             "type": "rule",
             "title": "The pairing rule (tested constantly)",
-            "text": "If a nonessential element **opens** with a dash, it must **close** with a dash. You may use two commas or two dashes, but **never one comma and one dash**. ACT plants mismatched pairs in roughly every other punctuation set."
+            "text": "If a nonessential element **opens** with a dash, it must **close** with a dash. You may use two commas or two dashes, but **never one comma and one dash**. Mismatched pairs are one of the ACT’s favourite punctuation traps."
           },
           {
             "type": "example",
@@ -637,9 +637,9 @@
           {
             "type": "trap",
             "items": [
-              "A dash cannot join two independent clauses in place of a comma + FANBOYS in formal edited English — but ACT does accept dash + independent clause as an abrupt break. Prefer the semicolon if it is offered and the halves are balanced.",
+              "A single dash may introduce a closing explanation, even a full clause: *The answer was obvious — the seal had failed.* What it cannot do is open an interruption that never closes. If a semicolon or period is offered and the halves are two balanced statements, that is usually the intended fix.",
               "Do not use a dash where the sentence needs no punctuation at all. Random dashes between subject and verb are wrong just like random commas.",
-              "Hyphens (-) are not dashes (—). ACT does not test hyphenation in compound words."
+              "Hyphens (-) are not dashes (—). ACT rarely tests hyphenation in compound words."
             ]
           },
           {
@@ -855,7 +855,7 @@
               "Subject = \"Neither,\" which is always singular.",
               "C and D are plural forms."
             ],
-            "answer": "**B — addresses.** \"Neither\" and \"either\" are singular even when the phrase after them is plural. ACT uses this trap in nearly every English section."
+            "answer": "**B — addresses.** \"Neither\" and \"either\" are singular even when the phrase after them is plural. ACT uses this trap often."
           },
           {
             "type": "example",
@@ -1059,7 +1059,7 @@
               "\"their\" is plural → mismatch on the ACT.",
               "Best fixes: make the noun plural (*All applicants must submit their transcripts*) or use \"his or her.\""
             ],
-            "answer": "On the ACT, prefer ***All applicants must submit their transcripts.*** The test still treats singular \"they\" with a singular antecedent as an agreement error, and it will always offer a cleaner rewrite among the choices."
+            "answer": "On the ACT, prefer ***All applicants must submit their transcripts.*** ACT answer keys have generally treated singular \"they\" with a singular antecedent such as \"each applicant\" as an agreement error, and a rewrite that avoids the question is usually among the choices."
           },
           {
             "type": "rule",
@@ -1183,7 +1183,7 @@
             "items": [
               "Passive voice hides the actor and creates dangling modifiers: *After reviewing the data, the conclusion was revised.* Who reviewed? Nobody named.",
               "A modifier is not fixed by adding commas. It must be **moved**, or the main clause’s subject must change.",
-              "\"Based on\" is a modifier too: ✗ *Based on the survey, the committee’s decision was announced.* The decision was not based on the survey — well, arguably, but ACT wants the actor."
+              "Opening phrases with \"having\" are modifiers too: ✗ *Having reviewed the survey, the decision was announced.* A decision cannot review anything. ✓ *Having reviewed the survey, the committee announced its decision.*"
             ]
           },
           {
@@ -1252,7 +1252,7 @@
               "Right side: the other students — people, not paintings.",
               "Insert \"those of\" to compare paintings to paintings."
             ],
-            "answer": "***...faster than those of the other students in the program.*** ACT tests illogical comparison in nearly every English section; scan every \"than\" and every \"compared to.\""
+            "answer": "***...faster than those of the other students in the program.*** ACT tests illogical comparison often; scan every \"than\" and every \"compared to.\""
           },
           {
             "type": "trap",
@@ -1309,7 +1309,7 @@
               ],
               [
                 "prefer X to Y",
-                "prefer X over/than Y",
+                "prefer X than Y",
                 "I prefer prose to poetry."
               ],
               [
@@ -1333,14 +1333,14 @@
                 "She insisted on paying."
               ],
               [
-                "independent of",
-                "independent from",
-                "The finding is independent of sample size."
+                "depend on",
+                "depend of",
+                "The result depends on the sample size."
               ],
               [
-                "preoccupied with",
-                "preoccupied by",
-                "He was preoccupied with the deadline."
+                "try to",
+                "try and (in formal writing)",
+                "Try to arrive early."
               ],
               [
                 "native to",
@@ -1382,7 +1382,7 @@
           {
             "type": "rule",
             "title": "Verb + preposition changes meaning",
-            "text": "Some pairs are both real but mean different things — read for sense, not sound. *Wait **for** the bus* (await it) vs. *wait **on** a customer* (serve them). *Talk **to*** (one direction) vs. *talk **with*** (mutual). *Compare **to*** (assert likeness) vs. *compare **with*** (examine differences)."
+            "text": "Some pairs are both real but mean different things — read for sense, not sound. *Wait **for** the bus* (await it) vs. *wait **on** a customer* (serve them). *Talk **to*** (one direction) vs. *talk **with*** (mutual). *Compare **to*** (assert likeness) vs. *compare **with*** (examine similarities and differences)."
           },
           {
             "type": "example",
@@ -1714,7 +1714,7 @@
               "So we need contrast.",
               "A and B both signal cause-effect; D signals addition. Only C signals contrast."
             ],
-            "answer": "**C — Nevertheless.** Note that A and B mean the same thing, so neither can be the answer. **Whenever two choices are synonyms, eliminate both immediately** — a powerful shortcut on transition questions."
+            "answer": "**C — Nevertheless.** Note that A and B mean the same thing, so neither can be the answer. **When two choices signal exactly the same relationship and nothing else in them differs, eliminate both** — a useful shortcut on transition questions."
           },
           {
             "type": "example",

@@ -28,7 +28,7 @@
             "type": "table",
             "head": [
               "Passage type",
-              "Order",
+              "Typical position",
               "What it feels like"
             ],
             "rows": [
@@ -64,7 +64,7 @@
             "title": "The four habits of a high Reading scorer",
             "items": [
               "**Read for structure, not for detail.** You cannot memorize the passage. You can remember where things are.",
-              "**Return to the text for every single question.** Even ones you \"remember.\" Memory paraphrases; ACT punishes paraphrase.",
+              "**Return to the text for every single question.** Even ones you \"remember.\" Memory blurs details, and wrong choices are built to match a blurred memory.",
               "**Eliminate rather than select.** Three choices contain a specific flaw. Find the flaw and cross it out.",
               "**Never let a passage’s topic intimidate you.** A Natural Science passage about protein folding requires zero biology knowledge. The answers are in the paragraphs."
             ]
@@ -110,7 +110,7 @@
           },
           {
             "type": "p",
-            "text": "This works because roughly two-thirds of ACT Reading questions are **locate-and-verify** questions. The bottleneck is not comprehension — it is finding the right ten lines fast. A four-word map per paragraph turns a 60-second hunt into a 10-second one."
+            "text": "This works because a large share of ACT Reading questions are **locate-and-verify** questions. The bottleneck is not comprehension — it is finding the right ten lines fast. A four-word map per paragraph turns a 60-second hunt into a 10-second one."
           },
           {
             "type": "list",
@@ -317,7 +317,7 @@
               "Qualified appreciation"
             ],
             "answer": 3,
-            "explain": "ACT passages come from published nonfiction and literature, where authors are rarely absolute. Moderate, hedged attitudes (\"qualified,\" \"cautious,\" \"measured\") are correct far more often than extremes — a pattern you can use to eliminate before even returning to the text."
+            "explain": "ACT passages come from published nonfiction and literature, where authors are rarely absolute. Moderate, hedged attitudes (\"qualified,\" \"cautious,\" \"measured\") are correct far more often than extremes — a pattern that helps you rank the choices, though the text still has the final word."
           }
         ]
       },
@@ -372,7 +372,7 @@
               "D introduces colony size, which the sentence never mentions.",
               "C matches \"most\" with \"the majority\" and \"within 200 meters\" with \"relatively close.\""
             ],
-            "answer": "**C.** Notice the correct answer is the **least assertive** one. On detail questions, hedged language (\"some,\" \"often,\" \"tends to,\" \"in many cases\") is a strong positive signal; absolute language is a strong negative one."
+            "answer": "**C.** Notice the correct answer matches the passage’s **level of certainty**: the passage says \"most,\" so the answer says \"the majority.\" \"All\" and \"never\" are wrong here because the passage hedges, not because absolutes are always wrong — when a passage states something flatly, the flat answer is right."
           },
           {
             "type": "trap",
@@ -411,7 +411,7 @@
           {
             "type": "rule",
             "title": "The one-step rule",
-            "text": "An ACT inference is **one small step** from something explicitly stated — usually a restatement in different words, or a direct implication that cannot be false if the passage is true. If your reasoning takes more than one step, or requires an assumption, you have gone too far."
+            "text": "An ACT inference is **one small step** from something explicitly stated — usually a restatement in different words, or a direct implication that cannot be false if the passage is true. Harder inferences may add a second short step, but each step must be forced by the text. If your reasoning needs an assumption the passage does not supply, you have gone too far."
           },
           {
             "type": "example",
@@ -622,7 +622,7 @@
               "**Direct disagreement** — same question, opposite answers.",
               "**Different emphasis** — same conclusion, different reasons or priorities.",
               "**Broader vs. narrower** — A theorizes, B gives a case study.",
-              "**Advocacy vs. caution** — A enthusiastic, B raising qualifications. This is the most common pairing on the ACT.",
+              "**Advocacy vs. caution** — A enthusiastic, B raising qualifications. A frequent pairing on the ACT.",
               "**Different domains** — same phenomenon, one scientific and one personal."
             ]
           },
@@ -635,7 +635,7 @@
               "D ignores B’s objection entirely.",
               "B: accepts the evidence, disputes its sufficiency."
             ],
-            "answer": "**B.** The most common ACT relationship is **partial agreement with a scope objection** — \"yes, but that is not the whole picture.\" Total disagreement is rarer than students expect, so choices asserting flat contradiction are usually wrong."
+            "answer": "**B.** A very common ACT relationship is **partial agreement with a scope objection** — \"yes, but that is not the whole picture.\" Total disagreement is rarer than students expect, so choices asserting flat contradiction are usually wrong."
           },
           {
             "type": "rule",

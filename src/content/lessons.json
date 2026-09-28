@@ -3,8 +3,8 @@
     "intro": "Commas aren't about where you'd 'pause' — they do only a few legal jobs. Learn the jobs and delete the rest.",
     "rules": [
       [
-        "The four legal comma jobs",
-        "A comma may separate a list, set off an intro element, join two sentences WITH a FANBOYS conjunction, or surround non-essential info. If it isn't doing one of those, cut it.",
+        "The legal comma jobs",
+        "A comma may separate a list, set off an intro element, join two sentences WITH a FANBOYS conjunction, or surround non-essential info. It also separates coordinate adjectives (<i>a cold, damp morning</i>) and the parts of dates and places (<i>Paris, France, in May</i>). If it isn’t doing one of those jobs, cut it.",
         "List: <i>apples, pears, and plums.</i>  Intro: <i>After lunch, we left.</i>"
       ],
       [
@@ -16,6 +16,11 @@
         "Kill the comma splice",
         "Two complete sentences can't be glued with a comma alone. Use a period, a semicolon, or a comma + FANBOYS.",
         "Wrong: <i>It rained, we left.</i>  Right: <i>It rained, so we left.</i>"
+      ],
+      [
+        "Essential or extra?",
+        "A clause that picks out which one you mean is essential and takes no commas; extra information takes a pair. One subject with two verbs (<i>tasted the sauce and added salt</i>) needs no comma before “and”.",
+        "<i>The students who finished early left.</i> (only those)  <i>The students, who finished early, left.</i> (all of them)"
       ]
     ],
     "trap": "Never put a single comma between a subject and its verb. <i>The tall man, ran.</i> is wrong."
@@ -30,13 +35,18 @@
       ],
       [
         "Singular vs. plural possessive",
-        "One owner: add 's (the dog's bone). Plural owner already ending in s: add just an apostrophe (the dogs' bones).",
-        "One boss: <i>boss's office.</i>  Many: <i>bosses' offices.</i>"
+        "One owner: add ’s (the dog’s bone). Plural owner already ending in s: add just an apostrophe (the dogs’ bones). A plural without an s takes ’s (children’s). Two people sharing one thing: mark only the last name.",
+        "One boss: <i>boss’s office.</i>  Many: <i>bosses’ offices.</i>  <i>The children’s books.</i>  <i>Ana and Ben’s car</i> (one car, shared)."
       ],
       [
         "Plurals take no apostrophe",
         "To make an ordinary plural, add s with no apostrophe.",
         "Wrong: <i>apple's 50¢.</i>  Right: <i>apples 50¢.</i>"
+      ],
+      [
+        "Family names and time",
+        "Make a family name plural first, then possessive: <i>the Joneses’ house</i>. Time words take possessives too: <i>a day’s work</i>, <i>two hours’ delay</i>. Separate ownership marks every name: <i>Ana’s and Lia’s bikes</i>.",
+        "<i>the Joneses’ house</i>  <i>two hours’ delay</i>"
       ]
     ],
     "trap": "whose = possessive; who's = who is. Same test as its/it's."
@@ -46,12 +56,12 @@
     "rules": [
       [
         "Find the main verb",
-        "An -ing word by itself is NOT a main verb. If nothing is actually happening in a standalone way, it's a fragment.",
+        "An -ing word by itself is NOT a main verb. If nothing is actually happening in a standalone way, it’s a fragment. A command is complete even with no written subject: <i>Go.</i> has an understood “you”.",
         "Fragment: <i>The team, working hard.</i>  Fixed: <i>The team worked hard.</i>"
       ],
       [
         "Subordinators create dependence",
-        "because, although, since, while, if make a clause unable to stand alone — it must attach to a full sentence.",
+        "because, although, since, while, if make a clause unable to stand alone — it must attach to a full sentence. So do who, which and whose when they open a clause: <i>Which surprised everyone.</i> is a fragment.",
         "<i>Although it rained</i> needs a main clause to finish the thought."
       ],
       [
@@ -77,8 +87,13 @@
       ],
       [
         "Semicolon = period",
-        "A semicolon joins two complete, related sentences. If a period fits there, a semicolon is legal.",
-        "<i>It rained; the game was cancelled.</i>"
+        "A semicolon joins two complete, related sentences. If a period fits there, a semicolon is legal. It also comes before a linking adverb (<i>; however,</i>) and separates list items that already contain commas.",
+        "<i>It rained; the game was cancelled.</i>  <i>We visited Lima, Peru; Quito, Ecuador; and Bogotá, Colombia.</i>"
+      ],
+      [
+        "When no mark belongs",
+        "No mark goes between a verb and its object or the “that” clause it introduces, or after “such as”. Parentheses work like a pair of commas: they close around the extra words, with no comma added beside them.",
+        "<i>The survey found that most residents agreed.</i>  <i>The mill (built in 1790) still runs.</i>"
       ]
     ],
     "trap": "The words BEFORE a colon must stand alone. <i>She packed: a map…</i> is illegal."
@@ -100,6 +115,11 @@
         "Singular sneaky subjects",
         "each, every, everyone, neither, and 'the team' are singular.",
         "<i>Everyone has a ticket.</i>  <i>Neither answer is right.</i>"
+      ],
+      [
+        "Tricky subjects and forms",
+        "With either/or and neither/nor, the verb agrees with the nearer subject. <i>Along with</i> and <i>as well as</i> do not make a subject plural. When a sentence is inverted (<i>On the shelf sit two jars</i>), find the subject after the verb. Use <i>had</i> + participle for the earlier of two past events, <i>would have</i> (never “would of”) for what did not happen, and learn the irregular forms: <i>lie, lay, lain</i>; <i>swim, swam, swum</i>.",
+        "<i>Either the manager or the assistants have the keys.</i>  <i>By noon they had swum three laps.</i>"
       ]
     ],
     "trap": "In 'There is/are,' the subject comes AFTER the verb: <i>There ARE many reasons.</i>"
@@ -114,12 +134,12 @@
       ],
       [
         "Know the categories",
-        "Contrast: however, but, yet, nevertheless. Cause/effect: therefore, thus, so. Addition: also, furthermore.",
-        "<i>It is cheap; however, it is effective.</i> (contrast)"
+        "Contrast: however, but, yet, nevertheless, although. Cause/effect: therefore, thus, so, consequently. Addition: also, moreover, in addition. Example: for example, for instance. Likeness: similarly, likewise. Restatement: in other words, that is. Condition: otherwise.",
+        "<i>It is cheap; however, it breaks easily.</i> (contrast)"
       ],
       [
-        "Shorter usually wins",
-        "If a transition is redundant, delete it. The ACT rewards concision.",
+        "Cut a redundant link",
+        "If the sentence already signals the relationship, a second linking word adds nothing — delete it. Keep the one link the logic needs.",
         "Wrong: <i>But however.</i>  Right: <i>However.</i>"
       ]
     ],
@@ -135,16 +155,21 @@
       ],
       [
         "Slope = rise over run",
-        "Between (x₁,y₁) and (x₂,y₂): (y₂−y₁)/(x₂−x₁). In y=mx+b, m is slope, b is the y-intercept.",
+        "Between (x₁,y₁) and (x₂,y₂): (y₂−y₁)/(x₂−x₁). In y=mx+b, m is slope (the rate: how much y changes per unit of x) and b is the y-intercept (the starting value). Put other forms into y = mx + b before reading the slope.",
         "(2,3)&(6,11): (11−3)/(6−2)=8/4=<b>2</b>."
       ],
       [
         "Systems: substitute or eliminate",
         "Solve one equation for a variable and plug in, or add/subtract equations to cancel one.",
         "x+y=10, x−y=4 → add → 2x=14 → x=7, y=3."
+      ],
+      [
+        "How many solutions?",
+        "Two lines with the same slope and different intercepts are parallel, so the system has no solution. Same slope and same intercept means infinitely many.",
+        "y = 3x + 2 and y = 3x − 5 → no solution."
       ]
     ],
-    "trap": "Either route works: distribute (<i>2(x+4)=18</i> → 2x+8=18) or divide both sides by 2 first (x+4=9). Dividing first is faster when the number divides evenly."
+    "trap": "Multiplying or dividing an inequality by a negative number flips the sign: <i>5 − 2x &gt; 1</i> → −2x &gt; −4 → <b>x &lt; 2</b>."
   },
   "fraction_falls": {
     "intro": "Fractions, percents, and ratios are the same skill in different clothing.",
@@ -163,6 +188,11 @@
         "Ratios scale together",
         "Multiply every part by the same number. In a:b, part a is a/(a+b) of the whole.",
         "3:2 of 20 → 5 parts → each part 4 → <b>12 and 8</b>."
+      ],
+      [
+        "Work backwards from a percent",
+        "After a change, the new amount is a multiple of the original: a 20% discount leaves 0.8 × original. Divide by that multiplier to go back. Adding the percent to the new amount does not undo it.",
+        "0.8p = 48 → p = 60 (not 48 × 1.2 = 57.60)."
       ]
     ],
     "trap": "A 20% rise then a 20% fall does NOT return to start: 1.2 × 0.8 = 0.96 (4% lower)."
@@ -172,18 +202,23 @@
     "rules": [
       [
         "Core area formulas",
-        "Rectangle l×w. Triangle ½bh. Circle πr². Circumference 2πr.",
+        "Rectangle l×w. Triangle ½bh. Trapezoid ½(b₁+b₂)h. Circle πr². Circumference 2πr; an arc is (angle/360) of it. For a shaded region, subtract the inner area from the outer.",
         "Circle r=3: area 9π, circumference 6π."
       ],
       [
         "Volume = base area × height",
-        "Box lwh. Cylinder πr²h. Break odd shapes into known pieces.",
+        "Box lwh. Cylinder πr²h. The ACT prints harder formulas such as the sphere’s (4/3)πr³ — your job is to substitute carefully. Break odd shapes into known pieces.",
         "Cylinder r=2, h=5: π(4)(5)=20π."
       ],
       [
         "Angle facts",
-        "Straight line 180°, triangle 180°, circle 360°. Parallel lines cut by a transversal make equal or supplementary angles.",
+        "Straight line 180°, triangle 180°, circle 360°. Parallel lines cut by a transversal make angles that are equal or supplementary; the two interior angles on one side add to 180°.",
         "Triangle with 90° and 55° → third = 35°."
+      ],
+      [
+        "Polygons and similar figures",
+        "The interior angles of an n-sided polygon add to (n − 2) × 180°. If two figures are similar with scale factor k, lengths scale by k, areas by k², and volumes by k³.",
+        "Hexagon: 4 × 180° = 720°. Double every side → 4 × the area."
       ]
     ],
     "trap": "Diameter = 2r. Given diameter 10, use r=5 before πr²."
@@ -205,6 +240,16 @@
         "Graph shifts",
         "f(x)+k moves up k. f(x−h) moves RIGHT h — inside the parentheses is horizontal and opposite the sign.",
         "y=(x−2)² shifts the parabola right 2."
+      ],
+      [
+        "Domain, range, inverse",
+        "The domain is every allowed input; the range is every possible output. An inverse undoes the function: swap x and y, then solve for y.",
+        "f(x) = 2x + 1 → f⁻¹(x) = (x − 1)/2.  √x needs x ≥ 0."
+      ],
+      [
+        "Tables, pieces and reflections",
+        "From a table, the change in f(x) per step in x is the slope. A piecewise function uses whichever rule matches the input. −f(x) reflects the graph across the x-axis; f(−x) reflects it across the y-axis. A relation is a function only if no input has two outputs.",
+        "x: 1, 2, 3 → f: 5, 8, 11 → f(x) = 3x + 2."
       ]
     ],
     "trap": "f(x−3) shifts RIGHT by 3, not left. Inside-the-parentheses changes go opposite the sign."
@@ -226,6 +271,11 @@
         "Radians & unit circle",
         "180° = π radians. On the unit circle, cos is the x-coordinate, sin is the y-coordinate.",
         "90° = π/2; sin90°=1, cos90°=0."
+      ],
+      [
+        "Identities and signs",
+        "sin²θ + cos²θ = 1 for every angle. In the second quadrant (90° to 180°) sine is positive and cosine negative. To find a missing side, write the ratio as an equation and solve: cos θ = 10/h → h = 10 ÷ cos θ.",
+        "Angle of elevation 40°, 30 m away: height = 30 tan 40°."
       ]
     ],
     "trap": "Opp and adj are defined relative to the specific angle in the question — re-check which angle."
@@ -240,13 +290,18 @@
       ],
       [
         "AND multiply, OR add",
-        "Independent events together → multiply. Mutually exclusive either/or → add.",
+        "Independent events together → multiply. Either/or → add, then subtract anything counted twice. When the question fixes a group (“a 10th-grader is chosen”), that group is the new total.",
         "Two heads: ½ × ½ = ¼."
       ],
       [
         "Complement trick",
         "P(at least one) = 1 − P(none). Usually far faster than listing cases.",
         "At least one head in 2 flips: 1 − ¼ = ¾."
+      ],
+      [
+        "Count the arrangements",
+        "Multiply the number of choices at each step. When order does not matter, divide by the number of orderings. Expected value = each payout × its probability, added up.",
+        "3 shirts × 4 trousers = 12 outfits."
       ]
     ],
     "trap": "Without replacement, the total shrinks each draw: 5/10 then 4/9, not 5/10 twice."
@@ -256,7 +311,7 @@
     "rules": [
       [
         "Context beats the dictionary",
-        "Read the whole sentence; the fancy dictionary definition is often the trap.",
+        "Read the whole sentence; the word’s most familiar meaning is often the trap.",
         "<i>a novel solution</i> → novel = new, not a book."
       ],
       [
@@ -268,9 +323,14 @@
         "Match the tone",
         "Positive context needs a positive word; negative needs negative. Cut mismatched tone.",
         "Praise context → eliminate negative choices."
+      ],
+      [
+        "Watch for second meanings",
+        "Many tested words have a common meaning and a quieter one: <i>currency</i> can mean acceptance, <i>telling</i> can mean revealing, <i>arrest</i> can mean stop. Swap your choice into the sentence to check it.",
+        "<i>The ice arrested the ship’s progress</i> → halted."
       ]
     ],
-    "trap": "The hardest-looking word is usually a decoy. Pick the one that fits, not the fanciest."
+    "trap": "Put your choice back into the sentence. If the sentence no longer means what the passage means, the choice is wrong, however well it matches the dictionary."
   },
   "main_idea_meadow": {
     "intro": "The main idea is the point of the WHOLE passage — not one detail, not the universe.",
@@ -287,7 +347,7 @@
       ],
       [
         "Author's purpose",
-        "Ask why it was written: to inform, argue, describe, or persuade.",
+        "Ask why it was written: to inform, argue, describe, or persuade. For a title, choose the one that fits every paragraph. A passage that opens “It is true that … But” puts its real point after the “But”.",
         "An op-ed argues; a nature piece describes."
       ]
     ],
@@ -303,12 +363,12 @@
       ],
       [
         "Match paraphrase, not wording",
-        "The right answer restates the text in different words; exact-word matches are often traps.",
+        "The right answer usually restates the text in different words. A choice that copies the text’s words can be right, but check that it says what the text says — copied words are often used to dress up a wrong claim.",
         "Text 'reluctant' → answer 'unwilling'."
       ],
       [
         "Beware near-misses",
-        "Wrong answers swap one word (all→some, always→often). Check every word.",
+        "Wrong answers swap one word (all→some, always→often) or keep only half of a pair joined by “and”. On EXCEPT questions, tick each choice off against the text; the answer is the one you cannot find.",
         "'always' vs. 'often' can flip the answer."
       ]
     ],
@@ -324,7 +384,7 @@
       ],
       [
         "Support with a specific line",
-        "If you can't point to the sentence that forces it, it's wrong.",
+        "If you cannot point to the sentence that forces it, it’s wrong. Harder inferences combine two statements: “only two things were checked” + “one passed” → the other failed.",
         "Find the line that makes the conclusion unavoidable."
       ],
       [
@@ -345,7 +405,7 @@
       ],
       [
         "Agree vs. disagree",
-        "Questions ask where they'd agree, clash, or how one would answer the other.",
+        "Questions ask where they would agree, what both assume, what both would reject, how one would answer the other, or which new evidence would favour one side.",
         "Both value X, but split on Y."
       ],
       [
@@ -366,13 +426,18 @@
       ],
       [
         "Name the trend",
-        "State the direction. The ACT loves 'increases, then decreases' (a peak).",
+        "State the direction. The ACT loves ‘increases, then decreases’ (a peak). A flat column is a finding too: that variable made no difference. Growing jumps mean a curve that steepens.",
         "4.1 → 6.8 → 9.0 → 7.2 = rises then falls."
       ],
       [
         "Interpolate between points",
         "For an in-between value, estimate between the two nearest results. Past the last point, extend the trend (extrapolate) — the answer should keep going the way the data were going.",
         "At 35°: between 30°(6.8) and 40°(9.0) ≈ 7.9."
+      ],
+      [
+        "Link two tables",
+        "When no single table answers the question, find the shared column and carry the value across. A value far from its repeats is an outlier worth doubting.",
+        "Soil Q → pH 6.5 (Table 1) → 9 cm growth (Table 2)."
       ]
     ],
     "trap": "Don't bring outside science — the answer is in the table/graph unless told otherwise."
@@ -392,7 +457,7 @@
       ],
       [
         "Mind units and scale",
-        "Check axis units and whether the scale is even; watch for jumps.",
+        "Check what each axis measures before reading a shape: a flat line on a velocity graph means constant speed, on a distance graph it means at rest. Watch uneven scales, and treat overlapping error bars as “no clear difference”.",
         "If x goes 0, 10, 100, the scale isn't linear."
       ]
     ],
@@ -413,7 +478,7 @@
       ],
       [
         "Predict design changes",
-        "If one variable changes, use the existing trend to predict the result.",
+        "If one variable changes, use the existing trend to predict the result. To extend a finding to a new condition, repeat the same test changing only that condition. Timing many repeats at once shrinks the error per repeat.",
         "Higher temp raised yield → a hotter trial likely reads higher."
       ]
     ],
@@ -434,7 +499,7 @@
       ],
       [
         "Who would say what",
-        "Match new evidence to the viewpoint it supports or weakens.",
+        "Match new evidence to the viewpoint it supports or weakens. Ask what each view predicts: an observation one view predicts and the other does not is the one that tells them apart. Evidence consistent with both decides nothing.",
         "Evidence favoring A strengthens Scientist 1."
       ]
     ],
@@ -450,7 +515,7 @@
       ],
       [
         "Water & cell basics",
-        "At sea level, water freezes at 0°C and boils at 100°C. Mitochondria release the energy stored in food; DNA stores genetic information.",
+        "At sea level, water freezes at 0°C and boils at 100°C. Mitochondria release the energy stored in food; DNA stores genetic information. A Tt × tt cross gives half tt. Heating a gas in a rigid container raises its pressure.",
         "Ice → water at 0°C."
       ],
       [
@@ -466,8 +531,8 @@
     "rules": [
       [
         "Agree in number",
-        "Singular nouns need singular pronouns. each, everyone, a company are singular.",
-        "<i>Each student brought his or her book</i> (not 'their' on the ACT)."
+        "Singular nouns need singular pronouns. each, everyone and a company are singular.",
+        "<i>The company raised its prices</i> (not ‘their’).  <i>Each robot has its own station.</i>"
       ],
       [
         "Subject vs. object case",
@@ -478,6 +543,11 @@
         "One clear antecedent",
         "Every pronoun must point to ONE obvious noun; vague it/they/this is wrong.",
         "<i>The car hit the pole, and it broke.</i> — which broke? Fix it."
+      ],
+      [
+        "Stay in one person",
+        "Do not switch from “one” to “you” or “they” partway through. Before a noun, test <i>we/us</i> by dropping the noun: <i>thanked us students</i> → <i>thanked us</i>. Nouns joined by “or” take a singular pronoun.",
+        "<i>When one travels, one should carry a passport.</i>  <i>Either Tom or Raj left his jacket.</i>"
       ]
     ],
     "trap": "who = subject, whom = object. <i>To whom</i> — whom is the object of 'to.'"
@@ -487,7 +557,7 @@
     "rules": [
       [
         "Kill danglers",
-        "An opening phrase must describe the subject right after the comma.",
+        "An opening phrase — an -ing or -ed phrase, a “to” phrase, or a noun phrase — must describe the subject right after the comma. A possessive (<i>Maria’s seat</i>) cannot be that subject.",
         "Wrong: <i>Running late, the bus was missed.</i>  Right: <i>Running late, I missed the bus.</i>"
       ],
       [
@@ -513,7 +583,7 @@
       ],
       [
         "Match correlative pairs",
-        "not only…but also, either…or need parallel parts.",
+        "not only…but also, either…or, both…and, between…and, and not…but need parallel parts on each side.",
         "<i>not only fast but also cheap.</i>"
       ],
       [
@@ -541,6 +611,11 @@
         "Roots are fractional powers",
         "√x = x^(1/2); ∛x = x^(1/3).",
         "√(x⁴) = x²."
+      ],
+      [
+        "Equations, notation and radicals",
+        "Rewrite both sides with the same base, then set exponents equal. In scientific notation multiply the front numbers and add the powers of 10. Simplify roots before adding them, and clear a root from a denominator by multiplying top and bottom by it.",
+        "2^(x+1) = 2⁵ → x = 4.  √18 + √8 = 3√2 + 2√2 = 5√2.  6/√3 = 2√3."
       ]
     ],
     "trap": "A negative exponent means reciprocal, NOT a negative number: 2⁻² = 1/4."
@@ -550,7 +625,7 @@
     "rules": [
       [
         "Factor to find roots",
-        "Find two numbers that multiply to c and add to b.",
+        "Find two numbers that multiply to c and add to b. When the leading coefficient is not 1, check by expanding. Going the other way, a root r comes from the factor (x − r). Expanding (x + a)² gives x² + 2ax + a² — never forget the middle term.",
         "x²+5x+6 = (x+2)(x+3) → x = −2, −3."
       ],
       [
@@ -562,6 +637,11 @@
         "Formula backup",
         "x = [−b ± √(b²−4ac)] / 2a when it won't factor.",
         "The discriminant b²−4ac counts the real roots."
+      ],
+      [
+        "Vertex form",
+        "y = a(x − h)² + k has its vertex at (h, k). If a &gt; 0 the parabola opens up and the vertex is a minimum; if a &lt; 0 it opens down and the vertex is a maximum. In standard form y = ax² + bx + c, the vertex is at x = −b/(2a).",
+        "y = −2(x − 3)² + 5 → vertex (3, 5), a maximum."
       ]
     ],
     "trap": "Set the equation to 0 first. x² = 9 has TWO answers: x = 3 AND x = −3."
@@ -583,6 +663,16 @@
         "Mode = most frequent",
         "The value that shows up most.",
         "2, 2, 5, 7 → mode 2."
+      ],
+      [
+        "Sum = mean × count",
+        "To find a missing value or combine groups of different sizes, turn averages into totals first: total = mean × number of values.",
+        "Four tests average 82 → 328. To average 84 over five → 420, so the fifth is 92."
+      ],
+      [
+        "Spread and rank",
+        "Standard deviation measures distance from the mean: adding the same number to every value leaves it unchanged. A percentile is a rank — the share of scores at or below yours — not a percentage correct. In a frequency table, count through the frequencies to find the middle value.",
+        "10, 10, 10, 10 and 1, 5, 15, 19 share a mean of 10; the second is far more spread out."
       ]
     ],
     "trap": "An outlier pulls the MEAN a lot but barely moves the MEDIAN."
@@ -597,13 +687,23 @@
       ],
       [
         "Midpoint = average",
-        "M = ((x₁+x₂)/2, (y₁+y₂)/2).",
+        "M = ((x₁+x₂)/2, (y₁+y₂)/2). Given a midpoint and one end, step the same distance past the midpoint to find the other end.",
         "(2,4)&(6,8) → (4,6)."
       ],
       [
         "Slope sign",
         "Uphill left→right positive; downhill negative; flat 0; vertical undefined.",
         "A line falling to the right has negative slope."
+      ],
+      [
+        "Parallel, perpendicular, circles",
+        "Parallel lines have equal slopes; perpendicular slopes are negative reciprocals. A circle with centre (h, k) and radius r is (x − h)² + (y − k)² = r².",
+        "Slope 2 → perpendicular slope −½.  (x − 1)² + (y + 2)² = 9 → centre (1, −2), radius 3."
+      ],
+      [
+        "Reflections and intersections",
+        "Reflecting across the y-axis changes the sign of x; across the x-axis, the sign of y. Two lines meet where their y-values are equal, so set the right-hand sides equal. A line with one y for every point is horizontal: y = constant.",
+        "y = x + 1 and y = −x + 5 → x + 1 = −x + 5 → (2, 3)."
       ]
     ],
     "trap": "Distance needs the SQUARE root at the end — don't forget it."
@@ -623,7 +723,7 @@
       ],
       [
         "Transitions map structure",
-        "however = shift; for example = support; finally = conclusion.",
+        "however, yet, still = shift; for example = support; then = a turn in time; finally = conclusion. A question the author asks and then answers sets up an explanation.",
         "<i>In contrast</i> marks a compare/contrast move."
       ]
     ],
@@ -634,7 +734,7 @@
     "rules": [
       [
         "Word choice reveals tone",
-        "Positive, negative, or neutral? Loaded words give it away.",
+        "Positive, negative, or neutral? Loaded words give it away — and irony is praise that the rest of the sentence undercuts (<i>generously agreed to fix what it broke</i>). Tone can shift inside a passage, so check the start and the end.",
         "<i>meddling</i> = negative; <i>devoted</i> = positive."
       ],
       [
@@ -651,32 +751,32 @@
     "trap": "Extreme tone words (hateful, overjoyed) are usually wrong — the ACT stays moderate."
   },
   "evidence_estuary": {
-    "intro": "Some questions ask which line best supports an answer.",
+    "intro": "Evidence questions ask how a detail bears on a claim: does it support it, weaken it, or complicate it?",
     "rules": [
       [
-        "Answer, then find proof",
-        "Decide your answer, then pick the line that most directly proves it.",
-        "The best evidence states the claim almost outright."
+        "Name the claim first",
+        "Before judging a piece of evidence, state the exact claim it bears on. Evidence supports a claim only if it makes that claim more likely.",
+        "Claim: the bridge brought customers. Most new customers crossed it on foot → supports."
       ],
       [
-        "Direct beats vague",
-        "Choose the clearly supporting line, not one loosely related.",
-        "Skip lines that are merely 'about the topic.'"
+        "Support, weaken, complicate",
+        "Evidence weakens a claim when it points to another cause, shows the effect without the cause, or reverses the order of events; it strengthens it most when removing the cause removes the effect. It complicates a claim when it fits part of it but not all.",
+        "Sales also rose in towns with no bridge → weakens."
       ],
       [
-        "Paired questions link",
-        "In 2-part questions, the evidence must match YOUR part-1 answer.",
-        "If it doesn't fit, reconsider part 1."
+        "Check who was counted",
+        "A result from a small or unusual group may not apply to everyone. Ask whether the sample matches the claim’s scope.",
+        "A survey of one school cannot settle a claim about all teenagers."
       ]
     ],
-    "trap": "If no line supports your part-1 answer, that answer is probably wrong."
+    "trap": "Evidence that is merely about the same topic is not support. It has to change how likely the claim is."
   },
   "figurative_falls": {
     "intro": "The ACT sometimes asks what an image or comparison means.",
     "rules": [
       [
         "Metaphor & simile stand for ideas",
-        "Read what the comparison represents, not the literal words.",
+        "Read what the comparison represents, not the literal words. Also know personification (a house that holds its breath), hyperbole (deliberate exaggeration) and understatement (saying much less than the truth, often for humour).",
         "<i>a sea of troubles</i> = many troubles."
       ],
       [
@@ -702,13 +802,18 @@
       ],
       [
         "Convert with the right factor",
-        "Watch prefixes: kilo = ×1000, milli = ÷1000.",
+        "Watch prefixes: kilo = ×1000, milli = ÷1000. Area units convert by the square of the factor (1 m² = 10 000 cm²), and units combine the way the numbers do (force ÷ area → N/m²).",
         "2 km = 2000 m."
       ],
       [
         "Bigger unit, smaller number",
         "The same amount is a smaller number in a bigger unit.",
         "500 cm = 5 m."
+      ],
+      [
+        "Micro and nano",
+        "micro (µ) = one millionth (÷ 1,000,000); nano (n) = one billionth. Count the zeros before converting.",
+        "3,000 µg = 3 mg = 0.003 g."
       ]
     ],
     "trap": "Never compare values in different units — convert to the same unit first."
@@ -730,6 +835,11 @@
         "Mind the rate's units",
         "'per hour' vs. 'per minute' changes everything.",
         "60 mph = 1 mile per minute."
+      ],
+      [
+        "Average rate uses totals",
+        "Average rate = total amount ÷ total time. Do not average two rates unless they lasted equally long. Rates working together add (a leak subtracts); for two pumps, add the fractions of the job each does per hour.",
+        "60 km in 1 h, then 60 km in 2 h → 120 km ÷ 3 h = 40 km/h, not 45."
       ]
     ],
     "trap": "Match units before multiplying — don't mix hours with minutes."
@@ -739,7 +849,7 @@
     "rules": [
       [
         "A hypothesis is testable",
-        "It predicts a result you can check with data.",
+        "It predicts a result you can check with data, names what will change and what will be measured, and could turn out false. When two things rise together, consider a third factor driving both.",
         "<i>More light → more growth</i> is testable."
       ],
       [
@@ -765,7 +875,7 @@
       ],
       [
         "Difference and percent",
-        "Subtract for change; divide by the original for percent change.",
+        "Subtract for change; divide by the original for percent change. For a share, divide the part by the whole. For a rate between two rows, divide the change in one column by the change in the other. When mixing, weight each value by how much there is of it.",
         "6→9: change 3, percent 50%."
       ],
       [

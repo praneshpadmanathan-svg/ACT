@@ -13,7 +13,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "The Enhanced ACT Math section is **45 questions in 50 minutes** — about **66 seconds per question**, the most generous per-question timing on the test. Questions have **4 answer choices** (down from 5 on the old ACT), which meaningfully improves the value of guessing and of elimination strategies. A calculator is permitted throughout."
+            "text": "The Enhanced ACT Math section is **45 questions in 50 minutes** — about **66 seconds per question**, tied with Reading for the most generous per-question timing on the test. Questions have **4 answer choices** (down from 5 on the old ACT), which meaningfully improves the value of guessing and of elimination strategies. A calculator is permitted throughout."
           },
           {
             "type": "table",
@@ -163,7 +163,7 @@
           {
             "type": "rule",
             "title": "\"Less than\" reverses",
-            "text": "*7 less than x* is **x − 7**, not 7 − x. Same for *subtracted from*: *5 subtracted from y* is **y − 5**. This reversal is tested every single administration."
+            "text": "*7 less than x* is **x − 7**, not 7 − x. Same for *subtracted from*: *5 subtracted from y* is **y − 5**. This reversal is tested often."
           },
           {
             "type": "rule",
@@ -510,7 +510,7 @@
               "Same base → set exponents equal: 2x + 2 = 5.",
               "x = 3/2."
             ],
-            "answer": "**x = 3/2.** Whenever an equation has variables in the exponent, **convert to a common base**. Powers of 2, 3, and 5 cover nearly every ACT instance."
+            "answer": "**x = 3/2.** Whenever an equation has variables in the exponent, **convert to a common base**. Powers of 2, 3, and 5 cover most ACT instances."
           },
           {
             "type": "rule",
@@ -1455,7 +1455,7 @@
               "Area ratio = k² = 9/4.",
               "Larger area = 24 × 9/4 = 54."
             ],
-            "answer": "**54.** The trap answer is 24 × 3/2 = 36, applying the side ratio to area. **Areas scale by the square of the side ratio** — this appears on nearly every ACT."
+            "answer": "**54.** The trap answer is 24 × 3/2 = 36, applying the side ratio to area. **Areas scale by the square of the side ratio** — a frequently tested idea."
           },
           {
             "type": "rule",

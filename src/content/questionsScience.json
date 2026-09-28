@@ -153,7 +153,7 @@
       },
       {
         "id": "D",
-        "text": "exactly half of 14.6 mL/min."
+        "text": "about half of 14.6 mL/min, because some of the enzyme survives."
       }
     ],
     "answer": "B",
@@ -161,7 +161,7 @@
       "A": "The note states the shape change does not reverse on cooling.",
       "B": "Correct — above 60°C the enzyme permanently loses its shape and activity does not return.",
       "C": "The passage shows activity falling, not rising, above the optimum.",
-      "D": "No data support a halving."
+      "D": "No data support a partial loss; the note says the change above 60°C is permanent for the enzyme."
     }
   },
   {
@@ -710,7 +710,7 @@
       },
       {
         "id": "C",
-        "text": "measure leaf area more precisely than Experiment 1 allowed."
+        "text": "measure leaf area more precisely than the method in Experiment 1 allowed."
       },
       {
         "id": "D",
@@ -747,7 +747,7 @@
       },
       {
         "id": "D",
-        "text": "no change at all."
+        "text": "no change in dry mass."
       }
     ],
     "answer": "B",
@@ -900,7 +900,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "global temperature minima."
+        "text": "the timing of global temperature minima."
       },
       {
         "id": "B",
@@ -933,7 +933,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "humans arrived in North America later than previously believed."
+        "text": "humans reached North America later than once believed."
       },
       {
         "id": "B",
@@ -999,7 +999,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Pollen records show vegetation change beginning 2,000 years before the extinctions on every continent studied."
+        "text": "Pollen shows vegetation changing 2,000 years before the extinctions everywhere."
       },
       {
         "id": "B",
@@ -1065,7 +1065,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "migrate over long distances between seasonal ranges."
+        "text": "migrate over long distances between summer and winter ranges each year."
       },
       {
         "id": "B",
@@ -1102,22 +1102,22 @@
       },
       {
         "id": "B",
-        "text": "support Scientist 2, who expects a slow decline."
+        "text": "support Scientist 2, who cites long coexistence with humans as evidence against overkill."
       },
       {
         "id": "C",
-        "text": "support neither scientist, because Eurasia lies outside the scope of both hypotheses as stated."
+        "text": "support neither, because Eurasia lies outside both hypotheses."
       },
       {
         "id": "D",
-        "text": "prove that climate change did not occur at the end of the last glacial period."
+        "text": "prove that no climate change occurred at the glacial period’s end."
       }
     ],
     "answer": "B",
     "why": {
       "A": "Scientist 1’s model emphasizes losses shortly after human arrival.",
-      "B": "Correct — Scientist 2 explicitly raises prolonged survival alongside humans as an objection to overkill.",
-      "C": "It bears directly on the dispute, and Eurasia is where Scientist 2 raises prolonged coexistence.",
+      "B": "Correct — Scientist 2 argues that species surviving for millennia alongside humans is inconsistent with a rapid, hunting-driven collapse.",
+      "C": "It bears directly on the dispute: Scientist 2 treats survival for millennia alongside humans, on any landmass, as evidence against overkill.",
       "D": "It says nothing about whether climate changed."
     }
   },
@@ -1248,8 +1248,8 @@
     "answer": "D",
     "why": {
       "A": "This is the amount that remains dissolved at 20°C.",
-      "B": "Does not correspond to any difference in the table.",
-      "C": "This would be the drop from 80°C to 60°C plus an error.",
+      "B": "59 g is 169 − 110, the drop from 80°C to 60°C only.",
+      "C": "105 g is 169 − 64, the drop from 80°C to 40°C only.",
       "D": "Correct — 169 g dissolve at 80°C but only 32 g at 20°C, so about 137 g precipitate."
     }
   },
@@ -1300,11 +1300,11 @@
       },
       {
         "id": "B",
-        "text": "No, because KNO₃ has the highest solubility at 20°C but not the highest density."
+        "text": "No, because KNO₃ is the most soluble at 20°C but not the densest."
       },
       {
         "id": "C",
-        "text": "No, because Ce₂(SO₄)₃ has the highest density of the four."
+        "text": "No, because Ce₂(SO₄)₃ forms the densest solution of the three."
       },
       {
         "id": "D",
@@ -1436,7 +1436,7 @@
       },
       {
         "id": "C",
-        "text": "neutral"
+        "text": "exactly neutral"
       },
       {
         "id": "D",
@@ -1626,7 +1626,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "test how well a new insulating material performs."
+        "text": "test how well a newly developed insulating material performs."
       },
       {
         "id": "B",
@@ -2162,7 +2162,7 @@
       },
       {
         "id": "C",
-        "text": "inversely proportional to bob mass."
+        "text": "inversely proportional to the mass of the bob."
       },
       {
         "id": "D",
@@ -2253,7 +2253,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "has no effect on the period at any of the release angles that were tested at all."
+        "text": "has no effect on the period at any angle tested."
       },
       {
         "id": "B",
@@ -2451,7 +2451,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "a comet fragmented over the ice sheet above North America about 12,900 years ago and set off the cooling."
+        "text": "a comet fragmented over the North American ice sheet 12,900 years ago."
       },
       {
         "id": "B",
@@ -2708,7 +2708,7 @@
   {
     "id": "p36-sci-emi-inference-d2-0001",
     "section": "science",
-    "topic": "research summaries",
+    "topic": "conflicting viewpoints",
     "difficulty": "easy",
     "passage": "p36-sci-frog-decline-0001",
     "context": "Based on Biologist 2's hypothesis, which frogs would be expected to show the least impact from the decline?",
@@ -2741,7 +2741,7 @@
   {
     "id": "p36-sci-emi-inference-d3-0001",
     "section": "science",
-    "topic": "research summaries",
+    "topic": "conflicting viewpoints",
     "difficulty": "medium",
     "passage": "p36-sci-desert-varnish-0001",
     "context": "Based on Geologist 3's hypothesis, rock outcrops located far apart but within the same regional dust source would most likely have varnish that is—",
@@ -2756,7 +2756,7 @@
       },
       {
         "id": "C",
-        "text": "entirely free of iron and manganese."
+        "text": "entirely free of the iron and manganese in varnish."
       },
       {
         "id": "D",
@@ -2774,7 +2774,7 @@
   {
     "id": "p36-sci-emi-inference-d3-0002",
     "section": "science",
-    "topic": "research summaries",
+    "topic": "conflicting viewpoints",
     "difficulty": "medium",
     "passage": "p36-sci-frog-decline-0001",
     "context": "Based on Biologist 3's hypothesis, a pond within Cedar Hollow that has never been stocked with the invasive fish should have:",
@@ -2789,16 +2789,16 @@
       },
       {
         "id": "C",
-        "text": "a frog population whose density depends on fungal presence instead of on the presence of the invasive fish."
+        "text": "a frog population set by fungal presence rather than by the invasive fish."
       },
       {
         "id": "D",
-        "text": "a relatively dense frog population, similar to levels before the regional decline began."
+        "text": "a relatively dense frog population compared with ponds stocked with the fish."
       }
     ],
     "answer": "D",
     "why": {
-      "D": "Biologist 3 explicitly notes that fish-free ponds within the wetland still support relatively dense frog populations, consistent with a hypothesis that ties scarcity to the invasive fish's presence.",
+      "D": "Biologist 3 explicitly notes that fish-free ponds within the wetland still support relatively dense frog populations, while stocked ponds show far fewer frogs.",
       "A": "This contradicts Biologist 3's own observation about fish-free ponds within the wetland.",
       "B": "Biologist 3's hypothesis ties frog scarcity specifically to the presence of the invasive fish.",
       "C": "This describes Biologist 1's hypothesis, not Biologist 3's."
@@ -2807,7 +2807,7 @@
   {
     "id": "p36-sci-emi-inference-d4-0001",
     "section": "science",
-    "topic": "research summaries",
+    "topic": "conflicting viewpoints",
     "difficulty": "hard",
     "passage": "p36-sci-desert-varnish-0001",
     "context": "Suppose two rock outcrops of identical mineral composition are found in two different regions with very different local dust compositions. If Geologist 1's hypothesis alone were correct, the varnish on the two outcrops should be—",
@@ -2818,7 +2818,7 @@
       },
       {
         "id": "B",
-        "text": "chemically different, reflecting the different regional dust in each of the two areas."
+        "text": "chemically different, reflecting each region's own dust."
       },
       {
         "id": "C",
@@ -2859,7 +2859,7 @@
       },
       {
         "id": "D",
-        "text": "organic plant material."
+        "text": "organic material from plants."
       }
     ],
     "answer": "C",
@@ -2888,7 +2888,7 @@
       },
       {
         "id": "C",
-        "text": "caused primarily by pesticide runoff from the farmland surrounding Cedar Hollow."
+        "text": "caused primarily by pesticide runoff from nearby farms."
       },
       {
         "id": "D",
@@ -2913,7 +2913,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Varnish composition always matches the composition of the rock surface lying directly beneath it."
+        "text": "Varnish always matches the composition of the rock beneath it."
       },
       {
         "id": "B",
@@ -2921,7 +2921,7 @@
       },
       {
         "id": "C",
-        "text": "The varnish's minerals always originate from outside the rock rather than within it."
+        "text": "The varnish's minerals always come from outside the rock."
       },
       {
         "id": "D",
@@ -2958,7 +2958,7 @@
       },
       {
         "id": "D",
-        "text": "Reproductive success is lowest in the ponds closest to the farmland drainage streams in the wetland."
+        "text": "Reproductive success is lowest in ponds nearest the farmland drainage streams."
       }
     ],
     "answer": "B",
@@ -3016,7 +3016,7 @@
       },
       {
         "id": "B",
-        "text": "an enzyme cofactor."
+        "text": "a cofactor for an enzyme."
       },
       {
         "id": "C",
@@ -3038,7 +3038,7 @@
   {
     "id": "p36-sci-emi-support-weaken-d2-0001",
     "section": "science",
-    "topic": "research summaries",
+    "topic": "conflicting viewpoints",
     "difficulty": "easy",
     "passage": "p36-sci-frog-decline-0001",
     "context": "Finding that frog populations in wetlands downstream of the same farms, but well outside the pesticide's typical travel range, declined just as sharply as Cedar Hollow's population would most directly weaken the hypothesis of:",
@@ -3071,7 +3071,7 @@
   {
     "id": "p36-sci-emi-support-weaken-d3-0001",
     "section": "science",
-    "topic": "research summaries",
+    "topic": "conflicting viewpoints",
     "difficulty": "medium",
     "passage": "p36-sci-desert-varnish-0001",
     "context": "The discovery of DNA from manganese-oxidizing bacteria embedded within the varnish layer of several rock samples would most directly support the hypothesis of—",
@@ -3104,7 +3104,7 @@
   {
     "id": "p36-sci-emi-support-weaken-d3-0002",
     "section": "science",
-    "topic": "research summaries",
+    "topic": "conflicting viewpoints",
     "difficulty": "medium",
     "passage": "p36-sci-desert-varnish-0001",
     "context": "Finding that desert varnish forms at measurably different rates on rocks of different mineral composition within the same regional dust environment would most directly support the hypothesis of—",
@@ -3123,7 +3123,7 @@
       },
       {
         "id": "D",
-        "text": "none of the geologists"
+        "text": "none of them"
       }
     ],
     "answer": "C",
@@ -3137,7 +3137,7 @@
   {
     "id": "p36-sci-emi-support-weaken-d4-0001",
     "section": "science",
-    "topic": "research summaries",
+    "topic": "conflicting viewpoints",
     "difficulty": "hard",
     "passage": "p36-sci-desert-varnish-0001",
     "context": "Chemical analysis showing that a set of rocks' varnish matches the trace-mineral ratios of local windblown dust, but does not match the trace-mineral ratios of the rocks themselves, would most directly weaken the hypothesis of—",
@@ -3156,7 +3156,7 @@
       },
       {
         "id": "D",
-        "text": "all three geologists equally"
+        "text": "all three equally"
       }
     ],
     "answer": "B",
@@ -3170,7 +3170,7 @@
   {
     "id": "p36-sci-emi-support-weaken-d5-0001",
     "section": "science",
-    "topic": "research summaries",
+    "topic": "conflicting viewpoints",
     "difficulty": "hard",
     "passage": "p36-sci-frog-decline-0001",
     "context": "Suppose researchers remove the invasive fish from every pond in Cedar Hollow, and over the following five years frog populations recover to their levels from 20 years ago, even though the fungus remains widespread in the wetland and pesticide use upstream continues unchanged. This outcome would most directly support the hypothesis of:",
@@ -3189,7 +3189,7 @@
       },
       {
         "id": "D",
-        "text": "none of the biologists"
+        "text": "none of them"
       }
     ],
     "answer": "C",
@@ -3328,7 +3328,7 @@
     "why": {
       "B": "Biologist 2 alone proposes a chemical mechanism that reduces reproductive success without necessarily killing frogs outright; Biologist 1 describes a fatal infection and Biologist 3 describes direct predation on eggs and tadpoles.",
       "A": "Biologist 3's hypothesis also predicts effects that vary from pond to pond, based on fish presence.",
-      "C": "All three biologists describe a cause that arrived within roughly this timeframe.",
+      "C": "Biologist 3's invasive fish also arrived about 20 years ago, so Biologist 2 is not alone in proposing a recent cause.",
       "D": "All three biologists agree on the extent of the decline itself."
     }
   },
@@ -3354,7 +3354,7 @@
       },
       {
         "id": "D",
-        "text": "all three biologists equally."
+        "text": "all three equally."
       }
     ],
     "answer": "A",
@@ -3699,7 +3699,7 @@
     "id": "p36-sci-iod-interpolate-d4-0001",
     "section": "science",
     "topic": "reading data",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "passage": "p36-sci-pendulum-period-0001",
     "context": "Based on the data in Table 1, the period of the pendulum for a string length of 75 cm would most likely be closest to:",
     "choices": [
@@ -4260,7 +4260,7 @@
     "id": "p36-sci-si-design-d4-0001",
     "section": "science",
     "topic": "research summaries",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "passage": "p36-sci-pendulum-period-0001",
     "context": "Which of the following was NOT held constant across the trials summarized in Table 1?",
     "choices": [
@@ -4344,12 +4344,12 @@
       },
       {
         "id": "D",
-        "text": "No, because height increased across the whole range tested, with no plateau."
+        "text": "No, because height still rose between the 2-day and the 1-day watering groups."
       }
     ],
     "answer": "D",
     "why": {
-      "D": "Table 1 shows height rising steadily as watering interval shortens, all the way from a 5-day interval to a 1-day interval, with no interval at which additional watering stops helping.",
+      "D": "Table 1 shows height rising from 16.9 cm to 18.4 cm when the interval shortened from 2 days to 1 day. The gains shrink, but additional watering never stops helping within the range tested.",
       "A": "Table 1 shows a continued decline in height between these two rows, not a leveling off.",
       "B": "This restates a detail from the data but does not describe a leveling-off point, which the hypothesis specifically requires.",
       "C": "Study 1's design, varying watering frequency and measuring height, is directly relevant to this hypothesis."
@@ -4608,13 +4608,13 @@
       },
       {
         "id": "D",
-        "text": "No, because salt water produced less corrosion than distilled water at every concentration."
+        "text": "No, because salt water corroded less than distilled water at every concentration."
       }
     ],
     "answer": "A",
     "why": {
       "A": "Correct — the values climb 0.18, 0.26, 0.33, 0.41 and then drop to 0.30, so the trend reverses rather than continuing steadily.",
-      "B": "That single comparison holds, but a hypothesis of steady increase is refuted by the drop in between.",
+      "B": "That single comparison holds, but a hypothesis of steady increase is refuted by the drop from 3.5% to 10.0%.",
       "C": "The step from 3.5% to 10.0% is a decrease, from 0.41 g to 0.30 g.",
       "D": "Every salt concentration tested produced more corrosion than the 0.18 g of distilled water, not less."
     }
@@ -4740,7 +4740,7 @@
       },
       {
         "id": "D",
-        "text": "the zinc coating proved more effective at preventing corrosion than the oil coating did in the same test."
+        "text": "zinc protected the nail better than oil did in the same test."
       }
     ],
     "answer": "A",
@@ -4893,7 +4893,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "No, because coating the upper surfaces reduced loss only from 1.40 g to 1.20 g."
+        "text": "No; upper coating cut loss only to 1.20 g."
       },
       {
         "id": "B",
@@ -4910,7 +4910,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Correct — that is a reduction of about 14%, far short of half, because few stomata sit on the upper surface.",
+      "A": "Correct — coating the upper surfaces took loss only from 1.40 g to 1.20 g, a reduction of about 14%, far short of half, because few stomata sit on the upper surface.",
       "B": "0.45 g is the result for coating the lower surfaces, not the upper ones.",
       "C": "Loss decreased slightly, from 1.40 g to 1.20 g; it did not increase.",
       "D": "Coating both surfaces tests a different treatment and says nothing about the upper surfaces alone."
@@ -4963,7 +4963,7 @@
       },
       {
         "id": "B",
-        "text": "Coating both surfaces together cut the loss to 0.20 g, the lowest figure recorded anywhere in Study 3."
+        "text": "Coating both surfaces cut the loss to 0.20 g, the lowest in Study 3."
       },
       {
         "id": "C",
@@ -5217,7 +5217,7 @@
     "id": "s101",
     "section": "science",
     "topic": "units",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "passage": "sp20",
     "context": "Water freezes at 0 °C and boils at 100 °C at sea level. The highest temperature tested in Study 1 is best described as:",
     "choices": [
@@ -5235,7 +5235,7 @@
       },
       {
         "id": "D",
-        "text": "above the boiling point"
+        "text": "somewhat above the boiling point"
       }
     ],
     "answer": "A",
@@ -5448,7 +5448,7 @@
     "id": "s108",
     "section": "science",
     "topic": "rates",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "passage": "sp19",
     "context": "By approximately what factor did moving air increase the rate of water loss compared with still air, with the lamp on in both trials?",
     "choices": [
@@ -5693,7 +5693,7 @@
       },
       {
         "id": "C",
-        "text": "0.13 g"
+        "text": "0.15 g"
       },
       {
         "id": "D",
@@ -5704,7 +5704,7 @@
     "why": {
       "A": "Correct — 0.41 g minus 0.18 g equals 0.23 g.",
       "B": "This adds the two values instead of subtracting them.",
-      "C": "This subtracts using the 0.5% result, 0.26 g, rather than the 0.0% result.",
+      "C": "This subtracts the 0.5% result, 0.26 g, from 0.41 g rather than the 0.0% result.",
       "D": "0.41 g is the mass change at 3.5% on its own, not the difference."
     }
   },
@@ -5712,7 +5712,7 @@
     "id": "s116",
     "section": "science",
     "topic": "calculating from data",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "passage": "sp19",
     "context": "For the 8-leaf cutting in still air, what was the average water loss per leaf over the 3 hours?",
     "choices": [
@@ -5745,7 +5745,7 @@
     "id": "s117",
     "section": "science",
     "topic": "calculating from data",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "passage": "sp19",
     "context": "Coating the lower leaf surfaces reduced water loss by approximately what percentage of the untreated value?",
     "choices": [
@@ -6081,7 +6081,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "The cores were dried and kept sealed from moisture rather than soaked."
+        "text": "The cores were kept dry."
       },
       {
         "id": "B",
@@ -6098,7 +6098,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Correct — the porosity, the temperatures, and the cycling were carried over unchanged; only the water was removed.",
+      "A": "Correct — the porosity, the temperatures and the cycling were carried over unchanged; only the water was removed, and the cores were kept dry instead of soaked.",
       "B": "Both experiments used 12% porosity cores.",
       "C": "Experiment 3 repeated the same set of minimum temperatures used in Experiment 2.",
       "D": "Nothing in the description changes the inspection schedule; in any case no cracks appeared to find."
@@ -6114,7 +6114,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Both report cracking at 65 cycles, so the conditions were reproduced."
+        "text": "Both report 65 cycles."
       },
       {
         "id": "B",
@@ -7042,7 +7042,7 @@
       },
       {
         "id": "B",
-        "text": "As a downstream effect of warming, which seals the deep layer off for more weeks each year."
+        "text": "As a consequence of warming."
       },
       {
         "id": "C",
@@ -7071,15 +7071,15 @@
     "choices": [
       {
         "id": "A",
-        "text": "Phosphorus entering Lake Idris was measured every year and did not change between 1990 and 2020."
+        "text": "Phosphorus inputs held steady from 1990 to 2020."
       },
       {
         "id": "B",
-        "text": "Algae in Lake Idris became steadily more abundant in every decade after 1990."
+        "text": "Algae in Lake Idris grew more abundant each decade after 1990."
       },
       {
         "id": "C",
-        "text": "Lake trout in laboratory tanks stop feeding below 4 mg/L of dissolved oxygen at any water temperature."
+        "text": "Lab trout stop feeding below 4 mg/L of oxygen at any temperature."
       },
       {
         "id": "D",
@@ -7104,7 +7104,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "support Scientist 2, because warming without runoff did not cost that lake its trout."
+        "text": "support Scientist 2 only."
       },
       {
         "id": "B",
@@ -7121,7 +7121,7 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Correct — the comparison lake isolates warming from runoff, and warming alone was not enough, which is Scientist 2's central claim.",
+      "A": "Correct — the comparison lake isolates warming from runoff, and warming alone was not enough to cost it its trout, which is Scientist 2’s central claim.",
       "B": "Whether warming is widespread is not in dispute. What the comparison tests is whether warming alone suffices, and here it did not.",
       "C": "Scientist 2 predicts exactly this outcome for a lake without added nutrients.",
       "D": "Size is never raised by either scientist, and the comparison controls the one variable that matters to the dispute."
@@ -7372,7 +7372,7 @@
       },
       {
         "id": "B",
-        "text": "Scientist 1's claim that the habitable cold band narrowed each summer."
+        "text": "Scientist 1's claim that the habitable cold band grew narrower each summer."
       },
       {
         "id": "C",
@@ -7395,33 +7395,33 @@
     "id": "s167",
     "section": "science",
     "topic": "outside knowledge",
-    "difficulty": "medium",
+    "difficulty": "hard",
     "passage": "sp23",
-    "context": "Warm water holds less dissolved oxygen than cold water does. Which scientist's argument does this fact most directly reinforce?",
+    "context": "Warm water holds less dissolved oxygen than cold water does. A student argues that this fact alone explains the fall in deep-layer oxygen in Table 1. Which observation most weakens the student’s argument?",
     "choices": [
       {
         "id": "A",
-        "text": "Scientist 1, whose account already treats the oxygen decline as a consequence of warming."
+        "text": "The deep layer stayed near 6 °C while its oxygen fell from 8.1 to 1.9 mg/L."
       },
       {
         "id": "B",
-        "text": "Scientist 2, whose account treats the oxygen decline as independent of temperature."
+        "text": "Surface temperature rose by 2.6 °C over the same years that deep-layer oxygen fell."
       },
       {
         "id": "C",
-        "text": "Neither, because the deep layer's temperature barely changed."
+        "text": "The trout catch fell from 1,240 fish in 1995 to none at all by 2020."
       },
       {
         "id": "D",
-        "text": "Both, because both attribute the oxygen decline to the same cause."
+        "text": "Deep-layer oxygen had dropped below the 4 mg/L trout need by 2010."
       }
     ],
     "answer": "A",
     "why": {
-      "A": "Correct — it supplies a second route from warming to lower oxygen, strengthening the claim that warming is the root cause.",
-      "B": "It works against Scientist 2, who needs the oxygen loss to come from nutrients rather than from temperature.",
-      "C": "The surface layer warmed substantially, and Scientist 1's mechanism runs through the whole summer's stratification rather than the deep layer's own temperature.",
-      "D": "The two accounts give different causes for the oxygen decline; that disagreement is the heart of the dispute."
+      "A": "Correct — the deep water’s own temperature barely moved (5.8 to 6.1 °C), so its capacity to hold oxygen barely changed; something else removed the oxygen.",
+      "B": "Surface warming happens in a different layer and, if anything, looks like support for a temperature explanation.",
+      "C": "The catch shows the consequence of low oxygen, not what caused the oxygen to fall.",
+      "D": "This dates when oxygen became too low for trout but says nothing about why it fell."
     }
   },
   {
@@ -7442,7 +7442,7 @@
       },
       {
         "id": "C",
-        "text": "Why trout require dissolved oxygen above 4 mg/L in order to feed."
+        "text": "Why lake trout require dissolved oxygen above 4 mg/L in order to keep feeding."
       },
       {
         "id": "D",
@@ -7471,7 +7471,7 @@
       },
       {
         "id": "B",
-        "text": "Above about 4 °C, warmer water is denser than colder water."
+        "text": "Above about 4 °C, warmer water is always denser than colder water."
       },
       {
         "id": "C",
@@ -7644,7 +7644,7 @@
       },
       {
         "id": "D",
-        "text": "No, because Study 2 tested only 200 lux and 800 lux, so nothing can be said about 1600 lux."
+        "text": "No, because Study 2 tested only 200 and 800 lux, not 1600 lux."
       }
     ],
     "answer": "A",
@@ -7933,7 +7933,7 @@
       },
       {
         "id": "B",
-        "text": "NaCl concentration only."
+        "text": "NaCl concentration only, not time."
       },
       {
         "id": "C",
@@ -7970,7 +7970,7 @@
       },
       {
         "id": "C",
-        "text": "No, because 30 g/L was not among the concentrations tested, so nothing at all can be said about that concentration."
+        "text": "No, because 30 g/L was not tested, so nothing can be said about it."
       },
       {
         "id": "D",
@@ -8036,7 +8036,7 @@
       },
       {
         "id": "C",
-        "text": "toward whichever side is warmer."
+        "text": "toward whichever side of the membrane is warmer."
       },
       {
         "id": "D",
@@ -8069,7 +8069,7 @@
       },
       {
         "id": "C",
-        "text": "a volume."
+        "text": "a volume of solution."
       },
       {
         "id": "D",
@@ -8201,7 +8201,7 @@
       },
       {
         "id": "C",
-        "text": "zinc alone"
+        "text": "zinc coating alone"
       },
       {
         "id": "D",
@@ -8318,7 +8318,7 @@
   {
     "id": "s195",
     "section": "science",
-    "topic": "calculating from data",
+    "topic": "data representation",
     "difficulty": "medium",
     "passage": "sp25",
     "context": "The epoxy entry in Table 1 corresponds to which row of Table 2?",
@@ -8366,7 +8366,7 @@
       },
       {
         "id": "C",
-        "text": "how zinc and epoxy coatings compare with each other directly."
+        "text": "how the zinc and epoxy coatings compare with each other directly."
       },
       {
         "id": "D",
@@ -8385,33 +8385,33 @@
     "id": "s197",
     "section": "science",
     "topic": "hypotheses",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "passage": "sp25",
-    "context": "A student predicts that a 320 µm epoxy coating would lose less than 11 mg, but not much less. Do the data support this?",
+    "context": "A student claims that each doubling of epoxy thickness in Table 2 halves the mass lost. For which doubling do the data depart furthest from that claim?",
     "choices": [
       {
         "id": "A",
-        "text": "Yes, because mass loss falls at every doubling, each time by less than before."
+        "text": "From 10 µm to 20 µm"
       },
       {
         "id": "B",
-        "text": "Yes, because the trend in Table 2 is linear and can be extended by subtracting 8 mg."
+        "text": "From 20 µm to 40 µm"
       },
       {
         "id": "C",
-        "text": "No, because mass loss cannot fall below the 11 mg recorded at 160 µm."
+        "text": "From 40 µm to 80 µm"
       },
       {
         "id": "D",
-        "text": "No, because 320 µm lies outside the range tested and nothing can be inferred."
+        "text": "From 80 µm to 160 µm"
       }
     ],
     "answer": "A",
     "why": {
-      "A": "Both halves of the prediction come from the table: the direction from the falling column, and \"not much less\" from the shrinking size of each successive reduction.",
-      "B": "The reductions are 35, 27, 15 and 8 — not constant, so the relationship is not linear and cannot be extended by repeated subtraction.",
-      "C": "Nothing establishes 11 mg as a floor, and the column has fallen at every previous step.",
-      "D": "Extrapolating one step beyond a strong, consistent trend is reasonable so long as it is stated as less certain — which is what \"not much less\" does."
+      "A": "Correct — halving 96 mg would leave 48 mg, but 61 mg was lost, about 0.64 of the starting value and 13 mg above the claim.",
+      "B": "Halving 61 mg gives 30.5 mg against 34 mg measured, a ratio of about 0.56 and only 3.5 mg off.",
+      "C": "Halving 34 mg gives 17 mg against 19 mg measured, a ratio of about 0.56 and only 2 mg off.",
+      "D": "Halving 19 mg gives 9.5 mg against 11 mg measured, a ratio of about 0.58 and only 1.5 mg off."
     }
   },
   {
@@ -8443,7 +8443,7 @@
     "why": {
       "A": "The prefix micro- means one millionth, so 1 µm = 0.000001 m. A 160 µm coating is about a sixth of a millimetre.",
       "B": "One thousandth of a metre is a millimetre.",
-      "C": "That would be a nanometre divided again — far smaller than any coating on a steel panel.",
+      "C": "One millionth of a millimetre is a nanometre, a thousand times smaller than a micrometre.",
       "D": "One thousand metres is a kilometre; micro- makes things smaller, not larger."
     }
   },
@@ -8535,7 +8535,7 @@
       },
       {
         "id": "D",
-        "text": "5%"
+        "text": "0%"
       }
     ],
     "answer": "A",
@@ -8543,7 +8543,7 @@
       "A": "At 24 °C the coastal bar reaches 40, well below its inland neighbour.",
       "B": "85% is the inland bar at the same temperature.",
       "C": "90% is the coastal bar at 20 °C, one band to the left.",
-      "D": "5% is the coastal bar at 28 °C, one band to the right."
+      "D": "0% is the coastal bar at 28 °C, one band to the right, where no coastal fish survived."
     }
   },
   {
@@ -8601,7 +8601,7 @@
       },
       {
         "id": "D",
-        "text": "a steeper rise at every temperature."
+        "text": "a steeper rise at every higher temperature."
       }
     ],
     "answer": "A",
@@ -8618,38 +8618,38 @@
     "topic": "calculating from data",
     "difficulty": "medium",
     "passage": "sp26",
-    "context": "Based on Figure 2, how many more inland fish than coastal fish out of every 100 survived 96 hours at 28 °C?",
+    "context": "Based on Figure 2, how many more inland fish than coastal fish out of every 100 survived 96 hours at 24 °C?",
     "choices": [
       {
         "id": "A",
-        "text": "50"
+        "text": "45"
       },
       {
         "id": "B",
-        "text": "60"
+        "text": "85"
       },
       {
         "id": "C",
-        "text": "10"
+        "text": "40"
       },
       {
         "id": "D",
-        "text": "70"
+        "text": "125"
       }
     ],
     "answer": "A",
     "why": {
-      "A": "Inland reaches 60 and coastal 10, so the difference is 50 out of every 100.",
-      "B": "60 is the inland figure on its own.",
-      "C": "10 is the coastal figure on its own.",
-      "D": "70 adds the two bars instead of subtracting them."
+      "A": "Inland reaches 85 and coastal 40 at 24 °C, so the difference is 45 out of every 100.",
+      "B": "85 is the inland figure on its own.",
+      "C": "40 is the coastal figure on its own.",
+      "D": "125 adds the two bars instead of subtracting them."
     }
   },
   {
     "id": "s205",
     "section": "science",
     "topic": "calculating from data",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "passage": "sp26",
     "context": "Based on Table 1, the inland population’s critical thermal maximum exceeds the coastal population’s by:",
     "choices": [
@@ -8696,7 +8696,7 @@
       },
       {
         "id": "C",
-        "text": "No, because 27 °C was not among the temperatures tested in either figure, so the prediction cannot be checked at all."
+        "text": "No, because 27 °C was not tested, so the claim cannot be checked."
       },
       {
         "id": "D",
@@ -8799,7 +8799,7 @@
       },
       {
         "id": "D",
-        "text": "70 mg/kg/h per °C"
+        "text": "15 mg/kg/h per °C"
       }
     ],
     "answer": "A",
@@ -8807,7 +8807,7 @@
       "A": "From 200 to 280 is 80 across 4 degrees, and 80 ÷ 4 = 20.",
       "B": "80 is the total rise across the interval, not the rise per degree.",
       "C": "This divides by 16 rather than by the 4-degree width of the interval.",
-      "D": "70 would be the rate if the rise were divided by a single degree step of about 1.14, which matches nothing in the figure."
+      "D": "15 is the inland rise per degree from 20 to 24 °C (280 to 340), the next interval along."
     }
   },
   {
@@ -8840,7 +8840,7 @@
       "A": "Both curves climb with temperature, so demand rises. Supply falls at the same time, which is why the squeeze tightens from both directions.",
       "B": "Figure 1 shows consumption rising, not falling, as the water warms.",
       "C": "The premise of the question is that warmer water holds less oxygen, so supply is falling.",
-      "D": "Consumption more than triples between 8 and 20 °C in both populations."
+      "D": "Consumption rises to roughly three times its 8 °C value in both populations, so it clearly depends on temperature."
     }
   },
   {
@@ -8865,7 +8865,7 @@
       },
       {
         "id": "D",
-        "text": "determine the temperature of the water."
+        "text": "determine the temperature of the water in the tank."
       }
     ],
     "answer": "A",
@@ -9026,7 +9026,7 @@
       },
       {
         "id": "C",
-        "text": "The rim is found to stand 60 m above the level of the surrounding plain."
+        "text": "The rim is found to stand 60 m above the level of the flat surrounding plain."
       },
       {
         "id": "D",
@@ -9088,7 +9088,7 @@
       },
       {
         "id": "B",
-        "text": "shocked quartz requires pressures above 5 gigapascals, which only a hypervelocity impact could ever generate."
+        "text": "shocked quartz needs pressures above 5 gigapascals, reachable only by an impact."
       },
       {
         "id": "C",
@@ -9565,7 +9565,7 @@
     "why": {
       "A": "Correct — 30 cycles against 210 cycles is 30/210, which reduces to about one seventh.",
       "B": "One quarter of 210 would be about 53 cycles, well above the 30 recorded at 18% porosity.",
-      "C": "One third of 210 is 70 cycles, which is the figure for the 12% core rather than the 18% core.",
+      "C": "One third of 210 is 70 cycles, close to the 65 recorded for the 12% core rather than the 30 for the 18% core.",
       "D": "Two thirds of 210 is 140 cycles, close to the 8% figure and more than four times the right value."
     }
   },
@@ -9979,7 +9979,7 @@
       },
       {
         "id": "B",
-        "text": "increases the atmospheric pressure pushing down on the water."
+        "text": "increases the atmospheric pressure pushing down on the water’s surface."
       },
       {
         "id": "C",
@@ -10061,7 +10061,7 @@
       "A": "That would follow from using twelve hours rather than the full day the question names.",
       "B": "Correct — 60 mL/h over 24 h is 1440 cm³, and 1440 cm³ spread over 5000 cm² is 0.29 cm.",
       "C": "That is the depth in centimetres rather than millimetres, so it is ten times too small.",
-      "D": "Multiplying by the area instead of dividing by it inflates the answer tenfold."
+      "D": "Using 500 cm² instead of 5000 cm² for the tray makes the depth ten times too large."
     }
   },
   {
@@ -10126,8 +10126,8 @@
     "why": {
       "A": "That is ten times too small, as though a cubic metre held only 100,000 cm³.",
       "B": "That is ten times too large and would make loam denser than most solid rock.",
-      "C": "Changing the mass unit while leaving the volume alone drops a factor of a million.",
-      "D": "Correct — a cubic metre holds a million cubic centimetres, so 1.32 g/cm³ is 1320 kg."
+      "C": "Keeping the number unchanged ignores both conversions: 1 kg is 1000 g and 1 m³ is 1,000,000 cm³, so the value must be multiplied by 1000.",
+      "D": "Correct — a cubic metre holds 1,000,000 cm³, so it holds 1,320,000 g of loam, which is 1320 kg; the density is 1320 kg/m³."
     }
   },
   {
@@ -10202,31 +10202,31 @@
     "topic": "data representation",
     "difficulty": "hard",
     "passage": "sp22",
-    "context": "Which property in Table 2 orders the three soils the same way their infiltration rates in Table 3 are ordered?",
+    "context": "A fourth soil, tested in the same way, has a clay content of about 30%. If clay content orders it among the other soils as it does in Tables 2 and 3, its final-interval infiltration rate would most likely be:",
     "choices": [
       {
         "id": "A",
-        "text": "Organic matter, which rises as the rate falls."
+        "text": "between 18 and 66 mm/hr"
       },
       {
         "id": "B",
-        "text": "None of the three orders the soils that way."
+        "text": "below 18 mm/hr"
       },
       {
         "id": "C",
-        "text": "Clay content, which rises as the rate falls."
+        "text": "between 66 and 180 mm/hr"
       },
       {
         "id": "D",
-        "text": "Bulk density, which rises as the rate falls."
+        "text": "above 180 mm/hr"
       }
     ],
-    "answer": "C",
+    "answer": "A",
     "why": {
-      "A": "Loam holds the most organic matter, so that column peaks in the middle, not at an end.",
-      "B": "Clay content does order them, running upward exactly as the rate runs downward.",
-      "C": "Correct — 4, 19 and 52 per cent run opposite to 180, 66 and 18 mm/hr.",
-      "D": "Loam has the lowest bulk density of the three, yet its rate sits in the middle."
+      "A": "Correct — 30% clay lies between loam’s 19% and clay’s 52% in Table 2, so its rate should fall between their Table 3 rates of 66 and 18 mm/hr.",
+      "B": "A rate below 18 mm/hr belongs to a soil with more clay than the 52% of the clay soil, not less.",
+      "C": "That range sits between sand and loam, which hold only 4% and 19% clay.",
+      "D": "Only a soil with less clay than sand’s 4% would be expected to beat sand’s 180 mm/hr."
     }
   },
   {
@@ -10540,7 +10540,7 @@
       },
       {
         "id": "B",
-        "text": "3.0 kg"
+        "text": "1.5 kg"
       },
       {
         "id": "C",
@@ -10554,7 +10554,7 @@
     "answer": "C",
     "why": {
       "A": "0.020 kg treats the density as a mass, ignoring the volume entirely.",
-      "B": "3.0 kg uses the density of the open-cell foam rather than of the polyester batt.",
+      "B": "1.5 kg uses the density of the open-cell foam, 30 kg per m cubed, rather than that of the polyester batt.",
       "C": "Correct — 50 mm is 0.050 m, so the volume is 0.050 m cubed, and 0.050 x 20 is 1.0 kg.",
       "D": "20 kg is the mass of a full cubic metre of the material, not of this panel."
     }
@@ -10950,7 +10950,7 @@
     "answer": "C",
     "why": {
       "A": "1.3 x 10 to the minus 11 converts the radius to metres twice before squaring.",
-      "B": "6.3 x 10 to the minus 3 is the circumference in metres rather than the area.",
+      "B": "6.3 x 10 to the minus 3 is pi times the radius in metres, left unsquared.",
       "C": "Correct — 2.0 mm is 0.0020 m, and pi times 0.0020 squared is about 1.3 x 10 to the minus 5.",
       "D": "1.3 x 10 to the minus 2 squares the radius in millimetres and then divides by 1000 once."
     }
@@ -11105,7 +11105,7 @@
       },
       {
         "id": "C",
-        "text": "raise the terminal velocity enough to be timed by hand."
+        "text": "raise the terminal velocity enough for it to be timed by hand."
       },
       {
         "id": "D",
@@ -11180,10 +11180,10 @@
     ],
     "answer": "B",
     "why": {
-      "A": "Accumulated wind-blown dust is Student 2 account of what a mound is.",
+      "A": "Accumulated wind-blown dust is Student 2’s account of what a mound is.",
       "B": "Correct — Student 3 expects traces of occupation, naming charcoal and fired pottery.",
       "C": "Student 3 says explicitly that no living builder is needed and none should be found.",
-      "D": "Soil brought up from depth is Student 1 prediction, resting on an active colony."
+      "D": "Soil brought up from depth is Student 1’s prediction, resting on an active colony."
     }
   },
   {
@@ -11214,7 +11214,7 @@
     "answer": "C",
     "why": {
       "A": "Only Student 3 predicts charcoal or pottery, and Student 1 predicts deep soil instead.",
-      "B": "The water-drawing radius is Student 2 explanation, which neither of the others shares.",
+      "B": "The water-drawing radius is Student 2’s explanation, which neither of the others shares.",
       "C": "Correct — one has insects building them and the other has farmers, while Student 2 says nothing builds them.",
       "D": "Student 1 expects them to grow; Student 3 expects them to be wearing down."
     }
@@ -11248,7 +11248,7 @@
     "why": {
       "A": "A grid laid out by farmers has no reason to track a modern rainfall gradient.",
       "B": "Student 1 ties spacing to colony boundaries and never mentions charcoal.",
-      "C": "The mounds wearing down is Student 3 prediction, and it is not what the spacing shows.",
+      "C": "The mounds wearing down is Student 3’s prediction, and it is not what the spacing shows.",
       "D": "Correct — Student 2 argues each patch must draw on a wider area where rain is scarcer, widening the spacing."
     }
   },
@@ -11398,11 +11398,11 @@
       },
       {
         "id": "B",
-        "text": "why the mound soil holds charcoal and pottery."
+        "text": "why the soil of the mounds holds charcoal and pottery."
       },
       {
         "id": "C",
-        "text": "why the colonies stop at their neighbours boundaries."
+        "text": "why the colonies stop at their neighbours’ boundaries."
       },
       {
         "id": "D",
@@ -11413,7 +11413,7 @@
     "why": {
       "A": "Correct — the even spacing is the observation the passage sets out, and each student explains it differently.",
       "B": "Only Student 3 predicts those traces; the others neither need nor expect them.",
-      "C": "Colony boundaries arise only within Student 1 explanation.",
+      "C": "Colony boundaries arise only within Student 1’s explanation.",
       "D": "The extent of the field is mentioned once and no student is committed to explaining it."
     }
   },
@@ -11489,7 +11489,7 @@
     "topic": "hypotheses",
     "difficulty": "medium",
     "passage": "sp31",
-    "context": "Student 2 account leads most directly to the prediction that mounds should be:",
+    "context": "Student 2’s account leads most directly to the prediction that mounds should be:",
     "choices": [
       {
         "id": "A",
@@ -11512,7 +11512,7 @@
     "why": {
       "A": "She has patches persisting in dry conditions, which is where her mechanism works best.",
       "B": "She ties rainfall to the spacing between mounds rather than to their height.",
-      "C": "Straight lines are Student 3 grid; her patches settle at even distances, not in rows.",
+      "C": "Straight lines are Student 3’s grid; her patches settle at even distances, not in rows.",
       "D": "Correct — her mechanism needs the ground between patches to dry out, which cannot happen where water is abundant everywhere."
     }
   },
@@ -11736,7 +11736,7 @@
       },
       {
         "id": "D",
-        "text": "about 1.7 W per day"
+        "text": "about 1.1 W per day"
       }
     ],
     "answer": "C",
@@ -11744,7 +11744,7 @@
       "A": "This would be the rate if the 47 W had been lost in about 20 days rather than 60.",
       "B": "This is the total fall in output divided by 10 rather than by the 60 days the table gives.",
       "C": "Correct. Output falls 47 W across 60 days, and 47 divided by 60 is about 0.8 W per day.",
-      "D": "This is roughly the rate over the first seven days alone, which is steeper than the average across the whole 60."
+      "D": "This is the rate over the first seven days alone, 8 W in 7 days, which is steeper than the average across the whole 60."
     }
   },
   {
@@ -11761,7 +11761,7 @@
       },
       {
         "id": "B",
-        "text": "output rose rather than fell as the days passed."
+        "text": "output rose rather than fell as the days since washing passed."
       },
       {
         "id": "C",
@@ -11835,7 +11835,7 @@
       },
       {
         "id": "D",
-        "text": "exactly 30 degrees, the best angle found in Table 1."
+        "text": "exactly 30 degrees, which was the best angle found in Table 1."
       }
     ],
     "answer": "B",
@@ -11850,7 +11850,7 @@
     "id": "s302",
     "section": "science",
     "topic": "calculating from data",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "passage": "sp32",
     "context": "Based on Table 2, the output of the panel at a cell temperature of 50 degrees C would most likely be closest to:",
     "choices": [
@@ -11955,7 +11955,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "The identity of the antibiotic."
+        "text": "The identity of the antibiotic used."
       },
       {
         "id": "B",
@@ -12237,8 +12237,8 @@
     "answer": "D",
     "why": {
       "A": "100 micrograms would clear the mark too, at roughly 21 mm, but it is not the smallest listed dose that does so.",
-      "B": "1 microgram is a threefold step below the 10 microgram reading, so it would take the zone down to about 6 mm.",
-      "C": "3 micrograms is also below 10 micrograms and would give roughly 6 mm less than 11 mm, not more.",
+      "B": "1 microgram is two threefold steps below the 10 microgram reading, so the zone would shrink rather than grow toward 15 mm.",
+      "C": "3 micrograms is one threefold step below 10 micrograms, so the zone would shrink to about 6 mm rather than grow.",
       "D": "Correct. Strain C gives 11 mm at 10 micrograms, and one threefold step up to 30 micrograms adds about 5 mm, reaching roughly 16 mm."
     }
   },
@@ -12318,7 +12318,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "a shortage of sand eels."
+        "text": "a shortage of sand eels to feed the chicks."
       },
       {
         "id": "B",
@@ -12347,7 +12347,7 @@
     "topic": "conflicting viewpoints",
     "difficulty": "medium",
     "passage": "sp34",
-    "context": "Scientist 2 argues that the decline began before rats arrived. Which piece of shared information most directly supports that argument?",
+    "context": "Scientist 2 argues that the decline began before rats arrived. Which of the following most directly supports that argument?",
     "choices": [
       {
         "id": "A",
@@ -12363,7 +12363,7 @@
       },
       {
         "id": "D",
-        "text": "Fledging success was 0.21 in 1998."
+        "text": "Fledging success had fallen to 0.21 by 1998."
       }
     ],
     "answer": "B",
@@ -12462,7 +12462,7 @@
       },
       {
         "id": "D",
-        "text": "the Fara colony declined at the same rate as the Ard Skerry colony over the same years."
+        "text": "the Fara colony declined at the same rate over the same years."
       }
     ],
     "answer": "A",
@@ -12502,7 +12502,7 @@
     "why": {
       "A": "The 1990 figure is used to argue that the decline predates the rats, and it is not what the Fara comparison is for.",
       "B": "Correct. Fara had rats throughout and held steady, which is offered as a case where rats did not produce the outcome Scientist 1 attributes to them.",
-      "C": "Storms are Scientist 3 subject, and nothing is said about what weather Fara received.",
+      "C": "Storms are Scientist 3’s subject, and nothing is said about what weather Fara received.",
       "D": "The point made about Fara is the opposite: its birds fished a different bank, so the food supply there was not the same."
     }
   },
@@ -12534,7 +12534,7 @@
     "answer": "C",
     "why": {
       "A": "The waterlogged ground argument belongs to Scientist 3, who is explaining the cost of a collapsed burrow.",
-      "B": "Rats are Scientist 1 subject; Scientist 3 does not appeal to them at all.",
+      "B": "Rats are Scientist 1’s subject; Scientist 3 does not appeal to them at all.",
       "C": "Correct. Scientist 1 closes on exactly this point, offering it as the reason the count kept falling after 1991.",
       "D": "The light fledgling argument belongs to Scientist 2, not Scientist 1."
     }
@@ -12982,7 +12982,7 @@
       },
       {
         "id": "B",
-        "text": "The depth of water standing above a fixed datum."
+        "text": "The depth of water standing above a fixed reference datum."
       },
       {
         "id": "C",
@@ -13242,7 +13242,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "no group combined 3000 ppm with a temperature other than 22 degrees C."
+        "text": "3000 ppm was tried only at 22 degrees C."
       },
       {
         "id": "B",
@@ -13473,11 +13473,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "genetically identical to one another only if they came from the same shoot."
+        "text": "identical to one another only if taken from the same shoot."
       },
       {
         "id": "B",
-        "text": "more genetically varied, because each cutting develops its own root system and grows on its own."
+        "text": "more genetically varied, since each cutting grows its own roots."
       },
       {
         "id": "C",
@@ -13485,7 +13485,7 @@
       },
       {
         "id": "D",
-        "text": "genetically identical to the parent, so differences between them are not inherited differences."
+        "text": "genetically identical to the parent plant."
       }
     ],
     "answer": "D",
@@ -13704,7 +13704,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "The chalk beneath the pits will be more heavily jointed than the chalk elsewhere on the site."
+        "text": "The chalk under the pits will be more jointed than elsewhere."
       },
       {
         "id": "B",
@@ -13712,11 +13712,11 @@
       },
       {
         "id": "C",
-        "text": "Excavation will show the flint nodule band broken and partly removed beneath the pits."
+        "text": "The flint band will be broken beneath the pits."
       },
       {
         "id": "D",
-        "text": "The pits will prove to be arranged along the two mapped joint directions."
+        "text": "The pits will line up along the two mapped joint directions."
       }
     ],
     "answer": "C",
@@ -13962,7 +13962,7 @@
     "id": "s366",
     "section": "science",
     "topic": "data representation",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "passage": "sp38",
     "context": "Comparing Tables 1 and 3 across the five speeds, reaction distance and braking distance differ in that reaction distance:",
     "choices": [
@@ -14028,7 +14028,7 @@
     "id": "s368",
     "section": "science",
     "topic": "calculating from data",
-    "difficulty": "medium",
+    "difficulty": "hard",
     "passage": "sp38",
     "context": "Based on Tables 1 and 3, the total stopping distance at 100 km/h on dry asphalt was:",
     "choices": [
@@ -14061,7 +14061,7 @@
     "id": "s369",
     "section": "science",
     "topic": "calculating from data",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "passage": "sp38",
     "context": "Based on Table 2, the braking distance on packed snow at 60 km/h was how many times that on dry asphalt at the same speed?",
     "choices": [
@@ -14218,7 +14218,7 @@
     "why": {
       "A": "Dividing by 100 has no basis in either unit and would give 1 m/s.",
       "B": "Correct — a kilometre is 1000 m and an hour is 3600 s, so 100 km/h is 100 000/3600, about 27.8 m/s.",
-      "C": "That would give 360 000, turning a car into something far faster than sound.",
+      "C": "That inverts the conversion and would give 360 m/s, about thirteen times the true speed.",
       "D": "Minutes are not involved in a conversion from hours straight to seconds."
     }
   },
@@ -14226,7 +14226,7 @@
     "id": "s374",
     "section": "science",
     "topic": "units",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "passage": "sp38",
     "context": "A report gives a result as \"a stopping distance of 3.4 seconds.\" The figure is unusable as a distance because seconds measure:",
     "choices": [
@@ -14339,7 +14339,7 @@
       },
       {
         "id": "C",
-        "text": "two"
+        "text": "two times"
       },
       {
         "id": "D",
@@ -14364,7 +14364,7 @@
     "choices": [
       {
         "id": "A",
-        "text": "Tension in the wire"
+        "text": "Tension in the stretched wire"
       },
       {
         "id": "B",
@@ -14405,7 +14405,7 @@
       },
       {
         "id": "C",
-        "text": "every table records a frequency below 600 Hz."
+        "text": "every table records only frequencies below 600 Hz."
       },
       {
         "id": "D",
@@ -14415,7 +14415,7 @@
     "answer": "D",
     "why": {
       "A": "Those two 112 Hz readings come from quite different conditions and agree by coincidence.",
-      "B": "Table 3 has four values and Table 2 five; only some overlap.",
+      "B": "Table 2’s five readings do include all four of Table 3’s, but three of those matches come from different wires at different tensions; only the 224 Hz pair shares every condition.",
       "C": "A shared upper bound says nothing about any particular condition being repeated.",
       "D": "Correct — those two rows describe the same 0.50 m length, 40 N tension and 0.80 g/m wire, and they agree exactly."
     }
@@ -14434,7 +14434,7 @@
       },
       {
         "id": "B",
-        "text": "Doubling the tension doubles the frequency."
+        "text": "Doubling the tension exactly doubles the frequency."
       },
       {
         "id": "C",
@@ -14570,7 +14570,7 @@
       },
       {
         "id": "C",
-        "text": "each gram of the wire is 0.80 m long."
+        "text": "each gram of the wire measures 0.80 m in length."
       },
       {
         "id": "D",
@@ -14589,7 +14589,7 @@
     "id": "s385",
     "section": "science",
     "topic": "units",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "passage": "sp39",
     "context": "The tensions in Table 2 are given in newtons. A newton is a unit of:",
     "choices": [
@@ -14744,7 +14744,7 @@
     ],
     "answer": "B",
     "why": {
-      "A": "The cylinder is read the same way in all fifteen trials.",
+      "A": "The cylinder is read the same way in every trial, so one trial cannot check it.",
       "B": "Correct — it removes the one substance being tested and records 0 mL, which is what a control is for.",
       "C": "Dissolution would affect every trial alike and is not what varying the glucose tests.",
       "D": "A leak would show as lost gas in trials that produce some, not in one that produces none."
@@ -14820,7 +14820,7 @@
     "id": "s392",
     "section": "science",
     "topic": "hypotheses",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "passage": "sp40",
     "context": "A student proposes that gas output always rises with temperature. Table 3 refutes this because:",
     "choices": [
@@ -14886,7 +14886,7 @@
     "id": "s394",
     "section": "science",
     "topic": "calculating from data",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "passage": "sp40",
     "context": "Based on Table 2, the gas collected per gram of yeast was greatest at a yeast mass of:",
     "choices": [
@@ -14975,9 +14975,9 @@
     ],
     "answer": "A",
     "why": {
-      "A": "Correct — Table 1 shows glucose already limiting above 10 g/L, so a heavily yeasted flask will exhaust its sugar and fall short of a doubled volume.",
-      "B": "A constant rate would require a supply that the tables show is already running short.",
-      "C": "Growth would need more sugar, which is the very thing in short supply.",
+      "A": "Correct — the flask holds a fixed 1.0 g of glucose, and Table 1 shows less gas at lower glucose, so as the sugar is used up the second 20 minutes should yield less than the first.",
+      "B": "A constant rate would need the glucose concentration to stay the same, but the yeast is using it up throughout.",
+      "C": "Without oxygen, yeast multiplies little in 40 minutes, and a shrinking sugar supply works against any rise in rate.",
       "D": "Nothing indicates the reaction halts at the moment of measurement."
     }
   },
@@ -15018,7 +15018,7 @@
     "id": "s398",
     "section": "science",
     "topic": "outside knowledge",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "passage": "sp40",
     "context": "Besides carbon dioxide, the process described in the passage produces:",
     "choices": [
@@ -15061,11 +15061,11 @@
       },
       {
         "id": "B",
-        "text": "carbon dioxide dissolving more readily in warm water than in cold, so less gas is collected."
+        "text": "carbon dioxide dissolving more readily in warm water, so less is collected."
       },
       {
         "id": "C",
-        "text": "the yeast switching to using oxygen instead of glucose."
+        "text": "the yeast switching to using oxygen instead of glucose as it warms."
       },
       {
         "id": "D",
@@ -15075,7 +15075,7 @@
     "answer": "D",
     "why": {
       "A": "Glucose is stable at 50 degrees C, far below any temperature that would break it down.",
-      "B": "More dissolving would reduce the reading somewhat, not cut 44 mL to 3 mL.",
+      "B": "Gases dissolve less readily in warm water, not more, and no change in dissolving could cut 44 mL to 3 mL.",
       "C": "The flask was sealed and the passage specifies that yeast works here without oxygen.",
       "D": "Correct — fermentation is enzyme-driven, and above an optimum an enzyme denatures and loses the shape its active site depends on."
     }
@@ -15276,6 +15276,3273 @@
       "B": "Coating the lower surfaces alone still loses more than twice that.",
       "C": "Coating the upper surfaces alone barely changes the loss at all.",
       "D": "The untreated cuttings lose 1.40 g, the most of any treatment here."
+    }
+  },
+  {
+    "id": "s406",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp41",
+    "context": "According to Table 1, the resistance of the 1.50 m constantan wire was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3.68 Ω"
+      },
+      {
+        "id": "B",
+        "text": "2.45 Ω"
+      },
+      {
+        "id": "C",
+        "text": "4.90 Ω"
+      },
+      {
+        "id": "D",
+        "text": "1.23 Ω"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Table 1 pairs a length of 1.50 m with a resistance of 3.68 Ω.",
+      "B": "That is the 1.00 m wire, one row up.",
+      "C": "That is the 2.00 m wire, the longest in the table.",
+      "D": "That is the 0.50 m wire, and it also appears in Table 2 for a different wire."
+    }
+  },
+  {
+    "id": "s407",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp41",
+    "context": "Taken together, Tables 1 and 2 show that doubling a wire’s length and doubling its cross-sectional area affect its resistance in which ways, respectively?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Doubling the length halves the resistance; doubling the area doubles it."
+      },
+      {
+        "id": "B",
+        "text": "Both changes double it."
+      },
+      {
+        "id": "C",
+        "text": "Doubling the length doubles it, and doubling the area halves it."
+      },
+      {
+        "id": "D",
+        "text": "Doubling the length quadruples it, and doubling the area halves it."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That reverses both tables: longer wires in Table 1 have more resistance, and thicker wires in Table 2 have less.",
+      "B": "Table 2 shows resistance falling as the area grows, from 4.90 Ω to 2.45 Ω when the area goes from 0.10 to 0.20 mm².",
+      "C": "Correct — 1.00 m to 2.00 m takes 2.45 Ω to 4.90 Ω in Table 1, and 0.20 to 0.40 mm² takes 2.45 Ω to 1.23 Ω in Table 2.",
+      "D": "Going from 1.00 m to 2.00 m only doubles the resistance, from 2.45 Ω to 4.90 Ω."
+    }
+  },
+  {
+    "id": "s408",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp41",
+    "context": "Based on Figure 1, the current through the constantan wire increased by about how much for each additional volt?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 200 mA"
+      },
+      {
+        "id": "B",
+        "text": "About 2.5 mA"
+      },
+      {
+        "id": "C",
+        "text": "About 820 mA"
+      },
+      {
+        "id": "D",
+        "text": "About 410 mA"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the rise over one 0.5 V step, not over a full volt.",
+      "B": "That borrows the wire’s resistance of about 2.45 Ω, which is not a rate of change of current.",
+      "C": "That is the current reached at 2.0 V, not the rise per volt.",
+      "D": "Correct — the line is straight, and 1020 mA spread over 2.5 V is about 408 mA per volt."
+    }
+  },
+  {
+    "id": "s409",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp41",
+    "context": "The wires in Table 1 have a cross-sectional area of 0.20 mm². Expressed in square metres, that area is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2.0 × 10⁻⁷ m²"
+      },
+      {
+        "id": "B",
+        "text": "2.0 × 10⁻⁴ m²"
+      },
+      {
+        "id": "C",
+        "text": "2.0 × 10⁻⁵ m²"
+      },
+      {
+        "id": "D",
+        "text": "2.0 × 10⁻¹ m²"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 1 mm is 10⁻³ m, so 1 mm² is (10⁻³)², or 10⁻⁶ m², and 0.20 mm² is 2.0 × 10⁻⁷ m².",
+      "B": "That uses the length factor of 10⁻³ once, without squaring it for an area.",
+      "C": "That converts as though from square centimetres, where 1 cm² is 10⁻⁴ m².",
+      "D": "That keeps the number 0.20 and simply renames the unit."
+    }
+  },
+  {
+    "id": "s410",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp41",
+    "context": "Based on Tables 1 and 2, a constantan wire 3.00 m long with a cross-sectional area of 0.40 mm² would most likely have a resistance of about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "7.4 Ω"
+      },
+      {
+        "id": "B",
+        "text": "3.7 Ω"
+      },
+      {
+        "id": "C",
+        "text": "1.8 Ω"
+      },
+      {
+        "id": "D",
+        "text": "14.7 Ω"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is three times the 2.45 Ω of a 1.00 m wire, allowing for the length but not for the doubled area.",
+      "B": "Correct — tripling the length triples 2.45 Ω to about 7.35 Ω, and doubling the area halves that to about 3.7 Ω.",
+      "C": "That quarters 7.35 Ω, as though doubling the area cut the resistance by a factor of four.",
+      "D": "That doubles 7.35 Ω, treating a thicker wire as having more resistance rather than less."
+    }
+  },
+  {
+    "id": "s411",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp41",
+    "context": "A student hypothesizes that the lamp filament, like the constantan wire, has the same resistance at every voltage tested. Does Figure 1 support this?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because the filament’s current rises at every step in voltage."
+      },
+      {
+        "id": "B",
+        "text": "No; its current rises by less at each step, so its resistance grows."
+      },
+      {
+        "id": "C",
+        "text": "Yes, because both lines begin at zero."
+      },
+      {
+        "id": "D",
+        "text": "No, because the filament’s current falls as the voltage rises."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A rising current alone does not show a fixed resistance; the size of each rise matters.",
+      "B": "Correct — a fixed resistance gives a straight line, as for the wire, but the filament’s rises shrink from 250 mA to 50 mA per step.",
+      "C": "Every component carries no current at zero voltage, whatever its resistance does later.",
+      "D": "The filament’s current never falls; it rises from 0 to 620 mA."
+    }
+  },
+  {
+    "id": "s412",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp41",
+    "context": "The filament’s resistance rose as the voltage was raised. The most likely reason is that as more current flowed, the filament:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "became hotter, and the resistance of a metal rises with its temperature."
+      },
+      {
+        "id": "B",
+        "text": "cooled, and a cold metal carries current less easily than a warm one."
+      },
+      {
+        "id": "C",
+        "text": "lost electrons, leaving fewer to carry the current."
+      },
+      {
+        "id": "D",
+        "text": "became shorter as it glowed."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the passage notes the lamp glows brighter as the voltage rises, and a hotter metal resists current more.",
+      "B": "A glowing filament is heating, not cooling, as the current grows.",
+      "C": "A current passes electrons through a metal without using them up.",
+      "D": "A shorter wire would have less resistance, not more, and filaments do not shrink noticeably as they glow."
+    }
+  },
+  {
+    "id": "s413",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp42",
+    "context": "Which variable did Experiment 2 deliberately change?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The current"
+      },
+      {
+        "id": "B",
+        "text": "The time"
+      },
+      {
+        "id": "C",
+        "text": "The concentration of the solution"
+      },
+      {
+        "id": "D",
+        "text": "The metal of the plates"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 2 lists four currents, from 0.20 A to 1.20 A, all run for the same 20 minutes.",
+      "B": "Time was fixed at 20 minutes in Experiment 2; it was the variable in Experiment 1.",
+      "C": "Concentration was varied only in Experiment 3.",
+      "D": "Both plates were copper in every trial."
+    }
+  },
+  {
+    "id": "s414",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp42",
+    "context": "How much charge passed during the 16-minute trial of Experiment 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "8.0 C"
+      },
+      {
+        "id": "B",
+        "text": "32 C"
+      },
+      {
+        "id": "C",
+        "text": "480 C"
+      },
+      {
+        "id": "D",
+        "text": "1920 C"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That multiplies 0.50 A by 16 minutes, but a coulomb is an ampere multiplied by seconds.",
+      "B": "That divides the 16 minutes by the current instead of multiplying.",
+      "C": "Correct — 16 minutes is 960 s, and 0.50 A × 960 s is 480 C.",
+      "D": "That divides 960 s by 0.50 A instead of multiplying by it."
+    }
+  },
+  {
+    "id": "s415",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp42",
+    "context": "Based on Table 1, about how many milligrams of copper were deposited for each coulomb of charge passed?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.16 mg"
+      },
+      {
+        "id": "B",
+        "text": "0.33 mg"
+      },
+      {
+        "id": "C",
+        "text": "3.0 mg"
+      },
+      {
+        "id": "D",
+        "text": "9.9 mg"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That divides 158 mg by 960, the number of seconds rather than the charge.",
+      "B": "Correct — the 16-minute trial passed 480 C and deposited 158 mg, and 158 ÷ 480 is about 0.33.",
+      "C": "That divides the charge by the mass, which gives coulombs per milligram.",
+      "D": "That divides 158 mg by 16, giving milligrams per minute rather than per coulomb."
+    }
+  },
+  {
+    "id": "s416",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp42",
+    "context": "In the 1.20 A trial of Experiment 2, copper was deposited at an average rate of about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "24 mg per minute"
+      },
+      {
+        "id": "B",
+        "text": "0.40 mg per minute"
+      },
+      {
+        "id": "C",
+        "text": "16 mg per minute"
+      },
+      {
+        "id": "D",
+        "text": "395 mg per minute"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 474 mg over 20 minutes is about 23.7 mg each minute.",
+      "B": "That divides 474 mg by 1200, the number of seconds, and so is a rate per second.",
+      "C": "That is the rate in the 0.80 A trial, 316 mg over 20 minutes.",
+      "D": "That divides the mass by the current, which is not a rate over time."
+    }
+  },
+  {
+    "id": "s417",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp42",
+    "context": "A student hypothesizes that the mass deposited depends only on the total charge passed, not on the current or the time taken separately. Which pair of trials most directly supports this?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The 8-minute and 48-minute trials of Experiment 1"
+      },
+      {
+        "id": "B",
+        "text": "The 0.20 A and 1.20 A trials of Experiment 2"
+      },
+      {
+        "id": "C",
+        "text": "The 0.05 mol/L and 1.00 mol/L trials of Experiment 3"
+      },
+      {
+        "id": "D",
+        "text": "The 32-minute trial of Experiment 1 and the 0.80 A trial of Experiment 2"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "These share a current, so they show the effect of time but cannot separate charge from time.",
+      "B": "These share a time, so they show the effect of current but not that charge alone is what matters.",
+      "C": "These pass the same charge but give different masses, which is evidence against the hypothesis in dilute solution.",
+      "D": "Correct — one is 0.50 A for 1920 s and the other 0.80 A for 1200 s, both 960 C, and both deposited 316 mg."
+    }
+  },
+  {
+    "id": "s418",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp42",
+    "context": "In the 0.05 mol/L trial, the cathode gained less mass than in the 0.50 mol/L trial, although the same charge passed. The most likely explanation is that in the dilute solution:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "less current flowed, because a dilute solution conducts poorly."
+      },
+      {
+        "id": "B",
+        "text": "each copper atom was lighter than in the stronger solution."
+      },
+      {
+        "id": "C",
+        "text": "part of the charge produced hydrogen gas from the water instead of depositing copper."
+      },
+      {
+        "id": "D",
+        "text": "the anode gained the copper that the cathode should have received from the solution."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The passage fixes the current at 0.50 A in every trial of Experiment 3.",
+      "B": "The mass of a copper atom does not depend on the solution it came from.",
+      "C": "Correct — with few copper ions near the cathode, some of the charge is spent reducing water, so less copper is deposited per coulomb.",
+      "D": "Copper leaves the anode during electrolysis; the anode loses mass rather than gaining it."
+    }
+  },
+  {
+    "id": "s419",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp43",
+    "context": "According to Scientist 2, Kelm-7 dims because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a planet passes between the star and Earth once in every 4.0-day orbit."
+      },
+      {
+        "id": "B",
+        "text": "a clump of dust orbits the star and blocks its light."
+      },
+      {
+        "id": "C",
+        "text": "a cool, dark spot on the spinning star turns into view once per rotation."
+      },
+      {
+        "id": "D",
+        "text": "the star shrinks and swells every 4.0 days."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is Scientist 1’s explanation.",
+      "B": "That is Scientist 3’s explanation.",
+      "C": "Correct — Scientist 2 ties the 4-day spacing to the star’s own spin, carrying a spot into view once each turn.",
+      "D": "None of the scientists proposes that the star changes size."
+    }
+  },
+  {
+    "id": "s420",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp43",
+    "context": "Scientists 2 and 3 would both predict that the dips are:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "deeper through a blue filter than through a red one."
+      },
+      {
+        "id": "B",
+        "text": "equally deep through every filter, blue to infrared."
+      },
+      {
+        "id": "C",
+        "text": "caused by a body that orbits the star."
+      },
+      {
+        "id": "D",
+        "text": "flat at the bottom."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Scientist 2 says a cool spot removes more blue light, and Scientist 3 says fine dust scatters blue light more strongly.",
+      "B": "That is Scientist 1’s prediction for a dark planet.",
+      "C": "Scientist 2’s spot sits on the star’s surface and does not orbit it.",
+      "D": "Scientist 1 alone predicts a flat bottom; Scientist 3 expects a slow recovery instead."
+    }
+  },
+  {
+    "id": "s421",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp43",
+    "context": "According to Figure 1, for about how long did the brightness stay at its lowest level?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 4 hours"
+      },
+      {
+        "id": "B",
+        "text": "About 1 hour"
+      },
+      {
+        "id": "C",
+        "text": "About 6 hours"
+      },
+      {
+        "id": "D",
+        "text": "About 8 hours"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the line sits flat at 99.0% from hour 2 to hour 6.",
+      "B": "That is roughly the time taken to fall from normal to the lowest level, not the time spent there.",
+      "C": "That runs from the start of the fall at hour 1 to the end of the rise at hour 7, and includes the sloping parts.",
+      "D": "That is the whole span of the graph, most of it at normal brightness."
+    }
+  },
+  {
+    "id": "s422",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp43",
+    "context": "Kelm-7 has a radius of about 700,000 km. Using Scientist 1’s relationship and a dip depth of 1.0%, the planet’s radius would be about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "7,000 km"
+      },
+      {
+        "id": "B",
+        "text": "35,000 km"
+      },
+      {
+        "id": "C",
+        "text": "490,000 km"
+      },
+      {
+        "id": "D",
+        "text": "70,000 km"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That multiplies the star’s radius by 0.010, treating the depth as the ratio of radii rather than its square.",
+      "B": "That halves the correct value, as though the relationship gave a diameter rather than a radius.",
+      "C": "That squares 0.70 rather than taking the square root of 0.010.",
+      "D": "Correct — the ratio of radii squared is 0.010, so the ratio is 0.10, and 0.10 × 700,000 km is 70,000 km."
+    }
+  },
+  {
+    "id": "s423",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp43",
+    "context": "The results in Table 1 are most difficult to reconcile with which scientist’s account?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Scientist 1’s alone, because a planet should block more blue light than red."
+      },
+      {
+        "id": "B",
+        "text": "Scientist 3’s alone, because dust should block infrared light most strongly."
+      },
+      {
+        "id": "C",
+        "text": "Scientists 2 and 3, because both predict deeper dips in blue light."
+      },
+      {
+        "id": "D",
+        "text": "None of them, because no scientist says anything about colour."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Scientist 1 predicts the same depth in every colour, which is what Table 1 shows.",
+      "B": "Scientist 3 says dust scatters blue light more strongly, not infrared.",
+      "C": "Correct — the depth is 1.0% at 450 nm and at 900 nm alike, while both a cool spot and fine dust should dim blue light more.",
+      "D": "All three scientists make a prediction about how the depth depends on colour."
+    }
+  },
+  {
+    "id": "s424",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp43",
+    "context": "Which new finding would most strengthen Scientist 2’s account?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The dips arrived on schedule, to within two minutes, for five further years."
+      },
+      {
+        "id": "B",
+        "text": "The depth of the dips drifted from 1.0% to 0.6% over two years."
+      },
+      {
+        "id": "C",
+        "text": "A new measurement gave the star a spin period of 9 days."
+      },
+      {
+        "id": "D",
+        "text": "The star’s infrared excess was confirmed at twice the earlier level."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Clockwork timing suits an orbit, and Scientist 1 cites exactly this regularity.",
+      "B": "Correct — Scientist 2 expects spots to grow and fade over months, so a slowly changing depth is what that account predicts.",
+      "C": "A 9-day spin would not carry a spot into view every 4.0 days, which undercuts Scientist 2.",
+      "D": "Extra warm dust is Scientist 3’s evidence, not Scientist 2’s."
+    }
+  },
+  {
+    "id": "s425",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp43",
+    "context": "If Scientist 1 is correct, the 4.0-day spacing of the dips is the time the planet takes to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "spin once completely on its own axis."
+      },
+      {
+        "id": "B",
+        "text": "cross the face of the star from edge to edge."
+      },
+      {
+        "id": "C",
+        "text": "orbit the star once."
+      },
+      {
+        "id": "D",
+        "text": "send its light across the distance to Earth."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "A planet’s spin does not change how much starlight it blocks, so it cannot set the spacing of the dips.",
+      "B": "Crossing the star takes only the five hours or so of each dip.",
+      "C": "Correct — the planet returns to the same point between star and Earth once per orbit, so the dips repeat at the orbital period.",
+      "D": "Light travel time does not repeat and has nothing to do with the spacing of the dips."
+    }
+  },
+  {
+    "id": "s426",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp44",
+    "context": "According to Figure 1, the net oxygen release of the shade leaf at a light intensity of 400 µmol photons/m²/s was about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "12.0 µmol/m²/s"
+      },
+      {
+        "id": "B",
+        "text": "7.0 µmol/m²/s"
+      },
+      {
+        "id": "C",
+        "text": "5.5 µmol/m²/s"
+      },
+      {
+        "id": "D",
+        "text": "7.5 µmol/m²/s"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the sun leaf at the same intensity.",
+      "B": "Correct — the shade leaf’s line reaches 7.0 at 400.",
+      "C": "That is the shade leaf at 200, one reading to the left.",
+      "D": "That is the level the shade leaf reaches from 800 onward."
+    }
+  },
+  {
+    "id": "s427",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp44",
+    "context": "Based on Figure 1, the two lines cross at a light intensity:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between 0 and 100 µmol photons/m²/s."
+      },
+      {
+        "id": "B",
+        "text": "between 200 and 400 µmol photons/m²/s."
+      },
+      {
+        "id": "C",
+        "text": "between 100 and 200 µmol photons/m²/s."
+      },
+      {
+        "id": "D",
+        "text": "nowhere in the range tested, since the lines never meet."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The sun leaf is below the shade leaf at both 0 and 100, so they cannot have crossed yet.",
+      "B": "The sun leaf is already above the shade leaf at 200, so they crossed earlier.",
+      "C": "Correct — at 100 the shade leaf is higher (3.5 against 2.0), and at 200 the sun leaf is higher (6.0 against 5.5).",
+      "D": "The order of the two lines changes between 100 and 200, so they must meet there."
+    }
+  },
+  {
+    "id": "s428",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp44",
+    "context": "Between light intensities of 200 and 400 µmol photons/m²/s, the sun leaf’s net oxygen release rose by about how much for each additional 100 µmol photons/m²/s?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3.0 µmol/m²/s"
+      },
+      {
+        "id": "B",
+        "text": "6.0 µmol/m²/s"
+      },
+      {
+        "id": "C",
+        "text": "1.5 µmol/m²/s"
+      },
+      {
+        "id": "D",
+        "text": "12.0 µmol/m²/s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the rise is 12.0 − 6.0 = 6.0 over 200 units of light, which is 3.0 per 100.",
+      "B": "That is the whole rise from 200 to 400, not the rise per 100.",
+      "C": "That divides the rise by four, as if the interval were 400 units wide.",
+      "D": "That is the reading at 400 itself."
+    }
+  },
+  {
+    "id": "s429",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp44",
+    "context": "In complete darkness, both leaves showed negative net oxygen release. This is because in the dark a leaf:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "still uses oxygen for respiration but makes none by photosynthesis."
+      },
+      {
+        "id": "B",
+        "text": "carries out photosynthesis in reverse, turning oxygen into light."
+      },
+      {
+        "id": "C",
+        "text": "closes its stomata and stores oxygen for the morning."
+      },
+      {
+        "id": "D",
+        "text": "uses carbon dioxide instead of oxygen."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — respiration goes on in every living cell, and without light there is no photosynthesis to offset it.",
+      "B": "Photosynthesis needs light and does not run backward to produce it.",
+      "C": "A stored gas would not be recorded as oxygen used, and leaves do not bank oxygen this way.",
+      "D": "Taking up carbon dioxide is part of photosynthesis, which cannot run without light."
+    }
+  },
+  {
+    "id": "s430",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp44",
+    "context": "Gross oxygen production is net release plus the oxygen used in respiration. Based on Figure 1 and the passage, the sun leaf’s gross oxygen production at 800 µmol photons/m²/s was about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "18.0 µmol/m²/s"
+      },
+      {
+        "id": "B",
+        "text": "16.0 µmol/m²/s"
+      },
+      {
+        "id": "C",
+        "text": "25.5 µmol/m²/s"
+      },
+      {
+        "id": "D",
+        "text": "20.0 µmol/m²/s"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the net release, before the oxygen used in respiration is added back.",
+      "B": "That subtracts the respiration rate instead of adding it.",
+      "C": "That adds the shade leaf’s 7.5 rather than the sun leaf’s own respiration.",
+      "D": "Correct — the dark reading shows respiration uses 2.0, and 18.0 + 2.0 is 20.0."
+    }
+  },
+  {
+    "id": "s431",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp44",
+    "context": "Table 1 gives the area of one sun leaf as 24 cm². Expressed in square metres, that area is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.24 m²"
+      },
+      {
+        "id": "B",
+        "text": "0.0024 m²"
+      },
+      {
+        "id": "C",
+        "text": "0.024 m²"
+      },
+      {
+        "id": "D",
+        "text": "2400 m²"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That divides by 100, the factor for length, instead of by 10,000 for area.",
+      "B": "Correct — 1 m is 100 cm, so 1 m² is 10,000 cm², and 24 ÷ 10,000 is 0.0024.",
+      "C": "That divides by 1000, which matches neither the length nor the area factor.",
+      "D": "That multiplies by 100 instead of dividing, making one leaf larger than a tennis court."
+    }
+  },
+  {
+    "id": "s432",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp44",
+    "context": "At 1600 µmol photons/m²/s, which whole leaf releases more oxygen each second, based on Figure 1 and Table 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The shade leaf, because its area is more than twice as large."
+      },
+      {
+        "id": "B",
+        "text": "The shade leaf, because it levels off at a lower light intensity."
+      },
+      {
+        "id": "C",
+        "text": "Neither, because both lines have levelled off by then."
+      },
+      {
+        "id": "D",
+        "text": "The sun leaf, because 20.0 × 24 exceeds 7.5 × 52."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Its larger area does not make up for a rate per square metre less than half the sun leaf’s.",
+      "B": "Levelling off early says nothing about the amount released once both leaves have levelled off.",
+      "C": "Both have levelled off, but at very different heights, and the leaves differ in area.",
+      "D": "Correct — per square metre the rates are 20.0 and 7.5, and weighting by area gives 480 against 390 in the same units."
+    }
+  },
+  {
+    "id": "s433",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp45",
+    "context": "Which experiment was designed to find out whether the mass of the ball affects how far it travels?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Experiment 1"
+      },
+      {
+        "id": "B",
+        "text": "Experiment 2"
+      },
+      {
+        "id": "C",
+        "text": "Experiment 3"
+      },
+      {
+        "id": "D",
+        "text": "None of them"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Experiment 1 changed the launch speed with one 50 g ball.",
+      "B": "Experiment 2 changed the height with one 50 g ball.",
+      "C": "Correct — only Experiment 3 used balls of different masses, with speed and height held fixed.",
+      "D": "Experiment 3 varies the mass directly."
+    }
+  },
+  {
+    "id": "s434",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp45",
+    "context": "According to Table 2, how far did the ball travel horizontally when launched from a height of 0.45 m?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.61 m"
+      },
+      {
+        "id": "B",
+        "text": "0.303 m"
+      },
+      {
+        "id": "C",
+        "text": "0.81 m"
+      },
+      {
+        "id": "D",
+        "text": "0.45 m"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 2 pairs 0.45 m with a horizontal distance of 0.61 m.",
+      "B": "That is the fall time in seconds from the same row, not a distance.",
+      "C": "That is the distance from 0.80 m, one row down.",
+      "D": "That is the height itself."
+    }
+  },
+  {
+    "id": "s435",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp45",
+    "context": "Which statement about height and horizontal distance is best supported by Table 2?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Doubling the height also doubles the horizontal distance."
+      },
+      {
+        "id": "B",
+        "text": "Quadrupling the height quadruples the horizontal distance."
+      },
+      {
+        "id": "C",
+        "text": "Quadrupling the height doubles the horizontal distance."
+      },
+      {
+        "id": "D",
+        "text": "Height has no effect on horizontal distance."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Height more than doubles from 0.20 m to 0.45 m, yet the distance rises only from 0.40 m to 0.61 m.",
+      "B": "From 0.20 m to 0.80 m the height is quadrupled, but the distance only goes from 0.40 m to 0.81 m.",
+      "C": "Correct — 0.20 m to 0.80 m takes the distance from 0.40 m to 0.81 m, about double.",
+      "D": "The distance rises from 0.40 m to 1.01 m across the four heights."
+    }
+  },
+  {
+    "id": "s436",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp45",
+    "context": "Using the 0.45 m row of Table 2, the ball’s horizontal speed during its fall was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "about 0.18 m/s"
+      },
+      {
+        "id": "B",
+        "text": "about 1.5 m/s"
+      },
+      {
+        "id": "C",
+        "text": "about 2.0 m/s"
+      },
+      {
+        "id": "D",
+        "text": "about 4.0 m/s"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That multiplies the distance by the time instead of dividing.",
+      "B": "That divides the height, not the horizontal distance, by the fall time.",
+      "C": "Correct — 0.61 m in 0.303 s is about 2.0 m/s, the launch speed, which the ball keeps while it falls.",
+      "D": "That doubles the launch speed, which nothing in the experiment does."
+    }
+  },
+  {
+    "id": "s437",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp45",
+    "context": "A ball launched at 3.0 m/s from a height of 0.45 m would most likely land about how far from the table edge?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.21 m"
+      },
+      {
+        "id": "B",
+        "text": "0.91 m"
+      },
+      {
+        "id": "C",
+        "text": "0.61 m"
+      },
+      {
+        "id": "D",
+        "text": "1.35 m"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the Table 1 result for 3.0 m/s from the greater height of 0.80 m.",
+      "B": "Correct — Table 2 gives a fall time of 0.303 s from 0.45 m, and 3.0 m/s × 0.303 s is about 0.91 m.",
+      "C": "That is the Table 2 result for 0.45 m at the slower speed of 2.0 m/s.",
+      "D": "That multiplies 3.0 by the height of 0.45 m as though it were a time."
+    }
+  },
+  {
+    "id": "s438",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp45",
+    "context": "Table 3 shows that the ball’s mass did not change the distance travelled. The best explanation is that, when air resistance is small:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "heavier balls fall faster but move more slowly across, and the two effects cancel."
+      },
+      {
+        "id": "B",
+        "text": "gravity pulls harder on lighter balls, so they catch up."
+      },
+      {
+        "id": "C",
+        "text": "heavier balls roll off the table more slowly."
+      },
+      {
+        "id": "D",
+        "text": "all objects fall with the same acceleration."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Heavier balls do not fall faster, and every ball left the table at the same 2.0 m/s.",
+      "B": "Gravity pulls harder on heavier balls, not lighter ones.",
+      "C": "The launch speed was set to 2.0 m/s for every ball.",
+      "D": "Correct — each ball takes the same time to fall 0.80 m and so covers the same horizontal distance at 2.0 m/s."
+    }
+  },
+  {
+    "id": "s439",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp45",
+    "context": "A falling object gains downward speed at 9.8 m/s². This means its downward speed increases by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "9.8 metres during each second of the fall."
+      },
+      {
+        "id": "B",
+        "text": "9.8 m/s during each second of the fall."
+      },
+      {
+        "id": "C",
+        "text": "9.8 m/s in total, however long it falls."
+      },
+      {
+        "id": "D",
+        "text": "9.8 seconds for every metre fallen."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A metre is a distance, not a speed; the change each second is in metres per second.",
+      "B": "Correct — m/s² is metres per second, per second, so each second adds 9.8 m/s of speed.",
+      "C": "The gain repeats every second, so a longer fall gives a larger speed.",
+      "D": "That turns the unit upside down and describes no speed at all."
+    }
+  },
+  {
+    "id": "s440",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp46",
+    "context": "According to Figure 1, how long did an S wave take to reach a station 300 km from the earthquake?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 50 s"
+      },
+      {
+        "id": "B",
+        "text": "About 36 s"
+      },
+      {
+        "id": "C",
+        "text": "About 86 s"
+      },
+      {
+        "id": "D",
+        "text": "About 114 s"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the P wave at 300 km.",
+      "B": "That is the gap between the two waves at 300 km, not the S-wave travel time.",
+      "C": "Correct — the S-wave line reads about 86 s at 300 km.",
+      "D": "That is the S wave at 400 km."
+    }
+  },
+  {
+    "id": "s441",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp46",
+    "context": "Based on Figure 1, the speed of the P waves was closest to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6.0 km/s"
+      },
+      {
+        "id": "B",
+        "text": "3.5 km/s"
+      },
+      {
+        "id": "C",
+        "text": "0.17 km/s"
+      },
+      {
+        "id": "D",
+        "text": "60 km/s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the P wave covers 300 km in about 50 s, and 300 ÷ 50 is 6.0.",
+      "B": "That is the speed of the S waves, which take about 86 s for 300 km.",
+      "C": "That divides the time by the distance, which gives seconds per kilometre.",
+      "D": "That misplaces the decimal point; 300 km in 50 s is 6 km each second."
+    }
+  },
+  {
+    "id": "s442",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp46",
+    "context": "According to Figure 1, as the distance from the earthquake increases, the time between the arrival of the P wave and the S wave:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "stays the same at every distance."
+      },
+      {
+        "id": "B",
+        "text": "grows steadily."
+      },
+      {
+        "id": "C",
+        "text": "shrinks as the S wave catches up."
+      },
+      {
+        "id": "D",
+        "text": "grows at first and then shrinks."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The gap is about 12 s at 100 km but about 60 s at 500 km.",
+      "B": "Correct — the S-wave line is steeper, so the gap between the lines widens in equal steps.",
+      "C": "The S wave falls further behind with distance rather than catching up.",
+      "D": "Both lines are straight, so the gap never starts to close."
+    }
+  },
+  {
+    "id": "s443",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp46",
+    "context": "Based on Figure 1 and Table 1, the Bassett station was about how far from the earthquake?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 105 km"
+      },
+      {
+        "id": "B",
+        "text": "About 180 km"
+      },
+      {
+        "id": "C",
+        "text": "About 300 km"
+      },
+      {
+        "id": "D",
+        "text": "About 250 km"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is how far the S wave travels in 30 s, treating the interval as the S-wave travel time.",
+      "B": "That is how far the P wave travels in 30 s, treating the interval as the P-wave travel time.",
+      "C": "At 300 km the gap between the lines is about 36 s, larger than Bassett’s 30 s.",
+      "D": "Correct — the gap between the lines is 24 s at 200 km and 36 s at 300 km, so a 30 s gap falls midway, near 250 km."
+    }
+  },
+  {
+    "id": "s444",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp46",
+    "context": "Based on Figure 1, to cover 500 km an S wave takes about how much longer than a P wave?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 60 s"
+      },
+      {
+        "id": "B",
+        "text": "About 143 s"
+      },
+      {
+        "id": "C",
+        "text": "About 83 s"
+      },
+      {
+        "id": "D",
+        "text": "About 226 s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the S wave takes about 143 s and the P wave about 83 s, a difference of 60 s.",
+      "B": "That is the S-wave travel time alone.",
+      "C": "That is the P-wave travel time alone.",
+      "D": "That adds the two times instead of subtracting them."
+    }
+  },
+  {
+    "id": "s445",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp46",
+    "context": "S waves cannot travel through liquid, and Earth’s outer core is liquid. A station on the opposite side of Earth from a large earthquake should therefore record:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "S waves but no P waves."
+      },
+      {
+        "id": "B",
+        "text": "P waves but no S waves that have come straight through the core."
+      },
+      {
+        "id": "C",
+        "text": "both kinds of wave, with the S wave arriving ahead of the P wave."
+      },
+      {
+        "id": "D",
+        "text": "neither kind of wave."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "It is S waves, not P waves, that a liquid stops.",
+      "B": "Correct — P waves can cross the liquid outer core, but S waves are stopped by it.",
+      "C": "S waves never arrive before P waves, and a direct S wave cannot cross the core.",
+      "D": "P waves pass through liquid as well as solid, so they still reach the far side."
+    }
+  },
+  {
+    "id": "s446",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp46",
+    "context": "A P-wave speed of 6.0 km/s, expressed in metres per second, is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "60 m/s"
+      },
+      {
+        "id": "B",
+        "text": "600 m/s"
+      },
+      {
+        "id": "C",
+        "text": "0.006 m/s"
+      },
+      {
+        "id": "D",
+        "text": "6000 m/s"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That multiplies by 10 instead of 1000.",
+      "B": "That multiplies by 100 instead of 1000.",
+      "C": "That divides by 1000 when it should multiply.",
+      "D": "Correct — each kilometre is 1000 m, so 6.0 km/s is 6000 m/s."
+    }
+  },
+  {
+    "id": "s447",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp47",
+    "context": "According to Scientist 3, large size benefits lizards on Tarra because a large lizard:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "stays warm for longer after basking."
+      },
+      {
+        "id": "B",
+        "text": "is harder for predatory birds to catch."
+      },
+      {
+        "id": "C",
+        "text": "wins fights over food and basking sites."
+      },
+      {
+        "id": "D",
+        "text": "needs less food than a small lizard."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Scientist 3 says a large body loses warmth more slowly, keeping the lizard active longer on cool days.",
+      "B": "Scientist 1 discusses birds, and says large lizards are easier to spot, not harder to catch.",
+      "C": "That is Scientist 2’s argument about crowding.",
+      "D": "None of the scientists claims that a larger lizard needs less food."
+    }
+  },
+  {
+    "id": "s448",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp47",
+    "context": "Unlike Scientist 1, Scientist 2 considers the scarcity of predatory birds on Tarra important mainly because it has:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "let each lizard live long enough to keep growing throughout its life."
+      },
+      {
+        "id": "B",
+        "text": "allowed lizard numbers to rise until lizards compete with one another."
+      },
+      {
+        "id": "C",
+        "text": "kept the island cooler than the mainland."
+      },
+      {
+        "id": "D",
+        "text": "left more beetles for each lizard."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is Scientist 1’s reason for thinking the lack of predators matters.",
+      "B": "Correct — Scientist 2 says fewer predators let the population reach high density, and competition at that density favours large lizards.",
+      "C": "Predators have no bearing on the island’s temperature in any account.",
+      "D": "Scientist 2 argues the reverse: crowding means lizards compete for food."
+    }
+  },
+  {
+    "id": "s449",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "easy",
+    "passage": "sp47",
+    "context": "According to Table 1, the mean adult mass of lizards on Tarra is about how many times the mainland mean?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 0.36"
+      },
+      {
+        "id": "B",
+        "text": "About 37"
+      },
+      {
+        "id": "C",
+        "text": "About 7.8"
+      },
+      {
+        "id": "D",
+        "text": "About 2.8"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That divides the mainland mass by the Tarra mass, the ratio turned upside down.",
+      "B": "That is the difference in grams, 58 − 21, not a ratio.",
+      "C": "That is the ratio of lizard densities, not of masses.",
+      "D": "Correct — 58 g ÷ 21 g is about 2.8."
+    }
+  },
+  {
+    "id": "s450",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp47",
+    "context": "One hectare is 10,000 m². Based on Table 1, the beetle prey available per lizard on Tarra is about what fraction of that available per lizard on the mainland?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About the same"
+      },
+      {
+        "id": "B",
+        "text": "About 1.1 times as much"
+      },
+      {
+        "id": "C",
+        "text": "About one-seventh"
+      },
+      {
+        "id": "D",
+        "text": "About seven times as much"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Prey per square metre is nearly the same, but Tarra has far more lizards sharing it.",
+      "B": "That compares prey per square metre, 1.3 against 1.2, and ignores the number of lizards.",
+      "C": "Correct — per lizard the mainland has 1.2 × 10,000 ÷ 40, or 300 g, and Tarra 1.3 × 10,000 ÷ 310, or about 42 g.",
+      "D": "That inverts the ratio; crowding leaves each Tarra lizard with less prey, not more."
+    }
+  },
+  {
+    "id": "s451",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp47",
+    "context": "A second island, Olm, has 0.4 predatory birds per km², a mean July temperature of 25 °C, and lizards of the same species averaging 55 g. This finding would most weaken the account of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Scientist 1"
+      },
+      {
+        "id": "B",
+        "text": "Scientist 2"
+      },
+      {
+        "id": "C",
+        "text": "Scientist 3"
+      },
+      {
+        "id": "D",
+        "text": "all three biologists equally"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Few predators and large lizards on Olm is the pairing Scientist 1 predicts.",
+      "B": "Olm’s lizard density is not given, so the finding neither supports nor undercuts crowding.",
+      "C": "Correct — Olm is warmer than the mainland yet its lizards are large, which a cooling-driven account cannot explain.",
+      "D": "The finding fits Scientist 1, says nothing about Scientist 2, and cuts against Scientist 3 alone."
+    }
+  },
+  {
+    "id": "s452",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp47",
+    "context": "Lizards are ectotherms. This means that a lizard:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "keeps its body at a constant temperature using heat from its food."
+      },
+      {
+        "id": "B",
+        "text": "warms its body mainly with heat from its surroundings."
+      },
+      {
+        "id": "C",
+        "text": "cannot survive for any length of time in air colder than 19 °C."
+      },
+      {
+        "id": "D",
+        "text": "produces heat by shivering."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That describes an endotherm, such as a bird or a mammal.",
+      "B": "Correct — an ectotherm depends on outside sources such as sunshine, which is why basking matters in Scientist 3’s account.",
+      "C": "Ectotherms survive cool air by becoming less active; there is no such fixed limit.",
+      "D": "Shivering to make heat is typical of endotherms."
+    }
+  },
+  {
+    "id": "s453",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp48",
+    "context": "According to Table 2, the freezing point of the 0.50 mol/kg sucrose solution was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "−1.71 °C"
+      },
+      {
+        "id": "B",
+        "text": "−0.94 °C"
+      },
+      {
+        "id": "C",
+        "text": "−0.37 °C"
+      },
+      {
+        "id": "D",
+        "text": "−1.90 °C"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is sodium chloride at 0.50 mol/kg, in Table 1.",
+      "B": "Correct — Table 2 pairs 0.50 mol/kg with a freezing point of −0.94 °C.",
+      "C": "That is sucrose at 0.20 mol/kg.",
+      "D": "That is sucrose at 1.00 mol/kg."
+    }
+  },
+  {
+    "id": "s454",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp48",
+    "context": "Including sucrose alongside the two salts allowed the student to:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "compare a solute that separates into ions with one that does not."
+      },
+      {
+        "id": "B",
+        "text": "measure how quickly each solution froze."
+      },
+      {
+        "id": "C",
+        "text": "test whether pure water freezes at 0.00 °C."
+      },
+      {
+        "id": "D",
+        "text": "use a larger mass of water than in the other experiments."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — sucrose dissolves as whole molecules, while NaCl and CaCl₂ split into ions, so their results can be set side by side.",
+      "B": "Only the temperature at which ice appeared was recorded, not how long freezing took.",
+      "C": "The freezing point of pure water is given in the passage rather than tested.",
+      "D": "Every solution was made with the same 1.00 kg of water."
+    }
+  },
+  {
+    "id": "s455",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp48",
+    "context": "A student hypothesizes that equal concentrations of any two solutes lower the freezing point by equal amounts. Do Tables 1 and 2 support this?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes, because both freezing points fall as concentration rises."
+      },
+      {
+        "id": "B",
+        "text": "Yes, because both kinds of solution freeze below 0.00 °C at every concentration tested."
+      },
+      {
+        "id": "C",
+        "text": "No, because at 0.50 mol/kg, NaCl froze at −1.71 °C but sucrose froze at −0.94 °C."
+      },
+      {
+        "id": "D",
+        "text": "No, because sucrose lowered the freezing point more than NaCl at every concentration."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Both do fall, but the hypothesis is about the size of the fall, which differs.",
+      "B": "Freezing below zero does not mean freezing at the same temperature.",
+      "C": "Correct — at equal concentration the salt lowered the freezing point nearly twice as much.",
+      "D": "Every sucrose value is closer to zero than the matching NaCl value."
+    }
+  },
+  {
+    "id": "s456",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp48",
+    "context": "NaCl has a molar mass of 58.4 g/mol. How many grams of NaCl were dissolved to make the 0.50 mol/kg solution?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 117 g"
+      },
+      {
+        "id": "B",
+        "text": "About 58 g"
+      },
+      {
+        "id": "C",
+        "text": "About 29 g"
+      },
+      {
+        "id": "D",
+        "text": "About 0.0086 g"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That doubles 58.4 g instead of halving it.",
+      "B": "That is the mass of one full mole, as though the concentration were 1.00 mol/kg.",
+      "C": "Correct — 0.50 mol in 1.00 kg of water, at 58.4 g per mole, is about 29.2 g.",
+      "D": "That divides the moles by the molar mass instead of multiplying."
+    }
+  },
+  {
+    "id": "s457",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp48",
+    "context": "At 1.00 mol/kg, NaCl lowered the freezing point about how many times as much as sucrose did?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 0.56"
+      },
+      {
+        "id": "B",
+        "text": "About 1.8"
+      },
+      {
+        "id": "C",
+        "text": "About 1.5"
+      },
+      {
+        "id": "D",
+        "text": "About 3.4"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That divides the sucrose value by the NaCl value, turning the ratio over.",
+      "B": "Correct — NaCl lowered it by 3.37 °C and sucrose by 1.90 °C, and 3.37 ÷ 1.90 is about 1.8.",
+      "C": "That subtracts 1.90 from 3.37 and reads the difference as a ratio.",
+      "D": "That is the NaCl lowering in degrees, not a comparison with sucrose."
+    }
+  },
+  {
+    "id": "s458",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp48",
+    "context": "Table 3 shows CaCl₂ lowering the freezing point more than NaCl at the same concentration. This is best explained by the fact that each unit of CaCl₂:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "releases three ions into solution instead of two."
+      },
+      {
+        "id": "B",
+        "text": "contains a calcium ion, which is heavier than a sodium ion."
+      },
+      {
+        "id": "C",
+        "text": "stays together as a single, whole molecule in water."
+      },
+      {
+        "id": "D",
+        "text": "dissolves only once the water is below 0 °C."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the lowering depends on the number of dissolved particles, and CaCl₂ gives one calcium and two chloride ions.",
+      "B": "Freezing point depends on how many particles are dissolved, not how heavy each one is.",
+      "C": "The passage says CaCl₂ separates into three ions.",
+      "D": "All the solutions were made up before cooling began."
+    }
+  },
+  {
+    "id": "s459",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp49",
+    "context": "According to Table 1, the air pressure at an altitude of 6 km was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "617 hPa"
+      },
+      {
+        "id": "B",
+        "text": "356 hPa"
+      },
+      {
+        "id": "C",
+        "text": "472 hPa"
+      },
+      {
+        "id": "D",
+        "text": "−24.0 hPa"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the pressure at 4 km.",
+      "B": "That is the pressure at 8 km.",
+      "C": "Correct — Table 1 pairs 6 km with 472 hPa.",
+      "D": "That is the temperature at 6 km, in degrees Celsius."
+    }
+  },
+  {
+    "id": "s460",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "easy",
+    "passage": "sp49",
+    "context": "According to Table 1, air temperature fell by how much for each kilometre of altitude gained?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6.5 °C"
+      },
+      {
+        "id": "B",
+        "text": "15.0 °C"
+      },
+      {
+        "id": "C",
+        "text": "65 °C"
+      },
+      {
+        "id": "D",
+        "text": "5.0 °C"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 15.0 to 8.5 °C over the first kilometre is a drop of 6.5 °C, and every later step keeps the same rate.",
+      "B": "That is the sea-level temperature.",
+      "C": "That is the total fall over 10 km, from 15.0 °C to −50.0 °C.",
+      "D": "That divides the 50 °C figure at 10 km by 10, ignoring the 15 °C start."
+    }
+  },
+  {
+    "id": "s461",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp49",
+    "context": "Based on Table 1, the air pressure at an altitude of 5 km was most likely about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "472 hPa"
+      },
+      {
+        "id": "B",
+        "text": "545 hPa"
+      },
+      {
+        "id": "C",
+        "text": "617 hPa"
+      },
+      {
+        "id": "D",
+        "text": "1090 hPa"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the reading at 6 km; 5 km lies below it and should have higher pressure.",
+      "B": "Correct — 5 km lies midway between 4 km (617 hPa) and 6 km (472 hPa), and the midpoint is about 545 hPa.",
+      "C": "That is the reading at 4 km; pressure keeps falling above it.",
+      "D": "That is higher than sea-level pressure, which no altitude above sea level can reach."
+    }
+  },
+  {
+    "id": "s462",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp49",
+    "context": "Based on Table 1, the air pressure at 8 km was about what percentage of the pressure at sea level?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 3.5%"
+      },
+      {
+        "id": "B",
+        "text": "About 65%"
+      },
+      {
+        "id": "C",
+        "text": "About 80%"
+      },
+      {
+        "id": "D",
+        "text": "About 35%"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That drops a factor of ten from 356 ÷ 1013, which is about 0.35.",
+      "B": "That is the share of the pressure lost, not the share remaining.",
+      "C": "That is 8 km out of 10 km, which says nothing about pressure.",
+      "D": "Correct — 356 ÷ 1013 is about 0.35, or 35%."
+    }
+  },
+  {
+    "id": "s463",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp49",
+    "context": "Based on Table 1 and Figure 1, at the altitude where the air temperature was 2.0 °C, water would boil at about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "96.7 °C"
+      },
+      {
+        "id": "B",
+        "text": "93.4 °C"
+      },
+      {
+        "id": "C",
+        "text": "90.1 °C"
+      },
+      {
+        "id": "D",
+        "text": "2.0 °C"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the boiling point at 1 km, where the air is 8.5 °C.",
+      "B": "Correct — Table 1 places 2.0 °C at 2 km, and Figure 1 gives a boiling point of 93.4 °C there.",
+      "C": "That is the boiling point at 3 km, where the air is −4.5 °C.",
+      "D": "That is the air temperature itself, not the boiling point of water."
+    }
+  },
+  {
+    "id": "s464",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp49",
+    "context": "Water boils at a lower temperature high on a mountain than at sea level mainly because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the colder air draws heat out of the water faster."
+      },
+      {
+        "id": "B",
+        "text": "there is less oxygen for the water to react with."
+      },
+      {
+        "id": "C",
+        "text": "the lower air pressure is matched by the water’s vapour at a lower temperature."
+      },
+      {
+        "id": "D",
+        "text": "water molecules weigh less at high altitude."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Colder air would make water slower to heat, but it does not change the temperature at which water boils.",
+      "B": "Boiling is not a reaction with oxygen.",
+      "C": "Correct — the passage says water boils when its vapour pressure matches the air pressure, and that pressure is lower higher up.",
+      "D": "The mass of a water molecule does not change with altitude."
+    }
+  },
+  {
+    "id": "s465",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp49",
+    "context": "Sea-level pressure in Table 1 is 1013 hPa. Given that 1 hPa is 100 Pa and 1 kPa is 1000 Pa, this pressure in kilopascals is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "101.3 kPa"
+      },
+      {
+        "id": "B",
+        "text": "1013 kPa"
+      },
+      {
+        "id": "C",
+        "text": "10.13 kPa"
+      },
+      {
+        "id": "D",
+        "text": "101,300 kPa"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 1013 hPa is 101,300 Pa, and 101,300 ÷ 1000 is 101.3 kPa.",
+      "B": "That treats a hectopascal as if it were a kilopascal.",
+      "C": "That divides by 100 when it should first multiply by 100.",
+      "D": "That is the pressure in pascals, not kilopascals."
+    }
+  },
+  {
+    "id": "s466",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp50",
+    "context": "In Experiment 2, which trial served as the control?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The 200 mg/L caffeine trial"
+      },
+      {
+        "id": "B",
+        "text": "The 0 mg/L trial"
+      },
+      {
+        "id": "C",
+        "text": "The 30 °C trial in Experiment 1"
+      },
+      {
+        "id": "D",
+        "text": "The 4% ethanol trial in Experiment 3"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the highest caffeine concentration, the strongest treatment rather than the control.",
+      "B": "Correct — it is identical to the others except that it contains no caffeine.",
+      "C": "That belongs to a different experiment and is not at the 20 °C used in Experiment 2.",
+      "D": "That is a treatment in Experiment 3, not a control for Experiment 2."
+    }
+  },
+  {
+    "id": "s467",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "easy",
+    "passage": "sp50",
+    "context": "A daphnia’s heart beat 62 times during the 15-second count. Its heart rate as recorded in the tables would be:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "62 bpm"
+      },
+      {
+        "id": "B",
+        "text": "930 bpm"
+      },
+      {
+        "id": "C",
+        "text": "15.5 bpm"
+      },
+      {
+        "id": "D",
+        "text": "248 bpm"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the raw count for 15 s, not for a whole minute.",
+      "B": "That multiplies by 15, the number of seconds, rather than by 4.",
+      "C": "That divides by 4 instead of multiplying.",
+      "D": "Correct — 15 s is a quarter of a minute, so 62 × 4 is 248 beats per minute."
+    }
+  },
+  {
+    "id": "s468",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp50",
+    "context": "Based on Table 1, between 10 °C and 25 °C the heart rate rose by an average of about how much for each degree?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "11 bpm"
+      },
+      {
+        "id": "B",
+        "text": "165 bpm"
+      },
+      {
+        "id": "C",
+        "text": "55 bpm"
+      },
+      {
+        "id": "D",
+        "text": "5.5 bpm"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the rate rose from 140 to 305 bpm, a rise of 165 bpm over 15 degrees, or 11 bpm per degree.",
+      "B": "That is the total rise, not the rise per degree.",
+      "C": "That is the rise for one 5-degree step, not for one degree.",
+      "D": "That divides the rise by 30, the highest temperature, rather than by the 15-degree span."
+    }
+  },
+  {
+    "id": "s469",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp50",
+    "context": "A student hypothesizes that daphnia heart rate rises with every increase in water temperature. Table 1 shows this is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "supported, because the rate at 30 °C is higher than at 10 °C."
+      },
+      {
+        "id": "B",
+        "text": "not supported, because the rate fell between 25 °C and 30 °C."
+      },
+      {
+        "id": "C",
+        "text": "supported, because each 5 °C step raised the rate by 55 bpm."
+      },
+      {
+        "id": "D",
+        "text": "not supported, because temperature had no effect on the rate."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Comparing the two ends skips the step where the rate fell.",
+      "B": "Correct — the rate dropped from 305 to 270 bpm over the last step, so it does not rise with every increase.",
+      "C": "The step from 25 °C to 30 °C lowered the rate by 35 bpm.",
+      "D": "The rate changed at every step, from 140 to 305 bpm."
+    }
+  },
+  {
+    "id": "s470",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp50",
+    "context": "Suppose the effects of caffeine and ethanol simply add together. A daphnia at 20 °C in water with 100 mg/L caffeine and 2% ethanol would then have a heart rate of about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "310 bpm"
+      },
+      {
+        "id": "B",
+        "text": "230 bpm"
+      },
+      {
+        "id": "C",
+        "text": "170 bpm"
+      },
+      {
+        "id": "D",
+        "text": "390 bpm"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That includes the caffeine effect but leaves out the ethanol.",
+      "B": "Correct — caffeine adds 60 bpm (250 to 310) and ethanol removes 80 bpm (250 to 170), and 250 + 60 − 80 is 230.",
+      "C": "That includes the ethanol effect but leaves out the caffeine.",
+      "D": "That adds the ethanol’s 80 bpm drop as though it were a rise."
+    }
+  },
+  {
+    "id": "s471",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp50",
+    "context": "Daphnia heart rate tracks water temperature in Experiment 1 because daphnia:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "have a body temperature that follows the temperature of the water."
+      },
+      {
+        "id": "B",
+        "text": "hold their body temperature constant, as mammals and birds do."
+      },
+      {
+        "id": "C",
+        "text": "breathe air, and warm water holds more air."
+      },
+      {
+        "id": "D",
+        "text": "beat their hearts only when they are moving."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — daphnia do not hold their bodies at a set temperature, so warmer water warms them and speeds their chemistry.",
+      "B": "An animal holding a constant temperature would show little change with water temperature.",
+      "C": "Daphnia take oxygen from the water, and warm water holds less dissolved gas, not more.",
+      "D": "The heart beats continuously, and the animals were counted after resting."
+    }
+  },
+  {
+    "id": "s472",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp51",
+    "context": "According to Figure 1, the pH after 30 mL of NaOH solution had been added was about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4.8"
+      },
+      {
+        "id": "B",
+        "text": "5.7"
+      },
+      {
+        "id": "C",
+        "text": "2.6"
+      },
+      {
+        "id": "D",
+        "text": "5.2"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the pH after 20 mL.",
+      "B": "That is the pH after 36 mL.",
+      "C": "That is the starting pH, before any NaOH was added.",
+      "D": "Correct — the line reads about 5.2 at 30 mL."
+    }
+  },
+  {
+    "id": "s473",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp51",
+    "context": "Based on Figure 1 and the passage, the equivalence point was reached after about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "20 mL of NaOH solution"
+      },
+      {
+        "id": "B",
+        "text": "40 mL of NaOH solution"
+      },
+      {
+        "id": "C",
+        "text": "10 mL of NaOH solution"
+      },
+      {
+        "id": "D",
+        "text": "50 mL of NaOH solution"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The pH rises only gently around 20 mL.",
+      "B": "Correct — the pH jumps from 6.4 to 11.0 between 39 and 41 mL, the steepest rise on the graph.",
+      "C": "The early rise to 10 mL is far less steep than the jump near 40 mL.",
+      "D": "By 50 mL the pH has levelled off again, past the steep section."
+    }
+  },
+  {
+    "id": "s474",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp51",
+    "context": "Between 39 mL and 41 mL, the pH rose from 6.4 to 11.0. Which indicator in Table 1 would change colour completely within that steep rise?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Phenolphthalein"
+      },
+      {
+        "id": "B",
+        "text": "Bromothymol blue"
+      },
+      {
+        "id": "C",
+        "text": "Methyl orange"
+      },
+      {
+        "id": "D",
+        "text": "None of the three"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — its whole range, 8.2 to 10.0, lies inside the jump from 6.4 to 11.0.",
+      "B": "Its range begins at 6.0, below the 6.4 reached at 39 mL, so it starts changing before the steep rise.",
+      "C": "Its range, 3.1 to 4.4, was passed long before the steep rise, during the first 10 mL.",
+      "D": "Phenolphthalein’s range fits entirely within the jump."
+    }
+  },
+  {
+    "id": "s475",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp51",
+    "context": "The equivalence point came after 40.0 mL of NaOH solution. Expressed in litres, this volume is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.400 L"
+      },
+      {
+        "id": "B",
+        "text": "4.00 L"
+      },
+      {
+        "id": "C",
+        "text": "0.00400 L"
+      },
+      {
+        "id": "D",
+        "text": "0.0400 L"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That divides by 100 instead of 1000.",
+      "B": "That divides by 10 instead of 1000.",
+      "C": "That divides by 10,000 instead of 1000.",
+      "D": "Correct — there are 1000 mL in a litre, so 40.0 mL is 0.0400 L."
+    }
+  },
+  {
+    "id": "s476",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp51",
+    "context": "Based on Figure 1 and the passage, the concentration of acetic acid in the vinegar was about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.0040 mol/L"
+      },
+      {
+        "id": "B",
+        "text": "0.080 mol/L"
+      },
+      {
+        "id": "C",
+        "text": "0.80 mol/L"
+      },
+      {
+        "id": "D",
+        "text": "8.0 mol/L"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the number of moles of acid, 0.0040 mol, not its concentration.",
+      "B": "That divides 0.0040 mol by 0.050 L, ten times the 5.0 mL of vinegar used.",
+      "C": "Correct — 0.0400 L × 0.100 mol/L is 0.0040 mol of NaOH, matched by 0.0040 mol of acid in 0.0050 L of vinegar, which is 0.80 mol/L.",
+      "D": "That divides by 0.00050 L, misplacing the decimal point when converting 5.0 mL."
+    }
+  },
+  {
+    "id": "s477",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp51",
+    "context": "Based on Figure 1, per millilitre added, the pH rose about how many times as fast between 0 and 10 mL as between 20 and 30 mL?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About the same"
+      },
+      {
+        "id": "B",
+        "text": "About 2 times"
+      },
+      {
+        "id": "C",
+        "text": "About 17 times"
+      },
+      {
+        "id": "D",
+        "text": "About 4 times"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The early rise of 1.7 is much larger than the later rise of 0.4.",
+      "B": "The early rate of 0.17 per mL is more than four times the later 0.04 per mL.",
+      "C": "That compares the rise of 1.7 with the 0.1 of a single millilitre, not with the later rate.",
+      "D": "Correct — the pH rose 1.7 over the first 10 mL and 0.4 over the 10 mL from 20 to 30, and 1.7 ÷ 0.4 is about 4."
+    }
+  },
+  {
+    "id": "s478",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "sp51",
+    "context": "At the start of the titration the pH was 2.6. A solution with this pH is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "acidic"
+      },
+      {
+        "id": "B",
+        "text": "basic"
+      },
+      {
+        "id": "C",
+        "text": "neutral"
+      },
+      {
+        "id": "D",
+        "text": "saturated"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — any pH below 7 is acidic.",
+      "B": "Basic solutions have a pH above 7.",
+      "C": "A neutral solution has a pH of 7.",
+      "D": "Saturation describes how much solute is dissolved, not acidity."
+    }
+  },
+  {
+    "id": "s479",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp52",
+    "context": "According to Scientist 1, bread becomes stale mainly because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "water leaves the crumb."
+      },
+      {
+        "id": "B",
+        "text": "starch molecules line up into crystals."
+      },
+      {
+        "id": "C",
+        "text": "the crust absorbs oxygen from the air."
+      },
+      {
+        "id": "D",
+        "text": "the loaf is stored at too low a temperature."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Scientist 1 says water moves out of the crumb into the crust and the air, and a drier crumb is firmer.",
+      "B": "That is Scientist 2’s explanation.",
+      "C": "Neither scientist mentions oxygen.",
+      "D": "Scientist 1 explains staling by water loss, not by storage temperature."
+    }
+  },
+  {
+    "id": "s480",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp52",
+    "context": "Which result in Table 1 most strongly supports Scientist 2’s account over Scientist 1’s?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The open loaf lost the most water, 6.5% of its mass, and firmed to 7.9 N."
+      },
+      {
+        "id": "B",
+        "text": "The refrigerated loaf lost only 0.3% of its mass but became the firmest."
+      },
+      {
+        "id": "C",
+        "text": "Every sealed loaf lost less than 0.5% of its mass."
+      },
+      {
+        "id": "D",
+        "text": "The fresh loaf had a firmness of 2.0 N."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A loaf that lost the most water and firmed is what Scientist 1 expects, so this favours Scientist 1 if anything.",
+      "B": "Correct — it lost less water than the loaf sealed at 21 °C yet firmed far more, which fits a process that runs fastest at refrigerator temperatures.",
+      "C": "Low water loss in sealed bags is expected by both scientists and does not separate them.",
+      "D": "That is the starting point for every loaf and bears on neither account."
+    }
+  },
+  {
+    "id": "s481",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "easy",
+    "passage": "sp52",
+    "context": "According to Table 1, how much firmer was the loaf stored at 4 °C than the fresh loaf?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "9.6 N"
+      },
+      {
+        "id": "B",
+        "text": "11.6 N"
+      },
+      {
+        "id": "C",
+        "text": "7.6 N"
+      },
+      {
+        "id": "D",
+        "text": "3.8 N"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the firmness of the refrigerated loaf itself, not the increase.",
+      "B": "That adds the two values instead of subtracting.",
+      "C": "Correct — 9.6 N − 2.0 N is 7.6 N.",
+      "D": "That is the increase for the loaf sealed at 21 °C, from 2.0 N to 5.8 N."
+    }
+  },
+  {
+    "id": "s482",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp52",
+    "context": "The reheated loaf softened from about 5.8 N back to 2.6 N inside its sealed bag, with no water added and no change in water lost. How does this result bear on Scientist 1’s account?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "It supports the account, since heating drives water out of bread."
+      },
+      {
+        "id": "B",
+        "text": "It has no bearing, since Scientist 1 discusses only open loaves."
+      },
+      {
+        "id": "C",
+        "text": "It supports the account, since the sealed bag kept the water in."
+      },
+      {
+        "id": "D",
+        "text": "It weakens the account, since the crumb softened without regaining water."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Driving water out would make the crumb firmer by Scientist 1’s reasoning, not softer.",
+      "B": "Scientist 1 explicitly discusses wrapped loaves as well.",
+      "C": "Keeping water in would stop further firming but cannot explain the loaf becoming softer.",
+      "D": "Correct — if firmness came from lost water, softness should return only if water did, and the water lost stayed at 0.4%."
+    }
+  },
+  {
+    "id": "s483",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp52",
+    "context": "On Earth, an object of mass 1 kg has a weight of about 9.8 N. The 9.6 N force needed to squash the refrigerated crumb is about the weight of an object with a mass of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "about 1 kg"
+      },
+      {
+        "id": "B",
+        "text": "about 9.6 kg"
+      },
+      {
+        "id": "C",
+        "text": "about 94 kg"
+      },
+      {
+        "id": "D",
+        "text": "about 0.1 kg"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 9.6 N ÷ 9.8 N per kg is about 0.98 kg.",
+      "B": "That treats newtons and kilograms as the same unit.",
+      "C": "That multiplies 9.6 by 9.8 instead of dividing.",
+      "D": "That divides by about 100 rather than by 9.8."
+    }
+  },
+  {
+    "id": "s484",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "sp52",
+    "context": "Starch, the substance at the centre of Scientist 2’s account, is a long chain made of many linked units of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "amino acids"
+      },
+      {
+        "id": "B",
+        "text": "fatty acids"
+      },
+      {
+        "id": "C",
+        "text": "glucose"
+      },
+      {
+        "id": "D",
+        "text": "nucleotides"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Amino acids link to form proteins, not starch.",
+      "B": "Fatty acids are building blocks of fats.",
+      "C": "Correct — starch is a carbohydrate built from many glucose units.",
+      "D": "Nucleotides link to form DNA and RNA."
+    }
+  },
+  {
+    "id": "s485",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp53",
+    "context": "According to Table 3, spring B’s extension under a load of 8 N was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4.5 cm"
+      },
+      {
+        "id": "B",
+        "text": "3.0 cm"
+      },
+      {
+        "id": "C",
+        "text": "7.5 cm"
+      },
+      {
+        "id": "D",
+        "text": "0.8 cm"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 3 pairs 8 N with an extension of 4.5 cm.",
+      "B": "That is the extension at 6 N.",
+      "C": "That is the extension at 10 N.",
+      "D": "That is the permanent stretch left after the 10 N load was removed."
+    }
+  },
+  {
+    "id": "s486",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp53",
+    "context": "Based on Table 1, the load needed to stretch spring A by each additional centimetre was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2.5 N"
+      },
+      {
+        "id": "B",
+        "text": "12.5 N"
+      },
+      {
+        "id": "C",
+        "text": "0.40 N"
+      },
+      {
+        "id": "D",
+        "text": "0.08 N"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the extension per newton, 2.5 cm, turned into a load.",
+      "B": "That is the largest extension in the table, in centimetres.",
+      "C": "Correct — 5 N stretched the spring 12.5 cm, and 5 ÷ 12.5 is 0.40 N per centimetre.",
+      "D": "That divides 1 N by 12.5 cm, using the first load with the last extension."
+    }
+  },
+  {
+    "id": "s487",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp53",
+    "context": "Spring A needs 0.40 N for each centimetre of stretch. Expressed in newtons per metre, this is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.0040 N/m"
+      },
+      {
+        "id": "B",
+        "text": "4.0 N/m"
+      },
+      {
+        "id": "C",
+        "text": "4000 N/m"
+      },
+      {
+        "id": "D",
+        "text": "40 N/m"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That divides by 100 when it should multiply; a metre of stretch needs far more force than a centimetre.",
+      "B": "That multiplies by 10 rather than by the 100 centimetres in a metre.",
+      "C": "That multiplies by 10,000, the factor for square centimetres.",
+      "D": "Correct — a metre is 100 cm, so 100 × 0.40 N is 40 N for each metre of stretch."
+    }
+  },
+  {
+    "id": "s488",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp53",
+    "context": "Which statement about spring B is best supported by Table 3 and the passage?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Spring B stretched in proportion to the load only up to about 6 N."
+      },
+      {
+        "id": "B",
+        "text": "Spring B stretched in proportion to the load across the whole range."
+      },
+      {
+        "id": "C",
+        "text": "Spring B returned exactly to its original length after every load."
+      },
+      {
+        "id": "D",
+        "text": "Spring B stretched more than spring A under the same load."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — each 2 N added 1.0 cm up to 6 N, then 1.5 cm and 3.0 cm, and the spring did not fully recover.",
+      "B": "The steps grew from 1.0 cm to 3.0 cm above 6 N, so the stretch was not proportional throughout.",
+      "C": "The passage says it stayed 0.8 cm longer after the 10 N load.",
+      "D": "At 4 N, spring B stretched 2.0 cm and spring A 10.0 cm."
+    }
+  },
+  {
+    "id": "s489",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp53",
+    "context": "Based on Tables 1 and 2, three copies of spring A joined in series and loaded with 3 N would most likely stretch a total of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2.5 cm"
+      },
+      {
+        "id": "B",
+        "text": "7.5 cm"
+      },
+      {
+        "id": "C",
+        "text": "15.0 cm"
+      },
+      {
+        "id": "D",
+        "text": "22.5 cm"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That divides by three, which is how springs sharing a load in parallel behave.",
+      "B": "That is one spring A under 3 N, without the other two.",
+      "C": "That is two springs in series, not three.",
+      "D": "Correct — each spring in series carries the full 3 N and stretches 7.5 cm, and three of them stretch 22.5 cm in total."
+    }
+  },
+  {
+    "id": "s490",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp53",
+    "context": "The student measured spring B again after removing the 10 N load in order to find out whether:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "spring B was stiffer than spring A."
+      },
+      {
+        "id": "B",
+        "text": "the heaviest load had stretched spring B permanently."
+      },
+      {
+        "id": "C",
+        "text": "the weights had been labelled correctly."
+      },
+      {
+        "id": "D",
+        "text": "spring B stretched faster under larger loads."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Stiffness can be compared from the loaded readings alone; the unloaded check is not needed for that.",
+      "B": "Correct — checking the length once the load is gone shows whether the spring returned to its starting length; it did not.",
+      "C": "Measuring the spring cannot check the weights.",
+      "D": "The readings were taken once the load had stopped moving, so speed was not measured."
+    }
+  },
+  {
+    "id": "s491",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp53",
+    "context": "Once a hanging load has stopped moving, the upward force of the spring on the load is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "greater than the load’s weight."
+      },
+      {
+        "id": "B",
+        "text": "equal to the load’s weight."
+      },
+      {
+        "id": "C",
+        "text": "less than the load’s weight."
+      },
+      {
+        "id": "D",
+        "text": "zero, since nothing is moving."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A larger upward force would still be accelerating the load upward.",
+      "B": "Correct — the load is at rest, so the forces on it balance.",
+      "C": "A smaller upward force would leave the load accelerating downward.",
+      "D": "At rest the forces balance; they do not vanish, or the load would fall."
+    }
+  },
+  {
+    "id": "s492",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp54",
+    "context": "According to Figure 1, the autumn vole density in 2016 was about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "110 voles per hectare"
+      },
+      {
+        "id": "B",
+        "text": "220 voles per hectare"
+      },
+      {
+        "id": "C",
+        "text": "90 voles per hectare"
+      },
+      {
+        "id": "D",
+        "text": "210 voles per hectare"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the 2015 value.",
+      "B": "That is the 2021 value, the higher of the two peaks.",
+      "C": "That is the 2017 value, after the crash began.",
+      "D": "Correct — the line peaks at about 210 in 2016."
+    }
+  },
+  {
+    "id": "s493",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp54",
+    "context": "Comparing Figures 1 and 2, the first peak in owl pairs came:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "in the same year as the first vole peak."
+      },
+      {
+        "id": "B",
+        "text": "one year after the first vole peak."
+      },
+      {
+        "id": "C",
+        "text": "one year before the first vole peak."
+      },
+      {
+        "id": "D",
+        "text": "three years after the first vole peak."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Voles peaked in 2016, but owls rose further to 15 pairs in 2017.",
+      "B": "Correct — voles peaked in 2016 and owl pairs in 2017.",
+      "C": "Owl pairs were still only 7 in 2015, the year before the vole peak.",
+      "D": "Owl pairs were already falling by 2018 and at their lowest by 2019."
+    }
+  },
+  {
+    "id": "s494",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp54",
+    "context": "Based on Figure 1, between 2014 and 2016 vole density rose by an average of about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "170 voles per hectare per year"
+      },
+      {
+        "id": "B",
+        "text": "85 voles per hectare per year"
+      },
+      {
+        "id": "C",
+        "text": "105 voles per hectare per year"
+      },
+      {
+        "id": "D",
+        "text": "43 voles per hectare per year"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the total rise over two years, not the rise per year.",
+      "B": "Correct — the density rose from 40 to 210, a rise of 170 over two years, or 85 per year.",
+      "C": "That is half of the 2016 value, ignoring the 40 already present in 2014.",
+      "D": "That spreads the 170 rise over four years instead of two."
+    }
+  },
+  {
+    "id": "s495",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp54",
+    "context": "According to Table 1, the share of field voles in the owls’ diet in 2018 was about what percentage of their share in 2016?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 40%"
+      },
+      {
+        "id": "B",
+        "text": "About 47%"
+      },
+      {
+        "id": "C",
+        "text": "About 60%"
+      },
+      {
+        "id": "D",
+        "text": "About 250%"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 31 ÷ 78 is about 0.40.",
+      "B": "That is the fall in percentage points, 78 − 31, not a percentage of the 2016 share.",
+      "C": "That is the fraction lost, not the fraction kept.",
+      "D": "That divides 78 by 31, turning the ratio over."
+    }
+  },
+  {
+    "id": "s496",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp54",
+    "context": "A student hypothesizes that when voles are scarce, the owls turn to other prey. Which evidence most directly supports this?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Owl pairs peaked in 2017, a year after the voles."
+      },
+      {
+        "id": "B",
+        "text": "Vole density recovered after 2018."
+      },
+      {
+        "id": "C",
+        "text": "Voles made up 78% of prey items in 2016."
+      },
+      {
+        "id": "D",
+        "text": "Mice, shrews and birds made up a larger share of prey in 2018, when voles were scarce."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That concerns the number of owls, not what each owl eats.",
+      "B": "A recovery in voles says nothing about the owls’ choice of prey.",
+      "C": "A single year cannot show a change in diet; it needs a year of scarcity for comparison.",
+      "D": "Correct — the share of other prey rose from 22% to 69% of items as vole density fell from 210 to 30 per hectare."
+    }
+  },
+  {
+    "id": "s497",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "sp54",
+    "context": "In the food chain grass → field vole → short-eared owl, the owl is a:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "secondary consumer."
+      },
+      {
+        "id": "B",
+        "text": "primary consumer."
+      },
+      {
+        "id": "C",
+        "text": "producer."
+      },
+      {
+        "id": "D",
+        "text": "decomposer."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the owl eats a primary consumer, the vole, which eats a producer, the grass.",
+      "B": "The primary consumer is the vole, which eats the grass directly.",
+      "C": "The producer is the grass, which makes its own food by photosynthesis.",
+      "D": "Decomposers break down dead material; the owl hunts living prey."
+    }
+  },
+  {
+    "id": "s498",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp54",
+    "context": "One hectare is 10,000 m². A density of 210 voles per hectare is the same as about how many voles in each 100 m²?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "21"
+      },
+      {
+        "id": "B",
+        "text": "0.021"
+      },
+      {
+        "id": "C",
+        "text": "2.1"
+      },
+      {
+        "id": "D",
+        "text": "210"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That divides by 10, but 100 m² is one hundredth of a hectare, not one tenth.",
+      "B": "That is the number of voles in a single square metre, 210 ÷ 10,000, not in 100 m².",
+      "C": "Correct — 100 m² is 1/100 of a hectare, and 210 ÷ 100 is 2.1.",
+      "D": "That keeps the hectare figure unchanged for an area a hundred times smaller."
+    }
+  },
+  {
+    "id": "s499",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp55",
+    "context": "According to Table 3, the crater made in damp sand had a diameter of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "70 mm"
+      },
+      {
+        "id": "B",
+        "text": "84 mm"
+      },
+      {
+        "id": "C",
+        "text": "58 mm"
+      },
+      {
+        "id": "D",
+        "text": "28 mm"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the dry sand crater.",
+      "B": "That is the flour crater, the largest of the three.",
+      "C": "Correct — Table 3 pairs damp sand with a crater 58 mm across.",
+      "D": "That is the mass of the ball in grams."
+    }
+  },
+  {
+    "id": "s500",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp55",
+    "context": "According to Table 1, each doubling of the drop height increased the crater diameter by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the same fixed 10 mm each time."
+      },
+      {
+        "id": "B",
+        "text": "roughly one-sixth each time."
+      },
+      {
+        "id": "C",
+        "text": "a factor of two each time."
+      },
+      {
+        "id": "D",
+        "text": "nothing measurable after the first doubling."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The steps are 8, 10, 12 and 14 mm, which grow rather than staying fixed.",
+      "B": "Correct — 60/52, 70/60, 82/70 and 96/82 each come to about 1.15 to 1.17.",
+      "C": "Doubling the diameter would take 52 mm to 104 mm at the next height, not 60 mm.",
+      "D": "The diameter keeps growing at every height, up to 96 mm."
+    }
+  },
+  {
+    "id": "s501",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp55",
+    "context": "Using the relationship in the passage, the impact energy of the 28 g ball dropped from 2.00 m was about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.27 J"
+      },
+      {
+        "id": "B",
+        "text": "550 J"
+      },
+      {
+        "id": "C",
+        "text": "5.6 J"
+      },
+      {
+        "id": "D",
+        "text": "0.55 J"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the energy for a 1.00 m drop, from Table 2.",
+      "B": "That uses the mass in grams instead of converting it to 0.028 kg.",
+      "C": "That misplaces the decimal point by a factor of ten.",
+      "D": "Correct — 0.028 kg × 9.8 m/s² × 2.00 m is about 0.55 J."
+    }
+  },
+  {
+    "id": "s502",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp55",
+    "context": "A student hypothesizes that crater diameter in dry sand depends only on impact energy, whatever the ball’s mass or drop height. Which pair of results best supports this?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The 28 g ball from 4.00 m and the 110 g ball from 1.00 m"
+      },
+      {
+        "id": "B",
+        "text": "The 28 g ball from 0.25 m and from 4.00 m"
+      },
+      {
+        "id": "C",
+        "text": "The 7 g and 110 g balls from 1.00 m"
+      },
+      {
+        "id": "D",
+        "text": "The 28 g ball from 1.00 m into dry sand and into flour"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — both impacts carry about 1.1 J (0.028 × 9.8 × 4.00 and 1.08 J), and the craters, 96 mm and 97 mm, nearly match.",
+      "B": "These share a mass, so they show that height matters but cannot show that energy alone decides.",
+      "C": "These share a height, so they show that mass matters but not that energy alone decides.",
+      "D": "These have equal energy but different craters, because the target material changed."
+    }
+  },
+  {
+    "id": "s503",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp55",
+    "context": "Experiment 3 differs from Experiments 1 and 2 in that it varied:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the drop height."
+      },
+      {
+        "id": "B",
+        "text": "the mass of the ball being dropped."
+      },
+      {
+        "id": "C",
+        "text": "the method of measuring the crater."
+      },
+      {
+        "id": "D",
+        "text": "the material the ball struck."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Every trial in Experiment 3 used a 1.00 m drop.",
+      "B": "Experiment 3 used only the 28 g ball.",
+      "C": "Every crater was measured rim to rim in the same way.",
+      "D": "Correct — Experiment 3 held the ball and height fixed and changed dry sand to damp sand and flour."
+    }
+  },
+  {
+    "id": "s504",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp55",
+    "context": "A ball dropped from rest speeds up as it falls because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "air pushes it downward more and more strongly the faster it falls."
+      },
+      {
+        "id": "B",
+        "text": "gravitational potential energy is converted into kinetic energy."
+      },
+      {
+        "id": "C",
+        "text": "its mass increases as it approaches the ground."
+      },
+      {
+        "id": "D",
+        "text": "the steel is attracted by the sand below it."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Air resists the fall rather than pushing the ball down.",
+      "B": "Correct — the ball loses height, and the energy it had because of its height becomes energy of motion.",
+      "C": "The ball’s mass does not change as it falls.",
+      "D": "Any pull between the ball and the sand is negligible; Earth’s gravity is what pulls the ball down and speeds it up."
     }
   }
 ]

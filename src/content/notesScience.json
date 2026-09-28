@@ -87,7 +87,7 @@
               "Treat \"chlorophyll a\" as a label and find that column or curve in the figure"
             ],
             "answer": 3,
-            "explain": "Unfamiliar terminology on ACT Science is almost always just a label on an axis, a column header, or a curve. Locate it in the figure and read the data. Fewer than 4 of the 40 questions require any real outside knowledge."
+            "explain": "Unfamiliar terminology on ACT Science is almost always just a label on an axis, a column header, or a curve. Locate it in the figure and read the data. Only a handful of the 40 questions require any real outside knowledge."
           }
         ]
       },
@@ -131,7 +131,7 @@
               "Roughly midway → about 38 seconds.",
               "Any choice outside 31–45 can be eliminated instantly."
             ],
-            "answer": "**≈ 38 seconds.** You did not need the relationship to be linear — you only needed it to be **monotonic**, which the two data points establish. Bracketing eliminates most choices before any arithmetic."
+            "answer": "**≈ 38 seconds.** You did not need the relationship to be linear — you only needed it to be **monotonic** (steadily rising or steadily falling) between the two points. Two points cannot prove that; the trend of the whole table is what makes it a safe assumption. Bracketing eliminates most choices before any arithmetic."
           },
           {
             "type": "list",
@@ -245,7 +245,7 @@
               "The trial with the highest starting yield"
             ],
             "answer": 1,
-            "explain": "\"Greatest increase\" is about the size of the *change*, not the size of the final value. A trial going 10 → 40 (increase of 30) beats one going 60 → 70 (increase of 10) even though the second ends higher. This distinction appears on nearly every Science section."
+            "explain": "\"Greatest increase\" is about the size of the *change*, not the size of the final value. A trial going 10 → 40 (increase of 30) beats one going 60 → 70 (increase of 10) even though the second ends higher. This distinction is tested often."
           }
         ]
       },
@@ -308,7 +308,7 @@
           {
             "type": "trap",
             "items": [
-              "Confusing independent and dependent variables. The independent one is on the x-axis; the dependent one is measured.",
+              "Confusing independent and dependent variables. The independent one is set by the researchers (usually on the x-axis); the dependent one is measured.",
               "Assuming a difference between trials is meaningful when the passage gives no comparison baseline.",
               "Choosing a \"next experiment\" that is interesting but changes multiple variables."
             ]
@@ -457,7 +457,7 @@
               "Outside knowledge required: lower pH = more acidic.",
               "Lowest value listed is 2.1."
             ],
-            "answer": "**pH 2.1.** This is the single most common outside-knowledge question on the ACT. Also remember it is logarithmic, so pH 2.1 is about two thousand times more acidic than pH 5.4 (3.3 units, and each unit is a factor of ten) — occasionally tested directly."
+            "answer": "**pH 2.1.** This is one of the most common outside-knowledge questions on the ACT. Also remember it is logarithmic, so pH 2.1 is about two thousand times more acidic than pH 5.4 (3.3 units, and each unit is a factor of ten) — occasionally tested directly."
           },
           {
             "type": "rule",

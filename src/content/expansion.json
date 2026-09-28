@@ -349,19 +349,19 @@
           },
           {
             "id": "C",
-            "text": "collided into one another"
+            "text": "collided mutually"
           },
           {
             "id": "D",
-            "text": "collided together in a crash"
+            "text": "collided with"
           }
         ],
         "answer": "B",
         "why": {
           "A": "Collided already means the two ships struck each other, so together adds nothing.",
           "B": "The verb carries the whole idea, and one word says what four were saying.",
-          "C": "Into one another repeats the mutual sense the verb already holds.",
-          "D": "In a crash names a third time the event the verb has named once."
+          "C": "“Mutually” repeats the two-way sense the verb already holds.",
+          "D": "“With” needs an object after it, and the sentence supplies none."
         }
       },
       {
@@ -910,19 +910,19 @@
           },
           {
             "id": "C",
-            "text": "repeated the signal once again"
+            "text": "signalled again"
           },
           {
             "id": "D",
-            "text": "said the signal again a second time"
+            "text": "repeated it again"
           }
         ],
         "answer": "B",
         "why": {
           "A": "Repeated already means said again, and twice has counted the repetitions.",
           "B": "Repeated and twice between them say everything the sentence needs.",
-          "C": "Once again is a longer way of writing the again that was redundant already.",
-          "D": "A second time repeats what again repeats, so the sentence says it three times."
+          "C": "“Again” still doubles up with “twice”, whatever the verb.",
+          "D": "“It” has nothing to refer to, and “again” still doubles up with “twice”."
         }
       },
       {
@@ -1471,19 +1471,19 @@
           },
           {
             "id": "C",
-            "text": "full to the brim entirely"
+            "text": "entirely full"
           },
           {
             "id": "D",
-            "text": "completely and entirely full"
+            "text": "fuller"
           }
         ],
         "answer": "B",
         "why": {
           "A": "To the brim and completely both say what full has already said.",
           "B": "Full admits of no degrees, so nothing needs to be added to it.",
-          "C": "Entirely piles a third word onto an idea that needed only one.",
-          "D": "Completely and entirely mean the same thing, and full needs neither."
+          "C": "“Entirely” adds nothing to “full”, which admits of no degrees.",
+          "D": "“Fuller” compares the cellar with something, but the sentence names nothing to compare it to."
         }
       },
       {
@@ -2032,19 +2032,19 @@
           },
           {
             "id": "C",
-            "text": "Owing to the fact that"
+            "text": "Being that"
           },
           {
             "id": "D",
-            "text": "In view of the fact that"
+            "text": "Due to"
           }
         ],
         "answer": "B",
         "why": {
           "A": "Five words are doing the work of one, and the phrase can be cut whole.",
           "B": "Because states the cause outright and needs nothing propping it up.",
-          "C": "Owing to the fact that is the same padding with a different opening word.",
-          "D": "In view of the fact that is longer still and carries no extra meaning."
+          "C": "“Being that” is a nonstandard substitute for “because”.",
+          "D": "“Due to” must be followed by a noun, not a full clause such as “the ferry was cancelled”."
         }
       },
       {
@@ -2593,19 +2593,19 @@
           },
           {
             "id": "C",
-            "text": "At the present moment in time"
+            "text": "Now, today,"
           },
           {
             "id": "D",
-            "text": "At this current point in time"
+            "text": "Then"
           }
         ],
         "answer": "B",
         "why": {
           "A": "Point in time is a stock phrase that one short adverb replaces exactly.",
           "B": "Now carries the whole meaning of the phrase it stands in for.",
-          "C": "Present and in time repeat each other inside a phrase already too long.",
-          "D": "Current adds nothing that this had not already established."
+          "C": "“Now” and “today” say the same thing twice.",
+          "D": "“Then” points to a past moment, but “is still hanging” describes the present."
         }
       },
       {
@@ -3154,19 +3154,19 @@
           },
           {
             "id": "C",
-            "text": "for the purpose of the finishing of"
+            "text": "for finishing"
           },
           {
             "id": "D",
-            "text": "with the purpose of finishing"
+            "text": "finishing"
           }
         ],
         "answer": "B",
         "why": {
           "A": "An infinitive already states a purpose, so the phrase announcing one is filler.",
           "B": "To finish says why he agreed in two words instead of five.",
-          "C": "Adding an article and a second of makes the padding worse, not better.",
-          "D": "Swapping for to with leaves the same stock phrase in place."
+          "C": "“For finishing” is not how English states a purpose after “help”; the infinitive does that.",
+          "D": "“Help” takes an infinitive here, not an -ing form: “to help finishing” is ungrammatical."
         }
       },
       {
@@ -3715,19 +3715,19 @@
           },
           {
             "id": "C",
-            "text": "and every one of them was unpacked"
+            "text": "and also unpacked"
           },
           {
             "id": "D",
-            "text": "and each of them was unpacked as well"
+            "text": "and unpacking"
           }
         ],
         "answer": "B",
         "why": {
           "A": "Every one of the crates is already the subject, so each one names them twice.",
           "B": "Both verbs share the subject stated at the start of the sentence.",
-          "C": "Restating every one of them says a second time what the subject has said.",
-          "D": "As well adds nothing once the same crates govern both verbs."
+          "C": "“Also” repeats the adding that “and” already does.",
+          "D": "“Unpacking” cannot pair with “was opened”; the two verbs must share one form."
         }
       },
       {
@@ -4276,19 +4276,19 @@
           },
           {
             "id": "C",
-            "text": "was on account of the money running out"
+            "text": "was since the money ran out"
           },
           {
             "id": "D",
-            "text": "was because of the money running out"
+            "text": "was the money ran out"
           }
         ],
         "answer": "B",
         "why": {
           "A": "Reason and because state the same thing, so one of the two has to go.",
           "B": "The reason was that gives the cause once rather than announcing it twice.",
-          "C": "On account of is another way of writing because after reason has said it.",
-          "D": "Because of still repeats the cause that reason has already promised."
+          "C": "“Since” has the same fault as “because”: “the reason” has announced a cause, and a second causal word repeats it.",
+          "D": "Without “that”, the verb “was” runs straight into a second clause and the sentence breaks."
         }
       },
       {
@@ -4837,19 +4837,19 @@
           },
           {
             "id": "C",
-            "text": "In hindsight looking backwards"
+            "text": "Looking back behind"
           },
           {
             "id": "D",
-            "text": "With hindsight and in retrospect"
+            "text": "Hindsight"
           }
         ],
         "answer": "B",
         "why": {
           "A": "Hindsight is exactly what looking back means, so the phrase says it twice.",
           "B": "Looking back carries the whole idea without help from a second phrase.",
-          "C": "Backwards names a third time the direction the phrase has already named.",
-          "D": "In retrospect is another word for hindsight, so the doubling survives."
+          "C": "“Behind” repeats the direction “back” has already given.",
+          "D": "A bare noun cannot open the sentence this way; it needs a word such as “in” or “with” to attach it."
         }
       },
       {

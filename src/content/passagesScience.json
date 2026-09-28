@@ -2071,7 +2071,7 @@
         "kind": "bar",
         "xLabel": "Water temperature (°C)",
         "yLabel": "Surviving (%)",
-        "alt": "Grouped bar chart of percentage surviving after 96 hours at four temperatures, one pair of bars per temperature. Both populations survive almost completely at the two cooler temperatures. At the warmest temperature the coastal bar is very short while the inland bar remains above half.",
+        "alt": "Grouped bar chart of percentage surviving after 96 hours at four temperatures, one pair of bars per temperature. Both populations survive almost completely at the two cooler temperatures. Coastal survival drops sharply as the water warms, and at the warmest temperature no coastal fish survive while the inland bar remains above half.",
         "series": [
           {
             "name": "Coastal",
@@ -2090,7 +2090,7 @@
               },
               {
                 "x": 28,
-                "y": 10
+                "y": 0
               }
             ]
           },
@@ -2597,7 +2597,7 @@
     "id": "sp33",
     "title": "Testing Antibiotics on Two Bacterial Strains",
     "type": "Research Summaries",
-    "text": "A bacterium spread evenly over a nutrient plate grows into a continuous lawn. If a small paper disc soaked in an antibiotic is laid on that lawn, the antibiotic seeps outward through the jelly and the bacteria closest to the disc fail to grow, leaving a clear circle called the zone of inhibition. The diameter of that circle is measured in millimetres, and a diameter of 0 mm means the lawn grew right up to the edge of the paper.\n\nA laboratory used the same plates, the same growing jelly, the same 6 mm paper discs and the same 18 hours at 35 degrees C for every test below. Diameters include the width of the disc itself. The laboratory treated a strain as susceptible to an antibiotic when the zone reached 15 mm or more.\n\nExperiment 1. Four antibiotics, W, X, Y and Z, were each loaded onto a disc at 10 micrograms and laid on separate plates of Strain A. Table 1 gives the zone diameter for each.\n\nExperiment 2. Antibiotic Y alone was loaded onto discs at five different masses and laid on plates of Strain A. Table 2 gives the zone diameter at each mass. The 10 microgram disc in Table 2 is the same test as the Antibiotic Y row of Table 1.\n\nExperiment 3. Experiment 1 was repeated exactly, with the same four antibiotics at the same 10 micrograms, on Strain C instead of Strain A. Strain C had been recovered from a patient who had already been treated with Antibiotic W. Table 3 gives the zone diameters.\n\nA zone says only that growth stopped somewhere. How far the antibiotic travelled through the jelly before it thinned below a useful concentration depends on the size and solubility of the molecule as much as on what it does once it arrives, so two antibiotics with equal zones are not necessarily equally useful in a patient.",
+    "text": "A bacterium spread evenly over a nutrient plate grows into a continuous lawn. If a small paper disc soaked in an antibiotic is laid on that lawn, the antibiotic seeps outward through the jelly and the bacteria closest to the disc fail to grow, leaving a clear circle called the zone of inhibition. The diameter of that circle is measured in millimetres, and a diameter of 0 mm means the lawn grew right up to the edge of the paper.\n\nA laboratory used the same plates, the same growing jelly, the same 6 mm paper discs and the same 18 hours at 35 degrees C for every test below. Diameters include the width of the disc itself; a disc with no clear zone around it is recorded as 0 mm. The laboratory treated a strain as susceptible to an antibiotic when the zone reached 15 mm or more.\n\nExperiment 1. Four antibiotics, W, X, Y and Z, were each loaded onto a disc at 10 micrograms and laid on separate plates of Strain A. Table 1 gives the zone diameter for each.\n\nExperiment 2. Antibiotic Y alone was loaded onto discs at five different masses and laid on plates of Strain A. Table 2 gives the zone diameter at each mass. The 10 microgram disc in Table 2 is the same test as the Antibiotic Y row of Table 1.\n\nExperiment 3. Experiment 1 was repeated exactly, with the same four antibiotics at the same 10 micrograms, on Strain C instead of Strain A. Strain C had been recovered from a patient who had already been treated with Antibiotic W. Table 3 gives the zone diameters.\n\nA zone says only that growth stopped somewhere. How far the antibiotic travelled through the jelly before it thinned below a useful concentration depends on the size and solubility of the molecule as much as on what it does once it arrives, so two antibiotics with equal zones are not necessarily equally useful in a patient.",
     "figures": [
       {
         "label": "Table 1",
@@ -3215,6 +3215,1470 @@
           [
             "50",
             "3"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp41",
+    "title": "Resistance of Metal Wires",
+    "type": "Data Representation",
+    "text": "The resistance of a wire is the voltage across it divided by the current through it, measured in ohms (Ω). A student measured the resistance of wires made from constantan, an alloy of copper and nickel, with every wire held at 20 °C. Table 1 gives the resistance of wires of different lengths, all with a cross-sectional area of 0.20 mm². Table 2 gives the resistance of wires 1.00 m long with different cross-sectional areas.\n\nFigure 1 shows how the current changed as the voltage was raised for two components: the 1.00 m constantan wire of area 0.20 mm², and the thin tungsten filament of a small lamp, which glows brighter as the voltage rises.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Constantan wires of cross-sectional area 0.20 mm²",
+        "type": "table",
+        "head": [
+          "Length (m)",
+          "Resistance (Ω)"
+        ],
+        "rows": [
+          [
+            "0.25",
+            "0.61"
+          ],
+          [
+            "0.50",
+            "1.23"
+          ],
+          [
+            "1.00",
+            "2.45"
+          ],
+          [
+            "1.50",
+            "3.68"
+          ],
+          [
+            "2.00",
+            "4.90"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Constantan wires 1.00 m long",
+        "type": "table",
+        "head": [
+          "Cross-sectional area (mm²)",
+          "Resistance (Ω)"
+        ],
+        "rows": [
+          [
+            "0.10",
+            "4.90"
+          ],
+          [
+            "0.20",
+            "2.45"
+          ],
+          [
+            "0.40",
+            "1.23"
+          ],
+          [
+            "0.80",
+            "0.61"
+          ]
+        ]
+      },
+      {
+        "label": "Figure 1",
+        "caption": "Current against voltage for a constantan wire and a lamp filament",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Voltage (V)",
+        "yLabel": "Current (mA)",
+        "alt": "Line graph of current against voltage for two components, both starting at zero. The constantan wire’s line is straight and climbs steadily. The lamp’s line rises steeply at first and then bends over, rising by less at each step, so that it ends well below the wire’s line at the highest voltage.",
+        "series": [
+          {
+            "name": "Constantan wire",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 0.5,
+                "y": 204
+              },
+              {
+                "x": 1,
+                "y": 408
+              },
+              {
+                "x": 1.5,
+                "y": 612
+              },
+              {
+                "x": 2,
+                "y": 816
+              },
+              {
+                "x": 2.5,
+                "y": 1020
+              }
+            ]
+          },
+          {
+            "name": "Lamp filament",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 0.5,
+                "y": 250
+              },
+              {
+                "x": 1,
+                "y": 400
+              },
+              {
+                "x": 1.5,
+                "y": 500
+              },
+              {
+                "x": 2,
+                "y": 570
+              },
+              {
+                "x": 2.5,
+                "y": 620
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp42",
+    "title": "Copper Plating by Electrolysis",
+    "type": "Research Summaries",
+    "text": "Two copper plates were dipped into a copper(II) sulfate solution and connected to a power supply. While current flowed, copper was deposited on the negative plate, the cathode. The cathode was dried and weighed before and after each trial, and the gain in mass was recorded in milligrams. The charge passed, in coulombs (C), is the current in amperes (A) multiplied by the time in seconds. Unless stated otherwise, the solution had a concentration of 0.50 mol/L and was kept at 25 °C.\n\nExperiment 1. The current was held at 0.50 A and the time was varied. Table 1 gives the results.\n\nExperiment 2. Every trial ran for 20 minutes and the current was varied. Table 2 gives the results.\n\nExperiment 3. Every trial ran at 0.50 A for 16 minutes, and the concentration of the solution was varied. Table 3 gives the results.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: current 0.50 A",
+        "type": "table",
+        "head": [
+          "Time (min)",
+          "Mass gained by cathode (mg)"
+        ],
+        "rows": [
+          [
+            "8",
+            "79"
+          ],
+          [
+            "16",
+            "158"
+          ],
+          [
+            "32",
+            "316"
+          ],
+          [
+            "48",
+            "474"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: time 20 min",
+        "type": "table",
+        "head": [
+          "Current (A)",
+          "Mass gained by cathode (mg)"
+        ],
+        "rows": [
+          [
+            "0.20",
+            "79"
+          ],
+          [
+            "0.40",
+            "158"
+          ],
+          [
+            "0.80",
+            "316"
+          ],
+          [
+            "1.20",
+            "474"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: 0.50 A for 16 min",
+        "type": "table",
+        "head": [
+          "Concentration (mol/L)",
+          "Mass gained by cathode (mg)"
+        ],
+        "rows": [
+          [
+            "0.05",
+            "114"
+          ],
+          [
+            "0.10",
+            "145"
+          ],
+          [
+            "0.50",
+            "158"
+          ],
+          [
+            "1.00",
+            "158"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp43",
+    "title": "Why Does Kelm-7 Dim?",
+    "type": "Conflicting Viewpoints",
+    "intro": "The star Kelm-7 dims slightly every 4.0 days. Each dip lasts about five hours and removes about 1.0% of the star’s light before the star returns to normal. Figure 1 shows one dip, measured through a green filter. Table 1 gives the depth of the dip measured through four filters, each passing a different colour of light, averaged over 40 dips. Three astronomers offer explanations.",
+    "figures": [
+      {
+        "label": "Scientist 1",
+        "caption": "A transiting planet",
+        "type": "note",
+        "text": "A planet orbits Kelm-7 once every 4.0 days, and its orbit is lined up so that it passes in front of the star as seen from Earth. A dark planet blocks the same fraction of the star’s light whatever the colour, so the dip should be equally deep through every filter. Once the planet is wholly in front of the star, the fraction blocked stays fixed until it begins to leave, which is why the bottom of each dip is flat. The fraction of light blocked equals the square of the planet’s radius divided by the star’s radius. The dips have arrived on schedule, to within a few minutes, for as long as the star has been watched."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "A rotating starspot",
+        "type": "note",
+        "text": "Measurements of the star’s spectrum show it spins once about every 4 days. A large, cool, dark spot on its surface would turn into view once per rotation and dim the star. Because a spot is cooler than the surrounding surface rather than wholly dark, it removes proportionally more blue light than red, so the dip should be deeper through a blue filter than through a red one. Spots grow and fade over months, so the depth of the dips should drift slowly over a year or more."
+      },
+      {
+        "label": "Scientist 3",
+        "caption": "An orbiting dust clump",
+        "type": "note",
+        "text": "Kelm-7 gives off more infrared light than a star of its type should, which is the signature of warm dust around it. A dense clump of dust orbiting every 4.0 days would dim the star as it passed in front. Fine dust scatters blue light more strongly than red, so the dip should be deeper in blue light, and a clump trailing a tail of dust should make each dip fade in quickly but recover slowly."
+      },
+      {
+        "label": "Figure 1",
+        "caption": "Brightness of Kelm-7 during one dip, green filter",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Time (hours)",
+        "yLabel": "Brightness (% of normal)",
+        "alt": "Line graph of the star’s brightness over eight hours. The brightness starts at its normal level, drops quickly to a lower level, stays flat at that lower level for several hours, then rises quickly and symmetrically back to normal.",
+        "series": [
+          {
+            "name": "Kelm-7",
+            "points": [
+              {
+                "x": 0,
+                "y": 100
+              },
+              {
+                "x": 1,
+                "y": 100
+              },
+              {
+                "x": 1.5,
+                "y": 99.5
+              },
+              {
+                "x": 2,
+                "y": 99
+              },
+              {
+                "x": 3,
+                "y": 99
+              },
+              {
+                "x": 4,
+                "y": 99
+              },
+              {
+                "x": 5,
+                "y": 99
+              },
+              {
+                "x": 6,
+                "y": 99
+              },
+              {
+                "x": 6.5,
+                "y": 99.5
+              },
+              {
+                "x": 7,
+                "y": 100
+              },
+              {
+                "x": 8,
+                "y": 100
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Mean dip depth through four filters (40 dips)",
+        "type": "table",
+        "head": [
+          "Filter",
+          "Wavelength (nm)",
+          "Dip depth (% of normal light)"
+        ],
+        "rows": [
+          [
+            "Blue",
+            "450",
+            "1.0"
+          ],
+          [
+            "Green",
+            "550",
+            "1.0"
+          ],
+          [
+            "Red",
+            "650",
+            "1.0"
+          ],
+          [
+            "Infrared",
+            "900",
+            "1.0"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp44",
+    "title": "Photosynthesis in Sun and Shade Leaves",
+    "type": "Data Representation",
+    "text": "Leaves of the same tree species were collected from the sunlit top of the canopy and from the shaded lower branches. Each leaf was sealed in a clear chamber at 25 °C and lit at a set intensity, and the oxygen it released was measured. Net oxygen release is the oxygen produced by photosynthesis minus the oxygen used by the leaf’s own respiration; a negative value means the leaf used more oxygen than it made. Respiration is assumed to proceed at the same rate in light as in darkness.\n\nFigure 1 shows net oxygen release per square metre of leaf at seven light intensities. Table 1 gives some features of the two kinds of leaf.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Net oxygen release at seven light intensities",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Light intensity (µmol photons/m²/s)",
+        "yLabel": "Net O₂ release (µmol/m²/s)",
+        "alt": "Line graph of net oxygen release against light intensity for a sun leaf and a shade leaf. Both lines start below zero in darkness, the sun leaf further below. The shade leaf rises quickly and levels off at a low value. The sun leaf rises more slowly at first, passes the shade leaf, and levels off at a much higher value.",
+        "series": [
+          {
+            "name": "Sun leaf",
+            "points": [
+              {
+                "x": 0,
+                "y": -2
+              },
+              {
+                "x": 100,
+                "y": 2
+              },
+              {
+                "x": 200,
+                "y": 6
+              },
+              {
+                "x": 400,
+                "y": 12
+              },
+              {
+                "x": 800,
+                "y": 18
+              },
+              {
+                "x": 1200,
+                "y": 20
+              },
+              {
+                "x": 1600,
+                "y": 20
+              }
+            ]
+          },
+          {
+            "name": "Shade leaf",
+            "points": [
+              {
+                "x": 0,
+                "y": -0.5
+              },
+              {
+                "x": 100,
+                "y": 3.5
+              },
+              {
+                "x": 200,
+                "y": 5.5
+              },
+              {
+                "x": 400,
+                "y": 7
+              },
+              {
+                "x": 800,
+                "y": 7.5
+              },
+              {
+                "x": 1200,
+                "y": 7.5
+              },
+              {
+                "x": 1600,
+                "y": 7.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Features of the two kinds of leaf",
+        "type": "table",
+        "head": [
+          "Leaf",
+          "Thickness (mm)",
+          "Area of one leaf (cm²)",
+          "Stomata (per mm²)"
+        ],
+        "rows": [
+          [
+            "Sun",
+            "0.30",
+            "24",
+            "210"
+          ],
+          [
+            "Shade",
+            "0.15",
+            "52",
+            "95"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp45",
+    "title": "Balls Rolling off a Table",
+    "type": "Research Summaries",
+    "text": "A steel ball was rolled along a level track and left the edge of a table moving horizontally. A light gate at the edge measured its launch speed, and a second gate timed its fall. The horizontal distance from the table edge to the point where the ball first struck the floor was measured in metres. Air resistance was small enough to ignore. Near Earth’s surface, a falling object gains downward speed at 9.8 m/s².\n\nExperiment 1. A 50 g ball was launched from a height of 0.80 m at four speeds. Table 1 gives the results.\n\nExperiment 2. A 50 g ball was launched at 2.0 m/s from four heights. Table 2 gives the results.\n\nExperiment 3. Balls of three masses were launched at 2.0 m/s from 0.80 m. Table 3 gives the results.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: height 0.80 m, 50 g ball",
+        "type": "table",
+        "head": [
+          "Launch speed (m/s)",
+          "Horizontal distance (m)"
+        ],
+        "rows": [
+          [
+            "1.0",
+            "0.40"
+          ],
+          [
+            "2.0",
+            "0.81"
+          ],
+          [
+            "3.0",
+            "1.21"
+          ],
+          [
+            "4.0",
+            "1.62"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: launch speed 2.0 m/s, 50 g ball",
+        "type": "table",
+        "head": [
+          "Height (m)",
+          "Fall time (s)",
+          "Horizontal distance (m)"
+        ],
+        "rows": [
+          [
+            "0.20",
+            "0.202",
+            "0.40"
+          ],
+          [
+            "0.45",
+            "0.303",
+            "0.61"
+          ],
+          [
+            "0.80",
+            "0.404",
+            "0.81"
+          ],
+          [
+            "1.25",
+            "0.505",
+            "1.01"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: speed 2.0 m/s, height 0.80 m",
+        "type": "table",
+        "head": [
+          "Ball mass (g)",
+          "Horizontal distance (m)"
+        ],
+        "rows": [
+          [
+            "20",
+            "0.81"
+          ],
+          [
+            "50",
+            "0.81"
+          ],
+          [
+            "100",
+            "0.81"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp46",
+    "title": "Timing an Earthquake’s Waves",
+    "type": "Data Representation",
+    "text": "An earthquake sends out two kinds of wave through the rock. P waves travel faster and arrive first; S waves travel more slowly and arrive later. The farther a recording station is from the earthquake, the longer the gap between the two arrivals, so that gap, the S−P interval, can be used to find the distance.\n\nFigure 1 shows the travel time of each kind of wave to stations at different distances in one region. Table 1 gives the S−P interval recorded at three stations for a single earthquake.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Travel times of P and S waves",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Distance from earthquake (km)",
+        "yLabel": "Travel time (s)",
+        "alt": "Line graph of travel time against distance for P waves and S waves. Both lines start at zero and rise in straight lines. The S-wave line is steeper, so the gap between the two lines widens steadily with distance.",
+        "series": [
+          {
+            "name": "P wave",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 100,
+                "y": 17
+              },
+              {
+                "x": 200,
+                "y": 33
+              },
+              {
+                "x": 300,
+                "y": 50
+              },
+              {
+                "x": 400,
+                "y": 67
+              },
+              {
+                "x": 500,
+                "y": 83
+              }
+            ]
+          },
+          {
+            "name": "S wave",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 100,
+                "y": 29
+              },
+              {
+                "x": 200,
+                "y": 57
+              },
+              {
+                "x": 300,
+                "y": 86
+              },
+              {
+                "x": 400,
+                "y": 114
+              },
+              {
+                "x": 500,
+                "y": 143
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "S−P intervals for one earthquake",
+        "type": "table",
+        "head": [
+          "Station",
+          "S−P interval (s)"
+        ],
+        "rows": [
+          [
+            "Arden",
+            "12"
+          ],
+          [
+            "Bassett",
+            "30"
+          ],
+          [
+            "Corrow",
+            "48"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp47",
+    "title": "The Large Lizards of Tarra Island",
+    "type": "Conflicting Viewpoints",
+    "intro": "Tarra is a small island 30 km off the coast. Its lizards belong to the same species as those on the nearby mainland but grow much larger. Table 1 compares the two places. Three biologists explain the difference in size.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Mainland and Tarra Island compared",
+        "type": "table",
+        "head": [
+          "Measure",
+          "Mainland",
+          "Tarra"
+        ],
+        "rows": [
+          [
+            "Mean adult mass (g)",
+            "21",
+            "58"
+          ],
+          [
+            "Predatory birds (per km²)",
+            "4.1",
+            "0.3"
+          ],
+          [
+            "Beetle prey (g per m²)",
+            "1.2",
+            "1.3"
+          ],
+          [
+            "Mean July temperature (°C)",
+            "24",
+            "19"
+          ],
+          [
+            "Lizards (per hectare)",
+            "40",
+            "310"
+          ]
+        ]
+      },
+      {
+        "label": "Scientist 1",
+        "caption": "Release from predators",
+        "type": "note",
+        "text": "On the mainland, hawks and shrikes kill most lizards before their third year, so few ever reach full size. On Tarra, with almost no predatory birds, lizards live for many years and keep growing throughout life. Large lizards are also easier for birds to spot, so on the mainland large size carries a cost that it does not carry on Tarra."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "Crowding and competition",
+        "type": "note",
+        "text": "The absence of predators matters on Tarra mainly because it has let lizard numbers climb to nearly eight times the mainland density. At that density lizards compete fiercely with one another. Larger lizards win fights over food and basking sites, and adults eat the young of their own kind. Over many generations, crowding has favoured the largest individuals."
+      },
+      {
+        "label": "Scientist 3",
+        "caption": "A cooler island",
+        "type": "note",
+        "text": "Tarra is cooler than the mainland. A large body has less surface for each gram of mass, so after basking it loses its warmth more slowly and stays active longer on cool days. On a cooler island, larger lizards can hunt for more hours, and this, not predators or crowding, has driven the increase in size."
+      }
+    ]
+  },
+  {
+    "id": "sp48",
+    "title": "Freezing Salt and Sugar Solutions",
+    "type": "Research Summaries",
+    "text": "Dissolving a substance in water lowers the temperature at which the water freezes. A student made each solution by dissolving a measured amount of solute in 1.00 kg of pure water, which freezes at 0.00 °C. Concentration is given in moles of solute per kilogram of water (mol/kg). Each solution was cooled slowly while stirred, and the temperature at which ice first appeared was recorded.\n\nExperiment 1 used sodium chloride (NaCl), which separates into two ions in water. Experiment 2 used sucrose (table sugar), which dissolves as whole molecules. Experiment 3 used calcium chloride (CaCl₂), which separates into three ions.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: sodium chloride",
+        "type": "table",
+        "head": [
+          "Concentration (mol/kg)",
+          "Freezing point (°C)"
+        ],
+        "rows": [
+          [
+            "0.10",
+            "−0.35"
+          ],
+          [
+            "0.20",
+            "−0.69"
+          ],
+          [
+            "0.50",
+            "−1.71"
+          ],
+          [
+            "1.00",
+            "−3.37"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: sucrose",
+        "type": "table",
+        "head": [
+          "Concentration (mol/kg)",
+          "Freezing point (°C)"
+        ],
+        "rows": [
+          [
+            "0.10",
+            "−0.19"
+          ],
+          [
+            "0.20",
+            "−0.37"
+          ],
+          [
+            "0.50",
+            "−0.94"
+          ],
+          [
+            "1.00",
+            "−1.90"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: calcium chloride",
+        "type": "table",
+        "head": [
+          "Concentration (mol/kg)",
+          "Freezing point (°C)"
+        ],
+        "rows": [
+          [
+            "0.10",
+            "−0.49"
+          ],
+          [
+            "0.20",
+            "−0.98"
+          ],
+          [
+            "0.50",
+            "−2.58"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp49",
+    "title": "Air at Different Altitudes",
+    "type": "Data Representation",
+    "text": "A weather balloon carried instruments from sea level to 10 km on a calm day, recording air temperature and air pressure. Pressure is given in hectopascals (hPa); 1 hPa is 100 pascals. Table 1 gives the readings.\n\nWater boils when the pressure of its vapour matches the pressure of the air above it. Figure 1 shows the boiling point of pure water measured at five altitudes on the same mountain road.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Balloon readings",
+        "type": "table",
+        "head": [
+          "Altitude (km)",
+          "Temperature (°C)",
+          "Pressure (hPa)"
+        ],
+        "rows": [
+          [
+            "0",
+            "15.0",
+            "1013"
+          ],
+          [
+            "1",
+            "8.5",
+            "899"
+          ],
+          [
+            "2",
+            "2.0",
+            "795"
+          ],
+          [
+            "3",
+            "−4.5",
+            "701"
+          ],
+          [
+            "4",
+            "−11.0",
+            "617"
+          ],
+          [
+            "6",
+            "−24.0",
+            "472"
+          ],
+          [
+            "8",
+            "−37.0",
+            "356"
+          ],
+          [
+            "10",
+            "−50.0",
+            "264"
+          ]
+        ]
+      },
+      {
+        "label": "Figure 1",
+        "caption": "Boiling point of water at five altitudes",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Altitude (km)",
+        "yLabel": "Boiling point (°C)",
+        "alt": "Line graph of the boiling point of water against altitude. The line starts at its highest value at sea level and falls steadily, almost in a straight line, as altitude increases.",
+        "series": [
+          {
+            "name": "Boiling point",
+            "points": [
+              {
+                "x": 0,
+                "y": 100
+              },
+              {
+                "x": 1,
+                "y": 96.7
+              },
+              {
+                "x": 2,
+                "y": 93.4
+              },
+              {
+                "x": 3,
+                "y": 90.1
+              },
+              {
+                "x": 4,
+                "y": 86.9
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp50",
+    "title": "Heart Rate in Water Fleas",
+    "type": "Research Summaries",
+    "text": "Daphnia, or water fleas, are small freshwater animals with a transparent body, so the heart can be watched beating under a microscope. In each trial, a single daphnia was placed in a drop of pond water on a slide, left for 5 minutes, and then watched for 15 seconds while the heartbeats were counted. The count was multiplied by 4 to give beats per minute (bpm). Each value in the tables is the mean of 10 animals. Unless stated otherwise, the water was held at 20 °C.\n\nExperiment 1. The water was held at five temperatures. Table 1 gives the results.\n\nExperiment 2. Caffeine was added to the water at four concentrations. Table 2 gives the results.\n\nExperiment 3. Ethanol was added to the water at four concentrations. Table 3 gives the results.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: water temperature",
+        "type": "table",
+        "head": [
+          "Temperature (°C)",
+          "Heart rate (bpm)"
+        ],
+        "rows": [
+          [
+            "10",
+            "140"
+          ],
+          [
+            "15",
+            "195"
+          ],
+          [
+            "20",
+            "250"
+          ],
+          [
+            "25",
+            "305"
+          ],
+          [
+            "30",
+            "270"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: caffeine at 20 °C",
+        "type": "table",
+        "head": [
+          "Caffeine (mg/L)",
+          "Heart rate (bpm)"
+        ],
+        "rows": [
+          [
+            "0",
+            "250"
+          ],
+          [
+            "50",
+            "280"
+          ],
+          [
+            "100",
+            "310"
+          ],
+          [
+            "200",
+            "340"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: ethanol at 20 °C",
+        "type": "table",
+        "head": [
+          "Ethanol (% by volume)",
+          "Heart rate (bpm)"
+        ],
+        "rows": [
+          [
+            "0",
+            "250"
+          ],
+          [
+            "1",
+            "215"
+          ],
+          [
+            "2",
+            "170"
+          ],
+          [
+            "4",
+            "95"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp51",
+    "title": "Titrating Vinegar",
+    "type": "Data Representation",
+    "text": "Vinegar is a solution of acetic acid in water. To find how much acid it contains, a student placed 5.0 mL of vinegar in a flask, added water, and then added a sodium hydroxide (NaOH) solution of concentration 0.100 mol/L from a burette, a little at a time, measuring the pH with a meter after each addition. One mole of NaOH neutralizes one mole of acetic acid. The point at which exactly enough NaOH has been added to neutralize all of the acid is called the equivalence point, and there the pH rises most steeply.\n\nFigure 1 shows the pH of the flask as NaOH was added. Table 1 lists three indicators, dyes that change colour over a particular range of pH.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "pH of the flask as NaOH solution was added",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Volume of NaOH added (mL)",
+        "yLabel": "pH",
+        "alt": "Line graph of pH against volume of sodium hydroxide added. The pH starts low, rises quickly at first and then climbs only gently across a long middle stretch. Near the end it shoots up almost vertically before levelling off again at a high value.",
+        "series": [
+          {
+            "name": "pH",
+            "points": [
+              {
+                "x": 0,
+                "y": 2.6
+              },
+              {
+                "x": 10,
+                "y": 4.3
+              },
+              {
+                "x": 20,
+                "y": 4.8
+              },
+              {
+                "x": 30,
+                "y": 5.2
+              },
+              {
+                "x": 36,
+                "y": 5.7
+              },
+              {
+                "x": 39,
+                "y": 6.4
+              },
+              {
+                "x": 40,
+                "y": 8.7
+              },
+              {
+                "x": 41,
+                "y": 11
+              },
+              {
+                "x": 44,
+                "y": 11.7
+              },
+              {
+                "x": 50,
+                "y": 12.1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Three acid–base indicators",
+        "type": "table",
+        "head": [
+          "Indicator",
+          "pH range of colour change",
+          "Colour below range",
+          "Colour above range"
+        ],
+        "rows": [
+          [
+            "Methyl orange",
+            "3.1–4.4",
+            "Red",
+            "Yellow"
+          ],
+          [
+            "Bromothymol blue",
+            "6.0–7.6",
+            "Yellow",
+            "Blue"
+          ],
+          [
+            "Phenolphthalein",
+            "8.2–10.0",
+            "Colourless",
+            "Pink"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp52",
+    "title": "Why Does Bread Go Stale?",
+    "type": "Conflicting Viewpoints",
+    "intro": "Bread firms as it ages. Firmness can be measured as the force, in newtons (N), needed to squash a slice of crumb to three-quarters of its height. Loaves from one batch were stored for 3 days under different conditions and then tested. Table 1 gives the results, along with the loss of water from each loaf as a percentage of its starting mass. One loaf, stale after 3 days in a sealed bag, was reheated to 60 °C inside its bag and tested again. Two food scientists explain staling.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Firmness and water loss after 3 days",
+        "type": "table",
+        "head": [
+          "Storage",
+          "Firmness (N)",
+          "Water lost (% of mass)"
+        ],
+        "rows": [
+          [
+            "Fresh, day 0",
+            "2.0",
+            "0.0"
+          ],
+          [
+            "21 °C, sealed bag",
+            "5.8",
+            "0.4"
+          ],
+          [
+            "21 °C, open to air",
+            "7.9",
+            "6.5"
+          ],
+          [
+            "4 °C, sealed bag",
+            "9.6",
+            "0.3"
+          ],
+          [
+            "−18 °C, sealed bag",
+            "2.3",
+            "0.2"
+          ],
+          [
+            "21 °C, sealed bag, then reheated to 60 °C",
+            "2.6",
+            "0.4"
+          ]
+        ]
+      },
+      {
+        "label": "Scientist 1",
+        "caption": "Drying out",
+        "type": "note",
+        "text": "Bread stales because it dries. Water moves out of the soft crumb, first into the crust and then into the air, and a drier crumb is firmer. An open loaf stales fastest because nothing stops the water escaping. A sealed bag slows the loss, but water still moves from crumb to crust inside the bag, so even a wrapped loaf firms."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "Starch crystallizing",
+        "type": "note",
+        "text": "Baking swells the starch in flour and breaks up its orderly structure. As the bread cools and ages, the long starch molecules slowly line up again into firm crystals, trapping water inside them. This happens fastest at refrigerator temperatures, almost stops in a freezer, and can be undone by reheating, which melts the crystals. Water loss adds to firmness in an open loaf but is not the main cause of staling."
+      }
+    ]
+  },
+  {
+    "id": "sp53",
+    "title": "Stretching Springs",
+    "type": "Research Summaries",
+    "text": "A spring was hung from a clamp, and slotted weights were hung from its lower end. The load is the weight hung on the spring, in newtons (N). The extension is how far the spring stretched beyond its unloaded length, in centimetres. Each reading was taken once the load had stopped moving.\n\nExperiment 1. Spring A was loaded in steps of 1 N. Table 1 gives the results.\n\nExperiment 2. Two identical copies of spring A were joined end to end (in series) or hung side by side sharing the load (in parallel). Table 2 gives the total extension, with a single spring A for comparison.\n\nExperiment 3. A stiffer spring, B, was loaded in steps of 2 N up to 10 N. After the 10 N load was removed, spring B stayed 0.8 cm longer than it had been at the start. Table 3 gives the results.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: spring A",
+        "type": "table",
+        "head": [
+          "Load (N)",
+          "Extension (cm)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0.0"
+          ],
+          [
+            "1",
+            "2.5"
+          ],
+          [
+            "2",
+            "5.0"
+          ],
+          [
+            "3",
+            "7.5"
+          ],
+          [
+            "4",
+            "10.0"
+          ],
+          [
+            "5",
+            "12.5"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: two springs A combined",
+        "type": "table",
+        "head": [
+          "Load (N)",
+          "Single spring (cm)",
+          "Two in series (cm)",
+          "Two in parallel (cm)"
+        ],
+        "rows": [
+          [
+            "2",
+            "5.0",
+            "10.0",
+            "2.5"
+          ],
+          [
+            "4",
+            "10.0",
+            "20.0",
+            "5.0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: spring B",
+        "type": "table",
+        "head": [
+          "Load (N)",
+          "Extension (cm)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0.0"
+          ],
+          [
+            "2",
+            "1.0"
+          ],
+          [
+            "4",
+            "2.0"
+          ],
+          [
+            "6",
+            "3.0"
+          ],
+          [
+            "8",
+            "4.5"
+          ],
+          [
+            "10",
+            "7.5"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp54",
+    "title": "Voles and Owls on Hesket Moor",
+    "type": "Data Representation",
+    "text": "Field voles are small rodents that feed on grass. Short-eared owls hunt voles and other small animals. On Hesket Moor, vole numbers were estimated each autumn by trapping, and owl breeding pairs were counted each spring. Figure 1 gives vole density and Figure 2 gives owl pairs for the same eight years. Table 1 gives the make-up of the owls’ diet in two years, found by identifying the bones in their pellets.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Autumn vole density, 2014–2021",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Year",
+        "yLabel": "Voles (per hectare)",
+        "alt": "Line graph of vole density over eight years. Density climbs steeply to a peak, crashes to a low, then climbs again to a second, slightly higher peak at the end of the record.",
+        "series": [
+          {
+            "name": "Voles",
+            "points": [
+              {
+                "x": 2014,
+                "y": 40
+              },
+              {
+                "x": 2015,
+                "y": 110
+              },
+              {
+                "x": 2016,
+                "y": 210
+              },
+              {
+                "x": 2017,
+                "y": 90
+              },
+              {
+                "x": 2018,
+                "y": 30
+              },
+              {
+                "x": 2019,
+                "y": 70
+              },
+              {
+                "x": 2020,
+                "y": 160
+              },
+              {
+                "x": 2021,
+                "y": 220
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Figure 2",
+        "caption": "Owl breeding pairs, 2014–2021",
+        "type": "chart",
+        "kind": "bar",
+        "xLabel": "Year",
+        "yLabel": "Breeding pairs",
+        "alt": "Bar chart of owl breeding pairs over the same eight years. The number rises to a peak, falls to a low, and rises again, with the owl peaks and lows falling slightly later than those of the voles.",
+        "series": [
+          {
+            "name": "Owl pairs",
+            "points": [
+              {
+                "x": 2014,
+                "y": 6
+              },
+              {
+                "x": 2015,
+                "y": 7
+              },
+              {
+                "x": 2016,
+                "y": 11
+              },
+              {
+                "x": 2017,
+                "y": 15
+              },
+              {
+                "x": 2018,
+                "y": 8
+              },
+              {
+                "x": 2019,
+                "y": 5
+              },
+              {
+                "x": 2020,
+                "y": 8
+              },
+              {
+                "x": 2021,
+                "y": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Prey identified in owl pellets",
+        "type": "table",
+        "head": [
+          "Prey",
+          "2016 (% of items)",
+          "2018 (% of items)"
+        ],
+        "rows": [
+          [
+            "Field voles",
+            "78",
+            "31"
+          ],
+          [
+            "Wood mice",
+            "12",
+            "40"
+          ],
+          [
+            "Shrews",
+            "6",
+            "18"
+          ],
+          [
+            "Small birds",
+            "4",
+            "11"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp55",
+    "title": "Craters in a Sand Tray",
+    "type": "Research Summaries",
+    "text": "To model impact craters, students dropped steel balls from rest into a deep tray of fine, dry sand, levelled before each drop. The crater’s diameter was measured from rim to rim in millimetres. The energy of an impact, in joules (J), is the ball’s mass in kilograms × 9.8 m/s² × the drop height in metres.\n\nExperiment 1. A 28 g ball was dropped from five heights. Table 1 gives the results.\n\nExperiment 2. Balls of three masses were dropped from 1.00 m. Table 2 gives the results.\n\nExperiment 3. The 28 g ball was dropped from 1.00 m into three different materials. Table 3 gives the results.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: 28 g ball into dry sand",
+        "type": "table",
+        "head": [
+          "Drop height (m)",
+          "Crater diameter (mm)"
+        ],
+        "rows": [
+          [
+            "0.25",
+            "52"
+          ],
+          [
+            "0.50",
+            "60"
+          ],
+          [
+            "1.00",
+            "70"
+          ],
+          [
+            "2.00",
+            "82"
+          ],
+          [
+            "4.00",
+            "96"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: drop height 1.00 m, dry sand",
+        "type": "table",
+        "head": [
+          "Ball mass (g)",
+          "Impact energy (J)",
+          "Crater diameter (mm)"
+        ],
+        "rows": [
+          [
+            "7",
+            "0.069",
+            "51"
+          ],
+          [
+            "28",
+            "0.27",
+            "70"
+          ],
+          [
+            "110",
+            "1.08",
+            "97"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: 28 g ball from 1.00 m",
+        "type": "table",
+        "head": [
+          "Material",
+          "Crater diameter (mm)"
+        ],
+        "rows": [
+          [
+            "Dry sand",
+            "70"
+          ],
+          [
+            "Damp sand",
+            "58"
+          ],
+          [
+            "Flour",
+            "84"
           ]
         ]
       }
