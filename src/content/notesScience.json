@@ -175,6 +175,244 @@
             "explain": "A truncated axis exaggerates small changes visually. From 99 to 101 is 2 units, roughly a 2% increase — accurate on both counts. Choice B measures the rise against the 4-unit axis window instead of against the starting value, choice C is exactly the impression the truncated axis creates, and choice A misreads the axis entirely."
           }
         ]
+      },
+      {
+        "id": "sci-calculating",
+        "topic": "calculating from data",
+        "title": "Calculating from Data",
+        "summary": "Differences, ratios, percent change and estimates: the four sums the Science section keeps asking for.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Science calculations are short. The hard part is pulling the **right two numbers** from the right figure, with the right units. The arithmetic after that is rarely more than one step."
+          },
+          {
+            "type": "table",
+            "head": [
+              "The question asks for",
+              "Do this"
+            ],
+            "rows": [
+              [
+                "\"the difference between\"",
+                "larger minus smaller"
+              ],
+              [
+                "\"how many times as great\" or \"closest to what fraction of\"",
+                "divide one value by the other"
+              ],
+              [
+                "\"percent increase / decrease\"",
+                "(new − old) ÷ old × 100"
+              ],
+              [
+                "\"the average of\"",
+                "add the values, divide by how many there are"
+              ],
+              [
+                "\"closest to\" a value not in the table",
+                "bracket it between the two nearest rows"
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Estimate before you calculate",
+            "text": "Choices are usually far enough apart that a rough answer picks one. If 0.47 ÷ 0.93 is asked for, notice that 0.47 is about half of 0.93 and look for the choice near **0.5**. Estimating also catches a slip, such as dividing the wrong way round."
+          },
+          {
+            "type": "example",
+            "prompt": "A table shows plant height of 40 cm at week 2 and 52 cm at week 4. By what percent did the height increase from week 2 to week 4?",
+            "work": [
+              "The change is 52 − 40 = 12 cm.",
+              "Percent change divides by the **starting** value: 12 ÷ 40 = 0.30.",
+              "Dividing by 52 instead gives about 23%, a likely wrong choice."
+            ],
+            "answer": "**30%.** Percent change always divides by the old value. The ending value is the most common wrong base."
+          },
+          {
+            "type": "example",
+            "prompt": "At 20 minutes, loam had absorbed 18 mm of water and sand had absorbed 60 mm. The loam’s total is closest to what fraction of the sand’s?",
+            "work": [
+              "\"Loam’s total ... of the sand’s\" puts loam on top: 18 ÷ 60.",
+              "18 ÷ 60 = 0.3."
+            ],
+            "answer": "**3/10.** Read the phrase \"A is what fraction of B\" as A ÷ B. Reversing it gives 60 ÷ 18 ≈ 3.3, which is usually offered too."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Taking a value from the wrong trial, row or table. Put a finger on the row before you read across.",
+              "Dividing by the new value in a percent change.",
+              "Mixing units, such as subtracting a value in g from one in mg."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Three trials gave reaction times of 42 s, 38 s and 40 s. What is the mean time?",
+            "choices": [
+              "38 s",
+              "39 s",
+              "40 s",
+              "42 s"
+            ],
+            "answer": 2,
+            "explain": "42 + 38 + 40 = 120, and 120 ÷ 3 = 40 s. 38 and 42 are the smallest and largest trials, not the mean."
+          }
+        ]
+      },
+      {
+        "id": "sci-units",
+        "topic": "units",
+        "title": "Units & Conversions",
+        "summary": "Metric prefixes, compound units and the one-step conversions the section tests.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Read the unit before the number",
+            "text": "Every column heading and axis label has a unit, usually in parentheses. Read it first. **0.22 g** and **0.22 mg** differ by a factor of a thousand, and questions are often built around exactly that gap."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Prefix",
+              "Symbol",
+              "Means"
+            ],
+            "rows": [
+              [
+                "kilo",
+                "k",
+                "× 1,000"
+              ],
+              [
+                "centi",
+                "c",
+                "× 1/100"
+              ],
+              [
+                "milli",
+                "m",
+                "× 1/1,000"
+              ],
+              [
+                "micro",
+                "µ",
+                "× 1/1,000,000"
+              ],
+              [
+                "nano",
+                "n",
+                "× 1/1,000,000,000"
+              ]
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Converting: bigger unit means a smaller number",
+            "text": "Going to a **smaller** unit makes the number **larger**: 0.22 g = 220 mg. Going to a **bigger** unit makes it smaller: 1,500 m = 1.5 km. If your conversion moves the number the wrong way, you multiplied when you should have divided."
+          },
+          {
+            "type": "list",
+            "title": "Equivalences worth knowing",
+            "items": [
+              "1 mL = 1 cm³, and 1 L = 1,000 mL.",
+              "1 g/cm³ = 1,000 kg/m³ (so 1.32 g/cm³ = 1,320 kg/m³).",
+              "To turn km/h into m/s, divide by 3.6 (100 km/h ≈ 27.8 m/s).",
+              "A unit written \"per\" something, such as g/L or mm/day, is a **ratio**: an amount of one thing for each one of another."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "A table gives salt concentration in g/L. What does 35 g/L mean?",
+            "work": [
+              "\"g/L\" reads as grams per litre.",
+              "So each litre of the solution contains 35 grams of salt."
+            ],
+            "answer": "**35 grams of salt dissolved in each litre of solution.** Questions about what a unit \"expresses\" are testing whether you can read the slash as \"per.\""
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Converting in the wrong direction. Check that the number got bigger when the unit got smaller.",
+              "Comparing values from two tables that use different units without converting first.",
+              "Squaring or cubing a conversion wrongly: 1 m = 100 cm, but 1 m³ = 1,000,000 cm³."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A sample has a mass of 2.5 kg. What is its mass in grams?",
+            "choices": [
+              "0.0025 g",
+              "25 g",
+              "250 g",
+              "2,500 g"
+            ],
+            "answer": 3,
+            "explain": "kilo means × 1,000, so 2.5 kg = 2.5 × 1,000 = 2,500 g. Grams are the smaller unit, so the number must get larger; A and B moved the wrong way."
+          }
+        ]
+      },
+      {
+        "id": "sci-rates",
+        "topic": "rates",
+        "title": "Rates & Change over Time",
+        "summary": "How fast something changes, and why a slowing rate can still mean a rising total.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "A rate is change divided by time",
+            "text": "Rate = **change in amount ÷ change in time**. Its unit always contains \"per\": mm per minute, g per day, mL per second. On a graph with time on the x-axis, the rate is the **steepness** of the line: steeper means faster, flat means zero."
+          },
+          {
+            "type": "rule",
+            "title": "Total versus rate",
+            "text": "Many passages plot a **cumulative** total, such as water absorbed so far. That curve can only rise or stay level. If it rises but **flattens**, the total is still increasing while the **rate is decreasing**. Questions often offer \"decreased\" for a total that is actually still growing."
+          },
+          {
+            "type": "example",
+            "prompt": "Cumulative water absorbed by a soil: 0 mm at 0 min, 30 mm at 10 min, 48 mm at 20 min. Compare the absorption rate in the first and second 10 minutes.",
+            "work": [
+              "First interval: (30 − 0) ÷ 10 = 3.0 mm/min.",
+              "Second interval: (48 − 30) ÷ 10 = 1.8 mm/min.",
+              "The total rose in both intervals, but by less in the second."
+            ],
+            "answer": "**The rate fell from 3.0 to 1.8 mm/min even though the total kept rising.** The average over all 20 minutes is 48 ÷ 20 = 2.4 mm/min, which lies between the two interval rates."
+          },
+          {
+            "type": "list",
+            "title": "Reading a rate from a graph",
+            "items": [
+              "Straight, sloping line: constant rate.",
+              "Curve getting steeper: rate increasing.",
+              "Curve flattening: rate decreasing, total still rising.",
+              "Horizontal line: rate is zero, total unchanged."
+            ]
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Answering about the total when the question asks about the rate, or the other way round.",
+              "Using the value at a time instead of the change over an interval.",
+              "Forgetting that the time intervals in a table may not be equal. Divide by the actual gap."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A graph of total CO₂ released against time rises steeply at first, then more and more gently. Over the experiment, the rate of CO₂ release:",
+            "choices": [
+              "increased throughout",
+              "decreased, while the total released kept increasing",
+              "stayed constant",
+              "decreased, and the total released also decreased"
+            ],
+            "answer": 1,
+            "explain": "A flattening cumulative curve means each minute adds less than the last, so the rate falls. The total can never go down on a cumulative graph, which rules out D."
+          }
+        ]
       }
     ]
   },
@@ -324,6 +562,69 @@
             ],
             "answer": 1,
             "explain": "A group receiving no active treatment, used as a comparison baseline, is a control group. The dose is the independent variable, the measured outcome is the dependent variable, and constants are the conditions held identical across all groups."
+          }
+        ]
+      },
+      {
+        "id": "sci-hypotheses",
+        "topic": "hypotheses",
+        "title": "Testing Hypotheses & Predictions",
+        "summary": "Does the data support the claim? Check every case the claim covers, then check the reason.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "What they look like",
+            "text": "*\"A student hypothesized that corrosion increases steadily as salt concentration increases. Do the results support this?\"* / *\"Experiment 2 was most likely designed to test the hypothesis that...\"*"
+          },
+          {
+            "type": "rule",
+            "title": "A general claim needs every case; one exception sinks it",
+            "text": "Words like **always**, **steadily**, **every** and **as X increases, Y increases** make a claim about the **whole** data set. Check every row, not just the first and last. One row that goes the wrong way is enough to answer **No**."
+          },
+          {
+            "type": "rule",
+            "title": "Yes/No questions: the reason must also be right",
+            "text": "These items usually offer two Yes and two No choices, each with a \"because.\" First decide Yes or No from the data. Then choose the choice whose reason **quotes the data correctly and is the reason that matters**. A choice with the right Yes or No and a false or irrelevant reason is still wrong."
+          },
+          {
+            "type": "example",
+            "prompt": "Mass lost to corrosion: 0 g/L salt, 0.10 g; 10 g/L, 0.24 g; 20 g/L, 0.31 g; 40 g/L, 0.27 g. Hypothesis: corrosion increases steadily as salt concentration increases. Supported?",
+            "work": [
+              "From 0 to 10 to 20 g/L the mass lost rises.",
+              "From 20 to 40 g/L it falls, from 0.31 to 0.27 g.",
+              "\"Steadily\" covers the whole range, and the last step breaks it."
+            ],
+            "answer": "**No, because corrosion was lower at 40 g/L than at 20 g/L.** A choice saying \"Yes, because corrosion was higher at 20 g/L than at 0 g/L\" quotes true data but ignores the exception."
+          },
+          {
+            "type": "list",
+            "title": "Which hypothesis was an experiment designed to test?",
+            "items": [
+              "Find the **one variable** that was changed on purpose (the independent variable).",
+              "Find what was **measured** (the dependent variable).",
+              "The hypothesis links those two: \"changing X affects Y.\" Anything held constant is not what is being tested."
+            ]
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Checking only the endpoints of a table when the claim covers every step.",
+              "Picking the right Yes or No with a reason that misreads the data.",
+              "Treating a controlled variable as the variable under test."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "In Experiment 2, students kept light and water the same and grew plants at 15, 20, 25 and 30 °C, measuring height after two weeks. The experiment was most likely designed to test whether:",
+            "choices": [
+              "light intensity affects plant height",
+              "the amount of water affects plant height",
+              "temperature affects plant height",
+              "plant height affects temperature"
+            ],
+            "answer": 2,
+            "explain": "Temperature is the only variable changed on purpose, and height is what was measured. Light and water were held constant, so they were not being tested. D reverses cause and effect."
           }
         ]
       },

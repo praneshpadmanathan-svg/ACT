@@ -663,6 +663,285 @@
             "explain": "Answering A’s questions while A is fresh maximizes accuracy and prevents the two passages from blending. The comparison questions come last, when you have the strongest grasp of both — and by then you have already re-read the key parts of each."
           }
         ]
+      },
+      {
+        "id": "read-tone",
+        "topic": "tone",
+        "title": "Tone & Attitude",
+        "summary": "How the author feels about the subject, proved from the words they chose.",
+        "minutes": 5,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "What they look like",
+            "text": "*\"The author’s attitude toward the new policy is best described as...\"* / *\"The phrase ‘a caution that is easy to skip’ suggests the writer regards the problem as...\"* / *\"The narrator’s tone in the final paragraph is...\"*"
+          },
+          {
+            "type": "rule",
+            "title": "Tone lives in word choice, not in the topic",
+            "text": "A passage about a flood is not automatically grim, and a passage about a festival is not automatically cheerful. Tone comes from the **loaded words** the author picks: *\"a bold gamble\"* and *\"a reckless gamble\"* describe the same act with opposite attitudes. Underline the adjectives, adverbs and verbs that carry judgment, then name the attitude they share."
+          },
+          {
+            "type": "rule",
+            "title": "Match the strength as well as the direction",
+            "text": "Decide first whether the attitude is **positive, negative, or mixed**, then decide **how strong** it is. Most ACT authors are measured, so the right answer is usually moderate: *\"cautiously optimistic,\"* *\"mildly skeptical,\"* *\"respectful but critical.\"* Extreme choices such as *\"contemptuous\"* or *\"ecstatic\"* need extreme language in the text to back them."
+          },
+          {
+            "type": "table",
+            "head": [
+              "If the text does this",
+              "The tone is often"
+            ],
+            "rows": [
+              [
+                "Praises, then adds \"but\" and a limit",
+                "appreciative but qualified"
+              ],
+              [
+                "States facts with no loaded words",
+                "objective, informative, neutral"
+              ],
+              [
+                "Says the opposite of what it means",
+                "ironic or wry"
+              ],
+              [
+                "Looks back fondly at a lost time",
+                "nostalgic"
+              ],
+              [
+                "Points out a flaw repeatedly",
+                "critical or skeptical"
+              ]
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "Passage: *\"The committee’s report, all two hundred pages of it, concluded that further study was needed.\"* The author’s attitude toward the report is best described as:\nA. admiring.\nB. mildly sardonic.\nC. furious.\nD. entirely neutral.",
+            "work": [
+              "\"all two hundred pages of it\" draws attention to the length.",
+              "Setting that length against a conclusion that says almost nothing (\"further study was needed\") is gently mocking.",
+              "Nothing in the sentence rises to anger, so C overstates it; the aside rules out D."
+            ],
+            "answer": "**B.** The attitude is negative but light. The contrast between a long report and a thin conclusion does the work; no angry word appears, so the milder choice wins."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Reading your own feelings about the topic into the author. The question asks how **the author** sounds.",
+              "Picking an extreme word because the direction is right. \"Critical\" and \"hostile\" are both negative; only one usually fits.",
+              "Confusing a character’s tone with the narrator’s. In fiction, check whose words you are quoting."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "An author calls a scientist’s theory \"ingenious, if not yet proven.\" The author’s attitude toward the theory is:",
+            "choices": [
+              "dismissive, because it is unproven",
+              "admiring but reserved",
+              "wholly enthusiastic",
+              "indifferent to whether it is true"
+            ],
+            "answer": 1,
+            "explain": "\"Ingenious\" is praise and \"if not yet proven\" is a reservation. The answer has to carry both halves, which only B does. A keeps only the reservation and C keeps only the praise."
+          }
+        ]
+      },
+      {
+        "id": "read-figurative",
+        "topic": "figurative language",
+        "title": "Figurative Language",
+        "summary": "When the author says one thing is another: what the comparison is really claiming.",
+        "minutes": 5,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "What they look like",
+            "text": "*\"The narrator compares the spoons to ‘a set of parentheses waiting for something to enclose’ primarily to convey that...\"* / *\"In calling the ratio ‘the clock face,’ the author chiefly means that it...\"*"
+          },
+          {
+            "type": "rule",
+            "title": "Translate the image into a plain claim",
+            "text": "A metaphor or simile borrows **one quality** from the image and gives it to the subject. Ask: *what does the image have that the subject is supposed to share?* Parentheses wait, empty, for something to go between them, so spoons described that way are **unused, waiting for a purpose**. Write that plain claim in your head before you look at the choices."
+          },
+          {
+            "type": "list",
+            "title": "Common devices, by what they do",
+            "items": [
+              "**Simile / metaphor:** gives the subject a quality of something else (\"a slow leak she had mistaken for a business\" means the loss was gradual and unnoticed).",
+              "**Personification:** gives a thing human intent (\"the house resented the new wing\").",
+              "**Hyperbole:** exaggerates for emphasis, so it is never meant literally.",
+              "**Understatement:** says less than is meant (\"the storm was a bit of an inconvenience\" about a flood)."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "Passage: *\"By March the savings account was a candle she kept cupping her hands around.\"* The comparison chiefly suggests that the savings were:\nA. growing steadily.\nB. small and at risk of running out, so she guarded them.\nC. spent on candles and other household goods.\nD. hidden from her family.",
+            "work": [
+              "What does a candle have? A small flame that can go out, and that burns down as it is used.",
+              "Cupping hands around it means protecting it from being put out.",
+              "So the savings are small and fragile, and she is protecting them."
+            ],
+            "answer": "**B.** C takes the image literally, which is the classic wrong answer. A contradicts the image; nothing about hiding appears, so D is unsupported."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Taking the image literally. If a choice mentions the actual object in the metaphor, it is almost always wrong.",
+              "Choosing a quality of the image that the context does not use. A candle is also warm, but \"warm\" does not fit savings running low.",
+              "Ignoring the sentence around the phrase. The surrounding sentence tells you which quality the author means."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A writer says a crowded market \"roared like surf.\" The comparison mainly conveys that the market was:",
+            "choices": [
+              "loud with a constant, overlapping noise",
+              "located next to the sea",
+              "dangerous to walk through",
+              "selling fish and seafood"
+            ],
+            "answer": 0,
+            "explain": "Surf is heard as one continuous roar made of many waves, which is what a crowd of voices sounds like. B and D take the image literally, and nothing in \"roared\" carries danger."
+          }
+        ]
+      },
+      {
+        "id": "read-evidence",
+        "topic": "evidence",
+        "title": "Evidence Questions",
+        "summary": "Which detail proves the claim: the one that would convince a skeptic, not the one on the same topic.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "What they look like",
+            "text": "*\"Which detail most directly supports the claim that...?\"* / *\"Which statement best supports the conservator’s claim that the decision was not a compromise?\"*"
+          },
+          {
+            "type": "rule",
+            "title": "Restate the claim, then test each choice as proof",
+            "text": "First put the claim in your own words, down to its **exact scope**. Then ask of each choice: *if I showed this to someone who doubted the claim, would it change their mind?* The right answer **proves** the claim. Wrong answers are usually true and on the same topic, but prove something next to it."
+          },
+          {
+            "type": "list",
+            "title": "The three ways a true detail fails",
+            "items": [
+              "**Right topic, wrong claim.** It is about fire and forests, but shows that fires are hotter, not that they come more often.",
+              "**Too weak.** It shows the thing is *possible* when the claim says it is *common* or *severe*.",
+              "**Supports the opposite side.** In a passage with a concession, the detail belongs to the view the author is answering."
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "Claim: *\"Shorter gaps between fires threaten forests whose cones open only in heat.\"* Which detail most directly supports it?\nA. Some cones open only when heated above 50 °C.\nB. The fires in the region have grown hotter since 1990.\nC. Seedlings need about 15 years to produce cones, and fires now return every 8–10 years.\nD. Many visitors come to see the forest after a fire.",
+            "work": [
+              "The claim links two things: short gaps between fires, and a threat to these forests.",
+              "A explains how the cones work but says nothing about gaps.",
+              "B is about heat, not frequency.",
+              "C connects the gap (8–10 years) to the trees’ need (15 years to make cones): a fire arrives before the new trees can reseed."
+            ],
+            "answer": "**C.** It is the only choice that ties the **frequency** of fires to the **threat**. A and B are true and on-topic but prove neighbouring points."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Choosing the detail that repeats the claim’s words. Repetition is not proof.",
+              "Stopping at the first true statement. Every choice may be true; you want the one that proves.",
+              "Losing the claim’s scope. If the claim says \"severe,\" the evidence has to show severity."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "Claim: \"The new timetable made buses more reliable.\" Which finding supports it most directly?",
+            "choices": [
+              "More people rode the bus after the timetable changed.",
+              "The share of buses arriving within two minutes of schedule rose from 61% to 84%.",
+              "Drivers said they preferred the new timetable.",
+              "The timetable was printed in a larger font."
+            ],
+            "answer": 1,
+            "explain": "Reliability means arriving when scheduled, and B measures exactly that. A could have many causes, C is opinion, and D is about the printed timetable, not the buses."
+          }
+        ]
+      },
+      {
+        "id": "read-structure",
+        "topic": "text structure",
+        "title": "Text Structure",
+        "summary": "How the passage is built: the order of its moves and why it goes in that order.",
+        "minutes": 6,
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "What they look like",
+            "text": "*\"The passage as a whole is organised as...\"* / *\"The fourth paragraph functions in the passage’s structure chiefly as...\"* / *\"The passage is built by...\"*"
+          },
+          {
+            "type": "rule",
+            "title": "Label each paragraph with a verb",
+            "text": "While you read, give each paragraph a two- or three-word label that starts with a verb: *introduces the puzzle*, *gives the old view*, *presents new evidence*, *concedes a limit*, *returns to the opening scene*. Structure questions are then answered from your labels, not from the details. The right choice lists the same moves **in the same order**."
+          },
+          {
+            "type": "table",
+            "head": [
+              "Common structure",
+              "Signal to look for"
+            ],
+            "rows": [
+              [
+                "Problem, then proposed solution",
+                "\"The difficulty is...\" followed by \"One answer...\""
+              ],
+              [
+                "Old view, then challenge to it",
+                "\"For decades researchers assumed...\" then \"but\""
+              ],
+              [
+                "Chronological narrative",
+                "dates, \"later,\" \"by the next spring\""
+              ],
+              [
+                "Claim, evidence, concession, restated claim",
+                "\"Admittedly...\" near the end"
+              ],
+              [
+                "Frame: scene, reflection, return to scene",
+                "the last paragraph echoes an image from the first"
+              ]
+            ]
+          },
+          {
+            "type": "example",
+            "prompt": "Paragraph labels: (1) describes a bridge failure; (2) explains the engineering assumption that caused it; (3) describes the new testing method; (4) notes the method is expensive but argues it is worth the cost. The passage is best described as:\nA. a chronological history of bridge building.\nB. an account of a failure, its cause, a response, and a qualified defence of that response.\nC. a comparison of two bridges.\nD. an argument that bridges should not be built.",
+            "work": [
+              "Match the moves in order: failure, cause, response, concession plus defence.",
+              "A has the wrong pattern: there is no timeline of bridge building.",
+              "C and D describe things the passage does not do."
+            ],
+            "answer": "**B.** Every move is present, in the right order, including the concession in paragraph 4. Structure answers are often longer because they have to name several moves; judge them by accuracy, not length."
+          },
+          {
+            "type": "trap",
+            "items": [
+              "Choosing an answer that names the right moves in the wrong order.",
+              "Choosing an answer that fits only the first half of the passage. Check the last paragraph.",
+              "Confusing structure with content. \"It discusses bees\" is a topic, not a structure."
+            ]
+          },
+          {
+            "type": "check",
+            "q": "A passage opens with a childhood memory of a kitchen, spends three paragraphs on the history of the cook’s recipes, and ends in the same kitchen years later. Its structure is best described as:",
+            "choices": [
+              "a list of recipes in order of difficulty",
+              "an argument followed by counterarguments",
+              "a present-day scene, then the past, then a return to the present",
+              "a history framed by a scene that opens and closes it"
+            ],
+            "answer": 3,
+            "explain": "The kitchen appears at the start and end, wrapping the history, which is a frame. C gets the time order wrong: the opening scene is itself a memory, not the present."
+          }
+        ]
       }
     ]
   }
