@@ -308,20 +308,24 @@ if (personal.length) {
   ok('contact address', `Publishes ${bundleEmails.join(', ')}.`);
 }
 
-/* The operator's name, address and governing law are placeholders in
-   src/lib/business.ts until someone supplies them. A legal page that says
-   "operated by [COMPANY NAME]" names nobody, so a live one fails. */
-const placeholders = [
-  ...new Set(code.match(/\[(?:COMPANY NAME|MAILING ADDRESS|GOVERNING JURISDICTION)\]/g) ?? []),
-];
-if (placeholders.length) {
-  fail(
-    'operator details',
-    `The live build still shows ${placeholders.join(', ')} on the legal pages and footer.`,
-    'Fill in src/lib/business.ts and redeploy.',
+/* The operator's name, address and governing law in src/lib/business.ts are
+   optional, and the pages show only what is set. None is legally required
+   while the site is free and refuses under-13 accounts, but a site with no
+   named operator should know it is one. */
+{
+  const biz = readFileSync(new URL('../src/lib/business.ts', import.meta.url), 'utf8');
+  const unset = ['name', 'address', 'jurisdiction'].filter((k) =>
+    new RegExp(`^\\s*${k}:\\s*null,`, 'm').test(biz),
   );
-} else {
-  ok('operator details', 'The legal pages name the operator.');
+  if (unset.length) {
+    warn(
+      'operator details',
+      `src/lib/business.ts leaves ${unset.join(', ')} unset, so the legal pages say the site is run independently.`,
+      'Fill them in before selling anything, or whenever you want the pages to name you.',
+    );
+  } else {
+    ok('operator details', 'The legal pages name the operator.');
+  }
 }
 
 /* RFC 9116. Scanners and researchers read this before they resort to guessing

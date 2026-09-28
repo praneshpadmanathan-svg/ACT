@@ -16,7 +16,7 @@ import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { cloudEnabled } from '@/lib/supabase';
 import { CONTACT } from '@/lib/contact';
-import { BUSINESS } from '@/lib/business';
+import { BUSINESS, OPERATOR_LINE, operatorPhrase } from '@/lib/business';
 import { sfx } from '@/lib/sfx';
 import { LinkButton } from '@/components/ui';
 import { Glyph } from '@/components/Icon';
@@ -94,8 +94,8 @@ function Privacy() {
 
       <H>Who we are</H>
       <P>
-        ACT Command is run by {BUSINESS.name}, {BUSINESS.address}. For anything about your
-        information, write to <A href={`mailto:${CONTACT.privacy}`}>{CONTACT.privacy}</A>.
+        ACT Command is {operatorPhrase('run')}. For anything about your information, write to{' '}
+        <A href={`mailto:${CONTACT.privacy}`}>{CONTACT.privacy}</A>.
       </P>
 
       <H>Playing without an account</H>
@@ -242,8 +242,8 @@ function Privacy() {
       <H>If you email us</H>
       <P>
         If you write to us (to report a question, ask for help, or make a privacy request), we get
-        your email address and whatever you wrote, and we use them only to reply. We delete that
-        correspondence once it is dealt with, unless the law requires us to keep it.
+        your email address and whatever you wrote, and we use them only to reply. We never add it to
+        a mailing list or share it, and we keep it only as long as we need it to help you.
       </P>
 
       <H>Cookies</H>
@@ -280,7 +280,7 @@ function Terms() {
 
       <H>Who runs this</H>
       <P>
-        ACT Command is operated by {BUSINESS.name}, {BUSINESS.address}. You can reach us at{' '}
+        ACT Command is {operatorPhrase('operated')}. You can reach us at{' '}
         <A href={`mailto:${CONTACT.support}`}>{CONTACT.support}</A>.
       </P>
 
@@ -352,11 +352,15 @@ function Terms() {
         including how a real test turns out. Preparation helps; it does not come with a promise.
       </P>
 
-      <H>The law that applies</H>
-      <P>
-        These terms are governed by the law of {BUSINESS.jurisdiction}. Nothing in them takes away
-        rights the law where you live gives you and that cannot be signed away.
-      </P>
+      {BUSINESS.jurisdiction && (
+        <>
+          <H>The law that applies</H>
+          <P>
+            These terms are governed by the law of {BUSINESS.jurisdiction}. Nothing in them takes
+            away rights the law where you live gives you and that cannot be signed away.
+          </P>
+        </>
+      )}
 
       <H>Changes</H>
       <P>
@@ -487,7 +491,7 @@ function Cookies() {
 function OperatorNote() {
   return (
     <p className="mt-6 font-read text-[0.92rem] leading-[1.6] text-ink-soft">
-      {BUSINESS.name} · {BUSINESS.address} ·{' '}
+      {OPERATOR_LINE && <>{OPERATOR_LINE} · </>}
       <A href={`mailto:${CONTACT.support}`}>{CONTACT.support}</A>
     </p>
   );

@@ -34,7 +34,7 @@ import { REGION_ORDER } from '@/content/regionFlavor';
 import { Art } from '@/components/Art';
 import { NearViewport } from '@/components/NearViewport';
 import { CONTACT } from '@/lib/contact';
-import { BUSINESS } from '@/lib/business';
+import { OPERATOR_LINE } from '@/lib/business';
 /* The one thing on this page that genuinely needs the question bank, and the
    only reason the bank would be on the critical path. It sits four screens
    down, so it is fetched separately — and, per `NearViewport`, not until
@@ -828,7 +828,7 @@ export function Landing() {
           </a>
         </nav>
         <p className="mx-auto mt-4 max-w-md px-6 font-read text-[12.5px] leading-relaxed text-ink-faint">
-          Copyright {new Date().getFullYear()} {BUSINESS.name} · {BUSINESS.address} ·{' '}
+          Copyright {new Date().getFullYear()} {OPERATOR_LINE ?? 'ACT Command'} ·{' '}
           <a href={`mailto:${CONTACT.support}`} className="underline underline-offset-2">
             {CONTACT.support}
           </a>
