@@ -4,7 +4,7 @@
     "rules": [
       [
         "The legal comma jobs",
-        "A comma may separate a list, set off an intro element, join two sentences WITH a FANBOYS conjunction, or surround non-essential info. It also separates coordinate adjectives (<i>a cold, damp morning</i>) and the parts of dates and places (<i>Paris, France, in May</i>). If it isn’t doing one of those jobs, cut it.",
+        "A comma may separate a list, set off an intro element, join two sentences WITH a FANBOYS conjunction, or surround non-essential info. It also separates coordinate adjectives (<i>a cold, damp morning</i>) and the parts of dates and places (<i>Paris, France, in May</i>). If it isn’t doing one of those jobs, cut it. Commas also set off a name you speak to (<i>Thanks, Maya, for coming</i>) and separate a quotation from its tag (<i>“Wait,” she said</i>).",
         "List: <i>apples, pears, and plums.</i>  Intro: <i>After lunch, we left.</i>"
       ],
       [
@@ -40,7 +40,7 @@
       ],
       [
         "Plurals take no apostrophe",
-        "To make an ordinary plural, add s with no apostrophe.",
+        "To make an ordinary plural, add s with no apostrophe. Possessive pronouns never take one: <i>hers, ours, yours, theirs</i>. In a contraction the apostrophe sits where letters were dropped: <i>doesn’t</i> = does not.",
         "Wrong: <i>apple's 50¢.</i>  Right: <i>apples 50¢.</i>"
       ],
       [
@@ -49,14 +49,14 @@
         "<i>the Joneses’ house</i>  <i>two hours’ delay</i>"
       ]
     ],
-    "trap": "whose = possessive; who's = who is. Same test as its/it's."
+    "trap": "whose = possessive; who's = who is or who has. Same test as its/it's."
   },
   "fragment_forest": {
     "intro": "A real sentence needs a subject, a true verb, and a complete thought. Miss one and it's a fragment.",
     "rules": [
       [
         "Find the main verb",
-        "An -ing word by itself is NOT a main verb. If nothing is actually happening in a standalone way, it’s a fragment. A command is complete even with no written subject: <i>Go.</i> has an understood “you”.",
+        "An -ing word by itself is NOT a main verb. If nothing is actually happening in a standalone way, it’s a fragment. A command is complete even with no written subject: <i>Go.</i> has an understood “you”. A “to” form (<i>to finish</i>) is never a main verb either, and a past participle alone (<i>built in 1890</i>) needs a helper such as <i>was</i> or a subject and verb of its own.",
         "Fragment: <i>The team, working hard.</i>  Fixed: <i>The team worked hard.</i>"
       ],
       [
@@ -77,7 +77,7 @@
     "rules": [
       [
         "Dashes: a pair, or one at the end",
-        "A pair of dashes sets off non-essential info mid-sentence — like a pair of commas: open with a dash, close with a dash. A single dash can also end a sentence, introducing a final reveal or explanation.",
+        "A pair of dashes sets off non-essential info mid-sentence — like a pair of commas: open with a dash, close with a dash. A single dash can also end a sentence, introducing a final reveal or explanation. Use dashes rather than commas when the extra information already contains commas. A colon can replace a single end dash, since both introduce what follows a complete sentence.",
         "<i>The plan — bold and risky — worked.</i> <i>She knew who had taken it — her brother.</i>"
       ],
       [
@@ -87,7 +87,7 @@
       ],
       [
         "Semicolon = period",
-        "A semicolon joins two complete, related sentences. If a period fits there, a semicolon is legal. It also comes before a linking adverb (<i>; however,</i>) and separates list items that already contain commas.",
+        "A semicolon joins two complete, related sentences. If a period fits there, a semicolon is legal. It also comes before a linking adverb (<i>; however,</i>) and separates list items that already contain commas. When <i>however</i> interrupts a single clause (<i>The plan, however, failed</i>), it takes a pair of commas, not a semicolon.",
         "<i>It rained; the game was cancelled.</i>  <i>We visited Lima, Peru; Quito, Ecuador; and Bogotá, Colombia.</i>"
       ],
       [
@@ -108,12 +108,12 @@
       ],
       [
         "Keep tense consistent",
-        "Don't switch tenses without a reason; follow the passage's timeline.",
+        "Don't switch tenses without a reason; follow the passage's timeline. A time word fixes the tense: <i>yesterday</i> takes the simple past, and <i>since</i> takes <i>has/have</i> + participle (<i>has built since 2010</i>).",
         "Wrong: <i>He runs and then jumped.</i>  Right: <i>He ran and then jumped.</i>"
       ],
       [
         "Singular sneaky subjects",
-        "each, every, everyone, neither, and 'the team' are singular.",
+        "each, every, everyone, neither, and 'the team' are singular. <i>The number of</i> is singular (<i>the number of cars has risen</i>), though <i>a number of</i> is plural; <i>mathematics</i> and <i>news</i> are singular too.",
         "<i>Everyone has a ticket.</i>  <i>Neither answer is right.</i>"
       ],
       [
@@ -134,7 +134,7 @@
       ],
       [
         "Know the categories",
-        "Contrast: however, but, yet, nevertheless, although. Cause/effect: therefore, thus, so, consequently. Addition: also, moreover, in addition. Example: for example, for instance. Likeness: similarly, likewise. Restatement: in other words, that is. Condition: otherwise.",
+        "Contrast: however, but, yet, nevertheless, although. Cause/effect: therefore, thus, so, consequently. Addition: also, moreover, in addition. Example: for example, for instance. Likeness: similarly, likewise. Restatement: in other words, that is. Condition: otherwise. Sequence and time: first, next, finally, meanwhile. Replacement: instead. <i>On the contrary</i> is stronger than <i>however</i>: it rejects the previous idea outright.",
         "<i>It is cheap; however, it breaks easily.</i> (contrast)"
       ],
       [
@@ -150,7 +150,7 @@
     "rules": [
       [
         "Isolate the variable",
-        "Undo operations in reverse: add/subtract first, then multiply/divide.",
+        "Undo operations in reverse: add/subtract first, then multiply/divide. For letters only, collect the variable terms on one side and factor it out: ax − cx = −b → x(a − c) = −b. In a word problem that counts whole things, round an inequality’s answer down to a whole number that still fits.",
         "<i>3x − 7 = 14</i> → +7 → 3x=21 → ÷3 → <b>x=7</b>."
       ],
       [
@@ -176,7 +176,7 @@
     "rules": [
       [
         "Percent change",
-        "change ÷ original × 100. 'Of' means multiply; 'is' means equals.",
+        "change ÷ original × 100. 'Of' means multiply; 'is' means equals. A decimal is a fraction over a power of ten: 0.35 = 35/100 = 7/20.",
         "40→50: (10/40)×100 = <b>25%</b> increase."
       ],
       [
@@ -186,7 +186,7 @@
       ],
       [
         "Ratios scale together",
-        "Multiply every part by the same number. In a:b, part a is a/(a+b) of the whole.",
+        "Multiply every part by the same number. In a:b, part a is a/(a+b) of the whole. Give the parts one multiplier (2k and 3k) when a change is made to one part. To compare deals, find price ÷ quantity for each.",
         "3:2 of 20 → 5 parts → each part 4 → <b>12 and 8</b>."
       ],
       [
@@ -212,12 +212,12 @@
       ],
       [
         "Angle facts",
-        "Straight line 180°, triangle 180°, circle 360°. Parallel lines cut by a transversal make angles that are equal or supplementary; the two interior angles on one side add to 180°.",
+        "Straight line 180°, triangle 180°, circle 360°. Parallel lines cut by a transversal make angles that are equal or supplementary; the two interior angles on one side add to 180°. Vertical (opposite) angles are equal, and the base angles of an isosceles triangle are equal.",
         "Triangle with 90° and 55° → third = 35°."
       ],
       [
         "Polygons and similar figures",
-        "The interior angles of an n-sided polygon add to (n − 2) × 180°. If two figures are similar with scale factor k, lengths scale by k, areas by k², and volumes by k³.",
+        "The interior angles of an n-sided polygon add to (n − 2) × 180°. If two figures are similar with scale factor k, lengths scale by k, areas by k², and volumes by k³. Change one dimension only and the formula decides: doubling a cylinder’s radius multiplies its volume by 4, because r is squared.",
         "Hexagon: 4 × 180° = 720°. Double every side → 4 × the area."
       ]
     ],
@@ -243,12 +243,12 @@
       ],
       [
         "Domain, range, inverse",
-        "The domain is every allowed input; the range is every possible output. An inverse undoes the function: swap x and y, then solve for y.",
+        "The domain is every allowed input; the range is every possible output. An inverse undoes the function: swap x and y, then solve for y. Under a square root the expression must be ≥ 0, so √(2x − 8) needs 2x − 8 ≥ 0, that is x ≥ 4; a denominator must not be 0.",
         "f(x) = 2x + 1 → f⁻¹(x) = (x − 1)/2.  √x needs x ≥ 0."
       ],
       [
         "Tables, pieces and reflections",
-        "From a table, the change in f(x) per step in x is the slope. A piecewise function uses whichever rule matches the input. −f(x) reflects the graph across the x-axis; f(−x) reflects it across the y-axis. A relation is a function only if no input has two outputs.",
+        "From a table, the change in f(x) per step in x is the slope. A piecewise function uses whichever rule matches the input. −f(x) reflects the graph across the x-axis; f(−x) reflects it across the y-axis. A relation is a function only if no input has two outputs. On a graph this is the vertical-line test: every vertical line meets the graph at most once.",
         "x: 1, 2, 3 → f: 5, 8, 11 → f(x) = 3x + 2."
       ]
     ],
@@ -274,7 +274,7 @@
       ],
       [
         "Identities and signs",
-        "sin²θ + cos²θ = 1 for every angle. In the second quadrant (90° to 180°) sine is positive and cosine negative. To find a missing side, write the ratio as an equation and solve: cos θ = 10/h → h = 10 ÷ cos θ.",
+        "sin²θ + cos²θ = 1 for every angle. In the second quadrant (90° to 180°) sine is positive and cosine negative. To find a missing side, write the ratio as an equation and solve: cos θ = 10/h → h = 10 ÷ cos θ. Cofunctions: sin θ = cos(90° − θ). The area of a triangle from two sides and the angle between them is ½ab sin C.",
         "Angle of elevation 40°, 30 m away: height = 30 tan 40°."
       ]
     ],
@@ -285,7 +285,7 @@
     "rules": [
       [
         "Probability = favorable ÷ total",
-        "Count the outcomes you want over all equally likely outcomes.",
+        "Count the outcomes you want over all equally likely outcomes. Every probability lies between 0 and 1. Experimental probability is the number of times an outcome happened ÷ the number of trials.",
         "One 6 on a die → 1/6."
       ],
       [
@@ -421,7 +421,7 @@
     "rules": [
       [
         "Read axes and columns first",
-        "Note what each axis or column measures and its units before anything else.",
+        "Note what each axis or column measures and its units before anything else. A threshold may be given in the question rather than the table; carry it across and test each row against it.",
         "x = temperature (°C), y = yield (g)."
       ],
       [
@@ -457,7 +457,7 @@
       ],
       [
         "Mind units and scale",
-        "Check what each axis measures before reading a shape: a flat line on a velocity graph means constant speed, on a distance graph it means at rest. Watch uneven scales, and treat overlapping error bars as “no clear difference”.",
+        "Check what each axis measures before reading a shape: a flat line on a velocity graph means constant speed, on a distance graph it means at rest. Watch uneven scales, and treat overlapping error bars as “no clear difference”. Steeper means faster: on a distance–time graph the slope is the speed. When one quantity doubles as the other halves, the relationship is inverse.",
         "If x goes 0, 10, 100, the scale isn't linear."
       ]
     ],
@@ -473,7 +473,7 @@
       ],
       [
         "Why a control group?",
-        "The control is the no-treatment baseline that isolates the effect.",
+        "The control is the no-treatment baseline that isolates the effect. A blank (a sample with none of the substance) should read zero; if it does not, the method is contaminated and every reading is suspect.",
         "A no-drug group shows what happens without the drug."
       ],
       [
@@ -515,7 +515,7 @@
       ],
       [
         "Water & cell basics",
-        "At sea level, water freezes at 0°C and boils at 100°C. Mitochondria release the energy stored in food; DNA stores genetic information. A Tt × tt cross gives half tt. Heating a gas in a rigid container raises its pressure.",
+        "At sea level, water freezes at 0°C and boils at 100°C. Mitochondria release the energy stored in food; DNA stores genetic information. A Tt × tt cross gives half tt. Heating a gas in a rigid container raises its pressure. An element has one kind of atom; a compound bonds elements together. In a closed system mass is conserved. A Tt × Tt cross gives TT : Tt : tt = 1 : 2 : 1, so ¾ show the dominant trait. Dissolved salt raises water’s boiling point. An object less dense than water floats.",
         "Ice → water at 0°C."
       ],
       [
@@ -536,7 +536,7 @@
       ],
       [
         "Subject vs. object case",
-        "I/he/she/they are subjects; me/him/her/them are objects. Remove the other person to test.",
+        "I/he/she/they are subjects; me/him/her/them are objects. Remove the other person to test. For <i>who/whoever</i>, the case comes from the pronoun’s own clause: <i>give it to whoever asks</i>, because <i>whoever</i> is the subject of <i>asks</i>. Use <i>myself</i> only when <i>I</i> is the subject of the same sentence.",
         "<i>between you and me</i> — try 'between me,' not 'between I.'"
       ],
       [
@@ -557,7 +557,7 @@
     "rules": [
       [
         "Kill danglers",
-        "An opening phrase — an -ing or -ed phrase, a “to” phrase, or a noun phrase — must describe the subject right after the comma. A possessive (<i>Maria’s seat</i>) cannot be that subject.",
+        "An opening phrase — an -ing or -ed phrase, a “to” phrase, or a noun phrase — must describe the subject right after the comma. A possessive (<i>Maria’s seat</i>) cannot be that subject. The other fix is to give the opening phrase its own subject: <i>While I was driving, the deer appeared.</i>",
         "Wrong: <i>Running late, the bus was missed.</i>  Right: <i>Running late, I missed the bus.</i>"
       ],
       [
@@ -578,12 +578,12 @@
     "rules": [
       [
         "Match verb forms",
-        "Keep a list all -ing, all 'to ___', or all plain.",
+        "Keep a list all -ing, all 'to ___', or all plain. Clauses pair with clauses: <i>explained what it was and how it worked</i>.",
         "<i>hiking, swimming, and biking</i> (not 'to bike')."
       ],
       [
         "Match correlative pairs",
-        "not only…but also, either…or, both…and, between…and, and not…but need parallel parts on each side.",
+        "not only…but also, either…or, both…and, between…and, and not…but need parallel parts on each side. Add neither…nor to the list: <i>neither tired nor hungry</i>.",
         "<i>not only fast but also cheap.</i>"
       ],
       [
@@ -604,7 +604,7 @@
       ],
       [
         "Power of a power multiplies",
-        "(xᵃ)ᵇ = xᵃᵇ. Also x⁰ = 1 and x⁻ⁿ = 1/xⁿ.",
+        "(xᵃ)ᵇ = xᵃᵇ. Also x⁰ = 1 and x⁻ⁿ = 1/xⁿ. Order matters: −3² = −9, because the power applies before the minus; (−3)² = 9.",
         "(x²)³ = x⁶; 5⁰ = 1."
       ],
       [
@@ -614,7 +614,7 @@
       ],
       [
         "Equations, notation and radicals",
-        "Rewrite both sides with the same base, then set exponents equal. In scientific notation multiply the front numbers and add the powers of 10. Simplify roots before adding them, and clear a root from a denominator by multiplying top and bottom by it.",
+        "Rewrite both sides with the same base, then set exponents equal. In scientific notation multiply the front numbers and add the powers of 10. Simplify roots before adding them, and clear a root from a denominator by multiplying top and bottom by it. Scientific notation has one nonzero digit before the point (4.5 × 10⁴, not 45 × 10³). (ab)ⁿ = aⁿbⁿ, and √a · √b = √(ab).",
         "2^(x+1) = 2⁵ → x = 4.  √18 + √8 = 3√2 + 2√2 = 5√2.  6/√3 = 2√3."
       ]
     ],
@@ -625,22 +625,22 @@
     "rules": [
       [
         "Factor to find roots",
-        "Find two numbers that multiply to c and add to b. When the leading coefficient is not 1, check by expanding. Going the other way, a root r comes from the factor (x − r). Expanding (x + a)² gives x² + 2ax + a² — never forget the middle term.",
+        "Find two numbers that multiply to c and add to b. When the leading coefficient is not 1, check by expanding. Going the other way, a root r comes from the factor (x − r). Expanding (x + a)² gives x² + 2ax + a² — never forget the middle term. If you know one root, substitute it for x to find a missing coefficient.",
         "x²+5x+6 = (x+2)(x+3) → x = −2, −3."
       ],
       [
         "Zero-product rule",
-        "If (x−a)(x−b) = 0, then x = a or x = b.",
+        "If (x−a)(x−b) = 0, then x = a or x = b. Taking a square root gives two answers: (x − 2)² = 9 means x − 2 = ±3.",
         "(x−4)(x+1) = 0 → x = 4 or −1."
       ],
       [
         "Formula backup",
-        "x = [−b ± √(b²−4ac)] / 2a when it won't factor.",
+        "x = [−b ± √(b²−4ac)] / 2a when it won't factor. Read a, b and c with their signs. The discriminant b² − 4ac decides how many real solutions there are: positive two, zero one, negative none.",
         "The discriminant b²−4ac counts the real roots."
       ],
       [
         "Vertex form",
-        "y = a(x − h)² + k has its vertex at (h, k). If a &gt; 0 the parabola opens up and the vertex is a minimum; if a &lt; 0 it opens down and the vertex is a maximum. In standard form y = ax² + bx + c, the vertex is at x = −b/(2a).",
+        "y = a(x − h)² + k has its vertex at (h, k). If a &gt; 0 the parabola opens up and the vertex is a minimum; if a &lt; 0 it opens down and the vertex is a maximum. In standard form y = ax² + bx + c, the vertex is at x = −b/(2a). The y-intercept of y = ax² + bx + c is (0, c).",
         "y = −2(x − 3)² + 5 → vertex (3, 5), a maximum."
       ]
     ],
@@ -651,7 +651,7 @@
     "rules": [
       [
         "Mean = add ÷ count",
-        "Sum the values, divide by how many.",
+        "Sum the values, divide by how many. Adding a value equal to the mean leaves the mean unchanged.",
         "2, 4, 9 → 15/3 = 5."
       ],
       [
@@ -661,7 +661,7 @@
       ],
       [
         "Mode = most frequent",
-        "The value that shows up most.",
+        "The value that shows up most. The mode is the value, not how many times it appears. Range = largest − smallest.",
         "2, 2, 5, 7 → mode 2."
       ],
       [
@@ -671,7 +671,7 @@
       ],
       [
         "Spread and rank",
-        "Standard deviation measures distance from the mean: adding the same number to every value leaves it unchanged. A percentile is a rank — the share of scores at or below yours — not a percentage correct. In a frequency table, count through the frequencies to find the middle value.",
+        "Standard deviation measures distance from the mean: adding the same number to every value leaves it unchanged. A percentile is a rank — the share of scores at or below yours — not a percentage correct. In a frequency table, count through the frequencies to find the middle value. Quartiles split sorted data into quarters, so half the values lie between Q1 and Q3.",
         "10, 10, 10, 10 and 1, 5, 15, 19 share a mean of 10; the second is far more spread out."
       ]
     ],
@@ -697,12 +697,12 @@
       ],
       [
         "Parallel, perpendicular, circles",
-        "Parallel lines have equal slopes; perpendicular slopes are negative reciprocals. A circle with centre (h, k) and radius r is (x − h)² + (y − k)² = r².",
+        "Parallel lines have equal slopes; perpendicular slopes are negative reciprocals. A circle with centre (h, k) and radius r is (x − h)² + (y − k)² = r². If a circle passes through a point, the radius is the distance from the centre to that point. A perpendicular bisector passes through the midpoint with the negative-reciprocal slope.",
         "Slope 2 → perpendicular slope −½.  (x − 1)² + (y + 2)² = 9 → centre (1, −2), radius 3."
       ],
       [
         "Reflections and intersections",
-        "Reflecting across the y-axis changes the sign of x; across the x-axis, the sign of y. Two lines meet where their y-values are equal, so set the right-hand sides equal. A line with one y for every point is horizontal: y = constant.",
+        "Reflecting across the y-axis changes the sign of x; across the x-axis, the sign of y. Two lines meet where their y-values are equal, so set the right-hand sides equal. A line with one y for every point is horizontal: y = constant. A point lies on a line if its coordinates make the equation true. Points with the same y are a horizontal distance apart: subtract the x-values.",
         "y = x + 1 and y = −x + 5 → x + 1 = −x + 5 → (2, 3)."
       ]
     ],
@@ -718,7 +718,7 @@
       ],
       [
         "Role of a paragraph",
-        "Ask its job: introduce, support, counter, or conclude.",
+        "Ask its job: introduce, support, counter, or conclude. An opening anecdote usually introduces the topic. A reading the author voices and then reverses (<i>That might look like failure. It is the opposite</i>) is set up to be rejected.",
         "A middle paragraph often backs the thesis with an example."
       ],
       [
@@ -739,7 +739,7 @@
       ],
       [
         "Match, don't exaggerate",
-        "Most ACT tone is mild: appreciative, skeptical — not furious.",
+        "Most ACT tone is mild: appreciative, skeptical — not furious. A passage of plain facts with no loaded words is neutral.",
         "Prefer 'critical' over 'enraged.'"
       ],
       [
@@ -802,7 +802,7 @@
       ],
       [
         "Convert with the right factor",
-        "Watch prefixes: kilo = ×1000, milli = ÷1000. Area units convert by the square of the factor (1 m² = 10 000 cm²), and units combine the way the numbers do (force ÷ area → N/m²).",
+        "Watch prefixes: kilo = ×1000, milli = ÷1000. Area units convert by the square of the factor (1 m² = 10 000 cm²), and units combine the way the numbers do (force ÷ area → N/m²). Volume units convert by the cube of the factor (1 m³ = 1,000,000 cm³).",
         "2 km = 2000 m."
       ],
       [
@@ -838,7 +838,7 @@
       ],
       [
         "Average rate uses totals",
-        "Average rate = total amount ÷ total time. Do not average two rates unless they lasted equally long. Rates working together add (a leak subtracts); for two pumps, add the fractions of the job each does per hour.",
+        "Average rate = total amount ÷ total time. Do not average two rates unless they lasted equally long. Rates working together add (a leak subtracts); for two pumps, add the fractions of the job each does per hour. Moving the same way, a gap closes at the difference of the speeds; toward each other, at the sum. For a shared job, find total worker-hours, then divide by the number of workers.",
         "60 km in 1 h, then 60 km in 2 h → 120 km ÷ 3 h = 40 km/h, not 45."
       ]
     ],
@@ -854,7 +854,7 @@
       ],
       [
         "Support vs. contradict",
-        "Compare the data to the prediction: match or not?",
+        "Compare the data to the prediction: match or not? To test a claim you need a comparison: an untreated group that differs from the treated one in only the factor being tested.",
         "If growth rose with light, the data supports it."
       ],
       [
@@ -870,12 +870,12 @@
     "rules": [
       [
         "Find the values first",
-        "Locate the exact numbers in the table before computing.",
+        "Locate the exact numbers in the table before computing. If a value you need sits in another table, carry it across before you compute.",
         "Read Trial 2 and Trial 4 yields."
       ],
       [
         "Difference and percent",
-        "Subtract for change; divide by the original for percent change. For a share, divide the part by the whole. For a rate between two rows, divide the change in one column by the change in the other. When mixing, weight each value by how much there is of it.",
+        "Subtract for change; divide by the original for percent change. For a share, divide the part by the whole. For a rate between two rows, divide the change in one column by the change in the other. When mixing, weight each value by how much there is of it. For a percent of a group, divide by the group the question names, not the starting total.",
         "6→9: change 3, percent 50%."
       ],
       [

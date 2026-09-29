@@ -4683,5 +4683,1748 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Charging a Capacitor",
+    "type": "Data Representation",
+    "text": "A capacitor is a device that stores electric charge. A student connected an uncharged 1000 µF capacitor in a circuit with a resistor and a 6.0 V battery, closed a switch, and recorded the voltage across the capacitor as it charged. Figure 1 shows the results with a 10 kΩ resistor and with a 20 kΩ resistor (1 kΩ = 1000 Ω).\n\nThe student then repeated the procedure with four different resistors. Table 1 gives, for each, the current that flowed at the instant the switch was closed and the time the capacitor took to reach 3.79 V.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Voltage across the capacitor while charging",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Time (s)",
+        "yLabel": "Voltage across capacitor (V)",
+        "alt": "Line graph of capacitor voltage against time for two resistors. Both curves start at zero, rise steeply at first and then level off as they approach the battery’s voltage. The curve for the 10 kΩ resistor rises faster and levels off sooner than the curve for the 20 kΩ resistor.",
+        "series": [
+          {
+            "name": "10 kΩ resistor",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 5,
+                "y": 2.36
+              },
+              {
+                "x": 10,
+                "y": 3.79
+              },
+              {
+                "x": 15,
+                "y": 4.66
+              },
+              {
+                "x": 20,
+                "y": 5.19
+              },
+              {
+                "x": 30,
+                "y": 5.7
+              },
+              {
+                "x": 40,
+                "y": 5.89
+              },
+              {
+                "x": 60,
+                "y": 5.99
+              }
+            ]
+          },
+          {
+            "name": "20 kΩ resistor",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 5,
+                "y": 1.33
+              },
+              {
+                "x": 10,
+                "y": 2.36
+              },
+              {
+                "x": 15,
+                "y": 3.17
+              },
+              {
+                "x": 20,
+                "y": 3.79
+              },
+              {
+                "x": 30,
+                "y": 4.66
+              },
+              {
+                "x": 40,
+                "y": 5.19
+              },
+              {
+                "x": 60,
+                "y": 5.7
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Charging the 1000 µF capacitor through four resistors",
+        "type": "table",
+        "head": [
+          "Resistance (kΩ)",
+          "Current when switch closed (mA)",
+          "Time to reach 3.79 V (s)"
+        ],
+        "rows": [
+          [
+            "5",
+            "1.20",
+            "5"
+          ],
+          [
+            "10",
+            "0.60",
+            "10"
+          ],
+          [
+            "20",
+            "0.30",
+            "20"
+          ],
+          [
+            "40",
+            "0.15",
+            "40"
+          ]
+        ]
+      }
+    ],
+    "id": "sp56"
+  },
+  {
+    "title": "Body Size and the Pace of Life",
+    "type": "Data Representation",
+    "text": "An animal’s resting metabolic rate is the rate at which it uses energy while at rest, measured in watts (W); 1 W is 1 joule per second. Biologists measured the resting metabolic rates of five mammals of very different sizes. Table 1 gives each animal’s body mass, its whole-body metabolic rate, and that rate divided by its body mass. Figure 1 shows the resting heart rate of the same five animals.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Resting metabolic rates of five mammals",
+        "type": "table",
+        "head": [
+          "Animal",
+          "Body mass (kg)",
+          "Metabolic rate (W)",
+          "Metabolic rate per kilogram (W/kg)"
+        ],
+        "rows": [
+          [
+            "Mouse",
+            "0.025",
+            "0.214",
+            "8.6"
+          ],
+          [
+            "Rat",
+            "0.25",
+            "1.20",
+            "4.8"
+          ],
+          [
+            "Rabbit",
+            "2.5",
+            "6.76",
+            "2.7"
+          ],
+          [
+            "Dog",
+            "25",
+            "38.0",
+            "1.5"
+          ],
+          [
+            "Pony",
+            "250",
+            "214",
+            "0.86"
+          ]
+        ]
+      },
+      {
+        "label": "Figure 1",
+        "caption": "Resting heart rates of the five mammals",
+        "type": "chart",
+        "kind": "bar",
+        "xLabel": "Body mass (kg)",
+        "yLabel": "Resting heart rate (beats/min)",
+        "alt": "Bar chart of resting heart rate for the five animals, ordered from lightest to heaviest. The bars get shorter at every step from the lightest animal to the heaviest.",
+        "series": [
+          {
+            "name": "Resting heart rate",
+            "points": [
+              {
+                "x": 0.025,
+                "y": 606
+              },
+              {
+                "x": 0.25,
+                "y": 341
+              },
+              {
+                "x": 2.5,
+                "y": 192
+              },
+              {
+                "x": 25,
+                "y": 108
+              },
+              {
+                "x": 250,
+                "y": 61
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "id": "sp57"
+  },
+  {
+    "title": "Day Length at Different Latitudes",
+    "type": "Data Representation",
+    "text": "Day length is the time from sunrise to sunset. Earth’s axis is tilted 23.4° from the perpendicular to the plane of its orbit, so day length changes through the year everywhere except at the equator. Table 1 gives day lengths, calculated from Earth’s tilt and orbit, for four latitudes in the Northern Hemisphere on three dates. Figure 1 shows the day length on the 21st day of each month at 40° N and at 60° N. All values ignore the slight bending of sunlight by the atmosphere.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Day length on three dates at four northern latitudes",
+        "type": "table",
+        "head": [
+          "Latitude",
+          "Day length on June 21 (h)",
+          "Day length on March 20 (h)",
+          "Day length on December 21 (h)"
+        ],
+        "rows": [
+          [
+            "0° N",
+            "12.0",
+            "12.0",
+            "12.0"
+          ],
+          [
+            "20° N",
+            "13.2",
+            "12.0",
+            "10.8"
+          ],
+          [
+            "40° N",
+            "14.8",
+            "12.0",
+            "9.2"
+          ],
+          [
+            "60° N",
+            "18.5",
+            "12.0",
+            "5.5"
+          ]
+        ]
+      },
+      {
+        "label": "Figure 1",
+        "caption": "Day length on the 21st day of each month",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Month (1 = January)",
+        "yLabel": "Day length (h)",
+        "alt": "Line graph of day length through the year at two latitudes. Both curves are lowest at the start and end of the year and highest in the middle. The two curves cross near March and near September, and the 60° N curve swings much further above and below than the 40° N curve does.",
+        "series": [
+          {
+            "name": "40° N",
+            "points": [
+              {
+                "x": 1,
+                "y": 9.6
+              },
+              {
+                "x": 2,
+                "y": 10.7
+              },
+              {
+                "x": 3,
+                "y": 11.9
+              },
+              {
+                "x": 4,
+                "y": 13.3
+              },
+              {
+                "x": 5,
+                "y": 14.4
+              },
+              {
+                "x": 6,
+                "y": 14.8
+              },
+              {
+                "x": 7,
+                "y": 14.4
+              },
+              {
+                "x": 8,
+                "y": 13.4
+              },
+              {
+                "x": 9,
+                "y": 12
+              },
+              {
+                "x": 10,
+                "y": 10.7
+              },
+              {
+                "x": 11,
+                "y": 9.6
+              },
+              {
+                "x": 12,
+                "y": 9.2
+              }
+            ]
+          },
+          {
+            "name": "60° N",
+            "points": [
+              {
+                "x": 1,
+                "y": 6.7
+              },
+              {
+                "x": 2,
+                "y": 9.3
+              },
+              {
+                "x": 3,
+                "y": 11.9
+              },
+              {
+                "x": 4,
+                "y": 14.7
+              },
+              {
+                "x": 5,
+                "y": 17.2
+              },
+              {
+                "x": 6,
+                "y": 18.5
+              },
+              {
+                "x": 7,
+                "y": 17.4
+              },
+              {
+                "x": 8,
+                "y": 14.8
+              },
+              {
+                "x": 9,
+                "y": 12
+              },
+              {
+                "x": 10,
+                "y": 9.2
+              },
+              {
+                "x": 11,
+                "y": 6.7
+              },
+              {
+                "x": 12,
+                "y": 5.5
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "id": "sp58"
+  },
+  {
+    "title": "Gas in a Sealed Container",
+    "type": "Data Representation",
+    "text": "A sample of gas was sealed in a container fitted with a pressure sensor and a thermometer. For Table 1, 0.040 mol of gas was held in a rigid container with a fixed volume of 1.00 L and was warmed. For Table 2, the same 0.040 mol of gas was held at 27 °C in a cylinder whose volume could be changed with a piston. Figure 1 shows the pressure against temperature in the 1.00 L container for 0.040 mol and for 0.020 mol of gas. A temperature in kelvins (K) equals the Celsius temperature plus 273.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "0.040 mol of gas in a fixed volume of 1.00 L",
+        "type": "table",
+        "head": [
+          "Temperature (°C)",
+          "Temperature (K)",
+          "Pressure (kPa)"
+        ],
+        "rows": [
+          [
+            "−23",
+            "250",
+            "83.1"
+          ],
+          [
+            "27",
+            "300",
+            "99.8"
+          ],
+          [
+            "77",
+            "350",
+            "116.4"
+          ],
+          [
+            "127",
+            "400",
+            "133.0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "0.040 mol of gas at 27 °C",
+        "type": "table",
+        "head": [
+          "Volume (L)",
+          "Pressure (kPa)"
+        ],
+        "rows": [
+          [
+            "0.50",
+            "199.5"
+          ],
+          [
+            "1.00",
+            "99.8"
+          ],
+          [
+            "2.00",
+            "49.9"
+          ],
+          [
+            "4.00",
+            "24.9"
+          ]
+        ]
+      },
+      {
+        "label": "Figure 1",
+        "caption": "Pressure against temperature in the 1.00 L container",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Temperature (°C)",
+        "yLabel": "Pressure (kPa)",
+        "alt": "Line graph of pressure against temperature for two amounts of gas. Both lines are straight and rise steadily from left to right. The line for 0.040 mol lies above the line for 0.020 mol and is steeper.",
+        "series": [
+          {
+            "name": "0.040 mol",
+            "points": [
+              {
+                "x": -73,
+                "y": 66.5
+              },
+              {
+                "x": -23,
+                "y": 83.1
+              },
+              {
+                "x": 27,
+                "y": 99.8
+              },
+              {
+                "x": 77,
+                "y": 116.4
+              },
+              {
+                "x": 127,
+                "y": 133
+              }
+            ]
+          },
+          {
+            "name": "0.020 mol",
+            "points": [
+              {
+                "x": -73,
+                "y": 33.3
+              },
+              {
+                "x": -23,
+                "y": 41.6
+              },
+              {
+                "x": 27,
+                "y": 49.9
+              },
+              {
+                "x": 77,
+                "y": 58.2
+              },
+              {
+                "x": 127,
+                "y": 66.5
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "id": "sp59"
+  },
+  {
+    "title": "Stream Animals Below an Outflow",
+    "type": "Data Representation",
+    "text": "Treated waste water from a small sewage works enters the River Leddon at a single outflow. Ecologists sampled the riverbed at five sites, A to E, from 0.5 km upstream of the outflow to 6.0 km downstream of it. At each site they measured the dissolved oxygen in the water (Table 1) and counted four kinds of small animals in a 1 m² sample of the riverbed (Figure 1). Table 2 gives the lowest level of dissolved oxygen at which each kind of animal survived for a week in laboratory tests.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Dissolved oxygen at the five sites",
+        "type": "table",
+        "head": [
+          "Site",
+          "Distance from outflow (km; negative = upstream)",
+          "Dissolved oxygen (mg/L)"
+        ],
+        "rows": [
+          [
+            "A",
+            "−0.5",
+            "9.8"
+          ],
+          [
+            "B",
+            "0.2",
+            "3.1"
+          ],
+          [
+            "C",
+            "1.0",
+            "4.6"
+          ],
+          [
+            "D",
+            "3.0",
+            "7.2"
+          ],
+          [
+            "E",
+            "6.0",
+            "9.1"
+          ]
+        ]
+      },
+      {
+        "label": "Figure 1",
+        "caption": "Animals counted in a 1 m² sample at each site",
+        "type": "chart",
+        "kind": "bar",
+        "xLabel": "Distance from outflow (km)",
+        "yLabel": "Animals per 1 m² sample (number)",
+        "alt": "Grouped bar chart of four kinds of animal at five distances from the outflow. Mayfly nymphs and caddisfly larvae are common upstream, almost absent just below the outflow, and more common again farther downstream. Midge larvae and sludge worms show the opposite pattern, with their tallest bars just below the outflow.",
+        "series": [
+          {
+            "name": "Mayfly nymphs",
+            "points": [
+              {
+                "x": -0.5,
+                "y": 42
+              },
+              {
+                "x": 0.2,
+                "y": 0
+              },
+              {
+                "x": 1,
+                "y": 2
+              },
+              {
+                "x": 3,
+                "y": 18
+              },
+              {
+                "x": 6,
+                "y": 37
+              }
+            ]
+          },
+          {
+            "name": "Caddisfly larvae",
+            "points": [
+              {
+                "x": -0.5,
+                "y": 30
+              },
+              {
+                "x": 0.2,
+                "y": 0
+              },
+              {
+                "x": 1,
+                "y": 5
+              },
+              {
+                "x": 3,
+                "y": 21
+              },
+              {
+                "x": 6,
+                "y": 28
+              }
+            ]
+          },
+          {
+            "name": "Midge larvae",
+            "points": [
+              {
+                "x": -0.5,
+                "y": 12
+              },
+              {
+                "x": 0.2,
+                "y": 85
+              },
+              {
+                "x": 1,
+                "y": 64
+              },
+              {
+                "x": 3,
+                "y": 25
+              },
+              {
+                "x": 6,
+                "y": 14
+              }
+            ]
+          },
+          {
+            "name": "Sludge worms",
+            "points": [
+              {
+                "x": -0.5,
+                "y": 3
+              },
+              {
+                "x": 0.2,
+                "y": 140
+              },
+              {
+                "x": 1,
+                "y": 72
+              },
+              {
+                "x": 3,
+                "y": 11
+              },
+              {
+                "x": 6,
+                "y": 4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Lowest dissolved oxygen survived for a week in the laboratory",
+        "type": "table",
+        "head": [
+          "Animal",
+          "Lowest dissolved oxygen survived (mg/L)"
+        ],
+        "rows": [
+          [
+            "Mayfly nymphs",
+            "4.5"
+          ],
+          [
+            "Caddisfly larvae",
+            "4.0"
+          ],
+          [
+            "Midge larvae",
+            "1.5"
+          ],
+          [
+            "Sludge worms",
+            "0.5"
+          ]
+        ]
+      }
+    ],
+    "id": "sp60"
+  },
+  {
+    "title": "Heating Ice to Boiling",
+    "type": "Data Representation",
+    "text": "A 100 g block of ice at −20 °C was placed in an insulated container with an electric heater that supplied energy at a steady 200 W, or 200 joules each second. The temperature of the sample was recorded as it warmed, melted, warmed again and then boiled (Figure 1). Heating stopped at 800 s. Table 1 gives the energy needed for each kind of change for 1 gram of water. Table 2 gives the mass of water left in the container at four times after boiling began, as steam escaped. Assume that all of the heater’s energy went into the sample.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Temperature of the sample during heating",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Time (s)",
+        "yLabel": "Temperature (°C)",
+        "alt": "Line graph of temperature against time. The temperature rises briefly, then stays flat for a while, then climbs in a long straight stretch, and then stays flat again until heating stops.",
+        "series": [
+          {
+            "name": "Sample",
+            "points": [
+              {
+                "x": 0,
+                "y": -20
+              },
+              {
+                "x": 21,
+                "y": 0
+              },
+              {
+                "x": 188,
+                "y": 0
+              },
+              {
+                "x": 397,
+                "y": 100
+              },
+              {
+                "x": 800,
+                "y": 100
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Energy needed for each change, per gram of water",
+        "type": "table",
+        "head": [
+          "Change",
+          "Energy needed per gram (J)"
+        ],
+        "rows": [
+          [
+            "Warming ice by 1 °C",
+            "2.1"
+          ],
+          [
+            "Melting ice at 0 °C",
+            "334"
+          ],
+          [
+            "Warming liquid water by 1 °C",
+            "4.18"
+          ],
+          [
+            "Boiling water at 100 °C",
+            "2260"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Mass of water remaining after boiling began",
+        "type": "table",
+        "head": [
+          "Time (s)",
+          "Mass of water remaining (g)"
+        ],
+        "rows": [
+          [
+            "500",
+            "90.9"
+          ],
+          [
+            "600",
+            "82.0"
+          ],
+          [
+            "700",
+            "73.2"
+          ],
+          [
+            "800",
+            "64.3"
+          ]
+        ]
+      }
+    ],
+    "id": "sp61"
+  },
+  {
+    "title": "Bending Light",
+    "type": "Research Summaries",
+    "text": "When light passes at an angle from one clear material into another, its path bends. Angles are measured from the normal, a line drawn perpendicular to the surface. A student aimed a narrow beam of light at the flat face of each material and measured the angle of incidence (the beam’s angle before it reached the surface) and the angle of refraction (its angle after passing through).\n\nExperiment 1. Light passed from air into water, and the angle of incidence was varied (Table 1).\n\nExperiment 2. Light passed from air into four different materials, always at an angle of incidence of 45°. The sine of 45° is 0.707. Table 2 gives the angle of refraction in each material and the sine of that angle.\n\nExperiment 3. Light passed from inside a block of acrylic out into the air, and the angle of incidence inside the acrylic was varied. At some angles, no light came out into the air: all of it was reflected back into the acrylic (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: air into water",
+        "type": "table",
+        "head": [
+          "Angle of incidence (°)",
+          "Angle of refraction (°)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0.0"
+          ],
+          [
+            "15",
+            "11.2"
+          ],
+          [
+            "30",
+            "22.1"
+          ],
+          [
+            "45",
+            "32.1"
+          ],
+          [
+            "60",
+            "40.6"
+          ],
+          [
+            "75",
+            "46.6"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: air into four materials at 45°",
+        "type": "table",
+        "head": [
+          "Material",
+          "Angle of refraction (°)",
+          "Sine of angle of refraction"
+        ],
+        "rows": [
+          [
+            "Water",
+            "32.1",
+            "0.532"
+          ],
+          [
+            "Acrylic",
+            "28.3",
+            "0.475"
+          ],
+          [
+            "Flint glass",
+            "25.9",
+            "0.436"
+          ],
+          [
+            "Cubic zirconia",
+            "19.0",
+            "0.326"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: acrylic into air",
+        "type": "table",
+        "head": [
+          "Angle of incidence in acrylic (°)",
+          "Angle of refraction in air (°)"
+        ],
+        "rows": [
+          [
+            "20",
+            "30.6"
+          ],
+          [
+            "30",
+            "48.2"
+          ],
+          [
+            "40",
+            "73.3"
+          ],
+          [
+            "42",
+            "85.6"
+          ],
+          [
+            "45",
+            "none (all reflected)"
+          ],
+          [
+            "60",
+            "none (all reflected)"
+          ]
+        ]
+      }
+    ],
+    "id": "sp62"
+  },
+  {
+    "title": "Potato Cores in Sugar Solutions",
+    "type": "Research Summaries",
+    "text": "Cylinders of potato, called cores, were cut with a cork borer, blotted dry, weighed, and placed in solutions of sucrose (table sugar) at 20 °C. After a set time they were blotted and weighed again, and the percentage change in mass was calculated. Each result is the mean of five cores. Unless stated otherwise, each core had a mass of 5.00 g.\n\nExperiment 1. Cores were left for 24 hours in solutions of different sucrose concentrations (Table 1).\n\nExperiment 2. Cores were placed in 0.8 mol/L sucrose and weighed at intervals (Table 2).\n\nExperiment 3. The same mass of potato was cut into cores of three different shapes, which gave them different surface areas. Each was placed in 0.8 mol/L sucrose. Table 3 gives the change in mass after 2 hours and after 24 hours.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: 24 hours in sucrose",
+        "type": "table",
+        "head": [
+          "Sucrose concentration (mol/L)",
+          "Change in mass (%)"
+        ],
+        "rows": [
+          [
+            "0.0",
+            "+14.0"
+          ],
+          [
+            "0.2",
+            "+6.8"
+          ],
+          [
+            "0.4",
+            "+0.9"
+          ],
+          [
+            "0.6",
+            "−5.4"
+          ],
+          [
+            "0.8",
+            "−11.2"
+          ],
+          [
+            "1.0",
+            "−15.0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: 0.8 mol/L sucrose",
+        "type": "table",
+        "head": [
+          "Time (h)",
+          "Change in mass (%)"
+        ],
+        "rows": [
+          [
+            "1",
+            "−3.1"
+          ],
+          [
+            "2",
+            "−5.6"
+          ],
+          [
+            "4",
+            "−8.6"
+          ],
+          [
+            "8",
+            "−10.6"
+          ],
+          [
+            "24",
+            "−11.2"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: cores of three shapes in 0.8 mol/L sucrose",
+        "type": "table",
+        "head": [
+          "Core shape",
+          "Surface area (cm²)",
+          "Change after 2 h (%)",
+          "Change after 24 h (%)"
+        ],
+        "rows": [
+          [
+            "Short and wide",
+            "10.4",
+            "−4.6",
+            "−11.2"
+          ],
+          [
+            "Standard",
+            "12.6",
+            "−5.6",
+            "−11.2"
+          ],
+          [
+            "Long and thin",
+            "18.0",
+            "−8.0",
+            "−11.2"
+          ]
+        ]
+      }
+    ],
+    "id": "sp63"
+  },
+  {
+    "title": "Magnesium and Hydrochloric Acid",
+    "type": "Research Summaries",
+    "text": "Magnesium reacts with hydrochloric acid to produce hydrogen gas: Mg + 2HCl → MgCl₂ + H₂. In each trial, a strip of magnesium ribbon was dropped into 50 mL of acid in a flask at 25 °C, and the hydrogen was collected in a gas syringe. The acid was always in excess, so all of the magnesium reacted. At 25 °C, 1 mol of any gas occupies about 24.5 L. The molar mass of magnesium is 24.3 g/mol.\n\nExperiment 1. A 0.050 g strip reacted with 1.0 mol/L acid, and the volume of gas was read every 20 s (Table 1).\n\nExperiment 2. A 0.050 g strip reacted with acid of three different concentrations. The total volume of gas and the time the reaction took to finish were recorded (Table 2).\n\nExperiment 3. Strips of different masses reacted with 1.0 mol/L acid (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: 0.050 g of magnesium in 1.0 mol/L acid",
+        "type": "table",
+        "head": [
+          "Time (s)",
+          "Volume of hydrogen (mL)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "20",
+            "18"
+          ],
+          [
+            "40",
+            "31"
+          ],
+          [
+            "60",
+            "40"
+          ],
+          [
+            "80",
+            "46"
+          ],
+          [
+            "100",
+            "49"
+          ],
+          [
+            "120",
+            "50"
+          ],
+          [
+            "140",
+            "50"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: 0.050 g of magnesium",
+        "type": "table",
+        "head": [
+          "Acid concentration (mol/L)",
+          "Total volume of hydrogen (mL)",
+          "Time to finish (s)"
+        ],
+        "rows": [
+          [
+            "0.5",
+            "50",
+            "240"
+          ],
+          [
+            "1.0",
+            "50",
+            "120"
+          ],
+          [
+            "2.0",
+            "50",
+            "55"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: 1.0 mol/L acid",
+        "type": "table",
+        "head": [
+          "Mass of magnesium (g)",
+          "Total volume of hydrogen (mL)"
+        ],
+        "rows": [
+          [
+            "0.025",
+            "25"
+          ],
+          [
+            "0.050",
+            "50"
+          ],
+          [
+            "0.100",
+            "101"
+          ],
+          [
+            "0.200",
+            "202"
+          ]
+        ]
+      }
+    ],
+    "id": "sp64"
+  },
+  {
+    "title": "Dropping a Magnet Through a Coil",
+    "type": "Research Summaries",
+    "text": "A bar magnet falling through a coil of wire produces a brief pulse of voltage across the ends of the coil as it enters, and another pulse, in the opposite direction, as it leaves. A coil was held upright and connected to a data logger that recorded the peak voltage of each pulse. The magnet was dropped from rest, north pole first unless stated otherwise, from a height measured above the top of the coil.\n\nExperiment 1. A 200-turn coil was used and the drop height was varied. The speed of the magnet as it entered the coil was calculated from the height (Table 1).\n\nExperiment 2. The magnet was dropped from 20 cm through coils with different numbers of turns (Table 2).\n\nExperiment 3. The magnet was dropped from 20 cm through the 200-turn coil, which is 6 cm long, first with its north pole first and then with its south pole first. The peak voltages of the entering pulse and of the leaving pulse were recorded (Table 3). A positive voltage is in one direction and a negative voltage in the other.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: 200-turn coil",
+        "type": "table",
+        "head": [
+          "Drop height (cm)",
+          "Speed entering coil (m/s)",
+          "Peak voltage (V)"
+        ],
+        "rows": [
+          [
+            "5",
+            "0.99",
+            "0.20"
+          ],
+          [
+            "10",
+            "1.40",
+            "0.28"
+          ],
+          [
+            "20",
+            "1.98",
+            "0.40"
+          ],
+          [
+            "40",
+            "2.80",
+            "0.57"
+          ],
+          [
+            "80",
+            "3.96",
+            "0.80"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: drop height 20 cm",
+        "type": "table",
+        "head": [
+          "Number of turns",
+          "Peak voltage (V)"
+        ],
+        "rows": [
+          [
+            "50",
+            "0.10"
+          ],
+          [
+            "100",
+            "0.20"
+          ],
+          [
+            "200",
+            "0.40"
+          ],
+          [
+            "400",
+            "0.80"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: 200-turn coil, drop height 20 cm",
+        "type": "table",
+        "head": [
+          "Pole entering first",
+          "Entering pulse (V)",
+          "Leaving pulse (V)"
+        ],
+        "rows": [
+          [
+            "North",
+            "+0.40",
+            "−0.46"
+          ],
+          [
+            "South",
+            "−0.40",
+            "+0.46"
+          ]
+        ]
+      }
+    ],
+    "id": "sp65"
+  },
+  {
+    "title": "Cooling Rate and Crystal Size",
+    "type": "Research Summaries",
+    "text": "The size of the mineral crystals in an igneous rock depends on how the molten rock cooled. To model this, a student used salol, a substance that melts at 42 °C and forms crystals as it cools. Melted salol was dropped onto glass slides and watched under a microscope until it had fully solidified, and the mean length of its crystals was measured.\n\nExperiment 1. A 0.05 mL drop of melted salol was placed on each of three slides held at different temperatures (Table 1).\n\nExperiment 2. Drops of three different volumes were placed on slides held at 20 °C (Table 2).\n\nA geologist then measured the mean crystal size in four igneous rocks that formed in different settings (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: 0.05 mL drops",
+        "type": "table",
+        "head": [
+          "Slide temperature (°C)",
+          "Time to solidify (s)",
+          "Mean crystal length (mm)"
+        ],
+        "rows": [
+          [
+            "0",
+            "25",
+            "0.3"
+          ],
+          [
+            "20",
+            "90",
+            "1.2"
+          ],
+          [
+            "35",
+            "420",
+            "4.8"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: slides at 20 °C",
+        "type": "table",
+        "head": [
+          "Drop volume (mL)",
+          "Time to solidify (s)",
+          "Mean crystal length (mm)"
+        ],
+        "rows": [
+          [
+            "0.02",
+            "50",
+            "0.7"
+          ],
+          [
+            "0.05",
+            "90",
+            "1.2"
+          ],
+          [
+            "0.10",
+            "150",
+            "1.9"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Crystal size in four igneous rocks",
+        "type": "table",
+        "head": [
+          "Rock",
+          "Where it cooled",
+          "Mean crystal size (mm)"
+        ],
+        "rows": [
+          [
+            "Obsidian",
+            "Lava chilled rapidly by air or water",
+            "no visible crystals"
+          ],
+          [
+            "Basalt",
+            "Lava flow at the surface",
+            "0.2"
+          ],
+          [
+            "Dolerite",
+            "Sheet of magma a few metres thick, just below the surface",
+            "1.0"
+          ],
+          [
+            "Gabbro",
+            "Large body of magma several kilometres deep",
+            "5.0"
+          ]
+        ]
+      }
+    ],
+    "id": "sp66"
+  },
+  {
+    "title": "Woodlice in a Choice Chamber",
+    "type": "Research Summaries",
+    "text": "Woodlice are small land crustaceans that live under logs and stones. A student used a choice chamber, a round dish divided into two halves whose conditions can be set separately. In each trial, 20 woodlice were placed in the centre, and after 10 minutes the number in each half was counted. Each experiment had five trials, with fresh woodlice each time.\n\nExperiment 1. Both halves were kept dark. One half held damp paper and the other dry paper (Table 1).\n\nExperiment 2. Both halves held damp paper. One half was lit by a lamp and the other was covered to keep it dark (Table 2).\n\nExperiment 3. Single woodlice were placed in a closed dish in which the air was kept at different relative humidities, and the distance each walked in 5 minutes was measured (Table 3). Each value is the mean for ten woodlice.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: damp and dry halves, both dark",
+        "type": "table",
+        "head": [
+          "Trial",
+          "Number in damp half",
+          "Number in dry half"
+        ],
+        "rows": [
+          [
+            "1",
+            "17",
+            "3"
+          ],
+          [
+            "2",
+            "15",
+            "5"
+          ],
+          [
+            "3",
+            "18",
+            "2"
+          ],
+          [
+            "4",
+            "16",
+            "4"
+          ],
+          [
+            "5",
+            "16",
+            "4"
+          ],
+          [
+            "Mean",
+            "16.4",
+            "3.6"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: dark and lit halves, both damp",
+        "type": "table",
+        "head": [
+          "Trial",
+          "Number in dark half",
+          "Number in lit half"
+        ],
+        "rows": [
+          [
+            "1",
+            "14",
+            "6"
+          ],
+          [
+            "2",
+            "16",
+            "4"
+          ],
+          [
+            "3",
+            "15",
+            "5"
+          ],
+          [
+            "4",
+            "16",
+            "4"
+          ],
+          [
+            "5",
+            "15",
+            "5"
+          ],
+          [
+            "Mean",
+            "15.2",
+            "4.8"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: walking in air of different humidity",
+        "type": "table",
+        "head": [
+          "Relative humidity (%)",
+          "Distance walked in 5 min (cm)"
+        ],
+        "rows": [
+          [
+            "30",
+            "142"
+          ],
+          [
+            "50",
+            "118"
+          ],
+          [
+            "70",
+            "76"
+          ],
+          [
+            "90",
+            "31"
+          ]
+        ]
+      }
+    ],
+    "id": "sp67"
+  },
+  {
+    "title": "Where Did the Moon Come From?",
+    "type": "Conflicting Viewpoints",
+    "intro": "Rock samples brought back from the Moon, and measurements made from orbit, allow scientists to compare the Moon with Earth. Table 1 summarises some of these measurements, along with the same measurements for Mars, which formed in a different part of the solar system. Three scientists explain where the Moon came from.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Earth, the Moon and Mars compared",
+        "type": "table",
+        "head": [
+          "Property",
+          "Earth",
+          "Moon",
+          "Mars"
+        ],
+        "rows": [
+          [
+            "Mean density (g/cm³)",
+            "5.5",
+            "3.3",
+            "3.9"
+          ],
+          [
+            "Radius of iron core (fraction of body’s radius)",
+            "0.55",
+            "0.20",
+            "0.50"
+          ],
+          [
+            "Oxygen isotope signature (difference from Earth, parts per million)",
+            "0",
+            "0",
+            "+300"
+          ],
+          [
+            "Potassium-to-uranium ratio (higher means richer in volatile elements)",
+            "12,000",
+            "2,500",
+            "20,000"
+          ]
+        ]
+      },
+      {
+        "label": "Scientist 1",
+        "caption": "A giant impact",
+        "type": "note",
+        "text": "Early in Earth’s history, a body about the size of Mars struck Earth a glancing blow. The impact threw vaporized and molten rock from the outer, rocky layers of both bodies into orbit, where it gathered to form the Moon. Because the Moon was built mostly from rocky outer material rather than from iron-rich cores, it has only a small iron core. The heat of the impact drove off much of the material’s volatile elements, those that boil away easily, such as potassium. The impactor’s material was thoroughly mixed with Earth’s, so the Moon and Earth should share the same oxygen isotope signature."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "Formed side by side",
+        "type": "note",
+        "text": "Earth and the Moon formed at the same time, side by side, from the same ring of rock and dust circling the young Sun. Because they grew from the same material, they share the same oxygen isotope signature. Earth, being larger, drew most of the ring’s iron toward itself, leaving the Moon with little. No violent event was involved, so the Moon should hold about as large a share of volatile elements as Earth does."
+      },
+      {
+        "label": "Scientist 3",
+        "caption": "Captured",
+        "type": "note",
+        "text": "The Moon formed elsewhere in the solar system, in a region poorer in iron, and was later captured by Earth’s gravity when it passed close by. This explains why the Moon is so much less dense than Earth. Bodies that formed in different regions of the solar system carry different oxygen isotope signatures, as Mars does, so the Moon’s signature should differ measurably from Earth’s."
+      }
+    ],
+    "id": "sp68"
+  },
+  {
+    "title": "What Is Heat?",
+    "type": "Conflicting Viewpoints",
+    "intro": "In the early 1800s, scientists disagreed about the nature of heat. Two students each defend one of the historical views, using the results of two experiments. In Experiment 1, samples of water at different temperatures were mixed in an insulated cup and the final temperature was recorded (Table 1). In Experiment 2, a falling weight turned a paddle wheel inside an insulated container holding 500 g of water, and the rise in the water’s temperature was recorded for different amounts of work done by the weight (Table 2). In a separate test, water was weighed before and after being heated from 20 °C to 80 °C; its mass did not change, to within 0.01 g.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: mixing warm and cool water",
+        "type": "table",
+        "head": [
+          "Warm water",
+          "Cool water",
+          "Final temperature (°C)"
+        ],
+        "rows": [
+          [
+            "100 g at 80 °C",
+            "100 g at 20 °C",
+            "50"
+          ],
+          [
+            "100 g at 80 °C",
+            "300 g at 20 °C",
+            "35"
+          ],
+          [
+            "200 g at 60 °C",
+            "100 g at 30 °C",
+            "50"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: stirring 500 g of water",
+        "type": "table",
+        "head": [
+          "Work done by falling weight (J)",
+          "Temperature rise of water (°C)"
+        ],
+        "rows": [
+          [
+            "1000",
+            "0.48"
+          ],
+          [
+            "2000",
+            "0.96"
+          ],
+          [
+            "4000",
+            "1.91"
+          ],
+          [
+            "8000",
+            "3.83"
+          ]
+        ]
+      },
+      {
+        "label": "Student 1",
+        "caption": "Heat is a fluid",
+        "type": "note",
+        "text": "Heat is a weightless, invisible fluid called caloric, which flows from hotter bodies to colder ones. Caloric cannot be created or destroyed, so when warm and cool water are mixed, the caloric lost by the warm water is exactly the amount the cool water gains. Rubbing or stirring warms a material because it squeezes caloric out of the material, the way wringing a sponge squeezes out water."
+      },
+      {
+        "label": "Student 2",
+        "caption": "Heat is motion",
+        "type": "note",
+        "text": "Heat is the energy of the constant, random motion of the particles that make up matter. When warm and cool water are mixed, the faster particles share their energy with the slower ones until all of them move, on average, alike. Work done on a material, by stirring or rubbing, speeds up its particles, and there is no limit to how much heat can be produced this way for as long as the work continues."
+      }
+    ],
+    "id": "sp69"
+  },
+  {
+    "title": "Why Do Zebras Have Stripes?",
+    "type": "Conflicting Viewpoints",
+    "intro": "Zebras are the only wild horses with bold black-and-white stripes. Researchers in Kenya dressed tame horses in cloth coats and counted how many horseflies, which bite and spread disease, approached and landed on each coat in 30 minutes (Table 1). They also measured surface and skin temperatures at midday on zebras and on plain-coated horses standing in the same field (Table 2). Three scientists explain why zebras have stripes.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Horseflies on three coats in 30 minutes",
+        "type": "table",
+        "head": [
+          "Coat",
+          "Horsefly approaches",
+          "Horsefly landings"
+        ],
+        "rows": [
+          [
+            "Plain black",
+            "92",
+            "58"
+          ],
+          [
+            "Plain white",
+            "88",
+            "31"
+          ],
+          [
+            "Black-and-white striped",
+            "90",
+            "6"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Temperatures at midday in the same field",
+        "type": "table",
+        "head": [
+          "Animal",
+          "Black hair or stripes (°C)",
+          "White hair or stripes (°C)",
+          "Skin under the coat (°C)"
+        ],
+        "rows": [
+          [
+            "Zebra",
+            "52",
+            "40",
+            "36.2"
+          ],
+          [
+            "Black horse",
+            "53",
+            "—",
+            "36.4"
+          ],
+          [
+            "White horse",
+            "—",
+            "41",
+            "36.1"
+          ]
+        ]
+      },
+      {
+        "label": "Scientist 1",
+        "caption": "Stripes deter biting flies",
+        "type": "note",
+        "text": "Stripes protect zebras from biting flies. Horseflies find their targets by the pattern of light reflected from them, and narrow stripes confuse them as they come in to land, so they fly past or bump off without biting. Flies spread several diseases that kill zebras, so avoiding bites is a large advantage."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "Stripes cool the body",
+        "type": "note",
+        "text": "Stripes keep zebras cool in the hot sun. Black stripes absorb more sunlight and grow hotter than white ones, and the difference sets up small currents of air over the skin that carry heat away. A striped animal should therefore have cooler skin than a plain-coated animal of the same size standing in the same sun."
+      },
+      {
+        "label": "Scientist 3",
+        "caption": "Stripes confuse predators",
+        "type": "note",
+        "text": "Stripes protect zebras from lions and hyenas. When a herd of striped animals runs, the moving stripes make it hard for a predator to pick out a single animal and judge its speed and direction, so fewer chases end in a kill."
+      }
+    ],
+    "id": "sp70"
+  },
+  {
+    "title": "Why Does a Candle Go Out Under a Jar?",
+    "type": "Conflicting Viewpoints",
+    "intro": "When a burning candle is covered with a glass jar, the flame soon goes out. In Experiment 1, a candle was covered with jars of different volumes and the burning time was recorded (Table 1). In Experiment 2, sensors measured the gases in a 1.0 L jar before the candle was covered and just after its flame went out (Table 2). In Experiment 3, a 1.0 L jar was filled with gas mixtures from cylinders, the balance of each mixture being nitrogen, and a lit candle was lowered into it (Table 3). Three students explain why the flame goes out.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: jars of different sizes",
+        "type": "table",
+        "head": [
+          "Jar volume (L)",
+          "Burning time (s)"
+        ],
+        "rows": [
+          [
+            "0.5",
+            "11"
+          ],
+          [
+            "1.0",
+            "22"
+          ],
+          [
+            "2.0",
+            "45"
+          ],
+          [
+            "4.0",
+            "89"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: gases in the 1.0 L jar",
+        "type": "table",
+        "head": [
+          "Gas",
+          "Before covering (% of jar air)",
+          "After flame went out (% of jar air)"
+        ],
+        "rows": [
+          [
+            "Oxygen",
+            "20.9",
+            "15.8"
+          ],
+          [
+            "Carbon dioxide",
+            "0.04",
+            "3.2"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: prepared gas mixtures in the 1.0 L jar",
+        "type": "table",
+        "head": [
+          "Mixture",
+          "Oxygen (%)",
+          "Carbon dioxide (%)",
+          "Burning time (s)"
+        ],
+        "rows": [
+          [
+            "A",
+            "21",
+            "0",
+            "22"
+          ],
+          [
+            "B",
+            "21",
+            "5",
+            "21"
+          ],
+          [
+            "C",
+            "16",
+            "0",
+            "1"
+          ],
+          [
+            "D",
+            "30",
+            "0",
+            "60"
+          ]
+        ]
+      },
+      {
+        "label": "Student 1",
+        "caption": "Oxygen runs out",
+        "type": "note",
+        "text": "The flame uses up all of the oxygen in the jar. It goes out only when no oxygen is left."
+      },
+      {
+        "label": "Student 2",
+        "caption": "Oxygen runs low",
+        "type": "note",
+        "text": "The flame needs oxygen, but it cannot keep burning once the oxygen in the air around it falls below a certain level, somewhere around 16%. It goes out while plenty of oxygen is still left in the jar."
+      },
+      {
+        "label": "Student 3",
+        "caption": "Carbon dioxide smothers it",
+        "type": "note",
+        "text": "Oxygen is not the problem. The flame makes carbon dioxide, and it goes out once enough carbon dioxide has built up around it to smother it."
+      }
+    ],
+    "id": "sp71"
   }
 ]
