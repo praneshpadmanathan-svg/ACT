@@ -281,7 +281,7 @@ const STEPS: { n: string; title: string; detail: ReactNode }[] = [
 
 export function Landing() {
   const navigate = useNavigate();
-  const { continueAsGuest, progress, hasStarted, playerName } = useStore();
+  const { continueAsGuest, progress, hasStarted, playerName, isGuest, signOut } = useStore();
 
   /* "Have you been here before", not "have you scored any points".
 
@@ -296,7 +296,7 @@ export function Landing() {
      Having started and having a profile is what actually distinguishes a
      returning player from a visitor, and neither of them can be true by
      accident. */
-  const returning = hasStarted && Boolean(progress.profile);
+  const returning = (hasStarted || !isGuest) && Boolean(progress.profile);
 
   /* Counted from the same content the map counts, so the greeting cannot
      claim a total the world does not have. */
@@ -340,21 +340,49 @@ export function Landing() {
             >
               What is this?
             </a>
-            <a
-              className="btn btn-ghost btn-sm"
-              href={hrefFor({ name: 'auth', mode: 'signin' })}
-              onClick={() => sfx.select()}
-            >
-              Sign in
-            </a>
-            {returning ? (
-              <Button variant="primary" size="sm" onClick={() => navigate({ name: 'home' })}>
-                Continue
-              </Button>
+            {/* The header says which of three people you are. It used to show
+                "Sign in" beside "Continue" to everyone who had been here before,
+                so a guest read "Continue" as proof they were logged in, and a
+                logged-in player was offered a sign-in to the account they were
+                already in. */}
+            {!isGuest ? (
+              <>
+                <span className="mr-1 hidden max-w-[12rem] truncate font-read text-[13px] text-parchment-dim sm:inline">
+                  Logged in as <b className="text-parchment">{playerName}</b>
+                </span>
+                <button
+                  type="button"
+                  className="btn btn-ghost btn-sm"
+                  onClick={() => {
+                    sfx.select();
+                    void signOut();
+                  }}
+                >
+                  Log out
+                </button>
+                <Button variant="primary" size="sm" onClick={() => navigate({ name: 'home' })}>
+                  Open my camp
+                </Button>
+              </>
             ) : (
-              <Button variant="primary" size="sm" onClick={begin}>
-                Begin
-              </Button>
+              <>
+                <a
+                  className="btn btn-ghost btn-sm"
+                  href={hrefFor({ name: 'auth', mode: 'signin' })}
+                  onClick={() => sfx.select()}
+                >
+                  Log in
+                </a>
+                {returning ? (
+                  <Button variant="primary" size="sm" onClick={() => navigate({ name: 'home' })}>
+                    Play as guest
+                  </Button>
+                ) : (
+                  <Button variant="primary" size="sm" onClick={begin}>
+                    Start free
+                  </Button>
+                )}
+              </>
             )}
           </div>
         </div>
@@ -400,7 +428,11 @@ export function Landing() {
               means the thing you press and the number you earned; a dateline is
               neither, so it gives the colour up and becomes legible. */}
           <Eyebrow className="hero-type mb-5 text-parchment-light">
-            {returning ? 'The road is where you left it' : 'The 2025+ Enhanced ACT'}
+            {!returning
+              ? 'The 2025+ Enhanced ACT'
+              : isGuest
+                ? 'Playing as a guest on this browser'
+                : 'The road is where you left it'}
           </Eyebrow>
 
           <h1 className="heading hero-type text-[clamp(2.4rem,7vw,4.4rem)] leading-[1.1] text-parchment-light">
@@ -447,15 +479,38 @@ export function Landing() {
                   trailing
                   onClick={() => navigate({ name: 'home' })}
                 >
-                  Continue your quest
+                  {isGuest ? 'Keep playing as guest' : 'Continue your quest'}
                 </Button>
-                <a
-                  className="btn btn-ghost btn-lg"
-                  href={hrefFor({ name: 'path' })}
-                  onClick={() => sfx.select()}
-                >
-                  Open Study
-                </a>
+                {isGuest ? (
+                  <a
+                    className="btn btn-ghost btn-lg"
+                    href={hrefFor({ name: 'auth', mode: 'signin' })}
+                    onClick={() => sfx.select()}
+                  >
+                    Log in instead
+                  </a>
+                ) : (
+                  <a
+                    className="btn btn-ghost btn-lg"
+                    href={hrefFor({ name: 'path' })}
+                    onClick={() => sfx.select()}
+                  >
+                    Open Study
+                  </a>
+                )}
+                {isGuest && (
+                  <p className="hero-type w-full font-read text-[14px] text-parchment-dim">
+                    You are not logged in, so this progress lives only in this browser.{' '}
+                    <a
+                      href={hrefFor({ name: 'auth', mode: 'signup' })}
+                      onClick={() => sfx.select()}
+                      className="font-semibold text-parchment underline underline-offset-4"
+                    >
+                      Create a free account
+                    </a>{' '}
+                    to keep it.
+                  </p>
+                )}
               </>
             ) : (
               <>

@@ -22,8 +22,9 @@
    something hit the screen. Sticky is unaffected by that. */
 
 import { useEffect, useState, type ReactNode } from 'react';
-import { hrefFor, useRoute, type Route } from '@/lib/router';
+import { hrefFor, useNavigate, useRoute, type Route } from '@/lib/router';
 import { useStore } from '@/lib/store';
+import { cloudEnabled } from '@/lib/supabase';
 import { rankProgress } from '@/lib/progress';
 import { isMuted, onMutedChange, sfx, toggleMuted } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
@@ -295,6 +296,66 @@ function PlayerBlock({ compact }: { compact?: boolean }) {
   );
 }
 
+/* Who you are playing as, and the way in or out, always one glance away.
+
+   Logging out used to live only inside Settings, and a guest had no sign on
+   screen that they were a guest at all. This line says it plainly under the
+   player block: an account shows its name and "Log out"; a guest is told the
+   progress lives in this browser and gets "Log in" and "Create account". */
+function AccountLine({ onNavigate }: { onNavigate?: () => void }) {
+  const navigate = useNavigate();
+  const { isGuest, playerName, signOut } = useStore();
+  const link =
+    'inline-flex min-h-8 items-center font-read text-[12px] font-semibold text-cliffs-text underline-offset-2 transition-colors hover:underline';
+  const pick = () => {
+    sfx.select();
+    onNavigate?.();
+  };
+
+  if (!isGuest) {
+    return (
+      <div className="flex items-center justify-between gap-2 px-1">
+        <span className="min-w-0 truncate font-read text-[12px] text-ink-faint">
+          Logged in as <b className="text-parchment-dim">{playerName}</b>
+        </span>
+        <button
+          type="button"
+          className={link}
+          onClick={() => {
+            pick();
+            void signOut();
+            navigate({ name: 'landing' });
+          }}
+        >
+          Log out
+        </button>
+      </div>
+    );
+  }
+
+  if (!cloudEnabled) {
+    return (
+      <p className="px-1 font-read text-[12px] text-ink-faint">Progress saves to this browser.</p>
+    );
+  }
+
+  return (
+    <div className="px-1">
+      <p className="font-read text-[12px] leading-snug text-ink-faint">
+        Not logged in. Progress saves to this browser only.
+      </p>
+      <div className="flex gap-3">
+        <a href={hrefFor({ name: 'auth', mode: 'signin' })} onClick={pick} className={link}>
+          Log in
+        </a>
+        <a href={hrefFor({ name: 'auth', mode: 'signup' })} onClick={pick} className={link}>
+          Create account
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export function SideNav() {
   const route = useRoute();
   const { syncing } = useStore();
@@ -384,6 +445,7 @@ export function SideNav() {
             <PlayerBlock />
             <MuteButton />
           </div>
+          <AccountLine />
           {syncing && <p className="label-sm text-center">Syncing…</p>}
         </div>
       </aside>
@@ -477,6 +539,7 @@ export function SideNav() {
               <div className="hidden justify-end sm:flex">
                 <MuteButton />
               </div>
+              <AccountLine onNavigate={() => setMenuOpen(false)} />
             </div>
           </nav>
         )}

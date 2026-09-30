@@ -424,7 +424,7 @@ const STORED_CLOUD: { key: string; what: string; kept: string }[] = [
   {
     key: 'sb-…-auth-token',
     what: 'Keeps you signed in. Set by Supabase, our account provider.',
-    kept: 'Until you sign out.',
+    kept: 'Until you log out.',
   },
   {
     key: 'sb-…-auth-token-code-verifier',

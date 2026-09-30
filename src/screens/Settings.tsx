@@ -163,8 +163,8 @@ export function SettingsScreen() {
           ) : (
             <>
               <p className="mb-3 text-[13px] leading-relaxed text-ink-faint">
-                Signed in as <b className="text-parchment">{playerName}</b>. Your progress syncs to
-                every device you sign in on.
+                Logged in as <b className="text-parchment">{playerName}</b>. Your progress syncs to
+                every device you log in on.
               </p>
               <div className="flex flex-wrap gap-2.5">
                 <Button variant="ghost" onClick={() => void syncNow()} disabled={syncing}>
@@ -177,7 +177,7 @@ export function SettingsScreen() {
                     navigate({ name: 'landing' });
                   }}
                 >
-                  Sign out
+                  Log out
                 </Button>
               </div>
             </>

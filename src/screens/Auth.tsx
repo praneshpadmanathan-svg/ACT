@@ -1,4 +1,4 @@
-/* Sign in, sign up, forgot, reset — and the age gate in front of all of it.
+/* Log in, create an account, forgot, reset — and the age gate in front of all of it.
 
    Accounts are Supabase now, full stop. The old on-device password path is
    gone; see the note at the top of lib/identity.ts for why it had to be.
@@ -41,6 +41,10 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
   const navigate = useNavigate();
   const {
     userId,
+    playerName,
+    hasStarted,
+    progress,
+    signOut,
     continueAsGuest,
     claimGuestProgress,
     releaseGuestClaim,
@@ -61,6 +65,9 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
   /* Asked once, at account creation only, and only if we have not already been
      told. Playing needs no age because playing collects nothing. */
   const [ageChecked, setAgeChecked] = useState(() => rememberedVerdict() !== null);
+  /* Numbered steps only when both steps actually happen in front of you; a
+     returning browser that already answered skips straight to the form. */
+  const [askedAge, setAskedAge] = useState(false);
   const [tooYoung, setTooYoung] = useState(() => rememberedVerdict() === 'too-young');
   /* Explicit agreement, never pre-ticked. "By creating an account you agree"
      under the button was notice, not consent, and the people agreeing are
@@ -75,7 +82,7 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
       return;
     }
     continueAsGuest();
-    navigate({ name: 'onboarding' }, { replace: true });
+    navigate({ name: progress.profile ? 'home' : 'onboarding' }, { replace: true });
   };
 
   const go = (next: AuthMode) => {
@@ -229,8 +236,8 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
     return (
       <Frame title="Accounts aren’t switched on yet">
         <p className="mb-4 font-read text-[15px] leading-relaxed text-parchment-dim">
-          This copy of ACT Command has no account server connected, so there is nothing to sign in
-          to right now. Everything saves to this browser instead — all{' '}
+          This copy of ACT Command has no account server connected, so there is nothing to log in to
+          right now. Everything saves to this browser instead — all{' '}
           {LIBRARY_STATS.totalQuestions.toLocaleString()} questions, every lesson, the duels and
           timed practice work exactly the same.
         </p>
@@ -242,6 +249,33 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         </p>
         <Button variant="primary" size="lg" trailing className="w-full" onClick={startPlaying}>
           Start the journey
+        </Button>
+        <BackLink onClick={() => navigate({ name: 'landing' })} />
+      </Frame>
+    );
+  }
+
+  /* Already logged in. The form below would otherwise sit there offering to
+     log you in to the account you are in, or to make you a second one. */
+  if (userId && mode !== 'reset') {
+    return (
+      <Frame title="You are logged in" subtitle={`As ${playerName}.`}>
+        <Button
+          variant="primary"
+          size="lg"
+          className="w-full"
+          onClick={() => navigate({ name: 'home' }, { replace: true })}
+        >
+          Open my camp
+        </Button>
+        <Button
+          className="mt-3 w-full"
+          onClick={() => {
+            sfx.select();
+            void signOut();
+          }}
+        >
+          Log out
         </Button>
         <BackLink onClick={() => navigate({ name: 'landing' })} />
       </Frame>
@@ -274,7 +308,7 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
             onClick={() => go('signin')}
             className="font-semibold text-parchment-dim underline underline-offset-2 transition-colors hover:text-parchment"
           >
-            Sign in
+            Log in
           </button>
         </p>
         <BackLink onClick={() => navigate({ name: 'landing' })} />
@@ -289,9 +323,11 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
           const verdict = verdictFor(dob);
           rememberVerdict(verdict);
           setAgeChecked(true);
+          setAskedAge(true);
           setTooYoung(verdict === 'too-young');
         }}
         onBack={() => navigate({ name: 'landing' })}
+        onSignIn={() => go('signin')}
       />
     );
   }
@@ -348,28 +384,28 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
             />
             {error && <ErrorNote>{error}</ErrorNote>}
             <Button type="submit" variant="primary" size="lg" className="w-full" disabled={busy}>
-              {busy ? 'Checking…' : 'Sign in'}
+              {busy ? 'Checking…' : 'Log in'}
             </Button>
           </form>
         )}
 
         <Button className="mt-6 w-full" onClick={() => go('signin')}>
-          Back to sign in
+          Back to log in
         </Button>
       </Frame>
     );
   }
 
   const title = {
-    signup: 'Begin your journey',
-    signin: 'Welcome back',
+    signup: 'Create an account',
+    signin: 'Log in',
     forgot: 'Reset your password',
     reset: 'Choose a new password',
   }[mode];
 
   const subtitle = {
-    signup: 'An account keeps your progress on every device you use.',
-    signin: 'Your world is where you left it.',
+    signup: `${askedAge ? 'Step 2 of 2. ' : ''}An account keeps your progress on every device you use.`,
+    signin: 'Pick up your progress on any device.',
     forgot: 'We will email you a link to set a new one.',
     reset: 'Pick something you have not used anywhere else.',
   }[mode];
@@ -390,34 +426,13 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         </div>
       )}
 
-      {(mode === 'signup' || mode === 'signin') && (
-        <div className="mb-6 grid grid-cols-2 gap-1 rounded-lg border border-leather-700 bg-leather-900 p-1">
-          {(['signup', 'signin'] as AuthMode[]).map((m) => (
-            <button
-              key={m}
-              type="button"
-              onClick={() => go(m)}
-              aria-pressed={mode === m}
-              className={cx(
-                'rounded border px-3 py-2 font-display [@media(pointer:coarse)]:min-h-11 text-[13px] font-semibold transition-colors',
-                mode === m
-                  ? 'border-gold-deep bg-leather-750 text-parchment'
-                  : 'border-transparent text-ink-faint hover:text-parchment',
-              )}
-            >
-              {m === 'signup' ? 'New traveller' : 'Returning'}
-            </button>
-          ))}
-        </div>
-      )}
-
       <form onSubmit={submit} className="space-y-4">
         {mode === 'signup' && (
           <Field
-            label="Name"
+            label="Display name"
             value={name}
             onChange={setName}
-            placeholder="What shall we call you?"
+            placeholder="What should we call you?"
             maxLength={24}
             autoComplete="nickname"
           />
@@ -485,7 +500,7 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
             ? 'Working…'
             : {
                 signup: 'Create account',
-                signin: 'Sign in',
+                signin: 'Log in',
                 forgot: 'Email me a link',
                 reset: 'Save password',
               }[mode]}
@@ -512,13 +527,29 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
         </div>
       )}
 
+      {/* One plain sentence to switch forms, where tabs labelled "New
+          traveller" and "Returning" used to sit above the fields. */}
+      {(mode === 'signin' || mode === 'signup') && (
+        <p className="mt-5 text-center font-read text-[14px] text-ink-faint">
+          {mode === 'signin' ? 'New here? ' : 'Already have an account? '}
+          <button
+            type="button"
+            onClick={() => go(mode === 'signin' ? 'signup' : 'signin')}
+            className="font-semibold text-cliffs-text underline-offset-2 hover:underline"
+          >
+            {mode === 'signin' ? 'Create an account' : 'Log in'}
+          </button>
+        </p>
+      )}
+
       {mode !== 'reset' && (
-        <div className="mt-7 border-t border-leather-700 pt-6 text-center">
+        <div className="mt-6 border-t border-leather-700 pt-6 text-center">
           <Button className="w-full" onClick={startPlaying}>
-            Play without an account
+            {hasStarted && progress.profile ? 'Back to my guest game' : 'Play without an account'}
           </Button>
           <p className="mt-3 font-read text-[13px] text-ink-faint">
-            Everything is unlocked either way. Progress saves to this browser.
+            Everything is unlocked either way. Without an account, progress saves to this browser
+            only.
           </p>
         </div>
       )}
@@ -574,7 +605,15 @@ function Frame({
    than a number: "03/04" is the 4th of March or the 3rd of April depending on
    where the student grew up, and guessing wrong could put them on the wrong
    side of the line. Nothing on this screen mentions what the threshold is. */
-function AgeGate({ onAnswer, onBack }: { onAnswer: (dob: DateParts) => void; onBack: () => void }) {
+function AgeGate({
+  onAnswer,
+  onBack,
+  onSignIn,
+}: {
+  onAnswer: (dob: DateParts) => void;
+  onBack: () => void;
+  onSignIn: () => void;
+}) {
   const [month, setMonth] = useState('');
   const [day, setDay] = useState('');
   const [year, setYear] = useState('');
@@ -595,7 +634,7 @@ function AgeGate({ onAnswer, onBack }: { onAnswer: (dob: DateParts) => void; onB
   const thisYear = new Date().getFullYear();
 
   return (
-    <Frame title="When were you born?" subtitle="One question, then you are on your way.">
+    <Frame title="Create an account" subtitle="Step 1 of 2. When were you born?">
       <form onSubmit={submit} className="space-y-4">
         <div className="grid grid-cols-[1.4fr_0.8fr_1fr] gap-2.5">
           <label className="block">
@@ -635,9 +674,20 @@ function AgeGate({ onAnswer, onBack }: { onAnswer: (dob: DateParts) => void; onB
         {error && <ErrorNote>{error}</ErrorNote>}
 
         <Button type="submit" variant="primary" size="lg" className="w-full">
-          Continue
+          Next
         </Button>
       </form>
+
+      <p className="mt-4 text-center font-read text-[14px] text-ink-faint">
+        Already have an account?{' '}
+        <button
+          type="button"
+          onClick={onSignIn}
+          className="font-semibold text-cliffs-text underline-offset-2 hover:underline"
+        >
+          Log in
+        </button>
+      </p>
 
       <p className="mt-4 font-read text-[12.5px] leading-relaxed text-ink-faint">
         We use this once, to work out which parts of the site we are allowed to offer you. Your date

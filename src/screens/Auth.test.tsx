@@ -16,6 +16,10 @@ vi.mock('@/lib/supabase', () => ({
 vi.mock('@/lib/store', () => ({
   useStore: () => ({
     userId: null,
+    playerName: 'Traveller',
+    hasStarted: false,
+    progress: {},
+    signOut: vi.fn(),
     continueAsGuest: vi.fn(),
     claimGuestProgress: vi.fn(),
     releaseGuestClaim: vi.fn(),
