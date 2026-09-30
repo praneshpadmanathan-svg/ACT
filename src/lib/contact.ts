@@ -27,7 +27,7 @@
  * is the only reason the two can be trusted to agree.
  */
 
-const FALLBACK = 'pranesh.padmanathan@gmail.com';
+const FALLBACK = 'clipsarecool3@gmail.com';
 
 const read = (value: unknown): string | null => {
   const text = typeof value === 'string' ? value.trim() : '';

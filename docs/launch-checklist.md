@@ -48,13 +48,16 @@ fill the database for everyone else.
 ## 2. Run the migrations
 
 Paste each file in [`supabase/migrations/`](../supabase/migrations/) into the SQL
-editor and run them **in filename order**. There are **five**. `0001` creates the
+editor and run them **in filename order**. There are **six**. `0001` creates the
 table and its policies and `0002` adds the compare-and-set write that stops one
 device silently overwriting another's work; `0003` and `0004` built the paywall
-and `0005` removes it again, because everything is free now.
+and `0005` removes it again, because everything is free now. `0006` adds the
+`feedback` table behind the in-app Send feedback page: anyone can add a report,
+nobody can read one back through the API, and you read them in Table editor →
+`feedback`.
 
 On a fresh project the last three cancel out, so running only `0001` and `0002`
-reaches the same schema. Run all five anyway — the point of a numbered directory
+reaches the same schema. Run all six anyway — the point of a numbered directory
 is that the database can say which migrations it has seen, and a project that
 skipped three of them cannot.
 
@@ -290,3 +293,12 @@ could be answered from the run list before.
 "ACT" is a registered trademark of ACT, Inc. This app is not affiliated with
 them, and the terms page says so plainly. Keep it that way: describing what the
 material covers is fine, implying endorsement or using their branding is not.
+
+## Visitor counts (Vercel Web Analytics)
+
+The app ships the Vercel Analytics script, but it records nothing until you turn
+it on: Vercel dashboard → the project → **Analytics** → **Enable**. It is
+cookieless and first-party (`/_vercel/insights`), so the CSP needs no change.
+Every URL is reduced to the screen name before sending, because Supabase puts
+login tokens in the hash. Accounts, as opposed to visitors, are listed in
+Supabase → Authentication → Users.

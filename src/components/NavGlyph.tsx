@@ -23,6 +23,7 @@ const SHARED: Partial<Record<GlyphName, IconName>> = {
   gear: 'settings',
   sound: 'speaker',
   close: 'cross',
+  quill: 'quill',
 };
 
 export type GlyphName =
@@ -39,7 +40,8 @@ export type GlyphName =
   | 'sound'
   | 'soundOff'
   | 'menu'
-  | 'close';
+  | 'close'
+  | 'quill';
 
 interface Props {
   name: GlyphName;

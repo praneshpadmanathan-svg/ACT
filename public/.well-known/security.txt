@@ -9,7 +9,7 @@
 # bypasses the age gate, and any key in the deployed bundle that is not the
 # publishable anon key.
 
-Contact: mailto:pranesh.padmanathan@gmail.com
+Contact: mailto:clipsarecool3@gmail.com
 Expires: 2027-08-09T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://act-red.vercel.app/.well-known/security.txt
@@ -18,5 +18,5 @@ Policy: https://act-red.vercel.app/#/terms
 # Expires is not decoration: past that date this file is formally stale and
 # should be treated as unmaintained. Renew it, or remove it.
 #
-# The contact address is a personal mailbox and should move to a role address
-# before wide distribution — tracked in docs/launch-checklist.md.
+# The contact address is the project's own mailbox, kept separate from the
+# owner's personal one. It must match the address in src/lib/contact.ts.

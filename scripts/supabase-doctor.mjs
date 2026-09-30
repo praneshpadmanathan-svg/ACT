@@ -202,6 +202,40 @@ async function req(path, init = {}) {
   }
 }
 
+/* ------------------------------------------ migration 0006: feedback table */
+
+{
+  /* A read, never a write: the doctor must not leave a row behind. 0006 grants
+     anon insert only, so a select is refused with 42501 when the table exists
+     and answers PGRST205 when it does not — both without touching data. */
+  const { res, json, err } = await req('/rest/v1/feedback?select=id&limit=1');
+  const name = 'Table `feedback` (migration 0006)';
+  if (err) {
+    fail(name, 'The request failed.', 'See above.');
+  } else if (json?.code === 'PGRST205' || json?.code === '42P01' || res.status === 404) {
+    fail(
+      name,
+      json?.message ?? 'The table does not exist.',
+      'Paste supabase/migrations/0006_feedback.sql into the SQL editor. Until then ' +
+        'Send feedback falls back to email, which most school laptops cannot send.',
+    );
+  } else if (res.status === 401 || res.status === 403 || json?.code === '42501') {
+    ok(name, 'exists, and anon cannot read it back');
+  } else if (res.ok) {
+    fail(
+      name,
+      'An unauthenticated caller can read feedback. Reports can hold reply addresses.',
+      'Re-run 0006: it revokes everything and grants insert only.',
+    );
+  } else {
+    warn(
+      name,
+      `Unexpected HTTP ${res.status}: ${json?.message ?? json?.code ?? 'no message'}`,
+      'Check the table in the SQL editor.',
+    );
+  }
+}
+
 /* ------------------------------------- 3. migration 0002: push_progress() */
 
 {

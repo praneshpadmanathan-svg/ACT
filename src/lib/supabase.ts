@@ -434,3 +434,39 @@ export async function deleteAccount(): Promise<AuthResult> {
   await supabase.auth.signOut();
   return { ok: true };
 }
+
+/* ---------------------------------------------------------------- feedback */
+
+export type FeedbackKind = 'bug' | 'content' | 'idea' | 'other';
+
+export interface FeedbackInput {
+  kind: FeedbackKind;
+  area?: string;
+  message: string;
+  contact?: string;
+}
+
+/**
+ * Add one row to `feedback` (migration 0006). Write-only: the table has no
+ * select policy, so this sends with the default `return=minimal` and never
+ * asks for the row back. `user_id` is filled server-side from the session.
+ *
+ * `missing` means the table is not there yet — the migration has not been
+ * run — so the caller can offer email instead of a bare failure.
+ */
+export async function sendFeedback(
+  input: FeedbackInput,
+): Promise<{ ok: true } | { ok: false; missing: boolean; error: string }> {
+  if (!supabase) return { ok: false, missing: true, error: 'No feedback server is connected.' };
+  const { error } = await supabase.from('feedback').insert({
+    kind: input.kind,
+    area: input.area?.slice(0, 40) || null,
+    message: input.message.trim().slice(0, 4000),
+    contact: input.contact?.trim().slice(0, 200) || null,
+    user_agent: navigator.userAgent.slice(0, 400),
+  });
+  if (!error) return { ok: true };
+  reportWarn('feedback.send', error.message);
+  const missing = error.code === 'PGRST205' || error.code === '42P01';
+  return { ok: false, missing, error: friendlyError(error.message) };
+}

@@ -143,6 +143,13 @@ const GROUPS: NavGroup[] = [
         match: ['settings'],
         hint: 'Theme, reading, account, data',
       },
+      {
+        label: 'Send feedback',
+        glyph: 'quill',
+        route: { name: 'feedback' },
+        match: ['feedback'],
+        hint: 'Report a bug or share an idea',
+      },
     ],
   },
 ];

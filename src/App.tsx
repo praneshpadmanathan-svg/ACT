@@ -4,6 +4,7 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import { useNavigate, useRoute } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { onUpdateReady } from '@/lib/pwa';
+import { startAnalytics, trackScreen } from '@/lib/analytics';
 import { MotionProvider } from '@/lib/motion';
 import { registerStage } from '@/lib/juice';
 import { SideNav } from '@/components/Shell';
@@ -54,6 +55,7 @@ const load = {
   tests: () => import('@/screens/Tests'),
   stats: () => import('@/screens/Stats'),
   settings: () => import('@/screens/Settings'),
+  feedback: () => import('@/screens/SendFeedback'),
 };
 
 const Auth = lazy(() => load.auth().then((m) => ({ default: m.Auth })));
@@ -81,6 +83,7 @@ const TestRunner = lazy(() => load.tests().then((m) => ({ default: m.TestRunner 
 const ReportScreen = lazy(() => load.tests().then((m) => ({ default: m.ReportScreen })));
 const StatsScreen = lazy(() => load.stats().then((m) => ({ default: m.StatsScreen })));
 const SettingsScreen = lazy(() => load.settings().then((m) => ({ default: m.SettingsScreen })));
+const FeedbackScreen = lazy(() => load.feedback().then((m) => ({ default: m.FeedbackScreen })));
 
 /** Routes that render their own full-screen chrome and suppress the top bar.
  *  The adventure map used to be here — a full-viewport game view with its own
@@ -148,6 +151,11 @@ function ScreenFallback() {
 
 export default function App() {
   const route = useRoute();
+
+  useEffect(() => {
+    startAnalytics();
+    trackScreen(route);
+  }, [route]);
   const navigate = useNavigate();
   const { authReady, hasStarted, progress, authRedirect, clearAuthRedirect } = useStore();
 
@@ -396,6 +404,8 @@ function renderRoute(route: ReturnType<typeof useRoute>) {
       return <StatsScreen />;
     case 'settings':
       return <SettingsScreen />;
+    case 'feedback':
+      return <FeedbackScreen />;
     default:
       return <Home />;
   }

@@ -23,7 +23,7 @@ import { Glyph } from '@/components/Icon';
 import { Art } from '@/components/Art';
 import { LIBRARY_STATS } from '@/content/stats';
 
-const UPDATED = '27 September 2026';
+const UPDATED = '30 September 2026';
 
 type LegalPage = 'privacy' | 'terms' | 'cookies';
 
@@ -152,7 +152,7 @@ function Privacy() {
       <H>What we never do</H>
       <UL>
         <LI>No advertising, and no advertising trackers.</LI>
-        <LI>No analytics services, no third-party pixels, no fingerprinting.</LI>
+        <LI>No third-party pixels, no fingerprinting, no tracking you from one site to another.</LI>
         <LI>No selling or sharing your information with anyone.</LI>
         <LI>No building a profile of you for anything other than showing you your own progress.</LI>
         <LI>No messaging, no public profiles, no leaderboards — nobody else can see you here.</LI>
@@ -239,6 +239,27 @@ function Privacy() {
         </>
       )}
 
+      <H>Visitor counts</H>
+      <P>
+        To know whether anyone is using the site, and which parts, we count visits with Vercel Web
+        Analytics. It sets no cookies and cannot tell who you are. It records which screen was
+        opened (just its name, like “drills”, never anything you typed), the country you are in, the
+        kind of device and browser, and the site that linked you here. We only ever see totals.
+      </P>
+
+      {cloudEnabled && (
+        <>
+          <H>Feedback you send</H>
+          <P>
+            If you use Send feedback, we store what you wrote, the kind of report and part of the
+            app you picked, the reply address if you gave one, and your browser’s name and version
+            so we can reproduce a bug. If you are logged in, the report is linked to your account;
+            if not, it is anonymous. Only we can read reports, and we use them only to fix things
+            and reply.
+          </P>
+        </>
+      )}
+
       <H>If you email us</H>
       <P>
         If you write to us (to report a question, ask for help, or make a privacy request), we get
@@ -248,8 +269,8 @@ function Privacy() {
 
       <H>Cookies</H>
       <P>
-        We set no cookies at all: no tracking cookies, no advertising cookies, no analytics. Your
-        browser stores your progress and settings locally
+        We set no cookies at all: no tracking cookies, no advertising cookies, no analytics cookies.
+        Your browser stores your progress and settings locally
         {cloudEnabled ? ', and if you are signed in it holds a token that keeps you signed in' : ''}
         . Every item is listed, with what it is for, on the{' '}
         <A href={hrefFor({ name: 'cookies' })}>cookies and storage</A> page. None of it is used to
@@ -444,7 +465,8 @@ function Cookies() {
         ACT Command sets <B>no cookies</B>. It does keep a few things in your browser’s local
         storage so the app works: your progress, your settings, and (if you have an account) the
         token that keeps you signed in. None of it is used for advertising or tracking, and none of
-        it is shared.
+        it is shared. Our visitor counts (see the privacy policy) use no cookies and store nothing
+        on your device.
       </Lead>
 
       <H>What is stored, and why</H>
