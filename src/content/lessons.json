@@ -19,7 +19,7 @@
       ],
       [
         "Essential or extra?",
-        "A clause that picks out which one you mean is essential and takes no commas; extra information takes a pair. One subject with two verbs (<i>tasted the sauce and added salt</i>) needs no comma before “and”. A contrasting aside in mid-sentence (<i>It was the heat, not the hills, that slowed us</i>) is extra information too, so it takes a pair of commas.",
+        "A clause that picks out which one you mean is essential and takes no commas; extra information takes a pair. One subject with two verbs (<i>tasted the sauce and added salt</i>) needs no comma before “and”. A contrasting aside in mid-sentence (<i>It was the heat, not the hills, that slowed us</i>) is extra information too, so it takes a pair of commas. A name that identifies which person you mean is essential too: <i>The novelist Toni Morrison won</i> takes no commas. When a quotation is split by its tag, put a comma on each side of the tag: <i>“If you wait,” she said, “it will pass.”</i>",
         "<i>The students who finished early left.</i> (only those)  <i>The students, who finished early, left.</i> (all of them)"
       ]
     ],
@@ -45,7 +45,7 @@
       ],
       [
         "Family names and time",
-        "Make a family name plural first, then possessive: <i>the Joneses’ house</i>. Time words take possessives too: <i>a day’s work</i>, <i>two hours’ delay</i>. Separate ownership marks every name: <i>Ana’s and Lia’s bikes</i>.",
+        "Make a family name plural first, then possessive: <i>the Joneses’ house</i>. Time words take possessives too: <i>a day’s work</i>, <i>two hours’ delay</i>. Separate ownership marks every name: <i>Ana’s and Lia’s bikes</i>. Money works the same way as time: <i>ten dollars’ worth</i>, <i>a week’s notice</i>.",
         "<i>the Joneses’ house</i>  <i>two hours’ delay</i>"
       ]
     ],
@@ -56,7 +56,7 @@
     "rules": [
       [
         "Find the main verb",
-        "An -ing word by itself is NOT a main verb. If nothing is actually happening in a standalone way, it’s a fragment. A command is complete even with no written subject: <i>Go.</i> has an understood “you”. A “to” form (<i>to finish</i>) is never a main verb either, and a past participle alone (<i>built in 1890</i>) needs a helper such as <i>was</i> or a subject and verb of its own.",
+        "An -ing word by itself is NOT a main verb. If nothing is actually happening in a standalone way, it’s a fragment. A command is complete even with no written subject: <i>Go.</i> has an understood “you”. A “to” form (<i>to finish</i>) is never a main verb either, and a past participle alone (<i>built in 1890</i>) needs a helper such as <i>was</i> or a subject and verb of its own. An -ing word can be the subject of a sentence, though: <i>Swimming after dark is not allowed</i> is complete, because <i>is</i> is its verb. A verb inside a “that” clause (<i>The idea that the moon controls the tides</i>) belongs to the clause, not the sentence, so the group is still a fragment. A “such as” list is not a sentence; attach it to the one before with a comma.",
         "Fragment: <i>The team, working hard.</i>  Fixed: <i>The team worked hard.</i>"
       ],
       [
@@ -82,7 +82,7 @@
       ],
       [
         "Colon = announcement",
-        "A colon must follow a COMPLETE sentence, then introduces a list, example, or explanation.",
+        "A colon must follow a COMPLETE sentence, then introduces a list, example, or explanation. A command is complete, so <i>Bring the following:</i> may take a colon. A colon may not split a verb from its list: <i>My favourite fruits are: apples</i> and <i>The kit includes: a map</i> are wrong.",
         "<i>She packed three things: a map, water, and boots.</i>"
       ],
       [
@@ -92,7 +92,7 @@
       ],
       [
         "When no mark belongs",
-        "No mark goes between a verb and its object or the “that” clause it introduces, or after “such as”. Parentheses work like a pair of commas: they close around the extra words, with no comma added beside them. When the words in parentheses belong to a larger sentence, the sentence’s own period goes after the closing bracket: <i>The hall seats 500 (the old one seated 300).</i>",
+        "No mark goes between a verb and its object or the “that” clause it introduces, or after “such as”. Parentheses work like a pair of commas: they close around the extra words, with no comma added beside them. When the words in parentheses belong to a larger sentence, the sentence’s own period goes after the closing bracket: <i>The hall seats 500 (the old one seated 300).</i> When the words in parentheses are a whole sentence standing on their own, the capital and the period both go inside: <i>(The old one seated 300.)</i>",
         "<i>The survey found that most residents agreed.</i>  <i>The mill (built in 1790) still runs.</i>"
       ]
     ],
@@ -108,12 +108,12 @@
       ],
       [
         "Keep tense consistent",
-        "Don't switch tenses without a reason; follow the passage's timeline. A time word fixes the tense: <i>yesterday</i> takes the simple past, and <i>since</i> takes <i>has/have</i> + participle (<i>has built since 2010</i>).",
+        "Don't switch tenses without a reason; follow the passage's timeline. A time word fixes the tense: <i>yesterday</i> takes the simple past, and <i>since</i> takes <i>has/have</i> + participle (<i>has built since 2010</i>). <i>Tomorrow</i> and <i>next week</i> take the future: <i>will cross</i>.",
         "Wrong: <i>He runs and then jumped.</i>  Right: <i>He ran and then jumped.</i>"
       ],
       [
         "Singular sneaky subjects",
-        "each, every, everyone, neither, and 'the team' are singular. <i>The number of</i> is singular (<i>the number of cars has risen</i>), though <i>a number of</i> is plural; <i>mathematics</i> and <i>news</i> are singular too.",
+        "each, every, everyone, neither, and 'the team' are singular. <i>The number of</i> is singular (<i>the number of cars has risen</i>), though <i>a number of</i> is plural; <i>mathematics</i> and <i>news</i> are singular too. <i>Doesn’t</i> goes with he, she, it and singular nouns; <i>don’t</i> goes with I, you and plurals. With either…or and neither…nor, the verb agrees with the nearer subject: <i>Neither the players nor the coach was ready.</i>",
         "<i>Everyone has a ticket.</i>  <i>Neither answer is right.</i>"
       ],
       [
@@ -134,7 +134,7 @@
       ],
       [
         "Know the categories",
-        "Contrast: however, but, yet, nevertheless, although. Cause/effect: therefore, thus, so, consequently. Addition: also, moreover, in addition. Example: for example, for instance. Likeness: similarly, likewise. Restatement: in other words, that is. Condition: otherwise. Sequence and time: first, next, finally, meanwhile. Replacement: instead. <i>On the contrary</i> is stronger than <i>however</i>: it rejects the previous idea outright. Summary: in short, in sum. Justification: after all (the second sentence gives a reason for the first). As joining words, <i>so</i> gives a result and <i>for</i> gives a cause.",
+        "Contrast: however, but, yet, nevertheless, although. Cause/effect: therefore, thus, so, consequently. Addition: also, moreover, in addition. Example: for example, for instance. Likeness: similarly, likewise. Restatement: in other words, that is. Condition: otherwise. Sequence and time: first, next, finally, meanwhile. Replacement: instead. <i>On the contrary</i> is stronger than <i>however</i>: it rejects the previous idea outright. Summary: in short, in sum. Justification: after all (the second sentence gives a reason for the first). As joining words, <i>so</i> gives a result and <i>for</i> gives a cause. Cause also includes <i>because</i> and <i>since</i>. <i>In contrast</i> and <i>by contrast</i> set two different things side by side; <i>similarly</i> would claim they match.",
         "<i>It is cheap; however, it breaks easily.</i> (contrast)"
       ],
       [
@@ -165,7 +165,7 @@
       ],
       [
         "How many solutions?",
-        "Two lines with the same slope and different intercepts are parallel, so the system has no solution. Same slope and same intercept means infinitely many.",
+        "Two lines with the same slope and different intercepts are parallel, so the system has no solution. Same slope and same intercept means infinitely many. An equation true for every x has identical sides once simplified: 3(x + a) = 3x + 12 needs 3a = 12.",
         "y = 3x + 2 and y = 3x − 5 → no solution."
       ]
     ],
@@ -186,7 +186,7 @@
       ],
       [
         "Ratios scale together",
-        "Multiply every part by the same number. In a:b, part a is a/(a+b) of the whole. Give the parts one multiplier (2k and 3k) when a change is made to one part. To compare deals, find price ÷ quantity for each.",
+        "Multiply every part by the same number. In a:b, part a is a/(a+b) of the whole. Give the parts one multiplier (2k and 3k) when a change is made to one part. To compare deals, find price ÷ quantity for each. Adding water changes the concentration but not the amount of juice, so work with the fixed amount. To chain a:b and b:c, rescale so the shared term b matches, then read off a:c.",
         "3:2 of 20 → 5 parts → each part 4 → <b>12 and 8</b>."
       ],
       [
@@ -202,7 +202,7 @@
     "rules": [
       [
         "Core area formulas",
-        "Rectangle l×w. Triangle ½bh. Trapezoid ½(b₁+b₂)h. Circle πr². Circumference 2πr; an arc is (angle/360) of it. For a shaded region, subtract the inner area from the outer.",
+        "Rectangle l×w. Triangle ½bh. Trapezoid ½(b₁+b₂)h. Circle πr². Circumference 2πr; an arc is (angle/360) of it. For a shaded region, subtract the inner area from the outer. A semicircle is half the circle’s area: ½πr². A cube’s surface area is 6s², six square faces.",
         "Circle r=3: area 9π, circumference 6π."
       ],
       [
@@ -212,7 +212,7 @@
       ],
       [
         "Angle facts",
-        "Straight line 180°, triangle 180°, circle 360°. Parallel lines cut by a transversal make angles that are equal or supplementary; the two interior angles on one side add to 180°. Vertical (opposite) angles are equal, and the base angles of an isosceles triangle are equal. An exterior angle of a triangle equals the sum of the two interior angles that are not beside it.",
+        "Straight line 180°, triangle 180°, circle 360°. Parallel lines cut by a transversal make angles that are equal or supplementary; the two interior angles on one side add to 180°. Vertical (opposite) angles are equal, and the base angles of an isosceles triangle are equal. An exterior angle of a triangle equals the sum of the two interior angles that are not beside it. Complementary angles add to 90°; supplementary angles add to 180°.",
         "Triangle with 90° and 55° → third = 35°."
       ],
       [
@@ -228,7 +228,7 @@
     "rules": [
       [
         "f(x) means plug in",
-        "Replace every x with the input and compute.",
+        "Replace every x with the input and compute. f(a) = b means the graph passes through the point (a, b). A linear function has a constant slope, so two input–output pairs give the slope and then any other value.",
         "f(x)=2x+1 → f(3)=2(3)+1=<b>7</b>."
       ],
       [
@@ -274,7 +274,7 @@
       ],
       [
         "Identities and signs",
-        "sin²θ + cos²θ = 1 for every angle. In the second quadrant (90° to 180°) sine is positive and cosine negative. To find a missing side, write the ratio as an equation and solve: cos θ = 10/h → h = 10 ÷ cos θ. Cofunctions: sin θ = cos(90° − θ). The area of a triangle from two sides and the angle between them is ½ab sin C. In the third quadrant (180° to 270°) sine and cosine are both negative, so tangent is positive: tan 225° = 1.",
+        "sin²θ + cos²θ = 1 for every angle. In the second quadrant (90° to 180°) sine is positive and cosine negative. To find a missing side, write the ratio as an equation and solve: cos θ = 10/h → h = 10 ÷ cos θ. Cofunctions: sin θ = cos(90° − θ). The area of a triangle from two sides and the angle between them is ½ab sin C. In the third quadrant (180° to 270°) sine and cosine are both negative, so tangent is positive: tan 225° = 1. tan 45° = 1, since the legs of a 45-45-90 triangle are equal. To find a second-quadrant angle, find the reference angle and subtract it from 180°: cos θ = −½ gives 180° − 60° = 120°.",
         "Angle of elevation 40°, 30 m away: height = 30 tan 40°."
       ]
     ],
@@ -295,7 +295,7 @@
       ],
       [
         "Complement trick",
-        "P(at least one) = 1 − P(none). Usually far faster than listing cases.",
+        "P(at least one) = 1 − P(none). Usually far faster than listing cases. The same rule works for any event: P(not A) = 1 − P(A).",
         "At least one head in 2 flips: 1 − ¼ = ¾."
       ],
       [
@@ -358,7 +358,7 @@
     "rules": [
       [
         "Go back to the text",
-        "Reread the paragraph the question points to, and its neighbors; never answer from memory.",
+        "Reread the paragraph the question points to, and its neighbors; never answer from memory. Some details need one step of arithmetic: count back from a date or take a quarter of a total, then check the result against every fact given.",
         "<i>In the third paragraph…</i> → reread the third paragraph."
       ],
       [
@@ -405,7 +405,7 @@
       ],
       [
         "Agree vs. disagree",
-        "Questions ask where they would agree, what both assume, what both would reject, how one would answer the other, or which new evidence would favour one side.",
+        "Questions ask where they would agree, what both assume, what both would reject, how one would answer the other, or which new evidence would favour one side. To weaken one writer, attack the reason that writer gives, not the conclusion both writers share.",
         "Both value X, but split on Y."
       ],
       [
@@ -457,7 +457,7 @@
       ],
       [
         "Mind units and scale",
-        "Check what each axis measures before reading a shape: a flat line on a velocity graph means constant speed, on a distance graph it means at rest. Watch uneven scales, and treat overlapping error bars as “no clear difference”. Steeper means faster: on a distance–time graph the slope is the speed. When one quantity doubles as the other halves, the relationship is inverse.",
+        "Check what each axis measures before reading a shape: a flat line on a velocity graph means constant speed, on a distance graph it means at rest. Watch uneven scales, and treat overlapping error bars as “no clear difference”. Steeper means faster: on a distance–time graph the slope is the speed. When one quantity doubles as the other halves, the relationship is inverse. On a graph with two y-axes, each line is read on its own axis, so two lines meeting on the page does not mean the values are equal. On a speed–time graph, a straight rising line means steady speeding up.",
         "If x goes 0, 10, 100, the scale isn't linear."
       ]
     ],
@@ -473,7 +473,7 @@
       ],
       [
         "Why a control group?",
-        "The control is the no-treatment baseline that isolates the effect. A blank (a sample with none of the substance) should read zero; if it does not, the method is contaminated and every reading is suspect. A placebo, a dummy treatment that looks the same, lets the control group share everything except the active ingredient.",
+        "The control is the no-treatment baseline that isolates the effect. A blank (a sample with none of the substance) should read zero; if it does not, the method is contaminated and every reading is suspect. A placebo, a dummy treatment that looks the same, lets the control group share everything except the active ingredient. When people rate or judge the results, hide which sample is which so their expectations cannot bias them.",
         "A no-drug group shows what happens without the drug."
       ],
       [
@@ -525,7 +525,7 @@
       ],
       [
         "More facts worth knowing",
-        "Air is about 78% nitrogen and 21% oxygen. Gas to liquid is condensation; liquid to gas is evaporation. A catalyst speeds a reaction without being used up and does not change how much product forms. Near Earth, gravity accelerates everything at about 9.8 m/s² downward, even at the top of a throw. In osmosis, water moves across a membrane toward the side with more dissolved substance.",
+        "Air is about 78% nitrogen and 21% oxygen. Gas to liquid is condensation; liquid to gas is evaporation. A catalyst speeds a reaction without being used up and does not change how much product forms. Near Earth, gravity accelerates everything at about 9.8 m/s² downward, even at the top of a throw. In osmosis, water moves across a membrane toward the side with more dissolved substance. Producers (plants) make their own food; consumers eat other organisms; decomposers break down dead material. Plants respire all the time but photosynthesise only in light, so in the dark they use oxygen and release carbon dioxide. Sound needs a medium and travels fastest in solids. A floating object displaces its own weight of water, so melting floating ice does not raise the water level.",
         "A cell in very salty water loses water and shrinks."
       ]
     ],
@@ -541,7 +541,7 @@
       ],
       [
         "Subject vs. object case",
-        "I/he/she/they are subjects; me/him/her/them are objects. Remove the other person to test. For <i>who/whoever</i>, the case comes from the pronoun’s own clause: <i>give it to whoever asks</i>, because <i>whoever</i> is the subject of <i>asks</i>. Use <i>myself</i> only when <i>I</i> is the subject of the same sentence. Finish a “than” comparison to find the case: <i>The coach trusts Mia more than (she trusts) me.</i>",
+        "I/he/she/they are subjects; me/him/her/them are objects. Remove the other person to test. For <i>who/whoever</i>, the case comes from the pronoun’s own clause: <i>give it to whoever asks</i>, because <i>whoever</i> is the subject of <i>asks</i>. Use <i>myself</i> only when <i>I</i> is the subject of the same sentence. Finish a “than” comparison to find the case: <i>The coach trusts Mia more than (she trusts) me.</i> The reflexive forms are <i>himself</i> and <i>themselves</i>; <i>hisself</i> and <i>theirselves</i> are never correct. Use <i>who</i> for people and <i>which</i> for things.",
         "<i>between you and me</i> — try 'between me,' not 'between I.'"
       ],
       [
@@ -562,7 +562,7 @@
     "rules": [
       [
         "Kill danglers",
-        "An opening phrase — an -ing or -ed phrase, a “to” phrase, or a noun phrase — must describe the subject right after the comma. A possessive (<i>Maria’s seat</i>) cannot be that subject. The other fix is to give the opening phrase its own subject: <i>While I was driving, the deer appeared.</i>",
+        "An opening phrase — an -ing or -ed phrase, a “to” phrase, or a noun phrase — must describe the subject right after the comma. A possessive (<i>Maria’s seat</i>) cannot be that subject. The other fix is to give the opening phrase its own subject: <i>While I was driving, the deer appeared.</i> A phrase with its own noun (<i>Her hands shaking, Rosa opened the letter</i>) is an absolute phrase, not a dangler. Turning the main clause passive (<i>the letter was opened by Rosa</i>) is a common way to create a dangler, because the doer drops out of the subject slot.",
         "Wrong: <i>Running late, the bus was missed.</i>  Right: <i>Running late, I missed the bus.</i>"
       ],
       [
@@ -583,7 +583,7 @@
     "rules": [
       [
         "Match verb forms",
-        "Keep a list all -ing, all 'to ___', or all plain. Clauses pair with clauses: <i>explained what it was and how it worked</i>.",
+        "Keep a list all -ing, all 'to ___', or all plain. Clauses pair with clauses: <i>explained what it was and how it worked</i>. Keep the voice matching too: <i>cleaned the beach, sorted the rubbish, and loaded the bags</i>, not <i>and the bags were loaded</i>.",
         "<i>hiking, swimming, and biking</i> (not 'to bike')."
       ],
       [
@@ -593,7 +593,7 @@
       ],
       [
         "Compare like to like",
-        "Comparisons must be parallel.",
+        "Comparisons must be parallel. Use <i>that of</i> or <i>those of</i> to repeat the thing being compared: <i>The tickets for the final cost more than those for the semifinal.</i> Repeat the verb when a comparison could be read two ways: <i>She likes cooking for friends more than her family does</i>, not <i>more than her family</i>.",
         "<i>Her score is higher than his score.</i>"
       ]
     ],
@@ -619,7 +619,7 @@
       ],
       [
         "Equations, notation and radicals",
-        "Rewrite both sides with the same base, then set exponents equal. In scientific notation multiply the front numbers and add the powers of 10. Simplify roots before adding them, and clear a root from a denominator by multiplying top and bottom by it. Scientific notation has one nonzero digit before the point (4.5 × 10⁴, not 45 × 10³). (ab)ⁿ = aⁿbⁿ, and √a · √b = √(ab).",
+        "Rewrite both sides with the same base, then set exponents equal. In scientific notation multiply the front numbers and add the powers of 10. Simplify roots before adding them, and clear a root from a denominator by multiplying top and bottom by it. Scientific notation has one nonzero digit before the point (4.5 × 10⁴, not 45 × 10³). (ab)ⁿ = aⁿbⁿ, and √a · √b = √(ab). To divide in scientific notation, divide the front numbers and subtract the powers of 10. The base and the exponent cannot swap: 2⁵ = 32 but 5² = 25.",
         "2^(x+1) = 2⁵ → x = 4.  √18 + √8 = 3√2 + 2√2 = 5√2.  6/√3 = 2√3."
       ]
     ],
@@ -645,7 +645,7 @@
       ],
       [
         "Vertex form",
-        "y = a(x − h)² + k has its vertex at (h, k). If a &gt; 0 the parabola opens up and the vertex is a minimum; if a &lt; 0 it opens down and the vertex is a maximum. In standard form y = ax² + bx + c, the vertex is at x = −b/(2a). The y-intercept of y = ax² + bx + c is (0, c).",
+        "y = a(x − h)² + k has its vertex at (h, k). If a &gt; 0 the parabola opens up and the vertex is a minimum; if a &lt; 0 it opens down and the vertex is a maximum. In standard form y = ax² + bx + c, the vertex is at x = −b/(2a). The y-intercept of y = ax² + bx + c is (0, c). A parabola is symmetric, so its vertex sits midway between its roots: roots 1 and 7 give x = 4.",
         "y = −2(x − 3)² + 5 → vertex (3, 5), a maximum."
       ]
     ],
@@ -671,7 +671,7 @@
       ],
       [
         "Sum = mean × count",
-        "To find a missing value or combine groups of different sizes, turn averages into totals first: total = mean × number of values.",
+        "To find a missing value or combine groups of different sizes, turn averages into totals first: total = mean × number of values. Multiplying every value by k multiplies the mean by k. For a frequency table, the mean is Σ(value × frequency) ÷ Σ(frequency).",
         "Four tests average 82 → 328. To average 84 over five → 420, so the fifth is 92."
       ],
       [
@@ -702,7 +702,7 @@
       ],
       [
         "Parallel, perpendicular, circles",
-        "Parallel lines have equal slopes; perpendicular slopes are negative reciprocals. A circle with centre (h, k) and radius r is (x − h)² + (y − k)² = r². If a circle passes through a point, the radius is the distance from the centre to that point. A perpendicular bisector passes through the midpoint with the negative-reciprocal slope. The endpoints of a diameter give the centre (their midpoint) and the radius (half the distance between them).",
+        "Parallel lines have equal slopes; perpendicular slopes are negative reciprocals. A circle with centre (h, k) and radius r is (x − h)² + (y − k)² = r². If a circle passes through a point, the radius is the distance from the centre to that point. A perpendicular bisector passes through the midpoint with the negative-reciprocal slope. The endpoints of a diameter give the centre (their midpoint) and the radius (half the distance between them). A point lies inside a circle when its distance from the centre is less than the radius, and outside when it is greater.",
         "Slope 2 → perpendicular slope −½.  (x − 1)² + (y + 2)² = 9 → centre (1, −2), radius 3."
       ],
       [
@@ -744,7 +744,7 @@
       ],
       [
         "Match, don't exaggerate",
-        "Most ACT tone is mild: appreciative, skeptical — not furious. A passage of plain facts with no loaded words is neutral.",
+        "Most ACT tone is mild: appreciative, skeptical — not furious. A passage of plain facts with no loaded words is neutral. Plain facts can still carry a tone when they are chosen and ordered to make a point (two hundred workers, one footnote); that is quietly critical, not neutral.",
         "Prefer 'critical' over 'enraged.'"
       ],
       [
@@ -786,7 +786,7 @@
       ],
       [
         "Use the surrounding lines",
-        "Context tells you what the figure means here.",
+        "Context tells you what the figure means here. When the writer lists the shared features after the image (<i>a receipt: exact, itemised, without warmth</i>), those are the features meant.",
         "A 'storm' might mean conflict, not weather."
       ],
       [
@@ -885,7 +885,7 @@
       ],
       [
         "Average across trials",
-        "Add the values and divide by how many. To combine two mixtures, add the totals (grams with grams, millilitres with millilitres) and divide; do not average the two concentrations.",
+        "Add the values and divide by how many. To combine two mixtures, add the totals (grams with grams, millilitres with millilitres) and divide; do not average the two concentrations. If the mean is given and one value is missing, find the total first (mean × count) and subtract the known values.",
         "(4+6+8)/3 = 6."
       ]
     ],

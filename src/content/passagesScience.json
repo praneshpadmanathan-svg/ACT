@@ -8120,5 +8120,1612 @@
       }
     ],
     "id": "sp87"
+  },
+  {
+    "title": "Loudness Away from a Speaker",
+    "type": "Data Representation",
+    "text": "A loudspeaker sends sound out in all directions. The sound intensity at a point is the sound power passing through each square meter there, measured in microwatts per square meter (µW/m²). Students set two speakers, one at a time, in the middle of a large open field and measured the sound intensity at several distances from each (Figure 1).\n\nThe ear does not judge loudness by intensity directly. Loudness is usually reported as an intensity level in decibels (dB). Table 1 converts intensities to intensity levels.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Sound intensity at different distances from two speakers",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Distance from speaker (m)",
+        "yLabel": "Sound intensity (µW/m²)",
+        "alt": "Line graph of sound intensity against distance for two speakers. Both curves fall very steeply over the first few meters and then level off close to zero. The curve for Speaker A lies above the curve for Speaker B at every distance.",
+        "series": [
+          {
+            "name": "Speaker A",
+            "points": [
+              {
+                "x": 1,
+                "y": 1600
+              },
+              {
+                "x": 2,
+                "y": 400
+              },
+              {
+                "x": 4,
+                "y": 100
+              },
+              {
+                "x": 5,
+                "y": 64
+              },
+              {
+                "x": 10,
+                "y": 16
+              },
+              {
+                "x": 20,
+                "y": 4
+              }
+            ]
+          },
+          {
+            "name": "Speaker B",
+            "points": [
+              {
+                "x": 1,
+                "y": 400
+              },
+              {
+                "x": 2,
+                "y": 100
+              },
+              {
+                "x": 4,
+                "y": 25
+              },
+              {
+                "x": 5,
+                "y": 16
+              },
+              {
+                "x": 10,
+                "y": 4
+              },
+              {
+                "x": 20,
+                "y": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Intensity and intensity level",
+        "type": "table",
+        "head": [
+          "Sound intensity (µW/m²)",
+          "Intensity level (dB)"
+        ],
+        "rows": [
+          [
+            "1",
+            "60"
+          ],
+          [
+            "4",
+            "66"
+          ],
+          [
+            "16",
+            "72"
+          ],
+          [
+            "25",
+            "74"
+          ],
+          [
+            "64",
+            "78"
+          ],
+          [
+            "100",
+            "80"
+          ],
+          [
+            "400",
+            "86"
+          ],
+          [
+            "1600",
+            "92"
+          ]
+        ]
+      }
+    ],
+    "id": "sp88"
+  },
+  {
+    "title": "How the Body Clears Two Drugs",
+    "type": "Data Representation",
+    "text": "After a dose of a drug is absorbed, its concentration in the blood reaches a peak and then falls as the liver and kidneys remove it. Researchers measured the blood concentrations of two drugs, Drug P and Drug Q, in the hours after each reached its peak (Figure 1). Drug Q relieves pain only while its concentration is at least 4.5 mg/L.\n\nDrug P is removed mainly by the kidneys. The half-life of a drug is the time its concentration takes to fall to half. Table 1 gives the half-life of Drug P in patients whose kidneys work at different percentages of normal function.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Blood concentrations of two drugs after their peaks",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Time after peak (h)",
+        "yLabel": "Blood concentration (mg/L)",
+        "alt": "Line graph of blood concentration against time for two drugs. The curve for Drug P starts higher and falls steeply at first, then more and more gradually. The line for Drug Q starts lower and falls in a straight line until it reaches zero. The two cross early in the period shown.",
+        "series": [
+          {
+            "name": "Drug P",
+            "points": [
+              {
+                "x": 0,
+                "y": 16
+              },
+              {
+                "x": 2,
+                "y": 11.3
+              },
+              {
+                "x": 4,
+                "y": 8
+              },
+              {
+                "x": 6,
+                "y": 5.7
+              },
+              {
+                "x": 8,
+                "y": 4
+              },
+              {
+                "x": 12,
+                "y": 2
+              },
+              {
+                "x": 16,
+                "y": 1
+              }
+            ]
+          },
+          {
+            "name": "Drug Q",
+            "points": [
+              {
+                "x": 0,
+                "y": 12
+              },
+              {
+                "x": 2,
+                "y": 10.5
+              },
+              {
+                "x": 4,
+                "y": 9
+              },
+              {
+                "x": 6,
+                "y": 7.5
+              },
+              {
+                "x": 8,
+                "y": 6
+              },
+              {
+                "x": 12,
+                "y": 3
+              },
+              {
+                "x": 16,
+                "y": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Half-life of Drug P and kidney function",
+        "type": "table",
+        "head": [
+          "Kidney function (% of normal)",
+          "Half-life of Drug P (h)"
+        ],
+        "rows": [
+          [
+            "100",
+            "4.0"
+          ],
+          [
+            "75",
+            "5.3"
+          ],
+          [
+            "50",
+            "8.0"
+          ],
+          [
+            "25",
+            "16.0"
+          ]
+        ]
+      }
+    ],
+    "id": "sp89"
+  },
+  {
+    "title": "Measuring a Dye by Its Color",
+    "type": "Data Representation",
+    "text": "A spectrophotometer shines light of one color through a sample held in a clear container called a cuvette and measures how much of the light gets through. The result is reported as absorbance, a number with no units; the higher the absorbance, the less light gets through.\n\nA chemist measured the absorbance of red light (630 nm) by solutions of a blue food dye of known concentration, using cuvettes that held a 1.0 cm or a 2.0 cm thickness of solution (Figure 1). She then measured four sports drinks colored with the same dye, each in a 1.0 cm cuvette (Table 1). Nothing else in the drinks absorbs red light.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Absorbance of dye solutions of known concentration",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Dye concentration (µmol/L)",
+        "yLabel": "Absorbance",
+        "alt": "Line graph of absorbance against dye concentration for two cuvette thicknesses. Both lines are straight and start at zero, rising steadily with concentration. The line for the 2.0 cm cuvette is steeper than the line for the 1.0 cm cuvette.",
+        "series": [
+          {
+            "name": "1.0 cm cuvette",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 2,
+                "y": 0.25
+              },
+              {
+                "x": 4,
+                "y": 0.5
+              },
+              {
+                "x": 6,
+                "y": 0.75
+              },
+              {
+                "x": 8,
+                "y": 1
+              }
+            ]
+          },
+          {
+            "name": "2.0 cm cuvette",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 2,
+                "y": 0.5
+              },
+              {
+                "x": 4,
+                "y": 1
+              },
+              {
+                "x": 6,
+                "y": 1.5
+              },
+              {
+                "x": 8,
+                "y": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Four sports drinks in a 1.0 cm cuvette",
+        "type": "table",
+        "head": [
+          "Drink",
+          "Absorbance",
+          "Red light transmitted (%)"
+        ],
+        "rows": [
+          [
+            "1",
+            "0.30",
+            "50"
+          ],
+          [
+            "2",
+            "0.60",
+            "25"
+          ],
+          [
+            "3",
+            "0.90",
+            "13"
+          ],
+          [
+            "4",
+            "1.20",
+            "6"
+          ]
+        ]
+      }
+    ],
+    "id": "sp90"
+  },
+  {
+    "title": "Moons in Orbit",
+    "type": "Data Representation",
+    "text": "Table 1 lists five moons of Jupiter, with each moon’s average distance from the center of Jupiter and its orbital period, the time it takes to go once around the planet. For the moons of any one planet, the square of the period is proportional to the cube of the distance. As a result, a moon 4 times as far out as another takes 8 times as long to complete an orbit.\n\nFigure 1 shows the speed at which a moon in a circular orbit travels at different distances from the centers of Jupiter and Saturn. Jupiter has about 3.3 times the mass of Saturn.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Five moons of Jupiter",
+        "type": "table",
+        "head": [
+          "Moon",
+          "Distance from Jupiter (thousand km)",
+          "Orbital period (days)"
+        ],
+        "rows": [
+          [
+            "Amalthea",
+            "181.4",
+            "0.498"
+          ],
+          [
+            "Io",
+            "421.7",
+            "1.769"
+          ],
+          [
+            "Europa",
+            "671.0",
+            "3.551"
+          ],
+          [
+            "Ganymede",
+            "1070.4",
+            "7.155"
+          ],
+          [
+            "Callisto",
+            "1882.7",
+            "16.689"
+          ]
+        ]
+      },
+      {
+        "label": "Figure 1",
+        "caption": "Orbital speed at different distances from two planets",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Distance from planet’s center (thousand km)",
+        "yLabel": "Orbital speed (km/s)",
+        "alt": "Line graph of orbital speed against distance for moons of Jupiter and of Saturn. Both curves fall as distance increases, steeply at first and then more gradually. The Jupiter curve lies above the Saturn curve at every distance.",
+        "series": [
+          {
+            "name": "Jupiter",
+            "points": [
+              {
+                "x": 200,
+                "y": 25.2
+              },
+              {
+                "x": 400,
+                "y": 17.8
+              },
+              {
+                "x": 600,
+                "y": 14.5
+              },
+              {
+                "x": 800,
+                "y": 12.6
+              },
+              {
+                "x": 1000,
+                "y": 11.3
+              },
+              {
+                "x": 1200,
+                "y": 10.3
+              },
+              {
+                "x": 1600,
+                "y": 8.9
+              },
+              {
+                "x": 2000,
+                "y": 8
+              }
+            ]
+          },
+          {
+            "name": "Saturn",
+            "points": [
+              {
+                "x": 200,
+                "y": 13.8
+              },
+              {
+                "x": 400,
+                "y": 9.7
+              },
+              {
+                "x": 600,
+                "y": 8
+              },
+              {
+                "x": 800,
+                "y": 6.9
+              },
+              {
+                "x": 1000,
+                "y": 6.2
+              },
+              {
+                "x": 1200,
+                "y": 5.6
+              },
+              {
+                "x": 1600,
+                "y": 4.9
+              },
+              {
+                "x": 2000,
+                "y": 4.4
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "id": "sp91"
+  },
+  {
+    "title": "Temperature and Bacterial Growth",
+    "type": "Data Representation",
+    "text": "Bacteria reproduce by dividing in two, so while food is plentiful a culture doubles in number at regular intervals. The time for one doubling is the generation time.\n\nA microbiologist started two cultures of the same bacterium, each with 1 million cells per milliliter, and counted cells every 20 minutes (Figure 1). One culture was kept at 37 °C and the other at 25 °C. A culture turns visibly cloudy once it holds about 10 million cells per milliliter. Table 1 lists the generation time of the bacterium at other temperatures.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Number of cells in two cultures",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Time (min)",
+        "yLabel": "Number of cells (millions per mL)",
+        "alt": "Line graph of the number of cells against time for two cultures. The 37 °C curve starts flat and bends sharply upward, rising faster and faster. The 25 °C curve rises only slowly over the same time and stays well below the other.",
+        "series": [
+          {
+            "name": "37 °C",
+            "points": [
+              {
+                "x": 0,
+                "y": 1
+              },
+              {
+                "x": 20,
+                "y": 2
+              },
+              {
+                "x": 40,
+                "y": 4
+              },
+              {
+                "x": 60,
+                "y": 8
+              },
+              {
+                "x": 80,
+                "y": 16
+              },
+              {
+                "x": 100,
+                "y": 32
+              },
+              {
+                "x": 120,
+                "y": 64
+              }
+            ]
+          },
+          {
+            "name": "25 °C",
+            "points": [
+              {
+                "x": 0,
+                "y": 1
+              },
+              {
+                "x": 20,
+                "y": 1.26
+              },
+              {
+                "x": 40,
+                "y": 1.59
+              },
+              {
+                "x": 60,
+                "y": 2
+              },
+              {
+                "x": 80,
+                "y": 2.52
+              },
+              {
+                "x": 100,
+                "y": 3.17
+              },
+              {
+                "x": 120,
+                "y": 4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Generation time at different temperatures",
+        "type": "table",
+        "head": [
+          "Temperature (°C)",
+          "Generation time (min)",
+          "Doublings per hour"
+        ],
+        "rows": [
+          [
+            "20",
+            "120",
+            "0.5"
+          ],
+          [
+            "25",
+            "60",
+            "1.0"
+          ],
+          [
+            "30",
+            "35",
+            "1.7"
+          ],
+          [
+            "37",
+            "20",
+            "3.0"
+          ],
+          [
+            "42",
+            "24",
+            "2.5"
+          ],
+          [
+            "45",
+            "40",
+            "1.5"
+          ]
+        ]
+      }
+    ],
+    "id": "sp92"
+  },
+  {
+    "title": "Heat Rising Through the Crust",
+    "type": "Data Representation",
+    "text": "Rock gets hotter with depth because heat from Earth’s interior flows up toward the surface. The rate at which temperature rises with depth is the temperature gradient. The heat flow, the power passing up through each square meter, equals the rock’s thermal conductivity multiplied by the temperature gradient. Where the heat flow is the same, a rock that conducts heat well has a smaller temperature gradient.\n\nGeologists measured temperatures at different depths in two boreholes (Figure 1). Borehole 1 passes through shale down to 1.0 km and granite below that. Borehole 2 passes through granite only. Table 1 lists the thermal conductivities of some common rocks.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Temperature at different depths in two boreholes",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Depth (km)",
+        "yLabel": "Temperature (°C)",
+        "alt": "Line graph of temperature against depth for two boreholes. Both lines rise with depth. The Borehole 2 line is straight throughout. The Borehole 1 line is steeper near the surface and bends to a gentler slope partway down, and the two lines cross.",
+        "series": [
+          {
+            "name": "Borehole 1",
+            "points": [
+              {
+                "x": 0,
+                "y": 10
+              },
+              {
+                "x": 0.5,
+                "y": 30
+              },
+              {
+                "x": 1,
+                "y": 50
+              },
+              {
+                "x": 1.5,
+                "y": 60
+              },
+              {
+                "x": 2,
+                "y": 70
+              },
+              {
+                "x": 2.5,
+                "y": 80
+              },
+              {
+                "x": 3,
+                "y": 90
+              }
+            ]
+          },
+          {
+            "name": "Borehole 2",
+            "points": [
+              {
+                "x": 0,
+                "y": 12
+              },
+              {
+                "x": 0.5,
+                "y": 27
+              },
+              {
+                "x": 1,
+                "y": 42
+              },
+              {
+                "x": 1.5,
+                "y": 57
+              },
+              {
+                "x": 2,
+                "y": 72
+              },
+              {
+                "x": 2.5,
+                "y": 87
+              },
+              {
+                "x": 3,
+                "y": 102
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Thermal conductivity of some rocks",
+        "type": "table",
+        "head": [
+          "Rock",
+          "Thermal conductivity (W/(m·°C))"
+        ],
+        "rows": [
+          [
+            "Shale",
+            "1.5"
+          ],
+          [
+            "Sandstone",
+            "2.5"
+          ],
+          [
+            "Granite",
+            "3.0"
+          ],
+          [
+            "Rock salt",
+            "6.0"
+          ]
+        ]
+      }
+    ],
+    "id": "sp93"
+  },
+  {
+    "title": "Chirping Crickets",
+    "type": "Research Summaries",
+    "text": "Male crickets chirp by rubbing their wings together. A biologist studied how often they chirp.\n\nStudy 1. Ten male snowy tree crickets were placed one at a time in a chamber whose air temperature could be set. At each of five temperatures, each cricket was left for 30 minutes and its chirps were then counted for one minute. Table 1 gives the average chirp rate.\n\nStudy 2. The procedure of Study 1 was repeated with ten male field crickets, a different species (Table 2).\n\nStudy 3. Snowy tree crickets were kept at 20 °C in a chamber with 0, 1 or 3 other males of the same species, and the chirp rate of one marked cricket was counted as in Study 1 (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Study 1: snowy tree crickets",
+        "type": "table",
+        "head": [
+          "Air temperature (°C)",
+          "Chirp rate (chirps/min)"
+        ],
+        "rows": [
+          [
+            "14",
+            "69"
+          ],
+          [
+            "17",
+            "90"
+          ],
+          [
+            "20",
+            "112"
+          ],
+          [
+            "23",
+            "134"
+          ],
+          [
+            "26",
+            "155"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Study 2: field crickets",
+        "type": "table",
+        "head": [
+          "Air temperature (°C)",
+          "Chirp rate (chirps/min)"
+        ],
+        "rows": [
+          [
+            "14",
+            "37"
+          ],
+          [
+            "17",
+            "46"
+          ],
+          [
+            "20",
+            "55"
+          ],
+          [
+            "23",
+            "64"
+          ],
+          [
+            "26",
+            "73"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Study 3: snowy tree crickets with other males, at 20 °C",
+        "type": "table",
+        "head": [
+          "Number of other males",
+          "Chirp rate (chirps/min)"
+        ],
+        "rows": [
+          [
+            "0",
+            "112"
+          ],
+          [
+            "1",
+            "118"
+          ],
+          [
+            "3",
+            "125"
+          ]
+        ]
+      }
+    ],
+    "id": "sp94"
+  },
+  {
+    "title": "Metal Rods in Hot Water",
+    "type": "Research Summaries",
+    "text": "Solids expand when heated. Students measured how much metal rods lengthen. Each rod was held inside a jacket through which water at a chosen temperature could be pumped. One end of the rod was fixed, and a dial gauge touching the other end measured the increase in length to the nearest 0.01 mm. Every rod started at 20 °C.\n\nExperiment 1. Rods of five metals, each 1.000 m long, were heated to 100 °C (Table 1).\n\nExperiment 2. Copper rods of four lengths were heated to 100 °C (Table 2).\n\nExperiment 3. A 1.000 m copper rod was heated to four final temperatures (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: five metals, 1.000 m, 20 °C to 100 °C",
+        "type": "table",
+        "head": [
+          "Metal",
+          "Increase in length (mm)"
+        ],
+        "rows": [
+          [
+            "Aluminum",
+            "1.84"
+          ],
+          [
+            "Brass",
+            "1.52"
+          ],
+          [
+            "Copper",
+            "1.36"
+          ],
+          [
+            "Steel",
+            "0.96"
+          ],
+          [
+            "Invar",
+            "0.10"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: copper rods, 20 °C to 100 °C",
+        "type": "table",
+        "head": [
+          "Starting length (m)",
+          "Increase in length (mm)"
+        ],
+        "rows": [
+          [
+            "0.50",
+            "0.68"
+          ],
+          [
+            "1.00",
+            "1.36"
+          ],
+          [
+            "1.50",
+            "2.04"
+          ],
+          [
+            "2.00",
+            "2.72"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: 1.000 m copper rod",
+        "type": "table",
+        "head": [
+          "Final temperature (°C)",
+          "Increase in length (mm)"
+        ],
+        "rows": [
+          [
+            "40",
+            "0.34"
+          ],
+          [
+            "60",
+            "0.68"
+          ],
+          [
+            "80",
+            "1.02"
+          ],
+          [
+            "100",
+            "1.36"
+          ]
+        ]
+      }
+    ],
+    "id": "sp95"
+  },
+  {
+    "title": "Spinning Maple Seeds",
+    "type": "Research Summaries",
+    "text": "A maple seed grows at one end of a flat wing. When it falls, it spins like a helicopter blade and drifts down slowly, which lets wind carry it away from the parent tree. Students tested what controls how slowly it falls.\n\nIn each trial, a seed was dropped from a height of 3.0 m in still air and timed with a stopwatch until it hit the floor. Each result is the average of 10 drops. The seeds spun from the moment they were released, and their speed hardly changed on the way down.\n\nExperiment 1. Four seeds with the same wing area but different masses were dropped (Table 1).\n\nExperiment 2. A 100 mg seed was dropped, then had its wing trimmed smaller three times and was dropped again after each cut (Table 2).\n\nExperiment 3. The seeds from Experiment 1 were released from a height of 10.0 m in front of a large fan that blew air sideways at 2.0 m/s, and the sideways distance each traveled before landing was measured (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: wing area 4.0 cm²",
+        "type": "table",
+        "head": [
+          "Mass of seed (mg)",
+          "Time to fall 3.0 m (s)"
+        ],
+        "rows": [
+          [
+            "64",
+            "3.75"
+          ],
+          [
+            "100",
+            "3.00"
+          ],
+          [
+            "144",
+            "2.50"
+          ],
+          [
+            "196",
+            "2.14"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: 100 mg seed",
+        "type": "table",
+        "head": [
+          "Wing area (cm²)",
+          "Time to fall 3.0 m (s)"
+        ],
+        "rows": [
+          [
+            "4.0",
+            "3.00"
+          ],
+          [
+            "3.0",
+            "2.60"
+          ],
+          [
+            "2.0",
+            "2.12"
+          ],
+          [
+            "1.0",
+            "1.50"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: released from 10.0 m in a 2.0 m/s wind",
+        "type": "table",
+        "head": [
+          "Mass of seed (mg)",
+          "Sideways distance (m)"
+        ],
+        "rows": [
+          [
+            "64",
+            "25.0"
+          ],
+          [
+            "100",
+            "20.0"
+          ],
+          [
+            "144",
+            "16.7"
+          ],
+          [
+            "196",
+            "14.3"
+          ]
+        ]
+      }
+    ],
+    "id": "sp96"
+  },
+  {
+    "title": "Separating Food Dyes",
+    "type": "Research Summaries",
+    "text": "In paper chromatography, a spot of a mixture is placed on a pencil line near the bottom of a strip of paper, and the bottom edge is dipped in a liquid called the solvent. As the solvent soaks up the paper, it carries each substance in the spot a different distance. A substance’s Rf value is the distance it moved divided by the distance the solvent front moved, both measured from the pencil line.\n\nExperiment 1. Spots of three food dyes were placed on one strip, which was dipped in water. The strip was removed when the solvent front had moved 8.0 cm (Table 1).\n\nExperiment 2. Experiment 1 was repeated with a solvent of 70% isopropyl alcohol, and the strip was removed when the front had moved 6.0 cm (Table 2).\n\nExperiment 3. A spot of Red 40 on a fresh strip in water was photographed at four times after dipping, and the distances moved by the front and by the dye were measured (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: water, front moved 8.0 cm",
+        "type": "table",
+        "head": [
+          "Dye",
+          "Distance moved (cm)"
+        ],
+        "rows": [
+          [
+            "Blue 1",
+            "7.2"
+          ],
+          [
+            "Yellow 5",
+            "6.0"
+          ],
+          [
+            "Red 40",
+            "3.2"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: 70% isopropyl alcohol, front moved 6.0 cm",
+        "type": "table",
+        "head": [
+          "Dye",
+          "Distance moved (cm)"
+        ],
+        "rows": [
+          [
+            "Blue 1",
+            "3.0"
+          ],
+          [
+            "Yellow 5",
+            "1.2"
+          ],
+          [
+            "Red 40",
+            "4.2"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: Red 40 in water",
+        "type": "table",
+        "head": [
+          "Time after dipping (min)",
+          "Distance moved by solvent front (cm)",
+          "Distance moved by Red 40 (cm)"
+        ],
+        "rows": [
+          [
+            "1",
+            "2.0",
+            "0.8"
+          ],
+          [
+            "4",
+            "4.0",
+            "1.6"
+          ],
+          [
+            "9",
+            "6.0",
+            "2.4"
+          ],
+          [
+            "16",
+            "8.0",
+            "3.2"
+          ]
+        ]
+      }
+    ],
+    "id": "sp97"
+  },
+  {
+    "title": "Sand and Water in the Sun",
+    "type": "Research Summaries",
+    "text": "On a sunny day, a beach warms much faster than the sea beside it. Students modeled this with a 250 W heat lamp. Each sample had a mass of 500 g and sat in an identical dish 30 cm below the lamp in a room at 20 °C, with a thermometer just below its surface. The students assumed every sample absorbed energy from the lamp at the same rate.\n\nThe energy a sample absorbs equals its mass times its specific heat times its rise in temperature. The specific heat of water is 4.18 J/(g·°C) and that of dry sand is 0.83 J/(g·°C). Beetles that live on the beach avoid sand hotter than 35 °C.\n\nExperiment 1. Water, dry sand and wet sand were each heated for 10 min (Table 1).\n\nExperiment 2. Different masses of water were heated for 10 min (Table 2).\n\nExperiment 3. At the end of Experiment 1, the lamp was switched off and the dry sand and water were left to cool (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: temperature under the lamp",
+        "type": "table",
+        "head": [
+          "Time (min)",
+          "Water (°C)",
+          "Dry sand (°C)",
+          "Wet sand (°C)"
+        ],
+        "rows": [
+          [
+            "0",
+            "20.0",
+            "20.0",
+            "20.0"
+          ],
+          [
+            "2",
+            "20.9",
+            "24.3",
+            "22.4"
+          ],
+          [
+            "4",
+            "21.7",
+            "28.7",
+            "24.8"
+          ],
+          [
+            "6",
+            "22.6",
+            "33.0",
+            "27.2"
+          ],
+          [
+            "8",
+            "23.4",
+            "37.3",
+            "29.6"
+          ],
+          [
+            "10",
+            "24.3",
+            "41.7",
+            "32.0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: water heated for 10 min",
+        "type": "table",
+        "head": [
+          "Mass of water (g)",
+          "Rise in temperature (°C)"
+        ],
+        "rows": [
+          [
+            "250",
+            "8.6"
+          ],
+          [
+            "500",
+            "4.3"
+          ],
+          [
+            "1000",
+            "2.2"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: cooling after the lamp was switched off",
+        "type": "table",
+        "head": [
+          "Time after lamp off (min)",
+          "Water (°C)",
+          "Dry sand (°C)"
+        ],
+        "rows": [
+          [
+            "0",
+            "24.3",
+            "41.7"
+          ],
+          [
+            "2",
+            "24.1",
+            "36.3"
+          ],
+          [
+            "4",
+            "23.8",
+            "32.2"
+          ],
+          [
+            "6",
+            "23.6",
+            "29.1"
+          ],
+          [
+            "8",
+            "23.4",
+            "26.8"
+          ],
+          [
+            "10",
+            "23.2",
+            "25.1"
+          ]
+        ]
+      }
+    ],
+    "id": "sp98"
+  },
+  {
+    "title": "Duckweed and Nitrate",
+    "type": "Research Summaries",
+    "text": "Duckweed is a tiny floating plant that multiplies by budding off new fronds. Students grew it in flasks, each holding 500 mL of filtered pond water and starting with 10 fronds. The flasks sat at 22 °C, and the fronds were counted every 4 days for 16 days.\n\nExperiment 1. Potassium nitrate was added to three flasks to give nitrate concentrations of 0, 5 and 20 mg/L. The flasks were lit for 16 hours a day (Table 1).\n\nExperiment 2. Three flasks with 20 mg/L of nitrate were lit for 8, 12 or 16 hours a day, and the fronds were counted on day 8 (Table 2).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: number of fronds",
+        "type": "table",
+        "head": [
+          "Day",
+          "0 mg/L",
+          "5 mg/L",
+          "20 mg/L"
+        ],
+        "rows": [
+          [
+            "0",
+            "10",
+            "10",
+            "10"
+          ],
+          [
+            "4",
+            "17",
+            "40",
+            "47"
+          ],
+          [
+            "8",
+            "19",
+            "99",
+            "179"
+          ],
+          [
+            "12",
+            "20",
+            "142",
+            "421"
+          ],
+          [
+            "16",
+            "20",
+            "156",
+            "579"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: 20 mg/L nitrate, day 8",
+        "type": "table",
+        "head": [
+          "Light (hours per day)",
+          "Number of fronds"
+        ],
+        "rows": [
+          [
+            "8",
+            "47"
+          ],
+          [
+            "12",
+            "95"
+          ],
+          [
+            "16",
+            "179"
+          ]
+        ]
+      }
+    ],
+    "id": "sp99"
+  },
+  {
+    "title": "Why Do Leaves Turn Red?",
+    "type": "Conflicting Viewpoints",
+    "intro": "In autumn, the leaves of many trees turn yellow, orange or red before they fall. A leaf can hold green chlorophyll, which captures light for photosynthesis; yellow and orange carotenoids; and red anthocyanins. Table 1 gives the amounts of these pigments in sugar maple leaves on four dates. Table 2 compares branches in full sun on the same trees whose leaves turned mostly red or mostly yellow, and Table 3 counts the aphids that laid eggs on maples whose leaves turned mostly red or mostly yellow. Three scientists explain the colors.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Pigments in sugar maple leaves",
+        "type": "table",
+        "head": [
+          "Date",
+          "Chlorophyll (µg/cm²)",
+          "Carotenoids (µg/cm²)",
+          "Anthocyanins (µg/cm²)"
+        ],
+        "rows": [
+          [
+            "August 1",
+            "40",
+            "8.0",
+            "0"
+          ],
+          [
+            "September 15",
+            "30",
+            "7.5",
+            "1"
+          ],
+          [
+            "October 1",
+            "15",
+            "7.0",
+            "6"
+          ],
+          [
+            "October 15",
+            "4",
+            "6.0",
+            "12"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Nitrogen recovered before leaf fall, branches in full sun",
+        "type": "table",
+        "head": [
+          "Leaf color in autumn",
+          "Leaf nitrogen moved back into the tree (%)"
+        ],
+        "rows": [
+          [
+            "Mostly red",
+            "72"
+          ],
+          [
+            "Mostly yellow",
+            "51"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Aphids laying eggs in autumn",
+        "type": "table",
+        "head": [
+          "Leaf color of tree",
+          "Egg-laying aphids per 100 leaves"
+        ],
+        "rows": [
+          [
+            "Mostly red",
+            "3"
+          ],
+          [
+            "Mostly yellow",
+            "11"
+          ]
+        ]
+      },
+      {
+        "label": "Scientist 1",
+        "caption": "A side effect",
+        "type": "note",
+        "text": "Autumn colors are a side effect of the leaf shutting down. As the days shorten, the tree stops making chlorophyll, and as the green fades it uncovers the yellow and orange carotenoids that were in the leaf all summer. The reds are uncovered in the same way: like the yellows, they sit in the leaf all summer beneath the green. None of these colors does anything for the tree."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "A sunscreen",
+        "type": "note",
+        "text": "The yellows and oranges are uncovered carotenoids, as Scientist 1 says, but the red anthocyanins are newly made in autumn. Before a leaf falls, the tree moves nitrogen and other nutrients out of it to reuse in spring. With its chlorophyll gone, the leaf can be damaged by strong sunlight, which would halt that work. Anthocyanins absorb much of the light and shield the leaf, so red leaves return more of their nutrients to the tree."
+      },
+      {
+        "label": "Scientist 3",
+        "caption": "A warning",
+        "type": "note",
+        "text": "The red anthocyanins are newly made in autumn, as Scientist 2 says, but they are a signal to aphids. Aphids choose a tree to lay their eggs on in autumn, and their young feed on it in spring. Making red pigment is costly, so only a vigorous tree with strong chemical defenses can afford much of it. Aphids that avoid red trees spare their young those defenses."
+      }
+    ],
+    "id": "sp100"
+  },
+  {
+    "title": "What Keeps the Sun Shining?",
+    "type": "Conflicting Viewpoints",
+    "intro": "The Sun gives off energy at a rate of 3.8 × 10²⁶ W (joules per second), and its mass is 2.0 × 10³⁰ kg. Table 1 gives, for three possible sources of this energy, the energy that each could release per kilogram of the Sun’s material and how long each could keep the Sun shining at its present rate. Table 2 gives the ages of some of the oldest materials found on Earth. Three scientists explain where the Sun’s energy comes from.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Three possible energy sources for the Sun",
+        "type": "table",
+        "head": [
+          "Energy source",
+          "Energy released (J per kg of the Sun)",
+          "How long the Sun could shine (years)"
+        ],
+        "rows": [
+          [
+            "Burning, as coal burns",
+            "3 × 10⁷",
+            "5000"
+          ],
+          [
+            "Shrinking under its own gravity",
+            "1.9 × 10¹¹",
+            "32 million"
+          ],
+          [
+            "Fusing hydrogen into helium",
+            "6.3 × 10¹³",
+            "10.5 billion"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Ages of some old materials",
+        "type": "table",
+        "head": [
+          "Material",
+          "Age (years)"
+        ],
+        "rows": [
+          [
+            "Oldest meteorites",
+            "4.57 billion"
+          ],
+          [
+            "Oldest mineral grains on Earth",
+            "4.4 billion"
+          ],
+          [
+            "Oldest rocks on Earth",
+            "4.0 billion"
+          ],
+          [
+            "Oldest fossils",
+            "3.5 billion"
+          ]
+        ]
+      },
+      {
+        "label": "Scientist 1",
+        "caption": "A fire",
+        "type": "note",
+        "text": "The Sun is an immense fire. Its material burns much as coal burns in air, turning into new substances and giving off heat and light as it does. The Sun has been burning for only a few thousand years, and it will go out once its fuel is used up."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "Slow shrinking",
+        "type": "note",
+        "text": "The Sun is slowly shrinking. As its material sinks toward the center, the energy it had because of gravity is turned into heat, and no substance in the Sun is changed into another. This could keep the Sun shining for tens of millions of years, so the Sun, and Earth with it, can be no older than that."
+      },
+      {
+        "label": "Scientist 3",
+        "caption": "Nuclear fusion",
+        "type": "note",
+        "text": "Deep in the Sun’s core, at about 15 million °C, hydrogen nuclei fuse to form helium. A little of their mass is turned into a great deal of energy. Only the core is hot enough for fusion, but it holds enough hydrogen to keep the Sun shining for about 10 billion years, and the Sun is now less than halfway through that time."
+      }
+    ],
+    "id": "sp101"
+  },
+  {
+    "title": "What Happens When a Metal Burns?",
+    "type": "Conflicting Viewpoints",
+    "intro": "When a metal is heated strongly in air, it turns into a powdery substance that chemists of the 1700s called a calx. Table 1 gives the masses of four metal samples before and after they were heated in open air until all of the metal had changed. In a second test (Table 2), 10.00 g of tin was heated in a sealed glass vessel full of air; only part of the tin changed, and the air inside shrank by about one-fifth. In a third test (Table 3), the calx of mercury was heated strongly on its own in a sealed vessel; it turned back into mercury and gave off a gas in which a candle burned more brightly than in air. Two scientists of the time explain these results.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Metals heated in open air",
+        "type": "table",
+        "head": [
+          "Metal",
+          "Mass of metal (g)",
+          "Mass of calx (g)"
+        ],
+        "rows": [
+          [
+            "Tin",
+            "10.00",
+            "12.70"
+          ],
+          [
+            "Magnesium",
+            "2.40",
+            "3.98"
+          ],
+          [
+            "Mercury",
+            "20.06",
+            "21.66"
+          ],
+          [
+            "Iron",
+            "5.58",
+            "7.98"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Tin heated in a sealed vessel",
+        "type": "table",
+        "head": [
+          "Stage",
+          "Mass of vessel and contents (g)"
+        ],
+        "rows": [
+          [
+            "Before heating",
+            "245.30"
+          ],
+          [
+            "After heating and cooling, still sealed",
+            "245.30"
+          ],
+          [
+            "After the seal was opened",
+            "245.63"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Calx of mercury heated alone in a sealed vessel",
+        "type": "table",
+        "head": [
+          "Substance",
+          "Mass (g)"
+        ],
+        "rows": [
+          [
+            "Calx of mercury before heating",
+            "21.66"
+          ],
+          [
+            "Mercury formed",
+            "20.06"
+          ],
+          [
+            "Gas given off",
+            "1.60"
+          ]
+        ]
+      },
+      {
+        "label": "Scientist 1",
+        "caption": "Phlogiston",
+        "type": "note",
+        "text": "Every metal contains phlogiston, the substance of fire. Heating a metal in air drives its phlogiston out into the air, leaving the calx behind, so a calx is simpler than its metal. Air can soak up only so much phlogiston, which is why heating stops changing the metal in a closed vessel. Phlogiston has negative weight, so a metal that loses it grows heavier. A calx turns back into metal only when it is heated with something rich in phlogiston, such as charcoal, from which it takes the phlogiston back."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "Oxygen",
+        "type": "note",
+        "text": "Heating a metal in air makes it combine with one part of the air, oxygen. A calx is metal and oxygen joined together, so it is heavier than the metal by exactly the mass of oxygen taken up, and in a sealed vessel the total mass does not change. Once the oxygen in a closed vessel is used up, no more metal can change. A calx gives up its oxygen and turns back into metal when heated strongly enough, or when heated with charcoal, which takes the oxygen."
+      }
+    ],
+    "id": "sp102"
+  },
+  {
+    "title": "Where Did Earth’s Oceans Come From?",
+    "type": "Conflicting Viewpoints",
+    "intro": "Most hydrogen atoms have a nucleus of a single proton, but a small fraction are deuterium, a heavier form of hydrogen. The ratio of deuterium to ordinary hydrogen (D/H) in water depends on where and how the water formed, and it changes little over time. Table 1 gives D/H ratios measured in water from several sources. Three scientists explain where Earth’s oceans came from.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "D/H ratios of water and hydrogen from several sources",
+        "type": "table",
+        "head": [
+          "Source",
+          "D/H ratio (× 10⁻⁴)"
+        ],
+        "rows": [
+          [
+            "Earth’s oceans",
+            "1.56"
+          ],
+          [
+            "Water in lava from deep in Earth’s mantle",
+            "1.22"
+          ],
+          [
+            "Carbonaceous meteorites (from asteroids)",
+            "1.4 to 1.8"
+          ],
+          [
+            "Comet Halley",
+            "3.1"
+          ],
+          [
+            "Comet Hale–Bopp",
+            "3.3"
+          ],
+          [
+            "Comet 67P",
+            "5.3"
+          ],
+          [
+            "Comet Hartley 2",
+            "1.6"
+          ],
+          [
+            "Hydrogen gas of the early solar system",
+            "0.21"
+          ]
+        ]
+      },
+      {
+        "label": "Scientist 1",
+        "caption": "Comets",
+        "type": "note",
+        "text": "Earth formed too hot to keep water, so its oceans were delivered later by icy comets striking it. Comets are mostly ice, so only a modest number of impacts would be needed. At least some comets carry water whose D/H ratio matches the oceans."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "Asteroids",
+        "type": "note",
+        "text": "Earth’s water was delivered by water-rich asteroids, the parent bodies of the carbonaceous meteorites. Their D/H ratios surround the oceans’ value. Most comets measured have ratios about twice the oceans’ or more, so comets could have supplied only a small share of the water."
+      },
+      {
+        "label": "Scientist 3",
+        "caption": "Built in",
+        "type": "note",
+        "text": "Earth held water from the start, carried in the dust and rock it formed from, and some hydrogen was captured from the gas of the early solar system. Water in lava from deep in the mantle has never been at the surface, and its ratio, 1.22 × 10⁻⁴, is lower than the oceans’. The oceans’ ratio has risen since Earth formed as ordinary hydrogen, which is lighter, escaped more readily from the top of the atmosphere into space."
+      }
+    ],
+    "id": "sp103"
   }
 ]
