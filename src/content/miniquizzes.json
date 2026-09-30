@@ -61,7 +61,7 @@
       "d": 2
     },
     {
-      "q": "Which sentence is punctuated correctly?",
+      "q": "Which sentence punctuates the “that” clause correctly?",
       "opts": [
         "The novel that won the prize is out of print.",
         "The novel, that won the prize is out of print.",
@@ -97,7 +97,7 @@
       "d": 2
     },
     {
-      "q": "Which is correct?",
+      "q": "Which sentence punctuates the “because” clause correctly?",
       "opts": [
         "We left early because the road was flooded.",
         "We left early because, the road was flooded.",
@@ -239,6 +239,66 @@
       "a": 0,
       "why": "Leila has only one husband, so his name is not needed to pick him out: it is extra information and takes a pair of commas. The unpunctuated version reads naturally, which is the trap; it would suit a woman with several husbands, one of them Tomás. The single-comma versions break the pair.",
       "d": 3
+    },
+    {
+      "q": "Which sentence punctuates the three actions correctly?",
+      "opts": [
+        "She swept the floor, washed the dishes, and fed the cat.",
+        "She swept the floor washed the dishes, and fed the cat.",
+        "She swept, the floor, washed the dishes and fed the cat.",
+        "She swept the floor, washed the dishes, and, fed the cat."
+      ],
+      "a": 0,
+      "why": "A list is one of the legal comma jobs, and it works for actions as well as things: a comma follows each item before the last. A comma between “swept” and its object, or straight after “and”, does no legal job, so it goes.",
+      "d": 1
+    },
+    {
+      "q": "Which sentence sets off <i>of course</i> correctly?",
+      "opts": [
+        "The results, of course, were late.",
+        "The results, of course were late.",
+        "The results of course, were late.",
+        "The, results of course were late."
+      ],
+      "a": 0,
+      "why": "“Of course” is extra information dropped into the middle of the sentence, and extra information takes a pair of commas. With only one, the comma splits “The results” from “were”, and a single comma may never come between a subject and its verb.",
+      "d": 1
+    },
+    {
+      "q": "Which sentence needs a comma before <i>but</i>?",
+      "opts": [
+        "The shop was small but it sold everything.",
+        "The shop was small but busy.",
+        "The shop sold bread but not cake.",
+        "The shop opened early but closed at noon."
+      ],
+      "a": 0,
+      "why": "A comma goes before a FANBOYS word only when it joins two complete sentences. “It sold everything” has its own subject and verb, so the first needs “small, but it”. The others join two describing words, two things, or two verbs sharing the one subject “The shop”, and take no comma.",
+      "d": 2
+    },
+    {
+      "q": "Which comma should be removed?<br><i>“When the lights went out, the audience, waited quietly in their seats.”</i>",
+      "opts": [
+        "the comma after “audience”",
+        "the comma after “out”",
+        "both commas",
+        "neither comma"
+      ],
+      "a": 0,
+      "why": "The comma after “out” ends an introductory clause, which is one of the legal jobs. The comma after “audience” sits alone between the subject and its verb, “waited”, and a single comma may never go there.",
+      "d": 2
+    },
+    {
+      "q": "Which sentence punctuates the contrast correctly?",
+      "opts": [
+        "It was the heat, not the hills, that slowed us down.",
+        "It was the heat not the hills, that slowed us down.",
+        "It was the heat, not the hills that slowed us down.",
+        "It was, the heat not the hills that slowed us down."
+      ],
+      "a": 0,
+      "why": "“Not the hills” is a contrasting aside: lift it out and “It was the heat that slowed us down” still stands. An aside in mid-sentence is extra information, so it takes a pair of commas. The one-comma versions are the trap: each fences the aside on one side only and cuts the sentence in the wrong place.",
+      "d": 3
     }
   ],
   "equation_station": [
@@ -291,15 +351,15 @@
       "d": 2
     },
     {
-      "q": "Simplify: 2x + 5x",
+      "q": "Which expression is equivalent to 3(x + 2) − x?",
       "opts": [
-        "7x",
-        "7x²",
-        "7",
-        "10x"
+        "2x + 6",
+        "2x + 2",
+        "4x + 6",
+        "3x + 5"
       ],
       "a": 0,
-      "why": "Combine like terms: (2 + 5)x. The exponent does not change.",
+      "why": "Distribute first: 3(x + 2) = 3x + 6. Then combine the like terms: 3x − x = 2x, giving 2x + 6. Multiplying only the x by 3 gives 2x + 2.",
       "d": 1
     },
     {
@@ -480,6 +540,66 @@
       ],
       "a": 0,
       "why": "Write the inequality 45 + 30h ≤ 180, so 30h ≤ 135 and h ≤ 4.5. Only whole hours count, so round down to 4; five hours would cost $195. The 6 comes from forgetting the $45 fee.",
+      "d": 3
+    },
+    {
+      "q": "Which ordered pair is a solution of 2x + y = 11?",
+      "opts": [
+        "(4, 3)",
+        "(3, 4)",
+        "(5, 2)",
+        "(2, 5)"
+      ],
+      "a": 0,
+      "why": "A solution is a pair that makes the equation true. Put x = 4 and y = 3 in: 2(4) + 3 = 11. The others give 10, 12 and 9, so each fails.",
+      "d": 1
+    },
+    {
+      "q": "A line has slope −2 and crosses the y-axis at (0, 5). What is y on this line when x = 4?",
+      "opts": [
+        "−3",
+        "13",
+        "3",
+        "−13"
+      ],
+      "a": 0,
+      "why": "In y = mx + b the slope is m and the starting value is b, so the line is y = −2x + 5. Then y = −2(4) + 5 = −8 + 5 = −3. Reading the slope as +2 gives 13.",
+      "d": 2
+    },
+    {
+      "q": "Solve for x: 0.2x + 1.5 = 3.9",
+      "opts": [
+        "12",
+        "2.4",
+        "27",
+        "1.2"
+      ],
+      "a": 0,
+      "why": "Undo in reverse order: subtract first, 0.2x = 2.4, then divide, x = 2.4 ÷ 0.2 = 12. Stopping after the subtraction leaves 2.4; adding 1.5 instead of subtracting leads to 27.",
+      "d": 2
+    },
+    {
+      "q": "Two numbers add up to 30. One is 6 more than twice the other. What is the larger number?",
+      "opts": [
+        "22",
+        "8",
+        "18",
+        "12"
+      ],
+      "a": 0,
+      "why": "Call the smaller n, so the larger is 2n + 6. Then n + 2n + 6 = 30, so 3n = 24 and n = 8. The question asks for the larger number: 2(8) + 6 = 22. Answering 8 solves for the wrong one.",
+      "d": 2
+    },
+    {
+      "q": "How many solutions does this system have?<br>2x + 3y = 7<br>4x + 6y = 14",
+      "opts": [
+        "infinitely many",
+        "exactly one",
+        "none",
+        "exactly two"
+      ],
+      "a": 0,
+      "why": "Put both in y = mx + b form: each becomes y = −(2/3)x + 7/3. Same slope and same intercept means the same line, so every point on it solves both: infinitely many. The second equation is just the first doubled, which is easy to miss when the numbers look different.",
       "d": 3
     }
   ],
@@ -723,6 +843,66 @@
       "a": 0,
       "why": "The familiar “temper” is anger, and harsh sentences make that reading tempting, but the editor wants the sentences changed, not someone provoked. To temper something is to moderate it. “Harden” borrows from tempering steel, which the sentence has no use for, and “shorten” changes length, not force.",
       "d": 3
+    },
+    {
+      "q": "<i>“The recipe calls for a scant cup of sugar, so stop filling just below the rim.”</i><br>As used here, <b>scant</b> most nearly means:",
+      "opts": [
+        "slightly less than full",
+        "heaped over the top",
+        "carefully sifted",
+        "coarse and brown"
+      ],
+      "a": 0,
+      "why": "The sentence explains the word for you: stop “just below the rim”. Predict “not quite full” and match it. “Heaped” reverses the meaning.",
+      "d": 1
+    },
+    {
+      "q": "<i>“The mayor’s speech was a masterpiece of economy: in four minutes she named the problem, the cost and the plan.”</i><br>As used here, <b>economy</b> most nearly means:",
+      "opts": [
+        "efficient use of words",
+        "careful saving of money",
+        "the financial system",
+        "a low price"
+      ],
+      "a": 0,
+      "why": "The familiar money meaning is the trap. The colon tells you what the economy consisted of: a great deal said in four minutes. Economy here is its quieter second meaning, doing much with little.",
+      "d": 2
+    },
+    {
+      "q": "<i>“The treaty was a qualified success: trade grew, but the border disputes it was meant to end went on.”</i><br>As used here, <b>qualified</b> most nearly means:",
+      "opts": [
+        "limited",
+        "properly trained",
+        "officially certified",
+        "complete and total"
+      ],
+      "a": 0,
+      "why": "Substitute and test: after the colon, one thing worked and one did not, so the success was partial. “Qualified” in its quieter meaning is limited or held back. The familiar meaning, trained or certified, does not fit a treaty.",
+      "d": 2
+    },
+    {
+      "q": "<i>“Years of drought had checked the town’s growth; the new reservoir released it.”</i><br>As used here, <b>checked</b> most nearly means:",
+      "opts": [
+        "held back",
+        "inspected",
+        "confirmed",
+        "marked with a tick"
+      ],
+      "a": 0,
+      "why": "The second half says the reservoir “released” the growth, so the drought must have held it back. That is check’s quieter meaning, the same one as in “check the bleeding”. “Inspected” is the everyday meaning, and a drought does not inspect anything.",
+      "d": 3
+    },
+    {
+      "q": "<i>“She kept her own counsel through the long meeting, and only on the train home did she tell us what she thought.”</i><br>As used here, <b>kept her own counsel</b> most nearly means:",
+      "opts": [
+        "kept her opinions to herself",
+        "followed her own advice",
+        "hired her own lawyer",
+        "argued with the others"
+      ],
+      "a": 0,
+      "why": "Use the rest of the sentence: she said what she thought “only on the train home”, so during the meeting she stayed silent. “Followed her own advice” is the tempting literal reading of “counsel”, but nothing in the sentence is about advice.",
+      "d": 3
     }
   ],
   "data_delta": [
@@ -965,6 +1145,66 @@
       "a": 0,
       "why": "The pattern is +3 every 5 years. 2025 is two steps past 2015, so 21 + 3 + 3 = 27. The 24 stops one step short, at 2020.",
       "d": 3
+    },
+    {
+      "q": "<table><tr><th>Depth (m)</th><th>Water temperature (°C)</th></tr><tr><td>0</td><td>22</td></tr><tr><td>50</td><td>18</td></tr><tr><td>100</td><td>12</td></tr><tr><td>200</td><td>7</td></tr></table>At what depth was the water temperature 12 °C?",
+      "opts": [
+        "100 m",
+        "50 m",
+        "200 m",
+        "12 m"
+      ],
+      "a": 0,
+      "why": "Read the columns first: depth on the left, temperature on the right. Find 12 °C in the temperature column and read across: 100 m.",
+      "d": 1
+    },
+    {
+      "q": "<table><tr><th>Wind speed (km/h)</th><th>Evaporation (mm/day)</th></tr><tr><td>10</td><td>2.0</td></tr><tr><td>20</td><td>3.1</td></tr><tr><td>30</td><td>4.2</td></tr><tr><td>40</td><td>5.3</td></tr></table>If the trend continues, what would the evaporation be at 50 km/h?",
+      "opts": [
+        "6.4 mm/day",
+        "5.3 mm/day",
+        "5.9 mm/day",
+        "10.6 mm/day"
+      ],
+      "a": 0,
+      "why": "Name the trend: each 10 km/h adds 1.1 mm/day. Extend it one more step past the last point: 5.3 + 1.1 = 6.4. The 10.6 doubles 5.3, which is not how these data grow.",
+      "d": 2
+    },
+    {
+      "q": "<table><tr><th>Fertiliser (g)</th><th>Height (cm)</th><th>Leaves</th></tr><tr><td>0</td><td>12</td><td>8</td></tr><tr><td>5</td><td>18</td><td>8</td></tr><tr><td>10</td><td>24</td><td>8</td></tr><tr><td>15</td><td>30</td><td>8</td></tr></table>According to the table, adding fertiliser affected:",
+      "opts": [
+        "height but not the number of leaves",
+        "the number of leaves but not height",
+        "both height and the number of leaves",
+        "neither height nor the number of leaves"
+      ],
+      "a": 0,
+      "why": "Name the trend in each column. Height rises steadily with fertiliser. The leaf column is flat at 8, and a flat column is a finding too: fertiliser made no difference to it.",
+      "d": 2
+    },
+    {
+      "q": "<table><tr><th>Night</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr><tr><td>Low (°C)</td><td>5</td><td>3</td><td>2</td><td>3</td><td>6</td><td>3</td><td>3</td></tr></table>A crop is lost if the night temperature stays below 4 °C for more than three nights in a row. Based on the table, was the crop lost?",
+      "opts": [
+        "No; the longest cold run was only three nights",
+        "Yes; five of the seven nights were below 4 °C",
+        "Yes; one night fell as low as 2 °C",
+        "No; the week’s mean low stayed above 4 °C"
+      ],
+      "a": 0,
+      "why": "Carry the threshold from the question to the table and test each night. Tuesday to Thursday is three nights in a row below 4 °C, and Saturday to Sunday is two; Friday’s 6 °C breaks the run. No run is longer than three, so the crop survives. Five cold nights is true, but they are not in a row, and the mean low is about 3.6 °C, which is below 4.",
+      "d": 3
+    },
+    {
+      "q": "<table><tr><th>Time (min)</th><th>0</th><th>10</th><th>20</th><th>30</th></tr><tr><td>Bacteria (thousands)</td><td>1</td><td>2</td><td>4</td><td>8</td></tr></table>If the trend continues, at about what time will the count reach 16 thousand?",
+      "opts": [
+        "40 min",
+        "50 min",
+        "60 min",
+        "80 min"
+      ],
+      "a": 0,
+      "why": "The count doubles every 10 minutes (1, 2, 4, 8), so the next step, at 40 minutes, is 16. The jumps grow each time, so the curve steepens. The trap 50 min extends the last jump of 4 as if it were a straight line.",
+      "d": 3
     }
   ],
   "apostrophe_alley": [
@@ -1005,7 +1245,7 @@
       "d": 2
     },
     {
-      "q": "Which sentence is punctuated correctly?",
+      "q": "Which sentence gets both the plural and the possessive right?",
       "opts": [
         "The dogs chased their tails.",
         "The dog’s chased their tails.",
@@ -1013,7 +1253,7 @@
         "The dogs chased there tails."
       ],
       "a": 0,
-      "why": "Plain plural “dogs” takes no apostrophe; “their” shows possession.",
+      "why": "Plain plural “dogs” takes no apostrophe, since the dogs own nothing in that word. The possessive “their” shows the tails belong to them; “they’re” means “they are” and “there” is a place.",
       "d": 1
     },
     {
@@ -1206,6 +1446,66 @@
       ],
       "a": 0,
       "why": "Nothing here belongs to anyone; the sentence only needs the plural. Make a family name plural by adding -es and stop there. Any apostrophe would turn it into a possessive with nothing to possess.",
+      "d": 3
+    },
+    {
+      "q": "Which word in the sentence is missing an apostrophe?<br><i>“Omars bike leans against the school gates.”</i>",
+      "opts": [
+        "Omars",
+        "leans",
+        "gates",
+        "bike"
+      ],
+      "a": 0,
+      "why": "The bike belongs to one owner, Omar, so his name takes ’s: “Omar’s bike”. “Gates” is an ordinary plural and “leans” is a verb; neither owns anything, so neither takes an apostrophe.",
+      "d": 1
+    },
+    {
+      "q": "A market sign reads <i>“Ripe peach’s, 3 for $2.”</i> How should <i>peach’s</i> be written?",
+      "opts": [
+        "peaches",
+        "peaches’",
+        "peachs",
+        "peach’s’"
+      ],
+      "a": 0,
+      "why": "The sign means more than one peach and says nothing about ownership, so it needs a plain plural, and a plural takes no apostrophe. A word ending in -ch adds -es: “peaches”.",
+      "d": 1
+    },
+    {
+      "q": "Fill in:<br><i>“We borrowed my ___ car for the weekend.”</i>",
+      "opts": [
+        "sister-in-law’s",
+        "sister’s-in-law",
+        "sisters-in-law",
+        "sister-in-laws’"
+      ],
+      "a": 0,
+      "why": "One person owns the car, so this is a singular possessive, and in a compound noun the ’s goes on the last word of the whole name: “sister-in-law’s”. “Sisters-in-law” is the plural and shows no ownership at all.",
+      "d": 2
+    },
+    {
+      "q": "Fill in:<br><i>“The two ___ head offices are both in Denver.”</i>",
+      "opts": [
+        "companies’",
+        "company’s",
+        "companies",
+        "companys’"
+      ],
+      "a": 0,
+      "why": "There are two owners, so make the plural first, “companies” (y becomes ies), and then make it possessive. A plural already ending in s takes only an apostrophe. “Company’s” would give both offices to one company.",
+      "d": 2
+    },
+    {
+      "q": "In which sentence does <i>’s</i> stand for “is” rather than show ownership?",
+      "opts": [
+        "The storm’s coming in fast.",
+        "The storm’s eye passed overhead.",
+        "The storm’s damage was slight.",
+        "The storm’s winds died at dawn."
+      ],
+      "a": 0,
+      "why": "Expand to test, exactly as with it’s: “The storm is coming in fast” makes sense, so that ’s is a contraction. In the others the eye, the damage and the winds belong to the storm, and “the storm is eye” is not English. All four look alike, which is the trap; only the expansion test tells them apart.",
       "d": 3
     }
   ],
@@ -1449,6 +1749,66 @@
       "a": 0,
       "why": "The group has plenty of verbs (“met”, “had approved”, “proposed”), which is what makes it look complete. But “Although” turns everything up to the full stop into a dependent clause, so a main clause must follow: “…, the council rejected it.” “Had approved” is already the committee’s verb.",
       "d": 3
+    },
+    {
+      "q": "How many complete sentences does this passage contain?<br><i>“The bus was late. We walked. Because the rain had stopped.”</i>",
+      "opts": [
+        "2",
+        "3",
+        "1",
+        "0"
+      ],
+      "a": 0,
+      "why": "“The bus was late” and “We walked” each have a subject, a real verb and a complete thought; two words can make a whole sentence. “Because the rain had stopped” opens with a subordinator, so it cannot stand alone.",
+      "d": 1
+    },
+    {
+      "q": "Which word, added to the start of this sentence, would turn it into a fragment?<br><i>“The train left on time.”</i>",
+      "opts": [
+        "Although",
+        "Luckily",
+        "Today",
+        "Then"
+      ],
+      "a": 0,
+      "why": "“Although” is a subordinator: “Although the train left on time.” leaves the reader waiting for a main clause. “Luckily”, “Today” and “Then” only add information to a sentence that is still complete.",
+      "d": 1
+    },
+    {
+      "q": "Which choice fixes the error?<br><i>“We ate lunch by the lake, then we hiked to the falls.”</i>",
+      "opts": [
+        "lake, and then we",
+        "lake, then, we",
+        "lake then we",
+        "NO CHANGE"
+      ],
+      "a": 0,
+      "why": "“We ate lunch by the lake” and “we hiked to the falls” are both complete sentences, and “then” is not a FANBOYS word, so a comma before it makes a comma splice. Adding “and” gives the legal comma + FANBOYS join.",
+      "d": 2
+    },
+    {
+      "q": "Which of these is a run-on sentence?",
+      "opts": [
+        "The lights dimmed the play began.",
+        "The lights dimmed, and the play began.",
+        "When the lights dimmed, the play began.",
+        "The lights dimmed; the play began."
+      ],
+      "a": 0,
+      "why": "The first fuses two complete sentences, “The lights dimmed” and “the play began”, with nothing between them. The others join them legally: comma + FANBOYS, a subordinator that makes the first part dependent, and a semicolon.",
+      "d": 2
+    },
+    {
+      "q": "Which choice is best?<br><i>“Although the forecast promised sun, we packed umbrellas.”</i>",
+      "opts": [
+        "NO CHANGE",
+        "sun. We packed",
+        "sun; we packed",
+        "sun we packed"
+      ],
+      "a": 0,
+      "why": "“Although” makes the first clause dependent, and here it is already attached to a main clause, “we packed umbrellas”, with a comma, which is exactly how a dependent clause should be handled. A period or a semicolon would cut it loose as a fragment. The word “Although” pulls toward a fix the sentence does not need.",
+      "d": 3
     }
   ],
   "dash_dungeon": [
@@ -1690,6 +2050,66 @@
       ],
       "a": 0,
       "why": "“However” here interrupts a single clause (“The plan was rejected”), so it is set off by a pair of commas. A semicolon before “however” belongs only where it joins two complete sentences, and “The plan” is not one.",
+      "d": 3
+    },
+    {
+      "q": "Which pair of marks could fill both blanks?<br><i>“The mill ___ the oldest in the county ___ closed in May.”</i>",
+      "opts": [
+        "two dashes",
+        "a dash, then a comma",
+        "a colon, then a dash",
+        "a semicolon, then a comma"
+      ],
+      "a": 0,
+      "why": "Extra information in mid-sentence is fenced by a matching pair: two dashes, two commas or two parentheses. A dash and a comma break the pair, and a colon or semicolon cannot follow “The mill”, which is not a complete sentence.",
+      "d": 1
+    },
+    {
+      "q": "Which sentence punctuates the simple list correctly?",
+      "opts": [
+        "We bought bread, milk, and eggs.",
+        "We bought bread; milk; and eggs.",
+        "We bought: bread, milk, and eggs.",
+        "We bought bread — milk — and eggs."
+      ],
+      "a": 0,
+      "why": "Semicolons separate list items only when the items already contain commas. These items are single words, so plain commas do the job. A colon cannot follow “We bought”, which is still waiting for its object.",
+      "d": 1
+    },
+    {
+      "q": "The sentence needs a second dash. Where should it go?<br><i>“My neighbour — a retired pilot who still flies on weekends taught me to read a map.”</i>",
+      "opts": [
+        "after “weekends”",
+        "after “pilot”",
+        "after “taught”",
+        "after “map”"
+      ],
+      "a": 0,
+      "why": "Dashes around extra information come as a pair, and the closing dash goes where the extra part ends. Lift out “a retired pilot who still flies on weekends” and “My neighbour taught me to read a map” reads straight through.",
+      "d": 2
+    },
+    {
+      "q": "Which sentence places the period correctly?",
+      "opts": [
+        "The hall seats 500 (the old one seated 300).",
+        "The hall seats 500 (the old one seated 300.)",
+        "The hall seats 500. (the old one seated 300)",
+        "The hall seats 500, (the old one seated 300)."
+      ],
+      "a": 0,
+      "why": "The words in parentheses belong to the sentence, so the bracket closes around them first and the sentence’s own period comes after it. Like any pair of parentheses, they take no comma beside them.",
+      "d": 2
+    },
+    {
+      "q": "Which choice is best?<br><i>“The kit held three tools; a saw, a drill, and a level.”</i>",
+      "opts": [
+        "tools: a saw",
+        "NO CHANGE",
+        "tools a saw",
+        "tools; including a saw"
+      ],
+      "a": 0,
+      "why": "A complete sentence announces a list, and that is a colon’s job. A semicolon needs a complete sentence on both sides, and “a saw, a drill, and a level” is not one. The semicolon looks legal because the words before it do form a sentence; the words after it must too.",
       "d": 3
     }
   ],
@@ -1933,6 +2353,66 @@
       "a": 0,
       "why": "The subject is “the number”, which is singular; “of volunteers” sits between subject and verb, so cross it out. (“A number of volunteers”, meaning several, would take “have”.) “Since the flood” also calls for has/have, which rules out “are” and “were”.",
       "d": 3
+    },
+    {
+      "q": "Choose the verb:<br><i>“Last night the pond ___ over.”</i>",
+      "opts": [
+        "froze",
+        "freezed",
+        "frozen",
+        "freezes"
+      ],
+      "a": 0,
+      "why": "“Last night” fixes the action in a finished past, so the simple past is right, and freeze is irregular: freeze, froze, frozen. “Frozen” is the participle and needs a helper (“had frozen”), and “freezed” is not a word.",
+      "d": 1
+    },
+    {
+      "q": "Which sentence keeps its verbs in the same tense?",
+      "opts": [
+        "We packed the car and drove north.",
+        "We pack the car and drove north.",
+        "We packed the car and drive north.",
+        "We will pack the car and drove north."
+      ],
+      "a": 0,
+      "why": "Two actions in one sequence, joined by “and”, share a tense unless the timeline changes. Only the first keeps both in the past.",
+      "d": 1
+    },
+    {
+      "q": "Choose the verb:<br><i>“Running three miles before breakfast ___ her energy for the whole day.”</i>",
+      "opts": [
+        "gives",
+        "give",
+        "are giving",
+        "have given"
+      ],
+      "a": 0,
+      "why": "The subject is the whole activity, “Running three miles before breakfast”, and one activity is singular. “Miles” sits inside that subject phrase, so cross it out just as you would a prepositional phrase: running … gives.",
+      "d": 2
+    },
+    {
+      "q": "Choose the verb phrase:<br><i>“If she ___ the map, she would have found the trail.”</i>",
+      "opts": [
+        "had checked",
+        "would have checked",
+        "has checked",
+        "checks"
+      ],
+      "a": 0,
+      "why": "An unreal past condition has two halves: the “if” half takes had + participle, and the result half takes would have. Putting “would have” in both halves is a common spoken error.",
+      "d": 2
+    },
+    {
+      "q": "Choose the verb:<br><i>“Mia is one of the players who ___ before every match.”</i>",
+      "opts": [
+        "stretch",
+        "stretches",
+        "is stretching",
+        "has stretched"
+      ],
+      "a": 0,
+      "why": "The subject of the who-clause is “who”, and “who” stands for the nearest noun, “players”, which is plural: several players stretch, and Mia is one of them. “One” pulls toward the singular, but it belongs to the main clause (“Mia is one”), not to the who-clause.",
+      "d": 3
     }
   ],
   "transition_tower": [
@@ -2175,6 +2655,66 @@
       "a": 0,
       "why": "The second sentence limits the first: good results, but only in mice. That is a contrast, and “however” carries it. “On the contrary” is also a contrast, but too strong: it denies the sentence before it, and nothing here says the drug failed.",
       "d": 3
+    },
+    {
+      "q": "<i>“The hotel was cheap, clean and close to the beach, and the staff were kind. ___, it was the best week of our summer.”</i>",
+      "opts": [
+        "In short",
+        "However",
+        "For example",
+        "Otherwise"
+      ],
+      "a": 0,
+      "why": "The second sentence sums up the first: a list of good points becomes one verdict. That relationship is summary, and “In short” carries it. Nothing turns against the first sentence, illustrates it, or depends on a condition.",
+      "d": 1
+    },
+    {
+      "q": "<i>“The river rose overnight, ___ the ferry did not run.”</i>",
+      "opts": [
+        "so",
+        "but",
+        "or",
+        "for"
+      ],
+      "a": 0,
+      "why": "The rising river is the cause and the cancelled ferry is the effect, so the link must lead from cause to effect: “so”. “For” also joins a cause and an effect, but backwards: it would mean the river rose because the ferry did not run.",
+      "d": 1
+    },
+    {
+      "q": "<i>“The bridge you cross today opened in 1920. ___, a wooden bridge stood on the same spot.”</i>",
+      "opts": [
+        "Before that",
+        "After that",
+        "As a result",
+        "For instance"
+      ],
+      "a": 0,
+      "why": "Read both sentences: the wooden bridge came first, so the second sentence steps back in time. A time word has to point the right way; “After that” would put the wooden bridge after 1920. Nothing is caused or illustrated.",
+      "d": 2
+    },
+    {
+      "q": "<i>“The trip was costly. Nevertheless, it was worth every penny.”</i><br>Which choice would NOT be an acceptable replacement for <i>Nevertheless</i>?",
+      "opts": [
+        "Therefore",
+        "Still",
+        "Even so",
+        "All the same"
+      ],
+      "a": 0,
+      "why": "Costly set against worth it is a contrast, so any replacement must also turn. “Still”, “Even so” and “All the same” all concede in the same way. “Therefore” announces a result, and being costly is no reason for being worth it.",
+      "d": 2
+    },
+    {
+      "q": "<i>“The festival moved indoors this year. ___, the forecast had called for a week of storms.”</i>",
+      "opts": [
+        "After all",
+        "As a result",
+        "Nevertheless",
+        "For instance"
+      ],
+      "a": 0,
+      "why": "The second sentence gives the reason for the first: the storms explain the move. “After all” introduces a justification. “As a result” is the trap: the two ideas are linked by cause, but it points the wrong way, making the forecast a result of the move.",
+      "d": 3
     }
   ],
   "fraction_falls": [
@@ -2311,15 +2851,15 @@
       "d": 3
     },
     {
-      "q": "A recipe uses 3 cups of flour for 12 muffins. How many cups are needed for 20 muffins?",
+      "q": "A school trip needs 2 adults for every 15 students. How many adults are needed for 60 students?",
       "opts": [
-        "5",
-        "4",
         "8",
-        "11"
+        "4",
+        "30",
+        "6"
       ],
       "a": 0,
-      "why": "Set up the proportion: 3/12 = x/20. That is ¼ cup per muffin, and 20 × ¼ = 5.",
+      "why": "Ratios scale together: 60 students is 4 times 15, so multiply the adults by 4 as well: 2 × 4 = 8. The 4 is the multiplier, not the answer.",
       "d": 1
     },
     {
@@ -2416,6 +2956,66 @@
       ],
       "a": 0,
       "why": "Ratios scale together, so write the parts with one multiplier: 2k red and 3k blue. Adding 10 red makes them equal, so 2k + 10 = 3k and k = 10. Blue is 3k = 30; 20 is the original red count.",
+      "d": 3
+    },
+    {
+      "q": "A school has 40 teachers, and 15% of them teach math. How many teachers teach math?",
+      "opts": [
+        "6",
+        "15",
+        "25",
+        "34"
+      ],
+      "a": 0,
+      "why": "“Of” means multiply: 15% of 40 = 0.15 × 40 = 6. The 15 is the percent, not the number of teachers.",
+      "d": 1
+    },
+    {
+      "q": "In a survey, 45 of 60 students said they walk to school. What fraction of the students do NOT walk?",
+      "opts": [
+        "1/4",
+        "3/4",
+        "1/3",
+        "2/5"
+      ],
+      "a": 0,
+      "why": "The students who do not walk number 60 − 45 = 15, and 15/60 simplifies to 1/4. The trap 3/4 is the share who do walk; the trap 1/3 compares non-walkers to walkers (15/45) instead of to the whole class.",
+      "d": 2
+    },
+    {
+      "q": "A map scale is 1 cm : 5 km. Two towns are 7.5 cm apart on the map. How far apart are they in real life?",
+      "opts": [
+        "37.5 km",
+        "1.5 km",
+        "12.5 km",
+        "75 km"
+      ],
+      "a": 0,
+      "why": "A ratio scales together: multiply both parts by the same number. 1 cm becomes 7.5 cm, so 5 km becomes 5 × 7.5 = 37.5 km. Dividing 7.5 by 5 gives 1.5, which runs the scale backwards.",
+      "d": 2
+    },
+    {
+      "q": "A store raises a price by 25%. By what percent must it then cut the new price to get back to the original price?",
+      "opts": [
+        "20%",
+        "25%",
+        "75%",
+        "80%"
+      ],
+      "a": 0,
+      "why": "Percent change is always measured against the starting value of that step. Take $100: it rises to $125. To fall back by $25 from $125 is 25/125 = 20%. The cut is smaller because it is taken from a larger starting value.",
+      "d": 3
+    },
+    {
+      "q": "At a shelter the ratio of cats to dogs is 5 : 3, and there are 16 more cats than dogs. How many cats and dogs are there in all?",
+      "opts": [
+        "64",
+        "40",
+        "24",
+        "128"
+      ],
+      "a": 0,
+      "why": "Give the parts one multiplier: cats 5k, dogs 3k. The difference is 2k = 16, so k = 8. That makes 40 cats and 24 dogs, 64 in all. The traps stop at one part or double the total.",
       "d": 3
     }
   ],
@@ -2659,6 +3259,66 @@
       "a": 0,
       "why": "V = πr²h, and the radius is squared: doubling r multiplies r² by 2² = 4. The 8 would be right only if every length doubled, as with similar solids, and the 2 forgets the square.",
       "d": 3
+    },
+    {
+      "q": "A right triangle has legs of 6 and 8. What is its area?",
+      "opts": [
+        "24",
+        "48",
+        "14",
+        "10"
+      ],
+      "a": 0,
+      "why": "In a right triangle the two legs meet at the right angle, so one is the base and the other is the height: ½ × 6 × 8 = 24. Forgetting the ½ gives 48; 10 is the hypotenuse.",
+      "d": 1
+    },
+    {
+      "q": "A rectangle has an area of 60 and a length of 12. What is its perimeter?",
+      "opts": [
+        "34",
+        "17",
+        "72",
+        "24"
+      ],
+      "a": 0,
+      "why": "Area = length × width, so the width is 60 ÷ 12 = 5. The perimeter adds all four sides: 2(12 + 5) = 34. Adding just one length and one width gives 17.",
+      "d": 2
+    },
+    {
+      "q": "An exterior angle of a triangle measures 110°. One of the two interior angles not next to it measures 45°. What does the other one measure?",
+      "opts": [
+        "65°",
+        "70°",
+        "25°",
+        "135°"
+      ],
+      "a": 0,
+      "why": "An exterior angle equals the sum of the two interior angles that are not beside it, so the missing angle is 110° − 45° = 65°. (Check: the interior angle beside the exterior one is 180° − 110° = 70°, and 45° + 65° + 70° = 180°.) The trap 70° is that neighbouring angle.",
+      "d": 2
+    },
+    {
+      "q": "A tank with a rectangular base 50 cm long and 20 cm wide holds water 10 cm deep. Then 3,000 cm³ more water is poured in. How deep is the water now?",
+      "opts": [
+        "13 cm",
+        "3 cm",
+        "16 cm",
+        "30 cm"
+      ],
+      "a": 0,
+      "why": "Volume = base area × height, so the added height is the added volume ÷ base area: 3,000 ÷ (50 × 20) = 3 cm. The water was already 10 cm deep, so it is now 13 cm. Answering 3 cm gives only the rise.",
+      "d": 3
+    },
+    {
+      "q": "Each side of a square is increased by 50%. By what percent does the area of the square increase?",
+      "opts": [
+        "125%",
+        "50%",
+        "100%",
+        "225%"
+      ],
+      "a": 0,
+      "why": "The new square is similar to the old one, with sides in the ratio 1.5 : 1, so areas are in the ratio 1.5² = 2.25 : 1. The area grows to 225% of the original, an increase of 125%. The trap 225% is the new area, not the increase.",
+      "d": 3
     }
   ],
   "function_foundry": [
@@ -2711,27 +3371,27 @@
       "d": 2
     },
     {
-      "q": "What is the domain of f(x) = 1/(x − 5)?",
+      "q": "What is the domain of g(x) = √(x + 3) / (x − 1)?",
       "opts": [
-        "all real numbers except 5",
-        "all real numbers",
-        "x &gt; 5 only",
-        "all real numbers except 0"
+        "x ≥ −3 and x ≠ 1",
+        "x ≥ −3",
+        "x ≠ 1",
+        "x &gt; 3 and x ≠ −1"
       ],
       "a": 0,
-      "why": "The denominator may never be zero, and it is zero exactly when x = 5.",
+      "why": "Two rules apply at once. Under the square root, x + 3 ≥ 0, so x ≥ −3. The denominator must not be 0, so x ≠ 1. The domain needs both conditions; each of the middle choices keeps only one.",
       "d": 3
     },
     {
-      "q": "If f(x) = 2x + 1, what is its inverse?",
+      "q": "If f(x) = (x − 4)/3, what is f⁻¹(5)?",
       "opts": [
-        "(x − 1)/2",
-        "2x − 1",
-        "1/(2x + 1)",
-        "(x + 1)/2"
+        "19",
+        "1/3",
+        "11",
+        "3"
       ],
       "a": 0,
-      "why": "Swap x and y, then solve: x = 2y + 1 gives y = (x − 1)/2.",
+      "why": "An inverse undoes the function: swap x and y and solve. x = (y − 4)/3 gives y = 3x + 4, so f⁻¹(5) = 19. Check: f(19) = 15/3 = 5. The trap 1/3 is f(5), which runs the function forward.",
       "d": 3
     },
     {
@@ -2900,6 +3560,66 @@
       ],
       "a": 0,
       "why": "Work inside-out: g(2) = 3 from the g row, then f(3) = 4 from the f row. Working in the other order gives g(f(2)) = g(1) = 2, and 1 and 3 are the first lookups, f(2) and g(2), left unfinished.",
+      "d": 3
+    },
+    {
+      "q": "If f(x) = x/2 + 3, what is f(10)?",
+      "opts": [
+        "8",
+        "6.5",
+        "13",
+        "5"
+      ],
+      "a": 0,
+      "why": "Plug in 10 wherever x appears: 10/2 + 3 = 5 + 3 = 8. The 6.5 comes from adding before dividing, which the expression does not say.",
+      "d": 1
+    },
+    {
+      "q": "The point (2, 9) lies on the graph of y = g(x). What is g(2)?",
+      "opts": [
+        "9",
+        "2",
+        "18",
+        "11"
+      ],
+      "a": 0,
+      "why": "A point on a function’s graph is (input, output). The input 2 gives the output 9, so g(2) = 9.",
+      "d": 1
+    },
+    {
+      "q": "If f(x) = 3x and g(x) = x − 4, what is g(f(5))?",
+      "opts": [
+        "11",
+        "3",
+        "15",
+        "1"
+      ],
+      "a": 0,
+      "why": "Work inside-out: f(5) = 15 first, then g(15) = 15 − 4 = 11. Doing g first gives f(g(5)) = f(1) = 3, the reversed order.",
+      "d": 2
+    },
+    {
+      "q": "The graph of y = |x| is moved 2 units left and 5 units down. What is the equation of the new graph?",
+      "opts": [
+        "y = |x + 2| − 5",
+        "y = |x − 2| − 5",
+        "y = |x + 2| + 5",
+        "y = |x − 5| + 2"
+      ],
+      "a": 0,
+      "why": "A number added outside moves the graph up or down, so down 5 is −5 at the end. A change inside the bars moves it sideways and opposite the sign, so left 2 is x + 2.",
+      "d": 2
+    },
+    {
+      "q": "If f(x) = 2x² − 3, what is f(x + 1)?",
+      "opts": [
+        "2x² + 4x − 1",
+        "2x² − 2",
+        "2x² + 2x − 2",
+        "2x² + 4x + 5"
+      ],
+      "a": 0,
+      "why": "Plug in the whole expression x + 1 for x: 2(x + 1)² − 3 = 2(x² + 2x + 1) − 3 = 2x² + 4x − 1. Adding 1 to the output instead gives 2x² − 2, and squaring as x² + 1 loses the middle term.",
       "d": 3
     }
   ],
@@ -3143,6 +3863,66 @@
       "a": 0,
       "why": "½ × 8 × 10 × sin 30° = 40 × ½ = 20. Using cos 30° instead gives 20√3, and dropping the ½ gives 40.",
       "d": 3
+    },
+    {
+      "q": "In a right triangle, the side opposite angle θ is 4 and the side adjacent to θ is 7. What is tan θ?",
+      "opts": [
+        "4/7",
+        "7/4",
+        "4/√65",
+        "7/√65"
+      ],
+      "a": 0,
+      "why": "TOA: tangent is opposite over adjacent, 4/7. The hypotenuse, √65, belongs in sine and cosine, not tangent.",
+      "d": 1
+    },
+    {
+      "q": "cos 60° =",
+      "opts": [
+        "1/2",
+        "√3/2",
+        "√2/2",
+        "1"
+      ],
+      "a": 0,
+      "why": "On the unit circle, cos is the x-coordinate, and the point at 60° is (1/2, √3/2). So cos 60° = 1/2; √3/2 is sin 60°.",
+      "d": 1
+    },
+    {
+      "q": "What is 45° in radians?",
+      "opts": [
+        "π/4",
+        "π/2",
+        "π/8",
+        "4π"
+      ],
+      "a": 0,
+      "why": "180° is π radians, so 45° is 45/180 of π, which is π/4.",
+      "d": 2
+    },
+    {
+      "q": "θ is acute and sin θ = 0.6. What is tan θ?",
+      "opts": [
+        "3/4",
+        "4/3",
+        "3/5",
+        "4/5"
+      ],
+      "a": 0,
+      "why": "sin θ = 0.6 = 3/5, so draw a right triangle with opposite 3 and hypotenuse 5. The triples give adjacent 4, and tan θ = opposite/adjacent = 3/4. The trap 4/3 is adjacent over opposite.",
+      "d": 3
+    },
+    {
+      "q": "tan θ = 1 and 180° &lt; θ &lt; 270°. What is θ?",
+      "opts": [
+        "225°",
+        "45°",
+        "135°",
+        "315°"
+      ],
+      "a": 0,
+      "why": "tan θ = 1 when the reference angle is 45°. In the third quadrant, sine and cosine are both negative, so their ratio, tangent, is positive. The third-quadrant angle is 180° + 45° = 225°. The trap 45° is right in value but outside the given range.",
+      "d": 3
     }
   ],
   "probability_peaks": [
@@ -3384,6 +4164,66 @@
       ],
       "a": 0,
       "why": "Find the chance of one miss first, 1 − 0.7 = 0.3, then multiply for two independent misses: 0.3 × 0.3 = 0.09. Adding the misses gives 0.6, and 0.49 is the chance she makes both.",
+      "d": 3
+    },
+    {
+      "q": "A bag holds 5 green, 3 yellow and 2 white counters. One is drawn at random. What is the probability that it is yellow?",
+      "opts": [
+        "3/10",
+        "3/7",
+        "1/3",
+        "3/5"
+      ],
+      "a": 0,
+      "why": "Favorable over total: 3 yellow out of 5 + 3 + 2 = 10 counters, so 3/10. The trap 3/7 compares yellow with the other counters instead of with all of them.",
+      "d": 1
+    },
+    {
+      "q": "A code is one letter (A, B or C) followed by one digit (0 to 9). How many different codes are possible?",
+      "opts": [
+        "30",
+        "13",
+        "27",
+        "10"
+      ],
+      "a": 0,
+      "why": "Each of the 3 letters can go with each of the 10 digits, so multiply: 3 × 10 = 30. Adding the choices, 3 + 10 = 13, counts the letters and digits but not the pairings.",
+      "d": 2
+    },
+    {
+      "q": "You roll a pair of fair dice. What is the chance that the two numbers add up to 7?",
+      "opts": [
+        "1/6",
+        "7/36",
+        "1/12",
+        "1/11"
+      ],
+      "a": 0,
+      "why": "There are 6 × 6 = 36 equally likely outcomes. Six of them total 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1). So 6/36 = 1/6. The 1/11 treats the 11 possible totals as equally likely, which they are not.",
+      "d": 2
+    },
+    {
+      "q": "A fair coin is flipped and a fair six-sided die is rolled. What is the probability of getting heads and a number greater than 4?",
+      "opts": [
+        "1/6",
+        "1/3",
+        "5/6",
+        "1/12"
+      ],
+      "a": 0,
+      "why": "The two events are independent, so multiply: P(heads) = 1/2 and P(5 or 6) = 2/6 = 1/3, giving 1/2 × 1/3 = 1/6. The 1/3 is the die alone; 1/12 counts only one number above 4.",
+      "d": 2
+    },
+    {
+      "q": "<table><tr><th></th><th>Walks</th><th>Takes the bus</th></tr><tr><th>Grade 11</th><td>18</td><td>12</td></tr><tr><th>Grade 12</th><td>10</td><td>20</td></tr></table>A student who takes the bus is chosen at random. What is the probability that the student is in Grade 12?",
+      "opts": [
+        "5/8",
+        "1/3",
+        "2/3",
+        "3/8"
+      ],
+      "a": 0,
+      "why": "The question fixes the group: only bus riders count, so the new total is 12 + 20 = 32. Of those, 20 are in Grade 12: 20/32 = 5/8. The trap 1/3 divides by all 60 students; 2/3 divides by Grade 12 instead of by the bus riders.",
       "d": 3
     }
   ],
@@ -3627,6 +4467,66 @@
       "a": 0,
       "why": "The passage opens with the tempting view only to correct it. “But” introduces the real point: the decline started with the telephone. The second choice is the view the author sets aside.",
       "d": 3
+    },
+    {
+      "q": "<i>“Hedgehogs are in steep decline in Britain, and gardens may be part of the answer. A hedgehog travels up to two kilometres a night looking for food, but fences block its way. Residents who cut a small hole at the base of a fence can link a whole street into one hunting ground.”</i><br>Which statement best expresses the main idea?",
+      "opts": [
+        "Small gaps in garden fences can help hedgehogs find food.",
+        "Hedgehogs travel up to two kilometres every night.",
+        "British gardens are too small to support wildlife.",
+        "Fences should be banned in residential streets."
+      ],
+      "a": 0,
+      "why": "The opening line sets up the point (gardens may help) and the last line gives it (a gap links a street). The two kilometres is one supporting detail, too narrow, and nothing suggests banning fences.",
+      "d": 1
+    },
+    {
+      "q": "<i>“Libraries lend more than books now. Branches in our county lend fishing rods, sewing machines, telescopes and even cake tins, and the telescope waiting list runs to three months. For many families, the library has become the place to try a hobby before paying for it.”</i><br>The passage is mostly about:",
+      "opts": [
+        "libraries lending objects that let people try hobbies",
+        "the long waiting list for library telescopes",
+        "libraries no longer lending any books",
+        "hobbies becoming too costly for most families"
+      ],
+      "a": 0,
+      "why": "The first and last sentences carry the point: libraries now lend things, and people use them to try hobbies. The telescope list is one example, and the passage never says books have stopped.",
+      "d": 1
+    },
+    {
+      "q": "<i>“It is true that the concrete harbour wall is ugly, and visitors complain about it every summer. But the wall has kept the town dry through three storm surges since it was built, and a stone replacement would cost twice as much for less protection.”</i><br>The author mainly argues that:",
+      "opts": [
+        "the wall should stay despite its looks",
+        "visitors dislike the harbour wall",
+        "a stone wall would look much better",
+        "storm surges are growing more common"
+      ],
+      "a": 0,
+      "why": "A passage that opens “It is true that … But” puts its real point after the “But”: the wall works and should stay. That visitors dislike it is true, but it is the point being conceded, not the argument.",
+      "d": 1
+    },
+    {
+      "q": "<i>“When the town clock stopped in 1962, nobody fixed it; the council had other priorities. Over the years people began giving directions by it (‘turn left at the stopped clock’) and meeting under it. When a firm offered to repair it free in 2004, residents voted against. A broken clock had become a landmark.”</i><br>The passage is chiefly about:",
+      "opts": [
+        "how a broken clock became a valued landmark",
+        "why the council would not pay to fix the clock",
+        "how people in the town give directions",
+        "a firm’s offer to repair old clocks for free"
+      ],
+      "a": 0,
+      "why": "The closing sentence states the point, and every earlier sentence builds toward it. The council, the directions and the repair offer are each one step in that story, so each alone is too narrow.",
+      "d": 2
+    },
+    {
+      "q": "<i>“Most accounts of the Wright brothers dwell on the first flight at Kitty Hawk. That flight lasted twelve seconds. What made the brothers’ name was the two years that followed, in a cow pasture outside Dayton, where they flew again and again, crashed, rebuilt, and learned to turn. Kitty Hawk proved flight was possible; the pasture made it practical.”</i><br>The main idea is that the Wright brothers’ achievement:",
+      "opts": [
+        "owed more to their later practice than to the first flight",
+        "began and ended with twelve seconds at Kitty Hawk",
+        "was nearly ruined by their many crashes",
+        "is best remembered through the Kitty Hawk flight"
+      ],
+      "a": 0,
+      "why": "The passage opens with the usual account only to turn away from it (“What made the brothers’ name was …”), and the last line sums up the turn. Choices about Kitty Hawk repeat the view the author is correcting, and the crashes are one detail of the practice years.",
+      "d": 3
     }
   ],
   "detail_desert": [
@@ -3868,6 +4768,66 @@
       ],
       "a": 0,
       "why": "Two statements must be read together: the 1850 workforce was forty, and in 1870 it was fewer than half that, so fewer than twenty. “Exactly twenty” is half, not fewer than half.",
+      "d": 3
+    },
+    {
+      "q": "<i>“The ferry leaves the north pier at 7:15 each morning and returns at 6:40 in the evening, except on Sundays, when it makes a single round trip at noon.”</i><br>According to the passage, on Sundays the ferry:",
+      "opts": [
+        "makes one round trip at noon",
+        "leaves the north pier at 7:15",
+        "does not run at all",
+        "returns at 6:40 in the evening"
+      ],
+      "a": 0,
+      "why": "Go back to the words after “except on Sundays”: a single round trip at noon. The 7:15 and 6:40 times are the weekday schedule that Sunday is an exception to.",
+      "d": 1
+    },
+    {
+      "q": "<i>“Of the 40 seedlings planted in March, 12 died in a late frost. Half of the survivors were then eaten by deer, and the rest were moved to the greenhouse.”</i><br>According to the passage, how many seedlings were moved to the greenhouse?",
+      "opts": [
+        "14",
+        "28",
+        "12",
+        "20"
+      ],
+      "a": 0,
+      "why": "Reread each step in order: 40 − 12 = 28 survived the frost, half of those (14) were eaten, and the rest, 14, were moved. The 28 stops a step early, and 20 takes half of the original 40.",
+      "d": 2
+    },
+    {
+      "q": "<i>“The first lighthouse on the point burned whale oil and could be seen for eight miles. Its replacement, built in 1871, burned kerosene and reached fourteen miles. The electric lamp installed in 1932 is visible for twenty-two miles, though the tower itself has not changed since 1871.”</i><br>According to the passage, what changed in 1932?",
+      "opts": [
+        "the lamp, but not the tower",
+        "both the tower and the lamp",
+        "the tower, but not the lamp",
+        "the fuel, from oil to kerosene"
+      ],
+      "a": 0,
+      "why": "Reread the last sentence: a new electric lamp came in 1932, “though the tower itself has not changed since 1871”. The switch to kerosene belongs to 1871, a near-miss that swaps one date for the other.",
+      "d": 2
+    },
+    {
+      "q": "<i>“Maria was born two years after the family arrived in Halifax. Her brother Tomas, the eldest, was nine when they arrived; her sister Ana was born the year before Maria.”</i><br>How old was Tomas when Ana was born?",
+      "opts": [
+        "10",
+        "11",
+        "9",
+        "12"
+      ],
+      "a": 0,
+      "why": "Put each detail on one timeline. Maria was born two years after arrival, and Ana a year before Maria, so Ana was born one year after arrival. Tomas was nine at arrival, so ten. The 11 is his age when Maria was born.",
+      "d": 3
+    },
+    {
+      "q": "<i>“The survey counted 120 nests. Two-thirds were in the reed beds, and a quarter of those failed. Every nest outside the reed beds succeeded.”</i><br>According to the passage, how many nests succeeded in all?",
+      "opts": [
+        "100",
+        "60",
+        "90",
+        "20"
+      ],
+      "a": 0,
+      "why": "Work through the passage one clause at a time. Reed beds: 2/3 of 120 = 80, of which a quarter (20) failed, leaving 60. Outside: 40, all successful. Total 60 + 40 = 100. The 60 forgets the last sentence, and 90 takes a quarter of all 120.",
       "d": 3
     }
   ],
@@ -4111,6 +5071,66 @@
       "a": 0,
       "why": "Two details combine: one page is worn from use (“soft at the corners from turning”), and the rest are clean. Together they point to one recipe used again and again. A single spill would not wear the corners soft.",
       "d": 2
+    },
+    {
+      "q": "<i>“Leila checked the bus timetable twice, then ran the last two blocks to the stop, her bag bouncing against her hip.”</i><br>It can reasonably be inferred that Leila:",
+      "opts": [
+        "was worried about missing the bus",
+        "disliked travelling by bus",
+        "had never taken this bus before",
+        "was already late for school"
+      ],
+      "a": 0,
+      "why": "Take the smallest leap: checking the time twice and then running points to worry about catching the bus. Nothing says where she was going, so “late for school” reaches beyond the page.",
+      "d": 1
+    },
+    {
+      "q": "<i>“The sign on the gallery door read: ‘Closed Mondays. Late opening Thursdays until nine.’ Joon arrived on a Monday evening at eight and turned back.”</i><br>It can reasonably be inferred that Joon turned back because:",
+      "opts": [
+        "the gallery was closed that day",
+        "he arrived an hour too early",
+        "the gallery closes at eight",
+        "he had forgotten his ticket"
+      ],
+      "a": 0,
+      "why": "Point to the line that forces it: the sign says “Closed Mondays”, and Joon came on a Monday. The late opening is for Thursdays, so the times do not matter here.",
+      "d": 1
+    },
+    {
+      "q": "<i>“The museum has only two public entrances, the east door and the west door. On Monday the west door was shut all day for repairs.”</i><br>It can reasonably be inferred that Monday’s visitors:",
+      "opts": [
+        "came in through the east door",
+        "did not visit the museum at all",
+        "used the staff entrance",
+        "came through the west door after repairs"
+      ],
+      "a": 0,
+      "why": "Combine the two statements: there are only two public entrances, and one was shut all day, so visitors used the other. The staff entrance and a reopening are never mentioned.",
+      "d": 2
+    },
+    {
+      "q": "<i>“Leaves on the north side of the hedge were still green; those on the south side, which faces the road, had turned brown and curled. The council had salted the road all winter.”</i><br>It can reasonably be inferred that:",
+      "opts": [
+        "salt from the road may have harmed the south side of the hedge",
+        "the north side of the hedge gets more sunlight",
+        "the council plans to replace the whole hedge",
+        "road salt is the only thing that turns leaves brown"
+      ],
+      "a": 0,
+      "why": "The two facts sit side by side for a reason: the damaged side faces the salted road. The modest “may have harmed” is the smallest leap. “The only thing” is an extreme that the passage cannot support.",
+      "d": 2
+    },
+    {
+      "q": "<i>“The inspector passed every truck that carried a valid permit. Truck 7 was turned back at the border, though its driver insisted his paperwork was in order.”</i><br>It can reasonably be inferred that:",
+      "opts": [
+        "Truck 7’s permit was not valid",
+        "the driver of Truck 7 was lying",
+        "the inspector made a mistake",
+        "Truck 7 carried illegal goods"
+      ],
+      "a": 0,
+      "why": "Every truck with a valid permit was passed, and Truck 7 was not passed, so it cannot have had a valid permit. The driver’s protest pulls toward “the inspector made a mistake”, but that contradicts the first sentence. The driver may simply have been wrong rather than lying, and cargo is never mentioned.",
+      "d": 3
     }
   ],
   "viewpoint_vista": [
@@ -4353,6 +5373,66 @@
       "a": 0,
       "why": "B does not dispute A’s facts; B points to what tourism replaced, an island its young people had to leave. That is an argument for weighing costs against benefits, not a denial of the crowds or the rents.",
       "d": 2
+    },
+    {
+      "q": "<b>Writer A:</b> <i>A four-day school week saves money and gives families a long weekend together.</i><br><b>Writer B:</b> <i>A four-day week leaves working parents paying for childcare on the fifth day.</i><br>Writer B’s main worry about the four-day week is:",
+      "opts": [
+        "its cost to working parents",
+        "the loss of family time",
+        "the length of the school day",
+        "the money it saves schools"
+      ],
+      "a": 0,
+      "why": "Map Writer B in a phrase: childcare costs for parents on the day off. Family time and savings are Writer A’s points, so keep the voices separate.",
+      "d": 1
+    },
+    {
+      "q": "<b>Writer A:</b> <i>Street murals brighten the city and should be encouraged.</i><br><b>Writer B:</b> <i>Murals painted without permission are vandalism, however skilled.</i><br>Writer B objects only to murals that are:",
+      "opts": [
+        "painted without permission",
+        "painted in bright colours",
+        "painted by skilled artists",
+        "encouraged by the city"
+      ],
+      "a": 0,
+      "why": "Writer B’s complaint has a condition built in: “without permission”. The words “however skilled” show that skill is not the issue, so B’s objection is to permission alone.",
+      "d": 1
+    },
+    {
+      "q": "<b>Writer A:</b> <i>Electric scooters cut out short car trips and should be allowed on every street.</i><br><b>Writer B:</b> <i>Scooters left lying on pavements trip up blind and elderly walkers. Allow them, but only with proper parking bays.</i><br>Writer B’s view is best summed up as:",
+      "opts": [
+        "support for scooters, on a condition",
+        "complete opposition to scooters",
+        "a call to ban cars from streets",
+        "indifference to pedestrian safety"
+      ],
+      "a": 0,
+      "why": "Writer B opens with a harm, which pulls toward “opposition”, but the second sentence says “Allow them”. Read to the end of each voice before labelling it. The support comes with a condition: parking bays.",
+      "d": 2
+    },
+    {
+      "q": "<b>Writer A:</b> <i>The river should be dredged; silt is what floods the town.</i><br><b>Writer B:</b> <i>Dredging will help for a year or two. But the forest upstream was cleared, and until it is replanted the silt will keep coming.</i><br>Which new evidence would most strengthen Writer B’s argument?",
+      "opts": [
+        "Silt levels jumped after the forest was cleared.",
+        "The river was last dredged about thirty years ago.",
+        "Flooding in the town has cost millions in repairs.",
+        "Dredging machinery has become cheaper to hire."
+      ],
+      "a": 0,
+      "why": "Writer B’s distinctive claim is that the cleared forest is the source of the silt. Evidence linking the silt to the clearing favours B. The flood costs and the cheaper dredging concern the problem or Writer A’s remedy, not B’s cause.",
+      "d": 2
+    },
+    {
+      "q": "<b>Writer A:</b> <i>Exams should be scrapped; they measure only how well pupils sit exams.</i><br><b>Writer B:</b> <i>Scrap the exams and you are left with teachers’ impressions, which favour the confident and the well-spoken.</i><br>Both writers appear to assume that:",
+      "opts": [
+        "pupils should be judged fairly",
+        "exams should stay as they are",
+        "teachers’ judgements are always biased",
+        "confident pupils learn the most"
+      ],
+      "a": 0,
+      "why": "They disagree about exams, but each objects to a method because it is unfair: A says exams reward exam technique, and B says impressions reward confidence. Fairness is the shared ground. “Exams should stay” is B’s implied side only, and “always biased” goes beyond what B says.",
+      "d": 3
     }
   ],
   "graph_gorge": [
@@ -4595,6 +5675,66 @@
       "a": 0,
       "why": "Compare the ratios, not the differences: 24 → 12 → 6 → 3, each half the last. The drops are 12, 6 and 3 litres, so “falls by 12 L” holds only for the first step. When one quantity doubles and the other halves, the relationship is inverse.",
       "d": 2
+    },
+    {
+      "q": "A bar chart shows the number of birds counted each month. The tallest bar is above July. This means that:",
+      "opts": [
+        "July had the highest count of the year",
+        "July was the warmest month of the year",
+        "birds were counted only in July",
+        "the count rose every month until July"
+      ],
+      "a": 0,
+      "why": "Check what the axis measures: bar height is the number of birds. The tallest bar is simply the largest count. The chart says nothing about temperature or about the months in between.",
+      "d": 1
+    },
+    {
+      "q": "A graph shows temperature on the y-axis against time on the x-axis. The line slopes down from left to right. The temperature is:",
+      "opts": [
+        "falling over time",
+        "rising over time",
+        "staying constant",
+        "below zero"
+      ],
+      "a": 0,
+      "why": "Read the axes first. Moving right means later in time, and the line going down means the temperature is lower. So the temperature falls as time passes.",
+      "d": 1
+    },
+    {
+      "q": "<table><tr><th>Week</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Plant P height (cm)</td><td>4</td><td>7</td><td>10</td><td>13</td></tr><tr><td>Plant Q height (cm)</td><td>1</td><td>5</td><td>9</td><td>13</td></tr></table>Which plant grew faster over these weeks?",
+      "opts": [
+        "Plant Q, by 4 cm a week to P’s 3 cm",
+        "Plant P, since it was taller in weeks 1 to 3",
+        "Neither; both reached 13 cm",
+        "Plant P, since it started taller"
+      ],
+      "a": 0,
+      "why": "Follow one row at a time and look at the change, not the height. P gains 3 cm a week and Q gains 4 cm, so Q’s line would be steeper. Being taller is not the same as growing faster.",
+      "d": 2
+    },
+    {
+      "q": "A graph’s x-axis is marked 0, 1, 2, 5 and 10 at equal spacing. A line on this graph looks perfectly straight. The line:",
+      "opts": [
+        "may hide an uneven rate of change",
+        "shows a steady rate of change",
+        "must show exponential growth",
+        "shows that y does not depend on x"
+      ],
+      "a": 0,
+      "why": "Watch uneven scales. Equal gaps on the axis stand for steps of 1, 1, 3 and 5, so a line that looks straight may be changing at a very different rate per unit of x. You cannot trust the shape without the numbers.",
+      "d": 2
+    },
+    {
+      "q": "<table><tr><th>Temperature (°C)</th><th>10</th><th>20</th><th>30</th><th>40</th></tr><tr><td>Solubility of A (g)</td><td>20</td><td>30</td><td>40</td><td>50</td></tr><tr><td>Solubility of B (g)</td><td>35</td><td>38</td><td>41</td><td>44</td></tr></table>If both rows were plotted as lines, which statement would be true?",
+      "opts": [
+        "B dissolves more below about 30 °C, and A more above it",
+        "A dissolves more at every temperature shown",
+        "B dissolves more at every temperature shown",
+        "The two dissolve equally at every temperature"
+      ],
+      "a": 0,
+      "why": "Where two curves cross, the quantities are equal. At 30 °C, A is 40 and B is 41, nearly equal; by 40 °C, A (50) has passed B (44). So B leads below about 30 °C and A above it. Comparing only one column pulls toward one of the “every temperature” choices.",
+      "d": 3
     }
   ],
   "experiment_expanse": [
@@ -4836,6 +5976,66 @@
       ],
       "a": 0,
       "why": "A blank is a control with none of the thing being measured. If it reads above zero, the lead is coming from the equipment or reagents, and every sample reading carries that same error.",
+      "d": 3
+    },
+    {
+      "q": "A student tests whether the colour of a ball affects how high it bounces. What is the independent variable?",
+      "opts": [
+        "the colour of the ball",
+        "the height of the bounce",
+        "the height it is dropped from",
+        "the surface of the floor"
+      ],
+      "a": 0,
+      "why": "The independent variable is what the student changes on purpose: the ball’s colour. The bounce height is what is measured (the dependent variable), and the drop height and floor should be held constant.",
+      "d": 1
+    },
+    {
+      "q": "<table><tr><th>Trial</th><th>Water (mL)</th><th>Sugar (g)</th><th>Time to dissolve (s)</th></tr><tr><td>1</td><td>50</td><td>5</td><td>20</td></tr><tr><td>2</td><td>50</td><td>10</td><td>34</td></tr><tr><td>3</td><td>50</td><td>15</td><td>51</td></tr><tr><td>4</td><td>50</td><td>20</td><td>70</td></tr></table>What did the student change on purpose?",
+      "opts": [
+        "the mass of sugar",
+        "the volume of water",
+        "the time to dissolve",
+        "the number of trials"
+      ],
+      "a": 0,
+      "why": "Look for the column the student set to different values before the test: sugar goes 5, 10, 15, 20, so it is the independent variable. Water stays at 50 mL (a constant), and time is what was measured.",
+      "d": 1
+    },
+    {
+      "q": "A student measures plants with a ruler whose scale starts 1 cm from its end, so every reading is 1 cm too long. This error:",
+      "opts": [
+        "adds 1 cm to every height but leaves differences correct",
+        "is random and cancels out when readings are averaged",
+        "makes tall plants look shorter than short plants do",
+        "disappears if each plant is measured three times"
+      ],
+      "a": 0,
+      "why": "The error is systematic: the same 1 cm is added every time. Repeating or averaging cannot remove an error that is always the same, but because every plant is off by the same amount, the difference between two plants is still right.",
+      "d": 2
+    },
+    {
+      "q": "Researchers testing a new pain pill give a second group an identical-looking sugar pill. Why?",
+      "opts": [
+        "to cancel out the effect of just taking a pill",
+        "to save money on the real medicine",
+        "to make the sugar group feel worse on purpose",
+        "to test whether sugar relieves pain"
+      ],
+      "a": 0,
+      "why": "This is a control group. People can feel better simply because they took a pill, so the sugar pill (a placebo) gives a baseline with everything the same except the drug. Any extra effect in the drug group is then due to the drug.",
+      "d": 2
+    },
+    {
+      "q": "A class measured how fast yeast made gas at 20 °C, 30 °C and 40 °C, using a new batch of yeast for each temperature. The 40 °C trial was fastest. What is the main weakness of this design?",
+      "opts": [
+        "The yeast batch changed with the temperature.",
+        "Only three different temperatures were tested.",
+        "Gas production is hard to measure.",
+        "Yeast cannot survive at 40 °C."
+      ],
+      "a": 0,
+      "why": "Two variables changed between trials: temperature and the batch of yeast. The faster rate at 40 °C might come from a livelier batch. Only one variable should change, so every trial should use yeast from the same batch.",
       "d": 3
     }
   ],
@@ -5079,6 +6279,66 @@
       "a": 0,
       "why": "Scientist 1 must explain the skull without giving up the claim. If it belonged to an early wolf line that died out, it can be old and dog-like without being an ancestor of today’s dogs. Denying all dating would sink Scientist 1’s own 15,000-year date too.",
       "d": 3
+    },
+    {
+      "q": "<b>Scientist 1:</b> <i>The fish in the lake died because a factory upstream released warm water.</i><br><b>Scientist 2:</b> <i>The fish died because an algae bloom used up the oxygen in the water.</i><br>Both scientists accept that:",
+      "opts": [
+        "the fish in the lake died",
+        "the factory released warm water",
+        "algae used up the oxygen",
+        "the water’s oxygen level was normal"
+      ],
+      "a": 0,
+      "why": "Summarise each view: warm water versus an algae bloom. They disagree on the cause but agree it happened. The factory and the algae each belong to one scientist only.",
+      "d": 1
+    },
+    {
+      "q": "<b>Scientist 1:</b> <i>Dinosaur X walked on two legs; its front limbs were too short to bear its weight.</i><br><b>Scientist 2:</b> <i>Dinosaur X walked on four legs; fossil trackways show four prints in each set.</i><br>What evidence does Scientist 2 rely on?",
+      "opts": [
+        "fossil trackways",
+        "the length of the front limbs",
+        "the shape of the skull",
+        "the size of the teeth"
+      ],
+      "a": 0,
+      "why": "One line per scientist: Scientist 2 cites trackways with four prints. The front limbs are Scientist 1’s evidence, and neither mentions the skull or teeth.",
+      "d": 1
+    },
+    {
+      "q": "<b>Scientist 1:</b> <i>Island lizards have longer legs than mainland lizards because, over many generations, long legs helped their ancestors run on the island’s broad tree trunks.</i><br><b>Scientist 2:</b> <i>The longer legs are not inherited. Each lizard grows them during its life by running on broad trunks.</i><br>Which result would favour Scientist 2?",
+      "opts": [
+        "Island-born lizards raised on the mainland grow short legs.",
+        "Island lizards have had long legs for many generations.",
+        "Long-legged lizards outrun short-legged ones on trunks.",
+        "Mainland lizards mostly climb thin, narrow branches."
+      ],
+      "a": 0,
+      "why": "Ask what each view predicts. If legs are inherited (Scientist 1), island-born lizards keep long legs wherever they grow up. If legs grow with use (Scientist 2), those raised on the mainland should grow short ones. That result tells the views apart. Faster running on trunks fits both views.",
+      "d": 2
+    },
+    {
+      "q": "<b>Scientist 1:</b> <i>The amino acids in the meteorite formed in space, before it fell to Earth.</i><br><b>Scientist 2:</b> <i>They are contamination: soil bacteria got into the rock after it landed.</i><br>Which finding would most weaken Scientist 2?",
+      "opts": [
+        "The core holds as many amino acids as the surface.",
+        "The meteorite landed in a damp, grassy field.",
+        "Amino acids are found in all living things.",
+        "The meteorite was found a week after it fell."
+      ],
+      "a": 0,
+      "why": "Contamination from soil enters from the outside, so Scientist 2 predicts more amino acids near the surface than at the core. An even spread cuts against that. The damp field and the week’s delay make contamination more likely, so they help Scientist 2.",
+      "d": 2
+    },
+    {
+      "q": "<b>Scientist 1:</b> <i>Many songbirds migrate at night because the air is cooler and they lose less water.</i><br><b>Scientist 2:</b> <i>They migrate at night so they can steer by the stars.</i><br>Which observation would count against Scientist 2 but not against Scientist 1?",
+      "opts": [
+        "Night migrants fly the right way even under thick cloud.",
+        "Birds lose less water when they fly in cool air.",
+        "Night migrants fly lower on warm nights than cold ones.",
+        "Birds under a planetarium sky follow its fake stars."
+      ],
+      "a": 0,
+      "why": "Look for an observation one view needs to be false. If birds steer correctly with the stars hidden, stars are not needed to steer, which hurts Scientist 2. Scientist 1’s water-saving reason is untouched. The planetarium result supports Scientist 2, and the water-loss fact supports Scientist 1, so neither counts against Scientist 2 alone.",
+      "d": 3
     }
   ],
   "outside_outpost": [
@@ -5320,6 +6580,66 @@
       ],
       "a": 0,
       "why": "Conservation of mass: in a closed system, a reaction rearranges atoms but never creates or destroys them. The gas stays in the sealed flask, so the mass cannot change.",
+      "d": 3
+    },
+    {
+      "q": "Which gas makes up most of Earth’s atmosphere?",
+      "opts": [
+        "nitrogen",
+        "oxygen",
+        "carbon dioxide",
+        "water vapour"
+      ],
+      "a": 0,
+      "why": "Dry air is about 78% nitrogen and 21% oxygen, with carbon dioxide well under 1%. Oxygen is the gas we need, which is why it feels like the obvious answer, but nitrogen is far more plentiful.",
+      "d": 1
+    },
+    {
+      "q": "Dew forms on grass on a cool, clear morning. Which process makes the dew?",
+      "opts": [
+        "condensation",
+        "evaporation",
+        "melting",
+        "sublimation"
+      ],
+      "a": 0,
+      "why": "Water vapour in the air cools on the cold grass and turns back into liquid: gas to liquid is condensation. Evaporation is the reverse, liquid to gas, which is what later dries the dew.",
+      "d": 2
+    },
+    {
+      "q": "Adding a catalyst to a chemical reaction:",
+      "opts": [
+        "speeds it up without being used up",
+        "increases the amount of product made",
+        "is used up as the reaction goes on",
+        "always raises the temperature"
+      ],
+      "a": 0,
+      "why": "A catalyst speeds a reaction up by giving it an easier path, and it comes out unchanged at the end. It makes the same product faster; it does not make more of it.",
+      "d": 2
+    },
+    {
+      "q": "A ball is thrown straight up. At the very top of its path its speed is zero for an instant. What is its acceleration at that moment?",
+      "opts": [
+        "about 9.8 m/s², downward",
+        "zero",
+        "about 9.8 m/s², upward",
+        "it depends on the ball’s mass"
+      ],
+      "a": 0,
+      "why": "Gravity pulls the ball down the whole time, so its acceleration is always about 9.8 m/s² downward, even at the top. Zero speed does not mean zero acceleration: the velocity is changing from upward to downward at that very moment.",
+      "d": 3
+    },
+    {
+      "q": "An animal cell is placed in very salty water. Which way does water move?",
+      "opts": [
+        "out of the cell, so it shrinks",
+        "into the cell, so it swells",
+        "neither way, so it stays the same",
+        "salt moves in, but no water moves"
+      ],
+      "a": 0,
+      "why": "In osmosis, water moves across a membrane toward the side with more dissolved substance. The salty water outside has more, so water leaves the cell and it shrinks. The pull is to think the salt draws water in, but it draws water out.",
       "d": 3
     }
   ],
@@ -5563,6 +6883,66 @@
       "a": 0,
       "why": "Rewrite both sides with the same base: 9ˣ = 3²ˣ and 27 = 3³, so 2x = 3 and x = 3/2. The 3 comes from writing 27 as 3³ but forgetting that 9 is 3².",
       "d": 3
+    },
+    {
+      "q": "Write 3.2 × 10⁻³ as an ordinary number.",
+      "opts": [
+        "0.0032",
+        "3,200",
+        "0.032",
+        "0.00032"
+      ],
+      "a": 0,
+      "why": "A power of ten with a negative exponent moves the decimal point left. Three places left from 3.2 gives 0.0032. A positive power would move it right, giving 3,200.",
+      "d": 1
+    },
+    {
+      "q": "(−2)⁴ =",
+      "opts": [
+        "16",
+        "−16",
+        "−8",
+        "8"
+      ],
+      "a": 0,
+      "why": "The brackets put the negative sign inside the power: (−2)(−2)(−2)(−2). An even number of negative factors multiplies to a positive, so the answer is 16. Without brackets, −2⁴ would be −16.",
+      "d": 1
+    },
+    {
+      "q": "Simplify (a⁴b²)/(ab⁵).",
+      "opts": [
+        "a³/b³",
+        "a⁴/b³",
+        "a³b³",
+        "a⁵b⁷"
+      ],
+      "a": 0,
+      "why": "Divide by subtracting exponents, one base at a time: a⁴ ÷ a¹ = a³, and b² ÷ b⁵ = b⁻³ = 1/b³. The lone a still has exponent 1, which the trap a⁴/b³ ignores.",
+      "d": 2
+    },
+    {
+      "q": "If 3ˣ = 81, what is 3^(x − 2)?",
+      "opts": [
+        "9",
+        "79",
+        "27",
+        "2"
+      ],
+      "a": 0,
+      "why": "81 = 3⁴, so x = 4 and 3^(4 − 2) = 3² = 9. Or divide: 3^(x − 2) = 3ˣ ÷ 3² = 81 ÷ 9 = 9. Subtracting 2 from 81 treats the exponent like an ordinary term.",
+      "d": 2
+    },
+    {
+      "q": "For x &gt; 0, √x · x^(3/2) =",
+      "opts": [
+        "x²",
+        "x^(3/4)",
+        "x³",
+        "x^(3/2)"
+      ],
+      "a": 0,
+      "why": "A square root is the power ½, so this is x^(1/2) · x^(3/2). Multiplying adds the exponents: ½ + 3/2 = 2. Multiplying the exponents gives x^(3/4), which is the rule for a power of a power, not a product.",
+      "d": 3
     }
   ],
   "quadratic_quarry": [
@@ -5804,6 +7184,66 @@
       ],
       "a": 0,
       "why": "One solution means the discriminant is zero: 6² − 4c = 0, so c = 9, and the equation is (x + 3)² = 0. Setting c = 36 forgets the 4 in b² − 4ac.",
+      "d": 3
+    },
+    {
+      "q": "What are the solutions of x(x − 6) = 0?",
+      "opts": [
+        "x = 0 and x = 6",
+        "x = 6 only",
+        "x = 0 and x = −6",
+        "x = −6 only"
+      ],
+      "a": 0,
+      "why": "By the zero-product rule, one of the factors must be 0: either x = 0 or x − 6 = 0. So x = 0 and x = 6. The lone x is a factor too, which is why “x = 6 only” is wrong.",
+      "d": 1
+    },
+    {
+      "q": "Write x² − 10x + 25 as a product of factors.",
+      "opts": [
+        "(x − 5)²",
+        "(x + 5)²",
+        "(x − 5)(x + 5)",
+        "(x − 25)(x − 1)"
+      ],
+      "a": 0,
+      "why": "Find two numbers that multiply to 25 and add to −10: −5 and −5. So the expression factors as (x − 5)(x − 5) = (x − 5)². (x − 5)(x + 5) would give x² − 25 with no middle term.",
+      "d": 1
+    },
+    {
+      "q": "A ball’s height in metres after t seconds is h = −5t² + 20t. At what time, other than t = 0, is the ball at ground level?",
+      "opts": [
+        "4",
+        "2",
+        "20",
+        "5"
+      ],
+      "a": 0,
+      "why": "Ground level means h = 0. Factor: −5t(t − 4) = 0, and by the zero-product rule t = 0 or t = 4. The ball lands at 4 seconds; t = 2 is when it is highest.",
+      "d": 2
+    },
+    {
+      "q": "What is the minimum value of y = (x + 1)² − 7?",
+      "opts": [
+        "−7",
+        "−1",
+        "1",
+        "7"
+      ],
+      "a": 0,
+      "why": "In vertex form y = a(x − h)² + k the vertex is (h, k). Here it is (−1, −7), and since a &gt; 0 the parabola opens up, so the vertex is the lowest point. The minimum value is its y, −7. The −1 is where the minimum happens, not the value.",
+      "d": 2
+    },
+    {
+      "q": "The solutions of x² + bx + c = 0 are 2 and 5. What is c?",
+      "opts": [
+        "10",
+        "−7",
+        "7",
+        "−10"
+      ],
+      "a": 0,
+      "why": "Build the equation from its roots: (x − 2)(x − 5) = x² − 7x + 10, so c = 10. The −7 is b, the coefficient of x.",
       "d": 3
     }
   ],
@@ -6047,6 +7487,66 @@
       "a": 0,
       "why": "The total rises by 10, so the mean goes up, and the largest value moves, so the range does too. The median and mode (both 4) depend only on the middle and the most common values, which stay put. Forgetting the range is the usual slip.",
       "d": 3
+    },
+    {
+      "q": "<table><tr><th>Day</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th></tr><tr><th>Visitors</th><td>12</td><td>15</td><td>9</td><td>15</td><td>19</td></tr></table>What is the median number of visitors?",
+      "opts": [
+        "15",
+        "9",
+        "14",
+        "19"
+      ],
+      "a": 0,
+      "why": "Sort first: 9, 12, 15, 15, 19. The middle of the five is 15. Taking Wednesday’s 9 because it sits in the middle column skips the sorting; 14 is the mean.",
+      "d": 1
+    },
+    {
+      "q": "The mode of 4, 7, x, 9, 7, 4 is 4. What is x?",
+      "opts": [
+        "4",
+        "7",
+        "9",
+        "5"
+      ],
+      "a": 0,
+      "why": "Without x, 4 and 7 each appear twice. For 4 alone to be the mode it must appear most often, so x must be 4, making three 4s. If x were 7, the mode would be 7.",
+      "d": 2
+    },
+    {
+      "q": "Scores in a class have a mean of 70 and a standard deviation of 5. Maya scored 80. How many standard deviations above the mean is her score?",
+      "opts": [
+        "2",
+        "10",
+        "5",
+        "16"
+      ],
+      "a": 0,
+      "why": "Standard deviation measures distance from the mean. Maya is 80 − 70 = 10 points above it, and each standard deviation is 5 points, so she is 10 ÷ 5 = 2 standard deviations above. The 10 is the distance in points.",
+      "d": 2
+    },
+    {
+      "q": "A box of 10 apples has a mean mass of 150 g. Two apples of 120 g each are taken out. What is the mean mass of the apples left?",
+      "opts": [
+        "157.5 g",
+        "150 g",
+        "126 g",
+        "165 g"
+      ],
+      "a": 0,
+      "why": "Work with sums: the box totals 10 × 150 = 1,500 g. Removing 240 g leaves 1,260 g for 8 apples, a mean of 1,260 ÷ 8 = 157.5 g. Removing lighter-than-average apples raises the mean, so it cannot stay at 150.",
+      "d": 3
+    },
+    {
+      "q": "The mean of x, 2x and 3x is 16. What is the median of the three numbers?",
+      "opts": [
+        "16",
+        "8",
+        "24",
+        "48"
+      ],
+      "a": 0,
+      "why": "The sum is the mean × count: x + 2x + 3x = 48, so 6x = 48 and x = 8. The three numbers are 8, 16 and 24, and the middle one is 16. Stopping at x = 8 answers a different question.",
+      "d": 3
     }
   ],
   "coordinate_cove": [
@@ -6288,6 +7788,66 @@
       ],
       "a": 0,
       "why": "It must pass through the midpoint, (2, 1), and be perpendicular to the segment, whose slope is ½. The negative reciprocal is −2, so y − 1 = −2(x − 2), or y = −2x + 5. y = 2x − 3 passes through the midpoint but is not perpendicular, and y = −2x + 1 has the right slope but misses the midpoint.",
+      "d": 3
+    },
+    {
+      "q": "The point A is at (−4, 3). How far is A from the x-axis?",
+      "opts": [
+        "3",
+        "4",
+        "5",
+        "7"
+      ],
+      "a": 0,
+      "why": "The x-axis is the line y = 0, and the y-coordinate tells how far above or below it a point sits. A is 3 units above it. The 4 is the distance from the y-axis, and 5 is the distance from the origin.",
+      "d": 1
+    },
+    {
+      "q": "The point (5, 2) is reflected across the line y = x. Where does it land?",
+      "opts": [
+        "(2, 5)",
+        "(−5, 2)",
+        "(5, −2)",
+        "(−2, −5)"
+      ],
+      "a": 0,
+      "why": "Reflecting across y = x swaps the two coordinates, so (5, 2) becomes (2, 5). Reflecting across the y-axis would give (−5, 2), and across the x-axis (5, −2).",
+      "d": 2
+    },
+    {
+      "q": "A line has slope 3/4 and passes through (0, 1). Which of these points is also on the line?",
+      "opts": [
+        "(4, 4)",
+        "(3, 5)",
+        "(4, 3)",
+        "(−4, 4)"
+      ],
+      "a": 0,
+      "why": "The line is y = (3/4)x + 1, and a point lies on it if its coordinates make the equation true. At x = 4, y = 3 + 1 = 4. Slope 3/4 means up 3 for every 4 across, so (3, 5) mixes up rise and run.",
+      "d": 2
+    },
+    {
+      "q": "The points (1, 2), (4, 6) and (k, 10) all lie on one line. What is k?",
+      "opts": [
+        "7",
+        "8",
+        "6",
+        "10"
+      ],
+      "a": 0,
+      "why": "The slope from (1, 2) to (4, 6) is 4/3: up 4 for every 3 across. From (4, 6), going up another 4 to y = 10 means going 3 more across, to x = 7. The trap 8 adds 4 to the x-value, confusing rise with run.",
+      "d": 3
+    },
+    {
+      "q": "The segment from (−2, 1) to (6, 7) is a diameter of a circle. What is the radius of the circle?",
+      "opts": [
+        "5",
+        "10",
+        "25",
+        "4"
+      ],
+      "a": 0,
+      "why": "Distance is Pythagoras: the endpoints are 8 across and 6 up, so the diameter is √(64 + 36) = 10. The radius is half of that, 5. The trap 10 stops at the diameter, and 4 halves only the horizontal gap.",
       "d": 3
     }
   ],
@@ -6531,6 +8091,66 @@
       "a": 0,
       "why": "Two conversions: × 60 for seconds to minutes (7,200 mL/min), then ÷ 1,000 for mL to L (7.2 L/min). Stopping after one step gives 7,200 or 0.12.",
       "d": 3
+    },
+    {
+      "q": "How many centimetres are in 2.5 metres?",
+      "opts": [
+        "250",
+        "25",
+        "2,500",
+        "0.025"
+      ],
+      "a": 0,
+      "why": "1 m = 100 cm, so multiply: 2.5 × 100 = 250. The smaller unit gives the bigger number.",
+      "d": 1
+    },
+    {
+      "q": "Which of these lengths is the shortest?",
+      "opts": [
+        "1 mm",
+        "1 cm",
+        "1 m",
+        "1 km"
+      ],
+      "a": 0,
+      "why": "All four say “1”, so the unit decides. A millimetre is a thousandth of a metre, smaller than a centimetre (a hundredth), which is smaller than a metre and a kilometre.",
+      "d": 1
+    },
+    {
+      "q": "A snail crawls 30 cm per minute. How many metres does it cover in one hour?",
+      "opts": [
+        "18 m",
+        "1,800 m",
+        "0.5 m",
+        "30 m"
+      ],
+      "a": 0,
+      "why": "Convert both units. In an hour it crawls 30 × 60 = 1,800 cm, and 1,800 cm ÷ 100 = 18 m. The 1,800 forgets to change centimetres to metres.",
+      "d": 2
+    },
+    {
+      "q": "<table><tr><th>Sample</th><th>Volume</th></tr><tr><td>A</td><td>0.4 L</td></tr><tr><td>B</td><td>350 mL</td></tr><tr><td>C</td><td>450 cm³</td></tr></table>Which sample has the largest volume?",
+      "opts": [
+        "C",
+        "A",
+        "B",
+        "They are all equal"
+      ],
+      "a": 0,
+      "why": "Put every value into one unit first. 0.4 L = 400 mL, and 1 cm³ is exactly 1 mL, so C is 450 mL. Order: C (450) &gt; A (400) &gt; B (350). A’s 0.4 looks smallest only because litres are the bigger unit.",
+      "d": 2
+    },
+    {
+      "q": "A car goes 20 km on each litre of fuel. How many metres does it go on each millilitre?",
+      "opts": [
+        "20 m",
+        "20,000 m",
+        "0.02 m",
+        "2,000 m"
+      ],
+      "a": 0,
+      "why": "Convert the top and the bottom. 20 km = 20,000 m, and 1 L = 1,000 mL, so 20,000 m ÷ 1,000 mL = 20 m per mL. Converting only the kilometres gives 20,000, and converting only the litres gives 0.02.",
+      "d": 3
     }
   ],
   "rates_ridge": [
@@ -6772,6 +8392,66 @@
       ],
       "a": 0,
       "why": "The job is 4 × 6 = 24 worker-hours. Fewer workers take longer: 24 ÷ 3 = 8 hours. The 4.5 treats time as if it shrinks with fewer workers.",
+      "d": 3
+    },
+    {
+      "q": "A cyclist rides at 18 km/h for 2 hours. How far does she go?",
+      "opts": [
+        "36 km",
+        "9 km",
+        "20 km",
+        "16 km"
+      ],
+      "a": 0,
+      "why": "Predict by multiplying the rate by the time: 18 km/h × 2 h = 36 km. Dividing gives 9, which would be the speed if 18 km were the distance.",
+      "d": 1
+    },
+    {
+      "q": "A candle 15 cm tall burns down 2 cm every 30 minutes. How long will it take to burn away completely?",
+      "opts": [
+        "3 hours 45 minutes",
+        "7 hours 30 minutes",
+        "7.5 minutes",
+        "2 hours"
+      ],
+      "a": 0,
+      "why": "First make the rate per hour: 2 cm per 30 min is 4 cm per hour. Then 15 ÷ 4 = 3.75 hours, which is 3 hours 45 minutes. The 7.5 is 15 ÷ 2, a count of half-hour blocks, and reading it as hours gives 7 hours 30 minutes.",
+      "d": 2
+    },
+    {
+      "q": "<table><tr><th>Time (s)</th><th>0</th><th>2</th><th>4</th><th>6</th></tr><tr><td>Gas collected (mL)</td><td>0</td><td>10</td><td>20</td><td>30</td></tr></table>If gas keeps being produced at the same rate, how much will have been collected after 10 s?",
+      "opts": [
+        "50 mL",
+        "40 mL",
+        "35 mL",
+        "100 mL"
+      ],
+      "a": 0,
+      "why": "Rate = amount ÷ time: 10 mL every 2 s is 5 mL/s. Multiply by the new time: 5 × 10 = 50 mL. The 100 treats the rate as 10 mL per second.",
+      "d": 2
+    },
+    {
+      "q": "A walker covers 6 km in 1 hour 30 minutes. What is her average speed?",
+      "opts": [
+        "4 km/h",
+        "4.6 km/h",
+        "6 km/h",
+        "9 km/h"
+      ],
+      "a": 0,
+      "why": "Write the time in hours before dividing: 1 hour 30 minutes is 1.5 hours, not 1.3. Then 6 ÷ 1.5 = 4 km/h. Using 1.3 gives about 4.6, and multiplying gives 9.",
+      "d": 2
+    },
+    {
+      "q": "With the plug in, a tap fills a bath in 10 minutes. With the tap off, the open plughole empties a full bath in 15 minutes. With the tap on and the plug out, how long does the bath take to fill?",
+      "opts": [
+        "30 minutes",
+        "25 minutes",
+        "5 minutes",
+        "12.5 minutes"
+      ],
+      "a": 0,
+      "why": "Rates working together add, and a leak subtracts. The tap fills 1/10 of the bath a minute and the drain removes 1/15, so the bath gains 1/10 − 1/15 = 1/30 a minute and takes 30 minutes. Subtracting the times (15 − 10 = 5) or adding them (25) mixes up times with rates.",
       "d": 3
     }
   ],
@@ -7015,6 +8695,66 @@
       "a": 0,
       "why": "The whole is the group the question names, the germinated seeds: 90 ÷ 150 = 60%. Dividing by all 200 planted gives 45%, and 75% is the germination rate.",
       "d": 3
+    },
+    {
+      "q": "<table><tr><th>Plant</th><th>Starting height (cm)</th><th>Final height (cm)</th></tr><tr><td>A</td><td>10</td><td>16</td></tr><tr><td>B</td><td>12</td><td>15</td></tr><tr><td>C</td><td>8</td><td>17</td></tr></table>Which plant grew the most?",
+      "opts": [
+        "C",
+        "A",
+        "B",
+        "A and C equally"
+      ],
+      "a": 0,
+      "why": "Subtract for change: A grew 6 cm, B 3 cm and C 9 cm. C started as the shortest plant, but growth is the difference between the two columns, not either height on its own.",
+      "d": 1
+    },
+    {
+      "q": "<table><tr><th>Group</th><th>Seeds planted</th><th>Seeds sprouted</th></tr><tr><td>Watered</td><td>50</td><td>40</td></tr><tr><td>Dry</td><td>50</td><td>15</td></tr></table>About how many times as many seeds sprouted in the watered group as in the dry group?",
+      "opts": [
+        "2.7",
+        "0.4",
+        "25",
+        "55"
+      ],
+      "a": 0,
+      "why": "Find the values first: 40 and 15 sprouted. “How many times as many” means divide: 40 ÷ 15 ≈ 2.7. The 25 is the difference, not the ratio, and 0.4 divides the wrong way.",
+      "d": 2
+    },
+    {
+      "q": "<table><tr><th>Trial</th><th>Mass before (g)</th><th>Mass after (g)</th></tr><tr><td>1</td><td>25.0</td><td>22.0</td></tr><tr><td>2</td><td>30.0</td><td>26.4</td></tr><tr><td>3</td><td>20.0</td><td>17.6</td></tr></table>In every trial, what percentage of the starting mass was lost?",
+      "opts": [
+        "12%",
+        "3%",
+        "88%",
+        "3.6%"
+      ],
+      "a": 0,
+      "why": "For percent change, divide the change by the original. Trial 1: 3.0 ÷ 25.0 = 0.12, or 12%; trials 2 and 3 give 3.6 ÷ 30 and 2.4 ÷ 20, also 12%. The 88% is the share that remained, and 3 is the loss in grams.",
+      "d": 2
+    },
+    {
+      "q": "<table><tr><th>Solution</th><th>Salt (g)</th><th>Volume (mL)</th></tr><tr><td>P</td><td>12</td><td>200</td></tr><tr><td>R</td><td>20</td><td>400</td></tr></table>All of P and all of R are poured together. What is the concentration of the mixture?",
+      "opts": [
+        "about 0.053 g/mL",
+        "0.055 g/mL",
+        "0.11 g/mL",
+        "32 g/mL"
+      ],
+      "a": 0,
+      "why": "Use totals: 12 + 20 = 32 g of salt in 200 + 400 = 600 mL, so 32 ÷ 600 ≈ 0.053 g/mL. Averaging the two concentrations (0.06 and 0.05) gives 0.055, which is wrong because R contributes twice the volume.",
+      "d": 3
+    },
+    {
+      "q": "<table><tr><th>Year</th><th>2018</th><th>2020</th><th>2022</th></tr><tr><td>Population</td><td>400</td><td>500</td><td>600</td></tr></table>Which two-year period had the greater percent increase, and by how much?",
+      "opts": [
+        "2018 to 2020, by 5 percentage points",
+        "Neither; both grew by the same amount",
+        "2020 to 2022, by 5 percentage points",
+        "2018 to 2020, by 20 percentage points"
+      ],
+      "a": 0,
+      "why": "Divide each change by its own starting value. 2018 to 2020: 100 ÷ 400 = 25%. 2020 to 2022: 100 ÷ 500 = 20%. Both periods add 100 people, which is the pull toward “the same”, but the percent increase is 5 points higher in the first period.",
+      "d": 3
     }
   ],
   "pronoun_pass": [
@@ -7103,7 +8843,7 @@
       "d": 3
     },
     {
-      "q": "Which is correct?",
+      "q": "Which sentence uses the right pronoun in the compound subject?",
       "opts": [
         "The manager and I reviewed the budget.",
         "The manager and myself reviewed the budget.",
@@ -7111,7 +8851,7 @@
         "Myself and the manager reviewed the budget."
       ],
       "a": 0,
-      "why": "“Myself” is only for reflecting back on a subject already named. Here the pronoun is part of the subject.",
+      "why": "Remove the other person to test: “I reviewed the budget”, not “me reviewed” or “myself reviewed”. The pronoun is part of the subject, so it takes the subject form. “Myself” is only for reflecting back on a subject already named.",
       "d": 2
     },
     {
@@ -7256,6 +8996,66 @@
       ],
       "a": 0,
       "why": "A pronoun takes its case from its job in its own clause. The whole clause “___ arrives first” is the object of “to”, but inside that clause the pronoun is the subject of “arrives”. “Whomever” is tempting only because it follows “to”.",
+      "d": 3
+    },
+    {
+      "q": "Which pronoun could replace the words in bold?<br><i>“<b>Maria and Leo</b> painted the fence.”</i>",
+      "opts": [
+        "They",
+        "Them",
+        "Their",
+        "He"
+      ],
+      "a": 0,
+      "why": "“Maria and Leo” are two people doing the painting, so the pronoun must be plural and in the subject case: “They painted”. “Them” is the object form, and “their” shows possession.",
+      "d": 1
+    },
+    {
+      "q": "<i>“To ___ should I address the letter?”</i>",
+      "opts": [
+        "whom",
+        "who",
+        "whose",
+        "which"
+      ],
+      "a": 0,
+      "why": "The pronoun is the object of “to”, and whom is the object form. Turn the question into a statement to test it: “I should address it to him”, and him matches whom.",
+      "d": 1
+    },
+    {
+      "q": "<i>“Neither the coach nor the players remembered ___ water bottles.”</i>",
+      "opts": [
+        "their",
+        "his",
+        "its",
+        "her"
+      ],
+      "a": 0,
+      "why": "With “neither … nor”, a pronoun agrees with the nearer noun, just as a verb does. “The players” is nearer and plural, so the pronoun is “their”.",
+      "d": 2
+    },
+    {
+      "q": "<i>“___ volunteers painted the whole hall in a single day.”</i>",
+      "opts": [
+        "We",
+        "Us",
+        "Our",
+        "Ourselves"
+      ],
+      "a": 0,
+      "why": "Drop the noun to test: “We painted the whole hall”, not “Us painted”. The pronoun is part of the subject, so it takes the subject form even with “volunteers” after it.",
+      "d": 2
+    },
+    {
+      "q": "The writer means that the coach trusts Mia more than the coach trusts the writer. Which word completes the sentence?<br><i>“The coach trusts Mia more than ___.”</i>",
+      "opts": [
+        "me",
+        "I",
+        "myself",
+        "mine"
+      ],
+      "a": 0,
+      "why": "Finish the comparison to find the case: “more than she trusts me”, so the pronoun is an object. “Than I” is the trap: it sounds formal, but it means “more than I trust Mia”, which is not what the writer means.",
       "d": 3
     }
   ],
@@ -7499,6 +9299,66 @@
       "a": 0,
       "why": "“Soaked from the storm” correctly describes “the hikers”, the noun right after it, so it is fine. “That were dripping” is stuck to “the fire”, but its plural verb shows it means the jackets; it belongs right after “jackets”.",
       "d": 3
+    },
+    {
+      "q": "In the sentence below, which word does the phrase <i>in the blue hat</i> describe?<br><i>“The girl in the blue hat waved from the bus.”</i>",
+      "opts": [
+        "girl",
+        "waved",
+        "bus",
+        "nothing in the sentence"
+      ],
+      "a": 0,
+      "why": "A describing phrase attaches to the word right beside it. “In the blue hat” follows “girl”, so it tells you which girl; it says nothing about the waving or the bus.",
+      "d": 1
+    },
+    {
+      "q": "Which sentence contains a dangling modifier?",
+      "opts": [
+        "Opening the door, the cold air rushed in.",
+        "Opening the door, I felt the cold air rush in.",
+        "When I opened the door, the cold air rushed in.",
+        "The cold air rushed in when I opened the door."
+      ],
+      "a": 0,
+      "why": "An opening phrase describes the subject right after the comma. In the first, that subject is “the cold air”, and air cannot open a door. The others either put the person doing the opening after the comma or give the phrase a subject of its own.",
+      "d": 1
+    },
+    {
+      "q": "Which choice corrects the sentence?<br><i>“At the age of six, my family moved to Lima.”</i>",
+      "opts": [
+        "When I was six, my family moved to Lima.",
+        "At the age of six, my family’s move was to Lima.",
+        "My family, at the age of six, moved to Lima.",
+        "NO CHANGE"
+      ],
+      "a": 0,
+      "why": "As written, the family is six years old, because the opening phrase describes the first noun after the comma. The fix gives the phrase its own subject: “When I was six”. Moving the phrase next to “family” leaves the same problem.",
+      "d": 2
+    },
+    {
+      "q": "Which opening phrase fits the sentence?<br><i>“___, the old bridge finally collapsed.”</i>",
+      "opts": [
+        "Weakened by years of floods",
+        "Driving across it one night",
+        "Having warned the town for years",
+        "Watching from the riverbank"
+      ],
+      "a": 0,
+      "why": "Whatever opens the sentence describes “the old bridge”, the subject after the comma. A bridge can be weakened by floods, but it cannot drive, warn a town or watch from a bank.",
+      "d": 2
+    },
+    {
+      "q": "Which choice fixes the sentence?<br><i>“Having been painted the day before, the children were warned not to touch the fence.”</i>",
+      "opts": [
+        "The children were warned not to touch the fence, which had been painted the day before.",
+        "Having been painted the day before, the children were warned not to touch it.",
+        "The children, having been painted the day before, were warned not to touch the fence.",
+        "Having been painted, the day before the children were warned not to touch the fence."
+      ],
+      "a": 0,
+      "why": "The opening phrase describes the subject after the comma, “the children”, so the sentence says the children were painted. The fence is what was painted, so the describer must sit beside “fence”: “the fence, which had been painted”. Moving commas or swapping in a pronoun leaves the children covered in paint.",
+      "d": 3
     }
   ],
   "parallel_pier": [
@@ -7740,6 +9600,66 @@
       ],
       "a": 0,
       "why": "The list is “to cut … to shorten … ___”, so the third item is another “to” verb. The interruption “where possible” makes the pattern easy to lose, which is what the other choices bet on.",
+      "d": 3
+    },
+    {
+      "q": "Which item breaks the pattern of the list?<br><i>“The coach told us to warm up, to stretch, and running two laps.”</i>",
+      "opts": [
+        "“running two laps”",
+        "“to warm up”",
+        "“to stretch”",
+        "“told us”"
+      ],
+      "a": 0,
+      "why": "Every item must match the first. The list is built from “to” verbs, “to warm up” and “to stretch”, so the third should be “to run two laps”; “running” changes the shape.",
+      "d": 1
+    },
+    {
+      "q": "<i>“She spoke clearly, slowly, and ___.”</i>",
+      "opts": [
+        "calmly",
+        "calm",
+        "with calm",
+        "was calm"
+      ],
+      "a": 0,
+      "why": "The first two items are -ly adverbs describing how she spoke, so the third must be an adverb of the same kind: “calmly”.",
+      "d": 1
+    },
+    {
+      "q": "Which version keeps the list parallel?",
+      "opts": [
+        "The ad promised fast delivery, low prices, and free returns.",
+        "The ad promised fast delivery, low prices, and that returns would be free.",
+        "The ad promised fast delivery, low prices, and returning items for free.",
+        "The ad promised fast delivery, prices that were low, and free returns."
+      ],
+      "a": 0,
+      "why": "The list is built from noun phrases (“fast delivery”, “low prices”), so the third item must be one too. A “that” clause, an -ing phrase or a clause in the middle of the list each breaks the shape.",
+      "d": 2
+    },
+    {
+      "q": "<i>“The question is whether to repair the roof or ___.”</i>",
+      "opts": [
+        "to replace it",
+        "replacing it",
+        "replacement of it",
+        "we replace it"
+      ],
+      "a": 0,
+      "why": "“Whether … or” is a correlative pair, like “either … or”, and needs matching parts on each side. The first side is a “to” verb, “to repair the roof”, so the second is “to replace it”.",
+      "d": 2
+    },
+    {
+      "q": "Which choice makes the sentence parallel?<br><i>“She not only won the race but also the medal for sportsmanship.”</i>",
+      "opts": [
+        "She won not only the race but also the medal for sportsmanship.",
+        "NO CHANGE",
+        "She not only won the race but also won for sportsmanship the medal.",
+        "Not only she won the race but also the medal for sportsmanship."
+      ],
+      "a": 0,
+      "why": "The parts after “not only” and “but also” must match. As written, a verb phrase (“won the race”) is paired with a noun phrase (“the medal”). Moving “not only” after “won” pairs two nouns, “the race” and “the medal”. The original sounds natural, which is why it slips past.",
       "d": 3
     }
   ],
@@ -7983,6 +9903,66 @@
       "a": 0,
       "why": "The trap is to take “That might look like failure” as the verdict. The next sentence reverses it (“It is the opposite”), so the author voices the obvious reading only to knock it down.",
       "d": 3
+    },
+    {
+      "q": "<i>“First, the clay is dug and left outside all winter so frost can break it down. In spring it is soaked, sieved and dried to a paste. Only then is it shaped, and the shaped pieces wait another month before firing.”</i><br>Which pattern organises the passage?",
+      "opts": [
+        "steps in time order",
+        "a problem and its solution",
+        "a comparison of two methods",
+        "a claim followed by objections"
+      ],
+      "a": 0,
+      "why": "Follow the transitions: “First”, “In spring”, “Only then”, “another month”. Each marks a turn in time, so the passage is chronological: a process described step by step.",
+      "d": 1
+    },
+    {
+      "q": "<i>“Why do cats land on their feet? Within a fraction of a second of falling, a cat twists its front half, then its back half, so that its paws face the ground before it lands.”</i><br>What follows the opening question?",
+      "opts": [
+        "an explanation that answers it",
+        "a list of unrelated facts about cats",
+        "an argument against the question",
+        "a story about one particular cat"
+      ],
+      "a": 0,
+      "why": "A question the author asks and then answers sets up an explanation. The second sentence describes the twist that answers “why”.",
+      "d": 1
+    },
+    {
+      "q": "<i>“Critics called the new bridge an eyesore when it opened. Ten years later, it is on the city’s postcards.”</i><br>How does the second sentence change the picture given by the first?",
+      "opts": [
+        "It shows that opinion of the bridge later reversed.",
+        "It gives the reason the critics disliked the bridge.",
+        "It adds a second criticism of the bridge.",
+        "It explains how the bridge was built."
+      ],
+      "a": 0,
+      "why": "The time marker “Ten years later” signals a turn, and the postcards show the bridge is now admired. The second sentence overturns the first rather than supporting it.",
+      "d": 2
+    },
+    {
+      "q": "<i>“Most pond snails are harmless. The one exception in this region, a small cone-shaped species, carries a parasite that can infect cattle. Farmers who find it in a drinking trough should drain the trough.”</i><br>The second sentence mainly serves to:",
+      "opts": [
+        "introduce an exception to the first claim",
+        "give an example that supports the first claim",
+        "describe the life cycle of pond snails",
+        "offer a solution to a problem"
+      ],
+      "a": 0,
+      "why": "Ask what job the sentence does. The first sentence says most snails are harmless; the second names the one that is not. “The one exception” says it outright. The solution comes in the third sentence.",
+      "d": 2
+    },
+    {
+      "q": "<i>“Pale lichen on the old stones suggests clean air. Yet this churchyard sits beside the busiest road in the county. The explanation is the wall: two metres of brick that keeps the exhaust at the level of the traffic.”</i><br>What role does the last sentence play?",
+      "opts": [
+        "It resolves the puzzle the first two sentences raise.",
+        "It adds a second sign that the air is clean.",
+        "It contradicts the claim about the lichen.",
+        "It starts a new topic, the history of the wall."
+      ],
+      "a": 0,
+      "why": "“Yet” sets clean-air lichen against a busy road, creating a puzzle, and “The explanation is” announces the answer. The wall is mentioned only to explain the puzzle, not to open a new topic, and the lichen claim is confirmed rather than contradicted.",
+      "d": 3
     }
   ],
   "tone_tundra": [
@@ -8225,6 +10205,66 @@
       "a": 0,
       "why": "“Screaming” sounds harsh, but it is simply how swifts sound. The attitude is carried by the rest of the sentence: waiting for them every year, and summer not beginning without them. Judge the whole sentence, not its loudest word.",
       "d": 2
+    },
+    {
+      "q": "<i>“The new bus timetable is a small miracle: buses every ten minutes, clean seats, and drivers who actually wait for you.”</i><br>Which word best describes the writer’s tone?",
+      "opts": [
+        "pleased",
+        "furious",
+        "neutral",
+        "sorrowful"
+      ],
+      "a": 0,
+      "why": "Loaded words give it away: “a small miracle”, “clean”, and drivers who “actually wait”. The tone is positive, and mild enough that “pleased” fits better than anything stronger.",
+      "d": 1
+    },
+    {
+      "q": "<i>“Grandpa’s garden was his pride: he knew every rose by name and talked to the tomatoes.”</i><br>The writer describes Grandpa with:",
+      "opts": [
+        "affection",
+        "contempt",
+        "fear",
+        "indifference"
+      ],
+      "a": 0,
+      "why": "Word choice shows the attitude: “his pride”, roses known “by name”, talking to the tomatoes. These are fond, gently amused details, and nothing in them is negative.",
+      "d": 1
+    },
+    {
+      "q": "<i>“The report runs to three hundred pages and says, in the end, that more study is needed.”</i><br>The writer’s view of the report is most likely:",
+      "opts": [
+        "unimpressed",
+        "admiring",
+        "neutral",
+        "alarmed"
+      ],
+      "a": 0,
+      "why": "The sentence sets the length (“three hundred pages”) against the thin result (“in the end … more study is needed”). That contrast is a quiet criticism. It is mild, so “unimpressed” fits, not anything angrier.",
+      "d": 2
+    },
+    {
+      "q": "<i>“For the first hour the walk was a pleasure: larks overhead, the sea glittering below. Then the fog came in, the path narrowed to a ledge, and every step became a negotiation.”</i><br>How does the mood of the passage change?",
+      "opts": [
+        "from carefree to tense",
+        "from tense to relieved",
+        "from gloomy to cheerful",
+        "it stays calm throughout"
+      ],
+      "a": 0,
+      "why": "Check the start and the end: “a pleasure”, larks and glittering sea give way to fog, a ledge and steps that must be negotiated. “Then” marks the shift, from easy to anxious.",
+      "d": 2
+    },
+    {
+      "q": "<i>“The hotel was, I suppose, adequate. The bed was a bed. The view was of a wall.”</i><br>Which description best fits the writer’s tone?",
+      "opts": [
+        "dry and unimpressed",
+        "calm and satisfied",
+        "furious and bitter",
+        "warm and grateful"
+      ],
+      "a": 0,
+      "why": "“Adequate” sounds neutral, which is the pull toward “calm and satisfied”. But “I suppose”, a bed that was only “a bed” and a view “of a wall” undercut it. The praise is faint on purpose. Judge the whole passage, and keep the tone mild: dry, not furious.",
+      "d": 3
     }
   ],
   "evidence_estuary": [
@@ -8467,6 +10507,66 @@
       "a": 0,
       "why": "Evidence weakens a causal claim when it shows the effect without the cause. If people who had no coffee slept just as badly, the coffee cannot be what is doing it. The other facts are merely on the same topic.",
       "d": 2
+    },
+    {
+      "q": "Claim: most teenagers in the country prefer cycling to school over any other way of getting there. Evidence: a survey of the members of one cycling club.<br>What is the main problem with this evidence?",
+      "opts": [
+        "the people surveyed are likely to favour cycling",
+        "the survey asked too many questions",
+        "teenagers cannot answer surveys honestly",
+        "cycling clubs are rare in most towns"
+      ],
+      "a": 0,
+      "why": "Check who was counted. Members of a cycling club are not a fair sample of all teenagers, so their answers cannot settle a claim about the whole country.",
+      "d": 1
+    },
+    {
+      "q": "Claim: the new pedestrian crossing has made the road safer for children.<br>Which fact best supports the claim?",
+      "opts": [
+        "Accidents involving children on the road fell by half after it opened.",
+        "The crossing was painted bright yellow and white.",
+        "Many parents walk their children to school.",
+        "The crossing cost the council £40,000."
+      ],
+      "a": 0,
+      "why": "Name the claim first: the crossing made the road safer for children. Only the drop in accidents makes that more likely. The paint, the parents and the cost are about the same topic but change nothing.",
+      "d": 1
+    },
+    {
+      "q": "Claim: a bakery’s sales rose last year because it launched a website.<br>Which fact casts the most doubt on the claim?",
+      "opts": [
+        "Bakeries without websites saw the same rise.",
+        "The website has a page showing every cake.",
+        "The owner designed the website herself.",
+        "Sales rose by a fifth over the year."
+      ],
+      "a": 0,
+      "why": "Evidence weakens a cause when the effect appears without it. If bakeries without a website grew just as much, something else, such as a busier town, probably drove the rise. The other facts either describe the website or restate the rise.",
+      "d": 2
+    },
+    {
+      "q": "Claim: the cold snap in January killed off most of the town’s wasps. Evidence: wasp numbers in July were a tenth of last year’s.<br>Which further finding would make the claim most convincing?",
+      "opts": [
+        "Towns nearby with no cold snap had normal wasp numbers.",
+        "Wasps build their nests out of chewed wood.",
+        "Last summer was unusually hot and dry.",
+        "Residents said they were glad to see fewer wasps."
+      ],
+      "a": 0,
+      "why": "A claim about a cause is strongest when places without the cause lack the effect. Normal numbers in towns that missed the cold snap point to the cold. A hot summer last year, on the other hand, suggests another reason last year’s count was high.",
+      "d": 2
+    },
+    {
+      "q": "Claim: reading on screens at bedtime harms children’s sleep. Evidence: children who read on tablets before bed slept less than those who read paper books.<br>Which fact would most complicate the claim?",
+      "opts": [
+        "The tablet readers also had more TVs in their bedrooms.",
+        "Both groups read for about the same length of time.",
+        "Tablets can be set to dim their screens at night.",
+        "Most children in the study were aged eight to ten."
+      ],
+      "a": 0,
+      "why": "A fact complicates a cause when it points to another one. If the tablet group also had more TVs in their rooms, the TVs might explain the lost sleep. “Same reading time” actually removes a rival explanation, so it helps the claim, which makes it the tempting wrong choice.",
+      "d": 3
     }
   ],
   "figurative_falls": [
@@ -8709,6 +10809,66 @@
       "a": 0,
       "why": "The metaphor is extended: the deadline is a wall, the project is the car, and softening brakes mean less and less control. The fear is of not being able to stop; a literal car is the picture, not the meaning.",
       "d": 2
+    },
+    {
+      "q": "<i>“After the exam my head was a sieve; every date I had learned ran straight out of it.”</i><br>The metaphor suggests that the writer:",
+      "opts": [
+        "could not keep hold of facts",
+        "had a painful headache",
+        "had studied in the kitchen",
+        "felt hungry after the exam"
+      ],
+      "a": 0,
+      "why": "Read what the image stands for: a sieve lets things run through, and the rest of the sentence says the dates “ran straight out”. Her memory was not holding the facts.",
+      "d": 1
+    },
+    {
+      "q": "<i>“The old mill towns were left to rust in the rain while the money moved south.”</i><br>The phrase <b>left to rust</b> primarily conveys:",
+      "opts": [
+        "neglect and decline",
+        "a problem with the metal",
+        "a spell of rainy weather",
+        "a move to newer machines"
+      ],
+      "a": 0,
+      "why": "Towns do not literally rust. Set against “the money moved south”, the image means the towns were abandoned and allowed to decay. A dark image implies a negative idea.",
+      "d": 2
+    },
+    {
+      "q": "<i>“The wind worried at the tent all night, tugging at every rope and rattling every pole.”</i><br>The writer presents the wind as:",
+      "opts": [
+        "a restless, nagging creature",
+        "a gentle and welcome breeze",
+        "a sign that spring had come",
+        "a danger to the whole valley"
+      ],
+      "a": 0,
+      "why": "This is personification: the wind “worried at” and “tugged”, the way a dog worries at a bone. The picture is of something persistent and nagging. The sentence stays with the tent, so a danger to the whole valley overstates it.",
+      "d": 2
+    },
+    {
+      "q": "<i>“Her silence at the dinner table was a door closing, quietly, on the whole argument.”</i><br>The image of a door closing suggests that she:",
+      "opts": [
+        "ended the discussion without saying so",
+        "was about to leave the room",
+        "was too shy to join in",
+        "agreed with everyone at the table"
+      ],
+      "a": 0,
+      "why": "Pick the meaning, not the picture: the door closes “on the whole argument”, not on the room. Her silence shut the argument down. Leaving the room is the literal reading, and shyness does not fit a deliberate closing.",
+      "d": 3
+    },
+    {
+      "q": "<i>“The new policy was a bandage on a broken leg.”</i><br>The comparison suggests that the policy:",
+      "opts": [
+        "is too small a fix for a serious problem",
+        "will heal the problem slowly but surely",
+        "was designed with great care",
+        "will make the problem much worse"
+      ],
+      "a": 0,
+      "why": "A bandage is a real treatment, which is the pull toward “will heal”, but it is the wrong scale for a broken leg. The comparison says the response is far too slight for the problem, not that it harms or cures.",
+      "d": 3
     }
   ],
   "hypothesis_hollow": [
@@ -8950,6 +11110,66 @@
       ],
       "a": 0,
       "why": "Colour and nectar changed together, so either could explain the visits. To test colour, the nectar must be the same in both kinds of flower.",
+      "d": 3
+    },
+    {
+      "q": "A student predicts: “If a ramp is made steeper, a toy car will reach the bottom sooner.” What will the student need to measure?",
+      "opts": [
+        "the time the car takes to reach the bottom",
+        "the colour of the toy car",
+        "the length of the classroom",
+        "the number of cars in the class"
+      ],
+      "a": 0,
+      "why": "A testable hypothesis names what will change (the steepness) and what will be measured (how soon the car arrives). So the student times the run for each steepness.",
+      "d": 1
+    },
+    {
+      "q": "Hypothesis: earthworms move away from light. In a tray that is half lit and half dark, most of the worms gather in the dark half. The result:",
+      "opts": [
+        "supports the hypothesis",
+        "contradicts the hypothesis",
+        "proves the hypothesis for every animal",
+        "shows the hypothesis cannot be tested"
+      ],
+      "a": 0,
+      "why": "Compare the data with the prediction: worms that move away from light should end up in the dark, and they did. That is support. One tray of worms says nothing about every animal.",
+      "d": 1
+    },
+    {
+      "q": "Towns with more fire stations report more fires each year. Which hypothesis best explains this pattern?",
+      "opts": [
+        "Bigger towns have both more fire stations and more fires.",
+        "Fire stations cause fires in the streets around them.",
+        "Fires are only reported when a station is nearby.",
+        "Towns build stations once their fires have stopped."
+      ],
+      "a": 0,
+      "why": "When two things rise together, look for a third factor driving both. Size does that here: a larger town has more buildings to catch fire and needs more stations. Nothing suggests the stations cause fires.",
+      "d": 2
+    },
+    {
+      "q": "A model says a bridge cable stretches 2 mm for every 1,000 kg of load. At 6,000 kg the cable stretches 12 mm; at 8,000 kg it stretches 22 mm. What should the scientists conclude?",
+      "opts": [
+        "the model holds up to about 6,000 kg only",
+        "the model is wrong at every load",
+        "the model is right at every load",
+        "the 8,000 kg reading must be an error"
+      ],
+      "a": 0,
+      "why": "At 6,000 kg the model predicts 12 mm, a match. At 8,000 kg it predicts 16 mm, but the cable stretched 22. A model is a useful approximation, and this one works at lower loads but breaks down at higher ones, so it needs updating rather than throwing out.",
+      "d": 2
+    },
+    {
+      "q": "Hypothesis: plants grow taller under red light than under blue light. Plants under red light averaged 21 cm and plants under blue light averaged 20 cm, but within each group heights varied by about 8 cm. The result:",
+      "opts": [
+        "is too small a gap to count as clear support",
+        "strongly supports the hypothesis as stated",
+        "shows that blue light works better",
+        "proves that red light works best"
+      ],
+      "a": 0,
+      "why": "The averages do match the prediction, which is the pull toward “supports”. But a 1 cm gap is tiny next to an 8 cm spread within each group; the difference could easily be chance. A difference smaller than the spread inside the groups is weak support.",
       "d": 3
     }
   ]

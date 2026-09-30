@@ -22240,5 +22240,3701 @@
       "C": "Wax contains no nitrogen, so burning it cannot make nitrogen.",
       "D": "The hydrogen in the wax combines with oxygen; it is not released as hydrogen gas."
     }
+  },
+  {
+    "id": "s617",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp72",
+    "context": "According to Figure 1, what was the count rate of Isotope 2 at 12 h?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1600 counts/min"
+      },
+      {
+        "id": "B",
+        "text": "800 counts/min"
+      },
+      {
+        "id": "C",
+        "text": "1903 counts/min"
+      },
+      {
+        "id": "D",
+        "text": "1131 counts/min"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the Isotope 2 curve reads 1600 counts/min at 12 h.",
+      "B": "That is Isotope 1 at 12 h; Isotope 2’s curve is the higher of the two.",
+      "C": "That is Isotope 2 at 9 h, one point earlier.",
+      "D": "That is Isotope 2 at 18 h, one point later."
+    }
+  },
+  {
+    "id": "s618",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp72",
+    "context": "Based on Figure 1 and Table 1, Isotope 1 is most likely which of the following?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Potassium-42"
+      },
+      {
+        "id": "B",
+        "text": "Iodine-131"
+      },
+      {
+        "id": "C",
+        "text": "Cobalt-60"
+      },
+      {
+        "id": "D",
+        "text": "Technetium-99m"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "About 12 h is how long Isotope 1 took to fall to a quarter of its starting rate, two half-lives, not one.",
+      "B": "Iodine-131’s half-life is 8.0 days, not 8 hours; Isotope 1 halved in only 6 hours.",
+      "C": "Cobalt-60 takes 5.3 years to halve, so its count rate would barely change in a day.",
+      "D": "Correct — Isotope 1 fell from 3200 to 1600 counts/min in 6 h, so its half-life is 6 h, which matches technetium-99m’s 6.0 hours."
+    }
+  },
+  {
+    "id": "s619",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp72",
+    "context": "Based on Figure 1, over the first 6 h the count rate of Isotope 1 fell at an average rate of about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "160 counts/min per hour"
+      },
+      {
+        "id": "B",
+        "text": "530 counts/min per hour"
+      },
+      {
+        "id": "C",
+        "text": "270 counts/min per hour"
+      },
+      {
+        "id": "D",
+        "text": "200 counts/min per hour"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is Isotope 2 over its first 6 h, a drop of 937 in 6 h.",
+      "B": "That divides the 1600 counts/min drop by 3 h, half the time it actually took.",
+      "C": "Correct — it fell from 3200 to 1600 counts/min, a drop of 1600 in 6 h, or about 270 each hour.",
+      "D": "That is the average over the first 12 h, 2400 in 12 h, which includes the slower later stretch."
+    }
+  },
+  {
+    "id": "s620",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp72",
+    "context": "According to Table 1, what is the half-life of iodine-131 expressed in hours?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "192 hours"
+      },
+      {
+        "id": "B",
+        "text": "8.0 hours"
+      },
+      {
+        "id": "C",
+        "text": "0.33 hours"
+      },
+      {
+        "id": "D",
+        "text": "480 hours"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 8.0 days × 24 hours per day is 192 hours.",
+      "B": "That keeps the number but changes the unit; iodine-131’s half-life is 8.0 days.",
+      "C": "That divides 8.0 by 24 instead of multiplying, which would turn hours into days.",
+      "D": "That multiplies by 60, as though converting hours to minutes rather than days to hours."
+    }
+  },
+  {
+    "id": "s621",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp72",
+    "context": "Based on Figure 1, at 18 h the count rate of Isotope 2 was about how many times the count rate of Isotope 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2.0 times"
+      },
+      {
+        "id": "B",
+        "text": "0.35 times"
+      },
+      {
+        "id": "C",
+        "text": "4.0 times"
+      },
+      {
+        "id": "D",
+        "text": "2.8 times"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the ratio of the half-lives, 12 h to 6 h; the gap in count rates widens beyond that as time passes.",
+      "B": "That divides Isotope 1’s rate by Isotope 2’s, which turns the comparison around.",
+      "C": "That is the ratio at 24 h, 800 to 200, not at 18 h.",
+      "D": "Correct — at 18 h Isotope 2 read 1131 counts/min and Isotope 1 read 400 counts/min, and 1131 ÷ 400 is about 2.8."
+    }
+  },
+  {
+    "id": "s622",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "sp72",
+    "context": "The count rate of each sample fell because, over time:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the background radiation in the room rose."
+      },
+      {
+        "id": "B",
+        "text": "each nucleus gave off weaker radiation as it aged."
+      },
+      {
+        "id": "C",
+        "text": "fewer nuclei were left in it to decay."
+      },
+      {
+        "id": "D",
+        "text": "the Geiger counter grew less sensitive to radiation."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Background radiation was subtracted from every reading, so it cannot explain the fall.",
+      "B": "An undecayed nucleus does not weaken with age; what falls is the number of nuclei still able to decay.",
+      "C": "Correct — the passage says the count rate is proportional to the number of undecayed nuclei, and each decay uses one up.",
+      "D": "Both samples were measured with the same counter, and nothing suggests it wore out in a day."
+    }
+  },
+  {
+    "id": "s623",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp72",
+    "context": "A student hypothesized that the count rate of a sample falls by the same number of counts per minute in every 6 h interval. Do the results for Isotope 1 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes; the curve falls during every 6 h interval."
+      },
+      {
+        "id": "B",
+        "text": "No; it fell by 1600 counts/min in the first 6 h but by only 400 counts/min from 6 h to 12 h."
+      },
+      {
+        "id": "C",
+        "text": "No; the 6 h drop shrank from 1600 to 200."
+      },
+      {
+        "id": "D",
+        "text": "Yes; it fell by half in every 6 h interval."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Falling in every interval does not mean falling by an equal amount in each.",
+      "B": "From 6 h to 12 h the rate fell from 1600 to 800 counts/min, a drop of 800, not 400.",
+      "C": "Correct — the rate halved in each 6 h interval, so the drop shrank from 1600 counts/min to 200 counts/min.",
+      "D": "Falling by the same fraction is not falling by the same number of counts: half of 3200 is far more than half of 400."
+    }
+  },
+  {
+    "id": "s624",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp73",
+    "context": "According to Figure 1, how old is the crust 600 km from Ridge B?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "12 million years"
+      },
+      {
+        "id": "B",
+        "text": "30 million years"
+      },
+      {
+        "id": "C",
+        "text": "8 million years"
+      },
+      {
+        "id": "D",
+        "text": "16 million years"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the Ridge B line reads 12 million years at 600 km.",
+      "B": "That is the Ridge A line at 600 km.",
+      "C": "That is the Ridge B line at 400 km.",
+      "D": "That is the Ridge B line at 800 km."
+    }
+  },
+  {
+    "id": "s625",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp73",
+    "context": "Based on Figure 1, crust at Ridge A moves away from the ridge at about how many millimeters per year? (1 km = 1,000,000 mm)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.05 mm per year"
+      },
+      {
+        "id": "B",
+        "text": "20,000 mm per year"
+      },
+      {
+        "id": "C",
+        "text": "50 mm per year"
+      },
+      {
+        "id": "D",
+        "text": "20 mm per year"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That divides years by distance, 5 million years per 100 km, which is the inverse of a speed.",
+      "B": "That converts kilometers to millimeters but divides by a thousand years instead of a million.",
+      "C": "That is Ridge B’s rate of 50 km per million years, not Ridge A’s.",
+      "D": "Correct — Ridge A crust is 5 million years old 100 km out, so it moves 20 km per million years: 20,000,000 mm in 1,000,000 years, or 20 mm per year."
+    }
+  },
+  {
+    "id": "s626",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp73",
+    "context": "Based on Figure 1, how far from Ridge B does a piece of crust travel in 10 million years?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1000 km"
+      },
+      {
+        "id": "B",
+        "text": "50 km"
+      },
+      {
+        "id": "C",
+        "text": "500 km"
+      },
+      {
+        "id": "D",
+        "text": "200 km"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Crust 1000 km from Ridge B is 20 million years old, twice the time asked about.",
+      "B": "That is the distance traveled in a single million years.",
+      "C": "Correct — Ridge B crust is 2 million years old at 100 km, so it travels 50 km per million years, or 500 km in 10 million years.",
+      "D": "That is how far Ridge A crust travels in 10 million years; Ridge A’s line is the steeper one."
+    }
+  },
+  {
+    "id": "s627",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp73",
+    "context": "Based on Figure 1 and Table 1, about how deep is the ocean 800 km from Ridge B?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2850 m"
+      },
+      {
+        "id": "B",
+        "text": "3900 m"
+      },
+      {
+        "id": "C",
+        "text": "4750 m"
+      },
+      {
+        "id": "D",
+        "text": "4950 m"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the depth over 1-million-year-old crust, far younger than crust 800 km out.",
+      "B": "Correct — Figure 1 gives crust 16 million years old at 800 km from Ridge B, and Table 1 gives 3900 m above 16-million-year-old crust.",
+      "C": "That uses Ridge A, whose crust is 40 million years old at 800 km, which puts the depth between 4600 m and 4950 m.",
+      "D": "That is the last row of Table 1, for crust 49 million years old, not the crust at 800 km."
+    }
+  },
+  {
+    "id": "s628",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "easy",
+    "passage": "sp73",
+    "context": "According to Table 1, how much deeper is the ocean above 36-million-year-old crust than above 9-million-year-old crust?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1050 m"
+      },
+      {
+        "id": "B",
+        "text": "350 m"
+      },
+      {
+        "id": "C",
+        "text": "8150 m"
+      },
+      {
+        "id": "D",
+        "text": "700 m"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 4600 m − 3550 m is 1050 m.",
+      "B": "That is the difference between neighboring rows, not between these two ages.",
+      "C": "That adds the two depths instead of subtracting them.",
+      "D": "That is the difference between 9 and 16 million years, two rows short of 36."
+    }
+  },
+  {
+    "id": "s629",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp73",
+    "context": "The crust gets older with distance from each ridge because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "it formed far from the ridge and has moved toward it since."
+      },
+      {
+        "id": "B",
+        "text": "older rock is heavier and slides downhill, away from the ridge."
+      },
+      {
+        "id": "C",
+        "text": "rock far from the ridge is continually being melted and remade."
+      },
+      {
+        "id": "D",
+        "text": "it formed at the ridge and has been carried away from it since."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That reverses the direction of motion: crust forms at the ridge and moves outward.",
+      "B": "Crust does not sort itself by age; its age records how long ago it formed at the ridge.",
+      "C": "If distant rock were constantly being remade, it would be young, not old.",
+      "D": "Correct — the passage says new crust forms at the ridge and moves away as newer crust forms behind it."
+    }
+  },
+  {
+    "id": "s630",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp73",
+    "context": "A geologist claims that the ocean gets deeper by the same amount for every million years that the crust beneath it ages. Does Table 1 support this claim?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No; the ocean gets shallower above older crust."
+      },
+      {
+        "id": "B",
+        "text": "No; the deepening slows as the crust ages."
+      },
+      {
+        "id": "C",
+        "text": "Yes; the depth grows by the same 350 m from each row to the next."
+      },
+      {
+        "id": "D",
+        "text": "Yes; the ocean is deeper above every older piece of crust."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Every depth in Table 1 is greater than the one above it, so the ocean gets deeper with age.",
+      "B": "Correct — the depth grows 350 m in the first million years but only 350 m in the 13 million years from 36 to 49. Each row adds 350 m, but the ages between rows grow farther apart, so the deepening per million years slows as the crust ages.",
+      "C": "The rows are not evenly spaced in age: 0 to 1 is one million years, but 36 to 49 is thirteen.",
+      "D": "Getting deeper with age is not the same as getting deeper by an equal amount each million years."
+    }
+  },
+  {
+    "id": "s631",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp74",
+    "context": "According to Figure 1, what was the water level at high tide on Day 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5.0 m"
+      },
+      {
+        "id": "B",
+        "text": "3.8 m"
+      },
+      {
+        "id": "C",
+        "text": "3.0 m"
+      },
+      {
+        "id": "D",
+        "text": "4.0 m"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the Day 1 curve peaks at 5.0 m.",
+      "B": "That is the high tide on Day 2.",
+      "C": "That is the middle level both curves swing around, not a high tide.",
+      "D": "That is Day 1’s tidal range, the difference between its high and low, not the height of the high tide."
+    }
+  },
+  {
+    "id": "s632",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp74",
+    "context": "Based on Figure 1 and Table 1, Day 1 was most likely a day when the Moon was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "at first quarter or last quarter."
+      },
+      {
+        "id": "B",
+        "text": "4 days past new moon."
+      },
+      {
+        "id": "C",
+        "text": "full, but not new."
+      },
+      {
+        "id": "D",
+        "text": "new or full."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Those phases give a range of only 1.6 m, which matches Day 2, not Day 1.",
+      "B": "The range on that day was 2.6 m, well short of Day 1’s 4.0 m.",
+      "C": "Table 1 gives the same 4.0 m range at new moon as at full moon, so the data cannot pick one of the two.",
+      "D": "Correct — Day 1’s range was 5.0 m − 1.0 m = 4.0 m, and Table 1 shows a 4.0 m range only at new moon and full moon."
+    }
+  },
+  {
+    "id": "s633",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp74",
+    "context": "Based on Figure 1, on Day 1 the water rose from low tide at 6.2 h to high tide at 12.4 h at an average rate of about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.26 m per hour"
+      },
+      {
+        "id": "B",
+        "text": "1.55 m per hour"
+      },
+      {
+        "id": "C",
+        "text": "0.65 m per hour"
+      },
+      {
+        "id": "D",
+        "text": "0.40 m per hour"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is Day 2’s rise of 1.6 m over the same 6.2 h.",
+      "B": "That divides the time by the rise, hours per meter rather than meters per hour.",
+      "C": "Correct — the water rose 4.0 m, from 1.0 m to 5.0 m, in 6.2 hours: 4.0 ÷ 6.2 is about 0.65 m per hour.",
+      "D": "That divides the 5.0 m high-tide level by the 12.4 h clock time, rather than dividing the rise by the time it took."
+    }
+  },
+  {
+    "id": "s634",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp74",
+    "context": "In Figure 1, one high tide follows another after 12.4 h. What is this time in hours and minutes?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "12 h 14 min"
+      },
+      {
+        "id": "B",
+        "text": "12 h 24 min"
+      },
+      {
+        "id": "C",
+        "text": "12 h 40 min"
+      },
+      {
+        "id": "D",
+        "text": "12 h 4 min"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That treats 0.4 h as 14 minutes; 0.4 × 60 is 24.",
+      "B": "Correct — 0.4 of an hour is 0.4 × 60 = 24 minutes.",
+      "C": "That reads the decimal 0.4 h as 40 minutes, but an hour has 60 minutes, not 100.",
+      "D": "That reads the 4 in 12.4 as a number of minutes."
+    }
+  },
+  {
+    "id": "s635",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp74",
+    "context": "Suppose the water level on every day swings evenly above and below the same middle level as in Figure 1. Based on Figure 1 and Table 1, what would the water level be at high tide 4 days after a new moon?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4.3 m"
+      },
+      {
+        "id": "B",
+        "text": "5.6 m"
+      },
+      {
+        "id": "C",
+        "text": "2.6 m"
+      },
+      {
+        "id": "D",
+        "text": "3.8 m"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Figure 1 shows the middle level at 3.0 m, and Table 1 gives a 2.6 m range on day 4, so high tide sits half the range, 1.3 m, above the middle: 3.0 + 1.3 = 4.3 m.",
+      "B": "That adds the whole 2.6 m range to the middle level; high tide sits only half the range above the middle.",
+      "C": "That is the tidal range on day 4, the gap from high to low, not the height of high tide.",
+      "D": "That is Day 2’s high tide, for a day with a 1.6 m range rather than 2.6 m."
+    }
+  },
+  {
+    "id": "s636",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp74",
+    "context": "The tidal range is largest at new moon and full moon because at those times:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the Moon is closest to Earth."
+      },
+      {
+        "id": "B",
+        "text": "the Moon is lit on the side facing Earth."
+      },
+      {
+        "id": "C",
+        "text": "the Sun’s and Moon’s pulls cancel, leaving the ocean free to swing."
+      },
+      {
+        "id": "D",
+        "text": "the Sun and Moon line up with Earth, so their pulls add together."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The Moon’s distance does not follow its phases; new and full moons occur at every distance.",
+      "B": "At new moon the lit side faces away from Earth, yet the range is just as large as at full moon.",
+      "C": "Cancelling pulls would shrink the tides; that is what happens at the quarter moons.",
+      "D": "Correct — at new and full moon the Sun’s tidal pull adds to the Moon’s, giving the large spring tides."
+    }
+  },
+  {
+    "id": "s637",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp74",
+    "context": "A student predicts that, at this harbor, high tide happens at the same time of day every day. Does Figure 1 support this prediction?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes; the high tides on Day 1 are all the same height."
+      },
+      {
+        "id": "B",
+        "text": "No; high tides are 6.2 h apart, so they come earlier each day."
+      },
+      {
+        "id": "C",
+        "text": "No; each day’s first high tide comes about 50 minutes later."
+      },
+      {
+        "id": "D",
+        "text": "Yes; there are two high tides in every day."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Equal heights say nothing about when the high tides happen.",
+      "B": "6.2 h is the gap from a high tide to the next low tide; highs are 12.4 h apart, and they come later, not earlier.",
+      "C": "Correct — high tides are 12.4 h apart, and two high tides take 24.8 h, not 24 h, so the pattern shifts about 0.8 h, roughly 50 minutes, later each day.",
+      "D": "Two high tides take 24.8 h, a little more than a day, so their clock times drift."
+    }
+  },
+  {
+    "id": "s638",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp75",
+    "context": "According to Table 1, what is the transit depth of Planet c?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.10%"
+      },
+      {
+        "id": "B",
+        "text": "0.25%"
+      },
+      {
+        "id": "C",
+        "text": "1.00%"
+      },
+      {
+        "id": "D",
+        "text": "0.04%"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is Planet c’s distance from the star in AU, not its transit depth.",
+      "B": "Correct — Table 1 gives Planet c a transit depth of 0.25%.",
+      "C": "That is Planet b’s depth, one row up.",
+      "D": "That is Planet d’s depth, one row down."
+    }
+  },
+  {
+    "id": "s639",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp75",
+    "context": "Based on Figure 1 and Table 1, about how long after the transit in Figure 1 would the star next dim to 99.0% of its normal brightness?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4.1 days"
+      },
+      {
+        "id": "B",
+        "text": "4 hours"
+      },
+      {
+        "id": "C",
+        "text": "11.6 days"
+      },
+      {
+        "id": "D",
+        "text": "311.9 days"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a dip to 99.0% is a 1.00% transit depth, which Table 1 gives for Planet b, and Planet b returns to the same spot every 4.1 days.",
+      "B": "That is how long the transit itself lasted in Figure 1, not the time until the next one.",
+      "C": "That is Planet c’s orbital period; Planet c blocks only 0.25% of the light.",
+      "D": "That is the orbital period of Planet e, the smallest planet, not Planet b."
+    }
+  },
+  {
+    "id": "s640",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp75",
+    "context": "According to Figure 1, as Planet b began to cross the star, the star’s brightness fell from 100.0% to 99.0% at an average rate of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.25 percentage point per hour"
+      },
+      {
+        "id": "B",
+        "text": "2.0 percentage points per hour"
+      },
+      {
+        "id": "C",
+        "text": "1.0 percentage point per hour"
+      },
+      {
+        "id": "D",
+        "text": "0.5 percentage point per hour"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That spreads the drop over the whole 4 h transit rather than the 1 h the dimming took.",
+      "B": "That treats the half-hour from 1 h to 1.5 h as the whole drop; by 1.5 h the star had dimmed only halfway.",
+      "C": "Correct — the drop from 100.0% at 1 h to 99.0% at 2 h is 1.0 percentage point in 1 hour.",
+      "D": "That spreads the drop over the 2 h from the start of the graph, including the hour before the dimming began."
+    }
+  },
+  {
+    "id": "s641",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp75",
+    "context": "According to Table 1 and the passage, how far is Planet c from its star, in meters? (1 km = 1000 m)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.5 × 10⁴ m"
+      },
+      {
+        "id": "B",
+        "text": "1.5 × 10¹⁰ m"
+      },
+      {
+        "id": "C",
+        "text": "1.5 × 10⁷ m"
+      },
+      {
+        "id": "D",
+        "text": "1.5 × 10¹¹ m"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That divides by 1000 instead of multiplying when turning kilometers into meters.",
+      "B": "Correct — 0.10 AU × 150,000,000 km is 15,000,000 km, and × 1000 m per km that is 1.5 × 10¹⁰ m.",
+      "C": "That is the distance in kilometers, 15,000,000 km, left without the change to meters.",
+      "D": "That is the full 150,000,000 km in meters, one whole AU rather than 0.10 AU."
+    }
+  },
+  {
+    "id": "s642",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp75",
+    "context": "In Table 1, each planet’s transit depth equals (planet radius ÷ star radius)², written as a percent. A fifth planet is found with a transit depth of 0.16%. What is its radius?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 28,000 km"
+      },
+      {
+        "id": "B",
+        "text": "About 1100 km"
+      },
+      {
+        "id": "C",
+        "text": "About 26,000 km"
+      },
+      {
+        "id": "D",
+        "text": "About 112,000 km"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 0.16% is 0.0016, whose square root is 0.04, and 0.04 × 700,000 km is 28,000 km.",
+      "B": "That multiplies the star’s radius by 0.0016 without taking the square root.",
+      "C": "That reads between Planets c and d along a straight line, but depth grows with the square of the radius, not in step with it.",
+      "D": "That multiplies the star’s radius by 0.16, treating the percent as a fraction and skipping the square root."
+    }
+  },
+  {
+    "id": "s643",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp75",
+    "context": "The star in Figure 1 appears to dim during a transit mainly because Planet b:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "absorbs energy from the star, which makes the star cooler."
+      },
+      {
+        "id": "B",
+        "text": "reflects the star’s light back toward the star."
+      },
+      {
+        "id": "C",
+        "text": "pulls on the star, which shrinks the star’s surface."
+      },
+      {
+        "id": "D",
+        "text": "blocks part of the star’s light from view."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "A planet is far too small to cool its star, and the brightness returns to normal as soon as the transit ends.",
+      "B": "Reflected light from the planet is tiny and would, if anything, add brightness, not take it away.",
+      "C": "A planet’s pull does not shrink a star, and the dimming lasts only while the planet is crossing.",
+      "D": "Correct — a planet gives off almost no visible light of its own, so while it is in front of the star it hides part of the star’s disk."
+    }
+  },
+  {
+    "id": "s644",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "easy",
+    "passage": "sp75",
+    "context": "An astronomer predicted that the farther a planet is from this star, the longer it takes to orbit. Is this prediction supported by Table 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No; the orbital period decreases as distance increases."
+      },
+      {
+        "id": "B",
+        "text": "No; Planet b is the largest planet but has the shortest period."
+      },
+      {
+        "id": "C",
+        "text": "Yes; the period grows with distance in every row."
+      },
+      {
+        "id": "D",
+        "text": "Yes; the farther planets have the largest transit depths."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That reads the period column backward: it grows down the table along with the distance.",
+      "B": "The prediction concerns distance, not size; Planet b is also the closest planet.",
+      "C": "Correct — distance rises from 0.05 AU to 0.90 AU down the table, and period rises from 4.1 days to 311.9 days.",
+      "D": "The farther planets have the smallest transit depths, and depth is not what the prediction is about."
+    }
+  },
+  {
+    "id": "s645",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp76",
+    "context": "According to Table 1, what is the albedo of a melt pond on ice?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.06"
+      },
+      {
+        "id": "B",
+        "text": "0.25"
+      },
+      {
+        "id": "C",
+        "text": "0.60"
+      },
+      {
+        "id": "D",
+        "text": "225"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the albedo of open ocean.",
+      "B": "Correct — Table 1 gives a melt pond an albedo of 0.25.",
+      "C": "That is the albedo of bare sea ice.",
+      "D": "That is the sunlight a melt pond absorbs, in W/m², not its albedo."
+    }
+  },
+  {
+    "id": "s646",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "easy",
+    "passage": "sp76",
+    "context": "According to Table 1, open ocean absorbs about how many times as much sunlight as fresh snow on ice?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6.3 times"
+      },
+      {
+        "id": "B",
+        "text": "14 times"
+      },
+      {
+        "id": "C",
+        "text": "237 times"
+      },
+      {
+        "id": "D",
+        "text": "0.16 times"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 282 W/m² ÷ 45 W/m² is about 6.3.",
+      "B": "That compares the albedos, 0.85 ÷ 0.06, which measure reflected light, not absorbed light.",
+      "C": "That is the difference, 282 − 45 = 237 W/m², not a ratio.",
+      "D": "That divides the snow’s value by the ocean’s, which turns the comparison around."
+    }
+  },
+  {
+    "id": "s647",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp76",
+    "context": "Based on Figure 1, from 1980 to 2020 the September sea ice area shrank at an average rate of about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3.8 million km² per year"
+      },
+      {
+        "id": "B",
+        "text": "0.13 million km² per year"
+      },
+      {
+        "id": "C",
+        "text": "0.38 million km² per year"
+      },
+      {
+        "id": "D",
+        "text": "0.095 million km² per year"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the total loss over the 40 years, not the loss per year.",
+      "B": "That is the rate from 1980 to 2012, the year of the smallest area, rather than to 2020.",
+      "C": "That divides the 3.8 million km² loss by 10 instead of by the 40 years it took.",
+      "D": "Correct — the area fell from 7.8 to 4.0 million km², a loss of 3.8 million km² over 40 years."
+    }
+  },
+  {
+    "id": "s648",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp76",
+    "context": "According to Figure 1, sea ice covered 4.0 million km² in September 2020. What is this area in square meters? (1 km = 1000 m)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4.0 × 10⁶ m²"
+      },
+      {
+        "id": "B",
+        "text": "4.0 × 10¹⁸ m²"
+      },
+      {
+        "id": "C",
+        "text": "4.0 × 10¹² m²"
+      },
+      {
+        "id": "D",
+        "text": "4.0 × 10⁹ m²"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the area in square kilometers, with no conversion made.",
+      "B": "That multiplies by 10¹² instead of 10⁶, squaring the conversion factor a second time.",
+      "C": "Correct — a square kilometer is 1000 m × 1000 m, or 10⁶ m², so 4.0 × 10⁶ km² is 4.0 × 10¹² m².",
+      "D": "That multiplies by 1000 once, converting a length; an area needs the factor twice."
+    }
+  },
+  {
+    "id": "s649",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp76",
+    "context": "Which statement best describes the data in Figure 1?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The area did not change overall, since it rose as often as it fell."
+      },
+      {
+        "id": "B",
+        "text": "It fell overall but rose in two intervals."
+      },
+      {
+        "id": "C",
+        "text": "The area shrank in every interval from 1980 to 2020."
+      },
+      {
+        "id": "D",
+        "text": "The area was smallest in 2020, the last year shown."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "It fell in five of the seven intervals, and it ended nearly 4 million km² lower than it began.",
+      "B": "Correct — the overall fall from 7.8 to 4.0 million km² includes rises from 1990 to 2000 and from 2012 to 2015.",
+      "C": "The area rose from 6.2 to 6.3 million km² between 1990 and 2000, and from 3.6 to 4.6 between 2012 and 2015.",
+      "D": "The smallest area, 3.6 million km², was in 2012; 2020’s 4.0 million km² is higher."
+    }
+  },
+  {
+    "id": "s650",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp76",
+    "context": "Scientists describe the link between sea ice and sunlight as a feedback that speeds up melting. Based on Table 1, which sequence best explains this feedback?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Ice melts, exposing darker ocean; the ocean reflects more sunlight and cools; less ice melts."
+      },
+      {
+        "id": "B",
+        "text": "Snow falls on the ice, which lowers its albedo, and the ice absorbs more sunlight."
+      },
+      {
+        "id": "C",
+        "text": "Melt ponds form, which raises the ice’s albedo and cools the ice."
+      },
+      {
+        "id": "D",
+        "text": "Melting exposes dark ocean, which warms and melts more ice."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Open ocean has the lowest albedo in Table 1, so it reflects the least sunlight, not the most.",
+      "B": "Fresh snow has the highest albedo in Table 1, so it raises the ice’s albedo and reduces absorption.",
+      "C": "A melt pond’s albedo, 0.25, is lower than bare ice’s 0.60, so ponds lower the albedo and warm the ice.",
+      "D": "Correct — replacing ice (120 W/m²) with open ocean (282 W/m²) more than doubles the energy absorbed, which melts still more ice."
+    }
+  },
+  {
+    "id": "s651",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "easy",
+    "passage": "sp76",
+    "context": "A scientist hypothesizes that when melt ponds form on bare sea ice, the surface absorbs more sunlight. Do the data in Table 1 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No; a melt pond absorbs less sunlight than open ocean does."
+      },
+      {
+        "id": "B",
+        "text": "No; a melt pond absorbs 225 W/m² and bare ice absorbs 282 W/m²."
+      },
+      {
+        "id": "C",
+        "text": "Yes; a melt pond absorbs nearly twice as much."
+      },
+      {
+        "id": "D",
+        "text": "Yes; a melt pond has a higher albedo than bare ice."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The hypothesis compares melt ponds with bare ice, not with open ocean.",
+      "B": "Bare ice absorbs 120 W/m²; 282 W/m² is the figure for open ocean.",
+      "C": "Correct — a melt pond absorbs 225 W/m² and bare ice only 120 W/m², so the same 300 W/m² of sunlight puts nearly twice as much energy into a melt pond as into bare ice.",
+      "D": "A melt pond’s albedo, 0.25, is lower than bare ice’s 0.60, which is why it absorbs more."
+    }
+  },
+  {
+    "id": "s652",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp77",
+    "context": "According to Figure 1, what is the peak wavelength of a star with a surface temperature of 6000 K?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6000 nm"
+      },
+      {
+        "id": "B",
+        "text": "483 nm"
+      },
+      {
+        "id": "C",
+        "text": "580 nm"
+      },
+      {
+        "id": "D",
+        "text": "362 nm"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the temperature in kelvins, read as though it were a wavelength.",
+      "B": "Correct — the curve reads 483 nm at 6000 K.",
+      "C": "That is the peak wavelength at 5000 K.",
+      "D": "That is the peak wavelength at 8000 K."
+    }
+  },
+  {
+    "id": "s653",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp77",
+    "context": "Based on Table 1 and Figure 1, the peak wavelength of Star 3 is closest to which of the following?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "330 nm"
+      },
+      {
+        "id": "B",
+        "text": "362 nm"
+      },
+      {
+        "id": "C",
+        "text": "290 nm"
+      },
+      {
+        "id": "D",
+        "text": "870 nm"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Star 3’s surface is at 8700 K, between the 8000 K and 10,000 K points of Figure 1, so its peak lies between 362 nm and 290 nm, a little over a third of the way down: about 330 nm.",
+      "B": "That is the peak at 8000 K; Star 3 is 700 K hotter, so its peak is shorter.",
+      "C": "That is the peak at 10,000 K, well above Star 3’s 8700 K.",
+      "D": "That treats Star 3’s temperature as the wavelength, divided by 10, instead of reading it off the curve."
+    }
+  },
+  {
+    "id": "s654",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp77",
+    "context": "According to Table 1, Star 4 gives off about how many times as much energy each second as Star 3?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2 times"
+      },
+      {
+        "id": "B",
+        "text": "236 times"
+      },
+      {
+        "id": "C",
+        "text": "1.3 times"
+      },
+      {
+        "id": "D",
+        "text": "13 times"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That compares the radii, 4.0 ÷ 2.0, but luminosity depends on temperature as well as size.",
+      "B": "That is the difference in luminosity, 256 − 20, not the ratio.",
+      "C": "That compares the surface temperatures, 11,600 ÷ 8700, which is not the energy given off.",
+      "D": "Correct — Star 4’s luminosity is 256 and Star 3’s is 20, and 256 ÷ 20 is about 13."
+    }
+  },
+  {
+    "id": "s655",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp77",
+    "context": "Based on Figure 1, as the surface temperature rises from 3000 K to 4000 K, the peak wavelength decreases by an average of about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.024 nm per kelvin"
+      },
+      {
+        "id": "B",
+        "text": "4.1 kelvins per nm"
+      },
+      {
+        "id": "C",
+        "text": "0.24 nm per kelvin"
+      },
+      {
+        "id": "D",
+        "text": "241 nm per kelvin"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the rate from 10,000 K to 12,000 K, where the curve is far flatter.",
+      "B": "That divides the temperature change by the wavelength change, which inverts the rate.",
+      "C": "Correct — the peak falls from 966 nm to 725 nm, 241 nm over 1000 K, or about 0.24 nm for each kelvin.",
+      "D": "That is the whole drop over the 1000 K interval, not the drop for each kelvin."
+    }
+  },
+  {
+    "id": "s656",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp77",
+    "context": "According to Figure 1, a surface at 6000 K has a peak wavelength of 483 nm. What is this wavelength in meters?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4.83 × 10⁻⁹ m"
+      },
+      {
+        "id": "B",
+        "text": "4.83 × 10⁻⁷ m"
+      },
+      {
+        "id": "C",
+        "text": "4.83 × 10⁻¹¹ m"
+      },
+      {
+        "id": "D",
+        "text": "4.83 × 10¹¹ m"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That drops the factor of 100 when rewriting 483 as 4.83.",
+      "B": "Correct — 483 × 10⁻⁹ m is 4.83 × 10⁻⁷ m.",
+      "C": "That moves the decimal the wrong way when rewriting 483 as 4.83.",
+      "D": "That multiplies by 10⁹ instead of by 10⁻⁹, making a wavelength larger than the Earth’s orbit."
+    }
+  },
+  {
+    "id": "s657",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp77",
+    "context": "Visible light has wavelengths from about 400 nm to 700 nm. Based on Table 1 and Figure 1, which star gives off the most light at a wavelength longer than visible light, in the infrared?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Star 1"
+      },
+      {
+        "id": "B",
+        "text": "Star 4"
+      },
+      {
+        "id": "C",
+        "text": "Star 2"
+      },
+      {
+        "id": "D",
+        "text": "The Sun"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Star 1’s 3000 K surface peaks at 966 nm, beyond the 700 nm red end of visible light, so its peak lies in the infrared.",
+      "B": "Star 4 is the hottest star, and its peak, about 250 nm, is shorter than visible light, in the ultraviolet.",
+      "C": "Star 2’s 4500 K surface peaks between 725 nm and 580 nm, around 640 nm, inside the visible range.",
+      "D": "The Sun’s 5800 K surface peaks near 500 nm, in the middle of the visible range."
+    }
+  },
+  {
+    "id": "s658",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp77",
+    "context": "A student claims that a star with a larger radius always has a greater luminosity. Which pair of stars in Table 1 contradicts this claim?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Star 3 and Star 4"
+      },
+      {
+        "id": "B",
+        "text": "Star 1 and the Sun"
+      },
+      {
+        "id": "C",
+        "text": "Star 1 and Star 2"
+      },
+      {
+        "id": "D",
+        "text": "Star 2 and the Sun"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Star 4 is both larger and more luminous than Star 3, which fits the claim.",
+      "B": "The Sun is both larger and more luminous than Star 1, which fits the claim.",
+      "C": "Star 2 is both larger and more luminous than Star 1, which fits the claim.",
+      "D": "Correct — Star 2’s radius, 1.5, is larger than the Sun’s, yet its luminosity, 0.82, is smaller, because its surface is much cooler."
+    }
+  },
+  {
+    "id": "s659",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp78",
+    "context": "Which variable was deliberately changed in Experiment 2?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The number of the resonance"
+      },
+      {
+        "id": "B",
+        "text": "The depth of the jar of water"
+      },
+      {
+        "id": "C",
+        "text": "The air’s temperature in the tube"
+      },
+      {
+        "id": "D",
+        "text": "The frequency of the tuning fork"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Only Experiment 3 went on past the first resonance.",
+      "B": "The passage never describes changing the jar, and the column length is what was measured, not set.",
+      "C": "Correct — Table 2 lists five air temperatures, all tested with the same 384 Hz fork.",
+      "D": "The fork was held at 384 Hz in Experiment 2; the frequency was varied in Experiment 1."
+    }
+  },
+  {
+    "id": "s660",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp78",
+    "context": "According to Table 1, what was the length of the air column at first resonance with the 320 Hz tuning fork?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "26.8 cm"
+      },
+      {
+        "id": "B",
+        "text": "33.5 cm"
+      },
+      {
+        "id": "C",
+        "text": "22.3 cm"
+      },
+      {
+        "id": "D",
+        "text": "32.0 cm"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 1 gives 26.8 cm for the 320 Hz fork.",
+      "B": "That is the length for the 256 Hz fork, one row up.",
+      "C": "That is the length for the 384 Hz fork, one row down.",
+      "D": "That treats the frequency, 320 Hz, as though it gave the length."
+    }
+  },
+  {
+    "id": "s661",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp78",
+    "context": "According to Table 2, the length of the air column at first resonance increased by about how much for each 1 °C rise in air temperature?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.4 cm"
+      },
+      {
+        "id": "B",
+        "text": "1.6 cm"
+      },
+      {
+        "id": "C",
+        "text": "25 cm"
+      },
+      {
+        "id": "D",
+        "text": "0.04 cm"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the rise over each 10 °C step, not over a single degree.",
+      "B": "That is the total rise from 0 °C to 40 °C.",
+      "C": "That divides the temperature change by the length change, degrees per centimeter rather than centimeters per degree.",
+      "D": "Correct — the length rose 0.4 cm for every 10 °C, from 21.5 cm at 0 °C to 23.1 cm at 40 °C, which is 0.04 cm per degree."
+    }
+  },
+  {
+    "id": "s662",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp78",
+    "context": "The results of Experiment 1 correspond to a speed of sound of 343 m/s at 20 °C. What is this speed in kilometers per hour? (1 km = 1000 m; 1 h = 3600 s)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 21 km/h"
+      },
+      {
+        "id": "B",
+        "text": "About 1,234,800 km/h"
+      },
+      {
+        "id": "C",
+        "text": "About 1230 km/h"
+      },
+      {
+        "id": "D",
+        "text": "About 95 km/h"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That multiplies by only 60, treating an hour as 60 seconds.",
+      "B": "That is the speed in meters per hour; the change from meters to kilometers is left out.",
+      "C": "Correct — 343 m/s × 3600 s per hour is 1,234,800 m per hour, and ÷ 1000 that is about 1230 km/h.",
+      "D": "That divides 343 by 3.6 instead of multiplying by it, which would convert km/h into m/s."
+    }
+  },
+  {
+    "id": "s663",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp78",
+    "context": "Based on Experiments 1 and 3, at what length of the air column would the second resonance most likely occur with the 512 Hz tuning fork at 20 °C?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 84 cm"
+      },
+      {
+        "id": "B",
+        "text": "About 50 cm"
+      },
+      {
+        "id": "C",
+        "text": "About 33 cm"
+      },
+      {
+        "id": "D",
+        "text": "About 101 cm"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is five times 16.7 cm, the position of the third resonance rather than the second.",
+      "B": "Correct — in Experiment 3 the second resonance came at 3 times the first, and the 512 Hz fork’s first resonance was at 16.7 cm, so the second would be near 3 × 16.7 = 50 cm.",
+      "C": "That doubles 16.7 cm; Experiment 3 shows the second resonance at three times the first length, not twice.",
+      "D": "That is the second resonance for the 256 Hz fork, whose first resonance was twice as long."
+    }
+  },
+  {
+    "id": "s664",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp78",
+    "context": "A student hypothesized that the resonant length is inversely proportional to the fork’s frequency, so that doubling the frequency halves the length. Do the results of Experiment 1 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes; the 512 Hz fork resonated at 16.7 cm, about half the 33.5 cm of the 256 Hz fork."
+      },
+      {
+        "id": "B",
+        "text": "Yes; the resonant length increased as the frequency increased."
+      },
+      {
+        "id": "C",
+        "text": "No; the 512 Hz fork resonated at 16.7 cm, about half the 33.5 cm of the 256 Hz fork."
+      },
+      {
+        "id": "D",
+        "text": "No; the length changed when the air temperature changed."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — doubling the frequency from 256 Hz to 512 Hz halved the length, as the hypothesis predicts.",
+      "B": "The length decreased as the frequency increased, from 33.5 cm down to 16.7 cm.",
+      "C": "Halving the length when the frequency doubles is exactly what the hypothesis predicts, so this result supports it.",
+      "D": "That is Experiment 2’s result, and all of Experiment 1 was carried out at 20 °C."
+    }
+  },
+  {
+    "id": "s665",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "sp78",
+    "context": "In Experiment 2, the resonant length grew with temperature because sound travels faster in warmer air. Sound travels faster in warmer air mainly because the air’s molecules:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "are larger when they are warm."
+      },
+      {
+        "id": "B",
+        "text": "are packed more closely together when they are warm."
+      },
+      {
+        "id": "C",
+        "text": "stop colliding with one another."
+      },
+      {
+        "id": "D",
+        "text": "move faster and pass the vibration along more quickly."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Warming does not enlarge molecules; it makes them move faster.",
+      "B": "Warm air expands, so its molecules are spread farther apart, not packed closer.",
+      "C": "Sound travels through air by the collisions of its molecules; without them there would be no sound.",
+      "D": "Correct — sound is passed from molecule to molecule, and faster-moving molecules pass it on sooner."
+    }
+  },
+  {
+    "id": "s666",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp79",
+    "context": "Which variable did the students deliberately change in Experiment 2?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The rate at which the rain fell"
+      },
+      {
+        "id": "B",
+        "text": "The type of soil in the tray"
+      },
+      {
+        "id": "C",
+        "text": "The fraction of the soil covered by straw"
+      },
+      {
+        "id": "D",
+        "text": "The angle of the tray"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The rainfall rate was held at 40 mm per hour in Experiment 2; it was varied in Experiment 3.",
+      "B": "The same loam soil was used in every trial.",
+      "C": "Correct — Table 2 lists five straw coverings, each tested at 15° with rain at 40 mm per hour.",
+      "D": "The tray was held at 15° in Experiment 2; the angle was varied in Experiment 1."
+    }
+  },
+  {
+    "id": "s667",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp79",
+    "context": "In Experiment 3, when rain fell at 60 mm per hour, soil washed off the tray at an average rate of about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "14 g per mm of rain"
+      },
+      {
+        "id": "B",
+        "text": "27 g per minute"
+      },
+      {
+        "id": "C",
+        "text": "14 g per minute"
+      },
+      {
+        "id": "D",
+        "text": "820 g per minute"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That divides the soil lost by the rainfall rate, which is not a rate over time.",
+      "B": "Correct — 820 g of soil washed off during the 30-minute trial, and 820 ÷ 30 is about 27 g each minute.",
+      "C": "That divides by 60 minutes, but each trial lasted 30 minutes.",
+      "D": "That is the total washed off in the whole 30-minute trial."
+    }
+  },
+  {
+    "id": "s668",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp79",
+    "context": "In Experiment 1, what mass of soil was washed off each square meter of the tray tilted at 25°, in kilograms?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.66 kg"
+      },
+      {
+        "id": "B",
+        "text": "0.83 kg"
+      },
+      {
+        "id": "C",
+        "text": "0.415 kg"
+      },
+      {
+        "id": "D",
+        "text": "1660 kg"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the tray’s area is 1.0 m × 0.50 m = 0.50 m², and 830 g ÷ 0.50 m² is 1660 g, or 1.66 kg, per square meter.",
+      "B": "That converts the 830 g to kilograms but leaves out the division by the tray’s 0.50 m² area.",
+      "C": "That multiplies by the tray’s 0.50 m² area instead of dividing by it.",
+      "D": "That divides by the area correctly but leaves the answer in grams while labeling it kilograms."
+    }
+  },
+  {
+    "id": "s669",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp79",
+    "context": "According to Table 2, covering 50% of the soil with straw reduced the soil washed off by about what percent, compared with bare soil?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "50%"
+      },
+      {
+        "id": "B",
+        "text": "37%"
+      },
+      {
+        "id": "C",
+        "text": "260%"
+      },
+      {
+        "id": "D",
+        "text": "63%"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That assumes the loss falls in step with the straw covering; the actual drop was larger than half.",
+      "B": "That is the fraction of the bare-soil loss that remained, 150 ÷ 410, not the fraction removed.",
+      "C": "That is the drop of 260 g written as a percentage without dividing by the 410 g starting value.",
+      "D": "Correct — the loss fell from 410 g to 150 g, a drop of 260 g, and 260 ÷ 410 is about 63%."
+    }
+  },
+  {
+    "id": "s670",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp79",
+    "context": "An engineer claims that doubling the rainfall rate doubles the amount of soil washed off. Do the results of Experiment 3 support this claim?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No; doubling the rate from 20 to 40 mm/h less than doubled the soil washed off."
+      },
+      {
+        "id": "B",
+        "text": "No; doubling the rate more than tripled the loss."
+      },
+      {
+        "id": "C",
+        "text": "Yes; more soil washed off at every higher rainfall rate."
+      },
+      {
+        "id": "D",
+        "text": "Yes; doubling the rate from 40 to 80 mm/h doubled the soil washed off."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The loss rose from 130 g to 410 g, which is more than double, not less.",
+      "B": "Correct — the loss went from 130 g to 410 g, about 3.2 times, and from 40 to 80 mm/h it went from 410 g to 1350 g, about 3.3 times.",
+      "C": "Rising with the rainfall rate is not the same as doubling when the rate doubles; the loss grew by more than that.",
+      "D": "The loss went from 410 g to 1350 g, more than three times as much, not twice."
+    }
+  },
+  {
+    "id": "s671",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp79",
+    "context": "Based on Experiment 1, if a tray of bare soil were tilted at 12°, the soil washed off would most likely be:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between 250 g and 410 g."
+      },
+      {
+        "id": "B",
+        "text": "less than 250 g."
+      },
+      {
+        "id": "C",
+        "text": "between 410 g and 600 g."
+      },
+      {
+        "id": "D",
+        "text": "more than 830 g."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 12° lies between 10° and 15°, and the soil lost rose steadily from 250 g at 10° to 410 g at 15°.",
+      "B": "That would be less than the tray at 10° lost, but a steeper tray lost more soil at every step.",
+      "C": "Those are the losses at 15° and 20°, both steeper than 12°.",
+      "D": "That is more than the steepest tray, at 25°, lost."
+    }
+  },
+  {
+    "id": "s672",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp79",
+    "context": "Which of the following best explains why the straw in Experiment 2 reduced the soil washed off?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "It made the rain fall more slowly from the sprinkler."
+      },
+      {
+        "id": "B",
+        "text": "It added weight that held the tray at a lower angle."
+      },
+      {
+        "id": "C",
+        "text": "It absorbed all of the water, so none ran off the tray."
+      },
+      {
+        "id": "D",
+        "text": "It shielded the soil and slowed the runoff water."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The sprinkler delivered 40 mm per hour in every trial of Experiment 2; the straw was on the soil, not in the air.",
+      "B": "The tray was fixed at 15° throughout Experiment 2.",
+      "C": "Soil still washed off even under complete cover, 30 g, so some water must have run off.",
+      "D": "Correct — covered soil is shielded from drops that knock grains loose, and slower-moving water carries less soil away."
+    }
+  },
+  {
+    "id": "s673",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp80",
+    "context": "How did Experiment 1 differ from Experiments 2 and 3?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "It used only sand grains 0.25 mm across."
+      },
+      {
+        "id": "B",
+        "text": "It measured sand carried per minute rather than distance moved."
+      },
+      {
+        "id": "C",
+        "text": "It studied real dunes out in the field."
+      },
+      {
+        "id": "D",
+        "text": "It varied the wind speed rather than the size of the sand grains."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The grain size was given only for the wind tunnel; Experiment 1 measured dune height, not grain size.",
+      "B": "That reverses the experiments: Experiment 1 measured distance moved in a year, and the others measured sand carried per minute.",
+      "C": "Correct — Experiment 1 tracked five dunes in the field, while the other two experiments used a wind tunnel.",
+      "D": "That describes Experiment 2 compared with Experiment 3; Experiment 1 did not set the wind at all."
+    }
+  },
+  {
+    "id": "s674",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "easy",
+    "passage": "sp80",
+    "context": "According to Table 1, how far would the 10 m dune move in 5 years, if it kept moving at the same rate?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6 m"
+      },
+      {
+        "id": "B",
+        "text": "150 m"
+      },
+      {
+        "id": "C",
+        "text": "30 m"
+      },
+      {
+        "id": "D",
+        "text": "50 m"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That divides the 30 m by 5 instead of multiplying.",
+      "B": "Correct — it moved 30 m in one year, so 5 years × 30 m is 150 m.",
+      "C": "That is the distance moved in a single year.",
+      "D": "That multiplies the dune’s height, 10 m, by 5 years instead of its yearly distance."
+    }
+  },
+  {
+    "id": "s675",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp80",
+    "context": "According to Table 1, the 10 m dune moved 30 m in one year. About how many centimeters did it move per day? (1 m = 100 cm; 1 year = 365 days)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "8.2 cm"
+      },
+      {
+        "id": "B",
+        "text": "0.082 cm"
+      },
+      {
+        "id": "C",
+        "text": "82 cm"
+      },
+      {
+        "id": "D",
+        "text": "12 cm"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 30 m is 3000 cm, and 3000 cm ÷ 365 days is about 8.2 cm per day.",
+      "B": "That is the speed in meters per day, 30 ÷ 365, labeled as centimeters.",
+      "C": "That multiplies by 1000 instead of 100 when converting meters to centimeters.",
+      "D": "That treats a year as 250 days rather than 365."
+    }
+  },
+  {
+    "id": "s676",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp80",
+    "context": "In Table 1, a dune’s height multiplied by the distance it moves in a year gives the same result for all five dunes. Based on this pattern, about how far would an 8 m dune move in one year?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "42 m"
+      },
+      {
+        "id": "B",
+        "text": "30 m"
+      },
+      {
+        "id": "C",
+        "text": "2400 m"
+      },
+      {
+        "id": "D",
+        "text": "38 m"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That reads straight across between the 5 m and 10 m dunes, but the distances fall along a curve, not a straight line.",
+      "B": "That is the distance moved by the 10 m dune; a shorter dune moves farther, not the same distance.",
+      "C": "That multiplies 300 by 8 instead of dividing.",
+      "D": "Correct — every dune gives height × distance = 300 m², so an 8 m dune would move about 300 ÷ 8 = 37.5 m."
+    }
+  },
+  {
+    "id": "s677",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp80",
+    "context": "A geologist hypothesized that wind moves no sand at all until it reaches a certain threshold speed. Do the results of Experiment 2 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No; some sand moved at every wind speed tested."
+      },
+      {
+        "id": "B",
+        "text": "No; the largest grains in Experiment 3 did not move."
+      },
+      {
+        "id": "C",
+        "text": "Yes; no sand moved at 3 m/s or 4 m/s, but sand moved at 5 m/s and above."
+      },
+      {
+        "id": "D",
+        "text": "Yes; the sand carried increased at every wind speed tested."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "No sand moved at 3 m/s or 4 m/s.",
+      "B": "That result is about grain size at a single wind speed, not about a threshold speed for the 0.25 mm sand.",
+      "C": "Correct — the sand carried was 0.0 at the two lowest speeds and rose steadily once the wind reached 5 m/s.",
+      "D": "The sand carried did not increase from 3 m/s to 4 m/s; it stayed at zero."
+    }
+  },
+  {
+    "id": "s678",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp80",
+    "context": "In Experiment 3, the 1.00 mm grains did not move at 9 m/s. The best explanation is that larger grains:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "are more rounded, so they roll back against the wind."
+      },
+      {
+        "id": "B",
+        "text": "are heavier, so a stronger wind is needed to lift and roll them."
+      },
+      {
+        "id": "C",
+        "text": "are lighter, so the wind blows past them without catching them."
+      },
+      {
+        "id": "D",
+        "text": "stick together because they hold more water."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Nothing in the passage describes grain shape, and wind pushes rolling grains downwind.",
+      "B": "Correct — a grain’s mass rises steeply with its size, and the wind’s push on it rises less, so large grains need faster wind.",
+      "C": "Larger grains of the same mineral are heavier, not lighter.",
+      "D": "The sand in a wind tunnel is dry; fine grains, not coarse ones, are the ones that clump when wet."
+    }
+  },
+  {
+    "id": "s679",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp80",
+    "context": "According to Table 2, as the wind speed rose from 9 m/s to 11 m/s, the sand carried increased by an average of about how much for each 1 m/s rise in wind speed?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5.7 g per cm per min"
+      },
+      {
+        "id": "B",
+        "text": "11.4 g per cm per min"
+      },
+      {
+        "id": "C",
+        "text": "1.9 g per cm per min"
+      },
+      {
+        "id": "D",
+        "text": "2.1 g per cm per min"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the sand carried rose from 11.7 to 23.1, an increase of 11.4 over 2 m/s, or about 5.7 for each 1 m/s.",
+      "B": "That is the whole increase over 2 m/s, not the increase for each 1 m/s.",
+      "C": "That is the average increase from 5 m/s to 7 m/s, where the rise was far gentler.",
+      "D": "That divides the 23.1 at 11 m/s by 11, which is the sand carried per unit of wind speed, not how fast it grew."
+    }
+  },
+  {
+    "id": "s680",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp81",
+    "context": "Which feeder was tested under exactly the same conditions in both Experiment 1 and Experiment 2?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The blue feeder holding a 60% solution"
+      },
+      {
+        "id": "B",
+        "text": "The blue 40% feeder placed 100 m from the hive"
+      },
+      {
+        "id": "C",
+        "text": "The blue feeder holding a 40% solution"
+      },
+      {
+        "id": "D",
+        "text": "The white feeder holding a 40% solution"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Experiment 2 used only 40% solutions, so no 60% feeder was tested there.",
+      "B": "That feeder belongs to Experiment 3; Experiments 1 and 2 kept every feeder 20 m from the hive.",
+      "C": "Correct — Experiment 1 used blue feeders at 20 m and Experiment 2 used 40% solutions at 20 m, so the blue 40% feeder appears in both, with 90 visits each time.",
+      "D": "Experiment 1 used only blue feeders, so no white feeder was tested there."
+    }
+  },
+  {
+    "id": "s681",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp81",
+    "context": "According to Table 3, between 100 m and 400 m from the hive, the number of visits fell by an average of about how many for each additional 100 m of distance?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "12 visits"
+      },
+      {
+        "id": "B",
+        "text": "15 visits"
+      },
+      {
+        "id": "C",
+        "text": "46 visits"
+      },
+      {
+        "id": "D",
+        "text": "22 visits"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That spreads the drop from 64 all the way to 5 over 500 m instead of stopping at 400 m.",
+      "B": "Correct — visits fell from 64 to 18, a drop of 46 over 300 m, or about 15 for each 100 m.",
+      "C": "That is the whole drop from 100 m to 400 m, not the drop for each 100 m.",
+      "D": "That is the drop over the first 100 m step only, from 64 to 42."
+    }
+  },
+  {
+    "id": "s682",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "easy",
+    "passage": "sp81",
+    "context": "A 40% sucrose solution is 40% sucrose by mass. How many grams of sucrose are in 250 g of this solution?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "100 g"
+      },
+      {
+        "id": "B",
+        "text": "40 g"
+      },
+      {
+        "id": "C",
+        "text": "150 g"
+      },
+      {
+        "id": "D",
+        "text": "625 g"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 40% of 250 g is 0.40 × 250 = 100 g.",
+      "B": "That is the sucrose in only 100 g of solution.",
+      "C": "That is the mass of water in the solution, the other 60%.",
+      "D": "That divides 250 by 0.40 instead of multiplying."
+    }
+  },
+  {
+    "id": "s683",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp81",
+    "context": "Based on the results of Experiments 1 and 3, the blue 40% feeder placed 400 m from the hive received what percent of the visits the same kind of feeder received at 20 m?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "28%"
+      },
+      {
+        "id": "B",
+        "text": "43%"
+      },
+      {
+        "id": "C",
+        "text": "18%"
+      },
+      {
+        "id": "D",
+        "text": "20%"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That compares 400 m with 100 m, 18 ÷ 64, because 100 m is the nearest distance in Table 3; the 20 m value comes from Experiment 1.",
+      "B": "That compares 400 m with 200 m, 18 ÷ 42.",
+      "C": "That reads the 18 visits at 400 m as a percentage without dividing by the visits at 20 m.",
+      "D": "Correct — Experiment 1 shows the blue 40% feeder at 20 m drew 90 visits, and 18 ÷ 90 is 20%."
+    }
+  },
+  {
+    "id": "s684",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp81",
+    "context": "A student hypothesized that the sweeter a feeder’s solution, the more visits it receives. Do the results of Experiment 1 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes; the blue feeder received the most visits."
+      },
+      {
+        "id": "B",
+        "text": "No; visits fell as concentration rose from 10% to 40%."
+      },
+      {
+        "id": "C",
+        "text": "No; 60% drew fewer visits than 50%."
+      },
+      {
+        "id": "D",
+        "text": "Yes; visits rose from 12 to 94 as concentration rose."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is Experiment 2’s result about color, not about sweetness.",
+      "B": "Visits rose from 12 to 90 over that range.",
+      "C": "Correct — visits rose up to 50% but fell from 94 to 71 at 60%, so the sweetest solution was not the most visited.",
+      "D": "That rise stops at 50%; the 60% feeder, the sweetest, drew only 71 visits."
+    }
+  },
+  {
+    "id": "s685",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "sp81",
+    "context": "Bees can see blue and ultraviolet light well but cannot distinguish red from dark colors. This best explains why, in Experiment 2, the red feeder:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "was farthest from the hive."
+      },
+      {
+        "id": "B",
+        "text": "received the fewest visits."
+      },
+      {
+        "id": "C",
+        "text": "received the most visits."
+      },
+      {
+        "id": "D",
+        "text": "held the least sucrose."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Every feeder in Experiment 2 was 20 m from the hive.",
+      "B": "Correct — to a bee a red dish looks dark and stands out poorly, so it drew only 15 visits.",
+      "C": "The red feeder drew the fewest visits, 15, not the most.",
+      "D": "Every feeder in Experiment 2 held the same 40% solution."
+    }
+  },
+  {
+    "id": "s686",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp81",
+    "context": "Based on Experiment 1, a blue feeder holding a 45% solution 20 m from the hive would most likely receive:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between 90 and 94 visits."
+      },
+      {
+        "id": "B",
+        "text": "between 71 and 90 visits."
+      },
+      {
+        "id": "C",
+        "text": "more than 94 visits."
+      },
+      {
+        "id": "D",
+        "text": "fewer than 68 visits."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 45% lies between 40% and 50%, which drew 90 and 94 visits.",
+      "B": "Those are the visits at 60% and 40%; 45% lies between 40% and 50%.",
+      "C": "Nothing in Table 1 exceeds the 94 visits at 50%, and 45% lies just below that concentration.",
+      "D": "That is fewer than the 30% feeder drew, though 45% is sweeter than 30%."
+    }
+  },
+  {
+    "id": "s687",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp82",
+    "context": "In Experiment 2, the students deliberately changed the:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "concentration of the sodium thiosulfate."
+      },
+      {
+        "id": "B",
+        "text": "concentration of the acid."
+      },
+      {
+        "id": "C",
+        "text": "volume of the acid."
+      },
+      {
+        "id": "D",
+        "text": "temperature of the solutions."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The thiosulfate was held at 40 g/L in Experiment 2; its concentration was varied in Experiment 1.",
+      "B": "The acid was held at 1.0 mol/L in Experiment 2; its concentration was varied in Experiment 3.",
+      "C": "Every trial used 5 mL of acid.",
+      "D": "Correct — Table 2 lists four temperatures, each with the same 40 g/L thiosulfate and 1.0 mol/L acid."
+    }
+  },
+  {
+    "id": "s688",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp82",
+    "context": "According to Table 2, as the temperature rose from 20 °C to 40 °C, the time for the cross to disappear fell by an average of about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.5 s per °C"
+      },
+      {
+        "id": "B",
+        "text": "0.67 °C per s"
+      },
+      {
+        "id": "C",
+        "text": "1.5 s per °C"
+      },
+      {
+        "id": "D",
+        "text": "2.0 s per °C"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the fall from 40 °C to 50 °C, where the time dropped by only 5 s.",
+      "B": "That divides the temperature change by the time change, turning the rate upside down.",
+      "C": "Correct — the time fell from 40 s to 10 s, a drop of 30 s over 20 °C, or 1.5 s for each degree.",
+      "D": "That is the fall over the first 10 °C only, 40 s to 20 s; from 30 °C to 40 °C the time fell by just 10 s."
+    }
+  },
+  {
+    "id": "s689",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp82",
+    "context": "How many grams of sodium thiosulfate were in the 50 mL of solution used in each 40 g/L trial? (1 L = 1000 mL)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "20 g"
+      },
+      {
+        "id": "B",
+        "text": "2.0 g"
+      },
+      {
+        "id": "C",
+        "text": "2000 g"
+      },
+      {
+        "id": "D",
+        "text": "0.8 g"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That converts 50 mL to 0.50 L instead of 0.050 L.",
+      "B": "Correct — 50 mL is 0.050 L, and 0.050 L × 40 g/L is 2.0 g.",
+      "C": "That multiplies 50 by 40 without converting milliliters to liters.",
+      "D": "That divides 40 by 50, which is not how a concentration and a volume combine."
+    }
+  },
+  {
+    "id": "s690",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp82",
+    "context": "Based on Experiments 1 and 2, about how long would the cross take to disappear if 20 g/L sodium thiosulfate were used at 30 °C, with 1.0 mol/L acid?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "20 s"
+      },
+      {
+        "id": "B",
+        "text": "80 s"
+      },
+      {
+        "id": "C",
+        "text": "160 s"
+      },
+      {
+        "id": "D",
+        "text": "40 s"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the time for 40 g/L at 30 °C; the weaker 20 g/L solution takes twice as long.",
+      "B": "That is the time for 20 g/L at 20 °C, before the 10 °C rise is taken into account.",
+      "C": "That doubles the 80 s, as though warming the mixture slowed the reaction.",
+      "D": "Correct — 20 g/L took 80 s at 20 °C (Table 1), and Table 2 shows that a 10 °C rise halves the time, so 80 s would become about 40 s."
+    }
+  },
+  {
+    "id": "s691",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp82",
+    "context": "A student hypothesized that doubling the concentration of sodium thiosulfate halves the time for the cross to disappear. Do the results of Experiment 1 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No; going from 20 g/L to 40 g/L doubled the time from 40 s to 80 s."
+      },
+      {
+        "id": "B",
+        "text": "No; doubling the acid concentration barely changed the time."
+      },
+      {
+        "id": "C",
+        "text": "Yes; going from 20 g/L to 40 g/L cut the time in half, from 80 s to 40 s."
+      },
+      {
+        "id": "D",
+        "text": "Yes; going from 20 °C to 40 °C cut the time from 40 s to 10 s."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That reads Table 1 backward: 20 g/L took 80 s and 40 g/L took 40 s.",
+      "B": "That is Experiment 3, which varied the acid, not the thiosulfate.",
+      "C": "Correct — each doubling of concentration in Table 1, 10 to 20 and 20 to 40 g/L, halved the time.",
+      "D": "That is Experiment 2, a change of temperature, not of thiosulfate concentration."
+    }
+  },
+  {
+    "id": "s692",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp82",
+    "context": "Which of the following best explains why the reaction in Experiment 2 was faster at higher temperatures?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The acid boiled away, leaving the thiosulfate to react alone."
+      },
+      {
+        "id": "B",
+        "text": "The particles moved faster, so they collided more often and with more energy."
+      },
+      {
+        "id": "C",
+        "text": "The warm solutions held more thiosulfate than the cool ones did."
+      },
+      {
+        "id": "D",
+        "text": "Heat made the sulfur particles larger, so the cross was hidden sooner."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The highest temperature was 50 °C, far below the boiling point of the solution.",
+      "B": "Correct — reactions happen when particles collide hard enough, and warmer particles collide both more often and harder.",
+      "C": "Every trial in Experiment 2 used the same 40 g/L solution.",
+      "D": "The time reflects how fast sulfur is produced, and warming speeds the reaction that produces it."
+    }
+  },
+  {
+    "id": "s693",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp82",
+    "context": "A student claimed that the concentration of the acid affects the reaction time as strongly as the concentration of the sodium thiosulfate does. Which result most directly contradicts this claim?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "In Experiment 3, quadrupling the acid concentration changed the time by only 1 s."
+      },
+      {
+        "id": "B",
+        "text": "In Experiment 1, doubling the thiosulfate concentration halved the time."
+      },
+      {
+        "id": "C",
+        "text": "In Experiment 2, raising the temperature by 10 °C halved the time."
+      },
+      {
+        "id": "D",
+        "text": "In Experiment 3, the 2.0 mol/L acid gave the shortest time."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — going from 0.5 to 2.0 mol/L acid moved the time from 41 s to 40 s, while doubling the thiosulfate in Experiment 1 halved the time.",
+      "B": "That shows the thiosulfate’s strong effect, but says nothing about the acid’s.",
+      "C": "That is the effect of temperature, not of the acid’s concentration.",
+      "D": "It tied the 1.0 mol/L acid at 40 s, and a 1 s difference is far too small to match the thiosulfate’s effect."
+    }
+  },
+  {
+    "id": "s694",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp83",
+    "context": "How did Experiment 3 differ from Experiments 1 and 2?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The mass of salt was varied while the kind of salt was held fixed."
+      },
+      {
+        "id": "B",
+        "text": "The starting temperature of the water was varied."
+      },
+      {
+        "id": "C",
+        "text": "The amount of water was varied while the salt was held fixed."
+      },
+      {
+        "id": "D",
+        "text": "Its salt varied; its mass stayed at 5.0 g."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That describes Experiments 1 and 2, not Experiment 3.",
+      "B": "Every trial began with water at 22.0 °C.",
+      "C": "Every trial used 100 g of water.",
+      "D": "Correct — Experiments 1 and 2 each used one salt at five masses; Experiment 3 used five salts at a single mass."
+    }
+  },
+  {
+    "id": "s695",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp83",
+    "context": "According to Table 2, the temperature of the water rose by about how much for each gram of calcium chloride dissolved?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4.0 °C per gram"
+      },
+      {
+        "id": "B",
+        "text": "0.56 g per °C"
+      },
+      {
+        "id": "C",
+        "text": "1.8 °C per gram"
+      },
+      {
+        "id": "D",
+        "text": "3.6 °C per gram"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That divides the final temperature, 39.8 °C, by the 10.0 g mass, which ignores the 22.0 °C starting point.",
+      "B": "That divides the mass by the temperature change, which gives grams per degree.",
+      "C": "Correct — 10.0 g raised the temperature by 17.8 °C, about 1.8 °C for each gram, and every row fits the same rate.",
+      "D": "That is the rise produced by 2.0 g, not by a single gram."
+    }
+  },
+  {
+    "id": "s696",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp83",
+    "context": "The energy the water gained, in joules, equals its mass in grams × 4.18 × its temperature change in °C. About how much energy did the 100 g of water gain when 10.0 g of calcium chloride dissolved, in kilojoules? (1 kJ = 1000 J)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.74 kJ"
+      },
+      {
+        "id": "B",
+        "text": "7.4 kJ"
+      },
+      {
+        "id": "C",
+        "text": "7400 kJ"
+      },
+      {
+        "id": "D",
+        "text": "17 kJ"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That divides by 10,000 instead of 1000.",
+      "B": "Correct — 100 × 4.18 × 17.8 is about 7440 J, which is 7.4 kJ.",
+      "C": "That is the number of joules, labeled as kilojoules without dividing by 1000.",
+      "D": "That uses the final temperature, 39.8 °C, instead of the 17.8 °C rise."
+    }
+  },
+  {
+    "id": "s697",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp83",
+    "context": "In Experiment 2, 10.0 g of calcium chloride changed the water’s temperature by 17.8 °C. What is this temperature change in Fahrenheit degrees? (°F = 1.8 × °C + 32)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "32 °F"
+      },
+      {
+        "id": "B",
+        "text": "64 °F"
+      },
+      {
+        "id": "C",
+        "text": "9.9 °F"
+      },
+      {
+        "id": "D",
+        "text": "104 °F"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — a change of temperature is multiplied by 1.8 only: 17.8 × 1.8 is 32 Fahrenheit degrees. The +32 shifts the zero of the scale and cancels out of any difference.",
+      "B": "That adds 32 to the 32-degree change, but the +32 applies to temperature readings, not to differences between them.",
+      "C": "That divides by 1.8 instead of multiplying, which converts Fahrenheit to Celsius.",
+      "D": "That is the final temperature, 39.8 °C, converted as a reading, not the change."
+    }
+  },
+  {
+    "id": "s698",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp83",
+    "context": "Based on Experiments 1 and 3, about what mass of potassium chloride would lower the temperature of 100 g of water by the same amount as 4.0 g of ammonium nitrate?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4.0 g"
+      },
+      {
+        "id": "B",
+        "text": "2.9 g"
+      },
+      {
+        "id": "C",
+        "text": "11 g"
+      },
+      {
+        "id": "D",
+        "text": "5.5 g"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That assumes equal masses of the two salts cool the water equally, but potassium chloride cools it less per gram.",
+      "B": "That sets the ratio of the cooling effects upside down, which gives less potassium chloride, not more.",
+      "C": "That uses the 10.0 g ammonium nitrate trial’s cooling instead of the 4.0 g trial’s.",
+      "D": "Correct — 4.0 g of ammonium nitrate gave −3.1 °C (Table 1); 5.0 g of potassium chloride gave −2.8 °C (Table 3), or 0.56 °C per gram, and 3.1 ÷ 0.56 is about 5.5 g."
+    }
+  },
+  {
+    "id": "s699",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp83",
+    "context": "If Experiment 1 were repeated with 12.0 g of ammonium nitrate, the final temperature would most likely be:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "exactly 22.0 °C."
+      },
+      {
+        "id": "B",
+        "text": "above 22.0 °C."
+      },
+      {
+        "id": "C",
+        "text": "below 14.3 °C."
+      },
+      {
+        "id": "D",
+        "text": "between 14.3 °C and 15.9 °C."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the starting temperature, which every mass of ammonium nitrate lowered.",
+      "B": "Ammonium nitrate cooled the water in every trial; it never warmed it.",
+      "C": "Correct — each added gram of ammonium nitrate lowered the final temperature further, and 10.0 g already brought it to 14.3 °C.",
+      "D": "That is the range for 8.0 g to 10.0 g; more salt cools the water further."
+    }
+  },
+  {
+    "id": "s700",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "sp83",
+    "context": "Dissolving ammonium nitrate lowered the water’s temperature. This process is best described as:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "exothermic, because it released energy into the water."
+      },
+      {
+        "id": "B",
+        "text": "endothermic, because it took in energy from the water."
+      },
+      {
+        "id": "C",
+        "text": "exothermic, because it took in energy from the water."
+      },
+      {
+        "id": "D",
+        "text": "endothermic, because it released energy into the water."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The water cooled, so energy flowed out of the water, not into it.",
+      "B": "Correct — a process that absorbs energy from its surroundings, cooling them, is endothermic.",
+      "C": "An exothermic process gives energy out, warming its surroundings, as calcium chloride did.",
+      "D": "Releasing energy would warm the water, and that describes an exothermic process."
+    }
+  },
+  {
+    "id": "s701",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp84",
+    "context": "According to Scientist 2, the lava of each volcano formed:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "exactly where the volcano stands today."
+      },
+      {
+        "id": "B",
+        "text": "at 19°N, over a plume that has never moved."
+      },
+      {
+        "id": "C",
+        "text": "north of 19°N, for volcanoes older than 12 million years."
+      },
+      {
+        "id": "D",
+        "text": "far to the southeast, before the crack carried it northwest."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Scientist 2 says each volcano formed exactly where it stands, because the plate is not moving.",
+      "B": "That is Scientist 1’s view.",
+      "C": "That is Scientist 3’s view.",
+      "D": "Scientist 2 says the plate is not moving, so nothing was carried anywhere."
+    }
+  },
+  {
+    "id": "s702",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp84",
+    "context": "Scientists 1 and 3 would most likely agree that:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the plume has stayed under 19°N for the chain’s whole history."
+      },
+      {
+        "id": "B",
+        "text": "a crack spreading southeast released the magma."
+      },
+      {
+        "id": "C",
+        "text": "each volcano formed at the latitude where it stands today."
+      },
+      {
+        "id": "D",
+        "text": "the plate has moved northwest over a plume of hot rock."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Only Scientist 1 says the plume never moved; Scientist 3 says it drifted south until 12 million years ago.",
+      "B": "That is Scientist 2’s explanation, which both of the others reject.",
+      "C": "That is Scientist 2’s prediction; in both of the other views the plate has carried the volcanoes away from where they formed.",
+      "D": "Correct — both describe a plume feeding the volcanoes and the plate moving northwest over it at a steady speed."
+    }
+  },
+  {
+    "id": "s703",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp84",
+    "context": "According to Table 2, Varo Seamount’s lava formed at 24°N. This finding is most consistent with the view of which scientist?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Scientist 2"
+      },
+      {
+        "id": "B",
+        "text": "Scientists 1 and 2 equally"
+      },
+      {
+        "id": "C",
+        "text": "Scientist 3"
+      },
+      {
+        "id": "D",
+        "text": "Scientist 1"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Scientist 2 predicts that Varo’s lava formed where Varo stands today, at 27°N, not 24°N.",
+      "B": "Both predictions miss: Scientist 1 expects 19°N and Scientist 2 expects 27°N.",
+      "C": "Correct — Scientist 3 predicts that lava older than 12 million years formed north of 19°N, and Varo’s 24-million-year-old lava formed at 24°N.",
+      "D": "Scientist 1 predicts that every volcano’s lava formed at 19°N, not 24°N."
+    }
+  },
+  {
+    "id": "s704",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp84",
+    "context": "According to Table 2, Lanu’s lava formed at 19°N. Which scientist predicted a different latitude for Lanu’s lava?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "None of the three scientists"
+      },
+      {
+        "id": "B",
+        "text": "Scientist 2, who predicted 21°N"
+      },
+      {
+        "id": "C",
+        "text": "Scientist 1, who predicted 21°N"
+      },
+      {
+        "id": "D",
+        "text": "Scientist 3, who predicted a latitude north of 19°N"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Scientist 2’s view puts Lanu’s lava at 21°N, where Lanu stands today, so one scientist’s prediction differs.",
+      "B": "Correct — Scientist 2 says lava formed where each volcano stands today, and Lanu stands at 21°N.",
+      "C": "Scientist 1 says every volcano’s lava formed over the fixed plume at 19°N, which matches Table 2.",
+      "D": "Lanu’s lava is only 6 million years old, and Scientist 3 says lava younger than 12 million years formed at 19°N."
+    }
+  },
+  {
+    "id": "s705",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "easy",
+    "passage": "sp84",
+    "context": "According to Scientist 1, the plate carries each volcano away from the plume at a steady speed. Based on Table 1, about how far does the plate move in 1 million years?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "100 km"
+      },
+      {
+        "id": "B",
+        "text": "300 km"
+      },
+      {
+        "id": "C",
+        "text": "10 km"
+      },
+      {
+        "id": "D",
+        "text": "2400 km"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Oreka, 300 km from Mauna Kelo, has lava 3.0 million years old, so the plate moved 100 km each million years, and every row fits.",
+      "B": "That is Oreka’s whole distance, covered over 3.0 million years, not in one.",
+      "C": "That divides by 30 instead of by 3.0 when working from Oreka’s row.",
+      "D": "That is the length of the whole chain, built over 24 million years."
+    }
+  },
+  {
+    "id": "s706",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp84",
+    "context": "Based on Table 1, the plate moves 100 km every million years. What is this speed in centimeters per year? (1 km = 100,000 cm)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.1 cm per year"
+      },
+      {
+        "id": "B",
+        "text": "100 cm per year"
+      },
+      {
+        "id": "C",
+        "text": "10,000 cm per year"
+      },
+      {
+        "id": "D",
+        "text": "10 cm per year"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That treats a kilometer as 1000 cm instead of 100,000 cm.",
+      "B": "That keeps the 100 from 100 km as though the unit had not changed.",
+      "C": "That divides by a thousand years instead of a million.",
+      "D": "Correct — 100 km is 10,000,000 cm, and 10,000,000 cm ÷ 1,000,000 years is 10 cm per year."
+    }
+  },
+  {
+    "id": "s707",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "sp84",
+    "context": "The lava that built these volcanoes cooled to form rock. What kind of rock forms when lava cools?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Metamorphic rock"
+      },
+      {
+        "id": "B",
+        "text": "Limestone"
+      },
+      {
+        "id": "C",
+        "text": "Igneous rock"
+      },
+      {
+        "id": "D",
+        "text": "Sedimentary rock"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Metamorphic rock forms when existing rock is changed by heat and pressure without melting.",
+      "B": "Limestone is a sedimentary rock, built mostly from shells and other remains of sea life.",
+      "C": "Correct — igneous rock forms when molten rock, such as lava, cools and hardens.",
+      "D": "Sedimentary rock forms from layers of sediment pressed and cemented together, not from molten rock."
+    }
+  },
+  {
+    "id": "s708",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp85",
+    "context": "According to Scientist 2, insects have stayed small in recent times mainly because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "large insects could not find enough food."
+      },
+      {
+        "id": "B",
+        "text": "flying predators catch large insects more easily than small ones."
+      },
+      {
+        "id": "C",
+        "text": "the air now holds too little oxygen for large insects."
+      },
+      {
+        "id": "D",
+        "text": "insects have no lungs, so oxygen reaches their tissues slowly."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Neither scientist mentions food.",
+      "B": "Correct — Scientist 2 says big insects cannot turn quickly and became easy prey once flying reptiles and birds appeared.",
+      "C": "That is Scientist 1’s explanation; Scientist 2 says insects stayed small whatever the oxygen content.",
+      "D": "That is Scientist 1’s argument about how insects breathe."
+    }
+  },
+  {
+    "id": "s709",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp85",
+    "context": "Scientist 1 would most likely explain the fall in the largest wingspan from 71 cm to 20 cm between 300 and 250 million years ago by pointing out that, over the same period:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the oxygen content of the air fell from 31% to 16%."
+      },
+      {
+        "id": "B",
+        "text": "flying reptiles appeared and began hunting insects."
+      },
+      {
+        "id": "C",
+        "text": "birds appeared and began hunting insects."
+      },
+      {
+        "id": "D",
+        "text": "the oxygen content of the air rose from 16% to 31%."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Scientist 1 ties the largest possible size to the oxygen content, and Table 1 shows oxygen falling sharply alongside the wingspan.",
+      "B": "Flying reptiles appeared about 230 million years ago, after this fall, and predators are Scientist 2’s explanation.",
+      "C": "Birds appeared about 150 million years ago, long after this fall.",
+      "D": "That reads Table 1 in the wrong direction; oxygen was 31% at 300 million years ago and 16% at 250."
+    }
+  },
+  {
+    "id": "s710",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp85",
+    "context": "According to Table 1, the air held 25% oxygen both 270 million years ago and 100 million years ago, yet the largest wingspan was 45 cm at the earlier time and 20 cm at the later one. This comparison best supports the view of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Scientist 1, because the oxygen content was the same at both times."
+      },
+      {
+        "id": "B",
+        "text": "Scientist 2, because the earlier time came after flying predators had appeared."
+      },
+      {
+        "id": "C",
+        "text": "Scientist 2, because the later time came after flying predators had first appeared."
+      },
+      {
+        "id": "D",
+        "text": "Scientist 1, because the oxygen content was high at both times."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Equal oxygen with very unequal wingspans is what Scientist 1’s view cannot explain.",
+      "B": "270 million years ago is before the first flying reptiles, about 230 million years ago.",
+      "C": "Correct — the same oxygen level went with much smaller insects once flying reptiles and birds existed, which is what Scientist 2 predicts.",
+      "D": "Scientist 1 expects equal oxygen to allow equally large insects, but the wingspans differ by more than half."
+    }
+  },
+  {
+    "id": "s711",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp85",
+    "context": "Which result in Table 2, if any, is hardest to explain using Scientist 1’s view?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "None; every result in Table 2 fits Scientist 1’s view."
+      },
+      {
+        "id": "B",
+        "text": "The cockroaches did not grow with more oxygen."
+      },
+      {
+        "id": "C",
+        "text": "The dragonflies were longest when raised in 31% oxygen."
+      },
+      {
+        "id": "D",
+        "text": "The dragonflies were shortest when raised in 12% oxygen."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The cockroaches did not grow larger with more oxygen, which Scientist 1’s view does not account for.",
+      "B": "Correct — Scientist 1 expects more oxygen to allow larger insects, but the cockroaches stayed at 30 to 31 mm whatever the oxygen.",
+      "C": "That is just what Scientist 1 predicts: more oxygen, larger insects.",
+      "D": "Less oxygen giving smaller insects fits Scientist 1’s view."
+    }
+  },
+  {
+    "id": "s712",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "easy",
+    "passage": "sp85",
+    "context": "According to Table 1, the largest wingspan 300 million years ago was about how many times the largest wingspan today?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2.4 times"
+      },
+      {
+        "id": "B",
+        "text": "41 times"
+      },
+      {
+        "id": "C",
+        "text": "0.42 times"
+      },
+      {
+        "id": "D",
+        "text": "1.5 times"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 71 cm ÷ 30 cm is about 2.4.",
+      "B": "That is the difference in centimeters, 71 − 30, not a ratio.",
+      "C": "That divides today’s wingspan by the ancient one, which turns the comparison around.",
+      "D": "That compares the oxygen contents, 31% ÷ 21%, not the wingspans."
+    }
+  },
+  {
+    "id": "s713",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp85",
+    "context": "According to Table 1, from 300 to 250 million years ago the largest known wingspan shrank by an average of about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "51 cm per million years"
+      },
+      {
+        "id": "B",
+        "text": "0.87 cm per million years"
+      },
+      {
+        "id": "C",
+        "text": "2.0 cm per million years"
+      },
+      {
+        "id": "D",
+        "text": "1.0 cm per million years"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the whole shrinkage over the 50 million years, not the amount per million years.",
+      "B": "That is the rate over the first 30 million years only, from 71 cm to 45 cm, which leaves out the rest of the span.",
+      "C": "That divides the shrinkage by 25 million years, half the actual span.",
+      "D": "Correct — it shrank from 71 cm to 20 cm, 51 cm in 50 million years, or about 1.0 cm each million years."
+    }
+  },
+  {
+    "id": "s714",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp85",
+    "context": "Unlike insects, mammals deliver oxygen to their tissues mainly by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "absorbing oxygen directly through the skin from the surrounding air."
+      },
+      {
+        "id": "B",
+        "text": "making oxygen inside their cells from the food they digest."
+      },
+      {
+        "id": "C",
+        "text": "blood, which picks up oxygen in the lungs and is pumped through the body by the heart."
+      },
+      {
+        "id": "D",
+        "text": "letting oxygen spread slowly through tubes that branch from openings in the skin."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Some amphibians take in oxygen through their skin, but mammals rely on their lungs.",
+      "B": "Cells use oxygen to release energy from food; they do not make it.",
+      "C": "Correct — in mammals the lungs load oxygen into the blood, and the heart pumps it to every tissue.",
+      "D": "That is how insects get oxygen, as Scientist 1 describes."
+    }
+  },
+  {
+    "id": "s715",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp86",
+    "context": "According to Student 3, the electricity in a lemon battery is produced by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the voltmeter used to measure it."
+      },
+      {
+        "id": "B",
+        "text": "the living cells of the lemon."
+      },
+      {
+        "id": "C",
+        "text": "contact between two different metals."
+      },
+      {
+        "id": "D",
+        "text": "a reactive metal dissolving into the juice."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "None of the students says the meter produces the voltage.",
+      "B": "Correct — Student 3 compares the lemon’s cells to the nerves and muscles of animals, with the strips only collecting the electricity.",
+      "C": "That is Student 1’s view.",
+      "D": "That is Student 2’s view."
+    }
+  },
+  {
+    "id": "s716",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp86",
+    "context": "Students 1 and 2 would most likely agree that the voltage of a lemon battery:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "depends on which two metals are used."
+      },
+      {
+        "id": "B",
+        "text": "falls as the reactive metal is used up."
+      },
+      {
+        "id": "C",
+        "text": "is the same for any two strips in the same lemon."
+      },
+      {
+        "id": "D",
+        "text": "comes from the lemon’s living cells."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Student 1 ties the voltage to how different the metals are, and Student 2 to how different their reactivities are.",
+      "B": "Student 1 says nothing is used up and the cell could run forever.",
+      "C": "That is Student 3’s prediction, which both of the other students reject.",
+      "D": "That is Student 3’s view alone."
+    }
+  },
+  {
+    "id": "s717",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp86",
+    "context": "Which student’s view is most directly weakened by the change in the zinc strip’s mass shown in Table 2?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Student 2’s, because the zinc was used up as the cell ran."
+      },
+      {
+        "id": "B",
+        "text": "Student 2’s, because the copper strip did not change."
+      },
+      {
+        "id": "C",
+        "text": "Student 3’s, because the lemon kept producing voltage for 48 hours."
+      },
+      {
+        "id": "D",
+        "text": "Student 1’s, because the zinc strip was used up."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Student 2 predicts that the more reactive metal dissolves, so a shrinking zinc strip supports Student 2.",
+      "B": "Student 2 says only the more reactive metal dissolves; copper is the less reactive one, so its steady mass fits this view.",
+      "C": "A lasting voltage does not count against Student 3, and the question is about the strip’s mass.",
+      "D": "Correct — Student 1 says nothing is used up and neither metal changes, yet the zinc strip lost 0.12 g in 48 hours."
+    }
+  },
+  {
+    "id": "s718",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp86",
+    "context": "Which result in Table 1 most directly argues against Student 3’s view?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Zinc and copper gave 0.93 V."
+      },
+      {
+        "id": "B",
+        "text": "Iron and copper gave 0.52 V."
+      },
+      {
+        "id": "C",
+        "text": "Two copper strips gave 0.00 V."
+      },
+      {
+        "id": "D",
+        "text": "No pair of strips gave any voltage in dry wood."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "A voltage from one pair of strips is what Student 3 expects; it is the differing voltages that count against the view.",
+      "B": "This single value fits any of the three views; it is the comparison with other pairs that matters.",
+      "C": "Correct — Student 3 expects any two strips in the same lemon to pick up about the same voltage, yet two copper strips picked up none while zinc and copper gave 0.93 V.",
+      "D": "That fits Student 3’s view, since dry wood has no living cells to make electricity."
+    }
+  },
+  {
+    "id": "s719",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp86",
+    "context": "In Table 1, the voltage for zinc and iron equals the voltage for zinc and copper minus the voltage for iron and copper. Based on this pattern, what voltage would a magnesium strip and an iron strip most likely give?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.28 V"
+      },
+      {
+        "id": "B",
+        "text": "1.10 V"
+      },
+      {
+        "id": "C",
+        "text": "2.14 V"
+      },
+      {
+        "id": "D",
+        "text": "1.07 V"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That subtracts the zinc–iron voltage from the magnesium–zinc voltage, which pairs the wrong cells.",
+      "B": "Correct — following the same pattern, magnesium and copper minus iron and copper gives 1.62 − 0.52 = 1.10 V.",
+      "C": "That adds the two voltages, 1.62 + 0.52, instead of subtracting them.",
+      "D": "That averages the magnesium–copper and iron–copper voltages rather than taking their difference."
+    }
+  },
+  {
+    "id": "s720",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp86",
+    "context": "According to Table 2, the zinc strip lost mass at an average rate of about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.12 g per hour"
+      },
+      {
+        "id": "B",
+        "text": "0.025 g per hour"
+      },
+      {
+        "id": "C",
+        "text": "400 hours per gram"
+      },
+      {
+        "id": "D",
+        "text": "0.0025 g per hour"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the total mass lost over all 48 hours.",
+      "B": "That misplaces the decimal point, ten times the actual rate.",
+      "C": "That divides the time by the mass lost, hours per gram rather than grams per hour.",
+      "D": "Correct — it lost 5.00 − 4.88 = 0.12 g in 48 hours, and 0.12 ÷ 48 is 0.0025 g each hour."
+    }
+  },
+  {
+    "id": "s721",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "easy",
+    "passage": "sp86",
+    "context": "According to Table 1, the zinc and copper strips gave 0.93 V. What is this voltage in millivolts? (1 V = 1000 mV)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.00093 mV"
+      },
+      {
+        "id": "B",
+        "text": "9300 mV"
+      },
+      {
+        "id": "C",
+        "text": "930 mV"
+      },
+      {
+        "id": "D",
+        "text": "93 mV"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That divides by 1000 instead of multiplying.",
+      "B": "That multiplies by 10,000 instead of 1000.",
+      "C": "Correct — 0.93 × 1000 is 930 mV.",
+      "D": "That multiplies by 100 instead of 1000."
+    }
+  },
+  {
+    "id": "s722",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp87",
+    "context": "According to Student 2, 100 g of floating ice raises the water level when it melts:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "only when the water is salty."
+      },
+      {
+        "id": "B",
+        "text": "by as much as 100 g of ice on land does."
+      },
+      {
+        "id": "C",
+        "text": "by less than 100 g of ice on land does."
+      },
+      {
+        "id": "D",
+        "text": "not at all, although ice on land does."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Student 3 ties the rise to salt water; Student 2 says any melting ice raises the level.",
+      "B": "Correct — Student 2 says the same amount of water is added either way, so the rise is the same.",
+      "C": "That is closer to Student 3’s view; Student 2 says the rises are equal.",
+      "D": "That is Student 1’s view."
+    }
+  },
+  {
+    "id": "s723",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp87",
+    "context": "The result of Trial 1 is consistent with the views of which students?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Students 1 and 3 only"
+      },
+      {
+        "id": "B",
+        "text": "Student 2 only"
+      },
+      {
+        "id": "C",
+        "text": "Student 1 only"
+      },
+      {
+        "id": "D",
+        "text": "Students 1, 2, and 3"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the level stayed at 100.0 mm as floating ice melted in fresh water, as Students 1 and 3 both predict; Student 2 predicted a rise.",
+      "B": "Student 2 predicted a rise, but the level did not change in Trial 1.",
+      "C": "Student 3 also says floating ice leaves the level unchanged in fresh water.",
+      "D": "Student 2 predicted that melting floating ice would raise the level, which did not happen in Trial 1."
+    }
+  },
+  {
+    "id": "s724",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp87",
+    "context": "In Trial 2, the level rose by 0.5 mm as floating ice melted in salt water. This result best supports the view of:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Student 2, because the level rose when the floating ice melted."
+      },
+      {
+        "id": "B",
+        "text": "Student 1, because the level barely changed."
+      },
+      {
+        "id": "C",
+        "text": "Student 2, because the salt water was denser than the ice."
+      },
+      {
+        "id": "D",
+        "text": "Student 3, because the rise was small compared with ice melting from the platform."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Student 2 predicts the same rise as for ice on land, but the 0.5 mm rise is far smaller than Trial 4’s 20.0 mm.",
+      "B": "Student 1 predicts no change at all, and the level did rise.",
+      "C": "Density plays no part in Student 2’s argument; it is Student 3 who reasons from the salt water’s density.",
+      "D": "Correct — Student 3 predicts a slight rise from floating ice in salt water and a far larger one from ice on land, and Trial 2’s 0.5 mm is tiny beside the 20.0 mm of Trial 4."
+    }
+  },
+  {
+    "id": "s725",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp87",
+    "context": "In which trials did all three students expect the water level to rise when the ice melted?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Trial 2 only"
+      },
+      {
+        "id": "B",
+        "text": "Trials 1, 2, 3, and 4"
+      },
+      {
+        "id": "C",
+        "text": "Trials 3 and 4 only"
+      },
+      {
+        "id": "D",
+        "text": "Trials 1 and 2 only"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Student 1 expects no rise from floating ice even in salt water.",
+      "B": "Students 1 and 3 expect no rise when floating ice melts in fresh water, as in Trial 1.",
+      "C": "Correct — in these trials the ice sat on the platform, like ice on land, and every student expects melting land ice to raise the level.",
+      "D": "Student 1 expects floating ice to leave the level unchanged, so not all three students expect a rise in these trials."
+    }
+  },
+  {
+    "id": "s726",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp87",
+    "context": "Floating ice sinks until it pushes aside its own mass of water. Based on Table 2, about what percent of a floating piece of ice’s volume is below the surface in fresh water?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "109%"
+      },
+      {
+        "id": "B",
+        "text": "92%"
+      },
+      {
+        "id": "C",
+        "text": "8%"
+      },
+      {
+        "id": "D",
+        "text": "89%"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That divides the water’s density by the ice’s, which cannot be a fraction of the ice below the surface.",
+      "B": "Correct — the ice’s density divided by the water’s, 0.917 ÷ 1.000, gives the fraction below the surface: about 92%.",
+      "C": "That is the part of the ice above the surface, 100% − 92%.",
+      "D": "That is the fraction below the surface in salt water, 0.917 ÷ 1.025, not fresh water."
+    }
+  },
+  {
+    "id": "s727",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp87",
+    "context": "In Trial 3, the water level rose by 20.0 mm in a beaker with a cross-section of 50 cm². What volume of water, in cm³, did the melted ice add? (1 cm = 10 mm)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "100 cm³"
+      },
+      {
+        "id": "B",
+        "text": "1000 cm³"
+      },
+      {
+        "id": "C",
+        "text": "2.5 cm³"
+      },
+      {
+        "id": "D",
+        "text": "10 cm³"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 20.0 mm is 2.0 cm, and 2.0 cm × 50 cm² is 100 cm³, the volume of 100 g of fresh water.",
+      "B": "That multiplies 20.0 mm by 50 cm² without first converting millimeters to centimeters.",
+      "C": "That divides the rise by the area instead of multiplying.",
+      "D": "That converts the rise to 0.20 cm, dividing by 100 instead of 10."
+    }
+  },
+  {
+    "id": "s728",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp87",
+    "context": "Ice floats on liquid water because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "ice is denser than liquid water, and denser things float."
+      },
+      {
+        "id": "B",
+        "text": "air bubbles trapped in the ice hold it up."
+      },
+      {
+        "id": "C",
+        "text": "cold things always rise above warm things."
+      },
+      {
+        "id": "D",
+        "text": "ice is less dense than liquid water."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Denser things sink; ice floats because it is less dense.",
+      "B": "Even clear ice without bubbles floats; its own density is lower than the water’s.",
+      "C": "Cold water is generally denser than warm water and sinks; ice is the exception because of its structure.",
+      "D": "Correct — freezing locks the molecules into an open arrangement: in ice, hydrogen bonds hold the water molecules in an open framework that takes up more room than the liquid."
+    }
   }
 ]

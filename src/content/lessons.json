@@ -19,7 +19,7 @@
       ],
       [
         "Essential or extra?",
-        "A clause that picks out which one you mean is essential and takes no commas; extra information takes a pair. One subject with two verbs (<i>tasted the sauce and added salt</i>) needs no comma before “and”.",
+        "A clause that picks out which one you mean is essential and takes no commas; extra information takes a pair. One subject with two verbs (<i>tasted the sauce and added salt</i>) needs no comma before “and”. A contrasting aside in mid-sentence (<i>It was the heat, not the hills, that slowed us</i>) is extra information too, so it takes a pair of commas.",
         "<i>The students who finished early left.</i> (only those)  <i>The students, who finished early, left.</i> (all of them)"
       ]
     ],
@@ -30,12 +30,12 @@
     "rules": [
       [
         "Its vs. it's",
-        "it's = it is / it has. its = belonging to it (no apostrophe). Expand to 'it is' to test.",
+        "it's = it is / it has. its = belonging to it (no apostrophe). Expand to 'it is' to test. The same test works on any noun: <i>the storm’s coming</i> expands to “the storm is coming”, so that ’s is a contraction, not a possessive.",
         "<i>The dog wagged its tail.</i>  <i>It's raining.</i>"
       ],
       [
         "Singular vs. plural possessive",
-        "One owner: add ’s (the dog’s bone). Plural owner already ending in s: add just an apostrophe (the dogs’ bones). A plural without an s takes ’s (children’s). Two people sharing one thing: mark only the last name.",
+        "One owner: add ’s (the dog’s bone). Plural owner already ending in s: add just an apostrophe (the dogs’ bones). A plural without an s takes ’s (children’s). Two people sharing one thing: mark only the last name. In a compound noun the ’s goes on the last word: <i>my sister-in-law’s car</i>.",
         "One boss: <i>boss’s office.</i>  Many: <i>bosses’ offices.</i>  <i>The children’s books.</i>  <i>Ana and Ben’s car</i> (one car, shared)."
       ],
       [
@@ -66,7 +66,7 @@
       ],
       [
         "Fix run-ons",
-        "Two sentences fused with nothing, or only a comma, is a run-on/splice. Separate or add comma + FANBOYS.",
+        "Two sentences fused with nothing, or only a comma, is a run-on/splice. Separate or add comma + FANBOYS. Words such as <i>then</i>, <i>however</i> and <i>also</i> are not FANBOYS, so a comma before them still leaves a splice: write <i>, and then</i> or use a semicolon.",
         "Run-on: <i>I ran I was late.</i>  Fixed: <i>I ran; I was late.</i>"
       ]
     ],
@@ -92,7 +92,7 @@
       ],
       [
         "When no mark belongs",
-        "No mark goes between a verb and its object or the “that” clause it introduces, or after “such as”. Parentheses work like a pair of commas: they close around the extra words, with no comma added beside them.",
+        "No mark goes between a verb and its object or the “that” clause it introduces, or after “such as”. Parentheses work like a pair of commas: they close around the extra words, with no comma added beside them. When the words in parentheses belong to a larger sentence, the sentence’s own period goes after the closing bracket: <i>The hall seats 500 (the old one seated 300).</i>",
         "<i>The survey found that most residents agreed.</i>  <i>The mill (built in 1790) still runs.</i>"
       ]
     ],
@@ -118,7 +118,7 @@
       ],
       [
         "Tricky subjects and forms",
-        "With either/or and neither/nor, the verb agrees with the nearer subject. <i>Along with</i> and <i>as well as</i> do not make a subject plural. When a sentence is inverted (<i>On the shelf sit two jars</i>), find the subject after the verb. Use <i>had</i> + participle for the earlier of two past events, <i>would have</i> (never “would of”) for what did not happen, and learn the irregular forms: <i>lie, lay, lain</i>; <i>swim, swam, swum</i>.",
+        "With either/or and neither/nor, the verb agrees with the nearer subject. <i>Along with</i> and <i>as well as</i> do not make a subject plural. When a sentence is inverted (<i>On the shelf sit two jars</i>), find the subject after the verb. Use <i>had</i> + participle for the earlier of two past events, <i>would have</i> (never “would of”) for what did not happen, and learn the irregular forms: <i>lie, lay, lain</i>; <i>swim, swam, swum</i>. An -ing phrase used as the subject (<i>Running three miles</i>) is one activity and takes a singular verb. In <i>one of the players who stretch</i>, “who” stands for “players”, so its verb is plural. An unreal past condition pairs <i>if … had</i> + participle with <i>would have</i>: <i>If she had checked, she would have found it.</i>",
         "<i>Either the manager or the assistants have the keys.</i>  <i>By noon they had swum three laps.</i>"
       ]
     ],
@@ -134,7 +134,7 @@
       ],
       [
         "Know the categories",
-        "Contrast: however, but, yet, nevertheless, although. Cause/effect: therefore, thus, so, consequently. Addition: also, moreover, in addition. Example: for example, for instance. Likeness: similarly, likewise. Restatement: in other words, that is. Condition: otherwise. Sequence and time: first, next, finally, meanwhile. Replacement: instead. <i>On the contrary</i> is stronger than <i>however</i>: it rejects the previous idea outright.",
+        "Contrast: however, but, yet, nevertheless, although. Cause/effect: therefore, thus, so, consequently. Addition: also, moreover, in addition. Example: for example, for instance. Likeness: similarly, likewise. Restatement: in other words, that is. Condition: otherwise. Sequence and time: first, next, finally, meanwhile. Replacement: instead. <i>On the contrary</i> is stronger than <i>however</i>: it rejects the previous idea outright. Summary: in short, in sum. Justification: after all (the second sentence gives a reason for the first). As joining words, <i>so</i> gives a result and <i>for</i> gives a cause.",
         "<i>It is cheap; however, it breaks easily.</i> (contrast)"
       ],
       [
@@ -150,7 +150,7 @@
     "rules": [
       [
         "Isolate the variable",
-        "Undo operations in reverse: add/subtract first, then multiply/divide. For letters only, collect the variable terms on one side and factor it out: ax − cx = −b → x(a − c) = −b. In a word problem that counts whole things, round an inequality’s answer down to a whole number that still fits.",
+        "Undo operations in reverse: add/subtract first, then multiply/divide. For letters only, collect the variable terms on one side and factor it out: ax − cx = −b → x(a − c) = −b. In a word problem that counts whole things, round an inequality’s answer down to a whole number that still fits. Distribute before you combine like terms: 3(x + 2) − x = 3x + 6 − x = 2x + 6.",
         "<i>3x − 7 = 14</i> → +7 → 3x=21 → ÷3 → <b>x=7</b>."
       ],
       [
@@ -212,7 +212,7 @@
       ],
       [
         "Angle facts",
-        "Straight line 180°, triangle 180°, circle 360°. Parallel lines cut by a transversal make angles that are equal or supplementary; the two interior angles on one side add to 180°. Vertical (opposite) angles are equal, and the base angles of an isosceles triangle are equal.",
+        "Straight line 180°, triangle 180°, circle 360°. Parallel lines cut by a transversal make angles that are equal or supplementary; the two interior angles on one side add to 180°. Vertical (opposite) angles are equal, and the base angles of an isosceles triangle are equal. An exterior angle of a triangle equals the sum of the two interior angles that are not beside it.",
         "Triangle with 90° and 55° → third = 35°."
       ],
       [
@@ -274,7 +274,7 @@
       ],
       [
         "Identities and signs",
-        "sin²θ + cos²θ = 1 for every angle. In the second quadrant (90° to 180°) sine is positive and cosine negative. To find a missing side, write the ratio as an equation and solve: cos θ = 10/h → h = 10 ÷ cos θ. Cofunctions: sin θ = cos(90° − θ). The area of a triangle from two sides and the angle between them is ½ab sin C.",
+        "sin²θ + cos²θ = 1 for every angle. In the second quadrant (90° to 180°) sine is positive and cosine negative. To find a missing side, write the ratio as an equation and solve: cos θ = 10/h → h = 10 ÷ cos θ. Cofunctions: sin θ = cos(90° − θ). The area of a triangle from two sides and the angle between them is ½ab sin C. In the third quadrant (180° to 270°) sine and cosine are both negative, so tangent is positive: tan 225° = 1.",
         "Angle of elevation 40°, 30 m away: height = 30 tan 40°."
       ]
     ],
@@ -426,7 +426,7 @@
       ],
       [
         "Name the trend",
-        "State the direction. The ACT loves ‘increases, then decreases’ (a peak). A flat column is a finding too: that variable made no difference. Growing jumps mean a curve that steepens.",
+        "State the direction. The ACT loves ‘increases, then decreases’ (a peak). A flat column is a finding too: that variable made no difference. Growing jumps mean a curve that steepens. If each step doubles, keep doubling when you extend the trend; a straight-line guess falls short.",
         "4.1 → 6.8 → 9.0 → 7.2 = rises then falls."
       ],
       [
@@ -473,12 +473,12 @@
       ],
       [
         "Why a control group?",
-        "The control is the no-treatment baseline that isolates the effect. A blank (a sample with none of the substance) should read zero; if it does not, the method is contaminated and every reading is suspect.",
+        "The control is the no-treatment baseline that isolates the effect. A blank (a sample with none of the substance) should read zero; if it does not, the method is contaminated and every reading is suspect. A placebo, a dummy treatment that looks the same, lets the control group share everything except the active ingredient.",
         "A no-drug group shows what happens without the drug."
       ],
       [
         "Predict design changes",
-        "If one variable changes, use the existing trend to predict the result. To extend a finding to a new condition, repeat the same test changing only that condition. Timing many repeats at once shrinks the error per repeat.",
+        "If one variable changes, use the existing trend to predict the result. To extend a finding to a new condition, repeat the same test changing only that condition. Timing many repeats at once shrinks the error per repeat. If two variables change between trials, the result cannot be pinned on either. A systematic error shifts every reading by the same amount: repeating does not remove it, but differences between readings stay correct.",
         "Higher temp raised yield → a hotter trial likely reads higher."
       ]
     ],
@@ -522,6 +522,11 @@
         "Use facts only when asked",
         "Most questions live in the passage. Reach for outside knowledge only when the question needs it.",
         "If the graph answers it, don't overthink."
+      ],
+      [
+        "More facts worth knowing",
+        "Air is about 78% nitrogen and 21% oxygen. Gas to liquid is condensation; liquid to gas is evaporation. A catalyst speeds a reaction without being used up and does not change how much product forms. Near Earth, gravity accelerates everything at about 9.8 m/s² downward, even at the top of a throw. In osmosis, water moves across a membrane toward the side with more dissolved substance.",
+        "A cell in very salty water loses water and shrinks."
       ]
     ],
     "trap": "Don't override clear passage data with a half-remembered fact — the data wins."
@@ -531,12 +536,12 @@
     "rules": [
       [
         "Agree in number",
-        "Singular nouns need singular pronouns. each, everyone and a company are singular.",
+        "Singular nouns need singular pronouns. each, everyone and a company are singular. With either…or and neither…nor, the pronoun agrees with the nearer noun: <i>Neither the coach nor the players remembered their bottles.</i>",
         "<i>The company raised its prices</i> (not ‘their’).  <i>Each robot has its own station.</i>"
       ],
       [
         "Subject vs. object case",
-        "I/he/she/they are subjects; me/him/her/them are objects. Remove the other person to test. For <i>who/whoever</i>, the case comes from the pronoun’s own clause: <i>give it to whoever asks</i>, because <i>whoever</i> is the subject of <i>asks</i>. Use <i>myself</i> only when <i>I</i> is the subject of the same sentence.",
+        "I/he/she/they are subjects; me/him/her/them are objects. Remove the other person to test. For <i>who/whoever</i>, the case comes from the pronoun’s own clause: <i>give it to whoever asks</i>, because <i>whoever</i> is the subject of <i>asks</i>. Use <i>myself</i> only when <i>I</i> is the subject of the same sentence. Finish a “than” comparison to find the case: <i>The coach trusts Mia more than (she trusts) me.</i>",
         "<i>between you and me</i> — try 'between me,' not 'between I.'"
       ],
       [
@@ -583,7 +588,7 @@
       ],
       [
         "Match correlative pairs",
-        "not only…but also, either…or, both…and, between…and, and not…but need parallel parts on each side. Add neither…nor to the list: <i>neither tired nor hungry</i>.",
+        "not only…but also, either…or, both…and, between…and, and not…but need parallel parts on each side. Add neither…nor to the list: <i>neither tired nor hungry</i>. <i>whether…or</i> works the same way: <i>whether to repair it or to replace it</i>.",
         "<i>not only fast but also cheap.</i>"
       ],
       [
@@ -671,7 +676,7 @@
       ],
       [
         "Spread and rank",
-        "Standard deviation measures distance from the mean: adding the same number to every value leaves it unchanged. A percentile is a rank — the share of scores at or below yours — not a percentage correct. In a frequency table, count through the frequencies to find the middle value. Quartiles split sorted data into quarters, so half the values lie between Q1 and Q3.",
+        "Standard deviation measures distance from the mean: adding the same number to every value leaves it unchanged. A percentile is a rank — the share of scores at or below yours — not a percentage correct. In a frequency table, count through the frequencies to find the middle value. Quartiles split sorted data into quarters, so half the values lie between Q1 and Q3. To say how far a score sits from the mean in standard deviations, divide: (score − mean) ÷ SD.",
         "10, 10, 10, 10 and 1, 5, 15, 19 share a mean of 10; the second is far more spread out."
       ]
     ],
@@ -697,12 +702,12 @@
       ],
       [
         "Parallel, perpendicular, circles",
-        "Parallel lines have equal slopes; perpendicular slopes are negative reciprocals. A circle with centre (h, k) and radius r is (x − h)² + (y − k)² = r². If a circle passes through a point, the radius is the distance from the centre to that point. A perpendicular bisector passes through the midpoint with the negative-reciprocal slope.",
+        "Parallel lines have equal slopes; perpendicular slopes are negative reciprocals. A circle with centre (h, k) and radius r is (x − h)² + (y − k)² = r². If a circle passes through a point, the radius is the distance from the centre to that point. A perpendicular bisector passes through the midpoint with the negative-reciprocal slope. The endpoints of a diameter give the centre (their midpoint) and the radius (half the distance between them).",
         "Slope 2 → perpendicular slope −½.  (x − 1)² + (y + 2)² = 9 → centre (1, −2), radius 3."
       ],
       [
         "Reflections and intersections",
-        "Reflecting across the y-axis changes the sign of x; across the x-axis, the sign of y. Two lines meet where their y-values are equal, so set the right-hand sides equal. A line with one y for every point is horizontal: y = constant. A point lies on a line if its coordinates make the equation true. Points with the same y are a horizontal distance apart: subtract the x-values.",
+        "Reflecting across the y-axis changes the sign of x; across the x-axis, the sign of y. Two lines meet where their y-values are equal, so set the right-hand sides equal. A line with one y for every point is horizontal: y = constant. A point lies on a line if its coordinates make the equation true. Points with the same y are a horizontal distance apart: subtract the x-values. Reflecting across the line y = x swaps the coordinates: (5, 2) → (2, 5). A point’s distance from the x-axis is the size of its y, and from the y-axis the size of its x.",
         "y = x + 1 and y = −x + 5 → x + 1 = −x + 5 → (2, 3)."
       ]
     ],
@@ -802,7 +807,7 @@
       ],
       [
         "Convert with the right factor",
-        "Watch prefixes: kilo = ×1000, milli = ÷1000. Area units convert by the square of the factor (1 m² = 10 000 cm²), and units combine the way the numbers do (force ÷ area → N/m²). Volume units convert by the cube of the factor (1 m³ = 1,000,000 cm³).",
+        "Watch prefixes: kilo = ×1000, milli = ÷1000. Area units convert by the square of the factor (1 m² = 10 000 cm²), and units combine the way the numbers do (force ÷ area → N/m²). Volume units convert by the cube of the factor (1 m³ = 1,000,000 cm³). 1 cm³ = 1 mL and 1 L = 1,000 mL. In a rate such as km per litre, convert the top unit and the bottom unit separately.",
         "2 km = 2000 m."
       ],
       [
@@ -854,7 +859,7 @@
       ],
       [
         "Support vs. contradict",
-        "Compare the data to the prediction: match or not? To test a claim you need a comparison: an untreated group that differs from the treated one in only the factor being tested.",
+        "Compare the data to the prediction: match or not? To test a claim you need a comparison: an untreated group that differs from the treated one in only the factor being tested. A difference smaller than the spread within each group is weak support; it could easily be chance.",
         "If growth rose with light, the data supports it."
       ],
       [
@@ -880,7 +885,7 @@
       ],
       [
         "Average across trials",
-        "Add the values and divide by how many.",
+        "Add the values and divide by how many. To combine two mixtures, add the totals (grams with grams, millilitres with millilitres) and divide; do not average the two concentrations.",
         "(4+6+8)/3 = 6."
       ]
     ],

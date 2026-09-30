@@ -6426,5 +6426,1699 @@
       }
     ],
     "id": "sp71"
+  },
+  {
+    "title": "Two Decaying Samples",
+    "type": "Data Representation",
+    "text": "A radioactive sample contains unstable nuclei that decay one at a time, each giving off radiation. A Geiger counter measures this radiation as a count rate, in counts per minute. The count rate is proportional to the number of undecayed nuclei left in the sample, and the time it takes for that number to fall to half is the isotope’s half-life.\n\nA technician measured the count rates of two samples, each containing a different isotope, over 24 hours. The background radiation of the room was subtracted from every reading (Figure 1). Table 1 lists the half-lives of several isotopes used in medicine and industry.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Count rates of two samples over 24 hours",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Time (h)",
+        "yLabel": "Count rate (counts/min)",
+        "alt": "Line graph of count rate against time for two isotopes that start at the same count rate. Both curves fall steeply at first and then more gradually. The curve for Isotope 1 falls faster than the curve for Isotope 2 throughout.",
+        "series": [
+          {
+            "name": "Isotope 1",
+            "points": [
+              {
+                "x": 0,
+                "y": 3200
+              },
+              {
+                "x": 3,
+                "y": 2263
+              },
+              {
+                "x": 6,
+                "y": 1600
+              },
+              {
+                "x": 9,
+                "y": 1131
+              },
+              {
+                "x": 12,
+                "y": 800
+              },
+              {
+                "x": 18,
+                "y": 400
+              },
+              {
+                "x": 24,
+                "y": 200
+              }
+            ]
+          },
+          {
+            "name": "Isotope 2",
+            "points": [
+              {
+                "x": 0,
+                "y": 3200
+              },
+              {
+                "x": 3,
+                "y": 2691
+              },
+              {
+                "x": 6,
+                "y": 2263
+              },
+              {
+                "x": 9,
+                "y": 1903
+              },
+              {
+                "x": 12,
+                "y": 1600
+              },
+              {
+                "x": 18,
+                "y": 1131
+              },
+              {
+                "x": 24,
+                "y": 800
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Half-lives of some radioactive isotopes",
+        "type": "table",
+        "head": [
+          "Isotope",
+          "Half-life",
+          "Typical use"
+        ],
+        "rows": [
+          [
+            "Technetium-99m",
+            "6.0 hours",
+            "Medical imaging"
+          ],
+          [
+            "Potassium-42",
+            "12.4 hours",
+            "Tracing blood flow"
+          ],
+          [
+            "Iodine-131",
+            "8.0 days",
+            "Treating thyroid disease"
+          ],
+          [
+            "Cobalt-60",
+            "5.3 years",
+            "Sterilizing equipment"
+          ],
+          [
+            "Carbon-14",
+            "5730 years",
+            "Dating ancient remains"
+          ]
+        ]
+      }
+    ],
+    "id": "sp72"
+  },
+  {
+    "title": "The Age of the Seafloor",
+    "type": "Data Representation",
+    "text": "New ocean crust forms at mid-ocean ridges, where molten rock rises and cools. The new crust then moves slowly away from the ridge on both sides as still newer crust forms behind it. Geologists dated samples of basalt, the rock that makes up ocean crust, at different distances from two ridges (Figure 1).\n\nAs ocean crust ages it cools and contracts, so it sits lower and the ocean above it is deeper. Table 1 gives the average ocean depth above crust of different ages.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Age of ocean crust at different distances from two ridges",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Distance from ridge (km)",
+        "yLabel": "Age of crust (millions of years)",
+        "alt": "Line graph of the age of ocean crust against distance from two ridges. Both lines start at zero at the ridge and rise in a straight line with distance. The line for Ridge A is steeper than the line for Ridge B.",
+        "series": [
+          {
+            "name": "Ridge A",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 100,
+                "y": 5
+              },
+              {
+                "x": 200,
+                "y": 10
+              },
+              {
+                "x": 400,
+                "y": 20
+              },
+              {
+                "x": 600,
+                "y": 30
+              },
+              {
+                "x": 800,
+                "y": 40
+              },
+              {
+                "x": 1000,
+                "y": 50
+              }
+            ]
+          },
+          {
+            "name": "Ridge B",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 100,
+                "y": 2
+              },
+              {
+                "x": 200,
+                "y": 4
+              },
+              {
+                "x": 400,
+                "y": 8
+              },
+              {
+                "x": 600,
+                "y": 12
+              },
+              {
+                "x": 800,
+                "y": 16
+              },
+              {
+                "x": 1000,
+                "y": 20
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Ocean depth above crust of different ages",
+        "type": "table",
+        "head": [
+          "Age of crust (millions of years)",
+          "Average ocean depth (m)"
+        ],
+        "rows": [
+          [
+            "0",
+            "2500"
+          ],
+          [
+            "1",
+            "2850"
+          ],
+          [
+            "4",
+            "3200"
+          ],
+          [
+            "9",
+            "3550"
+          ],
+          [
+            "16",
+            "3900"
+          ],
+          [
+            "25",
+            "4250"
+          ],
+          [
+            "36",
+            "4600"
+          ],
+          [
+            "49",
+            "4950"
+          ]
+        ]
+      }
+    ],
+    "id": "sp73"
+  },
+  {
+    "title": "Tides at a Harbor",
+    "type": "Data Representation",
+    "text": "The water level at a coastal harbor rises and falls twice a day as the tide comes in and goes out. The tidal range is the difference in height between one high tide and the low tide that follows it. A tide gauge recorded the water level, measured above a fixed mark on the harbor wall, over about 25 hours on two different days (Figure 1). Table 1 gives the tidal range measured on different days after a new moon, along with the Moon’s phase on those days.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Water level at the harbor on two days",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Time after first high tide (h)",
+        "yLabel": "Water level above mark (m)",
+        "alt": "Line graph of water level against time for two days. Both curves rise and fall smoothly and repeatedly, with a low halfway between each pair of highs. Both curves swing around the same middle level, but the curve for Day 1 swings much farther above and below it than the curve for Day 2.",
+        "series": [
+          {
+            "name": "Day 1",
+            "points": [
+              {
+                "x": 0,
+                "y": 5
+              },
+              {
+                "x": 3.1,
+                "y": 3
+              },
+              {
+                "x": 6.2,
+                "y": 1
+              },
+              {
+                "x": 9.3,
+                "y": 3
+              },
+              {
+                "x": 12.4,
+                "y": 5
+              },
+              {
+                "x": 15.5,
+                "y": 3
+              },
+              {
+                "x": 18.6,
+                "y": 1
+              },
+              {
+                "x": 21.7,
+                "y": 3
+              },
+              {
+                "x": 24.8,
+                "y": 5
+              }
+            ]
+          },
+          {
+            "name": "Day 2",
+            "points": [
+              {
+                "x": 0,
+                "y": 3.8
+              },
+              {
+                "x": 3.1,
+                "y": 3
+              },
+              {
+                "x": 6.2,
+                "y": 2.2
+              },
+              {
+                "x": 9.3,
+                "y": 3
+              },
+              {
+                "x": 12.4,
+                "y": 3.8
+              },
+              {
+                "x": 15.5,
+                "y": 3
+              },
+              {
+                "x": 18.6,
+                "y": 2.2
+              },
+              {
+                "x": 21.7,
+                "y": 3
+              },
+              {
+                "x": 24.8,
+                "y": 3.8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Tidal range at the harbor through one lunar month",
+        "type": "table",
+        "head": [
+          "Days after new moon",
+          "Moon’s phase",
+          "Tidal range (m)"
+        ],
+        "rows": [
+          [
+            "0",
+            "New moon",
+            "4.0"
+          ],
+          [
+            "4",
+            "—",
+            "2.6"
+          ],
+          [
+            "7",
+            "First quarter",
+            "1.6"
+          ],
+          [
+            "11",
+            "—",
+            "2.8"
+          ],
+          [
+            "15",
+            "Full moon",
+            "4.0"
+          ],
+          [
+            "18",
+            "—",
+            "3.0"
+          ],
+          [
+            "22",
+            "Last quarter",
+            "1.6"
+          ],
+          [
+            "26",
+            "—",
+            "2.9"
+          ]
+        ]
+      }
+    ],
+    "id": "sp74"
+  },
+  {
+    "title": "Planets Passing in Front of a Star",
+    "type": "Data Representation",
+    "text": "When a planet passes between its star and a telescope, it blocks a small part of the star’s light, and the star appears to dim slightly. This event is called a transit. The fraction of light blocked, called the transit depth, depends on how large the planet is compared with the star.\n\nAstronomers watched a star with a radius of 700,000 km, about the same as the Sun’s. Figure 1 shows the star’s brightness during one transit of Planet b. Table 1 lists the four planets found around the star, with the time each takes to orbit the star, its distance from the star in astronomical units (1 AU = 150,000,000 km, the distance from Earth to the Sun), its transit depth, and the planet’s radius worked out from that depth.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Brightness of the star during a transit of Planet b",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Time (h)",
+        "yLabel": "Brightness (% of normal)",
+        "alt": "Line graph of the star’s brightness against time. The brightness holds steady at first, slopes down to a lower level, stays flat at that level for a while, then slopes back up to where it began and holds steady again.",
+        "series": [
+          {
+            "name": "Brightness",
+            "points": [
+              {
+                "x": 0,
+                "y": 100
+              },
+              {
+                "x": 1,
+                "y": 100
+              },
+              {
+                "x": 1.5,
+                "y": 99.5
+              },
+              {
+                "x": 2,
+                "y": 99
+              },
+              {
+                "x": 3,
+                "y": 99
+              },
+              {
+                "x": 4,
+                "y": 99
+              },
+              {
+                "x": 4.5,
+                "y": 99.5
+              },
+              {
+                "x": 5,
+                "y": 100
+              },
+              {
+                "x": 6,
+                "y": 100
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Planets orbiting the star",
+        "type": "table",
+        "head": [
+          "Planet",
+          "Orbital period (days)",
+          "Distance from star (AU)",
+          "Transit depth (%)",
+          "Planet radius (km)"
+        ],
+        "rows": [
+          [
+            "b",
+            "4.1",
+            "0.05",
+            "1.00",
+            "70,000"
+          ],
+          [
+            "c",
+            "11.6",
+            "0.10",
+            "0.25",
+            "35,000"
+          ],
+          [
+            "d",
+            "92.4",
+            "0.40",
+            "0.04",
+            "14,000"
+          ],
+          [
+            "e",
+            "311.9",
+            "0.90",
+            "0.01",
+            "7,000"
+          ]
+        ]
+      }
+    ],
+    "id": "sp75"
+  },
+  {
+    "title": "Sea Ice and Sunlight",
+    "type": "Data Representation",
+    "text": "A surface’s albedo is the fraction of the sunlight striking it that it reflects; the rest is absorbed and warms the surface. Table 1 gives the albedo of four surfaces found in the Arctic Ocean in summer, and the sunlight each would absorb when 300 watts of sunlight strike each square meter (W/m²).\n\nFigure 1 shows the area of the Arctic Ocean covered by sea ice each September, when the ice is at its smallest, for selected years from 1980 to 2020.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Albedo of Arctic surfaces",
+        "type": "table",
+        "head": [
+          "Surface",
+          "Albedo",
+          "Sunlight absorbed (W/m²)"
+        ],
+        "rows": [
+          [
+            "Fresh snow on ice",
+            "0.85",
+            "45"
+          ],
+          [
+            "Bare sea ice",
+            "0.60",
+            "120"
+          ],
+          [
+            "Melt pond on ice",
+            "0.25",
+            "225"
+          ],
+          [
+            "Open ocean",
+            "0.06",
+            "282"
+          ]
+        ]
+      },
+      {
+        "label": "Figure 1",
+        "caption": "Area covered by Arctic sea ice each September",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Year",
+        "yLabel": "Sea ice area (millions of km²)",
+        "alt": "Line graph of September sea ice area in selected years from 1980 to 2020. The points are joined by straight segments, and the area is generally lower in the later years than in the earlier ones.",
+        "series": [
+          {
+            "name": "September sea ice",
+            "points": [
+              {
+                "x": 1980,
+                "y": 7.8
+              },
+              {
+                "x": 1990,
+                "y": 6.2
+              },
+              {
+                "x": 2000,
+                "y": 6.3
+              },
+              {
+                "x": 2005,
+                "y": 5.5
+              },
+              {
+                "x": 2010,
+                "y": 4.9
+              },
+              {
+                "x": 2012,
+                "y": 3.6
+              },
+              {
+                "x": 2015,
+                "y": 4.6
+              },
+              {
+                "x": 2020,
+                "y": 4
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "id": "sp76"
+  },
+  {
+    "title": "The Colors of Stars",
+    "type": "Data Representation",
+    "text": "Every star gives off light across a range of wavelengths, but it gives off the most at one particular wavelength, called its peak wavelength. The peak wavelength depends on the temperature of the star’s surface. Figure 1 shows the peak wavelength for surfaces at different temperatures, in nanometers (1 nm = 10⁻⁹ m).\n\nTable 1 lists five stars, including the Sun. For each it gives the surface temperature in kelvins (K), the color the star appears, its radius compared with the Sun’s, and its luminosity, the total energy it gives off each second, compared with the Sun’s.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Peak wavelength of light given off by a star’s surface",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Surface temperature (K)",
+        "yLabel": "Peak wavelength (nm)",
+        "alt": "Line graph of peak wavelength against surface temperature. The peak wavelength falls as the temperature rises, dropping steeply at low temperatures and then more and more gradually at high temperatures.",
+        "series": [
+          {
+            "name": "Peak wavelength",
+            "points": [
+              {
+                "x": 3000,
+                "y": 966
+              },
+              {
+                "x": 4000,
+                "y": 725
+              },
+              {
+                "x": 5000,
+                "y": 580
+              },
+              {
+                "x": 6000,
+                "y": 483
+              },
+              {
+                "x": 8000,
+                "y": 362
+              },
+              {
+                "x": 10000,
+                "y": 290
+              },
+              {
+                "x": 12000,
+                "y": 242
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Five stars compared with the Sun",
+        "type": "table",
+        "head": [
+          "Star",
+          "Surface temperature (K)",
+          "Color",
+          "Radius (Sun = 1)",
+          "Luminosity (Sun = 1)"
+        ],
+        "rows": [
+          [
+            "Star 1",
+            "3000",
+            "Red",
+            "0.3",
+            "0.0064"
+          ],
+          [
+            "Star 2",
+            "4500",
+            "Orange",
+            "1.5",
+            "0.82"
+          ],
+          [
+            "Sun",
+            "5800",
+            "Yellow-white",
+            "1.0",
+            "1.0"
+          ],
+          [
+            "Star 3",
+            "8700",
+            "White",
+            "2.0",
+            "20"
+          ],
+          [
+            "Star 4",
+            "11,600",
+            "Blue-white",
+            "4.0",
+            "256"
+          ]
+        ]
+      }
+    ],
+    "id": "sp77"
+  },
+  {
+    "title": "Resonance in a Tube of Air",
+    "type": "Research Summaries",
+    "text": "A tube open at both ends was held upright with its lower end in a tall jar of water, so that the water closed off the bottom of the air column inside. A vibrating tuning fork was held just above the top of the tube, and the tube was slowly raised, lengthening the air column. At certain lengths the sound became much louder; this is called resonance. The length of the air column at the first resonance was recorded.\n\nExperiment 1. Tuning forks of four frequencies were used, in a room at 20 °C (Table 1).\n\nExperiment 2. The 384 Hz tuning fork was used with the tube’s air held at five different temperatures (Table 2).\n\nExperiment 3. The 256 Hz tuning fork was used at 20 °C, and the tube was raised past the first resonance until the sound became loud again, a second and then a third time (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: four tuning forks at 20 °C",
+        "type": "table",
+        "head": [
+          "Frequency of tuning fork (Hz)",
+          "Length of air column at first resonance (cm)"
+        ],
+        "rows": [
+          [
+            "256",
+            "33.5"
+          ],
+          [
+            "320",
+            "26.8"
+          ],
+          [
+            "384",
+            "22.3"
+          ],
+          [
+            "512",
+            "16.7"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: 384 Hz fork at five air temperatures",
+        "type": "table",
+        "head": [
+          "Air temperature (°C)",
+          "Length of air column at first resonance (cm)"
+        ],
+        "rows": [
+          [
+            "0",
+            "21.5"
+          ],
+          [
+            "10",
+            "21.9"
+          ],
+          [
+            "20",
+            "22.3"
+          ],
+          [
+            "30",
+            "22.7"
+          ],
+          [
+            "40",
+            "23.1"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: successive resonances with the 256 Hz fork",
+        "type": "table",
+        "head": [
+          "Resonance",
+          "Length of air column (cm)"
+        ],
+        "rows": [
+          [
+            "First",
+            "33.5"
+          ],
+          [
+            "Second",
+            "100.5"
+          ],
+          [
+            "Third",
+            "167.5"
+          ]
+        ]
+      }
+    ],
+    "id": "sp78"
+  },
+  {
+    "title": "Rain on Bare and Covered Soil",
+    "type": "Research Summaries",
+    "text": "Students studied how much soil rain washes off a slope. In each trial, a tray 1.0 m long and 0.50 m wide was filled with 20 kg of the same dry loam soil and tilted to a set angle. A sprinkler rained on the tray for 30 minutes. The muddy water that ran off the lower end was collected, and the soil in it was dried and weighed.\n\nExperiment 1. Bare soil was tilted to five different angles, with rain falling at 40 mm per hour (Table 1).\n\nExperiment 2. The tray was tilted at 15°, rain fell at 40 mm per hour, and different fractions of the soil surface were covered with a layer of straw (Table 2).\n\nExperiment 3. Bare soil was tilted at 15°, and the sprinkler was set to four different rainfall rates (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: bare soil at five angles, 40 mm/h of rain",
+        "type": "table",
+        "head": [
+          "Angle of tray (°)",
+          "Soil washed off (g)"
+        ],
+        "rows": [
+          [
+            "5",
+            "120"
+          ],
+          [
+            "10",
+            "250"
+          ],
+          [
+            "15",
+            "410"
+          ],
+          [
+            "20",
+            "600"
+          ],
+          [
+            "25",
+            "830"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: straw cover at 15°, 40 mm/h of rain",
+        "type": "table",
+        "head": [
+          "Soil surface covered by straw (%)",
+          "Soil washed off (g)"
+        ],
+        "rows": [
+          [
+            "0",
+            "410"
+          ],
+          [
+            "25",
+            "260"
+          ],
+          [
+            "50",
+            "150"
+          ],
+          [
+            "75",
+            "70"
+          ],
+          [
+            "100",
+            "30"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: bare soil at 15°, four rainfall rates",
+        "type": "table",
+        "head": [
+          "Rainfall rate (mm/h)",
+          "Soil washed off (g)"
+        ],
+        "rows": [
+          [
+            "20",
+            "130"
+          ],
+          [
+            "40",
+            "410"
+          ],
+          [
+            "60",
+            "820"
+          ],
+          [
+            "80",
+            "1350"
+          ]
+        ]
+      }
+    ],
+    "id": "sp79"
+  },
+  {
+    "title": "Moving Sand Dunes",
+    "type": "Research Summaries",
+    "text": "Wind blows sand grains up the gentle back slope of a dune and over its crest, where they slide down the steep front slope. Grain by grain, the whole dune creeps downwind.\n\nExperiment 1. In a desert where the wind blows mostly from one direction, geologists measured the heights of five crescent-shaped dunes and tracked how far each moved in a year (Table 1).\n\nExperiment 2. In a wind tunnel, a flat bed of sand with grains 0.25 mm across was exposed to wind of different speeds. The mass of sand carried past each centimeter of the bed’s width each minute was measured (Table 2).\n\nExperiment 3. The wind tunnel was run at 9 m/s over beds of sand with grains of four different sizes (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: five dunes in the field",
+        "type": "table",
+        "head": [
+          "Dune height (m)",
+          "Distance moved in one year (m)"
+        ],
+        "rows": [
+          [
+            "3",
+            "100"
+          ],
+          [
+            "5",
+            "60"
+          ],
+          [
+            "10",
+            "30"
+          ],
+          [
+            "15",
+            "20"
+          ],
+          [
+            "20",
+            "15"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: 0.25 mm sand at six wind speeds",
+        "type": "table",
+        "head": [
+          "Wind speed (m/s)",
+          "Sand carried (g per cm of width per min)"
+        ],
+        "rows": [
+          [
+            "3",
+            "0.0"
+          ],
+          [
+            "4",
+            "0.0"
+          ],
+          [
+            "5",
+            "0.9"
+          ],
+          [
+            "7",
+            "4.6"
+          ],
+          [
+            "9",
+            "11.7"
+          ],
+          [
+            "11",
+            "23.1"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: four grain sizes at 9 m/s",
+        "type": "table",
+        "head": [
+          "Grain diameter (mm)",
+          "Sand carried (g per cm of width per min)"
+        ],
+        "rows": [
+          [
+            "0.10",
+            "14.0"
+          ],
+          [
+            "0.25",
+            "11.7"
+          ],
+          [
+            "0.50",
+            "6.2"
+          ],
+          [
+            "1.00",
+            "0.0"
+          ]
+        ]
+      }
+    ],
+    "id": "sp80"
+  },
+  {
+    "title": "Honeybees at Sugar Feeders",
+    "type": "Research Summaries",
+    "text": "Honeybees collect nectar, a sugar solution, from flowers. To study which sources bees prefer, students set out artificial feeders near a hive. Each feeder was a small dish of sucrose solution; a 40% solution, for example, is 40% sucrose by mass. The number of bee visits to each feeder was counted over 1 hour.\n\nExperiment 1. Blue feeders placed 20 m from the hive held solutions of six different sucrose concentrations (Table 1).\n\nExperiment 2. Feeders placed 20 m from the hive held a 40% solution, and the dishes were of four different colors (Table 2).\n\nExperiment 3. Blue feeders holding a 40% solution were placed at four different distances from the hive (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: blue feeders at 20 m",
+        "type": "table",
+        "head": [
+          "Sucrose concentration (%)",
+          "Visits in 1 hour"
+        ],
+        "rows": [
+          [
+            "10",
+            "12"
+          ],
+          [
+            "20",
+            "35"
+          ],
+          [
+            "30",
+            "68"
+          ],
+          [
+            "40",
+            "90"
+          ],
+          [
+            "50",
+            "94"
+          ],
+          [
+            "60",
+            "71"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: 40% solution at 20 m",
+        "type": "table",
+        "head": [
+          "Feeder color",
+          "Visits in 1 hour"
+        ],
+        "rows": [
+          [
+            "Blue",
+            "90"
+          ],
+          [
+            "Yellow",
+            "82"
+          ],
+          [
+            "White",
+            "40"
+          ],
+          [
+            "Red",
+            "15"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: blue feeders, 40% solution",
+        "type": "table",
+        "head": [
+          "Distance from hive (m)",
+          "Visits in 1 hour"
+        ],
+        "rows": [
+          [
+            "100",
+            "64"
+          ],
+          [
+            "200",
+            "42"
+          ],
+          [
+            "400",
+            "18"
+          ],
+          [
+            "800",
+            "5"
+          ]
+        ]
+      }
+    ],
+    "id": "sp81"
+  },
+  {
+    "title": "The Disappearing Cross",
+    "type": "Research Summaries",
+    "text": "When sodium thiosulfate solution is mixed with hydrochloric acid, one product of the reaction is solid sulfur, which forms as tiny particles that make the mixture cloudy. Students placed a flask on a sheet of paper marked with a black cross, added 50 mL of sodium thiosulfate solution and then 5 mL of hydrochloric acid, and timed how long it took until the cross could no longer be seen from above. The faster the reaction, the shorter the time.\n\nExperiment 1. At 20 °C, with 1.0 mol/L acid, five concentrations of sodium thiosulfate were used (Table 1).\n\nExperiment 2. With 40 g/L sodium thiosulfate and 1.0 mol/L acid, both solutions were brought to four different temperatures before mixing (Table 2).\n\nExperiment 3. At 20 °C, with 40 g/L sodium thiosulfate, the acid was used at three different concentrations (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: five thiosulfate concentrations at 20 °C",
+        "type": "table",
+        "head": [
+          "Sodium thiosulfate concentration (g/L)",
+          "Time for cross to disappear (s)"
+        ],
+        "rows": [
+          [
+            "10",
+            "160"
+          ],
+          [
+            "20",
+            "80"
+          ],
+          [
+            "30",
+            "53"
+          ],
+          [
+            "40",
+            "40"
+          ],
+          [
+            "50",
+            "32"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: 40 g/L thiosulfate at four temperatures",
+        "type": "table",
+        "head": [
+          "Temperature (°C)",
+          "Time for cross to disappear (s)"
+        ],
+        "rows": [
+          [
+            "20",
+            "40"
+          ],
+          [
+            "30",
+            "20"
+          ],
+          [
+            "40",
+            "10"
+          ],
+          [
+            "50",
+            "5"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: three acid concentrations at 20 °C",
+        "type": "table",
+        "head": [
+          "Acid concentration (mol/L)",
+          "Time for cross to disappear (s)"
+        ],
+        "rows": [
+          [
+            "0.5",
+            "41"
+          ],
+          [
+            "1.0",
+            "40"
+          ],
+          [
+            "2.0",
+            "40"
+          ]
+        ]
+      }
+    ],
+    "id": "sp82"
+  },
+  {
+    "title": "Salts That Warm or Cool Water",
+    "type": "Research Summaries",
+    "text": "Some salts cool the water they dissolve in, while others warm it. In each trial, students poured 100 g of water at 22.0 °C into a foam cup, added a measured mass of salt, stirred until it had dissolved, and recorded the final temperature of the solution. The temperature change is the final temperature minus 22.0 °C.\n\nExperiment 1. Five masses of ammonium nitrate were used (Table 1).\n\nExperiment 2. Five masses of calcium chloride were used (Table 2).\n\nExperiment 3. 5.0 g of each of five different salts was used (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: ammonium nitrate",
+        "type": "table",
+        "head": [
+          "Mass of salt (g)",
+          "Final temperature (°C)",
+          "Temperature change (°C)"
+        ],
+        "rows": [
+          [
+            "2.0",
+            "20.5",
+            "−1.5"
+          ],
+          [
+            "4.0",
+            "18.9",
+            "−3.1"
+          ],
+          [
+            "6.0",
+            "17.4",
+            "−4.6"
+          ],
+          [
+            "8.0",
+            "15.9",
+            "−6.1"
+          ],
+          [
+            "10.0",
+            "14.3",
+            "−7.7"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: calcium chloride",
+        "type": "table",
+        "head": [
+          "Mass of salt (g)",
+          "Final temperature (°C)",
+          "Temperature change (°C)"
+        ],
+        "rows": [
+          [
+            "2.0",
+            "25.6",
+            "+3.6"
+          ],
+          [
+            "4.0",
+            "29.1",
+            "+7.1"
+          ],
+          [
+            "6.0",
+            "32.7",
+            "+10.7"
+          ],
+          [
+            "8.0",
+            "36.3",
+            "+14.3"
+          ],
+          [
+            "10.0",
+            "39.8",
+            "+17.8"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: 5.0 g of five salts",
+        "type": "table",
+        "head": [
+          "Salt",
+          "Final temperature (°C)",
+          "Temperature change (°C)"
+        ],
+        "rows": [
+          [
+            "Sodium chloride",
+            "21.2",
+            "−0.8"
+          ],
+          [
+            "Potassium chloride",
+            "19.2",
+            "−2.8"
+          ],
+          [
+            "Ammonium nitrate",
+            "18.2",
+            "−3.8"
+          ],
+          [
+            "Calcium chloride",
+            "30.9",
+            "+8.9"
+          ],
+          [
+            "Sodium hydroxide",
+            "35.3",
+            "+13.3"
+          ]
+        ]
+      }
+    ],
+    "id": "sp83"
+  },
+  {
+    "title": "A Chain of Volcanic Islands",
+    "type": "Conflicting Viewpoints",
+    "intro": "A chain of volcanoes stretches about 2400 km northwest from Mauna Kelo, an active volcano on the youngest island. The older volcanoes farther along the chain are extinct, and the oldest have sunk below sea level to become seamounts. Table 1 gives each volcano’s distance from Mauna Kelo, the age of its lava, and the height of its summit relative to sea level. When lava cools, the magnetism locked into it records the latitude where it formed; Table 2 compares that latitude with where each volcano stands today. Three scientists explain how the chain formed.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Volcanoes of the chain",
+        "type": "table",
+        "head": [
+          "Volcano",
+          "Distance from Mauna Kelo (km)",
+          "Age of lava (millions of years)",
+          "Summit height relative to sea level (m)"
+        ],
+        "rows": [
+          [
+            "Mauna Kelo",
+            "0",
+            "0.0",
+            "+4100"
+          ],
+          [
+            "Oreka",
+            "300",
+            "3.0",
+            "+1500"
+          ],
+          [
+            "Lanu",
+            "600",
+            "6.0",
+            "+900"
+          ],
+          [
+            "Pehi Seamount",
+            "1200",
+            "12.0",
+            "−400"
+          ],
+          [
+            "Varo Seamount",
+            "2400",
+            "24.0",
+            "−1600"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Latitude of each volcano, today and when its lava formed",
+        "type": "table",
+        "head": [
+          "Volcano",
+          "Present latitude (°N)",
+          "Latitude where lava formed (°N)"
+        ],
+        "rows": [
+          [
+            "Mauna Kelo",
+            "19",
+            "19"
+          ],
+          [
+            "Oreka",
+            "20",
+            "19"
+          ],
+          [
+            "Lanu",
+            "21",
+            "19"
+          ],
+          [
+            "Pehi Seamount",
+            "23",
+            "19"
+          ],
+          [
+            "Varo Seamount",
+            "27",
+            "24"
+          ]
+        ]
+      },
+      {
+        "label": "Scientist 1",
+        "caption": "A fixed plume",
+        "type": "note",
+        "text": "A narrow plume of hot rock rises from deep in the mantle beneath one spot, now under Mauna Kelo, and melts its way up to form a volcano. The plate above moves northwest at a steady speed, carrying each volcano off the plume, after which it dies, cools, erodes, and sinks. The plume itself has never moved, so the lava of every volcano in the chain formed at the plume’s latitude, 19°N."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "A spreading crack",
+        "type": "note",
+        "text": "There is no plume, and the plate here is not moving. Instead, a crack has been spreading southeast through the plate at a steady speed, and magma leaks up wherever the crack’s tip happens to be. Each volcano therefore formed exactly where it stands today, and its lava formed at its present latitude."
+      },
+      {
+        "label": "Scientist 3",
+        "caption": "A drifting plume",
+        "type": "note",
+        "text": "A plume of hot rock feeds the volcanoes, and the plate moves northwest over it at a steady speed. But the plume has not always stayed put. Until about 12 million years ago it drifted slowly southward, and since then it has stayed under 19°N. So lava from volcanoes younger than 12 million years formed at 19°N, while lava from older volcanoes formed north of 19°N."
+      }
+    ],
+    "id": "sp84"
+  },
+  {
+    "title": "Why Were Ancient Insects So Large?",
+    "type": "Conflicting Viewpoints",
+    "intro": "Fossils show that about 300 million years ago some flying insects were giants; relatives of dragonflies had wingspans of about 70 cm, while the largest insects alive today have wingspans of about 30 cm. Table 1 gives estimates of the oxygen content of the air and the largest known insect wingspan at different times. Flying reptiles first appeared about 230 million years ago, and birds about 150 million years ago. In a laboratory study (Table 2), dragonflies and cockroaches were raised from eggs in air with different oxygen contents, and the average adult body length was measured. Two scientists explain the insects’ size.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Oxygen in the air and the largest insects",
+        "type": "table",
+        "head": [
+          "Time (millions of years ago)",
+          "Oxygen in air (%)",
+          "Largest known insect wingspan (cm)"
+        ],
+        "rows": [
+          [
+            "360",
+            "17",
+            "12"
+          ],
+          [
+            "320",
+            "26",
+            "45"
+          ],
+          [
+            "300",
+            "31",
+            "71"
+          ],
+          [
+            "270",
+            "25",
+            "45"
+          ],
+          [
+            "250",
+            "16",
+            "20"
+          ],
+          [
+            "200",
+            "17",
+            "22"
+          ],
+          [
+            "150",
+            "22",
+            "25"
+          ],
+          [
+            "100",
+            "25",
+            "20"
+          ],
+          [
+            "50",
+            "22",
+            "25"
+          ],
+          [
+            "0",
+            "21",
+            "30"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Adult body length of insects raised at three oxygen levels",
+        "type": "table",
+        "head": [
+          "Oxygen in air (%)",
+          "Dragonfly length (mm)",
+          "Cockroach length (mm)"
+        ],
+        "rows": [
+          [
+            "12",
+            "44",
+            "30"
+          ],
+          [
+            "21",
+            "50",
+            "31"
+          ],
+          [
+            "31",
+            "57",
+            "30"
+          ]
+        ]
+      },
+      {
+        "label": "Scientist 1",
+        "caption": "Oxygen",
+        "type": "note",
+        "text": "Insects have no lungs. Air enters a network of fine tubes that branch through the body, and oxygen reaches the tissues mostly by spreading slowly along these tubes. The richer the air is in oxygen, the farther into a body oxygen can reach, so the largest possible insect size rises and falls with the oxygen content of the air."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "Predators",
+        "type": "note",
+        "text": "Oxygen alone does not set insect size. Before flying reptiles and birds appeared, no animal could catch an insect in the air, so large flying insects thrived. Once flying hunters appeared, big insects, which cannot turn quickly, were easy prey, and smaller, more agile fliers were favored. Since then insects have stayed small whatever the oxygen content of the air."
+      }
+    ],
+    "id": "sp85"
+  },
+  {
+    "title": "Where Does a Lemon Battery’s Voltage Come From?",
+    "type": "Conflicting Viewpoints",
+    "intro": "When strips of two different metals are pushed into a lemon and connected to a voltmeter, a voltage appears. Table 1 gives the voltages students measured using different pairs of metal strips in fresh lemons. When the strips were pushed into dry wood instead, no pair gave any voltage. In a second test (Table 2), a zinc strip and a copper strip in a lemon were connected to a small electric motor that ran for 48 hours, and the voltage and the mass of each strip were measured. Three students explain the voltage.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Voltage from pairs of metal strips in a lemon",
+        "type": "table",
+        "head": [
+          "Metal strips",
+          "Voltage (V)"
+        ],
+        "rows": [
+          [
+            "Copper and copper",
+            "0.00"
+          ],
+          [
+            "Zinc and zinc",
+            "0.00"
+          ],
+          [
+            "Iron and copper",
+            "0.52"
+          ],
+          [
+            "Zinc and iron",
+            "0.41"
+          ],
+          [
+            "Zinc and copper",
+            "0.93"
+          ],
+          [
+            "Magnesium and zinc",
+            "0.69"
+          ],
+          [
+            "Magnesium and copper",
+            "1.62"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "A zinc–copper lemon cell running a motor",
+        "type": "table",
+        "head": [
+          "Time (h)",
+          "Voltage (V)",
+          "Mass of zinc strip (g)",
+          "Mass of copper strip (g)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0.93",
+            "5.00",
+            "5.00"
+          ],
+          [
+            "12",
+            "0.90",
+            "4.97",
+            "5.00"
+          ],
+          [
+            "24",
+            "0.86",
+            "4.94",
+            "5.00"
+          ],
+          [
+            "48",
+            "0.78",
+            "4.88",
+            "5.00"
+          ]
+        ]
+      },
+      {
+        "label": "Student 1",
+        "caption": "Contact between metals",
+        "type": "note",
+        "text": "The voltage is produced simply by two different metals being connected through the juice, which does nothing except let electric charge pass between them. Nothing is used up, so the cell could run a motor forever without either metal changing. The more different the two metals are, the larger the voltage."
+      },
+      {
+        "label": "Student 2",
+        "caption": "A chemical reaction",
+        "type": "note",
+        "text": "The voltage comes from a chemical reaction. The more reactive of the two metals slowly dissolves into the acidic juice, giving up electrons that flow through the wire to the other metal. The greater the difference in how reactive the two metals are, the larger the voltage. Because the reactive metal is used up, the cell weakens as it runs."
+      },
+      {
+        "label": "Student 3",
+        "caption": "The living lemon",
+        "type": "note",
+        "text": "The electricity is made by the living cells of the lemon, just as nerves and muscles make electricity in animals. The metal strips only collect it. Any two strips pushed into the same lemon should therefore pick up about the same voltage, whatever they are made of."
+      }
+    ],
+    "id": "sp86"
+  },
+  {
+    "title": "Does Melting Ice Raise the Water Level?",
+    "type": "Conflicting Viewpoints",
+    "intro": "Students disagreed about whether melting ice raises sea level. They filled a beaker whose inside cross-section had an area of 50 cm² to a level of 80.0 mm with either fresh water or salt water as salty as the ocean. They then added 100 g of ice made from fresh water. In some trials the ice floated; in others it sat on a platform standing in the beaker, above the water, like ice on land, so that its meltwater ran into the beaker. The level was measured with the ice in place and again after the ice had completely melted (Table 1). Table 2 gives the densities of the materials.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Water level before and after 100 g of ice melted",
+        "type": "table",
+        "head": [
+          "Trial",
+          "Water in beaker",
+          "Position of ice",
+          "Level with ice in place (mm)",
+          "Level after ice melted (mm)"
+        ],
+        "rows": [
+          [
+            "1",
+            "Fresh",
+            "Floating",
+            "100.0",
+            "100.0"
+          ],
+          [
+            "2",
+            "Salt",
+            "Floating",
+            "99.5",
+            "100.0"
+          ],
+          [
+            "3",
+            "Fresh",
+            "On platform",
+            "80.0",
+            "100.0"
+          ],
+          [
+            "4",
+            "Salt",
+            "On platform",
+            "80.0",
+            "100.0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Densities",
+        "type": "table",
+        "head": [
+          "Material",
+          "Density (g/cm³)"
+        ],
+        "rows": [
+          [
+            "Fresh water",
+            "1.000"
+          ],
+          [
+            "Salt water",
+            "1.025"
+          ],
+          [
+            "Ice",
+            "0.917"
+          ]
+        ]
+      },
+      {
+        "label": "Student 1",
+        "caption": "Floating ice changes nothing",
+        "type": "note",
+        "text": "Floating ice pushes aside exactly its own weight of water. When it melts, it turns into exactly that weight of water, which fills the space the ice took up below the surface. So melting floating ice never changes the water level. Only ice resting on land raises the level when it melts."
+      },
+      {
+        "label": "Student 2",
+        "caption": "All melting ice adds water",
+        "type": "note",
+        "text": "When ice melts, water is added to the ocean. Any melting ice raises the level, and 100 g of floating ice raises it just as much as 100 g of ice on land, since the same amount of water is added either way."
+      },
+      {
+        "label": "Student 3",
+        "caption": "Salt makes a difference",
+        "type": "note",
+        "text": "In fresh water, melting floating ice leaves the level unchanged. But ocean water is salty, and salt water is denser than fresh water, so floating ice pushes aside a smaller volume of salt water than its fresh meltwater takes up. In the ocean, melting floating ice therefore raises the level slightly, while ice on land raises it far more."
+      }
+    ],
+    "id": "sp87"
   }
 ]
