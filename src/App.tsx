@@ -1,6 +1,6 @@
 /* Route table and app shell composition. */
 
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { useNavigate, useRoute } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { onUpdateReady } from '@/lib/pwa';
@@ -158,6 +158,7 @@ export default function App() {
   }, [route]);
   const navigate = useNavigate();
   const { authReady, hasStarted, progress, authRedirect, clearAuthRedirect } = useStore();
+  const confirmFailureShown = useRef(false);
 
   useEffect(() => {
     if (hasStarted) prefetchEverydayScreens();
@@ -201,7 +202,20 @@ export default function App() {
      button, as though the last two minutes had not happened. Now the session
      that link created is used: straight into the app. */
   useEffect(() => {
-    if (authRedirect?.flow !== 'confirm' || !authRedirect.ok) return;
+    if (authRedirect?.flow !== 'confirm') return;
+    /* A link that failed — expired, or opened on a different device — used
+       to be ignored here, leaving the student on the landing page with no
+       word about what happened. The log-in screen shows why, once: going
+       anywhere else afterwards forgets it. */
+    if (!authRedirect.ok) {
+      if (route.name === 'landing' && !confirmFailureShown.current) {
+        confirmFailureShown.current = true;
+        navigate({ name: 'auth', mode: 'signin' }, { replace: true });
+      } else if (route.name !== 'auth') {
+        clearAuthRedirect();
+      }
+      return;
+    }
     clearAuthRedirect();
     if (route.name === 'landing' || route.name === 'auth') {
       navigate({ name: progress.profile ? 'home' : 'onboarding' }, { replace: true });

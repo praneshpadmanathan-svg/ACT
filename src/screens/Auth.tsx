@@ -85,6 +85,9 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
     navigate({ name: progress.profile ? 'home' : 'onboarding' }, { replace: true });
   };
 
+  // Why a confirmation link failed. App routes here once and clears it after.
+  const confirmFailed = authRedirect?.flow === 'confirm' && !authRedirect.ok;
+
   const go = (next: AuthMode) => {
     sfx.select();
     setMode(next);
@@ -423,6 +426,11 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
           <Button className="mt-3 w-full" onClick={() => go('forgot')}>
             Email me a new link
           </Button>
+        </div>
+      )}
+      {mode === 'signin' && confirmFailed && (
+        <div className="mb-5">
+          <ErrorNote>{authRedirect?.error}</ErrorNote>
         </div>
       )}
 

@@ -282,7 +282,24 @@ export async function consumeAuthRedirect(): Promise<AuthRedirect | null> {
 
   const { error } = await supabase.auth.exchangeCodeForSession(code!);
   clean();
-  return error ? { flow, ok: false, error: friendlyError(error.message) } : { flow, ok: true };
+  if (!error) return { flow, ok: true };
+
+  /* PKCE ties the link to the browser that asked for it: the other half of
+     the exchange sits in that browser's storage. Open the email on your phone
+     after signing up on a laptop and the exchange fails — but Supabase has
+     already confirmed the address before redirecting here, so for a sign-up
+     the honest message is "done, now log in", not an error. */
+  if (/code verifier|pkce/i.test(error.message)) {
+    return {
+      flow,
+      ok: false,
+      error:
+        flow === 'reset'
+          ? 'Reset links only work in the browser you asked for them from. Ask for a new one here and open it on this device.'
+          : 'Your email is confirmed. That link opened in a different browser from the one you signed up in, so log in here.',
+    };
+  }
+  return { flow, ok: false, error: friendlyError(error.message) };
 }
 
 /* ------------------------------------------------------------------- sync */

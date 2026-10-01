@@ -10,7 +10,7 @@ result, because the next sheet has to be sliceable by the same script.
 
 ## Licence
 
-Checked 2026-09-28 against the [Gemini API Additional Terms](https://ai.google.dev/gemini-api/terms): Google claims no ownership of generated output and does not restrict commercial use, within its acceptable-use policy. Two limits to know. Google may generate the same or similar images for other people, so nothing here is exclusive. And AI output with little human authorship may not be protectable by copyright in the US, so these images are safe to *use* but may not be ours to stop others copying. If the art was made in the consumer Gemini app rather than through the API, those terms apply instead; re-check them.
+Checked 2026-09-28 against the [Gemini API Additional Terms](https://ai.google.dev/gemini-api/terms): Google claims no ownership of generated output and does not restrict commercial use, within its acceptable-use policy. Two limits to know. Google may generate the same or similar images for other people, so nothing here is exclusive. And AI output with little human authorship may not be protectable by copyright in the US, so these images are safe to _use_ but may not be ours to stop others copying. If the art was made in the consumer Gemini app rather than through the API, those terms apply instead; re-check them.
 
 ---
 

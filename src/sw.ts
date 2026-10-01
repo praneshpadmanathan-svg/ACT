@@ -50,13 +50,36 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE);
+      /* Every deploy used to re-download the whole precache — about 9 MB —
+         for every returning student, even when one line of copy changed.
+         Files under /assets/ carry a content hash in their name, so a copy
+         already sitting in an older cache is byte-for-byte the right one and
+         is reused. Everything else is revalidated rather than force-fetched:
+         `no-cache` lets the server answer 304 for art that has not changed. */
+      const older = (await caches.keys()).filter(
+        (n) => n.startsWith('act-command-') && n !== CACHE,
+      );
+      const fromOlder = async (url: string) => {
+        if (!url.startsWith('/assets/')) return undefined;
+        for (const name of older) {
+          const hit = await (await caches.open(name)).match(url, MATCH);
+          if (hit) return hit;
+        }
+        return undefined;
+      };
+
       /* Individually, not addAll: addAll rejects the whole batch if a single
          request fails, which would leave the worker uninstalled and the app
          with no offline support at all because one image 404'd. */
       await Promise.all(
         __PRECACHE__.map(async (url) => {
           try {
-            await cache.add(new Request(url, { cache: 'reload' }));
+            const reused = await fromOlder(url);
+            if (reused) await cache.put(url, reused);
+            else
+              await cache.add(
+                new Request(url, { cache: url === '/index.html' ? 'reload' : 'no-cache' }),
+              );
           } catch {
             console.warn('[sw] could not precache', url);
           }
