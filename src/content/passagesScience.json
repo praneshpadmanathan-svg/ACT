@@ -9727,5 +9727,1817 @@
       }
     ],
     "id": "sp103"
+  },
+  {
+    "title": "Hemoglobin and Oxygen",
+    "type": "Data Representation",
+    "text": "Hemoglobin, a protein in red blood cells, picks up oxygen in the lungs and releases it in the body’s tissues. How much oxygen it holds depends on the partial pressure of oxygen (PO₂) around it, measured in millimeters of mercury (mmHg). The percent saturation is the percent of hemoglobin’s oxygen-binding sites that are filled.\n\nFigure 1 shows the percent saturation of hemoglobin at different values of PO₂ for blood at two pH values. Blood normally has a pH of 7.4, but in a hard-working muscle, carbon dioxide and lactic acid lower the pH of the blood passing through to about 7.2. Table 1 gives typical values of PO₂ in three places in the body. Blood whose hemoglobin is 100% saturated carries 20 mL of oxygen in every 100 mL of blood.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Percent saturation of hemoglobin at two blood pH values",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "PO₂ (mmHg)",
+        "yLabel": "Percent saturation (%)",
+        "alt": "Line graph of percent saturation against PO₂ for blood at pH 7.4 and pH 7.2. Both curves are S-shaped: they rise slowly at low PO₂, steeply in the middle, and level off near the top. The pH 7.2 curve lies below the pH 7.4 curve at every PO₂ shown.",
+        "series": [
+          {
+            "name": "pH 7.4",
+            "points": [
+              {
+                "x": 10,
+                "y": 7
+              },
+              {
+                "x": 20,
+                "y": 31
+              },
+              {
+                "x": 30,
+                "y": 58
+              },
+              {
+                "x": 40,
+                "y": 75
+              },
+              {
+                "x": 60,
+                "y": 90
+              },
+              {
+                "x": 80,
+                "y": 95
+              },
+              {
+                "x": 100,
+                "y": 97
+              }
+            ]
+          },
+          {
+            "name": "pH 7.2",
+            "points": [
+              {
+                "x": 10,
+                "y": 4
+              },
+              {
+                "x": 20,
+                "y": 21
+              },
+              {
+                "x": 30,
+                "y": 44
+              },
+              {
+                "x": 40,
+                "y": 63
+              },
+              {
+                "x": 60,
+                "y": 83
+              },
+              {
+                "x": 80,
+                "y": 92
+              },
+              {
+                "x": 100,
+                "y": 95
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Typical PO₂ in the body",
+        "type": "table",
+        "head": [
+          "Location",
+          "PO₂ (mmHg)"
+        ],
+        "rows": [
+          [
+            "Air spaces of the lungs",
+            "100"
+          ],
+          [
+            "Resting muscle",
+            "40"
+          ],
+          [
+            "Hard-working muscle",
+            "20"
+          ]
+        ]
+      }
+    ],
+    "id": "sp104"
+  },
+  {
+    "title": "The Speed of Sound in Gases",
+    "type": "Data Representation",
+    "text": "Sound travels through a gas as a wave of compressions passed from molecule to molecule. Students filled a 10.0 m sealed tube with a gas, made a sharp click at one end, and timed how long the click took to reach a microphone at the other end. From this they found the speed of sound.\n\nFigure 1 shows the speed of sound in air and in helium at five temperatures. Table 1 gives the speed of sound at 20 °C in seven gases, along with the molar mass of each gas (the mass of 6.02 × 10²³ of its molecules or atoms). Helium and argon are made of single atoms; the other gases are made of molecules with two or more atoms.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Speed of sound in air and helium",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Temperature (°C)",
+        "yLabel": "Speed of sound (m/s)",
+        "alt": "Line graph of the speed of sound against temperature for air and helium. Both lines rise steadily as the temperature rises. The helium line lies far above the air line at every temperature and rises more steeply.",
+        "series": [
+          {
+            "name": "Helium",
+            "points": [
+              {
+                "x": -20,
+                "y": 936
+              },
+              {
+                "x": 0,
+                "y": 972
+              },
+              {
+                "x": 20,
+                "y": 1007
+              },
+              {
+                "x": 40,
+                "y": 1041
+              },
+              {
+                "x": 60,
+                "y": 1074
+              }
+            ]
+          },
+          {
+            "name": "Air",
+            "points": [
+              {
+                "x": -20,
+                "y": 319
+              },
+              {
+                "x": 0,
+                "y": 331
+              },
+              {
+                "x": 20,
+                "y": 343
+              },
+              {
+                "x": 40,
+                "y": 355
+              },
+              {
+                "x": 60,
+                "y": 366
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Speed of sound at 20 °C",
+        "type": "table",
+        "head": [
+          "Gas",
+          "Molar mass (g/mol)",
+          "Speed of sound (m/s)"
+        ],
+        "rows": [
+          [
+            "Hydrogen",
+            "2.02",
+            "1306"
+          ],
+          [
+            "Helium",
+            "4.00",
+            "1007"
+          ],
+          [
+            "Nitrogen",
+            "28.01",
+            "349"
+          ],
+          [
+            "Air",
+            "28.97",
+            "343"
+          ],
+          [
+            "Oxygen",
+            "32.00",
+            "326"
+          ],
+          [
+            "Argon",
+            "39.95",
+            "319"
+          ],
+          [
+            "Carbon dioxide",
+            "44.01",
+            "267"
+          ]
+        ]
+      }
+    ],
+    "id": "sp105"
+  },
+  {
+    "title": "Vapor Pressure and Boiling",
+    "type": "Data Representation",
+    "text": "When a liquid sits in a closed container, some of its molecules escape into the space above it until the vapor reaches a steady pressure, called the liquid’s vapor pressure. A liquid boils when its vapor pressure equals the pressure of the air above it.\n\nFigure 1 shows the vapor pressures of water, ethanol and acetone at different temperatures, in kilopascals (kPa). Table 1 gives the average air pressure at different elevations above sea level.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Vapor pressure of three liquids",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Temperature (°C)",
+        "yLabel": "Vapor pressure (kPa)",
+        "alt": "Line graph of vapor pressure against temperature for acetone, ethanol and water. All three curves rise more and more steeply as the temperature increases. Acetone’s curve is highest and stops at 60 °C, ethanol’s is in the middle and stops at 80 °C, and water’s is lowest and continues to 100 °C.",
+        "series": [
+          {
+            "name": "Acetone",
+            "points": [
+              {
+                "x": 0,
+                "y": 9.3
+              },
+              {
+                "x": 20,
+                "y": 24.6
+              },
+              {
+                "x": 40,
+                "y": 56.4
+              },
+              {
+                "x": 60,
+                "y": 115.2
+              }
+            ]
+          },
+          {
+            "name": "Ethanol",
+            "points": [
+              {
+                "x": 0,
+                "y": 1.6
+              },
+              {
+                "x": 20,
+                "y": 5.8
+              },
+              {
+                "x": 40,
+                "y": 17.8
+              },
+              {
+                "x": 60,
+                "y": 46.8
+              },
+              {
+                "x": 70,
+                "y": 72.2
+              },
+              {
+                "x": 80,
+                "y": 108.3
+              }
+            ]
+          },
+          {
+            "name": "Water",
+            "points": [
+              {
+                "x": 0,
+                "y": 0.6
+              },
+              {
+                "x": 20,
+                "y": 2.3
+              },
+              {
+                "x": 40,
+                "y": 7.4
+              },
+              {
+                "x": 60,
+                "y": 19.9
+              },
+              {
+                "x": 70,
+                "y": 31.2
+              },
+              {
+                "x": 80,
+                "y": 47.4
+              },
+              {
+                "x": 90,
+                "y": 70.1
+              },
+              {
+                "x": 100,
+                "y": 101.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Air pressure at different elevations",
+        "type": "table",
+        "head": [
+          "Elevation (m)",
+          "Air pressure (kPa)"
+        ],
+        "rows": [
+          [
+            "0",
+            "101.3"
+          ],
+          [
+            "1500",
+            "84.6"
+          ],
+          [
+            "3000",
+            "70.1"
+          ],
+          [
+            "4500",
+            "57.8"
+          ],
+          [
+            "6000",
+            "47.2"
+          ]
+        ]
+      }
+    ],
+    "id": "sp106"
+  },
+  {
+    "title": "Falling on Other Worlds",
+    "type": "Data Representation",
+    "text": "The acceleration due to gravity, g, at the surface of a planet or moon depends on both its mass and its radius. Table 1 gives the mass, radius and surface value of g for six worlds.\n\nAn object dropped from rest where there is no air speeds up steadily as it falls. Figure 1 shows the distance such an object falls in the first 3 seconds on Earth, Mars and the Moon.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Six worlds",
+        "type": "table",
+        "head": [
+          "World",
+          "Mass (× 10²³ kg)",
+          "Radius (km)",
+          "g (m/s²)"
+        ],
+        "rows": [
+          [
+            "Moon",
+            "0.735",
+            "1737",
+            "1.62"
+          ],
+          [
+            "Titan",
+            "1.35",
+            "2575",
+            "1.35"
+          ],
+          [
+            "Ganymede",
+            "1.48",
+            "2634",
+            "1.43"
+          ],
+          [
+            "Mercury",
+            "3.30",
+            "2440",
+            "3.70"
+          ],
+          [
+            "Mars",
+            "6.42",
+            "3390",
+            "3.73"
+          ],
+          [
+            "Earth",
+            "59.7",
+            "6371",
+            "9.82"
+          ]
+        ]
+      },
+      {
+        "label": "Figure 1",
+        "caption": "Distance fallen from rest on three worlds",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Time since release (s)",
+        "yLabel": "Distance fallen (m)",
+        "alt": "Line graph of distance fallen against time on Earth, Mars and the Moon. Each curve starts at zero and bends upward, growing steeper with time. The Earth curve rises fastest, the Mars curve is in the middle, and the Moon curve rises slowest.",
+        "series": [
+          {
+            "name": "Earth",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 0.5,
+                "y": 1.23
+              },
+              {
+                "x": 1,
+                "y": 4.91
+              },
+              {
+                "x": 1.5,
+                "y": 11
+              },
+              {
+                "x": 2,
+                "y": 19.6
+              },
+              {
+                "x": 2.5,
+                "y": 30.7
+              },
+              {
+                "x": 3,
+                "y": 44.2
+              }
+            ]
+          },
+          {
+            "name": "Mars",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 0.5,
+                "y": 0.47
+              },
+              {
+                "x": 1,
+                "y": 1.87
+              },
+              {
+                "x": 1.5,
+                "y": 4.2
+              },
+              {
+                "x": 2,
+                "y": 7.46
+              },
+              {
+                "x": 2.5,
+                "y": 11.7
+              },
+              {
+                "x": 3,
+                "y": 16.8
+              }
+            ]
+          },
+          {
+            "name": "Moon",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 0.5,
+                "y": 0.2
+              },
+              {
+                "x": 1,
+                "y": 0.81
+              },
+              {
+                "x": 1.5,
+                "y": 1.82
+              },
+              {
+                "x": 2,
+                "y": 3.24
+              },
+              {
+                "x": 2.5,
+                "y": 5.06
+              },
+              {
+                "x": 3,
+                "y": 7.29
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "id": "sp107"
+  },
+  {
+    "title": "Birds on Islands",
+    "type": "Data Representation",
+    "text": "Ecologists counted the species of land birds that nest on islands in two groups. Group N lies 20 km from the mainland, and Group R lies 600 km from it. Figure 1 shows the number of species found on islands of different areas in each group.\n\nOver a century of records, the ecologists also counted, for four islands, how many bird species arrived and began nesting and how many species stopped nesting there (Table 1).",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Land bird species and island area",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Island area (km²)",
+        "yLabel": "Number of land bird species",
+        "alt": "Line graph of the number of land bird species against island area for Group N and Group R. Both curves rise steeply over small areas and then more and more gradually. The Group N curve lies above the Group R curve at every area.",
+        "series": [
+          {
+            "name": "Group N",
+            "points": [
+              {
+                "x": 1,
+                "y": 12
+              },
+              {
+                "x": 16,
+                "y": 24
+              },
+              {
+                "x": 81,
+                "y": 36
+              },
+              {
+                "x": 256,
+                "y": 48
+              },
+              {
+                "x": 625,
+                "y": 60
+              },
+              {
+                "x": 1296,
+                "y": 72
+              }
+            ]
+          },
+          {
+            "name": "Group R",
+            "points": [
+              {
+                "x": 1,
+                "y": 6
+              },
+              {
+                "x": 16,
+                "y": 12
+              },
+              {
+                "x": 81,
+                "y": 18
+              },
+              {
+                "x": 256,
+                "y": 24
+              },
+              {
+                "x": 625,
+                "y": 30
+              },
+              {
+                "x": 1296,
+                "y": 36
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Species arriving and lost in a century",
+        "type": "table",
+        "head": [
+          "Island",
+          "Group",
+          "Area (km²)",
+          "Land bird species",
+          "Species arriving per century",
+          "Species lost per century"
+        ],
+        "rows": [
+          [
+            "Ash",
+            "N",
+            "81",
+            "36",
+            "12",
+            "12"
+          ],
+          [
+            "Bray",
+            "N",
+            "625",
+            "60",
+            "10",
+            "10"
+          ],
+          [
+            "Cole",
+            "R",
+            "81",
+            "18",
+            "4",
+            "4"
+          ],
+          [
+            "Dunn",
+            "R",
+            "625",
+            "30",
+            "3",
+            "3"
+          ]
+        ]
+      }
+    ],
+    "id": "sp108"
+  },
+  {
+    "title": "Solutions That Conduct Electricity",
+    "type": "Data Representation",
+    "text": "A solution carries an electric current only if it contains ions, which move toward the oppositely charged electrodes. Its electrical conductivity, measured in millisiemens per centimeter (mS/cm), shows how well it carries current.\n\nStudents measured the conductivity of solutions of hydrochloric acid (HCl), sodium chloride (NaCl) and acetic acid (CH₃COOH) at different concentrations at 25 °C. Figure 1 shows the results for HCl and NaCl, and Figure 2 shows the results for acetic acid. Table 1 gives the percent of acetic acid molecules that split into ions at each concentration; HCl and NaCl split completely. A sugar solution had a conductivity below 0.01 mS/cm at every concentration tested.",
+    "figures": [
+      {
+        "label": "Figure 1",
+        "caption": "Conductivity of HCl and NaCl solutions",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Concentration (mol/L)",
+        "yLabel": "Conductivity (mS/cm)",
+        "alt": "Line graph of conductivity against concentration for HCl and NaCl. Both lines start at zero and rise almost in a straight line, bending slightly downward. The HCl line rises far more steeply than the NaCl line.",
+        "series": [
+          {
+            "name": "HCl",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 0.02,
+                "y": 8.07
+              },
+              {
+                "x": 0.04,
+                "y": 15.76
+              },
+              {
+                "x": 0.06,
+                "y": 23.21
+              },
+              {
+                "x": 0.08,
+                "y": 30.46
+              },
+              {
+                "x": 0.1,
+                "y": 37.54
+              }
+            ]
+          },
+          {
+            "name": "NaCl",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 0.02,
+                "y": 2.28
+              },
+              {
+                "x": 0.04,
+                "y": 4.34
+              },
+              {
+                "x": 0.06,
+                "y": 6.28
+              },
+              {
+                "x": 0.08,
+                "y": 8.1
+              },
+              {
+                "x": 0.1,
+                "y": 9.83
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Figure 2",
+        "caption": "Conductivity of acetic acid solutions",
+        "type": "chart",
+        "kind": "line",
+        "xLabel": "Concentration (mol/L)",
+        "yLabel": "Conductivity (mS/cm)",
+        "alt": "Line graph of conductivity against concentration for acetic acid. The curve starts at zero, rises steeply at first and then more and more gradually, so it bends strongly downward. All its values are well under 1 mS/cm.",
+        "series": [
+          {
+            "name": "Acetic acid",
+            "points": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 0.02,
+                "y": 0.231
+              },
+              {
+                "x": 0.04,
+                "y": 0.327
+              },
+              {
+                "x": 0.06,
+                "y": 0.4
+              },
+              {
+                "x": 0.08,
+                "y": 0.462
+              },
+              {
+                "x": 0.1,
+                "y": 0.517
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1",
+        "caption": "Acetic acid molecules that split into ions",
+        "type": "table",
+        "head": [
+          "Concentration (mol/L)",
+          "Molecules split into ions (%)"
+        ],
+        "rows": [
+          [
+            "0.02",
+            "2.96"
+          ],
+          [
+            "0.04",
+            "2.09"
+          ],
+          [
+            "0.06",
+            "1.71"
+          ],
+          [
+            "0.08",
+            "1.48"
+          ],
+          [
+            "0.10",
+            "1.32"
+          ]
+        ]
+      }
+    ],
+    "id": "sp109"
+  },
+  {
+    "title": "Images Formed by Lenses",
+    "type": "Research Summaries",
+    "text": "A convex lens bends light so that it can form an image of an object on a screen. Students placed a glowing arrow 4.0 cm tall on one side of a convex lens and a white screen on the other. For each position of the arrow, they moved the screen until the image on it was sharp, then measured the image distance (from the lens to the screen). The object distance is the distance from the arrow to the lens.\n\nExperiment 1. The arrow was placed at five distances from Lens A, whose focal length is 10.0 cm (Table 1).\n\nExperiment 2. Experiment 1 was repeated with Lens B, whose focal length is 20.0 cm (Table 2).\n\nExperiment 3. With Lens A, the height of the sharp image was measured for four object distances. The arrow was also placed 8.0 cm from Lens A, but no sharp image formed on the screen at any distance (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: Lens A (focal length 10.0 cm)",
+        "type": "table",
+        "head": [
+          "Object distance (cm)",
+          "Image distance (cm)"
+        ],
+        "rows": [
+          [
+            "15",
+            "30.0"
+          ],
+          [
+            "20",
+            "20.0"
+          ],
+          [
+            "30",
+            "15.0"
+          ],
+          [
+            "40",
+            "13.3"
+          ],
+          [
+            "60",
+            "12.0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: Lens B (focal length 20.0 cm)",
+        "type": "table",
+        "head": [
+          "Object distance (cm)",
+          "Image distance (cm)"
+        ],
+        "rows": [
+          [
+            "30",
+            "60.0"
+          ],
+          [
+            "40",
+            "40.0"
+          ],
+          [
+            "60",
+            "30.0"
+          ],
+          [
+            "80",
+            "26.7"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: Lens A, arrow 4.0 cm tall",
+        "type": "table",
+        "head": [
+          "Object distance (cm)",
+          "Image height (cm)"
+        ],
+        "rows": [
+          [
+            "8",
+            "No sharp image"
+          ],
+          [
+            "15",
+            "8.0"
+          ],
+          [
+            "20",
+            "4.0"
+          ],
+          [
+            "30",
+            "2.0"
+          ],
+          [
+            "60",
+            "0.8"
+          ]
+        ]
+      }
+    ],
+    "id": "sp110"
+  },
+  {
+    "title": "Counting Stomata",
+    "type": "Research Summaries",
+    "text": "Stomata are tiny pores in a leaf’s surface. Carbon dioxide for photosynthesis enters through them, and water vapor escapes through them.\n\nExperiment 1. Students painted clear nail polish on the upper and lower surfaces of leaves from four kinds of plants, peeled off the dried polish, and counted the stomata imprinted on it under a microscope. Each count was made in one field of view with an area of 0.125 mm², and Table 1 gives the average of 10 counts.\n\nExperiment 2. Bean plants were grown in chambers with different concentrations of carbon dioxide, in parts per million (ppm). The number of stomata per mm² on the lower surface of their leaves was then found as in Experiment 1 (Table 2).\n\nExperiment 3. Leaves were collected from the top of one oak tree, in full sun, and from its lowest branches, in deep shade. The stomata on their lower surfaces were counted as in Experiment 1, and the area of each leaf was measured (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: stomata in one field of view (0.125 mm²)",
+        "type": "table",
+        "head": [
+          "Plant",
+          "Upper surface",
+          "Lower surface"
+        ],
+        "rows": [
+          [
+            "Bean",
+            "6",
+            "35"
+          ],
+          [
+            "Oak",
+            "0",
+            "50"
+          ],
+          [
+            "Corn",
+            "12",
+            "15"
+          ],
+          [
+            "Water lily",
+            "55",
+            "0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: bean plants",
+        "type": "table",
+        "head": [
+          "Carbon dioxide (ppm)",
+          "Stomata on lower surface (per mm²)"
+        ],
+        "rows": [
+          [
+            "280",
+            "330"
+          ],
+          [
+            "400",
+            "280"
+          ],
+          [
+            "560",
+            "240"
+          ],
+          [
+            "800",
+            "210"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: leaves from one oak tree",
+        "type": "table",
+        "head": [
+          "Position on tree",
+          "Stomata in one field of view, lower surface",
+          "Average leaf area (cm²)"
+        ],
+        "rows": [
+          [
+            "Full sun",
+            "60",
+            "32"
+          ],
+          [
+            "Deep shade",
+            "40",
+            "58"
+          ]
+        ]
+      }
+    ],
+    "id": "sp111"
+  },
+  {
+    "title": "Heat from Neutralization",
+    "type": "Research Summaries",
+    "text": "When an acid and a base react, heat is released. In each trial below, students poured two solutions, both at 21.0 °C, into a foam cup with a lid, stirred, and recorded the highest temperature reached. Assume every solution has a density of 1.00 g/mL and a specific heat of 4.18 J/(g·°C).\n\nExperiment 1. 50.0 mL of hydrochloric acid (HCl) was mixed with 50.0 mL of sodium hydroxide (NaOH) solution of the same concentration (Table 1).\n\nExperiment 2. 50.0 mL of 1.00 mol/L HCl was mixed with different volumes of 1.00 mol/L NaOH (Table 2).\n\nExperiment 3. 50.0 mL of 1.00 mol/L NaOH was mixed with 50.0 mL of a 1.00 mol/L acid or of pure water (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: 50.0 mL acid + 50.0 mL base",
+        "type": "table",
+        "head": [
+          "Concentration of each solution (mol/L)",
+          "Highest temperature (°C)"
+        ],
+        "rows": [
+          [
+            "0.50",
+            "24.4"
+          ],
+          [
+            "1.00",
+            "27.8"
+          ],
+          [
+            "1.50",
+            "31.2"
+          ],
+          [
+            "2.00",
+            "34.7"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: 50.0 mL of 1.00 mol/L HCl",
+        "type": "table",
+        "head": [
+          "Volume of NaOH added (mL)",
+          "Highest temperature (°C)"
+        ],
+        "rows": [
+          [
+            "10",
+            "23.3"
+          ],
+          [
+            "25",
+            "25.6"
+          ],
+          [
+            "50",
+            "27.8"
+          ],
+          [
+            "75",
+            "26.5"
+          ],
+          [
+            "100",
+            "25.6"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: 50.0 mL of 1.00 mol/L NaOH",
+        "type": "table",
+        "head": [
+          "Added to the NaOH",
+          "Highest temperature (°C)"
+        ],
+        "rows": [
+          [
+            "Hydrochloric acid",
+            "27.8"
+          ],
+          [
+            "Nitric acid",
+            "27.9"
+          ],
+          [
+            "Acetic acid",
+            "27.7"
+          ],
+          [
+            "Pure water",
+            "21.0"
+          ]
+        ]
+      }
+    ],
+    "id": "sp112"
+  },
+  {
+    "title": "Water in Sediments",
+    "type": "Research Summaries",
+    "text": "Groundwater fills the pore spaces between sediment grains. Porosity is the percent of a sediment’s volume that is pore space. Permeability describes how easily water flows through a sediment. Students tested four sediments, each with grains of nearly one size.\n\nExperiment 1. A cylinder was filled with 500 mL of a dry sediment. Water was poured in slowly until it just reached the top of the sediment, and the volume of water added was recorded (Table 1).\n\nExperiment 2. Each sediment was packed into a tube 30 cm long with a screen at the bottom, and wet through. Then 200 mL of water was poured on top, and the time for all of it to drain out was recorded (Table 2).\n\nExperiment 3. Gravel and fine sand were mixed in different proportions, and the mixtures were tested as in Experiments 1 and 2 (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: 500 mL of dry sediment",
+        "type": "table",
+        "head": [
+          "Sediment",
+          "Grain diameter (mm)",
+          "Water added (mL)"
+        ],
+        "rows": [
+          [
+            "Gravel",
+            "4.0",
+            "190"
+          ],
+          [
+            "Coarse sand",
+            "1.0",
+            "185"
+          ],
+          [
+            "Medium sand",
+            "0.50",
+            "195"
+          ],
+          [
+            "Fine sand",
+            "0.25",
+            "200"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: 200 mL of water",
+        "type": "table",
+        "head": [
+          "Sediment",
+          "Time to drain (s)"
+        ],
+        "rows": [
+          [
+            "Gravel",
+            "2.0"
+          ],
+          [
+            "Coarse sand",
+            "32"
+          ],
+          [
+            "Medium sand",
+            "128"
+          ],
+          [
+            "Fine sand",
+            "512"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: gravel and fine sand mixtures",
+        "type": "table",
+        "head": [
+          "Fine sand in mixture (% by volume)",
+          "Porosity (%)",
+          "Time to drain (s)"
+        ],
+        "rows": [
+          [
+            "0",
+            "38",
+            "2.0"
+          ],
+          [
+            "15",
+            "31",
+            "60"
+          ],
+          [
+            "30",
+            "25",
+            "300"
+          ],
+          [
+            "50",
+            "29",
+            "420"
+          ],
+          [
+            "100",
+            "40",
+            "512"
+          ]
+        ]
+      }
+    ],
+    "id": "sp113"
+  },
+  {
+    "title": "Blocks on a Tilting Ramp",
+    "type": "Research Summaries",
+    "text": "A block resting on a ramp stays put until the ramp is tilted steeply enough, then begins to slide. Students placed blocks on a wooden board and slowly raised one end until the block began to slide, recording that angle, the slip angle. Each result is the average of 5 trials. The coefficient of static friction, μ, a measure of how strongly two surfaces grip, equals the tangent of the slip angle (Table 4).\n\nExperiment 1. Four 200 g blocks of the same size, each with a different material glued to its bottom face, were tested (Table 1).\n\nExperiment 2. Wooden blocks of four masses, all with the same bottom-face area, were tested (Table 2).\n\nExperiment 3. One 200 g wooden block was tested resting on each of its three differently sized faces (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: 200 g blocks",
+        "type": "table",
+        "head": [
+          "Bottom material",
+          "Slip angle (°)"
+        ],
+        "rows": [
+          [
+            "Plastic",
+            "15"
+          ],
+          [
+            "Felt",
+            "20"
+          ],
+          [
+            "Wood",
+            "27"
+          ],
+          [
+            "Rubber",
+            "39"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: wooden blocks",
+        "type": "table",
+        "head": [
+          "Mass (g)",
+          "Slip angle (°)"
+        ],
+        "rows": [
+          [
+            "100",
+            "27"
+          ],
+          [
+            "200",
+            "26"
+          ],
+          [
+            "400",
+            "27"
+          ],
+          [
+            "800",
+            "27"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: 200 g wooden block",
+        "type": "table",
+        "head": [
+          "Area of face touching ramp (cm²)",
+          "Slip angle (°)"
+        ],
+        "rows": [
+          [
+            "10",
+            "26"
+          ],
+          [
+            "20",
+            "27"
+          ],
+          [
+            "50",
+            "27"
+          ]
+        ]
+      },
+      {
+        "label": "Table 4",
+        "caption": "Tangents of angles",
+        "type": "table",
+        "head": [
+          "Angle (°)",
+          "Tangent"
+        ],
+        "rows": [
+          [
+            "15",
+            "0.27"
+          ],
+          [
+            "20",
+            "0.36"
+          ],
+          [
+            "27",
+            "0.51"
+          ],
+          [
+            "39",
+            "0.81"
+          ]
+        ]
+      }
+    ],
+    "id": "sp114"
+  },
+  {
+    "title": "Diffusion into Agar Cubes",
+    "type": "Research Summaries",
+    "text": "Cells take in materials by diffusion across their surfaces. To model this, students made agar gelatin containing phenolphthalein and a little sodium hydroxide, which turns it pink. When the agar is soaked in vinegar, acid diffuses inward, and the agar turns colorless wherever the acid has reached.\n\nExperiment 1. Cubes 2.0 cm on a side were soaked in vinegar at 20 °C. At five times, a cube was removed and cut in half, and the depth of its colorless outer layer was measured (Table 1).\n\nExperiment 2. Cubes of four sizes were soaked in vinegar at 20 °C for 10 minutes. Each was cut into thin slices, and the percent of its volume that had turned colorless was found (Table 2).\n\nExperiment 3. Cubes 2.0 cm on a side were soaked for 9 minutes in vinegar at three temperatures (Table 3).",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Experiment 1: 2.0 cm cubes at 20 °C",
+        "type": "table",
+        "head": [
+          "Time (min)",
+          "Depth of colorless layer (mm)"
+        ],
+        "rows": [
+          [
+            "1",
+            "1.0"
+          ],
+          [
+            "4",
+            "2.0"
+          ],
+          [
+            "9",
+            "3.0"
+          ],
+          [
+            "16",
+            "4.0"
+          ],
+          [
+            "25",
+            "5.0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Experiment 2: 10 minutes at 20 °C",
+        "type": "table",
+        "head": [
+          "Side of cube (cm)",
+          "Surface area (cm²)",
+          "Volume (cm³)",
+          "Volume turned colorless (%)"
+        ],
+        "rows": [
+          [
+            "1",
+            "6",
+            "1",
+            "95.0"
+          ],
+          [
+            "2",
+            "24",
+            "8",
+            "68.0"
+          ],
+          [
+            "3",
+            "54",
+            "27",
+            "50.8"
+          ],
+          [
+            "4",
+            "96",
+            "64",
+            "40.3"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Experiment 3: 2.0 cm cubes, 9 minutes",
+        "type": "table",
+        "head": [
+          "Temperature of vinegar (°C)",
+          "Depth of colorless layer (mm)"
+        ],
+        "rows": [
+          [
+            "10",
+            "2.6"
+          ],
+          [
+            "20",
+            "3.0"
+          ],
+          [
+            "30",
+            "3.4"
+          ]
+        ]
+      }
+    ],
+    "id": "sp115"
+  },
+  {
+    "title": "What Causes the Seasons?",
+    "type": "Conflicting Viewpoints",
+    "intro": "Earth’s distance from the Sun changes slightly over the year, and its axis is tilted 23.4° from upright relative to its orbit. Table 1 gives Earth’s distance from the Sun on two dates and the power of the sunlight reaching each square meter at the top of the atmosphere, facing the Sun. Table 2 gives average temperatures in two cities, one in each hemisphere. Table 3 gives the height of the noon Sun above the horizon and the hours of daylight at 40° N on two dates. Earth’s radius is 6371 km. Three students explain the seasons.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Earth’s distance from the Sun",
+        "type": "table",
+        "head": [
+          "Date",
+          "Distance from the Sun (million km)",
+          "Sunlight at top of atmosphere (W/m²)"
+        ],
+        "rows": [
+          [
+            "January 3",
+            "147.1",
+            "1408"
+          ],
+          [
+            "July 4",
+            "152.1",
+            "1317"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Average monthly temperatures",
+        "type": "table",
+        "head": [
+          "City",
+          "Latitude",
+          "January (°C)",
+          "July (°C)"
+        ],
+        "rows": [
+          [
+            "Chicago",
+            "42° N",
+            "−3",
+            "24"
+          ],
+          [
+            "Buenos Aires",
+            "35° S",
+            "25",
+            "11"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "The Sun at 40° N",
+        "type": "table",
+        "head": [
+          "Date",
+          "Height of noon Sun above horizon (°)",
+          "Hours of daylight"
+        ],
+        "rows": [
+          [
+            "June 21",
+            "73.4",
+            "14.8"
+          ],
+          [
+            "December 21",
+            "26.6",
+            "9.2"
+          ]
+        ]
+      },
+      {
+        "label": "Student 1",
+        "caption": "Distance",
+        "type": "note",
+        "text": "Earth’s orbit is not a perfect circle. When Earth is nearest the Sun, the sunlight reaching it is strongest, and it is summer; when Earth is farthest away, the sunlight is weakest, and it is winter."
+      },
+      {
+        "label": "Student 2",
+        "caption": "Tilt and sunlight",
+        "type": "note",
+        "text": "Because Earth’s axis is tilted, for half the year the Northern Hemisphere leans toward the Sun and for the other half the Southern Hemisphere does. The hemisphere leaning toward the Sun sees the Sun higher in the sky, so its sunlight strikes the ground more directly, and its days are longer. That hemisphere has summer while the other has winter."
+      },
+      {
+        "label": "Student 3",
+        "caption": "Tilt and distance",
+        "type": "note",
+        "text": "The seasons come from the tilt, as Student 2 says, but not because of the angle of the sunlight. A hemisphere leaning toward the Sun is brought closer to it than the other hemisphere, and being closer, it receives stronger sunlight and has summer."
+      }
+    ],
+    "id": "sp116"
+  },
+  {
+    "title": "Why Do Giraffes Have Long Necks?",
+    "type": "Conflicting Viewpoints",
+    "intro": "An adult giraffe’s neck can be about 2 m long. Table 1 compares adult male and female giraffes in one population. Table 2 gives the percent of their feeding time that males and females in that population spent eating leaves at different heights during the dry season, when leaves are scarce. Table 3 gives the percent of feeding time that all adults, equal numbers of males and females, spent eating leaves above 4.0 m in the wet and dry seasons. Two scientists explain how the long neck evolved.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Adult giraffes",
+        "type": "table",
+        "head": [
+          "Sex",
+          "Body mass (kg)",
+          "Neck length (m)",
+          "Neck mass (kg)"
+        ],
+        "rows": [
+          [
+            "Male",
+            "1200",
+            "2.0",
+            "110"
+          ],
+          [
+            "Female",
+            "830",
+            "1.6",
+            "60"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Feeding height in the dry season",
+        "type": "table",
+        "head": [
+          "Height of leaves eaten",
+          "Males (% of feeding time)",
+          "Females (% of feeding time)"
+        ],
+        "rows": [
+          [
+            "Below 2.5 m",
+            "20",
+            "50"
+          ],
+          [
+            "2.5 m to 4.0 m",
+            "45",
+            "42"
+          ],
+          [
+            "Above 4.0 m",
+            "35",
+            "8"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Feeding above 4.0 m, all adults",
+        "type": "table",
+        "head": [
+          "Season",
+          "Feeding time above 4.0 m (%)"
+        ],
+        "rows": [
+          [
+            "Wet",
+            "9"
+          ],
+          [
+            "Dry",
+            "22"
+          ]
+        ]
+      },
+      {
+        "label": "Scientist 1",
+        "caption": "Reaching food",
+        "type": "note",
+        "text": "Long necks evolved because giraffes compete for leaves with each other and with shorter browsers. When leaves are scarce, a giraffe that can reach higher than its rivals gets more food and leaves more young. Males and females both have to eat, so the advantage applies equally to both sexes, and their necks should be in the same proportion to their bodies."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "Fighting",
+        "type": "note",
+        "text": "Long necks evolved because male giraffes fight for mates by swinging their necks and clubbing each other with their heads. Males with longer, heavier necks win more fights and father more young. Females do not fight this way, so males’ necks should be larger in proportion to their bodies than females’ necks. Most feeding takes place well below the reach of a giraffe’s neck."
+      }
+    ],
+    "id": "sp117"
+  },
+  {
+    "title": "Why Is the Sky Blue?",
+    "type": "Conflicting Viewpoints",
+    "intro": "Sunlight contains every color of visible light, from violet light with a wavelength of 400 nanometers (nm) to red light at 700 nm. Light that bounces off particles in the air in all directions is said to be scattered. Table 1 gives how strongly air molecules scatter light of different wavelengths, compared with red light at 700 nm. Table 2 describes the sky overhead on clear days under different conditions. Table 3 gives the color of light scattered by water droplets of different sizes in a laboratory. Three scientists explain the color of the sky.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Scattering by air molecules",
+        "type": "table",
+        "head": [
+          "Wavelength (nm)",
+          "Color",
+          "Scattering compared with 700 nm"
+        ],
+        "rows": [
+          [
+            "400",
+            "Violet",
+            "9.4"
+          ],
+          [
+            "450",
+            "Blue",
+            "5.9"
+          ],
+          [
+            "500",
+            "Green",
+            "3.8"
+          ],
+          [
+            "550",
+            "Yellow",
+            "2.6"
+          ],
+          [
+            "600",
+            "Orange",
+            "1.9"
+          ],
+          [
+            "650",
+            "Red",
+            "1.4"
+          ],
+          [
+            "700",
+            "Red",
+            "1.0"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "The sky overhead",
+        "type": "table",
+        "head": [
+          "Conditions",
+          "Color of the sky"
+        ],
+        "rows": [
+          [
+            "Over a large desert, far from any ocean",
+            "Blue"
+          ],
+          [
+            "After rain has washed most dust from the air",
+            "Deep blue"
+          ],
+          [
+            "On a hazy day with many fine water droplets in the air",
+            "Pale, whitish blue"
+          ],
+          [
+            "From a balloon at 35 km, above 99% of the air",
+            "Nearly black"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Light scattered by water droplets",
+        "type": "table",
+        "head": [
+          "Droplet diameter (µm)",
+          "Color of scattered light"
+        ],
+        "rows": [
+          [
+            "0.05",
+            "Blue"
+          ],
+          [
+            "0.5",
+            "Bluish white"
+          ],
+          [
+            "5",
+            "White"
+          ],
+          [
+            "50",
+            "White"
+          ]
+        ]
+      },
+      {
+        "label": "Scientist 1",
+        "caption": "Reflected ocean",
+        "type": "note",
+        "text": "The sky is blue because the air reflects the color of the oceans, which cover most of Earth’s surface. Sunlight carries the blue of the sea up into the sky."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "Dust and droplets",
+        "type": "note",
+        "text": "The sky is blue because tiny particles of dust and water floating in the air scatter sunlight, and they scatter blue light more than red light. The more of these particles there are, the bluer the sky."
+      },
+      {
+        "label": "Scientist 3",
+        "caption": "Air itself",
+        "type": "note",
+        "text": "The sky is blue because the molecules of the air itself, mostly nitrogen and oxygen, scatter sunlight, and they scatter short wavelengths far more strongly than long ones. Dust and water droplets are much larger than air molecules; they scatter all colors about equally and so make the sky paler and whiter, not bluer."
+      }
+    ],
+    "id": "sp118"
+  },
+  {
+    "title": "What Is Inside an Atom?",
+    "type": "Conflicting Viewpoints",
+    "intro": "In a famous series of experiments, physicists fired alpha particles, which are positively charged and about 7300 times as massive as an electron, at a very thin gold foil. A screen around the foil flashed wherever an alpha particle struck it, so the number deflected through each angle could be counted. Table 1 gives the counts at seven angles for one foil. Table 2 gives the number deflected by more than 90° for foils of four thicknesses. Table 3 gives sizes measured in later experiments. Two scientists of the time explain how an atom is built.",
+    "figures": [
+      {
+        "label": "Table 1",
+        "caption": "Alpha particles deflected by a gold foil",
+        "type": "table",
+        "head": [
+          "Angle of deflection (°)",
+          "Particles counted per minute"
+        ],
+        "rows": [
+          [
+            "15",
+            "89,900"
+          ],
+          [
+            "30",
+            "5820"
+          ],
+          [
+            "45",
+            "1220"
+          ],
+          [
+            "60",
+            "418"
+          ],
+          [
+            "90",
+            "104"
+          ],
+          [
+            "120",
+            "46"
+          ],
+          [
+            "150",
+            "30"
+          ]
+        ]
+      },
+      {
+        "label": "Table 2",
+        "caption": "Deflections of more than 90°",
+        "type": "table",
+        "head": [
+          "Foil thickness (µm)",
+          "Particles counted per minute"
+        ],
+        "rows": [
+          [
+            "0.2",
+            "41"
+          ],
+          [
+            "0.4",
+            "82"
+          ],
+          [
+            "0.6",
+            "123"
+          ],
+          [
+            "0.8",
+            "164"
+          ]
+        ]
+      },
+      {
+        "label": "Table 3",
+        "caption": "Sizes from later experiments",
+        "type": "table",
+        "head": [
+          "Object",
+          "Radius (m)"
+        ],
+        "rows": [
+          [
+            "Gold atom",
+            "1.44 × 10⁻¹⁰"
+          ],
+          [
+            "Gold nucleus",
+            "7.3 × 10⁻¹⁵"
+          ]
+        ]
+      },
+      {
+        "label": "Scientist 1",
+        "caption": "Spread-out charge",
+        "type": "note",
+        "text": "An atom is a ball of positive charge spread evenly through its whole volume, with the negative electrons scattered through it like seeds in a fruit. An alpha particle passing through such an atom feels only weak, balanced forces and is deflected very slightly. A large deflection can only build up from many small ones in a row, so large deflections should be extremely rare in a thin foil and should grow far faster than the foil’s thickness."
+      },
+      {
+        "label": "Scientist 2",
+        "caption": "A tiny nucleus",
+        "type": "note",
+        "text": "Nearly all of an atom’s mass and all of its positive charge sit in a tiny nucleus at its center, with the electrons moving around it through what is otherwise empty space. Most alpha particles pass far from any nucleus and go nearly straight, but one that comes very close to a nucleus is pushed away sharply, even backward, in a single encounter. In a thin foil, the number deflected by large angles should therefore be proportional to the foil’s thickness."
+      }
+    ],
+    "id": "sp119"
   }
 ]

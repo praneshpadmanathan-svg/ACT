@@ -29632,5 +29632,3701 @@
       "C": "That is ordinary hydrogen.",
       "D": "A nucleus with two protons is helium, so that would be a form of helium."
     }
+  },
+  {
+    "id": "s841",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp104",
+    "context": "According to Figure 1, what was the percent saturation of hemoglobin in blood at pH 7.4 when PO₂ was 40 mmHg?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "63%"
+      },
+      {
+        "id": "B",
+        "text": "58%"
+      },
+      {
+        "id": "C",
+        "text": "90%"
+      },
+      {
+        "id": "D",
+        "text": "75%"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the pH 7.2 curve at 40 mmHg; the pH 7.4 curve is the upper one.",
+      "B": "That is the pH 7.4 curve at 30 mmHg, one point to the left.",
+      "C": "That is the pH 7.4 curve at 60 mmHg.",
+      "D": "Correct — the pH 7.4 curve reads 75% at 40 mmHg."
+    }
+  },
+  {
+    "id": "s842",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp104",
+    "context": "According to Figure 1, as PO₂ increased from 10 mmHg to 100 mmHg, the percent saturation of hemoglobin at pH 7.2:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "increased and then decreased."
+      },
+      {
+        "id": "B",
+        "text": "stayed about the same."
+      },
+      {
+        "id": "C",
+        "text": "increased only."
+      },
+      {
+        "id": "D",
+        "text": "decreased only."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The curve levels off near the top, but it does not turn downward.",
+      "B": "Saturation changed from 4% to 95%, a very large change.",
+      "C": "Correct — the pH 7.2 curve rises at every step, steeply at first and then more gently.",
+      "D": "The curve rises from 4% to 95%; it never falls."
+    }
+  },
+  {
+    "id": "s843",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "hard",
+    "passage": "sp104",
+    "context": "Based on Figure 1, Table 1 and the passage, what is the percent saturation of hemoglobin in blood passing through a hard-working muscle?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "75%"
+      },
+      {
+        "id": "B",
+        "text": "21%"
+      },
+      {
+        "id": "C",
+        "text": "31%"
+      },
+      {
+        "id": "D",
+        "text": "63%"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the pH 7.4 curve at 40 mmHg, which matches resting muscle on both counts.",
+      "B": "Correct — Table 1 gives a PO₂ of 20 mmHg in a hard-working muscle, and the passage says the blood there has a pH of about 7.2. The pH 7.2 curve reads 21% at 20 mmHg.",
+      "C": "That reads the pH 7.4 curve; the passage says blood in a hard-working muscle drops to about pH 7.2.",
+      "D": "That is the pH 7.2 curve at 40 mmHg, the PO₂ of resting muscle, not hard-working muscle."
+    }
+  },
+  {
+    "id": "s844",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp104",
+    "context": "Blood at pH 7.4 leaves the lungs and passes through resting muscle without changing pH. Based on Figure 1 and Table 1, by how many percentage points does its saturation fall?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "22"
+      },
+      {
+        "id": "B",
+        "text": "60"
+      },
+      {
+        "id": "C",
+        "text": "75"
+      },
+      {
+        "id": "D",
+        "text": "66"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — at the lungs’ 100 mmHg the saturation is 97%, and at resting muscle’s 40 mmHg it is 75%. 97 − 75 is 22 percentage points.",
+      "B": "That is the difference in PO₂, 100 − 40 mmHg, not the difference in saturation.",
+      "C": "That is the saturation in resting muscle, not how much it fell.",
+      "D": "That subtracts the saturation in a hard-working muscle at pH 7.4, 31%, from 97%; the blood here goes to resting muscle."
+    }
+  },
+  {
+    "id": "s845",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp104",
+    "context": "At rest, a person’s heart pumps 5.0 L of blood each minute. If the blood is 97% saturated as it leaves the lungs and 75% saturated as it leaves the tissues, about how much oxygen do the tissues receive each minute?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "22 mL"
+      },
+      {
+        "id": "B",
+        "text": "970 mL"
+      },
+      {
+        "id": "C",
+        "text": "1000 mL"
+      },
+      {
+        "id": "D",
+        "text": "220 mL"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That treats 20 mL per 100 mL of blood as 20 mL per liter, so it is ten times too small.",
+      "B": "That is the oxygen the blood carries out of the lungs, not the part the tissues remove.",
+      "C": "That is all the oxygen fully saturated blood could carry, not the amount handed over.",
+      "D": "Correct — 5.0 L is 5000 mL, which carries 5000 × 20 ÷ 100 = 1000 mL of oxygen when fully saturated. The tissues take 97% − 75% = 22% of that, or 220 mL."
+    }
+  },
+  {
+    "id": "s846",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp104",
+    "context": "A student predicted that lowering the pH of blood makes hemoglobin hold less oxygen at the same PO₂. Do the data in Figure 1 support this prediction?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No; saturation was higher at pH 7.2 than at pH 7.4."
+      },
+      {
+        "id": "B",
+        "text": "No; at 100 mmHg, both curves reached 100%."
+      },
+      {
+        "id": "C",
+        "text": "Yes; at 40 mmHg, saturation was 63% at pH 7.2 and 75% at pH 7.4."
+      },
+      {
+        "id": "D",
+        "text": "Yes; at 40 mmHg, saturation was 75% at pH 7.2 but 63% at pH 7.4."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The pH 7.2 curve lies below the pH 7.4 curve at every PO₂ shown.",
+      "B": "Neither curve reached 100%, and they differ at every PO₂, including 100 mmHg.",
+      "C": "Correct — at every PO₂ shown, the lower-pH blood was less saturated, as at 40 mmHg.",
+      "D": "That swaps the two curves; the pH 7.2 curve is the lower one."
+    }
+  },
+  {
+    "id": "s847",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp104",
+    "context": "The carbon dioxide that lowers the pH of blood in a hard-working muscle is produced mainly by:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the lungs, which add it to the blood."
+      },
+      {
+        "id": "B",
+        "text": "cellular respiration."
+      },
+      {
+        "id": "C",
+        "text": "photosynthesis in the muscle cells."
+      },
+      {
+        "id": "D",
+        "text": "hemoglobin breaking apart in the blood."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The lungs remove carbon dioxide from the blood; they do not add it.",
+      "B": "Correct — muscle cells break down glucose with oxygen to release energy, giving off carbon dioxide, which forms carbonic acid in the blood.",
+      "C": "Animal cells do not carry out photosynthesis, which uses up carbon dioxide rather than making it.",
+      "D": "Hemoglobin carries oxygen; it is not broken down to make carbon dioxide."
+    }
+  },
+  {
+    "id": "s848",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp105",
+    "context": "According to Table 1, what is the speed of sound in oxygen at 20 °C?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "326 m/s"
+      },
+      {
+        "id": "B",
+        "text": "349 m/s"
+      },
+      {
+        "id": "C",
+        "text": "319 m/s"
+      },
+      {
+        "id": "D",
+        "text": "32 m/s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 1 lists 326 m/s for oxygen.",
+      "B": "That is the speed in nitrogen, the row above air.",
+      "C": "That is the speed in argon, the row below oxygen.",
+      "D": "That is oxygen’s molar mass in g/mol, from the wrong column, given the wrong unit."
+    }
+  },
+  {
+    "id": "s849",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "easy",
+    "passage": "sp105",
+    "context": "According to Figure 1, by about how much did the speed of sound in air increase for each 20 °C rise in temperature?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "35 m/s"
+      },
+      {
+        "id": "B",
+        "text": "20 m/s"
+      },
+      {
+        "id": "C",
+        "text": "0.6 m/s"
+      },
+      {
+        "id": "D",
+        "text": "12 m/s"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the rise for helium, the upper line.",
+      "B": "That is the size of each temperature step in °C, not the change in speed.",
+      "C": "That is the rise for each 1 °C, not for each 20 °C.",
+      "D": "Correct — the air line rises from 319 to 331 to 343 to 355 to 366 m/s, about 12 m/s for each 20 °C step."
+    }
+  },
+  {
+    "id": "s850",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp105",
+    "context": "Based on Figure 1 and Table 1, in which of the following would sound travel fastest?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Carbon dioxide at 20 °C"
+      },
+      {
+        "id": "B",
+        "text": "Hydrogen at 20 °C"
+      },
+      {
+        "id": "C",
+        "text": "Helium at 60 °C"
+      },
+      {
+        "id": "D",
+        "text": "Air at 60 °C"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Carbon dioxide at 20 °C carries sound at only 267 m/s.",
+      "B": "Correct — sound travels at 1306 m/s in hydrogen at 20 °C, faster than in any of the other choices.",
+      "C": "Helium at 60 °C carries sound at 1074 m/s, the fastest on Figure 1 but slower than hydrogen in Table 1.",
+      "D": "Air at 60 °C carries sound at only 366 m/s."
+    }
+  },
+  {
+    "id": "s851",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp105",
+    "context": "At 20 °C, about how much less time does a click take to travel the 10.0 m tube when it is filled with helium than when it is filled with air?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "19 ms"
+      },
+      {
+        "id": "B",
+        "text": "9.9 ms"
+      },
+      {
+        "id": "C",
+        "text": "29 ms"
+      },
+      {
+        "id": "D",
+        "text": "664 ms"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — in air the click takes 10.0 ÷ 343 = 0.0292 s, or 29.2 ms; in helium it takes 10.0 ÷ 1007 = 0.0099 s, or 9.9 ms. The difference is about 19 ms.",
+      "B": "That is the travel time in helium alone, not how much shorter it is than in air.",
+      "C": "That is the travel time in air alone.",
+      "D": "That is the difference between the two speeds in m/s, 1007 − 343, relabeled as a time."
+    }
+  },
+  {
+    "id": "s852",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp105",
+    "context": "What is the speed of sound in air at 20 °C in kilometers per hour? (1 km = 1000 m; 1 h = 3600 s)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 95 km/h"
+      },
+      {
+        "id": "B",
+        "text": "About 21 km/h"
+      },
+      {
+        "id": "C",
+        "text": "About 1,234,800 km/h"
+      },
+      {
+        "id": "D",
+        "text": "About 1235 km/h"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That divides 343 by 3.6 instead of multiplying, which makes a speed in km/h smaller than the same speed in m/s.",
+      "B": "That uses 60 seconds per hour instead of 3600, converting per minute rather than per hour.",
+      "C": "That converts seconds to hours but leaves the distance in meters.",
+      "D": "Correct — 343 m/s × 3600 s/h = 1,234,800 m/h, and dividing by 1000 m/km gives about 1235 km/h."
+    }
+  },
+  {
+    "id": "s853",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp105",
+    "context": "Student 1 claims sound always travels faster in a gas whose molar mass is lower. Student 2 claims it always travels faster in a gas made of single atoms than in one made of molecules. Which pair of gases in Table 1 gives a result that agrees with one student’s claim and contradicts the other’s?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Air and carbon dioxide"
+      },
+      {
+        "id": "B",
+        "text": "Helium and argon"
+      },
+      {
+        "id": "C",
+        "text": "Nitrogen and argon"
+      },
+      {
+        "id": "D",
+        "text": "Nitrogen and oxygen"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Both gases are made of molecules, so only Student 1’s claim applies, and it holds.",
+      "B": "Both are single atoms, so Student 2 makes no prediction, and Student 1’s prediction holds.",
+      "C": "Correct — Student 1 expects nitrogen, the lighter gas, to be faster; Student 2 expects argon, made of single atoms, to be faster. Sound is faster in nitrogen, 349 m/s against 319 m/s.",
+      "D": "Both gases are made of molecules, so Student 2 makes no prediction, and Student 1’s prediction holds."
+    }
+  },
+  {
+    "id": "s854",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "sp105",
+    "context": "Sound cannot travel through the vacuum of empty space because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "light from the Sun absorbs it."
+      },
+      {
+        "id": "B",
+        "text": "nothing is there to pass the vibration along."
+      },
+      {
+        "id": "C",
+        "text": "space is far too cold for sound waves."
+      },
+      {
+        "id": "D",
+        "text": "sound needs air pressure to push it along."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Light does not absorb sound; sound has nothing to travel through in a vacuum.",
+      "B": "Correct — sound is a vibration handed from particle to particle, so it needs a material to travel through.",
+      "C": "Temperature changes the speed of sound in a gas, but cold alone does not stop it; with no particles there is nothing to carry it.",
+      "D": "Sound is carried by particles of any material, including liquids and solids, not pushed along by air pressure."
+    }
+  },
+  {
+    "id": "s855",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp106",
+    "context": "According to Figure 1, what is the vapor pressure of ethanol at 40 °C?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "17.8 kPa"
+      },
+      {
+        "id": "B",
+        "text": "7.4 kPa"
+      },
+      {
+        "id": "C",
+        "text": "56.4 kPa"
+      },
+      {
+        "id": "D",
+        "text": "46.8 kPa"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the ethanol curve reads 17.8 kPa at 40 °C.",
+      "B": "That is water at 40 °C, the lowest curve.",
+      "C": "That is acetone at 40 °C, the highest curve.",
+      "D": "That is ethanol at 60 °C, one point later."
+    }
+  },
+  {
+    "id": "s856",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp106",
+    "context": "According to Figure 1, which list ranks the liquids from highest to lowest vapor pressure at every temperature shown for all three?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Water, ethanol, acetone"
+      },
+      {
+        "id": "B",
+        "text": "Ethanol, acetone, water"
+      },
+      {
+        "id": "C",
+        "text": "Acetone, water, ethanol"
+      },
+      {
+        "id": "D",
+        "text": "Acetone, ethanol, water"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the order from lowest to highest, reversed.",
+      "B": "Acetone’s vapor pressure is above ethanol’s at every temperature shown.",
+      "C": "Water’s vapor pressure is below ethanol’s at every temperature shown.",
+      "D": "Correct — at 0, 20, 40 and 60 °C, acetone’s curve is highest and water’s is lowest."
+    }
+  },
+  {
+    "id": "s857",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "hard",
+    "passage": "sp106",
+    "context": "Based on Figure 1, Table 1 and the passage, at about what temperature does water boil at an elevation of 3000 m?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "70 °C"
+      },
+      {
+        "id": "B",
+        "text": "80 °C"
+      },
+      {
+        "id": "C",
+        "text": "90 °C"
+      },
+      {
+        "id": "D",
+        "text": "100 °C"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the air pressure in kPa read as a temperature in °C; water’s vapor pressure at 70 °C is only 31.2 kPa.",
+      "B": "At 80 °C, water’s vapor pressure is 47.4 kPa, which matches the air pressure near 6000 m, not 3000 m.",
+      "C": "Correct — the air pressure at 3000 m is 70.1 kPa, and water boils when its vapor pressure reaches that value, which Figure 1 shows happens at 90 °C.",
+      "D": "Water boils at 100 °C only where the air pressure is 101.3 kPa, at sea level, not at 3000 m."
+    }
+  },
+  {
+    "id": "s858",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp106",
+    "context": "Based on Figure 1 and Table 1, at an elevation of 1500 m, ethanol would boil at about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "95 °C"
+      },
+      {
+        "id": "B",
+        "text": "73 °C"
+      },
+      {
+        "id": "C",
+        "text": "78 °C"
+      },
+      {
+        "id": "D",
+        "text": "60 °C"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is close to where water, not ethanol, reaches 84.6 kPa.",
+      "B": "Correct — the air pressure at 1500 m is 84.6 kPa. Ethanol’s vapor pressure passes 84.6 kPa about one-third of the way from 70 °C (72.2 kPa) to 80 °C (108.3 kPa), or near 73 °C.",
+      "C": "That is where ethanol’s vapor pressure reaches 101.3 kPa, its boiling point at sea level, not at 1500 m.",
+      "D": "Ethanol’s vapor pressure at 60 °C is 46.8 kPa, which matches the air pressure near 6000 m."
+    }
+  },
+  {
+    "id": "s859",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp106",
+    "context": "Based on Figure 1, what was the average rate at which water’s vapor pressure rose between 90 °C and 100 °C?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3.1 kPa/°C"
+      },
+      {
+        "id": "B",
+        "text": "31 kPa/°C"
+      },
+      {
+        "id": "C",
+        "text": "1.0 kPa/°C"
+      },
+      {
+        "id": "D",
+        "text": "0.32 kPa/°C"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it rose from 70.1 kPa to 101.3 kPa, or 31.2 kPa, over 10 °C, which is 3.1 kPa per °C.",
+      "B": "That is the total rise of 31.2 kPa, not divided by the 10 °C interval.",
+      "C": "That is 101.3 kPa divided by 100 °C, an average from 0 °C that ignores how steeply the curve rises near 100 °C.",
+      "D": "That divides the temperature interval by the rise, 10 ÷ 31.2, which is the inverse of the rate."
+    }
+  },
+  {
+    "id": "s860",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp106",
+    "context": "A hiker claims that water boils at a lower temperature high in the mountains than at sea level. Do Figure 1 and Table 1 support this claim?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No; thinner air means water must be heated more."
+      },
+      {
+        "id": "B",
+        "text": "No; water always boils at 100 °C."
+      },
+      {
+        "id": "C",
+        "text": "Yes; air pressure falls with elevation, so water boils cooler."
+      },
+      {
+        "id": "D",
+        "text": "Yes; water’s vapor pressure falls with elevation."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Lower air pressure is reached by water’s vapor pressure sooner, at a lower temperature, not a higher one.",
+      "B": "It boils at 100 °C only at sea level, where the air pressure is 101.3 kPa.",
+      "C": "Correct — water’s vapor pressure rises with temperature, so the lower the air pressure, the lower the temperature at which the two become equal.",
+      "D": "Figure 1 shows vapor pressure changing with temperature; it is the air pressure in Table 1 that falls with elevation."
+    }
+  },
+  {
+    "id": "s861",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp106",
+    "context": "Acetone has a higher vapor pressure than water at every temperature in Figure 1. This is best explained by the fact that, compared with water molecules, acetone molecules:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "break apart into atoms more easily."
+      },
+      {
+        "id": "B",
+        "text": "attract one another more weakly."
+      },
+      {
+        "id": "C",
+        "text": "are lighter, so they escape more easily."
+      },
+      {
+        "id": "D",
+        "text": "attract one another more strongly."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Evaporation separates whole molecules from one another; it does not break molecules into atoms.",
+      "B": "Correct — weaker attractions let more acetone molecules break free of the liquid at a given temperature. Water molecules are held together by strong hydrogen bonds.",
+      "C": "An acetone molecule, about 58 g/mol, is more than three times as heavy as a water molecule, 18 g/mol.",
+      "D": "Stronger attractions would hold molecules in the liquid and lower the vapor pressure, not raise it."
+    }
+  },
+  {
+    "id": "s862",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp107",
+    "context": "Based on Figure 1, about how far would an object dropped on the Moon have fallen 2.25 s after it was released?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4.1 m"
+      },
+      {
+        "id": "B",
+        "text": "3.2 m"
+      },
+      {
+        "id": "C",
+        "text": "5.1 m"
+      },
+      {
+        "id": "D",
+        "text": "9.6 m"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 2.25 s lies halfway between 2.0 s and 2.5 s, where the Moon curve reads 3.24 m and 5.06 m, so the object would have fallen a little over 4 m.",
+      "B": "That is the Moon curve at 2.0 s, a quarter second earlier.",
+      "C": "That is the Moon curve at 2.5 s, a quarter second later.",
+      "D": "That is close to the Mars curve at 2.25 s, the middle curve, not the Moon’s."
+    }
+  },
+  {
+    "id": "s863",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp107",
+    "context": "According to Table 1, Mars has about twice the mass of Mercury, yet the two have almost the same value of g. Which other difference in Table 1 accounts for this?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Mercury has the larger radius."
+      },
+      {
+        "id": "B",
+        "text": "Mars has the smaller of the two masses."
+      },
+      {
+        "id": "C",
+        "text": "Their radii are equal."
+      },
+      {
+        "id": "D",
+        "text": "Mars has the larger radius."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Mercury’s radius, 2440 km, is smaller than Mars’s, 3390 km.",
+      "B": "Mars has the larger mass, 6.42 against 3.30 × 10²³ kg.",
+      "C": "Their radii differ by nearly 1000 km.",
+      "D": "Correct — Mars’s radius, 3390 km, is larger than Mercury’s, 2440 km, so its surface is farther from its center, which offsets its extra mass."
+    }
+  },
+  {
+    "id": "s864",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp107",
+    "context": "Student 1 predicts that the more massive of two worlds always has the greater g. Student 2 predicts that g depends on a world’s mass divided by the square of its radius. Which pair of worlds in Table 1 supports Student 2’s prediction but contradicts Student 1’s?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Mercury and Mars"
+      },
+      {
+        "id": "B",
+        "text": "Mars and Earth"
+      },
+      {
+        "id": "C",
+        "text": "The Moon and Titan"
+      },
+      {
+        "id": "D",
+        "text": "Titan and Ganymede"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Mars has more mass and a slightly greater g, 3.73 against 3.70 m/s², which agrees with both students.",
+      "B": "Earth has far more mass and the greater g, which agrees with both students.",
+      "C": "Correct — Titan has more mass than the Moon, so Student 1 expects Titan’s g to be greater, but Titan’s larger radius makes its g smaller, 1.35 against 1.62 m/s², as Student 2 expects.",
+      "D": "Ganymede has both more mass and the greater g, so the pair agrees with both students."
+    }
+  },
+  {
+    "id": "s865",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "easy",
+    "passage": "sp107",
+    "context": "According to Table 1, the value of g on Earth is about how many times the value of g on the Moon?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4 times"
+      },
+      {
+        "id": "B",
+        "text": "6 times"
+      },
+      {
+        "id": "C",
+        "text": "8 times"
+      },
+      {
+        "id": "D",
+        "text": "81 times"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the ratio of the radii, 6371 ÷ 1737, not of the values of g.",
+      "B": "Correct — 9.82 ÷ 1.62 is about 6.",
+      "C": "That is the difference between the two values, 9.82 − 1.62, which is about 8.2 m/s², not their ratio.",
+      "D": "That is Earth’s mass divided by the Moon’s, 59.7 ÷ 0.735; g also depends on radius."
+    }
+  },
+  {
+    "id": "s866",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp107",
+    "context": "Based on Figure 1, what was the average speed of an object falling on Earth between 2.0 s and 3.0 s after it was released?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 25 m/s"
+      },
+      {
+        "id": "B",
+        "text": "About 15 m/s"
+      },
+      {
+        "id": "C",
+        "text": "About 44 m/s"
+      },
+      {
+        "id": "D",
+        "text": "About 10 m/s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it fell from 19.6 m to 44.2 m, or 24.6 m, in 1.0 s, an average speed of about 25 m/s.",
+      "B": "That divides the whole 44.2 m by the whole 3.0 s, the average speed over the entire fall, not during the third second.",
+      "C": "That is the total distance fallen by 3.0 s, not the distance covered between 2.0 s and 3.0 s.",
+      "D": "That is g, the amount the speed increases each second, not the speed itself."
+    }
+  },
+  {
+    "id": "s867",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "easy",
+    "passage": "sp107",
+    "context": "According to Table 1, what is the mass of Mars?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "6.42 kg"
+      },
+      {
+        "id": "B",
+        "text": "3.39 × 10²³ kg"
+      },
+      {
+        "id": "C",
+        "text": "3.73 × 10²³ kg"
+      },
+      {
+        "id": "D",
+        "text": "6.42 × 10²³ kg"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That ignores the factor of 10²³ in the column heading.",
+      "B": "That takes Mars’s radius, 3390 km, from the next column.",
+      "C": "That is Mars’s value of g, from the last column.",
+      "D": "Correct — Table 1 gives 6.42 in a column measured in units of 10²³ kg."
+    }
+  },
+  {
+    "id": "s868",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp107",
+    "context": "An astronaut on the Moon dropped a hammer and a feather from the same height at the same time, and they landed together. This happened mainly because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "the hammer and the feather had the same mass."
+      },
+      {
+        "id": "B",
+        "text": "the Moon’s weak gravity cannot speed objects up at all."
+      },
+      {
+        "id": "C",
+        "text": "there is no air on the Moon to slow the feather."
+      },
+      {
+        "id": "D",
+        "text": "Moon gravity pulls only on heavy objects."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "A hammer has far more mass than a feather; with no air, mass does not change how fast things fall.",
+      "B": "Objects do speed up as they fall on the Moon, by 1.62 m/s every second.",
+      "C": "Correct — without air resistance, every object falls with the same acceleration, whatever its mass or shape.",
+      "D": "Gravity pulls on every object with mass, including a feather."
+    }
+  },
+  {
+    "id": "s869",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp108",
+    "context": "According to Figure 1, how many land bird species nest on a Group R island with an area of 256 km²?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "30"
+      },
+      {
+        "id": "B",
+        "text": "24"
+      },
+      {
+        "id": "C",
+        "text": "48"
+      },
+      {
+        "id": "D",
+        "text": "18"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is Group R at 625 km², the point after.",
+      "B": "Correct — the Group R curve reads 24 species at 256 km².",
+      "C": "That is the Group N curve at 256 km²; Group R is the lower curve.",
+      "D": "That is Group R at 81 km², the point before."
+    }
+  },
+  {
+    "id": "s870",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp108",
+    "context": "According to Figure 1, for each island area shown, the number of species in Group N compared with the number in Group R was:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "only half as many."
+      },
+      {
+        "id": "B",
+        "text": "6 more."
+      },
+      {
+        "id": "C",
+        "text": "the same."
+      },
+      {
+        "id": "D",
+        "text": "twice as many."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That reverses the groups; Group N is the upper curve.",
+      "B": "The gap grows with area, from 6 species at 1 km² to 36 at 1296 km².",
+      "C": "The curves are separate at every area shown.",
+      "D": "Correct — Group N had 12, 24, 36, 48, 60 and 72 species, double Group R’s 6, 12, 18, 24, 30 and 36."
+    }
+  },
+  {
+    "id": "s871",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp108",
+    "context": "If the pattern in Figure 1 continues, about how many land bird species would nest on a Group N island with an area of 4096 km²?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "228"
+      },
+      {
+        "id": "B",
+        "text": "48"
+      },
+      {
+        "id": "C",
+        "text": "96"
+      },
+      {
+        "id": "D",
+        "text": "84"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That assumes species rise in proportion to area, scaling 72 species by 4096 ÷ 1296; the curve flattens instead.",
+      "B": "That is the number on a 256 km² island, the island whose area 4096 km² is 16 times.",
+      "C": "Correct — in Figure 1, multiplying the area by 16 doubles the number of species (1 to 16 km² takes Group N from 12 to 24, and 16 to 256 km² from 24 to 48). 4096 km² is 16 × 256 km², so the island would have about 2 × 48 = 96 species.",
+      "D": "That adds 12 species, the step between neighboring points, as though 4096 km² were the next point after 1296 km²; the points are not evenly spaced in area."
+    }
+  },
+  {
+    "id": "s872",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp108",
+    "context": "An ecologist hypothesized that islands farther from the mainland receive fewer new bird species each century than islands of the same area closer to it. Do the data in Table 1 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No; Dunn lost as many species as it received."
+      },
+      {
+        "id": "B",
+        "text": "Yes; Cole received 4 species per century and Ash received 12."
+      },
+      {
+        "id": "C",
+        "text": "Yes; Cole received 12 species per century, and Ash received 4."
+      },
+      {
+        "id": "D",
+        "text": "No; Bray received fewer species per century than Ash."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Arrivals balancing losses on one island does not compare near and far islands.",
+      "B": "Correct — Ash and Cole are both 81 km², and Cole, 600 km out in Group R, received a third as many new species as Ash, 20 km out.",
+      "C": "That swaps the two islands; Ash, the nearer island, received 12.",
+      "D": "Bray and Ash are both in the near group, so comparing them says nothing about distance."
+    }
+  },
+  {
+    "id": "s873",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "hard",
+    "passage": "sp108",
+    "context": "Considering only Bray, Cole and Dunn in Table 1, which island loses the largest fraction of its bird species each century?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Cole"
+      },
+      {
+        "id": "B",
+        "text": "Bray"
+      },
+      {
+        "id": "C",
+        "text": "Dunn"
+      },
+      {
+        "id": "D",
+        "text": "All three lose the same fraction."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Cole loses 4 of 18 species, about 22%, against 10 of 60 (17%) for Bray and 3 of 30 (10%) for Dunn.",
+      "B": "Bray loses the largest number of species, 10, but that is only one-sixth of its 60 species.",
+      "C": "Dunn loses the fewest species and also the smallest fraction, 3 of 30.",
+      "D": "The fractions differ: about 17%, 22% and 10%."
+    }
+  },
+  {
+    "id": "s874",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp108",
+    "context": "A newly surveyed island has an area of 2.56 × 10⁸ m². What is its area in square kilometers? (1 km = 1000 m)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2.56 × 10⁵ km²"
+      },
+      {
+        "id": "B",
+        "text": "2.56 × 10¹⁴ km²"
+      },
+      {
+        "id": "C",
+        "text": "16 km²"
+      },
+      {
+        "id": "D",
+        "text": "256 km²"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That divides by 1000, the number of meters in a kilometer, without squaring it for an area.",
+      "B": "That multiplies by 10⁶ instead of dividing; a kilometer is the larger unit, so the number must get smaller.",
+      "C": "That takes the square root of 256, mixing up an area with a side length.",
+      "D": "Correct — 1 km² is 1000 m × 1000 m, or 10⁶ m², so 2.56 × 10⁸ m² ÷ 10⁶ is 256 km²."
+    }
+  },
+  {
+    "id": "s875",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp108",
+    "context": "A bird species found only on one remote island differs from its closest relatives on the mainland. Its differences most likely arose because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "island birds interbred with mainland birds."
+      },
+      {
+        "id": "B",
+        "text": "remote islands lack both predators and competitors."
+      },
+      {
+        "id": "C",
+        "text": "natural selection acted on an isolated population."
+      },
+      {
+        "id": "D",
+        "text": "each bird changed itself to suit the island."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Interbreeding would keep the two populations alike, not make them differ.",
+      "B": "Remote islands can have predators and competitors, and their absence would not by itself create a new species.",
+      "C": "Correct — once cut off from mainland birds, the island population adapted to local conditions without interbreeding with the mainland population.",
+      "D": "Individuals do not pass on changes they make during their lives; populations change over generations."
+    }
+  },
+  {
+    "id": "s876",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp109",
+    "context": "Based on Figure 1, the conductivity of a 0.05 mol/L NaCl solution would most likely be about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "7.2 mS/cm"
+      },
+      {
+        "id": "B",
+        "text": "5.3 mS/cm"
+      },
+      {
+        "id": "C",
+        "text": "19.5 mS/cm"
+      },
+      {
+        "id": "D",
+        "text": "0.36 mS/cm"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That lies between the NaCl values at 0.06 and 0.08 mol/L, a higher concentration than 0.05 mol/L.",
+      "B": "Correct — 0.05 mol/L lies halfway between 0.04 and 0.06 mol/L, where the NaCl line reads 4.34 and 6.28 mS/cm, so the value would be about 5.3 mS/cm.",
+      "C": "That lies on the HCl line at 0.05 mol/L; NaCl is the lower line.",
+      "D": "That is close to acetic acid at 0.05 mol/L, from Figure 2."
+    }
+  },
+  {
+    "id": "s877",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp109",
+    "context": "Based on Figures 1 and 2, when the concentration doubled from 0.04 mol/L to 0.08 mol/L, which solution’s conductivity came closer to doubling?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "NaCl"
+      },
+      {
+        "id": "B",
+        "text": "Acetic acid"
+      },
+      {
+        "id": "C",
+        "text": "Both exactly doubled."
+      },
+      {
+        "id": "D",
+        "text": "Neither changed."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — NaCl rose from 4.34 to 8.10 mS/cm, nearly double, while acetic acid rose from 0.327 to 0.462 mS/cm, only about 40% more.",
+      "B": "Acetic acid rose by only about 40%, from 0.327 to 0.462 mS/cm.",
+      "C": "Neither exactly doubled, and acetic acid fell far short.",
+      "D": "Both rose; NaCl nearly doubled."
+    }
+  },
+  {
+    "id": "s878",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp109",
+    "context": "A student hypothesized that acetic acid conducts poorly because few of its molecules form ions. Which result best supports this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "At 0.10 mol/L, HCl conducted better than NaCl."
+      },
+      {
+        "id": "B",
+        "text": "The conductivity of acetic acid rose with concentration."
+      },
+      {
+        "id": "C",
+        "text": "HCl and NaCl split completely into ions."
+      },
+      {
+        "id": "D",
+        "text": "At 0.10 mol/L, only 1.32% of them split into ions."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "HCl and NaCl both split completely, so comparing them does not bear on how many acetic acid molecules form ions.",
+      "B": "A rise with concentration says nothing about what fraction of the molecules form ions.",
+      "C": "That describes HCl and NaCl; it says nothing about how many acetic acid molecules form ions.",
+      "D": "Correct — with so few ions to carry current, a weak conductivity is what the hypothesis predicts."
+    }
+  },
+  {
+    "id": "s879",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp109",
+    "context": "Based on Table 1, in a 0.10 mol/L acetic acid solution, what is the concentration of acetic acid molecules that have split into ions?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "9.9 × 10⁻² mol/L"
+      },
+      {
+        "id": "B",
+        "text": "1.3 × 10⁻² mol/L"
+      },
+      {
+        "id": "C",
+        "text": "1.3 × 10⁻³ mol/L"
+      },
+      {
+        "id": "D",
+        "text": "1.3 × 10⁻¹ mol/L"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the concentration of molecules that did not split, 98.68% of 0.10 mol/L.",
+      "B": "That is the fraction split, 0.0132, without multiplying by the 0.10 mol/L concentration.",
+      "C": "Correct — 1.32% of 0.10 mol/L is 0.0132 × 0.10, or about 1.3 × 10⁻³ mol/L.",
+      "D": "That multiplies 0.10 by 1.32 without first turning the percent into a fraction; it is more than the whole 0.10 mol/L."
+    }
+  },
+  {
+    "id": "s880",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp109",
+    "context": "Based on Figure 1, what was the average rate at which the conductivity of HCl rose with concentration between 0.02 mol/L and 0.10 mol/L?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 370 mS/cm per mol/L"
+      },
+      {
+        "id": "B",
+        "text": "About 29 mS/cm per mol/L"
+      },
+      {
+        "id": "C",
+        "text": "About 98 mS/cm per mol/L"
+      },
+      {
+        "id": "D",
+        "text": "About 3.7 mS/cm per mol/L"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — it rose from 8.07 to 37.54 mS/cm, or 29.47 mS/cm, over 0.08 mol/L. 29.47 ÷ 0.08 is about 370.",
+      "B": "That is the total rise, not divided by the 0.08 mol/L interval.",
+      "C": "That is the rate for NaCl, (9.83 − 2.28) ÷ 0.08, not HCl.",
+      "D": "That divides the rise by 8 rather than by 0.08, a slip of the decimal point that makes the rate 100 times too small."
+    }
+  },
+  {
+    "id": "s881",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp109",
+    "context": "The 0.10 mol/L NaCl solution had a conductivity of 9.83 mS/cm. What is this conductivity in siemens per meter (S/m)? (1 mS = 10⁻³ S; 1 m = 100 cm)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "9.83 × 10⁻³ S/m"
+      },
+      {
+        "id": "B",
+        "text": "983 S/m"
+      },
+      {
+        "id": "C",
+        "text": "9.83 × 10⁻⁵ S/m"
+      },
+      {
+        "id": "D",
+        "text": "0.983 S/m"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That converts millisiemens to siemens but leaves the length per centimeter.",
+      "B": "That converts per centimeter to per meter but leaves the value in millisiemens.",
+      "C": "That divides by 100 for the length change instead of multiplying; a quantity per centimeter becomes larger per meter.",
+      "D": "Correct — 9.83 mS/cm is 9.83 × 10⁻³ S per cm. A meter is 100 cm, so per meter it is 100 times larger: 0.983 S/m."
+    }
+  },
+  {
+    "id": "s882",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "sp109",
+    "context": "The sugar solution hardly conducted electricity at all because sugar:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "splits into ions that cancel out."
+      },
+      {
+        "id": "B",
+        "text": "makes the water too thick to flow."
+      },
+      {
+        "id": "C",
+        "text": "dissolves as whole molecules, not ions."
+      },
+      {
+        "id": "D",
+        "text": "does not dissolve in water."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Sugar does not split into ions at all.",
+      "B": "A dilute sugar solution flows freely; its low conductivity comes from the lack of ions.",
+      "C": "Correct — sugar molecules stay intact and carry no charge, so there is nothing to carry the current.",
+      "D": "Sugar dissolves readily in water; it simply does not form ions."
+    }
+  },
+  {
+    "id": "s883",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp110",
+    "context": "In Experiment 1, which quantity did the students deliberately change from trial to trial?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The height of the arrow"
+      },
+      {
+        "id": "B",
+        "text": "The object distance"
+      },
+      {
+        "id": "C",
+        "text": "The lens-to-screen distance"
+      },
+      {
+        "id": "D",
+        "text": "The focal length of the lens"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The arrow was 4.0 cm tall throughout.",
+      "B": "Correct — the arrow was placed at five distances from Lens A, and the image distance was what they measured.",
+      "C": "That is the image distance, which was measured; it changed because the object distance was changed.",
+      "D": "Lens A, with a focal length of 10.0 cm, was used in every trial of Experiment 1."
+    }
+  },
+  {
+    "id": "s884",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp110",
+    "context": "Based on Table 1, if the arrow had been placed 25 cm from Lens A, the image distance would most likely have been about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "17 cm"
+      },
+      {
+        "id": "B",
+        "text": "25 cm"
+      },
+      {
+        "id": "C",
+        "text": "13 cm"
+      },
+      {
+        "id": "D",
+        "text": "22 cm"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 25 cm lies between 20 cm and 30 cm, whose image distances are 20.0 cm and 15.0 cm, so the image distance would be between them, about 17 cm.",
+      "B": "That assumes the image forms as far from the lens as the object; that happens only at 20 cm.",
+      "C": "That is close to the image distance for an object 40 cm away.",
+      "D": "An image distance above 20 cm needs an object closer than 20 cm, not farther."
+    }
+  },
+  {
+    "id": "s885",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp110",
+    "context": "According to Table 1, for which object distance was the total distance from the arrow to the screen the smallest?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "15 cm"
+      },
+      {
+        "id": "B",
+        "text": "60 cm"
+      },
+      {
+        "id": "C",
+        "text": "30 cm"
+      },
+      {
+        "id": "D",
+        "text": "20 cm"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That object distance is the smallest, but its image distance is 30.0 cm, for a total of 45 cm.",
+      "B": "That gives the smallest image distance, 12.0 cm, but the largest total, 72 cm.",
+      "C": "That gives a total of 45 cm, the same as 15 cm, more than the 40 cm at 20 cm.",
+      "D": "Correct — the arrow-to-screen distance is object distance plus image distance: 45, 40, 45, 53.3 and 72 cm. The smallest, 40 cm, is for an object distance of 20 cm."
+    }
+  },
+  {
+    "id": "s886",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp110",
+    "context": "Student 1 claims that the image distance depends only on the object distance. Student 2 claims it depends on both the object distance and the lens. Which pair of results best distinguishes between these claims?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Lens B with the arrow first 40 cm, then 80 cm away"
+      },
+      {
+        "id": "B",
+        "text": "Lens A with the arrow 20 cm away, and the image height"
+      },
+      {
+        "id": "C",
+        "text": "Lens A and Lens B, each with the arrow 30 cm away"
+      },
+      {
+        "id": "D",
+        "text": "Lens A with the arrow 15 cm away and 60 cm away"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Again only the object distance changes, so both students expect the change that was seen.",
+      "B": "An image height is a different measurement; it does not compare image distances for two lenses.",
+      "C": "Correct — with the same object distance, Student 1 expects the same image distance for both lenses and Student 2 does not. The image distances were 15.0 cm and 60.0 cm, which supports Student 2.",
+      "D": "Both students expect a change when the object distance changes, so this pair cannot tell them apart."
+    }
+  },
+  {
+    "id": "s887",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp110",
+    "context": "According to Table 3, as the object distance increased from 15 cm to 60 cm, the image height:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "increased, then decreased."
+      },
+      {
+        "id": "B",
+        "text": "decreased."
+      },
+      {
+        "id": "C",
+        "text": "increased."
+      },
+      {
+        "id": "D",
+        "text": "stayed at 4.0 cm."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The image height fell at every step.",
+      "B": "Correct — the image height fell from 8.0 cm to 4.0 cm to 2.0 cm to 0.8 cm.",
+      "C": "That reverses the trend; the nearest object gave the tallest image.",
+      "D": "The image was 4.0 cm tall, the same as the arrow, only at 20 cm."
+    }
+  },
+  {
+    "id": "s888",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp110",
+    "context": "The power of a lens in diopters is 1 divided by its focal length in meters. What is the power of Lens B?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "5.0 diopters"
+      },
+      {
+        "id": "B",
+        "text": "0.05 diopters"
+      },
+      {
+        "id": "C",
+        "text": "10 diopters"
+      },
+      {
+        "id": "D",
+        "text": "0.2 diopters"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Lens B’s focal length is 20.0 cm, or 0.200 m, and 1 ÷ 0.200 is 5.0.",
+      "B": "That divides 1 by 20.0 without first converting centimeters to meters.",
+      "C": "That is the power of Lens A, whose focal length is 10.0 cm.",
+      "D": "That is the focal length in meters, not 1 divided by it."
+    }
+  },
+  {
+    "id": "s889",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp110",
+    "context": "When the arrow was 8.0 cm from Lens A, closer than the lens’s focal length, no image formed on the screen. Looking through the lens toward the arrow, a student would most likely see:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "a small, upside-down image across the room."
+      },
+      {
+        "id": "B",
+        "text": "no image of any kind."
+      },
+      {
+        "id": "C",
+        "text": "an image exactly the same size as the arrow."
+      },
+      {
+        "id": "D",
+        "text": "an enlarged, upright image, as in a magnifying glass."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "A real, inverted image forms only when the object is beyond the focal length.",
+      "B": "The light still passes through the lens; it forms an image that can be seen by looking through the lens.",
+      "C": "A same-size image forms at an object distance of twice the focal length, 20 cm, not 8.0 cm.",
+      "D": "Correct — an object inside the focal length of a convex lens gives an upright, enlarged image that can be seen through the lens but not caught on a screen."
+    }
+  },
+  {
+    "id": "s890",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp111",
+    "context": "In Experiment 3, why were all the leaves taken from a single tree?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "So that the counts would match Experiment 1"
+      },
+      {
+        "id": "B",
+        "text": "So that light was the main difference"
+      },
+      {
+        "id": "C",
+        "text": "So that every leaf had the same area"
+      },
+      {
+        "id": "D",
+        "text": "Because oak leaves lack upper stomata"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The counts did not match: Experiment 1’s oak had 50 per field, and Experiment 3’s leaves had 60 and 40.",
+      "B": "Correct — leaves from one tree share the same genes, soil and water, so differences between sun and shade leaves can be traced to how much light they got.",
+      "C": "The sun and shade leaves differed in area, 32 cm² against 58 cm².",
+      "D": "That is true of the oaks in Experiment 1, but it is not a reason to use only one tree."
+    }
+  },
+  {
+    "id": "s891",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "easy",
+    "passage": "sp111",
+    "context": "According to Table 1, how many stomata are there per mm² on the lower surface of an oak leaf?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "400"
+      },
+      {
+        "id": "B",
+        "text": "50"
+      },
+      {
+        "id": "C",
+        "text": "6.25"
+      },
+      {
+        "id": "D",
+        "text": "200"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 50 stomata in 0.125 mm² is 50 ÷ 0.125, or 400 per mm².",
+      "B": "That is the count in one field of view, which covers only 0.125 mm², not 1 mm².",
+      "C": "That multiplies 50 by 0.125 instead of dividing.",
+      "D": "That treats the field of view as 0.25 mm², twice its stated area."
+    }
+  },
+  {
+    "id": "s892",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp111",
+    "context": "The lower surface of an oak leaf has 400 stomata per mm². How many stomata is this per cm²? (1 cm = 10 mm)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4000"
+      },
+      {
+        "id": "B",
+        "text": "4"
+      },
+      {
+        "id": "C",
+        "text": "400,000"
+      },
+      {
+        "id": "D",
+        "text": "40,000"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That multiplies by 10, the number of millimeters in a centimeter, without squaring it for an area.",
+      "B": "That divides by 100 instead of multiplying; a square centimeter holds more stomata than a square millimeter.",
+      "C": "That multiplies by 1000, the factor for a volume, not an area.",
+      "D": "Correct — 1 cm² is 10 mm × 10 mm, or 100 mm², so 400 per mm² is 400 × 100 = 40,000 per cm²."
+    }
+  },
+  {
+    "id": "s893",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp111",
+    "context": "A student hypothesized that bean plants grown with more carbon dioxide form fewer stomata. Do the results of Experiment 2 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No; stomata rose as carbon dioxide rose."
+      },
+      {
+        "id": "B",
+        "text": "No; carbon dioxide had no effect on stomata."
+      },
+      {
+        "id": "C",
+        "text": "Yes; stomata fell from 330 to 210 per mm² as carbon dioxide rose."
+      },
+      {
+        "id": "D",
+        "text": "Yes; stomata rose from 210 to 330 per mm² as carbon dioxide went up."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The number of stomata fell as carbon dioxide rose.",
+      "B": "The number changed from 330 to 210 per mm², a large effect.",
+      "C": "Correct — as carbon dioxide rose from 280 ppm to 800 ppm, the number of stomata per mm² fell at every step.",
+      "D": "That reverses the table: the most stomata, 330 per mm², grew at the lowest carbon dioxide."
+    }
+  },
+  {
+    "id": "s894",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "easy",
+    "passage": "sp111",
+    "context": "According to Table 3, how many stomata were counted in one field of view on the lower surface of a shade leaf?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "58"
+      },
+      {
+        "id": "B",
+        "text": "40"
+      },
+      {
+        "id": "C",
+        "text": "60"
+      },
+      {
+        "id": "D",
+        "text": "50"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the average area of a shade leaf in cm², from the next column.",
+      "B": "Correct — Table 3 gives 40 stomata per field of view for leaves in deep shade.",
+      "C": "That is the count for leaves in full sun.",
+      "D": "That is the oak count from Experiment 1, in Table 1."
+    }
+  },
+  {
+    "id": "s895",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp111",
+    "context": "Based on Table 1, about what percent of a bean leaf’s stomata are on its upper surface?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "15%"
+      },
+      {
+        "id": "B",
+        "text": "17%"
+      },
+      {
+        "id": "C",
+        "text": "85%"
+      },
+      {
+        "id": "D",
+        "text": "6%"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the bean leaf has 6 + 35 = 41 stomata per field of view in all, and 6 ÷ 41 is about 15%.",
+      "B": "That divides 6 by 35, the lower-surface count, instead of by the total.",
+      "C": "That is the share on the lower surface.",
+      "D": "That reads the upper-surface count as a percent."
+    }
+  },
+  {
+    "id": "s896",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp111",
+    "context": "Student 1 predicts that leaves in full sun, which lose water quickly, form fewer stomata per mm² to save water. Student 2 predicts that sun leaves, which can photosynthesize quickly, form more stomata per mm² to take in carbon dioxide. Which result best distinguishes between these predictions?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Sun leaves were smaller than shade leaves."
+      },
+      {
+        "id": "B",
+        "text": "Bean plants in more carbon dioxide formed fewer stomata."
+      },
+      {
+        "id": "C",
+        "text": "Oak leaves had no stomata on their upper surface."
+      },
+      {
+        "id": "D",
+        "text": "Sun leaves had 60 per field, shade leaves 40."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Leaf size says nothing about how many stomata are packed into each mm², which is what the students disagree about.",
+      "B": "Experiment 2 changed carbon dioxide, not sunlight, so it does not compare sun and shade leaves.",
+      "C": "Both students are concerned with how many stomata sun and shade leaves have, not with which surface they are on.",
+      "D": "Correct — the two students predict opposite differences between sun and shade leaves, and the sun leaves had more stomata in the same area, as Student 2 predicts."
+    }
+  },
+  {
+    "id": "s897",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp112",
+    "context": "Based on Table 1, if both solutions had a concentration of 1.25 mol/L, the highest temperature would most likely have been about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "31.2 °C"
+      },
+      {
+        "id": "B",
+        "text": "33.0 °C"
+      },
+      {
+        "id": "C",
+        "text": "29.5 °C"
+      },
+      {
+        "id": "D",
+        "text": "27.8 °C"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the result for 1.50 mol/L, a stronger solution than 1.25 mol/L.",
+      "B": "That lies between the results for 1.50 and 2.00 mol/L, both stronger than 1.25 mol/L.",
+      "C": "Correct — 1.25 mol/L lies halfway between 1.00 and 1.50 mol/L, whose highest temperatures were 27.8 °C and 31.2 °C, so it would be about 29.5 °C.",
+      "D": "That is the result for 1.00 mol/L; a stronger solution releases more heat."
+    }
+  },
+  {
+    "id": "s898",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "easy",
+    "passage": "sp112",
+    "context": "Why did the students mix the solutions in a foam cup with a lid?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "To stop the acid from dissolving the cup"
+      },
+      {
+        "id": "B",
+        "text": "To limit heat loss"
+      },
+      {
+        "id": "C",
+        "text": "To speed up the reaction"
+      },
+      {
+        "id": "D",
+        "text": "To keep the solutions at 21.0 °C"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The reason given by the setup is insulation; nothing in the procedure concerns the cup reacting.",
+      "B": "Correct — foam and a lid insulate the mixture, so nearly all the heat released stays in the solution and shows up as a temperature rise.",
+      "C": "Insulation does not change how fast an acid and a base react.",
+      "D": "The point was to let the temperature rise and measure it, not to hold it steady."
+    }
+  },
+  {
+    "id": "s899",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp112",
+    "context": "Based on Table 1, the temperature rise with 2.00 mol/L solutions was about how many times the temperature rise with 0.50 mol/L solutions?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4 times"
+      },
+      {
+        "id": "B",
+        "text": "1.4 times"
+      },
+      {
+        "id": "C",
+        "text": "2 times"
+      },
+      {
+        "id": "D",
+        "text": "10 times"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the rises were 34.7 − 21.0 = 13.7 °C and 24.4 − 21.0 = 3.4 °C, and 13.7 ÷ 3.4 is about 4.",
+      "B": "That divides the highest temperatures, 34.7 ÷ 24.4, without subtracting the starting temperature from each.",
+      "C": "That doubles instead of quadrupling; the concentration went up four times, from 0.50 to 2.00 mol/L.",
+      "D": "That is the difference between the two rises, 13.7 − 3.4, rounded, not their ratio."
+    }
+  },
+  {
+    "id": "s900",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "hard",
+    "passage": "sp112",
+    "context": "In Experiment 2, adding 100 mL of NaOH gave a lower highest temperature than adding 50 mL. Which explanation is best supported by the procedure and results?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Extra NaOH reacts with the salt formed, a reaction that takes in heat."
+      },
+      {
+        "id": "B",
+        "text": "More NaOH reacted, so less heat was released per mole."
+      },
+      {
+        "id": "C",
+        "text": "The 100 mL trial started at a lower temperature."
+      },
+      {
+        "id": "D",
+        "text": "The acid was used up; extra NaOH only absorbed heat."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Nothing in the results shows a second reaction; the drop is explained by more solution sharing the same heat.",
+      "B": "No more NaOH could react once the acid was used up, so the amount reacting stayed the same.",
+      "C": "Every solution started at 21.0 °C.",
+      "D": "Correct — 50.0 mL of 1.00 mol/L NaOH exactly uses up 50.0 mL of 1.00 mol/L HCl. NaOH beyond that has nothing to react with, so it releases no more heat but adds mass that the same heat must warm."
+    }
+  },
+  {
+    "id": "s901",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp112",
+    "context": "When 1.00 mol/L solutions were mixed in Experiment 1, the 100 g of solution warmed by 6.8 °C. Using q = mcΔT, about how much heat was released, in kilojoules?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "11.6 kJ"
+      },
+      {
+        "id": "B",
+        "text": "28 kJ"
+      },
+      {
+        "id": "C",
+        "text": "2.8 kJ"
+      },
+      {
+        "id": "D",
+        "text": "2840 kJ"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That uses the final temperature, 27.8 °C, as ΔT instead of the 6.8 °C rise.",
+      "B": "That is ten times too large; a kilojoule is 1000 joules, not 100.",
+      "C": "Correct — 100 g × 4.18 J/(g·°C) × 6.8 °C is about 2840 J, and 2840 J ÷ 1000 J/kJ is about 2.8 kJ.",
+      "D": "That is the heat in joules, labeled kilojoules without converting."
+    }
+  },
+  {
+    "id": "s902",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "easy",
+    "passage": "sp112",
+    "context": "A student predicted that mixing the NaOH solution with pure water instead of an acid would not warm the mixture. Does Table 3 support this prediction?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No; the mixture with water cooled below 21.0 °C."
+      },
+      {
+        "id": "B",
+        "text": "Yes; it stayed at 21.0 °C."
+      },
+      {
+        "id": "C",
+        "text": "Yes; the mixture with water reached 27.8 °C."
+      },
+      {
+        "id": "D",
+        "text": "No; the mixture with water warmed as much as with acid."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "It stayed at exactly 21.0 °C.",
+      "B": "Correct — with no acid to react with, the mixture stayed at its starting temperature.",
+      "C": "That is the result with hydrochloric acid, not with water.",
+      "D": "The water mixture did not warm at all."
+    }
+  },
+  {
+    "id": "s903",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "easy",
+    "passage": "sp112",
+    "context": "According to Table 1, for each 0.50 mol/L increase in the concentration of the solutions, the highest temperature rose by about:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "3.4 °C"
+      },
+      {
+        "id": "B",
+        "text": "6.8 °C"
+      },
+      {
+        "id": "C",
+        "text": "0.50 °C"
+      },
+      {
+        "id": "D",
+        "text": "13.7 °C"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the highest temperature went from 24.4 to 27.8 to 31.2 to 34.7 °C, about 3.4 °C per step.",
+      "B": "That is the rise for each 1.00 mol/L increase, two steps, not one.",
+      "C": "That is the size of each concentration step, not the change in temperature.",
+      "D": "That is the whole rise for 2.00 mol/L above the starting temperature."
+    }
+  },
+  {
+    "id": "s904",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "easy",
+    "passage": "sp113",
+    "context": "Based on Table 1, what was the porosity of the coarse sand?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "185%"
+      },
+      {
+        "id": "B",
+        "text": "63%"
+      },
+      {
+        "id": "C",
+        "text": "27%"
+      },
+      {
+        "id": "D",
+        "text": "37%"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is the volume of water in mL, not divided by the 500 mL of sand.",
+      "B": "That is the share of the volume taken up by grains, not by pores.",
+      "C": "That divides 185 by 685, the sand and water together; the water fills spaces within the 500 mL of sand.",
+      "D": "Correct — 185 mL of water filled the pores in 500 mL of sand, and 185 ÷ 500 is 37%."
+    }
+  },
+  {
+    "id": "s905",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp113",
+    "context": "A student hypothesized that sediments with larger grains have more pore space. Do the results of Experiments 1 and 2 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes; the gravel held the most water."
+      },
+      {
+        "id": "B",
+        "text": "No; the fine sand drained fastest."
+      },
+      {
+        "id": "C",
+        "text": "No; porosity barely changed with grain size."
+      },
+      {
+        "id": "D",
+        "text": "Yes; the gravel drained fastest."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The gravel held 190 mL, less than the fine sand’s 200 mL.",
+      "B": "The fine sand drained slowest, in 512 s.",
+      "C": "Correct — porosity was 37% to 40% for every sediment, with gravel slightly below fine sand. Larger grains made the water flow faster, which is permeability, not pore space.",
+      "D": "Fast drainage shows high permeability; the amount of pore space was measured in Experiment 1 and barely changed."
+    }
+  },
+  {
+    "id": "s906",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp113",
+    "context": "Based on Table 2, at what average rate did water drain through the fine sand?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 6.3 mL/s"
+      },
+      {
+        "id": "B",
+        "text": "About 0.4 mL/s"
+      },
+      {
+        "id": "C",
+        "text": "About 2.6 mL/s"
+      },
+      {
+        "id": "D",
+        "text": "About 100 mL/s"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the rate for coarse sand, 200 mL in 32 s.",
+      "B": "Correct — 200 mL drained in 512 s, and 200 ÷ 512 is about 0.39 mL/s.",
+      "C": "That divides the time by the volume, 512 ÷ 200, which gives seconds per milliliter.",
+      "D": "That is the rate for gravel, 200 mL in 2.0 s."
+    }
+  },
+  {
+    "id": "s907",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp113",
+    "context": "Based on Tables 1 and 2, about how long would 200 mL of water take to drain through a very fine sand with a grain diameter of 0.125 mm, tested as in Experiment 2?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2048 s"
+      },
+      {
+        "id": "B",
+        "text": "1024 s"
+      },
+      {
+        "id": "C",
+        "text": "640 s"
+      },
+      {
+        "id": "D",
+        "text": "256 s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — each time the grain diameter halves (1.0 to 0.50 to 0.25 mm), the drain time is multiplied by 4 (32 to 128 to 512 s). Halving again to 0.125 mm gives 4 × 512 = 2048 s.",
+      "B": "That doubles the time each time the diameter halves; the table shows the time multiplying by 4.",
+      "C": "That adds 128 s, as though the time grew by a fixed amount per step.",
+      "D": "That halves the time; smaller grains drain more slowly, not faster."
+    }
+  },
+  {
+    "id": "s908",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp113",
+    "context": "In Experiment 3, the 30% fine sand mixture had a lower porosity than either the gravel or the fine sand alone. Which explanation is most consistent with the results?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The gravel grains crushed the sand grains into powder."
+      },
+      {
+        "id": "B",
+        "text": "Mixing made the grains swell when wet."
+      },
+      {
+        "id": "C",
+        "text": "Water drained out of the mixture before it could be measured."
+      },
+      {
+        "id": "D",
+        "text": "Sand filled the gaps between gravel grains."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The sediments were only mixed, and nothing suggests the grains were crushed.",
+      "B": "Gravel and sand grains do not swell in water.",
+      "C": "Porosity was measured as in Experiment 1, by filling the pores with water, not by draining.",
+      "D": "Correct — small grains fit into the pores between large ones, taking up space that water would otherwise fill."
+    }
+  },
+  {
+    "id": "s909",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "medium",
+    "passage": "sp113",
+    "context": "Based on Table 3, a mixture with 40% fine sand would most likely take about how long to drain?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "300 s"
+      },
+      {
+        "id": "B",
+        "text": "27 s"
+      },
+      {
+        "id": "C",
+        "text": "360 s"
+      },
+      {
+        "id": "D",
+        "text": "512 s"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the time for 30% fine sand; adding more sand slows the flow further.",
+      "B": "That reads the porosity column, about 27% at 40% sand, as a time.",
+      "C": "Correct — 40% lies halfway between 30% (300 s) and 50% (420 s), so the time would be about halfway between them, 360 s.",
+      "D": "That is the time for pure fine sand, 100%."
+    }
+  },
+  {
+    "id": "s910",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "sp113",
+    "context": "Rock or sediment that holds and lets through enough groundwater to supply a well is called:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "an aquifer."
+      },
+      {
+        "id": "B",
+        "text": "a watershed."
+      },
+      {
+        "id": "C",
+        "text": "a delta."
+      },
+      {
+        "id": "D",
+        "text": "an estuary."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — an aquifer is a layer porous and permeable enough to store and yield groundwater.",
+      "B": "A watershed is the land area that drains into a river or lake.",
+      "C": "A delta is a deposit of sediment at a river’s mouth.",
+      "D": "An estuary is where a river meets the sea."
+    }
+  },
+  {
+    "id": "s911",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp114",
+    "context": "Why did the students give every block in Experiment 2 the same bottom material and the same bottom-face area?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "So that the blocks would all have the same mass"
+      },
+      {
+        "id": "B",
+        "text": "So that every block would slip at 27°"
+      },
+      {
+        "id": "C",
+        "text": "So that the ramp could be raised more slowly"
+      },
+      {
+        "id": "D",
+        "text": "To isolate the effect of mass"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The blocks were deliberately given four different masses.",
+      "B": "The students could not know the slip angles in advance; that was what they measured.",
+      "C": "The blocks’ material and area have nothing to do with how fast the ramp was raised.",
+      "D": "Correct — with the material and contact area held fixed, mass was the only thing that differed from block to block."
+    }
+  },
+  {
+    "id": "s912",
+    "section": "science",
+    "topic": "reading data",
+    "difficulty": "hard",
+    "passage": "sp114",
+    "context": "Based on the results of all three experiments, at about what angle would an 800 g block with rubber glued to its bottom face begin to slide?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "156°"
+      },
+      {
+        "id": "B",
+        "text": "10°"
+      },
+      {
+        "id": "C",
+        "text": "39°"
+      },
+      {
+        "id": "D",
+        "text": "27°"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That scales 39° by four for four times the mass, but Experiment 2 showed mass has no effect, and a ramp cannot tilt past 90°.",
+      "B": "That divides 39° by four for four times the mass, but the heavier wooden blocks in Experiment 2 slipped at the same angle as the light ones.",
+      "C": "Correct — Experiment 2 showed that mass does not change the slip angle, so an 800 g rubber-bottomed block should slip at the same angle as the 200 g one in Table 1, 39°.",
+      "D": "That is the 800 g block in Table 2, but that block was wooden; the bottom material sets the slip angle."
+    }
+  },
+  {
+    "id": "s913",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp114",
+    "context": "A student predicted that a heavier block would need a steeper ramp before it began to slide. Do the results of Experiment 2 support this prediction?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No; heavier blocks slid at smaller angles."
+      },
+      {
+        "id": "B",
+        "text": "No; it stayed near 27° for every mass."
+      },
+      {
+        "id": "C",
+        "text": "Yes; the 800 g block needed the steepest ramp."
+      },
+      {
+        "id": "D",
+        "text": "Yes; the slip angle doubled when the mass doubled."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The angles did not fall with mass; they stayed about the same.",
+      "B": "Correct — the slip angle was 26° or 27° whether the block was 100 g or 800 g.",
+      "C": "The 800 g block slipped at 27°, the same as the 100 g block.",
+      "D": "Doubling the mass from 200 g to 400 g changed the angle by only 1°."
+    }
+  },
+  {
+    "id": "s914",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp114",
+    "context": "Student 1 claims that friction depends on both the materials in contact and the area of contact. Student 2 claims that it depends only on the materials. Which experiment could distinguish between these claims, and whose claim do its results support?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Experiment 3; Student 2’s"
+      },
+      {
+        "id": "B",
+        "text": "Experiment 3; Student 1’s"
+      },
+      {
+        "id": "C",
+        "text": "Experiment 1; Student 2’s"
+      },
+      {
+        "id": "D",
+        "text": "Experiment 2; Student 1’s"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Experiment 3 kept the materials the same and changed only the contact area. Student 1 expects the slip angle to change, Student 2 does not, and it stayed at 26° to 27°.",
+      "B": "Experiment 3 is the right test, but the slip angle stayed the same as the area changed, which goes against Student 1.",
+      "C": "Experiment 1 changed the materials, and both students expect that to change the slip angle, so it cannot tell them apart.",
+      "D": "Neither student says anything about mass, so Experiment 2 does not test either claim against the other."
+    }
+  },
+  {
+    "id": "s915",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "hard",
+    "passage": "sp114",
+    "context": "Based on Tables 1 and 4, the coefficient of static friction for the rubber-bottomed block was about how many times that for the plastic-bottomed block?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "2.6 times"
+      },
+      {
+        "id": "B",
+        "text": "0.54 times"
+      },
+      {
+        "id": "C",
+        "text": "1.6 times"
+      },
+      {
+        "id": "D",
+        "text": "3.0 times"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That divides the slip angles, 39° ÷ 15°; μ is the tangent of the angle, and tangents do not grow in proportion to angles.",
+      "B": "That is the difference between the two tangents, 0.81 − 0.27, not their ratio.",
+      "C": "That compares rubber with wood, 0.81 ÷ 0.51, not with plastic.",
+      "D": "Correct — rubber slipped at 39°, whose tangent is 0.81, and plastic at 15°, whose tangent is 0.27. 0.81 ÷ 0.27 is 3.0."
+    }
+  },
+  {
+    "id": "s916",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp114",
+    "context": "What is the weight of the 800 g block from Experiment 2, in newtons? (Weight = mass × 9.8 N/kg)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 82 N"
+      },
+      {
+        "id": "B",
+        "text": "About 0.80 N"
+      },
+      {
+        "id": "C",
+        "text": "About 7.8 N"
+      },
+      {
+        "id": "D",
+        "text": "About 7800 N"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That divides 800 by 9.8 instead of converting grams to kilograms and multiplying.",
+      "B": "That is the mass in kilograms, not multiplied by 9.8 N/kg.",
+      "C": "Correct — 800 g is 0.800 kg, and 0.800 kg × 9.8 N/kg is about 7.8 N.",
+      "D": "That multiplies 800 by 9.8 without first converting grams to kilograms."
+    }
+  },
+  {
+    "id": "s917",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "easy",
+    "passage": "sp114",
+    "context": "As a block slides down a ramp, friction turns some of the block’s energy of motion into:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "gravitational potential energy."
+      },
+      {
+        "id": "B",
+        "text": "thermal energy."
+      },
+      {
+        "id": "C",
+        "text": "nuclear energy."
+      },
+      {
+        "id": "D",
+        "text": "chemical energy."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The block loses height as it slides; friction does not raise it.",
+      "B": "Correct — friction warms the block and the ramp where they rub.",
+      "C": "Rubbing surfaces cannot change the nuclei of atoms.",
+      "D": "Friction does not store energy in new chemical bonds."
+    }
+  },
+  {
+    "id": "s918",
+    "section": "science",
+    "topic": "research summaries",
+    "difficulty": "medium",
+    "passage": "sp115",
+    "context": "In Experiment 3, why were all the cubes soaked for the same 9 minutes?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "So temperature was the only difference"
+      },
+      {
+        "id": "B",
+        "text": "Because acid cannot diffuse for longer than 9 minutes"
+      },
+      {
+        "id": "C",
+        "text": "So the cubes stayed one size"
+      },
+      {
+        "id": "D",
+        "text": "Because 9 minutes turns every cube fully colorless"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — time also changes the depth, as Experiment 1 shows, so it had to be held fixed for temperature to be the only difference.",
+      "B": "Experiment 1 shows the acid still moving inward at 25 minutes.",
+      "C": "Soaking time does not set a cube’s size; every cube was cut 2.0 cm on a side.",
+      "D": "At 20 °C, 9 minutes gives a layer only 3.0 mm deep in a cube 20 mm across."
+    }
+  },
+  {
+    "id": "s919",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "hard",
+    "passage": "sp115",
+    "context": "If the pattern in Table 1 continued, what would the depth of the colorless layer most likely be after 64 minutes?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "12.8 mm"
+      },
+      {
+        "id": "B",
+        "text": "6.0 mm"
+      },
+      {
+        "id": "C",
+        "text": "32 mm"
+      },
+      {
+        "id": "D",
+        "text": "8.0 mm"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That assumes the depth grows in proportion to time, scaling 5.0 mm by 64 ÷ 25; the depth grows more and more slowly.",
+      "B": "That adds 1.0 mm as though 64 minutes were the next row; the next row in the pattern would be 36 minutes.",
+      "C": "That halves 64; the depth is the square root of the time, not half of it, and 32 mm would be wider than the 2.0 cm cube itself.",
+      "D": "Correct — in Table 1 the depth is the square root of the time in minutes (4 minutes gives 2.0 mm, 25 minutes gives 5.0 mm), and the square root of 64 is 8.0 mm."
+    }
+  },
+  {
+    "id": "s920",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "easy",
+    "passage": "sp115",
+    "context": "According to Table 2, what is the ratio of surface area to volume for the 3 cm cube?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "1.5 cm⁻¹"
+      },
+      {
+        "id": "B",
+        "text": "2.0 cm⁻¹"
+      },
+      {
+        "id": "C",
+        "text": "0.5 cm⁻¹"
+      },
+      {
+        "id": "D",
+        "text": "3.0 cm⁻¹"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the ratio for the 4 cm cube, 96 ÷ 64.",
+      "B": "Correct — 54 cm² ÷ 27 cm³ is 2.0 per cm.",
+      "C": "That divides the volume by the surface area, 27 ÷ 54, the inverse of the ratio asked for.",
+      "D": "That is the ratio for the 2 cm cube, 24 ÷ 8."
+    }
+  },
+  {
+    "id": "s921",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "hard",
+    "passage": "sp115",
+    "context": "What is the volume of the 4 cm cube in Table 2 in cubic millimeters? (1 cm = 10 mm)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "64,000 mm³"
+      },
+      {
+        "id": "B",
+        "text": "640 mm³"
+      },
+      {
+        "id": "C",
+        "text": "6400 mm³"
+      },
+      {
+        "id": "D",
+        "text": "0.064 mm³"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 1 cm³ is 10 mm × 10 mm × 10 mm, or 1000 mm³, so 64 cm³ is 64,000 mm³.",
+      "B": "That multiplies by 10, the factor for a length, rather than by 1000 for a volume.",
+      "C": "That multiplies by 100, the factor for an area, rather than by 1000 for a volume.",
+      "D": "That divides by 1000 instead of multiplying; the smaller unit needs the larger number."
+    }
+  },
+  {
+    "id": "s922",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "medium",
+    "passage": "sp115",
+    "context": "A student hypothesized that the smaller a cube is, the greater the percent of its volume the acid reaches in 10 minutes. Do the results of Experiment 2 support this hypothesis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Yes; the 4 cm cube had the largest surface area."
+      },
+      {
+        "id": "B",
+        "text": "No; the 1 cm cube was 40.3% reached, the 4 cm cube 95.0%."
+      },
+      {
+        "id": "C",
+        "text": "No; the acid reached the same depth in every cube."
+      },
+      {
+        "id": "D",
+        "text": "Yes; the 1 cm cube was 95.0% reached, the 4 cm cube 40.3%."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "A larger surface area belongs to the larger cube, which had the smallest percent reached; that does not show smaller cubes doing better.",
+      "B": "That swaps the cubes; the 1 cm cube was the one almost entirely reached.",
+      "C": "Equal depth is just why the smaller cubes were reached through a larger share of their volume.",
+      "D": "Correct — the percent turned colorless fell at every step as the cubes got larger."
+    }
+  },
+  {
+    "id": "s923",
+    "section": "science",
+    "topic": "rates",
+    "difficulty": "medium",
+    "passage": "sp115",
+    "context": "Based on Table 1, what was the average rate at which the colorless layer deepened between 16 minutes and 25 minutes?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 1.0 mm/min"
+      },
+      {
+        "id": "B",
+        "text": "About 9.0 mm/min"
+      },
+      {
+        "id": "C",
+        "text": "About 0.11 mm/min"
+      },
+      {
+        "id": "D",
+        "text": "About 0.20 mm/min"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That is the 1.0 mm gained, not divided by the 9 minutes it took.",
+      "B": "That divides the time by the depth gained, 9 ÷ 1.0, the inverse of a rate in mm/min.",
+      "C": "Correct — it deepened from 4.0 mm to 5.0 mm, or 1.0 mm, in 9 minutes, and 1.0 ÷ 9 is about 0.11 mm/min.",
+      "D": "That divides the 5.0 mm depth by the whole 25 minutes, an average from the start rather than over this interval."
+    }
+  },
+  {
+    "id": "s924",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp115",
+    "context": "The results of Experiment 2 help explain why most cells are very small. A small cell is better supplied by diffusion mainly because it has:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "less need for oxygen and food."
+      },
+      {
+        "id": "B",
+        "text": "more surface area for each unit of volume."
+      },
+      {
+        "id": "C",
+        "text": "more total surface area than a large cell."
+      },
+      {
+        "id": "D",
+        "text": "a thicker cell membrane."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "A small cell still needs these; it is supplied better because of its shape ratio, not because it needs less.",
+      "B": "Correct — a small cell has a high surface-area-to-volume ratio, so materials crossing its surface quickly reach all of its interior.",
+      "C": "A small cell has less total surface area; what it has more of is surface area per unit of volume.",
+      "D": "Membrane thickness does not change with cell size, and a thicker membrane would slow diffusion."
+    }
+  },
+  {
+    "id": "s925",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp116",
+    "context": "According to Student 1, a hemisphere has summer when:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Earth is nearest the Sun."
+      },
+      {
+        "id": "B",
+        "text": "that hemisphere leans toward the Sun."
+      },
+      {
+        "id": "C",
+        "text": "the Sun is highest in the sky."
+      },
+      {
+        "id": "D",
+        "text": "Earth is farthest from the Sun."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Student 1 says the sunlight is strongest, and it is summer, when Earth is nearest the Sun.",
+      "B": "That is how Students 2 and 3 begin their explanations; Student 1 does not mention the tilt.",
+      "C": "That is part of Student 2’s explanation.",
+      "D": "Student 1 links the farthest point with winter, not summer."
+    }
+  },
+  {
+    "id": "s926",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "easy",
+    "passage": "sp116",
+    "context": "According to Table 1, how far was Earth from the Sun on July 4?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "152.1 km"
+      },
+      {
+        "id": "B",
+        "text": "1.471 × 10⁸ km"
+      },
+      {
+        "id": "C",
+        "text": "1.317 × 10³ km"
+      },
+      {
+        "id": "D",
+        "text": "1.521 × 10⁸ km"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That ignores the word “million” in the column heading.",
+      "B": "That is the distance on January 3.",
+      "C": "That is the sunlight value for July 4, 1317 W/m², from the wrong column.",
+      "D": "Correct — Table 1 gives 152.1 million km, which is 152.1 × 10⁶ km, or 1.521 × 10⁸ km."
+    }
+  },
+  {
+    "id": "s927",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp116",
+    "context": "The temperatures in Table 2, together with the dates in Table 1, most directly weaken the viewpoint of which student?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Student 3"
+      },
+      {
+        "id": "B",
+        "text": "None of the students"
+      },
+      {
+        "id": "C",
+        "text": "Student 1"
+      },
+      {
+        "id": "D",
+        "text": "Student 2"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Student 3 also expects opposite seasons in the two hemispheres, as Table 2 shows.",
+      "B": "Table 2 shows opposite seasons in the two hemispheres at the same distance from the Sun, which Student 1’s view cannot explain.",
+      "C": "Correct — Earth is nearest the Sun in January, so Student 1 expects summer everywhere then; but in January Chicago averages −3 °C while Buenos Aires averages 25 °C.",
+      "D": "Student 2 expects opposite seasons in the two hemispheres, which is what Table 2 shows."
+    }
+  },
+  {
+    "id": "s928",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp116",
+    "context": "Based on Table 1, the sunlight reaching the top of the atmosphere on January 3 was about what percent greater than on July 4?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "107%"
+      },
+      {
+        "id": "B",
+        "text": "7%"
+      },
+      {
+        "id": "C",
+        "text": "3%"
+      },
+      {
+        "id": "D",
+        "text": "91%"
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "That is the January value as a percent of the July value, not how much greater it is.",
+      "B": "Correct — 1408 − 1317 is 91 W/m², and 91 ÷ 1317 is about 0.07, or 7%.",
+      "C": "That is the percent change in distance, 5.0 ÷ 152.1, not in sunlight; sunlight changes with the square of the distance.",
+      "D": "That is the difference in W/m², not a percent of the July value."
+    }
+  },
+  {
+    "id": "s929",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp116",
+    "context": "Leaning toward the Sun brings a hemisphere at most about one Earth radius, 6371 km, closer to it. Based on Table 1 and the passage, which student’s explanation does this fact most weaken?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Student 3"
+      },
+      {
+        "id": "B",
+        "text": "Student 1"
+      },
+      {
+        "id": "C",
+        "text": "Student 2"
+      },
+      {
+        "id": "D",
+        "text": "Students 2 and 3"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 1 shows that a 5.0 million km change in Earth’s distance changes the sunlight by only about 7%, so a change of a few thousand kilometers is far too small to cause the seasons, as Student 3 claims it does.",
+      "B": "Student 1’s distance is Earth’s distance along its orbit, which does change by 5.0 million km; the size of the tilt’s effect does not bear on it.",
+      "C": "Student 2 explains the seasons by the angle of sunlight and day length, not by distance.",
+      "D": "Only Student 3 relies on the tilt changing the distance to the Sun."
+    }
+  },
+  {
+    "id": "s930",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "easy",
+    "passage": "sp116",
+    "context": "Student 2 predicts that when it is summer in the Northern Hemisphere, it is winter in the Southern Hemisphere. Do the data in Table 2 support this prediction?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "No; both cities were coldest in January."
+      },
+      {
+        "id": "B",
+        "text": "No; both cities were warmest in July."
+      },
+      {
+        "id": "C",
+        "text": "Yes; July: Chicago 24 °C, Buenos Aires 11 °C."
+      },
+      {
+        "id": "D",
+        "text": "Yes; both were above 20 °C in July."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Buenos Aires was warmest in January, at 25 °C.",
+      "B": "Buenos Aires was coolest in July, at 11 °C.",
+      "C": "Correct — July is warm in northern Chicago and cool in southern Buenos Aires, and January is the reverse.",
+      "D": "Buenos Aires averaged only 11 °C in July."
+    }
+  },
+  {
+    "id": "s931",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "hard",
+    "passage": "sp116",
+    "context": "Table 3 shows that the noon Sun is much higher at 40° N in June than in December. Sunlight arriving from high in the sky warms the ground more mainly because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "it contains more blue light than low sunlight."
+      },
+      {
+        "id": "B",
+        "text": "its energy is spread over a smaller area of ground."
+      },
+      {
+        "id": "C",
+        "text": "it has traveled a shorter distance from the Sun."
+      },
+      {
+        "id": "D",
+        "text": "the Sun gives off more energy in June."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "The color of sunlight does not explain the warming; how widely the beam is spread does.",
+      "B": "Correct — a beam striking the ground nearly head-on lights a smaller patch than the same beam arriving at a low slant, so each square meter receives more energy.",
+      "C": "The difference in distance is a few thousand kilometers out of about 150 million, far too little to matter.",
+      "D": "The Sun’s output barely changes over the year."
+    }
+  },
+  {
+    "id": "s932",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp117",
+    "context": "Scientists 1 and 2 would most likely agree that a long neck became common in giraffes because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "giraffes with longer necks left more young."
+      },
+      {
+        "id": "B",
+        "text": "giraffes stretched their necks to reach leaves."
+      },
+      {
+        "id": "C",
+        "text": "males fought for mates with their necks."
+      },
+      {
+        "id": "D",
+        "text": "high leaves were scarce in the dry season."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — both scientists say longer-necked giraffes left more offspring; they disagree about why, through food or through fights.",
+      "B": "Neither scientist says stretching during life lengthened necks.",
+      "C": "Only Scientist 2 says this.",
+      "D": "Only Scientist 1 builds an explanation on scarce leaves."
+    }
+  },
+  {
+    "id": "s933",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp117",
+    "context": "According to Table 1, a male giraffe’s neck makes up about what percent of its body mass?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "13%"
+      },
+      {
+        "id": "B",
+        "text": "7%"
+      },
+      {
+        "id": "C",
+        "text": "11%"
+      },
+      {
+        "id": "D",
+        "text": "9%"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That divides the male’s neck mass by the female’s body mass, 110 ÷ 830.",
+      "B": "That is the share for a female, 60 ÷ 830.",
+      "C": "That reads the neck mass, 110 kg, as though it were a percent of 1000 kg.",
+      "D": "Correct — 110 kg ÷ 1200 kg is about 0.092, or 9%."
+    }
+  },
+  {
+    "id": "s934",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp117",
+    "context": "Table 2 shows that females spent only 8% of their dry-season feeding time eating leaves above 4.0 m. This finding is more consistent with the viewpoint of which scientist?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Both scientists equally"
+      },
+      {
+        "id": "B",
+        "text": "Neither scientist"
+      },
+      {
+        "id": "C",
+        "text": "Scientist 2"
+      },
+      {
+        "id": "D",
+        "text": "Scientist 1"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "The finding fits Scientist 2’s claim and cuts against Scientist 1’s, so it does not fit both equally.",
+      "B": "Scientist 2 says most feeding is well below the neck’s reach, which this finding matches.",
+      "C": "Correct — Scientist 2 says most feeding happens well below the neck’s reach. Scientist 1 expects reaching high leaves to matter for both sexes, especially in the dry season.",
+      "D": "Scientist 1 says the neck pays off by reaching high leaves when they are scarce, yet females rarely fed above 4.0 m even in the dry season."
+    }
+  },
+  {
+    "id": "s935",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp117",
+    "context": "Table 3 shows that adults fed above 4.0 m more than twice as often in the dry season as in the wet season. How would Scientist 2 most likely respond to this result?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The result proves that Scientist 1 is wrong."
+      },
+      {
+        "id": "B",
+        "text": "The necks help with feeding but evolved for fighting."
+      },
+      {
+        "id": "C",
+        "text": "Giraffes feed lower in the dry season."
+      },
+      {
+        "id": "D",
+        "text": "Males fight more in the dry season."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Feeding higher when leaves are scarce is just what Scientist 1 would expect, so it cannot prove Scientist 1 wrong.",
+      "B": "Correct — Scientist 2 can accept that the neck is useful for feeding while holding that fighting, not feeding, drove its evolution.",
+      "C": "That reverses Table 3: feeding above 4.0 m rose from 9% to 22% in the dry season.",
+      "D": "Table 3 records feeding heights, not fights."
+    }
+  },
+  {
+    "id": "s936",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp117",
+    "context": "Which result in Table 1 does Scientist 2’s viewpoint predict but Scientist 1’s does not?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Males’ necks are a larger share of body mass."
+      },
+      {
+        "id": "B",
+        "text": "A male’s neck is about 0.4 m longer than a female’s."
+      },
+      {
+        "id": "C",
+        "text": "A male has about 370 kg more body mass than a female."
+      },
+      {
+        "id": "D",
+        "text": "A female’s neck is shorter than the male’s 2.0 m neck."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Scientist 2 expects fighting males to have necks larger in proportion to their bodies, while Scientist 1 expects the same proportion in both sexes. The male’s neck is about 9% of its body mass and the female’s about 7%.",
+      "B": "Males are bigger overall, so both scientists would expect longer necks in males; the question is whether the necks are larger in proportion.",
+      "C": "Neither scientist’s view depends on males being heavier overall.",
+      "D": "A shorter neck in the smaller sex is expected under both views."
+    }
+  },
+  {
+    "id": "s937",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "medium",
+    "passage": "sp117",
+    "context": "Based on Tables 2 and 3, in the dry season, which group fed above 4.0 m more often than the average for all adults that season?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Females"
+      },
+      {
+        "id": "B",
+        "text": "Both males and females"
+      },
+      {
+        "id": "C",
+        "text": "Neither group"
+      },
+      {
+        "id": "D",
+        "text": "Males"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "Females fed above 4.0 m only 8% of the time, below the 22% average.",
+      "B": "An average lies between the two groups, so both cannot be above it; females were below.",
+      "C": "Males, at 35%, were above the 22% average.",
+      "D": "Correct — males fed above 4.0 m 35% of the time, more than the 22% for all adults in the dry season."
+    }
+  },
+  {
+    "id": "s938",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp117",
+    "context": "A giraffe’s neck contains seven vertebrae, the same number as a human’s neck. This similarity is best explained by the fact that giraffes and humans:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "have necks of about the same length."
+      },
+      {
+        "id": "B",
+        "text": "both evolved from giraffes."
+      },
+      {
+        "id": "C",
+        "text": "share a common ancestor."
+      },
+      {
+        "id": "D",
+        "text": "use their necks in the same ways."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "A giraffe’s neck is many times longer than a human’s.",
+      "B": "Humans did not evolve from giraffes; the two share a much older ancestor.",
+      "C": "Correct — almost all mammals have seven neck vertebrae, a trait passed down from a common mammal ancestor.",
+      "D": "Giraffes and humans use their necks very differently, yet both have seven vertebrae."
+    }
+  },
+  {
+    "id": "s939",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp118",
+    "context": "According to Scientist 1, the sky is blue because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "sunlight contains only blue light."
+      },
+      {
+        "id": "B",
+        "text": "the air reflects the color of the oceans."
+      },
+      {
+        "id": "C",
+        "text": "air molecules scatter blue light most strongly."
+      },
+      {
+        "id": "D",
+        "text": "dust and water droplets scatter blue light."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "All three scientists accept that sunlight contains many colors; none says it is only blue.",
+      "B": "Correct — Scientist 1 says sunlight carries the blue of the sea up into the sky.",
+      "C": "That is Scientist 3’s explanation.",
+      "D": "That is Scientist 2’s explanation."
+    }
+  },
+  {
+    "id": "s940",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp118",
+    "context": "Based on Table 1, air molecules scatter blue light at 450 nm about how many times as strongly as red light at 650 nm?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 6 times"
+      },
+      {
+        "id": "B",
+        "text": "About 4.5 times"
+      },
+      {
+        "id": "C",
+        "text": "About 1.4 times"
+      },
+      {
+        "id": "D",
+        "text": "About 4 times"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is blue light compared with red light at 700 nm, not 650 nm.",
+      "B": "That subtracts, 5.9 − 1.4, instead of dividing; the values are ratios, so they must be divided.",
+      "C": "That is red light at 650 nm compared with 700 nm.",
+      "D": "Correct — 5.9 ÷ 1.4 is about 4.2."
+    }
+  },
+  {
+    "id": "s941",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "medium",
+    "passage": "sp118",
+    "context": "Which observation in Table 2 is most directly inconsistent with Scientist 1’s viewpoint?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The sky on a hazy day is pale, whitish blue."
+      },
+      {
+        "id": "B",
+        "text": "The sky seen from a balloon at 35 km is nearly black."
+      },
+      {
+        "id": "C",
+        "text": "The sky over a large desert, far from any ocean, is blue."
+      },
+      {
+        "id": "D",
+        "text": "The sky after rain has washed most dust from the air is deep blue."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "This bears on the effect of water droplets, which Scientists 2 and 3 discuss.",
+      "B": "The balloon is above most of the air, not away from the ocean, so this is not the most direct test of Scientist 1’s view.",
+      "C": "Correct — if the sky only reflected the oceans, it should not be blue where there is no ocean nearby.",
+      "D": "This bears on whether dust makes the sky blue, Scientist 2’s claim, not on reflection from the ocean."
+    }
+  },
+  {
+    "id": "s942",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp118",
+    "context": "Which of the following observations contradicts Scientist 2’s viewpoint but is consistent with Scientist 3’s?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "The sky is blue on clear days everywhere."
+      },
+      {
+        "id": "B",
+        "text": "After rain clears the dust, the sky is deep blue."
+      },
+      {
+        "id": "C",
+        "text": "The sky over a large desert is blue."
+      },
+      {
+        "id": "D",
+        "text": "The sky from a balloon at 35 km is nearly black."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Both scientists expect a blue sky on clear days; they disagree about what does the scattering.",
+      "B": "Correct — Scientist 2 says fewer particles should make the sky less blue, but Scientist 3 says dust only whitens the sky, so removing it should make the sky bluer, as observed.",
+      "C": "Both Scientist 2 and Scientist 3 expect a blue sky over a desert, since neither depends on the ocean.",
+      "D": "Above most of the air and its dust, both scientists expect little scattered light, so this does not separate them."
+    }
+  },
+  {
+    "id": "s943",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp118",
+    "context": "Based on Table 3, how would Scientist 3 most likely answer Scientist 2’s claim that adding more particles to the air makes the sky bluer?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Dust-sized particles scatter white light, so more of them whiten the sky."
+      },
+      {
+        "id": "B",
+        "text": "The smallest droplets scatter blue, so Scientist 2 is right."
+      },
+      {
+        "id": "C",
+        "text": "Scattering plays no part in the color of the sky."
+      },
+      {
+        "id": "D",
+        "text": "The sky’s color comes from the ocean, as Scientist 1 says."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — Table 3 shows droplets of 5 µm and larger scattering white light, which supports Scientist 3’s claim that such particles pale the sky rather than turn it bluer.",
+      "B": "Only the 0.05 µm droplets scattered blue; larger ones scattered white, which is the point Scientist 3 would make.",
+      "C": "Scientist 3’s explanation is built on scattering by air molecules.",
+      "D": "Scientist 3 explains the color by scattering in the air, not by reflection from the ocean."
+    }
+  },
+  {
+    "id": "s944",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp118",
+    "context": "The Sun often looks orange or red when it is near the horizon at sunset. This is mainly because its light then:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "comes from a cooler part of the Sun."
+      },
+      {
+        "id": "B",
+        "text": "reflects off clouds, which are red."
+      },
+      {
+        "id": "C",
+        "text": "is bent by the ocean into red light."
+      },
+      {
+        "id": "D",
+        "text": "crosses more air, losing its blue."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "The light comes from the same surface all day; the Sun does not cool at sunset.",
+      "B": "Clouds are white or gray; they look red at sunset because of the light falling on them, not their own color.",
+      "C": "Water near the horizon does not turn sunlight red; the change comes from the air the light passes through.",
+      "D": "Correct — light from a low Sun crosses far more air on its way to us, so much of its short-wavelength light is scattered out of the beam, leaving the longer wavelengths."
+    }
+  },
+  {
+    "id": "s945",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp118",
+    "context": "What is the wavelength of the blue light in Table 1, 450 nm, in meters? (1 nm = 10⁻⁹ m)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "4.5 × 10⁻¹¹ m"
+      },
+      {
+        "id": "B",
+        "text": "4.5 × 10¹¹ m"
+      },
+      {
+        "id": "C",
+        "text": "4.5 × 10⁻⁷ m"
+      },
+      {
+        "id": "D",
+        "text": "4.5 × 10⁻⁹ m"
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "That subtracts 2 from the exponent instead of adding it.",
+      "B": "That multiplies by 10⁹ instead of by 10⁻⁹, making a light wave longer than the distance to the Sun.",
+      "C": "Correct — 450 × 10⁻⁹ m is 4.5 × 10² × 10⁻⁹ m, or 4.5 × 10⁻⁷ m.",
+      "D": "That is 4.5 nm, not 450 nm; moving the decimal two places changes the exponent by 2."
+    }
+  },
+  {
+    "id": "s946",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "easy",
+    "passage": "sp119",
+    "context": "According to Scientist 2, most of the space inside an atom is:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "packed with electrons."
+      },
+      {
+        "id": "B",
+        "text": "empty."
+      },
+      {
+        "id": "C",
+        "text": "filled with positive charge."
+      },
+      {
+        "id": "D",
+        "text": "filled by the nucleus."
+      }
+    ],
+    "answer": "B",
+    "why": {
+      "A": "Scientist 2 has the electrons moving through empty space, not filling it.",
+      "B": "Correct — Scientist 2 says the electrons move around the nucleus through what is otherwise empty space.",
+      "C": "That is Scientist 1’s picture; Scientist 2 puts all the positive charge in the tiny nucleus.",
+      "D": "Scientist 2 calls the nucleus tiny."
+    }
+  },
+  {
+    "id": "s947",
+    "section": "science",
+    "topic": "data representation",
+    "difficulty": "easy",
+    "passage": "sp119",
+    "context": "According to Table 1, as the angle of deflection increased from 15° to 150°, the number of particles counted per minute:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "decreased only."
+      },
+      {
+        "id": "B",
+        "text": "increased only."
+      },
+      {
+        "id": "C",
+        "text": "decreased, then increased."
+      },
+      {
+        "id": "D",
+        "text": "stayed about the same."
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — the count fell at every step, from 89,900 to 30 per minute.",
+      "B": "The count fell as the angle increased.",
+      "C": "The count kept falling all the way to 150°.",
+      "D": "The count changed by a factor of about 3000."
+    }
+  },
+  {
+    "id": "s948",
+    "section": "science",
+    "topic": "calculating from data",
+    "difficulty": "medium",
+    "passage": "sp119",
+    "context": "According to Table 1, about how many times as many alpha particles were counted at 15° as at 150°?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "About 10"
+      },
+      {
+        "id": "B",
+        "text": "About 300"
+      },
+      {
+        "id": "C",
+        "text": "About 89,870"
+      },
+      {
+        "id": "D",
+        "text": "About 3000"
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That divides the angles, 150 ÷ 15, rather than the counts.",
+      "B": "That drops a zero from 89,900 before dividing.",
+      "C": "That is the difference between the counts, not how many times larger one is.",
+      "D": "Correct — 89,900 ÷ 30 is about 3000."
+    }
+  },
+  {
+    "id": "s949",
+    "section": "science",
+    "topic": "hypotheses",
+    "difficulty": "hard",
+    "passage": "sp119",
+    "context": "Which result in Table 2 is predicted by Scientist 2’s viewpoint but not by Scientist 1’s?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Some particles were deflected by more than 90°."
+      },
+      {
+        "id": "B",
+        "text": "The thinnest foil still deflected particles."
+      },
+      {
+        "id": "C",
+        "text": "Doubling the thickness from 0.2 to 0.4 µm doubled the count."
+      },
+      {
+        "id": "D",
+        "text": "The thickest foil gave the most deflections beyond 90°."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Scientist 1 allows rare large deflections built from many small ones, so their mere presence does not separate the views.",
+      "B": "Both scientists expect a foil of any thickness to deflect some particles.",
+      "C": "Correct — Scientist 2 expects large deflections to be proportional to thickness, and the count went from 41 to 82 per minute. Scientist 1 expects such deflections to grow far faster than the thickness.",
+      "D": "Both scientists expect a thicker foil to give more large deflections; they disagree about how much more."
+    }
+  },
+  {
+    "id": "s950",
+    "section": "science",
+    "topic": "units",
+    "difficulty": "medium",
+    "passage": "sp119",
+    "context": "According to Table 3, what is the radius of a gold atom in nanometers? (1 nm = 10⁻⁹ m)",
+    "choices": [
+      {
+        "id": "A",
+        "text": "0.144 nm"
+      },
+      {
+        "id": "B",
+        "text": "1.44 nm"
+      },
+      {
+        "id": "C",
+        "text": "144 nm"
+      },
+      {
+        "id": "D",
+        "text": "1.44 × 10⁻¹⁹ nm"
+      }
+    ],
+    "answer": "A",
+    "why": {
+      "A": "Correct — 1.44 × 10⁻¹⁰ m ÷ 10⁻⁹ m/nm is 1.44 × 10⁻¹, or 0.144 nm.",
+      "B": "That treats 10⁻¹⁰ m as if it were 10⁻⁹ m, making the atom ten times too large.",
+      "C": "That is the radius in picometers (10⁻¹² m), not nanometers.",
+      "D": "That multiplies by 10⁻⁹ instead of dividing; the number of nanometers must be larger than the number of meters."
+    }
+  },
+  {
+    "id": "s951",
+    "section": "science",
+    "topic": "conflicting viewpoints",
+    "difficulty": "hard",
+    "passage": "sp119",
+    "context": "How would Scientist 1 most likely account for the 30 alpha particles per minute that Table 1 shows deflected by 150°?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Each had bounced off a tiny, dense nucleus."
+      },
+      {
+        "id": "B",
+        "text": "Each had struck an electron head-on."
+      },
+      {
+        "id": "C",
+        "text": "They passed straight through the foil."
+      },
+      {
+        "id": "D",
+        "text": "Many small deflections added up."
+      }
+    ],
+    "answer": "D",
+    "why": {
+      "A": "That is Scientist 2’s account; Scientist 1’s atom has no nucleus.",
+      "B": "An alpha particle is about 7300 times as massive as an electron, and Scientist 1 says nothing of electrons turning alpha particles back.",
+      "C": "Particles deflected by 150° were turned nearly backward, not passed straight through.",
+      "D": "Correct — Scientist 1 says a large deflection can only build up from many small ones, so that is how Scientist 1 would have to explain these."
+    }
+  },
+  {
+    "id": "s952",
+    "section": "science",
+    "topic": "outside knowledge",
+    "difficulty": "medium",
+    "passage": "sp119",
+    "context": "In Scientist 2’s model, an alpha particle that comes close to a gold nucleus is pushed away because:",
+    "choices": [
+      {
+        "id": "A",
+        "text": "gravity between them pushes them apart."
+      },
+      {
+        "id": "B",
+        "text": "electrons in the nucleus repel the alpha particle."
+      },
+      {
+        "id": "C",
+        "text": "both carry positive charge."
+      },
+      {
+        "id": "D",
+        "text": "the nucleus is negatively charged."
+      }
+    ],
+    "answer": "C",
+    "why": {
+      "A": "Gravity only attracts, and between such small masses it is far too weak to matter.",
+      "B": "Scientist 2 places the electrons outside the nucleus.",
+      "C": "Correct — the positive alpha particle and the positive nucleus repel each other electrically.",
+      "D": "Scientist 2 puts all the atom’s positive charge in the nucleus."
+    }
   }
 ]
