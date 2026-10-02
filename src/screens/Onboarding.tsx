@@ -1,7 +1,7 @@
 /* Four questions, then a plan. Sets the target score, a weekly XP goal and
    which section to start with — all of which the dashboard reads later. */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SECTION_BY_ID, SECTIONS } from '@/content/sections';
 import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
@@ -66,14 +66,82 @@ const STEPS: Step[] = [
   },
 ];
 
+type Phase = 'questions' | 'date' | 'hero' | 'plan';
+
+interface Draft {
+  step: number;
+  answers: Record<string, string | number>;
+  testDate: string;
+  phase: Exclude<Phase, 'plan'>;
+}
+
+/* Where a half-finished onboarding is kept.
+
+   The steps are one route, so the phone's back gesture does not step back a
+   question — it leaves for the landing page, and the answers went with the
+   component. Coming forward again started from question one. Mirroring the
+   draft into sessionStorage means back-then-forward lands exactly where the
+   student was; session rather than local, because a draft from last week
+   is not something to resume. Cleared once the plan is saved. */
+const DRAFT_KEY = 'act-command:onboarding-draft';
+
+function readDraft(): Draft | null {
+  try {
+    const raw = window.sessionStorage.getItem(DRAFT_KEY);
+    if (!raw) return null;
+    const d = JSON.parse(raw) as Partial<Draft>;
+    if (
+      typeof d.step !== 'number' ||
+      d.step < 0 ||
+      d.step >= STEPS.length ||
+      !d.answers ||
+      typeof d.answers !== 'object' ||
+      !['questions', 'date', 'hero'].includes(String(d.phase))
+    ) {
+      return null;
+    }
+    return {
+      step: d.step,
+      answers: d.answers,
+      testDate: typeof d.testDate === 'string' ? d.testDate : '',
+      phase: d.phase as Draft['phase'],
+    };
+  } catch {
+    return null;
+  }
+}
+
+function writeDraft(draft: Draft | null) {
+  try {
+    if (draft) window.sessionStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
+    else window.sessionStorage.removeItem(DRAFT_KEY);
+  } catch {
+    /* Private mode or storage disabled: onboarding still works, it just
+       cannot survive leaving the page. */
+  }
+}
+
 export function Onboarding() {
   const navigate = useNavigate();
   const { progress, updateProgress } = useStore();
 
-  const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState<Record<string, string | number>>({});
-  const [testDate, setTestDate] = useState('');
-  const [phase, setPhase] = useState<'questions' | 'date' | 'hero' | 'plan'>('questions');
+  const [draft] = useState(readDraft);
+  const [step, setStep] = useState(draft?.step ?? 0);
+  const [answers, setAnswers] = useState<Record<string, string | number>>(draft?.answers ?? {});
+  const [testDate, setTestDate] = useState(draft?.testDate ?? '');
+  const [phase, setPhase] = useState<Phase>(draft?.phase ?? 'questions');
+
+  useEffect(() => {
+    if (phase !== 'plan') writeDraft({ step, answers, testDate, phase });
+  }, [step, answers, testDate, phase]);
+
+  /* The bar used to count only the four multiple-choice questions, so it read
+     "Question 4 of 4 · 100%" with the date and the character still to come.
+     It now counts every screen before the plan: the date one only when there
+     is a date to ask for, which is known once the first answer is in. */
+  const totalSteps = STEPS.length + (answers.when === 'none' ? 1 : 2);
+  const position =
+    phase === 'questions' ? step + 1 : phase === 'date' ? STEPS.length + 1 : totalSteps;
 
   /* `step` only ever moves within STEPS, but the index type cannot know that
      and the four reads below would each have to say so separately. */
@@ -99,6 +167,7 @@ export function Onboarding() {
   const savePlan = (final: Record<string, string | number>, date: string | null) => {
     sfx.achieve();
     burstConfetti(70);
+    writeDraft(null);
 
     const profile: OnboardingProfile = {
       when: (final.when as OnboardingProfile['when']) ?? 'none',
@@ -123,7 +192,8 @@ export function Onboarding() {
   const recommended = SECTION_BY_ID[fear];
 
   return (
-    <div className="relative isolate flex min-h-dvh items-center justify-center overflow-hidden px-4 py-14 ">
+    /* <main>: onboarding renders no Shell to supply the landmark. */
+    <main className="relative isolate flex min-h-dvh items-center justify-center overflow-hidden px-4 py-14">
       <Art
         name="camp-bg"
         priority
@@ -142,18 +212,20 @@ export function Onboarding() {
         <p className="mb-4 text-sm text-parchment-dim">
           Your plan, then your character. You can change both later.
         </p>
+        {phase !== 'plan' && (
+          <div className="mb-6">
+            <div className="mb-2 flex items-center justify-between font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+              <span>
+                Step {position} of {totalSteps}
+              </span>
+              <span>{Math.round((position / totalSteps) * 100)}%</span>
+            </div>
+            <ProgressBar value={position / totalSteps} height={8} />
+          </div>
+        )}
+
         {phase === 'questions' && (
           <>
-            <div className="mb-6">
-              <div className="mb-2 flex items-center justify-between font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
-                <span>
-                  Question {step + 1} of {STEPS.length}
-                </span>
-                <span>{Math.round(((step + 1) / STEPS.length) * 100)}%</span>
-              </div>
-              <ProgressBar value={(step + 1) / STEPS.length} height={8} />
-            </div>
-
             <h1 className="heading mb-2.5 text-[22px] leading-snug text-parchment">
               {current.question}
             </h1>
@@ -339,7 +411,7 @@ export function Onboarding() {
           </div>
         )}
       </div>
-    </div>
+    </main>
   );
 }
 

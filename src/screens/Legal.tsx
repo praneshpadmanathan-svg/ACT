@@ -23,7 +23,7 @@ import { Glyph } from '@/components/Icon';
 import { Art } from '@/components/Art';
 import { LIBRARY_STATS } from '@/content/stats';
 
-const UPDATED = '30 September 2026';
+const UPDATED = '1 October 2026';
 
 type LegalPage = 'privacy' | 'terms' | 'cookies';
 
@@ -45,7 +45,9 @@ export function LegalScreen({ page }: { page: LegalPage }) {
       />
       <div className="pointer-events-none fixed inset-0 -z-10 bg-leather-950/90" />
 
-      <div className="mx-auto w-full max-w-[52rem] px-4 py-12 sm:px-6 sm:py-16">
+      {/* <main>: these bare pages render no Shell, so they had no main
+          landmark for a screen reader to jump to. */}
+      <main className="mx-auto w-full max-w-[52rem] px-4 py-12 sm:px-6 sm:py-16">
         <button
           type="button"
           onClick={() => {
@@ -72,7 +74,7 @@ export function LegalScreen({ page }: { page: LegalPage }) {
           </div>
           <OperatorNote />
         </div>
-      </div>
+      </main>
     </div>
   );
 }
@@ -86,10 +88,11 @@ function Privacy() {
       <Updated />
 
       <Lead>
-        The short version: if you play without an account, nothing about you leaves your device. If
-        you make an account, we keep your email, the name you chose, and your study progress — so it
-        can follow you to your phone. That is the whole list. We do not run ads, we do not use
-        trackers, and we do not sell anything to anyone.
+        The short version: if you play without an account, nothing about you leaves your device
+        {cloudEnabled ? ' (apart from an anonymous crash report if the app breaks)' : ''}. If you
+        make an account, we keep your email, the name you chose, and your study progress — so it can
+        follow you to your phone. That is the whole list. We do not run ads, we do not use trackers,
+        and we do not sell anything to anyone.
       </Lead>
 
       <H>Who we are</H>
@@ -257,6 +260,22 @@ function Privacy() {
             if not, it is anonymous. Only we can read reports, and we use them only to fix things
             and reply.
           </P>
+
+          <H>Crash reports</H>
+          <P>
+            If the app breaks — a screen fails to load, or something goes wrong in the background —
+            it sends us a short crash report so we can find and fix the bug. A report holds the
+            error message, the technical trace of where in our code it happened, which screen you
+            were on (just its name), which version of the app you were running, and your browser’s
+            name and version. If you are logged in it is linked to your account id; if not, it is
+            anonymous.
+          </P>
+          <P>
+            Before a report leaves your device we strip out email addresses, sign-in tokens and
+            anything after a “?” or “#” in a web address. It is not designed to capture what you
+            type, your answers or your scores. At most a few are sent per visit, only we can read
+            them, we use them only to fix bugs, and each one is deleted after about 30 days.
+          </P>
         </>
       )}
 
@@ -416,8 +435,8 @@ const STORED: { key: string; what: string; kept: string }[] = [
   },
   {
     key: 'act-command:age-verdict',
-    what: 'A single yes or no: whether this browser passed the age check. Never your birthday.',
-    kept: 'Until you clear your browser data.',
+    what: 'Whether the age check was passed or failed. Never your birthday.',
+    kept: 'A pass: until you close the tab. A fail: until you clear your browser data.',
   },
   {
     key: 'act-command:scratch',
@@ -431,7 +450,7 @@ const STORED: { key: string; what: string; kept: string }[] = [
   },
   {
     key: 'act-command:diagnostics:v1',
-    what: 'The last 40 errors the app hit on this device. Never sent anywhere unless you copy it.',
+    what: 'The last 40 errors the app hit on this device. The list itself is never sent anywhere unless you copy it.',
     kept: 'The last 40, or until you press Clear.',
   },
   {
@@ -451,6 +470,11 @@ const STORED_CLOUD: { key: string; what: string; kept: string }[] = [
     key: 'sb-…-auth-token-code-verifier',
     what: 'A one-time value used while a sign-in link is completing.',
     kept: 'Removed when sign-in finishes.',
+  },
+  {
+    key: 'act-command:crash-reports-sent',
+    what: 'The crash messages already reported this visit, so the same one is not sent twice. Session storage, not local storage.',
+    kept: 'Until you close the tab.',
   },
 ];
 

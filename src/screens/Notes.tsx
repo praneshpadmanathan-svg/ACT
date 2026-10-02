@@ -9,7 +9,7 @@
    finishing a page. */
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { NOTES, SECTION_BY_ID, getNotePage, ALL_NOTE_PAGES } from '@/content';
+import { SECTION_BY_ID, allNotePages, getNotePage, notesFor, useContent } from '@/content';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
@@ -30,6 +30,7 @@ import { RichText } from '@/components/RichText';
 /* ------------------------------------------------------------- library */
 
 export function NotesScreen({ section }: { section?: string }) {
+  useContent({ notes: true });
   const { progress } = useStore();
   const navigate = useNavigate();
   const active = (section as SectionId) ?? 'english';
@@ -54,7 +55,7 @@ export function NotesScreen({ section }: { section?: string }) {
     );
   }
 
-  const units = NOTES[active];
+  const units = notesFor(active);
   const readInSection = units.reduce(
     (n, unit) => n + unit.pages.filter((p) => progress.notesRead.includes(p.id)).length,
     0,
@@ -64,7 +65,7 @@ export function NotesScreen({ section }: { section?: string }) {
   return (
     <Page>
       <SectionHeading
-        eyebrow={`${progress.notesRead.length} of ${ALL_NOTE_PAGES.length} pages read overall`}
+        eyebrow={`${progress.notesRead.length} of ${allNotePages().length} pages read overall`}
         title="Library"
         detail="Short pages that teach exactly what the ACT asks. Each one ends with a check question."
       />
@@ -135,6 +136,7 @@ export function NotesScreen({ section }: { section?: string }) {
 /* -------------------------------------------------------------- reader */
 
 export function NoteReader({ pageId }: { pageId: string }) {
+  useContent({ notes: true });
   const page = getNotePage(pageId);
   const navigate = useNavigate();
   const { progress, markNoteRead } = useStore();
@@ -163,10 +165,11 @@ export function NoteReader({ pageId }: { pageId: string }) {
 
   const siblings = useMemo(() => {
     if (!page) return { prev: null, next: null };
-    const index = ALL_NOTE_PAGES.findIndex((p) => p.id === page.id);
+    const pages = allNotePages();
+    const index = pages.findIndex((p) => p.id === page.id);
     return {
-      prev: index > 0 ? ALL_NOTE_PAGES[index - 1] : null,
-      next: index >= 0 && index < ALL_NOTE_PAGES.length - 1 ? ALL_NOTE_PAGES[index + 1] : null,
+      prev: index > 0 ? pages[index - 1] : null,
+      next: index >= 0 && index < pages.length - 1 ? pages[index + 1] : null,
     };
   }, [page]);
 

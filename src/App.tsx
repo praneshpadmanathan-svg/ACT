@@ -13,6 +13,8 @@ import { StoryOverlay } from '@/game/StoryOverlay';
 import { RegionBackdrop } from '@/game/RegionBackdrop';
 import { ScreenSkeleton } from '@/components/ScreenSkeleton';
 import { LoadingScreen } from '@/components/LoadingScreen';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { reloadOnChunkError } from '@/lib/chunkReload';
 
 /* The front door, and only the front door.
  *
@@ -37,7 +39,12 @@ import { Landing } from '@/screens/Landing';
  * `lazy` wants a default. Written out one per line rather than through a
  * generic helper: the explicit form keeps each screen's real props type, and a
  * helper returning `ComponentType<any>` would quietly stop checking the eleven
- * screens that take parameters off the route. */
+ * screens that take parameters off the route.
+ *
+ * Each lazy one goes through `reloadOnChunkError` — see lib/chunkReload for
+ * what a deploy does to an open tab. The prefetch below deliberately does not:
+ * a stale chunk found while warming the cache in the background is no reason
+ * to reload the page out from under someone reading it. */
 const load = {
   auth: () => import('@/screens/Auth'),
   legal: () => import('@/screens/Legal'),
@@ -58,32 +65,74 @@ const load = {
   feedback: () => import('@/screens/SendFeedback'),
 };
 
-const Auth = lazy(() => load.auth().then((m) => ({ default: m.Auth })));
-const LegalScreen = lazy(() => load.legal().then((m) => ({ default: m.LegalScreen })));
-const ExplainScreen = lazy(() => load.explain().then((m) => ({ default: m.ExplainScreen })));
-const Onboarding = lazy(() => load.onboarding().then((m) => ({ default: m.Onboarding })));
-const Home = lazy(() => load.home().then((m) => ({ default: m.Home })));
-const StudyScreen = lazy(() => load.study().then((m) => ({ default: m.StudyScreen })));
-const ZoneScreen = lazy(() => load.zone().then((m) => ({ default: m.ZoneScreen })));
-const DuelsScreen = lazy(() => load.duels().then((m) => ({ default: m.DuelsScreen })));
-const BossScreen = lazy(() => load.boss().then((m) => ({ default: m.BossScreen })));
-const CodexScreen = lazy(() => load.codex().then((m) => ({ default: m.CodexScreen })));
-const NotesScreen = lazy(() => load.notes().then((m) => ({ default: m.NotesScreen })));
-const NoteReader = lazy(() => load.notes().then((m) => ({ default: m.NoteReader })));
-const DrillsScreen = lazy(() => load.drills().then((m) => ({ default: m.DrillsScreen })));
-const DrillRunner = lazy(() => load.drills().then((m) => ({ default: m.DrillRunner })));
-const ReviewScreen = lazy(() => load.drills().then((m) => ({ default: m.ReviewScreen })));
-const BookmarksScreen = lazy(() => load.drills().then((m) => ({ default: m.BookmarksScreen })));
-const DailyScreen = lazy(() => load.drills().then((m) => ({ default: m.DailyScreen })));
-const DiagnosticScreen = lazy(() =>
-  load.diagnostic().then((m) => ({ default: m.DiagnosticScreen })),
+const Auth = lazy(() => reloadOnChunkError(load.auth()).then((m) => ({ default: m.Auth })));
+const LegalScreen = lazy(() =>
+  reloadOnChunkError(load.legal()).then((m) => ({ default: m.LegalScreen })),
 );
-const TestsScreen = lazy(() => load.tests().then((m) => ({ default: m.TestsScreen })));
-const TestRunner = lazy(() => load.tests().then((m) => ({ default: m.TestRunner })));
-const ReportScreen = lazy(() => load.tests().then((m) => ({ default: m.ReportScreen })));
-const StatsScreen = lazy(() => load.stats().then((m) => ({ default: m.StatsScreen })));
-const SettingsScreen = lazy(() => load.settings().then((m) => ({ default: m.SettingsScreen })));
-const FeedbackScreen = lazy(() => load.feedback().then((m) => ({ default: m.FeedbackScreen })));
+const ExplainScreen = lazy(() =>
+  reloadOnChunkError(load.explain()).then((m) => ({ default: m.ExplainScreen })),
+);
+const Onboarding = lazy(() =>
+  reloadOnChunkError(load.onboarding()).then((m) => ({ default: m.Onboarding })),
+);
+const Home = lazy(() => reloadOnChunkError(load.home()).then((m) => ({ default: m.Home })));
+const StudyScreen = lazy(() =>
+  reloadOnChunkError(load.study()).then((m) => ({ default: m.StudyScreen })),
+);
+const ZoneScreen = lazy(() =>
+  reloadOnChunkError(load.zone()).then((m) => ({ default: m.ZoneScreen })),
+);
+const DuelsScreen = lazy(() =>
+  reloadOnChunkError(load.duels()).then((m) => ({ default: m.DuelsScreen })),
+);
+const BossScreen = lazy(() =>
+  reloadOnChunkError(load.boss()).then((m) => ({ default: m.BossScreen })),
+);
+const CodexScreen = lazy(() =>
+  reloadOnChunkError(load.codex()).then((m) => ({ default: m.CodexScreen })),
+);
+const NotesScreen = lazy(() =>
+  reloadOnChunkError(load.notes()).then((m) => ({ default: m.NotesScreen })),
+);
+const NoteReader = lazy(() =>
+  reloadOnChunkError(load.notes()).then((m) => ({ default: m.NoteReader })),
+);
+const DrillsScreen = lazy(() =>
+  reloadOnChunkError(load.drills()).then((m) => ({ default: m.DrillsScreen })),
+);
+const DrillRunner = lazy(() =>
+  reloadOnChunkError(load.drills()).then((m) => ({ default: m.DrillRunner })),
+);
+const ReviewScreen = lazy(() =>
+  reloadOnChunkError(load.drills()).then((m) => ({ default: m.ReviewScreen })),
+);
+const BookmarksScreen = lazy(() =>
+  reloadOnChunkError(load.drills()).then((m) => ({ default: m.BookmarksScreen })),
+);
+const DailyScreen = lazy(() =>
+  reloadOnChunkError(load.drills()).then((m) => ({ default: m.DailyScreen })),
+);
+const DiagnosticScreen = lazy(() =>
+  reloadOnChunkError(load.diagnostic()).then((m) => ({ default: m.DiagnosticScreen })),
+);
+const TestsScreen = lazy(() =>
+  reloadOnChunkError(load.tests()).then((m) => ({ default: m.TestsScreen })),
+);
+const TestRunner = lazy(() =>
+  reloadOnChunkError(load.tests()).then((m) => ({ default: m.TestRunner })),
+);
+const ReportScreen = lazy(() =>
+  reloadOnChunkError(load.tests()).then((m) => ({ default: m.ReportScreen })),
+);
+const StatsScreen = lazy(() =>
+  reloadOnChunkError(load.stats()).then((m) => ({ default: m.StatsScreen })),
+);
+const SettingsScreen = lazy(() =>
+  reloadOnChunkError(load.settings()).then((m) => ({ default: m.SettingsScreen })),
+);
+const FeedbackScreen = lazy(() =>
+  reloadOnChunkError(load.feedback()).then((m) => ({ default: m.FeedbackScreen })),
+);
 
 /** Routes that render their own full-screen chrome and suppress the top bar.
  *  The adventure map used to be here — a full-viewport game view with its own
@@ -125,11 +174,14 @@ const OPEN_ROUTES = new Set([
  * exists (not Safari), a timeout where it does not — either way this must
  * never compete with the screen the person is actually looking at. */
 function prefetchEverydayScreens() {
+  /* A failure here is not worth reporting: the navigation that actually
+     needs the chunk will meet the same failure and handle it. */
+  const quiet = () => {};
   const warm = () => {
-    void load.home();
-    void load.study();
-    void load.drills();
-    void load.notes();
+    load.home().catch(quiet);
+    load.study().catch(quiet);
+    load.drills().catch(quiet);
+    load.notes().catch(quiet);
   };
   const idle = (window as Window & { requestIdleCallback?: (cb: () => void) => number })
     .requestIdleCallback;
@@ -291,8 +343,16 @@ export default function App() {
           page to a lazy one leaves the old page on screen until the new chunk
           lands. Keyed, the fallback shows immediately and the transition is
           honest about what is happening. */}
+          {/* And a boundary per screen, inside the store. The only boundary
+              used to be the one in main.tsx, above StoreProvider — so one
+              screen's render error unmounted the store with it, and the way
+              back was a full reload. Here, a crashed screen is replaced by
+              the error panel with the navigation still around it, and the
+              route key resets it on the next navigation. */}
           <div key={routeKey(route)} className="animate-pageIn">
-            <Suspense fallback={<ScreenFallback />}>{renderRoute(route)}</Suspense>
+            <ErrorBoundary scope="screen">
+              <Suspense fallback={<ScreenFallback />}>{renderRoute(route)}</Suspense>
+            </ErrorBoundary>
           </div>
         </div>
       </div>

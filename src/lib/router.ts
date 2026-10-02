@@ -167,6 +167,52 @@ export function hrefFor(route: Route): string {
 let exitGuard: string | null = null;
 /* Set when `navigate` has already asked, so the hashchange it causes does not ask again. */
 let confirmedLeave = false;
+
+/* A path that is not a route at all — `#/nonsense`, a typo, a link to a
+   screen that was removed. `parseRoute` shows Home for those, which left the
+   bad address in the bar to be bookmarked and shared. Only word-like first
+   segments count: an auth redirect's `#access_token=…` must never be
+   rewritten before the auth client has read it. */
+function isUnknownPath(hash: string): boolean {
+  const first = hash.split('?')[0]!.split('/')[0]!;
+  return /^[\w-]+$/.test(first) && first !== 'home' && parseRoute(hash).name === 'home';
+}
+
+/* Where this tab is in its own history.
+
+   Every entry the app lands on is stamped with its position in
+   `history.state`. Cancelling the leave-confirm needs it: the browser has
+   already moved by the time `hashchange` fires, and the old fix — replacing
+   the new entry's URL with the test's — overwrote the page *before* the test
+   with a second copy of the test. Back from a test, cancel, and the page you
+   came from was gone from the stack. Knowing both positions, the cancel can
+   undo exactly the move that happened: forward again after a back, back
+   again after a link pushed a new entry. */
+const IDX = 'actIdx';
+let entryIndex = 0;
+
+function stampedIndex(): number | null {
+  const state: unknown = window.history.state;
+  if (state && typeof state === 'object' && IDX in state) {
+    const idx = (state as Record<string, unknown>)[IDX];
+    if (typeof idx === 'number') return idx;
+  }
+  return null;
+}
+
+function stamp(idx: number, url?: string): void {
+  const state: unknown = window.history.state;
+  const base = state && typeof state === 'object' ? state : {};
+  window.history.replaceState({ ...base, [IDX]: idx }, '', url);
+}
+
+if (typeof window !== 'undefined') {
+  const idx = stampedIndex();
+  if (idx === null) stamp(0);
+  else entryIndex = idx;
+  if (isUnknownPath(currentHash())) stamp(entryIndex, '#/home');
+}
+
 let lastHash = typeof window === 'undefined' ? '' : currentHash();
 
 /** True while a screen has work in progress that leaving would lose. */
@@ -180,7 +226,7 @@ export function navigate(route: Route, opts: { replace?: boolean } = {}): void {
     confirmedLeave = true;
   }
   if (opts.replace) {
-    window.history.replaceState(null, '', href);
+    stamp(entryIndex, href);
     confirmedLeave = false;
     lastHash = currentHash();
     listeners.forEach((l) => l());
@@ -199,8 +245,12 @@ function subscribe(listener: () => void): () => void {
 let cachedHash = typeof window === 'undefined' ? '' : currentHash();
 let cachedRoute: Route = parseRoute(cachedHash);
 
+/* `lastHash`, not the address bar. Between a cancelled leave and the
+   `history.go` that undoes it, the bar briefly shows the page that was
+   refused; a render in that gap — a timed test re-renders every second —
+   would otherwise mount that page and throw away the test it just kept. */
 function getSnapshot(): Route {
-  const hash = currentHash();
+  const hash = lastHash;
   if (hash !== cachedHash) {
     cachedHash = hash;
     cachedRoute = parseRoute(hash);
@@ -210,13 +260,30 @@ function getSnapshot(): Route {
 
 if (typeof window !== 'undefined') {
   window.addEventListener('hashchange', () => {
-    const hash = currentHash();
+    let hash = currentHash();
     const asked = confirmedLeave;
     confirmedLeave = false;
+    const landed = stampedIndex();
     if (!asked && exitGuard && hash !== lastHash && !window.confirm(exitGuard)) {
-      // Put the address back without a second hashchange; the screen never moved.
-      window.history.replaceState(null, '', '#/' + lastHash);
+      /* Undo the move rather than overwrite where it landed (see `entryIndex`).
+         An unstamped entry is one a link just pushed, so step back off it; a
+         stamped one was reached by back or forward, so go the other way by
+         the same distance. The screen never moved — `getSnapshot` reads
+         `lastHash` — and the hashchange that the undo fires matches it. */
+      if (landed === null) window.history.back();
+      else if (landed !== entryIndex) window.history.go(entryIndex - landed);
+      else stamp(entryIndex, '#/' + lastHash);
       return;
+    }
+    if (landed === null) {
+      entryIndex += 1;
+      stamp(entryIndex);
+    } else {
+      entryIndex = landed;
+    }
+    if (isUnknownPath(hash)) {
+      stamp(entryIndex, '#/home');
+      hash = currentHash();
     }
     lastHash = hash;
     listeners.forEach((l) => l());

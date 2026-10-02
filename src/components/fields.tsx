@@ -27,9 +27,13 @@ import { MONTHS } from '../lib/ageGate';
 
 export type Option = { value: string; label: string };
 
+/* 16px on phones, 15px from `sm` up. iOS Safari zooms the page into any
+   focused form control set smaller than 16px and does not zoom back out, so
+   at 15px the onboarding screen jumped sideways on every tap. Desktop keeps
+   the size it was designed at. */
 const TRIGGER = cx(
-  'flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-left',
-  'mat-leather font-read text-[15px] text-parchment',
+  'flex w-full min-w-0 items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-left',
+  'mat-leather font-read text-base text-parchment sm:text-[15px]',
   'transition-[border-color,box-shadow] duration-quick ease-out',
   'hover:border-gold-deep focus-visible:border-gold-deep',
   'data-[popup-open]:border-gold-deep',
@@ -47,7 +51,7 @@ const POPUP = cx(
 
 const ITEM = cx(
   'grid cursor-default grid-cols-[1rem_1fr] items-center gap-2 rounded px-2 py-2',
-  'font-read text-[15px] text-parchment outline-none',
+  'font-read text-base text-parchment outline-none sm:text-[15px]',
   'data-[highlighted]:bg-leather-750 data-[highlighted]:shadow-[inset_0_0_0_1px_oklch(var(--c-gold-deep))] data-[selected]:text-gold',
 );
 
@@ -75,7 +79,7 @@ export function Select({
       onValueChange={(v) => onValueChange(v == null ? '' : String(v))}
     >
       <BaseSelect.Trigger aria-label={ariaLabel} className={cx(TRIGGER, className)}>
-        <BaseSelect.Value>
+        <BaseSelect.Value className="min-w-0 truncate">
           {(v: unknown) => {
             const hit = options.find((o) => o.value === v);
             return hit ? hit.label : <span className="text-ink-faint">{placeholder}</span>;
@@ -179,7 +183,7 @@ export function DateField({
   const years = Array.from({ length: toYear - fromYear + 1 }, (_, i) => String(fromYear + i));
 
   return (
-    <div className="grid grid-cols-[1.5fr_0.8fr_1fr] gap-2.5">
+    <div className="grid grid-cols-[minmax(0,1.5fr)_minmax(0,0.8fr)_minmax(0,1fr)] gap-2 sm:gap-2.5">
       <Select
         ariaLabel={`${ariaPrefix} month`}
         value={m ? String(Number(m)) : ''}

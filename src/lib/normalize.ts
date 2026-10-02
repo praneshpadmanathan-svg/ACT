@@ -9,8 +9,20 @@
 import type { Progress, Question, SectionId, ZoneQuestion } from '@/types';
 import { dueForReview } from './progress';
 import type { RunnableQuestion } from '@/components/QuestionRunner';
-import { getPassage, getQuestion, getZone, TOPIC_BY_ZONE_ALIAS, ZONE_QUIZZES } from '@/content';
+import {
+  getPassage,
+  getQuestion,
+  getZone,
+  locateQuestion,
+  TOPIC_BY_ZONE_ALIAS,
+  zoneQuizzes,
+} from '@/content';
+import { hashId, zoneQuestionId } from '@/content/ids';
 import { canonicalTopic, isZoneLabel, seeded, shuffle } from '@/lib/utils';
+
+/* The id scheme lives in `content/ids.ts` so the build can compute the same
+   ids; re-exported because this is where callers have always found it. */
+export { zoneQuestionId };
 
 const KEYS = ['A', 'B', 'C', 'D'];
 
@@ -43,16 +55,6 @@ const keyAt = (i: number) => KEYS[i] ?? String.fromCharCode(65 + i);
    that reference other options by letter — so this is safe everywhere. */
 
 const isPinned = (text: string) => /^\s*NO CHANGE\s*$/i.test(text);
-
-/** Stable 32-bit hash of the question id, so the order never drifts. */
-function hashId(id: string): number {
-  let h = 2166136261;
-  for (let i = 0; i < id.length; i++) {
-    h ^= id.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  return Math.abs(h) || 1;
-}
 
 /** Reorder the choices, then relabel them A-D and remap everything that
  *  referred to the old letters. */
@@ -137,38 +139,6 @@ function topicFor(q: ZoneQuestion, zoneId: string, zoneTopic?: string): string {
   return TOPIC_BY_ZONE_ALIAS[alias] ?? alias;
 }
 
-/* A zone question's permanent id.
- *
- * It was `${zoneId}-q${index}`, where `index` was the question's place in a
- * freshly shuffled six-question sample — so `comma_castle-q0` named a
- * different question on every visit. Spaced repetition files a miss under that
- * id and brings it back days later, which meant it was bringing back whichever
- * question happened to land in slot 0 that day. Every miss on the map went
- * into the review ladder as noise, and none of it could be looked up again
- * anyway: the id matched nothing in any bank.
- *
- * Hashed from the prompt rather than counted from a position, so inserting a
- * question into a zone's pool renumbers nothing. A positional id would hand
- * one student's review history to a different question the next time anybody
- * edited the JSON. Editing a question's text does retire its entry, which is
- * right — it is not the same question any more.
- *
- * The `h` is a format marker. Load-time pruning uses it to recognise the
- * positional ids that can never resolve, so keep it.
- *
- * The stem alone is not enough to identify a question: three pairs in the
- * bank share one — `Choose the correct sentence:` in the apostrophe zone is
- * asked twice, about two different sentences. So the fingerprint covers the
- * choices too, sorted, because the runner reshuffles them at display time
- * and the order they were typed in therefore means nothing. An id that
- * changed when somebody rearranged four lines of JSON would be the same
- * mistake as the positional one, just rarer.
- */
-export function zoneQuestionId(zoneId: string, q: ZoneQuestion): string {
-  const fingerprint = [q.q, ...[...q.opts].sort(), q.opts[q.a] ?? ''].join('\u0000');
-  return `${zoneId}-h${hashId(fingerprint).toString(36)}`;
-}
-
 /* `section` is the road the landmark sits on, and the caller always knows it —
    it is the path the zone was reached through. It used to be recorded as the
    literal `'zone'` instead, which read as a fifth section that does not exist:
@@ -222,29 +192,49 @@ export function fromZoneQuestion(
    on the home screen and then quietly failed to appear in the session.
 
    One resolver over both banks, so there is one place that knows how an id
-   becomes a question. */
+   becomes a question.
 
-const ZONE_BY_QID = new Map<string, { zoneId: string; q: ZoneQuestion }>();
-for (const [zoneId, questions] of Object.entries(ZONE_QUIZZES)) {
-  for (const q of questions) ZONE_BY_QID.set(zoneQuestionId(zoneId, q), { zoneId, q });
+   Whether an id names anything is answered by the content catalog, which
+   needs nothing loaded — so Home can count a review queue without fetching
+   the questions in it. Turning the id into a question does need its piece of
+   the library: declare the ids with `useContent({ ids })` (or `loadContent`)
+   first, and this throws rather than quietly dropping one that has not
+   arrived. */
+
+/* Zone questions by id, built the first time one is asked for — the zone
+   quizzes are their own download, and most sessions never open them. */
+let zoneByQid: Map<string, { zoneId: string; q: ZoneQuestion }> | null = null;
+function zoneQuestion(qid: string) {
+  if (!zoneByQid) {
+    zoneByQid = new Map();
+    for (const [zoneId, questions] of Object.entries(zoneQuizzes())) {
+      for (const q of questions) zoneByQid.set(zoneQuestionId(zoneId, q), { zoneId, q });
+    }
+  }
+  return zoneByQid.get(qid);
 }
 
-/** The question an id names, from either bank, ready for the runner.
- *  `undefined` when it names nothing — a question retired by a content edit,
- *  which the caller should skip rather than treat as an error. */
 /** Review ids that are due *and* still name a question. `dueForReview` cannot
  *  check the second part — progress.ts stays off the question bank for first
  *  paint — so an id retired by a content rewrite was counted on Home ("Review 3
  *  questions") and then absent from the session it opened. Count with this. */
 export function dueQuestionIds(p: Progress): string[] {
-  return dueForReview(p).filter((qid) => runnableById(qid) !== undefined);
+  return dueForReview(p).filter((qid) => locateQuestion(qid) !== undefined);
 }
 
+/** The question an id names, from either bank, ready for the runner.
+ *  `undefined` when it names nothing — a question retired by a content edit,
+ *  which the caller should skip rather than treat as an error. */
 export function runnableById(qid: string): RunnableQuestion | undefined {
-  const drill = getQuestion(qid);
-  if (drill) return fromDrillQuestion(drill);
+  const where = locateQuestion(qid);
+  if (!where) return undefined;
 
-  const found = ZONE_BY_QID.get(qid);
+  if (!where.zone) {
+    const drill = getQuestion(qid);
+    return drill && fromDrillQuestion(drill);
+  }
+
+  const found = zoneQuestion(qid);
   const entry = found && getZone(found.zoneId);
   if (!found || !entry) return undefined;
   return fromZoneQuestion(found.q, found.zoneId, entry.path.id, entry.zone.topic);

@@ -7,17 +7,33 @@
                 the competing positions of a Conflicting Viewpoints passage
 
    On desktop the panel sticks alongside the question so you can look back at
-   the text without losing your place; on mobile it collapses to a summary
-   you can open, because a 1,700-word passage above the choices means endless
-   scrolling on every single question. */
+   the text without losing your place; on mobile it can collapse to a
+   summary, because a 1,700-word passage above the choices means endless
+   scrolling on every single question (see `startsOpen` for when it does). */
 
 import { useState } from 'react';
 import type { Passage } from '@/types';
 import { Prose, RichText } from './RichText';
 import { FigureChartView } from './FigureChart';
+import { Glyph } from './Icon';
 
-export function PassagePanel({ passage }: { passage: Passage }) {
-  const [openOnMobile, setOpenOnMobile] = useState(false);
+/* Words in a question that mean "you will need to look". */
+const NEEDS_PASSAGE =
+  /\b(passage|paragraph|lines?|author|narrator|table|figure|graph|chart|diagram|data|study|studies|experiment)s?\b/i;
+
+/* Collapsed was the default on a phone, behind a 51×26 "Read" tab. But a
+   Science question about Table 2, or a Reading question about the second
+   paragraph, cannot be answered without the thing it names, so the student's
+   first move was always to hunt for that tab. It now opens by default when
+   the passage has figures or the question points into it, and the choice
+   then sticks for the rest of that passage's questions (the panel is keyed
+   by passage), so collapsing it once is enough. */
+function startsOpen(passage: Passage, cue: string): boolean {
+  return Boolean(passage.figures?.length) || NEEDS_PASSAGE.test(cue);
+}
+
+export function PassagePanel({ passage, cue = '' }: { passage: Passage; cue?: string }) {
+  const [openOnMobile, setOpenOnMobile] = useState(() => startsOpen(passage, cue));
 
   return (
     /* A page, and one step lower than the objects you act on. `.sheet` alone
@@ -33,15 +49,17 @@ export function PassagePanel({ passage }: { passage: Passage }) {
               {passage.title}
             </h2>
           </div>
-          <button
-            type="button"
-            onClick={() => setOpenOnMobile((v) => !v)}
-            className="flex-none rounded border-2 [@media(pointer:coarse)]:min-h-11 border-paper-edge bg-white px-2.5 py-1 font-script text-[10px] uppercase tracking-wide text-ink-soft lg:hidden"
-            aria-expanded={openOnMobile}
-          >
-            {openOnMobile ? 'Hide' : 'Read'}
-          </button>
         </div>
+        <button
+          type="button"
+          onClick={() => setOpenOnMobile((v) => !v)}
+          className="mt-3 flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border-2 border-paper-edge bg-white px-4 py-2 font-script text-[12px] uppercase tracking-wide text-ink-soft lg:hidden"
+          aria-expanded={openOnMobile}
+          aria-controls={`passage-body-${passage.id}`}
+        >
+          <Glyph name="chevronDown" size={14} className={openOnMobile ? 'rotate-180' : undefined} />
+          {openOnMobile ? 'Hide passage' : 'Show passage'}
+        </button>
 
         {(passage.intro || passage.blurb) && (
           <p className="mt-2 font-read text-[0.95rem] italic leading-relaxed text-ink-soft">
@@ -50,7 +68,10 @@ export function PassagePanel({ passage }: { passage: Passage }) {
         )}
       </div>
 
-      <div className={`${openOnMobile ? 'block' : 'hidden'} px-6 py-6 lg:block`}>
+      <div
+        id={`passage-body-${passage.id}`}
+        className={`${openOnMobile ? 'block' : 'hidden'} px-6 py-6 lg:block`}
+      >
         {passage.text && <Prose text={passage.text} className="prose-passage" />}
 
         {passage.figures?.map((figure, index) => (

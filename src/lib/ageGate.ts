@@ -22,12 +22,14 @@
       point — and a date of birth is worth considerably more to whoever steals
       it than the answer it produced. */
 
-import { readRaw, writeRaw } from './storage';
+import { readRaw, removeRaw, writeRaw } from './storage';
 
 /** The COPPA line. Under this, no account and no data. */
 export const MIN_ACCOUNT_AGE = 13;
 
 const VERDICT_KEY = 'act-command:age-verdict';
+/** Exported so "clear saved data" can keep it: a refusal must outlive that. */
+export const AGE_VERDICT_KEY = VERDICT_KEY;
 
 export type AgeVerdict = 'eligible' | 'too-young';
 
@@ -66,18 +68,41 @@ export function verdictFor(dob: DateParts, today: Date = new Date()): AgeVerdict
 
 /* -------------------------------------------------------------- remembering */
 
-/** What we keep: the answer, never the question.
+/** What we keep: the answer, never the question — and only one answer for good.
  *
- *  Remembered so the gate is not re-asked on every visit — which would be
- *  annoying for the eligible and, for a child who has already been told no,
- *  an invitation to keep trying different birthdays until one works. */
+ *  A refusal is remembered in localStorage so that a child who has been told
+ *  no is not invited to keep trying different birthdays until one works.
+ *
+ *  A pass is not. It used to be written to the same place, which made it a
+ *  property of the *browser*: a sixteen-year-old passes on the family laptop
+ *  and their nine-year-old sibling inherits the pass, forever, and is never
+ *  asked. So 'eligible' lives in sessionStorage — it spares the person in front
+ *  of the screen being asked twice in one sitting, and it is gone when the tab
+ *  closes. The asymmetry is the point: forgetting a pass costs one question,
+ *  forgetting a refusal costs the gate. */
 export function rememberVerdict(verdict: AgeVerdict): void {
-  writeRaw(VERDICT_KEY, verdict);
+  if (verdict === 'too-young') {
+    writeRaw(VERDICT_KEY, verdict);
+    return;
+  }
+  try {
+    window.sessionStorage.setItem(VERDICT_KEY, verdict);
+  } catch {
+    /* Private mode or a locked-down browser: they are asked again next time. */
+  }
 }
 
 export function rememberedVerdict(): AgeVerdict | null {
   const raw = readRaw(VERDICT_KEY);
-  return raw === 'eligible' || raw === 'too-young' ? raw : null;
+  if (raw === 'too-young') return raw;
+  /* A pass persisted by an earlier build. Honouring it would keep the old
+     browser-wide behaviour alive for everyone who already has one. */
+  if (raw === 'eligible') removeRaw(VERDICT_KEY);
+  try {
+    return window.sessionStorage.getItem(VERDICT_KEY) === 'eligible' ? 'eligible' : null;
+  } catch {
+    return null;
+  }
 }
 
 /** Month names for the picker, so the field order can't be misread. A student

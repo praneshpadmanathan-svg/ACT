@@ -11,7 +11,8 @@
 
 import { useRef } from 'react';
 
-import { PATH_BY_ID, SECTION_BY_ID } from '@/content';
+import { PATH_BY_ID } from '@/content/zones';
+import { SECTION_BY_ID } from '@/content/sections';
 import { useDialogFocus } from '@/lib/useDialogFocus';
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';

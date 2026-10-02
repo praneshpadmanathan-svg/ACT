@@ -394,7 +394,13 @@ export function QuestionRunner({
       <div className={cx('grid grid-cols-1 gap-5', question.passage && 'xl:grid-cols-2')}>
         {/* Keyed so a new passage opens at the top, not scrolled to wherever
             the last one was left. */}
-        {question.passage && <PassagePanel key={question.passage.id} passage={question.passage} />}
+        {question.passage && (
+          <PassagePanel
+            key={question.passage.id}
+            passage={question.passage}
+            cue={`${question.prompt} ${question.label ?? ''}`}
+          />
+        )}
 
         {/* The well remounts per question, so every question arrives instead
             of being swapped underneath the reader. Keyed on the index as well
@@ -597,8 +603,10 @@ export function QuestionRunner({
               })}
             </div>
 
+            {/* Not on touch screens: a phone has no A–D keys to press, so
+                the tip was an instruction nobody holding one could follow. */}
             {!revealed && (
-              <p className="mt-4 px-1 text-[12px] text-ink-faint">
+              <p className="mt-4 px-1 text-[12px] text-ink-faint [@media(pointer:coarse)]:hidden">
                 Tip: press{' '}
                 <kbd className="rounded border border-leather-700 bg-leather-800 px-1.5 py-0.5 font-mono text-[11px] text-parchment-dim">
                   A

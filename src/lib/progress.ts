@@ -19,7 +19,8 @@ import type { IconName } from '@/components/Icon';
 import { ALL_ZONES, getZone, SECTION_BY_ZONE_TOPIC, TOPIC_BY_ZONE_ALIAS } from '@/content/zones';
 import { DEFAULT_HERO_ID, isHeroId } from '@/game/heroes';
 import { LIBRARY_STATS } from '@/content/stats';
-import { readJSON, STORAGE_KEYS, writeJSON } from './storage';
+import { readJSON, removeRaw, STORAGE_KEYS, writeJSON } from './storage';
+import { progressKeyFor } from './identity';
 import { canonicalTopic } from './utils';
 
 /* ------------------------------------------------------------------- ranks */
@@ -367,10 +368,36 @@ export function migrateLegacy(current: Progress): Progress {
   return next;
 }
 
+/** Where the single-file build's progress is allowed to land. */
+const LEGACY_TARGET = progressKeyFor({ kind: 'guest' });
+
 /* ------------------------------------------------------------------ loading */
 
 export function loadProgress(key: string = STORAGE_KEYS.progress): Progress {
-  return normalizeProgress(readJSON<Partial<Progress> | null>(key, null));
+  const stored = readJSON<Partial<Progress> | null>(key, null);
+  const loaded = normalizeProgress(stored);
+  if (stored !== null || key !== LEGACY_TARGET) return loaded;
+
+  /* The old build's save, pulled forward exactly once and only into the guest
+     world — the one that build's player actually was.
+
+     This used to run inside `normalizeProgress` for *any* key with nothing
+     saved under it, and the legacy keys were never removed. So every identity
+     that ever loaded empty — every account signing in on this browser for the
+     first time — was handed the same old XP, profile and cleared landmarks,
+     and then synced them up to its own cloud row. Written to the guest key
+     first and the legacy keys removed after, so a crash in between leaves the
+     old copy to try again rather than losing it. */
+  const migrated = migrateLegacy(loaded);
+  if (migrated !== loaded) saveProgress(migrated, key);
+  for (const legacy of [
+    STORAGE_KEYS.legacyProgress,
+    STORAGE_KEYS.legacyJourney,
+    STORAGE_KEYS.legacyProfile,
+  ]) {
+    removeRaw(legacy);
+  }
+  return migrated;
 }
 
 /**
@@ -387,19 +414,47 @@ export function normalizeProgress(stored: Partial<Progress> | null): Progress {
   /* `let`, because one of the migrations below rebuilds the whole record
      rather than patching a field. Everything up to that point is a field
      assignment and is carried across by the spread inside it. */
+  /* Not an object at all — `"null"` parses, and so does `42` — is no record. */
+  if (stored !== null && (typeof stored !== 'object' || Array.isArray(stored))) stored = null;
   let merged: Progress = stored ? { ...base, ...stored, version: 2 } : base;
-  // Guard every collection — a half-written object should not crash a render.
-  merged.attempts = Array.isArray(merged.attempts) ? merged.attempts : [];
-  merged.notesRead = Array.isArray(merged.notesRead) ? merged.notesRead : [];
-  merged.testHistory = Array.isArray(merged.testHistory) ? merged.testHistory : [];
-  merged.achievements = Array.isArray(merged.achievements) ? merged.achievements : [];
-  merged.zonesCleared = merged.zonesCleared ?? {};
-  merged.review = pruneUnresolvableReviews(merged.review ?? {});
-  merged.storySeen = Array.isArray(merged.storySeen) ? merged.storySeen : [];
-  merged.bookmarks = Array.isArray(merged.bookmarks) ? merged.bookmarks : [];
-  merged.streakShields = typeof merged.streakShields === 'number' ? merged.streakShields : 0;
-  merged.dailyDoneOn = typeof merged.dailyDoneOn === 'string' ? merged.dailyDoneOn : null;
-  merged.diagnostic = merged.diagnostic ?? null;
+
+  /* Guard every field, not just the collections.
+
+     Only the arrays used to be checked, so a scalar of the wrong type sailed
+     through: `xp: null` from a half-written save, `lastActiveDay: 20260801`
+     from a hand edit, `review.q1 = null`. Each one crashed a render — and
+     because the bad record is re-read from disk on every boot, the crash
+     screen's own "try again" crashed again, forever. Every field gets the
+     default for its type when it does not have that type. */
+  merged.xp = count(merged.xp, base.xp);
+  merged.dayStreak = count(merged.dayStreak, base.dayStreak);
+  merged.currentCorrectStreak = count(merged.currentCorrectStreak, base.currentCorrectStreak);
+  merged.bestCorrectStreak = count(merged.bestCorrectStreak, base.bestCorrectStreak);
+  merged.targetScore = count(merged.targetScore, base.targetScore);
+  merged.weeklyGoal = count(merged.weeklyGoal, base.weeklyGoal) || base.weeklyGoal;
+  merged.streakShields = count(merged.streakShields, 0);
+  merged.lastActiveDay = isDay(merged.lastActiveDay) ? merged.lastActiveDay : null;
+  merged.dailyDoneOn = isDay(merged.dailyDoneOn) ? merged.dailyDoneOn : null;
+  merged.oath = typeof merged.oath === 'string' ? merged.oath : null;
+  merged.startRegion = typeof merged.startRegion === 'string' ? merged.startRegion : null;
+  merged.profile = isRecord(merged.profile) ? merged.profile : null;
+  merged.diagnostic = isRecord(merged.diagnostic) ? merged.diagnostic : null;
+
+  merged.attempts = Array.isArray(merged.attempts) ? merged.attempts.filter(isAttempt) : [];
+  merged.notesRead = strings(merged.notesRead);
+  merged.testHistory = Array.isArray(merged.testHistory)
+    ? merged.testHistory.filter((t) => isRecord(t) && typeof t.id === 'string')
+    : [];
+  merged.achievements = strings(merged.achievements);
+  merged.storySeen = strings(merged.storySeen);
+  merged.bookmarks = strings(merged.bookmarks);
+  merged.discovered = strings(merged.discovered);
+  merged.zonesCleared = numbers(merged.zonesCleared);
+  merged.review = pruneUnresolvableReviews(reviewEntries(merged.review));
+  if (merged.graduated !== undefined) merged.graduated = numbers(merged.graduated);
+  if (merged.resetAt !== undefined && !(Number.isFinite(merged.resetAt) && merged.resetAt > 0)) {
+    delete merged.resetAt;
+  }
 
   /* `hero` was written once as the string `'cadet'` and read by nothing, so
      every save in existence holds a value that is not a real hero id. Coerce
@@ -419,7 +474,9 @@ export function normalizeProgress(stored: Partial<Progress> | null): Progress {
 
      General shape worth remembering: after spreading defaults, you can no
      longer ask whether a field was present. Ask the input. */
-  merged.tally = isTally(stored?.tally) ? merged.tally : tallyFromAttempts(merged.attempts);
+  merged.tally = isTally(stored?.tally)
+    ? cleanTally(merged.tally)
+    : tallyFromAttempts(merged.attempts);
 
   /* Fold together topics that were the same skill under different spellings.
      Anyone who played before the two question banks agreed on a vocabulary has
@@ -442,16 +499,91 @@ export function normalizeProgress(stored: Partial<Progress> | null): Progress {
     merged.weeklyGoal = Math.round(merged.weeklyGoal / 16);
   }
 
-  return stored ? merged : migrateLegacy(merged);
+  return merged;
 }
 
 /** Above this, a weekly goal must be the old XP-denominated kind: the largest
  *  question goal we set is 150, the smallest legacy XP goal was 900. */
 const LEGACY_XP_GOAL_FLOOR = 400;
 
+/* ----------------------------------------------- shape guards for loading */
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+/** A non-negative finite number, or the fallback. */
+function count(value: unknown, fallback: number): number {
+  return typeof value === 'number' && Number.isFinite(value) && value >= 0 ? value : fallback;
+}
+
+const isDay = (value: unknown): value is string =>
+  typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value);
+
+function strings(value: unknown): string[] {
+  return Array.isArray(value) ? value.filter((v): v is string => typeof v === 'string') : [];
+}
+
+function numbers(value: unknown): Record<string, number> {
+  if (!isRecord(value)) return {};
+  const out: Record<string, number> = {};
+  for (const [k, v] of Object.entries(value)) {
+    if (typeof v === 'number' && Number.isFinite(v)) out[k] = v;
+  }
+  return out;
+}
+
+function isAttempt(value: unknown): value is Attempt {
+  return (
+    isRecord(value) &&
+    typeof value.qid === 'string' &&
+    typeof value.section === 'string' &&
+    typeof value.topic === 'string' &&
+    typeof value.ms === 'number' &&
+    typeof value.at === 'number'
+  );
+}
+
+function reviewEntries(value: unknown): Progress['review'] {
+  if (!isRecord(value)) return {};
+  const out: Progress['review'] = {};
+  for (const [qid, e] of Object.entries(value)) {
+    if (!isRecord(e) || !Number.isFinite(e.due) || !Number.isFinite(e.box)) continue;
+    const box = Math.min(Math.max(Math.trunc(e.box as number), 0), TOP_BOX);
+    const entry: ReviewEntry = { due: e.due as number, box };
+    if (typeof e.misses === 'number' && Number.isFinite(e.misses)) entry.misses = e.misses;
+    out[qid] = entry;
+  }
+  return out;
+}
+
 function isTally(value: unknown): value is Tally {
   const t = value as Tally | undefined;
-  return Boolean(t && typeof t.answered === 'number' && t.topics && t.daily);
+  return Boolean(
+    isRecord(t) && typeof t.answered === 'number' && isRecord(t.topics) && isRecord(t.daily),
+  );
+}
+
+/** Drop any topic bucket that is not a bucket, and any day that is not a count. */
+function cleanTally(tally: Tally): Tally {
+  const topics: Tally['topics'] = {};
+  for (const [key, t] of Object.entries(tally.topics)) {
+    if (
+      isRecord(t) &&
+      typeof t.section === 'string' &&
+      Number.isFinite(t.n) &&
+      Number.isFinite(t.ok) &&
+      Number.isFinite(t.ms)
+    ) {
+      topics[key] = t;
+    }
+  }
+  return {
+    answered: count(tally.answered, 0),
+    correct: count(tally.correct, 0),
+    topics,
+    daily: numbers(tally.daily),
+  };
 }
 
 /** The one spelling of a topic name. The tally, the answer log and both
@@ -763,6 +895,12 @@ export function scheduleReview(
   return { ...review, [qid]: next };
 }
 
+/** When an entry was scheduled. Not stored, and does not need to be: `due` is
+ *  always that moment plus its box's interval, so it can be read back off. */
+export function scheduledAt(entry: ReviewEntry): number {
+  return entry.due - (BOX_INTERVALS[entry.box] ?? 0) * 86_400_000;
+}
+
 /**
  * Everything due, hardest-earned first.
  *
@@ -808,6 +946,11 @@ export function recordAttempt(
 ): RecordResult {
   const beforeRank = rankIndexFor(p.xp);
   const currentCorrectStreak = attempt.correct ? p.currentCorrectStreak + 1 : 0;
+  const review = scheduleReview(p.review, attempt.qid, attempt.correct, attempt.ms);
+  /* Graduating deletes the entry, and an absence cannot outvote another
+     device's copy of it in `mergeProgress` — so the graduation is written
+     down, with when, and the merge drops any entry scheduled before it. */
+  const graduatedNow = attempt.qid in p.review && !(attempt.qid in review);
 
   const staged: Progress = {
     ...p,
@@ -820,7 +963,8 @@ export function recordAttempt(
     /* The response time is handed to the scheduler rather than dropped. It is
        the only signal the app has for how *confidently* an answer was given,
        and it has been recorded and unused since the first build. */
-    review: scheduleReview(p.review, attempt.qid, attempt.correct, attempt.ms),
+    review,
+    ...(graduatedNow ? { graduated: { ...p.graduated, [attempt.qid]: Date.now() } } : {}),
   };
   const { progress: next, shieldsSpent } = applyDayStreak(staged);
 
@@ -1205,10 +1349,20 @@ export function paceHint(answered: number, questions: number, elapsedFrac: numbe
 
 export const DAILY_SIZE = 5;
 
-export const dailyDone = (p: Progress): boolean => p.dailyDoneOn === dayKey();
+/** Whether the daily for `day` (default today) is already paid.
+ *
+ *  `>=`, not `===`. A challenge opened before midnight and finished after it is
+ *  stamped with the day it was opened, and the merge keeps the later of two
+ *  devices' stamps — so a record can already say "tomorrow" while the student
+ *  is finishing "today". Equality treated that as unclaimed and paid twice.
+ *  `yyyy-mm-dd` compares correctly as a string. */
+export const dailyClaimed = (p: Progress, day: string = dayKey()): boolean =>
+  p.dailyDoneOn !== null && p.dailyDoneOn >= day;
+
+export const dailyDone = (p: Progress): boolean => dailyClaimed(p);
 
 export function completeDaily(p: Progress, day: string = dayKey()): RecordResult {
-  if (p.dailyDoneOn === day) {
+  if (dailyClaimed(p, day)) {
     return { progress: p, xpGained: 0, rankedUp: false, newRankIndex: rankIndexFor(p.xp) };
   }
   return awardXP({ ...p, dailyDoneOn: day }, XP.dailyChallenge);
@@ -1287,6 +1441,21 @@ export const LANDMARK_COUNT = ALL_ZONES.length;
    they have, which is recoverable; over-counting would inflate their accuracy
    and quietly corrupt the score estimate they are trusting. */
 export function mergeProgress(local: Progress, remote: Progress): Progress {
+  /* A reset is the one thing allowed to move backwards, and only on purpose.
+
+     Without this, "reset my progress" lasted until the next sync from any other
+     device or tab still holding the old world: the cloud row was gone, the
+     other side's full copy merged into the empty one, and everything the
+     student had asked to delete came back. The side with the older reset (or
+     none) is history from before the student's request, and is dropped whole.
+     There is no way to pick out work done on that side *after* the reset but
+     before it heard about it — the per-item timestamps that would need do not
+     exist — so that is lost too, which is the honest reading of "reset". */
+  const localEpoch = local.resetAt ?? 0;
+  const remoteEpoch = remote.resetAt ?? 0;
+  if (remoteEpoch > localEpoch) return { ...remote, version: 2, attempts: [] };
+  if (localEpoch > remoteEpoch) return local;
+
   const testKey = (t: { id: string; at: number }) => `${t.id}@${t.at}`;
   const tests = new Map<string, Progress['testHistory'][number]>();
   for (const t of [...remote.testHistory, ...local.testHistory]) tests.set(testKey(t), t);
@@ -1307,6 +1476,20 @@ export function mergeProgress(local: Progress, remote: Progress): Progress {
     const misses = Math.max(entry.misses ?? 0, existing?.misses ?? 0);
     const ahead = !existing || entry.box > existing.box ? entry : existing;
     review[qid] = misses ? { ...ahead, misses } : ahead;
+  }
+
+  /* Then retire anything that graduated on either side after it was last
+     scheduled. Graduation deletes the entry, so without a record of it the
+     other device's older copy — box 4, say — was simply the only candidate
+     above, and the question came back into the queue it had just left. An
+     entry scheduled *after* its graduation is a fresh miss and stays. */
+  const graduated: Record<string, number> = { ...remote.graduated };
+  for (const [qid, at] of Object.entries(local.graduated ?? {})) {
+    graduated[qid] = Math.max(graduated[qid] ?? 0, at);
+  }
+  for (const [qid, at] of Object.entries(graduated)) {
+    const entry = review[qid];
+    if (entry && scheduledAt(entry) <= at) delete review[qid];
   }
 
   const newer = (local.lastActiveDay ?? '') >= (remote.lastActiveDay ?? '') ? local : remote;
@@ -1337,6 +1520,7 @@ export function mergeProgress(local: Progress, remote: Progress): Progress {
     bookmarks: [...new Set([...(remote.bookmarks ?? []), ...(local.bookmarks ?? [])])],
     zonesCleared,
     review,
+    ...(Object.keys(graduated).length ? { graduated } : {}),
     /* A streak is a statement about the most recent day, so the side that saw
        the most recent day owns it. The max resurrected broken streaks: a phone
        left at 10 days would overwrite the laptop that had since lapsed to 1. */

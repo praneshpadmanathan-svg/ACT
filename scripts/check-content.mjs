@@ -648,6 +648,73 @@ for (const [zoneId, questions] of Object.entries(miniquizzes)) {
   });
 }
 
+/* --------------------------- rule 10: no HTML where Markdown is rendered
+
+   `RichText` has two modes (src/components/RichText.tsx). `html` runs a tag
+   allowlist; `markdown` escapes `<`, `>` and `&` first and then understands
+   only `**bold**`, `*italic*` and backticks. So HTML in a Markdown field is
+   not rendered — it is printed. Twenty-nine landmark explanations shipped
+   that way: a student who got a question wrong read "A <i>which</i> clause"
+   and "4x &lt; 12" in the one paragraph meant to explain it, because the
+   quiz stems beside them really are HTML and the authors wrote the `why` in
+   the same voice.
+
+   The fields below are the ones a renderer passes as Markdown, as of
+   `fromZoneQuestion` / `fromDrillQuestion` (src/lib/normalize.ts),
+   `PassagePanel` and Zone's lesson intro. An underlined drill `context` is
+   exempt: it renders through the HTML path as the question's label.
+
+   The tag pattern names real tags rather than "anything in angle brackets",
+   so `x < 2 and y > 3` in a Math explanation is left alone. */
+
+const HTML_TAG =
+  /<\/?(?:b|strong|i|em|u|br|sub|sup|code|span|table|thead|tbody|tr|td|th|ul|ol|li|p|div|a|img)\b[^<>]*>/i;
+const HTML_ENTITY = /&(?:[a-zA-Z][a-zA-Z0-9]*|#\d+|#x[0-9a-fA-F]+);/;
+
+const checkMarkdown = (where, value) => {
+  if (typeof value !== 'string') return;
+  const hit = HTML_TAG.exec(value) ?? HTML_ENTITY.exec(value);
+  if (hit) {
+    failures.push(
+      `${where}: contains "${hit[0]}", but this field renders as Markdown, so the student ` +
+        `sees the markup itself. Use *italic*, **bold**, or a literal < > & instead.`,
+    );
+  }
+};
+
+for (const [zoneId, questions] of Object.entries(miniquizzes)) {
+  questions.forEach((q, i) => {
+    checkMarkdown(`${zoneId}[${i}].why`, q.why);
+    (q.notes ?? []).forEach((note, j) => checkMarkdown(`${zoneId}[${i}].notes[${j}]`, note));
+  });
+}
+
+for (const [section, questions] of Object.entries(questionsBySection)) {
+  for (const q of questions) {
+    if (!/«(.+?)»/s.test(String(q.context ?? ''))) {
+      checkMarkdown(`${section}/${q.id}.context`, q.context);
+    }
+    checkMarkdown(`${section}/${q.id}.stem`, q.stem);
+    for (const c of q.choices ?? []) checkMarkdown(`${section}/${q.id}.choices.${c.id}`, c.text);
+    for (const [key, text] of Object.entries(q.why ?? {})) {
+      checkMarkdown(`${section}/${q.id}.why.${key}`, text);
+    }
+  }
+}
+
+for (const section of ['English', 'Reading', 'Science']) {
+  for (const pg of readJSON(`passages${section}.json`)) {
+    checkMarkdown(`passages${section}/${pg.id}.text`, pg.text);
+    (pg.figures ?? []).forEach((fig, i) =>
+      checkMarkdown(`passages${section}/${pg.id}.figures[${i}].text`, fig.text),
+    );
+  }
+}
+
+for (const [zoneId, lesson] of Object.entries(readJSON('lessons.json'))) {
+  checkMarkdown(`lessons/${zoneId}.intro`, lesson?.intro);
+}
+
 /* ----------------------------------------------------------------- report */
 
 if (failures.length) {
@@ -661,5 +728,5 @@ console.log(
     'no duplicate or colliding ids, every answer and explanation present, every zone topic ' +
     'matches real question data, no duplicate stems or choices, no question asked more than ' +
     'six times with the numbers changed, every quotation locatable, ' +
-    'every item asking a question',
+    'every item asking a question, no HTML in a Markdown field',
 );

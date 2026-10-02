@@ -187,13 +187,13 @@ const FEATURES: { id: string; glyph: GlyphName; title: ReactNode; detail: ReactN
     glyph: 'sword',
     title: (
       <>
-        <Hl>{LIBRARY_STATS.totalQuestions.toLocaleString()}</Hl> questions, every choice explained
+        <Hl>{LIBRARY_STATS.totalQuestions.toLocaleString()}</Hl> questions, every one explained
       </>
     ),
     detail: (
       <>
-        Know why the right answer is <Hl tone="woods">right</Hl> — and exactly why each of the other
-        three is <Hl tone="blood">wrong</Hl>.
+        Know why the right answer is <Hl tone="woods">right</Hl> — and, in every drill, exactly why
+        each of the other three is <Hl tone="blood">wrong</Hl>.
       </>
     ),
   },

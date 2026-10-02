@@ -13,7 +13,7 @@
  */
 
 import { useMemo } from 'react';
-import { PATH_BY_ID } from '@/content';
+import { PATH_BY_ID } from '@/content/zones';
 import { REGION_ORDER } from '@/content/regionFlavor';
 import { useStore } from '@/lib/store';
 import type { SectionId, Zone } from '@/types';

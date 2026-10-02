@@ -73,6 +73,41 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- The too-old-browser notice. A classic script, so it runs on browsers
+         that cannot even parse the app's module. What it probes is what the
+         app cannot do without: regex lookbehind (a parse-time SyntaxError on
+         Safari before 16.4, which takes the whole bundle down to a blank
+         page — none ship today, but the probe stays so one slipping back in
+         degrades to this notice instead), and oklch() colour, which every
+         colour token is written in (Safari 15.4, Chrome 111), so without it
+         the screens render as unreadable defaults. The app root is hidden
+         rather than emptied, so a browser that runs the module anyway does
+         not paint a broken game behind the message.
+
+         The CSP in vercel.json allows this script by its sha256 hash only.
+         Any edit here — whitespace included — changes the hash, and
+         scripts/csp-hash.test.mjs fails until vercel.json is updated. -->
+    <script>
+      (function () {
+        var ok = true;
+        try {
+          new RegExp('(?<!a)b');
+        } catch (e) {
+          ok = false;
+        }
+        if (!(window.CSS && CSS.supports && CSS.supports('color', 'oklch(0 0 0)'))) ok = false;
+        if (ok) return;
+        var root = document.getElementById('root');
+        if (root) root.style.display = 'none';
+        var box = document.createElement('div');
+        box.setAttribute('role', 'alert');
+        box.style.cssText =
+          'max-width:32rem;margin:15vh auto;padding:24px;font:18px/1.5 system-ui,sans-serif;color:#1c1610;background:#f6efe0;border:2px solid #1c1610;border-radius:12px';
+        box.textContent =
+          'Your browser is too old for ACT Command — please update it (iOS 16.4+, Chrome 111+).';
+        document.body.insertBefore(box, root);
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -21,7 +21,7 @@
    `position: fixed` — a fixed rail would slide by the scroll offset every time
    something hit the screen. Sticky is unaffected by that. */
 
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { hrefFor, useNavigate, useRoute, type Route } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { cloudEnabled } from '@/lib/supabase';
@@ -367,8 +367,25 @@ export function SideNav() {
   const route = useRoute();
   const { syncing } = useStore();
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => setMenuOpen(false), [route]);
+
+  /* The drawer closed only from its own button or by navigating, so Escape
+     did nothing and a tap on the page below it did nothing either — the two
+     ways every other menu on a phone or a keyboard is dismissed. Escape hands
+     focus back to the toggle, so a keyboard user is not left on a link that
+     no longer exists. The tap-outside half is the backdrop below. */
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return;
+      setMenuOpen(false);
+      menuButtonRef.current?.focus();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [menuOpen]);
 
   const current = ALL_ITEMS.find((i) => i.match.includes(route.name));
 
@@ -517,6 +534,7 @@ export function SideNav() {
           </button>
 
           <button
+            ref={menuButtonRef}
             type="button"
             onClick={() => {
               sfx.select();
@@ -551,6 +569,18 @@ export function SideNav() {
           </nav>
         )}
       </header>
+
+      {/* Tap outside to close. A sibling of the header, not a child: the
+          header's `backdrop-filter` makes it the containing block for any
+          `position: fixed` inside it, so a backdrop in there would cover the
+          header and nothing else. Under the header (z-40), over the page. */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-leather-950/40 lg:hidden"
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
 
       {/* Mounted once, alongside the chrome rather than inside it: the shortcut
           is global and the dialog portals to the body, so neither the rail nor

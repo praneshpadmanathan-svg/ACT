@@ -24,11 +24,20 @@
  * needs nothing stored.
  */
 
-import { ALL_QUESTIONS } from '@/content';
+import { locateQuestion, questionsFor, SECTIONS, type ContentNeed } from '@/content';
 import { DAILY_SIZE, dayKey, dueForReview, weakestTopics } from './progress';
 import { fromDrillQuestion, runnableById } from './normalize';
 import type { RunnableQuestion } from '@/components/QuestionRunner';
 import type { Progress, SectionId } from '@/types';
+
+/** The library `pickDaily` reads: every permitted section (steps 2 and 3
+ *  draw from the whole bank) plus whatever holds the due reviews. */
+export function dailyContent(p: Progress, allowed?: readonly SectionId[]): ContentNeed {
+  return {
+    sections: allowed ?? SECTIONS.map((s) => s.id),
+    ids: dueForReview(p),
+  };
+}
 
 /** A small deterministic hash, so a day key becomes a shuffle seed. */
 function seedFrom(text: string): number {
@@ -74,6 +83,8 @@ function shuffleSeeded<T>(items: readonly T[], next: () => number): T[] {
  *
  * `day` is the day the challenge was opened on. The screen pins it on arrival,
  * so a challenge started before midnight is stamped with the day it belongs to.
+ *
+ * Reads the library `dailyContent` names; load that first.
  */
 export function pickDaily(
   p: Progress,
@@ -108,7 +119,9 @@ export function pickDaily(
      moves a date the student cannot see — pulling a question forward out of
      its own schedule is the one way this feature could quietly make the app
      worse at its job. Due questions are exempt, obviously: step 1 wants them. */
-  const unscheduled = ALL_QUESTIONS.filter((q) => !(q.id in p.review) && permitted(q.section));
+  const unscheduled = SECTIONS.filter((s) => permitted(s.id))
+    .flatMap((s) => questionsFor(s.id))
+    .filter((q) => !(q.id in p.review) && permitted(q.section));
 
   // 2. Weakest topics.
   const weak = new Set(weakestTopics(p, 6).map((t) => t.topic));
@@ -139,10 +152,12 @@ export function pickDaily(
 /** Why today's five look the way they do — one line, shown above the set. */
 export function dailyBlurb(p: Progress, allowed?: readonly SectionId[]): string {
   /* Counted the same way `pickDaily` picks, or the line above the set
-     describes a different five questions than the ones below it. */
+     describes a different five questions than the ones below it. Through the
+     catalog rather than `runnableById`, so Home can print this line without
+     downloading the questions it describes. */
   const due = dueForReview(p)
-    .map(runnableById)
-    .filter((q) => q && (!allowed || allowed.includes(q.section as SectionId))).length;
+    .map(locateQuestion)
+    .filter((q) => q && (!allowed || allowed.includes(q.section))).length;
   if (due >= DAILY_SIZE) return 'Five questions due for review.';
   if (due > 0) return `${due} due for review, plus a few from your weak spots.`;
   if (weakestTopics(p, 6).length > 0) return 'Mostly from the topics costing you the most.';

@@ -8,10 +8,17 @@
    `git clone && npm install && npm run dev` working for anyone, and it is also
    the mode under-13s stay in. */
 
-import { createClient, type SupabaseClient, type User } from '@supabase/supabase-js';
+import {
+  createClient,
+  isAuthApiError,
+  isAuthRetryableFetchError,
+  isAuthSessionMissingError,
+  type SupabaseClient,
+  type User,
+} from '@supabase/supabase-js';
 import type { Progress } from '@/types';
 import { normalizeProgress } from './progress';
-import { reportWarn } from './report';
+import { reportWarn, setRemoteSink, type RemoteError } from './report';
 
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined;
 const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
@@ -49,7 +56,36 @@ export function withTimeout(base: typeof fetch, ms = REQUEST_TIMEOUT_MS): typeof
   };
 }
 
-const timedFetch: typeof fetch = (input, init) => withTimeout(fetch)(input, init);
+/** A request header that never leaves the browser: it asks `keepaliveFetch`
+ *  to send this one request with `keepalive`, and is stripped before it does. */
+export const KEEPALIVE_HEADER = 'x-act-keepalive';
+
+/** Chrome refuses a keepalive request whose body pushes the in-flight total
+ *  past 64 KiB, rather than sending it without the flag. Leave headroom. */
+const KEEPALIVE_MAX_BODY = 60_000;
+
+/**
+ * Let one marked request outlive the page.
+ *
+ * The flush when a tab is hidden is the last chance to save a session's work,
+ * and an ordinary fetch is cancelled the moment the page unloads. `keepalive`
+ * is what lets it finish — but supabase-js has no per-call fetch options, so
+ * the call is marked with a header and the flag is applied here. Only below
+ * the size limit: over it, the browser rejects the request outright, which is
+ * worse than the best-effort send it would otherwise get. Exported for its test.
+ */
+export function keepaliveFetch(base: typeof fetch): typeof fetch {
+  return (input, init) => {
+    const headers = new Headers(init?.headers);
+    if (!headers.has(KEEPALIVE_HEADER)) return base(input, init);
+    headers.delete(KEEPALIVE_HEADER);
+    const body = init?.body;
+    const small = typeof body === 'string' && body.length < KEEPALIVE_MAX_BODY;
+    return base(input, { ...init, headers, ...(small ? { keepalive: true } : {}) });
+  };
+}
+
+const timedFetch: typeof fetch = (input, init) => withTimeout(keepaliveFetch(fetch))(input, init);
 
 export const supabase: SupabaseClient | null = cloudEnabled
   ? createClient(url!, anonKey!, {
@@ -103,9 +139,19 @@ export interface AuthResult {
  * release decides to say. Anything worth telling someone is matched
  * explicitly; everything else is a bug for us to find in the console, not a
  * riddle for them to solve. */
-function friendlyError(message: string): string {
+export function friendlyError(message: string): string {
   const m = message.toLowerCase();
   if (m.includes('invalid login')) return 'That email and password combination did not match.';
+  /* Both of these mention a password or a limit, so they have to be matched
+     before the broad rules below — which turned "pick a different password
+     from your old one" into "must be at least 8 characters", advice the
+     student had already followed. */
+  if (m.includes('should be different from the old password')) {
+    return 'Your new password must be different from your current one.';
+  }
+  if (m.includes('for security purposes') && m.includes('only request this after')) {
+    return 'Please wait a minute before asking for another email.';
+  }
   if (m.includes('weak') || m.includes('pwned') || m.includes('compromised')) {
     return 'That password has turned up in a known data breach. Please pick a different one.';
   }
@@ -228,10 +274,122 @@ export async function signOut(): Promise<void> {
   await supabase?.auth.signOut();
 }
 
-export async function currentUser(): Promise<User | null> {
+/* ------------------------------------------------------- who is signed in */
+
+/* Who is signed in is decided from what is on this device, and only *checked*
+   against the server.
+
+   This used to ask `auth.getUser()`, which is a network round trip, and treat
+   anything but a user as "signed out". So on a train, in a lift, during a
+   Supabase outage or a 429, a signed-in student booted as a guest: onboarding
+   again, and every answer that session saved under the guest key, where their
+   account never saw it. A failed request is not evidence of anything about
+   the session. Only the auth server saying so is. */
+
+/** How long boot waits on `getSession()` before reading the stored copy. It is
+ *  local unless the access token has expired, when it refreshes — which,
+ *  offline, retries with backoff for up to half a minute. */
+const SESSION_LOOKUP_MS = 4_000;
+
+/** The key supabase-js persists the session under — its own default, which
+ *  this app has never overridden, so existing sessions stay where they are. */
+const sessionStorageKey = url ? `sb-${new URL(url).hostname.split('.')[0]}-auth-token` : '';
+
+/** The signed-in user as last persisted, read straight off disk. No network,
+ *  no lock, no refresh: the identity a session belongs to, nothing more. */
+export function storedSessionUser(): User | null {
+  if (!sessionStorageKey) return null;
+  try {
+    const raw = window.localStorage.getItem(sessionStorageKey);
+    if (!raw) return null;
+    const saved = JSON.parse(raw) as { refresh_token?: unknown; user?: User } | null;
+    return typeof saved?.refresh_token === 'string' && typeof saved.user?.id === 'string'
+      ? saved.user
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Whether an auth error is the server saying this session is over — as
+ * opposed to failing to say anything.
+ *
+ * Over: no session at all, or a 4xx from the auth API (a revoked or rotated
+ * refresh token, a deleted user, a JWT it refuses). Not over: a network
+ * failure, a timeout, any 5xx, and a 429 — which is the server being busy,
+ * and says nothing about who you are.
+ */
+export function isDefinitiveAuthFailure(error: unknown): boolean {
+  if (isAuthSessionMissingError(error)) return true;
+  if (isAuthRetryableFetchError(error)) return false;
+  if (!isAuthApiError(error)) return false;
+  return [400, 401, 403, 404].includes(error.status);
+}
+
+/**
+ * The account this device is signed in to, decided locally.
+ *
+ * `getSession()` first, which is the library's own answer and reads storage
+ * unless a refresh is due. If that refresh cannot reach the server — or takes
+ * longer than boot should wait — the stored session is still there (the
+ * library only deletes it when the server rejects it), so its user is read
+ * directly. Null only when there is no session, or the server has ended it.
+ */
+export async function sessionUser(): Promise<User | null> {
   if (!supabase) return null;
-  const { data } = await supabase.auth.getUser();
-  return data.user ?? null;
+  const client = supabase;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  try {
+    const lookup = await Promise.race([
+      client.auth.getSession(),
+      new Promise<'slow'>((resolve) => {
+        timer = setTimeout(() => resolve('slow'), SESSION_LOOKUP_MS);
+      }),
+    ]);
+    if (lookup === 'slow') return storedSessionUser();
+    const { data, error } = lookup;
+    if (data.session?.user) return data.session.user;
+    if (error && !isDefinitiveAuthFailure(error)) return storedSessionUser();
+    return null;
+  } catch (err) {
+    reportWarn('auth.session', err);
+    return storedSessionUser();
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+export type SessionCheck =
+  | { status: 'valid'; user: User }
+  /** The server ended the session: signed out elsewhere, revoked, deleted. */
+  | { status: 'invalid' }
+  /** No answer worth acting on — offline, a timeout, a 5xx, a 429. */
+  | { status: 'unknown' };
+
+/** Ask the auth server whether the session is still good. In the background:
+ *  nothing waits on this, and only an `invalid` changes anything. */
+export async function verifySession(): Promise<SessionCheck> {
+  if (!supabase) return { status: 'unknown' };
+  try {
+    const { data, error } = await supabase.auth.getUser();
+    if (data.user) return { status: 'valid', user: data.user };
+    if (error && isDefinitiveAuthFailure(error)) return { status: 'invalid' };
+    return { status: 'unknown' };
+  } catch (err) {
+    reportWarn('auth.verify', err);
+    return { status: 'unknown' };
+  }
+}
+
+/** Forget the session on this device only — for one the server has already
+ *  ended, where a global sign-out call would just fail. */
+export async function dropLocalSession(): Promise<void> {
+  try {
+    await supabase?.auth.signOut({ scope: 'local' });
+  } catch (err) {
+    reportWarn('auth.drop', err);
+  }
 }
 
 export function displayNameOf(user: User | null): string {
@@ -268,8 +426,11 @@ export async function consumeAuthRedirect(): Promise<AuthRedirect | null> {
     const keep = new URLSearchParams(window.location.search);
     for (const k of ['code', 'flow', 'error', 'error_description', 'error_code']) keep.delete(k);
     const query = keep.toString();
+    /* `history.state`, not null: the router keeps this entry's position in
+       it (see `entryIndex` in router.ts), and wiping it would make a later
+       cancelled leave-confirm misread how it got here. */
     window.history.replaceState(
-      null,
+      window.history.state,
       '',
       `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`,
     );
@@ -320,9 +481,56 @@ export type CloudProgress = Omit<Progress, 'attempts'>;
 
 const MAX_TEST_HISTORY = 50;
 
+/* And the review queue is budgeted, because it is the one collection that
+   grows with how much a student uses the app rather than with how much there
+   is: one entry, about fifty bytes, per distinct question ever missed or
+   answered once. Migration 0001 refuses any row over 256 KB, and a heavy user
+   — three and a half to four and a half thousand questions in — got there.
+   From then on every push failed, silently, and nothing they did reached the
+   cloud again.
+
+   So the row is held to a size, measured rather than estimated, well inside
+   the limit (`pg_column_size` measures the stored jsonb, which is usually
+   smaller than the text, but not something to bet the sync on). What goes
+   first when it is over: the graduation records, oldest first, then the
+   review entries furthest from mattering — the highest boxes, due latest.
+   Box 0 and 1, the questions a student is actually struggling with, are the
+   last thing to leave. The device keeps everything; only the copy that has to
+   cross to another device is trimmed, and the merge on that side keeps
+   whatever it already had. */
+export const CLOUD_ROW_BUDGET = 160_000;
+
+const jsonSize = (value: unknown) => JSON.stringify(value).length;
+
 export function compactForCloud(p: Progress): CloudProgress {
   const { attempts: _local, ...rest } = p;
-  return { ...rest, testHistory: p.testHistory.slice(-MAX_TEST_HISTORY) };
+  const row: CloudProgress = { ...rest, testHistory: p.testHistory.slice(-MAX_TEST_HISTORY) };
+  if (jsonSize(row) <= CLOUD_ROW_BUDGET) return row;
+
+  const { review, graduated, ...fixed } = row;
+  /* Everything but the two trimmable collections, plus the brackets and keys
+     those two need even when empty. Whatever is left is theirs. */
+  let room = CLOUD_ROW_BUDGET - jsonSize({ ...fixed, review: {}, graduated: {} });
+
+  const keptReview: Progress['review'] = {};
+  const byUrgency = Object.entries(review).sort(([, a], [, b]) => a.box - b.box || a.due - b.due);
+  for (const [qid, entry] of byUrgency) {
+    const cost = jsonSize(qid) + jsonSize(entry) + 2; // colon and comma
+    if (cost > room) break;
+    keptReview[qid] = entry;
+    room -= cost;
+  }
+
+  const keptGraduated: Record<string, number> = {};
+  const newestFirst = Object.entries(graduated ?? {}).sort(([, a], [, b]) => b - a);
+  for (const [qid, at] of newestFirst) {
+    const cost = jsonSize(qid) + jsonSize(at) + 2;
+    if (cost > room) break;
+    keptGraduated[qid] = at;
+    room -= cost;
+  }
+
+  return { ...fixed, review: keptReview, graduated: keptGraduated };
 }
 
 /** Rebuild a full Progress from a row. The attempt log starts empty, which is
@@ -381,7 +589,14 @@ export async function pullProgress(userId: string): Promise<PullResult> {
 export type PushResult =
   | { status: 'ok'; updatedAt: string }
   | { status: 'conflict' }
+  /* The row was refused by a check constraint — in practice 0001's size cap.
+     Its own status because it is the opposite of a network blip: retrying
+     changes nothing, and "could not reach the cloud" would be a lie. */
+  | { status: 'too-large'; message: string }
   | { status: 'error'; message: string };
+
+/** The longest display name the row will take — migration 0007's check. */
+export const MAX_DISPLAY_NAME = 64;
 
 /**
  * Write the caller's progress, but only over the row it last saw.
@@ -400,17 +615,23 @@ export async function pushProgress(
   displayName: string,
   progress: Progress,
   expectedUpdatedAt: string | null,
+  options: { keepalive?: boolean } = {},
 ): Promise<PushResult> {
   if (!supabase) return { status: 'error', message: 'Accounts are not configured.' };
 
-  const { data, error } = await supabase.rpc('push_progress', {
-    p_display_name: displayName,
+  let call = supabase.rpc('push_progress', {
+    /* Cut here as well as in the database: a name is whatever the student
+       typed at sign-up, and a refused write is worse than a shortened name. */
+    p_display_name: [...displayName].slice(0, MAX_DISPLAY_NAME).join(''),
     p_data: compactForCloud(progress),
     p_expected: expectedUpdatedAt,
   });
+  if (options.keepalive) call = call.setHeader(KEEPALIVE_HEADER, '1');
+  const { data, error } = await call;
 
   if (error) {
     reportWarn('sync.push', error.message);
+    if (isCheckViolation(error)) return { status: 'too-large', message: error.message };
     return { status: 'error', message: error.message };
   }
   /* A null return is the function's way of saying "someone else wrote first".
@@ -419,6 +640,14 @@ export async function pushProgress(
   if (data === null) return { status: 'conflict' };
 
   return { status: 'ok', updatedAt: data as string };
+}
+
+/** SQLSTATE 23514, check_violation — or its message, if the code is lost. */
+export function isCheckViolation(error: { code?: string; message?: string }): boolean {
+  return (
+    error.code === '23514' ||
+    /violates check constraint|progress_data_size/i.test(error.message ?? '')
+  );
 }
 
 /** Drop the saved row without touching the account. Used by "reset progress",
@@ -473,7 +702,7 @@ export interface FeedbackInput {
  */
 export async function sendFeedback(
   input: FeedbackInput,
-): Promise<{ ok: true } | { ok: false; missing: boolean; error: string }> {
+): Promise<{ ok: true } | { ok: false; missing: boolean; limited?: boolean; error: string }> {
   if (!supabase) return { ok: false, missing: true, error: 'No feedback server is connected.' };
   const { error } = await supabase.from('feedback').insert({
     kind: input.kind,
@@ -483,7 +712,49 @@ export async function sendFeedback(
     user_agent: navigator.userAgent.slice(0, 400),
   });
   if (!error) return { ok: true };
+  /* Migration 0007's cap. Not a fault and not worth a diagnostics entry: the
+     server is doing exactly what it was told to. */
+  if (error.message?.includes('feedback_rate_limited')) {
+    return {
+      ok: false,
+      missing: false,
+      limited: true,
+      error: 'You’ve sent a lot of feedback recently — try again later.',
+    };
+  }
   reportWarn('feedback.send', error.message);
   const missing = error.code === 'PGRST205' || error.code === '42P01';
   return { ok: false, missing, error: friendlyError(error.message) };
 }
+
+/* ------------------------------------------------------------ crash reports */
+
+/**
+ * Add one row to `client_errors` (migration 0007). Called only by the
+ * reporter in report.ts, which has already sanitised, deduplicated and
+ * budgeted the report.
+ *
+ * Unable to fail loudly by design: a crash reporter that throws, or that
+ * reports its own failure, turns one error into a loop. Every outcome —
+ * success, a refusal from the rate cap, a missing table, no network — ends
+ * here in silence. Write-only, so it never asks for the row back.
+ */
+export async function sendClientError(report: RemoteError): Promise<void> {
+  if (!supabase) return;
+  try {
+    await supabase.from('client_errors').insert({
+      build_id: report.buildId.slice(0, 64) || null,
+      route: report.route.slice(0, 120) || null,
+      message: report.message.slice(0, 500) || 'unknown error',
+      stack: report.stack?.slice(0, 2000) || null,
+      user_agent: navigator.userAgent.slice(0, 400),
+    });
+  } catch {
+    /* see above */
+  }
+}
+
+/* Registered here rather than imported by report.ts, which this module
+   already imports: the reporter stays free of any Supabase dependency, and a
+   build with no project configured never registers a sink at all. */
+if (supabase) setRemoteSink(sendClientError);

@@ -16,7 +16,12 @@
    asserting that the shuffle function was called. */
 import { describe, it, expect } from 'vitest';
 import { fromDrillQuestion, fromZoneQuestion } from './normalize';
-import { ALL_QUESTIONS, ZONE_QUIZZES, getZone } from '@/content';
+import { ALL_CONTENT, SECTIONS, getZone, loadContent, questionsFor, zoneQuizzes } from '@/content';
+
+/* The library loads in pieces now (see `content/index.ts`); these tests read all of it. */
+await loadContent(ALL_CONTENT);
+const ALL_QUESTIONS = SECTIONS.flatMap((s) => questionsFor(s.id));
+const ZONE_QUIZZES = zoneQuizzes();
 
 const KEYS = ['A', 'B', 'C', 'D'];
 

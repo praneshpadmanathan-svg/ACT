@@ -5,7 +5,9 @@
 
 import { useState } from 'react';
 
-import { LIBRARY_STATS, PATH_BY_ID, SECTIONS } from '@/content';
+import { LIBRARY_STATS } from '@/content/stats';
+import { PATH_BY_ID } from '@/content/zones';
+import { SECTIONS } from '@/content/sections';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { usePrefs } from '@/lib/prefs';

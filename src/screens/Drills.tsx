@@ -4,13 +4,19 @@
    default: topics you are weak at show up more often, so a long session
    spends its questions where they are worth the most. */
 
-import { useMemo, useState } from 'react';
-import { QUESTIONS, SECTION_BY_ID, TOPICS_BY_SECTION } from '@/content';
+import { useEffect, useMemo, useState } from 'react';
+import {
+  QUESTION_COUNTS,
+  questionsFor,
+  SECTION_BY_ID,
+  TOPICS_BY_SECTION,
+  useContent,
+} from '@/content';
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { fromDrillQuestion, runnableById } from '@/lib/normalize';
 import { dailyDone, dayKey, dueForReview, topicStats, XP } from '@/lib/progress';
-import { dailyBlurb, pickDaily } from '@/lib/daily';
+import { dailyBlurb, dailyContent, pickDaily } from '@/lib/daily';
 import { sfx } from '@/lib/sfx';
 import { shuffle, titleCase } from '@/lib/utils';
 import type { Question, SectionId } from '@/types';
@@ -63,7 +69,7 @@ export function DrillsScreen({ section }: { section?: string }) {
   return (
     <Page>
       <SectionHeading
-        eyebrow={`${QUESTIONS[active].length} questions available`}
+        eyebrow={`${QUESTION_COUNTS[active].total.toLocaleString()} questions available`}
         title="Practice"
         detail="Adaptive practice from the graded question bank. Every choice gets an explanation, not just the right one."
       />
@@ -125,7 +131,7 @@ export function DrillsScreen({ section }: { section?: string }) {
       <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         {topics.map((topic) => {
           const stat = stats.get(topic);
-          const count = QUESTIONS[active].filter((q) => q.topic === topic).length;
+          const count = QUESTION_COUNTS[active].byTopic[topic] ?? 0;
           const accuracy = stat?.accuracy ?? null;
 
           return (
@@ -143,7 +149,7 @@ export function DrillsScreen({ section }: { section?: string }) {
                   {titleCase(topic)}
                 </span>
                 <span className="mt-0.5 block font-script text-[10px] uppercase tracking-wide text-ink-faint">
-                  {count} question{count === 1 ? '' : 's'}
+                  {count.toLocaleString()} question{count === 1 ? '' : 's'}
                   {stat ? ` · ${stat.attempts} tried` : ''}
                 </span>
               </span>
@@ -205,8 +211,9 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
   const sectionId = section as SectionId;
   const meta = SECTION_BY_ID[sectionId];
 
+  useContent({ sections: meta ? [sectionId] : [] });
   const { questions, title, subtitle } = useMemo(() => {
-    const pool = QUESTIONS[sectionId] ?? [];
+    const pool = meta ? questionsFor(sectionId) : [];
     const accuracyByTopic = new Map(
       topicStats(progress, sectionId).map((t) => [t.topic, t.accuracy]),
     );
@@ -225,7 +232,7 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
       return {
         questions: shuffle(filtered).map(fromDrillQuestion),
         title: titleCase(topic),
-        subtitle: `${meta?.name ?? ''} · ${filtered.length} questions`,
+        subtitle: `${meta?.name ?? ''} · ${filtered.length.toLocaleString()} questions`,
       };
     }
 
@@ -315,6 +322,8 @@ function ReviewSession() {
      blank screen once the index ran past the shrunken end. */
   const [started, setStarted] = useState<RunnableQuestion[] | null>(null);
 
+  /* Only the pieces of the library the queue reaches into. */
+  useContent({ ids: dueForReview(progress) });
   const due = useMemo(() => {
     /* `runnableById`, not `getQuestion`: the latter reads the drill bank
        alone, so every landmark question in the queue was dropped here and the
@@ -443,6 +452,7 @@ export function BookmarksScreen() {
   /* Newest first: a bookmark is a note to self, and the most recent one is
      almost always the one being looked for. Ids whose question has since left
      the bank are dropped rather than rendered as a gap. */
+  useContent({ ids: progress.bookmarks });
   const saved = useMemo(
     () =>
       [...progress.bookmarks]
@@ -594,6 +604,7 @@ export function DailyScreen() {
   /* Chosen once, from the state as it was on arrival. Not reactive to
      `progress`: answering question two must not re-pick questions three
      through five underneath the player. */
+  useContent(dailyContent(progress, allowed));
   const [day] = useState(() => dayKey());
   const [questions] = useState(() => pickDaily(progress, day, allowed));
   const [blurb] = useState(() => dailyBlurb(progress, allowed));
@@ -697,6 +708,14 @@ export function DrillSummary({
   const correct = results.filter((r) => r.correct).length;
   const percent = results.length ? Math.round((correct / results.length) * 100) : 0;
   const totalSeconds = results.reduce((n, r) => n + r.ms, 0) / 1000;
+
+  /* The summary replaces the runner without a route change, so the router's
+     scroll-to-top never fires, and the page kept the runner's offset — which,
+     after a long explanation, put the reader at the bottom of the review list
+     with the score out of sight above. */
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+  }, []);
 
   return (
     <Page>

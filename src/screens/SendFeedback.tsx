@@ -51,7 +51,7 @@ const AREAS = [
 ];
 
 /* One report a minute from this browser. Not security — the table's length
-   caps are that — just a guard against a double-tapped button or a key held
+   caps and the server-side rate cap (migration 0007) are that — just a guard against a double-tapped button or a key held
    down sending the same report ten times. */
 const LAST_SENT_KEY = 'act-command:feedback-last-sent';
 const COOLDOWN_MS = 60_000;
@@ -92,6 +92,13 @@ export function FeedbackScreen() {
         writeRaw(LAST_SENT_KEY, String(Date.now()));
         sfx.achieve();
         setSent(true);
+        return;
+      }
+      /* Over the server's cap (migration 0007). `result.error` already says
+         so in words; offering email here would just route around the cap. */
+      if (result.limited) {
+        setError(result.error);
+        sfx.wrong();
         return;
       }
       setError(
@@ -196,7 +203,7 @@ export function FeedbackScreen() {
                 ? 'What did you do, what did you expect, and what happened instead?'
                 : 'Tell us as much as you like.'
             }
-            className="w-full resize-y rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[15px] leading-relaxed text-parchment transition-colors placeholder:text-ink-faint focus:border-gold-deep"
+            className="w-full resize-y rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-base leading-relaxed text-parchment transition-colors placeholder:text-ink-faint focus:border-gold-deep sm:text-[15px]"
           />
           <span className="mt-1 block text-right font-read text-[11.5px] text-ink-faint">
             {message.length.toLocaleString()} / 4,000
@@ -212,7 +219,7 @@ export function FeedbackScreen() {
             maxLength={200}
             autoComplete="email"
             placeholder="Only if you want an answer"
-            className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[15px] text-parchment transition-colors placeholder:text-ink-faint focus:border-gold-deep"
+            className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-base text-parchment transition-colors placeholder:text-ink-faint focus:border-gold-deep sm:text-[15px]"
           />
           <span className="mt-1 block font-read text-[12px] leading-snug text-ink-faint">
             {isGuest

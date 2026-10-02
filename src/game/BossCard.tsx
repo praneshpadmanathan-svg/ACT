@@ -5,7 +5,7 @@
    here — one card, two callers, no chance of the sealed-state wording drifting
    between the place you meet a guardian and the place you go looking for one. */
 
-import { PATH_BY_ID } from '@/content';
+import { PATH_BY_ID } from '@/content/zones';
 import { useStore } from '@/lib/store';
 import { useNavigate } from '@/lib/router';
 import { sfx } from '@/lib/sfx';

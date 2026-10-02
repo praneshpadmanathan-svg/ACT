@@ -120,17 +120,49 @@ describe('isRealDate', () => {
 });
 
 describe('the remembered verdict', () => {
-  beforeEach(() => localStorage.clear());
+  beforeEach(() => {
+    localStorage.clear();
+    sessionStorage.clear();
+  });
 
   it('is null before anything is asked', () => {
     expect(rememberedVerdict()).toBeNull();
   });
 
   it('round-trips both verdicts', () => {
-    rememberVerdict('too-young');
-    expect(rememberedVerdict()).toBe('too-young');
     rememberVerdict('eligible');
     expect(rememberedVerdict()).toBe('eligible');
+    rememberVerdict('too-young');
+    expect(rememberedVerdict()).toBe('too-young');
+  });
+
+  /* A refusal outranks a pass from earlier in the same sitting: the gate only
+     ever gets stricter on its own. */
+  it('lets a refusal win over a pass in the same session', () => {
+    rememberVerdict('eligible');
+    rememberVerdict('too-young');
+    rememberVerdict('eligible');
+    expect(rememberedVerdict()).toBe('too-young');
+  });
+
+  /* A pass is a fact about the person at the keyboard, not the browser. Kept
+     for the browser, a teenager's pass was inherited by every younger sibling
+     who opened the laptop after them. */
+  it('keeps a pass for this session only, and a refusal for good', () => {
+    rememberVerdict('eligible');
+    expect(localStorage.getItem('act-command:age-verdict')).toBeNull();
+    sessionStorage.clear(); // the tab closes
+    expect(rememberedVerdict()).toBeNull();
+
+    rememberVerdict('too-young');
+    sessionStorage.clear();
+    expect(rememberedVerdict()).toBe('too-young');
+  });
+
+  it('drops a pass an earlier build persisted for the whole browser', () => {
+    localStorage.setItem('act-command:age-verdict', 'eligible');
+    expect(rememberedVerdict()).toBeNull();
+    expect(localStorage.getItem('act-command:age-verdict')).toBeNull();
   });
 
   /* The stored value is a string in storage the user can edit. Anything that is

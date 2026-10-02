@@ -4,8 +4,8 @@
    where someone reads several hundred words, so it gets paper, serif and a
    real measure rather than pixel type on a dark panel. */
 
-import { useMemo, useState } from 'react';
-import { LESSONS, SECTION_BY_ID, ZONE_QUIZZES, getZone } from '@/content';
+import { useEffect, useMemo, useState } from 'react';
+import { SECTION_BY_ID, getZone, useContent, zoneLessons, zoneQuizzes } from '@/content';
 import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { fromZoneQuestion } from '@/lib/normalize';
@@ -43,6 +43,7 @@ const passNeeded = (n: number) => Math.ceil(n * PASS_MARK);
 type Phase = 'lesson' | 'quiz' | 'result';
 
 export function ZoneScreen({ zoneId }: { zoneId: string }) {
+  useContent({ zones: true });
   const entry = getZone(zoneId);
   const navigate = useNavigate();
   const { progress, answerQuestion, clearZone } = useStore();
@@ -54,14 +55,21 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
      result is written would always show the score you just got. */
   const [priorBest, setPriorBest] = useState<number | null>(null);
 
+  /* Lesson, quiz and result are one route, so the router's scroll-to-top
+     never runs between them. The result opened wherever the last explanation
+     had left the page — at the bottom, below the score it exists to show. */
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+  }, [phase, attemptSeed]);
+
   /* Whether this landmark actually has more questions than one quiz uses.
      Every landmark does today, but the retry copy below still has to know
      which kind it is standing in front of if a pool ever shrinks. */
-  const deepPool = (ZONE_QUIZZES[zoneId]?.length ?? 0) > QUIZ_LENGTH;
+  const deepPool = (zoneQuizzes()[zoneId]?.length ?? 0) > QUIZ_LENGTH;
 
   const questions = useMemo(() => {
     if (!entry) return [];
-    const pool = ZONE_QUIZZES[zoneId] ?? [];
+    const pool = zoneQuizzes()[zoneId] ?? [];
     /* A fresh sample each attempt — but only where there is a pool to sample
        from. Where there is not, `sample` returns the lot and the retry is the
        same questions reordered. See `deepPool`. */
@@ -92,7 +100,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
   const { zone, path } = entry;
   const meta = SECTION_BY_ID[path.id];
 
-  const lesson = LESSONS[zoneId];
+  const lesson = zoneLessons()[zoneId];
   const best = progress.zonesCleared[zoneId] ?? null;
 
   /* ------------------------------------------------------------- lesson */

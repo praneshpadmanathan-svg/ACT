@@ -16,6 +16,7 @@
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { readRaw, writeRaw } from '@/lib/storage';
 import { cx } from '@/lib/utils';
 import { Glyph } from './Icon';
@@ -267,7 +268,7 @@ function Scratchpad() {
         rows={11}
         placeholder={'Work it out here.\n\n2x + 6 = 18\n2x = 12\nx = 6'}
         className="w-full resize-none rounded-lg border-2 border-paper-edge bg-paper px-3.5 py-3
-                   font-mono text-[13.5px] leading-relaxed text-ink
+                   font-mono text-base leading-relaxed text-ink sm:text-[13.5px]
                    placeholder:text-ink-soft focus:border-gold-deep"
       />
       <div className="mt-2 flex items-center justify-between">
@@ -289,6 +290,27 @@ function Scratchpad() {
 /* ---------------------------------------------------------------- the dock */
 
 type Tool = 'calculator' | 'scratch';
+
+/* Below `sm` the inline panel becomes a bottom sheet. Hanging off the header,
+   it spanned the card and dropped straight over the question and all four
+   choices on a 375px phone — the calculator was usable only by guessing what
+   it was covering. Kept in sync with Tailwind's `sm` (640px). */
+const SHEET_QUERY = '(max-width: 639.98px)';
+
+function useSheetLayout() {
+  const [narrow, setNarrow] = useState(
+    () => typeof window !== 'undefined' && !!window.matchMedia?.(SHEET_QUERY).matches,
+  );
+  useEffect(() => {
+    if (!window.matchMedia) return;
+    const query = window.matchMedia(SHEET_QUERY);
+    const sync = () => setNarrow(query.matches);
+    sync();
+    query.addEventListener('change', sync);
+    return () => query.removeEventListener('change', sync);
+  }, []);
+  return narrow;
+}
 
 /**
  * The tools the real exam permits, as two labelled controls.
@@ -318,6 +340,7 @@ export function ToolDock({
   const panelRef = useRef<HTMLDivElement>(null);
   const openerRef = useRef<HTMLElement | null>(null);
   const inline = placement === 'inline';
+  const sheet = useSheetLayout() && inline;
 
   /* Deliberately **not** `useDialogFocus`.
    *
@@ -357,6 +380,30 @@ export function ToolDock({
     };
   }, [open]);
 
+  /* A sheet over the bottom of the screen has to leave the page able to
+     scroll the last choice up above it, or the sheet just moves the problem
+     down: the question is visible, answer D is not. So the page gets bottom
+     padding equal to the sheet's height while it is open, re-measured as the
+     sheet changes between calculator and scratch paper. */
+  useEffect(() => {
+    const el = panelRef.current;
+    if (!open || !sheet || !el) return;
+    const body = document.body;
+    const before = body.style.paddingBottom;
+    const fit = () => {
+      body.style.paddingBottom = `${el.offsetHeight}px`;
+    };
+    fit();
+    const watch = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(fit);
+    watch?.observe(el);
+    return () => {
+      watch?.disconnect();
+      body.style.paddingBottom = before;
+    };
+  }, [open, sheet]);
+
+  const content = open === 'calculator' ? <Calculator /> : <Scratchpad />;
+
   const panel = open && (
     <div
       ref={panelRef}
@@ -365,31 +412,40 @@ export function ToolDock({
       aria-label={open === 'calculator' ? 'Calculator' : 'Scratch paper'}
       tabIndex={-1}
       className={cx(
-        'panel pointer-events-auto w-[min(20rem,calc(100vw-2rem))] animate-riseIn p-4 shadow-floating',
+        'panel pointer-events-auto animate-riseIn p-4 shadow-floating',
         /* Inline, the panel hangs off the header it was opened from and has to
            clear the content beneath it; cornered, it stacks above the buttons
            in the dock's own flex column. */
-        inline && 'absolute right-0 top-[calc(100%+0.6rem)] z-50',
-        /* On a phone the buttons sit well left of the screen edge, so a
-           right-anchored 20rem panel ran 38px off the left. There the button
-           row is static and the panel spans the question card it sits in. */
-        inline && 'max-sm:left-0 max-sm:w-auto',
+        !sheet && 'w-[min(20rem,calc(100vw-2rem))]',
+        inline && !sheet && 'absolute right-0 top-[calc(100%+0.6rem)] z-50',
+        /* The phone sheet: full width, at most 45% of the screen, with the
+           header pinned and only the tool scrolling beneath it so Close never
+           scrolls out of reach. */
+        sheet && 'fixed inset-x-0 bottom-0 z-[90] flex max-h-[45vh] flex-col rounded-b-none',
       )}
+      style={sheet ? { paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' } : undefined}
     >
-      <div className="mb-3 flex items-center justify-between">
+      <div className="mb-3 flex flex-none items-center justify-between">
         <span className="font-script text-[11px] uppercase tracking-[0.16em] text-gold">
           {open === 'calculator' ? 'Calculator' : 'Scratch paper'}
         </span>
         <button
           type="button"
           onClick={() => setOpen(null)}
-          className="hud-icon h-7 w-7 [@media(pointer:coarse)]:h-11 [@media(pointer:coarse)]:w-11"
+          className={cx(
+            'hud-icon h-7 w-7 [@media(pointer:coarse)]:h-11 [@media(pointer:coarse)]:w-11',
+            sheet && 'h-11 w-11',
+          )}
           aria-label="Close"
         >
           <Glyph name="cross" size={14} />
         </button>
       </div>
-      {open === 'calculator' ? <Calculator /> : <Scratchpad />}
+      {sheet ? (
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">{content}</div>
+      ) : (
+        content
+      )}
     </div>
   );
 
@@ -421,7 +477,12 @@ export function ToolDock({
     return (
       <div className="flex gap-2 sm:relative">
         {buttons}
-        {panel}
+        {/* The sheet is portalled to <body>. The runner sits inside App's
+            shake stage, and while a shake runs that element carries a
+            transform, which makes it the containing block for anything
+            `position: fixed` inside it — the sheet would leap to the bottom
+            of the stage for the length of every wrong-answer shake. */}
+        {sheet && panel ? createPortal(panel, document.body) : panel}
       </div>
     );
   }

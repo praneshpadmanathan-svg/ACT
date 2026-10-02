@@ -581,7 +581,9 @@ function Frame({
   children: ReactNode;
 }) {
   return (
-    <div className="relative isolate flex min-h-dvh items-center justify-center overflow-hidden px-4 py-14">
+    /* <main>: auth renders no Shell, so this frame is the only thing that can
+       give a screen reader a main landmark to jump to. */
+    <main className="relative isolate flex min-h-dvh items-center justify-center overflow-hidden px-4 py-14">
       <Art
         name="camp-bg"
         priority
@@ -603,7 +605,7 @@ function Frame({
         )}
         {children}
       </div>
-    </div>
+    </main>
   );
 }
 
@@ -663,7 +665,7 @@ function AgeGate({
               onChange={(e) => setDay(e.target.value.replace(/\D/g, '').slice(0, 2))}
               placeholder="1"
               inputMode="numeric"
-              className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3 py-2.5 font-read text-[15px] text-parchment transition-colors placeholder:text-ink-faint focus:border-gold-deep"
+              className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3 py-2.5 font-read text-base text-parchment transition-colors placeholder:text-ink-faint focus:border-gold-deep sm:text-[15px]"
             />
           </label>
 
@@ -674,7 +676,7 @@ function AgeGate({
               onChange={(e) => setYear(e.target.value.replace(/\D/g, '').slice(0, 4))}
               placeholder={String(thisYear - 16)}
               inputMode="numeric"
-              className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3 py-2.5 font-read text-[15px] text-parchment transition-colors placeholder:text-ink-faint focus:border-gold-deep"
+              className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3 py-2.5 font-read text-base text-parchment transition-colors placeholder:text-ink-faint focus:border-gold-deep sm:text-[15px]"
             />
           </label>
         </div>
@@ -761,7 +763,7 @@ function Field({
         maxLength={maxLength}
         autoComplete={autoComplete}
         inputMode={inputMode}
-        className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[15px] text-parchment transition-colors placeholder:text-ink-faint focus:border-gold-deep"
+        className="w-full rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-base text-parchment transition-colors placeholder:text-ink-faint focus:border-gold-deep sm:text-[15px]"
       />
     </label>
   );

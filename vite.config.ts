@@ -5,6 +5,8 @@ import { fileURLToPath, URL } from 'node:url';
 import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 
+import { contentModules } from './src/content/vitePlugin.ts';
+
 const root = fileURLToPath(new URL('.', import.meta.url));
 const buildId = Date.now().toString(36);
 
@@ -217,6 +219,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       react(),
+      contentModules(join(root, 'src/content')),
       serviceWorker(),
       {
         name: 'current-library-metadata',
@@ -243,9 +246,10 @@ export default defineConfig(({ mode }) => {
       },
     },
     build: {
-      // The content chunk is static JSON by design (the whole question bank,
-      // lessons and passages). It is split out so the app shell paints
-      // first and the browser caches the library separately across deploys.
+      // The four `content-<section>` chunks are static JSON by design, 1.1 to
+      // 1.6 MB each, and fetched only when a screen asks for that section (see
+      // the groups below), so they trip this warning on every build. The limit
+      // stays where it is so that a *code* chunk crossing it still gets seen.
       chunkSizeWarningLimit: 700,
       rollupOptions: {
         output: {
@@ -270,24 +274,76 @@ export default defineConfig(({ mode }) => {
             groups: [
               {
                 /* The part of the library the eager path needs: section
-                   metadata (no JSON at all), the 10 kB map of landmarks, and
-                   five precomputed totals. Kept out of `content` so the store,
-                   the story overlay and the landing page can read them without
-                   pulling 631 kB of questions into the first paint. */
+                   metadata (no JSON at all), the 10 kB map of landmarks, the
+                   region names, and five precomputed totals. The store, the
+                   story overlay and the landing page read these on first
+                   paint; nothing else under `src/content/` may join them.
+
+                   `regionFlavor.ts` was missing from this list, and that one
+                   omission is how the whole bank ended up modulepreloaded: the
+                   old catch-all `content` group below swept the eager region
+                   names into the same chunk as six megabytes of questions, so
+                   index.html had to preload all of it to paint the landing
+                   page. The question bank is now cut into lazy pieces that no
+                   eager module can reach, but a file left off this list would
+                   still be one more chunk on the critical path — keep it
+                   exhaustive. */
                 name: 'content-meta',
-                test: /[\\/]src[\\/]content[\\/](sections\.ts|zones\.ts|stats\.ts|paths\.json|stats\.json)$/,
+                test: /[\\/]src[\\/]content[\\/](sections\.ts|zones\.ts|stats\.ts|regionFlavor\.ts|paths\.json|stats\.json)$/,
                 minSize: 0,
                 priority: 20,
               },
               {
-                /* The library proper: 342 drill questions, 412 zone questions,
-                   60 note pages, 27 passages. Split out so the app shell paints
-                   first and the browser keeps the library cached across
-                   deploys, since it changes far less often than the code. */
+                /* The library's runtime and its catalog: every topic, count
+                   and question id, without a single question. What Home, the
+                   study plan and the review count read. See `content/index.ts`. */
                 name: 'content',
-                test: /[\\/]src[\\/]content[\\/]/,
+                test: /([\\/]src[\\/]content[\\/](index|ids)\.ts|virtual:content\/index)$/,
                 minSize: 0,
-                priority: 10,
+                priority: 20,
+              },
+
+              /* The library proper, one chunk per thing a screen asks for —
+                 each section's questions and passages, the notes, and the
+                 landmark lessons and quizzes. Built by `content/vitePlugin.ts`
+                 and fetched by `loadContent`, never statically, so none of
+                 them can be modulepreloaded. Named, rather than left to the
+                 bundler, so each one keeps a stable, recognisable file and
+                 caches across deploys that did not touch it. */
+              ...(['english', 'math', 'reading', 'science'] as const).map((section) => ({
+                name: `content-${section}`,
+                test: new RegExp(`virtual:content/section/${section}$`),
+                minSize: 0,
+                priority: 20,
+              })),
+              {
+                name: 'content-notes',
+                test: /[\\/]src[\\/]content[\\/](notes\.ts|notes(English|Math|Reading|Science)\.json)$/,
+                minSize: 0,
+                priority: 20,
+              },
+              {
+                name: 'content-zones',
+                test: /[\\/]src[\\/]content[\\/](zoneBank\.ts|lessons\.json|miniquizzes\.json)$/,
+                minSize: 0,
+                priority: 20,
+              },
+              {
+                /* Vite's dynamic-import helper, a kilobyte that the entry and
+                   the content runtime both call. Left ungrouped, the bundler
+                   parked it inside `content` — measured: the entry then
+                   imported the helper from there, and index.html preloaded
+                   the whole 28 kB catalog for it. Its own chunk, so neither
+                   drags the other in.
+
+                   The higher priority is load-bearing. A group also takes in
+                   the dependencies of what it captures, and the helper is a
+                   dependency of the content runtime; at equal priority
+                   `content` claimed it first and this group came out empty. */
+                name: 'preload-helper',
+                test: /vite[\\/]preload-helper/,
+                minSize: 0,
+                priority: 30,
               },
 
               /* Three dependencies, three chunks, for one reason: they change

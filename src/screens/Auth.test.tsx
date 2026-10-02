@@ -37,8 +37,8 @@ const { Auth } = await import('./Auth');
 beforeEach(() => {
   signUp.mockClear();
   localStorage.clear();
-  // Past the age gate: the verdict is remembered per browser.
-  localStorage.setItem('act-command:age-verdict', 'eligible');
+  // Past the age gate: a pass is remembered for the session, not the browser.
+  sessionStorage.setItem('act-command:age-verdict', 'eligible');
 });
 
 function type(input: HTMLInputElement, value: string) {

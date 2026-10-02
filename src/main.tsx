@@ -6,6 +6,7 @@ import { PrefsProvider, applyStoredPrefs } from './lib/prefs';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { installErrorReporting } from './lib/report';
 import { registerServiceWorker } from './lib/pwa';
+import { reloadForNewBuild } from './lib/chunkReload';
 
 /* Fonts, served from our own origin.
 
@@ -38,6 +39,15 @@ import './premium.css';
    eleven console.warn sites scattered through the app — into one reporter.
    See lib/report.ts for what it does with them and why it is not Sentry. */
 installErrorReporting();
+
+/* Vite's own signal that a chunk's preload failed — the usual sign that a
+   deploy replaced the build this tab was loaded from. Reload once onto the new
+   one (lib/chunkReload holds the loop guard); `preventDefault` stops Vite
+   throwing the error as well, since the page is about to go. If the guard says
+   a reload was just tried, the error is left to reach the error boundary. */
+window.addEventListener('vite:preloadError', (event) => {
+  if (reloadForNewBuild()) event.preventDefault();
+});
 
 /* Paint in the right theme on the first frame.
 

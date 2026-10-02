@@ -12,8 +12,8 @@
  *    code-split behind `PaletteHost`, which owns the keystroke and imports it on
  *    first open — Base UI's dialog measured 17 kB gzipped in front of the first
  *    paint otherwise. And inside it, lesson pages and drill topics come from
- *    `@/content`, which drags 738 kB of question JSON, so those are fetched on
- *    first open too. Destinations and landmarks (10 kB, already in memory) are
+ *    `@/content`'s catalog and its notes piece (no questions, but not free
+ *    either), so those are fetched on first open too. Destinations and landmarks (10 kB, already in memory) are
  *    there instantly; the rest arrives a tick later and the footer says so.
  *
  * 2. **Base UI supplies the dialog, not the list.** Focus trap, scroll lock,
@@ -223,11 +223,12 @@ export function CommandPalette({
   useEffect(() => {
     if (!open || deep) return;
     let live = true;
-    void import('@/content').then((content) => {
+    void import('@/content').then(async (content) => {
+      await content.loadContent({ notes: true });
       if (!live) return;
       const rows: PaletteEntry[] = [];
 
-      for (const page of content.ALL_NOTE_PAGES) {
+      for (const page of content.allNotePages()) {
         rows.push({
           id: `note-${page.id}`,
           label: page.title,

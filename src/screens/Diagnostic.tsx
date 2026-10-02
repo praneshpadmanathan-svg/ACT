@@ -13,7 +13,7 @@
 
 import { useMemo, useState } from 'react';
 
-import { SECTIONS, SECTION_BY_ID } from '@/content';
+import { SECTIONS, SECTION_BY_ID, useContent } from '@/content';
 import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { fromDrillQuestion } from '@/lib/normalize';
@@ -41,6 +41,8 @@ export function DiagnosticScreen() {
   const [result, setResult] = useState<DiagnosticResult | null>(null);
   const [records, setRecords] = useState<AnswerRecord[]>([]);
 
+  /* Every section: the placement samples all four. */
+  useContent({ sections: SECTIONS.map((s) => s.id) });
   const questions = useMemo(() => pickDiagnostic(progress).map(fromDrillQuestion), [progress]);
   const total = diagnosticLength(progress);
   const minutes = diagnosticMinutes(progress);

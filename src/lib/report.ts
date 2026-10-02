@@ -24,7 +24,13 @@
  *    offers a one-tap copy, which turns "it broke" into a paste an operator
  *    can actually read;
  *  - an optional `VITE_REPORT_ENDPOINT`. Unset — which is the default and the
- *    current deployment — nothing ever leaves the device.
+ *    current deployment — nothing goes there;
+ *  - crash reports to our own Supabase project (the `client_errors` table,
+ *    migration 0007), for `error`-level events only: uncaught errors,
+ *    unhandled rejections and render crashes. First-party, disclosed in the
+ *    privacy policy ("Crash reports"), kept 30 days. See `sendRemote` below
+ *    for what is stripped first and how few are sent. A build with no
+ *    Supabase configured registers no sink, so nothing leaves the device.
  *
  * Nothing here records what a student answered, what they scored, or who they
  * are. The payload is a category, a message, a timestamp and the route name.
@@ -91,6 +97,114 @@ function forward(event: ReportEvent): void {
   }
 }
 
+/* --------------------------------------------------------- crash reports */
+
+/** What leaves the device for one crash. Nothing else does. */
+export interface RemoteError {
+  buildId: string;
+  route: string;
+  message: string;
+  stack?: string;
+}
+
+type RemoteSink = (report: RemoteError) => Promise<void>;
+let remoteSink: RemoteSink | null = null;
+
+/** Set by supabase.ts when a project is configured. */
+export function setRemoteSink(sink: RemoteSink | null): void {
+  remoteSink = sink;
+}
+
+/* Which build crashed. The entry chunk's file name carries Vite's content
+   hash (`index-Bx7…js`), so it changes exactly when the code does — a build id
+   without needing one injected at build time. In dev it is just the path. */
+const BUILD_ID = (() => {
+  try {
+    return (
+      new URL(import.meta.url).pathname
+        .split('/')
+        .pop()
+        ?.replace(/\.[cm]?[jt]sx?$/, '') ?? 'unknown'
+    ).slice(0, 64);
+  } catch {
+    return 'unknown';
+  }
+})();
+
+/* Strip anything that could identify a person or unlock an account before a
+ * report leaves the device. Error messages and stacks are text we did not
+ * write — a failed fetch can quote its URL, a provider error can quote an
+ * address — so this runs on both, every time:
+ *
+ *  - query strings and fragments off every URL (auth codes, tokens, the
+ *    hash router's ids);
+ *  - email addresses;
+ *  - anything shaped like a JWT or a long opaque token.
+ */
+export function sanitizeForReport(text: string): string {
+  return (
+    text
+      // Keep a stack frame's trailing `:line:col`; drop everything from ? or #.
+      .replace(
+        /(\b[a-z][a-z0-9+.-]*:\/\/[^\s?#)'"]*)[?#][^\s)'"]*?((?::\d+){0,2})(?=[\s)'"]|$)/gi,
+        '$1$2',
+      )
+      .replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, '[email]')
+      .replace(/\beyJ[\w-]+\.[\w-]+\.[\w-]+/g, '[token]')
+      .replace(/\b[A-Za-z0-9_-]{40,}\b/g, '[token]')
+  );
+}
+
+/* Per page load, at most this many go out, and never the same message twice
+   in a browser session. A crash in a render loop or a failing interval fires
+   hundreds of times a minute; one copy is the whole story, and the server's
+   own cap (migration 0007) is for scripts, not for us to lean on. */
+const REMOTE_MAX_PER_LOAD = 5;
+const SENT_KEY = 'act-command:crash-reports-sent';
+let remoteSent = 0;
+const remoteSeen = new Set<string>();
+
+function seenThisSession(key: string): boolean {
+  if (remoteSeen.has(key)) return true;
+  remoteSeen.add(key);
+  try {
+    const raw = sessionStorage.getItem(SENT_KEY);
+    const list: string[] = raw ? (JSON.parse(raw) as string[]) : [];
+    if (list.includes(key)) return true;
+    sessionStorage.setItem(SENT_KEY, JSON.stringify([...list, key].slice(-50)));
+  } catch {
+    /* Storage blocked: the in-memory set still dedupes this page load. */
+  }
+  return false;
+}
+
+/* Fire-and-forget on a later task, so a crash report never runs inside the
+   render or handler that crashed, and never throws back into it. */
+function sendRemote(message: string, stack: string | undefined, route: string): void {
+  if (!remoteSink || remoteSent >= REMOTE_MAX_PER_LOAD) return;
+  try {
+    const clean = sanitizeForReport(message).slice(0, 500);
+    if (seenThisSession(clean)) return;
+    remoteSent += 1;
+    const sink = remoteSink;
+    const payload: RemoteError = {
+      buildId: BUILD_ID,
+      route,
+      message: clean || 'unknown error',
+      stack: stack ? sanitizeForReport(stack).slice(0, 2000) : undefined,
+    };
+    setTimeout(() => {
+      try {
+        void sink(payload).catch(() => undefined);
+      } catch {
+        /* nothing useful to do */
+      }
+    }, 0);
+  } catch {
+    /* nothing useful to do */
+  }
+}
+
 /**
  * Record something that went wrong.
  *
@@ -149,6 +263,15 @@ export function report(level: ReportLevel, scope: string, message: unknown): voi
   ring = [...ring, event].slice(-RING_SIZE);
   writeJSON(STORE_KEY, ring);
   forward(event);
+
+  if (level === 'error') {
+    /* The boundary passes `message\ncomponentStack` as one string; split it
+       so the first line is what gets deduplicated and read at a glance. */
+    const [head, ...rest] = text.split('\n');
+    const stack =
+      message instanceof Error && message.stack ? message.stack : rest.join('\n') || undefined;
+    sendRemote(`[${scope}] ${head}`, stack, event.route);
+  }
 
   const line = `[${scope}] ${text}`;
   if (level === 'error') console.error(line);

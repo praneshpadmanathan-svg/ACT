@@ -30,7 +30,13 @@ function available(): boolean {
 }
 
 export function readRaw(key: string): string | null {
-  if (!available()) return memoryFallback.get(key) ?? null;
+  /* The in-memory copy wins whenever there is one. A write that hit the quota
+     lands here while localStorage still holds the *previous* value, so reading
+     localStorage first handed back the state from before the failed write —
+     the session appeared to work and then quietly ran on stale progress. */
+  const held = memoryFallback.get(key);
+  if (held !== undefined) return held;
+  if (!available()) return null;
   try {
     return window.localStorage.getItem(key);
   } catch {
@@ -45,6 +51,8 @@ export function writeRaw(key: string, value: string): void {
   }
   try {
     window.localStorage.setItem(key, value);
+    // Persisted after all; a stale memory copy would now shadow it.
+    memoryFallback.delete(key);
   } catch (err) {
     // Quota exceeded is the realistic case here. Fall back to memory so the
     // session keeps working rather than throwing mid-quiz.
@@ -80,6 +88,32 @@ export function removeRaw(key: string): void {
   if (!available()) return;
   try {
     window.localStorage.removeItem(key);
+  } catch {
+    /* nothing useful to do */
+  }
+}
+
+/**
+ * Delete everything this app saved on this device, except what must survive.
+ *
+ * The escape hatch on the crash screen: a saved record bad enough to crash
+ * every render leaves no other way back in short of devtools. Supabase's own
+ * session (`sb-…`) is not ours and is left alone, so a signed-in student stays
+ * signed in and their cloud copy comes straight back down. The age gate's
+ * refusal is kept as well — clearing it would make this button a way round
+ * the gate.
+ */
+export function clearDeviceData(keep: readonly string[] = []): void {
+  for (const key of [...memoryFallback.keys()]) if (!keep.includes(key)) memoryFallback.delete(key);
+  if (!available()) return;
+  try {
+    const doomed: string[] = [];
+    for (let i = 0; i < window.localStorage.length; i++) {
+      const key = window.localStorage.key(i);
+      if (!key || keep.includes(key)) continue;
+      if (key.startsWith('act-command:') || key.startsWith('arcade:')) doomed.push(key);
+    }
+    for (const key of doomed) window.localStorage.removeItem(key);
   } catch {
     /* nothing useful to do */
   }

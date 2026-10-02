@@ -25,7 +25,7 @@
  * short one — the diagnostic only has to place them, not discover them.
  */
 
-import { ALL_QUESTIONS, SECTIONS } from '@/content';
+import { questionsFor, SECTIONS } from '@/content';
 import { scaleScore } from './progress';
 import { canonicalTopic } from './utils';
 import type { DiagnosticResult, Difficulty, Progress, Question, SectionId } from '@/types';
@@ -62,13 +62,15 @@ const DIFFICULTY_CYCLE: Difficulty[] = ['medium', 'easy', 'hard', 'medium'];
  * the bank holds for them, largest first. That ordering is not arbitrary: the
  * bank was authored in rough proportion to how heavily the real exam leans on
  * each topic, so sampling widest-first samples the exam's own emphasis.
+ *
+ * Reads all four sections; load them first (`useContent({ sections })`).
  */
 export function pickDiagnostic(p: Progress): Question[] {
   const n = perSection(p);
   const out: Question[] = [];
 
   for (const section of SECTIONS) {
-    const pool = ALL_QUESTIONS.filter((q) => q.section === section.id);
+    const pool = questionsFor(section.id).filter((q) => q.section === section.id);
 
     const byTopic = new Map<string, Question[]>();
     for (const q of pool) {

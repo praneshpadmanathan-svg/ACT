@@ -36,7 +36,7 @@ export function PaletteHost() {
       }
       /* `/` is the shortcut people try before they try anything else — but only
          when they are not already typing, or it eats a slash in an answer. */
-      const el = e.target as HTMLElement | null;
+      const el = e.target instanceof HTMLElement ? e.target : null;
       const typing =
         !!el &&
         (el.isContentEditable ||

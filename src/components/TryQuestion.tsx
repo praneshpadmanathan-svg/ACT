@@ -19,7 +19,8 @@
 
 import { useMemo, useState } from 'react';
 
-import { ALL_QUESTIONS, SECTION_BY_ID, getQuestion } from '@/content';
+import { SECTION_BY_ID } from '@/content/sections';
+import sample from 'virtual:content/question/m027';
 import { fromDrillQuestion } from '@/lib/normalize';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
@@ -30,21 +31,16 @@ import type { Question } from '@/types';
    what makes it the right sample. Chosen by hand rather than at random: this
    one has to land, and a random draw could serve a two-line arithmetic item
    that demonstrates nothing.
-   `pickSample` falls back rather than crashing if the id ever leaves the bank,
-   because a landing page that throws is worse than one showing a lesser
-   question. `check-content.mjs` will not catch this — it validates the shape
-   of the library, not that one particular id survives an edit. */
-const SAMPLE_ID = 'm027';
 
+   `m027`, imported on its own (see `content/vitePlugin.ts`): this question is
+   the only part of the bank the landing page needs, and the Math section it
+   lives in is over a megabyte. The build falls back to a stand-in rather than
+   failing if the id ever leaves the bank, because a landing page that throws
+   is worse than one showing a lesser question. `check-content.mjs` will not
+   catch this — it validates the shape of the library, not that one particular
+   id survives an edit. */
 export function pickSample(): Question | undefined {
-  return (
-    getQuestion(SAMPLE_ID) ??
-    ALL_QUESTIONS.find(
-      (q) =>
-        !q.passage && q.difficulty === 'medium' && Object.keys(q.why).length === q.choices.length,
-    ) ??
-    ALL_QUESTIONS[0]
-  );
+  return sample ?? undefined;
 }
 
 export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
@@ -188,8 +184,8 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
             <b className={correct ? 'text-woods-text' : 'text-blood-text'}>
               {correct ? 'Correct.' : 'Not this time.'}
             </b>{' '}
-            Every question in the app explains all four choices like this — including the ones you
-            did not pick, because the wrong answer you were tempted by is the useful thing to know
+            Every drill question explains all four choices like this — including the ones you did
+            not pick, because the wrong answer you were tempted by is the useful thing to know
             about.
             {onFinish && (
               <>

@@ -383,7 +383,8 @@ export function ExplainScreen() {
       />
       <div className="pointer-events-none fixed inset-0 -z-10 bg-leather-950/90" />
 
-      <div className="mx-auto w-full max-w-[52rem] px-4 py-12 sm:px-6 sm:py-16">
+      {/* <main>: a bare page with no Shell, so nothing else supplies one. */}
+      <main className="mx-auto w-full max-w-[52rem] px-4 py-12 sm:px-6 sm:py-16">
         <button
           type="button"
           onClick={() => {
@@ -454,7 +455,7 @@ export function ExplainScreen() {
             </LinkButton>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

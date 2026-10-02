@@ -16,11 +16,14 @@ import {
   type ReactNode,
 } from 'react';
 import type { Attempt, DiagnosticResult, Progress, SectionId, TestResult } from '@/types';
+import type { User } from '@supabase/supabase-js';
 import {
   awardXP as awardXPPure,
   checkAchievements,
   completeDaily as completeDailyPure,
-  dailyDone,
+  dailyClaimed,
+  dayKey,
+  emptyProgress,
   loadProgress,
   mergeProgress,
   rankFor,
@@ -36,27 +39,42 @@ import {
 import { readRaw, removeRaw, STORAGE_KEYS, sweepRetiredData, writeRaw } from './storage';
 import { reportWarn } from './report';
 import { progressKeyFor, retireDeviceAccounts, type Identity } from './identity';
+import { TEST_SESSION_KEY } from './testSession';
 import { sfx } from './sfx';
 import type { IconName } from '@/components/Icon';
 import {
   cloudEnabled,
   consumeAuthRedirect,
-  currentUser,
   deleteAccount as cloudDeleteAccount,
   deleteRemoteProgress,
   displayNameOf,
+  dropLocalSession,
   pullProgress,
   pushProgress,
+  sessionUser,
   signOut as cloudSignOut,
+  storedSessionUser,
   supabase,
+  verifySession,
   type AuthRedirect,
   type PushResult,
 } from './supabase';
 
 /* What a write attempt came to. `deferred` is neither success nor failure: the
    write was correctly refused twice and the next debounce tick will carry it,
-   so the student is told nothing and no error state is set. */
-type SyncOutcome = 'ok' | 'deferred' | 'error';
+   so the student is told nothing and no error state is set. `too-large` is the
+   database refusing the row itself, which no retry will change. */
+type SyncOutcome = 'ok' | 'deferred' | 'error' | 'too-large';
+
+const GUEST_KEY = progressKeyFor({ kind: 'guest' });
+
+const PUSH_FAILED = 'Progress is saved on this device but could not reach the cloud.';
+const PULL_FAILED = 'Could not reach the cloud. Your progress is safe on this device.';
+const TOO_LARGE =
+  'Your progress is saved on this device, but it has grown too large to back up to your account. Please let us know through Send feedback.';
+
+/** How long signing out waits for the last push before going anyway. */
+const SIGN_OUT_FLUSH_MS = 5_000;
 
 /* ------------------------------------------------------------------ toasts */
 
@@ -204,6 +222,24 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   /** Set while a reset is deleting the cloud row, so nothing writes it back. */
   const resettingRef = useRef(false);
 
+  /* The account whose first sync has read the cloud row. Until it has, no
+     debounced push may run: this device does not yet know whether there is a
+     row, so a push could only guess — and the guess it made was "no row",
+     which inserted the empty world it had just loaded. That beat the sync's
+     own write, the account now had a row, and the guest world the student had
+     asked to bring with them was refused as belonging to an existing account. */
+  const syncedUidRef = useRef<string | null>(null);
+  const syncInFlightRef = useRef(false);
+
+  /* The guest world has been merged into the signed-in account's progress
+     but no push has confirmed it yet. While this is set the guest key still
+     holds the same work, so anything that ends the session has to clear it
+     rather than leave it for the next person at this browser. */
+  const claimMergedRef = useRef(false);
+
+  /** Said once a session; it will not change until somebody fixes it. */
+  const toldTooLargeRef = useRef(false);
+
   /* ---------------------------------------------------------- persistence */
 
   const storageKey = useMemo(() => progressKeyFor(identity), [identity]);
@@ -218,7 +254,13 @@ export function StoreProvider({ children }: { children: ReactNode }) {
      write instead; the next change here then builds on it. */
   useEffect(() => {
     const onStorage = (e: StorageEvent) => {
-      if (e.key !== storageKey || e.newValue === null) return;
+      /* A removed key (or `localStorage.clear()`, which reports a null key)
+         is followed too, and reads back as an empty world. Ignoring removals
+         is how a reset in one tab was undone by the next answer in another:
+         the other tab still held the whole history and wrote it straight back.
+         Every remover of a progress key means it — a reset, an account
+         deletion, a claimed guest world moving into an account. */
+      if (e.key !== storageKey && e.key !== null) return;
       const next = loadProgress(storageKey);
       progressRef.current = next;
       setProgress(next);
@@ -366,7 +408,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const finishDaily = useCallback(
     (day?: string) => {
       const p = progressRef.current;
-      if (day ? p.dailyDoneOn === day : dailyDone(p)) return;
+      if (dailyClaimed(p, day ?? dayKey())) return;
       applyResult(completeDailyPure(p, day));
       pushToast({
         title: 'Daily challenge done',
@@ -432,47 +474,86 @@ export function StoreProvider({ children }: { children: ReactNode }) {
    * work is already safe on this device and the next debounce tick will carry
    * it up with a fresher timestamp.
    */
-  const pushSynced = useCallback(async (uid: string, name: string): Promise<SyncOutcome> => {
-    if (resettingRef.current) return 'deferred';
-    const attempt = async (): Promise<PushResult> =>
-      pushProgress(name, progressRef.current, remoteUpdatedAtRef.current);
-
-    let result = await attempt();
-
-    if (result.status === 'conflict') {
-      const remote = await pullProgress(uid);
-      if (activeUidRef.current !== uid) return 'deferred';
-      if (remote.status === 'error') return 'error';
-
-      if (remote.status === 'ok') {
-        const merged = mergeProgress(progressRef.current, remote.data);
-        progressRef.current = merged;
-        setProgress(merged);
-        remoteUpdatedAtRef.current = remote.updatedAt;
-      } else {
-        /* The row went away between the refusal and the re-read — a delete on
-           another device, or an account reset. Expect nothing and insert. */
-        remoteUpdatedAtRef.current = null;
-      }
-      result = await attempt();
-    }
-
-    if (result.status === 'ok') {
-      remoteUpdatedAtRef.current = result.updatedAt;
-      return 'ok';
-    }
-    /* A second conflict is not an error to show anyone — nothing was lost and
-       nothing is wrong. It is reported so an operator can see if it is
-       happening constantly, which would mean the debounce is too slow. */
-    if (result.status === 'conflict') {
-      reportWarn('sync.push', 'conflicted twice; deferring to the next push');
-      return 'deferred';
-    }
-    return 'error';
+  /** The claim is done: the guest world lives in the account now, so the copy
+   *  under the guest key goes. Left there, the next person to press "play as
+   *  guest" at this browser opened someone else's world — and signing up
+   *  absorbed it into *their* account. */
+  const finishClaim = useCallback(() => {
+    claimMergedRef.current = false;
+    removeRaw(CLAIM_GUEST_KEY);
+    removeRaw(GUEST_KEY);
   }, []);
+
+  const pushSynced = useCallback(
+    async (uid: string, name: string, keepalive = false): Promise<SyncOutcome> => {
+      if (resettingRef.current) return 'deferred';
+      const attempt = async (): Promise<PushResult> =>
+        pushProgress(name, progressRef.current, remoteUpdatedAtRef.current, { keepalive });
+
+      let result = await attempt();
+
+      if (result.status === 'conflict') {
+        const remote = await pullProgress(uid);
+        if (activeUidRef.current !== uid) return 'deferred';
+        if (remote.status === 'error') return 'error';
+
+        if (remote.status === 'ok') {
+          const merged = mergeProgress(progressRef.current, remote.data);
+          progressRef.current = merged;
+          setProgress(merged);
+          remoteUpdatedAtRef.current = remote.updatedAt;
+        } else {
+          /* The row went away between the refusal and the re-read — a delete on
+             another device, or an account reset. Expect nothing and insert. */
+          remoteUpdatedAtRef.current = null;
+        }
+        result = await attempt();
+      }
+
+      if (result.status === 'ok') {
+        remoteUpdatedAtRef.current = result.updatedAt;
+        if (claimMergedRef.current && activeUidRef.current === uid) finishClaim();
+        return 'ok';
+      }
+      /* A second conflict is not an error to show anyone — nothing was lost and
+         nothing is wrong. It is reported so an operator can see if it is
+         happening constantly, which would mean the debounce is too slow. */
+      if (result.status === 'conflict') {
+        reportWarn('sync.push', 'conflicted twice; deferring to the next push');
+        return 'deferred';
+      }
+      return result.status === 'too-large' ? 'too-large' : 'error';
+    },
+    [finishClaim],
+  );
+
+  /* Say what a push came to, through the one sync status the UI already shows
+     (Settings reads `lastSyncError`). The debounced push used to drop its
+     result on the floor, so a row the database refused failed every four
+     seconds for the rest of the account's life and nobody was ever told. */
+  const reportPush = useCallback(
+    (outcome: SyncOutcome) => {
+      if (outcome === 'ok') setLastSyncError(null);
+      else if (outcome === 'error') setLastSyncError(PUSH_FAILED);
+      else if (outcome === 'too-large') {
+        setLastSyncError(TOO_LARGE);
+        if (!toldTooLargeRef.current) {
+          toldTooLargeRef.current = true;
+          pushToast({
+            title: 'Cloud backup paused',
+            detail: 'Your progress is safe on this device. See Settings for details.',
+            color: 'oklch(var(--c-blood-text))',
+            icon: 'shield',
+          });
+        }
+      }
+    },
+    [pushToast],
+  );
 
   const syncWithCloud = useCallback(
     async (uid: string, name: string, claimGuest = false) => {
+      syncInFlightRef.current = true;
       setSyncing(true);
       setLastSyncError(null);
       try {
@@ -482,8 +563,12 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         if (remote.status === 'error') {
           /* Do not push. Local might be an empty profile on a fresh device and
              the row we could not read might be a year of work — writing over it
-             is the one unrecoverable mistake available here. Try again later. */
-          setLastSyncError('Could not reach the cloud. Your progress is safe on this device.');
+             is the one unrecoverable mistake available here. Try again later.
+
+             The claim flag stays where it is, too. It used to be spent before
+             this pull, so a dropped connection at the one moment it mattered
+             cost the student the world they had built before signing up. */
+          setLastSyncError(PULL_FAILED);
           return;
         }
 
@@ -494,59 +579,87 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         if (remote.status === 'ok') {
           merged = mergeProgress(merged, remote.data);
           remoteUpdatedAtRef.current = remote.updatedAt;
+          /* The account already has a row, so this is not a new account and a
+             pending claim does not apply. That is an answer, so it is spent. */
+          if (claimGuest) removeRaw(CLAIM_GUEST_KEY);
         } else {
           // `empty` is a fact, not a failure: this account has no row yet.
           remoteUpdatedAtRef.current = null;
           if (claimGuest) {
-            merged = mergeProgress(loadProgress(progressKeyFor({ kind: 'guest' })), merged);
+            /* Reset epochs are a fact about one identity's history and do not
+               travel with a claim: a guest world reset last week is still the
+               world being brought along, and must not erase the account's. */
+            const { resetAt, ...account } = merged;
+            const { resetAt: _guestEpoch, ...guest } = loadProgress(GUEST_KEY);
+            merged = { ...mergeProgress(guest, account), ...(resetAt ? { resetAt } : {}) };
+            claimMergedRef.current = true;
           }
         }
 
         setProgress(merged);
         progressRef.current = merged;
-        const result = await pushSynced(uid, name);
-        if (result === 'error')
-          setLastSyncError('Progress is saved on this device but could not reach the cloud.');
+        syncedUidRef.current = uid;
+        reportPush(await pushSynced(uid, name));
       } catch (err) {
         reportWarn('sync.cycle', err);
-        setLastSyncError('Could not reach the cloud. Your progress is safe on this device.');
+        setLastSyncError(PULL_FAILED);
       } finally {
+        syncInFlightRef.current = false;
         setSyncing(false);
       }
     },
-    [pushSynced],
+    [pushSynced, reportPush],
   );
 
-  const refreshAuth = useCallback(async () => {
-    if (!cloudEnabled) {
-      setAuthReady(true);
-      return;
-    }
-    /* `currentUser()` throws on a raw network failure (DNS, CORS, an offline
-       first load) rather than returning the Supabase `{error}` shape the rest
-       of this file is written to expect — every other call in this module
-       goes through the tri-state ok/empty/error results in supabase.ts, but
-       this one call to auth.getUser() does not. Uncaught here, that throw
-       used to leave the app on "Loading…" forever: the function returns
-       without reaching `setAuthReady(true)` below, and nothing render-side
-       can recover from a promise that never settles. Fall back to a signed-out
-       guest rather than hang — a login attempt right afterward will surface
-       the same network error somewhere the person can actually see it. */
-    let user: Awaited<ReturnType<typeof currentUser>> = null;
-    try {
-      user = await currentUser();
-    } catch (err) {
-      reportWarn('auth.bootstrap', err);
-    }
-    if (user) {
+  /* Load the guest world along with the guest identity. Switching only the
+     identity left the account's progress in state, and the save effect then
+     wrote it under the guest key — so signing out handed the account's whole
+     history to whoever used the browser next. */
+  const becomeGuest = useCallback(() => {
+    const guest = loadProgress(GUEST_KEY);
+    activeUidRef.current = null;
+    remoteUpdatedAtRef.current = null;
+    syncedUidRef.current = null;
+    claimMergedRef.current = false;
+    setUserId(null);
+    setPlayerName('Traveller');
+    setIdentity({ kind: 'guest' });
+    setProgress(guest);
+    progressRef.current = guest;
+    setAuthReady(true);
+  }, []);
+
+  /* Check the session with the server, behind the app, once per sign-in.
+     Only an answer from the auth server that the session is over signs this
+     device out; silence, a timeout, a 5xx or a 429 change nothing. */
+  const checkSession = useCallback(
+    async (uid: string) => {
+      const check = await verifySession();
+      if (activeUidRef.current !== uid) return;
+      if (check.status === 'valid') {
+        setPlayerName(displayNameOf(check.user));
+        return;
+      }
+      if (check.status !== 'invalid') return;
+      reportWarn('auth.verify', 'the server ended this session; signing out on this device');
+      await dropLocalSession();
+      /* The account's progress stays on disk under its own key — nothing
+         unsynced is lost, and signing back in picks it up. */
+      if (activeUidRef.current === uid) becomeGuest();
+    },
+    [becomeGuest],
+  );
+
+  /** Load an account's world and sync it behind the app. */
+  const adoptAccount = useCallback(
+    (user: User) => {
       const next: Identity = { kind: 'cloud', userId: user.id };
       const name = displayNameOf(user);
 
       /* Already loaded — a second caller for the same sign-in. Sign-up awaits
          this while the SIGNED_IN listener fires it too; the later one used to
          reload progress from disk over the guest world the first had just
-         claimed and merged, and the claim flag was already spent. Only the
-         name can have changed (USER_UPDATED). */
+         claimed and merged. Only the name can have changed (USER_UPDATED). */
       if (activeUidRef.current === user.id) {
         setPlayerName(name);
         setAuthReady(true);
@@ -564,12 +677,15 @@ export function StoreProvider({ children }: { children: ReactNode }) {
          confirmation email because it is written to disk. The claim is handed
          to the sync rather than applied here, because only the sync can see
          whether this account already has a row — and if it does, the claim is
-         wrong and gets dropped. */
+         wrong and gets dropped. The flag is cleared by the sync once it has an
+         answer, not here: a pull that fails must leave it for the next try. */
       const base = loadProgress(progressKeyFor(next));
       const claimGuest = readRaw(CLAIM_GUEST_KEY) === '1';
-      removeRaw(CLAIM_GUEST_KEY);
 
       activeUidRef.current = user.id;
+      remoteUpdatedAtRef.current = null;
+      syncedUidRef.current = null;
+      claimMergedRef.current = false;
       setUserId(user.id);
       setPlayerName(name);
       setIdentity(next);
@@ -580,8 +696,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
       /* Let the app in *now*, and sync behind it.
 
-         `authReady` used to be set after this await, which quietly redefined
-         it from "we know who you are" — all of which is already decided above,
+         `authReady` used to be set after the sync, which quietly redefined it
+         from "we know who you are" — all of which is already decided above,
          from disk — into "the cloud has finished talking to us". So a signed-in
          student on a slow train, or against a Supabase project that had gone to
          sleep, sat on the boot screen watching a compass spin for as long as
@@ -596,52 +712,62 @@ export function StoreProvider({ children }: { children: ReactNode }) {
          instead of the entire app. */
       setAuthReady(true);
       void syncWithCloud(user.id, name, claimGuest);
+      void checkSession(user.id);
+    },
+    [syncWithCloud, checkSession],
+  );
+
+  const refreshAuth = useCallback(async () => {
+    if (!cloudEnabled) {
+      setAuthReady(true);
       return;
     }
-    /* Load the guest world along with the guest identity. Switching only the
-       identity left the account's progress in state, and the save effect then
-       wrote it under the guest key — so signing out handed the account's whole
-       history to whoever used the browser next. */
-    const guest = loadProgress(progressKeyFor({ kind: 'guest' }));
-    activeUidRef.current = null;
-    remoteUpdatedAtRef.current = null;
-    setUserId(null);
-    setPlayerName('Traveller');
-    setIdentity({ kind: 'guest' });
-    setProgress(guest);
-    progressRef.current = guest;
-    setAuthReady(true);
-  }, [syncWithCloud]);
+    /* Identity comes from the session on this device (see `sessionUser`), so
+       being offline, or Supabase being down, is no longer the same thing as
+       being signed out. A throw is still caught — an app stuck on "Loading…"
+       forever is the one outcome worse than any wrong guess — and it falls
+       back to the stored session before it falls back to a guest. */
+    let user: User | null;
+    try {
+      user = await sessionUser();
+    } catch (err) {
+      reportWarn('auth.bootstrap', err);
+      user = storedSessionUser();
+    }
+    if (user) adoptAccount(user);
+    else becomeGuest();
+  }, [adoptAccount, becomeGuest]);
 
   useEffect(() => {
-    /* Settle any link clicked in an email before asking who is signed in — the
-       exchange is what creates the session a password reset then depends on.
-       `consumeAuthRedirect` can throw the same way `currentUser` could (see
-       the comment in `refreshAuth`) — a broken or already-used confirmation
-       link is a plausible way to hit a raw network/provider error here, not
-       just the well-typed one the function is written to return. Guarded for
-       the same reason: `refreshAuth()` below is what resolves `authReady`,
-       and it must still run even if the redirect never settles. */
     /* A deadline on the boot screen itself.
 
-       Requests now carry their own timeout (supabase.ts), and the sync no
-       longer blocks this path — but `authReady` gates the only thing a first
-       visitor can see, and "the app shows nothing at all" is too expensive a
-       failure to leave resting on every call downstream continuing to behave.
-       If the answer is not back in eight seconds, open the app as a guest and
-       let `refreshAuth` upgrade the session whenever it finally arrives.
+       Requests carry their own timeout (supabase.ts), identity is read from
+       the device, and the sync does not block this path — but `authReady`
+       gates the only thing a first visitor can see, and "the app shows
+       nothing at all" is too expensive a failure to leave resting on every
+       call downstream continuing to behave. The slow part left is settling an
+       email link, which is a network exchange.
 
-       Guest is the safe side to fail to: it is what an unconfigured build and
-       an under-13 both run as, every screen works in it, and nothing is
-       written over — progress is per identity, so the signed-in world is still
-       on disk untouched when the session lands. */
+       If the answer is not back in eight seconds, open the app as whoever the
+       stored session says this is — not as a guest. Opening as a guest used to
+       be the fallback, and it put a signed-in student into the guest world
+       with every answer saved under the guest key, where their account never
+       saw it. With no stored session, a guest is the truth. `refreshAuth`
+       still runs to the end and corrects either answer if it has to. */
+    let settled = false;
     const openAnyway = setTimeout(() => {
-      setAuthReady((ready) => {
-        if (!ready) reportWarn('auth.bootstrap', 'timed out; opening as guest');
-        return true;
-      });
+      if (settled) return;
+      reportWarn('auth.bootstrap', 'timed out; opening from the stored session');
+      const stored = storedSessionUser();
+      if (stored) adoptAccount(stored);
+      else setAuthReady(true);
     }, 8_000);
 
+    /* Settle any link clicked in an email before asking who is signed in — the
+       exchange is what creates the session a password reset then depends on.
+       Guarded: a broken or already-used confirmation link is a plausible way
+       to hit a raw network or provider error here, and `refreshAuth()` below
+       must still run even if the redirect never settles. */
     void (async () => {
       let redirect: Awaited<ReturnType<typeof consumeAuthRedirect>> = null;
       try {
@@ -651,43 +777,65 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       }
       if (redirect) setAuthRedirect(redirect);
       await refreshAuth();
+      settled = true;
       clearTimeout(openAnyway);
     })();
 
     if (!supabase) return;
     const { data } = supabase.auth.onAuthStateChange((event, session) => {
-      /* Supabase re-announces SIGNED_IN whenever a tab regains focus. For the
-         account already loaded that is not news, and treating it as a sign-in
-         reloaded progress from disk and ran a full sync on every alt-tab. */
-      if (event === 'SIGNED_IN' && session?.user.id === activeUidRef.current) return;
-      if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'USER_UPDATED') {
-        void refreshAuth();
+      /* Supabase re-announces SIGNED_IN whenever a tab regains focus, and
+         TOKEN_REFRESHED every hour. For the account already loaded neither is
+         news — treating them as sign-ins reloaded progress from disk and ran a
+         full sync on every alt-tab. For an account that is *not* loaded they
+         are, so either one switches to it.
+
+         Deferred a tick: supabase-js calls this while holding its auth lock,
+         and `refreshAuth` asks it for the session, which waits on that lock. */
+      const rerun = () => window.setTimeout(() => void refreshAuth(), 0);
+      if (event === 'SIGNED_OUT' || event === 'USER_UPDATED') rerun();
+      else if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+        if (session?.user.id !== activeUidRef.current) rerun();
       }
     });
     return () => data.subscription.unsubscribe();
-  }, [refreshAuth]);
+  }, [refreshAuth, adoptAccount]);
 
   /* Push on a debounce while signed in, so a session's work survives a
-     closed tab without hammering the API on every answer. */
+     closed tab without hammering the API on every answer.
+
+     Not before the first sync for this account has read the row — see
+     `syncedUidRef`. If that sync failed (offline at boot), the tick retries
+     the whole sync instead, pull first, so a session that started offline
+     still reaches the cloud once the connection is back. */
   const pushTimer = useRef<number | null>(null);
   useEffect(() => {
     if (!userId || !cloudEnabled) return;
     if (pushTimer.current) window.clearTimeout(pushTimer.current);
     pushTimer.current = window.setTimeout(() => {
-      void pushSynced(userId, playerName);
+      if (activeUidRef.current !== userId) return;
+      if (syncedUidRef.current !== userId) {
+        if (!syncInFlightRef.current) {
+          void syncWithCloud(userId, playerName, readRaw(CLAIM_GUEST_KEY) === '1');
+        }
+        return;
+      }
+      void pushSynced(userId, playerName).then(reportPush);
     }, 4000);
     return () => {
       if (pushTimer.current) window.clearTimeout(pushTimer.current);
     };
-  }, [progress, userId, playerName, pushSynced]);
+  }, [progress, userId, playerName, pushSynced, reportPush, syncWithCloud]);
 
-  // Last-chance flush when the tab goes away.
+  /* Last-chance flush when the tab goes away. Sent with `keepalive` so the
+     request can finish after the page is gone — best effort: supabase-js
+     reads the session before it sends, and a browser that freezes the page
+     first gets no request at all. The debounce above is the real guarantee. */
   useEffect(() => {
     if (!userId) return;
     const flush = () => {
-      if (document.visibilityState === 'hidden') {
-        void pushSynced(userId, playerName);
-      }
+      if (document.visibilityState !== 'hidden' || syncedUidRef.current !== userId) return;
+      if (pushTimer.current) window.clearTimeout(pushTimer.current);
+      void pushSynced(userId, playerName, true);
     };
     document.addEventListener('visibilitychange', flush);
     return () => document.removeEventListener('visibilitychange', flush);
@@ -727,20 +875,51 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const clearAuthRedirect = useCallback(() => setAuthRedirect(null), []);
 
   const signOutFn = useCallback(async () => {
+    /* Save first. The debounced push was simply cancelled here, so the last
+       four seconds of work — the answer that made them think "done for
+       today" — never left the device, and the next device they signed in on
+       did not have it. Bounded, because a sign-out that hangs on a dead
+       network is a sign-out that does not happen; the work is still on disk
+       under the account's key either way, and goes up at the next sign-in. */
+    const uid = activeUidRef.current;
+    if (pushTimer.current) window.clearTimeout(pushTimer.current);
+    if (uid && syncedUidRef.current === uid) {
+      let timer: number | undefined;
+      await Promise.race([
+        pushSynced(uid, playerName),
+        new Promise<void>((resolve) => {
+          timer = window.setTimeout(resolve, SIGN_OUT_FLUSH_MS);
+        }),
+      ]);
+      window.clearTimeout(timer);
+    }
+
     /* Let go of the account before the network round trip. A pull still in
        flight checks this ref before merging; left set, it could land after
        the switch below and merge the account into the guest world. */
     activeUidRef.current = null;
     remoteUpdatedAtRef.current = null;
-    if (pushTimer.current) window.clearTimeout(pushTimer.current);
+    syncedUidRef.current = null;
+
+    /* Leave nothing at this browser that the next person could inherit: no
+       claim flag for their sign-up to act on, and — if this session merged
+       the guest world into the account but never got to confirm it in the
+       cloud — not that guest world either. It is in the account's own save
+       now, and goes up at the next sign-in. */
+    removeRaw(CLAIM_GUEST_KEY);
+    if (claimMergedRef.current) removeRaw(GUEST_KEY);
+    claimMergedRef.current = false;
+
     await cloudSignOut();
     setUserId(null);
     setPlayerName('Traveller');
     switchIdentity({ kind: 'guest' });
-  }, [switchIdentity]);
+  }, [playerName, pushSynced, switchIdentity]);
 
+  /* Carries a pending claim, so a sign-up whose first sync failed can finish
+     claiming from the Settings button rather than only from a reload. */
   const syncNow = useCallback(async () => {
-    if (userId) await syncWithCloud(userId, playerName);
+    if (userId) await syncWithCloud(userId, playerName, readRaw(CLAIM_GUEST_KEY) === '1');
   }, [userId, playerName, syncWithCloud]);
 
   /* Wipe progress without touching the account.
@@ -755,6 +934,15 @@ export function StoreProvider({ children }: { children: ReactNode }) {
        straight back into the row this is about to delete. */
     resettingRef.current = true;
     if (pushTimer.current) window.clearTimeout(pushTimer.current);
+
+    /* And mark when. Deleting the row was not enough on its own: another
+       device, or another tab, still held the whole history, and its next sync
+       found no row and pushed everything straight back. The fresh world
+       carries `resetAt`, and `mergeProgress` discards whichever side is older
+       than it — so the reset reaches every copy, instead of the first copy to
+       sync undoing it. */
+    const fresh: Progress = { ...emptyProgress(), resetAt: Date.now() };
+
     if (userId && !(await deleteRemoteProgress(userId))) {
       /* Clearing this device anyway would look like success until the next
          sign-in pulled every bit of it back down. Say so and change nothing. */
@@ -765,17 +953,30 @@ export function StoreProvider({ children }: { children: ReactNode }) {
           'Could not reach the cloud, so nothing was reset. Check your connection and try again.',
       };
     }
-    removeRaw(storageKey);
+    if (userId) {
+      /* Into the row the delete just emptied, so the other devices hear about
+         the reset rather than finding nothing. If this one write fails the
+         reset still stands here and in the cloud; only a device that pushes
+         before this one next syncs could bring old work back. */
+      const seeded = await pushProgress(playerName, fresh, null);
+      if (seeded.status !== 'ok')
+        reportWarn('sync.reset', `epoch row not written: ${seeded.status}`);
+    }
+    saveProgress(fresh, storageKey);
     removeRaw(STORAGE_KEYS.progress);
     removeRaw(STORAGE_KEYS.guest);
     removeRaw(STORAGE_KEYS.legacyProgress);
     removeRaw(STORAGE_KEYS.legacyJourney);
     removeRaw(STORAGE_KEYS.legacyProfile);
     removeRaw(STORAGE_KEYS.seenIntro);
+    /* A timed test left half-done would otherwise offer to resume after the
+       reload, and finishing it would score a pre-reset test into the fresh
+       world. */
+    removeRaw(TEST_SESSION_KEY);
     window.location.hash = '#/';
     window.location.reload();
     return { ok: true };
-  }, [storageKey, userId]);
+  }, [storageKey, userId, playerName]);
 
   /** Delete the account itself, and every trace of it on this device. */
   const deleteAccountFn = useCallback(async () => {

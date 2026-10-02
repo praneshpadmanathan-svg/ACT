@@ -1060,6 +1060,14 @@
   .btn-sm {
     @apply px-3 py-1.5 text-[13px];
   }
+  /* 32px tall is a mouse target. The landing page's "Log in" is a `btn-sm`
+     and measured 35×32 on a phone — the same rule `.hud-icon` already
+     follows: full 44 under a thumb, the designed size under a pointer. */
+  @media (pointer: coarse) {
+    .btn-sm {
+      @apply min-h-11;
+    }
+  }
 
   .chip {
     @apply inline-flex items-center gap-1.5 rounded-full border border-leather-700

@@ -11,7 +11,8 @@
    when its illustration did, and "The Grammar Village" is still what the story
    chain, the guardians and the Codex all call this place. */
 
-import { PATH_BY_ID, SECTION_BY_ID } from '@/content';
+import { PATH_BY_ID } from '@/content/zones';
+import { SECTION_BY_ID } from '@/content/sections';
 import { REGIONS } from '@/content/regionFlavor';
 import { useStore } from '@/lib/store';
 import { hrefFor, useNavigate } from '@/lib/router';

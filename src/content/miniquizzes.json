@@ -333,7 +333,7 @@
         "We toured, the old castle which dates from 1150."
       ],
       "a": 0,
-      "why": "A <i>which</i> clause adds extra information about a noun already identified, and extra information is set off with commas. At the end of a sentence the closing comma is replaced by the period, so only one comma shows, before “which”.",
+      "why": "A *which* clause adds extra information about a noun already identified, and extra information is set off with commas. At the end of a sentence the closing comma is replaced by the period, so only one comma shows, before “which”.",
       "d": 2
     },
     {
@@ -731,7 +731,7 @@
         "x &lt; 3.5"
       ],
       "a": 0,
-      "why": "Undo the operations in reverse: subtract 1 to get 4x &lt; 12, then divide by 4 to get x &lt; 3. Dividing by a positive number leaves the sign alone; only a negative flips it.",
+      "why": "Undo the operations in reverse: subtract 1 to get 4x < 12, then divide by 4 to get x < 3. Dividing by a positive number leaves the sign alone; only a negative flips it.",
       "d": 1
     },
     {
@@ -1165,7 +1165,7 @@
         "accuracy"
       ],
       "a": 0,
-      "why": "<i>Traction</i> usually means a tyre’s grip, but a rumour has no wheels. In this sentence it is the quieter meaning: the rumour began to spread and be believed. Swap “support” in and the sentence keeps its sense; a repeated rumour does not become more accurate.",
+      "why": "*Traction* usually means a tyre’s grip, but a rumour has no wheels. In this sentence it is the quieter meaning: the rumour began to spread and be believed. Swap “support” in and the sentence keeps its sense; a repeated rumour does not become more accurate.",
       "d": 2
     },
     {
@@ -2009,7 +2009,7 @@
         "train"
       ],
       "a": 0,
-      "why": "“Cant” stands for “can not”, and in a contraction the apostrophe sits where letters were dropped: <i>can’t</i>. “Leaves” is an ordinary verb and “train” an ordinary noun, so neither needs one.",
+      "why": "“Cant” stands for “can not”, and in a contraction the apostrophe sits where letters were dropped: *can’t*. “Leaves” is an ordinary verb and “train” an ordinary noun, so neither needs one.",
       "d": 1
     },
     {
@@ -2021,7 +2021,7 @@
         "let’s’"
       ],
       "a": 0,
-      "why": "Expand to test, as with it’s: <i>let’s</i> means “let us”, and “The app let us you share photos” makes no sense. Here the word is the plain verb <i>lets</i>, meaning “allows”, and a verb takes no apostrophe.",
+      "why": "Expand to test, as with it’s: *let’s* means “let us”, and “The app let us you share photos” makes no sense. Here the word is the plain verb *lets*, meaning “allows”, and a verb takes no apostrophe.",
       "d": 2
     },
     {
@@ -2033,7 +2033,7 @@
         "weeks’s"
       ],
       "a": 0,
-      "why": "Time words take possessives: the notice is “of one week”. One week is singular, so it takes ’s. <i>weeks’</i> would be right only for two or more weeks, and plain <i>weeks</i> is a plural with no possession shown.",
+      "why": "Time words take possessives: the notice is “of one week”. One week is singular, so it takes ’s. *weeks’* would be right only for two or more weeks, and plain *weeks* is a plural with no possession shown.",
       "d": 2
     },
     {
@@ -2999,7 +2999,7 @@
         "swimming"
       ],
       "a": 0,
-      "why": "After “had”, English needs the past participle. For <i>swim</i> that is “swum”; “swam” is the simple past and takes no helper.",
+      "why": "After “had”, English needs the past participle. For *swim* that is “swum”; “swam” is the simple past and takes no helper.",
       "d": 3
     },
     {
@@ -3095,7 +3095,7 @@
         "layed"
       ],
       "a": 0,
-      "why": "The past of <i>lie</i> (to recline) is “lay”. “Laid” is the past of <i>lay</i> (to put something down), which needs an object; “lied” means told an untruth.",
+      "why": "The past of *lie* (to recline) is “lay”. “Laid” is the past of *lay* (to put something down), which needs an object; “lied” means told an untruth.",
       "d": 3
     },
     {
@@ -3107,7 +3107,7 @@
         "will have caught"
       ],
       "a": 0,
-      "why": "An unreal past condition takes “would have” + past participle. “Would of” is a mishearing of “would’ve”, and the participle of <i>catch</i> is “caught”.",
+      "why": "An unreal past condition takes “would have” + past participle. “Would of” is a mishearing of “would’ve”, and the participle of *catch* is “caught”.",
       "d": 2
     },
     {
@@ -3263,7 +3263,7 @@
         "had crossed"
       ],
       "a": 0,
-      "why": "A time word fixes the tense. “Tomorrow” points to the future, so the verb must be <i>will cross</i>. The other three are all past forms.",
+      "why": "A time word fixes the tense. “Tomorrow” points to the future, so the verb must be *will cross*. The other three are all past forms.",
       "d": 1
     },
     {
@@ -3275,7 +3275,7 @@
         "aren’t"
       ],
       "a": 0,
-      "why": "“My sister” is one person, and a singular subject takes <i>doesn’t</i> (does not). <i>Don’t</i> goes with plural subjects and with I or you.",
+      "why": "“My sister” is one person, and a singular subject takes *doesn’t* (does not). *Don’t* goes with plural subjects and with I or you.",
       "d": 1
     },
     {
@@ -3287,7 +3287,7 @@
         "has been"
       ],
       "a": 0,
-      "why": "Cross out the prepositional phrase “to the back door”: the true subject is “keys”, which is plural, so the verb is <i>are</i>. “Door” sits right beside the blank and tempts a singular verb.",
+      "why": "Cross out the prepositional phrase “to the back door”: the true subject is “keys”, which is plural, so the verb is *are*. “Door” sits right beside the blank and tempts a singular verb.",
       "d": 2
     },
     {
@@ -3299,7 +3299,7 @@
         "was"
       ],
       "a": 0,
-      "why": "<i>A number of</i> means “several”, so the subject is plural and takes <i>have</i>. (<i>The number of</i> is the singular one.) “Since dawn” also calls for <i>have</i> + participle rather than a simple past.",
+      "why": "*A number of* means “several”, so the subject is plural and takes *have*. (*The number of* is the singular one.) “Since dawn” also calls for *have* + participle rather than a simple past.",
       "d": 2
     },
     {
@@ -3311,7 +3311,7 @@
         "have been"
       ],
       "a": 0,
-      "why": "With neither…nor, the verb agrees with the nearer subject. “The coach” is nearer the verb and singular, so the verb is <i>was</i>. “Players” comes first and pulls toward a plural, but it is the far subject.",
+      "why": "With neither…nor, the verb agrees with the nearer subject. “The coach” is nearer the verb and singular, so the verb is *was*. “Players” comes first and pulls toward a plural, but it is the far subject.",
       "d": 3
     },
     {
@@ -3685,7 +3685,7 @@
         "so"
       ],
       "a": 0,
-      "why": "The second idea gives the reason for the first, so the link must be cause: <i>because</i>. <i>Although</i> signals contrast, <i>unless</i> signals a condition, and <i>so</i> would reverse the logic, making staying inside the cause of the storm.",
+      "why": "The second idea gives the reason for the first, so the link must be cause: *because*. *Although* signals contrast, *unless* signals a condition, and *so* would reverse the logic, making staying inside the cause of the storm.",
       "d": 1
     },
     {
@@ -3697,7 +3697,7 @@
         "or"
       ],
       "a": 0,
-      "why": "A warm coat is a point in its favour; too heavy to pack is a point against. Opposed ideas need a contrast word, and <i>but</i> is the contrast word among the joining words. <i>So</i> gives a result and <i>for</i> gives a cause.",
+      "why": "A warm coat is a point in its favour; too heavy to pack is a point against. Opposed ideas need a contrast word, and *but* is the contrast word among the joining words. *So* gives a result and *for* gives a cause.",
       "d": 1
     },
     {
@@ -3709,7 +3709,7 @@
         "As a result"
       ],
       "a": 0,
-      "why": "<i>On the contrary</i> rejects the previous idea outright and replaces it with a stronger one: not a flop, and in fact a bigger hit than the first. Earning more is not an example of “not a flop”, nor its result.",
+      "why": "*On the contrary* rejects the previous idea outright and replaces it with a stronger one: not a flop, and in fact a bigger hit than the first. Earning more is not an example of “not a flop”, nor its result.",
       "d": 2
     },
     {
@@ -3721,7 +3721,7 @@
         "For example"
       ],
       "a": 0,
-      "why": "Read both sentences: water versus land is a difference, so the link is contrast. <i>Similarly</i> is the pull, because both sentences are about laying eggs, but the point being made is where they differ.",
+      "why": "Read both sentences: water versus land is a difference, so the link is contrast. *Similarly* is the pull, because both sentences are about laying eggs, but the point being made is where they differ.",
       "d": 3
     },
     {
@@ -3733,7 +3733,7 @@
         "nor"
       ],
       "a": 0,
-      "why": "The second clause gives the reason for lighting the fire, and as a joining word <i>for</i> gives a cause. <i>So</i> is the trap: it gives a result, and would say the fire made the night cold.",
+      "why": "The second clause gives the reason for lighting the fire, and as a joining word *for* gives a cause. *So* is the trap: it gives a result, and would say the fire made the night cold.",
       "d": 3
     },
     {
@@ -9991,7 +9991,7 @@
         "7"
       ],
       "a": 0,
-      "why": "In vertex form y = a(x − h)² + k the vertex is (h, k). Here it is (−1, −7), and since a &gt; 0 the parabola opens up, so the vertex is the lowest point. The minimum value is its y, −7. The −1 is where the minimum happens, not the value.",
+      "why": "In vertex form y = a(x − h)² + k the vertex is (h, k). Here it is (−1, −7), and since a > 0 the parabola opens up, so the vertex is the lowest point. The minimum value is its y, −7. The −1 is where the minimum happens, not the value.",
       "d": 2
     },
     {
@@ -10063,7 +10063,7 @@
         "k = −9"
       ],
       "a": 0,
-      "why": "No real solutions means the discriminant is negative: k² − 64 &lt; 0, so k must lie between −8 and 8. Only 5 does. The pull is 8, which makes the discriminant exactly 0: one solution, not none.",
+      "why": "No real solutions means the discriminant is negative: k² − 64 < 0, so k must lie between −8 and 8. Only 5 does. The pull is 8, which makes the discriminant exactly 0: one solution, not none.",
       "d": 3
     },
     {
@@ -11257,7 +11257,7 @@
         "They are all equal"
       ],
       "a": 0,
-      "why": "Put every value into one unit first. 0.4 L = 400 mL, and 1 cm³ is exactly 1 mL, so C is 450 mL. Order: C (450) &gt; A (400) &gt; B (350). A’s 0.4 looks smallest only because litres are the bigger unit.",
+      "why": "Put every value into one unit first. 0.4 L = 400 mL, and 1 cm³ is exactly 1 mL, so C is 450 mL. Order: C (450) > A (400) > B (350). A’s 0.4 looks smallest only because litres are the bigger unit.",
       "d": 2
     },
     {
@@ -12547,7 +12547,7 @@
         "themself"
       ],
       "a": 0,
-      "why": "The campers are the subject and also the ones being cooked for, so the reflexive form is needed. The plural reflexive is <i>themselves</i>. “Theirselves” and “theirself” are not standard words.",
+      "why": "The campers are the subject and also the ones being cooked for, so the reflexive form is needed. The plural reflexive is *themselves*. “Theirselves” and “theirself” are not standard words.",
       "d": 1
     },
     {
@@ -12559,7 +12559,7 @@
         "whose"
       ],
       "a": 0,
-      "why": "Use <i>who</i> for people and <i>which</i> for things. A bridge is a thing, so the clause opens with <i>which</i>.",
+      "why": "Use *who* for people and *which* for things. A bridge is a thing, so the clause opens with *which*.",
       "d": 1
     },
     {
@@ -12571,7 +12571,7 @@
         "there"
       ],
       "a": 0,
-      "why": "With neither…nor, the pronoun agrees with the nearer noun. “The truck” is nearer and singular, so the pronoun is <i>its</i>. <i>It’s</i> means “it is”, which does not fit.",
+      "why": "With neither…nor, the pronoun agrees with the nearer noun. “The truck” is nearer and singular, so the pronoun is *its*. *It’s* means “it is”, which does not fit.",
       "d": 2
     },
     {
@@ -12583,7 +12583,7 @@
         "Who’s"
       ],
       "a": 0,
-      "why": "Turn the question into a statement: “The committee chose ___.” The answer is “him” or “her”, an object, so the pronoun is <i>whom</i>. There is no preposition to flag it here; the committee is the subject and does the choosing.",
+      "why": "Turn the question into a statement: “The committee chose ___.” The answer is “him” or “her”, an object, so the pronoun is *whom*. There is no preposition to flag it here; the committee is the subject and does the choosing.",
       "d": 2
     },
     {
@@ -12595,7 +12595,7 @@
         "whoever’s"
       ],
       "a": 0,
-      "why": "The case comes from the pronoun’s own clause. In “___ you meet”, the subject is “you” and the pronoun is the one being met, an object, so it is <i>whomever</i>. The pull is “to” just before the blank: the preposition takes the whole clause as its object, not the pronoun alone.",
+      "why": "The case comes from the pronoun’s own clause. In “___ you meet”, the subject is “you” and the pronoun is the one being met, an object, so it is *whomever*. The pull is “to” just before the blank: the preposition takes the whole clause as its object, not the pronoun alone.",
       "d": 3
     },
     {
@@ -13415,7 +13415,7 @@
         "tickets"
       ],
       "a": 0,
-      "why": "Compare like to like: tickets with tickets. “Those” stands in for a plural noun, so <i>those for the semifinal</i> is right. <i>That for</i> is the pull, from phrases like “that of Cairo”, but <i>that</i> replaces a singular noun, and “tickets” is plural. The other two compare tickets with a match.",
+      "why": "Compare like to like: tickets with tickets. “Those” stands in for a plural noun, so *those for the semifinal* is right. *That for* is the pull, from phrases like “that of Cairo”, but *that* replaces a singular noun, and “tickets” is plural. The other two compare tickets with a match.",
       "d": 3
     },
     {
@@ -13499,7 +13499,7 @@
         "familiar to and grateful for"
       ],
       "a": 0,
-      "why": "Two describing words share the object “the new safety rules”, but each needs its own preposition: familiar <i>with</i>, grateful <i>for</i>. Leaving the blank empty is the pull, because it reads smoothly, but it says “familiar for the rules”. “Familiar for” and “familiar to” are not the idiom here.",
+      "why": "Two describing words share the object “the new safety rules”, but each needs its own preposition: familiar *with*, grateful *for*. Leaving the blank empty is the pull, because it reads smoothly, but it says “familiar for the rules”. “Familiar for” and “familiar to” are not the idiom here.",
       "d": 3
     }
   ],

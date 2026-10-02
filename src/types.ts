@@ -347,6 +347,13 @@ export interface Progress {
   discovered: string[];
   /** Question ids flagged for review, and their spaced-repetition state. */
   review: Record<string, ReviewEntry>;
+  /** Question id -> when it graduated the review ladder (ms). Graduating
+   *  deletes the entry from `review`, and an absence cannot outvote another
+   *  device's stale copy in a merge — this can. Optional: older saves lack it. */
+  graduated?: Record<string, number>;
+  /** When this progress was last reset (ms). Anything from before it, on any
+   *  device, is discarded by the merge rather than resurrected. */
+  resetAt?: number;
 }
 
 /** One question's place in the review ladder. */

@@ -9,7 +9,7 @@
    it, which is the opposite of what it is for. */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { PATH_BY_ID, QUESTIONS, SECTION_BY_ID } from '@/content';
+import { PATH_BY_ID, questionsFor, SECTION_BY_ID, useContent } from '@/content';
 import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { fromDrillQuestion } from '@/lib/normalize';
@@ -44,6 +44,7 @@ function BossDuel({ section }: { section: string }) {
   const meta = SECTION_BY_ID[sectionId];
   const region = REGIONS[sectionId];
   const path = PATH_BY_ID[sectionId];
+  useContent({ sections: meta ? [sectionId] : [] });
 
   const [phase, setPhase] = useState<Phase>('intro');
   const [index, setIndex] = useState(0);
@@ -89,14 +90,14 @@ function BossDuel({ section }: { section: string }) {
   const questions = useMemo(() => {
     if (!boss) return [];
     void attempt;
-    const pool = QUESTIONS[sectionId] ?? [];
+    const pool = meta ? questionsFor(sectionId) : [];
     const byRank = (q: Question) =>
       q.difficulty === 'hard' ? 0 : q.difficulty === 'medium' ? 1 : 2;
     return shuffle(pool)
       .sort((a, b) => byRank(a) - byRank(b))
       .slice(0, 20)
       .map(fromDrillQuestion);
-  }, [boss, sectionId, attempt]);
+  }, [boss, meta, sectionId, attempt]);
 
   if (!boss || !meta || !region || !path) {
     return (

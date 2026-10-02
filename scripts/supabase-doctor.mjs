@@ -236,6 +236,43 @@ async function req(path, init = {}) {
   }
 }
 
+/* ------------------------------------ migration 0007: client_errors table */
+
+{
+  /* Same probe as `feedback`, for the same reason: a read, never a write. A
+     test insert would land a fake crash report in production and spend some
+     of the day's global cap. 0007 grants anon insert only, so a select is
+     refused with 42501 when the table exists. It cannot see whether the rate
+     cap triggers are installed — that needs the SQL editor (see
+     docs/launch-checklist.md). */
+  const { res, json, err } = await req('/rest/v1/client_errors?select=id&limit=1');
+  const name = 'Table `client_errors` (migration 0007)';
+  if (err) {
+    fail(name, 'The request failed.', 'See above.');
+  } else if (json?.code === 'PGRST205' || json?.code === '42P01' || res.status === 404) {
+    fail(
+      name,
+      json?.message ?? 'The table does not exist.',
+      'Paste supabase/migrations/0007_rate_caps.sql into the SQL editor. Until then crash ' +
+        'reports are dropped silently and feedback has no rate cap.',
+    );
+  } else if (res.status === 401 || res.status === 403 || json?.code === '42501') {
+    ok(name, 'exists, and anon cannot read it back');
+  } else if (res.ok) {
+    fail(
+      name,
+      'An unauthenticated caller can read crash reports. Stack traces can describe a session.',
+      'Re-run 0007: it revokes everything and grants insert only.',
+    );
+  } else {
+    warn(
+      name,
+      `Unexpected HTTP ${res.status}: ${json?.message ?? json?.code ?? 'no message'}`,
+      'Check the table in the SQL editor.',
+    );
+  }
+}
+
 /* ------------------------------------- 3. migration 0002: push_progress() */
 
 {

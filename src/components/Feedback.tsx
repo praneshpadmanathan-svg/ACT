@@ -154,11 +154,18 @@ export function Toasts() {
   return (
     /* Bottom-left. Top-right sat squarely on the question HUD — the Exit
        button, the calculator and the clock — at exactly the moment an
-       achievement lands, which is mid-question. Bottom-right is the tool dock. */
+       achievement lands, which is mid-question. Bottom-right is the tool dock.
+
+       Except on a phone, where bottom-left is under the thumb: the answer
+       that earns an achievement is followed by a "Next question" button the
+       runner scrolls to the foot of the screen, and a 340px toast was the
+       full width of it. There the toasts sit just under the 56px top bar
+       (and the notch): over the top of the page rather than over the button
+       the student is about to press. */
     <div
       role="status"
       aria-live="polite"
-      className="pointer-events-none fixed bottom-4 left-4 z-[90] flex w-[min(340px,calc(100vw-2rem))] flex-col gap-2 lg:left-[252px]"
+      className="pointer-events-none fixed left-4 z-[90] flex w-[min(340px,calc(100vw-2rem))] flex-col gap-2 max-sm:top-[calc(env(safe-area-inset-top,0px)+4rem)] sm:bottom-4 lg:left-[252px]"
     >
       {toasts.map((t) => (
         <button

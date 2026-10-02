@@ -152,16 +152,28 @@ function SwitchRow({
   disabled?: boolean;
   disabledNote?: string;
 }) {
+  /* A <label>, so the whole row is the switch's hit area. Only the 48px track
+     answered a tap, and on a phone the obvious thing to press is the setting's
+     name. A label forwards clicks to the button inside it, and a click on the
+     button itself is not forwarded twice. Spans rather than div/p because a
+     label holds phrasing content only. */
   return (
-    <div className="flex items-start gap-4 border-t border-leather-700/70 py-4 first:border-t-0 first:pt-0">
-      <div className="min-w-0 flex-1">
-        <div className="font-display text-[13.5px] font-semibold text-parchment">{label}</div>
-        <p className="mt-1 font-read text-[12.5px] leading-relaxed text-ink-faint">
+    <label
+      className={cx(
+        'flex items-start gap-4 border-t border-leather-700/70 py-4 first:border-t-0 first:pt-0',
+        !disabled && 'cursor-pointer',
+      )}
+    >
+      <span className="block min-w-0 flex-1">
+        <span className="block font-display text-[13.5px] font-semibold text-parchment">
+          {label}
+        </span>
+        <span className="mt-1 block font-read text-[12.5px] leading-relaxed text-ink-faint">
           {disabled && disabledNote ? disabledNote : detail}
-        </p>
-      </div>
+        </span>
+      </span>
       <Toggle on={on} onChange={onChange} label={label} disabled={disabled} />
-    </div>
+    </label>
   );
 }
 

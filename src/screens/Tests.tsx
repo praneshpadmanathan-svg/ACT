@@ -6,11 +6,36 @@
    not hand out free minutes. */
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { QUESTIONS, SECTIONS, SECTION_BY_ID } from '@/content';
+import {
+  getQuestion,
+  locateQuestion,
+  questionsFor,
+  SECTIONS,
+  SECTION_BY_ID,
+  useContent,
+} from '@/content';
 import { hrefFor, useConfirmExit, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { usePrefs } from '@/lib/prefs';
 import { TEST_PLAN, withAllowance } from '@/lib/testPlan';
+import {
+  addTime,
+  clearSession,
+  createSession,
+  currentSection,
+  isExpired,
+  loadSession,
+  moveTo,
+  recordsFor,
+  remainingSec,
+  saveSession,
+  sectionLimitMs,
+  selectAnswer,
+  startNextSection,
+  submitSection,
+  toggleFlag,
+  type TestSession as TestSessionState,
+} from '@/lib/testSession';
 
 /* Four letters at most, and Math is only four. `.slice(0, 3)` made it "MAT". */
 const SECTION_ABBR: Record<SectionId, string> = {
@@ -22,7 +47,6 @@ const SECTION_ABBR: Record<SectionId, string> = {
 import { fromDrillQuestion } from '@/lib/normalize';
 import {
   compositeOf,
-  paceHint,
   pacingFor,
   percentileFor,
   percentileInWords,
@@ -30,11 +54,12 @@ import {
   type Pacing,
 } from '@/lib/progress';
 import { sfx } from '@/lib/sfx';
-import { cx, formatClock, formatRelative, shuffle, titleCase } from '@/lib/utils';
+import { formatClock, formatRelative, shuffle, titleCase } from '@/lib/utils';
 import type { SectionId, TestResult } from '@/types';
 import { Page } from '@/components/Shell';
 import { Button, EmptyState, ProgressBar, SectionHeading } from '@/components/ui';
-import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
+import type { AnswerRecord, RunnableQuestion } from '@/components/QuestionRunner';
+import { ConfirmDialog, TestSectionView } from '@/components/TestSectionView';
 import { burstConfetti } from '@/components/Feedback';
 import { ScoreCaveat } from '@/components/ScoreCaveat';
 import { MissedReview } from '@/components/MissedReview';
@@ -75,6 +100,8 @@ function TestsBoard() {
         title="Timed practice"
         detail="Shortened practice sets, not full-length ACT simulations. Explanations and an estimated score appear when you finish."
       />
+
+      <ResumeCard />
 
       <div className="mb-6 grid gap-3 lg:grid-cols-2">
         <div className="panel border-blood p-6 sm:p-7" style={{ borderTopWidth: 4 }}>
@@ -189,16 +216,97 @@ function TestsBoard() {
   );
 }
 
+/* A saved attempt, offered back.
+
+   Read once when the board mounts. The clock line ticks, because "12:04
+   left" that does not move reads as paused, and the whole point of telling
+   someone the clock kept running is that it is still running now. */
+function ResumeCard() {
+  const navigate = useNavigate();
+  const [saved, setSaved] = useState(() => loadSession(Date.now(), questionExists));
+  const [now, setNow] = useState(() => Date.now());
+  const [discarding, setDiscarding] = useState(false);
+
+  useEffect(() => {
+    if (!saved || saved.stage.kind !== 'section') return;
+    const id = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(id);
+  }, [saved]);
+
+  if (!saved) return null;
+
+  const total = saved.sections.length;
+  let status: string;
+  if (saved.stage.kind === 'break') {
+    const next = saved.sections[saved.stage.nextIndex];
+    status = `On the break before ${next ? SECTION_BY_ID[next].name : 'the next section'}. No clock is running.`;
+  } else {
+    const id = currentSection(saved);
+    const name = id ? SECTION_BY_ID[id].name : 'This section';
+    const where = total > 1 ? `${name}, section ${saved.stage.index + 1} of ${total}` : name;
+    status = isExpired(saved, now)
+      ? `Time ran out on ${name}. Resume to submit it${saved.stage.index < total - 1 ? ' and carry on' : ' and see your score'}.`
+      : `${where} · ${formatClock(remainingSec(saved, now))} left`;
+  }
+
+  return (
+    <div className="panel mb-6 flex flex-wrap items-center gap-4 border-gold p-5 sm:p-6">
+      <div className="min-w-0 flex-[1_1_16rem]">
+        <h2 className="heading text-[1.05rem] text-gold">Resume: {testName(saved.sections)}</h2>
+        <p className="mt-1.5 text-[14px] leading-relaxed text-parchment-dim">{status}</p>
+      </div>
+      <div className="flex w-full gap-2.5 sm:w-auto">
+        <Button
+          variant="ghost"
+          className="min-h-11 flex-1 sm:flex-none"
+          onClick={() => setDiscarding(true)}
+        >
+          Discard
+        </Button>
+        <Button
+          variant="primary"
+          trailing
+          className="min-h-11 flex-1 sm:flex-none"
+          onClick={() => navigate({ name: 'test', config: saved.config })}
+        >
+          Resume
+        </Button>
+      </div>
+      {discarding && (
+        <ConfirmDialog
+          title="Discard this test?"
+          body="Your answers so far will be deleted and nothing will be scored. This cannot be undone."
+          confirmLabel="Discard test"
+          cancelLabel="Keep it"
+          onConfirm={() => {
+            clearSession();
+            setDiscarding(false);
+            setSaved(null);
+          }}
+          onCancel={() => setDiscarding(false)}
+        />
+      )}
+    </div>
+  );
+}
+
 /* --------------------------------------------------------------- runner */
 
-type Stage =
-  | { kind: 'brief' }
-  | { kind: 'section'; index: number }
-  | { kind: 'break'; nextIndex: number }
-  | { kind: 'done' };
+/* The attempt itself lives in a `TestSession` (see lib/testSession.ts), which
+   is written to storage on every change. What stays in React is only what
+   cannot outlive the page anyway: which screen is showing, and the result
+   once it exists. */
+type Phase = 'brief' | 'active' | 'done';
 
 export function TestRunner({ config }: { config: string }) {
   return <TestSession config={config} />;
+}
+
+/** True for an id the library still has. Needs nothing loaded. */
+const questionExists = (qid: string) => !!locateQuestion(qid);
+
+function testName(sections: SectionId[]): string {
+  return sections.length === 4 ? 'Four-section practice' : `${soleSectionName(sections)} section`;
 }
 
 function TestSession({ config }: { config: string }) {
@@ -215,54 +323,130 @@ function TestSession({ config }: { config: string }) {
           : [],
     [config],
   );
+  /* Before any state or clock below, so suspending discards nothing. */
+  useContent({ sections: sectionIds });
 
-  const [stage, setStage] = useState<Stage>({ kind: 'brief' });
-  const [answersBySection, setAnswersBySection] = useState<
-    Partial<Record<SectionId, AnswerRecord[]>>
-  >({});
+  /* A saved attempt at this same test is picked straight back up: this is
+     the path a reload, a discarded background tab and the Resume button all
+     arrive by. One for a *different* test is left alone and mentioned on the
+     brief, since starting this one will replace it. */
+  const [saved] = useState(() => loadSession(Date.now(), questionExists));
+  const [session, setSession] = useState<TestSessionState | null>(() =>
+    saved && saved.config === config && sectionIds.length > 0 ? saved : null,
+  );
+  const [phase, setPhase] = useState<Phase>(() => (session ? 'active' : 'brief'));
+  /* A line explaining a resume, tagged with the screen it belongs on: the
+     "welcome back" note means nothing on the break that follows it, and the
+     "time ran out" note is only true once that section has been handed in. */
+  const [notice, setNotice] = useState<{ text: string; on: 'section' | 'break' } | null>(() => {
+    if (!session) return null;
+    if (isExpired(session, Date.now())) {
+      const id = currentSection(session);
+      return {
+        on: 'break',
+        text: `Time ran out on ${id ? SECTION_BY_ID[id].name : 'that section'} while you were away, so it was submitted with the answers you had marked.`,
+      };
+    }
+    return session.stage.kind === 'section'
+      ? {
+          on: 'section',
+          text: 'Welcome back. Your answers are as you left them; the section clock kept running while you were away.',
+        }
+      : null;
+  });
   const [result, setResult] = useState<TestResult | null>(null);
-  const startedAtRef = useRef<number>(Date.now());
+  const [records, setRecords] = useState<AnswerRecord[]>([]);
+  const [leaving, setLeaving] = useState(false);
 
-  /* Per-section wall clock, for the pacing breakdown on the report.
-     Refs rather than state: nothing renders from these until the test is
-     over, so putting them in state would re-render at every section boundary
-     to no visible effect. The break between sections is deliberately not
-     counted — it is not time spent answering. */
-  const sectionStartRef = useRef<number>(Date.now());
-  const sectionSecRef = useRef<Partial<Record<SectionId, number>>>({});
-  /** Sections already finished, so a second finish for one cannot double-record. */
+  /* The latest session, readable from the timer's callback and from the
+     handlers below without waiting for a render. Every change goes through
+     `commit`, so the ref and the state can never disagree. */
+  const sessionRef = useRef(session);
+  const commit = (next: TestSessionState | null) => {
+    sessionRef.current = next;
+    setSession(next);
+  };
+  const edit = (fn: (s: TestSessionState) => TestSessionState) => {
+    const cur = sessionRef.current;
+    if (cur) commit(fn(cur));
+  };
+  /** Sections already finished in this page's lifetime, so the timer and the
+   *  Submit button landing together cannot double-record. The saved session
+   *  carries the same guard across reloads in `submitted`. */
   const completedRef = useRef<Set<number>>(new Set());
 
-  /* This one *is* state, because the pacing checkpoint renders from it. Reset
-     at every section boundary alongside `sectionStartRef`. */
-  const [answeredCount, setAnsweredCount] = useState(0);
-  /* This section's answers as they happen, keyed by question. The runner only
-     hands its records over in `onFinish`, so when the clock ran out first
-     there was nothing to score and the whole section came back 0 correct —
-     20 right answers out of 25 reported as none. */
-  const liveAnswersRef = useRef(new Map<string, AnswerRecord>());
+  /* Every change is saved, so a reload costs nothing but the second it took.
+     Not once the result is recorded: `finish` clears the save in the same
+     tick it sets the phase, and this must not write it back. */
+  useEffect(() => {
+    if (phase === 'active' && session) saveSession(session, Date.now());
+  }, [phase, session]);
 
-  // Questions are drawn once, up front, so a re-render never reshuffles a
-  // test that is already in progress.
-  const questionsBySection = useMemo(() => {
-    const out: Partial<Record<SectionId, ReturnType<typeof fromDrillQuestion>[]>> = {};
+  /* The questions, rebuilt from the session's ids so a resume restores the
+     exact test rather than a fresh draw. For the brief, drawn once up front
+     so a re-render never reshuffles. */
+  const drawnIds = useMemo(() => {
+    const out: Partial<Record<SectionId, string[]>> = {};
     for (const id of sectionIds) {
-      const plan = TEST_PLAN[id];
-      out[id] = shuffle(QUESTIONS[id].filter((q) => !q.practiceOnly))
-        .slice(0, plan.questions)
-        .map(fromDrillQuestion);
+      out[id] = shuffle(questionsFor(id).filter((q) => !q.practiceOnly))
+        .slice(0, TEST_PLAN[id].questions)
+        .map((q) => q.id);
     }
     return out;
   }, [sectionIds]);
+  const questionIds = session?.questionIds ?? drawnIds;
+  const questionsBySection = useMemo(() => {
+    const out: Partial<Record<SectionId, RunnableQuestion[]>> = {};
+    for (const id of sectionIds) {
+      out[id] = (questionIds[id] ?? []).flatMap((qid) => {
+        const q = getQuestion(qid);
+        return q ? [fromDrillQuestion(q)] : [];
+      });
+    }
+    return out;
+  }, [sectionIds, questionIds]);
+
+  /* Time spent looking at each question, charged when you move off it. Kept
+     in a ref rather than charged per second, which would rewrite storage
+     every second for a number only the report reads. */
+  const viewRef = useRef<{ qid: string; since: number } | null>(null);
+  const flushView = () => {
+    const v = viewRef.current;
+    if (!v) return;
+    viewRef.current = null;
+    edit((s) => addTime(s, v.qid, Date.now() - v.since));
+  };
+  const activeSection = session ? currentSection(session) : null;
+  const cursor = activeSection ? (session?.progress[activeSection]?.cursor ?? 0) : 0;
+  const viewing =
+    phase === 'active' && activeSection
+      ? questionsBySection[activeSection]?.[cursor]?.id
+      : undefined;
+  useEffect(() => {
+    if (!viewing) return;
+    viewRef.current = { qid: viewing, since: Date.now() };
+    return flushView;
+    // `flushView` reads only refs; re-subscribing on its identity would charge time twice.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [viewing]);
 
   /* One number, read once, applied to every minute figure on this screen —
      the brief, the per-section rows, the break card and the clock itself.
      Quoting standard timing in the brief and then running a longer clock
-     would be worse than not offering the accommodation at all. */
-  const allowance = prefs.timeAllowance;
+     would be worse than not offering the accommodation at all. A resumed
+     test keeps the allowance it was started with. */
+  const allowance = session?.allowance ?? prefs.timeAllowance;
 
-  const inProgress = stage.kind === 'section' || stage.kind === 'break';
-  useConfirmExit(inProgress, 'Your test is still running. Leaving will lose your progress.');
+  const inProgress = phase === 'active' && !leaving;
+  useConfirmExit(
+    inProgress,
+    'Your test is saved and the section clock keeps running. You can resume it from Timed practice within 24 hours.',
+  );
+  /* Exit is confirmed in the test's own dialog. Navigating only after the
+     guard above has let go means the browser does not ask a second time. */
+  useEffect(() => {
+    if (leaving) navigate({ name: 'tests' });
+  }, [leaving, navigate]);
 
   if (sectionIds.length === 0) {
     return (
@@ -286,24 +470,83 @@ function TestSession({ config }: { config: string }) {
      helper rather than eight assertions. */
   const sectionAt = (i: number): SectionId => sectionIds[i] ?? sectionIds[0]!;
 
+  /* Score the whole test and record it. Runs at most once per attempt: it is
+     reached only from a submit that `submitSection` accepted for the last
+     section, and the saved session is cleared before anything can re-render. */
+  const finish = (final: TestSessionState) => {
+    const scores: Partial<Record<SectionId, number>> = {};
+    const raw: Partial<Record<SectionId, [number, number]>> = {};
+    const answered: Partial<Record<SectionId, number>> = {};
+    const all: AnswerRecord[] = [];
+    for (const id of final.sections) {
+      const rs = recordsFor(questionsBySection[id] ?? [], final.progress[id]);
+      all.push(...rs);
+      const correct = rs.filter((r) => r.correct).length;
+      raw[id] = [correct, rs.length];
+      answered[id] = rs.filter((r) => r.chosen !== null).length;
+      scores[id] = scaleScore(rs.length ? correct / rs.length : 0);
+    }
+
+    const testResult: TestResult = {
+      /* From the attempt's start, not from now, so the same attempt can only
+         ever produce one id however it reaches this line. */
+      id: `test-${final.startedAt}`,
+      at: Date.now(),
+      scores,
+      composite: compositeOf(scores),
+      raw,
+      answered,
+      /* Time spent answering, summed. Wall time since the start would count
+         the breaks — and, now that a test can be resumed, a night's sleep. */
+      durationSec: Object.values(final.sectionSec).reduce((n, s) => n + (s ?? 0), 0),
+      sections: final.sections,
+      sectionSec: { ...final.sectionSec },
+      allowance: final.allowance,
+    };
+
+    clearSession();
+    finishTest(testResult);
+    setRecords(all);
+    setResult(testResult);
+    setPhase('done');
+    burstConfetti(130);
+    sfx.fanfare();
+  };
+
+  const submitCurrent = () => {
+    const cur = sessionRef.current;
+    if (!cur || cur.stage.kind !== 'section') return;
+    const index = cur.stage.index;
+    if (completedRef.current.has(index)) return;
+    flushView();
+    const {
+      session: next,
+      accepted,
+      finished,
+    } = submitSection(sessionRef.current ?? cur, Date.now());
+    if (!accepted) return;
+    completedRef.current.add(index);
+    setNotice((n) => (n?.on === 'section' ? null : n));
+    commit(next);
+    if (finished) finish(next);
+    else window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+  };
+
   /* ------------------------------------------------------------- brief */
 
-  if (stage.kind === 'brief') {
+  if (phase === 'brief') {
     const totalQuestions = sectionIds.reduce((n, id) => n + TEST_PLAN[id].questions, 0);
     const totalMinutes = sectionIds.reduce(
       (n, id) => n + withAllowance(TEST_PLAN[id].minutes, allowance),
       0,
     );
+    const replacing = saved && saved.config !== config ? saved : null;
 
     return (
       <Page>
         <div className="mx-auto max-w-lg">
           <div className="panel p-7 text-center sm:p-9">
-            <h1 className="heading text-[15px] text-blood-text">
-              {sectionIds.length === 4
-                ? 'Four-section practice'
-                : `${SECTION_BY_ID[sectionAt(0)].name} section`}
-            </h1>
+            <h1 className="heading text-[15px] text-blood-text">{testName(sectionIds)}</h1>
 
             <dl className="mt-7 space-y-2.5 text-left">
               {sectionIds.map((id) => (
@@ -327,8 +570,9 @@ function TestSession({ config }: { config: string }) {
 
             <p className="mt-6 text-[14px] leading-relaxed text-parchment-dim">
               {totalQuestions} questions, {totalMinutes} minutes. No explanations until you finish —
-              that is the point. Unanswered questions count as wrong, so guess rather than leave
-              blanks.
+              that is the point. Within a section you can move between questions, flag them and
+              change answers until you submit it. Unanswered questions count as wrong, so guess
+              rather than leave blanks.
             </p>
 
             {allowance > 1 && (
@@ -338,18 +582,31 @@ function TestSession({ config }: { config: string }) {
               </p>
             )}
 
+            {replacing && (
+              <p className="mt-3 text-[13px] leading-relaxed text-gold">
+                You have a {testName(replacing.sections).toLowerCase()} test in progress. Starting
+                this one replaces it.
+              </p>
+            )}
+
             <Button
               variant="danger"
               size="lg"
               className="mt-7 w-full"
               onClick={() => {
-                startedAtRef.current = Date.now();
-                sectionStartRef.current = Date.now();
-                setAnsweredCount(0);
                 completedRef.current = new Set();
-                liveAnswersRef.current = new Map();
+                commit(
+                  createSession({
+                    config,
+                    sections: sectionIds,
+                    questionIds: drawnIds,
+                    allowance,
+                    now: Date.now(),
+                  }),
+                );
+                setNotice(null);
                 sfx.warn();
-                setStage({ kind: 'section', index: 0 });
+                setPhase('active');
               }}
             >
               Start — the clock runs
@@ -367,13 +624,28 @@ function TestSession({ config }: { config: string }) {
     );
   }
 
+  /* ------------------------------------------------------------- report */
+
+  if (phase === 'done' || !session) {
+    if (!result) return null; // `finish` writes `result` in the same tick as the phase
+    return <ScoreReport result={result} records={records} />;
+  }
+
   /* ------------------------------------------------------------- break */
 
-  if (stage.kind === 'break') {
-    const nextId = sectionAt(stage.nextIndex);
+  if (session.stage.kind === 'break') {
+    const nextId = sectionAt(session.stage.nextIndex);
     return (
       <Page>
         <div className="mx-auto max-w-md">
+          {notice?.on === 'break' && (
+            <p
+              role="status"
+              className="mb-4 rounded-lg border-2 border-gold-deep/60 bg-leather-850 px-4 py-3 text-[13px] leading-relaxed text-parchment-dim"
+            >
+              {notice.text}
+            </p>
+          )}
           <div className="panel p-7 text-center sm:p-9">
             <h1 className="heading text-[15px] text-gold">Break</h1>
             <p className="mt-5 text-[15px] leading-relaxed text-parchment-dim">
@@ -388,13 +660,17 @@ function TestSession({ config }: { config: string }) {
               size="lg"
               className="mt-7 w-full"
               onClick={() => {
-                sectionStartRef.current = Date.now();
-                setAnsweredCount(0);
-                liveAnswersRef.current = new Map();
-                setStage({ kind: 'section', index: stage.nextIndex });
+                setNotice(null);
+                edit((s) => startNextSection(s, Date.now()));
+                window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
               }}
             >
               Continue
+            </Button>
+            {/* The break is a natural place to stop, and stopping here costs
+                nothing: no clock is running until Continue. */}
+            <Button variant="ghost" className="mt-3 w-full" onClick={() => setLeaving(true)}>
+              Save and exit
             </Button>
           </div>
         </div>
@@ -402,195 +678,42 @@ function TestSession({ config }: { config: string }) {
     );
   }
 
-  /* ------------------------------------------------------------- report */
-
-  if (stage.kind === 'done') {
-    if (!result) return null; // scoring writes `result` in the same tick as the stage
-    const allRecords = sectionIds.flatMap((id) => answersBySection[id] ?? []);
-    return <ScoreReport result={result} records={allRecords} />;
-  }
-
   /* ------------------------------------------------------------ section */
 
-  const stageIndex = stage.index;
+  const { index: stageIndex, deadline } = session.stage;
   const sectionId = sectionAt(stageIndex);
-  const plan = TEST_PLAN[sectionId];
   const questions = questionsBySection[sectionId] ?? [];
-
-  const completeSection = (records: AnswerRecord[]) => {
-    /* The last answer's advance and the timer running out can both land here
-       for one section; only the first counts. */
-    if (completedRef.current.has(stageIndex)) return;
-    completedRef.current.add(stageIndex);
-    const nextAnswers = { ...answersBySection, [sectionId]: records };
-    setAnswersBySection(nextAnswers);
-    sectionSecRef.current[sectionId] = Math.round((Date.now() - sectionStartRef.current) / 1000);
-
-    const isLastSection = stageIndex === sectionIds.length - 1;
-    if (!isLastSection) {
-      setStage({ kind: 'break', nextIndex: stageIndex + 1 });
-      return;
-    }
-
-    // Score everything.
-    const scores: Partial<Record<SectionId, number>> = {};
-    const raw: Partial<Record<SectionId, [number, number]>> = {};
-    const answered: Partial<Record<SectionId, number>> = {};
-    for (const id of sectionIds) {
-      const rs = nextAnswers[id] ?? [];
-      const total = questionsBySection[id]?.length ?? rs.length;
-      const correct = rs.filter((r) => r.correct).length;
-      raw[id] = [correct, total];
-      answered[id] = rs.filter((r) => r.chosen !== null).length;
-      scores[id] = scaleScore(total ? correct / total : 0);
-    }
-
-    const testResult: TestResult = {
-      id: `test-${Date.now()}`,
-      at: Date.now(),
-      scores,
-      composite: compositeOf(scores),
-      raw,
-      answered,
-      durationSec: Math.round((Date.now() - startedAtRef.current) / 1000),
-      sections: sectionIds,
-      sectionSec: { ...sectionSecRef.current },
-      allowance,
-    };
-
-    finishTest(testResult);
-    setResult(testResult);
-    setStage({ kind: 'done' });
-    burstConfetti(130);
-    sfx.fanfare();
+  const progress = session.progress[sectionId] ?? {
+    answers: {},
+    flags: [],
+    cursor: 0,
+    ms: {},
   };
 
   return (
     <Page>
-      {/* Both remount per section, so their keys must differ from each other. */}
-      <SectionTimer
-        key={`timer-${sectionId}`}
-        minutes={withAllowance(plan.minutes, allowance)}
-        color={SECTION_BY_ID[sectionId].color}
-        answered={answeredCount}
-        totalQuestions={questions.length}
-        onExpire={() => {
-          sfx.warn();
-          completeSection([...liveAnswersRef.current.values()]);
-        }}
-      />
-      <QuestionRunner
-        key={`runner-${sectionId}`}
+      {/* Remounts per section, so the clock and focus start clean. */}
+      <TestSectionView
+        key={`section-${stageIndex}`}
         questions={questions}
+        progress={progress}
         title={`${SECTION_BY_ID[sectionId].name} section`}
         subtitle={`Section ${stageIndex + 1} of ${sectionIds.length}`}
         accent={SECTION_BY_ID[sectionId].color}
-        deferFeedback
-        onAnswer={(record) => {
-          liveAnswersRef.current.set(record.question.id, record);
-          /* Test answers are scored at the end, not recorded as drill
-             attempts — otherwise a test would skew topic accuracy twice. The
-             count is all the pacing checkpoint needs. */
-          setAnsweredCount((n) => n + 1);
+        deadline={deadline}
+        limitSec={sectionLimitMs(sectionId, session.allowance) / 1000}
+        notice={notice?.on === 'section' ? notice.text : null}
+        onSelect={(qid, key) => edit((s) => selectAnswer(s, qid, key))}
+        onFlag={(qid) => edit((s) => toggleFlag(s, qid))}
+        onMove={(i) => edit((s) => moveTo(s, i))}
+        onSubmit={submitCurrent}
+        onExpire={() => {
+          sfx.warn();
+          submitCurrent();
         }}
-        onFinish={completeSection}
+        onExit={() => setLeaving(true)}
       />
     </Page>
-  );
-}
-
-/* ---------------------------------------------------------------- timer */
-
-function SectionTimer({
-  minutes,
-  color,
-  onExpire,
-  answered,
-  totalQuestions,
-}: {
-  minutes: number;
-  color: string;
-  onExpire: () => void;
-  /** Questions answered so far, for the mid-section pacing checkpoint. */
-  answered: number;
-  totalQuestions: number;
-}) {
-  // Deadline, not a countdown — a suspended tab cannot gain time.
-  const deadlineRef = useRef(Date.now() + minutes * 60_000);
-  const [remaining, setRemaining] = useState(minutes * 60);
-  const firedRef = useRef(false);
-  const warnedRef = useRef(false);
-
-  useEffect(() => {
-    const tick = () => {
-      const left = Math.max(0, Math.round((deadlineRef.current - Date.now()) / 1000));
-      setRemaining(left);
-
-      /* `<=`, not `===`: a throttled background tab can tick past 300. */
-      if (left <= 300 && left > 0 && !warnedRef.current) {
-        warnedRef.current = true;
-        sfx.warn();
-      }
-      if (left <= 0 && !firedRef.current) {
-        firedRef.current = true;
-        onExpire();
-      }
-    };
-    tick();
-    const id = window.setInterval(tick, 1000);
-    return () => window.clearInterval(id);
-  }, [onExpire]);
-
-  const urgent = remaining <= 300;
-  const critical = remaining <= 60;
-
-  const total = minutes * 60;
-  const hint = paceHint(answered, total > 0 ? totalQuestions : 0, (total - remaining) / total);
-
-  return (
-    <div
-      className={cx(
-        'sticky top-14 lg:top-3 z-40 mb-4 rounded-lg border-2 px-5 py-3 backdrop-blur',
-        critical
-          ? 'border-blood bg-blood/15'
-          : urgent
-            ? 'border-gold bg-leather-850/95'
-            : 'border-leather-700 bg-leather-850/95',
-      )}
-      role="timer"
-      aria-live="off"
-    >
-      <div className="flex items-center gap-4">
-        <span className="font-script text-[10px] uppercase tracking-[0.16em] text-ink-faint">
-          Time remaining
-        </span>
-        <span
-          className={cx('num ml-auto text-[26px] leading-none', critical && 'animate-shimmer')}
-          style={{
-            color: critical
-              ? 'oklch(var(--c-blood-text))'
-              : urgent
-                ? 'oklch(var(--c-gold))'
-                : color,
-          }}
-        >
-          {formatClock(remaining)}
-        </span>
-      </div>
-      {/* Polite, not assertive: this must never cut across the reveal a
-          screen reader is already announcing. */}
-      <div aria-live="polite" className="sr-only">
-        {hint ?? ''}
-      </div>
-      {hint && (
-        <div
-          aria-hidden
-          className="mt-1.5 border-t border-leather-700/70 pt-1.5 text-right text-[12px] text-gold"
-        >
-          {hint}
-        </div>
-      )}
-    </div>
   );
 }
 

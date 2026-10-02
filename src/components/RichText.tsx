@@ -54,13 +54,21 @@ function sanitize(input: string): string {
   });
 }
 
-/** `**bold**` and `*italic*` -> real tags. Escapes everything else first. */
-function markish(input: string): string {
+/** `**bold**` and `*italic*` -> real tags. Escapes everything else first.
+
+    The italic pattern used to say "no space after the opening star, none
+    before the closing one" with a negative lookbehind. That is a
+    *parse-time* SyntaxError on Safari before 16.4 — the whole module fails to
+    load, so an older iPhone got a blank page rather than unstyled italics.
+    `(\S|\S.*?\S)` is the same match: one non-space character, or the shortest
+    run that starts and ends on one. The alternation order keeps it lazy, and
+    RichText.test.tsx checks it against the old pattern. */
+export function markish(input: string): string {
   const source = asText(input);
   const escaped = source.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   return escaped
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/(^|[\s(])\*(?!\s)(.+?)(?<!\s)\*/g, '$1<em>$2</em>')
+    .replace(/(^|[\s(])\*(\S|\S.*?\S)\*/g, '$1<em>$2</em>')
     .replace(/`(.+?)`/g, '<code>$1</code>');
 }
 

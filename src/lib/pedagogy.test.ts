@@ -15,7 +15,14 @@
 
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { Progress, SectionId, TestResult } from '@/types';
-import { ALL_QUESTIONS, SECTIONS, ZONE_QUIZZES, getQuestion } from '@/content';
+import {
+  ALL_CONTENT,
+  SECTIONS,
+  getQuestion,
+  loadContent,
+  questionsFor,
+  zoneQuizzes,
+} from '@/content';
 import { dailyBlurb, pickDaily } from './daily';
 import { runnableById, zoneQuestionId } from './normalize';
 import { diagnosticLength, pickDiagnostic, placementShape, scoreDiagnostic } from './diagnostic';
@@ -41,6 +48,11 @@ import {
   scheduleReview,
   trackStatus,
 } from './progress';
+
+/* The library loads in pieces now (see `content/index.ts`); these tests read all of it. */
+await loadContent(ALL_CONTENT);
+const ALL_QUESTIONS = SECTIONS.flatMap((s) => questionsFor(s.id));
+const ZONE_QUIZZES = zoneQuizzes();
 
 function progress(overrides: Partial<Progress> = {}): Progress {
   return { ...emptyProgress(), ...overrides };

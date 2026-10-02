@@ -48,18 +48,60 @@ fill the database for everyone else.
 ## 2. Run the migrations
 
 Paste each file in [`supabase/migrations/`](../supabase/migrations/) into the SQL
-editor and run them **in filename order**. There are **six**. `0001` creates the
+editor and run them **in filename order**. There are **seven**. `0001` creates the
 table and its policies and `0002` adds the compare-and-set write that stops one
 device silently overwriting another's work; `0003` and `0004` built the paywall
 and `0005` removes it again, because everything is free now. `0006` adds the
 `feedback` table behind the in-app Send feedback page: anyone can add a report,
 nobody can read one back through the API, and you read them in Table editor →
-`feedback`.
+`feedback`. `0007` puts a rate cap on both publicly-writable tables and adds the
+second one, `client_errors`, where the app's crash reports land (see
+[Crash reports](#crash-reports-client_errors) below).
 
-On a fresh project the last three cancel out, so running only `0001` and `0002`
-reaches the same schema. Run all six anyway — the point of a numbered directory
-is that the database can say which migrations it has seen, and a project that
-skipped three of them cannot.
+On a fresh project `0003`–`0005` cancel out, so running only `0001`, `0002`,
+`0006` and `0007` reaches the same schema. Run all seven anyway — the point of a
+numbered directory is that the database can say which migrations it has seen,
+and a project that skipped three of them cannot.
+
+### Crash reports (`client_errors`)
+
+Uncaught errors, unhandled promise rejections and render crashes are sent from
+the browser to `client_errors` (`src/lib/report.ts`): at most five per page load,
+each distinct message once per browser session, with URLs' query strings and
+fragments, email addresses and token-shaped strings stripped first. Read them in
+Table editor → `client_errors`; the API refuses anyone a select.
+
+**Caps** (migration `0007`, enforced by a `BEFORE INSERT` trigger, so a script
+holding the public anon key cannot get round them):
+
+| Table           | Per signed-in account | Everyone together |
+| --------------- | --------------------- | ----------------- |
+| `feedback`      | 5 an hour, 20 a day   | 500 a day         |
+| `client_errors` | 20 an hour, 100 a day | 1,000 a day       |
+
+Guests have no id to count, so only the global ceiling bounds them. A flood can
+therefore use up a day's allowance and block real reports until it rolls over —
+that is the accepted trade for the database never growing past a known size. To
+change a number, edit it in `0007` and re-run the file; it is re-runnable.
+
+**Retention is 30 days**, and the privacy policy says so. `pg_cron` is not
+enabled, so the trigger prunes rows older than 30 days on about one insert in
+twenty. If no crash has been reported for a while, old rows stay until the next
+one; to clear them by hand, run in the SQL editor:
+
+```sql
+delete from public.client_errors where created_at < now() - interval '30 days';
+```
+
+To confirm the triggers are installed (the doctor cannot see this with the anon
+key):
+
+```sql
+select tgname, tgrelid::regclass from pg_trigger
+where tgname in ('feedback_rate_cap', 'client_errors_rate_cap');
+```
+
+Two rows means both are in place.
 
 They are written to be re-runnable, so a project that already has the table can
 adopt the migration history without dropping anything. Order still matters —
