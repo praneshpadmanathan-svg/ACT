@@ -146,18 +146,28 @@ export function NoteReader({ pageId }: { pageId: string }) {
   /* Track read progress through the article, and mark the page complete once
      the reader actually reaches the end. */
   useEffect(() => {
-    const onScroll = () => {
+    /* At most once a frame. A trackpad fires scroll far faster than the
+       screen repaints, and each one forced a layout read and a render. */
+    let frame = 0;
+    const measure = () => {
+      frame = 0;
       const el = articleRef.current;
       if (!el) return;
       const rect = el.getBoundingClientRect();
       const total = rect.height - window.innerHeight;
       const seen = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 1;
-      setScrolled(seen);
+      /* Whole percent: the bar cannot draw finer, and an unrounded float is a
+         new value — and a re-render of the whole article — on every event. */
+      setScrolled(Math.round(seen * 100) / 100);
     };
-    onScroll();
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(measure);
+    };
+    measure();
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     return () => {
+      if (frame) window.cancelAnimationFrame(frame);
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
     };
@@ -406,8 +416,11 @@ function CheckBlock({ block }: { block: Extract<NoteBlock, { type: 'check' }> })
             <button
               key={i}
               type="button"
-              disabled={revealed}
+              /* Not `disabled`: it would drop the focused answer's focus to
+                 <body>, halfway down a long article. */
+              aria-disabled={revealed}
               onClick={() => {
+                if (revealed) return;
                 setChosen(i);
                 if (isCorrect) sfx.correct();
                 else sfx.wrong();

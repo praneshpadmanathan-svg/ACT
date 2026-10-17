@@ -389,14 +389,14 @@ function UpdatePrompt() {
         <button
           type="button"
           onClick={apply}
-          className="font-display text-[13px] font-semibold text-gold transition-colors hover:text-gold-bright"
+          className="font-display text-[13px] font-semibold text-gold transition-colors hover:text-gold-bright inline-flex items-center [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:px-2"
         >
           Reload now
         </button>
         <button
           type="button"
           onClick={() => setApply(null)}
-          className="font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+          className="font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment inline-flex items-center [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:px-2"
         >
           Later
         </button>

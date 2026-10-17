@@ -267,11 +267,22 @@ export function StoryOverlay() {
     return () => window.clearTimeout(id);
   }, [chapter, showTitle]);
 
+  /* The fade-out. Held so Skip pressed twice, or Escape then a tap, schedules
+     one close rather than one each, and so the scene stops taking input while
+     it fades — a tap in those 340ms used to step the story on underneath. */
+  const closeTimer = useRef<number | null>(null);
+  useEffect(
+    () => () => {
+      if (closeTimer.current !== null) window.clearTimeout(closeTimer.current);
+    },
+    [],
+  );
   const close = useCallback(() => {
-    if (!chapter) return;
+    if (!chapter || closeTimer.current !== null) return;
     setClosing(true);
     const id = chapter.id;
-    window.setTimeout(() => {
+    closeTimer.current = window.setTimeout(() => {
+      closeTimer.current = null;
       updateProgress((p) => ({
         ...p,
         storySeen: p.storySeen.includes(id) ? p.storySeen : [...p.storySeen, id],
@@ -281,7 +292,7 @@ export function StoryOverlay() {
   }, [chapter, updateProgress]);
 
   const advance = useCallback(() => {
-    if (!chapter || !beat) return;
+    if (!chapter || !beat || closeTimer.current !== null) return;
 
     // First tap finishes the line rather than skipping it.
     if (!typing.done) {
@@ -318,6 +329,7 @@ export function StoryOverlay() {
   }, [chapter, beat, typing, reply, lineIndex, beatIndex, close]);
 
   const answer = (choice: StoryChoice) => {
+    if (closeTimer.current !== null || reply) return;
     sfx.achieve();
     updateProgress((p) => ({ ...p, oath: choice.value }));
     setReply(choice.reply);

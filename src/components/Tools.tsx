@@ -278,7 +278,7 @@ function Scratchpad() {
         <button
           type="button"
           onClick={() => setText('')}
-          className="font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint transition-colors hover:text-gold"
+          className="font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint transition-colors hover:text-gold inline-flex items-center [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:px-2"
         >
           Clear
         </button>

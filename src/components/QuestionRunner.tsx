@@ -164,6 +164,13 @@ export function QuestionRunner({
   const [litCorrect, setLitCorrect] = useState(false);
 
   const litTimer = useRef<number | null>(null);
+  /* Test mode's automatic step to the next question. Tracked so Exit inside
+     its 120ms cannot be followed by an `onFinish` for a test already left. */
+  const advanceTimer = useRef<number | null>(null);
+  /* `revealed` is state, and state is read from the render that queued the
+     handler — so a key and a click landing before React re-renders both
+     passed the guard and the question was answered twice. */
+  const answeredRef = useRef(false);
   const choiceEls = useRef<Record<string, HTMLButtonElement | null>>({});
 
   const question = questions[index];
@@ -173,9 +180,27 @@ export function QuestionRunner({
   useEffect(
     () => () => {
       if (litTimer.current) window.clearTimeout(litTimer.current);
+      if (advanceTimer.current) window.clearTimeout(advanceTimer.current);
     },
     [],
   );
+
+  /* The button that moved you here is gone — the choice you clicked in test
+     mode, or Next — and a removed element takes focus with it, to <body>. A
+     keyboard user then had to Tab through the whole header to reach the next
+     question. Only when focus really was dropped: if it is somewhere on
+     purpose, the calculator say, it stays there. */
+  const firstQuestion = useRef(true);
+  useEffect(() => {
+    if (firstQuestion.current) {
+      firstQuestion.current = false;
+      return;
+    }
+    const active = document.activeElement;
+    if (active && active !== document.body) return;
+    const first = questions[index]?.choices[0];
+    if (first) choiceEls.current[first.key]?.focus({ preventScroll: true });
+  }, [index, questions]);
 
   // Session clock, for the summary.
   useEffect(() => {
@@ -185,7 +210,8 @@ export function QuestionRunner({
 
   const commit = useCallback(
     (key: string) => {
-      if (revealed || !question) return;
+      if (revealed || answeredRef.current || !question) return;
+      answeredRef.current = true;
 
       const correct = key === question.correctKey;
       const ms = Date.now() - startedAt;
@@ -218,7 +244,10 @@ export function QuestionRunner({
 
       // In test mode there is nothing to read, so move straight on.
       if (deferFeedback) {
-        window.setTimeout(() => advance([...records, record]), 120);
+        advanceTimer.current = window.setTimeout(() => {
+          advanceTimer.current = null;
+          advance([...records, record]);
+        }, 120);
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -232,6 +261,7 @@ export function QuestionRunner({
         return;
       }
       if (litTimer.current) window.clearTimeout(litTimer.current);
+      answeredRef.current = false;
       /* Clamped. `advance` refuses to step past the last question, but it
          reads `isLast` from the render that queued it — so two advances
          queued before either commits both pass the guard and walk the index
@@ -253,8 +283,10 @@ export function QuestionRunner({
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
-      const target = e.target as HTMLElement | null;
-      if (target && ['INPUT', 'TEXTAREA'].includes(target.tagName)) return;
+      /* Not always an element: a key with nothing focused can target the
+         window or the document, which have no `closest`. */
+      const target = e.target instanceof Element ? (e.target as HTMLElement) : null;
+      if (target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) return;
       /* A key another control already used, or one typed into a tool panel.
          The calculator takes digits, `c` and Enter, and without this every
          one of them also answered the question underneath it. */
@@ -523,7 +555,12 @@ export function QuestionRunner({
                     }}
                     type="button"
                     onClick={() => commit(choice.key)}
-                    disabled={revealed}
+                    /* `aria-disabled`, not `disabled`. Disabling the button
+                       that has focus throws focus to <body>, so for the beat
+                       before Next arrives — and the whole of test mode — the
+                       keyboard was nowhere. `commit` refuses a second answer
+                       on its own. */
+                    aria-disabled={revealed}
                     className={cx('choice', state, revealed && 'choice-locked cursor-default')}
                     role="radio"
                     aria-checked={isChosen}

@@ -542,6 +542,7 @@ export function SideNav() {
             }}
             className="hud-icon flex-none"
             aria-expanded={menuOpen}
+            aria-controls="nav-drawer"
             aria-label="Menu"
           >
             <NavGlyph name={menuOpen ? 'close' : 'menu'} size={17} />
@@ -550,6 +551,7 @@ export function SideNav() {
 
         {menuOpen && (
           <nav
+            id="nav-drawer"
             className="animate-slideDown max-h-[calc(100dvh-3.5rem)] overflow-y-auto
                        overscroll-contain border-t border-leather-700 bg-leather-900 px-2.5 py-3"
             aria-label="Main"

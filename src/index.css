@@ -1054,6 +1054,17 @@
     @apply border-ink-soft bg-paper-light;
   }
 
+  /* A press that waits on the network. Disabled alone dims the button to
+     45%, which reads as "unavailable" rather than "working on it" — so a busy
+     button keeps most of its colour and turns a ring of its own ink. */
+  .btn[aria-busy='true'] {
+    @apply cursor-progress opacity-80;
+  }
+  .btn-spinner {
+    @apply -ml-1 inline-block h-[1em] w-[1em] flex-none animate-spin rounded-full border-2
+           border-current border-r-transparent;
+  }
+
   .btn-lg {
     @apply px-6 py-3.5 text-[16px];
   }

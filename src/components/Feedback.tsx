@@ -2,7 +2,7 @@
 
    All of it is driven by explicit store events. Nothing here polls. */
 
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 import { useStore } from '@/lib/store';
 import { RANKS } from '@/lib/progress';
 import { useDialogFocus } from '@/lib/useDialogFocus';
@@ -57,7 +57,17 @@ export function ConfettiCanvas() {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     resize();
-    window.addEventListener('resize', resize);
+    /* Once a frame at most: resizing a canvas reallocates its backing store,
+       and a window drag fires resize far faster than that is worth doing. */
+    let resizeFrame = 0;
+    const onResize = () => {
+      if (resizeFrame) return;
+      resizeFrame = requestAnimationFrame(() => {
+        resizeFrame = 0;
+        resize();
+      });
+    };
+    window.addEventListener('resize', onResize);
 
     const tick = () => {
       frameRef.current = requestAnimationFrame(tick);
@@ -108,7 +118,8 @@ export function ConfettiCanvas() {
     };
 
     return () => {
-      window.removeEventListener('resize', resize);
+      window.removeEventListener('resize', onResize);
+      if (resizeFrame) cancelAnimationFrame(resizeFrame);
       if (frameRef.current) cancelAnimationFrame(frameRef.current);
       burstFn = null;
     };
@@ -194,6 +205,10 @@ export function Toasts() {
 
 /* --------------------------------------------------------------- level up */
 
+/** Long enough to swallow the rest of a double-click or a key's first repeat,
+ *  short enough that nobody reaching for "Onward" ever meets it. */
+export const DISMISS_GRACE_MS = 450;
+
 export function LevelUpOverlay() {
   const { levelUpRank, dismissLevelUp } = useStore();
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -203,6 +218,20 @@ export function LevelUpOverlay() {
      fixed. A student who ranks up mid-drill could tab straight back into the
      question they cannot see. */
   useDialogFocus(dialogRef, levelUpRank !== null);
+
+  /* The whole screen dismisses this, and it opens in response to an answer —
+     so the second click of a double-click on that answer, or a held Enter
+     repeating, landed on it and closed the rank-up before it was ever seen.
+     A beat of grace after opening absorbs both. Stamped in a layout effect,
+     which runs before the browser can deliver the next input event. */
+  const openedAt = useRef(0);
+  useLayoutEffect(() => {
+    if (levelUpRank !== null) openedAt.current = performance.now();
+  }, [levelUpRank]);
+  const dismiss = useCallback(() => {
+    if (performance.now() - openedAt.current < DISMISS_GRACE_MS) return;
+    dismissLevelUp();
+  }, [dismissLevelUp]);
 
   useEffect(() => {
     if (levelUpRank === null) return;
@@ -216,7 +245,11 @@ export function LevelUpOverlay() {
       500,
     );
     const escape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') dismissLevelUp();
+      if (e.key !== 'Escape' && e.key !== 'Enter' && e.key !== ' ') return;
+      /* Handled here, so a focused "Onward" does not also fire its own click
+         from the same key. */
+      e.preventDefault();
+      if (!e.repeat) dismiss();
     };
     window.addEventListener('keydown', escape);
     return () => {
@@ -224,7 +257,7 @@ export function LevelUpOverlay() {
       window.clearTimeout(t2);
       window.removeEventListener('keydown', escape);
     };
-  }, [levelUpRank, dismissLevelUp]);
+  }, [levelUpRank, dismiss]);
 
   if (levelUpRank === null) return null;
   const rank = RANKS[levelUpRank] ?? RANKS[RANKS.length - 1]!;
@@ -237,7 +270,7 @@ export function LevelUpOverlay() {
       style={{
         background: 'radial-gradient(circle at 50% 42%, rgba(46,37,26,.95), rgba(12,9,6,.97))',
       }}
-      onClick={dismissLevelUp}
+      onClick={dismiss}
       role="dialog"
       aria-modal="true"
       aria-label={`Rank up — ${rank.name}`}
@@ -333,7 +366,11 @@ export function LevelUpOverlay() {
           size="lg"
           trailing
           className="mt-6 sm:mt-8 [@media(max-height:520px)]:mt-4"
-          onClick={dismissLevelUp}
+          onClick={(e) => {
+            // The backdrop's click would dismiss a second time.
+            e.stopPropagation();
+            dismiss();
+          }}
         >
           Onward
         </Button>

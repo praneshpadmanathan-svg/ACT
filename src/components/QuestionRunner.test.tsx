@@ -68,3 +68,89 @@ it.each(['a', 'b'])('withholds sound and visual correctness for timed answer %s'
   expect(finish).toHaveBeenCalledOnce();
   act(() => root.unmount());
 });
+
+const twoQuestions = (): RunnableQuestion[] =>
+  ['q1', 'q2'].map((id) => ({
+    id,
+    prompt: `Prompt ${id}`,
+    promptFormat: 'markdown',
+    choices: [
+      { key: 'a', text: 'Right', format: 'markdown' },
+      { key: 'b', text: 'Wrong', format: 'markdown' },
+    ],
+    correctKey: 'a',
+    why: { a: 'Because.', b: 'Not that.' },
+    topic: 'Arithmetic',
+    section: 'math',
+    difficulty: 'easy',
+  }));
+
+function mountRunner(props: Partial<Parameters<typeof QuestionRunner>[0]> = {}) {
+  const host = document.createElement('div');
+  document.body.appendChild(host);
+  const root = createRoot(host);
+  const onAnswer = vi.fn();
+  const onFinish = vi.fn();
+  act(() =>
+    root.render(
+      <QuestionRunner
+        questions={twoQuestions()}
+        title="Drill"
+        onAnswer={onAnswer}
+        onFinish={onFinish}
+        {...props}
+      />,
+    ),
+  );
+  const radios = () => [...host.querySelectorAll<HTMLButtonElement>('[role="radio"]')];
+  const cleanup = () => {
+    act(() => root.unmount());
+    host.remove();
+  };
+  return { host, radios, onAnswer, onFinish, cleanup };
+}
+
+it('answers once when a click and a key land before React re-renders', () => {
+  const { radios, onAnswer, cleanup } = mountRunner();
+  act(() => {
+    // One batch: neither handler has seen the other's state yet.
+    radios()[1]!.click();
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'a' }));
+    radios()[0]!.click();
+  });
+  expect(onAnswer).toHaveBeenCalledOnce();
+  expect(onAnswer.mock.calls[0]![0].chosen).toBe('b');
+  cleanup();
+});
+
+it('keeps focus on the answer just picked instead of dropping it to <body>', () => {
+  const { radios, cleanup } = mountRunner();
+  const picked = radios()[1]!;
+  picked.focus();
+  act(() => picked.click());
+  expect(picked.disabled).toBe(false);
+  expect(picked.getAttribute('aria-disabled')).toBe('true');
+  expect(document.activeElement).toBe(picked);
+  cleanup();
+});
+
+it('moves focus to the next question when the control that advanced it is gone', () => {
+  vi.useFakeTimers();
+  const { radios, cleanup } = mountRunner({ deferFeedback: true });
+  act(() => radios()[0]!.click());
+  // The runner remounts the well for the next question; the old choice is gone.
+  act(() => vi.advanceTimersByTime(120));
+  expect(radios()[0]!.textContent).toContain('Right');
+  expect(document.activeElement).toBe(radios()[0]);
+  cleanup();
+});
+
+it('does not finish a timed test that was left inside the auto-advance beat', () => {
+  vi.useFakeTimers();
+  const one = twoQuestions().slice(0, 1);
+  const { radios, onFinish, cleanup } = mountRunner({ questions: one, deferFeedback: true });
+  act(() => radios()[0]!.click());
+  cleanup(); // Exit, before the 120ms advance
+  vi.advanceTimersByTime(500);
+  expect(onFinish).not.toHaveBeenCalled();
+});

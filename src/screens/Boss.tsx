@@ -74,16 +74,26 @@ function BossDuel({ section }: { section: string }) {
      visibly begun before it is caught — pausing on frame zero would just
      delay the animation. */
   const stopTimers = useRef<number[]>([]);
-  const freeze = useCallback(() => {
-    stopTimers.current.push(
-      window.setTimeout(() => setHitStop(true), 45),
-      window.setTimeout(() => setHitStop(false), 115),
-    );
+  /* Every beat of the fight is a timer, and all of them go through here so
+     leaving the screen mid-blow cancels them. Untracked, the 900ms "lost"
+     beat landed on whatever screen you had already walked to. */
+  const later = useCallback((fn: () => void, ms: number) => {
+    stopTimers.current.push(window.setTimeout(fn, ms));
   }, []);
+  const freeze = useCallback(() => {
+    later(() => setHitStop(true), 45);
+    later(() => setHitStop(false), 115);
+  }, [later]);
   useEffect(() => {
     const timers = stopTimers.current;
     return () => timers.forEach(window.clearTimeout);
   }, []);
+  /* Set by the blow that ends the fight, for the beat between it landing and
+     the result screen. "Press the attack" was still live in that window, so a
+     quick tap served another question: a strike against a guardian already
+     at zero, more XP, and — a wrong answer at one heart after the killing
+     blow — a "lost" screen landing on top of the win. */
+  const overRef = useRef(false);
 
   /* Hard questions first, then medium — the boss should feel like the exam
      for the region, not another warm-up. */
@@ -248,6 +258,7 @@ function BossDuel({ section }: { section: string }) {
                 setChosen(null);
                 setRevealed(false);
                 answeredRef.current = false;
+                overRef.current = false;
                 setBossState('idle');
                 setPhase('intro');
               }}
@@ -266,7 +277,7 @@ function BossDuel({ section }: { section: string }) {
   /* ------------------------------------------------------------- fight */
 
   const strike = (key: string) => {
-    if (revealed || answeredRef.current || !question) return;
+    if (revealed || answeredRef.current || overRef.current || !question) return;
     answeredRef.current = true;
 
     const correct = key === question.correctKey;
@@ -286,16 +297,19 @@ function BossDuel({ section }: { section: string }) {
       sfx.correct();
       setBossState('hurt');
       setHeroPleased(true);
-      window.setTimeout(() => setHeroPleased(false), 900);
+      later(() => setHeroPleased(false), 900);
       freeze();
       const nextHp = bossHp - 1;
       setBossHp(nextHp);
       if (nextHp <= 0) {
-        window.setTimeout(() => {
+        overRef.current = true;
+        /* Recorded now, not when the screen changes: the win is earned the
+           moment the blow lands, and leaving during the flourish cancels it. */
+        if (!alreadyBeaten) defeatBoss(boss.id);
+        later(() => {
           setBossState('defeated');
           sfx.fanfare();
           burstConfetti(140);
-          if (!alreadyBeaten) defeatBoss(boss.id);
           setPhase('won');
         }, 700);
         return;
@@ -305,19 +319,20 @@ function BossDuel({ section }: { section: string }) {
       setBossState('attacking');
       setHeroHurt(true);
       freeze();
-      window.setTimeout(() => setHeroHurt(false), 500);
+      later(() => setHeroHurt(false), 500);
       const nextHp = playerHp - 1;
       setPlayerHp(nextHp);
       if (nextHp <= 0) {
-        window.setTimeout(() => setPhase('lost'), 900);
+        overRef.current = true;
+        later(() => setPhase('lost'), 900);
         return;
       }
     }
-    window.setTimeout(() => setBossState('idle'), 620);
+    later(() => setBossState('idle'), 620);
   };
 
   const next = () => {
-    if (!answeredRef.current) return;
+    if (!answeredRef.current || overRef.current) return;
     answeredRef.current = false;
     sfx.tick();
     setChosen(null);
@@ -407,7 +422,7 @@ function BossDuel({ section }: { section: string }) {
           <button
             type="button"
             onClick={() => navigate({ name: 'duels' })}
-            className="font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
+            className="font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment inline-flex items-center [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:px-2"
           >
             Flee
           </button>
@@ -442,7 +457,11 @@ function BossDuel({ section }: { section: string }) {
                       key={choice.key}
                       type="button"
                       onClick={() => strike(choice.key)}
-                      disabled={revealed}
+                      /* Not `disabled`: disabling the focused button drops
+                         focus to <body> and a keyboard player starts over
+                         from the top of the page. `strike` refuses a second
+                         answer on its own. */
+                      aria-disabled={revealed}
                       className={cx(
                         'choice',
                         revealed && isCorrect && 'choice-correct',
@@ -486,6 +505,7 @@ function BossDuel({ section }: { section: string }) {
                     trailing
                     className="mt-5 w-full"
                     onClick={next}
+                    disabled={bossHp <= 0 || playerHp <= 0}
                     autoFocus
                   >
                     Press the attack

@@ -37,8 +37,30 @@ export function SettingsScreen() {
     deleteAccount,
   } = useStore();
 
-  const [erasing, setErasing] = useState(false);
+  /* Which destructive action is in flight, so each button can say what it is
+     doing and both stay locked until it settles. */
+  const [erasing, setErasing] = useState<'reset' | 'delete' | null>(null);
   const [eraseError, setEraseError] = useState<string | null>(null);
+
+  /* Success reloads the page, so only a failure has anything to undo. A
+     rejection used to be one of those: the old `.then()` had no `.catch()`,
+     and a thrown request left both buttons disabled until a reload. */
+  const erase = async (
+    kind: 'reset' | 'delete',
+    action: () => Promise<{ ok: boolean; error?: string }>,
+    fallback: string,
+  ) => {
+    setEraseError(null);
+    setErasing(kind);
+    try {
+      const result = await action();
+      if (result.ok) return;
+      setEraseError(result.error ?? fallback);
+    } catch {
+      setEraseError(`${fallback} Check your connection and try again.`);
+    }
+    setErasing(null);
+  };
 
   return (
     <Page>
@@ -167,11 +189,17 @@ export function SettingsScreen() {
                 every device you log in on.
               </p>
               <div className="flex flex-wrap gap-2.5">
-                <Button variant="ghost" onClick={() => void syncNow()} disabled={syncing}>
+                <Button
+                  variant="ghost"
+                  onClick={() => void syncNow()}
+                  disabled={erasing !== null}
+                  busy={syncing}
+                >
                   {syncing ? 'Syncing…' : 'Sync now'}
                 </Button>
                 <Button
                   variant="ghost"
+                  disabled={erasing !== null}
                   onClick={() => {
                     void signOut();
                     navigate({ name: 'landing' });
@@ -258,32 +286,29 @@ export function SettingsScreen() {
         <div className="flex flex-wrap gap-2.5">
           <Button
             variant="danger"
-            disabled={erasing}
+            disabled={erasing !== null}
+            busy={erasing === 'reset'}
             onClick={() => {
+              if (erasing) return;
               const ok = window.confirm(
                 isGuest
                   ? 'Delete all progress on this device? This cannot be undone.'
                   : 'Delete all progress everywhere, including the cloud copy? Your account stays. This cannot be undone.',
               );
               if (!ok) return;
-              setEraseError(null);
-              setErasing(true);
-              void resetEverything().then((result) => {
-                if (!result.ok) {
-                  setEraseError(result.error ?? 'Could not reset progress.');
-                  setErasing(false);
-                }
-              });
+              void erase('reset', resetEverything, 'Could not reset progress.');
             }}
           >
-            Reset progress
+            {erasing === 'reset' ? 'Resetting…' : 'Reset progress'}
           </Button>
 
           {!isGuest && (
             <Button
               variant="danger"
-              disabled={erasing}
+              disabled={erasing !== null}
+              busy={erasing === 'delete'}
               onClick={() => {
+                if (erasing) return;
                 /* Two prompts, because this one takes the account with it and
                    there is no undo, no grace period and no copy kept. */
                 if (!window.confirm('Delete your account and all of your progress?')) return;
@@ -294,17 +319,10 @@ export function SettingsScreen() {
                 ) {
                   return;
                 }
-                setEraseError(null);
-                setErasing(true);
-                void deleteAccount().then((result) => {
-                  if (!result.ok) {
-                    setEraseError(result.error ?? 'Could not delete the account.');
-                    setErasing(false);
-                  }
-                });
+                void erase('delete', deleteAccount, 'Could not delete the account.');
               }}
             >
-              {erasing ? 'Deleting…' : 'Delete my account'}
+              {erasing === 'delete' ? 'Deleting…' : 'Delete my account'}
             </Button>
           )}
         </div>

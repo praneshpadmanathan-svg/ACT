@@ -74,17 +74,27 @@ function usePointerDepth<T extends HTMLElement>() {
       return;
     }
 
+    /* The latest position, not the one that scheduled the frame: reading the
+       first event of each frame left the plate a frame behind the pointer. */
     let frame = 0;
+    let x = 0;
+    let y = 0;
     const move = (e: PointerEvent) => {
+      x = e.clientX;
+      y = e.clientY;
       if (frame) return;
       frame = requestAnimationFrame(() => {
         frame = 0;
         const r = el.getBoundingClientRect();
-        el.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
-        el.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+        el.style.setProperty('--px', ((x - r.left) / r.width - 0.5).toFixed(3));
+        el.style.setProperty('--py', ((y - r.top) / r.height - 0.5).toFixed(3));
       });
     };
     const rest = () => {
+      /* A frame queued by the last move would otherwise land after this and
+         leave the plate tilted toward the edge the pointer left by. */
+      if (frame) cancelAnimationFrame(frame);
+      frame = 0;
       el.style.setProperty('--px', '0');
       el.style.setProperty('--py', '0');
     };
