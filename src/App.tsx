@@ -8,7 +8,7 @@ import { startAnalytics, trackScreen } from '@/lib/analytics';
 import { MotionProvider } from '@/lib/motion';
 import { registerStage } from '@/lib/juice';
 import { SideNav } from '@/components/Shell';
-import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
+import { LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
 import { FxLayer } from '@/components/FxLayer';
 import { StoryOverlay } from '@/game/StoryOverlay';
 import { RegionBackdrop } from '@/game/RegionBackdrop';
@@ -363,7 +363,6 @@ export default function App() {
       {hasStarted && <StoryOverlay />}
 
       <UpdatePrompt />
-      <ConfettiCanvas />
       <FxLayer />
       <XPPopups />
       <Toasts />

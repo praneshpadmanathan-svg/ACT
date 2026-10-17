@@ -73,7 +73,7 @@ export function fxEnabled(): boolean {
 
 /* Plain constants rather than an enum: the build transpiles each file on its
    own, and a `const enum` does not survive that. */
-const Kind = { Spark: 0, Ring: 1, Bloom: 2, Frame: 3 } as const;
+const Kind = { Spark: 0, Ring: 1, Bloom: 2, Frame: 3, Glint: 4, Leaf: 5 } as const;
 type Kind = (typeof Kind)[keyof typeof Kind];
 
 interface P {
@@ -98,11 +98,22 @@ interface P {
   tone: FxTone;
   /** Peak opacity, 0–1. */
   alpha: number;
+  /* Leaf and glint only. A recycled particle keeps whatever an earlier
+     occupant left in these, so every emitter that reads them sets them. */
+  /** Rotation in the plane, radians, and its rate per second. */
+  rot?: number;
+  spin?: number;
+  /** Leaf: the tumble — rotation about its own long axis — and its rate. */
+  flip?: number;
+  flipRate?: number;
+  /** Leaf: which pre-rendered flake. Also seeds its sideways sway. */
+  variant?: number;
 }
 
-/** Hard ceiling on live particles. A level-up burst is ~120; this leaves room
- *  for several overlapping events without ever becoming a slideshow. */
-export const MAX_PARTICLES = 420;
+/** Hard ceiling on live particles. A rank-up is the worst case — about 230
+ *  flakes of leaf and 130 points of light — and this leaves headroom for one
+ *  more event on top without ever becoming a slideshow. */
+export const MAX_PARTICLES = 560;
 
 const live: P[] = [];
 const spare: P[] = [];
@@ -210,6 +221,112 @@ function sprite(tone: FxTone): HTMLCanvasElement {
   return s;
 }
 
+/* A four-point star: the flare a camera lens throws off a hard point of
+   light. Long thin beams on the cross, short faint ones on the diagonals, a
+   white core. It reads at a glance as "this caught the light" in a way a
+   round glow never does, which is why it is used sparingly — a few per
+   effect. */
+const glints = new Map<FxTone, HTMLCanvasElement>();
+const GLINT_PX = 96;
+function glint(tone: FxTone): HTMLCanvasElement {
+  const cached = glints.get(tone);
+  if (cached) return cached;
+  const s = document.createElement('canvas');
+  s.width = s.height = GLINT_PX;
+  const g = s.getContext('2d');
+  if (g) {
+    const [r, gr, b] = FX_TONES[tone];
+    const c = GLINT_PX / 2;
+    g.globalCompositeOperation = 'lighter';
+    const beam = (angle: number, length: number, thickness: number, alpha: number) => {
+      g.save();
+      g.translate(c, c);
+      g.rotate(angle);
+      const grad = g.createLinearGradient(-length, 0, length, 0);
+      grad.addColorStop(0, `rgba(${r},${gr},${b},0)`);
+      grad.addColorStop(0.5, `rgba(255,250,235,${alpha})`);
+      grad.addColorStop(1, `rgba(${r},${gr},${b},0)`);
+      g.fillStyle = grad;
+      g.beginPath();
+      g.ellipse(0, 0, length, thickness, 0, 0, Math.PI * 2);
+      g.fill();
+      g.restore();
+    };
+    beam(0, c, 1.6, 0.95);
+    beam(Math.PI / 2, c, 1.6, 0.95);
+    beam(Math.PI / 4, c * 0.45, 1.1, 0.5);
+    beam(-Math.PI / 4, c * 0.45, 1.1, 0.5);
+    g.drawImage(sprite(tone), c - 14, c - 14, 28, 28);
+  }
+  glints.set(tone, s);
+  return s;
+}
+
+/* Gold leaf. Each flake is an irregular five-sided scrap, drawn twice: once
+   in shadow and once catching the lamp, with a highlight along the edge
+   nearest the light (upper left, as everywhere in the app). In flight the
+   two are mixed by how squarely the flake faces the viewer, so a tumbling
+   flake flashes as it turns — the whole difference between leaf and coloured
+   paper. Shapes come from a fixed seed, so the set is the same every load. */
+const LEAF_COLOURS: [lit: string, shade: string, edge: string][] = [
+  ['#f6d777', '#9c7410', '#fff4c9'],
+  ['#e8c34a', '#7d5a0c', '#fbe9a6'],
+  ['#f7e6ae', '#a8894a', '#fffaf0'],
+  ['#d4a017', '#6b4a06', '#f6d777'],
+  ['#c98b2e', '#5e3b12', '#f2c879'],
+];
+const LEAF_SHAPES = 4;
+/* Drawn at twice the largest on-screen size, so a flake is sharp at a device
+   pixel ratio of 2. */
+const LEAF_W = 32;
+const LEAF_H = 20;
+type LeafSprite = { lit: HTMLCanvasElement; shade: HTMLCanvasElement };
+let leaves: LeafSprite[] | null = null;
+function leafSprites(): LeafSprite[] {
+  if (leaves) return leaves;
+  let seed = 7;
+  const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const out: LeafSprite[] = [];
+  for (let shape = 0; shape < LEAF_SHAPES; shape++) {
+    const pts = Array.from({ length: 5 }, (_, i) => {
+      const a = (i / 5) * Math.PI * 2 + rnd() * 0.5;
+      const k = 0.7 + rnd() * 0.3;
+      return [
+        LEAF_W / 2 + Math.cos(a) * (LEAF_W / 2 - 1) * k,
+        LEAF_H / 2 + Math.sin(a) * (LEAF_H / 2 - 1) * k,
+      ] as const;
+    });
+    for (const [lit, shade, edge] of LEAF_COLOURS) {
+      const draw = (fill: string, rim: string | null) => {
+        const c = document.createElement('canvas');
+        c.width = LEAF_W;
+        c.height = LEAF_H;
+        const g = c.getContext('2d');
+        if (g) {
+          g.beginPath();
+          pts.forEach(([x, y], i) => (i ? g.lineTo(x, y) : g.moveTo(x, y)));
+          g.closePath();
+          g.fillStyle = fill;
+          g.fill();
+          if (rim) {
+            g.save();
+            g.clip();
+            g.strokeStyle = rim;
+            g.lineWidth = 3;
+            g.translate(-1.5, -1.5);
+            g.stroke();
+            g.restore();
+          }
+        }
+        return c;
+      };
+      out.push({ lit: draw(lit, edge), shade: draw(shade, null) });
+    }
+  }
+  leaves = out;
+  return out;
+}
+
 const rgba = (tone: FxTone, a: number) => {
   const [r, g, b] = FX_TONES[tone];
   return `rgba(${r},${g},${b},${a.toFixed(3)})`;
@@ -228,6 +345,40 @@ function wake(): void {
 
 const easeOut = (t: number) => 1 - (1 - t) ** 3;
 
+/* One flake: falling against air, swaying, spinning and tumbling. The sway is
+   what sells it — leaf does not fall, it drifts down side to side. */
+function drawLeaf(g: CanvasRenderingContext2D, p: P, s: number): void {
+  const k = Math.exp(-p.drag * s);
+  p.vx *= k;
+  p.vy = p.vy * k + p.gravity * s;
+  const sway = Math.sin(p.age * 0.0042 + (p.variant ?? 0)) * 46;
+  p.x += (p.vx + sway) * s;
+  p.y += p.vy * s;
+  p.rot = (p.rot ?? 0) + (p.spin ?? 0) * s;
+  p.flip = (p.flip ?? 0) + (p.flipRate ?? 0) * s;
+
+  const set = leafSprites();
+  const art = set[(p.variant ?? 0) % set.length]!;
+  // Never quite edge-on to nothing: a flake seen side-on is still a sliver.
+  const facing = Math.max(0.12, Math.abs(Math.cos(p.flip)));
+  const t = p.age / p.life;
+  const fade = t > 0.75 ? 1 - (t - 0.75) / 0.25 : 1;
+  const w = p.size;
+  const h = (p.size * LEAF_H) / LEAF_W;
+
+  g.save();
+  g.translate(p.x, p.y);
+  g.rotate(p.rot);
+  g.scale(1, facing);
+  g.globalAlpha = fade;
+  g.drawImage(art.shade, -w / 2, -h / 2, w, h);
+  // Lit in proportion to how squarely it faces the lamp: the flash as it turns.
+  g.globalAlpha = fade * facing ** 1.5;
+  g.drawImage(art.lit, -w / 2, -h / 2, w, h);
+  g.restore();
+  g.globalAlpha = 1;
+}
+
 function tick(now: number): void {
   frame = 0;
   const g = ctx;
@@ -240,11 +391,30 @@ function tick(now: number): void {
   const s = dt / 1000;
 
   g.clearRect(0, 0, width, height);
+
+  /* Matter first, then light. Leaf is a thing in the world and is painted
+     normally; everything else is light and is added on top of it, so a spark
+     passing in front of a flake brightens it rather than hiding behind it.
+     Two composite switches a frame, never one per particle. */
+  g.globalCompositeOperation = 'source-over';
+  for (let i = live.length - 1; i >= 0; i--) {
+    const p = live[i]!;
+    if (p.kind !== Kind.Leaf) continue;
+    p.age += dt;
+    if (p.age >= p.life || p.y > height + 30) {
+      live.splice(i, 1);
+      spare.push(p);
+      continue;
+    }
+    drawLeaf(g, p, s);
+  }
+
   g.globalCompositeOperation = 'lighter';
   g.lineCap = 'round';
 
   for (let i = live.length - 1; i >= 0; i--) {
     const p = live[i]!;
+    if (p.kind === Kind.Leaf) continue;
     p.age += dt;
     if (p.age >= p.life) {
       live.splice(i, 1);
@@ -253,7 +423,22 @@ function tick(now: number): void {
     }
     const t = p.age / p.life;
 
-    if (p.kind === Kind.Spark) {
+    if (p.kind === Kind.Glint) {
+      /* A twinkle: up and gone on a sine, turning slowly as it does — the
+         flare of something catching the light once as it moves. */
+      p.x += p.vx * s;
+      p.y += p.vy * s;
+      p.rot = (p.rot ?? 0) + (p.spin ?? 0) * s;
+      const pulse = Math.sin(Math.PI * t);
+      const d = p.size * (0.35 + 0.65 * pulse);
+      g.globalAlpha = p.alpha * pulse;
+      g.save();
+      g.translate(p.x, p.y);
+      g.rotate(p.rot);
+      g.drawImage(glint(p.tone), -d / 2, -d / 2, d, d);
+      g.restore();
+      g.globalAlpha = 1;
+    } else if (p.kind === Kind.Spark) {
       const k = Math.exp(-p.drag * s);
       p.vx *= k;
       p.vy = p.vy * k + p.gravity * s;
@@ -387,6 +572,25 @@ function sparks(x: number, y: number, o: SparkOpts = {}): void {
       alpha: rand(0.75, 1),
     });
   }
+}
+
+function twinkle(x: number, y: number, tone: FxTone, size: number, life = 620, alpha = 1) {
+  spawn({
+    kind: Kind.Glint,
+    x,
+    y,
+    vx: rand(-14, 14),
+    vy: rand(-36, -10),
+    drag: 0,
+    gravity: 0,
+    life,
+    size,
+    aux: 0,
+    tone,
+    alpha,
+    rot: rand(-0.4, 0.4),
+    spin: rand(-0.9, 0.9),
+  });
 }
 
 function ring(
@@ -533,6 +737,11 @@ export const fx = {
           size: [1.2, 2.4],
         });
       }
+      // A few points along the edge catch the lamp outright.
+      for (let i = 0; i < 2 + tier; i++) {
+        const e = onEdge(r);
+        twinkle(e.x, e.y, 'gold', rand(30, 46 + tier * 6), rand(520, 760), 0.9);
+      }
       const c = centre(r);
       bloom(c.x, c.y, 'gold', Math.max(r.width, r.height) * 0.55, 520, 0.22 + tier * 0.05);
       if (tier >= 2) ring(c.x, c.y, 'gold', Math.max(r.width, r.height) * 0.7, 2, 600, 0.35);
@@ -573,6 +782,7 @@ export const fx = {
       ring(c.x, c.y, 'white', size * 0.45 * power, 1.4, 380, 0.6);
       bloom(c.x, c.y, tone, size * 0.6, 380, 0.5 * power);
       sparks(c.x, c.y, { tone, count: Math.round(22 * power), speed: [220, 620], gravity: 520 });
+      if (tone !== 'ruin') twinkle(c.x, c.y, 'white', size * 0.7 * power, 420);
     });
   },
 
@@ -585,6 +795,19 @@ export const fx = {
     ring(x, y, 'gold', big * 0.5, 3, 900, 0.9);
     ring(x, y, 'white', big * 0.32, 1.6, 640, 0.7);
     window.setTimeout(() => ring(x, y, 'gold', big * 0.68, 2, 1100, 0.45), 140);
+    twinkle(x, y, 'white', big * 0.5, 700);
+    for (let i = 0; i < 9; i++) {
+      const a = rand(0, Math.PI * 2);
+      const d = rand(big * 0.12, big * 0.42);
+      twinkle(
+        x + Math.cos(a) * d,
+        y + Math.sin(a) * d,
+        'gold',
+        rand(28, 56),
+        rand(600, 1100),
+        0.85,
+      );
+    }
     sparks(x, y, { count: 70, speed: [260, 820], gravity: 300, life: [700, 1300], size: [1, 2.4] });
     sparks(x, y, {
       count: 40,
@@ -596,6 +819,35 @@ export const fx = {
       life: [900, 1600],
       size: [0.8, 1.6],
     });
+  },
+
+  /** Gold leaf thrown up from a point, tumbling down through the air.
+   *  `spread` keeps the old confetti's meaning — wider throws wider — so
+   *  every existing `burstConfetti` call carries over unchanged. */
+  confetti(count: number, x = width / 2, y = height / 2, spread = 18): void {
+    if (!fxEnabled()) return;
+    const kinds = leafSprites().length;
+    for (let i = 0; i < count; i++) {
+      spawn({
+        kind: Kind.Leaf,
+        x,
+        y,
+        vx: rand(-0.5, 0.5) * spread * 60,
+        vy: -rand(240, 840),
+        drag: rand(1.1, 1.8),
+        gravity: rand(520, 760),
+        life: rand(1600, 2600),
+        size: rand(8, 15),
+        aux: 0,
+        tone: 'gold',
+        alpha: 1,
+        rot: rand(0, Math.PI * 2),
+        spin: rand(-4, 4),
+        flip: rand(0, Math.PI * 2),
+        flipRate: rand(5, 11) * (Math.random() < 0.5 ? -1 : 1),
+        variant: Math.floor(rand(0, kinds)),
+      });
+    }
   },
 
   /** Live particle count, for tests and the budget. */

@@ -2276,6 +2276,109 @@
   }
 }
 
+/* ------------------------------------------------------- view transitions
+
+   See lib/viewTransition.ts. Every name below is applied only while
+   `html[data-vt]` is set, i.e. only for the length of a route change, so none
+   of them can create a stacking context or affect layout the rest of the
+   time. Transform and opacity only, as everywhere else. */
+
+[data-vt] .rail-surface {
+  view-transition-name: rail;
+}
+[data-vt] .vt-topbar {
+  view-transition-name: topbar;
+}
+[data-vt] .vt-fx {
+  view-transition-name: fx;
+}
+/* The CSS fade every screen used to arrive with; the transition replaces it. */
+[data-vt] .animate-pageIn {
+  animation: none;
+}
+
+/* The page: the old screen lifts a few pixels as it dissolves, the new one
+   settles up into place a beat later. Out is quicker than in — leaving should
+   get out of the way, arriving is what you are here to see. */
+::view-transition-old(root) {
+  animation: vtLeave 130ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+::view-transition-new(root) {
+  animation: vtArrive 340ms cubic-bezier(0.22, 1, 0.36, 1) 40ms both;
+}
+@keyframes vtLeave {
+  to {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.996);
+  }
+}
+@keyframes vtArrive {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+/* The frame holds still. Only its contents — the active item moving — fade. */
+::view-transition-group(rail),
+::view-transition-group(topbar) {
+  animation: none;
+}
+::view-transition-old(rail),
+::view-transition-new(rail),
+::view-transition-old(topbar),
+::view-transition-new(topbar) {
+  animation-duration: 150ms;
+}
+
+/* Light keeps moving through a page change: only the live canvas is shown,
+   on top, never a frozen photograph of it. */
+::view-transition-old(fx) {
+  display: none;
+}
+::view-transition-new(fx) {
+  animation: none;
+}
+
+/* What you pressed becomes the title of where you arrived. The box travels
+   and reshapes; its contents are never stretched — each snapshot is shown at
+   its own size, clipped to the moving box, the old one fading as the new one
+   comes in. */
+::view-transition-group(vt-origin) {
+  animation-duration: 420ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+::view-transition-image-pair(vt-origin) {
+  overflow: clip;
+}
+::view-transition-old(vt-origin),
+::view-transition-new(vt-origin) {
+  height: 100%;
+  object-fit: none;
+  object-position: left center;
+}
+::view-transition-old(vt-origin) {
+  animation: vtFadeOut 200ms ease-in both;
+}
+/* No heading arrived to receive it (see HEADING_WAIT_MS): the card lifts out
+   with the page instead of lingering over the new one. */
+[data-vt-lone]::view-transition-old(vt-origin) {
+  animation: vtLeave 140ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+::view-transition-new(vt-origin) {
+  animation: vtFadeIn 300ms ease-out 120ms both;
+}
+@keyframes vtFadeOut {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes vtFadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

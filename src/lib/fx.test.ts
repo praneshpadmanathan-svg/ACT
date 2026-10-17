@@ -23,7 +23,10 @@ const ctx = new Proxy(
         return { addColorStop: () => {} };
       };
     },
-    set: () => true,
+    set(target, key, value) {
+      if (key === 'globalCompositeOperation') target.calls.push(`blend:${String(value)}`);
+      return true;
+    },
   },
 );
 HTMLCanvasElement.prototype.getContext = (() => ctx) as never;
@@ -126,4 +129,32 @@ it('measures an answer after the frame it changed, where it has moved to', () =>
   run(1);
   expect(fx.count).toBeGreaterThan(0);
   el.remove();
+});
+
+it('throws gold leaf that falls out of the world on its own', () => {
+  fx.confetti(40, 200, 200);
+  expect(fx.count).toBe(40);
+  run(4000);
+  expect(fx.count).toBe(0);
+  expect(queue).toHaveLength(0);
+});
+
+it('draws leaf before light, switching blend modes once each per frame', () => {
+  ctx.calls.length = 0;
+  fx.confetti(5, 100, 100);
+  fx.press(100, 100);
+  run(1000 / 60);
+  const blends = ctx.calls.filter((c) => c.startsWith('blend:'));
+  // Matter, then light, then back to normal: three writes, however many particles.
+  expect(blends).toEqual(['blend:source-over', 'blend:lighter', 'blend:source-over']);
+  // And the leaf was drawn before any light.
+  const firstImage = ctx.calls.indexOf('drawImage');
+  expect(firstImage).toBeGreaterThan(ctx.calls.indexOf('blend:source-over'));
+  expect(firstImage).toBeLessThan(ctx.calls.indexOf('blend:lighter'));
+});
+
+it('stays silent for confetti too under reduced motion', () => {
+  motion.matches = true;
+  fx.confetti(50, 100, 100);
+  expect(fx.count).toBe(0);
 });

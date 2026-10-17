@@ -108,6 +108,10 @@ export function FxLayer() {
      and confirm dialogs (120), which should never have light thrown over
      their text. `pointer-events: none`, always — light never catches a tap. */
   return (
-    <canvas ref={ref} className="pointer-events-none fixed inset-0 z-[115]" aria-hidden="true" />
+    <canvas
+      ref={ref}
+      className="vt-fx pointer-events-none fixed inset-0 z-[115]"
+      aria-hidden="true"
+    />
   );
 }

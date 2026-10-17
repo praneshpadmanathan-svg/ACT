@@ -12,127 +12,16 @@ import { Glyph } from './Icon';
 
 /* --------------------------------------------------------------- confetti */
 
-/* Gold leaf and lantern sparks — the palette has to survive being thrown
-   over a painted region backdrop. */
-const CONFETTI_COLORS = ['#f2cf5b', '#d4a017', '#e8c34a', '#c98b2e', '#f7e6ae', '#9c7410'];
-
-interface Particle {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  size: number;
-  color: string;
-  rot: number;
-  vrot: number;
-  life: number;
-}
-
-let burstFn: ((count: number, x: number, y: number, spread?: number) => void) | null = null;
-
-/** Fire confetti from anywhere. No-op until the canvas has mounted. */
+/** Fire confetti from anywhere: gold leaf, tumbling and catching the light.
+ *
+ *  This used to be its own canvas with its own loop, drawing flat coloured
+ *  squares — a second full-screen layer running beside the light layer. It
+ *  is one preset of that layer now (`fx.confetti` in lib/fx.ts), sharing its
+ *  pool, its budget and its frame. Same signature, so callers are unchanged.
+ *  Silent under reduced motion, as before: a hundred flakes flung across the
+ *  viewport is exactly the motion that setting asks us not to make. */
 export function burstConfetti(count = 90, x?: number, y?: number, spread = 18) {
-  /* Ninety particles flung across the whole viewport is precisely the motion
-     that setting asks us not to make. The sound and the result still land. */
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  burstFn?.(count, x ?? window.innerWidth / 2, y ?? window.innerHeight / 2, spread);
-}
-
-export function ConfettiCanvas() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particlesRef = useRef<Particle[]>([]);
-  const frameRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = `${window.innerWidth}px`;
-      canvas.style.height = `${window.innerHeight}px`;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    };
-    resize();
-    /* Once a frame at most: resizing a canvas reallocates its backing store,
-       and a window drag fires resize far faster than that is worth doing. */
-    let resizeFrame = 0;
-    const onResize = () => {
-      if (resizeFrame) return;
-      resizeFrame = requestAnimationFrame(() => {
-        resizeFrame = 0;
-        resize();
-      });
-    };
-    window.addEventListener('resize', onResize);
-
-    const tick = () => {
-      frameRef.current = requestAnimationFrame(tick);
-      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-      const particles = particlesRef.current;
-      for (let i = particles.length - 1; i >= 0; i--) {
-        // Walking its own length backwards, and the only splice is below.
-        const p = particles[i]!;
-        p.x += p.vx;
-        p.y += p.vy;
-        p.vy += 0.32;
-        p.vx *= 0.99;
-        p.rot += p.vrot;
-        p.life -= 1;
-        if (p.life <= 0 || p.y > window.innerHeight + 24) {
-          particles.splice(i, 1);
-          continue;
-        }
-        ctx.save();
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.rot);
-        ctx.fillStyle = p.color;
-        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
-        ctx.restore();
-      }
-      if (!particles.length && frameRef.current) {
-        cancelAnimationFrame(frameRef.current);
-        frameRef.current = null;
-      }
-    };
-
-    burstFn = (count, x, y, spread = 18) => {
-      const particles = particlesRef.current;
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          x,
-          y,
-          vx: (Math.random() - 0.5) * spread,
-          vy: -Math.random() * 13 - 3,
-          size: 4 + Math.random() * 5,
-          color: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)]!,
-          rot: Math.random() * Math.PI,
-          vrot: (Math.random() - 0.5) * 0.3,
-          life: 90 + Math.random() * 50,
-        });
-      }
-      if (!frameRef.current) tick();
-    };
-
-    return () => {
-      window.removeEventListener('resize', onResize);
-      if (resizeFrame) cancelAnimationFrame(resizeFrame);
-      if (frameRef.current) cancelAnimationFrame(frameRef.current);
-      burstFn = null;
-    };
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-[105]"
-      aria-hidden="true"
-    />
-  );
+  fx.confetti(count, x, y, spread);
 }
 
 /* ------------------------------------------------------------- xp popups */

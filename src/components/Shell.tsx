@@ -479,7 +479,7 @@ export function SideNav() {
           Below lg the rail cannot be a column, so it becomes a slim bar that
           names where you are, plus a drawer carrying the same groups. The bar
           is sticky for the same reason the rail is. */}
-      <header className="sticky top-0 z-40 border-b border-leather-700 bg-leather-950/95 backdrop-blur-md lg:hidden">
+      <header className="vt-topbar sticky top-0 z-40 border-b border-leather-700 bg-leather-950/95 backdrop-blur-md lg:hidden">
         <div
           className="pointer-events-none absolute inset-x-0 top-0 h-px"
           style={{
