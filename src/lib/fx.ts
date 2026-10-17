@@ -51,6 +51,28 @@ export const FX_TONES = {
 } as const;
 export type FxTone = keyof typeof FX_TONES;
 
+/* The same tones as they appear on paper, for the light theme.
+
+   Additive light needs darkness to add to. On cream there is almost no
+   headroom left — gold light summed onto it clips to pale yellow, and a
+   white-hot spark is a cream speck on cream: measured, the correct-answer
+   burst read as a highlighter halo. Light on a lit page shows the way gilt
+   does in a manuscript, as colour rather than as brightness. So in the light
+   theme the engine paints instead of adding, in deeper amber and gilt inks
+   that hold their own against parchment, with coloured rather than white
+   cores. */
+const PAPER_TONES: Record<FxTone, readonly [number, number, number]> = {
+  gold: [201, 140, 16],
+  white: [222, 168, 44],
+  ember: [200, 98, 22],
+  ruin: [168, 52, 32],
+  jade: [46, 124, 68],
+};
+
+/** Read once a frame, so a theme switch mid-session is followed at once. */
+let onPaper = false;
+const toneRGB = (tone: FxTone) => (onPaper ? PAPER_TONES : FX_TONES)[tone];
+
 /* --------------------------------------------------------------- switches */
 
 const OFF =
@@ -66,7 +88,18 @@ function reduced(): boolean {
 /** Whether a call would draw anything. Callers never need this — every effect
  *  checks it — but tests and the press layer use it to skip work early. */
 export function fxEnabled(): boolean {
-  return !OFF && !!canvas && !reduced();
+  return !OFF && !!canvas && !reduced() && !forced();
+}
+
+/* High-contrast modes replace every colour on the page with the user's
+   palette — except a canvas's pixels, which they cannot reach. Gold sparks
+   thrown across someone's chosen high-contrast scheme are exactly what that
+   setting exists to prevent, so the layer stays dark. */
+let forcedQuery: MediaQueryList | null = null;
+function forced(): boolean {
+  if (typeof window.matchMedia !== 'function') return false;
+  forcedQuery ??= window.matchMedia('(forced-colors: active)');
+  return forcedQuery.matches;
 }
 
 /* --------------------------------------------------------------- the pool */
@@ -195,29 +228,31 @@ export function mountFx(el: HTMLCanvasElement): () => void {
 /* ------------------------------------------------------- the glow sprites */
 
 const SPRITE_PX = 64;
-const sprites = new Map<FxTone, HTMLCanvasElement>();
+const sprites = new Map<string, HTMLCanvasElement>();
 
 /* A hot white core falling off into the tone, then into nothing. Drawn once
    per tone and stamped forever after. The core is what makes it read as a
    light source rather than a coloured blob: real highlights clip to white. */
 function sprite(tone: FxTone): HTMLCanvasElement {
-  const cached = sprites.get(tone);
+  const key = `${tone}:${onPaper}`;
+  const cached = sprites.get(key);
   if (cached) return cached;
   const s = document.createElement('canvas');
   s.width = s.height = SPRITE_PX;
   const g = s.getContext('2d');
   if (g) {
-    const [r, gr, b] = FX_TONES[tone];
+    const [r, gr, b] = toneRGB(tone);
     const c = SPRITE_PX / 2;
     const grad = g.createRadialGradient(c, c, 0, c, c, c);
-    grad.addColorStop(0, 'rgba(255,252,240,1)');
+    // White-hot on a dark page; on paper, the ink's own colour at full strength.
+    grad.addColorStop(0, onPaper ? `rgba(${r},${gr},${b},1)` : 'rgba(255,252,240,1)');
     grad.addColorStop(0.18, `rgba(${r},${gr},${b},0.9)`);
     grad.addColorStop(0.45, `rgba(${r},${gr},${b},0.28)`);
     grad.addColorStop(1, `rgba(${r},${gr},${b},0)`);
     g.fillStyle = grad;
     g.fillRect(0, 0, SPRITE_PX, SPRITE_PX);
   }
-  sprites.set(tone, s);
+  sprites.set(key, s);
   return s;
 }
 
@@ -226,25 +261,27 @@ function sprite(tone: FxTone): HTMLCanvasElement {
    white core. It reads at a glance as "this caught the light" in a way a
    round glow never does, which is why it is used sparingly — a few per
    effect. */
-const glints = new Map<FxTone, HTMLCanvasElement>();
+const glints = new Map<string, HTMLCanvasElement>();
 const GLINT_PX = 96;
 function glint(tone: FxTone): HTMLCanvasElement {
-  const cached = glints.get(tone);
+  const key = `${tone}:${onPaper}`;
+  const cached = glints.get(key);
   if (cached) return cached;
   const s = document.createElement('canvas');
   s.width = s.height = GLINT_PX;
   const g = s.getContext('2d');
   if (g) {
-    const [r, gr, b] = FX_TONES[tone];
+    const [r, gr, b] = toneRGB(tone);
     const c = GLINT_PX / 2;
-    g.globalCompositeOperation = 'lighter';
+    const core = onPaper ? `${r},${gr},${b}` : '255,250,235';
+    g.globalCompositeOperation = onPaper ? 'source-over' : 'lighter';
     const beam = (angle: number, length: number, thickness: number, alpha: number) => {
       g.save();
       g.translate(c, c);
       g.rotate(angle);
       const grad = g.createLinearGradient(-length, 0, length, 0);
       grad.addColorStop(0, `rgba(${r},${gr},${b},0)`);
-      grad.addColorStop(0.5, `rgba(255,250,235,${alpha})`);
+      grad.addColorStop(0.5, `rgba(${core},${alpha})`);
       grad.addColorStop(1, `rgba(${r},${gr},${b},0)`);
       g.fillStyle = grad;
       g.beginPath();
@@ -258,7 +295,7 @@ function glint(tone: FxTone): HTMLCanvasElement {
     beam(-Math.PI / 4, c * 0.45, 1.1, 0.5);
     g.drawImage(sprite(tone), c - 14, c - 14, 28, 28);
   }
-  glints.set(tone, s);
+  glints.set(key, s);
   return s;
 }
 
@@ -328,7 +365,7 @@ function leafSprites(): LeafSprite[] {
 }
 
 const rgba = (tone: FxTone, a: number) => {
-  const [r, g, b] = FX_TONES[tone];
+  const [r, g, b] = toneRGB(tone);
   return `rgba(${r},${g},${b},${a.toFixed(3)})`;
 };
 
@@ -409,7 +446,8 @@ function tick(now: number): void {
     drawLeaf(g, p, s);
   }
 
-  g.globalCompositeOperation = 'lighter';
+  onPaper = document.documentElement.dataset.theme === 'light';
+  g.globalCompositeOperation = onPaper ? 'source-over' : 'lighter';
   g.lineCap = 'round';
 
   for (let i = live.length - 1; i >= 0; i--) {
@@ -515,7 +553,8 @@ function tick(now: number): void {
       // Bloom: a light that swells and is gone.
       const e = easeOut(Math.min(1, t * 1.6));
       const d = p.size * 2 * (0.4 + 0.6 * e);
-      g.globalAlpha = p.alpha * (1 - t) ** 1.4;
+      // On paper a wash of ink across the card muddies it; keep it a tint.
+      g.globalAlpha = p.alpha * (onPaper ? 0.45 : 1) * (1 - t) ** 1.4;
       g.drawImage(sprite(p.tone), p.x - d / 2, p.y - d / 2, d, d);
       g.globalAlpha = 1;
     }

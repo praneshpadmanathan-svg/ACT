@@ -786,6 +786,28 @@
   [data-story-mood='grey'] .story-drain {
     opacity: 0.92;
   }
+  /* The title card floats free of the dialogue card, so it is the one piece
+     of cutscene text with nothing of its own behind it. Over the dark theme
+     the 58% scrim sits on a dark page and the gold reads at 7.8:1; over the
+     light theme the same scrim sits on cream and lands at a muddy mid-grey,
+     where the eyebrow measured 2.2:1 with the cards of the page still legible
+     through it. A pool of lamplight-dark behind the words fixes both without
+     touching the scene: on a dark page it is all but invisible. Soft-edged,
+     and wide, so it reads as shadow rather than as a box. */
+  .story-title-plate::before {
+    content: '';
+    @apply pointer-events-none absolute;
+    inset: -6rem -2rem;
+    z-index: -1;
+    background: radial-gradient(
+      ellipse 58% 50% at center,
+      rgba(12, 9, 6, 0.92),
+      rgba(12, 9, 6, 0.78) 50%,
+      rgba(12, 9, 6, 0.4) 80%,
+      transparent
+    );
+  }
+
   [data-story-mood='grey'] .story-scrim {
     background: rgba(14, 16, 22, 0.62);
   }
@@ -1087,6 +1109,11 @@
      shows as a faint gilt warmth instead of a white highlight. */
   .choice {
     --fx-sheen: rgba(212, 160, 23, 0.13);
+  }
+  /* On the light theme's pale buttons a warm-white highlight is invisible;
+     the lamp shows there as a faint gilt warmth, as it does on paper. */
+  [data-theme='light'] .btn {
+    --fx-sheen: rgba(176, 124, 20, 0.12);
   }
   .choice-locked::before {
     opacity: 0;
@@ -2376,6 +2403,46 @@
 @keyframes vtFadeIn {
   from {
     opacity: 0;
+  }
+}
+
+/* ------------------------------------------------------- forced colours
+
+   Windows High Contrast and its kin replace every author colour with the
+   user's own palette, and erase backgrounds and shadows outright. Text and
+   borders survive; anything that says "this one" with a fill alone does not.
+   Measured: the chosen answer in a timed test (a gold tint before it is
+   scored) and the active option in every Settings choice (a gold fill) were
+   both indistinguishable from their neighbours.
+
+   Every one of those states is already exposed as ARIA, so this keys off the
+   ARIA rather than the classes — it covers every control that says what it
+   is, and cannot drift from the visual styles. The colours are the system's
+   own pair for a selected item, so they are whatever the user chose. */
+@media (forced-colors: active) {
+  [aria-pressed='true'],
+  [role='radio'][aria-checked='true'],
+  [role='option'][aria-selected='true'],
+  [aria-current='page'],
+  [aria-current='step'] {
+    forced-color-adjust: none;
+    background: SelectedItem;
+    color: SelectedItemText;
+    border-color: SelectedItemText;
+  }
+  /* `forced-color-adjust` inherits, so the contents would otherwise keep
+     their authored inks — gold on the system's highlight. */
+  :is(
+      [aria-pressed='true'],
+      [role='radio'][aria-checked='true'],
+      [role='option'][aria-selected='true'],
+      [aria-current='page'],
+      [aria-current='step']
+    )
+    * {
+    color: SelectedItemText;
+    border-color: SelectedItemText;
+    background: transparent;
   }
 }
 

@@ -430,7 +430,7 @@ export function StoryOverlay() {
       {!titleGone && (
         <div
           className={cx(
-            'relative z-10 px-6 text-center',
+            'story-title-plate relative z-10 px-6 text-center',
             !showTitle && 'pointer-events-none absolute inset-x-0 animate-storyTitleOut',
           )}
         >

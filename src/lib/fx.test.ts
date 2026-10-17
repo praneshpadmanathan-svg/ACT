@@ -2,10 +2,11 @@ import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 
 /* jsdom has no 2D canvas and no frame clock. Both are stubbed: a context that
    records calls, and a rAF queue the tests step by hand at a chosen rate. */
-const motion = { matches: false };
+const motion = { matches: false, forced: false };
 window.matchMedia = ((q: string) => ({
   ...motion,
   get matches() {
+    if (q.includes('forced-colors')) return motion.forced;
     return q.includes('reduce') ? motion.matches : false;
   },
   media: q,
@@ -57,6 +58,7 @@ const { fx, mountFx, MAX_PARTICLES } = await import('./fx');
 let unmount: () => void;
 beforeEach(() => {
   motion.matches = false;
+  motion.forced = false;
   queue = [];
   unmount = mountFx(document.createElement('canvas'));
 });
@@ -156,5 +158,12 @@ it('draws leaf before light, switching blend modes once each per frame', () => {
 it('stays silent for confetti too under reduced motion', () => {
   motion.matches = true;
   fx.confetti(50, 100, 100);
+  expect(fx.count).toBe(0);
+});
+
+it('stays dark in a high-contrast mode, whose palette cannot reach a canvas', () => {
+  motion.forced = true;
+  fx.press(100, 100);
+  fx.confetti(20, 100, 100);
   expect(fx.count).toBe(0);
 });
