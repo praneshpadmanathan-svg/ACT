@@ -4,9 +4,11 @@ import { afterEach, expect, it, vi } from 'vitest';
 import { QuestionRunner, type RunnableQuestion } from './QuestionRunner';
 import { juice } from '@/lib/juice';
 import { sfx } from '@/lib/sfx';
+import { fx } from '@/lib/fx';
 
 vi.mock('@/lib/juice', () => ({ juice: { correct: vi.fn(), wrong: vi.fn(), combo: vi.fn() } }));
 vi.mock('@/lib/sfx', () => ({ sfx: { select: vi.fn() } }));
+vi.mock('@/lib/fx', () => ({ fx: { correct: vi.fn(), wrong: vi.fn() } }));
 vi.mock('./QuestionActions', () => ({ QuestionActions: () => null }));
 vi.mock('./Tools', () => ({ ToolDock: () => null }));
 vi.mock('./PassagePanel', () => ({ PassagePanel: () => null }));
@@ -62,6 +64,9 @@ it.each(['a', 'b'])('withholds sound and visual correctness for timed answer %s'
   expect(juice.correct).not.toHaveBeenCalled();
   expect(juice.wrong).not.toHaveBeenCalled();
   expect(juice.combo).not.toHaveBeenCalled();
+  // No light either: a spark off the row would say "right" as plainly as a sound.
+  expect(fx.correct).not.toHaveBeenCalled();
+  expect(fx.wrong).not.toHaveBeenCalled();
   expect(host.querySelector('.choice-correct, .choice-wrong')).toBeNull();
   expect(host.textContent).not.toContain('in a row');
   act(() => vi.advanceTimersByTime(120));

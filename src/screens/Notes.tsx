@@ -13,6 +13,7 @@ import { SECTION_BY_ID, allNotePages, getNotePage, notesFor, useContent } from '
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
+import { fx } from '@/lib/fx';
 import { cx } from '@/lib/utils';
 import type { NoteBlock, SectionId } from '@/types';
 import { BackLink, Page } from '@/components/Shell';
@@ -419,11 +420,13 @@ function CheckBlock({ block }: { block: Extract<NoteBlock, { type: 'check' }> })
               /* Not `disabled`: it would drop the focused answer's focus to
                  <body>, halfway down a long article. */
               aria-disabled={revealed}
-              onClick={() => {
+              onClick={(e) => {
                 if (revealed) return;
                 setChosen(i);
                 if (isCorrect) sfx.correct();
                 else sfx.wrong();
+                if (isCorrect) fx.correct(e.currentTarget);
+                else fx.wrong(e.currentTarget);
               }}
               className={cx(
                 'choice',

@@ -9,6 +9,7 @@ import { MotionProvider } from '@/lib/motion';
 import { registerStage } from '@/lib/juice';
 import { SideNav } from '@/components/Shell';
 import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
+import { FxLayer } from '@/components/FxLayer';
 import { StoryOverlay } from '@/game/StoryOverlay';
 import { RegionBackdrop } from '@/game/RegionBackdrop';
 import { ScreenSkeleton } from '@/components/ScreenSkeleton';
@@ -363,6 +364,7 @@ export default function App() {
 
       <UpdatePrompt />
       <ConfettiCanvas />
+      <FxLayer />
       <XPPopups />
       <Toasts />
       <LevelUpOverlay />

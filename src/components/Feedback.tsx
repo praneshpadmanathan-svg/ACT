@@ -6,6 +6,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 import { useStore } from '@/lib/store';
 import { RANKS } from '@/lib/progress';
 import { useDialogFocus } from '@/lib/useDialogFocus';
+import { fx } from '@/lib/fx';
 import { Button, RankBadge } from './ui';
 import { Glyph } from './Icon';
 
@@ -236,6 +237,14 @@ export function LevelUpOverlay() {
   useEffect(() => {
     if (levelUpRank === null) return;
     burstConfetti(110, window.innerWidth / 2, window.innerHeight / 2, 22);
+    /* Light behind the gold leaf: the seal lands in a shockwave of lamplight.
+       Timed to its pop-in (delayed .34s below) and fired from where it
+       actually sits, which moves between the stacked and side-by-side layouts. */
+    const t0 = window.setTimeout(() => {
+      const seal = dialogRef.current?.querySelector('[data-fx-seal]')?.getBoundingClientRect();
+      if (seal) fx.celebrate(seal.left + seal.width / 2, seal.top + seal.height / 2);
+      else fx.celebrate();
+    }, 380);
     const t1 = window.setTimeout(
       () => burstConfetti(60, window.innerWidth / 2 - 220, window.innerHeight / 2 - 60, 16),
       350,
@@ -253,6 +262,7 @@ export function LevelUpOverlay() {
     };
     window.addEventListener('keydown', escape);
     return () => {
+      window.clearTimeout(t0);
       window.clearTimeout(t1);
       window.clearTimeout(t2);
       window.removeEventListener('keydown', escape);
@@ -340,7 +350,7 @@ export function LevelUpOverlay() {
             past the fold on a phone in landscape and the "Onward" button — the
             only way out other than a stray tap — went with it. */}
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6 [@media(max-height:520px)]:gap-2">
-          <div className="w-fit animate-popIn [animation-delay:.34s]">
+          <div className="w-fit animate-popIn [animation-delay:.34s]" data-fx-seal>
             <RankBadge rank={rank} size={104} decorative />
           </div>
           <h2

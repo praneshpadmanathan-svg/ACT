@@ -15,6 +15,7 @@ import { useStore } from '@/lib/store';
 import { fromDrillQuestion } from '@/lib/normalize';
 import { XP } from '@/lib/progress';
 import { sfx } from '@/lib/sfx';
+import { fx } from '@/lib/fx';
 import { cx, shuffle } from '@/lib/utils';
 import type { Question, SectionId } from '@/types';
 import { BackLink, Page } from '@/components/Shell';
@@ -94,6 +95,9 @@ function BossDuel({ section }: { section: string }) {
      at zero, more XP, and — a wrong answer at one heart after the killing
      blow — a "lost" screen landing on top of the win. */
   const overRef = useRef(false);
+  /* Where a blow lands: the guardian for a right answer, you for a wrong one. */
+  const bossRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   /* Hard questions first, then medium — the boss should feel like the exam
      for the region, not another warm-up. */
@@ -300,6 +304,8 @@ function BossDuel({ section }: { section: string }) {
       later(() => setHeroPleased(false), 900);
       freeze();
       const nextHp = bossHp - 1;
+      // The killing blow lands harder than the rest.
+      fx.impact(bossRef.current, 'gold', nextHp <= 0 ? 1.6 : 1);
       setBossHp(nextHp);
       if (nextHp <= 0) {
         overRef.current = true;
@@ -310,6 +316,8 @@ function BossDuel({ section }: { section: string }) {
           setBossState('defeated');
           sfx.fanfare();
           burstConfetti(140);
+          const r = bossRef.current?.getBoundingClientRect();
+          if (r) fx.celebrate(r.left + r.width / 2, r.top + r.height / 2);
           setPhase('won');
         }, 700);
         return;
@@ -320,6 +328,7 @@ function BossDuel({ section }: { section: string }) {
       setHeroHurt(true);
       freeze();
       later(() => setHeroHurt(false), 500);
+      fx.impact(heroRef.current, 'ruin', 0.7);
       const nextHp = playerHp - 1;
       setPlayerHp(nextHp);
       if (nextHp <= 0) {
@@ -369,22 +378,24 @@ function BossDuel({ section }: { section: string }) {
               choice in HeroSprite is made for the size actually drawn. It was
               sized by width before, 84 to 140px, which put the real height
               anywhere from 110 to 184px against a prop that said 140. */}
-          <HeroSprite
-            hero={progress.hero}
-            height={176}
-            className={cx(
-              'h-[132px] w-auto select-none sm:h-[176px]',
-              heroHurt ? 'animate-heroHurt' : 'animate-bobHero',
-            )}
-            style={{
-              filter: heroHurt
-                ? 'var(--art-shadow) drop-shadow(0 0 9px oklch(var(--c-blood) / .95))'
-                : heroPleased
-                  ? 'var(--art-shadow) drop-shadow(0 0 9px oklch(var(--c-gold) / .8))'
-                  : 'var(--art-shadow)',
-              transition: 'filter 180ms ease-out',
-            }}
-          />
+          <div ref={heroRef}>
+            <HeroSprite
+              hero={progress.hero}
+              height={176}
+              className={cx(
+                'h-[132px] w-auto select-none sm:h-[176px]',
+                heroHurt ? 'animate-heroHurt' : 'animate-bobHero',
+              )}
+              style={{
+                filter: heroHurt
+                  ? 'var(--art-shadow) drop-shadow(0 0 9px oklch(var(--c-blood) / .95))'
+                  : heroPleased
+                    ? 'var(--art-shadow) drop-shadow(0 0 9px oklch(var(--c-gold) / .8))'
+                    : 'var(--art-shadow)',
+                transition: 'filter 180ms ease-out',
+              }}
+            />
+          </div>
           <HealthPips
             label="You"
             value={playerHp}
@@ -399,11 +410,13 @@ function BossDuel({ section }: { section: string }) {
 
         {/* the boss */}
         <div className="flex flex-col items-center">
-          <BossArt
-            section={sectionId}
-            state={bossState}
-            className="w-[110px] sm:w-[150px] lg:w-[180px]"
-          />
+          <div ref={bossRef}>
+            <BossArt
+              section={sectionId}
+              state={bossState}
+              className="w-[110px] sm:w-[150px] lg:w-[180px]"
+            />
+          </div>
           <HealthPips label={boss.name} value={bossHp} max={boss.health} color={boss.color} />
         </div>
       </div>

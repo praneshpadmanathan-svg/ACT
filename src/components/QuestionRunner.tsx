@@ -9,6 +9,7 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import type { Difficulty, Passage, SectionId } from '@/types';
 import { juice } from '@/lib/juice';
+import { fx } from '@/lib/fx';
 import { sfx } from '@/lib/sfx';
 import { cx, formatClock } from '@/lib/utils';
 import { AnimatePresence, m, SPRING, SPRING_SNAP, useReducedMotion } from '@/lib/motion';
@@ -232,6 +233,9 @@ export function QuestionRunner({
            test does not tell you how you did until the end. */
         juice.correct({ visuals: !deferFeedback });
         if (streak >= 1) juice.combo(streak + 1, { visuals: !deferFeedback });
+        /* Light off the row that earned it, growing with the streak tier the
+           chip is about to show — the same escalation, in light. */
+        fx.correct(choiceEls.current[key] ?? null, streakTier(streak + 1));
 
         /* Right first time, so there is nothing to disambiguate: light it now.
            The gilt edge and the seal are CSS on the row itself, so there is
@@ -239,6 +243,7 @@ export function QuestionRunner({
         setLitCorrect(true);
       } else {
         juice.wrong({ visuals: !deferFeedback });
+        fx.wrong(choiceEls.current[key] ?? null);
         litTimer.current = window.setTimeout(() => setLitCorrect(true), REVEAL_LAG * 1000);
       }
 
