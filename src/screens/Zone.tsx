@@ -116,7 +116,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
         >
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <div className="font-script text-[10px] uppercase tracking-[0.16em] text-ink-faint">
+              <div className="font-script text-[11.5px] uppercase tracking-[0.16em] text-ink-faint">
                 {meta.name} · {zone.topic}
               </div>
               <h1
@@ -129,7 +129,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
             </div>
             {best !== null && (
               <div className="text-right">
-                <div className="font-script text-[10px] uppercase tracking-wide text-ink-faint">
+                <div className="font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
                   Your best
                 </div>
                 <div className="num text-[30px] text-woods-text">{best}%</div>

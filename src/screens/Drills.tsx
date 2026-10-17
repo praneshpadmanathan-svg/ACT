@@ -148,7 +148,7 @@ export function DrillsScreen({ section }: { section?: string }) {
                 <span className="block truncate font-sans text-[14px] font-semibold text-parchment">
                   {titleCase(topic)}
                 </span>
-                <span className="mt-0.5 block font-script text-[10px] uppercase tracking-wide text-ink-faint">
+                <span className="mt-0.5 block font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
                   {count.toLocaleString()} question{count === 1 ? '' : 's'}
                   {stat ? ` · ${stat.attempts} tried` : ''}
                 </span>
@@ -542,12 +542,12 @@ export function BookmarksScreen() {
                 <span className="min-w-0 flex-1">
                   <span className="flex flex-wrap items-center gap-2">
                     <span
-                      className="font-script text-[10px] uppercase tracking-wide"
+                      className="font-script text-[11.5px] uppercase tracking-wide"
                       style={{ color: SECTION_BY_ID[q.section]?.color }}
                     >
                       {SECTION_BY_ID[q.section]?.name}
                     </span>
-                    <span className="font-script text-[10px] uppercase tracking-wide text-ink-faint">
+                    <span className="font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
                       {titleCase(q.topic)}
                     </span>
                   </span>

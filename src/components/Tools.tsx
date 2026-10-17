@@ -256,7 +256,7 @@ function Scratchpad() {
     <div>
       <label
         htmlFor="scratch-paper"
-        className="mb-2 block font-script text-[10.5px] uppercase tracking-[0.14em] text-ink-faint"
+        className="mb-2 block font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint"
       >
         Scratch paper
       </label>

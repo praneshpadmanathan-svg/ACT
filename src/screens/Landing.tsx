@@ -346,7 +346,7 @@ export function Landing() {
             <a
               href={hrefFor({ name: 'faq' })}
               onClick={() => sfx.select()}
-              className="mr-1 hidden font-read text-[13.5px] text-parchment-dim underline-offset-4 transition-colors hover:text-parchment hover:underline sm:inline"
+              className="mr-1 hidden font-read text-[13.5px] text-parchment underline-offset-4 transition-colors hover:text-parchment hover:underline sm:inline"
             >
               What is this?
             </a>
@@ -833,7 +833,7 @@ export function Landing() {
           >
             Begin your quest
           </Button>
-          <p className="mt-5 font-read text-[14px] text-ink-faint">
+          <p className="mt-5 font-read text-[14px] text-parchment-dim">
             Or{' '}
             <a
               href={hrefFor({ name: 'auth', mode: 'signup' })}

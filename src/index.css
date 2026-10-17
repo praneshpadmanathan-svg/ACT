@@ -525,7 +525,13 @@
   .rail-group {
     /* ink-faint, not gold-deep: gold-deep is a border colour, and as text it
        measured 3.1:1 on the rail in dark and 2.0:1 in light. */
-    @apply px-2.5 font-script text-[10.5px] uppercase tracking-[0.2em] text-ink-faint;
+    @apply px-2.5 font-script text-[11.5px] uppercase tracking-[0.2em] text-ink-faint;
+  }
+  /* In daylight the rail's grain has pale flecks that pull ink-faint to the
+     4.5 line exactly (measured 4.495:1). One step darker clears it; the dark
+     theme keeps the quieter ink, where it measures well clear. */
+  [data-theme='light'] .rail-group {
+    @apply text-parchment-dim;
   }
 
   /* The palette's door, at the head of the rail. Debossed like the blocks at
@@ -1941,11 +1947,11 @@
     @apply flex-none text-ink-faint transition-colors duration-quick ease-out;
   }
   .palette-group {
-    @apply px-3 pb-1 pt-3 font-script text-[10.5px] uppercase tracking-[0.2em] text-ink-faint;
+    @apply px-3 pb-1 pt-3 font-script text-[11.5px] uppercase tracking-[0.2em] text-ink-faint;
   }
   .palette-kbd {
     @apply inline-flex items-center rounded border border-leather-700 bg-leather-900 px-1.5 py-0.5 font-mono
-           text-[10.5px] leading-none text-ink-faint;
+           text-[11.5px] leading-none text-ink-faint;
   }
   /* ======================================================== the landing score
 

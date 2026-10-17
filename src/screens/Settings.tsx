@@ -77,7 +77,7 @@ export function SettingsScreen() {
         <div role="group" aria-labelledby="settings-target" className="mb-5">
           <span
             id="settings-target"
-            className="mb-2 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint"
+            className="mb-2 block font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint"
           >
             Target score
           </span>
@@ -107,7 +107,7 @@ export function SettingsScreen() {
         <div role="group" aria-labelledby="settings-date">
           <span
             id="settings-date"
-            className="mb-2 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint"
+            className="mb-2 block font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint"
           >
             Test date
           </span>
@@ -151,7 +151,7 @@ export function SettingsScreen() {
           you pick about how the app looks. */}
       <div className="panel mb-6 p-6 sm:p-7">
         <h2 className="heading mb-1.5 text-[1.125rem] text-parchment">Your traveller</h2>
-        <p className="mb-5 text-[13px] leading-relaxed text-ink-faint">
+        <p className="mb-5 max-w-[68ch] text-[13px] leading-relaxed text-ink-faint">
           Nothing here is locked and nothing has to be earned. Pick whoever you want to be on the
           road; you can change it whenever you like.
         </p>
@@ -240,7 +240,7 @@ export function SettingsScreen() {
           through, looking at a number you do not trust — you are on a screen
           with no way to it. */}
       <div className="panel mb-6 flex flex-wrap items-center gap-x-5 gap-y-2 p-5">
-        <span className="font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+        <span className="font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint">
           Questions about the app
         </span>
         <a
@@ -278,7 +278,7 @@ export function SettingsScreen() {
       {/* danger zone */}
       <div className="panel mb-6 border-blood/40 p-6">
         <h2 className="heading mb-3 text-[1.125rem] text-blood-text">Danger zone</h2>
-        <p className="mb-4 text-[13px] leading-relaxed text-ink-faint">
+        <p className="mb-4 max-w-[68ch] text-[13px] leading-relaxed text-ink-faint">
           Deletes all XP, answers, cleared landmarks and test results
           {isGuest ? ' from this browser' : ', on every device and in the cloud'}. This cannot be
           undone — download your data first if you want to keep a copy.

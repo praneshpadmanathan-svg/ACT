@@ -186,7 +186,7 @@ export function TestSectionView({
               <div className="mb-5 flex items-center gap-2">
                 <span className="label-quill min-w-0 truncate">{question.topic}</span>
                 {flagged && (
-                  <span className="ml-auto flex-none rounded bg-[#f4d37a] px-2 py-0.5 font-script text-[10px] uppercase tracking-wide text-[#2a2008]">
+                  <span className="ml-auto flex-none rounded bg-[#f4d37a] px-2 py-0.5 font-script text-[11.5px] uppercase tracking-wide text-[#2a2008]">
                     <Glyph name="flag" size={11} className="mr-1 inline-block align-[-1px]" />
                     Flagged
                   </span>
@@ -448,7 +448,7 @@ function SectionTimer({
     >
       <div className="flex items-center gap-3">
         <div role="timer" aria-live="off" className="flex min-w-0 items-center gap-3">
-          <span className="hidden font-script text-[10px] uppercase tracking-[0.16em] text-ink-faint sm:inline">
+          <span className="hidden font-script text-[11.5px] uppercase tracking-[0.16em] text-ink-faint sm:inline">
             Time remaining
           </span>
           <span className="sr-only sm:hidden">Time remaining</span>

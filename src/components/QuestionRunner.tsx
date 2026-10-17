@@ -413,7 +413,7 @@ export function QuestionRunner({
         </div>
 
         {!deferFeedback && records.length > 0 && (
-          <p className="mt-3 font-script text-[10px] uppercase tracking-wide text-ink-faint">
+          <p className="mt-3 font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
             {correctSoFar} correct of {records.length} answered
           </p>
         )}
@@ -479,7 +479,7 @@ export function QuestionRunner({
               <div className="mb-5 flex items-center gap-2">
                 <span className="label-quill min-w-0 truncate">{question.topic}</span>
                 <span
-                  className="rounded px-2 py-0.5 font-script text-[10px] uppercase tracking-wide"
+                  className="rounded px-2 py-0.5 font-script text-[11.5px] uppercase tracking-wide"
                   style={{
                     color: DIFFICULTY_COLOR[question.difficulty],
                     background: `color-mix(in oklab, ${DIFFICULTY_COLOR[question.difficulty]} 13%, transparent)`,

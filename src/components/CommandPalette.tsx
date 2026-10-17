@@ -431,7 +431,7 @@ export function CommandPalette({
                           {entry.label}
                         </span>
                         {entry.hint && (
-                          <span className="hidden max-w-[45%] truncate font-script text-[10.5px] uppercase tracking-[0.14em] text-ink-faint sm:block">
+                          <span className="hidden max-w-[45%] truncate font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint sm:block">
                             {entry.hint}
                           </span>
                         )}

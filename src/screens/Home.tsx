@@ -468,7 +468,7 @@ function PlacementPrompt() {
         <span className="mt-1 block font-display text-[15px] font-semibold text-gold-light">
           Take the placement test
         </span>
-        <span className="mt-0.5 block font-read text-[13.5px] leading-relaxed text-parchment-dim">
+        <span className="mt-0.5 block max-w-[68ch] font-read text-[13.5px] leading-relaxed text-parchment-dim">
           A short spread across all four sections, untimed. It tells the plan where to point you
           instead of it guessing for a fortnight.
         </span>
@@ -751,7 +751,7 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
                     <span className="min-w-0 flex-1 font-read text-[14px] text-parchment-dim">
                       {step.title}
                     </span>
-                    <span className="flex-none font-script text-[10px] uppercase tracking-wide text-ink-faint">
+                    <span className="flex-none font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
                       {step.minutes} min
                     </span>
                   </button>

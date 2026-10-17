@@ -109,7 +109,7 @@ function TestsBoard() {
           <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
             All four sections back to back, with a break between each.
           </p>
-          <p className="mt-4 font-script text-[10px] uppercase tracking-wide text-ink-faint">
+          <p className="mt-4 font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
             {Object.values(TEST_PLAN).reduce((n, p) => n + p.questions, 0)} questions ·{' '}
             {Object.values(TEST_PLAN).reduce((n, p) => n + withAllowance(p.minutes, allowance), 0)}{' '}
             minutes
@@ -193,7 +193,7 @@ function TestsBoard() {
               <div className="ml-auto flex items-center gap-5">
                 {result.sections.map((id) => (
                   <div key={id} className="text-center">
-                    <div className="font-script text-[9px] uppercase tracking-wide text-ink-faint">
+                    <div className="font-script text-[11px] uppercase tracking-wide text-ink-faint">
                       {SECTION_ABBR[id]}
                     </div>
                     <div className="num text-[19px]" style={{ color: SECTION_BY_ID[id]?.color }}>
@@ -202,7 +202,7 @@ function TestsBoard() {
                   </div>
                 ))}
                 <div className="border-l-2 border-leather-700 pl-5 text-center">
-                  <div className="font-script text-[9px] uppercase tracking-wide text-ink-faint">
+                  <div className="font-script text-[11px] uppercase tracking-wide text-ink-faint">
                     Comp
                   </div>
                   <div className="num text-[26px] text-gold">{result.composite}</div>
@@ -864,7 +864,7 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
                   className="rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-4"
                 >
                   <div
-                    className="font-script text-[10px] uppercase tracking-wide"
+                    className="font-script text-[11.5px] uppercase tracking-wide"
                     style={{ color: meta.color }}
                   >
                     {meta.name}

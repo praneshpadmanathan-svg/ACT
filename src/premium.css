@@ -737,6 +737,12 @@ p {
   text-transform: uppercase;
   color: oklch(var(--c-gold));
 }
+/* Gold sits on the camp painting here, and in daylight the painting is pale
+   beige: the kicker measured 3.7:1. In the light theme `gold-light` is the
+   darkest gold — the role tokens invert — and it holds the kicker clear. */
+[data-theme='light'] .home-kicker {
+  color: oklch(var(--c-gold-light));
+}
 .home-overview,
 .home-activity {
   display: grid;

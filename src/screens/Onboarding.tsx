@@ -244,7 +244,7 @@ export function Onboarding() {
         </p>
         {phase !== 'plan' && (
           <div className="mb-6">
-            <div className="mb-2 flex items-center justify-between font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+            <div className="mb-2 flex items-center justify-between font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint">
               <span>
                 Step {position} of {totalSteps}
               </span>

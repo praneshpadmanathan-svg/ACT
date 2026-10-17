@@ -119,7 +119,7 @@ export function NotesScreen({ section }: { section?: string }) {
                       <span className="mt-1 block text-[13px] leading-relaxed text-ink-faint">
                         {page.summary}
                       </span>
-                      <span className="mt-2 block font-script text-[10px] uppercase tracking-wide text-ink-faint">
+                      <span className="mt-2 block font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
                         {page.minutes} min read
                       </span>
                     </span>
