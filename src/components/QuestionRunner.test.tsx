@@ -5,6 +5,7 @@ import { QuestionRunner, type AnswerRecord, type RunnableQuestion } from './Ques
 import { juice } from '@/lib/juice';
 import { sfx } from '@/lib/sfx';
 import { fx } from '@/lib/fx';
+import { savedQuestions } from '@/lib/quizResume';
 
 vi.mock('@/lib/juice', () => ({ juice: { correct: vi.fn(), wrong: vi.fn(), combo: vi.fn() } }));
 vi.mock('@/lib/sfx', () => ({ sfx: { select: vi.fn() } }));
@@ -210,6 +211,52 @@ describe('a quiz that survives a refresh', () => {
     const second = mountRunner({ resumeKey: 'zone:z' });
     expect(second.host.querySelector('[aria-checked="true"]')).toBeNull();
     second.cleanup();
+  });
+
+  it('takes the step a timed run was about to take when the refresh cut in', () => {
+    vi.useFakeTimers();
+    const first = mountRunner({ resumeKey: 'diagnostic', deferFeedback: true });
+    act(() => first.radios()[1]!.click()); // refreshed inside the 120ms beat
+    const second = mountRunner({ resumeKey: 'diagnostic', deferFeedback: true });
+    expect(second.host.textContent).toContain('Prompt q1');
+    act(() => vi.advanceTimersByTime(120));
+    expect(second.host.textContent).toContain('Prompt q2');
+    expect(second.onAnswer).not.toHaveBeenCalled();
+    second.cleanup();
+    first.cleanup();
+  });
+
+  it('finishes a timed run refreshed on its last answer, with every answer in it', () => {
+    vi.useFakeTimers();
+    const first = mountRunner({ resumeKey: 'diagnostic', deferFeedback: true });
+    act(() => first.radios()[0]!.click());
+    act(() => vi.advanceTimersByTime(120));
+    act(() => first.radios()[1]!.click());
+    const second = mountRunner({ resumeKey: 'diagnostic', deferFeedback: true });
+    act(() => vi.advanceTimersByTime(120));
+    expect(second.onFinish).toHaveBeenCalledOnce();
+    const records = second.onFinish.mock.calls[0]![0];
+    expect(records.map((r: AnswerRecord) => r.chosen)).toEqual(['a', 'b']);
+    second.cleanup();
+    first.cleanup();
+  });
+
+  it('deals a saved set back by id, and refuses one with a question gone', () => {
+    const first = mountRunner({ resumeKey: 'drill:math:' });
+    const all = new Map(twoQuestions().map((q) => [q.id, q]));
+    expect(savedQuestions('drill:math:', (id) => all.get(id))?.map((q) => q.id)).toEqual([
+      'q1',
+      'q2',
+    ]);
+    all.delete('q2');
+    expect(savedQuestions('drill:math:', (id) => all.get(id))).toBeNull();
+    // A lookup that throws — its content not loaded — is no set either.
+    expect(
+      savedQuestions('drill:math:', () => {
+        throw new Error('not loaded');
+      }),
+    ).toBeNull();
+    first.cleanup();
   });
 
   it('ignores a saved run for a different set of questions', () => {

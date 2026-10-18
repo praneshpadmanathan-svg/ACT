@@ -17,6 +17,7 @@ import { useStore } from '@/lib/store';
 import { fromDrillQuestion, runnableById } from '@/lib/normalize';
 import { dailyDone, dayKey, dueForReview, topicStats, XP } from '@/lib/progress';
 import { dailyBlurb, dailyContent, pickDaily } from '@/lib/daily';
+import { savedIds, savedQuestions } from '@/lib/quizResume';
 import { sfx } from '@/lib/sfx';
 import { shuffle, titleCase } from '@/lib/utils';
 import type { Question, SectionId } from '@/types';
@@ -212,7 +213,15 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
   const meta = SECTION_BY_ID[sectionId];
 
   useContent({ sections: meta ? [sectionId] : [] });
-  const { questions, title, subtitle } = useMemo(() => {
+  /* A drill this tab was in the middle of when it refreshed. The set is dealt
+     at random, so it comes back from the saved ids rather than a new deal. */
+  const resumeKey = `drill:${section}:${topic ?? ''}`;
+  const [resumed] = useState(() => savedQuestions(resumeKey, runnableById));
+  const {
+    questions: picked,
+    title,
+    subtitle,
+  } = useMemo(() => {
     const pool = meta ? questionsFor(sectionId) : [];
     const accuracyByTopic = new Map(
       topicStats(progress, sectionId).map((t) => [t.topic, t.accuracy]),
@@ -245,6 +254,7 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
     // would swap questions under the player.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sectionId, topic]);
+  const questions = resumed ?? picked;
 
   if (!meta || questions.length === 0) {
     return (
@@ -280,6 +290,7 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
         title={title}
         subtitle={subtitle}
         accent={meta.color}
+        resumeKey={resumeKey}
         onQuit={() => navigate({ name: 'drills', section })}
         onAnswer={(record) =>
           answerQuestion({
@@ -302,6 +313,9 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
 /** The most questions one review sitting takes. */
 const SESSION_CAP = 20;
 
+const REVIEW_KEY = 'review';
+const BOOKMARKS_KEY = 'bookmarks';
+
 /* Review is gated as a whole feature rather than per subject: the queue is
    mixed by design — it is whatever you got wrong, in whatever subject — so
    there is no coherent English-only version of it to give away. The wrapper
@@ -319,11 +333,17 @@ function ReviewSession() {
      pushes the card days out, a wrong one re-sorts it to the front — so
      running off `due` directly shifted the list under the runner's index:
      feedback judged against the wrong question, the next one skipped, and a
-     blank screen once the index ran past the shrunken end. */
-  const [started, setStarted] = useState<RunnableQuestion[] | null>(null);
+     blank screen once the index ran past the shrunken end.
+
+     A refresh mid-session restores that snapshot from its saved ids — which
+     may no longer be due, so they are loaded alongside the queue. */
+  const [resumeIds] = useState(() => savedIds(REVIEW_KEY));
 
   /* Only the pieces of the library the queue reaches into. */
-  useContent({ ids: dueForReview(progress) });
+  useContent({ ids: [...dueForReview(progress), ...(resumeIds ?? [])] });
+  const [started, setStarted] = useState<RunnableQuestion[] | null>(() =>
+    savedQuestions(REVIEW_KEY, runnableById),
+  );
   const due = useMemo(() => {
     /* `runnableById`, not `getQuestion`: the latter reads the drill bank
        alone, so every landmark question in the queue was dropped here and the
@@ -411,6 +431,7 @@ function ReviewSession() {
         title="Review session"
         subtitle="Questions due for another look"
         accent="oklch(var(--c-cliffs-text))"
+        resumeKey={REVIEW_KEY}
         onQuit={() => setStarted(null)}
         onAnswer={(record) =>
           answerQuestion({
@@ -446,13 +467,17 @@ export function BookmarksScreen() {
   const { progress, updateProgress, answerQuestion } = useStore();
   const [results, setResults] = useState<AnswerRecord[] | null>(null);
   /* Snapshotted at start for the same reason as review: un-bookmarking the
-     question on screen would otherwise remove it from the running list. */
-  const [started, setStarted] = useState<RunnableQuestion[] | null>(null);
+     question on screen would otherwise remove it from the running list. And,
+     like review, restored from its saved ids after a refresh. */
+  const [resumeIds] = useState(() => savedIds(BOOKMARKS_KEY));
 
   /* Newest first: a bookmark is a note to self, and the most recent one is
      almost always the one being looked for. Ids whose question has since left
      the bank are dropped rather than rendered as a gap. */
-  useContent({ ids: progress.bookmarks });
+  useContent({ ids: [...progress.bookmarks, ...(resumeIds ?? [])] });
+  const [started, setStarted] = useState<RunnableQuestion[] | null>(() =>
+    savedQuestions(BOOKMARKS_KEY, runnableById),
+  );
   const saved = useMemo(
     () =>
       [...progress.bookmarks]
@@ -489,6 +514,7 @@ export function BookmarksScreen() {
           title="Saved questions"
           subtitle={`${started.length} you set aside`}
           accent="oklch(var(--c-gold))"
+          resumeKey={BOOKMARKS_KEY}
           onQuit={() => setStarted(null)}
           onAnswer={(record) =>
             answerQuestion({
@@ -604,9 +630,16 @@ export function DailyScreen() {
   /* Chosen once, from the state as it was on arrival. Not reactive to
      `progress`: answering question two must not re-pick questions three
      through five underneath the player. */
-  useContent(dailyContent(progress, allowed));
   const [day] = useState(() => dayKey());
-  const [questions] = useState(() => pickDaily(progress, day, allowed));
+  /* Or, after a refresh, the five that were already dealt — the pick reads
+     `progress`, which the answers before the refresh have changed. */
+  const resumeKey = `daily:${day}`;
+  const [resumeIds] = useState(() => savedIds(resumeKey));
+  const need = dailyContent(progress, allowed);
+  useContent({ ...need, ids: [...(need.ids ?? []), ...(resumeIds ?? [])] });
+  const [questions] = useState(
+    () => savedQuestions(resumeKey, runnableById) ?? pickDaily(progress, day, allowed),
+  );
   const [blurb] = useState(() => dailyBlurb(progress, allowed));
 
   if (results) {
@@ -666,6 +699,7 @@ export function DailyScreen() {
         title="Daily challenge"
         subtitle={blurb}
         accent="oklch(var(--c-gold))"
+        resumeKey={resumeKey}
         onQuit={() => navigate({ name: 'home' })}
         onAnswer={(record) =>
           answerQuestion({

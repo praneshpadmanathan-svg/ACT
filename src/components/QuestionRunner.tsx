@@ -68,9 +68,7 @@ interface Props {
   /** Hide explanations until the very end, the way a real test does. */
   deferFeedback?: boolean;
   /** Keep this run across a page refresh, under this key. The caller must deal
-   *  the same `questions` back on the reload — see `savedIds`. For quizzes
-   *  that show feedback; a deferred-feedback run is a timed test, which has
-   *  its own session. */
+   *  the same `questions` back on the reload — see `savedQuestions`. */
   resumeKey?: string;
 }
 
@@ -313,6 +311,20 @@ export function QuestionRunner({
     },
     [isLast, onFinish, questions.length],
   );
+
+  /* Test mode moves on by itself 120ms after an answer. A refresh inside that
+     beat restores the answered question with nothing left to move it on —
+     no Next button in test mode — so the step it was about to take is taken
+     here. On the last question, that step is finishing. Mount only: this is
+     the one advance the interrupted page never got to make. */
+  useEffect(() => {
+    if (!deferFeedback || !resumedAnswered) return;
+    advanceTimer.current = window.setTimeout(() => {
+      advanceTimer.current = null;
+      advance(records);
+    }, 120);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   /* Keyboard: A-D (or 1-4) to answer, Enter/Space to continue. */
   useEffect(() => {

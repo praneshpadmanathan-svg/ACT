@@ -51,6 +51,30 @@ export function savedIds(key: string): string[] | null {
   return run ? run.ids : null;
 }
 
+/** The saved run's questions, rebuilt by id — for screens whose set was dealt
+ *  at random or snapshotted at the start, and so cannot be dealt again. Null
+ *  if there is no run, or if any of its questions has left the library (or
+ *  its content is not loaded): a set missing one is not the same set. */
+export function savedQuestions(
+  key: string,
+  lookup: (id: string) => RunnableQuestion | undefined,
+): RunnableQuestion[] | null {
+  const ids = savedIds(key);
+  if (!ids || ids.length === 0) return null;
+  const out: RunnableQuestion[] = [];
+  for (const id of ids) {
+    let q: RunnableQuestion | undefined;
+    try {
+      q = lookup(id);
+    } catch {
+      return null;
+    }
+    if (!q) return null;
+    out.push(q);
+  }
+  return out;
+}
+
 export function restoreRun(key: string, questions: RunnableQuestion[]): RestoredRun | null {
   const run = read(key);
   if (!run) return null;

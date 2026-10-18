@@ -16,7 +16,8 @@ import { useMemo, useState } from 'react';
 import { SECTIONS, SECTION_BY_ID, useContent } from '@/content';
 import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
-import { fromDrillQuestion } from '@/lib/normalize';
+import { fromDrillQuestion, runnableById } from '@/lib/normalize';
+import { savedQuestions } from '@/lib/quizResume';
 import {
   diagnosticLength,
   diagnosticMinutes,
@@ -34,16 +35,24 @@ import { Button, ProgressBar, SectionHeading } from '@/components/ui';
 import { QuestionRunner, type AnswerRecord } from '@/components/QuestionRunner';
 import { MissedReview } from '@/components/MissedReview';
 
+const RESUME_KEY = 'diagnostic';
+
 export function DiagnosticScreen() {
   const navigate = useNavigate();
   const { progress, answerQuestion, finishDiagnostic } = useStore();
-  const [started, setStarted] = useState(false);
   const [result, setResult] = useState<DiagnosticResult | null>(null);
   const [records, setRecords] = useState<AnswerRecord[]>([]);
 
   /* Every section: the placement samples all four. */
   useContent({ sections: SECTIONS.map((s) => s.id) });
-  const questions = useMemo(() => pickDiagnostic(progress).map(fromDrillQuestion), [progress]);
+  /* A placement this tab was part way through when it refreshed: straight
+     back into it, on the question it was on. The pick is deterministic, but
+     the saved set is used as it stands rather than trusted to come out the
+     same. */
+  const [resumed] = useState(() => savedQuestions(RESUME_KEY, runnableById));
+  const [started, setStarted] = useState(resumed !== null);
+  const picked = useMemo(() => pickDiagnostic(progress).map(fromDrillQuestion), [progress]);
+  const questions = resumed ?? picked;
   const total = diagnosticLength(progress);
   const minutes = diagnosticMinutes(progress);
   const already = progress.diagnostic;
@@ -118,6 +127,7 @@ export function DiagnosticScreen() {
         subtitle={`${total} questions, all four sections`}
         accent="oklch(var(--c-gold))"
         deferFeedback
+        resumeKey={RESUME_KEY}
         onQuit={() => setStarted(false)}
         onAnswer={(record) =>
           /* Recorded as ordinary attempts. These are real answers to real
