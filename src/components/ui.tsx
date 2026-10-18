@@ -48,6 +48,9 @@ interface ButtonProps extends NativeButtonProps {
   size?: Size;
   quiet?: boolean;
   trailing?: boolean;
+  /** Waiting on the network. Disables the button and shows a spinner, so a
+   *  press is acknowledged at once even when the answer takes seconds. */
+  busy?: boolean;
 }
 
 function buttonClass(variant: Variant, size: Size, className?: string) {
@@ -140,12 +143,14 @@ export function Button({
   size = 'md',
   quiet = false,
   trailing = false,
+  busy = false,
   className,
   onClick,
   onPointerDown,
   children,
   ...rest
 }: ButtonProps) {
+  const disabled = rest.disabled || busy;
   const [inks, setInks] = useState<Ink[]>([]);
   const nextInk = useRef(0);
   const stillMotion = useReducedMotion();
@@ -167,8 +172,8 @@ export function Button({
     <m.button
       type="button"
       className={buttonClass(variant, size, className)}
-      whileHover={rest.disabled || stillMotion ? undefined : { y: -1 }}
-      whileTap={rest.disabled || stillMotion ? undefined : { scale: 0.99 }}
+      whileHover={disabled || stillMotion ? undefined : { y: -1 }}
+      whileTap={disabled || stillMotion ? undefined : { scale: 0.99 }}
       transition={PIN_SPRING}
       onPointerDown={(e) => {
         spread(e);
@@ -179,6 +184,8 @@ export function Button({
         onClick?.(e);
       }}
       {...rest}
+      disabled={disabled}
+      aria-busy={busy || undefined}
     >
       <AnimatePresence>
         {inks.map((ink) => (
@@ -207,6 +214,7 @@ export function Button({
           />
         ))}
       </AnimatePresence>
+      {busy && <span className="btn-spinner" aria-hidden="true" />}
       {children}
       {trailing && (
         <Glyph name="chevronRight" size={TRAIL_SIZE[size]} className="-mr-1 opacity-80" />

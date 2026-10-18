@@ -97,6 +97,12 @@ export default tseslint.config(
     },
   },
   {
+    /* Node on the outside, a browser on the inside: the functions this script
+       hands to `page.evaluate` run in the page Chromium is showing. */
+    files: ['scripts/check-contrast.mjs'],
+    languageOptions: { globals: { ...globals.node, ...globals.browser } },
+  },
+  {
     /* `vite.config.ts` is TypeScript and needs the TS parser, or the whole
        file is a parse error and nothing in it is checked at all. */
     files: ['*.config.ts'],

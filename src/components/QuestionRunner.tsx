@@ -9,8 +9,10 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import type { Difficulty, Passage, SectionId } from '@/types';
 import { juice } from '@/lib/juice';
+import { fx } from '@/lib/fx';
 import { sfx } from '@/lib/sfx';
 import { cx, formatClock } from '@/lib/utils';
+import { clearRun, restoreRun, saveRun } from '@/lib/quizResume';
 import { AnimatePresence, m, SPRING, SPRING_SNAP, useReducedMotion } from '@/lib/motion';
 import { RichText } from './RichText';
 import { PassagePanel } from './PassagePanel';
@@ -65,6 +67,9 @@ interface Props {
   accent?: string;
   /** Hide explanations until the very end, the way a real test does. */
   deferFeedback?: boolean;
+  /** Keep this run across a page refresh, under this key. The caller must deal
+   *  the same `questions` back on the reload — see `savedQuestions`. */
+  resumeKey?: string;
 }
 
 /* ------------------------------------------------------- reward escalation
@@ -151,19 +156,33 @@ export function QuestionRunner({
   subtitle,
   accent = 'oklch(var(--c-gold))',
   deferFeedback = false,
+  resumeKey,
 }: Props) {
   const reducedMotion = useReducedMotion();
-  const [index, setIndex] = useState(0);
-  const [chosen, setChosen] = useState<string | null>(null);
-  const [revealed, setRevealed] = useState(false);
-  const [records, setRecords] = useState<AnswerRecord[]>([]);
+  /* A refresh lands back on the question that was on screen — with its
+     explanation open, if it had been answered — rather than on the lesson. */
+  const [resumed] = useState(() => (resumeKey ? restoreRun(resumeKey, questions) : null));
+  const resumedAnswered = !!resumed && resumed.records.length > resumed.index;
+  const [index, setIndex] = useState(resumed?.index ?? 0);
+  const [chosen, setChosen] = useState<string | null>(
+    resumedAnswered ? (resumed.records[resumed.index]!.chosen ?? null) : null,
+  );
+  const [revealed, setRevealed] = useState(resumedAnswered);
+  const [records, setRecords] = useState<AnswerRecord[]>(resumed?.records ?? []);
   const [startedAt, setStartedAt] = useState(() => Date.now());
-  const [streak, setStreak] = useState(0);
-  const [elapsed, setElapsed] = useState(0);
+  const [streak, setStreak] = useState(resumed?.streak ?? 0);
+  const [elapsed, setElapsed] = useState(resumed?.elapsed ?? 0);
   /* The correct row lights on its own beat, not on `revealed` — see REVEAL_LAG. */
-  const [litCorrect, setLitCorrect] = useState(false);
+  const [litCorrect, setLitCorrect] = useState(resumedAnswered);
 
   const litTimer = useRef<number | null>(null);
+  /* Test mode's automatic step to the next question. Tracked so Exit inside
+     its 120ms cannot be followed by an `onFinish` for a test already left. */
+  const advanceTimer = useRef<number | null>(null);
+  /* `revealed` is state, and state is read from the render that queued the
+     handler — so a key and a click landing before React re-renders both
+     passed the guard and the question was answered twice. */
+  const answeredRef = useRef(resumedAnswered);
   const choiceEls = useRef<Record<string, HTMLButtonElement | null>>({});
 
   const question = questions[index];
@@ -173,9 +192,27 @@ export function QuestionRunner({
   useEffect(
     () => () => {
       if (litTimer.current) window.clearTimeout(litTimer.current);
+      if (advanceTimer.current) window.clearTimeout(advanceTimer.current);
     },
     [],
   );
+
+  /* The button that moved you here is gone — the choice you clicked in test
+     mode, or Next — and a removed element takes focus with it, to <body>. A
+     keyboard user then had to Tab through the whole header to reach the next
+     question. Only when focus really was dropped: if it is somewhere on
+     purpose, the calculator say, it stays there. */
+  const firstQuestion = useRef(true);
+  useEffect(() => {
+    if (firstQuestion.current) {
+      firstQuestion.current = false;
+      return;
+    }
+    const active = document.activeElement;
+    if (active && active !== document.body) return;
+    const first = questions[index]?.choices[0];
+    if (first) choiceEls.current[first.key]?.focus({ preventScroll: true });
+  }, [index, questions]);
 
   // Session clock, for the summary.
   useEffect(() => {
@@ -183,9 +220,27 @@ export function QuestionRunner({
     return () => window.clearInterval(id);
   }, []);
 
+  /* Written on every step rather than every tick: the clock is carried along
+     with whatever it read at the last answer, a few seconds' drift at most. */
+  const elapsedRef = useRef(elapsed);
+  useEffect(() => {
+    elapsedRef.current = elapsed;
+  }, [elapsed]);
+  useEffect(() => {
+    if (resumeKey)
+      saveRun(resumeKey, questions, { index, records, streak, elapsed: elapsedRef.current });
+  }, [resumeKey, questions, index, records, streak]);
+  /* Gone the moment the quiz is: finished, quit or navigated away from. A page
+     unload never unmounts anything, so a refresh is the one way back in. */
+  useEffect(() => {
+    if (!resumeKey) return;
+    return () => clearRun(resumeKey);
+  }, [resumeKey]);
+
   const commit = useCallback(
     (key: string) => {
-      if (revealed || !question) return;
+      if (revealed || answeredRef.current || !question) return;
+      answeredRef.current = true;
 
       const correct = key === question.correctKey;
       const ms = Date.now() - startedAt;
@@ -206,6 +261,9 @@ export function QuestionRunner({
            test does not tell you how you did until the end. */
         juice.correct({ visuals: !deferFeedback });
         if (streak >= 1) juice.combo(streak + 1, { visuals: !deferFeedback });
+        /* Light off the row that earned it, growing with the streak tier the
+           chip is about to show — the same escalation, in light. */
+        fx.correct(choiceEls.current[key] ?? null, streakTier(streak + 1));
 
         /* Right first time, so there is nothing to disambiguate: light it now.
            The gilt edge and the seal are CSS on the row itself, so there is
@@ -213,12 +271,16 @@ export function QuestionRunner({
         setLitCorrect(true);
       } else {
         juice.wrong({ visuals: !deferFeedback });
+        fx.wrong(choiceEls.current[key] ?? null);
         litTimer.current = window.setTimeout(() => setLitCorrect(true), REVEAL_LAG * 1000);
       }
 
       // In test mode there is nothing to read, so move straight on.
       if (deferFeedback) {
-        window.setTimeout(() => advance([...records, record]), 120);
+        advanceTimer.current = window.setTimeout(() => {
+          advanceTimer.current = null;
+          advance([...records, record]);
+        }, 120);
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -232,6 +294,7 @@ export function QuestionRunner({
         return;
       }
       if (litTimer.current) window.clearTimeout(litTimer.current);
+      answeredRef.current = false;
       /* Clamped. `advance` refuses to step past the last question, but it
          reads `isLast` from the render that queued it — so two advances
          queued before either commits both pass the guard and walk the index
@@ -249,12 +312,28 @@ export function QuestionRunner({
     [isLast, onFinish, questions.length],
   );
 
+  /* Test mode moves on by itself 120ms after an answer. A refresh inside that
+     beat restores the answered question with nothing left to move it on —
+     no Next button in test mode — so the step it was about to take is taken
+     here. On the last question, that step is finishing. Mount only: this is
+     the one advance the interrupted page never got to make. */
+  useEffect(() => {
+    if (!deferFeedback || !resumedAnswered) return;
+    advanceTimer.current = window.setTimeout(() => {
+      advanceTimer.current = null;
+      advance(records);
+    }, 120);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   /* Keyboard: A-D (or 1-4) to answer, Enter/Space to continue. */
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
-      const target = e.target as HTMLElement | null;
-      if (target && ['INPUT', 'TEXTAREA'].includes(target.tagName)) return;
+      /* Not always an element: a key with nothing focused can target the
+         window or the document, which have no `closest`. */
+      const target = e.target instanceof Element ? (e.target as HTMLElement) : null;
+      if (target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) return;
       /* A key another control already used, or one typed into a tool panel.
          The calculator takes digits, `c` and Enter, and without this every
          one of them also answered the question underneath it. */
@@ -376,7 +455,7 @@ export function QuestionRunner({
         </div>
 
         {!deferFeedback && records.length > 0 && (
-          <p className="mt-3 font-script text-[10px] uppercase tracking-wide text-ink-faint">
+          <p className="mt-3 font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
             {correctSoFar} correct of {records.length} answered
           </p>
         )}
@@ -442,7 +521,7 @@ export function QuestionRunner({
               <div className="mb-5 flex items-center gap-2">
                 <span className="label-quill min-w-0 truncate">{question.topic}</span>
                 <span
-                  className="rounded px-2 py-0.5 font-script text-[10px] uppercase tracking-wide"
+                  className="rounded px-2 py-0.5 font-script text-[11.5px] uppercase tracking-wide"
                   style={{
                     color: DIFFICULTY_COLOR[question.difficulty],
                     background: `color-mix(in oklab, ${DIFFICULTY_COLOR[question.difficulty]} 13%, transparent)`,
@@ -523,7 +602,12 @@ export function QuestionRunner({
                     }}
                     type="button"
                     onClick={() => commit(choice.key)}
-                    disabled={revealed}
+                    /* `aria-disabled`, not `disabled`. Disabling the button
+                       that has focus throws focus to <body>, so for the beat
+                       before Next arrives — and the whole of test mode — the
+                       keyboard was nowhere. `commit` refuses a second answer
+                       on its own. */
+                    aria-disabled={revealed}
                     className={cx('choice', state, revealed && 'choice-locked cursor-default')}
                     role="radio"
                     aria-checked={isChosen}

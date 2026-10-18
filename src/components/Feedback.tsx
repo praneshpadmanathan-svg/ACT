@@ -2,125 +2,26 @@
 
    All of it is driven by explicit store events. Nothing here polls. */
 
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 import { useStore } from '@/lib/store';
 import { RANKS } from '@/lib/progress';
 import { useDialogFocus } from '@/lib/useDialogFocus';
+import { fx } from '@/lib/fx';
 import { Button, RankBadge } from './ui';
 import { Glyph } from './Icon';
 
 /* --------------------------------------------------------------- confetti */
 
-/* Gold leaf and lantern sparks — the palette has to survive being thrown
-   over a painted region backdrop. */
-const CONFETTI_COLORS = ['#f2cf5b', '#d4a017', '#e8c34a', '#c98b2e', '#f7e6ae', '#9c7410'];
-
-interface Particle {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  size: number;
-  color: string;
-  rot: number;
-  vrot: number;
-  life: number;
-}
-
-let burstFn: ((count: number, x: number, y: number, spread?: number) => void) | null = null;
-
-/** Fire confetti from anywhere. No-op until the canvas has mounted. */
+/** Fire confetti from anywhere: gold leaf, tumbling and catching the light.
+ *
+ *  This used to be its own canvas with its own loop, drawing flat coloured
+ *  squares — a second full-screen layer running beside the light layer. It
+ *  is one preset of that layer now (`fx.confetti` in lib/fx.ts), sharing its
+ *  pool, its budget and its frame. Same signature, so callers are unchanged.
+ *  Silent under reduced motion, as before: a hundred flakes flung across the
+ *  viewport is exactly the motion that setting asks us not to make. */
 export function burstConfetti(count = 90, x?: number, y?: number, spread = 18) {
-  /* Ninety particles flung across the whole viewport is precisely the motion
-     that setting asks us not to make. The sound and the result still land. */
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  burstFn?.(count, x ?? window.innerWidth / 2, y ?? window.innerHeight / 2, spread);
-}
-
-export function ConfettiCanvas() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particlesRef = useRef<Particle[]>([]);
-  const frameRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = `${window.innerWidth}px`;
-      canvas.style.height = `${window.innerHeight}px`;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    };
-    resize();
-    window.addEventListener('resize', resize);
-
-    const tick = () => {
-      frameRef.current = requestAnimationFrame(tick);
-      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-      const particles = particlesRef.current;
-      for (let i = particles.length - 1; i >= 0; i--) {
-        // Walking its own length backwards, and the only splice is below.
-        const p = particles[i]!;
-        p.x += p.vx;
-        p.y += p.vy;
-        p.vy += 0.32;
-        p.vx *= 0.99;
-        p.rot += p.vrot;
-        p.life -= 1;
-        if (p.life <= 0 || p.y > window.innerHeight + 24) {
-          particles.splice(i, 1);
-          continue;
-        }
-        ctx.save();
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.rot);
-        ctx.fillStyle = p.color;
-        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
-        ctx.restore();
-      }
-      if (!particles.length && frameRef.current) {
-        cancelAnimationFrame(frameRef.current);
-        frameRef.current = null;
-      }
-    };
-
-    burstFn = (count, x, y, spread = 18) => {
-      const particles = particlesRef.current;
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          x,
-          y,
-          vx: (Math.random() - 0.5) * spread,
-          vy: -Math.random() * 13 - 3,
-          size: 4 + Math.random() * 5,
-          color: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)]!,
-          rot: Math.random() * Math.PI,
-          vrot: (Math.random() - 0.5) * 0.3,
-          life: 90 + Math.random() * 50,
-        });
-      }
-      if (!frameRef.current) tick();
-    };
-
-    return () => {
-      window.removeEventListener('resize', resize);
-      if (frameRef.current) cancelAnimationFrame(frameRef.current);
-      burstFn = null;
-    };
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-[105]"
-      aria-hidden="true"
-    />
-  );
+  fx.confetti(count, x, y, spread);
 }
 
 /* ------------------------------------------------------------- xp popups */
@@ -194,6 +95,10 @@ export function Toasts() {
 
 /* --------------------------------------------------------------- level up */
 
+/** Long enough to swallow the rest of a double-click or a key's first repeat,
+ *  short enough that nobody reaching for "Onward" ever meets it. */
+export const DISMISS_GRACE_MS = 450;
+
 export function LevelUpOverlay() {
   const { levelUpRank, dismissLevelUp } = useStore();
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -204,9 +109,31 @@ export function LevelUpOverlay() {
      question they cannot see. */
   useDialogFocus(dialogRef, levelUpRank !== null);
 
+  /* The whole screen dismisses this, and it opens in response to an answer —
+     so the second click of a double-click on that answer, or a held Enter
+     repeating, landed on it and closed the rank-up before it was ever seen.
+     A beat of grace after opening absorbs both. Stamped in a layout effect,
+     which runs before the browser can deliver the next input event. */
+  const openedAt = useRef(0);
+  useLayoutEffect(() => {
+    if (levelUpRank !== null) openedAt.current = performance.now();
+  }, [levelUpRank]);
+  const dismiss = useCallback(() => {
+    if (performance.now() - openedAt.current < DISMISS_GRACE_MS) return;
+    dismissLevelUp();
+  }, [dismissLevelUp]);
+
   useEffect(() => {
     if (levelUpRank === null) return;
     burstConfetti(110, window.innerWidth / 2, window.innerHeight / 2, 22);
+    /* Light behind the gold leaf: the seal lands in a shockwave of lamplight.
+       Timed to its pop-in (delayed .34s below) and fired from where it
+       actually sits, which moves between the stacked and side-by-side layouts. */
+    const t0 = window.setTimeout(() => {
+      const seal = dialogRef.current?.querySelector('[data-fx-seal]')?.getBoundingClientRect();
+      if (seal) fx.celebrate(seal.left + seal.width / 2, seal.top + seal.height / 2);
+      else fx.celebrate();
+    }, 380);
     const t1 = window.setTimeout(
       () => burstConfetti(60, window.innerWidth / 2 - 220, window.innerHeight / 2 - 60, 16),
       350,
@@ -216,15 +143,20 @@ export function LevelUpOverlay() {
       500,
     );
     const escape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') dismissLevelUp();
+      if (e.key !== 'Escape' && e.key !== 'Enter' && e.key !== ' ') return;
+      /* Handled here, so a focused "Onward" does not also fire its own click
+         from the same key. */
+      e.preventDefault();
+      if (!e.repeat) dismiss();
     };
     window.addEventListener('keydown', escape);
     return () => {
+      window.clearTimeout(t0);
       window.clearTimeout(t1);
       window.clearTimeout(t2);
       window.removeEventListener('keydown', escape);
     };
-  }, [levelUpRank, dismissLevelUp]);
+  }, [levelUpRank, dismiss]);
 
   if (levelUpRank === null) return null;
   const rank = RANKS[levelUpRank] ?? RANKS[RANKS.length - 1]!;
@@ -237,7 +169,7 @@ export function LevelUpOverlay() {
       style={{
         background: 'radial-gradient(circle at 50% 42%, rgba(46,37,26,.95), rgba(12,9,6,.97))',
       }}
-      onClick={dismissLevelUp}
+      onClick={dismiss}
       role="dialog"
       aria-modal="true"
       aria-label={`Rank up — ${rank.name}`}
@@ -307,7 +239,7 @@ export function LevelUpOverlay() {
             past the fold on a phone in landscape and the "Onward" button — the
             only way out other than a stray tap — went with it. */}
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6 [@media(max-height:520px)]:gap-2">
-          <div className="w-fit animate-popIn [animation-delay:.34s]">
+          <div className="w-fit animate-popIn [animation-delay:.34s]" data-fx-seal>
             <RankBadge rank={rank} size={104} decorative />
           </div>
           <h2
@@ -333,7 +265,11 @@ export function LevelUpOverlay() {
           size="lg"
           trailing
           className="mt-6 sm:mt-8 [@media(max-height:520px)]:mt-4"
-          onClick={dismissLevelUp}
+          onClick={(e) => {
+            // The backdrop's click would dismiss a second time.
+            e.stopPropagation();
+            dismiss();
+          }}
         >
           Onward
         </Button>

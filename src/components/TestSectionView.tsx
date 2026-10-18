@@ -186,7 +186,7 @@ export function TestSectionView({
               <div className="mb-5 flex items-center gap-2">
                 <span className="label-quill min-w-0 truncate">{question.topic}</span>
                 {flagged && (
-                  <span className="ml-auto flex-none rounded bg-[#f4d37a] px-2 py-0.5 font-script text-[10px] uppercase tracking-wide text-[#2a2008]">
+                  <span className="ml-auto flex-none rounded bg-[#f4d37a] px-2 py-0.5 font-script text-[11.5px] uppercase tracking-wide text-[#2a2008]">
                     <Glyph name="flag" size={11} className="mr-1 inline-block align-[-1px]" />
                     Flagged
                   </span>
@@ -448,7 +448,7 @@ function SectionTimer({
     >
       <div className="flex items-center gap-3">
         <div role="timer" aria-live="off" className="flex min-w-0 items-center gap-3">
-          <span className="hidden font-script text-[10px] uppercase tracking-[0.16em] text-ink-faint sm:inline">
+          <span className="hidden font-script text-[11.5px] uppercase tracking-[0.16em] text-ink-faint sm:inline">
             Time remaining
           </span>
           <span className="sr-only sm:hidden">Time remaining</span>
@@ -521,6 +521,20 @@ export function ConfirmDialog({
   const bodyId = useId();
   useDialogFocus(ref as RefObject<HTMLElement | null>, true, onCancel);
 
+  /* A click's target is the nearest ancestor of where it went down *and*
+     where it came up — so selecting the body text and releasing past the
+     panel's edge "clicked" the backdrop and cancelled the dialog. Only a
+     press that began on the backdrop counts as tapping outside. */
+  const downOnBackdrop = useRef(false);
+  /* One answer per dialog. "Submit section" is not something to do twice
+     because a double-click got in before the parent unmounted this. */
+  const answered = useRef(false);
+  const once = (fn: () => void) => () => {
+    if (answered.current) return;
+    answered.current = true;
+    fn();
+  };
+
   return createPortal(
     <div
       ref={ref}
@@ -529,8 +543,13 @@ export function ConfirmDialog({
       aria-labelledby={titleId}
       aria-describedby={bodyId}
       className="fixed inset-0 z-[120] flex items-center justify-center bg-[rgba(12,9,6,0.72)] p-4"
+      onPointerDown={(e) => {
+        downOnBackdrop.current = e.target === e.currentTarget;
+      }}
       onClick={(e) => {
-        if (e.target === e.currentTarget) onCancel();
+        const outside = downOnBackdrop.current && e.target === e.currentTarget;
+        downOnBackdrop.current = false;
+        if (outside) once(onCancel)();
       }}
     >
       <div className="panel w-full max-w-sm p-6 text-left">
@@ -543,10 +562,14 @@ export function ConfirmDialog({
         {/* Cancel first in the DOM, so the focus trap lands on the safe
             choice and an Enter pressed out of habit does not submit. */}
         <div className="mt-6 flex flex-col-reverse gap-2.5 sm:flex-row sm:justify-end">
-          <Button variant="ghost" className="min-h-11" onClick={onCancel}>
+          <Button variant="ghost" className="min-h-11" onClick={once(onCancel)}>
             {cancelLabel}
           </Button>
-          <Button variant={danger ? 'danger' : 'primary'} className="min-h-11" onClick={onConfirm}>
+          <Button
+            variant={danger ? 'danger' : 'primary'}
+            className="min-h-11"
+            onClick={once(onConfirm)}
+          >
             {confirmLabel}
           </Button>
         </div>

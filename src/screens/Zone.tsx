@@ -12,6 +12,8 @@ import { fromZoneQuestion } from '@/lib/normalize';
 import { XP } from '@/lib/progress';
 import { sfx } from '@/lib/sfx';
 import { sample } from '@/lib/utils';
+import { savedIds } from '@/lib/quizResume';
+import { zoneQuestionId } from '@/content/ids';
 import { BackLink, Page } from '@/components/Shell';
 import { Button, EmptyState, ProgressBar } from '@/components/ui';
 import { RichText } from '@/components/RichText';
@@ -48,12 +50,24 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
   const navigate = useNavigate();
   const { progress, answerQuestion, clearZone } = useStore();
 
-  const [phase, setPhase] = useState<Phase>('lesson');
+  /* A quiz this tab was in the middle of when it refreshed: the same
+     questions, dealt back in the same order, and straight onto them. Only
+     honoured if every id is still in the pool. */
+  const resumeKey = `zone:${zoneId}`;
+  const [resumeIds] = useState(() => {
+    const ids = savedIds(resumeKey);
+    const pool = new Set((zoneQuizzes()[zoneId] ?? []).map((q) => zoneQuestionId(zoneId, q)));
+    return ids && ids.length > 0 && ids.every((id) => pool.has(id)) ? ids : null;
+  });
+  const [phase, setPhase] = useState<Phase>(resumeIds ? 'quiz' : 'lesson');
   const [results, setResults] = useState<AnswerRecord[] | null>(null);
   const [attemptSeed, setAttemptSeed] = useState(0);
   /* The score to beat, captured as the quiz begins — reading it after the
-     result is written would always show the score you just got. */
-  const [priorBest, setPriorBest] = useState<number | null>(null);
+     result is written would always show the score you just got. A resumed
+     quiz has not written one yet, so the stored best is still the prior one. */
+  const [priorBest, setPriorBest] = useState<number | null>(() =>
+    resumeIds ? (progress.zonesCleared[zoneId] ?? null) : null,
+  );
 
   /* Lesson, quiz and result are one route, so the router's scroll-to-top
      never runs between them. The result opened wherever the last explanation
@@ -73,13 +87,14 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
     /* A fresh sample each attempt — but only where there is a pool to sample
        from. Where there is not, `sample` returns the lot and the retry is the
        same questions reordered. See `deepPool`. */
-    void attemptSeed;
+    const dealt =
+      attemptSeed === 0 && resumeIds
+        ? resumeIds.map((id) => pool.find((q) => zoneQuestionId(zoneId, q) === id)!)
+        : sample(pool, Math.min(QUIZ_LENGTH, pool.length));
     /* The zone's own declared topic is the fallback for questions tagged with
        the zone's old label instead of a skill — see `topicFor` in normalize. */
-    return sample(pool, Math.min(QUIZ_LENGTH, pool.length)).map((q) =>
-      fromZoneQuestion(q, zoneId, entry.path.id, entry.zone.topic),
-    );
-  }, [entry, zoneId, attemptSeed]);
+    return dealt.map((q) => fromZoneQuestion(q, zoneId, entry.path.id, entry.zone.topic));
+  }, [entry, zoneId, attemptSeed, resumeIds]);
 
   if (!entry) {
     return (
@@ -116,7 +131,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
         >
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <div className="font-script text-[10px] uppercase tracking-[0.16em] text-ink-faint">
+              <div className="font-script text-[11.5px] uppercase tracking-[0.16em] text-ink-faint">
                 {meta.name} · {zone.topic}
               </div>
               <h1
@@ -129,7 +144,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
             </div>
             {best !== null && (
               <div className="text-right">
-                <div className="font-script text-[10px] uppercase tracking-wide text-ink-faint">
+                <div className="font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
                   Your best
                 </div>
                 <div className="num text-[30px] text-woods-text">{best}%</div>
@@ -247,6 +262,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
           title={zone.name}
           subtitle={zone.sub}
           accent={meta.color}
+          resumeKey={resumeKey}
           /* Back to this subject's road, which is where you came in from.
              Quitting has to land on the screen you left — anywhere else and
              backing out of a quiz feels like being moved rather than

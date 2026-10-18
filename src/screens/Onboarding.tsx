@@ -1,7 +1,7 @@
 /* Four questions, then a plan. Sets the target score, a weekly XP goal and
    which section to start with — all of which the dashboard reads later. */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { SECTION_BY_ID, SECTIONS } from '@/content/sections';
 import { useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
@@ -121,9 +121,13 @@ function writeDraft(draft: Draft | null) {
   }
 }
 
+/** Long enough to swallow a double-tap's second half, short enough that
+ *  nobody reading the next question can answer it faster. */
+const TAP_THROUGH_MS = 350;
+
 export function Onboarding() {
   const navigate = useNavigate();
-  const { progress, updateProgress } = useStore();
+  const { progress, updateProgress, hasStarted, continueAsGuest } = useStore();
 
   const [draft] = useState(readDraft);
   const [step, setStep] = useState(draft?.step ?? 0);
@@ -149,7 +153,33 @@ export function Onboarding() {
 
   const thisYear = new Date().getFullYear();
 
-  const choose = (value: string | number) => {
+  /* Each answer swaps in the next question's options in the same place, so
+     the second tap of a double-tap — or a phone's delayed ghost click — landed
+     on an option nobody had read yet and answered it. Taps are ignored for a
+     moment after the screen changes. Stamped in a layout effect, before the
+     browser can deliver the next input. */
+  const shownAt = useRef(0);
+  useLayoutEffect(() => {
+    shownAt.current = performance.now();
+  }, [step, phase]);
+
+  /* The button you pressed is gone once the screen changes, and focus went
+     with it to <body>. Put it on the new heading, so a screen reader reads
+     the next question and Tab starts from its options. */
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const firstScreen = useRef(true);
+  useEffect(() => {
+    if (firstScreen.current) {
+      firstScreen.current = false;
+      return;
+    }
+    const active = document.activeElement;
+    if (!active || active === document.body) headingRef.current?.focus({ preventScroll: true });
+  }, [step, phase]);
+
+  /* `at` is the click's own timestamp, on the same clock as `performance.now()`. */
+  const choose = (value: string | number, at: number) => {
+    if (at - shownAt.current < TAP_THROUGH_MS) return;
     sfx.select();
     const next = { ...answers, [current.key]: value };
     setAnswers(next);
@@ -178,6 +208,14 @@ export function Onboarding() {
       savedAt: Date.now(),
     };
 
+    /* Onboarding is an open route, so it can be reached without the front
+       door's "Start free" — a bookmark, a shared link, Back from the landing
+       page. Finishing it there wrote the plan and then hit the guard for
+       not-yet-started visitors, which sent "Set out" to the landing page
+       under the confetti. Finishing onboarding *is* starting. Before the
+       write: switching identity reloads progress, and the update below then
+       lands on top of it. */
+    if (!hasStarted) continueAsGuest();
     updateProgress((p) => ({
       ...p,
       profile,
@@ -214,7 +252,7 @@ export function Onboarding() {
         </p>
         {phase !== 'plan' && (
           <div className="mb-6">
-            <div className="mb-2 flex items-center justify-between font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+            <div className="mb-2 flex items-center justify-between font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint">
               <span>
                 Step {position} of {totalSteps}
               </span>
@@ -226,7 +264,11 @@ export function Onboarding() {
 
         {phase === 'questions' && (
           <>
-            <h1 className="heading mb-2.5 text-[22px] leading-snug text-parchment">
+            <h1
+              ref={headingRef}
+              tabIndex={-1}
+              className="heading mb-2.5 text-[22px] leading-snug text-parchment outline-none"
+            >
               {current.question}
             </h1>
             <p className="mb-7 text-[14px] leading-relaxed text-ink-faint">{current.detail}</p>
@@ -236,7 +278,7 @@ export function Onboarding() {
                 <button
                   key={String(opt.value)}
                   type="button"
-                  onClick={() => choose(opt.value)}
+                  onClick={(e) => choose(opt.value, e.timeStamp)}
                   className="rounded-lg border-2 border-leather-700 bg-leather-800 px-4 py-3.5 text-left text-[15px] text-parchment transition-colors hover:border-gold hover:bg-leather-750 hover:text-parchment"
                 >
                   {opt.label}
@@ -259,7 +301,11 @@ export function Onboarding() {
 
         {phase === 'date' && (
           <>
-            <h1 className="heading mb-2.5 text-[22px] leading-snug text-parchment">
+            <h1
+              ref={headingRef}
+              tabIndex={-1}
+              className="heading mb-2.5 text-[22px] leading-snug text-parchment outline-none"
+            >
               What day do you sit it?
             </h1>
             <p className="mb-7 text-[14px] leading-relaxed text-ink-faint">
@@ -313,7 +359,11 @@ export function Onboarding() {
             what they look like before they can start. */}
         {phase === 'hero' && (
           <>
-            <h1 className="heading mb-2.5 text-[22px] leading-snug text-parchment">
+            <h1
+              ref={headingRef}
+              tabIndex={-1}
+              className="heading mb-2.5 text-[22px] leading-snug text-parchment outline-none"
+            >
               Who is walking the roads?
             </h1>
             <p className="mb-7 text-[14px] leading-relaxed text-ink-faint">
@@ -351,7 +401,13 @@ export function Onboarding() {
               height={132}
               className="mx-auto select-none animate-bobHero"
             />
-            <h1 className="heading mb-6 mt-5 text-[22px] text-gold">Your plan is ready</h1>
+            <h1
+              ref={headingRef}
+              tabIndex={-1}
+              className="heading mb-6 mt-5 text-[22px] text-gold outline-none"
+            >
+              Your plan is ready
+            </h1>
 
             <dl className="space-y-2.5 text-left">
               <PlanRow

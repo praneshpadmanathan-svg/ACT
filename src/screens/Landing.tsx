@@ -74,17 +74,27 @@ function usePointerDepth<T extends HTMLElement>() {
       return;
     }
 
+    /* The latest position, not the one that scheduled the frame: reading the
+       first event of each frame left the plate a frame behind the pointer. */
     let frame = 0;
+    let x = 0;
+    let y = 0;
     const move = (e: PointerEvent) => {
+      x = e.clientX;
+      y = e.clientY;
       if (frame) return;
       frame = requestAnimationFrame(() => {
         frame = 0;
         const r = el.getBoundingClientRect();
-        el.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
-        el.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+        el.style.setProperty('--px', ((x - r.left) / r.width - 0.5).toFixed(3));
+        el.style.setProperty('--py', ((y - r.top) / r.height - 0.5).toFixed(3));
       });
     };
     const rest = () => {
+      /* A frame queued by the last move would otherwise land after this and
+         leave the plate tilted toward the edge the pointer left by. */
+      if (frame) cancelAnimationFrame(frame);
+      frame = 0;
       el.style.setProperty('--px', '0');
       el.style.setProperty('--py', '0');
     };
@@ -336,7 +346,7 @@ export function Landing() {
             <a
               href={hrefFor({ name: 'faq' })}
               onClick={() => sfx.select()}
-              className="mr-1 hidden font-read text-[13.5px] text-parchment-dim underline-offset-4 transition-colors hover:text-parchment hover:underline sm:inline"
+              className="mr-1 hidden font-read text-[13.5px] text-parchment underline-offset-4 transition-colors hover:text-parchment hover:underline sm:inline"
             >
               What is this?
             </a>
@@ -685,7 +695,7 @@ export function Landing() {
       </section>
 
       {/* --------------------------------------------------------- regions */}
-      <section className="shell py-20">
+      <section className="below-fold shell py-20">
         <SectionIntro
           title={
             <>
@@ -707,7 +717,7 @@ export function Landing() {
         <RankShowcase />
       </div>
       {/* -------------------------------------------------------- features */}
-      <section className="border-y border-leather-700 bg-leather-950/50 py-20">
+      <section className="below-fold border-y border-leather-700 bg-leather-950/50 py-20">
         <div className="shell">
           <SectionIntro
             title={
@@ -747,7 +757,7 @@ export function Landing() {
       </section>
 
       {/* ----------------------------------------------------------- steps */}
-      <section className="shell py-20">
+      <section className="below-fold shell py-20">
         <SectionIntro
           title={
             <>
@@ -787,7 +797,7 @@ export function Landing() {
           the footer nav — it is the single most important thing a stranger can
           be told about who made this, and burying it was the wrong instinct
           even though nothing required it to be anywhere else. */}
-      <section className="shell pb-24 text-center">
+      <section className="below-fold shell pb-24 text-center">
         <div className="act-ask act-rise mx-auto max-w-2xl px-8 py-14">
           <h2 className="heading text-[clamp(1.5rem,3.2vw,2rem)] text-parchment-light">
             Ready to <span className="text-gold-bright">set out?</span>
@@ -823,7 +833,7 @@ export function Landing() {
           >
             Begin your quest
           </Button>
-          <p className="mt-5 font-read text-[14px] text-ink-faint">
+          <p className="mt-5 font-read text-[14px] text-parchment-dim">
             Or{' '}
             <a
               href={hrefFor({ name: 'auth', mode: 'signup' })}

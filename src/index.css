@@ -466,6 +466,17 @@
     box-shadow: 0 0 0 1px oklch(var(--c-leather-950));
     outline-offset: 2px;
     border-radius: 4px;
+    /* Arrives rather than appearing: the ring closes in from a few pixels out,
+       which is what draws the eye to where focus went. Ends on the resting
+       ring, so reduced motion — which parks every animation on its last frame
+       — simply shows the ring. */
+    animation: fxFocusIn 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @keyframes fxFocusIn {
+    from {
+      outline-offset: 7px;
+      outline-color: oklch(var(--c-gold) / 0);
+    }
   }
   /* Gold on the paper sheets measures 1.96:1; the deep gold clears 3:1 on
      paper in both themes (3.5 dark, 6.5 light). Paper only: `.proof-sheet`
@@ -514,7 +525,13 @@
   .rail-group {
     /* ink-faint, not gold-deep: gold-deep is a border colour, and as text it
        measured 3.1:1 on the rail in dark and 2.0:1 in light. */
-    @apply px-2.5 font-script text-[10.5px] uppercase tracking-[0.2em] text-ink-faint;
+    @apply px-2.5 font-script text-[11.5px] uppercase tracking-[0.2em] text-ink-faint;
+  }
+  /* In daylight the rail's grain has pale flecks that pull ink-faint to the
+     4.5 line exactly (measured 4.495:1). One step darker clears it; the dark
+     theme keeps the quieter ink, where it measures well clear. */
+  [data-theme='light'] .rail-group {
+    @apply text-parchment-dim;
   }
 
   /* The palette's door, at the head of the rail. Debossed like the blocks at
@@ -775,6 +792,28 @@
   [data-story-mood='grey'] .story-drain {
     opacity: 0.92;
   }
+  /* The title card floats free of the dialogue card, so it is the one piece
+     of cutscene text with nothing of its own behind it. Over the dark theme
+     the 58% scrim sits on a dark page and the gold reads at 7.8:1; over the
+     light theme the same scrim sits on cream and lands at a muddy mid-grey,
+     where the eyebrow measured 2.2:1 with the cards of the page still legible
+     through it. A pool of lamplight-dark behind the words fixes both without
+     touching the scene: on a dark page it is all but invisible. Soft-edged,
+     and wide, so it reads as shadow rather than as a box. */
+  .story-title-plate::before {
+    content: '';
+    @apply pointer-events-none absolute;
+    inset: -6rem -2rem;
+    z-index: -1;
+    background: radial-gradient(
+      ellipse 58% 50% at center,
+      rgba(12, 9, 6, 0.92),
+      rgba(12, 9, 6, 0.78) 50%,
+      rgba(12, 9, 6, 0.4) 80%,
+      transparent
+    );
+  }
+
   [data-story-mood='grey'] .story-scrim {
     background: rgba(14, 16, 22, 0.62);
   }
@@ -1025,6 +1064,120 @@
     transition: transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
+  /* ------------------------------------------------- light on the controls
+
+     Three effects, all driven by the one light source the app already obeys
+     (the lamp, upper left) and all composited or confined to the control
+     they belong to. The particle side of it — sparks, rings, bloom — is the
+     canvas in lib/fx.ts; this is the part that lives on the surfaces.
+
+     1. The sheen. A soft highlight under the pointer, as if the lamp were
+        reflecting off the material where the hand is. Positioned by
+        `--fx-x`/`--fx-y`, which FxLayer writes to the one element under the
+        pointer, and only shown while it is there (`data-fx-lit`). Mouse only:
+        a finger has no position until it presses.
+
+     2. The rim. On the primary action, a point of light orbits the inner
+        edge on hover and focus — the gilt catching the lamp as it turns. The
+        angle is a registered custom property, so the gradient interpolates
+        rather than jumping; where `@property` is missing it is a still rim.
+
+     3. The bloom. Gold throws light. A hovered primary action casts a warm
+        halo onto the leather around it, larger than its shadow, which is what
+        makes it look lit rather than merely coloured. */
+
+  @property --fx-angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+  }
+
+  .btn:not(.btn-primary)::before,
+  .choice::before,
+  .story-choice::before,
+  .fx-sheen::before {
+    content: '';
+    @apply pointer-events-none absolute inset-0;
+    z-index: -1;
+    border-radius: inherit;
+    background: radial-gradient(
+      180px circle at var(--fx-x, 50%) var(--fx-y, 50%),
+      var(--fx-sheen, rgba(255, 232, 178, 0.16)),
+      transparent 62%
+    );
+    opacity: 0;
+    transition: opacity 260ms ease-out;
+  }
+  [data-fx-lit]::before {
+    opacity: 1;
+  }
+  /* Paper cannot get brighter than cream, so on the answer cards the lamp
+     shows as a faint gilt warmth instead of a white highlight. */
+  .choice {
+    --fx-sheen: rgba(212, 160, 23, 0.13);
+  }
+  /* On the light theme's pale buttons a warm-white highlight is invisible;
+     the lamp shows there as a faint gilt warmth, as it does on paper. */
+  [data-theme='light'] .btn {
+    --fx-sheen: rgba(176, 124, 20, 0.12);
+  }
+  .choice-locked::before {
+    opacity: 0;
+  }
+  .story-choice,
+  .fx-sheen {
+    @apply relative isolate;
+  }
+
+  .btn-primary::before {
+    content: '';
+    @apply pointer-events-none absolute inset-0;
+    border-radius: inherit;
+    padding: 2px;
+    /* A highlight on bright gold is invisible on its own — white on pale
+       yellow. Real metal shows its specular by the dark burnish either side
+       of it, so the light travels with a band of shadow at each edge. */
+    background: conic-gradient(
+      from var(--fx-angle),
+      transparent 0 54%,
+      rgba(122, 78, 0, 0.55) 62%,
+      rgba(255, 253, 240, 1) 69%,
+      rgba(122, 78, 0, 0.45) 75%,
+      transparent 83% 100%
+    );
+    /* Cut the middle out, leaving only the ring the padding defines. */
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 240ms ease-out;
+  }
+  .btn-primary:hover:not(:disabled)::before,
+  .btn-primary:focus-visible::before,
+  .btn-primary[aria-busy='true']::before {
+    opacity: 1;
+    animation: fxOrbit 2.6s linear infinite;
+  }
+  @keyframes fxOrbit {
+    to {
+      --fx-angle: 360deg;
+    }
+  }
+  .btn-primary:hover:not(:disabled) {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.4) inset,
+      0 0 0 1px rgba(255, 224, 150, 0.32),
+      0 8px 26px rgba(212, 160, 23, 0.42),
+      0 0 52px rgba(242, 207, 91, 0.22);
+  }
+  /* The press itself: a beat of extra brightness, as if the leaf flexed into
+     the light. Short enough to read as a response, not a state. */
+  .btn-primary:active:not(:disabled) {
+    filter: brightness(1.08) saturate(1.06);
+  }
+
   .btn-ghost {
     @apply border-leather-700 bg-leather-800/80 text-parchment-dim;
   }
@@ -1052,6 +1205,17 @@
   }
   .btn-quill:hover:not(:disabled) {
     @apply border-ink-soft bg-paper-light;
+  }
+
+  /* A press that waits on the network. Disabled alone dims the button to
+     45%, which reads as "unavailable" rather than "working on it" — so a busy
+     button keeps most of its colour and turns a ring of its own ink. */
+  .btn[aria-busy='true'] {
+    @apply cursor-progress opacity-80;
+  }
+  .btn-spinner {
+    @apply -ml-1 inline-block h-[1em] w-[1em] flex-none animate-spin rounded-full border-2
+           border-current border-r-transparent;
   }
 
   .btn-lg {
@@ -1419,7 +1583,7 @@
   /* Opaque. Choices sit on the task well, which is translucent dark leather,
      so at 80% the paper took on the brown beneath and read as dingy card. */
   .choice {
-    @apply relative flex w-full items-start gap-3 rounded-lg border border-paper-edge
+    @apply relative isolate flex w-full items-start gap-3 rounded-lg border border-paper-edge
            bg-paper-light px-4 py-3 text-left font-read text-[1.04rem]
            leading-relaxed text-ink
            transition-[background-color,border-color,box-shadow] duration-base ease-out;
@@ -1482,6 +1646,31 @@
       inset 0 0 0 2px rgba(212, 160, 23, 0.85),
       inset 0 0 16px rgba(212, 160, 23, 0.18);
     animation: giltDraw 240ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  /* A glint crossing the card once, just after the gilt edge has drawn: light
+     running along fresh gold leaf. Confined to the card — it is the card's own
+     background that moves — and it ends off the far edge, so reduced motion,
+     which parks it on its last frame, leaves nothing behind. */
+  .choice-correct::before {
+    opacity: 1;
+    background: linear-gradient(
+        105deg,
+        transparent 38%,
+        rgba(255, 250, 230, 0.75) 50%,
+        rgba(242, 207, 91, 0.35) 54%,
+        transparent 64%
+      )
+      no-repeat;
+    background-size: 260% 100%;
+    animation: fxGlint 820ms 180ms cubic-bezier(0.3, 0.7, 0.2, 1) both;
+  }
+  @keyframes fxGlint {
+    from {
+      background-position: 120% 0;
+    }
+    to {
+      background-position: -60% 0;
+    }
   }
   .choice-correct .choice-key {
     @apply border-[#367040] text-paper-light;
@@ -1758,11 +1947,11 @@
     @apply flex-none text-ink-faint transition-colors duration-quick ease-out;
   }
   .palette-group {
-    @apply px-3 pb-1 pt-3 font-script text-[10.5px] uppercase tracking-[0.2em] text-ink-faint;
+    @apply px-3 pb-1 pt-3 font-script text-[11.5px] uppercase tracking-[0.2em] text-ink-faint;
   }
   .palette-kbd {
     @apply inline-flex items-center rounded border border-leather-700 bg-leather-900 px-1.5 py-0.5 font-mono
-           text-[10.5px] leading-none text-ink-faint;
+           text-[11.5px] leading-none text-ink-faint;
   }
   /* ======================================================== the landing score
 
@@ -1891,6 +2080,19 @@
 
      Quiet. Deep leather, one gilt CTA, and the trademark line set as a line of
      the page rather than as an apology at the bottom of it. */
+  /* The landing page is eight screens long, and on a phone the browser laid
+     out and styled every one of them before the first could respond — one
+     308ms task at load, on the page a prospective customer sees first. These
+     sections lay out only as the reader scrolls near them. Only those after
+     the sample question: the "Try a question" button scrolls to it, and an
+     estimated height above it would land that jump in the wrong place. The
+     `auto` remembers each section's real size once it has rendered, so
+     scrolling back up does not jump either. */
+  .below-fold {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
+  }
+
   .act-ask {
     @apply relative overflow-hidden rounded-2xl border border-leather-700/70 bg-leather-950/80;
     box-shadow: var(--e-resting);
@@ -2117,6 +2319,149 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* ------------------------------------------------------- view transitions
+
+   See lib/viewTransition.ts. Every name below is applied only while
+   `html[data-vt]` is set, i.e. only for the length of a route change, so none
+   of them can create a stacking context or affect layout the rest of the
+   time. Transform and opacity only, as everywhere else. */
+
+[data-vt] .rail-surface {
+  view-transition-name: rail;
+}
+[data-vt] .vt-topbar {
+  view-transition-name: topbar;
+}
+[data-vt] .vt-fx {
+  view-transition-name: fx;
+}
+/* The CSS fade every screen used to arrive with; the transition replaces it. */
+[data-vt] .animate-pageIn {
+  animation: none;
+}
+
+/* The page: the old screen lifts a few pixels as it dissolves, the new one
+   settles up into place a beat later. Out is quicker than in — leaving should
+   get out of the way, arriving is what you are here to see. */
+::view-transition-old(root) {
+  animation: vtLeave 130ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+::view-transition-new(root) {
+  animation: vtArrive 340ms cubic-bezier(0.22, 1, 0.36, 1) 40ms both;
+}
+@keyframes vtLeave {
+  to {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.996);
+  }
+}
+@keyframes vtArrive {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+/* The frame holds still. Only its contents — the active item moving — fade. */
+::view-transition-group(rail),
+::view-transition-group(topbar) {
+  animation: none;
+}
+::view-transition-old(rail),
+::view-transition-new(rail),
+::view-transition-old(topbar),
+::view-transition-new(topbar) {
+  animation-duration: 150ms;
+}
+
+/* Light keeps moving through a page change: only the live canvas is shown,
+   on top, never a frozen photograph of it. */
+::view-transition-old(fx) {
+  display: none;
+}
+::view-transition-new(fx) {
+  animation: none;
+}
+
+/* What you pressed becomes the title of where you arrived. The box travels
+   and reshapes; its contents are never stretched — each snapshot is shown at
+   its own size, clipped to the moving box, the old one fading as the new one
+   comes in. */
+::view-transition-group(vt-origin) {
+  animation-duration: 420ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+::view-transition-image-pair(vt-origin) {
+  overflow: clip;
+}
+::view-transition-old(vt-origin),
+::view-transition-new(vt-origin) {
+  height: 100%;
+  object-fit: none;
+  object-position: left center;
+}
+::view-transition-old(vt-origin) {
+  animation: vtFadeOut 200ms ease-in both;
+}
+/* No heading arrived to receive it (see HEADING_WAIT_MS): the card lifts out
+   with the page instead of lingering over the new one. */
+[data-vt-lone]::view-transition-old(vt-origin) {
+  animation: vtLeave 140ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+::view-transition-new(vt-origin) {
+  animation: vtFadeIn 300ms ease-out 120ms both;
+}
+@keyframes vtFadeOut {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes vtFadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ------------------------------------------------------- forced colours
+
+   Windows High Contrast and its kin replace every author colour with the
+   user's own palette, and erase backgrounds and shadows outright. Text and
+   borders survive; anything that says "this one" with a fill alone does not.
+   Measured: the chosen answer in a timed test (a gold tint before it is
+   scored) and the active option in every Settings choice (a gold fill) were
+   both indistinguishable from their neighbours.
+
+   Every one of those states is already exposed as ARIA, so this keys off the
+   ARIA rather than the classes — it covers every control that says what it
+   is, and cannot drift from the visual styles. The colours are the system's
+   own pair for a selected item, so they are whatever the user chose. */
+@media (forced-colors: active) {
+  [aria-pressed='true'],
+  [role='radio'][aria-checked='true'],
+  [role='option'][aria-selected='true'],
+  [aria-current='page'],
+  [aria-current='step'] {
+    forced-color-adjust: none;
+    background: SelectedItem;
+    color: SelectedItemText;
+    border-color: SelectedItemText;
+  }
+  /* `forced-color-adjust` inherits, so the contents would otherwise keep
+     their authored inks — gold on the system's highlight. */
+  :is(
+      [aria-pressed='true'],
+      [role='radio'][aria-checked='true'],
+      [role='option'][aria-selected='true'],
+      [aria-current='page'],
+      [aria-current='step']
+    )
+    * {
+    color: SelectedItemText;
+    border-color: SelectedItemText;
+    background: transparent;
   }
 }
 

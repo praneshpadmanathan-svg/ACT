@@ -5,6 +5,7 @@
    full-screen overlays with no way back. */
 
 import { useCallback, useEffect, useSyncExternalStore } from 'react';
+import { transition } from './viewTransition';
 
 /** `forgot` asks for the reset email; `reset` is where the link lands. */
 export type AuthMode = 'signin' | 'signup' | 'forgot' | 'reset';
@@ -225,16 +226,38 @@ export function navigate(route: Route, opts: { replace?: boolean } = {}): void {
     if (!window.confirm(exitGuard)) return;
     confirmedLeave = true;
   }
+  /* Full-screen route changes should always start at the top — but as part
+     of the change, not before it. Scrolled first, the outgoing screen was
+     already at its top when the page transition photographed it, so the
+     animation began with a jump away from wherever you had been reading. */
   if (opts.replace) {
     stamp(entryIndex, href);
     confirmedLeave = false;
     lastHash = currentHash();
-    listeners.forEach((l) => l());
+    scrollOnApply = true;
+    notify();
+  } else if (target === currentHash()) {
+    // No hashchange will follow, so there is nothing to wait for.
+    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   } else {
+    scrollOnApply = true;
     window.location.hash = href.slice(1);
   }
-  // Full-screen route changes should always start at the top.
-  window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+}
+
+/** Set by `navigate`, consumed by the change it causes. Back and forward do
+ *  not set it: the browser restores their scroll position itself. */
+let scrollOnApply = false;
+
+/* Every route change goes through here, so every one of them is a page
+   transition where the browser supports it (see viewTransition.ts). */
+function notify(): void {
+  const scroll = scrollOnApply;
+  scrollOnApply = false;
+  transition(() => {
+    listeners.forEach((l) => l());
+    if (scroll) window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+  });
 }
 
 function subscribe(listener: () => void): () => void {
@@ -273,6 +296,8 @@ if (typeof window !== 'undefined') {
       if (landed === null) window.history.back();
       else if (landed !== entryIndex) window.history.go(entryIndex - landed);
       else stamp(entryIndex, '#/' + lastHash);
+      // The move was refused, so the scroll it asked for goes with it.
+      scrollOnApply = false;
       return;
     }
     if (landed === null) {
@@ -286,7 +311,7 @@ if (typeof window !== 'undefined') {
       hash = currentHash();
     }
     lastHash = hash;
-    listeners.forEach((l) => l());
+    notify();
   });
 }
 

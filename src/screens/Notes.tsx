@@ -13,6 +13,7 @@ import { SECTION_BY_ID, allNotePages, getNotePage, notesFor, useContent } from '
 import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
+import { fx } from '@/lib/fx';
 import { cx } from '@/lib/utils';
 import type { NoteBlock, SectionId } from '@/types';
 import { BackLink, Page } from '@/components/Shell';
@@ -118,7 +119,7 @@ export function NotesScreen({ section }: { section?: string }) {
                       <span className="mt-1 block text-[13px] leading-relaxed text-ink-faint">
                         {page.summary}
                       </span>
-                      <span className="mt-2 block font-script text-[10px] uppercase tracking-wide text-ink-faint">
+                      <span className="mt-2 block font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
                         {page.minutes} min read
                       </span>
                     </span>
@@ -146,18 +147,28 @@ export function NoteReader({ pageId }: { pageId: string }) {
   /* Track read progress through the article, and mark the page complete once
      the reader actually reaches the end. */
   useEffect(() => {
-    const onScroll = () => {
+    /* At most once a frame. A trackpad fires scroll far faster than the
+       screen repaints, and each one forced a layout read and a render. */
+    let frame = 0;
+    const measure = () => {
+      frame = 0;
       const el = articleRef.current;
       if (!el) return;
       const rect = el.getBoundingClientRect();
       const total = rect.height - window.innerHeight;
       const seen = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 1;
-      setScrolled(seen);
+      /* Whole percent: the bar cannot draw finer, and an unrounded float is a
+         new value — and a re-render of the whole article — on every event. */
+      setScrolled(Math.round(seen * 100) / 100);
     };
-    onScroll();
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(measure);
+    };
+    measure();
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     return () => {
+      if (frame) window.cancelAnimationFrame(frame);
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
     };
@@ -406,11 +417,16 @@ function CheckBlock({ block }: { block: Extract<NoteBlock, { type: 'check' }> })
             <button
               key={i}
               type="button"
-              disabled={revealed}
-              onClick={() => {
+              /* Not `disabled`: it would drop the focused answer's focus to
+                 <body>, halfway down a long article. */
+              aria-disabled={revealed}
+              onClick={(e) => {
+                if (revealed) return;
                 setChosen(i);
                 if (isCorrect) sfx.correct();
                 else sfx.wrong();
+                if (isCorrect) fx.correct(e.currentTarget);
+                else fx.wrong(e.currentTarget);
               }}
               className={cx(
                 'choice',

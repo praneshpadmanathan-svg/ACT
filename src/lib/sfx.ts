@@ -70,6 +70,35 @@ function buildImpulse(audio: AudioContext, seconds = 1.05, decay = 3.8): AudioBu
   return impulse;
 }
 
+/** Run `fn` when the main thread is free, or soon regardless. */
+function whenIdle(fn: () => void): void {
+  if (typeof window.requestIdleCallback === 'function')
+    window.requestIdleCallback(fn, { timeout: 1000 });
+  else window.setTimeout(fn, 50);
+}
+
+/* One second of white noise, made once and shared. Every click used to fill a
+   fresh buffer of its own; noise is noise, so each burst now plays a slice of
+   this one from a random point instead. */
+let noiseBed: AudioBuffer | null = null;
+function noiseBuffer(a: AudioContext): AudioBuffer {
+  if (noiseBed && noiseBed.sampleRate === a.sampleRate) return noiseBed;
+  const frames = a.sampleRate;
+  noiseBed = a.createBuffer(1, frames, a.sampleRate);
+  const data = noiseBed.getChannelData(0);
+  for (let i = 0; i < frames; i++) data[i] = Math.random() * 2 - 1;
+  return noiseBed;
+}
+
+/** Noise for one click, for before the shared bed exists. */
+function burst(a: AudioContext, seconds: number): AudioBuffer {
+  const frames = Math.max(1, Math.floor(a.sampleRate * seconds));
+  const buffer = a.createBuffer(1, frames, a.sampleRate);
+  const data = buffer.getChannelData(0);
+  for (let i = 0; i < frames; i++) data[i] = Math.random() * 2 - 1;
+  return buffer;
+}
+
 function audioCtx(): AudioContext | null {
   if (typeof window === 'undefined') return null;
 
@@ -95,8 +124,19 @@ function audioCtx(): AudioContext | null {
     limiter.attack.value = 0.003;
     limiter.release.value = 0.18;
 
+    /* The room is built in idle time, not here. This runs inside whatever
+       tap made the first sound of the visit, and synthesising a second of
+       stereo tail — a hundred thousand samples, each with a `pow` — cost that
+       tap about 70ms on a mid-range phone: the first press anywhere on the
+       site was the slowest one. Until it lands, cues play dry, which across a
+       few milliseconds nobody can hear. */
     const convolver = ctx.createConvolver();
-    convolver.buffer = buildImpulse(ctx);
+    const room = ctx;
+    whenIdle(() => {
+      convolver.buffer = buildImpulse(room);
+      // Made here too, so the first click does not make it mid-tap either.
+      noiseBuffer(room);
+    });
 
     reverbSend = ctx.createGain();
     reverbSend.gain.value = 0.22;
@@ -210,13 +250,14 @@ function noise({
   if (!a || muted) return;
 
   const t = a.currentTime + at;
-  const frames = Math.max(1, Math.floor(a.sampleRate * decay));
-  const buffer = a.createBuffer(1, frames, a.sampleRate);
-  const data = buffer.getChannelData(0);
-  for (let i = 0; i < frames; i++) data[i] = Math.random() * 2 - 1;
-
+  /* The shared bed once idle time has made it; until then — the first click
+     of a visit — a burst exactly this long, which is cheap. Building the full
+     bed here would put a second of synthesis back inside the tap. */
+  const bed = noiseBed?.sampleRate === a.sampleRate ? noiseBed : burst(a, decay);
   const src = a.createBufferSource();
-  src.buffer = buffer;
+  src.buffer = bed;
+  // A different slice each time, so repeated clicks do not sound sampled.
+  const offset = Math.random() * Math.max(0, bed.duration - decay - 0.05);
 
   const filter = a.createBiquadFilter();
   filter.type = type;
@@ -231,7 +272,7 @@ function noise({
   filter.connect(env);
   connect(env, wet);
 
-  src.start(t);
+  src.start(t, offset);
   src.stop(t + decay + 0.02);
 }
 

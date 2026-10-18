@@ -35,13 +35,15 @@ function Field({
   return (
     <div className="border-t border-leather-700/70 py-4 first:border-t-0 first:pt-0">
       <div className="mb-2 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-        <span className="font-script text-[10.5px] uppercase tracking-[0.14em] text-ink-faint">
+        <span className="font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint">
           {label}
         </span>
       </div>
       {children}
       {hint && (
-        <p className="mt-2 font-read text-[12.5px] leading-relaxed text-ink-faint">{hint}</p>
+        <p className="mt-2 max-w-[68ch] font-read text-[12.5px] leading-relaxed text-ink-faint">
+          {hint}
+        </p>
       )}
     </div>
   );
@@ -168,7 +170,7 @@ function SwitchRow({
         <span className="block font-display text-[13.5px] font-semibold text-parchment">
           {label}
         </span>
-        <span className="mt-1 block font-read text-[12.5px] leading-relaxed text-ink-faint">
+        <span className="mt-1 block max-w-[68ch] font-read text-[12.5px] leading-relaxed text-ink-faint">
           {disabled && disabledNote ? disabledNote : detail}
         </span>
       </span>
@@ -301,12 +303,12 @@ export function DiagnosticsPanel() {
     <div className="panel p-6 sm:p-7">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
         <h2 className="heading text-[1.125rem] text-parchment">Diagnostics</h2>
-        <span className="font-script text-[10.5px] uppercase tracking-[0.14em] text-ink-faint">
+        <span className="font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint">
           {events.length} recorded{errors ? ` · ${errors} error${errors === 1 ? '' : 's'}` : ''}
         </span>
       </div>
 
-      <p className="mb-4 font-read text-[13px] leading-relaxed text-ink-faint">
+      <p className="mb-4 max-w-[68ch] font-read text-[13px] leading-relaxed text-ink-faint">
         Problems this app noticed on this device — failed syncs, files it could not cache, screens
         that crashed. It stays here unless you send it. If something is not working, copying this
         into an email is the single most useful thing you can do.

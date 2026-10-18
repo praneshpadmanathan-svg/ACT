@@ -26,6 +26,17 @@ const FOCUSABLE = [
   '[tabindex]:not([tabindex="-1"])',
 ].join(',');
 
+/* Open dialogs, oldest first. Each one listens for keys on the document in
+   the capture phase, and listeners on one target all run whatever
+   `stopPropagation` says — so with a confirm open over another dialog, one
+   Escape closed *both*. Only the newest answers the keyboard. */
+const stack: HTMLElement[] = [];
+
+/** Where focus goes when the element that opened a dialog no longer exists. */
+function fallbackFocus(): HTMLElement | null {
+  return document.getElementById('main') ?? document.querySelector<HTMLElement>('main');
+}
+
 export function useDialogFocus(
   ref: RefObject<HTMLElement | null>,
   active: boolean,
@@ -72,8 +83,14 @@ export function useDialogFocus(
       parent = parent.parentElement;
     }
 
-    // Focus the first control, or the dialog itself if it has none yet.
+    stack.push(node);
+
+    /* Focus the first control, or the dialog itself if it has none yet. Only
+       while focus is still outside: the fallback timer below fires 120ms in,
+       and by then a quick click or Tab may already have put focus somewhere
+       inside on purpose — snatching it back to the first control lost that. */
     const focusFirst = () => {
+      if (node.contains(document.activeElement)) return;
       const first = node.querySelector<HTMLElement>(FOCUSABLE);
       (first ?? node).focus({ preventScroll: true });
     };
@@ -84,6 +101,7 @@ export function useDialogFocus(
     /* Keep Tab inside. The story overlay's lines arrive one at a time, so the
        focusable set is re-read on every keypress rather than cached. */
     const onKey = (e: KeyboardEvent) => {
+      if (stack[stack.length - 1] !== node) return;
       if (e.key === 'Escape' && escape.current) {
         e.preventDefault();
         e.stopPropagation();
@@ -91,8 +109,12 @@ export function useDialogFocus(
         return;
       }
       if (e.key !== 'Tab') return;
+      /* Tab order only. `FOCUSABLE` matches a `tabindex="-1"` button — the
+         story's full-screen "continue" surface is one — and with it as the
+         last item Tab off the real last control was never caught, and walked
+         out of the dialog into the browser chrome. */
       const items = [...node.querySelectorAll<HTMLElement>(FOCUSABLE)].filter(
-        (el) => el.offsetParent !== null || el === document.activeElement,
+        (el) => el.tabIndex >= 0 && (el.offsetParent !== null || el === document.activeElement),
       );
       if (!items.length) {
         e.preventDefault();
@@ -103,9 +125,12 @@ export function useDialogFocus(
       const first = items[0]!;
       const last = items[items.length - 1]!;
       const current = document.activeElement as HTMLElement | null;
-      if (!node.contains(current)) {
+      /* Outside the dialog, or on something inside that is not in the tab
+         order: the browser's own next step from there is not guaranteed to
+         stay in, so take it. */
+      if (!current || !node.contains(current) || !items.includes(current)) {
         e.preventDefault();
-        first.focus();
+        (e.shiftKey ? last : first).focus();
         return;
       }
       if (!e.shiftKey && current === last) {
@@ -123,7 +148,16 @@ export function useDialogFocus(
       window.clearTimeout(fallback);
       document.removeEventListener('keydown', onKey, true);
       siblings.forEach((el) => el.removeAttribute('inert'));
-      returnTo?.focus?.({ preventScroll: true });
+      const at = stack.lastIndexOf(node);
+      if (at >= 0) stack.splice(at, 1);
+      /* Back where it came from — unless that element went away while the
+         dialog was up (the rank-up lands as the question that earned it is
+         replaced), in which case focus would fall to <body> and a keyboard
+         user would start again from the skip link. The main landmark is the
+         nearest thing to "where you were". */
+      const target =
+        returnTo && returnTo.isConnected && returnTo !== document.body ? returnTo : fallbackFocus();
+      target?.focus?.({ preventScroll: true });
     };
   }, [ref, active]);
 }

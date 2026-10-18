@@ -322,7 +322,7 @@ function StatsBody({ progress }: { progress: Progress }) {
               <div className="mt-3">
                 <ProgressBar value={pct} color={section.color} height={8} />
               </div>
-              <div className="mt-2.5 flex justify-between font-script text-[10px] uppercase tracking-wide text-ink-faint">
+              <div className="mt-2.5 flex justify-between font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
                 <span>
                   {ok}/{n} correct
                 </span>
@@ -365,7 +365,7 @@ function StatsBody({ progress }: { progress: Progress }) {
                 {titleCase(t.topic)}
               </span>
               <span
-                className="hidden w-16 flex-none font-script text-[10px] uppercase tracking-wide sm:block"
+                className="hidden w-16 flex-none font-script text-[11.5px] uppercase tracking-wide sm:block"
                 style={{ color: meta?.color }}
               >
                 {meta?.name}
@@ -406,7 +406,7 @@ function StatsBody({ progress }: { progress: Progress }) {
 function Figure({ label, value }: { label: string; value: string }) {
   return (
     <div className="panel-quiet px-4 py-3.5">
-      <div className="font-script text-[10px] uppercase leading-tight tracking-[0.12em] text-ink-faint">
+      <div className="font-script text-[11.5px] uppercase leading-tight tracking-[0.12em] text-ink-faint">
         {label}
       </div>
       <div className="num mt-1.5 text-[22px] leading-none text-parchment">{value}</div>

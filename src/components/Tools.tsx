@@ -256,7 +256,7 @@ function Scratchpad() {
     <div>
       <label
         htmlFor="scratch-paper"
-        className="mb-2 block font-script text-[10.5px] uppercase tracking-[0.14em] text-ink-faint"
+        className="mb-2 block font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint"
       >
         Scratch paper
       </label>
@@ -278,7 +278,7 @@ function Scratchpad() {
         <button
           type="button"
           onClick={() => setText('')}
-          className="font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint transition-colors hover:text-gold"
+          className="font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint transition-colors hover:text-gold inline-flex items-center [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:px-2"
         >
           Clear
         </button>

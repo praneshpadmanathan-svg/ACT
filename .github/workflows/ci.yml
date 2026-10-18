@@ -8,11 +8,13 @@
 # The jobs below are every command `npm run build` runs, split apart so a
 # failure names itself — one combined step that says "build failed" makes you
 # go read the log to find out whether it was the linter, a test, or the
-# compiler — plus two the build chain leaves out, `format:check` and
-# `typecheck`. That asymmetry is deliberate: formatting is not worth failing a
-# local build over, and `tsc -b` inside the build is incremental where
-# `typecheck` is not. It does mean a clean `npm run build` is not on its own
-# proof that CI will pass, which is worth knowing before pushing.
+# compiler — plus three the build chain leaves out: `format:check`,
+# `typecheck`, and `check:contrast`, which needs a browser. That asymmetry is
+# deliberate: formatting is not worth failing a local build over, `tsc -b`
+# inside the build is incremental where `typecheck` is not, and the production
+# build runs on machines with no browser. It does mean a clean `npm run build`
+# is not on its own proof that CI will pass, which is worth knowing before
+# pushing.
 #
 # Keep this list and `package.json`'s `build` script in step. The last time
 # they drifted, CI spent four days failing on a script that no longer existed.
@@ -90,3 +92,15 @@ jobs:
       # anything: proof the thing actually assembles.
       - name: Build
         run: npx vite build
+
+      # The rendered app, in a real browser: every route in both themes,
+      # every text run measured against what is actually painted behind it,
+      # and no visible text under 11px. Needs the build above, which is also
+      # why it is CI-only — `npm run build` is the production build, and
+      # Vercel's build machines have no browser to run it in. See the header
+      # of scripts/check-contrast.mjs.
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Contrast and legibility
+        run: npm run check:contrast

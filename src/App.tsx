@@ -8,7 +8,8 @@ import { startAnalytics, trackScreen } from '@/lib/analytics';
 import { MotionProvider } from '@/lib/motion';
 import { registerStage } from '@/lib/juice';
 import { SideNav } from '@/components/Shell';
-import { ConfettiCanvas, LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
+import { LevelUpOverlay, Toasts, XPPopups } from '@/components/Feedback';
+import { FxLayer } from '@/components/FxLayer';
 import { StoryOverlay } from '@/game/StoryOverlay';
 import { RegionBackdrop } from '@/game/RegionBackdrop';
 import { ScreenSkeleton } from '@/components/ScreenSkeleton';
@@ -362,7 +363,7 @@ export default function App() {
       {hasStarted && <StoryOverlay />}
 
       <UpdatePrompt />
-      <ConfettiCanvas />
+      <FxLayer />
       <XPPopups />
       <Toasts />
       <LevelUpOverlay />
@@ -389,14 +390,14 @@ function UpdatePrompt() {
         <button
           type="button"
           onClick={apply}
-          className="font-display text-[13px] font-semibold text-gold transition-colors hover:text-gold-bright"
+          className="font-display text-[13px] font-semibold text-gold transition-colors hover:text-gold-bright inline-flex items-center [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:px-2"
         >
           Reload now
         </button>
         <button
           type="button"
           onClick={() => setApply(null)}
-          className="font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+          className="font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment inline-flex items-center [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:px-2"
         >
           Later
         </button>

@@ -267,11 +267,22 @@ export function StoryOverlay() {
     return () => window.clearTimeout(id);
   }, [chapter, showTitle]);
 
+  /* The fade-out. Held so Skip pressed twice, or Escape then a tap, schedules
+     one close rather than one each, and so the scene stops taking input while
+     it fades — a tap in those 340ms used to step the story on underneath. */
+  const closeTimer = useRef<number | null>(null);
+  useEffect(
+    () => () => {
+      if (closeTimer.current !== null) window.clearTimeout(closeTimer.current);
+    },
+    [],
+  );
   const close = useCallback(() => {
-    if (!chapter) return;
+    if (!chapter || closeTimer.current !== null) return;
     setClosing(true);
     const id = chapter.id;
-    window.setTimeout(() => {
+    closeTimer.current = window.setTimeout(() => {
+      closeTimer.current = null;
       updateProgress((p) => ({
         ...p,
         storySeen: p.storySeen.includes(id) ? p.storySeen : [...p.storySeen, id],
@@ -281,7 +292,7 @@ export function StoryOverlay() {
   }, [chapter, updateProgress]);
 
   const advance = useCallback(() => {
-    if (!chapter || !beat) return;
+    if (!chapter || !beat || closeTimer.current !== null) return;
 
     // First tap finishes the line rather than skipping it.
     if (!typing.done) {
@@ -318,6 +329,7 @@ export function StoryOverlay() {
   }, [chapter, beat, typing, reply, lineIndex, beatIndex, close]);
 
   const answer = (choice: StoryChoice) => {
+    if (closeTimer.current !== null || reply) return;
     sfx.achieve();
     updateProgress((p) => ({ ...p, oath: choice.value }));
     setReply(choice.reply);
@@ -418,7 +430,7 @@ export function StoryOverlay() {
       {!titleGone && (
         <div
           className={cx(
-            'relative z-10 px-6 text-center',
+            'story-title-plate relative z-10 px-6 text-center',
             !showTitle && 'pointer-events-none absolute inset-x-0 animate-storyTitleOut',
           )}
         >
@@ -538,8 +550,14 @@ export function StoryOverlay() {
 
               {/* pacing dots + prompt */}
               {!atChoice && (
+                /* One line, always. "Show all" is two words, and beside a long
+                   chapter's dots on a phone it wrapped to two lines — then
+                   became "Continue ›" when the line finished typing, halving
+                   the row and jolting the whole card 9px (a layout shift of
+                   0.105, most of this screen's). The prompt never wraps; the
+                   dots, which are decoration, give up the width instead. */
                 <div className="mt-4 flex items-center justify-between gap-3">
-                  <span className="flex items-center gap-1.5" aria-hidden="true">
+                  <span className="flex min-w-0 items-center gap-1.5" aria-hidden="true">
                     {Array.from({ length: totalLines }, (_, i) => (
                       <i
                         key={i}
@@ -552,7 +570,7 @@ export function StoryOverlay() {
                   </span>
                   <span
                     className={cx(
-                      'inline-flex items-center gap-1 font-script text-[12px] uppercase tracking-[0.16em]',
+                      'inline-flex flex-none items-center gap-1 whitespace-nowrap font-script text-[12px] uppercase tracking-[0.16em]',
                       typing.done ? 'animate-shimmer text-gold' : 'text-ink-faint',
                     )}
                   >
