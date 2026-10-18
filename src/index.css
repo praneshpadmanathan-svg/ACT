@@ -2080,6 +2080,19 @@
 
      Quiet. Deep leather, one gilt CTA, and the trademark line set as a line of
      the page rather than as an apology at the bottom of it. */
+  /* The landing page is eight screens long, and on a phone the browser laid
+     out and styled every one of them before the first could respond — one
+     308ms task at load, on the page a prospective customer sees first. These
+     sections lay out only as the reader scrolls near them. Only those after
+     the sample question: the "Try a question" button scrolls to it, and an
+     estimated height above it would land that jump in the wrong place. The
+     `auto` remembers each section's real size once it has rendered, so
+     scrolling back up does not jump either. */
+  .below-fold {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
+  }
+
   .act-ask {
     @apply relative overflow-hidden rounded-2xl border border-leather-700/70 bg-leather-950/80;
     box-shadow: var(--e-resting);

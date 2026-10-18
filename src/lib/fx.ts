@@ -422,8 +422,12 @@ function tick(now: number): void {
   if (!g) return;
   /* Clamped, so a frame that arrives late — a GC pause, a busy main thread —
      advances the effect by at most two frames' worth instead of teleporting
-     every spark to where it would have been. */
-  const dt = Math.min(now - last, 34);
+     every spark to where it would have been. And floored at zero: `wake`
+     stamps `last` with the moment the effect was asked for, but a frame's
+     timestamp is when that frame *began*, which can be earlier — a negative
+     first step that ran ages backwards and eased a ring to a negative
+     radius, which `arc` throws on. */
+  const dt = Math.max(0, Math.min(now - last, 34));
   last = now;
   const s = dt / 1000;
 

@@ -1,7 +1,7 @@
 import { act, type ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { afterEach, expect, it, vi } from 'vitest';
-import { QuestionRunner, type RunnableQuestion } from './QuestionRunner';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { QuestionRunner, type AnswerRecord, type RunnableQuestion } from './QuestionRunner';
 import { juice } from '@/lib/juice';
 import { sfx } from '@/lib/sfx';
 import { fx } from '@/lib/fx';
@@ -158,4 +158,68 @@ it('does not finish a timed test that was left inside the auto-advance beat', ()
   cleanup(); // Exit, before the 120ms advance
   vi.advanceTimersByTime(500);
   expect(onFinish).not.toHaveBeenCalled();
+});
+
+/* A refresh never unmounts anything. To stand in for one, the saved run is
+   read while the first runner is still mounted — which is exactly the state
+   the page is in when the browser reloads it. */
+describe('a quiz that survives a refresh', () => {
+  afterEach(() => sessionStorage.clear());
+  const nextButton = (host: HTMLElement) =>
+    [...host.querySelectorAll('button')].find((b) =>
+      /next question|see results/i.test(b.textContent ?? ''),
+    );
+
+  it('lands on the explanation that was open, without answering it twice', () => {
+    const first = mountRunner({ resumeKey: 'zone:z' });
+    act(() => first.radios()[1]!.click());
+    const second = mountRunner({ resumeKey: 'zone:z' });
+    expect(second.host.textContent).toContain('Prompt q1');
+    expect(second.radios()[1]!.getAttribute('aria-checked')).toBe('true');
+    expect(second.host.querySelector('.choice-wrong')).not.toBeNull();
+    act(() => nextButton(second.host)!.click());
+    act(() => second.radios()[0]!.click());
+    act(() => nextButton(second.host)!.click());
+    // Only the answer given after the refresh was reported again...
+    expect(second.onAnswer).toHaveBeenCalledOnce();
+    // ...but the result counts both.
+    const records = second.onFinish.mock.calls[0]![0];
+    expect(records.map((r: AnswerRecord) => [r.question.id, r.chosen])).toEqual([
+      ['q1', 'b'],
+      ['q2', 'a'],
+    ]);
+    second.cleanup();
+    first.cleanup();
+  });
+
+  it('lands on the next question if it had already moved on', () => {
+    const first = mountRunner({ resumeKey: 'zone:z' });
+    act(() => first.radios()[0]!.click());
+    act(() => nextButton(first.host)!.click());
+    const second = mountRunner({ resumeKey: 'zone:z' });
+    expect(second.host.textContent).toContain('Prompt q2');
+    expect(second.host.querySelector('[aria-checked="true"]')).toBeNull();
+    second.cleanup();
+    first.cleanup();
+  });
+
+  it('forgets the run once the quiz is left', () => {
+    const first = mountRunner({ resumeKey: 'zone:z' });
+    act(() => first.radios()[1]!.click());
+    first.cleanup();
+    const second = mountRunner({ resumeKey: 'zone:z' });
+    expect(second.host.querySelector('[aria-checked="true"]')).toBeNull();
+    second.cleanup();
+  });
+
+  it('ignores a saved run for a different set of questions', () => {
+    const first = mountRunner({ resumeKey: 'zone:z' });
+    act(() => first.radios()[1]!.click());
+    const other = twoQuestions().reverse();
+    const second = mountRunner({ resumeKey: 'zone:z', questions: other });
+    expect(second.host.textContent).toContain('Prompt q2');
+    expect(second.host.querySelector('[aria-checked="true"]')).toBeNull();
+    second.cleanup();
+    first.cleanup();
+  });
 });

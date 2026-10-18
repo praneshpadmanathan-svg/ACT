@@ -550,8 +550,14 @@ export function StoryOverlay() {
 
               {/* pacing dots + prompt */}
               {!atChoice && (
+                /* One line, always. "Show all" is two words, and beside a long
+                   chapter's dots on a phone it wrapped to two lines — then
+                   became "Continue ›" when the line finished typing, halving
+                   the row and jolting the whole card 9px (a layout shift of
+                   0.105, most of this screen's). The prompt never wraps; the
+                   dots, which are decoration, give up the width instead. */
                 <div className="mt-4 flex items-center justify-between gap-3">
-                  <span className="flex items-center gap-1.5" aria-hidden="true">
+                  <span className="flex min-w-0 items-center gap-1.5" aria-hidden="true">
                     {Array.from({ length: totalLines }, (_, i) => (
                       <i
                         key={i}
@@ -564,7 +570,7 @@ export function StoryOverlay() {
                   </span>
                   <span
                     className={cx(
-                      'inline-flex items-center gap-1 font-script text-[12px] uppercase tracking-[0.16em]',
+                      'inline-flex flex-none items-center gap-1 whitespace-nowrap font-script text-[12px] uppercase tracking-[0.16em]',
                       typing.done ? 'animate-shimmer text-gold' : 'text-ink-faint',
                     )}
                   >

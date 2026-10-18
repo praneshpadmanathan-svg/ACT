@@ -12,6 +12,7 @@ import { juice } from '@/lib/juice';
 import { fx } from '@/lib/fx';
 import { sfx } from '@/lib/sfx';
 import { cx, formatClock } from '@/lib/utils';
+import { clearRun, restoreRun, saveRun } from '@/lib/quizResume';
 import { AnimatePresence, m, SPRING, SPRING_SNAP, useReducedMotion } from '@/lib/motion';
 import { RichText } from './RichText';
 import { PassagePanel } from './PassagePanel';
@@ -66,6 +67,11 @@ interface Props {
   accent?: string;
   /** Hide explanations until the very end, the way a real test does. */
   deferFeedback?: boolean;
+  /** Keep this run across a page refresh, under this key. The caller must deal
+   *  the same `questions` back on the reload — see `savedIds`. For quizzes
+   *  that show feedback; a deferred-feedback run is a timed test, which has
+   *  its own session. */
+  resumeKey?: string;
 }
 
 /* ------------------------------------------------------- reward escalation
@@ -152,17 +158,24 @@ export function QuestionRunner({
   subtitle,
   accent = 'oklch(var(--c-gold))',
   deferFeedback = false,
+  resumeKey,
 }: Props) {
   const reducedMotion = useReducedMotion();
-  const [index, setIndex] = useState(0);
-  const [chosen, setChosen] = useState<string | null>(null);
-  const [revealed, setRevealed] = useState(false);
-  const [records, setRecords] = useState<AnswerRecord[]>([]);
+  /* A refresh lands back on the question that was on screen — with its
+     explanation open, if it had been answered — rather than on the lesson. */
+  const [resumed] = useState(() => (resumeKey ? restoreRun(resumeKey, questions) : null));
+  const resumedAnswered = !!resumed && resumed.records.length > resumed.index;
+  const [index, setIndex] = useState(resumed?.index ?? 0);
+  const [chosen, setChosen] = useState<string | null>(
+    resumedAnswered ? (resumed.records[resumed.index]!.chosen ?? null) : null,
+  );
+  const [revealed, setRevealed] = useState(resumedAnswered);
+  const [records, setRecords] = useState<AnswerRecord[]>(resumed?.records ?? []);
   const [startedAt, setStartedAt] = useState(() => Date.now());
-  const [streak, setStreak] = useState(0);
-  const [elapsed, setElapsed] = useState(0);
+  const [streak, setStreak] = useState(resumed?.streak ?? 0);
+  const [elapsed, setElapsed] = useState(resumed?.elapsed ?? 0);
   /* The correct row lights on its own beat, not on `revealed` — see REVEAL_LAG. */
-  const [litCorrect, setLitCorrect] = useState(false);
+  const [litCorrect, setLitCorrect] = useState(resumedAnswered);
 
   const litTimer = useRef<number | null>(null);
   /* Test mode's automatic step to the next question. Tracked so Exit inside
@@ -171,7 +184,7 @@ export function QuestionRunner({
   /* `revealed` is state, and state is read from the render that queued the
      handler — so a key and a click landing before React re-renders both
      passed the guard and the question was answered twice. */
-  const answeredRef = useRef(false);
+  const answeredRef = useRef(resumedAnswered);
   const choiceEls = useRef<Record<string, HTMLButtonElement | null>>({});
 
   const question = questions[index];
@@ -208,6 +221,23 @@ export function QuestionRunner({
     const id = window.setInterval(() => setElapsed((e) => e + 1), 1000);
     return () => window.clearInterval(id);
   }, []);
+
+  /* Written on every step rather than every tick: the clock is carried along
+     with whatever it read at the last answer, a few seconds' drift at most. */
+  const elapsedRef = useRef(elapsed);
+  useEffect(() => {
+    elapsedRef.current = elapsed;
+  }, [elapsed]);
+  useEffect(() => {
+    if (resumeKey)
+      saveRun(resumeKey, questions, { index, records, streak, elapsed: elapsedRef.current });
+  }, [resumeKey, questions, index, records, streak]);
+  /* Gone the moment the quiz is: finished, quit or navigated away from. A page
+     unload never unmounts anything, so a refresh is the one way back in. */
+  useEffect(() => {
+    if (!resumeKey) return;
+    return () => clearRun(resumeKey);
+  }, [resumeKey]);
 
   const commit = useCallback(
     (key: string) => {

@@ -19,7 +19,9 @@ const ctx = new Proxy(
   {
     get(target, key) {
       if (key in target) return target[key as 'calls'];
-      return (..._args: unknown[]) => {
+      return (...args: unknown[]) => {
+        // As strict as Chromium's: a negative radius is an exception, not a no-op.
+        if (key === 'arc' && (args[2] as number) < 0) throw new RangeError('negative radius');
         target.calls.push(String(key));
         return { addColorStop: () => {} };
       };
@@ -165,5 +167,15 @@ it('stays dark in a high-contrast mode, whose palette cannot reach a canvas', ()
   motion.forced = true;
   fx.press(100, 100);
   fx.confetti(20, 100, 100);
+  expect(fx.count).toBe(0);
+});
+
+it('survives a frame stamped before the effect was asked for', () => {
+  // rAF hands each frame the time it began; a tap can land after that.
+  fx.press(100, 100);
+  const due = queue;
+  queue = [];
+  expect(() => due.forEach((cb) => cb(clock - 16))).not.toThrow();
+  run(1000);
   expect(fx.count).toBe(0);
 });

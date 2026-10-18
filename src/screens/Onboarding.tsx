@@ -127,7 +127,7 @@ const TAP_THROUGH_MS = 350;
 
 export function Onboarding() {
   const navigate = useNavigate();
-  const { progress, updateProgress } = useStore();
+  const { progress, updateProgress, hasStarted, continueAsGuest } = useStore();
 
   const [draft] = useState(readDraft);
   const [step, setStep] = useState(draft?.step ?? 0);
@@ -208,6 +208,14 @@ export function Onboarding() {
       savedAt: Date.now(),
     };
 
+    /* Onboarding is an open route, so it can be reached without the front
+       door's "Start free" — a bookmark, a shared link, Back from the landing
+       page. Finishing it there wrote the plan and then hit the guard for
+       not-yet-started visitors, which sent "Set out" to the landing page
+       under the confetti. Finishing onboarding *is* starting. Before the
+       write: switching identity reloads progress, and the update below then
+       lands on top of it. */
+    if (!hasStarted) continueAsGuest();
     updateProgress((p) => ({
       ...p,
       profile,

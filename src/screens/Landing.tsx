@@ -695,7 +695,7 @@ export function Landing() {
       </section>
 
       {/* --------------------------------------------------------- regions */}
-      <section className="shell py-20">
+      <section className="below-fold shell py-20">
         <SectionIntro
           title={
             <>
@@ -717,7 +717,7 @@ export function Landing() {
         <RankShowcase />
       </div>
       {/* -------------------------------------------------------- features */}
-      <section className="border-y border-leather-700 bg-leather-950/50 py-20">
+      <section className="below-fold border-y border-leather-700 bg-leather-950/50 py-20">
         <div className="shell">
           <SectionIntro
             title={
@@ -757,7 +757,7 @@ export function Landing() {
       </section>
 
       {/* ----------------------------------------------------------- steps */}
-      <section className="shell py-20">
+      <section className="below-fold shell py-20">
         <SectionIntro
           title={
             <>
@@ -797,7 +797,7 @@ export function Landing() {
           the footer nav — it is the single most important thing a stranger can
           be told about who made this, and burying it was the wrong instinct
           even though nothing required it to be anywhere else. */}
-      <section className="shell pb-24 text-center">
+      <section className="below-fold shell pb-24 text-center">
         <div className="act-ask act-rise mx-auto max-w-2xl px-8 py-14">
           <h2 className="heading text-[clamp(1.5rem,3.2vw,2rem)] text-parchment-light">
             Ready to <span className="text-gold-bright">set out?</span>
