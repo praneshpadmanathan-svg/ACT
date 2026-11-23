@@ -70,7 +70,7 @@ export function DrillsScreen({ section }: { section?: string }) {
   return (
     <Page>
       <SectionHeading
-        eyebrow={`${QUESTION_COUNTS[active].total.toLocaleString()} questions available`}
+        meta={`${QUESTION_COUNTS[active].total.toLocaleString()} questions in this section`}
         title="Practice"
         detail="Adaptive practice from the graded question bank. Every choice gets an explanation, not just the right one."
       />
@@ -149,7 +149,7 @@ export function DrillsScreen({ section }: { section?: string }) {
                 <span className="block truncate font-sans text-[14px] font-semibold text-parchment">
                   {titleCase(topic)}
                 </span>
-                <span className="mt-0.5 block font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
+                <span className="mt-0.5 block font-script text-[12px] text-ink-faint">
                   {count.toLocaleString()} question{count === 1 ? '' : 's'}
                   {stat ? ` · ${stat.attempts} tried` : ''}
                 </span>
@@ -376,7 +376,6 @@ function ReviewSession() {
     return (
       <Page>
         <SectionHeading
-          eyebrow="Spaced repetition"
           title="Review"
           detail="Every question you answer comes back on a schedule. A miss stays due; each right answer pushes it further out — a day, three days, a week, about two weeks, a month — until you have it cold."
         />
@@ -399,7 +398,7 @@ function ReviewSession() {
         ) : (
           <div className="panel p-7 text-center sm:p-9">
             <div className="num text-[64px] leading-none text-cliffs-text">{due.length}</div>
-            <p className="mt-2 font-script text-[12px] uppercase tracking-wide text-ink-faint">
+            <p className="mt-2 font-script text-[12px] text-ink-faint">
               question{due.length === 1 ? '' : 's'} due
             </p>
             <p className="mx-auto mt-5 max-w-md text-[15px] leading-relaxed text-parchment-dim">
@@ -535,7 +534,6 @@ export function BookmarksScreen() {
   return (
     <Page>
       <SectionHeading
-        eyebrow="Set aside"
         title="Saved questions"
         detail="Anything you bookmarked, newest first. Guest saves stay in this browser; log in to sync them across devices."
       />
@@ -568,12 +566,12 @@ export function BookmarksScreen() {
                 <span className="min-w-0 flex-1">
                   <span className="flex flex-wrap items-center gap-2">
                     <span
-                      className="font-script text-[11.5px] uppercase tracking-wide"
+                      className="font-script text-[12px]"
                       style={{ color: SECTION_BY_ID[q.section]?.color }}
                     >
                       {SECTION_BY_ID[q.section]?.name}
                     </span>
-                    <span className="font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
+                    <span className="font-script text-[12px] text-ink-faint">
                       {titleCase(q.topic)}
                     </span>
                   </span>
@@ -593,7 +591,7 @@ export function BookmarksScreen() {
                     drop(q.id);
                   }}
                   aria-label={`Remove this ${SECTION_BY_ID[q.section]?.name} question from saved`}
-                  className="flex-none font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint transition-colors hover:text-blood-text"
+                  className="flex-none font-script text-[12px] text-ink-faint transition-colors hover:text-blood-text"
                 >
                   Remove
                 </button>
@@ -755,9 +753,7 @@ export function DrillSummary({
     <Page>
       <div className="mx-auto max-w-3xl">
         <div className="panel p-7 text-center sm:p-9">
-          <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
-            Session complete
-          </div>
+          <div className="font-script text-[12px] text-ink-faint">Session complete</div>
           <div className="num mt-4 text-[64px] leading-none" style={{ color: accent }}>
             {percent}%
           </div>

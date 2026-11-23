@@ -12,7 +12,7 @@ vi.mock('./ui', () => ({
   ),
 }));
 
-it('lets a visitor explore every rank and replay without writing progress', () => {
+it('lets a visitor explore every rank without writing progress', () => {
   const before = localStorage.length;
   const host = document.createElement('div');
   const root = createRoot(host);
@@ -24,7 +24,6 @@ it('lets a visitor explore every rank and replay without writing progress', () =
     expect(choice.getAttribute('aria-pressed')).toBe('true');
     expect(host.querySelector('h3')?.textContent).toBe(choice.getAttribute('aria-label'));
   }
-  act(() => host.querySelector<HTMLButtonElement>('.rank-replay')!.click());
   expect(localStorage.length).toBe(before);
   act(() => root.unmount());
 });
@@ -38,6 +37,11 @@ it('changes subject details and keeps the start action functional', () => {
   act(() => choices[1]!.click());
   expect(host.textContent).toContain('The Number Desert');
   expect(choices[1]!.getAttribute('aria-pressed')).toBe('true');
+  // The road's real landmarks, not a slogan: the first five, then how many remain.
+  const stops = host.querySelectorAll('.road > li');
+  expect(stops).toHaveLength(5);
+  expect(stops[0]!.querySelector('.road-name')!.textContent).not.toBe('');
+  expect(host.textContent).toMatch(/\d+ more after these/);
   act(() => host.querySelector<HTMLButtonElement>('.realm-copy button')!.click());
   expect(begin).toHaveBeenCalledOnce();
   act(() => root.unmount());

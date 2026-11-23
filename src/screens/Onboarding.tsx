@@ -252,7 +252,7 @@ export function Onboarding() {
         </p>
         {phase !== 'plan' && (
           <div className="mb-6">
-            <div className="mb-2 flex items-center justify-between font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint">
+            <div className="mb-2 flex items-center justify-between font-script text-[12px] text-ink-faint">
               <span>
                 Step {position} of {totalSteps}
               </span>
@@ -290,7 +290,7 @@ export function Onboarding() {
               <button
                 type="button"
                 onClick={() => setStep(step - 1)}
-                className="mt-4 inline-flex min-h-11 items-center gap-1.5 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+                className="mt-4 inline-flex min-h-11 items-center gap-1.5 font-script text-[12px] text-ink-faint transition-colors hover:text-parchment"
               >
                 <Glyph name="arrowLeft" size={13} strokeWidth={2} />
                 Back
@@ -313,9 +313,7 @@ export function Onboarding() {
             </p>
 
             <div className="block">
-              <span className="mb-2 block font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint">
-                Test date
-              </span>
+              <span className="mb-2 block font-script text-[12px] text-ink-faint">Test date</span>
               {/* The native date input's `min` is gone with it, so the year
                   list starts at the current year instead — a test date in the
                   past is the only thing that needed excluding, and a shorter
@@ -343,7 +341,7 @@ export function Onboarding() {
             <button
               type="button"
               onClick={() => setPhase('questions')}
-              className="mt-4 inline-flex min-h-11 items-center gap-1.5 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+              className="mt-4 inline-flex min-h-11 items-center gap-1.5 font-script text-[12px] text-ink-faint transition-colors hover:text-parchment"
             >
               <Glyph name="arrowLeft" size={12} strokeWidth={2} />
               Back
@@ -386,7 +384,7 @@ export function Onboarding() {
             <button
               type="button"
               onClick={() => setPhase(answers.when === 'none' ? 'questions' : 'date')}
-              className="mt-4 inline-flex min-h-11 items-center gap-1.5 font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment"
+              className="mt-4 inline-flex min-h-11 items-center gap-1.5 font-script text-[12px] text-ink-faint transition-colors hover:text-parchment"
             >
               <Glyph name="arrowLeft" size={12} strokeWidth={2} />
               Back
@@ -474,7 +472,7 @@ export function Onboarding() {
 function PlanRow({ label, value, color }: { label: string; value: string; color?: string }) {
   return (
     <div className="flex items-center justify-between rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-3">
-      <dt className="font-script text-[11px] uppercase tracking-wide text-ink-faint">{label}</dt>
+      <dt className="font-script text-[12px] text-ink-faint">{label}</dt>
       <dd className="num text-[19px]" style={{ color: color ?? 'oklch(var(--c-gold))' }}>
         {value}
       </dd>

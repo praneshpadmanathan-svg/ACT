@@ -513,7 +513,7 @@ export function StoryOverlay() {
                     e.stopPropagation();
                     close();
                   }}
-                  className="-mx-2 inline-flex min-h-11 items-center gap-1 px-2 font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
+                  className="-mx-2 inline-flex min-h-11 items-center gap-1 px-2 font-script text-[12px] text-ink-faint transition-colors hover:text-parchment"
                 >
                   Skip
                   <Glyph name="chevronRight" size={11} strokeWidth={2} />
@@ -570,7 +570,7 @@ export function StoryOverlay() {
                   </span>
                   <span
                     className={cx(
-                      'inline-flex flex-none items-center gap-1 whitespace-nowrap font-script text-[12px] uppercase tracking-[0.16em]',
+                      'inline-flex flex-none items-center gap-1 whitespace-nowrap font-script text-[12px]',
                       typing.done ? 'animate-shimmer text-gold' : 'text-ink-faint',
                     )}
                   >

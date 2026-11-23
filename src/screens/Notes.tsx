@@ -66,7 +66,7 @@ export function NotesScreen({ section }: { section?: string }) {
   return (
     <Page>
       <SectionHeading
-        eyebrow={`${progress.notesRead.length} of ${allNotePages().length} pages read overall`}
+        meta={`${progress.notesRead.length} of ${allNotePages().length} pages read`}
         title="Library"
         detail="Short pages that teach exactly what the ACT asks. Each one ends with a check question."
       />
@@ -79,7 +79,7 @@ export function NotesScreen({ section }: { section?: string }) {
           color={meta.color}
           height={8}
         />
-        <span className="flex-none font-script text-[11px] uppercase tracking-wide text-ink-faint">
+        <span className="flex-none font-script text-[12px] text-ink-faint">
           {readInSection}/{totalInSection}
         </span>
       </div>
@@ -119,7 +119,7 @@ export function NotesScreen({ section }: { section?: string }) {
                       <span className="mt-1 block text-[13px] leading-relaxed text-ink-faint">
                         {page.summary}
                       </span>
-                      <span className="mt-2 block font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
+                      <span className="mt-2 block font-script text-[12px] text-ink-faint">
                         {page.minutes} min read
                       </span>
                     </span>
@@ -221,7 +221,7 @@ export function NoteReader({ pageId }: { pageId: string }) {
           <div className="label-quill">
             {meta.name} · {page.unitLabel} · {page.minutes} min
           </div>
-          <h1 className="mt-3 font-heading text-[clamp(1.7rem,4vw,2.4rem)] font-semibold leading-tight text-ink">
+          <h1 className="mt-3 font-heading text-[clamp(1.7rem,4vw,2.4rem)] font-medium leading-tight text-ink">
             {page.title}
           </h1>
           <p className="mt-3 font-read text-[1.05rem] italic leading-relaxed text-ink-soft">
@@ -239,7 +239,7 @@ export function NoteReader({ pageId }: { pageId: string }) {
 
         <footer className="mt-10 border-t-2 border-paper-edge pt-7">
           {alreadyRead ? (
-            <p className="text-center font-script text-[12px] uppercase tracking-wide text-[oklch(var(--c-feedback-correct))]">
+            <p className="text-center font-script text-[12px] text-[oklch(var(--c-feedback-correct))]">
               <Glyph name="check" size={12} strokeWidth={2.2} className={LEADING_ICON} />
               Page complete
             </p>
@@ -449,7 +449,7 @@ function CheckBlock({ block }: { block: Extract<NoteBlock, { type: 'check' }> })
       {revealed && (
         <div className="mt-4 animate-fadein">
           <div
-            className="mb-1.5 font-script text-[11.5px] font-semibold uppercase tracking-[0.14em]"
+            className="mb-1.5 font-script text-[12px] font-semibold"
             style={{
               color:
                 chosen === block.answer

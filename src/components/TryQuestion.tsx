@@ -83,14 +83,10 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
   };
 
   return (
-    <div className="proof-sheet mx-auto max-w-3xl p-6 sm:p-9">
+    <div className="proof-sheet max-w-3xl p-6 sm:p-9">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span className="font-script text-[11px] uppercase tracking-[0.16em] text-gold">
-          {section?.name ?? 'Sample'}
-        </span>
-        <span className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
-          {run.topic}
-        </span>
+        <span className="font-script text-[12px] text-gold">{section?.name ?? 'Sample'}</span>
+        <span className="font-script text-[12px] text-ink-faint">{run.topic}</span>
       </div>
 
       <p className="mt-4 font-read text-[1.06rem] leading-[1.7] text-parchment-light">

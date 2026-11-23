@@ -56,7 +56,7 @@ export function LegalScreen({ page }: { page: LegalPage }) {
                the score caveat — and the front door is not where they were. */
             navigate({ name: hasStarted ? 'home' : 'landing' });
           }}
-          className="mb-6 inline-flex min-h-11 items-center gap-1.5 font-script text-[12px] uppercase tracking-[0.16em] text-parchment-dim transition-colors hover:text-parchment"
+          className="mb-6 inline-flex min-h-11 items-center gap-1.5 font-script text-[12px] text-parchment-dim transition-colors hover:text-parchment"
         >
           <Glyph name="arrowLeft" size={13} strokeWidth={2} />
           Back
@@ -547,7 +547,7 @@ function OperatorNote() {
 
 function Title({ children }: { children: ReactNode }) {
   return (
-    <h1 className="font-heading text-[clamp(1.6rem,4vw,2.1rem)] font-semibold leading-tight text-ink">
+    <h1 className="font-heading text-[clamp(1.6rem,4vw,2.1rem)] font-medium leading-tight text-ink">
       {children}
     </h1>
   );

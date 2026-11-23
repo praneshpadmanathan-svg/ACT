@@ -397,7 +397,7 @@ function UpdatePrompt() {
         <button
           type="button"
           onClick={() => setApply(null)}
-          className="font-script text-[11px] uppercase tracking-wide text-ink-faint transition-colors hover:text-parchment inline-flex items-center [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:px-2"
+          className="font-script text-[12px] text-ink-faint transition-colors hover:text-parchment inline-flex items-center [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:px-2"
         >
           Later
         </button>

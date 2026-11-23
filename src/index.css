@@ -93,11 +93,11 @@
     /* Reading typeface, swapped by the high-legibility setting. */
     --font-read: 'Inter';
     --font-sans: 'Inter';
-    /* Titles only. Inter everywhere left the landing hero as the one line of
-       Cinzel on the site, so the page changed voice a sentence after it
-       opened and every screen inside read as a generic dashboard. Headings
-       carry the world; body, labels and controls stay in Inter for reading. */
-    --font-heading: 'Cinzel';
+    /* Titles only, in sentence case. Newsreader is a book face with real
+       display cuts: it carries the field-journal world into the headings
+       without Cinzel's all-capitals, which made every title on the site shout.
+       Body, labels and controls stay in Inter. See DESIGN.md. */
+    --font-heading: 'Newsreader Variable';
 
     /* How much bigger every piece of text runs. Set by the type-size setting;
        consumed by the `postcss-text-scale` plugin, which wraps every
@@ -507,25 +507,13 @@
      destinations, a drawn glyph each, a bar on the active item's leading edge,
      and a lift on hover. */
 
-  .brand-sigil {
-    @apply flex h-8 w-8 flex-none items-center justify-center rounded-lg border
-           border-gold-deep/60 bg-leather-850 text-gold transition-all duration-quick;
-    box-shadow: inset 0 1px 0 oklch(var(--c-gold-light) / 0.16);
-  }
-  .group:hover > .brand-sigil {
-    @apply border-gold bg-leather-800;
-    box-shadow:
-      inset 0 1px 0 oklch(var(--c-gold-light) / 0.3),
-      0 0 14px oklch(var(--c-gold) / 0.28);
-  }
-
   /* A group heading. Small-caps script at the smallest size the type system
      has: it has to separate the groups without competing with the eight
      destinations that are the actual navigation. */
   .rail-group {
     /* ink-faint, not gold-deep: gold-deep is a border colour, and as text it
        measured 3.1:1 on the rail in dark and 2.0:1 in light. */
-    @apply px-2.5 font-script text-[11.5px] uppercase tracking-[0.2em] text-ink-faint;
+    @apply px-2.5 font-script text-[12px] font-medium text-ink-faint;
   }
   /* In daylight the rail's grain has pale flecks that pull ink-faint to the
      4.5 line exactly (measured 4.495:1). One step darker clears it; the dark
@@ -573,8 +561,7 @@
            rounded-full transition-[transform,opacity] duration-base;
     height: 62%;
     opacity: 0;
-    background: linear-gradient(180deg, theme('colors.gold.deep'), theme('colors.gold.bright'));
-    box-shadow: 0 0 10px rgba(242, 207, 91, 0.55);
+    background: oklch(var(--c-gold));
   }
   .rail-item-active {
     @apply bg-leather-850 text-gold;
@@ -623,7 +610,7 @@
     background-color: oklch(var(--c-leather-950) / 0.85);
     box-shadow:
       var(--e-flush),
-      inset 0 0 12px oklch(var(--c-gilt) / 0.16);
+      inset 0 1px 0 oklch(var(--c-gold-light) / 0.08);
   }
 
   /* Rank block: sigil, name, XP. Debossed for the same reason as `.rail-bank`
@@ -639,7 +626,7 @@
     background-color: oklch(var(--c-leather-950) / 0.85);
     box-shadow:
       var(--e-flush),
-      inset 0 0 12px oklch(var(--c-gilt) / 0.16);
+      inset 0 1px 0 oklch(var(--c-gold-light) / 0.08);
   }
   /* The ring gives the empty track an edge: leather-950 alone was invisible
      on the drawer's card, and 16 XP of fill read as a stray dot. */
@@ -677,11 +664,10 @@
 
   .story-choice {
     @apply w-full rounded-lg border border-leather-700 bg-leather-850/90 px-4 py-3
-           text-left font-read text-[15px] text-parchment-dim transition-all duration-quick;
+           text-left font-read text-[15px] text-parchment-dim transition-colors duration-quick;
   }
   .story-choice:hover {
-    @apply -translate-y-px border-gold-deep bg-leather-800 text-parchment;
-    box-shadow: 0 0 18px rgba(212, 160, 23, 0.16);
+    @apply border-gold-deep bg-leather-800 text-parchment;
   }
   .story-choice:active {
     @apply translate-y-0;
@@ -998,11 +984,21 @@
   }
 
   .heading {
-    @apply font-heading font-semibold tracking-normal text-parchment;
+    @apply font-heading font-medium tracking-[-0.01em] text-parchment;
+  }
+
+  /* "ACT Command", and nothing else: the one place Cinzel is still used. */
+  .wordmark {
+    @apply font-semibold text-parchment;
+    font-family: Cinzel, Georgia, serif;
+    letter-spacing: 0.02em;
+  }
+  [data-font='legible'] .wordmark {
+    font-family: var(--font-sans), sans-serif;
   }
 
   .eyebrow {
-    @apply font-script text-[13px] font-semibold uppercase tracking-[0.08em] text-gold;
+    @apply font-script text-[13px] font-medium text-ink-faint;
   }
 
   .label-sm {
@@ -1034,148 +1030,27 @@
       opacity 160ms;
   }
 
+  /* Solid gold, dark ink, a 1px highlight along the top edge. No glow under
+     it and no light sweeping across it on hover: the gold is the signal. */
   .btn-primary {
-    @apply border-gold-deep bg-gradient-to-b from-gilt-bright to-gilt text-[#2a2008];
-    box-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.35) inset,
-      0 6px 16px rgba(212, 160, 23, 0.25);
+    @apply border-gold-deep bg-gilt text-[#2a2008];
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.32) inset;
   }
+
+  /* ------------------------------------------------- controls under the hand
+
+     A pointer-tracked sheen on every button and answer, a point of light
+     orbiting the primary action and a gold bloom around it used to live here.
+     They answered nothing the student did — they were light for its own sake,
+     on the chrome, which is where DESIGN.md says the screen stays quiet. What
+     is left responds to the hand: a surface step on hover, a small give on
+     press. The light layer (lib/fx.ts) still answers answers and rank-ups. */
+
   .btn-primary:hover:not(:disabled) {
-    @apply from-[#f7dc7d] to-[#e0ae1e];
+    filter: brightness(1.06);
   }
-  /* A lantern passing over gold leaf. Parked off the left edge and swept
-     across on hover — the transition is only declared on the hover state, so
-     it snaps back invisibly instead of sweeping backwards on mouse-out. */
-  .btn-primary::after {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    z-index: -1;
-    background: linear-gradient(
-      105deg,
-      transparent 38%,
-      rgba(255, 255, 255, 0.55) 50%,
-      transparent 62%
-    );
-    transform: translateX(-130%);
-  }
-  .btn-primary:hover:not(:disabled)::after {
-    transform: translateX(130%);
-    transition: transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  /* ------------------------------------------------- light on the controls
-
-     Three effects, all driven by the one light source the app already obeys
-     (the lamp, upper left) and all composited or confined to the control
-     they belong to. The particle side of it — sparks, rings, bloom — is the
-     canvas in lib/fx.ts; this is the part that lives on the surfaces.
-
-     1. The sheen. A soft highlight under the pointer, as if the lamp were
-        reflecting off the material where the hand is. Positioned by
-        `--fx-x`/`--fx-y`, which FxLayer writes to the one element under the
-        pointer, and only shown while it is there (`data-fx-lit`). Mouse only:
-        a finger has no position until it presses.
-
-     2. The rim. On the primary action, a point of light orbits the inner
-        edge on hover and focus — the gilt catching the lamp as it turns. The
-        angle is a registered custom property, so the gradient interpolates
-        rather than jumping; where `@property` is missing it is a still rim.
-
-     3. The bloom. Gold throws light. A hovered primary action casts a warm
-        halo onto the leather around it, larger than its shadow, which is what
-        makes it look lit rather than merely coloured. */
-
-  @property --fx-angle {
-    syntax: '<angle>';
-    inherits: false;
-    initial-value: 0deg;
-  }
-
-  .btn:not(.btn-primary)::before,
-  .choice::before,
-  .story-choice::before,
-  .fx-sheen::before {
-    content: '';
-    @apply pointer-events-none absolute inset-0;
-    z-index: -1;
-    border-radius: inherit;
-    background: radial-gradient(
-      180px circle at var(--fx-x, 50%) var(--fx-y, 50%),
-      var(--fx-sheen, rgba(255, 232, 178, 0.16)),
-      transparent 62%
-    );
-    opacity: 0;
-    transition: opacity 260ms ease-out;
-  }
-  [data-fx-lit]::before {
-    opacity: 1;
-  }
-  /* Paper cannot get brighter than cream, so on the answer cards the lamp
-     shows as a faint gilt warmth instead of a white highlight. */
-  .choice {
-    --fx-sheen: rgba(212, 160, 23, 0.13);
-  }
-  /* On the light theme's pale buttons a warm-white highlight is invisible;
-     the lamp shows there as a faint gilt warmth, as it does on paper. */
-  [data-theme='light'] .btn {
-    --fx-sheen: rgba(176, 124, 20, 0.12);
-  }
-  .choice-locked::before {
-    opacity: 0;
-  }
-  .story-choice,
-  .fx-sheen {
-    @apply relative isolate;
-  }
-
-  .btn-primary::before {
-    content: '';
-    @apply pointer-events-none absolute inset-0;
-    border-radius: inherit;
-    padding: 2px;
-    /* A highlight on bright gold is invisible on its own — white on pale
-       yellow. Real metal shows its specular by the dark burnish either side
-       of it, so the light travels with a band of shadow at each edge. */
-    background: conic-gradient(
-      from var(--fx-angle),
-      transparent 0 54%,
-      rgba(122, 78, 0, 0.55) 62%,
-      rgba(255, 253, 240, 1) 69%,
-      rgba(122, 78, 0, 0.45) 75%,
-      transparent 83% 100%
-    );
-    /* Cut the middle out, leaving only the ring the padding defines. */
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 240ms ease-out;
-  }
-  .btn-primary:hover:not(:disabled)::before,
-  .btn-primary:focus-visible::before,
-  .btn-primary[aria-busy='true']::before {
-    opacity: 1;
-    animation: fxOrbit 2.6s linear infinite;
-  }
-  @keyframes fxOrbit {
-    to {
-      --fx-angle: 360deg;
-    }
-  }
-  .btn-primary:hover:not(:disabled) {
-    box-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.4) inset,
-      0 0 0 1px rgba(255, 224, 150, 0.32),
-      0 8px 26px rgba(212, 160, 23, 0.42),
-      0 0 52px rgba(242, 207, 91, 0.22);
-  }
-  /* The press itself: a beat of extra brightness, as if the leaf flexed into
-     the light. Short enough to read as a response, not a state. */
-  .btn-primary:active:not(:disabled) {
-    filter: brightness(1.08) saturate(1.06);
+  .btn:active:not(:disabled) {
+    transform: scale(0.98);
   }
 
   .btn-ghost {
@@ -1235,8 +1110,7 @@
 
   .chip {
     @apply inline-flex items-center gap-1.5 rounded-full border border-leather-700
-           bg-leather-800/70 px-3 py-1 font-script text-[12px] uppercase
-           tracking-[0.12em] text-parchment-dim;
+           bg-leather-800/70 px-3 py-1 font-script text-[12.5px] text-parchment-dim;
   }
 
   /* Tier 3 of the answer streak — six right in a row and the chip is alight.
@@ -1301,11 +1175,7 @@
   a.veil:hover,
   button.veil:hover,
   .veil-lift:hover {
-    @apply -translate-y-0.5 border-gold-deep/70;
-    box-shadow:
-      inset 0 1px 0 rgba(240, 207, 122, 0.12),
-      0 16px 34px rgba(0, 0, 0, 0.38),
-      0 0 24px rgba(212, 160, 23, 0.1);
+    @apply border-gold-deep/70;
   }
 
   /* A lighter veil for a single line of copy under a heading, where a full
@@ -1392,7 +1262,7 @@
   }
   .prose-quill th {
     @apply border-b-2 border-paper-edge bg-paper-dim px-2.5 py-1.5 text-left
-           font-script text-[0.78em] uppercase tracking-[0.1em] text-ink-soft;
+           font-script text-[0.85em] font-semibold text-ink-soft;
   }
   .prose-quill td {
     @apply border-b border-paper-edge px-2.5 py-1.5 tabular-nums;
@@ -1407,7 +1277,7 @@
   }
 
   .label-quill {
-    @apply font-script text-[12px] uppercase tracking-[0.18em] text-ink-soft;
+    @apply font-script text-[13px] font-semibold text-ink-soft;
   }
 
   /* ---------------------------------------------------------- lesson column
@@ -1461,8 +1331,7 @@
   /* A part label: small caps in the part's ink, with a rule running out to the
      margin so the eye can find the next part while scrolling. */
   .lesson-label {
-    @apply mb-2 flex items-center gap-2.5 font-script text-[12.5px] font-semibold
-           uppercase tracking-[0.16em];
+    @apply mb-2 flex items-center gap-2.5 font-script text-[13.5px] font-semibold;
   }
   .lesson-label::after {
     content: '';
@@ -1561,7 +1430,7 @@
   }
   .quill-table th {
     @apply border-b-2 border-paper-edge bg-paper-dim px-3 py-2 text-left
-           font-script text-[0.8rem] uppercase tracking-[0.12em] text-ink-soft;
+           font-script text-[0.85rem] font-semibold text-ink-soft;
   }
   .quill-table td {
     @apply border-b border-paper-edge px-3 py-2 font-read;
@@ -1814,26 +1683,6 @@
     );
   }
 
-  /* The active marker is a light source, not a bar.
-
-     The 3px gradient stays — it is the filament — but the glow bleeding right
-     off it is what makes the row read as lit rather than as labelled. Kept on
-     the row rather than the marker so it can spread past the marker's 3px box
-     without a blur radius that would fuzz the filament itself. */
-  .rail-item-active {
-    background-image: linear-gradient(
-      90deg,
-      oklch(var(--c-gilt) / 0.2),
-      oklch(var(--c-gilt) / 0.07) 38%,
-      transparent 78%
-    );
-  }
-  .rail-item-active .rail-marker {
-    box-shadow:
-      0 0 10px oklch(var(--c-gilt) / 0.65),
-      0 0 24px oklch(var(--c-gilt) / 0.4);
-  }
-
   /* ------------------------------------------------------------ camp hero
 
      One object on the screen at elevation 3, and this is it: the day's actual
@@ -1855,20 +1704,12 @@
     @apply mat-gilt-rule absolute inset-x-0 top-0;
   }
   .camp-hero:hover {
-    @apply -translate-y-0.5;
     box-shadow: var(--lamp-edge-paper), var(--e-floating);
   }
-  /* The whole card is the target, so the gilt CTA inside it lights up when the
-     card does — not only when the pointer happens to land on the button-shaped
-     part of it. Mirrors `.btn-primary`'s own hover, including the reason the
-     transition is declared here and not on the resting state: it has to snap
-     back invisibly rather than sweep backwards on mouse-out. */
+  /* The whole card is the target, so its primary button answers when the
+     card is hovered, not only when the pointer lands on the button itself. */
   .camp-hero:hover .btn-primary {
-    @apply from-[#f7dc7d] to-[#e0ae1e];
-  }
-  .camp-hero:hover .btn-primary::after {
-    transform: translateX(130%);
-    transition: transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+    filter: brightness(1.06);
   }
 
   /* -------------------------------------------------------- the gilt sweep
@@ -1947,7 +1788,7 @@
     @apply flex-none text-ink-faint transition-colors duration-quick ease-out;
   }
   .palette-group {
-    @apply px-3 pb-1 pt-3 font-script text-[11.5px] uppercase tracking-[0.2em] text-ink-faint;
+    @apply px-3 pb-1 pt-3 font-script text-[12px] font-medium text-ink-faint;
   }
   .palette-kbd {
     @apply inline-flex items-center rounded border border-leather-700 bg-leather-900 px-1.5 py-0.5 font-mono
@@ -2270,7 +2111,6 @@
     color: oklch(var(--c-gold-light));
     box-shadow:
       0 0 0 4px oklch(var(--c-gold) / 0.12),
-      0 0 18px oklch(var(--c-gold) / 0.3),
       var(--e-raised);
   }
   /* Debossed and unlit: set *into* the leather rather than sitting on it.
@@ -2488,14 +2328,6 @@
    component definitions above it, and a utility on the element wins. */
 @layer components {
   /* Readability pass: quiet surfaces, clear controls, and selective display type. */
-  .premium-landing .hero-type-block h1,
-  .home-rank-name {
-    font-family: Cinzel, Georgia, serif;
-  }
-  [data-font='legible'] .premium-landing .hero-type-block h1,
-  [data-font='legible'] .home-rank-name {
-    font-family: var(--font-sans), sans-serif;
-  }
   .panel,
   .panel-quiet,
   .panel-lit {
@@ -2514,7 +2346,6 @@
   .label-sm,
   .label-quill {
     line-height: 1.5;
-    letter-spacing: 0.06em;
   }
   .label-quill {
     font-size: 0.85rem;

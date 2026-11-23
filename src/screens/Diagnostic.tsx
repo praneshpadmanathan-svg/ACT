@@ -65,7 +65,6 @@ export function DiagnosticScreen() {
     return (
       <Page>
         <SectionHeading
-          eyebrow="Before you set out"
           title="Where do you stand?"
           detail="A short spread of questions across all four sections, so the app can point you at the right things from day one instead of guessing for a fortnight."
         />
@@ -73,7 +72,7 @@ export function DiagnosticScreen() {
         <div className="mx-auto max-w-md">
           <div className="panel p-7 text-center sm:p-9">
             <div className="num text-[64px] leading-none text-gold">{questions.length}</div>
-            <p className="mt-2 font-script text-[12px] uppercase tracking-wide text-ink-faint">
+            <p className="mt-2 font-script text-[12px] text-ink-faint">
               questions · about {minutes} minutes
             </p>
 
@@ -188,7 +187,7 @@ export function DiagnosticSummary({
     <Page>
       <div className="mx-auto max-w-2xl">
         <div className="panel border-gold p-7 sm:p-9">
-          <div className="text-center font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
+          <div className="text-center font-script text-[12px] text-ink-faint">
             Placement · {result.asked} questions
           </div>
           <h1 className="heading mt-3 text-center text-[clamp(1.2rem,3vw,1.6rem)] text-gold-light">

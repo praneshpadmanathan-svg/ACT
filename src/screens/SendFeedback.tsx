@@ -119,7 +119,7 @@ export function FeedbackScreen() {
   if (sent) {
     return (
       <Page>
-        <SectionHeading eyebrow="Your account" title="Thanks — it’s sent" />
+        <SectionHeading title="Thanks — it’s sent" />
         <div className="panel max-w-2xl p-6 sm:p-7">
           <p className="font-read text-[15px] leading-relaxed text-parchment-dim">
             Every report is read.{' '}
@@ -142,7 +142,7 @@ export function FeedbackScreen() {
 
   return (
     <Page>
-      <SectionHeading eyebrow="Your account" title="Send feedback" />
+      <SectionHeading title="Send feedback" />
 
       <form onSubmit={submit} className="panel max-w-2xl space-y-5 p-6 sm:p-7">
         <p className="font-read text-[14px] leading-relaxed text-ink-faint">

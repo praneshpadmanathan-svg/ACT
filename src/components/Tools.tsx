@@ -254,10 +254,7 @@ function Scratchpad() {
 
   return (
     <div>
-      <label
-        htmlFor="scratch-paper"
-        className="mb-2 block font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint"
-      >
+      <label htmlFor="scratch-paper" className="mb-2 block font-script text-[12px] text-ink-faint">
         Scratch paper
       </label>
       <textarea
@@ -278,7 +275,7 @@ function Scratchpad() {
         <button
           type="button"
           onClick={() => setText('')}
-          className="font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint transition-colors hover:text-gold inline-flex items-center [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:px-2"
+          className="font-script text-[12px] text-ink-faint transition-colors hover:text-gold inline-flex items-center [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:px-2"
         >
           Clear
         </button>
@@ -426,7 +423,7 @@ export function ToolDock({
       style={sheet ? { paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' } : undefined}
     >
       <div className="mb-3 flex flex-none items-center justify-between">
-        <span className="font-script text-[11px] uppercase tracking-[0.16em] text-gold">
+        <span className="font-script text-[12px] text-gold">
           {open === 'calculator' ? 'Calculator' : 'Scratch paper'}
         </span>
         <button
@@ -526,7 +523,7 @@ function DockButton({
       aria-pressed={active}
       aria-label={label}
       className={cx(
-        'flex h-11 items-center justify-center gap-2 rounded-xl border-2 font-script text-[11px] uppercase tracking-[0.14em] shadow-card backdrop-blur transition-colors duration-quick ease-out',
+        'flex h-11 items-center justify-center gap-2 rounded-xl border-2 font-script text-[12px] shadow-card backdrop-blur transition-colors duration-quick ease-out',
         inline ? 'w-11 sm:w-auto sm:px-3.5' : 'w-11',
         active
           ? 'border-gilt bg-gilt text-[#2a2000]'

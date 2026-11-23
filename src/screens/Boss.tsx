@@ -148,9 +148,7 @@ function BossDuel({ section }: { section: string }) {
           <h1 className="heading mt-6 text-[clamp(1.4rem,3vw,2rem)]" style={{ color: boss.color }}>
             {boss.name}
           </h1>
-          <p className="mt-2 font-script text-[13px] uppercase tracking-[0.18em] text-ink-faint">
-            {boss.title}
-          </p>
+          <p className="mt-2 font-script text-[13px] text-ink-faint">{boss.title}</p>
           <p className="mx-auto mt-5 max-w-md font-read text-[15.5px] leading-relaxed text-parchment-dim">
             The guardian will not stir until every landmark in {region.title} is cleared. You have{' '}
             <b className="whitespace-nowrap text-parchment">
@@ -203,7 +201,7 @@ function BossDuel({ section }: { section: string }) {
           </div>
 
           {alreadyBeaten && (
-            <p className="mt-5 font-script text-[12px] uppercase tracking-[0.16em] text-woods-text">
+            <p className="mt-5 font-script text-[12px] text-woods-text">
               <Glyph name="spark" size={12} className={LEADING_ICON} />
               Already defeated — fight again for the practice
             </p>
@@ -429,13 +427,11 @@ function BossDuel({ section }: { section: string }) {
           no passage, "Based on Figure 2…" with no figure. */}
       <div className={cx('mx-auto', question?.passage ? 'max-w-6xl' : 'max-w-3xl')}>
         <div className="mb-3 flex items-center justify-between gap-3">
-          <span className="font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint">
-            {question?.topic}
-          </span>
+          <span className="font-script text-[12px] text-ink-faint">{question?.topic}</span>
           <button
             type="button"
             onClick={() => navigate({ name: 'duels' })}
-            className="font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment inline-flex items-center [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:px-2"
+            className="font-script text-[12px] text-ink-faint transition-colors hover:text-parchment inline-flex items-center [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:px-2"
           >
             Flee
           </button>
@@ -494,7 +490,7 @@ function BossDuel({ section }: { section: string }) {
               {revealed && (
                 <div className="mt-6 animate-fadein border-t-2 border-paper-edge pt-5">
                   <div
-                    className="mb-2 font-script text-[13px] uppercase tracking-[0.16em]"
+                    className="mb-2 font-script text-[13px]"
                     style={{
                       color:
                         chosen === question.correctKey

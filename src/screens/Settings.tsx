@@ -64,7 +64,7 @@ export function SettingsScreen() {
 
   return (
     <Page>
-      <SectionHeading eyebrow="Your account" title="Settings" />
+      <SectionHeading title="Settings" />
 
       {/* your test — the two things the whole app paces itself against, so
           they come first and nothing else on the page is about the ACT. */}
@@ -75,10 +75,7 @@ export function SettingsScreen() {
             first control inside it, so tapping the words "Target score"
             quietly set the target to 24. */}
         <div role="group" aria-labelledby="settings-target" className="mb-5">
-          <span
-            id="settings-target"
-            className="mb-2 block font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint"
-          >
+          <span id="settings-target" className="mb-2 block font-script text-[12px] text-ink-faint">
             Target score
           </span>
           <div className="grid grid-cols-5 gap-1.5 sm:flex sm:flex-wrap sm:gap-2">
@@ -105,10 +102,7 @@ export function SettingsScreen() {
             changeable later. Clearing it stops the countdown rather than
             leaving a date that has quietly gone by. */}
         <div role="group" aria-labelledby="settings-date">
-          <span
-            id="settings-date"
-            className="mb-2 block font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint"
-          >
+          <span id="settings-date" className="mb-2 block font-script text-[12px] text-ink-faint">
             Test date
           </span>
           <div className="flex flex-wrap items-center gap-2.5">
@@ -240,9 +234,7 @@ export function SettingsScreen() {
           through, looking at a number you do not trust — you are on a screen
           with no way to it. */}
       <div className="panel mb-6 flex flex-wrap items-center gap-x-5 gap-y-2 p-5">
-        <span className="font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint">
-          Questions about the app
-        </span>
+        <span className="font-script text-[12px] text-ink-faint">Questions about the app</span>
         <a
           href={hrefFor({ name: 'faq' })}
           className="font-read text-[13.5px] text-parchment-dim underline underline-offset-4 transition-colors hover:text-parchment"

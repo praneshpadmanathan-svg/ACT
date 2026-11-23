@@ -1,42 +1,38 @@
+/* The four roads, one tab each: the region's painting, what that section of
+   the ACT asks, and the first landmarks on its road.
+
+   It used to carry a slogan per region — "Make every sentence count.", "Find
+   your way through the problem." — lines that would fit any study app. The
+   real material was a few imports away: every road's landmarks, and the skill
+   each one teaches. The road line (`.road`) is the site's one signature
+   detail; see DESIGN.md. */
+
 import { useState } from 'react';
 import { SECTIONS } from '@/content/sections';
 import { PATH_BY_ID } from '@/content/zones';
+import { REGIONS } from '@/content/regionFlavor';
 import { Art } from './Art';
 import { Button } from './ui';
 
-const STORIES = {
-  english: [
-    'The Grammar Village',
-    'Make every sentence count.',
-    'Find the rule. See the pattern. Leave with a skill you can use again.',
-  ],
-  math: [
-    'The Number Desert',
-    'Find your way through the problem.',
-    'From a first equation to a clever shortcut, build confidence one idea at a time.',
-  ],
-  reading: [
-    'The Enchanted Woods',
-    'Follow the evidence.',
-    'Slow down, look closer, and learn to find the line that proves your answer.',
-  ],
-  science: [
-    'The Science Cliffs',
-    'Turn observations into understanding.',
-    'Explore experiments, compare explanations, and make sense of the data in front of you.',
-  ],
-};
+/** How many landmarks the preview walks before saying how many are left. */
+const SHOWN = 5;
+
+/** "Commas — four jobs, no more" → "Commas". The skill, without the tagline. */
+const skillOf = (sub: string) => sub.split(/\s+[—–-]\s+/)[0] ?? sub;
 
 export function RealmExplorer({ onBegin }: { onBegin: () => void }) {
   const [active, setActive] = useState(0);
   const section = SECTIONS[active]!;
-  const story = STORIES[section.id];
+  const path = PATH_BY_ID[section.id];
+  const nodes = path?.nodes ?? [];
+  const rest = nodes.length - Math.min(SHOWN, nodes.length);
+
   return (
     <div className="realm-explorer">
-      <div className="realm-selector" role="group" aria-label="Explore a subject">
+      <div className="realm-selector" role="group" aria-label="Choose a section">
         {SECTIONS.map((s, i) => (
           <button key={s.id} type="button" aria-pressed={i === active} onClick={() => setActive(i)}>
-            <span className="num">0{i + 1}</span>
+            <span className="realm-dot" style={{ background: s.color }} aria-hidden="true" />
             {s.name}
           </button>
         ))}
@@ -50,17 +46,25 @@ export function RealmExplorer({ onBegin }: { onBegin: () => void }) {
           />
         </div>
         <div className="realm-copy">
-          <p className="eyebrow">{story[0]}</p>
-          <h3 className="font-heading text-display-m font-bold">{story[1]}</h3>
-          <p className="font-read text-body-read text-parchment-dim">{story[2]}</p>
-          <div className="realm-facts">
-            <span>
-              <b className="num">{PATH_BY_ID[section.id]?.nodes.length}</b> skill landmarks
-            </span>
-            <span>Learn · practise · progress</span>
+          <div>
+            <h3 className="heading text-[1.625rem] leading-tight">{REGIONS[section.id].title}</h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-parchment-dim">{section.blurb}</p>
           </div>
-          <Button variant="primary" trailing onClick={onBegin}>
-            Start your journey
+          <ol className="road" aria-label={`The first landmarks on the ${section.name} road`}>
+            {nodes.slice(0, SHOWN).map((n) => (
+              <li key={n.id}>
+                <span className="road-name">{n.name}</span>
+                <span className="road-skill">{skillOf(n.sub)}</span>
+              </li>
+            ))}
+          </ol>
+          {rest > 0 && (
+            <p className="-mt-2 text-[13px] text-ink-faint">
+              {rest} more after these, then the road’s guardian.
+            </p>
+          )}
+          <Button variant="primary" onClick={onBegin}>
+            Start practising
           </Button>
         </div>
       </div>

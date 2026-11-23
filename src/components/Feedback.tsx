@@ -78,9 +78,7 @@ export function Toasts() {
         >
           <Glyph name={t.icon ?? 'spark'} size={17} className="flex-none text-gold" />
           <span className="min-w-0">
-            <span className="block font-script text-[13px] uppercase tracking-wide text-parchment">
-              {t.title}
-            </span>
+            <span className="block font-script text-[13px] text-parchment">{t.title}</span>
             {t.detail && (
               <span className="mt-0.5 block text-xs leading-snug text-parchment-dim">
                 {t.detail}
@@ -254,7 +252,7 @@ export function LevelUpOverlay() {
           {rank.tagline}
         </p>
 
-        <div className="mt-6 font-script text-[13px] [@media(max-height:520px)]:mt-3 uppercase tracking-[0.18em] text-ink-faint">
+        <div className="mt-6 font-script text-[13px] [@media(max-height:520px)]:mt-3 text-ink-faint">
           {next
             ? `Next — ${next.name} at ${next.xp.toLocaleString()} XP`
             : 'The highest rank there is'}

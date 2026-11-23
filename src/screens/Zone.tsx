@@ -131,7 +131,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
         >
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <div className="font-script text-[11.5px] uppercase tracking-[0.16em] text-ink-faint">
+              <div className="font-script text-[12px] text-ink-faint">
                 {meta.name} · {zone.topic}
               </div>
               <h1
@@ -144,9 +144,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
             </div>
             {best !== null && (
               <div className="text-right">
-                <div className="font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
-                  Your best
-                </div>
+                <div className="font-script text-[12px] text-ink-faint">Your best</div>
                 <div className="num text-[30px] text-woods-text">{best}%</div>
               </div>
             )}
@@ -325,9 +323,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
             background: 'oklch(var(--c-leather-900))',
           }}
         >
-          <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
-            {zone.name}
-          </div>
+          <div className="font-script text-[12px] text-ink-faint">{zone.name}</div>
           <h1
             className="heading mt-3 text-[clamp(17px,3.4vw,26px)]"
             style={{ color: passed ? 'oklch(var(--c-woods-text))' : 'oklch(var(--c-blood-text))' }}

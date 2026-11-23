@@ -734,7 +734,7 @@ function BackLink({ onClick, disabled }: { onClick: () => void; disabled?: boole
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-1.5 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment disabled:opacity-50"
+      className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-1.5 font-script text-[12px] text-ink-faint transition-colors hover:text-parchment disabled:opacity-50"
     >
       <Glyph name="arrowLeft" size={13} strokeWidth={2} />
       Back

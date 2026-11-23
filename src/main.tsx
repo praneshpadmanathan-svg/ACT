@@ -22,11 +22,14 @@ import { reloadForNewBuild } from './lib/chunkReload';
 
    IM Fell English SC used to be imported here for the `font-script` role and
    is gone: it was a second serif display face doing the same job as Cinzel,
-   and four families to render one app's worth of text was one too many. Cinzel
-   holds both roles now — see the note in tailwind.config.js. */
-import '@fontsource/cinzel/latin-500.css';
+   and four families to render one app's worth of text was one too many.
+
+   Headings are Newsreader now, at its optical sizes (the `opsz` axis draws
+   the display cuts at display sizes). Cinzel was every title on the site, and
+   having no lowercase it set every one of them in capitals. It is kept for
+   the wordmark alone, at one weight. See DESIGN.md. */
+import '@fontsource-variable/newsreader/opsz.css';
 import '@fontsource/cinzel/latin-600.css';
-import '@fontsource/cinzel/latin-700.css';
 import '@fontsource/inter/latin-400.css';
 import '@fontsource/inter/latin-500.css';
 import '@fontsource/inter/latin-600.css';

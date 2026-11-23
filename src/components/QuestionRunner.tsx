@@ -433,7 +433,7 @@ export function QuestionRunner({
                 the progress signal now; this is the exact number, kept for the
                 reader who wants it and for anyone on a screen reader, at the
                 weight a secondary reading deserves. */}
-            <span className="font-script text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+            <span className="font-script text-[12px] text-ink-faint">
               <span className="hidden sm:inline">Question </span>
               <span className="num text-parchment-dim">{index + 1}</span> of{' '}
               <span className="num text-parchment-dim">{questions.length}</span>
@@ -455,7 +455,7 @@ export function QuestionRunner({
         </div>
 
         {!deferFeedback && records.length > 0 && (
-          <p className="mt-3 font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
+          <p className="mt-3 font-script text-[12px] text-ink-faint">
             {correctSoFar} correct of {records.length} answered
           </p>
         )}
@@ -521,7 +521,7 @@ export function QuestionRunner({
               <div className="mb-5 flex items-center gap-2">
                 <span className="label-quill min-w-0 truncate">{question.topic}</span>
                 <span
-                  className="rounded px-2 py-0.5 font-script text-[11.5px] uppercase tracking-wide"
+                  className="rounded px-2 py-0.5 font-script text-[12px]"
                   style={{
                     color: DIFFICULTY_COLOR[question.difficulty],
                     background: `color-mix(in oklab, ${DIFFICULTY_COLOR[question.difficulty]} 13%, transparent)`,
@@ -730,7 +730,7 @@ export function QuestionRunner({
                     a centred flex icon beside wrapped text ends up next to the
                     *second* line. */}
                 <m.div
-                  className="mb-5 font-script text-[13px] font-semibold uppercase tracking-[0.16em]"
+                  className="mb-5 font-script text-[13px] font-semibold"
                   style={{
                     color: gotItRight
                       ? 'oklch(var(--c-feedback-correct))'

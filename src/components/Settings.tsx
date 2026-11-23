@@ -35,9 +35,7 @@ function Field({
   return (
     <div className="border-t border-leather-700/70 py-4 first:border-t-0 first:pt-0">
       <div className="mb-2 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-        <span className="font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint">
-          {label}
-        </span>
+        <span className="font-script text-[12px] text-ink-faint">{label}</span>
       </div>
       {children}
       {hint && (
@@ -303,7 +301,7 @@ export function DiagnosticsPanel() {
     <div className="panel p-6 sm:p-7">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
         <h2 className="heading text-[1.125rem] text-parchment">Diagnostics</h2>
-        <span className="font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint">
+        <span className="font-script text-[12px] text-ink-faint">
           {events.length} recorded{errors ? ` · ${errors} error${errors === 1 ? '' : 's'}` : ''}
         </span>
       </div>

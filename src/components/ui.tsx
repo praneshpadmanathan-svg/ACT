@@ -495,9 +495,7 @@ export function ProgressRing({
           {pctValue}%
         </span>
       </div>
-      <span className="font-script text-[12px] uppercase tracking-[0.14em] text-parchment-dim">
-        {label}
-      </span>
+      <span className="font-script text-[12px] text-parchment-dim">{label}</span>
     </div>
   );
 }
@@ -549,27 +547,32 @@ export function EmptyState({
   );
 }
 
+/* A page header: the title, then one plain sentence.
+
+   There used to be an `eyebrow` above every title — "YOUR ACCOUNT", "CHALLENGES",
+   tracked capitals in gold — which is template chrome: it appears whatever the
+   page is about and says nothing the title does not. Where that line carried a
+   fact ("1,768 questions available"), it is `meta` now, a quiet line under the
+   title, where a fact about the page belongs. See DESIGN.md. */
 export function SectionHeading({
-  eyebrow,
+  meta,
   title,
   detail,
   right,
 }: {
-  eyebrow?: string;
+  meta?: string;
   title: string;
   detail?: string;
   right?: ReactNode;
 }) {
   return (
-    <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+    <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
       <div>
-        {eyebrow && <div className="eyebrow mb-1.5">{eyebrow}</div>}
-        <h1 className="heading text-[clamp(1.5rem,3.4vw,2.15rem)] leading-tight">{title}</h1>
+        <h1 className="heading text-[clamp(1.75rem,3.4vw,2.25rem)] leading-tight">{title}</h1>
         {detail && (
-          <p className="mt-2.5 max-w-2xl font-read text-[15.5px] leading-relaxed text-parchment-dim">
-            {detail}
-          </p>
+          <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-parchment-dim">{detail}</p>
         )}
+        {meta && <p className="mt-2 text-[13px] text-ink-faint">{meta}</p>}
       </div>
       {right}
     </div>
@@ -612,7 +615,7 @@ export function SectionTabs({
             aria-current={s.id === active ? 'page' : undefined}
             title={locked ? `${s.name} is part of Pro` : undefined}
             className={cx(
-              'flex items-center justify-center gap-1.5 rounded-lg border-2 px-4 py-2 font-script [@media(pointer:coarse)]:min-h-11 text-[12px] uppercase tracking-wide transition-colors',
+              'flex items-center justify-center gap-1.5 rounded-lg border-2 px-4 py-2 font-script [@media(pointer:coarse)]:min-h-11 text-[12px] transition-colors',
               s.id === active
                 ? 'text-[#0d0620]'
                 : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-parchment',

@@ -109,9 +109,7 @@ export function Select({
 }
 
 export function FieldLabel({ children }: { children: ReactNode }) {
-  return (
-    <span className="mb-1.5 block font-script text-label uppercase text-ink-faint">{children}</span>
-  );
+  return <span className="mb-1.5 block font-script text-label text-ink-faint">{children}</span>;
 }
 
 const opts = (xs: readonly string[], from = 1) =>

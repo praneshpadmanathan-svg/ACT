@@ -418,7 +418,7 @@ function CampHero({ currentZone }: { currentZone: { id: string; name: string } |
           be. It is a title from content, so it wraps rather than truncates —
           "Review 14 questions" and "The Marsh of Misplaced Modifiers" have very
           different lengths and both have to survive. */}
-      <span className="mt-3 block font-heading text-[clamp(1.5rem,4.2vw,2.15rem)] font-semibold leading-[1.14] tracking-wide text-ink">
+      <span className="mt-3 block font-heading text-[clamp(1.5rem,4.2vw,2.15rem)] font-medium leading-[1.14] text-ink">
         {lead.title}
       </span>
       <span className="mt-3 block max-w-[48ch] font-read text-[clamp(1rem,1.5vw,1.1rem)] leading-relaxed text-ink-soft">
@@ -751,7 +751,7 @@ function TodayPanel({ currentZone }: { currentZone: { id: string; name: string }
                     <span className="min-w-0 flex-1 font-read text-[14px] text-parchment-dim">
                       {step.title}
                     </span>
-                    <span className="flex-none font-script text-[11.5px] uppercase tracking-wide text-ink-faint">
+                    <span className="flex-none font-script text-[12px] text-ink-faint">
                       {step.minutes} min
                     </span>
                   </button>

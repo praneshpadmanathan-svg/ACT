@@ -131,7 +131,7 @@ export function RoadChooser() {
                 {/* The onboarding answer becomes a recommendation rather than a
                     decision made on the player's behalf. */}
                 {feared && (
-                  <p className="mt-2.5 font-script text-[11.5px] uppercase tracking-[0.14em] text-desert-text">
+                  <p className="mt-2.5 font-script text-[12px] text-desert-text">
                     <Glyph name="spark" size={11} className={LEADING_ICON} />
                     Your preferred starting subject
                   </p>

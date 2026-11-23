@@ -26,14 +26,7 @@ beforeEach(() => {
       <>
         <FxLayer />
         <button className="btn btn-primary">Begin</button>
-        <button className="btn btn-primary" disabled>
-          Locked
-        </button>
-        <button className="choice choice-locked" aria-disabled="true">
-          Answered
-        </button>
-        <button className="btn btn-ghost">Quiet</button>
-        <button className="btn btn-danger">Delete</button>
+        <button className="choice">An answer</button>
       </>,
     ),
   );
@@ -44,35 +37,19 @@ afterEach(() => {
   press.mockClear();
 });
 
-const button = (text: string) =>
-  [...host.querySelectorAll('button')].find((b) => b.textContent === text)!;
-const down = (el: Element) =>
-  el.dispatchEvent(
-    new PointerEvent('pointerdown', { bubbles: true, button: 0, clientX: 40, clientY: 20 }),
-  );
-
-it('lights a primary press at the point of contact', () => {
-  down(button('Begin'));
-  expect(press).toHaveBeenCalledWith(40, 20, 'gold');
+it('hosts a canvas that can never catch a tap', () => {
+  const canvas = host.querySelector('canvas')!;
+  expect(canvas).not.toBeNull();
+  expect(canvas.className).toContain('pointer-events-none');
+  expect(canvas.getAttribute('aria-hidden')).toBe('true');
 });
 
-it('lights a destructive press in ember, not gold', () => {
-  down(button('Delete'));
-  expect(press).toHaveBeenCalledWith(40, 20, 'ruin');
-});
-
-it('stays dark on disabled controls, answered choices and quiet buttons', () => {
-  // A disabled button gets no pointer events in a browser; dispatching proves the guard.
-  down(button('Locked'));
-  down(button('Answered'));
-  down(button('Quiet'));
+it('throws no light on the chrome: a press on a button or an answer is just a press', () => {
+  for (const b of host.querySelectorAll('button')) {
+    b.dispatchEvent(
+      new PointerEvent('pointerdown', { bubbles: true, button: 0, clientX: 4, clientY: 4 }),
+    );
+    b.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 0 }));
+  }
   expect(press).not.toHaveBeenCalled();
-});
-
-it('lights a keyboard activation from the centre of the control', () => {
-  const b = button('Begin');
-  b.getBoundingClientRect = () =>
-    ({ left: 10, top: 10, width: 100, height: 40, right: 110, bottom: 50 }) as DOMRect;
-  b.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 0 }));
-  expect(press).toHaveBeenCalledWith(60, 30, 'gold');
 });
