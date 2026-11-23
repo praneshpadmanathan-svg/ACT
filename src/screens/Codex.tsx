@@ -60,7 +60,7 @@ export function CodexScreen() {
   return (
     <Page>
       <SectionHeading
-        eyebrow={`${found.size} of ${total} recorded · ${open - found.size} waiting`}
+        meta={`${found.size} of ${total} recorded, ${open - found.size} waiting`}
         title="The Codex"
         detail="The realm, in the pieces you have earned. Clear anything in a region and its entries unseal — the summit keeps its own until all four subjects are cleared."
       />
@@ -75,10 +75,7 @@ export function CodexScreen() {
           return (
             <section key={region}>
               <div className="mb-2.5 flex items-baseline justify-between gap-4">
-                <h2
-                  className="font-heading text-[1.125rem] font-semibold"
-                  style={{ color: colour }}
-                >
+                <h2 className="font-heading text-[1.125rem] font-medium" style={{ color: colour }}>
                   {REGION_LABEL[region]}
                 </h2>
                 <span className="num flex-none text-[12px] text-ink-faint">
@@ -98,11 +95,11 @@ export function CodexScreen() {
                         disabled={got || !reachable}
                         onClick={() => reveal(d)}
                         className={cx(
-                          'w-full rounded-lg border px-4 py-3.5 text-left transition-all',
+                          'w-full rounded-lg border px-4 py-3.5 text-left transition',
                           got && 'border-leather-700 bg-leather-850/80',
                           !got &&
                             reachable &&
-                            'animate-shimmer cursor-pointer border-gold-deep bg-leather-850 hover:-translate-y-0.5 hover:border-gold',
+                            'cursor-pointer border-gold-deep bg-leather-850 hover:border-gold',
                           !got &&
                             !reachable &&
                             'cursor-not-allowed border-dashed border-leather-700/70 bg-leather-900/50',

@@ -34,9 +34,7 @@ export function TestReviewGrid({
   return (
     <nav aria-label="Questions in this section" className="panel-quiet mt-5 p-4 sm:p-5">
       <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h2 className="font-script text-[11px] uppercase tracking-[0.16em] text-parchment">
-          Review
-        </h2>
+        <h2 className="font-script text-[12px] text-parchment">Review</h2>
         <p className="text-[12px] text-ink-faint">
           <span className="num text-parchment-dim">{answered}</span> of{' '}
           <span className="num text-parchment-dim">{ids.length}</span> answered

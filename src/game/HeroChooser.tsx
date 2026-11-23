@@ -95,14 +95,14 @@ export function HeroChooser({ compact = false }: { compact?: boolean }) {
             />
             <span
               className={cx(
-                'mt-1.5 font-script text-[11px] uppercase tracking-[0.12em]',
+                'mt-1.5 font-script text-[12px]',
                 chosen ? 'text-gold' : 'text-parchment-dim',
               )}
             >
               {hero.name}
             </span>
             {!compact && (
-              <span className="mt-0.5 text-center text-[11px] leading-snug text-ink-faint">
+              <span className="mt-0.5 text-center text-[12px] leading-snug text-ink-faint">
                 {hero.tagline}
               </span>
             )}

@@ -160,7 +160,7 @@ export function FigureChartView({ figure }: { figure: FigureChart }) {
           {series.map((s, i) => (
             <li
               key={s.name}
-              className="flex items-center gap-2 font-script text-[11px] uppercase tracking-[0.14em] text-ink-soft"
+              className="flex items-center gap-2 font-script text-[12px] text-ink-soft"
             >
               {isBar ? (
                 <svg width="16" height="12" aria-hidden="true" className="flex-none">

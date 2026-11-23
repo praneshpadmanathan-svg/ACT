@@ -96,7 +96,6 @@ function TestsBoard() {
   return (
     <Page>
       <SectionHeading
-        eyebrow="Challenges"
         title="Timed practice"
         detail="Shortened practice sets, not full-length ACT simulations. Explanations and an estimated score appear when you finish."
       />
@@ -104,20 +103,19 @@ function TestsBoard() {
       <ResumeCard />
 
       <div className="mb-6 grid gap-3 lg:grid-cols-2">
-        <div className="panel border-blood p-6 sm:p-7" style={{ borderTopWidth: 4 }}>
-          <h2 className="heading text-[1.125rem] text-blood-text">Four-section practice</h2>
+        <div className="panel p-6 sm:p-7">
+          <h2 className="heading text-[1.125rem] text-parchment">Four-section practice</h2>
           <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
             All four sections back to back, with a break between each.
           </p>
-          <p className="mt-4 font-script text-[10px] uppercase tracking-wide text-ink-faint">
-            {Object.values(TEST_PLAN).reduce((n, p) => n + p.questions, 0)} questions ·{' '}
+          <p className="mt-4 font-script text-[12px] text-ink-faint">
+            {Object.values(TEST_PLAN).reduce((n, p) => n + p.questions, 0)} questions in{' '}
             {Object.values(TEST_PLAN).reduce((n, p) => n + withAllowance(p.minutes, allowance), 0)}{' '}
             minutes
           </p>
           <Button
-            variant="danger"
+            variant="primary"
             size="lg"
-            trailing
             className="mt-5 w-full"
             onClick={() => navigate({ name: 'test', config: 'full' })}
           >
@@ -182,7 +180,7 @@ function TestsBoard() {
               className="panel-quiet flex flex-wrap items-center gap-x-6 gap-y-3 px-5 py-4 transition-colors hover:border-gold-deep"
             >
               <div className="min-w-0">
-                <div className="font-script text-[12px] uppercase tracking-wide text-parchment">
+                <div className="font-script text-[12px] text-parchment">
                   {result.sections.length === 4
                     ? 'Four-section practice'
                     : soleSectionName(result.sections)}
@@ -193,18 +191,14 @@ function TestsBoard() {
               <div className="ml-auto flex items-center gap-5">
                 {result.sections.map((id) => (
                   <div key={id} className="text-center">
-                    <div className="font-script text-[9px] uppercase tracking-wide text-ink-faint">
-                      {SECTION_ABBR[id]}
-                    </div>
+                    <div className="font-script text-[12px] text-ink-faint">{SECTION_ABBR[id]}</div>
                     <div className="num text-[19px]" style={{ color: SECTION_BY_ID[id]?.color }}>
                       {result.scores[id]}
                     </div>
                   </div>
                 ))}
                 <div className="border-l-2 border-leather-700 pl-5 text-center">
-                  <div className="font-script text-[9px] uppercase tracking-wide text-ink-faint">
-                    Comp
-                  </div>
+                  <div className="font-script text-[12px] text-ink-faint">Comp</div>
                   <div className="num text-[26px] text-gold">{result.composite}</div>
                 </div>
               </div>
@@ -265,7 +259,6 @@ function ResumeCard() {
         </Button>
         <Button
           variant="primary"
-          trailing
           className="min-h-11 flex-1 sm:flex-none"
           onClick={() => navigate({ name: 'test', config: saved.config })}
         >
@@ -555,7 +548,7 @@ function TestSession({ config }: { config: string }) {
                   className="flex items-center justify-between rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-3"
                 >
                   <dt
-                    className="font-script text-[11px] uppercase tracking-wide"
+                    className="font-script text-[12px]"
                     style={{ color: SECTION_BY_ID[id].color }}
                   >
                     {SECTION_BY_ID[id].name}
@@ -590,7 +583,7 @@ function TestSession({ config }: { config: string }) {
             )}
 
             <Button
-              variant="danger"
+              variant="primary"
               size="lg"
               className="mt-7 w-full"
               onClick={() => {
@@ -817,7 +810,7 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
     <Page>
       <div className="mx-auto max-w-3xl">
         <div className="panel border-gold p-7 text-center sm:p-9">
-          <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
+          <div className="font-script text-[12px] text-ink-faint">
             {result.sections.length === 4
               ? 'Four-section practice'
               : `${soleSectionName(result.sections)} section`}{' '}
@@ -825,7 +818,7 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
           </div>
 
           <div className="num mt-5 text-[80px] leading-none text-gold">{result.composite}</div>
-          <p className="mt-1 font-script text-[12px] uppercase tracking-wide text-ink-faint">
+          <p className="mt-1 font-script text-[12px] text-ink-faint">
             {(['english', 'math', 'reading'] as const).every((s) => result.sections.includes(s))
               ? 'Composite'
               : result.sections.length === 1
@@ -863,10 +856,7 @@ export function ScoreReport({ result, records }: { result: TestResult; records?:
                   key={id}
                   className="rounded-lg border-2 border-leather-700 bg-leather-900 px-4 py-4"
                 >
-                  <div
-                    className="font-script text-[10px] uppercase tracking-wide"
-                    style={{ color: meta.color }}
-                  >
+                  <div className="font-script text-[12px]" style={{ color: meta.color }}>
                     {meta.name}
                   </div>
                   <div className="num mt-2 text-[34px] leading-none text-parchment">

@@ -54,7 +54,6 @@ export function StatsScreen() {
   return (
     <Page>
       <SectionHeading
-        eyebrow="Your progress"
         title="Progress"
         detail="Everything here comes from questions you have actually answered."
         right={<LinkButton href={hrefFor({ name: 'settings' })}>Settings</LinkButton>}
@@ -129,7 +128,7 @@ export function StatsScreen() {
               <div className="min-w-0">
                 <div
                   className={cx(
-                    'font-script text-[12px] uppercase tracking-wide',
+                    'font-script text-[12px]',
                     got ? 'text-parchment' : 'text-parchment-dim',
                   )}
                 >
@@ -201,14 +200,12 @@ function StatsBody({ progress }: { progress: Progress }) {
       <div className="panel-lit mb-4 p-6 sm:p-7">
         <div className="grid items-center gap-7 sm:grid-cols-[minmax(0,1fr)_auto]">
           <div>
-            <div className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
-              Estimated composite
-            </div>
+            <div className="font-script text-[12px] text-ink-faint">Estimated composite</div>
             <div className="mt-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <span className="num text-display-l leading-none text-gold">
                 {estimate !== null ? estimate : '—'}
               </span>
-              <span className="font-script text-[11.5px] uppercase tracking-[0.14em] text-ink-faint">
+              <span className="font-script text-[12px] text-ink-faint">
                 of 36 · goal {progress.targetScore}
               </span>
             </div>
@@ -322,7 +319,7 @@ function StatsBody({ progress }: { progress: Progress }) {
               <div className="mt-3">
                 <ProgressBar value={pct} color={section.color} height={8} />
               </div>
-              <div className="mt-2.5 flex justify-between font-script text-[10px] uppercase tracking-wide text-ink-faint">
+              <div className="mt-2.5 flex justify-between font-script text-[12px] text-ink-faint">
                 <span>
                   {ok}/{n} correct
                 </span>
@@ -365,7 +362,7 @@ function StatsBody({ progress }: { progress: Progress }) {
                 {titleCase(t.topic)}
               </span>
               <span
-                className="hidden w-16 flex-none font-script text-[10px] uppercase tracking-wide sm:block"
+                className="hidden w-16 flex-none font-script text-[12px] sm:block"
                 style={{ color: meta?.color }}
               >
                 {meta?.name}
@@ -406,9 +403,7 @@ function StatsBody({ progress }: { progress: Progress }) {
 function Figure({ label, value }: { label: string; value: string }) {
   return (
     <div className="panel-quiet px-4 py-3.5">
-      <div className="font-script text-[10px] uppercase leading-tight tracking-[0.12em] text-ink-faint">
-        {label}
-      </div>
+      <div className="font-script text-[12px] leading-tight text-ink-faint">{label}</div>
       <div className="num mt-1.5 text-[22px] leading-none text-parchment">{value}</div>
     </div>
   );

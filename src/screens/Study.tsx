@@ -90,7 +90,6 @@ export function StudyScreen({ section }: { section?: string }) {
     <>
       <Page>
         <SectionHeading
-          eyebrow={meta.name}
           title={region.title}
           detail={meta.blurb}
           right={
@@ -105,7 +104,7 @@ export function StudyScreen({ section }: { section?: string }) {
 
         <SectionTabs active={sectionId} hrefFor={(id) => hrefFor({ name: 'path', section: id })} />
 
-        <div className="mb-2 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint">
+        <div className="mb-2 font-script text-[12px] text-ink-faint">
           {done} of {path.nodes.length} landmarks cleared
         </div>
         <div className="mb-7">

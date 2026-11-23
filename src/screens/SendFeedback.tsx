@@ -17,6 +17,7 @@ import { cloudEnabled, sendFeedback, type FeedbackKind } from '@/lib/supabase';
 import { CONTACT, mailto } from '@/lib/contact';
 import { readRaw, writeRaw } from '@/lib/storage';
 import { sfx } from '@/lib/sfx';
+import { useAsyncAction } from '@/lib/useAsyncAction';
 import { cx } from '@/lib/utils';
 import { Page } from '@/components/Shell';
 import { Button, SectionHeading } from '@/components/ui';
@@ -62,7 +63,7 @@ export function FeedbackScreen() {
   const [area, setArea] = useState('');
   const [message, setMessage] = useState('');
   const [contact, setContact] = useState('');
-  const [busy, setBusy] = useState(false);
+  const [busy, run] = useAsyncAction();
   const [error, setError] = useState<string | null>(null);
   const [sent, setSent] = useState(false);
   const [offerEmail, setOfferEmail] = useState(!cloudEnabled);
@@ -85,41 +86,40 @@ export function FeedbackScreen() {
       setError('You just sent one. Give it a minute before sending another.');
       return;
     }
-    setBusy(true);
-    try {
-      const result = await sendFeedback({ kind, area, message, contact });
-      if (result.ok) {
-        writeRaw(LAST_SENT_KEY, String(Date.now()));
-        sfx.achieve();
-        setSent(true);
-        return;
-      }
-      /* Over the server's cap (migration 0007). `result.error` already says
-         so in words; offering email here would just route around the cap. */
-      if (result.limited) {
-        setError(result.error);
+    await run(async () => {
+      try {
+        const result = await sendFeedback({ kind, area, message, contact });
+        if (result.ok) {
+          writeRaw(LAST_SENT_KEY, String(Date.now()));
+          sfx.achieve();
+          setSent(true);
+          return;
+        }
+        /* Over the server's cap (migration 0007). `result.error` already says
+           so in words; offering email here would just route around the cap. */
+        if (result.limited) {
+          setError(result.error);
+          sfx.wrong();
+          return;
+        }
+        setError(
+          result.missing
+            ? 'Reports can’t be saved right now. You can send this one by email instead.'
+            : result.error,
+        );
+        setOfferEmail(true);
         sfx.wrong();
-        return;
+      } catch {
+        setError('Could not reach the server. Check your connection and try again.');
+        setOfferEmail(true);
       }
-      setError(
-        result.missing
-          ? 'Reports can’t be saved right now. You can send this one by email instead.'
-          : result.error,
-      );
-      setOfferEmail(true);
-      sfx.wrong();
-    } catch {
-      setError('Could not reach the server. Check your connection and try again.');
-      setOfferEmail(true);
-    } finally {
-      setBusy(false);
-    }
+    });
   };
 
   if (sent) {
     return (
       <Page>
-        <SectionHeading eyebrow="Your account" title="Thanks — it’s sent" />
+        <SectionHeading title="Thanks — it’s sent" />
         <div className="panel max-w-2xl p-6 sm:p-7">
           <p className="font-read text-[15px] leading-relaxed text-parchment-dim">
             Every report is read.{' '}
@@ -142,7 +142,7 @@ export function FeedbackScreen() {
 
   return (
     <Page>
-      <SectionHeading eyebrow="Your account" title="Send feedback" />
+      <SectionHeading title="Send feedback" />
 
       <form onSubmit={submit} className="panel max-w-2xl space-y-5 p-6 sm:p-7">
         <p className="font-read text-[14px] leading-relaxed text-ink-faint">
@@ -239,7 +239,7 @@ export function FeedbackScreen() {
 
         <div className="flex flex-wrap items-center gap-3">
           {cloudEnabled && (
-            <Button type="submit" variant="primary" disabled={busy}>
+            <Button type="submit" variant="primary" busy={busy}>
               {busy ? 'Sending…' : 'Send feedback'}
             </Button>
           )}

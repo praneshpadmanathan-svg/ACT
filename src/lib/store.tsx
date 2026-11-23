@@ -919,7 +919,11 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   /* Carries a pending claim, so a sign-up whose first sync failed can finish
      claiming from the Settings button rather than only from a reload. */
   const syncNow = useCallback(async () => {
-    if (userId) await syncWithCloud(userId, playerName, readRaw(CLAIM_GUEST_KEY) === '1');
+    /* One at a time: a second tap while the first pull is out would race it
+       to merge and push. The sign-in path does not go through here, so a
+       sync for a newly signed-in account is never the one refused. */
+    if (!userId || syncInFlightRef.current) return;
+    await syncWithCloud(userId, playerName, readRaw(CLAIM_GUEST_KEY) === '1');
   }, [userId, playerName, syncWithCloud]);
 
   /* Wipe progress without touching the account.
@@ -943,7 +947,17 @@ export function StoreProvider({ children }: { children: ReactNode }) {
        sync undoing it. */
     const fresh: Progress = { ...emptyProgress(), resetAt: Date.now() };
 
-    if (userId && !(await deleteRemoteProgress(userId))) {
+    /* A throw is a failure like any other, and has to let go of the write
+       lock on the way out: left set, every later push this session would be
+       dropped without a word. */
+    let removed: boolean;
+    try {
+      removed = !userId || (await deleteRemoteProgress(userId));
+    } catch (err) {
+      reportWarn('sync.reset', err);
+      removed = false;
+    }
+    if (!removed) {
       /* Clearing this device anyway would look like success until the next
          sign-in pulled every bit of it back down. Say so and change nothing. */
       resettingRef.current = false;
@@ -983,7 +997,13 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     // As in resetEverything: no write may follow the account out.
     resettingRef.current = true;
     if (pushTimer.current) window.clearTimeout(pushTimer.current);
-    const result = await cloudDeleteAccount();
+    let result: { ok: boolean; error?: string };
+    try {
+      result = await cloudDeleteAccount();
+    } catch (err) {
+      reportWarn('account.delete', err);
+      result = { ok: false, error: 'Could not reach the server, so nothing was deleted.' };
+    }
     if (!result.ok) {
       resettingRef.current = false;
       return result;

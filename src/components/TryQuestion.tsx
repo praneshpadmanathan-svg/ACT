@@ -23,6 +23,7 @@ import { SECTION_BY_ID } from '@/content/sections';
 import sample from 'virtual:content/question/m027';
 import { fromDrillQuestion } from '@/lib/normalize';
 import { sfx } from '@/lib/sfx';
+import { fx } from '@/lib/fx';
 import { cx } from '@/lib/utils';
 import type { Question } from '@/types';
 
@@ -69,22 +70,23 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
   const revealed = chosen !== null;
   const correct = chosen === run.correctKey;
 
-  const answer = (key: string) => {
+  const answer = (key: string, row?: Element) => {
     if (revealed) return;
     setChosen(key);
     if (key === run.correctKey) sfx.correct();
     else sfx.wrong();
+    // The first answer anyone gives on the site; it should look like the app.
+    if (row) {
+      if (key === run.correctKey) fx.correct(row, 1);
+      else fx.wrong(row);
+    }
   };
 
   return (
-    <div className="proof-sheet mx-auto max-w-3xl p-6 sm:p-9">
+    <div className="proof-sheet max-w-3xl p-6 sm:p-9">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span className="font-script text-[11px] uppercase tracking-[0.16em] text-gold">
-          {section?.name ?? 'Sample'}
-        </span>
-        <span className="font-script text-[11px] uppercase tracking-[0.16em] text-ink-faint">
-          {run.topic}
-        </span>
+        <span className="font-script text-[12px] text-gold">{section?.name ?? 'Sample'}</span>
+        <span className="font-script text-[12px] text-ink-faint">{run.topic}</span>
       </div>
 
       <p className="mt-4 font-read text-[1.06rem] leading-[1.7] text-parchment-light">
@@ -143,7 +145,7 @@ export function TryQuestion({ onFinish }: { onFinish?: () => void }) {
                  is wrong, the entire point of the sample, somewhere a
                  keyboard user cannot reach. */
               aria-disabled={revealed}
-              onClick={() => answer(choice.key)}
+              onClick={(e) => answer(choice.key, e.currentTarget)}
               className={cx(
                 'rounded-lg border-2 px-4 py-3 text-left transition-colors',
                 !revealed && 'border-leather-700 bg-leather-900/70 hover:border-gold-deep',

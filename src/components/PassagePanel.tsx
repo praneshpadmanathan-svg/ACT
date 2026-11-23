@@ -53,7 +53,7 @@ export function PassagePanel({ passage, cue = '' }: { passage: Passage; cue?: st
         <button
           type="button"
           onClick={() => setOpenOnMobile((v) => !v)}
-          className="mt-3 flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border-2 border-paper-edge bg-white px-4 py-2 font-script text-[12px] uppercase tracking-wide text-ink-soft lg:hidden"
+          className="mt-3 flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border-2 border-paper-edge bg-white px-4 py-2 font-script text-[12px] text-ink-soft lg:hidden"
           aria-expanded={openOnMobile}
           aria-controls={`passage-body-${passage.id}`}
         >

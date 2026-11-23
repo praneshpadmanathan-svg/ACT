@@ -332,7 +332,7 @@ function RankDetail({
   return (
     <div className="rank-detail panel-quiet" key={rank.id}>
       <div className="rank-detail-head">
-        <h3 className="font-heading text-title font-bold" style={{ color: tint }}>
+        <h3 className="font-heading text-title font-medium" style={{ color: tint }}>
           {rank.name}
         </h3>
         <span className="rank-detail-state">

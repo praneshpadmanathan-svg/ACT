@@ -146,8 +146,8 @@ export function Wizzy() {
               sfx.select();
               setTipIndex((i) => i + 1);
             }}
-            className="mt-1 inline-flex min-h-11 items-center gap-1 font-script text-[12px] uppercase
-                       tracking-[0.16em] text-gold transition-colors hover:text-gold-bright"
+            className="mt-1 inline-flex min-h-11 items-center gap-1 font-script text-[12px] 
+ text-gold transition-colors hover:text-gold-bright"
           >
             More counsel
             <Glyph name="chevronRight" size={12} strokeWidth={2} />

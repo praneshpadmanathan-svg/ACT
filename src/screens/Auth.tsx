@@ -28,6 +28,7 @@ import {
   type DateParts,
 } from '@/lib/ageGate';
 import { checkPassword } from '@/lib/password';
+import { useAsyncAction } from '@/lib/useAsyncAction';
 import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import { Button } from '@/components/ui';
@@ -59,7 +60,10 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
   const [password, setPassword] = useState('');
   const [code, setCode] = useState('');
   const [error, setError] = useState<string | null>(null);
-  const [busy, setBusy] = useState(false);
+  /* Locked synchronously, and every way off this form is disabled while it
+     is: a "Log in" still in flight when "Play without an account" was tapped
+     used to finish afterwards and navigate the new guest into the account. */
+  const [busy, run] = useAsyncAction();
   const [sent, setSent] = useState<'confirm' | 'code' | 'reset' | null>(null);
 
   /* Asked once, at account creation only, and only if we have not already been
@@ -75,6 +79,7 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
   const [agreed, setAgreed] = useState(false);
 
   const startPlaying = () => {
+    if (busy) return;
     /* Already signed in: the account is the world. Going through onboarding
        again would overwrite its profile, so go straight back to camp. */
     if (userId) {
@@ -89,6 +94,7 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
   const confirmFailed = authRedirect?.flow === 'confirm' && !authRedirect.ok;
 
   const go = (next: AuthMode) => {
+    if (busy) return;
     sfx.select();
     setMode(next);
     setError(null);
@@ -123,54 +129,53 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
       return;
     }
 
-    setBusy(true);
-    try {
-      if (mode === 'signup') {
-        /* Set before the request, not after: confirmation takes the player out
-           of the app entirely, and they may never come back to this component
-           to have it set for them.
+    await run(async () => {
+      try {
+        if (mode === 'signup') {
+          /* Set before the request, not after: confirmation takes the player out
+             of the app entirely, and they may never come back to this component
+             to have it set for them.
 
-           Cleared again if the request fails. Leaving it set was a real hole:
-           a guest whose sign-up bounced could switch to "Returning", sign in to
-           an account they already had, and silently drag the guest world into
-           it — the exact contamination this flag exists to keep out. */
-        claimGuestProgress();
-        const result = await signUp(name.trim(), email, password);
-        if (!result.ok) {
-          releaseGuestClaim();
-          return fail(result.error);
+             Cleared again if the request fails. Leaving it set was a real hole:
+             a guest whose sign-up bounced could switch to "Returning", sign in to
+             an account they already had, and silently drag the guest world into
+             it — the exact contamination this flag exists to keep out. */
+          claimGuestProgress();
+          const result = await signUp(name.trim(), email, password);
+          if (!result.ok) {
+            releaseGuestClaim();
+            return fail(result.error);
+          }
+          if (result.needsConfirmation) return setSent('confirm');
+          await refreshAuth();
+          return succeed();
         }
-        if (result.needsConfirmation) return setSent('confirm');
-        await refreshAuth();
-        return succeed();
-      }
 
-      if (mode === 'signin') {
-        const result = await signIn(email, password);
-        if (!result.ok) return fail(result.error);
-        await refreshAuth();
-        return succeed();
-      }
+        if (mode === 'signin') {
+          const result = await signIn(email, password);
+          if (!result.ok) return fail(result.error);
+          await refreshAuth();
+          return succeed();
+        }
 
-      if (mode === 'forgot') {
-        const result = await requestPasswordReset(email);
-        if (!result.ok) return fail(result.error);
-        return setSent('reset');
-      }
+        if (mode === 'forgot') {
+          const result = await requestPasswordReset(email);
+          if (!result.ok) return fail(result.error);
+          return setSent('reset');
+        }
 
-      if (mode === 'reset') {
-        const result = await setNewPassword(password);
-        if (!result.ok) return fail(result.error);
-        clearAuthRedirect();
-        await refreshAuth();
-        return succeed();
+        if (mode === 'reset') {
+          const result = await setNewPassword(password);
+          if (!result.ok) return fail(result.error);
+          clearAuthRedirect();
+          await refreshAuth();
+          return succeed();
+        }
+      } catch {
+        if (mode === 'signup') releaseGuestClaim();
+        fail('Could not reach the server. Check your connection and try again.');
       }
-    } catch {
-      if (mode === 'signup') releaseGuestClaim();
-      fail('Could not reach the server. Check your connection and try again.');
-    } finally {
-      setBusy(false);
-    }
+    });
   };
 
   const fail = (message?: string) => {
@@ -188,17 +193,16 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
   const submitCode = async (e: FormEvent) => {
     e.preventDefault();
     setError(null);
-    setBusy(true);
-    try {
-      const result = await verifyLoginCode(email, code);
-      if (!result.ok) return fail(result.error);
-      await refreshAuth();
-      succeed();
-    } catch {
-      fail('Could not reach the server. Check your connection and try again.');
-    } finally {
-      setBusy(false);
-    }
+    await run(async () => {
+      try {
+        const result = await verifyLoginCode(email, code);
+        if (!result.ok) return fail(result.error);
+        await refreshAuth();
+        succeed();
+      } catch {
+        fail('Could not reach the server. Check your connection and try again.');
+      }
+    });
   };
 
   const emailACode = async () => {
@@ -207,16 +211,15 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
       setError('Enter your email address first.');
       return;
     }
-    setBusy(true);
-    try {
-      const result = await sendLoginCode(email);
-      if (!result.ok) return fail(result.error);
-      setSent('code');
-    } catch {
-      fail('Could not reach the server. Check your connection and try again.');
-    } finally {
-      setBusy(false);
-    }
+    await run(async () => {
+      try {
+        const result = await sendLoginCode(email);
+        if (!result.ok) return fail(result.error);
+        setSent('code');
+      } catch {
+        fail('Could not reach the server. Check your connection and try again.');
+      }
+    });
   };
 
   /* -------------------------------------------------------------- render */
@@ -237,21 +240,22 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
    * buttons stay; this screen carries the explanation. */
   if (!cloudEnabled) {
     return (
-      <Frame title="Accounts aren’t switched on yet">
-        <p className="mb-4 font-read text-[15px] leading-relaxed text-parchment-dim">
-          This copy of ACT Command has no account server connected, so there is nothing to log in to
-          right now. Everything saves to this browser instead — all{' '}
+      <Frame title="Accounts aren’t available yet">
+        <p className="mb-6 font-read text-[15px] leading-relaxed text-parchment-dim">
+          There is nothing to log in to yet. Your progress saves in this browser instead, and all{' '}
           {LIBRARY_STATS.totalQuestions.toLocaleString()} questions, every lesson, the duels and
-          timed practice work exactly the same.
+          timed practice work exactly the same without an account.
         </p>
-        <p className="mb-6 rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[13px] leading-relaxed text-ink-faint">
-          Running this yourself? Accounts turn on the moment{' '}
-          <b className="text-parchment-dim">VITE_SUPABASE_URL</b> and{' '}
-          <b className="text-parchment-dim">VITE_SUPABASE_ANON_KEY</b> are set — see
-          docs/launch-checklist.md.
-        </p>
-        <Button variant="primary" size="lg" trailing className="w-full" onClick={startPlaying}>
-          Start the journey
+        {/* For whoever is running the build, never for a student: environment
+            variable names on a customer-facing screen read as a broken site. */}
+        {import.meta.env.DEV && (
+          <p className="mb-6 rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[13px] leading-relaxed text-ink-faint">
+            Development build: accounts turn on when <code>VITE_SUPABASE_URL</code> and{' '}
+            <code>VITE_SUPABASE_ANON_KEY</code> are set. See docs/launch-checklist.md.
+          </p>
+        )}
+        <Button variant="primary" size="lg" className="w-full" onClick={startPlaying}>
+          Practise without an account
         </Button>
         <BackLink onClick={() => navigate({ name: 'landing' })} />
       </Frame>
@@ -291,18 +295,18 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
      neither of which collects anything new. */
   if (tooYoung && mode === 'signup') {
     return (
-      <Frame title="Come on in">
+      <Frame title="You can practise without an account">
         <p className="font-read text-[15px] leading-relaxed text-parchment-dim">
-          We only make accounts for people <b className="text-parchment">13 and over</b>, so this
-          one is on the house — nothing to sign up for and no email needed.
+          Accounts are for people 13 and over, so there is nothing to sign up for and no email
+          needed.
         </p>
         <p className="mt-3 font-read text-[15px] leading-relaxed text-parchment-dim">
           Everything is unlocked: all four subjects, every lesson, the duels, timed practice. Your
           progress saves on this device, so come back to the same browser and your world is where
           you left it.
         </p>
-        <Button variant="primary" size="lg" trailing className="mt-7 w-full" onClick={startPlaying}>
-          Start the journey
+        <Button variant="primary" size="lg" className="mt-7 w-full" onClick={startPlaying}>
+          Start practising
         </Button>
         <p className="mt-5 text-center text-[13px] text-ink-faint">
           Already have an account?{' '}
@@ -386,13 +390,13 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
               maxLength={8}
             />
             {error && <ErrorNote>{error}</ErrorNote>}
-            <Button type="submit" variant="primary" size="lg" className="w-full" disabled={busy}>
+            <Button type="submit" variant="primary" size="lg" className="w-full" busy={busy}>
               {busy ? 'Checking…' : 'Log in'}
             </Button>
           </form>
         )}
 
-        <Button className="mt-6 w-full" onClick={() => go('signin')}>
+        <Button className="mt-6 w-full" disabled={busy} onClick={() => go('signin')}>
           Back to log in
         </Button>
       </Frame>
@@ -423,7 +427,7 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
           <ErrorNote>
             {authRedirect?.error ?? 'This page needs the link from your reset email.'}
           </ErrorNote>
-          <Button className="mt-3 w-full" onClick={() => go('forgot')}>
+          <Button className="mt-3 w-full" disabled={busy} onClick={() => go('forgot')}>
             Email me a new link
           </Button>
         </div>
@@ -503,7 +507,7 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
 
         {error && <ErrorNote>{error}</ErrorNote>}
 
-        <Button type="submit" variant="primary" size="lg" className="w-full" disabled={busy}>
+        <Button type="submit" variant="primary" size="lg" className="w-full" busy={busy}>
           {busy
             ? 'Working…'
             : {
@@ -521,14 +525,17 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
             type="button"
             onClick={() => void emailACode()}
             disabled={busy}
-            className="font-read text-[13.5px] text-cliffs-text underline-offset-2 transition-colors hover:underline disabled:opacity-50"
+            /* Standalone, not inside a sentence, so they get the 44px a thumb
+               needs: at 13.5px of text each one measured about 20 tall. */
+            className="inline-flex items-center font-read text-[13.5px] text-cliffs-text underline-offset-2 transition-colors hover:underline disabled:opacity-50 [@media(pointer:coarse)]:min-h-11"
           >
             Email me a code instead
           </button>
           <button
             type="button"
             onClick={() => go('forgot')}
-            className="font-read text-[13.5px] text-ink-faint transition-colors hover:text-parchment"
+            disabled={busy}
+            className="inline-flex items-center font-read text-[13.5px] text-ink-faint transition-colors hover:text-parchment disabled:opacity-50 [@media(pointer:coarse)]:min-h-11"
           >
             Forgot password?
           </button>
@@ -543,7 +550,8 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
           <button
             type="button"
             onClick={() => go(mode === 'signin' ? 'signup' : 'signin')}
-            className="font-semibold text-cliffs-text underline-offset-2 hover:underline"
+            disabled={busy}
+            className="font-semibold text-cliffs-text underline-offset-2 hover:underline disabled:opacity-50"
           >
             {mode === 'signin' ? 'Create an account' : 'Log in'}
           </button>
@@ -552,7 +560,7 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
 
       {mode !== 'reset' && (
         <div className="mt-6 border-t border-leather-700 pt-6 text-center">
-          <Button className="w-full" onClick={startPlaying}>
+          <Button className="w-full" disabled={busy} onClick={startPlaying}>
             {hasStarted && progress.profile ? 'Back to my guest game' : 'Play without an account'}
           </Button>
           <p className="mt-3 font-read text-[13px] text-ink-faint">
@@ -563,6 +571,7 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
       )}
 
       <BackLink
+        disabled={busy}
         onClick={() => (mode === 'forgot' ? go('signin') : navigate({ name: 'landing' }))}
       />
     </Frame>
@@ -720,12 +729,13 @@ function ErrorNote({ children }: { children: ReactNode }) {
   );
 }
 
-function BackLink({ onClick }: { onClick: () => void }) {
+function BackLink({ onClick, disabled }: { onClick: () => void; disabled?: boolean }) {
   return (
     <button
       type="button"
       onClick={onClick}
-      className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-1.5 font-script text-[12px] uppercase tracking-[0.16em] text-ink-faint transition-colors hover:text-parchment"
+      disabled={disabled}
+      className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-1.5 font-script text-[12px] text-ink-faint transition-colors hover:text-parchment disabled:opacity-50"
     >
       <Glyph name="arrowLeft" size={13} strokeWidth={2} />
       Back

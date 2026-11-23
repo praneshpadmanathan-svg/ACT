@@ -47,7 +47,9 @@ interface ButtonProps extends NativeButtonProps {
   variant?: Variant;
   size?: Size;
   quiet?: boolean;
-  trailing?: boolean;
+  /** Waiting on the network. Disables the button and shows a spinner, so a
+   *  press is acknowledged at once even when the answer takes seconds. */
+  busy?: boolean;
 }
 
 function buttonClass(variant: Variant, size: Size, className?: string) {
@@ -74,7 +76,6 @@ export function LinkButton({
   href,
   variant = 'ghost',
   size = 'md',
-  trailing = false,
   className,
   onClick,
   children,
@@ -82,7 +83,6 @@ export function LinkButton({
   href: string;
   variant?: Variant;
   size?: Size;
-  trailing?: boolean;
   className?: string;
   onClick?: () => void;
   children: ReactNode;
@@ -92,7 +92,6 @@ export function LinkButton({
     <m.a
       href={href}
       className={buttonClass(variant, size, className)}
-      whileHover={stillMotion ? undefined : { y: -1 }}
       whileTap={stillMotion ? undefined : { scale: 0.99 }}
       transition={PIN_SPRING}
       onClick={() => {
@@ -101,21 +100,14 @@ export function LinkButton({
       }}
     >
       {children}
-      {trailing && (
-        <Glyph name="chevronRight" size={TRAIL_SIZE[size]} className="-mr-1 opacity-80" />
-      )}
     </m.a>
   );
 }
 
-/* Forty-three buttons in this app ended their label with a typed `▶` or `▸`.
-   That is one affordance — "this moves you onward" — spelled forty-three
-   different ways: two glyphs, whatever font resolved them, no control over
-   size, and a screen reader announcing "black right-pointing triangle" after
-   the label. `trailing` makes it a property of the button instead, so the
-   chevron is one size relative to the label everywhere and the assistive
-   layer never hears it. */
-const TRAIL_SIZE: Record<Size, number> = { sm: 13, md: 15, lg: 17 };
+/* There used to be a `trailing` prop here that put a chevron after the label,
+   and nearly every primary button in the app set it. An arrow stapled to every
+   action is template chrome (DESIGN.md): the label already says where it goes.
+   Removed along with its twenty-eight call sites. */
 
 interface Ink {
   id: number;
@@ -139,13 +131,14 @@ export function Button({
   variant = 'ghost',
   size = 'md',
   quiet = false,
-  trailing = false,
+  busy = false,
   className,
   onClick,
   onPointerDown,
   children,
   ...rest
 }: ButtonProps) {
+  const disabled = rest.disabled || busy;
   const [inks, setInks] = useState<Ink[]>([]);
   const nextInk = useRef(0);
   const stillMotion = useReducedMotion();
@@ -167,8 +160,7 @@ export function Button({
     <m.button
       type="button"
       className={buttonClass(variant, size, className)}
-      whileHover={rest.disabled || stillMotion ? undefined : { y: -1 }}
-      whileTap={rest.disabled || stillMotion ? undefined : { scale: 0.99 }}
+      whileTap={disabled || stillMotion ? undefined : { scale: 0.99 }}
       transition={PIN_SPRING}
       onPointerDown={(e) => {
         spread(e);
@@ -179,6 +171,8 @@ export function Button({
         onClick?.(e);
       }}
       {...rest}
+      disabled={disabled}
+      aria-busy={busy || undefined}
     >
       <AnimatePresence>
         {inks.map((ink) => (
@@ -207,10 +201,8 @@ export function Button({
           />
         ))}
       </AnimatePresence>
+      {busy && <span className="btn-spinner" aria-hidden="true" />}
       {children}
-      {trailing && (
-        <Glyph name="chevronRight" size={TRAIL_SIZE[size]} className="-mr-1 opacity-80" />
-      )}
     </m.button>
   );
 }
@@ -226,13 +218,13 @@ export function Button({
    margin, which is what the typed character used to do. */
 export const LEADING_ICON = 'mr-1.5 inline-block align-[-1px]';
 
-/* `.eyebrow` is a text style; this is the marked variant of it, which is how
-   it is used nearly everywhere. The star was a typed `✦`, resolved out of
-   whatever fallback font had it — heavier than the small caps beside it on
-   Windows, missing on some Androids. */
+/* A short label above a block, in the `.eyebrow` text style: sentence case,
+   muted, no mark. It used to lead with a sparkle glyph and set itself in gold
+   tracked capitals; see DESIGN.md. Pass `icon` only where the glyph says
+   something the words do not. */
 export function Eyebrow({
   children,
-  icon = 'spark',
+  icon,
   className,
 }: {
   children: ReactNode;
@@ -247,7 +239,7 @@ export function Eyebrow({
      <p> while behaving like the div it replaced. */
   return (
     <span className={cx('eyebrow block', className)}>
-      <Glyph name={icon} size={12} className={LEADING_ICON} />
+      {icon && <Glyph name={icon} size={12} className={LEADING_ICON} />}
       {children}
     </span>
   );
@@ -487,9 +479,7 @@ export function ProgressRing({
           {pctValue}%
         </span>
       </div>
-      <span className="font-script text-[12px] uppercase tracking-[0.14em] text-parchment-dim">
-        {label}
-      </span>
+      <span className="font-script text-[12px] text-parchment-dim">{label}</span>
     </div>
   );
 }
@@ -541,27 +531,32 @@ export function EmptyState({
   );
 }
 
+/* A page header: the title, then one plain sentence.
+
+   There used to be an `eyebrow` above every title — "YOUR ACCOUNT", "CHALLENGES",
+   tracked capitals in gold — which is template chrome: it appears whatever the
+   page is about and says nothing the title does not. Where that line carried a
+   fact ("1,768 questions available"), it is `meta` now, a quiet line under the
+   title, where a fact about the page belongs. See DESIGN.md. */
 export function SectionHeading({
-  eyebrow,
+  meta,
   title,
   detail,
   right,
 }: {
-  eyebrow?: string;
+  meta?: string;
   title: string;
   detail?: string;
   right?: ReactNode;
 }) {
   return (
-    <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+    <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
       <div>
-        {eyebrow && <div className="eyebrow mb-1.5">{eyebrow}</div>}
-        <h1 className="heading text-[clamp(1.5rem,3.4vw,2.15rem)] leading-tight">{title}</h1>
+        <h1 className="heading text-[clamp(1.75rem,3.4vw,2.25rem)] leading-tight">{title}</h1>
         {detail && (
-          <p className="mt-2.5 max-w-2xl font-read text-[15.5px] leading-relaxed text-parchment-dim">
-            {detail}
-          </p>
+          <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-parchment-dim">{detail}</p>
         )}
+        {meta && <p className="mt-2 text-[13px] text-ink-faint">{meta}</p>}
       </div>
       {right}
     </div>
@@ -604,7 +599,7 @@ export function SectionTabs({
             aria-current={s.id === active ? 'page' : undefined}
             title={locked ? `${s.name} is part of Pro` : undefined}
             className={cx(
-              'flex items-center justify-center gap-1.5 rounded-lg border-2 px-4 py-2 font-script [@media(pointer:coarse)]:min-h-11 text-[12px] uppercase tracking-wide transition-colors',
+              'flex items-center justify-center gap-1.5 rounded-lg border-2 px-4 py-2 font-script [@media(pointer:coarse)]:min-h-11 text-[12px] transition-colors',
               s.id === active
                 ? 'text-[#0d0620]'
                 : 'border-leather-700 bg-leather-850 text-parchment-dim hover:text-parchment',

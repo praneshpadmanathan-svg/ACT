@@ -33,10 +33,10 @@ function DuelsBoard() {
   return (
     <Page>
       <SectionHeading
-        eyebrow={
+        meta={
           broken === 4
             ? 'All four Seals broken'
-            : `${broken} of 4 Seals broken · ${ready} guardian${ready === 1 ? '' : 's'} awake`
+            : `${broken} of 4 Seals broken, ${ready} guardian${ready === 1 ? '' : 's'} awake`
         }
         title="The Four Guardians"
         detail="One stands at the end of every road, and each holds a Seal. Clear every landmark in a region to wake its guardian, then beat it in a duel to break the Seal."

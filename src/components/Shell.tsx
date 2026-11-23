@@ -407,8 +407,8 @@ export function SideNav() {
           main?.scrollIntoView({ block: 'start' });
         }}
         className="sr-only rounded-lg border-2 border-gold bg-leather-850 px-4 py-2 font-script
-                   text-[12px] uppercase tracking-[0.14em] text-gold
-                   focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[100]"
+ text-[12px] text-gold
+ focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[100]"
       >
         Skip to content
       </a>
@@ -440,12 +440,7 @@ export function SideNav() {
           onClick={() => sfx.select()}
           className="group flex flex-none items-center gap-2.5 border-b border-leather-800 px-4 py-4"
         >
-          <span className="brand-sigil">
-            <NavGlyph name="star" size={15} />
-          </span>
-          <span className="font-heading text-[15px] font-semibold tracking-wide text-parchment">
-            ACT Command
-          </span>
+          <span className="wordmark text-[16px]">ACT Command</span>
         </a>
 
         {/* The palette's own door. A shortcut nobody is told about is a
@@ -479,7 +474,7 @@ export function SideNav() {
           Below lg the rail cannot be a column, so it becomes a slim bar that
           names where you are, plus a drawer carrying the same groups. The bar
           is sticky for the same reason the rail is. */}
-      <header className="sticky top-0 z-40 border-b border-leather-700 bg-leather-950/95 backdrop-blur-md lg:hidden">
+      <header className="vt-topbar sticky top-0 z-40 border-b border-leather-700 bg-leather-950/95 backdrop-blur-md lg:hidden">
         <div
           className="pointer-events-none absolute inset-x-0 top-0 h-px"
           style={{
@@ -495,9 +490,7 @@ export function SideNav() {
             aria-label="ACT Command home"
             className="group flex min-h-11 min-w-11 flex-none items-center gap-2"
           >
-            <span className="brand-sigil">
-              <NavGlyph name="star" size={15} />
-            </span>
+            <span className="wordmark text-[15px]">ACT</span>
           </a>
 
           {/* Where you are, said out loud. On a top bar the active tab said
@@ -542,6 +535,7 @@ export function SideNav() {
             }}
             className="hud-icon flex-none"
             aria-expanded={menuOpen}
+            aria-controls="nav-drawer"
             aria-label="Menu"
           >
             <NavGlyph name={menuOpen ? 'close' : 'menu'} size={17} />
@@ -550,6 +544,7 @@ export function SideNav() {
 
         {menuOpen && (
           <nav
+            id="nav-drawer"
             className="animate-slideDown max-h-[calc(100dvh-3.5rem)] overflow-y-auto
                        overscroll-contain border-t border-leather-700 bg-leather-900 px-2.5 py-3"
             aria-label="Main"
@@ -629,8 +624,8 @@ export function BackLink({ to, label }: { to: Route; label: string }) {
     <a
       href={hrefFor(to)}
       onClick={() => sfx.select()}
-      className="group mb-3 inline-flex min-h-11 items-center gap-2 font-script text-[13px] uppercase
-                 tracking-[0.16em] text-ink-faint transition-colors hover:text-gold"
+      className="group mb-3 inline-flex min-h-11 items-center gap-2 font-script text-[13px] 
+ text-ink-faint transition-colors hover:text-gold"
     >
       <span className="inline-flex transition-transform duration-quick group-hover:-translate-x-1">
         <Glyph name="arrowLeft" size={14} strokeWidth={2} />

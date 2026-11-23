@@ -37,12 +37,34 @@ export function SettingsScreen() {
     deleteAccount,
   } = useStore();
 
-  const [erasing, setErasing] = useState(false);
+  /* Which destructive action is in flight, so each button can say what it is
+     doing and both stay locked until it settles. */
+  const [erasing, setErasing] = useState<'reset' | 'delete' | null>(null);
   const [eraseError, setEraseError] = useState<string | null>(null);
+
+  /* Success reloads the page, so only a failure has anything to undo. A
+     rejection used to be one of those: the old `.then()` had no `.catch()`,
+     and a thrown request left both buttons disabled until a reload. */
+  const erase = async (
+    kind: 'reset' | 'delete',
+    action: () => Promise<{ ok: boolean; error?: string }>,
+    fallback: string,
+  ) => {
+    setEraseError(null);
+    setErasing(kind);
+    try {
+      const result = await action();
+      if (result.ok) return;
+      setEraseError(result.error ?? fallback);
+    } catch {
+      setEraseError(`${fallback} Check your connection and try again.`);
+    }
+    setErasing(null);
+  };
 
   return (
     <Page>
-      <SectionHeading eyebrow="Your account" title="Settings" />
+      <SectionHeading title="Settings" />
 
       {/* your test — the two things the whole app paces itself against, so
           they come first and nothing else on the page is about the ACT. */}
@@ -53,10 +75,7 @@ export function SettingsScreen() {
             first control inside it, so tapping the words "Target score"
             quietly set the target to 24. */}
         <div role="group" aria-labelledby="settings-target" className="mb-5">
-          <span
-            id="settings-target"
-            className="mb-2 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint"
-          >
+          <span id="settings-target" className="mb-2 block font-script text-[12px] text-ink-faint">
             Target score
           </span>
           <div className="grid grid-cols-5 gap-1.5 sm:flex sm:flex-wrap sm:gap-2">
@@ -83,10 +102,7 @@ export function SettingsScreen() {
             changeable later. Clearing it stops the countdown rather than
             leaving a date that has quietly gone by. */}
         <div role="group" aria-labelledby="settings-date">
-          <span
-            id="settings-date"
-            className="mb-2 block font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint"
-          >
+          <span id="settings-date" className="mb-2 block font-script text-[12px] text-ink-faint">
             Test date
           </span>
           <div className="flex flex-wrap items-center gap-2.5">
@@ -129,7 +145,7 @@ export function SettingsScreen() {
           you pick about how the app looks. */}
       <div className="panel mb-6 p-6 sm:p-7">
         <h2 className="heading mb-1.5 text-[1.125rem] text-parchment">Your traveller</h2>
-        <p className="mb-5 text-[13px] leading-relaxed text-ink-faint">
+        <p className="mb-5 max-w-[68ch] text-[13px] leading-relaxed text-ink-faint">
           Nothing here is locked and nothing has to be earned. Pick whoever you want to be on the
           road; you can change it whenever you like.
         </p>
@@ -167,11 +183,17 @@ export function SettingsScreen() {
                 every device you log in on.
               </p>
               <div className="flex flex-wrap gap-2.5">
-                <Button variant="ghost" onClick={() => void syncNow()} disabled={syncing}>
+                <Button
+                  variant="ghost"
+                  onClick={() => void syncNow()}
+                  disabled={erasing !== null}
+                  busy={syncing}
+                >
                   {syncing ? 'Syncing…' : 'Sync now'}
                 </Button>
                 <Button
                   variant="ghost"
+                  disabled={erasing !== null}
                   onClick={() => {
                     void signOut();
                     navigate({ name: 'landing' });
@@ -212,9 +234,7 @@ export function SettingsScreen() {
           through, looking at a number you do not trust — you are on a screen
           with no way to it. */}
       <div className="panel mb-6 flex flex-wrap items-center gap-x-5 gap-y-2 p-5">
-        <span className="font-script text-[10px] uppercase tracking-[0.14em] text-ink-faint">
-          Questions about the app
-        </span>
+        <span className="font-script text-[12px] text-ink-faint">Questions about the app</span>
         <a
           href={hrefFor({ name: 'faq' })}
           className="font-read text-[13.5px] text-parchment-dim underline underline-offset-4 transition-colors hover:text-parchment"
@@ -250,7 +270,7 @@ export function SettingsScreen() {
       {/* danger zone */}
       <div className="panel mb-6 border-blood/40 p-6">
         <h2 className="heading mb-3 text-[1.125rem] text-blood-text">Danger zone</h2>
-        <p className="mb-4 text-[13px] leading-relaxed text-ink-faint">
+        <p className="mb-4 max-w-[68ch] text-[13px] leading-relaxed text-ink-faint">
           Deletes all XP, answers, cleared landmarks and test results
           {isGuest ? ' from this browser' : ', on every device and in the cloud'}. This cannot be
           undone — download your data first if you want to keep a copy.
@@ -258,32 +278,29 @@ export function SettingsScreen() {
         <div className="flex flex-wrap gap-2.5">
           <Button
             variant="danger"
-            disabled={erasing}
+            disabled={erasing !== null}
+            busy={erasing === 'reset'}
             onClick={() => {
+              if (erasing) return;
               const ok = window.confirm(
                 isGuest
                   ? 'Delete all progress on this device? This cannot be undone.'
                   : 'Delete all progress everywhere, including the cloud copy? Your account stays. This cannot be undone.',
               );
               if (!ok) return;
-              setEraseError(null);
-              setErasing(true);
-              void resetEverything().then((result) => {
-                if (!result.ok) {
-                  setEraseError(result.error ?? 'Could not reset progress.');
-                  setErasing(false);
-                }
-              });
+              void erase('reset', resetEverything, 'Could not reset progress.');
             }}
           >
-            Reset progress
+            {erasing === 'reset' ? 'Resetting…' : 'Reset progress'}
           </Button>
 
           {!isGuest && (
             <Button
               variant="danger"
-              disabled={erasing}
+              disabled={erasing !== null}
+              busy={erasing === 'delete'}
               onClick={() => {
+                if (erasing) return;
                 /* Two prompts, because this one takes the account with it and
                    there is no undo, no grace period and no copy kept. */
                 if (!window.confirm('Delete your account and all of your progress?')) return;
@@ -294,17 +311,10 @@ export function SettingsScreen() {
                 ) {
                   return;
                 }
-                setEraseError(null);
-                setErasing(true);
-                void deleteAccount().then((result) => {
-                  if (!result.ok) {
-                    setEraseError(result.error ?? 'Could not delete the account.');
-                    setErasing(false);
-                  }
-                });
+                void erase('delete', deleteAccount, 'Could not delete the account.');
               }}
             >
-              {erasing ? 'Deleting…' : 'Delete my account'}
+              {erasing === 'delete' ? 'Deleting…' : 'Delete my account'}
             </Button>
           )}
         </div>

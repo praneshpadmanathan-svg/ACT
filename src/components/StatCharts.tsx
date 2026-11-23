@@ -175,7 +175,7 @@ export function ScoreTrend({ tests, target }: { tests: TestResult[]; target: num
           tooltip positioned against a scaling viewBox is arithmetic waiting to
           drift, and this has somewhere sensible to sit. At rest it names the
           span, which is the axis label the chart is too small to carry. */}
-      <figcaption className="mt-1 font-script text-[11px] uppercase tracking-[0.12em] text-ink-faint">
+      <figcaption className="mt-1 font-script text-[12px] text-ink-faint">
         {shown ? (
           <span className="text-parchment-dim">
             <span className="num">{shown.composite}</span> composite · {shortDate(shown.at)}
@@ -268,7 +268,7 @@ export function ActivityChart({ counts }: { counts: number[] }) {
         ))}
       </div>
 
-      <figcaption className="mt-3 flex justify-between font-script text-[11px] uppercase tracking-wide text-ink-faint">
+      <figcaption className="mt-3 flex justify-between font-script text-[12px] text-ink-faint">
         {/* The left-hand axis label doubles as the readout. A hovered day says
             what it was; at rest the axis says where the chart starts. Two
             lines would leave one of them empty most of the time. */}
