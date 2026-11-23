@@ -819,7 +819,6 @@ export function QuestionRunner({
                   <Button
                     variant="primary"
                     size="lg"
-                    trailing
                     className="mt-6 w-full"
                     onClick={() => advance(records)}
                     autoFocus

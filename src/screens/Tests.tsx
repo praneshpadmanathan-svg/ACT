@@ -103,20 +103,19 @@ function TestsBoard() {
       <ResumeCard />
 
       <div className="mb-6 grid gap-3 lg:grid-cols-2">
-        <div className="panel border-blood p-6 sm:p-7" style={{ borderTopWidth: 4 }}>
-          <h2 className="heading text-[1.125rem] text-blood-text">Four-section practice</h2>
+        <div className="panel p-6 sm:p-7">
+          <h2 className="heading text-[1.125rem] text-parchment">Four-section practice</h2>
           <p className="mt-2.5 text-[14px] leading-relaxed text-parchment-dim">
             All four sections back to back, with a break between each.
           </p>
           <p className="mt-4 font-script text-[12px] text-ink-faint">
-            {Object.values(TEST_PLAN).reduce((n, p) => n + p.questions, 0)} questions ·{' '}
+            {Object.values(TEST_PLAN).reduce((n, p) => n + p.questions, 0)} questions in{' '}
             {Object.values(TEST_PLAN).reduce((n, p) => n + withAllowance(p.minutes, allowance), 0)}{' '}
             minutes
           </p>
           <Button
-            variant="danger"
+            variant="primary"
             size="lg"
-            trailing
             className="mt-5 w-full"
             onClick={() => navigate({ name: 'test', config: 'full' })}
           >
@@ -260,7 +259,6 @@ function ResumeCard() {
         </Button>
         <Button
           variant="primary"
-          trailing
           className="min-h-11 flex-1 sm:flex-none"
           onClick={() => navigate({ name: 'test', config: saved.config })}
         >
@@ -585,7 +583,7 @@ function TestSession({ config }: { config: string }) {
             )}
 
             <Button
-              variant="danger"
+              variant="primary"
               size="lg"
               className="mt-7 w-full"
               onClick={() => {

@@ -49,7 +49,7 @@ import { Art } from '@/components/Art';
 const SAVE_PROMPT_KEY = 'act-command:save-prompt-dismissed';
 
 export function Home() {
-  const { progress, rank, playerName, isGuest } = useStore();
+  const { progress, rank, isGuest } = useStore();
   const navigate = useNavigate();
   const { current: standing, cleared, total, allCleared } = useZoneProgress();
 
@@ -89,16 +89,15 @@ export function Home() {
       <Page className="home-dashboard">
         <header className="home-welcome">
           <div>
-            <p className="home-kicker">Your learning dashboard</p>
-            {/* "Back" is a claim about a previous visit, and straight out of
-                onboarding there has not been one. */}
-            <h1>
-              {progress.tally.answered > 0 ? 'Welcome back' : 'Welcome'}, {playerName}.
-            </h1>
-            <p>Your next step, your progress, and every way to practise — all in one place.</p>
+            {/* The page names its context rather than greeting you: this was
+                "Your learning dashboard / Welcome back, Traveller." — a
+                kicker and a greeting, the two commonest openings of a
+                generated dashboard. */}
+            <h1>Today</h1>
+            <p>Your next landmark, your rank, and every other way to practise.</p>
           </div>
           <a href={hrefFor({ name: 'stats' })} className="btn btn-ghost">
-            View progress <Glyph name="chevronRight" size={16} />
+            View progress
           </a>
         </header>
         <div className="home-overview">
@@ -150,7 +149,7 @@ export function Home() {
           </div>
         </div>
         <section className="home-actions" aria-labelledby="home-actions-title">
-          <h2 id="home-actions-title">What would you like to do?</h2>
+          <h2 id="home-actions-title">Other ways to practise</h2>
           {/* ----------------------------------------------------------- routes */}
           <div className="home-shortcuts">
             <Quick
@@ -219,7 +218,7 @@ export function Home() {
               />
             </dl>
 
-            <LinkButton href={hrefFor({ name: 'stats' })} trailing className="mt-5 w-full">
+            <LinkButton href={hrefFor({ name: 'stats' })} className="mt-5 w-full">
               View full progress
             </LinkButton>
           </section>
@@ -239,7 +238,6 @@ export function Home() {
             <LinkButton
               href={hrefFor({ name: reviewDue > 0 ? 'review' : 'drills' })}
               variant={reviewDue > 0 ? 'primary' : 'ghost'}
-              trailing
               className="mt-5 w-full"
             >
               {reviewDue > 0
@@ -434,8 +432,7 @@ function CampHero({ currentZone }: { currentZone: { id: string; name: string } |
           ? 'Start reviewing'
           : lead.kind === 'test'
             ? 'Start timed practice'
-            : 'Begin'}
-        <Glyph name="chevronRight" size={15} strokeWidth={2} />
+            : 'Start the lesson'}
       </span>
     </button>
   );
@@ -643,7 +640,7 @@ function TrackCard() {
           {status.current}
         </span>
         <span className="pb-1 font-read text-[14px] text-ink-faint">
-          estimated now · {status.target} target
+          estimated now, aiming for {status.target}
         </span>
       </div>
 

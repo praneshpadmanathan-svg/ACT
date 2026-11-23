@@ -297,7 +297,6 @@ export function TestSectionView({
                 <Button
                   variant="primary"
                   className="min-h-11 px-2"
-                  trailing
                   onClick={() => go(index + 1)}
                   aria-label="Next question"
                 >

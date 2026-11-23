@@ -78,10 +78,7 @@ export function DrillsScreen({ section }: { section?: string }) {
       <SectionTabs active={active} hrefFor={(id) => hrefFor({ name: 'drills', section: id })} />
 
       {/* mixed drill */}
-      <div
-        className="panel mb-6 p-6 sm:p-7"
-        style={{ borderTopColor: meta.color, borderTopWidth: 4 }}
-      >
+      <div className="panel mb-6 p-6 sm:p-7">
         <h2 className="heading text-[1.125rem]" style={{ color: meta.color }}>
           Mixed {meta.name} drill
         </h2>
@@ -143,7 +140,7 @@ export function DrillsScreen({ section }: { section?: string }) {
                 sfx.select();
                 navigate({ name: 'drill', section: active, topic });
               }}
-              className="panel-quiet flex items-center gap-4 px-4 py-3.5 text-left transition-all hover:-translate-y-0.5 hover:border-gold-deep"
+              className="panel-quiet flex items-center gap-4 px-4 py-3.5 text-left transition-colors hover:border-gold-deep"
             >
               <span className="min-w-0 flex-1">
                 <span className="block truncate font-sans text-[14px] font-semibold text-parchment">
@@ -241,7 +238,7 @@ export function DrillRunner({ section, topic }: { section: string; topic?: strin
       return {
         questions: shuffle(filtered).map(fromDrillQuestion),
         title: titleCase(topic),
-        subtitle: `${meta?.name ?? ''} · ${filtered.length.toLocaleString()} questions`,
+        subtitle: `${filtered.length.toLocaleString()} ${meta?.name ?? ''} questions`,
       };
     }
 
@@ -408,7 +405,6 @@ function ReviewSession() {
             <Button
               variant="primary"
               size="lg"
-              trailing
               className="mt-7"
               onClick={() => setStarted(session)}
             >
@@ -552,7 +548,7 @@ export function BookmarksScreen() {
       ) : (
         <>
           <div className="mb-5 flex flex-wrap items-center gap-3">
-            <Button variant="primary" trailing onClick={() => setStarted(saved)}>
+            <Button variant="primary" onClick={() => setStarted(saved)}>
               Run all {saved.length} as a drill
             </Button>
             <span className="text-[13px] text-ink-faint">

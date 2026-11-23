@@ -19,9 +19,8 @@ import { sfx } from '@/lib/sfx';
 import { cx } from '@/lib/utils';
 import type { SectionId } from '@/types';
 import { REGIONS, REGION_ORDER } from '@/content/regionFlavor';
-import { m, popItem, SPRING_SNAP } from '@/lib/motion';
+import { m, popItem } from '@/lib/motion';
 import { Glyph } from '@/components/Icon';
-import { Eyebrow, LEADING_ICON } from '@/components/ui';
 
 /* What each road actually asks of you, in the language of the realm. */
 const ROAD_NOTE: Record<SectionId, string> = {
@@ -57,9 +56,8 @@ export function RoadChooser() {
 
       <div className="relative z-10 my-auto w-full max-w-4xl">
         <div className="text-center">
-          <Eyebrow className="animate-storyTitle">Four roads, one Summit</Eyebrow>
           <h2
-            className="heading mt-2.5 animate-storyTitle text-[clamp(1.5rem,4vw,2.4rem)] text-gold-light"
+            className="heading animate-storyTitle text-[clamp(1.5rem,4vw,2.4rem)] text-parchment-light"
             style={{ animationDelay: '90ms' }}
           >
             Where will you set out?
@@ -97,10 +95,8 @@ export function RoadChooser() {
                 type="button"
                 onClick={() => choose(id)}
                 variants={popItem}
-                whileHover={{ y: -3, transition: SPRING_SNAP }}
                 whileTap={{ scale: 0.985 }}
                 className={cx('panel-lit p-5 text-left', 'hover:border-gold-deep')}
-                style={{ borderTopColor: region.color, borderTopWidth: 3 }}
               >
                 <div className="flex items-baseline justify-between gap-3">
                   <h3 className="heading text-[17px]" style={{ color: region.color }}>
@@ -131,9 +127,8 @@ export function RoadChooser() {
                 {/* The onboarding answer becomes a recommendation rather than a
                     decision made on the player's behalf. */}
                 {feared && (
-                  <p className="mt-2.5 font-script text-[12px] text-desert-text">
-                    <Glyph name="spark" size={11} className={LEADING_ICON} />
-                    Your preferred starting subject
+                  <p className="mt-2.5 text-[12.5px] text-parchment-dim">
+                    You said you’d like to start here
                   </p>
                 )}
               </m.button>

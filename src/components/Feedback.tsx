@@ -261,7 +261,6 @@ export function LevelUpOverlay() {
         <Button
           variant="primary"
           size="lg"
-          trailing
           className="mt-6 sm:mt-8 [@media(max-height:520px)]:mt-4"
           onClick={(e) => {
             // The backdrop's click would dismiss a second time.

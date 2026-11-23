@@ -331,7 +331,6 @@ export function Onboarding() {
             <Button
               variant="primary"
               size="lg"
-              trailing
               className="mt-7 w-full"
               onClick={() => setPhase('hero')}
             >
@@ -374,7 +373,6 @@ export function Onboarding() {
             <Button
               variant="primary"
               size="lg"
-              trailing
               className="mt-7 w-full"
               onClick={() => savePlan(answers, testDate || null)}
             >
@@ -456,7 +454,6 @@ export function Onboarding() {
             <Button
               variant="primary"
               size="lg"
-              trailing
               className="mt-7 w-full"
               onClick={() => navigate({ name: 'path', section: fear }, { replace: true })}
             >

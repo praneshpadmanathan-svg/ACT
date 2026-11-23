@@ -67,7 +67,7 @@ export function LegalScreen({ page }: { page: LegalPage }) {
 
           <div className="mt-10 flex flex-wrap gap-3 border-t border-paper-edge pt-6">
             {PAGE_LINKS.filter((l) => l.page !== page).map((l) => (
-              <LinkButton key={l.page} href={hrefFor({ name: l.page })} trailing>
+              <LinkButton key={l.page} href={hrefFor({ name: l.page })}>
                 {l.label}
               </LinkButton>
             ))}

@@ -95,11 +95,11 @@ export function CodexScreen() {
                         disabled={got || !reachable}
                         onClick={() => reveal(d)}
                         className={cx(
-                          'w-full rounded-lg border px-4 py-3.5 text-left transition-all',
+                          'w-full rounded-lg border px-4 py-3.5 text-left transition',
                           got && 'border-leather-700 bg-leather-850/80',
                           !got &&
                             reachable &&
-                            'animate-shimmer cursor-pointer border-gold-deep bg-leather-850 hover:-translate-y-0.5 hover:border-gold',
+                            'cursor-pointer border-gold-deep bg-leather-850 hover:border-gold',
                           !got &&
                             !reachable &&
                             'cursor-not-allowed border-dashed border-leather-700/70 bg-leather-900/50',

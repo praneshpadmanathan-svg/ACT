@@ -447,12 +447,8 @@ export function ExplainScreen() {
           ))}
 
           <div className="mt-10 flex flex-wrap gap-3 border-t border-paper-edge pt-6">
-            <LinkButton href={hrefFor({ name: 'privacy' })} trailing>
-              Privacy policy
-            </LinkButton>
-            <LinkButton href={hrefFor({ name: 'terms' })} trailing>
-              Terms
-            </LinkButton>
+            <LinkButton href={hrefFor({ name: 'privacy' })}>Privacy policy</LinkButton>
+            <LinkButton href={hrefFor({ name: 'terms' })}>Terms</LinkButton>
           </div>
         </div>
       </main>

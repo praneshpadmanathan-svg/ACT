@@ -52,10 +52,9 @@ export function BossCard({
         navigate({ name: 'boss', section });
       }}
       className={cx(
-        'panel-lit mb-5 flex w-full items-center gap-4 p-5 text-left transition-all sm:gap-6',
-        unlocked && 'hover:-translate-y-0.5 hover:border-gold-deep',
+        'panel-lit mb-5 flex w-full items-center gap-4 p-5 text-left transition-colors sm:gap-6',
+        unlocked && 'hover:border-gold-deep',
       )}
-      style={{ borderTopColor: boss.color, borderTopWidth: 3 }}
     >
       <div className={cx('w-[64px] flex-none sm:w-[86px]', !unlocked && 'opacity-55 grayscale')}>
         <BossArt section={section} state={beaten ? 'defeated' : 'idle'} />

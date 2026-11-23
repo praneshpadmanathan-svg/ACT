@@ -125,21 +125,20 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
       <Page>
         <BackLink to={{ name: 'path', section: path.id }} label={`${meta.name} in Study`} />
 
-        <div
-          className="panel mb-6 p-6 sm:p-7"
-          style={{ borderTopColor: meta.fill, borderTopWidth: 4 }}
-        >
+        <div className="panel mb-6 p-6 sm:p-7">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <div className="font-script text-[12px] text-ink-faint">
-                {meta.name} · {zone.topic}
+              {/* The section's colour, once, as a dot beside its name: a 4px
+                  coloured top edge and a coloured title said it twice. */}
+              <div className="flex items-center gap-2 text-[13px] text-ink-faint">
+                <span
+                  aria-hidden="true"
+                  className="h-2 w-2 rounded-full"
+                  style={{ background: meta.color }}
+                />
+                {meta.name}, {zone.topic}
               </div>
-              <h1
-                className="heading mt-2 text-[clamp(1.4rem,3.2vw,2rem)]"
-                style={{ color: meta.color }}
-              >
-                {zone.name}
-              </h1>
+              <h1 className="heading mt-2 text-[clamp(1.6rem,3.2vw,2.125rem)]">{zone.name}</h1>
               <p className="mt-2 font-read text-[16px] text-parchment-dim">{zone.sub}</p>
             </div>
             {best !== null && (
@@ -163,7 +162,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                   >
                     <span
                       aria-hidden
-                      className="mt-[0.45em] h-1.5 w-1.5 flex-none rotate-45 bg-gold"
+                      className="mt-[0.55em] h-1 w-1 flex-none rounded-full bg-ink-faint"
                     />
                     {item}
                   </li>
@@ -230,7 +229,7 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
                 Start the quiz
               </Button>
               <span className="self-center text-[13px] text-ink-soft">
-                {questions.length} questions · {passNeeded(questions.length)} right to clear
+                {questions.length} questions, {passNeeded(questions.length)} right to clear
               </span>
             </div>
           </article>
@@ -387,7 +386,6 @@ export function ZoneScreen({ zoneId }: { zoneId: string }) {
             {passed && nextZone ? (
               <Button
                 variant="primary"
-                trailing
                 onClick={() => {
                   setResults(null);
                   setPhase('lesson');

@@ -240,21 +240,22 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
    * buttons stay; this screen carries the explanation. */
   if (!cloudEnabled) {
     return (
-      <Frame title="Accounts aren’t switched on yet">
-        <p className="mb-4 font-read text-[15px] leading-relaxed text-parchment-dim">
-          This copy of ACT Command has no account server connected, so there is nothing to log in to
-          right now. Everything saves to this browser instead — all{' '}
+      <Frame title="Accounts aren’t available yet">
+        <p className="mb-6 font-read text-[15px] leading-relaxed text-parchment-dim">
+          There is nothing to log in to yet. Your progress saves in this browser instead, and all{' '}
           {LIBRARY_STATS.totalQuestions.toLocaleString()} questions, every lesson, the duels and
-          timed practice work exactly the same.
+          timed practice work exactly the same without an account.
         </p>
-        <p className="mb-6 rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[13px] leading-relaxed text-ink-faint">
-          Running this yourself? Accounts turn on the moment{' '}
-          <b className="text-parchment-dim">VITE_SUPABASE_URL</b> and{' '}
-          <b className="text-parchment-dim">VITE_SUPABASE_ANON_KEY</b> are set — see
-          docs/launch-checklist.md.
-        </p>
-        <Button variant="primary" size="lg" trailing className="w-full" onClick={startPlaying}>
-          Start the journey
+        {/* For whoever is running the build, never for a student: environment
+            variable names on a customer-facing screen read as a broken site. */}
+        {import.meta.env.DEV && (
+          <p className="mb-6 rounded-lg border border-leather-700 bg-leather-900 px-3.5 py-2.5 font-read text-[13px] leading-relaxed text-ink-faint">
+            Development build: accounts turn on when <code>VITE_SUPABASE_URL</code> and{' '}
+            <code>VITE_SUPABASE_ANON_KEY</code> are set. See docs/launch-checklist.md.
+          </p>
+        )}
+        <Button variant="primary" size="lg" className="w-full" onClick={startPlaying}>
+          Practise without an account
         </Button>
         <BackLink onClick={() => navigate({ name: 'landing' })} />
       </Frame>
@@ -294,18 +295,18 @@ export function Auth({ mode: initialMode }: { mode: AuthMode }) {
      neither of which collects anything new. */
   if (tooYoung && mode === 'signup') {
     return (
-      <Frame title="Come on in">
+      <Frame title="You can practise without an account">
         <p className="font-read text-[15px] leading-relaxed text-parchment-dim">
-          We only make accounts for people <b className="text-parchment">13 and over</b>, so this
-          one is on the house — nothing to sign up for and no email needed.
+          Accounts are for people 13 and over, so there is nothing to sign up for and no email
+          needed.
         </p>
         <p className="mt-3 font-read text-[15px] leading-relaxed text-parchment-dim">
           Everything is unlocked: all four subjects, every lesson, the duels, timed practice. Your
           progress saves on this device, so come back to the same browser and your world is where
           you left it.
         </p>
-        <Button variant="primary" size="lg" trailing className="mt-7 w-full" onClick={startPlaying}>
-          Start the journey
+        <Button variant="primary" size="lg" className="mt-7 w-full" onClick={startPlaying}>
+          Start practising
         </Button>
         <p className="mt-5 text-center text-[13px] text-ink-faint">
           Already have an account?{' '}

@@ -158,7 +158,6 @@ function BossDuel({ section }: { section: string }) {
           </p>
           <Button
             variant="primary"
-            trailing
             className="mt-7"
             onClick={() => navigate({ name: 'path', section: sectionId })}
           >
@@ -201,16 +200,14 @@ function BossDuel({ section }: { section: string }) {
           </div>
 
           {alreadyBeaten && (
-            <p className="mt-5 font-script text-[12px] text-woods-text">
-              <Glyph name="spark" size={12} className={LEADING_ICON} />
-              Already defeated — fight again for the practice
+            <p className="mt-5 text-[13px] text-woods-text">
+              Already beaten. Fight again for the practice.
             </p>
           )}
 
           <Button
             variant="primary"
             size="lg"
-            trailing
             className="mt-8"
             onClick={() => {
               sfx.warn();
@@ -267,7 +264,7 @@ function BossDuel({ section }: { section: string }) {
             >
               Fight again
             </Button>
-            <Button variant="primary" trailing onClick={() => navigate({ name: 'duels' })}>
+            <Button variant="primary" onClick={() => navigate({ name: 'duels' })}>
               The other guardians
             </Button>
           </div>
@@ -511,7 +508,6 @@ function BossDuel({ section }: { section: string }) {
                   <Button
                     variant="primary"
                     size="lg"
-                    trailing
                     className="mt-5 w-full"
                     onClick={next}
                     disabled={bossHp <= 0 || playerHp <= 0}

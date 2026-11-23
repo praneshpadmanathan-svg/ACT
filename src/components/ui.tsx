@@ -47,7 +47,6 @@ interface ButtonProps extends NativeButtonProps {
   variant?: Variant;
   size?: Size;
   quiet?: boolean;
-  trailing?: boolean;
   /** Waiting on the network. Disables the button and shows a spinner, so a
    *  press is acknowledged at once even when the answer takes seconds. */
   busy?: boolean;
@@ -77,7 +76,6 @@ export function LinkButton({
   href,
   variant = 'ghost',
   size = 'md',
-  trailing = false,
   className,
   onClick,
   children,
@@ -85,7 +83,6 @@ export function LinkButton({
   href: string;
   variant?: Variant;
   size?: Size;
-  trailing?: boolean;
   className?: string;
   onClick?: () => void;
   children: ReactNode;
@@ -95,7 +92,6 @@ export function LinkButton({
     <m.a
       href={href}
       className={buttonClass(variant, size, className)}
-      whileHover={stillMotion ? undefined : { y: -1 }}
       whileTap={stillMotion ? undefined : { scale: 0.99 }}
       transition={PIN_SPRING}
       onClick={() => {
@@ -104,21 +100,14 @@ export function LinkButton({
       }}
     >
       {children}
-      {trailing && (
-        <Glyph name="chevronRight" size={TRAIL_SIZE[size]} className="-mr-1 opacity-80" />
-      )}
     </m.a>
   );
 }
 
-/* Forty-three buttons in this app ended their label with a typed `▶` or `▸`.
-   That is one affordance — "this moves you onward" — spelled forty-three
-   different ways: two glyphs, whatever font resolved them, no control over
-   size, and a screen reader announcing "black right-pointing triangle" after
-   the label. `trailing` makes it a property of the button instead, so the
-   chevron is one size relative to the label everywhere and the assistive
-   layer never hears it. */
-const TRAIL_SIZE: Record<Size, number> = { sm: 13, md: 15, lg: 17 };
+/* There used to be a `trailing` prop here that put a chevron after the label,
+   and nearly every primary button in the app set it. An arrow stapled to every
+   action is template chrome (DESIGN.md): the label already says where it goes.
+   Removed along with its twenty-eight call sites. */
 
 interface Ink {
   id: number;
@@ -142,7 +131,6 @@ export function Button({
   variant = 'ghost',
   size = 'md',
   quiet = false,
-  trailing = false,
   busy = false,
   className,
   onClick,
@@ -172,7 +160,6 @@ export function Button({
     <m.button
       type="button"
       className={buttonClass(variant, size, className)}
-      whileHover={disabled || stillMotion ? undefined : { y: -1 }}
       whileTap={disabled || stillMotion ? undefined : { scale: 0.99 }}
       transition={PIN_SPRING}
       onPointerDown={(e) => {
@@ -216,9 +203,6 @@ export function Button({
       </AnimatePresence>
       {busy && <span className="btn-spinner" aria-hidden="true" />}
       {children}
-      {trailing && (
-        <Glyph name="chevronRight" size={TRAIL_SIZE[size]} className="-mr-1 opacity-80" />
-      )}
     </m.button>
   );
 }
@@ -234,13 +218,13 @@ export function Button({
    margin, which is what the typed character used to do. */
 export const LEADING_ICON = 'mr-1.5 inline-block align-[-1px]';
 
-/* `.eyebrow` is a text style; this is the marked variant of it, which is how
-   it is used nearly everywhere. The star was a typed `✦`, resolved out of
-   whatever fallback font had it — heavier than the small caps beside it on
-   Windows, missing on some Androids. */
+/* A short label above a block, in the `.eyebrow` text style: sentence case,
+   muted, no mark. It used to lead with a sparkle glyph and set itself in gold
+   tracked capitals; see DESIGN.md. Pass `icon` only where the glyph says
+   something the words do not. */
 export function Eyebrow({
   children,
-  icon = 'spark',
+  icon,
   className,
 }: {
   children: ReactNode;
@@ -255,7 +239,7 @@ export function Eyebrow({
      <p> while behaving like the div it replaced. */
   return (
     <span className={cx('eyebrow block', className)}>
-      <Glyph name={icon} size={12} className={LEADING_ICON} />
+      {icon && <Glyph name={icon} size={12} className={LEADING_ICON} />}
       {children}
     </span>
   );

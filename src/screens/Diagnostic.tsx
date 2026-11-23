@@ -73,7 +73,7 @@ export function DiagnosticScreen() {
           <div className="panel p-7 text-center sm:p-9">
             <div className="num text-[64px] leading-none text-gold">{questions.length}</div>
             <p className="mt-2 font-script text-[12px] text-ink-faint">
-              questions · about {minutes} minutes
+              questions, about {minutes} minutes
             </p>
 
             <ul className="mx-auto mt-6 max-w-sm list-disc space-y-2.5 pl-5 text-left text-[14px] leading-relaxed text-parchment-dim marker:text-gold-deep">
@@ -94,7 +94,6 @@ export function DiagnosticScreen() {
             <Button
               variant="primary"
               size="lg"
-              trailing
               className="mt-7 w-full"
               onClick={() => {
                 sfx.select();
@@ -188,7 +187,7 @@ export function DiagnosticSummary({
       <div className="mx-auto max-w-2xl">
         <div className="panel border-gold p-7 sm:p-9">
           <div className="text-center font-script text-[12px] text-ink-faint">
-            Placement · {result.asked} questions
+            Placement, {result.asked} questions
           </div>
           <h1 className="heading mt-3 text-center text-[clamp(1.2rem,3vw,1.6rem)] text-gold-light">
             {shape
@@ -253,7 +252,7 @@ export function DiagnosticSummary({
           <Button variant="ghost" onClick={() => navigate({ name: 'path' })}>
             Open Study
           </Button>
-          <Button variant="primary" trailing onClick={() => navigate({ name: 'home' })}>
+          <Button variant="primary" onClick={() => navigate({ name: 'home' })}>
             See my plan
           </Button>
         </div>

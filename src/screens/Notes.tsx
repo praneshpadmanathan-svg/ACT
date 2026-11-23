@@ -98,7 +98,7 @@ export function NotesScreen({ section }: { section?: string }) {
                     key={page.id}
                     href={hrefFor({ name: 'note', page: page.id })}
                     onClick={() => sfx.select()}
-                    className="panel-quiet group flex items-start gap-4 p-4 transition-all hover:-translate-y-0.5 hover:border-gold-deep"
+                    className="panel-quiet group flex items-start gap-4 p-4 transition-colors hover:border-gold-deep"
                   >
                     <span
                       className={cx(
@@ -219,7 +219,7 @@ export function NoteReader({ pageId }: { pageId: string }) {
       <article ref={articleRef} className="sheet mx-auto max-w-3xl p-6 sm:p-10">
         <header className="mb-8 border-b-2 border-paper-edge pb-6">
           <div className="label-quill">
-            {meta.name} · {page.unitLabel} · {page.minutes} min
+            {meta.name}, {page.unitLabel}. {page.minutes} min read
           </div>
           <h1 className="mt-3 font-heading text-[clamp(1.7rem,4vw,2.4rem)] font-medium leading-tight text-ink">
             {page.title}

@@ -540,13 +540,13 @@
 
   .rail-item {
     @apply relative flex items-center gap-2.5 rounded-lg py-1.5 pl-3 pr-2.5
-           text-parchment-dim transition-all duration-quick;
+           text-parchment-dim transition duration-quick;
   }
   .rail-item:hover {
     @apply bg-leather-850 text-parchment;
   }
   .rail-glyph {
-    @apply flex-none text-ink-faint transition-all duration-quick;
+    @apply flex-none text-ink-faint transition duration-quick;
   }
   .rail-item:hover .rail-glyph {
     @apply text-gold;
@@ -641,10 +641,10 @@
 
   .hud-icon {
     @apply flex h-9 w-9 flex-none items-center justify-center rounded-lg border
-           border-leather-700 bg-leather-850 text-parchment-dim transition-all duration-quick;
+           border-leather-700 bg-leather-850 text-parchment-dim transition-colors duration-quick;
   }
   .hud-icon:hover {
-    @apply -translate-y-px border-gold-deep text-gold;
+    @apply border-gold-deep text-gold;
   }
   /* 36px is a mouse target. On a touchscreen the header icons are the ones a
      thumb hits most, so they get the full 44. */
@@ -950,7 +950,6 @@
   button.panel:hover,
   a.panel-lit:hover,
   button.panel-lit:hover {
-    @apply -translate-y-0.5;
     border-color: var(--lamp-rim);
     box-shadow: var(--lamp-edge), var(--e-lifted);
   }
@@ -1155,7 +1154,7 @@
 
   .veil {
     @apply relative rounded-xl border border-leather-700/70 backdrop-blur-md
-           transition-all duration-quick;
+           transition duration-quick;
     background: linear-gradient(
       180deg,
       oklch(var(--veil-top) / var(--veil-alpha)),
