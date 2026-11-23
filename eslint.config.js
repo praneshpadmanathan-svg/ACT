@@ -23,7 +23,9 @@ import globals from 'globals';
 
 export default tseslint.config(
   {
-    ignores: ['dist/**', 'node_modules/**', 'coverage/**', 'public/**'],
+    /* `.claude/skills` is vendored agent tooling (see its VENDORED.md):
+       other people's code, linted by them, never shipped in the app. */
+    ignores: ['dist/**', 'node_modules/**', 'coverage/**', 'public/**', '.claude/skills/**'],
   },
 
   /* ------------------------------------------------------------ the app */
