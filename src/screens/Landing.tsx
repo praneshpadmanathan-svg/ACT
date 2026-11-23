@@ -28,7 +28,7 @@ import { hrefFor, useNavigate } from '@/lib/router';
 import { useStore } from '@/lib/store';
 import { landmarksCleared } from '@/lib/progress';
 import { sfx } from '@/lib/sfx';
-import { Button } from '@/components/ui';
+import { Button, LinkButton } from '@/components/ui';
 import { REGION_ORDER } from '@/content/regionFlavor';
 import { Art } from '@/components/Art';
 import { NearViewport } from '@/components/NearViewport';
@@ -112,8 +112,24 @@ export function Landing() {
 
   return (
     <div className="landing min-h-dvh">
+      {/* Landing renders no Shell, so it supplies its own skip link and
+          <main>, as Auth and Onboarding do. */}
+      <a
+        href="#main"
+        onClick={(event) => {
+          event.preventDefault();
+          const main = document.getElementById('main');
+          main?.focus({ preventScroll: true });
+          main?.scrollIntoView({ block: 'start' });
+        }}
+        className="sr-only rounded-lg border-2 border-gold bg-leather-850 px-4 py-2 text-[13px] text-gold focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[100]"
+      >
+        Skip to content
+      </a>
       <header className="shell flex h-16 items-center">
-        <span className="wordmark whitespace-nowrap text-[17px]">ACT Command</span>
+        <span className="wordmark whitespace-nowrap text-[17px]" translate="no">
+          ACT Command
+        </span>
         <nav className="ml-auto flex items-center gap-1 sm:gap-2" aria-label="Site">
           <a
             href={hrefFor({ name: 'faq' })}
@@ -139,9 +155,9 @@ export function Landing() {
               >
                 Log out
               </button>
-              <Button variant="primary" size="sm" onClick={() => navigate({ name: 'home' })}>
+              <LinkButton size="sm" href={hrefFor({ name: 'home' })}>
                 Open the app
-              </Button>
+              </LinkButton>
             </>
           ) : (
             <>
@@ -153,17 +169,17 @@ export function Landing() {
                 Log in
               </a>
               {returning ? (
-                <Button
-                  variant="primary"
+                <LinkButton
                   size="sm"
                   className="whitespace-nowrap"
-                  onClick={() => navigate({ name: 'home' })}
+                  href={hrefFor({ name: 'home' })}
                 >
-                  Continue
-                </Button>
+                  Back to your road
+                </LinkButton>
               ) : (
+                /* Ghost, not gold: the hero's button is this view's one
+                   primary action, and the header repeats it quietly. */
                 <Button
-                  variant="primary"
                   size="sm"
                   className="whitespace-nowrap"
                   onClick={begin}
@@ -178,237 +194,238 @@ export function Landing() {
         </nav>
       </header>
 
-      {/* ------------------------------------------------------------- hero */}
-      <section className="landing-hero shell" aria-labelledby="landing-title">
-        <div className="landing-hero-copy">
-          {returning ? (
-            <>
-              <h1 id="landing-title" className="landing-h1">
-                Your road is where you left it
-              </h1>
-              <p className="landing-lead">
-                {cleared === 0
-                  ? `You have ${totalLandmarks} landmarks ahead of you and none cleared yet. The first one takes about twelve minutes.`
-                  : `${cleared} of ${totalLandmarks} landmarks cleared so far.`}
-              </p>
-            </>
-          ) : (
-            <>
-              <h1 id="landing-title" className="landing-h1">
-                ACT practice, one skill at a time
-              </h1>
-              <p className="landing-lead">
-                English, Math, Reading and Science, laid out as four roads across a painted country.
-                Each landmark teaches one skill the test asks for, and all {QUESTIONS} practice
-                questions explain their answers.
-              </p>
-            </>
-          )}
-
-          <div className="landing-actions">
+      <main id="main" tabIndex={-1} className="outline-none">
+        {/* ------------------------------------------------------------- hero */}
+        <section className="landing-hero shell" aria-labelledby="landing-title">
+          <div className="landing-hero-copy">
             {returning ? (
               <>
-                <Button variant="primary" size="lg" onClick={() => navigate({ name: 'home' })}>
-                  Continue
-                </Button>
-                {isGuest ? (
-                  <a
-                    className="btn btn-ghost btn-lg"
-                    href={hrefFor({ name: 'auth', mode: 'signup' })}
-                    onClick={() => sfx.select()}
-                  >
-                    Save it with an account
-                  </a>
-                ) : (
-                  <a
-                    className="btn btn-ghost btn-lg"
-                    href={hrefFor({ name: 'path' })}
-                    onClick={() => sfx.select()}
-                  >
-                    Open Study
-                  </a>
-                )}
+                <h1 id="landing-title" className="landing-h1">
+                  Your road is where you left it
+                </h1>
+                <p className="landing-lead">
+                  {cleared === 0
+                    ? `You have ${totalLandmarks} landmarks ahead of you and none cleared yet. The first one takes about 12 minutes.`
+                    : `${cleared} of ${totalLandmarks} landmarks cleared so far.`}
+                </p>
               </>
             ) : (
               <>
-                <Button
-                  variant="primary"
-                  size="lg"
-                  onClick={begin}
-                  onPointerEnter={warm}
-                  onFocus={warm}
-                >
-                  Start practising
-                </Button>
-                <Button size="lg" onClick={toSample}>
-                  Try a question
-                </Button>
+                <h1 id="landing-title" className="landing-h1">
+                  ACT practice, one skill at a time
+                </h1>
+                <p className="landing-lead">
+                  English, Math, Reading and Science, laid out as four roads across a painted
+                  country. Each landmark teaches one skill the test asks for, and all {QUESTIONS}{' '}
+                  practice questions explain their answers.
+                </p>
               </>
             )}
+
+            <div className="landing-actions">
+              {returning ? (
+                <>
+                  <LinkButton variant="primary" size="lg" href={hrefFor({ name: 'home' })}>
+                    Back to your road
+                  </LinkButton>
+                  {isGuest ? (
+                    <a
+                      className="btn btn-ghost btn-lg"
+                      href={hrefFor({ name: 'auth', mode: 'signup' })}
+                      onClick={() => sfx.select()}
+                    >
+                      Save it with an account
+                    </a>
+                  ) : (
+                    <a
+                      className="btn btn-ghost btn-lg"
+                      href={hrefFor({ name: 'path' })}
+                      onClick={() => sfx.select()}
+                    >
+                      Open Study
+                    </a>
+                  )}
+                </>
+              ) : (
+                <>
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    onClick={begin}
+                    onPointerEnter={warm}
+                    onFocus={warm}
+                  >
+                    Start practising
+                  </Button>
+                  <Button size="lg" onClick={toSample}>
+                    Try a question
+                  </Button>
+                </>
+              )}
+            </div>
+
+            <p className="mt-5 text-[14px] text-ink-faint">
+              {returning && isGuest
+                ? 'You are not logged in, so this progress is saved in this browser only.'
+                : 'Free, and no account needed.'}
+            </p>
           </div>
 
-          <p className="mt-5 text-[14px] text-ink-faint">
-            {returning && isGuest
-              ? 'You are not logged in, so this progress is saved in this browser only.'
-              : 'Free, and no account needed.'}
-          </p>
-        </div>
-
-        <div className="landing-hero-art">
-          {/* The traveller at the cliff's edge, looking down the road at the
+          <div className="landing-hero-art">
+            {/* The traveller at the cliff's edge, looking down the road at the
               village: the whole product in one picture, shown whole. */}
-          <Art
-            name="landing-hero"
-            priority
-            sizes="(max-width: 900px) 100vw, 60vw"
-            className="h-full w-full select-none object-cover"
-          />
-        </div>
-      </section>
+            <Art
+              name="landing-hero"
+              priority
+              sizes="(max-width: 900px) 100vw, 60vw"
+              className="h-full w-full select-none object-cover"
+            />
+          </div>
+        </section>
 
-      {/* ------------------------------------------------------ orientation
+        {/* ------------------------------------------------------ orientation
           Straight after the hero, because the headline assumes you know what
           the ACT is and whether it applies to you. */}
-      <section className="landing-band">
-        <div className="shell">
-          <dl className="landing-facts">
-            <div>
-              <dt>The ACT</dt>
-              <dd>
-                A US university admissions test, scored from 1 to 36, in four sections: English,
-                Math, Reading and Science.
-              </dd>
-            </div>
-            <div>
-              <dt>Who it’s for</dt>
-              <dd>
-                Students 13 and over preparing for it. Most are 15 to 17 and between a week and
-                three months from test day.
-              </dd>
-            </div>
-            <div>
-              <dt>What it costs</dt>
-              <dd>
-                Nothing. No payment, nothing to install, and no account unless you want your
-                progress on more than one device.
-              </dd>
-            </div>
-          </dl>
-          <p className="mt-8 text-[14.5px] text-parchment-dim">
-            Whether it works, why it’s free, and the rest:{' '}
-            <a
-              href={hrefFor({ name: 'faq' })}
-              onClick={() => sfx.select()}
-              className="text-parchment underline underline-offset-4 hover:text-gold"
-            >
-              read the FAQ
-            </a>
-          </p>
-        </div>
-      </section>
-
-      {/* ---------------------------------------------------- try one now */}
-      <section
-        id="try-question"
-        tabIndex={-1}
-        aria-labelledby="try-title"
-        className="shell scroll-mt-8 py-24"
-      >
-        <div className="landing-section-head">
-          <h2 id="try-title" className="landing-h2">
-            Try a question
-          </h2>
-          <p>
-            One of the {QUESTIONS}, picked at random. Answer it to see why each choice is right or
-            wrong. Nothing is saved.
-          </p>
-        </div>
-        {/* A fixed-height placeholder, not a spinner: a box that grew when the
-            chunk landed would shove the heading up the page mid-read. */}
-        <NearViewport minHeight="420px">
-          <Suspense fallback={<div className="proof-sheet min-h-[420px] max-w-3xl" />}>
-            <TryQuestion onFinish={begin} />
-          </Suspense>
-        </NearViewport>
-      </section>
-
-      {/* --------------------------------------------------------- regions */}
-      <section className="below-fold shell py-24" aria-labelledby="roads-title">
-        <div className="landing-section-head">
-          <h2 id="roads-title" className="landing-h2">
-            Four roads, one for each section
-          </h2>
-          <p>
-            Every landmark on a road is one skill. Read a short lesson, then take a six-question
-            quiz; get five right and the next landmark opens.
-          </p>
-        </div>
-        <RealmExplorer onBegin={begin} />
-      </section>
-
-      <div className="below-fold shell pb-24">
-        <RankShowcase />
-      </div>
-
-      {/* ---------------------------------------------------- also inside */}
-      <section className="below-fold landing-band" aria-labelledby="also-title">
-        <div className="shell">
-          <h2 id="also-title" className="landing-h2">
-            Also in the app
-          </h2>
-          <dl className="landing-also">
-            {ALSO.map((a) => (
-              <div key={a.title}>
-                <dt>{a.title}</dt>
-                <dd>{a.detail}</dd>
+        <section className="landing-band">
+          <div className="shell">
+            <dl className="landing-facts">
+              <div>
+                <dt>The ACT</dt>
+                <dd>
+                  A US university admissions test, scored from 1 to 36, in four sections: English,
+                  Math, Reading and Science.
+                </dd>
               </div>
-            ))}
-          </dl>
-        </div>
-      </section>
-
-      {/* ------------------------------------------------------------ ask */}
-      <section className="below-fold shell py-24" aria-labelledby="ask-title">
-        <div className="max-w-xl">
-          <h2 id="ask-title" className="landing-h2">
-            Start with one landmark
-          </h2>
-          <p className="mt-3 text-[16px] leading-relaxed text-parchment-dim">
-            The first takes about twelve minutes, and your progress saves as you go. It’s free
-            because it’s small and cheap to run: no ads, nothing sold, and no paid tier behind this
-            one.{' '}
-            <a
-              href={hrefFor({ name: 'faq' })}
-              onClick={() => sfx.select()}
-              className="text-parchment underline underline-offset-4 hover:text-gold"
-            >
-              More on that
-            </a>
-          </p>
-          <div className="landing-actions">
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={begin}
-              onPointerEnter={warm}
-              onFocus={warm}
-            >
-              Start practising
-            </Button>
-            <a
-              className="btn btn-ghost btn-lg"
-              href={hrefFor({ name: 'auth', mode: 'signup' })}
-              onClick={() => sfx.select()}
-            >
-              Create an account
-            </a>
+              <div>
+                <dt>Who it’s for</dt>
+                <dd>
+                  Students 13 and over preparing for it. Most are 15 to 17 and between a week and 3
+                  months from test day.
+                </dd>
+              </div>
+              <div>
+                <dt>What it costs</dt>
+                <dd>
+                  Nothing. No payment, nothing to install, and no account unless you want your
+                  progress on more than one device.
+                </dd>
+              </div>
+            </dl>
+            <p className="mt-8 text-[14.5px] text-parchment-dim">
+              Whether it works, why it’s free, and the rest:{' '}
+              <a
+                href={hrefFor({ name: 'faq' })}
+                onClick={() => sfx.select()}
+                className="text-parchment underline underline-offset-4 hover:text-parchment-light"
+              >
+                read the FAQ
+              </a>
+            </p>
           </div>
-          <p className="mt-4 text-[14px] text-ink-faint">
-            An account only carries your progress between devices. Every question here was written
-            for this app.
-          </p>
+        </section>
+
+        {/* ---------------------------------------------------- try one now */}
+        <section
+          id="try-question"
+          tabIndex={-1}
+          aria-labelledby="try-title"
+          className="shell scroll-mt-8 py-24"
+        >
+          <div className="landing-section-head">
+            <h2 id="try-title" className="landing-h2">
+              Try a question
+            </h2>
+            <p>
+              One of the {QUESTIONS}, picked at random. Answer it to see why each choice is right or
+              wrong. Nothing is saved.
+            </p>
+          </div>
+          {/* A fixed-height placeholder, not a spinner: a box that grew when the
+            chunk landed would shove the heading up the page mid-read. */}
+          <NearViewport minHeight="420px">
+            <Suspense fallback={<div className="proof-sheet min-h-[420px] max-w-3xl" />}>
+              <TryQuestion onFinish={begin} />
+            </Suspense>
+          </NearViewport>
+        </section>
+
+        {/* --------------------------------------------------------- regions */}
+        <section className="below-fold shell py-24" aria-labelledby="roads-title">
+          <div className="landing-section-head">
+            <h2 id="roads-title" className="landing-h2">
+              Four roads, one for each section
+            </h2>
+            <p>
+              Every landmark on a road is one skill. Read a short lesson, then take a 6-question
+              quiz; get 5 right and the next landmark opens.
+            </p>
+          </div>
+          <RealmExplorer onBegin={begin} />
+        </section>
+
+        <div className="below-fold shell pb-24">
+          <RankShowcase />
         </div>
-      </section>
+
+        {/* ---------------------------------------------------- also inside */}
+        <section className="below-fold landing-band" aria-labelledby="also-title">
+          <div className="shell">
+            <h2 id="also-title" className="landing-h2">
+              Also in the app
+            </h2>
+            <dl className="landing-also">
+              {ALSO.map((a) => (
+                <div key={a.title}>
+                  <dt>{a.title}</dt>
+                  <dd>{a.detail}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        {/* ------------------------------------------------------------ ask */}
+        <section className="below-fold shell py-24" aria-labelledby="ask-title">
+          <div className="max-w-xl">
+            <h2 id="ask-title" className="landing-h2">
+              Start with one landmark
+            </h2>
+            <p className="mt-3 text-[16px] leading-relaxed text-parchment-dim">
+              The first takes about 12 minutes, and your progress saves as you go. It’s free because
+              it’s small and cheap to run: no ads, nothing sold, and no paid tier behind this one.{' '}
+              <a
+                href={hrefFor({ name: 'faq' })}
+                onClick={() => sfx.select()}
+                className="text-parchment underline underline-offset-4 hover:text-parchment-light"
+              >
+                More on that
+              </a>
+            </p>
+            <div className="landing-actions">
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={begin}
+                onPointerEnter={warm}
+                onFocus={warm}
+              >
+                Start practising
+              </Button>
+              <a
+                className="btn btn-ghost btn-lg"
+                href={hrefFor({ name: 'auth', mode: 'signup' })}
+                onClick={() => sfx.select()}
+              >
+                Create an account
+              </a>
+            </div>
+            <p className="mt-4 text-[14px] text-ink-faint">
+              An account only carries your progress between devices. Every question here was written
+              for this app.
+            </p>
+          </div>
+        </section>
+      </main>
 
       <footer className="border-t border-leather-700 py-10">
         <div className="shell flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -420,7 +437,10 @@ export function Landing() {
             </p>
             <p className="mt-2 text-[12.5px] leading-relaxed text-ink-faint">
               Copyright {new Date().getFullYear()} {OPERATOR_LINE ?? 'ACT Command'}.{' '}
-              <a href={`mailto:${CONTACT.support}`} className="underline underline-offset-2">
+              <a
+                href={`mailto:${CONTACT.support}`}
+                className="underline underline-offset-2 hover:text-parchment"
+              >
                 {CONTACT.support}
               </a>
             </p>

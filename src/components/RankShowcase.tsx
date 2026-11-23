@@ -5,7 +5,7 @@
    replay button. The emblems are the interesting part, so they stay; the
    copy now says what a rank is and what it takes, and the rings are gone. */
 
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { RANKS } from '@/lib/progress';
 import { RankSigil } from './RankSigil';
 
@@ -15,11 +15,12 @@ export function RankShowcase() {
   const first = RANKS[0]!;
   const last = RANKS[RANKS.length - 1]!;
   const article = /^[aeiou]/i.test(first.name) ? 'an' : 'a';
+  const titleId = useId();
   return (
-    <section className="rank-showcase" aria-label="The seven ranks">
+    <section className="rank-showcase" aria-labelledby={titleId}>
       <div className="rank-showcase-copy">
-        <h2 className="heading text-[clamp(1.5rem,3vw,2rem)] leading-tight">
-          Seven ranks, earned by answering
+        <h2 id={titleId} className="heading text-[clamp(1.5rem,3vw,2rem)] leading-tight">
+          {RANKS.length} ranks, earned by answering
         </h2>
         <p className="max-w-[46ch] text-[15px] leading-relaxed text-parchment-dim">
           Every answer earns XP. You start as {article} {first.name}, and the last rank, {last.name}
@@ -45,7 +46,7 @@ export function RankShowcase() {
           <RankSigil rank={rank} size={150} aura={false} />
         </div>
         <h3 className="heading text-[1.75rem] leading-tight">{rank.name}</h3>
-        <p className="text-[14px] text-parchment-dim">
+        <p className="text-[14px] tabular-nums text-parchment-dim">
           {rank.xp === 0 ? 'Where everyone starts' : `From ${rank.xp.toLocaleString()} XP`}
         </p>
       </div>

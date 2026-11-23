@@ -36,7 +36,10 @@ it('changes subject details and keeps the start action functional', () => {
   const choices = host.querySelectorAll<HTMLButtonElement>('.realm-selector button');
   act(() => choices[1]!.click());
   expect(host.textContent).toContain('The Number Desert');
-  expect(choices[1]!.getAttribute('aria-pressed')).toBe('true');
+  expect(choices[1]!.getAttribute('aria-selected')).toBe('true');
+  expect(host.querySelector('[role="tabpanel"]')!.getAttribute('aria-labelledby')).toBe(
+    choices[1]!.id,
+  );
   // The road's real landmarks, not a slogan: the first five, then how many remain.
   const stops = host.querySelectorAll('.road > li');
   expect(stops).toHaveLength(5);
@@ -45,4 +48,31 @@ it('changes subject details and keeps the start action functional', () => {
   act(() => host.querySelector<HTMLButtonElement>('.realm-copy button')!.click());
   expect(begin).toHaveBeenCalledOnce();
   act(() => root.unmount());
+});
+
+it('moves between sections with the arrow keys, as tabs do', () => {
+  const host = document.createElement('div');
+  document.body.appendChild(host);
+  const root = createRoot(host);
+  act(() => root.render(<RealmExplorer onBegin={() => {}} />));
+  const tabs = () => [...host.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+  // Only the selected tab is in the Tab order.
+  expect(tabs().map((t) => t.tabIndex)).toEqual([0, -1, -1, -1]);
+  const key = (k: string) =>
+    act(() => {
+      document.activeElement!.dispatchEvent(
+        new KeyboardEvent('keydown', { key: k, bubbles: true }),
+      );
+    });
+  tabs()[0]!.focus();
+  key('ArrowRight');
+  expect(tabs()[1]!.getAttribute('aria-selected')).toBe('true');
+  expect(document.activeElement).toBe(tabs()[1]);
+  key('ArrowLeft');
+  key('ArrowLeft');
+  expect(tabs()[3]!.getAttribute('aria-selected')).toBe('true');
+  key('Home');
+  expect(tabs()[0]!.getAttribute('aria-selected')).toBe('true');
+  act(() => root.unmount());
+  host.remove();
 });

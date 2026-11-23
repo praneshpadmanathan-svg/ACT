@@ -58,7 +58,7 @@ p {
   font-size: clamp(2.375rem, 5.2vw, 4rem);
   line-height: 1.04;
   letter-spacing: -0.02em;
-  color: oklch(var(--c-parchment-light));
+  color: oklch(var(--c-parchment));
 }
 .landing-lead {
   margin-top: 1.25rem;
@@ -91,7 +91,7 @@ p {
   font-size: clamp(1.625rem, 3vw, 2.25rem);
   line-height: 1.15;
   letter-spacing: -0.01em;
-  color: oklch(var(--c-parchment-light));
+  color: oklch(var(--c-parchment));
 }
 .landing-section-head {
   max-width: 40rem;
@@ -132,7 +132,7 @@ p {
   font-family: var(--font-heading), Georgia, serif;
   font-weight: 500;
   font-size: 1.1875rem;
-  color: oklch(var(--c-parchment-light));
+  color: oklch(var(--c-parchment));
 }
 .landing-facts dd,
 .landing-also dd {
@@ -189,10 +189,15 @@ p {
 .realm-selector button:hover {
   color: oklch(var(--c-parchment));
 }
-.realm-selector button[aria-pressed='true'] {
+.realm-selector button[aria-selected='true'] {
   background: oklch(var(--c-leather-800));
-  color: oklch(var(--c-parchment-light));
+  color: oklch(var(--c-parchment));
   box-shadow: inset 0 -2px oklch(var(--c-gold));
+}
+/* The explorer clips its corners, which would clip the global focus ring
+   too: draw it inside the tab instead. */
+.realm-selector button:focus-visible {
+  outline-offset: -3px;
 }
 .realm-dot {
   width: 0.5rem;

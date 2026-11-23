@@ -42,8 +42,9 @@ hairlines; on paper, from one soft neutral shadow.
 ## Type
 
 - **Headings:** Newsreader (variable, optical sizes), weight 500, sentence case.
-  Page titles 28–36px, section headings 20–24px, hero 56–64px desktop / 36–40px
-  mobile.
+  In the app: page titles 28–36px, section headings 20–24px. On the landing
+  page, where each section is a page-width idea: section headings 26–36px,
+  hero 56–64px desktop / 36–40px mobile.
 - **Interface and body:** Inter, 400 and 500. 600 only for a short emphasis.
 - **Lessons and passages:** the reading styles in `index.css`
   (`.prose-quill`, `.prose-passage`).

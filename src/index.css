@@ -2139,9 +2139,19 @@
 
   /* ---------------------------------------------------------------- layout */
 
+  /* `viewport-fit=cover` (index.html) lets the page run under a phone's
+     notch in landscape, so the gutter grows to clear it. */
   .shell {
-    @apply mx-auto w-full px-4 sm:px-6;
+    @apply mx-auto w-full;
     max-width: var(--shell-max);
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+  @media (min-width: 640px) {
+    .shell {
+      padding-left: max(1.5rem, env(safe-area-inset-left));
+      padding-right: max(1.5rem, env(safe-area-inset-right));
+    }
   }
 
   /* The content canvas. These retune `.shell`'s own variable rather than

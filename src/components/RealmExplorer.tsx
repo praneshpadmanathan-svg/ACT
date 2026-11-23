@@ -7,7 +7,7 @@
    each one teaches. The road line (`.road`) is the site's one signature
    detail; see DESIGN.md. */
 
-import { useState } from 'react';
+import { useId, useRef, useState, type KeyboardEvent } from 'react';
 import { SECTIONS } from '@/content/sections';
 import { PATH_BY_ID } from '@/content/zones';
 import { REGIONS } from '@/content/regionFlavor';
@@ -22,22 +22,62 @@ const skillOf = (sub: string) => sub.split(/\s+[—–-]\s+/)[0] ?? sub;
 
 export function RealmExplorer({ onBegin }: { onBegin: () => void }) {
   const [active, setActive] = useState(0);
+  const id = useId();
+  const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const section = SECTIONS[active]!;
+
+  /* The WAI tabs pattern: arrows move between tabs and select as they go,
+     Home and End jump to the ends. Only the selected tab is in the Tab order. */
+  const onKey = (e: KeyboardEvent<HTMLDivElement>) => {
+    const last = SECTIONS.length - 1;
+    const next =
+      e.key === 'ArrowRight'
+        ? (active + 1) % SECTIONS.length
+        : e.key === 'ArrowLeft'
+          ? (active + last) % SECTIONS.length
+          : e.key === 'Home'
+            ? 0
+            : e.key === 'End'
+              ? last
+              : null;
+    if (next === null) return;
+    e.preventDefault();
+    setActive(next);
+    tabs.current[next]?.focus();
+  };
   const path = PATH_BY_ID[section.id];
   const nodes = path?.nodes ?? [];
   const rest = nodes.length - Math.min(SHOWN, nodes.length);
 
   return (
     <div className="realm-explorer">
-      <div className="realm-selector" role="group" aria-label="Choose a section">
+      <div className="realm-selector" role="tablist" aria-label="Sections" onKeyDown={onKey}>
         {SECTIONS.map((s, i) => (
-          <button key={s.id} type="button" aria-pressed={i === active} onClick={() => setActive(i)}>
+          <button
+            key={s.id}
+            ref={(el) => {
+              tabs.current[i] = el;
+            }}
+            type="button"
+            role="tab"
+            id={`${id}-tab-${i}`}
+            aria-selected={i === active}
+            aria-controls={`${id}-panel`}
+            tabIndex={i === active ? 0 : -1}
+            onClick={() => setActive(i)}
+          >
             <span className="realm-dot" style={{ background: s.color }} aria-hidden="true" />
             {s.name}
           </button>
         ))}
       </div>
-      <div className="realm-scene" key={section.id}>
+      <div
+        className="realm-scene"
+        key={section.id}
+        role="tabpanel"
+        id={`${id}-panel`}
+        aria-labelledby={`${id}-tab-${active}`}
+      >
         <div className="realm-art">
           <Art
             name={`region-${section.id}`}
@@ -60,12 +100,11 @@ export function RealmExplorer({ onBegin }: { onBegin: () => void }) {
           </ol>
           {rest > 0 && (
             <p className="-mt-2 text-[13px] text-ink-faint">
-              {rest} more after these, then the road’s guardian.
+              {rest} more after these, then the road’s guardian: a duel against the hardest
+              questions in the section.
             </p>
           )}
-          <Button variant="primary" onClick={onBegin}>
-            Start practising
-          </Button>
+          <Button onClick={onBegin}>Start practising</Button>
         </div>
       </div>
     </div>
