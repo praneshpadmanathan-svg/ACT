@@ -42,7 +42,12 @@ permissions:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    # Pinned, for the same reason Node is pinned below: `ubuntu-latest` moved
+    # to 26.04 under this workflow, and Playwright 1.56.1 (pinned in
+    # package.json for the contrast check) has no Chromium build for it, so
+    # every run died at "Install Chromium" with nothing wrong in the code.
+    # Move both together, deliberately.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
 
